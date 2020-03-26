@@ -6,10 +6,10 @@ ms.topic: quickstart
 ms.date: 10/01/2018
 ms.custom: mvc, cc996988-fb4f-47
 ms.openlocfilehash: 65717e4373f64ae38a324fd19624f049dba9dfb1
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75769308"
 ---
 # <a name="create-a-function-triggered-by-azure-blob-storage"></a>Создание функции, активируемой хранилищем BLOB-объектов Azure
@@ -18,7 +18,7 @@ ms.locfileid: "75769308"
 
 ![Просмотр сообщения в журналах](./media/functions-create-storage-blob-triggered-function/function-app-in-portal-editor.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 + Скачайте и установите [обозреватель хранилищ Microsoft Azure](https://storageexplorer.com/).
 + Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.

@@ -7,12 +7,12 @@ ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: b53896896ecd4b0e577e8d2c5ec13e00ce6fab30
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: e68e91d90846ab77b994b53be7a84a9dd8bc5a25
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78191934"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79216172"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v12-sdk-in-nodejs"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js
 
@@ -118,7 +118,7 @@ npm install
 
 На следующей схеме показана связь между этими ресурсами.
 
-![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blob-introduction/blob1.png)
+![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blobs-introduction/blob1.png)
 
 Используйте следующие классы JavaScript для взаимодействия с этими ресурсами.
 

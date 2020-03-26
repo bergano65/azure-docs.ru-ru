@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
 ms.openlocfilehash: 4bef55b049ee542efdb9d72d13fa196c989c75ec
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73826929"
 ---
 # <a name="quickstart-use-ruby-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Ruby для создания запросов к базе данных SQL Azure
@@ -28,12 +28,12 @@ ms.locfileid: "73826929"
 
 - База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
 
-  || Отдельная база данных | Управляемый экземпляр |
+  || Отдельная база данных | управляемый экземпляр |
   |:--- |:--- |:---|
   | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
   || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  | Configure | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
   |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
   |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
@@ -54,7 +54,7 @@ ms.locfileid: "73826929"
 
 Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
 
@@ -99,7 +99,7 @@ ms.locfileid: "73826929"
    
 1. Убедитесь, что первые 20 строк с продуктами в категории возвращены из вашей базы данных. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Руководство. Разработка первой базы данных SQL Azure с помощью SSMS](sql-database-design-first-database.md).
 - [TinyTDS - Simple and fast FreeTDS bindings for Ruby using DB-Library.](https://github.com/rails-sqlserver/tiny_tds) (TinyTDS — простая и быстрая привязка FreeTDS для Ruby с помощью DB-Library).
 - Сообщите о проблемах или задайте вопросы по TinyTDS [здесь](https://github.com/rails-sqlserver/tiny_tds/issues).

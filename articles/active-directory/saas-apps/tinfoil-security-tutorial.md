@@ -17,10 +17,10 @@ ms.date: 10/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 71d3078b553843922cd51e4e0f43ea84b6dcde16
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74170764"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tinfoil-security"></a>Руководство по интеграции единого входа Azure Active Directory с TINFOIL SECURITY
@@ -35,9 +35,9 @@ ms.locfileid: "74170764"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка TINFOIL SECURITY с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -71,7 +71,7 @@ ms.locfileid: "74170764"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в TINFOIL SECURITY](#configure-tinfoil-security-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя TINFOIL SECURITY](#create-tinfoil-security-test-user)** требуется для того, чтобы в TINFOIL SECURITY существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -81,17 +81,17 @@ ms.locfileid: "74170764"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
 1. Приложение Visitly ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/default-attributes.png)
+    ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение Visitly ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ | Исходный атрибут |
+    | Имя | Исходный атрибут |
     | ------------------- | -------------|
     | accountid | UXXXXXXXXXXXXX |
 
@@ -126,7 +126,7 @@ ms.locfileid: "74170764"
 
 В этом разделе описано, как разрешить пользователю B. Simon использовать единый вход Azure, предоставив этому пользователю доступ к TINFOIL SECURITY.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **TINFOIL SECURITY**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -146,9 +146,9 @@ ms.locfileid: "74170764"
 
 1. На панели инструментов в верхней части экрана щелкните **Моя учетная запись**.
 
-    ![Панель мониторинга](./media/tinfoil-security-tutorial/ic798971.png "панель мониторинга")
+    ![Панель мониторинга](./media/tinfoil-security-tutorial/ic798971.png "Панель мониторинга")
 
-1. Щелкните **Security**(Безопасность).
+1. Перейдите на вкладку **Безопасность**.
 
     ![Безопасность](./media/tinfoil-security-tutorial/ic798972.png "Безопасность")
 
@@ -156,7 +156,7 @@ ms.locfileid: "74170764"
 
     ![Единый вход](./media/tinfoil-security-tutorial/ic798973.png "Единый вход")
 
-    a. Выберите **Включить SAML**.
+    а. Выберите **Включить SAML**.
 
     b. Щелкните **Настроить вручную**.
 
@@ -164,9 +164,9 @@ ms.locfileid: "74170764"
 
     d. В текстовое поле **SAML Certificate Fingerprint** (Отпечаток сертификата SAML) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**.
   
-    д. Скопируйте значение **своего идентификатора учетной записи** и вставьте его в текстовое поле **Исходный атрибут** в разделе **User Attributes & Claims** (Утверждения и атрибуты пользователя) на портале Azure.
+    д) Скопируйте значение **своего идентификатора учетной записи** и вставьте его в текстовое поле **Исходный атрибут** в разделе **User Attributes & Claims** (Утверждения и атрибуты пользователя) на портале Azure.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ### <a name="create-tinfoil-security-test-user"></a>Создание тестового пользователя в TINFOIL SECURITY
 
@@ -189,9 +189,9 @@ ms.locfileid: "74170764"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

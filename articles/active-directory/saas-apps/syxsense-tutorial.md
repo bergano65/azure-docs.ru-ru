@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Syxsense | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Syxsense | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Syxsense.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 684b8c31524c55ad3335c02ec1268f1afea78a93
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77086593"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-syxsense"></a>Руководство. Интеграция единого входа Azure Active Directory со Syxsense
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-syxsense"></a>Руководство по Интеграция единого входа Azure Active Directory со Syxsense
 
 В этом руководстве описано, как интегрировать Syxsense с Azure Active Directory (Azure AD). Интеграция Syxsense с Azure AD обеспечивает следующие возможности.
 

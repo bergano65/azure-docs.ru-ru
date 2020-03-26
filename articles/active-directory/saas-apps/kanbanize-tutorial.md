@@ -17,10 +17,10 @@ ms.date: 10/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7c5a3a096c5a44f681d23587837ae31fd1af33b2
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72373228"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kanbanize"></a>Руководство по Интеграция единого входа Azure Active Directory с Kanbanize
@@ -35,9 +35,9 @@ ms.locfileid: "72373228"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Kanbanize с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "72373228"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Kanbanize](#configure-kanbanize-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя приложения Kanbanize](#create-kanbanize-test-user)** требуется для того, чтобы в Kanbanize существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,13 +79,13 @@ ms.locfileid: "72373228"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-     a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.kanbanize.com/`.
+     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.kanbanize.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.kanbanize.com/saml/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.kanbanize.com/saml/acs`.
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 
@@ -100,7 +100,7 @@ ms.locfileid: "72373228"
 
 1. Приложение Kanbanize ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, где nameidentifier сопоставляется с **user.userprincipalname**. Приложение Kanbanize ожидает, что nameidentifier будет сопоставляться с **user.mail**, поэтому измените сопоставление атрибутов, щелкнув значок "Изменить".
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -126,7 +126,7 @@ ms.locfileid: "72373228"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Kanbanize.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Kanbanize**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -168,7 +168,7 @@ ms.locfileid: "72373228"
 
     ![Интеграции Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-save.png)
 
-    a. В текстовом поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    а. В текстовом поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     b. В текстовом поле **Idp Login Endpoint** (Конечная точка входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -176,9 +176,9 @@ ms.locfileid: "72373228"
 
     d. В поле **Attribute name for Email** (Имя атрибута для электронной почты) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    д. В поле **Attribute name for First Name** (Имя атрибута для имени) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    д) В поле **Attribute name for First Name** (Имя атрибута для имени) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    Е. В поле **Attribute name for Last Name** (Имя атрибута для фамилии) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    е) В поле **Attribute name for Last Name** (Имя атрибута для фамилии) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
     > [!Note]
     > Эти значения можно получить путем объединения значений пространства имен и имени соответствующего атрибута из раздела атрибутов пользователя на портале Azure.
@@ -201,9 +201,9 @@ ms.locfileid: "72373228"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

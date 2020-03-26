@@ -6,10 +6,10 @@ ms.topic: overview
 ms.date: 08/31/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 504ef93a0002895bc5662d95ad269c8593170ee2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74233018"
 ---
 # <a name="durable-functions-billing"></a>Выставление счетов за Устойчивые функции
@@ -50,7 +50,7 @@ ms.locfileid: "74233018"
 
 Дополнительные сведения о ценах на службу хранилища Azure см. в документации по [ценам на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о ценах для Функций Azure](https://azure.microsoft.com/pricing/details/functions/)

@@ -7,10 +7,10 @@ ms.topic: overview
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: 31cb4570dd0952f60fbff2fa1131b3af36c278cb
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74157579"
 ---
 # <a name="what-is-azure-signalr-service"></a>Сведения о службе Azure SignalR
@@ -72,6 +72,6 @@ SignalR предоставляет абстракцию по ряду метод
 
 Существует много различных способов программирования с использованием службы Azure SignalR. К ним можно отнести некоторые из перечисленных ниже примеров:
 
-- **[Масштабирование приложений ASP.NET Core SignalR](signalr-concept-scale-aspnet-core.md)** . Интегрируйте службу Azure SignalR с приложением ASP.NET Core SignalR, чтобы масштабировать сотни тысяч подключений.
+- **[Масштабирование приложений ASP.NET Core SignalR](signalr-concept-scale-aspnet-core.md)** . Интегрируйте службу Azure SignalR с приложением ASP.NET Core SignalR, чтобы горизонтально увеличить масштаб сотни тысяч подключений.
 - **[Создание бессерверных приложений, работающих в реальном времени](signalr-concept-azure-functions.md)** . Интегрируйте службу "Функции Azure" со службой Azure SignalR, чтобы создавать бессерверные приложения, работающие в реальном времени, на таких языках, как JavaScript, C# и Java.
 - **[Отправка сообщений с сервера клиентам через REST API](https://github.com/Azure/azure-signalr/blob/dev/docs/rest-api.md)** . Служба Azure SignalR предоставляет REST API, чтобы приложения могли публиковать сообщения в клиентах, подключенных с помощью службы SignalR, на любом языке программирования с поддержкой REST.

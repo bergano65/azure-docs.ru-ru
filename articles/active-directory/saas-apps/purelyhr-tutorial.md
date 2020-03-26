@@ -17,10 +17,10 @@ ms.date: 10/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 56049e1b1253cd749a8e16061957c6b5b8786e3c
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72594532"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-purelyhr"></a>Руководство по интеграции единого входа Azure Active Directory с PurelyHR
@@ -35,9 +35,9 @@ ms.locfileid: "72594532"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка PurelyHR с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "72594532"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в PurelyHR](#configure-purelyhr-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя PurelyHR](#create-purelyhr-test-user)** требуется для создания пользователя B.Simon в PurelyHR, связанного с соответствующим пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,7 +79,7 @@ ms.locfileid: "72594532"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -116,7 +116,7 @@ ms.locfileid: "72594532"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к PurelyHR.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **PurelyHR**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -148,7 +148,7 @@ ms.locfileid: "72594532"
 
     ![Настройка единого входа](./media/purelyhr-tutorial/purelyhr-dashboard-sso-settings.png)  
 
-    a. Откройте **Сертификат (Base64)** , скачанный на портале Azure, в Блокноте и скопируйте значение сертификата. Вставьте это значение в поле **Сертификат X.509**.
+    а. Откройте **Сертификат (Base64)** , скачанный на портале Azure, в Блокноте и скопируйте значение сертификата. Вставьте это значение в поле **Сертификат X.509**.
 
     b. В поле **Idp Issuer URL** (URL-адрес издателя поставщика удостоверений) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
@@ -156,7 +156,7 @@ ms.locfileid: "72594532"
 
     d. Установите флажок **Auto-Create Users** (Автоматическое создание пользователей), чтобы включить автоматическую подготовку пользователей в PurelyHR.
 
-    д. Нажмите кнопку **Сохранить изменения**, чтобы сохранить параметры.
+    д) Нажмите кнопку **Сохранить изменения**, чтобы сохранить параметры.
 
 ### <a name="create-purelyhr-test-user"></a>Создание тестового пользователя PurelyHR
 
@@ -170,9 +170,9 @@ ms.locfileid: "72594532"
 
 2. На странице **Create New User** (Создание пользователя) выполните следующие действия.
 
-    ![user](./media/velpicsaml-tutorial/velpic_8.png)
+    ![пользователь](./media/velpicsaml-tutorial/velpic_8.png)
 
-    a. В текстовом поле **First Name** (Имя) введите имя B.
+    а. В текстовом поле **First Name** (Имя) введите имя B.
 
     b. В текстовом поле **Фамилия** введите фамилию Simon.
 
@@ -180,9 +180,9 @@ ms.locfileid: "72594532"
 
     d. В текстовом поле **Адрес электронной почты** введите адрес электронной почты учетной записи B.Simon@contoso.com.
 
-    д. Все остальные данные являются необязательными, но вы можете внести их, если сочтете нужным.
+    д) Все остальные данные являются необязательными, но вы можете внести их, если сочтете нужным.
 
-    Е. Щелкните **СОХРАНИТЬ**.
+    е) Щелкните **СОХРАНИТЬ**.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -192,9 +192,9 @@ ms.locfileid: "72594532"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

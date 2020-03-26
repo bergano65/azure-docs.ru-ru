@@ -8,10 +8,10 @@ author: cjgronlund
 ms.author: cgronlun
 ms.date: 11/04/2019
 ms.openlocfilehash: fd5697f9c325dc4ad866c333ce1b20e008ebfa24
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73606154"
 ---
 # <a name="what-are-azure-open-datasets-and-how-can-you-use-them"></a>Что представляют собой Открытые наборы данных Azure и как их использовать?
@@ -33,14 +33,14 @@ ms.locfileid: "73606154"
 
 ### <a name="weather-data"></a>Метеоданные
  
-|Выборка         | Записные книжки     | ОПИСАНИЕ                                    |
+|Dataset         | Записные книжки     | Описание                                    |
 |----------------|---------------|------------------------------------------------|
 |[База данных Integrated Surface Data (ISD) Национального управления океанических и атмосферных исследований США (NOAA)](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/) | [Записные книжки Azure](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/?tab=data-access#AzureNotebooks) <br> [Azure Databricks](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/?tab=data-access#AzureDatabricks) | Почасовые метеоданные со всего мира от NOAA с наилучшим территориальным охватом в Северной Америке, Европе, Австралии и в некоторых регионах Азии. Обновляются ежедневно. |
 |[Глобальная система прогнозирования погоды (GFS) NOAA](https://azure.microsoft.com/services/open-datasets/catalog/noaa-global-forecast-system/) | [Записные книжки Azure](https://azure.microsoft.com/services/open-datasets/catalog/noaa-global-forecast-system/?tab=data-access#AzureNotebooks) <br> [Azure Databricks](https://azure.microsoft.com/services/open-datasets/catalog/noaa-global-forecast-system/?tab=data-access#AzureDatabricks) | Данные почасовых прогнозов погоды в США за 15 дней от NOAA. Обновляются ежедневно. |
 
 ### <a name="calendar-data"></a>Данные календаря
 
-|Выборка         | Записные книжки     | ОПИСАНИЕ                                    |
+|Dataset         | Записные книжки     | Описание                                    |
 |----------------|---------------|------------------------------------------------|
 |[Государственные праздники](https://azure.microsoft.com/services/open-datasets/catalog/public-holidays/) | [Записные книжки Azure](https://azure.microsoft.com/services/open-datasets/catalog/public-holidays/?tab=data-access#AzureNotebooks) <br> [Azure Databricks](https://azure.microsoft.com/services/open-datasets/catalog/public-holidays/?tab=data-access#AzureDatabricks) | Данные о государственных праздниках в 41 стране и регионе за период с 1970 по 2099 гг. Включают код страны и сведения о том, является ли праздник оплачиваемым для большинства занятого населения. |
 
@@ -55,7 +55,7 @@ ms.locfileid: "73606154"
 
 Если вы не можете найти нужные данные, отправьте нам по электронной почте [запрос на набор данных](mailto:aod@microsoft.com?Subject=Request%20dataset%3A%20%3Creplace%20with%20dataset%20name%3E&Body=%0AYour%20name%20and%20institution%3A%20%0A%0ADataset%20name%3A%0A%20%0ADataset%20description%3A%20%0A%3Cfill%20in%20a%20brief%20description%20and%20share%20any%20web%20links%20of%20the%20dataset%3E%20%0A%0ADataset%20size%3A%20%0A%3Chow%20much%20space%20does%20the%20dataset%20need%20today%20and%20how%20much%20is%20it%20expected%20to%20grow%20each%20year%3E%20%0A%0ADataset%20file%20formats%3A%20%0A%3Ccurrent%20dataset%20file%20formats%2C%20and%20optionally%2C%20any%20formats%20that%20the%20dataset%20must%20be%20transformed%20to%20for%20easy%20access%3E%0A%0ALicense%3A%20%0A%3Cwhat%20is%20the%20license%20or%20terms%20and%20conditions%20governing%20the%20distribution%20of%20this%20dataset%3E%0A%0AUse%20cases%3A%20%0A%3CExplain%20some%20common%20use%20of%20the%20dataset.%20E.g.%20weather%20dataset%20can%20be%20useful%20in%20demand%20forecasting%20and%20predictive%20maintenance%20scenarios%3E%20%0A%0AAny%20additional%20information%20you%20want%20us%20to%20know%3A%0A) или [поделитесь собственным](mailto:aod@microsoft.com?Subject=Contribute%20dataset%3A%20%3Creplace%20with%20dataset%20name%3E&Body=%0AYour%20name%20and%20institution%3A%20%0A%0ADataset%20name%3A%0A%20%0ADataset%20description%3A%20%0A%3Cfill%20in%20a%20brief%20description%20and%20share%20any%20web%20links%20of%20the%20dataset%3E%20%0A%0ADataset%20size%3A%20%0A%3Chow%20much%20space%20does%20the%20dataset%20need%20today%20and%20how%20much%20is%20it%20expected%20to%20grow%20each%20year%3E%20%0A%0ADataset%20file%20formats%3A%20%0A%3Ccurrent%20dataset%20file%20formats%2C%20and%20optionally%2C%20any%20formats%20that%20the%20dataset%20must%20be%20transformed%20to%20for%20easy%20access%3E%0A%0ALicense%3A%20%0A%3Cwhat%20is%20the%20license%20or%20terms%20and%20conditions%20governing%20the%20distribution%20of%20this%20dataset%3E%0A%0AUse%20cases%3A%20%0A%3CExplain%20some%20common%20use%20of%20the%20dataset.%20E.g.%20weather%20dataset%20can%20be%20useful%20in%20demand%20forecasting%20and%20predictive%20maintenance%20scenarios%3E%20%0A%0AAny%20additional%20information%20you%20want%20us%20to%20know%3A%0A). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Пример записной книжки](samples.md)
 * [Руководство. по моделированию регрессии с данными о такси Нью-Йорка](/azure/machine-learning/service/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context)
 * [Пакет SDK для Python для открытых наборов данных](/python/api/azureml-opendatasets/?view=azure-ml-py)

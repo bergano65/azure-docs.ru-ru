@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.author: raynew
-ms.openlocfilehash: 91b9c71e7c735fca08f71ca37ed28734c8d634a1
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.openlocfilehash: 23fa1a2a0b035d04334c51c02411de6de70f2cad
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79079870"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79453652"
 ---
 # <a name="assess-servers-by-using-imported-data"></a>Оценка серверов по импортированным данным
 
@@ -142,7 +142,6 @@ ms.locfileid: "79079870"
 **Business owner** (Ответственный со стороны бизнеса) | нет | Ответственный со стороны бизнеса
 **Business application name** (Имя бизнес-приложения) | нет | Имя бизнес-приложения, к которому относится это приложение.
 **Расположение** | нет | Центр обработки данных, в котором находится сервер.
-**Server decommission date** (Вывод сервера из эксплуатации) | нет | Дата вывода из эксплуатации физического сервера или базового физического сервера, на котором работает виртуальный сервер.
 
 ### <a name="add-operating-systems"></a>Добавление операционных систем
 

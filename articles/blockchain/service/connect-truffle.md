@@ -5,10 +5,10 @@ ms.date: 11/20/2019
 ms.topic: quickstart
 ms.reviewer: janders
 ms.openlocfilehash: 9ea96aa32072775fe6fb9563442f5e3564d37ea5
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74455798"
 ---
 # <a name="quickstart-use-truffle-to-connect-to-azure-blockchain-service"></a>Краткое руководство. Подключение к службе "Блокчейн Azure" с помощью Truffle
@@ -52,7 +52,7 @@ ms.locfileid: "74455798"
 
 Для настройки проекта Truffle вам потребуется дополнительная информация об узле транзакций с портала Azure.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите в область участника службы "Блокчейн Azure". Выберите **Transaction nodes** (Узлы транзакций) и щелкните ссылку на узел транзакций по умолчанию.
 
     ![Выбор узла транзакций по умолчанию](./media/connect-truffle/transaction-nodes.png)
@@ -117,7 +117,7 @@ ms.locfileid: "74455798"
     .exit
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы использовали Truffle для подключения к узлу транзакции службы "Блокчейн Azure" по умолчанию и интерактивную консоль для возврата текущего номера блока блокчейн.
 

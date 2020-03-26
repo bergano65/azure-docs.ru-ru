@@ -5,14 +5,14 @@ author: tfitzmac
 ms.topic: quickstart
 ms.date: 09/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: 11d4eb396d332327addcd85ed7badd36ef8f1d10
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 5168dab7501cdb2907b3eede5877dce39e9e5c97
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647945"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79473053"
 ---
-# <a name="publish-an-azure-managed-application-definition"></a>Публикация определения для управляемого приложения Azure
+# <a name="quickstart-publish-an-azure-managed-application-definition"></a>Краткое руководство. Публикация определения для управляемого приложения Azure
 
 Это краткое руководство содержит общие сведения о работе с управляемыми приложениями. Вы добавили определение управляемого приложения во внутренний каталог для пользователей в своей организации. Чтобы упростить вступление, мы уже создали файлы для управляемого приложения. Эти файлы доступны на GitHub. Сведения о создании этих файлов см. в руководстве [Публикация управляемого приложения для внутреннего использования](publish-service-catalog-app.md).
 

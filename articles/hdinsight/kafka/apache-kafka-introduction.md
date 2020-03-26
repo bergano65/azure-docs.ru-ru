@@ -1,6 +1,6 @@
 ---
 title: Основные сведения об Apache Kafka в HDInsight — Azure
-description: Сведения об Apache Kafka в HDInsight. Предназначение, выполняемые функции, а также сведения о том, где найти примеры и информацию по началу работы.
+description: 'Данные об Apache Kafka в HDInsight: предназначение, выполняемые функции, а также сведения о том, где найти примеры и информацию по началу работы.'
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,10 +9,10 @@ ms.topic: overview
 ms.custom: hdinsightactive
 ms.date: 02/25/2020
 ms.openlocfilehash: 92f56f3b405470bc8ae0e9ebab2450ddc31b3c6a
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77672180"
 ---
 # <a name="what-is-apache-kafka-in-azure-hdinsight"></a>Общие сведения об Apache Kafka в Azure HDInsight
@@ -59,7 +59,7 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 Ниже приведены распространенные задачи и шаблоны, которые могут быть выполнены с помощью Kafka в HDInsight.
 
-|Использование |Описание |
+|Использование |Description |
 |---|---|
 |Репликация данных Apache Kafka|Kafka предоставляет программу MirrorMaker, которая производит репликацию данных между кластерами Kafka. Сведения об использовании MirrorMaker см. в статье [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](apache-kafka-mirroring.md).|
 |Модель обмена сообщениями по схеме "публикация — подписка"|Kafka предоставляет API производителя для публикации записей в разделе Kafka. При подписке на раздел используется API пользователя. Дополнительные сведения см. в статье [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).|
@@ -75,10 +75,10 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 Ниже приведены ссылки на статьи об использовании Apache Kafka в HDInsight.
 
-* [Краткое руководство. Создание Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
+* [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
 
 * [Использование Kafka c прокси-сервером REST](rest-proxy.md)
 
-* [Руководство. Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
+* [Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
 
-* [Руководство. Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)
+* [Краткое руководство. Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)

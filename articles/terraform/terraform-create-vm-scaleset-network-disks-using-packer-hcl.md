@@ -4,10 +4,10 @@ description: Terraform используется для настройки и у�
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.openlocfilehash: 92a8221d625f8b6b73343f74b85fdfcf5e578b23
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77472216"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Руководство по созданию масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform

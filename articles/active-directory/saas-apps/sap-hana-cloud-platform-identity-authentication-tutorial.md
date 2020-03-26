@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
 description: Сведения о настройке единого входа в Azure Active Directory и SAP Cloud Platform Identity Authentication.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 95be73bd125c124409585a478fa9707e7b6a2ac2
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76289073"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-cloud-platform-identity-authentication"></a>Руководство. Интеграция единого входа Azure Active Directory с приложением SAP Cloud Platform Identity Authentication
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-cloud-platform-identity-authentication"></a>Руководство по Интеграция единого входа Azure Active Directory с приложением SAP Cloud Platform Identity Authentication
 
 В этом учебнике описано, как интегрировать приложение SAP Cloud Platform Identity Authentication с Azure Active Directory (Azure AD). Интеграция приложения SAP Cloud Platform Identity Authentication с Azure AD обеспечивает следующие возможности:
 

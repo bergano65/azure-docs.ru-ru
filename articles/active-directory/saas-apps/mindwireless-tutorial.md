@@ -17,10 +17,10 @@ ms.date: 10/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ee64f14491a97c754f3e1dbbbf6e6a7ed6f93844
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72596216"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mindwireless"></a>Руководство по интеграции единого входа Azure Active Directory с mindWireless
@@ -35,9 +35,9 @@ ms.locfileid: "72596216"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка mindWireless с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72596216"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в mindWireless](#configure-mindwireless-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя mindWireless](#create-mindwireless-test-user)** требуется для того, чтобы в mindWireless существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,24 +78,24 @@ ms.locfileid: "72596216"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Настройка единого входа с помощью SAML** введите значения для следующих полей:
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.mwsmart.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.mwsmart.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.mwsmart.com/SAML/AssertionConsumerService.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.mwsmart.com/SAML/AssertionConsumerService.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов mindWireless](mailto:sdulloor@mindwireless.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение mindWireless ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/default-attributes.png)
+    ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение mindWireless ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ | Пространство имен  |  Исходный атрибут|
+    | Имя | Пространство имен  |  Исходный атрибут|
     | -------------- | --------------- | ----------------|
     | Код сотрудника | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims`| user.employeeid |
 
@@ -126,7 +126,7 @@ ms.locfileid: "72596216"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon и как предоставить такому пользователю доступ к mindWireless.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **mindWireless**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -156,9 +156,9 @@ ms.locfileid: "72596216"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

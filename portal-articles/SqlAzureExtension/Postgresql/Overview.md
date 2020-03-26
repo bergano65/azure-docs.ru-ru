@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/10/2017
 ms.author: sewatson
 ms.openlocfilehash: 6282acaf165d2f31a1a1ac525dad75ebc64a2a7c
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "62113958"
 ---
 # <a name="azure-database-for-postgresql-documentation"></a>Документация по Базе данных Azure для PostgreSQL
@@ -23,21 +23,21 @@ ms.locfileid: "62113958"
 
 Узнайте, как создать базу данных PostgreSQL с помощью следующих средств:
 
-- [портал Azure](/azure/postgresql/quickstart-create-server-database-portal)
-- [Интерфейс командной строки Azure](/azure/postgresql/quickstart-create-server-database-azure-cli)
+- [портале Azure](/azure/postgresql/quickstart-create-server-database-portal)
+- [Azure CLI](/azure/postgresql/quickstart-create-server-database-azure-cli)
 
-## <a name="step-by-step-tutorials"></a>Пошаговые руководства
+## <a name="step-by-step-tutorials"></a>Пошаговые инструкции
 
 Вы узнаете, как выполнять следующие задачи:
 
-- Проектирование базы данных: [Портал Azure](/azure/postgresql/tutorial-design-database-using-azure-portal) |  [Azure CLI](/azure/postgresql/tutorial-design-database-using-azure-cli)
+- Проектирование базы данных: [портал Azure](/azure/postgresql/tutorial-design-database-using-azure-portal) |  [Azure CLI](/azure/postgresql/tutorial-design-database-using-azure-cli)
 - [Создание веб-приложения с помощью Python и CLI](/azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json)
 
 ## <a name="samples"></a>Примеры 
 
 Найдите скрипты для выполнения типовых задач.
 
-- [Интерфейс командной строки Azure](/azure/postgresql/sample-scripts-azure-cli)
+- [Azure CLI](/azure/postgresql/sample-scripts-azure-cli)
 
 ## <a name="more"></a>Подробнее
 

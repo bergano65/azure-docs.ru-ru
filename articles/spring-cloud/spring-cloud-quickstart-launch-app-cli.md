@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 02/15/2020
 ms.author: brendm
-ms.openlocfilehash: 48d05dad45a5ff4c561f492e424b53c918998c7c
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: c05e53bd8ad8ade8c1e42729f46c99a0059c4dce
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78945457"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79470866"
 ---
 # <a name="quickstart-launch-a-java-spring-application-using-the-azure-cli"></a>Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI
 
@@ -69,6 +69,7 @@ az extension add --name spring-cloud
     ```azurecli
         az group create --location eastus --name <resource group name>
     ```
+
     Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/management/overview.md).
 
 4. Откройте окно Azure CLI и выполните приведенные ниже команды, чтобы подготавливать экземпляр Azure Spring Cloud к работе.
@@ -104,14 +105,14 @@ az spring-cloud config-server git set -n <service instance name> --uri https://g
 
 1. Создайте папку и клонируйте пример репозитория приложения в облачную учетную запись Azure.  
 
-    ```azurecli
+    ```console
         mkdir source-code
         git clone https://github.com/Azure-Samples/piggymetrics
     ```
 
 2. Перейдите в каталог и выполните сборку проекта.
 
-    ```azurecli
+    ```console
         cd piggymetrics
         mvn clean package -D skipTests
     ```
@@ -150,16 +151,21 @@ az spring-cloud app deploy -n auth-service --jar-path ./auth-service/target/auth
 ```azurecli
 az spring-cloud app update -n gateway --is-public true
 ```
+
 2. Отправьте к приложению **gateway** запрос на получение общедоступного IP-адреса, чтобы убедиться, что приложение запущено:
 
 Linux:
+
 ```azurecli
 az spring-cloud app show --name gateway | grep url
 ```
+
 Windows:
+
 ```azurecli
 az spring-cloud app show -s <service name> -g <resource group> -n gateway -o table
 ```
+
 3. Перейдите по URL-адресу, полученному с помощью предыдущей команды, чтобы запустить приложение PiggyMetrics.
     ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/launch-app.png)
 

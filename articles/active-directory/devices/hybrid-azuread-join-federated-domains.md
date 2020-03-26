@@ -12,13 +12,13 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1a61c89199c89f09b5cc0e553dbbf48655ad1b6a
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78672274"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222971"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для федеративных доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
 Подобно пользователю в вашей организации, устройство — это еще одно основное удостоверение, которое необходимо защитить. Удостоверение устройства можно использовать для защиты ресурсов в любое время и из любого расположения. Для этого разместите удостоверения своих устройств в Azure AD и управляйте ими с помощью одного из следующих методов:
 
@@ -30,8 +30,8 @@ ms.locfileid: "78672274"
 
 В федеративной среде должен быть поставщик удостоверений, поддерживающий следующие требования. Это не относится к федеративной среде, в которой используются службы федерации Active Directory (AD FS).
 
-- **Утверждение WIAORMULTIAUTHN:** Это утверждение необходимо для того, чтобы выполнить гибридное присоединение к Azure AD для устройств Windows нижнего уровня.
-- **Протокол WS-Trust:** Этот протокол необходим для проверки подлинности текущих гибридных присоединенных к Azure AD устройств в Azure AD.
+- **Утверждение WIAORMULTIAUTHN:** это утверждение требуется для гибридного присоединения к Azure AD устройств Windows нижнего уровня.
+- **Протокол WS-Trust:** этот протокол требуется для аутентификации в Azure AD устройств Windows с текущим гибридным присоединением к Azure AD.
   При использовании AD FS нужно включить следующие конечные точки WS-Trust: `/adfs/services/trust/2005/windowstransport`
    `/adfs/services/trust/13/windowstransport`
    `/adfs/services/trust/2005/usernamemixed`
@@ -50,7 +50,7 @@ ms.locfileid: "78672274"
 > * Настройка гибридного присоединения к Azure AD.
 > * Включение устройств Windows нижнего уровня
 > * Проверка регистрации
-> * Устранение неполадок
+> * Диагностика
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -106,7 +106,7 @@ ms.locfileid: "78672274"
 
 1. Запустите Azure AD Connect и выберите **Настройка**.
 
-   ![Приветствие](./media/hybrid-azuread-join-federated-domains/11.png)
+   ![Экран приветствия](./media/hybrid-azuread-join-federated-domains/11.png)
 
 1. На странице **Дополнительные задачи** выберите **Настройка параметров устройств**, а затем **Далее**.
 
@@ -142,7 +142,7 @@ ms.locfileid: "78672274"
 
 1. На странице **Готово к настройке** выберите **Настроить**.
 
-   ![Готово к конфигурации](./media/hybrid-azuread-join-federated-domains/19.png)
+   ![Готово к настройке](./media/hybrid-azuread-join-federated-domains/19.png)
 
 1. На странице **Конфигурация завершена** выберите **Выйти**.
 
@@ -200,7 +200,7 @@ ms.locfileid: "78672274"
 - [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [управлять удостоверениями устройств с помощью портала Azure](device-management-azure-portal.md).
 

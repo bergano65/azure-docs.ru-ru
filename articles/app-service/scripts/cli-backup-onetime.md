@@ -1,5 +1,5 @@
 ---
-title: 'CLI: Резервное копирование приложения'
+title: Интерфейс командной строки. Резервное копирование приложения
 description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как выполнить резервное копирование приложения.
 author: msangapu-msft
 tags: azure-service-management
@@ -8,13 +8,13 @@ ms.topic: sample
 ms.date: 12/07/2017
 ms.author: msangapu
 ms.reviewer: cephalin
-ms.custom: seodec18
-ms.openlocfilehash: ed9975d33259678defd34582e00294def7ce3467
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.custom: mvc, seodec18
+ms.openlocfilehash: fd310e81c6a86e651e27518acfdefa66980fa938
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74686838"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80059154"
 ---
 # <a name="back-up-an-app-using-cli"></a>Резервное копирование приложения с помощью CLI
 
@@ -36,7 +36,7 @@ ms.locfileid: "74686838"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) | Создание учетной записи хранения. |
@@ -47,7 +47,7 @@ ms.locfileid: "74686838"
 | [`az webapp config backup create`](/cli/azure/webapp/config/backup?view=azure-cli-latest#az-webapp-config-backup-create) | Создает резервную копию для приложения Службы приложений. |
 | [`az webapp config backup list`](/cli/azure/webapp/config/backup?view=azure-cli-latest#az-webapp-config-backup-list) | Получает список резервных копий приложения Службы приложений. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

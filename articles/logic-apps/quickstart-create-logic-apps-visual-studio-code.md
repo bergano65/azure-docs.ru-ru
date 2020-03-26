@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/25/2019
 ms.openlocfilehash: 819a60887743f39d3c2ffab3c955b2980cee2725
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74784839"
 ---
 # <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложения логики и управление ими с помощью Visual Studio Code
@@ -300,7 +300,7 @@ ms.locfileid: "74784839"
 
       Visual Studio Code повышает уровень выбранной версии до уровня текущей версии и присваивает этой версии новый номер. Ранее текущая версия отображается теперь как версия повышенного уровня.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)

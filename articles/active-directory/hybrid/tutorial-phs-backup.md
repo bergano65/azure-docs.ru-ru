@@ -13,10 +13,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3e5ad7badfa44a006fd7e71d3b0e42ee95ac698d
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "64919005"
 ---
 # <a name="tutorial--setting-up-phs-as-backup-for-ad-fs-in-azure-ad-connect"></a>Руководство по  Настройка PHS в качестве резервной копии для AD FS в Azure AD Connect
@@ -38,7 +38,7 @@ ms.locfileid: "64919005"
 ## <a name="enable-phs-in-azure-ad-connect"></a>Включение PHS для Azure AD Connect
 Теперь, когда у нас есть среда Azure AD Connect, в которой используется федерация, нужно включить синхронизацию хэшей паролей и разрешить Azure AD Connect синхронизировать хэши.
 
-Выполните следующее:
+Выполните следующие действия.
 
 1.  Дважды щелкните значок Azure AD Connect, созданный на рабочем столе.
 2.  Нажмите **Настроить**.
@@ -114,7 +114,7 @@ ms.locfileid: "64919005"
 
 Вы успешно настроили среду гибридной идентификации, которую можно использовать для тестирования и ознакомления с возможностями Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 

@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, сборник схем, apache hadoop, 
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 2281c9683583e1def034b79809829a068ef9f3e6
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74156669"
 ---
 # <a name="tutorial-configure-a-cluster-in-azure-hdinsight-using-ansible"></a>Руководство по настройке кластера в Azure HDInsight с помощью Ansible
@@ -346,7 +346,7 @@ ms.locfileid: "74156669"
 
 ## <a name="run-the-sample-playbook"></a>Выполнение примера сборника схем
 
-Чтобы проверить различные компоненты, описанные в этой статье, в этом разделе необходимо выполнить сборник схем.
+Чтобы проверить различные возможности, описанные в этой статье, здесь необходимо выполнить сборник схем.
 
 Перед выполнением сборника схем внесите следующие изменения.
 - В разделе `vars` замените заполнитель `{{ resource_group_name }}` именем вашей группы ресурсов.
@@ -381,7 +381,7 @@ ansible-playbook hdinsight.yml
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Ansible в Azure](/azure/ansible/)

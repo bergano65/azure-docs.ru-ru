@@ -14,13 +14,13 @@ ms.date: 09/30/2019
 ms.author: tomfitz
 ms.custom: mvc
 ms.openlocfilehash: b9595c6ce464cf9e4ab0baff9ef842e76f3d18a3
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75970142"
 ---
-# <a name="tutorial-learn-about-linux-virtual-machine-management-with-azure-cli"></a>Руководство. Управление виртуальными машинами Linux с помощью Azure CLI
+# <a name="tutorial-learn-about-linux-virtual-machine-management-with-azure-cli"></a>Руководство по Управление виртуальными машинами Linux с помощью Azure CLI
 
 [!INCLUDE [Resource Manager governance introduction](../../../includes/resource-manager-governance-intro.md)]
 

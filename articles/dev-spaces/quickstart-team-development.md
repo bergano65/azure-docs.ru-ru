@@ -7,10 +7,10 @@ description: В этом кратком руководстве описано, �
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
 ms.openlocfilehash: 0fe177db420913e5d68807dd803df791653c0914
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "78244941"
 ---
 # <a name="quickstart-team-development-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces

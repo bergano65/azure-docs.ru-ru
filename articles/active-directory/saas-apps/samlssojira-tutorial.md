@@ -17,10 +17,10 @@ ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 957fee48397bc0b23737157dec0e74cf6505fab5
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160132"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
@@ -39,7 +39,7 @@ ms.locfileid: "73160132"
 
 Чтобы настроить интеграцию Azure AD с SAML SSO for Jira by resolution GmbH, вам потребуется следующее:
 
-* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Azure AD. Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 * Подписка SAML SSO for Jira by resolution GmbH с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,15 +100,15 @@ ms.locfileid: "73160132"
 
 3. После этого щелкните значок **правки**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
 
     ![Информация о едином входе домена и URL-адресов приложения SAML SSO for Jira by resolution GmbH](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком службы**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -161,7 +161,7 @@ ms.locfileid: "73160132"
 
     ![Настройка единого входа](./media/samlssojira-tutorial/addon5a.png)
  
-    a. Для типа поставщика удостоверений выберите значение **Azure AD**.
+    а. Для типа поставщика удостоверений выберите значение **Azure AD**.
     
     b. Добавьте **имя** поставщика удостоверений (например, Azure AD).
     
@@ -177,7 +177,7 @@ ms.locfileid: "73160132"
 
     ![Настройка единого входа](./media/samlssojira-tutorial/addon5c.png)
 
-    a. Нажмите кнопку **Select Metadata XML File** (Выбрать XML-файл метаданных) и выберите ранее скачанный файл **XML метаданных федерации**.
+    а. Нажмите кнопку **Select Metadata XML File** (Выбрать XML-файл метаданных) и выберите ранее скачанный файл **XML метаданных федерации**.
 
     b. Нажмите кнопку **Import** (Импортировать).
      
@@ -217,7 +217,7 @@ ms.locfileid: "73160132"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **Britta Simon**.
+    а. В поле **Имя** введите **Britta Simon**.
   
     b. В поле **Имя пользователя** введите <b>BrittaSimon@contoso.com</b>.
 
@@ -229,7 +229,7 @@ ms.locfileid: "73160132"
 
 Из этого раздела вы узнаете, как добавить пользователя Britta Simon в корпоративное приложение, которое позволит ему применять единый вход.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**. 
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**. 
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -275,7 +275,7 @@ ms.locfileid: "73160132"
 
     ![Добавление сотрудника](./media/samlssojira-tutorial/user4-new.png) 
 
-    a. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя — <b>BrittaSimon@contoso.com</b>.
+    а. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя — <b>BrittaSimon@contoso.com</b>.
 
     b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя — **Britta Simon**.
 
@@ -283,7 +283,7 @@ ms.locfileid: "73160132"
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
-    д. Нажмите кнопку **Create user** (Создать пользователя), чтобы завершить процедуру.
+    д) Нажмите кнопку **Create user** (Создать пользователя), чтобы завершить процедуру.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

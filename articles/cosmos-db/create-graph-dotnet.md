@@ -9,13 +9,13 @@ ms.topic: quickstart
 ms.date: 02/21/2020
 ms.author: lbosq
 ms.openlocfilehash: f700b06e6ade0d72178777b67cb734f3120b36dc
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395465"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79214962"
 ---
-# <a name="quickstart-build-a-net-framework-or-core-application-using-the-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание .NET Framework или основного приложения с помощью учетной записи API Azure Cosmos DB Gremlin
+# <a name="quickstart-build-a-net-framework-or-core-application-using-the-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание приложения .NET Framework или Core с помощью учетной записи API Gremlin для Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -79,23 +79,23 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг является необязательным. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
+Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
 
 Приведенные ниже фрагменты кода взяты из файла Program.cs.
 
-* Задайте параметры подключения на основе созданной выше учетной записи: 
+* Задайте параметры подключения на основе учетной записи, созданной ранее: 
 
    :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="configureConnectivity":::
 
-* Команды Gremlin, которые будут выполнены, перечислены в словаре:
+* Команды Gremlin, которые необходимо выполнить, перечислены в словаре:
 
    :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="defineQueries":::
 
-* Создайте новый `GremlinServer` и `GremlinClient` объекты подключения с помощью указанных выше параметров:
+* Создайте объекты подключения `GremlinServer` и `GremlinClient`, используя параметры, приведенные выше:
 
    :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="defineClientandServerObjects":::
 
-* Выполните каждый запрос Gremlin с помощью объекта `GremlinClient` и асинхронной задачи. Вы можете читать запросы Gremlin из словаря, определенного на предыдущем шаге, и выполнять их. Позже получите результат и прочтите значения, которые форматируются в виде словаря, используя класс `JsonSerializer` из пакета Newtonsoft. JSON:
+* Выполните каждый запрос Gremlin, используя объект `GremlinClient` с асинхронной задачей. Вы можете считать запросы Gremlin из словаря, определенного на предыдущем шаге, и выполнять их. Позже вы можете получить результат и выполнить чтение значений, отформатированных как словарь, с помощью класса `JsonSerializer` из пакета Newtonsoft.json:
 
    :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="executeQueries":::
 
@@ -111,18 +111,18 @@ Azure Cosmos DB — это глобально распределенная мн
 
     ![Копирование конечной точки](./media/create-graph-dotnet/endpoint.png)
 
-   Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin** , удалите номер порта в конце, т. е. URI становится `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть `testgraphacct.gremlin.cosmosdb.azure.com`
+   Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin**, удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть как `testgraphacct.gremlin.cosmosdb.azure.com`
 
-1. Затем перейдите на вкладку **ключи** и скопируйте значение **первичного ключа** из портал Azure. 
+1. Затем перейдите на вкладку **Ключи** и скопируйте значение **Первичный ключ** c портала Azure. 
 
-1. После копирования универсального кода ресурса (URI) и ПЕРВИЧного ключа учетной записи сохраните их в новой переменной среды на локальном компьютере, на котором выполняется приложение. Чтобы задать переменную среды, откройте окно командной строки и выполните следующую команду. Обязательно замените значения < Your_Azure_Cosmos_account_URI > и < Your_Azure_Cosmos_account_PRIMARY_KEY >.
+1. После того как вы скопировали URI и первичный ключ своей учетной записи, сохраните их в новой переменной среды на локальном компьютере, на котором запущено приложение. Чтобы установить переменную среды, откройте окно командной строки и выполните следующую команду. Обязательно замените значения <Your_Azure_Cosmos_account_URI> и <Your_Azure_Cosmos_account_PRIMARY_KEY>.
 
    ```console
    setx EndpointUrl "https://<your cosmos db account name>.gremlin.cosmosdb.azure.com"
    setx PrimaryKey "<Your_Azure_Cosmos_account_PRIMARY_KEY>"
    ```
 
-1. Откройте файл *Program.CS* и обновите переменные "Database" и "Container", используя базу данных и контейнер (которые также являются именами графов), созданными выше.
+1. Откройте файл *Program.cs* и обновите переменные database и container, используя базу данных и контейнер (которые также являются именами графов), созданные выше.
 
     `private static string database = "your-database-name";` `private static string container = "your-container-or-graph-name";`
 
@@ -156,7 +156,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos DB, граф с помощью обозревателя данных, а также как запустить приложение. Теперь вы можете создавать более сложные запросы и внедрять эффективную логику обхода графа с помощью Gremlin. 
 

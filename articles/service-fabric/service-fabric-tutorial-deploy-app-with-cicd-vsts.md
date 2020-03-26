@@ -5,13 +5,13 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
 ms.openlocfilehash: 11485d22abcf0b8e1eb13d8123ff21c7fe0079f8
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75614151"
 ---
-# <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения с непрерывной интеграцией и развертыванием в кластере Service Fabric
+# <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство по Развертывание приложения с непрерывной интеграцией и развертыванием в кластере Service Fabric
 
 Это четвертое руководство из цикла. В нем описано, как настроить непрерывные интеграцию и развертывание для приложения Azure Service Fabric с помощью Azure Pipelines.  Вам потребуется приложение Service Fabric. В качестве примера используется приложение, созданное в разделе [Создание приложения .NET](service-fabric-tutorial-create-dotnet-app.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "75614151"
 > * Настройка CI/CD с помощью Azure Pipelines
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 

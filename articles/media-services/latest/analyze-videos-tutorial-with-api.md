@@ -14,13 +14,13 @@ ms.date: 02/02/2020
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: abd4a3a3a3e8494ea325e65a78eea7fb56b78f94
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76988368"
 ---
-# <a name="tutorial-analyze-videos-with-media-services-v3"></a>Руководство. Анализ видео с помощью Служб мультимедиа версии 3
+# <a name="tutorial-analyze-videos-with-media-services-v3"></a>Руководство по Анализ видео с помощью Служб мультимедиа версии 3
 
 > [!NOTE]
 > Несмотря на то что в этом учебнике используются примеры для [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet), общие шаги одинаковы для [REST API](https://docs.microsoft.com/rest/api/media/liveevents), [CLI](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest) или других поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).

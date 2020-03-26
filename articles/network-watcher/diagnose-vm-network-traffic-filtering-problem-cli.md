@@ -19,17 +19,17 @@ ms.date: 04/20/2018
 ms.author: kumud
 ms.custom: mvc
 ms.openlocfilehash: 251f72ab4f4d53fc2c836f06c78a1faa291b3a8a
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74276075"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-cli"></a>Краткое руководство. Диагностика проблемы с фильтром сетевого трафика на виртуальной машине с помощью Azure CLI
 
 При работе с этим кратким руководством вы развернете виртуальную машину и проверите доступ к IP- и URL-адресу и от IP-адреса. Затем вы определите причину проблемы с подключением и найдете способ ее устранения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -72,9 +72,9 @@ az network watcher configure \
 
 ### <a name="use-ip-flow-verify"></a>Применение проверки IP-потока
 
-При создании виртуальной машины Azure применяет к ней стандартные правила разрешений и запретов трафика. Вы можете позже переопределить эти значения по умолчанию, чтобы разрешить или запретить дополнительные типы трафика. Чтобы проверить, разрешен или запрещен трафик до определенных мест назначения от исходного IP-адреса, используйте команду [az network watcher test-ip-flow](/cli/azure/network/watcher#az-network-watcher-test-ip-flow).
+При создании виртуальной машины Azure применяет к ней стандартные правила разрешений и запретов трафика. Позднее вы можете переопределить эти значения по умолчанию, чтобы разрешить или запретить дополнительные типы трафика. Чтобы проверить, разрешен или запрещен трафик до определенных мест назначения от исходного IP-адреса, используйте команду [az network watcher test-ip-flow](/cli/azure/network/watcher#az-network-watcher-test-ip-flow).
 
-Проверьте исходящую связь от виртуальной машины до любого из IP-адресов сайта www.bing.com.
+Проверьте исходящее подключение виртуальной машины по любому из IP-адресов сайта www.bing.com.
 
 ```azurecli-interactive
 az network watcher test-ip-flow \
@@ -249,7 +249,7 @@ az network nic list-effective-nsg \
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства вы создали виртуальную машину и проверили работу фильтров входящего и исходящего трафика. Вы узнали, что правила групп безопасности сети могут разрешать или запрещать исходящий и входящий трафик виртуальной машины. Изучите дополнительные сведения о [правилах безопасности](../virtual-network/security-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) и [создании правил безопасности](../virtual-network/manage-network-security-group.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#create-a-security-rule).
 

@@ -10,11 +10,11 @@ ms.date: 06/18/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand what Data Box Disk is and how it works so I can use it to import on-premises data into Azure.
 ms.openlocfilehash: 067d818b7d23fc0b83cb1d4255bfbb8659149412
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380434"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79215732"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
 
@@ -74,7 +74,7 @@ ms.locfileid: "78380434"
 ## <a name="features-and-specifications"></a>Функции и спецификации
 
 
-| Спецификации                                          | Описание              |
+| Спецификации                                          | Description              |
 |---------------------------------------------------------|--------------------------|
 | Вес                                                  | Вес коробки — < 0,9 кг . До 5 дисков в коробке                |
 | Измерения                                              | Диск — 2,5-дюймовый SSD |            
@@ -82,7 +82,7 @@ ms.locfileid: "78380434"
 | Объем памяти на заказ                              | 40 ТБ (можно использовать примерно 35 ТБ)|
 | Емкость хранилища дисков                                   | 8 ТБ (можно использовать примерно 7 ТБ)|
 | Интерфейс данных                                          | USB   |
-| Безопасность                                                | Предварительное шифрование с помощью BitLocker и безопасное обновление <br> Защищенные ключом доступа диски <br> Постоянное шифрование данных  |
+| безопасность                                                | Предварительное шифрование с помощью BitLocker и безопасное обновление <br> Защищенные ключом доступа диски <br> Постоянное шифрование данных  |
 | Частота передачи данных                                      | до 430 Мбит/с (в зависимости от размера файла)      |
 |Управление                                               | Портал Azure |
 

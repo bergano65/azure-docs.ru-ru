@@ -1,5 +1,5 @@
 ---
-title: 'CLI: подключение приложения к базе данных SQL'
+title: Интерфейс командной строки. подключение приложения к базе данных SQL
 description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как подключить приложение к базе данных SQL.
 author: msangapu-msft
 tags: azure-service-management
@@ -8,13 +8,13 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
-ms.custom: seodec18
-ms.openlocfilehash: a0634cff6060e47ea059508f5f14abcaa679b53f
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.custom: mvc, seodec18
+ms.openlocfilehash: 74e5af6c295ffada0fbb8d1ded63177afadad285
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688467"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80058133"
 ---
 # <a name="connect-an-app-service-app-to-a-sql-database-using-cli"></a>Подключение приложения Службы приложений к базе данных SQL в интерфейсе командной строки
 
@@ -36,7 +36,7 @@ ms.locfileid: "74688467"
 
 Для создания группы ресурсов, приложения Службы приложений, Базы данных SQL и всех связанных ресурсов в этом сценарии используются приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) | Создает план службы приложений. |
@@ -46,7 +46,7 @@ ms.locfileid: "74688467"
 | [`az sql db show-connection-string`](/cli/azure/sql/db?view=azure-cli-latest#az-sql-db-show-connection-string) | Создание строки подключения к базе данных. |
 | [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) | Создает или обновляет параметр приложения Службы приложений. Параметры приложения представляются в качестве переменных среды для приложения. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

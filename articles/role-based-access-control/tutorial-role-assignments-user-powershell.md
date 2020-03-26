@@ -1,5 +1,5 @@
 ---
-title: Руководство. Предоставление пользователям доступа к ресурсам Azure с помощью RBAC и Azure PowerShell
+title: Руководство по Предоставление пользователям доступа к ресурсам Azure с помощью RBAC и Azure PowerShell
 description: Узнайте, как предоставить пользователю доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
 services: active-directory
 documentationCenter: ''
@@ -14,13 +14,13 @@ ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
 ms.openlocfilehash: f4ba56bf79d707200bf361ab4c717bb63d081953
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77138227"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство по Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 

@@ -9,10 +9,10 @@ ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 2a427eab107c70b19932b7b8ddc5a7fc531ef19a
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77615423"
 ---
 # <a name="quickstart-create-a-unity-hololens-app-that-uses-azure-spatial-anchors"></a>Краткое руководство. Создание приложения HoloLens в Unity с использованием службы "Пространственные привязки Azure"
@@ -94,7 +94,7 @@ ms.locfileid: "77615423"
 
 ### <a name="unity-20193"></a>Unity 2019.3
 
-Из-за критических изменений сейчас Unity 2019.3 не поддерживается. Используйте Unity 2019.1 или 2019.2.
+Из-за критических изменений сейчас Unity 2019.3 не поддерживается. Используйте Unity 2019.1 или 2019.2.
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 

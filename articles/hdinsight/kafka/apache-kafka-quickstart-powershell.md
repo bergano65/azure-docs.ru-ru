@@ -9,10 +9,10 @@ ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/12/2019
 ms.openlocfilehash: d14d8f38ff8a2bed01584d5c5fec56d254cede05
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73494746"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-powershell"></a>Краткое руководство. Создание кластера Apache Kafka в Azure HDInsight с помощью PowerShell
@@ -25,7 +25,7 @@ ms.locfileid: "73494746"
 
 API Kafka доступен только ресурсам, размещенным в той же виртуальной сети. В этом кратком руководстве вы напрямую обращаетесь к кластеру по протоколу SSH. Чтобы подключить к Kafka другие службы, сети или виртуальные машины, необходимо сначала создать виртуальную сеть, а затем создать в ней эти ресурсы. Дополнительные сведения см. в документе [Подключение к Kafka в HDInsight с помощью виртуальной сети Azure](apache-kafka-connect-vpn-gateway.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -174,7 +174,7 @@ Welcome to Kafka on HDInsight.
 Last login: Thu Mar 29 13:25:27 2018 from 108.252.109.241
 ```
 
-## <a id="getkafkainfo"></a>Получение сведений об узлах Apache Zookeeper и брокера
+## <a name="get-the-apache-zookeeper-and-broker-host-information"></a><a id="getkafkainfo"></a>Получение сведений об узлах Apache Zookeeper и брокера
 
 Для работы с Kafka необходимы сведения об узле *Apache Zookeeper* и узле *брокера*. Эти узлы используются Kafka API и многими другими служебными программами, поставляемыми с платформой Kafka.
 
@@ -330,7 +330,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 > 
 > При удалении кластера Kafka в HDInsight удаляются все данные, хранящиеся в Kafka.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Совместное использование Apache Spark и Apache Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)

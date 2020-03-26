@@ -17,10 +17,10 @@ ms.author: angrobe
 ms.custom: mvc
 monikerRange: vsts
 ms.openlocfilehash: 508a61d6bbb00692855e09601aed67ab3be9cc8d
-ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "78209073"
 ---
 #  <a name="quickstart-create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-projects"></a>Краткое руководство. Создание конвейера CI/CD в Azure Pipelines для Node.js с помощью Azure DevOps Projects

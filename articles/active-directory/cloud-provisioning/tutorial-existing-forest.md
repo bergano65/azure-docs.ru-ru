@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aa14b45235f2a62f05e84efafc41b899dc531d49
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74868683"
 ---
 # <a name="integrate-an-existing-forest-and-a-new-forest-with-a-single-azure-ad-tenant"></a>Интеграция существующего и нового лесов с одним клиентом Azure AD
@@ -56,7 +56,7 @@ ms.locfileid: "74868683"
 1. Войдите на сервер, присоединенный к домену.  Если вы используете учебник [по созданию базовой среды AD и Azure](tutorial-basic-ad-azure.md), это будет DC1.
 2. Войдите на портал Azure, используя учетные данные глобального администратора облака.
 3. Слева выберите **Azure Active Directory**, щелкните **Azure AD Connect** и в центре выберите **Управление подготовкой (предварительная версия)** .</br>
-![портал Azure](media/how-to-install/install6.png)</br>
+![Портал Azure](media/how-to-install/install6.png)</br>
 4. Щелкните "Скачивание агента".
 5. Запуск агента подготовки Azure AD Connect
 6. На экране-заставке **примите** условия лицензионного соглашения и щелкните **Установить**.</br>
@@ -82,7 +82,7 @@ ms.locfileid: "74868683"
 
 1. Войдите на портал Azure.
 2. Слева выберите **Azure Active Directory**, щелкните **Azure AD Connect** и в центре выберите **Управление подготовкой (предварительная версия)** .</br>
-![портал Azure](media/how-to-install/install6.png)</br>
+![Портал Azure](media/how-to-install/install6.png)</br>
 
 3.  На экране **Подготовка Azure AD (предварительная версия)** щелкните **Проверить все агенты**.
 ![Подготовка Azure AD](media/how-to-install/install7.png)</br>
@@ -131,7 +131,7 @@ ms.locfileid: "74868683"
 
 Вы успешно настроили среду гибридной идентификации, которую можно использовать для тестирования и ознакомления с возможностями Azure.
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
 - [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)

@@ -10,10 +10,10 @@ ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 12/05/2019
 ms.openlocfilehash: 11fecd875385d8ba044cbe44e2270eed11d61ce1
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77581555"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
@@ -39,7 +39,7 @@ ms.locfileid: "77581555"
 - Для подключения к конкретным источникам данных могут потребоваться дополнительные разрешения.
 - Azure Sentinel — это платная служба. Сведения о ценах на Sentinel см. на [этой странице](https://go.microsoft.com/fwlink/?linkid=2104058).
  
-## Включение Azure Sentinel <a name="enable"></a>
+## <a name="enable-azure-sentinel"></a>Включение Azure Sentinel <a name="enable"></a>
 
 1. Войдите на портал Azure. Убедитесь, что выбрана подписка, в которой создано решение Azure Sentinel.
 

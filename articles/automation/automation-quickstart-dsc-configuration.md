@@ -8,10 +8,10 @@ ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
 ms.openlocfilehash: 6c3ff10f37233294b75eceddd62c0a33f8864484
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75421646"
 ---
 # <a name="configure-a-virtual-machine-with-desired-state-configuration"></a>Настройка Desired State Configuration на виртуальной машине Linux
@@ -104,7 +104,7 @@ configuration LAMPServer {
 
 ## <a name="compile-a-configuration"></a>Компиляция конфигурации
 
-Прежде чем назначать конфигурацию DSC узлу, ее нужно скомпилировать в конфигурации узла (документ MOF). В процессе компиляции проходит проверка конфигурации и предоставляется возможность ввести значения параметров. Дополнительные сведения о компиляции конфигурации см. в статье [Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"](https://docs.microsoft.com/azure/automation/automation-dsc-compile).
+Прежде чем назначать конфигурацию DSC узлу, ее нужно скомпилировать в конфигурации узла (документ MOF). В процессе компиляции проходит проверка конфигурации и предоставляется возможность ввести значения параметров. Дополнительные сведения о компиляции конфигурации см. в статье [Compiling Configurations in Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-compile) (Компиляция конфигурации в Azure Automation DSC).
 
 Чтобы скомпилировать конфигурацию, выполните следующие действия.
 

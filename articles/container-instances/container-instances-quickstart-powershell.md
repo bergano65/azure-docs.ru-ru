@@ -9,10 +9,10 @@ ms.topic: quickstart
 ms.date: 03/21/2019
 ms.custom: seodec18, mvc
 ms.openlocfilehash: 9901b3f18973365dc9ceb8c85ff8587b6c2ea894
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74533609"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-azure-powershell"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью Azure PowerShell
@@ -23,7 +23,7 @@ ms.locfileid: "74533609"
 
 ![Приложение, развернутое в службе "Экземпляры контейнеров Azure" (просмотр в браузере)][qs-powershell-01]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -97,7 +97,7 @@ Events                   : {}
 Remove-AzContainerGroup -ResourceGroupName myResourceGroup -Name mycontainer
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства вы создали экземпляр контейнера Azure из образа, размещенного в общедоступном реестре Docker Hub. Если вы хотите создать образ контейнера и развернуть его через частный реестр контейнеров Azure, перейдите к руководству по использованию службы "Экземпляры контейнеров Azure".
 

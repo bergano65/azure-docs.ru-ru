@@ -17,10 +17,10 @@ ms.date: 08/28/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5fb462905d1f8700214a0c4fc0c2d0bcb3e70a0f
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "70163515"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-grovo"></a>Руководство по интеграции единого входа Azure Active Directory с Grovo
@@ -35,9 +35,9 @@ ms.locfileid: "70163515"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Grovo с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "70163515"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Grovo](#configure-grovo-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя приложения Grovo](#create-grovo-test-user)** требуется для того, чтобы в Grovo существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,13 +79,13 @@ ms.locfileid: "70163515"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.grovo.com/sso/saml2/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.grovo.com/sso/saml2/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.grovo.com/sso/saml2/saml-assertion`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.grovo.com/sso/saml2/saml-assertion`.
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 
@@ -122,7 +122,7 @@ ms.locfileid: "70163515"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к Grovo.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Grovo**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -152,7 +152,7 @@ ms.locfileid: "70163515"
 
     ![Конфигурация Grovo](./media/grovo-tutorial/tutorial_grovo_saml.png)
 
-    a. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    а. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     b. В текстовое поле **Single sign-on service endpoint** (Конечная точка службы единого входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -160,7 +160,7 @@ ms.locfileid: "70163515"
     
     d. Откройте в Блокноте **сертификат в кодировке Base64**, загруженный с портала Azure, и вставьте его в текстовое поле **Открытый ключ**.
 
-    д. Щелкните **Далее**.
+    д) Щелкните **Далее**.
 
 ### <a name="create-grovo-test-user"></a>Создание тестового пользователя Grovo
 
@@ -177,9 +177,9 @@ ms.locfileid: "70163515"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

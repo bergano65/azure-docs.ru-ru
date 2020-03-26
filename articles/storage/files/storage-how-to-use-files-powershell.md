@@ -8,16 +8,16 @@ ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: c419c2127b1c5fe3aaa60c6e828ff0c5a6676c07
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77598551"
 ---
-# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
+# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
 В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

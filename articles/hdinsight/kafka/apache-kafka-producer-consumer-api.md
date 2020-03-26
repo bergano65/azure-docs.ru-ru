@@ -1,5 +1,5 @@
 ---
-title: Руководство. API производителя и потребителя Apache Kafka в Azure HDInsight
+title: Руководство по API производителя и потребителя Apache Kafka в Azure HDInsight
 description: Узнайте, как использовать API производителя и потребителя Apache Kafka для Kafka в HDInsight. В этом руководстве вы узнаете, как использовать эти API с Kafka в HDInsight из приложения Java.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,14 +8,14 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 10/08/2019
-ms.openlocfilehash: 102523316aaa59803fb9a6957457fc7bd4f6ce4f
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 5a7d4d1917f65cd3d836db83600937a3e3d89de6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77186820"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223601"
 ---
-# <a name="tutorial-use-the-apache-kafka-producer-and-consumer-apis"></a>Руководство. Использование API производителя и потребителя Apache Kafka
+# <a name="tutorial-use-the-apache-kafka-producer-and-consumer-apis"></a>Руководство по Использование API производителя и потребителя Apache Kafka
 
 Узнайте, как использовать API производителя и потребителя Apache Kafka для Kafka в HDInsight.
 
@@ -133,7 +133,7 @@ consumer = new KafkaConsumer<>(properties);
     scp ./target/kafka-producer-consumer-1.0-SNAPSHOT.jar sshuser@CLUSTERNAME-ssh.azurehdinsight.net:kafka-producer-consumer.jar
     ```
 
-## <a id="run"></a>Выполнение примера
+## <a name="run-the-example"></a><a id="run"></a>Выполнение примера
 
 1. Замените `sshuser` именем пользователя SSH для кластера, а `CLUSTERNAME` — именем кластера. Откройте SSH-подключение к кластеру, выполнив следующую команду. При появлении запроса введите пароль для учетной записи пользователя SSH.
 
@@ -218,5 +218,5 @@ tmux new-session 'java -jar kafka-producer-consumer.jar consumer myTest $KAFKABR
 
 Из этого документа вы узнали, как использовать API производителя и потребителя Apache Kafka для Kafka в HDInsight. Дополнительные сведения о работе с Kafka см. в следующих материалах.
 
-> [!div class="nextstepaction"]
-> [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)
+* [Использование прокси-сервера REST для Kafka](rest-proxy.md)
+* [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)

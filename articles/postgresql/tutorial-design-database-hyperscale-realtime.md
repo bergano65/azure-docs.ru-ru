@@ -1,5 +1,5 @@
 ---
-title: Руководство. Проектирование панели мониторинга для отображения данных в реальном времени — Гипермасштабирование (Citus) — База данных Azure для PostgreSQL
+title: Руководство по Проектирование панели мониторинга для отображения данных в реальном времени — Гипермасштабирование (Citus) — База данных Azure для PostgreSQL
 description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL.
 author: jonels-msft
 ms.author: jonels
@@ -9,13 +9,13 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 05/14/2019
 ms.openlocfilehash: f4eeb646de8b68c2c8d30586d0c75cece5317e40
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76716329"
 ---
-# <a name="tutorial-design-a-real-time-analytics-dashboard-by-using-azure-database-for-postgresql--hyperscale-citus"></a>Руководство. проектированию панели мониторинга для отображения данных в реальном времени с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
+# <a name="tutorial-design-a-real-time-analytics-dashboard-by-using-azure-database-for-postgresql--hyperscale-citus"></a>Руководство по проектированию панели мониторинга для отображения данных в реальном времени с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
 
 В этом учебнике используется решение "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL, чтобы продемонстрировать следующее:
 

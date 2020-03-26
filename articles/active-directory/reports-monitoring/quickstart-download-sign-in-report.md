@@ -3,7 +3,7 @@ title: Краткое руководство по загрузке отчета 
 description: Узнайте, как загрузить отчет по входу в систему с помощью портала Azure
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 9131f208-1f90-4cc1-9c29-085cacd69317
@@ -14,28 +14,28 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cbd71696c3508a464b1343d552cba4a3391066f
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 86bc72f69903134afa3750ad6b72486a713b6cc0
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "68989675"
 ---
-# <a name="quickstart-download-a-sign-in-report-using-the-azure-portal"></a>Краткое руководство. Загрузка отчета по входу в систему с помощью портала Azure
+# <a name="quickstart-download-a-sign-in-report-using-the-azure-portal"></a>Краткое руководство. Загрузка отчета по входу в систему с помощью портала Azure | Документация Майкрософт
 
 Из этого краткого руководства вы узнаете, как загрузить данные о входах своего клиента за последние 24 часа. С портала Azure можно скачать до 250 000 записей. Записи отсортированы по убыванию даты и времени по умолчанию, и вы получите 250 000 последних записей. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Вам необходимы:
 
 * клиент Azure Active Directory с лицензией уровня Premium для просмотра отчета о действиях входа; Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). Обратите внимание, если до обновления данные о действиях отсутствовали, данные отобразятся в отчетах через несколько дней после обновления до лицензии Premium.
 * пользователь с ролью **администратора безопасности**, **читателя сведений о безопасности**, **читателя отчетов** или **глобального администратора** для этого клиента; а также любой пользователь клиента, который имеет доступ к своим собственным данным для входа в систему.
 
-## <a name="quickstart-download-a-sign-in-report"></a>Краткое руководство. Скачивание отчета об операциях входа в систему
+## <a name="quickstart-download-a-sign-in-report"></a>Краткое руководство. Загрузка отчета по входу в систему
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Azure Active Directory** в области навигации слева и с помощью **переключателя** выберите свой каталог Active Directory.
@@ -45,7 +45,7 @@ ms.locfileid: "68989675"
 
 ![Отчеты](./media/quickstart-download-sign-in-report/download-sign-ins.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отчеты о действиях входа на портале Azure Active Directory](concept-sign-ins.md)
 * [Хранение отчетов Azure Active Directory](reference-reports-data-retention.md)

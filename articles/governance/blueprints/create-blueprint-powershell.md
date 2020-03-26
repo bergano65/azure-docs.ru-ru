@@ -4,19 +4,19 @@ description: В этом кратком руководстве вы создад
 ms.date: 11/21/2019
 ms.topic: quickstart
 ms.openlocfilehash: 8b418fa2b5244c42b8597bbbe7ed4773133d03a8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75436638"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-powershell"></a>Краткое руководство. Определение и назначение схемы Azure с помощью PowerShell
 
 Зная, как создавать и присваивать схемы, вы сможете определять распространенные шаблоны для разработки многоразовых и быстро развертываемых конфигураций, основанных на шаблонах Resource Manager, политике, правилах безопасности и других элементах. В этом руководстве вы научитесь использовать службу Azure Blueprint для выполнения некоторых общих задач, связанных с созданием, публикацией и назначением схемы в вашей организации, таких как:
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
 
 Выполните инструкции из [этой статьи](./how-to/manage-assignments-ps.md#add-the-azblueprint-module), чтобы установить модуль **Az.Blueprint** из коллекции PowerShell и проверить его работу.
 

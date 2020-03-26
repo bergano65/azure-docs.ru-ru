@@ -9,10 +9,10 @@ ms.author: gopalv
 ms.topic: quickstart
 ms.date: 09/13/2019
 ms.openlocfilehash: f3ff9bd64f54d8f83fd1889078e8a4c01827d135
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77525895"
 ---
 # <a name="quickstart-set-up-a-geo-artificial-intelligence-virtual-machine-on-azure"></a>Краткое руководство. Настройка виртуальной машины для обработки геоданных средствами искусственного интеллекта в Azure 

@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
 ms.openlocfilehash: 482401b75cadf44e2cef03cced8dd216d0980524
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74969587"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-an-azure-resource-manager-template"></a>Краткое руководство. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" c помощью шаблона Azure Resource Manager
@@ -22,7 +22,7 @@ ms.locfileid: "74969587"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Для этого краткого руководства требуется запустить Azure CLI локально. Требуется Azure CLI версии 2.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить интерфейс командной строки, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 
@@ -341,7 +341,7 @@ az group delete --name {your resource group name}
 
 Группы ресурсов и отдельные ресурсы также можно удалять с помощью портала Azure, PowerShell, REST API и поддерживаемых пакетов SDK платформ, опубликованных для Azure Resource Manager или Службы подготовки устройств к добавлению в Центр Интернета вещей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы развернули центр Интернета вещей и экземпляр службы подготовки устройств, а затем связали эти два ресурса. Чтобы узнать, как подготовить виртуальное устройство, см. краткое руководство по созданию имитированного устройства.
 

@@ -14,10 +14,10 @@ ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 96d212df51a58125e3b959a18f5cf2ac9d391d30
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74422374"
 ---
 # <a name="restore-a-deleted-office-365-group-in-azure-active-directory"></a>Восстановление удаленной группы Office 365 в Azure Active Directory
@@ -92,7 +92,7 @@ ms.locfileid: "74422374"
 - Станут доступны все сайты SharePoint и их содержимое.
 - Группа станет доступна из любой конечной точки Exchange и из других рабочих нагрузок Office 365, которые поддерживают группы Office 365.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих статьях содержатся дополнительные сведения о группах Azure Active Directory.
 

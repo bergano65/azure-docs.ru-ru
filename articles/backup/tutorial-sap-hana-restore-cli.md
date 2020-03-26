@@ -4,13 +4,13 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.openlocfilehash: 6dbe0c4382b648506d853feb281c70a8e8401595
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75470409"
 ---
-# <a name="tutorial-restore-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство. Восстановление баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
+# <a name="tutorial-restore-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Восстановление баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этой документации содержатся сведения о восстановлении базы данных SAP HANA из резервной копии на виртуальной машине Azure с помощью Azure CLI. Эти действия можно также выполнить с помощью [портала Azure](https://docs.microsoft.com/azure/backup/sap-hana-db-restore).
 

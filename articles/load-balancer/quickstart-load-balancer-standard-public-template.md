@@ -16,10 +16,10 @@ ms.date: 02/26/2020
 ms.author: allensu
 ms.custom: mvc,subject-armqs
 ms.openlocfilehash: 1f681a9a8d8547589873cff055d9f59973c27355
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "78295791"
 ---
 # <a name="quickstart-create-a-load-balancer-to-load-balance-vms-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание Load Balancer с помощью шаблона Azure Resource Manager для распределения нагрузки между виртуальными машинами

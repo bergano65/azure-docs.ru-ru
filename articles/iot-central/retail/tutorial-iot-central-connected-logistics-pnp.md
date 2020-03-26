@@ -8,13 +8,13 @@ ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
 ms.openlocfilehash: d7050cfdae2c726a3a5bd44b4399792a400572a3
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77025526"
 ---
-# <a name="tutorial-deploy-and-walk-through-a-connected-logistics-application-template"></a>Руководство. развертыванию и использованию шаблона приложения интеллектуальной логистики
+# <a name="tutorial-deploy-and-walk-through-a-connected-logistics-application-template"></a>Руководство по развертыванию и использованию шаблона приложения интеллектуальной логистики
 
 
 

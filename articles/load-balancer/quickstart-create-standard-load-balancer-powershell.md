@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/27/2020
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 0cd2bb54bb436beaa933195b88bc6f13a1b23e6f
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: f169d7694199e496e472a6c32312cf6782270378
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77470451"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80247220"
 ---
 # <a name="quickstart-create-a-load-balancer-using-azure-powershell"></a>Краткое руководство. Создание Load Balancer с помощью Azure PowerShell
 
@@ -64,11 +64,11 @@ $publicIp = New-AzPublicIpAddress `
  -Name 'myPublicIP' `
  -Location $location `
  -AllocationMethod static `
- -SKU Standard
+ -SKU Standard `
  -zone 1
 ```
 
-Для создания базового общедоступного IP-адреса используйте ```-SKU Basic```. Базовые общедоступные IP-адреса несовместимы с подсистемой балансировки нагрузки ценовой категории **Стандартный**. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать ценовую категорию **Стандартный**.
+Для создания базового общедоступного IP-адреса используйте ```-SKU Basic```. Общедоступные IP-адреса ценовой категории "Базовый" несовместимы с подсистемой балансировки нагрузки ценовой категории **Стандартный**. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать ценовую категорию **Стандартный**.
 
 > [!IMPORTANT]
 > Далее в этом кратком руководстве предполагается, что вы выбрали SKU ценовой категории **Стандартный**, как описано выше.

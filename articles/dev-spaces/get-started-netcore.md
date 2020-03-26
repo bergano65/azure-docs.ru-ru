@@ -5,12 +5,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 306e1c7a43ddd10faa0a537d567257fe95336c23
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: d4078113f93159ef981a78a9917ed65bd03a304b
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78942504"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80240552"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и .NET Core с Azure Dev Spaces
 
@@ -106,7 +106,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-key
 * В [диаграмме Helm](https://docs.helm.sh) в разделе `./charts/webfrontend` описано, как развернуть контейнер в Kubernetes.
 
 > [!TIP]
-> Azure Dev Spaces использует [Dockerfile и диаграмму Helm](how-dev-spaces-works.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
+> Azure Dev Spaces использует [Dockerfile и диаграмму Helm](how-dev-spaces-works-prep.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
 
 Сейчас изучать все содержимое этих файлов не требуется. Однако стоит отметить, что **те же ресурсы Kubernetes и Docker конфигурации как кода, могут использоваться для разработки и производства, обеспечивая тем самым лучшую согласованность в разных средах.**
  

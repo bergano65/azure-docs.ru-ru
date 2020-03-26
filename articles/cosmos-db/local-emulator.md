@@ -7,11 +7,11 @@ author: markjbrown
 ms.author: mjbrown
 ms.date: 01/31/2020
 ms.openlocfilehash: 287933de6403d680c5aa5b6c78df49abe5f2ac56
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77591376"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222131"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -227,7 +227,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 При подключении к эмулятору с помощью пакетов SDK для Python и Node.js проверка SSL отключена.
 
-## <a id="command-line"></a>Справочник по программе командной строки
+## <a name="command-line-tool-reference"></a><a id="command-line"></a>Справочник по программе командной строки
 С помощью командной строки из папки установки можно запускать и останавливать эмулятор, настраивать параметры и выполнять другие операции.
 
 ### <a name="command-line-syntax"></a>Синтаксис для командной строки
@@ -276,7 +276,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 | Согласованность | Определяет уровень согласованности по умолчанию для учетной записи. | Microsoft.Azure.Cosmos.Emulator.exe /Consistency=\<consistency\> | \<consistency:\> значение должно быть одного из следующих [уровней согласованности](consistency-levels.md): Session, Strong, Eventual или BoundedStaleness. По умолчанию используется значение Session. |
 | ? | Показывает справочные сообщения.| | |
 
-## <a id="set-partitioncount"></a>Изменение количества контейнеров
+## <a name="change-the-number-of-containers"></a><a id="set-partitioncount"></a>Изменение количества контейнеров
 
 По умолчанию можно создать до 25 контейнеров фиксированного размера (только пакеты SDK для Azure Cosmos DB) или 5 контейнеров неограниченного размера (эмулятор Azure Cosmos). Изменив значение **PartitionCount**, вы сможете создать до 250 контейнеров фиксированного размера или 50 контейнеров неограниченного размера либо любое их сочетание в пределах указанных ограничений (где один контейнер неограниченного размера приравнивается к 5 контейнерам фиксированного размера). Но мы не рекомендуем настраивать для эмулятора запуск более 200 контейнеров фиксированного размера. Дополнительное количество создаваемых ими операций ввода-вывода может привести к непредсказуемым превышениям времени ожидания при использовании API такой конечной точки.
 
@@ -421,7 +421,7 @@ cd $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount
 
 Если у вас есть клиентское приложение .NET, работающее в контейнере docker для Linux, и вы используете эмулятор Cosmos Azure на хост-компьютере, для импорта сертификата в контейнер docker в Linux используйте следующий раздел для Linux.
 
-## Запуск на компьютере Mac или Linux<a id="mac"></a>
+## <a name="running-on-mac-or-linux"></a>Запуск на компьютере Mac или Linux<a id="mac"></a>
 
 В настоящее время эмулятор Cosmos можно запустить только на компьютере с Windows. Пользователи компьютеров Mac или Linux могут запускать эмулятор на виртуальной машине Windows, на которой размещен гипервизор, такой как Parallels или VirtualBox. Ниже приведены шаги по реализации.
 
@@ -505,7 +505,7 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
 
 - Если во время работы эмулятора компьютер переходит в ждущий режим или запускает какие-либо обновления операционной системы, может появиться сообщение **Service is currently unavailable** (Служба сейчас недоступна). Сбросьте данные эмулятора, щелкнув правой кнопкой мыши значок, который отображается в области уведомлений Windows, и выбрав действие **Сбросить данные**.
 
-### <a id="trace-files"></a>Сбор файлов трассировки
+### <a name="collect-trace-files"></a><a id="trace-files"></a>Сбор файлов трассировки
 
 Для сбора отладочных трассировок выполните следующие команды в командной строке с правами администратора.
 
@@ -518,7 +518,7 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
 7. Перейдите к `%ProgramFiles%\Azure Cosmos DB Emulator` и найдите файл docdbemulator_000001.etl.
 8. Создайте запрос в службу поддержки на [портале Azure](https://portal.azure.com) и добавьте ETL-файл вместе с действиями по воспроизведению.
 
-### <a id="uninstall"></a>Удаление локального эмулятора
+### <a name="uninstall-the-local-emulator"></a><a id="uninstall"></a>Удаление локального эмулятора
 
 1. Выйдите из всех открытых экземпляров локального эмулятора, щелкнув правой кнопкой мыши значок эмулятора Azure Cosmos в области уведомлений и выбрав "Выйти". Выход из всех экземпляров может занять около минуты.
 2. Введите в поле поиска Windows **Приложения и возможности** и выберите команду **Apps & features (System settings)** (Приложения и возможности (системные параметры)).

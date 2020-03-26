@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: kirankk
 ms.openlocfilehash: 2681b2199f321f695bc621ed5580319a5e907b34
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78274026"
 ---
 # <a name="tutorial-build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Руководство по Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
@@ -58,7 +58,7 @@ ms.locfileid: "78274026"
 
 [!INCLUDE [create-dbaccount-preview](../../includes/cosmos-db-create-dbaccount.md)]
 
-## <a id="SetupVS"></a>Шаг 2. Настройка проекта Visual Studio
+## <a name="step-2-set-up-your-visual-studio-project"></a><a id="SetupVS"></a>Шаг 2. Настройка проекта Visual Studio
 
 1. Откройте Visual Studio и выберите **Создать проект**.
 1. В окне **Создание проекта** выберите **Консольное приложение (.NET Framework)** для C# и нажмите кнопку **Далее**.
@@ -75,7 +75,7 @@ ms.locfileid: "78274026"
 
 Отлично! Теперь, когда мы завершили настройку, начнем писать код. Готовый проект, создаваемый в рамках этого руководства, вы найдете на странице [Developing a .NET console app using Azure Cosmos DB](https://github.com/Azure-Samples/cosmos-dotnet-getting-started) (Разработка консольного приложения .NET с помощью Azure Cosmos DB).
 
-## <a id="Connect"></a>Шаг 3. Подключение к учетной записи Azure Cosmos DB
+## <a name="step-3-connect-to-an-azure-cosmos-db-account"></a><a id="Connect"></a>Шаг 3. Подключение к учетной записи Azure Cosmos DB
 
 1. Замените ссылки в начале приложения C# в файле *Program.cs* на указанные ниже:
 
@@ -270,7 +270,7 @@ ms.locfileid: "78274026"
 
 Поздравляем! Вы успешно создали базу данных Azure Cosmos.  
 
-## <a id="CreateColl"></a>Шаг 5. Создание контейнера
+## <a name="step-5-create-a-container"></a><a id="CreateColl"></a>Шаг 5. Создание контейнера
 
 > [!WARNING]
 > С помощью метода `CreateContainerIfNotExistsAsync` создается контейнер. Это влечет за собой необходимость оплаты. Дополнительные сведения см. на нашей [странице цен](https://azure.microsoft.com/pricing/details/cosmos-db/).
@@ -301,7 +301,7 @@ ms.locfileid: "78274026"
 
 Поздравляем! Вы успешно создали контейнер Azure Cosmos.  
 
-## <a id="CreateDoc"></a>Шаг 6. Добавление элементов в контейнер
+## <a name="step-6-add-items-to-the-container"></a><a id="CreateDoc"></a>Шаг 6. Добавление элементов в контейнер
 
 Элемент можно создать с помощью метода [**CreateItemAsync**](/dotnet/api/microsoft.azure.cosmos.container.createitemasync?view=azure-dotnet#Microsoft_Azure_Cosmos_Container_CreateItemAsync__1___0_System_Nullable_Microsoft_Azure_Cosmos_PartitionKey__Microsoft_Azure_Cosmos_ItemRequestOptions_System_Threading_CancellationToken_) из класса `CosmosContainer`. При использовании API SQL все элементы проецируются как документы с произвольным содержимым JSON, которое определяет пользователь. Теперь можно вставить элемент в ваш контейнер Azure Cosmos.
 
@@ -342,7 +342,7 @@ ms.locfileid: "78274026"
 
 Поздравляем! Вы успешно создали два элемента Azure Cosmos.  
 
-## <a id="Query"></a>Шаг 7. Запрашивание ресурсов Azure Cosmos DB
+## <a name="step-7-query-azure-cosmos-db-resources"></a><a id="Query"></a>Шаг 7. Запрашивание ресурсов Azure Cosmos DB
 
 Azure Cosmos DB поддерживает полнофункциональные запросы к документам JSON, хранящимся в каждом контейнере. Дополнительные сведения см. в статье о [начале работы с запросами SQL](sql-api-sql-query.md). В следующем примере кода показано, как выполнить запрос к элементам, вставленным на предыдущем шаге.
 
@@ -370,7 +370,7 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 Поздравляем! Вы успешно отправили запрос в контейнер Azure Cosmos.
 
-## <a id="ReplaceItem"></a>Шаг 8. Замена элемента JSON
+## <a name="step-8-replace-a-json-item"></a><a id="ReplaceItem"></a>Шаг 8. Замена элемента JSON
 
 Теперь мы будем обновлять элемент в Azure Cosmos DB. Мы изменим свойство `IsRegistered` элемента `Family` и параметр `Grade` одного из его дочерних элементов.
 
@@ -399,7 +399,7 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 Поздравляем! Вы успешно заменили элемент Azure Cosmos.
 
-## <a id="DeleteDocument"></a>Шаг 9. Удаление элемента
+## <a name="step-9-delete-item"></a><a id="DeleteDocument"></a>Шаг 9. Удаление элемента
 
 Теперь мы будем удалять элемент из Azure Cosmos DB.
 
@@ -429,7 +429,7 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 Поздравляем! Вы успешно удалили элемент Azure Cosmos.
 
-## <a id="DeleteDatabase"></a>Шаг 10. Удаление базы данных
+## <a name="step-10-delete-the-database"></a><a id="DeleteDatabase"></a>Шаг 10. Удаление базы данных
 
 Теперь мы удалим базу данных. При удалении созданной базы данных удаляются и все ее дочерние ресурсы. К таким ресурсам относятся контейнеры, элементы, а также хранимые процедуры, определяемые пользователем функции и триггеры. Мы также избавимся от экземпляра `CosmosClient`.
 
@@ -445,7 +445,7 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 Поздравляем! Вы успешно удалили базу данных Azure Cosmos.
 
-## <a id="Run"></a>Шаг 11. Запуск консольного приложения C#
+## <a name="step-11-run-your-c-console-application-all-together"></a><a id="Run"></a>Шаг 11. Запуск консольного приложения C#
 
 Чтобы создать приложение в режиме отладки, откройте Visual Studio и нажмите клавишу F5.
 
@@ -478,7 +478,7 @@ End of demo, press any key to exit.
 
 Поздравляем! Вы завершили работу с этим руководством, и теперь у вас есть работающее консольное приложение C#.
 
-## <a id="GetSolution"></a>Получение готового решения для этого руководства
+## <a name="get-the-complete-tutorial-solution"></a><a id="GetSolution"></a>Получение готового решения для этого руководства
 
 Если у вас нет времени на выполнение шагов из этого руководства или вы хотите просто скачать примеры кода, вы можете это сделать.
 

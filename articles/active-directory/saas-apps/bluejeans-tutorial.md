@@ -17,10 +17,10 @@ ms.date: 10/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfc38f63c5b6361122c236543320b91d22faa70a
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72595050"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-bluejeans-for-azure-ad"></a>Руководство по интеграции единого входа Azure Active Directory с BlueJeans для Azure AD
@@ -35,9 +35,9 @@ ms.locfileid: "72595050"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка BlueJeans для Azure AD с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -74,7 +74,7 @@ ms.locfileid: "72595050"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в BlueJeans для Azure AD](#configure-bluejeans-for-azure-ad-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя BlueJeans для Azure AD](#create-bluejeans-for-azure-ad-test-user)** нужно для того, чтобы в BlueJeans для Azure AD существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -84,7 +84,7 @@ ms.locfileid: "72595050"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -117,7 +117,7 @@ ms.locfileid: "72595050"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к BlueJeans для Azure AD.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **BlueJeans для Azure AD**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -137,13 +137,13 @@ ms.locfileid: "72595050"
 
 2. Последовательно щелкните **ADMIN \> GROUP SETTINGS \> SECURITY** (Администратор > Параметры группы > Безопасность).
 
-    ![Администратор](./media/bluejeans-tutorial/ic785868.png "Администратор")
+    ![Администратор](./media/bluejeans-tutorial/ic785868.png "Административный")
 
 3. В разделе **SECURITY** (Безопасность) выполните следующие действия:
 
     ![Единый вход SAML](./media/bluejeans-tutorial/ic785869.png "SAML Single Sign On")
 
-    a. Выберите параметр **SAML Single Sign On**(Единый вход SAML).
+    а. Выберите параметр **SAML Single Sign On**(Единый вход SAML).
 
     b. Установите флажок **Enable automatic provisioning**(Включить автоматическую подготовку).
 
@@ -151,7 +151,7 @@ ms.locfileid: "72595050"
 
     ![Путь к сертификату](./media/bluejeans-tutorial/ic785870.png "Путь к сертификату")
 
-    a. Щелкните **Choose a File** (Выбрать файл), чтобы отправить сертификат в кодировке Base64, скачанный с портала Azure.
+    а. Щелкните **Choose a File** (Выбрать файл), чтобы отправить сертификат в кодировке Base64, скачанный с портала Azure.
 
     b. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -161,9 +161,9 @@ ms.locfileid: "72595050"
 
 5. После этого выполните следующие действия.
 
-    ![Save Changes](./media/bluejeans-tutorial/ic785874.png "Сохранить изменения")
+    ![Сохранить изменения](./media/bluejeans-tutorial/ic785874.png "Сохранить изменения")
 
-    a. В текстовое поле **User Id** (Идентификатор пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    а. В текстовое поле **User Id** (Идентификатор пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     b. В текстовое поле **Email** (Электронная почта) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
@@ -179,7 +179,7 @@ ms.locfileid: "72595050"
 
 2. Последовательно выберите пункты **ADMIN \> MANAGE USERS \> ADD USER** (Администратор > Управление пользователями > Добавить пользователя).
 
-    ![Администратор](./media/bluejeans-tutorial/ic785877.png "Администратор")
+    ![Администратор](./media/bluejeans-tutorial/ic785877.png "Административный")
 
     > [!IMPORTANT]
     > Вкладка **ADD USER** (Добавить пользователя) доступна, только если на вкладке **SECURITY** (Безопасность) снят флажок **Enable automatic provisioning** (Включить автоматическую подготовку).
@@ -188,7 +188,7 @@ ms.locfileid: "72595050"
 
     ![Добавление пользователя](./media/bluejeans-tutorial/ic785886.png "Добавить пользователя")
 
-    a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **B**.
+    а. В текстовое поле **First Name** (Имя) введите имя пользователя, например **B**.
 
     b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -196,9 +196,9 @@ ms.locfileid: "72595050"
 
     d. Введите пароль в поле **Create a Password** (Создать пароль).
 
-    д. В текстовое поле **Company** (Компания) введите название компании.
+    д) В текстовое поле **Company** (Компания) введите название компании.
 
-    Е. В текстовое поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например `b.simon\@contoso.com`.
+    е) В текстовое поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например `b.simon\@contoso.com`.
 
     ж. В текстовом поле **Create a BlueJeans for Azure AD Meeting ID** (Создать идентификатор собрания BlueJeans для Azure AD) введите идентификатор собрания.
 
@@ -208,7 +208,7 @@ ms.locfileid: "72595050"
 
     ![Добавление пользователя](./media/bluejeans-tutorial/ic785887.png "Добавить пользователя")
 
-    Дж. Нажмите кнопку **Add user** (Добавить пользователя).
+    К. Нажмите кнопку **Add user** (Добавить пользователя).
 
 > [!NOTE]
 > Вы можете использовать для создания учетной записи пользователя BlueJeans для Azure AD любые другие средства или API, предоставленные BlueJeans для Azure AD для подготовки учетных записей пользователей AAD.
@@ -221,9 +221,9 @@ ms.locfileid: "72595050"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

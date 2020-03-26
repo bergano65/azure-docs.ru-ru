@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
 ms.openlocfilehash: 7ba921656d0dad059b1d15f443bcefeff03ade50
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75977381"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
@@ -40,9 +40,9 @@ ms.locfileid: "75977381"
 
 В этом руководстве используется пакет SDK для .NET. Для взаимодействия с фабрикой данных Azure можно использовать другие механизмы. Краткие руководства по Фабрике данных см. в [5-минутных руководствах по началу работы](/azure/data-factory/quickstart-create-data-factory-portal).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись хранения Azure. В этом руководстве в качестве источника будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 * Обозреватель хранилищ Azure Сведения об установке этого инструмента см. раздел [Обозреватель службы хранилища Azure](https://storageexplorer.com/).
@@ -66,7 +66,7 @@ ms.locfileid: "75977381"
 1. Откройте обозреватель службы хранилища Azure. Разверните учетную запись хранения. Щелкните правой кнопкой мыши элемент **Blob Containers** (Контейнеры больших двоичных объектов) и выберите **Create Blob Container** (Создать контейнер BLOB-объектов).
 1. Присвойте новому контейнеру имя *adfv2branch* и выберите **Передать**, чтобы добавить файл *input. txt* в контейнер.
 
-## Создание проекта Visual Studio<a name="create-visual-studio-project"></a>
+## <a name="create-visual-studio-project"></a>Создание проекта Visual Studio<a name="create-visual-studio-project"></a>
 
 Создайте консольное приложение .NET на C#.
 

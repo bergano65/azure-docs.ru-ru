@@ -4,13 +4,13 @@ description: Узнайте, как создать приложение .NET Cor
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 08/06/2019
-ms.custom: seodec18
-ms.openlocfilehash: 3ad011529f8b4be90fc0c108a2049c30d1c69302
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.custom: mvc, cli-validate, seodec18
+ms.openlocfilehash: 73c68e03ca2403be51664cb59158762cedccc721
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78897313"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80046963"
 ---
 # <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Руководство по Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure
 
@@ -216,7 +216,7 @@ services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate
 Вызов `Database.Migrate()` полезен при выполнении в среде Azure, так как он позволяет автоматически создавать базы данных, необходимые для приложения .NET Core, в зависимости от конфигурации миграции. 
 
 > [!IMPORTANT]
-> Для рабочих приложений, которые нужно масштабировать, следуйте рекомендациям из раздела [Применение миграций в рабочей среде](/aspnet/core/data/ef-rp/migrations#applying-migrations-in-production).
+> Для рабочих приложений, масштаб которых нужно увеличить горизонтально, следуйте рекомендациям из раздела [Применение миграций в рабочей среде](/aspnet/core/data/ef-rp/migrations#applying-migrations-in-production).
 > 
 
 Сохраните изменения и зафиксируйте их в репозитории Git. 

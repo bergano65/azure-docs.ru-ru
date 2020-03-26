@@ -14,11 +14,11 @@ ms.topic: quickstart
 ms.date: 06/24/2019
 ms.author: jingwang
 ms.openlocfilehash: a2b775afcd9e603a11b560bb7c42d6cf76be9b34
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78357938"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79290392"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET
 

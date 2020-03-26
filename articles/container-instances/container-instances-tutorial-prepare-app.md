@@ -5,13 +5,13 @@ ms.topic: tutorial
 ms.date: 03/21/2018
 ms.custom: seodec18, mvc
 ms.openlocfilehash: 487dca97dc47bf214bedf38f44b2d29a71567cbb
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74533343"
 ---
-# <a name="tutorial-create-a-container-image-for-deployment-to-azure-container-instances"></a>Руководство. Создание образа контейнера для развертывания в службе "Экземпляры контейнеров Azure"
+# <a name="tutorial-create-a-container-image-for-deployment-to-azure-container-instances"></a>Руководство по Создание образа контейнера для развертывания в службе "Экземпляры контейнеров Azure"
 
 Служба "Экземпляры контейнеров Azure" позволяет развертывать контейнеры Docker в инфраструктуре Azure без подготовки виртуальных машин или применения службы более высокого уровня. С помощью этого руководства мы создадим пакет небольшого веб-приложения Node.js в образе контейнера, который можно запустить в службе "Экземпляры контейнеров Azure".
 
@@ -24,7 +24,7 @@ ms.locfileid: "74533343"
 
 С помощью следующих руководств мы отправим образ в Реестр контейнеров Azure, а затем развернем его в службе "Экземпляры контейнеров Azure".
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [container-instances-tutorial-prerequisites](../../includes/container-instances-tutorial-prerequisites.md)]
 
@@ -116,7 +116,7 @@ a2e3e4435db58ab0c664ce521854c2e1a1bda88c9cf2fcff46aedf48df86cccf
 
 ![Локальный запуск приложения в браузере][aci-tutorial-app-local]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы создали образ контейнера, который можно развернуть в службе "Экземпляры контейнеров Azure", и проверили его запуск локально. На этом этапе вы выполнили следующие задачи:
 

@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: rohink
 ms.openlocfilehash: ca223a19ff7ddeae95878f941f3cf295664e62b4
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76938729"
 ---
-# <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Руководство. Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
+# <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Руководство по Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
 
 Независимо от режима веб-сайта веб-сайты Azure уже обеспечивают отработку отказов для веб-сайтов в центре данных (регионе). Диспетчер трафика обеспечивает отработку отказа для веб-сайтов в различных центрах данных.
 

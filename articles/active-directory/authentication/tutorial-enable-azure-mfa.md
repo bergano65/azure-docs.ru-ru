@@ -11,13 +11,13 @@ author: iainfoulds
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 253eb23be03c1cc0f2abf4ad1fed734426dc287d
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77154682"
 ---
-# <a name="tutorial-secure-user-sign-in-events-with-azure-multi-factor-authentication"></a>Руководство. Защита событий входа с помощью Многофакторной идентификации Azure
+# <a name="tutorial-secure-user-sign-in-events-with-azure-multi-factor-authentication"></a>Руководство по Защита событий входа с помощью Многофакторной идентификации Azure
 
 Многофакторная идентификация (MFA) — это процесс во время события входа, в котором пользователю предлагаются дополнительные варианты идентификации. Может быть предложено ввести код с мобильного телефона или пройти проверку отпечатка пальца. Требование применять второй метод проверки подлинности повышает безопасность, так как злоумышленнику будет нелегко получить или скопировать дополнительный фактор проверки.
 

@@ -9,10 +9,10 @@ ms.date: 06/19/2019
 ms.author: hrasheed
 ms.custom: mvc
 ms.openlocfilehash: 8a6a204ee5080e3acf99c13ecba1e1c7664d68b4
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73241885"
 ---
 # <a name="quickstart-execute-an-r-script-on-an-ml-services-cluster-in-azure-hdinsight-using-rstudio-server"></a>Краткое руководство. Выполнение сценария R в кластере служб машинного обучения в Azure HDInsight с помощью сервера RStudio
@@ -176,7 +176,7 @@ https://CLUSTERNAME.azurehdinsight.net/rstudio/
 
 Инструкции по удалению кластера см. в статье [Delete an HDInsight cluster using your browser, PowerShell, or the Azure CLI](../hdinsight-delete-cluster.md) (Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как запустить сценарий R с помощью сервера RStudio, демонстрирующий использование Apache Spark для распределенных вычислений сценария R.  Ознакомьтесь со следующей статьей, содержащей сведения о параметрах, которые доступны для указания необходимости и способа выполнения параллелизации между ядрами граничного узла или кластера HDInsight.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с New Relic (Limited Release) | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с New Relic (Limited Release) | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и New Relic (Limited Release).
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/04/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ad229e7964b6e7ad0e3f0d58cfc09669ee2fb301
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77088268"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-new-relic-limited-release"></a>Руководство. Интеграция единого входа Azure Active Directory с New Relic (Limited Release)
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-new-relic-limited-release"></a>Руководство по Интеграция единого входа Azure Active Directory с New Relic (Limited Release)
 
 В этом руководстве описано, как интегрировать New Relic (Limited Release) с Azure Active Directory (Azure AD). Интеграция New Relic (Limited Release) с Azure AD обеспечивает следующие возможности:
 

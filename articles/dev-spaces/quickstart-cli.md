@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве показано, как использовать Azure Dev Spaces и командную строку для разработки приложения в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 974f0039bb16dc685bb056e279df63933e358edd
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 8ee5cba06d9a526640d9057ee88a681d46392f4f
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78245250"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80239696"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Разработка приложения в Kubernetes с помощью Azure Dev Spaces
 Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -84,7 +84,7 @@ azds prep --enable-ingress
 Вам нужно выполнить команду `prep` из каталога *dev-spaces/samples/nodejs/getting-started/webfrontend*, чтобы правильно создать ресурсы диаграмм Docker и Helm.
 
 > [!TIP]
-> Команда `prep` пытается создать [Dockerfile и диаграмму Helm](how-dev-spaces-works.md#prepare-your-code) для проекта. Azure Dev Spaces использует эти файлы для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
+> Команда `prep` пытается создать [Dockerfile и диаграмму Helm](how-dev-spaces-works-prep.md#prepare-your-code) для проекта. Azure Dev Spaces использует эти файлы для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
 
 ## <a name="build-and-run-code-in-kubernetes"></a>Сборка и запуск кода в Kubernetes
 

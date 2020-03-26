@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Java в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 5dcfff94d3a5296ed4462360ce85732c07b21cf5
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: ac7a1b37b565f3589b7c049a3c1ed2a84972ded0
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78245099"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80239735"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-java---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
 
@@ -94,7 +94,7 @@ git clone https://github.com/Azure/dev-spaces
 Эта команда подготавливает проект для запуска в Azure Dev Spaces, создавая диаграмму Helm и Dockerfile. Она также создает каталог *.vscode* с конфигурацией отладки в корне проекта.
 
 > [!TIP]
-> Azure Dev Spaces использует [Dockerfile и диаграмму Helm](how-dev-spaces-works.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
+> Azure Dev Spaces использует [Dockerfile и диаграмму Helm](how-dev-spaces-works-prep.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
 
 ## <a name="build-and-run-code-in-kubernetes-from-visual-studio-code"></a>Сборка и запуск кода в Kubernetes из Visual Studio Code
 

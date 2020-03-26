@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, devtest lab
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: b6981ee94c4d82997c574db037befb9782465d08
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74156275"
 ---
 # <a name="tutorial-configure-labs-in-azure-devtest-labs-using-ansible"></a>Руководство по Настройка лаборатории в Azure DevTest Labs с помощью Ansible
@@ -275,7 +275,7 @@ ms.locfileid: "74156275"
 
 Существует два способа получения полного примера сборника схем:
 - [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/devtestlab-create.yml) и сохраните его в `devtestlab-create.yml`.
-- Создайте файл с именем `devtestlab-create.yml` и скопируйте в него следующее:
+- Создайте файл с именем `devtestlab-create.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 ---
@@ -448,7 +448,7 @@ ms.locfileid: "74156275"
 - В разделе `vars` замените заполнитель `{{ resource_group_name }}` именем вашей группы ресурсов.
 - Сохраните маркер GitHub в качестве переменной среды `GITHUB_ACCESS_TOKEN`.
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook devtestlab-create.yml
@@ -478,7 +478,7 @@ ansible-playbook devtestlab-create.yml
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Ansible в Azure](/azure/ansible/)

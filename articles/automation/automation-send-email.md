@@ -6,17 +6,17 @@ ms.subservice: process-automation
 ms.date: 07/15/2019
 ms.topic: tutorial
 ms.openlocfilehash: 6acb68b7bbaa54db2e4143a42e43aede2caed35f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75420711"
 ---
-# <a name="tutorial-send-an-email-from-an-azure-automation-runbook"></a>Руководство. Отправка электронной почты из модуля Runbook службы автоматизации Azure
+# <a name="tutorial-send-an-email-from-an-azure-automation-runbook"></a>Руководство по Отправка электронной почты из модуля Runbook службы автоматизации Azure
 
 Сообщение электронной почты из модуля Runbook можно отправить с помощью [SendGrid](https://sendgrid.com/solutions), используя PowerShell. В этом руководстве показано, как создать повторно используемый модуль Runbook, который отправляет электронную почту с использованием ключа API, хранящегося в [хранилище ключей Azure](/azure/key-vault/).
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 >
@@ -24,7 +24,7 @@ ms.locfileid: "75420711"
 > * сохранять свой ключ API SendGrid в хранилище ключей;
 > * создавать модуль Runbook, который получает ключ API и отправляет электронную почту.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже перечислены необходимые условия для выполнения инструкций из этого руководства.
 

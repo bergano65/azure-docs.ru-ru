@@ -15,10 +15,10 @@ ms.date: 11/30/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: b23c10fc2a551b8044b208911dbc048968b06564
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74419615"
 ---
 # <a name="quickstart-view-the-access-a-user-has-to-azure-resources"></a>Краткое руководство. Просмотр прав доступа пользователя к ресурсам Azure
@@ -51,7 +51,7 @@ ms.locfileid: "74419615"
 
     В этой области можно увидеть роли, которые назначены выбранному субъекту безопасности для выбранной области. Здесь будут перечислены все запрещающие назначения, которые определены или наследуются в выбранной области.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure](quickstart-assign-role-user-portal.md)

@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 10/30/2019
 ms.author: brendm
-ms.openlocfilehash: b506fdcdec1ae3e98c1a4afe9c5124e284ed4d99
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 3ab4b1729ea380671b72a9bb01740930a186d5c3
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589017"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79470800"
 ---
 # <a name="quickstart-launch-your-spring-cloud-application-from-source-code"></a>Краткое руководство. Запуск приложения Spring Cloud из исходного кода
 
@@ -48,7 +48,7 @@ Azure Spring Cloud позволяет запускать приложение н
 
 Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
 
-```Azure CLI
+```azurecli
 az extension add --name spring-cloud
 ```
 
@@ -56,7 +56,7 @@ az extension add --name spring-cloud
 
 Войдите в Azure CLI и выберите активную подписку. Выбранная активная подписка должна быть добавлена в список разрешений для Azure Spring Cloud.
 
-```Azure CLI
+```azurecli
 az login
 az account list -o table
 az account set --subscription

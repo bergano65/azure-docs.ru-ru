@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 02/15/2020
 ms.author: brendm
-ms.openlocfilehash: a215fe2305b320fe27ef9d868d060f3e9cb14c1c
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 9cd59fdf81e9b5d56872d20c76e8ea177b3c8577
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77431390"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79470900"
 ---
 # <a name="quickstart-launch-an-existing-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "77431390"
 
 Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
 
-```Azure CLI
+```azurecli
 az extension add --name spring-cloud
 ```
 
@@ -114,7 +114,7 @@ az extension add --name spring-cloud
 
 1. Откройте [Azure Cloud Shell](https://shell.azure.com) и клонируйте репозиторий с примером приложения на локальный компьютер.  Перед клонированием приложения мы создадим на нем временный каталог `source-code`.
 
-    ```azurecli
+    ```console
     mkdir source-code
     cd source-code
     git clone https://github.com/Azure-Samples/piggymetrics
@@ -122,10 +122,11 @@ az extension add --name spring-cloud
 
 2. Выполните сборку клонированного пакета.
 
-    ```azurecli
+    ```console
     cd piggymetrics
     mvn clean package -DskipTests
     ```
+
 3. Назначьте имена группе ресурсов и службе. Обязательно замените заполнители ниже именем группы ресурсов и именем службы, подготовленными ранее в этом учебнике.
 
     ```azurecli

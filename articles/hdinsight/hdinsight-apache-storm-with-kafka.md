@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
 ms.openlocfilehash: eac9bee6992520492b846e3b579d8a05c327e749
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73494365"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Руководство по Использование Apache Storm с Apache Kafka в HDInsight
 
 В этом руководстве демонстрируется, как использовать топологию [Apache Storm](https://storm.apache.org/), чтобы считывать и записывать данные с использованием [Apache Kafka](https://kafka.apache.org/) в HDInsight. Здесь также показано, как сохранить данные в совместимое с [Apache Hadoop HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) хранилище в кластере Storm.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Использование Storm и Kafka
@@ -366,7 +366,7 @@ streams:
 
 Проект содержит файл с именем `dev.properties`, в котором передаются параметры, используемые в топологиях. Он определяет следующие свойства:
 
-| Файл dev.properties | ОПИСАНИЕ |
+| Файл dev.properties | Описание |
 | --- | --- |
 | `kafka.zookeeper.hosts` | Узлы [Apache ZooKeeper](https://zookeeper.apache.org/) для кластера Kafka. |
 | `kafka.broker.hosts` | Узлы брокера Kafka (рабочие узлы). |
@@ -408,9 +408,9 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
       | Параметр | Значение |
       | --- | --- |
-      | Subscription | Ваша подписка Azure. |
-      | группа ресурсов. | Группа ресурсов, в которой содержатся ресурсы. |
-      | Location | Регион Azure, в котором создаются ресурсы. |
+      | Подписка | Ваша подписка Azure. |
+      | Группа ресурсов | Группа ресурсов, в которой содержатся ресурсы. |
+      | Расположение | Регион Azure, в котором создаются ресурсы. |
       | Kafka Cluster Name (Имя кластера Kafka) | Имя кластера Kafka. |
       | Имя кластера Storm | Имя кластера Storm. |
       | Имя пользователя для входа в кластер | Имя администратора кластеров. |
@@ -631,7 +631,7 @@ Kafka сохраняет данные в _разделе_. Раздел необ
 2. Найдите группу ресурсов, которую нужно удалить, и щелкните правой кнопкой мыши кнопку __Дополнительно__ (…) справа от списка.
 3. Выберите __Удалить группу ресурсов__ и подтвердите выбор.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как использовать топологию [Apache Storm](https://storm.apache.org/) для записи в систему [Apache Kafka](https://kafka.apache.org/) и считывании из нее в HDInsight. Вы также узнали, как хранить данные в совместимом с [Apache Hadoop HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) хранилище, используемом в HDInsight.
 

@@ -7,15 +7,15 @@ manager: rkarlin
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
-ms.custom: fasttrack-edit
+ms.custom: mvc, fasttrack-edit
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 2b83fc6231f590b3c0765ec647101b22920058da
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 95dcc135593c566eb1319ed52df3df6c1ada6609
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77581673"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80067682"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Краткое руководство. Начало работы с Azure Sentinel
 
@@ -51,7 +51,7 @@ ms.locfileid: "77581673"
 
    ![Карта Azure Sentinel](./media/qs-get-visibility/anomolies.png)
 
-## Использование встроенных книг<a name="dashboards"></a>
+## <a name="use-built-in-workbooks"></a>Использование встроенных книг<a name="dashboards"></a>
 
 Встроенные книги предоставляют данные собранные из подключенных источников данных, что позволяет узнать больше о событиях, создаваемых в этих службах. Ко встроенным книгам относятся Azure AD, события действий Azure и локальные данные, полученные с серверов событий Windows, из собственных оповещений, от сторонних производителей, включая журналы трафика брандмауэра, Office 365 и небезопасные протоколы, основанные на событиях Windows. Книги основаны на книгах Azure Monitor, чтобы предоставить расширенную настройку и гибкость при проектировании собственной книги. Дополнительные сведения см.в разделе [Книги](../azure-monitor/app/usage-workbooks.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Добавление гостевого пользователя с помощью PowerShell — Azure AD
+title: Краткое руководство. Добавление гостевого пользователя с помощью PowerShell — Azure AD
 description: В этом кратком руководстве вы узнаете, как использовать PowerShell для отправки приглашения внешнему пользователю службы совместной работы Azure AD B2B.
 services: active-directory
 ms.service: active-directory
@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50c283122fe707e922275b6c1a6c576009964855
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: b0faaf0394bddc2e443afc194bbd0ecef72625f9
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78377787"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79216012"
 ---
 # <a name="quickstart-add-a-guest-user-with-powershell"></a>Краткое руководство. Добавление гостевого пользователя с помощью PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "78377787"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="install-the-latest-azureadpreview-module"></a>Установка последнего модуля AzureADPreview
 Убедитесь, что вы установили последнюю версию модуля Azure AD PowerShell для Graph (AzureADPreview). 
@@ -49,7 +49,7 @@ Get-Module -ListAvailable AzureAD*
    Uninstall-Module AzureAD 
    Install-Module AzureADPreview 
    ```
-- Если в результатах отображается только модуль AzureADPreview, но вы получили сообщение о том, что у вас установлена более поздняя версия, выполните следующие команды для обновления модуля. 
+- Если в результатах отображается только модуль AzureADPreview, но вы получили сообщение о том, что существует более поздняя версия, выполните следующие команды для обновления модуля. 
 
    ```powershell 
    Uninstall-Module AzureADPreview 
@@ -78,11 +78,11 @@ Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
 1. Чтобы отправить приглашение на тестовую учетную запись электронной почты, выполните приведенную ниже команду PowerShell (замените **Sanda** и **sanda\@fabrikam.com** именем и адресом электронной почты тестовой учетной записи). 
 
    ```powershell
-   New-AzureADMSInvitation -InvitedUserDisplayName "Sanda" -InvitedUserEmailAddress sanda@fabrikam.com -InviteRedirectURL https://myapps.azure.com -SendInvitationMessage $true
+   New-AzureADMSInvitation -InvitedUserDisplayName "Sanda" -InvitedUserEmailAddress sanda@fabrikam.com -InviteRedirectURL https://myapps.microsoft.com -SendInvitationMessage $true
    ```
 2. Команда отправляет приглашение на указанный адрес электронной почты. Проверьте результат. Он должен выглядеть примерно следующим образом.
 
-   ![Выходные данные PowerShell с запросами, ожидающими подтверждения пользователя](media/quickstart-invite-powershell/powershell-azureadmsinvitation-result.png)
+   ![Выходные данные PowerShell с запросом, ожидающим подтверждения пользователя](media/quickstart-invite-powershell/powershell-azureadmsinvitation-result.png)
 
 ## <a name="verify-the-user-exists-in-the-directory"></a>Проверка существования пользователя в каталоге
 
@@ -109,4 +109,4 @@ Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
 В этом кратком руководстве вы пригласили одного гостевого пользователя и добавили его в каталог с помощью PowerShell. Далее узнайте, как массово пригласить гостевых пользователей с помощью PowerShell.
 
 > [!div class="nextstepaction"]
-> [Руководство. Массовое приглашение пользователей службы совместной работы Azure AD B2B](tutorial-bulk-invite.md)
+> [Руководство. Массовое приглашение пользователей службы совместной работы Azure Active Directory B2B](tutorial-bulk-invite.md)

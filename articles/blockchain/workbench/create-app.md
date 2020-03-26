@@ -5,10 +5,10 @@ ms.date: 10/14/2019
 ms.topic: tutorial
 ms.reviewer: brendal
 ms.openlocfilehash: 33a9e9c10c07d0808626353a7edfd505e0f60bc9
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74324804"
 ---
 # <a name="tutorial-create-a-blockchain-application-for-azure-blockchain-workbench"></a>Руководство по Создание блокчейн-приложения в Azure Blockchain Workbench
@@ -281,7 +281,7 @@ contract HelloBlockchain {
     }
 ```
 
-### <a name="functions"></a>Функции Azure
+### <a name="functions"></a>Функции
 
 Функции являются исполняемыми единицами бизнес-логики в контракте. Обязательные параметры для функции определяются как параметры функции в файле конфигурации. Количество, порядок и тип параметров должны совпадать в обоих файлах. Функции связаны с переходами в рабочем процессе Blockchain Workbench в файле конфигурации. Переход — это действие, выполняемое, чтобы перейти к следующему этапу рабочего процесса приложения, как определено в контракте.
 
@@ -346,7 +346,7 @@ contract HelloBlockchain {
 
 Дополнительные сведения об управлении пользователями в Blockchain Workbench см. в [этой](manage-users.md) статье.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали базовое приложение для выполнения запроса и отправки ответа. Сведения об использовании приложения см. в следующей статье.
 

@@ -17,10 +17,10 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c4b235426a7029abb9bb79ba56e582cccc3b14a6
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68944446"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Руководство по Интеграция Azure Active Directory с HubSpot
@@ -39,7 +39,7 @@ ms.locfileid: "68944446"
 
 Чтобы настроить интеграцию Azure AD с HubSpot, вам потребуется:
 
-* подписка Azure AD Если у вас еще нет подписки Azure AD, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем приступить к работе.
+* Подписка Azure AD. Если у вас еще нет подписки Azure AD, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * подписка HubSpot с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -48,14 +48,14 @@ ms.locfileid: "68944446"
 
 HubSpot поддерживает следующие функции:
 
-* **единый вход, инициируемый поставщиком услуг**.
+* **единый вход, инициированный поставщиком службы**;
 * **единый вход, инициированный поставщиком удостоверений**;
 
 ## <a name="add-hubspot-in-the-azure-portal"></a>Добавление HubSpot на портале Azure
 
 Чтобы интегрировать HubSpot с Azure AD, необходимо добавить HubSpot в список управляемых приложений SaaS.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. В меню слева выберите **Azure Active Directory**.
 
@@ -79,12 +79,12 @@ HubSpot поддерживает следующие функции:
 
 Чтобы настроить и проверить единый вход Azure AD в HubSpot, потребуется выполнить действия в следующих стандартных блоках.
 
-| Задача | ОПИСАНИЕ |
+| Задача | Описание |
 | --- | --- |
-| **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Позволяет пользователям использовать эту возможность. |
+| **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Предоставление пользователям возможности использовать эту функцию. |
 | **[Настройка единого входа в HubSpot](#configure-hubspot-single-sign-on)** . | Настройка параметров единого входа в приложении. |
 | **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** | Проверка работы единого входа Azure AD на примере пользователя Britta Simon. |
-| **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** | Предоставление пользователю Britta Simon возможности использовать единый вход Azure AD. |
+| **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** | Предоставление пользователю Britta Simon возможности использовать единый вход Azure AD. |
 | **[Создание тестового пользователя HubSpot](#create-a-hubspot-test-user)** . | Требуется, чтобы в HubSpot существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD. |
 | **[Проверка единого входа](#test-single-sign-on)** | необходима, чтобы убедиться, что конфигурация работает правильно. |
 
@@ -102,7 +102,7 @@ HubSpot поддерживает следующие функции:
 
 1. На панели **Настройка единого входа с помощью SAML** щелкните **Изменить** (значок карандаша), чтобы открыть панель **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Чтобы настроить *режим, инициируемый поставщиком удостоверений*, в области **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -187,7 +187,7 @@ HubSpot поддерживает следующие функции:
 
     1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
     ![Панель "Пользователь"](common/user-properties.png)
 
@@ -256,12 +256,12 @@ HubSpot поддерживает следующие функции:
 
 В этом разделе объясняется, как проверить конфигурацию единого входа Azure AD с помощью портала "Мои приложения".
 
-После настройки единого входа вы сможете автоматически войти в приложение HubSpot, выбрав **HubSpot** на портале "Мои приложения". Дополнительные сведения о портале "Мои приложения" см. в разделе [Доступ и использование приложений на портале "Мои приложения"](../user-help/my-apps-portal-end-user-access.md).
+После настройки единого входа вы сможете автоматически войти в приложение HubSpot, выбрав **HubSpot** на портале "Мои приложения". Дополнительные сведения о портале "Мои приложения" см. в статье [Access and use apps on the My Apps portal](../user-help/my-apps-portal-end-user-access.md) (Доступ к приложениям и их использование на портале "Мои приложения").
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статьях ниже:
 
 - [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

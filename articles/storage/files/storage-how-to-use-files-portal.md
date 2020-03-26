@@ -8,13 +8,13 @@ ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: fef3daf6e9e535736002e309e3d27491364dc553
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "71260287"
 ---
-# <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью портала Azure 
+# <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью портала Azure 
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В этом руководстве рассматриваются основы работы с файловыми ресурсами Azure с помощью [портала Azure](https://portal.azure.com/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -56,7 +56,7 @@ ms.locfileid: "71260287"
 
 Теперь, когда файловый ресурс Azure создан, его можно подключить с помощью SMB к [Windows](storage-how-to-use-files-windows.md), [Linux](storage-how-to-use-files-linux.md) или [macOS](storage-how-to-use-files-mac.md). Кроме того, с этим ресурсом можно работать с помощью портала Azure. 
 
-#### <a name="create-a-directory"></a>создать каталог;
+#### <a name="create-a-directory"></a>Создание каталога
 Чтобы создать каталог с именем *myDirectory* в корне файлового ресурса Azure:
 
 1. На странице **Служба файлов** выберите файловый ресурс **myshare**. Откроется страница для вашего файлового ресурса.
@@ -81,7 +81,7 @@ ms.locfileid: "71260287"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 [!INCLUDE [storage-files-clean-up-portal](../../../includes/storage-files-clean-up-portal.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Что представляет собой служба "Файлы Azure"?](storage-files-introduction.md)

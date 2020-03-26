@@ -16,15 +16,15 @@ ms.date: 11/15/2019
 ms.author: magattus
 ms.custom: mvc
 ms.openlocfilehash: 64b906c8a6b52d9c9655f3fe2b13d504d8eed4cb
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74278092"
 ---
 # <a name="compare-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
 
-Сеть доставки содержимого Microsoft Azure (CDN) включает в себя четыре продукта: **Azure CDN уровня "Стандартный" от корпорации Майкрософт**, **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. Дополнительные сведения о переходе с профиля **Azure CDN ценовой категории "Стандартный" от Verizon** на профиль **Azure CDN ценовой категории "Премиум" от Verizon** см. [здесь](cdn-migrate.md). Обратите внимание, что хотя существует вариант обновления со Standard Verizon до Premium Verizon, механизм преобразования между другими продуктами в настоящее время отсутствует.
+Существуют четыре продукта Azure CDN: **Azure CDN уровня "Стандартный" от корпорации Майкрософт**, **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. Дополнительные сведения о переходе с профиля **Azure CDN ценовой категории "Стандартный" от Verizon** на профиль **Azure CDN ценовой категории "Премиум" от Verizon** см. [здесь](cdn-migrate.md). Обратите внимание, что хотя существует вариант обновления со Standard Verizon до Premium Verizon, механизм преобразования между другими продуктами в настоящее время отсутствует.
 
 В следующей таблице перечислены функции, доступные в каждом из продуктов.
 
@@ -55,7 +55,7 @@ ms.locfileid: "74278092"
 | [Пользовательский домен HTTPS](cdn-custom-ssl.md)  | **&#x2713;** | **&#x2713;** , для включения требуется прямое значение CNAME |**&#x2713;** |**&#x2713;** |
 | [Поддержка пользовательских доменных имен.](cdn-map-content-to-custom-domain.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Геофильтрация](cdn-restrict-access-by-country.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| [Проверка подлинности по маркерам](cdn-token-auth.md)  |  |  |  |**&#x2713;**| 
+| [Аутентификация на основе маркера безопасности](cdn-token-auth.md)  |  |  |  |**&#x2713;**| 
 | [Защита от атак DDoS](https://www.us-cert.gov/ncas/tips/ST04-015)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Использование собственного сертификата](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#ssl-certificates) |**&#x2713;** |  | **&#x2713;** | **&#x2713;** |
 ||||

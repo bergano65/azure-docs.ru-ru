@@ -14,17 +14,17 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/26/2019
 ms.openlocfilehash: 2c85a378dc219e8af1b6458344ee4dba0fa73e68
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68596794"
 ---
 # <a name="tutorial-create-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по созданию прогнозной модели на языке R с помощью Служб машинного обучения Azure в Базе данных SQL (предварительная версия)
 
 Во второй части этого руководства, состоящего из трех частей, объясняется, как создать две прогнозные модели на языке R и выбрать самую точную. В следующей части из этой серии описывается, как развернуть эту модель в базе данных SQL с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия).
 
-Из этой статьи вы узнаете о следующем:
+В этой статье вы узнаете, как выполнять следующие задачи.
 
 > [!div class="checklist"]
 > * Обучение двух моделей машинного обучения.
@@ -61,7 +61,7 @@ model_linmod <- rxLinMod(RentalCount ~  Month + Day + WeekDay + Snow + Holiday, 
 model_dtree  <- rxDTree(RentalCount ~ Month + Day + WeekDay + Snow + Holiday, data = train_data);
 ```
 
-## <a name="make-predictions-from-both-models"></a>Создание прогнозов из обеих моделей
+## <a name="make-predictions-from-both-models"></a>Создание прогнозов из обеих моделей.
 
 Используйте функцию прогнозирования, чтобы спрогнозировать количество случаев аренды, используя каждую обученную модель.
 
@@ -119,9 +119,9 @@ plot(predict_dtree$RentalCount_Pred  - predict_dtree$RentalCount,  main = "Diffe
 1. Выберите базу данных TutorialDB.
 1. На странице **Обзор** выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках второй части этой серии учебников вы выполнили такие задачи:
+Во второй части этого учебника вы выполнили следующие действия.
 
 * Обучение двух моделей машинного обучения.
 * Создание прогнозов из обеих моделей.

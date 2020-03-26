@@ -16,17 +16,17 @@ ms.date: 09/30/2019
 ms.author: magoedte
 ms.custom: mvc
 ms.openlocfilehash: b06342d5034b820be4e6fd49436546a5aa7b7e02
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75749793"
 ---
-# <a name="tutorial-monitor-a-linux-virtual-machine-in-azure"></a>Руководство. мониторингу виртуальных машин Linux в Azure
+# <a name="tutorial-monitor-a-linux-virtual-machine-in-azure"></a>Руководство по мониторингу виртуальных машин Linux в Azure
 
 Служба мониторинга Azure использует агенты для сбора данных о производительности и загрузке с виртуальных машин Azure, сохраняет эти данные в хранилище Azure и предоставляет к ним доступ через портал, модуль Azure PowerShell и Azure CLI. Расширенный мониторинг осуществляется с помощью решения "Azure Monitor для виртуальных машин" путем сбора метрик производительности, обнаружения компонентов приложений, установленных на виртуальных машинах, и включает в себя таблицы производительности и карту зависимостей.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Включение диагностики загрузки на виртуальной машине

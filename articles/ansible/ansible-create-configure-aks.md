@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.openlocfilehash: 6672c3fac1c5d546a61622e3fd6df6c5397f87a2
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74156683"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>Руководство по настройке кластеров Службы Azure Kubernetes в Azure с помощью Ansible
@@ -212,7 +212,7 @@ PLAY RECAP
 localhost                  : ok=2    changed=1    unreachable=0    failed=0
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Масштабирование приложения в службе Azure Kubernetes (AKS)](/azure/aks/tutorial-kubernetes-scale)

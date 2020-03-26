@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 01/29/2020
-ms.openlocfilehash: 8c7c9c2e3a1195422db30ba913b1cea3a1a360e4
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: 8819b79a105b7a654a34e47c5ba9b3d351a1d926
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78301698"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239416"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -47,7 +47,7 @@ ms.locfileid: "78301698"
 
 Прежде чем начать работу с этим руководством, выполните следующие задачи:
 
-* Создайте хранилище данных SQL Azure, создайте правило брандмауэра на уровне сервера и подключитесь к серверу с правами администратора. См. [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](../sql-data-warehouse/create-data-warehouse-portal.md).
+* Создайте хранилище данных SQL Azure, создайте правило брандмауэра на уровне сервера и подключитесь к серверу с правами администратора. См. [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
 
 * Создайте главный ключ для хранилища данных SQL Azure. Ознакомьтесь со статьей о [создании главного ключа базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-a-database-master-key).
 
@@ -155,13 +155,13 @@ ms.locfileid: "78301698"
 
    ```scala
    val appID = "<appID>"
-   val password = "<password>"
+   val secret = "<secret>"
    val tenantID = "<tenant-id>"
 
    spark.conf.set("fs.azure.account.auth.type", "OAuth")
    spark.conf.set("fs.azure.account.oauth.provider.type", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
    spark.conf.set("fs.azure.account.oauth2.client.id", "<appID>")
-   spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")
+   spark.conf.set("fs.azure.account.oauth2.client.secret", "<secret>")
    spark.conf.set("fs.azure.account.oauth2.client.endpoint", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
    ```

@@ -11,10 +11,10 @@ ms.custom: seodec18
 ms.date: 11/05/2019
 ms.author: shvija
 ms.openlocfilehash: e5f52d0ddbf9a66d974732d6d98ca8a5b09cc2d0
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73720587"
 ---
 # <a name="quickstart-send-events-to-or-receive-events-from-event-hubs-using-go"></a>Краткое руководство. Отправка и получение событий с помощью Go в Центрах событий
@@ -30,7 +30,7 @@ ms.locfileid: "73720587"
 Для работы с данным руководством вам потребуется:
 
 - Локально установленный Go. При необходимости выполните [следующие инструкции](https://golang.org/doc/install).
-- Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][], прежде чем начинать работу.
+- Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][], прежде чем начинать работу.
 - **Создайте пространство имен Центров событий и концентратор событий**. Вы можете использовать [портал Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получать учетные данные для управления, требуемые приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md).
 
 ## <a name="send-events"></a>Отправка событий
@@ -38,7 +38,7 @@ ms.locfileid: "73720587"
 
 ### <a name="install-go-package"></a>Установка пакета Go
 
-Получить пакет Go для Центров событий с помощью `go get` или `dep`. Например:
+Получить пакет Go для Центров событий с помощью `go get` или `dep`. Пример:
 
 ```bash
 go get -u github.com/Azure/azure-event-hubs-go
@@ -281,7 +281,7 @@ if err != nil {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями:
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)
@@ -291,4 +291,4 @@ if err != nil {
 
 <!-- Links -->
 [Event Hubs overview]: event-hubs-about.md
-[создайте бесплатную учетную запись Azure]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[создайте бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio

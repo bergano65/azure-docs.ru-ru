@@ -9,10 +9,10 @@ ms.subservice: queues
 ms.topic: quickstart
 ms.reviewer: cbrooks
 ms.openlocfilehash: 2876d2a680aa41372557a9f04c1d6a5eed56b8ae
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74269243"
 ---
 # <a name="quickstart-create-a-queue-and-add-a-message-with-the-azure-portal"></a>Краткое руководство. Создание очереди и добавление сообщения в нее с помощью портала Azure
@@ -61,7 +61,7 @@ ms.locfileid: "74269243"
 
 ![Снимок экрана, показывающий, как вывести сообщение из очереди на портале](media/storage-quickstart-queues-portal/dequeue-message.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как на портале Azure можно создать очередь, добавить в нее сообщение, просмотреть его свойства и вывести его из очереди.
 

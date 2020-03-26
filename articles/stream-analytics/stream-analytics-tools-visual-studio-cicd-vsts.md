@@ -9,16 +9,16 @@ ms.topic: tutorial
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: d9360ff64206cdce208f9643cf8ca86515aaeb7e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75354437"
 ---
-# <a name="tutorial-deploy-an-azure-stream-analytics-job-with-cicd-using-azure-pipelines"></a>Руководство. Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines
+# <a name="tutorial-deploy-an-azure-stream-analytics-job-with-cicd-using-azure-pipelines"></a>Руководство по Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines
 В этом руководстве описано, как настроить непрерывную интеграцию и развертывание для задания Azure Stream Analytics с помощью CI/CD и Azure Pipelines. 
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Добавление проекта в систему управления версиями
@@ -26,7 +26,7 @@ ms.locfileid: "75354437"
 > * Создание конвейера выпуска в Azure Pipelines
 > * Автоматическое развертывание и обновление приложения
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы начать, у вас должны быть следующие компоненты:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -116,7 +116,7 @@ ms.locfileid: "75354437"
     
     |**Параметр**  |**Рекомендуемое значение**  |
     |---------|---------|
-    |Subscription  |  Выберите свою подписку.   |
+    |Подписка  |  Выберите свою подписку.   |
     |Действие  |  Создание или изменение группы ресурсов   |
     |Группа ресурсов  |  Введите имя группы ресурсов.   |
     |Шаблон  | [Путь решения] \bin\Debug\Deploy\\[имя_проекта]. JobTemplate.json   |

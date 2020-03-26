@@ -11,12 +11,12 @@ ms.author: vaidyas
 author: vaidya-s
 ms.date: 01/15/2020
 ms.custom: Ignite2019
-ms.openlocfilehash: 313ba2c02fd65a967ab1969b6f99893de9a3bdb4
-ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
+ms.openlocfilehash: 3d283d1094336b928869aa281b4a640d7a62dd94
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79037347"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79477193"
 ---
 # <a name="run-batch-inference-on-large-amounts-of-data-by-using-azure-machine-learning"></a>Выполнение пакетного вывода больших объемов данных с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -329,7 +329,7 @@ parallelrun_step = ParallelRunStep(
 >[!Note]
 > Приведенный выше шаг зависит от того, выполнена ли команда `azureml-contrib-pipeline-steps`, как описано в разделе [Предварительные требования](#prerequisites). 
 
-### <a name="run-the-pipeline"></a>Запуск конвейера
+### <a name="submit-the-pipeline"></a>Отправка конвейера
 
 Теперь запустите конвейер. Сначала создайте объект [`Pipeline`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py), используя ссылку на вашу рабочую область и созданный шаг конвейера. Параметр `steps` является массивом шагов. В этом случае для пакетной оценки выполняется только один шаг. Чтобы создать конвейеры с несколькими шагами, разместите шаги по порядку в этом массиве.
 

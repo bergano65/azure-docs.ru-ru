@@ -7,18 +7,18 @@ ms.service: web-application-firewall
 ms.date: 08/21/2019
 ms.author: victorh
 ms.topic: overview
-ms.openlocfilehash: 78a8eaa75ec5eea33e27217f07439aae16ec4742
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4882ac51af271625b8e61d862890beb6d5f63213
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495533"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80240078"
 ---
 # <a name="enable-web-application-firewall-using-the-azure-cli"></a>Включение брандмауэра веб-приложения с помощью Azure CLI
 
 Вы можете ограничить трафик в шлюзе приложений с помощью [брандмауэра веб-приложения](ag-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
@@ -40,7 +40,7 @@ ms.locfileid: "73495533"
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с именем *myResourceGroupAG*, используя команду [az group create](/cli/azure/group#az-group-create).
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name myResourceGroupAG --location eastus
 ```
 
@@ -172,7 +172,7 @@ az monitor diagnostic-settings create --name appgwdiag --resource $appgwid \
 
 Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
 
-```azurepowershell-interactive
+```azurecli-interactive
 az network public-ip show \
   --resource-group myResourceGroupAG \
   --name myAGPublicIPAddress \
@@ -190,6 +190,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка правил брандмауэра веб-приложения](application-gateway-customize-waf-rules-portal.md)

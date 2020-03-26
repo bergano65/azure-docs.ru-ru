@@ -17,10 +17,10 @@ ms.date: 04/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 248b5cf554b743e86f3580174190a93cca1aa8d9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67101458"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-greenorbit"></a>Руководство по интеграции Azure Active Directory с GreenOrbit
@@ -39,7 +39,7 @@ ms.locfileid: "67101458"
 
 Чтобы настроить интеграцию Azure AD с GreenOrbit, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка GreenOrbit с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -102,13 +102,13 @@ ms.locfileid: "67101458"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения GreenOrbit](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourcompanydomain.extension`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourcompanydomain.extension`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourcompanydomain.extension`.
 
@@ -123,7 +123,7 @@ ms.locfileid: "67101458"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -199,5 +199,5 @@ ms.locfileid: "67101458"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

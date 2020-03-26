@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 11/04/2019
 ms.openlocfilehash: 7c38ba6dbabef4affd8672295a93d46fd4b0e494
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74384186"
 ---
 # <a name="tutorial-sync-data-from-sql-database-edge-to-azure-sql-database-by-using-sql-data-sync"></a>Руководство по синхронизации данных из Базы данных SQL для пограничных вычислений с Базой данных SQL Azure с помощью Синхронизации данных SQL
@@ -26,7 +26,7 @@ ms.locfileid: "74384186"
 
 Для работы с этим учебником требуется компьютер с ОС Windows, на котором настроен [Data Sync Agent для Синхронизации данных SQL Azure](../sql-database/sql-database-data-sync-agent.md).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Создайте базу данных SQL Azure. Сведения о создании Базы данных SQL Azure с помощью портала Azure см. в [этой статье](../sql-database/sql-database-single-database-get-started.md?tabs=azure-portal).
 
@@ -58,6 +58,6 @@ ms.locfileid: "74384186"
 
 * Сведения об обновлении схемы синхронизации с помощью [Transact-SQL](../sql-database/sql-database-update-sync-schema.md) или [PowerShell](../sql-database/scripts/sql-database-sync-update-schema.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование PowerShell для синхронизации данных между базой данных SQL и локальной базой данных SQL Server](../sql-database/scripts/sql-database-sync-data-between-azure-onprem.md). Замените в этом учебнике сведения о базе данных `OnPremiseServer` сведениями о Базе данных SQL Azure для пограничных вычислений.

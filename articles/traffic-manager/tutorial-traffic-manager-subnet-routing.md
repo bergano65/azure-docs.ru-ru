@@ -12,13 +12,13 @@ ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: rohink
 ms.openlocfilehash: 49e0bce6eea8fac32f49bb905c225e898e709af0
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77136287"
 ---
-# <a name="tutorial-direct-traffic-to-specific-endpoints-based-on-user-subnet-using-traffic-manager"></a>Руководство. Перенаправление трафика к определенным конечным точкам на основе пользовательской подсети с помощью диспетчера трафика
+# <a name="tutorial-direct-traffic-to-specific-endpoints-based-on-user-subnet-using-traffic-manager"></a>Руководство по Перенаправление трафика к определенным конечным точкам на основе пользовательской подсети с помощью диспетчера трафика
 
 В этой статье описывается настройка метода маршрутизации трафика подсети. Метод маршрутизации трафика **подсети** позволяет сопоставлять набор диапазонов IP-адресов с конкретными конечными точками, и когда диспетчер трафика получает запрос, он проверяет исходный IP-адрес запроса и возвращает связанную с ним конечную точку.
 

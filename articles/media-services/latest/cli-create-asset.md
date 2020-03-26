@@ -15,17 +15,17 @@ ms.workload: na
 ms.date: 05/01/2019
 ms.author: juliako
 ms.openlocfilehash: 0c24464050d0beee120dcb234582a464d6245270
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76310651"
 ---
 # <a name="cli-example-create-an-asset"></a>Пример использования CLI. Создание ресурса
 
 В скрипте Azure CLI в этой статье показано, как создать ресурс Cлужб мультимедиа для отправки в него содержимого.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 

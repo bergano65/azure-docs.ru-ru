@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/04/2020
 ms.author: allensu
-ms.openlocfilehash: 51713db8532eb33f102de9320dea9eaeb98c4019
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 4f1760c32117b34d4d453964473cba3c7d07f725
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78359086"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79202184"
 ---
 # <a name="azure-virtual-network-nat-metrics"></a>Метрики NAT виртуальной сети Azure
 
@@ -30,9 +30,6 @@ ms.locfileid: "78359086"
 </p>
 
 *Рисунок. NAT виртуальной сети для исходящего интернет-трафика*
-
->[!NOTE] 
->Сейчас NAT виртуальной сети предоставляется в общедоступной предварительной версии. В данный момент оно доступно только в ограниченном наборе [регионов](nat-overview.md#region-availability). Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms).
 
 ## <a name="metrics"></a>Метрики
 

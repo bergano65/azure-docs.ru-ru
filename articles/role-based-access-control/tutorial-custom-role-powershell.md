@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
+title: Руководство по Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
 description: Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell.
 services: active-directory
 documentationCenter: ''
@@ -14,13 +14,13 @@ ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
 ms.openlocfilehash: d337e31f554c0aabbb94771aa7bfca4afb19a431
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77138282"
 ---
-# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-powershell"></a>Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
+# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-powershell"></a>Руководство по Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
 
 Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
 

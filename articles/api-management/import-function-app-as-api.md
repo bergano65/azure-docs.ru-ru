@@ -14,10 +14,10 @@ ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: apimpm
 ms.openlocfilehash: cec1d3e07800dd3093ca79a87cafcf5fceafbf2f
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77209194"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
@@ -42,7 +42,7 @@ ms.locfileid: "77209194"
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
-## <a name="add-new-api-from-azure-function-app"></a> Импорт приложения-функции Azure в качестве нового API
+## <a name="import-an-azure-function-app-as-a-new-api"></a><a name="add-new-api-from-azure-function-app"></a> Импорт приложения-функции Azure в качестве нового API
 
 Выполните следующие действия, чтобы создать новый интерфейс API из приложения-функции Azure.
 
@@ -77,7 +77,7 @@ ms.locfileid: "77209194"
 
 8. Нажмите кнопку **Создать**.
 
-## <a name="append-azure-function-app-to-api"></a> Добавление приложения-функции Azure в API
+## <a name="append-azure-function-app-to-an-existing-api"></a><a name="append-azure-function-app-to-api"></a> Добавление приложения-функции Azure в API
 
 Выполните описанные ниже шаги, чтобы добавить существующее приложение-функцию в имеющийся API.
 
@@ -111,7 +111,7 @@ ms.locfileid: "77209194"
 
     ![Добавление из приложения-функции](./media/import-function-app-as-api/append-04.png)
 
-## <a name="authorization"></a> Авторизация
+## <a name="authorization"></a><a name="authorization"></a> Авторизация
 
 Во время импорта приложения-функции Azure автоматически создается:
 
@@ -143,7 +143,7 @@ ms.locfileid: "77209194"
 
 ![Добавление из приложения-функции](./media/import-function-app-as-api/keys-01.png)
 
-## <a name="test-in-azure-portal"></a> Проверка нового API на портале Azure
+## <a name="test-the-new-api-in-the-azure-portal"></a><a name="test-in-azure-portal"></a> Проверка нового API на портале Azure
 
 Операции можно вызывать непосредственно на портале Azure. Использование портала Azure — удобный способ просмотра и тестирования операций с API.  
 

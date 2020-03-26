@@ -1,5 +1,5 @@
 ---
-title: 'Руководство. Предоставление пользователям доступа к ресурсам Azure с помощью RBAC и портала Azure '
+title: 'Руководство по Предоставление пользователям доступа к ресурсам Azure с помощью RBAC и портала Azure '
 description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и портала Azure.
 services: role-based-access-control
 documentationCenter: ''
@@ -14,13 +14,13 @@ ms.workload: identity
 ms.date: 02/22/2019
 ms.author: rolyon
 ms.openlocfilehash: 6281c9a1818a3b46ac4f7a62f8ae76668db56887
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77138093"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Руководство по Предоставление доступа пользователю с помощью RBAC и портала Azure
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве объясняется, как предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов.
 

@@ -8,10 +8,10 @@ ms.service: postgresql
 ms.topic: overview
 ms.date: 11/25/2019
 ms.openlocfilehash: 9ea0610811f6906526afe55d577e04a8decd5f49
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74481663"
 ---
 # <a name="what-is-azure-database-for-postgresql"></a>Что такое база данных Azure для PostgreSQL
@@ -51,7 +51,7 @@ ms.locfileid: "74481663"
 - Чтобы обратиться в службу поддержки Azure или устранить проблему со своей учетной записью, [отправьте запрос с портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 - Чтобы отправить отзыв или отправить запрос на новые возможности, создайте запись через [UserVoice](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь со [страницей цен](https://azure.microsoft.com/pricing/details/postgresql/) для сравнения цен и доступа к калькуляторам.
 - Приступите к работе, создав свою первую Базу данных Azure для PostgreSQL с [отдельным сервером](./quickstart-create-server-database-portal.md) или [Гипермасштабированием (Citus)](./quickstart-create-hyperscale-portal.md).
 - Создайте приложение на Python, PHP, Ruby, C\#, Java, Node.js: [Библиотеки подключений для базы данных Azure для PostgreSQL](./concepts-connection-libraries.md).

@@ -14,10 +14,10 @@ ms.topic: tutorial
 ms.date: 02/26/2019
 ms.author: apimpm
 ms.openlocfilehash: 5dec08bd4bc0a63a419d2bdc63383348a69b02db
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "70067471"
 ---
 # <a name="transform-and-protect-your-api"></a>Преобразование и защита API
@@ -26,7 +26,7 @@ ms.locfileid: "70067471"
 
 Также в этом руководстве показано, насколько легко можно защитить серверный API, настроив ограничения скорости в службе управления API Azure. Например, вы можете ограничить количество вызовов к API, чтобы разработчики не перегружали его. Дополнительные сведения см. в статье [Обработка ошибок в политиках управления API](api-management-policies.md).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 >
@@ -114,7 +114,7 @@ ms.locfileid: "70067471"
 4.  В разделе **Обработка исходящих запросов** щелкните значок **</>** .
 5.  Поместите курсор на **&lt;исходящий&gt;** элемент.
 6.  На правой панели в разделе **Политики преобразования** щелкните **+Поиск и замена строки в тексте**.
-7.  Измените код **find-and-replace** (в элементе **\<outbound\>** ), чтобы заменить URL-адрес адресом шлюза службы управления API. Например:
+7.  Измените код **find-and-replace** (в элементе **\<outbound\>** ), чтобы заменить URL-адрес адресом шлюза службы управления API. Пример:
 
         <find-and-replace from="://conferenceapi.azurewebsites.net" to="://apiphany.azure-api.net/conference"/>
 
@@ -195,13 +195,13 @@ ms.locfileid: "70067471"
 
     ![Регулирование](./media/transform-api/test-throttling.png)
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Rate-Limits-and-Quotas/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 >
