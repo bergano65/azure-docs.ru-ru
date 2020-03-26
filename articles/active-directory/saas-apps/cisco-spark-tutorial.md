@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Cisco Webex | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Cisco Webex | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Webex.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 01fe4d06d5f73eacee1d1cdaf1963232b84daf05
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77046790"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex"></a>Руководство. Интеграция единого входа Azure Active Directory с Cisco Webex
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex"></a>Руководство по Интеграция единого входа Azure Active Directory с Cisco Webex
 
 В этом руководстве описано, как интегрировать Cisco Webex с Azure Active Directory (Azure AD). Интеграция Cisco Webex с Azure AD обеспечивает следующие возможности.
 

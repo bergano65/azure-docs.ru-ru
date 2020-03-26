@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/11/2018
 ms.openlocfilehash: a908b44f596e6ca1ecd2960110a35661448c2e1a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75982655"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage-using-the-azure-portal"></a>Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure на портале Azure
@@ -62,7 +62,7 @@ ms.locfileid: "75982655"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 * **База данных SQL Azure**. Используйте базу данных как исходное хранилище данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
 * **Хранилище Azure.** В этом руководстве в качестве приемника будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения, создайте ее, следуя действиям в разделе [Создание учетной записи хранения](../storage/common/storage-account-create.md). Создайте контейнер с именем adftutorial. 
 
@@ -273,7 +273,7 @@ END
         | Имя | Тип | Значение |
         | ---- | ---- | ----- |
         | LastModifiedtime | Дата и время | @{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue} |
-        | TableName | String | @{activity('LookupOldWaterMarkActivity').output.firstRow.TableName} |
+        | TableName | Строка | @{activity('LookupOldWaterMarkActivity').output.firstRow.TableName} |
 
     ![Действие хранимой процедуры — параметры хранимой процедуры](./media/tutorial-incremental-copy-portal/sproc-activity-stored-procedure-settings.png)
 27. Чтобы проверить настройки конвейера, нажмите кнопку **Проверить** на панели инструментов. Убедитесь, что проверка завершается без ошибок. Чтобы закрыть окно **отчета о проверке конвейера**, нажмите кнопку ">>".   

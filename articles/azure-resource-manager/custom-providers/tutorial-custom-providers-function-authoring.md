@@ -6,10 +6,10 @@ ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: jobreen
 ms.openlocfilehash: d7f6c51211ce0572797ade659b9316003502da1f
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75648731"
 ---
 # <a name="author-a-restful-endpoint-for-custom-providers"></a>Создание конечной точки RESTful для настраиваемых поставщиков
@@ -43,7 +43,7 @@ X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups
 
 Основываясь на приведенном выше примере заголовка `x-ms-customproviders-requestpath`, вы можете создать параметры *partitionKey* и *rowKey* для используемого хранилища, как показано в следующей таблице.
 
-Параметр | Шаблон | Description
+Параметр | Шаблон | Описание
 ---|---|---
 *partitionKey* | `{subscriptionId}:{resourceGroupName}:{resourceProviderName}` | Параметр *partitionKey* определяет способ секционирования данных. Обычно данные секционируются по экземплярам настраиваемого поставщика.
 *rowKey* | `{myResourceType}:{myResourceName}` | Параметр *rowKey* содержит индивидуальный идентификатор данных. Обычно идентификатором служит имя ресурса.
@@ -134,7 +134,7 @@ public static async Task<HttpResponseMessage> CreateCustomResource(HttpRequestMe
 
 Метод **CreateCustomResource** изменяет входящий запрос, добавляя поля **id** (идентификатор), **name** (имя) и **type** (тип), которые понимает платформа Azure. Эти поля содержат свойства верхнего уровня, которые используются службами в Azure. Они позволят интегрировать настраиваемый поставщик с другими службами, такими как Политика Azure, шаблоны Azure Resource Manager и журналы действий Azure.
 
-Свойство | Пример | Description
+Свойство | Пример | Описание
 ---|---|---
 **name** | {имя_настраиваемого_ресурса} | Имя настраиваемого ресурса
 **type** | Microsoft.CustomProviders/resourceProviders/{имя_типа_ресурса} | Пространство имен для типа ресурса

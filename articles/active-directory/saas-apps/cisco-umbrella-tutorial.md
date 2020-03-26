@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cisco Umbrella | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Cisco Umbrella | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Umbrella.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ee91ca53e32bfdc387dc20054493d02d506a75da
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158641"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cisco-umbrella"></a>Руководство. Интеграция Azure Active Directory с Cisco Umbrella
+# <a name="tutorial-azure-active-directory-integration-with-cisco-umbrella"></a>Руководство по Интеграция Azure Active Directory с Cisco Umbrella
 
 В этом руководстве описано, как интегрировать Cisco Umbrella с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Cisco Umbrella обеспечивает следующие преимущества.
@@ -39,7 +39,7 @@ ms.locfileid: "73158641"
 
 Чтобы настроить интеграцию Azure AD с Cisco Umbrella, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка с поддержкой единого входа в Cisco Umbrella.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,13 +100,13 @@ ms.locfileid: "73158641"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
     ![Сведения о домене и URL-адресах единого входа приложения Cisco Umbrella](common/both-preintegrated-signon.png)
 
-    a. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, сделайте следующее:
+    а. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, сделайте следующее:
 
     b. Щелкните **Задать дополнительные URL-адреса**.
 
@@ -120,11 +120,11 @@ ms.locfileid: "73158641"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-cisco-umbrella-single-sign-on"></a>Настройка единого входа в Cisco Umbrella
 
@@ -224,7 +224,7 @@ ms.locfileid: "73158641"
 
     ![Пользователь](./media/cisco-umbrella-tutorial/tutorial_cisco-umbrella_createuser.png)
 
-    a. В поле **First Name** (Имя) введите имя, например **Britta**.
+    а. В поле **First Name** (Имя) введите имя, например **Britta**.
 
     b. В поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
 
@@ -232,9 +232,9 @@ ms.locfileid: "73158641"
   
     d. В поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-    д. Введите пароль в поле **Password** (Пароль).
+    д) Введите пароль в поле **Password** (Пароль).
 
-    Е. Введите пароль повторно в поле **Confirm Password** (Повторите пароль).
+    е) Введите пароль повторно в поле **Confirm Password** (Повторите пароль).
 
     ж. Нажмите кнопку **Create** (Создать).
 

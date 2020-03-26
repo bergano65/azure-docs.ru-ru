@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с F5 | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с F5 | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и F5.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 11/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7ad6b7150a43a286a4bec39a0482e08f50d95c06
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77048066"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство. Интеграция единого входа Azure Active Directory с F5
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство по Интеграция единого входа Azure Active Directory с F5
 
 В этом учебнике описано, как интегрировать F5 с Azure Active Directory (Azure AD). Интеграция F5 с Azure AD обеспечивает следующие возможности:
 

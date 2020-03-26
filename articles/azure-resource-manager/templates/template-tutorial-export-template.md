@@ -5,14 +5,14 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0680309b13bf4499f0d153f44e575c1762b54d79
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 95d54a0661f0a0cebdbfc225074be0ce0d83a5cc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773177"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79368899"
 ---
-# <a name="tutorial-use-exported-template-from-the-azure-portal"></a>Руководство. использованию экспортированного шаблона из портала Azure
+# <a name="tutorial-use-exported-template-from-the-azure-portal"></a>Руководство по использованию экспортированного шаблона из портала Azure
 
 В рамках этой серии учебников вы создали шаблон для развертывания учетной записи хранения Azure. В следующих двух учебниках вы добавите *план службы приложений* и *веб-сайт*. Вместо создания шаблонов с нуля вы узнаете, как экспортировать шаблоны с портала Azure и как использовать примеры шаблонов из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Вы настроите эти шаблоны для своего варианта использования. В этом учебнике будет рассмотрен экспорт шаблонов и настройка результатов для шаблона. Это займет около **14 минут**.
 
@@ -84,7 +84,7 @@ ms.locfileid: "76773177"
 
 Если вы еще не создали группу ресурсов, см. [этот раздел](template-tutorial-create-first-template.md#create-resource-group). В этом примере предполагается, что для переменной **templateFile** указан путь к файлу шаблона, как показано в [первом учебнике](template-tutorial-create-first-template.md#deploy-template).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -95,10 +95,10 @@ New-AzResourceGroupDeployment `
   -storageSKU Standard_LRS
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
-az group deployment create \
+az deployment group create \
   --name addappserviceplan \
   --resource-group myResourceGroup \
   --template-file $templateFile \

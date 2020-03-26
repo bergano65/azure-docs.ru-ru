@@ -7,21 +7,21 @@ ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm
 ms.topic: quickstart
-ms.custom: H1Hack27Feb2017
+ms.custom: mvc, H1Hack27Feb2017
 ms.date: 10/23/2019
 ms.author: cynthn
-ms.openlocfilehash: 2acde4efa1dc118498f3c7da29c75e48c0478ac0
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 41bfe86f4635a54c56a8313fabefa1f381f4a4ee
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543143"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80062755"
 ---
-# <a name="quickstart-create-a-virtual-machine-scale-set-in-the-azure-portal"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин на портале Azure
+# <a name="quickstart-create-a-virtual-machine-scale-set-in-the-azure-portal"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин с помощью портала Azure
 
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. Вы можете вручную изменить число виртуальных машин в масштабируемом наборе или определить правила для автоматического масштабирования в зависимости от использования ЦП, объема памяти или сетевого трафика. После этого Azure Load Balancer будет распределять трафик между экземплярами виртуальных машин в масштабируемом наборе. С помощью этого краткого руководства вы создали масштабируемый набор виртуальных машин с помощью портала Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
@@ -38,8 +38,8 @@ ms.locfileid: "76543143"
 
     | Параметр                 | Значение   |
     | ---| ---|
-    | Подписка  | Выберите свою подписку.    |    
-    | Группа ресурсов | Выберите **Создать** и в текстовом поле введите *myVMSSResourceGroup*.|
+    | Subscription  | Выберите свою подписку.    |    
+    | группа ресурсов. | Выберите **Создать** и в текстовом поле введите *myVMSSResourceGroup*.|
     | Имя           | *myLoadBalancer*         |
     | Регион         | Выберите **Восточная часть США**.       |
     | Тип          | Щелкните **Общедоступный**.       |

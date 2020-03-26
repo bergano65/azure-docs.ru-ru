@@ -8,11 +8,11 @@ ms.devlang: javascript
 ms.topic: quickstart
 ms.date: 12/26/2018
 ms.openlocfilehash: cd6cb68014eea00077328f39c2c9bf0a1f7fb679
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57436295"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "61330695"
 ---
 # <a name="expire-data-with-azure-cosmos-dbs-api-for-mongodb"></a>Завершение срока действия данных с помощью API Azure Cosmos DB для MongoDB
 
@@ -21,7 +21,7 @@ ms.locfileid: "57436295"
 ## <a name="ttl-indexes"></a>Индексы срока жизни
 Чтобы установить срок жизни для всей коллекции, нужно создать [индекс срока жизни](../cosmos-db/mongodb-indexing.md). Это индекс для поля _ts со значением expireAfterSeconds.
 
-Пример:
+Пример
 ```JavaScript
 globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 {
@@ -76,6 +76,6 @@ globaldb:PRIMARY> db.coll.insert({id:1, location: "Paris", ttl: NumberLong(21474
 
 ![Снимок экрана, демонстрирующий активацию функции срока жизни для документа на портале](./media/mongodb-ttl/mongodb_portal_ttl.png) 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Срок жизни для данных Azure Cosmos DB](../cosmos-db/time-to-live.md)
 * [Индексирование в Azure Cosmos DB. API MongoDB](../cosmos-db/mongodb-indexing.md)

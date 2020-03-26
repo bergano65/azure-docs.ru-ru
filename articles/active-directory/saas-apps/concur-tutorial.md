@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Concur | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Concur | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Concur.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6828db6bcb4c7e68d508acc249d9a82024083a00
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76983639"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-concur"></a>Руководство. Интеграция единого входа Azure Active Directory с Concur
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-concur"></a>Руководство по Интеграция единого входа Azure Active Directory с Concur
 
 В этом руководстве описано, как интегрировать Concur с Azure Active Directory (Azure AD). Интеграция Concur с Azure AD обеспечивает следующие возможности.
 

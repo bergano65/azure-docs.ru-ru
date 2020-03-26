@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Klue | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Klue | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Klue.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/13/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: da6ce8c25bdb8a051bb346868b900053ef231816
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77185640"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-klue"></a>Руководство. Интеграция единого входа Azure Active Directory с Klue
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-klue"></a>Руководство по Интеграция единого входа Azure Active Directory с Klue
 
 В этом учебнике описано, как интегрировать Klue с Azure Active Directory (Azure AD). Интеграция Klue с Azure AD создает следующие возможности.
 

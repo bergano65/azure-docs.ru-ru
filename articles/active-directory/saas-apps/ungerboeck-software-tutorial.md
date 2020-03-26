@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Ungerboeck Software | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Ungerboeck Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Ungerboeck Software.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 06/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 69c7a7a8fe0ef346cb26e3b0b4f14d3dae7211b9
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67372637"
 ---
-# <a name="tutorial-integrate-ungerboeck-software-with-azure-active-directory"></a>Руководство. Интеграция Ungerboeck Software с Azure Active Directory
+# <a name="tutorial-integrate-ungerboeck-software-with-azure-active-directory"></a>Руководство по Интеграция Ungerboeck Software с Azure Active Directory
 
 В этом руководстве описано, как интегрировать Ungerboeck Software с Azure Active Directory (Azure AD). Интеграция Ungerboeck Software с Azure AD обеспечивает следующие возможности.
 
@@ -35,9 +35,9 @@ ms.locfileid: "67372637"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
+* Подписка Azure AD. Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
 * подписка Ungerboeck Software с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -76,7 +76,7 @@ ms.locfileid: "67372637"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения для следующих полей.
 
@@ -107,7 +107,7 @@ ms.locfileid: "67372637"
 
 1. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![Изменить сертификат подписи SAML](common/edit-certificate.png)
+    ![Изменение сертификата подписи SAML](common/edit-certificate.png)
 
 1. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток** и сохраните его на компьютере.
 
@@ -117,7 +117,7 @@ ms.locfileid: "67372637"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -143,7 +143,7 @@ ms.locfileid: "67372637"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Ungerboeck Software.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Ungerboeck Software**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -153,7 +153,7 @@ ms.locfileid: "67372637"
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** из списка пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 

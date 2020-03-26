@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с The Cloud Security Fabric | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с The Cloud Security Fabric | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в The Cloud Security Fabric.
 services: active-directory
 documentationCenter: na
@@ -17,10 +17,10 @@ ms.date: 07/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c0b1471abd7e057af919ed274547daf94d356c2b
-ms.sourcegitcommit: ac29357a47cc05afdf0f84834de5277598f4d87c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "70213606"
 ---
 # <a name="tutorial-integrate-the-cloud-security-fabric-with-azure-active-directory"></a>Руководство по Интеграция Azure Active Directory с The Cloud Security Fabric
@@ -35,9 +35,9 @@ ms.locfileid: "70213606"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка с поддержкой единого входа на The Cloud Security Fabric.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "70213606"
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя The Cloud Security Fabric](#create-the-cloud-security-fabric-test-user)** требуется для того, чтобы в The Cloud Security Fabric существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,11 +79,11 @@ ms.locfileid: "70213606"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес:
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес:
 
     | |
     |--|
@@ -108,7 +108,7 @@ ms.locfileid: "70213606"
 
     ![Ответ знака](./media/ciscocloudlock-tutorial/saml.png)
 
-    a. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
+    а. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
 
     b. Выберите параметр **SHA-256** для **алгоритма подписывания**
 
@@ -137,7 +137,7 @@ ms.locfileid: "70213606"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к The Cloud Security Fabric.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **The Cloud Security Fabric**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 

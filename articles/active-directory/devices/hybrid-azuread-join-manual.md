@@ -12,20 +12,20 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6754393bdeabcd67dcf6514102e3c825a26fc3e9
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78672289"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222951"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по настройке устройств с гибридным присоединением к Azure Active Directory
+# <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
 Благодаря управлению устройствами в Azure Active Directory (Azure AD) пользователи получают доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям. Дополнительные сведения см. в статье [Общие сведения об управлении устройствами в Azure Active Directory](overview.md).
 
 > [!TIP]
 > Если вы можете использовать Azure AD Connect, ознакомьтесь со связанными руководствами об [управляемых](hybrid-azuread-join-managed-domains.md) или [федеративных](hybrid-azuread-join-federated-domains.md) доменах. С помощью Azure AD Connect можно значительно упростить настройку гибридного присоединения к Azure AD.
 
-Если вы хотите присоединить входящие в состав домена устройства к Azure AD в имеющейся локальной среде Active Directory, можно настроить гибридные устройства, присоединенные к Azure AD. В этом руководстве описано следующее.
+Если вы хотите присоединить входящие в состав домена устройства к Azure AD в имеющейся локальной среде Active Directory, можно настроить гибридные устройства, присоединенные к Azure AD. В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * настройка гибридного присоединения к Azure AD вручную;
@@ -35,7 +35,7 @@ ms.locfileid: "78672289"
 > * Проверка присоединенных устройств.
 > * Устранение неполадок реализации
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В данном руководстве предполагается, что вы ознакомлены со следующими темами:
 
@@ -503,7 +503,7 @@ Azure AD Connect выполняет следующие функции:
 
 Чтобы поддерживать регистрацию устройств Windows нижнего уровня, необходимо установить параметр, разрешающий пользователям регистрировать устройства в Azure AD. Чтобы найти этот параметр, на портале Azure выберите **Azure Active Directory** > **Пользователи и группы** > **Параметры устройства**.
 
-Следующая политика должна иметь значение " **все**": **пользователи могут регистрировать свои устройства в Azure AD**.
+Для следующей политики нужно установить значение **Все**: **Пользователи могут регистрировать устройства в Azure AD**.
 
 ![Кнопка "Все", которая позволяет пользователям регистрировать устройства](./media/hybrid-azuread-join-manual/23.png)
 

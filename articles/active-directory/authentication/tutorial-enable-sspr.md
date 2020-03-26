@@ -11,13 +11,13 @@ author: iainfoulds
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 71b9052f364dfbae205dd324ba69de9578ccc225
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77026317"
 ---
-# <a name="tutorial-enable-users-to-unlock-their-account-or-reset-passwords-using-azure-active-directory-self-service-password-reset"></a>Руководство. Включение самостоятельного сброса пароля для разблокировки учетных записей или сброса паролей пользователями в Azure Active Directory
+# <a name="tutorial-enable-users-to-unlock-their-account-or-reset-passwords-using-azure-active-directory-self-service-password-reset"></a>Руководство по Включение самостоятельного сброса пароля для разблокировки учетных записей или сброса паролей пользователями в Azure Active Directory
 
 Самостоятельный сброс пароля (SSPR) в Azure Active Directory (AAD) позволяет пользователям изменить или сбросить пароль без участия администратора или службы технической поддержки. Если учетная запись пользователя заблокирована или пользователь забыл пароль, выполнив несложные инструкции, он сможет выполнить разблокировку и вернуться к работе. Эта возможность снижает количество обращений в службу технической поддержки и минимизирует время простоя из-за невозможности войти на устройство или в приложение.
 

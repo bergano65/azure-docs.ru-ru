@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory c WEDO | Microsoft Docs
+title: Руководство по Интеграция единого входа Azure Active Directory c WEDO | Microsoft Docs
 description: Узнайте, как настроить единый вход между Azure Active Directory и WEDO.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/22/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7ce7ffb389a585511883c3b35de3773ae37342b8
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76991936"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wedo"></a>Руководство. Интеграция единого входа Azure Active Directory с WEDO
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wedo"></a>Руководство по Интеграция единого входа Azure Active Directory с WEDO
 
 В этом руководстве описано, как интегрировать WEDO с Azure Active Directory (Azure AD). Интеграция WEDO с Azure AD обеспечивает следующие возможности:
 

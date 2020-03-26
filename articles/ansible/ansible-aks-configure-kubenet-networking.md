@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.openlocfilehash: bfb19371ad651439c087cebd03023d48852ee2df
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74156893"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Руководство по Настройка сети Kubenet в Службе Azure Kubernetes (AKS) с помощью Ansible
@@ -101,7 +101,7 @@ ms.locfileid: "74156893"
   register: aks
 ```
 
-Здесь приведены некоторые ключевые примечания, которые следует рассмотреть при работе с примером сборника схем.
+Ниже приведено несколько важных примечаний, которые следует рассмотреть при работе с примером сборника схем.
 
 - Чтобы определить поддерживаемую версию, используйте модуль `azure_rm_aks_version`.
 - Подсеть `vnet_subnet_id` была создана в предыдущем разделе.
@@ -155,7 +155,7 @@ ms.locfileid: "74156893"
       route_table: "{{ routetable.route_tables[0].id }}"
 ```
 
-Здесь приведены некоторые ключевые примечания, которые следует рассмотреть при работе с примером сборника схем.
+Ниже приведено несколько важных примечаний, которые следует рассмотреть при работе с примером сборника схем.
 
 - `node_resource_group` — имя группы ресурсов, в которой созданы узлы AKS.
 - Подсеть `vnet_subnet_id` была создана в предыдущем разделе.
@@ -218,7 +218,7 @@ ms.locfileid: "74156893"
 ansible-playbook aks-kubenet.yml
 ```
 
-Выполнение сборника схем привет к результатам, аналогичным приведенным ниже выходным данным:
+После выполнения сборника схем отобразятся результаты, как показано ниже.
 
 ```Output
 PLAY [localhost] 
@@ -344,13 +344,13 @@ localhost                  : ok=15   changed=2    unreachable=0    failed=0    s
 
 В разделе `vars` замените заполнитель `{{ resource_group_name }}` именем вашей группы ресурсов.
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Tutorial: Configure Azure CNI networking in Azure Kubernetes Service (AKS) using Ansible](./ansible-aks-configure-cni-networking.md) (Руководство. Настройка сети Azure CNI в Службе Azure Kubernetes (AKS) с помощью Ansible)

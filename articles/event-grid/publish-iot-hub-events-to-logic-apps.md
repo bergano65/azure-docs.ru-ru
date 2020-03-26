@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 11/21/2019
 ms.author: robinsh
 ms.openlocfilehash: 334b7b2c59b328e8eff3c7c2b9c3ed46bffc3442
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74706437"
 ---
 # <a name="tutorial-send-email-notifications-about-azure-iot-hub-events-using-event-grid-and-logic-apps"></a>Руководство по отправке уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Сетки событий и Logic Apps
@@ -42,7 +42,7 @@ ms.locfileid: "74706437"
 
    ![Поля для создания приложения логики](./media/publish-iot-hub-events-to-logic-apps/create-logic-app-fields.png)
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. Создав ресурс, перейдите к приложению логики. Для этого выберите пункт **Группы ресурсов**, а затем созданную для этого учебника группу ресурсов. После этого найдите приложение логики в списке ресурсов и выберите его. 
 
@@ -267,9 +267,9 @@ ms.locfileid: "74706437"
 
 2. Выберите подписку на события, которую нужно удалить. 
 
-3. Нажмите кнопку **Удалить**. 
+3. Выберите команду **Удалить**. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [реагировании на события в Центре Интернета вещей, используя службу "Cетка событий" для запуска действий](../iot-hub/iot-hub-event-grid.md).
 * См. дополнительные сведения об [упорядочении событий подключения и отключения устройств](../iot-hub/iot-hub-how-to-order-connection-state-events.md).

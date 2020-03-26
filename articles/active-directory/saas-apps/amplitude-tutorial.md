@@ -17,10 +17,10 @@ ms.date: 10/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5d077da34a6e82ced957c4da1e6abf7a5e294e78
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72596254"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amplitude"></a>Руководство по интеграции единого входа Azure Active Directory с Amplitude
@@ -35,9 +35,9 @@ ms.locfileid: "72596254"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Amplitude с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "72596254"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Amplitude](#configure-amplitude-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя Amplitude](#create-amplitude-test-user)** нужно для того, чтобы в Amplitude существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,11 +79,11 @@ ms.locfileid: "72596254"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://amplitude.com/saml/sso/metadata`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `https://amplitude.com/saml/sso/metadata`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://analytics.amplitude.com/saml/sso/<uniqueid>`.
 
@@ -118,7 +118,7 @@ ms.locfileid: "72596254"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Amplitude.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Amplitude**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -156,11 +156,11 @@ ms.locfileid: "72596254"
 
     ![Настройка единого входа](./media/amplitude-tutorial/configure3.png)
 
-    a. Откройте в Блокноте **XML-файл метаданных**, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Microsoft Azure Active Directory Metadata** (Метаданные Microsoft Azure Active Directory).
+    а. Откройте в Блокноте **XML-файл метаданных**, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Microsoft Azure Active Directory Metadata** (Метаданные Microsoft Azure Active Directory).
 
     b. Скопируйте значение **Reply URL (ACS)** (URL-адрес ответа (ACS) и вставьте его в текстовое поле **URL-адрес ответа** раздела **Базовая конфигурация SAML** на портале Azure.
 
-    c. Нажмите кнопку **Сохранить**
+    c. Щелкните **Сохранить**.
 
 ### <a name="create-amplitude-test-user"></a>Создание тестового пользователя в Amplitude
 
@@ -177,9 +177,9 @@ ms.locfileid: "72596254"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -10,19 +10,19 @@ ms.date: 09/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge so I can use it to transform the data before sending it to Azure.
 ms.openlocfilehash: b641ae62ba6e0cdacaeb46b1ffee2f02c7544763
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78397318"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222861"
 ---
-# <a name="tutorial-transform-data-with-azure-data-box-edge"></a>Учебник. Преобразование данных с помощью Azure Data Box Edge
+# <a name="tutorial-transform-data-with-azure-data-box-edge"></a>Руководство по Преобразование данных с помощью Azure Data Box Edge
 
 В этом руководстве описывается, как настроить роль вычислений в устройстве Azure Data Box Edge. После того как роль вычислений настроена, Data Box Edge может преобразовывать данные перед отправкой в ​​Azure.
 
 Эта процедура может занять от 10 до 15 минут.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * настройка вычислений;
@@ -31,7 +31,7 @@ ms.locfileid: "78397318"
 > * Проверка преобразования и передачи данных
 
  
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем вы настроите роль вычисления на устройстве Data Box Edge, убедитесь, что:
 
@@ -57,7 +57,7 @@ ms.locfileid: "78397318"
 
     ![Начало работы с вычислениями](./media/data-box-edge-deploy-configure-compute/configure-compute-2.png)
 
-4. Нажмите кнопку **Создать**. Для создания ресурса Центра Интернета вещей нужно несколько минут. После этого на плитке **Настройка вычислений** появляется конфигурация вычислений. Чтобы подтвердить настройку роли вычислений Edge, на плитке **Настройка вычислений** щелкните **Просмотреть вычисления**.
+4. Нажмите кнопку **создания**. Для создания ресурса Центра Интернета вещей нужно несколько минут. После этого на плитке **Настройка вычислений** появляется конфигурация вычислений. Чтобы подтвердить настройку роли вычислений Edge, на плитке **Настройка вычислений** щелкните **Просмотреть вычисления**.
     
     ![Начало работы с вычислениями](./media/data-box-edge-deploy-configure-compute/configure-compute-3.png)
 

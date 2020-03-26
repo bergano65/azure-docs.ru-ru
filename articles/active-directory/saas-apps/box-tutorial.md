@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Box | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Box | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Box.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ab129315f398061eaa427f05f3bd4b1cabff0dc3
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77046773"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-box"></a>Руководство. интеграции единого входа Azure Active Directory с Box
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-box"></a>Руководство по интеграции единого входа Azure Active Directory с Box
 
 В этом учебнике описано, как интегрировать Box с Azure Active Directory (Azure AD). Интеграция Box с Azure AD обеспечивает следующие возможности:
 

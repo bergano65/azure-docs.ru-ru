@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, сборник схем, служебн�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: d07c7622043353a79d5a82994c2fab4f0835b453
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74155800"
 ---
 # <a name="tutorial-configure-topics-in-azure-service-bus-using-ansible"></a>Руководство по настройке разделов в Служебной шине Azure с помощью Ansible
@@ -300,6 +300,6 @@ ansible-playbook servicebus_topic_policy_delete.yml
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"] 
 > [Документация по Ansible в Azure](/azure/ansible/)

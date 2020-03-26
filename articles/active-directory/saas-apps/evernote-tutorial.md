@@ -17,10 +17,10 @@ ms.date: 09/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 55216e9eb4bd5cda2635564480751459f05e8309
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "71121627"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-evernote"></a>Руководство по Интеграция единого входа Azure Active Directory с Evernote
@@ -35,9 +35,9 @@ ms.locfileid: "71121627"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Evernote с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -71,7 +71,7 @@ ms.locfileid: "71121627"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Evernote](#configure-evernote-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Evernote](#create-evernote-test-user)** требуется, чтобы в Evernote существовал пользователь B.Simon, связанный с соответствующим представлением в Azure Active Directory.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -81,7 +81,7 @@ ms.locfileid: "71121627"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -97,13 +97,13 @@ ms.locfileid: "71121627"
 
 7. В разделе **Сертификат подписи SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![image](common/edit-certificate.png) 
+    ![Изображение](common/edit-certificate.png) 
 
-    ![image](./media/evernote-tutorial/samlassertion.png)
+    ![Изображение](./media/evernote-tutorial/samlassertion.png)
 
-    a. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
+    а. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
 
-    b. Нажмите кнопку **Сохранить**
+    b. Щелкните **Сохранить**.
 
 1. Требуемые URL-адреса можно скопировать из раздела **Настройка Evernote**.
 
@@ -125,7 +125,7 @@ ms.locfileid: "71121627"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Evernote.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Evernote**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "71121627"
 
     ![Настройка сертификата](./media/evernote-tutorial/tutorial_evernote_certx.png)
     
-    a.  **Включить единый вход**. Единый вход включен по умолчанию (щелкните **Отключить единый вход**, чтобы удалить требование единого входа).
+    а.  **Включить единый вход**. Единый вход включен по умолчанию (щелкните **Отключить единый вход**, чтобы удалить требование единого входа).
 
     b. Вставьте значение **URL-адреса входа**, скопированное на портале Azure, в текстовое поле **SAML HTTP Request URL** (URL-адрес HTTP-запроса SAML).
 
@@ -202,9 +202,9 @@ ms.locfileid: "71121627"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

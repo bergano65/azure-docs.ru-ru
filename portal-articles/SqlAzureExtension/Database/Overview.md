@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/09/2019
 ms.author: ninarn
 ms.openlocfilehash: 99f19971eafaa1ddad1f96b187e18b79810560a2
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "61244465"
 ---
 # <a name="sql-database-documentation"></a>Документация по Базе данных SQL
@@ -23,11 +23,11 @@ ms.locfileid: "61244465"
 
 База данных SQL Azure позволяет легко выполнять основные задачи управления с помощью портала Azure, Azure CLI и Azure PowerShell. Узнайте, как выполнять основные задачи управления с использованием примеров из следующих кратких руководств:
 
-- [портал Azure](/azure/sql-database/sql-database-single-database-get-started)
+- [Портал Azure](/azure/sql-database/sql-database-single-database-get-started)
 - [Azure PowerShell](/azure/sql-database/sql-database-get-started-powershell)
-- [Интерфейс командной строки Azure](/azure/sql-database/sql-database-get-started-cli)
+- [Azure CLI](/azure/sql-database/sql-database-get-started-cli)
 
-## <a name="step-by-step-tutorials"></a>Пошаговые руководства
+## <a name="step-by-step-tutorials"></a>Пошаговые инструкции
 
 Сведения о создании, администрировании и переносе баз данных с помощью базы данных SQL.
 
@@ -46,7 +46,7 @@ ms.locfileid: "61244465"
 
 Найдите скрипты для выполнения типовых задач.
 
-- [Интерфейс командной строки Azure](/azure/sql-database/sql-database-cli-samples)
+- [Azure CLI](/azure/sql-database/sql-database-cli-samples)
 - [Azure PowerShell](/azure/sql-database/sql-database-powershell-samples)
 
 ## <a name="more"></a>Подробнее

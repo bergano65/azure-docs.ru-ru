@@ -1,5 +1,5 @@
 ---
-title: Руководство. Общий доступ за пределами организации в Azure Data Share
+title: Руководство по Общий доступ за пределами организации в Azure Data Share
 description: Руководство по совместному использованию данных клиентами и партнерами с помощью Azure Data Share
 author: joannapea
 ms.author: joanpo
@@ -7,13 +7,13 @@ ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.openlocfilehash: a8265680f74b2d5679d1ebfbb2873dd096f498a3
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77083048"
 ---
-# <a name="tutorial-share-data-using-azure-data-share"></a>Руководство. Совместное использование данных с помощью Azure Data Share  
+# <a name="tutorial-share-data-using-azure-data-share"></a>Руководство по Совместное использование данных с помощью Azure Data Share  
 
 Из этого руководства вы узнаете, как настроить новый Azure Data Share и начать предоставлять свои данные клиентам и партнерам за пределами вашей организации Azure. 
 

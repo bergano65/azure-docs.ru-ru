@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с In Case of Crisis (сетевой портал) | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с In Case of Crisis (сетевой портал) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении In Case of Crisis (сетевой портал).
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/04/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aa06f63141933427d0c225b590cdeebdfb618554
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77050160"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-in-case-of-crisis---online-portal"></a>Руководство. Интеграция единого входа Azure Active Directory с In Case of Crisis (сетевой портал)
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-in-case-of-crisis---online-portal"></a>Руководство по Интеграция единого входа Azure Active Directory с In Case of Crisis (сетевой портал)
 
 В этом руководстве описано, как интегрировать In Case of Crisis (сетевой портал) с Azure Active Directory (Azure AD). Интеграция In Case of Crisis (сетевой портал) с Azure AD обеспечивает следующие преимущества:
 

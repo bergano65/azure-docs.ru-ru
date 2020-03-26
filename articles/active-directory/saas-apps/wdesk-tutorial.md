@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wdesk.
 services: active-directory
 documentationCenter: na
@@ -15,13 +15,13 @@ ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
 ms.openlocfilehash: a4cfcf20fc7a6a3532f65c3e797da6c876844d2c
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76985571"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wdesk"></a>Руководство. Интеграция единого входа Azure Active Directory с Wdesk
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wdesk"></a>Руководство по Интеграция единого входа Azure Active Directory с Wdesk
 
 В этом руководстве вы узнаете, как интегрировать Wdesk с Azure Active Directory (Azure AD). Интеграция Wdesk с Azure AD обеспечивает следующие возможности:
 

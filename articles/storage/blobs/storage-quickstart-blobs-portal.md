@@ -4,23 +4,23 @@ titleSuffix: Azure Storage
 description: В этом кратком руководстве вы используете портал Azure в хранилище объектов (BLOB-объектов). отправите большой двоичный объект в службу хранилища Azure, скачаете его и составите список больших двоичных объектов в контейнере с помощью портала Azure.
 services: storage
 author: tamram
-ms.custom: mvc
 ms.service: storage
+ms.subservice: blobs
 ms.topic: quickstart
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 1e5ccc9d427755ea4274e836e81e3e324fffa39d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 3ceeb878121782ea3664e1ed62d5d632b606f08e
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78360956"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80061397"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-the-azure-portal"></a>Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure
 
 В этом кратком руководстве вы узнаете, как использовать [портал Azure](https://portal.azure.com/), чтобы создать контейнер в службе хранилища Azure, а также отправлять и загружать блочные BLOB-объекты в этот контейнер.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 

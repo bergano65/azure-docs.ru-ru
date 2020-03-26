@@ -4,10 +4,10 @@ description: Сопоставление элементов управления 
 ms.date: 01/13/2020
 ms.topic: sample
 ms.openlocfilehash: 501884491dbef85cdf8a29cb5fdcef44a68235a9
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75920569"
 ---
 # <a name="control-mapping-of-the-iso-27001-blueprint-sample"></a>Сопоставление элементов управления с помощью примера схемы ISO 27001

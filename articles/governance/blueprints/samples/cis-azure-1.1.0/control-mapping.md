@@ -4,10 +4,10 @@ description: Сопоставление рекомендаций из приме
 ms.date: 11/04/2019
 ms.topic: sample
 ms.openlocfilehash: 34d38f34dcd4233706f9b4578bc2dc2a644e4c2c
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74707427"
 ---
 # <a name="recommendation-mapping-of-the-cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Сопоставление рекомендаций из примера проекта теста производительности CIS для платформ Microsoft Azure
@@ -446,7 +446,7 @@ ms.locfileid: "74707427"
 - В веб-приложении должна использоваться последняя версия HTTP
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с сопоставлением элементов управления в схеме теста производительности CIS для платформ Microsoft Azure, перейдите к следующим статьям, чтобы изучить эту схему, или посетите раздел "Политика Azure" на портале Azure, чтобы назначить инициативу:
 

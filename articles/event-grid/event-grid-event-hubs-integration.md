@@ -9,13 +9,13 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: spelluru
 ms.openlocfilehash: 6f5bd129b175210cd5b9415a65b8db06d904e24d
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73718180"
 ---
-# <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство. Потоковая передача больших данных в хранилище данных
+# <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища BLOB-объектов в Хранилище данных SQL.
 
 ![Обзор приложений](media/event-grid-event-hubs-integration/overview.png)
@@ -44,7 +44,7 @@ ms.locfileid: "73718180"
 
 Для работы с этим руководством требуется:
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * [Visual Studio 2019](https://www.visualstudio.com/vs/) с рабочими нагрузками для разработки классических приложений .NET, Azure, ASP.NET, Node.js, Python и веб-разработки.
 * Скачать на свой компьютер [пример проекта EventHubsCaptureEventGridDemo](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo).
 
@@ -60,7 +60,7 @@ ms.locfileid: "73718180"
 
 ### <a name="launch-azure-cloud-shell-in-azure-portal"></a>Запуск Azure Cloud Shell на портале Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 2. Нажмите кнопку **Cloud Shell**, которая находится вверху.
 
     ![Портал Azure](media/event-grid-event-hubs-integration/azure-portal.png)
@@ -87,7 +87,7 @@ ms.locfileid: "73718180"
     1. Укажите имя для **группы ресурсов**
     2. Нажмите клавишу **ВВОД**. 
 
-        Вот пример:
+        Например:
     
         ```azurecli
         user@Azure:~$ az group create -l eastus -n ehubegridgrp
@@ -216,7 +216,7 @@ ms.locfileid: "73718180"
 
 После публикации функции вы можете подписаться на событие.
 
-## <a name="subscribe-to-the-event"></a>Оформление подписки на событие
+## <a name="subscribe-to-the-event"></a>Оформление подписки на событие.
 
 1. В новой вкладке или новом окне веб-браузера откройте [портал Azure](https://portal.azure.com).
 2. На портале Azure в меню слева выберите **Группы ресурсов**. 
@@ -260,7 +260,7 @@ ms.locfileid: "73718180"
    private const string EventHubName = "hubdatamigration";
    ```
 
-6. Выполните сборку решения. Запустите приложение **WindTurbineGenerator.exe**. 
+6. Создайте решение. Запустите приложение **WindTurbineGenerator.exe**. 
 7. Через несколько минут запросите перенесенные данные в таблице хранилища данных.
 
     ![Результаты запроса](media/event-grid-event-hubs-integration/query-results.png)
@@ -292,7 +292,7 @@ ms.locfileid: "73718180"
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о различиях между службами обмена сообщениями в Azure см. в статье [Выбор между службами обмена сообщениями Azure](compare-messaging-services.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

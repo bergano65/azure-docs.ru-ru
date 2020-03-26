@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machi
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: e1cc40459988fb9bc38e3dbbcde563cebb531e3d
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74156554"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по настройке масштабируемых наборов виртуальных машин в Azure с помощью Ansible
@@ -189,7 +189,7 @@ localhost                  : ok=8    changed=7    unreachable=0    failed=0
 
 Сейчас [настроенный масштабируемый набор](#configure-a-scale-set) содержит два экземпляра. Чтобы убедиться в этом, можно сделать следующее.
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Перейдите к масштабируемому набору, который вы настроили.
 
@@ -209,7 +209,7 @@ localhost                  : ok=8    changed=7    unreachable=0    failed=0
     }
     ```
 
-## <a name="scale-out-a-scale-set"></a>Расширение масштабируемого набора
+## <a name="scale-out-a-scale-set"></a>Горизонтальное увеличение масштаба масштабируемого набора
 
 Код из сборника схем в этом разделе извлекает информацию о масштабируемом наборе и изменяет его емкость с двух виртуальных машин до трех.
 
@@ -289,7 +289,7 @@ localhost                  : ok=5    changed=1    unreachable=0    failed=0
 
 Проверьте результаты работы на портале Azure.
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Перейдите к масштабируемому набору, который вы настроили.
 
@@ -309,7 +309,7 @@ localhost                  : ok=5    changed=1    unreachable=0    failed=0
     }
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Руководство. развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible](./ansible-deploy-app-vmss.md)

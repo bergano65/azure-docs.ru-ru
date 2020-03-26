@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machi
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: b7d3053c09d2dcb667a4fc407035f4814f786932
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74155848"
 ---
 # <a name="tutorial-update-the-custom-image-of-azure-virtual-machine-scale-sets-using-ansible"></a>Руководство по обновлению пользовательского образа масштабируемого набора виртуальных машин Azure с помощью Ansible
@@ -44,10 +44,10 @@ ms.locfileid: "74155848"
 
 Эта строка предназначена для имитации настройки каждой виртуальной машины с помощью различного программного обеспечения.
 
-Существует два способа получения примера сборника схем:
+Существуют два способа получить пример сборника схем.
 
 * [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/01-create-vms.yml) и сохраните его в `create_vms.yml`.
-* Создайте файл с именем `create_vms.yml` и скопируйте в него следующее:
+* Создайте файл с именем `create_vms.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 - name: Create two VMs (A and B) with HTTPS
@@ -192,10 +192,10 @@ ansible-playbook create-vms.yml --extra-vars "resource_group=myrg"
 * `image_vmforimageA`. Пользовательский образ, созданный для виртуальной машины, который демонстрирует `Image A` на домашней странице.
 * `image_vmforimageB`. Пользовательский образ, созданный для виртуальной машины, который демонстрирует `Image B` на домашней странице.
 
-Существует два способа получения примера сборника схем:
+Существуют два способа получить пример сборника схем.
 
 * [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/02-capture-images.yml) и сохраните его в `capture-images.yml`.
-* Создайте файл с именем `capture-images.yml` и скопируйте в него следующее:
+* Создайте файл с именем `capture-images.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 - name: Capture VM Images
@@ -238,9 +238,9 @@ ansible-playbook capture-images.yml --extra-vars "resource_group=myrg"
 * Подсистема балансировки нагрузки
 * Масштабируемый набор, который ссылается на `image_vmforimageA`
 
-Существует два способа получения примера сборника схем:
+Существуют два способа получить пример сборника схем.
 
-* [Загрузите сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/03-create-vmss.yml) и сохраните его в `create-vmss.yml`.
+* [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/03-create-vmss.yml) и сохраните его в `create-vmss.yml`.
 * Создайте файл с именем `create-vmss.yml` и скопируйте в него следующее:
 
 ```yml
@@ -337,10 +337,10 @@ ansible-playbook create-vmss.yml --extra-vars "resource_group=myrg"
 
 В этом разделе код сборника схем изменяет образ масштабируемого набора — с `image_vmforimageA` на `image_vmforimageB`. Кроме того обновляются все текущие виртуальные машины, развернутые в масштабируемом наборе.
 
-Существует два способа получения примера сборника схем:
+Существуют два способа получить пример сборника схем.
 
 * [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/04-update-vmss-image.yml) и сохраните его в `update-vmss-image.yml`.
-* Создайте файл с именем `update-vmss-image.yml` и скопируйте в него следующее:
+* Создайте файл с именем `update-vmss-image.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 - name: Update scale set image reference
@@ -427,7 +427,7 @@ ansible-playbook update-vmss-image.yml --extra-vars "resource_group=myrg"
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Ansible в Azure](/azure/ansible)

@@ -17,19 +17,19 @@ ms.author: mlearned
 ms.custom: mvc
 monikerRange: vsts
 ms.openlocfilehash: b912dfe3fb6461a925977192a6631ecac1357d35
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77049814"
 ---
 # <a name="create-a-cicd-pipeline-for-python-with-azure-devops-projects"></a>Создание конвейера CI/CD для Python с помощью Azure DevOps Projects
 
 В этом кратком руководстве объясняется, как с помощью простого интерфейса Azure DevOps Projects настроить конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) для приложения Python в Azure Pipelines. С помощью Azure DevOps Projects вы можете установить все компоненты, необходимые для разработки, развертывания и мониторинга приложения. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно. 
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). 
 - Организация и учетная запись [Azure DevOps](https://azure.microsoft.com/services/devops/).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure

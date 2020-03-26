@@ -6,10 +6,10 @@ ms.topic: quickstart
 ms.date: 09/19/2017
 ms.custom: mvc
 ms.openlocfilehash: 73f8d23dcd53b4cbbb3fbd902c789e868c2b021b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75769189"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
@@ -26,7 +26,7 @@ ms.locfileid: "75769189"
 
 * Установите [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/). Это инструмент, который вы будете использовать для проверки сообщений очереди, создаваемых с помощью выходной привязки.
 
-## <a name="add-binding"></a>Добавление выходной привязки
+## <a name="add-an-output-binding"></a><a name="add-binding"></a>Добавление выходной привязки
 
 В этом разделе вам нужно будет добавить выходную привязку хранилища очередей для функции, созданной ранее, с помощью пользовательского интерфейса портала. Эта привязка позволит написать минимальный код для создания сообщения в очереди. Вам не нужно писать код для таких задач, как открытие подключения к хранилищу, создание очереди или получение ссылки на очередь. Эти задачи выполняет среда выполнения службы "Функции Azure" и выходная привязка очереди.
 
@@ -66,7 +66,7 @@ ms.locfileid: "75769189"
 
 1. Измените код функции в соответствии с ее языком.
 
-    # <a name="ctabcsharp"></a>[C\#](#tab/csharp)
+    # <a name="c"></a>[C\#](#tab/csharp)
 
     Добавьте параметр **outputQueueItem** в сигнатуру метода, как показано в следующем примере.
 
@@ -84,7 +84,7 @@ ms.locfileid: "75769189"
     outputQueueItem.Add("Name passed to the function: " + name);
     ```
 
-    # <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
+    # <a name="javascript"></a>[JavaScript](#tab/nodejs)
 
     Добавьте код, который использует привязку для вывода в объекте `context.bindings` для создания сообщения очереди. Добавьте этот код перед инструкцией `context.done`.
 

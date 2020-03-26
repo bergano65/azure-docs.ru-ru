@@ -1,6 +1,6 @@
 ---
-title: Руководство. созданию приложения для мониторинга потребления воды в Azure IoT Central
-description: Руководство. Узнайте, как создать приложение для мониторинга потребления воды с использованием шаблонов приложений Azure IoT Central.
+title: Руководство по созданию приложения для мониторинга потребления воды в Azure IoT Central
+description: Руководство по Узнайте, как создать приложение для мониторинга потребления воды с использованием шаблонов приложений Azure IoT Central.
 author: miriambrus
 ms.author: miriamb
 ms.date: 11/12/2019
@@ -9,13 +9,13 @@ ms.service: iot-central
 services: iot-central
 manager: abjork
 ms.openlocfilehash: 7f00947504e5c6355379ce1e400fd2325016e05a
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77122066"
 ---
-# <a name="tutorial-create-a-water-consumption-monitoring-application-with-azure-iot-central"></a>Руководство. Создание приложения для мониторинга потребления воды в Azure IoT Central
+# <a name="tutorial-create-a-water-consumption-monitoring-application-with-azure-iot-central"></a>Руководство по Создание приложения для мониторинга потребления воды в Azure IoT Central
 
 В этом руководстве описано, как создать приложение для мониторинга потребления воды в Azure IoT Central, используя соответствующий шаблон Azure IoT Central.
 

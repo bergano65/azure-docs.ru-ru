@@ -4,10 +4,10 @@ description: Сопоставление элементов управления 
 ms.date: 12/04/2019
 ms.topic: sample
 ms.openlocfilehash: 5bef590013a9ef06b791e58dc6c82e74dffe1a17
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74851372"
 ---
 # <a name="control-mapping-of-the-uk-official-and-uk-nhs-blueprint-samples"></a>Сопоставление элементов управления примеров схем UK OFFICIAL и UK NHS
@@ -191,7 +191,7 @@ Azure реализует управление доступом на основе
 - \[Предварительная версия.\] Развертывание агента Log Analytics для виртуальных машин Windows
 - Развертывание наблюдателя сети при создании виртуальных сетей
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с сопоставлением элементов управления схемы UK OFFICIAL и UK NHS, просмотрите общие сведения и сведения о развертывании этого примера по следующим ссылкам:
 

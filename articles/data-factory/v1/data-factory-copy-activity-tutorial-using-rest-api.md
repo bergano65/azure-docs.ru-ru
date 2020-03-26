@@ -1,5 +1,5 @@
 ---
-title: 'Руководство. Создание конвейера Фабрики данных Azure с помощью REST API '
+title: 'Руководство по Создание конвейера Фабрики данных Azure с помощью REST API '
 description: В этом руководстве вы будете использовать REST API, чтобы создать конвейер с действием копирования фабрики данных Azure для копирования данных из хранилища BLOB-объектов Azure в базу данных SQL Azure.
 services: data-factory
 documentationcenter: ''
@@ -14,13 +14,13 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: c6e6d4a38c5ed2afc118b267f253ffc7533f9d82
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75438875"
 ---
-# <a name="tutorial-use-rest-api-to-create-an-azure-data-factory-pipeline-to-copy-data"></a>Руководство. Создание конвейера Фабрики данных Azure для копирования данных с помощью REST API 
+# <a name="tutorial-use-rest-api-to-create-an-azure-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера Фабрики данных Azure для копирования данных с помощью REST API 
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
@@ -46,7 +46,7 @@ ms.locfileid: "75438875"
 >  
 > В этом руководстве конвейер данных копирует данные из исходного хранилища данных в целевое. Инструкции по преобразованию данных с помощью Фабрики данных Azure см. в [руководстве по созданию конвейера для преобразования данных с использованием кластера Hadoop](data-factory-build-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -177,7 +177,7 @@ ms.locfileid: "75438875"
 
 В следующей таблице приведены описания свойств JSON, используемых в этом фрагменте кода.
 
-| Свойство | Description |
+| Свойство | Описание |
 |:--- |:--- |
 | type | Для свойства типа задано значение **AzureBlob**, так как данные хранятся в хранилище BLOB-объектов Azure. |
 | linkedServiceName | Ссылается на созданную ранее службу **AzureStorageLinkedService**. |
@@ -220,7 +220,7 @@ ms.locfileid: "75438875"
 ```
 В следующей таблице приведены описания свойств JSON, используемых в этом фрагменте кода.
 
-| Свойство | Description |
+| Свойство | Описание |
 |:--- |:--- |
 | type | Свойство type имеет значение **AzureSqlTable**, так как данные копируются в таблицу в базе данных SQL Azure. |
 | linkedServiceName | Ссылается на созданную ранее службу **AzureSqlLinkedService**. |

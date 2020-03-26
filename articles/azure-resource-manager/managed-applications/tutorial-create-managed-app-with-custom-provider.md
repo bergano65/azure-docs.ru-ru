@@ -6,13 +6,13 @@ ms.author: lazinnat
 author: lazinnat
 ms.date: 06/20/2019
 ms.openlocfilehash: c3750da6bd76c8cb3908fbdc71ba676f09d77def
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75648811"
 ---
-# <a name="tutorial-create-managed-application-with-custom-actions-and-resources"></a>Руководство. созданию управляемого приложения с настраиваемыми действиями и ресурсами
+# <a name="tutorial-create-managed-application-with-custom-actions-and-resources"></a>Руководство по созданию управляемого приложения с настраиваемыми действиями и ресурсами
 
 В рамках этого учебника вы создадите собственное управляемое приложение с настраиваемыми действиями и ресурсами. Управляемое приложение будет содержать настраиваемое действие на странице `Overview`, тип настраиваемого ресурса будет отображаться как отдельный пункт меню в таблице `Table of Content`, а контекст настраиваемого действия — на странице настраиваемых ресурсов.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75648811"
 > * Развертывание экземпляра управляемого приложения.
 > * Выполнение настраиваемых действий и создание настраиваемых ресурсов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником вам необходимо ознакомиться со следующими статьями:
 
@@ -219,7 +219,7 @@ $blobUri=(Get-AzureStorageBlob -Container appcontainer -Blob app.zip -Context $c
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
-# <a name="azure-clitabazurecli-interactive"></a>[Azure CLI](#tab/azurecli-interactive)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli-interactive)
 
 ```azurecli-interactive
 resourceGroup="appResourcesGroup"
@@ -244,7 +244,7 @@ az managedapp definition create \
   --package-file-uri "path to your app.zip package"
 ```
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов введите и выберите **Центр управляемых приложений**.
 2. В **центре управляемых приложений** выберите **Определение приложения из каталога услуг** и щелкните **Добавить**. 
@@ -277,7 +277,7 @@ az managedapp definition create \
 
 При развертывании определения управляемого приложения запустите приведенный ниже сценарий или выполните шаги на портале Azure, чтобы развернуть экземпляр управляемого приложения с настраиваемым поставщиком:
 
-# <a name="azure-clitabazurecli-interactive"></a>[Azure CLI](#tab/azurecli-interactive)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli-interactive)
 
 ```azurecli-interactive
 appResourcesGroup="appResourcesGroup"
@@ -300,7 +300,7 @@ az managedapp create \
   --parameters "{\"funcname\": {\"value\": \"managedusersappfunction\"}, \"storageName\": {\"value\": \"managedusersappstorage\"}}"
 ```
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов введите и выберите **Центр управляемых приложений**.
 2. В **Центре управляемых приложений** выберите **Приложения каталога услуг** и щелкните **Добавить**. 

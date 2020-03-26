@@ -12,31 +12,31 @@ ms.reviewer: v-masebo
 ms.date: 03/25/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
 ms.openlocfilehash: c0da38a41bf613237ea3b164d70e4729a7284ca7
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "76768601"
 ---
-# <a name="quickstart-use-nodejs-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Node.js для создания запросов к базе данных SQL Azure
+# <a name="quickstart-use-nodejs-to-query-an-azure-sql-database"></a>Краткое руководство. Создание запросов к базе данных SQL Azure с использованием Node.js
 
 В этом кратком руководстве вы будете использовать Node.js для подключения к базе данных SQL Azure, а затем выполните запрос данных с помощью инструкций T-SQL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [База данных SQL Azure](sql-database-single-database-get-started.md)
 - Программное обеспечение, связанное с [Node.js](https://nodejs.org)
 
-  # <a name="macostabmacos"></a>[macOS](#tab/macos)
+  # <a name="macos"></a>[macOS](#tab/macos)
 
   Установите Homebrew и Node.js, затем установите драйвер ODBC и SQLCMD, выполнив шаги **1.2** и **1.3** в разделе [Создание приложений Node.js с помощью SQL Server в macOS](https://www.microsoft.com/sql-server/developer-get-started/node/mac/).
 
-  # <a name="ubuntutabubuntu"></a>[Ubuntu](#tab/ubuntu)
+  # <a name="ubuntu"></a>[Ubuntu](#tab/ubuntu)
 
   Установите Node.js, затем установите драйвер ODBC и SQLCMD, выполнив шаги **1.2** и **1.3** в разделе [Создание приложений Node.js с помощью SQL Server в Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/node/ubuntu/).
 
-  # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+  # <a name="windows"></a>[Windows](#tab/windows)
 
   Установите Chocolatey и Node.js, затем установите драйвер ODBC и SQLCMD, выполнив шаги **1.2** и **1.3** в разделе [Создание приложений Node.js с помощью SQL Server в Windows](https://www.microsoft.com/sql-server/developer-get-started/node/windows/).
 

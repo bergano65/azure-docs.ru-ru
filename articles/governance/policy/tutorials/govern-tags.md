@@ -1,16 +1,16 @@
 ---
-title: Руководство. Администрирование системы управления тегами
+title: Руководство по Администрирование системы управления тегами
 description: С помощью действия изменения в службе "Политика Azure" можно создать и применить модель управления тегами к новым и имеющимся ресурсам.
 ms.date: 11/25/2019
 ms.topic: tutorial
 ms.openlocfilehash: 5e9cb9a4acb930c117374281a3debaeecce47110
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75965986"
 ---
-# <a name="tutorial-manage-tag-governance-with-azure-policy"></a>Руководство. системе управления тегами с помощью Политики Azure
+# <a name="tutorial-manage-tag-governance-with-azure-policy"></a>Руководство по системе управления тегами с помощью Политики Azure
 
 [Теги](../../../azure-resource-manager/management/tag-resources.md) являются важной частью организации ресурсов Azure в таксономию. Если следовать [рекомендациям по управлению тегами](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources), с помощью тегов можно применять бизнес-политики с использованием службы "Политика Azure" или [отслеживать затраты с помощью службы "Управление затратами"](../../../cost-management-billing/costs/cost-mgt-best-practices.md#organize-and-tag-your-resources).
 Независимо от метода и причины применения тегов, важно иметь возможность быстро добавлять, изменять и удалять эти теги в ресурсах Azure.
@@ -28,7 +28,7 @@ ms.locfileid: "75965986"
 > - сопоставление каждого требования с определением политики;
 > - группировка политик тегов в инициативу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 

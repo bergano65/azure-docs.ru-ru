@@ -12,15 +12,15 @@ ms.author: jovanpop
 ms.reviewer: carlr
 ms.date: 07/29/2019
 ms.openlocfilehash: 6070b53e5f906bc378402d98275b8f798f57b505
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "78674427"
 ---
 # <a name="getting-started-with-single-databases-in-azure-sql-database"></a>Начало работы с отдельной базой данных в Базе данных SQL Azure
 
-[Отдельная база данных](sql-database-single-index.yml) — это полностью управляемая база данных как услуга (DbaaS) на основе модели PaaS. Это идеальная подсистема хранилища для современных облачных приложений. В этом разделе вы узнаете, как быстро создать и настроить отдельную базу данных в Базе данных SQL.
+[Отдельная база данных](sql-database-single-index.yml) — это полностью управляемая база данных как услуга (DbaaS) на основе модели PaaS. Это идеальная подсистема хранилища для современных облачных приложений. В этом разделе вы узнаете, как быстро настроить и создать отдельную базу данных в Базе данных SQL.
 
 ## <a name="quickstart-overview"></a>Общие сведения о кратком руководстве
 
@@ -56,4 +56,4 @@ ms.locfileid: "78674427"
 - Дополнительные руководства см. в статье [Использование отдельной базы данных в Базе данных SQL Azure](sql-database-howto-single-database.md).
 - Ознакомьтесь с примерами скриптов, написанными в [PowerShell](sql-database-powershell-samples.md) и [Azure CLI](sql-database-cli-samples.md).
 - Узнайте больше об [API управления](sql-database-single-databases-manage.md), который можно использовать для настройки баз данных.
-- [Определение нужного SKU Базы данных SQL Azure или Управляемого экземпляра для локальной базы данных](/sql/dma/dma-sku-recommend-sql-db/).
+- [Identify the right Azure SQL Database/Managed Instance SKU for your on-premises database](/sql/dma/dma-sku-recommend-sql-db/) (Определение нужного SKU Базы данных SQL Azure и Управляемого экземпляра для локальной базы данных).

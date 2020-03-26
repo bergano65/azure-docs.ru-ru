@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/22/2018
 ms.openlocfilehash: 4ab467c0dc5014ec6c8a543fe7e8ecc136dfa02d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78388693"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79224001"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "78388693"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -109,7 +109,7 @@ ms.locfileid: "78388693"
         ```
 
     * Чтобы создавать экземпляры фабрики данных, вы должны быть участником или администратором подписки Azure.
-    * Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+    * Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
@@ -117,7 +117,7 @@ ms.locfileid: "78388693"
 
 ### <a name="create-the-source-azure-sql-database-linked-service"></a>Создание исходной связанной службы Базы данных SQL Azure
 
-1. Создайте файл JSON с именем **AzureSqlDatabaseLinkedService.json** в папке **C:\ADFv2TutorialBulkCopy** и добавьте в него приведенное ниже содержимое. Если папка ADFv2TutorialBulkCopy отсутствует, создайте ее.
+1. Создайте файл JSON с именем **AzureSqlDatabaseLinkedService.json** в папке **C:\ADFv2TutorialBulkCopy** с приведенным ниже содержимым. (Создайте папку ADFv2TutorialBulkCopy, если она еще не существует.)
 
     > [!IMPORTANT]
     > Перед сохранением файла замените &lt;servername&gt;, &lt;databasename&gt;, &lt;username&gt;@&lt;servername&gt; и &lt;password&gt; значениями своей базы данных SQL Azure.
@@ -136,7 +136,7 @@ ms.locfileid: "78388693"
 
 2. В **Azure PowerShell** переключитесь в папку **ADFv2TutorialBulkCopy**.
 
-3. Выполните командлет **Set-AzDataFactoryV2LinkedService** , чтобы создать связанную службу: **AzureSqlDatabaseLinkedService**. 
+3. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу. **AzureSqlDatabaseLinkedService**. 
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDatabaseLinkedService" -File ".\AzureSqlDatabaseLinkedService.json"
@@ -170,7 +170,7 @@ ms.locfileid: "78388693"
     }
     ```
 
-2. Чтобы создать связанную службу: **AzureSqlDWLinkedService**, выполните командлет **Set-AzDataFactoryV2LinkedService** .
+2. Чтобы создать связанную службу **AzureSqlDWLinkedService**, выполните командлет **Set-AzDataFactoryV2LinkedService**.
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDWLinkedService" -File ".\AzureSqlDWLinkedService.json"
@@ -206,7 +206,7 @@ ms.locfileid: "78388693"
     }
     ```
 
-2. Чтобы создать связанную службу: **AzureStorageLinkedService**, выполните командлет **Set-AzDataFactoryV2LinkedService** .
+2. Чтобы создать связанную службу **AzureStorageLinkedService**, выполните командлет **Set-AzDataFactoryV2LinkedService**.
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
@@ -245,7 +245,7 @@ ms.locfileid: "78388693"
     }
     ```
 
-2. Чтобы создать набор данных: **AzureSqlDatabaseDataset**, выполните командлет **Set-AzDataFactoryV2Dataset** .
+2. Чтобы создать набор данных **AzureSqlDatabaseDataset**, выполните командлет **Set-AzDataFactoryV2Dataset**.
 
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDatabaseDataset" -File ".\AzureSqlDatabaseDataset.json"
@@ -263,7 +263,7 @@ ms.locfileid: "78388693"
 
 ### <a name="create-a-dataset-for-sink-sql-data-warehouse"></a>Создание набора данных для хранилища данных-приемника SQL
 
-1. Создайте файл JSON с именем **AzureSqlDWDataset.json** в папке **C:\ADFv2TutorialBulkCopy** со следующим содержимым: tableName задается в качестве параметра, позже действие копирования, которое ссылается на этот набор данных, передает фактическое значение в набор данных.
+1. Создайте файл JSON с именем **AzureSqlDWDataset.json** в папке **C:\ADFv2TutorialBulkCopy** со приведенным ниже содержимым. tableName задается в качестве параметра, позже действие копирования, которое ссылается на этот набор данных, передает фактическое значение в набор данных.
 
     ```json
     {
@@ -289,7 +289,7 @@ ms.locfileid: "78388693"
     }
     ```
 
-2. Чтобы создать набор данных: **AzureSqlDWDataset**, выполните командлет **Set-AzDataFactoryV2Dataset** .
+2. Чтобы создать набор данных **AzureSqlDWDataset**, выполните командлет **Set-AzDataFactoryV2Dataset**.
 
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDWDataset" -File ".\AzureSqlDWDataset.json"
@@ -381,7 +381,7 @@ ms.locfileid: "78388693"
     }
     ```
 
-2. Чтобы создать конвейер: **IterateAndCopySQLTables**, выполните командлет **Set-AzDataFactoryV2Pipeline** .
+2. Чтобы создать конвейер **IterateAndCopySQLTables**, выполните командлет **Set-AzDataFactoryV2Pipeline**.
 
     ```powershell
     Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "IterateAndCopySQLTables" -File ".\IterateAndCopySQLTables.json"
@@ -457,7 +457,7 @@ ms.locfileid: "78388693"
     }
     ```
 
-2. Чтобы создать конвейер: **GetTableListAndTriggerCopyData**, выполните командлет **Set-AzDataFactoryV2Pipeline** .
+2. Чтобы создать конвейер **GetTableListAndTriggerCopyData**, выполните командлет **Set-AzDataFactoryV2Pipeline**.
 
     ```powershell
     Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "GetTableListAndTriggerCopyData" -File ".\GetTableListAndTriggerCopyData.json"

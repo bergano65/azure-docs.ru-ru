@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с NetSuite | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с NetSuite | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в NetSuite.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/22/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6a920e58f1ffd4c3e3e9769bf6346100a8677b90
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76760064"
 ---
-# <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство. Интеграция единого входа Azure AD с NetSuite
+# <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство по Интеграция единого входа Azure AD с NetSuite
 
 В этом учебнике описано, как интегрировать NetSuite с Azure Active Directory (Azure AD). Интеграция NetSuite с Azure AD обеспечивает следующие возможности.
 

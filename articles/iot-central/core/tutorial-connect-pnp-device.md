@@ -8,21 +8,18 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: e22a9ae2888187dc877876ee5d4d4ec4ecb7c6e5
-ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
+ms.openlocfilehash: 42098d54725cc12691839b63c508efbecf042aa0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78329448"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80064418"
 ---
 # <a name="tutorial-use-a-device-capability-model-to-create-an-iot-plug-and-play-preview-device-and-connect-it-to-your-iot-central-application"></a>Руководство по Использование модели возможности устройства для создания устройства IoT Plug and Play (предварительная версия) и его подключения к приложению IoT Central
 
 _Модель возможности устройства_ (DCM) описывает возможности устройства [IoT Plug and Play (предварительная версия)](../../iot-pnp/overview-iot-plug-and-play.md). IoT Central может использовать DCM для создания шаблона и визуализаций для устройства при его первом подключении.
 
 Поддержка [IoT Plug and Play](../../iot-pnp/overview-iot-plug-and-play.md) доступна в предварительной версии и поддерживается только в выбранных регионах.
-
-> [!NOTE]
-> Обратитесь в службу технической поддержки для получения доступа, чтобы создать предварительную версию приложения с поддержкой IoT Plug and Play для устройств.
 
 В этом руководстве описано следующее:
 

@@ -8,16 +8,16 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.openlocfilehash: 0453d7465479fb1410d1436cc3fa53914633ece5
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "68726388"
 ---
 #  <a name="transfer-objects-tofrom-azure-blob-storage-using-php"></a>Передача объектов в хранилище BLOB-объектов Azure и обратно с помощью PHP
 Из этого краткого руководства вы узнаете, как использовать PHP для передачи, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
@@ -42,14 +42,14 @@ git clone https://github.com/Azure-Samples/storage-blobs-php-quickstart.git
 ## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
 В приложении нужно указать имя и ключ учетной записи хранения, чтобы создать экземпляр **BlobRestProxy** для вашего приложения. Рекомендуем хранить эти идентификаторы в переменной среды на локальном компьютере, где выполняется приложение. Чтобы создать переменную среды, используйте один из следующих примеров в зависимости от операционной системы. Замените строки **youraccountname** и **youraccountkey** фактическими значениями имени и ключа учетной записи.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 ```bash
 export ACCOUNT_NAME=<youraccountname>
 export ACCOUNT_KEY=<youraccountkey>
 ```
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 ```cmd
 setx ACCOUNT_NAME=<youraccountname>
@@ -63,7 +63,7 @@ setx ACCOUNT_KEY=<youraccountkey>
 ## <a name="run-the-sample"></a>Запуск примера
 Этот пример создает тестовый файл в папке " ". Пример программы отправляет тестовый файл в хранилище BLOB-объектов, выводит списокBLOB-объектов в контейнере и скачивает файл с новым именем. 
 
-Запустите пример. Ниже представлен пример выходных данных, которые возвращаются при выполнении этого приложения.
+Запустите образец. Ниже представлен пример выходных данных, которые возвращаются при выполнении этого приложения.
   
 ```
 Uploading BlockBlob: HelloWorld.txt
@@ -202,7 +202,7 @@ This is the content of the blob uploaded: Hello Azure!
 - Просматривайте, скачивайте и устанавливайте [исходный код клиентской библиотеки PHP](https://github.com/Azure/azure-storage-php) для службы хранилища Azure в GitHub.
 - Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=php&term=blob), написанные с использованием клиентской библиотеки PHP.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
  
 В этом кратком руководстве вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью PHP. Чтобы узнать подробнее о работе с PHP, перейдите на сайт Центра разработчиков PHP.
 

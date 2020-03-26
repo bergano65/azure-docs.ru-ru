@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с InstaVR Viewer | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с InstaVR Viewer | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и InstaVR Viewer.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8de94f83c260a86f313a2dd04cdd5a7ae8fc1cda
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73155308"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-instavr-viewer"></a>Руководство. Интеграция Azure Active Directory с InstaVR Viewer
+# <a name="tutorial-azure-active-directory-integration-with-instavr-viewer"></a>Руководство по Интеграция Azure Active Directory с InstaVR Viewer
 
 В этом руководстве описано, как интегрировать InstaVR Viewer с Azure Active Directory (Azure AD).
 Интеграция InstaVR Viewer с Azure Active Directory обеспечивает следующие преимущества:
@@ -39,7 +39,7 @@ ms.locfileid: "73155308"
 
 Чтобы настроить интеграцию Azure Active Directory с InstaVR Viewer, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа в InstaVR Viewer.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,13 +101,13 @@ ms.locfileid: "73155308"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения InstaVR Viewer](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://console.instavr.co/auth/saml/login/<WEBPackagedURL>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://console.instavr.co/auth/saml/login/<WEBPackagedURL>`.
 
     > [!NOTE]
     > Не существует единого шаблона для URL-адреса входа. Он создается, когда пользователи InstaVR Viewer выполняют веб-подготовку приложений к развертыванию. Он уникален для каждого пользователя и пакета. Чтобы получить точный URL-адрес для входа, необходимо войти в экземпляр InstaVR Viewer и выполнить веб-подготовку к развертыванию.
@@ -125,11 +125,11 @@ ms.locfileid: "73155308"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-instavr-viewer-single-sign-on"></a>Настройка единого входа InstaVR Viewer
 
@@ -143,7 +143,7 @@ ms.locfileid: "73155308"
 
     ![Панель конфигурации InstaVR Viewer](media/instavr-viewer-tutorial/tutorial-instavr-viewer-configure.png)
 
-    a. В текстовое поле **SSO URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **SSO URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b. В текстовое поле **URL-адрес выхода** вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
@@ -151,9 +151,9 @@ ms.locfileid: "73155308"
 
     d. Щелкните **Обновить**, чтобы отправить скачанный файл сертификата.
 
-    д. Щелкните **Обновить**, чтобы отправить скачанный файл метаданных федерации.
+    д) Щелкните **Обновить**, чтобы отправить скачанный файл метаданных федерации.
 
-    Е. Скопируйте **идентификатор сущности** и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
+    е) Скопируйте **идентификатор сущности** и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

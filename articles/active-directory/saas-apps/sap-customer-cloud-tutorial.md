@@ -17,10 +17,10 @@ ms.date: 09/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 837787d375a7570b7daf0a149960ca0020bcdced
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72264065"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-cloud-for-customer"></a>Руководство по интеграции единого входа Azure Active Directory с SAP Cloud for Customer
@@ -35,9 +35,9 @@ ms.locfileid: "72264065"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка SAP Cloud for Customer с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72264065"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в SAP Cloud for Customer](#configure-sap-cloud-for-customer-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя SAP Cloud for Customer](#create-sap-cloud-for-customer-test-user)** требуется для того, чтобы в SAP Cloud for Customer существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,11 +78,11 @@ ms.locfileid: "72264065"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<server name>.crm.ondemand.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<server name>.crm.ondemand.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<server name>.crm.ondemand.com`.
 
@@ -91,24 +91,24 @@ ms.locfileid: "72264065"
 
 1. Приложение SAP Cloud for Customer ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 1. В разделе **Атрибуты пользователя** в диалоговом окне **User Attributes & Claims** (Атрибуты пользователя и утверждения) выполните следующие действия.
 
-    a. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](./media/sap-customer-cloud-tutorial/tutorial_usermail.png)
+    ![Изображение](./media/sap-customer-cloud-tutorial/tutorial_usermail.png)
 
-    ![image](./media/sap-customer-cloud-tutorial/tutorial_usermailedit.png)
+    ![Изображение](./media/sap-customer-cloud-tutorial/tutorial_usermailedit.png)
 
     b. Выберите **Преобразование** в качестве **источника**.
 
-    c. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
+    c. Из списка **Преобразование** выберите **ExtractMailPrefix()** .
 
     d. В списке **Параметр 1** выберите атрибут пользователя, который вы хотите использовать в своей реализации.
     Например, если в качестве уникального идентификатора пользователя вы хотите использовать EmployeeID и сохранили значение атрибута в ExtensionAttribute2, выберите user.extensionattribute2.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -134,7 +134,7 @@ ms.locfileid: "72264065"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к SAP Cloud for Customer.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **SAP Cloud for Customer**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -160,7 +160,7 @@ ms.locfileid: "72264065"
 
     ![Настройка SAP](./media/sap-customer-cloud-tutorial/configure02.png)
 
-    a. Щелкните **Browse** (Обзор), чтобы передать XML-файл метаданных федерации, скачанный на портале Azure.
+    а. Щелкните **Browse** (Обзор), чтобы передать XML-файл метаданных федерации, скачанный на портале Azure.
 
     b. После успешной отправки XML-файла указанные ниже значения заполнятся автоматически, после чего следует нажать кнопку **Save** (Сохранить).
 
@@ -180,7 +180,7 @@ ms.locfileid: "72264065"
 
     ![Настройка SAP](./media/sap-customer-cloud-tutorial/configure04.png)
 
-    a. В текстовом поле **First Name** (Имя) введите имя пользователя, например **B**.
+    а. В текстовом поле **First Name** (Имя) введите имя пользователя, например **B**.
 
     b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -188,9 +188,9 @@ ms.locfileid: "72264065"
 
     d. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **B. Simon**.
 
-    д. Выберите требуемый **тип пользователя**.
+    д) Выберите требуемый **тип пользователя**.
 
-    Е. Выберите параметр **Account Activation** (Активация учетной записи) в соответствии с требованиями.
+    е) Выберите параметр **Account Activation** (Активация учетной записи) в соответствии с требованиями.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -200,9 +200,9 @@ ms.locfileid: "72264065"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

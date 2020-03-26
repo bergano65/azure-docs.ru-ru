@@ -1,5 +1,5 @@
 ---
-title: Руководство. Управление флагами компонентов с помощью службы "Конфигурация приложений Azure"
+title: Руководство по Управление флагами компонентов с помощью службы "Конфигурация приложений Azure"
 titleSuffix: Azure App Configuration
 description: Из этого руководства вы узнаете, как управлять флагами компонентов отдельно от приложения с помощью Конфигурации приложений Azure.
 services: azure-app-configuration
@@ -16,13 +16,13 @@ ms.date: 04/19/2019
 ms.author: lcozzens
 ms.custom: mvc
 ms.openlocfilehash: ccab8014000f9f684249bf2c1f800f74c92e7369
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76899369"
 ---
-# <a name="tutorial-manage-feature-flags-in-azure-app-configuration"></a>Руководство. Управление флагами компонентов в конфигурации приложений Azure
+# <a name="tutorial-manage-feature-flags-in-azure-app-configuration"></a>Руководство по Управление флагами компонентов в конфигурации приложений Azure
 
 Можно хранить все флаги компонентов в конфигурации приложений Azure и управлять ими в одном месте. Конфигурация приложений предоставляет портал **Диспетчер компонентов** с пользовательским интерфейсом. Он разработан специально для флагов компонентов. Кроме того, Конфигурация приложений имеет встроенную поддержку схемы данных флага компонентов .NET Core.
 

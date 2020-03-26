@@ -1,6 +1,6 @@
 ---
-title: Руководство. созданию приложения аналитического анализа "умных счетчиков" с помощью IoT Central
-description: Руководство. Узнайте, как создать приложение для мониторинга "умных счетчиков"с помощью шаблонов приложений Azure IoT Central.
+title: Руководство по созданию приложения аналитического анализа "умных счетчиков" с помощью IoT Central
+description: Руководство по Узнайте, как создать приложение для мониторинга "умных счетчиков"с помощью шаблонов приложений Azure IoT Central.
 author: op-ravi
 ms.author: omravi
 ms.date: 11/12/2019
@@ -9,13 +9,13 @@ ms.service: iot-central
 services: iot-central
 manager: abjork
 ms.openlocfilehash: 9e954e9c1a7efa43a19849b1c5b40284ec84eeed
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77016006"
 ---
-# <a name="tutorial-create-and-walk-through-the-smart-meter-monitoring-app-template"></a>Руководство. Создание и пошаговое руководство по шаблону приложения "умных счетчиков" 
+# <a name="tutorial-create-and-walk-through-the-smart-meter-monitoring-app-template"></a>Руководство по Создание и пошаговое руководство по шаблону приложения "умных счетчиков" 
 
 
 

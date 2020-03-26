@@ -17,10 +17,10 @@ ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9676a71940569b26d6b0b6bfef767108ae57d953
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73161219"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-confluence-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Confluence by resolution GmbH
@@ -39,7 +39,7 @@ ms.locfileid: "73161219"
 
 Для настройки интеграции Azure AD с SAML SSO for Confluence by resolution GmbH требуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка SAML SSO for Confluence by resolution GmbH с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,15 +100,15 @@ ms.locfileid: "73161219"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **выдающейся точкой распространения**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Информация о едином входе доменов и URL-адресов приложения SAML SSO for Confluence by resolution GmbH](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом пакетом обновления, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие.
 
@@ -143,7 +143,7 @@ ms.locfileid: "73161219"
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon7.png)
 
-6. Начнется установка подключаемого модуля. Нажмите кнопку **Закрыть**
+6. Начнется установка подключаемого модуля. Щелкните **Закрыть**.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon8.png)
 
@@ -169,7 +169,7 @@ ms.locfileid: "73161219"
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon5a.png)
  
-    a. Для типа поставщика удостоверений выберите значение **Azure AD**.
+    а. Для типа поставщика удостоверений выберите значение **Azure AD**.
     
     b. Добавьте **имя** поставщика удостоверений (например, Azure AD).
     
@@ -185,7 +185,7 @@ ms.locfileid: "73161219"
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon5c.png)
 
-    a. Нажмите кнопку **Load File** (Загрузить файл) и выберите XML-файл метаданных, который вы скачали на шаге 5.
+    а. Нажмите кнопку **Load File** (Загрузить файл) и выберите XML-файл метаданных, который вы скачали на шаге 5.
 
     b. Нажмите кнопку **Import** (Импортировать).
     
@@ -277,7 +277,7 @@ ms.locfileid: "73161219"
 
     ![Добавление сотрудника](./media/samlssoconfluence-tutorial/user2.png) 
 
-    a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Britta Simon.
+    а. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Britta Simon.
 
     b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
@@ -285,9 +285,9 @@ ms.locfileid: "73161219"
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя Britta Simon.
 
-    д. Щелкните **Confirm Password** (Подтвердить пароль) и повторно введите пароль.
+    д) Щелкните **Confirm Password** (Подтвердить пароль) и повторно введите пароль.
     
-    Е. Нажмите кнопку **Добавить**.
+    е) Нажмите кнопку **Добавить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

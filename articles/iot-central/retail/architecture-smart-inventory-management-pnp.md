@@ -8,10 +8,10 @@ ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
 ms.openlocfilehash: 756f15f6cb0d797d2a7db5fbe5c6157b2913b40b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77020868"
 ---
 # <a name="architecture-of-iot-central-smart-inventory-management-application-template"></a>Архитектура шаблона приложения для интеллектуального управления запасами для IoT Central
@@ -21,8 +21,8 @@ ms.locfileid: "77020868"
 > [!div class="mx-imgBorder"]
 > ![Интеллектуальное управление запасами](./media/concept-smart-inventory-mgmt-architecture/smart-inventory-management-architecture.png)
 
-1. Набор датчиков Интернета вещей, отправляющих данные телеметрии на устройство шлюза
-2. Устройства шлюза, отправляющие данные телеметрии и агрегированные аналитические сведения в IoT Central
+1. Набор датчиков Интернета вещей отправляет данные телеметрии на устройство шлюза.
+2. Устройства шлюза отправляют данные телеметрии и агрегированные аналитические сведения в IoT Central.
 3. Данные направляются в нужную службу Azure для обработки.
 4. Службы Azure, такие как ASA или Функции Azure, можно использовать для переформатирования потоков данных и их отправки в соответствующие учетные записи хранения. 
 5. Обработанные данные хранятся в "горячем" хранилище для операций практически в режиме реального времени или в "холодном" хранилище для дополнительного улучшения аналитических сведений с помощью машинного обучения или пакетного анализа. 

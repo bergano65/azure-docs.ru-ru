@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с EAB Navigate IMPL | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с EAB Navigate IMPL | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и EAB Navigate IMPL.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 10/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 465b41aaf3c3b16dcba489d1ea9ba951a3108c8e
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77046581"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-eab-navigate-impl"></a>Руководство. интеграции единого входа Azure Active Directory с EAB Navigate IMPL
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-eab-navigate-impl"></a>Руководство по интеграции единого входа Azure Active Directory с EAB Navigate IMPL
 
 В этом руководстве вы узнаете, как интегрировать EAB Navigate IMPL с Azure Active Directory (Azure AD). Интеграция EAB Navigate IMPL с Azure AD предоставляет следующие возможности:
 

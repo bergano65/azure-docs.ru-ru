@@ -14,10 +14,10 @@ ms.reviewer: piotrci
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1a1f4addf9bb1fff34d99867fb3730a9197c9c05
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73721224"
 ---
 # <a name="sign-up-for-azure-active-directory-premium-editions"></a>Регистрация для работы с выпусками Azure Active Directory Premium
@@ -97,5 +97,5 @@ Enterprise Mobility + Security — набор, состоящий из Azure AD
 
 Процесс активации обычно занимает лишь несколько минут, после чего клиент Azure AD можно использовать. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда у вас есть подписка Azure AD Premium, вы можете [настроить свой домен](add-custom-domain.md), добавить [фирменную символику](customize-branding.md), [создать клиент](active-directory-access-create-new-tenant.md), а также [добавить группы](active-directory-groups-create-azure-portal.md) и [пользователей](add-users-azure-active-directory.md).

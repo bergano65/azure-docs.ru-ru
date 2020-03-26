@@ -9,13 +9,13 @@ ms.date: 05/30/2019
 ms.author: peshultz
 ms.custom: mvc
 ms.openlocfilehash: a967fdc14b85f294ee11cbcc57a8d2280dba38e8
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77017196"
 ---
-# <a name="tutorial-trigger-a-batch-job-using-azure-functions"></a>Руководство. активации пакетного задания с использованием Функций Azure
+# <a name="tutorial-trigger-a-batch-job-using-azure-functions"></a>Руководство по активации пакетного задания с использованием Функций Azure
 
 В этом учебнике вы узнаете, как запускать пакетное задание с помощью Функций Azure. Мы рассмотрим пример, в котором к документам, добавленным в контейнер хранилища BLOB-объектов Azure, применяется оптическое распознавание символов (OCR) с помощью пакетной службы Azure. Чтобы упростить обработку распознавания, мы настроим функцию Azure, которая запускает пакетное задание распознавания текста при каждом добавлении файла в контейнер больших двоичных объектов.
 

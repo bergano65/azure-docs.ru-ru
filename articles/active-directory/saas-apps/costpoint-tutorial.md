@@ -17,10 +17,10 @@ ms.date: 08/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 01168540e27605db0d240c0774159a710b5d5254
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "71840105"
 ---
 # <a name="tutorial-integrate-costpoint-with-azure-active-directory"></a>Руководство по Интеграция Costpoint с Azure Active Directory
@@ -35,9 +35,9 @@ ms.locfileid: "71840105"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Costpoint с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -145,7 +145,7 @@ ms.locfileid: "71840105"
    
    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
    
-   1. Нажмите кнопку **Создать**.
+   1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

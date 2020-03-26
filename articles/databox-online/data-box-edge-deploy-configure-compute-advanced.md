@@ -10,13 +10,13 @@ ms.date: 05/20/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge for advanced deployment flow so I can use it to transform the data before sending it to Azure.
 ms.openlocfilehash: b446a3ebf92f6240d3bc02a148fbb8296efec926
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384740"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222891"
 ---
-# <a name="tutorial-transform-data-with-azure-data-box-edge-for-advanced-deployment-flow"></a>Руководство. Преобразование данных с помощью Azure Data Box Edge для расширенного процесса развертывания
+# <a name="tutorial-transform-data-with-azure-data-box-edge-for-advanced-deployment-flow"></a>Руководство по преобразованию данных с помощью Azure Data Box Edge для процесса расширенного развертывания
 
 В этом учебнике описывается, как настроить роль вычислений для процесса расширенного развертывания в устройстве Azure Data Box Edge. После того как роль вычислений настроена, Data Box Edge может преобразовывать данные перед отправкой в ​​Azure.
 
@@ -31,7 +31,7 @@ ms.locfileid: "78384740"
 
 Эта процедура может занять от 20 до 30 минут.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * настройка вычислений;
@@ -70,7 +70,7 @@ ms.locfileid: "78384740"
 
     ![Начало работы с вычислениями](./media/data-box-edge-deploy-configure-compute-advanced/configure-compute-3.png)
 
-4. Выберите **Создать**. Для создания ресурса Центра Интернета вещей нужно несколько минут. После этого на плитке **Настройка вычислений Edge** появляется конфигурация вычислений. Чтобы подтвердить настройку роли пограничных вычислений, на плитке **Настройка вычислений** щелкните **Просмотреть конфигурацию**.
+4. Нажмите кнопку **создания**. Для создания ресурса Центра Интернета вещей нужно несколько минут. После этого на плитке **Настройка вычислений Edge** появляется конфигурация вычислений. Чтобы подтвердить настройку роли пограничных вычислений, на плитке **Настройка вычислений** щелкните **Просмотреть конфигурацию**.
     
     ![Начало работы с вычислениями](./media/data-box-edge-deploy-configure-compute-advanced/configure-compute-4.png)
 
@@ -219,7 +219,7 @@ ms.locfileid: "78384740"
     
     ![Указание маршрутов](./media/data-box-edge-deploy-configure-compute-advanced/add-module-7.png)
 
-    *Маршрут* можно заменить следующей строкой маршрута, скопированной ранее. В этом случае введите имя локального общего ресурса, который будет отправлять данные в облачный общий ресурс. Замените `modulename` именем модуля. Нажмите кнопку **Далее**.
+    *Маршрут* можно заменить следующей строкой маршрута, скопированной ранее. В этом случае введите имя локального общего ресурса, который будет отправлять данные в облачный общий ресурс. Замените `modulename` именем модуля. Выберите **Далее**.
         
     ```
     "route": "FROM /* WHERE topic = 'mydbesmbedgelocalshare1' INTO BrokeredEndpoint(\"/modules/filemove/inputs/input1\")"
@@ -259,7 +259,7 @@ ms.locfileid: "78384740"
  
 Вы завершили процесс проверки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как выполнять следующие задачи:
 

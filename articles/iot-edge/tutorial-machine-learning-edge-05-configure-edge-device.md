@@ -1,5 +1,5 @@
 ---
-title: Руководство. настройке устройства IoT Edge — Машинное обучение Azure в Azure IoT Edge
+title: Руководство по настройке устройства IoT Edge — Машинное обучение Azure в Azure IoT Edge
 description: Работая с этим учебником, вы настроите виртуальную машину Azure под управлением Linux как устройство Azure IoT Edge, которое выполняет функцию прозрачного шлюза.
 author: kgremban
 manager: philmea
@@ -8,14 +8,14 @@ ms.date: 2/5/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: ab3ed567d34c6284959f7875bb121ced4770d65e
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 3a71aa1a713891c773297a3789a9a9f4b36ab258
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77133319"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80236049"
 ---
-# <a name="tutorial-configure-an-iot-edge-device"></a>Руководство. Настройка устройства IoT Edge
+# <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
 
 > [!NOTE]
 > Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
@@ -196,7 +196,7 @@ ms.locfileid: "77133319"
 
 1. В сеансе SSH-подключения к виртуальной машине Linux выполните вход в Azure с помощью Azure CLI.
 
-    ```bash
+    ```azurecli
     az login
     ```
 
@@ -206,7 +206,7 @@ ms.locfileid: "77133319"
 
 1. Укажите подписку Azure, которую вы хотите использовать для выполнения команд Azure CLI.
 
-    ```bash
+    ```azurecli
     az account set --subscription <subscriptionId>
     ```
 
@@ -218,7 +218,7 @@ ms.locfileid: "77133319"
 
 1. Скачайте сертификаты, которые хранятся в хранилище ключей: new-edge-device-full-chain.cert.pem, new-edge-device.key.pem и azure-iot-test-only.root.ca.cert.pem
 
-    ```bash
+    ```azurecli
     key_vault_name="<key vault name>"
     sudo az keyvault secret download --vault-name $key_vault_name --name new-edge-device-full-chain-cert-pem -f /edgeMlCertificates/new-edge-device-full-chain.cert.pem
     sudo az keyvault secret download --vault-name $key_vault_name --name new-edge-device-key-pem -f /edgeMlCertificates/new-edge-device.key.pem

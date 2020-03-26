@@ -8,10 +8,10 @@ ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
 ms.openlocfilehash: bde703310bb04cacbda0b90aec337cbbf1768d76
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77021140"
 ---
 # <a name="architecture-of-iot-central-connected-logistics-application-template"></a>Архитектура шаблона приложения интеллектуальной логистики для IoT Central
@@ -24,7 +24,7 @@ ms.locfileid: "77021140"
 > ![Панель мониторинга для интеллектуальной логистики](./media/concept-connected-logistics-architecture/connected-logistics-architecture.png)
 
 1. Набор радиожетонов Интернета вещей для отправки данных телеметрии на устройство шлюза.
-2. Устройства шлюза, отправляющие данные телеметрии и агрегированные аналитические сведения в IoT Central
+2. Устройства шлюза отправляют данные телеметрии и агрегированные аналитические сведения в IoT Central.
 3. Данные направляются в нужную службу Azure для обработки.
 4. Службы Azure, такие как ASA или Функции Azure, можно использовать для переформатирования потоков данных и их отправки в соответствующие учетные записи хранения. 
 5. Бизнес-приложения пользователей могут обеспечивать выполнение различных бизнес-процессов.

@@ -17,10 +17,10 @@ ms.date: 10/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bcec326ddab1e74f43e1bb7ef446998a40799fd0
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73043558"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-veracode"></a>Руководство по интеграции единого входа Azure Active Directory с Veracode
@@ -31,13 +31,13 @@ ms.locfileid: "73043558"
 * Вы можете включить автоматический вход пользователей в Veracode с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Veracode с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -90,7 +90,7 @@ ms.locfileid: "73043558"
 
 1. Veracode также ожидает несколько дополнительных атрибутов в ответе SAML. Эти атрибуты также заранее заполнены, однако их можно изменить в соответствии с требованиями.
 
-    | ИМЯ | Атрибут источника|
+    | Имя | Атрибут источника|
     | ---------------| --------------- |
     | firstname |User.givenname |
     | lastname |User.surname |
@@ -114,7 +114,7 @@ ms.locfileid: "73043558"
 
     ![Снимок экрана: раздел "Параметры SAML для организации"](./media/veracode-tutorial/ic802912.png "Администрирование")
 
-    a.  Для **Издатель** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    а.  Для **Издатель** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     b. Для **Сертификат для подписи утверждения** выберите **Выбрать файл**, чтобы загрузить сертификат, скачанный с портала Azure.
 
@@ -124,18 +124,18 @@ ms.locfileid: "73043558"
 
     ![Снимок экрана: раздел "Параметры саморегистрации" с выделенными различными параметрами](./media/veracode-tutorial/ic802913.png "Администрирование")
 
-    a. Для параметра **Активация нового пользователя** выберите значение **Активация не требуется**.
+    а. Для параметра **Активация нового пользователя** выберите значение **Активация не требуется**.
 
     b. Для параметра **Обновления пользовательских данных** выберите значение **Предпочтение пользовательских данных Veracode**.
 
     c. Для параметра **Сведения об атрибутах SAML**выберите следующие значения:
-      * **роли пользователей;**
+      * **Роли пользователя**
       * **администратор политики;**
       * **рецензент;**
       * **руководитель безопасности;**
       * **руководитель;**
       * **отправитель;**
-      * **создатель;**
+      * **Автор**
       * **все типы проверки;**
       * **участие в группе;**
       * **группа по умолчанию.**
@@ -151,7 +151,7 @@ ms.locfileid: "73043558"
    1. Для параметра **Имя** введите `B.Simon`.  
    1. В поле **Имя пользователя** введите значение username@companydomain.extension. Например, `B.Simon@contoso.com`.
    1. Выберите **Показать пароль**, а затем запишите предоставленное значение.
-   1. Нажмите кнопку **Создать**.
+   1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -188,7 +188,7 @@ ms.locfileid: "73043558"
 
 - [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 310bf168b701ba6c37f71bc968da8e9114458e6f
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 120caf459a7a8ca4e60d5e447a1e4130c0bce389
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425313"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223921"
 ---
 # <a name="add-an-ssl-certificate-in-azure-app-service"></a>Добавление SSL-сертификата в Службу приложений Azure
 
@@ -349,7 +349,7 @@ az keyvault secret download \
 
 ### <a name="delete-certificate"></a>Удаление сертификата 
 
-Удаление сертификата Службы приложений является окончательным и необратимым. Все привязки в Службе приложений к этому сертификату становятся недействительными. Чтобы предотвратить случайное удаление, Azure блокирует сертификат. Чтобы удалить сертификат Службы приложений, необходимо сначала снять блокировку на его удаление.
+Удаление сертификата Службы приложений является окончательным и необратимым. Удаление ресурса Сертификата службы приложений приведет к отзыву соответствующего сертификата. Все привязки в Службе приложений к этому сертификату становятся недействительными. Чтобы предотвратить случайное удаление, Azure блокирует сертификат. Чтобы удалить сертификат Службы приложений, необходимо сначала снять блокировку на его удаление.
 
 Выберите сертификат на странице [Сертификаты службы приложений](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders), а затем в области навигации слева выберите **Блокировки**.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Workday | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Workday | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Workday.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a2f39b6f58b250d68a3b2ce962f158c7df36d812
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77046599"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство. интеграции единого входа Azure Active Directory с Workday
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство по интеграции единого входа Azure Active Directory с Workday
 
 В этом руководстве описано, как интегрировать Workday с Azure Active Directory (Azure AD). Интеграция Workday с Azure AD обеспечивает следующие возможности.
 

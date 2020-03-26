@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Reprints Desk — Article Galaxy| Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Reprints Desk — Article Galaxy| Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Reprints Desk Article Galaxy.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/21/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d94fc0bc736d2136d4711ab02ae554605deeb35
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76761353"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-reprints-desk---article-galaxy"></a>Руководство. Интеграция единого входа Azure Active Directory с Reprints Desk — Article Galaxy
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-reprints-desk---article-galaxy"></a>Руководство по Интеграция единого входа Azure Active Directory с Reprints Desk — Article Galaxy
 
 В этом руководстве описано, как интегрировать Reprints Desk Article Galaxy с Azure Active Directory (Azure AD). После интеграции Reprints Desk Article Galaxy с Azure AD доступны следующие возможности.
 

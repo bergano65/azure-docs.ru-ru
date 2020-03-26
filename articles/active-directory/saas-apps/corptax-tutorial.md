@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с CorpTax | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с CorpTax | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в CorpTax.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7cd09a35d5796cdc4267c9d01a901b4e3b812d7c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67104399"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-corptax"></a>Руководство. Интеграция Azure Active Directory с CorpTax
+# <a name="tutorial-azure-active-directory-integration-with-corptax"></a>Руководство по Интеграция Azure Active Directory с CorpTax
 
 В этом руководстве описано, как интегрировать CorpTax с Azure Active Directory (Azure AD).
 Интеграция Azure AD с CorpTax обеспечивает следующие преимущества.
@@ -39,7 +39,7 @@ ms.locfileid: "67104399"
 
 Чтобы настроить интеграцию Azure AD с CorpTax, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Corptax с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,7 +100,7 @@ ms.locfileid: "67104399"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit_urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit_urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -114,7 +114,7 @@ ms.locfileid: "67104399"
 
 ### <a name="configure-corptax-single-sign-on"></a>Настройка единого входа в CorpTax
 
-Чтобы настроить единый вход на стороне **CorpTax**, нужно отправить скачанный **XML-файл метаданных федерации** [группе поддержки CorpTax](https://connect.corptax.com/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **CorpTax**, нужно отправить скачанный **XML-файл метаданных федерации**[группе поддержки CorpTax](https://connect.corptax.com/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -132,7 +132,7 @@ ms.locfileid: "67104399"
 
     ![Диалоговое окно "Пользователь"](common/user_properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
 
     b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`.  
     Например BrittaSimon@contoso.com.
@@ -176,7 +176,7 @@ ms.locfileid: "67104399"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 Когда вы щелкнете элемент "Corptax" на Панели доступа, вы будете перенаправлены на страницу CorpTax. 
 
-![image](media/corptax-tutorial/corptaxlogin.png)
+![Изображение](media/corptax-tutorial/corptaxlogin.png)
 
 В текстовом поле **Среда** введите соответствующую среду, и вы автоматически войдете в приложение CorpTax, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
@@ -186,4 +186,4 @@ ms.locfileid: "67104399"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

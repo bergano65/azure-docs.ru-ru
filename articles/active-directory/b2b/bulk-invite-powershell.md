@@ -12,13 +12,13 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89e24d9ff76184c36aee5c14f15f9713b30f6f1d
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77169972"
 ---
-# <a name="tutorial-use-powershell-to-bulk-invite-azure-ad-b2b-collaboration-users"></a>Руководство. Массовое приглашение пользователей службы совместной работы Azure AD B2Bс помощью PowerShell
+# <a name="tutorial-use-powershell-to-bulk-invite-azure-ad-b2b-collaboration-users"></a>Руководство по Массовое приглашение пользователей службы совместной работы Azure AD B2Bс помощью PowerShell
 
 Если вы используете службу совместной работы Azure Active Directory (Azure AD) B2B для работы с внешними партнерами, вы можете одновременно пригласить несколько гостевых пользователей к вашей организации. Из этого руководства вы узнаете, как использовать PowerShell для отправки массовых приглашений внешним пользователям. В частности, вы выполните описанные ниже действия:
 
@@ -75,7 +75,7 @@ Get-Module -ListAvailable AzureAD*
 
 Например, создайте лист в следующем формате:
 
-![Выходные данные PowerShell с запросами, ожидающими подтверждения пользователя](media/tutorial-bulk-invite/AddUsersExcel.png)
+![Выходные данные PowerShell с запросом, ожидающим подтверждения пользователя](media/tutorial-bulk-invite/AddUsersExcel.png)
 
 Сохраните файл как **C:\BulkInvite\Invitations.csv**. 
 
@@ -116,7 +116,7 @@ foreach ($email in $invitations)
 
 Этот сценарий отправляет приглашение на электронные адреса, указанные в файле invitations.csv. Вы должны увидеть результат, аналогичный приведенному ниже для каждого пользователя:
 
-![Выходные данные PowerShell с запросами, ожидающими подтверждения пользователя](media/tutorial-bulk-invite/B2BBulkImport.png)
+![Выходные данные PowerShell с запросом, ожидающим подтверждения пользователя](media/tutorial-bulk-invite/B2BBulkImport.png)
 
 ## <a name="verify-users-exist-in-the-directory"></a>Проверка существования пользователей в каталоге
 

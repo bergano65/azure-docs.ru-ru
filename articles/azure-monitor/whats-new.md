@@ -6,17 +6,17 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 03/05/2020
-ms.openlocfilehash: b42acdf64612da6837bc67752f7a22169ddef7e2
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.openlocfilehash: c29790035ec4e971957784e826a1e8bd8e0c9329
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78673326"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79500499"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
 
-## <a name="march-2020"></a>Март 2020 г.
+## <a name="february-2020"></a>Февраль 2020 г.
 
 ### <a name="agents"></a>Агенты
 Несколько обновлений в рамках перезаписи содержимого расширения диагностики.
@@ -27,7 +27,7 @@ ms.locfileid: "78673326"
 - [Установка и настройка расширения "Диагностика Microsoft Azure" (WAD)](platform/diagnostics-extension-windows-install.md) — новая статья. 
 - [Схема расширения "Диагностика Windows"](platform/diagnostics-extension-schema-windows.md) — реорганизовано содержимое.
 - [Отправка данных из расширения "Диагностика Windows Azure" в Центры событий Azure](platform/diagnostics-extension-stream-event-hubs.md) — полностью переписана и обновлена вся статья.
-- [Хранение и просмотр диагностических данных в службе хранилища Azure](platform/diagnostics-extension-to-storage.md) — полностью переписана и обновлена вся статья.
+- [Хранение и просмотр диагностических данных в службе хранилища Azure](/azure/cloud-services/diagnostics-extension-to-storage) — полностью переписана и обновлена вся статья.
 - [Расширение виртуальной машины с Log Analytics для Windows](../virtual-machines/extensions/oms-windows.md) — лучше объяснена связь с агентом Log Analytics.
 - [Расширение виртуальной машины с Azure Monitor для Linux](../virtual-machines/extensions/oms-linux.md) — лучше объяснена связь с агентом Log Analytics.
 

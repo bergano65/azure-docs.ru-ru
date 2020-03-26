@@ -17,10 +17,10 @@ ms.date: 04/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c9a9b49f75ad377a9377a2311ed16c17ca3d749e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67092575"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rstudio-connect"></a>Руководство по Интеграция Azure Active Directory с приложением RStudio Connect
@@ -39,7 +39,7 @@ ms.locfileid: "67092575"
 
 Чтобы настроить интеграцию Azure AD с RStudio Connect, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * RStudio Connect. Есть возможность [бесплатного ознакомительного использования в течение 45 дней.](https://www.rstudio.com/products/connect/)
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -102,15 +102,15 @@ ms.locfileid: "67092575"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия, заменив `<example.com>` адресом и портом сервера RStudio Connect:
 
     ![Сведения о домене и URL-адресах единого входа для приложения RStudio Connect](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<example.com>/__login__/saml`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<example.com>/__login__/saml`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<example.com>/__login__/saml/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<example.com>/__login__/saml/acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -121,9 +121,9 @@ ms.locfileid: "67092575"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Они определяются с помощью адреса сервера RStudio Connect (`https://example.com` в приведенных выше примерах). Если у вас возникли проблемы, обратитесь в [группу поддержки RStudio Connect](mailto:support@rstudio.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Для приложения RStudio Connect утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение RStudio Connect ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому щелкните значок **Изменить** и измените сопоставление атрибутов.
+6. Для приложения RStudio Connect утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение RStudio Connect ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому щелкните значок **Изменить** и измените сопоставление атрибутов.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
@@ -228,5 +228,5 @@ SSOInitiated = IdPAndSP
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

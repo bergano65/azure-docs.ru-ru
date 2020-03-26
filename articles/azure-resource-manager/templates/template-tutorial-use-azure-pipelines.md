@@ -6,10 +6,10 @@ ms.date: 10/29/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.openlocfilehash: e7d6b23aa3f35c99cf03f855152b2b231a60a965
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75921621"
 ---
 # <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines
@@ -152,7 +152,7 @@ Azuredeploy.json был добавлен в локальный репозито�
     * **Подписка**: выберите свою подписку.
     * **Группа ресурсов**. Оставьте пустым.
     * **Разрешите всем контейнерам использовать это подключение**. (выбрано)
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ## <a name="create-a-pipeline"></a>Создание конвейера
 

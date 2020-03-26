@@ -1,5 +1,5 @@
 ---
-title: Учебник. Подключение кабелей к Azure ФКСТ ребра фильтр
+title: Руководство по Подключение кабелей к Azure FXT Edge Filer
 description: Сведения о подключении сетевых портов и присоединении питания для оборудования Azure FXT Edge Filer
 author: ekpgh
 ms.author: rohogue
@@ -7,13 +7,13 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 07/01/2019
 ms.openlocfilehash: 1e3c60fd955bd899955c46b7670acd3f088d0f86
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395431"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223951"
 ---
-# <a name="tutorial-make-network-connections-and-supply-power-to-the-azure-fxt-edge-filer-node"></a>Руководство. Создание сетевых подключений и предоставление питания для узла фильтр Azure ФКСТ ребра
+# <a name="tutorial-make-network-connections-and-supply-power-to-the-azure-fxt-edge-filer-node"></a>Руководство по Установка сетевых подключений и источника питания для узлов Azure FXT Edge Filer
 
 В этом руководстве показано, как присоединять сетевые подключения для аппаратного узла Azure FXT Edge Filer.
 
@@ -161,7 +161,7 @@ ms.locfileid: "78395431"
 
 Кнопка питания может использоваться для выключения системы во время тестирования и перед добавлением ее в кластер. Тем не менее после того, как узел Azure FXT Edge Filer используется как часть кластера, программное обеспечение панели управления кластера следует использовать, чтобы завершать работу оборудования. Дополнительные сведения см. в разделе [Безопасное завершение работы оборудования Azure FXT Edge Filer](fxt-power-off.md). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После завершения прокладки кабелей оборудования, включите питание на всех узлах и запустите их, задав корневые пароли. 
 > [!div class="nextstepaction"]

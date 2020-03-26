@@ -17,10 +17,10 @@ ms.date: 12/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4c6eaf23950f83592a33709574be464f4499f0ab
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74823036"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-claromentis"></a>Руководство по Интеграция единого входа Azure Active Directory с Claromentis
@@ -35,9 +35,9 @@ ms.locfileid: "74823036"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Claromentis с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "74823036"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Claromentis](#configure-claromentis-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя Claromentis](#create-claromentis-test-user)** нужно для того, чтобы в Claromentis также существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,11 +79,11 @@ ms.locfileid: "74823036"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите значение идентификатора в соответствии с требованиями организации.
+    а. В текстовом поле **Идентификатор** введите значение идентификатора в соответствии с требованиями организации.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<customer_site_url>/custom/loginhandler/simplesaml/www/module.php/saml/sp/saml2-acs.php/claromentis`.
 
@@ -123,7 +123,7 @@ ms.locfileid: "74823036"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к Claromentis.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Claromentis**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -157,7 +157,7 @@ ms.locfileid: "74823036"
 
     ![Конфигурация Claromentis](./media/claromentis-tutorial/config4.png)
 
-    a. В текстовом поле **Technical Contact Name** (Имя контактного лица по техническим вопросам) введите имя контактного лица.
+    а. В текстовом поле **Technical Contact Name** (Имя контактного лица по техническим вопросам) введите имя контактного лица.
 
     b. В текстовом поле **Technical Contact Email** (Электронный адрес лица по техническим вопросам) введите имя контактного лица.
 
@@ -167,7 +167,7 @@ ms.locfileid: "74823036"
 
     ![Конфигурация Claromentis](./media/claromentis-tutorial/config5.png)
 
-    a. В текстовое поле **IDP** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    а. В текстовое поле **IDP** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     b. В текстовом поле **Идентификатор сущности** введите значение идентификатора сущности.
 
@@ -179,7 +179,7 @@ ms.locfileid: "74823036"
 
     ![Конфигурация Claromentis](./media/claromentis-tutorial/config6.png)
 
-    a. Скопируйте значение **идентификатора (идентификатор сущности)** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте значение **идентификатора (идентификатор сущности)** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Скопируйте значение **URL-адреса ответа** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -197,9 +197,9 @@ ms.locfileid: "74823036"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, сборник схем, схемы, п�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 78699a005d721b46a88a26452f5db68438793d34
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74155734"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>Руководство по настройке пиринга виртуальных сетей Azure с помощью Ansible
@@ -327,7 +327,7 @@ localhost                  : ok=12   changed=9    unreachable=0    failed=0    s
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Ansible в Azure](/azure/ansible/)

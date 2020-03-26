@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание приложения Java для создания учетной записи API Cassandra Azure Cosmos DB
+title: Руководство по Создание приложения Java для создания учетной записи API Cassandra Azure Cosmos DB
 description: В этом руководстве показано, как создать учетную запись API Cassandra, добавить базу данных (также называемую пространством ключей) и таблицу в эту учетную запись с помощью приложения Java.
 author: kanshiG
 ms.author: govindk
@@ -11,13 +11,13 @@ ms.date: 12/06/2018
 ms.custom: seodec18
 Customer intent: As a developer, I want to build a Java application to access and manage Azure Cosmos DB resources so that customers can store key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
 ms.openlocfilehash: b0103f7b827de77c522f78000c8d28683ac85f4b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75441903"
 ---
-# <a name="tutorial-create-a-cassandra-api-account-in-azure-cosmos-db-by-using-a-java-application-to-store-keyvalue-data"></a>Руководство. Создание учетной записи API Cassandra в Azure Cosmos DB с помощью приложения Java для хранения данных пар "ключ — значение"
+# <a name="tutorial-create-a-cassandra-api-account-in-azure-cosmos-db-by-using-a-java-application-to-store-keyvalue-data"></a>Руководство по Создание учетной записи API Cassandra в Azure Cosmos DB с помощью приложения Java для хранения данных пар "ключ — значение"
 
 Как у разработчика у вас должно быть приложение, использующее пары "ключ-значение". Можно использовать учетную запись API Cassandra в Azure Cosmos DB для хранения данных пар "ключ — значение". В этом руководстве описывается, как использовать приложение Java для создания учетной записи API Cassandra в Azure Cosmos DB, добавить базу данных (также называемую пространством ключей) и добавить таблицу. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver), чтобы создать базу данных пользователя, которая содержит такие сведения, как идентификатор пользователя, имя пользователя и город пользователя.  
 
@@ -30,9 +30,9 @@ ms.locfileid: "75441903"
 > * Добавление базы данных и таблицы
 > * Запустите приложение
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 
-* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу. 
+* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу. 
 
 * Получите последнюю версию [пакета средств разработки Java (JDK)](https://aka.ms/azure-jdks). 
 
@@ -47,17 +47,17 @@ ms.locfileid: "75441903"
 
 3. На панели **Новая учетная запись** введите параметры для новой учетной записи Azure Cosmos. 
 
-   |Параметр   |Рекомендуемое значение  |Description  |
+   |Параметр   |Рекомендуемое значение  |Описание  |
    |---------|---------|---------|
    |ID   |   Введите уникальное имя.    | Введите уникальное имя для идентификации этой учетной записи Azure Cosmos. <br/><br/>Так как элемент cassandra.cosmosdb.azure.com добавляется к указанному идентификатору для создания точки контакта, используйте уникальный, но узнаваемый идентификатор.         |
    |API    |  Cassandra   |  API определяет тип учетной записи, которую нужно создать. <br/> Выберите **Cassandra**, так как в этой статье вы создадите базу данных с широкими столбцами, к которой можно отправлять запросы с помощью синтаксиса языка запросов Cassandra (CQL).  |
-   |Subscription    |  Ваша подписка        |  Выберите подписку Azure, которую планируете использовать для этой учетной записи Azure Cosmos.        |
+   |Подписка    |  Ваша подписка        |  Выберите подписку Azure, которую планируете использовать для этой учетной записи Azure Cosmos.        |
    |Группа ресурсов   | Введите имя.    |  Выберите **Создать** и введите новое имя группы ресурсов для учетной записи. Для удобства можно использовать то же имя, которое присвоено идентификатору.    |
-   |Location    |  Выберите ближайший к пользователям регион    |  Выберите географическое расположение, в котором будет размещена учетная запись Azure Cosmos. Используйте ближайшее к пользователям расположение, чтобы предоставить им максимально быстрый доступ к данным.    |
+   |Расположение    |  Выберите ближайший к пользователям регион    |  Выберите географическое расположение, в котором будет размещена учетная запись Azure Cosmos. Используйте ближайшее к пользователям расположение, чтобы предоставить им максимально быстрый доступ к данным.    |
 
    ![Создание учетной записи с помощью портала](./media/create-cassandra-api-account-java/create-account.png)
 
-4. Нажмите кнопку **Создать**. <br/>Создание учетной записи займет несколько минут. После создания ресурса вы увидите уведомление **об успешном развертывании** в правой части портала.
+4. Нажмите кнопку **создания**. <br/>Создание учетной записи займет несколько минут. После создания ресурса вы увидите уведомление **об успешном развертывании** в правой части портала.
 
 ## <a name="get-the-connection-details-of-your-account"></a>Получение сведений о подключении учетной записи  
 

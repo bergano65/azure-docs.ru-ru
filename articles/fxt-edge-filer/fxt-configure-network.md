@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка сети в кластере Azure FXT Edge Filer
+title: Руководство по Настройка сети в кластере Azure FXT Edge Filer
 description: Настройка параметров сети после создания кластера Azure FXT Edge Filer
 author: ekpgh
 ms.author: rohogue
@@ -7,13 +7,13 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.openlocfilehash: a40ff50dcb0934cbf1ea5222675bd75948ac1d03
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551069"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223971"
 ---
-# <a name="tutorial-configure-the-clusters-network-settings"></a>Руководство. настройке параметров сети кластера
+# <a name="tutorial-configure-the-clusters-network-settings"></a>Руководство по настройке параметров сети кластера
 
 Прежде чем использовать созданный кластер Azure FXT Edge Filer, необходимо проверить и настроить несколько параметров сети для рабочего процесса. 
 

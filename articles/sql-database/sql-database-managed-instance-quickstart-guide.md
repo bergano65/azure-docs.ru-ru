@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlr
 ms.date: 07/11/2019
 ms.openlocfilehash: 602de3e23eb5419958f84b071e2220550d1d04d0
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73821719"
 ---
 # <a name="getting-started-with-azure-sql-database-managed-instance"></a>Начало работы с управляемым экземпляром Базы данных SQL Azure
@@ -70,7 +70,7 @@ ms.locfileid: "73821719"
 
 Подробные сведения см. в статье [SQL Server instance migration to Azure SQL Database managed instance](sql-database-managed-instance-migrate.md) (Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со статьями [Сравнение возможностей службы "База данных SQL Azure" и SQL Server](sql-database-features.md) и [Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server](sql-database-managed-instance-transact-sql-information.md).
 - Дополнительные сведения см. в разделе [Ограничения ресурсов на уровне экземпляра](sql-database-managed-instance-resource-limits.md#service-tier-characteristics).

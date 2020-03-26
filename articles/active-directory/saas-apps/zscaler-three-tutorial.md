@@ -17,10 +17,10 @@ ms.date: 10/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b23abcf9a39ce7f6d77bc40e7143505bc68e8b72
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72554989"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zscaler-three"></a>Руководство по интеграции единого входа Azure Active Directory с Zscaler Three
@@ -35,9 +35,9 @@ ms.locfileid: "72554989"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Zscaler Three с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -73,7 +73,7 @@ ms.locfileid: "72554989"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Zscaler Three](#configure-zscaler-three-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Zscaler Three](#create-zscaler-three-test-user)** требуется для того, чтобы в Zscaler Three существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -83,7 +83,7 @@ ms.locfileid: "72554989"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -91,11 +91,11 @@ ms.locfileid: "72554989"
 
 1. Приложение Zscaler Three ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение Zscaler Three ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
-    | ИМЯ | Исходный атрибут |
+    | Имя | Исходный атрибут |
     | ---------| ------------ |
     | memberOf     | user.assignedroles |
 
@@ -126,19 +126,19 @@ ms.locfileid: "72554989"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Zscaler Three.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Zscaler Three**.
 1. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 
-    ![image](./media/zscaler-three-tutorial/tutorial_zscalerthree_users.png)
+    ![Изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_users.png)
 
 1. В диалоговом окне **Выбор роли** выберите соответствующие роли пользователей из списка, а затем нажмите кнопку **Выбрать** в нижней части экрана.
 
-    ![image](./media/zscaler-three-tutorial/tutorial_zscalerthree_roles.png)
+    ![Изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_roles.png)
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-    ![image](./media/zscaler-three-tutorial/tutorial_zscalerthree_assign.png)
+    ![Изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_assign.png)
 
 ## <a name="configure-zscaler-three-sso"></a>Настройка единого входа Zscaler Three
 
@@ -156,7 +156,7 @@ ms.locfileid: "72554989"
    
     ![Администрирование](./media/zscaler-three-tutorial/ic800206.png "Администрирование")
 
-    a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
+    а. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
     b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
@@ -164,7 +164,7 @@ ms.locfileid: "72554989"
             
     ![Управление пользователями и проверкой подлинности](./media/zscaler-three-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
     
-    a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
@@ -172,9 +172,9 @@ ms.locfileid: "72554989"
 
     d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
-    д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
+    д) В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
-    Е. В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
+    е) В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
 
     ж. В поле **Department Name Attribute** (Атрибут имени отдела) введите **department**, если вы хотите включить автоматическую подготовку SAML для атрибутов department.
 
@@ -184,9 +184,9 @@ ms.locfileid: "72554989"
 
     ![Администрирование](./media/zscaler-three-tutorial/ic800207.png)
 
-    a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
+    а. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    b. Щелкните **Активировать**.
+    b. Нажмите кнопку **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -199,7 +199,7 @@ ms.locfileid: "72554989"
 
 3. Щелкните вкладку **Подключения** .   
   
-     ![Подключения](./media/zscaler-three-tutorial/ic769493.png "Подключения")
+     ![Соединения](./media/zscaler-three-tutorial/ic769493.png "Соединения")
 
 4. Нажмите кнопку **Настройка сети**, чтобы открыть диалоговое окно **Настройка сети**.
 
@@ -207,7 +207,7 @@ ms.locfileid: "72554989"
    
     ![Прокси-сервер](./media/zscaler-three-tutorial/ic769494.png "Прокси-сервер")
 
-    a. Установите флажок **Использовать прокси-сервер для локальной сети**.
+    а. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
     b. В текстовом поле "Адрес" введите **gateway.Zscaler Three.net**.
 
@@ -215,7 +215,7 @@ ms.locfileid: "72554989"
 
     d. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
 
-    д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
+    д) Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
 6. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.
 
@@ -234,9 +234,9 @@ ms.locfileid: "72554989"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

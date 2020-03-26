@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Dropbox for Business | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Dropbox for Business | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Dropbox for Business.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: df7fc366c5087e66c3022c212870397d77e6e34d
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77046761"
 ---
-# <a name="tutorial-integrate-dropbox-for-business-with-azure-active-directory"></a>Руководство. Интеграция Dropbox for Business с Azure Active Directory
+# <a name="tutorial-integrate-dropbox-for-business-with-azure-active-directory"></a>Руководство по Интеграция Dropbox for Business с Azure Active Directory
 
 В этом руководстве описано, как интегрировать Dropbox for Business с Azure Active Directory (Azure AD). Интеграция Dropbox for Business с Azure AD обеспечивает следующие возможности.
 

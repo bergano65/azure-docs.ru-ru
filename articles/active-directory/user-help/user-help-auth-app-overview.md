@@ -12,10 +12,10 @@ ms.topic: overview
 ms.date: 01/15/2020
 ms.author: curtand
 ms.openlocfilehash: c95ae2e48a7d5a3b9e9e28b1d4e14b670205c043
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77062291"
 ---
 # <a name="what-is-the-microsoft-authenticator-app"></a>Что такое приложение Microsoft Authenticator?
@@ -37,7 +37,7 @@ ms.locfileid: "77062291"
 
 ## <a name="terminology"></a>Терминология
 
-| Термин|Описание|
+| Термин|Description|
 | ----|-----------|
 | Двухфакторная проверка подлинности | Процесс проверки подлинности, для которого необходимо использовать только два вида подтверждающей информации, например пароль и ПИН-код. Приложение Microsoft Authenticator поддерживает как стандартную двухфакторную проверку подлинности, так и вход без пароля. |
 | Многофакторная идентификация (MFA) | Это двухфакторная проверка подлинности, для которой необходимо использовать *как минимум* два вида подтверждающей информации в зависимости от требований организации. |
@@ -71,7 +71,7 @@ ms.locfileid: "77062291"
 
 ## <a name="in-this-section"></a>В этом разделе
 
-| Статья | Описание |
+| Статья | Description |
 | ------ | ------------ |
 | [Скачивание и установка приложения](user-help-auth-app-download-install.md) | Здесь описывается, где и как получить и установить приложение Microsoft Authenticator для устройств под управлением Android и iOS. |
 | [Add your work or school account](user-help-auth-app-add-work-school-account.md) (Добавление рабочей или учебной учетной записи) | Описывается, как добавить различные рабочие и учебные учетные записи, а также личные учетные записи в приложение Microsoft Authenticator. |

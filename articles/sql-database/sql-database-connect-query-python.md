@@ -12,29 +12,29 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
 ms.openlocfilehash: e82f8feae0096202e48a58296dd2e9d21bb61885
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "76768576"
 ---
 # <a name="quickstart-use-python-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure
 
 В этом кратком руководстве вы будете использовать Python для подключения к базе данных SQL Azure, а затем выполните запрос данных с помощью инструкций T-SQL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [База данных SQL Azure](sql-database-single-database-get-started.md)
 - [Python](https://python.org/downloads) 3 и связанное с ним программное обеспечение
 
-  # <a name="macostabmacos"></a>[macOS](#tab/macos)
+  # <a name="macos"></a>[macOS](#tab/macos)
 
   Для установки Homebrew и Python, драйвера ODBC и SQLCMD, а также драйвера Python для SQL Server используйте шаги **1.2**, **1.3** и **2.1** в [create Python apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/) (Создание приложений Python с помощью SQL Server на MacOS).
 
   Дополнительные сведения см. в статье [Installing the Microsoft ODBC Driver for SQL Server on Linux and macOS](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server) (Установка драйвера ODBC для SQL Server на Linux и macOS).
 
-  # <a name="ubuntutabubuntu"></a>[Ubuntu](#tab/ubuntu)
+  # <a name="ubuntu"></a>[Ubuntu](#tab/ubuntu)
 
   Используйте `sudo apt-get install python python-pip gcc g++ build-essential`, чтобы установить Python и другие необходимые пакеты.
 
@@ -42,7 +42,7 @@ ms.locfileid: "76768576"
 
   Дополнительные сведения см. в статье [Installing the Microsoft ODBC Driver for SQL Server on Linux and macOS](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server) (Установка драйвера ODBC для SQL Server на Linux и macOS).
 
-  # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+  # <a name="windows"></a>[Windows](#tab/windows)
 
   Чтобы установить Python, драйвер ODBC, SQLCMD и драйвер Python для SQL Server, см. статью [Step 1: Configure development environment for pyodbc Python development](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#windows) (Шаг 1. Настройка среды разработки для использования pyodbc в Python).
 

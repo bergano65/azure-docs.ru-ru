@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Prisma Cloud SSO | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Prisma Cloud SSO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Prisma Cloud SSO.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e40a5f02a62d1e01e58c1d8a5ca03f0c80a75c84
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77086566"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-prisma-cloud-sso"></a>Руководство. Интеграция единого входа Azure Active Directory с Prisma Cloud SSO
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-prisma-cloud-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с Prisma Cloud SSO
 
 В этом руководстве описано, как интегрировать Prisma Cloud SSO с Azure Active Directory (Azure AD). Интеграция Prisma Cloud SSO с Azure AD обеспечивает приведенные ниже возможности.
 

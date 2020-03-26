@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Azure AD SAML Toolkit.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7902112c1694bacfeb45b5f20db80d5136642169
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77047953"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Руководство. Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Руководство по Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit
 
 В этом руководстве описано, как интегрировать Azure AD SAML Toolkit с Azure Active Directory (Azure AD). Интеграция Azure AD SAML Toolkit с Azure AD обеспечивает следующие возможности.
 
