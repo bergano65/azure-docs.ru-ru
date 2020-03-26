@@ -13,14 +13,14 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 01/22/2019
 ms.author: kumud
-ms.openlocfilehash: 3cbfee90997c6b7cd9df1ec76543d77a4402100f
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 2a4c63aeaa303692fa0f2d115a3df0d80cfab0b1
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774534"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80235200"
 ---
-# <a name="quickstart-create-a-virtual-network-using-the-azure-cli"></a>Краткое руководство. Создание виртуальной сети с помощью интерфейса командной строки Azure
+# <a name="quickstart-create-a-virtual-network-using-the-azure-cli"></a>Краткое руководство. Создание виртуальной сети с помощью Azure CLI
 
 Виртуальная сеть позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными в частном порядке и взаимодействовать через Интернет. Из этого краткого руководства вы узнаете, как создать виртуальную сеть. Создав виртуальную сеть, разверните в ней две виртуальные машины. Затем вы подключитесь к виртуальным машинам из Интернета и установите частную связь через новую виртуальную сеть.
 
@@ -80,7 +80,7 @@ az vm create \
 
 Создание виртуальных машин может занять несколько минут. После того как Azure создаст виртуальные машины, Azure CLI вернет выходные данные следующего вида:
 
-```azurecli
+```output
 {
   "fqdns": "",
   "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVm2",

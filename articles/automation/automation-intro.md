@@ -8,10 +8,10 @@ ms.date: 10/18/2018
 ms.custom: mvc
 ms.topic: overview
 ms.openlocfilehash: 3359d99d7e20bbced8950171fa34592fd2612500
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "76930401"
 ---
 # <a name="an-introduction-to-azure-automation"></a>Общие сведения о службе автоматизации Azure
@@ -37,7 +37,7 @@ ms.locfileid: "76930401"
 
 Обновление систем Windows и Linux в гибридных средах можно выполнить с помощью службы автоматизации Azure. Вы сможете контролировать соблюдение требований к обновлению в локальной среде, Azure и других облачных средах. Вы сможете создать расписание развертываний, чтобы координировать установку обновлений в течение определенного периода обслуживания. Из развертывания можно исключить обновления, которые не нужно устанавливать на определенных компьютерах.
 
-### <a name="shared-resources"></a>Общие ресурсы
+### <a name="shared-resources"></a><a name="shared-resources"></a>Общие ресурсы
 
 Служба автоматизации Azure состоит из нескольких общих ресурсов, что упрощает автоматизацию и настройку сред в нужном масштабе.
 

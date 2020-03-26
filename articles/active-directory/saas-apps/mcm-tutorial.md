@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с MCM | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с MCM | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и MCM.
 services: active-directory
 documentationCenter: na
@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 4ed3e5c543f96876d9b6078f1bd47839a0a0396a
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76293425"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mcm"></a>Руководство. Интеграция Azure Active Directory с МСМ
@@ -34,11 +34,11 @@ ms.locfileid: "76293425"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с MCM, вам потребуется:
 
-* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на MCM с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,7 +99,7 @@ ms.locfileid: "76293425"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 

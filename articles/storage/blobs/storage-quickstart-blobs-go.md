@@ -8,17 +8,17 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.openlocfilehash: f4016349e354c84e9e096ac6d5072a4870e9ef29
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "68726458"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Go
+# <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Go
 
 Из этого краткого руководства вы узнаете, как передать, скачать и создать список блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure с помощью языка Go. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
@@ -50,14 +50,14 @@ git clone https://github.com/Azure-Samples/storage-blobs-go-quickstart
 ## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
 Этому решению требуется, чтобы имя и ключ учетной записи хранения безопасно хранились в переменных среды локального компьютера, на котором выполняется пример. Чтобы создать переменную среды, выполните один из приведенных ниже примеров в зависимости от операционной системы.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 ```
 export AZURE_STORAGE_ACCOUNT="<youraccountname>"
 export AZURE_STORAGE_ACCESS_KEY="<youraccountkey>"
 ```
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 ```
 setx AZURE_STORAGE_ACCOUNT "<youraccountname>"
@@ -147,7 +147,7 @@ handleErrors(err)
 
 Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Чаще всего используются блочные BLOB-объекты. Именно этот тип представлен в этом кратком руководстве.  
 
-Чтобы отправить файл в большой двоичный объект, откройте файл с помощью **os.Open**. Затем вы можете передать файл по указанному пути с помощью одного из таких REST API: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
+Чтобы отправить файл в большой двоичный объект, откройте файл с помощью **os.Open**. Затем вы можете отправить файл по указанному пути, используя один из REST API: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
 
 Кроме того, пакет SDK предоставляет [API высокого уровня](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go), которые созданы на основе низкоуровневых интерфейсов REST API. Например, с помощью операций StageBlock (PutBlock) функция ***UploadFileToBlockBlob*** одновременно передает файлы блоками, оптимизируя тем самым пропускную способность. Если размер файла менее 256 МБ, передача осуществляется одной транзакцией с помощью операции Upload (PutBlob).
 
@@ -244,6 +244,6 @@ os.Remove(fileName)
 - Просмотрите и установите [исходный код клиентской библиотеки Go](https://github.com/Azure/azure-storage-blob-go) для службы хранилища Azure на сайте GitHub.
 - Изучите [примеры для хранилища BLOB-объектов](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob#pkg-examples), написанные с использованием клиентской библиотеки Go.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
  
 В этом кратком руководстве вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Go. Дополнительные сведения о пакете SDK для Azure Storage Blob см. в [этом репозитории с исходным кодом](https://github.com/Azure/azure-storage-blob-go/) и[справочнике по API](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob).

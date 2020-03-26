@@ -10,13 +10,13 @@ ms.custom: mvc
 ms.date: 03/25/2019
 ms.author: dobett
 ms.openlocfilehash: 32e2d3f9e8bbd63944188355774558ca5ea7bd9d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58792507"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "60890166"
 ---
-# <a name="quickstart-try-a-cloud-based-remote-monitoring-solution"></a>Краткое руководство. Испытание облачного решения для удаленного мониторинга
+# <a name="quickstart-try-a-cloud-based-remote-monitoring-solution"></a>Краткое руководство. Использование облачного решения для удаленного мониторинга
 
 В этом кратком руководстве показано, как развернуть акселератор решения Azure IoT для удаленного мониторинга. В этом облачном решении вы используете страницу **Панель мониторинга**, чтобы визуализировать имитированные устройства на карте, и увидите, как страница **обслуживания** реагирует на оповещение о давлении от имитированного холодильника. Это решение можно использовать в качестве отправной точки для собственной реализации или как средство обучения.
 
@@ -145,4 +145,4 @@ ms.locfileid: "58792507"
 Дополнительные сведения об акселераторе решения и имитированных устройствах см. в следующей статье.
 
 > [!div class="nextstepaction"]
-> [Руководство Мониторинг устройств Интернета вещей](iot-accelerators-remote-monitoring-monitor.md)
+> [Руководство. Мониторинг устройств Интернета вещей](iot-accelerators-remote-monitoring-monitor.md)

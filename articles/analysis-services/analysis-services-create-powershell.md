@@ -8,13 +8,13 @@ ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 071c44136d917874843bdf080de775ec6739937a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75442867"
 ---
-# <a name="quickstart-create-a-server---powershell"></a>Краткое руководство. Создание сервера с помощью PowerShell
+# <a name="quickstart-create-a-server---powershell"></a>Краткое руководство по созданию сервера с помощью PowerShell
 
 В этом кратком руководстве объясняется, как с помощью PowerShell и командной строки создать сервер Azure Analysis Services в подписке Azure.
 
@@ -22,8 +22,8 @@ ms.locfileid: "75442867"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- **Подписка Azure**: Откройте ссылку на [бесплатную пробную версию Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), чтобы создать учетную запись.
-- **Azure Active Directory**. Ваша подписка должна быть связана с клиентом Azure Active Directory, а учетная запись должна быть настроена в этом каталоге. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md).
+- **Подписка Azure**: откройте ссылку на [бесплатную пробную версию Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), чтобы создать учетную запись.
+- **Azure Active Directory**: ваша подписка должна быть связана с клиентом Azure Active Directory, а учетная запись настроена в этом каталоге. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md).
 - **Azure PowerShell**. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Чтобы выполнить установку или обновление, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ## <a name="import-azanalysisservices-module"></a>Импорт модуля Az.AnalysisServices
@@ -74,4 +74,4 @@ Remove-AzAnalysisServicesServer -Name "myserver" -ResourceGroupName "myResourceG
 > [!div class="nextstepaction"]
 > [Краткое руководство. Настройка брандмауэра сервера с помощью портала](analysis-services-qs-firewall.md)      
 > [!div class="nextstepaction"]
-> [Руководство. Добавление примера модели на сервер](analysis-services-create-sample-model.md)
+> [Руководство. Добавление образца модели на сервер](analysis-services-create-sample-model.md)

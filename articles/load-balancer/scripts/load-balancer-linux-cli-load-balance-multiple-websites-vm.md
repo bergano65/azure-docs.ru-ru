@@ -10,13 +10,13 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: allensu
 ms.openlocfilehash: 80ec18ca722b9833307fc270c710abd93c6fb6f9
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76274617"
 ---
-# <a name="azure-cli-script-example-load-balance-multiple-websites"></a>Пример скрипта Azure CLI. Балансировка нагрузки на нескольких веб-сайтах
+# <a name="azure-cli-script-example-load-balance-multiple-websites"></a>Пример скрипта Azure CLI. Распределение нагрузки веб-сайтов
 
 Этот пример скрипта Azure CLI создает виртуальную сеть с двумя виртуальными машинами, которые входят в группу доступности. Подсистема балансировки нагрузки направляет трафик с двух отдельных IP-адресов на две виртуальные машины. После выполнения сценария можно развернуть ПО веб-сервера на виртуальных машин и разместить несколько веб-сайтов, каждый из которых имеет собственный IP-адрес.
 

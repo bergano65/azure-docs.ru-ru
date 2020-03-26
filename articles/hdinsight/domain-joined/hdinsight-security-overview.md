@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: overview
 ms.date: 03/03/2020
 ms.openlocfilehash: 95bfe7d7788133d8548598cb30c8084bf64a977f
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "78267719"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
@@ -62,7 +62,7 @@ Azure HDInsight предлагает ряд методов для соответ
 
 ### <a name="compliance"></a>Соответствие нормативным требованиям
 
-Предложения Azure для соответствия требованиям основаны на различных типах гарантий, включая официальные процедуры сертификации, аттестации, проверки, авторизации и оценки, проведенные независимыми аудиторскими фирмами, а также поправки к контрактам, самостоятельные оценки и руководства для клиентов, предоставляемые корпорацией Майкрософт. См. сведения о [соответствии Microsoft Azure требованиям HDInsight](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) и информацию в [центре управления безопасностью Майкрософт](https://www.microsoft.com/trust-center).
+Предложения Azure для соответствия требованиям основаны на различных типах гарантий, включая официальные процедуры сертификации, аттестации, проверки, авторизации и оценки, проведенные независимыми аудиторскими фирмами, а также поправки к контрактам, самостоятельные оценки и руководства для клиентов, предоставляемые корпорацией Майкрософт. См. сведения о [соответствии Microsoft Azure требованиям HDInsight](https://www.microsoft.com/trust-center) и информацию в [центре управления безопасностью Майкрософт](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942).
 
 ## <a name="shared-responsibility-model"></a>Модель общей ответственности
 

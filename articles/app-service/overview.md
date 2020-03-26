@@ -4,13 +4,13 @@ description: Узнайте, как служба приложений Azure по
 ms.assetid: 94af2caf-a2ec-4415-a097-f60694b860b3
 ms.topic: overview
 ms.date: 01/04/2017
-ms.custom: seodec18
-ms.openlocfilehash: 849886eb03f46949301d76113109aae8188ff8fc
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.custom: mvc, seodec18
+ms.openlocfilehash: b385136183fba5d1e64db3763453d2f4b23d4d96
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687051"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80045171"
 ---
 # <a name="app-service-overview"></a>Обзор Службы приложений Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "74687051"
 
 Помимо Службы приложений, Azure предлагает и другие службы, которые можно использовать для размещения веб-сайтов и веб-приложений. В большинстве случаев оптимальным вариантом является служба приложений.  Сведения об архитектуре микрослужб см. в статье о [Service Fabric](https://azure.microsoft.com/documentation/services/service-fabric). См. дополнительные сведения о дополнительном контроле над [виртуальными машинами Azure, на которых выполняется код](https://azure.microsoft.com/documentation/services/virtual-machines/). Дополнительные сведения о выборе между этими службами Azure см. в статье [Сравнение службы приложений Azure, виртуальных машин, Service Fabric и облачных служб](overview-compare.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте первое веб-приложение.
 

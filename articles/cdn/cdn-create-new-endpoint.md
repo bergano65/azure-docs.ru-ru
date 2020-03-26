@@ -16,11 +16,11 @@ ms.date: 05/24/2018
 ms.author: magattus
 ms.custom: mvc
 ms.openlocfilehash: 2a3325217c1ec854e4f6cef3facce5580fb06a57
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78383566"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79215072"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Краткое руководство по созданию профиля и конечной точки Azure CDN
 С помощью этого краткого руководства вы включите сеть доставки содержимого (CDN) Azure, создав профиль и конечную точку CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам.

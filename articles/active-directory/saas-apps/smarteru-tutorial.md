@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со SmarterU | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с SmarterU | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SmarterU.
 services: active-directory
 documentationCenter: na
@@ -16,16 +16,16 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 712e7bcf513592f97950902faff2f7754093b9fc
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76549297"
 ---
 > [!NOTE]
 > Процесс интеграции SmarterU с Azure Active Directory также задокументирован и поддерживается в [Справочной системе SmarterU](https://help.smarteru.com/ID2053086).
 
-# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство. Интеграция Azure Active Directory со SmarterU
+# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Учебник. Интеграция Azure Active Directory со SmarterU
 
 В этом учебнике описано, как интегрировать SmarterU с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SmarterU обеспечивает следующие преимущества.
@@ -37,11 +37,11 @@ ms.locfileid: "76549297"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SmarterU, вам потребуется:
 
-* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка SmarterU с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -102,7 +102,7 @@ ms.locfileid: "76549297"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -217,7 +217,7 @@ ms.locfileid: "76549297"
 
     а. Щелкните **+ Пользователь**.
 
-    b. Введите значения атрибутов, связанные с учетной записью пользователя Azure Active Directory, в следующие текстовые поля: **Primary Email** (Основной адрес электронной почты), **Employee ID** (Идентификатор сотрудника), **Password** (Пароль), **Verify Password** (Проверьте пароль), **Given Name** (Заданное имя), **Surname** (Фамилия).
+    b. Введите соответствующие значения атрибутов учетной записи Azure AD в следующие текстовые поля: **Primary Email** (Основной электронный адрес), **Employee ID** (Идентификатор сотрудника), **Password** (Пароль), **Verify Password** (Проверка пароля), **Given Name** (Имя) и **Surname** (Фамилия).
 
     c. Нажмите **Активный**.
 

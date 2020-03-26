@@ -4,12 +4,12 @@ description: Управление производительностью и от
 ms.topic: overview
 ms.date: 06/03/2019
 ms.custom: mvc
-ms.openlocfilehash: cfd5925c61d1edf1fe9477d3239ec77a4c3de326
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: e7cde3ca47afd4db072b734c797a42ecd5a053aa
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77666298"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79136805"
 ---
 # <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 Azure Application Insights, компонент [Azure Monitor](../overview.md), — это расширяемая служба управления производительностью приложений (APM) для разработчиков и специалистов по DevOps. Используйте ее для мониторинга ваших работающих приложений. Эта служба автоматически отслеживает аномалии производительности и предоставляет мощные аналитические инструменты, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.  Эта служба помогает постоянно улучшать производительность и удобство использования. Application Insights работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и Java EE, с локальным, гибридным или общедоступным облачным размещением. Эта служба интегрируется с процессом DevOps и содержит точки подключения ко многим инструментам разработки. Она может выполнять мониторинг и анализ данных телеметрии из мобильных приложений благодаря интеграции с Центром приложений Visual Studio.
@@ -102,7 +102,7 @@ Application Insights — одна из многих служб, размещен
   * [Консольные приложения .NET](../../azure-monitor/app/console.md)
   * [Java](../../azure-monitor/app/java-get-started.md)
   * [Node.js](../../azure-monitor/app/nodejs.md)
-  * [Python (предварительная версия)](../../azure-monitor/app/opencensus-python.md)
+  * [Python](../../azure-monitor/app/opencensus-python.md)
   * [другие платформы.](../../azure-monitor/app/platforms.md)
 * **[Инструментирование веб-страниц](../../azure-monitor/app/javascript.md)** для получения сведений о просмотрах страниц, вызовах AJAX и других данных телеметрии на стороне клиента.
 * **[Анализ данных использования мобильного приложения](../../azure-monitor/learn/mobile-center-quickstart.md)** с помощью интеграции с Visual Studio App Center.
@@ -121,7 +121,7 @@ Application Insights — одна из многих служб, размещен
 * [ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 * [Java](../../azure-monitor/app/java-get-started.md)
 * [Node.js](../../azure-monitor/app/nodejs.md)
-* [Python (предварительная версия)](../../azure-monitor/app/opencensus-python.md)
+* [Python](../../azure-monitor/app/opencensus-python.md)
 
 
 ## <a name="support-and-feedback"></a>Поддержка и обратная связь

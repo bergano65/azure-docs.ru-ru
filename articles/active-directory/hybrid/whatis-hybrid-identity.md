@@ -14,10 +14,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c3d681dd06f07f6174e31b59cccf42df5dc16a1e
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "68779850"
 ---
 # <a name="what-is-hybrid-identity-with-azure-active-directory"></a>Что собой представляет гибридная идентификация с использованием Azure Active Directory
@@ -44,15 +44,15 @@ ms.locfileid: "68779850"
 
 |Мне нужно:|PHS и SSO<sup>1</sup>| PTA и SSO<sup>2</sup> | AD FS<sup>3</sup>| 
 |-----|-----|-----|-----| 
-|Автоматически синхронизировать с облаком новые учетные записи пользователей, контакты и группы, создаваемые в моем локальном каталоге Active Directory|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Настроить мой клиент для гибридных сценариев Office 365.|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Разрешить моим пользователям выполнять вход и обращаться к облачным службам с помощью локального пароля.|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Реализовать единый вход с использованием учетных данных организации.|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|  
-|Обеспечить хранение хэша паролей вне облака.| |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Использовать облачные решения для многофакторной проверки подлинности.|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Использовать локальные решения для Многофакторной идентификации.| | |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Обеспечить поддержку проверки подлинности с использованием смарт-карт<sup>4</sup>.| | |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Отображать уведомления об истечения срока действия пароля на портале Office и на рабочем столе Windows 10.| | |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
+|Автоматически синхронизировать с облаком новые учетные записи пользователей, контакты и группы, создаваемые в моем локальном каталоге Active Directory|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Настроить мой клиент для гибридных сценариев Office 365.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Разрешить моим пользователям выполнять вход и обращаться к облачным службам с помощью локального пароля.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Реализовать единый вход с использованием учетных данных организации.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)|  
+|Обеспечить хранение хэша паролей вне облака.| |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Использовать облачные решения для многофакторной проверки подлинности.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Использовать локальные решения для Многофакторной идентификации.| | |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Обеспечить поддержку проверки подлинности с использованием смарт-карт<sup>4</sup>.| | |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Отображать уведомления об истечения срока действия пароля на портале Office и на рабочем столе Windows 10.| | |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
 
 > <sup>1</sup> Синхронизация хэша паролей (PHS) и единый вход (SSO). 
 > 
@@ -67,7 +67,7 @@ ms.locfileid: "68779850"
 
 [!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-free-license.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Next Steps 
 
 - [Использование Azure AD Connect с расширением Azure AD Connect Health](whatis-azure-ad-connect.md) 
 - [Использование синхронизации хэша паролей](whatis-phs.md) 

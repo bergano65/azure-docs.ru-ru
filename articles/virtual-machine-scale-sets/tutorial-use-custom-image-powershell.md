@@ -9,10 +9,10 @@ ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: daef03b411a451fc3e5b73e46091672810b0f9bd
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76278298"
 ---
 # <a name="tutorial-create-and-use-a-custom-image-for-virtual-machine-scale-sets-with-azure-powershell"></a>Руководство. Создание и использование пользовательского образа для масштабируемых наборов виртуальных машин с помощью Azure PowerShell
@@ -25,7 +25,7 @@ ms.locfileid: "76278298"
 > * Создание пользовательского образа виртуальной машины из исходной виртуальной машины
 > * развертывание масштабируемого набора, использующего пользовательский образ виртуальной машины.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az.md](../../includes/updated-for-az.md)]
 
@@ -69,7 +69,7 @@ mstsc /v:<IpAddress>
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-Последним шагом является подготовка виртуальной машины к использованию в качестве пользовательского образа. Служебная программа Sysprep удаляет все сведения вашей личной учетной записи и конфигурации, а также сбрасывает виртуальную машину в исходное состояние для будущих развертываний. Дополнительные сведения см. в статье [How to Use Sysprep: An Introduction (Как использовать Sysprep: введение). статье](https://technet.microsoft.com/library/bb457073.aspx).
+Последним шагом является подготовка виртуальной машины к использованию в качестве пользовательского образа. Служебная программа Sysprep удаляет все сведения вашей личной учетной записи и конфигурации, а также сбрасывает виртуальную машину в исходное состояние для будущих развертываний. Дополнительные сведения см. в статье [How to Use Sysprep: An Introduction](https://technet.microsoft.com/library/bb457073.aspx) (Как использовать Sysprep: введение).
 
 Чтобы подготовить виртуальную машину к использованию, запустите Sysprep и настройте виртуальную машину для первого запуска. По завершению укажите служебной программе Sysprep завершить работу виртуальной машины.
 

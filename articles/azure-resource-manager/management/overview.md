@@ -2,15 +2,15 @@
 title: Обзор
 description: Описывает, как использовать диспетчер ресурсов Azure для развертывания, контроля ресурсов в Azure и управления доступом к ним.
 ms.topic: overview
-ms.date: 08/29/2019
-ms.openlocfilehash: f7e11ada8bf10baa99faf08d2b4b401e3bea2d9e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.date: 03/25/2020
+ms.openlocfilehash: 1e2a6959117749b4e7d08a9768b4189b97ef08bd
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78344634"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80258147"
 ---
-# <a name="azure-resource-manager-overview"></a>Общие сведения о диспетчере ресурсов Azure
+# <a name="what-is-azure-resource-manager"></a>Azure Resource Manager
 
 Azure Resource Manager — это служба развертывания и управления для Azure. Она обеспечивает уровень управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Вы можете использовать ее функции управления, такие как управление доступом, блокировка и добавление тегов, чтобы защитить и упорядочить ресурсы после развертывания.
 
@@ -20,7 +20,7 @@ Azure Resource Manager — это служба развертывания и у
 
 Когда пользователь отправляет запрос из любого из средств Azure, API или пакетов SDK, он направляет к Resource Manager. Resource Manager выполняет аутентификацию и авторизацию запроса. Resource Manager отправляет запрос в службу Azure, которая принимает запрошенное действие. Так как все запросы обрабатываются через один API, результаты и возможности будут согласованы в различных средствах.
 
-На следующем рисунке показана роль Azure Resource Manager при обработке запросов Azure. 
+На следующем рисунке показана роль Azure Resource Manager при обработке запросов Azure.
 
 ![Модель запросов Resource Manager](./media/overview/consistent-management-layer.png)
 
@@ -102,12 +102,8 @@ Azure Resource Manager — это служба развертывания и у
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения обо всех операциях, предоставляемых поставщиками ресурсов, см. в [справочнике по Azure REST API](/rest/api/azure/).
-
 * Чтобы узнать о том, как перемещать ресурсы, ознакомьтесь с разделом [Перемещение ресурсов в новую группу ресурсов или подписку](move-resource-group-and-subscription.md).
 
 * Дополнительные сведения о маркировке ресурсов тегами см. в статье [Использование тегов для организации ресурсов в Azure](tag-resources.md).
 
 * Дополнительные сведения о блокировке ресурсов см. в статье [Блокировка ресурсов для предотвращения непредвиденных изменений](lock-resources.md).
-
-* Сведения о создании шаблонов для развертываний см. в [этой статье](../templates/overview.md).
