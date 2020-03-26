@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: bfda5fe7592d4c3f3f9550f406cf7635c43168ed
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 69a9722436aea1cf794e6e3f3ce02ec79180cff3
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896195"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80159478"
 ---
 # <a name="linux-virtual-machines-in-azure"></a>Виртуальные машины Linux в Azure
 
@@ -93,10 +93,6 @@ Microsoft Azure поддерживает различные дистрибути
 * Docker — [Azure Marketplace — служба контейнеров Azure с Docker Swarm](https://azure.microsoft.com/marketplace/partners/microsoft/acsswarms/)
 * Jenkins — [Azure Marketplace — платформа CloudBees Jenkins](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cloudbees.cloudbees-core-contact)
 
-## <a name="vm-sizes"></a>Размеры виртуальных машин
-Используемый [размер](sizes.md) виртуальной машины зависит от рабочей нагрузки, которую требуется выполнить. Позже выбранный размер определяет разные факторы, например вычислительную мощность, объем памяти и хранилища. Azure предлагает широкий спектр размеров для поддержки разных вариантов использования.
-
-Azure взимает [почасовую оплату](https://azure.microsoft.com/pricing/details/virtual-machines/linux/), исходя из размера и операционной системы виртуальной машины. При частичном использовании Azure взимает плату только за использованные минуты. Плата за использование хранилища взимается отдельно.
 
 ## <a name="cloud-init"></a>Cloud-init 
 
@@ -108,12 +104,6 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 Azure поддерживает пакет [cloud-init](https://cloud-init.io/) для большинства дистрибутивов Linux, которые поддерживают его.  Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы обеспечивают бесперебойную работу развертываний и конфигураций cloud-init с виртуальными машинами и масштабируемыми наборами виртуальных машин.
 
 * [Использование cloud-init на виртуальных машинах Linux в Azure](using-cloud-init.md)
-
-## <a name="quotas"></a>Квоты
-Для каждой подписки Azure предусмотрена квота по умолчанию, от которой зависит возможность развертывания большого количества виртуальных машин для проекта. Текущее ограничение для каждой подписки составляет 20 виртуальных машин на регион.  Чтобы быстро увеличить квоту, следует отправить соответствующий запрос в службу поддержки.  Дополнительные сведения об ограничениях квоты:
-
-* [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md)
-
 
 ## <a name="storage"></a>Память
 * [Введение в службу хранилища Microsoft Azure](../../storage/common/storage-introduction.md)

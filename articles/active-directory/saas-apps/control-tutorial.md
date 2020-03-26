@@ -17,10 +17,10 @@ ms.date: 05/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d5a3383c6c79f3cde901c244eafb39bb0f479176
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67164908"
 ---
 # <a name="tutorial-integrate-continuity-control-with-azure-active-directory"></a>Руководство по Интеграция Continuity Control с Azure Active Directory
@@ -35,9 +35,9 @@ ms.locfileid: "67164908"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
+* Подписка Azure AD. Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
 * подписка Control с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -66,7 +66,7 @@ ms.locfileid: "67164908"
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя Control](#create-control-test-user)** требуется для того, чтобы в Control существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -76,7 +76,7 @@ ms.locfileid: "67164908"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -87,7 +87,7 @@ ms.locfileid: "67164908"
 
 1. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![Изменить сертификат подписи SAML](common/edit-certificate.png)
+    ![Изменение сертификата подписи SAML](common/edit-certificate.png)
 
 1. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток** и сохраните его на компьютере.
 
@@ -117,7 +117,7 @@ ms.locfileid: "67164908"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Control.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Control**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -145,4 +145,4 @@ ms.locfileid: "67164908"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
