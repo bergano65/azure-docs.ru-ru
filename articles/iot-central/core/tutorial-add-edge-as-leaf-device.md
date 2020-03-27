@@ -10,13 +10,13 @@ services: iot-central
 ms.custom: mvc
 manager: peterpr
 ms.openlocfilehash: bf74784998de6bbad6310c48c24d6353512bff13
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77026397"
 ---
-# <a name="tutorial-add-an-azure-iot-edge-device-to-your-azure-iot-central-application"></a>Руководство. добавлению устройства Azure IoT Edge в приложение Azure IoT Central
+# <a name="tutorial-add-an-azure-iot-edge-device-to-your-azure-iot-central-application"></a>Руководство по добавлению устройства Azure IoT Edge в приложение Azure IoT Central
 
 В этом учебнике показано, как добавить устройство Azure IoT Edge в приложение Azure IoT Central и настроить его. В этом учебнике для имитации устройства IoT Edge используется виртуальная машина Linux с поддержкой IoT Edge из Azure Marketplace. Устройство IoT Edge использует модуль, который создает смоделированные данные телеметрии окружающей среды. Данные телеметрии можно просмотреть на панели мониторинга в приложении IoT Central.
 
@@ -129,7 +129,7 @@ ms.locfileid: "77026397"
 
 1. В приложении IoT Central перейдите на страницу **Устройства** и щелкните **Устройство Edge с датчиком окружающей среды** в списке доступных шаблонов.
 
-1. Щелкните значок **+**, чтобы добавить новое устройство из шаблона. На странице **Создание устройства** щелкните **Создать**.
+1. Щелкните значок **+** , чтобы добавить новое устройство из шаблона. На странице **Создание устройства** щелкните **Создать**.
 
 Теперь у вас есть новое устройство с состоянием **Зарегистрировано**:
 
