@@ -1,17 +1,17 @@
 ---
-title: Проверка данных для выставления счетов по регистрации учетных записей Azure корпоративных пользователей с помощью REST API | Документация Майкрософт
+title: Проверка данных для выставления счетов по Соглашению о регистрации Enterprise в Azure с помощью REST API
 description: Узнайте, как применить REST API Azure для проверки данных для выставления счетов по регистрации учетных записей корпоративных пользователей.
 author: lleonard-msft
 ms.service: cost-management-billing
 ms.topic: article
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 24c4d9b74d68a05a253f05521ee62a0881a90988
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 4d42a9cfa15b532a98b632331f592d7e51bc09f0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77199574"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202868"
 ---
 # <a name="review-enterprise-enrollment-billing-using-rest-apis"></a>Проверка данных для выставления счетов по регистрации учетных записей корпоративных пользователей с помощью REST API
 

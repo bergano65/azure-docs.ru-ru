@@ -1,5 +1,5 @@
 ---
-title: Скачивание счета на оплату и данных о ежедневном использовании в Azure | Документация Майкрософт
+title: Скачивание счета на оплату и данных о ежедневном потреблении в Azure
 description: Описывается, как скачать или просмотреть счет на оплату и данные о ежедневном использовании в Azure.
 keywords: счет на оплату,скачать счет,счет azure,использование azure
 author: genlin
@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: af2184d7faa2ace8ed1043eaf2aaec0d525bc937
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: 629ab8a0f2af789501e6365c94f4ce7f3fd3649c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79125638"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79237689"
 ---
 # <a name="download-or-view-your-azure-billing-invoice-and-daily-usage-data"></a>Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "79125638"
 6. В контекстном меню загрузки выберите **Счет**.
 
 Если вы не видите счет за последний период выставления счетов, см. **Дополнительные сведения.** <!-- Fix this -->
-### <a name="noinvoice"></a>Почему не отображается счет за последний расчетный период?
+### <a name="why-dont-i-see-an-invoice-for-the-last-billing-period"></a><a name="noinvoice"></a>Почему не отображается счет за последний расчетный период?
 
 Это может происходить по нескольким причинам:
 

@@ -1,24 +1,26 @@
 ---
-title: Обучающие видео по Cloudyn в Azure | Документы Майкрософт
+title: Обучающие видео по Cloudyn в Azure
 description: Обучающие видео по работе со службой Cloudyn помогут вам приступить к работе и ознакомиться с ее возможностями.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 02/13/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 3344dfb1518eeb495b019138c72d566ce4064017
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ROBOTS: NOINDEX
+ms.openlocfilehash: 9acad813914614fd2cdaad4fd348e9e19225c67e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201107"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79463770"
 ---
 # <a name="cloudyn-walk-through-training-videos"></a>Пошаговые учебные видеоматериалы о Cloudyn
 
 В следующих видео показано, как начать работу со службой Cloudyn и ознакомиться с доступными возможностями. Служба Cloudyn позволяет отслеживать и оптимизировать затраты в нескольких облаках, включая Microsoft Azure, Amazon Web Services и Google Cloud Platform.
+
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 ## <a name="overview-video"></a>Обзорное видео
 

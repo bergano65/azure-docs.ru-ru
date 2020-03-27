@@ -1,26 +1,28 @@
 ---
-title: Использование отчетов Cloudyn в Azure | Документы Майкрософт
+title: Использование отчетов Cloudyn в Azure
 description: В этой статье описано, для чего предназначены отчеты Cloudyn, которые предоставляются на портале Cloudyn, чтобы вы могли эффективно использовать их.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: benshy
 ms.custom: seodec18
-ms.openlocfilehash: b3563e08963b0b32542dcbece2529c350981f557
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ROBOTS: NOINDEX
+ms.openlocfilehash: 633bf8126c1745cfd8db117966975bbf4ea2c9c8
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200016"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79463549"
 ---
 # <a name="reports-available-in-the-cloudyn-portal"></a>Отчеты, доступные на портале Cloudyn
 
 В этой статье описано, для чего предназначены отчеты Cloudyn, которые предоставляются на портале Cloudyn. Также вы здесь узнаете, как их можно эффективно использовать. Большинство отчетов удобны для использования и имеют стандартный внешний вид. В каждом из отчетов вы можете выполнять одни и те же основные действия. Общие сведения о том, как использовать отчеты Cloudyn, в том числе о настройке, сохранении и планировании отчетов, см. в статье [Интерпретация отчетов о затратах](understanding-cost-reports.md).
 
 Служба "Управление затратами Azure" предоставляет те же возможности, что и Cloudyn. Служба "Управление затратами Azure" является собственным решением Azure по управлению затратами. Она позволяет анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с целью экономии средств. Дополнительные сведения см. в статье [Управление затратами Azure](../cost-management-billing-overview.md).
+
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 ## <a name="report-types"></a>Типы отчетов
 

@@ -1,24 +1,26 @@
 ---
-title: Просмотр ключевых метрик на панелях мониторинга Cloudyn в Azure | Документация Майкрософт
+title: Просмотр основных метрик на панелях мониторинга Cloudyn в Azure
 description: В этой статье описывается, как просмотреть ключевые метрики с помощью панелей мониторинга в Cloudyn.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: vitavor
 ms.custom: seodec18
-ms.openlocfilehash: 78af8f2541eb0b28d75be89612d158c889261adc
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ROBOTS: NOINDEX
+ms.openlocfilehash: 892df9a6e0eb4d791f818eed0a78c96a829e25a0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76770128"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79464229"
 ---
 # <a name="view-key-cost-metrics-with-dashboards"></a>Представление ключевых метрик затрат с помощью панелей мониторинга
 
 Панели мониторинга Cloudyn обеспечивают представление отчетов на высоком уровне. Панели мониторинга позволяют просматривать ключевые метрики затрат в одном представлении. Кроме того, они показывают ключевые бизнес-тенденции для принятия важных деловых решений.
+
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 Панели мониторинга также используются для создания представлений для людей с различными обязанностями в организации, включая следующих.
 

@@ -6,14 +6,14 @@ ms.reviewer: micflan
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 03/20/2020
 ms.author: banders
-ms.openlocfilehash: e45ef26f3d0a4b968b601e70658c5f3680492682
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 3b4a5601f18a07ba1ecd6fdd93628d671a0acad2
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77199030"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80065638"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Общие сведения об условиях в файле сведений об использовании и расходах Azure
 
@@ -74,10 +74,12 @@ MeterName | All | Имя единицы измерения.
 MeterRegion | All | Имя расположения центра обработки данных для служб, цены на которые определяются на основе расположения. См. Location.
 MeterSubCategory | All | Имя категории подклассификации единицы измерения.
 OfferId<sup>1</sup> | All | Название приобретенного предложения.
+PayGPrice | All | Розничная цена на ресурс.
 PartNumber<sup>1</sup> | EA, PAYG | Идентификатор, используемый для получения цен в конкретной единице измерения.
 PlanName | EA, PAYG | Имя плана Marketplace.
 PreviousInvoiceId | MCA | Ссылка на исходный счет, если этот элемент строки является возвратом денежных средств.
 PricingCurrency | MCA | Валюта, используемая при оценке на основе согласованных цен.
+PricingModel | All | Идентификатор, указывающий на способ тарификации за единицу измерения. (Значения: On Demand, Reservation, Spot)
 Продукт | All | Имя продукта.
 ProductId<sup>1</sup> | MCA | Уникальный идентификатор продукта.
 ProductOrderId | All | Уникальный идентификатор заказа продукта.

@@ -1,25 +1,26 @@
 ---
-title: Подключение учетной записи Google Cloud Platform к Cloudyn в Azure | Документы Майкрософт
+title: Подключение учетной записи Google Cloud Platform к Cloudyn в Azure
 description: Подключение учетной записи Google Cloud Platform для просмотра затрат и сведений об использовании данных в отчетах Cloudyn.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 09989337b2e78277c6182630ce0f1cdf57a0e0c1
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4e10d39f744b40e7eb9058841eed9ff0f0e55d44
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76770191"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79474651"
 ---
 # <a name="connect-a-google-cloud-platform-account"></a>Подключение учетной записи Google Cloud Platform
 
 Имеющуюся учетную запись Google Cloud Platform можно подключить к Cloudyn. После этого сведения о затратах и использовании станут доступны для просмотра в отчетах Cloudyn. Информация в этой статье поможет вам настроить учетную запись Google и подключить ее к Cloudyn.
 
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 ## <a name="collect-project-information"></a>Сбор сведений о проекте
 

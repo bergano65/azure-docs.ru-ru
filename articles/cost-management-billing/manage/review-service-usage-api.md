@@ -1,17 +1,17 @@
 ---
-title: Просмотр использования ресурса службы Azure с помощью REST API | Документация Майкрософт
+title: Просмотр использования ресурса службы Azure с помощью REST API
 description: Узнайте, как использовать интерфейсы REST API для просмотра использования ресурса службы Azure.
 author: lleonard-msft
 ms.service: cost-management-billing
 ms.topic: article
 ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: f421ddc7cd509527053b099c7e4e538ab84b814e
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 337523c489089eeae5d669252b61cc61478ae1b3
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200577"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202851"
 ---
 # <a name="review-azure-resource-usage-using-the-rest-api"></a>Просмотр использования ресурса службы Azure с помощью REST API
 
