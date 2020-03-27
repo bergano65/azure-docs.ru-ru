@@ -11,12 +11,12 @@ metadata:
   author: memildin
   ms.author: memildin
   ms.date: 11/04/2019
-  ms.openlocfilehash: 2896bee8f5a07a7432ca3fa2ca49caa529fdeb1e
-  ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+  ms.openlocfilehash: a1d764ce1ce332290c1bd68c5beb5f2731ae5e41
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/25/2020
-  ms.locfileid: "77604778"
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "80159308"
 landingContent:
 - title: Сведения о центре безопасности
   linkLists:
@@ -32,15 +32,15 @@ landingContent:
     links:
     - text: Защита контейнеров
       url: container-security.md
-    - text: Добавление динамических пакетов соответствия
-      url: update-regulatory-compliance-packages.md
-    - text: Интеграция с Windows Admin Center
-      url: windows-admin-center-integration.md
+    - text: Интегрированная проверка уязвимостей для виртуальных машин
+      url: built-in-vulnerability-assessment.md
+    - text: Проверка схем для оповещений системы безопасности
+      url: alerts-schemas.md
     - text: Автоматизация ответов на оповещения и рекомендации
       url: workflow-automation.md
     - text: Экспорт оповещений о безопасности и рекомендаций
       url: continuous-export.md
-    - text: Настройка расширенной защиты от угроз для Azure Key Vault
+    - text: Настройка защиты от угроз для Azure Key Vault
       url: advanced-threat-protection-key-vault.md
 - title: Начало работы
   linkLists:
@@ -56,8 +56,8 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Что такое оценка безопасности?
-      url: security-center-secure-score.md
+    - text: Основные сведения об оценке безопасности
+      url: secure-score-security-controls.md
     - text: Корректировка рекомендаций по обеспечению безопасности
       url: security-center-remediate-recommendations.md
     - text: Настройка рекомендаций по обеспечению безопасности

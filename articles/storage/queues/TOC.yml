@@ -45,8 +45,11 @@
       items:
         - name: Рекомендации по обеспечению безопасности
           href: security-recommendations.md
-        - name: Шифрование службы хранилища Azure
+        - name: Шифрование неактивных данных в службе хранилища Azure
           href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+          items:
+            - name: Управляемые клиентом ключи с использованием Azure Key Vault
+              href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Авторизация операций с данными
           href: ../common/storage-auth.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
           items:

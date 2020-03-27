@@ -1,0 +1,65 @@
+### YamlMime:Landing
+title: Документация по StorSimple
+summary: Узнайте, как использовать Azure StorSimple — решение интегрированного хранилища, которое управляет задачами хранилища на локальных устройствах и в облачном хранилище Azure.
+metadata:
+  title: Документация по StorSimple
+  description: Узнайте, как использовать Azure StorSimple — решение интегрированного хранилища, которое управляет задачами хранилища на локальных устройствах и в облачном хранилище Azure.
+  ms.service: storsimple
+  services: storsimple
+  ms.topic: landing-page
+  author: twooley
+  ms.author: twooley
+  ms.date: 03/11/2020
+  ms.openlocfilehash: 7744e0fecadbdbcc7af82645b58bb86a9e0bbe18
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "79540312"
+landingContent:
+- title: Сведения о StorSimple
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сравнение StorSimple со службами "Синхронизация файлов" и Data Box Edge в Azure
+      url: storsimple-8000-choose-storage-solution.md
+- title: Виртуальный массив StorSimple
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет виртуальный массив StorSimple?
+      url: storsimple-ova-overview.md
+  - linkListType: get-started
+    links:
+    - text: Обзор требований
+      url: storsimple-ova-system-requirements.md
+- title: Хранилище StorSimple серии 8000
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет StorSimple серии 8000?
+      url: storsimple-overview.md
+  - linkListType: get-started
+    links:
+    - text: Обзор требований
+      url: storsimple-8000-system-requirements.md
+- title: Диспетчер данных StorSimple
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Диспетчер данных StorSimple?
+      url: storsimple-data-manager-overview.md
+  - linkListType: get-started
+    links:
+    - text: Управление на портале Azure
+      url: storsimple-data-manager-ui.md
+- title: StorSimple для программы "Поставщик облачных решений"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет StorSimple для программы "Поставщик облачных решений"?
+      url: storsimple-partner-csp-overview.md
+  - linkListType: get-started
+    links:
+    - text: Развертывание
+      url: storsimple-partner-csp-deploy.md

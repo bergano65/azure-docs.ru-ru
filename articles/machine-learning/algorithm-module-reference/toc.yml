@@ -136,6 +136,8 @@
       href: feature-hashing.md
     - name: Preprocess Text
       href: preprocess-text.md
+    - name: Латентное распределение Дирихле (LDA)
+      href: latent-dirichlet-allocation.md
 - name: Рекомендация
   items:
     - name: Оценка рекомендателя
@@ -144,5 +146,11 @@
       href: score-svd-recommender.md
     - name: Обучение рекомендателя SVD
       href: train-svd-recommender.md
+- name: Обнаружение аномалий
+  items:
+    - name: Обнаружение аномалий на основе анализа первичных компонентов
+      href: pca-based-anomaly-detection.md
+    - name: Обучение модели обнаружения аномалий
+      href: train-anomaly-detection-model.md
 - name: Ошибки модуля и устранение неполадок
   href: designer-error-codes.md

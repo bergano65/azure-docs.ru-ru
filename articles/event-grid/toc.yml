@@ -98,6 +98,8 @@
   items:
     - name: Основные понятия службы "Сетка событий"
       href: concepts.md
+    - name: Системные разделы
+      href: system-topics.md
     - name: Безопасность
       items:
         - name: Аутентификация

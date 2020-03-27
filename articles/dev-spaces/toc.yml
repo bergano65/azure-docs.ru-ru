@@ -58,7 +58,21 @@
     - name: Основные понятия
       items:
         - name: Принцип работы Dev Spaces
-          href: how-dev-spaces-works.md
+          items:
+            - name: Обзор
+              href: how-dev-spaces-works.md
+            - name: Настройка кластера
+              href: how-dev-spaces-works-cluster-setup.md
+            - name: Подготовка проекта
+              href: how-dev-spaces-works-prep.md
+            - name: Выполнение кода
+              href: how-dev-spaces-works-up.md
+            - name: Маршрутизация между пространствами разработки
+              href: how-dev-spaces-works-routing.md
+            - name: Удаленная отладка
+              href: how-dev-spaces-works-remote-debugging.md
+            - name: Подключение компьютера для разработки к AKS
+              href: how-dev-spaces-works-connect.md
         - name: Принцип работы VS Code с Dev Spaces
           href: how-vs-code-works-with-dev-spaces.md
         - name: Конфигурация сети в различных сетевых топологиях

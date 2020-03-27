@@ -66,9 +66,13 @@
               href: ../../virtual-network/move-across-regions-publicip-portal.md?toc=/azure/azure-resource-manager/toc.json
     - name: Теги
       items:
-        - name: Добавление тегов к ресурсам
+        - name: Рекомендации по принятию решений
+          href: /azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json
+        - name: Использование тегов
           href: tag-resources.md
-        - name: Поддержка тегов
+        - name: "Политики\_— соответствие требованиям"
+          href: tag-policies.md
+        - name: Поддерживаемые типы ресурсов
           href: tag-support.md
     - name: Управление группами ресурсов
       items:

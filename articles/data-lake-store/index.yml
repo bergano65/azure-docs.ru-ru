@@ -1,0 +1,102 @@
+### YamlMime:Landing
+title: Документация по Azure Data Lake Storage 1-го поколения
+summary: Узнайте, как настраивать, администрировать и обращаться к гипермасштабируемому совместимому с Hadoop репозиторию Data Lake для анализа данных любого объема и типа с любой скоростью приема. Платформа Azure Data Lake Storage 2-го поколения является общедоступной. Мы рекомендуем приступить к ее использованию уже сегодня.
+metadata:
+  title: Документация по Azure Data Lake Storage 1-го поколения
+  description: Узнайте, как настраивать, администрировать и обращаться к гипермасштабируемому совместимому с Hadoop репозиторию Data Lake для анализа данных любого объема и типа с любой скоростью приема.
+  ms.service: data-lake-store
+  ms.topic: landing-page
+  author: twooley
+  ms.author: twooley
+  ms.date: 03/11/2020
+  ms.openlocfilehash: bf688b1230c8fd4eecba08ce361e92b9030a241f
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "79410097"
+landingContent:
+- title: Сведения о Azure Data Lake Storage 1-го поколения
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что представляет собой Azure Data Lake Storage 1-го поколения?
+      url: data-lake-store-overview.md
+    - text: Сравнение со службой хранилища Azure
+      url: data-lake-store-comparison-with-blob-storage.md
+    - text: Документация по переходу на Data Lake Storage 2-го поколения
+      url: ../storage/data-lake-storage/introduction.md
+- title: Начало работы
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Портал Azure
+      url: data-lake-store-get-started-portal.md
+    - text: Azure PowerShell
+      url: data-lake-store-get-started-powershell.md
+    - text: Azure CLI
+      url: data-lake-store-get-started-cli-2.0.md
+- title: Загрузка и перемещение данных
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование Фабрики данных Azure
+      url: ../data-factory/load-azure-data-lake-store.md
+    - text: Использование Обозревателя службы хранилища
+      url: data-lake-store-in-storage-explorer.md
+    - text: С помощью AdlCopy
+      url: data-lake-store-copy-data-azure-storage-blob.md
+    - text: С помощью DistCp
+      url: data-lake-store-copy-data-wasb-distcp.md
+    - text: Использование Sqoop
+      url: data-lake-store-data-transfer-sql-sqoop.md
+- title: Защита данных
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о безопасности
+      url: data-lake-store-security-overview.md
+    - text: Управление доступом
+      url: data-lake-store-access-control.md
+  - linkListType: how-to-guide
+    links:
+    - text: Защита хранимых данных
+      url: data-lake-store-secure-data.md
+    - text: Шифрование
+      url: data-lake-store-encryption.md
+    - text: Интеграция виртуальной сети
+      url: data-lake-store-network-security.md
+- title: Аутентификация
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Параметры проверки подлинности
+      url: data-lakes-store-authentication-using-azure-active-directory.md
+  - linkListType: how-to-guide
+    links:
+    - text: Проверка подлинности конечных пользователей
+      url: data-lake-store-end-user-authenticate-using-active-directory.md
+    - text: Аутентификация между службами
+      url: data-lake-store-service-to-service-authenticate-using-active-directory.md
+- title: Операции файловой системы
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Пакет SDK для .NET
+      url: data-lake-store-data-operations-net-sdk.md
+    - text: Пакет SDK для Java
+      url: data-lake-store-get-started-java-sdk.md
+    - text: REST API
+      url: data-lake-store-data-operations-rest-api.md
+    - text: Python
+      url: data-lake-store-data-operations-python.md
+- title: Операции управления учетными записями
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Пакет SDK для .NET
+      url: data-lake-store-get-started-net-sdk.md
+    - text: REST API
+      url: data-lake-store-get-started-rest-api.md
+    - text: Python
+      url: data-lake-store-get-started-python.md

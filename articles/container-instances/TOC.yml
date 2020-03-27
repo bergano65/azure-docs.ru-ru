@@ -59,6 +59,8 @@
           href: container-instances-vnet.md
         - name: Развертывание из Реестра контейнеров Azure
           href: container-instances-using-azure-container-registry.md
+        - name: Развертывание с помощью GitHub Actions
+          href: container-instances-github-action.md
         - name: Шифрование данных развертывания
           href: container-instances-encrypt-data.md
         - name: Развертывание на выделенных узлах
@@ -83,6 +85,8 @@
           href: container-instances-gpu.md
         - name: Включение конечной точки SSL в контейнере расширения
           href: container-instances-container-group-ssl.md
+        - name: Предоставление статического IP-адреса
+          href: container-instances-application-gateway.md
     - name: Подключение томов данных
       items:
         - name: Общая папка Azure

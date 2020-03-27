@@ -23,23 +23,10 @@
       href: tutorial-restrict-network-access-to-resources.md
     - name: Подключение виртуальных сетей
       href: tutorial-connect-virtual-networks-portal.md
-    - name: NAT
-      items:
-        - name: "Создание шлюза NAT\_— портал"
-          href: quickstart-create-nat-gateway-portal.md
-        - name: "Создание шлюза NAT\_— PowerShell"
-          href: quickstart-create-nat-gateway-powershell.md
-        - name: "Создание шлюза NAT\_— CLI"
-          href: quickstart-create-nat-gateway-cli.md
-        - name: "Создание шлюза NAT\_— шаблон ARM"
-          displayname: Resource Manager
-          href: quickstart-create-nat-gateway-template.md
-        - name: "Создание и проверка шлюза NAT\_— портал"
-          href: tutorial-create-validate-nat-gateway-portal.md
-        - name: "Создание и проверка шлюза NAT\_— PowerShell"
-          href: tutorial-create-validate-nat-gateway-powershell.md
-        - name: "Создание и проверка шлюза NAT\_— CLI"
-          href: tutorial-create-validate-nat-gateway-cli.md
+    - name: Создание шлюза NAT
+      href: quickstart-create-nat-gateway-portal.md
+    - name: Создание и проверка шлюза NAT
+      href: tutorial-create-validate-nat-gateway-portal.md
 - name: Примеры
   items:
     - name: Azure CLI
@@ -359,6 +346,19 @@
           href: move-across-regions-publicip-portal.md
         - name: "Общедоступные IP-адреса\_— PowerShell"
           href: move-across-regions-publicip-powershell.md
+    - name: NAT
+      items:
+        - name: "Создание шлюза NAT\_— PowerShell"
+          href: quickstart-create-nat-gateway-powershell.md
+        - name: "Создание шлюза NAT\_— CLI"
+          href: quickstart-create-nat-gateway-cli.md
+        - name: "Создание шлюза NAT\_— шаблон ARM"
+          displayname: Resource Manager
+          href: quickstart-create-nat-gateway-template.md
+        - name: "Создание и проверка шлюза NAT\_— PowerShell"
+          href: tutorial-create-validate-nat-gateway-powershell.md
+        - name: "Создание и проверка шлюза NAT\_— CLI"
+          href: tutorial-create-validate-nat-gateway-cli.md
     - name: Диагностика
       items:
         - name: Устранение неполадок с пирингом виртуальной сети

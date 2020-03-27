@@ -14,6 +14,10 @@
       items:
         - name: Брандмауэр веб-приложения в Azure Front Door
           href: ./afds/afds-overview.md
+    - name: Сеть доставки содержимого
+      items:
+        - name: Брандмауэр веб-приложения в Azure CDN
+          href: ./cdn/cdn-overview.md
 - name: Учебники
   items:
     - name: Шлюз приложений
@@ -24,6 +28,10 @@
       items:
         - name: "Настройка политики WAF\_— портал"
           href: ./afds/waf-front-door-create-portal.md
+    - name: Сеть доставки содержимого
+      items:
+        - name: "Настройка политики WAF\_— портал"
+          href: ./cdn/waf-cdn-create-portal.md
 - name: Примеры
   items:
     - name: Azure PowerShell
@@ -110,14 +118,14 @@
           href: ./afds/waf-front-door-tutorial-geo-filtering.md
         - name: Мониторинг и ведение журналов
           href: ./afds/waf-front-door-monitor.md
-- name: Диагностика
-  items:
-    - name: Шлюз приложений
+    - name: Диагностика
       items:
-        - name: Устранение неполадок с WAF
-          href: ./ag/web-application-firewall-troubleshoot.md
-        - name: Служба Log Analytics
-          href: ./ag/log-analytics.md
+        - name: Шлюз приложений
+          items:
+            - name: Устранение неполадок с WAF
+              href: ./ag/web-application-firewall-troubleshoot.md
+            - name: Служба Log Analytics
+              href: ./ag/log-analytics.md
 - name: Справочник
   items:
     - name: Правила CRS

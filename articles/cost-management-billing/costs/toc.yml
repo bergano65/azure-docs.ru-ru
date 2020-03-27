@@ -22,6 +22,8 @@
       items:
         - name: Рекомендации для Управления затратами Azure
           href: cost-mgt-best-practices.md
+        - name: Выбор между службой "Управление затратами" и Cloudyn
+          href: choose-between-azure-cost-management-cloudyn.md
         - name: Интерпретация данных службы "Управление затратами"
           href: understand-cost-mgt-data.md
         - name: Общие сведения об областях и работа с ними

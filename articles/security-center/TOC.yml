@@ -37,9 +37,7 @@
       href: security-center-compliance-dashboard.md
 - name: Основные понятия
   items:
-    - name: Оценка безопасности в Центре безопасности
-      href: security-center-secure-score.md
-    - name: Расширенная оценка безопасности
+    - name: Оценка безопасности
       href: secure-score-security-controls.md
     - name: Разрешения
       href: security-center-permissions.md
@@ -59,16 +57,18 @@
           href: azure-kubernetes-service-integration.md
     - name: Защита от угроз и оповещения системы безопасности
       items:
+        - name: Защита от угроз с помощью Центра безопасности Azure
+          href: threat-protection.md
         - name: Общие сведения об оповещениях системы безопасности
           href: security-center-alerts-overview.md
         - name: Справочный список оповещений
           href: alerts-reference.md
+        - name: Схемы оповещений
+          href: alerts-schemas.md
         - name: Управление оповещениями системы безопасности
           href: security-center-managing-and-responding-alerts.md
         - name: Управление инцидентами безопасности
           href: security-center-incident.md
-        - name: Защита от угроз с помощью Центра безопасности Azure
-          href: threat-protection.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
           href: security-center-alerts-cloud-smart.md
         - name: Карта оповещений системы безопасности и аналитика угроз
@@ -201,6 +201,8 @@
       href: security-center-features-retirement-july2019.md
     - name: Оценка защиты конечной точки и рекомендации
       href: security-center-endpoint-protection.md
+    - name: Оценка безопасности (устаревшие версии)
+      href: security-center-secure-score.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

@@ -35,6 +35,10 @@
     - name: Основные понятия
       expanded: false
       items:
+        - name: Безопасность
+          items:
+            - name: Базовые средства безопасности
+              href: security-baseline.md
         - name: Номера SKU и ограничения реестра контейнеров
           href: container-registry-skus.md
         - name: 'Реестры, репозитории и образы'
@@ -120,7 +124,7 @@
         - name: Монитор
           expanded: false
           items:
-            - name: Журналы диагностики и аудита (предварительная версия)
+            - name: Журналы диагностики и аудита
               href: container-registry-diagnostics-audit-logs.md
             - name: Проверка соответствия требованиям с помощью службы "Политика Azure" (предварительная версия)
               href: container-registry-azure-policy.md

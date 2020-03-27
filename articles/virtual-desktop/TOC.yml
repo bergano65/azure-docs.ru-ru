@@ -86,6 +86,8 @@
       href: publish-apps.md
     - name: Настройка присоединения приложения MSIX
       href: app-attach.md
+    - name: Использование Microsoft Teams
+      href: teams-on-wvd.md
 - name: Основные понятия
   items:
     - name: Среда Виртуального рабочего стола Windows

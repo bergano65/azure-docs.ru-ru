@@ -89,8 +89,10 @@
       items:
         - name: Поиск адреса
           href: how-to-search-for-address.md
-        - name: Рекомендации по поиску
+        - name: Рекомендации по использованию службы "Поиск"
           href: how-to-use-best-practices-for-search.md
+        - name: Рекомендации по использованию службы "Построение маршрутов"
+          href: how-to-use-best-practices-for-routing.md
         - name: Отображение пользовательских данных на статической карте
           href: how-to-render-custom-data.md
         - name: Запрос маршрутов общественного транспорта
@@ -101,7 +103,7 @@
       items:
         - name: Элемент управления картой
           items:
-            - name: Начало работы с элементами управления веб-картой
+            - name: Использование элемента управления картой в Azure Maps
               href: how-to-use-map-control.md
             - name: Создание карты
               href: map-create.md
@@ -247,12 +249,38 @@
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/'
         - name: Модуль службы
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-rest/'
+        - name: Модуль пространственного ввода-вывода
+          href: 'https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.maps/accounts
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
       href: /azure/iot-fundamentals/iot-support-help
+    - name: Службы Azure IoT
+      items:
+        - name: Центр Интернета вещей
+          href: /azure/iot-hub
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+          href: /azure/iot-dps
+        - name: IoT Central
+          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+        - name: IoT Edge
+          href: /azure/iot-edge
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-accelerators
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
+        - name: Azure Maps
+          href: /azure/azure-maps
+        - name: Аналитика временных рядов
+          href: /azure/time-series-insights
+    - name: Пакеты SDK для Центра Интернета вещей Azure
+      items:
+        - name: Пакеты SDK для служб IoT
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+        - name: Пакеты SDK для устройств Интернета вещей
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
     - name: Условия использования Azure Maps
       href: 'https://azure.microsoft.com/support/legal/'
     - name: Цены на Azure Maps
@@ -281,31 +309,3 @@
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
     - name: Azure Maps в IoT School
       href: 'https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo'
-- name: Сопутствующие материалы
-  items:
-    - name: Решения
-      items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-suite
-        - name: IoT Central
-          href: /azure/iot-central/iot-support-help
-    - name: Службы платформы
-      items:
-        - name: Центр Интернета вещей
-          href: /azure/iot-hub
-        - name: IoT Plug and Play
-          href: /azure/iot-pnp
-        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
-        - name: Maps
-          href: /azure/azure-maps
-        - name: Пакеты SDK службы
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов
-          href: /azure/time-series-insights
-    - name: Решения с Edge
-      items:
-        - name: IoT Edge
-          href: /azure/iot-edge
-        - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

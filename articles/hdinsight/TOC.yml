@@ -19,6 +19,8 @@
           href: ./hdinsight-administer-use-powershell.md
         - name: Создание кластеров с помощью модулей runbook
           href: ./manage-clusters-runbooks.md
+        - name: Уведомления по электронной почте Apache Ambari
+          href: ./apache-ambari-email.md
         - name: 'Создание конвейера извлечения, преобразования и загрузки'
           href: ./hdinsight-sales-insights-etl.md
     - name: Примеры
@@ -272,7 +274,8 @@
           href: ./spark/apache-spark-jupyter-spark-sql-use-powershell.md
         - name: "Создание кластера Apache Spark\_— Azure CLI"
           href: ./spark/apache-spark-create-cluster-cli.md
-        - name: "Создание кластера Apache Spark\_— шаблон"
+        - name: "Создание кластера Apache Spark\_— шаблон Resource Manager"
+          displayName: Resource Manager
           href: ./spark/apache-spark-jupyter-spark-sql.md
     - name: Учебники
       items:
@@ -416,8 +419,8 @@
       items:
         - name: "Создание кластера Apache Hadoop\_— портал"
           href: ./hadoop/apache-hadoop-linux-create-cluster-get-started-portal.md
-        - name: "Создание кластера Apache Hadoop\_— шаблон"
-          displayName: 'resource manager template, arm template, resource manager group'
+        - name: "Создание кластера Apache Hadoop\_— шаблон Resource Manager"
+          displayName: Resource Manager
           href: ./hadoop/apache-hadoop-linux-tutorial-get-started.md
     - name: Учебники
       items:
@@ -435,8 +438,54 @@
               href: use-pig.md
         - name: Разработка
           items:
-            - name: Использование пустых граничных узлов
-              href: ./hdinsight-apps-use-edge-node.md
+            - name: Использование MapReduce с Apache Hadoop
+              items:
+                - name: Сведения о MapReduce
+                  href: ./hadoop/hdinsight-use-mapreduce.md
+                - name: Использование протокола SSH
+                  href: ./hadoop/apache-hadoop-use-mapreduce-ssh.md
+                - name: Использование cURL
+                  href: ./hadoop/apache-hadoop-use-mapreduce-curl.md
+                - name: Использование Azure PowerShell
+                  href: ./hadoop/apache-hadoop-use-mapreduce-powershell.md
+                - name: Использование пакета SDK для .NET
+                  href: ./hadoop/apache-hadoop-use-mapreduce-dotnet-sdk.md
+                - name: Выполнение примеров MapReduce
+                  href: ./hadoop/apache-hadoop-run-samples-linux.md
+                - name: Запуск пользовательских программ Apache Hadoop MapReduce
+                  href: ./hadoop/apache-hadoop-run-custom-programs.md
+                - name: 'Разработка программ MapReduce для потоковой передачи на C#'
+                  href: ./hadoop/apache-hadoop-dotnet-csharp-mapreduce-streaming.md
+                - name: Разработка программ Java MapReduce
+                  href: ./hadoop/apache-hadoop-develop-deploy-java-mapreduce-linux.md
+            - name: 'Использование Apache Hive как средства для извлечения, преобразования и загрузки'
+              href: ./hadoop/apache-hadoop-using-apache-hive-as-an-etl-tool.md
+            - name: 'Извлечение, преобразование и загрузка в нужном масштабе'
+              href: ./hadoop/apache-hadoop-etl-at-scale.md
+            - name: Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности
+              href: ./hdinsight-create-non-interactive-authentication-dotnet-applications.md
+            - name: Анализ больших данных
+              items:
+                - name: Анализ с помощью Power Query
+                  href: ./hadoop/apache-hadoop-connect-excel-power-query.md
+                - name: "Подключение Power\_BI к Interactive Query"
+                  href: ./interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md
+                - name: "Подключение Power\_BI к Apache Hadoop"
+                  href: ./hadoop/apache-hadoop-connect-hive-power-bi.md
+                - name: Подключение Excel к Apache Hadoop
+                  href: ./hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md
+                - name: Подключение с помощью драйвера Apache Hive JDBC
+                  href: ./hadoop/apache-hadoop-connect-hive-jdbc-driver.md
+                - name: Анализ сохраненных твитов
+                  href: ./hdinsight-analyze-twitter-data-linux.md
+                - name: Формирование рекомендаций с помощью Apache Mahout
+                  href: ./hadoop/apache-hadoop-mahout-linux-mac.md
+                - name: Расширенная аналитика для HDInsight
+                  href: ./hadoop/apache-hadoop-deep-dive-advanced-analytics.md
+            - name: Управление
+              items:
+                - name: Использование пустых граничных узлов
+                  href: ./hdinsight-apps-use-edge-node.md
         - name: Диагностика
           items:
             - name: Распространенные проблемы
@@ -499,8 +548,8 @@
           href: ./kafka/apache-kafka-get-started.md
         - name: "Создание кластера Apache Kafka\_— PowerShell"
           href: ./kafka/apache-kafka-quickstart-powershell.md
-        - name: "Создание кластера Apache Kafka\_— шаблон"
-          displayName: 'resource manager template, arm template, resource manager group'
+        - name: "Создание кластера Apache Kafka\_— шаблон Resource Manager"
+          displayName: Resource Manager
           href: ./kafka/apache-kafka-quickstart-resource-manager-template.md
     - name: Учебники
       items:
@@ -564,6 +613,9 @@
           href: ./hbase/apache-hbase-overview.md
     - name: Краткие руководства
       items:
+        - name: "Создание кластера Apache HBase\_— шаблон Resource Manager"
+          displayName: Resource Manager
+          href: ./hbase/quickstart-resource-manager-template.md
         - name: "Запросы к Apache HBase\_— Apache Phoenix"
           href: ./hbase/apache-hbase-query-with-phoenix.md
         - name: "Запросы к Apache HBase\_— оболочка HBase"
@@ -636,6 +688,9 @@
           href: ./interactive-query/apache-interactive-query-get-started.md
     - name: Краткие руководства
       items:
+        - name: "Создание кластера Interactive Query\_— шаблон Resource Manager"
+          displayName: Resource Manager
+          href: ./interactive-query/quickstart-resource-manager-template.md
         - name: "Выполнение запросов Apache Hive\_— Apache Zeppelin"
           href: ./interactive-query/hdinsight-connect-hive-zeppelin.md
     - name: Учебники
@@ -718,6 +773,9 @@
           href: ./r-server/r-server-overview.md
     - name: Краткие руководства
       items:
+        - name: "Создание кластера служб ML\_— шаблон Resource Manager"
+          displayName: Resource Manager
+          href: ./r-server/quickstart-resource-manager-template.md
         - name: Пример задания. RStudio Server
           href: ./r-server/machine-learning-services-quickstart-job-rstudio.md
         - name: Пример задания. Консоль R
@@ -800,8 +858,6 @@
           href: ./domain-joined/hdinsight-security-overview.md
     - name: Учебники
       items:
-        - name: Ограничение исходящего трафика с помощью брандмауэра
-          href: ./hdinsight-restrict-outbound-traffic.md
         - name: Apache HBase RBAC и Apache Ranger
           href: ./domain-joined/apache-domain-joined-run-hbase.md
         - name: Использование Apache Hive RBAC и Apache Ranger
@@ -850,6 +906,8 @@
           href: ./domain-joined/ssh-domain-accounts.md
         - name: Защита данных
           href: ./hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
+        - name: Ограничение исходящего трафика с помощью брандмауэра
+          href: ./hdinsight-restrict-outbound-traffic.md
         - name: Диагностика
           items:
             - name: Проблемы с аутентификацией ESP

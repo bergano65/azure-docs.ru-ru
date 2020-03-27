@@ -1,77 +1,154 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure Data Explorer
+summary: Azure Data Explorer — это быстрая и полностью управляемая служба для аналитики большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. С помощью Azure Data Explorer вы можете собирать, хранить и анализировать разные данные, чтобы улучшать качество продуктов, создавать новые возможности для клиентов, выполнять мониторинг устройств и повышать производительность.
 metadata:
-  title: 'Azure Data Explorer: краткие руководства, учебные материалы, язык запросов и документация по API'
-  description: "Azure Data Explorer\_— это облачная платформа Log Analytics, оптимизированная для ad-hoc-обработки запросов больших данных."
-  author: orspod
-  ms.author: orspodek
+  title: Документация по Azure Data Explorer
+  description: Azure Data Explorer — это облачная платформа Log Analytics, оптимизированная для ad-hoc-обработки запросов больших данных.
   ms.service: data-explorer
   ms.topic: landing-page
-  ms.date: 03/24/2019
-abstract:
-  description: "<p>Azure Data Explorer\_— это быстрая и полностью управляемая служба для аналитики большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т.\_д. С помощью Azure Data Explorer вы можете собирать, хранить и анализировать разные данные, чтобы улучшать качество продуктов, создавать новые возможности для клиентов, выполнять мониторинг устройств и повышать производительность.</p><p>Узнайте, как использовать Azure Data Explorer, ознакомившись с нашими краткими руководствами и справочными материалами.</p>"
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/index/video.png
-      width: 250
-    title: 'Что такое Azure Data Explorer? (19:47)'
-    href: 'https://youtu.be/D_AJk2lAepw'
-    width: 250
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как подготовить к работе и использовать Azure Data Explorer:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/data-explorer/media/index/portal.svg
-            text: Создание кластера и базы данных
-            href: /azure/data-explorer/create-cluster-database-portal
-          - image:
-              src: /azure/data-explorer/media/index/portal.svg
-            text: Прием данных потоковой передачи из Центров событий
-            href: /azure/data-explorer/ingest-data-event-hub
-          - image:
-              src: /azure/data-explorer/media/index/portal.svg
-            text: Запрашивание данных с помощью пользовательского веб-интерфейса
-            href: /azure/data-explorer/web-query-data
-          - image:
-              src: /azure/data-explorer/media/index/logo-python.svg
-            text: Прием запрашиваемых данных с помощью Python
-            href: /azure/data-explorer/python-ingest-data
-          - image:
-              src: /azure/data-explorer/media/index/logo-python.svg
-            text: Запрашивание данных с помощью Python
-            href: /azure/data-explorer/python-query-data
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создавать комплексные решения:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/data-explorer/visualize-power-bi">Визуализация данных из Azure Data Explorer в Power BI</a>
-  - title: Бесплатные видеоуроки Pluralsight
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Язык запросов для Azure Data Explorer
-            href: 'https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch'
-            image:
-              src: /azure/data-explorer/media/index/logo-pluralsight.svg
-              href: 'https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch'
-  - title: Справочник
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Языки и API
-            html: '<p><a href="https://aka.ms/kustolangref">Язык запросов, команды управления и API</a>'
+  author: orspod
+  ms.author: orspodek
+  ms.date: 03/19/2020
+  ms.openlocfilehash: f00722d273ed95d82d433b66750e0a2211f04ee3
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "80065624"
+landingContent:
+- title: Сведения об Azure Data Explorer
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Data Explorer?
+      url: data-explorer-overview.md
+  - linkListType: video
+    links:
+    - text: Что такое Azure Data Explorer? (19:47)
+      url: https://youtu.be/D_AJk2lAepw
+    - text: Pluralsight. Язык запросов Kusto (KQL) с самого начала
+      url: https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch
+- title: Создание кластера и базы данных
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание кластера и базы данных
+      url: create-cluster-database-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Python
+      url: create-cluster-database-python.md
+    - text: Шаблон Azure Resource Manager
+      url: create-cluster-database-resource-manager.md
+    - text: C#
+      url: create-cluster-database-csharp.md
+    - text: PowerShell
+      url: create-cluster-database-powershell.md
+    - text: Azure CLI
+      url: create-cluster-database-cli.md
+- title: Прием данных в Azure Data Explorer
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о приеме данных
+      url: ingest-data-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Принятие демонстрационных данных
+      url: ingest-sample-data.md
+  - linkListType: how-to-guide
+    links:
+    - text: Прием данных одним щелчком
+      url: ingest-data-one-click.md
+    - text: Прием потоковой передачи
+      url: ingest-data-streaming.md
+    - text: Python
+      url: python-ingest-data.md
+    - text: Создание концентратора событий с помощью портала Azure
+      url: ingest-data-event-hub.md
+    - text: Создание Сетки событий с помощью портала Azure
+      url: ingest-data-event-grid.md
+    - text: Установка и использование LightIngest
+      url: lightingest.md
+- title: Данные запросов
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Запрашивание данных с помощью пользовательского веб-интерфейса
+      url: web-query-data.md
+  - linkListType: tutorial
+    links:
+    - text: Написание KQL-запросов
+      url: write-queries.md
+  - linkListType: how-to-guide
+    links:
+    - text: Отправка запроса данных в Azure Data Lake
+      url: data-lake-query-data.md
+    - text: Запрос данных с помощью Python
+      url: python-query-data.md
+    - text: Аналитика временных рядов
+      url: time-series-analysis.md
+  - linkListType: reference
+    links:
+    - text: Краткий справочник по KQL
+      url: kql-quick-reference.md
+    - text: Язык запросов Kusto
+      url: https://docs.microsoft.com/azure/kusto/query/
+- title: Визуализируйте данные
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Обзор визуализации данных
+      url: viz-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Соединитель Power BI
+      url: power-bi-connector.md
+    - text: Grafana
+      url: grafana.md
+    - text: Соединитель ODBC
+      url: connect-odbc.md
+    - text: Tableau
+      url: tableau.md
+    - text: Kibana (соединитель K2Bridge)
+      url: k2bridge.md
+    - text: Redash
+      url: redash.md
+    - text: Sisense
+      url: sisense.md
+- title: Интеграция с другими средствами
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Интеграция со службой "Фабрика данных"
+      url: data-factory-integration.md
+    - text: Соединитель Apache Spark
+      url: spark-connector.md
+    - text: Соединитель Microsoft Flow
+      url: flow.md
+    - text: Azure DevOps
+      url: devops.md
+- title: Управление ресурсами и данными, а также их мониторинг
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление горизонтальным масштабированием кластера
+      url: manage-cluster-horizontal-scaling.md
+    - text: Управление вертикальным масштабированием кластера
+      url: manage-cluster-vertical-scaling.md
+    - text: Базы данных подписчиков
+      url: follower.md
+    - text: Управление разрешениями базы данных
+      url: manage-database-permissions.md
+    - text: Использование метрик для мониторинга работоспособности кластера
+      url: using-metrics.md
+    - text: Использование журналов диагностики для мониторинга приема
+      url: using-diagnostic-logs.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Команды управления
+      url: https://docs.microsoft.com/azure/kusto/management/
+    - text: API Azure Data Explorer
+      url: https://docs.microsoft.com/azure/kusto/api/

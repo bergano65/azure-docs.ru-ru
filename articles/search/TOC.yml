@@ -263,6 +263,8 @@
           href: search-pagination-page-layout.md
         - name: Настройка релевантности (профили повышения)
           href: index-add-scoring-profiles.md
+        - name: Настройка релевантности (алгоритм на основе подобия)
+          href: index-ranking-similarity.md
     - name: План
       items:
         - name: Выбор уровня

@@ -16,6 +16,12 @@
       href: powershell-samples.md
 - name: Основные понятия
   items:
+    - name: Поддержка дистанционной работы
+      items:
+        - name: Дистанционная работа
+          href: work-remotely-support.md
+        - name: Конфигурации NVA и дистанционная работа
+          href: nva-work-remotely-support.md
     - name: Сведения о параметрах VPN-шлюза
       href: vpn-gateway-about-vpn-gateway-settings.md
     - name: Сведения о VPN-устройствах
@@ -150,6 +156,8 @@
               href: vpn-gateway-howto-openvpn.md
             - name: Настройка клиентов OpenVPN
               href: vpn-gateway-howto-openvpn-clients.md
+        - name: Переход с протокола SSTP на OpenVPN или IKEv2
+          href: ikev2-openvpn-from-sstp.md
         - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
           href: vpn-gateway-point-to-site-gateway-public-ca.md
         - name: Настройка туннеля Always On VPN для устройства
@@ -217,7 +225,7 @@
           items:
             - name: Проблемы с подключением "точка — сеть"
               href: vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md
-            - name: Проблемы с подключением "точка — сеть" для VPN-клиента Mac OS X
+            - name: "Проблемы с подключением \"точка\_— сеть\" в VPN-клиенте macOS\_X"
               href: vpn-gateway-troubleshoot-point-to-site-osx-ikev2.md
             - name: "Подключения \"точка\_— сеть\"\_— проверка подлинности Azure AD"
               href: troubleshoot-ad-vpn-client.md

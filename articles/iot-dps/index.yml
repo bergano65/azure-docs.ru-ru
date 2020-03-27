@@ -1,51 +1,75 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Подготовке устройств к добавлению в Центр Интернета вещей Azure
+### YamlMime:Landing
+title: Документация по Службе подготовки устройств (DPS) к добавлению в Центр Интернета вещей Azure
+summary: Служба подготовки устройств к добавлению в Центр Интернета вещей (DPS) — это вспомогательная служба, которая обеспечивает полностью автоматическую JIT-подготовку для нужного Центра Интернета вещей. Она позволяет подготавливать миллионы устройств и обеспечивает высокий уровень безопасности и масштабируемости без каких-либо действий со стороны пользователя. Узнайте, как подготавливать устройства для центров Интернета вещей, воспользовавшись нашими краткими руководствами, инструкциями и примерами.
 metadata:
-  title: Документация по Подготовке устройств к добавлению в Центр Интернета вещей Azure
-  description: 'Служба подготовки устройств к добавлению в Центр Интернета вещей. Учебные материалы, краткие руководства, практические инструкции и справочники по API'
-  author: nberdy
+  title: Документация по Службе подготовки устройств (DPS) к добавлению в Центр Интернета вещей Azure
+  description: Служба подготовки устройств (DPS) к добавлению в Центр Интернета вещей. Учебные материалы, краткие руководства, практические инструкции и справочники по API
+  author: wesmc7777
   ms.service: iot-dps
   services: iot-dps
   ms.topic: landing-page
-  ms.date: 01/23/2017
-  ms.author: nberdy
-abstract:
-  description: "Служба подготовки устройств к добавлению в Центр Интернета вещей (DPS)\_— это вспомогательная служба, которая обеспечивает полностью автоматическую JIT-подготовку для нужного Центра Интернета вещей. Она позволяет подготавливать миллионы устройств и обеспечивает высокий уровень безопасности и масштабируемости без каких-либо действий со стороны пользователя. Узнайте, как подготавливать устройства для центров Интернета вещей, воспользовавшись нашими краткими руководствами, инструкциями и примерами."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как настроить первый экземпляр службы подготовки устройств и подготовить виртуальное устройство для Центра Интернета вещей.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/sql-database/media/index/portal.svg
-            text: Настройка автоматической подготовки
-            href: /azure/iot-dps/quick-setup-auto-provision
-          - image:
-              src: /azure/sql-database/media/index/portal.svg
-            text: Создание виртуального устройства
-            href: /azure/iot-dps/quick-create-simulated-device
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей автоматически подготовить защищенные устройства для одного или нескольких центров Интернета вещей.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/iot-dps/tutorial-set-up-cloud">Настройка облачных ресурсов</a>
-          - html: <a href="/azure/iot-dps/tutorial-set-up-device">Настройка устройства для подключения к Azure</a>
-          - html: <a href="/azure/iot-dps/tutorial-provision-device-to-hub">Подготовка устройств для одного центра Интернета вещей</a>
-          - html: <a href="/azure/iot-dps/tutorial-provision-multiple-hubs">Подготовка устройств для нескольких центров Интернета вещей с балансировкой нагрузки</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST API
-            html: <p><a href="/rest/api/iot-dps">REST</a></p>
-          - title: Пакеты SDK для Центра Интернета вещей Azure
-            html: '<p><a href="https://github.com/Azure/azure-iot-sdk-c">C</a></p><p><a href="https://github.com/Azure/azure-iot-sdk-python">Python</a></p><p><a href="https://github.com/Azure/azure-iot-sdk-node">Node</a></p><p><a href="https://github.com/Azure/azure-iot-sdk-java">Java</a></p><p><a href="https://github.com/Azure/azure-iot-sdk-csharp">C#</a></p>'
+  ms.date: 03/03/2020
+  ms.author: wesmc
+  ms.openlocfilehash: 2d89b99005a4e430aca85c109f3d000c3b21674c
+  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "80133271"
+landingContent:
+- title: Сведения о Службе подготовки устройств (DPS) к добавлению в Центр Интернета вещей
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое DPS?
+      url: about-iot-dps.md
+  - linkListType: concept
+    links:
+    - text: Принципы автоматической подготовки устройств для Azure IoT
+      url: concepts-auto-provisioning.md
+  - linkListType: video
+    links:
+    - text: Демонстрация Службы подготовки устройств к добавлению в Центр Интернета вещей
+      url: https://azure.microsoft.com/resources/videos/iot-hub-dps-demo/
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Настройка DPS с помощью портала Azure
+      url: quick-setup-auto-provision.md
+  - linkListType: sample
+    links:
+    - text: Подготовка имитированного устройства с использованием симметричных ключей и C
+      url: quick-create-simulated-device-symm-key.md
+    - text: Подготовка имитированного устройства с использованием симметричных ключей и Java
+      url: quick-create-simulated-device-symmetric-key-java.md
+  - linkListType: how-to-guide
+    links:
+    - text: Подготовка к мультитенантности
+      url: how-to-provision-multitenant.md
+    - text: Как использовать пользовательские политики выделения
+      url: how-to-use-custom-allocation-policies.md
+- title: Управление доступом
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление регистрацией устройств
+      url: how-to-manage-enrollments.md
+    - text: Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
+      url: how-to-control-access.md
+- title: Разработка решения Интернета вещей с помощью DPS
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Пакет SDK Azure IoT для C
+      url: https://github.com/Azure/azure-iot-sdk-c
+    - text: Пакет SDK Azure IoT для Python
+      url: https://github.com/Azure/azure-iot-sdk-python
+    - text: Пакет SDK Azure IoT для Node.js
+      url: https://github.com/Azure/azure-iot-sdk-node
+    - text: Пакет SDK Azure IoT для Java
+      url: https://github.com/Azure/azure-iot-sdk-java
+    - text: Пакет SDK Azure IoT для .NET
+      url: https://github.com/Azure/azure-iot-sdk-csharp
+    - text: REST API
+      url: /rest/api/iot-dps

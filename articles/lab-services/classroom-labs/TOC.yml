@@ -30,12 +30,16 @@
   items:
     - name: Руководство для администратора
       href: administrator-guide.md
+    - name: Руководство по ускоренной настройке учетной записи лаборатории
+      href: account-setup-guide.md
+    - name: Руководство по ускоренной настройке лаборатории
+      href: setup-guide.md
     - name: "Лаборатории для аудитории\_— типы классов"
       items:
         - name: Общие сведения о типах классов
           href: class-types.md
         - name: Глубокое обучение при обработке естественного языка
-          href: class-type-deep-learning-natural-processing.md
+          href: class-type-deep-learning-natural-language-processing.md
         - name: Создание скриптов оболочки в Linux
           href: class-type-shell-scripting-linux.md
         - name: Этичный взлом
@@ -66,6 +70,8 @@
           href: how-to-configure-firewall-settings.md
         - name: Выбор образов Marketplace для лабораторий
           href: specify-marketplace-images.md
+        - name: Указание сведений о поддержке (владелец учетной записи лаборатории)
+          href: lab-account-owner-support-information.md
     - name: Создание и настройка лаборатории для аудитории (инструктор)
       items:
         - name: Создание и администрирование лабораторий для аудитории
@@ -87,17 +93,29 @@
         - name: Включение автоматического завершения работы при отключении
           href: how-to-enable-shutdown-disconnect.md
         - name: Включение вложенной виртуализации в шаблоне виртуальной машины
-          href: how-to-enable-nested-virtualization-template-vm.md
+          items:
+            - name: Общие сведения о включении вложенной виртуализации в шаблоне виртуальной машины
+              href: how-to-enable-nested-virtualization-template-vm.md
+            - name: Включение вложенной виртуализации в шаблоне виртуальной машины с помощью пользовательского интерфейса
+              href: how-to-enable-nested-virtualization-template-vm-ui.md
+            - name: Включение вложенной виртуализации в шаблоне виртуальной машины с помощью скрипта
+              href: how-to-enable-nested-virtualization-template-vm-using-script.md
         - name: Подготовка виртуальной машины Windows
           href: how-to-prepare-windows-template.md
+        - name: Просмотр сведений о поддержке (инструктор)
+          href: lab-creator-support-information.md
     - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
       items:
         - name: Доступ к лабораториям для аудитории
           href: how-to-use-classroom-lab.md
         - name: Использование подключения с удаленным рабочим столом для виртуальных машин Linux
           href: how-to-use-remote-desktop-linux-student.md
+        - name: Подключение к виртуальной машине с компьютера Mac с помощью RDP
+          href: connect-virtual-machine-mac-rdp.md
         - name: Установка или сброс паролей для виртуальных машин
           href: how-to-set-virtual-machine-passwords-student.md
+        - name: Просмотр сведений о поддержке (учащийся)
+          href: lab-user-support-information.md
 - name: Справочник
   items:
     - name: REST API

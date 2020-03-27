@@ -92,6 +92,8 @@
   items:
     - name: Включение функции для подмножества пользователей
       href: howto-feature-filters-aspnet-core.md
+    - name: Использование меток для применения разных конфигураций в разных средах
+      href: howto-labels-aspnet-core.md
     - name: Импорт и экспорт данных конфигурации
       href: howto-import-export-data.md
     - name: Маршрутизация событий в пользовательскую конечную точку

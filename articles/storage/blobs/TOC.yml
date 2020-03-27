@@ -113,8 +113,13 @@
           items:
             - name: Рекомендации по обеспечению безопасности
               href: security-recommendations.md
-            - name: Шифрование службы хранилища Azure
+            - name: Шифрование неактивных данных в службе хранилища Azure
               href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+              items:
+                - name: Управляемые клиентом ключи с использованием Azure Key Vault
+                  href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 'Ключи, предоставляемые клиентом по запросу'
+                  href: ../common/encryption-customer-provided-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Авторизация операций с данными
               href: ../common/storage-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
               items:
@@ -198,6 +203,8 @@
                   href: ../common/storage-import-export-data-from-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Практическое руководство
                   items:
+                    - name: 'Использование ключа, управляемого клиентом'
+                      href: ../common/storage-import-export-encryption-key-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: Просмотр состояния диска
                       href: ../common/storage-import-export-view-drive-status.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: Просмотр состояния задания
@@ -658,8 +665,13 @@
               href: ../common/authorization-resource-provider.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Управление доступом (каталоги и файлы)
               href: data-lake-storage-access-control.md
-            - name: Шифрование службы хранилища Azure
+            - name: Шифрование неактивных данных в службе хранилища Azure
               href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+              items:
+                - name: Управляемые клиентом ключи с использованием Azure Key Vault
+                  href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 'Ключи, предоставляемые клиентом по запросу'
+                  href: ../common/encryption-customer-provided-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Дополнительная защита от угроз
               href: ../common/storage-advanced-threat-protection.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Использование частных конечных точек Azure

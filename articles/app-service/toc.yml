@@ -87,6 +87,8 @@
           href: networking-features.md
         - name: Использование Шлюза приложений с конечными точками служб
           href: networking/app-gateway-with-service-endpoints.md
+        - name: Частная конечная точка
+          href: networking/private-endpoint.md
     - name: Входящие и исходящие IP-адреса
       href: overview-inbound-outbound-ips.md
     - name: Интеграция с виртуальной сетью
@@ -175,13 +177,15 @@
           href: configure-ssl-certificate-in-code.md
         - name: Настройка взаимной проверки подлинности TLS
           href: app-service-web-configure-tls-mutual-auth.md
+        - name: Шифрование данных сайта
+          href: configure-encrypt-at-rest-using-cmk.md
     - name: Масштабирование приложения
       items:
         - name: Увеличение емкости сервера
           href: manage-scale-up.md
         - name: Настройка уровня PremiumV2
           href: app-service-configure-premium-tier.md
-        - name: Масштабирование до нескольких экземпляров
+        - name: Горизонтальное увеличение масштаба до нескольких экземпляров
           href: ../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json
         - name: Высокая плотность размещения
           href: manage-scale-per-app.md
@@ -210,7 +214,7 @@
         - name: Переключение между регионами
           href: manage-move-across-regions.md
         - name: Перемещение подписок
-          href: '../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fapp-service%2ftoc.json#app-service-limitations'
+          href: '../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fapp-service%2ftoc.json#checklist-before-moving-resources'
     - name: Выполнение фоновых задач
       items:
         - name: Создание веб-заданий

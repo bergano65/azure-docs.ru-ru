@@ -91,6 +91,8 @@
           href: password-policy.md
         - name: Включение аудита событий безопасности
           href: security-audit-events.md
+        - name: Анализ событий аудита с помощью книг Azure Monitor
+          href: use-azure-monitor-workbooks.md
     - name: Присоединенные к домену виртуальные машины
       items:
         - name: Виртуальная машина Windows Server на основе шаблона

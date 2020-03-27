@@ -165,6 +165,8 @@
               href: azure-to-azure-about-networking.md
             - name: Настройка сетевых конфигураций целевой виртуальной машины Azure
               href: azure-to-azure-customize-networking.md
+            - name: Настройка параметров прокси-сервера службы "Мобильность"
+              href: configure-mobility-service-proxy-settings.md
             - name: Настройка сетевого сопоставления и сохранение IP-адресов после отработки отказа
               href: azure-to-azure-network-mapping.md
             - name: Примеры для сохранения IP-адресов после отработки отказа
@@ -225,7 +227,7 @@
                   href: site-recovery-vmware-deployment-planner-analyze-report.md
                 - name: Анализ отчета об оценке стоимости
                   href: site-recovery-vmware-deployment-planner-cost-estimation.md
-            - name: Масштабирование серверов обработки для репликации VMware
+            - name: Горизонтальное увеличение масштаба серверов обработки для репликации VMware
               href: vmware-azure-set-up-process-server-scale.md
         - name: Настройка аварийного восстановления
           items:
@@ -396,7 +398,7 @@
         - name: Dynamics AX
           href: site-recovery-dynamicsax.md
         - name: RDS
-          href: 'site-recovery-workload.md#protect-rds'
+          href: 'site-recovery-workload.md#protect-remote-desktop-services'
         - name: Exchange
           href: 'site-recovery-workload.md#protect-exchange'
         - name: SAP

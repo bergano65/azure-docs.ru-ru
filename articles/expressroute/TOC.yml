@@ -16,6 +16,8 @@
       href: how-to-routefilter-portal.md
 - name: Основные понятия
   items:
+    - name: Дистанционная работа
+      href: work-remotely-support.md
     - name: Модели подключения
       href: expressroute-connectivity-models.md
     - name: Каналы и пиринг

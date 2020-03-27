@@ -9,18 +9,8 @@
       href: whats-new.md
 - name: Краткие руководства
   items:
-    - name: С помощью клиентского пакета SDK
-      items:
-        - name: Пакет SDK для .NET
-          href: quickstarts-sdk/csharp-sdk.md
-        - name: Пакет SDK для Python
-          href: quickstarts-sdk/python-sdk.md
-        - name: Пакет SDK для Java
-          href: quickstarts-sdk/java-sdk.md
-        - name: Пакет SDK для Node.js
-          href: quickstarts-sdk/node-sdk.md
-        - name: Пакет SDK для GO
-          href: quickstarts-sdk/go-sdk.md
+    - name: Использование клиентской библиотеки
+      href: quickstarts-sdk/client-library.md
     - name: Использование REST API
       items:
         - name: Анализ удаленного изображения

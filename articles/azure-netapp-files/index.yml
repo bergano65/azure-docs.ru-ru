@@ -1,35 +1,70 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure NetApp Files
+summary: Узнайте, как использовать Azure NetApp Files для создания и администрирования учетных записей, пулов емкости и томов, настройки политики экспорта, подключения тома для виртуальной машины и управления моментальными снимками.
 metadata:
   title: Документация по Azure NetApp Files
-  description: 'Узнайте, как настроить и администрировать тома, а также получить к ним доступ с помощью службы Azure NetApp Files.'
-  author: b-juche
-  ms.author: b-juche
+  description: Узнайте, как настроить и администрировать тома, а также получить к ним доступ с помощью службы Azure NetApp Files.
   ms.service: azure-netapp-files
   ms.topic: landing-page
-  ms.date: 04/10/2019
-abstract:
-  description: 'Узнайте, как использовать Azure NetApp Files для создания и администрирования учетных записей, пулов емкости и томов, настройки политики экспорта, подключения тома для виртуальной машины и управления моментальными снимками. <p>Для использования службы Azure NetApp Files необходимы соответствующие права доступа. Чтобы запросить доступ, см. раздел <a href="azure-netapp-files-register#waitlist">об отправке запроса на добавление в список ожидания</a>.</p>'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как настроить Azure NetApp Files и создать том с помощью следующего решения:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/azure-netapp-files/media/index/get-started.svg'
-            text: Портал Azure
-            href: /azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST
-            html: '<p><a href="https://docs.microsoft.com/rest/api/netapp/">REST API</a></p>'
-          - title: Azure Resource Manager
-            html: '<p><a href="https://docs.microsoft.com/azure/templates/microsoft.netapp/allversions">Шаблоны Resource Manager</a></p>'
+  author: b-juche
+  ms.author: b-juche
+  ms.date: 03/11/2020
+  ms.openlocfilehash: bcca681fcae02df3e3521b48f710acd36127c882
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "79369058"
+landingContent:
+- title: Общие сведения об Azure NetApp Files
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что представляет собой Azure NetApp Files?
+      url: azure-netapp-files-introduction.md
+    - text: Общие сведения об иерархии хранилища
+      url: azure-netapp-files-understand-storage-hierarchy.md
+  - linkListType: concept
+    links:
+    - text: Уровни обслуживания
+      url: azure-netapp-files-service-levels.md
+    - text: Вопросы производительности
+      url: azure-netapp-files-performance-considerations.md
+    - text: Рекомендации по планированию сети
+      url: azure-netapp-files-network-topologies.md
+  - linkListType: video
+    links:
+    - text: Видео по Azure NetApp Files
+      url: azure-netapp-files-videos.md
+- title: Начало работы
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Отправка запроса на добавление в список ожидания
+      url: azure-netapp-files-register.md#waitlist
+  - linkListType: quickstart
+    links:
+    - text: Настройка Azure NetApp Files и создание тома NFS
+      url: azure-netapp-files-quickstart-set-up-account-create-volumes.md
+- title: Создание
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание учетной записи NetApp
+      url: azure-netapp-files-create-netapp-account.md
+    - text: Настройка пула емкости
+      url: azure-netapp-files-set-up-capacity-pool.md
+    - text: Делегирование подсети в Azure NetApp Files
+      url: azure-netapp-files-delegate-subnet.md
+    - text: Создание тома SMB для Azure NetApp Files
+      url: azure-netapp-files-create-volumes-smb.md
+    - text: Создание тома NFS для Azure NetApp Files
+      url: azure-netapp-files-create-volumes.md
+- title: Разработка
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: REST API
+      url: azure-netapp-files-develop-with-rest-api.md
+    - text: Пакеты SDK для Azure NetApp Files и средства CLI
+      url: azure-netapp-files-sdk-cli.md
