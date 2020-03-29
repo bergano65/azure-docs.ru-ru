@@ -1,5 +1,5 @@
 ---
-title: Страница приложения неправильно отображается для приложения прокси приложения | Документация Майкрософт
+title: Страница приложения не отображается правильно для приложения Прокси-приложения Документы Майкрософт
 description: Указания на случай, когда страница отображается неправильно в приложении прокси приложения, интегрированном с Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 13e73f0ed56648ce162f00d6df5e7b86a922ca01
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68381427"
 ---
 # <a name="application-page-does-not-display-correctly-for-an-application-proxy-application"></a>Неправильное отображение страницы приложения для приложения прокси приложения
@@ -39,5 +39,5 @@ ms.locfileid: "68381427"
 
 Для этого рекомендуется использовать решение на базе [личных доменов](application-proxy-configure-custom-domain.md). Однако это решение требует, чтобы вы владели сертификатом для своего домена, а ваши приложения использовали полные доменные имена (FQDN). Другие варианты описаны в [документации по устранению неполадок с неработающими ссылками](application-proxy-page-links-broken-problem.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md)

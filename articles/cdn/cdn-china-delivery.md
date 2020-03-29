@@ -16,10 +16,10 @@ ms.date: 05/16/2018
 ms.author: magattus
 ms.custom: mvc
 ms.openlocfilehash: a63914116f5ef9922ac05745764e0ad505dc3c91
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67593950"
 ---
 # <a name="china-content-delivery-with-azure-cdn"></a>Доставка содержимого для пользователей в Китае с помощью Azure CDN
@@ -38,7 +38,7 @@ ms.locfileid: "67593950"
 
      - Выполняет доставку содержимого за пределы Китая
 
-     - Четыре ценовые категории: Стандартное решение корпорации Майкрософт, стандарт Verizon, Verizon уровня "премиум" и стандарт Akamai
+     - Четыре ценовые категории: "Стандартный" от Майкрософт, "Стандартный" от Verizon, "Премиум" от Verizon и "Стандартный" от Akamai
 
      - [Документация](https://docs.microsoft.com/azure/cdn/)
 
@@ -48,12 +48,12 @@ ms.locfileid: "67593950"
 
      - Выполняет доставку содержимого внутри Китая
 
-     - Две ценовые категории: "Стандартный" и "премиум"
+     - Две ценовые категории: "Стандартный" и "Премиум"
 
      - [Документация](https://docs.azure.cn/en-us/cdn/)
  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о сети доставки содержимого Azure для Китая см. по следующим ссылкам:
 

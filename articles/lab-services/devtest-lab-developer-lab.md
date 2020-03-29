@@ -1,6 +1,6 @@
 ---
 title: Использование Azure DevTest Labs для разработчиков | Документация Майкрософт
-description: Узнайте о функциях Azure DevTest Labs, которые можно использовать для удовлетворения требований разработчика, и подробное описание действий, которые можно выполнить для настройки лаборатории.
+description: Узнайте о функциях Azure DevTest Labs, которые могут быть использованы для удовлетворения требований разработчиков, и подробных шагах, которые можно извлечь для создания лаборатории.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: ae44696f62a085bf1e798f0915e2bd1e27c3a78f
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76760153"
 ---
 # <a name="use-azure-devtest-labs-for-developers"></a>Использование Azure DevTest Labs для разработчиков
@@ -74,7 +74,7 @@ Azure DevTest Labs можно использовать для реализаци
 
    - Средства для установки на виртуальной машине, такие как агенты, Fiddler и Visual Studio.
    - Действия, которые должны выполняться на виртуальной машине, такие как клонирование репозитория.
-   - приложения, которые необходимо протестировать.
+   - Приложения, которые требуется протестировать.
 
    Многие артефакты уже встроены. Если для определенных целей вам нужны дополнительные настройки, можно создать пользовательские артефакты.
 

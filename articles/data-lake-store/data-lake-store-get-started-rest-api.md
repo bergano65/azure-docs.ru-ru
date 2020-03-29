@@ -1,5 +1,5 @@
 ---
-title: 'REST API: Начало работы с Gen1 хранилища Озера данных Azure | Документация Майкрософт'
+title: REST API. Операции управления учетными записями в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
 description: Используйте Azure Data Lake Storage 1-го поколения и REST API WebHDFS, чтобы выполнять операции управления учетными записями в Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
@@ -13,38 +13,38 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 97fe33309f36cd7545f8c9d6c2d34671641caa1f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60877113"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием REST API
 > [!div class="op_single_selector"]
-> * [ПАКЕТ SDK .NET](data-lake-store-get-started-net-sdk.md)
+> * [Пакет SDK для .NET](data-lake-store-get-started-net-sdk.md)
 > * [REST API](data-lake-store-get-started-rest-api.md)
 > * [Python](data-lake-store-get-started-python.md)
 >
 >
 
-В этой статье содержатся сведения о выполнении операций управления учетными записями в Azure Data Lake Storage 1-го поколения с использованием REST API. Операции управления учетными записями включают в себя создание учетной записи Data Lake Storage 1-го поколения, удаление учетной записи Data Lake Storage 1-го поколения и т. д. Дополнительные сведения о том, как выполнять операции файловой системы в Data Lake Storage 1-го поколения с помощью REST API, см. в [этой статье](data-lake-store-data-operations-rest-api.md).
+В этой статье содержатся сведения о выполнении операций управления учетными записями в Azure Data Lake Storage 1-го поколения с использованием REST API. Операции по управлению счетами включают создание учетной записи Data Lake Storage Gen1, удаляние учетной записи Data Lake Storage Gen1 и т.д. Для получения инструкций о том, как выполнять операции файловой системы на Data Lake Storage Gen1 с помощью REST API, [см.](data-lake-store-data-operations-rest-api.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **[cURL](https://curl.haxx.se/)** . В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
+* **[cURL](https://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
 
 ## <a name="how-do-i-authenticate-using-azure-active-directory"></a>Как выполнить аутентификацию с помощью Azure Active Directory?
 Существует два способа проверки подлинности с помощью Azure Active Directory.
 
 * Дополнительные сведения о проверке подлинности пользователей в приложении (интерактивная проверка подлинности) см. в статье [Аутентификация пользователей в Data Lake Store с помощью REST API](data-lake-store-end-user-authenticate-rest-api.md).
-* Дополнительные сведения о проверке подлинности между службами в приложении (интерактивно) см. в статье [Проверка подлинности между службами в Data Lake Storage 1-го поколения с использованием пакета .NET SDK](data-lake-store-service-to-service-authenticate-rest-api.md).
+* Дополнительные сведения о проверке подлинности между службами в приложении (неинтерактивная проверка подлинности) см. в статье [Аутентификация между службами в Data Lake Store с помощью REST API](data-lake-store-service-to-service-authenticate-rest-api.md).
 
 
 ## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
 Эта операция основана на вызове REST API, определенном [здесь](https://docs.microsoft.com/rest/api/datalakestore/accounts/create).
 
-Используйте следующую команду cURL: Замените  **\<yourstoragegen1name>** именем своего хранилища Data Lake Storage 1-го поколения.
+Используйте следующую команду cURL: Замените>** \<на** хранилище данных Data Lake Storage Gen1.
 
     curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -H "Content-Type: application/json" https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DataLakeStore/accounts/<yourstoragegen1name>?api-version=2015-10-01-preview -d@"C:\temp\input.json"
 
@@ -61,7 +61,7 @@ ms.locfileid: "60877113"
 ## <a name="delete-a-data-lake-storage-gen1-account"></a>Удаление учетной записи Data Lake Storage 1-го поколения
 Эта операция основана на вызове REST API, определенном [здесь](https://docs.microsoft.com/rest/api/datalakestore/accounts/delete).
 
-Чтобы удалить учетную запись Data Lake Storage 1-го поколения, используйте следующую команду cURL. Замените  **\<yourstoragegen1name>** именем своей учетной записи Data Lake Storage 1-го поколения.
+Чтобы удалить учетную запись Data Lake Storage 1-го поколения, используйте следующую команду cURL. Замените>** \<на хранение** данных Data Lake Storage Gen1.
 
     curl -i -X DELETE -H "Authorization: Bearer <REDACTED>" https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DataLakeStore/accounts/<yourstoragegen1name>?api-version=2015-10-01-preview
 

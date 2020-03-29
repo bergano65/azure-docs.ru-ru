@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 08/20/2018
 ms.author: apimpm
 ms.openlocfilehash: 21d5869f2bcdfb6383b6ef89869d8098135ea7ee
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70073607"
 ---
 # <a name="how-to-add-a-custom-ca-certificate-in-azure-api-management"></a>Добавление пользовательского сертификата ЦС в службе управления API Azure
@@ -29,7 +29,7 @@ ms.locfileid: "70073607"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="step1"> </a>Передача сертификата ЦС
+## <a name="upload-a-ca-certificate"></a><a name="step1"> </a>Передача сертификата ЦС
 
 ![Добавление сертификатов ЦС](media/api-management-howto-ca-certificates/00.png)
 
@@ -47,14 +47,14 @@ ms.locfileid: "70073607"
 
     ![Добавление сертификатов ЦС](media/api-management-howto-ca-certificates/02.png)  
 
-5. Нажмите кнопку **Сохранить**. Это может занять несколько минут.
+5. Нажмите **Сохранить**. Это может занять несколько минут.
 
     ![Добавление сертификатов ЦС](media/api-management-howto-ca-certificates/03.png)  
 
 > [!NOTE]
 > Вы можете отправить сертификат ЦС с помощью команды PowerShell `New-AzApiManagementSystemCertificate`.
 
-## <a name="step1a"> </a>Удаление сертификата клиента
+## <a name="delete-a-client-certificate"></a><a name="step1a"> </a>Удаление сертификата клиента
 
 Чтобы удалить сертификат, щелкните контекстное меню **...** и выберите **Удалить** рядом с именем сертификата.
 

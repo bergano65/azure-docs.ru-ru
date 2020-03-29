@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с E Sales Manager Remix | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с E Sales Manager Remix | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и E Sales Manager Remix.
 services: active-directory
 documentationCenter: na
@@ -17,10 +17,10 @@ ms.date: 06/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 895fb0d83e383618818325263ac80c5919a0ee7b
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65406954"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
@@ -33,9 +33,9 @@ ms.locfileid: "65406954"
 - Вы можете включить для пользователей автоматический вход в E Sales Manager Remix (единый вход) с использованием учетных записей Azure AD.
 - Вы можете управлять учетными записями централизованно, через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, [см. Что такое доступ к приложениям и единый вход в Active Directory Azure?.](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с E Sales Manager Remix, вам потребуется следующее.
 
@@ -65,7 +65,7 @@ ms.locfileid: "65406954"
 
     ![Кнопка Azure Active Directory][1]
 
-1. Щелкните **Корпоративные приложения** > **Все приложения**.
+1. Выберите **приложения** > Enterprise**Все приложения.**
 
     ![Окно "Корпоративные приложения"][2]
     
@@ -101,9 +101,9 @@ ms.locfileid: "65406954"
 
     ![Сведения о домене и URL-адресах единого входа для E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_url.png)
 
-    a. В поле **URL-адрес входа** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/esales-pc*.
+    а. В поле **URL-адрес входа** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/esales-pc*.
 
-    2\. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/* .
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/*.
 
     c. Запишите значение **идентификатора**, оно вам понадобится далее в этом руководстве.
     
@@ -120,11 +120,11 @@ ms.locfileid: "65406954"
 
     Откроется окно **Изменение атрибута**.
 
-1. Скопируйте из него значения параметров **Пространство имен** и **Имя**. Создайте значение в формате *\<пространство_имен>/\<имя>* и сохраните его, чтобы использовать далее в этом руководстве.
+1. Скопируйте из него значения параметров **Пространство имен** и **Имя**. Создайте значение в названии * \<Namespace\<>/Name>, *и сохраните его для последующего использования в этом учебнике.
 
     ![Окно "Изменение атрибута"](./media/esalesmanagerremix-tutorial/configure2.png)
 
-1. В разделе **Конфигурация E Sales Manager Remix**  выберите **Настроить E Sales Manager Remix**.
+1. В разделе **Конфигурация E Sales Manager Remix ** выберите **Настроить E Sales Manager Remix**.
 
     ![Конфигурация E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_configure.png) 
 
@@ -132,7 +132,7 @@ ms.locfileid: "65406954"
 
 1. Из раздела **Краткий справочник** скопируйте URL-адрес выхода и URL-адрес службы единого входа SAML.
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
     ![Кнопка "Сохранить"](./media/esalesmanagerremix-tutorial/tutorial_general_400.png)
 
@@ -142,7 +142,7 @@ ms.locfileid: "65406954"
 
     ![Команда "To Administrator Menu" (К меню администратора)](./media/esalesmanagerremix-tutorial/configure4.png)
 
-1. В левой области выберите **System settings** > **Cooperation with external system** (Параметры системы > Взаимодействие с внешней системой).
+1. В левом стеле выберите **настройки системы** > **Сотрудничество с внешней системой.**
 
     ![Ссылки "Параметры системы" и "Взаимодействие с внешней системой"](./media/esalesmanagerremix-tutorial/configure5.png)
     
@@ -154,24 +154,24 @@ ms.locfileid: "65406954"
 
     ![Раздел "SAML authentication setting" (Настройка аутентификации SAML)](./media/esalesmanagerremix-tutorial/configure3.png)
     
-    a. Установите флажок **PC version** (Версия для компьютера).
+    а. Установите флажок **PC version** (Версия для компьютера).
     
-    2\. Из раскрывающегося списка в разделе **Collaboration item** (Элемент совместной работы) выберите значение **email** (Электронная почта).
+    b. Из раскрывающегося списка в разделе **Collaboration item** (Элемент совместной работы) выберите значение **email** (Электронная почта).
 
-    c. В поле **Collaboration item** (Элемент совместной работы) вставьте значение утверждения, которое вы ранее скопировали на портале Azure ( **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ).
+    c. В поле **Collaboration item** (Элемент совместной работы) вставьте значение утверждения, которое вы ранее скопировали на портале Azure (**http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**).
 
     d. В текстовое поле **Issuer (entity ID)** (Издатель или идентификатор сущности) вставьте значение идентификатора, скопированное ранее из раздела **Домены и URL-адреса приложения E Sales Manager Remix** на портале Azure.
 
-    д. Чтобы передать скачанный с портала Azure сертификат, щелкните **File selection** (Выбор файла).
+    д) Чтобы передать скачанный с портала Azure сертификат, щелкните **File selection** (Выбор файла).
 
-    Е. В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
+    е) В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
 
     ж. В поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте URL-адрес выхода, скопированный на портале Azure.
 
     h. Выберите **Setting complete** (Завершить настройку).
 
 > [!TIP]
-> Настроив приложение, вы можете прочитать краткую версию предыдущих инструкций на [портале Azure](https://portal.azure.com). Добавив приложение из раздела **Active Directory** > **Корпоративные приложения**, выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** внизу. На [этой странице]( https://go.microsoft.com/fwlink/?linkid=845985) вы можете получить дополнительную информацию о встроенной документации Azure AD.
+> Настроив приложение, вы можете прочитать краткую версию предыдущих инструкций на [портале Azure](https://portal.azure.com). После добавления приложения в раздел **«Активные** > корпоративные**приложения** каталога» выберите вкладку **«Единый знак»,** а затем получите доступ к встроенной документации в разделе **Конфигурация** внизу. На [этой странице]( https://go.microsoft.com/fwlink/?linkid=845985) вы можете получить дополнительную информацию о встроенной документации Azure AD.
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -180,11 +180,11 @@ ms.locfileid: "65406954"
 
 ![Создание тестового пользователя Azure AD][100]
 
-1. На портале Azure в области слева щелкните **Azure Active Directory**.
+1. На портале Azure в левом стеле выберите **Active Directory Azure.**
 
     ![Ссылка на Azure Active Directory](./media/paloaltoadmin-tutorial/create_aaduser_01.png)
 
-1. Чтобы отобразить список активных пользователей, выберите **Пользователи и группы** > **Все пользователи**.
+1. Чтобы отобразить список текущих пользователей, выберите **пользователей и группвсех** > **пользователей.**
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/paloaltoadmin-tutorial/create_aaduser_02.png)
 
@@ -198,13 +198,13 @@ ms.locfileid: "65406954"
 
     ![Окно пользователя](./media/paloaltoadmin-tutorial/create_aaduser_04.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    b. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
-    c. Установите флажок **Показать пароль** и сохраните значение, которое отображается в поле **Пароль**.
+    c. Выберите флажок **Show Password,** а затем обратите внимание на значение, отображаемые в поле **Password.**
 
-    d. Нажмите кнопку **Создать**.
+    d. Выберите **Создать**.
  
 ### <a name="create-an-e-sales-manager-remix-test-user"></a>Создание тестового пользователя E Sales Manager Remix
 
@@ -214,7 +214,7 @@ ms.locfileid: "65406954"
 
     ![Конфигурация E Sales Manager Remix](./media/esalesmanagerremix-tutorial/configure4.png)
 
-1. Выберите **Your company's settings** > **Maintenance of departments and employees** (Параметры вашей компании > Обслуживание отделов и сотрудников), а затем щелкните **Employees registered** (Зарегистрированные сотрудники).
+1. Выберите **настройки** > Вашей компании Обслуживание**отделов и сотрудников,** а затем выберите **зарегистрированных сотрудников.**
 
     ![Вкладка "Employees registered" (Зарегистрированные сотрудники)](./media/esalesmanagerremix-tutorial/user1.png)
 
@@ -222,9 +222,9 @@ ms.locfileid: "65406954"
     
     ![Раздел "New employee registration" (Регистрация нового сотрудника)](./media/esalesmanagerremix-tutorial/user2.png)
 
-    a. В поле **Employee Name** (Имя сотрудника) введите имя пользователя (например, **Britta**).
+    а. В поле **Employee Name** (Имя сотрудника) введите имя пользователя (например, **Britta**).
 
-    2\. Заполните остальные обязательные поля.
+    b. Заполните остальные обязательные поля.
     
     c. Если включен SAML, администратор не сможет войти через страницу входа. Предоставьте этому пользователю права администратора, установив флажок **Admin Login** (Вход администратора).
 
@@ -248,7 +248,7 @@ ms.locfileid: "65406954"
 
     ![Ссылка на приложение E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_app.png)  
 
-1. В области слева выберите **Пользователи и группы**.
+1. В левой панели выберите **пользователей и группы.**
 
     ![Ссылка "Пользователи и группы"][202]
 
@@ -258,7 +258,7 @@ ms.locfileid: "65406954"
 
 1. В окне **Пользователи и группы** в списке **Пользователи** выберите **Britta Simon**.
 
-1. Нажмите кнопку **Select** (Выбрать).
+1. Нажмите кнопку **Выбрать**.
 
 1. В окне **Добавление назначения** выберите **Назначить**.
     
@@ -268,12 +268,12 @@ ms.locfileid: "65406954"
 
 Выбрав элемент "E Sales Manager Remix" на панели доступа, вы автоматически войдете в приложение E Sales Manager Remix.
 
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Список руководств, посвященных интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
 
 <!--Image references-->
 

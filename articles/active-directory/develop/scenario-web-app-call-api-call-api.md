@@ -1,6 +1,6 @@
 ---
-title: Вызов веб-API из веб-приложения — платформа Microsoft Identity | Службы
-description: Узнайте, как создать веб-приложение, вызывающее веб-API (вызов защищенного веб-API).
+title: Позвоните в веб-апи из веб-приложения - платформа идентификации Microsoft Azure
+description: Узнайте, как создать веб-приложение, вызывая web-аПО (вызов защищенного веб-API)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,19 +15,19 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 28b4be46dc686c6e1b55f1ab36e0607057ebdbbd
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76758977"
 ---
-# <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Веб-приложение, вызывающее веб-API: вызов веб-API
+# <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Веб-приложение, которое вызывает веб-API: Вызов веб-API
 
-Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
+Теперь, когда у вас есть маркер, вы можете вызвать защищенный веб-API.
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Ниже приведен упрощенный код для действия `HomeController`. Этот код возвращает маркер для вызова Microsoft Graph. Добавлен код, демонстрирующий вызов Microsoft Graph как REST API. URL-адрес для Microsoft Graph API предоставляется в файле appSettings. JSON и считывается в переменной с именем `webOptions`:
+Вот упрощенный код для действий `HomeController`. Этот код получает маркер для вызова Microsoft Graph. Добавлен код, показывающий, как можно назвать Microsoft Graph в качестве REST API. URL-адрес для API Microsoft Graph предоставляется в файле appsettings.json и читается в переменной под названием: `webOptions`
 
 ```JSon
 {
@@ -84,9 +84,9 @@ public async Task<IActionResult> Profile()
 > [!NOTE]
 > Вы можете использовать тот же принцип для вызова любого веб-API.
 >
-> Большинство веб-API Azure предоставляют пакет SDK, упрощающий вызов API. Это также справедливо для Microsoft Graph. В следующей статье вы узнаете, где найти учебник, демонстрирующий использование API.
+> Большинство web-aPI Azure предоставляют SDK, который упрощает вызов API. Это также относится и к Microsoft Graph. В следующей статье вы узнаете, где найти учебник, иллюстрирующий использование API.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```Java
 private String getUserInfoFromGraph(String accessToken) throws Exception {
@@ -112,7 +112,7 @@ private String getUserInfoFromGraph(String accessToken) throws Exception {
 
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```Python
 @app.route("/graphcall")
@@ -132,4 +132,4 @@ def graphcall():
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Переместить в рабочую среду](scenario-web-app-call-api-production.md)
+> [Перенос в рабочую среду](scenario-web-app-call-api-production.md)

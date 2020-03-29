@@ -1,6 +1,6 @@
 ---
-title: ST_ISVALIDDETAILED на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ST_ISVALIDDETAILED в Azure Cosmos DB.
+title: ST_ISVALIDDETAILED на языке запросов Запроса Azure Cosmos DB
+description: Узнайте о функции системы S'L ST_ISVALIDDETAILED в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 9e640c223c2fef844b9b53e1f4afa3a5d398c8c0
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71349355"
 ---
 # <a name="st_isvaliddetailed-azure-cosmos-db"></a>ST_ISVALIDDETAILED (Azure Cosmos DB)
@@ -26,15 +26,15 @@ ST_ISVALIDDETAILED(<spatial_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *spatial_expr*  
-   Является геообъектным выражением точки или многоугольника.  
+   Является точкой GeoJSON или выражением полигона.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает значение JSON, содержащее логическое значение, указывающее, является ли выражение точки или многоугольника GeoJSON действительным. Если оно является недействительным, возвращаемое значение также содержит строку с описанием причины.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как проверить допустимость (с подробностями) с помощью `ST_ISVALIDDETAILED`.  
+  Следующий пример, как проверить достоверность (с подробной информацией) с помощью `ST_ISVALIDDETAILED`.  
   
 ```sql
 SELECT ST_ISVALIDDETAILED({   
@@ -54,8 +54,8 @@ SELECT ST_ISVALIDDETAILED({
 }]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

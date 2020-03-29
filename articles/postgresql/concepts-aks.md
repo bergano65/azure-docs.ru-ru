@@ -1,19 +1,19 @@
 ---
-title: Подключение к службе Azure Kubernetes. база данных Azure для PostgreSQL — один сервер
-description: Дополнительные сведения о подключении службы Kubernetes Azure (AKS) к базе данных Azure для PostgreSQL-Single Server
+title: Подключение к службе Azure Kubernetes - База данных Azure для PostgreS'L - Единый сервер
+description: Подробнее о подключении службы Azure Kubernetes (AKS) с базой данных Azure для PostgreS-L - Единый сервер
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.date: 5/6/2019
 ms.topic: conceptual
 ms.openlocfilehash: 46aa411826dd3ea578a2d98b0fe631ab0a12ef4a
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74769886"
 ---
-# <a name="connecting-azure-kubernetes-service-and-azure-database-for-postgresql---single-server"></a>Подключение службы Kubernetes Azure и базы данных Azure для PostgreSQL-Single Server
+# <a name="connecting-azure-kubernetes-service-and-azure-database-for-postgresql---single-server"></a>Подключение службы Azure Kubernetes и базы данных Azure для PostgreS'L - Единый сервер
 
 Служба Azure Kubernetes (AKS) предоставляет управляемый кластер Kubernetes для использования в Azure. Ниже приведены некоторые настройки, которые можно использовать при создании приложения с помощью AKS и Базы данных Azure для PostgreSQL.
 
@@ -47,11 +47,11 @@ az network nic list --resource-group nodeResourceGroup -o table
 С помощью OSBA вы можете создать Базу данных Azure для PostgreSQL и связать ее с кластером AKS, используя машинный язык Kubernetes. Сведения об использовании OSBA с Базой данных Azure для PostgreSQL см. на [сайте GitHub](https://github.com/Azure/open-service-broker-azure/blob/master/docs/modules/postgresql.md). 
 
 
-## <a name="connection-pooling"></a>Пул подключений
+## <a name="connection-pooling"></a>Организация пулов соединений
 Пул подключений позволяет свести к минимуму затраты и время, связанные с созданием и закрытием новых подключений к базе данных. Пул — это коллекция подключений, которые можно использовать повторно. 
 
 С PostgreSQL можно использовать несколько пулов подключений. Один из них — [PgBouncer](https://pgbouncer.github.io/). В Реестре контейнеров Майкрософт доступен упрощенный контейнерный пул PgBouncer, который можно использовать в расширении для объединения подключений AKS к Базе данных Azure для PostgreSQL. Перейдите на [страницу центра Docker](https://hub.docker.com/r/microsoft/azureossdb-tools-pgbouncer/), чтобы просмотреть сведения о получении доступа к этому образу и его использовании. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
--  [Краткое руководство по развертыванию кластера Службы Azure Kubernetes (AKS)](../aks/kubernetes-walkthrough.md)
+-  [Создание кластера Службы Azure Kubernetes](../aks/kubernetes-walkthrough.md)

@@ -1,5 +1,5 @@
 ---
-title: Обновления схемы для предварительной версии августа 1-2015
+title: Обновления схемы для просмотра августа-1-2015
 description: Обновленная схема от 1 августа 2015 г. (предварительная версия) для определений приложений логики в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
@@ -9,10 +9,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/31/2016
 ms.openlocfilehash: b6746baaede777eb8c2afcae9eb3fe80b669c468
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74792843"
 ---
 # <a name="schema-updates-for-azure-logic-apps---august-1-2015-preview"></a>Обновления схемы для Azure Logic Apps от 1 августа 2015 г. (ознакомительная версия)
@@ -290,7 +290,7 @@ PUT https://management.azure.com/subscriptions/<Azure-subscription-ID>/resourceG
 
 | Свойство действия | Описание |
 | --- | --- |
-| `type` | `Http` вместо `APIapp` |
+| `type` | `Http` вместо `APIapp`. |
 | `metadata.apiDefinitionUrl` | Чтобы использовать это действие в конструкторе приложений логики, включите конечную точку метаданных, которая состоит из следующих компонентов: `{api app host.gateway}/api/service/apidef/{last segment of the api app host.id}/?api-version=2015-01-14&format=swagger-2.0-standard` |
 | `inputs.uri` | Состоит из следующих компонентов: `{api app host.gateway}/api/service/invoke/{last segment of the api app host.id}/{api app operation}?api-version=2015-01-14` |
 | `inputs.method` | Всегда `POST` |
@@ -417,7 +417,7 @@ PUT https://management.azure.com/subscriptions/<Azure-subscription-ID>/resourceG
 
 ## <a name="call-child-workflows"></a>Вызов дочерних рабочих процессов
 
-Ранее для вызова дочерних рабочих процессов нужно было перейти к рабочему процессу, получить токен доступа и вставить его в определение приложения логики, которое должно вызвать этот дочерний рабочий процесс. В этой схеме ядро Logic Apps автоматически создает SAS в среде выполнения для дочернего рабочего процесса. Поэтому вам не нужно вставлять секреты в определение. Вот пример:
+Ранее для вызова дочерних рабочих процессов нужно было перейти к рабочему процессу, получить токен доступа и вставить его в определение приложения логики, которое должно вызвать этот дочерний рабочий процесс. В этой схеме ядро Logic Apps автоматически создает SAS в среде выполнения для дочернего рабочего процесса. Поэтому вам не нужно вставлять секреты в определение. Например:
 
 ``` json
 "myNestedWorkflow": {

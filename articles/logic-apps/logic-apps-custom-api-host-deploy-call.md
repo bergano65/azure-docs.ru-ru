@@ -1,21 +1,21 @@
 ---
-title: Развертывание и вызов веб-API & интерфейсов API Azure Logic Apps
-description: Развертывание и вызов веб-API & интерфейсов API для системных процессов интеграции в Azure Logic Apps
+title: Развертывание и вызов web-AI & REST AIS из приложений Azure Logic
+description: Развертывание и вызов web-aIS & REST AIS для рабочих процессов интеграции систем в приложениях логики Azure
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 05/26/2017
 ms.openlocfilehash: d1305be54a22b1460000a357074cbb1f67123bd6
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74790753"
 ---
 # <a name="deploy-and-call-custom-apis-from-workflows-in-azure-logic-apps"></a>Развертывание и вызов пользовательских API из рабочих процессов в Azure Logic Apps
 
-После [создания пользовательских API](./logic-apps-create-api-app.md) для использования в рабочих процессах приложений логики необходимо развернуть эти API, прежде чем их вызывать. API-интерфейсы можно развернуть в качестве [веб-приложений](../app-service/overview.md), но лучше их развернуть в качестве [приложений API](../app-service/app-service-web-tutorial-rest-api.md), что облегчит создание, размещение и использование API-интерфейсов как в облаке, так и в локальной среде. Не нужно изменять код в API-интерфейсах, просто разверните свой код в приложении API. Интерфейсы API можно разместить в [службе приложений Azure](../app-service/overview.md). Это служба PaaS (платформа как услуга), предоставляющая удобный способ размещения API с высоким уровнем масштабирования.
+После [создания пользовательских API](./logic-apps-create-api-app.md) для использования в рабочих процессах приложений логики необходимо развернуть эти API, прежде чем их вызывать. API-интерфейсы можно развернуть в качестве [веб-приложений](../app-service/overview.md), но лучше их развернуть в качестве [приложений API](../app-service/app-service-web-tutorial-rest-api.md), что облегчит создание, размещение и использование API-интерфейсов как в облаке, так и в локальной среде. Не нужно изменять код в API-интерфейсах, просто разверните свой код в приложении API. API-интерфейсы можно разместить в [службе приложений Azure](../app-service/overview.md). Это служба PaaS (платформа как услуга), предоставляющая удобное размещение API с высоким уровнем масштабирования.
 
 Хотя из приложения логики можно вызвать любой API, для получения наилучших результатов добавьте [метаданные OpenAPI (ранее — Swagger)](https://swagger.io/specification/), которые описывают операции и параметры вашего API. Этот файл OpenAPI позволяет упростить интеграцию API и улучшить его работу с приложениями логики.
 

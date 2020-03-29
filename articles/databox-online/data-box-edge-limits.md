@@ -1,6 +1,6 @@
 ---
 title: Ограничения Azure Data Box Edge | Документация Майкрософт
-description: Описание системных ограничений и рекомендуемых размеров Azure Data Box Edge.
+description: Описывает предельные размеры системы и рекомендуемые размеры для Edge ящика данных Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: alkohli
 ms.openlocfilehash: 9adfc1ef355c31f0bfeeb6c3b194d62426b7b9b3
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72244318"
 ---
 # <a name="azure-data-box-edge-limits"></a>Ограничения Azure Data Box Edge
@@ -51,6 +51,6 @@ ms.locfileid: "72244318"
 
 [!INCLUDE [data-box-edge-gateway-storage-object-limits](../../includes/data-box-edge-gateway-storage-object-limits.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подготовка к развертыванию Azure Data Box Edge](data-box-edge-deploy-prep.md)

@@ -1,6 +1,6 @@
 ---
 title: Отправка VHD-файла в Azure Labs DevTest с помощью AzCopy | Документация Майкрософт
-description: В этой статье содержатся пошаговые инструкции по использованию служебной программы командной строки AzCopy для передачи VHD-файла в учетную запись хранения лаборатории в Azure DevTest Labs.
+description: В этой статье содержится пошаговый шаг для использования утилиты командной строки AzCopy для загрузки файла VHD в учетную запись хранения лаборатории в Azure DevTest Labs.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 49dc70788bf2a44b6925c5f3f8226fdadab8768c
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76757428"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-azcopy"></a>Отправка VHD-файла в учетную запись хранения лаборатории с помощью AzCopy
@@ -39,7 +39,7 @@ ms.locfileid: "76757428"
 
 1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
+1. Выберите **все службы,** а затем выберите **DevTest Labs** из списка.
 
 1. Из списка лабораторий выберите нужную лабораторию.  
 

@@ -1,5 +1,5 @@
 ---
-title: Мониторинг API с помощью управления API Azure, концентраторов событий и Моесиф
+title: Мониторинг API с помощью Управления API Azure, концентраторов событий и Moesif
 titleSuffix: Azure API Management
 description: Пример приложения, демонстрирующий политику от журнала к концентратору, путем подключения Управления API Azure, Центров событий Azure и Moesif для ведения журнала и мониторинга HTTP-запросов
 services: api-management
@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 01/23/2018
 ms.author: apimpm
 ms.openlocfilehash: 4a0717bf7a284668af4808acae3050cc7f42f836
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75442528"
 ---
 # <a name="monitor-your-apis-with-azure-api-management-event-hubs-and-moesif"></a>Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif
@@ -294,7 +294,7 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 }
 ```
 
-`MoesifHttpMessageProcessor` использует [библиотеку API C# для Moesif](https://www.moesif.com/docs/api?csharp#events), которая упрощает передачу данных событий HTTP в их службу. Для отправки данных HTTP в API сборщика Моесиф требуется учетная запись и идентификатор приложения. Вы получаете идентификатор приложения Моесиф, создав учетную запись на [веб-сайте моесиф](https://www.moesif.com) , а затем перейдем к _меню в правом верхнем_ углу -> _установки приложения_.
+`MoesifHttpMessageProcessor` использует [библиотеку API C# для Moesif](https://www.moesif.com/docs/api?csharp#events), которая упрощает передачу данных событий HTTP в их службу. Для отправки данных HTTP в API-коллекционирование Moesif необходим учетная запись и идентификатор приложения. Вы получаете идентификатор приложения Moesif, создав учетную запись на [веб-сайте Moesif,](https://www.moesif.com) а затем перейдите в _Top Right Menu_ -> _App Setup._
 
 ## <a name="complete-sample"></a>Полный пример
 [Исходный код](https://github.com/dgilling/ApimEventProcessor) и тесты для этого примера доступны на сайте GitHub. Чтобы запустить этот пример, вам потребуются [служба управления API](get-started-create-service-instance.md), [подключенный к ней концентратор событий](api-management-howto-log-event-hubs.md) и [учетная запись хранения](../storage/common/storage-create-storage-account.md).   

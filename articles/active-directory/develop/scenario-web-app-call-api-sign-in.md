@@ -1,5 +1,5 @@
 ---
-title: Удаление учетных записей из кэша маркеров при выходе — платформа Microsoft Identity | Службы
+title: Удалить учетные записи из кэша маркеров при выходе из системы регистрации - платформа идентификации Майкрософт Azure
 description: Узнайте, как удалить учетную запись из кэша маркеров при выходе
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,27 +15,27 @@ ms.date: 09/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: ea18538662dc63876a50f52e9e6a8b3fffb3b35a
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76758876"
 ---
-# <a name="a-web-app-that-calls-web-apis-remove-accounts-from-the-token-cache-on-global-sign-out"></a>Веб-приложение, вызывающее веб-API: удаление учетных записей из кэша маркеров при глобальном выходе
+# <a name="a-web-app-that-calls-web-apis-remove-accounts-from-the-token-cache-on-global-sign-out"></a>Веб-приложение, которое вызывает web-aI: Удалите учетные записи из кэша маркеров в глобальном вывеске
 
-Вы узнали, как добавить вход в веб-приложение в [веб-приложении, которое входит в систему пользователей: вход и](scenario-web-app-sign-user-sign-in.md)выход.
+Вы узнали, как добавить в свой веб-приложение в [веб-приложении, которое регистрируется в пользователях: Войти в систему и войти в систему](scenario-web-app-sign-user-sign-in.md).
 
-Выход отличается для веб-приложения, которое вызывает веб-API. Когда пользователь выходит из приложения или из любого приложения, необходимо удалить маркеры, связанные с этим пользователем, из кэша маркеров.
+Регистрация отличается для веб-приложения, которое вызывает веб-апи. Когда пользователь выходит из приложения или из какого-либо приложения, необходимо удалить маркеры, связанные с этим пользователем, из кэша маркеров.
 
-## <a name="intercept-the-callback-after-single-sign-out"></a>Перехват обратного вызова после единого выхода
+## <a name="intercept-the-callback-after-single-sign-out"></a>Перехват обратного вызова после одного выхода
 
-Чтобы очистить запись кэша маркеров, связанную с учетной записью, в которой выполнен выход из службы, приложение может перехватить событие после `logout`. Веб-приложения хранят маркеры доступа для каждого пользователя в кэше маркеров. Перехватывая обратный вызов после `logout`, веб-приложение может удалить пользователя из кэша.
+Чтобы очистить запись кэша маркеров, связанную с заданным счетом, приложение может перехватить после `logout` событий. Веб-приложения хранят токены доступа для каждого пользователя в кэше маркеров. Перехватив после `logout` обратный вызов, веб-приложение может удалить пользователя из кэша.
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Для ASP.NET Core механизм перехвата показан в методе `AddMsal()` [вебаппсервицеколлектионекстенсионс. CS # L151-L157](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L157).
+Для ASP.NET Core механизм перехвата `AddMsal()` проиллюстрирован в методе [WebAppServiceCollectionCollectionExtensions.cs-L151-L157](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L157).
 
-URL-адрес выхода, зарегистрированный ранее для приложения, позволяет реализовать единый выход. Конечная точка платформы Microsoft Identity `logout` вызывает URL-адрес выхода. Этот вызов происходит, если выход запускается из веб-приложения или из другого веб-приложения или браузера. Дополнительные сведения см. в разделе [единый выход](v2-protocols-oidc.md#single-sign-out).
+URL-адрес Logout, который вы ранее зарегистрировали для приложения, позволяет реализовать одиночный выход. Конечная точка `logout` платформы Майкрософт вызывает ваш URL-адрес Logout. Этот вызов происходит, если выход начался с вашего веб-приложения, или из другого веб-приложения или браузера. Для получения дополнительной информации [см.](v2-protocols-oidc.md#single-sign-out)
 
 ```csharp
 public static class WebAppServiceCollectionExtensions
@@ -61,42 +61,42 @@ public static class WebAppServiceCollectionExtensions
 }
 ```
 
-Код для `RemoveAccountAsync` доступен в [Microsoft. Identity. Web/токенаккуиситион. CS # L264-L288](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/TokenAcquisition.cs#L264-L288).
+Код можно `RemoveAccountAsync` получить на сайте [Microsoft.Identity.Web/TokenAcquisition.cs-L264-L288](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/TokenAcquisition.cs#L264-L288).
 
-# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
+# <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-Пример ASP.NET не удаляет учетные записи из кэша при глобальном выходе.
+Образец ASP.NET не удаляет учетные записи из кэша на глобальном вывески.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Пример Java не удаляет учетные записи из кэша при глобальном выходе.
+Образец Java не удаляет учетные записи из кэша на глобальном вывески.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-Пример Python не удаляет учетные записи из кэша при глобальном выходе.
+Образец Python не удаляет учетные записи из кэша на глобальном вывески.
 
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
 > [!div class="nextstepaction"]
-> [Получение маркера для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=aspnetcore)
+> [Приобретите токен для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=aspnetcore)
 
-# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
-
-> [!div class="nextstepaction"]
-> [Получение маркера для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=aspnet)
-
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
 > [!div class="nextstepaction"]
-> [Получение маркера для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=java)
+> [Приобретите токен для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=aspnet)
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="java"></a>[Java](#tab/java)
 
 > [!div class="nextstepaction"]
-> [Получение маркера для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=python)
+> [Приобретите токен для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=java)
+
+# <a name="python"></a>[Python](#tab/python)
+
+> [!div class="nextstepaction"]
+> [Приобретите токен для веб-приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-acquire-token?tabs=python)
 
 ---

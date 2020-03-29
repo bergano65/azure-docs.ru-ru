@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/28/2019
 ms.openlocfilehash: 21bc903349876a76576fb742840e9899f9d94bcd
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74769393"
 ---
 # <a name="use-apache-sqoop-to-import-and-export-data-between-apache-hadoop-on-hdinsight-and-sql-database"></a>Использование Apache Sqoop для импорта и экспорта между Apache Hadoop в HDInsight и базой данных SQL
@@ -21,23 +21,23 @@ ms.locfileid: "74769393"
 
 Узнайте, как использовать Apache Sqoop для импорта и экспорта между кластером Apache Hadoop в Azure HDInsight и Базой данных SQL Azure или базой данных Microsoft SQL Server. В этом руководстве используется команда `sqoop` ​​непосредственно из головного узла кластера Hadoop. В этом документе вы подключитесь к головному узлу, используя SSH, и выполните команды. Эта статья является продолжением [использования Apache Sqoop с Hadoop в HDInsight](./hdinsight-use-sqoop.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Завершение [настройки тестовой среды](./hdinsight-use-sqoop.md#create-cluster-and-sql-database) с [помощью Apache Sqoop с Hadoop в HDInsight](./hdinsight-use-sqoop.md).
+* Завершение [настройки тестовой среды](./hdinsight-use-sqoop.md#create-cluster-and-sql-database) от [Use Apache Sqoop с Hadoop в HDInsight](./hdinsight-use-sqoop.md).
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* Знакомство с Sqoop. Дополнительные сведения см. в разделе [Sqoop User Guide](https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html).
+* Знакомство с Sqoop. Для получения дополнительной информации [см.](https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html)
 
 ## <a name="set-up"></a>Настройка
 
-1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
+1. Используйте [команду ssh](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Отоверьте приведенную ниже команду, заменив CLUSTERNAME на имя кластера, а затем введите команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
-1. Для простоты использования задайте переменные. Замените `PASSWORD`, `MYSQLSERVER`и `MYDATABASE` соответствующими значениями, а затем введите следующие команды:
+1. Для удобства использования установите переменные. `PASSWORD`Заменить `MYSQLSERVER`, `MYDATABASE` и с соответствующими значениями, а затем ввести команды ниже:
 
     ```bash
     export password='PASSWORD'
@@ -51,21 +51,21 @@ ms.locfileid: "74769393"
 
 ## <a name="sqoop-export"></a>Экспорт Sqoop
 
-Из Hive в SQL Server.
+От Улейа до сервера S'L.
 
-1. Чтобы убедиться, что база данных SQL может видеть Sqoop, введите приведенную ниже команду в открытом SSH-подключении. Эта команда возвращает список баз данных.
+1. Чтобы убедиться, что Sqoop может видеть вашу базу данных S'L, введите команду ниже в открытом sSH-соединении. Эта команда возвращает список баз данных.
 
     ```bash
     sqoop list-databases --connect $serverConnect
     ```
 
-1. Введите следующую команду, чтобы просмотреть список таблиц для указанной базы данных:
+1. Введите следующую команду, чтобы увидеть список таблиц для указанной базы данных:
 
     ```bash
     sqoop list-tables --connect $serverDbConnect
     ```
 
-1. Чтобы экспортировать данные из таблицы Hive `hivesampletable` в таблицу `mobiledata` базы данных SQL, введите следующую команду в открытом SSH-подключении:
+1. Для экспорта данных `hivesampletable` из `mobiledata` таблицы Hive в таблицу базы данных S'L введите приведенную ниже команду в открытом SSH-соединении:
 
     ```bash
     sqoop export --connect $serverDbConnect \
@@ -73,7 +73,7 @@ ms.locfileid: "74769393"
     --hcatalog-table hivesampletable
     ```
 
-1. Чтобы убедиться, что данные были экспортированы, используйте следующие запросы из SSH-подключения для просмотра экспортированных данных:
+1. Чтобы убедиться, что данные были экспортированы, используйте следующие запросы из соединения SSH для просмотра экспортированных данных:
 
     ```bash
     sqoop eval --connect $serverDbConnect \
@@ -86,9 +86,9 @@ ms.locfileid: "74769393"
 
 ## <a name="sqoop-import"></a>Импорт Sqoop
 
-Из SQL Server в службу хранилища Azure.
+От сервера S'L до хранилища Azure.
 
-1. Введите приведенную ниже команду в открытом SSH-подключении, чтобы импортировать данные из таблицы `mobiledata` базы данных SQL в каталог `wasbs:///tutorials/usesqoop/importeddata` в HDInsight. Поля в данных разделены знаками табуляции, а строки завершаются символом новой строки.
+1. Введите приведенную ниже команду в открытом `mobiledata` SSH-соединении, `wasbs:///tutorials/usesqoop/importeddata` импортируйте данные из таблицы базы данных S'L в каталог HDInsight. Поля в данных разделены знаками табуляции, а строки завершаются символом новой строки.
 
     ```bash
     sqoop import --connect $serverDbConnect \
@@ -98,7 +98,7 @@ ms.locfileid: "74769393"
     --lines-terminated-by '\n' -m 1
     ```
 
-1. Кроме того, можно указать таблицу Hive:
+1. Кроме того, можно также указать таблицу Hive:
 
     ```bash
     sqoop import --connect $serverDbConnect \
@@ -111,21 +111,21 @@ ms.locfileid: "74769393"
     --hive-import -m 1
     ```
 
-1. После завершения импорта введите следующую команду в открытом SSH-подключении, чтобы вывести данные в новом каталоге:
+1. После завершения импорта введите следующую команду в открытом sSH-соединении, чтобы перечислить данные в новом каталоге:
 
     ```bash
     hadoop fs -tail /tutorials/usesqoop/importeddata/part-m-00000
     ```
 
-1. Используйте [Beeline](./apache-hadoop-use-hive-beeline.md) , чтобы убедиться, что таблица была создана в Hive.
+1. Используйте ["Билайн",](./apache-hadoop-use-hive-beeline.md) чтобы убедиться, что таблица была создана в Hive.
 
-    1. Подключиться
+    1. Подключение
 
         ```bash
         beeline -u 'jdbc:hive2://headnodehost:10001/;transportMode=http'
         ```
 
-    1. Выполните каждый запрос по одному за раз и просмотрите выходные данные:
+    1. Выполните каждый запрос ниже одного за один раз и просмотрите вывод:
 
         ```hql
         show tables;
@@ -134,11 +134,11 @@ ms.locfileid: "74769393"
         SELECT * FROM mobiledata_imported2 LIMIT 10;
         ```
 
-    1. Выйдите из Beeline с `!exit`.
+    1. Выход Билайн `!exit`с .
 
 ## <a name="limitations"></a>Ограничения
 
-* При выполнении полного экспорта с помощью HDInsight на основе Linux соединитель Sqoop, используемый для экспорта данных в Microsoft SQL Server или базу данных SQL Azure, не поддерживает операции вставки.
+* Массовый экспорт - С помощью HDInsight на базе Linux разъем Sqoop, используемый для экспорта данных в Microsoft S'L Server или базу данных Azure S'L, не поддерживает объемные вставки.
 
 * Пакетная обработка: при использовании HDInsight на основе Linux, когда для выполнения вставок применяется параметр`-batch`, Sqoop выполняет несколько вставок вместо пакетной обработки операций вставки.
 
@@ -158,6 +158,6 @@ ms.locfileid: "74769393"
 
 Теперь вы узнали, как использовать Sqoop. Дополнительные сведения см. на следующих ресурсах:
 
-* [Использование Apache Oozie с HDInsight](../hdinsight-use-oozie-linux-mac.md): используйте действие Sqoop в рабочем процессе Oozie.
-* [Анализ данных о задержке рейсов с помощью HDInsight](../interactive-query/interactive-query-tutorial-analyze-flight-data.md): используйте интерактивный запрос для анализа данных о задержке рейсов, а затем используйте Sqoop для экспорта данных в базу данных SQL Azure.
+* [Используйте Apache Oozie с HDInsight:](../hdinsight-use-oozie-linux-mac.md)Используйте действие Sqoop в рабочем процессе Oozie.
+* [Проанализируйте данные о задержке рейса с помощью HDInsight:](../interactive-query/interactive-query-tutorial-analyze-flight-data.md)Используйте интерактивный запрос для анализа данных о задержке рейса, а затем используйте Sqoop для экспорта данных в базу данных Azure S'L.
 * [Передача данных в HDInsight](../hdinsight-upload-data.md): узнайте о других способах отправки данных в HDInsight и хранилище больших двоичных объектов Azure.

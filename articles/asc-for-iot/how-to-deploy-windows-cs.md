@@ -1,6 +1,6 @@
 ---
-title: Установка Windows в центре безопасности Azure для агента IoT | Документация Майкрософт
-description: Узнайте, как установить центр безопасности Azure для агента IoT на 32-разрядных или 64-разрядных устройствах Windows.
+title: Установка Windows Центра безопасности Azure для агента IoT Документы Майкрософт
+description: Узнайте о том, как установить Центр безопасности Azure для ioT-агента на 32-битных или 64-битных устройствах Windows.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -16,46 +16,46 @@ ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
 ms.openlocfilehash: acc99f260931de7fd8c7566a3ff6daf43f34c5ef
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68597213"
 ---
-# <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Развертывание центра безопасности Azure для агента безопасности C#на основе Интернета вещей для Windows
+# <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Развертывание агента безопасности Центра безопасности Azure для Интернета вещей на основе C# для Windows
 
-В этом руководство объясняется, как установить центр безопасности Azure для C#агента безопасности на основе Интернета вещей в Windows.
+В этом руководстве объясняется, как установить центр безопасности Azure для агента безопасности на основе IoT C в Windows.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи: 
 > [!div class="checklist"]
 > * Установка
 > * Проверка развертывания
-> * Удаление агента.
+> * Удаление агента
 > * Устранение неполадок 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Сведения о других платформах и разновидностях агентов см. в разделе Выбор подходящего [агента безопасности](how-to-deploy-agent.md).
+Для других платформ и ароматов агента, [см.](how-to-deploy-agent.md)
 
-1. Права локального администратора на компьютере, на котором вы хотите установить. 
+1. Местные права админа на машину, которую вы хотите установить на. 
 
 1. [Создайте модуль безопасности](quickstart-create-security-twin.md) для устройства.
 
 ## <a name="installation"></a>Установка 
 
-Чтобы установить агент безопасности, используйте следующий рабочий процесс:
+Для установки агента безопасности используйте следующий рабочий процесс:
 
-1. Установите на устройстве центр безопасности Azure для агента C# Windows IOT. Скачайте последнюю версию на свой компьютер из [репозитория GitHub](https://github.com/Azure/Azure-IoT-Security-Agent-CS)центра безопасности Azure для IOT.
+1. Установите на устройство Центр безопасности Azure для агента IoT Windows C. Загрузите самую полную версию на компьютер из центра безопасности Azure для [репозитория IoT GitHub.](https://github.com/Azure/Azure-IoT-Security-Agent-CS)
 
 1. Извлеките содержимое пакета и перейдите в папку /Install.
 
-1. Откройте Windows PowerShell от имени администратора. 
-1. Добавьте разрешения на выполнение скрипта Инсталлсекуритяжент, выполнив команду:<br>
+1. Откройте Windows PowerShell в качестве администратора. 
+1. Добавление запущенных разрешений в скрипт InstallSecurityAgent, запустив:<br>
     ```
     Unblock-File .\InstallSecurityAgent.ps1
     ```
     
-    затем выполните:
+    затем запустить:
 
     ```
     .\InstallSecurityAgent.ps1 -Install -aui <authentication identity> -aum <authentication method> -f <file path> -hn <host name> -di <device id> -cl <certificate location kind>
@@ -67,13 +67,13 @@ ms.locfileid: "68597213"
     .\InstallSecurityAgent.ps1 -Install -aui Device -aum SymmetricKey -f c:\Temp\Key.txt -hn MyIotHub.azure-devices.net -di Mydevice1 -cl store
     ```
     
-    Дополнительные сведения о параметрах проверки подлинности см. [в разделе Настройка проверки](concept-security-agent-authentication-methods.md)подлинности.
+    Для получения дополнительной информации о параметрах аутентификации [см.](concept-security-agent-authentication-methods.md)
 
-Этот сценарий выполняет следующие действия:
+Этот скрипт выполняет следующие действия:
 
 - Установка необходимых компонентов.
 
-- Добавляет пользователя службы (с отключенным интерактивным входом).
+- Добавляет пользователя сервиса (с интерактивным знаком в инвалидах).
 
 - Установка агента в качестве **системной службы**.
 
@@ -104,7 +104,7 @@ ms.locfileid: "68597213"
 
 Чтобы включить ведение журнала, сделайте следующее:
 
-1. Откройте файл конфигурации (General. config) для редактирования с помощью стандартного редактора файлов.
+1. Откройте файл конфигурации (General.config) для редактирования с помощью стандартного редактора файлов.
 
 1. Измените следующие значения:
 
@@ -120,14 +120,14 @@ ms.locfileid: "68597213"
 
 1. Перезапустите агент, выполнив следующую команду в PowerShell или командной строке.
 
-    **PowerShell**
+    **Powershell**
      ```
      Restart-Service "ASC IoT Agent"
      ```
      
    или диспетчер конфигурации служб
 
-    **CMD**
+    **Cmd**
      ```
      sc.exe stop "ASC IoT Agent" 
      sc.exe start "ASC IoT Agent" 
@@ -138,9 +138,9 @@ ms.locfileid: "68597213"
    Расположение файла журнала: `%WinDir%/System32/IoTAgentLog.log`.
 
 
-## <a name="next-steps"></a>Следующие шаги
-- Ознакомьтесь с [обзором](overview.md) центра безопасности Azure для службы IOT
-- Узнайте больше о центре безопасности Azure для [архитектуры](architecture.md) IOT
+## <a name="next-steps"></a>Дальнейшие действия
+- Прочтите [обзор](overview.md) службы безопасности Azure для обслуживания IoT
+- Узнайте больше о Центре безопасности Azure для [IoT-архитектуры](architecture.md)
 - Включите [службу](quickstart-onboard-iot-hub.md).
-- Просмотрите [часто задаваемые вопросы](resources-frequently-asked-questions.md).
+- Читать [часто задаваемые вопросы](resources-frequently-asked-questions.md)
 - Ознакомьтесь со сведениями об [оповещениях](concept-security-alerts.md).

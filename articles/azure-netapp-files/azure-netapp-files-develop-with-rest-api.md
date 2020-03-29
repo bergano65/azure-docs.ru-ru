@@ -15,19 +15,19 @@ ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: b-juche
 ms.openlocfilehash: 996fbcc7c3c9af0da9160216785ecd54840660e8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65957044"
 ---
 # <a name="develop-for-azure-netapp-files-with-rest-api"></a>Разработка для Azure NetApp Files с помощью REST API 
 
 REST API для службы Azure NetApp Files определяет операции HTTP в ресурсах, таких как учетная запись NetApp, пул емкости, тома и моментальные снимки. В этой статье описано, как приступить к работе с помощью REST API Azure NetApp Files.
 
-## <a name="azure-netapp-files-rest-api-specification"></a>Azure спецификации NetApp файловый API REST
+## <a name="azure-netapp-files-rest-api-specification"></a>Спецификация API aPI файлов NetApp Azure
 
-Спецификации REST API для службы файлов Azure NetApp публикуется через [GitHub](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/netapp/resource-manager):
+Спецификация REST API для файлов NetApp Azure публикуется через [GitHub](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/netapp/resource-manager):
 
 `https://github.com/Azure/azure-rest-api-specs/tree/master/specification/netapp/resource-manager`
 

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/28/2018
 ms.author: magattus
 ms.openlocfilehash: 9f185f58e1d33a3985777cb22bc7578f9f2c4541
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67593798"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>Повышение производительности за счет сжатия файлов в Azure CDN
@@ -101,9 +101,9 @@ ms.locfileid: "67593798"
 ### <a name="azure-cdn-standard-from-microsoft-profiles"></a>Профили Azure CDN уровня "Стандартный" от Майкрософт
 
 Для профилей **Azure CDN уровня "Стандартный" от Майкрософт** сжимаются только соответствующие файлы. Сжатие допускается для следующих файлов:
-- Типа MIME, который был [настройках разрешено сжатие](#enabling-compression).
-- Должен превышать 1 КБ
-- Менее 8 МБ
+- Будьте типа MIME, который был [настроен для сжатия.](#enabling-compression)
+- Быть больше, чем 1 КБ
+- Быть меньше, чем 8 МБ
 
 Эти профили поддерживают следующие алгоритмы сжатия:
 - gzip (GNU zip)
@@ -117,7 +117,7 @@ ms.locfileid: "67593798"
 
 Для профилей **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon** будут сжаты только подходящие файлы. Сжатие допускается для следующих файлов:
 - более 128 байт;
-- Менее 3 МБ
+- Быть меньше, чем 3 МБ
 
 Эти профили поддерживают следующие алгоритмы сжатия:
 - gzip (GNU zip)
@@ -139,22 +139,22 @@ ms.locfileid: "67593798"
 В приведенных ниже таблицах описан принцип работы сжатия CDN Azure для всех сценариев.
 
 ### <a name="compression-is-disabled-or-file-is-ineligible-for-compression"></a>Сжатие отключено или для файла сжатие недопустимо
-| Запрошенный клиентом формат (через заголовок Accept-Encoding) | Формат кэшированного файла | Ответ CDN клиенту | Примечания&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+| Запрошенный клиентом формат (через заголовок Accept-Encoding) | Формат кэшированного файла | Ответ CDN клиенту | &nbsp; &nbsp; Заметки&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | --- | --- | --- | --- |
-| сжатые; |сжатые; |сжатые; | |
-| сжатые; |Без сжатия |Без сжатия | |
-| сжатые; |Не кэширован |Сжатый или несжатый |Ответ источника определяет, будет ли CDN выполнять сжатие. |
-| Без сжатия |сжатые; |Без сжатия | |
+| Compressed |Compressed |Compressed | |
+| Compressed |Без сжатия |Без сжатия | |
+| Compressed |Не кэширован |Сжатый или несжатый |Ответ источника определяет, будет ли CDN выполнять сжатие. |
+| Без сжатия |Compressed |Без сжатия | |
 | Без сжатия |Без сжатия |Без сжатия | |
 | Без сжатия |Не кэширован |Без сжатия | |
 
 ### <a name="compression-is-enabled-and-file-is-eligible-for-compression"></a>Сжатие включено и для файла допускается сжатие
 | Запрошенный клиентом формат (через заголовок Accept-Encoding) | Формат кэшированного файла | Ответ CDN клиенту | Примечания |
 | --- | --- | --- | --- |
-| сжатые; |сжатые; |сжатые; |CDN перекодирует из одного поддерживаемого формата в другой. |
-| сжатые; |Без сжатия |сжатые; |CDN выполняет сжатие. |
-| сжатые; |Не кэширован |сжатые; |CDN выполняет сжатие, если источник возвращает несжатый файл. <br/>**Azure CDN от Verizon** передает несжатый файл при первом запросе, а затем сжимает файл и помещает его в кэш для последующих запросов. <br/>Файлы с заголовком `Cache-Control: no-cache` никогда не сжимаются. |
-| Без сжатия |сжатые; |Без сжатия |CDN проводит распаковку. |
+| Compressed |Compressed |Compressed |CDN перекодирует из одного поддерживаемого формата в другой. |
+| Compressed |Без сжатия |Compressed |CDN выполняет сжатие. |
+| Compressed |Не кэширован |Compressed |CDN выполняет сжатие, если источник возвращает несжатый файл. <br/>**Azure CDN от Verizon** передает несжатый файл при первом запросе, а затем сжимает файл и помещает его в кэш для последующих запросов. <br/>Файлы с заголовком `Cache-Control: no-cache` никогда не сжимаются. |
+| Без сжатия |Compressed |Без сжатия |CDN проводит распаковку. |
 | Без сжатия |Без сжатия |Без сжатия | |
 | Без сжатия |Не кэширован |Без сжатия | |
 

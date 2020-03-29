@@ -11,10 +11,10 @@ author: djpmsft
 ms.author: daperlov
 manager: anandsub
 ms.openlocfilehash: 43a31d588ff6616d7200d9773883ce5da570b100
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74927357"
 ---
 # <a name="programmatically-monitor-an-azure-data-factory"></a>Отслеживание фабрики данных Azure с помощью программных средств
@@ -84,7 +84,7 @@ print_activity_run_details(activity_runs_paged[0])
 
 Полная документация по пакету SDK для Python приведена в [справочнике по пакету SDK для Python для фабрики данных](/python/api/overview/azure/datafactory?view=azure-python).
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 Полное пошаговое руководство по созданию и отслеживанию конвейера с помощью REST API приведено в разделе [Создание фабрики данных Azure и конвейера с помощью REST API](quickstart-create-data-factory-rest-api.md).
  
 1. Запустите следующий скрипт, чтобы проверять состояние выполнения, пока не закончится копирование данных.

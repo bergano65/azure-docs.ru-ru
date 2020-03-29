@@ -1,5 +1,5 @@
 ---
-title: Настройка единого входа приложения | Документация Майкрософт
+title: Настройка приложения с одним всхотворством Документы Майкрософт
 description: В этой статье описано, как настроить единый вход для пользовательского приложения, которое вы разрабатываете, и зарегистрировать это приложение в Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -16,13 +16,13 @@ ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
 ms.openlocfilehash: bb77f376e22428e9259ff3efc84cf6f1cb3491fe
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76702647"
 ---
-# <a name="how-to-configure-single-sign-on-for-an-application"></a>Настройка единого входа для приложения
+# <a name="how-to-configure-single-sign-on-for-an-application"></a>Как настроить единый входной знак для приложения
 
 При настройке федерации с помощью Azure AD для OpenID Connect, SAML 2.0 или WS-Fed федеративный единый вход для вашего приложения включается автоматически. Если конечным пользователям приходится снова входить в систему несмотря на то, что сеанс Azure AD уже существует, возможно, приложение настроено неправильно.
 
@@ -36,7 +36,7 @@ ms.locfileid: "76702647"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Единый вход в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)<br>
+[Azure AD SSO](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)<br>
 
 [Включение единого входа для нескольких приложений в Android](https://docs.microsoft.com/azure/active-directory/develop/active-directory-sso-android)<br>
 

@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Analysis Services с помощью Power BI | Документы Майкрософт
-description: Сведения о подключении к серверу Azure Analysis Services с помощью Power BI. После подключения пользователи смогут просматривать данные модели.
+description: Сведения о подключении к серверу Azure Analysis Services с помощью Power BI. После подключения пользователи могут изучать данные модели.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: db0c00268c343cd99e439bb49460523cf0563c3c
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73573106"
 ---
 # <a name="connect-with-power-bi"></a>Подключение с помощью Power BI
@@ -25,7 +25,7 @@ ms.locfileid: "73573106"
   
 ## <a name="connect-in-power-bi-desktop"></a>Подключение в Power BI Desktop
 
-1. В Power BI Desktop выберите **Получить данные** > **Azure** > **База данных Azure Analysis Services**.
+1. В power BI Desktop нажмите **Кнопка Получить данные** > **Azure** > **Анализ служб**анализа .
 
 2. В поле **Сервер** укажите имя сервера. Обязательно включите полный URL-адрес, например asazure://westcentralus.asazure.windows.net/advworks.
 
@@ -44,9 +44,9 @@ ms.locfileid: "73573106"
 ## <a name="connect-in-power-bi-service"></a>Подключение в Power BI (служба)
 
 1. Создайте файл Power BI Desktop с возможностью активного подключения к нужной модели на сервере.
-2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)**  > **Файлы**, а затем найдите и выберите PBIX-файл.
+2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)** > **Файлы**, а затем найдите и выберите PBIX-файл.
 
 ## <a name="see-also"></a>См. также
-[Подключение к службам Azure Analysis Services](analysis-services-connect.md)   
+[Подключение к службам анализа Azure](analysis-services-connect.md)   
 [Клиентские библиотеки](analysis-services-data-providers.md)
 

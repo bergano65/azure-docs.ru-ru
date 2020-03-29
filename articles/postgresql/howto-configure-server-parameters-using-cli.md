@@ -1,6 +1,6 @@
 ---
-title: Настройка параметров — база данных Azure для PostgreSQL — один сервер
-description: В этой статье описывается, как настроить параметры postgres в базе данных Azure для PostgreSQL-Single Server с помощью Azure CLI.
+title: Параметры настройки - База данных Azure для PostgreS'L - Единый сервер
+description: В этой статье описывается, как настроить параметры Postgres в базе данных Azure для PostgreS - Single Server с помощью Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
@@ -8,16 +8,16 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.openlocfilehash: 4e029428a3709bacdbcd50a6ac3714e730377242
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74763629"
 ---
-# <a name="customize-server-configuration-parameters-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Настройка параметров конфигурации сервера для базы данных Azure для PostgreSQL — один сервер с помощью Azure CLI
+# <a name="customize-server-configuration-parameters-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Настройка параметров конфигурации сервера для базы данных Azure для PostgreS-L - Единый сервер с помощью Azure CLI
 С помощью интерфейса командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера Azure PostgreSQL, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - создайте базу данных и сервер базы данных Azure для PostgreSQL, выполнив инструкции из раздела [Создание базы данных Azure для PostgreSQL](quickstart-create-server-database-azure-cli.md);
 - установите интерфейс командной строки [Azure CLI](/cli/azure/install-azure-cli) на компьютере или используйте [Azure Cloud Shell](../cloud-shell/overview.md) на портале Azure с помощью браузера.
@@ -50,5 +50,5 @@ az postgres server configuration set --name log_min_messages --resource-group my
 Данная команда восстановит значение по умолчанию **WARNING** для параметра конфигурации **log\_min\_messages**. Дополнительные сведения о конфигурации сервера и допустимых значениях приведены в документации PostgreSQL по [конфигурации сервера](https://www.postgresql.org/docs/9.6/static/runtime-config.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Сведения о перезагрузке сервера](howto-restart-server-cli.md)
+- [Узнайте, как перезапустить сервер](howto-restart-server-cli.md)
 - Чтобы настроить журналы сервера и получать к ним доступ, ознакомьтесь с разделом [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).

@@ -10,13 +10,13 @@ ms.custom: mvc
 ms.date: 12/03/2018
 ms.author: dobett
 ms.openlocfilehash: f58eb05ed582cf18157a76f4d637d72a228f4e96
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65464870"
 ---
-# <a name="device-simulation-solution-accelerator-overview"></a>Общие сведения об акселераторе решений для имитации устройств
+# <a name="device-simulation-solution-accelerator-overview"></a>Общие сведения об акселераторе решений с имитацией устройств
 
 В облачном решении Интернета вещей устройства подключаются к облачной конечной точке для отправки данных телеметрии, например температуры, расположения и состояния. Решение принимает эти данные телеметрии, на основе которых можно выполнять действия или из которых можно получать полезные сведения.
 
@@ -63,4 +63,4 @@ ms.locfileid: "65464870"
 В этой статье вы узнали об акселераторе решений для имитации устройств и его возможностях. Чтобы приступить к использованию акселератора решений, перейдите к краткому руководству:
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по развертыванию и запуску имитации устройств Интернета вещей в Azure](quickstart-device-simulation-deploy.md)
+> [Развертывание и запуск имитации устройств Интернета вещей в Azure](quickstart-device-simulation-deploy.md)

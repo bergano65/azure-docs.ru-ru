@@ -1,5 +1,5 @@
 ---
-title: Пакет SDK для .NET. Начало работы с Gen1 хранилища Озера данных Azure | Документация Майкрософт
+title: .NET SDK. Операции управления учетными записями в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
 description: Используйте пакет .NET SDK для Azure Data Lake Storage 1-го поколения, чтобы выполнять операции управления учетными записями в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 8da40aa04381542c8c750c8d7e33c9a29879371d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65900879"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием .NET SDK
 > [!div class="op_single_selector"]
-> * [ПАКЕТ SDK .NET](data-lake-store-get-started-net-sdk.md)
+> * [Пакет SDK для .NET](data-lake-store-get-started-net-sdk.md)
 > * [REST API](data-lake-store-get-started-rest-api.md)
 > * [Python](data-lake-store-get-started-python.md)
 >
@@ -31,27 +31,27 @@ ms.locfileid: "65900879"
 
 Дополнительные сведения о том, как выполнять операции управления данными в Data Lake Storage 1-го поколения с помощью .NET SDK, см. в статье [Операции файловой системы в Data Lake Storage 1-го поколения с использованием пакета SDK для .NET SDK](data-lake-store-data-operations-net-sdk.md).
 
-## <a name="prerequisites"></a>Технические условия
-* **Visual Studio 2013 или более поздней версии**. В инструкциях ниже используется Visual Studio 2019.
+## <a name="prerequisites"></a>Предварительные требования
+* **Визуальная студия 2013 или выше**. Ниже приведены инструкции Visual Studio 2019.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="create-a-net-application"></a>Создание приложения .NET
-1. В Visual Studio выберите **файл** меню **New**, а затем **проекта**.
-2. Выберите **консольное приложение (.NET Framework)** , а затем выберите **Далее**.
-3. В **имя_проекта**, введите `CreateADLApplication`, а затем выберите **создать**.
+1. В Visual Studio выберите меню **файла,** **Новое**, а затем **проект**.
+2. Выберите **консоль App (.NET Framework),** а затем выберите **Следующий**.
+3. В окне**Имя проекта** введите `CreateADLApplication`, а затем выберите **Создать**.
 
 4. Добавьте пакеты NuGet в проект.
 
    1. В обозревателе решений щелкните правой кнопкой мыши имя проекта и выберите пункт **Управление пакетами NuGet**.
-   2. На вкладке **Диспетчер пакетов NuGet** в поле **Источник пакета** выберите **nuget.org** и установите флажок **Включить предварительные выпуски**.
+   2. Во вкладке **NuGet Package Manager** убедитесь, что **источник пакета** настроен на **nuget.org** и что включает флажок **для предварительного выпуска.**
    3. Найдите и установите следующие пакеты NuGet:
 
       * `Microsoft.Azure.Management.DataLake.Store`. В этом руководстве используется предварительная версия 2.1.3.
       * `Microsoft.Rest.ClientRuntime.Azure.Authentication`. В этом руководстве используется версия 2.2.12.
 
-        ![Добавление источника NuGet](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Создание учетной записи Azure Data Lake")
-   4. Закройте **диспетчер пакетов NuGet**.
+        ![Добавление источника NuGet](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Создание новой учетной записи Azure Data Lake")
+   4. Закройте **менеджер пакета NuGet.**
 5. Откройте файл **Program.cs**, удалите существующий код и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
 
         using System;
@@ -93,7 +93,7 @@ ms.locfileid: "65900879"
 
 В остальных разделах статьи рассматривается использование доступных методов .NET при выполнении таких операций, как проверка подлинности, отправка файла и т. д.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
 * Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Аутентификация пользователей в Data Lake Store с помощью пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md).
 * Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Аутентификация между службами в Data Lake Store с помощью пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md).

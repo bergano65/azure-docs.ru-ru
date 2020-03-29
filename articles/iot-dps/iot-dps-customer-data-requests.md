@@ -1,6 +1,6 @@
 ---
-title: Функции запроса данных клиента для устройств Azure DP
-description: Для устройств, управляемых в службе подготовки устройств Azure (DPS), которые являются личными, в этой статье показано, как экспортировать или удалить персональные данные.
+title: Функции запроса данных клиентов для устройств Azure DPS
+description: Для устройств, управляемых службой обеспечения устройств Azure (DPS), которые являются персональными, в этой статье показаны устройства, которые могут экспортировать или удалять персональные данные.
 author: dominicbetts
 ms.author: dobett
 ms.date: 05/16/2018
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: 1dcf1b9f62f94b8f75ef2fe77f3e237a387c53eb
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73890650"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
@@ -62,6 +62,6 @@ ms.locfileid: "73890650"
 
 ## <a name="links-to-additional-documentation"></a>Ссылки на дополнительную документацию
 
-Полная документация по API службы подготовки устройств находится по ссылке [https://docs.microsoft.com/rest/api/iot-dps](https://docs.microsoft.com/rest/api/iot-dps).
+Полная документация для AIS службы обеспечения устройств находится по адресу [https://docs.microsoft.com/rest/api/iot-dps](https://docs.microsoft.com/rest/api/iot-dps).
 
 [Функции запроса данных клиента](../iot-hub/iot-hub-customer-data-requests.md) Центра Интернета вещей Azure.

@@ -1,5 +1,5 @@
 ---
-title: Как сменить ключ доступа для службы Azure SignalR
+title: How to rotate access key for Azure SignalR Service (Смена ключей доступа для Службы Azure SignalR)
 description: Общие сведения о причинах, по которым клиент должен регулярно менять ключи доступа, и способах выполнения замены с помощью графического пользовательского интерфейса портала Azure и Azure CLI.
 author: sffamily
 ms.service: signalr
@@ -7,13 +7,13 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.openlocfilehash: 133edc64ac2f858a397a4a184c24497dae8af333
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67565729"
 ---
-# <a name="how-to-rotate-access-key-for-azure-signalr-service"></a>Как сменить ключ доступа для службы Azure SignalR
+# <a name="how-to-rotate-access-key-for-azure-signalr-service"></a>How to rotate access key for Azure SignalR Service (Смена ключей доступа для Службы Azure SignalR)
 
 В каждом экземпляре Службы Azure SignalR есть пара ключей доступа, которые называются первичными и вторичными. Эти ключи используются для проверки подлинности клиентов SignalR при составлении запросов к службе. Они связаны с URL-адресом конечной точки экземпляра. Обеспечьте безопасность ключей и меняйте их регулярно. Вам предоставляются два ключа доступа, так что вы можете выполнять подключения с помощью одного из них во время обновления другого.
 

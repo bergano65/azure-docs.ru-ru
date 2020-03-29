@@ -1,6 +1,6 @@
 ---
-title: Настройка POST для вызовов REST API служб мультимедиа Azure v3
-description: В этой статье показано, как настроить POST, чтобы он мог использоваться для вызова интерфейсов API служб мультимедиа Azure (AMS).
+title: Наконфигурите Почтальон для службы мультимедиа Azure v3 REST API
+description: В этой статье описано, как настроить Postman для вызова REST API Служб мультимедиа Azure (AMS).
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,28 +14,28 @@ ms.topic: article
 ms.date: 12/05/2019
 ms.author: juliako
 ms.openlocfilehash: 872dad95fc5b536c51e251612f40439da020a059
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75779643"
 ---
-# <a name="configure-postman-for-media-services-v3-rest-api-calls"></a>Настройка POST для вызовов REST API служб мультимедиа v3
+# <a name="configure-postman-for-media-services-v3-rest-api-calls"></a>Настройка Почтальон для медиа-услуг v3 REST API звонки
 
 В этой статье описано, как настроить **Postman** для вызова REST API Служб мультимедиа Azure (AMS). Здесь также описывается, как импортировать файлы среды и коллекции в **Postman**. Коллекция содержит сгруппированные определения HTTP-запросов, которые вызывают REST API служб мультимедиа Azure (AMS). Файл среды содержит переменные, которые используются коллекцией.
 
-Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md).
+Прежде чем приступить к разработке, просмотрите [разработку с помощью AA- иАТ Media Services v3.](media-services-apis-overview.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - Получите информацию, необходимую для [доступа к API-интерфейсам](access-api-cli-how-to.md).
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в некоторых руководствах по REST AMS. 
 
-    Мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
+    Мы используем **Postman**, но подойдет любое средство REST. Другие альтернативы: **Visual Studio Code** с плагином REST или **Telerik Fiddler**. 
 
 > [!IMPORTANT]
-> Проверьте [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
+> Просмотр [именования конвенций](media-services-apis-overview.md#naming-conventions).
 
 ## <a name="download-postman-files"></a>Скачивание файлов Postman
 
@@ -78,7 +78,7 @@ ms.locfileid: "75779643"
 
 Прежде чем вы сможете работать с ресурсами AMS версии 3, вам нужно получить и задать маркер Azure AD для аутентификации субъекта-службы.
 
-1. В левом окне поступающего приложения выберите "шаг 1. получение токена проверки подлинности AAD".
+1. В левом окне приложения Почтальон выберите "Шаг 1: Получить токен AAD Auth".
 2. Затем выберите Get Azure AD Token for Service Principal Authentication (Получение маркера безопасности Azure AD для аутентификации субъекта-службы).
 3. Нажмите кнопку **Отправить**.
 
@@ -92,10 +92,10 @@ ms.locfileid: "75779643"
 
     ![Получение маркера AAD](./media/develop-with-postman/postman-get-aad-auth-token.png)
 
-## <a name="troubleshooting"></a>Устранение неисправностей 
+## <a name="troubleshooting"></a>Устранение неполадок 
 
-* Если приложение завершается с ошибкой "HTTP 504: время ожидания шлюза", убедитесь, что для переменной расположения не было явно задано значение, отличное от ожидаемого расположения учетной записи служб мультимедиа. 
-* Если возникает ошибка "учетная запись не найдена", убедитесь, что для свойства Location в тексте сообщения JSON задано расположение учетной записи служб мультимедиа. 
+* Если приложение не справляется с "HTTP 504: Gateway Timeout", убедитесь, что переменная местоположения не была явно установлена на значение, кроме ожидаемого местоположения учетной записи Media Services. 
+* Если вы получили ошибку "учетная запись не найдена", также проверьте, чтобы убедиться, что свойство местоположения в сообщении Body JSON настроено на место, в которое находится учетная запись Media Services. 
 
 ## <a name="see-also"></a>См. также
 
@@ -106,4 +106,4 @@ ms.locfileid: "75779643"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Потоковая передача файлов с помощью REST](stream-files-tutorial-with-rest.md)  
-- [Учебник. кодирование удаленного файла на основе URL-адреса и поток видео — остальное](stream-files-tutorial-with-rest.md)
+- [Учебник: Кодирование удаленного файла на основе URL и потоковое видео - REST](stream-files-tutorial-with-rest.md)

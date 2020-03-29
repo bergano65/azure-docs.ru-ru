@@ -1,5 +1,5 @@
 ---
-title: Обновление моделей машинного обучения с помощью фабрики данных Azure
+title: Обновление моделей машинного обучения с помощью Azure Data Factory
 description: Здесь описывается, как создавать прогнозирующие конвейеры с помощью фабрики данных Azure и машинного обучения.
 services: data-factory
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.openlocfilehash: 3313c9c362a9b82cf7ed8db63479aaa5cf0c777e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73683243"
 ---
 # <a name="update-azure-machine-learning-models-by-using-update-resource-activity"></a>Обновление моделей машинного обучения Azure с помощью действия обновления ресурса
@@ -56,12 +56,12 @@ ms.locfileid: "73683243"
 }
 ```
 
-| Свойство                      | Description (Описание)                              | Обязательно |
+| Свойство                      | Описание                              | Обязательно |
 | :---------------------------- | :--------------------------------------- | :------- |
 | name                          | Имя действия в конвейере.     | Да      |
-| description                   | Описание действия.  | Нет       |
+| description                   | Описание действия.  | нет       |
 | type                          | Для действия обновления ресурса в службе машинного обучения Azure тип действия — **AzureMLUpdateResource**. | Да      |
-| linkedServiceName (имя связанной службы)             | Связанная служба машинного обучения Azure, которая содержит свойство updateResourceEndpoint. | Да      |
+| linkedServiceName             | Связанная служба машинного обучения Azure, которая содержит свойство updateResourceEndpoint. | Да      |
 | trainedModelName              | Имя модуля модели обучения для обновления в эксперименте веб-службы. | Да      |
 | trainedModelLinkedServiceName | Имя связанной службы хранилища Azure, содержащей файл iLearner, который был отправлен действием обновления. | Да      |
 | trainedModelFilePath          | Относительный путь к файлу в trainedModelLinkedService для представления файла iLearner, который отправлен действием обновления. | Да      |
@@ -70,8 +70,8 @@ ms.locfileid: "73683243"
 
 Процесс переобучения модели и обновления прогнозных веб-служб включает в себя такие шаги:
 
-- Вызов **веб-службы обучения** с помощью **действия выполнения пакета**. Вызов веб-службы обучения выполняется так же, как вызов прогнозной веб-службы, описанный в статье [Create predictive pipelines using Azure Machine Learning and Azure Data Factory](transform-data-using-machine-learning.md) (Создание прогнозных конвейеров с помощью Машинного обучения Azure и фабрики данных Azure). Выходные данные обучающей веб-службы — это файл iLearner, который можно использовать для обновления прогнозной веб-службы.
-- Вызов **обновления конечной точки ресурса** **прогнозной веб-службы** с помощью **действия обновления ресурса**, чтобы обновить веб-службу и добавить новую обученную модель.
+- Вызов **веб-службы обучения** с помощью **действия выполнения пакета**. Вызов веб-службы обучения выполняется так же, как вызов прогнозной веб-службы, описанный в статье [Create predictive pipelines using Azure Machine Learning and Azure Data Factory](transform-data-using-machine-learning.md) (Создание прогнозных конвейеров с помощью Машинного обучения Azure и фабрики данных Azure). Выход обучаемых web-сервисов — это файл iLearner, который можно использовать для обновления прогностической Web Service.
+- Вызов **обновления конечной точки ресурса****прогнозной веб-службы** с помощью **действия обновления ресурса**, чтобы обновить веб-службу и добавить новую обученную модель.
 
 ## <a name="azure-machine-learning-linked-service"></a>Связанная служба Машинного обучения Azure
 
@@ -195,7 +195,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 }
 ```
 
-### <a name="pipeline"></a>Конвейер
+### <a name="pipeline"></a>Pipeline
 Конвейер содержит два действия: **AzureMLBatchExecution** и **AzureMLUpdateResource**. Действие выполнения пакета принимает входные данные для обучения и создает выходной файл iLearner. Действие ресурса обновления принимает этот файл iLearner и использует его для обновления прогнозной веб-службы.
 
 ```JSON
@@ -271,9 +271,9 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)
 * [Действие Hive](transform-data-using-hadoop-hive.md)
-* [Действие Pig](transform-data-using-hadoop-pig.md)
+* [Свинья деятельность](transform-data-using-hadoop-pig.md)
 * [Действие MapReduce](transform-data-using-hadoop-map-reduce.md)
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
-* [Действие Spark](transform-data-using-spark.md)
-* [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
-* [Действие хранимой процедуры](transform-data-using-stored-procedure.md)
+* [Активность искры](transform-data-using-spark.md)
+* [пользовательская деятельность .NET](transform-data-using-dotnet-custom-activity.md)
+* [Сохраненная процедура деятельности](transform-data-using-stored-procedure.md)

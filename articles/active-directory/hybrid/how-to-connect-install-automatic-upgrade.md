@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: автоматическое обновление | Документация Майкрософт'
+title: 'Azure AD Connect: автоматическое обновление | Документация Майкрософт'
 description: В этом разделе описывается встроенная функция автоматического обновления в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -17,13 +17,13 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bfd61b78ca3027ade1f2f48dec33e0a8ed508d3d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60349850"
 ---
-# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect выполняет следующие функции: Автоматическое обновление
+# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
 
 ## <a name="overview"></a>Обзор
@@ -37,13 +37,13 @@ ms.locfileid: "60349850"
 
 Текущее состояние автоматического обновления можно узнать с помощью командлета PowerShell `Get-ADSyncAutoUpgrade`. Возможны следующие состояния:
 
-| Состояние | Комментарий |
+| Штат | Комментарий |
 | --- | --- |
-| Включено |Автоматическое обновление включено. |
-| Приостановлено |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
-| Отключено |Автоматическое обновление отключено. |
+| Активировано |Автоматическое обновление включено. |
+| Приостановлена |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
+| Выключено |Автоматическое обновление отключено. |
 
-Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  Перед 1.1.750.0 командлет Set-ADSyncAutoUpgrade заблокирует Autoupgrade, если состояние автоматическое обновление установлено на Suspended. Эта функция теперь был изменен, поэтому он не блокировал.
+Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  До 1.1.750.0 Смдлет Set-ADSyncAutoUpgrade блокировал бы autoupgrade, если состояние автоматического обновления было приостановлено. Эта функциональность теперь изменилась, поэтому она не блокирует AutoUpgrade.
 
 В качестве инфраструктуры обновлений при автоматическом обновлении используется Azure AD Connect Health. Чтобы работало автоматическое обновление, откройте в прокси-сервере URL-адреса для **Azure AD Connect Health** , указанные в статье [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
 
@@ -104,4 +104,4 @@ ms.locfileid: "60349850"
 | UpgradeNotSupportedUserWritebackEnabled |Включена функция [обратной записи пользователей](how-to-connect-preview.md#user-writeback) . |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

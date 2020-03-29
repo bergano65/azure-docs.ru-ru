@@ -1,19 +1,19 @@
 ---
-title: Настройка оповещений. портал Azure. база данных Azure для PostgreSQL — один сервер
-description: В этой статье описывается, как настроить оповещения метрик для базы данных Azure для PostgreSQL-Single Server и получить доступ к ним из портал Azure.
+title: Настройка оповещений - Портал Azure - База данных Azure для PostgreS'L - Единый сервер
+description: В этой статье описывается, как настроить и получить доступ к метрическим оповещениям для базы данных Azure для PostgreS-L - Единого сервера с портала Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: fe099dcb49d176d27466c08749a5873904d1ae2f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74766843"
 ---
-# <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---single-server"></a>Используйте портал Azure, чтобы настроить оповещения о метриках для базы данных Azure для PostgreSQL — один сервер.
+# <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---single-server"></a>Используйте портал Azure для настройки оповещений о метриках для базы данных Azure для PostgreS-L - Единый сервер
 
 В этой статье показано, как настроить оповещения для базы данных Azure для PostgreSQL с помощью портала Azure. Вы можете получать оповещения на основе метрик мониторинга для служб Azure.
 
@@ -26,7 +26,7 @@ ms.locfileid: "74766843"
 
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
 * [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Лазурный CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure
@@ -48,7 +48,7 @@ ms.locfileid: "74766843"
    
    ![Выбор метрики](./media/howto-alert-on-metric/6-configure-signal-logic.png)
 
-7. Настройте логику оповещения, в том числе **условие** (например, "Больше чем"), **пороговое значение** (например, 85 %), **агрегат времени**, **период**, в течение которого должно быть выполнено правило метрики, прежде чем будет активировано оповещение (например, "За последние 30 минут"), и **частоту**.
+7. Настройте логику оповещения, в том числе **условие** (например, "Больше чем"), **пороговое значение** (например, 85 %), **агрегат времени**, **период**, в течение которого должно быть выполнено правило метрики, прежде чем будет активировано оповещение (например, "За последние 30 минут"), и **частота**.
    
    По завершении нажмите кнопку **Готово**.
 

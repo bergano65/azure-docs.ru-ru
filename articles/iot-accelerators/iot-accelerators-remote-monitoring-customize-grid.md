@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/04/2018
 ms.topic: conceptual
 ms.openlocfilehash: a24cb7f39ccb8ea07d4dde2869dc7c924b91983a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61447103"
 ---
 # <a name="add-a-custom-grid-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга
@@ -24,19 +24,19 @@ ms.locfileid: "61447103"
 
 Пример сетки в этой статье отображает данные из службы, добавление которой описано в статье [Add a custom service to the Remote Monitoring solution accelerator web UI](iot-accelerators-remote-monitoring-customize-service.md) (Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
-- [Git](https://git-scm.com/downloads)
+- [Git](https://git-scm.com/downloads);
 - [Node.js](https://nodejs.org/download/)
 
 ## <a name="before-you-start"></a>Перед началом работы
 
 Прежде чем продолжить, необходимо выполнить шаги, указанные в следующих статьях:
 
-- [Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md);
-- [Добавление пользовательской службы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
+- [Добавьте пользовательскую страницу в пользовательский веб-пользовательский доступ к веб-пользовательскому доступу к веб-размножеству решения удаленного мониторинга.](iot-accelerators-remote-monitoring-customize-page.md)
+- [Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
 
 ## <a name="add-a-grid"></a>Добавление сетки
 
@@ -182,7 +182,7 @@ describe('BasicPage Component', () => {
 npm start
 ```
 
-Предыдущая команда запускает пользовательский интерфейс локально по адресу [http://localhost:3000/dashboard](http://localhost:3000/dashboard). Чтобы увидеть отображение данных службы в виде сетки, перейдите на страницу **Пример**.
+Предыдущая команда выполняет uI [http://localhost:3000/dashboard](http://localhost:3000/dashboard)локально на . Чтобы увидеть отображение данных службы в виде сетки, перейдите на страницу **Пример**.
 
 ## <a name="select-rows"></a>Выбор строк
 

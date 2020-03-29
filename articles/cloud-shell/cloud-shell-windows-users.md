@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/03/2018
 ms.author: damaerte
 ms.openlocfilehash: 4fc4f6523eb19294cabdf6b5b910dd346a877502
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67204142"
 ---
 # <a name="powershell-in-azure-cloud-shell-for-windows-users"></a>PowerShell в Azure Cloud Shell для пользователей Windows
@@ -36,7 +36,7 @@ ms.locfileid: "67204142"
 
 ## <a name="windows-powershell-aliases-vs-linux-utilities"></a>Псевдонимы Windows PowerShell и служебные программы Linux
 
-Имена некоторых имеющихся псевдонимов PowerShell совпадают с именами встроенных команд Linux, например `cat`,`ls`, `sort`, `sleep` и т. д. Псевдонимы PowerShell Core 6, которые противоречат встроенным командам Linux, удалены.
+Некоторые существующие псевдонимы PowerShell имеют те же названия, что `cat``ls`и `sort` `sleep`встроенные команды Linux, такие как , и т.д. В PowerShell Core 6 были удалены псевдонимы, которые сталкиваются со встроенными командами Linux.
 Ниже приведены распространенные псевдонимы, которые были удалены, а также их эквивалентные команды:  
 
 |Удаленный псевдоним   |Эквивалентная команда   |

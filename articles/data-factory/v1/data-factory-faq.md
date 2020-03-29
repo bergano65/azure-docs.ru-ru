@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 1b042c0279e458cf83bd5c81147f4b1f25d7687d
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645146"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Фабрика данных Azure — часто задаваемые вопросы
@@ -33,7 +33,7 @@ ms.locfileid: "75645146"
 Дополнительные сведения см. в статье [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](data-factory-introduction.md).
 
 ### <a name="where-can-i-find-pricing-details-for-azure-data-factory"></a>Где можно найти подробную информацию о ценах на фабрику данных Azure?
-Сведения о ценах на фабрику данных Azure см. на [странице сведений о ценах на фабрику данных][adf-pricing-details] .  
+Ознакомиться [со деталями цен][adf-pricing-details] на фабрике данных можно на странице Data Factory.  
 
 ### <a name="how-do-i-get-started-with-azure-data-factory"></a>Вопрос. Как приступить к работе с фабрикой данных Azure?
 * Общие сведения о фабрике данных Azure см. в разделе [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](data-factory-introduction.md).
@@ -50,16 +50,16 @@ ms.locfileid: "75645146"
 Вы можете проектировать и создавать фабрики данных с помощью одного из следующих инструментов или пакетов SDK.
 
 * **Visual Studio.** Фабрику данных Azure можно создать с помощью Visual Studio. Дополнительные сведения см. в разделе [Создание первой фабрики данных Azure с помощью Microsoft Visual Studio](data-factory-build-your-first-pipeline-using-vs.md).
-* **Azure PowerShell.** В разделе [Создание первой фабрики данных Azure с помощью Azure PowerShell](data-factory-build-your-first-pipeline-using-powershell.md) приведено пошаговое руководство по созданию фабрики данных с помощью PowerShell. Подробную документацию по командлетам фабрики данных см. в справочном материале по [командлетам фабрики данных][adf-powershell-reference] в библиотеке MSDN.
-* **Библиотека классов .NET.** Фабрики данных можно создавать программными средствами с помощью пакета SDK .NET для фабрик данных. Пошаговое руководство по созданию фабрики данных с помощью пакета SDK для .NET см. в разделе [Создание, мониторинг фабрик данных и управление ими с помощью пакета SDK для .NET](data-factory-create-data-factories-programmatically.md). Исчерпывающую документацию по пакету SDK .NET для фабрик данных см. в [справочнике по библиотеке классов фабрики данных][msdn-class-library-reference] .
-* Для создания и развертывания фабрик данных можно также использовать **REST API**, предоставляемый службой фабрики данных Azure. Подробную документацию по фабрике данных REST API см. в [справочнике по фабрике данных REST API][msdn-rest-api-reference] .
+* **Azure PowerShell.** В разделе [Создание первой фабрики данных Azure с помощью Azure PowerShell](data-factory-build-your-first-pipeline-using-powershell.md) приведено пошаговое руководство по созданию фабрики данных с помощью PowerShell. Полная документация по командлетам фабрики данных содержится в [справочнике по командлетам фабрики данных][adf-powershell-reference], который можно найти в библиотеке MSDN.
+* **Библиотека классов .NET.** Фабрики данных можно создавать программными средствами с помощью пакета SDK .NET для фабрик данных. Пошаговое руководство по созданию фабрики данных с помощью пакета SDK для .NET см. в разделе [Создание, мониторинг фабрик данных и управление ими с помощью пакета SDK для .NET](data-factory-create-data-factories-programmatically.md). Полную документация по пакету SDK .NET для фабрик данных см. в [справочнике по библиотеке классов фабрики данных][msdn-class-library-reference].
+* Для создания и развертывания фабрик данных можно также использовать **REST API**, предоставляемый службой фабрики данных Azure. Полную документацию по REST API для фабрик данных см. в [справочнике по REST API фабрики данных][msdn-rest-api-reference].
 * **Шаблон Azure Resource Manager.** Дополнительные сведения см. в статье [Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md).
 
 ### <a name="can-i-rename-a-data-factory"></a>Можно ли переименовать фабрику данных?
 Нет. Как и для других ресурсов Azure, имя фабрики данных Azure изменить нельзя.
 
 ### <a name="can-i-move-a-data-factory-from-one-azure-subscription-to-another"></a>Можно ли переместить фабрику данных из одной подписки Azure в другую?
-Да. Используйте кнопку **Переместить** в колонке фабрики данных, как показано на схеме ниже.
+Да. Используйте кнопку **Move** на лезвии фабрики данных, как показано на следующей диаграмме:
 
 ![Перемещение фабрики данных](media/data-factory-faq/move-data-factory.png)
 
@@ -71,11 +71,11 @@ ms.locfileid: "75645146"
 | [Кластер HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) |[DotNet](data-factory-use-custom-activities.md), [Hive](data-factory-hive-activity.md), [Pig](data-factory-pig-activity.md), [MapReduce](data-factory-map-reduce.md), [потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |
 | [Пакетная служба Azure](data-factory-compute-linked-services.md#azure-batch-linked-service) |[DotNet](data-factory-use-custom-activities.md) |
 | [Машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
-| [Azure Data Lake Analytics](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
-| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Хранимая процедура](data-factory-stored-proc-activity.md) |
+| [Аналитика озер данных Azure](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
+| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Сохраненная процедура](data-factory-stored-proc-activity.md) |
 
 ### <a name="how-does-azure-data-factory-compare-with-sql-server-integration-services-ssis"></a>Чем отличаются возможности фабрики данных Azure и SQL Server Integration Services (SSIS)? 
-Ознакомьтесь с представлением [фабрики данных Azure и служб SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) от одного из наших MVP (наиболее ценных специалистов): Рэд Reza RAD. Некоторые из последних изменений в фабрике данных могут отсутствовать в наборе слайдов. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы внесем эти обновления в сравнение технологий интеграции данных от корпорации Майкрософт позже в этом году.   
+Смотрите презентацию [Azure Data Factory vs. SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) от одного из наших MVPs (самых ценных профессионалов): Reza Rad. Некоторые из последних изменений в фабрике данных могут отсутствовать в наборе слайдов. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы внесем эти обновления в сравнение технологий интеграции данных от корпорации Майкрософт позже в этом году.   
 
 ## <a name="activities---faq"></a>Действия — вопросы и ответы
 ### <a name="what-are-the-different-types-of-activities-you-can-use-in-a-data-factory-pipeline"></a>Какие типы действий использовать в конвейере фабрики данных Azure?
@@ -105,7 +105,7 @@ ms.locfileid: "75645146"
 
 ## <a name="hdinsight-activity---faq"></a>Действие HDInsight — вопросы и ответы
 ### <a name="what-regions-are-supported-by-hdinsight"></a>В каких регионах поддерживается HDInsight?
-См. раздел географическая доступность в следующей статье: или [сведения о ценах на HDInsight][hdinsight-supported-regions].
+Ознакомьтесь с разделом "Географическая доступность" в следующей статье или см. [сведения о ценах на HDInsight][hdinsight-supported-regions].
 
 ### <a name="what-region-is-used-by-an-on-demand-hdinsight-cluster"></a>Какой регион используется кластером HDInsight по запросу?
 Кластер HDInsight по запросу создается в том же регионе, где существует хранилище, которое вы указали для использования с кластером.    
@@ -113,8 +113,8 @@ ms.locfileid: "75645146"
 ### <a name="how-to-associate-additional-storage-accounts-to-your-hdinsight-cluster"></a>Как связать дополнительные учетные записи хранения с кластером HDInsight?
 Если вы используете собственный кластер HDInsight (BYOC), ознакомьтесь со следующими разделами:
 
-* [Использование кластера HDInsight с альтернативными учетными записями хранения и Метахранилища][hdinsight-alternate-storage]
-* [Использование дополнительных учетных записей хранения в HDInsight Hive][hdinsight-alternate-storage-2]
+* [Использование кластера HDInsight с дополнительными учетными записями хранения и метахранилищами][hdinsight-alternate-storage]
+* [Использование дополнительных учетных записей хранения с Hive HDInsight][hdinsight-alternate-storage-2]
 
 При использовании кластера по запросу, созданного службой фабрики данных, следует указать дополнительные учетные записи хранения для связанной службы HDInsight, чтобы служба фабрики данных могла зарегистрировать их от вашего имени. В определении JSON для связанной службы по запросу используйте свойство **additionalLinkedServiceNames** , чтобы указать дополнительные хранилища учетных записей, как показано в следующем фрагменте кода JSON:
 
@@ -147,7 +147,7 @@ ms.locfileid: "75645146"
 
 Если имеется другая фабрика данных с конвейером, который принимает набор данных 4 (созданный конвейером 2 в фабрике данных 1), то следует пометить набор данных 4 как внешний (external), так как он производится фабрикой данных (фабрикой данных 1, не фабрикой данных 2).  
 
-**Фабрика данных 2**    
+**DataFactory2**    
 Конвейер 1: набор данных 4 -> действие 4 -> набор данных 5.
 
 Если свойство external задано неверно, проверьте, существуют ли входные данные в расположении, заданном в определении входного набора данных.
@@ -170,12 +170,12 @@ ms.locfileid: "75645146"
 
 * Запустите окно действия или срез повторно с помощью приложения для мониторинга и управления. Инструкции см. в разделе [Повторное выполнение выбранных окон действий](data-factory-monitor-manage-app.md#perform-batch-actions).   
 * Щелкните **Выполнить** в командной строке в колонке **Срез данных** для среза на портале Azure.
-* Выполните командлет **Set-аздатафакторислицестатус** с параметром status, имеющим значение **Ожидание** среза.   
+* Выполнить **Set-AzDataFactorySliceStatus** cmdlet со статусом, установленным для **ожидания** среза.   
 
     ```powershell
     Set-AzDataFactorySliceStatus -Status Waiting -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00"
     ```
-  Дополнительные сведения о командлете см. в разделе [Set-аздатафакторислицестатус][set-azure-datafactory-slice-status] .
+  Подробную информацию о cmdlet можно узнать о [cmdlet.][set-azure-datafactory-slice-status]
 
 ### <a name="how-long-did-it-take-to-process-a-slice"></a>Сколько времени занимает обработка среза?
 Узнать, сколько времени занимает обработка среза данных, можно в обозревателе окон действий в приложении мониторинга и управления. Дополнительные сведения см. в разделе [Обозреватель окон действий](data-factory-monitor-manage-app.md#activity-window-explorer).
@@ -190,7 +190,7 @@ ms.locfileid: "75645146"
 6. Вы увидите поле **ДЛИТЕЛЬНОСТЬ** со значением. Это время, затраченное на обработку среза.   
 
 ### <a name="how-to-stop-a-running-slice"></a>Как остановить выполнение среза?
-Если необходимо остановить выполнение конвейера, можно использовать командлет [Suspend-аздатафакторипипелине](/powershell/module/az.datafactory/suspend-azdatafactorypipeline) . В настоящее время приостановка конвейера не останавливает выполняющиеся срезы. После завершения текущих выполняемых задач никакие дополнительные срезы выбираются.
+Если необходимо остановить выполнение конвейера, можно использовать [смдлет Suspend-AzDataFactoryPipeline.](/powershell/module/az.datafactory/suspend-azdatafactorypipeline) В настоящее время приостановка конвейера не останавливает выполняющиеся срезы. После завершения текущих выполняемых задач никакие дополнительные срезы выбираются.
 
 Если вы действительно хотите немедленно прекратить все выполняемые задачи, единственным способом является удаление конвейера и создание его заново. Если вы решили удалить конвейер, НЕ обязательно удалять таблицы и связанные службы, используемые конвейером.
 

@@ -15,10 +15,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b4fdbbd4d71a9c97259678413cd9e59ee8aeae6b
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69032675"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Сброс пароля пользователя в Azure Active Directory
@@ -33,7 +33,7 @@ ms.locfileid: "69032675"
 
 ## <a name="to-reset-a-password"></a>Процедура сброса пароля
 
-1. Войдите в [портал Azure](https://portal.azure.com/) с правами администратора пользователя или администратора паролей. Дополнительные сведения о доступных ролях см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md#available-roles)
+1. Вопиюсь на [портал Azure](https://portal.azure.com/) в качестве администратора пользователя или администратора паролей. Дополнительные сведения о доступных ролях см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md#available-roles)
 
 2. Выберите **Azure Active Directory**, затем **Пользователи**, найдите и выберите пользователя, которому требуется сброс, и затем **Сброс пароля**.
 
@@ -44,23 +44,23 @@ ms.locfileid: "69032675"
 3. На странице **Сброс пароля** нажмите **Сбросить пароль**.
 
     > [!Note]
-    > При использовании Azure Active Directory для пользователя автоматически создается временный пароль. При использовании Active Directory локальной среды вы создаете пароль для пользователя.
+    > При использовании Active Directory Azure для пользователя автоматически генерируется временный пароль. При использовании Active Directory в предварительном помещении вы создаете пароль для пользователя.
 
 4. Скопируйте пароль и передайте его пользователю. Пользователю потребуется изменить пароль во время следующего входа в систему.
 
     >[!Note]
     >Срок действия временного пароля не ограничен. При следующем входе пользователя пароль будет по-прежнему действующим, независимо от того, сколько времени прошло с момента создания временного пароля.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После сброса пароля пользователя можно выполнить следующие базовые операции:
 
-- [Добавить или удалить пользователя](add-users-azure-active-directory.md)
+- [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 
 - [Назначение ролей пользователям](active-directory-users-assign-role-azure-portal.md)
 
-- [Добавить или изменить данные профиля](active-directory-users-profile-azure-portal.md)
+- [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
 
-- [Создать простую группу и добавить в нее участников](active-directory-groups-create-azure-portal.md)
+- [Создание простой группы и добавление участников](active-directory-groups-create-azure-portal.md)
 
 Или можно выполнить более сложные сценарии пользователей, такие как назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).

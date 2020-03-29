@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: b09ca2cc358107c5f95fe3426351d380380db3c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "66161376"
 ---
 # <a name="create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-using-azure-resource-manager-template"></a>Создание кластера HDInsight с Azure Data Lake Storage 1-го поколения с помощью шаблона Azure Resource Manager
@@ -42,15 +42,15 @@ ms.locfileid: "66161376"
 
 В этой статье мы подготовим кластер Hadoop, в котором Data Lake Storage 1-го поколения будет дополнительным хранилищем. Инструкции по созданию кластера Hadoop с Data Lake Storage 1-го поколения в качестве хранилища по умолчанию см. в статье [Создание кластера HDInsight с Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Azure PowerShell 1.0 или более поздней версии**. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
-* **Субъект-служба Azure Active Directory**. В этом учебнике приведены инструкции по созданию субъекта-службы в Azure AD. Однако, чтобы создать субъект-службу, необходимо быть администратором Azure AD. Если вы являетесь администратором Azure AD, то можете пропустить это предварительное требование и продолжить работу с учебником.
+* **Azure PowerShell 1.0 или больше**. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+* **Директор службы активного каталога Azure**. В этом учебнике приведены инструкции по созданию субъекта-службы в Azure AD. Однако, чтобы создать субъект-службу, необходимо быть администратором Azure AD. Если вы являетесь администратором Azure AD, то можете пропустить это предварительное требование и продолжить работу с учебником.
 
     **Если вы не являетесь администратором Azure AD**, то вы не сможете выполнить шаги, необходимые для создания субъекта-службы. В этом случае администратор Azure AD должен сначала создать субъект-службу, после чего вы сможете создать кластер HDInsight с Data Lake Storage 1-го поколения. При создании субъекта-службы также необходимо использовать сертификат, как описано в разделе [Create a service principal with certificate](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-certificate-from-certificate-authority) (Создание субъекта-службы с сертификатом).
 
@@ -73,7 +73,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 Шаблон развертывает ресурсы следующих типов:
 
 * [Microsoft.DataLakeStore/accounts](/azure/templates/microsoft.datalakestore/accounts)
-* [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts)
+* [Учетные записи Microsoft.Storage/Storage](/azure/templates/microsoft.storage/storageaccounts)
 * [Microsoft.HDInsight/clusters](/azure/templates/microsoft.hdinsight/clusters)
 
 ## <a name="upload-sample-data-to-data-lake-storage-gen1"></a>Отправка примера данных в Data Lake Storage 1-го поколения

@@ -1,6 +1,6 @@
 ---
-title: Вызов веб-API из классического приложения — платформа Microsoft Identity | Службы
-description: Узнайте, как создать классическое приложение, вызывающее веб-API
+title: Вызов веб-AI с настольного приложения - платформа идентификации Microsoft (ru) Azure
+description: Узнайте, как создать настольное приложение, которое вызывает web-а.П.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,26 +15,26 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 2b3d9fdc163d0661670f3d0cf6e6a276c8b691bd
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76702170"
 ---
-# <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Классическое приложение, вызывающее веб-API: вызов веб-API
+# <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Настольное приложение, которое вызывает веб-API: Вызов веб-API
 
-Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
+Теперь, когда у вас есть маркер, вы можете вызвать защищенный веб-API.
 
 ## <a name="call-a-web-api"></a>Вызов веб-API
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 [!INCLUDE [Call web API in .NET](../../../includes/active-directory-develop-scenarios-call-apis-dotnet.md)]
 
 <!--
 More includes will come later for Python and Java
 -->
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```Python
 endpoint = "url to the API"
@@ -44,7 +44,7 @@ http_headers = {'Authorization': 'Bearer ' + result['access_token'],
 data = requests.get(endpoint, headers=http_headers, stream=False).json()
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```Java
 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -63,11 +63,11 @@ if(responseCode != HttpURLConnection.HTTP_OK) {
 JSONObject responseObject = HttpClientHelper.processResponse(responseCode, response);
 ```
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[Macos](#tab/macOS)
 
 ## <a name="call-a-web-api-in-msal-for-ios-and-macos"></a>Вызов веб-API в MSAL для iOS и macOS
 
-Методы получения маркеров возвращают объект `MSALResult`. `MSALResult` предоставляет свойство `accessToken`, которое можно использовать для вызова веб-API. Перед вызовом доступа к защищенному веб-API добавьте маркер доступа в заголовок авторизации HTTP.
+Методы приобретения токенов возвращают `MSALResult` объект. `MSALResult`предоставляет свойство, `accessToken` которое может быть использовано для вызова веб-API. До того, как сделать вызов защищенного web API, до всадите маркер доступа к маркеру доступа к доступу к защищенного веб-aPI.
 
 Objective-C.
 
@@ -95,9 +95,9 @@ let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data: D
 task.resume()
 ```
 
-## <a name="call-several-apis-incremental-consent-and-conditional-access"></a>Вызов нескольких API: последовательное согласие и условный доступ
+## <a name="call-several-apis-incremental-consent-and-conditional-access"></a>Позвоните несколько AIS: Инкрементное согласие и условный доступ
 
-Чтобы вызвать несколько API для одного пользователя, после получения маркера для первого API вызовите `AcquireTokenSilent`. Вы получите маркер для других интерфейсов API в большинстве случаев.
+Чтобы вызвать несколько API для одного и того же пользователя, `AcquireTokenSilent`после получения токена для первого API позвоните в группу aIs. Большую часть времени вы получите токен для других AIS.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -107,10 +107,10 @@ result = await app.AcquireTokenSilent("scopeApi2")
                   .ExecuteAsync();
 ```
 
-Взаимодействие требуется, если:
+Взаимодействие необходимо, когда:
 
-- Пользователь, которому предоставлен доступ к первому API, теперь должен предоставить согласие на дополнительные области. Этот тип разрешения известен как добавочное согласие.
-- Первый API не требует многофакторной проверки подлинности, а следующий —.
+- Пользователь согласился на первый API, но теперь необходимо дать согласие на дополнительные области. Такого рода согласие называется дополнительным согласием.
+- Первый API не требовал многофакторной аутентификации, но другой требует.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -133,4 +133,4 @@ catch(MsalUiRequiredException ex)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Переместить в рабочую среду](scenario-desktop-production.md)
+> [Перенос в рабочую среду](scenario-desktop-production.md)

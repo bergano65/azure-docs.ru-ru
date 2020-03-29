@@ -14,16 +14,16 @@ ms.workload: NA
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: b46e9ee8fc3e14981a01cc2425a8ce55d06c5a9a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65150742"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-azure-file-sync"></a>Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure"
 
 > [!IMPORTANT]
-> На 9 июля 2019 серии StorSimple 5000/7000 подойдет к концу состоянии поддержки (EOS). Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
+> 9 июля 2019 года серия StorSimple 5000/7000 достигнет статуса поддержки (EOS). Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
 
 Перенос данных — это перемещение данных из одного места хранения в другое. В результате создается точная копия текущих данных организации и перемещается с одного устройства на другое, желательно без нарушения работы или отключения активных приложений, а затем все операции ввода-вывода перенаправляются на новое устройство. 
 
@@ -47,7 +47,7 @@ ms.locfileid: "65150742"
 
 ## <a name="migration-prerequisites"></a>Предварительные требования к миграции
 
-Ниже перечислены требования к перемещению с устаревшего устройства серий 5000/7000 в службу "Синхронизация файлов Azure". Перед началом работы убедитесь, что у вас есть следующее:
+Здесь вы найдете предпосылки миграции для вашего устаревшего устройства серии 5000 или 7000 на Azure File Sync. Прежде чем начать, убедитесь, что у вас есть:
 
 - Доступ к устройству StorSimple серий 5000/7000 с версией программного обеспечения 2.1.1.518 или новее. Более ранние версии не поддерживаются. Текущая версия программного обеспечения должна отображаться в верхнем правом углу веб-интерфейса вашего устройства StorSimple.  
     Если версия отличается от 2.1.1.518, выполните обновление системы до минимальной требуемой версии. Подробные инструкции см. в статье [Software Patch Upgrade Guide v2.1.1.518](http://onlinehelp.storsimple.com/111_Appliance/6_System_Upgrade_Guides/Current_(v2.1.1)/000_Software_Patch_Upgrade_Guide_v2.1.1.518) (Руководство по обновлению программного обеспечения до версии 2.1.1.518).
@@ -55,8 +55,8 @@ ms.locfileid: "65150742"
 - Получите доступ к узлу Windows Server, подключенному к вашему устройству StorSimple серий 5000–7000. Узел должен работать под управлением поддерживаемой версии Windows Server, как описано в статье [Планирование развертывания службы синхронизации файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning).
 - Тома StorSimple подключаются на узле и содержат общие файловые ресурсы.
 - В локальном хранилище узла достаточно места для хранения локально кэшированных данных.
-- Права владельца для доступа к подписке Azure, которую вы будете использовать для развертывания службы "Синхронизация файлов Azure". При создании облачной конечной точки для группы синхронизации могут возникнуть проблемы, если у вас нет прав владельца или администратора.
-- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-overview) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. в разделе [создать учетную запись хранилища](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+- Доступ к подписке Azure уровня владельца, которую вы будете использовать для развертывания синхронизации файлов Azure. При создании облачной конечных точек для группы синхронизации могут возникнуть проблемы, если у вас нет разрешений на уровне владельца или админа.
+- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-overview) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. в разделе [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
   - [Создание общей папки с помощью портала Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share).
 
 ## <a name="migration-process"></a>Процесс миграции
@@ -69,18 +69,18 @@ ms.locfileid: "65150742"
 
 Выполните следующие шаги, чтобы перенести общий файловый Windows, настроенный в томах StorSimple, в общий ресурс службы "Синхронизация файлов Azure". 
 1.  Выполните эти шаги в том же узле Windows Server, где подключены тома StorSimple, или используйте другую систему. 
-    - [Подготовка сервера Windows к работе со службой "Синхронизация файлов Azure"](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#prepare-windows-server-to-use-with-azure-file-sync).
-    - [Установка агента службы "Синхронизация файлов Azure"](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#install-the-azure-file-sync-agent).
-    - [Развертывание службы синхронизации хранилища](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#deploy-the-storage-sync-service). 
-    - [Регистрация Windows Server в службе синхронизации хранилища](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#register-windows-server-with-storage-sync-service). 
+    - [Подготовьте Windows-сервер к использованию с помощью синхронизации файлов Azure.](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#prepare-windows-server-to-use-with-azure-file-sync)
+    - [Установка агента синхронизации файлов Azure.](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#install-the-azure-file-sync-agent)
+    - [Развертывание службы синхронизации хранилища.](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#deploy-the-storage-sync-service) 
+    - [Регистрация Windows Server с помощью службы синхронизации с системой хранения данных.](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#register-windows-server-with-storage-sync-service) 
     - [Создание группы синхронизации и облачной конечной точки](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide#create-a-sync-group-and-a-cloud-endpoint). Вам нужно создать группы синхронизации для каждого общего файлового ресурса Windows, который необходимо перенести с узла.
-    - [Создание конечной точки сервера](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal#create-a-server-endpoint). Укажите путь в качестве пути к тому StorSimple, который содержит данные общего файлового ресурса. Например, если том StorSimple — это диск `J`, а ваши данные находятся в `J:/<myafsshare>`, добавьте этот путь в качестве конечной точки сервера. Для параметра **Tiering** (Распределение по уровням) оставьте значение **Отключено**.
+    - [Создайте конечную точку сервера.](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal#create-a-server-endpoint) Укажите путь в качестве пути к тому StorSimple, который содержит данные общего файлового ресурса. Например, если том StorSimple — это диск `J`, а ваши данные находятся в `J:/<myafsshare>`, добавьте этот путь в качестве конечной точки сервера. Для параметра **Tiering** (Распределение по уровням) оставьте значение **Отключено**.
 2.  Подождите, пока не завершится синхронизация файлового сервера. Для каждого сервера в данной группе синхронизации проверьте следующее:
     - Метки времени последней попытки синхронизации для отправки и загрузки не устарели.
     - Состояние отправки и загрузки имеет зеленый цвет.
     - В поле **Действие синхронизации** нет файлов для синхронизации или их очень мало.
     - В полях **Несинхронизирующиеся файлы** для отправки и загрузки стоит значение 0.
-    Дополнительные сведения о завершении синхронизации сервера см. в разделе [Как узнать, синхронизируются ли серверы между собой?](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cportal#how-do-i-know-if-my-servers-are-in-sync-with-each-other). Синхронизация может занять от нескольких часов до нескольких дней, в зависимости от размера данных и пропускной способности. Как только синхронизация будет завершена, все ваши данные будут безопасно размещены в общем файловом ресурсе Azure. 
+    Для получения дополнительной информации о том, когда синхронизация сервера завершена, перейдите на [Troubleshoot Azure File Sync.](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cportal#how-do-i-know-if-my-servers-are-in-sync-with-each-other) Синхронизация может занять от нескольких часов до нескольких дней, в зависимости от размера данных и пропускной способности. Как только синхронизация будет завершена, все ваши данные будут безопасно размещены в общем файловом ресурсе Azure. 
 3.  Перейдите к общим ресурсам в томах StorSimple. Щелкните правой кнопкой мыши общий ресурс и выберите **Свойства**. Обратите внимание на разрешения общего ресурса в разделе **Безопасность**. Позже эти разрешения необходимо будет вручную применить к новому ресурсу.
 4.  Следующие шаги будут зависеть от того, используете ли вы один и тот же узел Windows Server или нет.
 

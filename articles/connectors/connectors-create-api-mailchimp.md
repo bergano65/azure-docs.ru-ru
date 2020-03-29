@@ -8,25 +8,25 @@ ms.topic: article
 ms.date: 08/18/2016
 tags: connectors
 ms.openlocfilehash: a440f702058abc25bb360111418c451d59c3ab1b
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74789630"
 ---
 # <a name="get-started-with-the-mailchimp-connector"></a>Начало работы с соединителем MailChimp
 
 MailChimp — это служба SaaS, которая позволяет компаниям управлять маркетинговыми мероприятиями по электронной почте, включая отправку маркетинговых сообщений электронной почты, автоматических сообщений и целевых кампаний, и автоматизировать их.
 
-Для начала можно создать приложение логики, как описано [здесь](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+Вы можете начать с создания приложения логики сейчас, [см. Создать логическое приложение](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="create-a-connection-to-mailchimp"></a>Создание подключения к MailChimp
 
 Для создания приложений логики с помощью MailChimp необходимо создать **подключение**, а затем указать данные для следующих свойств.
 
-| Свойство | Обязательно для заполнения | Описание |
+| Свойство | Обязательно | Описание |
 | --- | --- | --- |
-| по маркеру |ДА |Укажите учетные данные MailChimp |
+| Токен |Да |Укажите учетные данные MailChimp |
 
 > [!INCLUDE [Steps to create a connection to MailChimp](../../includes/connectors-create-api-mailchimp.md)]
 

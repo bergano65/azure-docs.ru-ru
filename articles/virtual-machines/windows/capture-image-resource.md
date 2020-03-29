@@ -1,5 +1,5 @@
 ---
-title: Создание управляемого образа в Azure
+title: Создание управляемого изображения в Azure
 description: Создание управляемого образа универсальной виртуальной машины или виртуального жесткого диска в Azure. Образы можно использовать для создания нескольких виртуальных машин, использующих управляемые диски.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
 ms.openlocfilehash: 01619027ddc79530dc9541584efa9a3e518f5136
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74842064"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
@@ -31,7 +31,7 @@ ms.locfileid: "74842064"
 
 Sysprep удаляет все сведения о вашей учетной записи и безопасности, а затем подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка Sysprep для ролей сервера](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) и [неподдерживаемые сценарии](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios).
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Для получения дополнительной [информации](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) см. [Unsupported scenarios](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios)
 
 > [!IMPORTANT]
 > После применения Sysprep на виртуальной машине она считается *универсальной*, что препятствует ее перезапуску. Процесс обобщения виртуальной машины необратим. Если необходимо сохранить исходную виртуальную машину в рабочем состоянии, нужно создать [копию виртуальной машины](create-vm-specialized.md#option-3-copy-an-existing-azure-vm) и обобщить эту копию. 
@@ -57,22 +57,22 @@ Sysprep удаляет все сведения о вашей учетной за
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. Не перезапускайте виртуальную машину.
 
 > [!TIP]
-> **Необязательно** Используйте [DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-optimize-image-command-line-options) для оптимизации образа и сокращения времени первой загрузки виртуальной машины.
+> **Необязательно** Используйте [DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-optimize-image-command-line-options) для оптимизации изображения и сокращения первого времени загрузки VM.
 >
-> Чтобы оптимизировать образ, подключите виртуальный жесткий диск, дважды щелкнув его в проводнике Windows, а затем запустите DISM с параметром `/optimize-image`.
+> Чтобы оптимизировать изображение, установите VHD, дважды нажав на него `/optimize-image` в Windows Explorer, а затем запустите DISM с параметром.
 >
 > ```cmd
 > DISM /image:D:\ /optimize-image /boot
 > ```
-> Где D — путь к подключенному виртуальному жесткому диску.
+> Где D: это путь установлен VHD.
 >
-> Запуск `DISM /optimize-image` должен быть последним изменением, внесенным в виртуальный жесткий диск. Если перед развертыванием внести какие-либо изменения в виртуальный жесткий диск, необходимо будет снова запустить `DISM /optimize-image`.
+> Запуск `DISM /optimize-image` должен быть последней модификацией, которая вы внесете в ваш VHD. Если вы внесете какие-либо изменения в VHD `DISM /optimize-image` перед развертыванием, вам придется запустить снова.
 
 ## <a name="create-a-managed-image-in-the-portal"></a>Создание управляемого образа на портале 
 
-1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы управлять образом виртуальной машины. Найдите и выберите **виртуальные машины**.
+1. Перейдите на [портал Azure,](https://portal.azure.com) чтобы управлять изображением VM. Поиск и выбор **виртуальных машин.**
 
-2. Выберите виртуальную машину из списка.
+2. Выберите VM из списка.
 
 3. На странице своей **виртуальной машины** в верхнем меню выберите **Запись**.
 
@@ -80,7 +80,7 @@ Sysprep удаляет все сведения о вашей учетной за
 
 4. В поле **имя** оставьте предварительно заполненное имя или введите то, которое вы хотите использовать для образа.
 
-5. В поле **Группа ресурсов**выберите **создать** и введите имя или выберите из раскрывающегося списка группу ресурсов для использования.
+5. Для **группы ресурсов**выберите **«Создайте новое** и введите имя», либо выберите группу ресурсов для использования из списка выпадающих.
 
 6. Если вы хотите удалить исходную виртуальную машину после создания образа, выберите **Automatically delete this virtual machine after creating the image** (Автоматически удалить эту виртуальную машину после создания образа).
 
@@ -98,7 +98,7 @@ Sysprep удаляет все сведения о вашей учетной за
 
 Создание образа непосредственно из виртуальной машины гарантирует, что он будет содержать все ее диски, включая диск ОС и диски данных. В этом примере показано, как создать управляемый образ из виртуальной машины,которая использует управляемые диски.
 
-Прежде чем начать, убедитесь, что у вас установлена последняя версия модуля Azure PowerShell. Выполните `Get-Module -ListAvailable Az` в PowerShell, чтобы узнать версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, выполните командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Перед тем, как начать работу, убедитесь, что у вас есть последняя версия модуля Azure PowerShell. Выполните `Get-Module -ListAvailable Az` в PowerShell, чтобы узнать версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, выполните командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 
 > [!NOTE]
@@ -216,9 +216,9 @@ Sysprep удаляет все сведения о вашей учетной за
     ``` 
 
 
-## <a name="create-an-image-from-a-vm-that-uses-a-storage-account"></a>Создание образа из виртуальной машины, использующей учетную запись хранения
+## <a name="create-an-image-from-a-vm-that-uses-a-storage-account"></a>Создание изображения из VM, используюго учетную запись хранения данных
 
-Чтобы создать управляемый образ из виртуальной машины, которая не использует управляемые диски, вам потребуется универсальный код ресурса (URI) VHD операционной системы в учетной записи хранения в следующем формате: https://*mystorageaccount*. blob.core.windows.net/*вхдконтаинер*/*вхдфиленаме. VHD*. В этом примере VHD находится в *mystorageaccount* в контейнере с именем *vhdcontainer*, а имя файла VHD — *vhdfilename.vhd*.
+Для создания управляемого изображения из VM, который не использует управляемые диски, вам нужно URI OS VHD в учетной записи хранения, в следующем формате: https://*mystorageaccount*.blob.core.windows.net//*vhdfilename.vhd.**vhdcontainer* В этом примере VHD находится в *mystorageaccount* в контейнере с именем *vhdcontainer*, а имя файла VHD — *vhdfilename.vhd*.
 
 
 1.  Создайте несколько переменных.
@@ -251,5 +251,5 @@ Sysprep удаляет все сведения о вашей учетной за
 
     
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Создание виртуальной машины из управляемого образа](create-vm-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)    
+- [Создайте VM из управляемого изображения.](create-vm-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)    
 

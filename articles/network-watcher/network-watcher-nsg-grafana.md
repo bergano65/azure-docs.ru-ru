@@ -1,5 +1,5 @@
 ---
-title: Управление журналами потоков NSG с помощью Grafana
+title: Управление NSG поток журналы с помощью Grafana
 titleSuffix: Azure Network Watcher
 description: Управляйте журналами потоков для групп безопасности сети и анализируйте их с помощью наблюдателя за сетями и Grafana.
 services: network-watcher
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: damendo
 ms.openlocfilehash: c48d5a02cdb8ef63904642c6c2c76cb5d61e1f9d
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76840916"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-using-network-watcher-and-grafana"></a>Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana
@@ -40,7 +40,7 @@ ms.locfileid: "76840916"
 
 ### <a name="enable-network-security-group-flow-logging"></a>Включение ведения журнала потоков для групп безопасности сети
 
-В рамках данного сценария вам необходимо включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в своей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети представлены в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md).
+В рамках данного сценария вам необходимо включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в своей учетной записи. Для получения инструкций по включению журналов потоков сетевой безопасности, обратитесь к следующей статье [Введение в журнал потока для групп сетевой безопасности.](network-watcher-nsg-flow-logging-overview.md)
 
 ### <a name="setup-considerations"></a>Рекомендации по настройке
 

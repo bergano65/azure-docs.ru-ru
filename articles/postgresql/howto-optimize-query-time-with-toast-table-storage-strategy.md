@@ -1,16 +1,16 @@
 ---
-title: 'Оптимизация времени запроса с помощью стратегии хранения ВСПЛЫВАЮЩИХ таблицы в базе данных Azure для PostgreSQL: один сервер'
-description: 'В этой статье описывается, как оптимизировать время запроса со стратегией хранения ВСПЛЫВАЮЩИХ таблицы в базе данных Azure для PostgreSQL: один сервер.'
+title: Оптимизация времени запроса с помощью стратегии хранения таблицы TOAST в базе данных Azure для PostgreS-L - Единый сервер
+description: В этой статье описывается, как оптимизировать время запроса со стратегией хранения таблицы TOAST в базе данных Azure для PostgreS-L - Single Server.
 author: dianaputnam
 ms.author: dianas
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: ac1dc43a2b89bc1cc748947ec08e6ada87edbfcb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65066973"
 ---
 # <a name="optimize-query-time-with-the-toast-table-storage-strategy"></a>Оптимизация времени выполнения запросов с помощью стратегии хранения таблицы TOAST 

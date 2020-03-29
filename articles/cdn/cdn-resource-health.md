@@ -15,10 +15,10 @@ ms.workload: integration
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 6710f5e5b873f751ad21068acdc15d38574f8378
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67593440"
 ---
 # <a name="monitor-the-health-of-azure-cdn-resources"></a>Отслеживание работоспособности ресурсов Azure CDN
@@ -60,7 +60,7 @@ ms.locfileid: "67593440"
 |К сожалению, возникли проблемы при загрузке вспомогательного портала. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки.|
 К сожалению, возникли проблемы с некоторыми поставщиками CDN. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ознакомьтесь с обзором службы работоспособности ресурсов Azure](../resource-health/resource-health-overview.md).
 - [Узнайте, как устранить неполадки со сжатием CDN](./cdn-troubleshoot-compression.md).

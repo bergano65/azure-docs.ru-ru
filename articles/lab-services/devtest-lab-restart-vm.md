@@ -1,6 +1,6 @@
 ---
 title: Перезагрузка виртуальной машины в лаборатории в Azure DevTest Labs | Документация Майкрософт
-description: В этой статье приведены инструкции по быстрому и легкому перезапуску виртуальных машин в Azure DevTest Labs.
+description: В этой статье приводятся шаги к быстрому и легкому перезапуску виртуальных машин (VM) в Azure DevTest Labs.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 52d3b92909483a99eb82c86b727261bbeb5f8d46
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76760000"
 ---
 # <a name="restart-a-vm-in-a-lab-in-azure-devtest-labs"></a>Перезагрузка виртуальной машины в лаборатории в Azure DevTest Labs
@@ -56,4 +56,4 @@ ms.locfileid: "76760000"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * После перезагрузки виртуальной машины можно заново подключиться к ней, выбрав **Подключиться** на соответствующей панели управления.
-* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).
+* Исследуйте [галерею шаблонов DevTest Labs Azure Resource Manager quickStart](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates)

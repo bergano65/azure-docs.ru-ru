@@ -17,10 +17,10 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b43d2de0a366d7e69a025b2e4e2998dccda2038e
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76756217"
 ---
 # <a name="create-an-unattended-installation-script-for-the-azure-ad-application-proxy-connector"></a>Создание скрипта автоматической установки для соединителя прокси приложения Azure AD
@@ -34,7 +34,7 @@ ms.locfileid: "76756217"
 * интегрировать установку и регистрацию соединителя в другую процедуру;
 * создать стандартный образ сервера, который содержит биты соединителя, но не зарегистрирован.
 
-Чтобы [соединитель прокси приложения](application-proxy-connectors.md) работал, он должен быть зарегистрирован в каталоге Azure AD с помощью администратора приложения и пароля. Обычно эти сведения вводятся во всплывающем окне во время установки соединителя, но для автоматизации этого процесса можно использовать PowerShell.
+Для работы [разъема Приложения Proxy](application-proxy-connectors.md) необходимо зарегистрировать в каталоге Azure AD с помощью администратора приложения и пароля. Обычно эти сведения вводятся во всплывающем окне во время установки соединителя, но для автоматизации этого процесса можно использовать PowerShell.
 
 Этот процесс состоит из двух этапов. Сначала выполняется установка соединителя, а затем он регистрируется в Azure AD. 
 
@@ -53,7 +53,7 @@ ms.locfileid: "76756217"
 * Регистрация соединителя с помощью маркера, созданного в автономном режиме
 
 ### <a name="register-the-connector-using-a-windows-powershell-credential-object"></a>Регистрация соединителя с помощью объекта учетных данных Windows PowerShell
-1. Создайте объект учетных данных Windows PowerShell `$cred`, содержащий имя пользователя и пароль администратора для вашего каталога. Выполните следующую команду, заменив *\<username\>* и *\<password\>* на нужные имя пользователя и пароль:
+1. Создайте объект учетных данных Windows PowerShell `$cred`, содержащий имя пользователя и пароль администратора для вашего каталога. Выполнить следующую команду, заменив * \<имя\> пользователя* и * \<пароль:\>*
    
         $User = "<username>"
         $PlainPassword = '<password>'
@@ -66,7 +66,7 @@ ms.locfileid: "76756217"
 ### <a name="register-the-connector-using-a-token-created-offline"></a>Регистрация соединителя с помощью маркера, созданного в автономном режиме
 1. Создайте автономный маркер с помощью класса AuthenticationContext, используя значения, указанные во фрагменте кода или командлете PowerShell ниже:
 
-    **Для C#:**
+    **Используя C з:**
 
         using System;
         using System.Diagnostics;
@@ -121,7 +121,7 @@ ms.locfileid: "76756217"
             tenantID = authResult.TenantId;
         }
 
-    **Для PowerShell:**
+    **Использование PowerShell:**
 
         # Locate AzureAD PowerShell Module
         # Change Name of Module to AzureAD after what you have installed

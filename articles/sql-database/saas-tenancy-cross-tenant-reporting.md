@@ -1,5 +1,5 @@
 ---
-title: Создание отчетов о запросах в нескольких базах данных
+title: Запросы отчетности в нескольких базах данных
 description: Сведения о формировании отчетов по всем клиентам с использованием распределенных запросов.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewers: billgib,ayolubek
 ms.date: 01/25/2019
 ms.openlocfilehash: c863946934df9990c14e49ef1a0a82bbc55b27c6
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73822078"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Отчеты по всем клиентам с использованием распределенных запросов
@@ -35,7 +35,7 @@ ms.locfileid: "73822078"
 Для работы с этим руководством выполните следующие предварительные требования:
 
 
-* Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. См. инструкции из руководства по быстрому [развертыванию SaaS-приложение Wingtip Tickets c однотенантной БД](saas-dbpertenant-get-started-deploy.md).
+* Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. Чтобы развернуть менее чем за пять минут, см [Развертывание и изучить Wingtip Билеты SaaS Базы данных для арендатора приложения](saas-dbpertenant-get-started-deploy.md)
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Установите SQL Server Management Studio (SSMS). Сведения о том, как скачать и установить SSMS, см. в статье [Скачивание SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 
@@ -50,9 +50,9 @@ ms.locfileid: "73822078"
 
 Благодаря распределению запросов между базами данных клиента эластичный запрос позволяет мгновенно получить представление о текущих производственных данных. Эластичный запрос извлекает данные из потенциального множества баз данных, задержка при выполнении запроса может быть выше, чем для аналогичных запросов, отправленных к отдельной мультитенантной базе данных. Чтобы сократить объем данных, возвращаемых в головную базу данных, следует применить проектирование запросов. Как правило, эластичный запрос лучше всего подходит для получения небольших объемов данных в реальном времени, в отличие от часто используемых или сложных аналитических запросов или отчетов. Если запросы не выполняются надлежащим образом, изучите [план выполнения](https://docs.microsoft.com/sql/relational-databases/performance/display-an-actual-execution-plan), чтобы узнать, какая часть запроса перемещается в удаленную базу данных и сколько данных возвращается. Запросы, требующие сложной агрегации или аналитической обработки, могут обслуживаться лучше, если данные клиента будут извлечены в базу данных или хранилище данных, оптимизированное для аналитических запросов. Эта схема описана в [руководстве по аналитическим запросам с использованием клиентов](saas-tenancy-tenant-analytics.md). 
 
-## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Получение скриптов для приложения SaaS Wingtip Tickets с отдельной базой данных для каждого клиента
+## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Получение скриптов для SaaS-приложения Wingtip Tickets c однотенантной БД
 
-Сценарии для приложения SaaS Wingtip Tickets c мультитенантной базой данных и исходный код этого приложения вы найдете в репозитории GitHub [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant). Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
+Скрипты Ибн-антеролетов Wingtip SaaS Multi-tenant Database и исходный код приложения доступны в репо [WingtipTicketsSaAS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) GitHub. Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 
 ## <a name="create-ticket-sales-data"></a>Создание данных о продажах билетов
 
@@ -95,7 +95,7 @@ ms.locfileid: "73822078"
    ![узел "Представления"](media/saas-tenancy-cross-tenant-reporting/views.png)
 
 2. Щелкните **dbo.Venues** правой кнопкой мыши.
-3. Выберите **Создать скрипт для представления** > **Используя CREATE** > **В новом окне редактора запросов**.
+3. Выберите **представление сценария как** > **CREATE To** > **New Query Editor Window**
 
 Создайте сценарий, используя любые другие представления *Venue*, чтобы увидеть, как они добавляют *VenueId*.
 
@@ -105,7 +105,7 @@ ms.locfileid: "73822078"
 
 1. В *интегрированной среде сценариев PowerShell* откройте сценарий \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReporting.ps1*. 
 
-1. Установите **$DemoScenario = 2**, _разверните базу данных автоматизированной нерегламентированной отчетности_.
+1. Установить **$DemoScenario No 2**, Развертывание _специальной базы данных отчетности_.
 
 1. Нажмите клавишу **F5**, чтобы выполнить скрипт и создать базу данных *adhocreporting*.
 
@@ -127,7 +127,7 @@ ms.locfileid: "73822078"
 
     ![Создание внешнего источника данных](media/saas-tenancy-cross-tenant-reporting/create-external-data-source.png)
 
-   Внешние таблицы, которые ссылаются на глобальные представления, описаны в предыдущем разделе и определены с помощью параметра **DISTRIBUTION = SHARDED(VenueId)** . Так как каждое значение *VenueId* сопоставляется с отдельной базой данных, это повышает производительность во многих ситуациях, как показано в следующем разделе.
+   Внешние таблицы, которые ссылаются на глобальные представления, описаны в предыдущем разделе и определены с помощью параметра **DISTRIBUTION = SHARDED(VenueId)**. Так как каждое значение *VenueId* сопоставляется с отдельной базой данных, это повышает производительность во многих ситуациях, как показано в следующем разделе.
 
     ![Создание внешних таблиц](media/saas-tenancy-cross-tenant-reporting/external-tables.png)
 
@@ -147,7 +147,7 @@ ms.locfileid: "73822078"
 
 При проверке плана выполнения наведите указатель мыши на значки плана, чтобы получить дополнительные сведения. 
 
-Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)** , заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждый *VenueId* сопоставляется с отдельной базой данных, фильтрация легко выполняется удаленно, возвращая только необходимые данные.
+Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)**, заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Как и каждая *карта VenueId* в отдельной базе данных, фильтрация легко выполняется удаленно, возвращая только необходимые данные.
 
 1. В SSMS откройте файл \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReportingQueries.sql*.
 2. Убедитесь в наличии подключения к базе данных **adhocreporting**.
@@ -172,7 +172,7 @@ ms.locfileid: "73822078"
 
    Этот запрос выполняет более сложное соединение и агрегирование. Большая часть обработки происходит удаленно.  В головную базу данных будут возвращены только единичные строки, содержащие количество билетов, продаваемых в день по каждому месту проведения.
 
-   ![запрос](media/saas-tenancy-cross-tenant-reporting/query3-plan.png)
+   ![query](media/saas-tenancy-cross-tenant-reporting/query3-plan.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -190,4 +190,4 @@ ms.locfileid: "73822078"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * Дополнительные [руководства по SaaS-приложению Wingtip Tickets c однотенантной БД](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
-* [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](sql-database-elastic-query-overview.md)
+* [Упругий запрос](sql-database-elastic-query-overview.md)

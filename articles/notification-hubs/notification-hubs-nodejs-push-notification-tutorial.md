@@ -18,10 +18,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 6e109c5a7f4911893c81c88ae84322fb962fff6e
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71213189"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
@@ -48,7 +48,7 @@ ms.locfileid: "71213189"
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 
-Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Инструкции по созданию приложения Node. js см. в статье [Создание и развертывание приложения Node. js на веб-сайте Azure][nodejswebsite], в [облачной службе Node. js][Node.js Cloud Service] с помощью Windows PowerShell или [на веб-сайте с WebMatrix][webmatrix].
+Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Указания по созданию приложения Node.js см. в статьях [Создание и развертывание простого веб-приложения Node.js][nodejswebsite], [Построение и развертывание приложения Node.js в облачной службе Azure][Node.js Cloud Service] (с использованием Windows PowerShell) или [Создание и развертывание веб-приложения Node.js в Azure с использованием WebMatrix][webmatrix].
 
 ## <a name="configure-your-application-to-use-notification-hubs"></a>Настройка приложения для использования центров уведомлений
 
@@ -79,11 +79,11 @@ var azure = require('azure-sb');
 var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
 ```
 
-Получите значение `connectionstring` подключения на [портал Azure], выполнив следующие действия.
+Получите значение `connectionstring` подключения на [портале Azure], выполнив следующие действия.
 
 1. В области навигации слева щелкните **Обзор**.
-2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Если вам нужна помощь по созданию нового центра уведомлений, см. [руководство по начало работы магазина Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) .
-3. Выберите элемент **Параметры**.
+2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Вы можете обратиться к [учебнику Windows Store Getting Started,](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) если вам нужна помощь в создании нового концентратора уведомлений.
+3. Выберите **Параметры**.
 4. Щелкните **Политики доступа**. Вы увидите строки подключения как для общего, так и для полного доступа.
 
 ![Портал Azure — центры уведомлений](./media/notification-hubs-nodejs-how-to-use-notification-hubs/notification-hubs-portal.png)
@@ -108,7 +108,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 - **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 - **Callback** — функция обратного вызова.
 
-Дополнительные сведения о формате полезных данных см. в [документации по полезной нагрузке](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload).
+Для получения дополнительной информации о [Payload documentation](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload)формате полезной нагрузки см.
 
 В следующем коде для отправки push-уведомления всем зарегистрированным клиентам используется экземпляр `GcmService`, предоставляемый `NotificationHubService`.
 
@@ -154,7 +154,7 @@ notificationHubService.apns.send(null, payload, function(error){
 
 - **Tags** — идентификатор тега. Если тег отсутствует, уведомление отправляется всем клиентам.
 - **Payload** — полезные данные XML сообщения.
-- **TargetName** - `toast` — уведомлений во всплывающем окне. `token` для уведомлений на плитке.
+- **TargetName**  -  `toast` для уведомлений тостов. `token` для уведомлений на плитке.
 - **NotificationClass** — приоритет уведомления. Допустимые значения см. в разделе **HTTP Header Elements** (Элементы заголовка HTTP) документа [Pushing Notifications from a Server (Windows Phone)](https://msdn.microsoft.com/library/hh221551.aspx) (Push-уведомления от сервера (Windows Phone)).
 - **Options** — необязательные заголовки запроса.
 - **Callback** — функция обратного вызова.
@@ -195,14 +195,14 @@ notificationHubService.wns.send(null, payload , 'wns/toast', function(error){
 });
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Примеры фрагментов выше позволяют легко создать инфраструктуру службы для отправки push-уведомлений на широкий спектр устройств. Теперь, когда вы познакомились с основами использования центров уведомлений с Node.js, используйте следующие ссылки для получения дополнительных сведений о том, как можно дальше расширить эти возможности.
 
 - См. статью [Общие сведения о Центрах уведомлений](https://msdn.microsoft.com/library/azure/jj927170.aspx) в справочнике MSDN.
 - Дополнительные примеры и сведения о реализации доступны в репозитории [пакетов SDK Azure для Node] на сайте GitHub.
 
-[пакетов SDK Azure для Node]: https://github.com/WindowsAzure/azure-sdk-for-node
+[SDK Azure для Node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [Next Steps]: #nextsteps
 [What are Service Bus Topics and Subscriptions?]: #what-are-service-bus-topics
 [Create a Service Namespace]: #create-a-service-namespace
@@ -232,4 +232,4 @@ notificationHubService.wns.send(null, payload , 'wns/toast', function(error){
 [webmatrix]: https://docs.microsoft.com/aspnet/web-pages/videos/introduction/create-a-website-using-webmatrix
 [Node.js Cloud Service with Storage]: /develop/nodejs/tutorials/web-app-with-storage/
 [Node.js Web Application with Storage]: /develop/nodejs/tutorials/web-site-with-storage/
-[портал Azure]: https://portal.azure.com
+[Портал Azure]: https://portal.azure.com

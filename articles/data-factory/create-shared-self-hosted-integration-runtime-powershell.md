@@ -1,5 +1,5 @@
 ---
-title: Создание общей локальной среды выполнения интеграции с помощью PowerShell
+title: Создание совместного автономного времени интеграции с PowerShell
 description: Узнайте, как создать общую локальную среду выполнения интеграции в Фабрике данных Azure, обеспечивающую нескольким фабрикам данных доступ к среде выполнения интеграции.
 services: data-factory
 documentationcenter: ''
@@ -12,19 +12,19 @@ manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 10/31/2018
 ms.openlocfilehash: a2f24d8203ac5fb9724370cbdf4309bdc43c166a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75444096"
 ---
-# <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в фабрике данных Azure
+# <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общего автономного времени выполнения интеграции на фабрике данных Azure
 
-В этом руководство показано, как создать общую локальную среду выполнения интеграции в фабрике данных Azure. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных.
+В этом руководстве показано, как создать совместное автономное время выполнения интеграции в Azure Data Factory. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных.
 
-## <a name="create-a-shared-self-hosted-ir-using-azure-data-factory-ui"></a>Создание общей локальной среды IR с помощью пользовательского интерфейса фабрики данных Azure
+## <a name="create-a-shared-self-hosted-ir-using-azure-data-factory-ui"></a>Создание общего итогового итогового использования итогов
 
-Чтобы создать общий собственный IR-объект с помощью пользовательского интерфейса фабрики данных Azure, можно выполнить следующие действия.
+Для создания совместного итогового итогового использования системы данных Azure можно предпринять следующие действия:
 
 1. В локальной среде выполнения интеграции для совместного использования предоставьте разрешения фабрике данных, в которой нужно создать связанную среду IR.
       
@@ -42,20 +42,20 @@ ms.locfileid: "75444096"
       
     ![Поля для имени и идентификатора ресурса](media/create-self-hosted-integration-runtime/6_create-linkedIR_3.png)
 
-## <a name="create-a-shared-self-hosted-ir-using-azure-powershell"></a>Создание общей локальной среды IR с помощью Azure PowerShell
+## <a name="create-a-shared-self-hosted-ir-using-azure-powershell"></a>Создание совместного самостоятельного ИК с помощью Azure PowerShell
 
-Чтобы создать общедоступную локальную среду IR с помощью Azure PowerShell, можно выполнить следующие действия. 
+Для создания совместного самостоятельного ИК-иК с помощью Azure PowerShell можно предпринять следующие действия: 
 1. Создали фабрику данных. 
 1. Создайте локальную среду выполнения интеграции.
 1. Предоставьте общий доступ к локальной среде выполнения интеграции другим фабриками данных.
 1. Создайте связанную среду выполнения интеграции.
 1. Отмените общий доступ.
 
-### <a name="prerequisites"></a>Технические условия 
+### <a name="prerequisites"></a>Предварительные требования 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+- **Подписка Azure**. Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом. 
 
 - **Azure PowerShell**. Выполните инструкции из руководства [Install Azure PowerShell on Windows with PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps) (Установка Azure PowerShell в Windows c помощью PowerShellGet). С помощью PowerShell выполните скрипт, чтобы создать локальную среду выполнения интеграции, которую можно использовать совместно с другими фабриками данных. 
 
@@ -99,7 +99,7 @@ ms.locfileid: "75444096"
     > [!NOTE]  
     > Это необязательный шаг. Если у вас уже есть фабрика данных, пропустите этот шаг. 
 
-    Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) . Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
+    Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
 
     ```powershell
     New-AzResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName

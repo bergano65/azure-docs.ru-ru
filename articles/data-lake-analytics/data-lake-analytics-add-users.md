@@ -1,6 +1,6 @@
 ---
 title: Добавление пользователей к учетной записи Azure Data Lake Analytics
-description: Узнайте, как правильно добавить пользователей в учетную запись Data Lake Analytics с помощью мастера добавления пользователей и Azure PowerShell.
+description: Узнайте, как правильно добавить пользователей в учетную запись Data Lake Analytics с помощью Add User Wizard и Azure PowerShell.
 services: data-lake-analytics
 ms.service: data-lake-analytics
 author: saveenr
@@ -10,10 +10,10 @@ ms.assetid: db35f16e-1565-4873-a851-bd987accdc58
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.openlocfilehash: 16c503fe2d584d5f8256c65bfc49825b300f6a36
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71672727"
 ---
 # <a name="adding-a-user-in-the-azure-portal"></a>Добавление пользователя на портале Azure
@@ -21,9 +21,9 @@ ms.locfileid: "71672727"
 ## <a name="start-the-add-user-wizard"></a>Запуск мастера добавления пользователей
 1. Откройте Azure Data Lake Analytics через портал https://portal.azure.com.
 2. Щелкните **Мастер добавления пользователей**.
-3. На шаге **выбора пользователя** найдите пользователя, которого нужно добавить. Нажмите кнопку **Выбрать**.
+3. На шаге **выбора пользователя** найдите пользователя, которого нужно добавить. Нажмите **Выберите**.
 4. На шаге **выбора роли** выберите **Разработчик Data Lake Analytics**. Эта роль имеет минимальный набор разрешений, необходимых для отправки и отслеживания заданий U-SQL, а также управления ими. Назначьте эту роль, если группа не предназначена для управления службами Azure.
-5. На шаге **выбора каталога разрешений** выберите дополнительные базы данных, к которым пользователю понадобится доступ. Для отправки заданий необходим доступ на чтение и запись к базе данных master. Когда все будет готово, нажмите кнопку **ОК**.
+5. На шаге **выбора каталога разрешений** выберите дополнительные базы данных, к которым пользователю понадобится доступ. Для отправки заданий необходим доступ на чтение и запись к базе данных master. По завершении нажмите кнопку **ОК**.
 6. На последнем шаге, который называется **Назначение выбранных разрешений**, просмотрите изменения, которые внесет мастер. Нажмите кнопку **ОК**.
 
 
@@ -42,7 +42,7 @@ ms.locfileid: "71672727"
 
 ## <a name="adding-a-user-using-powershell"></a>Добавление пользователя с помощью PowerShell
 
-1. Следуйте инструкциям в этом руководство. [общими сведениями об Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+1. Следуйте инструкциям в руководстве по [установке и настройке Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
 2. Скачайте сценарий PowerShell [Add-AdlaJobUser.ps1](https://github.com/Azure/AzureDataLake/blob/master/Samples/PowerShell/ADLAUsers/Add-AdlaJobUser.ps1).
 3. Запустите сценарий PowerShell. 
 
@@ -51,7 +51,7 @@ ms.locfileid: "71672727"
 `Add-AdlaJobUser.ps1 -Account myadlsaccount -EntityToAdd 546e153e-0ecf-417b-ab7f-aa01ce4a7bff -EntityType User -FullReplication`
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)

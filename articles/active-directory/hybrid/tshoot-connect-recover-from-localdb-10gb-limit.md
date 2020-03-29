@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Восстановление из LocalDB с ограничением в 10 ГБ | Документация Майкрософт'
+title: 'Azure AD Connect: восстановление из LocalDB с ограничением в 10 ГБ | Документация Майкрософт'
 description: В этой статье описывается восстановление службы синхронизации Azure AD Connect при возникновении проблемы LocalDB, связанной с ограничением в 10 ГБ.
 services: active-directory
 documentationcenter: ''
@@ -17,16 +17,16 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d420c64c5834f7d3cb11d2f5f59e3ed85a54891
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60386930"
 ---
-# <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect выполняет следующие функции: Восстановление из LocalDB с ограничением в 10 ГБ
+# <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect: восстановление из LocalDB с ограничением в 10 ГБ
 Azure AD Connect требуется база данных SQL Server для хранения учетных данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. SQL Server Express налагает ограничение в размере 10 ГБ. Если при использовании LocalDB достигнут этот предел, служба синхронизации Azure AD Connect больше не сможет запускаться или выполнять синхронизацию должным образом. Эта статья содержит рекомендации по восстановлению.
 
-## <a name="symptoms"></a>Проблемы
+## <a name="symptoms"></a>Симптомы
 Существует два общих признака проблемы:
 
 * Служба синхронизации Azure AD Connect **работает**, но синхронизация завершается сбоем с ошибкой *stopped-database-disk-full*.
@@ -36,7 +36,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 ## <a name="short-term-recovery-steps"></a>Краткосрочные действия по восстановлению
 В этом разделе описаны действия для освобождения места базы данных, необходимого для возобновления работы службы синхронизации Azure AD Connect. Для этого нужно выполнить следующие действия:
 1. [Определите состояние службы синхронизации](#determine-the-synchronization-service-status).
-2. [Выполните сжатие базы данных](#shrink-the-database).
+2. [Сокращение базы данных](#shrink-the-database)
 3. [Удалите данные журнала выполнения](#delete-run-history-data).
 4. [Сократите срок хранения данных журнала выполнения](#shorten-retention-period-for-run-history-data).
 
@@ -87,7 +87,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 
 3. В разделе **Действия** выберите **Clear Runs** (Очистить выполнения).
 
-4. Вы можете **очистить все запуски** или **снимите выполнялся перед добавленным... \<даты >** параметр. Рекомендуется начать с очистки тех данных журнала выполнения, которым больше двух дней. Если вы продолжаете сталкиваться с проблемой размера базы данных, выберите параметр **Clear all runs** (Очистить все выполнения).
+4. Вы можете выбрать **Clear все работает** или очистить работает до **... дата \<>** опции. Рекомендуется начать с очистки тех данных журнала выполнения, которым больше двух дней. Если вы продолжаете сталкиваться с проблемой размера базы данных, выберите параметр **Clear all runs** (Очистить все выполнения).
 
 ### <a name="shorten-retention-period-for-run-history-data"></a>Сокращение срока хранения данных журнала выполнения
 Этот шаг необходим для снижения вероятности возникновения проблемы нехватки дискового пространства после нескольких циклов синхронизации.
@@ -101,7 +101,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 ## <a name="long-term-solution--migrate-to-full-sql"></a>Долгосрочное решение. Переход на полную версию SQL Server
 Эта проблема указывает на то, что текущий размер базы данных (10 ГБ) больше не достаточен для синхронизации локальной службы Active Directory с Azure AD. Рекомендуется перейти на использование полной версии SQL Server. Нельзя напрямую заменить LocalDB существующего развертывания Azure AD Connect полной версией SQL Server. Вместо этого необходимо развернуть новый сервер Azure AD Connect с полной версией SQL Server. Рекомендуется выполнить обновление со сменой сервера, при котором новый сервер Azure AD Connect (с базой данных SQL) развертывается в качестве промежуточного сервера рядом с существующим сервером Azure AD Connect (с LocalDB). 
 * Инструкции по настройке удаленного экземпляра SQL Server с Azure AD Connect см.в статье [Выборочная установка Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-custom).
-* Инструкции по выполнению обновления со сменой сервера для Azure AD Connect см. в статье [Azure AD Connect. Обновление до последней версии](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-upgrade-previous-version#swing-migration).
+* Инструкции по выполнению обновления со сменой сервера для Azure AD Connect см. в разделе [Обновление со сменой сервера](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-upgrade-previous-version#swing-migration).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

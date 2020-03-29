@@ -1,5 +1,5 @@
 ---
-title: 'VPN-шлюз Azure: Проверка подключения шлюза'
+title: 'Azure VPN Gateway: Проверить подключение шлюза'
 description: В этой статье показано, как проверить подключение VPN-шлюза виртуальной сети.
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/16/2017
 ms.author: cherylmc
 ms.openlocfilehash: 40417b078577424b1ba13ce60f4f773a1c8fd4dc
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75780153"
 ---
 # <a name="verify-a-vpn-gateway-connection"></a>Проверка подключения VPN-шлюза
@@ -28,7 +28,7 @@ ms.locfileid: "75780153"
 
 [!INCLUDE [PowerShell](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Чтобы проверить подключение VPN-шлюза для модели развертывания Resource Manager с помощью Azure CLI, установите последнюю версию [командлетов CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0 или более поздней версии).
 

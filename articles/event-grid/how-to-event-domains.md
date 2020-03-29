@@ -1,5 +1,5 @@
 ---
-title: Публикация событий с помощью доменов событий с помощью службы "Сетка событий Azure"
+title: Публикация событий с доменами событий с помощью Azure Event Grid
 description: Сведения об управлении большими наборами разделов в Сетке событий Azure и публикация событий в этих разделах с помощью доменов событий.
 services: event-grid
 author: banisadr
@@ -8,10 +8,10 @@ ms.author: babanisa
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.openlocfilehash: 1d07227249806b7d54523af66817a170c19354ee
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72786559"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
@@ -35,7 +35,7 @@ ms.locfileid: "72786559"
 
 Чтобы управлять большими наборами разделов, создайте домен событий.
 
-# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azurecli)
 
 ```azurecli-interactive
 # If you haven't already installed the extension, do it now.
@@ -48,7 +48,7 @@ az eventgrid domain create \
   -l <location>
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 ```azurepowershell-interactive
 # If you have not already installed the module, do it now.
 # This module is required for preview features.
@@ -86,7 +86,7 @@ New-AzureRmEventGridDomain `
 
 Сетка событий имеет две встроенные роли, которые можно использовать для назначения определенным пользователям доступа к различным разделам в пределах домена. Это роль `EventGrid EventSubscription Contributor (Preview)`, которая позволяет создавать и удалять подписки, и роль `EventGrid EventSubscription Reader (Preview)`, которая позволяет только перечислять подписки на события.
 
-# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azurecli)
 Следующая команда интерфейса командной строки Azure ограничивает `alice@contoso.com` созданием и удалением подписок на события только в разделе `demotopic1`:
 
 ```azurecli-interactive
@@ -96,7 +96,7 @@ az role assignment create \
   --scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 Следующая команда PowerShell ограничивает `alice@contoso.com` созданием и удалением подписок на события только в разделе `demotopic1`:
 
 ```azurepowershell-interactive
@@ -117,7 +117,7 @@ New-AzureRmRoleAssignment `
 
 Как правило, пользователь, которому вы предоставили доступ в предыдущем разделе, создаст подписку. Для упрощения этой статьи создайте подписку. 
 
-# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azurecli)
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
@@ -126,7 +126,7 @@ az eventgrid event-subscription create \
   --endpoint https://contoso.azurewebsites.net/api/updates
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```azurepowershell-interactive
 New-AzureRmEventGridSubscription `
@@ -146,7 +146,7 @@ New-AzureRmEventGridSubscription `
 
 ## <a name="publish-events-to-an-event-grid-domain"></a>Публикация событий в Домен службы "Сетка событий"
 
-Публикация событий в домен совпадает с публикацией [в настраиваемый раздел](./post-to-custom-topic.md). Тем не менее вместо публикации в пользовательском разделе публикуйте все события на конечную точку домена. В данных события JSON укажите раздел, к которому вы хотите добавить события. Следующий массив событий приведет к публикации события с идентификатором `"id": "1111"` в раздел `demotopic1`, а событие с идентификатором `"id": "2222"` будет отправлено в раздел `demotopic2`:
+Публикация событий в домене такая же, как [публикация на пользовательской теме.](./post-to-custom-topic.md) Тем не менее вместо публикации в пользовательском разделе публикуйте все события на конечную точку домена. В данных события JSON укажите раздел, к которому вы хотите добавить события. Следующий массив событий приведет к публикации события с идентификатором `"id": "1111"` в раздел `demotopic1`, а событие с идентификатором `"id": "2222"` будет отправлено в раздел `demotopic2`:
 
 ```json
 [{
@@ -175,7 +175,7 @@ New-AzureRmEventGridSubscription `
 }]
 ```
 
-# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azurecli)
 Чтобы получить конечную точку домена с помощью Azure CLI, выполните следующую команду:
 
 ```azurecli-interactive
@@ -192,7 +192,7 @@ az eventgrid domain key list \
   -n <my-domain>
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 Чтобы получить конечную точку домена с помощью PowerShell, выполните следующую команду:
 
 ```azurepowershell-interactive

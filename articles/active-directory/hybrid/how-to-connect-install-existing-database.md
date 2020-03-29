@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4dc6993586063c9c99a287c51d799b44f921768d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60245126"
 ---
 # <a name="install-azure-ad-connect-using-an-existing-adsync-database"></a>Установка Azure AD Connect с помощью имеющейся базы данных ADSync
@@ -59,10 +59,10 @@ Azure AD Connect требуется база данных SQL Server для хр
 1.  Скачайте установщик Azure AD Connect (AzureADConnect.MSI) на сервер Windows. Дважды щелкните установщик Azure AD Connect, чтобы начать установку Azure AD Connect.
 2.  По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".
 ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db1.png)
-3.  Запустите новую командную строку или сеанс PowerShell. Перейдите в папку «C:\Program Files\Microsoft Azure Active Directory Connect». Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
+3.  Запустите новую командную строку или сеанс PowerShell. Перейдите в папку "C:"Файлы программы "Microsoft Azure Active Directory Connect". Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
 
 > [!NOTE]
-> Используйте параметр **/UseExistingDatabase**, только когда база данных уже содержит данные из предыдущей установки Azure AD Connect. Например, когда вы переходите с локальной базы данных на полную базу данных SQL Server или при перестройке сервера Azure AD Connect, если вы восстановили резервную копию SQL базы данных ADSync из более ранней установки Azure AD Connect. Если база данных пуста, то есть его не содержит никаких данных из предыдущей установки Azure AD Connect, пропустите этот шаг.
+> Используйте параметр **/UseExistingDatabase**, только когда база данных уже содержит данные из предыдущей установки Azure AD Connect. Например, когда вы переходите с локальной базы данных на полную базу данных SQL Server или при перестройке сервера Azure AD Connect, если вы восстановили резервную копию SQL базы данных ADSync из более ранней установки Azure AD Connect. Если база данных пуста, то есть она не содержит данных из предыдущей установки Azure AD Connect, пропустите этот шаг.
 
 ![PowerShell](./media/how-to-connect-install-existing-database/db2.png)
 1. Появится экран приветствия Azure AD Connect. После принятия условий лицензии и заявления о конфиденциальности, щелкните **Продолжить**.
@@ -71,7 +71,7 @@ Azure AD Connect требуется база данных SQL Server для хр
    ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db4.png)           
 
 1. На экране **Подключение к Azure AD** необходимо предоставить учетные данные глобального администратора для каталога Azure AD. Рекомендуется использовать учетную запись в домене onmicrosoft.com по умолчанию. Эта учетная запись используется только для создания учетной записи службы в Azure AD и не используется после завершения работы мастера.
-   ![Подключение](./media/how-to-connect-install-existing-database/db5.png)
+   ![Подключить](./media/how-to-connect-install-existing-database/db5.png)
  
 1. На экране **Подключить каталоги** имеющийся лес AD, настроенный для синхронизации каталогов, помечен красным значком с крестиком. Для синхронизации изменений из локального леса AD необходима учетная запись AD DS. Мастер Azure AD Connect не может извлечь учетные данные учетной записи AD DS, хранимые в базе данных ADSync, так как они зашифрованы и могут быть расшифрованы только предыдущим сервером Azure AD Connect. Щелкните **Изменить учетные данные**, чтобы указать учетную запись AD DS для леса AD.
    ![Directories](./media/how-to-connect-install-existing-database/db6.png)
@@ -96,7 +96,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 
 Следующая таблица поможет вам выбрать необходимые дополнительные шаги.
 
-|Компонент|Действия|
+|Компонент|Шаги|
 |-----|-----|
 |Синхронизация хэша паролей| Настройки синхронизации хэша паролей и обратной записи паролей полностью восстанавливаются в Azure AD Connect, начиная с версии 1.2.65.0.  Если восстановление выполняется в более ранней версии Azure AD Connect, проверьте параметры синхронизации для этих функций, чтобы они соответствовали настройкам активного сервера синхронизации.  Никаких других действий по настройке не требуется.|
 |Федерация с AD FS|Для проверки подлинности Azure будет и далее использоваться политика AD FS, настроенная для активного сервера синхронизации.  Если вы используете Azure AD Connect для управления фермой AD FS, можете изменить метод входа на федерацию AD FS в процессе подготовки резервного сервера к переключению в режим активного экземпляра синхронизации.   Если на активном сервере синхронизации включены параметры синхронизации, их можно перенести на настраиваемый сервер с помощью задачи "Настройка параметров устройства".|
@@ -106,6 +106,6 @@ Azure AD Connect требуется база данных SQL Server для хр
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
-- См. дополнительные сведения о [предотвращении случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Azure AD Connect Health](how-to-connect-health-sync.md).
+- Дополнительные сведения об этих функциях, включенных при установке, см. в следующих статьях: [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
 - Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
-- Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+- Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

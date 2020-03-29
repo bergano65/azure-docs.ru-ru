@@ -9,10 +9,10 @@ ms.reviewer: jonfan, divswa, logicappspm
 ms.topic: article
 ms.date: 01/27/2017
 ms.openlocfilehash: 257cbd0b1a68ddd2b16235e6f8dec5d5b0eb10e2
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74790644"
 ---
 # <a name="encode-edifact-messages-for-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений EDIFACT для Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -25,7 +25,7 @@ ms.locfileid: "74790644"
 Вам понадобится следующее:
 
 * Учетная запись Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-* [Учетная запись интеграции](logic-apps-enterprise-integration-create-integration-account.md), уже определенная и связанная с подпиской Azure. Для работы с соединителем для кодирования сообщений EDIFACT потребуется учетная запись интеграции. 
+* Учетная [запись интеграции,](logic-apps-enterprise-integration-create-integration-account.md) которая уже определена и связана с подпиской Azure. Для работы с соединителем для кодирования сообщений EDIFACT потребуется учетная запись интеграции. 
 * В учетной записи интеграции должны быть определены по крайней мере два [партнера](logic-apps-enterprise-integration-partners.md).
 * В учетной записи интеграции должно быть определено [соглашение EDIFACT](logic-apps-enterprise-integration-edifact.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "74790644"
 
 5.  Когда все будет готово, данные для подключения должны выглядеть примерно так, как показано в примере. Чтобы завершить создание подключения, нажмите кнопку **Создать**.
 
-    ![Сведения о подключении к учетной записи интеграции](media/logic-apps-enterprise-integration-edifact-encode/edifactencodeimage2.png)
+    ![сведения о подключении к учетной записи интеграции](media/logic-apps-enterprise-integration-edifact-encode/edifactencodeimage2.png)
 
     Подключение создано.
 
@@ -92,5 +92,5 @@ ms.locfileid: "74790644"
 Дополнительные сведения о Swagger для соединителя EDIFACT см.в [этой статье](/connectors/edifact/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
+[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Узнайте больше о пакете корпоративной интеграции") 
 

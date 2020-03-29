@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: Добавление шлюза в виртуальную сеть: классическая модель'
+title: 'Azure ExpressRoute: Добавить шлюз в VNet: классический'
 description: Узнайте, как настроить шлюз виртуальной сети для виртуальной сети на основе классической модели развертывания с помощью командлетов PowerShell для настройки ExpressRoute.
 services: expressroute
 author: charwen
@@ -9,10 +9,10 @@ ms.date: 12/06/2019
 ms.author: charwen
 ms.custom: seodec18
 ms.openlocfilehash: d7927af5b831dbe3294e1abc3a878e323bf1867e
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74928052"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-powershell-classic"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell (классическая модель)
@@ -32,7 +32,7 @@ ms.locfileid: "74928052"
 [!INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## <a name="before-beginning"></a>Подготовка
-Убедитесь, что установлены командлеты Azure PowerShell, необходимые для этой конфигурации.
+Убедитесь, что вы установили cmdlets Azure PowerShell, необходимые для этой конфигурации.
 
 [!INCLUDE [classic powershell install instructions](../../includes/expressroute-poweshell-classic-install-include.md)]
 

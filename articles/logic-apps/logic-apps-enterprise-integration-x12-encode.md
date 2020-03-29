@@ -9,10 +9,10 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 01/27/2017
 ms.openlocfilehash: c87a61dc77e656a1cfe667ce87f852303a0cc486
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74792345"
 ---
 # <a name="encode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -25,7 +25,7 @@ ms.locfileid: "74792345"
 Вам понадобится следующее:
 
 * Учетная запись Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-* [Учетная запись интеграции](logic-apps-enterprise-integration-create-integration-account.md), уже определенная и связанная с подпиской Azure. Для работы с соединителем для кодирования сообщений X12 потребуется учетная запись интеграции.
+* Учетная [запись интеграции,](logic-apps-enterprise-integration-create-integration-account.md) которая уже определена и связана с подпиской Azure. Для работы с соединителем для кодирования сообщений X12 потребуется учетная запись интеграции.
 * В учетной записи интеграции должны быть определены по крайней мере два [партнера](logic-apps-enterprise-integration-partners.md).
 * В учетной записи интеграции должно быть определено [соглашение X12](logic-apps-enterprise-integration-x12.md).
 
@@ -56,7 +56,7 @@ ms.locfileid: "74792345"
 
     Подключение создано.
 
-    ![Сведения о подключении к учетной записи интеграции](./media/logic-apps-enterprise-integration-x12-encode/x12encodeimage3.png) 
+    ![сведения о подключении к учетной записи интеграции](./media/logic-apps-enterprise-integration-x12-encode/x12encodeimage3.png) 
 
 #### <a name="encode-x12-messages-by-agreement-name"></a>Кодирование сообщений X12 по имени соглашения
 
@@ -91,5 +91,5 @@ ms.locfileid: "74792345"
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/x12/). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
+[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Узнайте больше о пакете корпоративной интеграции") 
 

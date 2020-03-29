@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: wesmc
 ms.openlocfilehash: 94ac75c4165b11e343ce5c31480a511ebf978a36
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67838778"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-c"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (C)
@@ -51,7 +51,7 @@ ms.locfileid: "67838778"
 
 * Плата Raspberry Pi 2 или Raspberry Pi 3.
 
-* Активная подписка Azure. Если ее нет, можно создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
+* Активная подписка Azure. Если у вас нет учетной записи Azure, [создайте бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
 
 * Монитор, USB-клавиатура и мышь, подключенные к Pi.
 
@@ -76,7 +76,7 @@ ms.locfileid: "67838778"
 * Светодиодный индикатор 10 мм с рассеянным освещением.
 
 > [!NOTE]
-> Эти элементы являются необязательными, так как в образце кода поддерживает смоделированные данные датчика.
+> Эти элементы не являются обязательными, поскольку образец кода поддерживает смоделированные данные датчиков.
 >
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
@@ -89,7 +89,7 @@ ms.locfileid: "67838778"
 
 ## <a name="set-up-raspberry-pi"></a>Настройка Raspberry Pi
 
-Теперь настроим Raspberry Pi.
+Теперь установить Малина Pi.
 
 ### <a name="install-the-raspbian-operating-system-for-pi"></a>Установка операционной системы Raspbian на Pi
 
@@ -97,13 +97,13 @@ ms.locfileid: "67838778"
 
 1. Скачайте ОС Raspbian.
 
-   1. [Скачайте Raspbian Stretch с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
+   1. [Скачать Raspbian Stretch с рабочего стола](https://www.raspberrypi.org/downloads/raspbian/) (файл .zip).
 
    2. Извлеките образ ОС Raspbian в папку на компьютере.
 
 2. Установите ОС Raspbian на карту microSD.
 
-   1. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
+   1. [Скачать и установить Etcher SD карты горелки утилиты](https://etcher.io/).
 
    2. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
 
@@ -117,9 +117,9 @@ ms.locfileid: "67838778"
 
 ### <a name="enable-ssh-and-spi"></a>Включение SSH и SPI
 
-1. Подключите Pi к монитору, клавиатуре и мыши, запустите Pi, а затем войдите в Raspbian, используя `pi` имени пользователя и `raspberry` в качестве пароля.
+1. Подключите Pi к монитору, клавиатуре и мыши, запустите `pi` Pi, а `raspberry` затем войти в Raspbian, используя в качестве имени пользователя и в качестве пароля.
  
-2. Щелкните значок Raspberry и выберите **Preferences** (Параметры) > **Raspberry Pi Configuration** (Конфигурация Raspberry Pi).
+2. Нажмите значок малины > **Предпочтений** > **Малина Pi Конфигурация**.
 
    ![Меню параметров Raspbian](./media/iot-hub-raspberry-pi-kit-c-get-started/1-raspbian-preferences-menu.png)
 
@@ -166,13 +166,13 @@ ms.locfileid: "67838778"
 
 ## <a name="run-a-sample-application-on-pi"></a>Запуск примера приложения на Pi
 
-### <a name="sign-into-your-raspberry-pi"></a>Вход в устройство Raspberry Pi
+### <a name="sign-into-your-raspberry-pi"></a>Войти в ваш малина Pi
 
 1. Используйте один из следующих SSH-клиентов для подключения к Raspberry Pi с главного компьютера.
    
    **Пользователи Windows**
    1. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows. 
-   1. Скопируйте IP-адрес устройства Pi в разделе с именем узла (или IP-адресом) и выберите SSH как тип подключения.
+   1. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
    
    ![PuTTy](./media/iot-hub-raspberry-pi-kit-node-get-started/7-putty-windows.png)
 
@@ -228,13 +228,13 @@ ms.locfileid: "67838778"
 
 ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](./media/iot-hub-raspberry-pi-kit-c-get-started/8-run-output.png)
 
-## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, отправляемые в центр
+## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, полученные концентратором
 
-— Это один из способов отслеживать сообщения, отправляемые в центр Интернета вещей с устройства с помощью средств Интернета вещей Azure для Visual Studio Code. Дополнительные сведения см. в разделе [использование средств Интернета вещей Azure для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
+Одним из способов мониторинга сообщений, получаемых концентратором IoT с вашего устройства, является использование инструментов Azure IoT для визуального кода studio. Чтобы узнать больше, [см.](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)
 
-Дополнительные способы обработки данных, отправленные устройством перейдите к следующему разделу.
+Дополнительные способы обработки данных, отправляемых устройством, переследуйте на следующий раздел.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей.
 

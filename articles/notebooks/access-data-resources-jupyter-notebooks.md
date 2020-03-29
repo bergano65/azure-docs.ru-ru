@@ -1,13 +1,13 @@
 ---
-title: Доступ к данным в записных книжках Jupyter в предварительной версии Azure Notebook
-description: Узнайте, как получить доступ к файлам, интерфейсам API для мобильных устройств, базам данных и различным ресурсам службы хранилища Azure из записной книжки Jupyter.
+title: Доступ к данным в ноутбуках Jupyter - Обзор ноутбуков Azure
+description: Узнайте, как получить доступ к файлам, АПИ REST, базам данных и различным ресурсам хранения Azure из блокнота Jupyter.
 ms.topic: how-to
 ms.date: 12/04/2018
 ms.openlocfilehash: 47d2f869021851c1451a66a84b1a70ec4ff4998f
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75646353"
 ---
 # <a name="access-cloud-data-in-a-notebook"></a>Доступ к облачным данным в записной книжке
@@ -20,7 +20,7 @@ ms.locfileid: "75646353"
 
 [!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
-## <a name="rest-apis"></a>API-интерфейсы REST
+## <a name="rest-apis"></a>Интерфейсы REST API
 
 В целом, к огромному количеству данных, доступных в Интернете, можно получить доступ не через файлы, а через REST API. К счастью, вы можете использовать код для отправки запросов и получения данных JSON, так как ячейка записной книжки может содержать любой код. Затем вы можете преобразовать этот JSON в любой необходимый формат, например кадр данных Pandas.
 
@@ -47,7 +47,7 @@ if response.status_code == 200:
 
 В статье [Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python) приведены инструкции по созданию базы данных, содержащей данные AdventureWorks, и выполнению запроса к данным. Тот же код использован в примере записной книжки в этой статье.
 
-## <a name="azure-storage"></a>Служба хранилища Azure
+## <a name="azure-storage"></a>Хранилище Azure
 
 Служба хранилища Azure предоставляет несколько различных типов нереляционных хранилищ, в зависимости от типа имеющихся данных и способа доступа к ним:
 
@@ -63,8 +63,8 @@ Azure Cosmos DB предоставляет полностью индексиру
 - [Azure Cosmos DB — Создание приложения API SQL с помощью Python и портала Azure](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-python)
 - [Создание приложения Flask с использованием API Azure Cosmos DB для MongoDB](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-flask)
 - [Azure Cosmos DB — Создание графовой базы данных с помощью Python и портала Azure](https://docs.microsoft.com/azure/cosmos-db/create-graph-python)
-- [Краткое руководство. Создание приложения Cassandra с помощью Python и Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-cassandra-python)
-- [Краткое руководство. Создание приложения API таблиц с помощью Python и Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-table-python)
+- [Создайте приложение Cassandra с помощью Python и Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-cassandra-python)
+- [Создание приложения API таблиц с помощью Python и Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-table-python)
 
 При работе с Cosmos DB вы можете использовать библиотеку [azure-cosmosdb-table](https://pypi.org/project/azure-cosmosdb-table/).
 
@@ -73,11 +73,11 @@ Azure Cosmos DB предоставляет полностью индексиру
 Azure предоставляет ряд других доступных для использования типов баз данных. Приведенные ниже статьи содержат рекомендации по получению доступа к этим базам данных с помощью Python:
 
 - [База данных Azure для PostgreSQL: подключение и запрос данных с помощью Python](https://docs.microsoft.com/azure/postgresql/connect-python)
-- [Краткое руководство. использование кэша Redis для Azure с Python](https://docs.microsoft.com/azure/redis-cache/cache-python-get-started)
+- [Краткое руководство. Использование кэша Redis для Azure с Python](https://docs.microsoft.com/azure/redis-cache/cache-python-get-started)
 - [База данных Azure для MySQL: подключение и запрос данных с помощью Python](https://docs.microsoft.com/azure/mysql/connect-python)
-- [Фабрика данных Azure](https://azure.microsoft.com/services/data-factory/).
+- [Фабрика данных Azure](https://azure.microsoft.com/services/data-factory/)
   - [Code-free copy wizard for Azure Data Factory](https://azure.microsoft.com/updates/code-free-copy-wizard-for-azure-data-factory/) (Мастер копирования для службы "Фабрика данных Azure" без кода)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство. Работа с файлами данных проекта](work-with-project-data-files.md)
+- [Как: Работа с файлами данных проекта](work-with-project-data-files.md)

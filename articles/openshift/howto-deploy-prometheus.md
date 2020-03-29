@@ -1,46 +1,46 @@
 ---
-title: Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift | Документация Майкрософт
-description: Создайте экземпляр Prometheus в кластере Azure Red Hat OpenShift, чтобы отслеживать метрики приложения.
+title: Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift (ru) Документы Майкрософт
+description: Создайте экземпляр Prometheus в кластере Azure Red Hat OpenShift для мониторинга метрик приложения.
 author: makdaam
 ms.author: b-lejaku
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 06/17/2019
-keywords: Prometheus, АТО, openshift, метрики, Red Hat
+keywords: prometheus, аро, openshift, метрики, красная шляпа
 ms.openlocfilehash: f81a993caa31578e689fb3a90108f3cf0ca81fc2
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69875138"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift
 
-В этой статье описывается, как настроить автономный экземпляр Prometheus, использующий обнаружение службы в кластере Azure Red Hat OpenShift.
+В этой статье описывается, как настроить автономный экземпляр Prometheus, в который используется обнаружение службы в кластере Azure Red Hat OpenShift.
 
 > [!NOTE]
-> Доступ администратора клиента к кластеру Azure Red Hat OpenShift не требуется.
+> Доступ клиента к кластеру Azure Red Hat OpenShift не требуется.
 
-Целевая установка:
+Целевая настройка:
 
-- Один проект (Prometheus-Project), который содержит Prometheus и Алертманажер.
-- Два проекта (App-проект1 и App-Project2), которые содержат приложения для отслеживания.
+- Один проект (прометей-проект), который содержит Prometheus и Alertmanager.
+- Два проекта (app-project1 и app-project2), которые содержат приложения для мониторинга.
 
-Некоторые файлы конфигурации Prometheus будут подготавливаться локально. Создайте новую папку для хранения. Файлы конфигурации хранятся в кластере как секреты, в случае если секретные маркеры добавляются позже в кластер.
+Вы подготовите некоторые файлы конфигурации Prometheus локально. Создайте новую папку для их хранения. Файлы config хранятся в кластере как секреты, в случае, если секретные токены добавляются позже в кластер.
 
-## <a name="sign-in-to-the-cluster-by-using-the-oc-tool"></a>Вход в кластер с помощью средства OC
+## <a name="sign-in-to-the-cluster-by-using-the-oc-tool"></a>Войти в кластер с помощью инструмента OC
 
-1. Откройте веб-браузер и перейдите в веб-консоль кластера (https://openshift. *случайный идентификатор*. *Region*. azmosa.IO).
+1. Откройте веб-браузер, а затем перейдите наhttps://openshiftвеб-консоль вашего кластера ( .* случайный id*. *области*.azmosa.io).
 2. Выполните вход с использованием учетных данных Azure.
-3. Выберите свое имя пользователя в правом верхнем углу и нажмите кнопку **Копировать имя входа**.
+3. Выберите имя пользователя в правом верхнем углу, а затем выберите **команду Copy Login.**
 4. Вставьте имя пользователя в терминал, который вы будете использовать.
 
 > [!NOTE]
-> Чтобы проверить, вошли ли вы в правильный кластер, выполните `oc whoami -c` команду.
+> Чтобы узнать, вступин ли вы `oc whoami -c` в правильный кластер, запустите команду.
 
 ## <a name="prepare-the-projects"></a>Подготовка проектов
 
-Чтобы создать проекты, выполните следующие команды:
+Для создания проектов запустите следующие команды:
 ```
 oc new-project prometheus-project
 oc new-project app-project1
@@ -49,10 +49,10 @@ oc new-project app-project2
 
 
 > [!NOTE]
-> Можно либо использовать `-n` параметр или `--namespace` , либо выбрать `oc project` активный проект, выполнив команду.
+> Можно либо использовать `-n` `--namespace` параметр, либо выбрать активный `oc project` проект, запустив команду.
 
 ## <a name="prepare-the-prometheus-configuration-file"></a>Подготовка файла конфигурации Prometheus
-Создайте файл Prometheus. yml, введя следующее содержимое:
+Создайте файл prometheus.yml, введя следующее содержимое:
 ```
 global:
   scrape_interval: 30s
@@ -73,18 +73,18 @@ scrape_configs:
           - app-project1
           - app-project2
 ```
-Создайте секрет с именем Пром, введя следующую конфигурацию:
+Создайте секрет под названием Prom, введя следующую конфигурацию:
 ```
 oc create secret generic prom --from-file=prometheus.yml -n prometheus-project
 ```
 
-Файл Prometheus. yml является базовым файлом конфигурации Prometheus. Он задает интервалы и настраивает автоматическое обнаружение в трех проектах (Prometheus-Project, App-проект1, App-Project2). В предыдущем файле конфигурации Обнаруженные конечные точки отправляются по протоколу HTTP без проверки подлинности.
+Файл prometheus.yml является базовым файлом конфигурации Prometheus. Он устанавливает интервалы и настраивает автоматическое открытие в трех проектах (прометей-проект, приложение-проект1, приложение-проект2). В предыдущем файле конфигурации автоматически открытые конечные точки скребокится по HTTP без проверки подлинности.
 
-Дополнительные сведения о отходах конечных точек см. в разделе [Prometheus скапе config](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config).
+Для получения дополнительной информации о соскоб конечных точек, см [Prometheus scape конфигурации](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config).
 
 
-## <a name="prepare-the-alertmanager-config-file"></a>Подготовка файла конфигурации Алертманажер
-Создайте файл алертманажер. yml, введя следующее содержимое:
+## <a name="prepare-the-alertmanager-config-file"></a>Подготовьте файл конфигурации Alertmanager
+Создайте файл alertmanager.yml, введя следующее содержимое:
 ```
 global:
   resolve_timeout: 5m
@@ -102,30 +102,30 @@ receivers:
 - name: default
 - name: deadmansswitch
 ```
-Создайте секрет с именем Пром-Alerts, введя следующую конфигурацию:
+Создайте секрет под названием Prom-Alerts, введя следующую конфигурацию:
 ```
 oc create secret generic prom-alerts --from-file=alertmanager.yml -n prometheus-project
 ```
 
-Алертманажер. yml — это файл конфигурации диспетчера предупреждений.
+Alertmanager.yml — это файл конфигурации оповещения менеджера.
 
 > [!NOTE]
-> Чтобы проверить два предыдущих шага, выполните `oc get secret -n prometheus-project` команду.
+> Чтобы проверить два предыдущих `oc get secret -n prometheus-project` шага, запустите команду.
 
-## <a name="start-prometheus-and-alertmanager"></a>Запуск Prometheus и Алертманажер
-Перейдите в [репозиторий openshift/Origin](https://github.com/openshift/origin/tree/release-3.11/examples/prometheus) и скачайте [шаблон Prometheus-standalone.](
-https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometheus/prometheus-standalone.yaml) YAML. Примените шаблон к Prometheus-Project, введя следующую конфигурацию:
+## <a name="start-prometheus-and-alertmanager"></a>Начните Prometheus и Alertmanager
+Перейти к [openshift / происхождения репозитория](https://github.com/openshift/origin/tree/release-3.11/examples/prometheus) и скачать [prometheus-standalone.yaml](
+https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometheus/prometheus-standalone.yaml) шаблон. Примените шаблон к промете-проекту, введя следующую конфигурацию:
 ```
 oc process -f https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometheus/prometheus-standalone.yaml | oc apply -f - -n prometheus-project
 ```
-Файл Prometheus-standalone. YAML является шаблоном OpenShift. Он создаст экземпляр Prometheus с OAuth-proxy перед ним и экземпляром Алертманажер, также защищенным с помощью OAuth-proxy. В этом шаблоне OAuth-proxy настроен на разрешение любому пользователю, который может «получить» пространство имен Prometheus-Project (см `-openshift-sar` . флаг).
+Файл prometheus-standalone.yaml является шаблоном OpenShift. Он создаст экземпляр Prometheus с oauth-прокси перед ним и экземпляром Alertmanager, также обеспеченным oauth-прокси. В этом шаблоне настроен прокси-сервер oauth, чтобы позволить любому пользователю, который может `-openshift-sar` «получить» пространство имени прометея-проекта (см. флаг).
 
 > [!NOTE]
-> Чтобы проверить, равны ли Пром StatefulSet и текущие реплики числа, выполните `oc get statefulset -n prometheus-project` команду. Чтобы проверить все ресурсы в проекте, выполните `oc get all -n prometheus-project` команду.
+> Чтобы проверить, имеет ли выпускной выпускной выпускные вечера `oc get statefulset -n prometheus-project` StatefulSet равные реплики номера DESIRED и CURRENT, запустите команду. Чтобы проверить все ресурсы в `oc get all -n prometheus-project` проекте, запустите команду.
 
-## <a name="add-permissions-to-allow-service-discovery"></a>Добавление разрешений для разрешения обнаружения служб
+## <a name="add-permissions-to-allow-service-discovery"></a>Добавление разрешений для обнаружения службы
 
-Создайте файл промесеус-сдроле. yml, введя следующее содержимое:
+Создайте файл prometheus-sdrole.yml, введя следующее содержимое:
 ```
 apiVersion: template.openshift.io/v1
 kind: Template
@@ -170,7 +170,7 @@ objects:
     name: prom
     namespace: ${PROMETHEUS_PROJECT}
 ```
-Чтобы применить шаблон ко всем проектам, из которых необходимо разрешить обнаружение служб, выполните следующие команды:
+Чтобы применить шаблон ко всем проектам, из которых требуется разрешить обнаружение службы, запустите следующие команды:
 ```
 oc process -f prometheus-sdrole.yml | oc apply -f - -n app-project1
 oc process -f prometheus-sdrole.yml | oc apply -f - -n app-project2
@@ -178,40 +178,40 @@ oc process -f prometheus-sdrole.yml | oc apply -f - -n prometheus-project
 ```
 
 > [!NOTE]
-> Чтобы убедиться, что роль и ролебиндинг созданы правильно, выполните `oc get role` команды и. `oc get rolebinding`
+> Чтобы убедиться, что роль и RoleBinding `oc get role` `oc get rolebinding` были созданы правильно, запустите и команды.
 
-## <a name="optional-deploy-example-application"></a>Дополнительно Развертывание примера приложения
+## <a name="optional-deploy-example-application"></a>Дополнительно: Развертывание примера приложения
 
-Все работает, но источники метрик отсутствуют. Перейдите на URL-адрес для Prometheus (https://prom-prometheus-project.apps.*случайный идентификатор*.*регион*.azmosa.io/). Его можно найти с помощью следующей команды:
+Все работает, но нет источников метрик. Перейдите на URL-адресhttps://prom-prometheus-project.appsPrometheus ( .* случайный id*. *области*.azmosa.io/). Вы можете найти его, используя следующую команду:
 
 ```
 oc get route prom -n prometheus-project
 ```
 > [!IMPORTANT]
-> Не забудьте добавить префикс https://в начало имени узла.
+> Не забудьте добавить https:// префикс к началу имени хоста.
 
-На странице " **состояние > обнаружения службы** " отобразится 0/0 активных целевых объектов.
+Страница **"Состояние > службы обнаружения"** будет отображать 0/0 активных целей.
 
-Чтобы развернуть пример приложения, который предоставляет основные метрики Python в конечной точке/Метрикс, выполните следующие команды:
+Чтобы развернуть пример приложения, которое предоставляет основные метрики Python под конечную точку /метрики, запустите следующие команды:
 ```
 oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=example1 -n app-project1
 
 oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=example2 -n app-project2
 ```
-Новые приложения должны отображаться как допустимые целевые объекты на странице Обнаружение службы в течение 30 секунд после развертывания.
+Новые приложения должны отображаться в качестве действительных целей на странице Service Discovery в течение 30 секунд после развертывания.
 
-Для получения дополнительных сведений выберите **состояние** > **целевые объекты**.
+Для получения более подробной информации выберите**цели** **статуса.** > 
 
 > [!NOTE]
-> Для всех успешно бракованных целевых объектов Prometheus добавляет точку данных в метрику вверх. Выберите **Prometheus** в левом верхнем углу, введите в качестве выражения и нажмите кнопку **выполнить**.
+> Для каждой успешно выцарапан цели, Prometheus добавляет точку данных в вверх метрики. Выберите **Прометей** в верхнем левом углу, **введите** в качестве выражения, а затем выберите **Выполнить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В приложения можно добавить настраиваемое инструментирование Prometheus. Клиентская библиотека Prometheus, которая упрощает подготовку метрик Prometheus, готова для разных языков программирования.
+Вы можете добавить пользовательские приборы Prometheus в свои приложения. Библиотека Prometheus Client, которая упрощает подготовку метрик Prometheus, готова для различных языков программирования.
 
-Дополнительные сведения см. в следующих библиотеках GitHub:
+Для получения дополнительной информации смотрите следующие библиотеки GitHub:
 
  - [Java](https://github.com/prometheus/client_java)
  - [Python](https://github.com/prometheus/client_python)
- - [GO](https://github.com/prometheus/client_golang)
- - [Ruby](https://github.com/prometheus/client_ruby)
+ - [Перейти](https://github.com/prometheus/client_golang)
+ - [Руби](https://github.com/prometheus/client_ruby)
