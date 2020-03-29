@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
 ms.openlocfilehash: 8babacfede6e13fde629492e1cd9f80af7f0e53f
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78943069"
 ---
 # <a name="create-and-test-a-new-simulated-device"></a>Создание и тестирование нового имитированного устройства
@@ -30,7 +30,7 @@ ms.locfileid: "78943069"
 
 *Свойства*
 
-| Имя                     | Значения                      |
+| name                     | Значения                      |
 | ------------------------ | --------------------------- |
 | Color                    | Белый, красный, синий            |
 | Яркость               | 0–100                    |
@@ -40,7 +40,7 @@ ms.locfileid: "78943069"
 
 В таблице ниже приведены данные, которые система освещения потоком передает в облако.
 
-| Имя   | Значения      |
+| name   | Значения      |
 | ------ | ----------- |
 | Состояние | on, off |
 | температура; | Градусы по Фаренгейту |
@@ -53,7 +53,7 @@ ms.locfileid: "78943069"
 
 В таблице ниже приведены действия, поддерживаемые новым устройством.
 
-| Имя        |
+| name        |
 | ----------- |
 | Включение   |
 | Выключение  |
@@ -62,7 +62,7 @@ ms.locfileid: "78943069"
 
 В таблице ниже представлены начальные показатели устройства.
 
-| Имя                     | Значения |
+| name                     | Значения |
 | ------------------------ | -------|
 | Начальный цвет            | White  |
 | Начальная яркость       | 75     |
@@ -72,11 +72,11 @@ ms.locfileid: "78943069"
 
 Чтобы выполнить действия, описанные в этом руководстве, вам потребуется активная подписка Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы следовать этому пошаговому руководству, вам необходимы следующие компоненты.
 
@@ -99,7 +99,7 @@ ms.locfileid: "78943069"
 
 ### <a name="download-the-microservices"></a>Загрузка микрослужб
 
-Скачайте и распакуйте [микрослужбы мониторинга Azure](https://github.com/Azure/remote-monitoring-services-dotnet/archive/master.zip) из GitHub в подходящее место на локальном компьютере. В этой статье предполагается, что эта папка называется **remote-monitoring-services-dotnet-master**.
+Загрузите и распакуйте [микрослужбы удаленного мониторинга](https://github.com/Azure/remote-monitoring-services-dotnet/archive/master.zip) с GitHub в подходящее место на локальной машине. В этой статье предполагается, что эта папка называется **remote-monitoring-services-dotnet-master**.
 
 Скачайте и распакуйте [микрослужбу моделирования устройств](https://github.com/Azure/device-simulation-dotnet/archive/master.zip) из GitHub в подходящее место на вашем локальном компьютере. В этой статье предполагается, что эта папка называется **device-simulation-dotnet-master**.
 
@@ -107,7 +107,7 @@ ms.locfileid: "78943069"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **стораже-адаптер/WebService/appSettings. ini** и назначьте строку подключения Cosmos DB переменной **документдбконнектионстринг** .
+Откройте файл **для хранения-адаптер/WebService/appsettings.ini** и назначьте строку подключения Cosmos DB переменной **documentDBConnectionString.**
 
 Чтобы запустить микрослужбу локально, нажмите **Отладка > Начать отладку**.
 
@@ -424,7 +424,7 @@ ms.locfileid: "78943069"
 
 Откройте папку **​​device-simulation-dotnet-master**, загруженную с GitHub, в новом экземпляре Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **WebService/appSettings. ini** и назначьте строку подключения Cosmos DB **documentdb_connstring** переменной, а также измените параметры следующим образом:
+Откройте файл **WebService/appsettings.ini** и назначьте строку соединения Cosmos DB **documentdb_connstring** переменной, а также измените настройки следующим образом:
 
 ```ini
 device_models_folder = C:\temp\devicemodels\
@@ -462,7 +462,7 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 1. Откройте Postman на локальном компьютере.
 
-1. Нажмите **Файл> Импорт**. Затем нажмите **Выбор файлов**.
+1. Нажмите ** Файл> Импорт **. Затем нажмите **Выбор файлов**.
 
 1. Перейдите в папку **device-simulation-dotnet-master/docs/postman**. Выберите **Решение имитации устройств Azure IoT accelerator.postman_collection** и **Решение имитации устройств Azure IoT accelerator.postman_environment** и нажмите **Открыть**.
 
@@ -486,7 +486,7 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 Настройка и запуск имитации.
 
-1. В коллекции Postman выберите  **Создать имитацию лампочки** и нажмите **Отправить**. Этот запрос создает два экземпляра имитации устройства типа "лампочка".
+1. В коллекции Postman выберите ** Создать имитацию лампочки** и нажмите **Отправить**. Этот запрос создает два экземпляра имитации устройства типа "лампочка".
 
 1. Выход монитора событий в окне Azure CLI показывает телеметрию из имитируемых лампочек.
 

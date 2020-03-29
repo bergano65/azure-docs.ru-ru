@@ -1,142 +1,159 @@
 ---
-title: Хранение Helm диаграмм
-description: Узнайте, как хранить диаграммы Helm для приложений Kubernetes с помощью репозиториев в реестре контейнеров Azure.
+title: Диаграммы хелт магазина
+description: Узнайте, как хранить диаграммы Helm для приложений Kubernetes с помощью репозиториев в реестре контейнеров Azure
 ms.topic: article
-ms.date: 01/28/2020
-ms.openlocfilehash: 7969efe37558fffb26b983131c56ae11f3ef9368
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.date: 03/20/2020
+ms.openlocfilehash: 6304486ac493e235ed74f26ab4be4f843ef52513
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78398967"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80131480"
 ---
-# <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Отправка и извлечение Helm диаграмм в реестр контейнеров Azure
+# <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Нажмите и потяните диаграммы Helm в реестр контейнеров Azure
 
-Для быстрого управления и развертывания приложений для Kubernetes можно использовать [Диспетчер пакетов Helm с открытым исходным кодом][helm]. При использовании Helm пакеты приложений определяются как [диаграммы](https://helm.sh/docs/topics/charts/), которые собираются и сохраняются в [репозитории диаграммы Helm](https://helm.sh/docs/topics/chart_repository/).
+Для быстрого развертывания приложений и управления ими в Kubernetes можно использовать [диспетчер пакетов Helm с открытым исходным кодом][helm]. С Помощью Helm пакеты приложений определяются как [диаграммы,](https://helm.sh/docs/topics/charts/)которые собираются и хранятся в [репозитории диаграммы Helm.](https://helm.sh/docs/topics/chart_repository/)
 
-В этой статье показано, как разместить диаграммы Helm в репозиториях в реестре контейнеров Azure с помощью установки Helm 3 или Helm 2. В этом примере вы сохраняете существующую диаграмму Helm из общедоступного *Helmного* репозитория. Во многих случаях для разрабатываемых приложений можно создавать и передавать собственные диаграммы. Дополнительные сведения о создании собственных диаграмм Helm см. в разделе [Руководство разработчика шаблона диаграммы][develop-helm-charts].
+В этой статье показано, как размещать репозитории диаграмм Helm в реестре контейнеров Azure, используя установку Helm 3 или Helm 2. Во многих сценариях вы будете создавать и загружать свои собственные диаграммы для приложений, которые вы разрабатываете. Для получения дополнительной информации о том, как [Chart Template Developer's Guide][develop-helm-charts]создать свои собственные диаграммы helm, см. Вы также можете хранить существующую диаграмму Helm из другого репо Helm.
 
 > [!IMPORTANT]
-> Поддержка диаграмм Helm в реестре контейнеров Azure сейчас доступна в предварительной версии. Предварительные версии предоставляются при условии, что вы соглашаетесь с дополнительными [условиями использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+> Поддержка диаграмм helm в реестре контейнеров Azure в настоящее время находится в предварительном просмотре. Предварительные просмотры доступны для вас при условии, что вы согласны с [дополнительными условиями использования.][terms-of-use] Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
-## <a name="helm-3-or-helm-2"></a>Helm 3 или Helm 2?
+## <a name="helm-3-or-helm-2"></a>Шлем 3 или Хелм 2?
 
-Для хранения, управления и установки диаграмм Helm используется клиент Helm и интерфейс командной строки Helm. Основные выпуски клиента Helm включают Helm 3 и Helm 2. Helm 3 поддерживает новый формат диаграммы и больше не устанавливает серверный компонент кассового сервера. Дополнительные сведения о различиях версий см. в разделе [часто задаваемые вопросы о версии](https://helm.sh/docs/faq/). Если вы ранее развернули Helm 2 диаграммы, см. статью [Миграция Helm v2 на v3](https://helm.sh/docs/topics/v2_v3_migration/).
+Для хранения, управления и установки диаграмм Helm используются клиент Helm и Helm CLI. Основные релизы клиента Helm включают Helm 3 и Helm 2. Helm 3 поддерживает новый формат диаграммы и больше не устанавливает компонент сервера Tiller. Для получения подробной информации о различиях версии, [см.](https://helm.sh/docs/faq/) Если вы ранее развернули диаграммы Helm 2, см. [Migrating Helm v2 до v3.](https://helm.sh/docs/topics/v2_v3_migration/)
 
-Для размещения диаграмм Helm в реестре контейнеров Azure можно использовать Helm 3 или Helm 2 с рабочими процессами, специфичными для каждой версии:
+Вы можете использовать диаграммы Helm 3 или Helm 2 для размещения диаграмм Helm в реестре контейнеров Azure, с рабочими процессами, специфичными для каждой версии:
 
-* [Клиент Helm 3](#use-the-helm-3-client) . Используйте `helm chart` команды для управления диаграммами в реестре как [артефактами OCI](container-registry-image-formats.md#oci-artifacts)
-* [Helm 2 Client](#use-the-helm-2-client) — используйте команды [AZ запись контроля][az-acr-helm] доступа, которые можно использовать в Azure CLI для добавления реестра контейнеров и управления им в качестве репозитория Helm Chart.
+* [Клиент Helm](#use-the-helm-3-client) 3 `helm chart` - использовать команды в Helm CLI для управления диаграммами в вашем реестре как [артефакты OCI](container-registry-image-formats.md#oci-artifacts)
+* [Клиент Helm 2](#use-the-helm-2-client) - используйте команды [az acr Helm][az-acr-helm] в Azure CLI для добавления и управления реестром контейнеров в качестве репозитория диаграммы helm
 
 ### <a name="additional-information"></a>Дополнительные сведения
 
-* Для управления диаграммами как артефактами OCI рекомендуется использовать рабочий процесс Helm 3 с собственными `helm chart` командами.
-* Вы можете использовать устаревшую команду [AZ helm][az-acr-helm] Azure CLI команды и рабочий процесс с клиентом Helm 3 и диаграммами. Однако некоторые команды, такие как `az acr helm list`, несовместимы с диаграммами Helm 3.
-* Начиная с Helm 3 команды [AZ контроля доступа Helm][az-acr-helm] поддерживаются в основном для обеспечения совместимости с клиентом Helm 2 и форматом диаграммы. Дальнейшая разработка этих команд сейчас не запланирована.
+* Для большинства сценариев мы рекомендуем использовать `helm chart` рабочий процесс Helm 3 с нативными командами для управления диаграммами как артефактами OCI.
+* Вы можете использовать устаревшие команды [az acr helm][az-acr-helm] Azure CLI и рабочий процесс с клиентом Helm 3 и диаграммами. Однако некоторые команды, `az acr helm list` такие как несовместимы с диаграммами Helm 3.
+* По состоянию на 3, [команды az acr руля][az-acr-helm] поддерживаются в основном для совместимости с клиентом Helm 2 и форматом диаграммы. Дальнейшее развитие этих команд в настоящее время не планируется.
 
-## <a name="use-the-helm-3-client"></a>Использование клиента Helm 3
+## <a name="use-the-helm-3-client"></a>Используйте клиента Helm 3
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портал Azure](container-registry-get-started-portal.md) или [Azure CLI](container-registry-get-started-azure-cli.md).
-- **Helm Client Version 3.0.0 или более поздней** версии. Запустите `helm version`, чтобы найти текущую версию. Дополнительные сведения об установке и обновлении Helm см. в разделе Installing [Helm][helm-install].
-- **Кластер Kubernetes** , в котором будет установлена диаграмма Helm. При необходимости создайте [кластер службы Azure Kubernetes][aks-quickstart]. 
-- **Azure CLI Version 2.0.71 или более поздней версии** — запустите `az --version`, чтобы найти версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+- **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портала Azure](container-registry-get-started-portal.md) или [Azure CLI.](container-registry-get-started-azure-cli.md)
+- **Версия клиента helm 3.1.0** `helm version` или более поздно - Бегите для того чтобы найти вашу в настоящее время версию. Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install].
+- **Кластер Kubernetes,** где вы установите диаграмму Helm. При необходимости создайте [кластер службы Azure Kubernetes.][aks-quickstart] 
+- **Версия Azure CLI 2.0.71 или позже** - Запуск, `az --version` чтобы найти версию. Если вам нужно установить или обновить, [см.][azure-cli-install]
 
 ### <a name="high-level-workflow"></a>Рабочий процесс высокого уровня
 
-С **Helm 3** вы:
+С **helm 3** вы:
 
-* Может создать один или несколько репозиториев Helm в реестре контейнеров Azure
-* Храните Helm 3 диаграммы в реестре как [артефакты OCI](container-registry-image-formats.md#oci-artifacts). В настоящее время Helm 3 поддержка OCI считается *экспериментальной*.
-* Используйте команды `helm chart` непосредственно из интерфейса командной строки Helm, чтобы отправлять, запрашивать и управлять диаграммами Helm в реестре.
-* Выполните аутентификацию в реестре с помощью Azure CLI, который автоматически обновляет клиент Helm, используя URI и учетные данные реестра. Эти данные реестра не нужно указывать вручную, поэтому учетные данные не отображаются в журнале команд.
-* Используйте `helm install`, чтобы установить диаграммы в кластер Kubernetes из локального кэша репозитория.
+* Можно создать одно или несколько репозиторий Helm в реестре контейнеров Azure
+* Хранить helm 3 диаграммы в реестре, как [артефакты OCI](container-registry-image-formats.md#oci-artifacts). В настоящее время, Helm 3 поддержка OCI является *экспериментальным*.
+* Authenticate с вашим `helm registry login` реестром с помощью команды.
+* Используйте `helm chart` команды в Helm CLI, чтобы толкать, тянуть и управлять графиками helm в реестре
+* Используйте `helm install` для установки диаграмм в кластер Kubernetes из локального кэша репозитория.
 
-Примеры см. в следующих разделах.
+Ниже приведены разделы для примеров.
 
 ### <a name="enable-oci-support"></a>Включить поддержку OCI
 
-Задайте следующую переменную среды, чтобы включить поддержку OCI в клиенте Helm 3. В настоящее время эта поддержка экспериментальна. 
+Установите следующую переменную среды, чтобы включить поддержку OCI в клиенте Helm 3. В настоящее время эта поддержка является экспериментальной. 
 
 ```console
 export HELM_EXPERIMENTAL_OCI=1
 ```
 
-### <a name="pull-an-existing-helm-package"></a>Извлечение существующего пакета Helm
+### <a name="create-a-sample-chart"></a>Создание диаграммы образца
 
-Если вы еще не добавили `stable` репозиторий диаграммы Helm, выполните команду `helm repo add`:
-
-```console
-helm repo add stable https://kubernetes-charts.storage.googleapis.com
-```
-
-Извлечение пакета диаграммы из репозитория `stable` локально. Например, создайте локальный каталог, например *~/Акр-Хелм*, а затем скачайте существующий пакет диаграммы *stable/WordPress* . (Этот пример и другие команды в этой статье форматируются для оболочки bash.)
+Создайте тестовую диаграмму, используя следующие команды:
 
 ```console
-mkdir ~/acr-helm && cd ~/acr-helm
-helm pull stable/wordpress --untar
+mkdir helmtest
+
+cd helmtest
+helm create hello-world
 ```
 
-В команде `helm pull stable/wordpress` не указана конкретная версия, поэтому *Последняя* версия была извлечена и распакована в подкаталоге `wordpress`.
+В качестве основного примера `templates` извинайте каталог в папку и сначала удалите содержимое:
+
+```console
+rm -rf *
+```
+
+В `templates` папке создайте `configmap.yaml` файл, вызванный следующим содержимым:
+
+```yml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-world-configmap
+data:
+  myvalue: "Hello World"
+```
+
+Подробнее о создании и запуске этого примера [можно](https://helm.sh/docs/chart_template_guide/getting_started/) узнать в документах Helm.
 
 ### <a name="save-chart-to-local-registry-cache"></a>Сохранить диаграмму в локальном кэше реестра
 
-Перейдите в каталог `wordpress`, содержащий файлы диаграммы Helm. Затем запустите `helm chart save`, чтобы сохранить копию диаграммы локально, а также создайте псевдоним с полным именем реестра и целевым репозиторием и тегом. 
+Изменение каталога `hello-world` в поддиректор. Затем запустите, `helm chart save` чтобы сохранить копию диаграммы локально, а также создать псевдоним с полностью квалифицированным названием реестра (все нижний регистр) и целевой репозиторий и тег. 
 
-В следующем примере имя реестра — *миконтаинеррегистри*, целевой репозиторий — *WordPress*, а целевой тег диаграммы — *последним*, но замените значения для вашей среды.
+В следующем примере, имя реестра *mycontainerregistry*, целевой репо *привет-мир*, и целевой тег диаграммы *v1*, но заменить значения для вашей среды:
 
 ```console
-cd wordpress
-helm chart save . wordpress:latest
-helm chart save . mycontainerregistry.azurecr.io/helm/wordpress:latest
+cd ..
+helm chart save . hello-world:v1
+helm chart save . mycontainerregistry.azurecr.io/helm/hello-world:v1
 ```
 
-Запустите `helm chart list`, чтобы убедиться, что диаграммы сохранены в локальном кэше реестра. Она выводит выходные данные следующего вида:
+Запуск, `helm chart list` чтобы подтвердить, что вы сохранили диаграммы в локальном кэше реестра. Она выводит выходные данные следующего вида:
 
 ```console
 REF                                                      NAME            VERSION DIGEST  SIZE            CREATED
-wordpress:latest                                         wordpress       8.1.0   5899db0 29.1 KiB        1 day 
-mycontainerregistry.azurecr.io/helm/wordpress:latest     wordpress       8.1.0   5899db0 29.1 KiB        1 day 
+hello-world:v1                                           hello-world       0.1.0   5899db0 3.2 KiB        2 minutes 
+mycontainerregistry.azurecr.io/helm/hello-world:v1       hello-world       0.1.0   5899db0 3.2 KiB        2 minutes
 ```
 
-### <a name="push-chart-to-azure-container-registry"></a>Принудительная отправка диаграммы в реестр контейнеров Azure
+### <a name="authenticate-with-the-registry"></a>Authenticate с реестром
 
-Выполните команду `helm chart push` в интерфейсе командной строки Helm 3, чтобы отправить диаграмму Helm в репозиторий в реестре контейнеров Azure. Если он не существует, создается репозиторий.
+Запустите `helm registry login` команду в CLI Helm 3 для [проверки подлинности с помощью](container-registry-authentication.md) учетных данных, подходящих для вашего сценария.
 
-Сначала используйте команду Azure CLI [AZ запись контроля][az-acr-login] доступа для проверки подлинности в реестре:
-
-```azurecli
-az acr login --name mycontainerregistry
-```
-
-Отправьте диаграмму в полный целевой репозиторий:
+Например, создайте в реестр принцип службы активных каталогов Azure Active directory [с разрешениями на вытягивание и нажатие](container-registry-auth-service-principal.md#create-a-service-principal) (роль AcrPush). Затем предоставите основные `helm registry login`учетные данные службы. Следующий пример поставляет пароль с помощью переменной среды:
 
 ```console
-helm chart push mycontainerregistry.azurecr.io/helm/wordpress:latest
+echo $spPassword | helm registry login mycontainerregistry.azurecr.io \
+  --username <service-principal-id> \
+  --password-stdin
 ```
 
-После успешной принудительной отправки выходные данные выглядят примерно так:
+### <a name="push-chart-to-azure-container-registry"></a>Нажмите диаграмму в реестр контейнеров Azure
+
+Запустите `helm chart push` команду в Helm 3 CLI, чтобы подтолкнуть диаграмму к полностью квалифицированному целевому репозиторию:
+
+```console
+helm chart push mycontainerregistry.azurecr.io/helm/hello-world:v1
+```
+
+После успешного нажатия выход аналогичен:
 
 ```output
-The push refers to repository [mycontainerregistry.azurecr.io/helm/wordpress]
-ref:     mycontainerregistry.azurecr.io/helm/wordpress:latest
+The push refers to repository [mycontainerregistry.azurecr.io/helm/hello-world]
+ref:     mycontainerregistry.azurecr.io/helm/hello-world:v1
 digest:  5899db028dcf96aeaabdadfa5899db025899db025899db025899db025899db02
-size:    29.1 KiB
-name:    wordpress
-version: 8.1.0
+size:    3.2 KiB
+name:    hello-world
+version: 0.1.0
 ```
 
 ### <a name="list-charts-in-the-repository"></a>Вывод списка диаграмм в репозитории
 
-Как и в случае с изображениями, хранящимися в реестре контейнеров Azure, можно использовать команды [AZ контроля][az-acr-repository] учетных записей, чтобы отобразить репозитории, в которых размещены диаграммы, а также теги и манифесты диаграммы. 
+Как и в том, что изображения хранятся в реестре контейнеров Azure, можно использовать команды [репозитория az acr,][az-acr-repository] чтобы показать репозитории, вмещая ваши диаграммы, а также теги и манифесты диаграмм. 
 
-Например, выполните команду [AZ контроля доступа к репозиторию][az-acr-repository-show] , чтобы просмотреть свойства репозитория, созданного на предыдущем шаге.
+Например, выполнить [репозиторий az acr,][az-acr-repository-show] чтобы увидеть свойства репо, созданного на предыдущем этапе:
 
 ```azurecli
 az acr repository show \
   --name mycontainerregistry \
-  --repository helm/wordpress
+  --repository helm/hello-world
 ```
 
 Она выводит выходные данные следующего вида:
@@ -149,159 +166,147 @@ az acr repository show \
     "readEnabled": true,
     "writeEnabled": true
   },
-  "createdTime": "2020-01-29T16:54:30.1514833Z",
-  "imageName": "helm/wordpress",
-  "lastUpdateTime": "2020-01-29T16:54:30.4992247Z",
+  "createdTime": "2020-03-20T18:11:37.6701689Z",
+  "imageName": "helm/hello-world",
+  "lastUpdateTime": "2020-03-20T18:11:37.7637082Z",
   "manifestCount": 1,
   "registry": "mycontainerregistry.azurecr.io",
   "tagCount": 1
 }
 ```
 
-Чтобы просмотреть сведения о диаграмме, хранящейся в репозитории, выполните команду AZ запись в [репозитории: Показать-манифесты][az-acr-repository-show-manifests] . Например:
+Выполнить команду [шоу-манифестов аз-акр,][az-acr-repository-show-manifests] чтобы увидеть детали диаграммы, хранящиеся в репозитории. Пример:
 
 ```azurecli
 az acr repository show-manifests \
   --name mycontainerregistry \
-  --repository helm/wordpress --detail
+  --repository helm/hello-world --detail
 ```
 
-Выходные данные, сокращенные в этом примере, показывают `configMediaType` `application/vnd.cncf.helm.config.v1+json`:
+Выход, сокращенный в этом `configMediaType` примере, `application/vnd.cncf.helm.config.v1+json`показывает:
 
 ```output
 [
   {
     [...]
     "configMediaType": "application/vnd.cncf.helm.config.v1+json",
-    "createdTime": "2020-01-29T16:54:30.2382436Z",
-    "digest": "sha256:xxxxxxxx51bc0807bfa97cb647e493ac381b96c1f18749b7388c24bbxxxxxxxxx",
-    "imageSize": 29995,
-    "lastUpdateTime": "2020-01-29T16:54:30.3492436Z",
+    "createdTime": "2020-03-20T18:11:37.7167893Z",
+    "digest": "sha256:0c03b71c225c3ddff53660258ea16ca7412b53b1f6811bf769d8c85a1f0663ee",
+    "imageSize": 3301,
+    "lastUpdateTime": "2020-03-20T18:11:37.7167893Z",
     "mediaType": "application/vnd.oci.image.manifest.v1+json",
     "tags": [
-      "latest"
+      "v1"
     ]
-  }
-]
 ```
 
-### <a name="pull-chart-to-local-cache"></a>Извлечь диаграмму в локальный кэш
+### <a name="pull-chart-to-local-cache"></a>Потяните диаграмму к локальному кэшу
 
-Чтобы установить Helm диаграмму в Kubernetes, эта диаграмма должна находиться в локальном кэше. В этом примере сначала запустите `helm chart remove`, чтобы удалить существующую локальную диаграмму с именем `mycontainerregistry.azurecr.io/helm/wordpress:latest`:
+Чтобы установить диаграмму Helm в Kubernetes, диаграмма должна быть в локальном кэше. В этом примере `helm chart remove` сначала запустите, `mycontainerregistry.azurecr.io/helm/hello-world:v1`чтобы удалить существующую локальную диаграмму с именем:
 
 ```console
-helm chart remove mycontainerregistry.azurecr.io/helm/wordpress:latest
+helm chart remove mycontainerregistry.azurecr.io/helm/hello-world:v1
 ```
 
-Запустите `helm chart pull`, чтобы скачать диаграмму из реестра контейнеров Azure в локальный кэш:
+Выполнить, `helm chart pull` чтобы загрузить диаграмму из реестра контейнеров Azure в локальном кэше:
 
 ```console
-helm chart pull mycontainerregistry.azurecr.io/helm/wordpress:latest
+helm chart pull mycontainerregistry.azurecr.io/helm/hello-world:v1
 ```
 
-### <a name="export-helm-chart"></a>Экспортировать Helm диаграмму
+### <a name="export-helm-chart"></a>Диаграмма экспортной хелбы
 
-Для дальнейшей работы с диаграммой экспортируйте ее в локальный каталог с помощью `helm chart export`. Например, экспортируйте диаграмму, которая была извлечена в каталог `install`:
+Чтобы продолжить работу с диаграммой, экспортировать `helm chart export`его в локальный каталог с помощью . Например, экспортировать диаграмму, `install` потянунную в каталог:
 
 ```console
-helm chart export mycontainerregistry.azurecr.io/helm/wordpress:latest --destination ./install
+helm chart export mycontainerregistry.azurecr.io/helm/hello-world:v1 \
+  --destination ./install
 ```
 
-Чтобы просмотреть сведения о экспортированной диаграмме в репозитории, выполните команду `helm inspect chart` в каталоге, в который была экспортирована диаграмма.
+Чтобы просмотреть информацию для экспортируемой диаграммы в репо, запустите `helm show chart` команду в каталоге, где вы экспортировали диаграмму.
 
 ```console
 cd install
-helm inspect chart wordpress
+helm show chart hello-world
 ```
 
-Если номер версии не указан, используется *последняя* версия. Helm возвращает подробные сведения о диаграмме, как показано в следующем сжатом выводе:
+Helm возвращает подробную информацию о последней версии диаграммы, как показано на следующем выходе образца:
 
 ```output
-apiVersion: v1
-appVersion: 5.3.2
-dependencies:
-- condition: mariadb.enabled
-  name: mariadb
-  repository: https://kubernetes-charts.storage.googleapis.com/
-  tags:
-  - wordpress-database
-  version: 7.x.x
-description: Web publishing platform for building blogs and websites.
-home: http://www.wordpress.com/
-icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
-keywords:
-- wordpress
-- cms
-- blog
-- http
-- web
-- application
-- php
-maintainers:
-- email: containers@bitnami.com
-  name: Bitnami
-name: wordpress
-sources:
-- https://github.com/bitnami/bitnami-docker-wordpress
-version: 8.1.0
+apiVersion: v2
+appVersion: 1.16.0
+description: A Helm chart for Kubernetes
+name: hello-world
+type: application
+version: 0.1.0    
 ```
 
-### <a name="install-helm-chart"></a>Установить Helm диаграмму
+### <a name="install-helm-chart"></a>Установка диаграммы руля
 
-Запустите `helm install`, чтобы установить диаграмму Helm, которая была извлечена в локальный кэш и экспортирована. Укажите имя выпуска или передайте параметр `--generate-name`. Например:
+Выполнить `helm install` для установки диаграммы helm вы вытащили в локальный кэш и экспортируется. Укажите имя релиза, такое `--generate-name` как *myhelmtest,* или передайте параметр. Пример:
 
 ```console
-helm install wordpress --generate-name
+helm install myhelmtest ./hello-world
 ```
 
-По мере продолжения установки следуйте инструкциям в выходных данных команды, чтобы просмотреть URL-адреса и учетные данные Ворпресс. Можно также выполнить команду `kubectl get pods`, чтобы просмотреть ресурсы Kubernetes, развернутые с помощью диаграммы Helm:
+Выход после успешной установки диаграммы аналогичен:
 
-```output
-NAME                                    READY   STATUS    RESTARTS   AGE
-wordpress-1598530621-67c77b6d86-7ldv4   1/1     Running   0          2m48s
-wordpress-1598530621-mariadb-0          1/1     Running   0          2m48s
-[...]
+```console
+NAME: myhelmtest
+LAST DEPLOYED: Fri Mar 20 14:14:42 2020
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+```
+
+Чтобы проверить установку, `helm get manifest` запустите команду. Команда возвращает данные YAML `configmap.yaml` в файл шаблона.
+
+Выполнить, `helm uninstall` чтобы удалить релиз диаграммы на кластере:
+
+```console
+helm uninstall myhelmtest
 ```
 
 ### <a name="delete-a-helm-chart-from-the-repository"></a>Удаление диаграммы Helm из репозитория
 
-Чтобы удалить диаграмму из репозитория, используйте команду [AZ запись репозитория Delete][az-acr-repository-delete] . Выполните следующую команду и подтвердите операцию при появлении запроса:
+Чтобы удалить диаграмму из репозитория, используйте команду [удаления репозитория az acr.][az-acr-repository-delete] Выполнить следующую команду и подтвердить операцию, когда предложено:
 
 ```azurecli
-az acr repository delete --name mycontainerregistry --image helm/wordpress:latest
+az acr repository delete --name mycontainerregistry --image helm/hello-world:v1
 ```
 
-## <a name="use-the-helm-2-client"></a>Использование клиента Helm 2
+## <a name="use-the-helm-2-client"></a>Используйте клиента Helm 2
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портал Azure](container-registry-get-started-portal.md) или [Azure CLI](container-registry-get-started-azure-cli.md).
-- **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)** . Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости создайте [кластер службы Azure Kubernetes][aks-quickstart]. Дополнительные сведения об установке и обновлении Helm см. в разделе Installing [Helm][helm-install-v2].
-- **Azure CLI версии 2.0.46 или более поздней.** Выполните команду `az --version`, чтобы получить сведения о версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+- **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портала Azure](container-registry-get-started-portal.md) или [Azure CLI.](container-registry-get-started-azure-cli.md)
+- **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)**. Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости создайте [кластер службы Azure Kubernetes.][aks-quickstart] Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install-v2].
+- **Azure CLI версии 2.0.46 или более поздней.** Выполните команду `az --version`, чтобы получить сведения о версии. Если вам нужно установить или обновить, [см.][azure-cli-install]
 
 ### <a name="high-level-workflow"></a>Рабочий процесс высокого уровня
 
-С **Helm 2** вы:
+С **helm 2** вы:
 
-* Настройте реестр контейнеров Azure как *единое* хранилище диаграмм Helm. Реестр контейнеров Azure управляет определением индекса при добавлении и удалении диаграмм в репозитории.
-* Используйте команды [AZ Helm][az-acr-helm] в Azure CLI, чтобы добавить реестр контейнеров Azure в качестве репозитория диаграммы Helm, а также для отправки диаграмм и управления ими. Эти Azure CLI команды создают оболочку для команд клиента Helm 2.
-* Добавьте репозиторий диаграммы в реестр контейнеров Azure в локальный индекс репозитория Helm, поддерживающий поиск в диаграмме.
-* Выполните аутентификацию в реестре контейнеров Azure с помощью Azure CLI, который автоматически обновляет клиент Helm, используя URI и учетные данные реестра. Эти данные реестра не нужно указывать вручную, поэтому учетные данные не отображаются в журнале команд.
-* Используйте `helm install`, чтобы установить диаграммы в кластер Kubernetes из локального кэша репозитория.
+* Навлаживайте реестр контейнеров Azure в *качестве единого* репозитория диаграммы Helm. Реестр контейнеров Azure управляет определением индекса при добавлении и удалении диаграмм в репозиторий.
+* Authenticate с вашим реестром контейнеров Azure через Azure CLI, который затем автоматически обновляет ваш клиент Helm с реестром URI и учетными данными. Вам не нужно вручную указывать эту информацию реестра, поэтому учетные данные не будут раскрыты в истории команд.
+* Используйте команды [az acr helm][az-acr-helm] в Azure CLI, чтобы добавить реестр контейнеров Azure в качестве репозитория диаграммы руля, а также нажать и управлять диаграммами. Эти команды Azure CLI обертывания команд клиента Helm 2.
+* Добавьте репозиторий диаграммы в реестр контейнеров Azure в локальный индекс репо Helm, поддерживая поиск диаграммы.
+* Используйте `helm install` для установки диаграмм в кластер Kubernetes из локального кэша репозитория.
 
-Примеры см. в следующих разделах.
+Ниже приведены разделы для примеров.
 
-### <a name="add-repository-to-helm-client"></a>Добавление репозитория в клиент Helm
+### <a name="add-repository-to-helm-client"></a>Добавление репозитория клиенту Helm
 
-Добавьте в клиент Helm репозиторий диаграммы Helm реестра контейнеров Azure с помощью команды [AZ контроля доступа Helm репозиторий][az-acr-helm-repo-add] . Эта команда предоставляет маркер аутентификации для Реестра контейнеров Azure, используемый клиентом Helm. Маркер проверки подлинности действителен в течение 3 часов. Как и `docker login`, эту команду можно выполнить в будущих сеансах интерфейса командной строки для аутентификации клиента Helm в репозитории диаграмм Helm Реестра контейнеров Azure:
+Добавьте репозиторий диаграммы реестра контейнеров Azure Вашего клиента Helm, используя команду [репо az acr helm.][az-acr-helm-repo-add] Эта команда предоставляет маркер аутентификации для Реестра контейнеров Azure, используемый клиентом Helm. Токен проверки подлинности действителен в течение 3 часов. Как и `docker login`, эту команду можно выполнить в будущих сеансах интерфейса командной строки для аутентификации клиента Helm в репозитории диаграмм Helm Реестра контейнеров Azure:
 
 ```azurecli
 az acr helm repo add --name mycontainerregistry
 ```
 
-### <a name="add-a-chart-to-the-repository"></a>Добавление диаграммы в репозиторий
+### <a name="add-a-sample-chart-to-the-repository"></a>Добавление диаграммы образца в репозиторий
 
-Сначала создайте локальный каталог в папке *~/Акр-Хелм*, а затем скачайте имеющуюся *стабильную или WordPress* диаграмму:
+Во-первых, создайте локальный каталог на *q/acr-helm,* затем загрузите существующую *конюшню/wordpress* диаграмму:
 
 ```console
 mkdir ~/acr-helm && cd ~/acr-helm
@@ -309,19 +314,19 @@ helm repo update
 helm fetch stable/wordpress
 ```
 
-Введите `ls`, чтобы получить список загруженной диаграммы, и обратите внимание на версию WordPress, которая включена в имя файла. Команда `helm fetch stable/wordpress` не предоставила определенную версию, поэтому выбрана *последняя* версия. В следующем примере выходных данных WordPress диаграмма имеет версию *8.1.0*:
+Введите `ls` список загруженной диаграммы и обратите внимание на версию Wordpress, включенную в имя файла. Команда `helm fetch stable/wordpress` не предоставила определенную версию, поэтому выбрана *последняя* версия. В следующем выводе примера диаграмма Wordpress представляет собой версию *8.1.0*:
 
 ```output
 wordpress-8.1.0.tgz
 ```
 
-Отправьте диаграмму в репозиторий диаграммы Helm в реестре контейнеров Azure, выполнив команду [AZ контроля доступа Helm Push][az-acr-helm-push] в Azure CLI. Укажите имя диаграммы Helm, скачанной на предыдущем шаге, например *ВордПресс-8.1.0. tgz*:
+Нажмите диаграмму в репозиторий диаграммы Helm в реестре контейнеров Azure, используя команду [нажатия на руль az acr][az-acr-helm-push] в Azure CLI. Укажите название диаграммы Helm, загруженной на предыдущем этапе, например *wordpress-8.1.0.tgz:*
 
 ```azurecli
 az acr helm push --name mycontainerregistry wordpress-8.1.0.tgz
 ```
 
-Через несколько секунд Azure CLI сообщает о сохранении диаграммы, как показано в следующем примере выходных данных:
+Через несколько мгновений ClI Azure сообщает, что диаграмма сохранена, как показано на следующем выводе примера:
 
 ```output
 {
@@ -337,7 +342,7 @@ az acr helm push --name mycontainerregistry wordpress-8.1.0.tgz
 az acr helm repo add --name mycontainerregistry
 ```
 
-С помощью диаграммы, хранимой в репозитории, и обновленного индекса, доступного в локальной среде, вы можете использовать команды обычного клиента Helm для поиска или установки. Чтобы просмотреть все диаграммы в репозитории, используйте команду `helm search`, указав собственное имя реестра контейнеров Azure:
+С помощью диаграммы, хранимой в репозитории, и обновленного индекса, доступного в локальной среде, вы можете использовать команды обычного клиента Helm для поиска или установки. Чтобы просмотреть все диаграммы в репозитории, используйте `helm search` команду, предоставив свое собственное имя реестра контейнеров Azure:
 
 ```console
 helm search mycontainerregistry
@@ -346,11 +351,11 @@ helm search mycontainerregistry
 Диаграмма Wordpress, принудительно отправленная на предыдущем шаге, выведена в списке, как показано в следующем примере выходных данных:
 
 ```output
-NAME                CHART VERSION   APP VERSION DESCRIPTION
-helmdocs/wordpress  8.1.0           5.3.2       Web publishing platform for building blogs and websites.
+NAME                  CHART VERSION    APP VERSION    DESCRIPTION
+helmdocs/wordpress    8.1.0           5.3.2          Web publishing platform for building blogs and websites.
 ```
 
-Вы также можете вывести список диаграмм с Azure CLI с помощью команды [AZ контроля доступа Helm List][az-acr-helm-list]:
+Вы также можете вывести список диаграмм с помощью Azure CLI, используя команду [az acr helm list][az-acr-helm-list]:
 
 ```azurecli
 az acr helm list --name mycontainerregistry
@@ -358,7 +363,7 @@ az acr helm list --name mycontainerregistry
 
 ### <a name="show-information-for-a-helm-chart"></a>Просмотр информации о диаграмме Helm
 
-Чтобы просмотреть сведения о конкретной диаграмме в репозитории, можно использовать команду `helm inspect`.
+Для просмотра информации для определенной диаграммы репо можно использовать `helm inspect` команду.
 
 ```console
 helm inspect mycontainerregistry/wordpress
@@ -391,7 +396,7 @@ version: 8.1.0
 [...]
 ```
 
-Также можно отобразить сведения о диаграмме с помощью команды Azure CLI [AZ запись контроля доступа Helm отобразить][az-acr-helm-show] . Как и в предыдущем примере, по умолчанию возвращается *последняя* версия диаграммы. Можно добавить `--version`, чтобы получить список определенной версии диаграммы, например *8.1.0*:
+Вы также можете просмотреть данные диаграммы с помощью команды Azure CLI [az acr helm show][az-acr-helm-show]. Как и в предыдущем примере, по умолчанию возвращается *последняя* версия диаграммы. Вы можете `--version` припотеть, чтобы перечислить конкретную версию диаграммы, например *8.1.0*:
 
 ```azurecli
 az acr helm show --name mycontainerregistry wordpress
@@ -399,14 +404,14 @@ az acr helm show --name mycontainerregistry wordpress
 
 ### <a name="install-a-helm-chart-from-the-repository"></a>Установка диаграммы Helm из репозитория
 
-Диаграмма Helm в репозитории устанавливается путем указания имени репозитория и имени диаграммы. Для установки диаграммы WordPress можно использовать клиент Helm:
+Диаграмма Хелма в репозитории устанавливается путем указания имени репозитория и имени диаграммы. Для установки диаграммы WordPress можно использовать клиент Helm:
 
 ```console
 helm install mycontainerregistry/wordpress
 ```
 
 > [!TIP]
-> Если отправить репозиторий диаграмм Helm в Реестр контейнеров Azure, а затем вернуться к работе в новом сеансе интерфейса командной строки, для локального клиента Helm необходимо будет предоставить обновленный маркер аутентификации. Чтобы получить новый маркер проверки подлинности, используйте команду [AZ контроля доступа Helm Repository Add][az-acr-helm-repo-add] .
+> Если отправить репозиторий диаграмм Helm в Реестр контейнеров Azure, а затем вернуться к работе в новом сеансе интерфейса командной строки, для локального клиента Helm необходимо будет предоставить обновленный маркер аутентификации. Чтобы получить новый маркер аутентификации, используйте команду [az acr helm repo add][az-acr-helm-repo-add].
 
 Во время установки выполняются следующие действия:
 
@@ -414,7 +419,7 @@ helm install mycontainerregistry/wordpress
 - Соответствующая диаграмма скачивается из репозитория Реестра контейнеров Azure.
 - Диаграмма развертывается с помощью Tiller в кластере Kubernetes.
 
-По мере продолжения установки следуйте инструкциям в выходных данных команды, чтобы просмотреть URL-адреса и учетные данные Ворпресс. Можно также выполнить команду `kubectl get pods`, чтобы просмотреть ресурсы Kubernetes, развернутые с помощью диаграммы Helm:
+По мере выполнения установки следуйте инструкциям в выводе команд, чтобы увидеть URL-адреса и учетные данные WorPress. Вы также можете `kubectl get pods` запустить команду, чтобы увидеть ресурсы Kubernetes, развернутые через диаграмму Helm:
 
 ```output
 NAME                                    READY   STATUS    RESTARTS   AGE
@@ -425,7 +430,7 @@ wordpress-1598530621-mariadb-0          1/1     Running   0          2m48s
 
 ### <a name="delete-a-helm-chart-from-the-repository"></a>Удаление диаграммы Helm из репозитория
 
-Чтобы удалить диаграмму из репозитория, выполните команду [AZ запись контроля доступа Helm Delete][az-acr-helm-delete] . Укажите имя диаграммы, например *WordPress*, и версию для удаления, например *8.1.0*.
+Чтобы удалить диаграмму из репозитория, используйте команду [az acr helm delete][az-acr-helm-delete]. Укажите название диаграммы, например *Wordpress,* и версию для удаления, например *8.1.0*.
 
 ```azurecli
 az acr helm delete --name mycontainerregistry wordpress --version 8.1.0
@@ -433,17 +438,17 @@ az acr helm delete --name mycontainerregistry wordpress --version 8.1.0
 
 Если вы хотите удалить все версии указанной диаграммы, не указывайте параметр `--version`.
 
-Диаграмма будет возвращаться при запуске `helm search`. Как и в предыдущем примере, в клиенте Helm список доступных диаграмм в репозитории не обновляется автоматически. Чтобы обновить индекс репозитория клиента Helm, выполните команду [AZ контроля доступа Helm Repository Add][az-acr-helm-repo-add] .
+График продолжает возвращаться при `helm search`запуске. Как и в предыдущем примере, в клиенте Helm список доступных диаграмм в репозитории не обновляется автоматически. Чтобы обновить индекс репозитория клиента Helm, используйте команду [az acr helm repo add][az-acr-helm-repo-add]:
 
 ```azurecli
 az acr helm repo add --name mycontainerregistry
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этой статьи применялась имеющаяся диаграмма Helm из общедоступного репозитория *stable*. Дополнительные сведения о создании и развертывании Helm диаграмм см. в разделе [Разработка диаграмм Helm][develop-helm-charts].
-
-Диаграммы Helm можно использовать в процессе создания контейнеров. Дополнительные сведения см. в статье [Использование задач реестра контейнеров Azure][acr-tasks].
+* Дополнительные сведения о создании и развертывании собственных диаграмм Helm см. в разделе документации, посвященном [разработке диаграмм Helm][develop-helm-charts].
+* Подробнее об установке приложений с помощью службы «Хелм» в [Azure Kubernetes Service (AKS).](../aks/kubernetes-helm.md)
+* Диаграммы Helm можно использовать в процессе создания контейнеров. Для получения дополнительной информации [см.][acr-tasks]
 
 <!-- LINKS - external -->
 [helm]: https://helm.sh/

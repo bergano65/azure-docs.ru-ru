@@ -1,5 +1,5 @@
 ---
-title: Использование тома на основе файлов Azure в Service Fabric приложении для сетки
+title: Используйте объем файлов Azure на основе в приложении Service Fabric Mesh
 description: Узнайте, как сохранить состояние в приложении "Сетка Azure Service Fabric" путем подключения тома службы файлов Azure в службе с помощью Azure CLI.
 author: dkkapur
 ms.topic: conceptual
@@ -7,10 +7,10 @@ ms.date: 11/21/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: 5bb7ab6c861d958f6811ca852363c59cfced3940
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76718826"
 ---
 # <a name="mount-an-azure-files-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома службы файлов Azure в приложении "Сетка Service Fabric" 
@@ -19,15 +19,15 @@ ms.locfileid: "76718826"
 
 Чтобы подключить том в службе, создайте ресурс тома в приложении "Сетка Service Fabric" и затем укажите этот том в вашей службе.  Объявить ресурс тома и указать на него в ресурсе службы можно в [файлах ресурсов на основе YAML](#declare-a-volume-resource-and-update-the-service-resource-yaml) или [шаблоне развертывания на основе JSON](#declare-a-volume-resource-and-update-the-service-resource-json). Прежде чем подключить тома, сначала необходимо создать учетную запись хранения и [файловый ресурс в службе файлов Azure](/azure/storage/files/storage-how-to-create-file-share).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 > [!NOTE]
-> **Известная ошибка развертывания на компьютере Windows RS5 Development.** Существует открытая ошибка с командлетом PowerShell New-Смбглобалмаппинг на компьютерах с Windows RS5, которые предотвращают подключение томов Азурефиле. Ниже приведен пример ошибки, которая возникает при подключении тома на основе Азурефиле на локальном компьютере разработки.
+> **Известная проблема с развертыванием на машине разработки Windows RS5:** Существует открытая ошибка с Powershell cmdlet New-SmbGlobalMapping на компьютерах RS5 Windows, которая предотвращает монтаж объемов Azurefile. Ниже приведена ошибка образца, которая возникает при установке громкости на основе AzureFile на локальной машине разработки.
 ```
 Error event: SourceId='System.Hosting', Property='CodePackageActivation:counterService:EntryPoint:131884291000691067'.
 There was an error during CodePackage activation.System.Fabric.FabricException (-2147017731)
 Failed to start Container. ContainerName=sf-2-63fc668f-362d-4220-873d-85abaaacc83e_6d6879cf-dd43-4092-887d-17d23ed9cc78, ApplicationId=SingleInstance_0_App2, ApplicationName=fabric:/counterApp. DockerRequest returned StatusCode=InternalServerError with ResponseBody={"message":"error while mounting volume '': mount failed"}
 ```
-Решением проблемы может быть 1) выполнить приведенную ниже команду в качестве администратора PowerShell и 2) перезагрузить компьютер.
+Обходной путь для проблемы состоит в том, чтобы 1)Выполнить ниже команды в качестве администратора Powershell и 2)Перезагрузка машины.
 ```powershell
 PS C:\WINDOWS\system32> Mofcomp c:\windows\system32\wbem\smbwmiv2.mof
 ```

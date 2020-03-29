@@ -1,6 +1,6 @@
 ---
-title: Обзор примеров обмена сообщениями в служебной шине Azure
-description: Примеры обмена сообщениями служебной шины демонстрируют основные возможности обмена сообщениями через служебную шину Azure. Содержит ссылки на примеры на GitHub.
+title: Обзор образцов сообщений Azure Service Bus
+description: В образцах сообщений Service Bus показаны ключевые особенности обмена сообщениями Azure Service Bus. Предоставляет ссылки на образцы на GitHub.
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
@@ -14,22 +14,22 @@ ms.workload: na
 ms.date: 01/27/2020
 ms.author: aschhab
 ms.openlocfilehash: ccaca451ac4fb7b4301aca429a42baea91e5ed10
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76773465"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
-В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время примеры можно найти в следующих местах:
+В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время вы можете найти образцы в следующих местах:
 
-| Язык программирования | Расположение пакета SDK или выборки |
+| Язык программирования | SDK или расположение образцов |
 | -------------------- | ----------------------- |
-| .NET, Java и управление | https://github.com/Azure/azure-service-bus/ |
+| .NET, Java и менеджмент | https://github.com/Azure/azure-service-bus/ |
 | Node.js | https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples |
 | Python | https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus |
 
-## <a name="service-bus-explorer"></a>Обозреватель служебной шины
+## <a name="service-bus-explorer"></a>Service Bus Explorer
 
 Кроме того, можно использовать пример [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer), размещенный на сайте GitHub, который позволяет подключиться к пространству имен служебной шины и легко управлять сущностями обмена сообщениями. Это средство предоставляет такие дополнительные возможности, как импорт и экспорт, а также тестирование сущностей обмена сообщениями и служб ретрансляции. Полный исходный код и документацию для Service Bus Explorer можно найти на сайте [GitHub](https://github.com/paolosalvatori/ServiceBusExplorer).
 

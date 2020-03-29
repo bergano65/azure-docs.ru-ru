@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 05/09/2018
 ms.author: damendo
 ms.openlocfilehash: 675919db55932d3ccc04fd5397f6f673832b4900
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76840576"
 ---
 # <a name="view-the-topology-of-an-azure-virtual-network"></a>Просмотр топологии виртуальной сети Azure
@@ -26,7 +26,7 @@ ms.locfileid: "76840576"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name = "azure-portal"></a>Просмотр топологии: портал Azure
+## <a name="view-topology---azure-portal"></a><a name = "azure-portal"></a>Просмотр топологии: портал Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи, которая предоставляет необходимые [разрешения](required-rbac-permissions.md).
 2. В верхнем левом углу окна портала выберите **Все службы**.
@@ -47,7 +47,7 @@ ms.locfileid: "76840576"
 
 Ресурсы, показанные на схеме, представляют собой подмножество сетевых компонентов в виртуальной сети. Например, если отображается группа безопасности сети, правила безопасности в ней не показаны на схеме. Линии на схеме не различаются, но они представляют один из двух типов отношений: *отношения вложения* или *отношения связи*. Чтобы просмотреть полный список ресурсов в виртуальной сети, а также тип отношений между ресурсами, сформируйте топологию с помощью [PowerShell](#powershell) или [Azure CLI](#azure-cli).
 
-## <a name = "azure-cli"></a>Просмотр топологии: Azure CLI
+## <a name="view-topology---azure-cli"></a><a name = "azure-cli"></a>Просмотр топологии: Azure CLI
 
 Выполнять команды можно одним из следующих способов:
 - В Azure Cloud Shell выберите **Попробовать** вверху справа от любой команды. Azure Cloud Shell — это бесплатная интерактивная оболочка, в которой предустановлены и настроены для использования с вашей учетной записью стандартные средства Azure.
@@ -80,21 +80,21 @@ ms.locfileid: "76840576"
 
    Изучите дополнительные сведения об отношениях и [свойствах](#properties) в возвращаемых выходных данных. Если у вас нет виртуальной сети для просмотра топологии, можно создать ее с помощью примера скрипта для [маршрутизации трафика через сетевой виртуальный модуль](../virtual-network/scripts/virtual-network-cli-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). Чтобы просмотреть схему топологии и скачать ее в виде редактируемого файла, используйте [портал](#azure-portal).
 
-## <a name = "powershell"></a>Просмотр топологии: PowerShell
+## <a name="view-topology---powershell"></a><a name = "powershell"></a>Просмотр топологии: PowerShell
 
 Выполнять команды можно одним из следующих способов:
 - В Azure Cloud Shell выберите **Попробовать** вверху справа от любой команды. Azure Cloud Shell — это бесплатная интерактивная оболочка, в которой предустановлены и настроены для использования с вашей учетной записью стандартные средства Azure.
-- Запустите PowerShell с компьютера. При запуске PowerShell с компьютера для работы с этой статьей требуется модуль Azure PowerShell `Az`. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+- Запустите PowerShell с компьютера. Если вы запустите PowerShell с компьютера, эта `Az` статья требует модуль Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Используемая учетная запись должна предоставлять необходимые [разрешения](required-rbac-permissions.md).
 
-1. Если в регионе виртуальной сети, для которой нужно создать топологию, уже есть наблюдатель за сетями, перейдите к шагу 3. Создайте группу ресурсов, которая будет содержать наблюдатель за сетями с помощью [New-азресаурцеграуп](/powershell/module/az.Resources/New-azResourceGroup). В следующем примере создается группа ресурсов в регионе *eastus*:
+1. Если в регионе виртуальной сети, для которой нужно создать топологию, уже есть наблюдатель за сетями, перейдите к шагу 3. Создайте группу ресурсов, содержащую сетевого наблюдателя с [Помощью New-AzResourceGroup.](/powershell/module/az.Resources/New-azResourceGroup) В следующем примере создается группа ресурсов в регионе *eastus*:
 
     ```azurepowershell-interactive
     New-AzResourceGroup -Name NetworkWatcherRG -Location EastUS
     ```
 
-2. Создайте наблюдатель за сетями с помощью [New-азнетворкватчер](/powershell/module/az.network/new-aznetworkwatcher). В следующем примере создается наблюдатель за сетями в регионе eastus:
+2. Создайте сетевой наблюдатель с [помощью New-AzNetworkWatcher.](/powershell/module/az.network/new-aznetworkwatcher) В следующем примере создается наблюдатель за сетями в регионе eastus:
 
     ```azurepowershell-interactive
     New-AzNetworkWatcher `
@@ -102,7 +102,7 @@ ms.locfileid: "76840576"
       -ResourceGroupName NetworkWatcherRG
     ```
 
-3. Получите экземпляр наблюдателя за сетями с помощью [Get-азнетворкватчер](/powershell/module/az.network/get-aznetworkwatcher). В следующем примере выполняется получение наблюдателя за сетями в регионе "Восточная часть США":
+3. Извлекайте экземпляр Сетевого наблюдателя с [помощью Get-AzNetworkWatcher.](/powershell/module/az.network/get-aznetworkwatcher) В следующем примере выполняется получение наблюдателя за сетями в регионе "Восточная часть США":
 
     ```azurepowershell-interactive
     $nw = Get-AzResource `
@@ -112,7 +112,7 @@ ms.locfileid: "76840576"
       -ResourceGroupName $nw.ResourceGroupName
     ```
 
-4. Получите топологию с помощью [Get-азнетворкватчертопологи](/powershell/module/az.network/get-aznetworkwatchertopology). В следующем примере выполняется получение топологии для виртуальной сети в группе ресурсов с именем *MyResourceGroup*:
+4. Извлекайте топологию с [помощью Get-AzNetworkWatcherTopology.](/powershell/module/az.network/get-aznetworkwatchertopology) В следующем примере выполняется получение топологии для виртуальной сети в группе ресурсов с именем *MyResourceGroup*:
 
     ```azurepowershell-interactive
     Get-AzNetworkWatcherTopology `

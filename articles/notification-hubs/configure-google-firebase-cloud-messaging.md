@@ -1,6 +1,6 @@
 ---
-title: Настройка облачных сообщений Google Firebase в центрах уведомлений Azure | Документация Майкрософт
-description: Узнайте, как настроить центр уведомлений Azure с помощью Google Firebase Cloud Messaging Settings.
+title: Нанастройка облачных сообщений Google Firebase в концентрах уведомлений Azure (ru) Документы Майкрософт
+description: Узнайте, как настроить концентратор уведомлений Azure с настройками облачных сообщений Google Firebase.
 services: notification-hubs
 author: sethmanheim
 manager: femila
@@ -12,29 +12,30 @@ ms.date: 03/25/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 803289476d4d8869f7828b2843a983ee0c86bfbd
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 1adbce654bc5c057270df9a874911731a0135034
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212493"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80127474"
 ---
-# <a name="configure-google-firebase-cloud-messaging-fcm-settings-for-a-notification-hub-in-the-azure-portal"></a>Настройка параметров Google Firebase Cloud Messaging (FCM) для центра уведомлений в портал Azure
-В этой статье показано, как настроить параметры Google Firebase Cloud Messaging (FCM) для центра уведомлений Azure с помощью портал Azure.  
+# <a name="configure-google-firebase-settings-for-a-notification-hub-in-the-azure-portal"></a>Настройте настройки Google Firebase для концентратора уведомлений на портале Azure
+
+В этой статье показано, как настроить настройки облачных сообщений Google Firebase Cloud Messaging (FCM) для концентратора уведомлений Azure с помощью портала Azure.  
 
 ## <a name="prerequisites"></a>Предварительные требования
 Если вы еще не создали центр уведомлений, сделайте это сейчас. Дополнительные сведения см. в статье [Создание центра уведомлений Azure с помощью портала Azure](create-notification-hub-portal.md). 
 
-## <a name="configure-google-firebase-cloud-messaging-fcm"></a>Настройка Google Firebase Cloud Messaging (FCM)
+## <a name="configure-google-firebase-cloud-messaging-fcm"></a>Наймите облачные сообщения Google Firebase (FCM)
 
-Следующая процедура позволяет настроить параметры Google Firebase Cloud Messaging (FCM) для центра уведомлений. 
+Следующая процедура дает вам шаги для настройки Google Firebase Cloud Messaging (FCM) для концентратора уведомлений: 
 
-1. В портал Azure на странице **Центр уведомлений** выберите **Google (gcm/FCM)** в меню слева. 
+1. На портале Azure на странице **концентратора уведомлений** выберите **Google (GCM/FCM)** в левом меню. 
 2. В соответствующее поле вставьте **ключ API** для проекта FCM, сохраненного ранее. 
-3. Щелкните **Сохранить**. 
+3. Нажмите кнопку **Сохранить**. 
 
    ![Снимок экрана, на котором показано, как настроить Центры уведомлений для Google FCM](./media/notification-hubs-android-push-notification-google-fcm-get-started/fcm-server-key.png)
 
-## <a name="next-steps"></a>Следующие шаги
-Пошаговые инструкции по отправке уведомлений на устройства Android с помощью центров уведомлений Azure и Google Firebase Cloud Messaging см. в статье [Push-уведомления для устройств Android с помощью концентраторов уведомлений и Google FCM](notification-hubs-android-push-notification-google-fcm-get-started.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Для руководства с пошаговыми инструкциями для нажатия уведомлений на устройства Android с помощью [Push notifications to Android devices by using Notification Hubs and Google FCM](notification-hubs-android-push-notification-google-fcm-get-started.md)azure Notification Hubs и Google Firebase Cloud Messaging см.
 

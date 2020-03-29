@@ -12,10 +12,10 @@ ms.author: daperlov
 manager: jroth
 ms.reviewer: maghan
 ms.openlocfilehash: 88500ecbc56b34551a0cbd3ca94727ba4bbcda9f
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74930644"
 ---
 # <a name="set-variable-activity-in-azure-data-factory"></a>Установка действия переменной в фабрике данных Azure
@@ -24,13 +24,13 @@ ms.locfileid: "74930644"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Обязательно для заполнения
+Свойство | Описание | Обязательно
 -------- | ----------- | --------
-name | Имя действия в конвейере | ДА
-Description (Описание) | Текст, описывающий действия | Нет
-Тип | Тип действия — SetVariable | Да
-value | Строковый литерал или значение объекта выражения, используемое для установки указанной переменной | Да
-variableName | Имя переменной, которое будет задано этим действием | Да
+name | Имя действия в конвейере | Да
+description | Текст, описывающий действия | нет
+type | Тип действия — SetVariable | да
+значение | Строковый литерал или значение объекта выражения, используемое для установки указанной переменной | да
+variableName | Имя переменной, которое будет задано этим действием | да
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -11,10 +11,10 @@ author: j-martens
 ms.author: jmartens
 ms.date: 03/05/2020
 ms.openlocfilehash: 9b49eb6237346a76903202a118331383c5a8f623
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78944252"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
@@ -34,9 +34,9 @@ ms.locfileid: "78944252"
 ## <a name="what-changed"></a>Что изменилось?
 
 Последний выпуск Машинного обучения Azure включает следующие возможности:
-+ [Упрощенная модель ресурсов Azure](concept-azure-machine-learning-architecture.md).
++ [Упрощенная модель ресурсов Azure.](concept-azure-machine-learning-architecture.md)
 + [Новый пользовательский интерфейс портала](how-to-track-experiments.md) для управления экспериментами и целевыми объектами вычислений.
-+ Новый, более функциональный <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK</a> для Python.
++ Новый, более полный <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">Python SDK</a>.
 + Обновленное и дополненное [расширение интерфейса командной строки Azure](reference-azure-machine-learning-cli.md) для машинного обучения
 
 Переработанная [архитектура](concept-azure-machine-learning-architecture.md) для упрощения использования. Вместо нескольких ресурсов Azure и учетных записей требуется только [рабочая область машинного обучения Azure](concept-workspace.md). Новые рабочие области можно быстро создать на [портале Azure](how-to-manage-workspace.md). Рабочая область позволяет нескольким пользователя хранить целевые объекты вычислений для обучения и развертывания, экспериментов с моделями, образов Docker, развернутых моделей и т. д.
@@ -47,7 +47,7 @@ ms.locfileid: "78944252"
 
 ## <a name="support-timeline"></a>Сроки поддержки
 
-С 9 января 2019 г. прекратилась поддержка учетных записей Machine Learning Workbench, Экспериментирования в Машинном обучении Azure и Управления моделями, а также соответствующего интерфейса командной строки и пакета SDK.
+9 января 2019 года завершилась поддержка рабочих скамеек машинного обучения, экспериментов по машинным обучению и управления моделью, а также связанных с ними SDK и CLI.
 
 Все новейшие возможности доступны при использовании нового <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](how-to-manage-workspace.md).
 
@@ -65,7 +65,7 @@ ms.locfileid: "78944252"
 
 ## <a name="will-projects-persist"></a>Сохранятся ли проекты?
 
-Никакой код и никакие наработки не будут потеряны. В более ранней версии проекты являются объектами облака с локальным каталогом. В последней версии локальные каталоги связываются с рабочей областью Машинного обучения Azure с помощью локального файла конфигурации. Ознакомьтесь со [схемой актуальной архитектуры](concept-azure-machine-learning-architecture.md).
+Никакой код и никакие наработки не будут потеряны. В более ранней версии проекты являются объектами облака с локальным каталогом. В последней версии локальные каталоги связываются с рабочей областью Машинного обучения Azure с помощью локального файла конфигурации. Смотрите [диаграмму новейшей архитектуры.](concept-azure-machine-learning-architecture.md)
 
 Большая часть содержимого проекта уже находится на локальном компьютере. Это означает, что для подключения к рабочей области осталось создать в этом каталоге файл конфигурации добавить в код ссылку для подключения к рабочей области. Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) или с помощью команды интерфейса командной строки `az ml project attach`.  Пример:
 ```python
@@ -89,7 +89,7 @@ run = exp.submit(source_directory=script_folder,
 
 Дополнительные сведения см. в следующих статьях:
 + [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
-+ [Руководство. Развертывание моделей с помощью Машинного обучения Azure](tutorial-deploy-models-with-aml.md)
++ [Учебник: Развертывание моделей с помощью машинного обучения Azure](tutorial-deploy-models-with-aml.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

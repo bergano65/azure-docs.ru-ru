@@ -1,5 +1,5 @@
 ---
-title: Использование образов общих виртуальных машин для создания масштабируемого набора в Azure
+title: Используйте общие VM-изображения для создания набора масштаба в Azure
 description: Узнайте, как с помощью Azure CLI создать общие образы виртуальных машин для развертывания масштабируемых наборов виртуальных машин в Azure.
 author: axayjo
 tags: azure-resource-manager
@@ -10,10 +10,10 @@ ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
 ms.openlocfilehash: 83b3d5c904a65b28482acf8b685c939493c8c03b
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76276267"
 ---
 # <a name="create-and-use-shared-images-for-virtual-machine-scale-sets-with-the-azure-cli-20"></a>Создание и использование общих образов для масштабируемых наборов виртуальных машин с помощью Azure CLI 2.0
@@ -27,7 +27,7 @@ ms.locfileid: "76276267"
 [!INCLUDE [virtual-machines-common-shared-images-cli](../../includes/virtual-machines-common-shared-images-cli.md)]
 
 ## <a name="create-a-scale-set-from-the-custom-vm-image"></a>Создание масштабируемого набора на основе пользовательского образа виртуальной машины
-Создайте масштабируемый набор с [`az vmss create`](/cli/azure/vmss#az-vmss-create). Вместо образа платформы, например *UbuntuLTS* или *CentOS*, укажите имя своего пользовательского образа виртуальной машины. В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий пользовательский образ *myImage* из предыдущего шага.
+Создайте набор [`az vmss create`](/cli/azure/vmss#az-vmss-create)масштабов с помощью . Вместо образа платформы, например *UbuntuLTS* или *CentOS*, укажите имя своего пользовательского образа виртуальной машины. В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий пользовательский образ *myImage* из предыдущего шага.
 
 ```azurecli-interactive
 az vmss create \
@@ -45,7 +45,7 @@ az vmss create \
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [az group delete](/cli/azure/group). При использовании параметра `--no-wait` управление возвращается в командную строку без ожидания завершения операции. Параметр `--yes` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса.
+Чтобы удалить набор масштабов и дополнительные ресурсы, удалите группу ресурсов и все ее ресурсы с [помощью группы az.](/cli/azure/group) При использовании параметра `--no-wait` управление возвращается в командную строку без ожидания завершения операции. Параметр `--yes` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса.
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --no-wait --yes
@@ -56,7 +56,7 @@ az group delete --name myResourceGroup --no-wait --yes
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
-- [Создание коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-create/)
+- [Создание Общей коллекции образов.](https://azure.microsoft.com/resources/templates/101-sig-create/)
 - [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
 - [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 - [Создание виртуальной машины из версии образа](https://azure.microsoft.com/resources/templates/101-vm-from-sig/)

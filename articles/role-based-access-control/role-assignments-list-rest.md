@@ -1,6 +1,6 @@
 ---
-title: Вывод списка назначений ролей с помощью Azure RBAC и REST API
-description: Узнайте, как определить, к каким ресурсам пользователи, группы, субъекты-службы или управляемые удостоверения имеют доступ с помощью управления доступом на основе ролей (RBAC) Azure и REST API.
+title: Список ролевых заданий с помощью Azure RBAC и API REST
+description: Узнайте, как определить, какие ресурсы пользователи, группы, принципы служб или управляемые идентификаторы имеют доступ к использованию управления доступом на основе ролей Azure (RBAC) и API REST.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -12,22 +12,22 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 0db3e1b222aad7d2a5aa9fc20663fc6e17ea4f8c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: a494e7fd4c9fb79faa6a1d8cb2c3c871796ccdc5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981073"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80062161"
 ---
-# <a name="list-role-assignments-using-azure-rbac-and-the-rest-api"></a>Вывод списка назначений ролей с помощью Azure RBAC и REST API
+# <a name="list-role-assignments-using-azure-rbac-and-the-rest-api"></a>Список ролевых заданий с помощью Azure RBAC и API REST
 
-[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] этой статье описывается, как вывести список назначений ролей с помощью REST API.
+[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)]В этой статье описывается, как перечислить назначения ролей с помощью REST API.
 
 > [!NOTE]
-> Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
+> Если организация передала функции управления на внешний подряд поставщику услуг, который использует [управление делегированными ресурсами Azure,](../lighthouse/concepts/azure-delegated-resource-management.md)назначения ролей, авторизованные этим поставщиком услуг, не будут отображаться здесь.
 
 ## <a name="list-role-assignments"></a>Список назначений ролей
 
@@ -41,24 +41,27 @@ ms.locfileid: "75981073"
 
 1. Внутри URI замените *{scope}* областью, для которой требуется вывести список назначений ролей.
 
-    | Область действия | Тип |
-    | --- | --- |
-    | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
-    | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    > [!div class="mx-tableFixed"]
+    > | Область | Тип |
+    > | --- | --- |
+    > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
+    > | `subscriptions/{subscriptionId1}` | Подписка |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
-    В предыдущем примере Microsoft. Web — это поставщик ресурсов, который ссылается на экземпляр службы приложений. Аналогичным образом можно использовать любые другие поставщики ресурсов и указать область. Дополнительные сведения см. в статьях [поставщики ресурсов Azure и типы](../azure-resource-manager/management/resource-providers-and-types.md) и поддерживаемые [операции Azure Resource Manager поставщика ресурсов](resource-provider-operations.md).  
+    В предыдущем примере microsoft.web — это поставщик ресурсов, который относится к экземпляру Службы приложений. Аналогичным образом можно использовать любые другие поставщики ресурсов и указать область охвата. Для получения дополнительной информации смотрите [поставщики и типы ресурсов Ресурсов Azure и](../azure-resource-manager/management/resource-providers-and-types.md) поддерживается [ресурсами, которые поддерживаются ресурсами ресурсного поставщика ресурсов Azure.](resource-provider-operations.md)  
      
 1. Замените *{filter}* условием, по которому требуется отфильтровать список назначений ролей.
 
-    | Фильтр | Description |
-    | --- | --- |
-    | `$filter=atScope()` | Выводит список назначений ролей только для указанной области, не включая назначения ролей в подобластях. |
-    | `$filter=principalId%20eq%20'{objectId}'` | Выводит список назначений ролей для указанного пользователя, группы или субъекта-службы. |
-    | `$filter=assignedTo('{objectId}')` | Выводит список назначений ролей для указанного пользователя или субъекта-службы. Если пользователь является членом группы, у которой есть назначение ролей, также отображается это назначение роли. Этот фильтр является транзитивным для групп. Это означает, что если пользователь является членом группы, а эта группа является членом другой группы, имеющей назначение ролей, также будет указано назначение роли. Этот фильтр принимает только идентификатор объекта для пользователя или субъекта-службы. Невозможно передать идентификатор объекта для группы. |
+    > [!div class="mx-tableFixed"]
+    > | Filter | Описание |
+    > | --- | --- |
+    > | `$filter=atScope()` | Перечисляет назначения ролей только для указанной области, не включая назначения ролей в подскопах. |
+    > | `$filter=assignedTo('{objectId}')` | Списки назначений ролей для определенного пользователя или директора службы.<br/>Если пользователь является членом группы, выполняя ролевые назначения, это назначение роли также перечислено. Этот фильтр является транзитным для групп, что означает, что если пользователь является членом группы и что группа является членом другой группы, которая имеет назначение ролей, это назначение роли также перечислено.<br/>Этот фильтр принимает идентификатор объекта только для пользователя или директора службы. Вы не можете передать идентификатор объекта для группы. |
+    > | `$filter=atScope()+and+assignedTo('{objectId}')` | Перечисляет назначения ролей для указанного пользователя или директора службы и в указанном объеме. |
+    > | `$filter=principalId+eq+'{objectId}'` | Списки назначений ролей для определенного пользователя, группы или директора службы. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Добавление и удаление назначений ролей с помощью Azure RBAC и REST API](role-assignments-rest.md)
-- [Справочник по REST API Azure](/rest/api/azure/)
+- [Добавление или удаление ролевых заданий с помощью Azure RBAC и API REST](role-assignments-rest.md)
+- [Ссылка на API Azure REST](/rest/api/azure/)

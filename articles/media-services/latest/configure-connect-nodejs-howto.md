@@ -1,6 +1,6 @@
 ---
-title: Подключение к API служб мультимедиа Azure v3 — Node. js
-description: В этой статье показано, как подключиться к API служб мультимедиа v3 с помощью Node. js.
+title: Подключение к API медиаслужбы Azure media sv3 - Node.js
+description: В этой статье показано, как подключиться к Media Services v3 API с помощью Node.js.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,27 +14,27 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: juliako
 ms.openlocfilehash: 0381a2e2b8fd2a8b60e7cb702e0336a5678df057
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74896100"
 ---
-# <a name="connect-to-media-services-v3-api---nodejs"></a>Подключение к службам мультимедиа v3 API-Node. js
+# <a name="connect-to-media-services-v3-api---nodejs"></a>Подключение к Медиа-сервисам v3 API - Node.js
 
-В этой статье показано, как подключиться к пакету SDK для Node. js служб мультимедиа Azure с помощью метода входа субъекта-службы.
+В этой статье показано, как подключиться к Сервису мультимедиа Azure v3 node.js SDK с помощью основного знака службы в методе.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Установите [Node.js](https://nodejs.org/en/download/).
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
+- Установка [Node.js](https://nodejs.org/en/download/).
+- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Не забудьте запомнить имя группы ресурсов и имя учетной записи Media Services.
 
 > [!IMPORTANT]
-> Проверьте [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
+> Просмотр [именования конвенций](media-services-apis-overview.md#naming-conventions).
 
-## <a name="create-packagejson"></a>Создание Package. JSON
+## <a name="create-packagejson"></a>Создание package.json
 
-1. Создайте файл Package. JSON с помощью любимого редактора.
+1. Создайте файл package.json с помощью любимого редактора.
 1. Откройте файл и вставьте следующий код:
 
 ```json
@@ -52,25 +52,25 @@ ms.locfileid: "74896100"
 }
 ```
 
-Должны быть указаны следующие пакеты:
+Следующие пакеты должны быть указаны:
 
-|Package|Описание|
+|Пакет|Описание|
 |---|---|
-|`azure-arm-mediaservices`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что используется последний пакет служб мультимедиа Azure, установите флажок [NPM Install Azure-ARM-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/).|
-|`azure-storage`|Пакет SDK для службы хранилища. Используется при отправке файлов в активы.|
-|`ms-rest-azure`| Используется для входа в систему.|
+|`azure-arm-mediaservices`|Служба мультимедиа Azure SDK. <br/>Чтобы убедиться, что вы используете последний пакет медиа-сервисов Azure, проверьте [nPM установить azure-arm-mediaservices.](https://www.npmjs.com/package/azure-arm-mediaservices/)|
+|`azure-storage`|Хранение SDK. Используется при загрузке файлов в ресурсы.|
+|`ms-rest-azure`| Используется для вхаски.|
 
-Вы можете выполнить следующую команду, чтобы убедиться, что используется последний пакет:
+Вы можете запустить следующую команду, чтобы убедиться, что вы используете последний пакет:
 
 ```
 npm install azure-arm-mediaservices
 ```
 
-## <a name="connect-to-nodejs-client"></a>Подключение к клиенту Node. js
+## <a name="connect-to-nodejs-client"></a>Подключение к клиенту Node.js
 
-1. Создайте JS-файл с помощью любимого редактора.
+1. Создайте файл .js с помощью любимого редактора.
 1. Откройте файл и вставьте в него следующий код.
-1. Задайте значения в разделе "Конфигурация конечной точки" для значений, полученных из [API доступа](access-api-cli-how-to.md).
+1. Установите значения в разделе "конечная точка конфигурации" на значения, полученные из [ApIs доступа.](access-api-cli-how-to.md)
 
 ```js
 'use strict';
@@ -116,14 +116,14 @@ msRestAzure.loginWithServicePrincipalSecret(aadClientId, aadSecret, aadTenantId,
 
 ## <a name="run-your-app"></a>Запуск приложения для Android
 
-Откройте окно командной строки. Перейдите к каталогу примера и выполните следующие команды:
+Откройте командную строку. Просмотрите каталог образца и выполните следующие команды:
 
 ```
 npm install 
 node index.js
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [NPM install azure-arm-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/)

@@ -1,5 +1,5 @@
 ---
-title: Настройка многофакторной маршрутизации трафика с несколькими диспетчерами трафика Azure
+title: Налаживание мультивалодорожной трафика - Менеджер движения Azure
 description: В этой статье объясняется, как настроить диспетчер трафика для маршрутизации трафика в конечные точки A/AAAA.
 services: traffic-manager
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: rohink
 ms.openlocfilehash: daf7d09916d276130e337f7acea738228ee23707
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76938782"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
@@ -26,7 +26,7 @@ ms.locfileid: "76938782"
 >[!NOTE]
 > В настоящее время добавление конечных точек с помощью IPv4- или IPv6-адресов поддерживается только для **внешних** конечных точек, поэтому маршрутизация MultiValue также поддерживается только для таких конечных точек.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure 
+## <a name="sign-in-to-azure"></a>Вход в Azure 
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
@@ -38,12 +38,12 @@ ms.locfileid: "76938782"
 ## <a name="create-a-traffic-manager-profile"></a>Создание профиля диспетчера трафика
 Создайте профиль диспетчера трафика, который направляет трафик пользователя к конечной точке с минимальной задержкой.
 
-1. В верхней левой части экрана выберите **Создать ресурс** > **Сети** > **Профиль диспетчера трафика** > **Создать**.
+1. В верхней левой части экрана выберите Создать**Create**профиль > **менеджера сетевого** >  **движения.** > **Traffic Manager profile**
 2. В разделе **Создание профиля диспетчера трафика** введите или выберите следующие сведения, примите значения по умолчанию для остальных параметров и нажмите кнопку **Создать**:
     
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | Имя                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
+    | name                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
     | Метод маршрутизации          | Выберите метод маршрутизации **MultiValue**.                                       |
     | Подписка            | Выберите свою подписку.                          |
     | Группа ресурсов          | Выберите *myResourceGroupTM1*. |
@@ -63,7 +63,7 @@ ms.locfileid: "76938782"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | Тип                    | Внешняя конечная точка                                   |
-    | Имя           | myEndpoint1                                        |
+    | name           | myEndpoint1                                        |
     | Полное доменное имя (FQDN) или IP-адрес           | Введите общедоступный IP-адрес конечной точки, которую необходимо добавить в этот профиль диспетчера трафика.                         |
     |        |           |
 
@@ -76,7 +76,7 @@ ms.locfileid: "76938782"
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).
-- Узнайте о [маршрутизации по производительности](traffic-manager-configure-performance-routing-method.md).
+- Подробнее о [методе производительность для разгрома](traffic-manager-configure-performance-routing-method.md)
 - Узнайте о [методе географической маршрутизации](traffic-manager-configure-geographic-routing-method.md).
 
 

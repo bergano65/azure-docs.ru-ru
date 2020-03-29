@@ -9,21 +9,21 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: alkohli
 ms.openlocfilehash: 3a8d1f93930d2b298eeb7d10a73624b9a19bcc0e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60756265"
 ---
 # <a name="troubleshoot-your-azure-data-box-edge-issues"></a>Устранение неполадок в Azure Data Box Edge 
 
 В этой статье описывается устранение неполадок в Azure Data Box Edge. 
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Запуск диагностики
-> * Сбор пакета поддержки.
+> * Сбор пакета поддержки
 > * Использование журналов для устранения неполадок.
 
 

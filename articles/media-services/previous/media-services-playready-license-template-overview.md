@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: fb0630f3f7a4acebcfe5dcad343030c9d1184263
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74976406"
 ---
 # <a name="media-services-playready-license-template-overview"></a>Обзор шаблонов лицензий PlayReady служб мультимедиа
@@ -60,7 +60,7 @@ XML-код соответствует XML-схеме шаблона лиценз
 
 Комплексный пример использования классов .NET для настройки шаблона лицензии PlayReady см. в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md).
 
-## <a id="classes"></a>Классы .NET служб мультимедиа, используемые для настройки шаблонов лицензий
+## <a name="media-services-net-classes-that-are-used-to-configure-license-templates"></a><a id="classes"></a>Классы .NET служб мультимедиа, используемые для настройки шаблонов лицензий
 Ниже перечислены основные классы .NET, которые используются для настройки шаблонов лицензий PlayReady служб мультимедиа. Эти классы сопоставляются с типами, определенными в [XML-схеме шаблона лицензий PlayReady](media-services-playready-license-template-overview.md#schema).
 
 Класс [MediaServicesLicenseTemplateSerializer](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.mediaserviceslicensetemplateserializer.aspx) используется для сериализации шаблона лицензии служб мультимедиа в XML-код и десериализации из XML-кода.
@@ -73,7 +73,7 @@ XML-код соответствует XML-схеме шаблона лиценз
 ### <a name="playreadylicensetemplate"></a>PlayReadyLicenseTemplate
 [PlayReadyLicenseTemplate](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.playreadylicensetemplate.aspx) — этот класс представляет шаблон лицензии для создания лицензий PlayReady, которые будут возвращены конечным пользователям. Он содержит данные ключа содержимого в лицензии. Он также включает в себя любые права или ограничения, которые среда выполнения PlayReady DRM обязана применять при использовании ключа содержимого.
 
-### <a id="PlayReadyPlayRight"></a>PlayReadyPlayRight
+### <a name="playreadyplayright"></a><a id="PlayReadyPlayRight"></a>PlayReadyPlayRight
 [PlayReadyPlayRight](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.playreadyplayright.aspx) — этот класс представляет право PlayRight лицензии PlayReady. Он предоставляет пользователю возможность воспроизводить содержимое с любыми ограничениями, что указано в лицензии и самом праве PlayRight (для политики, касающейся воспроизведения). Большая часть политики на PlayRight касается ограничений воспроизведения, контролирующих типы выходных данных, используемых при воспроизведении содержимого. Она также включает в себя любые ограничения, которые действуют при использовании текущих выходных данных. Например, если параметр DigitalVideoOnlyContentRestriction включен, среда выполнения DRM допускает отображение видео только через цифровые выходы. (Аналоговые видеосигналы для передачи содержимого не допускаются.)
 
 > [!IMPORTANT]
@@ -83,7 +83,7 @@ XML-код соответствует XML-схеме шаблона лиценз
 
 Пример уровней защиты, которые поддерживает Silverlight, см. [здесь](https://go.microsoft.com/fwlink/?LinkId=617318).
 
-## <a id="schema"></a>XML-схема шаблона лицензий PlayReady
+## <a name="playready-license-template-xml-schema"></a><a id="schema"></a>XML-схема шаблона лицензий PlayReady
     <?xml version="1.0" encoding="utf-8"?>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1" xmlns:xs="https://www.w3.org/2001/XMLSchema">
       <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
@@ -308,11 +308,11 @@ XML-код соответствует XML-схеме шаблона лиценз
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

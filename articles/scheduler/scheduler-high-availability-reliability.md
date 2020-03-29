@@ -9,18 +9,18 @@ ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/16/2016
 ms.openlocfilehash: 20c2054e168a9b17d9b4ab159cfefbf607ab6d11
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78898564"
 ---
 # <a name="high-availability-and-reliability-for-azure-scheduler"></a>Высокая доступность и надежность для планировщика Azure
 
 > [!IMPORTANT]
-> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет Azure Scheduler, который [в настоящее время удался.](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date) Чтобы продолжить работу с заданиями, настроенными в Scheduler, пожалуйста, [перейти на azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
 >
-> Планировщик больше не доступен в портал Azure, но командлеты PowerShell для [REST API](/rest/api/scheduler) и [планировщика Azure](scheduler-powershell-reference.md) в настоящее время остаются доступными, чтобы можно было управлять заданиями и коллекциями заданий.
+> Планировщик больше не доступен на портале Azure, но на данный момент доступны смдлеты [REST API](/rest/api/scheduler) и [Azure Scheduler PowerShell,](scheduler-powershell-reference.md) чтобы вы могли управлять своими рабочими местами и коллекциями заданий.
 
 Планировщик Azure обеспечивает [высокий уровень доступности](https://docs.microsoft.com/azure/architecture/framework/#resiliency) и надежности для заданий. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для планировщика](https://azure.microsoft.com/support/legal/sla/scheduler).
 
@@ -30,7 +30,7 @@ ms.locfileid: "78898564"
 
 ### <a name="geo-redundant-service-deployment"></a>Географически избыточное развертывание служб
 
-Планировщик Azure доступен во [всех регионах, поддерживаемых Azure уже сегодня](https://azure.microsoft.com/global-infrastructure/regions/#services). Таким образом, если центр обработки данных Azure в регионе размещения становится недоступным, вы можете по-прежнему использовать планировщик Azure, так как возможности отработки отказа службы позволяют работать с планировщиком из другого центра обработки данных.
+Azure Scheduler доступен почти во [всех географических регионах, поддерживаемых Azure сегодня.](https://azure.microsoft.com/global-infrastructure/regions/#services) Таким образом, если центр обработки данных Azure в регионе размещения становится недоступным, вы можете по-прежнему использовать планировщик Azure, так как возможности отработки отказа службы позволяют работать с планировщиком из другого центра обработки данных.
 
 ### <a name="geo-regional-job-replication"></a>Репликация заданий по географическим регионам
 
@@ -71,7 +71,7 @@ ms.locfileid: "78898564"
 
 Сведения о настройке альтернативной конечной точки см. в разделе [errorAction](scheduler-concepts-terms.md#error-action).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Основные понятия, терминология и иерархия сущностей](scheduler-concepts-terms.md)
 * [Справочник по API REST планировщика Azure](/rest/api/scheduler)

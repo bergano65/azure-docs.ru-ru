@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок и наблюдение за VPN-шлюзами — служба автоматизации Azure
+title: Устранение неприятностей и мониторинг VPN шлюзов - Azure Automation
 titleSuffix: Azure Network Watcher
 description: В этой статье описывается, как диагностировать локальное подключение с помощью службы автоматизации Azure и Наблюдателя за сетями.
 services: network-watcher
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 74c9f44ff5fbbbb50bba1594d371633fd49857eb
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76845037"
 ---
 # <a name="monitor-vpn-gateways-with-network-watcher-troubleshooting"></a>Мониторинг VPN-шлюзов с помощью средства устранения неполадок Наблюдателя за сетями
@@ -36,7 +36,7 @@ ms.locfileid: "76845037"
 - Как создать модуль runbook, вызывающий командлет `Start-AzureRmNetworkWatcherResourceTroubleshooting` для устранения неполадок подключения.
 - Подключение расписания к модулю runbook
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем приступить к работе с этим сценарием, следует подготовить такие необходимые компоненты:
 
@@ -53,19 +53,19 @@ ms.locfileid: "76845037"
 
 Чтобы настроить пример, сначала нужно создать модуль runbook. В этом примере используется учетная запись запуска от имени. Сведения об учетных записях запуска от имени см. в разделе [Создание учетной записи службы автоматизации на портале Azure](../automation/automation-create-runas-account.md).
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Перейдите к службе автоматизации Azure на [портале Azure](https://portal.azure.com) и нажмите кнопку **Модули Runbook**.
 
 ![Обзор учетной записи службы автоматизации][1]
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Нажмите кнопку **Добавить Runbook**, чтобы начать создание модуля Runbook.
 
 ![Колонка модулей runbook][2]
 
-### <a name="step-3"></a>Шаг 3
+### <a name="step-3"></a>Шаг 3.
 
 В разделе **Быстрое создание**, нажмите кнопку **Создать новый Runbook**, чтобы создать модуль runbook.
 
@@ -155,13 +155,13 @@ else
 
 ![Шаг 7][7]
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 В колонке **Расписание** щелкните **Создать новое расписание**.
 
 ![Шаг 8][8]
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 В колонке **Новое расписание** заполните сведения о расписании. Вы можете указать значения, перечисленные ниже.
 
@@ -177,7 +177,7 @@ else
 
 ![Шаг 9.][9]
 
-### <a name="step-3"></a>Шаг 3
+### <a name="step-3"></a>Шаг 3.
 
 Нажмите кнопку "Сохранить", чтобы сохранить расписание для модуля runbook.
 

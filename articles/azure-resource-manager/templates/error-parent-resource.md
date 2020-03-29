@@ -1,13 +1,13 @@
 ---
-title: Ошибки родительского ресурса
-description: Описание способов устранения ошибок при работе с родительским ресурсом в шаблоне Azure Resource Manager.
+title: Ошибки родительских ресурсов
+description: Описывает, как устранить ошибки при работе с родительским ресурсом в шаблоне Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 08/01/2018
 ms.openlocfilehash: f1847389d60ddf3c6abc70bc3309940c2246084e
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76154046"
 ---
 # <a name="resolve-errors-for-parent-resources"></a>Устранение ошибок, связанных с родительскими ресурсами
@@ -78,4 +78,4 @@ Message=Can not perform requested operation on nested resource. Parent resource 
 }
 ```
 
-Дополнительные сведения см. в статье [Определение порядка развертывания ресурсов в шаблонах Azure Resource Manager](define-resource-dependency.md).
+Для получения дополнительной информации [см.](define-resource-dependency.md)

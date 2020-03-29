@@ -1,6 +1,6 @@
 ---
-title: Добавление субъектов кластера для Azure обозреватель данных с помощью Python
-description: Из этой статьи вы узнаете, как добавить субъекты кластера для Azure обозреватель данных с помощью Python.
+title: Добавление основок кластеров для Исследователя данных Azure с помощью Python
+description: В этой статье вы узнаете, как добавить принципы кластеров для Azure Data Explorer с помощью Python.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -8,22 +8,22 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.openlocfilehash: 637efdfe31d1f2eb0eaa5dd532dd9e9e67de5ce2
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76965142"
 ---
-# <a name="add-cluster-principals-for-azure-data-explorer-by-using-python"></a>Добавление субъектов кластера для Azure обозреватель данных с помощью Python
+# <a name="add-cluster-principals-for-azure-data-explorer-by-using-python"></a>Добавление основок кластеров для Исследователя данных Azure с помощью Python
 
 > [!div class="op_single_selector"]
-> * [C#](cluster-principal-csharp.md)
+> * [C #](cluster-principal-csharp.md)
 > * [Python](cluster-principal-python.md)
-> * [Шаблон Azure Resource Manager](cluster-principal-resource-manager.md)
+> * [Шаблон менеджера ресурсов Azure](cluster-principal-resource-manager.md)
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы добавите субъекты кластера для Azure обозреватель данных с помощью Python.
+Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы добавляете принципы кластеров для Azure Data Explorer с помощью Python.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * [Создайте кластер](create-cluster-database-python.md).
@@ -39,9 +39,9 @@ pip install azure-mgmt-kusto
 
 [!INCLUDE [data-explorer-authentication](../../includes/data-explorer-authentication.md)]
 
-## <a name="add-a-cluster-principal"></a>Добавление субъекта кластера
+## <a name="add-a-cluster-principal"></a>Добавление основного кластера
 
-В следующем примере показано, как добавить субъект кластера программным способом.
+Следующий пример показывает, как добавить основной кластер программно.
 
 ```Python
 from azure.mgmt.kusto import KustoManagementClient
@@ -80,18 +80,18 @@ poller = kusto_management_client.cluster_principal_assignments.create_or_update(
 
 |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
 |---|---|---|
-| tenant_id | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента. Также известен как идентификатор каталога.|
-| subscription_id | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор подписки, используемый для создания ресурсов.|
-| client_id | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
-| client_secret | *кскскскскскскскскскскскскскс* | Секрет клиента приложения, которое может получить доступ к ресурсам в клиенте. |
-| resource_group_name | *testrg* | Имя группы ресурсов, содержащей кластер.|
-| cluster_name | *mykustocluster* | Имя кластера.|
-| principal_assignment_name | *clusterPrincipalAssignment1* | Имя ресурса субъекта кластера.|
-| principal_id | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор участника, который может быть адресом электронной почты пользователя, ИДЕНТИФИКАТОРом приложения или именем группы безопасности.|
-| роль | *аллдатабасесадмин* | Роль субъекта кластера, которая может иметь значение "Аллдатабасесадмин'" или "Аллдатабасесвиевер".|
-| tenant_id_for_principal | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента участника.|
-| principal_type | *Приложение* | Тип участника, который может иметь значение "User", "App" или "Group"|
+| tenant_id | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента. Также известен как идентификатор каталога.|
+| subscription_id | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор подписки, который используется для создания ресурсов.|
+| client_id | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента приложения, который может получить доступ к ресурсам в вашем арендаторе.|
+| client_secret | *xxxxxxxxxxxxxxxxxxxx* | Секрет клиента приложения, которое может получить доступ к ресурсам в вашем арендаторе. |
+| resource_group_name | *testrg* | Название группы ресурсов, содержащей кластер.|
+| cluster_name | *mykustocluster* | Название кластера.|
+| principal_assignment_name | *кластерПринципназначения1* | Имя основного ресурса кластера.|
+| principal_id | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Основным идентификатором, который может быть электронной почтой пользователя, идентификатором приложения или именем группы безопасности.|
+| роль | *AllDatabasesAdmin* | Роль основного кластера, которая может быть 'AllDatabasesAdmin' или 'AllDatabasesViewer'.|
+| tenant_id_for_principal | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор арендатора доверителя.|
+| principal_type | *Приложение* | Тип принципала, который может быть 'Пользователь', 'App', или 'Группа'|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Добавление участников базы данных](database-principal-python.md)
+* [Добавление основ базы данных](database-principal-python.md)

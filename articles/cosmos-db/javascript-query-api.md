@@ -1,5 +1,5 @@
 ---
-title: Работа с API интегрированных запросов JavaScript в Azure Cosmos DB хранимых процедурах и триггерах
+title: Работа с Интегрированным API-запросом JavaScript в процедурах хранения DB Azure Cosmos и триггерах
 description: В этой статье рассматриваются понятия, связанные с API запросов на основе языка JavaScript и необходимые, чтобы создать хранимые процедуры и триггеры в Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
@@ -8,19 +8,19 @@ ms.date: 08/01/2019
 ms.author: mjbrown
 ms.reviewer: sngun
 ms.openlocfilehash: 7b7ad470b3330224e80a7160fc1a37bb5ee1cde8
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76901839"
 ---
 # <a name="javascript-query-api-in-azure-cosmos-db"></a>API для выполнения запросов JavaScript в Azure Cosmos DB
 
-Помимо выдачи запросов с помощью API SQL в Azure Cosmos DB, [Cosmos DB серверный пакет SDK](https://azure.github.io/azure-cosmosdb-js-server/) предоставляет интерфейс JavaScript для выполнения оптимизированных запросов в Cosmos DB хранимых процедурах и триггерах. Не обязательно знать язык SQL для использования этого интерфейса JavaScript. API запросов в JavaScript позволяет программно создавать запросы, передавая предикатные функции в образующие последовательность вызовы функций. Для этого используется синтаксис, который понимают встроенные элементы массива ECMAScript5 и популярные библиотеки JavaScript, например Lodash. Чтобы запросы были эффективно выполнены с помощью индексов Azure Cosmos DB, их анализирует среда выполнения JavaScript.
+В дополнение к выпуску запросов с использованием API в Azure Cosmos DB, [серверная сторона SDK Cosmos DB](https://azure.github.io/azure-cosmosdb-js-server/) предоставляет интерфейс JavaScript для выполнения оптимизированных запросов в процедурах и триггерах Cosmos DB. Не обязательно знать язык SQL для использования этого интерфейса JavaScript. API запросов в JavaScript позволяет программно создавать запросы, передавая предикатные функции в образующие последовательность вызовы функций. Для этого используется синтаксис, который понимают встроенные элементы массива ECMAScript5 и популярные библиотеки JavaScript, например Lodash. Чтобы запросы были эффективно выполнены с помощью индексов Azure Cosmos DB, их анализирует среда выполнения JavaScript.
 
 ## <a name="supported-javascript-functions"></a>Поддерживаемые функции JavaScript
 
-| **Компонент** | **Описание** |
+| **Функция** | **Описание** |
 |---------|---------|
 |`chain() ... .value([callback] [, options])`|Начинает вызов по цепочке, который должен завершаться value().|
 |`filter(predicateFunction [, options] [, callback])`|Фильтрует входные данные с помощью функции предиката, которая возвращает значение true или false для фильтрации входных документов в наборе результатов. Эта функция действует так же, как предложение WHERE в SQL.|
@@ -33,7 +33,7 @@ ms.locfileid: "76901839"
 
 Если конструкции JavaScript включены в предикатную функцию и/или селектор, они автоматически оптимизированы для непосредственного выполнения в индексах Azure Cosmos DB:
 
-- Простые операторы: `=` `+` `-` `*` `/` `%` `|` `^` `&` `==` `!=` `===` `!===` `<` `>` `<=` `>=` `||` `&&` `<<` `>>` `>>>!` `~`
+- Простые `=` `+` `-` `*` `/` `%` `|` операторы: `^` `&` `==` `!=` `===` `!===` `<` `>` `<=` `>=` `||` `&&` `<<` `>>` `>>>!``~`
 - литералы, включая литерал объекта: {};
 - var, return.
 
@@ -51,7 +51,7 @@ ms.locfileid: "76901839"
 > [!NOTE]
 > `__` (двойное подчеркивание) является псевдонимом для `getContext().getCollection()` при использовании API запросов JavaScript.
 
-|**SQL**|**API запросов JavaScript**|**Описание**|
+|**SQL**|**API запроса JavaScript**|**Описание**|
 |---|---|---|
 |SELECT *<br>FROM docs| __.map(function(doc) { <br>&nbsp;&nbsp;&nbsp;&nbsp;return doc;<br>});|Возвращает все документы (с разбивкой на страницы с отметками "продолжить").|
 |SELECT <br>&nbsp;&nbsp;&nbsp;docs.id,<br>&nbsp;&nbsp;&nbsp;docs.message AS msg,<br>&nbsp;&nbsp;&nbsp;docs.actions <br>FROM docs|__.map(function(doc) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id: doc.id,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg: doc.message,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actions:doc.actions<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>});|Создает проекцию идентификатора, сообщения (msg) и действия для всех документов.|
@@ -65,7 +65,7 @@ ms.locfileid: "76901839"
 Дополнительные сведения о том, как записать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 
 - [How to write stored procedures and triggers using Javascript Query API](how-to-write-javascript-query-api.md) (Как записывать хранимые процедуры и триггеры с помощью API запросов JavaScript)
-- [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions](stored-procedures-triggers-udfs.md) (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)
+- [Работа с процедурами, триггерами и функциями, определяемыми пользователями, сохраненными в Azure Cosmos DB](stored-procedures-triggers-udfs.md)
 - [Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-use-stored-procedures-triggers-udfs.md)
 - [Azure Cosmos DB JavaScript server-side API reference](https://azure.github.io/azure-cosmosdb-js-server) (Справочные материалы по API на стороне сервера для JavaScript Azure Cosmos DB)
 - [Статья о JavaScript ES6 (ECMA 2015)](https://www.ecma-international.org/ecma-262/6.0/)

@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: Настройка пиринга: классическая'
+title: 'Azure ExpressRoute: Настройка пиринга: классика'
 description: В этой статье описана процедура создания и подготовки частного пиринга, общедоступного пиринга и пиринга Microsoft для канала ExpressRoute, а также показано, как проверить состояние, обновить или удалить пиринги для канала.
 services: expressroute
 author: cherylmc
@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 12/06/2019
 ms.author: cherylmc
 ms.openlocfilehash: 05602538f206032d924b39a7dd8f4325c48a5224
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74931376"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-classic"></a>Создание и изменение пиринга для канала ExpressRoute (классическая модель)
 > [!div class="op_single_selector"]
 > * [Портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [Azure CLI](howto-routing-cli.md)
+> * [Лазурный CLI](howto-routing-cli.md)
 > * [Видео — частный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Видео — общедоступный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
-> * [PowerShell (классическая модель)](expressroute-howto-routing-classic.md)
+> * [PowerShell (классический)](expressroute-howto-routing-classic.md)
 > 
 
 В этой статье описано, как созвать конфигурацию маршрутизации или пиринга для канала ExpressRoute и управлять ею, используя командлеты PowerShell и классическую модель развертывания. Ниже описывается, как проверить состояние, обновить или удалить и отозвать пиринги для канала ExpressRoute. Для каждого канала ExpressRoute можно настроить один, два или все три пиринга (частный пиринг Azure, общедоступный пиринг Azure и пиринг Microsoft). Пиринги можно настраивать в любом порядке, главное, выполнять их конфигурацию по очереди. 
@@ -38,7 +38,7 @@ ms.locfileid: "74931376"
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
 * Прежде чем приступать к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
-* Вам потребуется активный канал ExpressRoute. Перед тем как продолжить, [создайте канал ExpressRoute](expressroute-howto-circuit-classic.md) и включите его на стороне поставщика услуг подключения. Для выполнения описанных ниже командлетов канал ExpressRoute должен быть подготовлен и включен.
+* Вам потребуется активный канал ExpressRoute. Следуйте инструкциям по [созданию схемы ExpressRoute](expressroute-howto-circuit-classic.md) и включенной в схему поставщиком подключений, прежде чем продолжить работу. Для выполнения описанных ниже командлетов канал ExpressRoute должен быть подготовлен и включен.
 
 ### <a name="download-the-latest-powershell-cmdlets"></a>Скачивание последних версий командлетов PowerShell
 
@@ -152,12 +152,12 @@ Remove-AzureBGPPeering -AccessType Private -ServiceKey "************************
 В этом разделе описано, как создать, получить, обновить и удалить конфигурацию общедоступного пиринга Azure для канала ExpressRoute.
 
 > [!NOTE]
-> Общедоступный пиринг Azure устарел для новых каналов.
+> Публичное пиринг Azure утихает для новых схем.
 >
 
 ### <a name="to-create-azure-public-peering"></a>Создание общедоступного пиринга Azure
 
-1. **Создайте канал ExpressRoute.**
+1. **Создание схемы ExpressRoute**
 
    Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
 2. **Проверьте, подготовлен ли канал ExpressRoute.**
@@ -187,7 +187,7 @@ Remove-AzureBGPPeering -AccessType Private -ServiceKey "************************
    ServiceProviderProvisioningState : Provisioned
    Status                           : Enabled
    ```
-4. **Настройте для канала общедоступный пиринг Azure.**
+4. **Настройка общедоступного пиринга Azure для схемы**
    
    Перед началом работы убедитесь, что у вас есть следующие сведения.
    
@@ -261,7 +261,7 @@ Remove-AzureBGPPeering -AccessType Public -ServiceKey "*************************
 
 ### <a name="to-create-microsoft-peering"></a>Создание пиринга Майкрософт
 
-1. **Создайте канал ExpressRoute.**
+1. **Создание схемы ExpressRoute**
   
    Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
 2. **Проверьте, подготовлен ли канал ExpressRoute.**
@@ -291,7 +291,7 @@ Remove-AzureBGPPeering -AccessType Public -ServiceKey "*************************
    ServiceProviderProvisioningState : Provisioned
    Status                           : Enabled
    ```
-3. **Настройка пиринга Microsoft для канала**
+3. **Настройка вонзания Microsoft для схемы**
    
     Перед началом работы убедитесь, что у вас есть следующие сведения.
    
@@ -302,7 +302,7 @@ Remove-AzureBGPPeering -AccessType Public -ServiceKey "*************************
    * Объявленные префиксы: необходимо предоставить список всех префиксов, которые вы планируете объявить во время сеанса BGP. Допускаются только общедоступные префиксы IP-адресов. Если планируется отправить набор префиксов, можно отправить список с разделителями-запятыми. Эти префиксы должны быть зарегистрированы в RIR/IRR на ваше имя.
    * Клиент ASN: для объявления префиксов, не зарегистрированных с номером AS для пиринга, можно указать номер AS, с которым они зарегистрированы. **Необязательно**.
    * Имя реестра маршрутизации: можно указать RIR/IRR, в котором зарегистрированы номер AS и префиксы.
-   * Хэш MD5, если вы решите его использовать. **Необязательный параметр.**
+   * Хэш MD5, если вы решите его использовать. **Дополнительные.**
      
    Чтобы настроить пиринг Майкрософт для своего канала, выполните следующий командлет:
  

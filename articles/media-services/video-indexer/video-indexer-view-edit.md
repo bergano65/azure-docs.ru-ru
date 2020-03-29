@@ -1,7 +1,7 @@
 ---
 title: Просмотр и редактирование аналитических сведений Индексатора видео
 titlesuffix: Azure Media Services
-description: В этой статье показано, как просмотреть и изменить службу индексаторов видео в службах мультимедиа Azure.
+description: В этой статье показано, как просматривать и отсылать данные Video Indexer для медиаиндекса Службы мультимедиа Azure.
 services: media-services
 author: Juliako
 manager: femila
@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
 ms.openlocfilehash: e9bb516d498d989b97f1069af9a9f4cb673ea96d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74892674"
 ---
 # <a name="view-and-edit-video-indexer-insights"></a>Просмотр и редактирование аналитических сведений Индексатора видео
@@ -27,7 +27,7 @@ ms.locfileid: "74892674"
 
     На странице отображаются сводные аналитические сведения о видео. 
 
-    ![Аналитические сведения](./media/video-indexer-view-edit/video-indexer-summarized-insights.png)
+    ![Аналитика](./media/video-indexer-view-edit/video-indexer-summarized-insights.png)
 
 4. Просмотрите сводные аналитические сведения о видео. 
 
@@ -37,9 +37,9 @@ ms.locfileid: "74892674"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Использование глубокой аналитики видео](use-editor-create-project.md)
+[Используйте глубокие идеи видео](use-editor-create-project.md)
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)
 

@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 08/13/2018
 ms.author: shvija
 ms.openlocfilehash: b09f39f45936a7c43dbc1ef109780315d62c768f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60821912"
 ---
 # <a name="event-hubs-net-standard-api-overview"></a>Обзор API Центров событий для платформы .NET Standard
@@ -25,7 +25,7 @@ ms.locfileid: "60821912"
 
 ## <a name="event-hubs-client"></a>Клиент Центров событий
 
-[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient) является основным объектом, который используется для отправки событий, создания приемников и получения данных среды выполнения. Этот клиент связан с определенным концентратором событий и создает подключение к конечной точке Центров событий.
+[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient) — это основной объект, который вы используете для отправки событий, создания приемников и получения информации о времени выполнения. Этот клиент связан с определенным концентратором событий и создает подключение к конечной точке Центров событий.
 
 ### <a name="create-an-event-hubs-client"></a>Создание клиента Центров событий
 
@@ -48,7 +48,7 @@ var eventHubClient = EventHubClient.CreateFromConnectionString(connectionStringB
 
 ### <a name="send-events"></a>Отправка событий
 
-Для отправки событий в концентратор событий используйте класс [EventData](/dotnet/api/microsoft.azure.eventhubs.eventdata). Текст должен быть массивом `byte` или сегментом массива `byte`.
+Для отправки событий в концентратор событий воспользуйтесь классом [EventData.](/dotnet/api/microsoft.azure.eventhubs.eventdata) Текст должен быть массивом `byte` или сегментом массива `byte`.
 
 ```csharp
 // Create a new EventData object by encoding a string as a byte array
@@ -185,7 +185,7 @@ public class SimpleEventProcessor : IEventProcessor
 Дополнительные сведения о сценариях Центров событий см. в разделах, ссылки на которые указаны ниже.
 
 * [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
-* [Общие сведения об API Центров событий](event-hubs-api-overview.md)
+* [Доступные apis кцентров событий](event-hubs-api-overview.md)
 
 Ссылки на API-интерфейсы .NET:
 

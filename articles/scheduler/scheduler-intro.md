@@ -1,6 +1,6 @@
 ---
 title: Что такое планировщик Azure?
-description: Создание расписания и выполнение автоматических заданий, вызывающих службы внутри или за пределами Azure
+description: Создание расписания и запуск автоматизированных заданий, вызываемых службами внутри или за пределами Azure
 services: scheduler
 ms.service: scheduler
 ms.suite: infrastructure-services
@@ -10,39 +10,39 @@ ms.reviewer: klam, estfan
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.openlocfilehash: e851da0013cf3a9ff6bb1a0fc1c073b5b796c54d
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78898539"
 ---
 # <a name="what-is-azure-scheduler"></a>Что такое планировщик Azure?
 
 > [!IMPORTANT]
-> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет Azure Scheduler, который [в настоящее время удался.](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date) Чтобы продолжить работу с заданиями, настроенными в Scheduler, пожалуйста, [перейти на azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
 >
-> Планировщик больше не доступен в портал Azure, но командлеты PowerShell для [REST API](/rest/api/scheduler) и [планировщика Azure](scheduler-powershell-reference.md) в настоящее время остаются доступными, чтобы можно было управлять заданиями и коллекциями заданий.
+> Планировщик больше не доступен на портале Azure, но на данный момент доступны смдлеты [REST API](/rest/api/scheduler) и [Azure Scheduler PowerShell,](scheduler-powershell-reference.md) чтобы вы могли управлять своими рабочими местами и коллекциями заданий.
 
 [Планировщик Azure](https://azure.microsoft.com/services/scheduler/) поможет вам создать [задания](../scheduler/scheduler-concepts-terms.md), которые запускаются в облаке, путем декларативного описания действий. Затем служба автоматически планирует и выполняет эти действия. Например, вы можете вызывать службы внутри и вне Azure, например вызвать конечные точки HTTP или HTTPS, а также опубликовать сообщения в очереди службы хранилища Azure и очереди или разделе Служебной шины Azure. Вы можете запускать задания сразу или позже. Планировщик поддерживает [сложные расписания и расширенное повторение](../scheduler/scheduler-advanced-complexity.md). Он определяет, когда запускать задания, хранит историю результатов заданий, которую можно просмотреть, а также надежно планирует выполнение рабочих нагрузок и прогнозирует соответствующее поведение.
 
-В других возможностях планирования Azure также используется Планировщик в фоновом режиме, например для [веб-заданий Azure](../app-service/webjobs-create.md), которые являются функцией [веб-приложений](https://azure.microsoft.com/services/app-service/web/) в Службе приложений Azure. Вы можете управлять обменом данными для этих действий с помощью [планировщика REST API](https://docs.microsoft.com/rest/api/scheduler/), который помогает управлять обменом данными для этих действий.
+В других возможностях планирования Azure также используется Планировщик в фоновом режиме, например для [веб-заданий Azure](../app-service/webjobs-create.md), которые являются функцией [веб-приложений](https://azure.microsoft.com/services/app-service/web/) в Службе приложений Azure. Вы можете управлять коммуникацией для этих действий с помощью [API Scheduler REST,](https://docs.microsoft.com/rest/api/scheduler/)который поможет вам управлять связью для этих действий.
 
 Ниже приведены некоторые сценарии, где планировщик может быть полезен:
 
-* Выполнять повторяющиеся действия приложения. Например, периодически собирайте данные из Twitter в канал.
+* Запуск повторяющихся действий приложения: например, периодический сбор данных из Twitter в веб-канал.
 
-* Выполнение ежедневного обслуживания: ежедневное удаление журналов, выполнение резервного копирования и другие задачи обслуживания.
+* Выполнение ежедневного обслуживания: ежедневное удаление журналов, создание резервных копий и выполнение других задач обслуживания.
 
   Например, как администратор вы можете создавать резервную копию своей базы данных в 1:00 утра каждый день в течение следующих девяти месяцев.
 
 Хотя вы можете использовать Планировщик для создания, обслуживания и запуска запланированных рабочих нагрузок, он не размещает рабочие нагрузки или код запуска. Служба только *вызывает* другие службы или код, размещенный в другом месте — в Azure, локальной среде или у другого поставщика. Планировщик может выполнить вызов с помощью HTTP, HTTPS, очереди хранилища, очереди служебной шины или раздела Служебной шины Azure.
 
-Для создания, планирования, управления, обновления и удаления заданий и [коллекций заданий](../scheduler/scheduler-concepts-terms.md)можно использовать код, [планировщик REST API](https://docs.microsoft.com/rest/api/scheduler/)или [командлеты PowerShell планировщика Azure](scheduler-powershell-reference.md).
+Для создания, планирования, управления, обновления или удаления заданий и [коллекций заданий](../scheduler/scheduler-concepts-terms.md)можно использовать код, [API Scheduler REST](https://docs.microsoft.com/rest/api/scheduler/)или [cmdlets Azure Scheduler PowerShell.](scheduler-powershell-reference.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
-* [Планы и выставление счетов для планировщика Azure](scheduler-plans-billing.md)
+* [Тарифные планы и выставление счетов для планировщика Azure](scheduler-plans-billing.md)
 * [Создание сложных расписаний и расширенного повторения с помощью планировщика Azure](scheduler-advanced-complexity.md)
 * [Справочник по API REST планировщика Azure](/rest/api/scheduler)
 * [Справочник по командлетам PowerShell планировщика Azure](scheduler-powershell-reference.md)

@@ -1,6 +1,6 @@
 ---
-title: Перенос локальных рабочих нагрузок служб SSIS в службы SSIS в фабрике данных Azure
-description: Перенос локальных рабочих нагрузок служб SSIS в службы SSIS в ADF.
+title: Перенос рабочих нагрузок SSIS в SSIS на фабрику данных Azure
+description: Мигрируйте на предварительных рабочих нагрузках SSIS в SSIS в ADF.
 services: data-factory
 documentationcenter: ''
 author: chugugrace
@@ -12,81 +12,81 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 9/3/2019
 ms.openlocfilehash: 52629b8e2e190cc041116e6f65488480712baf01
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74929791"
 ---
-# <a name="migrate-on-premises-ssis-workloads-to-ssis-in-adf"></a>Перенос локальных рабочих нагрузок служб SSIS в службы SSIS в ADF
+# <a name="migrate-on-premises-ssis-workloads-to-ssis-in-adf"></a>Мигрировать на приложев sSIS рабочих нагрузок в SSIS в ADF
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
-При переносе рабочих нагрузок базы данных из локальной SQL Server в службы баз данных Azure — это база данных SQL Azure или управляемый экземпляр базы данных SQL Azure, рабочие нагрузки ETL на SQL Server Integration Services (SSIS) в качестве одного из основных добавленных значений. Кроме того, необходимо выполнить миграцию служб.
+При переносе рабочих нагрузок базы данных из сервера S'L в помещения в службы баз данных Azure, а именно данные базы данных Azure S'L или управляемый экземпляр базы данных Azure S'L, рабочие нагрузки ETL в службах интеграции серверов (SSIS) являются одной из основных проблем с добавленной стоимостью услуги также должны быть перенесены.
 
-Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF) поддерживает выполнение пакетов служб SSIS. После подготовки Azure-SSIS IR можно использовать привычные средства, такие как SQL Server Data Tools (SSDT)/SQL Server Management Studio (SSMS), и служебные программы командной строки, такие как дтинсталл/dtutil/dtexec, для развертывания и запуска пакетов в Azure. Дополнительные сведения см. в разделе [Общие сведения о точности и сдвиге Azure SSIS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview).
+Время интеграции Azure-SSIS (IR) на фабрике данных Azure (ADF) поддерживает запуск пакетов SSIS. После подготовки Azure-SSIS IR можно использовать знакомые инструменты, такие как S'L Server Data Tools (SSDT)/S'L Server Management Studio (SSMS) и утилиты командной строки, такие как dtinstall/dtutil/dtexec, для развертывания и запуска пакетов в Azure. Для получения дополнительной информации смотрите [обзор подъема и смены Azure SSIS.](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview)
 
-В этой статье описывается процесс переноса рабочих нагрузок ETL из локальных служб SSIS в службы SSIS в ADF. Процесс миграции состоит из двух этапов: **оценки** и **миграции**.
+В этой статье освещаются процесс миграции рабочих нагрузок ETL от собственного SSIS до SSIS в ADF. Процесс миграции состоит из двух этапов: **Оценка** и **миграция.**
 
 ## <a name="assessment"></a>Оценка
 
-Для создания полного плана миграции можно определить проблемы с исходными пакетами служб SSIS, которые препятствуют успешной миграции.
+Для создания полного плана миграции тщательная оценка поможет выявить проблемы с исходными пакетами SSIS, которые предотвратят успешную миграцию.
 
-Помощник по миграции данных (DMA) — это свободно скачиваемое средство для этой цели, которое можно установить и выполнить локально. Проект оценки DMA типа **Integration Services** можно создать для оценки пакетов служб SSIS в пакетах и определения проблем совместимости, представленных в следующих категориях.
+Помощник по миграции данных (DMA) является свободно загружаемым инструментом для этой цели, который может быть установлен и выполнен локально. Проект оценки DMA **типовых интеграционных услуг** может быть создан для оценки пакетов SSIS в пакетах и выявления проблем совместимости, которые представлены в следующих категориях:
 
-- Блокирование миграции. это проблемы совместимости, которые блокируют запуск пакетов источника миграции на Azure-SSIS IR. DMA предоставляет рекомендации по решению этих проблем.
+- Блокировщики миграции: Это проблемы совместимости, которые блокируют пакеты источников миграции для выполнения на ИК Azure-SSIS. DMA предоставляет рекомендации, которые помогут вам решить эти проблемы.
 
-- Информативные проблемы. Это частично поддерживаемые или устаревшие функции, используемые в исходных пакетах. DMA предоставляет полный набор рекомендаций, альтернативных подходов, доступных в Azure, и устраняет действия по устранению проблемы.
+- Информационные проблемы: Это частично поддерживаемые или обесточенные функции, которые используются в исходных пакетах. DMA предоставляет полный набор рекомендаций, альтернативные подходы, доступные в Azure, и смягчающие шаги для решения.
 
-### <a name="four-storage-types-for-ssis-packages"></a>Четыре типа хранилища для пакетов служб SSIS
+### <a name="four-storage-types-for-ssis-packages"></a>Четыре типа хранения для пакетов SSIS
 
-- Каталог служб SSIS (SSISDB). Это было представлено в SQL Server 2012 и содержит набор хранимых процедур, представлений и функций, возвращающих табличное значение, используемых для работы с проектами и пакетами служб SSIS.
+- Каталог SSIS (SSISDB). Это было введено с помощью S'L Server 2012 и содержит набор сохраненных процедур, представлений и функций, ценных на стол, используемых для работы с проектами/пакетами SSIS.
 - Файловая система.
-- SQL Server системная база данных (MSDB).
-- Хранилище пакетов служб SSIS. Это уровень управления пакетами поверх двух подтипов:
-  - MSDB — это системная база данных в SQL Server, используемая для хранения пакетов служб SSIS.
-  - Управляемая файловая система, которая является определенной папкой в SQL Server пути установки, используемого для хранения пакетов служб SSIS.
+- База данных системы сервера S'L (MSDB).
+- Магазин пакетов SSIS. Это слой управления пакетами поверх двух подтипов:
+  - MSDB, которая представляет собой системную базу данных в сервере S'L, используемую для хранения пакетов SSIS.
+  - Управляемая файловая система, которая представляет собой конкретную папку в пути установки сервера S'L, используемую для хранения пакетов SSIS.
 
-Сейчас DMA поддерживает пакетную оценку пакетов, хранящихся в **файловой системе**, **хранилище пакетов**и **каталоге служб SSIS** , с момента **DMA версии 5.0**.
+DMA в настоящее время поддерживает пакет-оценку пакетов, хранящихся в **файловой системе,** **пакетном магазине**и **каталоге SSIS** с **dMA-версии v5.0**.
 
-Получите [DMA](https://docs.microsoft.com/sql/dma/dma-overview)и [выполните оценку пакета с его помощью](https://docs.microsoft.com/sql/dma/dma-assess-ssis).
+Получить [DMA](https://docs.microsoft.com/sql/dma/dma-overview), и [выполнить ваш пакет оценки с ним](https://docs.microsoft.com/sql/dma/dma-assess-ssis).
 
 ## <a name="migration"></a>Миграция
 
-В зависимости от [типов хранилища](#four-storage-types-for-ssis-packages) исходных пакетов SSIS и назначения миграции рабочих нагрузок базы данных действия по переносу **пакетов служб SSIS** и **Агент SQL Server заданий** , планирующих выполнение пакетов служб SSIS, могут отличаться. Существует два сценария:
+В зависимости от [типов хранилищ](#four-storage-types-for-ssis-packages) исходных пакетов SSIS и назначения миграционных заданий рабочих нагрузок баз данных, этапы переноса **пакетов SSIS** и **заданий серверного агента S'L,** которые планируют выполнение пакетов SSIS, могут отличаться. Имеется два сценария.
 
-- [**Управляемый экземпляр базы данных SQL Azure** как место назначения рабочей нагрузки базы данных](#azure-sql-database-managed-instance-as-database-workload-destination)
-- [**База данных SQL Azure** в качестве назначения рабочей нагрузки базы данных](#azure-sql-database-as-database-workload-destination)
+- [**База данных Azure S'L управляет экземпляром** как пункт назначения рабочей нагрузки базы данных](#azure-sql-database-managed-instance-as-database-workload-destination)
+- [**База данных Azure S'L** как пункт назначения рабочей нагрузки базы данных](#azure-sql-database-as-database-workload-destination)
 
-### <a name="azure-sql-database-managed-instance-as-database-workload-destination"></a>**Управляемый экземпляр базы данных SQL Azure** как место назначения рабочей нагрузки базы данных
+### <a name="azure-sql-database-managed-instance-as-database-workload-destination"></a>**База данных Azure S'L управляет экземпляром** как пункт назначения рабочей нагрузки базы данных
 
-| **Тип хранилища пакета** |Пакетная миграция пакетов служб SSIS|Пакетная миграция заданий служб SSIS|
+| **Тип хранения упаковки** |Как пакетно-мигрировать пакеты SSIS|Как к пакет-миграции SSIS рабочих мест|
 |-|-|-|
-|SSISDB|[Перенос **SSISDB**](scenario-ssis-migration-ssisdb-mi.md)|[Миграция заданий служб SSIS в агент управляемого экземпляра базы данных SQL Azure](scenario-ssis-migration-ssisdb-mi.md#ssis-jobs-to-azure-sql-database-managed-instance-agent)|
-|Файловая система|Повторно разверните их в файловые ресурсы или файлы Azure через дтинсталл, dtutil или ручную копию или для доступа к файловым системам через виртуальную сеть или локальную среду IR. Дополнительные сведения см. в разделе [программа dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility).|Преобразуйте их в конвейеры и действия/триггеры ADF с помощью сценариев, портала SSMS или ADF. Дополнительные сведения см. в разделе [функция планирования SSMS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms).|
-|SQL Server (MSDB)|Экспортируйте их в файловые системы, файловые ресурсы или файлы Azure с помощью SSMS или dtutil. Дополнительные сведения см. в разделе [Экспорт пакетов служб SSIS](https://docs.microsoft.com/sql/integration-services/import-and-export-packages-ssis-service).|Преобразуйте их в конвейеры и действия/триггеры ADF с помощью сценариев, портала SSMS или ADF. Дополнительные сведения см. в разделе [функция планирования SSMS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms).|
-|Хранилище пакетов|Экспортируйте их в файловые системы, файловые ресурсы или файлы Azure с помощью SSMS/dtutil или повторно разверните их в файловые ресурсы или файлы Azure с помощью дтинсталл/dtutil/вручную и не задерживайте их в файловых системах, чтобы получить доступ через виртуальную сеть или локальную среду IR. Дополнительные сведения см. в разделе Программа dtutil. Дополнительные сведения см. в разделе [программа dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility).|Преобразуйте их в конвейеры и действия/триггеры ADF с помощью сценариев, портала SSMS или ADF. Дополнительные сведения см. в разделе [функция планирования SSMS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms).|
+|Ssisdb|[Мигрировать **SSISDB**](scenario-ssis-migration-ssisdb-mi.md)|[Перенос заданий SSIS в управляемый экземпляр базы данных Azure S'L](scenario-ssis-migration-ssisdb-mi.md#ssis-jobs-to-azure-sql-database-managed-instance-agent)|
+|Файловая система|Перераспределите их для файла акций/файлов Azure через dtinstall/dtutil/manual copy или для сохранения в файловых системах доступа через VNet/Self-Hosted IR. Для получения дополнительной информации, [см.](https://docs.microsoft.com/sql/integration-services/dtutil-utility)|Преобразуйте их в конвейеры ADF/деятельности/триггеры с помощью скриптов/портала SSMS/ADF. Для получения дополнительной [SSMS scheduling feature](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)информации см.|
+|Сервер S'L (MSDB)|Экспортировать их в файлы систем/ файловых акций/ Лазурные файлы через SSMS/dtutil. Для получения дополнительной [информации см.](https://docs.microsoft.com/sql/integration-services/import-and-export-packages-ssis-service)|Преобразуйте их в конвейеры ADF/деятельности/триггеры с помощью скриптов/портала SSMS/ADF. Для получения дополнительной [SSMS scheduling feature](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)информации см.|
+|Хранилище пакетов|Экспортируйте их в файлы систем/файловых файлов/Лазурные файлы через SSMS/dtutil или передислоцируйте их для файла акций/файлов оговоренных файлов через dtinstall/dtutil/manual copy или храните их в файловых системах для доступа через VNet/Self-Hosted IR. Для получения дополнительной информации, см. Для получения дополнительной информации, [см.](https://docs.microsoft.com/sql/integration-services/dtutil-utility)|Преобразуйте их в конвейеры ADF/деятельности/триггеры с помощью скриптов/портала SSMS/ADF. Для получения дополнительной [SSMS scheduling feature](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)информации см.|
 
-### <a name="azure-sql-database-as-database-workload-destination"></a>**База данных SQL Azure** в качестве назначения рабочей нагрузки базы данных
+### <a name="azure-sql-database-as-database-workload-destination"></a>**База данных Azure S'L** как пункт назначения рабочей нагрузки базы данных
 
-| **Тип хранилища пакета** |Пакетная миграция пакетов служб SSIS|Как выполнить пакетную миграцию заданий|
+| **Тип хранения упаковки** |Как пакетно-мигрировать пакеты SSIS|Как к пакет-мигрировать задания|
 |-|-|-|
-|SSISDB|Повторное развертывание в Azure-SSISDB с помощью SSDT/SSMS. Дополнительные сведения см. [в разделе Развертывание пакетов служб SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-deploy-run-monitor-tutorial).|Преобразуйте их в конвейеры и действия/триггеры ADF с помощью сценариев, портала SSMS или ADF. Дополнительные сведения см. в разделе [функция планирования SSMS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms).|
-|Файловая система|Повторно разверните их в файловые ресурсы или файлы Azure через дтинсталл, dtutil или ручную копию или для доступа к файловым системам через виртуальную сеть или локальную среду IR. Дополнительные сведения см. в разделе [программа dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility).|Преобразуйте их в конвейеры и действия/триггеры ADF с помощью сценариев, портала SSMS или ADF. Дополнительные сведения см. в разделе [функция планирования SSMS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms).|
-|SQL Server (MSDB)|Экспортируйте их в файловые системы, файловые ресурсы или файлы Azure с помощью SSMS или dtutil. Дополнительные сведения см. в разделе [Экспорт пакетов служб SSIS](https://docs.microsoft.com/sql/integration-services/import-and-export-packages-ssis-service).|Преобразуйте их в конвейеры и действия/триггеры ADF с помощью сценариев, портала SSMS или ADF. Дополнительные сведения см. в разделе [функция планирования SSMS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms).|
-|Хранилище пакетов|Экспортируйте их в файловые системы, файловые ресурсы или файлы Azure с помощью SSMS/dtutil или повторно разверните их в файловые ресурсы или файлы Azure с помощью дтинсталл/dtutil/вручную и не задерживайте их в файловых системах, чтобы получить доступ через виртуальную сеть или локальную среду IR. Дополнительные сведения см. в разделе Программа dtutil. Дополнительные сведения см. в разделе [программа dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility).|Преобразуйте их в конвейеры и действия/триггеры ADF с помощью сценариев, портала SSMS или ADF. Дополнительные сведения см. в разделе [функция планирования SSMS](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms).|
+|Ssisdb|Передислокация в Azure-SSISDB через SSDT/SSMS. Для получения дополнительной информации смотрите [Развертывание пакетов SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-deploy-run-monitor-tutorial).|Преобразуйте их в конвейеры ADF/деятельности/триггеры с помощью скриптов/портала SSMS/ADF. Для получения дополнительной [SSMS scheduling feature](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)информации см.|
+|Файловая система|Перераспределите их для файла акций/файлов Azure через dtinstall/dtutil/manual copy или для сохранения в файловых системах доступа через VNet/Self-Hosted IR. Для получения дополнительной информации, [см.](https://docs.microsoft.com/sql/integration-services/dtutil-utility)|Преобразуйте их в конвейеры ADF/деятельности/триггеры с помощью скриптов/портала SSMS/ADF. Для получения дополнительной [SSMS scheduling feature](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)информации см.|
+|Сервер S'L (MSDB)|Экспортировать их в файлы систем/ файловых акций/ Лазурные файлы через SSMS/dtutil. Для получения дополнительной [информации см.](https://docs.microsoft.com/sql/integration-services/import-and-export-packages-ssis-service)|Преобразуйте их в конвейеры ADF/деятельности/триггеры с помощью скриптов/портала SSMS/ADF. Для получения дополнительной [SSMS scheduling feature](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)информации см.|
+|Хранилище пакетов|Экспортируйте их в файлы систем/файловых файлов/Лазурные файлы через SSMS/dtutil или передислоцируйте их для файла акций/файлов оговоренных файлов через dtinstall/dtutil/manual copy или храните их в файловых системах для доступа через VNet/Self-Hosted IR. Для получения дополнительной информации, см. Для получения дополнительной информации, [см.](https://docs.microsoft.com/sql/integration-services/dtutil-utility)|Преобразуйте их в конвейеры ADF/деятельности/триггеры с помощью скриптов/портала SSMS/ADF. Для получения дополнительной [SSMS scheduling feature](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)информации см.|
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - [Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/introduction)
 - [Помощник по миграции баз данных](https://docs.microsoft.com/sql/dma/dma-overview)
-- [Перемещение рабочих нагрузок служб SSIS в облако](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview?view=sql-server-2017)
-- [Миграция пакетов служб SSIS в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
-- [Повторное развертывание пакетов в базе данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages)
+- [Поднимите и переместите рабочие нагрузки SSIS в облако](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview?view=sql-server-2017)
+- [Перенос пакетов Integration Services в управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
+- [Переразвертывание пакетов в базу данных Azure S'L](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка пакетов SSIS, развертываемых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-validate-packages)
-- [Запуск пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-run-packages)
-- [Мониторинг Azure-SSIS Integration Runtime](https://docs.microsoft.com/azure/data-factory/monitor-integration-runtime#azure-ssis-integration-runtime)
-- [Планирование выполнения пакетов служб SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages)
+- [Запуск пакетов SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-run-packages)
+- [Мониторинг времени запуска интеграции Azure-SSIS](https://docs.microsoft.com/azure/data-factory/monitor-integration-runtime#azure-ssis-integration-runtime)
+- [Расписание выполнения пакета SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages)

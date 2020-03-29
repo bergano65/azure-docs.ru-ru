@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок при развертывании виртуальных машин Linux в Azure | Документация Майкрософт
-description: Устранение неполадок при развертывании виртуальных машин Linux в модели развертывания Azure Resource Manager.
+description: Устранение проблем, развертывание проблем виртуальной машины Linux в модели развертывания диспетчера ресурсов Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
@@ -15,23 +15,23 @@ ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
 ms.openlocfilehash: 5a8a58a3935b7cd5efb8565f7e3278ccaae4f4de
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77921442"
 ---
 # <a name="troubleshoot-deploying-linux-virtual-machine-issues-in-azure"></a>Устранение неполадок при развертывании виртуальных машин Linux в Azure
 
 Для устранения неполадок, связанных с развертыванием виртуальных машин в Azure, ознакомьтесь с разделом [Наиболее важные проблемы](#top-issues), где описаны распространенные ошибки и способы их разрешения.
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**
 
 ## <a name="top-issues"></a>Наиболее важные проблемы
 [!INCLUDE [virtual-machines-linux-troubleshoot-deploy-vm-top](../../../includes/virtual-machines-linux-troubleshoot-deploy-vm-top.md)]
 
 ## <a name="the-cluster-cannot-support-the-requested-vm-size"></a>Кластер не поддерживает запрошенный размер виртуальной машины
-\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
+\<свойства supportTopicIds"123456789" resourceTags""окна" productPesIds"1234, 5678" />
 - Повторите запрос с указанием меньшего размера виртуальной машины.
 - Если нельзя изменить размер запрошенной виртуальной машины,
     - остановите все виртуальные машины в группе доступности. Выберите **Группы ресурсов** > имя вашей группы ресурсов > **Ресурсы** > имя вашей группы доступности > **Виртуальные машины** > имя вашей виртуальной машины > **Остановить**.
@@ -40,7 +40,7 @@ ms.locfileid: "77921442"
 
 
 ## <a name="the-cluster-does-not-have-free-resources"></a>В кластере нет свободных ресурсов
-\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
+\<свойства supportTopicIds"123456789" resourceTags""окна" productPesIds"1234, 5678" />
 - Повторите запрос позже.
 - Если новая виртуальная машина должна быть частью другой группы доступности:
     - создайте виртуальную машину в другой группе доступности (в том же регионе);
@@ -88,7 +88,7 @@ ms.locfileid: "77921442"
 
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/).
 
-Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**

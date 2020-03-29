@@ -1,5 +1,5 @@
 ---
-title: Установка Symantec Endpoint Protection на виртуальной машине Windows в Azure
+title: Установка защиты конечных точек Symantec на Windows VM в Azure
 description: Узнайте, как установить и настроить расширение безопасности Symantec Endpoint Protection на новой или существующей виртуальной машине Azure, созданной с помощью классической модели развертывания.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,20 +15,20 @@ ms.topic: article
 ms.date: 03/31/2017
 ms.author: akjosh
 ms.openlocfilehash: 63f9441d4df9551405c2ab2bf8c0c67d7de5753c
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77919912"
 ---
 # <a name="how-to-install-and-configure-symantec-endpoint-protection-on-a-windows-vm"></a>Установка и настройка Symantec Endpoint Protection на виртуальной машине Windows
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
-В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
+Azure имеет две различные модели развертывания для создания и работы с ресурсами: [менеджер ресурсов и Classic.](../../azure-resource-manager/management/deployment-models.md) В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
 
 В этой статье показывается, как можно установить и настроить клиент Symantec Endpoint Protection на существующей виртуальной машине под управлением Windows Server. Этот полный клиент включает такие службы, как защита от вирусов и шпионских программ, брандмауэр и система предотвращения вторжений. Клиент устанавливается как модуль безопасности с помощью агента ВМ.
 
-При наличии действительной подписки от Symantec для локального решения можно использовать ее для защиты виртуальных машин Azure. Если у вас еще нет подписки, можно зарегистрироваться для получения пробной подписки. Дополнительные сведения об этом решении см. [в статье Symantec Endpoint Protection на платформе Microsoft Azure][Symantec]. На этой странице также приведены ссылки на сведения о лицензировании и инструкции по установке клиента для тех, кто уже использует Symantec.
+При наличии действительной подписки от Symantec для локального решения можно использовать ее для защиты виртуальных машин Azure. Если у вас еще нет подписки, можно зарегистрироваться для получения пробной подписки. Дополнительные сведения об этом решении см. в статье [Symantec Endpoint Protection на платформе Microsoft Azure][Symantec]. На этой странице также приведены ссылки на сведения о лицензировании и инструкции по установке клиента для тех, кто уже использует Symantec.
 
 ## <a name="install-symantec-endpoint-protection-on-an-existing-vm"></a>Установка Symantec Endpoint Protection на существующей виртуальной машине
 Для этого потребуются следующие компоненты.
@@ -48,7 +48,7 @@ $vm = Get-AzureVM -ServiceName $CSName -Name $VMName
 write-host $vm.VM.ProvisionGuestAgent
 ```
 
-Если команда **write-host** отображает значение **True**, агент ВМ установлен. Если отображается **значение false**, см. инструкции и ссылку на загрузку в блоге Azure запись о [агенте и расширениях виртуальной машины. часть 2][Agent].
+Если команда **write-host** отображает значение **True**, агент ВМ установлен. Если она отображает значение **False**, см. инструкции и ссылку для скачивания [во второй части записи блога Azure, посвященной агенту и расширениям виртуальных машин][Agent].
 
 Если агент ВМ установлен, выполните следующие команды, чтобы установить агент Symantec Endpoint Protection.
 
@@ -61,7 +61,7 @@ Set-AzureVMExtension -Publisher Symantec –Version $Agent.Version -ExtensionNam
 
 Чтобы проверить, установлен ли модуль безопасности Symantec, и убедиться в актуальности его версии, сделайте следующее:
 
-1. Войдите на виртуальную машину. Инструкции см. в статье [Вход в виртуальную машину под управлением Windows с помощью классического портала Azure][Logon].
+1. Войдите в виртуальную машину. Для получения инструкций см. [Как войти в виртуальную машину, работая на Windows Server.][Logon]
 2. Для Windows Server 2008 R2: щелкните **Пуск > Symantec Endpoint Protection**. Для Windows Server 2012 или Windows Server 2012 R2: на начальном экране введите **Symantec**, а затем щелкните **Symantec Endpoint Protection**.
 3. На вкладке **Состояние** окна **Status-Symantec Endpoint Protection** (Состояние Symantec Endpoint Protection) примените обновления или выполните перезагрузку, если это необходимо.
 

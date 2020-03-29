@@ -1,6 +1,6 @@
 ---
 title: Предварительная выборка сообщений служебной шины Azure | Документация Майкрософт
-description: Повышение производительности с помощью предварительной выборки сообщений служебной шины Azure. Сообщения можно легко получить локально, прежде чем приложение запросит их.
+description: Повышение производительности с помощью предварительной выборки сообщений служебной шины Azure. Сообщения легко доступны для локального поиска до того, как приложение запрашивает их.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 80717ab940d27e9bf108b3740309bcd7d71668fd
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76760663"
 ---
 # <a name="prefetch-azure-service-bus-messages"></a>Предварительная выборка сообщений служебной шины Azure
@@ -32,7 +32,7 @@ ms.locfileid: "76760663"
 
 Этот параметр можно легко добавить в параметры принимающей стороны примеров [QueuesGettingStarted](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/QueuesGettingStarted) или [ReceiveLoop](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/ReceiveLoop), чтобы увидеть результат в этих контекстах.
 
-Пока сообщения находятся в буфере предварительной выборки, любые последующие вызовы **Receive**/**ReceiveAsync** выполняются немедленно из буфера, и буфер пополняется в фоновом режиме, как только в нем освобождается место. Если нет доступных для доставки сообщений, операция получения очищает буфер, после чего ожидает сообщения или блокируется, в соответствии с заданной логикой.
+В то время как сообщения доступны в буфере prefetch, любые последующие вызовы/**ReceiveAsync** немедленно выполняются из буфера, и буфер пополняется в фоновом режиме по мере появления пространства. **Receive** Если нет доступных для доставки сообщений, операция получения очищает буфер, после чего ожидает сообщения или блокируется, в соответствии с заданной логикой.
 
 Предварительная выборка точно так же работает с интерфейсами API [OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage) и [OnMessageAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessageasync).
 

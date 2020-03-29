@@ -1,6 +1,6 @@
 ---
-title: Функции массивов в Azure Cosmos DB языке запросов
-description: Сведения о том, как функции массивов позволяют выполнять операции с массивами в Azure Cosmos DB
+title: Функции массива на языке d-запросов Azure Cosmos
+description: Узнайте о том, как функции массива позволяют выполнять операции на массивах в Azure Cosmos DB
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,19 +8,19 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: a0256470892d634361498f1632027aff562c7761
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74871811"
 ---
-# <a name="array-functions-azure-cosmos-db"></a>Функции массивов (Azure Cosmos DB)
+# <a name="array-functions-azure-cosmos-db"></a>Функции массива (Azure Cosmos DB)
 
-Функции массивов позволяют выполнять операции с массивами в Azure Cosmos DB.
+Функции массива позволяют выполнять операции на массивах в Azure Cosmos DB.
 
-## <a name="functions"></a>Функции Azure
+## <a name="functions"></a>Функции
 
-Следующие скалярные функции выполняют операцию над входным значением массива и возвращают числовое, логическое или значение массива:
+Следующие функции масштабирования выполняют операцию на вхотозанном значении массива и возвращают числовое, boolean или значение массива:
   
 ||||  
 |-|-|-|  
@@ -30,7 +30,7 @@ ms.locfileid: "74871811"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
-- [Определяемые пользователем функции](sql-query-udfs.md)
-- [Статистические функции](sql-query-aggregates.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)
+- [Определенные пользователем функции](sql-query-udfs.md)
+- [Статистические выражения](sql-query-aggregates.md)

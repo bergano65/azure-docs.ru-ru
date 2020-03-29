@@ -1,22 +1,22 @@
 ---
-title: Серия миграции contoso | Документация Майкрософт
+title: Серия миграции Contoso Документы Майкрософт
 description: Статья содержит общие сведения о стратегии и сценариях миграции, применяемых организацией Contoso для переноса своего локального центра обработки данных в Azure.
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.author: raynew
 ms.openlocfilehash: d37bee589eb7ee2e6e30c8dcea2531dd1f063481
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78939191"
 ---
 # <a name="contoso-migration-series"></a>Миграция Contoso: серия
 
 
-У нас есть серия статей, демонстрирующих, как вымышленная организация Contoso переносит локальную инфраструктуру в облако [Microsoft Azure](https://azure.microsoft.com/overview/what-is-azure/) . 
+У нас есть серия статей, демонстрирующие, как фиктивная организация Contoso мигрирует на локта-инфраструктуру в облако [Microsoft Azure.](https://azure.microsoft.com/overview/what-is-azure/) 
 
-Этот цикл содержит сведения и сценарии, иллюстрирующие настройку инфраструктуры миграции и выполнение миграции различных типов. Сценарии увеличивают сложность по мере их продвижения. В статьях описано, как компания Contoso выполняет собственную задачу по миграции, но в материалы также включены дополнительные материалы и конкретные инструкции.
+Этот цикл содержит сведения и сценарии, иллюстрирующие настройку инфраструктуры миграции и выполнение миграции различных типов. Сценарии усложняют сядр по мере их развития. В статьях описано, как компания Contoso выполняет собственную задачу по миграции, но в материалы также включены дополнительные материалы и конкретные инструкции.
 
 ## <a name="migration-articles"></a>Статьи о миграции
 
@@ -25,13 +25,13 @@ ms.locfileid: "78939191"
 - Каждый сценарий миграции определяется немного отличающимися бизнес-целями, которые определяют стратегию миграции.
 - Для каждого сценария развертывания мы предоставляем сведения о бизнес-факторах и целях, предлагаемой архитектуре, шагах по выполнению миграции, а также рекомендации по очистке и дальнейшим действиям после завершения миграции.
 
-**Статья** | **Сведения** 
+**Статьи** | **Подробно** 
 --- | --- 
 [Статья 1. Общие сведения](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-overview) | Обзор серии статей, стратегии миграции компании Contoso и используемых в этой серии примеров приложений. 
 [Статья 2. Развертывание инфраструктуры миграции в Contoso](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-infrastructure) | Компания Contoso готовит локальную инфраструктуру и инфраструктуру Azure для миграции. Для всех статей миграции в серии используется одна и та же инфраструктура. 
 [Статья 3. Оценка готовности локальных ресурсов к переносу в Azure](https://docs.microsoft.com/azure/cloud-adoption-framework/migrate/azure-migration-guide/assess?tabs=Tools)  | Компания Contoso выполняет оценку локального приложения SmartHotel360 в VMware. Для оценки виртуальных машин приложения Contoso использует службу "Миграция Azure". Для оценки базы данных SQL Server приложения используется Помощник по миграции данных.
 [Статья 4. Повторное размещение приложения на виртуальной машине Azure и в Управляемом экземпляре Базы данных SQL](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rehost-vm-sql-managed-instance) | Специалисты компании Contoso переносят локальное приложение SmartHotel360 в Azure по методу lift-and-shift. Специалисты компании Contoso переносят виртуальную машину внешнего интерфейса приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Они переносят базу данных приложения в Управляемый экземпляр Базы данных SQL Azure с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).
-[Статья 5. Повторное размещение приложения на виртуальных машинах Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rehost-vm) | Специалисты компании Contoso переносят виртуальные машины приложения SmartHotel360 на виртуальные машины Azure с помощью службы Site Recovery. 
+[Статья 5. Перемещение приложения в виртуальные машины Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rehost-vm) | Специалисты компании Contoso переносят виртуальные машины приложения SmartHotel360 на виртуальные машины Azure с помощью службы Site Recovery. 
 [Статья 6. Повторное размещение приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rehost-vm-sql-ag) |Компания Contoso переносит приложение SmartHotel360. Для переноса виртуальных машин приложения компания Contoso использует Site Recovery. Она использует службу Azure Database Migration Service для миграции базы данных приложения в кластер SQL Server, который защищен группой доступности AlwaysOn. 
 [Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rehost-linux-vm) | Специалисты компании Contoso выполняют миграцию приложения osTicket для Linux по методу lift-and-shift на виртуальные машины Azure с помощью службы Site Recovery.
 [Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и в Базе данных Azure для MySQL](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rehost-linux-vm-mysql) | Специалисты компании Contoso выполняют миграцию приложения osTicket для Linux на виртуальные машины Azure с помощью Site Recovery. Они перемещают базу данных приложения в Базу данных Azure для MySQL с помощью MySQL Workbench. 
@@ -44,5 +44,5 @@ ms.locfileid: "78939191"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сведения о](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/) миграции в облако.
-- Сведения о стратегиях миграции для других сценариев (пары "источник — Целевая версия") в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/).
+- [Узнайте о](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/) миграции облака.
+- Узнайте о стратегиях миграции для других сценариев (источник/целевые пары) в [Руководстве по миграции баз данных.](https://datamigration.microsoft.com/)

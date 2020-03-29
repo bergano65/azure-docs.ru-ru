@@ -1,6 +1,6 @@
 ---
-title: PowerShell. Добавление внешнего пользователя в лабораторию в Azure DevTest Labs
-description: В этой статье представлен сценарий Azure PowerShell, который добавляет внешнего пользователя в лабораторию в Azure DevTest Labs.
+title: PowerShell - Добавление внешнего пользователя в лабораторию в Лаборатории Azure DevTest
+description: В этой статье приведен скрипт Azure PowerShell, который добавляет внешнего пользователя в лабораторию в Лаборатории Azure DevTest Labs.
 services: lab-services
 author: spelluru
 manager: ''
@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: e9efe5476da051d905feff3d6803cb60ea0c4beb
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76760493"
 ---
 # <a name="use-powershell-to-add-an-external-user-to-a-lab-in-azure-devtest-labs"></a>Добавление внешнего пользователя в лабораторию в Azure DevTest Labs с помощью PowerShell
@@ -27,7 +27,7 @@ ms.locfileid: "76760493"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -38,9 +38,9 @@ ms.locfileid: "76760493"
 
 Этот сценарий использует следующие команды: 
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [Get-Азадусер](/powershell/module/az.resources/get-azaduser) | Извлекает объект-пользователь из Azure Active Directory. |
+| [Гет-Азадузер](/powershell/module/az.resources/get-azaduser) | Извлекает объект-пользователь из Azure Active Directory. |
 | [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment) | Присваивает указанную роль заданному субъекту в определенной области. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

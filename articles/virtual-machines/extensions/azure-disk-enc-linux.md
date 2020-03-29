@@ -1,5 +1,5 @@
 ---
-title: Шифрование дисков Azure для Linux
+title: Лазурное шифрование дисков для Linux
 description: Развертывание шифрования дисков Azure на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 06/10/2019
+ms.date: 03/19/2020
 ms.author: ejarvi
-ms.openlocfilehash: 4fa7f7d1419a8cd1006a632ba67587ab3434bf5a
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 22568c7c23771f143f6cd583114949c380d15e3d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79254031"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80066920"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Шифрование дисков Azure для Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
 
@@ -26,56 +26,65 @@ ms.locfileid: "79254031"
 
 Шифрование дисков Azure использует подсистему dm-crypt в Linux для шифрования всего диска в [выбранных дистрибутивах Azure Linux](https://aka.ms/adelinux).  Решение интегрируется с Azure Key Vault, обеспечивая управление секретами и ключами шифрования диска.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Полный список необходимых компонентов см. в разделах [Шифрование дисков Azure для виртуальных машин Linux](../linux/disk-encryption-overview.md), в частности следующие разделы:
+Полный список предпосылок можно узнать в разделе [«Шифрование дисков Azure» для Linux VMs,](../linux/disk-encryption-overview.md)в частности следующие разделы:
 
-- [Шифрование дисков Azure для виртуальных машин Linux](../linux/disk-encryption-overview.md#supported-vms-and-operating-systems)
-- [Дополнительные требования к виртуальным машинам](../linux/disk-encryption-overview.md#additional-vm-requirements)
+- [Поддерживаемые ВМ и операционные системы](../linux/disk-encryption-overview.md#supported-vms-and-operating-systems)
+- [Дополнительные требования к VM](../linux/disk-encryption-overview.md#additional-vm-requirements)
 - [Требования к сети](../linux/disk-encryption-overview.md#networking-requirements)
+- [Требования к хранению ключей шифрования](../linux/disk-encryption-overview.md#encryption-key-storage-requirements)
 
-## <a name="extension-schemata"></a>Schemata расширения
+## <a name="extension-schema"></a>Схема расширения
 
-Существует два Schemata для шифрования дисков Azure: v 1.1, более новая, Рекомендуемая схема, которая не использует свойства Azure Active Directory (AAD) и v 0,1, более старая схема, для которой требуются свойства AAD. Необходимо использовать версию схемы, соответствующую используемому расширению: schema v 1.1 для расширения AzureDiskEncryptionForLinux версии 1,1, схема v 0,1 для расширения AzureDiskEncryptionForLinux версии 0,1.
-### <a name="schema-v11-no-aad-recommended"></a>Схема v 1.1: нет AAD (рекомендуется)
+Существует две версии схемы расширения для шифрования azure Disk (ADE):
+- v1.1 - Новая рекомендуемая схема, которая не использует свойства Azure Active Directory (AAD).
+- v0.1 - Старая схема, требующая свойств активного каталога Azure (AAD). 
 
-Рекомендуется использовать схему версии 1.1 и не требует Azure Active Directory свойств.
+Для выбора целевой схемы `typeHandlerVersion` свойство должно быть равно варианту схемы, которая вы хотите использовать.
+
+### <a name="schema-v11-no-aad-recommended"></a>Схема v1.1: Нет AAD (рекомендуется)
+
+Схема v1.1 рекомендуется и не требует свойств Active Directory (AAD) Azure.
 
 ```json
 {
   "type": "extensions",
   "name": "[name]",
-  "apiVersion": "2015-06-15",
+  "apiVersion": "2019-07-01",
   "location": "[location]",
   "properties": {
         "publisher": "Microsoft.Azure.Security",
+        "type": "AzureDiskEncryptionForLinux",
+        "typeHandlerVersion": "1.1",
+        "autoUpgradeMinorVersion": true,
         "settings": {
           "DiskFormatQuery": "[diskFormatQuery]",
           "EncryptionOperation": "[encryptionOperation]",
           "KeyEncryptionAlgorithm": "[keyEncryptionAlgorithm]",
-          "KeyEncryptionKeyURL": "[keyEncryptionKeyURL]",
           "KeyVaultURL": "[keyVaultURL]",
+          "KeyVaultResourceId": "[KeyVaultResourceId]",
+          "KeyEncryptionKeyURL": "[keyEncryptionKeyURL]",
+          "KekVaultResourceId": "[KekVaultResourceId",
           "SequenceVersion": "sequenceVersion]",
           "VolumeType": "[volumeType]"
-        },
-        "type": "AzureDiskEncryptionForLinux",
-        "typeHandlerVersion": "[extensionVersion]"
+        }
   }
 }
 ```
 
 
-### <a name="schema-v01-with-aad"></a>Схема v 0,1: с AAD 
+### <a name="schema-v01-with-aad"></a>Схема v0.1: с AAD 
 
-Схема 0,1 требует `aadClientID` и либо `aadClientSecret`, либо `AADClientCertificate`.
+Схема 0.1 требует `AADClientID` и `AADClientSecret` либо `AADClientCertificate`или .
 
-Использование среды `aadClientSecret`:
+Использование среды `AADClientSecret`:
 
 ```json
 {
   "type": "extensions",
   "name": "[name]",
-  "apiVersion": "2015-06-15",
+  "apiVersion": "2019-07-01",
   "location": "[location]",
   "properties": {
     "protectedSettings": {
@@ -83,6 +92,8 @@ ms.locfileid: "79254031"
       "Passphrase": "[passphrase]"
     },
     "publisher": "Microsoft.Azure.Security",
+    "type": "AzureDiskEncryptionForLinux",
+    "typeHandlerVersion": "0.1",
     "settings": {
       "AADClientID": "[aadClientID]",
       "DiskFormatQuery": "[diskFormatQuery]",
@@ -92,9 +103,7 @@ ms.locfileid: "79254031"
       "KeyVaultURL": "[keyVaultURL]",
       "SequenceVersion": "sequenceVersion]",
       "VolumeType": "[volumeType]"
-    },
-    "type": "AzureDiskEncryptionForLinux",
-    "typeHandlerVersion": "[extensionVersion]"
+    }
   }
 }
 ```
@@ -105,7 +114,7 @@ ms.locfileid: "79254031"
 {
   "type": "extensions",
   "name": "[name]",
-  "apiVersion": "2015-06-15",
+  "apiVersion": "2019-07-01",
   "location": "[location]",
   "properties": {
     "protectedSettings": {
@@ -113,6 +122,8 @@ ms.locfileid: "79254031"
       "Passphrase": "[passphrase]"
     },
     "publisher": "Microsoft.Azure.Security",
+    "type": "AzureDiskEncryptionForLinux",
+    "typeHandlerVersion": "0.1",
     "settings": {
       "AADClientID": "[aadClientID]",
       "DiskFormatQuery": "[diskFormatQuery]",
@@ -122,9 +133,7 @@ ms.locfileid: "79254031"
       "KeyVaultURL": "[keyVaultURL]",
       "SequenceVersion": "sequenceVersion]",
       "VolumeType": "[volumeType]"
-    },
-    "type": "AzureDiskEncryptionForLinux",
-    "typeHandlerVersion": "[extensionVersion]"
+    }
   }
 }
 ```
@@ -132,42 +141,53 @@ ms.locfileid: "79254031"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных |
+| name | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | Дата |
+| версия_API | 2019-07-01 | Дата |
 | publisher | Microsoft.Azure.Security | строка |
 | type | AzureDiskEncryptionForLinux | строка |
-| typeHandlerVersion | 0.1, 1.1 | INT |
-| (схема 0.1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
-| (схема 0,1) AADClientSecret | password | строка |
-| (схема 0,1) аадклиентцертификате | thumbprint | строка |
+| typeHandlerVersion | 1.1, 0.1 | INT |
+| (0,1 схема) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
+| (0,1 схема) AADClientSecret | password | строка |
+| (0,1 схема) AADClientCertificate | thumbprint | строка |
+| (необязательно) (0,1 схема) Парольную фразу | password | строка |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
-| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
-| KeyEncryptionKeyURL | url | строка |
-| используемых KeyVaultURL | url | строка |
-| Парольная фраза | password | строка | 
-| SequenceVersion | UNIQUEIDENTIFIER | строка |
+| (необязательно - по умолчанию RSA-OAEP) KeyEncryptionАлгоритм | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
+| KeyVaultURL | url | строка |
+| KeyVaultResourceId | url | строка |
+| (необязательно) KeyEncryptionKeyURL | url | строка |
+| (необязательно) KekVaultResourceId | url | строка |
+| (необязательно) ПроквиачинаВерсия | UNIQUEIDENTIFIER | строка |
 | VolumeType | ОС, данные, все | строка |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Пример шаблона развертывания, см. в руководстве по [включению шифрования на работающей виртуальной машине Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-linux-vm).
+На примере развертывания шаблонов, основанного на схеме v1.1, см. [201-encrypt-running-linux-vm-without-aad](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-linux-vm-without-aad)
 
-## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
+На примере развертывания шаблонов на основе схемы v0.1 см. [201-encrypt-running-linux-vm](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-linux-vm)
 
-Инструкции см. в последней версии [документации по Azure CLI](/cli/azure/vm/encryption?view=azure-cli-latest). 
+>[!WARNING]
+> - Если ранее для шифрования VM использовалось шифрование Azure Disk с Azure AD, необходимо продолжить использование этой опции для шифрования VM.
+> - При шифровании объемов Linux OS VM следует считать недоступным. Мы настоятельно рекомендуем избегать логинов SSH во время шифрования, чтобы избежать проблем, блокирующих любые открытые файлы, которые должны быть доступны во время процесса шифрования. Чтобы проверить прогресс, используйте [Get-AzVMDiskEncryptionStatus PowerShell](/powershell/module/az.compute/get-azvmdiskencryptionstatus) cmdlet или [vm шифрование показать](/cli/azure/vm/encryption#az-vm-encryption-show) команду CLI. Этот процесс может занять несколько часов для тома операционной системы 30 ГБ, а также дополнительное время для шифрования томов данных. Если не используется параметр шифрования всех форматов, время шифрования тома данных будет соответствовать размеру и количеству томов данных. 
+> - Отключение шифрования на виртуальных машинах Linux поддерживается только для томов данных. Если том операционной системы зашифрован, то отключение не поддерживается для томов данных и томов ОС. 
+
+>[!NOTE]
+> Кроме `VolumeType` того, если параметр установлен для всех, диски данных будут зашифрованы только в том случае, если они правильно установлены.
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
 ### <a name="troubleshoot"></a>Устранение неполадок
 
-Дополнительные сведения см. в [руководстве по устранению неполадок с шифрованием дисков Azure](../../security/azure-security-disk-encryption-tsg.md).
+Дополнительные сведения см. в [руководстве по устранению неполадок с шифрованием дисков Azure](../linux/disk-encryption-troubleshooting.md).
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в какой-либо момент этой статьи, вы можете связаться с экспертами Azure на [форумах MSDN Azure и Stack Overflow.](https://azure.microsoft.com/support/community/) 
+
+Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите в [службу поддержки Azure](https://azure.microsoft.com/support/options/) и выберите Поддержку Получить. Для получения информации об использовании службы поддержки Azure прочитайте [часто задаваемые вопросы поддержки Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).
+* Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).
+* Для получения дополнительной информации о шифровании дисков Azure для Linux [см.](../../security/fundamentals/azure-disk-encryption-vms-vmss.md#linux-virtual-machines)

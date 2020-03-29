@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/09/2018
 ms.author: genli
 ms.openlocfilehash: 8a47131cb4f19cce1664eafa50c67ab1a1171e67
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77919436"
 ---
 # <a name="azure-vm-startup-is-stuck-at-windows-update"></a>Зависание виртуальной машины при запуске во время обновления Windows
@@ -43,7 +43,7 @@ ms.locfileid: "77919436"
 ### <a name="remove-the-update-that-causes-the-problem"></a>Удаление обновления, вызвавшего проблему
 
 1. Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md). 
-2. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](troubleshoot-recovery-disks-portal-windows.md).
+2. [Прикрепите диск ОС к восстановлению VM.](troubleshoot-recovery-disks-portal-windows.md)
 3. После подключения диска операционной системы на виртуальной машине восстановления запустите **diskmgmt.msc**, чтобы открыть "Управление дисками", и убедитесь, что подключенный диск **В сети**. Обратите внимание на букву диска, которая назначается присоединенному диску ОС с папкой \Windows. Если диск зашифрован, расшифруйте его, прежде чем приступать к следующим шагам в этом документе.
 
 4. Откройте командную строку с повышенными привилегиями (Запуск от имени администратора). Выполните следующую команду, чтобы получить список пакетов обновления, которые находятся на прилагаемом диске ОС:
@@ -66,7 +66,7 @@ ms.locfileid: "77919436"
     ```
     dism /Image:<Attached OS disk>:\ /Remove-Package /PackageName:<PACKAGE NAME TO DELETE>
     ```
-    Пример. 
+    Пример 
 
     ```
     dism /Image:F:\ /Remove-Package /PackageName:Package_for_RollupFix~31bf3856ad364e35~amd64~~17134.345.1.5

@@ -1,27 +1,27 @@
 ---
-title: Создание маркера безопасности для доступа к Интернету вещей Plug and Play Preview | Документация Майкрософт
-description: Создайте маркер подписанного URL-доступа для использования при программном доступе к репозиторию модели предварительной версии Интернета вещей Plug and Play.
+title: Создание маркера безопасности для доступа к репозиторию IoT Plug и воспроизведения предварительного просмотра (ru) Документы Майкрософт
+description: Создайте маркер общей подписи доступа для использования при программном доступе к репозиторию модели IoT Plug и Play Preview.
 author: Philmea
 ms.author: philmea
 ms.date: 12/27/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 2530c5b3561ad90eac0556770a8a356cfaa6a52c
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: f008627317588467d731ccc03aec7738f58e46e0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75531293"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80159206"
 ---
 # <a name="generate-sas-token"></a>Создание маркера SAS
 
-В этом пошаговом руководство показано, как программным образом создать маркер подписанного URL-адрес (SAS) для использования с API репозитория модели предварительной версии для Интернета вещей Plug and Play.
+Это руководство показывает, как программно генерировать маркер общей подписи доступа (SAS) для использования с помощью APpository модулей модули IoT Plug и Play Preview.
 
 ## <a name="python"></a>Python
 
-В следующем фрагменте кода показано, как создать маркер SAS с помощью Python:
+Следующий фрагмент показывает, как создать токен SAS с помощью Python:
 
 ```python
 from base64 import b64decode, b64encode
@@ -46,7 +46,7 @@ def calculate_sas_token(hostname, repo_id, key_name, key, expiry_in_second):
 
 ## <a name="c"></a>C\#
 
-В следующем фрагменте кода показано, как создать маркер SAS с помощью C\#:
+Следующий фрагмент показывает, как создать токен SAS\#с помощью C:
 
 ```csharp
 public static string generateSasToken(string hostName, string repoId, string key, string keyName, int expiryInSeconds = 3600)
@@ -72,16 +72,16 @@ public static string generateSasToken(string hostName, string repoId, string key
 }
 ```
 
-## <a name="use-the-sas-token"></a>Использование маркера SAS
+## <a name="use-the-sas-token"></a>Используйте токен SAS
 
-После создания маркера SAS его можно использовать для создания HTTP-запроса POST. Пример.
+После создания маркера SAS его можно использовать для запроса HTTP POST. Пример:
 
 ```text
 POST https:///models/{modelId}?repositoryId={repositoryId}&api-version=2019-07-01-preview
 ```
 
-Если вы выдаете клиенту маркер SAS, он не имеет первичного ключа ресурса и не может изменить хэш, чтобы получить его. Маркер SAS позволяет контролировать доступ клиента и срок его действия. При изменении первичного ключа в политике все созданные на его основе маркеры SAS становятся недействительными.
+Если вы даете клиенту токен SAS, клиент не имеет основного ключа ресурса и не может обратить хэш, чтобы получить его. Токен SAS дает вам контроль над тем, к чему клиент может получить доступ и как долго. При изменении основного ключа в политике любые токены SAS, созданные из него, аннулируются.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали о создании маркеров безопасности, которые будут использоваться для доступа к Plug and Play репозиториям модели предварительной версии Интернета вещей, предлагаемый следующий шаг — дополнительные сведения в разделе [центра Интернета вещей Plug and Play предварительной версии для разработчиков моделей](concepts-developer-guide.md).
+Теперь, когда вы узнали о создании маркеров безопасности для доступа к репозиториям моделей IoT Plug и Play Preview, следующим шагом является получение дополнительной информации в [руководстве разработчика моделирования IoT Plug и Play Preview.](concepts-developer-guide.md)

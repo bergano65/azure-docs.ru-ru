@@ -9,10 +9,10 @@ ms.date: 06/29/2017
 ms.author: twooley
 ms.subservice: common
 ms.openlocfilehash: 01432ab68fc399f3e97eac2de5a7c356bef7078a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74979042"
 ---
 # <a name="setting-up-the-azure-importexport-tool"></a>Настройка инструмента импорта и экспорта Azure
@@ -23,7 +23,7 @@ ms.locfileid: "74979042"
 * После завершения задания импорта это средство можно использовать для восстановления поврежденных, отсутствующих или конфликтных больших двоичных объектов.
 * Это средство также позволяет восстанавливать на дисках поврежденные или отсутствующие файлы после завершения задания экспорта.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 При **подготовке дисков** для задания импорта необходимо выполнить следующие условия.
 
@@ -203,9 +203,9 @@ Examples:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import.md)
+* [Подготовка жестких дисков для выполнения задания по импорту](../storage-import-export-tool-preparing-hard-drives-import.md)
 * [Предварительный просмотр использования дисков для задания экспорта](../storage-import-export-tool-previewing-drive-usage-export-v1.md)
 * [Просмотр состояния задания с помощью файлов журнала копирования](../storage-import-export-tool-reviewing-job-status-v1.md)
-* [Подготовка задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)
-* [Подготовка задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)
-* [Устранение неполадок со средством импорта и экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)
+* [Ремонт задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)
+* [Исправление задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)
+* [Устранение проблем с инструментом импорта/экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)

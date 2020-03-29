@@ -1,5 +1,5 @@
 ---
-title: Как использовать центры уведомлений Azure с PHP
+title: Как использовать концентраторы уведомлений Azure с помощью PHP
 description: Узнайте, как использовать центры уведомлений Azure из серверной части PHP.
 services: notification-hubs
 documentationcenter: ''
@@ -17,22 +17,22 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 9a77a9d9c8b2d71197089f66d81e07d56c780e11
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76263852"
 ---
 # <a name="how-to-use-notification-hubs-from-php"></a>Использование концентраторов уведомлений из PHP
 
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
-Вы можете обращаться ко всем функциям концентраторов уведомлений из серверной части Java/PHP/Ruby, используя интерфейс REST Центра уведомлений в соответствии с описанием в статье MSDN [Интерфейсы API REST концентраторов уведомлений](https://msdn.microsoft.com/library/dn223264.aspx).
+Вы можете получить доступ ко всем функциям уведомлений концентратов из бэкэнда Java/PHP/Ruby, используя интерфейс Notification Hub REST, описанный в APIs ДЛЯ [уведомлений](https://msdn.microsoft.com/library/dn223264.aspx)MSDN.
 
 В этом разделе описывается:
 
 * построение клиента REST для функций концентраторов уведомлений на PHP;
-* использование статьи по началу работы [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](notification-hubs-ios-apple-push-notification-apns-get-started.md) для выбранной мобильной платформы, реализация серверной части на PHP.
+* Следуйте [Получить начал учебник](notification-hubs-ios-apple-push-notification-apns-get-started.md) для вашей мобильной платформы выбора, реализации бэкэнд часть в PHP.
 
 ## <a name="client-interface"></a>Интерфейс клиента
 
@@ -55,7 +55,7 @@ ms.locfileid: "76263852"
 
 ## <a name="implementation"></a>Реализация
 
-Если вы еще этого не делали, выполните шаги, описанные в статье [Учебник по началу работы], до последнего раздела, в котором вам нужно реализовать серверную часть.
+Если вы еще не сделали, следуйте [Получить начал учебник] до последнего раздела, где вы должны реализовать бэкэнд.
 Кроме того, при необходимости можно воспользоваться кодом из [Примере оболочки PHP REST] и перейти непосредственно к разделу [Завершение работы с руководством](#complete-tutorial).
 
 Подробные сведения о реализации полноценной оболочки REST можно найти в [MSDN](https://msdn.microsoft.com/library/dn530746.aspx). В этом разделе описывается реализация основных действий на PHP, необходимых для доступа к конечным точкам REST службы "Центры уведомлений".
@@ -218,11 +218,11 @@ ms.locfileid: "76263852"
 
 Указанные выше методы отправляют запрос HTTP POST в конечную точку `/messages` концентратора уведомлений с надлежащим текстом и заголовками для отправки уведомления.
 
-## <a name="complete-tutorial"></a>Завершение работы с учебником
+## <a name="complete-the-tutorial"></a><a name="complete-tutorial"></a>Завершение работы с учебником
 
 Теперь вы можете завершить работу с учебником по началу работы, отправив уведомление из серверной части PHP.
 
-Инициализируйте клиент концентратора уведомлений (замените строку подключения и имя концентратора в соответствии с инструкциями в [Учебник по началу работы]):
+Инициализируйте клиент концентратора уведомлений (замените строку подключения и имя концентратора в соответствии с инструкциями в [Учебника по началу работы]):
 
     ```php
     $hub = new NotificationHub("connection string", "hubname");
@@ -280,7 +280,7 @@ ms.locfileid: "76263852"
 
 После выполнения кода PHP на целевом устройстве должно отобразиться уведомление.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 В этом разделе было показано, как создать простой клиент Java REST для службы "Центры уведомлений". Здесь вы можете сделать следующее:
 
@@ -291,4 +291,4 @@ ms.locfileid: "76263852"
 Дополнительную информацию можно найти также в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 
 [Примере оболочки PHP REST]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
-[Учебник по началу работы]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
+[Начало учебника]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/

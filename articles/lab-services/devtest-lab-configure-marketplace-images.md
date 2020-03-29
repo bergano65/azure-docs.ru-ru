@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
 ms.openlocfilehash: 2dc3aa000cefc0e65305b58f8fdce93b94bfd35f
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76169550"
 ---
 # <a name="configure-azure-marketplace-image-settings-in-azure-devtest-labs"></a>Настройка параметров образов Azure Marketplace в Azure DevTest Labs
@@ -28,7 +28,7 @@ DevTest Labs поддерживает создание виртуальных м
 1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 2. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 3. Из списка лабораторий выберите нужную лабораторию. 
-4. В колонке лаборатории выберите **Конфигурация и политики**.
+4. На лезвии лаборатории выберите **Конфигурацию и политики.**
 5. В колонке **Конфигурация и политики** лаборатории в разделе **Базы виртуальных машин** выберите **Образы Marketplace**.
 6. Укажите, должны ли все соответствующие образы Azure Marketplace быть доступны для использования в качестве основы новой виртуальной машины. При выборе варианта **Да**в лаборатории будут разрешены все образы Azure Marketplace, соответствующие всем следующим условиям:
    

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: 78e0500057baf407f1d26afe29d9df1e525cbf3d
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76153774"
 ---
 # <a name="additional-documentation"></a>Дополнительная документация
@@ -25,7 +25,7 @@ ms.locfileid: "76153774"
   * В разделе [Customizing Support and Monitoring Settings for the Avere Cluster](<https://azure.github.io/Avere/legacy/create_cluster/4_8/html/config_support.html#config-support>) (Настройка параметров поддержки и мониторинга для кластера Avere) объясняется, как настроить параметры отправки сведений для службы поддержки и включить удаленный мониторинг.
   * В разделе [Configuring VServers and Global Namespace](<https://azure.github.io/Avere/legacy/create_cluster/4_8/html/config_vserver.html#config-vserver>) (Настройка VServer и глобального пространства имен) содержатся сведения о создании пространства имен для клиентов.
   * В разделе [Configuring DNS for the Avere Cluster](<https://azure.github.io/Avere/legacy/create_cluster/4_8/html/config_network.html#dns-overview>) (Настройка DNS для кластера Avere) описывается настройка DNS циклического перебора.
-  * [Добавление в серверные](<https://azure.github.io/Avere/legacy/create_cluster/4_8/html/config_core_filer.html#add-core-filer>) документы для хранения инструкций по добавлению основных фильтрами определенными.
+  * Добавление документов [back-end Storage,](<https://azure.github.io/Avere/legacy/create_cluster/4_8/html/config_core_filer.html#add-core-filer>) как добавлять основные файлеры.
 
 * [Руководство по настройке кластера](<https://azure.github.io/Avere/#operations>) — это полный перечень настроек и параметров для кластера Avere. Кластер vFXT использует подмножество этих параметров, однако большая часть страниц конфигурации применима.
 
@@ -33,4 +33,4 @@ ms.locfileid: "76153774"
 
 ## <a name="vfxt-creation-and-management-documentation"></a>Документация по созданию и администрированию кластера vFXT
 
-Полное руководство по использованию vfxt.py, служебной программы создания и управления облачными кластерами на основе сценариев, предоставляется на сайте GitHub: [управление облачными кластерами с помощью vfxt.py](https://github.com/Azure/AvereSDK/blob/master/docs/README.md).
+Полное руководство по использованию vfxt.py, утилита создания и управления облачным кластером на основе сценариев, предоставляется на GitHub: [Управление кластерами облачных](https://github.com/Azure/AvereSDK/blob/master/docs/README.md)кластеров с vfxt.py.

@@ -9,40 +9,40 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/15/2020
 ms.openlocfilehash: e50510f2420d69be37af584a2648a794e1561ee3
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76157058"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>Выполнение заданий MapReduce с использованием пакета SDK для HDInsight .NET
 
 [!INCLUDE [mapreduce-selector](../../../includes/hdinsight-selector-use-mapreduce.md)]
 
-Узнайте, как отправлять задания MapReduce с использованием пакета SDK для HDInsight .NET. В кластерах HDInsight предусмотрен JAR-файл с несколькими примерами MapReduce. JAR-файл `/example/jars/hadoop-mapreduce-examples.jar`.  Один из примеров — **wordcount** (подсчет слов). Вы разрабатываете консольное приложение на C# для отправки задания по подсчету слов.  Задание считывает файл `/example/data/gutenberg/davinci.txt` и выводит результаты в `/example/data/davinciwordcount`.  Чтобы снова запустить приложение, необходимо очистить папку выходных данных.
+Узнайте, как отправлять задания MapReduce с использованием пакета SDK для HDInsight .NET. В кластерах HDInsight предусмотрен JAR-файл с несколькими примерами MapReduce. Файл банки `/example/jars/hadoop-mapreduce-examples.jar`.  Один из примеров — **wordcount** (подсчет слов). Вы разрабатываете консольное приложение на C# для отправки задания по подсчету слов.  Задание считывает `/example/data/gutenberg/davinci.txt` файл и выводит `/example/data/davinciwordcount`результаты в .  Чтобы снова запустить приложение, необходимо очистить папку выходных данных.
 
 > [!NOTE]  
 > Действия, описанные в этой статье, необходимо выполнять из клиента Windows. Чтобы получить сведения об использовании клиента Linux, OS X или Unix для работы с Hive, воспользуйтесь выбором вкладок в верхней части статьи.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
+* Кластер Apache Hadoop в HDInsight. [См. Создать кластеры Apache Hadoop с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
-* [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
+* [Визуальная студия](https://visualstudio.microsoft.com/vs/community/).
 
 ## <a name="submit-mapreduce-jobs-using-hdinsight-net-sdk"></a>Отправка заданий MapReduce с использованием пакета SDK для HDInsight .NET
 
-Пакет SDK для HDInsight .NET предоставляет клиентские библиотеки .NET, которые упрощают работу с кластерами HDInsight из .NET.
+HDInsight .NET SDK предоставляет клиентские библиотеки .NET, которые упрощают работу с кластерами HDInsight от .NET.
 
-1. Запустите Visual Studio и создайте C# консольное приложение.
+1. Запустите Visual Studio и создайте консольное приложение для СЗ.
 
-1. Перейдите в **меню инструменты** > **диспетчер пакетов NuGet** > **консоль диспетчера пакетов** и введите следующую команду:
+1. Перейдите к **консоли** > менеджера > **пакетов** **Инструментов NuGet**и введите следующую команду:
 
     ```   
     Install-Package Microsoft.Azure.Management.HDInsight.Job
     ```
 
-1. Скопируйте приведенный ниже код в **Program.CS**. Затем измените код, задав значения для: `existingClusterName`, `existingClusterPassword`, `defaultStorageAccountName`, `defaultStorageAccountKey`и `defaultStorageContainerName`.
+1. Копируйте код ниже в **Program.cs**. Затем отодвить код, `existingClusterName`установив `existingClusterPassword` `defaultStorageAccountName`значения `defaultStorageAccountKey`для: , , , и `defaultStorageContainerName`.
 
     ```csharp
     using System.Collections.Generic;
@@ -163,9 +163,9 @@ ms.locfileid: "76157058"
 
 1. Нажмите клавишу **F5** для запуска приложения.
 
-Чтобы снова запустить задание, необходимо изменить имя выходной папки задания в примере `/example/data/davinciwordcount`.
+Чтобы выполнить задание снова, необходимо изменить имя папки вывода `/example/data/davinciwordcount`задания, в примере это .
 
-После успешного завершения задания приложение выводит содержимое выходного файла `part-r-00000`.
+Когда задание успешно завершается, приложение печатает содержимое `part-r-00000`выходного файла.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

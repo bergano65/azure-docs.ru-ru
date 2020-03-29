@@ -5,13 +5,13 @@ author: ecfan
 ms.author: estfan
 ms.date: 11/03/2016
 ms.openlocfilehash: 951ab2300aa4ffed2c5f1039ff993cd7f6af543f
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74789662"
 ---
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free).
 * Учетная запись [OneDrive](https://www.microsoft.com/store/apps/onedrive/9wzdncrfj1p3). 
@@ -24,7 +24,7 @@ ms.locfileid: "74789662"
    ![](./media/connectors-create-api-onedrive/onedrive-1.png)
 2. Если вы ранее не создавали подключения к OneDrive, то вам будет предложено ввести учетные данные OneDrive.  
    ![](./media/connectors-create-api-onedrive/onedrive-2.png)
-3. Выберите **Войти** и введите имя пользователя и пароль. Выберите **Войти**.  
+3. Выберите **Войти** и введите имя пользователя и пароль. Выберите **восподписание:**  
    ![](./media/connectors-create-api-onedrive/onedrive-3.png)   
    
     Эти учетные данные используются для авторизации приложения логики, чтобы оно могло подключиться и получить доступ к данным в вашей учетной записи OneDrive. 

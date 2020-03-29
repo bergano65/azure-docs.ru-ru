@@ -1,31 +1,31 @@
 ---
-title: CI/CD для Azure Веснного облака
-description: CI/CD для Azure Веснного облака
+title: CI/CD для весеннего облака Azure
+description: CI/CD для весеннего облака Azure
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: brendm
 ms.openlocfilehash: f329fb5472c5a2eab6f22a2e81b19d90e7045330
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76278516"
 ---
-# <a name="cicd-for-azure-spring-cloud"></a>CI/CD для Azure Веснного облака
+# <a name="cicd-for-azure-spring-cloud"></a>CI/CD для весеннего облака Azure
 
-Средства непрерывной интеграции и непрерывной поставки позволяют разработчикам быстро развертывать обновления для существующих приложений с минимальными усилиями и рисками. Azure DevOps помогает организовывать и контролировать эти ключевые задания. Сейчас Azure Веснного облака не предлагает конкретный подключаемый модуль Azure DevOps.  Однако вы можете интегрировать приложения с пружинным облаком с DevOps, используя [задачу Azure CLI](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli?view=azure-devops). В этой статье показано, как использовать задачу Azure CLI с Azure "Весна Cloud" для интеграции с Azure DevOps.
+Непрерывная интеграция и инструменты непрерывной доставки позволяют разработчикам быстро развертывать обновления для существующих приложений с минимальными усилиями и рисками. Azure DevOps помогает вам организовывать и контролировать эти ключевые задания. В настоящее время Azure Spring Cloud не предлагает конкретного плагина Azure DevOps.  Тем не менее, вы можете интегрировать приложения Spring Cloud с DevOps с помощью [задачи Azure CLI.](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli?view=azure-devops) В этой статье будет показана возможность использования задачи Azure CLI с облачным облаком Azure Spring для интеграции с Azure DevOps.
 
-## <a name="create-an-azure-resource-manager-service-connection"></a>Создание подключения к службе Azure Resource Manager
+## <a name="create-an-azure-resource-manager-service-connection"></a>Создание подключения к службе управления ресурсами Azure
 
-Ознакомьтесь с [этой статьей](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) , чтобы узнать, как создать подключение службы Azure Resource Manager к проекту Azure DevOps. Не забудьте выбрать ту же подписку, которую вы используете для своего экземпляра облачной службы Azure весны.
+Прочитайте [эту статью,](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) чтобы узнать, как создать подключение службы управления ресурсами Azure к проекту Azure DevOps. Обязательно выберите ту же подписку, что и для экземпляра облачных служб Azure Spring.
 
-## <a name="azure-cli-task-templates"></a>Azure CLI шаблонов задач
+## <a name="azure-cli-task-templates"></a>Шаблоны задач Azure CLI
 
 ### <a name="deploy-artifacts"></a>Развертывание артефактов
 
-Вы можете создавать и развертывать проекты с помощью серии `tasks`. Сначала этот фрагмент кода определяет задачу Maven для создания приложения, а затем — вторую задачу, которая развертывает JAR-файл с помощью расширения Azure "Весна Cloud" Azure CLI.
+Вы можете создавать и развертывать `tasks`свои проекты с помощью серии . Этот фрагмент сначала определяет задачу Maven для создания приложения, а затем вторую задачу, которая развертывает файл JAR с помощью расширения Azure Spring Cloudure CLI.
 
 ```yaml
 steps:
@@ -44,7 +44,7 @@ steps:
 
 ### <a name="deploy-from-source"></a>Развертывание из источника
 
-Развертывание можно выполнить непосредственно в Azure без отдельного этапа сборки.
+Развертывание можно непосредственно в Azure без отдельного шага сборки.
 
 ```yaml
 - task: AzureCLI@1

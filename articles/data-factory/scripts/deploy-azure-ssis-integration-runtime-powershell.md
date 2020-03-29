@@ -1,5 +1,5 @@
 ---
-title: Развертывание среды выполнения интеграции Azure SSIS с помощью PowerShell
+title: Развертывание времени выполнения интеграции Azure SSIS с помощью PowerShell
 description: Этот скрипт PowerShell создает среду выполнения интеграции Azure SSIS, которая может запускать пакеты SSIS в облаке.
 services: data-factory
 ms.service: data-factory
@@ -11,10 +11,10 @@ manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 09/12/2017
 ms.openlocfilehash: c6d9a9299fa25013a440ee6ac45f5eae407225b8
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74929822"
 ---
 # <a name="powershell-script---deploy-azure-ssis-integration-runtime"></a>Скрипт PowerShell. Развертывание среды выполнения интеграции Azure SSIS
@@ -46,13 +46,13 @@ Remove-AzDataFactoryV2 -Name $dataFactoryName -ResourceGroupName $resourceGroupN
 
 Этот сценарий использует следующие команды:
 
-| Команда | Заметки |
+| Команда | Примечания |
 |---|---|
 | [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [Set-AzDataFactoryV2](/powershell/module/az.datafactory/set-Azdatafactoryv2) | Создали фабрику данных. |
-| [Set-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/set-Azdatafactoryv2integrationruntime) | Создает среду выполнения интеграции Azure SSIS, которая может запускать пакеты SSIS в облаке. |
-| [Start-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/start-Azdatafactoryv2integrationruntime) | Запускает среду выполнения интеграции Azure SSIS. |
-| [Get-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/get-Azdatafactoryv2integrationruntime) | Получает сведения о среде выполнения интеграции Azure SSIS. |
+| [Set-AzDataFactoryV2ИнтеграцияRuntime](/powershell/module/az.datafactory/set-Azdatafactoryv2integrationruntime) | Создает среду выполнения интеграции Azure SSIS, которая может запускать пакеты SSIS в облаке. |
+| [Старт-AzDataFactoryV2ИнтеграцияRuntime](/powershell/module/az.datafactory/start-Azdatafactoryv2integrationruntime) | Запускает среду выполнения интеграции Azure SSIS. |
+| [Get-AzDataFactoryV2ИнтеграцияRuntime](/powershell/module/az.datafactory/get-Azdatafactoryv2integrationruntime) | Получает сведения о среде выполнения интеграции Azure SSIS. |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 

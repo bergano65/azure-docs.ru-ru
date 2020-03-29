@@ -1,6 +1,6 @@
 ---
 title: Просмотр журналов действий для изменений Azure RBAC
-description: Просмотрите журналы действий для управления доступом на основе ролей Azure (Azure RBAC) на ресурсы Azure за последние 90 дней.
+description: Просмотр журналов активности для управления доступом на основе ролей Azure (Azure RBAC) изменяются в ресурсы Azure за последние 90 дней.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -16,19 +16,19 @@ ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: e2024bd14241184338195ed635039bae774da816
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78161800"
 ---
 # <a name="view-activity-logs-for-azure-rbac-changes"></a>Просмотр журналов действий для изменений Azure RBAC
 
-Иногда требуются сведения об изменениях управления доступом на основе ролей Azure (Azure RBAC), например, в целях аудита или устранения неполадок. Когда кто-то вносит изменения в назначения ролей или определения ролей в ваших подписках, изменения регистрируются в [журнале действий Azure](../azure-monitor/platform/platform-logs-overview.md). Вы можете просмотреть журналы действий, чтобы увидеть все изменения Azure RBAC за последние 90 дней.
+Иногда требуется информация об изменениях элемента доступа на основе ролей Azure (Azure RBAC), например для аудита или устранения неполадок. Всякий раз, когда кто-то вносит изменения в назначения ролей или определения ролей в ваших подписках, изменения регистрируются в [журнале деятельности Azure.](../azure-monitor/platform/platform-logs-overview.md) Можно просмотреть журналы активности, чтобы просмотреть все изменения Azure RBAC за последние 90 дней.
 
 ## <a name="operations-that-are-logged"></a>Операции, которые регистрируются в журнале
 
-Ниже приведены операции, связанные с Azure RBAC, которые регистрируются в журнале действий.
+Ниже приведены операции, связанные с Azure RBAC, которые регистрируются в журнале активности:
 
 - Создание назначения роли
 - Удаление назначения роли
@@ -37,18 +37,18 @@ ms.locfileid: "78161800"
 
 ## <a name="azure-portal"></a>Портал Azure
 
-Самый простой способ заключается в просмотре журналов действий на портале Azure. На следующем снимке экрана показан пример операций назначения ролей в журнале действий. Кроме того, здесь можно загрузить журналы в виде CSV-файла.
+Самый простой способ заключается в просмотре журналов действий на портале Azure. На следующем скриншоте показан пример операций назначения ролей в журнале активности. Она также включает в себя возможность загрузки журналов в качестве файла CSV.
 
 ![Снимок экрана: просмотр журналов действий на портале](./media/change-history-report/activity-log-portal.png)
 
-Журнал действий на портале имеет несколько фильтров. Ниже приведены фильтры, связанные с Azure RBAC.
+Журнал действий на портале имеет несколько фильтров. Вот фильтры, связанные с Azure RBAC:
 
-| Фильтр | Значение |
+| Filter | Значение |
 | --------- | --------- |
-| Категория события | <ul><li>Административный</li></ul> |
+| Категория событий | <ul><li>Administrative</li></ul> |
 | Операция | <ul><li>Создание назначения роли</li><li>Удаление назначения роли</li><li>Создание или изменение определения пользовательской роли</li><li>Удаление определения пользовательской роли</li></ul> |
 
-Дополнительные сведения о журналах действий см. [в статье Просмотр журналов действий для отслеживания действий с ресурсами](/azure/azure-resource-manager/resource-group-audit?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json).
+Для получения дополнительной информации [View activity logs to monitor actions on resources](/azure/azure-resource-manager/resource-group-audit?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)о журналах активности см.
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
@@ -95,13 +95,13 @@ Properties              :
 
 Чтобы просмотреть журналы действий с помощью Azure CLI, используйте команду [az monitor activity-log list](/cli/azure/monitor/activity-log#az-monitor-activity-log-list).
 
-Эта команда выводит журналы действий в группе ресурсов с 27 февраля по просматривая семь дней:
+Эта команда перечисляет журналы активности в группе ресурсов от 27 февраля, с нетерпением жду семи дней:
 
 ```azurecli
 az monitor activity-log list --resource-group pharma-sales --start-time 2020-02-27 --offset 7d
 ```
 
-Эта команда выводит журналы действий для поставщика ресурсов авторизации с 27 февраля по просматривая семь дней:
+Эта команда перечисляет журналы действий для поставщика ресурсов авторизации с 27 февраля, с нетерпением жду семи дней:
 
 ```azurecli
 az monitor activity-log list --namespace "Microsoft.Authorization" --start-time 2020-02-27 --offset 7d
@@ -109,7 +109,7 @@ az monitor activity-log list --namespace "Microsoft.Authorization" --start-time 
 
 ## <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-[Журналы Azure Monitor](../log-analytics/log-analytics-overview.md) — это еще один инструмент, с помощью которого можно получать и анализировать изменения Azure RBAC для всех ресурсов Azure. Журналы Azure Monitor имеют следующие преимущества:
+[Журналы Azure Monitor](../log-analytics/log-analytics-overview.md) — это еще один инструмент, который можно использовать для сбора и анализа изменений Azure RBAC для всех ресурсов Azure. Журналы Azure Monitor имеет следующие преимущества:
 
 - создание сложных запросов и логики;
 - интеграция с оповещениями, Power BI и другими средствами;
@@ -118,15 +118,15 @@ az monitor activity-log list --namespace "Microsoft.Authorization" --start-time 
 
 Ниже приведены основные шаги, позволяющие приступить к работе.
 
-1. [Создание рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
+1. [Создание рабочего пространства анализа журналов](../azure-monitor/learn/quick-create-workspace.md).
 
 1. [Настройка решения аналитики журнала действий](../azure-monitor/platform/activity-log-collect.md#activity-logs-analytics-monitoring-solution) для рабочей области.
 
-1. [Просмотр журналов действий](../azure-monitor/platform/activity-log-collect.md#activity-logs-analytics-monitoring-solution). Чтобы быстро переходить на страницу обзора решения Аналитика журнала действий, щелкните пункт **журналы** .
+1. [Просмотр журналов действий](../azure-monitor/platform/activity-log-collect.md#activity-logs-analytics-monitoring-solution). Быстрый способ перейти на страницу обзор решения Activity Log Analytics — это нажать на опцию **журналов.**
 
-   ![Параметр журналов Azure Monitor на портале](./media/change-history-report/azure-log-analytics-option.png)
+   ![Опция журналов Azure Monitor на портале](./media/change-history-report/azure-log-analytics-option.png)
 
-1. При необходимости используйте [Azure Monitor log Analytics](../azure-monitor/log-query/get-started-portal.md) для запроса и просмотра журналов. Дополнительные сведения см. в статье [Приступая к работе с Azure Monitor журнала запросов](../azure-monitor/log-query/get-started-queries.md).
+1. Дополнительно используйте [аналитику журналов Azure Monitor](../azure-monitor/log-query/get-started-portal.md) для запроса и просмотра журналов. Для получения дополнительной [информации см.](../azure-monitor/log-query/get-started-queries.md)
 
 Ниже приведен запрос, возвращающий новые назначения ролей, упорядоченные по целевому поставщику ресурсов.
 
@@ -148,6 +148,6 @@ AzureActivity
 
 ![Снимок экрана: журналы действий на портале расширенной аналитики](./media/change-history-report/azure-log-analytics.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр событий в журнале действий](/azure/azure-resource-manager/resource-group-audit?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
 * [Monitor Subscription Activity with the Azure Activity Log](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) (Мониторинг действий подписки с помощью журнала действий Azure)

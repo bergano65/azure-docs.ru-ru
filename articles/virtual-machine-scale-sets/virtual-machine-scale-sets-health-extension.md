@@ -1,5 +1,5 @@
 ---
-title: Использование расширения работоспособности приложений с масштабируемыми наборами виртуальных машин Azure
+title: Используйте расширение работоспособности приложений с наборами виртуальных машин Azure
 description: Узнайте, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
 author: mayanknayar
 tags: azure-resource-manager
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: manayar
 ms.openlocfilehash: 37d93b04e6755512eac6c2a168bd2a04f8ac298f
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76275879"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
@@ -19,9 +19,9 @@ ms.locfileid: "76275879"
 
 В этой статье описывается, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 В данной статье предполагается, что вы знакомы с:
--   [Расширениями](../virtual-machines/extensions/overview.md) виртуальной машины Azure.
+-   [Расширения виртуальных](../virtual-machines/extensions/overview.md) машин Azure
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
 
 ## <a name="when-to-use-the-application-health-extension"></a>Когда использовать расширение "Работоспособность приложения"
@@ -55,20 +55,20 @@ ms.locfileid: "76275879"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных
+| name | Значение и пример | Тип данных
 | ---- | ---- | ---- 
 | версия_API | `2018-10-01` | Дата |
-| publisher | `Microsoft.ManagedServices` | string |
-| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
-| typeHandlerVersion | `1.0` | int |
+| publisher | `Microsoft.ManagedServices` | строка |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
+| typeHandlerVersion | `1.0` | INT |
 
-### <a name="settings"></a>Настройки
+### <a name="settings"></a>Параметры
 
-| Имя | Значение и пример | Тип данных
+| name | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http` либо `tcp` | string |
-| порт | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
-| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | string |
+| protocol | `http` либо `tcp` | строка |
+| порт | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | INT |
+| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | строка |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
 Существует несколько способов развертывания расширения "Работоспособность приложения" в масштабируемые наборы, которые описаны в приведенных ниже примерах.
@@ -141,7 +141,7 @@ Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
 
 Используйте команду [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set), чтобы добавить расширение "Работоспособность приложения" в определение модели масштабируемого набора.
 
-В следующем примере расширение работоспособности приложения добавляется в модель масштабируемого набора для масштабируемого набора на основе Linux.
+Следующий пример добавляет расширение работоспособности приложения к модели масштабирования набора масштаба на основе Linux.
 
 ```azurecli-interactive
 az vmss extension set \
@@ -152,7 +152,7 @@ az vmss extension set \
   --vmss-name <myVMScaleSet> \
   --settings ./extension.json
 ```
-Содержимое файла Extension. JSON.
+Содержимое файла extension.json.
 
 ```json
 {
