@@ -1,5 +1,5 @@
 ---
-title: Справочник по электронной почте для предварительно созданных сущностей LUIS
+title: LUIS Prebuilt образований по электронной почте ссылка
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность email в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.topic: reference
 ms.date: 09/27/2019
 ms.author: diberry
 ms.openlocfilehash: f7aa2a341a82d30f7022af49e626a3cd358854b7
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78273486"
 ---
 # <a name="email-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность email для приложения LUIS
@@ -27,9 +27,9 @@ ms.locfileid: "78273486"
 
 `please send the information to patti@contoso.com`
 
-#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[Ответ V3](#tab/V3)
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
+Следующий JSON с `verbose` параметром, установленным для: `false`
 
 ```json
 "entities": {
@@ -38,9 +38,9 @@ ms.locfileid: "78273486"
     ]
 }
 ```
-#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 многословный ответ](#tab/V3-verbose)
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
+Следующий JSON с `verbose` параметром, установленным для: `true`
 
 ```json
 "entities": {
@@ -64,7 +64,7 @@ ms.locfileid: "78273486"
     }
 }
 ```
-#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[V2 ответ](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.email**.
 
@@ -83,7 +83,7 @@ ms.locfileid: "78273486"
 ```
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

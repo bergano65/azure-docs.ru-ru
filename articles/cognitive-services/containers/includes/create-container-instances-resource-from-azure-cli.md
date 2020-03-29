@@ -1,7 +1,7 @@
 ---
 title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как создать ресурс экземпляра контейнера Azure из Azure CLI.
+description: Узнайте, как создать ресурс экземпляров ресурсов ресурсов ресурсов azure из Azure CLI.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,15 +10,15 @@ ms.topic: include
 ms.date: 01/06/2020
 ms.author: dapine
 ms.openlocfilehash: 700a04b58c13a9c7fd5301875226ca234cabeb96
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "75689466"
 ---
-## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Создание ресурса экземпляра контейнера Azure из Azure CLI
+## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Создание ресурса Azure Container Instance из Azure CLI
 
-YAML ниже определяет ресурс экземпляра контейнера Azure. Скопируйте и вставьте содержимое в новый файл с именем `my-aci.yaml` и замените значения комментария собственными. См. [Формат шаблона][template-format] для допустимого YAML. Сведения о доступных именах образов и соответствующих репозиториях см. в разделе [репозитории и образы контейнеров][repositories-and-images] . Дополнительные сведения о справочнике по YAML для экземпляров контейнеров см. в разделе [Справочник по YAML: экземпляры контейнеров Azure][aci-yaml-ref].
+Ниже YAML определяет ресурс Azure Container Instance. Копировать и вставить содержимое в `my-aci.yaml` новый файл, названный и заменить комментируемые значения с вашим собственным. Обратитесь к [формату шаблона][template-format] для действительного YAML. Обратитесь к [репозиториям контейнеров и изображениям][repositories-and-images] для доступных имен изображений и их соответствующего репозитория. Для получения дополнительной информации о ссылке YAML для экземпляров контейнеров [см.][aci-yaml-ref]
 
 ```YAML
 apiVersion: 2018-10-01
@@ -64,18 +64,18 @@ type: Microsoft.ContainerInstance/containerGroups
 ```
 
 > [!NOTE]
-> Не все расположения имеют одинаковую доступность ЦП и памяти. Список доступных ресурсов для контейнеров в расположении и ОС см. в таблице " [расположение и ресурсы][location-to-resource] ".
+> Не все местоположения имеют одинаковую доступность процессора и памяти. Обратитесь к таблице [местоположения и ресурсов][location-to-resource] для перечисления доступных ресурсов для контейнеров на место и ОС.
 
-Мы будем полагаться на файл YAML, созданный для команды [`az container create`][azure-container-create] . В Azure CLI выполните команду `az container create` замените `<resource-group>` своим собственным. Кроме того, для защиты значений в развертывании YAML ссылаются на [защищенные значения][secure-values].
+Мы будем полагаться на файл YAML, созданный [`az container create`][azure-container-create] для команды. Из Azure CLI выполните `az container create` команду, `<resource-group>` заменяя ее собственной. Кроме того, для обеспечения значений в развертывании YAML отсылайте к [защищенным значениям.][secure-values]
 
 ```azurecli
 az container create -g <resource-group> -f my-aci.yaml
 ```
 
-Выходные данные команды `Running...`, если это допустимо, после того, как выходные данные изменяются на строку JSON, представляющую созданный ресурс ACI. Образ контейнера, скорее всего, будет недоступен в течение определенного времени, но теперь ресурс развернут.
+Вывод команды действителен, `Running...` через некоторое время вывод изменяется в строку JSON, представляющую вновь созданный ресурс ACI. Изображение контейнера, скорее всего, не доступно некоторое время, но ресурс теперь развернут.
 
 > [!TIP]
-> Обратите особое внимание на местоположения общедоступной предварительной версии предложения службы "Поиск в Azure", так как YAML потребуется соответствующим образом скорректировать их в соответствии с расположением.
+> Обратите пристальное внимание на расположение общедоступных предварительных предложений Azure Cognitive Service, так как YAML необходимо будет соответствующим образом скорректировать в соответствии с местоположением.
 
 [azure-container-create]: https://docs.microsoft.com/cli/azure/container?view=azure-cli-latest#az-container-create
 [template-format]: https://docs.microsoft.com/azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups#template-format

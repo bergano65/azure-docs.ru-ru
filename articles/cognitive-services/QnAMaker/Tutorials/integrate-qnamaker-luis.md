@@ -12,10 +12,10 @@ ms.date: 09/26/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: 7e1ea234bde96ce84259841bbc592bf6373bc639
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "71802795"
 ---
 # <a name="use-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Использование бота с QnA Maker и LUIS для распределения базы знаний
@@ -25,25 +25,25 @@ ms.locfileid: "71802795"
 
 В этой статье используется пакет SDK для Bot Framework версии 3. См. дополнительные сведения о [пакете SDK для Bot Framework версии 4](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csharp).
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
-![QnA Maker с архитектурой Language Understanding](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
+![NA Maker с архитектурой понимания языка](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
 
 В вышеприведенном сценарии показано, что из модели API распознавания речи (LUIS) сначала QnA Maker получает намерение входящего вопроса, а затем использует его, чтобы направить в правильную базу знаний QnA Maker.
 
 ## <a name="create-a-luis-app"></a>Создание приложения LUIS
 
-1. Войдите на портал [LUIS](https://www.luis.ai/).
+1. Войти на портал [LUIS.](https://www.luis.ai/)
 1. [Создайте приложение](https://docs.microsoft.com/azure/cognitive-services/luis/create-new-app).
 1. [Добавьте намерение](https://docs.microsoft.com/azure/cognitive-services/luis/add-intents) к каждой базе знаний QnA Maker. Примеры высказываний должны соответствовать вопросам в базе знаний QnA Maker.
 1. В своем приложении LUIS выполните [обучение приложения LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [публикацию приложения LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/publishapp).
-1. В разделе **Управление** запишите идентификатор приложения Luis, ключ КОНЕЧНОЙ точки Luis и [имя пользовательского домена](../../cognitive-services-custom-subdomains.md). Эти значения потребуются позже. 
+1. В разделе **Управление** обратите внимание на идентификатор приложения LUIS, клавишу конечной точки LUIS и [пользовательское доменное имя.](../../cognitive-services-custom-subdomains.md) Эти значения потребуются позже. 
 
 ## <a name="create-qna-maker-knowledge-bases"></a>Создание баз знаний QnA Maker
 
-1. Войдите в [QnA Maker](https://qnamaker.ai).
+1. Вопием в [компании «NA Maker».](https://qnamaker.ai)
 1. [Создайте](https://www.qnamaker.ai/Create) базу знаний для каждого намерения в приложении LUIS.
-1. Проверьте и опубликуйте базы знаний. При публикации каждой базы знаний запишите идентификатор базы знаний, имя ресурса (пользовательский поддомен до _. azurewebsites.NET/qnamaker_) и ключ конечной точки авторизации. Эти значения потребуются позже. 
+1. Проверьте и опубликуйте базы знаний. При публикации каждого КБ обратите внимание на идентификатор KB, имя ресурса (пользовательский поддомен до _.azurewebsites.net/qnamaker),_ и ключ конечной точки авторизации. Эти значения потребуются позже. 
 
     В этой статье предполагается, что все базы знаний созданы в одной подписке Azure QnA Maker.
 
@@ -51,7 +51,7 @@ ms.locfileid: "71802795"
 
 ## <a name="web-app-bot"></a>Бот веб-приложения
 
-1. [Создайте "базовый" робот веб-приложения](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0) , который автоматически включает приложение Luis. Выберите C# язык программирования.
+1. [Создайте "Основной" веб-приложение бот,](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0) который автоматически включает в себя приложение LUIS. Выберите язык программирования на C'.
 
 1. После создания бота веб-приложения выберите его на портале Azure.
 1. Выберите **Параметры приложения** на странице навигации службы бота веб-приложения, затем прокрутите вниз до раздела с доступными параметрами **Параметры приложения**.
@@ -237,7 +237,7 @@ ms.locfileid: "71802795"
 
 ![тест веб-чата](../media/qnamaker-tutorials-qna-luis/qnamaker-web-chat.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Create a business continuity plan for your QnA Maker service](../How-To/business-continuity-plan.md) (Создание плана по обеспечению непрерывности бизнеса для службы QnA Maker)

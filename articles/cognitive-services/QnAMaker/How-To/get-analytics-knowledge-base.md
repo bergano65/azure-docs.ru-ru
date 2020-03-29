@@ -1,5 +1,5 @@
 ---
-title: Аналитика в базе знаний — QnA Maker
+title: Аналитика по базе знаний - NA Maker
 titleSuffix: Azure Cognitive Services
 description: QnA Maker сохраняет все журналы чатов и другие данные телеметрии, если во время создания службы QnA Maker вы включили App Insights. Чтобы получить журналы чатов из App Insights, воспользуйтесь приведенными здесь примерами запросов.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: diberry
 ms.openlocfilehash: e769bde39bc796b5b598109328b468b15385f38a
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77650407"
 ---
 # <a name="get-analytics-on-your-knowledge-base"></a>Получение аналитических данных о базе знаний
@@ -26,7 +26,7 @@ QnA Maker сохраняет все журналы чатов и другие д
 
     ![Выбор ресурса Application Insights](../media/qnamaker-how-to-analytics-kb/resources-created.png)
 
-2. Выберите **Log (Analytics)** . Откроется новое окно, в котором можно запросить данные телеметрии QnA Maker.
+2. Выберите **журнал (аналитика)**. Откроется новое окно, в котором можно запросить данные телеметрии QnA Maker.
 
 3. Вставьте следующий запрос и выполните его.
 
@@ -46,7 +46,7 @@ QnA Maker сохраняет все журналы чатов и другие д
 
     Щелкните **Запуск**, чтобы выполнить запрос.
 
-    [![выполнения запроса для определения вопросов, ответов и оценок пользователей](../media/qnamaker-how-to-analytics-kb/run-query.png)](../media/qnamaker-how-to-analytics-kb/run-query.png#lightbox)
+    [![Выполнить запрос, чтобы определить вопросы, ответы и оценки от пользователей](../media/qnamaker-how-to-analytics-kb/run-query.png)](../media/qnamaker-how-to-analytics-kb/run-query.png#lightbox)
 
 ## <a name="run-queries-for-other-analytics-on-your-qna-maker-knowledge-base"></a>Выполнение запросов для получения других аналитических данных о базе знаний QnA Maker
 
@@ -99,7 +99,7 @@ requests
 | summarize count() by performanceBucket, KbId
 ```
 
-### <a name="unanswered-questions"></a>Вопросы без ответа
+### <a name="unanswered-questions"></a>Вопросы без ответов
 
 ```kusto
 // Unanswered questions
@@ -118,7 +118,7 @@ traces | extend id = operation_ParentId
 | order  by timestamp  desc
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Выберите капактий](./improve-knowledge-base.md)
+> [Выберите capactiy](./improve-knowledge-base.md)

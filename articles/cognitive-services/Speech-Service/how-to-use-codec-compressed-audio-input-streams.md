@@ -1,7 +1,7 @@
 ---
-title: Потоковая передача сжатого аудио-кодека с помощью речевого пакета SDK — служба речи
+title: Поток кодек сжатого звука с речью SDK - Речь службы
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выполнять потоковую передачу сжатых аудио в службу речи с помощью речевого пакета SDK. Доступно для C++, C#и Java для Linux, Java в Android и цели-C в iOS.
+description: Узнайте, как передавать сжатый звук в службу speech с помощью Speech SDK. Доступно для СЗ, СЗ и Java для Linux, Java в Android и Objective-C в iOS.
 services: cognitive-services
 author: amitkumarshukla
 manager: nitinme
@@ -12,23 +12,23 @@ ms.date: 03/09/2020
 ms.author: amishu
 zone_pivot_groups: programming-languages-set-twelve
 ms.openlocfilehash: 3fab02d3dc567a2c54edad5bfb05abe7d99f7b7c
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78943816"
 ---
-# <a name="use-codec-compressed-audio-input-with-the-speech-sdk"></a>Использование сжатых звуковых данных кодека с помощью пакета SDK для распознавания речи
+# <a name="use-codec-compressed-audio-input-with-the-speech-sdk"></a>Используйте кодек сжатого звука ввода с речью SDK
 
-**Сжатый потоковый вход** пакета SDK службы речевого ввода предоставляет способ потоковой передачи сжатого звука в службу распознавания речи с помощью `PullStream` или `PushStream`.
+Служба речевого ввода SDK **Compressed Audio Input Stream** API предоставляет способ `PullStream` `PushStream`потоковой передачи сжатого звука в службу speech с помощью a или .
 
 > [!IMPORTANT]
-> В настоящее время поддерживается потоковая передача сжатых аудио-данных для C#, C++, Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9, RHEL 8, CentOS 8). Она также поддерживается для Java в Android и цели-C на платформе iOS.
-> Требуется пакет SDK для распознавания речи версии 1.7.0 или выше (версия 1.10.0 или более поздняя для RHEL 8, CentOS 8).
+> Потоковое сжатое входное аудио в настоящее время поддерживается для C, C, Java на Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8). Он также поддерживается для Java в Android и Objective-C в платформе iOS.
+> Требуется речевая версия SDK 1.7.0 или выше (версия 1.10.0 или выше для RHEL 8, CentOS 8).
 
 [!INCLUDE [supported-audio-formats](includes/supported-audio-formats.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [prerequisites](includes/how-tos/compressed-audio-input/csharp/prerequisites.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "78943816"
 [!INCLUDE [prerequisites](includes/how-tos/compressed-audio-input/objectivec/prerequisites.md)]
 ::: zone-end
 
-## <a name="example-code-using-codec-compressed-audio-input"></a>Пример кода, использующий сжатые звуковые входные кодеки
+## <a name="example-code-using-codec-compressed-audio-input"></a>Пример кода с использованием кодека сжатого ввода звука
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [prerequisites](includes/how-tos/compressed-audio-input/csharp/examples.md)]

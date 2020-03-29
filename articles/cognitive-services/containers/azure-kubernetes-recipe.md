@@ -1,5 +1,5 @@
 ---
-title: Запуск распознавание языка контейнера в службе Kubernetes
+title: Запуск контейнера обнаружения языка в сервисе Kubernetes
 titleSuffix: Text Analytics -  Azure Cognitive Services
 description: Развертывание контейнера распознавания языка с работающим примером в Службе Azure Kubernetes и его тестирование в веб-браузере.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: dapine
 ms.openlocfilehash: 1968bc03bfddb9d6f6c8fe743a2a1a99722c074d
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78399179"
 ---
-# <a name="deploy-the-text-analytics-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера обнаружения языка Анализ текста в службе Kubernetes Azure
+# <a name="deploy-the-text-analytics-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера обнаружения языков текстовых аналитиков в службу Azure Kubernetes
 
 Узнайте, как развертывать контейнер распознавания языка. В статье описано, как создавать локальные контейнеры Docker, отправлять их в закрытый реестр контейнеров и запускать в кластере Kubernetes, а также тестировать в веб-браузере.
 
@@ -25,18 +25,18 @@ ms.locfileid: "78399179"
 
 Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure CloudShell.
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * [Git](https://git-scm.com/downloads) для вашей операционной системы, чтобы клонировать [пример](https://github.com/Azure-Samples/cognitive-services-containers-samples) для этой процедуры.
-* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Лазурный CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * [Модуль Docker](https://www.docker.com/products/docker-engine), для которого нужно проверить работоспособность Docker CLI в окне консоли.
 * [kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/windows/amd64/kubectl.exe).
 * Ресурс Azure с правильной ценовой категорией. Не все ценовые категории поддерживают этот контейнер.
   * Ресурс **Анализ текста** с ценовой категорией F0 или "Стандартный".
   * Ресурс **Cognitive Services** с ценовой категорией S0.
 
-## <a name="running-the-sample"></a>Запуск образца
+## <a name="running-the-sample"></a>Выполнение примера
 
-Эта процедура загружает и выполняет пример контейнера Cognitive Services для распознавания языка. Пример содержит два контейнера: один для клиентского приложения и второй для контейнера Cognitive Services. Мы будем отправлять оба этих образа в реестр контейнеров Azure. Разместив их в собственном реестре, создайте Службу Azure Kubernetes для доступа к образам и выполнения контейнеров. Когда контейнеры будут запущены, используйте интерфейс командной строки **kubectl** для контроля производительности контейнеров. Создайте HTTP-запрос к клиентскому приложению и проверьте результаты его выполнения.
+Эта процедура загружает и выполняет пример контейнера Cognitive Services для распознавания языка. Пример содержит два контейнера: один для клиентского приложения и второй для контейнера Cognitive Services. Мы переместим оба этих изображения в реестр контейнеров Azure. Разместив их в собственном реестре, создайте Службу Azure Kubernetes для доступа к образам и выполнения контейнеров. Когда контейнеры будут запущены, используйте интерфейс командной строки **kubectl** для контроля производительности контейнеров. Создайте HTTP-запрос к клиентскому приложению и проверьте результаты его выполнения.
 
 ![Концепция запуска примеров контейнеров](../text-analytics/media/how-tos/container-instance-sample/containers.png)
 
@@ -401,10 +401,10 @@ az group delete --name cogserv-container-rg
 
 * [kubectl для пользователей Docker](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Контейнеры Cognitive Services](../cognitive-services-container-support.md)
+> [Контейнеры когнитивных услуг](../cognitive-services-container-support.md)
 
 <!--
 kubectl get secrets
