@@ -8,19 +8,19 @@ ms.date: 07/18/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017, mvc, devcenter
 ms.openlocfilehash: 2e36de9f2a6af3643b6f609339d413968f6a8d6e
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76277645"
 ---
 # <a name="deprecated-deploy-kubernetes-cluster-for-windows-containers"></a>Развертывание кластера Kubernetes для контейнеров Windows (не рекомендуется)
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом руководстве рассматривается развертывание кластера [Kubernetes](https://kubernetes.io/docs/home/) с помощью Azure CLI в [Службе контейнеров Azure](../container-service-intro.md). К развернутому кластеру можно подключиться с помощью средства командной строки Kubernetes `kubectl` и развернуть первый контейнер Windows.
+Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом руководстве рассматривается развертывание кластера [Kubernetes](https://kubernetes.io/docs/home/) с помощью Azure CLI в [Службе контейнеров Azure](../container-service-intro.md). К развернутому кластеру можно подключиться с помощью средства командной строки Kubernetes `kubectl` и развернуть первый контейнер Windows.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -61,7 +61,7 @@ az acs create --orchestrator-type=kubernetes \
 
 ## <a name="install-kubectl"></a>Установка kubectl
 
-Для подключения к кластеру Kubernetes с клиентского компьютера используйте [`kubectl`](https://kubernetes.io/docs/user-guide/kubectl/), клиент командной строки Kubernetes. 
+Чтобы подключиться к кластеру Kubernetes [`kubectl`](https://kubernetes.io/docs/user-guide/kubectl/)с клиентского компьютера, используйте клиент командной строки Kubernetes. 
 
 Если вы используете Azure CloudShell, установка `kubectl` уже выполнена. Для локальной установки можно использовать команду [az acs kubernetes install-cli](/cli/azure/acs/kubernetes).
 

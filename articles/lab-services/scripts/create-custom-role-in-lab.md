@@ -1,6 +1,6 @@
 ---
-title: PowerShell. Создание пользовательской роли в лаборатории в Azure DevTest Labs
-description: В этой статье представлен сценарий Azure PowerShell, который добавляет внешнего пользователя в лабораторию в Azure DevTest Labs.
+title: PowerShell - Создайте пользовательскую роль в лаборатории в Лабораториях Azure DevTest
+description: В этой статье приведен скрипт Azure PowerShell, который добавляет внешнего пользователя в лабораторию в Лаборатории Azure DevTest Labs.
 services: lab-services
 author: spelluru
 manager: ''
@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 9605b3c63877335b8f180ae5fd2b06edc1601096
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76760472"
 ---
 # <a name="use-powershell-to-create-a-custom-role-in-a-lab-in-azure-devtest-labs"></a>Создание настраиваемой роли в лаборатории Azure DevTest Labs с помощью PowerShell
@@ -27,7 +27,7 @@ ms.locfileid: "76760472"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -38,7 +38,7 @@ ms.locfileid: "76760472"
 
 Этот сценарий использует следующие команды: 
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation) | Возвращает операции для поставщика ресурсов Azure, защищаемые с помощью Azure RBAC. |
 | [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) | Выводит список всех ролей Azure RBAC, доступных для назначения. |

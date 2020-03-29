@@ -1,5 +1,5 @@
 ---
-title: Обновление агента Linux для Azure с сайта GitHub
+title: Обновление агента Linux Azure от GitHub
 description: Сведения об обновлении агента Linux для Azure на виртуальной машине Linux
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/02/2017
 ms.author: mimckitt
 ms.openlocfilehash: e4489f7c810799ca8e89565fe698f398f942b089
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78251717"
 ---
 # <a name="how-to-update-the-azure-linux-agent-on-a-vm"></a>Как обновить агент Azure Linux на виртуальной машине
@@ -280,7 +280,7 @@ sudo systemctl restart waagent.service
 
 ## <a name="debian"></a>Debian
 
-### <a name="debian-7-jesse-debian-7-stretch"></a>Debian 7 "Джесси"/Debian 7 "Stretch"
+### <a name="debian-7-jesse-debian-7-stretch"></a>Debian 7 "Джесси" / Debian 7 "Stretch"
 
 #### <a name="check-your-current-package-version"></a>Проверка текущей версии пакета
 
@@ -349,7 +349,7 @@ sudo systemctl restart walinuxagent.service
 
 ## <a name="oracle-linux-6-and-oracle-linux-7"></a>Oracle Linux 6 и Oracle Linux 7
 
-При работе с Oracle Linux убедитесь, что включен репозиторий `Addons` . Откройте для редактирования файл `/etc/yum.repos.d/public-yum-ol6.repo` (Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo` (Oracle Linux) и замените в нем строку `enabled=0` на строку `enabled=1` в разделе **[ol6_addons]** или **[ol7_addons]** .
+При работе с Oracle Linux убедитесь, что включен репозиторий `Addons` . Откройте для редактирования файл `/etc/yum.repos.d/public-yum-ol6.repo` (Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo` (Oracle Linux) и замените в нем строку `enabled=0` на строку `enabled=1` в разделе **[ol6_addons]** или **[ol7_addons]**.
 
 Затем введите следующие команды для установки последней версии агента Linux для Azure:
 
@@ -394,7 +394,7 @@ sudo yum update WALinuxAgent
 
 Установите wget (некоторые дистрибутивы не устанавливают его по умолчанию, например Red Hat, CentOS и Oracle Linux версий 6.4 и 6.5), введя `sudo yum install wget` в командной строке.
 
-### <a name="1-download-the-latest-version"></a>1. Скачайте последнюю версию
+### <a name="1-download-the-latest-version"></a>1. Скачать последнюю версию
 Откройте [выпуск агента Linux для Azure в GitHub](https://github.com/Azure/WALinuxAgent/releases) на веб-странице и узнайте номер последней версии. (Номер текущей версии можно узнать, введя `waagent --version`.)
 
 #### <a name="for-version-22x-or-later-type"></a>Для версии 2.2.x или более поздней версии введите:
@@ -412,7 +412,7 @@ unzip v2.2.14.zip
 cd WALinuxAgent-2.2.14
 ```
 
-### <a name="2-install-the-azure-linux-agent"></a>2. Установка агента Linux для Azure
+### <a name="2-install-the-azure-linux-agent"></a>2. Установка агента Linux Azure
 
 #### <a name="for-version-22x-use"></a>Для версии 2.2.x введите:
 Возможно, сначала потребуется установить пакет `setuptools`. Ознакомьтесь со сведениями, приведенными [здесь](https://pypi.python.org/pypi/setuptools). Далее выполните:
@@ -442,7 +442,7 @@ AutoUpdate.Enabled=y
 sudo sed -i 's/# AutoUpdate.Enabled=n/AutoUpdate.Enabled=y/g' /etc/waagent.conf
 ```
 
-### <a name="3-restart-the-waagent-service"></a>3. Перезапустите службу waagent
+### <a name="3-restart-the-waagent-service"></a>3. Перезагрузка waagent службы
 Для большинства дистрибутивов Linux:
 
 ```bash
@@ -461,7 +461,7 @@ sudo service walinuxagent restart
 sudo systemctl restart waagent
 ```
 
-### <a name="4-confirm-the-azure-linux-agent-version"></a>4. Подтвердите версию агента Linux для Azure
+### <a name="4-confirm-the-azure-linux-agent-version"></a>4. Подтвердите версию Azure Linux Agent
     
 ```bash
 waagent -version

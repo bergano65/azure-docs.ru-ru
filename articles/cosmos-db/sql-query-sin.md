@@ -1,6 +1,6 @@
 ---
-title: SIN на языке запросов Azure Cosmos DB
-description: Сведения о системной функции SQL SIN в Azure Cosmos DB.
+title: SIN в языке запросов Azure Cosmos DB
+description: Узнайте о функции системы S'L SIN в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 25e7cf66fdd55a0b641c35443e38b0a67cbe365d
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78303109"
 ---
-# <a name="sin-azure-cosmos-db"></a>SIN (Azure Cosmos DB)
+# <a name="sin-azure-cosmos-db"></a>SIN (Azure Космос DB)
  Возвращает тригонометрический синус заданного угла в радианах для указанного выражения.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -34,7 +34,7 @@ SIN(<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере вычисляется `SIN` указанного угла.  
+  Следующий пример вычисляет `SIN` указанный угол.  
   
 ```sql
 SELECT SIN(45.175643) AS sin  
@@ -48,10 +48,10 @@ SELECT SIN(45.175643) AS sin
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

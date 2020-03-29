@@ -1,6 +1,6 @@
 ---
-title: Пример PowerShell. Вывод списка всех групп соединителей прокси приложения
-description: Пример PowerShell, в котором перечислены все группы соединителей прокси приложения Azure Active Directory (Azure AD) с назначенными приложениями.
+title: Образец PowerShell - Перечислите все группы разъемов прокси-серверов приложений
+description: Пример PowerShell, в который перечислены все группы прокси-серверов azure Active Directory (Azure AD) с назначенными приложениями.
 services: active-directory
 author: msmimart
 manager: CelesteDG
@@ -13,15 +13,15 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9dcf2eb6a1904e4a7223a19e598f0c06ddc36f71
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75482170"
 ---
-# <a name="get-all-application-proxy-apps-and-list-by-connector-group"></a>Получение всех приложений и списков прокси приложения по группам соединителей
+# <a name="get-all-application-proxy-apps-and-list-by-connector-group"></a>Получить все приложения Прокси и список по разъемгруппе группы
 
-Этот пример сценария PowerShell содержит сведения обо всех группах соединителей прокси приложения Azure Active Directory (Azure AD) с назначенными приложениями.
+В этом примере сценария PowerShell приводится список информации обо всех группах прокси-серверов azure Active Directory (Azure AD) с назначенными приложениями.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
@@ -29,7 +29,7 @@ ms.locfileid: "75482170"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Для работы с этим образцом требуется [AzureAD v2 PowerShell для модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [AzureAD v2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
+Этот образец требует [AzureAD V2 PowerShell для графического модуля](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [AzureAD V2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -37,16 +37,16 @@ ms.locfileid: "75482170"
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-|[Get-AzureADServicePrincipal](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Возвращает субъект-службу. |
-|[Get-AzureADApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Возвращает приложение Azure AD. |
-|[Get-Азуреадаппликатионпроксяппликатион](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для прокси приложения в Azure AD. |
-| [Get-Азуреадаппликатионпроксиконнекторграуп](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyconnectorgroup?view=azureadps-2.0) | Извлекает список всех групп соединителей или сведения о указанной группе соединителей. |
+|[Get-AzureADServicePrincipal](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Получает директора службы. |
+|[Get-AzureADApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Получает приложение Azure AD. |
+|[Get-AzureADApplicationProxyApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для прокси-сервера приложений в Azure AD. |
+| [Get-AzureADApplicationProxyConnectorGroup](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyconnectorgroup?view=azureadps-2.0) | Извлекает список всех групп разъемов, или если указано, детали указанной группы разъема. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure AD PowerShell см. в статье [Общие сведения о модуле Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
+Для получения дополнительной информации о модуле Azure AD PowerShell смотрите [обзор модуля Azure AD PowerShell.](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0)
 
-Другие примеры PowerShell для прокси приложения см. в статье [примеры Azure AD PowerShell для AD application proxy Azure](../application-proxy-powershell-samples.md).
+Для других примеров PowerShell [Azure AD PowerShell examples for Azure AD Application Proxy](../application-proxy-powershell-samples.md)для приложения Proxy см.

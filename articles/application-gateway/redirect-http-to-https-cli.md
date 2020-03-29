@@ -1,5 +1,5 @@
 ---
-title: Перенаправление HTTP в HTTPS с помощью интерфейса командной строки
+title: HTTP TO HTTPS перенаправление с помощью CLI
 titleSuffix: Azure Application Gateway
 description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения SSL-запросов с помощью интерфейса командной строки Azure.
 services: application-gateway
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/15/2019
 ms.author: victorh
 ms.openlocfilehash: 41b2fb754f1d6ead3a7475ca146ab99758aa8134
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78246876"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-cli"></a>Создание шлюза приложений с сертификатом с помощью Azure CLI
@@ -28,11 +28,11 @@ ms.locfileid: "78246876"
 > * добавление прослушивателя и правила перенаправления;
 > * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 

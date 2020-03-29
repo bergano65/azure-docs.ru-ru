@@ -1,5 +1,5 @@
 ---
-title: Коды ошибок на Azure Active Directory портале | Документация Майкрософт
+title: Коды ошибок на портале Active Directory Azure Документы Майкрософт
 description: Коды ошибок отчета об активности входа. Справочные материалы.
 services: active-directory
 documentationcenter: ''
@@ -18,21 +18,21 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6b4e21a23ebc455653b4d5b22ac18023b533728c
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78190472"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Коды ошибок отчета о действиях при входе 
 
-Информация, доступная в [отчете о входе пользователя](concept-sign-ins.md), поможет вам ответить на следующие вопросы:
+С информацией, предоставленной отчетом о [входе пользователя,](concept-sign-ins.md)вы найдете ответы на такие вопросы, как:
 
 - Кто выполнил вход в мое приложение?
 - В какие приложения выполнен вход?
-- Какие входы не удалось выполнить и почему?
+- Какие ввоза не удалось и почему?
 
-При сбое входа отображается код ошибки, соответствующий этому сбою. [Найдите описание кода ошибки](https://login.microsoftonline.com/error).
+При сбое в входе в систему можно увидеть код ошибки, соответствующий сбою. [Найдите описание кода ошибки.](https://login.microsoftonline.com/error)
 
 
 

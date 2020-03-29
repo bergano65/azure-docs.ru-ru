@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/19/2018
 ms.author: rohink
 ms.openlocfilehash: 0120501aab7f0a63721126bfb5b3d04d9deb42fb
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76936798"
 ---
 # <a name="how-to-manage-dns-zones-using-powershell"></a>Как управлять зонами DNS с помощью PowerShell
@@ -25,8 +25,8 @@ ms.locfileid: "76936798"
 > [!div class="op_single_selector"]
 > * [Портал](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
-> * [Классический Azure CLI](dns-operations-dnszones-cli-nodejs.md)
-> * [Azure CLI](dns-operations-dnszones-cli.md)
+> * [Лазурный классический CLI](dns-operations-dnszones-cli-nodejs.md)
+> * [Лазурный CLI](dns-operations-dnszones-cli.md)
 
 В этой статье описывается, как управлять зонами DNS с помощью Azure PowerShell. Зонами DNS также можно управлять с помощью кроссплатформенного [интерфейса командной строки Azure](dns-operations-dnszones-cli.md) или портала Azure.
 

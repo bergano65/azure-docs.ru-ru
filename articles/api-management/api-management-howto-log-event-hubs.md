@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/29/2018
 ms.author: apimpm
 ms.openlocfilehash: 2f07f6a27e78ee4df8c64a09918758d02c28c6d4
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76898790"
 ---
 # <a name="how-to-log-events-to-azure-event-hubs-in-azure-api-management"></a>Как регистрировать события в Центрах событий Azure при использовании службы управления API Azure
@@ -32,7 +32,7 @@ ms.locfileid: "76898790"
 ## <a name="create-an-api-management-logger"></a>Создание средства ведения журнала для управления API
 Теперь, когда концентратор событий создан, нужно настроить [средство ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger) в службе управления API, которое сможет регистрировать события в концентраторе событий.
 
-Средства ведения журнала службы управления API настраиваются с помощью [REST API службы управления API](https://aka.ms/apimapi). Подробные примеры запросов см. [в разделе Создание средств ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger/createorupdate).
+Средства ведения журнала службы управления API настраиваются с помощью [REST API службы управления API](https://aka.ms/apimapi). Подробные примеры запросов узнайте, [как создать loggers.](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger/createorupdate)
 
 ## <a name="configure-log-to-eventhubs-policies"></a>Настройка политик регистрации в концентраторах событий
 
@@ -46,7 +46,7 @@ ms.locfileid: "76898790"
 6. В окне обработки входящих или исходящих запросов щелкните треугольник (рядом со значком карандаша).
 7. Выберите редактор кода. Дополнительные сведения см. в статье [Настройка или изменение политик службы управления API Azure](set-edit-policies.md).
 8. Наведите указатель мыши на раздел политики `inbound` или `outbound`.
-9. В окне справа выберите **Дополнительные политики** > **Log to Event Hub** (Регистрация в концентраторе событий). В результате будет вставлен шаблон инструкции политики `log-to-eventhub`.
+9. В окне справа выберите **Расширенные политики** > **Войти в EventHub**. В результате будет вставлен шаблон инструкции политики `log-to-eventhub`.
 
 ```xml
 <log-to-eventhub logger-id ='logger-id'>

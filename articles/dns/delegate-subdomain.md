@@ -1,6 +1,6 @@
 ---
-title: Делегирование поддомена — Azure DNS
-description: По этой схеме обучения приступайте к делегированию поддомена Azure DNS.
+title: Делегируйте поддомен - Azure DNS
+description: С помощью этого пути обучения начинайте делегирование поддомена Azure DNS.
 services: dns
 author: rohinkoul
 ms.service: dns
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: rohink
 ms.openlocfilehash: cd1443a9ca8ccf7172072078734f21d789d36194
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76937430"
 ---
 # <a name="delegate-an-azure-dns-subdomain"></a>Делегирование поддомена Azure DNS
@@ -20,7 +20,7 @@ ms.locfileid: "76937430"
 
 При необходимости вы можете делегировать поддомен с помощью [Azure PowerShell](delegate-subdomain-ps.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы делегировать поддомен Azure DNS, сначала вам следует делегировать общедоступный домен службе Azure DNS. Дополнительные сведения о настройке делегирования в серверах имен см. в статье [Руководство. Размещение домена в Azure DNS](./dns-delegate-domain-azure-dns.md). После делегирования домена в зону Azure DNS вы можете делегировать поддомен.
 
@@ -31,9 +31,9 @@ ms.locfileid: "76937430"
 
 Сначала создайте зону для поддомена **engineering**.
 
-1. Выберите **Создать ресурс** на портале Azure.
+1. На портале Azure выберите **Создать ресурс.**
 2. В поле поиска введите **DNS** и выберите **зону DNS**.
-3. Щелкните **Создать**.
+3. Выберите **Создать**.
 4. В области **Создание зоны DNS** введите **engineering.contoso.com** в текстовое поле **Имя**.
 5. Выберите группу ресурсов для своей зоны. Вам может потребоваться использовать ту же группу ресурсов, что и в родительской зоне, для размещения одинаковых ресурсов вместе.
 6. Нажмите кнопку **Создать**.

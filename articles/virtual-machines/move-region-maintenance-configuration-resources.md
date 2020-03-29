@@ -1,6 +1,6 @@
 ---
 title: Перемещение ресурсов, связанных с конфигурацией обслуживания, в другой регион
-description: Сведения о перемещении ресурсов, связанных с конфигурацией обслуживания виртуальных машин, в другой регион Azure
+description: Узнайте, как переместить ресурсы, связанные с конфигурацией обслуживания VM, в другой регион Azure
 services: virtual-machines
 author: shants123
 ms.service: virtual-machines
@@ -9,61 +9,61 @@ ms.tgt_pltfrm: vm
 ms.date: 03/04/2020
 ms.author: shants
 ms.openlocfilehash: 3e271e2467b495e79a93ce5eab5edee36e65e619
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78304450"
 ---
 # <a name="move-resources-in-a-maintenance-control-configuration-to-another-region"></a>Перемещение ресурсов в конфигурации управления обслуживанием в другой регион
 
-Чтобы переместить ресурсы, связанные с конфигурацией управления обслуживанием, в другой регион Azure, следуйте этой статье. Может потребоваться переместить конфигурацию по ряду причин. Например, чтобы воспользоваться преимуществами нового региона, можно развернуть компоненты или службы, доступные в определенном регионе, в соответствии с требованиями к внутренней политике и управлению, а также в ответ на планирование ресурсов.
+Следуйте этой статье, чтобы переместить ресурсы, связанные с конфигурацией управления обслуживанием, в другой регион Azure. Возможно, необходимо переместить конфигурацию по ряду причин. Например, использовать преимущества нового региона, развертывать функции или службы, доступные в конкретном регионе, удовлетворять требованиям внутренней политики и управления или в ответ на планирование потенциала.
 
-Управление обслуживанием с пользовательскими конфигурациями обслуживания позволяет управлять применением обновлений платформы к виртуальным машинам [Windows](https://docs.microsoft.com/azure/virtual-machines/maintenance-control-cli?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) и [Linux](https://docs.microsoft.com/azure/virtual-machines/maintenance-control-cli?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Flinux%2Fbreadcrumb%2Ftoc.json&view=azure-java-stable) , а также к выделенным узлам Azure. Существует несколько сценариев перемещения управления обслуживанием в разных регионах:
+Управление обслуживанием с настраиваемыми конфигурациями обслуживания позволяет контролировать, как обновления платформприменяюти применяются к [Windows](https://docs.microsoft.com/azure/virtual-machines/maintenance-control-cli?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) и [Linux](https://docs.microsoft.com/azure/virtual-machines/maintenance-control-cli?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Flinux%2Fbreadcrumb%2Ftoc.json&view=azure-java-stable) VMs, а также к выделенным хостам Azure. Существует несколько сценариев перемещения управления обслуживанием в разных регионах:
 
-- Чтобы переместить ресурсы, связанные с конфигурацией обслуживания, но не самой конфигурацией, следуйте этой статье.
-- Чтобы переместить конфигурацию управления обслуживанием, но не ресурсы, связанные с конфигурацией, выполните следующие [инструкции](move-region-maintenance-configuration.md).
-- Чтобы переместить конфигурацию обслуживания и связанные с ней ресурсы, сначала выполните [эти инструкции](move-region-maintenance-configuration.md). Затем следуйте инструкциям в этой статье.
+- Для перемещения ресурсов, связанных с конфигурацией обслуживания, но не самой конфигурации, следуйте этой статье.
+- Чтобы переместить конфигурацию управления обслуживанием, но не ресурсы, связанные с конфигурацией, следуйте [этим инструкциям.](move-region-maintenance-configuration.md)
+- Чтобы переместить конфигурацию обслуживания и связанные с ней ресурсы, сначала следуйте [этим инструкциям.](move-region-maintenance-configuration.md) Затем следуйте инструкциям в этой статье.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом перемещения ресурсов, связанных с конфигурацией управления обслуживанием, выполните следующие действия.
+Перед началом перемещения ресурсов, связанных с конфигурацией управления обслуживанием:
 
-- Прежде чем начать, убедитесь, что перемещаемые ресурсы существуют в новом регионе.
-- Проверьте конфигурации управления обслуживанием, связанные с виртуальными машинами Azure и выделенными узлами Azure, которые требуется переместить. Проверьте каждый ресурс по отдельности. В настоящее время нет способа получить конфигурации для нескольких ресурсов.
-- При получении конфигураций для ресурса:
-    - Убедитесь, что вы используете идентификатор подписки для учетной записи, а не идентификатор выделенного узла Azure.
-    - CLI: параметр--выходной таблицы используется только для удобочитаемости и может быть удален или изменен.
-    - PowerShell. параметр Format-Table name используется только для удобочитаемости и может быть удален или изменен.
-    - Если вы используете PowerShell, при попытке перечисления конфигураций для ресурса, у которого нет связанных конфигураций, возникает ошибка. Ошибка будет выглядеть примерно так: "сбой операции с состоянием:" не найдено ". Сведения: ошибка клиента 404: не найден для URL-адреса ".
+- Убедитесь, что ресурсы, которые вы перемещаете, существуют в новом регионе, прежде чем начать.
+- Проверьте конфигурации управления обслуживанием, связанные с мизантами Azure и выделенными хостами Azure, которые вы хотите переместить. Проверьте каждый ресурс по отдельности. В настоящее время нет способа получения конфигураций для нескольких ресурсов.
+- При извлечении конфигураций для ресурса:
+    - Убедитесь, что идентификатор подписки для учетной записи, а не идентификатор выделенного хоста Azure.
+    - CLI: Параметр таблицы вывода используется только для читаемости и может быть удален или изменен.
+    - PowerShell: Параметр названия формата-таблицы используется только для читаемости и может быть удален или изменен.
+    - Если вы используете PowerShell, вы получите ошибку, если вы попытаетесь перечислить конфигурации для ресурса, который не имеет каких-либо связанных конфигураций. Ошибка будет аналогична: "Операция не удалось со статусом: 'Не найдено'. Подробности: 404 Ошибка клиента: не найдено для URL".
 
     
-## <a name="prepare-to-move"></a>Подготовка к перемещению
+## <a name="prepare-to-move"></a>Подготовка к переезду
 
-1. Прежде чем начать, определите эти переменные. Мы предоставили пример для каждого из них.
+1. Перед тем, как начать, определите эти переменные. Мы предоставили пример для каждого из них.
 
-    **Переменная** | **Сведения** | **Пример**
+    **Переменной** | **Подробно** | **Пример**
     --- | ---
-    $subId | Идентификатор подписки, содержащей конфигурации обслуживания | "наш-Subscription-ID"
-    $rsrcGroupName | Имя группы ресурсов (виртуальная машина Azure) | "Вмресаурцеграуп"
-    $vmName | Имя ресурса виртуальной машины |  MyVM
-    $adhRsrcGroupName |  Группа ресурсов (выделенные узлы) | "Хостресаурцеграуп"
-    $adh | Выделенное имя узла | "Михост"
-    $adhParentName | Имя родительского ресурса | HostGroup
+    $subId | Идентификатор для подписки, содержащий конфигурации обслуживания | "наш-подписка-ID"
+    $rsrcGroupName | Имя группы ресурсов (Azure VM) | "ВМРесурсГрупп"
+    $vmName | Имя ресурса VM |  "myVM"
+    $adhRsrcGroupName |  Группа ресурсов (Выделенные хосты) | "HostResourceGroup"
+    $adh | Специальное имя хозяина | "мойхозяин"
+    $adhParentName | Имя родительского ресурса | "ХостГрупп"
     
-2. Чтобы получить конфигурации обслуживания с помощью команды PowerShell [Get-азконфигуратионассигнмент](https://docs.microsoft.com/powershell/module/az.maintenance/Get-AzConfigurationAssignment?view=azps-3.5.0) , выполните следующие действия:
+2. Для получения конфигураций обслуживания с помощью команды PowerShell [Get-AzConfigurationAssignment:](https://docs.microsoft.com/powershell/module/az.maintenance/Get-AzConfigurationAssignment?view=azps-3.5.0)
 
-    - Для выделенных узлов Azure выполните:
+    - Для выделенных узлов Azure запустите:
         ```
         Get-AzConfigurationAssignment -ResourceGroupName $adhRsrcGroupName -ResourceName $adh -ResourceType hosts -ProviderName Microsoft.Compute -ResourceParentName $adhParentName -ResourceParentType hostGroups | Format-Table Name
         ```
 
-    - Для виртуальных машин Azure выполните:
+    - Для Пазуры ВМ, запуск:
 
         ```
         Get-AzConfigurationAssignment -ResourceGroupName $rgName -ResourceName $vmName -ProviderName Microsoft.Compute -ResourceType virtualMachines | Format-Table Name
         ```
-3. Чтобы получить конфигурации обслуживания с помощью команды CLI [AZ Maintenance](https://docs.microsoft.com/cli/azure/ext/maintenance/maintenance/assignment?view=azure-cli-latest) :
+3. Для получения конфигураций обслуживания с помощью команды [назначения задания обслуживания](https://docs.microsoft.com/cli/azure/ext/maintenance/maintenance/assignment?view=azure-cli-latest) CLI az:
 
     - Для выделенных узлов Azure:
 
@@ -71,7 +71,7 @@ ms.locfileid: "78304450"
         az maintenance assignment list --subscription $subId --resource-group $adhRsrcGroupName --resource-name $adh --resource-type hosts --provider-name Microsoft.Compute --resource-parent-name $adhParentName --resource-parent-type hostGroups --query "[].{HostResourceGroup:resourceGroup,ConfigName:name}" --output table
         ```
 
-    - Для виртуальных машин Azure:
+    - Для Вымотка Azure:
 
         ```
         az maintenance assignment list --subscription $subId --provider-name Microsoft.Compute --resource-group $rsrcGroupName --resource-name $vmName --resource-type virtualMachines --query "[].{HostResourceGroup:resourceGroup, ConfigName:name}" --output table
@@ -80,19 +80,19 @@ ms.locfileid: "78304450"
 
 ## <a name="move"></a>Переместить 
 
-1. [Выполните эти инструкции](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) , чтобы переместить виртуальные машины Azure в новый регион.
-2. После перемещения ресурсов повторно примените конфигурации обслуживания к ресурсам в новом регионе в зависимости от того, были ли перемещены конфигурации обслуживания. Вы можете применить конфигурацию обслуживания к ресурсу с помощью [PowerShell](../virtual-machines/maintenance-control-powershell.md) или [CLI](../virtual-machines/maintenance-control-cli.md).
+1. [Следуйте этим инструкциям,](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) чтобы переместить ВМ Azure в новый регион.
+2. После перемещения ресурсов повторно ездое количество конфигураций обслуживания в новом регионе по мере необходимости применяется в зависимости от того, перемещаются ли конфигурации обслуживания. Конфигурацию обслуживания можно применить к ресурсу с помощью [PowerShell](../virtual-machines/maintenance-control-powershell.md) или [CLI.](../virtual-machines/maintenance-control-cli.md)
 
 
-## <a name="verify-the-move"></a>Проверка перемещения
+## <a name="verify-the-move"></a>Проверить ход
 
-Проверьте ресурсы в новом регионе и проверьте связанные конфигурации для ресурсов в новом регионе. 
+Проверка ресурсов в новом регионе и проверка связанных конфигураций для ресурсов в новом регионе. 
 
 ## <a name="clean-up-source-resources"></a>Очистка исходных ресурсов
 
-После перемещения рассмотрите возможность удаления перемещенных ресурсов в исходном регионе.
+После переезда рассмотрите возможность удалять перемещенные ресурсы в исходной области.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если необходимо переместить конфигурации обслуживания, следуйте [этим инструкциям](move-region-maintenance-configuration.md) . 
+Следуйте [этим инструкциям,](move-region-maintenance-configuration.md) если вам нужно переместить конфигурации обслуживания. 

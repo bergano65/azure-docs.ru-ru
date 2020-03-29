@@ -1,5 +1,5 @@
 ---
-title: Вызов пакета служб SSIS с помощью фабрики данных Azure — действие хранимой процедуры
+title: Вызвать пакет SSIS с помощью фабрики данных Azure - Сохраненная процедура
 description: В этой статье рассматривается вызов пакета SQL Server Integration Services (SSIS) из конвейера базы данных Azure с помощью действия хранимой процедуры.
 services: data-factory
 documentationcenter: ''
@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: jingwang
 ms.openlocfilehash: ea86c4670a8eb6dc5e2133ed01045e8aada0f707
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75438786"
 ---
 # <a name="invoke-an-ssis-package-using-stored-procedure-activity-in-azure-data-factory"></a>Вызов пакета SSIS с помощью действия хранимой процедуры в фабрике данных Azure
@@ -26,7 +26,7 @@ ms.locfileid: "75438786"
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [вызову пакетов SSIS с помощью действия хранимой процедуры в службе "Фабрика данных" версии 2](../how-to-invoke-ssis-package-stored-procedure-activity.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="azure-sql-database"></a>База данных SQL Azure 
 В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать Управляемый экземпляр Базы данных SQL.
@@ -39,7 +39,7 @@ ms.locfileid: "75438786"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-az-ps).
+Установите новейшие модули Azure PowerShell, следуя инструкциям в [каку установить и настроить Azure PowerShell.](/powershell/azure/install-az-ps)
 
 ### <a name="create-a-data-factory"></a>Создание фабрики данных
 В следующей процедуре представлены шаги для создания фабрики данных. Вы создадите конвейер с действием хранимой процедуры в фабрике данных. Действие хранимой процедуры выполняет хранимую процедуру в базе данных SSISDB для запуска вашего пакета SSIS.
@@ -66,7 +66,7 @@ ms.locfileid: "75438786"
     $DataFactoryName = "ADFTutorialFactory";
     ```
 
-5. Чтобы создать фабрику данных, выполните следующий командлет **New-аздатафактори** , используя свойство Location и ResourceGroupName из переменной $ResGrp: 
+5. Чтобы создать фабрику данных, запустите следующее свойство **New-AzDataFactory,** используя свойство Location and ResourceGroupName из $ResGrp переменной: 
     
     ```powershell       
     $df = New-AzDataFactory -ResourceGroupName $ResourceGroupName -Name $dataFactoryName -Location "East US"
@@ -101,7 +101,7 @@ ms.locfileid: "75438786"
         }
     ```
 2. В **Azure PowerShell** перейдите в папку **C:\ADF\RunSSISPackage**.
-3. Выполните командлет **New-аздатафакторилинкедсервице** , чтобы создать связанную службу: **AzureSqlDatabaseLinkedService**. 
+3. Выполнить **новый-AzDataFactoryLinkedService** cmdlet для создания связанного сервиса: **AzureSqlDatabaseLinkedService**. 
 
     ```powershell
     New-AzDataFactoryLinkedService $df -File ".\AzureSqlDatabaseLinkedService.json"
@@ -126,7 +126,7 @@ ms.locfileid: "75438786"
         }
     }
     ```
-2. Выполните командлет **New-аздатафакторидатасет** , чтобы создать набор данных. 
+2. Выполнить **новый-AzDataFactoryDataset** cmdlet для создания набора данных. 
 
     ```powershell
     New-AzDataFactoryDataset $df -File ".\OutputDataset.json"
@@ -168,7 +168,7 @@ ms.locfileid: "75438786"
     }    
     ```
 
-2. Чтобы создать конвейер: **RunSSISPackagePipeline**, выполните командлет **New-аздатафакторипипелине** .
+2. Для создания конвейера: **RunSSISPackagePipeline**, запустите смдлет **New-AzDataFactoryPipeline.**
 
     ```powershell
     $DFPipeLine = New-AzDataFactoryPipeline -DataFactoryName $DataFactory.DataFactoryName -ResourceGroupName $ResGrp.ResourceGroupName -Name "RunSSISPackagePipeline" -DefinitionFile ".\RunSSISPackagePipeline.json"
@@ -176,7 +176,7 @@ ms.locfileid: "75438786"
 
 ### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
 
-1. Выполните команду **Get-аздатафакторислице** , чтобы получить сведения обо всех срезах выходного набора данных * *, который является выходной таблицей конвейера.
+1. Выполнить **Get-AzDataFactorySlice,** чтобы получить подробную информацию обо всех срезах набора выходных данных, который является таблицей вывода конвейера.
 
     ```powershell
     Get-AzDataFactorySlice $df -DatasetName sprocsampleout -StartDateTime 2017-10-01T00:00:00Z

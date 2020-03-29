@@ -1,6 +1,6 @@
 ---
-title: Устранение сбоев при создании кластера с помощью Azure HDInsight
-description: Узнайте, как устранять неполадки при создании кластера Apache для Azure HDInsight.
+title: Сбои создания кластеров с Azure HDInsight
+description: Узнайте, как устранить проблемы создания кластеров Apache для Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,80 +9,80 @@ ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/26/2019
 ms.openlocfilehash: 1e13c7ef8eae81ef2a12a8761b0596f6329f94dc
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76937910"
 ---
-# <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
+# <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Сбои создания кластеров с Azure HDInsight
 
-Ниже перечислены основные причины сбоев при создании кластера.
+Следующие проблемы являются наиболее распространенными основными причинами сбоев создания кластеров:
 
-- Проблемы с разрешениями
-- Ограничения политики ресурсов
+- Вопросы разрешения
+- Ограничения политики в отношении ресурсов
 - Брандмауэры
 - Блокировки ресурсов
 - Неподдерживаемые версии компонентов
-- Ограничения имен учетных записей хранения
-- Простои службы
+- Ограничения на хранение имен учетной записи
+- Перебои в обслуживании
 
 ## <a name="permissions-issues"></a>Проблемы с разрешениями
 
-Если вы используете Azure Data Lake Storage 2-го поколения и получаете сообщение об ошибке ```AmbariClusterCreationFailedErrorCode```, ```Internal server error occurred while processing the request. Please retry the request or contact support.```, откройте портал Azure, перейдите к своей учетной записи хранения и в разделе Управление доступом (IAM) убедитесь, что **участник данных BLOB-объекта хранилища** или роль **владельца данных BLOB-объекта хранилища** назначили доступ к **управляемому удостоверению, назначенному пользователю** для подписки. Подробные инструкции см. в разделе о [настройке разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account).
+Если вы используете Azure Data Lake Storage ```AmbariClusterCreationFailedErrorCode```Gen2 и получаете ```Internal server error occurred while processing the request. Please retry the request or contact support.```ошибку, откройте портал Azure, перейдите на свой аккаунт хранения и под контролем доступа (IAM), убедитесь, что **вкладчик у владельца данных Storage Blob** или роль владельца **данных Storage Blob** получили доступ к **назначенному пользователю управляемому удостоверению** для подписки. Подробные инструкции см. в разделе о [настройке разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account).
 
-Если вы используете Azure Data Lake Storage 1-го поколения, см. инструкции по настройке и настройке [здесь](../hdinsight-hadoop-use-data-lake-store.md). Data Lake Storage 1-го поколения не поддерживается для кластеров HBase и не поддерживается в HDInsight версии 4,0.
+Если вы используете Azure Data Lake Storage Gen1, смотрите инструкции по настройке и конфигурации [здесь.](../hdinsight-hadoop-use-data-lake-store.md) Data Lake Storage Gen1 не поддерживается для кластеров HBase и не поддерживается в версии HDInsight 4.0.
 
-При использовании службы хранилища Azure убедитесь, что имя учетной записи хранения допустимо во время создания кластера.
+При использовании Azure Storage убедитесь, что имя учетной записи хранилища допустимо во время создания кластера.
 
-## <a name="resource-policy-restrictions"></a>Ограничения политики ресурсов
+## <a name="resource-policy-restrictions"></a>Ограничения политики в отношении ресурсов
 
-Политики Azure на основе подписки могут запрещать создание общедоступных IP-адресов. Для создания кластера HDInsight требуется два общедоступных IP-адреса.  
+Политики Azure, основанные на подписке, могут отказать в создании общедоступных IP-адресов. Для создания кластера HDInsight требуется два общедоступных IP-адреса.  
 
-Как правило, следующие политики могут повлиять на создание кластера:
+Как правило, следующие политики могут повлиять на создание кластеров:
 
-* Политики, препятствующие созданию IP-адресов & подсистемы балансировки нагрузки в рамках подписки.
-* Политика, препятствующая созданию учетной записи хранения.
-* Политика, препятствующая удалению сетевых ресурсов (подсистемы балансировки IP-адресов/лоад).
+* Политики, препятствующие созданию IP-адреса & балансеров нагрузки в рамках подписки.
+* Политика, препятствующая созданию учетной записи хранилища.
+* Политика, предотвращающая удаление сетевых ресурсов (IP-адрес/балансеры нагрузки).
 
 ## <a name="firewalls"></a>Брандмауэры
 
-Брандмауэры в виртуальной сети или учетной записи хранения могут запретить обмен данными с IP-адресами управления HDInsight.
+Брандмауэры в вашей виртуальной сети или учетной записи хранения могут отказать в общении с IP-адресами управления HDInsight.
 
-Разрешить трафик с IP-адресов, указанных в таблице ниже.
+Разрешить трафик с IP-адресов в таблице ниже.
 
-| Исходный IP-адрес | Место назначения | Направление |
+| Исходный IP-адрес | Назначение | Направление |
 |---|---|---|
-| 168.61.49.99 | *: 443 | Вход. |
-| 23.99.5.239 | *: 443 | Вход. |
-| 168.61.48.131 | *: 443 | Вход. |
-| 138.91.141.162 | *: 443 | Вход. |
+| 168.61.49.99 | *:443 | Входящий трафик |
+| 23.99.5.239 | *:443 | Входящий трафик |
+| 168.61.48.131 | *:443 | Входящий трафик |
+| 138.91.141.162 | *:443 | Входящий трафик |
 
-Также добавьте IP-адреса, относящиеся к региону, в котором создается кластер. Список адресов для каждого региона Azure см. в разделе [IP-адреса управления HDInsight](../hdinsight-management-ip-addresses.md) .
+Также добавьте IP-адреса, специфичные для региона, где создается кластер. Смотрите [IP-адреса управления HDInsight](../hdinsight-management-ip-addresses.md) для перечисления адресов для каждого региона Azure.
 
-Если вы используете Express Route или собственный DNS-сервер, см. статью [планирование виртуальной сети для Azure HDInsight: подключение нескольких сетей](../hdinsight-plan-virtual-network-deployment.md#multinet).
+Если вы используете экспресс-маршрут или собственный [Plan a virtual network for Azure HDInsight - connecting multiple networks](../hdinsight-plan-virtual-network-deployment.md#multinet)dNS-сервер, см.
 
 ## <a name="resources-locks"></a>Блокировки ресурсов  
 
-Убедитесь, что [в виртуальной сети и группе ресурсов нет блокировок](../../azure-resource-manager/management/lock-resources.md). Кластеры не могут быть созданы или удалены, если группа ресурсов заблокирована. 
+Убедитесь, что в [вашей виртуальной сети и группе ресурсов нет блокировок.](../../azure-resource-manager/management/lock-resources.md) Кластеры не могут быть созданы или удалены, если группа ресурсов заблокирована. 
 
 ## <a name="unsupported-component-versions"></a>Неподдерживаемые версии компонентов
 
-Убедитесь, что вы используете [поддерживаемую версию Azure HDInsight](../hdinsight-component-versioning.md) и все [компоненты Apache Hadoop](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions) в решении.  
+Убедитесь, что вы используете [поддерживаемую версию Azure HDInsight](../hdinsight-component-versioning.md) и любые [компоненты Apache Hadoop](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions) в вашем решении.  
 
-## <a name="storage-account-name-restrictions"></a>Ограничения имен учетных записей хранения
+## <a name="storage-account-name-restrictions"></a>Ограничения на хранение имен учетной записи
 
-Длина имен учетных записей хранения не может превышать 24 символов и не может содержать специальный символ. Эти ограничения также касаются имени контейнера по умолчанию в учетной записи хранения.
+Имена учетных записей хранилища не могут быть более чем 24 символами и не могут содержать специальный символ. Эти ограничения также касаются имени контейнера по умолчанию в учетной записи хранения.
 
-Другие ограничения именования также применяются при создании кластера. Дополнительные сведения см. в разделе [ограничения имен кластеров](../hdinsight-hadoop-provision-linux-clusters.md#cluster-name).
+Другие ограничения именования также применяются для создания кластера. Для получения дополнительной информации [см.](../hdinsight-hadoop-provision-linux-clusters.md#cluster-name)
 
-## <a name="service-outages"></a>Простои службы
+## <a name="service-outages"></a>Перебои в обслуживании
 
-Проверьте [состояние Azure](https://status.azure.com) на наличие потенциальных сбоев или проблем со службой.
+Проверьте [состояние Azure](https://status.azure.com) на наличие возможных сбоев или проблем с обслуживанием.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Расширение возможностей HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
-* [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  
+* [Расширяйте Azure HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
+* [Используйте хранилище данных Azure Data Lake Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  
 * [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md)
 * [Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md)

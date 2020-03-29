@@ -9,58 +9,58 @@ ms.date: 12/13/2019
 ms.author: jingwang
 ms.custom: include file
 ms.openlocfilehash: c4225ab2505fc072f705f8126fc8a04581e0f80c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "75440336"
 ---
-| Категория | Хранилище данных | Поддерживается в качестве источника | Поддерживается в качестве приемника | Поддерживается [Azure IR](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Поддерживается локальными [средами IR](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) |
+| Категория | Хранилище данных | Поддерживается в качестве источника | Поддерживается в качестве приемника | Поддерживается [Azure IR](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Поддерживается [самостоятельной ИК](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **Azure** |[Хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Индекс Azure Когнитивный поиск](../articles/data-factory/connector-azure-search.md) | |✓ |✓ |✓  |
+| **Azure** |[Хранение Azure Blob](../articles/data-factory/connector-azure-blob-storage.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Индекс когнитивного поиска Azure](../articles/data-factory/connector-azure-search.md) | |✓ |✓ |✓  |
 | &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/connector-azure-cosmos-db.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[API Azure Cosmos DB для MongoDB](../articles/data-factory/connector-azure-cosmos-db-mongodb-api.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Обозреватель данных Azure](../articles/data-factory/connector-azure-data-explorer.md) |✓ |✓ |✓ |✓ |
-| &nbsp; |[Хранилище Azure Data Lake Gen1](../articles/data-factory/connector-azure-data-lake-store.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Data Lake Storage 2-го поколения](../articles/data-factory/connector-azure-data-lake-storage.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[API Azure Cosmos DB для MongoDB](../articles/data-factory/connector-azure-cosmos-db-mongodb-api.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Azure Data Explorer](../articles/data-factory/connector-azure-data-explorer.md) |✓ |✓ |✓ |✓ |
+| &nbsp; |[Хранилище Azure Data Lake Storage 1-го поколения](../articles/data-factory/connector-azure-data-lake-store.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Лазурное хранилище озер данных Gen2](../articles/data-factory/connector-azure-data-lake-storage.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[База данных Azure для MariaDB](../articles/data-factory/connector-azure-database-for-mariadb.md) |✓ | |✓ |✓  |
 | &nbsp; |[База данных Azure для MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Хранилище файлов Azure](../articles/data-factory/connector-azure-file-storage.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Хранение файлов Azure](../articles/data-factory/connector-azure-file-storage.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[База данных SQL Azure](../articles/data-factory/connector-azure-sql-database.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Управляемый экземпляр Базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure синапсе Analytics (ранее — хранилище данных SQL)](../articles/data-factory/connector-azure-sql-data-warehouse.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |✓ |✓ |✓ |✓  |
-| **База данных** |[Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) |✓ | |✓ |✓  |
+| &nbsp; |[Управляемая инстанциями базы данных Azure S'L](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Аналитика Azure Synapse (ранее склад данных S'L)](../articles/data-factory/connector-azure-sql-data-warehouse.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Хранение таблицы Azure](../articles/data-factory/connector-azure-table-storage.md) |✓ |✓ |✓ |✓  |
+| **Базы данных** |[Амазонка Редсифт](../articles/data-factory/connector-amazon-redshift.md) |✓ | |✓ |✓  |
 | &nbsp; |[DB2](../articles/data-factory/connector-db2.md) |✓ | |✓ |✓  |
 | &nbsp; |[Drill](../articles/data-factory/connector-drill.md). |✓ | |✓ |✓  |
 | &nbsp; |[Google BigQuery](../articles/data-factory/connector-google-bigquery.md) |✓ | |✓ |✓  |
 | &nbsp; |[Greenplum](../articles/data-factory/connector-greenplum.md) |✓ | |✓ |✓  |
 | &nbsp; |[HBase](../articles/data-factory/connector-hbase.md) |✓ | |✓ |✓  |
-| &nbsp; |[Hive](../articles/data-factory/connector-hive.md) |✓ | |✓ |✓  |
+| &nbsp; |[Куст](../articles/data-factory/connector-hive.md) |✓ | |✓ |✓  |
 | &nbsp; |[Apache Impala](../articles/data-factory/connector-impala.md) |✓ | |✓ |✓  |
 | &nbsp; |[Informix](../articles/data-factory/connector-informix.md) |✓ | | |✓  |
 | &nbsp; |[MariaDB](../articles/data-factory/connector-mariadb.md) |✓ | |✓ |✓  |
 | &nbsp; |[Microsoft Access](../articles/data-factory/connector-microsoft-access.md) |✓ | | |✓  |
-| &nbsp; |[MySQL](../articles/data-factory/connector-mysql.md) |✓ | |✓ |✓  |
+| &nbsp; |[Mysql](../articles/data-factory/connector-mysql.md) |✓ | |✓ |✓  |
 | &nbsp; |[Netezza](../articles/data-factory/connector-netezza.md) |✓ | |✓ |✓  |
 | &nbsp; |[Oracle](../articles/data-factory/connector-oracle.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Phoenix](../articles/data-factory/connector-phoenix.md) |✓ | |✓ |✓  |
 | &nbsp; |[PostgreSQL](../articles/data-factory/connector-postgresql.md) |✓ | |✓ |✓  |
 | &nbsp; |[Presto (предварительная версия)](../articles/data-factory/connector-presto.md) |✓ | |✓ |✓  |
-| &nbsp; |[SAP Business Warehouse через открытый центр](../articles/data-factory/connector-sap-business-warehouse-open-hub.md) |✓ | | |✓  |
+| &nbsp; |[Бизнес-склад SAP через открытый концентратор](../articles/data-factory/connector-sap-business-warehouse-open-hub.md) |✓ | | |✓  |
 | &nbsp; |[SAP Business Warehouse через MDX](../articles/data-factory/connector-sap-business-warehouse.md) |✓ | | |✓  |
 | &nbsp; |[SAP HANA](../articles/data-factory/connector-sap-hana.md) |✓ |✓ | |✓  |
 | &nbsp; |[Таблица SAP](../articles/data-factory/connector-sap-table.md) |✓ | | |✓  |
 | &nbsp; |[Spark](../articles/data-factory/connector-spark.md) |✓ | |✓ |✓  |
-| &nbsp; |[SQL Server](../articles/data-factory/connector-sql-server.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[SQL Server](../articles/data-factory/connector-sql-server.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Sybase](../articles/data-factory/connector-sybase.md) |✓ | | |✓  |
 | &nbsp; |[Teradata](../articles/data-factory/connector-teradata.md) |✓ | |✓ |✓  |
 | &nbsp; |[Vertica](../articles/data-factory/connector-vertica.md) |✓ | |✓ |✓  |
-| **NoSQL** |[Cassandra](../articles/data-factory/connector-cassandra.md) |✓ | |✓ |✓  |
+| **Nosql** |[Cassandra](../articles/data-factory/connector-cassandra.md) |✓ | |✓ |✓  |
 | &nbsp; |[Couchbase (предварительная версия)](../articles/data-factory/connector-couchbase.md) |✓ | |✓ |✓  |
-| &nbsp; |[MongoDB](../articles/data-factory/connector-mongodb.md) |✓ | |✓ |✓  |
+| &nbsp; |[Mongodb](../articles/data-factory/connector-mongodb.md) |✓ | |✓ |✓  |
 | **Файл** |[Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) |✓ | |✓ |✓  |
 | &nbsp; |[Файловая система](../articles/data-factory/connector-file-system.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[FTP](../articles/data-factory/connector-ftp.md) |✓ | |✓ |✓  |
@@ -69,7 +69,7 @@ ms.locfileid: "75440336"
 | &nbsp; |[SFTP](../articles/data-factory/connector-sftp.md) |✓ |✓ |✓ |✓  |
 | **Универсальный протокол** |[Базовый HTTP-запрос](../articles/data-factory/connector-http.md) |✓ | |✓ |✓  |
 | &nbsp; |[Generic OData](../articles/data-factory/connector-odata.md) |✓ | |✓ |✓  |
-| &nbsp; |[Универсальные данные ODBC](../articles/data-factory/connector-odbc.md) |✓ |✓ | |✓  |
+| &nbsp; |[Generic ODBC](../articles/data-factory/connector-odbc.md) |✓ |✓ | |✓  |
 | &nbsp; |[Универсальные данные REST](../articles/data-factory/connector-rest.md) |✓ | |✓ |✓  |
 | **Службы и приложения** |[Веб-служба Amazon Marketplace](../articles/data-factory/connector-amazon-marketplace-web-service.md) |✓ | |✓ |✓  |
 | &nbsp; |[Common Data Service](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
@@ -77,20 +77,20 @@ ms.locfileid: "75440336"
 | &nbsp; |[Dynamics 365](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[центр IoT Azure](../articles/data-factory/connector-dynamics-ax.md) |✓ | |✓ |✓  |
 | &nbsp; |[Dynamics CRM](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Google адвордс](../articles/data-factory/connector-google-adwords.md) |✓ | |✓ |✓  |
+| &nbsp; |[Google AdWords](../articles/data-factory/connector-google-adwords.md) |✓ | |✓ |✓  |
 | &nbsp; |[HubSpot (предварительная версия)](../articles/data-factory/connector-hubspot.md) |✓ | |✓ |✓  |
-| &nbsp; |[Jira](../articles/data-factory/connector-jira.md). |✓ | |✓ |✓  |
+| &nbsp; |[Jira](../articles/data-factory/connector-jira.md) |✓ | |✓ |✓  |
 | &nbsp; |[Magento (предварительная версия)](../articles/data-factory/connector-magento.md) |✓ | |✓ |✓  |
 | &nbsp; |[Marketo (предварительная версия)](../articles/data-factory/connector-marketo.md) |✓ | |✓ |✓  |
-| &nbsp; |[Office 365](../articles/data-factory/connector-office-365.md) |✓ | |✓ |✓  |
+| &nbsp; |[Офис 365](../articles/data-factory/connector-office-365.md) |✓ | |✓ |✓  |
 | &nbsp; |[Oracle Eloqua (предварительная версия)](../articles/data-factory/connector-oracle-eloqua.md) |✓ | |✓ |✓  |
 | &nbsp; |[Oracle Responsys (предварительная версия)](../articles/data-factory/connector-oracle-responsys.md) |✓ | |✓ |✓  |
 | &nbsp; |[Oracle Service Cloud (предварительная версия)](../articles/data-factory/connector-oracle-service-cloud.md) |✓ | |✓ |✓  |
-| &nbsp; |[PayPal (Предварительная версия)](../articles/data-factory/connector-paypal.md) |✓ | |✓ |✓  |
+| &nbsp; |[PayPal (Предварительный просмотр)](../articles/data-factory/connector-paypal.md) |✓ | |✓ |✓  |
 | &nbsp; |[QuickBooks (предварительная версия)](../articles/data-factory/connector-quickbooks.md) |✓ | |✓ |✓  |
 | &nbsp; |[Salesforce](../articles/data-factory/connector-salesforce.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Облачная служба SalesForce](../articles/data-factory/connector-salesforce-service-cloud.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Облако Salesforce Marketing](../articles/data-factory/connector-salesforce-marketing-cloud.md) |✓ | |✓ |✓  |
+| &nbsp; |[Salesforce Marketing Cloud](../articles/data-factory/connector-salesforce-marketing-cloud.md) |✓ | |✓ |✓  |
 | &nbsp; |[SAP Cloud for Customer (C4C)](../articles/data-factory/connector-sap-cloud-for-customer.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[SAP ECC](../articles/data-factory/connector-sap-ecc.md) |✓ | |✓ |✓ |
 | &nbsp; |[ServiceNow](../articles/data-factory/connector-servicenow.md) |✓ | |✓ |✓  |
@@ -101,4 +101,4 @@ ms.locfileid: "75440336"
 | &nbsp; |[Zoho (предварительная версия)](../articles/data-factory/connector-zoho.md) |✓ | |✓ |✓  |
 
 > [!NOTE]
-> Если соединитель помечен как *Предварительная версия*, вы можете испытать его и отправить нам отзыв. Если вы хотите получить зависимость от соединителей предварительной версии в решении, обратитесь в [службу поддержки Azure](https://azure.microsoft.com/support/).
+> Если разъем помечен *Предварительный просмотр,* вы можете попробовать его и дать нам обратную связь. Если вы хотите получить зависимость от разъемов предварительного просмотра в своем решении, обратитесь в [службу поддержки Azure.](https://azure.microsoft.com/support/)

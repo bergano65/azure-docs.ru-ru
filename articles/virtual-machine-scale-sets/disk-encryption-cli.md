@@ -1,5 +1,5 @@
 ---
-title: Шифрование дисков для масштабируемых наборов Azure с помощью Azure CLI
+title: Шифрование дисков для наборов масштабов Azure с помощью Azure CLI
 description: Узнайте, как использовать Azure PowerShell для шифрования экземпляров виртуальной машины и подключенных к ним дисков в масштабируемом наборе виртуальных машин Windows.
 author: msmbaldwin
 manager: rkarlin
@@ -9,23 +9,23 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 557d5c023acbc7987d58c9e78bfe11e25f314879
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76279077"
 ---
-# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli"></a>Зашифруйте ОС и подключенные диски данных в масштабируемом наборе виртуальных машин с помощью Azure CLI
+# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli"></a>Шифрование ОС и прилагаемых дисков данных в виртуальном наборе масштаба машины с Azure CLI
 
-Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве показано, как использовать Azure CLI для создания и шифрования масштабируемого набора виртуальных машин. Дополнительные сведения о применении шифрования дисков Azure к масштабируемому набору виртуальных машин см. в статье [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md).
+Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. Этот быстрый запуск показывает, как использовать Azure CLI для создания и шифрования виртуального набора масштабов машины. Для получения дополнительной информации о применении шифрования Azure Disk к виртуальному набору масштабов машины [см.](disk-encryption-overview.md)
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.]( /cli/azure/install-azure-cli)
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
 
-Прежде чем создать масштабируемый набор, выполните команду [az group create](/cli/azure/group) для создания группы ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Прежде чем создать масштабируемый набор, выполните команду [az group create](/cli/azure/group) для создания группы ресурсов. Следующий пример создает группу ресурсов под названием *myResourceGroup* в *восточном* месте:
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
@@ -104,9 +104,9 @@ az vmss encryption enable \
 
 Так как для набора масштабирования, созданного ранее, задана политика *автоматического* обновления, процесс шифрования для экземпляров виртуальных машин запускается автоматически. Если для масштабируемого набора задана политика обновления вручную, запустите шифрование для экземпляров виртуальных машин с помощью команды [az vmss update-instances](/cli/azure/vmss#az-vmss-update-instances).
 
-### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Включение шифрования с помощью KEK для переноса ключа
+### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Включить шифрование с помощью KEK для обертывания ключа
 
-Ключ шифрования ключа можно также использовать для повышения безопасности при шифровании масштабируемого набора виртуальных машин.
+Вы также можете использовать ключ шифрования ключ для дополнительной безопасности при шифровании виртуального набора масштаба машины.
 
 ```azurecli-interactive
 # Get the resource ID of the Key Vault
@@ -123,10 +123,10 @@ az vmss encryption enable \
 ```
 
 > [!NOTE]
->  Синтаксис значения параметра Disk-Encryption-keyvault — это строка полного идентификатора:</br>
-/Subscriptions/[Subscription-ID-GUID]/resourceGroups/[ресурс-группа-имя]/providers/Microsoft.KeyVault/vaults/[KeyVault-name]</br></br>
-> Синтаксис значения параметра key-Encryption-key — это полный универсальный код ресурса (URI) для KEK, как в:</br>
-HTTPS://[keyvault]. Vault. Azure. NET/ключи/[кекнаме]/[KEK-Unique-ID]
+>  Синтаксис для значения параметра диск-шифрования-keyvault является полной строкой идентификатора:</br>
+/подписка/«подписка-id-guid»/resourceGroups/«ресурс-группа-имя»/провайдеры/Microsoft.KeyVault/vaults/»keyvault-name»</br></br>
+> Синтаксис для значения параметра ключа-шифрования ключа является полным URI к KEK, как в:</br>
+https://'keyvault-name.vault.azure.net/keys/'kekname) /kek-unique-id
 
 ## <a name="check-encryption-progress"></a>Проверка хода выполнения шифрования
 
@@ -173,6 +173,6 @@ az vmss encryption disable --resource-group myResourceGroup --name myScaleSet
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure CLI. Можно также использовать шаблоны [Azure PowerShell](disk-encryption-powershell.md) или [Azure Resource Manager](disk-encryption-azure-resource-manager.md).
-- Если вы хотите, чтобы шифрование дисков Azure применялось после подготовки другого расширения, можно использовать [виртуализацию расширения](virtual-machine-scale-sets-extension-sequencing.md). 
+- В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure CLI. Вы также можете использовать шаблоны [Azure PowerShell](disk-encryption-powershell.md) или [Azure Resource Manager.](disk-encryption-azure-resource-manager.md)
+- Если вы хотите, чтобы шифрование Azure Disk было применено после того, как будет подготовлено другое расширение, можно использовать [секвенирование расширения.](virtual-machine-scale-sets-extension-sequencing.md) 
 - Полный пример пакетного файла для шифрования дисков данных масштабируемого набора Linux можно найти [здесь](https://gist.githubusercontent.com/ejarvi/7766dad1475d5f7078544ffbb449f29b/raw/03e5d990b798f62cf188706221ba6c0c7c2efb3f/enable-linux-vmss.bat). Этот пример создает группу ресурсов и масштабируемый набор Linux, подключает диск данных размером 5 ГБ и шифрует этот масштабируемый набор виртуальных машин.

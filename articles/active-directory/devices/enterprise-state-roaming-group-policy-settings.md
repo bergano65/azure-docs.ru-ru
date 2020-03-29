@@ -1,6 +1,6 @@
 ---
-title: Параметры групповая политика и MDM для ESR — Azure Active Directory
-description: Параметры управления для Enterprise State Roaming
+title: Групповая политика и настройки MDM для ESR - Активный каталог Azure
+description: Настройки управления для корпоративного государственного роуминга
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bdffbc3a140bd13dcd6d352db8c192803d39b03e
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78672369"
 ---
 # <a name="group-policy-and-mdm-settings"></a>Параметры групповой политики и управления мобильными устройствами
@@ -26,13 +26,13 @@ ms.locfileid: "78672369"
 В следующих таблицах описаны доступные параметры политики.
 
 > [!NOTE]
-> Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](/deployedge/microsoft-edge-enterprise-sync).
+> Эта статья относится к HTML-браузеру Microsoft Edge Legacy, запущенной с Windows 10 в июле 2015 года. Статья не распространяется на новый браузер на основе Microsoft Edge Chromium, выпущенный 15 января 2020 года. Для получения дополнительной информации о поведении синхронизации [Microsoft Edge Sync](/deployedge/microsoft-edge-enterprise-sync)для нового Microsoft Edge см.
 
 ## <a name="mdm-settings"></a>Параметры MDM
 
-Параметры политики MDM применяются к Windows 10 и Windows 10 Mobile.  Поддержка Windows 10 Mobile существует только для перемещения на основе учетной записи Майкрософт через учетную запись пользователя OneDrive. Дополнительные сведения о том, какие устройства поддерживаются для синхронизации на основе Azure AD, см. в разделе [устройства и конечные точки](enterprise-state-roaming-windows-settings-reference.md) .
+Параметры политики MDM применяются к Windows 10 и Windows 10 Mobile.  Поддержка Windows 10 Mobile существует только для перемещения на основе учетной записи Майкрософт через учетную запись пользователя OneDrive. Обратитесь к [устройствам и конечным точкам](enterprise-state-roaming-windows-settings-reference.md) для получения подробной информации о том, какие устройства поддерживаются для синхронизации Azure AD.
 
-| Имя | Описание |
+| name | Описание |
 | --- | --- |
 | Разрешить подключение к учетной записи Майкрософт |Позволяет проходить проверку подлинности с использованием учетной записи Майкрософт на устройстве |
 | Разрешить синхронизацию моих параметров |Позволяет перемещать параметры Windows и данные приложений. Отключение этой политики приведет к отключению синхронизации и архивации на мобильных устройствах. |
@@ -43,7 +43,7 @@ ms.locfileid: "78672369"
 
 Эти параметры расположены в разделе `Computer Configuration > Administrative Templates > Windows Components > Sync your settings`. 
 
-| Имя | Описание |
+| name | Описание |
 | --- | --- |
 | Учетные записи: заблокировать учетные записи Майкрософт |Этот параметр политики запрещает пользователям добавлять новые учетные записи Майкрософт на этом компьютере |
 | Не синхронизировать |Не позволяет перемещать параметры Windows и данные приложений |
@@ -57,6 +57,6 @@ ms.locfileid: "78672369"
 | Не синхронизировать параметры приложений |Отключает перемещение данных приложений |
 | Не синхронизировать параметры запуска |Не используйте. Не действует |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Общие сведения см. в [обзоре службы Enterprise State Roaming](enterprise-state-roaming-overview.md).
+Для обзора [см.](enterprise-state-roaming-overview.md)

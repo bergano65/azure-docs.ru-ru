@@ -1,6 +1,6 @@
 ---
-title: LTRIM в языке запросов Azure Cosmos DB
-description: Сведения о системной функции LTRIM SQL в Azure Cosmos DB для возврата строкового выражения после удаления начальных пробелов
+title: LTRIM на языке запросов Azure Cosmos DB
+description: Узнайте о функции системы LTRIM в Azure Cosmos DB, чтобы вернуть выражение строки после удаления ведущих заготовок
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 08c069de70684a8562e86963ddb2e84ee889e7cc
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302259"
 ---
-# <a name="ltrim-azure-cosmos-db"></a>LTRIM (Azure Cosmos DB)
+# <a name="ltrim-azure-cosmos-db"></a>LTRIM (Azure Космос DB)
  Возвращает строковое выражение после удаления начальных пробелов.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -26,7 +26,7 @@ LTRIM(<str_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Является строковым выражением.  
+   Является выражением строки.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -34,7 +34,7 @@ LTRIM(<str_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как использовать `LTRIM` внутри запроса.  
+  В следующем примере `LTRIM` показано, как использовать запрос.  
   
 ```sql
 SELECT LTRIM("  abc") AS l1, LTRIM("abc") AS l2, LTRIM("abc   ") AS l3 
@@ -48,10 +48,10 @@ SELECT LTRIM("  abc") AS l1, LTRIM("abc") AS l2, LTRIM("abc   ") AS l3
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Строка функции Azure Космос DB](sql-query-string-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

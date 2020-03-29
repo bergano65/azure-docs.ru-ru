@@ -9,11 +9,11 @@ ms.date: 01/16/2020
 ms.author: babanisa
 ms.custom: include file
 ms.openlocfilehash: 42d1ebb23cf582c3dfbc375e4886ed449c21f493
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "76844564"
 ---
 >[!NOTE]
-> Если необходимо гарантировать, что ожидающие события сохраняются в случае перезапуска устройства, необходимо включить сохраняемость для подписки на события. Дополнительные сведения о настройке сохраняемости см. в следующих статьях: [Сохранение состояния в Linux](../articles/event-grid/edge/persist-state-linux.md) или [Сохранение состояния в Windows](../articles/event-grid/edge/persist-state-windows.md).
+> Если вам необходимо гарантировать сохранение ожидающих событий в случае перезагрузки устройства, необходимо включить сохранение подписки на событие. Для получения дополнительной информации о том, как [Persist state in Linux](../articles/event-grid/edge/persist-state-linux.md) настроить настойчивость, [Persist state in Windows](../articles/event-grid/edge/persist-state-windows.md)см.

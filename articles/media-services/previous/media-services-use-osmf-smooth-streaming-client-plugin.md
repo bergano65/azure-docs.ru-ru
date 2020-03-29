@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 45a2829411ea4713df898c90be73792718160cd2
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78255109"
 ---
 # <a name="how-to-use-the-microsoft-smooth-streaming-plugin-for-the-adobe-open-source-media-framework"></a>Использование подключаемого модуля Smooth Streaming Майкрософт для платформы Adobe Open Source Media Framework  
@@ -30,7 +30,7 @@ SS для OSMF включает в себя две версии подключа
 * статический подключаемый модуль Smooth Streaming для OSMF (.swc);
 * динамический подключаемый модуль Smooth Streaming для OSMF (.swf).
 
-В этом документе предполагается, что читатель имеет общие знания о подключаемых модулях OSMF и OSMF. Дополнительные сведения о OSMF см. в документации на [официальном сайте OSMF](http://osmf.org/).
+Этот документ предполагает, что читатель обладает общими рабочими знаниями плагинов OSMF и OSMF. Для получения дополнительной информации о OSMF, пожалуйста, смотрите документацию на [официальном сайте OSMF](http://osmf.org/).
 
 ### <a name="smooth-streaming-plugin-for-osmf-20"></a>Подключаемый модуль Smooth Streaming для OSMF 2.0
 Подключаемый модуль поддерживает загрузку и воспроизведение контента Smooth Streaming по запросу со следующими возможностями:
@@ -391,6 +391,6 @@ package
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Адаптивный подключаемый модуль Майкрософт для потоковой передачи для обновления OSMF](https://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/) 
 

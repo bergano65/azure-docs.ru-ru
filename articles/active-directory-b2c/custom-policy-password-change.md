@@ -1,5 +1,5 @@
 ---
-title: Настройка смены пароля с помощью настраиваемых политик
+title: Настройка изменения пароля с помощью пользовательских политик
 titleSuffix: Azure AD B2C
 description: Сведения о том, как разрешить пользователям изменять пароль с помощью настраиваемых политик в Azure Active Directory B2C.
 services: active-directory-b2c
@@ -12,19 +12,19 @@ ms.date: 12/13/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 2c351f8a95110a32c53c68c5eb6095918578bc5b
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78189180"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка смены пароля в настраиваемых политиках в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В Azure Active Directory B2C (Azure AD B2C) можно разрешить пользователям, вошедшим в локальную учетную запись, изменить пароль, не подтверждая их подлинность по проверке по электронной почте. Если время сеанса истекает, когда пользователь входит в поток смены пароля, такому пользователю предлагается выполнить вход еще раз. В этой статье рассказывается о настройке смены пароля в [настраиваемых политиках](custom-policy-overview.md). Также можно настроить [самостоятельный сброс пароля](user-flow-self-service-password-reset.md) в последовательностях пользователей.
+В Azure Active Directory B2C (Azure AD B2C) можно позволить пользователям, всданным в местную учетную запись, изменить свой пароль без необходимости доказывать свою подлинность по электронной почте. Если время сеанса истекает, когда пользователь входит в поток смены пароля, такому пользователю предлагается выполнить вход еще раз. В этой статье рассказывается о настройке смены пароля в [настраиваемых политиках](custom-policy-overview.md). Также можно настроить [самостоятельный сброс пароля](user-flow-self-service-password-reset.md) в последовательностях пользователей.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 
@@ -171,7 +171,7 @@ ms.locfileid: "78189180"
 4. Выберите **Инфраструктура процедур идентификации**.
 5. На странице "Настраиваемые политики" щелкните **Отправить политику**.
 6. Выберите **Перезаписать политику, если она существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-7. Щелкните **Отправить**.
+7. Нажмите кнопку **Отправка**.
 8. Повторите шаги с 5 по 7 для файла проверяющей стороны, например *ProfileEditPasswordChange.xml*.
 
 ### <a name="run-the-policy"></a>Запуск политики

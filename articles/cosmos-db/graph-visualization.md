@@ -1,6 +1,6 @@
 ---
-title: Визуализация данных графа в Azure Cosmos DB API Gremlin
-description: Узнайте, как интегрировать данные графа Azure Cosmos DB с решениями визуализации (Линкуриаус Enterprise, Кембриджского Intelligence).
+title: Визуализация данных графика в API Azure Cosmos DB Gremlin
+description: Узнайте, как интегрировать данные графика Azure Cosmos DB с решениями визуализации (Linkurious Enterprise, Cambridge Intelligence).
 author: luisbosquez
 ms.author: lbosq
 ms.service: cosmos-db
@@ -8,46 +8,46 @@ ms.subservice: cosmosdb-graph
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.openlocfilehash: 1cabe57a0e7f2869a30973c8bbc8b4b38f664d81
-ms.sourcegitcommit: 801e9118fae92f8eef8d846da009dddbd217a187
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75500022"
 ---
-# <a name="visualize-graph-data-stored-in-azure-cosmos-db-gremlin-api-with-data-visualization-solutions"></a>Визуализация данных графа, хранящихся в Azure Cosmos DB API Gremlin с помощью решений для визуализации данных
+# <a name="visualize-graph-data-stored-in-azure-cosmos-db-gremlin-api-with-data-visualization-solutions"></a>Визуализация данных о графике, хранящихся в API Azure Cosmos DB Gremlin, с помощью решений визуализации данных
 
-Данные, хранящиеся в Azure Cosmos DB API Gremlin, можно визуализировать с помощью различных решений для визуализации данных. Следующие решения рекомендуются в [сообществе Apache Tinkerpop](https://tinkerpop.apache.org/#poweredby) для визуализации данных Graph.
+Можно визуализировать данные, хранящиеся в Azure Cosmos DB Gremlin API, используя различные решения для визуализации данных. Следующие решения рекомендуются [сообществом Apache Tinkerpop](https://tinkerpop.apache.org/#poweredby) для визуализации данных для графика.
 
-## <a name="linkurious-enterprise"></a>Линкуриаус Enterprise
+## <a name="linkurious-enterprise"></a>Linkurious Предприятие
 
-![Логотип линкуриаус](./media/graph-visualization/linkurious-logo.jpg)
+![Логотип Linkurious](./media/graph-visualization/linkurious-logo.jpg)
 
-[Линкуриаус Enterprise](https://linkurio.us/product/) использует технологии графа и визуализацию данных, чтобы превратить сложные наборы в интерактивные визуальные сети. Платформа подключается к источникам данных и позволяет исследованиям легко перемещаться по миллиардам сущностей и связей. В результате появилась новая возможность обнаруживать подозрительные связи без участия в запросах или таблицах.
+[Linkurious Enterprise](https://linkurio.us/product/) использует технологию графиков и визуализацию данных для превращения сложных наборов данных в интерактивные визуальные сети. Платформа подключается к источникам данных и позволяет следователям легко перемещаться по миллиардам сущностей и взаимосвязям. Результатом является новая способность обнаруживать подозрительные отношения без жонглирования с запросами или таблицами.
 
-Интерактивный интерфейс Линкуриаус Enterprise предлагает простой способ исследовать сложные данные. Можно выполнять поиск конкретных сущностей, развертывать подключения для выявления скрытых связей и применять макеты по своему усмотрению для унтангле сложных сетей. Линкуриаус Enterprise теперь совместим с API Azure Cosmos DB Gremlin. Он подходит для сквозных сценариев визуализации графа и поддерживает возможности чтения и записи из пользовательского интерфейса. Вы можете запросить [демонстрацию линкуриаус с Azure Cosmos DB](https://linkurio.us/contact/)
+Интерактивный интерфейс Linkurious Enterprise предлагает простой способ изучения сложных данных. Вы можете искать определенные объекты, расширять соединения, чтобы выявить скрытые связи, и применить макеты по вашему выбору, чтобы распутать сложные сети. Linkurious Enterprise теперь совместим с Azure Cosmos DB Gremlin API. Он подходит для сквозных сценариев визуализации графиков и поддерживает возможности чтения и записи из пользовательского интерфейса. Вы можете запросить [демонстрацию Linkurious с Azure Cosmos DB](https://linkurio.us/contact/)
 
-![Демонстрация линкуриаус](./media/graph-visualization/linkurious-demo.gif)
+![Линкюзиус Демо](./media/graph-visualization/linkurious-demo.gif)
 
-## <a name="cambridge-intelligence"></a>Кембриджского Intelligence
+## <a name="cambridge-intelligence"></a>Кембриджская разведка
 
-![Логотип Кембриджского Intelligence](./media/graph-visualization/ci-logo.png)
+![Логотип Cambridge Intelligence](./media/graph-visualization/ci-logo.png)
 
-Наборы средств визуализации графа [Кембриджского Intelligence](https://cambridge-intelligence.com/products/) теперь поддерживают Azure Cosmos DB. В Azure Cosmos DB поддерживаются следующие два набора средств визуализации:
+Инструментарии визуализации графиков [Cambridge Intelligence](https://cambridge-intelligence.com/products/) теперь поддерживают Azure Cosmos DB. Следующие два набора инструментов визуализации поддерживаются Azure Cosmos DB:
 
-- [Кэйлинес для разработчиков JavaScript](https://cambridge-intelligence.com/keylines/)
+- [Ключевые линии для разработчиков JavaScript](https://cambridge-intelligence.com/keylines/)
 
-- [Повторное построение графа для реагирования на разработчиков](https://cambridge-intelligence.com/regraph/)
+- [Повторное график для разработчиков React](https://cambridge-intelligence.com/regraph/)
 
-![Демонстрация Кембриджского Intelligence](./media/graph-visualization/ci-demo-2.gif)
+![Демо-демо Кембриджской разведки](./media/graph-visualization/ci-demo-2.gif)
 
-Эти наборы средств позволяют создавать высокопроизводительные приложения для визуализации и анализа графа для вашего случая использования. Они используют мощную визуализацию библиотеки Web Graphics (WebGL) и тщательно сконструированный код для предоставления пользователям быстрого и аналитического представления. Эти средства совместимы с любым браузером, устройством, сервером или базой данных и входят в состав пошаговых руководств, полностью документированных API и интерактивных демонстраций.
+Эти наборы инструментов позволяют разрабатывать высокопроизводительные приложения для визуализации графиков и анализа для вашего случая использования. Они используют мощную веб-библиотеку графики (WebGL) рендеринга и тщательно созданный код, чтобы дать пользователям быстрый и глубокий опыт визуализации. Эти инструменты совместимы с любым браузером, устройством, сервером или базой данных и поставляются с пошаговыми учебниками, полностью документированными AI и интерактивными демо-
 
-![Демонстрация Кембриджского Intelligence](./media/graph-visualization/ci-demo-1.gif)
+![Демо-демо Кембриджской разведки](./media/graph-visualization/ci-demo-1.gif)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
  
-- [Попробуйте использовать наборы средств](https://cambridge-intelligence.com/try/)
-- [Обзор технологии Кэйлинес](https://cambridge-intelligence.com/keylines/technology/)
-- [Обзор технологии повторной графики](https://cambridge-intelligence.com/regraph/technology/)
-- [Варианты использования визуализации графа](https://cambridge-intelligence.com/use-cases/)
+- [Попробуйте наборы инструментов](https://cambridge-intelligence.com/try/)
+- [Обзор технологии KeyLines](https://cambridge-intelligence.com/keylines/technology/)
+- [Обзор технологии Re-Graph](https://cambridge-intelligence.com/regraph/technology/)
+- [Случаи использования визуализации графиков](https://cambridge-intelligence.com/use-cases/)

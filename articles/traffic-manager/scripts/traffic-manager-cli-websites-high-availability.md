@@ -1,5 +1,5 @@
 ---
-title: Маршрутизация трафика для обеспечения высокой доступности приложений — Azure CLI — диспетчер трафика
+title: Трафик маршрута для HA приложений - Azure CLI - Менеджер трафика
 description: Пример сценария Azure CLI для маршрутизации трафика для обеспечения высокого уровня доступности приложений.
 services: traffic-manager
 documentationcenter: traffic-manager
@@ -16,10 +16,10 @@ ms.workload: traffic-manager
 ms.date: 04/26/2018
 ms.author: rohink
 ms.openlocfilehash: e4912e0e285d41bf2de4cf439788a943251cfae8
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76934789"
 ---
 # <a name="route-traffic-for-high-availability-of-applications-using-azure-cli"></a>Маршрутизация трафика для обеспечения высокого уровня доступности приложений с помощью Azure CLI
@@ -48,7 +48,7 @@ az group delete --name myResourceGroup2 --yes
 
 Для создания группы ресурсов, веб-приложения, профиля диспетчера трафика и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan) | Создает план службы приложений. Это как ферма сервера для веб-приложения Azure. |

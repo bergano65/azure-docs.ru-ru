@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: mikhegn
 ms.openlocfilehash: ef88a528dbb6d326e5cc742d14c27218eb7502f7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75464084"
 ---
 # <a name="configure-the-upgrade-of-a-service-fabric-application-in-visual-studio"></a>Настройка обновления приложения Service Fabric в Visual Studio

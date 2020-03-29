@@ -1,6 +1,6 @@
 ---
-title: Azure Cosmos DB языка запросов
-description: Узнайте о том, как функция CEILING SQL System в Azure Cosmos DB возвращает наименьшее целочисленное значение, большее или равное указанному числовому выражению.
+title: CEILING на языке запросов Azure Cosmos DB
+description: Узнайте о том, как система CEILING S'L в Azure Cosmos DB возвращает наименьшее значение, превышающее или равное указанному численному выражению.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 81f113aa51a7f739b506ec7e3eb5bf2cb9f49a03
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302650"
 ---
-# <a name="ceiling-azure-cosmos-db"></a>CEILING (Azure Cosmos DB)
+# <a name="ceiling-azure-cosmos-db"></a>CEILING (Azure Космос DB)
  Возвращает наименьшее целочисленное значение, которое больше или равно указанному числовому выражению.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -34,7 +34,7 @@ CEILING (<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показаны положительные числовые, отрицательные и нулевые значения с помощью функции `CEILING`.  
+  Следующий пример показывает положительные числовые, отрицательные и нулевые значения с функцией. `CEILING`  
   
 ```sql
 SELECT CEILING(123.45) AS c1, CEILING(-123.45) AS c2, CEILING(0.0) AS c3  
@@ -48,10 +48,10 @@ SELECT CEILING(123.45) AS c1, CEILING(-123.45) AS c2, CEILING(0.0) AS c3
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
+Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

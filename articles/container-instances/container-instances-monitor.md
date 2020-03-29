@@ -4,10 +4,10 @@ description: Как отслеживать потребление контейн
 ms.topic: article
 ms.date: 04/24/2019
 ms.openlocfilehash: b4a66254c18d7e01b6d56e64e6b62721b620d499
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78250033"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Мониторинг ресурсов контейнеров в службе "Экземпляры контейнеров Azure"
@@ -138,9 +138,9 @@ Timestamp            Name          Containername             Average
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Подробные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
+Дополнительные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
 
-Из этой статьи вы узнаете, как создать [оповещения о метриках][metric-alert] для получения уведомлений, когда значение метрики для Экземпляров контейнеров Azure достигает порогового значения.
+Сведения о создании [оповещения о метриках][metric-alert] для получения уведомлений, когда значение метрики для Экземпляров контейнеров Azure достигает порогового значения.
 
 <!-- IMAGES -->
 [cpu-chart]: ./media/container-instances-monitor/cpu-multi.png

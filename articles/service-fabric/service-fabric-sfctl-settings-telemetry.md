@@ -1,15 +1,15 @@
 ---
-title: Azure Service Fabric CLI — параметры телеметрии sfctl
-description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для настройки телеметрии sfctl.
+title: Телеметрия настроек настройки Sfctl Сервиса Сервиса Fabric CLI
+description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для настройки телеметрии sfctl.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 6af5fa944ef399756f9e890ddd77a7f5f32e2bfb
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76903029"
 ---
 # <a name="sfctl-settings-telemetry"></a>sfctl settings telemetry
@@ -19,7 +19,7 @@ sfctl telemetry собирает имя команды без предостав
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|Description|
+|Команда|Описание|
 | --- | --- |
 | set-telemetry | Включение и отключение телеметрии. |
 
@@ -28,14 +28,14 @@ sfctl telemetry собирает имя команды без предостав
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --off | Отключение телеметрии. |
 | --on | Включение телеметрии. Это значение по умолчанию. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -59,5 +59,5 @@ sfctl settings telemetry set_telemetry --on
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
+- [Настройка](service-fabric-cli.md) службы Ткань CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

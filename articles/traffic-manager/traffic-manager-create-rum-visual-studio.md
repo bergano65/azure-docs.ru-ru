@@ -1,5 +1,5 @@
 ---
-title: Измерения на стороне пользователей с помощью Visual Studio Mobile Center — диспетчер трафика Azure
+title: Реальные измерения пользователей с помощью мобильного центра Visual Studio - менеджер azure Traffic
 description: Настройка мобильного приложения, разработанного с использованием Visual Studio Mobile Center, для отправки реальных измерений пользователя в диспетчер трафика
 services: traffic-manager
 documentationcenter: traffic-manager
@@ -14,10 +14,10 @@ ms.date: 03/16/2018
 ms.author: rohink
 ms.custom: ''
 ms.openlocfilehash: 3106334e1fb3e3000cbd09e00e413b34a1b55e54
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76939189"
 ---
 # <a name="how-to-send-real-user-measurements-to-traffic-manager-with-visual-studio-mobile-center"></a>Отправка измерений на стороне пользователей в диспетчер трафика с помощью Visual Studio Mobile Center
@@ -41,7 +41,7 @@ ms.locfileid: "76939189"
         
    ![Создание ключа измерений на стороне пользователей](./media/traffic-manager-create-rum-visual-studio/generate-rum-key.png)
 
-   **Рис. 1. Создание ключа измерений на стороне пользователей**
+   **Рисунок 1: Реальные измерения пользователей ключевого поколения**
 
 5. На этой странице отображается созданный ключ RUM и фрагмент кода JavaScript, который необходимо внедрить на страницу HTML.
  

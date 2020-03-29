@@ -1,7 +1,7 @@
 ---
 title: Определение задачи машинного обучения для автоматического запуска машинного обучения
 titleSuffix: Azure Machine Learning
-description: Узнайте, как определить задачу машинного обучения для автоматического запуска машинного обучения.
+description: Узнайте, как определить задачу машинного обучения для автоматического запуска машинного обучения
 services: machine-learning
 author: RachelKellam
 ms.author: rakellam
@@ -11,27 +11,27 @@ ms.subservice: core
 ms.topic: how-to
 ms.date: 11/04/2019
 ms.openlocfilehash: a58959904559cd3b2cec27762f2df93cfea72abd
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75540533"
 ---
-# <a name="how-to-define-a-machine-learning-task"></a>Определение задачи машинного обучения 
+# <a name="how-to-define-a-machine-learning-task"></a>Как определить задачу машинного обучения 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье вы узнаете о поддерживаемых задачах машинного обучения и о том, как определить их для автоматического запуска эксперимента машинного обучения.
+В этой статье вы узнаете поддерживаемые задачи машинного обучения и как определить их для запуска эксперимента автоматизированного машинного обучения (автоматизированного ML).
 
 
-## <a name="What is a machine learning task?"></a>Что такое задача машинного обучения?
+## <a name="what-is-a-machine-learning-task"></a><a name="What is a machine learning task?"></a>Что такое задача машинного обучения?
 
-Задача машинного обучения представляет тип решаемой проблемы, создавая прогнозную модель. Автоматический ML поддерживает три различных типа задач, включая классификацию, регрессию и прогнозирование временных рядов.
+Задача машинного обучения представляет тип проблемы, решаемый путем создания прогностической модели. Автоматизированный ML поддерживает три различных типа задач, включая классификацию, регрессию и прогнозирование временных рядов.
 
-Тип задачи| Description| Пример
+Тип задачи| Описание| Пример
 ----|----|----
-Классификация | Задача для прогнозирования категории определенной строки в наборе данных. | Обнаружение мошенничества на кредитной карте. Целевой столбец будет выглядеть как **мошенничество** с категориями *true* или *false*. В этом случае мы будем классифицировать каждую строку данных как true или false.
-Регрессия | Задача для прогнозирования выходных данных непрерывного количества. | Стоимость автомобилей зависит от ее характеристик. целевой столбец будет иметь значение **Price**.
-Прогнозирование |Задача для принятия информированных оценок при определении направления будущих тенденций.| Прогнозирование спроса на энергию в течение следующих 48 часов. Целевой столбец будет **требоваться** , а прогнозируемые значения будут использоваться для отображения шаблонов в спросе на энергию.
+Классификация | Задача для прогнозирования категории определенной строки в наборе данных. | Обнаружение мошенничества на кредитной карте. Целевой столбец будет **Мошенничество Обнаружено** с категориями *True* или *False*. В этом случае мы классифицируя каждую строку в данных как истинную или ложную.
+Регрессия | Задача для прогнозирования непрерывного объема вывода. | Стоимость автомобиля, основанная на его особенностях, целевой столбец будет **цена**.
+Прогнозирование |Задача составления обоснованных оценок при определении направления будущих тенденций.| Прогнозирование спроса на энергию для них в ближайшие 48 часов. Целевая колонка будет **востребована,** а прогнозируемые значения будут использоваться для отображать закономерности спроса на энергию.
 
 Оно также поддерживает приведенные ниже алгоритмы во время автоматизации и настройки. Пользователю не нужно указывать алгоритм.
 
@@ -47,16 +47,16 @@ ms.locfileid: "75540533"
 [Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
 [Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
 [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)|[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)| [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
-[Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier)|[DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
-[DNNй Линейный классификатор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)|[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
+[Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier)|[DNN Регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [DNN Регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
+[Линейный классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)|[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
 [Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)||
 [Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)||
 
 
-### <a name="set-the-task-type"></a>Задание типа задачи
-Вы можете задать тип задачи для автоматических экспериментов ML с помощью пакета SDK или Машинное обучение Azure Studio.
+### <a name="set-the-task-type"></a>Установка типа задачи
+Вы можете настроить тип задачи для автоматизированных экспериментов ML с SDK или студией машинного обучения Azure.
 
-Используйте параметр `task` в конструкторе `AutoMLConfig`, чтобы указать тип эксперимента.
+Используйте `task` параметр `AutoMLConfig` в конструкторе, чтобы указать тип эксперимента.
 
 ```python
 from azureml.train.automl import AutoMLConfig
@@ -65,7 +65,7 @@ from azureml.train.automl import AutoMLConfig
 automl_config = AutoMLConfig(task="classification")
 ```
 
-Вы можете задать задачу как часть созданного автоматического запуска эксперимента ML в Машинное обучение Azure Studio. 
+Вы можете поставить задачу в рамках автоматического эксперимента ML, созданного в студии машинного обучения Azure. 
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku-inline.md)]
 
@@ -74,8 +74,8 @@ automl_config = AutoMLConfig(task="classification")
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-+ Дополнительные сведения об [автоматизированном ML](concept-automated-ml.md) в машинное обучение Azure.
-+ Дополнительные сведения об [автоматическом обучении модели прогнозирования временных рядов](how-to-auto-train-forecast.md) в машинное обучение Azure
-+ Воспользуйтесь руководством по [автоматизированной классификации машинное обучение](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation) .
-+ Попробуйте пример автоматизированной записной книжки [машинное обучение регрессии](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation) .
++ Узнайте больше об [автоматизированном мл](concept-automated-ml.md) в Azure Machine Learning.
++ Подробнее об [автоматическом обучении модели прогнозирования временных рядов](how-to-auto-train-forecast.md) читайте в разделе Azure Machine Learning
++ Попробуйте учебник по [классификации автоматизированных машин.](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation)
++ Попробуйте [автоматизированный машинное обучение Регрессии](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation) образец ноутбука.
 

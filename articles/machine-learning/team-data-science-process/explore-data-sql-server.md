@@ -12,15 +12,15 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: ae8c7c43ecbf9bc625e1e46be3e2c71c8d57b6f7
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76720101"
 ---
 # <a name="explore-data-in-sql-server-virtual-machine-on-azure"></a>Просмотр данных в виртуальной машине SQL Server на платформе Azure
 
-В этой статье описывается, как просматривать данные, хранящиеся в виртуальной машине SQL Server на платформе Azure. Используйте SQL или Python для проверки данных.
+В этой статье описывается, как просматривать данные, хранящиеся в виртуальной машине SQL Server на платформе Azure. Для изучения данных используйте S'L или Python.
 
 Эта задача является одним из этапов [процесса обработки и анализа данных группы](overview.md).
 
@@ -29,13 +29,13 @@ ms.locfileid: "76720101"
 > 
 > 
 
-## <a name="sql-dataexploration"></a>Просмотр данных SQL с помощью сценариев SQL
+## <a name="explore-sql-data-with-sql-scripts"></a><a name="sql-dataexploration"></a>Просмотр данных SQL с помощью сценариев SQL
 Вот несколько примеров сценариев SQL, которые можно использовать для изучения хранилищ данных в SQL Server.
 
 1. Получение количества наблюдений за день
    
     `SELECT CONVERT(date, <date_columnname>) as date, count(*) as c from <tablename> group by CONVERT(date, <date_columnname>)` 
-2. Получение уровней в столбце категорий
+2. Получение уровней в столбце категорий 
    
     `select  distinct <column_name> from <databasename>`
 3. Получение числа уровней в сочетании двух столбцов категорий 
@@ -50,8 +50,8 @@ ms.locfileid: "76720101"
 > 
 > 
 
-## <a name="python"></a>Просмотр данных SQL с помощью Python
-Использование языка Python для просмотра данных и создания характеристик, когда данные находятся в SQL Server, подобно обработке данных в большом двоичном объекте Azure с использованием Python, как описано в статье [Обработка больших двоичных данных Azure с применением методов расширенного анализа](data-blob.md). Загрузить данные из базы данных в Pandas таблицу данных, а затем обработать их дальше. В этом разделе задокументирован процесс подключения к базе данных и загрузки данных в кадр данных.
+## <a name="explore-sql-data-with-python"></a><a name="python"></a>Просмотр данных SQL с помощью Python
+Использование Python для изучения данных и генерации функций, когда данные находится в сервере S'L, аналогично обработке данных в Azure blob с помощью Python, как это описано в [данных Process Azure Blob в вашей среде науки о данных.](data-blob.md) Загрузите данные из базы данных в панды DataFrame, а затем могут быть обработаны дальше. В этом разделе задокументирован процесс подключения к базе данных и загрузки данных в кадр данных.
 
 Для подключения к базе данных SQL Server из языка Python с использованием pyodbc можно применить следующий формат строки подключения (замените servername, dbname, username и password соответствующими значениями имени сервера, имени БД, имени пользователя и пароля):
 
@@ -59,7 +59,7 @@ ms.locfileid: "76720101"
     import pyodbc    
     conn = pyodbc.connect('DRIVER={SQL Server};SERVER=<servername>;DATABASE=<dbname>;UID=<username>;PWD=<password>')
 
-[Библиотека Pandas](https://pandas.pydata.org/) в языке Python предлагает большой выбор структур данных и средств анализа данных для манипуляций со значениями с помощью языке Python. Следующий код считывает результаты, возвращенные из базы данных SQL Server, в кадр данных Pandas:
+[Библиотека Pandas](https://pandas.pydata.org/) в Python предоставляет богатый набор структур данных и инструментов анализа данных для манипуляций с данными для программирования Python. Следующий код считывает результаты, возвращенные из базы данных SQL Server, в кадр данных Pandas:
 
     # Query database and load the returned results in pandas data frame
     data_frame = pd.read_sql('''select <columnname1>, <columnname2>... from <tablename>''', conn)

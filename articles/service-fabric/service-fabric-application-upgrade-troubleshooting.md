@@ -1,16 +1,16 @@
 ---
-title: Поиск и устранение неисправностей в обновлениях приложений
+title: Обновление приложений для устранения неполадок
 description: В этой статье рассматриваются некоторые общие проблемы, связанные с обновлением приложений структуры служб, и способы их устранения.
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: d462f2c2482e0fbb4d252967754a9675ed362674
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75377928"
 ---
-# <a name="troubleshoot-application-upgrades"></a>Устранение неполадок при обновлении приложения
+# <a name="troubleshoot-application-upgrades"></a>Устранение неполадок при обновлениях приложений
 
 В этой статье рассматриваются некоторые общие проблемы, связанные с обновлением приложений Azure Service Fabric, и способы их устранения.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75377928"
 
 ### <a name="identify-the-failure-type"></a>Определение типа ошибки
 
-В выходных данных **Get-ServiceFabricApplicationUpgrade** **FailureTimestampUtc** определяет временную метку (по всеобщему скоординированному времени), при которой сбой обновления был обнаружен Service Fabric и было запущено действие **FailureAction**. **FailureReason** указывает на одну из трех потенциальных высокоуровневых причин сбоя:
+В выходных данных **Get-ServiceFabricApplicationUpgrade****FailureTimestampUtc** определяет временную метку (по всеобщему скоординированному времени), при которой сбой обновления был обнаружен Service Fabric и было запущено действие **FailureAction**. **FailureReason** указывает на одну из трех потенциальных высокоуровневых причин сбоя:
 
 1. UpgradeDomainTimeout указывает, что для определенного домена обновление занимает слишком много времени, что привело к истечению срока **UpgradeDomainTimeout** .
 2. OverallUpgradeTimeout указывает, что обновление в целом заняло слишком много времени, что привело к истечению срока **UpgradeTimeout** .
@@ -212,9 +212,9 @@ Service Fabric преобразовывает все процентные зна
 
 Напомним о том, как значения времени ожидания сказываются на времени применения обновлений.
 
-Обновления для домена обновления не могут завершиться быстрее, чем сумма значений параметров *HealthCheckWaitDuration* + *HealthCheckStableDuration*.
+Обновления для домена обновления не могут завершиться быстрее, чем *HealthCheckWaitDuration* + *HealthCheckStable.*
 
-Сбой обновления не может произойти быстрее, чем сумма значений *HealthCheckWaitDuration* + *HealthCheckRetryTimeout*.
+Сбой обновления не может произойти быстрее, чем *HealthCheckWaitDuration* + *HealthCheckRetryTimeout*.
 
 Время обновления для домена обновления ограничено значением *UpgradeDomainTimeout*.  Если значения *HealthCheckRetryTimeout* и *HealthCheckStableDuration* оба не равны нулю, а работоспособность приложения постоянно меняется, то время ожидания обновления обязательно завершится при достижении значения *UpgradeDomainTimeout*. *UpgradeDomainTimeout* начинает обратный отсчет с момента начала текущего домена обновления.
 
@@ -222,10 +222,10 @@ Service Fabric преобразовывает все процентные зна
 
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
-[Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
+[Обновление приложения с помощью Powershell](service-fabric-application-upgrade-tutorial-powershell.md) проведке приложения с помощью PowerShell.
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).
 
-Узнайте, как использовать [сериализацию данных](service-fabric-application-upgrade-data-serialization.md), чтобы обеспечить совместимость обновлений приложения.
+Сделайте обновление приложения совместимым, научившись использовать [серизацию данных.](service-fabric-application-upgrade-data-serialization.md)
 
-[Дополнительные разделы](service-fabric-application-upgrade-advanced.md)содержат сведения о работе с расширенными функциями при обновлении приложения.
+Узнайте, как использовать расширенные функциональные возможности при обновлении приложения, ссылаясь на [Расширенные темы.](service-fabric-application-upgrade-advanced.md)

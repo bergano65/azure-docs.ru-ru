@@ -8,15 +8,15 @@ ms.date: 09/10/2019
 author: luisbosquez
 ms.author: lbosq
 ms.openlocfilehash: 4ed7e67ae0ef027b260d0e0f0407e4e05ed5a8f4
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78898303"
 ---
 # <a name="system-document-properties"></a>Системные свойства документа
 
-Каждый документ в Azure Cosmos DB содержит [системные свойства](https://docs.microsoft.com/rest/api/cosmos-db/databases) например ```_ts```, ```_self```, ```_attachments```, ```_rid``` и ```_etag```. Кроме того, обработчик Gremlin добавляет в конце и в начале свойства ```inVPartition``` и ```outVPartition```. По умолчанию эти свойства доступны для обхода. Но определенные (или все) свойства можно включить в операцию обхода Gremlin.
+Azure Cosmos DB имеет ```_ts``` [системные свойства,](https://docs.microsoft.com/rest/api/cosmos-db/databases) такие как , ```_self```, ```_attachments``` ```_rid```, и ```_etag``` на каждом документе. Кроме того, обработчик Gremlin добавляет в конце и в начале свойства ```inVPartition``` и ```outVPartition```. По умолчанию эти свойства доступны для обхода. Но определенные (или все) свойства можно включить в операцию обхода Gremlin.
 
 ```
 g.withStrategies(ProjectionStrategy.build().IncludeSystemProperties('_ts').create())
@@ -42,4 +42,4 @@ g.addV('vertex-one').property('ttl', 123)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Оптимистическая блокировка в Cosmos DB](faq.md#how-does-the-sql-api-provide-concurrency)
-* [Срок жизни](time-to-live.md) в Azure Cosmos DB
+* [Время жить (TTL)](time-to-live.md) в Azure Космос DB

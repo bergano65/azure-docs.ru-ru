@@ -1,5 +1,5 @@
 ---
-title: Использование настройки чтения с помощью API Azure Cosmos DB для MongoDB
+title: Используйте предпочтение чтения с API API Azure Cosmos DB для MongoDB
 description: Сведения об использовании параметров чтения MongoDB в API Azure Cosmos DB для MongoDB
 author: sivethe
 ms.author: sivethe
@@ -9,18 +9,18 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.openlocfilehash: 10e6ed556abe8f8c438e5436fbb93c1b70b85d2b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75445157"
 ---
 # <a name="how-to-globally-distribute-reads-using-azure-cosmos-dbs-api-for-mongodb"></a>Глобальное распространение операций чтения с помощью API Azure Cosmos DB для MongoDB
 
 В этой статье описывается, как глобально распространить операции чтения с применением [параметров чтения MongoDB](https://docs.mongodb.com/manual/core/read-preference/) с помощью API Azure Cosmos DB для MongoDB.
 
-## <a name="prerequisites"></a>Технические условия 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+## <a name="prerequisites"></a>Предварительные требования 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 [!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
 
 Перейдите к этому [краткому руководству](tutorial-global-distribution-mongodb.md), чтобы ознакомиться с инструкциями по настройке учетной записи Cosmos с глобальным распределением на портале Azure и последующему подключению.
@@ -172,4 +172,4 @@ MongoClient.connect(url, function(err, client) {
 
 * [Перенос данных MongoDB в Azure Cosmos DB](mongodb-migrate.md)
 * [Настройка глобальной распределенной базы данных с помощью API Azure Cosmos DB для MongoDB](tutorial-global-distribution-mongodb.md)
-* [Разработка с помощью эмулятора Azure Cosmos DB в локальной среде](local-emulator.md)
+* [Разработка локально с помощью эмулятора Azure Cosmos DB](local-emulator.md)

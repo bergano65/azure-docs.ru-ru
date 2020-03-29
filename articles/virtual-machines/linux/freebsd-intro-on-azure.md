@@ -8,10 +8,10 @@ ms.workload: infrastructure-services
 ms.date: 09/13/2017
 ms.author: huishao
 ms.openlocfilehash: fe64418e254289a29aafd155b92396082bff5b6a
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78945084"
 ---
 # <a name="introduction-to-freebsd-on-azure"></a>Введение в FreeBSD в Azure
@@ -24,7 +24,7 @@ FreeBSD для Microsoft Azure — это расширенная операци�
 
 - [FreeBSD 10.4 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD104)
 - [FreeBSD 11.2 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD112)
-- [FreeBSD 12,0 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD120)
+- [FreeBSD 12.0 на рынке Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD120)
 
 Этот агент отвечает за обмен данными между виртуальной машиной FreeBSD и Azure Fabric при таких операциях, как подготовка виртуальной машины к первому использованию (имя пользователя, пароль или ключ SSH, имя узла и т. д.) и выборочное включение функций расширений виртуальной машины.
 

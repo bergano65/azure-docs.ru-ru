@@ -1,5 +1,5 @@
 ---
-title: Развертывание сопел Log Analytics Azure для мониторинга Cloud Foundry
+title: Развертывание насадки analytics Журнала Azure для мониторинга облачных литейных образов
 description: Пошаговые рекомендации по развертыванию компонента Nozzle системы Cloud Foundry Loggregator для Azure Log Analytics. Используйте Nozzle для мониторинга метрик работоспособности и производительности системы Cloud Foundry.
 services: virtual-machines-linux
 author: ningk
@@ -12,27 +12,27 @@ ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
 ms.openlocfilehash: bf6691310ec964a1d6293f3a60c151e3d6f8e641
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76277360"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Развертывание компонента Azure Log Analytics Nozzle для мониторинга системы Cloud Foundry
 
 [Azure Monitor](https://azure.microsoft.com/services/log-analytics/) — это служба в Azure. Она помогает собирать и анализировать данные, генерируемые в облачных и локальных средах.
 
-Log Analyticsная сопла (сопла) — это компонент Cloud Foundry (CF), который перенаправляет метрики из [Cloud Foundry loggregator](https://docs.cloudfoundry.org/loggregator/architecture.html) firehose в журналы Azure Monitor. С помощью Nozzle можно собирать, просматривать и анализировать метрики производительности и работоспособности системы CF в нескольких развертываниях.
+Сопла для аналитики журнала (сопло) — компонент Cloud Foundry (CF), который перенаправляет метрики из файерхра [loghose Cloud Foundry](https://docs.cloudfoundry.org/loggregator/architecture.html) в журналы Azure Monitor. С помощью Nozzle можно собирать, просматривать и анализировать метрики производительности и работоспособности системы CF в нескольких развертываниях.
 
-В этом документе вы узнаете, как развернуть сопло в среде CF, а затем получить доступ к данным из консоли Azure Monitor журналов.
+В этом документе вы узнаете, как развернуть сопло в среде CF, а затем получить доступ к данным из консоли журналов Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для развертывания Nozzle необходимо выполнить следующие шаги.
 
-### <a name="1-deploy-a-cf-or-pivotal-cloud-foundry-environment-in-azure"></a>1. развертывание среды CF или сводной Cloud Foundry в Azure
+### <a name="1-deploy-a-cf-or-pivotal-cloud-foundry-environment-in-azure"></a>1. Развертывание среды cf или Pivotal Cloud Foundry в Azure
 
 Компонент Nozzle можно использовать для развертывания CF с открытым кодом или для развертывания Pivotal Cloud Foundry (PCF).
 
@@ -40,7 +40,7 @@ Log Analyticsная сопла (сопла) — это компонент Cloud 
 
 * [Развертывание Pivotal Cloud Foundry в Azure](https://docs.pivotal.io/pivotalcf/1-11/customizing/azure.html)
 
-### <a name="2-install-the-cf-command-line-tools-for-deploying-the-nozzle"></a>2. Установка программ командной строки CF для развертывания сопел
+### <a name="2-install-the-cf-command-line-tools-for-deploying-the-nozzle"></a>2. Установка командно-распределителей CF для развертывания сопла
 
 Nozzle запускается как приложение в среде CF. Для развертывания приложения необходим интерфейс командной строки CF.
 
@@ -50,15 +50,15 @@ Nozzle запускается как приложение в среде CF. Дл
 
 * [Установка клиента командной строки UAA для Cloud Foundry](https://github.com/cloudfoundry/cf-uaac/blob/master/README.md)
 
-Перед настройкой клиента командной строки UAA убедитесь, что RubyGems установлен.
+Перед настройкой клиента команды UAA убедитесь, что RubyGems установлен.
 
-### <a name="3-create-a-log-analytics-workspace-in-azure"></a>3. Создание рабочей области Log Analytics в Azure
+### <a name="3-create-a-log-analytics-workspace-in-azure"></a>3. Создание рабочего пространства для анализа журналов в Azure
 
-Рабочую область Log Analytics можно создать вручную или с помощью шаблона. Шаблон будет развертывать настройку предварительно настроенных представлений и оповещений ключевых показателей эффективности для консоли Azure Monitor журналов. 
+Рабочую область Log Analytics можно создать вручную или с помощью шаблона. Шаблон развернет настройку предварительно настроенных представлений KPI и оповещений для консоли журналов Azure Monitor. 
 
 #### <a name="to-create-the-workspace-manually"></a>Чтобы создать рабочую область OMS вручную, сделайте следующее:
 
-1. В портал Azure выполните поиск в списке служб в Azure Marketplace, а затем выберите Log Analytics рабочие области.
+1. На портале Azure выйдите в список служб в Azure Marketplace, а затем выберите рабочие области анализа журналов.
 2. Выберите **Создать** и задайте следующие параметры:
 
    * **Рабочая область Log Analytics**. Введите имя рабочей области.
@@ -67,7 +67,7 @@ Nozzle запускается как приложение в среде CF. Дл
    * **Расположение**: введите расположение.
    * **Ценовая категория**: нажмите кнопку **ОК** для завершения.
 
-Дополнительные сведения см. в статье [Приступая к работе с журналами Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-get-started).
+Для получения дополнительной [информации см.](https://docs.microsoft.com/azure/log-analytics/log-analytics-get-started)
 
 #### <a name="to-create-the-log-analytics-workspace-through-the-monitoring-template-from-azure-market-place"></a>Чтобы создать рабочую область Log Analytics с использованием шаблона мониторинга из Azure Marketplace, сделайте следующее:
 
@@ -177,23 +177,23 @@ cf apps
 
 ## <a name="view-the-data-in-the-azure-portal"></a>Просмотр данных на портале Azure
 
-Если вы развернули решение для мониторинга с помощью шаблона Marketplace, перейдите на портал Azure и найдите решение. Решение можно найти в группе ресурсов, указанной в шаблоне. Щелкните решение, перейдите к консоли log Analytics, просмотрите предварительно настроенные представления, используя основные ключевые показатели эффективности Cloud Foundry системы, данные приложений, оповещения и метрики работоспособности виртуальной машины. 
+Если вы развернули решение для мониторинга с помощью шаблона Marketplace, перейдите на портал Azure и найдите решение. Решение можно найти в группе ресурсов, указанной в шаблоне. Нажмите на решение, просмотрите на "консоль аналитики журнала", предварительно настроенные представления перечислены, с верхней Cloud Foundry системы KPI, данные приложения, оповещения и VM метрики здоровья. 
 
 Если вы создали рабочую область Log Analytics вручную, выполните следующие действия, чтобы создать представления и оповещения.
 
 ### <a name="1-import-the-oms-view"></a>1. Импорт представления OMS
 
-На портале OMS выберите **Конструктор представлений** > **Импорт** > **Обзор**, а затем — один из файлов OMSVIEW, например *Cloud Foundry.omsview*, и сохраните представление. Теперь на главной странице **Обзор** отображается элемент. Выберите его, чтобы просмотреть визуализированные метрики.
+С портала OMS просмотрите **просмотр сайта** > Designer**Import** > **Browse**и выберите один из файлов omsview. например *Cloud Foundry.omsview*, и сохраните представление. Теперь на главной странице **Обзор** отображается элемент. Выберите его, чтобы просмотреть визуализированные метрики.
 
 Можно настроить эти представления или создать другие в **конструкторе представлений**.
 
 Файл *Cloud Foundry.omsview* является предварительной версией шаблона представления OMS для Cloud Foundry. Это полностью настроенный шаблон по умолчанию. Вы можете отправить свои предложения и отзывы в [разделе проблем](https://github.com/Azure/oms-log-analytics-firehose-nozzle/issues).
 
-### <a name="2-create-alert-rules"></a>2. Создание правил генерации оповещений
+### <a name="2-create-alert-rules"></a>2. Создание правил оповещения
 
 В случае необходимости можно [создавать оповещения](https://docs.microsoft.com/azure/log-analytics/log-analytics-alerts), настраивать запросы и пороговые значения. Ниже приведены рекомендуемые оповещения.
 
-| Поисковый запрос                                                                  | Создать оповещение на основе | Description                                                                       |
+| Поисковый запрос                                                                  | Создать оповещение на основе | Описание                                                                       |
 | ----------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |
 | Type=CF_ValueMetric_CL Origin_s=bbs Name_s="Domain.cf-apps"                   | Число результатов < 1   | **bbs.Domain.cf-apps** указывает, актуальны ли данные домена cf-apps, то есть синхронизированы ли выполняемые запросы приложения CF из Cloud Controller с bbs.LRPsDesired (ИИ Diego-desired). Если данные не получены, это означает, что данные домена cf-apps не являются актуальными в указанный период времени. |
 | Type=CF_ValueMetric_CL Origin_s=rep Name_s=UnhealthyCell Value_d>1            | Число результатов > 0   | Для ячеек Diego 0 означает работоспособное состояние, а 1 — неработоспособное. Установите оповещение, срабатывающее при обнаружении нескольких неработоспособных ячеек Diego в указанный период времени. |
@@ -201,10 +201,10 @@ cf apps
 | Type=CF_ValueMetric_CL Origin_s=route_emitter Name_s=ConsulDownMode Value_d>0 | Число результатов > 0   | Consul периодически выдает состояние работоспособности. 0 означает, что система находится в работоспособном состоянии, а 1 означает, что передатчик маршрута обнаружил, что Consul не работает. |
 | Type=CF_CounterEvent_CL Origin_s=DopplerServer (Name_s="TruncatingBuffer.DroppedMessages" or Name_s="doppler.shedEnvelopes") Delta_d>0 | Число результатов > 0 | Количество намеренно удаленных сообщений в Doppler из-за замедленной обратной реакции. |
 | Type=CF_LogMessage_CL SourceType_s=LGR MessageType_s=ERR                      | Число результатов > 0   | Loggregator генерирует сообщение **LGR**, чтобы сообщить о проблемах процесса ведения журнала, например, если вывод сообщений журнала слишком интенсивен. |
-| Type=CF_ValueMetric_CL Name_s=slowConsumerAlert                               | Число результатов > 0   | Когда сопла получает оповещение о медленных потребителях от loggregator, оно отправляет **оповещение slowconsumeralert** о valuemetric в журналы Azure Monitor. |
+| Type=CF_ValueMetric_CL Name_s=slowConsumerAlert                               | Число результатов > 0   | Когда сопло получает медленное оповещение о потребителе от loggregator, оно отправляет **медленное ConsumerAlert** ValueMetric в журналы Azure Monitor. |
 | Type=CF_CounterEvent_CL Job_s=nozzle Name_s=eventsLost Delta_d>0              | Число результатов > 0   | Если количество потерянных событий достигает порогового значения, это может указывать на проблемы в работе Nozzle. |
 
-## <a name="scale"></a>Масштаб
+## <a name="scale"></a>Масштабирование
 
 Nozzle и Loggregator можно масштабировать.
 
@@ -219,14 +219,14 @@ Nozzle и Loggregator можно масштабировать.
 Loggregator отправляет сообщение журнала **LGR**, чтобы сообщить о проблемах процесса ведения журнала. Вы можете отслеживать это оповещение, чтобы определить, нужно ли увеличить масштаб Loggregator.
 Чтобы увеличить масштаб Loggregator, увеличьте размер буфера Doppler или добавьте дополнительные сущности сервера Doppler в манифест CF. Дополнительные сведения см. в статье [Configuring System Logging](https://docs.cloudfoundry.org/running/managing-cf/logging-config.html#scaling) (Настройка ведения системного журнала).
 
-## <a name="update"></a>Обновить
+## <a name="update"></a>Update
 
 Чтобы установить более новую версию Nozzle, скачайте новый выпуск Nozzle, выполните указания в разделе "Развертывание Nozzle" и отправьте приложение еще раз.
 
 ### <a name="remove-the-nozzle-from-ops-manager"></a>Удаление Nozzle из Operations Manager
 
 1. Войдите в Operations Manager.
-2. Найдите элемент **Microsoft Azure Log Analytics Nozzle for PCF** (Microsoft Azure Log Analytics Nozzle для PCF).
+2. Найдите **сопло для анализа журналов Microsoft Azure для** плитки PCF.
 3. Выберите значок корзины и подтвердите удаление.
 
 ### <a name="remove-the-nozzle-from-your-development-computer"></a>Удаление Nozzle из компьютера разработчика
@@ -236,7 +236,7 @@ Loggregator отправляет сообщение журнала **LGR**, чт
 cf delete <App Name> -r
 ```
 
-При удалении Nozzle данные на портале OMS не удаляются автоматически. Срок ее действия истекает в соответствии с параметром хранения журналов Azure Monitor.
+При удалении Nozzle данные на портале OMS не удаляются автоматически. Срок действия истекает в зависимости от настройки удержания журналов Azure Monitor.
 
 ## <a name="support-and-feedback"></a>Поддержка и обратная связь
 
@@ -244,6 +244,6 @@ Azure Log Analytics Nozzle является компонентом с откры
 
 ## <a name="next-step"></a>Следующий шаг
 
-В PCF 2.0 метрики производительности виртуальной машины передаются в службу "сопла" Azure Log Analytics с помощью сервера пересылки метрик системы и интегрируются в рабочую область Log Analytics. Вам больше не нужно использовать агент Log Analytics для получения метрик производительности виртуальной машины. Однако агент Log Analytics по-прежнему можно применять для сбора данных системного журнала. Он устанавливается на виртуальные машины CF в виде надстройки Bosh. 
+От PCF2.0 показатели производительности VM передаются в сопло Analytics Azure Log По системе Спомощье и интегрируются в рабочее пространство Log Analytics. Вам больше не нужно использовать агент Log Analytics для получения метрик производительности виртуальной машины. Однако агент Log Analytics по-прежнему можно применять для сбора данных системного журнала. Он устанавливается на виртуальные машины CF в виде надстройки Bosh. 
 
 Дополнительные сведения см. в разделе [Deploy Log Analytics agent to your Cloud Foundry deployment](https://github.com/Azure/oms-agent-for-linux-boshrelease) (Развертывание агента Log Analytics в развертывании Cloud Foundry).

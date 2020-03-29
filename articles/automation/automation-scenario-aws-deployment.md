@@ -6,16 +6,16 @@ ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: b149a21ef60b22c2e549c91007265ce99babdbe4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75420921"
 ---
 # <a name="azure-automation-scenario---provision-an-aws-virtual-machine"></a>Сценарий службы автоматизации Azure: подготовка виртуальной машины AWS
 В этой статье вы узнаете, как с помощью службы автоматизации Azure подготовить виртуальную машину в подписке Amazon Web Service (AWS) и присвоить виртуальной машине конкретное имя, которое в AWS называется "тегом" виртуальной машины.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения инструкций из этой статьи вам понадобится учетная запись службы автоматизации Azure и подписка AWS. Дополнительные сведения о настройке учетной записи службы автоматизации Azure и об указании в ней учетных данных подписки AWS см. в статье [Проверка подлинности модулей Runbook с помощью Amazon Web Services](automation-config-aws-account.md). Перед выполнением дальнейших действий необходимо создать эту учетную запись с учетными данными подписки AWS или указать в ней эти учетные данные, так как вы будете ссылаться на нее при выполнении указанных ниже шагов.
 
 ## <a name="deploy-amazon-web-services-powershell-module"></a>Развертывание модуля PowerShell для Amazon Web Services
@@ -91,14 +91,14 @@ ms.locfileid: "75420921"
 * Для параметров **Подробные записи в журнале** и **Записи ведения журнала** в настройке **Ведение журналов и трассировка** модуля Runbook задано значение **Включено**.<br><br> ![Ведение журнала и трассировка для модуля Runbook](./media/automation-scenario-aws-deployment/runbook-settings-logging-and-tracing.png)  
 
 1. Нужно запустить модуль Runbook, поэтому щелкните **Запустить**, а затем, когда откроется страница "Запуск Runbook", нажмите кнопку **ОК**.
-2. На странице "Запуск модуля Runbook" укажите **имя виртуальной машины**. Примите значения по умолчанию для остальных параметров, которые были ранее указаны в скрипте. Нажмите кнопку **ОК**, чтобы запустить задание Runbook.<br><br> ![Запуск модуля Runbook: New-AwsVM](./media/automation-scenario-aws-deployment/runbook-start-job-parameters.png)
+2. На странице "Запуск модуля Runbook" укажите **имя виртуальной машины**. Примите значения по умолчанию для остальных параметров, которые были ранее указаны в скрипте. Нажмите **OK,** чтобы начать работу runbook.<br><br> ![Запуск модуля Runbook: New-AwsVM](./media/automation-scenario-aws-deployment/runbook-start-job-parameters.png)
 3. Откроется область заданий с созданным заданием runbook. Закройте эту область.
 4. Ход выполнения задания и **потоки** вывода можно просмотреть, выбрав плитку **Все журналы** на странице задания Runbook.<br><br> ![Раздел "Поток": выходные данные](./media/automation-scenario-aws-deployment/runbook-job-streams-output.png)
 5. Чтобы убедиться, что виртуальная машина подготавливается, войдите в консоль управления AWS, если вы еще не вошли в систему.<br><br> ![Консоль AWS: развернутая виртуальная машина](./media/automation-scenario-aws-deployment/aws-instances-status.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Чтобы начать работу с графическими модулями Runbook, см. инструкции в статье [Первый графический Runbook](automation-first-runbook-graphical.md).
-* Чтобы приступить к работе с модулями Runbook рабочих процессов PowerShell, обратитесь к статье [Мой первый модуль Runbook рабочего процесса PowerShell](automation-first-runbook-textual.md)
+* Чтобы начать работу с runbooks рабочего процесса PowerShell, [см.](automation-first-runbook-textual.md)
 * Чтобы получить дополнительные сведения о типах модулей Runbook, их преимуществах и ограничениях, обратитесь к статье [Типы модулей Runbook в службе автоматизации Azure](automation-runbook-types.md)
 * Дополнительные сведения о функции поддержки скриптов PowerShell см. в статье [Announcing Native PowerShell Script Support in Azure Automation](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/) (Встроенная поддержка скриптов PowerShell в службе автоматизации Azure).
 

@@ -6,10 +6,10 @@ ms.subservice: change-inventory-management
 ms.date: 07/03/2018
 ms.topic: conceptual
 ms.openlocfilehash: 23c4f24e430d58895eb551c3e2cb62b5f0003ac0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75418811"
 ---
 # <a name="view-contents-of-a-file-that-is-being-tracked-with-change-tracking"></a>Просмотр содержимого файла, который отслеживается с помощью отслеживания изменений
@@ -18,7 +18,7 @@ ms.locfileid: "75418811"
 
 ## <a name="requirements"></a>Требования
 
-* Для хранения содержимого файла требуется стандартная учетная запись хранения с моделью развертывания Resource Manager. Не следует использовать учетные записи хранения классической модели развертывания и модели "Премиум". Дополнительные сведения об учетных записях хранения см. в статье [Учетные записи хранения Azure](../storage/common/storage-create-storage-account.md)
+* Для хранения содержимого файла требуется стандартная учетная запись хранения с моделью развертывания Resource Manager. Не следует использовать учетные записи хранения классической модели развертывания и модели "Премиум". Для получения дополнительной информации о учетных записях хранения [см.](../storage/common/storage-create-storage-account.md)
 
 * К используемой учетной записи хранения может быть подключена только одна учетная запись службы автоматизации.
 
@@ -71,5 +71,5 @@ ms.locfileid: "75418811"
 > [!div class="nextstepaction"]
 > [Устранение неполадок при изменениях в среде](automation-tutorial-troubleshoot-changes.md)
 
-* Используйте [Поиск по журналам в Azure Monitor журналов](../log-analytics/log-analytics-log-searches.md) для просмотра подробных данных отслеживания изменений.
+* Используйте [поиск в журналах Azure Monitor для](../log-analytics/log-analytics-log-searches.md) просмотра подробных данных отслеживания изменений.
 

@@ -1,35 +1,35 @@
 ---
 title: Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor
-description: В этой статье показано, как отправить данные о состоянии задания и потоки заданий Runbook в журналы Azure Monitor для предоставления дополнительных сведений и управления.
+description: В этой статье показано, как отправлять сведения о состоянии задания и потоки вакансий в журналы Azure Monitor для получения дополнительной информации и управления.
 services: automation
 ms.subservice: process-automation
 ms.date: 02/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: beb69edc57b5a13db0f6d2e5e1536804f3472aff
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75421914"
 ---
-# <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Пересылка состояния задания и потоков заданий из службы автоматизации в журналы Azure Monitor
+# <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Переработайте статус задания и потоки рабочих мест от журналов автоматизации к мониторингу Azure
 
-Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. Этот процесс не предполагает связывания с рабочей областью и является полностью независимым. На портале Azure или с помощью PowerShell можно просмотреть журналы заданий и потоки заданий для отдельных заданий. Это дает возможность выполнять простые исследования. Теперь с Azure Monitor журналами можно:
+Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. Этот процесс не предполагает связывания с рабочей областью и является полностью независимым. На портале Azure или с помощью PowerShell можно просмотреть журналы заданий и потоки заданий для отдельных заданий. Это дает возможность выполнять простые исследования. Теперь с журналами Azure Monitor вы можете:
 
-* получить полезные сведения о заданиях службы автоматизации;
+* получить информацию о заданиях службы автоматизации;
 * активировать отправку электронного сообщения или оповещения в соответствии с состоянием задания runbook (например, сбой или приостановка);
 * создавать сложные запросы для потоков заданий;
 * коррелировать задания и учетные записи службы автоматизации;
-* визуализировать журнал заданий с течением времени.
+* визуализировать журнал заданий по прошествии времени.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="prerequisites-and-deployment-considerations"></a>Предварительные требования и рекомендации по развертыванию
 
-Чтобы начать отправку журналов службы автоматизации в журналы Azure Monitor, вам потребуется:
+Чтобы начать отправку журналов автоматизации в журналы Azure Monitor, необходимо:
 
-* Последний выпуск [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/).
-* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Приступая к работе с журналами Azure Monitor](../log-analytics/log-analytics-get-started.md).
+* Последний релиз [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/).
+* Рабочая область Log Analytics. Для получения дополнительной [информации см.](../log-analytics/log-analytics-get-started.md)
 * ResourceId для учетной записи службы автоматизации Azure.
 
 Вот как можно найти ResourceId для учетной записи службы автоматизации Azure.
@@ -62,9 +62,9 @@ Get-AzResource -ResourceType "Microsoft.OperationalInsights/workspaces"
    Set-AzDiagnosticSetting -ResourceId $automationAccountId -WorkspaceId $workspaceId -Enabled 1
    ```
 
-После выполнения этого сценария может потребоваться час до начала просмотра записей в Azure Monitor журналов новых JobLogs или JobStreams.
+После запуска этого скрипта может пройти час, прежде чем вы начнете видеть записи в журналах Azure Monitor новых jobLogs или JobStreams, заражаемых.
 
-Чтобы просмотреть журналы, выполните следующий запрос в поиске журналов log Analytics: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
+Чтобы просмотреть журналы, запустите следующий запрос в поиске журналов аналитики журналов:`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
 
 ### <a name="verify-configuration"></a>Проверка конфигурации
 
@@ -76,27 +76,27 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 В выходных данных убедитесь в следующем.
 
-* В разделе *Logs* значение *Enabled* равно *True*.
-* *WorkspaceId* присвоено значение ResourceId рабочей области Log Analytics.
+* Под *журналами*значение *enabled* is *True.*
+* Значение *WorkspaceId* устанавливается в ResourceId рабочего пространства Analytics.
 
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 
-При диагностике из службы автоматизации Azure в Azure Monitor журналов создаются записи двух типов, которые помечаются как **AzureDiagnostics**. В следующих запросах для Azure Monitor журналов используется обновленный язык запросов. Сведения о распространенных запросах между языком устаревших запросов и новым языком запросов Azure Kusto см. [на странице с новым](https://docs.loganalytics.io/docs/Learn/References/Legacy-to-new-to-Azure-Log-Analytics-Language) языком запросов Azure Kusto Памятка по
+Диагностика от Azure Automation создает два типа записей в журналах Azure Monitor и помечена как **AzureDiagnostics.** В следующих запросах используется обновленный язык запроса для журналов Azure Monitor. Для получения информации об общих запросах между устаревшим языком запросов и новым языком запросов Azure Kusto посетите [Legacy для нового читлина Azure Kusto Query Language](https://docs.loganalytics.io/docs/Learn/References/Legacy-to-new-to-Azure-Log-Analytics-Language)
 
 ### <a name="job-logs"></a>Журналы заданий
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
 | Caller_s |Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
 | Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
 | JobId_g |GUID, представляющий собой идентификатор задания Runbook. |
-| ResultType |Состояние задания Runbook. Возможны следующие значения:<br>Новое<br>— Создано<br>Started<br>- Остановлена<br>Приостановлено<br>Сбой<br>Завершено |
+| ResultType |Состояние задания Runbook. Возможны следующие значения:<br>Новое<br>- Создано<br>Started<br>- Остановлена<br>Приостановлено<br>Сбой<br>Завершено |
 | Категория | Классификация типа данных. Для службы автоматизации значением является JobLogs. |
 | OperationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
 | Ресурс | Имя учетной записи службы автоматизации |
-| SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
+| SourceSystem | Как журналы Azure Monitor собирали данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResultDescription |Описывает состояние результата задания Runbook. Возможны следующие значения:<br>— Job is started;<br>— Job Failed;<br>- Job Completed. |
 | CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
 | ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
@@ -107,7 +107,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 
 ### <a name="job-streams"></a>Потоки заданий
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
@@ -119,7 +119,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 | Категория | Классификация типа данных. Для службы автоматизации значением является JobStreams. |
 | OperationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
 | Ресурс | Имя учетной записи службы автоматизации |
-| SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
+| SourceSystem | Как журналы Azure Monitor собирали данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResultDescription |Включает в себя выходной поток из Runbook. |
 | CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
 | ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
@@ -128,9 +128,9 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 | ResourceProvider | MICROSOFT.AUTOMATION |
 | ResourceType | AUTOMATIONACCOUNTS |
 
-## <a name="viewing-automation-logs-in-azure-monitor-logs"></a>Просмотр журналов службы автоматизации в журналах Azure Monitor
+## <a name="viewing-automation-logs-in-azure-monitor-logs"></a>Просмотр журналов автоматизации в журналах Azure Monitor
 
-Теперь, когда вы начали отправлять журналы заданий службы автоматизации в журналы Azure Monitor, давайте посмотрим, что можно делать с этими журналами в Azure Monitor журналах.
+Теперь, когда вы начали отправлять журналы задания Автоматизации в журналы Azure Monitor, давайте посмотрим, что вы можете сделать с этими журналами в журналах Azure Monitor.
 
 Чтобы просмотреть журналы, выполните следующий запрос: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
 
@@ -139,7 +139,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 Чтобы создать правило генерации оповещений, начните с создания поиска в журнале записей заданий Runbook, которые должны вызывать оповещение. Щелкните кнопку **Оповещение**, чтобы создать и настроить правило генерации оповещений.
 
-1. На странице обзора рабочей области Log Analytics щелкните **Просмотр журналов**.
+1. На странице обзора рабочего пространства Log Analytics нажмите **«Вид журналов».**
 2. Создайте запрос для поиска оповещения по журналам. Для этого в поле запроса введите следующее условие поиска: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended")`. Можно также применить группирование по RunbookName с помощью: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended") | summarize AggregatedValue = count() by RunbookName_s`
 
    Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Имя учетной записи службы автоматизации можно найти в поле "Ресурс" для поиска JobLogs.
@@ -148,7 +148,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 ### <a name="find-all-jobs-that-have-completed-with-errors"></a>Поиск всех заданий, завершенных с ошибками
 Помимо оповещений о сбоях можно узнать, когда задание Runbook вызывает устранимую ошибку. В этих случаях PowerShell создает поток сообщений об ошибках, но устранимые ошибки не приводят к приостановке или сбою задания.
 
-1. В рабочей области Log Analytics щелкните **журналы**.
+1. В рабочем пространстве журнала Analytics щелкните **журналы**.
 2. В поле запроса введите `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobStreams" and StreamType_s == "Error" | summarize AggregatedValue = count() by JobId_g` и нажмите кнопку **Поиск**.
 
 ### <a name="view-job-streams-for-a-job"></a>Просмотр потоков заданий для задания
@@ -174,17 +174,17 @@ Remove-AzDiagnosticSetting -ResourceId $automationAccountId
 
 ## <a name="summary"></a>Сводка
 
-Отправляя состояние задания службы автоматизации и потоковые данные в журналы Azure Monitor, вы сможете получить более подробные сведения о состоянии заданий службы автоматизации, выполнив следующие действия.
+Отправив свой статус задания Automation и данные потоковой передачи в журналы Azure Monitor, вы сможете лучше понять состояние заданий автоматизации:
 + настроить оповещения, уведомляющие вас о проблемах;
 + с помощью пользовательских представлений и поисковых запросов визуализировать результаты модуля Runbook, состояние задания Runbook и другие связанные ключевые индикаторы или метрики.
 
-Журналы Azure Monitor обеспечивают более высокую оперативную видимость заданий службы автоматизации и позволяют быстрее решать инциденты.
+Журналы Azure Monitor обеспечивают большую оперативную видимость рабочих мест автоматизации и могут быстрее устрашать инциденты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об устранении неполадок Log Analytics см. в разделе [Устранение неполадок, почему log Analytics больше не собирает данные](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data).
-* Дополнительные сведения о том, как создавать различные поисковые запросы и просматривать журналы заданий службы автоматизации с помощью журналов Azure Monitor, см. [в разделе Поиск по журналам в Azure Monitor журналах](../log-analytics/log-analytics-log-searches.md).
-* Чтобы понять, как создавать и извлекать выходные данные и сообщения об ошибках из модулей runbook, ознакомьтесь с разделом [Выходные данные и сообщения Runbook в службе автоматизации Azure](automation-runbook-output-and-messages.md).
+* Для устранения неполадок в журнале Analytics [см.](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data)
+* Чтобы узнать больше о том, как создавать различные поисковые запросы и просматривать журналы заданий автоматизации с помощью журналов Azure Monitor, смотрите [поиск в журналах Azure Monitor.](../log-analytics/log-analytics-log-searches.md)
+* Чтобы понять, как создавать и извлекать выходные и сообщения об ошибках из runbooks, [см.](automation-runbook-output-and-messages.md)
 * Дополнительные сведения о выполнении модулей Runbook, отслеживании заданий модуля Runbook и других технических деталях см. в статье [Выполнение модуля Runbook в службе автоматизации Azure](automation-runbook-execution.md).
-* Дополнительные сведения о Azure Monitor журналах и источниках сбора данных см. [в разделе Сбор данных службы хранилища Azure в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md).
+* Подробнее о журналах и источниках сбора данных Azure Monitor читайте [в обзоре журналов Azure Monitor.](../azure-monitor/platform/collect-azure-metrics-logs.md)
 

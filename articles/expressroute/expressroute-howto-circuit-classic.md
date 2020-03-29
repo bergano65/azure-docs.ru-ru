@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: изменение цепи: PowerShell: классическая модель'
+title: 'Azure ExpressRoute: Изменить схему: PowerShell:классический'
 description: В этой статье описывается, как выполнить проверку состояния, обновление, удаление или отмену подготовки канала классической модели развертывания ExpressRoute.
 services: expressroute
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: cherylmc
 ms.openlocfilehash: e421a534b04f74d2a2eb0bc06aeffa52684ae17a
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74931981"
 ---
 # <a name="modify-an-expressroute-circuit-using-powershell-classic"></a>Изменение канала ExpressRoute с помощью PowerShell (классическая модель)
@@ -19,10 +19,10 @@ ms.locfileid: "74931981"
 > [!div class="op_single_selector"]
 > * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Azure CLI](howto-circuit-cli.md)
-> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
-> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
-> * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
+> * [Лазурный CLI](howto-circuit-cli.md)
+> * [Шаблон менеджера ресурсов Azure](expressroute-howto-circuit-resource-manager-template.md)
+> * [Видео - Портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
+> * [PowerShell (классический)](expressroute-howto-circuit-classic.md)
 >
 
 В этой статье описывается, как выполнить проверку состояния, обновление, удаление или отмену подготовки канала классической модели развертывания ExpressRoute. Эта статья относится к модели классического развертывания.
@@ -33,7 +33,7 @@ ms.locfileid: "74931981"
 
 [!INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [classic powershell install instructions](../../includes/expressroute-poweshell-classic-install-include.md)]
 
@@ -194,7 +194,7 @@ At line:1 char:1
 ### <a name="considerations"></a>Рекомендации
 
 * Для успешного выполнения этой операции необходимо разорвать связи между каналом ExpressRoute и всеми виртуальными сетями. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
-* Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
+* Если поставщик услуг по предоставлению услуг по кольцевым услугам ExpressRoute **предоставляет** или **предоставляет,** вы должны работать с поставщиком услуг, чтобы дезавуировать схему на их стороне. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
 * Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить канал. Это приостанавливает выставление счетов для канала.
 
 #### <a name="delete-a-circuit"></a>Удаление канала

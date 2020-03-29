@@ -1,7 +1,7 @@
 ---
-title: Сетевые топологии для миграций управляемого экземпляра SQL
+title: Сетевые топологии для управляемых миграций экземпляров S'L
 titleSuffix: Azure Database Migration Service
-description: Изучите исходную и целевую конфигурации миграции управляемого экземпляра базы данных SQL Azure с помощью Azure Database Migration Service.
+description: Изучите исходные и целевые конфигурации для управляемых экземпляров экземпляров с помощью службы миграции базы данных Azure.
 services: database-migration
 author: pochiraju
 ms.author: rajpo
@@ -13,15 +13,15 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
 ms.openlocfilehash: 48485b7ba0f846afa737454b092a6c1ee986b737
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78254959"
 ---
-# <a name="network-topologies-for-azure-sql-db-managed-instance-migrations-using-azure-database-migration-service"></a>Сетевые топологии для баз данных SQL Azure Управляемый экземпляр миграции с помощью Azure Database Migration Service
+# <a name="network-topologies-for-azure-sql-db-managed-instance-migrations-using-azure-database-migration-service"></a>Сетевые топологии для миграций управляемых экземпляров управляемых экземпляров Azure S'L DB с помощью службы миграции баз данных Azure
 
-В этой статье рассматриваются различные сетевые топологии, с которыми может работать Azure Database Migration Service, чтобы обеспечить комплексную миграцию с локальных серверов SQL Server на Управляемый экземпляр Базы данных SQL Azure.
+В этой статье рассматриваются различные сетевые топологии, с которыми может работать миграционная служба базы данных Azure, чтобы обеспечить полный опыт миграции из нахождения в помещениях серверов S'L в управляемый экземпляр базы данных Azure S'L.
 
 ## <a name="azure-sql-database-managed-instance-configured-for-hybrid-workloads"></a>Управляемый экземпляр Базы данных SQL Azure, настроенный для гибридных рабочих нагрузок 
 
@@ -31,72 +31,72 @@ ms.locfileid: "78254959"
 
 **Требования**
 
-- В этом сценарии управляемый экземпляр базы данных SQL Azure и экземпляр Azure Database Migration Service создаются в одном виртуальная сеть Microsoft Azure, но они используют разные подсети.  
-- Виртуальная сеть, используемая в этом сценарии, также подключается к локальной сети с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+- В этом сценарии управляемый экземпляр базы данных Azure S'L и экземпляр службы миграции базы данных Azure создаются в той же виртуальной сети Microsoft Azure, но они используют различные подсети.  
+- Виртуальная сеть, используемая в этом сценарии, также подключена к предварительной сети с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)
 
 ## <a name="azure-sql-database-managed-instance-isolated-from-the-on-premises-network"></a>Управляемый экземпляр Базы данных SQL Azure, изолированный от локальной сети
 
 Используйте эту сетевую топологию, если в вашей среде нужно применить один или несколько из следующих сценариев:
 
-- Управляемый экземпляр базы данных SQL Azure изолирован от локального подключения, но ваш экземпляр Azure Database Migration Service подключен к локальной сети.
-- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается управляемый экземпляр базы данных SQL Azure.
-- Виртуальные сети, используемые для Управляемый экземпляр Базы данных SQL Azure и Azure Database Migration Service, находятся в разных подписках.
+- Управляемый экземпляр базы данных Azure S'L изолирован от локтевого подключения, но экземпляр службы миграции базы данных Azure подключен к предварительной сети.
+- При наличии политикуправления на основе ролей (RBAC) необходимо ограничить доступ пользователей к той же подписке, в которой размещается управляемый экземпляр базы данных Azure S'L.
+- Виртуальные сети, используемые для службы управляемых экземпляров данных базы данных Azure s'L и службы миграции баз данных Azure, находятся в разных подписках.
 
 ![Сетевая топология для Управляемого экземпляра Базы данных SQL Azure, изолированного от локальной сети](media/resource-network-topologies/mi-isolated-workload.png)
 
 **Требования**
 
-- Виртуальная сеть, которая Azure Database Migration Service используется для этого сценария, также должна быть подключена к локальной сети с помощью любого (https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN-подключения](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)).
-- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для управляемого экземпляра базы данных SQL Azure и Azure Database Migration Service.
+- Виртуальная сеть, используемая миграционной службой Azure Database для этого сценария,https://docs.microsoft.com/azure/expressroute/expressroute-introduction) также должна быть подключена к предварительной сети с помощью (или [VPN.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)
+- Настройка [сети VNet, вглядывающаяся](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) между виртуальной сетью, используемой для управляемого экземпляра базы данных Azure S'L, и миграционной службой базы данных Azure.
 
-## <a name="cloud-to-cloud-migrations-shared-virtual-network"></a>Миграция из облака в облако: общая виртуальная сеть
+## <a name="cloud-to-cloud-migrations-shared-virtual-network"></a>Миграции от облака к облаку: общая виртуальная сеть
 
-Используйте эту топологию, если исходный SQL Server размещается на виртуальной машине Azure и использует ту же виртуальную сеть с управляемым экземпляром базы данных SQL Azure и Azure Database Migration Service.
+Используйте эту топологию, если исходный сервер S'L Server размещается в Azure VM и разделяет ту же виртуальную сеть с управляемой экземпляром базы данных Azure s'L и службой миграции базы данных Azure.
 
-![Топология сети для миграции из облака в облако с помощью общей виртуальной сети](media/resource-network-topologies/cloud-to-cloud.png)
+![Топология сети для миграций из облака в облако с помощью общего VNet](media/resource-network-topologies/cloud-to-cloud.png)
 
 **Требования**
 
 - Дополнительных требований нет.
 
-## <a name="cloud-to-cloud-migrations-isolated-virtual-network"></a>Миграция облака в облако: изолированная виртуальная сеть
+## <a name="cloud-to-cloud-migrations-isolated-virtual-network"></a>Миграции из облака в облако: изолированная виртуальная сеть
 
 Используйте эту сетевую топологию, если в вашей среде нужно применить один или несколько из следующих сценариев:
 
-- Управляемый экземпляр базы данных SQL Azure подготавливается в изолированной виртуальной сети.
-- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается управляемый экземпляр базы данных SQL Azure.
-- Виртуальные сети, используемые для Управляемый экземпляр Базы данных SQL Azure и Azure Database Migration Service, находятся в разных подписках.
+- Управляемый экземпляр базы данных Azure S'L подготовлен в изолированной виртуальной сети.
+- При наличии политикуправления на основе ролей (RBAC) необходимо ограничить доступ пользователей к той же подписке, в которой размещается управляемый экземпляр базы данных Azure S'L.
+- Виртуальные сети, используемые для управляемых экземпляров данных Azure s'L и службы миграции баз данных Azure, находятся в разных подписках.
 
-![Топология сети для миграции из облака в облако с помощью изолированной виртуальной сети](media/resource-network-topologies/cloud-to-cloud-isolated.png)
+![Топология сети для миграций из облака в облако с помощью изолированного VNet](media/resource-network-topologies/cloud-to-cloud-isolated.png)
 
 **Требования**
 
-- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для управляемого экземпляра базы данных SQL Azure и Azure Database Migration Service.
+- Настройка [сети VNet, вглядывающаяся](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) между виртуальной сетью, используемой для управляемого экземпляра базы данных Azure S'L, и миграционной службой базы данных Azure.
 
 ## <a name="inbound-security-rules"></a>Правила безопасности для входящего трафика
 
-| **ИМЯ**   | **ПОРТ** | **ПРОТОКОЛ** | **ИСТОЧНИК** | **НАЗНАЧЕНИЕ** | **ДЕЙСТВИЕ** |
+| **ИМЯ**   | **Порт** | **Протокол** | **Источник** | **Назначения** | **Действий** |
 |------------|----------|--------------|------------|-----------------|------------|
 | DMS_subnet | Любой      | Любой          | Подсеть DMS | Любой             | Allow      |
 
 ## <a name="outbound-security-rules"></a>Правила безопасности для исходящего трафика
 
-| **ИМЯ**                  | **ПОРТ**                                              | **ПРОТОКОЛ** | **ИСТОЧНИК** | **НАЗНАЧЕНИЕ**           | **ДЕЙСТВИЕ** | **Причина для правила**                                                                                                                                                                              |
+| **ИМЯ**                  | **Порт**                                              | **Протокол** | **Источник** | **Назначения**           | **Действий** | **Причина для правила**                                                                                                                                                                              |
 |---------------------------|-------------------------------------------------------|--------------|------------|---------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| управление                | 443,9354                                              | TCP          | Любой        | Любой                       | Allow      | Взаимодействие плоскости управления через служебную шину и хранилище BLOB-объектов Azure. <br/>(Если включен пиринг Майкрософт, это правило может не понадобиться.)                                                             |
+| управление                | 443,9354                                              | TCP          | Любой        | Любой                       | Allow      | Управление самолетом связи через Сервисный автобус и хранилище капли Azure. <br/>(Если включен пиринг Майкрософт, это правило может не понадобиться.)                                                             |
 | Диагностика               | 12000                                                 | TCP          | Любой        | Любой                       | Allow      | DMS использует это правило для сбора диагностических сведений для устранения неполадок.                                                                                                                      |
 | Исходный SQL Server         | 1433 (или порт TCP IP, который прослушивает SQL Server) | TCP          | Любой        | локальное адресное пространство; | Allow      | Возможность подключения к исходному экземпляру SQL Server из DMS. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.)                                                                                       |
 | Именованный экземпляр SQL Server | 1434                                                  | UDP          | Любой        | локальное адресное пространство; | Allow      | Возможность подключения к исходному именованному экземпляру SQL Server из DMS. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.)                                                                        |
 | Общий доступ по SMB                 | 445                                                   | TCP          | Любой        | локальное адресное пространство; | Allow      | Общий сетевой доступ по SMB в DMS для хранения файлов резервных копий базы данных с целью переноса в управляемый экземпляр Базы данных SQL Azure и SQL Server на виртуальной машине Azure. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.) |
 | DMS_subnet                | Любой                                                   | Любой          | Любой        | DMS_subnet                | Allow      |                                                                                                                                                                                                  |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
-- [Migrate SQL Server to Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance) (Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure)
-- [Общие сведения о предварительных требованиях для использования Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs)
+- [Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance)
+- [Обзор предпосылок для использования миграционной службы базы данных Azure](https://docs.microsoft.com/azure/dms/pre-reqs)
 - [Создание виртуальной сети с помощью портала Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения о Azure Database Migration Service см. в статье [что такое Azure Database Migration Service?](dms-overview.md).
-- Текущие сведения о региональных доступности Azure Database Migration Service см. на странице доступность [продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration) .
+- Подробнее о миграционной службе по базам данных Azure читайте в статье [«Что такое миграционная служба баз данных Azure?».](dms-overview.md)
+- Для получения актуальной информации о региональной доступности миграционной службы баз данных Azure см. [Products available by region](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration)

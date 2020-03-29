@@ -1,5 +1,5 @@
 ---
-title: Визуализация журналов потоков Azure NSG — Power BI
+title: Визуализация журналов потока Azure NSG - Power BI
 titleSuffix: Azure Network Watcher
 description: В этой статье описывается визуализация журналов потоков для групп безопасности сети с помощью Power BI.
 services: network-watcher
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 955e13b88037aa42b59707698549b1c980720990
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76840610"
 ---
 # <a name="visualizing-network-security-group-flow-logs-with-power-bi"></a>Визуализация журналов потоков для групп безопасности сети с помощью Power BI
@@ -50,7 +50,7 @@ ms.locfileid: "76840610"
 
 ![Схема Visio][1]
 
-### <a name="steps"></a>Действия
+### <a name="steps"></a>Шаги
 
 1. Скачайте и откройте следующий шаблон Power BI в приложении Power BI Desktop: [шаблон журналов потоков Наблюдателя за сетями Power BI](https://aka.ms/networkwatcherpowerbiflowlogstemplate).
 1. Введите обязательные параметры запроса.
@@ -119,7 +119,7 @@ ms.locfileid: "76840610"
 
 * Если у вас очень много журналов для анализа, мы рекомендуем использовать другое хранилище данных, например Data Lake или SQL Server.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Узнайте, как визуализировать журналы потоков для групп безопасности сети с помощью Elastick Stack, прочитав статью [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md).
 

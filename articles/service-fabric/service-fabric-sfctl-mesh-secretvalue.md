@@ -1,15 +1,15 @@
 ---
-title: Azure Service Fabric CLI — sfctlная сеть секретвалуе
-description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для получения и удаления Service Fabric ресурсов секретвалуеной сетки.
+title: Azure сервис Ткань CLI- sfctl сетки секретной стоимости
+description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает в себя список команд для получения и удаляния ресурсов секретной стоимости service Fabric Mesh.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: b2fe3a7995cdd88a8f63d0d865e72e9f161cf9d7
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76905968"
 ---
 # <a name="sfctl-mesh-secretvalue"></a>sfctl mesh secretvalue
@@ -17,11 +17,11 @@ ms.locfileid: "76905968"
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|Description|
+|Команда|Описание|
 | --- | --- |
 | удалить | Удаление указанного значения именованного ресурса секрета. |
 | list | Вывод списка имен всех значений указанного ресурса секрета. |
-| показать | Выводит указанное значение секретного ресурса. |
+| show | Перечисляет указанную стоимость секретного ресурса. |
 
 ## <a name="sfctl-mesh-secretvalue-delete"></a>sfctl mesh secretvalue delete
 Удаление указанного значения именованного ресурса секрета.
@@ -30,14 +30,14 @@ ms.locfileid: "76905968"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --secret-name -n [обязательный параметр] | Имя ресурса секрета. |
 | --version -v     [обязательный параметр] | Имя версии секрета. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -52,13 +52,13 @@ ms.locfileid: "76905968"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --secret-name -n [обязательный параметр] | Имя ресурса секрета. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -67,11 +67,11 @@ ms.locfileid: "76905968"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 ## <a name="sfctl-mesh-secretvalue-show"></a>sfctl mesh secretvalue show
-Выводит указанное значение секретного ресурса.
+Перечисляет указанную стоимость секретного ресурса.
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --secret-name -n [обязательный параметр] | Имя ресурса секрета. |
 | --version -v     [обязательный параметр] | Имя версии секрета. |
@@ -79,7 +79,7 @@ ms.locfileid: "76905968"
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -89,5 +89,5 @@ ms.locfileid: "76905968"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
+- [Настройка](service-fabric-cli.md) службы Ткань CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

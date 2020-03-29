@@ -1,5 +1,5 @@
 ---
-title: Моделирование отношений в структуре хранилища таблиц Azure | Документация Майкрософт
+title: Отношения моделирования в дизайне хранилища таблицы Azure (ru) Документы Майкрософт
 description: Сведения о процессе моделирования при разработке решения хранилища таблиц.
 services: storage
 author: MarkMcGeeAtAquent
@@ -9,10 +9,10 @@ ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
 ms.openlocfilehash: 25082c107fbc0feeb533aa2b4fc56cff960e778d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75457562"
 ---
 # <a name="modeling-relationships"></a>Моделирование отношений
@@ -122,7 +122,7 @@ ms.locfileid: "75457562"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Шаблоны для разработки таблиц](table-storage-design-patterns.md)
+- [Шаблоны проектирования таблиц](table-storage-design-patterns.md)
 - [Разработка для запросов](table-storage-design-for-query.md)
 - [Шифрование данных таблиц](table-storage-design-encrypt-data.md)
 - [Разработка для изменения данных](table-storage-design-for-modification.md)

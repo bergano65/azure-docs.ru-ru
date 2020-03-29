@@ -1,13 +1,13 @@
 ---
-title: Руководство по обновлению приложений Service Fabric
+title: Сервис Ткань приложение обновление учебник
 description: В этой статье рассматривается процесс развертывания приложения Service Fabric, изменения кода и развертывания обновления с помощью Visual Studio.
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: db814b972db1aee56be0858c9ff5d1c382640642
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75464824"
 ---
 # <a name="service-fabric-application-upgrade-tutorial-using-visual-studio"></a>Учебник по обновлению приложений Service Fabric с помощью Visual Studio
@@ -30,9 +30,9 @@ Azure Service Fabric упрощает процесс обновления обл
 
 ![Публикация приложения Service Fabric][image2]
 
-Теперь можно нажать кнопку **Опубликовать** в диалоговом окне. Для просмотра кластера и приложения теперь можно использовать [обозреватель Service Fabric](service-fabric-visualizing-your-cluster.md). Приложение Visual Objects включает в себя веб-службу, к которой можно перейти, указав в адресной строке браузера [http://localhost:8081/visualobjects/](http://localhost:8081/visualobjects/).  Вы должны увидеть 10 плавающих визуальных объектов, перемещающихся по экрану.
+Теперь можно нажать кнопку **Опубликовать** в диалоговом окне. Для просмотра кластера и приложения теперь можно использовать [обозреватель Service Fabric](service-fabric-visualizing-your-cluster.md). Приложение Visual Objects имеет веб-службу, на [http://localhost:8081/visualobjects/](http://localhost:8081/visualobjects/) которую можно обратиться в адресную строку браузера.  Вы должны увидеть 10 плавающих визуальных объектов, перемещающихся по экрану.
 
-**Примечание.** При развертывании в профиле `Cloud.xml` (Azure Service Fabric) приложение должно быть доступно по адресу **http://{ServiceFabricName}.{Region}.cloudapp.azure.com:8081/visualobjects/** . Убедитесь, что в балансировщике нагрузки настроен `8081/TCP` (балансировщик нагрузки находится в той же группе ресурсов, что и экземпляр Service Fabric).
+**Примечание.** При развертывании в профиле `Cloud.xml` (Azure Service Fabric) приложение должно быть доступно по адресу **http://{ServiceFabricName}.{Region}.cloudapp.azure.com:8081/visualobjects/**. Убедитесь, что в балансировщике нагрузки настроен `8081/TCP` (балансировщик нагрузки находится в той же группе ресурсов, что и экземпляр Service Fabric).
 
 ## <a name="step-2-update-the-visual-objects-sample"></a>Шаг 2. Обновление образца визуальных объектов
 Вы можете заметить, что в версии, развернутой на шаге 1, визуальные объекты не вращаются. Давайте обновим это приложение до версии, в которой визуальные объекты будут вращаться.
@@ -63,7 +63,7 @@ Azure Service Fabric упрощает процесс обновления обл
 Вы можете попробовать изменить версии и перейти от версии 2.0.0 к версии 3.0.0 в качестве упражнения или даже от версии 2.0.0 назад к версии 1.0.0. Попробуйте изменить значения времени ожидания и параметры политики работоспособности в качестве тренировки. При развертывании в кластер Azure параметры могут отличаться от используемых при развертывании в локальный кластер. Рекомендуется применить консервативный подход при настройке значений времени ожидания.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
+[Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) проведке через обновление приложения с помощью PowerShell.
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).
 
