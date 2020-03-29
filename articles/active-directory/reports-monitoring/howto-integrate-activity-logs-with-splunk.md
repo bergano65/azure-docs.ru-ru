@@ -1,6 +1,6 @@
 ---
-title: Интеграция Splunk с помощью Azure Monitor | Документация Майкрософт
-description: Узнайте, как интегрировать журналы Azure Active Directory с SumoLogic с помощью Azure Monitor
+title: Интеграция Splunk с помощью Azure Monitor (ru) Документы Майкрософт
+description: Узнайте, как интегрировать журналы активных каталогов Azure с sumoLogic с помощью Azure Monitor
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -18,25 +18,25 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2eda3643a7b1a341c7ed664dbfea933145f1f927
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78968715"
 ---
-# <a name="how-to-integrate-azure-active-directory-logs-with-splunk-using-azure-monitor"></a>Инструкции. Интеграция журналов Azure Active Directory с Splunk с помощью Azure Monitor
+# <a name="how-to-integrate-azure-active-directory-logs-with-splunk-using-azure-monitor"></a>Как: Интеграция журналов active Directory Azure с помощью Azure Monitor
 
 В этой статье вы узнаете, как интегрировать журналы Azure Active Directory (Azure AD) со Splunk с помощью Azure Monitor. Сначала вы направите журналы в концентратор событий Azure, а затем интегрируете этот концентратор событий со Splunk.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этой функции необходимо иметь следующее.
 
 - Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
 
--  [Microsoft Azure добавить в для Splunk](https://splunkbase.splunk.com/app/3757/). 
+-  [Microsoft Azure Добавить для Splunk](https://splunkbase.splunk.com/app/3757/). 
 
-## <a name="integrate-azure-active-directory-logs"></a>Интеграция журналов Azure Active Directory 
+## <a name="integrate-azure-active-directory-logs"></a>Интеграция журналов активных каталогов Azure 
 
 1. Откройте свой экземпляр Splunk и выберите **Data Summary** (Сводка данных).
 
@@ -56,6 +56,6 @@ ms.locfileid: "78968715"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
-* [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))
+* [Интерпретация схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
+* [Интерпретация схемы входа в журналы в Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md)
 * [Часто задаваемые вопросы и известные проблемы](concept-activity-logs-azure-monitor.md#frequently-asked-questions)

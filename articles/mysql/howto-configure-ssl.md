@@ -1,41 +1,41 @@
 ---
-title: Настройка SSL — база данных Azure для MySQL
+title: Настройка SSL - База данных Azure для MyS'L
 description: Инструкции по настройке базы данных Azure для MySQL и связанных приложений для правильного использования SSL-соединений.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/05/2019
-ms.openlocfilehash: 3a1c7f6542ebdf1617982fbb50a239b66a6675ba
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.date: 3/18/2020
+ms.openlocfilehash: 557986560eb27beddf939bcab7f4d72a66781e53
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926710"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80062448"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mysql"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL
 База данных Azure для MySQL поддерживает подключение сервера базы данных Azure для MySQL к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
 ## <a name="step-1-obtain-ssl-certificate"></a>Шаг 1. Получение SSL-сертификата
-Скачайте сертификат, который необходим для взаимодействия с сервером базы данных Azure для MySQL по протоколу SSL ([https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem)), и сохраните файл сертификата на локальном диске (в этом руководстве для примера мы использовали папку C:\SSL).
+Загрузите сертификат, необходимый для связи по SSL с [https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) вашей базой данных Azure для сервера MyS'L, и сохраните файл сертификата на локальном диске (например, в этом учебнике используется c:ssl).
 **Для браузеров Microsoft Internet Explorer и Microsoft Edge:** по завершении скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
 
 ## <a name="step-2-bind-ssl"></a>Шаг 2. Привязка SSL
 
-Сведения о строках подключения для конкретных языков программирования см. в приведенном ниже [образце кода](howto-configure-ssl.md#sample-code) .
+Для конкретных строк соединения языка программирования, пожалуйста, обратитесь к [примеру кода](howto-configure-ssl.md#sample-code) ниже.
 
-### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MySQL Workbench по протоколу SSL
+### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MyS'L Workbench над SSL
 Настройте MySQL Workbench, чтобы безопасно подключаться по протоколу SSL. 
 
 1. В диалоговом окне Setup New Connection (Настройка нового подключения) откройте вкладку **SSL**. 
 
-1. Обновите поле " **использовать SSL** " для "обязательно".
+1. Обновление поля **использования SSL** до "Требовать".
 
-1. В поле **файл SSL-центра сертификации:** введите расположение файла **BaltimoreCyberTrustRoot. CRT. pem**. 
+1. Введите расположение файла **BaltimoreCyberTrustRoot.crt.pem** в поле **SSL CA File:** (Файл центра сертификации SSL-сертификата). 
     
     ![Сохранить конфигурацию SSL](./media/howto-configure-ssl/mysql-workbench-ssl.png)
 
-Для существующих подключений можно привязать SSL, щелкнув правой кнопкой мыши значок подключения и выбрав пункт изменить. Откройте вкладку **SSL** и привяжите файл сертификата.
+Для существующих соединений можно связать SSL, нажав правой кнопкой на значок соединения и выбрать исправление. Откройте вкладку **SSL** и привяжите файл сертификата.
 
 ### <a name="connecting-to-server-using-the-mysql-cli-over-ssl"></a>Подключение к серверу с помощью интерфейса командной строки MySQL по протоколу SSL
 Кроме того, можно привязать SSL-сертификат при помощи интерфейса командной строки MySQL, выполнив следующие команды. 
@@ -65,10 +65,10 @@ mysql> status
 ```
 Убедитесь, что соединение зашифровано, просмотрев выходные данные, в которых должно отображаться следующее: **SSL: используемый шифр — AES256 SHA**. 
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 Чтобы установить безопасное подключение приложения к Базе данных Azure для MySQL по протоколу SSL, изучите приведенные ниже примеры кода.
 
-См. список [совместимых драйверов](concepts-compatibility.md) , поддерживаемых службой "база данных Azure для MySQL".
+Ссылайтесь на список [совместимых драйверов,](concepts-compatibility.md) поддерживаемых базой данных Azure для службы MyS'L.
 
 ### <a name="php"></a>PHP
 ```php
@@ -79,7 +79,7 @@ if (mysqli_connect_errno($conn)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 ```
-### <a name="php-using-pdo"></a>PHP (с использованием PDO)
+### <a name="php-using-pdo"></a>PHP (использование PDO)
 ```phppdo
 $options = array(
     PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'
@@ -107,7 +107,7 @@ conn = pymysql.connect(user='myadmin@mydemoserver',
                        ssl={'ssl': {'ssl-ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}})
 ```
 
-### <a name="django-pymysql"></a>Django (Пимискл)
+### <a name="django-pymysql"></a>Джанго (ПимыСЗЛ)
 ```python
 DATABASES = {
     'default': {
@@ -147,7 +147,7 @@ var connectionString string
 connectionString = fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?allowNativePasswords=true&tls=custom",'myadmin@mydemoserver' , 'yourpassword', 'mydemoserver.mysql.database.azure.com', 'quickstartdb')   
 db, _ := sql.Open("mysql", connectionString)
 ```
-### <a name="java-mysql-connector-for-java"></a>Java (соединитель MySQL для Java)
+### <a name="java-mysql-connector-for-java"></a>Java (MyS'L Коннектор для Java)
 ```java
 # generate truststore and keystore in code
 String importCert = " -import "+
@@ -174,7 +174,7 @@ properties.setProperty("user", 'myadmin@mydemoserver');
 properties.setProperty("password", 'yourpassword');
 conn = DriverManager.getConnection(url, properties);
 ```
-### <a name="java-mariadb-connector-for-java"></a>Java (соединитель MariaDB для Java)
+### <a name="java-mariadb-connector-for-java"></a>Java (Разъем MariaDB для Java)
 ```java
 # generate truststore and keystore in code
 String importCert = " -import "+

@@ -1,6 +1,6 @@
 ---
-title: Добавление или удаление назначений ролей с помощью RBAC и REST API
-description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и REST API.
+title: Добавление или удаление ролевых заданий с помощью RBAC и API REST
+description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, директоров служб или управляемых идентификаторов с помощью управления доступом на основе ролей Azure (RBAC) и API REST.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -12,29 +12,29 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/25/2019
+ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: ae6fce5ab962637fe477ade75cf81b6ac237bdd2
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: 9beda6589c03f1b14fc9756af86a9ce0711894c0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77138312"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80063009"
 ---
-# <a name="add-or-remove-role-assignments-using-azure-rbac-and-the-rest-api"></a>Добавление и удаление назначений ролей с помощью Azure RBAC и REST API
+# <a name="add-or-remove-role-assignments-using-azure-rbac-and-the-rest-api"></a>Добавление или удаление ролевых заданий с помощью Azure RBAC и API REST
 
-в [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] этой статье описывается назначение ролей с помощью REST API.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]В этой статье описывается, как назначить роли с помощью REST API.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Для добавления или удаления назначений ролей необходимо иметь следующее:
+Чтобы добавить или удалить назначения ролей, необходимо:
 
 - `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
 
 ## <a name="add-a-role-assignment"></a>Добавление назначения роли
 
-В RBAC для предоставления доступа необходимо добавить назначение роли. Чтобы добавить назначение ролей, используйте [назначение ролей — создайте](/rest/api/authorization/roleassignments/create) REST API и укажите субъект безопасности, определение роли и область. Чтобы вызвать этот API, нужен доступ к операции `Microsoft.Authorization/roleAssignments/write`. Из встроенных ролей эту операцию могут выполнять только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator).
+В RBAC, чтобы предоставить доступ, вы добавляете назначение ролей. Чтобы добавить назначение ролей, используйте [назначения ролей - Создайте](/rest/api/authorization/roleassignments/create) API REST и укажите принцип безопасности, определение ролей и область охвата. Чтобы вызвать этот API, нужен доступ к операции `Microsoft.Authorization/roleAssignments/write`. Из встроенных ролей эту операцию могут выполнять только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator).
 
 1. Используйте REST API [Определения ролей — список](/rest/api/authorization/roledefinitions/list) или изучите раздел [Встроенные роли](built-in-roles.md), чтобы получить идентификатор для определения роли, которое требуется назначить.
 
@@ -57,23 +57,27 @@ ms.locfileid: "77138312"
 
 1. Внутри URI замените *{scope}* областью для назначения роли.
 
-    | Область | Тип |
-    | --- | --- |
-    | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
-    | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
+    > [!div class="mx-tableFixed"]
+    > | Область | Тип |
+    > | --- | --- |
+    > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
+    > | `subscriptions/{subscriptionId1}` | Подписка |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/microsoft.web/sites/mysite1` | Ресурс |
+
+    В предыдущем примере microsoft.web — это поставщик ресурсов, который относится к экземпляру Службы приложений. Аналогичным образом можно использовать любые другие поставщики ресурсов и указать область охвата. Для получения дополнительной информации смотрите [поставщики и типы ресурсов Ресурсов Azure и](../azure-resource-manager/management/resource-providers-and-types.md) поддерживается [ресурсами, которые поддерживаются ресурсами ресурсного поставщика ресурсов Azure.](resource-provider-operations.md)  
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.
 
-1. В тексте запроса замените *{Scope}* областью для назначения роли.
+1. В органе запроса замените *«область»* областью для назначения роли.
 
-    | Область | Тип |
-    | --- | --- |
-    | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
-    | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
+    > [!div class="mx-tableFixed"]
+    > | Область | Тип |
+    > | --- | --- |
+    > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
+    > | `subscriptions/{subscriptionId1}` | Подписка |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleDefinitionId}* идентификатором определения роли.
 
@@ -93,18 +97,19 @@ ms.locfileid: "77138312"
 
 1. Внутри URI замените *{scope}* областью для удаления назначения роли.
 
-    | Область | Тип |
-    | --- | --- |
-    | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
-    | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
+    > [!div class="mx-tableFixed"]
+    > | Область | Тип |
+    > | --- | --- |
+    > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
+    > | `subscriptions/{subscriptionId1}` | Подписка |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Вывод списка назначений ролей с помощью Azure RBAC и REST API](role-assignments-list-rest.md)
+- [Список ролевых заданий с помощью Azure RBAC и API REST](role-assignments-list-rest.md)
 - [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/templates/deploy-rest.md)
-- [Справочник по REST API Azure](/rest/api/azure/)
+- [Ссылка на API Azure REST](/rest/api/azure/)
 - [Создание пользовательских ролей для ресурсов Azure с помощью REST API](custom-roles-rest.md)

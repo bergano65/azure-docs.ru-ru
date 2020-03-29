@@ -1,17 +1,17 @@
 ---
-title: Перезапуск сервера-портал Azure — база данных Azure для MySQL
-description: В этой статье описывается, как можно перезапустить сервер базы данных Azure для MySQL с помощью портал Azure.
+title: Перезагрузка сервера - Портал Azure - База данных Azure для MyS'L
+description: В этой статье описывается, как можно перезапустить базу данных Azure для сервера MyS'L с помощью портала Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 1857c67a77b9600f3d8f7c222a8e06f899fba728
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: d7e158124347b302492364df46ccf5b5e78e75c8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74774057"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80063302"
 ---
 # <a name="restart-azure-database-for-mysql-server-using-azure-portal"></a>Перезапуск Базы данных Azure для MySQL с помощью портала Azure
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для MySQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -20,9 +20,9 @@ ms.locfileid: "74774057"
 
 Время, необходимое для завершения перезапуска, зависит от процесса восстановления MySQL. Чтобы уменьшить время перезапуска, рекомендуем свести к минимуму объем действий, выполняемых на сервере перед перезапуском.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
-- [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
+- [База данных Azure для сервера MyS'L](quickstart-create-mysql-server-database-using-azure-portal.md)
 
 ## <a name="perform-server-restart"></a>Перезапуск сервера
 

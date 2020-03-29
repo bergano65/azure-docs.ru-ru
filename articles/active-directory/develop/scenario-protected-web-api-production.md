@@ -1,7 +1,7 @@
 ---
-title: Перемещение защищенного веб-API в рабочую среду | Службы
+title: Перемещение защищенного Web API в производство Azure
 titleSuffix: Microsoft identity platform
-description: Узнайте, как создать защищенный веб-API (переместить в рабочую среду).
+description: Узнайте, как создать защищенный Web API (переход к производству).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -16,32 +16,32 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 229f49255fbc72f74f07b1e7098417d136f35c27
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76775177"
 ---
-# <a name="protected-web-api---move-to-production"></a>Защищенный веб-API — переместить в рабочую среду
+# <a name="protected-web-api---move-to-production"></a>Защищенный веб-API - переход к производству
 
-Теперь, когда вы узнали, как защитить веб-API, вы можете переместить его в рабочую среду.
+Теперь, когда вы знаете, как защитить ваш веб-API, вот как вы можете переместить его в производство.
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как вызывать нисходящий API.
+Узнайте, как вызвать API ниже по течению.
 
 > [!div class="nextstepaction"]
-> [Сценарий. веб-API вызывает нисходящие API](scenario-web-api-call-api-overview.md)
+> [Сценарий - Web API вызывает аПО](scenario-web-api-call-api-overview.md)
 
-Дополнительные сведения см. в руководствах и примерах.
-
-> [!div class="nextstepaction"]
-> [Вызов защищенного API с помощью управляющей программы](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/2-Call-OwnApi)
+Узнайте больше с учебниками и образцами.
 
 > [!div class="nextstepaction"]
-> [Учебник по ASP.NET Core веб-API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2)
+> [Вызов защищенного API с помощью daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/2-Call-OwnApi)
 
 > [!div class="nextstepaction"]
-> [Пример веб-API ASP.NET](https://github.com/azureadquickstarts/appmodelv2-nativeclient-dotnet)
+> [ASP.NET учебник по веб-aPI Core](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2)
+
+> [!div class="nextstepaction"]
+> [ASP.NET образец web API](https://github.com/azureadquickstarts/appmodelv2-nativeclient-dotnet)

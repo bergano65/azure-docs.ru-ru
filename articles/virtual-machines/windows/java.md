@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Azure и управление ею с помощью Java
+title: Создание и управление виртуальной машиной Azure с использованием Java
 description: Развертывание виртуальной машины и всех ее вспомогательных ресурсов с помощью Java и Azure Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
 ms.openlocfilehash: 35d5569cb36cb538585b9d2c85a392b668e9fc34
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78944501"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-java"></a>Создание виртуальных машин Windows в Azure и управление ими с помощью Java
@@ -39,7 +39,7 @@ ms.locfileid: "78944501"
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
 1. Установите [Java](https://aka.ms/azure-jdks), если это еще не сделано.
-2. Установите [Maven](https://maven.apache.org/download.cgi).
+2. Установка [Maven](https://maven.apache.org/download.cgi).
 3. Создайте папку и проект:
     
     ```
@@ -133,14 +133,14 @@ ms.locfileid: "78944501"
     graphURL=https://graph.microsoft.com/
     ```
 
-    Замените **&lt;subscription-id&gt;** своим идентификатором подписки, **&lt;application-id&gt;** — идентификатором приложения Active Directory, **&lt;authentication-key&gt;** — ключом приложения, а **&lt;tenant-id&gt;** — идентификатором клиента.
+    ** &lt;Замените идентификатор&gt; подписки** идентификатором подписки, ** &lt;&gt; идентификатор приложения Active** Directory, ** &lt;&gt; ** ** &lt;ключ проверки подлинности&gt; ** с ключом приложения и идентификатор клиента с идентификатором клиента.
 
 2. Сохраните файл.
 3. Задайте в оболочке переменную среды AZURE_AUTH_LOCATION и укажите полный путь к файлу аутентификации.
 
 ### <a name="create-the-management-client"></a>Создание клиента управления
 
-1. В папке `App.java` откройте файл `src\main\java\com\fabrikam` и убедитесь, что этот оператор statement находится в верхней части:
+1. В папке `src\main\java\com\fabrikam` откройте файл `App.java` и убедитесь, что этот оператор statement находится в верхней части:
 
     ```java
     package com.fabrikam.testAzureApp;
@@ -188,7 +188,7 @@ ms.locfileid: "78944501"
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 
-Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/management/overview.md).
+Все ресурсы должны содержаться в [группе ресурсов.](../../azure-resource-manager/management/overview.md)
 
 Чтобы определить значения для приложения и создать группу ресурсов, добавьте этот код в блок Try метода Main:
 

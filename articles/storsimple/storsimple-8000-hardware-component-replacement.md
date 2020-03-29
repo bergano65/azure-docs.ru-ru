@@ -16,10 +16,10 @@ ms.date: 06/02/2017
 ms.author: alkohli
 ms.custom: ''
 ms.openlocfilehash: e05a37122647d4979089f0ba00b1fc15f9b84b0f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60321829"
 ---
 # <a name="replace-a-hardware-component-on-your-storsimple-8000-series-device"></a>Замена аппаратного компонента на устройстве StorSimple серии 8000
@@ -36,9 +36,9 @@ ms.locfileid: "60321829"
 
 | Значок | Text | Дополнительные сведения |
 |:--- |:--- |:--- |
-| ![Значок "Внимание!"](./media/storsimple-hardware-component-replacement/Warning.png) |**ОПАСНОСТЬ!** |Указывает на опасную ситуацию, которая наверняка приведет к смерти или серьезной травме. Это сигнальное слово применяется только к самым крайним случаям. |
-| ![Значок "Внимание!"](./media/storsimple-hardware-component-replacement/Warning.png) |**ВНИМАНИЕ!** |Указывает на опасную ситуацию, которая может привести к смерти или серьезной травме. |
-| ![Значок предупреждения](./media/storsimple-hardware-component-replacement/Caution.png) |**ОСТОРОЖНО!** |Указывает на опасную ситуацию, которая может привести к травме легкой или средней тяжести. |
+| ![Значок предупреждения](./media/storsimple-hardware-component-replacement/Warning.png) |**ОПАСНОСТЬ!** |Указывает на опасную ситуацию, которая наверняка приведет к смерти или серьезной травме. Это сигнальное слово применяется только к самым крайним случаям. |
+| ![Значок предупреждения](./media/storsimple-hardware-component-replacement/Warning.png) |**Предупреждение!** |Указывает на опасную ситуацию, которая может привести к смерти или серьезной травме. |
+| ![Значок предупреждения](./media/storsimple-hardware-component-replacement/Caution.png) |**Осторожностью!** |Указывает на опасную ситуацию, которая может привести к травме легкой или средней тяжести. |
 | ![Значок "Примечание"](./media/storsimple-hardware-component-replacement/NoticeIcon.png) |**ПРИМЕЧАНИЕ.** |Указывает на важные сведения, не связанные с угрозой здоровью и жизни человека. |
 | ![Значок "Опасность поражения электрическим током"](./media/storsimple-hardware-component-replacement/Electric.png) |**Опасность поражения электрическим током** |Указывает на высокий уровень напряжения. |
 | ![Значок "Большой вес"](./media/storsimple-hardware-component-replacement/Weight.png) |**Большой вес** | |
@@ -46,7 +46,7 @@ ms.locfileid: "60321829"
 | ![Значок "Обязательно прочтите инструкции"](./media/storsimple-hardware-component-replacement/ReadInstructions.png) |**Сначала ознакомьтесь с инструкциями** | |
 | ![Значок "Опасность опрокидывания"](./media/storsimple-hardware-component-replacement/TipHazard.png) |**Опасность опрокидывания** | |
 
-### <a name="before-you-begin"></a>Перед началом работы
+### <a name="before-you-begin"></a>Перед началом
 Ознакомьтесь со сведениями безопасности для вашего устройства и условными обозначениями сведений о безопасности, используемыми в данном руководстве. Подробные сведения см. в разделе [Безопасная установка и эксплуатация устройства StorSimple](storsimple-safety.md). Перед обращением с устройством StorSimple ознакомьтесь с [мерами предосторожности](storsimple-safety.md#handling-precautions).
 
 Перед заменой компонента обратите внимание на следующую информацию.
@@ -67,7 +67,7 @@ ms.locfileid: "60321829"
 
 | Компоненты | Количество | Подключаемый модуль? | Процедура замены |
 |:--- |:--- |:--- |:--- |
-| Корпус |1 |Нет |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
+| Корпус |1 |нет |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
 | Основные контроллеры |2 |Да |[Замена модуля контроллера на устройстве StorSimple](storsimple-8000-controller-replacement.md) |
 | Блоки питания и охлаждения (БПО) мощностью 764 Вт |2 |Да |[Замена блока питания и охлаждения на устройстве StorSimple](storsimple-8000-power-cooling-module-replacement.md) |
 | Резервный аккумулятор |2 |Да |[Замена резервного аккумулятора на устройстве StorSimple](storsimple-8000-battery-replacement.md) |
@@ -79,7 +79,7 @@ ms.locfileid: "60321829"
 
 | Компоненты | Количество | Подключаемый модуль? | Процедура замены |
 |:--- |:--- |:--- |:--- |
-| Корпус |1 |Нет |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
+| Корпус |1 |нет |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
 | Контроллеры EBOD |2 |Да |[Замена контроллера EBOD на устройстве StorSimple](storsimple-8000-ebod-controller-replacement.md) |
 | Блоки питания и охлаждения (БПО) мощностью 580 Вт |2 |Да |[Замена блока питания и охлаждения на устройстве StorSimple](storsimple-8000-power-cooling-module-replacement.md) |
 | Диски |12 |Да |[Замена диска на устройстве StorSimple](storsimple-8000-disk-drive-replacement.md) |
@@ -88,7 +88,7 @@ ms.locfileid: "60321829"
 
 Подключаемые модули устройства выделены на следующих схемах передней и задней частей устройства. Эти схемы можно использовать для определения расположения различных подключаемых модулей при необходимости их замены. На схеме передней части устройства показаны диски, а на схемах задней части корпуса EBOD и основного корпуса показаны подключаемые модули.
 
-![Передняя панель устройства с дисками](./media/storsimple-hardware-component-replacement/IC741028.png)
+![Передняя панель устройства с дисковыми дисками](./media/storsimple-hardware-component-replacement/IC741028.png)
 
 **Рис. 1.** Передняя часть устройства
 
@@ -107,7 +107,7 @@ ms.locfileid: "60321829"
 | 1 |PCM 0 |
 | 2 |PCM 1 |
 | 3 |Контроллер 0 |
-| 4\. |Контроллер 1 |
+| 4 |Контроллер 1 |
 
 ![Задняя панель модулей корпуса EBOD устройства](./media/storsimple-hardware-component-replacement/IC769599.png)
 
@@ -118,7 +118,7 @@ ms.locfileid: "60321829"
 | 1 |PCM 0 |
 | 2 |PCM 1 |
 | 3 |Контроллер EBOD 0 |
-| 4\. |Контроллер EBOD 1 |
+| 4 |Контроллер EBOD 1 |
 
 ## <a name="field-replaceable-units"></a>Блоки, заменяемые в полевых условиях
 Для устройства StorSimple доступны следующие блоки, заменяемые в полевых условиях:
@@ -132,7 +132,7 @@ ms.locfileid: "60321829"
 * Модуль резервного аккумулятора
 * Комплект направляющих для монтажа в стойке
 
-[Обратитесь в службу поддержки Microsoft](storsimple-8000-contact-microsoft-support.md) для заказа любых из этих запасных частей.
+[Обратитесь в службу технической поддержки Майкрософт](storsimple-8000-contact-microsoft-support.md), чтобы заказать любые из этих запасных частей.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Перед заменой компонентов оборудования StorSimple ознакомьтесь со всеми [мерами предосторожности](storsimple-safety.md) .

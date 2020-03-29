@@ -1,6 +1,6 @@
 ---
-title: Служебная шина Azure — число сообщений
-description: Получите количество сообщений, хранящихся в очередях и подписках, с помощью Azure Resource Manager и API-интерфейсов служебной шины Azure NamespaceManager.
+title: Автобус службы Azure - количество сообщений
+description: Изысайте количество сообщений, хранящегося в очередях и подписках, с помощью диспетчера ресурсов Azure и AIS Azure Service Bus NamespaceManager.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 3a4fca0b3b60fcb76bcdc4f5f2d53df816c5053b
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76756388"
 ---
 # <a name="message-counters"></a>Счетчики сообщений

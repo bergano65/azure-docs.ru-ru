@@ -1,7 +1,7 @@
 ---
-title: Настройка моделей содержимого в индексаторе видео служб мультимедиа Azure
+title: Настройка моделей контента в Video Indexer медиасервисов Azure
 titleSuffix: Azure Media Services
-description: В этой статье приводятся ссылки на концептуальные статьи, в которых объясняются преимущества каждого типа настройки. В этой статье также приведены ссылки на практические руководства, в которых показано, как можно реализовать настройку каждой модели.
+description: В этой статье приводятся ссылки на концептуальные статьи, которые объясняют преимущества каждого типа настройки. В этой статье также ссылки на руководства, которые показывают, как можно реализовать настройки каждой модели.
 services: media-services
 author: anikaz
 manager: johndeu
@@ -11,39 +11,39 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: anzaman
 ms.openlocfilehash: 09e6fd8530ddb1745a92c6f31f4d5a5843a2ac10
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76513173"
 ---
-# <a name="customizing-content-models-in-video-indexer"></a>Настройка моделей содержимого в индексаторе видео
+# <a name="customizing-content-models-in-video-indexer"></a>Настройка моделей контента в Video Indexer
 
-Индексатор видео позволяет настраивать некоторые модели для адаптации к конкретному варианту использования. Эти модели включают [торговые марки](customize-brands-model-overview.md), [язык](customize-language-model-overview.md)и [лицо](customize-person-model-overview.md). Эти модели можно легко настроить с помощью веб-сайта индексатора видео или API.
+Video Indexer позволяет настроить некоторые из своих моделей, которые будут адаптированы к конкретному корпусу использования. Эти модели включают в себя [бренды,](customize-brands-model-overview.md) [язык,](customize-language-model-overview.md)и [человек](customize-person-model-overview.md). Вы можете легко настроить эти модели с помощью веб-сайта Video Indexer или API.
 
-В этой статье приводятся ссылки на статьи, в которых объясняются преимущества каждого типа настройки. В этой статье также приводятся ссылки на практические руководства, показывающие, как можно реализовать настройку каждой модели.
+В этой статье приводятся ссылки на статьи, которые объясняют преимущества каждого типа настройки. В статье также ссылки на как-к руководствам, которые показывают, как вы можете реализовать настройки каждой модели.
 
 ## <a name="animated-characters"></a>Анимированные символы
 
-* [Обнаружение анимированных символов](animated-characters-recognition.md)
+* [Анимированное обнаружение символов](animated-characters-recognition.md)
 
-## <a name="brands-model"></a>Модель торговых марок
+## <a name="brands-model"></a>Модель брендов
 
-* [Общие сведения о настройке модели торговых марок](customize-brands-model-overview.md)
-* [Настройка модели торговых марок с помощью веб-сайта индексатора видео](customize-brands-model-with-website.md)
-* [Настройка модели торговых марок с помощью API индексатора видео](customize-brands-model-with-api.md)
+* [Настройка обзора моделей брендов](customize-brands-model-overview.md)
+* [Настройка модели брендов с помощью веб-сайта Video Indexer](customize-brands-model-with-website.md)
+* [Настройка модели брендов с использованием API video Indexer](customize-brands-model-with-api.md)
  
 ## <a name="language-model"></a>Языковая модель
 
-* [Общие сведения о настройке языковых моделей](customize-language-model-overview.md)
-* [Настройка языковых моделей с помощью веб-сайта индексатора видео](customize-language-model-with-website.md)
-* [Настройка языковых моделей с помощью API индексатора видео](customize-language-model-with-api.md)
+* [Настройка обзора языковых моделей](customize-language-model-overview.md)
+* [Настройка языковых моделей с помощью веб-сайта Video Indexer](customize-language-model-with-website.md)
+* [Настройка языковых моделей с использованием API video Indexer](customize-language-model-with-api.md)
  
-## <a name="person-model"></a>Модель Person
+## <a name="person-model"></a>Модель человека
 
-* [Общие сведения о настройке моделей пользователей](customize-person-model-overview.md)
-* [Настройка моделей Person с помощью веб-сайта индексатора видео](customize-person-model-with-website.md)
-* [Настройка моделей Person с помощью API индексатора видео](customize-person-model-with-api.md)
+* [Настройка обзора моделей персон](customize-person-model-overview.md)
+* [Настройка моделей лиц с помощью веб-сайта Video Indexer](customize-person-model-with-website.md)
+* [Настройка моделей лиц с помощью API video Indexer](customize-person-model-with-api.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

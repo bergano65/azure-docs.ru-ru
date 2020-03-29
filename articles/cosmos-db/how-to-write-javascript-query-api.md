@@ -1,5 +1,5 @@
 ---
-title: Запись хранимых процедур и триггеров с помощью API запросов JavaScript в Azure Cosmos DB
+title: Запись сохраненных процедур и триггеров с помощью API-запроса JavaScript в Azure Cosmos DB
 description: Узнайте, как записывать хранимые процедуры и триггеры с помощью API запросов JavaScript в Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: mjbrown
 ms.openlocfilehash: 221a3118808a044ef1b1b822b9c95772bf792f34
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75441709"
 ---
 # <a name="how-to-write-stored-procedures-and-triggers-in-azure-cosmos-db-by-using-the-javascript-query-api"></a>Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript
 
 Azure Cosmos DB позволяет создавать оптимизированные запросы с помощью гибкого интерфейса JavaScript (без знания языка SQL), который может использоваться для написания хранимых процедур или триггеров. Дополнительные сведения о поддержке API запросов JavaScript в Azure Cosmos DB см. в статье о [работе с API запросов с интегрированным языком JavaScript в Azure Cosmos DB](javascript-query-api.md).
 
-## <a id="stored-procedures"></a>Создание хранимой процедуры с использованием API запросов JavaScript
+## <a name="stored-procedure-using-the-javascript-query-api"></a><a id="stored-procedures"></a>Создание хранимой процедуры с использованием API запросов JavaScript
 
 Ниже приведен пример кода, где хранимая процедура создается с использованием API запросов JavaScript. Хранимая процедура вставляет заданный входным параметром элемент Azure Cosmos, после чего обновляет документ метаданных с помощью метода `__.filter()`, а также на основе свойств размера входного элемента minSize, maxSize и totalSize.
 
@@ -90,4 +90,4 @@ function insertDocumentAndUpdateMetadata(item) {
 
 * [Как зарегистрировать и использовать определяемые пользователем функции в Azure Cosmos DB](how-to-use-stored-procedures-triggers-udfs.md#udfs)
 
-* [Create a synthetic partition key](synthetic-partition-keys.md) (Создание искусственного ключа секций)
+* [Искусственные ключи секций в Azure Cosmos DB](synthetic-partition-keys.md)

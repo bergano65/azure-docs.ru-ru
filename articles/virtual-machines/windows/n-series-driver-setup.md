@@ -1,5 +1,5 @@
 ---
-title: Установка драйвера GPU для Azure серии N для Windows
+title: Настройка драйвера GPU серии Azure N для Windows
 description: Как установить драйверы NVIDIA GPU для виртуальных машин серии N под управлением Windows Server или Windows в Azure
 services: virtual-machines-windows
 author: cynthn
@@ -15,10 +15,10 @@ ms.date: 09/24/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 631266f983886e3ca34d609b425f8a71b808b39f
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77919402"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Windows 
@@ -41,7 +41,7 @@ ms.locfileid: "77919402"
 
 ## <a name="verify-driver-installation"></a>Проверка установки драйверов
 
-Обратите внимание, что панель управления NVIDIA доступна только при установке драйвера сетки. Если установлены драйверы CUDA, панель управления NVIDIA отображаться не будет.
+Обратите внимание, что панель управления Nvidia доступна только с установкой драйвера GRID. Если вы установили драйверы CUDA, то панель управления Nvidia не будет видна.
 
 Установку драйвера можно проверить в диспетчере устройств. В следующем примере показана успешная конфигурация карты Tesla K80 на виртуальной машине Azure серии NC.
 
@@ -51,7 +51,7 @@ ms.locfileid: "77919402"
 
 1. Откройте командную строку и измените каталог на **:\Program Files\NVIDIA Corporation\NVSMI**.
 
-2. Выполните `nvidia-smi`. Если драйвер установлен, то отобразятся выходные данные, аналогичные приведенным ниже. **GPU-Util** отобразит **0 %** , если только в этот момент графический процессор не выполняет рабочую нагрузку на виртуальной машине. Версия драйвера и сведения о GPU могут отличаться от показанных на изображении.
+2. Выполните `nvidia-smi`. Если драйвер установлен, то отобразятся выходные данные, аналогичные приведенным ниже. **GPU-Util** отобразит **0 %**, если только в этот момент графический процессор не выполняет рабочую нагрузку на виртуальной машине. Версия драйвера и сведения о GPU могут отличаться от показанных на изображении.
 
 ![Состояние устройства NVIDIA](./media/n-series-driver-setup/smi.png)  
 
@@ -68,7 +68,7 @@ ms.locfileid: "77919402"
 Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих [Microsoft MPI](https://docs.microsoft.com/message-passing-interface/microsoft-mpi) или Intel MPI 5.x. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Разработчики приложений с ускорением GPU, предназначенных для графических процессоров NVIDIA Tesla, могут также скачать и установить последнюю версию [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads). Дополнительные сведения см. в [руководстве по установке CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#axzz4ZcwJvqYi).
 

@@ -12,43 +12,43 @@ ms.topic: article
 ms.date: 05/28/2019
 ms.author: juliako
 ms.openlocfilehash: a813c77e81e51bfe13e75ed6c8d0e24b4d0fa645
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "66392927"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
-[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies) в Службах мультимедиа Azure версии 3 позволяют определять протоколы потоковой передачи и параметры шифрования для [указателей потоковой передачи](streaming-locators-concept.md). V3 службы мультимедиа предоставляют несколько готовых политик потоковой передачи, таким образом, чтобы их можно использовать непосредственно для пробной версии или рабочей среде. 
+[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies) в Службах мультимедиа Azure версии 3 позволяют определять протоколы потоковой передачи и параметры шифрования для [указателей потоковой передачи](streaming-locators-concept.md). Media Services v3 предоставляет некоторые предопределенные политики потоковой передачи, так что вы можете использовать их непосредственно для пробной версии или производства. 
 
-В настоящее время доступны стандартные политики потоковой передачи:<br/>
-* «Predefined_DownloadOnly»
-* «Predefined_ClearStreamingOnly»
-* «Predefined_DownloadAndClearStreaming»
-* «Predefined_ClearKey»
-* «Predefined_MultiDrmCencStreaming» 
-* «Predefined_MultiDrmStreaming»
+Доступные в настоящее время предопределенные политики потоковой передачи:<br/>
+* 'Predefined_DownloadOnly'
+* 'Predefined_ClearStreamingOnly'
+* 'Predefined_DownloadAndClearStreaming'
+* 'Predefined_ClearKey'
+* 'Predefined_MultiDrmCencStreaming' 
+* 'Predefined_MultiDrmStreaming'
 
-Следующее дерево принятия решений «» вы сможете выбрать стандартную политику потоковой передачи для вашего сценария.
+Следующее "Дерево решений" поможет вам выбрать предопределенную политику потоковой передачи для вашего сценария.
 
 > [!IMPORTANT]
 > * Свойства **политик потоковой передачи** типа Datetime всегда задаются в формате UTC.
 > * Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. Дополнительные сведения см. в статье [Квоты и ограничения](limits-quotas-constraints.md).
 
-## <a name="decision-tree"></a>Дерево принятия решений
+## <a name="decision-tree"></a>Дерево решений
 
 Щелкните изображение, чтобы просмотреть его полноразмерную версию.  
 
 <a href="./media/streaming-policy/large.png" target="_blank"><img src="./media/streaming-policy/large.png"></a> 
 
-Если шифрование содержимого, необходимо создать [политике ключ содержимого](content-key-policy-concept.md), **политике ключ содержимого** не требуется для очистки потоковой передачи или загрузки. 
+При шифровании содержимого необходимо создать [политику ключей содержимого,](content-key-policy-concept.md) **политика ключей содержимого** не требуется для четкой потоковой передачи или загрузки. 
 
-Если у вас есть особые требования (например, если вы хотите указать разные протоколы, нужно использовать службу доставки пользовательских ключей или понадобится очистить звуковой дорожки с), вы можете [создать](https://docs.microsoft.com/rest/api/media/streamingpolicies/create) настраиваемую политику потоковой передачи. 
+Если у вас есть особые требования (например, если вы хотите указать различные протоколы, необходимо использовать пользовательский сервис доставки ключей или использовать четкую звуковую дорожку), можно [создать](https://docs.microsoft.com/rest/api/media/streamingpolicies/create) пользовательскую политику потоковой передачи. 
 
 ## <a name="get-a-streaming-policy-definition"></a>Получить определение политики потоковой передачи  
 
-Если вы хотите просмотреть определение политики потоковой передачи, используйте [получить](https://docs.microsoft.com/rest/api/media/streamingpolicies/get) и укажите имя политики. Пример:
+Если вы хотите увидеть определение политики потоковой передачи, используйте [Get](https://docs.microsoft.com/rest/api/media/streamingpolicies/get) и укажите имя политики. Пример:
 
 ### <a name="rest"></a>REST
 
@@ -87,4 +87,4 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)
-* [Использование динамического шифрования DRM и службы доставки лицензий](protect-with-drm.md)
+* [Использование службы динамического шифрования DRM и доставки лицензий](protect-with-drm.md)

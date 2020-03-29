@@ -1,5 +1,5 @@
 ---
-title: Azure Relay гибридные подключения-WebSockets в узле
+title: Гибридные соединения Azure Relay - WebSockets в узлах
 description: Написание консольного приложения Node.js для функций Websocket гибридных Azure Relay Azure.
 services: service-bus-relay
 documentationcenter: node
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/01/2018
 ms.author: spelluru
 ms.openlocfilehash: 818db4db082a441877b573fd52361e63becce374
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75352678"
 ---
 # <a name="get-started-with-relay-hybrid-connections-websockets-in-nodejs"></a>Начало работы с гибридными подключениями Azure Relay с использованием WebSocket и Node.js
@@ -35,10 +35,10 @@ ms.locfileid: "75352678"
 4. Создайте клиентское консольное приложение (отправитель) для отправки сообщений.
 5. Запустите приложения. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Node.js](https://nodejs.org/en/).
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+- Подписка Azure. Если у вас его нет, [создайте бесплатную учетную запись,](https://azure.microsoft.com/free/) прежде чем начать.
 
 ## <a name="create-a-namespace"></a>Создание пространства имен
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]

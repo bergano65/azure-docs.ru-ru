@@ -5,13 +5,13 @@ author: roygara
 ms.author: rogarana
 ms.date: 11/15/2017
 ms.topic: conceptual
-ms.service: virtual-machines
+ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: 22df303882e9035fef5041606b6b4b809c1570a3
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: 7298b54d94effaa5bd7e600ec2d8d1045aa263ec
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78970448"
 ---
 # <a name="scalability-and-performance-targets-for-vm-disks-on-linux"></a>Целевые показатели масштабируемости и производительности для дисков ВМ под управлением Linux
@@ -31,6 +31,6 @@ ms.locfileid: "78970448"
 
 [!INCLUDE [azure-storage-limits-vm-disks-premium](../../../includes/azure-storage-limits-vm-disks-premium.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits)

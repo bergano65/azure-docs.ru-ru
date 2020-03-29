@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: dac3037f82c38980c9ac16685aa7fddac68a2e7b
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76720305"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
@@ -26,16 +26,16 @@ ms.locfileid: "76720305"
 
     1. Чтобы убедиться, что входные данные передаются в концентратор событий, с помощью [обозревателя служебной шины](https://code.msdn.microsoft.com/windowsapps/Service-Bus-Explorer-f2abca5a) подключитесь к концентратору событий Azure (если концентратор событий используется как точка ввода).
         
-    1. Используйте кнопку [**Выбор данных**](stream-analytics-sample-data-input.md) для каждого входного аргумента. Скачайте входные образцы данных.
+    1. Используйте кнопку [**«Образец данных»**](stream-analytics-sample-data-input.md) для каждого ввода. Загрузите данные выборки ввода.
         
-    1. Изучите образец данных, чтобы понять форму данных, то есть схему и [типы данных](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics).
+    1. Проинспектировать выборочные данные, чтобы понять форму данных, то есть схему и [типы данных.](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics)
 
-3.  Убедитесь, что в предварительной версии входных данных выбран временной диапазон. Выберите **выбрать диапазон времени**, а затем введите длительность выборки перед тестированием запроса.
+3.  Убедитесь, что вы выбрали временной диапазон в входином предварительном просмотре. Выберите **временной диапазон,** а затем введите продолжительность образца перед тестированием запроса.
 
 ## <a name="malformed-input-events-causes-deserialization-errors"></a>Неправильный формат входных событий, который приводит к ошибкам десериализации 
 Если входной поток задания Stream Analytics содержит сообщения неправильного формата, возникают проблемы десериализации. Например, сообщение может иметь неправильный формат из-за отсутствия круглых или фигурных скобок в объекте JSON или неверного формата метки времени в соответствующем поле. 
  
-Когда задание Stream Analytics получает сообщение неправильного формата из входного набора данных, это сообщение отклоняется, а пользователь получает предупреждение. На плитке **Входные данные** задания Stream Analytics отображается символ предупреждения. Этот символ отображается, пока задание находится в рабочем состоянии:
+Когда задание Stream Analytics получает сообщение неправильного формата из входного набора данных, это сообщение отклоняется, а пользователь получает предупреждение. Предупреждающий символ отображается на плитке **входных данных** вашего задания Stream Analytics. Этот символ отображается, пока задание находится в рабочем состоянии:
 
 ![Плитка "Входные данные" Azure Stream Analytics](media/stream-analytics-malformed-events/stream-analytics-inputs-tile.png)
 
@@ -139,12 +139,12 @@ FROM data
 
 ## <a name="get-help"></a>Получить справку
 
-За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
+Для получения дополнительной помощи попробуйте наш [форум Azure Stream Analytics.](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

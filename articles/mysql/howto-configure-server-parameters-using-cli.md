@@ -1,25 +1,25 @@
 ---
-title: Настройка параметров сервера — Azure CLI — база данных Azure для MySQL
+title: Настройка параметров сервера - Azure CLI - База данных Azure для MyS'L
 description: В этой статье описывается настройка параметров службы в базе данных Azure для MySQL с помощью служебной программы командной строки CLI Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 12/05/2019
-ms.openlocfilehash: 0250810d25b0abb5bf675d8c91f3c0678d895c37
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.date: 3/18/2020
+ms.openlocfilehash: 5f3027909d1c4684e2ef5d1b6e967cb11f570fd0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893167"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80062432"
 ---
 # <a name="customize-server-parameters-by-using-azure-cli"></a>Настройка параметров сервера с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера базы данных Azure для MySQL, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
-- [Сервер базы данных Azure для MySQL.](quickstart-create-mysql-server-database-using-azure-cli.md)
+- [База данных Azure для сервера MyS'L](quickstart-create-mysql-server-database-using-azure-cli.md)
 - Программа командной строки [Azure CLI](/cli/azure/install-azure-cli) (или используйте Azure Cloud Shell в браузере).
 
 ## <a name="list-server-configuration-parameters-for-azure-database-for-mysql-server"></a>Получение списка параметров конфигурации сервера для базы данных Azure для сервера MySQL
@@ -65,7 +65,7 @@ CALL mysql.az_load_timezone();
 ```
 
 > [!IMPORTANT]
-> Необходимо перезапустить сервер, чтобы убедиться, что таблицы часовых поясов заполнены правильно. Чтобы перезапустить сервер, используйте [портал Azure](howto-restart-server-portal.md) или [CLI](howto-restart-server-cli.md).
+> Необходимо перезапустить сервер, чтобы обеспечить правильное заселение столиков часового пояса. Для перезагрузки сервера используйте [портал Azure](howto-restart-server-portal.md) или [CLI.](howto-restart-server-cli.md)
 
 Чтобы просмотреть доступные значения часового пояса, выполните следующую команду.
 

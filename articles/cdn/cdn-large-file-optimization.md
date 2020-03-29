@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 05/01/2018
 ms.author: magattus
 ms.openlocfilehash: 4fe72985a799595908a0ff6bceb1a73dca823c8f
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67593788"
 ---
 # <a name="large-file-download-optimization-with-azure-cdn"></a>Оптимизация загрузки больших файлов с помощью Azure CDN
@@ -110,8 +110,8 @@ ms.locfileid: "67593788"
 
 |    | Общая веб-доставка | Оптимизация больших файлов 
 --- | --- | --- 
-Caching: Positive <br> HTTP 200, 203, 300, <br> 301, 302 и 410 | 7 дней |1 день  
-Caching: Negative <br> HTTP 204, 305, 404 <br> и 405 | Нет | 1 с 
+Кэширование: положительное <br> HTTP 200, 203, 300, <br> 301, 302 и 410 | 7 дней |1 день  
+Кэширование: отрицательное <br> HTTP 204, 305, 404 <br> и 405 | None | 1 с 
 
 ### <a name="deal-with-origin-failure"></a>Устранение сбоев источника
 
@@ -127,10 +127,10 @@ Caching: Negative <br> HTTP 204, 305, 404 <br> и 405 | Нет | 1 с
 --- | --- 
 Поддерживаемые типы файлов | 3g2, 3gp, asf, avi, bz2, dmg, exe, f4v, flv, <br> gz, hdp, iso, jxr, m4v, mkv, mov, mp4, <br> mpeg, mpg, mts, pkg, qt, rm, swf, tar, <br> tgz, wdp, webm, webp, wma, wmv, zip  
 Минимальный размер файла | 10 МБ 
-Максимальный размер файла | 150 ГБ 
+Максимальный размер файла | 150 ГБ 
 Характеристики сервера-источника | Должен поддерживать запросы диапазонов байт 
 
-## <a name="additional-considerations"></a>Дополнительные замечания
+## <a name="additional-considerations"></a>Дополнительные сведения
 
 Рассмотрите следующие дополнительные аспекты для этого типа оптимизации.
 

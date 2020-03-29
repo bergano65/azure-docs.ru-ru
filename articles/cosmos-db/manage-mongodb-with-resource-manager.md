@@ -1,37 +1,37 @@
 ---
-title: Шаблоны диспетчер ресурсов для Azure Cosmos DB API для MongoDB
-description: Используйте шаблоны Azure Resource Manager, чтобы создать и настроить Azure Cosmos DB API для MongoDB.
+title: Шаблоны менеджера ресурсов для API DB Azure Cosmos для MongoDB
+description: Используйте шаблоны менеджера ресурсов Azure для создания и настройки API DB Azure Cosmos dB для MongoDB.
 author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
-ms.openlocfilehash: eb3b0537b01c60e79959494c65306c4a56c331a3
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 531f122679c463b11c84eba2fca9f30b09e0935f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79251860"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80063636"
 ---
-# <a name="manage-azure-cosmos-db-mongodb-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами Azure Cosmos DB MongoDB API с помощью шаблонов Azure Resource Manager
+# <a name="manage-azure-cosmos-db-mongodb-api-resources-using-azure-resource-manager-templates"></a>Управление aPI-ресурсами Azure Cosmos DB MongoDB с помощью шаблонов управления ресурсами Azure
 
-В этой статье описывается, как выполнять различные операции для автоматизации Azure Cosmos DB управления учетными записями, базами данных и контейнерами с помощью шаблонов Azure Resource Manager. В этой статье приводятся примеры для API Azure Cosmos DB только для MongoDB, чтобы найти примеры для других учетных записей типа API. см. раздел Использование шаблонов Azure Resource Manager с API Azure Cosmos DB для [Cassandra](manage-cassandra-with-resource-manager.md), [Gremlin](manage-gremlin-with-resource-manager.md), [SQL](manage-sql-with-resource-manager.md), а также статей [таблиц](manage-table-with-resource-manager.md) .
+В этой статье описывается, как выполнять различные операции для автоматизации управления учетными записями, базами данных и контейнерами Azure Cosmos, используя шаблоны Azure Resource Manager. В этой статье есть примеры aPI-изображаемого API Azure Cosmos DB только для MongoDB, чтобы найти примеры для других учетных записей типа API: используйте шаблоны управления ресурсами Azure Снайс dB для [Cassandra,](manage-cassandra-with-resource-manager.md) [Gremlin](manage-gremlin-with-resource-manager.md), [S'L](manage-sql-with-resource-manager.md), [Таблица](manage-table-with-resource-manager.md) статей.
 
-## Создание Azure Cosmos DB API для учетной записи, базы данных и коллекции MongoDB<a id="create-resource"></a>
+## <a name="create-azure-cosmos-db-api-for-mongodb-account-database-and-collection"></a>Создание API DB Azure Cosmos для учетной записи, базы данных и сбора MongoDB<a id="create-resource"></a>
 
-Создание Azure Cosmos DB ресурсов с помощью шаблона Azure Resource Manager. Этот шаблон создаст учетную запись Azure Cosmos для API MongoDB с двумя коллекциями, которые совместно используют пропускную способность 400 единиц запросов/с на уровне базы данных. Скопируйте шаблон и разверните его, как показано ниже, или откройте коллекцию быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-mongodb/) и выполните развертывание из портал Azure. Можно также загрузить шаблон на локальный компьютер или создать новый шаблон и указать локальный путь с помощью параметра `--template-file`.
+Создавайте dB-ресурсы Azure Cosmos с помощью шаблона управления ресурсами Azure. Этот шаблон создаст учетную запись Azure Cosmos для API MongoDB с двумя коллекциями, которые имеют пропускную способности 400 RU/s на уровне базы данных. Копируйте шаблон и развертывайте, как показано ниже, или посетите [галерею быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-mongodb/) и разместите его с портала Azure. Вы также можете загрузить шаблон на локальном компьютере или создать `--template-file` новый шаблон и указать локальный путь с параметром.
 
 > [!NOTE]
-> Имена учетных записей должны быть в нижнем регистре, 44 или меньше.
-> Чтобы обновить единицы запросов в секунду, повторно отправьте шаблон с обновленными значениями свойств пропускной способности.
+> Имена учетных записей должны быть в нижнем регистре и 44 или меньше символов.
+> Чтобы обновить RU/s, повторно отправьте шаблон с обновленными значениями свойств пропускной способности.
 >
-> Сейчас можно создать только версию 3,2 (то есть учетные записи, использующие конечную точку в формате `*.documents.azure.com`) Azure Cosmos DB API для учетных записей MongoDB с помощью PowerShell, интерфейса командной строки и шаблонов диспетчер ресурсов. Чтобы создать 3,6 версию учетной записи, используйте вместо нее портал Azure.
+> В настоящее время можно создать только версию 3.2 (т.е. учетные записи, использующие конечную точку в формате) `*.documents.azure.com`API Azure Cosmos DB для учетных записей MongoDB с помощью PowerShell и CLI. Для создания 3.6 версии учетных записей используйте шаблоны «Менеджер ресурсов» (см. ниже) или портал Azure.
 
 :::code language="json" source="~/quickstart-templates/101-cosmosdb-mongodb/azuredeploy.json":::
 
-### <a name="deploy-via-the-azure-cli"></a>Развертывание с помощью Azure CLI
+### <a name="deploy-via-the-azure-cli"></a>Развертывание через Azure CLI
 
-Чтобы развернуть шаблон Azure Resource Manager с помощью Azure CLI, **скопируйте** скрипт и выберите **попробовать** открыть Azure Cloud Shell. Чтобы вставить скрипт, щелкните оболочку правой кнопкой мыши и выберите команду **Вставить**:
+Чтобы развернуть шаблон менеджера ресурсов Azure с помощью CLI Azure, **скопируйте** скрипт и **поберите «Попробуйте открыть** — облачную оболочку Azure. Чтобы вставить сценарий, нажмите правой кнопкой оболочки, а затем выберите **Паста:**
 
 ```azurecli-interactive
 
@@ -53,7 +53,7 @@ az group deployment create --resource-group $resourceGroupName \
 az cosmosdb show --resource-group $resourceGroupName --name accountName --output tsv
 ```
 
-Команда `az cosmosdb show` отображает созданную учетную запись Azure Cosmos после ее подготовки. Если вы решили использовать локально установленную версию Azure CLI вместо использования Cloud Shell, см. статью [Azure CLI](/cli/azure/) .
+Команда `az cosmosdb show` показывает недавно созданную учетную запись Azure Cosmos после того, как она была подготовлена. Если вместо оболочки —сяра— местная версия CLI, установленная локально, смотрите статью [Azure CLI.](/cli/azure/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -61,5 +61,5 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 - [Документация по Azure Resource Manager](/azure/azure-resource-manager/)
 - [Схема поставщика ресурсов Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions)
-- [Шаблоны быстрого запуска Azure Cosmos DB](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.DocumentDB&pageNumber=1&sort=Popular)
-- [Устранение распространенных ошибок развертывания Azure Resource Manager](../azure-resource-manager/templates/common-deployment-errors.md)
+- [Шаблоны Azure Cosmos DB Квикстарт](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.DocumentDB&pageNumber=1&sort=Popular)
+- [Устранение проблем общие ошибки в развертывании ресурсов Ресурсов Azure](../azure-resource-manager/templates/common-deployment-errors.md)

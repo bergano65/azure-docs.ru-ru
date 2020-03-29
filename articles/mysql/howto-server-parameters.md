@@ -1,17 +1,17 @@
 ---
-title: Настройка параметров сервера — портал Azure — база данных Azure для MySQL
+title: Настройка параметров сервера - Портал Azure - База данных Azure для MyS'L
 description: В этой статье описывается, как настроить параметры MySQL сервера в базе данных Azure для MySQL с помощью портала Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/05/2019
-ms.openlocfilehash: 8ec6f32d7db0161cef00330aa38601ba9bdb309d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.date: 3/18/2020
+ms.openlocfilehash: fc2b1bbe0a3249014e663d43ee4db87cab5eedcf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79245724"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80063263"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "79245724"
 ![Страница параметров сервера на портале Azure](./media/howto-server-parameters/auzre-portal-server-parameters.png)
 3. Найдите все параметры, которые необходимо настроить. Просмотрите столбец **Описание**, чтобы понять назначение и допустимые значения.
 ![Раскрывающийся список для перечисляемого типа](./media/howto-server-parameters/3-toggle_parameter.png)
-4. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
+4. Нажмите **Сохранить,** чтобы сохранить изменения.
 ![Сохранение или отмена изменений](./media/howto-server-parameters/4-save_parameters.png)
 5. Если вы сохранили новые значения параметров, всегда можно восстановить значения по умолчанию, выбрав **Сбросить все к значениям по умолчанию**.
 ![Сбросить все к значениям по умолчанию](./media/howto-server-parameters/5-reset_parameters.png)
@@ -35,9 +35,9 @@ ms.locfileid: "79245724"
 
 ## <a name="non-configurable-server-parameters"></a>Ненастраиваемые параметры сервера
 
-Размер пула буферов InnoDB нельзя настроить и привязать к [ценовой категории](concepts-service-tiers.md).
+Размер пула InnoDB не настраивается и привязан к вашему [уровню ценообразования.](concepts-service-tiers.md)
 
-|**Ценовая категория**|**Виртуальные ядра**|**Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 4 ТБ хранилища)**| **Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 16 ТБ хранилища)**|
+|**Уровень цен**|**Виртуальные ядра**|**Размер буферного пула InnoDB в МБ <br>(серверы, поддерживающие до 4 ТБ-хранилища)**| **Размер буферного пула InnoDB в МБ <br>(серверы, поддерживающие до 16 ТБ-хранилища)**|
 |:---|---:|---:|---:|
 |Basic| 1| 832| |
 |Basic| 2| 2560| |
@@ -78,7 +78,7 @@ CALL mysql.az_load_timezone();
 ```
 
 > [!IMPORTANT]
-> Необходимо перезапустить сервер, чтобы убедиться, что таблицы часовых поясов заполнены правильно. Чтобы перезапустить сервер, используйте [портал Azure](howto-restart-server-portal.md) или [CLI](howto-restart-server-cli.md).
+> Необходимо перезапустить сервер, чтобы обеспечить правильное заселение столиков часового пояса. Для перезагрузки сервера используйте [портал Azure](howto-restart-server-portal.md) или [CLI.](howto-restart-server-cli.md)
 
 Чтобы просмотреть доступные значения часового пояса, выполните следующую команду.
 

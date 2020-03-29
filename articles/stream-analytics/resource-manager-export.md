@@ -1,6 +1,6 @@
 ---
-title: Экспорт шаблона Azure Resource Manager задания Azure Stream Analytics
-description: В этой статье описывается, как экспортировать шаблон Azure Resource Manager для задания Azure Stream Analytics.
+title: Экспорт шаблона управления ресурсами отдела ресурсов Azure Stream Analytics
+description: В этой статье описывается, как экспортировать шаблон менеджера ресурсов Azure для работы в Azure Stream Analytics.
 services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
@@ -8,59 +8,59 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.openlocfilehash: 52ea7b45d0dcdb3ae16b8212557ba6ab3344ff15
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78968935"
 ---
-# <a name="export-an-azure-stream-analytics-job-azure-resource-manager-template"></a>Экспорт шаблона Azure Resource Manager задания Azure Stream Analytics
+# <a name="export-an-azure-stream-analytics-job-azure-resource-manager-template"></a>Экспорт шаблона управления ресурсами отдела ресурсов Azure Stream Analytics
 
-[Шаблоны Azure Resource Manager](../azure-resource-manager/templates/overview.md) позволяют реализовать инфраструктуру как код. Шаблон — это файл нотация объектов JavaScript (JSON), который определяет инфраструктуру и конфигурацию ресурсов. Вы указываете развертываемые ресурсы и свойства этих ресурсов.
+[Шаблоны Менеджер ресурсов Azure](../azure-resource-manager/templates/overview.md) позволяют реализовать инфраструктуру в качестве кода. Шаблон представляет собой файл JavaScript Object Notation (JSON), определяющий инфраструктуру и конфигурацию ресурсов. Вы указываете ресурсы для развертывания и свойства для этих ресурсов.
 
-Вы можете повторно развернуть задание Azure Stream Analytics, экспортировав шаблон Azure Resource Manager.
+Можно передислоцировать задание Azure Stream Analytics, экспортируя шаблон управления ресурсами Azure.
 
-## <a name="open-a-job-in-vs-code"></a>Открытие задания в VS Code
+## <a name="open-a-job-in-vs-code"></a>Открыть работу в VS Code
 
-Перед экспортом шаблона необходимо сначала открыть существующее задание Stream Analytics в Visual Studio Code. 
+Прежде чем экспортировать шаблон, необходимо сначала открыть существующую работу Stream Analytics в Visual Studio Code. 
 
-Чтобы экспортировать задание в локальный проект, выберите задание, которое необходимо экспортировать, в **Stream Analytics Explorer** в портал Azure. На странице **запрос** выберите **Открыть в Visual Studio**. Затем выберите **Visual Studio Code**.
+Чтобы экспортировать задание в локальный проект, найдите вакансию, которую вы хотите экспортировать в **Stream Analytics Explorer** на портале Azure. На странице **Запроса** выберите **Open in Visual Studio**. Затем выберите **визуальный код студии**.
 
-![Открыть задание Stream Analytics в Visual Studio Code](./media/resource-manager-export/open-job-vs-code.png)
+![Работа Open Stream Analytics в коде Visual Studio](./media/resource-manager-export/open-job-vs-code.png)
 
-Дополнительные сведения об использовании Visual Studio Code для управления заданиями Stream Analytics см. в [руководстве по Visual Studio Code](quick-create-vs-code.md).
+Для получения дополнительной информации об использовании Visual [Visual Studio Code quickstart](quick-create-vs-code.md)Studio Code для управления рабочими местами Stream Analytics см.
 
 ## <a name="compile-the-script"></a>Компиляция скрипта 
 
-Следующим шагом является компиляция скрипта задания в шаблон Azure Resource Manager. Перед компиляцией скрипта убедитесь, что у задания есть хотя бы один вход и один выход. Если входные или выходные данные не настроены, необходимо сначала настроить входные и выходные данные.
+Следующим шагом является компиляция шаблона задания в шаблон Azure Resource Manager. Прежде чем компилировать сценарий, убедитесь, что ваша работа имеет по крайней мере один вход и один выход настроен. Если вход ные или выходные не настроены, необходимо сначала настроить вход ные и выходные данные.
 
-1. В Visual Studio Code перейдите к файлу *преобразования. asaql* задания.
+1. В Visual Studio Code перейдите к файлу *Transformation.asaql* вашей работы.
 
-   ![Файл преобразования. asaql в Visual Studio Code](./media/resource-manager-export/transformation-asaql.png)
+   ![Файл Transformation.asaql в коде Visual Studio](./media/resource-manager-export/transformation-asaql.png)
 
-1. Щелкните правой кнопкой мыши файл *преобразование. asaql* и в меню выберите **ASA: компилировать скрипт** .
+1. Нажмите правой кнопкой мыши на файл *Transformation.asaql* и выберите **ASA: Составить сценарий** из меню.
 
-1. Обратите внимание, что в рабочей области задания Stream Analytics отображается папка **deploy (развертывание** ).
+1. Обратите внимание, что папка **Deploy** отображается в рабочей области работы Stream Analytics.
 
-1. Изучите файл *JobTemplate. JSON* , который является шаблоном управления ресурсами Azure, который используется для развертывания.
+1. Исследуйте файл *JobTemplate.json,* который является шаблоном управления ресурсами Azure, используемым для развертывания.
 
-## <a name="complete-the-parameters-file"></a>Завершение работы с файлом параметров
+## <a name="complete-the-parameters-file"></a>Завершение файла параметров
 
-Затем заполните файл параметров шаблона управления ресурсами Azure.
+Затем завершите файл параметров шаблона управления ресурсами Azure.
 
-1. Откройте файл *JobTemplate. parameters. JSON* , расположенный в папке **deploy** рабочей области задания Stream Analytics, в Visual Studio Code.
+1. Откройте файл *JobTemplate.parameters.json,* расположенный в папке **Deploy** рабочей области Стрим Аналитики в Visual Studio Code.
 
-1. Обратите внимание, что входные и выходные ключи имеют значение null. Замените значения NULL фактическими ключами доступа для входных и выходных ресурсов.
+1. Обратите внимание, что вхотворные и выходные клавиши являются недействительными. Замените значения null с фактическими ключами доступа для вхотворных и выходных ресурсов.
 
 1. Сохраните файл параметров.
 
 ## <a name="deploy-using-templates"></a>Развертывание с помощью шаблонов
 
-Вы можете развернуть задание Azure Stream Analytics с помощью шаблонов Azure Resource Manager, созданных в предыдущем разделе.
+Вы готовы развернуть задание Azure Stream Analytics с помощью шаблонов Управления ресурсами Azure, созданных в предыдущем разделе.
 
-В окне PowerShell выполните следующую команду. Не забудьте реаплце *ResourceGroupName*, *TemplateFile*и *TemplateParameterFile* с фактическим именем группы ресурсов, а также полный путь к файлам *JobTemplate. JSON* и *JobTemplate. parameters. JSON* в **папке Deploy (развертывание** ) рабочей области задания.
+В окне PowerShell запустите следующую команду. Не забудьте пересмотреть *ResourceGroupName*, *TemplateFile*, и *TemplateParameterFile* с вашим фактическим названием группы ресурсов, и полный путь файла к *JobTemplate.json* и *JobTemplate.parameters.json* файлы в **Развертывание Folder** вашего рабочего пространства.
 
-Если вы не настроили Azure PowerShell, выполните действия, описанные в разделе [установка Azure PowerShell модуля](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+Если у вас нет настроенной Azure PowerShell, выполните последующие действия в [модуле Установить Azure PowerShell.](https://docs.microsoft.com/powershell/azure/install-Az-ps)
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName "<your resource group>" -TemplateFile "<path to JobTemplate.json>" -TemplateParameterFile "<path to JobTemplate.parameters.json>"
@@ -68,6 +68,6 @@ New-AzResourceGroupDeployment -ResourceGroupName "<your resource group>" -Templa
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Тестирование Azure Stream Analytics заданий локально с входными данными в режиме реального времени с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)
+* [Тестирование Лазурный поток Analytics рабочих мест локально с живым вхотвочонным использованием Visual Studio code](visual-studio-code-local-run-live-input.md)
 
-* [Просмотр Azure Stream Analytics заданий с помощью Visual Studio Code (Предварительная версия)](visual-studio-code-explore-jobs.md)
+* [Исследуйте вакансии Azure Stream Analytics с помощью визуального кода студии (Предварительный просмотр)](visual-studio-code-explore-jobs.md)

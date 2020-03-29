@@ -1,5 +1,5 @@
 ---
-title: Получение данных об использовании виртуальной машины Azure с помощью REST API
+title: Получите данные об использовании виртуальной машины Azure с помощью API REST
 description: Используйте API REST Azure для сбора метрик использования для виртуальной машины.
 author: rloutlaw
 ms.service: virtual-machines
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: routlaw
 ms.openlocfilehash: 07e91f3d9fd32f01db91415bfd90746cd1aef403
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78944753"
 ---
 # <a name="get-virtual-machine-usage-metrics-using-the-rest-api"></a>Получение метрик использования виртуальной машины с помощью REST API
@@ -35,15 +35,15 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Задайте допустимый [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
+|*Тип контента:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Авторизации:*|Обязательный элемент. Задайте допустимый  [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |  
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
 | name | Описание |
 | :--- | :---------- |
-| subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
-| resourceGroupName | Имя группы ресурсов Azure, связанное с ресурсом. Вы можете получить это значение из API-интерфейса Azure Resource Manager, CLI или портала. |
+| subscriptionId | Идентификатор подписки Azure. Если у вас есть несколько подписок, см [Работа с несколькими подписками](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
+| имя_группы_ресурсов | Имя группы ресурсов Azure, связанное с ресурсом. Вы можете получить это значение из API-интерфейса Azure Resource Manager, CLI или портала. |
 | vmname | Имя виртуальной машины. |
 | metricnames | Разделенный запятыми список допустимых [метрик Load Balancer](/azure/load-balancer/load-balancer-standard-diagnostics). |
 | api-version | Версия API для использования в запросе.<br /><br /> В этом документе рассматривается API версии `2018-01-01`, которая включена в приведенный выше URL-адрес.  |

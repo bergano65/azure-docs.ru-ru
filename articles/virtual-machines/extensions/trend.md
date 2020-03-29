@@ -1,5 +1,5 @@
 ---
-title: Установка тенденции Micro Deep Security на виртуальной машине
+title: Установка Trend Micro Глубокая безопасность на VM
 description: В этой статье описывается установка и настройка защиты Trend Micro на виртуальной машине, созданной с помощью классической модели развертывания в Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/20/2018
 ms.author: akjosh
 ms.openlocfilehash: cffd2eab3a616b4d16d847d0f2e1a26655f40459
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77919929"
 ---
 # <a name="how-to-install-and-configure-trend-micro-deep-security-as-a-service-on-a-windows-vm"></a>Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows
@@ -57,7 +57,7 @@ ms.locfileid: "77919929"
 ## <a name="install-the-deep-security-agent-on-an-existing-vm"></a>Установка агента Deep Security Agent на существующей виртуальной машине
 Чтобы установить агент на существующей виртуальной машине, требуется следующее.
 
-* Модуль Azure PowerShell версии не ниже 0.8.2, установленный на локальном компьютере. Установленную версию Azure PowerShell можно проверить с помощью команды **Get-Module azure | format-table version**. Указания и ссылку на последнюю версию см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview). Войдите в свою подписку Azure с помощью `Add-AzureAccount`.
+* Модуль Azure PowerShell версии не ниже 0.8.2, установленный на локальном компьютере. Установленную версию Azure PowerShell можно проверить с помощью команды **Get-Module azure | format-table version**. Для получения инструкций и ссылки на последнюю версию см. [Как установить и настроить Azure PowerShell.](/powershell/azure/overview) Войдите в свою подписку Azure с помощью `Add-AzureAccount`.
 * Агент ВМ, установленный на конечной виртуальной машине.
 
 Сначала убедитесь, что агент ВМ уже установлен. Укажите имя облачной службы и имя виртуальной машины, а затем выполните следующие команды в командной строке Azure PowerShell уровня администратора. Замените все содержимое внутри кавычек, включая знаки < и >.
@@ -77,7 +77,7 @@ ms.locfileid: "77919929"
 
     Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity –Version $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После установки агента потребуется несколько минут для его запуска. Затем необходимо активировать Deep Security на виртуальной машине, чтобы можно было осуществлять управление с помощью Deep Security Manager. Дополнительные указания см. в следующих статьях:
 
 * статья Trend об этом решении, [Мгновенное включение облачной защиты для Microsoft Azure](https://go.microsoft.com/fwlink/?LinkId=404101)
@@ -87,7 +87,7 @@ ms.locfileid: "77919929"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 [Как войти в виртуальную машину под управлением Windows Server]
 
-[Расширения и компоненты виртуальных машин Azure]
+[Расширения и функции Azure VM]
 
 <!-- Image references -->
 [1]: ./media/trend/new_vm_Blade3.png
@@ -96,4 +96,4 @@ ms.locfileid: "77919929"
 
 <!-- Link references -->
 [Как войти в виртуальную машину под управлением Windows Server]:../windows/classic/connect-logon.md
-[Расширения и компоненты виртуальных машин Azure]: https://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
+[Расширения и функции Azure VM]: https://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409

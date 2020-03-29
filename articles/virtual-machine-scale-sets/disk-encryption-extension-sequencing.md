@@ -1,5 +1,5 @@
 ---
-title: Последовательное шифрование дисков Azure и масштабируемых наборов виртуальных машин Azure
+title: Шифрование azure Disk и виртуальная шкала виртуальной машины Azure устанавливают секвенирование расширения
 description: В этой статье приведены инструкции по включению шифрования дисков Microsoft Azure для виртуальных машин IaaS под управлением Linux.
 author: msmbaldwin
 ms.service: virtual-machine-scale-sets
@@ -7,28 +7,28 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 10/10/2019
 ms.openlocfilehash: aa638b86b0788b8c274f9dcb3c04c1fc385b4ae1
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76279034"
 ---
-# <a name="use-azure-disk-encryption-with-virtual-machine-scale-set-extension-sequencing"></a>Использование шифрования дисков Azure с виртуализацией расширения масштабируемого набора виртуальных машин
+# <a name="use-azure-disk-encryption-with-virtual-machine-scale-set-extension-sequencing"></a>Use Azure Disk Encryption with virtual machine scale set extension sequencing (Использование шифрования дисков Azure с помощью виртуализации расширения масштабируемого набора виртуальных машин)
 
-Расширения, такие как шифрование дисков Azure, можно добавить в масштабируемый набор виртуальных машин Azure в указанном порядке. Для этого используйте [виртуализацию расширения](virtual-machine-scale-sets-extension-sequencing.md). 
+Расширения, такие как шифрование диска Azure, могут быть добавлены в масштаб виртуальных машин Azure, установленный в определенном порядке. Для этого используйте [секвенирование расширения.](virtual-machine-scale-sets-extension-sequencing.md) 
 
-Как правило, шифрование должно применяться к диску.
+Как правило, шифрование должно применяться к диску:
 
-- После расширений или пользовательских сценариев, подготавливающих диски или тома.
-- Перед расширениями или пользовательскими скриптами, которые обращаются к данным на зашифрованных дисках или томах или используют их.
+- После расширения или пользовательских скриптов, которые готовят диски или тома.
+- Перед расширением или пользовательскими скриптами, которые получают доступ к данным или потребляют на зашифрованных дисках или томах.
 
-В любом случае свойство `provisionAfterExtensions` указывает, какое расширение следует добавить позже в последовательности.
+В любом случае `provisionAfterExtensions` свойство обозначает, какое расширение должно быть добавлено позже в последовательности.
 
-## <a name="sample-azure-templates"></a>Примеры шаблонов Azure
+## <a name="sample-azure-templates"></a>Пример шаблонов Azure
 
-Если вы хотите, чтобы шифрование дисков Azure применялось после другого расширения, укажите свойство `provisionAfterExtensions` в блоке расширения AzureDiskEncryption. 
+Если вы хотите, чтобы шифрование Azure Disk `provisionAfterExtensions` было применено после другого расширения, поместите свойство в блок расширения AzureDiskEncryption. 
 
-Ниже приведен пример с использованием "CustomScriptExtension" — скрипт PowerShell, который инициализирует и форматирует диск Windows, за которым следует "AzureDiskEncryption":
+Вот пример с помощью "CustomScriptExtension", скрипт Powershell, который инициализирует и форматирует диск Windows, а затем "AzureDiskEncryption":
 
 ```json
 "virtualMachineProfile": {
@@ -84,9 +84,9 @@ ms.locfileid: "76279034"
 }
 ```
 
-Если вы хотите, чтобы шифрование дисков Azure применялось перед другим расширением, поставьте свойство `provisionAfterExtensions` в блок расширения, чтобы следовать ему.
+Если вы хотите, чтобы шифрование Azure Disk `provisionAfterExtensions` было применено до другого расширения, поместите свойство в блок расширения.
 
-Ниже приведен пример с использованием "AzureDiskEncryption", за которым следует "VMDiagnosticsSettings", расширение, которое предоставляет возможности мониторинга и диагностики на виртуальной машине Azure под управлением Windows:
+Вот пример использования "AzureDiskEncryption", а затем "VMDiagnosticsSettings", расширение, которое обеспечивает возможности мониторинга и диагностики на Основе Windows Azure VM:
 
 
 ```json
@@ -151,13 +151,13 @@ ms.locfileid: "76279034"
 }
 ```
 
-Более подробные сведения о шаблоне см. в следующих статьях:
-* Примените расширение шифрования дисков Azure после пользовательского скрипта оболочки, который форматирует диск (Linux): [deploy-екстсек-Linux-ADE-After-CustomScript. JSON.](https://github.com/Azure-Samples/compute-automation-configurations/blob/master/ade-vmss/deploy-extseq-linux-ADE-after-customscript.json)
+Для более углубленного шаблона см.:
+* Примените расширение azure Disk Encryption после пользовательского скрипта оболочки, который форматирует диск (Linux): [развертывание-extseq-linux-ADE-after-customscript.json](https://github.com/Azure-Samples/compute-automation-configurations/blob/master/ade-vmss/deploy-extseq-linux-ADE-after-customscript.json)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о виртуализации расширений: [Подготовка расширения последовательности в масштабируемых наборах виртуальных машин](virtual-machine-scale-sets-extension-sequencing.md).
-- Дополнительные сведения о свойстве `provisionAfterExtensions`: [ссылка на шаблон Microsoft. COMPUTE virtualMachineScaleSets/Extensions](/azure/templates/microsoft.compute/2018-10-01/virtualmachinescalesets/extensions).
+- Подробнее о секвенировании расширений: [Подготовка расширения последовательности в наборах виртуальных машин.](virtual-machine-scale-sets-extension-sequencing.md)
+- Узнайте больше `provisionAfterExtensions` об объекте недвижимости: [ссылка на шаблон шаблона Microsoft.Compute virtualMachineScaleSets/extensions.](/azure/templates/microsoft.compute/2018-10-01/virtualmachinescalesets/extensions)
 - [Azure Disk Encryption for Virtual Machine Scale Sets](disk-encryption-overview.md) (Шифрование дисков Azure для масштабируемых наборов виртуальных машин)
 - [Encrypt OS and attached data disks in a virtual machine scale set with the Azure CLI](disk-encryption-cli.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI)
 - [Encrypt OS and attached data disks in a virtual machine scale set with Azure PowerShell](disk-encryption-powershell.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure PowerShell)

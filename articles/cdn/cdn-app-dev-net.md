@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 7e3ad3a5928b36c221bb83b1c4012c3c9e14f35d
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67594177"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
@@ -44,14 +44,14 @@ ms.locfileid: "67594177"
 
 В Visual Studio 2015 щелкните **Файл** > **Создать** > **Проект**. Откроется диалоговое окно создания проекта.  В области слева разверните узел **Visual C#** и выберите **Windows**.  В центральной области щелкните **Консольное приложение**.  Присвойте проекту имя и нажмите кнопку **ОК**.  
 
-![Новый проект](./media/cdn-app-dev-net/cdn-new-project.png)
+![Создать проект](./media/cdn-app-dev-net/cdn-new-project.png)
 
 В нашем проекте будут использоваться некоторые библиотеки Azure, содержащиеся в пакетах Nuget.  Давайте добавим их в проект.
 
 1. В меню **Сервис** выберите **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**.
    
     ![Управление пакетами NuGet](./media/cdn-app-dev-net/cdn-manage-nuget.png)
-2. В консоли диспетчера пакетов выполните приведенную ниже команду, чтобы установить **библиотеку аутентификации Active Directory (ADAL)** .
+2. В консоли диспетчера пакетов выполните приведенную ниже команду, чтобы установить **библиотеку аутентификации Active Directory (ADAL)**.
    
     `Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory`
 3. Выполните следующую команду, чтобы установить **библиотеки управления Azure CDN**.
@@ -73,7 +73,7 @@ ms.locfileid: "67594177"
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
     using Microsoft.Rest;
     ```
-2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  В классе `Program` перед методом `Main` добавьте приведенный ниже код.  Обязательно замените заполнители, включая **&lt;угловые скобки&gt;** , собственными значениями.
+2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  В классе `Program` перед методом `Main` добавьте приведенный ниже код.  Обязательно замените заполнителей, в том числе ** &lt;угловые&gt;скобки,** с вашими собственными значениями по мере необходимости.
    
     ```csharp
     //Tenant app constants
@@ -335,7 +335,7 @@ private static void PromptDeleteCdnProfile(CdnManagementClient cdn)
 
 ![Завершение программы](./media/cdn-app-dev-net/cdn-program-running-2.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Чтобы просмотреть описываемый в этом руководстве готовый проект, [скачайте пример](https://code.msdn.microsoft.com/Azure-CDN-Management-1f2fba2c).
 
 Чтобы найти дополнительную документацию по библиотеке управления Azure CDN для .NET, воспользуйтесь [справкой на сайте MSDN](/dotnet/api/overview/azure/cdn).

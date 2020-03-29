@@ -1,6 +1,6 @@
 ---
-title: Справочник по синтаксису SQLRuleAction в служебной шине Azure
-description: В этой статье содержится справочник по синтаксису SQLRuleAction. Действия записываются в синтаксисе на основе языка SQL, который выполняется для сообщения, переданного через посредника.
+title: Ссылка на синтаксис в сервисном автобусе Azure
+description: В этой статье содержится ссылка на синтаксис S'LRuleAction. Действия написаны синтаксисом на языке S'L, который выполняется против посредника.
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
@@ -15,13 +15,13 @@ ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 37615e39577ef60cccc9df91b61a6aa24ca794d0
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76759634"
 ---
-# <a name="sqlruleaction-syntax-reference-for-azure-service-bus"></a>Справочник по синтаксису SQLRuleAction для служебной шины Azure
+# <a name="sqlruleaction-syntax-reference-for-azure-service-bus"></a>Ссылка на синтаксис с S'LRuleAction для сервиса Azure Bus
 
 *SqlRuleAction* — это экземпляр класса [SqlRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction). Он представляет набор действий, написанных по правилам синтаксиса на основе языка SQL, выполняемых с [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage).   
   

@@ -1,5 +1,5 @@
 ---
-title: Создание среды Linux с Azure CLI
+title: Создание среды Linux с помощью Azure CLI
 description: Узнайте, как с помощью Azure CLI создать "с нуля" хранилище, виртуальную машину Linux, виртуальную сеть и подсеть, балансировщик нагрузки, сетевую карту, общедоступный IP-адрес и группу безопасности сети.
 author: cynthn
 ms.service: virtual-machines-linux
@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 12/14/2017
 ms.author: cynthn
 ms.openlocfilehash: 7ee4674f5e7c04709256459c3417a1379a65aedc
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969564"
 ---
 # <a name="create-a-complete-linux-virtual-machine-with-the-azure-cli"></a>Создание полнофункциональной виртуальной машины Linux с помощью Azure CLI
@@ -21,7 +21,7 @@ ms.locfileid: "78969564"
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myVnet* и *myVM*.
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
-Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов нужно создать перед виртуальной машиной и вспомогательными ресурсами виртуальной сети. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов нужно создать перед виртуальной машиной и вспомогательными ресурсами виртуальной сети. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Следующий пример создает группу ресурсов под названием *myResourceGroup* в *восточном* месте:
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -473,7 +473,7 @@ az vm availability-set create \
 
 Укажите ключ SSH для аутентификации. Если у вас нет пары открытых ключей SSH, их [можно создать](mac-create-ssh-keys.md) или использовать параметр `--generate-ssh-keys` для их создания. Если у вас уже есть пара ключей, этот параметр будет использовать имеющиеся ключи в `~/.ssh`.
 
-Создайте виртуальную машину, собрав воедино все ресурсы и информацию с помощью команды [az vm create](/cli/azure/vm). В следующем примере создается виртуальная машина с именем *myVM*.
+Создайте виртуальную машину, собрав воедино все ресурсы и информацию с помощью команды [az vm create](/cli/azure/vm). Следующий пример создает VM под названием *myVM:*
 
 ```azurecli
 az vm create \
@@ -550,7 +550,7 @@ sudo apt-get install -y nginx
 ![Сайт NGINX по умолчанию на виртуальной машине](media/create-cli-complete/nginx.png)
 
 ## <a name="export-as-a-template"></a>Экспорт в качестве шаблона
-Допустим, вам требуется создать дополнительную среду разработки с теми же параметрами или соответствующую рабочую среду. Resource Manager использует шаблоны JSON, которые определяют все параметры среды. Можно полностью создавать среды, ссылаясь на этот шаблон JSON. Вы можете [создавать шаблоны JSON вручную](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или экспортировать существующую среду для создания шаблона JSON автоматически. Чтобы экспортировать группу ресурсов, используйте команду [az group export](/cli/azure/group) следующим образом:
+Допустим, вам требуется создать дополнительную среду разработки с теми же параметрами или соответствующую рабочую среду. Resource Manager использует шаблоны JSON, которые определяют все параметры среды. Можно полностью создавать среды, ссылаясь на этот шаблон JSON. Шаблоны JSON можно [создавать вручную](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или экспортировать существующую среду для создания шаблона JSON для вас. Чтобы экспортировать группу ресурсов, используйте команду [az group export](/cli/azure/group) следующим образом:
 
 ```azurecli
 az group export --name myResourceGroup > myResourceGroup.json

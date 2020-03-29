@@ -1,6 +1,6 @@
 ---
 title: Перемещение данных в хранилище BLOB-объектов Azure и из него — процесс обработки и анализа данных группы
-description: Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью Обозреватель службы хранилища Azure, AzCopy, Python и SSIS.
+description: Перемещение данных в и из хранилища Azure Blob с помощью Azure Storage Explorer, AzCopy, Python и SSIS.
 services: machine-learning
 author: marktab
 manager: marktab
@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: fc58651bcb3b266b981fb953fd7341427d47fb2c
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76717578"
 ---
 # <a name="move-data-to-and-from-azure-blob-storage"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него
@@ -27,9 +27,9 @@ ms.locfileid: "76717578"
 В следующих статьях описано, как перемещать данные из хранилища BLOB-объектов Azure и в него с помощью разных технологий.
 
 * [Обозреватель хранилищ Azure](move-data-to-azure-blob-using-azure-storage-explorer.md)
-* [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)
+* [Azcopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)
 * [Python](move-data-to-azure-blob-using-python.md)
-* [MSSQL Integration Services](move-data-to-azure-blob-using-ssis.md)
+* [Служб ssis](move-data-to-azure-blob-using-ssis.md)
 
 Выбор метода зависит от сценария. Статья [Сценарии для расширенной аналитики в Машинном обучении Azure](plan-sample-scenarios.md) поможет определить ресурсы, необходимые для различных рабочих процессов обработки и анализа данных в рамках расширенного аналитического процесса.
 
@@ -49,9 +49,9 @@ ms.locfileid: "76717578"
 
 Дополнительные сведения см. в статье [Создание прогнозных конвейеров с помощью действий Машинного обучения Azure](../../data-factory/transform-data-using-machine-learning.md).
 
-## <a name="prerequisites"></a>предварительные требования
-Для выполнения инструкций из этой статьи у вас должна быть подписка Azure, учетная запись хранения и соответствующий ключ к хранилищу данных для этой учетной записи. Перед отправкой и загрузкой данных необходимо указать имя учетной записи хранения Azure и ключ учетной записи.
+## <a name="prerequisites"></a>Предварительные требования
+Для выполнения инструкций из этой статьи у вас должна быть подписка Azure, учетная запись хранения и соответствующий ключ к хранилищу данных для этой учетной записи. Перед загрузкой/загрузкой данных необходимо знать имя и ключ учетной записи хранилища Azure.
 
-* Сведения о настройке подписки Azure см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
-* Инструкции по созданию учетной записи хранения и сведениям об учетных записях и ключах [см. в](../../storage/common/storage-create-storage-account.md)этой статье.
+* Чтобы настроить подписку Azure, [см.](https://azure.microsoft.com/pricing/free-trial/)
+* Для получения инструкций по созданию учетной записи [About Azure Storage accounts](../../storage/common/storage-create-storage-account.md)хранилища и получению учетной записи и ключевой информации см.
 

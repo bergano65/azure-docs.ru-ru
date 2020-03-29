@@ -1,5 +1,5 @@
 ---
-title: Подробные инструкции по созданию пары ключей SSH
+title: Подробные шаги по созданию пары ключей SSH
 description: Узнайте, как создать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure и как управлять этими ключами.
 author: cynthn
 ms.service: virtual-machines-linux
@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 12/06/2019
 ms.author: cynthn
 ms.openlocfilehash: c34a88c39104d3af2c5747d1cd6d3dea6929379a
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969543"
 ---
 # <a name="detailed-steps-create-and-manage-ssh-keys-for-authentication-to-a-linux-vm-in-azure"></a>Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами 
@@ -64,7 +64,7 @@ ssh-keygen \
 
 `ssh-keygen` — программа, с помощью которой создаются ключи.
 
-`-m PEM` = форматировать ключ как PEM
+`-m PEM`форматключа ключа как PEM
 
 `-t rsa` — тип создаваемого ключа; в данном случае создается ключ в формате RSA.
 
@@ -236,5 +236,5 @@ ssh myvm
 Следующий шаг — создание виртуальных машин Linux Azure с помощью нового открытого ключа SSH. Виртуальные машины Azure, созданные с использованием открытого ключа SSH в качестве данных для входа, защищены лучше, чем виртуальные машины, созданные с помощью метода по умолчанию, предусматривающего использование паролей.
 
 * [Создание виртуальной машины Linux с помощью портала Azure](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Создание виртуальной машины Linux с помощью Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Создание виртуальной машины Linux с Помощью Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Создание виртуальной машины Linux с помощью шаблона Azure](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

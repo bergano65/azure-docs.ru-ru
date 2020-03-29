@@ -1,6 +1,6 @@
 ---
-title: Управление службой подготовки устройств центра Интернета вещей с помощью Azure CLI & расширения IoT
-description: Узнайте, как использовать Azure CLI и расширение Интернета вещей для управления службой подготовки устройств центра Интернета вещей (DPS)
+title: Управление службой обеспечения устройств Концентратора IoT с помощью Azure CLI & расширение IoT
+description: Узнайте, как использовать Azure CLI и расширение IoT для управления службой обеспечения устройств IoT Hub (DPS)
 author: chrissie926
 ms.author: menchi
 ms.date: 01/17/2018
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: 03ec0b41ad910ff0d1dcdc17148e01ec94ea9fb0
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78674516"
 ---
 # <a name="how-to-use-azure-cli-and-the-iot-extension-to-manage-the-iot-hub-device-provisioning-service"></a>Как управлять Службой подготовки устройств Центра Интернета вещей с помощью Azure CLI и расширения Интернета вещей
@@ -32,7 +32,7 @@ ms.locfileid: "78674516"
 
 ### <a name="install-the-azure-cli"></a>Установка Azure CLI
 
-Выполните [инструкции по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), чтобы настроить Azure CLI в своей среде. По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az –version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. Простой способ установки в Windows — скачать и установить [MSI](https://aka.ms/InstallAzureCliWindows).
+Выполните [инструкции по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), чтобы настроить Azure CLI в своей среде. Как минимум, ваша версия Azure CLI должна быть 2.0.70 или выше. Для проверки используйте `az –version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. Простой способ установки в Windows — скачать и установить [MSI](https://aka.ms/InstallAzureCliWindows).
 
 ### <a name="install-iot-extension"></a>Установка расширения IoT
 
@@ -46,20 +46,20 @@ ms.locfileid: "78674516"
 Перед началом работы выполните описанные выше шаги по установке. Если у вас нет учетной записи Azure, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?v=17.39a). 
 
 
-### <a name="1-log-in-to-the-azure-account"></a>1. Войдите в учетную запись Azure.
+### <a name="1-log-in-to-the-azure-account"></a>1. Войти в учетную запись Azure
   
     az login
 
 ![login](./media/how-to-manage-dps-with-cli/login.jpg)
 
-### <a name="2-create-a-resource-group-iothubblogdemo-in-eastus"></a>2. Создание группы ресурсов Иосубблогдемо в eastus
+### <a name="2-create-a-resource-group-iothubblogdemo-in-eastus"></a>2. Создать ресурсную группу IoTHubBlogDemo в Восточном
 
     az group create -l eastus -n IoTHubBlogDemo
 
 ![Создать группу ресурсов](./media/how-to-manage-dps-with-cli/create-resource-group.jpg)
 
 
-### <a name="3-create-two-device-provisioning-services"></a>3. Создание двух служб подготовки устройств
+### <a name="3-create-two-device-provisioning-services"></a>3. Создание двух служб по обеспечению устройств
 
     az iot dps create --resource-group IoTHubBlogDemo --name demodps
 
@@ -67,26 +67,26 @@ ms.locfileid: "78674516"
 
     az iot dps create --resource-group IoTHubBlogDemo --name demodps2
 
-### <a name="4-list-all-the-existing-device-provisioning-services-under-this-resource-group"></a>4. Перечислите все существующие службы подготовки устройств в этой группе ресурсов.
+### <a name="4-list-all-the-existing-device-provisioning-services-under-this-resource-group"></a>4. Перечислите все существующие службы обеспечения устройств в рамках этой группы ресурсов
 
     az iot dps list --resource-group IoTHubBlogDemo
 
 ![Создание списка службы подготовки устройств](./media/how-to-manage-dps-with-cli/list-dps.jpg)
 
 
-### <a name="5-create-an-iot-hub-blogdemohub-under-the-newly-created-resource-group"></a>5. Создайте Блогдемохуб центра Интернета вещей в созданной группе ресурсов.
+### <a name="5-create-an-iot-hub-blogdemohub-under-the-newly-created-resource-group"></a>5. Создание блога IoT HubDemoHub под недавно созданную группу ресурсов
 
     az iot hub create --name blogDemoHub --resource-group IoTHubBlogDemo
 
 ![Создание Центра Интернета вещей](./media/how-to-manage-dps-with-cli/create-hub.jpg)
 
-### <a name="6-link-one-existing-iot-hub-to-a-device-provisioning-service"></a>6. Связывание одного существующего центра Интернета вещей со службой подготовки устройств
+### <a name="6-link-one-existing-iot-hub-to-a-device-provisioning-service"></a>6. Свяжите один существующий концентратор IoT с службой обеспечения устройств
 
     az iot dps linked-hub create --resource-group IoTHubBlogDemo --dps-name demodps --connection-string <connection string> -l westus
 
 ![Связывание Центра Интернета вещей](./media/how-to-manage-dps-with-cli/create-hub.jpg)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]

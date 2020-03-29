@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/17/2017
 ms.author: tagore
 ms.openlocfilehash: 23fbb0b4c506b2f72000add9704618337b8b24cf
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75386193"
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Построение и развертывание приложения Node.js в облачной службе Azure
@@ -31,11 +31,11 @@ ms.locfileid: "75386193"
 
 ![В окне браузера отображается веб-страница "Hello World"][A web browser displaying the Hello World web page]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 > [!NOTE]
 > В этом учебнике используется Azure PowerShell, для которого требуется операционная система Windows.
 
-* Установите и настройте [Azure PowerShell].
+* Установка и настройка [Azure Powershell.]
 * Скачайте и установите [пакет SDK для Azure для .NET 2.7]. В параметрах установки выберите:
   * MicrosoftAzureAuthoringTools
   * MicrosoftAzureComputeEmulator
@@ -155,13 +155,13 @@ ms.locfileid: "75386193"
    > При удалении службы учетная запись хранения, созданная при первоначальной публикации службы, не удаляется. Оплата за использование хранилища будет насчитываться. Если хранилище не используется другими объектами, его можно удалить.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительную информацию см. в [Центр разработчика Node.js].
+Дополнительную информацию см. в [центре разработчиков Node.js].
 
 <!-- URL List -->
 
 [веб-сайтами Azure, облачными службами и виртуальными машинами]: /azure/architecture/guide/technology-choices/compute-decision-tree
 [использовать упрощенное веб-приложение]: ../app-service/app-service-web-get-started-nodejs.md
-[Azure PowerShell]: /powershell/azureps-cmdlets-docs
+[Лазурная powershell]: /powershell/azureps-cmdlets-docs
 [пакет SDK для Azure для .NET 2.7]: https://www.microsoft.com/en-us/download/details.aspx?id=48178
 [Подключите PowerShell]: /powershell/azureps-cmdlets-docs
 [nodejs.org]: https://nodejs.org/

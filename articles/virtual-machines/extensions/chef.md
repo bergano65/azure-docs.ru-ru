@@ -1,5 +1,5 @@
 ---
-title: Расширение Chef для виртуальных машин Azure
+title: Расширение шеф-повара для Пазуры VMs
 description: Сведения о развертывании клиента Chef на виртуальной машине, используя расширение Chef.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.author: akjosh
 ms.openlocfilehash: a21b8f2fea7433e9f65fd790321a28ea47a38c79
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76544724"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Расширение Chef виртуальной машины для Linux и Windows
 
 Chef Software — это платформа автоматизации DevOps для Linux и Windows, которая позволяет управлять конфигурациями как физического, так и виртуального серверов. Chef — это расширение, которое включает среду Chef на виртуальной машине.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -67,26 +67,26 @@ Chef работает во всех [операционных системах, 
 
 ### <a name="core-property-values"></a>Значения свойств ядра
 
-| Имя | Значение и пример | Тип данных
+| name | Значение и пример | Тип данных
 | ---- | ---- | ----
 | версия_API | `2017-12-01` | Строка (дата) |
-| publisher | `Chef.Bootstrap.WindowsAzure` | string |
-| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
+| publisher | `Chef.Bootstrap.WindowsAzure` | строка |
+| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | строка |
 | typeHandlerVersion | `1210.13` | Строка (двойная) |
 
-### <a name="settings"></a>Настройки
+### <a name="settings"></a>Параметры
 
-| Имя | Значение и пример | Тип данных | Обязательно?
+| name | Значение и пример | Тип данных | Обязательно?
 | ---- | ---- | ---- | ----
 | settings/параметры_начальной_загрузки/URL-адрес_сервера_Chef | `https://api.chef.io/organizations/myorg` | Строка (URL-адрес) | Да |
-| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | string | Да |
-| settings/runlist | `recipe[mycookbook::default]` | string | Да |
+| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | строка | Да |
+| settings/runlist | `recipe[mycookbook::default]` | строка | Да |
 
 ### <a name="protected-settings"></a>Защищенные параметры
 
-| Имя | Пример | Тип данных | Обязательно?
+| name | Пример | Тип данных | Обязательно?
 | ---- | ---- | ---- | ---- |
-| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | Да |
+| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | строка | Да |
 
 <!--
 ### Linux-specific settings
@@ -104,9 +104,9 @@ Chef работает во всех [операционных системах, 
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. С помощью шаблонов можно развернуть одну или несколько виртуальных машин, установить клиент Chef, подключиться к серверу Chef и выполнить начальной конфигурации на сервере, как определено в списке [Run-list](https://docs.chef.io/run_lists.html).
 
-Пример шаблона диспетчер ресурсов, включающий расширение виртуальной машины Chef, можно найти в коллекции быстрого запуска [Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/chef-json-parameters-linux-vm).
+Шаблон «Менеджер ресурсов», включающий расширение Chef VM, можно найти в [галерее быстрого запуска Azure.](https://github.com/Azure/azure-quickstart-templates/tree/master/chef-json-parameters-linux-vm)
 
-Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-manager-template-child-resource.md).
+Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Для получения дополнительной информации [см.](../../azure-resource-manager/resource-manager-template-child-resource.md)
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
@@ -153,8 +153,8 @@ C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\
 Дополнительные сведения об устранении неполадок см. в [файле сведений о расширении Chef виртуальной машины](https://github.com/chef-partners/azure-chef-extension).
 
 > [!NOTE]
-> Чтобы получить все остальное, непосредственно связанные с Chef, обратитесь в [службу поддержки Chef](https://www.chef.io/support/).
+> Для чего-либо еще, непосредственно связанных с шеф-поваром, обратитесь [в службу поддержки шеф-повара](https://www.chef.io/support/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в какой-либо момент этой статьи, вы можете связаться с экспертами Azure на [форумах MSDN Azure и Stack Overflow.](https://azure.microsoft.com/support/forums/) Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите Получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

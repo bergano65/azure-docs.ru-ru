@@ -14,10 +14,10 @@ ms.workload: big-data
 ms.date: 10/09/2018
 ms.author: elsung
 ms.openlocfilehash: 7d6c826df2a509ffb378809e3682073bd5ab1301
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60612555"
 ---
 # <a name="virtual-network-integration-for-azure-data-lake-storage-gen1"></a>Интеграция с виртуальной сетью для Azure Data Lake Storage 1-го поколения
@@ -29,7 +29,7 @@ ms.locfileid: "60612555"
 Функция интеграции с виртуальной сетью для ADLS 1-го поколения использует безопасность на уровне конечной точки служб для виртуальной сети между виртуальной сетью и службой Azure Active Directory (Azure AD) с целью создания дополнительных утверждений безопасности в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа.
 
 > [!NOTE]
-> За использование этих возможностей не взимается дополнительная плата. Учетной записи будет выставлен счет по стандартному тарифу за Data Lake Storage 1-го поколения. Дополнительные сведения см. на странице [цен](https://azure.microsoft.com/pricing/details/data-lake-store/?cdn=disable). Дополнительные сведения о всех используемых службах Azure см. на странице [цен](https://azure.microsoft.com/pricing/#product-picker).
+> За использование этих возможностей не взимается дополнительная плата. Учетной записи будет выставлен счет по стандартному тарифу за Data Lake Storage 1-го поколения. Для получения дополнительной информации [см.](https://azure.microsoft.com/pricing/details/data-lake-store/?cdn=disable) Дополнительные сведения о всех используемых службах Azure см. на странице [цен](https://azure.microsoft.com/pricing/#product-picker).
 
 ## <a name="scenarios-for-virtual-network-integration-for-data-lake-storage-gen1"></a>Сценарии для интеграции с виртуальной сетью для ADLS 1-го поколения
 
@@ -65,8 +65,8 @@ ms.locfileid: "60612555"
 Рекомендуется использовать в виртуальной сети брандмауэр, чтобы фильтровать исходящий трафик на основе URL-адреса учетной записи назначения. Разрешать доступ следует только авторизованным учетным записям ADLS 1-го поколения.
 
 Ниже приведены некоторые доступные варианты.
-- [Брандмауэр Azure](https://docs.microsoft.com/azure/firewall/overview). [Разверните и настройте Брандмауэр Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal) для виртуальной сети. Чтобы защитить исходящий трафик ADLS и ограничить его URL-адресом известной авторизованной учетной записи.
-- Брандмауэр [сетевого виртуального модуля](https://azure.microsoft.com/solutions/network-appliances/). Администратор может разрешить использовать только определенных поставщиков коммерческих брандмауэров. Решение брандмауэра сетевого виртуального модуля, доступное в Azure Marketplace, можно использовать для выполнения той же функции.
+- [Брандмауэр Azure.](https://docs.microsoft.com/azure/firewall/overview) Вы можете [развернуть и настроить службу "Брандмауэр Azure"](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal) для виртуальной сети. Чтобы защитить исходящий трафик ADLS и ограничить его URL-адресом известной авторизованной учетной записи.
+- [Брандмауэр сетевого виртуального модуля.](https://azure.microsoft.com/solutions/network-appliances/) Администратор может разрешить использовать только определенных поставщиков коммерческих брандмауэров. Решение брандмауэра сетевого виртуального модуля, доступное в Azure Marketplace, можно использовать для выполнения той же функции.
 
 > [!NOTE]
 > При использовании брандмауэров в пути к данным появляется дополнительный прыжок. Это может влиять на производительность сети в комплексных сценариях обмена данными. В том числе на доступную пропускную способность и задержку при подключении. 
@@ -83,7 +83,7 @@ ms.locfileid: "60612555"
 
 ## <a name="configuration"></a>Параметр Configuration
 
-### <a name="step-1-configure-your-virtual-network-to-use-an-azure-ad-service-endpoint"></a>Шаг 1. Настройка виртуальной сети для использования конечной точки службы AAD
+### <a name="step-1-configure-your-virtual-network-to-use-an-azure-ad-service-endpoint"></a>Шаг 1. Настройка виртуальной сети для использования конечной точки службы AAD
 
 1.  Перейдите на портал Azure и войдите, используя свою учетную запись Azure.
  
@@ -99,7 +99,7 @@ ms.locfileid: "60612555"
 
      ![Выбор конечной точки службы Microsoft.AzureActiveDirectory](media/data-lake-store-network-security/config-vnet-2.png)
 
-6.  Выберите подсети, для которых вы собираетесь разрешить подключения. Выберите **Добавить**.
+6.  Выберите подсети, для которых вы собираетесь разрешить подключения. Нажмите кнопку **Добавить**.
 
     ![Выбор подсети](media/data-lake-store-network-security/config-vnet-3.png)
 
@@ -107,7 +107,7 @@ ms.locfileid: "60612555"
  
     ![Успешное добавление конечной точки службы](media/data-lake-store-network-security/config-vnet-4.png)
 
-### <a name="step-2-set-up-the-allowed-virtual-network-or-subnet-for-your-data-lake-storage-gen1-account"></a>Шаг 2. Настройка разрешенной виртуальной сети или подсети для учетной записи Data Lake Storage 1-го поколения
+### <a name="step-2-set-up-the-allowed-virtual-network-or-subnet-for-your-data-lake-storage-gen1-account"></a>Шаг 2. Настройка разрешенной виртуальной сети или подсети для учетной записи ADLS 1-го поколения
 
 1.  После настройки виртуальной [сети создайте учетную запись Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md#create-a-data-lake-storage-gen1-account) в подписке. Вы также можете перейти к имеющейся учетной записи ADLS 1-го поколения. Виртуальная сеть должна находиться в том же регионе, что и учетная запись ADLS 1-го поколения.
  
@@ -120,15 +120,15 @@ ms.locfileid: "60612555"
 
 3.  Выберите **Выбранные сети**.
  
-4.  Выберите **Добавить существующую виртуальную сеть**.
+4.  Выберите **Добавить существующую виртуальную сеть.**
 
     ![Добавление имеющейся виртуальной сети](media/data-lake-store-network-security/config-adls-2.png)
 
-5.  Выберите виртуальные сети и подсети, чтобы разрешить подключение. Выберите **Добавить**.
+5.  Выберите виртуальные сети и подсети, чтобы разрешить подключение. Нажмите кнопку **Добавить**.
 
     ![Выбор виртуальной сети и подсетей.](media/data-lake-store-network-security/config-adls-3.png)
 
-6.  Убедитесь, что виртуальные сети и подсети отображаются в списке корректно. Щелкните **Сохранить**.
+6.  Убедитесь, что виртуальные сети и подсети отображаются в списке корректно. Нажмите кнопку **Сохранить**.
 
     ![Сохранение нового правила](media/data-lake-store-network-security/config-adls-4.png)
 

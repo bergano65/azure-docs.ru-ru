@@ -1,6 +1,6 @@
 ---
-title: Получение уведомлений об обслуживании для виртуальных машин Azure с помощью PowerShell
-description: Просмотр уведомлений об обслуживании для виртуальных машин, работающих в Azure, и запуск самостоятельного обслуживания с помощью PowerShell.
+title: Получайте уведомления об обслуживании для VMs Azure с помощью PowerShell
+description: Просматривайте уведомления об обслуживании виртуальных машин, работающих в Azure, и приступайте к обслуживанию самообслуживания с помощью PowerShell.
 author: shants123
 ms.service: virtual-machines
 ms.workload: infrastructure-services
@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: shants
 ms.openlocfilehash: b23c210d7c8a9f1d42e6e1b46e0f7f81bda857b2
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77916088"
 ---
-# <a name="handling-planned-maintenance-using-powershell"></a>Обработка планового обслуживания с помощью PowerShell
+# <a name="handling-planned-maintenance-using-powershell"></a>Обработка планового технического обслуживания с помощью PowerShell
 
-**Эта статья относится к виртуальным машинам под управлением Linux и Windows.**
+**Эта статья распространяется на виртуальные машины под управлением Как Linux, так и Windows.**
 
-Вы можете использовать Azure PowerShell, чтобы узнать, когда планируется [обслуживание](maintenance-notifications.md)виртуальных машин. Информацию о плановом обслуживании можно получить с помощью командлета [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm), используя параметр `-status`.
+Вы можете использовать Azure PowerShell, чтобы увидеть, когда вывешитесь в [эксплуатации.](maintenance-notifications.md) Информацию о плановом обслуживании можно получить с помощью командлета [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm), используя параметр `-status`.
   
 Сведения об обслуживании возвращаются, только если имеется запланированное обслуживание. Если нет запланированного обслуживания, влияющего на виртуальную машину, командлет не возвращает информацию об обслуживании. 
 
@@ -46,7 +46,7 @@ Get-AzVM -ResourceGroupName myResourceGroup -Name myVM -Status
 Get-AzVM -ResourceGroupName myResourceGroup -Status
 ```
 
-Следующий пример PowerShell принимает идентификатор подписки и возвращает список виртуальных машин, для которых запланировано обслуживание.
+Следующий пример PowerShell берет ваш идентификатор подписки и возвращает список вс-м вс-услуг, которые запланированы на техническое обслуживание.
 
 ```powershell
 
@@ -100,6 +100,6 @@ Get-AzureVM -ServiceName <Service name> -Name <VM name>
 Restart-AzureVM -InitiateMaintenance -ServiceName <service name> -Name <VM name>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Вы также можете управлять плановым обслуживанием с помощью [Azure CLI](maintenance-notifications-cli.md) или [портала](maintenance-notifications-portal.md).
+Вы также можете обрабатывать запланированное техническое обслуживание с помощью [Azure CLI](maintenance-notifications-cli.md) или [портала.](maintenance-notifications-portal.md)

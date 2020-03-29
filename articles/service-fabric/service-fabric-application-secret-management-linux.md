@@ -1,22 +1,22 @@
 ---
-title: Настройка сертификата шифрования в кластерах Linux
+title: Настройка сертификата шифрования на кластерах Linux
 description: Узнайте, как настроить сертификат шифрования и шифровать секреты в кластерах Linux.
 author: shsha
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: shsha
 ms.openlocfilehash: b8e0a19e3f654fc561e7c7e26c6a2da463e24d5f
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969029"
 ---
 # <a name="set-up-an-encryption-certificate-and-encrypt-secrets-on-linux-clusters"></a>Настройка сертификата шифрования и шифрование секретов в кластерах Linux
-В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Linux. Сведения о кластерах Windows см. [в разделе Настройка сертификата шифрования и шифрование секретов в кластерах Windows][secret-management-windows-specific-link].
+В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Linux. Инструкции для кластеров Windows приведены в разделе [Настройка сертификата шифрования и шифрование секретов в кластерах Windows][secret-management-windows-specific-link].
 
 ## <a name="obtain-a-data-encipherment-certificate"></a>Получение сертификата шифрования данных
-Сертификат о шифровании данных используется исключительно для шифрования и расшифровки [параметров][parameters-link] в параметрах. XML и [переменные среды][environment-variables-link] в службе ServiceManifest. XML. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
+Сертификат шифрования данных используются исключительно для шифрования и расшифровки [параметров][parameters-link] в файле Settings.xml службы и [переменных среды][environment-variables-link] в ее файле ServiceManifest.xml. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
 
 * Сертификат должен содержать закрытый ключ.
 * Использование ключа сертификата должно включать шифрование данных (10) и не должно включать аутентификацию сервера или клиента.
@@ -45,7 +45,7 @@ user@linux:$ cat encrypted.txt | base64 -d | openssl smime -decrypt -inform der 
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте, как [указать зашифрованные секреты в приложении.][secret-management-specify-encrypted-secrets-link]
+Узнайте, как [указать зашифрованные секреты в приложении][secret-management-specify-encrypted-secrets-link].
 
 <!-- Links -->
 [parameters-link]:service-fabric-how-to-parameterize-configuration-files.md

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 17b53c508f0c4c5ba8fa257fcdc692cdaa45d470
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76294224"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием пакета SDK для Python
@@ -25,13 +25,13 @@ ms.locfileid: "76294224"
 
 В этой статье содержатся сведения об использовании пакета SDK для Python для выполнения операций файловой системы в Azure Data Lake Storage 1-го поколения. Дополнительные сведения о том, как выполнять операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для Python, см. в [этой статье](data-lake-store-get-started-python.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Учетная запись Azure Data Lake Storage 1-го поколения**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
+* **Учетная запись Azure Data Lake Storage Gen1**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
 
 ## <a name="install-the-modules"></a>Установка модулей
 
@@ -123,7 +123,7 @@ pip install azure-datalake-store
     adlsFileSystemClient.rm('/mysampledirectory', recursive=True)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Операции управления учетными записями в Azure Data Lake Store с использованием Python](data-lake-store-get-started-python.md)
+* [Операции по управлению счетами на Data Lake Storage Gen1 с помощью Python](data-lake-store-get-started-python.md).
 
 ## <a name="see-also"></a>См. также
 

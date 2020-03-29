@@ -1,5 +1,5 @@
 ---
-title: Копирование виртуальной машины Linux с помощью Azure CLI
+title: Копирование Linux VM с помощью Azure CLI
 description: Сведения о том, как создать копию виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков.
 author: cynthn
 ms.service: virtual-machines-linux
@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.openlocfilehash: ed8574133eafe751699e90ea8cae832ee649fb00
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969600"
 ---
 # <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Создание копии виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков
@@ -19,9 +19,9 @@ ms.locfileid: "78969600"
 
 Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
--   Установка [Azure CLI](/cli/azure/install-az-cli2).
+-   Установите [Azure CLI](/cli/azure/install-az-cli2).
 
 -   Войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az-login).
 
@@ -125,4 +125,4 @@ az vm create --resource-group myResourceGroup \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об использовании [общей коллекции образов](shared-images.md) для управления образами виртуальных машин.
+Чтобы узнать, как использовать [общую галерею изображений](shared-images.md) для управления изображениями VM.

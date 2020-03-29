@@ -1,5 +1,5 @@
 ---
-title: Создание и использование пары ключей SSH для виртуальных машин Linux в Azure
+title: Создание и использование ключевой пары SSH для Linux VMs в Azure
 description: Сведения о создании и использовании пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure с целью повышения безопасности процесса аутентификации.
 author: cynthn
 ms.service: virtual-machines-linux
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 12/06/2019
 ms.author: cynthn
 ms.openlocfilehash: af18a32143ebc9db7be923b09de106b79022321f
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969045"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция: создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
@@ -21,7 +21,7 @@ ms.locfileid: "78969045"
 > [!NOTE]
 > В настройках виртуальных машин, созданных с помощью ключей SSH, пароли отключены по умолчанию. Это сильно усложняет выполнение атак методом подбора. 
 
-Дополнительные сведения и примеры доступны в разделе [Подробное руководство по созданию пары ключей SSH и дополнительных сертификатов для виртуальной машины Linux в Azure](create-ssh-keys-detailed.md).
+Для получения дополнительной информации и примеров [см. Подробные шаги по созданию ключевых пар SSH.](create-ssh-keys-detailed.md)
 
 Дополнительные способы создания и использования ключей SSH на компьютере Windows описываются в разделе [Использование ключей SSH с Windows в Azure](ssh-from-windows.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "78969045"
 
 Чтобы создать файлы открытого и закрытого ключей SSH, используйте команду `ssh-keygen`. По умолчанию эти файлы хранятся в каталоге ~/.ssh. Можно указать другое расположение и необязательный пароль (*парольную фразу*) для доступа к файлу закрытого ключа. Если в выбранном расположении существует пара ключей SSH с теми же именами, они будут перезаписаны.
 
-Следующая команда создает пару ключей SSH с помощью шифрования RSA и длины 4096:
+Следующая команда создает пару ключей SSH с помощью шифрования RSA и немного длины 4096:
 
 ```bash
 ssh-keygen -m PEM -t rsa -b 4096
@@ -48,7 +48,7 @@ az vm create --name VMname --resource-group RGname --generate-ssh-keys
 Чтобы создать виртуальную машину Linux, которая использует ключи SSH для аутентификации, укажите свой открытый ключ SSH при создании виртуальной машины с помощью портала Azure, Azure CLI, шаблонов Resource Manager или других методов.
 
 * [Создание виртуальной машины Linux с помощью портала Azure](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Создание виртуальной машины Linux с помощью Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Создание виртуальной машины Linux с Помощью Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Создание виртуальной машины Linux с помощью шаблона Azure](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 Если вам не знаком формат открытого ключа SSH, можно отобразить открытый ключ командой `cat`, при необходимости заменив `~/.ssh/id_rsa.pub` путем и именем файла собственного открытого ключа.
@@ -63,7 +63,7 @@ cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAABADAQABAAACAQC1/KanayNr+Q7ogR5mKnGpKWRBQU7F3Jjhn7utdf7Z2iUFykaYx+MInSnT3XdnBRS8KhC0IP8ptbngIaNOWd6zM8hB6UrcRTlTpwk/SuGMw1Vb40xlEFphBkVEUgBolOoANIEXriAMvlDMZsgvnMFiQ12tD/u14cxy1WNEMAftey/vX3Fgp2vEq4zHXEliY/sFZLJUJzcRUI0MOfHXAuCjg/qyqqbIuTDFyfg8k0JTtyGFEMQhbXKcuP2yGx1uw0ice62LRzr8w0mszftXyMik1PnshRXbmE2xgINYg5xo/ra3mq2imwtOKJpfdtFoMiKhJmSNHBSkK7vFTeYgg0v2cQ2+vL38lcIFX4Oh+QCzvNF/AXoDVlQtVtSqfQxRVG79Zqio5p12gHFktlfV7reCBvVIhyxc2LlYUkrq4DHzkxNY5c9OGSHXSle9YsO3F1J5ip18f6gPq4xFmo6dVoJodZm9N0YMKCkZ4k1qJDESsJBk2ujDPmQQeMjJX3FnDXYYB182ZCGQzXfzlPDC29cWVgDZEXNHuYrOLmJTmYtLZ4WkdUhLLlt5XsdoKWqlWpbegyYtGZgeZNRtOOdN6ybOPJqmYFd2qRtb4sYPniGJDOGhx4VodXAjT09omhQJpE6wlZbRWDvKC55R2d/CSPHJscEiuudb+1SG2uA/oik/WQ== username@domainname
 ```
 
-Если вы копируете содержимое файла открытого ключа и вставляете его на портале Azure или в шаблоне Resource Manager, в этом содержимом не должно быть завершающего пробела. Чтобы скопировать открытый ключ в macOS, можно передать файл открытого ключа в `pbcopy`. Аналогичным образом в Linux можно передать файл открытого ключа в такие программы, как `xclip`.
+Если вы копируете содержимое файла открытого ключа и вставляете его на портале Azure или в шаблоне Resource Manager, в этом содержимом не должно быть завершающего пробела. Чтобы скопировать открытый ключ в macOS, вы `pbcopy`можете труба файл клавиши общего пользования. Аналогичным образом в Linux, вы можете трубы `xclip`файл общедоступного ключа для таких программ, как .
 
 По умолчанию открытый ключ виртуальной машины Linux в Azure хранится в файле ~/.ssh/id_rsa.pub, если только вы не изменили это расположение во время создания пары ключей. При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины с использованием существующего открытого ключа укажите значение и (необязательно) расположение этого ключа, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--ssh-key-values`. В следующей команде замените *VMname*, *RGname* и *keyFile* собственными значениями.
 
@@ -71,7 +71,7 @@ ssh-rsa AAAAB3NzaC1yc2EAABADAQABAAACAQC1/KanayNr+Q7ogR5mKnGpKWRBQU7F3Jjhn7utdf7Z
 az vm create --name VMname --resource-group RGname --ssh-key-values mysshkey.pub
 ```
 
-Если вы хотите использовать несколько ключей SSH с виртуальной машиной, их можно ввести в списке с разделителями-пробелами, как это `--ssh-key-values sshkey-desktop.pub sshkey-laptop.pub`.
+Если вы хотите использовать несколько sSH-ключей с вашим VM, вы `--ssh-key-values sshkey-desktop.pub sshkey-laptop.pub`можете ввести их в пространстве разделенном списке, как это .
 
 
 ## <a name="ssh-into-your-vm"></a>SSH-подключение к виртуальной машине

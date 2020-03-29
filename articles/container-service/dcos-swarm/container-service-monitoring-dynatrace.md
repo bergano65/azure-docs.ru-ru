@@ -8,10 +8,10 @@ ms.date: 12/13/2016
 ms.author: rogardle
 ms.custom: mvc
 ms.openlocfilehash: a82481c5cb3d12b11179b41999f73e67583ec43b
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76277745"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-dcos-cluster-with-dynatrace-saasmanaged"></a>Мониторинг кластера DC/OS в Службе контейнеров Azure с помощью Dynatrace SaaS/Managed (не рекомендуется)
@@ -27,13 +27,13 @@ DynaTrace — облачное решение для мониторинга, п�
 
 ![Пользовательский интерфейс Dynatrace](./media/container-service-monitoring-dynatrace/dynatrace.png)
 
-## <a name="prerequisites"></a>Технические условия 
-[Разверните](container-service-deployment.md) кластер, настроенный Службой контейнеров Azure, и [подключитесь](./../container-service-connect.md) к нему. Изучите [пользовательский интерфейс Marathon](container-service-mesos-marathon-ui.md). Перейдите на сайт [https://www.dynatrace.com/trial/](https://www.dynatrace.com/trial/) для настройки учетной записи Dynatrace SaaS.  
+## <a name="prerequisites"></a>Предварительные требования 
+[Разверните](container-service-deployment.md) кластер, настроенный Службой контейнеров Azure, и [подключитесь](./../container-service-connect.md) к нему. Изучите [пользовательский интерфейс Marathon](container-service-mesos-marathon-ui.md). Перейдите [https://www.dynatrace.com/trial/](https://www.dynatrace.com/trial/) к настройке учетной записи Dynatrace SaaS.  
 
 ## <a name="configure-a-dynatrace-deployment-with-marathon"></a>Настройка развертывания Dynatrace с использованием Marathon
 Ниже описано, как настраивать и развертывать в кластере приложения Dynatrace с помощью Marathon.
 
-1. Откройте пользовательский интерфейс DC/OS по адресу [http://localhost:80/](http://localhost:80/). В пользовательском интерфейсе DC/OS перейдите на вкладку **Universe** (Вселенная) и найдите **Dynatrace**.
+1. Доступ к вашему веб-уи-н DC/OS через [http://localhost:80/](http://localhost:80/). В пользовательском интерфейсе DC/OS перейдите на вкладку **Universe** (Вселенная) и найдите **Dynatrace**.
 
     ![Dynatrace на вкладке "Universe" (Вселенная) DC/OS](./media/container-service-monitoring-dynatrace/dynatrace-universe.png)
 

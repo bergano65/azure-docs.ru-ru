@@ -1,6 +1,6 @@
 ---
-title: Шаблоны центров уведомлений Azure
-description: Сведения об использовании шаблонов для центров уведомлений Azure.
+title: Шаблоны концентраторов уведомлений Azure
+description: Узнайте об использовании шаблонов для концентраторов уведомлений Azure.
 services: notification-hubs
 documentationcenter: .net
 author: sethmanheim
@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 7d88f57fe92b9da62cc9f90d64bdec4c27642fb0
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76263750"
 ---
 # <a name="templates"></a>Шаблоны
@@ -133,7 +133,7 @@ ms.locfileid: "76263750"
 
 В следующей таблице показан синтаксис, используемый в шаблонах:
 
-| Expression       | Description |
+| Выражение       | Описание |
 | ---------------- | --- |
 | $(prop)          | Ссылка на свойство события с заданным именем. В именах свойств регистр не учитывается. Значением этого выражения является текстовое значение свойства или пустая строка, если свойство не существует. |
 | $(prop, n)       | То же, что выше, но текст обрезается до n символов, например, выражение $(title, 20) сокращает содержимое свойства title до 20 символов. |
@@ -159,7 +159,7 @@ ms.locfileid: "76263750"
 </tile>
 ```
 
-Как было сказано ранее, при использовании конкатенации выражения должны быть заключены в квадратные скобки. Пример.
+Как было сказано ранее, при использовании конкатенации выражения должны быть заключены в квадратные скобки. Пример:
 
 ```xml
 <tile>
@@ -173,4 +173,4 @@ ms.locfileid: "76263750"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Дополнительные сведения о центрах уведомлений Azure](notification-hubs-push-notification-overview.md)
+[Узнайте о концентрах уведомлений Azure](notification-hubs-push-notification-overview.md)

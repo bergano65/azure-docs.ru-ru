@@ -1,5 +1,5 @@
 ---
-title: Отправка VHD-файла в Azure DevTest Labs с помощью Обозреватель службы хранилища
+title: Загрузите файл VHD в лаборатории Azure DevTest с помощью
 description: Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
 ms.openlocfilehash: defafdd5809b7e537b3b9abb78f8cb63d0033c16
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76170370"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-microsoft-azure-storage-explorer"></a>Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure
@@ -37,7 +37,7 @@ ms.locfileid: "76170370"
 
     1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
     
-    1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
+    1. Выберите **все службы,** а затем выберите **DevTest Labs** из списка.
     
     1. Из списка лабораторий выберите нужную лабораторию.  
     
@@ -113,7 +113,7 @@ ms.locfileid: "76170370"
     
     1. Вы вернетесь в диалоговое окно **Отправка файлов**. Измените здесь **тип большого двоичного объекта**, указав значение **Страничный BLOB-объект**.
     
-    1. Щелкните **Отправить**.
+    1. Выберите команду **Отправить**.
 
         ![Выбор файла][9]  
     

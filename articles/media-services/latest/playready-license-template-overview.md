@@ -1,5 +1,5 @@
 ---
-title: Шаблон лицензии служб мультимедиа Azure v3 с Microsoft PlayReady
+title: Azure Media Services v3 с шаблоном лицензии Microsoft PlayReady
 description: В этом разделе содержится обзор шаблонов лицензий PlayReady, которые используются для настройки лицензий PlayReady.
 author: juliako
 manager: femila
@@ -14,13 +14,13 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: juliako
 ms.openlocfilehash: 6b12dcee2303632c4ec2ccc3602348a4e17fcd05
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76705893"
 ---
-# <a name="media-services-v3-with-playready-license-template"></a>Шаблон лицензии служб мультимедиа v3 с PlayReady 
+# <a name="media-services-v3-with-playready-license-template"></a>Медиа Сервисы v3 с шаблоном лицензии PlayReady 
 
 Службы мультимедиа Azure позволяют шифровать содержимое с помощью **Microsoft PlayReady**. Службы мультимедиа также обеспечивают доставку лицензий PlayReady. Интерфейсы API Служб мультимедиа можно использовать для настройки лицензий PlayReady. Когда проигрыватель пытается воспроизвести содержимое, защищенное с помощью PlayReady, в службу доставки лицензий отправляется запрос на получение лицензии. Если служба лицензий утверждает запрос, она выдает лицензию, которая отправляется клиенту и используется для расшифровки и воспроизведения указанного содержимого.
 
@@ -58,7 +58,7 @@ XML-код соответствует XML-схеме шаблона лиценз
     </PlayReadyLicenseResponseTemplate>
 
 
-## <a id="classes"></a>Настройка шаблонов лицензий с помощью API-интерфейсов Служб мультимедиа
+## <a name="use-media-services-apis-to-configure-license-templates"></a><a id="classes"></a>Настройка шаблонов лицензий с помощью API-интерфейсов Служб мультимедиа
 
 Службы мультимедиа предоставляют типы, которые можно использовать для настройки шаблона лицензии PlayReady. 
 
@@ -88,7 +88,7 @@ objContentKeyPolicyPlayReadyLicense = new ContentKeyPolicyPlayReadyLicense
 };
 ```
 
-## <a id="schema"></a>XML-схема шаблона лицензий PlayReady
+## <a name="playready-license-template-xml-schema"></a><a id="schema"></a>XML-схема шаблона лицензий PlayReady
     <?xml version="1.0" encoding="utf-8"?>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1" xmlns:xs="https://www.w3.org/2001/XMLSchema">
       <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />

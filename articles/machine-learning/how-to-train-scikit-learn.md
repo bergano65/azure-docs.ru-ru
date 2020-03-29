@@ -1,7 +1,7 @@
 ---
-title: Обучение scikit. изучение моделей машинного обучения
+title: Поезд scikit-учиться модели машинного обучения
 titleSuffix: Azure Machine Learning
-description: Узнайте, как выполнять сценарии обучения scikit-учиться в масштабе предприятия с помощью класса Машинное обучение Azure SKlearn оценщика. Примеры сценариев классифицируют изображения диафрагмы для создания модели машинного обучения на основе набора данных диафрагмы scikit-Learning.
+description: Узнайте, как запускать скрипты обучения scikit в корпоративном масштабе, используя класс оценки SKlearn Поступен для машин Azure. Пример скриптов классифицировать изображения цветка радужной оболочки глаза для создания модели машинного обучения на основе scikit-учиться радужной оболочки данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,45 +11,45 @@ author: maxluk
 ms.date: 03/09/2020
 ms.custom: seodec18
 ms.openlocfilehash: bdd2cc400c3df75742689258caea8cb87ee8ccc6
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78942275"
 ---
-# <a name="build-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Создание scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
+# <a name="build-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Создавайте модели scikit-learn в масштабе с помощью машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как выполнять сценарии обучения scikit-учиться в масштабе предприятия с помощью класса [оценщика машинное обучение Azure SKlearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) . 
+В этой статье узнайте, как запускать скрипты обучения scikit в корпоративном масштабе, используя класс [оценки SKlearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) Azure Machine Learning. 
 
-Примеры сценариев, приведенные в этой статье, используются для классификации изображений диафрагмы для создания модели машинного обучения на основе [набора данных диафрагмы](https://archive.ics.uci.edu/ml/datasets/iris)scikit.
+Примеры скриптов в этой статье используются для классификации изображений цветка радужной оболочки глаза для создания модели машинного обучения на основе набора данных scikit-learn' [радужной оболочки глаза.](https://archive.ics.uci.edu/ml/datasets/iris)
 
-Если вы научитесь изучать модель машинного обучения scikit-учиться с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, разворачивать и отслеживать модели производственного уровня с помощью Машинное обучение Azure.
+Независимо от того, обучаете ли вы модель машинного обучения scikit-learn с нуля или приносите существующую модель в облако, вы можете использовать Azure Machine Learning для масштабирования рабочих мест с открытым исходным кодом с использованием эластичных облачных вычислительных ресурсов. Вы можете создавать, развертывать, изготавливать и контролировать производственные модели с помощью машинного обучения Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Запустите этот код в любой из этих сред:
- - Машинное обучение Azure вычислительных экземпляров — Загрузка или установка не требуется
+Выполнить этот код на любой из этих сред:
+ - Экземпляр вычислений машинного обучения Azure - нет необходимости загружать или установку
 
-    - Выполните инструкции из [учебника Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md) , чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
-    - В папке Learning Samples на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > ML-frameworks > scikit-learning > learning > Train-i Parameter-Learning-Deploy-with-sklearn** Folder.
+    - Завершите [обучение: Настройка среды и рабочего пространства](tutorial-1st-experiment-sdk-setup.md) для создания специального ноутбука сервера предварительно загружены с SDK и образец репозитория.
+    - В папке для обучения образцов на блокноте-сервере найдите завершенный и расширенный блокнот, перепрыгивая в этот каталог: **как-к-использованию-azureml > мл-рамки > scikit-learn > обучение > поезд-гиперпараметр-настройка-развертывание-с-sklearn** папку.
 
  - Собственный сервер Jupyter Notebook
 
-    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
-    - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
-    - Скачайте набор данных и пример файла скрипта 
-        - [набор данных IRI](https://archive.ics.uci.edu/ml/datasets/iris)
-        - [train_iris. Корректировка](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn)
-    - Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn/train-hyperparameter-tune-deploy-with-sklearn.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутую секцию, охватывающую настройку интеллектуальной настройки, и получение лучшей модели по основным метрикам.
+    - [Установите SDK машинного обучения Azure.](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
+    - [Создание файла конфигурации рабочего пространства.](how-to-configure-environment.md#workspace)
+    - Загрузить набор данных и пример файла скрипта 
+        - [набор данных радужной оболочки глаза](https://archive.ics.uci.edu/ml/datasets/iris)
+        - [train_iris.py](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn)
+    - Вы также можете найти завершенную [версию Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn/train-hyperparameter-tune-deploy-with-sklearn.ipynb) этого руководства на странице образцов GitHub. Ноутбук включает в себя расширенный раздел, охватывающий интеллектуальный гиперпараметр настройки и извлечения лучшей модели по основным метрикам.
 
 ## <a name="set-up-the-experiment"></a>Настройка эксперимента
 
-В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, создания эксперимента и отправки обучающих данных и сценариев обучения.
+В этом разделе устанавливается учебный эксперимент путем загрузки необходимых пакетов питона, инициализации рабочего пространства, создания эксперимента и загрузки обучающих данных и обучающих скриптов.
 
 ### <a name="import-packages"></a>Импорт пакетов
 
-Сначала импортируйте необходимые библиотеки Python.
+Во-первых, импортируйте необходимые библиотеки Python.
 
 ```Python
 import os
@@ -64,19 +64,19 @@ from azureml.core.compute import ComputeTarget, AmlCompute
 from azureml.core.compute_target import ComputeTargetException
 ```
 
-### <a name="initialize-a-workspace"></a>Инициализация рабочей области
+### <a name="initialize-a-workspace"></a>Инициализация рабочего пространства
 
-[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Он обеспечивает централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, создав объект [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) .
+[Рабочее пространство Azure Machine Learning](concept-workspace.md) — это ресурс высшего уровня службы. Он предоставляет вам централизованное место для работы со всеми артефактами, которые вы создаете. В Python SDK можно получить доступ к артефактам рабочего пространства, создав [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) объект.
 
-Создайте объект рабочей области из файла `config.json`, созданного в [разделе Предварительные требования](#prerequisites).
+Создание объекта рабочей `config.json` области из файла, созданного в [разделе предпосылок.](#prerequisites)
 
 ```Python
 ws = Workspace.from_config()
 ```
 
-### <a name="create-a-machine-learning-experiment"></a>Создание эксперимента машинного обучения
+### <a name="create-a-machine-learning-experiment"></a>Создание эксперимента в машинном обучении
 
-Создайте эксперимент и папку для хранения сценариев обучения. В этом примере Создайте эксперимент с названием «sklearn-IRI».
+Создайте эксперимент и папку для хранения обучаемых скриптов. В этом примере создайте эксперимент под названием "sklearn-iris".
 
 ```Python
 project_folder = './sklearn-iris'
@@ -87,24 +87,24 @@ exp = Experiment(workspace=ws, name='sklearn-iris')
 
 ### <a name="prepare-training-script"></a>Подготовка сценария обучения
 
-В этом руководстве сценарий обучения **train_iris. Корректировка** уже предоставлен. На практике вы можете использовать любой пользовательский сценарий обучения как есть и запускать его с помощью Azure ML без необходимости изменять код.
+В этом учебнике, учебный сценарий **train_iris.py** уже предусмотрено для вас. На практике вы должны иметь возможность принимать любой пользовательский сценарий обучения, как есть, и запускать его с Azure ML без необходимости изменять код.
 
-Чтобы использовать возможности отслеживания и метрик машинного обучения Azure, добавьте небольшой объем кода машинного обучения Azure в сценарий обучения.  В обучающем скрипте **train_iris. Корректировка** показано, как зарегистрировать некоторые метрики в машинном обучении Azure с помощью объекта `Run` в скрипте.
+Чтобы использовать возможности отслеживания и метрик Azure ML, добавьте небольшое количество кода Azure ML в свой обучающий скрипт.  Сценарий обучения **train_iris.py** показывает, как войти некоторые метрики в ваш Azure ML запустить с помощью `Run` объекта в скрипте.
 
-В предоставленном скрипте обучения используются данные примера из функции `iris = datasets.load_iris()`.  Для собственных данных может потребоваться выполнить такие действия, как [Передача набора данных и скриптов](how-to-train-keras.md#data-upload) , чтобы сделать данные доступными во время обучения.
+В предоставленном обучаемом `iris = datasets.load_iris()` скрипте используются примеры данных из функции.  Для собственных данных может потребоваться использовать такие этапы, как [набор данных upload и скрипты,](how-to-train-keras.md#data-upload) чтобы сделать данные доступными во время обучения.
 
-Скопируйте сценарий обучения **train_iris. копировать** в каталог проекта.
+Копируйте сценарий обучения **train_iris.py** в каталог проекта.
 
 ```
 import shutil
 shutil.copy('./train_iris.py', project_folder)
 ```
 
-## <a name="create-or-get-a-compute-target"></a>Создание или получение целевого объекта вычислений
+## <a name="create-or-get-a-compute-target"></a>Создание или создание вычислительной цели
 
-Создайте целевой объект вычислений для выполнения задания scikit-учиться. Scikit — сведения поддерживают только один узел, вычислительные ресурсы ЦП.
+Создайте цель вычислений для выполнения вашей работы по scikit-learn. Scikit-learn поддерживает только один узла, процессорные вычисления.
 
-Следующий код создает Машинное обучение Azure управляемого вычислений (Амлкомпуте) для удаленного обучающего ресурса. Создание Амлкомпуте занимает примерно 5 минут. Если Амлкомпуте с таким именем уже находится в рабочей области, этот код пропустит процесс создания.
+Следующий код создает управляемый вычислением Azure Machine Learning (AmlCompute) для удаленного учебного вычислительного ресурса. Создание AmlCompute занимает около 5 минут. Если AmlCompute с таким именем уже находится в вашем рабочем пространстве, этот код пропустит процесс создания.
 
 ```Python
 cluster_name = "cpu-cluster"
@@ -122,13 +122,13 @@ except ComputeTargetException:
     compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
 ```
 
-Дополнительные сведения о целевых объектах вычислений см. в статье [что такое целевые показатели вычислений](concept-compute-target.md) .
+Для получения дополнительной информации о [what is a compute target](concept-compute-target.md) целевых показателях вычислений см.
 
-## <a name="create-a-scikit-learn-estimator"></a>Создание средства оценки scikit-учиться
+## <a name="create-a-scikit-learn-estimator"></a>Создание оценщика scikit-обучения
 
-Средство [оценки scikit-](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn?view=azure-ml-py) Training предоставляет простой способ запуска задания обучения scikit-учиться на целевом объекте вычислений. Он реализуется с помощью класса [`SKLearn`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) , который можно использовать для поддержки обучения ЦП с одним узлом.
+[Оценщик scikit-обучения](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn?view=azure-ml-py) предоставляет простой способ запуска scikit-обучения обучение работу на вычислительной цели. Он реализуется [`SKLearn`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) через класс, который может быть использован для поддержки одноузлового обучения процессора.
 
-Если для выполнения сценария обучения требуются дополнительные пакеты PIP или conda, можно установить пакеты в полученном образе DOCKER, передав их имена с помощью `pip_packages` и `conda_packages` аргументов.
+Если ваш учебный скрипт нуждается в дополнительных пакетов пипса или конды для `pip_packages` запуска, вы можете иметь пакеты, установленные на результирующем изображении докера, передавая их имена через `conda_packages` аргументы.
 
 ```Python
 from azureml.train.sklearn import SKLearn
@@ -147,32 +147,32 @@ estimator = SKLearn(source_directory=project_folder,
 ```
 
 
-Дополнительные сведения о настройке среды Python см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md). 
+Для получения дополнительной информации о настройке среды Python [см.](how-to-use-environments.md) 
 
-## <a name="submit-a-run"></a>Отправка запуска
+## <a name="submit-a-run"></a>Отправить пробег
 
-[Объект Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
+[Объект Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py) предоставляет интерфейс истории выполнения во время выполнения и после его завершения.
 
 ```Python
 run = experiment.submit(estimator)
 run.wait_for_completion(show_output=True)
 ```
 
-При выполнении выполнения он проходит следующие этапы.
+По мере выполнения выполнения он проходит следующие этапы:
 
-- **Подготовка**. образ DOCKER создается в соответствии с оценкой TensorFlow. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения.
+- **Подготовка**: Изображение докера создается в соответствии с оценкой TensorFlow. Изображение загружается в реестр контейнеров рабочего пространства и кэшируется для последующих запусков. Логи также передаются в историю выполнения и могут быть просмотрены для мониторинга прогресса.
 
-- **Масштабирование**. Кластер пытается выполнить масштабирование, если кластеру Batch AI требуется больше узлов для выполнения выполнения, чем в настоящее время доступно.
+- **Масштабирование**: Кластер пытается увеличить масштаб, если кластер ИИ пакетов требует больше узлов для выполнения выполнения, чем в настоящее время.
 
-- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, а entry_script выполняется. Выходные данные из STDOUT и папки/логс передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
+- **Запуск:** Все скрипты в папке скрипта загружаются в цель вычисления, хранилища данных монтируются или копируются, а entry_script выполняется. Выходы из stdout и папки ./logs передаются в историю выполнения и могут использоваться для мониторинга выполнения.
 
-- **Пост-обработка**. папка/Outputs для выполнения копируется в журнал выполнения.
+- **Постобработка**: Папка ./выходов запуска скопирована к истории выполнения.
 
-## <a name="save-and-register-the-model"></a>Сохранение и регистрация модели
+## <a name="save-and-register-the-model"></a>Сохранить и зарегистрировать модель
 
-После обучения модели ее можно сохранить и зарегистрировать в рабочей области. Регистрация модели позволяет хранить и отменять версии моделей в рабочей области, чтобы упростить [Управление моделями и их развертывание](concept-model-management-and-deployment.md).
+После того как вы обучили модель, вы можете сохранить и зарегистрировать его в рабочее пространство. Регистрация моделей позволяет хранить и отстраивать модели в рабочем пространстве для упрощения [управления и развертывания моделей.](concept-model-management-and-deployment.md)
 
-Добавьте следующий код в сценарий обучения train_iris. корректировки, чтобы сохранить модель. 
+Добавьте следующий код в свой обучаемый скрипт, train_iris.py, чтобы сохранить модель. 
 
 ``` Python
 import joblib
@@ -180,7 +180,7 @@ import joblib
 joblib.dump(svm_model_linear, 'model.joblib')
 ```
 
-Зарегистрируйте модель в рабочей области с помощью следующего кода. Если указать параметры `model_framework`, `model_framework_version`и `resource_configuration`, то развертывание модели без кода станет недоступным. Это позволяет напрямую развернуть модель в качестве веб-службы из зарегистрированной модели, а объект [`ResourceConfiguration`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.resource_configuration.resourceconfiguration?view=azure-ml-py) определяет ресурс вычислений для веб-службы.
+Зарегистрируйте модель в рабочем пространстве со следующим кодом. При указании `model_framework` `model_framework_version`параметров, `resource_configuration`и развертывание модели без кода становится доступным. Это позволяет непосредственно развертывать модель в виде веб-сервиса [`ResourceConfiguration`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.resource_configuration.resourceconfiguration?view=azure-ml-py) из зарегистрированной модели, и объект определяет вычислительный ресурс для веб-сервиса.
 
 ```Python
 from azureml.core import Model
@@ -195,17 +195,17 @@ model = run.register_model(model_name='sklearn-iris',
 
 ## <a name="deployment"></a>Развертывание
 
-Только что зарегистрированная модель может быть развернута точно так же, как и любая другая Зарегистрированная модель в Машинное обучение Azure, независимо от того, какой механизм оценки использовался для обучения. Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
+Только что зарегистрированная модель может быть развернута точно так же, как и любая другая зарегистрированная модель в Azure Machine Learning, независимо от того, какой оценщик вы использовали для обучения. Способ развертывания содержит раздел о регистрации моделей, но можно перейти непосредственно к [созданию вычислительной цели](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть зарегистрированная модель.
 
-### <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
+### <a name="preview-no-code-model-deployment"></a>(Предварительный просмотр) Развертывание модели без кода
 
-Вместо традиционного маршрута развертывания можно также использовать функцию развертывания без кода (Предварительная версия) для scikit — обучение. Развертывание модели без кода поддерживается для всех встроенных типов моделей scikit-учиться. Зарегистрировав модель, как показано выше, с параметрами `model_framework`, `model_framework_version`и `resource_configuration`, можно просто использовать статическую функцию [`deploy()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) для развертывания модели.
+Вместо традиционного маршрута развертывания можно также использовать функцию развертывания без кода (предварительный просмотр) для обучения scikit. Развертывание модели без кода поддерживается для всех встроенных типов scikit-learn. Зарегистрировав модель, как показано `model_framework` `model_framework_version`выше, `resource_configuration` с помощью , [`deploy()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) и параметры, вы можете просто использовать статическую функцию для развертывания модели.
 
 ```python
 web_service = Model.deploy(ws, "scikit-learn-service", [model])
 ```
 
-Примечание. Эти зависимости включены в предварительно построенный контейнер вывода scikit-учиться.
+ПРИМЕЧАНИЕ: Эти зависимости включены в заранее построенный scikit-узнать вывод контейнера.
 
 ```yaml
     - azureml-defaults
@@ -214,13 +214,13 @@ web_service = Model.deploy(ws, "scikit-learn-service", [model])
     - numpy
 ```
 
-Полное [Описание процесса](how-to-deploy-and-where.md) развертывания в машинное обучение Azure более подробно.
+Полное [способное](how-to-deploy-and-where.md) развертывание в Azure Machine Learning более подробно.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы обучили и зарегистрировали модель scikit-учиться и узнали о вариантах развертывания. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
+В этой статье вы обучали и регистрировали модель scikit-learn и узнали о вариантах развертывания. Ознакомиться с другими статьями читайте в других статьях, чтобы узнать больше о машинном обучении Azure.
 
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
-* [Эталонная архитектура для распределенного обучения глубокого обучения в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)
+* [Справочная архитектура для распределенного глубокого обучения в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)

@@ -1,5 +1,5 @@
 ---
-title: Создание ссылки на пользовательский образ в шаблоне масштабируемого набора Azure
+title: Ссылка на пользовательское изображение в шаблоне набора маштабов Azure
 description: Узнайте, как добавить настраиваемый образ в существующий шаблон масштабируемого набора виртуальных машин Azure
 author: mayanknayar
 tags: azure-resource-manager
@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: manayar
 ms.openlocfilehash: fd1a567af1c35cf6b659995e998b11a61a526508
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76275596"
 ---
 # <a name="add-a-custom-image-to-an-azure-scale-set-template"></a>Добавление настраиваемого образа в шаблон масштабируемого набора Azure
 
-В этой статье показано, как изменить [шаблон базового масштабируемого набора](virtual-machine-scale-sets-mvss-start.md) для развертывания из пользовательского образа.
+В этой статье показано, как изменить [базовый шаблон набора масштабов](virtual-machine-scale-sets-mvss-start.md) для развертывания из пользовательского изображения.
 
 ## <a name="change-the-template-definition"></a>Изменение определения шаблона
-В [предыдущей статье](virtual-machine-scale-sets-mvss-start.md) мы создали шаблон базового масштабируемого набора. Теперь мы будем использовать этот шаблон и изменим его для создания шаблона, который развертывает масштабируемый набор из пользовательского образа.  
+В [предыдущей статье](virtual-machine-scale-sets-mvss-start.md) мы создали базовый шаблон набора масштабов. Теперь мы будем использовать этот предыдущий шаблон и изменить его для создания шаблона, который развертывает набор масштаба из пользовательского изображения.  
 
 ### <a name="creating-a-managed-disk-image"></a>Создание образа управляемого диска
 
@@ -103,6 +103,6 @@ ms.locfileid: "76275596"
 В этом примере используется функция `resourceId`, чтобы получить идентификатор ресурса образа, созданного в том же шаблоне. Если образ управляемого диска создан заранее, укажите идентификатор этого образа. Идентификатор должен быть представлен в следующем формате: `/subscriptions/<subscription-id>resourceGroups/<resource-group-name>/providers/Microsoft.Compute/images/<image-name>`.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 [!INCLUDE [mvss-next-steps-include](../../includes/mvss-next-steps.md)]

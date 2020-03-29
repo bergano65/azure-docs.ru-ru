@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Устранение неполадок с синхронизацией объектов | Документация Майкрософт'
+title: 'Azure AD Connect: устранение неполадок с синхронизацией объектов | Документация Майкрософт'
 description: В этой статье приводятся пошаговые инструкции по устранению неполадок, связанных с синхронизацией объектов, с помощью задач устранения неполадок.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1e56d4d94e38e5095ef2223d0cc2875cbf1dcd46
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "64919116"
 ---
 # <a name="troubleshoot-object-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации объектов с помощью службы синхронизации Azure AD Connect
@@ -37,13 +37,13 @@ ms.locfileid: "64919116"
 4.  Перейдите к странице "Дополнительные задачи", выберите "Устранение неполадок" и щелкните "Далее".
 5.  На странице "Устранение неполадок" щелкните "Запуск", чтобы открыть меню устранения неполадок в PowerShell.
 6.  В главном меню выберите Troubleshoot Object Synchronization (Устранение неполадок с синхронизацией объектов).
-![Устранение неполадок синхронизации объектов](media/tshoot-connect-objectsync/objsynch11.png)
+![Синхронизация объектов устранения неполадок](media/tshoot-connect-objectsync/objsynch11.png)
 
 ### <a name="troubleshooting-input-parameters"></a>Входные параметры для устранения неполадок
 Следующие входные параметры необходимы для выполнения задачи по устранению неполадок.
 1.  **Object Distinguished Name** (Различающееся имя объекта) — различающееся имя объекта, неполадки которого требуется устранить.
 2.  **AD Connector Name** (Имя соединителя AD) — имя леса AD, где находится указанный выше объект.
-3.  Учетные данные глобального администратора Azure AD клиента ![учетные данные глобального администратора](media/tshoot-connect-objectsync/objsynch1.png)
+3.  Глобальный администратор администратора Azure AD учетных данных глобальных ![учетных данных администратора](media/tshoot-connect-objectsync/objsynch1.png)
 
 ### <a name="understand-the-results-of-the-troubleshooting-task"></a>Изучение результатов задачи устранения неполадок
 Задача устранения неполадок выполняет следующие проверки.
@@ -60,12 +60,12 @@ ms.locfileid: "64919116"
 ### <a name="upn-suffix-is-not-verified-with-azure-ad-tenant"></a>Суффикс имени участника-пользователя НЕ проверяется клиентом Azure AD
 Если имя субъекта-пользователя (UserPrincipalName) и суффикс альтернативного имени пользователя не проверены клиентом Azure AD Tenant, тогда Azure Active Directory заменяет суффиксы имени участника-пользователя на стандартное доменное имя onmicrosoft.com.
 
-![Azure AD заменяет имя участника-пользователя](media/tshoot-connect-objectsync/objsynch2.png)
+![Azure AD заменяет UPN](media/tshoot-connect-objectsync/objsynch2.png)
 
 ### <a name="changing-upn-suffix-from-one-federated-domain-to-another-federated-domain"></a>Изменение суффикса имени участника-пользователя при переходе из одного федеративного домена в другой
 Azure Active Directory не позволяет выполнить синхронизацию имени участника-пользователя (UserPrincipalName) или суффикса альтернативного имени пользователя, который изменился при переходе из одного федеративного домена в другой. Это относится к доменам, которые проверяются с помощью клиента Azure AD и имеют федеративный тип аутентификации.
 
-![Синхронизация не имя участника-пользователя из одного федеративного домена в другой](media/tshoot-connect-objectsync/objsynch3.png) 
+![Нет синхронизации UPN от одного федеративного домена к другому](media/tshoot-connect-objectsync/objsynch3.png) 
 
 ### <a name="azure-ad-tenant-dirsync-feature-synchronizeupnformanagedusers-is-disabled"></a>Компонент DirSync клиента Azure AD SynchronizeUpnForManagedUsers отключен
 Если компонент DirSync клиента Azure AD SynchronizeUpnForManagedUsers отключен, Azure Active Directory не позволяет выполнить обновление синхронизации атрибута UserPrincipalName и альтернативного имени пользователя для учетных записей лицензированных пользователей с помощью управляемой аутентификации.
@@ -80,7 +80,7 @@ Azure Active Directory не позволяет выполнить синхрон
 
 ### <a name="domain-is-configured-to-sync-but-is-missing-run-profilesrun-steps"></a>Домен настроен для синхронизации, но отсутствуют профили и шаги выполнения
 Объект находится за пределами области, так как в домене отсутствуют профили и шаги выполнения. В указанном ниже примере объект находится за пределами области, так как в домене, к которому он принадлежит, отсутствуют шаги выполнения для профиля выполнения полного импорта.
-![недостающие профили выполнения](media/tshoot-connect-objectsync/objsynch6.png)
+![отсутствующие профили выполнения](media/tshoot-connect-objectsync/objsynch6.png)
 
 ## <a name="object-is-filtered-due-to-ou-filtering"></a>Фильтрование объекта при фильтрации подразделения
 Объект находится за пределами области из-за настройки фильтрации подразделений. В следующем примере объект принадлежит к подразделению OU=NoSync,DC=bvtadwbackdc,DC=com.  Это подразделение не включено в область синхронизации.</br>
@@ -102,4 +102,4 @@ Azure Active Directory не позволяет выполнить синхрон
 ![Отчет HTML](media/tshoot-connect-objectsync/objsynch8.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

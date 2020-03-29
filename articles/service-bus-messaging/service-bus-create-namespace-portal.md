@@ -1,6 +1,6 @@
 ---
-title: Создание пространства имен служебной шины в портал Azure
-description: В этой статье приводятся инструкции по созданию пространства имен служебной шины Azure в портал Azure.
+title: Как создать пространство имен сервисного автобуса на портале Azure
+description: В этой статье содержатся инструкции по созданию пространства имен Azure Service Bus на портале Azure.
 services: service-bus-messaging
 documentationcenter: .net
 author: axisc
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: b6351fade23f1671573964f946005d57671d3cc7
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76761072"
 ---
 # <a name="create-a-service-bus-namespace-using-the-azure-portal"></a>Создание пространства имен служебной шины с помощью портала Azure
@@ -31,7 +31,7 @@ ms.locfileid: "76761072"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с [примерами кода GitHub][github-samples]служебной шины, которые демонстрируют некоторые расширенные возможности обмена сообщениями через служебную шину.
+Ознакомьтесь с [примерами GitHub][github-samples], демонстрирующими расширенные возможности обмена сообщениями служебной шины.
 
 [create-namespace-using-arm]: service-bus-resource-manager-overview.md
 [github-samples]: https://github.com/Azure/azure-service-bus/tree/master/samples

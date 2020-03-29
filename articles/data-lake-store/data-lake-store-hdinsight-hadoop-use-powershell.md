@@ -1,6 +1,6 @@
 ---
 title: Создание кластера HDInsight, использующего Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища, c помощью PowerShell | Документы Майкрософт
-description: Узнайте, как использовать Azure PowerShell для настройки кластера HDInsight с Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища.
+description: Узнайте, как использовать Azure PowerShell для настройки кластера HDInsight с Azure Data Lake Storage Gen1 в качестве дополнительного хранилища.
 services: data-lake-store,hdinsight
 documentationcenter: ''
 author: twooley
@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 4cd61619e0417ab1db8d8413872b2dff1c904fc1
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78970141"
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-as-additional-storage"></a>Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)
@@ -50,16 +50,16 @@ ms.locfileid: "78970141"
 * Создание кластера HDInsight с проверкой подлинности в Data Lake Storage 1-го поколения
 * выполнение тестового задания в кластере.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Azure PowerShell 1.0 или более поздней версии**. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
-* **Пакет SDK Windows**. Его можно установить [отсюда](https://dev.windows.com/en-us/downloads). Пакет используется для создания сертификата безопасности.
-* **Субъект-служба Azure Active Directory**. В этом учебнике приведены инструкции по созданию субъекта-службы в Azure AD. Однако, чтобы создать субъект-службу, необходимо быть администратором Azure AD. Если вы являетесь администратором Azure AD, то можете пропустить это предварительное требование и продолжить работу с учебником.
+* **Azure PowerShell 1.0 или больше**. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+* **Windows SDK**. Его можно установить [отсюда](https://dev.windows.com/en-us/downloads). Пакет используется для создания сертификата безопасности.
+* **Директор службы активного каталога Azure**. В этом учебнике приведены инструкции по созданию субъекта-службы в Azure AD. Однако, чтобы создать субъект-службу, необходимо быть администратором Azure AD. Если вы являетесь администратором Azure AD, то можете пропустить это предварительное требование и продолжить работу с учебником.
 
     **Если вы не являетесь администратором Azure AD**, то вы не сможете выполнить шаги, необходимые для создания субъекта-службы. В этом случае администратор Azure AD должен сначала создать субъект-службу, после чего вы сможете создать кластер HDInsight с Data Lake Storage 1-го поколения. При создании субъекта-службы также необходимо использовать сертификат, как описано в разделе [Create a service principal with certificate](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-certificate-from-certificate-authority) (Создание субъекта-службы с сертификатом).
 
@@ -138,7 +138,7 @@ ms.locfileid: "78970141"
 
 Прежде чем выполнять дальнейшие действия, описанные в этом разделе, убедитесь, что на вашем компьютере установлен [пакет SDK Windows](https://dev.windows.com/en-us/downloads). Вам также необходимо создать каталог, например **C:\mycertdir**, в котором будет создан сертификат.
 
-1. В окне PowerShell перейдите к расположению, в котором вы установили Windows SDK (как правило, `C:\Program Files (x86)\Windows Kits\10\bin\x86` и используйте служебную программу [MakeCert][makecert] для создания самозаверяющего сертификата и закрытого ключа. Используйте такие команды:
+1. В окне PowerShell перейдите в расположение, где установлен пакет SDK Windows (обычно это `C:\Program Files (x86)\Windows Kits\10\bin\x86`), и с помощью служебной программы [MakeCert][makecert] создайте самозаверяющий сертификат и закрытый ключ. Используйте такие команды:
 
         $certificateFileDir = "<my certificate directory>"
         cd $certificateFileDir
@@ -146,7 +146,7 @@ ms.locfileid: "78970141"
         makecert -sv mykey.pvk -n "cn=HDI-ADL-SP" CertFile.cer -r -len 2048
 
     Вам будет предложено ввести пароль для закрытого ключа. После успешного выполнения команды в указанном каталоге сертификатов должны появиться файлы **CertFile.cer** и **mykey.pvk**.
-2. Используйте служебную программу [Pvk2Pfx][pvk2pfx] для преобразования файлов. PVK и. cer, созданных средством MakeCert, в PFX-файл. Выполните следующую команду.
+2. С помощью служебной программы [Pvk2Pfx][pvk2pfx] преобразуйте созданные программой MakeCert PVK- и CER-файлы в PFX-файл. Выполните следующую команду.
 
         pvk2pfx -pvk mykey.pvk -spc CertFile.cer -pfx CertFile.pfx -po <password>
 
@@ -270,7 +270,7 @@ ms.locfileid: "78970141"
 
 С помощью команды `hdfs dfs -put` вы можете передать несколько файлов в Data Lake Storage 1-го поколения, а затем с помощью команды `hdfs dfs -ls` проверить, успешно ли они передались.
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
 * [Создание кластера HDInsight, использующего Data Lake Storage 1-го поколения, с помощью портала](data-lake-store-hdinsight-hadoop-use-portal.md)
 

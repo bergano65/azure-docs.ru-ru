@@ -1,6 +1,6 @@
 ---
-title: Список запрещенных назначений для ресурсов Azure с помощью REST API
-description: Узнайте, как вывести список запрещенных назначений для пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure и REST API.
+title: Список отказов в назначениях для ресурсов Azure с помощью REST API
+description: Узнайте, как перечислить задачи отказа в назначении для пользователей, групп и приложений с помощью элемента управления доступом (RBAC) для ресурсов Azure и АИС REST.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -12,28 +12,28 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/10/2019
+ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9e6214b3cb2cdca2d80ebae43771b206e3396d8b
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: 0f648405a3d71bf27c64dacbb3fd78f3e9801137
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77137323"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80063017"
 ---
 # <a name="list-deny-assignments-for-azure-resources-using-the-rest-api"></a>Вывод списка запретов назначений для ресурсов Azure с помощью REST API
 
-[Запрещающие назначения](deny-assignments.md) блокируют выполнение определенных действий ресурсов Azure пользователями, даже если назначение роли предоставляет им доступ. В этой статье описывается, как вывести список запрещенных назначений с помощью REST API.
+[Запрет назначений](deny-assignments.md) блокирует пользователям выполнение определенных действий ресурса Azure, даже если назначение ролей предоставляет им доступ. В этой статье описывается, как перечислить отрицание назначений с помощью REST API.
 
 > [!NOTE]
-> Вы не можете напрямую создавать собственные назначения Deny. Дополнительные сведения о создании назначений Deny см. в разделе [Deny назначений](deny-assignments.md).
+> Вы не можете напрямую создавать собственные назначения отрицания. Для получения [информации](deny-assignments.md)о том, как создаются назначения отрицания, см.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы получить сведения о назначении Deny, необходимо следующее:
+Чтобы получить информацию об отказе в назначении, необходимо:
 
-- `Microsoft.Authorization/denyAssignments/read` разрешение, которое входит в большинство [встроенных ролей для ресурсов Azure](built-in-roles.md).
+- `Microsoft.Authorization/denyAssignments/read`разрешение, которое включено в большинство [встроенных ролей для ресурсов Azure.](built-in-roles.md)
 
 ## <a name="list-a-single-deny-assignment"></a>Вывод списка определенного запрета назначения
 
@@ -45,11 +45,12 @@ ms.locfileid: "77137323"
 
 1. Внутри URI замените *{scope}* областью, для которой требуется создать список запретов назначений.
 
-    | Область | Тип |
-    | --- | --- |
-    | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    > [!div class="mx-tableFixed"]
+    > | Область | Тип |
+    > | --- | --- |
+    > | `subscriptions/{subscriptionId}` | Подписка |
+    > | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{deny-assignment-id}* идентификатором запрета назначения, которое необходимо получить.
 
@@ -69,19 +70,24 @@ ms.locfileid: "77137323"
 
 1. Внутри URI замените *{scope}* областью, для которой требуется создать список запретов назначений.
 
-    | Область | Тип |
-    | --- | --- |
-    | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    > [!div class="mx-tableFixed"]
+    > | Область | Тип |
+    > | --- | --- |
+    > | `subscriptions/{subscriptionId}` | Подписка |
+    > | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{filter}* условием, по которому требуется отфильтровать список запретов назначений.
 
-    | Filter | Description |
-    | --- | --- |
-    | (без фильтра) | Вывод списка всех запретов назначений, находящихся выше и ниже заданной области. |
-    | `$filter=atScope()` | Вывод списка запретов назначений только в указанной области и областях выше нее. Не включаются запреты назначений во внутренних областях. |
-    | `$filter=denyAssignmentName%20eq%20'{deny-assignment-name}'` | Вывод списка всех запретов назначений с указанным названием. |
+    > [!div class="mx-tableFixed"]
+    > | Filter | Описание |
+    > | --- | --- |
+    > | (без фильтра) | Списки все отрицать назначения на, выше, и ниже указанной области. |
+    > | `$filter=atScope()` | Списки отрицают назначения только для указанной области и выше. Не включаются запреты назначений во внутренних областях. |
+    > | `$filter=assignedTo('{objectId}')` | Списки отрицают назначения для указанного пользователя или директора службы.<br/>Если пользователь является членом группы, у которого есть назначение отрицания, то также указано назначение. Этот фильтр является транзитным для групп, что означает, что если пользователь является членом группы и что группа является членом другой группы, которая имеет назначение отрицания, что отрицание назначения также перечислено.<br/>Этот фильтр принимает идентификатор объекта только для пользователя или директора службы. Вы не можете передать идентификатор объекта для группы. |
+    > | `$filter=atScope()+and+assignedTo('{objectId}')` | Списки отрицают назначения для указанного пользователя или основного обслуживания и в указанном объеме. |
+    > | `$filter=denyAssignmentName+eq+'{deny-assignment-name}'` | Списки отрицают назначения с указанным именем. |
+    > | `$filter=principalId+eq+'{objectId}'` | Списки отрицают назначения для указанного пользователя, группы или основного обслуживания. |
 
 ## <a name="list-deny-assignments-at-the-root-scope-"></a>Вывод списка запретов назначений в корневой области (/)
 
@@ -95,15 +101,16 @@ ms.locfileid: "77137323"
 
 1. Замените *{filter}* условием, по которому требуется отфильтровать список запретов назначений. Необходимо указать фильтр.
 
-    | Filter | Description |
-    | --- | --- |
-    | `$filter=atScope()` | Вывод списка запретов назначений только в корневой области. Не включаются запреты назначений во внутренних областях. |
-    | `$filter=denyAssignmentName%20eq%20'{deny-assignment-name}'` | Вывод списка всех запретов назначений с указанным названием. |
+    > [!div class="mx-tableFixed"]
+    > | Filter | Описание |
+    > | --- | --- |
+    > | `$filter=atScope()` | Вывод списка запретов назначений только в корневой области. Не включаются запреты назначений во внутренних областях. |
+    > | `$filter=denyAssignmentName+eq+'{deny-assignment-name}'` | Вывод списка всех запретов назначений с указанным названием. |
 
 1. Удалите повышенный уровень доступа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запрет назначений для ресурсов Azure](deny-assignments.md)
-- [Повышение прав доступа глобального администратора в Azure Active Directory](elevate-access-global-admin.md)
-- [Справочник по REST API Azure](/rest/api/azure/)
+- [Повысить доступ для глобального администратора в active-каталоге Azure](elevate-access-global-admin.md)
+- [Ссылка на API Azure REST](/rest/api/azure/)

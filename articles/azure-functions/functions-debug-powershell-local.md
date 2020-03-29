@@ -1,32 +1,32 @@
 ---
-title: Локальная отладка функций Azure PowerShell
-description: Узнайте, как разрабатывать функции с помощью PowerShell.
+title: Функции Debug PowerShell Azure локально
+description: Понять, как разрабатывать функции с помощью PowerShell.
 author: tylerleonhardt
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
 ms.openlocfilehash: 133e89bd9187ae5e48fa208b407678760d31adfd
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78163766"
 ---
-# <a name="debug-powershell-azure-functions-locally"></a>Локальная отладка функций Azure PowerShell
+# <a name="debug-powershell-azure-functions-locally"></a>Функции Debug PowerShell Azure локально
 
-Функции Azure позволяют разрабатывать функции в виде скриптов PowerShell.
+Функции Azure позволяют разрабатывать функции скриптов PowerShell.
 
-Вы можете выполнять отладку функций PowerShell локально, как и любые сценарии PowerShell, используя следующие стандартные средства разработки:
+Вы можете отладить функции PowerShell локально, как и любые скрипты PowerShell, используя следующие стандартные инструменты разработки:
 
-* [Visual Studio Code](https://code.visualstudio.com/): бесплатный, упрощенный и открытый исходный редактор с открытым исходным кодом с помощью расширения PowerShell, которое предлагает полный интерфейс разработки PowerShell.
-* Консоль PowerShell: Отладка с использованием тех же команд, которые используются для отладки любого другого процесса PowerShell.
+* [Визуальный код студии](https://code.visualstudio.com/): бесплатный, легкий и с открытым исходным кодом текстовый редактор Microsoft с расширением PowerShell, который предлагает полный опыт разработки PowerShell.
+* Консоль PowerShell: отладка с использованием тех же команд, которые вы использовали бы для отладки любого другого процесса PowerShell.
 
-[Azure functions Core Tools](functions-run-local.md) поддерживает локальную отладку функций Azure, включая функции PowerShell.
+[Основные инструменты Azure Functions](functions-run-local.md) поддерживают локальную отладку функций Azure, включая функции PowerShell.
 
-## <a name="example-function-app"></a>Пример приложения функции
+## <a name="example-function-app"></a>Пример функции приложения
 
-Приложение-функция, используемое в этой статье, имеет одну функцию, активируемую HTTP, и имеет следующие файлы:
+Функция приложение, используемое в этой статье имеет одну функцию http срабатывает и имеет следующие файлы:
 
 ```
 PSFunctionApp
@@ -38,9 +38,9 @@ PSFunctionApp
  | - profile.ps1
 ```
 
-Это приложение-функция аналогично тому, которое вы получаете при выполнении [краткого руководства по PowerShell](functions-create-first-function-powershell.md).
+Эта функция приложение похоже на тот, который вы получаете, когда вы завершаете [PowerShell quickstart](functions-create-first-function-powershell.md).
 
-Код функции в `run.ps1` выглядит как следующий скрипт:
+Функциональный код `run.ps1` в выглядит следующим скриптом:
 
 ```powershell
 param($Request)
@@ -62,11 +62,11 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 })
 ```
 
-## <a name="set-the-attach-point"></a>Установка точки подключения
+## <a name="set-the-attach-point"></a>Установка точки крепления
 
-Для отладки любой функции PowerShell необходимо, чтобы функция была приостановлена, чтобы присоединить отладчик. Командлет `Wait-Debugger` останавливает выполнение и ожидает отладчика.
+Чтобы отладить любую функцию PowerShell, функция должна остановиться для отладчика, который будет прикреплен. Cmdlet `Wait-Debugger` останавливает выполнение и ждет отладчика.
 
-Все, что нужно сделать, — это добавить вызов командлета `Wait-Debugger` прямо над инструкцией `if`, как показано ниже.
+Все, что вам нужно сделать, это добавить вызов cmdlet `Wait-Debugger` чуть выше `if` оператора, а именно:
 
 ```powershell
 param($Request)
@@ -83,103 +83,103 @@ if($name) {
 # ...
 ```
 
-Отладка начинается с оператора `if`. 
+Отладка начинается `if` с оператора. 
 
-С `Wait-Debugger` на месте, теперь можно выполнять отладку функций с помощью Visual Studio Code или консоли PowerShell.
+Теперь, когда `Wait-Debugger` вы можете отладить функции, используя либо Visual Studio Code, либо консоль PowerShell.
 
-## <a name="debug-in-visual-studio-code"></a>Отладка в Visual Studio Code
+## <a name="debug-in-visual-studio-code"></a>Ошибка в коде визуальной студии
 
-Для отладки функций PowerShell в Visual Studio Code необходимо установить следующие компоненты:
+Чтобы отладить функции PowerShell в Коде Visual Studio, необходимо установить следующие:
 
-* [Расширение PowerShell для Visual Studio Code](/powershell/scripting/components/vscode/using-vscode)
+* [Расширение PowerShell для визуального кода студии](/powershell/scripting/components/vscode/using-vscode)
 * [Расширение "Функции Azure" для Visual Studio Code](functions-create-first-function-vs-code.md)
-* [PowerShell Core 6,2 или более поздней версии](/powershell/scripting/install/installing-powershell-core-on-windows)
+* [Ядро PowerShell 6.2 или выше](/powershell/scripting/install/installing-powershell-core-on-windows)
 
-После установки этих зависимостей загрузите существующий проект функций PowerShell или [Создайте свой первый проект функций PowerShell](functions-create-first-function-powershell.md).
+После установки этих зависимостей загрузите существующий проект PowerShell Functions или [создайте свой первый проект PowerShell Functions.](functions-create-first-function-powershell.md)
 
 >[!NOTE]
-> Если в проекте отсутствуют необходимые файлы конфигурации, вам будет предложено добавить их.
+> Если ваш проект не имеет необходимых файлов конфигурации, вам предлагается добавить их.
 
 ### <a name="set-the-powershell-version"></a>Установка версии PowerShell
 
-PowerShell Core устанавливается параллельно с Windows PowerShell. Задайте PowerShell Core в качестве версии PowerShell для использования с расширением PowerShell для Visual Studio Code.
+PowerShell Core устанавливается бок о бок с Windows PowerShell. Установите PowerShell Core в качестве версии PowerShell для использования с расширением PowerShell для визуального кода studio.
 
-1. Нажмите клавишу F1, чтобы отобразить палету команды, а затем выполните поиск по `Session`.
+1. Нажмите F1, чтобы отобразить `Session`командный поддон, а затем ищите .
 
-1. Выберите **PowerShell: отобразить меню сеанса**.
+1. Выберите **PowerShell: Показать меню сессии**.
 
-1. Если **текущий сеанс** не является **PowerShell Core 6**, выберите **параметр перейти к: PowerShell Core 6**.
+1. Если **текущая сессия** не **PowerShell Core 6,** **выберите переключатель на: PowerShell Core 6.**
 
-При открытии файла PowerShell в нижней правой части окна отображается зеленая версия. При выборе этого текста также отображается меню сеанса. Дополнительные сведения см. в статье [Выбор версии PowerShell для использования с расширением](/powershell/scripting/components/vscode/using-vscode#choosing-a-version-of-powershell-to-use-with-the-extension).
+При открытии файла PowerShell вы видите версию, отображаемую зеленым цветом в правом нижнем углу окна. При выборе этого текста также отображается меню сеанса. Чтобы узнать больше, смотрите [Выбор версии PowerShell для использования с расширением.](/powershell/scripting/components/vscode/using-vscode#choosing-a-version-of-powershell-to-use-with-the-extension)
 
-### <a name="start-the-function-app"></a>Запуск приложения функции
+### <a name="start-the-function-app"></a>Запустите функциональное приложение
 
-Убедитесь, что `Wait-Debugger` задана в функции, в которой необходимо подключить отладчик.  После добавления `Wait-Debugger` можно выполнить отладку приложения функции с помощью Visual Studio Code.
+Проверить, `Wait-Debugger` что устанавливается в функции, где вы хотите прикрепить отладчика.  С `Wait-Debugger` добавлением вы можете отладить приложение функции с помощью Visual Studio Code.
 
-Выберите область **отладки** , а затем **присоединитесь к функции PowerShell**.
+Выберите панель **Debug,** а затем **прикрепите к функции PowerShell.**
 
 ![отладчик](https://user-images.githubusercontent.com/2644648/56166073-8a7b3780-5f89-11e9-85ce-36ed38e221a2.png)
 
-Можно также нажать клавишу F5, чтобы начать отладку.
+Вы также можете нажать клавишу F5, чтобы начать отладку.
 
-Операция запуска отладки выполняет следующие задачи.
+Операция отладки запуска выполняет следующие задачи:
 
-* Запускает `func extensions install` в терминале, чтобы установить расширения функций Azure, необходимые для приложения функции.
-* Запускает `func host start` в терминале для запуска приложения функции на узле функций.
-* Присоедините отладчик PowerShell к пространству выполнения PowerShell в среде выполнения функций.
+* Выполняется `func extensions install` в терминале для установки любых расширений Функций Azure, требуемых вашим приложением функции.
+* Запускается `func host start` в терминале, чтобы запустить функциональное приложение в хосте Функции.
+* Прикрепите отладку PowerShell к беговому пространству PowerShell в течение времени выполнения функций.
 
 >[!NOTE]
-> Необходимо убедиться, что Псворкеринпрокконкурренциуппербаунд имеет значение 1, чтобы обеспечить правильную работу по отладке в Visual Studio Code. Это значение по умолчанию.
+> Для обеспечения правильного отладки кода Visual Studio необходимо обеспечить, чтобы PSWorkerInProCConcurrencyUpperBound был настроен на 1. Это значение по умолчанию.
 
-После запуска приложения-функции вам потребуется отдельная консоль PowerShell для вызова функции, активируемой HTTP.
+При запуске приложения функции вам нужна отдельная консоль PowerShell для вызова функции срабатывания HTTP.
 
-В этом случае консоль PowerShell является клиентом. `Invoke-RestMethod` используется для активации функции.
+В этом случае клиентом является консоль PowerShell. Используется `Invoke-RestMethod` для запуска функции.
 
-В консоли PowerShell выполните следующую команду:
+В консоли PowerShell запустите следующую команду:
 
 ```powershell
 Invoke-RestMethod "http://localhost:7071/api/HttpTrigger?Name=Functions"
 ```
 
-Обратите внимание, что ответ не возвращается немедленно. Это связано с тем, что `Wait-Debugger` подключен отладчик и выполнение PowerShell перешло в режим приостановки, как только это может быть. Это обусловлено [концепцией BreakAll](#breakall-might-cause-your-debugger-to-break-in-an-unexpected-place), которая описывается далее. После нажатия кнопки `continue` отладчик теперь переключается на строку сразу после `Wait-Debugger`.
+Вы заметите, что ответ не возвращается немедленно. Это потому, что `Wait-Debugger` прикрепил отладчик и PowerShell исполнения перешли в режим перерыва, как только он мог. Это из-за [концепции BreakAll](#breakall-might-cause-your-debugger-to-break-in-an-unexpected-place), которая объясняется позже. После нажатия `continue` кнопки отладчик теперь ломается `Wait-Debugger`на линии сразу после.
 
-На этом этапе отладчик присоединен, и вы можете выполнять все обычные операции отладчика. Дополнительные сведения об использовании отладчика в Visual Studio Code см. [в официальной документации](https://code.visualstudio.com/Docs/editor/debugging#_debug-actions).
+На этом этапе отладчик прилагается, и вы можете выполнять все обычные операции отладчика. Для получения дополнительной информации об использовании отладчика в Visual Studio Code, [см.](https://code.visualstudio.com/Docs/editor/debugging#_debug-actions)
 
-После продолжения и полного вызова скрипта вы заметите, что:
+После того как вы продолжите и полностью выссылаете свой сценарий, вы заметите, что:
 
-* Консоль PowerShell, которая выполнила `Invoke-RestMethod` вернула результат
-* Интегрированная консоль PowerShell в Visual Studio Code ожидает выполнения скрипта
+* Консоль PowerShell, `Invoke-RestMethod` которая сделала, вернула результат
+* Интегрированная консоль PowerShell в коде визуальной студии ждет выполнения сценария
 
-Позже при вызове той же функции отладчик в расширении PowerShell прерывает работу сразу после `Wait-Debugger`.
+Позже, когда вы вызываете ту же функцию, отладчик `Wait-Debugger`в расширении PowerShell ломается сразу после .
 
 ## <a name="debugging-in-a-powershell-console"></a>Отладка в консоли PowerShell
 
 >[!NOTE]
-> В этом разделе предполагается, что вы прочитали [документацию по Azure functions Core Tools](functions-run-local.md) и узнаете, как использовать команду `func host start` для запуска приложения функции.
+> В этом разделе предполагается, что вы [прочитали документы о основных инструментах Azure Functions](functions-run-local.md) и знаете, как использовать `func host start` команду для запуска приложения функции.
 
-Откройте консоль, `cd` в каталог приложения-функции и выполните следующую команду:
+Откройте консоль `cd` в каталог приложения функции и запустите следующую команду:
 
 ```sh
 func host start
 ```
 
-После запуска приложения функции и `Wait-Debugger` на месте можно присоединиться к процессу. Вам понадобятся две консоли PowerShell.
+С функцией приложение `Wait-Debugger` работает и на месте, вы можете прикрепить к процессу. Вам нужно еще две консоли PowerShell.
 
-Одна из консолей выступает в качестве клиента. В этом случае вызывается `Invoke-RestMethod` для активации функции. Например, можно выполнить следующую команду:
+Одна из консолей выступает в качестве клиента. Из этого вы `Invoke-RestMethod` вызываете, чтобы вызвать функцию. Например, можно запустить следующую команду:
 
 ```powershell
 Invoke-RestMethod "http://localhost:7071/api/HttpTrigger?Name=Functions"
 ```
 
-Вы заметите, что он не возвращает ответ, что является результатом `Wait-Debugger`. Теперь пространство выполнения PowerShell ожидает присоединения отладчика. Давайте присоединяемся.
+Вы заметите, что он не возвращает ответ, который `Wait-Debugger`является результатом . В runspace PowerShell теперь ожидается присоединение отладчика. Давайте привяжем это.
 
-В другой консоли PowerShell выполните следующую команду:
+В другой консоли PowerShell запустите следующую команду:
 
 ```powershell
 Get-PSHostProcessInfo
 ```
 
-Этот командлет возвращает таблицу, которая выглядит следующим образом:
+Это cmdlet возвращает таблицу, которая выглядит как следующий выход:
 
 ```output
 ProcessName ProcessId AppDomainName
@@ -194,9 +194,9 @@ pwsh            32071 None
 pwsh            88785 None
 ```
 
-Запишите `ProcessId` для элемента в таблице с `ProcessName` как `dotnet`. Этот процесс является приложением-функцией.
+Обратите внимание `ProcessId` на элемент в таблице `ProcessName` с `dotnet`как . Этот процесс является вашим функциональным приложением.
 
-Затем выполните следующий фрагмент кода:
+Далее запустите следующий фрагмент:
 
 ```powershell
 # This enters into the Azure Functions PowerShell process.
@@ -207,7 +207,7 @@ Enter-PSHostProcess -Id $ProcessId
 Debug-Runspace 1
 ```
 
-После запуска отладчик прерывает работу и отображает нечто вроде приведенных ниже выходных данных.
+После запуска отладчик ломается и показывает что-то вроде следующего вывода:
 
 ```
 Debugging Runspace: Runspace1
@@ -220,29 +220,29 @@ At /Path/To/PSFunctionApp/HttpTriggerFunction/run.ps1:13 char:1
 [DBG]: [Process:49988]: [Runspace1]: PS /Path/To/PSFunctionApp>>
 ```
 
-На этом этапе вы прекращаете работу в точке останова в [отладчике PowerShell](/powershell/module/microsoft.powershell.core/about/about_debuggers). Здесь можно выполнять все обычные операции отладки: шаг с обходом, шаг с заходом, продолжить, выйти и другие. Чтобы просмотреть полный набор команд отладки, доступных в консоли, выполните команды `h` или `?`.
+На этом этапе вы остановились на точке разрыва в [отладчике PowerShell.](/powershell/module/microsoft.powershell.core/about/about_debuggers) Отсюда вы можете делать все обычные операции отладить, перешагнуть, шаг в, продолжить, бросить курить, и другие. Чтобы увидеть полный набор команд отладки, `h` доступных в консоли, запустите или `?` команды.
 
-Точки останова можно также установить на этом уровне с помощью командлета `Set-PSBreakpoint`.
+Вы также можете установить точки `Set-PSBreakpoint` разрыва на этом уровне с cmdlet.
 
-После продолжения и полного вызова скрипта вы заметите, что:
+Как только вы продолжите и полностью вызываете свой сценарий, вы заметите, что:
 
-* Консоль PowerShell, в которой вы выполнили `Invoke-RestMethod`, теперь вернула результат.
-* Консоль PowerShell, в которой выполнялся `Debug-Runspace`, ожидает выполнения скрипта.
+* Консоль PowerShell, на `Invoke-RestMethod` которой вы выполнили, теперь вернула результат.
+* Консоль PowerShell, в `Debug-Runspace` которой вы выполняетеся, ждет выполнения сценария.
 
-Одну и ту же функцию можно вызвать снова (например, с помощью `Invoke-RestMethod`), и отладчик переключается сразу после команды `Wait-Debugger`.
+Вы можете снова вызвать ту `Invoke-RestMethod` же функцию (например, использовать) `Wait-Debugger` и перерывы отладчика сразу после команды.
 
-## <a name="considerations-for-debugging"></a>Рекомендации по отладке
+## <a name="considerations-for-debugging"></a>Рассмотрение вопроса об отладке
 
-При отладке кода функций учитывайте следующие моменты.
+Имейте в виду следующие проблемы при отладке кода Функции.
 
-### <a name="breakall-might-cause-your-debugger-to-break-in-an-unexpected-place"></a>`BreakAll` может привести к сбою отладчика в неожиданном месте
+### <a name="breakall-might-cause-your-debugger-to-break-in-an-unexpected-place"></a>`BreakAll`может привести к тому, что ваш отладчик сломается в неожиданном месте
 
-Расширение PowerShell использует `Debug-Runspace`, которое, в свою очередь, зависит от `BreakAll` функции PowerShell. Эта функция указывает, что PowerShell должен останавливаться на первой выполняемой команде. Такое поведение дает возможность задавать точки останова в отлаживаемом пространстве выполнения.
+Расширение PowerShell `Debug-Runspace`использует , который, в свою `BreakAll` очередь, опирается на функцию PowerShell. Эта функция говорит PowerShell остановиться на первой выполняемых команд. Такое поведение дает возможность устанавливать точки разрыва в отладочном пространстве запуска.
 
-Среда выполнения функций Azure выполняет несколько команд перед фактическим вызовом скрипта `run.ps1`, так что отладчик может прерываться в `Microsoft.Azure.Functions.PowerShellWorker.psm1` или `Microsoft.Azure.Functions.PowerShellWorker.psd1`.
+Время выполнения функций Azure запускает несколько команд, `run.ps1` прежде чем на самом деле высвобождение скрипта, так что вполне возможно, что отладчик в конечном итоге нарушение внутри `Microsoft.Azure.Functions.PowerShellWorker.psm1` или `Microsoft.Azure.Functions.PowerShellWorker.psd1`
 
-Если это произойдет, выполните команду `continue` или `c`, чтобы пропустить эту точку останова. Затем вы останавливается в ожидаемой точке останова.
+Если этот разрыв произойдет, запустите `continue` или `c` команду, чтобы пропустить эту точку разрыва. Затем вы останавливаетесь на ожидаемой точке разрыва.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о разработке функций с помощью PowerShell см. в статье с [руководством разработчика PowerShell для функций Azure](functions-reference-powershell.md).
+Чтобы узнать больше о разработке функций с помощью PowerShell, смотрите [руководство разработчика Azure Functions PowerShell.](functions-reference-powershell.md)

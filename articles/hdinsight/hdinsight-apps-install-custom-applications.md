@@ -1,5 +1,5 @@
 ---
-title: Установка пользовательских Apache Hadoop приложений в Azure HDInsight
+title: Установите пользовательские приложения Apache Hadoop на Azure HDInsight
 description: Узнайте, как установить приложения HDInsight для кластеров Apache Hadoop в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
 ms.openlocfilehash: 8fe9e551a4ca7dea8f53e0f8c2975ca3d88c48f7
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79366263"
 ---
 # <a name="install-custom-apache-hadoop-applications-on-azure-hdinsight"></a>Установка пользовательских приложений Apache Hadoop в Azure HDInsight
 
-В этой статье вы узнаете, как установить приложение [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight, которое еще не опубликовано в портал Azure. Приложение, которое вы будете устанавливать в этой статье, является [оттенок](https://gethue.com/).
+В этой статье вы узнаете, как установить приложение [Apache Hadoop](https://hadoop.apache.org/) на Azure HDInsight, которое не было опубликовано на портале Azure. Приложение, которое вы установите в этой [статье, является оттенком](https://gethue.com/).
 
 Пользователи могут устанавливать приложения HDInsight в кластере HDInsight.  Разработчиками этих приложений могут быть корпорация Майкрософт, независимые поставщики программного обеспечения или вы сами.  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы хотите установить приложение HDInsight в существующем кластере HDInsight, вы должны создать кластер HDInsight. Инструкции по созданию кластера см. в [этом разделе](hadoop/apache-hadoop-linux-tutorial-get-started.md). Вы также можете установить приложения HDInsight во время создания кластера HDInsight.
 
@@ -37,31 +37,31 @@ ms.locfileid: "79366263"
 * [hue-binaries-14-04.tgz](https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/hue-binaries-14-04.tgz) — двоичный файл hue, вызываемый из hui-install_v0.sh.
 * [webwasb-tomcat.tar.gz](https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/webwasb-tomcat.tar.gz) — пример веб-приложения (Tomcat), вызываемый из hui-install_v0.sh.
 
-### <a name="to-install-hue-to-an-existing-hdinsight-cluster"></a>Установка оттенка в существующий кластер HDInsight
+### <a name="to-install-hue-to-an-existing-hdinsight-cluster"></a>Установка приложения Hue в существующем кластере HDInsight
 
-1. Выберите следующее изображение, чтобы войти в Azure и открыть шаблон диспетчер ресурсов в портал Azure.
+1. Выберите следующее изображение для вхува в Azure и откройте шаблон менеджера ресурсов на портале Azure.
 
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhdinsight%2FIaas-Applications%2Fmaster%2FHue%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-install-custom-applications/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
 
-    Шаблон Resource Manager доступен по адресу [https://github.com/hdinsight/Iaas-Applications/tree/master/Hue](https://github.com/hdinsight/Iaas-Applications/tree/master/Hue).  Дополнительные сведения о создании шаблона Resource Manager см. в статье [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx) (Установка приложения HDInsight) на сайте MSDN.
+    Шаблон «Менеджер ресурсов» [https://github.com/hdinsight/Iaas-Applications/tree/master/Hue](https://github.com/hdinsight/Iaas-Applications/tree/master/Hue)расположен по адресу .  Дополнительные сведения о создании шаблона Resource Manager см. в статье [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx) (Установка приложения HDInsight) на сайте MSDN.
 
-1. Выберите в раскрывающемся списке существующую **группу ресурсов** , содержащую кластер. Необходимо использовать ту же группу ресурсов, что и кластер.
+1. Выберите существующую **группу ресурсов,** содержащую кластер из списка выпадающих. Требуется использовать ту же группу ресурсов, что и кластер.
 
 1. Имя кластера, в котором вы хотите установить приложение. Это должен быть существующий кластер.
 
-1. Установите флажок **я принимаю указанные выше условия**.
+1. Выберите флажок, **ибо я согласен с условиями, указанными выше.**
 
-1. Щелкните **Приобрести**.
+1. Нажмите кнопку **Купить**.
 
 Состояние установки можно наблюдать на плитке, закрепленной на панели мониторинга, и в уведомлении портала (щелкните значок колокольчика в верхней части портала).  Установка приложения занимает около 10 минут.
 
-### <a name="to-install-hue-while-creating-a-cluster"></a>Установка оттенка при создании кластера
+### <a name="to-install-hue-while-creating-a-cluster"></a>Установка приложения Hue во время создания кластера
 
-1. Выберите следующее изображение, чтобы войти в Azure и открыть шаблон диспетчер ресурсов в портал Azure.
+1. Выберите следующее изображение для вхува в Azure и откройте шаблон менеджера ресурсов на портале Azure.
 
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fhdinsightapps%2Fcreate-linux-based-hadoop-cluster-in-hdinsight.json" target="_blank"><img src="./media/hdinsight-apps-install-custom-applications/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
 
-    Шаблон Resource Manager доступен по адресу [https://hditutorialdata.blob.core.windows.net/hdinsightapps/create-linux-based-hadoop-cluster-in-hdinsight.json](https://hditutorialdata.blob.core.windows.net/hdinsightapps/create-linux-based-hadoop-cluster-in-hdinsight.json).  Дополнительные сведения о создании шаблона Resource Manager см. в статье [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx) (Установка приложения HDInsight) на сайте MSDN.
+    Шаблон «Менеджер ресурсов» [https://hditutorialdata.blob.core.windows.net/hdinsightapps/create-linux-based-hadoop-cluster-in-hdinsight.json](https://hditutorialdata.blob.core.windows.net/hdinsightapps/create-linux-based-hadoop-cluster-in-hdinsight.json)расположен по адресу .  Дополнительные сведения о создании шаблона Resource Manager см. в статье [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx) (Установка приложения HDInsight) на сайте MSDN.
 
 2. Выполните инструкции по созданию кластера и установите приложение Hue. Дополнительные сведения о создании кластеров HDInsight см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
@@ -71,23 +71,23 @@ ms.locfileid: "79366263"
 
 ## <a name="validate-the-installation"></a>проверка установки
 
-Вы можете просмотреть состояние приложения на портале Azure, чтобы проверить установку приложения. Кроме того, можно также проверить, что все конечные точки HTTP имеют ожидаемый результат, и веб-страницу, если она есть.
+Вы можете просмотреть состояние приложения на портале Azure, чтобы проверить установку приложения. Кроме того, вы также можете проверить все конечные точки HTTP подошел, как ожидалось, и веб-страницы, если есть один.
 
-Для **оттенок**можно выполнить следующие действия.
+Для **Hue**вы можете использовать следующие действия:
 
 ### <a name="azure-portal"></a>Портал Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Выберите кластер, в котором установлено приложение.
-1. В меню **Параметры** выберите **приложения**.
-1. Выберите **оттенок** в списке, чтобы просмотреть свойства.  
-1. Выберите ссылку на веб-страницу, чтобы проверить сайт.
+1. Выберите кластер, в котором было установлено приложение.
+1. Из меню **«Настройки»** выберите **приложения.**
+1. Выберите **оттенок** из списка для просмотра свойств.  
+1. Выберите ссылку на веб-страницу для проверки веб-сайта.
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Замените `CLUSTERNAME`и `RESOURCEGROUP` соответствующими значениями, а затем введите следующие команды:
+`CLUSTERNAME`Замените, `RESOURCEGROUP` и с соответствующими значениями, а затем ввести команды ниже:
 
-* , Чтобы получить список всех приложений для кластера HDInsight.
+* Для перечисления всех приложений для кластера HDInsight.
 
     ```azurecli
     az hdinsight application list --cluster-name CLUSTERNAME --resource-group RESOURCEGROUP
@@ -103,37 +103,37 @@ ms.locfileid: "79366263"
 
 Состояние установки приложения можно наблюдать в уведомлении портала (щелкните значок колокольчика в верхней части портала).
 
-Если установка приложения завершилась неудачно, можно просмотреть сообщения об ошибках и данные отладки из трех мест:
+Если установка приложения не удалась, можно увидеть сообщения об ошибках и отладку информации из трех мест:
 
 * Приложения HDInsight: общие сведения об ошибке.
 
-    Откройте кластер на портале и выберите приложения из параметров:
+    Откройте кластер с портала и выберите приложения из настроек:
 
     ![приложения hdinsight приложение ошибка установки](./media/hdinsight-apps-install-custom-applications/hdinsight-apps-error.png)
 
 * Действие сценария HDInsight: если сообщение об ошибке приложений HDInsight указывает на сбой действия сценария, дополнительные сведения о сбое сценария отобразятся на панели действий сценария.
 
-    Выберите действие скрипта в параметрах. Журнал действий сценария отображает сообщения об ошибках.
+    Выберите действие сценария из настроек. Журнал действий сценария отображает сообщения об ошибках.
 
     ![приложения hdinsight ошибка действия сценария](./media/hdinsight-apps-install-custom-applications/hdinsight-apps-script-action-error.png)
 
-* Веб-интерфейс Apache Ambari. Если сценарий установки был причиной сбоя, используйте пользовательский веб-интерфейс Ambari для проверки полных журналов сценариев установки.
+* UI Apache Ambari Web: Если скрипт установки стал причиной сбоя, используйте веб-чат Ambari для проверки полных журналов об установке скриптов.
 
-    Дополнительные сведения см. в разделе [Устранение неполадок](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting).
+    См. дополнительные сведения об [устранении неполадок](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting).
 
 ## <a name="remove-hdinsight-applications"></a>Удаление приложений HDInsight
 
 ### <a name="azure-portal"></a>Портал Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Выберите кластер, в котором установлено приложение.
-1. В меню **Параметры** выберите **приложения**.
-1. Щелкните правой кнопкой мыши приложение, которое необходимо удалить, и выберите пункт **Удалить**.
+1. Выберите кластер, в котором было установлено приложение.
+1. Из меню **«Настройки»** выберите **приложения.**
+1. Нажмите правой кнопкой мыши приложение, которое вы хотите удалить, а затем выберите **Удалить**.
 1. Выберите **Да** для подтверждения.
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Замените `NAME`, `CLUSTERNAME`и `RESOURCEGROUP` соответствующими значениями, а затем введите следующую команду:
+`NAME`Заменить `CLUSTERNAME`, `RESOURCEGROUP` и с соответствующими значениями, а затем ввести команду ниже:
 
 ```azurecli
 az hdinsight application delete --name NAME --cluster-name CLUSTERNAME --resource-group RESOURCEGROUP

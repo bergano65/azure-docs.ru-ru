@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
 ms.openlocfilehash: 98e912894a4d93a057a2f6a2153d0690deaed250
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78968897"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
@@ -21,7 +21,7 @@ ms.locfileid: "78968897"
 
 ## <a name="get-started"></a>Начало работы
 
-Чтобы развернуть эту архитектуру, скачайте и запустите скрипт deploy.sh, доступный в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub.
+Чтобы развернуть эту архитектуру, загрузите и запустите deploy.sh скрипт, найденный в репозитории [DB2onAzure](https://aka.ms/db2onazure) на GitHub.
 
 Репозиторий также содержит скрипты для настройки панели мониторинга Grafana. Вы можете использовать панель мониторинга для запроса Prometheus, системы мониторинга и оповещения с открытым кодом и DB2.
 
@@ -34,21 +34,21 @@ ms.locfileid: "78968897"
 
 -   настройка группы ресурсов, виртуальной сети и подсети в Azure для установки;
 
--   Настраивает группы безопасности сети и SSH для среды.
+-   Настройка групп сетевой безопасности и SSH для среды.
 
--   Настраивает несколько сетевых карт как для общего хранилища, так и для виртуальных машин Пурескале DB2.
+-   Настраивает несколько NICs как на общий объем хранилища, так и на виртуальные машины DB2 pureScale.
 
--   Создает виртуальные машины общего хранилища. Если вы используете Локальные дисковые пространства или другое решение для хранения данных, см. раздел [Общие сведения о Локальные дисковые пространства](/windows-server/storage/storage-spaces/storage-spaces-direct-overview).
+-   Создает общие виртуальные машины хранения данных. Если вы используете пространство для хранения Direct или другое решение для хранения данных, смотрите [обзор Пространства для хранения](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)данных.
 
 -   создание виртуальной машины jumpbox;
 
--   Создает виртуальные машины DB2 Пурескале.
+-   Создает виртуальные машины DB2 pureScale.
 
--   Создает виртуальную машину-свидетель, которую Пурескале с помощью DB2. Пропустите эту часть развертывания, если для вашей версии DB2 Пурескале не требуется следящий сервер.
+-   Создает свидетель виртуальной машины, что DB2 pureScale пинги. Пропустите эту часть развертывания, если версия Db2 pureScale не требует свидетеля.
 
--   Создает виртуальную машину Windows для использования при тестировании, но не устанавливает что-либо на нее.
+-   Создает виртуальную машину Windows для тестирования, но ничего на ней не устанавливает.
 
-После этого скрипты развертывания создают виртуальную сеть хранения данных iSCSI (vSAN) для подключения к общему хранилищу в Azure. В этом примере iSCSI подключается к общему кластеру хранилища. В исходном решении клиента было использовано Глустерфс. Однако IBM больше не поддерживает такой подход. Чтобы поддерживать поддержку от IBM, необходимо использовать поддерживаемую iSCSI-совместимую файловую систему. Корпорация Майкрософт предлагает Локальные дисковые пространства (S2D) в качестве варианта.
+После этого скрипты развертывания создают виртуальную сеть хранения данных iSCSI (vSAN) для подключения к общему хранилищу в Azure. В этом примере iSCSI подключается к общему кластеру хранения. В исходном клиентском решении использовался GlusterFS. Однако IBM больше не поддерживает этот подход. Для поддержки IBM необходимо использовать поддерживаемую iSCSI-совместимую файловую систему. Microsoft предлагает пространства для хранения Direct (S2D) в качестве опции.
 
 Это решение также дает возможность установить цели iSCSI как один узел Windows. Сеть iSCSI предоставляет интерфейс общего блочного хранилища по TCP/IP, что позволяет процедуре установки DB2 pureScale использовать интерфейс устройства для подключения к общему хранилищу.
 
@@ -56,26 +56,26 @@ ms.locfileid: "78968897"
 
 1.  Настройка кластера общего хранилища в Azure. При этом используется по крайней мере два узла Linux.
 
-2.  Настройте прямой интерфейс iSCSI на целевых серверах Linux для кластера общих хранилищ.
+2.  Настройка прямого интерфейса iSCSI на целевых серверах Linux для общего кластера хранения данных.
 
-3.  Настройка инициатора iSCSI на виртуальных машинах Linux. Инициатор будет получать доступ к общему кластеру хранилища с помощью цели iSCSI. Сведения о настройке см. в статье [How To Configure An iSCSI Target And Initiator In Linux](https://www.rootusers.com/how-to-configure-an-iscsi-target-and-initiator-in-linux/) (Настройка цели и инициатора iSCSI в Linux) документации по RootUsers.
+3.  Настройка инициатора iSCSI на виртуальных машинах Linux. Инициатор получит доступ к общему кластеру хранения с помощью цели iSCSI. Сведения о настройке см. в статье [How To Configure An iSCSI Target And Initiator In Linux](https://www.rootusers.com/how-to-configure-an-iscsi-target-and-initiator-in-linux/) (Настройка цели и инициатора iSCSI в Linux) документации по RootUsers.
 
-4.  Установите общий уровень хранилища для интерфейса iSCSI.
+4.  Установите общий слой хранилища для интерфейса iSCSI.
 
-После создания устройства iSCSI с помощью скрипта остается установить DB2 pureScale. Когда устанавливается DB2 pureScale, [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0057167.html) (прежнее название — GPFS) компилируется и устанавливается в кластере GlusterFS. Эта кластерная файловая система позволяет DB2 pureScale обеспечить совместное использование данных на виртуальных машинах с подсистемой DB2 pureScale. Дополнительные сведения см. в документации по [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/en/STXKQY_4.2.0/ibmspectrumscale42_welcome.html) на сайте IBM.
+После создания устройства iSCSI с помощью скрипта остается установить DB2 pureScale. В рамках установки DB2 pureScale [шкала спектра IBM](https://www.ibm.com/support/knowledgecenter/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0057167.html) (ранее известная как GPFS) компилируется и устанавливается в кластере GlusterFS. Эта кластерная файловая система позволяет DB2 pureScale обеспечить совместное использование данных на виртуальных машинах с подсистемой DB2 pureScale. Дополнительные сведения см. в документации по [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/en/STXKQY_4.2.0/ibmspectrumscale42_welcome.html) на сайте IBM.
 
 ## <a name="db2-purescale-response-file"></a>Файл ответов DB2 pureScale
 
 Репозиторий GitHub включает DB2server.rsp, файл ответов, который позволяет создать автоматизированный скрипт для установки DB2 pureScale. В приведенной ниже таблице указаны параметры DB2 pureScale, которые файл ответов использует для установки. Вы можете настроить файл ответов для своей среды.
 
 > [!NOTE]
-> Пример файла ответов, Db2server.rsp, включен в репозиторий [Db2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Чтобы этот файл работал в вашей среде, его сначала необходимо отредактировать.
+> Пример ответа файла, DB2server.rsp, включен в репозиторий [DB2onAzure](https://aka.ms/db2onazure) на GitHub. Чтобы этот файл работал в вашей среде, его сначала необходимо отредактировать.
 
 | Имя экрана               | Поле                                        | Значение                                                                                                 |
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| Экран приветствия                   |                                              | "New Install" (Новая установка)                                                                                           |
+| Приветствие                   |                                              | "New Install" (Новая установка)                                                                                           |
 | "Choose a Product" (Выбор продукта)          |                                              | "DB2 Version 11.1.3.3. Server Editions with Db2 pureScale" (Db2 версии 11.1.3.3, серверные выпуски с Db2 pureScale)                                              |
-| Конфигурация             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
+| Параметр Configuration             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
 |                           | "Select the installation type" (Выбор типа установки)                 | "Typical" (Стандартный)                                                                                               |
 |                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Флажок установлен                                                                                               |
 | "Instance Owner" (Владелец экземпляра)            | "Existing User For Instance, User name" (Существующий пользователь экземпляра, имя пользователя)        | DB2sdin1                                                                                              |
@@ -135,11 +135,11 @@ ms.locfileid: "78968897"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
--   [Creating required users for a Db2 pureScale Feature installation](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2) (Создание обязательных пользователей для установки Db2 pureScale Feature)
+-   [Создание необходимых пользователей для установки функции pureScale DB2](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2)
 
--   [db2icrt — Create instance command](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002057.html) (db2icrt: команда для создания экземпляра)
+-   [DB2icrt - Создание команды экземпляра](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002057.html)
 
--   [DB2 pureScale Clustered Database Solution: Part 1](https://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1) (Кластеризованное решение базы данных DB2 pureScale: часть 1)
+-   [Решение для чистых кластеров DB2](https://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1)
 
 -   [IBM Data Studio](https://www.ibm.com/developerworks/downloads/im/data/index.html/)
 

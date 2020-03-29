@@ -1,5 +1,5 @@
 ---
-title: Добавление пользователя на виртуальную машину Linux в Azure с помощью Cloud-init
+title: Используйте облачность, чтобы добавить пользователя в Linux VM на Azure
 description: Как с помощью cloud-init и Azure CLI добавить пользователя на создаваемую виртуальную машину Linux
 author: rickstercdn
 ms.service: virtual-machines-linux
@@ -7,14 +7,14 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.openlocfilehash: f1782bfe0c14e3b44703f89ec7f78590c1bb74c5
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969243"
 ---
 # <a name="use-cloud-init-to-add-a-user-to-a-linux-vm-in-azure"></a>Добавление пользователя на виртуальную машину Linux в Azure с помощью cloud-init
-В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) добавить пользователя на виртуальную машину или в масштабируемый набор виртуальных машин при подготовке в Azure. Этот скрипт cloud-init выполняется при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
+В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) добавить пользователя на виртуальную машину или в масштабируемый набор виртуальных машин при подготовке в Azure. Этот скрипт cloud-init выполняется при первой загрузке, если в Azure подготовлены все нужные ресурсы. Для получения дополнительной информации о том, как облачно-инит работает [cloud-init overview](using-cloud-init.md)на месте в Azure и поддерживаемых дистро Linux, см.
 
 ## <a name="add-a-user-to-a-vm-with-cloud-init"></a>Добавление пользователя в виртуальную машину с помощью cloud-init
 Одна из первых задач, которую необходимо выполнить на любой из новых виртуальных машин Linux, — добавить дополнительного пользователя для себя, чтобы не использовать учетную запись *root*. Для безопасности и удобства мы рекомендуем применять ключи SSH. Их можно добавить в файл *~/.ssh/authorized_keys* с помощью следующего скрипта cloud-init.

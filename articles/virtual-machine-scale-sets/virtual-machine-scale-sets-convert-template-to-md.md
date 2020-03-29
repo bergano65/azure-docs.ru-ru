@@ -1,6 +1,6 @@
 ---
 title: Преобразование шаблона масштабируемого набора для использования управляемого диска
-description: Преобразование шаблона масштабируемого набора виртуальных машин Azure Resource Manager в шаблон масштабируемого набора управляемых дисков.
+description: Преобразуйте шаблон набора виртуального набора масштабов ресурсов Azure Resource Manager в шаблон управляемого набора дисковых масштабов.
 keywords: наборы масштабирования виртуальных машин
 author: mayanknayar
 tags: azure-resource-manager
@@ -10,15 +10,15 @@ ms.topic: conceptual
 ms.date: 5/18/2017
 ms.author: manayar
 ms.openlocfilehash: 4ab5c48c6673a2353c70fe808d09aa15675e0424
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76278130"
 ---
 # <a name="convert-a-scale-set-template-to-a-managed-disk-scale-set-template"></a>Преобразование шаблона масштабируемого набора в соответствующий шаблон с управляемым диском.
 
-Клиенты, которые с помощью шаблона Resource Manager создают масштабируемые наборы без поддержки управляемого диска, могут легко добавить поддержку управляемого диска. В этой статье использование управляемых дисков демонстрируется на примере создания запроса на вытягивание. (Опубликовано в [шаблонах быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates) — репозитории сообщества пользователей с примерами шаблонов Resource Manager.) Полную версию этого запроса можно увидеть здесь: [https://github.com/Azure/azure-quickstart-templates/pull/2998](https://github.com/Azure/azure-quickstart-templates/pull/2998). Все важные фрагменты, изменения и пояснения к ним приводятся в этой статье.
+Клиенты, которые с помощью шаблона Resource Manager создают масштабируемые наборы без поддержки управляемого диска, могут легко добавить поддержку управляемого диска. В этой статье использование управляемых дисков демонстрируется на примере создания запроса на вытягивание. (Опубликовано в [шаблонах быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates) — репозитории сообщества пользователей с примерами шаблонов Resource Manager.) Полный запрос тянуть можно [https://github.com/Azure/azure-quickstart-templates/pull/2998](https://github.com/Azure/azure-quickstart-templates/pull/2998)увидеть здесь: , и соответствующие части диффа ниже, наряду с объяснениями:
 
 ## <a name="making-the-os-disks-managed"></a>Переход на управляемые диски ОС
 
@@ -137,7 +137,7 @@ ms.locfileid: "76278130"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Чтобы найти примеры шаблонов Resource Manager с использованием наборов масштабирования, выполните поиск строки vmss в [репозитории GitHub с шаблонами быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
+Например, шаблоны менеджера ресурсов с использованием наборов масштабов, поиск "vmss" в [Azure Quickstart Templates GitHub repo.](https://github.com/Azure/azure-quickstart-templates)
 
 Общие сведения см. на [главной целевой странице по наборам масштабирования](https://azure.microsoft.com/services/virtual-machine-scale-sets/).
 

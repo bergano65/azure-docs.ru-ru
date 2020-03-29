@@ -1,7 +1,7 @@
 ---
-title: Часто задаваемые вопросы об Azure HDInsight
+title: Azure HDInsight часто задавал вопросы
 description: Часто задаваемые вопросы о HDInsight
-keywords: часто задаваемые вопросы
+keywords: часто задаваемые вопросы, faq
 author: Ramakoni1
 ms.author: ramakoni
 ms.reviewer: jasonh
@@ -10,181 +10,181 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/20/2019
 ms.openlocfilehash: b05b83086cc9d8449d9517897f347b6e2685aa95
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76720356"
 ---
-# <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: часто задаваемые вопросы
+# <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: Часто задаваемые вопросы
 
-В этой статье содержатся ответы на некоторые наиболее распространенные вопросы о том, как запустить [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
+В этой статье содержатся ответы на некоторые из наиболее распространенных вопросов о том, как запустить [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
 
 ## <a name="creating-or-deleting-hdinsight-clusters"></a>Создание или удаление кластеров HDInsight
 
-### <a name="how-do-i-provision-an-hdinsight-cluster"></a>Разделы справки подготавливать кластер HDInsight?
+### <a name="how-do-i-provision-an-hdinsight-cluster"></a>Как обеспечить кластер HDInsight?
 
-Сведения о типах доступных кластеров HDInsight и методах подготовки см. в статье [Настройка кластеров в hdinsight с помощью Apache Hadoop, Apache Spark, Apache Kafka и других](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters).
+Для анализа типов доступных кластеров HDInsight и методов подготовки см. Настройка [кластеров в HDInsight с Apache Hadoop, Apache Spark, Apache Kafka и другими.](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters)
 
-### <a name="how-do-i-delete-an-existing-hdinsight-cluster"></a>Разделы справки удалить существующий кластер HDInsight?
+### <a name="how-do-i-delete-an-existing-hdinsight-cluster"></a>Как удалить существующий кластер HDInsight?
 
-Дополнительные сведения об удалении кластера, когда он больше не используется, см. в разделе [Удаление кластера HDInsight](hdinsight-delete-cluster.md).
+Чтобы узнать больше об удалении кластера, когда он больше не используется, [см.](hdinsight-delete-cluster.md)
 
-Оставьте не менее 30 – 60 минут между операциями создания и удаления. В противном случае операция может завершиться со следующим сообщением об ошибке:
+Оставьте не менее 30-60 минут между операциями создания и удаления. В противном случае операция может выполнить неудачу со следующим сообщением об ошибке:
 
 ``Conflict (HTTP Status Code: 409) error when attempting to delete a cluster immediately after creation of a cluster. If you encounter this error, wait until the newly created cluster is in operational state before attempting to delete it.``
 
-### <a name="how-do-i-select-the-correct-number-of-cores-or-nodes-for-my-workload"></a>Разделы справки выбрать правильное количество ядер или узлов для рабочей нагрузки?
+### <a name="how-do-i-select-the-correct-number-of-cores-or-nodes-for-my-workload"></a>Как выбрать правильное количество ядер или узлов для рабочей нагрузки?
 
 Соответствующее количество ядер и другие параметры конфигурации зависят от различных факторов.
 
-Дополнительные сведения см. в статье [планирование ресурсов для кластеров HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-capacity-planning).
+Для получения дополнительной [Capacity planning for HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-capacity-planning)информации см.
 
 ### <a name="what-can-i-do-when-cluster-provisioning-fails-because-of-a-capacity-issue"></a>Что можно сделать при сбое подготовки кластера из-за проблемы с емкостью?
 
-В этом разделе приведены общие ошибки и методы устранения проблем с емкостью.
+Общие ошибки проблемы емкости и методы смягчения данных приведены в этом разделе.
 
-#### <a name="error-the-deployment-would-exceed-the-quota-of-800"></a>Ошибка: развертывание превысит квоту "800"
+#### <a name="error-the-deployment-would-exceed-the-quota-of-800"></a>Ошибка: развертывание превысит квоту '800'
 
-В Azure предоставляется квота на 800 развертываний на группу ресурсов. Для каждой группы ресурсов, подписки, учетной записи или других областей применяются разные квоты. Например, для подписки может быть настроено ограничение числа ядер для региона. Если вы попытаетесь развернуть виртуальную машину с большим количеством ядер, чем разрешено, появится сообщение об ошибке, сообщающее о превышении квоты.
+В Azure предоставляется квота на 800 развертываний на группу ресурсов. Различные квоты применяются в группе ресурсов, подписке, учетной записи или других областях. Например, для подписки может быть настроено ограничение числа ядер для региона. Если вы попытаетесь развернуть виртуальную машину с большим количеством ядер, чем разрешенная сумма, вы получите сообщение об ошибке, в которое говорится, что квота была превышена.
 
-Чтобы устранить эту проблему, удалите развертывания, которые больше не нужны, с помощью портал Azure, CLI или PowerShell.
+Чтобы решить эту проблему, удалите развертывания, которые больше не нужны, используя портал Azure, CLI или PowerShell.
 
 Дополнительные сведения см. в статье [устранении ошибок, связанных с квотами ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors).
 
-#### <a name="error-the-maximum-node-exceeded-the-available-cores-in-this-region"></a>Ошибка: максимальный размер узла превышает доступные ядра в этом регионе
+#### <a name="error-the-maximum-node-exceeded-the-available-cores-in-this-region"></a>Ошибка: Максимальный узлы превысили доступные ядра в этом регионе
 
-Для подписки может быть настроено ограничение числа ядер для региона. При попытке развернуть ресурс, имеющий больше ядер, чем разрешенный объем, появится сообщение об ошибке, сообщающее о превышении квоты.
+Для подписки может быть настроено ограничение числа ядер для региона. Если вы попытаетесь развернуть ресурс, в который имеется больше ядер, чем разрешенная сумма, вы получите сообщение об ошибке, в которое говорится, что квота была превышена.
 
 Чтобы запросить увеличение квоты, сделайте следующее:
 
-1. Перейдите в [портал Azure](https://portal.azure.com)и выберите Справка и **Поддержка**.
+1. Перейдите на [портал Azure](https://portal.azure.com)и выберите **поддержку Справки .**
    
-1. Выберите **Новый запрос в службу поддержки**.
+1. Выберите **новый запрос на поддержку**.
    
-1. На вкладке **основы** на странице **новый запрос в службу поддержки** укажите следующие сведения.
+1. На вкладке **"Основы"** на странице **запроса новой поддержки** укажите следующую информацию:
    
-   - **Тип проблемы:** Выберите **пределы службы и подписки (квоты)** .
-   - **Подписка:** Выберите подписку, которую необходимо изменить.
+   - **Тип выпуска:** Выберите **ограничения службы и подписки (квоты)**.
+   - **Подписка:** Выберите подписку, изменяемую.
    - **Тип квоты:** Выберите **HDInsight**.
 
 См. сведения о [создании запроса в службу поддержки для увеличения количества ядер](hdinsight-capacity-planning.md#quotas).
 
 ### <a name="what-are-the-various-types-of-nodes-in-an-hdinsight-cluster"></a>Каковы различные типы узлов в кластере HDInsight?
 
-Кластеры Azure HDInsight имеют различные типы виртуальных машин или узлов. Каждый тип узла играет роль в работе системы.
+Кластеры Azure HDInsight имеют различные типы виртуальных машин или узлов. Каждый тип узла играет определенную роль в работе системы.
 
-Дополнительные сведения см. [в статье типы ресурсов в кластерах Azure HDInsight](hdinsight-virtual-network-architecture.md#resource-types-in-azure-hdinsight-clusters).
+Для получения дополнительной информации смотрите [типы ресурсов в кластерах Azure HDInsight.](hdinsight-virtual-network-architecture.md#resource-types-in-azure-hdinsight-clusters)
 
 ## <a name="individual-components"></a>Отдельные компоненты
 
-### <a name="can-i-install-additional-components-on-my-cluster"></a>Можно ли установить дополнительные компоненты в кластер?
+### <a name="can-i-install-additional-components-on-my-cluster"></a>Могу ли я установить дополнительные компоненты в свой кластер?
 
-Да. Чтобы установить дополнительные компоненты или настроить конфигурацию кластера, используйте:
+Да. Для установки дополнительных компонентов или настройки конфигурации кластера используйте:
 
-- Скрипты во время или после создания. Скрипты вызываются с помощью [действия сценария](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux). это параметр конфигурации, который можно использовать из портал Azure, командлетов Hdinsight Windows PowerShell или пакета SDK для hdinsight .NET. Этот параметр конфигурации можно использовать из портал Azure, из командлетов HDInsight Windows PowerShell или пакета SDK для HDInsight .NET.
+- Сценарии во время или после создания. Скрипты вызываются с помощью [действия скрипта,](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)который представляет собой опцию конфигурации, которую можно использовать с портала Azure, hdInsight Windows PowerShell cmdlets или HDInsight .NET SDK. Эта опция конфигурации может быть использована с портала Azure, HDInsight Windows PowerShell cmdlets или HDInsight .NET SDK.
 
-- [Платформа приложений HDInsight](https://azure.microsoft.com/services/hdinsight/partner-ecosystem/) для установки приложений экосистемы.
+- [Платформа приложений HDInsight](https://azure.microsoft.com/services/hdinsight/partner-ecosystem/) для установки экосистемных приложений.
 
-Список поддерживаемых компонентов см [. в статье что такое Apache Hadoop компоненты и версии, доступные в HDInsight?](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#apache-hadoop-components-available-with-different-hdinsight-versions)
+Список поддерживаемых компонентов можно найти в [компонентах и версиях Apache Hadoop с HDInsight?](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#apache-hadoop-components-available-with-different-hdinsight-versions)
 
-### <a name="can-i-upgrade-the-individual-components-that-are-pre-installed-on-the-cluster"></a>Можно ли обновить отдельные компоненты, предварительно установленные в кластере?
+### <a name="can-i-upgrade-the-individual-components-that-are-pre-installed-on-the-cluster"></a>Могу ли я обновить отдельные компоненты, которые предварительно установлены на кластере?
 
-При обновлении встроенных компонентов или приложений, предварительно установленных в кластере, Результирующая конфигурация не будет поддерживаться корпорацией Майкрософт. Эти конфигурации системы не проверялись корпорацией Майкрософт. Попробуйте использовать другую версию кластера HDInsight, которая уже может иметь обновленную версию компонента, предварительно установленную.
+При обновлении встроенных компонентов или приложений, которые предварительно установлены в кластере, полученная конфигурация не будет поддерживаться корпорацией Майкрософт. Эти системные конфигурации не были протестированы корпорацией Майкрософт. Попробуйте использовать другую версию кластера HDInsight, которая, возможно, уже имеет обновленную версию компонента предустановленной.
 
-Например, обновление Hive в качестве отдельного компонента не поддерживается. HDInsight — это управляемая служба, и многие службы интегрированы с Ambari Server и тестируются. При обновлении куста в собственном коде индексированные двоичные файлы других компонентов изменяются, и в кластере могут возникнуть проблемы с интеграцией компонентов.
+Например, обновление Hive как отдельного компонента не поддерживается. HDInsight является управляемой службой, и многие службы интегрированы с сервером Ambari и протестированы. Модернизация Hive сама по себе приводит к изменению индексированных связных файлов других компонентов и вызовет проблемы интеграции компонентов в кластере.
 
-### <a name="can-spark-and-kafka-run-on-the-same-hdinsight-cluster"></a>Можно ли запускать Spark и Kafka в одном кластере HDInsight?
+### <a name="can-spark-and-kafka-run-on-the-same-hdinsight-cluster"></a>Могут ли Spark и Kafka работать в одном кластере HDInsight?
 
-Нет, невозможно запустить Apache Kafka и Apache Spark в том же кластере HDInsight. Создайте отдельные кластеры для Kafka и Spark, чтобы избежать проблем с состязанием на ресурсы.
+Нет, невозможно запустить Apache Kafka и Apache Spark в одном и том же кластере HDInsight. Создание отдельных кластеров для Kafka и Spark, чтобы избежать проблем с ресурсами.
 
-### <a name="how-do-i-change-timezone-in-ambari"></a>Разделы справки изменить часовой пояс в Ambari?
+### <a name="how-do-i-change-timezone-in-ambari"></a>Как изменить часовой пояс в Амбари?
 
-1. Откройте веб-интерфейс Ambari в `https://CLUSTERNAME.azurehdinsight.net`, где ИМЯ_КЛАСТЕРА — это имя кластера.
-2. В правом верхнем углу выберите Admin | Параметры. 
+1. Откройте веб-uI Ambari в `https://CLUSTERNAME.azurehdinsight.net`, где CLUSTERNAME это имя вашего кластера.
+2. В правом верхнем углу выберите админ Параметры. 
 
-   ![Параметры Ambari](media/hdinsight-faq/ambari-settings.png)
+   ![Настройки Амбари](media/hdinsight-faq/ambari-settings.png)
 
-3. В окне Параметры пользователя выберите новый часовой пояс в раскрывающемся списке Timezone (часовой пояс) и нажмите кнопку Сохранить.
+3. В окне настроек пользователя выберите новый часовой пояс из временного пояса, а затем нажмите Сохранить.
 
-   ![Параметры пользователя Ambari](media/hdinsight-faq/ambari-user-settings.png)
+   ![Настройки пользователя Ambari](media/hdinsight-faq/ambari-user-settings.png)
 
 ## <a name="metastore"></a>Хранилище мета-данных
 
-### <a name="how-can-i-migrate-from-the-existing-metastore-to-azure-sql-server"></a>Как выполнить миграцию из существующей хранилище метаданных в Azure SQL Server? 
+### <a name="how-can-i-migrate-from-the-existing-metastore-to-azure-sql-server"></a>Как перейти из существующего метамагазина в Azure S'L Server? 
 
-Сведения о переходе с SQL Server на SQL Server Azure см. в разделе [учебник. миграция SQL Server в отдельную базу данных или базу данных в пуле в базе данных SQL Azure в автономном режиме с помощью DMS](../dms/tutorial-sql-server-to-azure-sql.md).
+Для перехода с сервера S'L на Azure S'L Server [см.](../dms/tutorial-sql-server-to-azure-sql.md)
 
-### <a name="is-the-hive-metastore-deleted-when-the-cluster-is-deleted"></a>Удаляется ли хранилище метаданных Hive при удалении кластера?
+### <a name="is-the-hive-metastore-deleted-when-the-cluster-is-deleted"></a>Удаляется ли метамагазин Hive при удалении кластера?
 
-Это зависит от типа хранилище метаданных, для которого настроен кластер.
+Это зависит от типа метамагазина, который настроен для использования кластера.
 
-Для хранилище метаданных по умолчанию: хранилище метаданных по умолчанию является частью жизненного цикла кластера. При удалении кластера соответствующее хранилище метаданных и метаданные также удаляются.
+Для метамагазина по умолчанию: метамагазин по умолчанию является частью жизненного цикла кластера. При удалении кластера соответствующее хранилище метаданных и метаданные также удаляются.
 
-Для настраиваемого хранилище метаданных: жизненный цикл хранилище метаданных не привязан к жизненному циклу кластера. Таким образом, можно создавать и удалять кластеры без потери метаданных. Метаданные, такие как схемы Hive, сохраняются даже после удаления и повторного создания кластера HDInsight.
+Для пользовательского метамагазина: жизненный цикл метамагазина не привязан к жизненному циклу кластера. Таким образом, можно создавать и удалять кластеры без потери метаданных. Метаданные, такие как схемы Hive, сохраняются даже после удаления и воссоздания кластера HDInsight.
 
 Дополнительную информацию см. в статье [Использование внешних хранилищ метаданных в Azure HDInsight](hdinsight-use-external-metadata-stores.md).
 
-### <a name="does-migrating-a-hive-metastore-also-migrate-the-default-policies-of-the-ranger-database"></a>Миграция хранилище метаданных Hive также приводит к переносу политик по умолчанию базы данных Ranger?
+### <a name="does-migrating-a-hive-metastore-also-migrate-the-default-policies-of-the-ranger-database"></a>Мигрирует ли метамагазин Hive также миграцию политик по умолчанию в базу данных Ranger?
 
-Нет, определение политики находится в базе данных Ranger, поэтому миграция базы данных Ranger перенесет ее политику.
+Нет, определение политики находится в базе данных Ranger, поэтому миграция базы данных Ranger будет мигрировать в свою политику.
 
-### <a name="can-you-migrate-a-hive-metastore-from-an-enterprise-security-package-esp-cluster-to-a-non-esp-cluster-and-vice-versa"></a>Можно ли перенести хранилище метаданных Hive из кластера Корпоративный пакет безопасности (ESP) в кластер, отличный от ESP, и наоборот?
+### <a name="can-you-migrate-a-hive-metastore-from-an-enterprise-security-package-esp-cluster-to-a-non-esp-cluster-and-vice-versa"></a>Можно ли перенести метамагазин Hive из кластера Enterprise Security Package (ESP) в кластер, не связанный с ESP, и наоборот?
 
-Да, можно перенести хранилище метаданных Hive из ESP в кластер, не использующий ESP.
+Да, можно перенести метамагазин Hive из ESP в кластер, не связанный с ESP.
 
-### <a name="how-can-i-estimate-the-size-of-a-hive-metastore-database"></a>Как оценить размер базы данных хранилище метаданных Hive?
+### <a name="how-can-i-estimate-the-size-of-a-hive-metastore-database"></a>Как оценить размер базы данных metastore Hive?
 
-Хранилище метаданных Hive используется для хранения метаданных для источников данных, используемых сервером Hive. Требования к размеру зависят от количества и сложности источников данных Hive и не могут быть оценены заранее. Как описано в [хранилище метаданных Hive](hdinsight-use-external-metadata-stores.md#hive-metastore-best-practices)рекомендации, можно начать с уровня S2, который предоставляет 50 DTU и 250 ГБ хранилища, и если вы видите узкое место, можно масштабировать базу данных.
+Метамагазин Hive используется для хранения метаданных для источников данных, которые используются сервером Hive. Требования к размеру частично зависят от количества и сложности ваших источников данных Hive и не могут быть оценены заранее. Как указано в [рекомендациях Hive metastore,](hdinsight-use-external-metadata-stores.md#hive-metastore-best-practices)вы можете начать с уровня S2, который обеспечивает 50 DTU и 250 ГБ памяти, и если вы видите узкое место, вы можете масштабировать базу данных.
 
-### <a name="do-you-support-any-other-database-other-than-azure-sql-database-as-an-external-metastore"></a>Поддерживается ли любая другая база данных, кроме базы данных SQL Azure, как внешняя хранилище метаданных?
+### <a name="do-you-support-any-other-database-other-than-azure-sql-database-as-an-external-metastore"></a>Поддерживаете ли вы какую-либо другую базу данных, кроме базы данных Azure S'L, как внешний метамагазин?
 
-Нет, корпорация Майкрософт поддерживает только базу данных SQL Azure в качестве внешней пользовательской хранилище метаданных.
+Нет, корпорация Майкрософт поддерживает только базу данных Azure S'L в качестве внешнего пользовательского метамагазина.
 
-### <a name="can-i-share-a-metastore-across-multiple-clusters"></a>Можно ли совместно использовать хранилище метаданных в нескольких кластерах?
+### <a name="can-i-share-a-metastore-across-multiple-clusters"></a>Могу ли я поделиться метамагазином в нескольких кластерах?
 
-Да, вы можете совместно использовать пользовательские хранилище метаданных в нескольких кластерах, если они используют одну и ту же версию HDInsight.
+Да, вы можете обмениваться пользовательским метамагазином в нескольких кластерах, если они используют одну и ту же версию HDInsight.
 
-## <a name="connectivity-and-virtual-networks"></a>Подключение и виртуальные сети  
+## <a name="connectivity-and-virtual-networks"></a>Связь и виртуальные сети  
 
 ### <a name="what-are-the-implications-of-blocking-ports-22-and-23-on-my-network"></a>Каковы последствия блокировки портов 22 и 23 в моей сети?
 
-Если вы блокируете порты 22 и 23, у вас не будет доступа по протоколу SSH к кластеру. Эти порты не используются службой HDInsight.
+Если вы блокируете порты 22 и порт 23, у вас не будет доступа SSH к кластеру. Эти порты не используются службой HDInsight.
 
 Дополнительные сведения см. в следующих документах:
 
-- [Управление сетевым трафиком](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment#networktraffic)
+- [Контроль сетевого трафика](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment#networktraffic)
 
-- [Защита входящего трафика в кластерах HDInsight в виртуальной сети с помощью частной конечной точки](https://azure.microsoft.com/blog/secure-incoming-traffic-to-hdinsight-clusters-in-a-vnet-with-private-endpoint/)
+- [Безопасный входящий трафик кластеров HDInsight в виртуальной сети с частной конечной точкой](https://azure.microsoft.com/blog/secure-incoming-traffic-to-hdinsight-clusters-in-a-vnet-with-private-endpoint/)
 
 - [IP-адреса управления HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses)
 
-### <a name="can-i-deploy-an-additional-virtual-machine-within-the-same-subnet-as-an-hdinsight-cluster"></a>Можно ли развернуть дополнительную виртуальную машину в той же подсети, что и кластер HDInsight?
+### <a name="can-i-deploy-an-additional-virtual-machine-within-the-same-subnet-as-an-hdinsight-cluster"></a>Могу ли я развернуть дополнительную виртуальную машину в той же подсети, что и кластер HDInsight?
 
-Да, можно развернуть дополнительную виртуальную машину в той же подсети, что и кластер HDInsight. Возможны следующие конфигурации:
+Да, вы можете развернуть дополнительную виртуальную машину в той же подсети, что и кластер HDInsight. Возможны следующие конфигурации:
 
-- Граничные узлы. Вы можете добавить в кластер другой пограничной узел, как описано в разделе [использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight](hdinsight-apps-use-edge-node.md).
+- Края: К кластеру можно добавить еще один узлы края, как описано в [пустых узлах Epache Hadoop в HDInsight.](hdinsight-apps-use-edge-node.md)
 
-- Автономные узлы. Вы можете добавить автономную виртуальную машину в ту же подсеть и получить доступ к кластеру из этой виртуальной машины с помощью закрытой конечной точки `https://<CLUSTERNAME>-int.azurehdinsight.net`. Дополнительные сведения см. в разделе [Управление сетевым трафиком](hdinsight-plan-virtual-network-deployment.md#networktraffic).
+- Автономные узлы: Вы можете добавить автономную виртуальную машину в ту же подсеть `https://<CLUSTERNAME>-int.azurehdinsight.net`и получить доступ к кластеру из этой виртуальной машины с помощью частной точки. Для получения дополнительной информации смотрите [Контроль сетевого трафика](hdinsight-plan-virtual-network-deployment.md#networktraffic).
 
-### <a name="should-i-store-data-on-the-local-disk-of-an-edge-node"></a>Следует ли хранить данные на локальном диске пограничных узлов?
+### <a name="should-i-store-data-on-the-local-disk-of-an-edge-node"></a>Должен ли я хранить данные на локальном диске кромки?
 
-Нет, хранение данных на локальном диске не является хорошей идеей. В случае сбоя узла все хранящиеся локально данные будут потеряны. Мы рекомендуем хранить данные в Azure Data Lake Storage 2-го поколения или хранилище BLOB-объектов Azure либо путем подключения общей папки службы файлов Azure для хранения данных.
+Нет, хранение данных на локальном диске не является хорошей идеей. Если узла выведет из строя, все данные, хранящиеся локально, будут потеряны. Мы рекомендуем хранить данные в хранилище Azure Data Lake Data Data Data Gen2 или Хранилище Azure Blob или путем установки совместного использования файлов Azure для хранения данных.
 
 
-### <a name="can-i-add-an-existing-hdinsight-cluster-to-another-virtual-network"></a>Можно ли добавить существующий кластер HDInsight в другую виртуальную сеть?
+### <a name="can-i-add-an-existing-hdinsight-cluster-to-another-virtual-network"></a>Могу ли я добавить существующий кластер HDInsight в другую виртуальную сеть?
 
-Нет, Вы не можете. Виртуальная сеть должна быть указана во время подготовки. Если во время подготовки не указана виртуальная сеть, то при развертывании создается внутренняя сеть, недоступная извне. Дополнительные сведения см. [в статье Добавление HDInsight в существующую виртуальную сеть](hdinsight-plan-virtual-network-deployment.md#existingvnet).
+Нет, Вы не можете. Виртуальная сеть должна быть указана во время подготовки. Если во время подготовки не указана виртуальная сеть, развертывание создает внутреннюю сеть, которая недоступна извне. Для получения дополнительной информации [см.](hdinsight-plan-virtual-network-deployment.md#existingvnet)
 
 ## <a name="security-and-certificates"></a>Безопасность и сертификаты
 
-### <a name="what-are-the-recommendations-for-malware-protection-on-azure-hdinsight-clusters"></a>Каковы рекомендации по защите от вредоносных программ в кластерах Azure HDInsight?
+### <a name="what-are-the-recommendations-for-malware-protection-on-azure-hdinsight-clusters"></a>Каковы рекомендации по защите вредоносных программ в кластерах Azure HDInsight?
 
-Сведения о защите от вредоносных программ см. в [статье антивредоносное по Майкрософт для облачных служб и виртуальных машин Azure](../security/fundamentals/antimalware.md).
+Для получения информации [Microsoft Antimalware for Azure Cloud Services and Virtual Machines](../security/fundamentals/antimalware.md)о защите от вредоносных программ см.
 
-### <a name="how-do-i-create-a-keytab-for-an-hdinsight-esp-cluster"></a>Разделы справки создать keytab для кластера HDInsight ESP?
+### <a name="how-do-i-create-a-keytab-for-an-hdinsight-esp-cluster"></a>Как создать ключ для кластера HDInsight ESP?
 
-Создайте keytab Kerberos для имени пользователя домена. Позже это keytab можно использовать для проверки подлинности в присоединенных к домену кластерах без ввода пароля. Доменное имя имеет прописные буквы:
+Создайте ключ Kerberos для вашего имени пользователя домена. Позже этот ключ можно использовать для проверки подлинности удаленных кластеров, связанных с доменом, без ввода пароля. Доменное имя верхнее:
 
 ```shell
 ktutil
@@ -194,76 +194,76 @@ ktutil: wkt <username>.keytab
 ktutil: q
 ```
 
-### <a name="can-i-use-an-existing-azure-active-directory-tenant-to-create-an-hdinsight-cluster-that-has-the-esp"></a>Можно ли использовать существующий клиент Azure Active Directory для создания кластера HDInsight с ESP?
+### <a name="can-i-use-an-existing-azure-active-directory-tenant-to-create-an-hdinsight-cluster-that-has-the-esp"></a>Могу ли я использовать существующий арендатор Active Directory Azure для создания кластера HDInsight с ESP?
 
-Прежде чем можно будет создать кластер HDInsight с помощью ESP, необходимо включить Azure Active Directory доменных служб (Azure AD DS). В случае с открытым исходным кодом Hadoop использует Kerberos для проверки подлинности (в отличие от OAuth).
+Прежде чем создать кластер HDInsight с ESP, необходимо включить службы активных доменов Azure Active Directory Domains (Azure AD DS). С открытым исходным кодом Hadoop полагается на Kerberos для аутентификации (в отличие от OAuth).
 
-Чтобы присоединить виртуальные машины к домену, необходимо иметь контроллер домена. Azure AD DS — это управляемый контроллер домена, который считается расширением Azure Active Directory, обеспечивающим все требования Kerberos для создания защищенного кластера Hadoop управляемым способом. HDInsight в качестве управляемой службы интегрируется с Azure AD DS для обеспечения сквозной безопасности.
+Чтобы присоединиться к VMs в домене, вы должны иметь контроллер домена. Azure AD DS является управляемым контроллером домена и считается расширением Active Directory Azure, который предоставляет все требования Kerberos для создания безопасного кластера Hadoop управляемым способом. HDInsight как управляемая служба интегрируется с Azure AD DS для обеспечения сквозной безопасности.
 
-### <a name="can-i-use-a-self-signed-certificate-in-an-aad-ds-secure-ldap-setup-and-provision-an-esp-cluster"></a>Можно ли использовать самозаверяющий сертификат в настройке защищенного протокола LDAP в AAD-DS и подготавливать кластер ESP?
+### <a name="can-i-use-a-self-signed-certificate-in-an-aad-ds-secure-ldap-setup-and-provision-an-esp-cluster"></a>Могу ли я использовать сертификат, подписанный самостоятельно, в безопасной установке LDAP AAD-DS и предоставить кластер ESP?
 
-Рекомендуется использовать сертификат, выданный центром сертификации, но с помощью ESP также поддерживается самозаверяющий сертификат. Дополнительные сведения см. в разделе:
+Рекомендуется использовать сертификат, выданный органом по сертификации, но использование сертификата, подписанного самостоятельно, также поддерживается на ESP. Дополнительные сведения см. в разделе:
 
 - [Включение доменных служб Azure Active Directory](domain-joined/apache-domain-joined-configure-using-azure-adds.md#enable-azure-ad-ds)
 
-- [Руководство. Настройка защищенного протокола LDAP для управляемого домена доменных служб Azure Active Directory](../active-directory-domain-services/tutorial-configure-ldaps.md)
+- [Учебник: Настройка безопасного LDAP для домена идочебных служб Active Directory](../active-directory-domain-services/tutorial-configure-ldaps.md)
 
-### <a name="how-can-i-pull-login-activity-shown-in-ranger"></a>Как можно извлечь действие входа в систему, показанное в Ranger?
+### <a name="how-can-i-pull-login-activity-shown-in-ranger"></a>Как я могу вытащить активность входа, показанную в Ranger?
 
-Для требований аудита Корпорация Майкрософт рекомендует включить журналы Azure Monitor, как описано в разделе [Использование журналов Azure Monitor для мониторинга кластеров HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-oms-log-analytics-tutorial).
+Для требований аудита корпорация Майкрософт рекомендует включить журналы Azure Monitor, описанные в [журналах Use Ure Monitor, для мониторинга кластеров HDInsight.](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-oms-log-analytics-tutorial)
 
-### <a name="can-i-disable-clamscan-on-my-cluster"></a>Можно ли отключить Кламскан в кластере?
+### <a name="can-i-disable-clamscan-on-my-cluster"></a>Могу ли я отключить Clamscan в моем кластере?
 
-Кламскан — это антивирусное программное обеспечение, которое работает в кластере HDInsight и используется системой безопасности Azure (азсекд) для защиты кластеров от атак с вирусами. Корпорация Майкрософт настоятельно рекомендует пользователям не изменять конфигурацию Кламскан по умолчанию.
+Clamscan — это антивирусное программное обеспечение, которое работает в кластере HDInsight и используется системой безопасности Azure (azsecd) для защиты кластеров от вирусных атак. Корпорация Майкрософт настоятельно рекомендует пользователям воздерживаться от внесения каких-либо изменений в конфигурацию Clamscan по умолчанию.
 
-Этот процесс не мешает или не принимает никаких циклов от других процессов. Он всегда будет давать другой процесс. Пики загрузки ЦП из Кламскан должны отображаться только в том случае, если система бездействует.  
+Этот процесс не вмешивается и не отнимает циклов от других процессов. Он всегда уступит другому процессу. Пики процессора из Clamscan следует увидеть только тогда, когда система простаивает.  
 
-В сценариях, в которых необходимо управлять расписанием, можно выполнить следующие действия.
+В сценариях, в которых необходимо контролировать расписание, можно использовать следующие действия:
 
-1. Отключите автоматическое выполнение с помощью следующей команды:
+1. Отключить автоматическое выполнение с помощью следующей команды:
    
    `/usr/local/vbin/azsecd config -s clamav -d Disabled`
    
-1. Добавьте задание cron, которое выполняет следующую команду в качестве привилегированной:
+1. Добавьте задание Cron, выполняемый следующей командой в качестве корня:
    
    `/usr/local/bin/azsecd manual -s clamav`
 
-Дополнительные сведения о настройке и выполнении задания cron см. в разделе [разделы справки Настройка задания cron](https://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job).
+Для получения дополнительной информации о том, как настроить и запустить работу cron, [см. Как я могу настроить работу Cron?](https://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job)
 
 ### <a name="why-is-llap-available-on-spark-esp-clusters"></a>Почему LLAP доступен в кластерах Spark ESP?
-В кластерах ESP Spark LLAP включен по соображениям безопасности (например, Apache Ranger), а не производительности. Следует использовать виртуальные машины большего размера, чтобы обеспечить использование ресурсов LLAP (например, минимум D13V2). 
+В кластерах ESP Spark LLAP включен по соображениям безопасности (например, Apache Ranger), а не по производительности. Следует использовать более крупные vMs-назаковые центры для размещения ресурсов LLAP (например, минимальный D13V2). 
 
 ### <a name="how-can-i-add-additional-aad-groups-after-creating-an-esp-cluster"></a>Как добавить дополнительные группы AAD после создания кластера ESP?
-Это можно сделать двумя способами: 1. Вы можете повторно создать кластер и добавить дополнительную группу во время создания кластера. Если вы используете синхронизацию с заданной областью в AAD-DS, убедитесь, что Группа B включена в синхронизацию с заданной областью.
-2\. Добавьте группу в качестве вложенной подгруппы предыдущей группы, которая использовалась для создания кластера ESP. Например, если вы создали кластер ESP с группой `A`, позже можно будет добавить группу `B` как вложенную подгруппу `A` и через примерно один час синхронизация и доступность в кластере будут выполняться автоматически. 
+Есть два способа достижения этой цели: 1- Вы можете воссоздать кластер и добавить дополнительную группу во время создания кластера. Если вы используете синхронизацию в AAD-DS, пожалуйста, убедитесь, что группа B включена в синхронизацию.
+2- Добавьте группу в качестве вложенной подгруппы предыдущей группы, которая использовалась для создания кластера ESP. Например, если вы создали кластер ESP с `A`группой, `B` вы можете позже `A` добавить группу в качестве вложенной подгруппы и примерно через час он будет синхронизирован и доступен в кластере автоматически. 
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Хранилище
 
-### <a name="can-i-add-an-azure-data-lake-storage-gen2-to-an-existing-hdinsight-cluster-as-an-additional-storage-account"></a>Можно ли добавить Azure Data Lake Storage 2-го поколения в существующий кластер HDInsight в качестве дополнительной учетной записи хранения?
+### <a name="can-i-add-an-azure-data-lake-storage-gen2-to-an-existing-hdinsight-cluster-as-an-additional-storage-account"></a>Могу ли я добавить данный элемент Azure Data Lake Storage 2 в существующий кластер HDInsight в качестве дополнительной учетной записи для хранения данных?
 
-Нет, в настоящее время невозможно добавить учетную запись хранения Azure Data Lake Storage 2-го поколения в кластер, имеющий хранилище BLOB-объектов в качестве основного хранилища. Дополнительные сведения см. в разделе [Сравнение параметров хранения](hdinsight-hadoop-compare-storage-options.md).
+Нет, в настоящее время невозможно добавить учетную запись хранения данных Azure Data Lake Storage Gen2 в кластер, который имеет хранилище капли в качестве основного хранилища. Для получения дополнительной информации [см.](hdinsight-hadoop-compare-storage-options.md)
 
-### <a name="how-can-i-find-the-currently-linked-service-principal-for-a-data-lake-storage-account"></a>Как найти связанный субъект-службу для Data Lake учетной записи хранения?
+### <a name="how-can-i-find-the-currently-linked-service-principal-for-a-data-lake-storage-account"></a>Как найти в настоящее время связанную службу директора по хранению данных?
 
-Параметры можно найти в **Data Lake Storage 1-го поколения доступе** в свойствах кластера в портал Azure. Дополнительные сведения см. в разделе [Проверка настройки кластера](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md#verify-cluster-set-up).
+Настройки можно найти в **доступе Data Lake Storage Gen1 под** свойствами кластера на портале Azure. Для получения дополнительной информации [см.](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md#verify-cluster-set-up)
  
-### <a name="how-can-i-calculate-the-usage-of-storage-accounts-and-blob-containers-for-my-hdinsight-clusters"></a>Как можно рассчитать использование учетных записей хранения и контейнеров больших двоичных объектов для кластеров HDInsight?
+### <a name="how-can-i-calculate-the-usage-of-storage-accounts-and-blob-containers-for-my-hdinsight-clusters"></a>Как рассчитать использование учетных записей хранения данных и контейнеров с каплями для кластеров HDInsight?
 
 Выполните одно из следующих действий.
 
 - [Использование PowerShell](../storage/scripts/storage-blobs-container-calculate-size-powershell.md)
 
-- Определите размер папки */User/Hive/.Bin/* в кластере HDInsight, выполнив следующую команду:
+- Найдите размер */пользователя/улей/. Корзина /* папка на кластере HDInsight, используя следующую командную строку:
   
   `hdfs dfs -du -h /user/hive/.Trash/`
 
-### <a name="how-can-i-set-up-auditing-for-my-blob-storage-account"></a>Как настроить аудит для учетной записи хранения BLOB-объектов?
+### <a name="how-can-i-set-up-auditing-for-my-blob-storage-account"></a>Как настроить аудит для моей учетной записи хранения капли?
 
-Для аудита учетных записей хранения BLOB-объектов Настройте мониторинг с помощью процедуры, описанной в разделе [мониторинг учетной записи хранения в портал Azure](../storage/common/storage-monitor-storage-account.md). Журнал аудита HDFS содержит только данные аудита только для локальной файловой системы HDFS (hdfs://mycluster).  Она не включает операции, выполняемые в удаленном хранилище.
+Для аудита учетных записей хранения blob назначайте мониторинг с помощью процедуры на [портале Monitor на портале Azure.](../storage/common/storage-monitor-storage-account.md) В журнале HDFS-аудит содержится только информация о аудите только для локальной файловой системы HDFS (hdfs://mycluster).  Он не включает операции, которые выполняются на удаленном хранении.
 
-### <a name="how-can-i-transfer-files-between-a-blob-container-and-an-hdinsight-head-node"></a>Как передавать файлы между контейнером больших двоичных объектов и головным узлом HDInsight?
+### <a name="how-can-i-transfer-files-between-a-blob-container-and-an-hdinsight-head-node"></a>Как я могу передавать файлы между контейнером с каплей и головным узлам HDInsight?
 
-Выполните сценарий, аналогичный следующему сценарию оболочки на головном узле:
+Выполнить сценарий, похожий на следующий сценарий оболочки на головном уде:
 
 ```shell
 for i in cat filenames.txt
@@ -273,62 +273,62 @@ done
 ```
  
 > [!NOTE]
-> Файл *имя_файлаs. txt* будет иметь абсолютный путь к файлам в контейнерах больших двоичных объектов.
+> Файлы *filenames.txt* будут иметь абсолютный путь файлов в контейнерах капли.
  
-### <a name="are-there-any-ranger-plugins-for-storage"></a>Существуют ли подключаемые модули Ranger для хранения?
+### <a name="are-there-any-ranger-plugins-for-storage"></a>Есть ли плагины Ranger для хранения?
 
-В настоящее время для хранилища BLOB-объектов и Azure Data Lake Storage 1-го поколения или Gen2 не существует подключаемого модуля Ranger. Для кластеров ESP следует использовать Azure Data Lake Storage, так как по крайней мере можно задать разрешения точной детализации вручную на уровне файловой системы с помощью средств HDFS. Кроме того, при использовании Azure Data Lake Storage кластеры ESP будут выполнять некоторые действия по управлению доступом к файловой системе с помощью Azure Active Directory на уровне кластера. 
+В настоящее время не существует плагина Ranger для хранения каблов и хранения azure Data Lake Storage Gen1 или Gen2. Для кластеров ESP следует использовать хранилище озер Данных Azure, поскольку можно, по крайней мере, устанавливать мелкозернистые разрешения вручную на уровне файловой системы с помощью инструментов HDFS. Кроме того, при использовании Azure Data Lake Storage кластеры ESP будут выполнять часть управления доступом файловой системы с помощью Active Directory Azure на уровне кластеров. 
 
-Вы можете назначать политики доступа к данным для групп безопасности пользователей с помощью Обозреватель службы хранилища Azure. Дополнительные сведения см. в разделе:
+Политики доступа к данным можно назначить группам безопасности пользователей с помощью Azure Storage Explorer. Дополнительные сведения см. в разделе:
 
-- [Разделы справки задать разрешения для пользователей Azure AD на запрос данных в Data Lake Storage 2-го поколения с помощью Hive или других служб?](hdinsight-hadoop-use-data-lake-storage-gen2.md#how-do-i-set-permissions-for-azure-ad-users-to-query-data-in-data-lake-storage-gen2-by-using-hive-or-other-services)
+- [Как установить разрешения для пользователей Azure AD на запрос данных в Data Lake Storage Gen2 с помощью Hive или других служб?](hdinsight-hadoop-use-data-lake-storage-gen2.md#how-do-i-set-permissions-for-azure-ad-users-to-query-data-in-data-lake-storage-gen2-by-using-hive-or-other-services)
 - [Установка разрешений на уровне файлов и каталогов в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure](/azure/storage/blobs/data-lake-storage-how-to-set-permissions-storage-explorer)
 
-### <a name="can-i-increase-hdfs-storage-on-a-cluster-without-increasing-the-disk-size-of-worker-nodes"></a>Можно ли увеличить хранилище HDFS в кластере, не увеличивая размер диска рабочих узлов?
+### <a name="can-i-increase-hdfs-storage-on-a-cluster-without-increasing-the-disk-size-of-worker-nodes"></a>Могу ли я увеличить хранение HDFS в кластере без увеличения размера диска рабочих узлов?
 
-Нет, нельзя увеличить размер диска для рабочего узла, поэтому единственным способом увеличить размер диска является удаление кластера и его повторное создание с помощью рабочих виртуальных машин большего размера. Не используйте HDFS для хранения данных HDInsight, так как данные удаляются при удалении кластера. Вместо этого храните данные в Azure. Увеличение масштаба кластера может также увеличить емкость кластера HDInsight.
+Нет, вы не можете увеличить размер диска любого рабочего узла, поэтому единственный способ увеличить размер диска — это упасть с кластера и воссоздать его с помощью больших универсальных VMs. Не используйте HDFS для хранения любых данных HDInsight, поскольку данные удаляются при удалении кластера. Вместо этого храните данные в Azure. Масштабирование кластера также может добавить дополнительную емкость в кластер HDInsight.
 
 ## <a name="edge-nodes"></a>Граничные узлы
 
-### <a name="can-i-add-an-edge-node-after-the-cluster-has-been-created"></a>Можно ли добавить граничные узлы после создания кластера?
+### <a name="can-i-add-an-edge-node-after-the-cluster-has-been-created"></a>Могу ли я добавить узлы края после создания кластера?
 
 Кластер HDInsight или новый кластер при создании кластера. Дополнительные сведения см. в разделе [Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight](hdinsight-apps-use-edge-node.md)
 
-### <a name="how-can-i-connect-to-an-edge-node"></a>Как подключиться к пограничному узлу?
+### <a name="how-can-i-connect-to-an-edge-node"></a>Как подключиться к краю узла?
 
-После создания пограничного узла можно подключиться к нему по протоколу SSH через порт 22. Имя пограничного узла можно найти на портале кластера. Имена обычно оканчиваются на *-ED*.
+После создания кромки узла можно подключиться к нему с помощью SSH в порту 22. На портале кластера можно найти название узла края. Имена обычно заканчиваются *- ed*.
 
-### <a name="why-are-persisted-scripts-not-running-automatically-on-newly-created-edge-nodes"></a>Почему сохраняемые скрипты не запускаются автоматически на вновь созданных граничных узлах?
+### <a name="why-are-persisted-scripts-not-running-automatically-on-newly-created-edge-nodes"></a>Почему сохраняющиеся скрипты не работают автоматически на вновь созданных узлах края?
 
-Сохраненные сценарии используются для настройки новых рабочих узлов, добавляемых в кластер с помощью операций масштабирования. Сохраненные сценарии не применяются к граничным узлам.
+Сохраняются скрипты для настройки новых узлов рабочего, добавленных в кластер с помощью операций масштабирования. Упорные скрипты не применяются к краям узлов.
 
 ## <a name="rest-api"></a>REST API
 
-### <a name="what-are-the-rest-api-calls-to-pull-a-tez-query-view-from-the-cluster"></a>Какие REST API вызовы, чтобы извлечь представление запроса Tez из кластера?
+### <a name="what-are-the-rest-api-calls-to-pull-a-tez-query-view-from-the-cluster"></a>Что такое вызовы REST API, чтобы вытащить представление запроса Tez из кластера?
 
-Для извлечения необходимой информации в формате JSON можно использовать следующие конечные точки RESTFUL. Для выполнения запросов используйте заголовки обычной проверки подлинности.
+Вы можете использовать следующие конечные точки REST для получения необходимой информации в формате JSON. Используйте основные заголовки аутентификации для обработки запросов.
 
-- Tez представление запросов: *https:\//\<имя кластера >. azurehdinsight. NET/WS/v1/Timeline/HIVE_QUERY_ID/*
-- Tez DAG View: *https:\//\<имя кластера >. azurehdinsight. NET/WS/v1/Timeline/TEZ_DAG_ID/*
+- Tez Query View: *https:\//\<название кластера>.azurehdinsight.net/ws/v1/timeline/HIVE_QUERY_ID/*
+- Tez Dag View: *\//\<https: cluster name>.azurehdinsight.net/ws/v1/timeline/TEZ_DAG_ID/*
 
-### <a name="how-do-i-retrieve-the-configuration-details-from-hdi-cluster-by-using-an-azure-active-directory-user"></a>Разделы справки получить сведения о конфигурации из кластера HDI с помощью Azure Active Directory пользователя?
+### <a name="how-do-i-retrieve-the-configuration-details-from-hdi-cluster-by-using-an-azure-active-directory-user"></a>Как получить детали конфигурации из кластера ИРЧП с помощью пользователя Active Directory Azure?
 
-Чтобы согласовать маркеры проверки подлинности с пользователем AAD, пройдите через шлюз, используя следующий формат:
+Чтобы договориться о надлежащей аутентификации токенов с вашим пользователем AAD, пройти через шлюз, используя следующий формат:
 
-* https://`<cluster dnsname>`. azurehdinsight.net/api/v1/clusters/testclusterdem/stack_versions/1/repository_versions/1 
+* https://`<cluster dnsname>`.azurehdinsight.net/api/v1/clusters/testclusterdem/stack_versions/1/repository_versions/1 
 
-### <a name="how-do-i-use-ambari-restful-api-to-monitor-yarn-performance"></a>Разделы справки использовать API RESTful Ambari для мониторинга производительности YARN?
+### <a name="how-do-i-use-ambari-restful-api-to-monitor-yarn-performance"></a>Как использовать API Ambari Restful API для мониторинга производительности YARN?
 
-При вызове команды «изогнутая» в той же виртуальной сети или в одноранговой виртуальной сети команда:
+Если вы называете команду Curl в той же виртуальной сети или в заглянувой виртуальной сети, команда:
 
 ```curl
 curl -u <cluster login username> -sS -G
 http://<headnodehost>:8080/api/v1/clusters/<ClusterName>/services/YARN/components/NODEMANAGER?fields=metrics/cpu
 ```
  
-При вызове команды из-за пределов виртуальной сети или непирингной виртуальной сети формат команды будет следующим:
+Если вы звоните в команду из-за пределов виртуальной сети или из не-одноранговой виртуальной сети, формат команды:
 
-- Для кластера, не являющегося кластером ESP:
+- Для кластера, не относящемуся к ESP:
   
   ```curl
   curl -u <cluster login username> -sS -G 
@@ -343,42 +343,42 @@ http://<headnodehost>:8080/api/v1/clusters/<ClusterName>/services/YARN/component
   ```
 
 > [!NOTE]
-> В фигурной скобке будет предложено ввести пароль. Необходимо ввести допустимый пароль для имени пользователя для входа в кластер.
+> Curl подскажет вам пароль. Необходимо ввести действительный пароль для имени пользователя кластера.
 
 ## <a name="billing"></a>Выставление счетов
 
-### <a name="how-much-does-it-cost-to-deploy-an-hdinsight-cluster"></a>Какова стоимость развертывания кластера HDInsight?
+### <a name="how-much-does-it-cost-to-deploy-an-hdinsight-cluster"></a>Сколько стоит развертывание кластера HDInsight?
 
-Дополнительные сведения о ценах и часто задаваемых вопросах, связанных с выставлением счетов, см. на странице [цен на Azure HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/) .
+Для получения дополнительной информации о ценах и часто задаваемых вопросов, связанных с выставлением счетов, смотрите страницу [ценообразования Azure HDInsight.](https://azure.microsoft.com/pricing/details/hdinsight/)
 
-### <a name="when-does-hdinsight-billing-start--stop"></a>Когда начинается оплата с учета HDInsight & останавливаться?
+### <a name="when-does-hdinsight-billing-start--stop"></a>Когда начинается & остановка биллинга В HDInsight?
 
-Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Стоимость выставления счетов составляет Pro в минуту.
+Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Биллинг проражается по минуте.
 
-### <a name="how-do-i-cancel-my-subscription"></a>Разделы справки отменить подписку?
+### <a name="how-do-i-cancel-my-subscription"></a>Как отменить подписку?
 
-Сведения о том, как отменить подписку, см. в разделе [Отмена подписки Azure](https://docs.microsoft.com/azure/billing/billing-how-to-cancel-azure-subscription).
+Для получения информации об отмене подписки можно [узнать об отмене подписки Azure.](https://docs.microsoft.com/azure/billing/billing-how-to-cancel-azure-subscription)
 
-### <a name="for-pay-as-you-go-subscriptions-what-happens-after-i-cancel-my-subscription"></a>Что происходит после отмены подписки с оплатой по мере использования?
+### <a name="for-pay-as-you-go-subscriptions-what-happens-after-i-cancel-my-subscription"></a>Что произойдет после отмены подписки с оплатой по мере использования?
 
-Сведения о подписке после ее отмены см. в разделе [что происходит после отмены подписки?](/azure/billing/billing-how-to-cancel-azure-subscription)
+Для получения информации о вашей подписке после ее отмены см. [Что произойдет после отмены подписки?](/azure/billing/billing-how-to-cancel-azure-subscription)
 
 ## <a name="hive"></a>Hive
 
-### <a name="why-does-the-hive-version-appear-as-121000-instead-of-21-in-the-ambari-ui-even-though-i-am-running-an-hdinsight-36-cluster"></a>Почему версия Hive отображается как 1.2.1000 вместо 2,1 в пользовательском интерфейсе Ambari, несмотря на то, что я использую кластер HDInsight 3,6?
+### <a name="why-does-the-hive-version-appear-as-121000-instead-of-21-in-the-ambari-ui-even-though-i-am-running-an-hdinsight-36-cluster"></a>Почему версия Hive отображается как 1.2.1000 вместо 2.1 в uI Ambari, хотя я бегу с кластером HDInsight 3.6?
 
-Хотя в пользовательском интерфейсе Ambari отображается только 1,2, HDInsight 3,6 содержит как Hive 1,2, так и Hive 2,1.
+Хотя только 1.2 появляется в UI Ambari, HDInsight 3.6 содержит как Hive 1.2, так и Hive 2.1.
 
-## <a name="other-faq"></a>Другие вопросы и ответы
+## <a name="other-faq"></a>Другие часто задаваемые вопросы
 
-### <a name="what-does-hdinsight-offer-in-terms-of-real-time-stream-processing-capabilities"></a>Что предлагает HDInsight в плане возможностей обработки потоков в режиме реального времени?
+### <a name="what-does-hdinsight-offer-in-terms-of-real-time-stream-processing-capabilities"></a>Что предлагает HDInsight с точки зрения возможностей обработки потоков в реальном времени?
 
-Сведения о возможностях интеграции потоковой обработки в Azure HDInsight см. в статье [Выбор технологии потоковой обработки в Azure](/azure/architecture/data-guide/technology-choices/stream-processing).
+Для получения информации о возможностях интеграции обработки потоков в Azure HDInsight [см.](/azure/architecture/data-guide/technology-choices/stream-processing)
 
-### <a name="is-there-a-way-to-dynamically-terminate-the-head-node-of-the-cluster-when-the-cluster-is-idle-for-a-specific-period"></a>Существует ли способ динамического прерывания головного узла кластера, когда кластер бездействует в течение определенного периода?
+### <a name="is-there-a-way-to-dynamically-terminate-the-head-node-of-the-cluster-when-the-cluster-is-idle-for-a-specific-period"></a>Есть ли способ динамического завершения головного узла кластера, когда кластер простаивает в течение определенного периода?
 
-Это невозможно сделать с кластерами HDInsight. В этих сценариях можно использовать фабрику данных Azure.
+Вы не можете сделать это с кластерами HDInsight. Для этих сценариев можно использовать фабрику данных Azure.
 
-### <a name="what-compliance-offerings-does-hdinsight-offer"></a>Какие предложения соответствия предлагает HDInsight?
+### <a name="what-compliance-offerings-does-hdinsight-offer"></a>Какие предложения по соблюдению предлагает HDInsight?
 
-Сведения о соответствии требованиям см. в [центре управления безопасностью Майкрософт](https://www.microsoft.com/trust-center) и в [обзоре соответствия Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942).
+Для получения информации о соответствии требованиям можно ознакомиться в [целевом центре Майкрософт](https://www.microsoft.com/trust-center) и [обзоре соответствия требованиям Microsoft Azure.](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942)

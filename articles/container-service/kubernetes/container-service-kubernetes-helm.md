@@ -8,10 +8,10 @@ ms.date: 04/10/2017
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: a32c9fab3877a693d2df26571b9fae4aa7b4380c
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76271085"
 ---
 # <a name="deprecated-use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>(УСТАРЕЛО) Использование Helm для развертывания контейнеров в кластере Kubernetes
@@ -21,16 +21,16 @@ ms.locfileid: "76271085"
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-[Helm](https://github.com/kubernetes/helm/) — это средство упаковки с открытым исходным кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как Apt-get и Yum, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes. В этой статье показано, как работать с Helm в кластере Kubernetes, развернутом в Службе контейнеров Azure.
+[Helm](https://github.com/kubernetes/helm/) — это средство упаковки с открытым кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как Apt-get и Yum, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes. В этой статье показано, как работать с Helm в кластере Kubernetes, развернутом в Службе контейнеров Azure.
 
 Helm состоит из двух компонентов: 
 * **Helm CLI** — клиент, который выполняется на компьютере локально или в облаке.  
 
 * **Tiller** — сервер, который выполняется в кластере Kubernetes и управляет жизненным циклом приложений Kubernetes. 
  
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в Службе контейнеров Azure
+* [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в контейнерной службе Azure
 
 * [Установка и настройка`kubectl`](../container-service-connect.md) на локальном компьютере
 
@@ -143,7 +143,7 @@ sudo mysql –h v1-mariadb
 ```
  
  
-Теперь можно использовать стандартные команды SQL для создания баз данных, таблиц и т. д. Например, `Create DATABASE testdb1;` создает пустую базу данных. 
+Теперь для создания баз данных, таблиц и т.д. можно использовать стандартные команды S'L. Например, `Create DATABASE testdb1;` создаетпустую базу данных. 
  
  
  

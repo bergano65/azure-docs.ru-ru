@@ -1,5 +1,5 @@
 ---
-title: Пример политики управления API — Отправка ошибок в Stackify для ведения журнала
+title: Пример политики управления API - Отправка ошибок в Stackify для ведения журнала
 titleSuffix: Azure API Management
 description: Пример политики службы управления API Azure. Добавление политики регистрации ошибок для отправки ошибок в Stackify и их записи в журнал.
 services: api-management
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 6662761df005211729dffb16282b8e0a8e2a8444
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75442443"
 ---
 # <a name="send-errors-to-stackify-for-logging"></a>Отправка ошибок Stackify для записи в журнал

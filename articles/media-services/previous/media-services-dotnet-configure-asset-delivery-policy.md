@@ -15,22 +15,22 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: ab3c40ee408498453bb137c63c440d980b0b7255
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74974518"
 ---
 # <a name="configure-asset-delivery-policies-with-net-sdk"></a>Настройка политик доставки ресурсов-контейнеров с помощью пакета SDK для .NET
 [!INCLUDE [media-services-selector-asset-delivery-policy](../../../includes/media-services-selector-asset-delivery-policy.md)]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 Если вы планируете доставлять зашифрованные ресурсы-контейнеры, вам следует настроить политику доставки таких ресурсов (один из этапов рабочего процесса доставки содержимого в службах мультимедиа). Политика доставки ресурсов сообщает службам мультимедиа способ доставки ресурса: какие протоколы передачи следует использовать для динамической упаковки ресурса (например, MPEG DASH, HLS, Smooth Streaming или все), следует ли использовать динамическое шифрование и как (конвертное или общее шифрование).
 
 В этой статье рассматриваются причины и способы создания и настройки политик для доставки ресурсов-контейнеров.
 
 >[!NOTE]
->При создании учетной записи AMS в нее добавляется конечная точка потоковой передачи **по умолчанию** в состоянии **Остановлена**. Чтобы начать потоковую передачу содержимого и воспользоваться динамической упаковкой и динамическим шифрованием, конечная точка потоковой передачи, из которой необходимо выполнять потоковую передачу содержимого, должна находиться в состоянии **Выполняется**. 
+>При создании учетной записи AMS в вашей учетной записи **«Остановлено»** добавляется конечная точка потоковой передачи **по умолчанию.** Чтобы начать потоковую передачу содержимого и воспользоваться функциями динамической упаковки и динамического шифрования, конечная точка потоковой передачи, из которой необходимо выполнять потоковую передачу содержимого, должна находиться в состоянии **Выполняется**. 
 >
 >Кроме того, чтобы использовать динамическую упаковку и динамическое шифрование, ресурс должен содержать набор файлов формата MP4 или потоковой передачи Smooth Streaming с переменной скоростью.
 
@@ -62,7 +62,7 @@ MPEG DASH
 
 ## <a name="clear-asset-delivery-policy"></a>Политики доставки незашифрованных ресурсов
 
-Следующий метод **ConfigureClearAssetDeliveryPolicy** указывает, что не следует применять динамическое шифрование и осуществлять доставку с помощью потоковой передачи по любому из следующих протоколов: MPEG DASH, HLS и Smooth Streaming. Эту политику можно применить к зашифрованным в хранилище ресурсам-контейнерам.
+Следующий метод **ConfigureClearAssetDeliveryPolicy** определяет не применять динамическое шифрование и поставлять поток в любом из следующих протоколов: MPEG DASH, HLS и Smooth Streaming протоколы. Эту политику можно применить к зашифрованным в хранилище ресурсам-контейнерам.
 
 Сведения о том, какие значения можно задать при создании политики доставки ресурсов-контейнеров, см. в разделе [Типы, используемые при определении AssetDeliveryPolicy](#types).
 
@@ -199,9 +199,9 @@ MPEG DASH
     }
 ```
 
-## <a id="types"></a>Типы, используемые при определении AssetDeliveryPolicy
+## <a name="types-used-when-defining-assetdeliverypolicy"></a><a id="types"></a>Типы, используемые при определении AssetDeliveryPolicy
 
-### <a id="AssetDeliveryProtocol"></a>AssetDeliveryProtocol
+### <a name="assetdeliveryprotocol"></a><a id="AssetDeliveryProtocol"></a>AssetDeliveryProtocol
 
 Следующее перечисление описывает значения, которые можно указать для протокола доставки ресурсов.
 
@@ -237,7 +237,7 @@ MPEG DASH
         All = 0xFFFF
     }
 ```
-### <a id="AssetDeliveryPolicyType"></a>AssetDeliveryPolicyType
+### <a name="assetdeliverypolicytype"></a><a id="AssetDeliveryPolicyType"></a>AssetDeliveryPolicyType
 
 Следующее перечисление описывает значения, которые можно указать для типа политики доставки ресурсов.  
 ```csharp
@@ -270,7 +270,7 @@ MPEG DASH
         DynamicCommonEncryption
         }
 ```
-### <a id="ContentKeyDeliveryType"></a>ContentKeyDeliveryType
+### <a name="contentkeydeliverytype"></a><a id="ContentKeyDeliveryType"></a>ContentKeyDeliveryType
 
 Следующее перечисление описывает значения, с помощью которых можно настроить способ доставки ключей содержимого на клиент.
   ```csharp  
@@ -302,7 +302,7 @@ MPEG DASH
 
     }
 ```
-### <a id="AssetDeliveryPolicyConfigurationKey"></a>AssetDeliveryPolicyConfigurationKey
+### <a name="assetdeliverypolicyconfigurationkey"></a><a id="AssetDeliveryPolicyConfigurationKey"></a>AssetDeliveryPolicyConfigurationKey
 
 Следующее перечисление описывает значения, с помощью которых можно настроить ключи, используемые для получения конкретной конфигурации для политики доставки ресурсов.
 ```csharp
@@ -352,11 +352,11 @@ MPEG DASH
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

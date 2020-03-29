@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/12/2018
 ms.author: magattus
 ms.openlocfilehash: d91507ad2cb271b23b588ef7da88e6e6712915b1
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67593579"
 ---
 # <a name="pre-load-assets-on-an-azure-cdn-endpoint"></a>Предварительная загрузка ресурсов на конечной точке CDN Azure
@@ -67,7 +67,7 @@ ms.locfileid: "67593579"
 > 
 
 ## <a name="see-also"></a>См. также
-* [Очистка конечной точки сети CDN Azure](cdn-purge-endpoint.md)
-* [Справочник по CDN REST API Azure: Предварительная загрузка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/loadcontent)
-* [Справочник по CDN REST API Azure: Очистить содержимое из конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/purgecontent)
+* [Очистка конечная точка Azure CDN](cdn-purge-endpoint.md)
+* [Справочник по API REST CDN Azure. Предварительная загрузка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/loadcontent)
+* [Справочник по API REST CDN Azure. Очистка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/purgecontent)
 

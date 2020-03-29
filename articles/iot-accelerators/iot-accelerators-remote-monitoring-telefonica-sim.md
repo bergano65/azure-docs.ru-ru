@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 05/15/2018
 ms.topic: conceptual
 ms.openlocfilehash: b07e21131d9560a49d99644525835ac5ee3bac9e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61442245"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении для удаленного мониторинга
@@ -21,7 +21,7 @@ ms.locfileid: "61442245"
 
 Решение удаленного мониторинга обеспечивает готовую интеграцию с подключением Интернета вещей Telefónica, позволяя клиентам, использующим платформу подключения Интернета вещей, синхронизировать данные о подключении SIM-карт устройств с решениями. Это решение можно расширить для поддержки других поставщиков подключения Интернета вещей через [репозиторий](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet) GitHub.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 * интегрирование данных SIM-карты Интернета вещей Telefónica в решение для удаленного мониторинга;
 * просмотр телеметрии в реальном времени;
@@ -29,7 +29,7 @@ ms.locfileid: "61442245"
 
 ## <a name="telefnica-iot-integration-setup"></a>Настройка интеграции Интернета вещей Telefónica
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Эта дополнительная функция удаленного мониторинга в настоящее время находится в режиме предварительной версии. Чтобы синхронизировать данные о подключении в решение для удаленного мониторинга Azure, выполните такие задачи:
 
@@ -61,7 +61,7 @@ ms.locfileid: "61442245"
 * сетевое расположение;
 * потребляемый трафик данных.
 
-![панель мониторинга](./media/iot-accelerators-remote-monitoring-telefonica-sim/dashboard.png)
+![Панель мониторинга](./media/iot-accelerators-remote-monitoring-telefonica-sim/dashboard.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

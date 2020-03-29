@@ -1,6 +1,6 @@
 ---
-title: Использование пакета NuGet Azure Stream Analytics CI/CD
-description: В этой статье описывается, как использовать пакет NuGet Azure Stream Analytics CI/CD для настройки процесса непрерывной интеграции и развертывания.
+title: Используйте пакет аналитики потоков Azure CI/CD NuGet
+description: В этой статье описывается, как использовать пакет Azure Stream Analytics CI/CD NuGet для настройки непрерывного процесса интеграции и развертывания.
 author: su-jie
 ms.author: sujie
 ms.reviewer: mamccrea
@@ -8,18 +8,18 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: 11e68aaa7c70d4f888c0009bc28d9bb90f431f3b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75354447"
 ---
-# <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Использование пакета NuGet Azure Stream Analytics CI/CD для интеграции и разработки 
-В этой статье описывается, как использовать пакет NuGet Azure Stream Analytics CI/CD для настройки процесса непрерывной интеграции и развертывания.
+# <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Используйте пакет Аналитики потоков Azure CI/CD NuGet для интеграции и развития 
+В этой статье описывается, как использовать пакет Azure Stream Analytics CI/CD NuGet для настройки непрерывного процесса интеграции и развертывания.
 
 Чтобы получить поддержку MSBuild, используйте [инструменты Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio) версии 2.3.0000.0 или выше.
 
-Доступен пакет NuGet [Microsoft.Azure.Stream Analytics.CICD](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/). Он предоставляет средства MSBuild, Local Run и Deployment Tools, которые поддерживают процесс непрерывной интеграции и развертывания [Stream Analytics проектов Visual Studio](stream-analytics-vs-tools.md). 
+Доступен пакет NuGet [Microsoft.Azure.Stream Analytics.CICD](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/). Он предоставляет инструменты MSBuild, локального запуска и развертывания, которые поддерживают непрерывный процесс интеграции и развертывания [проектов Stream Analytics Visual Studio.](stream-analytics-vs-tools.md) 
 > [!NOTE]
 > Пакет NuGet может использоваться только с версией 2.3.0000.0 или более поздней версией средств Stream Analytics для Visual Studio. При наличии проектов, созданных в предыдущих версиях средств Visual Studio, откройте его с помощью версии 2.3.0000.0 или более поздней версии и сохраните. После этого будут включены новые возможности. 
 
@@ -83,7 +83,7 @@ localrun -Project [ProjectFullPath]
 ```powershell
 arm -JobTemplate <templateFilePath> -JobParameterFile <jobParameterFilePath> [-OutputFile <asaArmFilePath>]
 ```
-Пример:
+Пример
 ```powershell
 ./tools/SA.exe arm -JobTemplate "ProjectA.JobTemplate.json" -JobParameterFile "ProjectA.JobTemplate.parameters.json" -OutputFile "JobDefinition.json" 
 ```
@@ -92,6 +92,6 @@ arm -JobTemplate <templateFilePath> -JobParameterFile <jobParameterFilePath> [-O
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Создание облачного задания Azure Stream Analytics в Visual Studio](stream-analytics-quick-create-vs.md)
+* [Быстрый запуск: Создайте работу в облачной аналитике Azure Stream Analytics в Visual Studio](stream-analytics-quick-create-vs.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)
-* [Изучение Azure Stream Analytics заданий с помощью Visual Studio](stream-analytics-vs-tools.md)
+* [Исследуйте вакансии Аналитики потоков Azure с помощью Visual Studio](stream-analytics-vs-tools.md)

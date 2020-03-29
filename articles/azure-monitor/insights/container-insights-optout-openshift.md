@@ -1,28 +1,28 @@
 ---
-title: Как отключить мониторинг кластера Azure Red Hat OpenShift | Документация Майкрософт
-description: В этой статье описывается, как можно отключить мониторинг кластера OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров.
+title: Как остановить мониторинг кластера Azure Red Hat OpenShift Документы Майкрософт
+description: В этой статье описывается, как можно прекратить мониторинг кластера Azure Red Hat OpenShift с помощью Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.openlocfilehash: eff5203aeedd3c7ad283b55ba12f0e45a556460d
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78250735"
 ---
-# <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-cluster-with-azure-monitor-for-containers"></a>Как отключить мониторинг кластера OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров
+# <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-cluster-with-azure-monitor-for-containers"></a>Как прекратить мониторинг кластера Azure Red Hat OpenShift с помощью Azure Monitor для контейнеров
 
-После включения мониторинга кластера Azure Red Hat OpenShift можно отключить мониторинг кластера, если вы решите, что вы больше не хотите его отслеживать. В этой статье показано, как это сделать с помощью предоставленных шаблонов Azure Resource Manager.  
+После включения мониторинга кластера Azure Red Hat OpenShift можно прекратить мониторинг кластера, если вы решите, что больше не хотите его контролировать. В этой статье показано, как это сделать с помощью предоставленных шаблонов менеджера ресурсов Azure.  
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 
-Предоставлены два шаблона Azure Resource Manager, которые позволяют последовательно и многократно удалять ресурсы решения в вашей группе ресурсов. Один из них — шаблон JSON, указывающий конфигурацию для отключения мониторинга, а другая содержит значения параметров, которые вы настраиваете для указания идентификатора ресурса кластера OpenShift и региона Azure, в котором развернут кластер.
+Предоставлены два шаблона Azure Resource Manager, которые позволяют последовательно и многократно удалять ресурсы решения в вашей группе ресурсов. Одним из них является шаблон JSON, определяющий конфигурацию для прекращения мониторинга, а другой содержит значения параметров, которые вы настраиваете для определения идентификатора ресурсов кластера OpenShift и области Azure, в которой развертывается кластер.
 
 Если вы не знакомы с концепцией развертывания ресурсов с помощью шаблона, ознакомьтесь со статьями:
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md)
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md)
 
-Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.65 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Вы должны запустить версию Azure CLI 2.0.65 или позже. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ### <a name="create-template"></a>Создание шаблона
 
@@ -84,7 +84,7 @@ ms.locfileid: "78250735"
     }
     ```
 
-4. Измените значения **ароресаурцеид** и **ароресаурцелокатион** , используя значения кластера OpenShift, которые можно найти на странице **свойств** выбранного кластера.
+4. Изнайдите значения **для aroResourceId** и **aroResourceLocation,** используя значения кластера OpenShift, которые можно найти на странице **Свойств** для выбранного кластера.
 
     ![Страница свойств контейнера](media/container-insights-optout-openshift/cluster-properties-page.png)
 
@@ -94,7 +94,7 @@ ms.locfileid: "78250735"
 
 ### <a name="remove-the-solution-using-azure-cli"></a>Удаление решения с помощью Azure CLI
 
-Выполните следующую команду с Azure CLI в Linux, чтобы удалить решение и очистить конфигурацию в кластере.
+Выполните следующую команду с Azure CLI на Linux, чтобы удалить решение и очистить конфигурацию в кластере.
 
 ```azurecli
 az login   
@@ -112,7 +112,7 @@ ProvisioningState       : Succeeded
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Выполните следующие команды PowerShell в папке, содержащей шаблон, чтобы удалить решение и очистить конфигурацию из кластера.    
+Выполните следующие команды PowerShell в папке, содержащей шаблон, чтобы удалить решение и очистить конфигурацию от кластера.    
 
 ```powershell
 Connect-AzAccount
@@ -128,4 +128,4 @@ ProvisioningState       : Succeeded
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если рабочая область была создана только для мониторинга кластера и больше не требуется, ее необходимо удалить вручную. Если вы не знакомы с удалением рабочей области, см. статью [удаление log Analytics рабочей области Azure](../../log-analytics/log-analytics-manage-del-workspace.md).
+Если рабочая область была создана только для мониторинга кластера и больше не требуется, ее необходимо удалить вручную. Если вы не знакомы с тем, как удалить рабочее пространство, [см.](../../log-analytics/log-analytics-manage-del-workspace.md)

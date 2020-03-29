@@ -1,5 +1,5 @@
 ---
-title: Поиск и удаление неподключенных сетевых интерфейсов Azure
+title: Поиск и удаление неприсоединенных NICs Azure
 description: Как найти и удалить не подключенные к виртуальным машинам сетевые адаптеры Azure с помощью Azure CLI.
 author: cynthn
 ms.service: virtual-machines
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/10/2018
 ms.author: cynthn
 ms.openlocfilehash: 8142b95ee666e205a8328eafd5930f1f386e49af
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78945139"
 ---
 # <a name="how-to-find-and-delete-unattached-network-interface-cards-nics-for-azure-vms"></a>Как найти и удалить неподключенные сетевые карты (NIC) на виртуальных машинах Azure

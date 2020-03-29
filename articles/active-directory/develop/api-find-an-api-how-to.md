@@ -1,5 +1,5 @@
 ---
-title: Поиск API для специально разработанного приложения | Службы
+title: Найдите API для специально разработанного приложения Azure
 description: Как настроить разрешения, необходимые для доступа к определенному интерфейсу API, в пользовательском приложении Azure AD
 services: active-directory
 author: rwike77
@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
 ms.openlocfilehash: bc50ec86866b7fe04c549c7fd463b6de4df3444b
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76698396"
 ---
 # <a name="how-to-find-a-specific-api-needed-for-a-custom-developed-application"></a>Как найти интерфейс API, необходимый для пользовательского приложения
@@ -24,11 +24,11 @@ ms.locfileid: "76698396"
 
 ## <a name="configuring-a-resource-application-to-expose-web-apis"></a>Настройка приложения ресурсов для предоставления веб-API
 
-При предоставлении веб-API этот интерфейс API будет отображаться в списке **Выберите API** при добавлении разрешений для регистрации приложения. Чтобы добавить области доступа, выполните действия, описанные в разделе [Настройка приложения для предоставления веб-API](quickstart-configure-app-expose-web-apis.md).
+При предоставлении веб-API этот интерфейс API будет отображаться в списке **Выберите API** при добавлении разрешений для регистрации приложения. Чтобы добавить области доступа, выполните шаги, изложенные в [настройке приложения для разоблачения веб-AIS.](quickstart-configure-app-expose-web-apis.md)
 
 ## <a name="configuring-a-client-application-to-access-web-apis"></a>Настройка клиентского приложения для доступа к веб-API
 
-При добавлении разрешений во время регистрации вашего приложения можно **добавить доступ к API** к предоставляемым веб-API. Чтобы получить доступ к веб-API, выполните действия, описанные в разделе [Настройка клиентского приложения для доступа к веб-API](quickstart-configure-app-access-web-apis.md).
+При добавлении разрешений во время регистрации вашего приложения можно **добавить доступ к API** к предоставляемым веб-API. Чтобы получить доступ к веб-AA, выполните шаги, изложенные в [настройке клиентского приложения для доступа к web-AA.](quickstart-configure-app-access-web-apis.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

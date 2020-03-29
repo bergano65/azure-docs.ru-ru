@@ -1,7 +1,7 @@
 ---
 title: Удаленные целевые объекты вычислений автоматического машинного обучения
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создавать модели с помощью автоматизированного машинного обучения на Машинное обучение Azure удаленном целевом объекте вычислений с Машинное обучение Azure
+description: Узнайте, как создавать модели с помощью автоматизированного машинного обучения на целевой дистанционных вычислений Azure Machine Learning с помощью Azure Machine Learning
 services: machine-learning
 author: cartacioS
 ms.author: sacartac
@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.openlocfilehash: 9e499d609a3f78dc5f422b9ed90df09be30f2e7c
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79080417"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
@@ -24,15 +24,15 @@ ms.locfileid: "79080417"
 
 В службе "Машинное обучение Azure" можно обучить модель для различных типов доступных для управления вычислительных ресурсов. Целью вычислений может быть локальный компьютер или ресурс в облаке.
 
-Вы можете легко масштабировать или масштабировать эксперимент машинного обучения, добавив дополнительные целевые объекты вычислений, например Машинное обучение Azure Compute (Амлкомпуте). AmlCompute — это управляемая вычислительная инфраструктура, которая позволяет пользователю легко создавать одно- и многоузловые вычислительные среды.
+Вы можете легко масштабировать или масштабировать эксперимент машинного обучения, добавляя дополнительные вычислительные цели, такие как Azure Machine Learning Compute (AmlCompute). AmlCompute — это управляемая вычислительная инфраструктура, которая позволяет пользователю легко создавать одно- и многоузловые вычислительные среды.
 
-Из этой статьи вы узнаете, как создать модель с помощью автоматизированного ML с Амлкомпуте.
+В этой статье вы узнаете, как построить модель с помощью автоматизированного ML с AmlCompute.
 
 ## <a name="how-does-remote-differ-from-local"></a>Чем удаленный компьютер отличается от локального?
 
-Руководство «[обучение модели классификации с автоматизированным машинным обучением](tutorial-auto-train-models.md)» рассказывает о том, как использовать локальный компьютер для обучения модели с помощью автоматизированного ml. Рабочий процесс, используемый при локальном обучении, применяется и для удаленных целевых объектов. Тем не менее при использовании удаленного объекта вычислений итерации экспериментов автоматического машинного обучения выполняются асинхронно. Эта функция позволяет отменить конкретную итерацию, просмотреть состояние выполнения или продолжить работать с другими ячейками в записной книжке Jupyter. Чтобы обучить удаленно, сначала необходимо создать удаленный целевой объект вычислений, например Амлкомпуте. Затем необходимо настроить удаленный ресурс и отправить на него код.
+Учебник «[Тренируйте модель классификации с автоматизированным машинным обучением](tutorial-auto-train-models.md)» учит вас, как использовать местный компьютер для обучения модели с автоматизированным ML. Рабочий процесс, используемый при локальном обучении, применяется и для удаленных целевых объектов. Тем не менее при использовании удаленного объекта вычислений итерации экспериментов автоматического машинного обучения выполняются асинхронно. Эта функция позволяет отменить конкретную итерацию, просмотреть состояние выполнения или продолжить работать с другими ячейками в записной книжке Jupyter. Для дистанционного обучения сначала создается цель удаленного вычисления, например AmlCompute. Затем необходимо настроить удаленный ресурс и отправить на него код.
 
-В этой статье приведены дополнительные шаги, необходимые для запуска автоматического эксперимента ML на удаленном целевом объекте Амлкомпуте. Объект рабочей области, `ws`, из учебника используется во всем представленном ниже коде.
+В этой статье показаны дополнительные шаги, необходимые для запуска автоматизированного эксперимента ML на удаленной цели AmlCompute. Объект рабочей области, `ws`, из учебника используется во всем представленном ниже коде.
 
 ```python
 ws = Workspace.from_config()
@@ -40,9 +40,9 @@ ws = Workspace.from_config()
 
 ## <a name="create-resource"></a>Создайте ресурс
 
-Создайте целевой объект [`AmlCompute`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute%28class%29?view=azure-ml-py) в рабочей области (`ws`), если он еще не создан.
+Создайте [`AmlCompute`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute%28class%29?view=azure-ml-py) цель в рабочем`ws`пространстве (), если она еще не существует.
 
-**Оценка времени**. Создание целевого объекта амлкомпуте занимает примерно 5 минут.
+**Оценка времени**: Создание цели AmlCompute занимает около 5 минут.
 
 ```python
 from azureml.core.compute import AmlCompute
@@ -81,15 +81,15 @@ else:
 
 Теперь можно использовать объект `compute_target` в качестве целевого объекта удаленных вычислений.
 
-К ограничениям имен кластеров относятся:
+Ограничения названия кластера включают:
 + Должно быть короче 64 символов.
-+ Не может содержать ни один из следующих символов: `\` ~ ! @ # $% ^ & * () = + _ [] {} \\\\ |; : \' \\", < >/?. `
++ Не может содержать ни один из следующих символов: `\` ~ ! - " - & , \\ \\ & . : \' \\",  < > / ?. `
 
-## <a name="access-data-using-tabulardataset-function"></a>Доступ к данным с помощью функции Табулардатасет
+## <a name="access-data-using-tabulardataset-function"></a>Доступ к данным с помощью функции TabularDataset
 
-Определяется training_data как [`TabularDataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) и метка, которая передается в АВТОМАТИЗИРОВАНное машинное обучение в [`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py). Метод `TabularDataset` `from_delimited_files`по умолчанию задает для `infer_column_types` значение true, которое автоматически выводит тип столбцов. 
+Определены [`TabularDataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) training_data как и этикетка, которые [`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)передаются автоматизированной ML в . `TabularDataset` Метод, `from_delimited_files`по умолчанию, `infer_column_types` устанавливает в реальность, который будет делать вывод о типе столбцов автоматически. 
 
-Если вы хотите вручную задать типы столбцов, можно задать аргумент `set_column_types`, чтобы вручную задать тип каждого столбца. В следующем примере кода данные поступают из пакета sklearn.
+Если вы хотите вручную настроить типы столбцов, можно настроить `set_column_types` аргумент, чтобы вручную установить тип каждого столбца. В следующем примере кода данные поступают из пакета sklearn.
 
 ```python
 from sklearn import datasets
@@ -196,7 +196,7 @@ remote_run = experiment.submit(automl_config, show_output=True)
 
 ## <a name="explore-results"></a>Изучите результаты.
 
-Вы можете использовать тот же [мини](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py) -приложение Jupyter, как показано в [учебном курсе](tutorial-auto-train-models.md#explore-the-results) , чтобы просмотреть диаграмму и таблицу результатов.
+Вы можете использовать тот же [виджет Jupyter,](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py) как показано в [учебном пособии,](tutorial-auto-train-models.md#explore-the-results) чтобы увидеть график и таблицу результатов.
 
 ```python
 from azureml.widgets import RunDetails
@@ -210,21 +210,21 @@ RunDetails(remote_run).show()
 
 Мини-приложение показывает URL-адрес, который можно использовать для просмотра и изучения данных отдельного прогона.  
 
-Если вы не в записной книжке Jupyter, можно отобразить URL-адрес из самого запуска:
+Если вы не в ноутбуке Jupyter, вы можете отобразить URL-адрес самого запуска:
 
 ```
 remote_run.get_portal_url()
 ```
 
-Та же информация доступна в вашей рабочей области.  Дополнительные сведения об этих результатах см. в разделе [понимание автоматических результатов машинного обучения](how-to-understand-automated-ml.md).
+Такая же информация доступна в вашем рабочем пространстве.  Чтобы узнать больше об этих результатах, [см.](how-to-understand-automated-ml.md)
 
 ## <a name="example"></a>Пример
 
-В следующей [записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression/auto-ml-regression.ipynb) показаны понятия, описанные в этой статье.
+В следующем [блокноте](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression/auto-ml-regression.ipynb) показаны концепции в этой статье.
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как настроить параметры автоматического обучения](how-to-configure-auto-train.md)
-* См. [практические руководства](how-to-machine-learning-interpretability-automl.md) по включению функций интерпретации модели в автоматизированных экспериментах ml.
+* Ознакомьтесь [с](how-to-machine-learning-interpretability-automl.md) функциями интерпретации моделей в автоматизированных экспериментах ML.

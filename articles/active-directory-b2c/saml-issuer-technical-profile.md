@@ -1,7 +1,7 @@
 ---
-title: Определение технического профиля для издателя SAML в настраиваемой политике
+title: Определение технического профиля эмитента SAML в пользовательской политике
 titleSuffix: Azure AD B2C
-description: Определите технический профиль для издателя токена язык разметки зявлений системы безопасности (SAML) (SAML) в пользовательской политике в Azure Active Directory B2C.
+description: Определите технический профиль для маркера языка безопасности (SAML) в пользовательской политике в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,17 +12,17 @@ ms.date: 03/10/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: c35f85b9ec5d86d1cd61f165b891c576c06a03db
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78967273"
 ---
-# <a name="define-a-technical-profile-for-a-saml-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля для издателя маркера SAML в Azure Active Directory B2C настраиваемой политике
+# <a name="define-a-technical-profile-for-a-saml-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определите технический профиль для эмитента токенов SAML в пользовательской политике Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C) выдает несколько типов маркеров безопасности при обработке каждого потока проверки подлинности. Технический профиль для издателя маркера SAML создает маркер SAML, возвращаемый обратно в приложение проверяющей стороны (поставщик услуг). Как правило, этот технический профиль является последним шагом оркестрации на пути взаимодействия пользователя.
+При обработке каждого потока аутентификации Azure Active Directory B2C (Azure AD B2C) создает маркеры безопасности различных типов. Технический профиль эмитента токенов SAML излучает токен SAML, который возвращается обратно в приложение relying party (поставщик услуг). Как правило, этот технический профиль является последним шагом оркестрации на пути взаимодействия пользователя.
 
 ## <a name="protocol"></a>Протокол
 
@@ -54,26 +54,26 @@ Azure Active Directory B2C (Azure AD B2C) выдает несколько тип
 
 ## <a name="metadata"></a>Метаданные
 
-| attribute | Обязательно | Description |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| IssuerUri | нет | Имя издателя, которое отображается в ответе SAML. Значение должно совпадать с именем, настроенным в приложении проверяющей стороны. |
+| IssuerUri | нет | Имя эмитента, которое отображается в ответе SAML. Значение должно быть таким же именем, как настроено в приложении для опирающихся сторон. |
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент CryptographicKeys содержит следующие атрибуты:
 
-| attribute | Обязательно | Description |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | MetadataSigning | Да | Сертификат X509 (набор ключей RSA), используемый для подписывания метаданных SAML. Azure AD B2C использует этот ключ для подписывания метаданных. |
-| SamlMessageSigning| Да| Укажите сертификат X509 (набор ключей RSA), который будет использоваться для подписи сообщений SAML. Azure AD B2C использует этот ключ для подписи ответа `<samlp:Response>` отправки проверяющей стороне.|
+| SamlMessageSigning| Да| Укажите сертификат X509 (набор ключей RSA) для подписания сообщений SAML. Azure AD B2C использует этот `<samlp:Response>` ключ для подписания ответа, отправляемого на сторону, полагающейся.|
 
 ## <a name="session-management"></a>Управление сеансом
 
-Чтобы настроить сеансы SAML Azure AD B2C между приложением проверяющей стороны, атрибутом элемента `UseTechnicalProfileForSessionManagement` следует ссылка на сеанс единого входа [самлссосессионпровидер](custom-policy-reference-sso.md#samlssosessionprovider) .
+Для настройки сеансов Azure AD B2C SAML между приложением `UseTechnicalProfileForSessionManagement` для полагающих сторон, атрибутом элемента, ссылкой на сессию [SamlSSOSessionProvider](custom-policy-reference-sso.md#samlssosessionprovider) SSO.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Пример использования технического профиля издателя SAML см. в следующей статье:
+Смотрите следующую статью, например, с использованием технического профиля эмитента SAML:
 
 - [Регистрация приложения SAML в Azure AD B2C](connect-with-saml-service-providers.md)
 

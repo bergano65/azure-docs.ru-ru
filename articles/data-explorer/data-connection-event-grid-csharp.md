@@ -1,6 +1,6 @@
 ---
-title: Создание подключения к данным в сетке событий для обозреватель данных Azure с помощьюC#
-description: Из этой статьи вы узнаете, как создать подключение к данным в службе "Сетка событий" для C#обозреватель данных Azure с помощью.
+title: 'Создание подключения данных event Grid для Azure Data Explorer с помощью C #'
+description: В этой статье вы узнаете, как создать подключение к данным Event Grid для Azure Data Explorer с помощью C..
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -8,39 +8,39 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.openlocfilehash: 03963f60cc364dd36ad55c0a28e92e3b585bb38d
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78255077"
 ---
-# <a name="create-an-event-grid-data-connection-for-azure-data-explorer-by-using-c"></a>Создание подключения к данным в сетке событий для обозреватель данных Azure с помощьюC#
+# <a name="create-an-event-grid-data-connection-for-azure-data-explorer-by-using-c"></a>Создание подключения данных event Grid для Azure Data Explorer с помощью C #
 
 > [!div class="op_single_selector"]
 > * [Портал](ingest-data-event-grid.md)
-> * [C#](data-connection-event-grid-csharp.md)
+> * [C #](data-connection-event-grid-csharp.md)
 > * [Python](data-connection-event-grid-python.md)
-> * [Шаблон Azure Resource Manager](data-connection-event-grid-resource-manager.md)
+> * [Шаблон менеджера ресурсов Azure](data-connection-event-grid-resource-manager.md)
 
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных обеспечивает прием (загрузку данных) из концентраторов событий, центров Интернета вещей и больших двоичных объектов, записанных в контейнеры больших двоичных объектов. В этой статье вы создадите подключение к данным в сетке событий для Azure обозреватель данных с C#помощью.
+Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure Data Explorer предлагает проглатывание (загрузку данных) из концентраторов событий, концентраторов IoT и капли, написанные в контейнеры с каплями. В этой статье вы создаете подключение данных Event Grid для Azure Data Explorer с помощью C..
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-* Если вы не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** [версию Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
+* Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Убедитесь, что вы **включите разработку Azure** во время установки Visual Studio.
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * Создание [кластера и базы данных](create-cluster-database-csharp.md)
-* Создание [сопоставления таблиц и столбцов](net-standard-ingest-data.md#create-a-table-on-your-test-cluster)
-* Задание [политик базы данных и таблиц](database-table-policies-csharp.md) (необязательно)
-* Создайте [учетную запись хранения с подпиской службы "Сетка событий](ingest-data-event-grid.md#create-an-event-grid-subscription-in-your-storage-account)".
+* Создание [отображения таблицы и столбца](net-standard-ingest-data.md#create-a-table-on-your-test-cluster)
+* Установка [политик базы данных и таблиц](database-table-policies-csharp.md) (необязательно)
+* Создайте [учетную запись хранения с подпиской Event Grid.](ingest-data-event-grid.md#create-an-event-grid-subscription-in-your-storage-account)
 
 [!INCLUDE [data-explorer-data-connection-install-nuget-csharp](../../includes/data-explorer-data-connection-install-nuget-csharp.md)]
 
 [!INCLUDE [data-explorer-authentication](../../includes/data-explorer-authentication.md)]
 
-## <a name="add-an-event-grid-data-connection"></a>Добавление подключения к данным в сетке событий
+## <a name="add-an-event-grid-data-connection"></a>Добавление подключения к данным Event Grid
 
-В следующем примере показано, как добавить подключение к данным в сетке событий программным способом. См. раздел [Создание подключения к данным в сетке событий в Azure обозреватель данных](ingest-data-event-grid.md#create-an-event-grid-data-connection-in-azure-data-explorer) для добавления подключения к данным сетки событий с помощью портал Azure.
+Следующий пример показывает, как можно программно добавить подключение к данным Event Grid. [Прослежвините подключение данных Event Grid в Azure Data Explorer](ingest-data-event-grid.md#create-an-event-grid-data-connection-in-azure-data-explorer) для добавления подключения данных Event Grid с помощью портала Azure.
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -79,21 +79,21 @@ await kustoManagementClient.DataConnections.CreateOrUpdateAsync(resourceGroupNam
 
 |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
 |---|---|---|
-| tenantId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента. Также известен как идентификатор каталога.|
-| subscriptionId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор подписки, используемый для создания ресурсов.|
-| clientid | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
-| clientSecret | *кскскскскскскскскскскскскскс* | Секрет клиента приложения, которое может получить доступ к ресурсам в клиенте. |
-| имя_группы_ресурсов | *testrg* | Имя группы ресурсов, содержащей кластер.|
-| clusterName | *mykustocluster* | Имя кластера.|
+| tenantId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента. Также известен как идентификатор каталога.|
+| subscriptionId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор подписки, который используется для создания ресурсов.|
+| clientid | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента приложения, который может получить доступ к ресурсам в вашем арендаторе.|
+| clientSecret | *xxxxxxxxxxxxxxxxxxxx* | Секрет клиента приложения, которое может получить доступ к ресурсам в вашем арендаторе. |
+| имя_группы_ресурсов | *testrg* | Название группы ресурсов, содержащей кластер.|
+| clusterName | *mykustocluster* | Название кластера.|
 | databaseName | *mykustodatabase* | Имя целевой базы данных в кластере.|
-| датаконнектионнаме | *мевенсубконнект* | Требуемое имя подключения к данным.|
-| tableName | *стормевентс* | Имя целевой таблицы в целевой базе данных.|
-| маппингруленаме | *StormEvents_CSV_Mapping* | Имя сопоставления столбцов, связанного с целевой таблицей.|
-| Формат. | *-* | Формат данных сообщения.|
-| евенсубресаурцеид | *Идентификатор ресурса* | Идентификатор ресурса концентратора событий, в котором сетка событий настроена для отправки событий. |
-| сторажеаккаунтресаурцеид | *Идентификатор ресурса* | Идентификатор ресурса учетной записи хранения, в которой хранятся данные для приема. |
-| Группы потребителей | *$Default* | Группа потребителей концентратора событий.|
-| location | *Центральная часть США* | Расположение ресурса подключения к данным.|
+| dataConnectionName | *myeventhubconnect* | Нужное название подключения к данным.|
+| tableName | *StormEvents* | Имя целевой таблицы в целевой базе данных.|
+| отображениеRuleName | *StormEvents_CSV_Mapping* | Имя отображения столбца, отображение которого относится к целевой таблице.|
+| данныеФормат | *Csv* | Формат данных сообщения.|
+| eventHubResourceId | *Идентификатор ресурса* | Идентификатор ресурса вашего концентратора событий, где настроена сетка событий для отправки событий. |
+| хранениеAccountResourceId | *Идентификатор ресурса* | Идентификатор ресурса учетной записи хранилища, в мещах данных для приема. |
+| consumerGroup | *$Default* | Группа потребителей вашего концентратора событий.|
+| location | *Центральная часть США* | Расположение ресурса подключения данных.|
 
 ## <a name="generate-sample-data"></a>Создание примера данных
 
@@ -125,6 +125,6 @@ var blobs = container.ListBlobs();
 ```
 
 > [!NOTE]
-> Azure обозреватель данных не удалит прием BLOB-объектов после приема. Храните большие двоичные объекты в течение трех – пять дней, используя [жизненный цикл хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts?tabs=azure-portal) для управления удалением больших двоичных объектов.
+> Azure Data Explorer не будет удалять проглатку капли. Сохраняйте капли в течение трех-пяти дней, используя [жизненный цикл хранения Azure Blob](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts?tabs=azure-portal) для управления удалением капли.
 
 [!INCLUDE [data-explorer-data-connection-clean-resources-csharp](../../includes/data-explorer-data-connection-clean-resources-csharp.md)]

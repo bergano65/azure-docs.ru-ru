@@ -1,6 +1,6 @@
 ---
-title: Переход к рабочей среде веб-приложения, которое вызывает веб-API — платформа Microsoft Identity | Службы
-description: Узнайте, как перейти к рабочей среде веб-приложения, которое вызывает веб-API.
+title: Перейдите к созданию веб-приложения, которое вызывает веб-AI - идентификационную платформу Microsoft (ru) Azure
+description: Узнайте, как перейти к созданию веб-приложения, которое вызывает web-апоттестаты.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,30 +15,30 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: b1307df8f6dfb0457719b13c9e5cd0bf28660caa
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76758957"
 ---
-# <a name="a-web-app-that-calls-web-apis-move-to-production"></a>Веб-приложение, вызывающее веб-API: переместить в рабочую среду
+# <a name="a-web-app-that-calls-web-apis-move-to-production"></a>Веб-приложение, которое вызывает веб-AIS: Переход к производству
 
-Теперь, когда вы узнали, как получить маркер для вызова веб-API, Узнайте, как перейти в рабочую среду.
+Теперь, когда вы знаете, как приобрести токен для вызова веб-aIS, узнайте, как перейти к производству.
 
 [!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше, выполнив полное последовательное руководство по ASP.NET Core веб-приложениям. Из этого руководства вы узнаете:
+Узнайте больше, опробовав полный, прогрессивный учебник для веб-приложений Core ASP.NET Core. Из этого руководства вы узнаете:
 
-- Показывает, как подписывать пользователей в нескольких аудиториях или в национальных облаках, а также с помощью удостоверений социальных сетей.
-- Вызывает Microsoft Graph.
-- Вызывает несколько API-интерфейсов Майкрософт.
-- Обрабатывает последовательное согласие.
-- Вызывает собственный веб-API.
+- Показывает, как войти пользователей в несколько аудиторий или в национальных облаках, или с помощью социальных идентичностей.
+- Вызывает график Майкрософт.
+- Вызывает несколько AIS Майкрософт.
+- Обрабатывает постепенное согласие.
+- Вызывает свой собственный веб-aPI.
 
 > [!div class="nextstepaction"]
-> [Руководство по веб-приложению ASP.NET Core](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial#scope-of-this-tutorial)
+> [ASP.NET Учебник по веб-приложению Core](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial#scope-of-this-tutorial)
 
 <!--- Removing this diagram as it's already shown from the next step linked tutorial
 

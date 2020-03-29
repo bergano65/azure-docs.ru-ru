@@ -1,7 +1,7 @@
 ---
-title: Поиск по CSV-BLOB-объектам
+title: Поиск по CSV капли
 titleSuffix: Azure Cognitive Search
-description: Извлеките и импортируйте CSV-файл из хранилища BLOB-объектов Azure с помощью режима синтаксического анализа delimitedText.
+description: Извлекайте и импортируйте CSV из хранилища Azure Blob с помощью режима разграничения.
 manager: nitinme
 author: mgottein
 ms.author: magottei
@@ -10,27 +10,27 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: bf600890bfed570e712a159005b8ef5267298cc0
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76122327"
 ---
-# <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью режима синтаксического анализа delimitedText и индексаторов BLOB-объектов в Azure Когнитивный поиск
+# <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Как индексировать CSV капли с помощью режима разбора delimitedText и индексеров Blob в Azure Cognitive Search
 
-По умолчанию [индексатор BLOB-объектов когнитивный Поиск Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые большие двоичные объекты с разделителями как единый фрагмент текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
+По умолчанию [индексер Azure Cognitive Search разбирает](search-howto-indexing-azure-blob-storage.md) разграниченные текстовые капли в виде одного фрагмента текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
 
     id, datePublished, tags
     1, 2016-01-12, "azure-search,azure,cloud" 
     2, 2016-07-07, "cloud,mobile" 
 
-В этой статье вы узнаете, как анализировать большие двоичные объекты CSV с помощью индексатора BLOB-объектов Azure Когнитивный поиск, установив режим разбора `delimitedText`. 
+В этой статье вы узнаете, как разобрать CSV капли с Azure когнитивного `delimitedText` поиска каплю указателя, установив режим разбора. 
 
 > [!NOTE]
-> Следуйте рекомендациям по настройке индексатора в [индексировании "один ко многим](search-howto-index-one-to-many-blobs.md) ", чтобы вывести несколько документов поиска из одного большого двоичного объекта Azure.
+> Следуйте рекомендациям конфигурации индекса в [индексации «От одного к многим»](search-howto-index-one-to-many-blobs.md) и выдаю несколько поисковых документов из одной капли Azure.
 
 ## <a name="setting-up-csv-indexing"></a>Настройка индексирования CSV
-Чтобы индексировать большие двоичные объекты CSV, создайте или обновите определение индексатора с помощью `delimitedText` режима синтаксического анализа для запроса на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) :
+Чтобы проиндексировать капли CSV, создайте или `delimitedText` обновите определение индекса с режимом разбора в [запросе Create Indexer:](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
 
     {
       "name" : "my-csv-indexer",
@@ -43,7 +43,7 @@ ms.locfileid: "76122327"
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } } 
 
-Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Пример.
+Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Пример:
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextDelimiter" : "|" } }
 
@@ -51,7 +51,7 @@ ms.locfileid: "76122327"
 > Сейчас поддерживается только кодирование UTF-8. Если требуется поддержка других кодировок, проголосуйте за них на сайте [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 
 > [!IMPORTANT]
-> При использовании режима синтаксического анализа текста с разделителями в Azure Когнитивный поиск предполагается, что все большие двоичные объекты в источнике данных будут иметь формат CSV. Если необходима поддержка как CSV-объектов, так и других больших двоичных объектов в одном источнике данных, проголосуйте на [нашем сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search).
+> При использовании разграниченного режима анализа текста Azure Cognitive Search предполагает, что все капли в вашем источнике данных будут CSV. Если необходима поддержка как CSV-объектов, так и других больших двоичных объектов в одном источнике данных, проголосуйте на [нашем сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 > 
 > 
 
@@ -84,6 +84,6 @@ ms.locfileid: "76122327"
       "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } }
     }
 
-## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать Azure Когнитивный поиск лучше
+## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать когнитивный поиск Azure лучше
 Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/).
 

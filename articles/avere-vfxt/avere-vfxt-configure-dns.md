@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/19/2019
 ms.author: rohogue
 ms.openlocfilehash: 81b53904f85e2ac936195b1e39d7586fd1d47524
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76153791"
 ---
 # <a name="avere-cluster-dns-configuration"></a>Настройка DNS для кластера Avere
@@ -29,7 +29,7 @@ ms.locfileid: "76153791"
 
 * DNS является обязательным, если вы хотите использовать аутентификацию Kerberos.
 
-## <a name="load-balancing"></a>Балансировка нагрузки
+## <a name="load-balancing"></a>балансировка нагрузки;
 
 Чтобы распределить общую нагрузку, настройте DNS-домен для использования распределения нагрузки методом циклического перебора для IP-адресов, ориентированных на клиенты.
 
@@ -41,8 +41,8 @@ ms.locfileid: "76153791"
 
 Слева отображается кластер vserver, а IP-адреса отображаются в центре и справа. Укажите для каждой точки доступа клиента записи и указатели A, как показано на рисунке.
 
-](media/avere-vfxt-rrdns-diagram.png)
- схемы DNS ![кластера Авере с циклическим перебором<!--- separate text description file provided  [diagram text description](avere-vfxt-rrdns-alt-text.md) -->
+![Схема DNS с циклическим перебором кластера Avere](media/avere-vfxt-rrdns-diagram.png)
+<!--- separate text description file provided  [diagram text description](avere-vfxt-rrdns-alt-text.md) -->
 
 Каждый IP-адрес, обращенный к клиенту, должен иметь уникальное имя для внутреннего использования кластером. (На этой схеме клиентские IP-адреса называются vs1-client-IP-* для ясности, но в рабочей среде вам, вероятно, следует использовать более точное определение, например, client*.)
 
@@ -74,7 +74,7 @@ update add 12.0.0.10.in-addr.arpa. 86400 PTR vs1-client-IP-12.example.com
 
 ## <a name="cluster-dns-settings"></a>Параметры DNS для кластера
 
-Укажите DNS-сервер, используемый кластером vFXT, на странице параметров: **Cluster** > **Administrative Network** (Кластер > Административная сеть). Параметры на этой странице включают:
+Укажите dNS-сервер, который кластер vFXT использует на странице настроек **кластерной** > **административной сети.** Параметры на этой странице включают:
 
 * адрес DNS-сервера;
 * доменное имя DNS-сервера;

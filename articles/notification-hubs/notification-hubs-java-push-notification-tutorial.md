@@ -1,5 +1,5 @@
 ---
-title: Как использовать центры уведомлений Azure с Java
+title: Как использовать концентраторы уведомлений Azure с Java
 description: Узнайте, как использовать центры уведомлений Azure из серверной части Java.
 services: notification-hubs
 documentationcenter: ''
@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: d48973cc7c5ed1fc7ae3f96128d488f3f1df3a05
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76263869"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
@@ -41,7 +41,7 @@ ms.locfileid: "76263869"
 * обычную отправку;
 * запланированную отправку;
 * асинхронные операции с использованием Java NIO;
-* Поддерживаемые платформы: APNS (iOS), FCM (Android), WNS (приложения для Магазина Windows), MPNS (Windows Phone), ADM (программа Amazon Kindle Fire), Baidu (Android без служб Google)
+* Поддерживаемые платформы: APNS (iOS), FCM (Android), WNS (приложения магазина Windows), MPNS (Windows Phone), ADM (Amazon Kindle Fire), Baidu (Android без сервисов Google)
 
 ## <a name="sdk-usage"></a>Использование пакета SDK
 
@@ -71,7 +71,7 @@ ms.locfileid: "76263869"
     hub = namespaceManager.createNotificationHub(hub);
     ```
 
- ИЛИ
+ OR
 
     ```java
     hub = new NotificationHub("connection string", "hubname");
@@ -132,7 +132,7 @@ ms.locfileid: "76263869"
     hub.createRegistration(reg);
     ```
 
-**Создание регистраций с помощью создания идентификатора регистрации и шаблона upsert:**
+**Создание регистраций с помощью шаблона регистрационного идентификатора и upsert:**
 
 Этот шаблон позволяет удалить повторы, образовавшиеся из-за потерянных ответов, если в устройстве хранятся идентификаторы регистраций.
 
@@ -142,7 +142,7 @@ ms.locfileid: "76263869"
     hub.upsertRegistration(reg);
     ```
 
-**Обновление регистраций:**
+**Регистрация обновлений:**
 
     ```java
     hub.updateRegistration(reg);
@@ -372,7 +372,7 @@ API установки — это альтернативный механизм 
 
 После выполнения кода Java на целевом устройстве должно отобразиться уведомление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next-steps"></a>Следующие шаги
 
 В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь вы можете сделать следующее:
 

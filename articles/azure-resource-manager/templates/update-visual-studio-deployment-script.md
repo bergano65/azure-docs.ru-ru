@@ -1,36 +1,36 @@
 ---
-title: Обновление скрипта развертывания шаблона Visual Studio для использования команды AZ PowerShell
-description: Обновление скрипта развертывания шаблона Visual Studio с AzureRM на AZ PowerShell
+title: Обновление шаблона развертывания Visual Studio для использования Az PowerShell
+description: Обновление сценария развертывания шаблона Visual Studio из AzureRM в Az PowerShell
 author: cweining
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.author: cweining
 ms.openlocfilehash: 357e0289f3237ed32b0801280316225ba5530282
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76963875"
 ---
-# <a name="update-visual-studio-template-deployment-script-to-use-az-powershell-module"></a>Обновите скрипт развертывания шаблона Visual Studio, чтобы использовать команду AZ PowerShell Module
+# <a name="update-visual-studio-template-deployment-script-to-use-az-powershell-module"></a>Обновление сценария развертывания шаблона Visual Studio для использования модуля Az PowerShell
 
-Visual Studio 16,4 поддерживает использование модуля AZ PowerShell в скрипте развертывания шаблона. Однако Visual Studio не устанавливает этот модуль автоматически. Чтобы использовать модуль AZ, необходимо выполнить четыре шага:
+Visual Studio 16.4 поддерживает использование модуля Az PowerShell в скрипте развертывания шаблонов. Тем не менее, Visual Studio не устанавливает автоматически этот модуль. Чтобы использовать модуль Az, необходимо сделать четыре шага:
 
-1. [Удаление модуля AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
-1. [Установка AZ Module](/powershell/azure/install-az-ps)
+1. [Удалите модуль AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
+1. [Установка модуля Az](/powershell/azure/install-az-ps)
 1. Обновление Visual Studio до версии 16.4
 1. (Обновите скрипт развертывания в проекте.)
 
 ## <a name="update-visual-studio-to-164"></a>Обновление Visual Studio до версии 16.4
 
-Обновите установку Visual Studio до версии 16,4 или более поздней. Во время обновления убедитесь, что компонент Azure PowerShell не установлен. Так как вы установили модуль AZ через коллекцию, вам не нужно переустанавливать модуль AzureRM.
+Обновите установку Visual Studio до версии 16.4 или позже. Во время обновления убедитесь, что компонент Azure PowerShell не проверяется. Поскольку модуль Az был установлен через галерею, вы не хотите переустанавливать модуль AzureRM.
 
-Если вы уже обновили до 16,4 и компонент Azure PowerShell был установлен, его можно удалить, запустив Visual Studio Installer. Не выбирайте компонент Azure PowerShell в рабочей нагрузке Azure или на странице отдельные компоненты.
+Если вы уже обновили до 16,4 и компонент Azure PowerShell был проверен, вы можете удалить его, запустив установку Visual Studio. Не выбирайте компонент Azure PowerShell в рабочей нагрузке Azure или на странице отдельных компонентов.
 
 ## <a name="update-the-deployment-script-in-your-project"></a>Обновление скрипта развертывания в проекте
 
-Замените все вхождения строки "AzureRm" на "Az" в скрипте развертывания. Чтобы увидеть изменения, обратитесь к исправлениям в этом [gist](https://gist.github.com/cweining/d2da2479418ea403499c4306dcf4f619). Дополнительные сведения об обновлении скриптов для модуля AZ см. в разделе [миграция Azure PowerShell из AzureRM в AZ](/powershell/azure/migrate-from-azurerm-to-az).
+Замените все вхождения строки "AzureRm" на "Az" в скрипте развертывания. Чтобы увидеть изменения, обратитесь к исправлениям в этом [gist](https://gist.github.com/cweining/d2da2479418ea403499c4306dcf4f619). Для получения дополнительной информации об обновлении скриптов в модуль Az [см.](/powershell/azure/migrate-from-azurerm-to-az)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об использовании проекта Visual Studio см. в статье [Создание и развертывание проектов групп ресурсов Azure с помощью Visual Studio](create-visual-studio-deployment-project.md).
+Чтобы узнать об использовании проекта Visual Studio, [см. Создание и развертывание проектов группы ресурсов Azure через Visual Studio.](create-visual-studio-deployment-project.md)

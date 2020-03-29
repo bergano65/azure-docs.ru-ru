@@ -1,5 +1,5 @@
 ---
-title: Включение многоклиентских приложений в Azure Digital двойников | Документация Майкрософт
+title: Включить мультитенантные приложения - Azure Digital Twins Документы Майкрософт
 description: Как настроить мультитенантные приложения Azure Active Directory для Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
@@ -9,10 +9,10 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/17/2020
 ms.openlocfilehash: 6e1321e01d8d12974a2704f4478b02a26c14142f
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76264939"
 ---
 # <a name="enable-multitenant-applications-with-azure-digital-twins"></a>Включение мультитенантных приложений с помощью Azure Digital Twins
@@ -54,16 +54,16 @@ ms.locfileid: "76264939"
 
 - На [портале Azure](https://portal.azure.com) администратор клиента Azure AD **пользователя** должен выполнить описанные ниже действия:
 
-  1. Поиск **подписок** в верхнем поле поиска Azure. Выберите **Подписки**.
+  1. Поиск **подписок** в верхнем поле поиска Azure. Выберите **Подписку**.
   1. Выберите подписку с клиентом Azure Active Directory, который будет использоваться в приложении **разработчика**.
 
-     [![подписки Azure Active Directory](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
+     [![Подписки Azure Active Directory](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
 
-  1. Выбрать **Поставщики ресурсов**.
+  1. Выберите **поставщиков ресурсов.**
   1. Найти **Microsoft.IoTSpaces**.
   1. Выберите **Зарегистрировать**.
 
-     [поставщики ресурсов ![Azure Active Directory](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
+     [![Поставщики ресурсов Azure Active Directory](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
   
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Подключение к RSS-каналам из Azure Logic Apps
+title: Подключение к RSS-каналам из приложений Логики Azure
 description: Автоматизация задач и рабочих процессов, которые выполняют мониторинг RSS-каналов и управление ими с помощью Azure Logic Apps.
 services: logic-apps
 ms.suite: integration
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/24/2018
 tags: connectors
 ms.openlocfilehash: 3f1e092c2ff325cdcbc32c617af316d6fbe6dd74
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74789347"
 ---
 # <a name="manage-rss-feeds-by-using-azure-logic-apps"></a>Управление RSS-каналами с помощью Azure Logic Apps
@@ -23,15 +23,15 @@ ms.locfileid: "74789347"
 
 RSS (RDF-сводка сайта), также называемая Really Simple Syndication, — это популярный формат веб-синдикации, используемый для публикации часто обновляемого содержимого, такого как записи блога и заголовки новостей. Многие издатели содержимого предоставляют RSS-канал, чтобы пользователи могли подписаться на его содержимое. 
 
-Вы можете использовать триггер RSS, который получает ответы из RSS-канала и делает выходные данные доступными для других действий. Действие RSS можно использовать в приложениях логики для выполнения задачи с RSS-каналом. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
+Вы можете использовать триггер RSS, который получает ответы из RSS-канала и делает выходные данные доступными для других действий. Действие RSS можно использовать в приложениях логики для выполнения задачи с RSS-каналом. Если вы новичок в логических приложениях, просмотрите [Что такое приложения логики Azure?](../logic-apps/logic-apps-overview.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * URL-адрес RSS-канала
 
-* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Основные знания о [том, как создавать логические приложения](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 * Приложение логики, из которого необходимо получить доступ к RSS-каналу. Чтобы начать работу с триггером RSS, [создайте пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Чтобы использовать действие RSS, запустите приложение логики с другим триггером, например триггером **Периодичность**.
 
