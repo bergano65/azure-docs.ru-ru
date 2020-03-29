@@ -10,19 +10,19 @@ ms.custom: mvc
 ms.date: 03/18/2019
 ms.author: troyhop
 ms.openlocfilehash: 4401d4b93a27e76554368ce72d256b38de61df4c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61449061"
 ---
 # <a name="create-an-advanced-device-model"></a>Создание расширенной модели устройства
 
 В этом практическом руководстве описаны файлы JSON и JavaScript, которые определяют пользовательскую модель устройства. Статья содержит несколько примеров файлов с определениями устройств и инструкции, позволяющие передать их в экземпляр симулятора устройств. С помощью расширенной модели устройства вы можете реализовать более реалистичное поведение устройства для целей тестирования.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом практическом руководстве, требуется развернутый в подписке Azure экземпляр симулятора устройств.
 
@@ -162,10 +162,10 @@ ms.locfileid: "61449061"
 * Object — можно сериализовать с помощью JSON.
 * Binary — можно сериализовать с помощью Base64.
 * Text
-* Boolean
-* Integer
+* Логическое
+* Целое число
 * Double
-* DateTime
+* Дата и время
 
 ### <a name="supported-methods"></a>Поддерживаемые методы
 
@@ -255,7 +255,7 @@ ms.locfileid: "61449061"
 
 * Объект **context** с тремя свойствами:
     * **currentTime** содержит строку в формате **yyyy-MM-dd'T'HH:mm:sszzz**.
-    * **deviceId** Идентификатор устройства, например **Simulated.Elevator.123**.
+    * **deviceId**. Идентификатор устройства, например **Simulated.Elevator.123**.
     * **deviceModel**. Модель устройства, например **Elevator** (Лифт).
 * Объект **state** (состояние), который хранит значение, полученное при предыдущем вызове функции. Это состояние устройства поддерживается службой симулятора и используется для создания сообщений телеметрии.
 
@@ -504,7 +504,7 @@ function main(context, state) {
 
 Щелкните **Дополнительно**, чтобы открыть вкладку моделей устройств:
 
-![Вкладка "Дополнительно"](media/iot-accelerators-device-simulation-advanced-device/advancedtab.png)
+![Вкладка «Дополнительно»](media/iot-accelerators-device-simulation-advanced-device/advancedtab.png)
 
 Щелкните **Обзор** и выберите файлы JSON и JavaScript, которые вы создали ранее. Обязательно выберите все три файла. Если любой из них будет отсутствовать, проверка не пройдет:
 
@@ -512,7 +512,7 @@ function main(context, state) {
 
 Если файлы успешно пройдут проверку, щелкните **Сохранить**. Теперь модель устройства готова для использования в симуляторе. Если что-то не так, исправьте ошибки и повторно отправьте файлы:
 
-![Сохранить](media/iot-accelerators-device-simulation-advanced-device/validated.png)
+![Сохранять](media/iot-accelerators-device-simulation-advanced-device/validated.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

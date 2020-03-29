@@ -1,6 +1,6 @@
 ---
-title: Обратная DNS для служб Azure — Azure DNS
-description: По этой схеме обучения приступайте к настройке обратного просмотра DNS для служб, размещенных в Azure.
+title: Обратный DNS для служб Azure - Azure DNS
+description: С помощью этого пути обучения начинайте настраивать обратный поиск DNS для служб, размещенных в Azure.
 services: dns
 documentationcenter: na
 author: rohinkoul
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
 ms.openlocfilehash: 073e84ece11f6817bfe2c5a94735ec6e16dac4fe
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76932371"
 ---
 # <a name="configure-reverse-dns-for-services-hosted-in-azure"></a>Настройка обратного просмотра DNS для размещенных в Azure служб
@@ -61,7 +61,7 @@ ms.locfileid: "76932371"
 
 #### <a name="powershell"></a>PowerShell
 
-Чтобы изменить обратную DNS на существующую PublicIpAddress, выполните следующие действия.
+Для обновления обратного DNS на существующий PublicIpAddress:
 
 ```powershell
 $pip = Get-AzPublicIpAddress -Name "PublicIp" -ResourceGroupName "MyResourceGroup"
@@ -93,7 +93,7 @@ azure network public-ip set -n PublicIp -g MyResourceGroup -f contosoapp1.westus
 azure network public-ip set -n PublicIp -g MyResourceGroup -d contosoapp1 -f contosoapp1.westus.cloudapp.azure.com.
 ```
 
-#### <a name="azure-cli"></a>Интерфейс командной строки Azure
+#### <a name="azure-cli"></a>Azure CLI
 
 Чтобы добавить обратную зону DNS в существующий ресурс PublicIpAddress, выполните следующую команду:
 
@@ -123,7 +123,7 @@ New-AzPublicIpAddress -Name "PublicIp" -ResourceGroupName "MyResourceGroup" -Loc
 azure network public-ip create -n PublicIp -g MyResourceGroup -l westus -d contosoapp3 -f contosoapp3.westus.cloudapp.azure.com.
 ```
 
-#### <a name="azure-cli"></a>Интерфейс командной строки Azure
+#### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli
 az network public-ip create --name PublicIp --resource-group MyResourceGroup --location westcentralus --dns-name contosoapp1 --reverse-fqdn contosoapp1.westcentralus.cloudapp.azure.com
@@ -145,7 +145,7 @@ Get-AzPublicIpAddress -Name "PublicIp" -ResourceGroupName "MyResourceGroup"
 azure network public-ip show -n PublicIp -g MyResourceGroup
 ```
 
-#### <a name="azure-cli"></a>Интерфейс командной строки Azure
+#### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli
 az network public-ip show --name PublicIp --resource-group MyResourceGroup
@@ -169,7 +169,7 @@ Set-AzPublicIpAddress -PublicIpAddress $pip
 azure network public-ip set -n PublicIp -g MyResourceGroup –f ""
 ```
 
-#### <a name="azure-cli"></a>Интерфейс командной строки Azure
+#### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli
 az network public-ip update --resource-group MyResourceGroup --name PublicIp --reverse-fqdn ""
@@ -212,7 +212,7 @@ Get-AzureService "contosoapp1"
 Set-AzureService –ServiceName "contosoapp1" –Description "App1 with Reverse DNS" –ReverseDnsFqdn ""
 ```
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>часто задаваемые вопросы
 
 ### <a name="how-much-do-reverse-dns-records-cost"></a>Сколько стоит обратная зона DNS?
 

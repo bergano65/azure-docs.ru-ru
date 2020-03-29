@@ -1,15 +1,15 @@
 ---
-title: Использовать Key Vault при развертывании управляемого приложения
+title: Используйте Key Vault при развертывании управляемого приложения
 description: Демонстрация использования секретов доступа в Azure Key Vault при развертывании управляемых приложений
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: f434ad6e19c89f248fec948c0a049fabb0f7c476
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79248441"
 ---
 # <a name="access-key-vault-secret-when-deploying-azure-managed-applications"></a>Доступ к секрету Key Vault при развертывании Управляемых приложений Azure
@@ -22,7 +22,7 @@ ms.locfileid: "79248441"
 
 1. На портале выберите Key Vault.
 
-1. Выберите **Политики доступа**.   
+1. Выберите **политики доступа.**   
 
    ![Выбор политик доступа](./media/key-vault-access/select-access-policies.png)
 
@@ -30,17 +30,17 @@ ms.locfileid: "79248441"
 
    ![Отображение политик расширенного доступа](./media/key-vault-access/advanced.png)
 
-1. Выберите **Включить доступ к Azure Resource Manager для развертывания шаблонов**. Затем нажмите кнопку **Сохранить**.
+1. Выберите **Включить доступ к Azure Resource Manager для развертывания шаблонов**. Затем выберите **Сохранить**.
 
    ![Включение развертывания шаблона](./media/key-vault-access/enable-template.png)
 
 ## <a name="add-service-as-contributor"></a>Добавление службы в качестве участника
 
-1. Выберите **Управление доступом (IAM)** .
+1. Выберите **элемент управления доступом (IAM)**.
 
    ![Выбор управления доступом](./media/key-vault-access/access-control.png)
 
-1. Выберите **Добавить назначение ролей**.
+1. Выберите **Назначение ролей.**
 
    ![Выбор элемента "Добавить"](./media/key-vault-access/add-access-control.png)
 
@@ -48,11 +48,11 @@ ms.locfileid: "79248441"
 
    ![Поиск поставщика](./media/key-vault-access/search-provider.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ## <a name="reference-key-vault-secret"></a>Ссылка на секрет Key Vault
 
-Чтобы передать секрет из Key Vault в шаблон в управляемом приложении, необходимо использовать [связанный или вложенный шаблон](../templates/linked-templates.md) и ссылаться на Key Vault в параметрах для связанного или вложенного шаблона. Укажите идентификатор ресурса Key Vault и имя секрета.
+Чтобы передать секрет из Убежища ключей шаблону в управляемом приложении, необходимо использовать [связанный или вложенный шаблон](../templates/linked-templates.md) и ссылаться на Key Vault в параметрах для связанного или вложенного шаблона. Укажите идентификатор ресурса Key Vault и имя секрета.
 
 ```json
 {

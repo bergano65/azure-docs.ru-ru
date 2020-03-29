@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/11/2017
 ms.openlocfilehash: 9dbb7905c2a0fed65ede610577e0fa11a1deef92
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60345402"
 ---
 # <a name="support-additional-protocols-for-iot-hub"></a>Поддержка дополнительных протоколов для Центра Интернета вещей
@@ -41,8 +41,8 @@ ms.locfileid: "60345402"
 
 Дополнительные сведения о планировании развертывания Центра Интернета вещей см. в следующих руководствах:
 
-* [Сравнение с концентраторами событий](iot-hub-compare-event-hubs.md)
+* [Сравнение центра IoT и Центров событий](iot-hub-compare-event-hubs.md)
 
-* [Масштабирование, высокий уровень доступности и аварийного восстановления](iot-hub-scaling.md)
+* [Масштабируемость, высокая доступность и аварийное восстановление](iot-hub-scaling.md)
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)

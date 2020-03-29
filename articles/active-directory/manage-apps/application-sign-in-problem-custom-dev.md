@@ -1,6 +1,6 @@
 ---
 title: Проблемы при входе в специально разработанное приложение | Документы Майкрософт
-description: Распространенные ошибки, которые могут препятствовать не могли войти в приложение, вы разработали с Azure AD
+description: Распространенные ошибки, которые могут привести к тому, что вы не сможете войти в приложение, разработанное с помощью Azure AD
 services: active-directory
 documentationcenter: ''
 author: msmimart
@@ -17,13 +17,13 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b8ad2499aea8bf4e41ca00d6c78d76e112f0493e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65825240"
 ---
-# <a name="problems-signing-in-to-a-custom-developed-application"></a>Проблемы при входе специально разработанного приложения
+# <a name="problems-signing-in-to-a-custom-developed-application"></a>Проблемы, связанные с привою в специально разработанное приложение
 
 Существует несколько ошибок, которые могут препятствовать входу в приложение. Основной причиной является неправильная настройка приложений.
 

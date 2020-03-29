@@ -1,160 +1,160 @@
 ---
 title: Типы ресурсов расширения
-description: Список типов ресурсов Azure, используемых для расширения возможностей других типов ресурсов.
+description: Списки типов ресурсов Azure используются для расширения возможностей других типов ресурсов.
 ms.topic: conceptual
 ms.date: 01/20/2020
 ms.openlocfilehash: c14cf6fec2da11534a7358599c79961a3258470b
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76515371"
 ---
 # <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Типы ресурсов, расширяющие возможности других ресурсов
 
-Ресурс расширения — это ресурс, который добавляет к возможностям другого ресурса. Например, блокировка ресурса является ресурсом расширения. Блокировка ресурса применяется к другому ресурсу, чтобы предотвратить его удаление или изменение. Не имеет смысла создавать блокировку ресурса самим по себе. Ресурс расширения всегда применяется к другому ресурсу.
+Ресурс расширения — это ресурс, который добавляет к возможностям другого ресурса. Например, блокировка ресурсов — это ресурс расширения. Блокировка ресурса на другом ресурсе, чтобы предотвратить его удаление или изменение. Самостоятельно создавать блокировку ресурсов не имеет смысла. Ресурс расширения всегда применяется к другому ресурсу.
 
 ## <a name="extension-resource-types"></a>Типы ресурсов расширения
 
-- Microsoft. Advisor и конфигурации
-- Microsoft. Advisor/рекомендации
-- Microsoft. Advisor и подавления
-- Microsoft. Алертсманажемент/Alerts
-- Microsoft. Алертсманажемент/Алертссуммари
-- Microsoft. Authorization/checkAccess
-- Microsoft. Authorization/Деняссигнментс
-- Microsoft. Authorization/Финдорфанролеассигнментс
-- Microsoft. Authorization/locks
-- Microsoft. Authorization/разрешения
-- Microsoft. Authorization/Полициассигнментс
-- Microsoft. Authorization/policyDefinitions
-- Microsoft. Authorization/Полицисетдефинитионс
-- Microsoft. Authorization/roleAssignments
-- Microsoft. Authorization/Ролеассигнментсусажеметрикс
-- Microsoft. Authorization/roleDefinitions
-- Microsoft. Billing/Биллингпериодс
-- Microsoft. Billing/Биллингпермиссионс
-- Microsoft. Billing/Биллингролеассигнментс
-- Microsoft. Billing/Биллингроледефинитионс
-- Microsoft. Billing/Креатебиллингролеассигнмент
-- Microsoft. чертеж/Блуепринтассигнментс
-- Microsoft. чертеж/чертежи
-- Microsoft. потребление/Аггрегатедкост
-- Microsoft. потребление/балансы
-- Microsoft. потребление/бюджеты
-- Microsoft. потребление/расходы
-- Microsoft. потребление/Косттагс
-- Microsoft. потребление/прогнозы
-- Microsoft. потребление/Marketplace
-- Microsoft. потребление/Оператионресултс
-- Microsoft. потребление/значение operationstatus
-- Microsoft. потребление/Прицешитс
-- Microsoft. потребление/Ресерватиондетаилс
-- Microsoft. потребление/Ресерватионрекоммендатионс
-- Microsoft. потребление/Ресерватионсуммариес
-- Microsoft. потребление/Ресерватионтрансактионс
-- Microsoft. потребление/Теги
-- Microsoft. потребление/условия
-- Microsoft. потребление/UsageDetails
-- Microsoft. потребление/кредиты
-- Microsoft. потребление/события
-- Microsoft. потребление/лоты
-- Microsoft. потребление/продукты
-- Microsoft. потребление/клиенты
-- Microsoft. Контаинеринстанце/СервицеассоЦиатионлинкс
-- Microsoft. Костманажемент/Alerts
-- Microsoft. Костманажемент/бюджеты
-- Microsoft. Костманажемент/измерения
-- Microsoft. Костманажемент/EXPORTS
-- Microsoft. Костманажемент/Екстерналсубскриптионс
-- Microsoft. Костманажемент/прогноз
-- Microsoft. Костманажемент/запрос
-- Microsoft. Костманажемент/Репортконфигс
-- Microsoft. Костманажемент/отчеты
-- Microsoft. Костманажемент/представления
-- Microsoft. Костманажемент/Шовбаккрулес
+- Microsoft.Advisor/конфигурации
+- Microsoft.Advisor/рекомендации
+- Microsoft.Advisor/подавления
+- Microsoft.AlertsManagement/оповещения
+- Microsoft.AlertsManagement/alertsРезюм
+- Microsoft.Авторизация/чекДоступ
+- Microsoft.Авторизация/отказназначения
+- Microsoft.Авторизация/находкаОрторРоназначения
+- Microsoft.Authorization/locks
+- Microsoft.Authorization/permissions
+- Microsoft.Авторизация/политикиНазначения
+- Microsoft.Authorization/policyDefinitions
+- Microsoft.Authorization/policySetDefinitions
+- Microsoft.Authorization/roleAssignments
+- Microsoft.Авторизация/рольНазначенияИспользованиеМетри
+- Microsoft.Authorization/roleDefinitions
+- Microsoft.Billing/billingPeriods
+- Microsoft.Billing/billingPermissions
+- Microsoft.Billing/billingRoleНазначения
+- Microsoft.Billing/billingRoleDefinitions
+- Microsoft.Billing/createBillingRoleAssignment
+- Microsoft.Blueprint/BlueprintНазначенияs
+- Microsoft.Blueprint/чертежи
+- Microsoft.Потребление/АгрегированныйСчет
+- Microsoft.Потребление/Балансы
+- Microsoft.Потребление/Бюджеты
+- Microsoft.Потребление/Сборы
+- Microsoft.Потребление/CostTags
+- Microsoft.Потребление/Прогнозы
+- Microsoft.Потребление/Рынки
+- Microsoft.Потребление/Результаты операции
+- Microsoft.Потребление/ОперацияСтатус
+- Microsoft.Потребление/Ценовые листы
+- Microsoft.Потребление/ОговоркаПодробности
+- Microsoft.Потребление /Рекомендации по бронированию
+- Microsoft.Потребление/ReservationSummaries
+- Microsoft.Потребление/БронированиеПритс
+- Microsoft.Потребление/Теги
+- Microsoft.Потребление/Сроки
+- Microsoft.Потребление/ИспользованиеПодробности
+- Microsoft.Потребление/кредиты
+- Microsoft.Потребление/события
+- Microsoft.Потребление/лоты
+- Microsoft.Потребление/продукты
+- Microsoft.Потребление/арендаторы
+- Microsoft.ContainerInstance/serviceAssociationLinks
+- Microsoft.CostManagement/Оповещения
+- Microsoft.CostManagement/Бюджеты
+- Microsoft.CostManagement/Dimensions
+- Microsoft.CostManagement/Экспорт
+- Microsoft.CostManagement/Внешняя подписка
+- Microsoft.CostManagement/Forecast
+- Microsoft.CostManagement/Запрос
+- Microsoft.CostManagement/Reportconfigs
+- Microsoft.CostManagement/Отчеты
+- Microsoft.CostManagement/Views
+- Microsoft.CostManagement/showbackRules
 - Microsoft.CustomProviders/associations
 - Microsoft.EventGrid/eventSubscriptions
 - Microsoft.EventGrid/extensionTopics
-- Microsoft. Гуестконфигуратион/Конфигуратионпрофилеассигнментс
-- Microsoft. Гуестконфигуратион/Гуестконфигуратионассигнментс
-- Microsoft. Гуестконфигуратион/Software
-- Microsoft. Гуестконфигуратион/Софтвареупдатепрофиле
-- Microsoft. Гуестконфигуратион/Софтвареупдатес
-- Microsoft. Insights/Аутоматедекспортсеттингс
-- Microsoft. Insights/базовый план
-- Microsoft. Insights/калкулатебаселине
-- Microsoft. Insights/ДатаколлектионрулеассоЦиатионс
-- Microsoft. Insights/diagnosticSettings
-- Microsoft. Insights/Диагностиксеттингскатегориес
-- Microsoft. Insights/евенттипес
-- Microsoft. Insights/Екстендеддиагностиксеттингс
-- Microsoft. Insights/ГуестдиагностиксеттингсассоЦиатион
-- Microsoft. Insights/Логдефинитионс
-- Microsoft. Insights/журналы
-- Microsoft. Insights/metricDefinitions
-- Microsoft. Insights/Метрикнамеспацес
-- Microsoft. Insights/метрикбаселинес
-- Microsoft. Insights/метрики
-- Microsoft. Insights/Миворкбукс
-- Microsoft. Insights/топология
-- Microsoft. Insights/Transactions
-- Microsoft. Insights/Вминсигхтсонбоардингстатусес
-- Microsoft. Кубернетесконфигуратион/Саурцеконтролконфигуратионс
-- Microsoft. Maintenance/Апплюпдатес
-- Microsoft. Maintenance/Конфигуратионассигнментс
-- Microsoft. Обслуживание и обновления
-- Microsoft. ManagedIdentity/удостоверения
-- Microsoft. ManagedServices/Регистратионассигнментс
-- Microsoft. ManagedServices/Регистратиондефинитионс
-- Microsoft. OperationalInsights/Сторажеинсигхтконфигс
-- Microsoft. OperationsManagement/манажементассоЦиатионс
-- Microsoft. Полициинсигхтс/Полициевентс
-- Microsoft. Полициинсигхтс/Полицистатес
-- Microsoft. Полициинсигхтс/Полицитраккедресаурцес
-- Microsoft. Полициинсигхтс/исправление
-- Microsoft. RecoveryServices/Баккуппротектедитемс
-- Microsoft. RecoveryServices/Репликатионелигибилитиресултс  
-- Microsoft. Ресаурцехеалс/Аваилабилитистатусес
-- Microsoft. Ресаурцехеалс/Чилдаваилабилитистатусес
-- Microsoft. Ресаурцехеалс/Чилдресаурцес
-- Microsoft. Ресаурцехеалс/события
-- Microsoft. Ресаурцехеалс/Импактедресаурцес
-- Microsoft. Ресаурцехеалс/уведомления
-- Microsoft. Resources/Links
-- Microsoft. Resources/Tags
-- Microsoft. Security/соответствие требованиям
-- Microsoft. Security/ИнформатионпротектионполиЦиес
-- Microsoft. Security/Адаптивенетворкхарденингс
-- Microsoft. Security/Адванцедсреатпротектионсеттингс
-- Microsoft. Security/Ассессментметадата
-- Microsoft. Security/оценки
-- Microsoft. Security/Комплианцересултс
-- Microsoft. Security/Датаколлектионажентс
-- Microsoft. Security/Датаколлектионресултс
-- Microsoft. Security/Девицесекуритиграупс
-- Microsoft. Security/networkData
-- Microsoft. Security/Сервервулнерабилитяссессментс
-- Microsoft. Секуритинсигхтс/агрегаты
-- Microsoft. Секуритинсигхтс/Алертрулетемплатес
-- Microsoft. Секуритинсигхтс/alertRules
-- Microsoft. Секуритинсигхтс/закладки
-- Microsoft. Секуритинсигхтс/cases
-- Microsoft. Секуритинсигхтс/Connects
-- Microsoft. Секуритинсигхтс/сущности
-- Microsoft. Секуритинсигхтс/Ентитикуериес
-- Microsoft. Секуритинсигхтс/Оффицеконсентс
-- Microsoft. Секуритинсигхтс/параметры
-- Microsoft. Софтвареплан/Хибридусебенефитс
-- Microsoft. Subscription/Креатесубскриптион
-- Microsoft. support/креатесуппорттиккет
-- Microsoft. support/суппорттиккетс
-- Microsoft. WorkloadMonitor/компоненты
-- Microsoft. WorkloadMonitor/Мониторинстанцес
-- Microsoft. WorkloadMonitor/monitors
-- Microsoft. WorkloadMonitor/Нотификатионсеттингс
+- Microsoft.GuestConfiguration/configurationProfileНазначенияи
+- Microsoft.GuestConfiguration/guestConfigurationНазначения
+- Microsoft.GuestConfiguration/программное обеспечение
+- Microsoft.GuestConfiguration/softwareUpdateProfile
+- Microsoft.GuestConfiguration/softwareUpdates
+- microsoft.insights/automatedExportSettings
+- microsoft.insights/baseline
+- microsoft.insights/calculatebaseline
+- microsoft.insights/dataCollectionRuleAssociations
+- microsoft.insights/diagnosticSettings
+- microsoft.insights/diagnosticSettingsCategories
+- microsoft.insights/eventtypes
+- microsoft.insights/extendedDiagnosticSettings
+- microsoft.insights/guestDiagnosticSettingsAssociation
+- microsoft.insights/logDefinitions
+- microsoft.insights/logs
+- microsoft.insights/metricDefinitions
+- microsoft.insights/metricNamespaces
+- microsoft.insights/metricbaselines
+- microsoft.insights/metrics
+- microsoft.insights/myWorkbooks
+- microsoft.insights/topology
+- microsoft.insights/transactions
+- microsoft.insights/vmInsightsOnboardingStatuses
+- Microsoft.KubernetesConfiguration/источникControlConfigurations
+- Microsoft.Maintenance/applyUpdates
+- Microsoft.Maintenance/configurationAssignments
+- Microsoft.Maintenance/обновления
+- Microsoft.ManagedIdentity/Identities
+- Microsoft.ManagedServices/registrationНазначения
+- Microsoft.ManagedServices/регистрацияОпределения
+- Microsoft.OperationalInsights/storageInsightConfigs
+- Microsoft.OperationsManagement/управленческиеассоциации
+- Microsoft.PolicyInsights/PolicyEvents
+- Microsoft.ПолитикаInsights/политикигосударства
+- Microsoft.PolicyInsights/policyTrackedРесурсы
+- Microsoft.ПолитикаInsights/восстановительные работы
+- Microsoft.RecoveryServices/backupProtectedItems
+- Microsoft.RecoveryServices/репликацияРезультаты  
+- Microsoft.ResourceHealth/availabilityStatuses
+- Microsoft.ResourceHealth/childAvailabilityStatuses
+- Microsoft.ResourceHealth/childResources
+- Microsoft.ResourceHealth/события
+- Microsoft.ResourceHealth/impactedРесурсы
+- Microsoft.ResourceHealth/уведомления
+- Microsoft.Ресурсы/ссылки
+- Microsoft.Ресурсы/теги
+- Microsoft.Security/Compliances
+- Microsoft.Security/InformationProtectionПолитика
+- Microsoft.Security/adaptiveNetworkHardenings
+- Microsoft.Security/AdvancedThreatProtectionSettings
+- Microsoft.Security/оценкаМетадата
+- Microsoft.Security/оценки
+- Microsoft.Security/complianceResults
+- Microsoft.Security/dataCollectionAgents
+- Microsoft.Security/dataCollectionРезультаты
+- Microsoft.Security/deviceSecurityGroups
+- Microsoft.Security/networkData
+- Microsoft.Security/serverVulnerabilityAssessments
+- Microsoft.SecurityInsights/агрегаты
+- Microsoft.SecurityInsights/alertRuleTemplates
+- Microsoft.SecurityInsights/alertRules
+- Microsoft.SecurityInsights/bookmarks
+- Microsoft.SecurityInsights/случаи
+- Microsoft.SecurityInsights/dataConnectors
+- Microsoft.SecurityInsights/организации
+- Microsoft.SecurityInsights/entityЗапросы
+- Microsoft.SecurityInsights/officeConsents
+- Microsoft.SecurityInsights/настройки
+- Microsoft.SoftwarePlan/hybridUseBenefits
+- Microsoft.Подписка/СозданиеПодписка
+- microsoft.support/createsupportticket
+- microsoft.support/supporttickets
+- Microsoft.WorkloadMonitor/компоненты
+- Microsoft.WorkloadMonitor/monitorInstances
+- Microsoft.WorkloadMonitor/мониторы
+- Microsoft.WorkloadMonitor/уведомления
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы получить идентификатор ресурса для расширения ресурса в шаблоне Azure Resource Manager, используйте [екстенсионресаурцеид](../templates/template-functions-resource.md#extensionresourceid).
-- Пример создания ресурса расширения в шаблоне см. в разделе подписки на [События сетки событий](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions).
+- Чтобы получить идентификатор ресурсов для ресурса расширения в шаблоне Azure Resource Manager, используйте [расширениеResourceId.](../templates/template-functions-resource.md#extensionresourceid)
+- Например, создание ресурса расширения в шаблоне см. [Подписки event Event Event](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions).

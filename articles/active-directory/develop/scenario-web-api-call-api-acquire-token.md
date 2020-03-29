@@ -1,7 +1,7 @@
 ---
-title: Получение маркера для веб-API, который вызывает веб-API | Службы
+title: Получите токен для веб-API, который вызывает веб-API Azure
 titleSuffix: Microsoft identity platform
-description: Узнайте, как создать веб-API, который вызывает веб-API, требующие получения маркера для приложения.
+description: Узнайте, как создать веб-aPI, который вызывает web-aPI, требующие приобретения маркера для приложения.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -16,21 +16,21 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 2721837459af24f39bb15ee17d394345cbb37eb1
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76834116"
 ---
-# <a name="a-web-api-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API: получение маркера для приложения
+# <a name="a-web-api-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-aPI, который вызывает веб-API: Приобрести маркер для приложения
 
-После построения объекта клиентского приложения используйте его для получения маркера, который можно использовать для вызова веб-API.
+После того как вы создали объект клиентского приложения, используйте его для приобретения маркера, который можно использовать для вызова web-API.
 
 ## <a name="code-in-the-controller"></a>Код в контроллере
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Ниже приведен пример кода, который вызывается в действиях контроллеров API. Он вызывает нисходящий API с именем *ToDoList*.
+Вот пример кода, который называется в действиях контроллеров API. Он вызывает ниже по течению API с именем *todolist*.
 
 ```csharp
 private async Task GetTodoList(bool isAppStarting)
@@ -51,9 +51,9 @@ private async Task GetTodoList(bool isAppStarting)
 }
 ```
 
-`BuildConfidentialClient()` похожа на сценарий в [веб-API, который вызывает веб-API: Конфигурация приложения](scenario-web-api-call-api-app-configuration.md). `BuildConfidentialClient()` создает экземпляр `IConfidentialClientApplication` с кэшем, который содержит сведения только для одной учетной записи. Учетная запись предоставляется методом `GetAccountIdentifier`.
+`BuildConfidentialClient()`похож на сценарий в [веб-aPI, который вызывает веб-API: конфигурация приложения](scenario-web-api-call-api-app-configuration.md). `BuildConfidentialClient()`мгновенно `IConfidentialClientApplication` с помощью кэша, содержащего информацию только для одной учетной записи. Учетная запись предоставляется `GetAccountIdentifier` методом.
 
-Метод `GetAccountIdentifier` использует утверждения, связанные с идентификатором пользователя, для которого веб-API получил JSON Web Token (JWT):
+Метод `GetAccountIdentifier` использует утверждения, связанные с личностью пользователя, для которого веб-aPI получил jSON Web Token (JWT):
 
 ```csharp
 public static string GetMsalAccountId(this ClaimsPrincipal claimsPrincipal)
@@ -71,8 +71,8 @@ public static string GetMsalAccountId(this ClaimsPrincipal claimsPrincipal)
 }
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
-Ниже приведен пример кода, который вызывается в действиях контроллеров API. Он вызывает нисходящий Microsoft Graph API.
+# <a name="java"></a>[Java](#tab/java)
+Вот пример кода, который называется в действиях контроллеров API. Он вызывает вниз по течению API - Microsoft Graph.
 
 ```java
 @RestController
@@ -92,13 +92,13 @@ public class ApiController {
 }
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-Веб-API Python должен использовать некоторое по промежуточного слоя для проверки токена носителя, полученного от клиента. Затем веб-API может получить маркер доступа для подчиненного API с помощью библиотеки MSAL Python, вызвав метод [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) . Пример, демонстрирующий этот поток с помощью MSAL Python, пока недоступен.
+Веб-API Python должен будет использовать некоторые промежуточное программное обеспечение для проверки маркера предъявителя, полученного от клиента. Веб-API может получить токен доступа для ниже по течению API с помощью библиотеки MSAL Python, позвонив в [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) метод. Образец, демонстрирующий этот поток с помощью MSAL Python, пока недоступен.
 
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Веб-API, вызывающий веб-API: вызов API](scenario-web-api-call-api-call-api.md)
+> [Веб-aPI, который вызывает веб-API: Вызов API](scenario-web-api-call-api-call-api.md)

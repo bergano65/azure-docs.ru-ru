@@ -1,6 +1,6 @@
 ---
-title: Подключение тенденция Micro Deep Security к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить тенденции Micro Deep Security к Azure Sentinel.
+title: Подключите Trend Micro Глубокая безопасность к Azure Sentinel Документы Майкрософт
+description: Узнайте, как подключить Trend Micro Deep Security к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,33 +15,33 @@ ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
 ms.openlocfilehash: a25d76b4b8a6f516de70604146bd1b236ba3ca1e
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77588031"
 ---
-# <a name="connect-trend-micro-deep-security"></a>Подключение трендов Micro Deep Security
+# <a name="connect-trend-micro-deep-security"></a>Подключение тренда Micro Глубокая безопасность
 
-Соединитель Trend Micro глубокий уровень безопасности позволяет легко подключать журналы глубокой безопасности с помощью Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследование. Это позволяет получить более подробные сведения о сетях и системах организации, а также улучшить возможности обеспечения безопасности.
+Разъем Trend Micro Deep Security позволяет легко подключать журналы Глубокой Безопасности с Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследования. Это дает вам более глубокое представление о сетях и системах вашей организации и улучшает возможности работы службы безопасности.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Разрешения на чтение и запись в рабочей области "Sentinel" Azure.
+- Прочитайте и напишите разрешения в рабочее пространство Azure Sentinel.
 
-## <a name="connect-azure-sentinel-to-trend-micro-deep-security"></a>Подключите метку Azure к тенденции Micro Deep Security
+## <a name="connect-azure-sentinel-to-trend-micro-deep-security"></a>Подключение Azure Sentinel к трендовой микроглубокой безопасности
 
-1. В портал Azure перейдите в раздел **Azure Sentinel** > **соединители данных** , а затем выберите соединитель **Trend Micro глубокий уровень безопасности** .
+1. На портале Azure перейдите на**разъемы данных** **Azure Sentinel** > Data, а затем выберите разъем **Trend Micro Deep Security.**
 
-2. Выберите **открыть страницу соединителя**.
+2. Выберите **страницу Open connector**.
 
-3. Следуйте инструкциям и дальнейшим действиям.
+3. Следуйте инструкциям и дальнейшим шагам.
 
-## <a name="next-steps"></a>Следующие шаги
-В этом документе вы узнали, как подключить тенденция Micro Deep Security к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
+## <a name="next-steps"></a>Дальнейшие действия
+В этом документе вы узнали, как подключить Trend Micro Deep Security к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте трудовые книжки](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 12/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 0f9669d491648ecc621aab27d0908dcc3dc84438
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "65823331"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
@@ -29,7 +29,7 @@ ms.locfileid: "65823331"
 * Статья [Implement the device model behavior](iot-accelerators-remote-monitoring-device-behavior.md) (Реакция модели устройства на событие) содержит сведения о файлах JavaScript, используемых для того, чтобы имитированное устройство реагировало на событие.
 * Статья [Create a new simulated device](iot-accelerators-remote-monitoring-create-simulated-device.md) (Создание имитированного устройства) объединяет все сведения, а также описывает процедуру развертывания нового типа имитированного устройства в решение.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 >[!div class="checklist"]
 > * использование JSON-файла для определения модели имитированного устройства;
@@ -114,7 +114,7 @@ ms.locfileid: "65823331"
 
 Служба моделирования запускает файл **chiller-01-state.js** каждые 5 секунд, чтобы обновить состояние устройства. Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-state**. Это позволяет отличить их от файлов, которые реализуют метод реакции на события.
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Свойства
 
 Раздел `Properties` схемы определяет значения свойств, которые устройство передает в решение. Пример:
 
@@ -164,10 +164,10 @@ ms.locfileid: "65823331"
 * Object — можно сериализовать с помощью JSON.
 * Binary — можно сериализовать с помощью Base64.
 * Text
-* Boolean
-* Integer
+* Логическое
+* Целое число
 * Double
-* DateTime
+* Дата и время
 
 Чтобы отправить сообщения телеметрии с разными интервалами, добавьте несколько типов телеметрии к массиву `Telemetry`. В следующем примере данные температуры и влажности отправляются каждые 10 секунд, а сведения о состоянии освещения — каждую минуту.
 

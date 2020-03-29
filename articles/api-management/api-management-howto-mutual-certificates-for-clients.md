@@ -1,5 +1,5 @@
 ---
-title: Защита API с помощью проверки подлинности на основе сертификата клиента в управлении API
+title: Безопасные API с помощью аутентификации сертификата клиента в управлении API
 titleSuffix: Azure API Management
 description: Узнайте, как обеспечить безопасный доступ к API-интерфейсам с помощью сертификатов клиентов
 services: api-management
@@ -14,25 +14,25 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: apimpm
 ms.openlocfilehash: 8c1d126f01580574a83850e63945aa7e513eaeda
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76713145"
 ---
 # <a name="how-to-secure-apis-using-client-certificate-authentication-in-api-management"></a>Защита API-интерфейсов с помощью аутентификации на основе сертификата клиента в службе управления API Azure
 
-Служба управления API помогает защитить доступ к API-интерфейсам (например, осуществляемый клиентом к службе управления API) с помощью сертификатов клиента. Вы можете проверить входящий сертификат и проверить свойства сертификата по нужным значениям с помощью выражений политики.
+Служба управления API помогает защитить доступ к API-интерфейсам (например, осуществляемый клиентом к службе управления API) с помощью сертификатов клиента. Вы можете проверить входящие свойства сертификата и проверить свойства сертификата на желаемые значения, используя выражения политики.
 
-Сведения о защите доступа к внутренней службе API с помощью сертификатов клиента (т. е. управления API до серверной части) см. в статье [Защита серверных служб с помощью проверки подлинности на основе сертификата клиента](https://docs.microsoft.com/azure/api-management/api-management-howto-mutual-certificates) .
-
-> [!IMPORTANT]
-> Чтобы получить и проверить сертификаты клиента по протоколу HTTP/2 на уровнях Developer, Basic, Standard или Premium, необходимо включить параметр "согласовать сертификат клиента" в колонке "личные домены", как показано ниже.
-
-![Согласование сертификата клиента](./media/api-management-howto-mutual-certificates-for-clients/negotiate-client-certificate.png)
+Для получения информации об обеспечении доступа к бэк-энд-сервису API с использованием сертификатов клиента (т.е. API Management to backend) см. [Как обеспечить безопасность бэк-энд-сервисов с помощью аутентификации сертификата клиента](https://docs.microsoft.com/azure/api-management/api-management-howto-mutual-certificates)
 
 > [!IMPORTANT]
-> Чтобы получить и проверить сертификаты клиента на уровне потребления, необходимо включить параметр "запросить сертификат клиента" в колонке "личные домены", как показано ниже.
+> Для получения и проверки сертификатов клиента по http/2 в уровнях разработчика, базового, стандартного или премиум-класса необходимо включить параметр "Переговоры о клиенте" на лезвии "Таможенные домены", как показано ниже.
+
+![Переговорный сертификат клиента](./media/api-management-howto-mutual-certificates-for-clients/negotiate-client-certificate.png)
+
+> [!IMPORTANT]
+> Для получения и проверки сертификатов клиента в уровне Потребления необходимо включить параметр "Запрос сертификата клиента" на лезвии "Таможенные домены", как показано ниже.
 
 ![Запрос сертификата клиента](./media/api-management-howto-mutual-certificates-for-clients/request-client-certificate.png)
 
@@ -51,8 +51,8 @@ ms.locfileid: "76713145"
 ```
 
 > [!NOTE]
-> Чтобы отключить проверку списка отзыва сертификатов, используйте `context.Request.Certificate.VerifyNoRevocation()` вместо `context.Request.Certificate.Verify()`.
-> Если сертификат клиента является самозаверяющим, необходимо [Отправить](api-management-howto-ca-certificates.md) корневой (или промежуточный) сертификат ЦС в Управление API, чтобы `context.Request.Certificate.Verify()` и `context.Request.Certificate.VerifyNoRevocation()` работать.
+> Чтобы отключить проверку отзыва сертификата список использовать `context.Request.Certificate.VerifyNoRevocation()` вместо `context.Request.Certificate.Verify()`.
+> Если сертификат клиента является самоподписанным, корневой (или промежуточный) сертификат CA `context.Request.Certificate.Verify()` `context.Request.Certificate.VerifyNoRevocation()` (ы) должен быть [загружен](api-management-howto-ca-certificates.md) в API Management для работы и для работы.
 
 ## <a name="checking-the-thumbprint"></a>Проверка отпечатка
 
@@ -69,8 +69,8 @@ ms.locfileid: "76713145"
 ```
 
 > [!NOTE]
-> Чтобы отключить проверку списка отзыва сертификатов, используйте `context.Request.Certificate.VerifyNoRevocation()` вместо `context.Request.Certificate.Verify()`.
-> Если сертификат клиента является самозаверяющим, необходимо [Отправить](api-management-howto-ca-certificates.md) корневой (или промежуточный) сертификат ЦС в Управление API, чтобы `context.Request.Certificate.Verify()` и `context.Request.Certificate.VerifyNoRevocation()` работать.
+> Чтобы отключить проверку отзыва сертификата список использовать `context.Request.Certificate.VerifyNoRevocation()` вместо `context.Request.Certificate.Verify()`.
+> Если сертификат клиента является самоподписанным, корневой (или промежуточный) сертификат CA `context.Request.Certificate.Verify()` `context.Request.Certificate.VerifyNoRevocation()` (ы) должен быть [загружен](api-management-howto-ca-certificates.md) в API Management для работы и для работы.
 
 ## <a name="checking-a-thumbprint-against-certificates-uploaded-to-api-management"></a>Проверка отпечатка на соответствие сертификатам, переданным в службу управления API
 
@@ -88,14 +88,14 @@ ms.locfileid: "76713145"
 ```
 
 > [!NOTE]
-> Чтобы отключить проверку списка отзыва сертификатов, используйте `context.Request.Certificate.VerifyNoRevocation()` вместо `context.Request.Certificate.Verify()`.
-> Если сертификат клиента является самозаверяющим, необходимо [Отправить](api-management-howto-ca-certificates.md) корневой (или промежуточный) сертификат ЦС в Управление API, чтобы `context.Request.Certificate.Verify()` и `context.Request.Certificate.VerifyNoRevocation()` работать.
+> Чтобы отключить проверку отзыва сертификата список использовать `context.Request.Certificate.VerifyNoRevocation()` вместо `context.Request.Certificate.Verify()`.
+> Если сертификат клиента является самоподписанным, корневой (или промежуточный) сертификат CA `context.Request.Certificate.Verify()` `context.Request.Certificate.VerifyNoRevocation()` (ы) должен быть [загружен](api-management-howto-ca-certificates.md) в API Management для работы и для работы.
 
 > [!TIP]
-> Проблема взаимоблокировки сертификата клиента, описанная в этой [статье](https://techcommunity.microsoft.com/t5/Networking-Blog/HTTPS-Client-Certificate-Request-freezes-when-the-Server-is/ba-p/339672) , может проявляться несколькими способами, например запросы на замораживание, запросы, вызывающие `403 Forbidden` код состояния после истечения времени ожидания, `context.Request.Certificate` `null`. Эта проблема обычно влияет на `POST` и `PUT` запросы с длиной содержимого приблизительно 60KB или выше.
-> Чтобы предотвратить возникновение этой проблемы, включите параметр "согласовать сертификат клиента" для нужных имен узлов в колонке "личные домены", как показано ниже. Эта функция недоступна в уровне потребления.
+> Проблема взаимоблокировки сертификата клиента, описанная в этой [статье,](https://techcommunity.microsoft.com/t5/Networking-Blog/HTTPS-Client-Certificate-Request-freezes-when-the-Server-is/ba-p/339672) может проявляться `403 Forbidden` несколькими способами, например, замораживание запросов, запросы приводят к коду состояния после тайм-аута, `context.Request.Certificate` есть. `null` Эта проблема обычно `POST` `PUT` затрагивает и запросы с длиной содержимого около 60KB или больше.
+> Чтобы предотвратить возникновение этой проблемы, включите настройки "Переговоры о клиентском сертификате" для желаемых имен хоста на лезвии "Custom domains", как показано ниже. Эта функция недоступна в уровне потребления.
 
-![Согласование сертификата клиента](./media/api-management-howto-mutual-certificates-for-clients/negotiate-client-certificate.png)
+![Переговорный сертификат клиента](./media/api-management-howto-mutual-certificates-for-clients/negotiate-client-certificate.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

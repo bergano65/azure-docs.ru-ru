@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.openlocfilehash: e5d32d1bc3bd704b03e58c62251a323ed3f4662c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61229056"
 ---
 # <a name="generate-a-thumbnail-sprite"></a>Создание эскиза спрайта  
@@ -33,7 +33,7 @@ Media Encoder Standard можно использовать для создани
 
     1. Если для SpriteColumn установлено значение M >= 1, выходное изображение представляет собой прямоугольник со столбцами M. Если количество эскизов, сгенерированных с помощью # 2, не является точным кратным M, последняя строка будет неполной и останется с черными пикселями.  
 
-Вот пример:
+Например:
 
 ```json
 {

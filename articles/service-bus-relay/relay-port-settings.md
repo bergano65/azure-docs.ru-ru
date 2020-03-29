@@ -1,6 +1,6 @@
 ---
 title: Параметры портов API ретранслятора Azure | Документация Майкрософт
-description: Эта статья содержит таблицу с описанием требуемой конфигурации для значений портов для Azure Relay.
+description: В эту статью входит таблица, описывающая требуемую конфигурацию значений портов для Azure Relay.
 services: service-bus-relay
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/21/2020
 ms.author: spelluru
 ms.openlocfilehash: 55bb6b620c7ba9ee13068213cbc867b165acc185
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76514890"
 ---
 # <a name="azure-relay-port-settings"></a>Параметры порта ретрансляции Azure
@@ -31,23 +31,23 @@ ms.locfileid: "76514890"
 
 ## <a name="wcf-relays"></a>Ретрансляторы WCF
   
-|Привязка|Безопасность доставки|Port|  
+|Привязка|Безопасность транспорта|Порт|  
 |-------------|------------------------|----------|  
 |[Класс BasicHttpRelayBinding](/dotnet/api/microsoft.servicebus.basichttprelaybinding) (клиент)|Да|HTTPS| 
-|" |Нет|HTTP|  
+|" |нет|HTTP|  
 |[Класс BasicHttpRelayBinding](/dotnet/api/microsoft.servicebus.basichttprelaybinding) (служба)|Можно использовать|9351/HTTP|  
 |[Класс NetEventRelayBinding](/dotnet/api/microsoft.servicebus.neteventrelaybinding) (клиент)|Да|9351/HTTPS|  
-|" |Нет|9350/HTTP|  
+|" |нет|9350/HTTP|  
 |[Класс NetEventRelayBinding](/dotnet/api/microsoft.servicebus.neteventrelaybinding) (служба)|Можно использовать|9351/HTTP|  
 |[Класс NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding) (служба или клиент)|Можно использовать|5671/9352/HTTP (9352/9353 при использовании гибридной среды)|  
 |[Класс NetOnewayRelayBinding](/dotnet/api/microsoft.servicebus.netonewayrelaybinding) (клиент)|Да|9351/HTTPS|  
-|" |Нет|9350/HTTP|  
+|" |нет|9350/HTTP|  
 |[Класс NetOnewayRelayBinding](/dotnet/api/microsoft.servicebus.netonewayrelaybinding) (служба)|Можно использовать|9351/HTTP|  
 |[Класс WebHttpRelayBinding](/dotnet/api/microsoft.servicebus.webhttprelaybinding) (клиент)|Да|HTTPS|  
-|" |Нет|HTTP|  
+|" |нет|HTTP|  
 |[Класс WebHttpRelayBinding](/dotnet/api/microsoft.servicebus.webhttprelaybinding) (служба)|Можно использовать|9351/HTTP|  
 |[Класс WS2007HttpRelayBinding](/dotnet/api/microsoft.servicebus.ws2007httprelaybinding) (клиент)|Да|HTTPS|  
-|" |Нет|HTTP|  
+|" |нет|HTTP|  
 |[Класс WS2007HttpRelayBinding](/dotnet/api/microsoft.servicebus.ws2007httprelaybinding) (служба)|Можно использовать|9351/HTTP|
 
 ## <a name="next-steps"></a>Дальнейшие действия

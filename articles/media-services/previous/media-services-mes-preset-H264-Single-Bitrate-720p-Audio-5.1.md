@@ -1,6 +1,6 @@
 ---
 title: H264 Single Bitrate 720p Audio 5.1 | Документация Майкрософт
-description: Этот раздел содержит общие сведения о предустановке задачи **H264 Single Bitrate 720p Audio 5.1**.
+description: Тема дает обзор **H264 Однобитный 720p Аудио 5.1** задача предпоставления.
 author: Juliako
 manager: femila
 editor: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: aad0a5f0e521d0608c1797ea8c1225c48240b391
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61129562"
 ---
 # <a name="h264-single-bitrate-720p-audio-51"></a>H264 Single Bitrate 720p Audio 5.1

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 11b6553fe8aceef0d3d15977998dd870c275128a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61294341"
 ---
 # <a name="enable-a-licensed-image-in-your-lab-in-azure-devtest-labs"></a>Активация лицензированных образов в лаборатории в Azure DevTest Labs
@@ -28,9 +28,9 @@ ms.locfileid: "61294341"
 ## <a name="determining-whether-a-licensed-image-is-available-to-users"></a>Определение доступности лицензированного образа для пользователей
 Чтобы создавать виртуальные машины на основе лицензированных образов, сначала необходимо убедиться, что были приняты условия их использования. Ниже показано, как можно просмотреть состояние предложения лицензированных образов и, если необходимо, принять условия их использования.
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
+1. Выберите **все службы,** а затем выберите **DevTest Labs** из списка.
 
 1. Из списка лабораторий выберите нужную лабораторию.  
 
@@ -77,7 +77,7 @@ ms.locfileid: "61294341"
    >
 
 
-1. Щелкните **Сохранить**. 
+1. Нажмите кнопку **Сохранить**. 
 
     В списке образов Marketplace образ имеет состояние **Terms accepted** (Условия приняты) и доступен для создания виртуальных машин пользователями.
 

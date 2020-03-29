@@ -1,13 +1,13 @@
 ---
-title: Жизненный цикл приложения в Service Fabric
+title: Жизненный цикл приложения в сервисной ткани
 description: Описывает разработку, развертывание, тестирование, обновление, обслуживание и удаление приложений Service Fabric.
 ms.topic: conceptual
 ms.date: 1/19/2018
 ms.openlocfilehash: beeb1f1512cf94582dd561fa768f2e8e6649d686
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75378010"
 ---
 # <a name="service-fabric-application-lifecycle"></a>Жизненный цикл приложения Service Fabric
@@ -18,16 +18,16 @@ ms.locfileid: "75378010"
 ## <a name="service-model-roles"></a>Роли моделей служб
 Роли моделей служб:
 
-* **Разработчик службы**: разрабатывает модульные и универсальные службы, которые могут быть переназначены и использованы в нескольких приложениях одного типа или разных типов. Например, служба очередей может использоваться для создания приложения для обработки обращений (служба поддержки) или приложения для электронной коммерции (корзины).
+* **Разработчик службы**: Разрабатывает модульные и универсальные службы, которые могут быть перепрофилированы и использованы в нескольких приложениях одного и того же типа или различных типов. Например, служба очередей может использоваться для создания приложения для обработки обращений (служба поддержки) или приложения для электронной коммерции (корзины).
 * **Разработчик приложения.** Создает приложения путем интеграции коллекции служб для обеспечения соответствия определенным конкретным требованиям или сценариям. Например, на веб-сайте электронной коммерции могут интегрироваться интерфейсные службы JSON без отслеживания состояния службы, аукцион с отслеживанием состояния службы и служба очереди с отслеживанием состояния службы для создания аукционного приложения.
 * **Администратор приложения.** Принимает решения о конфигурации приложения (установка параметров шаблона конфигурации), развертывании (сопоставление с доступными ресурсами) и обеспечении качества обслуживания. Например, администратор приложения принимает решение о языковых настройках приложения, используемых в зависимости от региона (например, английский для США или японский для Японии). Другое развернутое приложение может иметь другие настройки.
 * **Оператор.** Развертывает приложения с учетом конфигурации приложения и требований, указанных администратором приложения. Например, оператор выделяет и развертывает приложение и обеспечивает его работу в Azure. Операторы должны отслеживать работоспособность и производительность приложений и поддерживать соответствующую физическую инфраструктуру при необходимости.
 
 ## <a name="develop"></a>Разработка
 1. *Разработчик службы* разрабатывает различные типы служб, используя модель программирования [Reliable Actors](service-fabric-reliable-actors-introduction.md) или [Reliable Services](service-fabric-reliable-services-introduction.md).
-2. *Разработчик службы* декларативно описывает типы разработанных служб в файле манифеста служб, состоящего из одного или нескольких блоков кода, конфигурации и пакетов данных.
-3. *Разработчик приложений* затем создает приложения, используя для этого службы различных типов.
-4. *Разработчик приложений* декларативно описывает тип приложения в манифесте приложения путем ссылок на манифесты составляющих его служб и применяет переопределение и назначение параметров различных конфигураций и настроек развертывания служб, из которых состоит приложение.
+2. *Разработчик службы* декларативно описывает создаваемые типы служб в файле манифеста службы, состоящем из одного или нескольких пакетов кода, конфигурации и данных.
+3. *Разработчик приложения* затем выполняет построение приложения с использованием различных типов служб.
+4. *Разработчик приложения* декларативно описывает тип приложения в его манифесте, указывая ссылки на манифесты составляющих служб и соответствующим образом переопределяя и параметризируя различные параметры конфигурации и развертывания составляющих служб.
 
 См. статьи [Приступая к работе с Reliable Actors](service-fabric-reliable-actors-get-started.md) и [Начало работы со службами Reliable Services в Service Fabric](service-fabric-reliable-services-quick-start.md), чтобы ознакомиться с примерами.
 
@@ -41,17 +41,17 @@ ms.locfileid: "75378010"
 
 См. статью [Развертывание и удаление приложений с помощью PowerShell](service-fabric-deploy-remove-applications.md), чтобы ознакомиться с примерами.
 
-## <a name="test"></a>Тестирование
+## <a name="test"></a>Тест
 1. После развертывания в локальном кластере разработки или в тестовом кластере *разработчик службы* запускает встроенный сценарий проверки переключения на резервный ресурс с помощью классов [**FailoverTestScenarioParameters**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.failovertestscenarioparameters) и [**FailoverTestScenario**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.failovertestscenario) или [командлета **Invoke-ServiceFabricFailoverTestScenario**](/powershell/module/servicefabric/invoke-servicefabricfailovertestscenario?view=azureservicefabricps). Сценарий тестирования отказа пропускает указанную службу через важные преобразования и отказы, чтобы гарантировать, что она остается доступной и продолжает работать.
 2. Затем *разработчик службы* запускает встроенный хаотический сценарий тестирования с помощью классов [**ChaosTestScenarioParameters**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenarioparameters) и [**ChaosTestScenario**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenario) или [командлета **Invoke-ServiceFabricChaosTestScenario**](/powershell/module/servicefabric/invoke-servicefabricchaostestscenario?view=azureservicefabricps). Хаотический сценарий тестирования в случайном порядке вызывает множественные ошибки на уровне узла, пакета кода и реплики в кластере.
-3. *Разработчик службы* [тестирует взаимодействие между](service-fabric-testability-scenarios-service-communication.md) службами путем создания тестовых сценариев, которые перемещают первичные реплики в кластере.
+3. *Разработчик службы* [тестирует обмен данными между службами](service-fabric-testability-scenarios-service-communication.md) , создавая сценарии тестирования для перемещения первичных реплик в кластере.
 
 Дополнительные сведения см. в статье [Общие сведения о службе анализа сбоев](service-fabric-testability-overview.md).
 
 ## <a name="upgrade"></a>Обновление
 1. *Разработчик службы* обновляет составляющие службы экземпляра приложения или устраняет ошибки кода и предоставляет новую версию манифеста служб.
 2. *Разработчик приложения* переопределяет и параметризует настройки конфигурации и развертывания и предоставляет новую версию манифеста приложения. Разработчик приложения затем включает новые версии манифестов служб в приложение и собирает новую версию приложения этого же типа в обновленном пакете приложения.
-3. *Администратор приложения* включает новую версию приложения этого же типа в целевое приложение путем обновления соответствующих параметров.
+3. *Администратор приложения* включает новую версию типа приложения в целевое приложение, обновляя соответствующие параметры.
 4. *Оператор* загружает обновленный пакет приложения в хранилище образов кластера с помощью [метода **CopyApplicationPackage**](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient) или [командлета **Copy-ServiceFabricApplicationPackage**](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps). Пакет приложения содержит манифест приложения и коллекцию пакетов служб.
 5. *Оператор* предоставляет новую версию приложения для целевого кластера с помощью [метода **ProvisionApplicationAsync**](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [командлета **Register-ServiceFabricApplicationType**](https://docs.microsoft.com/powershell/module/servicefabric/register-servicefabricapplicationtype) или [операции REST **Provision an Application**](https://docs.microsoft.com/rest/api/servicefabric/provision-an-application).
 6. *Оператор* обновляет целевое приложение до новой версии, используя [метод **UpgradeApplicationAsync**](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [командлет **Start-ServiceFabricApplicationUpgrade**](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricapplicationupgrade) или [операцию **REST Upgrade an Application**](https://docs.microsoft.com/rest/api/servicefabric/upgrade-an-application).
@@ -80,8 +80,8 @@ ms.locfileid: "75378010"
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о разработке и тестировании приложений Service Fabric и служб, а также об управлении ими см. в следующих разделах.
 
-* [Reliable Actors](service-fabric-reliable-actors-introduction.md)
-* [Reliable Services](service-fabric-reliable-services-introduction.md)
+* [Надежные субъекты](service-fabric-reliable-actors-introduction.md)
+* [Надежные службы](service-fabric-reliable-services-introduction.md)
 * [Развертывание приложения](service-fabric-deploy-remove-applications.md)
 * [Обновление приложения](service-fabric-application-upgrade.md)
-* [Обзор Testability](service-fabric-testability-overview.md)
+* [Обзор проверяемости](service-fabric-testability-overview.md)

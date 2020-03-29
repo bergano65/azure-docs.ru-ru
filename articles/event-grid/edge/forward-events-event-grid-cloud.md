@@ -1,6 +1,6 @@
 ---
-title: Пересылать события пограничных событий в службу "Сетка событий Azure" в службе "Сетка событий" IoT Edge | Документация Майкрософт
-description: Пересылка событий пограничной стороны в облако сетки событий
+title: Передние события края в облако Event Grid - Azure Event Grid IoT Edge Документы Майкрософт
+description: Передние события края в облако Event Grid
 author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
@@ -10,41 +10,41 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 7184fb5c45ce41de2bd63b55fb67cbd9ba6361e3
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76844723"
 ---
-# <a name="tutorial-forward-events-to-event-grid-cloud"></a>Учебник. Пересылка событий в облако сетки событий
+# <a name="tutorial-forward-events-to-event-grid-cloud"></a>Учебник: Переадресованные события в облако Event Grid
 
-В этой статье рассматриваются все шаги, необходимые для переадресации пограничных событий в службу "Сетка событий" в облаке Azure. Это может потребоваться по следующим причинам.
+В этой статье просматривались все шаги, необходимые для переноса событий edge в сетку событий в облаке Azure. Вы можете сделать это по следующим причинам:
 
-* Реагирование на события пограничных событий в облаке.
-* Пересылка событий в службу "Сетка событий" в облаке и использование концентраторов событий Azure или очередей службы хранилища Azure для буферизации событий перед их обработкой в облаке.
+* Реагируйте на события края в облаке.
+* Передние события в Сетку событий в облаке и используйте концентраторы Azure Event или Azure Storage для буферизации событий перед их обработкой в облаке.
 
- Для работы с этим руководством необходимо иметь представление о концепциях службы "Сетка событий" в [пограничных](concepts.md) и [Azure](../concepts.md). Дополнительные типы назначения см. в разделе [обработчики событий](event-handlers.md). 
+ Чтобы завершить этот учебник, вам нужно иметь представление о концепциях Event Grid на [краю](concepts.md) и [Azure](../concepts.md). Для дополнительных типов [event handlers](event-handlers.md)назначения см. 
 
-## <a name="prerequisites"></a>Технические условия 
-Для работы с этим руководством вам потребуется:
+## <a name="prerequisites"></a>Предварительные требования 
+Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
-* **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
-* **Центр Интернета вещей Azure и устройство IOT Edge** . выполните действия, описанные в разделе Краткое руководство для устройств [Linux](../../iot-edge/quickstart-linux.md) или [Windows](../../iot-edge/quickstart.md) , если у вас его еще нет.
+* **Подписка Azure** - Создайте [бесплатную учетную запись,](https://azure.microsoft.com/free) если у вас ее еще нет. 
+* **Устройство Azure IoT Hub и IoT Edge** - Выполните последующие шаги в быстром запуске для устройств [Linux](../../iot-edge/quickstart-linux.md) или [Windows,](../../iot-edge/quickstart.md) если у вас его еще нет.
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-deploy-iot-edge.md)] 
-## <a name="create-event-grid-topic-and-subscription-in-cloud"></a>Создание раздела и подписки в сетке событий в облаке
+## <a name="create-event-grid-topic-and-subscription-in-cloud"></a>Создание темы сетки событий и подписки в облаке
 
-Создайте раздел и подписку на сетку событий в облаке, следуя [этим руководствам](../custom-event-quickstart-portal.md). Запишите `topicURL`, `sasKey`и `topicName` созданного раздела, который будет использоваться далее в этом руководстве.
+Создайте тему сетки событий и подписку в облаке, следуя [этому учебнику.](../custom-event-quickstart-portal.md) `topicURL`Запишите, `sasKey`и `topicName` недавно созданная тема, которую вы будете использовать позже в учебнике.
 
-Например, если вы создали раздел с именем `testegcloudtopic` в западной части США, значения будут выглядеть примерно следующим образом:
+Например, если вы создали `testegcloudtopic` тему, названную в Западной ЧАСТИ США, значения будут выглядеть примерно так:
 
-* **Топикурл**: `https://testegcloudtopic.westus2-1.eventgrid.azure.net/api/events`
-* **Топикнаме**: `testegcloudtopic`
-* **Саскэй**: доступно в **AccessKey** вашего раздела. Используйте **Key1**.
+* **TopicUrl**:`https://testegcloudtopic.westus2-1.eventgrid.azure.net/api/events`
+* **ТемаИмя**:`testegcloudtopic`
+* **SasKey**: Доступно под **AccessKey** вашей темы. Используйте **ключ1**.
 
-## <a name="create-event-grid-topic-at-the-edge"></a>Создать раздел сетки событий на границе
+## <a name="create-event-grid-topic-at-the-edge"></a>Создание темы сетки событий на краю
 
-1. Создайте topic3. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создавайте topic3.json со следующим содержанием. Ознакомиться с нашими [документами API](api.md) можно с информацией о полезной нагрузке.
 
     ```json
         {
@@ -54,12 +54,12 @@ ms.locfileid: "76844723"
           }
         }
     ```
-1. Выполните следующую команду, чтобы создать раздел. Должен возвращаться код состояния HTTP, 200 ОК.
+1. Выполнить следующую команду, чтобы создать тему. КОД статуса HTTP 200 OK должен быть возвращен.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X PUT -g -d @topic3.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3?api-version=2019-01-01-preview
     ```
-1. Выполните следующую команду, чтобы проверить, успешно ли создан раздел. Должен возвращаться код состояния HTTP, 200 ОК.
+1. Выполнить следующую команду для проверки темы был создан успешно. КОД статуса HTTP 200 OK должен быть возвращен.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3?api-version=2019-01-01-preview
@@ -81,11 +81,11 @@ ms.locfileid: "76844723"
         ]
    ```
   
-## <a name="create-event-grid-subscription-at-the-edge"></a>Создать подписку на сетку событий на границе
+## <a name="create-event-grid-subscription-at-the-edge"></a>Создание подписки Event Grid на краю
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
-1. Создайте subscription3. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте subscription3.json со следующим содержанием. Ознакомиться с нашими [документами API](api.md) можно с информацией о полезной нагрузке.
 
    ```json
         {
@@ -103,7 +103,7 @@ ms.locfileid: "76844723"
    ```
 
    >[!NOTE]
-   > **EndpointUrl** указывает, что URL-адрес раздела сетки событий в облаке. **Саскэй** относится к разделу "облачная таблица событий". Значение в **топикнаме** будет использоваться для отметки всех исходящих событий на сетку событий. Это может быть полезно при публикации в предметной области сетки событий. Дополнительные сведения о домене "Сетка событий" см. в разделе [домены событий](../event-domains.md) .
+   > В **endpointUrl** указывается, что URL-адрес темы Event Grid в облаке. **SasKey** относится к ключевой теме облака Event Grid. Значение в **topicName** будет использоваться для штампа всех исходящих событий в Event Grid. Это может быть полезно при размещении на тему домена Event Grid. Для получения дополнительной информации о [Event domains](../event-domains.md) теме домена Event Grid см.
 
     Например,
   
@@ -122,13 +122,13 @@ ms.locfileid: "76844723"
         }
     ```
 
-2. Выполните следующую команду, чтобы создать подписку. Должен возвращаться код состояния HTTP, 200 ОК.
+2. Выполнить следующую команду для создания подписки. КОД статуса HTTP 200 OK должен быть возвращен.
 
      ```sh
      curl -k -H "Content-Type: application/json" -X PUT -g -d @subscription3.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3/eventSubscriptions/sampleSubscription3?api-version=2019-01-01-preview
      ```
 
-3. Выполните следующую команду, чтобы проверить, успешно ли создана подписка. Должен возвращаться код состояния HTTP, 200 ОК.
+3. Выполнить следующую команду для проверки подписки был создан успешно. КОД статуса HTTP 200 OK должен быть возвращен.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3/eventSubscriptions/sampleSubscription3?api-version=2019-01-01-preview
@@ -155,9 +155,9 @@ ms.locfileid: "76844723"
         }
     ```
 
-## <a name="publish-an-event-at-the-edge"></a>Опубликовать событие на границе
+## <a name="publish-an-event-at-the-edge"></a>Опубликовать событие на краю
 
-1. Создайте event3. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте event3.json со следующим содержанием. Ознакомиться с [документацией API](api.md) можно с информацией о полезной нагрузке.
 
     ```json
         [
@@ -181,25 +181,25 @@ ms.locfileid: "76844723"
     curl -k -H "Content-Type: application/json" -X POST -g -d @event3.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3/events?api-version=2019-01-01-preview
     ```
 
-## <a name="verify-edge-event-in-cloud"></a>Проверка пограничных событий в облаке
+## <a name="verify-edge-event-in-cloud"></a>Проверить событие края в облаке
 
-Сведения о просмотре событий, предоставляемых облачными разделами, см. в этом [руководстве](../custom-event-quickstart-portal.md).
+Для получения [информации](../custom-event-quickstart-portal.md)о просмотре событий, поставляемых по теме облака, см.
 
 ## <a name="cleanup-resources"></a>Очистка ресурсов
 
-* Выполните следующую команду, чтобы удалить раздел и все его подписки
+* Выполнить следующую команду, чтобы удалить тему и все ее подписки
 
     ```sh
     curl -k -H "Content-Type: application/json" -X DELETE https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3?api-version=2019-01-01-preview
     ```
 
-* Удалите раздел и подписки, созданные в облаке (сетка событий Azure).
+* Удалите тему и подписки, созданные в облаке (Azure Event Grid), а также.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы опубликовали событие в службе "Сетка событий" в облаке Azure. Теперь, когда вы знакомы с основными шагами для пересылки в сетку событий в облаке, сделайте следующее:
+В этом уроке вы опубликовали событие на краю и перенаправили в Event Grid в облаке Azure. Теперь, когда вы знаете основные шаги, чтобы перейти к Event Grid в облаке:
 
-* Сведения об устранении неполадок с использованием службы "Сетка событий Azure" на IoT Edge см. в разделе [руководство по устранению неполадок](troubleshoot.md).
-* Пересылать события в IoTHub, следуя этому [учебнику](forward-events-iothub.md)
-* Пересылка событий в веб-перехватчик в облаке с помощью этого [руководства](pub-sub-events-webhook-cloud.md)
-* [Мониторинг разделов и подписок на границе](monitor-topics-subscriptions.md)
+* Для устранения неполадок с использованием Azure Event Grid на IoT Edge [см.](troubleshoot.md)
+* Передайте события На IoTHub, следуя этому [учебнику](forward-events-iothub.md)
+* Передвигайте события в Webhook в облаке, следуя этому [учебнику](pub-sub-events-webhook-cloud.md)
+* [Мониторинг тем и подписки на краю](monitor-topics-subscriptions.md)

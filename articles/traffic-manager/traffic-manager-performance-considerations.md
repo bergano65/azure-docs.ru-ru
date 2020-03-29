@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: rohink
 ms.openlocfilehash: 84367a00643c48e7fe2fb7f907bab64589193b2e
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76938542"
 ---
 # <a name="performance-considerations-for-traffic-manager"></a>Рекомендации по безопасности для диспетчера трафика
@@ -58,7 +58,7 @@ ms.locfileid: "76938542"
 
 * [CA App Synthetic Monitor](https://asm.ca.com/en/checkit.php)
 
-    Этот веб-узел, ранее известный как средство проверки на наличие указателя мыши, показывает время разрешения DNS из нескольких географических регионов одновременно. Введите URL-адрес, чтобы узнать время разрешения DNS, время подключения и скорость для нескольких расположений. С помощью этого теста можно узнать, какая размещенная служба возвращается для разных расположений во всем мире.
+    Ранее известный как инструмент Watch-mouse Check Website, этот сайт показывает вам время разрешения DNS из нескольких географических регионов одновременно. Введите URL-адрес, чтобы узнать время разрешения DNS, время подключения и скорость для нескольких расположений. С помощью этого теста можно узнать, какая размещенная служба возвращается для разных расположений во всем мире.
 
     ![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-watchmouse.png)
 
@@ -74,7 +74,7 @@ ms.locfileid: "76938542"
 
     На этом сайте отображается подробная информация о DNS, включая записи CNAME и A. Установите флажки "Colorize output" (Выделить цветом выходные данные) и "Stats" (Статистика), а для "Nameservers" (Имена серверов) выберите значение "All" (Все).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 

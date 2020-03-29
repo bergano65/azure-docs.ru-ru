@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: bf0740bbdd4754aeba43e64f1076a1bea33cffc6
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76844431"
 ---
 # <a name="troubleshoot-azure-stream-analytics-queries"></a>Устранение неполадок з запросами в службе Azure Stream Analytics
@@ -21,11 +21,11 @@ ms.locfileid: "76844431"
 
 ## <a name="query-is-not-producing-expected-output"></a>Запрос не создает ожидаемых выходных данных
 1.  Изучите ошибки с помощью локального тестирования:
-    - На портал Azure на вкладке **запрос** выберите **тест**. Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
-    - Вы также можете [проверить запрос локально](stream-analytics-live-data-local-testing.md) с помощью средств Azure Stream Analytics для Visual Studio или [Visual Studio Code](visual-studio-code-local-run-live-input.md). 
+    - На портале Azure на вкладке **«Запрос»** выберите **тест.** Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
+    - Вы также можете [протестировать свой запрос локально,](stream-analytics-live-data-local-testing.md) используя инструменты Azure Stream Analytics для Visual Studio или [Visual Studio Code.](visual-studio-code-local-run-live-input.md) 
 
-2.  Пошаговая [Отладка запросов с помощью схемы заданий](debug-locally-using-job-diagram.md) в средствах Azure Stream Analytics для Visual Studio. Схема задания показывает, как потоки данных из источников ввода (концентратор событий, центр Интернета вещей и т. д.) выполняются с помощью нескольких шагов запроса и, наконец, выводятся в приемники. Каждый шаг запроса сопоставляется с временным результирующим набором, определенным в скрипте с помощью инструкции WITH. Вы можете просмотреть данные и метрики на каждом шаге запроса в каждом промежуточном результирующем наборе, чтобы найти источник проблемы.
-    ](./media/debug-locally-using-job-diagram/preview-result.png) результатов предварительной версии диаграммы заданий ![
+2.  [Запросы отогивая насмгия шаг за шагом локально используя диаграмму заданий](debug-locally-using-job-diagram.md) в инструментах Azure Stream Analytics для Visual Studio. Диаграмма задания должна показать, как данные перетекают из входных источников (Event Hub, IoT Hub и т.д.) через несколько этапов запроса и, наконец, вывод к раковинам. Каждый шаг запроса отображается к временному набору результатов, определенному в скрипте с помощью оператора WITH. Вы можете просматривать данные, а также метрики в каждом шаге запроса в каждом промежуточном наборе результатов, чтобы найти источник проблемы.
+    ![Результат предварительного просмотра диаграммы задания](./media/debug-locally-using-job-diagram/preview-result.png)
 
 3.  Если используются [**метки времени**](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
 
@@ -68,11 +68,11 @@ ms.locfileid: "76844431"
 
 Теперь снова запустите задание, которое должно выполняться в течение нескольких минут. Затем запросите temp1 и temp2 с помощью Visual Studio Cloud Explorer для создания следующих таблиц:
 
-**Таблица temp1**
-![запрос SELECT INTO Stream Analytics таблицы temp1 ](./media/stream-analytics-select-into/stream-analytics-select-into-temp-table-1.png)
+**таблица**
+![temp1 SELECT INTO temp1 настольный запрос Stream Analytics](./media/stream-analytics-select-into/stream-analytics-select-into-temp-table-1.png)
 
-**Таблица temp2**
-![запрос SELECT INTO Stream Analytics таблицы temp2](./media/stream-analytics-select-into/stream-analytics-select-into-temp-table-2.png)
+**таблица**
+![temp2 SELECT INTO temp2 настольный запрос Stream Analytics](./media/stream-analytics-select-into/stream-analytics-select-into-temp-table-2.png)
 
 Как вы видите, обе таблицы содержат данные, а столбец имени в temp2 заполнен правильно. Тем не менее, так как данные еще не выведены, произошла какая-то проблема:
 
@@ -92,14 +92,14 @@ ms.locfileid: "76844431"
 
 ![Запрос итоговой таблицы SELECT INTO Stream Analytics](./media/stream-analytics-select-into/stream-analytics-select-into-final-table.png)
 
-## <a name="get-help"></a>Справка
+## <a name="get-help"></a>Получить справку
 
-За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
+Для получения дополнительной помощи попробуйте наш [форум Azure Stream Analytics.](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

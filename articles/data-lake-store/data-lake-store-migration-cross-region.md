@@ -13,17 +13,17 @@ ms.topic: article
 ms.date: 01/27/2017
 ms.author: stewu
 ms.openlocfilehash: 0bf0843314f38c0de28820c82e95b7921297bf40
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60518467"
 ---
 # <a name="migrate-azure-data-lake-storage-gen1-across-regions"></a>Перенос Data Lake Storage 1-го поколения между регионами
 
 Когда служба Azure Data Lake Storage 1-го поколения становится доступной в новых регионах, вам может понадобиться выполнить однократный перенос, чтобы воспользоваться преимуществами нового региона. Узнайте, что необходимо учесть при планировании и выполнении переноса.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Чтобы получить дополнительные сведения, ознакомьтесь со страницей [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Data Lake Storage 1-го поколения в двух разных регионах**. Дополнительные сведения см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
@@ -51,4 +51,4 @@ ms.locfileid: "60518467"
 * **Расположение служб аналитики**. Для оптимальной производительности ваши службы аналитики, такие как Data Lake Analytics или HDInsight, должны находиться в том же регионе, что и данные.  
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)

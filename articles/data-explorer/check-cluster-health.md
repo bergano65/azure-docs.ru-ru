@@ -1,6 +1,6 @@
 ---
 title: Проверка работоспособности кластера обозревателя данных Azure
-description: В этой статье описываются способы наблюдения за работоспособностью кластера обозреватель данных Azure.
+description: В этой статье описаны шаги по мониторингу работоспособности кластера Azure Data Explorer.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
@@ -8,17 +8,17 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: a280d8869a3790444a97c38f792a3d9eeb6bde1d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60861324"
 ---
 # <a name="check-the-health-of-an-azure-data-explorer-cluster"></a>Проверка работоспособности кластера обозревателя данных Azure
 
 На работоспособность кластера обозревателя данных Azure влияют несколько факторов, включая ЦП, память и дисковую подсистему. В этой статье показаны некоторые основные шаги, которые можно выполнить для оценки работоспособности кластера.
 
-1. Войдите на портал [https://dataexplorer.azure.com](https://dataexplorer.azure.com).
+1. Войти [https://dataexplorer.azure.com](https://dataexplorer.azure.com)на ввесенку .
 
 1. На панели слева выберите свой кластер и выполните следующую команду:
 

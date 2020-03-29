@@ -1,15 +1,15 @@
 ---
 title: Рекомендации по безопасности Azure Service Fabric
-description: Рекомендации и вопросы проектирования по обеспечению безопасности кластеров и приложений Azure Service Fabric.
+description: Рекомендации и рекомендации по обеспечению безопасности кластеров и приложений Службы службы Azure Fabric.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
 ms.openlocfilehash: dcdc338bdcdb2c04f6b8894ccb358bc773b95c07
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79258932"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
@@ -143,9 +143,9 @@ user@linux:$ openssl smime -encrypt -in plaintext_UTF-16.txt -binary -outform de
 
 После шифрования защищенных значений [укажите зашифрованные секреты в приложении Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-secret-management#specify-encrypted-secrets-in-an-application) и [расшифруйте зашифрованные секреты из служебного кода](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-secret-management#decrypt-encrypted-secrets-from-service-code).
 
-## <a name="include-certificate-in-service-fabric-applications"></a>Включить сертификат в Service Fabric приложения
+## <a name="include-certificate-in-service-fabric-applications"></a>Включить сертификат в приложения Service Fabric
 
-Чтобы предоставить приложению доступ к секретам, включите сертификат, добавив элемент **секретсцертификате** в манифест приложения.
+Чтобы дать приложению доступ к секретам, включите сертификат, добавив элемент **SecretsCertificate** в манифест приложения.
 
 ```xml
 <ApplicationManifest … >
@@ -191,7 +191,7 @@ principalid=$(az resource show --id /subscriptions/<YOUR SUBSCRIPTON>/resourceGr
 az role assignment create --assignee $principalid --role 'Contributor' --scope "/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/<PROVIDER NAME>/<RESOURCE TYPE>/<RESOURCE NAME>"
 ```
 
-В коде приложения Service Fabric [Получите маркер доступа](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token#get-a-token-using-http) для Azure Resource Manager, выполнив все остальные действия, аналогичные следующим:
+В коде приложения Service Fabric [получите токен доступа](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token#get-a-token-using-http) для менеджера ресурсов Azure, сделав REST похожим на следующие:
 
 ```bash
 access_token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true | python -c "import sys, json; print json.load(sys.stdin)['access_token']")
@@ -204,20 +204,20 @@ access_token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-v
 ```bash
 cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/Microsoft.DocumentDB/databaseAccounts/<YOUR ACCOUNT>/listKeys?api-version=2016-03-31' -X POST -d "" -H "Authorization: Bearer $access_token" | python -c "import sys, json; print(json.load(sys.stdin)['primaryMasterKey'])")
 ```
-## <a name="windows-security-baselines"></a>Базовые показатели безопасности Windows
-[Мы рекомендуем реализовать стандартную промышленную конфигурацию, которая широко известна и хорошо тестируется, например базовые планы безопасности Майкрософт, а не самостоятельное создание базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines). параметр для подготовки этих данных в масштабируемых наборах виртуальных машин заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure для настройки виртуальных машин в режиме «в сети», чтобы они выполняли рабочее программное обеспечение.
+## <a name="windows-security-baselines"></a>Базовые параметры безопасности Windows
+[Мы рекомендуем вам внедрить стандартную в отрасли конфигурацию, которая широко известна и хорошо протестирована, например, базовые уровни безопасности Майкрософт, в отличие от создания базовой системы самостоятельно;](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) вариант для подготовки этих на ваших виртуальных наборов шкалы машин заключается в использовании Azure Желаемое состояние конфигурации (DSC) обработчик расширения, чтобы настроить Виртуальные, как они приходят в Интернете, так что они работают производства программного обеспечения.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
-[Брандмауэр Azure — это управляемая облачная служба безопасности сети, которая защищает ресурсы виртуальной сети Azure. Это полностью работоспособный брандмауэр в качестве службы со встроенными возможностями обеспечения высокой доступности и масштабируемости облака.](https://docs.microsoft.com/azure/firewall/overview) Это позволяет ограничить исходящий трафик HTTP/S указанным списком полных доменных имен (FQDN), включая подстановочные. Эта функция не требует завершения SSL-запросов. Рекомендуется использовать [теги полного доменного имени брандмауэра Azure](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также включить сетевой трафик для конечных точек центр обновления Windows Майкрософт, которые могут проходить через брандмауэр. [Развертывание брандмауэра Azure с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) содержит образец для определения шаблона ресурсов Microsoft. Network/азурефиреваллс. Правила брандмауэра, общие для Service Fabric приложений, позволяют выполнять следующие действия для виртуальной сети кластеров:
+[Azure Firewall — это управляемая облачная служба безопасности сети, которая защищает ресурсы виртуальной сети Azure. Это полностью задефальный брандмауэр как сервис со встроенной высокой доступностью и неограниченной масштабируемостью облаков.](https://docs.microsoft.com/azure/firewall/overview); это позволяет ограничить исходящий трафик HTTP/S определенным списком полностью квалифицированных доменных имен (ФЗДН), включая дикие карты. Эта функция не требует завершения SSL-запросов. Рекомендуется использовать [теги Azure Firewall F'DN](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также включить сетевой трафик в конечные точки microsoft Windows Update через брандмауэр. [Развертывание Azure Firewall с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) предоставляет образец для определения шаблона ресурсов Microsoft.Network/AzureFirewalls. Правила брандмауэра, общие для приложений Service Fabric, позволяют создать для виртуальной сети кластеров следующие правила:
 
-- \* download.microsoft.com
-- \* servicefabric.azure.com
+- (download.microsoft.com
+- «servicefabric.azure.com
 - *.core.windows.net
 
-Эти правила брандмауэра дополняют разрешенные исходящие группы безопасности сети, которые включают ServiceFabric и хранилище в качестве разрешенных целевых объектов из виртуальной сети.
+Эти правила брандмауэра дополняют разрешенные исходящие группы сетевой безопасности, которые будут включать ServiceFabric и Хранение, как разрешенные направления из вашей виртуальной сети.
 
 ## <a name="tls-12"></a>TLS 1.2
-[тсг](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
+[Tsg](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
 
 ## <a name="windows-defender"></a>Защитник Windows 
 
@@ -253,8 +253,8 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 > [!NOTE]
 > Если вы не используете Защитник Windows, обратитесь к документации по работе с антивредоносным ПО, чтобы ознакомиться с правилами настройки. Защитник Windows не поддерживается в Linux.
 
-## <a name="platform-isolation"></a>Изоляция платформ
-По умолчанию Service Fabric приложениям предоставляется доступ к самой среде выполнения Service Fabric, которая сама по себе проявляется в разных формах: [переменные среды](service-fabric-environment-variables-reference.md) , указывающие на пути к файлам на узле, соответствующие файлам приложения и структуры, конечную точку межпроцессного обмена данными, которая принимает запросы конкретного приложения, а также сертификат клиента, который будет использоваться приложением для проверки подлинности. В конечном итоге, если служба размещает недоверенный код, рекомендуется отключить этот доступ к среде выполнения SF, если это не требуется явным образом. Доступ к среде выполнения удаляется с помощью следующего объявления в разделе "политики" манифеста приложения: 
+## <a name="platform-isolation"></a>Изоляция платформы
+По умолчанию приложенияМ Service Fabric предоставляется доступ к самому времени выполнения Service Fabric, которое проявляется в различных формах: [переменные среды,](service-fabric-environment-variables-reference.md) указывающие на пути файла на хостах, соответствующие файлам приложения, и конечная точка связи между процессами, которая принимает запросы, связанные с приложениями, и сертификат клиента, который Fabric ожидает, что приложение будет использовать для проверки подлинности. В случае, если служба сама не доверяет коду, желательно отключить этот доступ к времени выполнения SF- если это явно не необходимо. Доступ к времени выполнения удаляется с помощью следующего объявления в разделе Политики манифеста приложения: 
 
 ```xml
 <ServiceManifestImport>
@@ -267,8 +267,8 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Создайте кластер на виртуальных машинах или компьютерах под управлением Windows Server: [Service Fabric создания кластера для Windows Server](service-fabric-cluster-creation-for-windows-server.md).
-* Создание кластера на виртуальных машинах или компьютерах под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).
+* Создание кластера на вс-минах или компьютерах под управлением Windows Server: [создание кластера Service Fabric для Windows Server.](service-fabric-cluster-creation-for-windows-server.md)
+* Создайте кластер на vMs или компьютерах под управлением Linux: [Создание кластера Linux.](service-fabric-cluster-creation-via-portal.md)
 * Узнайте о [вариантах поддержки Service Fabric](service-fabric-support.md).
 
 [Image1]: ./media/service-fabric-best-practices/generate-common-name-cert-portal.png

@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Справочник по модулю PowerShell ADConnectivityTools | Документация Майкрософт'
+title: 'Azure AD Connect: справочник по модулю PowerShell ADConnectivityTools | Документация Майкрософт'
 description: Этот документ содержит справочные сведения о модуле PowerShell ADConnectivityTools.psm1.
 author: billmath
 manager: daveba
@@ -11,13 +11,13 @@ ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d6b90ff82601acca1249c7d8c353944e39e89f95
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "66473785"
 ---
-# <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADConnectivityTools
+# <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADConnectivityTools
 
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADConnectivityTools.psm1, который входит в состав Azure AD Connect.
 
@@ -27,16 +27,16 @@ ms.locfileid: "66473785"
 
 Обнаруживает проблемы локальной службы DNS.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Выполняет тесты подключения к локальной службе DNS.
-Чтобы настроить соединитель Active Directory, пользователь должен иметь оба всем имя для леса, они пытается подключиться к также как и контроллеры домена, связанные с указанным лесом.
+Для настройки разъема Active Directory пользователь должен иметь разрешение как имени для леса, к которому он пытается подключиться, так и в контроллерах домена, связанных с этим лесом.
 
 ### <a name="examples"></a>Примеры
 
@@ -52,7 +52,7 @@ Confirm-DnsConnectivity -Forest "TEST.CONTOSO.COM" -DCs "MYDC1.CONTOSO.COM","MYD
 Confirm-DnsConnectivity -Forest "TEST.CONTOSO.COM"
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 
@@ -114,13 +114,13 @@ Accept wildcard characters: False
 
 Определяет, существует ли указанный лес.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Confirm-ForestExists [-Forest] <String> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Запрашивает DNS-сервер для IP-адресов, связанных с лесом.
 
@@ -132,7 +132,7 @@ Confirm-ForestExists [-Forest] <String> [<CommonParameters>]
 Confirm-TargetsAreReachable -Forest "TEST.CONTOSO.COM"
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 
 Проверяет функциональный уровень леса AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="samaccount"></a>SamAccount
 
@@ -175,7 +175,7 @@ Confirm-FunctionalLevel -Forest <String> [-RunWithCurrentlyLoggedInUserCredentia
 Confirm-FunctionalLevel -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Проверяет, равен или превышает ли функциональный уровень леса AD заданное значение MinAdForestVersion (WindowsServer2003).
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -200,7 +200,7 @@ Confirm-FunctionalLevel -Forest "test.contoso.com" -RunWithCurrentlyLoggedInUser
 Confirm-FunctionalLevel -ForestFQDN $ForestFQDN -RunWithCurrentlyLoggedInUserCredentials -Verbose
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 
@@ -262,13 +262,13 @@ Accept wildcard characters: False
 
 Выявляет наличие проблем с локальным сетевым подключением.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Confirm-NetworkConnectivity [-DCs] <Array> [-SkipDnsPort] [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Выполняет проверку локального сетевого подключения.
 
@@ -289,7 +289,7 @@ Confirm-NetworkConnectivity -SkipDnsPort -DCs "MYDC1.CONTOSO.COM","MYDC2.CONTOSO
 Confirm-NetworkConnectivity -DCs "MYDC1.CONTOSO.COM","MYDC2.CONTOSO.COM" -Verbose
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-dcs"></a>-DCs
 
@@ -309,8 +309,8 @@ Accept wildcard characters: False
 
 #### <a name="-skipdnsport"></a>-SkipDnsPort
 
-Если пользователь не использует службы DNS, предоставляемые на сайте AD / входа в систему контроллера домена, то можете пропустить проверки порт 53.
-Пользователь по-прежнему должен быть способен разрешить _.ldap._tcp. \<forestfqdn\> в конфигурации соединителя Active Directory для успешного выполнения.
+Если пользователь не использует DNS-сервисы, предоставляемые AD Site / Logon DC, то они могут захотеть пропустить проверку порта 53.
+Пользователь должен быть в состоянии решить вопрос с _tcp. \<forestfqdn\> для того, чтобы конфигурация active Directory Connector увенчалась успехом.
 
 ```yml
 Type: SwitchParameter
@@ -352,13 +352,13 @@ Accept wildcard characters: False
 
 Определяет, доступен ли указанный лес и связанные с ним контроллеры домена.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Confirm-TargetsAreReachable [-Forest] <String> [-DCs] <Array> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Выполняет проверки связи (может ли компьютер обратиться к целевому компьютеру через сеть или Интернет).
 
@@ -376,7 +376,7 @@ Confirm-TargetsAreReachable -Forest "TEST.CONTOSO.COM" -DCs "MYDC1.CONTOSO.COM",
 Confirm-TargetsAreReachable -Forest "TEST.CONTOSO.COM"
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 
@@ -421,7 +421,7 @@ Accept wildcard characters: False
 
 Проверяет, доступны ли домены в лесу, чье полное доменное имя было получено.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="samaccount"></a>SamAccount
 
@@ -435,7 +435,7 @@ Confirm-ValidDomains [-Forest <String>] [-RunWithCurrentlyLoggedInUserCredential
 Confirm-ValidDomains -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Проверяет, доступны ли все домены в лесу, чье полное доменное имя было получено. Для этого выполняется попытка получить значения DomainGuid и DomainDN.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -460,7 +460,7 @@ Confirm-ValidDomains -Forest "test.contoso.com" -RunWithCurrentlyLoggedInUserCre
 Confirm-ValidDomains -ForestFQDN $ForestFQDN -RunWithCurrentlyLoggedInUserCredentials -Verbose
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 
@@ -521,13 +521,13 @@ Accept wildcard characters: False
 
 Проверяет, имеет ли пользователь учетные данные администратора предприятия.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Confirm-ValidEnterpriseAdminCredentials [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Определяет, имеет ли указанный пользователь учетные данные администратора предприятия.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -546,7 +546,7 @@ Confirm-ValidEnterpriseAdminCredentials -DomainName test.contoso.com -Verbose
 Confirm-ValidEnterpriseAdminCredentials -RunWithCurrentlyLoggedInUserCredentials -Verbose
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-runwithcurrentlyloggedinusercredentials"></a>-RunWithCurrentlyLoggedInUserCredentials
 
@@ -575,14 +575,14 @@ Accept wildcard characters: False
 
 Извлекает значение DomainFQDN для комбинации учетной записи и пароля.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-DomainFQDNData [[-DomainFQDNDataType] <String>] [-RunWithCurrentlyLoggedInUserCredentials]
  [-ReturnExceptionOnError] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Пытается получить объект domainFQDN из предоставленных учетных данных.
 Если объект domainFQDN является допустимым, будет возвращено значение DomainFQDNName или RootDomainName, в зависимости от выбора пользователя.
@@ -602,7 +602,7 @@ Get-DomainFQDNData -DomainFQDNDataType DomainFQDNName -Verbose
 Get-DomainFQDNData -DomainFQDNDataType RootDomainName -RunWithCurrentlyLoggedInUserCredentials
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-domainfqdndatatype"></a>-DomainFQDNDataType
 
@@ -664,13 +664,13 @@ Accept wildcard characters: False
 
 Извлекает значение ForestFQDN для комбинации учетной записи и пароля.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ForestFQDN [-Forest] <String> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Пытается получить ForestFQDN из предоставленных учетных данных.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -689,7 +689,7 @@ Get-ForestFQDN -Forest CONTOSO.MICROSOFT.COM -Verbose
 Get-ForestFQDN -Forest CONTOSO.MICROSOFT.COM -RunWithCurrentlyLoggedInUserCredentials -Verbose
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 
@@ -734,14 +734,14 @@ Accept wildcard characters: False
 
 Основная функция.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Start-ConnectivityValidation [-Forest] <String> [-AutoCreateConnectorAccount] <Boolean> [[-UserName] <String>]
  [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Выполняет все доступные механизмы, которые проверяют допустимость учетных данных AD.
 
@@ -753,7 +753,7 @@ Start-ConnectivityValidation [-Forest] <String> [-AutoCreateConnectorAccount] <B
 Start-ConnectivityValidation -Forest "test.contoso.com" -AutoCreateConnectorAccount $True -Verbose
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 
@@ -773,9 +773,9 @@ Accept wildcard characters: False
 
 #### <a name="-autocreateconnectoraccount"></a>-AutoCreateConnectorAccount
 
-Для пользовательской установки: флаг со значением $True, если пользователь выбрал "Создайте учетную запись AD" в окне создания учетной записи леса AD в мастере AAD Connect.
+Для пользовательской установки: флаг, имеющий значение $True, если пользователь выбрал "Создайте учетную запись AD" в окне создания учетной записи леса AD в мастере AAD Connect.
 Имеет значение $False, если пользователь выбрал "Использовать существующую учетную запись AD".
-Для экспресс-установки: для этой переменной должно быть задано значение $True.
+Для экспресс-установки: значение этой переменной должно быть $True.
 
 ```yml
 Type: Boolean
@@ -816,7 +816,7 @@ Accept wildcard characters: False
 
 Основная функция для проверки сетевых подключений.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Start-NetworkConnectivityDiagnosisTools [[-Forest] <String>] [-Credentials] <PSCredential>
@@ -824,7 +824,7 @@ Start-NetworkConnectivityDiagnosisTools [[-Forest] <String>] [-Credentials] <PSC
  [-ValidCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 
 Выполняет проверку локального сетевого подключения.
 
@@ -842,7 +842,7 @@ Start-NetworkConnectivityDiagnosisTools -Forest "TEST.CONTOSO.COM"
 Start-NetworkConnectivityDiagnosisTools -Forest "TEST.CONTOSO.COM" -DCs "DC1.TEST.CONTOSO.COM", "DC2.TEST.CONTOSO.COM"
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-forest"></a>-Forest
 

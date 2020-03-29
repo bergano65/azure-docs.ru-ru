@@ -1,5 +1,5 @@
 ---
-title: Лямбда-архитектура с Azure Cosmos DB и Apache Spark
+title: Архитектура Lambda с Azure Cosmos DB и Apache Spark
 description: В этой статье описывается, как реализовать лямбда-архитектуру, используя Azure Cosmos DB, HDInsight и Spark.
 ms.service: cosmos-db
 author: tknandu
@@ -7,10 +7,10 @@ ms.author: ramkris
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: 68ce06d8a2904bf99f58a53817444b2992b23501
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76719744"
 ---
 # <a name="azure-cosmos-db-implement-a-lambda-architecture-on-the-azure-platform"></a>Azure Cosmos DB: реализация лямбда-архитектуры на платформе Azure 
@@ -32,7 +32,7 @@ ms.locfileid: "76719744"
 
 Источник: http://lambda-architecture.net/
 
-Основные компоненты лямбда-архитектуры изображены на предыдущей схеме, согласно источнику [http://lambda-architecture.net](http://lambda-architecture.net/).
+Основные принципы архитектуры лямбды описаны [http://lambda-architecture.net](http://lambda-architecture.net/)в предыдущей диаграмме как в .
 
  1. Все **данные** отправляются *и* на *пакетный уровень*, и на *уровень ускорения*.
  2. **Пакетный уровень** предполагает набор основных данных (неизменяемый набор необработанных данных только для добавления) и предварительно вычисляет пакетные представления.
@@ -42,7 +42,7 @@ ms.locfileid: "76719744"
 
 Дочитав статью, вы узнаете, как реализовать эту архитектуру, используя только следующее:
 
-* Контейнеры Azure Cosmos
+* Контейнер Azure Cosmos (ы)
 * кластер HDInsight (Apache Spark 2.1);
 * соединитель Spark [1.0](https://search.maven.org/artifact/com.microsoft.azure/azure-cosmosdb-spark_2.1.0_2.11/1.2.6/jar).
 
@@ -56,7 +56,7 @@ ms.locfileid: "76719744"
  1. Все **данные** отправляются *только* в Azure Cosmos DB, что исключает проблемы многократного приведения.
  2. **Пакетный уровень** предполагает набор основных данных (неизменяемый набор необработанных данных только для добавления) и предварительно вычисляет пакетные представления.
  3. **Уровень обслуживания** рассматривается в следующем разделе.
- 4. На **уровне ускорения**  HDInsight (Apache Spark) считывает канал изменений Azure Cosmos DB. Это позволяет сохранить данные, а также запрашивать и одновременно обрабатывать их.
+ 4. На **уровне ускорения ** HDInsight (Apache Spark) считывает канал изменений Azure Cosmos DB. Это позволяет сохранить данные, а также запрашивать и одновременно обрабатывать их.
  5. Вы можете объединить результаты пакетных представлений и представлений в режиме реального времени, чтобы получить ответы на все запросы, или проверить их по отдельности.
  
 ### <a name="code-example-spark-structured-streaming-to-an-azure-cosmos-db-change-feed"></a>Пример кода: структурированная потоковая передача Spark в канал изменений Azure Cosmos DB
@@ -91,7 +91,7 @@ var streamData = spark.readStream.format(classOf[CosmosDBSourceProvider].getName
 val query = streamData.withColumn("countcol", streamData.col("id").substr(0, 0)).groupBy("countcol").count().writeStream.outputMode("complete").format("console").start()
 ```
 
-Целые примеры кода см. по адресу [azure-cosmosdb-spark/lambda/samples](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda), в том числе:
+Для получения [полных](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda)образцов кода см.
 * [Streaming Query from Cosmos DB Change Feed.scala](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Streaming%20Query%20from%20Cosmos%20DB%20Change%20Feed.scala);
 * [Streaming Tags Query from Cosmos DB Change Feed.scala](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Streaming%20Tags%20Query%20from%20Cosmos%20DB%20Change%20Feed%20.scala).
 
@@ -114,7 +114,7 @@ val query = streamData.withColumn("countcol", streamData.col("id").substr(0, 0))
 
  1. Все **данные** отправляются в Azure Cosmos DB, чтобы исключить проблемы многократного приведения.
  2. **Пакетный уровень** предполагает набор основных данных (неизменяемый набор необработанных данных только для добавления), хранимый в Azure Cosmos DB. С помощью HDI Spark вы можете предварительно вычислить агрегаты, которые следует хранить в вычисляемых пакетных представлениях.
- 3. **Уровень обслуживания** — это база данных Azure Cosmos с коллекциями для главного набора данных и расчетного представления пакетной службы.
+ 3. **Сбивающий слоим** — это база данных Azure Cosmos с коллекциями для основного набора данных и вычисленного пакетного представления.
  4. **Уровень ускорения** рассматривается дальше в этой статье.
  5. Вы можете объединить результаты пакетных представлений и представлений в режиме реального времени, чтобы получить ответы на все запросы, или же проверить их по отдельности.
 
@@ -161,7 +161,7 @@ limit 10
 
 ![График, на котором показано количество твитов на хэштег](./media/lambda-architecture/lambda-architecture-batch-hashtags-bar-chart.png)
 
-Теперь, когда есть запрос, сохраним его в коллекции, используя соединитель Spark, чтобы поместить выходные данные в другую коллекцию.  В этом примере для демонстрации подключения используется Scala. Как и в предыдущем примере, создайте подключение конфигурации, чтобы сохранить Apache Spark кадр данных в другом контейнере Azure Cosmos.
+Теперь, когда есть запрос, сохраним его в коллекции, используя соединитель Spark, чтобы поместить выходные данные в другую коллекцию.  В этом примере для демонстрации подключения используется Scala. Как и в предыдущем примере, создайте соединение конфигурации для сохранения системы Apache Spark DataFrame в другом контейнере Azure Cosmos.
 
 ```
 val writeConfigMap = Map(
@@ -192,20 +192,20 @@ val tweets_bytags = spark.sql("select hashtags.text as hashtags, count(distinct 
 tweets_bytags.write.mode(SaveMode.Overwrite).cosmosDB(writeConfig)
 ```
 
-Эта последняя инструкция теперь сохранила кадр данных Spark в новый контейнер Azure Cosmos. с точки зрения лямбда-архитектуры это **представление пакетной** службы на **уровне обслуживания**.
+Это последнее утверждение сохранило ваш Spark DataFrame в новом контейнере Azure Cosmos; с точки зрения архитектуры lambda, это ваш **пакет зрения** в **выступающей слой.**
  
 #### <a name="resources"></a>Ресурсы
 
 Целые примеры кода см. по адресу [azure-cosmosdb-spark/lambda/samples](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda), в том числе:
-* Lambda Architecture Rearchitected - Batch Layer (Измененная лямбда-архитектура. Пакетный уровень) [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.html) | [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.ipynb)
-* Lambda Architecture Rearchitected - Batch to Serving Layer (Измененная лямбда-архитектура. Пакетный уровень — уровень обслуживания) [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.html) | [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.ipynb)
+* Lambda Архитектура Rearchitected - Пакет слой [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.html) | [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.ipynb)
+* Lambda Архитектура Rearchitected - пакет для обслуживания слоя [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.html) | [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.ipynb)
 
 ## <a name="speed-layer"></a>Уровень ускорения
 Как указано выше, применение библиотеки канала изменений Azure Cosmos DB упрощает выполнение операций между уровнем пакетов и ускорения. В этой архитектуре используйте Apache Spark (с помощью HDInsight), чтобы выполнять *структурированную потоковую передачу* запросов к данным. Вы также можете временно сохранять результаты запросов структурированной потоковой передачи, чтобы к этим данным был доступ из других систем.
 
 ![Схема, на которой выделен уровень ускорения в лямбда-архитектуре](./media/lambda-architecture/lambda-architecture-speed.png)
 
-Для этого создайте отдельный контейнер Azure Cosmos, чтобы сохранить результаты запросов структурированной потоковой передачи.  Таким образом сведения будут доступны для других систем, а не только для Apache Spark. Кроме того, с помощью функции срока жизни (TTL) в Cosmos DB можно настроить автоматическое удаление документов по прошествии определенного времени.  Дополнительные сведения о функции Azure Cosmos DB TTL см. в разделе [Автоматическое окончание срока действия данных в контейнерах Azure Cosmos с сроком жизни](time-to-live.md) .
+Для этого создайте отдельный контейнер Azure Cosmos для сохранения результатов структурированных потоковых запросов.  Таким образом сведения будут доступны для других систем, а не только для Apache Spark. Кроме того, с помощью функции срока жизни (TTL) в Cosmos DB можно настроить автоматическое удаление документов по прошествии определенного времени.  Для получения дополнительной информации о функции Azure [Expire data in Azure Cosmos containers automatically with time to live](time-to-live.md) Cosmos DB TTL см.
 
 ```
 // Import Libraries
@@ -259,21 +259,21 @@ var streamingQuery = streamingQueryWriter.start()
 ### <a name="resources"></a>Ресурсы
 
 * **Новые данные** — [канал потоковой передачи из Twitter в CosmosDB](https://github.com/tknandu/TwitterCosmosDBFeed), представляющий собой механизм для принудительной отправки новых данных в Azure Cosmos DB.
-* **Пакетный уровень** — *основной набор данных* (неизменяемых необработанных данных только для добавления) и возможность предварительно вычислять пакетные представления данных, передаваемых на **уровень обслуживания** .
+* **Пакетный уровень** — *основной набор данных* (неизменяемых необработанных данных только для добавления) и возможность предварительно вычислять пакетные представления данных, передаваемых на **уровень обслуживания **.
    * Записная книжка **Lambda Architecture Rearchitected - Batch Layer** (Измененная лямбда-архитектура. Пакетный уровень) [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.ipynb) | [html](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.html) запрашивает *набор основных данных* для пакетных представлений.
-* **Уровень обслуживания.** Предполагает предварительно вычисляемые данные, которые отображаются в пакетных представлениях (например, агрегаты, определенные срезы и т. д.), для быстрого выполнения запросов.
+* **** Уровень обслуживания.**** Предполагает предварительно вычисляемые данные, которые отображаются в пакетных представлениях (например, агрегаты, определенные срезы и т. д.), для быстрого выполнения запросов.
   * Записная книжка **Lambda Architecture Rearchitected - Batch to Serving Layer** (Измененная лямбда-архитектура. Пакетный уровень — уровень обслуживания) [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.ipynb) | [html](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.html) обеспечивает отправку пакетных данных на уровень обслуживания, т. е. Spark запрашивает коллекцию твитов, обрабатывает ее и сохраняет в другой коллекции (в вычисляемом пакете).
-    * **Уровень ускорения.** Предусматривает использование Spark канала изменений Azure Cosmos DB для чтения и немедленного реагирования. Данные можно также сохранить в *вычисляемом RT*, чтобы другие системы могли запросить обработанные данные в режиме реального времени, а не обрабатывать их.
+    * **** Уровень ускорения.**** Предусматривает использование Spark канала изменений Azure Cosmos DB для чтения и немедленного реагирования. Данные можно также сохранить в *вычисляемом RT*, чтобы другие системы могли запросить обработанные данные в режиме реального времени, а не обрабатывать их.
   * [Streaming Query from Cosmos DB Change Feed](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Streaming%20Query%20from%20Cosmos%20DB%20Change%20Feed.scala) (Потоковая передача запроса из канала изменений Cosmos DB) — сценарий Scala, предусматривающий выполнение запросов потоковой передачи из канала изменений Azure Cosmos DB, чтобы подсчитывать число интервалов в оболочке Spark.
   * [Streaming Tags Query from Cosmos DB Change Feed](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Streaming%20Tags%20Query%20from%20Cosmos%20DB%20Change%20Feed%20.scala) (Потоковая передача тегов из канала изменений Cosmos DB.scala) — сценарий Scala, предусматривающий выполнение запросов потоковой передачи из канала изменений Azure Cosmos DB, чтобы подсчитывать число тегов в оболочке Spark.
   
 ## <a name="next-steps"></a>Дальнейшие действия
 Скачайте соединитель Azure Cosmos DB для Spark из репозитория [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark) на сайте GitHub и изучите дополнительные ресурсы в этом репозитории:
-* [Лямбда-архитектура](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda)
-* [Примеры распределенных агрегирований](https://github.com/Azure/azure-documentdb-spark/wiki/Aggregations-Examples)
-* [Примеры скриптов и записных книжек](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples)
+* [Архитектура Ламбда](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda)
+* [Примеры распределенных агрегаций](https://github.com/Azure/azure-documentdb-spark/wiki/Aggregations-Examples)
+* [Образцы скриптов и тетрадей](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples)
 * [Демонстрационные материалы по структурированной потоковой передаче](https://github.com/Azure/azure-cosmosdb-spark/wiki/Structured-Stream-demos)
 * [Демонстрационные материалы по каналу изменений](https://github.com/Azure/azure-cosmosdb-spark/wiki/Change-Feed-demos)
 * [Stream Processing Changes using Azure Cosmos DB Change Feed and Apache Spark](https://github.com/Azure/azure-cosmosdb-spark/wiki/Stream-Processing-Changes-using-Azure-Cosmos-DB-Change-Feed-and-Apache-Spark) (Потоковая обработка изменений с использованием канала изменений Azure Cosmos DB и Apache Spark).
 
-Дополнительные сведения см. также в [руководстве по SQL, таблицам и наборам данных Apache Spark](https://spark.apache.org/docs/latest/sql-programming-guide.html) и в статье [Начало работы. Создание кластера Apache Spark в Azure HDInsight и выполнение интерактивных запросов с помощью SQL Spark](../hdinsight/spark/apache-spark-jupyter-spark-sql.md).
+Вы также можете просмотреть [Apache Spark S'L, DataFrames, и Datasets Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html) и [Apache Spark на статье Azure HDInsight.](../hdinsight/spark/apache-spark-jupyter-spark-sql.md)

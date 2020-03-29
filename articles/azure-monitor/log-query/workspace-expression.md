@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 09/10/2018
 ms.openlocfilehash: 255888acf5da6149b6a964b23ed038b99715481c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75364957"
 ---
 # <a name="workspace-expression-in-azure-monitor-log-query"></a>Выражение workspace() в запросе журнала Azure Monitor
@@ -26,7 +26,7 @@ ms.locfileid: "75364957"
 
 - *Идентификатор*: определяет рабочую область с помощью одного из форматов в следующей таблице.
 
-| Идентификатор | Description | Пример
+| Идентификатор | Описание | Пример
 |:---|:---|:---|
 | Имя ресурса | Понятное имя рабочей области (имя компонента). | workspace("contosoretail") |
 | Полное имя | Полное имя рабочей области в формате: subscriptionName/resourceGroup/componentName. | workspace('Contoso/ContosoResource/ContosoWorkspace') |
@@ -64,6 +64,6 @@ union
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. [выражение приложения](app-expression.md) для ссылки на приложение Application Insights.
+- Просмотрите [выражение приложения,](app-expression.md) чтобы отсылать к приложению Application Insights.
 - Подробнее о хранении данных Azure Monitor см. в статье [Анализ данных Log Analytics в Azure Monitor](log-query-overview.md).
 - Ознакомьтесь с полной документацией по [языку запросов Kusto](/azure/kusto/query/).

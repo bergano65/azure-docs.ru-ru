@@ -1,19 +1,19 @@
 ---
-title: Reliable Actors примечания о сериализации типов субъектов
+title: Надежные актеры заметки о сериализации типа актера
 description: В этой статье приведены сведения о базовых требованиях к определению сериализуемых классов, которые можно использовать для определения интерфейсов и состояний Reliable Actors в Service Fabric.
 author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 876c4f5f45ff6c81a53274cf32e8bebecc1acfce
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75349309"
 ---
 # <a name="notes-on-service-fabric-reliable-actors-type-serialization"></a>Примечания о сериализации типов надежных субъектов Service Fabric
-Аргументы всех методов, типы результатов задач, возвращаемых каждым методом в интерфейсе субъекта, и объекты, хранящиеся в диспетчере состояния субъекта, должны быть [сериализуемыми в контракт данных](/dotnet/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer). Это также относится к аргументам методов, определенных в [интерфейсах событий субъекта](service-fabric-reliable-actors-events.md). (Методы интерфейсов для событий субъектов всегда возвращают значение void.)
+Аргументы всех методов, типы результатов задач, возвращенных каждым методом в интерфейсе субъекта, и объекты, хранящиеся в государственном менеджере субъекта, должны быть [контрактом данных серийно.](/dotnet/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer) Это также относится к аргументам методов, определенных в [интерфейсах событий субъекта](service-fabric-reliable-actors-events.md). (Методы интерфейсов для событий субъектов всегда возвращают значение void.)
 
 ## <a name="custom-data-types"></a>Пользовательские типы данных
 В этом примере приведенный ниже интерфейс субъекта определяет метод, возвращающий пользовательский тип данных `VoicemailBox`.
@@ -73,7 +73,7 @@ public class VoiceMailBoxActorImpl extends FabricActor implements VoicemailBoxAc
 * Объект передается между экземпляром субъекта и вызывающим объектом.
 * Объект сохраняется в диспетчере состояния, где он сохраняется на диске и реплицируется на другие узлы.
 
-Платформа Reliable Actors использует сериализацию DataContract. Поэтому пользовательские объекты данных и их элементы должны быть аннотированы атрибутами **DataContract** и **DataMember**, соответственно.
+Платформа Reliable Actors использует сериализацию DataContract. Таким образом, пользовательские объекты данных и их члены должны быть аннотированы атрибутами **DataContract** и **DataMember** соответственно.
 
 ```csharp
 [DataContract]
@@ -137,9 +137,9 @@ public class VoicemailBox implements Serializable
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Жизненный цикл субъектов и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
+* [Актер жизненный цикл и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Таймеры и напоминания субъекта](service-fabric-reliable-actors-timers-reminders.md)
-* [События субъекта](service-fabric-reliable-actors-events.md)
-* [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)
+* [Актер события](service-fabric-reliable-actors-events.md)
+* [Ретрансция актера](service-fabric-reliable-actors-reentrancy.md)
 * [Полиморфизм субъекта и объектно-ориентированные шаблоны проектирования](service-fabric-reliable-actors-polymorphism.md)
 * [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)

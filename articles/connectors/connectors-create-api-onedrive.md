@@ -1,6 +1,6 @@
 ---
-title: Доступ к файлам и управление ими в Microsoft OneDrive
-description: Отправка файлов в OneDrive и управление ими путем создания автоматических рабочих процессов в Azure Logic Apps
+title: Доступ и управление файлами в Microsoft OneDrive
+description: Загрузка и управление файлами в OneDrive путем создания автоматизированных рабочих процессов в приложениях логики Azure
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
@@ -8,15 +8,15 @@ ms.topic: article
 ms.date: 10/18/2016
 tags: connectors
 ms.openlocfilehash: edfbf090c3409d583cda6fd2c9957c37be5dfb7a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75378438"
 ---
-# <a name="access-and-manage-files-in-onedrive-connector-by-using-azure-logic-apps"></a>Доступ к файлам в соединители OneDrive и управление ими с помощью Azure Logic Apps
+# <a name="access-and-manage-files-in-onedrive-connector-by-using-azure-logic-apps"></a>Доступ и управление файлами в разъеме OneDrive с помощью приложений логики Azure
 
-С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [соединителя OneDrive](/connectors/onedriveconnector/)можно создавать автоматизированные задачи и рабочие процессы для управления файлами, включая отправку, получение, удаление файлов и многое другое. С помощью OneDrive можно выполнять следующие задачи:
+Используя [приложения Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [разъем OneDrive,](/connectors/onedriveconnector/)вы можете создавать автоматизированные задачи и рабочие процессы для управления файлами, включая загрузку, загрузку, удаление файлов и многое другое. С Помощью OneDrive вы можете выполнять следующие задачи:
 
 * создавать рабочие процессы, сохраняя файлы в OneDrive, или обновлять имеющиеся файлы; 
 * использовать триггеры для запуска рабочего процесса при создании или обновлении файлов в OneDrive;
@@ -38,7 +38,7 @@ ms.locfileid: "75378438"
 
 Триггер — это событие, которое можно использовать для запуска рабочего процесса, определенного в приложении логики. Триггеры опрашивают службу с определенным интервалом и частотой. [Дополнительные сведения о триггерах](../logic-apps/logic-apps-overview.md#logic-app-concepts).
 
-1. В конструкторе приложений логики введите `onedrive`, чтобы получить список триггеров:  
+1. В Logic App Designer `onedrive` введите, чтобы получить список триггеров:  
 
    ![](./media/connectors-create-api-onedrive/onedrive-1.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "75378438"
 
 ## <a name="use-an-action"></a>Использование действий
 
-Действие — это операция, выполняемая рабочим процессом, определенным в приложении логики. [Дополнительные сведения о действиях](../logic-apps/logic-apps-overview.md#logic-app-concepts).
+Действие — это операция, выполняемая рабочим процессом, определенным в приложении логики. [Подробнее об действиях](../logic-apps/logic-apps-overview.md#logic-app-concepts).
 
 1. Щелкните знак "плюс". Отобразятся следующие команды: **Добавить действие**, **Добавить условие** или **Еще**.
 
@@ -66,7 +66,7 @@ ms.locfileid: "75378438"
 
 2. Выберите **Добавить действие**.
 
-3. В поле поиска введите `onedrive`, чтобы получить список всех доступных действий.
+3. В поле поиска `onedrive` введите, чтобы получить список всех доступных действий.
 
    ![](./media/connectors-create-api-onedrive/onedrive-actions.png) 
 
@@ -74,9 +74,9 @@ ms.locfileid: "75378438"
 
    ![](./media/connectors-create-api-onedrive/sample-action.png)
 
-   Если появится запрос на ввод сведений о подключении, введите сведения для [создания подключения, как описано](#create-the-connection) в этом разделе.
+   Если вам предложена информация о подключении, введите сведения, чтобы [создать соединение, описанное](#create-the-connection) в этой теме.
 
-   В этом примере вы создадите новый файл в папке OneDrive. Чтобы создать файл OneDrive, можно использовать выходные данные другого триггера. Например, добавьте триггер Office 365 Outlook *When a new email arrives* (При получении новой почты). Затем, чтобы создать файл в OneDrive, добавьте действие OneDrive *Создать файл*, для которого заданы поля "Вложения" и "Тип содержимого" в ForEach.
+   В этом примере создается новый файл в папке OneDrive. Чтобы создать файл OneDrive, можно использовать выходные данные другого триггера. Например, добавьте триггер Office 365 Outlook *When a new email arrives* (При получении новой почты). Затем, чтобы создать файл в OneDrive, добавьте действие OneDrive *Создать файл*, для которого заданы поля "Вложения" и "Тип содержимого" в ForEach.
 
    ![](./media/connectors-create-api-onedrive/foreach-action.png)
 
@@ -88,4 +88,4 @@ ms.locfileid: "75378438"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Список соединителей](apis-list.md)
+* [Соединители для Azure Logic Apps](apis-list.md)

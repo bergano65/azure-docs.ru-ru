@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 03/19/2019
 ms.topic: conceptual
 ms.openlocfilehash: b17a0403a3b2a3ff8c3586ed26a4b833db54922d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75365943"
 ---
 # <a name="my-first-python-runbook"></a>Мой первый модуль Runbook Python
@@ -23,9 +23,9 @@ ms.locfileid: "75365943"
 В этом руководстве описана процедура создания [модуля Runbook Python](automation-runbook-types.md#python-runbooks) в службе автоматизации Azure. Для начала вы протестируете и опубликуете простой модуль runbook. Затем мы изменим модуль runbook, настроив его для фактического управления ресурсами Azure (в нашем примере это запуск виртуальной машины Azure). Затем вы сделаете этот модуль runbook еще надежнее, добавив параметры runbook.
 
 > [!NOTE]
-> Использование веб-перехватчика для запуска Runbook Python не поддерживается.
+> Использование веб-крючка для запуска runbook Python не поддерживается.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
@@ -77,7 +77,7 @@ print("Hello World!")
 1. Щелкните **Опубликовать**, чтобы опубликовать модуль Runbook, а затем нажмите кнопку **Да** в появившемся запросе.
 1. Если сейчас прокрутить экран влево, чтобы просмотреть runbook на панели **Модули Runbook**, для параметра **Состояние создания** отобразится значение **Опубликовано**.
 1. Прокрутите экран вправо до области **MyFirstRunbook-Python**.
-   Параметры в верхней части экрана позволяют запустить модуль Runbook, просмотреть модуль Runbook или запланировать его запуск в течение некоторого времени в будущем.
+   Варианты в верхней части позволяют нам начать runbook, просмотреть runbook, или запланировать его, чтобы начать в какой-то момент в будущем.
 2. Вам нужно запустить модуль runbook, поэтому щелкните **Запустить**, а затем, когда откроется колонка "Запуск Runbook", нажмите кнопку **ОК**.
 3. Откроется область заданий с созданным заданием runbook. Эту область можно закрыть, но пока оставьте ее открытой, чтобы следить за ходом выполнения задания.
 1. Состояние задания отображается в поле **Сводка по заданию** и отражает состояния, которые вы наблюдали при тестировании модуля runbook.
@@ -204,7 +204,7 @@ async_vm_start.wait()
 
 ## <a name="error-handling-in-python"></a>Обработка ошибок в Python
 
-Вы также можете использовать следующие соглашения для получения различных потоков из модулей Runbook Python, включая **предупреждения**, **ошибки**и потоки **отладки** .
+Вы также можете использовать следующие конвенции для извлечения различных потоков из ваших runbooks Python, в ключая **ВНИМАНИЕ,** **ERROR**и **потоки DEBUG.**
 
 ```python
 print("Hello World output") 
@@ -214,7 +214,7 @@ print("DEBUG: - Hello world debug")
 print("VERBOSE: - Hello world verbose")
 ```
 
-В следующем примере показано это соглашение, используемое в блоке `try...except`.
+Ниже приводится следующий `try...except` пример, в каком-то блоке показана эта конвенция.
 
 ```python
 try:
@@ -224,13 +224,13 @@ except Exception as detail:
 ```
 
 > [!NOTE]
-> **sys. stderr** не поддерживается в службе автоматизации Azure.
+> **sys.stderr** не поддерживается в Azure Automation.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о том, как начать работу с модулями Runbook, см. в статье [Мой первый модуль Runbook PowerShell](automation-first-runbook-textual-powershell.md).
 - Чтобы начать работу с графическими модулями Runbook, см. инструкции в статье [Первый графический Runbook](automation-first-runbook-graphical.md).
-- Чтобы приступить к работе с модулями Runbook рабочих процессов PowerShell, обратитесь к статье [Мой первый модуль Runbook рабочего процесса PowerShell](automation-first-runbook-textual.md)
+- Чтобы начать работу с runbooks рабочего процесса PowerShell, [см.](automation-first-runbook-textual.md)
 - Чтобы получить дополнительные сведения о типах модулей Runbook, их преимуществах и ограничениях, обратитесь к статье [Типы модулей Runbook в службе автоматизации Azure](automation-runbook-types.md)
-- Дополнительные сведения о разработке для Azure с использованием Python см. в статье [Azure для разработчиков Python](/azure/python/)
-- Примеры модулей Runbook Python 2 см. на странице [службы автоматизации Azure на GitHub](https://github.com/azureautomation/runbooks/tree/master/Utility/Python)
+- Чтобы узнать о разработке для [Azure for Python developers](/azure/python/) Azure с Помощью Python, см.
+- Для просмотра примера runbooks [Azure Automation GitHub](https://github.com/azureautomation/runbooks/tree/master/Utility/Python) Python 2 см.

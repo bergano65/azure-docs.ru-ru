@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9311c1060b953e87f163cb482db14cdd43f50d3d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60242107"
 ---
 # <a name="user-privacy-and-azure-ad-seamless-single-sign-on"></a>Конфиденциальность пользователей и простой единый вход Azure AD
@@ -46,7 +46,7 @@ ms.locfileid: "60242107"
 Проверьте содержимое папки **%ProgramData%\AADConnect** и удалите содержимое журнала трассировки (файлы **trace-\*.log**) из этой папке в течение 48 часов после установки или обновления Azure AD Connect либо изменения конфигурации простого единого входа, так как при этих действиях создаются данные, на которые распространяются требования GDPR.
 
 >[!IMPORTANT]
->Не удаляйте файл **PersistedState.xml** в этой папке — он используется для сохранения состояния предыдущей установки Azure AD Connect, а также после установки обновления. В этом файле никогда не хранятся личные данные о пользователях, и его не следует удалять.
+>Не удаляйте файл **PersistedState.xml** из этой папки. Он нужен для хранения состояния предыдущей установки Azure AD Connect и используется при установке обновлений. В этом файле никогда не хранятся личные данные о пользователях, и его не следует удалять.
 
 Вы можете просмотреть и удалить файлы журналов трассировки с помощью проводника Windows или использовать приведенный ниже скрипт PowerShell.
 
@@ -69,5 +69,5 @@ Foreach ($file in $Files) {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр политики конфиденциальности корпорации Майкрософт в центре управления безопасностью](https://www.microsoft.com/trustcenter)
-  - [**Устранение неполадок**](tshoot-connect-sso.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
+  - [**Troubleshoot**](tshoot-connect-sso.md) - Узнайте, как решить общие проблемы с функцией.
   - [**UserVoice**](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Отправка запросов новых функций.

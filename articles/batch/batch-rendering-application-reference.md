@@ -1,6 +1,6 @@
 ---
 title: Использование приложений для рендеринга в пакетной службе Azure
-description: Как использовать приложения для подготовки к просмотру с помощью пакетной службы Azure. В этой статье описано, как запустить каждое приложение для рендеринга.
+description: Как использовать приложения для визуализации с помощью Azure Batch. В этой статье описано, как запустить каждое приложение для рендеринга.
 services: batch
 ms.service: batch
 author: mscurrell
@@ -8,10 +8,10 @@ ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
 ms.openlocfilehash: dc0ce23c90a4ba6575ba26b37d97f94ba8fa1f63
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75390481"
 ---
 # <a name="rendering-applications"></a>Приложения для рендеринга
@@ -26,14 +26,14 @@ ms.locfileid: "75390481"
 
 Помимо средств для рендеринга, встроенных в 3ds Max, в файле сцены 3ds Max вы можете указать еще несколько таких средств, включенных в образы виртуальных машин для рендеринга:
 
-* Autodesk Arnold
+* Autodesk Arnold.
 * V-Ray от Chaos Group
 
 ### <a name="task-command-line"></a>Командная строка задачи
 
 Вызовите приложение `3dsmaxcmdio.exe` для выполнения рендеринга в узле пула в командной строке.  Это приложение размещается в том пути, откуда выполняется задача. Приложение `3dsmaxcmdio.exe` поддерживает те же параметры, что и приложение `3dsmaxcmd.exe`, как описано в [справочной документации по 3ds Max](https://help.autodesk.com/view/3DSMAX/2018/ENU/) (в разделе, посвященному рендерингу из командной строки).
 
-Пример.
+Пример:
 
 ```
 3dsmaxcmdio.exe -v:5 -rfw:0 -start:{0} -end:{0} -bitmapPath:"%AZ_BATCH_JOB_PREP_WORKING_DIR%\sceneassets\images" -outputName:dragon.jpg -w:1280 -h:720 "%AZ_BATCH_JOB_PREP_WORKING_DIR%\scenes\dragon.max"
@@ -54,7 +54,7 @@ ms.locfileid: "75390481"
 
 Помимо средств для рендеринга, встроенных в Maya, в файле сцены 3ds Max вы можете указать еще несколько таких средств, включенных в образы виртуальных машин для рендеринга:
 
-* Autodesk Arnold
+* Autodesk Arnold.
 * V-Ray от Chaos Group
 
 ### <a name="task-command-line"></a>Командная строка задачи

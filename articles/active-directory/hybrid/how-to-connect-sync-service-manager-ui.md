@@ -1,5 +1,5 @@
 ---
-title: 'Синхронизация Azure AD Connect: Пользовательский интерфейс Synchronization Service Manager | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: пользовательский интерфейс Synchronization Service Manager | Документация Майкрософт'
 description: Общие сведения о Synchronization Service Manager для Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c3a03b2320caa7facc04f589993907ab9b3a7703
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60381541"
 ---
 # <a name="introduction-to-the-azure-ad-connect-synchronization-service-manager-ui"></a>Общие сведения о пользовательском интерфейсе Synchronization Service Manager Azure AD Connect
@@ -39,4 +39,4 @@ ms.locfileid: "60381541"
 
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

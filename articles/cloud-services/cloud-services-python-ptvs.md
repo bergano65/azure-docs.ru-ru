@@ -1,6 +1,6 @@
 ---
 title: Начало работы с облачными службами Azure и Python | Документация Майкрософт
-description: Обзор использования средств Python для Visual Studio для создания облачных служб Azure, в том числе веб-ролей и рабочих ролей.
+description: Обзор использования Python Tools в Visual Studio для создания облачных служб Azure, включая веб-роли и рабочие роли.
 services: cloud-services
 documentationcenter: python
 author: tgore03
@@ -10,28 +10,28 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: tagore
 ms.openlocfilehash: b832831a2483b11a7a3c1942dd79065e8be65bf9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75360724"
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Использование веб-ролей и рабочих ролей Python с помощью средств Python для Visual Studio
 
 В этой статье представлен обзор способов использования веб-ролей и рабочих ролей Python с помощью [инструментов Python для Visual Studio][Python Tools for Visual Studio]. Узнайте, как с помощью Visual Studio создать и развернуть базовую облачную службу, которая использует Python.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * [Visual Studio 2013, 2015 или 2017](https://www.visualstudio.com/)
-* [Инструменты Python для Visual Studio][Python Tools for Visual Studio] (PTVS).
-* [Azure SDK Tools для VS 2013][Azure SDK Tools for VS 2013] или  
-[Azure SDK Tools для VS 2015][Azure SDK Tools for VS 2015] или  
-[Azure SDK Tools для VS 2017][Azure SDK Tools for VS 2017]
+* [Инструменты Python для Visual Studio][Python Tools for Visual Studio] (PTVS)
+* [Инструменты пакета SDK для Azure для VS 2013][Azure SDK Tools for VS 2013] или  
+[Инструменты пакета SDK для Azure для VS 2015][Azure SDK Tools for VS 2015] или  
+[Инструменты пакета SDK для Azure для VS 2017][Azure SDK Tools for VS 2017]
 * [Python 2.7 (32-разрядный)][Python 2.7 32-bit] или [Python 3.5 (32-разрядный)][Python 3.5 32-bit].
 
 [!INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## <a name="what-are-python-web-and-worker-roles"></a>Что такое веб-роли и рабочие роли Python?
-Azure предоставляет три модели вычислений для запуска приложений: [функции веб-приложений в службе приложений Azure][execution model-web sites], [виртуальные машины Azure][execution model-vms]и [облачные службы Azure][execution model-cloud services]. Все три модели поддерживают Python. Облачные службы, которые включают в себя веб-роли и рабочие роли, предоставляют *платформу как службу (PaaS)* . В рамках облачной службы веб-роль предоставляет выделенный веб-сервер IIS для размещения внешних веб-приложений, тогда как рабочая роль может выполнять асинхронные, долгосрочные или постоянные задачи, не зависящие от пользовательских действий и пользовательского ввода.
+Azure предоставляет три вычислительные модели запуска приложений: [веб-приложения в службе приложений Azure][execution model-web sites], [виртуальные машины Azure][execution model-vms] и [облачные службы Azure][execution model-cloud services]. Все три модели поддерживают Python. Облачные службы, которые включают в себя веб-роли и рабочие роли, предоставляют *платформу как службу (PaaS)*. В рамках облачной службы веб-роль предоставляет выделенный веб-сервер IIS для размещения внешних веб-приложений, тогда как рабочая роль может выполнять асинхронные, долгосрочные или постоянные задачи, не зависящие от пользовательских действий и пользовательского ввода.
 
 Дополнительные сведения см. в разделе [Информация об облачных службах].
 
@@ -332,9 +332,9 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 
 Дополнительные сведения об использовании служб Azure из веб-ролей или рабочих ролей, например об использовании хранилища Azure или служебной шины Azure, см. в следующих статьях:
 
-* [Служба BLOB-объектов][Blob Service]
-* [Служба таблиц][Table Service]
-* [Служба очередей][Queue Service]
+* [Услуги Blob][Blob Service]
+* [Обслуживание стола][Table Service]
+* [Обслуживание очереди][Queue Service]
 * [Как использовать очереди служебной шины][Service Bus Queues]
 * [Как использовать разделы и подписки служебной шины][Service Bus Topics]
 

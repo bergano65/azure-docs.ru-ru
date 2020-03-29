@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 12/14/2016
 ms.author: tagore
 ms.openlocfilehash: 094e08becf4f3a60c98d89bfae7e7c3a69b677f8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75386346"
 ---
 # <a name="enable-communication-for-role-instances-in-azure"></a>Включение обмена данными между экземплярами роли в Azure
@@ -215,7 +215,7 @@ namespace WorkerRole1
 ## <a name="network-traffic-rules-to-control-role-communication"></a>Правила сетевого трафика для управления обменом данными между ролями
 После определения внутренних конечных точек можно добавить правила сетевого трафика (на основании созданных конечных точек), чтобы управлять обменом данными между экземплярами роли. На следующей схеме показаны некоторые общие сценарии управления обменом данными между ролями:
 
-![Сценарии правил сетевого трафика](./media/cloud-services-enable-communication-role-instances/scenarios.png "Сценарии использования правил сетевого трафика")
+![Сценарии использования правил сетевого трафика](./media/cloud-services-enable-communication-role-instances/scenarios.png "Сценарии использования правил сетевого трафика")
 
 В следующем примере кода показаны определения ролей, показанных на предыдущей схеме. В каждом определении роли определена по крайней мере одна внутренняя конечная точка:
 

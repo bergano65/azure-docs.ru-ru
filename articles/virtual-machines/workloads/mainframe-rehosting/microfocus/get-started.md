@@ -1,28 +1,28 @@
 ---
-title: Micro сред разработки и тестирования фокус в Azure | Документация Майкрософт
-description: Повторное размещение вашей IBM z/OS рабочих нагрузок мэйнфреймов с помощью Micro Focus решений на виртуальных машинах (ВМ) Azure.
+title: Микро Фокус dev/test среды на Azure (ru) Документы Майкрософт
+description: Перехвачивайте рабочие нагрузки IBM z/OS с помощью решений Micro Focus на виртуальных машинах Azure (VM).
 author: njray
 ms.author: sread
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: d83b4c89d0f37e2217974d6d1ed32ac73d8fa4df
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60498905"
 ---
-# <a name="micro-focus-devtest-environments-on-azure"></a>Micro сред разработки и тестирования фокус в Azure
+# <a name="micro-focus-devtest-environments-on-azure"></a>Среда Micro Focus dev/test на Azure
 
-Приступая к работе в Azure с помощью среды разработки и тестирования — отличный способ повышения вашей по их модернизации. Приложений для мэйнфреймов, которые зависят от устаревших систем, например IBM CICS (система управления клиента сведения) и IMS (Информационная система управления) может быть повторно размещен в Azure с помощью решений партнеров.
+Начало работы с Azure с помощью среды разработки и тестирования — это отличный способ повысить ваши усилия по модернизации. Приложения mainframe, зависят от устаревших систем, таких как IBM CICS (Система управления информацией о клиентах) и IMS (Система управления информацией), могут быть переразмещены на Azure с помощью партнерских решений.
 
-Micro Focus сотрудничает с корпорацией Microsoft разработали средства миграции и повторного размещения мэйнфреймов привлекательным. Можно запустить приложений мэйнфреймов на разработки, тестирования и рабочих сценариев на Azure и платформы Microsoft Windows.
+Micro Focus сотрудничает с корпорацией Майкрософт, предлагая убедительные инструменты миграции мэйнфреймов и повторного хостинга. Вы можете запускать мейнфреймы приложений в сценариях разработки, тестирования и производства на Azure и платформе Microsoft Windows.
 
-Micro Focus обеспечивает повторное размещение разработки и тестирования, повторного размещения решений, расширяющих возможности существующих COBOL и PL / я бизнес-приложений в Azure.
+Micro Focus предлагает решения для реhosting-хостинга разработки и тестирования, которые расширяют существующие бизнес-приложения COBOL и PL/I в Azure.
 
 **Дальнейшие действия**
 
-- [Установка Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 в Azure](./set-up-micro-focus-azure.md)
-- [Настройка BankDemo CICS Micro фокус для 4.0 Micro фокус Enterprise Developer в Azure](./demo.md)
-- [Запуск Enterprise Server в контейнерах Docker в Azure](./run-enterprise-server-container.md)
+- [Установка Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 на Azure](./set-up-micro-focus-azure.md)
+- [Настройка Micro Focus CICS BankDemo для micro Focus Enterprise Developer 4.0 в Azure](./demo.md)
+- [Запуск корпоративного сервера в контейнерах Docker на Azure](./run-enterprise-server-container.md)

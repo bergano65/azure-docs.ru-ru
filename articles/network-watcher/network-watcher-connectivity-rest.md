@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок подключений в Azure REST API
+title: Соединения устранения неполадок - API Azure REST
 titleSuffix: Azure Network Watcher
 description: Узнайте, как использовать функцию устранения неполадок подключений службы "Наблюдатель за сетями Azure" с помощью Azure REST API.
 services: network-watcher
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 08/02/2017
 ms.author: kumud
 ms.openlocfilehash: f1d4b02731f9e0f22fb1eaba03e55e49f84cd87a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76845095"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-rest-api"></a>Устранение неполадок подключений в службе "Наблюдатель за сетями Azure" с помощью Azure REST API
@@ -24,12 +24,12 @@ ms.locfileid: "76845095"
 > [!div class="op_single_selector"]
 > - [Портал](network-watcher-connectivity-portal.md)
 > - [PowerShell](network-watcher-connectivity-powershell.md)
-> - [Azure CLI](network-watcher-connectivity-cli.md)
-> - [Azure REST API](network-watcher-connectivity-rest.md)
+> - [Лазурный CLI](network-watcher-connectivity-cli.md)
+> - [REST API Azure](network-watcher-connectivity-rest.md)
 
 Узнайте, как проверить возможность прямого подключения TCP между виртуальной машиной и определенной конечной точкой с помощью функции устранения неполадок подключения.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В данной статье предполагается, что у вас есть следующие ресурсы:
 
@@ -53,7 +53,7 @@ armclient login
 
 Выполните приведенный ниже код, указав в нем значения следующих переменных:
 
-- **subscriptionId** — идентификатор используемой подписки.
+- **subscriptionId** - Идентификатор подписки для использования.
 - **resourceGroupName** — имя группы ресурсов, в которой содержатся виртуальные машины.
 
 ```powershell
@@ -466,6 +466,6 @@ null
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
+Узнайте, как автоматизировать захватпакетов пакетов с помощью виртуальных машинных оповещений, просмотрев [оповещение, срабатывающее пакетзахвата.](network-watcher-alert-triggered-packet-capture.md)
 
-Сведения о состоянии (разрешен или запрещен) входящего и исходящего трафика виртуальной машины см. в статье, посвященной [проверке потока IP-адресов](diagnose-vm-network-traffic-filtering-problem.md).
+Найти, если определенный трафик допускается в или из вашего VM, посетив [Проверить проверить IP-адрес.](diagnose-vm-network-traffic-filtering-problem.md)

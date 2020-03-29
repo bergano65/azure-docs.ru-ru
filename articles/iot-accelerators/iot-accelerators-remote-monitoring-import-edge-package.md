@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/10/2018
 ms.topic: conceptual
 ms.openlocfilehash: 34222f396ed3c43932371aa9f64a459bb2a5dd0e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61443017"
 ---
 # <a name="import-an-iot-edge-package-into-your-remote-monitoring-solution-accelerator"></a>Импорт пакета IoT Edge в акселератор решения для удаленного мониторинга
@@ -29,11 +29,11 @@ ms.locfileid: "61443017"
 
 Экспортируйте манифест развертывания из вашей среды разработки, используя портал Azure:
 
-1. На портале Azure перейдите в центр Интернета вещей, используемый для разработки и тестирования устройств IoT Edge. Нажмите кнопку **IoT Edge** и затем **развертывания IoT Edge**: ![IoT Edge](media/iot-accelerators-remote-monitoring-import-edge-package/iotedge.png)
+1. На портале Azure перейдите в центр Интернета вещей, используемый для разработки и тестирования устройств IoT Edge. Щелкните **IoT Edge**, а затем **Развертывания IoT Edge**: ![IoT Edge](media/iot-accelerators-remote-monitoring-import-edge-package/iotedge.png)
 
-1. Щелкните развертывание с нужной конфигурацией. **Сведения о развертывании** появится страница: ![Сведения о развертывании IoT Edge](media/iot-accelerators-remote-monitoring-import-edge-package/deploymentdetails.png)
+1. Щелкните развертывание с нужной конфигурацией. Отобразится страница **Сведения о развертывании**: ![Сведения о развертывании IoT Edge](media/iot-accelerators-remote-monitoring-import-edge-package/deploymentdetails.png)
 
-1. Нажмите кнопку **IoT Edge, скачайте манифест**:  ![Загрузить манифест развертывания](media/iot-accelerators-remote-monitoring-import-edge-package/download.png)
+1. Нажмите **Скачать IoT Edge манифест**: ![Скачать развертывание манифест](media/iot-accelerators-remote-monitoring-import-edge-package/download.png)
 
 1. Сохраните JSON-файл как локальный файл с именем **deploymentmanifest.json**.
 
@@ -43,11 +43,11 @@ ms.locfileid: "61443017"
 
 Выполните следующие действия, чтобы импортировать манифест развертывания Edge как пакет в ваше решение:
 
-1. В веб-интерфейсе решения для удаленного мониторинга перейдите на страницу **Пакеты**:  ![Страница пакетов](media/iot-accelerators-remote-monitoring-import-edge-package/packagespage.png)
+1. В веб-интерфейсе решения для удаленного мониторинга перейдите на страницу **Пакеты**: ![Страница пакетов](media/iot-accelerators-remote-monitoring-import-edge-package/packagespage.png)
 
-1. Нажмите кнопку **+ новый пакет**, выберите **Edge манифест** тип пакета, и нажмите кнопку **Обзор** для выбора **deploymentmanifest.json** файла Вы сохранили в предыдущем разделе:  ![Выбрать манифест](media/iot-accelerators-remote-monitoring-import-edge-package/selectmanifest.png)
+1. Щелкните **+ New Package** (+ Новый пакет), выберите тип пакета **Манифест Edge** и нажмите кнопку **Обзор**, чтобы выбрать файл **deploymentmanifest.json**, сохраненный в предыдущем разделе: ![Выбор манифеста](media/iot-accelerators-remote-monitoring-import-edge-package/selectmanifest.png)
 
-1. Нажмите кнопку **Отправить**, чтобы добавить пакет в решение для удаленного мониторинга:  ![Загруженный пакет](media/iot-accelerators-remote-monitoring-import-edge-package/uploadedpackage.png)
+1. Нажмите кнопку **Отправить**, чтобы добавить пакет в решение для удаленного мониторинга: ![Переданный пакет](media/iot-accelerators-remote-monitoring-import-edge-package/uploadedpackage.png)
 
 Вы передали манифест развертывания IoT Edge как пакет. На странице **Развертывания** можно развернуть этот пакет для своих подключенных устройств IoT Edge.
 

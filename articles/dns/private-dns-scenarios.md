@@ -1,6 +1,6 @@
 ---
-title: Сценарии для частных зон — Azure DNS
-description: В этой статье описаны распространенные сценарии использования Частные зоны Azure DNS.
+title: Сценарии для частных зон - Azure DNS
+description: В этой статье узнайте об общих сценариях использования частных зон Azure DNS.
 services: dns
 author: rohinkoul
 ms.service: dns
@@ -8,13 +8,13 @@ ms.topic: article
 ms.date: 10/05/2019
 ms.author: rohink
 ms.openlocfilehash: ab850adb2e9a25778d5f44ba711eb0762fe562c8
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76939344"
 ---
-# <a name="azure-dns-private-zones-scenarios"></a>Сценарии использования частных зон Azure DNS
+# <a name="azure-dns-private-zones-scenarios"></a>Сценарии частных зон Azure DNS
 
 Частные зоны Azure DNS обеспечивают разрешение имен внутри виртуальной сети и между виртуальными сетями. В этой статье мы рассмотрим несколько распространенных сценариев, которые можно реализовать с помощью этой функции.
 
@@ -52,7 +52,7 @@ ms.locfileid: "76939344"
 
 Узнайте, как создать [частную зону DNS](./private-dns-getstarted-powershell.md) в Azure DNS.
 
-Дополнительные сведения о записях и зонах DNS см. в [обзоре зон и записей DNS](dns-zones-records.md).
+Узнайте о зонах ИБП ИДН, посетив: [DNS зоны и обзор записей.](dns-zones-records.md)
 
-Дополнительные сведения о некоторых других ключевых [сетевых возможностях](../networking/networking-overview.md) Azure.
+Узнайте о других ключевых [сетевых возможностях](../networking/networking-overview.md) Azure.
 

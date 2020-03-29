@@ -1,20 +1,20 @@
 ---
-title: Ресурсы без ограничения числа 800
-description: Список типов ресурсов Azure, которые могут иметь более 800 экземпляров в группе ресурсов.
+title: Ресурсы без лимита 800
+description: Перечисляет типы ресурсов Azure, которые могут иметь более 800 экземпляров в группе ресурсов.
 ms.topic: conceptual
 ms.date: 01/30/2020
 ms.openlocfilehash: 735cad0bfa936c41f603e42bdb9be77a1562cc1f
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76937940"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Ресурсы, не ограниченные 800 экземплярами на группу ресурсов
 
-По умолчанию в каждой группе ресурсов можно развернуть до 800 экземпляров типа ресурса. Однако некоторые типы ресурсов исключены из пределов числа экземпляров 800. В этой статье перечислены типы ресурсов Azure, которые могут содержать более 800 экземпляров в группе ресурсов. Все остальные типы ресурсов ограничены 800 экземплярами.
+По умолчанию в каждой группе ресурсов можно развернуть до 800 экземпляров типа ресурсов. Однако некоторые типы ресурсов освобождаются от лимита 800 экземпляров. В этой статье перечислены типы ресурсов Azure, которые могут иметь более 800 экземпляров в группе ресурсов. Все остальные типы ресурсов ограничены 800 экземплярами.
 
-Для некоторых типов ресурсов необходимо обратиться в службу поддержки, чтобы снять ограничение на число экземпляров 800. Эти типы ресурсов указаны в этой статье.
+Для некоторых типов ресурсов необходимо связаться с службой поддержки, чтобы удалить ограничение 800 экземпляров. Эти типы ресурсов отмечены в этой статье.
 
 
 ## <a name="microsoftautomation"></a>Microsoft.Automation
@@ -26,11 +26,11 @@ ms.locfileid: "76937940"
 * registrations
 * registrations/customerSubscriptions
 * registrations/products
-* верификатионкэйс
+* verificationKeys
 
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
 
-* Ботсервицес — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
+* botServices - по умолчанию, ограниченный 800 экземплярами. Этот лимит можно увеличить, обратившись в службу поддержки.
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 
@@ -46,9 +46,9 @@ ms.locfileid: "76937940"
 ## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
 
 * registries/buildTasks
-* реестров/Буилдтаскс/Листсаурцерепоситорипропертиес
+* реестры/сборкаTasks/списокИсточникИ
 * registries/buildTasks/steps
-* реестры/Буилдтаскс/шаги/Листбуилдаргументс
+* реестры/сборкаTasks/шаги/listBuildАргументы
 * registries/eventGridFilters
 * registries/replications
 * registries/tasks
@@ -56,19 +56,19 @@ ms.locfileid: "76937940"
 
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
-* серверы
+* servers
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
-* серверы
+* servers
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
-* серверграупс
-* серверы
+* сервергруппы
+* servers
 * serversv2
 
-## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft. Ентерприсекновледжеграф
+## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
 
 * services;
 
@@ -77,18 +77,18 @@ ms.locfileid: "76937940"
 * clusters
 * пространства имен
 
-## <a name="microsoftexperimentation"></a>Microsoft. экспериментирование
+## <a name="microsoftexperimentation"></a>Microsoft.Эксперименты
 
-* експериментворкспацес
+* experimentWorkspaces
 
 ## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
 
-* аутоманажедвмконфигуратионпрофилес
-* конфигуратионпрофилеассигнментс
+* autoManagedVmConfigurationProfiles
+* configurationProfileНазначенияи
 * guestConfigurationAssignments
 * software
-* софтвареупдатепрофиле
-* софтвареупдатес
+* программное обеспечениеUpdateProfile
+* softwareUpdates
 
 ## <a name="microsoftinsights"></a>Microsoft.Insights
 
@@ -101,17 +101,17 @@ ms.locfileid: "76937940"
 
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
 
-* нетаппаккаунтс
-* Нетаппаккаунтс/КапаЦитипулс
-* Нетаппаккаунтс/КапаЦитипулс/тома
-* Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс
-* Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки
+* netAppAccounts
+* netAppAccounts/capacityPools
+* netAppAccounts/capacityPools/volumes
+* netAppAccounts/capacityPools/volumes/mountTargets
+* netAppAccounts/capacityPools/volumes/snapshots
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
-* аппликатионгатевайвебаппликатионфиреваллполиЦиес
+* приложениеGatewayWebApplicationFirewallПолитики
 * applicationSecurityGroups
-* бастионхостс
+* бастионХомсты
 * ddosProtectionPlans
 * dnszones
 * dnszones/A
@@ -128,20 +128,20 @@ ms.locfileid: "76937940"
 * dnszones/recordsets
 * networkIntentPolicies
 * networkInterfaces
-* приватеднсзонес
-* Приватеднсзонес/A
-* Приватеднсзонес/AAAA
-* Приватеднсзонес и CNAME
-* Приватеднсзонес/MX
-* Приватеднсзонес/PTR
-* Приватеднсзонес/SOA
-* Приватеднсзонес/SRV
-* Приватеднсзонес/TXT
-* Приватеднсзонес/все
-* Приватеднсзонес/Виртуалнетворклинкс
-* приватиндпоинтс
+* privateDnsзоны
+* privateDnszones/A
+* privateDnszones/AAAA
+* privateDnszones/CNAME
+* privateDnszones/MX
+* privateDnszones/PTR
+* privateDnszones/SOA
+* privateDnszones/SRV
+* privateDnszones/TXT
+* privateDnsзоны/все
+* privateDnszones/virtualNetworkLinks
+* privateEndpoints
 * privateLinkServices
-* publicIPAddresses — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
+* publicIPAddresses - По умолчанию, ограничивается 800 экземпляров. Этот лимит можно увеличить, обратившись в службу поддержки.
 * serviceEndpointPolicies
 * trafficmanagerprofiles
 * virtualNetworkTaps
@@ -152,7 +152,7 @@ ms.locfileid: "76937940"
 
 ## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
 
-* Воркспацеколлектионс — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
+* workspaceCollections - По умолчанию, ограничивается 800 экземпляров. Этот лимит можно увеличить, обратившись в службу поддержки.
 
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 
@@ -168,7 +168,7 @@ ms.locfileid: "76937940"
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 
-* приложений
+* веб-масштабированием;
 * containerGroups
 * gateways
 * networks
@@ -186,4 +186,4 @@ ms.locfileid: "76937940"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Полный список квот и ограничений см. в статье [Подписка Azure, границы, квоты и ограничения службы](azure-subscription-service-limits.md).
+Для полного списка квот и ограничений [см.](azure-subscription-service-limits.md)
