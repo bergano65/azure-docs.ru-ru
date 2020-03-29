@@ -1,7 +1,7 @@
 ---
-title: Запуск контейнера лиц в службе "экземпляры контейнеров Azure"
+title: Выполнить контейнер Face в экземплярах контейнеров Azure
 titleSuffix: Azure Cognitive Services
-description: Разверните контейнер Face в экземпляре контейнера Azure и протестируйте его в веб-браузере.
+description: Развернуть контейнер Face в экземпляр контейнера Azure и протестировать его в веб-браузере.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: dapine
 ms.openlocfilehash: 4f8a08697443ec6920b3fa73de19a950e54e7f40
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "76716247"
 ---
-# <a name="deploy-the-face-container-to-azure-container-instances"></a>Развертывание контейнера "лицо" в службе "экземпляры контейнеров Azure"
+# <a name="deploy-the-face-container-to-azure-container-instances"></a>Развертывание контейнера Face в экземплярах контейнеров Azure
 
-Узнайте, как развернуть контейнер Cognitive Services [Face](../face-how-to-install-containers.md) в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса лица Azure. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
+Узнайте, как развернуть контейнер Cognitive Services [Face](../face-how-to-install-containers.md) в [экземплярах контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure. Эта процедура демонстрирует создание ресурса Azure Face. Затем мы обсуждаем потянув связанных изображения контейнера. Наконец, мы подчеркиваем возможность осуществлять оркестровку двух из браузера. Использование контейнеров может сместить внимание разработчиков от управления инфраструктурой к сосредоточению внимания на разработке приложений.
 
 [!INCLUDE [Prerequisites](../../containers/includes/container-preview-prerequisites.md)]
 

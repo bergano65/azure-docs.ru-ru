@@ -5,18 +5,18 @@ ms.topic: include
 ms.date: 03/09/2020
 ms.author: dapine
 ms.openlocfilehash: 788903d802ca47c763734e7cf6ddbbf3b0032203
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78943837"
 ---
-Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи, создайте `SPXPullAudioInputStream` или `SPXPushAudioInputStream`.
+Для потоковой передачи в сжатом аудиоформате на службу Speech создайте `SPXPullAudioInputStream` или `SPXPushAudioInputStream`.
 
-В следующем фрагменте кода показано, как создать `SPXAudioConfiguration` из экземпляра `SPXPushAudioInputStream`, указав MP3 в качестве формата сжатия потока.
+Следующий фрагмент показывает, как `SPXAudioConfiguration` создать из `SPXPushAudioInputStream`экземпляра, указав MP3 как формат сжатия потока.
 
 [!code-objectivec[Set up the input stream](~/samples-cognitive-services-speech-sdk/samples/objective-c/ios/compressed-streams/CompressedStreamsSample/CompressedStreamsSample/ViewController.m?range=67-76&highlight=2-11)]
 
-В следующем фрагменте кода показано, как можно считывать сжатые аудио-данные из файла и переносить их в `SPXPushAudioInputStream`.
+Следующий фрагмент показывает, как сжатые аудио данные могут быть `SPXPushAudioInputStream`прочитаны из файла и закачивается в .
 
 [!code-objectivec[Push compressed audio data into the stream](~/samples-cognitive-services-speech-sdk/samples/objective-c/ios/compressed-streams/CompressedStreamsSample/CompressedStreamsSample/ViewController.m?range=106-150&highlight=19-44)]

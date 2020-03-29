@@ -1,7 +1,7 @@
 ---
-title: анализ тональности конфигурации Kubernetes и шаги развертывания
+title: Анализ настроений Kubernetes конфигурации и развертывания шагов
 titleSuffix: Azure Cognitive Services
-description: анализ тональности конфигурации Kubernetes и шаги развертывания
+description: Анализ настроений Kubernetes конфигурации и развертывания шагов
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,45 +10,45 @@ ms.topic: include
 ms.date: 11/21/2019
 ms.author: dapine
 ms.openlocfilehash: 2a99f85cf861c0c36ffac136cdf1f792b40719b2
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78262239"
 ---
-### <a name="deploy-the-sentiment-analysis-container-to-an-aks-cluster"></a>Развертывание контейнера анализ тональности в кластере AKS
+### <a name="deploy-the-sentiment-analysis-container-to-an-aks-cluster"></a>Развертывание контейнера анализа настроений в кластер AKS
 
-1. Откройте Azure CLI и войдите в Azure.
+1. Откройте CLI Azure и вопием в Azure.
 
     ```azurecli
     az login
     ```
 
-1. Войдите в кластер AKS. Замените `your-cluster-name` и `your-resource-group` соответствующими значениями.
+1. Войти на кластер AKS. `your-cluster-name` Заменить `your-resource-group` и с соответствующими значениями.
 
     ```azurecli
     az aks get-credentials -n your-cluster-name -g -your-resource-group
     ```
 
-    После выполнения этой команды будет выводится сообщение следующего вида:
+    После выполнения этой команды он сообщает сообщение, аналогичное следующему:
 
     ```console
     Merged "your-cluster-name" as current context in /home/username/.kube/config
     ```
 
     > [!WARNING]
-    > Если в учетной записи Azure доступно несколько подписок, а команда `az aks get-credentials` возвращает ошибку, то распространенная проблема заключается в том, что вы используете неправильную подписку. Задайте контекст сеанса Azure CLI, чтобы использовать ту же подписку, в которой были созданы ресурсы, и повторите попытку.
+    > Если у вас есть несколько подписок, доступных для вас в учетной записи Azure и `az aks get-credentials` команда возвращается с ошибкой, распространенной проблемой является то, что вы используете неправильную подписку. Установите контекст сеанса Azure CLI, чтобы использовать ту же подписку, с помощью которого вы создали ресурсы, и повторить попытку.
     > ```azurecli
     >  az account set -s subscription-id
     > ```
 
-1. Откройте текстовый редактор по желанию. В этом примере используется Visual Studio Code.
+1. Откройте текстовый редактор выбора. В этом примере используется Visual Studio Code.
 
     ```console
     code .
     ```
 
-1. В текстовом редакторе создайте новый файл с именем *тональности. YAML*и вставьте в него следующий YAML. Обязательно замените `billing/value` и `apikey/value` собственными сведениями.
+1. В текстовом редакторе создайте новый файл под названием *sentiment.yaml*и вставьте в него следующий YAML. Обязательно замените `billing/value` `apikey/value` и с вашей собственной информацией.
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -94,39 +94,39 @@ ms.locfileid: "78262239"
         app: sentiment-app
     ```
 
-1. Сохраните файл и закройте текстовый редактор.
-1. Выполните команду Kubernetes `apply` с файлом *тональности. YAML* в качестве целевого объекта:
+1. Сохранить файл и закрыть текстовый редактор.
+1. Выполнить команду Kubernetes `apply` с *файлом sentiment.yaml* в качестве своей цели:
 
     ```console
     kubectl apply -f sentiment.yaml
     ```
 
-    После того как команда успешно применит конфигурацию развертывания, появится сообщение следующего вида:
+    После успешного применения командой конфигурации развертывания сообщение выглядит похоже на следующий вывод:
 
     ```output
     deployment.apps "sentiment" created
     service "sentiment" created
     ```
-1. Убедитесь, что модуль был развернут:
+1. Убедитесь, что стручок был развернут:
 
     ```console
     kubectl get pods
     ```
 
-    Выходные данные для состояния выполнения Pod:
+    Выход для состояния работая стручка:
 
     ```output
     NAME                         READY     STATUS    RESTARTS   AGE
     sentiment-5c9ccdf575-mf6k5   1/1       Running   0          1m
     ```
 
-1. Убедитесь, что служба доступна, и получите IP-адрес.
+1. Убедитесь, что услуга доступна, и получите IP-адрес.
 
     ```console
     kubectl get services
     ```
 
-    Выходные данные для состояния выполнения службы *тональности* в Pod:
+    Выход для запущенного состояния службы *настроений* в стручке:
 
     ```output
     NAME         TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE

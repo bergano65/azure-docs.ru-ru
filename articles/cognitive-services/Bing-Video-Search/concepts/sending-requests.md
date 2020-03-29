@@ -1,5 +1,5 @@
 ---
-title: Отправка поисковых запросов в API Bing для поиска видео
+title: Отправка запросов на поиск в API поиска Bing
 titleSuffix: Azure Cognitive Services
 description: В этой статье описаны параметры и атрибуты запросов, отправляемых в API Bing для поиска видео, а также возвращаемый объект ответа в формате JSON.
 services: cognitive-services
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: aahi
 ms.openlocfilehash: b27aa1409d543c157069d2701c49ef54a097e552
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79220295"
 ---
 # <a name="sending-search-requests-to-the-bing-video-search-api"></a>Отправка поисковых запросов в API Bing для поиска видео
@@ -46,10 +46,10 @@ https://api.cognitive.microsoft.com/bing/v7.0/videos/search
   
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:  
   
--   [User-Agent](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#useragent)  
+-   [Пользователь-агент](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#useragent)  
 -   [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientid)  
 -   [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientip)  
--   [X-Search-Location](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#location)  
+-   [X-Поиск-Местоположение](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#location)  
 
 Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.  
 

@@ -1,7 +1,7 @@
 ---
-title: Настройка политики cookie для иммерсивного чтения
+title: Установите политику погружения в cookie-файлы Reader
 titleSuffix: Azure Cognitive Services
-description: В этой статье показано, как задать политику cookie для иммерсивного модуля чтения.
+description: В этой статье будет показана, как настроить политику cookie для Immersive Reader.
 services: cognitive-services
 author: pasta
 manager: guillasi
@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: pasta
 ms.openlocfilehash: 6de651f1eb51ea1bc941c2af675c8a8d5b0f9cd7
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "75946114"
 ---
-# <a name="how-to-set-the-cookie-policy-for-the-immersive-reader"></a>Настройка политики cookie для иммерсивное средство чтения
+# <a name="how-to-set-the-cookie-policy-for-the-immersive-reader"></a>Как настроить политику cookie для immersive Reader
 
-По умолчанию иммерсивное средство чтения отключит использование файлов cookie. При включении использования файлов cookie иммерсивное средство чтения может использовать файлы cookie для сохранения настроек пользователей и отслеживания использования компонентов. При включении использования файлов cookie в иммерсивное средство чтения следует учитывать требования политики соответствия файлов cookie в ЕС. Ведущее приложение отвечает за получение любого необходимого согласия пользователя в соответствии с политикой соответствия файлов cookie ЕС.
+Immersive Reader отсватим использование файлов cookie по умолчанию. Если вы включите использование файлов cookie, то Immersive Reader может использовать файлы cookie для поддержания пользовательских предпочтений и отслеживания использования функций. Если вы включите использование файлов cookie в Immersive Reader, пожалуйста, рассмотрите требования политики ЕС по соблюдению требований к cookie. Приложение хоста обязано получить любое необходимое согласие пользователя в соответствии с Политикой соответствия требованиям ЕС Cookie.
 
-Политику файлов cookie можно задать с помощью [параметров](../reference.md#options)иммерсивное средство чтения. Дополнительные сведения см. в разделе [кукиеполици enum](../reference.md#cookiepolicy-enum) .
+Политика cookie может быть установлена с помощью [вариантов](../reference.md#options)Immersive Reader. Дополнительную информацию [можно узнать в перечне CookiePolicy.](../reference.md#cookiepolicy-enum)
 
-## <a name="enable-cookie-usage"></a>Включить использование файлов cookie
+## <a name="enable-cookie-usage"></a>Включить использование cookie
 
 ```javascript
 var options = {
@@ -33,7 +33,7 @@ var options = {
 ImmersiveReader.launchAsync(YOUR_TOKEN, YOUR_SUBDOMAIN, YOUR_DATA, options);
 ```
 
-## <a name="disable-cookie-usage"></a>Отключить использование файлов cookie
+## <a name="disable-cookie-usage"></a>Использование файлов cookie-файлов
 
 ```javascript
 var options = {
@@ -45,7 +45,7 @@ ImmersiveReader.launchAsync(YOUR_TOKEN, YOUR_SUBDOMAIN, YOUR_DATA, options);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь с [кратким руководством по Node. js](../quickstart-nodejs.md) , чтобы узнать, что еще можно сделать с помощью пакета SDK для иммерсивное средство чтения с использованием Node. js.
+* Ознакомьтесь с [кратким руководством для разработчиков Node.js](../quickstart-nodejs.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Node.js
 * Ознакомьтесь с [руководством для разработчиков Python](../tutorial-python.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Python.
-* Просмотрите [учебник по SWIFT](../tutorial-ios-picture-immersive-reader.md) , чтобы узнать, что еще можно сделать с помощью пакета SDK для иммерсивное средство чтения, используя SWIFT.
+* Посмотреть [учебник Swift,](../tutorial-ios-picture-immersive-reader.md) чтобы узнать, что еще вы можете сделать с Immersive Reader SDK с помощью Swift
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](../reference.md).

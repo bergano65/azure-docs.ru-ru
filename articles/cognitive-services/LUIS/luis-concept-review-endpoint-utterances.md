@@ -1,5 +1,5 @@
 ---
-title: Проверка пользователя utterance — LUIS
+title: Обзор высказывания пользователя - LUIS
 titleSuffix: Azure Cognitive Services
 description: Чтобы применить активное обучение, вам нужно проверить фразы конечной точки и убедиться в правильности намерений и сущности. Служба LUIS выбирает фразы конечной точки, в правильности которых она не уверена.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: diberry
 ms.openlocfilehash: 375d4b4e7c3fcafbdfde1ff447bedc3e16aff2f2
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79219943"
 ---
 # <a name="concepts-for-enabling-active-learning-by-reviewing-endpoint-utterances"></a>Основные сведения о включении активного обучения путем проверки фраз конечной точки
@@ -37,11 +37,11 @@ ms.locfileid: "79219943"
 Проверку предлагаемых фрагментов речи необязательно выполнять ежедневно, однако эту задачу необходимо включить в регулярное обслуживание LUIS.
 
 ## <a name="delete-review-items-programmatically"></a>Удаление элементов проверки программным способом
-Используйте API **[удаления без метки фразы продолжительностью](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9)** . Создайте резервную копию этих высказываний перед удалением путем **[экспорта файлов журнала](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)** .
+Используйте **[API немаркированных высказываний.](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9)** Создайте резервную копию этих высказываний перед удалением путем **[экспорта файлов журнала](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)**.
 
 ## <a name="enable-active-learning"></a>Включить активное обучение
 
-Чтобы включить активное обучение, необходимо вести журнал запросов пользователей. Это достигается путем вызова [запроса к конечной точке](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) с параметром строки запроса `log=true` и значением.
+Для обеспечения активного обучения необходимо регистрировать запросы пользователей. Это достигается путем вызова [запроса конечных точек](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) с параметром `log=true` запроса и значением.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

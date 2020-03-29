@@ -1,7 +1,7 @@
 ---
-title: Асинхронная транскрипция диалога (Предварительная версия) — служба речи
+title: Асинхронная транскрипция разговора (Предварительный просмотр) - Служба речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать асинхронную транскрипцию беседы с помощью службы распознавания речи. Доступно только для Java.
+description: Узнайте, как использовать асинхронную транскрипцию разговоров с помощью службы Speech. Доступно только для Java.
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -10,30 +10,30 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: amishu
-ms.openlocfilehash: d20cdb2f37c3da357ca112045a0d2845bbb6df98
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
-ms.translationtype: MT
+ms.openlocfilehash: c1f0110c83eb42aaedbd36736946ae3faff58699
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260027"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80366603"
 ---
-# <a name="asynchronous-conversation-transcription-preview"></a>Асинхронная транскрипция диалога (Предварительная версия)
+# <a name="asynchronous-conversation-transcription-preview"></a>Асинхронная транскрипция разговора (Предварительный просмотр)
 
-В этой статье функция записи асинхронного диалога демонстрируется с помощью API **ремотеконверсатионтранскриптионклиент** . Если вы настроили запись разговора для асинхронного транскрипции и имеете `conversationId`, можно получить описание, связанное с этим `conversationId` помощью API **ремотеконверсатионтранскриптионклиент** .
+В этой статье асинхронная транскрипция разговоров демонстрируется с помощью **API RemoteConversationTranscriptionClient.** Если вы настроили разговор транскрипции, чтобы сделать `conversationId`асинхронную транскрипцию и, вы можете получить транскрипцию, связанную с этим `conversationId` с помощью **RemoteConversationTranscriptionClient** API.
 
-## <a name="asynchronous-vs-real-time--asynchronous"></a>Асинхронное и в режиме реального времени + асинхронное
+## <a name="asynchronous-vs-real-time--asynchronous"></a>Асинхронный против реального времени - асинхронный
 
-С помощью асинхронной записи сообщений потоковая передача передается в режиме реального времени, но не требуется. Вместо этого после отправки звука используйте `conversationId` `Conversation`, чтобы запросить состояние асинхронной транскрипции. Когда асинхронная транскрипция готова, вы получите `RemoteConversationTranscriptionResult`.
+С асинхронной транскрипции, вы поток разговор аудио, но не нужно транскрипции вернулся в режиме реального времени. Вместо этого, после отправки `conversationId` аудио, используйте `Conversation` запрос для состояния асинхронной транскрипции. Когда асинхронная транскрипция будет готова, вы получите `RemoteConversationTranscriptionResult`.
 
-В режиме реального времени и асинхронных событий вы получаете запись в режиме реального времени, но также можете получить транскрипцию, выполнив запрос к `conversationId` (аналогично асинхронному сценарию).
+С реальным временем плюс асинхронный, вы получите транскрипцию в режиме реального времени, но и получить транскрипцию, задав запрос с `conversationId` (по аналогии с асинхронным сценарием).
 
-Для выполнения асинхронной записи требуются два действия. Первым шагом является Отправка звукового сигнала, выбор асинхронного режима только для асинхронного выполнения или в режиме реального времени. Второй шаг — получение результатов транскрипции.
+Для выполнения асинхронной транскрипции требуется два шага. Первый шаг заключается в загрузке аудио, выбирая либо асинхронные только или в режиме реального времени плюс асинхронный. Второй шаг заключается в том, чтобы получить результаты транскрипции.
 
-## <a name="upload-the-audio"></a>Отправка звука
+## <a name="upload-the-audio"></a>Загрузить аудио
 
-Прежде чем можно будет выполнить асинхронную транскрипцию, необходимо отправить службу транскрипции, используя пакет SDK для клиента Microsoft для распознавания речи (версия 1.8.0 или выше).
+Прежде чем асинхронная транскрипция может быть выполнена, вам нужно отправить аудио в службу разговорной транскрипции с помощью Microsoft Cognitive Speech клиента SDK (версия 1.8.0 или выше).
 
-В этом примере кода показано, как создать диалог транскрибер для асинхронного режима. Чтобы потоковая передача аудио в транскрибер, необходимо добавить код потоковой передачи, полученный из [транскрипция диалогов в режиме реального времени с помощью речевого пакета SDK](how-to-use-conversation-transcription-service.md). Сведения о поддерживаемых интерфейсах API для платформ и языков см. в разделе **ограничения** этой статьи.
+Этот пример кода показывает, как создать транскрибный разговор для асинхронного режима. Для того, чтобы поток аудио на транскрибирование, вам нужно будет добавить аудио потокового кода, полученного из [транскрибных разговоров в режиме реального времени с речью SDK.](how-to-use-conversation-transcription-service.md) Обратитесь в раздел Ограничения этой **темы,** чтобы просмотреть поддерживаемые платформы и Языковые AA.
 
 ```java
 // Create the speech config object
@@ -56,8 +56,8 @@ Conversation conversation = conversationFuture.get();
 
 // Create an audio stream from a wav file or from the default microphone if you want to stream live audio from the supported devices
 // Replace with your own audio file name and Helper class which implements AudioConfig using PullAudioInputStreamCallback
-PullAudioInputStreamCallback wavfilePullStreamCallback = Helper.OpenWavFile("16Khz16Bits8channelsOfRecordedPCMAudio.wav");
-// Create an audio stream format assuming the file used above is 16Khz, 16 bits and 8 channel pcm wav file
+PullAudioInputStreamCallback wavfilePullStreamCallback = Helper.OpenWavFile("16kHz16Bits8channelsOfRecordedPCMAudio.wav");
+// Create an audio stream format assuming the file used above is 16kHz, 16 bits and 8 channel pcm wav file
 AudioStreamFormat audioStreamFormat = AudioStreamFormat.getWaveFormatPCM((long)16000, (short)16,(short)8);
 // Create an input stream
 AudioInputStream audioStream = AudioInputStream.createPullStream(wavfilePullStreamCallback, audioStreamFormat);
@@ -101,7 +101,7 @@ Future<?> future = transcriber.startTranscribingAsync();
 ...
 ```
 
-Если вы хотите _в режиме реального времени использовать_ асинхронные, закомментируйте и раскомментируйте соответствующие строки кода следующим образом:
+Если вы хотите в режиме реального времени _плюс_ асинхронные, комментировать и не комментировать соответствующие строки кода следующим образом:
 
 ```java
 // Set the property for asynchronous transcription
@@ -111,17 +111,17 @@ Future<?> future = transcriber.startTranscribingAsync();
 speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", ServicePropertyChannel.UriQueryParameter);
 ```
 
-## <a name="get-transcription-results"></a>Получение результатов транскрипции
+## <a name="get-transcription-results"></a>Получить результаты транскрипции
 
-Этот шаг возвращает результаты асинхронного разговора, но предполагает, что обработка в режиме реального времени может быть выполнена в других местах. Дополнительные сведения см. в разделе [транскрипцияные беседы в режиме реального времени с помощью речевого пакета SDK](how-to-use-conversation-transcription-service.md).
+Этот шаг получает асинхронные результаты транскрипции, но предполагает, что любая обработка в режиме реального времени, которая может потребоваться, выполняется в другом месте. Для получения дополнительной информации, [см Транскриб разговоры в режиме реального времени с речью SDK](how-to-use-conversation-transcription-service.md).
 
-Для кода, показанного здесь, требуется **версия Remote-CONVERSATION 1.8.0**, поддерживаемая только для Java (1.8.0 или выше) в Windows, Linux и Android (только на уровне API 26 или выше).
+Для кода, показанного здесь, вам нужна **версия удаленного разговора 1.8.0,** поддерживаемая только для Java (1.8.0 или выше) на Windows, Linux и Android (уровень API 26 или выше).
 
-### <a name="obtaining-the-client-sdk"></a>Получение пакета SDK для клиента
+### <a name="obtaining-the-client-sdk"></a>Получение клиента SDK
 
-**Удаленный сеанс** можно получить, отредактировав файл POM. XML следующим образом.
+Вы можете получить **удаленный разговор,** редактируя файл pom.xml следующим образом.
 
-1. В конце файла перед закрывающим тегом `</project>`создайте элемент `repositories` со ссылкой на репозиторий Maven для пакета SDK для распознавания речи:
+1. В конце файла, перед тегом `</project>` `repositories` закрытия, создайте элемент со ссылкой на репозиторий Maven для речи SDK:
 
    ```xml
    <repositories>
@@ -133,7 +133,7 @@ speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", Service
    </repositories>
    ```
 
-2. Также добавьте элемент `dependencies` с ремотеконверсатион-Client-SDK 1.8.0 в качестве зависимости:
+2. Также добавьте `dependencies` элемент, с удаленным разговором-клиентом-sdk 1.8.0 в качестве зависимости:
 
    ```xml
    <dependencies>
@@ -145,11 +145,11 @@ speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", Service
    </dependencies>
    ```
 
-3. Сохранить изменения
+3. Сохраните изменения
 
 ### <a name="sample-transcription-code"></a>Пример кода транскрипции
 
-После создания `conversationId`Создайте клиентский **ремотеконверсатионтранскриптионклиент** для записи удаленного диалога в клиентском приложении, чтобы запросить состояние асинхронной транскрипции. Чтобы получить объект [поллерфлукс](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/PollerFlux.java) , используйте метод **жеттранскриптионоператион** в **ремотеконверсатионтранскриптионклиент** . Объект Поллерфлукс будет содержать сведения о состоянии удаленной операции **ремотеконверсатионтранскриптионоператион** и конечный результат **ремотеконверсатионтранскриптионресулт**. После завершения операции получите **ремотеконверсатионтранскриптионресулт** , вызвав **жетфиналресулт** в [синкполлер](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/SyncPoller.java). В этом коде мы просто печатаем содержимое результатов в системный вывод.
+После того, `conversationId`как у вас есть , создать удаленный разговор транскрипции клиента **RemoteConversationTranscriptionКлиент** в клиентском приложении для запроса статуса асинхронной транскрипции. Используйте метод **getTranscriptionOperation** в **RemoteConversationTranscriptionClient,** чтобы получить объект [PollerFlux.](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/PollerFlux.java) Объект PollerFlux будет иметь информацию о состоянии удаленной операции **RemoteConversationTranscriptionOperation** и конечный результат **RemoteConversationTranscriptionResult.** После завершения операции получите **RemoteConversationTranscriptionResult,** позвонив **в GetFinalResult** на [SyncPoller.](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/SyncPoller.java) В этом коде мы просто печатаем содержимое результата на вывод системы.
 
 ```java
 // Create the speech config object

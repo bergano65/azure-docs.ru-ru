@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/17/2019
 ms.author: scottwhi
 ms.openlocfilehash: 677f6089f649aae720a6303a7e1512e3c7ebeca7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "66390134"
 ---
 # <a name="how-to-use-ranking-to-display-bing-web-search-api-results"></a>Как использовать ранжирование для отображения результатов в API Bing для поиска в Интернете  
@@ -30,7 +30,7 @@ ms.locfileid: "66390134"
 
 Использовать идентификатор проще, так как требуется только согласовать идентификатор ранжирования и идентификатор определенного ответа или одного из его результатов. Если объект ответа содержит поле `id`, при отображении объедините все результаты из этого ответа. Например, если объект `News` содержит поле `id`, отобразите вместе все содержащиеся в нем новостные статьи. Если объект `News` не содержит поле `id`, тогда поле `id` должно включаться во все новостные статьи, и ответ ранжирования будет содержать новостные статьи наряду с результатами из других ответов.  
 
-Использовать `answerType` и `resultIndex` немного сложнее. С помощью `answerType` можно найти ответ, который содержит результаты для отображения. Затем с помощью `resultIndex` следует определить порядок результатов в этом ответе и создать отображаемые результаты. (Значение `answerType` содержит имя поля в объекте [SearchResponse](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#searchresponse).) Если вам не нужно отображать вместе все результаты из ответа, элемент ранжирования в ответе не будет содержать поле `resultIndex`.  
+Использовать `answerType` и `resultIndex` немного сложнее. С помощью `answerType` можно найти ответ, который содержит результаты для отображения. Затем с помощью `resultIndex` следует определить порядок результатов в этом ответе и создать отображаемые результаты. (Значение `answerType` — это название поля в объекте [SearchResponse.)](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#searchresponse) Если предполагается отобразить все результаты ответа вместе, элемент ответа `resultIndex` ранжирования не включает поле.  
 
 ## <a name="ranking-response-example"></a>Пример ответа ранжирования
 

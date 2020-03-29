@@ -1,7 +1,7 @@
 ---
-title: Поиск видео с помощью API Bing для поиска видео
+title: Поиск видео с помощью API поиска видео Bing
 titleSuffix: Azure Cognitive Services
-description: Поиск видео Bing Апифиндс и возвращает соответствующие видеоматериалы из Интернета, она предоставляет несколько функций для интеллектуального и специализированного извлечения видео в Интернете.
+description: Bing Video Search APIfinds и возвращает соответствующие видео из Интернета, он предоставляет несколько функций для интеллектуальных и целенаправленных поиска видео в Интернете.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: aahi
 ms.openlocfilehash: 5add9597924aa77ede875d0056e83eceb4f99598
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79220306"
 ---
 # <a name="search-for-videos-with-the-bing-video-search-api"></a>Поиск видео с помощью API Поиска видео Bing
@@ -120,10 +120,10 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghi
 
 По умолчанию API для поиска видео возвращает все видеоролики, относящиеся к запросу. Если вам нужны только бесплатные видеоролики или длиной менее пяти минут, используйте следующие параметры запроса фильтра:
 
-- [pricing](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#pricing)&mdash; — фильтрация видео по ценам (например, бесплатные видео или за которые нужно заплатить);
-- [resolution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#resolution)&mdash; — фильтрация видео по разрешению (например, видео с разрешением 720p или выше);
-- [videoLength ](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videolength)&mdash; — фильтрация видео по длине (например, видео длиной менее пяти минут);
-- [freshness](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#freshness)&mdash; — фильтрация видео по сроку существования (например, видеоролики, обнаруженные Bing на прошлой неделе).
+- [ценообразование](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#pricing)&mdash;фильтр видео по ценам (например, видео, которые являются бесплатными или что вы должны платить за)
+- [разрешение](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#resolution)&mdash;фильтра видео по разрешению (например, видео с 720p или более высоким разрешением)
+- [видеоДлина](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videolength)&mdash;фильтр видео по длине видео (например, видео, которые менее пяти минут в длину)
+- [свежесть](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#freshness)&mdash;Фильтр видео по возрасту (например, видео, обнаруженные Bing на прошлой неделе)
 
 Чтобы получить видео из определенного домена, добавьте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx) в строку запроса.
 

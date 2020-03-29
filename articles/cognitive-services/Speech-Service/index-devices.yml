@@ -1,51 +1,50 @@
 ### YamlMime:Landing
-title: Документация по устройствам, подключаемым к службе "Речь"
+title: Документация речевых устройств
 summary: Пакет SDK для речевых устройств — это предварительно настроенная библиотека, связанная со специально созданными пакетами разработки для микрофонной решетки.
 metadata:
-  title: Документация по голосовым устройствам. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  title: Документация речевых устройств - Учебники, Справка API - Когнитивные службы Azure (ru) Документы Майкрософт
   titleSuffix: Azure Cognitive Services
   services: cognitive-services
   author: IEvangelist
   manager: nitinme
-  layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
   ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: cbdbcce25d357530775140bc8b5fdf82808c64ad
-  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+  ms.openlocfilehash: 5fc9e045162c03585f20e0b06a01524480070050
+  ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "79369256"
+  ms.lasthandoff: 03/28/2020
+  ms.locfileid: "79415365"
 landingContent:
-- title: О пакете SDK для речевых устройств
+- title: Об устройствах речи SDK
   linkLists:
   - linkListType: overview
     links:
-    - text: Что такое пакет SDK для речевых устройств?
+    - text: Что такое устройства речи SDK?
       url: speech-devices-sdk.md
   - linkListType: quickstart
     links:
-    - text: Использование пакета SDK для речевых устройств (Windows)
+    - text: Использование речевых устройств SDK (Windows)
       url: speech-devices-sdk-quickstart.md?pivots=platform-windows
-    - text: Использование пакета SDK для речевых устройств (Linux)
+    - text: Использование речевых устройств SDK (Linux)
       url: speech-devices-sdk-quickstart.md?pivots=platform-linux
-    - text: Использование пакета SDK для речевых устройств (Android)
+    - text: Использование речевых устройств SDK (Android)
       url: speech-devices-sdk-quickstart.md?pivots=platform-android
-- title: Разработка с помощью пакета SDK для речевых устройств
+- title: Разработка с помощью речевых устройств SDK
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Проектирование массива микрофонов
+    - text: Дизайн микрофонного массива
       url: speech-devices-sdk-microphone.md
-    - text: Настройка комплекта Рубо v1
+    - text: Настройка Roobo v1 Kit
       url: speech-devices-sdk-roobo-v1.md
-- title: Ссылки
+- title: Справочник
   linkLists:
   - linkListType: whats-new
     links:
-    - text: Заметки о выпуске
+    - text: Заметки о выпуске
       url: devices-sdk-release-notes.md
   - linkListType: reference
     links:

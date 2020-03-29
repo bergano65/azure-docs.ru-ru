@@ -1,7 +1,7 @@
 ---
-title: Запуск экземпляров контейнеров Azure — служба речи
+title: Выполнить Azure Контейнер Instances - Речевой сервис
 titleSuffix: Azure Cognitive Services
-description: Разверните контейнер службы речи в экземпляре контейнера Azure и протестируйте его в веб-браузере.
+description: Развернуть контейнер службы speech в экземпляр контейнера Azure и протестировать его в веб-браузере.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -11,21 +11,21 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: dapine
 ms.openlocfilehash: e5d9143b0c84b579945b283ccae1cce36a7a4291
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "76717409"
 ---
-# <a name="deploy-the-speech-service-container-to-azure-container-instances"></a>Развертывание контейнера службы речи в службе "экземпляры контейнеров Azure"
+# <a name="deploy-the-speech-service-container-to-azure-container-instances"></a>Развертывание контейнера службы речи в экземплярах контейнеров Azure
 
-Узнайте, как развернуть контейнер [службы речи](speech-container-howto.md) Cognitive Services в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса службы распознавания речи Azure. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
+Узнайте, как развернуть контейнер [службы](speech-container-howto.md) когнитивных служб в [контейнерных инстанциях](https://docs.microsoft.com/azure/container-instances/)Azure. Эта процедура демонстрирует создание ресурса службы Azure Speech. Затем мы обсуждаем потянув связанных изображения контейнера. Наконец, мы подчеркиваем возможность осуществлять оркестровку двух из браузера. Использование контейнеров может сместить внимание разработчиков от управления инфраструктурой к сосредоточению внимания на разработке приложений.
 
 [!INCLUDE [Prerequisites](../containers/includes/container-preview-prerequisites.md)]
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
-Сначала необходимо завершить и отправить [форму запроса Cognitive Services речевых контейнеров](https://aka.ms/speechcontainerspreview/) , чтобы запросить доступ к контейнеру. 
+Сначала необходимо заполнить и отправить форму запроса на доступ к контейнеру [Cognitive Services Speech Containers.](https://aka.ms/speechcontainerspreview/) 
 
 [!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
 

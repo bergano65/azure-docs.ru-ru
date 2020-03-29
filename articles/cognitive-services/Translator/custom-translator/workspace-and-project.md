@@ -1,7 +1,7 @@
 ---
 title: Что такое рабочая область и проект? — Custom Translator
 titleSuffix: Azure Cognitive Services
-description: В этой статье объясняются различия между рабочей областью и проектом, а также категориями проектов и метками для пользовательской службы переводчиков.
+description: В этой статье будут объяснимы различия между рабочим пространством и проектом, а также категории проектов и метки для службы custom Translator.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: d2f7903fa85c645357e46a753d1cb043e0893254
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79219437"
 ---
 # <a name="what-is-a-custom-translator-workspace"></a>Что представляет собой рабочая область Custom Translator?

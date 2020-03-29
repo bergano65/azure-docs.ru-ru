@@ -1,37 +1,36 @@
 ### YamlMime:Landing
-title: Документация по распознаванию намерений
-summary: Распознавание намерения с помощью служб распознавания речи и Language Understanding (LUIS) позволяет в реальном времени проголосовать звуковые потоки в текст, определяя намерение и сущности.
+title: Документация о померке намерения
+summary: Распознавание намерения с помощью служб «Понимание речи и языка» (LUIS) позволяет в режиме реального времени транскрипции аудиопотоков в текст, определяя намерения и сущности.
 metadata:
-  title: Документация по распознаванию намерения. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  title: Документация о померке намерения - Учебники, Справка API - Когнитивные службы Azure (ru) Документы Майкрософт
   titleSuffix: Azure Cognitive Services
   services: cognitive-services
   author: IEvangelist
   manager: nitinme
-  layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
   ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: 63c830b20ad5a3bf322fe2402d72230a80399d45
-  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+  ms.openlocfilehash: 87e698c2a9b09b54c6015293b5be26ea2006a786
+  ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "79371466"
+  ms.lasthandoff: 03/28/2020
+  ms.locfileid: "79415178"
 landingContent:
-- title: О распознавании намерения
+- title: О признании намерений
   linkLists:
   - linkListType: quickstart
     links:
     - text: Распознавание речи, намерений и сущностей
       url: quickstarts/intent-recognition.md
-- title: Разработка с помощью распознавания намерения
+- title: Разработка с признанием намерений
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Распознавание намерений в речи с помощью LUIS и C#
+    - text: 'Распознать намерения речи с LUIS и C #'
       url: how-to-recognize-intents-from-speech-csharp.md
-- title: Ссылки
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
@@ -39,7 +38,7 @@ landingContent:
       url: https://www.luis.ai
     - text: Ресурсы для разработчиков LUIS
       url: ../luis/developer-reference-resource.md
-    - text: Языковая поддержка
+    - text: Поддержка языков
       url: ../luis/luis-language-support.md#languages-supported
-    - text: Цены на распознавание намерения
+    - text: Ценообразование распознавания намерения
       url: https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services

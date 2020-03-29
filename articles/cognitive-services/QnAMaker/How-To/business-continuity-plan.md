@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: diberry
 ms.openlocfilehash: f920a789f1ec631c5d70863b10d8364b3eb81b6c
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77650475"
 ---
 # <a name="create-a-business-continuity-plan-for-your-qna-maker-service"></a>Создание плана по обеспечению непрерывности бизнес-процессов для службы QnA Maker
@@ -27,17 +27,17 @@ ms.locfileid: "77650475"
 
 1. Настройте две параллельные [службы QnA Maker](../How-To/set-up-qnamaker-service-azure.md) в [сопряженных регионах Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
-2. Обеспечьте синхронизацию основного и дополнительного индексов поиска Azure. Используйте образец GitHub [здесь](https://github.com/pchoudhari/QnAMakerBackupRestore) , чтобы узнать, как выполнить резервное копирование для восстановления индексов Azure.
+2. Синхронизируйте основные и вторичные поисковые индексы Azure. Используйте образец GitHub [здесь,](https://github.com/pchoudhari/QnAMakerBackupRestore) чтобы узнать, как восстановить индексы Azure.
 
 3. Создайте резервную копию Application Insights с помощью [непрерывного экспорта](https://docs.microsoft.com/azure/application-insights/app-insights-export-telemetry).
 
 4. После настройки первичного и вторичного стеков воспользуйтесь [диспетчером трафика](https://docs.microsoft.com/azure/traffic-manager/) для настройки двух конечных точек и метода маршрутизации.
 
-5. Вам потребуется создать сертификат SSL (SSL) для конечной точки диспетчера трафика. [Привяжите SSL-сертификат](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings) к службам приложений.
+5. Для конечных точек менеджера трафика необходимо создать сертификат Безопасный слой розеток (SSL). [Привяжите SSL-сертификат](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings) к службам приложений.
 
 6. Наконец, используйте конечную точку диспетчера трафика в боте или приложении.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Выберите капактий](./improve-knowledge-base.md)
+> [Выберите capactiy](./improve-knowledge-base.md)

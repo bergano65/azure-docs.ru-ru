@@ -1,7 +1,7 @@
 ---
 title: Метаданные с использованием API GenerateAnswer — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: QnA Maker позволяет добавлять метаданные в виде пар "ключ-значение" в наборы вопросов и ответов. Вы можете фильтровать результаты по запросам пользователей и хранить дополнительные сведения, которые можно использовать в дальнейших беседах.
+description: QnA Maker позволяет добавлять метаданные в виде пар "ключ-значение" в наборы вопросов и ответов. Вы можете отфильтровывать результаты на запросы пользователей и хранить дополнительную информацию, которая может быть использована в последующих беседах.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,71 +11,71 @@ ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: diberry
 ms.openlocfilehash: 6a8cbabfd4e47c50d2c2e6f4a23c50a931e645a0
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79220647"
 ---
-# <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
+# <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получить ответ с помощью API Иана и метаданных GenerateAnswer
 
-Чтобы получить прогнозируемый ответ на вопрос пользователя, используйте API Женератеансвер. При публикации базы знаний можно просмотреть сведения об использовании этого API на странице **Публикация** . Вы также можете настроить API для фильтрации ответов на основе тегов метаданных и проверить базу знаний из конечной точки с помощью параметра строки тестового запроса.
+Чтобы получить прогнозируемый ответ на вопрос пользователя, используйте API GenerateAnswer. Когда вы публикуете базу знаний, вы можете увидеть информацию о том, как использовать этот API на странице **Публикации.** Можно также настроить API для фильтрации ответов на основе тегов метаданных и проверить базу знаний с точки зрения конечных данных с параметром строки строки запроса тестирования.
 
-QnA Maker позволяет добавлять метаданные в виде пар "ключ — значение" в наборы вопросов и ответов. Затем эти сведения можно использовать для фильтрации результатов в пользовательских запросах, а также для хранения дополнительных сведений, которые можно использовать в дальнейших беседах. Дополнительные сведения см. в разделе [Knowledge base](../Concepts/knowledge-base.md) (База знаний).
+В наборы вопросов и ответов позволяет добавлять метаданные в виде ключевых и ценовых пар. Затем эту информацию можно использовать для фильтрации результатов в запросах пользователей и для хранения дополнительной информации, которая может быть использована в последующих беседах. Дополнительные сведения см. в разделе [Knowledge base](../Concepts/knowledge-base.md) (База знаний).
 
 <a name="qna-entity"></a>
 
-## <a name="store-questions-and-answers-with-a-qna-entity"></a>Хранение вопросов и ответов с помощью сущности QnA
+## <a name="store-questions-and-answers-with-a-qna-entity"></a>Храните вопросы и ответы с помощью сущности ЗНА
 
-Важно понимать, как QnA Maker хранит данные вопроса и ответов. На рисунке ниже показана сущность QnA.
+Важно понять, как компания «NA Maker» хранит данные о вопросах и отвечает на них. На рисунке ниже показана сущность QnA.
 
-![Иллюстрация сущности QnA](../media/qnamaker-how-to-metadata-usage/qna-entity.png)
+![Иллюстрация сущности ЗНА](../media/qnamaker-how-to-metadata-usage/qna-entity.png)
 
-У каждой сущности QnA имеется уникальный постоянный идентификатор. Идентификатор можно использовать для внесения обновлений в определенную сущность QnA.
+У каждой сущности QnA имеется уникальный постоянный идентификатор. Идентификатор можно использовать для обновления определенной сущности nA.
 
 <a name="generateanswer-api"></a>
 
-## <a name="get-answer-predictions-with-the-generateanswer-api"></a>Получение прогнозов ответов с помощью API Женератеансвер
+## <a name="get-answer-predictions-with-the-generateanswer-api"></a>Получайте прогнозы ответов с помощью API GenerateAnswer
 
-Используйте [API женератеансвер](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer) в роботе или приложении для запроса базы знаний с пользовательским вопросом, чтобы получить наилучшее соответствие из набора вопросов и ответов.
+Вы используете [API GenerateAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer) в вашем боте или приложении для запроса базы знаний с пользовательским вопросом, чтобы получить лучшее соответствие из набора вопросов и ответов.
 
 <a name="generateanswer-endpoint"></a>
 
-## <a name="publish-to-get-generateanswer-endpoint"></a>Публикация для получения конечной точки Женератеансвер
+## <a name="publish-to-get-generateanswer-endpoint"></a>Публикация, чтобы получить конечную точку GenerateAnswer
 
-После публикации базы знаний либо с [портала QnA Maker](https://www.qnamaker.ai), либо с помощью [API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)можно получить сведения о конечной точке женератеансвер.
+После публикации базы знаний, либо с [портала NA Maker,](https://www.qnamaker.ai)либо с помощью [API,](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)вы можете получить подробную информацию о вашей конечной точке GenerateAnswer.
 
 Вот как это можно сделать.
-1. Войдите на портал [https://www.qnamaker.ai](https://www.qnamaker.ai).
-1. В окне **Мои базы знаний**выберите **Просмотреть код** для своей базы знаний.
-    ![снимок экрана с базами знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
+1. Войти [https://www.qnamaker.ai](https://www.qnamaker.ai)на ввесенку .
+1. В **моих базах знаний**, выберите **View Code** для вашей базы знаний.
+    ![Скриншот моих баз знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. Получите сведения о конечной точке GenerateAnswer.
 
-    ![Снимок экрана сведений о конечной точке](../media/qnamaker-how-to-metadata-usage/view-code.png)
+    ![Скриншот деталей конечной точки](../media/qnamaker-how-to-metadata-usage/view-code.png)
 
 Можно также получить сведения о конечной точки на вкладке **Settings** (Параметры) базы знаний.
 
 <a name="generateanswer-request"></a>
 
-## <a name="generateanswer-request-configuration"></a>Конфигурация запроса Женератеансвер
+## <a name="generateanswer-request-configuration"></a>Конфигурация запроса GenerateAnswer
 
 Для вызова GenerateAnswer используется HTTP-запрос POST. Пример кода, в котором демонстрируется вызов GenerateAnswer, доступен в этих [кратких руководствах](../quickstarts/quickstart-sdk.md#generate-an-answer-from-the-knowledge-base).
 
 Запрос POST использует:
 
-* Обязательные [Параметры URI](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#uri-parameters)
-* Требуемое свойство заголовка, `Authorization`, для безопасности
-* Обязательные [Свойства текста](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#feedbackrecorddto).
+* [Требуемые параметры URI](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#uri-parameters)
+* Требуемое свойство заголовка, `Authorization`для обеспечения безопасности
+* Необходимые [свойства тела.](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#feedbackrecorddto)
 
-URL-адрес Женератеансвер имеет следующий формат:
+URL GenerateAnswer имеет следующий формат:
 
 ```
 https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 ```
 
-Не забудьте задать свойство "заголовок HTTP" `Authorization` со значением строки, `EndpointKey` с конечным пробелом, после чего ключ конечной точки находится на странице **параметров** .
+Не забудьте установить свойство заголовка `Authorization` HTTP `EndpointKey` со значением строки с задним пространством, а затем ключом конечной точки, найденным на странице **«Настройки».**
 
-Пример текста JSON выглядит следующим образом:
+Пример тела JSON выглядит следующим:
 
 ```json
 {
@@ -93,15 +93,15 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 }
 ```
 
-Дополнительные сведения о [ранкертипе](../concepts/best-practices.md#choosing-ranker-type).
+Узнайте больше о [rankerType](../concepts/best-practices.md#choosing-ranker-type).
 
-Предыдущий JSON запросил только ответы, которые имеют пороговую оценку 30% или выше.
+Предыдущий JSON запрашивал только ответы, которые находятся на 30% или выше порогового балла.
 
 <a name="generateanswer-response"></a>
 
-## <a name="generateanswer-response-properties"></a>Свойства ответа Женератеансвер
+## <a name="generateanswer-response-properties"></a>Свойства ответа на генерацию ответов Ответов
 
-[Ответ](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#successful-query) — это объект JSON, включающий всю информацию, необходимую для вывода ответа, и следующий ход в диалоге, если он доступен.
+[Ответ](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#successful-query) — это объект JSON, включающее всю информацию, необходимую для отображения ответа и следующего поворота в разговоре, если она доступна.
 
 ```json
 {
@@ -125,11 +125,11 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 }
 ```
 
-Предыдущий формат JSON ответил на ответ с показателем 38,5%.
+Предыдущий JSON ответил ответом с результатом 38,5%.
 
-## <a name="use-qna-maker-with-a-bot-in-c"></a>Использование QnA Maker с Bot вC#
+## <a name="use-qna-maker-with-a-bot-in-c"></a>Используйте nA Maker с ботом в C #
 
-Платформа Bot предоставляет доступ к свойствам QnA Maker с помощью API- [интерфейса «ответ](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.ai.qna.qnamaker.getanswersasync?view=botbuilder-dotnet-stable#Microsoft_Bot_Builder_AI_QnA_QnAMaker_GetAnswersAsync_Microsoft_Bot_Builder_ITurnContext_Microsoft_Bot_Builder_AI_QnA_QnAMakerOptions_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_Double__)»:
+Платформа бота обеспечивает доступ к свойствам создателя nA с [помощью API getAnswer:](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.ai.qna.qnamaker.getanswersasync?view=botbuilder-dotnet-stable#Microsoft_Bot_Builder_AI_QnA_QnAMaker_GetAnswersAsync_Microsoft_Bot_Builder_ITurnContext_Microsoft_Bot_Builder_AI_QnA_QnAMakerOptions_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_Double__)
 
 ```csharp
 using Microsoft.Bot.Builder.AI.QnA;
@@ -144,13 +144,13 @@ qnaOptions.ScoreThreshold = 0.3F;
 var response = await _services.QnAServices[QnAMakerKey].GetAnswersAsync(turnContext, qnaOptions);
 ```
 
-Предыдущий JSON запросил только ответы, которые имеют пороговую оценку 30% или выше.
+Предыдущий JSON запрашивал только ответы, которые находятся на 30% или выше порогового балла.
 
-В коде программы-робота поддержки есть [Пример](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-support/csharp_dotnetcore/Service/SupportBotService.cs#L418) с этим кодом.
+У бота поддержки есть пример с этим [кодом.](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-support/csharp_dotnetcore/Service/SupportBotService.cs#L418)
 
-## <a name="use-qna-maker-with-a-bot-in-nodejs"></a>Использование QnA Maker с программой-роботом в Node. js
+## <a name="use-qna-maker-with-a-bot-in-nodejs"></a>Используйте nA Maker с ботом в Node.js
 
-Платформа Bot предоставляет доступ к свойствам QnA Maker с помощью API- [интерфейса «ответ](https://docs.microsoft.com/javascript/api/botbuilder-ai/qnamaker?view=botbuilder-ts-latest#generateanswer-string---undefined--number--number-)»:
+Платформа бота обеспечивает доступ к свойствам создателя nA с [помощью API getAnswer:](https://docs.microsoft.com/javascript/api/botbuilder-ai/qnamaker?view=botbuilder-ts-latest#generateanswer-string---undefined--number--number-)
 
 ```javascript
 const { QnAMaker } = require('botbuilder-ai');
@@ -164,25 +164,25 @@ var qnaMakerOptions = {
 var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOptions);
 ```
 
-Предыдущий JSON запросил только ответы, которые имеют пороговую оценку 30% или выше.
+Предыдущий JSON запрашивал только ответы, которые находятся на 30% или выше порогового балла.
 
-В коде программы-робота поддержки есть [Пример](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-activelearning/javascript_nodejs/Helpers/dialogHelper.js#L36) с этим кодом.
+У бота поддержки есть пример с этим [кодом.](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-activelearning/javascript_nodejs/Helpers/dialogHelper.js#L36)
 
 <a name="metadata-example"></a>
 
-## <a name="use-metadata-to-filter-answers-by-custom-metadata-tags"></a>Использование метаданных для фильтрации ответов по тегам пользовательских метаданных
+## <a name="use-metadata-to-filter-answers-by-custom-metadata-tags"></a>Используйте метаданные для фильтрации ответов пользовательскими тегами метаданных
 
-Добавление метаданных позволяет фильтровать ответы по этим тегам метаданных. Добавьте столбец метаданных из меню **Параметры представления** . Добавьте метаданные в базу знаний, щелкнув значок метаданных **+** , чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
+Добавление метаданных позволяет фильтровать ответы с помощью этих тегов метаданных. Добавьте столбец метаданных из меню **«Параметры представления».** Добавьте метаданные в базу знаний, **+** выбрав значок метаданных для добавления пары метаданных. Эта пара состоит из одного ключа и одного значения.
 
-![Снимок экрана: Добавление метаданных](../media/qnamaker-how-to-metadata-usage/add-metadata.png)
+![Скриншот добавления метаданных](../media/qnamaker-how-to-metadata-usage/add-metadata.png)
 
 <a name="filter-results-with-strictfilters-for-metadata-tags"></a>
 
 ## <a name="filter-results-with-strictfilters-for-metadata-tags"></a>Фильтрация результатов с помощью strictFilters по тегам метаданных
 
-Примите во внимание вопрос пользователя "когда закроется это отель?", где предполагается, что цель предполагается для ресторана "сообразительного".
+Рассмотрим вопрос пользователя "Когда этот отель закрывается?", где подразумевается намерение для ресторана "Рай".
 
-Поскольку результаты требуются только для ресторана "сообразительного", можно установить фильтр в вызове Женератеансвер для метаданных "имя ресторана". Это показано в следующем примере:
+Поскольку результаты необходимы только для ресторана "Рай", вы можете установить фильтр в generateAnswer вызова на метаданные "Название ресторана". Следующий пример показывает следующее:
 
 ```json
 {
@@ -198,9 +198,9 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 <a name="keep-context"></a>
 
-## <a name="use-question-and-answer-results-to-keep-conversation-context"></a>Использование результатов вопросов и ответов для сохранения контекста беседы
+## <a name="use-question-and-answer-results-to-keep-conversation-context"></a>Используйте результаты вопросов и ответов для поддержания контекста разговора
 
-Ответ на Женератеансвер содержит соответствующие метаданные соответствующего набора вопросов и ответов. Эти сведения можно использовать в клиентском приложении для хранения контекста предыдущего диалога, который будет использоваться в последующих диалогах.
+Ответ на GenerateAnswer содержит соответствующую информацию о метаданных по соответствующему набору вопросов и ответов. Эту информацию можно использовать в клиентском приложении для хранения контекста предыдущего разговора для использования в последующих беседах.
 
 ```json
 {
@@ -228,11 +228,11 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 }
 ```
 
-## <a name="match-questions-only-by-text"></a>Сопоставлять только вопросы по тексту
+## <a name="match-questions-only-by-text"></a>Матч только вопросы, по тексту
 
-По умолчанию QnA Maker выполняет поиск по вопросам и ответам. Если вы хотите выполнять поиск только по вопросам, то для получения ответа используйте `RankerType=QuestionOnly` в тексте сообщения запроса Женератеансвер.
+По умолчанию, создатель nA выполняет поиск вопросов и ответов. Если вы хотите искать только вопросы, чтобы `RankerType=QuestionOnly` получить ответ, используйте в органе POST запрос GenerateAnswer.
 
-Вы можете выполнять поиск в опубликованной базе знаний, используя `isTest=false`или в тесте базы знаний с помощью `isTest=true`.
+Вы можете искать через опубликованные `isTest=false`кб, используя, `isTest=true`или в тесте кб с помощью .
 
 ```json
 {
@@ -243,7 +243,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 }
 ```
 
-## <a name="common-http-errors"></a>Распространенные ошибки HTTP
+## <a name="common-http-errors"></a>Общие ошибки HTTP
 
 |Код|Объяснение|
 |:--|--|
@@ -257,7 +257,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-На странице **Публикация** также содержатся сведения для [создания ответа](../Quickstarts/get-answer-from-knowledge-base-using-url-tool.md) с помощью POST-или перелистывания.
+**Страница Publish** также предоставляет информацию для получения ответа с почтальоном или CURL. [generate an answer](../Quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
 
 > [!div class="nextstepaction"]
-> [Создание программы-робота в базе знаний](../tutorials/integrate-qnamaker-luis.md)
+> [Создание чат-бота базы знаний](../tutorials/integrate-qnamaker-luis.md)

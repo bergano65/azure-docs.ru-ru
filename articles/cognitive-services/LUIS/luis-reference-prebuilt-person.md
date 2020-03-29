@@ -1,5 +1,5 @@
 ---
-title: Персоннаме предварительно созданная сущность — LUIS
+title: NameName заранее построенная сущность - LUIS
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана предварительно созданная сущность PersonName в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.topic: reference
 ms.date: 05/07/2019
 ms.author: diberry
 ms.openlocfilehash: 768c719211e8a8f2133d3798343d076e795a3da0
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78273433"
 ---
 # <a name="personname-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность PersonName для приложения LUIS
@@ -28,10 +28,10 @@ ms.locfileid: "78273433"
 `Is Jill Jones in Cairo?`
 
 
-#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[Ответ V3](#tab/V3)
 
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
+Следующий JSON с `verbose` параметром, установленным для: `false`
 
 ```json
 "entities": {
@@ -40,8 +40,8 @@ ms.locfileid: "78273433"
     ]
 }
 ```
-#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
+#### <a name="v3-verbose-response"></a>[V3 многословный ответ](#tab/V3-verbose)
+Следующий JSON с `verbose` параметром, установленным для: `true`
 
 ```json
 "entities": {
@@ -65,7 +65,7 @@ ms.locfileid: "78273433"
     }
 }
 ```
-#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[V2 ответ](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.PersonName**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "78273433"
 ```
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

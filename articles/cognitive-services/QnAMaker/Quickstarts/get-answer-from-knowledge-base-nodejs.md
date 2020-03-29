@@ -6,17 +6,17 @@ ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: conceptual
 ms.openlocfilehash: 9031c320b055c0a7191655d6531eaa31d9cc8bb8
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78851732"
 ---
-# <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-nodejs"></a>Краткое руководство. получение ответов на вопрос из базы знаний с помощью Node. js
+# <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-nodejs"></a>Быстрый запуск: Получить ответы на вопрос из базы знаний с Node.js
 
 В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/knowledge-base.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime) | [Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/blob/master/documentation-samples/quickstarts/get-answer/get-answer.js)
+[Пример справочной документации](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime) | [Sample](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/blob/master/documentation-samples/quickstarts/get-answer/get-answer.js)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,7 +27,7 @@ ms.locfileid: "78851732"
 
     На странице параметров публикации представлены значения Host, EndpointKey и маршрута POST.
 
-    ![Опубликовать параметры](../media/qnamaker-quickstart-get-answer/publish-settings.png)
+    ![Параметры публикации](../media/qnamaker-quickstart-get-answer/publish-settings.png)
 
 ## <a name="create-a-nodejs-file"></a>Создание файла Node.js
 
@@ -77,7 +77,7 @@ node get-answer.js
 
 [!INCLUDE [Clean up files and knowledge base](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))

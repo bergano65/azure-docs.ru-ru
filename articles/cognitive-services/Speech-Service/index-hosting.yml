@@ -1,47 +1,46 @@
 ### YamlMime:Landing
-title: Документация по размещению
-summary: Контейнеры службы речи доступны для сценариев преобразования речи в текст и преобразования текста в речь, охватывающих стандартные или настроенные модели.
+title: Документация хостинга
+summary: Контейнеры речевых услуг доступны как для сценариев «речи к тексту», так и для сценариев «текст к речи», охватывающих стандартные или индивидуальные модели.
 metadata:
-  title: Документация по размещению. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  title: Документация хостинга - Учебники, Справка API - Когнитивные услуги Azure (ru) Документы Майкрософт
   titleSuffix: Azure Cognitive Services
   services: cognitive-services
   author: IEvangelist
   manager: nitinme
-  layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
   ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: ff12c357ba273c6965b11db4eabc1890925439be
-  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+  ms.openlocfilehash: 8298a2e37520e7920f18b7ffd5b49074098e0243
+  ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "79366706"
+  ms.lasthandoff: 03/28/2020
+  ms.locfileid: "79415903"
 landingContent:
-- title: Сведения о размещении
+- title: О хостинге
   linkLists:
   - linkListType: concept
     links:
-    - text: Установка и запуск речевых контейнеров
+    - text: Установка и запуск контейнеров для речевой речи
       url: speech-container-howto.md
-    - text: Контейнеры речи с Kubernetes и Helm
+    - text: Речевые контейнеры с Кубернетесом и Хелмом
       url: speech-container-howto-on-premises.md
-    - text: Контейнеры распознавания речи в службе "экземпляры контейнеров Azure"
+    - text: Контейнеры речи на экземплярах контейнеров Azure
       url: deploy-speech-on-container-instances.md
 - title: Создание и настройка
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Создание ресурса речи Azure
+    - text: Создать ресурс службы "Речь" Azure.
       url: get-started.md#new-resource
-    - text: Настройка контейнеров речи
+    - text: Настройка речевых контейнеров
       url: speech-container-configuration.md
-- title: Ссылки
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
     - text: Поддерживаемые регионы
       url: regions.md
-    - text: Национальные облака
+    - text: Суверенные облака
       url: sovereign-clouds.md

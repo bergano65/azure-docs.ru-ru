@@ -11,23 +11,23 @@ ms.topic: reference
 ms.date: 09/24/2019
 ms.author: diberry
 ms.openlocfilehash: 96440bf0e9c26e6f222f3bc94c8fabb0bc8f488d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79220559"
 ---
-# <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Поддержка языков для QnA Maker ресурсов и баз знаний
+# <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Языковая поддержка ресурсов и баз знаний NA Maker
 
-Язык для службы выбирается при создании первой базы знаний в ресурсе. Все дополнительные базы знаний в ресурсе должны быть на одном языке. 
+Язык службы выбирается при создании первой базы знаний в ресурсе. Все дополнительные базы знаний в ресурсе должны быть на одном языке. 
 
-Язык определяет релевантность результатов QnA Maker предоставляемых в ответ на запросы пользователя.
+Язык определяет релевантность результатов, которые предоставляет компания «NA Maker» в ответ на запросы пользователей.
 
-Дополнительные сведения о [влиянии выбора языка](../how-to/language-knowledge-base.md).
+Узнайте больше о [влиянии выбора языка.](../how-to/language-knowledge-base.md)
 
 ## <a name="languages-supported"></a>Поддерживаемые языки
 
-В следующем списке содержатся языки, поддерживаемые для ресурса QnA Maker. 
+Следующий список содержит языки, поддерживаемые для ресурса NA Maker. 
 
 |Язык|
 |--|
