@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: fmegen
 ms.openlocfilehash: 3039276a49e7bb41660d114e78ca047a3f77f279
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74109934"
 ---
 # <a name="about-the-speech-sdk-audio-input-stream-api"></a>Об API входного аудиопотока в пакете SDK для службы "Речь"
 
-API **потока входных данных** РЕЧЕВОГО пакета SDK предоставляет способ потоковой передачи в распознаватели вместо использования микрофона или API-интерфейсов входного файла.
+Аудио **входной поток** API речи SDK обеспечивает способ потоковой передачи звука в распознавателей вместо использования микрофона или входного файла API.
 
 При использовании входных аудиопотоков выполняется следующая процедура.
 
@@ -59,7 +59,7 @@ API **потока входных данных** РЕЧЕВОГО пакета S
    };
   ```
 
-- Создайте конфигурацию звука, основанную на формате звука и входном аудиопотоке. Передайте конфигурацию для обычной речи и конфигурацию ввода звука при создании распознавателя. Например,
+- Создайте конфигурацию звука, основанную на формате звука и входном аудиопотоке. Передайте конфигурацию для обычной речи и конфигурацию ввода звука при создании распознавателя. Пример:
 
   ```csharp
   var audioConfig = AudioConfig.FromStreamInput(new ContosoAudioStream(config), audioFormat);
@@ -73,7 +73,7 @@ API **потока входных данных** РЕЧЕВОГО пакета S
   var text = result.GetText();
   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Получение пробной версии службы "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 - [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

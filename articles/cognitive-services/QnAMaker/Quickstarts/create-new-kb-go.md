@@ -6,10 +6,10 @@ ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: conceptual
 ms.openlocfilehash: 221220345f4f3b7aff2a32c956d921f677ca0627
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78851919"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-go"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью Go
@@ -17,16 +17,16 @@ ms.locfileid: "78851919"
 В этом кратком руководстве описано, как программным способом создать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/knowledge-base.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
 
 В этом кратком руководстве вызываются API службы QnA Maker:
-* [Создание базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create).
-* [Получение сведений об операции](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails).
+* [Создание базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create)
+* [Получение сведений об операции](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails)
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [Пример GO](https://github.com/Azure-Samples/cognitive-services-qnamaker-go/blob/master/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go)
+[Эталонная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [GO Sample](https://github.com/Azure-Samples/cognitive-services-qnamaker-go/blob/master/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go)
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Go 1.10.1](https://golang.org/dl/).
+* [Go 1.10.1.](https://golang.org/dl/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и конечную точку (включая имя ресурса), щелкните **Быстрый запуск** для ресурса на портале Azure.
 
 ## <a name="create-a-knowledge-base-go-file"></a>Создание файла базы знаний на Go
@@ -42,7 +42,7 @@ ms.locfileid: "78851919"
 ## <a name="add-the-required-constants"></a>Добавление необходимых констант
 После указания зависимостей добавьте необходимые константы, чтобы получить доступ к QnA Maker.
 
-Задайте следующие значения.
+Задайте следующие значения:
 
 * `<your-qna-maker-subscription-key>`. **Ключ** — это строка из 32 символов, которая доступна на странице "Быстрый запуск" ресурса QnA Maker на портале Azure. Это не то же самое, что ключ конечной точки прогнозирования.
 * `{your-resource-name}`. **Имя ресурса** используется для создания URL-адреса конечной точки разработки в формате `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. Это не тот же URL-адрес, который используется для запроса конечной точки прогнозирования.
@@ -72,7 +72,7 @@ ms.locfileid: "78851919"
 
 ## <a name="add-function-to-create-kb"></a>Добавление функции для создания базы знаний
 
-Добавьте приведенные ниже функции, чтобы отправить HTTP-запрос POST на создание базы знаний. _Идентификатор операции_ **создания** возвращается в **расположение** поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации.
+Добавьте приведенные ниже функции, чтобы отправить HTTP-запрос POST на создание базы знаний. **Идентификатор** _операции_ возвращается в **поле**заголовка ответа POST, а затем используется как часть маршрута в запросе GET. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации.
 
 [!code-go[Add the create_kb method](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=85-97 "Add the create_kb method")]
 
@@ -132,7 +132,7 @@ go run create-new-knowledge-base
 
 [!INCLUDE [Clean up files and KB](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))

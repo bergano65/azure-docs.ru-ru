@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: diberry
 ms.openlocfilehash: ef5f6967b7ad9500672d00d93dd8acaca99e5948
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "73499464"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
@@ -24,20 +24,20 @@ ms.locfileid: "73499464"
 
 [!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Войдите на веб-сайт [LUIS](luis-reference-regions.md) и в параметрах учетной записи найдите [ключ разработки](luis-concept-keys.md#authoring-key). Этот ключ используется для вызова API разработки.
-* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-* Эта статья начинается с CSV-файла для гипотетических файлов журналов запросов пользователей. Его можно скачать [здесь](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
+* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Эта статья начинается с CSV для гипотетических файлов журнала компании запросов пользователей. Его можно скачать [здесь](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
 * Установите Node.js последней версии с NPM. Скачать эту версию можно [здесь](https://nodejs.org/en/download/).
 * **(Рекомендуется)** Visual Studio Code для применения функции IntelliSense и отладки. Скачать Visual Studio Code бесплатно можно [здесь](https://code.visualstudio.com/).
 
-Весь код в этой статье доступен в [репозитории Azure-samples Language Understanding GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv). 
+Весь код в этой статье доступен в [репозитории языка Azure-Samples Understanding GitHub.](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv) 
 
 ## <a name="map-preexisting-data-to-intents-and-entities"></a>Сопоставление существующих данных с намерениями и сущностями
 Даже если у вас есть система, которая была создана без учета LUIS, и если она содержит текстовые данные, сопоставляемые с разными задачами, которые хотят выполнять пользователи, вы можете осуществлять сопоставления из существующих категорий пользовательского ввода с намерениями в LUIS. Если вы можете определить важные слова или фразы в речи пользователя, эти слова можно сопоставлять с сущностями.
 
-Откройте файл [`IoT.csv`](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv). Он содержит журнал пользовательских запросов к вымышленной службе по домашней автоматике, в том числе способ их классификации, что именно сказал пользователь и некоторые столбцы с извлеченной из них полезной информацией. 
+Откройте [`IoT.csv`](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv) файл. Он содержит журнал пользовательских запросов к вымышленной службе по домашней автоматике, в том числе способ их классификации, что именно сказал пользователь и некоторые столбцы с извлеченной из них полезной информацией. 
 
 ![CSV-файл уже имеющихся данных](./media/luis-tutorial-node-import-utterances-csv/csv.png) 
 
@@ -139,14 +139,14 @@ const LUIS_appCulture = "en-us";
 const LUIS_versionId = "0.1";
 ```
 
-### <a name="run-the-script"></a>Запуск сценария
+### <a name="run-the-script"></a>Выполнение скрипта
 Запустите сценарий из терминала или командной строки с помощью Node.js.
 
 ```console
 > node index.js
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```console
 > npm start
@@ -194,7 +194,7 @@ upload done
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 В этом примере приложения используются следующие API LUIS:
-- [create app](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)
-- [add intents](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0c)
-- [add entities](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0e) 
-- [add utterances](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09)
+- [создать приложение](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)
+- [добавить намерения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0c)
+- [добавить сущности](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0e) 
+- [добавить высказывания](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09)

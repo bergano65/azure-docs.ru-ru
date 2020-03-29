@@ -1,7 +1,7 @@
 ---
-title: Извлечение DOCKER для контейнера извлечение ключевых фраз
+title: Докер тянуть для ключевых фраз извлечения контейнера
 titleSuffix: Azure Cognitive Services
-description: Команда DOCKER Pull для контейнера извлечение ключевых фраз
+description: Докер тянуть команды для ключевых фраз извлечения контейнера
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,17 +10,17 @@ ms.topic: include
 ms.date: 09/12/2019
 ms.author: dapine
 ms.openlocfilehash: 59313528e4beb343f9ac1103d3f9f2faae5dfc16
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "70966694"
 ---
-#### <a name="docker-pull-for-the-key-phrase-extraction-container"></a>Извлечение DOCKER для контейнера извлечение ключевых фраз
+#### <a name="docker-pull-for-the-key-phrase-extraction-container"></a>Докер тянуть для ключевых фраз извлечения контейнера
 
-[`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) Используйте команду, чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
+Используйте [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) команду для загрузки изображения контейнера из реестра контейнеров Майкрософт.
 
-Полное описание доступных тегов для Анализ текста контейнеров см. в разделе контейнер [Извлечение ключевых фраз](https://go.microsoft.com/fwlink/?linkid=2018757) в центре DOCKER.
+Полное описание доступных тегов для контейнеров Text Analytics можно найти в контейнере [Key Phrase Extraction](https://go.microsoft.com/fwlink/?linkid=2018757) на концентраторе Docker.
 
 ```
 docker pull mcr.microsoft.com/azure-cognitive-services/keyphrase:latest

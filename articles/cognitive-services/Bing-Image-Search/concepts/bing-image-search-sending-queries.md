@@ -1,5 +1,5 @@
 ---
-title: Настройка и предложить запросов поиска образа — API поиска изображений Bing
+title: Настройка и предложить поиск изображений запросы - Bing Image Search API
 titleSuffix: Azure Cognitive Services
 description: Дополнительные сведения о настройке запросов поиска, отправляемых в API Bing для поиска изображений.
 services: cognitive-services
@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahi
 ms.openlocfilehash: d833b017004365e9dad7241e360f42ff41a55883
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67542740"
 ---
-# <a name="customize-and-suggest-image-search-queries"></a>Настройка и предлагаемые запросы поиска изображений
+# <a name="customize-and-suggest-image-search-queries"></a>Настройка и предложение поисковых запросов изображений
 
-Воспользуйтесь этой статьей, чтобы узнать, как настроить запросы и предложить поисковый запрос для отправки API Bing для поиска изображений.
+Используйте эту статью, чтобы узнать, как настроить запросы и предложить условия поиска для отправки в API поиска изображений Bing.
 
 ## <a name="suggest-search-terms"></a>Предложить условия поиска
 
@@ -30,7 +30,7 @@ ms.locfileid: "67542740"
 
 Если Bing может сегментировать исходный поисковый запрос, возвращаемый объект [Images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) содержит поле `pivotSuggestions`. Сводка предложений может отображаться в виде необязательных поисковых запросов для пользователя. Например, если исходный запрос был *Microsoft Surface*, Bing может разделить запрос на *Microsoft* и *Surface* и предложить сведения для каждого из них. Эти предложения могут отображаться в виде необязательных поисковых запросов для пользователя.
 
-В следующем примере показаны сводные предложения для *Microsoft Surface*.  
+Следующий пример показывает предложения опоры для *Microsoft Surface:*  
 
 ```json
 {

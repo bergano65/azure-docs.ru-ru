@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
 ms.openlocfilehash: e7f5af42d0bb0079746cc9e64b621adfebd565d1
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74072669"
 ---
 # <a name="bing-entity-search-api-endpoint"></a>Конечная точка API Bing для поиска сущностей
@@ -30,7 +30,7 @@ API Bing для поиска сущностей использует одну к
  GET https://api.cognitive.microsoft.com/bing/v7.0/entities
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные сведения об API Bing для поиска сущностей](overview.md)

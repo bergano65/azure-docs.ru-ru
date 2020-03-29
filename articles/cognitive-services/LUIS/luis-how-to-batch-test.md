@@ -1,5 +1,5 @@
 ---
-title: Выполнение пакетного теста — LUIS
+title: Как выполнить пакетный тест - LUIS
 titleSuffix: Azure Cognitive Services
 description: Использование наборов высказываний для пакетного тестирования Интеллектуальной службы распознавание речи (LUIS) для поиска фрагментов речи с неправильными намерениями и сущностями.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: diberry
 ms.openlocfilehash: bfef7eae7158a05b09a3534e8fb44335333d8cf1
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "73904355"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
@@ -38,11 +38,11 @@ ms.locfileid: "73904355"
 
 3. В поле **Dataset Name** (Имя набора данных) введите имя для набора данных. Файл набора данных содержит **массив высказываний**, включая *помеченное намерение* и *сущности*. Просмотрите синтаксис [примера пакетного файла](luis-concept-batch-test.md#batch-file-format). 
 
-4. Нажмите кнопку **Готово**. Будет добавлен файл набора данных.
+4. Выберите **готовое**. Будет добавлен файл набора данных.
 
 ## <a name="run-rename-export-or-delete-dataset"></a>Запуск, переименование, экспорт и удаление набора данных
 
-Чтобы запустить, переименовать, экспортировать или удалить набор данных, используйте кнопку с многоточием (***...*** ) в конце строки набора данных.
+Чтобы запустить, переименовать, экспортировать или удалить набор данных, используйте кнопку с многоточием (***... ***) в конце строки набора данных.
 
 ![Действия с набором данных](./media/luis-how-to-batch-test/batch-testing-options.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "73904355"
 
 Скачиваемый набор данных — это тот же файл, который был отправлен для пакетного тестирования.
 
-|Состояние|Значение|
+|Штат|Значение|
 |--|--|
 |![Зеленый круглый значок успешного выполнения теста](./media/luis-how-to-batch-test/batch-test-result-green.png)|Все высказывания успешно протестированы.|
 |![Красный значок x неудачно выполненного теста](./media/luis-how-to-batch-test/batch-test-result-red.png)|По меньшей мере одно намерение высказывания не соответствует прогнозированию.|
@@ -100,11 +100,11 @@ ms.locfileid: "73904355"
 
 [!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты. 
 
-* [Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Пометка предлагаемых высказываний в LUIS) 
+* [Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Добавление меток к предлагаемым фразам в LUIS) 
 * [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 
 * [Understand batch testing with this tutorial](luis-tutorial-batch-testing.md) (Общие сведения о пакетном тестировании в этом руководстве)
 * [Learn batch testing concepts](luis-concept-batch-test.md) (Общие сведения о принципах пакетного тестирования)

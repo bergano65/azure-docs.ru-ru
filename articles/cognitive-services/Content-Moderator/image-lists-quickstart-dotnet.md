@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
 ms.openlocfilehash: e650529f3adb998ce683354565acdeb3928b50c3
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "72931754"
 ---
 # <a name="moderate-with-custom-image-lists-in-c"></a>Модерация с помощью настраиваемых списков изображений на C#
 
-В этой статье содержатся сведения и примеры кода, которые помогут приступить к работе с пакетом [SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) в следующих целях:
+В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
 - создание настраиваемого списка изображений;
 - добавление и удаление изображений в списке;
 - получение идентификаторов всех изображений в списке;
@@ -32,9 +32,9 @@ ms.locfileid: "72931754"
 > [!NOTE]
 > Существует максимальное ограничение в **5 списков изображений**, каждый из которых может содержать **не более 10 000 изображений**.
 
-Консольное приложение для этого руководством имитирует некоторые задачи, которые можно выполнить с помощью API списка изображений.
+Консольное приложение для этого руководства имитирует некоторые задачи, которые можно выполнить с помощью API списка изображений.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
 ## <a name="sign-up-for-content-moderator-services"></a>Регистрация в службах Content Moderator
 
@@ -42,11 +42,11 @@ ms.locfileid: "72931754"
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)** .
+1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)**.
 
    В примере кода назовите проект **ImageLists**.
 
-1. Выберите этот проект единственным запускаемым проектом для решения.
+1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
@@ -56,7 +56,7 @@ ms.locfileid: "72931754"
 - Microsoft.Rest.ClientRuntime
 - Newtonsoft.Json.
 
-### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
+### <a name="update-the-programs-using-statements"></a>Обновление инструкций using в программе
 
 Добавьте следующие операторы `using`:
 
@@ -72,7 +72,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Чтобы создать для своей подписки клиент Content Moderator, добавьте следующий фрагмент кода. Обновите поля `AzureEndpoint` и `CMSubscriptionKey` значениями URL-адреса конечной точки и ключа подписки. Их можно найти на вкладке **Быстрый запуск** ресурса в портал Azure.
+Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки. `AzureEndpoint` Обновление `CMSubscriptionKey` и поля со значениями вашего URL-адреса и ключа подписки. Вы можете найти их в вкладке **Быстрого запуска** ресурса на портале Azure.
 
 ```csharp
 /// <summary>
@@ -292,7 +292,7 @@ private static ImageList CreateCustomList(ContentModeratorClient client)
 
 ## <a name="create-a-method-to-add-a-collection-of-images-to-the-list"></a>Создание метода для добавления в список коллекции изображений
 
-Добавьте следующий метод в класс **Program**. В этом руководство не показано, как применять теги к изображениям в списке. 
+Добавьте следующий метод в класс **Program**. Это руководство не демонстрирует, как применять теги к изображениям в списке. 
 
 ```csharp
 /// <summary>
@@ -587,7 +587,7 @@ private static IList<ImageList> GetAllListIds(ContentModeratorClient client)
 
 ## <a name="add-code-to-simulate-the-use-of-an-image-list"></a>Добавление кода для моделирования использования списка изображений
 
-Добавьте следующий код в метод **Main**. Этот код моделирует многие операции, выполняемые для определения списка и управления им, а также для проверки изображений с его помощью. Возможности ведения журнала позволяют просматривать объекты ответа, создаваемые вызовами пакета SDK, отправленными к службе Content Moderator.
+Добавьте следующий код в **основной** метод. Этот код моделирует многие операции, выполняемые для определения списка и управления им, а также для проверки изображений с его помощью. Возможности ведения журнала позволяют просматривать объекты ответа, создаваемые вызовами пакета SDK, отправленными к службе Content Moderator.
 
 ```csharp
 // Create the text writer to use for logging, and cache a static reference to it.

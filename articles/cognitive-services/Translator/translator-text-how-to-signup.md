@@ -1,7 +1,7 @@
 ---
 title: Начало работы с API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: В этой статье показано, как зарегистрироваться для Cognitive Services Azure API перевода текстов и получить ключ подписки.
+description: В этой статье будет уотена возможность подписаться на API текста переводчика когнитивных служб Azure и получить ключ подписки.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -12,24 +12,24 @@ ms.date: 06/04/2019
 ms.author: swmachan
 ms.custom: seodec18
 ms.openlocfilehash: cfae5318213e8af164c8d0cc9ed378705a5644b0
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "73835695"
 ---
 # <a name="how-to-sign-up-for-the-translator-text-api"></a>Регистрация для использования API перевода текстов
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 - Нет учетной записи? Чтобы поэкспериментировать, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/).
-- Уже есть учетная запись? [Вход](https://ms.portal.azure.com/)
+- Уже есть учетная запись? [Войти](https://ms.portal.azure.com/)
 
 ## <a name="create-a-subscription-to-the-translator-text-api"></a>Создание подписки на API перевода текстов
 
 После входа на портал создайте подписку на API перевода текстов, выполнив следующие действия.
 
-1. Выберите действие **Создать ресурс**.
+1. Выберите **и создайте ресурс.**
 1. В поле поиска **Search the Marketplace** (Поиск в Marketplace) введите **Перевод текстов** и выберите его из списка результатов.
 1. Нажмите кнопку **Создать**, чтобы определить сведения для подписки.
 1. В списке **Ценовая категория** выберите ценовую категорию, которая лучше всего соответствует вашим потребностям.
@@ -58,7 +58,7 @@ Microsoft Translator обычно выполняет первые несколь
 
 ## <a name="customization"></a>Настройка
 
-Используйте пользовательский переводчик, чтобы настроить переводы и создать систему переводов, оптимизированную для собственной терминологии и стиля, начав с универсальных систем нейронного машинного перевода Microsoft Translator. [Подробнее](customization.md)
+Используйте пользовательский переводчик, чтобы настроить переводы и создать систему переводов, оптимизированную для собственной терминологии и стиля, начав с универсальных систем нейронного машинного перевода Microsoft Translator. [Дополнительные сведения](customization.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

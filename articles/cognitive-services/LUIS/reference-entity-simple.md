@@ -1,7 +1,7 @@
 ---
-title: Простой тип сущности — LUIS
+title: Простой тип сущности - LUIS
 titleSuffix: Azure Cognitive Services
-description: Простая сущность описывает одну концепцию из контекста, из которого они изучены. Добавьте список фраз при использовании простой сущности для улучшения результатов.
+description: Простая сущность описывает одну концепцию из машино-изученного контекста. Добавьте список фраз при использовании простой сущности для улучшения результатов.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,17 +11,17 @@ ms.topic: reference
 ms.date: 09/29/2019
 ms.author: diberry
 ms.openlocfilehash: 8b92aa6057c81ec9442372c5b85918cb92196d61
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74894760"
 ---
 # <a name="simple-entity"></a>Простая сущность
 
 Простая сущность — это универсальная сущность, описывающая одно понятие и обучаемая на основе контекста машинного обучения. Так как простые сущности обычно являются именами, например названиями компаний, продуктов или другими категориями имен, добавьте [список фраз](luis-concept-feature.md) для выделения используемых имен.
 
-**Сущность хорошо подходит в следующих случаях:**
+**Сущность оптимальна для данных в таких случаях.**
 
 * У данных отсутствует согласованное форматирование, но они означают одно и то же.
 
@@ -35,7 +35,7 @@ ms.locfileid: "74894760"
 
 Данные, возвращаемые из конечной точки, содержат имя сущности, обнаруженный текст из высказывания, расположение обнаруженного текста, а также оценку:
 
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
 
 ```JSON
 "entities": [
@@ -49,9 +49,9 @@ ms.locfileid: "74894760"
 ]
 ```
 
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-Это JSON, если в строке запроса задано `verbose=false`:
+Это JSON, `verbose=false` если установлен в строке запроса:
 
 ```json
 "entities": {
@@ -88,11 +88,11 @@ This is the JSON if `verbose=true` is set in the query string:
 
 * * *
 
-|Объект данных|Имя сущности|Value|
+|Объект данных|Имя сущности|Значение|
 |--|--|--|
 |Простая сущность|`Customer`|`bob jones`|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Изучение синтаксиса шаблона](reference-pattern-syntax.md)
+> [Изучить синтаксис шаблона](reference-pattern-syntax.md)

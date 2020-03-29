@@ -12,21 +12,21 @@ ms.date: 04/24/2018
 ms.author: aahi
 ms.custom: seodec2018
 ms.openlocfilehash: ad33b5a28728a8e7f9c0a70ff81ea5a9e65624bd
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74072644"
 ---
 # <a name="search-for-gif-images"></a>Поиск GIF-изображений 
 
-API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.  Разработчики могут интегрировать привлекательные GIF в различные сценарии беседы. 
+API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.Разработчики могут интегрировать привлекательные GIF-файлы в различные сценарии общения. 
 
 Приведенный ниже URL-адрес является запросом анимационных GIF-изображений.
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=interesting&imageType=AnimatedGif&mkt=en-us
 ```
-Параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query) указывает условия поиска.  С помощью параметра фильтра `animatedGif`imageType[ в этом запросе также указывается тип содержимого — ](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype).
+Параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query) указывает условия поиска.  С помощью параметра фильтра [imageType](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype) в этом запросе также указывается тип содержимого — `animatedGif`.
 
 Чтобы просмотреть примеры результатов, используйте приведенный ниже URL-адрес для поиска через bing.com.
 ```
@@ -207,6 +207,6 @@ class SearchResults{
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](quickstarts/csharp.md)
+## <a name="next-steps"></a>Дальнейшие действия
+- [Краткое руководство для C#](quickstarts/csharp.md)
 - [Руководство по одностраничным веб-приложениям](tutorial-bing-image-search-single-page-app.md)

@@ -1,5 +1,5 @@
 ---
-title: Обнаружение цветовых схем — Компьютерное зрение
+title: Обнаружение цветовой схемы - Компьютерное зрение
 titleSuffix: Azure Cognitive Services
 description: Понятия, связанные с определением цветовых схем на изображениях с помощью API компьютерного зрения.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: e0fa85b8a90ea57d9b81bd2eeaa6d080b7582acd
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: af0c39ed8211ac2041d143112437ad5d6b384259
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945276"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80244738"
 ---
 # <a name="detect-color-schemes-in-images"></a>Обнаружение цветовых схем на изображениях
 
@@ -30,7 +30,7 @@ ms.locfileid: "68945276"
 
 В приведенном ниже примере показан ответ JSON, возвращаемый компьютерным зрением при определении цветовой схемы на образце изображения. В этом случае изображение не является черно-белым, но преобладающий цвет переднего плана и фона — черный, а преобладающие цвета изображения в целом — черный и белый.
 
-![Наружный Mountain на закате с силуэтом человека](./Images/mountain_vista.png)
+![Гора на открытом воздухе на закате, с силуэтом человека](./Images/mountain_vista.png)
 
 ```json
 {
@@ -56,8 +56,8 @@ ms.locfileid: "68945276"
 
 | Изображение | Преобладающие цвета |
 |-------|-----------------|
-|![Белый цветок на зеленом фоне](./Images/flower.png)| Передний план: Черный<br/>Фон: Белый<br/>Цвета: черный, белый, зеленый|
-![Поезд, проходящий через станцию](./Images/train_station.png) | Передний план: Черный<br/>Фон: Черный<br/>Цвета: Черный |
+|![Белый цветок на зеленом фоне](./Images/flower.png)| Передний план: черный<br/>Фон: белый<br/>Цвета: черный, белый, зеленый|
+![Поезд, проходящий через станцию](./Images/train_station.png) | Передний план: черный<br/>Фон: черный<br/>Цвета: черный |
 
 ### <a name="accent-color-examples"></a>Примеры акцентных цветов
 
@@ -75,9 +75,12 @@ ms.locfileid: "68945276"
 
 | Изображение | Черно-белое |
 |-------|----------------|
-|![Черно-белая фотография здания на Манхэттене](./Images/bw_buildings.png) | true |
-|![Синий дом и передний двор](./Images/house_yard.png) | False |
+|![Черно-белая фотография здания на Манхэттене](./Images/bw_buildings.png) | Да |
+|![Синий дом и передний двор](./Images/house_yard.png) | false |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="use-the-api"></a>Использование API
 
-Ознакомьтесь с принципами [определения типов изображений](concept-detecting-image-types.md).
+Функция обнаружения цветовой гаммы является частью API [анализа изображений.](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включить `Color` в параметр запроса **visualFeatures.** Затем, когда вы получите полный ответ JSON, просто разогнайте строку для содержимого раздела. `"color"`
+
+* [Быстрый запуск: Компьютерное зрение .NET SDK](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+* [Быстрый запуск: Проанализируйте изображение (REST API)](./quickstarts/csharp-analyze.md)

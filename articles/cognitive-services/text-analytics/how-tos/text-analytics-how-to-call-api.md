@@ -1,7 +1,7 @@
 ---
 title: Вызов API "Анализ текста"
 titleSuffix: Azure Cognitive Services
-description: В этой статье объясняется, как можно вызвать Анализ текста Azure Cognitive Services REST API и POST.
+description: В этой статье объясняется, как можно назвать Azure Cognitive Services Text Analytics REST API и Postman.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: aahi
 ms.openlocfilehash: afb576c265ccdd4a014ed678331f030a0442a197
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79219305"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
@@ -27,7 +27,7 @@ ms.locfileid: "79219305"
 
 [!INCLUDE [text-analytics-api-references](../includes/text-analytics-api-references.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
@@ -42,7 +42,7 @@ ms.locfileid: "79219305"
 | Элемент | Допустимые значения | Обязательно? | Использование |
 |---------|--------------|-----------|-------|
 |`id` |Типом данных выступает строка, однако обычно идентификаторы документов являются целыми числами. | Обязательно | Система использует предоставленные идентификаторы, чтобы структурировать выходные данные. Коды языков, ключевые фразы и оценка тональности создаются для каждого идентификатора в запросе.|
-|`text` | Неструктурированный необработанный текст, не более 5 120 символов. | Обязательно | Для распознавания языка текст может быть выражен на любом языке. Для анализа тональности, извлечения ключевых фраз и идентификации сущности текст должен быть на [поддерживаемом языке](../text-analytics-supported-languages.md). |
+|`text` | Неструктурированный необработанный текст, до 5120 символов. | Обязательно | Для распознавания языка текст может быть выражен на любом языке. Для анализа тональности, извлечения ключевых фраз и идентификации сущности текст должен быть на [поддерживаемом языке](../text-analytics-supported-languages.md). |
 |`language` | Двухзначный код [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) для [поддерживаемого языка](../text-analytics-supported-languages.md). | Различается | Требуется для анализа тональности, извлечения ключевых фраз и связывания сущностей. Необязательно для распознавания языка. Код можно исключить, и это не будет ошибкой, однако без него анализ будет менее точным. Код языка должен соответствовать предоставленному вами элементу `text`. |
 
 Дополнительные сведения см. в разделе [Ограничения данных](../overview.md#data-limits). 
@@ -80,22 +80,22 @@ ms.locfileid: "79219305"
 
 5. Вставьте несколько документов JSON в формате, который допустим для предполагаемого анализа. Дополнительные сведения о конкретном анализе см. в статьях ниже:
 
-  + [Пример. Как определить язык с помощью Анализа текста](text-analytics-how-to-language-detection.md)  
-  + [Пример. Как извлечь ключевые фразы с помощью Анализа текста](text-analytics-how-to-keyword-extraction.md)  
-  + [Пример. Как определить тональность с помощью Анализа текста](text-analytics-how-to-sentiment-analysis.md)  
-  + [Распознавание сущностей](text-analytics-how-to-entity-linking.md)  
+  + [Обнаружение языка](text-analytics-how-to-language-detection.md)  
+  + [Извлечение ключевых фраз](text-analytics-how-to-keyword-extraction.md)  
+  + [Анализ тональности](text-analytics-how-to-sentiment-analysis.md)  
+  + [Распознавание сущности](text-analytics-how-to-entity-linking.md)  
 
 
-6. Щелкните **Отправить**, чтобы отправить запрос. Сведения о количестве запросов, которые можно отправить в минуту и секунду, см. в разделе [ограничения данных](../overview.md#data-limits) в обзоре.
+6. Щелкните **Отправить**, чтобы отправить запрос. Ознакомьтесь с [разделом ограничений данных](../overview.md#data-limits) в обзоре для получения информации о количестве запросов, которые можно отправлять в минуту и секунду.
 
    В Postman ответ отображается в следующем расположенном ниже окне как один документ JSON с элементом для каждого идентификатора документа, предоставленного в запросе.
 
-## <a name="see-also"></a>См. также раздел 
+## <a name="see-also"></a>См. также 
 
- [Что такое API анализа текста версии 2.0?](../overview.md)  
+ [Обзор аналитики текста](../overview.md)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Пример. Как определить язык с помощью Анализа текста](text-analytics-how-to-language-detection.md)
+> [Определение языка](text-analytics-how-to-language-detection.md)

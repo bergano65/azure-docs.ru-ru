@@ -1,5 +1,5 @@
 ---
-title: Языковая поддержка
+title: Поддержка языков
 titleSuffix: Azure Cognitive Services
 description: Azure Cognitive Services позволяет создавать приложения, которые видят, слышат, понимают пользователя и говорят с ним. Эти службы поддерживают более трех десятков языков, предоставляя пользователям возможность общения с вашим приложением естественным образом.
 services: cognitive-services
@@ -11,24 +11,24 @@ ms.date: 03/03/2020
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: 48cb1ca1427ece0ee30a124b20d3918f1ace47eb
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78274138"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Поддержка естественного языка в Azure Cognitive Services
 
-Azure Cognitive Services позволяет создавать приложения, которые могут просматривать, слышать, говорить с пользователями и понимать их. Эти службы поддерживают более трех десятков языков, предоставляя пользователям возможность общения с вашим приложением естественным образом. Используйте приведенные ниже ссылки для просмотра доступности языков по службе.
+Когнитивные службы Azure позволяют создавать приложения, которые видят, слышат, говорят и понимают пользователей. Эти службы поддерживают более трех десятков языков, предоставляя пользователям возможность общения с вашим приложением естественным образом. Используйте ссылки ниже, чтобы просмотреть доступность языка по службе.
 
-Эти Cognitive Services не зависят от языка и не имеют ограничений, основанных на языке.
+Эти когнитивные службы являются языковыми агностиками и не имеют ограничений, основанных на языке.
 
 * [Персонализатор](https://docs.microsoft.com/azure/cognitive-services/personalizer/)
-* [Детектор аномалий (Предварительная версия)](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/overview)
+* [Детектор аномалий (предварительная версия)](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/overview)
 
 ## <a name="vision"></a>Зрение
 
-* [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/faq)
+* [API Компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/faq)
 * [Индексатор видео](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview)
 
 ## <a name="speech"></a>Речь
@@ -42,24 +42,24 @@ Azure Cognitive Services позволяет создавать приложен�
 
 * [Проверка орфографии Bing](https://docs.microsoft.com/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages)
 * [Распознавание речи (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/luis-supported-languages)
-* [QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/languages-supported)
-* [Перевод текстов](https://docs.microsoft.com/azure/cognitive-services/translator/languages)
-* [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)
+* [Зна Чайник](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/languages-supported)
+* [Текст переводчика](https://docs.microsoft.com/azure/cognitive-services/translator/languages)
+* [Текстовая аналитика](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)
 
 ## <a name="search"></a>Поиск
 
-* [Поиск в Интернете Bing](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/supported-countries-markets)
+* [Бинг веб-поиска](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/supported-countries-markets)
 * [Поиск изображений Bing](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/supported-countries-markets)
-* [Поиск новостей Bing](https://docs.microsoft.com/azure/cognitive-services/bing-news-search/supported-countries-markets)
-* [Автозаполнение Bing](https://docs.microsoft.com/azure/cognitive-services/Bing-Autosuggest/bing-autosuggest-supported-languages)
-* [Визуальный поиск Bing](https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/supported-countries-markets)
+* [API Поиска новостей Bing](https://docs.microsoft.com/azure/cognitive-services/bing-news-search/supported-countries-markets)
+* [Бинг Автоспредлагаем](https://docs.microsoft.com/azure/cognitive-services/Bing-Autosuggest/bing-autosuggest-supported-languages)
+* [Bing визуальный поиск](https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/supported-countries-markets)
 * [Пользовательский поиск Bing](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/supported-countries-markets)
 
 ## <a name="decision"></a>Решение
 
-* [Content Moderator](https://docs.microsoft.com/azure/cognitive-services/content-moderator/text-moderation-api-languages)
+* [Модератор контента](https://docs.microsoft.com/azure/cognitive-services/content-moderator/text-moderation-api-languages)
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 * [Что такое Cognitive Services?](welcome.md)
 * [Создание учетной записи](cognitive-services-apis-create-account.md)

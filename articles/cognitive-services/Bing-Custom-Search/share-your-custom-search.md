@@ -1,7 +1,7 @@
 ---
 title: Совместное использование экземпляра пользовательского поиска (Пользовательский поиск Bing)
 titleSuffix: Azure Cognitive Services
-description: Легко разрешите совместное редактирование и тестирование вашего экземпляра, отправляя его членам вашей команды.
+description: Легко разрешить совместное редактирование и тестирование экземпляра, делясь им с членами вашей команды.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
 ms.openlocfilehash: 5a08ee7f5ea3d5e8c393ea4c1a64c353e24777e0
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74072697"
 ---
 # <a name="share-your-custom-search-instance"></a>Совместное использование экземпляра пользовательского поиска
@@ -34,6 +34,6 @@ ms.locfileid: "74072697"
 
 Чтобы прекратить совместное использование экземпляра с другим пользователем, удалите из списка его адрес электронной почты с помощью значка удаления. Это также приводит к удалению экземпляра из списка экземпляров пользователя.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка пользовательского автозаполнения](define-custom-suggestions.md)

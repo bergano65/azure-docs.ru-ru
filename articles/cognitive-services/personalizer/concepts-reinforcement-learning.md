@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: diberry
 ms.openlocfilehash: 36071cdee25cfa99fc54b0e5c0c0aa822cb5fe2f
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "68662834"
 ---
 # <a name="what-is-reinforcement-learning"></a>Что такое обучение с подкреплением?
@@ -64,10 +64,10 @@ _Память принятия решений_ (модель, обученная
 * [Принятие контекстных решений с низким техническим долгом](https://arxiv.org/abs/1606.03966)
 * [Подход сокращения к справедливой классификации](https://arxiv.org/abs/1803.02453)
 * [Эффективные контекстные бандиты в нестабильных мирах](https://arxiv.org/abs/1708.01799)
-* [Прогнозирование остаточной потери. Обучение с подкреплением без дополнительных отзывов](https://openreview.net/pdf?id=HJNMYceCW)
+* [Остаточный прогноз потери: Укрепление: обучение без дополнительной обратной связи](https://openreview.net/pdf?id=HJNMYceCW)
 * [Инструкции по сопоставлению и визуальные наблюдения для действий в обучении с подкреплением](https://arxiv.org/abs/1704.08795)
 * [Научись искать лучше, чем твой учитель](https://arxiv.org/abs/1502.02206)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Offline evaluation](concepts-offline-evaluation.md) (Автономная оценка) 

@@ -1,59 +1,58 @@
 ### YamlMime:Landing
-title: Документация по сценариям бесед
-summary: Изучите различные сценарии беседы, запись разговора или беседы с несколькими устройствами.
+title: Документация сценариев разговоров
+summary: Изучите различные сценарии разговора. Научитесь использовать разговор транскрипции или многоустройств разговор в сценариях встреч, и транскрипции в сценариях Call Center.
 metadata:
-  title: Документация по сценариям диалога. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  title: Документация сценариев разговоров - Учебники, Справка API - Когнитивные службы Azure (ru) Документы Майкрософт
   titleSuffix: Azure Cognitive Services
   services: cognitive-services
   author: IEvangelist
   manager: nitinme
-  layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
-  ms.date: 03/10/2020
+  ms.date: 03/16/2020
   ms.author: dapine
-  ms.openlocfilehash: 0df2992564dcf90f6b927b5a917993caec18af45
-  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+  ms.openlocfilehash: 75254b0b0b3afb391006a422300c0d4cb9d27fdb
+  ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "79365796"
+  ms.lasthandoff: 03/28/2020
+  ms.locfileid: "79479694"
 landingContent:
-- title: Транскрибирование бесед
+- title: О разговорной транскрипции (сценарий встречи)
   linkLists:
   - linkListType: overview
     links:
-    - text: Что такое запись разговора?
+    - text: Что такое транскрипция разговоров на встречах?
       url: conversation-transcription.md
   - linkListType: how-to-guide
     links:
-    - text: Работа со сценариями центра обработки вызовов
-      url: call-center-transcription.md
-    - text: Запись разговора в реальном времени
+    - text: Транскрипция разговора в реальном времени
       url: how-to-use-conversation-transcription.md
     - text: Асинхронное транскрибирование бесед
       url: how-to-async-conversation-transcription.md
-  - linkListType: reference
-    links:
-    - text: Поддержка языка для транскрипции
-      url: conversation-transcription.md#language-support
-- title: О беседе с несколькими устройствами
+- title: О многоустройстве Беседа (сценарий собрания)
   linkLists:
   - linkListType: overview
     links:
-    - text: Что такое беседа с использованием нескольких устройств?
+    - text: Что такое многоустройство Разговор?
       url: multi-device-conversation.md
   - linkListType: quickstart
     links:
     - text: Начало беседы и присоединение к ней
       url: quickstarts/multi-device-conversation.md
-  - linkListType: reference
+- title: Стенограмма колл-центра (сценарий обычай/агент)
+  linkLists:
+  - linkListType: overview
     links:
-    - text: Поддержка языков бесед на нескольких устройствах
-      url: multi-device-conversation.md#language-support
+    - text: Обработка сценариев колл-центра
+      url: call-center-transcription.md
 - title: Справочник
   linkLists:
   - linkListType: reference
     links:
-    - text: Цены на речевое распознавание речи
+    - text: Поддержка языка транскрипции разговора
+      url: conversation-transcription.md#language-support
+    - text: Поддержка языка разговоров с несколькими устройствами
+      url: multi-device-conversation.md#language-support
+    - text: Цены транскрипции речи
       url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/

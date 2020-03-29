@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: how-to
 ms.date: 02/10/2020
 ms.author: dapine
-ms.openlocfilehash: 63e6a2a47265eae08a653f3eadaf6bad86dd0635
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 79562049f48ba90a4f9a123919185521a82d7be6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119710"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80365789"
 ---
 # <a name="convert-text-to-speech-using-python"></a>Преобразование текста в речь с использованием Python
 
@@ -99,7 +99,7 @@ def get_token(self):
 Затем создайте текст запроса с соблюдением синтаксиса SSML. Этот пример определяет структуру и применяет входные данные `tts`, которые вы создали ранее.
 
 >[!NOTE]
-> В этом примере используется голос `Guy24KRUS`. См. [полный список предоставляемых корпорацией Майкрософт голосов и языков](language-support.md).
+> В этом примере используется голос `Guy24kRUS`. См. [полный список предоставляемых корпорацией Майкрософт голосов и языков](language-support.md).
 > Если вы хотите создать для своего бренда уникальный и узнаваемый голос, см. руководство по [созданию пользовательского голоса](how-to-customize-voice-font.md).
 
 И наконец, направьте запрос в службу. Если запрос выполнен успешно, возвращается код состояния 200 и речевой ответ сохраняется в файл с меткой времени.
@@ -122,7 +122,7 @@ def save_audio(self):
     voice = ElementTree.SubElement(xml_body, 'voice')
     voice.set('{http://www.w3.org/XML/1998/namespace}lang', 'en-US')
     voice.set(
-        'name', 'Microsoft Server Speech Text to Speech Voice (en-US, Guy24KRUS)')
+        'name', 'Microsoft Server Speech Text to Speech Voice (en-US, Guy24kRUS)')
     voice.text = self.tts
     body = ElementTree.tostring(xml_body)
 
@@ -168,9 +168,9 @@ python tts.py
 > [!div class="nextstepaction"]
 > [Ознакомиться с примерами на Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Quickstart: Synthesize speech with the Speech SDK for Python](quickstarts/speech-to-text-from-microphone.md) (Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Python)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
-* [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)
+* [Запись образцов голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

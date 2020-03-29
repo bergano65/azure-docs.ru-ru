@@ -1,7 +1,7 @@
 ---
 title: Отправка запросов к API Автозаполнения Bing
 titleSuffix: Azure Cognitive Services
-description: API "Автозаполнение Bing" возвращает список предлагаемых запросов на основе частично введенной строки запроса в поле поиска. Дополнительные сведения об отправке запросов.
+description: API "Автозаполнение Bing" возвращает список предлагаемых запросов на основе частично введенной строки запроса в поле поиска. Подробнее об отправке запросов.
 services: cognitive-services
 author: swhite-msft
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: scottwhi
 ms.openlocfilehash: d479548e682e814345e13d9416d08ec453f90304
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74072847"
 ---
 # <a name="sending-requests-to-the-bing-autosuggest-api"></a>Отправка запросов к API Автозаполнения Bing.
@@ -25,9 +25,9 @@ ms.locfileid: "74072847"
 
 **API автозаполнения Bing** включает одну конечную точку, которая возвращает список предлагаемых запросов для частичного поискового запроса.
 
-Чтобы получить предложенные запросы с помощью API Bing, отправьте запрос `GET` на указанную ниже конечную точку. Используйте заголовки и параметры URL-адреса для определения других спецификаций.
+Чтобы получить предложенные запросы с помощью API Bing, отправьте запрос `GET` на указанную ниже конечную точку. Для определения дополнительных спецификаций используйте заголовки и параметры URL-адреса.
 
-**Конечная точка** возвращает в формате JSON предложения по поиску, релевантные для введенных пользователем данных, которые определяются с помощью `?q=""`.
+**Конечная точка:** Возвращает предложения поиска в виде результатов JSON, которые `?q=""`имеют отношение к вхданным пользователям, определяемому .
 
 ```http
 GET https://api.cognitive.microsoft.com/bing/v7.0/Suggestions 
@@ -35,10 +35,10 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/Suggestions
 
 Подробные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. п. вы найдете в справочнике [по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference).
 
-API-интерфейсы **Bing** поддерживают действия поиска, которые возвращают результаты определенного типа. Все конечные точки поиска возвращают результаты в виде объектов ответа JSON.
+Интерфейсы API **Bing** поддерживают действия поиска, которые возвращают результаты определенного типа.Все конечные точки поиска возвращают результаты в виде объектов ответа JSON.
 Все конечные точки поддерживают запросы, которые возвращают результаты с учетом языка и (или) местоположения по значениям долготы, широты и радиуса поиска.
 
-Полные сведения о параметрах, поддерживаемых каждой конечной точкой, см. в справочной документации по каждому типу.
+Полные сведения о параметрах, поддерживаемых каждой конечной точкой, приведены в справочной документации по каждому типу.
 Примеры основных запросов, созданных с помощью API автозаполнения Bing, см. в [этих кратких руководствах](https://docs.microsoft.com/azure/cognitive-services/Bing-Autosuggest).
 
 ## <a name="bing-autosuggest-api-requests"></a>Запросы к API Автозаполнения Bing
@@ -48,14 +48,14 @@ API-интерфейсы **Bing** поддерживают действия по
 
 Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа к нему злоумышленников. Кроме этого, осуществление вызовов с сервера также предоставляет единую точку обновления для будущих обновлений.
 
-В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#query), который содержит частичный поисковый запрос пользователя. В запросе также можно указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#mkt), который определяет рынок, для которого будут отображаться результаты. Список необязательных параметров запроса см. в [этом разделе](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.
+В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#query), который содержит частичный поисковый запрос пользователя. В запросе можно также указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса можно найти в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.
 
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:
 
-- [User-Agent](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#useragent)
+- [Пользователь-агент](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#useragent)
 - [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientid)
 - [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientip)
-- [X-Search-Location](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#location)
+- [X-Поиск-Местоположение](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#location)
 
 Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.
 
@@ -93,7 +93,7 @@ API-интерфейсы **Bing** поддерживают действия по
 > Host: api.cognitive.microsoft.com
 > ```
 
-Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Передавайте заголовок с идентификатором клиента только в том случае, если вы уже вызывали API Bing и получили от него идентификатор клиента для конкретного сочетания пользователя и устройства.
+Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Передавайте заголовок с идентификатором клиента только в том случае, если вы уже вызывали API Bing и получили от него идентификатор клиента для конкретного сочетания пользователя и устройства.
 
 Следующая группа веб-предложений является ответом на запрос выше. Группа содержит список предложений запроса поиска, а каждое предложение включает поле `displayText`, `query` и `url`.
 
@@ -167,8 +167,8 @@ BingAPIs-Market: en-US
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
+- [Что такое API Автозаполнения Bing?](../get-suggested-search-terms.md)
 - [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)
 - [Предложение терминов запроса](get-suggestions.md)

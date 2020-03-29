@@ -1,7 +1,7 @@
 ---
 title: Фильтр ненормативной лексики — API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Используйте фильтрацию ненормативной лексики, чтобы определить уровень ненормативной лексики, переведенный в текст в API перевода текстов Cognitive Services Azure.
+description: Используйте ненормативную лексику для определения уровня ненормативной лексики, переведенной в текст в API текста переводчика когнитивных служб Azure.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
 ms.openlocfilehash: e7e2097e0d3daf360f1fa0f30bf3fd2c62c07163
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "73836229"
 ---
 # <a name="add-profanity-filtering-with-the-translator-text-api"></a>Добавление фильтра ненормативной лексики в API перевода текстов

@@ -1,7 +1,7 @@
 ---
-title: Запись разговора в реальном времени (Предварительная версия) — служба речи
+title: Транскрипция разговора в реальном времени (Предварительный просмотр) - Служба речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать транскрипцию разговора в режиме реального времени с помощью речевого пакета SDK. Доступно для C++, C#и Java.
+description: Узнайте, как использовать транскрипцию разговоров в реальном времени с помощью речи SDK. Доступно для СЗ, СЗ и Явы.
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -11,46 +11,46 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: weixu
 ms.openlocfilehash: 64a9e11cec7164fb4421dd018238de9f0670382b
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "76263733"
 ---
-# <a name="real-time-conversation-transcription-preview"></a>Запись разговора в реальном времени (Предварительная версия)
+# <a name="real-time-conversation-transcription-preview"></a>Транскрипция разговора в реальном времени (Предварительный просмотр)
 
-API **конверсатионтранскрибер** для речевых средств позволяет транскрипция встречи и другие беседы с возможностью добавления, удаления и обнаружения нескольких участников путем потоковой передачи в службу распознавания речи с помощью `PullStream` или `PushStream`. В этом разделе вы узнаете, как использовать речь в тексте с пакетом SDK для распознавания речи (версия 1.8.0 или более поздняя). Дополнительные сведения см. в разделе [что такое речевые службы](overview.md).
+Речь SDK в **ConversationTranscriber** API позволяет транскрибировать встречи и другие разговоры с возможностью добавить, удалить `PullStream` `PushStream`и идентифицировать несколько участников, потоковое аудио на службу речи с помощью или . Эта тема требует, чтобы вы знали, как использовать речь к тексту с речью SDK (версия 1.8.0 или позже). Для получения дополнительной информации [см.](overview.md)
 
 ## <a name="limitations"></a>Ограничения
 
-- API конверсатионтранскрибер поддерживается для C++, C#и Java в Windows, Linux и Android.
-- В настоящее время доступны в языках "en-US" и "zh-CN" в следующих регионах: _centralus_ и _eastasia_.
-- Требуется 7-MIC циклический массив из нескольких микрофонов с потоком ссылки для воспроизведения. Массив микрофонов должен соответствовать [нашей спецификации](https://aka.ms/sdsdk-microphone).
-- [Пакет SDK для речевых устройств](speech-devices-sdk.md) предоставляет подходящие устройства и пример приложения, демонстрирующий запись разговора.
+- API ConversationTranscriber поддерживается для СЗ, КЗ и Ява на Windows, Linux и Android.
+- В настоящее время доступна на языках "en-US" и "zh-CN" в следующих регионах: _Центральная_ и _Восточная._
+- Требуется 7-микрофонный многомикрофонный массив с справочным потоком воспроизведения. Микрофонный массив должен соответствовать [нашей спецификации.](https://aka.ms/sdsdk-microphone)
+- [DDK Speech Devices](speech-devices-sdk.md) предоставляет подходящие устройства и пример приложения, демонстрирующего транскрипцию разговоров.
 
-## <a name="optional-sample-code-resources"></a>Необязательный образец ресурсов кода
+## <a name="optional-sample-code-resources"></a>Дополнительные ресурсы кода образца
 
-Пакет SDK для речевых устройств предоставляет пример кода в Java для записи звука в реальном времени с помощью 8 каналов.
+Речевое устройство SDK предоставляет пример кода на Java для записи звука в режиме реального времени с помощью 8 каналов.
 
-- [Пример кода устройства РУБО](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/blob/master/Samples/Android/Speech%20Devices%20SDK%20Starter%20App/example/app/src/main/java/com/microsoft/cognitiveservices/speech/samples/sdsdkstarterapp/Conversation.java)
-- [Пример кода для пакета Azure Kinect Dev Kit](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/blob/master/Samples/Windows_Linux/SampleDemo/src/com/microsoft/cognitiveservices/speech/samples/Cts.java)
+- [Код образца устройства ROOBO](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/blob/master/Samples/Android/Speech%20Devices%20SDK%20Starter%20App/example/app/src/main/java/com/microsoft/cognitiveservices/speech/samples/sdsdkstarterapp/Conversation.java)
+- [Код образца образца Azure Kinect Dev Kit](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/blob/master/Samples/Windows_Linux/SampleDemo/src/com/microsoft/cognitiveservices/speech/samples/Cts.java)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Подписка на службу распознавания речи. Если у вас ее нет, вы можете [получить подписку на пробную версию речи](https://azure.microsoft.com/try/cognitive-services/) .
+Подписка на речевые услуги. Вы можете [получить пробную подписку на речь,](https://azure.microsoft.com/try/cognitive-services/) если у вас ее нет.
 
-## <a name="create-voice-signatures"></a>Создание подписок
+## <a name="create-voice-signatures"></a>Создание голосовых подписей
 
-Первым шагом является создание голосовых подписей для участников диалога для эффективной идентификации докладчика.
+Первым шагом является создание голосовых подписей для участников беседы для эффективной идентификации динамиков.
 
-### <a name="audio-input-requirements"></a>Требования к входным аудио
+### <a name="audio-input-requirements"></a>Требования к ввода звукам
 
-- Входной звуковой WAV-файл для создания голосовых подписей должен быть в 16-разрядных примерах, частоте выборки 16 кГц и одном канале (Mono).
-- Рекомендуемая длина для каждого звукового образца — от тридцати секунд до двух минут.
+- Файл входной аудиоволны для создания голосовых подписей должен быть в 16-битных образцах, частоте выборки 16 кГц и одном канале (моно) формате.
+- Рекомендуемая длина каждого аудиообразца составляет от тридцати секунд до двух минут.
 
-### <a name="sample-code"></a>Пример кода
+### <a name="sample-code"></a>Образец кода
 
-В следующем примере показаны два разных способа создания подписи голоса с [помощью REST API](https://aka.ms/cts/signaturegenservice) в C#. Обратите внимание, что необходимо заменить реальную информацию на "Йоурсубскриптионкэй", имя WAV-файла для "Спеакервоице. wav" и регион для `{region}` и "Йоурсервицерегион" (_centralus_ или _eastasia_).
+В следующем примере показаны два различных способа создания голосовой подписи [с помощью REST API](https://aka.ms/cts/signaturegenservice) в C. Обратите внимание, что вам нужно будет заменить реальную информацию для "YourSubscriptionKey", ваше `{region}` имя файла волны для "speakerVoice.wav", и ваш регион для и "YourServiceRegion"_(центральный_ или _Восток_).
 
 ```csharp
 class Program
@@ -102,18 +102,18 @@ class Program
 }
 ```
 
-## <a name="transcribe-conversations"></a>Транскрипция беседы
+## <a name="transcribe-conversations"></a>Транскрибные разговоры
 
-В следующем примере кода показано, как транскрипция беседы в режиме реального времени для трех динамиков. Предполагается, что для каждого динамика уже созданы голосовые подписи, как показано выше. При создании объекта Спичконфиг замените реальную информацию на "Йоурсубскриптионкэй" и "Йоурсервицерегион".
+Следующий пример кода демонстрирует, как транскрибировать разговоры в режиме реального времени для трех динамиков. Предполагается, что вы уже создали голосовые подписи для каждого динамика, как показано выше. Заменить реальную информацию на "YourSubscriptionKey" и "YourServiceRegion" при создании объекта SpeechConfig.
 
-Примеры кода:
+Основные моменты примера кода включают:
 
-- Создание объекта `Conversation` из объекта `SpeechConfig` с помощью идентификатора собрания, созданного с помощью `Guid.NewGuid()`
-- Создание `ConversationTranscriber` объекта и присоединение диалога к `JoinConversationAsync()` для начала записи
-- Регистрация интересующих событий
-- Добавление или удаление участников диалога с помощью объекта CONVERSATION
+- Создание `Conversation` объекта из `SpeechConfig` объекта с помощью идентификатора собрания, генерируемого с помощью`Guid.NewGuid()`
+- Создание `ConversationTranscriber` объекта и присоединиться `JoinConversationAsync()` к разговору с, чтобы начать транскрипцию
+- Регистрация интересных событий
+- Добавление или удаление участников в беседу с помощью объекта «Разговор»
 - Потоковая передача звука
-- В пакете SDK для речи версии 1.9.0 и более поздних версий типы значений `int` и `string` поддерживаются в поле версия голосовой подписи.
+- В версии Speech SDK 1.9.0 `int` `string` и далее оба и типы значений поддерживаются в поле версии голосовой подписи.
 
 Транскрипция и идентификатор динамика возвращаются в зарегистрированные события.
 
@@ -218,4 +218,4 @@ public class MyConversationTranscriber
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Асинхронная транскрипция диалога](how-to-async-conversation-transcription.md)
+> [Асинхронное транскрибирование бесед](how-to-async-conversation-transcription.md)

@@ -1,28 +1,28 @@
 ---
-title: Изменение данных — LUIS
+title: Изменение данных - LUIS
 description: Узнайте, как изменить данные перед прогнозированием в службе "Распознавание речи" (LUIS).
 ms.topic: conceptual
 ms.date: 02/11/2020
-ms.openlocfilehash: 5547724a6333d248a7ba4e9aeecaaa8f331feb7d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: b3b36351a64a4e1a0bd13d5785a4e0609a80901d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79221098"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80292051"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
-LUIS предоставляет способы управления высказыванием до или во время прогнозирования. Сюда входит [исправление орфографических](luis-tutorial-bing-spellcheck.md)ошибок и устранение проблем с часовым поясом для предварительно созданной [datetimeV2](luis-reference-prebuilt-datetimev2.md).
+LUIS предоставляет способы управления высказыванием до или во время прогнозирования. К ним относятся [фиксация правописания](luis-tutorial-bing-spellcheck.md)и фиксация проблем с часовным поясом для заранее построенного [datetimeV2.](luis-reference-prebuilt-datetimev2.md)
 
 ## <a name="correct-spelling-errors-in-utterance"></a>Исправление орфографических ошибок в высказывании
 
 
-### <a name="v3-runtime"></a>Среда выполнения v3
+### <a name="v3-runtime"></a>Время выполнения V3
 
-Предварительная обработка текста для исправления правописания перед отправкой utterance в LUIS. Используйте пример фразы продолжительностью с правильным написанием, чтобы убедиться, что вы получаете правильные прогнозы.
+Предварительный текст для коррекции правописания перед отправкой высказывания в LUIS. Используйте примеры высказываний с правильным написанием, чтобы убедиться, что вы получите правильные прогнозы.
 
-Используйте [Проверка орфографии Bing](../bing-spell-check/overview.md) , чтобы исправить текст перед отправкой в Luis.
+Используйте [Bing Spell Check](../bing-spell-check/overview.md) для исправления текста перед отправкой в LUIS.
 
-### <a name="prior-to-v3-runtime"></a>До версии 3 среды выполнения
+### <a name="prior-to-v3-runtime"></a>До выполнения V3
 
 Для исправления орфографических ошибок в высказывании LUIS использует [API проверки орфографии Bing версии 7](../Bing-Spell-Check/overview.md). LUIS требуется ключ, связанный с этой службой. Создайте ключ, а затем добавьте его в качестве параметра QueryString в [конечную точку](https://go.microsoft.com/fwlink/?linkid=2092356).
 
@@ -70,10 +70,10 @@ LUIS предоставляет способы управления высказ
 * * *
 
 ### <a name="list-of-allowed-words"></a>Список разрешенных слов
-API проверки орфографии Bing, используемый в LUIS, не поддерживает список игнорируемых слов во время изменений проверки орфографии. Если необходимо разрешить список слов или акронимов, обработайте utterance в клиентском приложении перед отправкой utterance в LUIS для прогнозирования намерения.
+API проверки орфографии Bing, используемый в LUIS, не поддерживает список слов, которые можно игнорировать во время изменения проверки орфографии. Если вам нужно разрешить список слов или аббревиатур, обработайте высказывание в клиентском приложении, прежде чем отправить высказывание в LUIS для прогнозирования намерения.
 
 ## <a name="change-time-zone-of-prebuilt-datetimev2-entity"></a>Изменение часового пояса предварительно созданной сущности datetimeV2
-Когда приложение LUIS использует предварительно созданную сущность [datetimeV2](luis-reference-prebuilt-datetimev2.md) , в ответе прогноза может возвращаться значение DateTime. Часовой пояс запроса используется для определения правильного возвращаемого значения даты и времени. Если запрос поступает от бота или другого централизованного приложения до передачи в LUIS, исправьте часовой пояс, используемый LUIS.
+Когда приложение LUIS использует заранее построенную сущность [datetimeV2,](luis-reference-prebuilt-datetimev2.md) значение времени дат может быть возвращено в ответ на прогнозирование. Часовой пояс запроса используется для определения правильного возвращаемого значения даты и времени. Если запрос поступает от бота или другого централизованного приложения до передачи в LUIS, исправьте часовой пояс, используемый LUIS.
 
 ### <a name="endpoint-querystring-parameter"></a>Параметр QueryString конечной точки
 Часовой пояс исправляется путем добавления часового пояса пользователя к [конечной точке](https://go.microsoft.com/fwlink/?linkid=2092356) с помощью параметра `timezoneOffset`. Чтобы изменить время, значение `timezoneOffset` должно быть положительным или отрицательным числом в минутах.
@@ -89,28 +89,28 @@ API проверки орфографии Bing, используемый в LUIS
 
 Добавьте 60 минут:
 
-https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?**timezoneOffset=60**&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}
+`https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?**timezoneOffset=60**&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}`
 
 Удалите 60 минут:
 
-https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?**timezoneOffset=-60**&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}
+`https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?**timezoneOffset=-60**&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}`
 
 #### <a name="v3-prediction-endpoint-request"></a>[Запрос конечной точки прогнозирования V3](#tab/V3)
 
 Добавьте 60 минут:
 
-HTTPS://{регион}. API. turn. Microsoft. com/Luis/v 3.0-Предварительная версия/приложения/{appId}/слоты/рабочий/прогноз? запрос = включить индикаторы? **timezoneOffset = 60**& проверки орфографии = {boolean} & Bing-правописание-Check-Subscription-Key = {строка} & log = {Boolean}
+`https://{region}.api.cognitive.microsoft.com/luis/v3.0-preview/apps/{appId}/slots/production/predict?query=Turn the lights on?**timezoneOffset=60**&spellCheck={boolean}&bing-spell-check-subscription-key={string}&log={boolean}`
 
 Удалите 60 минут:
 
-HTTPS://{регион}. API. turn. Microsoft. com/Luis/v 3.0-Предварительная версия/приложения/{appId}/слоты/рабочий/прогноз? запрос = включить индикаторы? **timezoneOffset =-60 & проверки**орфографии = {boolean} & Bing-орфографические проверки-подписка — ключ = {строка} & log = {Boolean}
+`https://{region}.api.cognitive.microsoft.com/luis/v3.0-preview/apps/{appId}/slots/production/predict?query=Turn the lights on?**timezoneOffset=-60**&spellCheck={boolean}&bing-spell-check-subscription-key={string}&log={boolean}`
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
 * * *
 
 ## <a name="c-code-determines-correct-value-of-timezoneoffset"></a>Код на C# определяет правильное значение timezoneOffset
-В следующем коде на C# для определения правильного значения [ на основе системного времени используется метод ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo)FindSystemTimeZoneById[ класса ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples)TimeZoneInfo`timezoneOffset`:
+В следующем коде на C# для определения правильного значения `timezoneOffset` на основе системного времени используется метод [FindSystemTimeZoneById](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples) класса [TimeZoneInfo](https://docs.microsoft.com/dotnet/api/system.timezoneinfo):
 
 ```csharp
 // Get CST zone id

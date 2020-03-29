@@ -1,7 +1,7 @@
 ---
 title: Метод Detect в API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Определите язык фрагмента текста с помощью метода обнаружения API перевода текстов Azure Cognitive Services.
+description: Определите язык фрагмента текста с помощью метода API-элемента API-сообщения переводчика когнитивных служб Azure.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
 ms.openlocfilehash: 370f3b14c12fc05f181d6497b7069bbf1cf3c9cc
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "73837297"
 ---
 # <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Detect
@@ -35,10 +35,10 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>Description (Описание)</th>
+  <th>Описание</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр*.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение `3.0`.</td>
+    <td>*Обязательный параметр.*<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
 </table> 
 
@@ -46,9 +46,9 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Description (Описание)</th>
+  <th>Описание</th>
   <tr>
-    <td>Заголовки проверки подлинности</td>
+    <td>Заголовок аутентификации (ы)</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
   </tr>
   <tr>
@@ -83,7 +83,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формиате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства.
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
 
   * `language` — код распознанного языка.
 
@@ -126,7 +126,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Description (Описание)</th>
+  <th>Описание</th>
   <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -139,7 +139,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>Description (Описание)</th>
+  <th>Описание</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
@@ -158,15 +158,15 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Сервер отклонил запрос, так как клиент превысил лимиты запросов.</td>
+    <td>Сервер отклонил запрос из-за превышения лимита запроса.</td>
   </tr>
   <tr>
     <td>500</td>
-    <td>Произошла непредвиденная ошибка. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Произошла непредвиденная ошибка. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
   <tr>
     <td>503</td>
-    <td>Сервер временно недоступен. Повторите запрос. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Сервер временно недоступен. Повторите запрос. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
 </table> 
 

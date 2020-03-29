@@ -1,7 +1,7 @@
 ---
 title: Тестирование и переобучение модели — пользовательская служба визуального распознавания
 titleSuffix: Azure Cognitive Services
-description: В этой статье показано, как проверить образ, а затем использовать его для повторного обучения модели в службе Пользовательское визуальное распознавание.
+description: В этой статье будет показан, как проверить изображение, а затем использовать его для переподготовки модели в службе custom Vision.
 services: cognitive-services
 author: anrothMSFT
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: anroth
 ms.openlocfilehash: c6ed8869f6d33609381a42fd22d728e9e5542802
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "73721199"
 ---
 # <a name="test-and-retrain-a-model-with-custom-vision-service"></a>Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания
@@ -35,7 +35,7 @@ ms.locfileid: "73721199"
 
 Теперь вы можете добавить протестированное изображение в модель и затем переобучить ее.
 
-## <a name="use-the-predicted-image-for-training"></a>Использование прогнозируемого образа для обучения
+## <a name="use-the-predicted-image-for-training"></a>Используйте предсказанное изображение для обучения
 
 Чтобы использовать отправленное ранее изображение для обучения, выполните следующие действия.
 

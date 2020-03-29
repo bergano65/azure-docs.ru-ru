@@ -10,38 +10,38 @@ ms.topic: include
 ms.date: 12/06/2019
 ms.author: dapine
 ms.openlocfilehash: b24918f377e0d0744331974993cbb94f963e521e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "75379966"
 ---
-## <a name="reference-docs"></a>Справочные документы
+## <a name="reference-docs"></a>Справочная документация
 
-Служба распознавания речи предоставляет два пакета SDK. Первый пакет SDK — это основной [пакет SDK для распознавания речи](../speech-sdk.md) , который обеспечивает большинство функций, необходимых для взаимодействия со службой распознавания речи. Второй пакет SDK относится к устройствам и соответствующим образом называется [пакетом SDK для речевых устройств](../speech-devices-sdk.md). Оба пакета SDK доступны на многих языках.
+Служба речевого сообщения предоставляет два SDK. Первый SDK является основной [речи SDK](../speech-sdk.md) и обеспечивает большинство функциональных возможностей, необходимых для взаимодействия с службой речи. Второй SDK специфичен для устройств, соответствующим образом названных [Речевые устройства SDK.](../speech-devices-sdk.md) Оба SDK доступны на многих языках.
 
-### <a name="speech-sdk-reference-docs"></a>Справочные документы по пакету SDK для распознавания речи
+### <a name="speech-sdk-reference-docs"></a>Речевые документы SDK
 
-Используйте следующий список для поиска соответствующих справочных документов по пакету SDK для распознавания речи:
+Используйте следующий список, чтобы найти соответствующие документы справки речи SDK:
 
-- <a href="https://aka.ms/csspeech/csharpref" target="_blank" rel="noopener">C#Tool<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/cppref" target="_blank" rel="noopener">C++Tool<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/javaref" target="_blank" rel="noopener">Пакет SDK для Java<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/pythonref" target="_blank" rel="noopener">Пакет SDK для Python<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/csharpref" target="_blank" rel="noopener">СДК СДК<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/cppref" target="_blank" rel="noopener">СДК СДК<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/javaref" target="_blank" rel="noopener">Java SDK<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/pythonref" target="_blank" rel="noopener">Питон SDK<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://aka.ms/csspeech/javascriptref" target="_blank" rel="noopener">Пакет SDK для JavaScript<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/objectivecref" target="_blank" rel="noopener">Пакет SDK цели-C<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/objectivecref" target="_blank" rel="noopener">Объективно-C SDK<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 
 > [!TIP]
-> Пакет SDK речевой службы активно поддерживается и обновляется. Чтобы относить изменения, обновления и дополнения к функциям, см. [заметки о выпуске пакета SDK для распознавания речи](../releasenotes.md).
+> Служба речевой речи SDK активно поддерживается и обновляется. Для отслеживания изменений обновления и дополнения функций относятся к [примечаниям к выпуску Speech SDK.](../releasenotes.md)
 
-### <a name="speech-devices-sdk-reference-docs"></a>Справочные документы по пакету SDK для речевых устройств
+### <a name="speech-devices-sdk-reference-docs"></a>Речевые устройства SDK справочные документы
 
-[Пакет SDK для речевых устройств](../speech-devices-sdk.md) — это надмножество РЕЧЕВОГО пакета SDK с расширенными функциональными возможностями для конкретных устройств. Чтобы загрузить пакет SDK для речевых устройств, необходимо сначала [выбрать набор средств разработки](../get-speech-devices-sdk.md#choose-a-development-kit).
+[Речевые устройства SDK](../speech-devices-sdk.md) представляет собой супернабор речи SDK, с расширенной функциональностью для конкретных устройств. Чтобы загрузить SDK Speech Devices, необходимо сначала [выбрать комплект разработки.](../get-speech-devices-sdk.md#choose-a-development-kit)
 
-### <a name="rest-api-references"></a>Ссылки на REST API
+### <a name="rest-api-references"></a>Ссылки НА REST API
 
-Ссылки на различные интерфейсы API-интерфейсов службы распознавания речи см. в приведенном ниже списке.
+Для ссылки на различные услуги речи REST AIS, обратитесь к списку ниже:
 
-- [REST API: преобразование речи в текст](../rest-speech-to-text.md)
-- [REST API: преобразование текста в речь](../rest-text-to-speech.md)
-- <a href="https://cris.ai/swagger/ui/index" target="_blank" rel="noopener">REST API: транскрипция и настройка пакета<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- [REST API: От речи к тексту](../rest-speech-to-text.md)
+- [REST API: Текст к речи](../rest-text-to-speech.md)
+- <a href="https://cris.ai/swagger/ui/index" target="_blank" rel="noopener">REST API: Транскрипция и настройка пакета<span class="docon docon-navigate-external x-hidden-focus"></span></a>

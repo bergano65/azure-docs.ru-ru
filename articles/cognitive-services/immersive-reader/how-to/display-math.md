@@ -1,7 +1,7 @@
 ---
-title: Отображение математических функций в иммерсивное средство чтения
+title: Отображение математики в погружение Читателя
 titleSuffix: Azure Cognitive Services
-description: В этой статье показано, как отобразить математические вычисления в иммерсивное средство чтения.
+description: Эта статья покажет вам, как отображать математику в Immersive Reader.
 author: pasta
 manager: guillasi
 ms.service: cognitive-services
@@ -10,21 +10,21 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: pasta
 ms.openlocfilehash: e01cc9e8cedb6c38da0b56e04419c706d5d0566e
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "75946125"
 ---
-# <a name="how-to-display-math-in-the-immersive-reader"></a>Отображение математических функций в иммерсивное средство чтения
+# <a name="how-to-display-math-in-the-immersive-reader"></a>Как отобразить математику в захватывающем reader
 
-Иммерсивное средство чтения может отображать математические выражения при условии, что оно представлено в форме языка математической разметки ([масмл](https://developer.mozilla.org/docs/Web/MathML)).
-Тип MIME можно задать с помощью иммерсивного [блока](../reference.md#chunk)чтения. Дополнительные сведения см. в разделе [Поддерживаемые типы MIME](../reference.md#supported-mime-types) .
+Погружение Reader может отображать математику, когда это предусмотрено в виде математического языка разметки ([MathML](https://developer.mozilla.org/docs/Web/MathML)).
+Тип MIME может быть установлен через [кусок](../reference.md#chunk)Immersive Reader. Для получения дополнительной информации смотрите [поддерживаемые типы MIME.](../reference.md#supported-mime-types)
 
-## <a name="send-math-to-the-immersive-reader"></a>Отправка математических вычислений в иммерсивное средство чтения
-Чтобы отправить математические данные в иммерсивное средство чтения, укажите блок, содержащий Масмл, и задайте для типа MIME значение ```application/mathml+xml```.
+## <a name="send-math-to-the-immersive-reader"></a>Отправить математику к захватывающему читателю
+Для того, чтобы отправить математику в Immersive Reader, поставить кусок, содержащий MathML, и установить тип MIME; ```application/mathml+xml```
 
-Например, если содержимое было следующим:
+Например, если содержание содержимого было следующим:
 
 ```html
 <div id='ir-content'>
@@ -53,7 +53,7 @@ ms.locfileid: "75946125"
 </div>
 ```
 
-Затем можно отобразить содержимое с помощью следующего кода JavaScript.
+Затем вы можете отобразить содержимое, используя следующий JavaScript.
 
 ```javascript
 const data = {
@@ -67,9 +67,9 @@ const data = {
 ImmersiveReader.launchAsync(YOUR_TOKEN, YOUR_SUBDOMAIN, data, YOUR_OPTIONS);
 ```
 
-При запуске иммерсивное средство чтения должно отобразиться следующее:
+При запуске Immersive Reader, вы должны увидеть:
 
-![Математические вычисления в иммерсивное средство чтения](../media/how-tos/1-math.png)
+![Математика в погружение Читателя](../media/how-tos/1-math.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

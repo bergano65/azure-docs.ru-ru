@@ -1,7 +1,7 @@
 ---
-title: Как обновить проект до API 3,0
+title: Как обновить проект до API 3.0
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как обновить Пользовательское визуальное распознавание проектов, начиная с предыдущей версии API, до API 3,0.
+description: Узнайте, как обновить проекты Custom Vision с предыдущей версии API до API 3.0.
 services: cognitive-services
 author: areddish
 manager: nitinme
@@ -11,49 +11,49 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: areddish
 ms.openlocfilehash: c134f30b124113a23df0e73cd1bbc8209e335183
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "73647497"
 ---
-# <a name="update-to-the-30-api"></a>Обновление до API 3,0
+# <a name="update-to-the-30-api"></a>Обновление до API 3.0
 
-Пользовательское визуальное распознавание теперь достигла общей доступности и стала обновлением API.
-Это обновление включает несколько новых функций и, что важно, несколько критических изменений:
+Пользовательское видение уже достигло общей доступности и претерпело обновление API.
+Это обновление включает в себя несколько новых функций и, что важно, несколько изменений:
 
-* Теперь API-интерфейс прогнозирования разделяется на две зависимости от типа проекта.
-* При экспорте в концепцию "концепция ВАИДК" для искусственного интеллекта требуется создать проект особым образом.
-* Итерации по умолчанию были удалены в пользу публикации или отмены публикации именованной итерации.
+* API прогнозирования теперь разделен на два на основе типа проекта.
+* Вариант экспорта Vision AI Developer Kit (VAIDK) требует создания проекта определенным образом.
+* Итерации по умолчанию были удалены в пользу публикации / непубликации названной итерации.
 
-В этом руководство показано, как обновить проекты, чтобы они работали с новой версией API. Полный список изменений см. в [заметках о выпуске](release-notes.md) .
+Это руководство покажет вам, как обновить проекты для работы с новой версией API. Полный список изменений можно узнать в [примечаниях к выпуску.](release-notes.md)
 
-## <a name="use-the-updated-prediction-api"></a>Использование обновленного API-интерфейса прогнозирования
+## <a name="use-the-updated-prediction-api"></a>Используйте обновленный API прогнозирования
 
-API-интерфейсы 2. x использовали один и тот же метод прогнозирования как для классификаторов изображений, так и для проектов детектора объектов. Оба типа проектов были приемлемыми для вызовов **предиктимаже** и **предиктимажеурл** . Начиная с 3,0 мы разбиваем этот API, чтобы вам нужно было сопоставить тип проекта с вызовом:
+AIS 2.x использовали один и тот же вызов прогнозирования как для классификаций изображений, так и для проектов детектора объектов. Оба типа проектов были приемлемы для вызовов **PredictImage** и **PredictImageUrl.** Начиная с 3.0, мы разделили этот API, чтобы вам нужно было сопоставить тип проекта с вызовом:
 
-* Используйте **[классифимаже](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c15)** и **[классифимажеурл](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c14)** для получения прогнозов для проектов классификации изображений.
-* Используйте **[детектимаже](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c19)** и **[детектимажеурл](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c18)** для получения прогнозов для проектов обнаружения объектов.
+* Используйте **[ClassifyImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c15)** и **[ClassifyImageUrl](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c14)** для получения прогнозов для проектов классификации изображений.
+* Используйте **[DetectImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c19)** и **[DetectImageUrl](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c18)** для получения прогнозов для проектов обнаружения объектов.
 
-## <a name="use-the-new-iteration-publishing-workflow"></a>Использование нового рабочего процесса публикации итерации
+## <a name="use-the-new-iteration-publishing-workflow"></a>Используйте новый рабочий процесс публикации итерации
 
-Для выбора итерации, используемой для прогнозирования, в API-интерфейсах 2. x используется итерация по умолчанию или указанный идентификатор итерации. Начиная с 3,0 мы применяют поток публикации, с помощью которого вы сначала публикуете итерацию с указанным именем из API обучения. Затем имя передается в методы прогнозирования для указания используемой итерации.
+AIS 2.x использовали итерацию по умолчанию или указанный идентификатор итерации, чтобы выбрать итерацию для использования для прогнозирования. Начиная с 3.0, мы приняли издательский поток, в соответствии с которым вы сначала публикуете итерацию под указанным названием из обучаемого API. Затем вы передайте имя методам прогнозирования, чтобы указать, какую итерацию использовать.
 
 > [!IMPORTANT]
-> В API-интерфейсах 3,0 не используется функция итерации по умолчанию. До тех пор, пока мы не будем использовать старые API-интерфейсы, можно продолжить использование API-интерфейсов 2. x для переключения итерации в качестве значения по умолчанию. Эти API-интерфейсы будут поддерживаться в течение определенного периода времени, и можно вызвать метод **[упдатеитератион](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b818)** , чтобы пометить итерацию по умолчанию.
+> AAP 3.0 не используют функцию итерации по умолчанию. До тех пор, пока мы не обезвстановим старые AIS, вы можете продолжать использовать 2.x AAP для переключения итерации по умолчанию. Эти AAP будут поддерживаться в течение определенного периода времени, и вы можете вызвать метод **[UpdateIteration,](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b818)** чтобы отметить итерацию по умолчанию.
 
 ### <a name="publish-an-iteration"></a>Публикация итерации
 
-После обучения итерации можно сделать ее доступной для прогнозирования с помощью метода **[публишитератион](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c82db28bf6a2b11a8247bbc)** . Чтобы опубликовать итерацию, вам потребуется идентификатор ресурса прогноза, доступный на странице параметров веб-сайта Кустомвисион.
+После обучения итерации можно сделать ее доступной для прогнозирования с помощью метода **[PublishIteration.](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c82db28bf6a2b11a8247bbc)** Чтобы опубликовать итерацию, вам понадобится идентификатор ресурса прогнозирования, который доступен на странице настроек веб-сайта CustomVision.
 
-![Страница параметров веб-сайта Пользовательское визуальное распознавание с ИДЕНТИФИКАТОРом прогнозируемого ресурса.](./media/update-application-to-3.0-sdk/prediction-id.png)
+![Страница настроек веб-сайта Custom Vision с идентификатором ресурса прогнозирования.](./media/update-application-to-3.0-sdk/prediction-id.png)
 
 > [!TIP]
-> Эту информацию можно также получить на [портале Azure](https://portal.azure.com) , перейдя к пользовательское визуальное распознаваниеному ресурсу прогнозирования и выбрав **свойства**.
+> Вы также можете получить эту информацию с [портала Azure,](https://portal.azure.com) перейдя на ресурс Custom Vision Prediction и выбрав **свойства.**
 
-После публикации итерации приложения могут использовать ее для прогнозирования, указав имя в его вызове прогнозирующего API. Чтобы сделать итерацию недоступной для прогнозирующих вызовов, используйте API **[унпублишитератион](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b81a)** .
+После публикации итерации приложения могут использовать ее для прогнозирования, указав имя в вызове API-извашего прогноза. Чтобы сделать итерацию недоступной для вызовов прогнозирования, используйте API **[UnpublishIteration.](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b81a)**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Справочная документация по API обучения (ОСТАВШАЯся)](https://go.microsoft.com/fwlink/?linkid=865446)
-* [Справочная документация по API прогнозирования (ОСТАВШАЯся)](https://go.microsoft.com/fwlink/?linkid=865445)
+* [Справочная документация API обучения (REST)](https://go.microsoft.com/fwlink/?linkid=865446)
+* [Справочная документация API прогнозирования (REST)](https://go.microsoft.com/fwlink/?linkid=865445)

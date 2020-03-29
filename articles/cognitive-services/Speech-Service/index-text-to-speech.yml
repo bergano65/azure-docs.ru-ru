@@ -1,25 +1,24 @@
 ### YamlMime:Landing
-title: Документация по преобразованию текста в речь
-summary: Преобразование текста в речь из службы распознавания речи позволяет вашим приложениям, средствам или устройствам преобразовывать текст в человеческий синтезатор.
+title: Текстовая документация по речи
+summary: Текст к речи из службы Speech позволяет вашим приложениям, инструментам или устройствам преобразовывать текст в синтезированную речь, похожую на человека.
 metadata:
-  title: Документация по тексту в речь. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  title: Документация по тексту и речи - Учебники, Справка aPI - Когнитивные службы Azure Документы Майкрософт
   titleSuffix: Azure Cognitive Services
   services: cognitive-services
   author: IEvangelist
   manager: nitinme
-  layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
   ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: 82499c16b6ad8cd8c1adfe27eeb7a0c842e37d1e
-  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+  ms.openlocfilehash: 4aa2cb134bc47841da2964f4f83898875098e6c4
+  ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "79370412"
+  ms.lasthandoff: 03/28/2020
+  ms.locfileid: "80052806"
 landingContent:
-- title: О тексте в речь
+- title: О тексте к речи
   linkLists:
   - linkListType: overview
     links:
@@ -31,16 +30,14 @@ landingContent:
       url: quickstarts/text-to-speech.md
     - text: Синтезирование речи в звуковой файл
       url: quickstarts/text-to-speech-audio-file.md
-    - text: Синтез речи с использованием длинных аудиоматериалов
+    - text: Синтезировать речь с длинной формы аудио
       url: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
-- title: Разработка с помощью преобразования текста в речь
+- title: Разработка с текстом к речи
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Улучшение синтеза с помощью SSML
       url: speech-synthesis-markup.md
-    - text: Улучшение синтеза с помощью Пользовательского голоса
-      url: how-to-custom-voice.md
     - text: Получение списка голосовых моделей с помощью REST (Python)
       url: quickstart-python-get-text-to-speech-voices.md
     - text: Преобразование текста в речь с помощью REST (Python)
@@ -53,15 +50,15 @@ landingContent:
       url: how-to-custom-voice-create-voice.md
     - text: Фильтрация Пользовательского голоса
       url: concepts-gating-overview.md
-- title: Ссылки
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
-    - text: Стандартная поддержка голоса
+    - text: Стандартная голосовая поддержка
       url: language-support.md#standard-voices
-    - text: Поддержка нейронных голоса
+    - text: Нейронная голосовая поддержка
       url: language-support.md#neural-voices
-    - text: SSML фонетические наборы
+    - text: Фонетические наборы SSML
       url: speech-ssml-phonetic-sets.md
-    - text: Цены преобразования текста в речь
+    - text: Цены на текст ы на речи
       url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services

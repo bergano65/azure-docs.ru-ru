@@ -1,7 +1,7 @@
 ---
-title: Извлечение DOCKER для контейнера анализ тональности
+title: Докер тянуть для контейнера анализа настроений
 titleSuffix: Azure Cognitive Services
-description: Команда DOCKER Pull для контейнера анализ тональности
+description: Докер тянуть команды для анализа настроений контейнера
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,17 +10,17 @@ ms.topic: include
 ms.date: 09/12/2019
 ms.author: dapine
 ms.openlocfilehash: df00d469052fa30c3f2aaa5afe1881ef74587f9a
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "70966683"
 ---
-#### <a name="docker-pull-for-the-sentiment-analysis-container"></a>Извлечение DOCKER для контейнера анализ тональности
+#### <a name="docker-pull-for-the-sentiment-analysis-container"></a>Докер тянуть для контейнера анализа настроений
 
-[`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) Используйте команду, чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
+Используйте [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) команду для загрузки изображения контейнера из реестра контейнеров Майкрософт.
 
-Полное описание доступных тегов для Анализ текста контейнеров см. в разделе контейнер [Анализ тональности](https://go.microsoft.com/fwlink/?linkid=2018654) в центре DOCKER.
+Полное описание доступных тегов для контейнеров Text Analytics можно найти в контейнере [анализа настроений](https://go.microsoft.com/fwlink/?linkid=2018654) в концентраторе Docker.
 
 ```
 docker pull mcr.microsoft.com/azure-cognitive-services/sentiment:latest

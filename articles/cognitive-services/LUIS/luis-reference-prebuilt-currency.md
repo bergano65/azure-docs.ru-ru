@@ -1,5 +1,5 @@
 ---
-title: Предварительно построенная сущность Currency-LUIS
+title: Валюта Предварительно создана организация - LUIS
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность currency в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -12,23 +12,23 @@ ms.topic: reference
 ms.date: 10/14/2019
 ms.author: diberry
 ms.openlocfilehash: 56d264fa976967ae4772f50b4aa6f58b30355d6f
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78270784"
 ---
 # <a name="currency-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность currency для приложения LUIS
-Предварительно построенная сущность Currency обнаруживает валюту во многих деноминатионс и странах и регионах независимо от языка и региональных параметров приложения LUIS. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие валюты, не нужно. Сущность валюты поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md).
+Предварительно построенная валютная организация обнаруживает валюту во многих конфессиях и странах/регионах, независимо от культуры приложений LUIS. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие валюты, не нужно. Сущность валюты поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md).
 
 ## <a name="types-of-currency"></a>Типы валюты
-Управление валютой выполняется из репозитория GitHub [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-NumbersWithUnit.yaml#L26)
+Валюта управляется из репозитория [Распознавания-текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-NumbersWithUnit.yaml#L26) GitHub
 
 ## <a name="resolution-for-currency-entity"></a>Разрешение для сущности валюты
 
-#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[Ответ V3](#tab/V3)
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
+Следующий JSON с `verbose` параметром, установленным для: `false`
 
 ```json
 "entities": {
@@ -40,8 +40,8 @@ ms.locfileid: "78270784"
     ]
 }
 ```
-#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
+#### <a name="v3-verbose-response"></a>[V3 многословный ответ](#tab/V3-verbose)
+Следующий JSON с `verbose` параметром, установленным для: `true`
 
 ```json
 "entities": {
@@ -66,7 +66,7 @@ ms.locfileid: "78270784"
 }
 ```
 
-#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[V2 ответ](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.currency**.
 
@@ -86,7 +86,7 @@ ms.locfileid: "78270784"
 ```
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

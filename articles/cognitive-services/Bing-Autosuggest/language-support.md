@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: scottwhi
 ms.openlocfilehash: 6fe2e78501024983544b399762fb936d86e5c9d5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "60547342"
 ---
 # <a name="language-and-region-support-for-the-bing-autosuggest-api"></a>Поддержка языков и регионов в API автозаполнения Bing
@@ -25,7 +25,7 @@ ms.locfileid: "60547342"
 |:----------- |:-------------:|
 | Арабский      | `ar`          |
 | Китайский (Китай)     | `zh-CN`          |
-| Китайский (Гонконг, CАР)    | `zh-HK`          |
+| китайский (Гонконг, CАР)    | `zh-HK`          |
 | Китайский (Тайвань)     | `zh-TW`          |
 | Датский      | `da`          |
 | Нидерландский (Бельгия)       | `nl-BE`          |
@@ -38,8 +38,8 @@ ms.locfileid: "60547342"
 | Английский (Новая Зеландия)    | `en-NZ`          |
 | Английский (Филиппины)     | `en-PH`          |
 | Английский (Южная Африка)    | `en-ZA`          |
-| Английский (Соединенное Королевство)    | `en-GB`          |
-| английский (США)    | `en-US`          |
+| Английский (Великобритания)    | `en-GB`          |
+| Английский (США)    | `en-US`          |
 | Финский     | `fi`          |
 | Французский (Бельгия)     | `fr-BE`          |
 | Французский (Канада)     | `fr-CA`          |

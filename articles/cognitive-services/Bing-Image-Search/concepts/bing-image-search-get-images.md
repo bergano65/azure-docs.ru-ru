@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
 ms.openlocfilehash: 309bbca762149f8804742d9ef02d4c3e8dfcdc6b
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67542763"
 ---
 # <a name="get-images-from-the-web-with-the-bing-image-search-api"></a>Получение изображений из Интернета с помощью API Bing для поиска изображений
@@ -31,7 +31,7 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com
 ```
 
-Используйте [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query) параметр запроса для условия поиска url адреса. Например, если вы вводите *sailing dinghies*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+Используйте параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query) запроса для вашего термина поиска, закодированного URL. Например, если вы вводите *sailing dinghies*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
 
 > [!IMPORTANT]
 > * Все запросы нужно выполнить на сервере, а не в клиенте.
@@ -52,14 +52,14 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=sailing+dinghi
 
  По умолчанию API для поиска изображений возвращает все изображения, относящиеся к запросу. Если необходимо использовать фильтры для изображений, которые возвращает Bing (например, только изображения с прозрачным фоном или определенного размера), используйте следующие параметры запроса:
 
-* [aspect](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#aspect) — фильтрация изображений по формату (например, стандартные или широкоэкранные изображения);
-* [color](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#color) — фильтрация изображений по доминирующему цвету или черно-белой палитре;
-* [freshness](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#freshness) — фильтрация изображений по сроку существования (например, изображения, обнаруженные Bing на прошлой неделе);
-* [height](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#height), [width](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#width) — фильтрация изображений по ширине и высоте;
-* [imageContent](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagecontent) — фильтрация изображений по содержанию (например, изображения, на которых только лицо человека);
-* [imageType](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype) — фильтрация изображений по типу (например, клип, GIF с анимацией или с прозрачным фоном);
-* [license](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#license) — фильтрация изображений по типу лицензии, связанной с сайтом;
-* [size](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#size) — фильтрация изображений по размеру, например маленькие изображения размером до 200x200 пикселей.
+* [аспект](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#aspect)– Фильтр изображения по соотношению аспектов (например, стандартные или широкое изображение экрана).
+* [цвет](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#color)- Фильтр изображения доминирующим цветом или черно-белый.
+* [свежесть](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#freshness)– Фильтр изображения по возрасту (например, изображения, обнаруженные Bing на прошлой неделе).
+* [высота,](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#height) [ширина](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#width)- Фильтр изображения по ширине и высоте.
+* [imageContent](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagecontent)- Фильтр изображения по содержанию (например, изображения, которые показывают только лицо человека).
+* [imageType](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype)— Фильтр изображения по типам (например, искусство клипа, анимированные GIF-файлы или прозрачный фон).
+* [лицензия](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#license)- Фильтр изображения по типу лицензии, связанные с сайтом.
+* [размер](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#size)- Фильтр изображения по размеру, такие как небольшие изображения до 200x200 пикселей.
 
 Чтобы получить изображения с определенного домена, используйте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx).
 
@@ -80,7 +80,7 @@ Host: api.cognitive.microsoft.com
 
 > [!NOTE]
 > * Изображения должны отображаться в порядке, указанном в ответе.
-> * Так как форматы URL-адрес и параметры могут измениться в любое время без предварительного уведомления, используйте все URL-адреса как-является. Не должен принимать зависимости от формата URL-адреса или параметры, за исключением оговоренных.
+> * Так как формат и параметры URL-адресов могут измениться в любой момент без предварительного уведомления, используйте все URL-адреса как есть. Формат и параметры URL-адресов не следует учитывать, если это явно не обозначено.
 
 ```json
 {

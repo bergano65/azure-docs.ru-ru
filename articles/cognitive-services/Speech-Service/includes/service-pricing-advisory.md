@@ -10,11 +10,11 @@ ms.topic: include
 ms.date: 12/02/2019
 ms.author: dapine
 ms.openlocfilehash: ceb062cc5272fae0030c331ad7c9c6c870763df7
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74829054"
 ---
 > [!NOTE]
-> При тестировании система выполнит транскрипцию. Это важно помнить, так как цены отличаются для каждого предложения услуги и уровня подписки. [Последние сведения](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services)см. в официальной службе "цены на Cognitive Services Azure — речь".
+> При тестировании система будет выполнять транскрипцию. Это важно иметь в виду, так как цены варьируются в зависимости от предложения услуг и уровня подписки. Всегда ссылайтесь на официальные цены Azure Cognitive Services - Служба речи для [последних деталей](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services).

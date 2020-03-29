@@ -1,15 +1,15 @@
 ---
-title: Краткое руководство. Публикация базы знаний, RESTFUL, Go-QnA Maker
+title: 'Быстрый запуск: Опубликовать базу знаний, REST, Go - NA Maker'
 description: В этом кратком руководстве по началу работы с Go и REST описывается, как опубликовать базу знаний и создать конечную точку, которую можно вызвать в приложении или чат-боте.
 ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: conceptual
 ms.openlocfilehash: 4ce655bdc7a913ecb281ce8a75e7ec4f2009a2ea
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78851699"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-go"></a>Краткое руководство: публикация базы знаний в QnA Maker с использованием Go
@@ -21,7 +21,7 @@ ms.locfileid: "78851699"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Go 1.10.1](https://golang.org/dl/).
+* [Go 1.10.1.](https://golang.org/dl/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и конечную точку (включая имя ресурса), щелкните **Быстрый запуск** для ресурса на портале Azure.
 
 * Идентификатор базы знаний QnA Maker, который находится в URL-адресе в параметре строки запроса `kbid`, как показано ниже.
@@ -31,7 +31,7 @@ ms.locfileid: "78851699"
     Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-csharp.md).
 
 > [!NOTE]
-> Полные файлы решения доступны в [репозитории GitHub **Azure-Samples/cognitive-services-qnamaker-go**](https://github.com/Azure-Samples/cognitive-services-qnamaker-go/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
+> Полный файл решения (ы) можно получить в [репозитории **Azure-Samples/cognitive-services-qnamaker-go** GitHub.](https://github.com/Azure-Samples/cognitive-services-qnamaker-go/tree/master/documentation-samples/quickstarts/publish-knowledge-base)
 
 ## <a name="create-a-go-file"></a>Создание файла Go
 
@@ -90,7 +90,7 @@ go build publish-kb.go
 
 [!INCLUDE [Clean up files and knowledge base](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Опубликовав базу знаний, вам нужно использовать [URL-адрес конечной точки для создания ответа](./get-answer-from-knowledge-base-go.md).
 

@@ -1,18 +1,18 @@
 ---
-title: Краткое руководство. QnA Maker с помощью интерфейсов API для Node. js
+title: 'Быстрый запуск: NA Maker с REST AIS для Node.js'
 description: В этом кратком руководстве показано, как начать работу с REST API QnA Maker для Node.js. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.  QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам.
 ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: conceptual
 ms.openlocfilehash: ecc3fb144fb4b4e27182567925199f841b1c4357
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78851677"
 ---
-# <a name="quickstart-qna-maker-rest-apis-for-nodejs"></a>Краткое руководство. QnA Maker интерфейсы API-интерфейсов RESTFUL для Node. js
+# <a name="quickstart-qna-maker-rest-apis-for-nodejs"></a>Быстрый запуск: AAP Maker REST AIS для Node.js
 
 Начните работу с QnA Maker с REST API для Node.js. Выполните следующие действия, чтобы опробовать пример кода для базовых задач.  QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам.
 
@@ -25,7 +25,7 @@ ms.locfileid: "78851677"
 * Скачивание базы знаний
 * Получение состояния операции
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [Образцы Node.js](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/tree/master/documentation-samples/quickstarts/rest-api)
+[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [Node.js Образцы](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/tree/master/documentation-samples/quickstarts/rest-api)
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -88,7 +88,7 @@ const request = require("requestretry");
 
 Задайте следующие значения среды:
 
-* `QNAMAKER_RESOURCE_KEY` — **ключ** — это строка из 32 символов, которая доступна в портал Azure в ресурсе QnA Maker на странице **быстрого запуска** . Это не то же самое, что ключ конечной точки прогнозирования.
+* `QNAMAKER_RESOURCE_KEY`- **Ключ** представляет собой строку 32 символов и доступен на портале Azure, на ресурсе «NA Maker», на быстрой **стартовой** странице. Это не то же самое, что ключ конечной точки прогнозирования.
 * `QNAMAKER_AUTHORING_ENDPOINT`. Конечная точка разработки (в формате `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`) содержит **имя ресурса**. Это не тот же URL-адрес, который используется для запроса конечной точки прогнозирования.
 
 [!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=authorization)]
@@ -157,12 +157,12 @@ node rest-apis.js
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Azure CLI](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Лазурный CLI](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Учебник. Создание и ответ на базу знаний](../tutorials/create-publish-query-in-portal.md)
+>[Учебник: Создайте и ответьте на КБ](../tutorials/create-publish-query-in-portal.md)
 
 * [Что такое QnA Maker?](../Overview/overview.md)
 * [Редактирование базы знаний](../how-to/edit-knowledge-base.md)

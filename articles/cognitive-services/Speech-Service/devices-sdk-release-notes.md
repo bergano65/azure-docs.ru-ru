@@ -1,7 +1,7 @@
 ---
 title: Документация по пакету SDK для речевых устройств
 titleSuffix: Azure Cognitive Services
-description: Заметки о выпуске содержат журналы обновлений, улучшения, исправления ошибок и изменения в пакете SDK для речевых устройств. Эта статья обновлена в каждом выпуске пакета SDK для речевых устройств.
+description: Примечания к выпуску предоставляют журнал обновлений, улучшений, исправлений ошибок и изменений в SDK устройств речи. Эта статья обновляется с каждым выпуском речевых устройств SDK.
 services: cognitive-services
 author: wsturman
 manager: nitinme
@@ -10,80 +10,80 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: wellsi
-ms.openlocfilehash: c12aaea1dbc99a3f6db064e03b4b49e569f15194
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 29dcb3c0e74482fd6670d1a0983e751043379d6e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77189055"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80371619"
 ---
-# <a name="release-notes-speech-devices-sdk"></a>Заметки о выпуске: пакет SDK для речевых устройств
+# <a name="release-notes-speech-devices-sdk"></a>Примечания к выпуску: Речевые устройства SDK
 
 В следующих разделах перечислены изменения в последних выпусках.
 
-## <a name="speech-devices-sdk-190"></a>1\.9.0 пакета SDK для речевых устройств:
+## <a name="speech-devices-sdk-190"></a>Речевые устройства SDK 1.9.0:
 
-- Предоставляются исходные двоичные файлы для [DDK урбеттер](https://aka.ms/sdsdk-download-urbetter) (Linux ARM64).
-- Теперь в Рубо v1 используется Maven для речевого пакета SDK
-- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.9.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+- Предоставляются первоначальные файлы для [Urbetter DDK](https://aka.ms/sdsdk-download-urbetter) (Linux ARM64).
+- Roobo v1 теперь использует Maven для речи SDK
+- Обновлен компонент [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.9.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 
-## <a name="speech-devices-sdk-170"></a>1\.7.0 пакета SDK для речевых устройств:
+## <a name="speech-devices-sdk-170"></a>Речевые устройства SDK 1.7.0:
 
-- Поддержка ARM для Linux теперь поддерживается.
-- Предоставляются исходные двоичные файлы для [Рубо v2 DDK](https://aka.ms/sdsdk-download-roobov2) (Linux ARM64).
-- Пользователи Windows могут использовать `AudioConfig.fromDefaultMicrophoneInput()` или `AudioConfig.fromMicrophoneInput(deviceName)`, чтобы указать используемый микрофон.
-- Размер библиотеки оптимизирован.
-- Поддержка многофакторного распознавания с помощью одного объекта распознавателя речи и намерения.
-- Устранение случайного зависания, которое может произойти при прекращении распознавания.
-- Примеры приложений теперь содержат пример файла участников. Properties для демонстрации формата файла.
-- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.7.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+- Linux ARM теперь поддерживается.
+- Первоначальные бинарные файлы для [Roobo v2 DDK](https://aka.ms/sdsdk-download-roobov2) предоставляются (Linux ARM64).
+- Пользователи Windows `AudioConfig.fromDefaultMicrophoneInput()` `AudioConfig.fromMicrophoneInput(deviceName)` могут использовать или указывать микрофон для использования.
+- Размер библиотеки был оптимизирован.
+- Поддержка распознавания нескольких оборотов с использованием одного и того же объекта распознавания речи/намерения.
+- Исправить случайные повесить, что будет происходить при остановке распознавания.
+- Пример приложений теперь содержит пример файла participants.properties, чтобы продемонстрировать формат файла.
+- Обновлен компонент [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.7.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 
-## <a name="speech-devices-sdk-160"></a>1\.6.0 пакета SDK для речевых устройств:
+## <a name="speech-devices-sdk-160"></a>Речевые устройства SDK 1.6.0:
 
-- Поддержка [Azure KINECT DK](https://azure.microsoft.com/services/kinect-dk/) в Windows и Linux с общим [примером приложения](https://aka.ms/sdsdk-download)
-- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.6.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+- Поддержка [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/) на Windows и Linux с помощью общего [примерного приложения](https://aka.ms/sdsdk-download)
+- Обновлен компонент [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.6.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 
-## <a name="speech-devices-sdk-151"></a>1\.5.1 пакета SDK для речевых устройств:
+## <a name="speech-devices-sdk-151"></a>Речевые устройства SDK 1.5.1:
 
-- Включить [транскрипцию беседы](conversation-transcription-service.md) в примере приложения.
-- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.5.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+- Включите [Транскрипцию разговоров](conversation-transcription-service.md) в пример приложения.
+- Обновлен компонент [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.5.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 
-## <a name="speech-devices-sdk-150-2019-may-release"></a>Пакет SDK для речевых устройств 1.5.0:2019 — может выпустить
+## <a name="speech-devices-sdk-150-2019-may-release"></a>Речевые устройства SDK 1.5.0: 2019-Май релиз
 
-- Пакет SDK для речевых устройств теперь является общедоступным и больше не является предварительным.
-- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.5.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
-- Новая ключевая технология обеспечивает значительные улучшения качества, см. раздел критические изменения.
-- Новый конвейер обработки звука для улучшенного распознавания полей.
-
-**Критические изменения**
-
-- В связи с новым ключевым словом технология на улучшенном портале ключевых слов необходимо создать повторно все ключевые слова. Чтобы полностью удалить старые ключевые слова с устройства, удалите старое приложение.
-  - ADB удаление com. Microsoft. когинитивесервицес. Speech. Samples. сдсдкстартерапп
-
-## <a name="speech-devices-sdk-140-2019-apr-release"></a>Пакет SDK для речевых устройств 1.4.0:2019-Апр
-
-- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.4.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
-
-## <a name="speech-devices-sdk-131-2019-mar-release"></a>Пакет SDK для речевых устройств 1.3.1:2019-Мар
-
-- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.3.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
-- Обновлена обработка ключевых слов, см. раздел критические изменения.
-- Пример приложения добавляет выбор языка для распознавания речи и перевода.
+- Речевые устройства SDK теперь ГА и больше не закрытый предварительный просмотр.
+- Обновлен компонент [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.5.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+- Новая технология ключевых слов приносит значительные улучшения качества, см. Breaking Changes.
+- Новый конвейер обработки аудио для улучшения распознавания дальнего поля.
 
 **Критические изменения**
 
-- [Установка ключевого слова](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws) упрощена, теперь она является частью приложения и не требует отдельной установки на устройстве.
-- Распознавание ключевых слов изменилось, и поддерживаются два события.
-  - `RecognizingKeyword,` указывает, что в речевом результате содержится текст ключевого слова (не проверено).
-  - `RecognizedKeyword`указывает, что распознавание ключевых слов завершено для распознавания заданного ключевого слова.
+- Благодаря новой технологии ключевых слов все ключевые слова должны быть воссозданы на нашем улучшенном портале ключевых слов. Чтобы полностью удалить старые ключевые слова с устройства удалить старое приложение.
+  - adb удалить com.microsoft.cognitiveservices.speech.samples.sdsdkstarterapp
 
-## <a name="speech-devices-sdk-110-2018-nov-release"></a>Пакет SDK для речевых устройств 1.1.0:2018-Ноя
+## <a name="speech-devices-sdk-140-2019-apr-release"></a>Речевые устройства SDK 1.4.0: 2019-Апрель релиз
+
+- Обновлен компонент [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.4.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+
+## <a name="speech-devices-sdk-131-2019-mar-release"></a>Речевые устройства SDK 1.3.1: 2019-Mar релиз
+
+- Обновлен компонент [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.3.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+- Обновлено обработка ключевых слов, см. Breaking Changes.
+- Пример приложения добавляет выбор языка как для распознавания речи, так и для перевода.
+
+**Критические изменения**
+
+- [Установка ключевого слова](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws) была упрощена, теперь она является частью приложения и не нуждается в отдельной установке на устройстве.
+- Распознавание ключевых слов изменилось, и два события поддерживаются.
+  - `RecognizingKeyword,`указывает на то, что результат речи содержит (непроверенный) текст ключевых слов.
+  - `RecognizedKeyword`, указывает на то, что распознавание ключевых слов завершило признание данного ключевого слова.
+
+## <a name="speech-devices-sdk-110-2018-nov-release"></a>Речевые устройства SDK 1.1.0: 2018-Ноябрь релиз
 
 - Обновленный компонент [пакета SDK для распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.1.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 - Повышена точность распознавания речи из дальней зоны за счет улучшенного алгоритма обработки аудио.
 - В пример приложения добавлена поддержка распознавания речи на китайском языке.
 
-## <a name="speech-devices-sdk-101-2018-oct-release"></a>Пакет SDK для речевых устройств 1.0.1:2018 — выпуск Oct
+## <a name="speech-devices-sdk-101-2018-oct-release"></a>Речевые устройства SDK 1.0.1: 2018-Октябрь релиз
 
 - Обновленный компонент [пакета SDK для распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.0.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 - Повышение точности распознавания речи за счет улучшенного алгоритма обработки аудио
@@ -92,13 +92,13 @@ ms.locfileid: "77189055"
 **Критические изменения**
 
 - В этом выпуске представлен ряд критических изменений. Дополнительные сведения о соответствующих API приведены на [этой странице](https://aka.ms/csspeech/breakingchanges_1_0_0).
-- Файлы модели KWS несовместимы с пакетом SDK для речевых устройств версии 1.0.1. Существующие файлы ключевых слов будут удалены после того, как на устройство будет записано новое ключевое слово.
+- Файлы модели KWS несовместимы с пакетом SDK для речевых устройств версии 1.0.1. Существующие файлы ключевых слов будут удалены после того, как новые файлы ключевых слов будут записаны на устройство.
 
-## <a name="speech-devices-sdk-050-2018-aug-release"></a>Пакет SDK для речевых устройств 0.5.0:2018-Авг
+## <a name="speech-devices-sdk-050-2018-aug-release"></a>Речевые устройства SDK 0.5.0: 2018-Август релиз
 
 - Повышенная точность распознавания речи благодаря исправлению ошибки в коде обработки звука.
 - Обновленный компонент [пакета SDK для распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 0.5.0. Дополнительные сведения см. в [заметках о выпуске](releasenotes.md#cognitive-services-speech-sdk-050-2018-july-release).
 
-## <a name="speech-devices-sdk-0212733-2018-may-release"></a>Пакет SDK для речевых устройств 0.2.12733:2018 — может выпустить
+## <a name="speech-devices-sdk-0212733-2018-may-release"></a>Речевые устройства SDK 0.2.12733: 2018-Май релиз
 
 Первый выпуск общедоступной предварительной версии пакета SDK для речевых устройств в Cognitive Services.

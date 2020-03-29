@@ -1,5 +1,5 @@
 ---
-title: О пакете SDK для распознавания речи — речевая служба
+title: О речи SDK - Речевая служба
 titleSuffix: Azure Cognitive Services
 description: Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям встроенный доступ к функциям службы "Речь", что облегчает разработку программного обеспечения. Эта статья содержит дополнительные сведения о пакете SDK для Windows, Linux и Android.
 services: cognitive-services
@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: dapine
 ms.openlocfilehash: 984d2dfe07faa22756b4be167aa86a69806b1a84
-ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78331099"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
-Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям доступ к функциям службы "Речь", что облегчает разработку программного обеспечения с поддержкой речи. В настоящее время пакеты SDK предоставляют доступ к **речевым** **трансляциям, преобразованию** **текста в речь**, **распознаванию**речи и **каналу голосовой речи прямой линии**.
+Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям доступ к функциям службы "Речь", что облегчает разработку программного обеспечения с поддержкой речи. В настоящее время, SDKs обеспечить доступ к **речи к тексту**, **текст к речи**, перевод **речи**, **признание намерений**, и **Бот Framework в Прямой линии речи канала**.
 
-С помощью речевого пакета SDK можно легко записывать звук с микрофона, читать из потока или получать доступ к звуковым файлам из хранилища. Пакет SDK для распознавания речи поддерживает 16-разрядный, 16 кГц/8 кГц, один канал для распознавания речи. Дополнительные звуковые форматы поддерживаются с помощью [конечной точки передачи речи в текст](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) или [службы транскрипции пакетов](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats).
+Вы можете легко захватить аудио с микрофона, читать из потока, или получить доступ к аудио файлы из хранилища с речью SDK. Speech SDK поддерживает WAV/PCM 16-битный, 16 кГц/8 кГц, одноканальный звук для распознавания речи. Дополнительные аудиоформаты поддерживаются с помощью [точки от речи к тексту REST](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) или [службы пакетной транскрипции.](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats)
 
-Общий обзор возможностей и поддерживаемых платформ можно найти на [странице записи](https://aka.ms/csspeech)документации.
+Общий обзор возможностей и поддерживаемых платформ можно найти на [странице ввода](https://aka.ms/csspeech)документации.
 
 [!INCLUDE [Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 
@@ -34,23 +34,23 @@ ms.locfileid: "78331099"
 # <a name="windows"></a>[Windows](#tab/windows)
 
 > [!WARNING]
-> Пакет SDK для распознавания речи поддерживает Windows 10 или более поздние версии. Более ранние версии Windows **не поддерживаются**.
+> Speech SDK поддерживает Windows 10 или более поздние версии. Более ранние версии Windows **не поддерживаются.**
 
 Для Windows поддерживаются следующие языки:
 
-* C# (UWP и .NET), C++: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Пакет содержит 32-разрядные и 64-разрядные клиентские библиотеки и управляемые библиотеки (.NET). Пакет SDK можно установить в Visual Studio с помощью NuGet, [Microsoft. CognitiveServices. Speech](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech).
+* C# (UWP и .NET), C++: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Пакет содержит 32-разрядные и 64-разрядные клиентские библиотеки и управляемые библиотеки (.NET). SDK может быть установлен в Visual Studio с помощью NuGet, [Microsoft.CognitiveServices.Speech](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech).
 
 * Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только 64-разрядные версии Windows. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.8.0` в качестве зависимости.
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
 > [!NOTE]
-> Сейчас поддерживаются только Ubuntu 16,04, Ubuntu 18,04, Debian 9, Red Hat Enterprise Linux (RHEL) 8 и CentOS 8 в следующих целевых архитектурах:
-> - x86 (Debian/Ubuntu), x64, ARM32 (Debian/Ubuntu) и ARM64 (Debian/Ubuntu) для C++ разработки
+> В настоящее время мы поддерживаем только Ubuntu 16.04, Ubuntu 18.04, Debian 9, Red Hat Enterprise Linux (RHEL) 8 и CentOS 8 на следующих целевых архитектурах:
+> - x86 (Debian/Ubuntu), x64, ARM32 (Debian/Ubuntu) и ARM64 (Debian/Ubuntu) для разработки КЗ
 > - x64, ARM32 (Debian/Ubuntu) и ARM64 (Debian/Ubuntu) для Java
-> - x64 для .NET Core и Python
+> - x64 для ядра и python .NET
 
-Убедитесь, что установлены необходимые библиотеки, выполнив следующие команды оболочки:
+Убедитесь, что у вас есть необходимые библиотеки, установленные, запустив следующие команды оболочки:
 
 В Ubuntu:
 
@@ -66,7 +66,7 @@ sudo apt-get update
 sudo apt-get install libssl1.0.2 libasound2
 ```
 
-В RHEL/CentOS 8:
+На RHEL/CentOS 8:
 
 ```sh
 sudo yum update
@@ -74,7 +74,7 @@ sudo yum install alsa-lib openssl
 ```
 
 > [!NOTE]
-> В RHEL/CentOS 8 следуйте инструкциям по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
+> На RHEL/CentOS 8 следуйте инструкциям о том, [как настроить OpenSSL для Linux.](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md)
 
 * C#: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Чтобы ссылаться на пакет SDK, добавьте следующую ссылку на пакет в проект:
 
@@ -86,7 +86,7 @@ sudo yum install alsa-lib openssl
 
 * C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK:
 
-  |путь|Description|
+  |путь|Описание|
   |-|-|
   |`license.md`|Лицензия|
   |`ThirdPartyNotices.md`|Уведомления сторонних производителей|

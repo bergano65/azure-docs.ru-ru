@@ -1,7 +1,7 @@
 ---
-title: Тип сущности, изученной компьютером — LUIS
+title: Машинно-выученный тип сущности - LUIS
 titleSuffix: Azure Cognitive Services
-description: Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
+description: Машино-изученная сущность является предпочтительным объектом для создания приложений LUIS.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,24 +11,24 @@ ms.topic: reference
 ms.date: 12/30/2019
 ms.author: diberry
 ms.openlocfilehash: aac4ba3ec63d425cac782f5db65bba923d24ed71
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "75552004"
 ---
 # <a name="machine-learned-entity"></a>Сущность, прошедшая машинное обучение
 
-Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
+Машино-изученная сущность является предпочтительным объектом для создания приложений LUIS.
 
 
 ## <a name="example-json"></a>Пример JSON
 
-Предположим, что приложение принимает заказы на пиццу, например [учебник по сущностям делимыми](tutorial-machine-learned-entity.md). Каждый заказ может включать несколько различных пицц, включая различные размеры.
+Предположим, что приложение принимает заказы на пиццу, такие как [разлагаемое руководство учебник.](tutorial-machine-learned-entity.md) Каждый заказ может включать в себя несколько различных пицц, в том числе различных размеров.
 
 Ниже приведены примеры фраз.
 
-|Пример фразы продолжительностью для приложения пиццы|
+|Пример высказываний для приложения для пиццы|
 |--|
 |`Can I get a pepperoni pizza and a can of coke please`|
 |`can I get a small pizza with onions peppers and olives`|
@@ -36,15 +36,15 @@ ms.locfileid: "75552004"
 
 
 
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-Поскольку сущность, предназначенная для компьютера, может иметь множество компонентов с ограничениями и дескрипторами, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
+Поскольку объект, обученный машиной, может иметь много подкомпонентов с ограничениями и дескрипторами, это только пример. Он должен рассматриваться как руководство для того, что ваша сущность вернется.
 
 Рассмотрим запрос:
 
 `deliver 1 large cheese pizza on thin crust and 2 medium pepperoni pizzas on deep dish crust`
 
-Это JSON, если в строке запроса задано `verbose=false`:
+Это JSON, `verbose=false` если установлен в строке запроса:
 
 ```json
 "entities": {
@@ -102,7 +102,7 @@ ms.locfileid: "75552004"
 
 ```
 
-Это JSON, если в строке запроса задано `verbose=true`:
+Это JSON, `verbose=true` если установлен в строке запроса:
 
 ```json
 "entities": {
@@ -341,13 +341,13 @@ ms.locfileid: "75552004"
     }
 }
 ```
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
 
-Эта сущность недоступна в среде выполнения прогнозирования версии 2.
+Эта сущность недоступна во время выполнения прогноза V2.
 * * *
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о сущности, занятой компьютером, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
+Узнайте больше о машинно-изученной сущности, включая [учебник,](tutorial-machine-learned-entity.md) [концепции](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководства.](luis-how-to-add-entities.md#create-a-machine-learned-entity)
 
-Сведения о сущности [списка](reference-entity-list.md) и сущности [регулярного выражения](reference-entity-regular-expression.md) .
+Узнайте о сущности [списка](reference-entity-list.md) и [сущности регулярного выражения.](reference-entity-regular-expression.md)

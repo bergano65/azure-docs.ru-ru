@@ -1,7 +1,7 @@
 ---
 title: Как выбрать аудиоустройство ввода с помощью пакета SDK для распознавания речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выбрать устройства звукового ввода в речевомC++пакете C#SDK (,, Python, цели-C, Java, JavaScript), получая идентификаторы звуковых устройств, подключенных к системе.
+description: Узнайте о выборе устройств ввода звука в Рене SDK (СЗ, КЗ, Python, Objective-C, Java, Java, JavaScript), получив идоты аудиоустройств, подключенных к системе.
 services: cognitive-services
 author: chlandsi
 manager: nitinme
@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: chlandsi
 ms.openlocfilehash: 9891cdb59c757035afd17339b052d5587ac99b0c
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74109973"
 ---
-# <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Как выбрать устройство ввода звука с помощью пакета SDK для распознавания речи
+# <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Как: Выберите устройство для ввода звука с помощью речевого SDK
 
 Пакет SDK версии 1.3.0 для служб "Речь" предоставляет API для выбора аудиовхода. В этой статье описывается, как получить идентификаторы звуковых устройств, подключенных к системе. Они могут затем использоваться в пакете SDK для распознавания речи путем настройки звукового устройства с помощью объекта `AudioConfig`:
 
@@ -175,7 +175,7 @@ namespace ConsoleApp
 
 ## <a name="audio-device-ids-on-uwp"></a>Идентификатор аудиоустройства в UWP
 
-На универсальной платформе Windows (UWP) аудиоустройства для входа можно получить с помощью свойства `Id()` соответствующего объекта [`DeviceInformation`](/uwp/api/windows.devices.enumeration.deviceinformation).
+На универсальной платформе Windows (UWP) устройства ввода `Id()` звука могут [`DeviceInformation`](/uwp/api/windows.devices.enumeration.deviceinformation) быть получены с помощью свойства соответствующего объекта.
 
 В приведенных ниже фрагментах кода показано, как это сделать в C++ и C#:
 
@@ -365,7 +365,7 @@ CFArrayRef CreateInputDeviceArray()
 
 ## <a name="audio-device-ids-on-ios"></a>Идентификатор аудиоустройства в iOS
 
-Выбор аудиоустройства с помощью пакета SDK для распознавания речи не поддерживается на устройствах iOS. Тем не менее, с помощью пакета SDK приложения могут повлиять на маршрутизацию аудио через платформу [`AVAudioSession`](https://developer.apple.com/documentation/avfoundation/avaudiosession?language=objc).
+Выбор аудиоустройства с помощью пакета SDK для распознавания речи не поддерживается на устройствах iOS. Тем не менее, приложения, использующие SDK, могут влиять на звукопомощь через [`AVAudioSession`](https://developer.apple.com/documentation/avfoundation/avaudiosession?language=objc) Рамки.
 
 Например, инструкция
 
@@ -380,7 +380,7 @@ CFArrayRef CreateInputDeviceArray()
 
 В JavaScript метод [MediaDevices.enumerateDevices()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices) можно использовать для перечисления устройств мультимедиа и поиска идентификаторов устройств для их передачи `fromMicrophone(...)`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

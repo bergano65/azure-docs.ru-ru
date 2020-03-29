@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 04/30/2019
 ms.author: pafarley
 ms.openlocfilehash: a4e7b079367a4b4dec1d2b3d6c0afde1d8276766
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "72754169"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
 
-Используйте Content Moderator, контролируемое компьютером, [и](video-moderation-api.md) [средство проверки](Review-Tool-User-Guide/human-in-the-loop.md) пользователей на умеренные видео и записи для взрослых (явных) и носящих непристойный характер (предполагающее определенную) содержимого, чтобы получить лучшие результаты для вашего бизнеса.
+Используйте аппаратную [модерацию и](video-moderation-api.md) [инструмент человеческого обзора](Review-Tool-User-Guide/human-in-the-loop.md) для модерации человека, чтобы умерить видео и стенограммы для взрослых (явных) и колоритных (предлагательных) контента, чтобы получить наилучшие результаты для вашего бизнеса.
 
 ## <a name="video-trained-classifier-preview"></a>Классификатор, обученный с помощью видео, (предварительная версия)
 
