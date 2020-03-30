@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Вызов API анализа текста с использованием Go
+title: Краткое руководство по использованию Go для вызова API анализа текста
 titleSuffix: Azure Cognitive Services
 description: Получайте информацию и примеры кода, которые помогут вам приступить к работе с API Анализа текста в Azure Cognitive Services.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: quickstart
 ms.date: 12/17/2019
 ms.author: aahi
 ms.openlocfilehash: 03311cb873420f741ca0150dde59fb27eaa5d76f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75378774"
 ---
-# <a name="quickstart-using-go-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Go для вызова API анализа текста Cognitive Services 
+# <a name="quickstart-using-go-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство по использованию Go для вызова API анализа текста Cognitive Services 
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения о том, как [распознавать язык](#Detect), [анализировать тональность](#SentimentAnalysis), [извлекать ключевые фразы](#KeyPhraseExtraction) и [идентифицировать связанные сущности](#Entities), используя  [API анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) и Go.

@@ -1,19 +1,18 @@
 ---
-title: Общие сведения о публикации предложения модуля Azure IoT Edge | Azure Marketplace
+title: Модуль Azure IoT Edge предлагает публикацию обзора Лазурный рынок
 description: Общие сведения о процессе публикации предложения модуля IoT Edge в Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.author: pabutler
-ms.openlocfilehash: 97df9a61d15e0d90e81f42cef327aea23873ffa0
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 6b44d9fd0bdd6e4b41013373472b5882a7ca1434
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73814322"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286597"
 ---
 # <a name="iot-edge-module-offer-publishing-overview"></a>Общие сведения о публикации предложения модуля IoT Edge
 

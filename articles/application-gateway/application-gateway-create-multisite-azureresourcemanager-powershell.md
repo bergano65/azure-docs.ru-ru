@@ -1,5 +1,5 @@
 ---
-title: Размещение нескольких сайтов с помощью PowerShell
+title: Несколько хостинга с помощью PowerShell
 titleSuffix: Azure Application Gateway
 description: Узнайте, как создать шлюз приложений, на котором размещено несколько сайтов, с помощью Azure PowerShell.
 services: application-gateway
@@ -8,29 +8,29 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 449095c92c30638b25836a2c7803176f7f0512e5
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 42efec9f6c680572350005ac8152dcc31509c6e1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048066"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80295563"
 ---
 # <a name="create-an-application-gateway-with-multiple-site-hosting-using-azure-powershell"></a>Создание шлюза приложений с несколькими сайтами с помощью Azure PowerShell
 
-Чтобы настроить [размещение нескольких веб-сайтов](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md), можно использовать Azure PowerShell. В этом руководстве вы создадите внутренние пулы с использованием масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера здесь используются домены *www.contoso.com* и *www.fabrikam.com*.
+Чтобы настроить [размещение нескольких веб-сайтов](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md), можно использовать Azure PowerShell. В этом руководстве вы создадите внутренние пулы с использованием масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. Этот учебник предполагает, что вы владеете несколькими доменами и используетпримеры *www.contoso.com* и *www.fabrikam.com.*
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
 > * Создание шлюза приложений
 > * создание прослушивателей и правил маршрутизации;
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
-> * Создание записи CNAME в домене.
+> * создание записи CNAME в домене.
 
 ![Пример маршрутизации нескольких сайтов](./media/application-gateway-create-multisite-azureresourcemanager-powershell/scenario.png)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -94,7 +94,7 @@ $frontendport = New-AzApplicationGatewayFrontendPort `
 
 ### <a name="create-the-backend-pools-and-settings"></a>Создание внутреннего пула и настройка параметров
 
-Создайте серверные пулы с именами *contosoPool* и *fabrikamPool* для шлюза приложений с помощью [New-азаппликатионгатевайбаккендаддресспул](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
+Создание бэкэнд бассейнов под названием *contosoPool* и *fabrikamPool* для шлюза приложения с помощью [New-AzApplicationGatewayBackendAddressPool.](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool) Настройте параметры для пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
 
 ```azurepowershell-interactive
 $contosoPool = New-AzApplicationGatewayBackendAddressPool `
@@ -113,7 +113,7 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 Прослушиватель позволяет шлюзу приложений правильно маршрутизировать трафик на внутренние пулы. В этом руководстве создаются прослушиватели для каждого из двух ваших доменов. В этом примере создаются прослушиватели для доменов *www.contoso.com* и *www.fabrikam.com*.
 
-Создайте прослушиватели с именами *contosoListener* и *FabrikamListener* , используя [New-азаппликатионгатевайхттплистенер](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с интерфейсной конфигурацией и интерфейсным портом, созданными ранее. Правила требуются для того, чтобы указать прослушивателям, какой внутренний пул использовать для входящего трафика. Создайте базовые правила с именами *contosoRule* и *FabrikamRule* , используя [New-азаппликатионгатевайрекуестраутингруле](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+Создайте слушателей по имени *contosoListener* и *fabrikamListener* с помощью [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с конфигурацией переднего и прифронтового порта, который вы ранее создали. Правила требуются для того, чтобы указать прослушивателям, какой внутренний пул использовать для входящего трафика. Создавайте базовые правила, называемые *contosoRule* и *fabrikamRule* с помощью [New-AzApplicationGatewayRequestRoutingRule.](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule)
 
 ```azurepowershell-interactive
 $contosolistener = New-AzApplicationGatewayHttpListener `
@@ -256,7 +256,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-В адресной строке браузера введите имя домена. Например, https://www.contoso.com.
+В адресной строке браузера введите имя домена. Например, `https://www.contoso.com`.
 
 ![Проверка сайта contoso в шлюзе приложений](./media/application-gateway-create-multisite-azureresourcemanager-powershell/application-gateway-iistest.png)
 
@@ -264,7 +264,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Проверка сайта fabrikam в шлюзе приложений](./media/application-gateway-create-multisite-azureresourcemanager-powershell/application-gateway-iistest2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 
@@ -273,7 +273,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 > * Создание шлюза приложений
 > * создание прослушивателей и правил маршрутизации;
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
-> * Создание записи CNAME в домене.
+> * создание записи CNAME в домене.
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о возможностях шлюза приложений](application-gateway-introduction.md)

@@ -1,20 +1,18 @@
 ---
-title: Добавление банковских и налоговых сведений | Azure Marketplace
+title: Добавление банковской и налоговой информации Лазурный рынок
 description: Добавление налоговых и банковских сведений в учетную запись центра разработки.
-services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
-manager: evansma
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/05/2018
-ms.author: blevens
-ms.openlocfilehash: e9ad4841d805b604d0f44a9e0dc08eed15aa9c1f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: dsindona
+ms.openlocfilehash: 40a73e386ce618d7254ec7cb1f95dcde6f82d65a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75431992"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286665"
 ---
 # <a name="add-bank-and-tax-information"></a>Добавление налоговых и банковских сведений  
 
@@ -22,7 +20,7 @@ ms.locfileid: "75431992"
 
 ## <a name="partner-center"></a>Центр партнеров
 
-Банковские и налоговые сведения теперь управляются в центре партнеров. Инструкции по настройке этих параметров можно найти на странице "Обзор коммерческого рынка" раздела [Управление учетной записью центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account#payout-account).
+Банковская и налоговая информация в настоящее время управляется в Партнерс-центре. Инструкции по настройке этих параметров можно найти на странице "Обзор коммерческого рынка" [учетной записи "Управление партнером- центре".](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account#payout-account)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

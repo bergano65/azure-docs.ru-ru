@@ -4,10 +4,10 @@ description: включить файл
 ms.topic: include
 ms.date: 01/23/2020
 ms.openlocfilehash: a7f4e0b47b3aaf9924f8c82eb6a9fa37decc0b2a
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76772439"
 ---
 ### <a name="create-an-environment-variable"></a>Создание переменной среды
@@ -26,7 +26,7 @@ ms.locfileid: "76772439"
 
 Используйте инструкции для своей операционной системы.
 
-#### <a name="windowstabwindows"></a>[Windows](#tab/windows)
+#### <a name="windows"></a>[Windows](#tab/windows)
 
 ```console
 setx LUIS_RUNTIME_KEY <replace-with-your-resource-key>
@@ -37,7 +37,7 @@ setx LUIS_APP_SLOT_NAME <replace-with-production-or-staging>
 
 Добавив переменные среды, перезапустите окно консоли.
 
-#### <a name="linuxtablinux"></a>[Linux](#tab/linux)
+#### <a name="linux"></a>[Linux](#tab/linux)
 
 ```bash
 export LUIS_RUNTIME_KEY= <replace-with-your-resource-key>
@@ -48,7 +48,7 @@ export LUIS_APP_SLOT_NAME= <replace-with-production-or-staging>
 
 После добавления переменных среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
 
-#### <a name="macostabunix"></a>[macOS](#tab/unix)
+#### <a name="macos"></a>[macOS](#tab/unix)
 
 Измените `.bash_profile` и добавьте переменную среды:
 
