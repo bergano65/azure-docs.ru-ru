@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 11/29/2019
 ms.author: aahi
 ms.openlocfilehash: 2265471001896652a4ce35dbf8bd84aca50000fb
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74665685"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-c"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#
@@ -23,7 +23,7 @@ ms.locfileid: "74665685"
 
 В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Любой выпуск [Visual Studio 2019](https://www.visualstudio.com/downloads/).
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
@@ -208,7 +208,7 @@ namespace localSearch
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Краткое руководство. Отправка запроса в API Bing для поиска местных компаний с помощью Java](local-search-java-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью Node](local-search-node-quickstart.md)
-- [Краткое руководство. Использование Local Business Search с помощью Python](local-search-python-quickstart.md)
+- [Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python](local-search-python-quickstart.md)

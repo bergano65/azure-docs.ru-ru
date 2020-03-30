@@ -13,16 +13,18 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/29/2019
-ms.openlocfilehash: 9f16ebc5acff7bbccc9de28e2fab0d223c6e244b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0a73a2bc3fa76c945cf699133a41b38a9983a234
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68640016"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345807"
 ---
 # <a name="tutorial-build-a-clustering-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по Построение модели кластеризации на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 
 Во второй части этого цикла из трех частей вы создадите модель K-средних на языке R для выполнения кластеризации. В следующей части из этой серии описывается, как развернуть эту модель в базе данных SQL с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия).
+
+[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 В этой статье вы узнаете, как выполнять следующие задачи.
 

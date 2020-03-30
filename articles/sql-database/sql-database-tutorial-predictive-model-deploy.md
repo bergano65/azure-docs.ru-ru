@@ -13,16 +13,18 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/26/2019
-ms.openlocfilehash: 9fa816b2a8e736f03c99b66b898f48bd2a483b31
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7779db053344f99238d38d5d49762730efbc5fc4
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68596771"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80346323"
 ---
 # <a name="tutorial-deploy-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по развертыванию прогнозной модели на языке R с помощью Служб машинного обучения Azure в Базе данных SQL (предварительная версия)
 
 В третьей части этого руководства объясняется, как развернуть прогнозную модель, разработанную на языке R, в базе данных SQL с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия).
+
+[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 Вы создадите хранимую процедуру с внедренным сценарием R, который создает прогнозы с использованием модели. Так как ваша модель выполняется в Базе данных SQL Azure, ее легко можно обучить с помощью данных, хранящихся в базе данных.
 

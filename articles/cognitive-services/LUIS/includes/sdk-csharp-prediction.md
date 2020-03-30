@@ -11,10 +11,10 @@ ms.topic: include
 ms.custom: include file
 ms.author: diberry
 ms.openlocfilehash: 3bb0b9fb8b268c3e036ffb365eb8d5b80a241269
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77372194"
 ---
 С помощью клиентской библиотеки прогнозирования для .NET в службе "Распознавание речи" (LUIS) можно выполнить следующие задачи.
@@ -23,7 +23,7 @@ ms.locfileid: "77372194"
 
 [Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/languageunderstanding?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Language.LUIS.Runtime) | [Пакет для прогнозирования (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/) | [Образцы кода (C#)](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/LanguageUnderstanding/predict-with-sdk-3x)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Учетную запись на портале LUIS [можно создать бесплатно](https://www.luis.ai).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).

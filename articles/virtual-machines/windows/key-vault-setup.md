@@ -1,5 +1,5 @@
 ---
-title: Настройка Key Vault для виртуальных машин Windows в Azure Resource Manager
+title: Настройка Key Vault для вывизов Windows в менеджере ресурсов Azure
 description: Узнайте, как настроить хранилище ключей для использования с виртуальной машиной Azure Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2017
 ms.author: kasing
 ms.openlocfilehash: a64163da1dee2bceb567436dc18ba0fa5274cfcb
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79243150"
 ---
 # <a name="set-up-key-vault-for-virtual-machines-in-azure-resource-manager"></a>Настройка хранилища ключей для виртуальных машин в Azure Resource Manager
@@ -51,7 +51,7 @@ ms.locfileid: "79243150"
 
     az keyvault create --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --location "EastAsia"
     
-Затем, чтобы включить Key Vault для использования с развертыванием шаблона, выполните следующую команду:
+Затем, чтобы включить Key Vault для использования с развертыванием шаблонов, запустите следующую команду:
 
     az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-deployment "true"
 
@@ -70,4 +70,4 @@ ms.locfileid: "79243150"
       }
     }
 
-Сведения о других параметрах, которые можно настроить при создании хранилища ключей с помощью шаблонов, см. в статье [Создание хранилища ключей](https://azure.microsoft.com/documentation/templates/101-key-vault-create/).
+Для других опций, которые можно настроить при создании хранилища ключей с помощью шаблонов, [см. Создать хранилище ключей.](https://azure.microsoft.com/documentation/templates/101-key-vault-create/)

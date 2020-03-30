@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
 ms.openlocfilehash: b646f1994c83dba18b246dc3738729058ce6922d
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69907072"
 ---
 [!INCLUDE [Prerequisites](prerequisites-go.md)]
@@ -78,9 +78,9 @@ func dictionaryLookup(subscriptionKey string, uri string) {
 }
 ```
 
-Теперь давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере мы переводим с английского на испанский.
+Теперь давайте создадим URL-адрес. URL-адрес создается с использованием методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере мы переводим с английского на испанский.
 
-Скопируйте этот код в функцию `altTranslations`.
+Скопируйте следующий код в функцию `altTranslations`.
 
 ```go
 // Build the request URL. See: https://golang.org/pkg/net/url/#example_URL_Parse
@@ -92,7 +92,7 @@ u.RawQuery = q.Encode()
 ```
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [API перевода текстов 3.0: Поиск по словарю](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Dictionary Lookup](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup).
 
 ## <a name="create-a-struct-for-your-request-body"></a>Создание структуры для текста запроса
 
@@ -217,7 +217,7 @@ go run dictionaryLookup.go
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 

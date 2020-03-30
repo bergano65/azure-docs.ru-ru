@@ -4,10 +4,10 @@ description: Описание свойств, экспортируемых с п
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.openlocfilehash: e4dd2310169476e54c06083fee11b2e4cccecd8d
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77663881"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
@@ -109,95 +109,95 @@ ms.locfileid: "77663881"
 | --- | --- | --- |
 | context.custom.dimensions [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских свойств. Максимальная длина ключа — 100, максимальная длина значения —1024. Более 100 уникальных значений. Свойства можно использовать для поиска, но не для сегментации. Максимальное количество — 200 ключей на ключ ikey. |
 | context.custom.metrics [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских измерений и метриками TrackMetric. Максимальная длина ключа — 100. Значения могут быть числовыми. |
-| context.data.eventTime |string |время в формате UTC |
+| context.data.eventTime |строка |Формат UTC. |
 | context.data.isSynthetic |Логическое |Запрос поступает от программы-робота или веб-теста. |
 | context.data.samplingRate |number |Процентная доля данных телеметрии, созданных с помощью пакета SDK, отправленного на портал. Диапазон 0,0–100,0. |
-| context.device |object |Устройство клиента |
-| context.device.browser |string |IE, Chrome… |
-| context.device.browserVersion |string |Chrome 48.0… |
-| context.device.deviceModel |string | |
-| context.device.deviceName |string | |
-| context.device.id |string | |
-| context.device.locale |string |en-GB, de-DE… |
-| context.device.network |string | |
-| context.device.oemName |string | |
-| context.device.os |string | |
-| context.device.osVersion |string |ОС узла |
-| context.device.roleInstance |string |Идентификатор узла сервера |
-| context.device.roleName |string | |
-| context.device.screenResolution |string | |
-| context.device.type |string |ПК, браузер… |
-| context.location |object |На основе значения clientip. |
-| context.location.city |string |На основе значения clientip (если известно) |
-| context.location.clientip |string |Последний восьмиугольник анонимизирован и имеет значение 0. |
-| context.location.continent |string | |
-| context.location.country |string | |
-| context.location.province |string |Страна или область |
-| context.operation.id |string |Элементы с одинаковым идентификатором операций отображаются на портале как связанные элементы. Как правило, это идентификатор запроса. |
-| context.operation.name |string |URL-адрес или имя запроса |
-| context.operation.parentId |string |Разрешает использование вложенных связанных элементов. |
-| context.session.id |string |Идентификатор группы операций из одного источника. 30-минутный период без операций указывает на завершение сеанса. |
+| context.device |объект |Устройство клиента |
+| context.device.browser |строка |IE, Chrome… |
+| context.device.browserVersion |строка |Chrome 48.0… |
+| context.device.deviceModel |строка | |
+| context.device.deviceName |строка | |
+| context.device.id |строка | |
+| context.device.locale |строка |en-GB, de-DE… |
+| context.device.network |строка | |
+| context.device.oemName |строка | |
+| context.device.os |строка | |
+| context.device.osVersion |строка |ОС узла |
+| context.device.roleInstance |строка |Идентификатор узла сервера |
+| context.device.roleName |строка | |
+| context.device.screenResolution |строка | |
+| context.device.type |строка |ПК, браузер… |
+| context.location |объект |На основе значения clientip. |
+| context.location.city |строка |На основе значения clientip (если известно) |
+| context.location.clientip |строка |Последний восьмиугольник анонимизирован и имеет значение 0. |
+| context.location.continent |строка | |
+| context.location.country |строка | |
+| context.location.province |строка |Страна или область |
+| context.operation.id |строка |Элементы с одинаковым идентификатором операций отображаются на портале как связанные элементы. Как правило, это идентификатор запроса. |
+| context.operation.name |строка |URL-адрес или имя запроса |
+| context.operation.parentId |строка |Разрешает использование вложенных связанных элементов. |
+| context.session.id |строка |Идентификатор группы операций из одного источника. 30-минутный период без операций указывает на завершение сеанса. |
 | context.session.isFirst |Логическое | |
-| context.user.accountAcquisitionDate |string | |
-| context.user.accountId |string | |
-| context.user.anonAcquisitionDate |string | |
-| context.user.anonId |string | |
-| context.user.authAcquisitionDate |string |[Прошедший проверку пользователь.](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users) |
-| context.user.authId |string | |
+| context.user.accountAcquisitionDate |строка | |
+| context.user.accountId |строка | |
+| context.user.anonAcquisitionDate |строка | |
+| context.user.anonId |строка | |
+| context.user.authAcquisitionDate |строка |[прошедший проверку пользователь](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users) |
+| context.user.authId |строка | |
 | context.user.isAuthenticated |Логическое | |
-| context.user.storeRegion |string | |
-| internal.data.documentVersion |string | |
-| internal.data.id |string | Уникальный идентификатор, присваиваемый при передаче элемента в Application Insights |
+| context.user.storeRegion |строка | |
+| internal.data.documentVersion |строка | |
+| internal.data.id |строка | Уникальный идентификатор, присваиваемый при передаче элемента в Application Insights |
 
 ## <a name="events"></a>События
 Пользовательские события, создаваемые элементом [TrackEvent()](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
 
 | путь | Тип | Примечания |
 | --- | --- | --- |
-| event [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
-| event [0] name |string |Имя события.  Максимальная длина: 250 |
-| event [0] url |string | |
-| event [0] urlData.base |string | |
-| event [0] urlData.host |string | |
+| event [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| event [0] name |строка |Имя события.  Максимальная длина: 250 |
+| event [0] url |строка | |
+| event [0] urlData.base |строка | |
+| event [0] urlData.host |строка | |
 
 ## <a name="exceptions"></a>Исключения
 Отправляются сведения об [исключениях](../../azure-monitor/app/asp-net-exceptions.md) на сервере и в браузере.
 
 | путь | Тип | Примечания |
 | --- | --- | --- |
-| basicException [0] assembly |string | |
-| basicException [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
-| basicException [0] exceptionGroup |string | |
-| basicException [0] exceptionType |string | |
-| basicException [0] failedUserCodeMethod |string | |
-| basicException [0] failedUserCodeAssembly |string | |
-| basicException [0] handledAt |string | |
+| basicException [0] assembly |строка | |
+| basicException [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| basicException [0] exceptionGroup |строка | |
+| basicException [0] exceptionType |строка | |
+| basicException [0] failedUserCodeMethod |строка | |
+| basicException [0] failedUserCodeAssembly |строка | |
+| basicException [0] handledAt |строка | |
 | basicException [0] hasFullStack |Логическое | |
-| basicException [0] id |string | |
-| basicException [0] method |string | |
-| basicException [0] message |string |Сообщение об исключении. Максимальная длина: 10 000 |
-| basicException [0] outerExceptionMessage |string | |
-| basicException [0] outerExceptionThrownAtAssembly |string | |
-| basicException [0] outerExceptionThrownAtMethod |string | |
-| basicException [0] outerExceptionType |string | |
-| basicException [0] outerId |string | |
-| basicException [0] parsedStack [0] assembly |string | |
-| basicException [0] parsedStack [0] fileName |string | |
-| basicException [0] parsedStack [0] level |integer | |
-| basicException [0] parsedStack [0] line |integer | |
-| basicException [0] parsedStack [0] method |string | |
-| basicException [0] stack |string |Максимальная длина: 10 000 |
-| basicException [0] typeName |string | |
+| basicException [0] id |строка | |
+| basicException [0] method |строка | |
+| basicException [0] message |строка |Сообщение об исключении. Максимальная длина: 10 000 |
+| basicException [0] outerExceptionMessage |строка | |
+| basicException [0] outerExceptionThrownAtAssembly |строка | |
+| basicException [0] outerExceptionThrownAtMethod |строка | |
+| basicException [0] outerExceptionType |строка | |
+| basicException [0] outerId |строка | |
+| basicException [0] parsedStack [0] assembly |строка | |
+| basicException [0] parsedStack [0] fileName |строка | |
+| basicException [0] parsedStack [0] level |Целое число | |
+| basicException [0] parsedStack [0] line |Целое число | |
+| basicException [0] parsedStack [0] method |строка | |
+| basicException [0] stack |строка |Максимальная длина: 10 000 |
+| basicException [0] typeName |строка | |
 
 ## <a name="trace-messages"></a>Сообщения трассировки
 Отправитель: [TrackTrace](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) и [адаптеры ведения журналов](../../azure-monitor/app/asp-net-trace-logs.md).
 
 | путь | Тип | Примечания |
 | --- | --- | --- |
-| message [0] loggerName |string | |
-| message [0] parameters |string | |
-| message [0] raw |string |Сообщение журнала, максимальная длина — 10 тысяч символов. |
-| message [0] severityLevel |string | |
+| message [0] loggerName |строка | |
+| message [0] parameters |строка | |
+| message [0] raw |строка |Сообщение журнала, максимальная длина — 10 тысяч символов. |
+| message [0] severityLevel |строка | |
 
 ## <a name="remote-dependency"></a>Удаленная зависимость
 Отправитель: TrackDependency. Используется для создания отчетов о производительности и использовании [вызовов к зависимостям](../../azure-monitor/app/asp-net-dependencies.md) на сервере, а также вызовов AJAX в браузере.
@@ -205,36 +205,36 @@ ms.locfileid: "77663881"
 | путь | Тип | Примечания |
 | --- | --- | --- |
 | remoteDependency [0] async |Логическое | |
-| remoteDependency [0] baseName |string | |
-| remoteDependency [0] commandName |string |Например, home/index |
-| remoteDependency [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
-| remoteDependency [0] dependencyTypeName |string |HTTP, SQL, … |
+| remoteDependency [0] baseName |строка | |
+| remoteDependency [0] commandName |строка |Например, home/index |
+| remoteDependency [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| remoteDependency [0] dependencyTypeName |строка |HTTP, SQL, … |
 | remoteDependency [0] durationMetric.value |number |Время от вызова до завершения отклика зависимостью. |
-| remoteDependency [0] id |string | |
-| remoteDependency [0] name |string |URL-адрес. Максимальная длина: 250 |
-| remoteDependency [0] resultCode |string |Из зависимости HTTP. |
+| remoteDependency [0] id |строка | |
+| remoteDependency [0] name |строка |URL-адрес. Максимальная длина: 250 |
+| remoteDependency [0] resultCode |строка |Из зависимости HTTP. |
 | remoteDependency [0] success |Логическое | |
-| remoteDependency [0] type |string |HTTP, SQL, … |
-| remoteDependency [0] url |string |Максимальная длина: 2000 |
-| remoteDependency [0] urlData.base |string |Максимальная длина: 2000 |
-| remoteDependency [0] urlData.hashTag |string | |
-| remoteDependency [0] urlData.host |string |Максимальная длина: 200 |
+| remoteDependency [0] type |строка |HTTP, SQL, … |
+| remoteDependency [0] url |строка |Максимальная длина: 2000 |
+| remoteDependency [0] urlData.base |строка |Максимальная длина: 2000 |
+| remoteDependency [0] urlData.hashTag |строка | |
+| remoteDependency [0] urlData.host |строка |Максимальная длина: 200 |
 
-## <a name="requests"></a>Запросы
+## <a name="requests"></a>Requests
 Отправитель: [TrackRequest](../../azure-monitor/app/api-custom-events-metrics.md#trackrequest). Используется стандартными модулями для создания отчетов о времени отклика сервера (измеряется на сервере).
 
 | путь | Тип | Примечания |
 | --- | --- | --- |
-| request [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например: 4 =&gt; 25 %. |
+| request [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например: 4 =&gt; 25 %. |
 | request [0] durationMetric.value |number |Время от поступления запроса до отклика. 1e7 = 1 с. |
-| request [0] id |string |Идентификатор операции |
-| request [0] name |string |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
-| request [0] responseCode |integer |HTTP-отклик, отправленный клиенту. |
+| request [0] id |строка |Идентификатор операции |
+| request [0] name |строка |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
+| request [0] responseCode |Целое число |HTTP-отклик, отправленный клиенту. |
 | request [0] success |Логическое |Значение по умолчанию == (responseCode &lt; 400) |
-| request [0] url |string |Не включая узел. |
-| request [0] urlData.base |string | |
-| request [0] urlData.hashTag |string | |
-| request [0] urlData.host |string | |
+| request [0] url |строка |Не включая узел. |
+| request [0] urlData.base |строка | |
+| request [0] urlData.hashTag |строка | |
+| request [0] urlData.host |строка | |
 
 ## <a name="page-view-performance"></a>Производительность просмотра страницы
 Отправитель: браузер. Измеряет время обработки страницы — с момента инициации пользователем запроса до полного отображения страницы (за исключением асинхронных вызовов AJAX).
@@ -243,56 +243,56 @@ ms.locfileid: "77663881"
 
 | путь | Тип | Примечания |
 | --- | --- | --- |
-| clientPerformance [0] clientProcess.value |integer |Время от завершения получения HTML до отображения страницы. |
-| clientPerformance [0] name |string | |
-| clientPerformance [0] networkConnection.value |integer |Время, необходимое для установки подключения к сети. |
-| clientPerformance [0] receiveRequest.value |integer |Время от завершения отправки запроса до получения HTML в отклике. |
-| clientPerformance [0] sendRequest.value |integer |Время на отправку HTTP-запроса. |
-| clientPerformance [0] total.value |integer |Время от запуска отправки запроса до отображения страницы. |
-| clientPerformance [0] url |string |URL-адрес запроса. |
-| clientPerformance [0] urlData.base |string | |
-| clientPerformance [0] urlData.hashTag |string | |
-| clientPerformance [0] urlData.host |string | |
-| clientPerformance [0] urlData.protocol |string | |
+| clientPerformance [0] clientProcess.value |Целое число |Время от завершения получения HTML до отображения страницы. |
+| clientPerformance [0] name |строка | |
+| clientPerformance [0] networkConnection.value |Целое число |Время, необходимое для установки подключения к сети. |
+| clientPerformance [0] receiveRequest.value |Целое число |Время от завершения отправки запроса до получения HTML в отклике. |
+| clientPerformance [0] sendRequest.value |Целое число |Время на отправку HTTP-запроса. |
+| clientPerformance [0] total.value |Целое число |Время от запуска отправки запроса до отображения страницы. |
+| clientPerformance [0] url |строка |URL-адрес запроса. |
+| clientPerformance [0] urlData.base |строка | |
+| clientPerformance [0] urlData.hashTag |строка | |
+| clientPerformance [0] urlData.host |строка | |
+| clientPerformance [0] urlData.protocol |строка | |
 
-## <a name="page-views"></a>"Представления страниц"
+## <a name="page-views"></a>Просмотры страницы
 Отправитель: trackPageView() или [stopTrackPage](../../azure-monitor/app/api-custom-events-metrics.md#page-views)
 
 | путь | Тип | Примечания |
 | --- | --- | --- |
-| view [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
-| view [0] durationMetric.value |integer |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
-| view [0] name |string |Заголовок страницы.  Максимальная длина: 250 |
-| view [0] url |string | |
-| view [0] urlData.base |string | |
-| view [0] urlData.hashTag |string | |
-| view [0] urlData.host |string | |
+| view [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| view [0] durationMetric.value |Целое число |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
+| view [0] name |строка |Заголовок страницы.  Максимальная длина: 250 |
+| view [0] url |строка | |
+| view [0] urlData.base |строка | |
+| view [0] urlData.hashTag |строка | |
+| view [0] urlData.host |строка | |
 
 ## <a name="availability"></a>Доступность
 Это свойство создает отчеты о [веб-тестах на доступность](../../azure-monitor/app/monitor-web-app-availability.md).
 
 | путь | Тип | Примечания |
 | --- | --- | --- |
-| availability [0] availabilityMetric.name |string |доступность |
+| availability [0] availabilityMetric.name |строка |availability |
 | availability [0] availabilityMetric.value |number |1,0 или 0,0. |
-| availability [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
-| availability [0] dataSizeMetric.name |string | |
-| availability [0] dataSizeMetric.value |integer | |
-| availability [0] durationMetric.name |string | |
+| availability [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| availability [0] dataSizeMetric.name |строка | |
+| availability [0] dataSizeMetric.value |Целое число | |
+| availability [0] durationMetric.name |строка | |
 | availability [0] durationMetric.value |number |Продолжительность теста. 1e7 = 1 с. |
-| availability [0] message |string |Диагностика сбоя. |
-| availability [0] result |string |совпадение или неудача |
-| availability [0] runLocation |string |Географический объект-источник HTTP-запроса. |
-| availability [0] testName |string | |
-| availability [0] testRunId |string | |
-| availability [0] testTimestamp |string | |
+| availability [0] message |строка |Диагностика сбоя. |
+| availability [0] result |строка |Успех или сбой. |
+| availability [0] runLocation |строка |Географический объект-источник HTTP-запроса. |
+| availability [0] testName |строка | |
+| availability [0] testRunId |строка | |
+| availability [0] testTimestamp |строка | |
 
 ## <a name="metrics"></a>Метрики
 Создатель: TrackMetric().
 
 Значение метрики можно найти в context.custom.metrics[0].
 
-Например:
+Пример:
 
     {
      "metric": [ ],
@@ -318,7 +318,7 @@ ms.locfileid: "77663881"
     }
 
 ## <a name="about-metric-values"></a>О значениях метрик
-Значения метрик (как в отчетах, так и в других элементах) сообщаются в рамках стандартной структуры объекта. Например:
+Значения метрик (как в отчетах, так и в других элементах) сообщаются в рамках стандартной структуры объекта. Пример:
 
       "durationMetric": {
         "name": "contoso.org",
@@ -331,7 +331,7 @@ ms.locfileid: "77663881"
         "sampledValue": 468.71603053650279
       }
 
-Сейчас (хотя это может измениться в будущем) во всех значениях, включенных в отчеты стандартных модулей SDK, полезными являются только поля `count==1` и `name`, а также `value`. Они будут отличаться, только если вы напишете собственный вызов TrackMetric, указав другие параметры.
+Сейчас (хотя это может измениться в будущем) во всех значениях, включенных в отчеты стандартных модулей SDK, полезными являются только поля `name` и `value`, а также `count==1`. Они будут отличаться, только если вы напишете собственный вызов TrackMetric, указав другие параметры.
 
 Другие поля нужны для того, чтобы разрешить статистическое вычисление метрик в пакете SDK, тем самым снизив нагрузку (в виде трафика) на портал. Например, перед отправкой каждого отчета с метриками вы можете получить среднее значение для нескольких последовательных показаний. Затем вы можете рассчитать минимальное и максимальное значение, а также стандартное отклонение и агрегированное значение (сумму или среднее), а затем указать в счетчике количество показаний, представленных в отчете.
 
@@ -342,7 +342,7 @@ ms.locfileid: "77663881"
 ### <a name="durations"></a>Длительность
 За исключением оговоренных случаев, показатели длительности представлены в десятых долях микросекунды, то есть 10 000 000,0 — это 1 с.
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
 * [Непрерывный экспорт](export-telemetry.md)
 * [Примеры кода](export-telemetry.md#code-samples)

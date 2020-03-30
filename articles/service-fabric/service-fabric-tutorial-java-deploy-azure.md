@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: b7754a289c06dff37aedcf8da76d35dfac4b183d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: df6719cad79bdb063c2d4d74892206b6e5bbd414
+ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78252802"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80292039"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по развертыванию приложения Java в кластере Service Fabric в Azure
 
@@ -217,11 +217,11 @@ ms.locfileid: "78252802"
     ./install.sh
     ```
 
-5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите https://testlinuxcluster.westus.cloudapp.azure.com:19080. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh*, нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере.
+5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите `https://testlinuxcluster.westus.cloudapp.azure.com:19080`. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh*, нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере.
 
     ![SFX Java Azure](./media/service-fabric-tutorial-java-deploy-azure/sfxjavaonazure.png)
 
-6. Чтобы получить доступ к приложению, введите https://testlinuxcluster.westus.cloudapp.azure.com:8080
+6. Чтобы получить доступ к приложению, введите `https://testlinuxcluster.westus.cloudapp.azure.com:8080`
 
     ![Приложение для голосования Java Azure](./media/service-fabric-tutorial-java-deploy-azure/votingappjavaazure.png)
 

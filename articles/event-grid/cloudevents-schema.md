@@ -1,26 +1,26 @@
 ---
 title: Использование службы "Сетка событий Azure" с событиями в схеме CloudEvents
-description: Описание использования схемы Клаудевентс для событий в службе "Сетка событий Azure". Служба поддерживает события в реализации в JSON облачных событий.
+description: Описывает, как использовать схему CloudEvents для событий в Azure Event Grid. Служба поддерживает события в реализации облачных событий JSON.
 services: event-grid
 author: banisadr
 ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: babanisa
-ms.openlocfilehash: 25a24c5bb44c77038a508e4c2f4e099132101f6a
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 0efccd2851885dad209d5548a76737c25777b891
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79265081"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80372445"
 ---
-# <a name="use-cloudevents-v10-schema-with-event-grid"></a>Использование схемы Клаудевентс v 1.0 со службой "Сетка событий"
+# <a name="use-cloudevents-v10-schema-with-event-grid"></a>Используйте схему CloudEvents v1.0 с помощью Event Grid
 
-В дополнение к [схеме событий по умолчанию](event-schema.md)служба "Сетка событий Azure" изначально поддерживает события в [реализации JSON клаудевентс v 1.0](https://github.com/cloudevents/spec/blob/v1.0/json-format.md) и [привязки протокола HTTP](https://github.com/cloudevents/spec/blob/v1.0/http-protocol-binding.md). [CloudEvents](https://cloudevents.io/) — [открытая спецификация](https://github.com/cloudevents/spec/blob/v1.0/spec.md) для описания данных о событиях.
+В дополнение к [схеме событий по умолчанию](event-schema.md)Azure Event Grid намеренно поддерживает события в [реализации протокола CloudEvents v1.0](https://github.com/cloudevents/spec/blob/v1.0/json-format.md) и [HTTP.](https://github.com/cloudevents/spec/blob/v1.0/http-protocol-binding.md) [CloudEvents](https://cloudevents.io/) — [открытая спецификация](https://github.com/cloudevents/spec/blob/v1.0/spec.md) для описания данных о событиях.
 
 CloudEvents упрощает взаимодействие, предоставляя общую схему событий для публикации и использования событий на основе облака. Эта схема предоставляет обычные средства, стандартные способы маршрутизации и обработки событий, а также универсальные методы десериализации внешней схемы событий. Общая схема позволяет легко интегрировать работу на разных платформах.
 
-Создание CloudEvents — это [совместная работа](https://github.com/cloudevents/spec/blob/master/community/contributors.md) нескольких компаний, включая корпорацию Майкрософт и компанию [Cloud Native Computing Foundation](https://www.cncf.io/). В настоящее время он доступен в версии 1,0.
+Создание CloudEvents — это [совместная работа](https://github.com/cloudevents/spec/blob/master/community/contributors.md) нескольких компаний, включая корпорацию Майкрософт и компанию [Cloud Native Computing Foundation](https://www.cncf.io/). В настоящее время он доступен в качестве версии 1.0.
 
 В этой статье описывается использование схемы CloudEvents со службой "Сетка событий".
 
@@ -60,7 +60,7 @@ CloudEvents упрощает взаимодействие, предоставл�
 }
 ```
 
-Подробное описание доступных полей, их типов и определений в Клаудевентс v 1.0 [можно найти здесь](https://github.com/cloudevents/spec/blob/v1.0/spec.md#required-attributes).
+Подробное описание доступных полей, их типов и определений в CloudEvents v1.0 [можно найти здесь.](https://github.com/cloudevents/spec/blob/v1.0/spec.md#required-attributes)
 
 Значения заголовков для событий, доставляемых в схеме CloudEvents и схеме "Сетка событий", совпадают, за исключением элемента `content-type`. Для схемы CloudEvents значение заголовка — `"content-type":"application/cloudevents+json; charset=utf-8"`. Для схемы "Сетка событий" значение заголовка — `"content-type":"application/json; charset=utf-8"`.
 
@@ -136,17 +136,17 @@ New-AzureRmEventGridSubscription `
   -DeliverySchema CloudEventSchemaV1_0
 ```
 
- Сейчас, если событие доставляется в схему CloudEvents, триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". Используйте триггер HTTP. Примеры реализации триггера HTTP, который получает события в схеме Клаудевентс, см. в разделе [Использование клаудевентс с функциями Azure](#azure-functions).
+ Сейчас, если событие доставляется в схему CloudEvents, триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". Используйте триггер HTTP. Примеры реализации триггера HTTP, который получает события в схеме CloudEvents, [см.](#azure-functions)
 
- ## <a name="endpoint-validation-with-cloudevents-v10"></a>Проверка конечной точки с помощью Клаудевентс v 1.0
+ ## <a name="endpoint-validation-with-cloudevents-v10"></a>Проверка конечных точек с помощью CloudEvents v1.0
 
-Если вы уже знакомы со службой "Сетка событий", то, возможно, знаете, что подтверждение конечной точки сетки событий не позволяет избежать нарушения. Клаудевентс v 1.0 реализует собственную [семантику защиты от](security-authentication.md#webhook-event-delivery) нарушений с помощью метода HTTP Options. Подробнее об этом можно прочитать [здесь](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection). При использовании схемы Клаудевентс для вывода в службе "Сетка событий" используется с защитой Клаудевентс v 1.0 вместо механизма событий проверки сетки событий.
+Если вы уже знакомы с Event Grid, вы можете быть в курсе рукопожатия Event Grid в проверке конечной точки для предотвращения злоупотреблений. CloudEvents v1.0 реализует собственную [семантику защиты от злоупотреблений](security-authentication.md#webhook-event-delivery) с помощью метода HTTP OPTIONS. Вы можете прочитать больше об этом [здесь](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection). При использовании схемы CloudEvents для вывода Event Grid использует защиту от злоупотреблений CloudEvents v1.0 вместо механизма проверки событий Event Grid.
 
 <a name="azure-functions"></a>
 
 ## <a name="use-with-azure-functions"></a>Использование с функциями Azure
 
-[Привязка сетки событий функций Azure](../azure-functions/functions-bindings-event-grid.md) изначально не поддерживает клаудевентс, поэтому для чтения сообщений клаудевентс используются функции, активируемые HTTP. При использовании триггера HTTP для чтения Клаудевентс необходимо написать код для автоматического запуска триггера сетки событий:
+[Привязка Azure Functions Event Grid](../azure-functions/functions-bindings-event-grid.md) не поддерживает CloudEvents, поэтому функции HTTP-триггера используются для чтения сообщений CloudEvents. При использовании триггера HTTP для чтения CloudEvents необходимо написать код для того, что делает триггер Event Grid автоматически:
 
 * Отправляет запрос проверки в [запрос подтверждения подписки](../event-grid/security-authentication.md#webhook-event-delivery).
 * Вызывает функцию один раз для каждого элемента массива событий, содержащихся в тексте запроса.
@@ -157,35 +157,27 @@ New-AzureRmEventGridSubscription `
 
 ```csharp
 [FunctionName("HttpTrigger")]
-public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequestMessage req, ILogger log)
+public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", "options", Route = null)]HttpRequestMessage req, ILogger log)
 {
     log.LogInformation("C# HTTP trigger function processed a request.");
+    if (req.Method == "OPTIONS")
+    {
+        // If the request is for subscription validation, send back the validation code
+        
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        response.Add("Webhook-Allowed-Origin", "eventgrid.azure.net");
+
+        return response;
+    }
 
     var requestmessage = await req.Content.ReadAsStringAsync();
     var message = JToken.Parse(requestmessage);
 
-    if (message.Type == JTokenType.Array)
-    {
-        // If the request is for subscription validation, send back the validation code.
-        if (string.Equals((string)message[0]["eventType"],
-        "Microsoft.EventGrid.SubscriptionValidationEvent",
-        System.StringComparison.OrdinalIgnoreCase))
-        {
-            log.LogInformation("Validate request received");
-            return req.CreateResponse<object>(new
-            {
-                validationResponse = message[0]["data"]["validationCode"]
-            });
-        }
-    }
-    else
-    {
-        // The request is not for subscription validation, so it's for an event.
-        // CloudEvents schema delivers one event at a time.
-        log.LogInformation($"Source: {message["source"]}");
-        log.LogInformation($"Time: {message["eventTime"]}");
-        log.LogInformation($"Event data: {message["data"].ToString()}");
-    }
+    // The request is not for subscription validation, so it's for an event.
+    // CloudEvents schema delivers one event at a time.
+    log.LogInformation($"Source: {message["source"]}");
+    log.LogInformation($"Time: {message["eventTime"]}");
+    log.LogInformation($"Event data: {message["data"].ToString()}");
 
     return req.CreateResponse(HttpStatusCode.OK);
 }
@@ -196,15 +188,18 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 ```javascript
 module.exports = function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-
-    var message = req.body;
-    // If the request is for subscription validation, send back the validation code.
-    if (message.length > 0 && message[0].eventType == "Microsoft.EventGrid.SubscriptionValidationEvent") {
+    
+    if (req.method == "OPTIONS) {
+        // If the request is for subscription validation, send back the validation code
+        
         context.log('Validate request received');
-        var code = message[0].data.validationCode;
         context.res = { status: 200, body: { "ValidationResponse": code } };
+        context.res.headers.append('Webhook-Allowed-Origin', 'eventgrid.azure.net');
     }
-    else {
+    else
+    {
+        var message = req.body;
+        
         // The request is not for subscription validation, so it's for an event.
         // CloudEvents schema delivers one event at a time.
         var event = JSON.parse(message);
@@ -212,6 +207,7 @@ module.exports = function (context, req) {
         context.log('Time: ' + event.eventTime);
         context.log('Data: ' + JSON.stringify(event.data));
     }
+ 
     context.done();
 };
 ```

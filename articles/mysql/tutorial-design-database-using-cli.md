@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 12/02/2019
 ms.custom: mvc
-ms.openlocfilehash: 00beae5a65e61f814d3498dbb41af02aaf0287fb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 080e4b119048f2c204e6617405c7c053c7f24cea
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74771219"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80382840"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по Разработка базы данных Azure для MySQL с помощью Azure CLI
 
@@ -34,7 +34,7 @@ ms.locfileid: "74771219"
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Если вы решили установить и использовать интерфейс командной строки Azure локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 Если вы используете несколько подписок, выберите соответствующую подписку, в которой находится ресурс либо в которой за него взимается плата. Выберите конкретный идентификатор подписки вашей учетной записи, выполнив команду [az account set](/cli/azure/account#az-account-set).
 ```azurecli-interactive

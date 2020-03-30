@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 08/06/2019
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: 73c68e03ca2403be51664cb59158762cedccc721
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9a3247298ed69cdefb3ce5021f0c4051052105f7
+ms.sourcegitcommit: fe6c9a35e75da8a0ec8cea979f9dec81ce308c0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80046963"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80297803"
 ---
 # <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Руководство по Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure
 
@@ -63,8 +63,8 @@ cd dotnetcore-sqldb-tutorial
 Выполните указанные ниже команды, чтобы установить необходимые пакеты, перенести базы данных и запустить приложение.
 
 ```bash
-dotnet restore
-dotnet ef database update
+dotnet tool install -g dotnet-ef --version 3.1.1
+dotnet-ef database update
 dotnet run
 ```
 

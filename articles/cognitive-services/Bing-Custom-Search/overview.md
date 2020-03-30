@@ -11,10 +11,10 @@ ms.topic: overview
 ms.date: 12/18/2019
 ms.author: aahi
 ms.openlocfilehash: 12c255f0e4ed11ce8acbd762530604218f8bc12b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75448737"
 ---
 # <a name="what-is-the-bing-custom-search-api"></a>Знакомство с API Пользовательского поиска Bing
@@ -47,7 +47,7 @@ ms.locfileid: "75448737"
 
 Чтобы узнать больше об использовании поисковых результатов в службах и приложениях, прочтите статью [Требования к использованию и отображению API-интерфейсов поиска Bing](./use-and-display-requirements.md).
 
-Сведения о других доступных API Поиск Bing см. на [главной странице](../bing-web-search/search-the-web.md).
+Сведения о других доступных API "Поиск Bing" см. на [главной странице](../bing-web-search/search-the-web.md).
 
 Ознакомьтесь со справочными материалами по каждой конечной точке пользовательского поиска. Руководство содержит список конечных точек, заголовков и параметров запроса, которые будут использоваться для запроса результатов поиска. Оно также содержит определения объектов ответа.
 

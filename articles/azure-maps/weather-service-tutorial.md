@@ -1,20 +1,20 @@
 ---
 title: Руководство по Объединение данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python) | Microsoft Azure Maps
 description: В этом руководстве показано, как объединить данные от датчиков с данными Службы погоды Microsoft Azure Maps с помощью Записных книжек Azure (Python).
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 01/29/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: d6b82ec0662745fd9c9a05db28595ff84f57f330
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e5292f5166e739264e9cf969480b70f415fcc75a
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77208035"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80333500"
 ---
 # <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Руководство по Объединение данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python)
 

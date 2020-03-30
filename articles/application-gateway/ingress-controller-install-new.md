@@ -1,61 +1,61 @@
 ---
-title: Создание контроллера входящего трафика с новым шлюзом приложений
-description: В этой статье содержатся сведения о развертывании контроллера входящего трафика шлюза приложений с помощью нового шлюза приложений.
+title: Создание контроллера для входа с новым шлюзом приложений
+description: В этой статье содержится информация о том, как развернуть контроллер входа в приложение с новым шлюзом приложений.
 services: application-gateway
 author: caya
 ms.service: application-gateway
 ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 30b5f6593d2d2ca17ad600a55f9dc7e2a379f0f0
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: a0bc6aef1becd53217be0eeb8c865b5c78a5d69f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795930"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80239461"
 ---
-# <a name="how-to-install-an-application-gateway-ingress-controller-agic-using-a-new-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью нового шлюза приложений
+# <a name="how-to-install-an-application-gateway-ingress-controller-agic-using-a-new-application-gateway"></a>Как установить контроллер входа в приложение (AGIC) с помощью нового шлюза приложений
 
-В приведенных ниже инструкциях предполагается, что контроллер входящего трафика шлюза приложений (АГИК) будет установлен в среде без уже существующих компонентов.
+Приведенные ниже инструкции предполагают, что контроллер входа в application Gateway (AGIC) будет установлен в среде без уже существующих компонентов.
 
-## <a name="required-command-line-tools"></a>Обязательные средства командной строки
+## <a name="required-command-line-tools"></a>Необходимые инструменты командной строки
 
-Рекомендуется использовать [Azure Cloud Shell](https://shell.azure.com/) для всех операций командной строки, приведенных ниже. Запустите оболочку из shell.azure.com или щелкните ссылку:
+Рекомендуем использовать [Azure Cloud Shell](https://shell.azure.com/) для всех командных операций ниже. Запустите оболочку с shell.azure.com или нажав на ссылку:
 
-[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+[![Встраиваемый запуск](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
 
-Кроме того, можно запустить Cloud Shell из портал Azure, используя следующий значок:
+Кроме того, запустите оболочку облака с портала Azure, используя следующий значок:
 
 ![Запуск с помощью портала](./media/application-gateway-ingress-controller-install-new/portal-launch-icon.png)
 
-У [Azure Cloud Shell](https://shell.azure.com/) уже есть все необходимые средства. Если вы решили использовать другую среду, убедитесь, что установлены следующие средства командной строки:
+В вашей [облачной оболочке Azure](https://shell.azure.com/) уже есть все необходимые инструменты. Если вы решите использовать другую среду, пожалуйста, убедитесь, что следующие инструменты командной строки установлены:
 
-* `az`-Azure CLI: [инструкции по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
-* Программа командной строки `kubectl`-Kubernetes: [инструкции по установке](https://kubernetes.io/docs/tasks/tools/install-kubectl)
-* `helm` — диспетчер пакетов Kubernetes: [инструкции по установке](https://github.com/helm/helm/releases/latest)
-* `jq` процессор командной строки JSON: [инструкции по установке](https://stedolan.github.io/jq/download/)
+* `az`- Azure CLI: [инструкции по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+* `kubectl`- Инструмент командной линии Kubernetes: [инструкции по установке](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+* `helm`- Менеджер пакета Kubernetes: [инструкции по установке](https://github.com/helm/helm/releases/latest)
+* `jq`- командный процессор JSON: [инструкции по установке](https://stedolan.github.io/jq/download/)
 
 
-## <a name="create-an-identity"></a>Создание удостоверения
+## <a name="create-an-identity"></a>Создание идентификации
 
-Выполните следующие действия, чтобы создать [объект субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)Azure Active Directory (AAD). Запишите значения `appId`, `password`и `objectId` — они будут использоваться в следующих шагах.
+Выполните ниже шаги, чтобы создать [основной объект службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)Azure Active Directory (AAD). `appId`Пожалуйста, `password`запишите, и `objectId` значения - они будут использоваться в следующих шагах.
 
-1. Создание субъекта-службы AD ([Подробнее о RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)):
-    ```bash
+1. Создайте aD-сервис[(Подробнее о RBAC):](https://docs.microsoft.com/azure/role-based-access-control/overview)
+    ```azurecli
     az ad sp create-for-rbac --skip-assignment -o json > auth.json
     appId=$(jq -r ".appId" auth.json)
     password=$(jq -r ".password" auth.json)
     ```
-    Значения `appId` и `password` из выходных данных JSON будут использоваться в следующих шагах.
+    Значения `appId` `password` и значения из выхода JSON будут использоваться в следующих шагах
 
 
-1. Используйте `appId` из вывода предыдущей команды, чтобы получить `objectId` нового субъекта-службы:
-    ```bash
+1. Используйте `appId` выход предыдущей команды, чтобы `objectId` получить новый основной сервис:
+    ```azurecli
     objectId=$(az ad sp show --id $appId --query "objectId" -o tsv)
     ```
-    Выходные данные этой команды `objectId`, которые будут использоваться в шаблоне Azure Resource Manager ниже.
+    Выход этой команды, `objectId`который будет использоваться в шаблоне менеджера ресурсов Azure ниже
 
-1. Создайте файл параметров, который будет использоваться в развертывании шаблона Azure Resource Manager позже.
+1. Создайте файл параметров, который будет использоваться в развертывании шаблона ресурсов Azure Manager позже.
     ```bash
     cat <<EOF > parameters.json
     {
@@ -66,24 +66,24 @@ ms.locfileid: "73795930"
     }
     EOF
     ```
-    Чтобы развернуть кластер с поддержкой **RBAC** , задайте для поля `aksEnabledRBAC` значение `true`
+    Для развертывания кластера с включенным **RBAC** установите поле для `aksEnabledRBAC``true`
 
 ## <a name="deploy-components"></a>Развертывание компонентов
-На этом шаге в подписку будут добавлены следующие компоненты:
+Этот шаг добавит в подписку следующие компоненты:
 
-- [Служба Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/intro-kubernetes)
-- [Шлюз приложений](https://docs.microsoft.com/azure/application-gateway/overview) версии 2
-- [Виртуальная сеть](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) с двумя [подсетями](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
+- [Служба Azure Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)
+- [Приложение Шлюз](https://docs.microsoft.com/azure/application-gateway/overview) v2
+- [Виртуальная сеть](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) с 2 [подсетями](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
 - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address)
-- [Управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview), которое будет использоваться [удостоверением "AAD Pod](https://github.com/Azure/aad-pod-identity/blob/master/README.md) "
+- [Управляемая идентичность](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview), которая будет использоваться [AAD Pod Identity](https://github.com/Azure/aad-pod-identity/blob/master/README.md)
 
-1. Скачайте шаблон Azure Resource Manager и при необходимости измените шаблон.
+1. Загрузите шаблон Azure Resource Manager и измените шаблон по мере необходимости.
     ```bash
     wget https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/master/deploy/azuredeploy.json -O template.json
     ```
 
-1. Разверните шаблон Azure Resource Manager с помощью `az cli`. Это может занять до 5 минут.
-    ```bash
+1. Развертывание шаблона управления ресурсами Azure с помощью `az cli`. Это может занять до 5 минут.
+    ```azurecli
     resourceGroupName="MyResourceGroup"
     location="westus2"
     deploymentName="ingress-appgw"
@@ -99,20 +99,20 @@ ms.locfileid: "73795930"
             --parameters parameters.json
     ```
 
-1. После завершения развертывания Скачайте выходные данные развертывания в файл с именем `deployment-outputs.json`.
-    ```bash
+1. После завершения развертывания загрузите вывод развертывания `deployment-outputs.json`в файл с именем .
+    ```azurecli
     az group deployment show -g $resourceGroupName -n $deploymentName --query "properties.outputs" -o json > deployment-outputs.json
     ```
 
-## <a name="set-up-application-gateway-ingress-controller"></a>Настройка входящего контроллера шлюза приложений
+## <a name="set-up-application-gateway-ingress-controller"></a>Настройка контроллера входа в шлюз приложений
 
-С инструкциями, приведенными в предыдущем разделе, мы создали и настроили новый кластер AKS и шлюз приложений. Теперь мы готовы к развертыванию примера приложения и входного контроллера в нашей новой инфраструктуре Kubernetes.
+С инструкциями в предыдущем разделе мы создали и настроили новый кластер AKS и шлюз приложений. Теперь мы готовы развернуть пример приложения и контроллер входа в нашу новую инфраструктуру Kubernetes.
 
-### <a name="setup-kubernetes-credentials"></a>Настройка учетных данных Kubernetes
-Для выполнения следующих действий необходимо выполнить команду Setup [kubectl](https://kubectl.docs.kubernetes.io/) , которая будет использоваться для подключения к нашему новому кластеру Kubernetes. `kubectl` уже установлена [Cloud Shell](https://shell.azure.com/) . Для получения учетных данных Kubernetes мы будем использовать интерфейс командной строки `az`.
+### <a name="setup-kubernetes-credentials"></a>Настройка Kubernetes полномочия
+Для следующих шагов нам нужна команда [kubectl,](https://kubectl.docs.kubernetes.io/) которую мы будем использовать для подключения к нашему новому кластеру Kubernetes. [Облачная оболочка](https://shell.azure.com/) `kubectl` уже установлена. Мы будем `az` использовать CLI для получения учетных данных для Kubernetes.
 
-Получите учетные данные для вновь развернутых AKS (см.[Дополнительные](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)сведения):
-```bash
+Получите учетные данные для недавно развернутого AKS[(подробнее):](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)
+```azurecli
 # use the deployment-outputs.json created after deployment to get the cluster name and resource group name
 aksClusterName=$(jq -r ".aksClusterName.value" deployment-outputs.json)
 resourceGroupName=$(jq -r ".resourceGroupName.value" deployment-outputs.json)
@@ -120,35 +120,35 @@ resourceGroupName=$(jq -r ".resourceGroupName.value" deployment-outputs.json)
 az aks get-credentials --resource-group $resourceGroupName --name $aksClusterName
 ```
 
-### <a name="install-aad-pod-identity"></a>Установка удостоверения Pod для AAD
-  Azure Active Directory удостоверение Pod предоставляет доступ на основе маркеров к [Azure Resource Manager (ARM)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+### <a name="install-aad-pod-identity"></a>Установка AAD Pod Identity
+  Azure Active Directory Pod Identity предоставляет доступ к маркерам для [менеджера ресурсов Azure (ARM).](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)
 
-  [Удостоверение для AAD Pod](https://github.com/Azure/aad-pod-identity) добавит в кластер Kubernetes следующие компоненты:
-   * Kubernetes [КРДС](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/): `AzureIdentity`, `AzureAssignedIdentity`, `AzureIdentityBinding`
-   * Компонент для [управляемого контроллера удостоверений (MIC)](https://github.com/Azure/aad-pod-identity#managed-identity-controllermic)
-   * Компонент [управляемого удостоверения узла (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identitynmi)
+  [AAD Pod Identity](https://github.com/Azure/aad-pod-identity) добавит следующие компоненты в кластер Kubernetes:
+   * Kubernetes [CRDs](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/): `AzureIdentity`, `AzureAssignedIdentity``AzureIdentityBinding`
+   * компонент [Контроллер управляемых удостоверений (MIC)](https://github.com/Azure/aad-pod-identity#managed-identity-controllermic);
+   * компонент [Node Managed Identity (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identitynmi).
 
 
-Чтобы установить удостоверение AAD Pod в кластер, выполните следующие действия.
+Чтобы установить aAD Pod Identity в кластер:
 
-   - *RBAC включен* Кластер AKS
+   - *RBAC включен* Кластер АКС
 
-    ```bash
-    kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
-    ```
+     ```bash
+     kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
+     ```
 
-   - *RBAC отключен* Кластер AKS
+   - *RBAC отключен* Кластер АКС
 
-    ```bash
-    kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
-    ```
+     ```bash
+     kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
+     ```
 
 ### <a name="install-helm"></a>Установка Helm
-[Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) — это диспетчер пакетов для Kubernetes. Мы будем использовать его для установки пакета `application-gateway-kubernetes-ingress`:
+[Хельм](https://docs.microsoft.com/azure/aks/kubernetes-helm) является менеджером пакетов для Kubernetes. Мы будем использовать его `application-gateway-kubernetes-ingress` для установки пакета:
 
-1. Установите [Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) и выполните следующую команду, чтобы добавить пакет Helm `application-gateway-kubernetes-ingress`:
+1. Установите [шлем](https://docs.microsoft.com/azure/aks/kubernetes-helm) и запустите следующие, чтобы добавить `application-gateway-kubernetes-ingress` пакет руля:
 
-    - *RBAC включен* Кластер AKS
+    - *RBAC включен* Кластер АКС
 
         ```bash
         kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -156,21 +156,21 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
         helm init --tiller-namespace kube-system --service-account tiller-sa
         ```
 
-    - *RBAC отключен* Кластер AKS
+    - *RBAC отключен* Кластер АКС
 
         ```bash
         helm init
         ```
 
-1. Добавьте репозиторий АГИК Helm:
+1. Добавьте репозиторий Helm AGIC:
     ```bash
     helm repo add application-gateway-kubernetes-ingress https://appgwingress.blob.core.windows.net/ingress-azure-helm-package/
     helm repo update
     ```
 
-### <a name="install-ingress-controller-helm-chart"></a>Установка Helm контроллера входящих данных
+### <a name="install-ingress-controller-helm-chart"></a>Установка диаграммы Helm контроллера входящего трафика
 
-1. Используйте созданный выше файл `deployment-outputs.json` и создайте следующие переменные.
+1. Используйте `deployment-outputs.json` файл, созданный выше, и создайте следующие переменные.
     ```bash
     applicationGatewayName=$(jq -r ".applicationGatewayName.value" deployment-outputs.json)
     resourceGroupName=$(jq -r ".resourceGroupName.value" deployment-outputs.json)
@@ -178,11 +178,11 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
     identityClientId=$(jq -r ".identityClientId.value" deployment-outputs.json)
     identityResourceId=$(jq -r ".identityResourceId.value" deployment-outputs.json)
     ```
-1. Скачайте Helm-config. YAML, который будет настраивать АГИК:
+1. Скачать рулевой-config.yaml, который будет настроить AGIC:
     ```bash
     wget https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/master/docs/examples/sample-helm-config.yaml -O helm-config.yaml
     ```
-    Или скопируйте файл YAML ниже: 
+    Или скопите файл YAML ниже: 
     
     ```yaml
     # This file contains the essential configs for the ingress controller helm chart
@@ -237,7 +237,7 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
         apiServerAddress: <aks-api-server-address>
     ```
 
-1. Измените только что скачанный файл Helm-config. YAML и заполните разделы `appgw` и `armAuth`.
+1. Отображайте недавно загруженный рулевой-конфигурация.yaml и заполните разделы `appgw` и `armAuth`.
     ```bash
     sed -i "s|<subscriptionId>|${subscriptionId}|g" helm-config.yaml
     sed -i "s|<resourceGroupName>|${resourceGroupName}|g" helm-config.yaml
@@ -250,34 +250,34 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
     ```
 
    Значения:
-     - `verbosityLevel`: задает уровень детализации для инфраструктуры ведения журнала АГИК. Возможные значения см. в разделе [уровни ведения журнала](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/463a87213bbc3106af6fce0f4023477216d2ad78/docs/troubleshooting.md#logging-levels) .
-     - `appgw.subscriptionId`: идентификатор подписки Azure, в которой находится шлюз приложений. Пример: `a123b234-a3b4-557d-b2df-a0bc12de1234`
-     - `appgw.resourceGroup`: имя группы ресурсов Azure, в которой был создан шлюз приложений. Пример: `app-gw-resource-group`
-     - `appgw.name`: имя шлюза приложений. Пример: `applicationgatewayd0f0`
-     - `appgw.shared`: для этого логического флага необходимо использовать значение по умолчанию `false`. Задайте значение `true`, если вам нужен [Общий шлюз приложений](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/072626cb4e37f7b7a1b0c4578c38d1eadc3e8701/docs/setup/install-existing.md#multi-cluster--shared-app-gateway).
-     - `kubernetes.watchNamespace`: укажите пространство имен, которое АГИК должно отслеживать. Это может быть одно строковое значение или разделенный запятыми список пространств имен.
-    - `armAuth.type`: может быть `aadPodIdentity` или `servicePrincipal`
-    - `armAuth.identityResourceID`: идентификатор ресурса управляемого удостоверения Azure.
-    - `armAuth.identityClientId`: идентификатор клиента удостоверения. Дополнительные сведения об удостоверении см. ниже.
-    - `armAuth.secretJSON`: требуется только при выборе типа секрета субъекта-службы (если для `armAuth.type` задано значение `servicePrincipal`) 
+     - `verbosityLevel`: Устанавливает многословный уровень лесозаготовительной инфраструктуры AGIC. Возможные значения можно найти в разделе [Уровни ведения журнала](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/463a87213bbc3106af6fce0f4023477216d2ad78/docs/troubleshooting.md#logging-levels).
+     - `appgw.subscriptionId`: Идентификатор подписки Azure, в котором находится шлюз приложений. Например, `a123b234-a3b4-557d-b2df-a0bc12de1234`.
+     - `appgw.resourceGroup`: Название группы ресурсов Azure, в которой был создан шлюз приложений. Например, `app-gw-resource-group`.
+     - `appgw.name`: Название шлюза приложения. Например, `applicationgatewayd0f0`.
+     - `appgw.shared`: Этот флаг boolean должен `false`быть дефолт . Установите, если `true` вам нужен [общий шлюз приложения.](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/072626cb4e37f7b7a1b0c4578c38d1eadc3e8701/docs/setup/install-existing.md#multi-cluster--shared-app-gateway)
+     - `kubernetes.watchNamespace`: Укажите пространство имени, которое AGIC должен смотреть. Это может быть одно значение строки или список разделенных запятой имен.
+    - `armAuth.type`: может `aadPodIdentity` быть или`servicePrincipal`
+    - `armAuth.identityResourceID`: Идентификатор ресурсов управляемой идентификации Azure
+    - `armAuth.identityClientId`: Идентификатор клиента удостоверения личности. Ниже можно узнать больше о identity
+    - `armAuth.secretJSON`: Только необходимо, когда служба Основной секретный тип выбран (когда `armAuth.type` был установлен на `servicePrincipal`) 
 
 
    > [!NOTE]
-   > `identityResourceID` и `identityClientID` — это значения, которые были созданы во время действий [Create a Identity](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/072626cb4e37f7b7a1b0c4578c38d1eadc3e8701/docs/setup/install-new.md#create-an-identity) . их можно получить повторно с помощью следующей команды:
-   > ```bash
+   > Значения `identityResourceID` `identityClientID` и значения, созданные во время шагов [«Создать идентификацию»,](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/072626cb4e37f7b7a1b0c4578c38d1eadc3e8701/docs/setup/install-new.md#create-an-identity) и могут быть получены снова с помощью следующей команды:
+   > ```azurecli
    > az identity show -g <resource-group> -n <identity-name>
    > ```
-   > `<resource-group>` в приведенной выше команде — это группа ресурсов шлюза приложений. `<identity-name>` — имя созданного удостоверения. Все удостоверения для данной подписки можно указать с помощью: `az identity list`
+   > `<resource-group>`в приведенной выше команде находится группа ресурсов вашего шлюза приложения. `<identity-name>`— это имя созданной идентичности. Все идентификаторы данной подписки могут быть перечислены с помощью:`az identity list`
 
 
-1. Установите пакет входящего контроллера шлюза приложений:
+1. Установите пакет контроллера входящего трафика Шлюза приложений:
 
     ```bash
     helm install -f helm-config.yaml application-gateway-kubernetes-ingress/ingress-azure
     ```
 
 ## <a name="install-a-sample-app"></a>Установка примера приложения
-Теперь, когда у нас установлен шлюз приложений, AKS и АГИК, мы можем установить пример приложения с помощью [Azure Cloud Shell](https://shell.azure.com/):
+Теперь, когда у нас установлены шлюз приложений, AKS и AGIC, мы можем установить пример приложения через [Azure Cloud Shell:](https://shell.azure.com/)
 
 ```yaml
 cat <<EOF | kubectl apply -f -
@@ -328,9 +328,9 @@ spec:
 EOF
 ```
 
-Кроме того, можно:
+Кроме того, вы можете:
 
-* Скачайте файл YAML, приведенный выше:
+* Скачать файл YAML выше:
 
 ```bash
 curl https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/master/docs/examples/aspnetapp.yaml -o aspnetapp.yaml
@@ -343,5 +343,5 @@ kubectl apply -f aspnetapp.yaml
 ```
 
 
-## <a name="other-examples"></a>Другие примеры
-В этом [пошаговом руководство](ingress-controller-expose-service-over-http-https.md) содержатся дополнительные примеры предоставления службы AKS через протокол HTTP или HTTPS для доступа к Интернету с помощью шлюза приложений.
+## <a name="other-examples"></a>Другие образцы
+Это [руководство](ingress-controller-expose-service-over-http-https.md) содержит больше примеров того, как выявить службу AKS через HTTP или HTTPS в Интернет с помощью шлюза приложений.

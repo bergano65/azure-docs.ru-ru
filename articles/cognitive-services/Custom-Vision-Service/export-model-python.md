@@ -1,5 +1,5 @@
 ---
-title: Руководство по Запуск модели TensorFlow в среде Python с помощью Пользовательской службы визуального распознавания
+title: Руководство по запуску модели TensorFlow в среде Python с помощью Пользовательской службы визуального распознавания
 titleSuffix: Azure Cognitive Services
 description: Запуск модели TensorFlow в среде Python. Эта статья относится только к моделям, экспортируемым из проектов по классификации изображений в службе "Пользовательское визуальное распознавание".
 services: cognitive-services
@@ -11,20 +11,20 @@ ms.topic: tutorial
 ms.date: 12/05/2019
 ms.author: areddish
 ms.openlocfilehash: d7e3eeeea6bb25b4cddaea1d04e86f23ab7e4f5f
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74969845"
 ---
-# <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство по Запуск модели TensorFlow в среде Python
+# <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство по запуску модели TensorFlow в среде Python
 
 После того, как вы [экспортировали модель TensorFlow](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/export-your-model) из Пользовательской службы визуального распознавания, с помощью этого краткого руководства вы сможете узнать, как использовать эту модель локально для классификации изображений.
 
 > [!NOTE]
 > Данное руководство относится только к моделям, экспортируемым из проектов по классификации изображений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством необходимо сделать следующее:
 
@@ -208,7 +208,7 @@ with tf.compat.v1.Session() as sess:
         label_index += 1
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создать программу-оболочку для модели в виде мобильного приложения:
 * [Использование экспортированной модели Tensorflow в приложении Android](https://github.com/Azure-Samples/cognitive-services-android-customvision-sample)
