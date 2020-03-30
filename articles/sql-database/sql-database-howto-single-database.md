@@ -1,5 +1,5 @@
 ---
-title: Настройка отдельной базы данных
+title: Как настроить единую базу данных
 description: Сведения о том, как настроить отдельную базу данных SQL Azure и управлять ею
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: carlr
 ms.date: 01/14/2020
 ms.openlocfilehash: 4283e1a2c92b7fe738fb57a8103cea1deb0015a0
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76027716"
 ---
 # <a name="how-to-use-a-single-database-in-azure-sql-database"></a>Использование отдельной базы данных в Базе данных SQL Azure
@@ -34,7 +34,7 @@ ms.locfileid: "76027716"
 - [Настройка динамического маскирования данных](sql-database-dynamic-data-masking-get-started-portal.md) для защиты конфиденциальных данных.
 - [Настройка хранения резервных копий ](sql-database-long-term-backup-retention-configure.md) для базы данных, чтобы сохранять резервные копии в хранилище BLOB-объектов Azure. Альтернативный подход — [настройка долгосрочного хранения резервных копий с помощью хранилища Службы восстановления Azure](sql-database-long-term-backup-retention-configure-vault.md) (не рекомендуется).
 - [Настройка георепликации](sql-database-geo-replication-portal.md), чтобы хранить реплику базы данных в другом регионе.
-- [Настройка безопасности для георепликации](sql-database-geo-replication-security-config.md).
+- [Настройка безопасности для геореплик.](sql-database-geo-replication-security-config.md)
 
 ## <a name="monitor-and-tune-your-database"></a>Мониторинг и настройка базы данных
 
@@ -48,27 +48,27 @@ ms.locfileid: "76027716"
 ## <a name="query-distributed-data"></a>Запрашивание распределенных данных
 
 - [Запрос вертикально секционированных данных](sql-database-elastic-query-getting-started-vertical.md) между несколькими базами данных.
-- [Получение отчетов по масштабируемым уровням данных](sql-database-elastic-query-horizontal-partitioning.md).
-- [Запрос к таблицам с разными схемами](sql-database-elastic-query-vertical-partitioning.md).
+- [Отчет по масштабированным уровням данных.](sql-database-elastic-query-horizontal-partitioning.md)
+- [Запрос через таблицы с различными схемами.](sql-database-elastic-query-vertical-partitioning.md)
 
 ## <a name="elastic-database-jobs"></a>Задания обработки эластичных баз данных
 
-- [Создание агента заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md).
+- [Создание и управление](elastic-jobs-powershell.md) Упругие вакансии базы данных с помощью PowerShell.
 - [Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)](elastic-jobs-tsql.md).
 - [Перенос данных из старых заданий обработки эластичных БД](elastic-jobs-migrate.md)
 
 ## <a name="database-sharding"></a>Сегментирование базы данных
 
-- [Обновление клиентской библиотеки эластичной базы данных](sql-database-elastic-scale-upgrade-client-library.md)
-- [Создание сегментированного приложения](sql-database-elastic-scale-get-started.md)
+- [Обновление эластичной библиотеки клиентов базы данных.](sql-database-elastic-scale-upgrade-client-library.md)
+- [Создайте осколки приложения](sql-database-elastic-scale-get-started.md).
 - [Запрос горизонтально секционированных данных](sql-database-elastic-query-getting-started.md).
 - [Выполнение запросов к нескольким сегментам](sql-database-elastic-scale-multishard-querying.md).
-- [Перемещение сегментированных данных](sql-database-elastic-scale-configure-deploy-split-and-merge.md).
+- [Перемещение осколковых данных](sql-database-elastic-scale-configure-deploy-split-and-merge.md).
 - [Настройка параметров безопасности для сегментов базы данных](sql-database-elastic-scale-split-merge-security-configuration.md).
 - [Добавление сегмента](sql-database-elastic-scale-add-a-shard.md) в текущий набор сегментов базы данных.
-- [Устранение проблем с картой сегментов](sql-database-elastic-database-recovery-manager.md).
-- [Перенос сегментированной базы данных](sql-database-elastic-convert-to-use-elastic-tools.md).
-- [Создание счетчиков](sql-database-elastic-database-perf-counters.md).
+- [Исправить проблемы с осколки карты](sql-database-elastic-database-recovery-manager.md).
+- [Мигрировать осколками DB](sql-database-elastic-convert-to-use-elastic-tools.md).
+- [Создавайте счетчики.](sql-database-elastic-database-perf-counters.md)
 - [Использование Entity Framework](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md) для запроса сегментированных данных.
 - [Использование платформы Dapper](sql-database-elastic-scale-working-with-dapper.md) для запроса сегментированных данных.
 

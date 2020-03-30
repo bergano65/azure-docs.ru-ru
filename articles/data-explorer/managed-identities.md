@@ -1,41 +1,76 @@
 ---
-title: Настройка управляемых удостоверений для кластера Azure обозреватель данных
-description: Узнайте, как настроить управляемые удостоверения для кластера Azure обозреватель данных.
+title: Как настроить управляемые идентификаторы для кластера Azure Data Explorer
+description: Узнайте, как настроить управляемые идентификаторы для кластера Azure Data Explorer.
 author: saguiitay
 ms.author: itsagui
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 01/06/2020
-ms.openlocfilehash: e76ae2e072bb780ac9788902e9157db871e4f09d
-ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
+ms.date: 03/12/2020
+ms.openlocfilehash: f9592f5d2666684e0cf5eef687b1e69cfb55066c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77373376"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80065568"
 ---
-# <a name="configure-managed-identities-for-your-azure-data-explorer-cluster"></a>Настройка управляемых удостоверений для кластера Azure обозреватель данных
+# <a name="configure-managed-identities-for-your-azure-data-explorer-cluster"></a>Настройка управляемых идентификаторов для кластера Azure Data Explorer
 
-[Управляемое удостоверение из Azure Active Directory](/azure/active-directory/managed-identities-azure-resources/overview) позволяет кластеру легко получать доступ к другим ресурсам, защищенным AAD, таким как Azure Key Vault. Удостоверение управляется платформой Azure и не требует предоставления или смены секретов. В этой статье показано, как создать управляемое удостоверение для кластеров Azure обозреватель данных. Конфигурация управляемого удостоверения в настоящее время поддерживается только для [включения управляемых клиентом ключей для кластера](/azure/data-explorer/security#customer-managed-keys-with-azure-key-vault).
+[Управляемый итог из каталога Azure Active](/azure/active-directory/managed-identities-azure-resources/overview) позволяет кластеру легко получить доступ к другим защищенным AAD ресурсам, таким как Azure Key Vault. Идентификация управляется платформой Azure и не требует предоставления или ротации каких-либо секретов. В этой статье показано, как создать управляемый имитатор для кластеров Azure Data Explorer. Управляемая конфигурация идентификации в настоящее время поддерживается только для [включения ключей, управляемых клиентом для вашего кластера.](/azure/data-explorer/security#customer-managed-keys-with-azure-key-vault)
 
 > [!Note]
-> Управляемые удостоверения для Azure обозреватель данных не будут работать должным образом, если приложение переносится между подписками или клиентами. Приложению потребуется получить новое удостоверение, которое можно сделать, отключив и повторно включив функцию с помощью [удаления удостоверения](#remove-an-identity). Кроме того, для использования нового удостоверения необходимо обновить политики доступа к нижестоящим ресурсам.
+> Управляемые идентификаторы для Azure Data Explorer не будут вести себя так, как ожидалось, если ваше приложение будет перенесено через подписки или арендаторов. Приложение должно будет получить новую личность, что может быть сделано путем [отключения](#remove-a-system-assigned-identity) и [повторного включения](#add-a-system-assigned-identity) функции. Политики доступа к ресурсам ниже по течению также необходимо будет обновить для использования новой идентификации.
 
-## <a name="add-a-system-assigned-identity"></a>Добавление удостоверения, назначенного системой
+## <a name="add-a-system-assigned-identity"></a>Добавление установленного системой удостоверения
+                                                                                                    
+Назначайте присвоив аименное удостоверение, назначенное системой, которое привязано к кластеру и удаляется при удалении кластера. Кластер может иметь только одно установленное системой удостоверение личности. Создание кластера с установленным системой удостоверением требует дополнительного свойства, который будет установлен на кластере. Идентификационная информация, назначенная системой, добавляется с помощью шаблонов СЗ, ARM или портала Azure, как описано ниже.
 
-Кластеру может быть назначено **системное удостоверение** , привязанное к кластеру, и оно удаляется при удалении кластера. Кластер может иметь только одно назначенное системой удостоверение. Для создания кластера с удостоверением, назначенным системой, требуется задать дополнительное свойство в кластере.
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-### <a name="add-a-system-assigned-identity-using-c"></a>Добавление удостоверения, назначенного системой с помощьюC#
+### <a name="add-a-system-assigned-identity-using-the-azure-portal"></a>Добавление системного удостоверения с помощью портала Azure
 
-Чтобы настроить управляемое удостоверение с помощью клиента Azure C# обозреватель данных, выполните следующие действия.
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
-* Установите [пакет NuGet для Azure обозреватель данных (Kusto)](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
-* Установите [пакет NuGet Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) для проверки подлинности.
-* Чтобы запустить следующий пример, [Создайте приложение Azure AD](/azure/active-directory/develop/howto-create-service-principal-portal) и субъект-службу, которые могут получать доступ к ресурсам. Вы можете добавить назначение ролей в области подписки и получить необходимые `Directory (tenant) ID`, `Application ID`и `Client Secret`.
+#### <a name="new-azure-data-explorer-cluster"></a>Новый кластер исследователей данных Azure
+
+1. [Создание кластера исследователя данных Azure](/azure/data-explorer/create-cluster-database-portal#create-a-cluster) 
+1. На вкладке **security** > **системы присваивается идентификационный данный,** выберите **On**. Чтобы удалить назначенную систему идентификацию, выберите **Off**.
+2. Выберите **следующий:Теги>** или **обзор и создать** для создания кластера.
+
+    ![Добавление системы, назначенной удостоверением в новый кластер](media/managed-identities/system-assigned-identity-new-cluster.png)
+
+#### <a name="existing-azure-data-explorer-cluster"></a>Существующий кластер исследователя данных Azure
+
+1. Откройте существующий кластер Azure Data Explorer.
+1. Выберите**идентификацию** **настроек** > в левом стеле портала.
+1. В системе **> идентификационных** > **назначена** вкладка:
+   1. Переместите ползунок **Status** **on**.
+   1. Выберите **Сохранить**
+   1. Во всплывающем окне выберите **«Да»**
+
+    ![Добавление системы назначенного удостоверения](media/managed-identities/turn-system-assigned-identity-on.png)
+
+1. Через несколько минут на экране видно: 
+  * **Идентификатор объекта** - используется для ключей управления клиентом 
+  * **Назначения ролей** - нажмите ссылку, чтобы назначить соответствующие роли
+
+    ![Система назначена личность на](media/managed-identities/system-assigned-identity-on.png)
+
+# <a name="c"></a>[C #](#tab/c-sharp)
+
+### <a name="add-a-system-assigned-identity-using-c"></a>Добавление системного удостоверения с помощью C #
+
+#### <a name="prerequisites"></a>Предварительные требования
+
+Настройка управляемой идентификации с помощью клиента Azure Data Explorer C:
+
+* Установите [пакет Azure Data Explorer (Kusto) NuGet.](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/)
+* Установите [пакет Microsoft.IdentityModel.Customers.ActiveDirectory NuGet](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) для проверки подлинности.
+* [Создайте приложение Azure AD](/azure/active-directory/develop/howto-create-service-principal-portal) и принцип обслуживания, который может получить доступ к ресурсам. Вы добавляете назначение ролей в области `Directory (tenant) ID` `Application ID`подписки `Client Secret`и получаете требуемое, и .
 
 #### <a name="create-or-update-your-cluster"></a>Создание или обновление кластера
 
-1. Создайте или обновите кластер с помощью свойства `Identity`:
+1. Создайте или обновите кластер с помощью `Identity` свойства:
 
     ```csharp
     var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -52,7 +87,7 @@ ms.locfileid: "77373376"
     {
         SubscriptionId = subscriptionId
     };
-    
+                                                                                                    
     var resourceGroupName = "testrg";
     var clusterName = "mykustocluster";
     var location = "Central US";
@@ -65,26 +100,28 @@ ms.locfileid: "77373376"
     await kustoManagementClient.Clusters.CreateOrUpdateAsync(resourceGroupName, clusterName, cluster);
     ```
     
-2. Выполните следующую команду, чтобы проверить успешность создания или обновления кластера с помощью удостоверения.
+2. Выполнить следующую команду, чтобы проверить, был ли успешно создан или обновлен кластер с помощью идентификации:
 
     ```csharp
     kustoManagementClient.Clusters.Get(resourceGroupName, clusterName);
     ```
 
-    Если результат содержит `ProvisioningState` со значением `Succeeded`, то кластер был создан или обновлен и должен иметь следующие свойства:
-   
+    Если результат `ProvisioningState` содержит `Succeeded` значение, то кластер был создан или обновлен и должен иметь следующие свойства:
+
     ```csharp
     var principalId = cluster.Identity.PrincipalId;
     var tenantId = cluster.Identity.TenantId;
     ```
 
-    `PrincipalId` и `TenantId` заменяются идентификаторами GUID. Свойство `TenantId` идентифицирует клиент AAD, которому принадлежит удостоверение. `PrincipalId` — это уникальный идентификатор для нового удостоверения кластера. В AAD субъект-служба имеет то же имя, которое было присвоено экземпляру Службы приложений или Функций Azure.
+`PrincipalId`и `TenantId` заменяются GUID. Свойство `TenantId` идентифицирует арендатора AAD, к которому принадлежит личность. Это `PrincipalId` уникальный идентификатор для новой идентичности кластера. В AAD субъект-служба имеет то же имя, которое было присвоено экземпляру Службы приложений или Функций Azure.
 
-### <a name="add-a-system-assigned-identity-using-an-azure-resource-manager-template"></a>Добавление удостоверения, назначенного системой, с помощью шаблона Azure Resource Manager
+# <a name="arm-template"></a>[Шаблон ARM](#tab/arm)
 
-Шаблон Azure Resource Manager можно использовать для автоматизации развертывания ресурсов Azure. Дополнительные сведения о развертывании в Azure обозреватель данных см. в статье [Создание кластера и базы данных azure обозреватель данных с помощью шаблона Azure Resource Manager](create-cluster-database-resource-manager.md).
+### <a name="add-a-system-assigned-identity-using-an-azure-resource-manager-template"></a>Добавление системного удостоверения с помощью шаблона управления ресурсами Azure
 
-Добавление назначенного системой типа указывает Azure создавать удостоверение кластера и управлять им. Любой ресурс типа `Microsoft.Kusto/clusters` можно создать с помощью удостоверения, добавив следующее свойство в определение ресурса: 
+Шаблон Azure Resource Manager можно использовать для автоматизации развертывания ресурсов Azure. Чтобы узнать больше о развертывании в Azure Data Explorer, [см.](create-cluster-database-resource-manager.md)
+
+Добавление заданного в системе типа говорит Azure о создании и управлении идентификатором для кластера. Любой ресурс типа `Microsoft.Kusto/clusters` можно создать с помощью удостоверения, добавив следующее свойство в определение ресурса: 
 
 ```json
 "identity": {
@@ -123,11 +160,44 @@ ms.locfileid: "77373376"
 }
 ```
 
-`<TENANTID>` и `<PRINCIPALID>` заменяются идентификаторами GUID. Свойство `TenantId` идентифицирует клиент AAD, которому принадлежит удостоверение. `PrincipalId` — это уникальный идентификатор для нового удостоверения кластера. В AAD субъект-служба имеет то же имя, которое было присвоено экземпляру Службы приложений или Функций Azure.
+`<TENANTID>`и `<PRINCIPALID>` заменяются GUID. Свойство `TenantId` идентифицирует арендатора AAD, к которому принадлежит личность. Это `PrincipalId` уникальный идентификатор для новой идентичности кластера. В AAD субъект-служба имеет то же имя, которое было присвоено экземпляру Службы приложений или Функций Azure.
 
-## <a name="remove-an-identity"></a>Удаление удостоверения
+---
 
-Удаление назначенного системой удостоверения также приведет к его удалению из AAD. Назначенные системой удостоверения также автоматически удаляются из AAD при удалении ресурса кластера. Чтобы удалить назначенное системой удостоверение, отключите эту функцию:
+## <a name="remove-a-system-assigned-identity"></a>Удаление установленного системой удостоверения
+
+Удаление установленного системой удостоверения также удалит его из AAD. Системные идентификаторы также автоматически удаляются из AAD при удалении ресурса кластера. Удостоверение, назначенное системой, может быть удалено путем отключения функции.  Удостоверение, назначенное системой, удаляется с помощью шаблонов C', ARM или портала Azure, как описано ниже.
+
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+### <a name="remove-a-system-assigned-identity-using-the-azure-portal"></a>Удаление установленного системой удостоверения с помощью портала Azure
+
+1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Выберите**идентификацию** **настроек** > в левом стеле портала.
+1. В системе **> идентификационных** > **назначена** вкладка:
+    1. Переместите слайдер **Status** в **Off**.
+    1. Выберите **Сохранить**
+    1. В всплывающем окне выберите **«Да»,** чтобы отключить установленную системой идентификацию. Панель **идентификации** возвращается в то же состояние, что и до добавления установленного системой удостоверения личности.
+
+    ![Система назначена идентификация выключена](media/managed-identities/system-assigned-identity.png)
+
+# <a name="c"></a>[C #](#tab/c-sharp)
+
+### <a name="remove-a-system-assigned-identity-using-c"></a>Удаление установленного системой удостоверения с помощью C #
+
+Выполнить следующее, чтобы удалить установленную систему:
+
+```csharp
+var identity = new Identity(IdentityType.None);
+var cluster = new Cluster(location, sku, identity: identity);
+await kustoManagementClient.Clusters.CreateOrUpdateAsync(resourceGroupName, clusterName, cluster);
+```
+
+# <a name="arm-template"></a>[Шаблон ARM](#tab/arm)
+
+### <a name="remove-a-system-assigned-identity-using-an-azure-resource-manager-template"></a>Удалите системное удостоверение с помощью шаблона управления ресурсами Azure
+
+Выполнить следующее, чтобы удалить установленную систему:
 
 ```json
 "identity": {
@@ -135,9 +205,11 @@ ms.locfileid: "77373376"
 }
 ```
 
+---
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Защита кластеров Azure обозреватель данных в Azure](security.md)
-* [Защитите свой кластер в Azure обозреватель данных — портал Azure](manage-cluster-security.md) , включив шифрование неактивных компонентов.
- * [Настройка ключей, управляемых клиентом, с помощьюC#](customer-managed-keys-csharp.md)
- * [Настройка ключей, управляемых клиентом, с помощью шаблона Azure Resource Manager](customer-managed-keys-resource-manager.md)
+* [Защита кластеров Исследователей данных Azure в Azure](security.md)
+* [Защитите свой кластер на портале Azure Data Explorer - Azure,](manage-cluster-security.md) включив шифрование в состоянии покоя.
+ * [Настройка управляемых клиентами ключей с помощью C #](customer-managed-keys-csharp.md)
+ * [Настройка управляемых клиентами ключей с помощью шаблона управления ресурсами Azure](customer-managed-keys-resource-manager.md)

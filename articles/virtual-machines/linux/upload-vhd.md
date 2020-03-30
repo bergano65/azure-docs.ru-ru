@@ -1,5 +1,5 @@
 ---
-title: Отправка или копирование пользовательской виртуальной машины Linux с Azure CLI
+title: Загрузите или скопируйте пользовательский Linux VM с помощью Azure CLI
 description: Отправка или копирование пользовательской виртуальной машины с использованием модели развертывания Resource Manager и Azure CLI
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: 70fff041cd693a19269b11398947fb0c8ce56bb1
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: b5063c8037a763c1919d2172a81c8abbbd406ace
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79267109"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80060150"
 ---
 # <a name="create-a-linux-vm-from-a-custom-disk-with-the-azure-cli"></a>Создание виртуальной машины Linux на основе пользовательского диска с помощью Azure CLI
 
@@ -51,7 +51,7 @@ ms.locfileid: "79267109"
 
 - Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az-login).
 
-В приведенных ниже примерах замените в качестве примеров имен параметров собственные значения, такие как `myResourceGroup`, `mystorageaccount`и `mydisks`.
+В следующих примерах замените имена параметров примера своими значениями, такими как, `myResourceGroup` `mystorageaccount`и `mydisks`.
 
 <a id="prepimage"> </a>
 
@@ -60,7 +60,7 @@ ms.locfileid: "79267109"
 Azure поддерживает различные дистрибутивы Linux (см. раздел [Рекомендованные дистрибутивы](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)). В следующих статьях описывается подготовка различных дистрибутивов Linux, которые поддерживаются в Azure:
 
 * [Подготовка виртуальной машины на основе CentOS для Azure](create-upload-centos.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Подготовка виртуального жесткого диска Debian для Azure](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Debian Linux](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Oracle Linux](oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Red Hat Enterprise Linux](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Подготовка виртуальной машины SLES или openSUSE для Azure](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -76,21 +76,21 @@ Azure поддерживает различные дистрибутивы Linux
 
 ## <a name="option-1-upload-a-vhd"></a>Вариант 1. Передача VHD
 
-Теперь виртуальный жесткий диск можно передать прямо в управляемый диск. Инструкции см. в статье [Отправка виртуального жесткого диска в Azure с помощью Azure CLI](disks-upload-vhd-to-managed-disk-cli.md).
+Теперь вы можете загрузить VHD прямо в управляемый диск. Для получения инструкций можно [ознакомиться на VHD в Azure с помощью Azure CLI.](disks-upload-vhd-to-managed-disk-cli.md)
 
 ## <a name="option-2-copy-an-existing-vm"></a>Вариант 2. Копирование имеющейся виртуальной машины
 
 Вы также можете создать настраиваемую виртуальную машину в Azure, а затем скопировать диск операционной системы и подключить его к новой виртуальной машине для создания другой копии. Это нормально для тестирования, однако если вы хотите использовать имеющуюся виртуальную машину Azure в качестве модели для нескольких новых виртуальных машин, вместе этого вам необходимо будет создать *образ*. Дополнительные сведения о создании образа на основе имеющейся виртуальной машины Azure см. в статье [Создание пользовательского образа виртуальной машины Azure с помощью интерфейса командной строки](tutorial-custom-images.md).
 
-Если вы хотите скопировать существующую виртуальную машину в другой регион, вы можете использовать azcopy, чтобы [создать копию диска в другом регионе](disks-upload-vhd-to-managed-disk-cli.md#copy-a-managed-disk). 
+Если вы хотите скопировать существующий VM в другой регион, вы можете использовать azcopy для [создание копии диска в другом регионе.](disks-upload-vhd-to-managed-disk-cli.md#copy-a-managed-disk) 
 
-В противном случае следует сделать снимок виртуальной машины, а затем создать новый виртуальный жесткий диск операционной системы из моментального снимка.
+В противном случае следует сделать снимок VM, а затем создать новый OS VHD из снимка.
 
 ### <a name="create-a-snapshot"></a>Создание моментального снимка
 
 В этом примере создается моментальный снимок виртуальной машины с именем *myVM* в группе ресурсов *myResourceGroup*, а также моментальный снимок с именем *osDiskSnapshot*.
 
-```azure-cli
+```azurecli
 osDiskId=$(az vm show -g myResourceGroup -n myVM --query "storageProfile.osDisk.managedDisk.id" -o tsv)
 az snapshot create \
     -g myResourceGroup \
@@ -103,13 +103,13 @@ az snapshot create \
 
 Получите идентификатор моментального снимка. В этом примере используется моментальный снимок с именем *osDiskSnapshot*, который находится в группе ресурсов *myResourceGroup*.
 
-```azure-cli
+```azurecli
 snapshotId=$(az snapshot show --name osDiskSnapshot --resource-group myResourceGroup --query [id] -o tsv)
 ```
 
 Создайте управляемый диск. В этом примере мы создадим управляемый диск с именем *myManagedDisk* на основе моментального снимка размером в 128 ГБ, который хранится в хранилище уровня "Стандартный".
 
-```azure-cli
+```azurecli
 az disk create \
     --resource-group myResourceGroup \
     --name myManagedDisk \

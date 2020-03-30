@@ -11,16 +11,16 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 ms.date: 02/20/2019
-ms.openlocfilehash: bc779df06d92d2483755ae888fda121b8e493a18
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: ef20c5b8babdf378b88997ae2fd7b98350c31319
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79269163"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80124922"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
-Аутентификация Azure Active Directory — это механизм подключения к службам [База данных SQL](sql-database-technical-overview.md) Azure, [Управляемый экземпляр](sql-database-managed-instance.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure Active Directory (Azure AD). 
+Аутентификация Azure Active Directory — это механизм подключения к службам [База данных SQL](sql-database-technical-overview.md) Azure, [Управляемый экземпляр](sql-database-managed-instance.md) и [Хранилище данных SQL](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure Active Directory (Azure AD). 
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
@@ -147,7 +147,7 @@ ms.locfileid: "79269163"
 
 - Сведения о создании и заполнении каталога Azure AD, а также настройке Azure AD с помощью Базы данных SQL Azure, управляемого экземпляра или хранилища данных SQL см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием Базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md).
 - Дополнительные сведения об использовании субъектов сервера (имен для входа) Azure AD с Управляемыми экземплярами см. в статье [Руководство. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD](sql-database-managed-instance-aad-security-tutorial.md)
-- Общие сведения о именах входа, пользователях, ролях базы данных и разрешениях в базе данных SQL см. в разделе [имена входа, пользователи, роли базы данных и разрешения](sql-database-manage-logins.md).
+- Для получения обзора логинов, пользователей, ролей баз данных и разрешений в базе данных S'L см. [Логины, пользователи, роли в базе данных и разрешения.](sql-database-manage-logins.md)
 - Дополнительные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx).
 - Дополнительные сведения о ролях баз данных см. в статье [Роли уровня базы данных](https://msdn.microsoft.com/library/ms189121.aspx).
 - Сведения о синтаксисе для создания субъектов сервера (имен для входа) Azure AD для Управляемых экземпляров см. в статье [CREATE LOGIN (Transact-SQL)](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current).

@@ -5,20 +5,20 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.openlocfilehash: 675ad278cb8bdc0ced4eff3bd77572f44c9808fc
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "68857483"
 ---
 В этом разделе описывается обновление кода в существующем проекте серверной части мобильных приложений, которое позволит отправлять push-уведомления при каждом добавлении нового элемента. Этот процесс реализуется с помощью [шаблонов](../articles/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md) Центров уведомлений, включая отправку push-уведомлений между разными платформами. Разные клиенты регистрируются для обмена push-уведомлениями с помощью шаблонов; одно такое универсальное push-уведомление можно получать на всех клиентских платформах.
 
 Выберите одну из процедур ниже, которая соответствует типу вашего серверного проекта: [серверный проект .NET](#dotnet) или [серверный проект Node.js](#nodejs).
 
-### <a name="dotnet"></a>Серверный проект .NET
+### <a name="net-back-end-project"></a><a name="dotnet"></a>Серверный проект .NET
 
 1. В Visual Studio щелкните правой кнопкой мыши серверный проект. Затем выберите **Управление пакетами NuGet**. Найдите `Microsoft.Azure.NotificationHubs`, а затем нажмите кнопку **Установить**. Этот процесс устанавливает библиотеку Центров уведомлений для отправки уведомлений из серверной части.
-2. В серверном проекте откройте **Контроллеры** > **TodoItemController.cs**. Затем добавьте следующие операторы using:
+2. В проекте сервера открытые **контроллеры** > **TodoItemController.cs**. Затем добавьте следующие операторы using:
 
     ```csharp
     using System.Collections.Generic;
@@ -68,9 +68,9 @@ ms.locfileid: "68857483"
 
 4. Повторная публикация серверного проекта
 
-### <a name="nodejs"></a>Серверный проект Node.js
+### <a name="nodejs-back-end-project"></a><a name="nodejs"></a>Серверный проект Node.js
 
-1. Настройте серверный проект.
+1. Настройка бэкэнд-проекта.
 2. Замените существующий код в файле todoitem.js следующим кодом:
 
     ```javascript

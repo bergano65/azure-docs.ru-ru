@@ -1,39 +1,39 @@
 ---
-title: Обновление конфигурации хранилища служб восстановления с помощью REST API
-description: Из этой статьи вы узнаете, как обновить конфигурацию хранилища с помощью REST API.
+title: Конфигурация хранилища служб восстановления обновления с помощью REST API
+description: В этой статье узнайте, как обновить конфигурацию хранилища с помощью REST API.
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.assetid: 9aafa5a0-1e57-4644-bf79-97124db27aa2
 ms.openlocfilehash: 6cecbb18e0cd6f548e1688ef978f10dcee7d9fbc
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79252367"
 ---
-# <a name="update-azure-recovery-services-vault-configurations-using-rest-api"></a>Обновление конфигураций хранилища служб восстановления Azure с помощью REST API
+# <a name="update-azure-recovery-services-vault-configurations-using-rest-api"></a>Обновление конфигураций Убежища восстановления Azure с помощью REST API
 
-В этой статье описывается, как обновить конфигурации, связанные с резервным копированием, в хранилище служб восстановления Azure с помощью REST API.
+В этой статье описывается, как обновлять конфигурации, связанные с резервным копированием, в хранилище служб восстановления Azure с помощью REST API.
 
-## <a name="soft-delete-state"></a>Состояние обратимого удаления
+## <a name="soft-delete-state"></a>Мягкое состояние удаления
 
-Удаление резервных копий защищенного элемента является важной операцией, которую необходимо отслеживать. Чтобы защититься от случайного удаления, в хранилище служб восстановления Azure есть возможность обратимого удаления. Эта возможность позволяет клиентам восстанавливать удаленные резервные копии, если это необходимо, за определенный период времени после удаления.
+Удалять резервные отпор защищенного элемента является значительной операцией, которая должна контролироваться. Для защиты от случайных удалений хранилище служб восстановления Azure имеет возможность мягкого удаления. Эта возможность позволяет клиентам восстановить удаленные резервные копирования, при необходимости, в течение периода времени после удаления.
 
-Но существуют сценарии, в которых эта возможность не требуется. Хранилище служб восстановления Azure не может быть удалено, если в нем есть элементы резервного копирования, даже обратимо удаленные. Это может привести к проблеме, если необходимо немедленно удалить хранилище. Например: операции развертывания часто удаляют созданные ресурсы в том же рабочем процессе. Развертывание может создать хранилище, настроить резервное копирование для элемента, выполнить тестовое восстановление и перейти к удалению архивных элементов и хранилища. В случае сбоя удаления хранилища может произойти сбой всего развертывания. Отключение обратимого удаления является единственным способом гарантировать немедленное удаление.
+Но есть сценарии, в которых эта возможность не требуется. Хранилище служб восстановления Azure не может быть удалено, если в нем есть элементы резервного копирования, даже удаленные. Это может создать проблему, если хранилище должно быть немедленно удалено. Например: операции развертывания часто очищают созданные ресурсы в одном и том же рабочем процессе. Развертывание может создать хранилище, настроить резервные ожидания для элемента, сделать тест восстановления, а затем приступить к удалению элементов резервного копирования и хранилище. Если удаление хранилища завершается неудачей, все развертывание может выполниться. Отключение мягкого удаления является единственным способом гарантировать немедленное удаление.
 
-Таким образом, клиенту необходимо тщательно выбрать, следует ли отключить обратимое удаление для определенного хранилища в зависимости от сценария. Дополнительные сведения см. в [статье об обратимом удалении](backup-azure-security-feature-cloud.md#soft-delete).
+Таким образом, клиент должен тщательно выбирать, следует ли отключить мягкое удаление для конкретного хранилища в зависимости от сценария. Для получения дополнительной информации, [см.](backup-azure-security-feature-cloud.md#soft-delete)
 
-### <a name="fetch-soft-delete-state-using-rest-api"></a>Получение состояния обратимого удаления с помощью REST API
+### <a name="fetch-soft-delete-state-using-rest-api"></a>Получить мягкое состояние удаления с помощью REST API
 
-По умолчанию состояние обратимого удаления будет включено для всех вновь создаваемых хранилищ служб восстановления. Чтобы получить или обновить состояние обратимого удаления для хранилища, используйте [REST API документ](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs) , связанный с конфигурацией резервного хранилища.
+По умолчанию состояние "мягкого удаления" будет включено для любого недавно созданного хранилища служб восстановления. Чтобы получить/обновить состояние мягкого удаления для хранилища, используйте документ, связанный с конфигурацией хранилища резервного копирования [REST API](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs)
 
-Чтобы получить текущее состояние обратимого удаления для хранилища, используйте следующую операцию *Get* .
+Чтобы получить текущее состояние мягкого удаления для хранилища, используйте следующую операцию *GET*
 
 ```http
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig?api-version=2019-05-13
 ```
 
-URI GET содержит `{subscriptionId}`, `{vaultName}``{vaultresourceGroupName}` параметров. В этом примере `{vaultName}` имеет значение "Testvault задано", а `{vaultresourceGroupName}` — "Тестваултрг". Так как все необходимые параметры указаны в URI, текст запроса не требуется.
+GET URI `{subscriptionId}`имеет `{vaultName}` `{vaultresourceGroupName}` , , параметры. В этом `{vaultName}` примере , является `{vaultresourceGroupName}` "testVault" и является "testVaultRG". Так как все необходимые параметры указаны в URI, текст запроса не требуется.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupconfig/vaultconfig?api-version=2019-05-13
@@ -41,15 +41,15 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 #### <a name="responses"></a>Ответы
 
-Успешный ответ для операции GET показан ниже:
+Успешный ответ на операцию 'GET' показан ниже:
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [Резервное копированиеРесурсVaultConfig](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | OK        |
 
 ##### <a name="example-response"></a>Пример ответа
 
-После отправки запроса GET возвращается ответ 200 (успешно).
+После отправки запроса 'GET' возвращается 200 (успешный) ответ.
 
 ```json
 {
@@ -63,15 +63,15 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-### <a name="update-soft-delete-state-using-rest-api"></a>Обновление состояния обратимого удаления с помощью REST API
+### <a name="update-soft-delete-state-using-rest-api"></a>Обновление мягкого состояния удаления с помощью REST API
 
-Чтобы обновить состояние обратимого удаления хранилища служб восстановления с помощью REST API, используйте следующую операцию *исправления* .
+Для обновления состояния хранилища служб восстановления с помощью REST API используйте следующую операцию *PATCH*
 
 ```http
 PATCH https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig?api-version=2019-05-13
 ```
 
-URI исправления содержит `{subscriptionId}`, `{vaultName}``{vaultresourceGroupName}` параметров. В этом примере `{vaultName}` имеет значение "Testvault задано", а `{vaultresourceGroupName}` — "Тестваултрг". Если заменить URI приведенными выше значениями, URI будет выглядеть следующим образом.
+PATCH URI `{subscriptionId}`имеет `{vaultName}` `{vaultresourceGroupName}` , , параметры. В этом `{vaultName}` примере , является `{vaultresourceGroupName}` "testVault" и является "testVaultRG". Если мы заменим URI с значениями выше, то URI будет выглядеть следующим образом.
 
 ```http
 PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupconfig/vaultconfig?api-version=2019-05-13
@@ -79,20 +79,20 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 #### <a name="create-the-request-body"></a>Создание текста запроса
 
-Для создания текста запроса используются следующие общие определения.
+Он следующие общие определения используются для создания органа запроса
 
-Дополнительные сведения см. [в документации по REST API](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/update#request-body)
+Для получения более подробной информации обратитесь к [документации REST API](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/update#request-body)
 
-|Имя  |Обязательно  |Тип  |Description  |
+|name  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
-|eTag     |         |   String      |  Необязательный eTag       |
-|location     |  Да       |String         |   Расположение ресурса      |
+|eTag     |         |   Строка      |  Необязательный eTag       |
+|location     |  Да       |Строка         |   Расположение ресурса      |
 |properties     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |tags     |         | Объект        |     Теги ресурсов    |
 
 #### <a name="example-request-body"></a>Примеры текста запроса
 
-Следующий пример используется для обновления состояния обратимого удаления на "Disabled".
+Следующий пример используется для обновления состояния мягкого удаления до "отключенного".
 
 ```json
 {
@@ -105,15 +105,15 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 #### <a name="responses"></a>Ответы
 
-Успешный ответ для операции PATCH показан ниже:
+Успешный ответ на операцию «PATCH» показан ниже:
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [Резервное копированиеРесурсVaultConfig](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | OK        |
 
 ##### <a name="example-response"></a>Пример ответа
 
-После отправки запроса PATCH возвращается ответ 200 (успех).
+После отправки запроса 'PATCH' возвращается 200 (успешный) ответ.
 
 ```json
 {

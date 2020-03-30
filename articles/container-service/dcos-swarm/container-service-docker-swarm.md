@@ -10,10 +10,10 @@ ms.date: 09/13/2016
 ms.author: rogardle
 ms.custom: mvc
 ms.openlocfilehash: c76701ce74aafcccdbb2f1a2454f9528b52fc096
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79136233"
 ---
 # <a name="deprecated-container-management-with-docker-swarm"></a>Управление контейнерами с помощью Docker Swarm (не рекомендуется)
@@ -69,7 +69,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ## <a name="deploy-containers-by-using-docker-compose"></a>Развертывание контейнеров с помощью Docker Compose
 Docker Compose позволяет автоматизировать развертывание и настройку нескольких контейнеров. Для этого нужно создать туннель SSH и присвоить значение переменной DOCKER_HOST (см. предварительные требования выше).
 
-Создайте на локальной системе файл docker-compose.yml. Для этого используйте следующий пример:
+Создайте на локальной системе файл docker-compose.yml. Для этого используйте этот пример:
 
 ```dockerfile
 web:

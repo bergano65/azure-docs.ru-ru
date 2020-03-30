@@ -14,22 +14,22 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: b53fca292630ef988ee1357ea50adc4d7b7e9be5
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77162885"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью .NET
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
 
 Начиная с windowsazure.mediaservices 4.0.0.4, службы мультимедиа Azure поддерживают аутентификацию на основе Azure Active Directory (Azure AD). В этом разделе показано, как использовать аутентификацию Azure AD для доступа к API служб мультимедиа Azure (AMS) с помощью Microsoft .NET.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-- Учетная запись Azure. Дополнительные сведения см. на странице с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). 
+- Учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/) 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 - Последняя версия пакета [NuGet](https://www.nuget.org/packages/windowsazure.mediaservices).
 - Изучение статьи [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
@@ -90,7 +90,7 @@ ms.locfileid: "77162885"
     var tokenCredentials = new AzureAdTokenCredentials("microsoft.onmicrosoft.com", AzureEnvironments.AzureCloudEnvironment);
     var tokenProvider = new AzureAdTokenProvider(tokenCredentials);
   
-Чтобы начать программирование для служб мультимедиа, необходимо создать экземпляр **CloudMediaContext**, представляющий контекст сервера. **CloudMediaContext** содержит ссылки на важные коллекции, в том числе на задания, ресурсы, файлы, политики доступа и указатели. 
+Чтобы начать программирование с медиа-сервисов, необходимо создать экземпляр **CloudMediaContext,** представляющий контекст сервера. **CloudMediaContext** содержит ссылки на важные коллекции, в том числе на задания, ресурсы, файлы, политики доступа и указатели. 
 
 Необходимо также передать **универсальный код ресурса (URI) для ресурса REST служб мультимедиа** в конструктор **CloudMediaContext**. Чтобы получить универсальный код ресурса (URI) для ресурса REST служб мультимедиа, войдите на портал Azure, выберите учетную запись служб мультимедиа Azure, выберите **Доступ к API**, а затем щелкните **Подключение к API служб мультимедиа Azure с помощью проверки подлинности пользователя**. 
 
@@ -133,7 +133,7 @@ ms.locfileid: "77162885"
 
 - Конечная точка клиента Azure AD. Информацию о клиенте можно получить на портале Azure. Наведите указатель мыши на пользователя, выполнившего вход, в правом верхнем углу.
 - Универсальный код ресурса (URI) для ресурса служб мультимедиа.
-- Значения приложения Azure AD: **идентификатор клиента** и **секрет клиента**.
+- Значения приложения Azure AD: **идентификатор клиента** и **секрет клиента.**
 
 Значения **идентификатора клиента** и **секрета клиента** можно найти на портале Azure. Дополнительные сведения см. в разделе [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](media-services-portal-get-started-with-aad.md).
 
@@ -153,7 +153,7 @@ ms.locfileid: "77162885"
                                 new AzureAdClientCertificate("{YOUR CLIENT ID HERE}", "{YOUR CLIENT CERTIFICATE THUMBPRINT}"), 
                                 AzureEnvironments.AzureCloudEnvironment);
 
-Чтобы начать программирование для служб мультимедиа, необходимо создать экземпляр **CloudMediaContext**, представляющий контекст сервера. Необходимо также передать **универсальный код ресурса (URI) для ресурса REST служб мультимедиа** в конструктор **CloudMediaContext**. Значение **универсального кода ресурса (URI) для ресурса REST служб мультимедиа** можно получить на портале Azure.
+Чтобы начать программирование с медиа-сервисов, необходимо создать экземпляр **CloudMediaContext,** представляющий контекст сервера. Необходимо также передать **универсальный код ресурса (URI) для ресурса REST служб мультимедиа** в конструктор **CloudMediaContext**. Значение **универсального кода ресурса (URI) для ресурса REST служб мультимедиа** можно получить на портале Azure.
 
 Следующий пример кода создает экземпляр **CloudMediaContext**.
 

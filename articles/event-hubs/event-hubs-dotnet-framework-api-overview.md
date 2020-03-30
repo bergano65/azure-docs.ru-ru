@@ -1,6 +1,6 @@
 ---
 title: Обзор интерфейсов API Центров событий Azure для платформы .NET Framework | Документация Майкрософт
-description: В этой статье приведены общие сведения о некоторых основных концентраторах событий .NET Framework клиентских API-интерфейсах (управление и среда выполнения).
+description: В этой статье приводится краткое изложение некоторых ключевых AAP-клиентов-клиентов Event Hubs .NET Framework (управление и время выполнения).
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.author: shvija
 ms.openlocfilehash: b14759ed39037bfa172366a2ed8f8ca089786ec6
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79137617"
 ---
 # <a name="event-hubs-net-framework-api-overview"></a>Обзор API Центров событий для платформы .NET Framework
@@ -48,7 +48,7 @@ ehd.Authorization.Add(new SharedAccessAuthorizationRule(ruleName, ruleKey, new A
 await namespaceManager.UpdateEventHubAsync(ehd);
 ```
 
-### <a name="delete"></a>Удаление
+### <a name="delete"></a>DELETE
 
 ```csharp
 await namespaceManager.DeleteEventHubAsync("event hub name");

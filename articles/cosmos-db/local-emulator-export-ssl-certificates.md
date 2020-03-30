@@ -2,16 +2,16 @@
 title: Экспорт сертификатов эмулятора Azure Cosmos DB
 description: При разработке на языках и в средах выполнения, не использующих хранилище сертификатов Windows, вам потребуется экспортировать SSL-сертификаты и управлять ими. В этой статье приведены пошаговые инструкции.
 ms.service: cosmos-db
-ms.topic: tutorial
+ms.topic: conceptual
 ms.date: 05/23/2019
 author: deborahc
 ms.author: dech
-ms.openlocfilehash: a398c10511fdd3891a2c429f0ef46869dcc48922
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
-ms.translationtype: HT
+ms.openlocfilehash: 623837b30038ef8524aef1e87aeb5933204925a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244453"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80156027"
 ---
 # <a name="export-the-azure-cosmos-db-emulator-certificates-for-use-with-java-python-and-nodejs"></a>Экспорт сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js
 
@@ -36,7 +36,7 @@ ms.locfileid: "66244453"
 
 ## <a name="how-to-export-the-azure-cosmos-db-ssl-certificate"></a>Как экспортировать SSL-сертификаты эмулятора Azure Cosmos DB
 
-1. Запустите диспетчер сертификатов Windows. Для этого запустите файл certlm.msc и перейдите в папку "Личное -> Сертификаты", а затем откройте сертификат с понятным именем **DocumentDbEmulatorCertificate**.
+1. Запустите менеджер сертификата Windows, запустив certlm.msc и перейдите в папку «Сертификаты личного >» и откройте сертификат с дружественным названием **DocumentDbEmulatorCertificate.**
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 1)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-1.png)
 
@@ -44,11 +44,11 @@ ms.locfileid: "66244453"
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 2)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-2.png)
 
-3. Щелкните **Копировать в файл...** .
+3. Щелкните **Копировать в файл...**.
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 3)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-3.png)
 
-4. Щелкните **Далее**.
+4. Нажмите кнопку **Далее**.
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 4)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-4.png)
 
@@ -64,7 +64,7 @@ ms.locfileid: "66244453"
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 7)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-7.png)
 
-8. Нажмите кнопку **Готово**
+8. Нажмите кнопку **Готово**.
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 8)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-8.png)
 
@@ -74,7 +74,7 @@ ms.locfileid: "66244453"
 
 Следуйте инструкциям в статье [Добавление сертификата в хранилище сертификатов ЦС Java](https://docs.microsoft.com/azure/java-add-certificate-ca-store), чтобы импортировать сертификат X.509 в хранилище сертификатов Java по умолчанию. Имейте в виду, что при использовании keytool вы будете работать в каталоге %JAVA_HOME%
 
-После установки SSL-сертификата CosmosDBEmulatorCertificate приложение сможет подключиться к локальному эмулятору Azure Cosmos DB и использовать его. Если проблемы не исчезли, выполните указания по [отладке подключений SSL и TLS](https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/ReadDebug.html). Вероятно, сертификат не был установлен в хранилище %JAVA_HOME%/jre/lib/security/cacerts. Например, если вы установили несколько версий Java, приложение может использовать другое хранилище сертификатов, а не обновленное.
+После установки SSL-сертификата CosmosDBEmulatorCertificate приложение сможет подключиться к локальному эмулятору Azure Cosmos DB и использовать его. Если у вас по-прежнему возникнут проблемы, вы можете следовать статье [Debugging SSL/TLS Connections.](https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/ReadDebug.html) Вероятно, сертификат не был установлен в хранилище %JAVA_HOME%/jre/lib/security/cacerts. Например, если вы установили несколько версий Java, приложение может использовать другое хранилище сертификатов, а не обновленное.
 
 ## <a name="how-to-use-the-certificate-in-python"></a>Как использовать сертификат в Python
 
@@ -84,7 +84,7 @@ ms.locfileid: "66244453"
 
 По умолчанию при подключении к локальному эмулятору [пакет SDK Node.js (версии 1.10.1 или выше)](sql-api-sdk-node.md) для API SQL не использует SSL-сертификат. Однако если вы хотите реализовать проверку SSL, используйте примеры, приведенные в [документации по Node.js](https://nodejs.org/api/tls.html#tls_tls_connect_options_callback).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили следующее:
 

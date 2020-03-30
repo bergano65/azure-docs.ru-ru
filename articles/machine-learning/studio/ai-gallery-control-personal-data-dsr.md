@@ -1,5 +1,5 @@
 ---
-title: Управление данными Коллекция решений ИИ Azure
+title: Управление данными галереи ИИ Azure
 titleSuffix: ML Studio (classic) - Azure
 description: Можно экспортировать и удалять хранящиеся в продукте пользовательские данные из коллекции решений ИИ Azure, используя интерфейс или API каталога коллекции решений ИИ. В этой статье показано, как это сделать.
 services: machine-learning
@@ -12,10 +12,10 @@ ms.custom: seodec18
 ms.date: 05/25/2018
 ms.reviewer: jmartens, mldocs
 ms.openlocfilehash: 03341b9e663398f2c42266dead0d2dd01e97c3f3
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79204551"
 ---
 # <a name="view-and-delete-in-product-user-data-from-azure-ai-gallery"></a>Просмотр и удаление хранящихся в продукте пользовательских данных из коллекции решений ИИ Azure
@@ -61,7 +61,7 @@ ms.locfileid: "79204551"
 2.    Щелкните изображение профиля в правом верхнем углу, а затем имя учетной записи, чтобы загрузить страницу профиля.
 3.    Откройте панель средств для разработчиков браузера, нажав клавишу F12, выберите вкладку Network и обновите страницу. 
 4. Отфильтруйте запросы по строке *catalog*, введя ее в текстовом поле фильтра.
-5.    В поле запросы к URL-адресу `https://catalog.cortanaanalytics.com/entities`найдите запрос GET и выберите вкладку *заголовки* . Прокрутите вниз до раздела *заголовки запроса* .
+5.    В запросах `https://catalog.cortanaanalytics.com/entities`на URL- данные найдите запрос GET и выберите вкладку *Заголовки.* Прокрутите вниз в разделе *Заголовки запросов.*
 6.    Под заголовком `DataLabAccessToken` находится буквенно-цифровой маркер. Чтобы защитить свои данные, не передайте никому этот маркер.
 
 ### <a name="view-user-information"></a>Просмотр пользовательских сведений

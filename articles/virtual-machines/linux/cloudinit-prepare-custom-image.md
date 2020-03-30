@@ -1,25 +1,25 @@
 ---
-title: Подготовка образа виртуальной машины Azure для использования с Cloud-init
+title: Подготовьте изображение Azure VM для использования с помощью облачного
 description: Подготовка существующего образа виртуальной машины Azure к развертыванию с помощью cloud-init
 author: danis
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 06/24/2019
 ms.author: danis
-ms.openlocfilehash: 73df3a12ebea3b94563d02eda8f1211401d1ae3f
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: fef41f4dc90c03e3efbe4c8a75e495c26eec64b8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78969181"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80066822"
 ---
 # <a name="prepare-an-existing-linux-azure-vm-image-for-use-with-cloud-init"></a>Подготовка существующего образа виртуальной машины Azure Linux к использованию с cloud-init
 В этой статье показано, как выбрать и подготовить существующую виртуальную машину Azure к повторному развертыванию и применению cloud-init. Из полученного образа можно развернуть новую виртуальную машину или масштабируемый набор виртуальных машин. И то, и другое вы сможете дополнительно настроить во время развертывания с помощью cloud-init.  Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В этом документе предполагается, что у вас уже есть виртуальная машина Azure под управлением поддерживаемой версии ОС Linux. На этой виртуальной машине должны быть выполнены все необходимые настройки, установлены все необходимые модули, применены все необходимые обновления и проведены все проверки на соответствие требованиям. 
 
-## <a name="preparing-rhel-76--centos-76"></a>Подготовка RHEL 7,6/CentOS 7,6
+## <a name="preparing-rhel-76--centos-76"></a>Подготовка RHEL 7.6 / CentOS 7.6
 Чтобы установить cloud-init, войдите на виртуальную машину Linux с помощью SSH и выполните следующие команды.
 
 ```bash
@@ -29,12 +29,14 @@ sudo yum install - y cloud-init
 ```
 
 Обновите раздел `cloud_init_modules` в `/etc/cloud/cloud.cfg`, включив добавление следующих модулей:
+
 ```bash
 - disk_setup
 - mounts
 ```
 
 В следующем примере показано, как должен выглядеть универсальный раздел `cloud_init_modules`.
+
 ```bash
 cloud_init_modules:
  - migrator
@@ -51,7 +53,9 @@ cloud_init_modules:
  - users-groups
  - ssh
 ```
-Также нужно обновить в `/etc/waagent.conf` ряд задач, связанных с инициализацией и обработкой временных дисков. Выполните следующие команды, чтобы применить соответствующие параметры. 
+
+Также нужно обновить в `/etc/waagent.conf` ряд задач, связанных с инициализацией и обработкой временных дисков. Выполните следующие команды, чтобы применить соответствующие параметры.
+
 ```bash
 sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
 sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
@@ -60,7 +64,7 @@ sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.co
 cloud-init clean
 ```
 
-Разрешите только Azure в качестве источника данных для агента Linux для Azure, создав новый файл `/etc/cloud/cloud.cfg.d/91-azure_datasource.cfg` используя любой редактор по своему усмотрению со следующей строкой:
+Разрешить только Azure в качестве источника данных для агента `/etc/cloud/cloud.cfg.d/91-azure_datasource.cfg` Azure Linux, создав новый файл с помощью редактора по вашему выбору со следующей строкой:
 
 ```bash
 # Azure Data Source config
@@ -72,12 +76,14 @@ datasource_list: [ Azure ]
 Для образов на основе Red Hat нужно выполнить инструкции по [удалению файла подкачки](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/storage_administration_guide/swap-removing-file), предоставленные в документации по Red Hat.
 
 Для образов на основе CentOS, в которых настроен файл подкачки, для его отключения можно выполнить следующую команду:
+
 ```bash
 sudo swapoff /mnt/resource/swapfile
 ```
 
 Обязательно удалите ссылку на файл подкачки из файла `/etc/fstab`, который должен выглядеть примерно так:
-```text
+
+```output
 # /etc/fstab
 # Accessible filesystems, by reference, are maintained under '/dev/disk'
 # See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
@@ -87,9 +93,11 @@ UUID=7c473048-a4e7-4908-bad3-a9be22e9d37d /boot xfs defaults 0 0
 ```
 
 Чтобы освободить место и удалить файл подкачки, можно запустить следующую команду:
+
 ```bash
 rm /mnt/resource/swapfile
 ```
+
 ## <a name="extra-step-for-cloud-init-prepared-image"></a>Дополнительный этап для образов, подготовленных с помощью cloud-init
 > [!NOTE]
 > Если используемый образ был ранее подготовлен и настроен с помощью **cloud-init**, необходимо сделать следующее.
@@ -112,7 +120,7 @@ sudo waagent -deprovision+user -force
 
 Завершите сеанс SSH, а затем выполните в оболочке bash следующие команды AzureCLI, которые освободят, обобщат и создадут новый образ виртуальной машины Azure.  Вместо `myResourceGroup` и `sourceVmName` укажите реальную информацию об исходной виртуальной машине.
 
-```bash
+```azurecli
 az vm deallocate --resource-group myResourceGroup --name sourceVmName
 az vm generalize --resource-group myResourceGroup --name sourceVmName
 az image create --resource-group myResourceGroup --name myCloudInitImage --source sourceVmName

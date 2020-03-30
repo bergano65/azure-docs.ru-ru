@@ -1,19 +1,19 @@
 ---
-title: Резервное копирование виртуальных машин Azure с помощью REST API
-description: Из этой статьи вы узнаете, как настраивать, инициировать и администрировать операции резервного копирования виртуальной машины Azure с помощью REST API.
+title: Резервное копирование VMs Azure с помощью REST API
+description: В этой статье узнайте, как настроить, инициировать и управлять операциями резервного копирования резервного копирования Azure VM с помощью REST API.
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
 ms.openlocfilehash: 4789ef1e0e09df521f8cab539d972e9e669e0a58
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79248168"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
-В этой статье описано, как управлять резервными копиями виртуальных машин Azure с помощью службы Azure Backup и REST API. Настройте защиту в первый раз для ранее незащищенной виртуальной машины Azure, активируйте резервное копирование по запросу для защищенной ВИРТУАЛЬНОЙ машины Azure и измените свойства резервной копии виртуальной машины с помощью REST API, как описано здесь.
+В этой статье описано, как управлять резервными копиями виртуальных машин Azure с помощью службы Azure Backup и REST API. Направляйте защиту впервый раз для ранее незащищенного VM Azure, запустите резервное копирование по требованию для защищенного VM Azure и измените резервные свойства резервного VM через REST API, как это объясняется здесь.
 
 См. дополнительные сведения о создании [хранилищ](backup-azure-arm-userestapi-createorupdatevault.md) и [политик](backup-azure-arm-userestapi-createorupdatepolicy.md) с помощью REST API.
 
@@ -41,7 +41,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
 |204 No Content (содержимое отсутствует)     |         |  ОК (без содержимого, которое возвращаются)      |
 |202 — принято     |         |     Принято    |
@@ -92,7 +92,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="selecting-the-relevant-azure-vm"></a>Выбор нужной виртуальной машины Azure
 
- Вы можете убедиться, что кэширование выполнено, [отобразив список всех защищаемых элементов](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list) в пределах подписки. Затем в ответе найдите нужную виртуальную машину. [Ответ этой операции](#example-responses-1) также содержит сведения о том, как службы восстановления ИДЕНТИФИЦИРУют виртуальную машину.  Ознакомившись с этой процедурой, вы можете пропустить этот шаг и перейти непосредственно к [включению защиты](#enabling-protection-for-the-azure-vm).
+ Вы можете убедиться, что кэширование выполнено, [отобразив список всех защищаемых элементов](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list) в пределах подписки. Затем в ответе найдите нужную виртуальную машину. [Ответ этой операции](#example-responses-1) также дает вам информацию о том, как службы восстановления идентифицируют VM.  Ознакомившись с этой процедурой, вы можете пропустить этот шаг и перейти непосредственно к [включению защиты](#enabling-protection-for-the-azure-vm).
 
 Это можно сделать с помощью операции *GET*.
 
@@ -102,13 +102,13 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 URI *GET* имеет все необходимые параметры. Для этой операции текст запроса также не требуется.
 
-#### <a name="responses-1"></a>Ответы
+#### <a name="responses"></a><a name="responses-1"></a>Ответы
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       OK |
 
-#### <a name="example-responses-1"></a>Примеры ответов
+#### <a name="example-responses"></a><a name="example-responses-1"></a>Примеры ответов
 
 После отправки запроса *GET* возвращается ответ 200 (OK).
 
@@ -180,7 +180,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Чтобы создать защищенный элемент, используйте компоненты текста запроса.
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | AzureIaaSVMProtectedItem        |Свойства ресурса ProtectedItem         |
 
@@ -208,7 +208,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  OK       |
 |202 — принято     |         |     Принято    |
@@ -294,7 +294,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Свойства BackupRequestResource         |
 
@@ -319,11 +319,11 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
-#### <a name="example-responses-3"></a>Примеры ответов
+#### <a name="example-responses"></a><a name="example-responses-3"></a>Примеры ответов
 
 После отправки запроса *POST* для выполнения резервного копирования по запросу будет получен первоначальный ответ 202 (принято) с заголовками location или Azure-AsyncOperation.
 
@@ -387,7 +387,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="changing-the-policy-of-protection"></a>Изменение политики защиты
 
-Чтобы изменить политику, с помощью которой обеспечивается защита виртуальной машины, можно использовать тот же формат, что при [включении защиты](#enabling-protection-for-the-azure-vm). Просто укажите идентификатор политики в [тексте запроса](#example-request-body) и отправьте запрос. Например, чтобы изменить политику testVM с "DefaultPolicy" на "Продполици", укажите идентификатор "Продполици" в тексте запроса.
+Чтобы изменить политику, с помощью которой обеспечивается защита виртуальной машины, можно использовать тот же формат, что при [включении защиты](#enabling-protection-for-the-azure-vm). Просто укажите идентификатор политики в [тексте запроса](#example-request-body) и отправьте запрос. Например: Чтобы изменить политику testVM с 'DefaultPolicy' на 'ProdPolicy', укажите идентификатор 'ProdPolicy' в органе запроса.
 
 ```http
 {
@@ -433,25 +433,25 @@ DELETE https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroup
 DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;iaasvmcontainerv2;testRG;testVM?api-version=2019-05-13
 ```
 
-#### <a name="responses-2"></a>Ответы
+#### <a name="responses"></a><a name="responses-2"></a>Ответы
 
 *DELETE* — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 204 (содержимое отсутствует), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|name  |Тип  |Описание  |
 |---------|---------|---------|
 |204 NoContent (содержимое отсутствует)     |         |  NoContent       |
 |202 — принято     |         |     Принято    |
 
 > [!IMPORTANT]
-> Для защиты от случайных сценариев удаления существует [функция обратимого удаления, доступная](use-restapi-update-vault-properties.md#soft-delete-state) для хранилища служб восстановления. Если состояние "обратимое удаление" хранилища имеет значение "включено", то операция удаления не будет немедленно удалять данные. Он будет храниться в течение 14 дней, а затем окончательно очищен. За этот период за 14 дней клиент не будет оплатить за использование хранилища. Чтобы отменить операцию удаления, ознакомьтесь с [разделом Отмена и удаление](#undo-the-stop-protection-and-delete-data).
+> Для защиты от сценариев случайного удаления для хранилища служб восстановления [доступна функция «мягкое удаление».](use-restapi-update-vault-properties.md#soft-delete-state) Если состояние смягче-удаленного хранилища настроено на включено, то операция удаления не будет немедленно удалять данные. Он будет храниться в течение 14 дней, а затем постоянно очищается. Клиент не взимается плата за хранение в течение этого 14 дней. Чтобы отменить операцию удаления, обратитесь к [разделу удаления.](#undo-the-stop-protection-and-delete-data)
 
-### <a name="undo-the-stop-protection-and-delete-data"></a>Отмена защиты от вирусов и удаление данных
+### <a name="undo-the-stop-protection-and-delete-data"></a>Отменить защиту от остановки и удалить данные
 
-Отмена случайного удаления аналогична созданию элемента резервного копирования. После отмены удаления элемент сохраняется, но последующие резервные копии не запускаются.
+Отмена случайного удаления аналогична созданию элемента резервного копирования. После отмены удаления элемент сохраняется, но будущие резервные копирования не срабатывают.
 
-Отмена удаления — это операция *размещения* , которая очень похожа на [изменение политики](#changing-the-policy-of-protection) и/или [Включение защиты](#enabling-protection-for-the-azure-vm). Просто укажите намерение отменить удаление с помощью переменной *исрехидрате* в [тексте запроса](#example-request-body) и отправьте запрос. Например, чтобы отменить удаление для testVM, следует использовать следующий текст запроса.
+Отменить удаление — это операция *PUT,* которая очень похожа на [изменение политики](#changing-the-policy-of-protection) и/или [позволяет обеспечить защиту.](#enabling-protection-for-the-azure-vm) Просто укажите намерение отменить удаление с переменной *isRehydrate* в [органе запроса](#example-request-body) и отправить запрос. Например: чтобы отменить удаление для testVM, следует использовать следующий орган запроса.
 
 ```http
 {

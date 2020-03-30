@@ -1,21 +1,21 @@
 ---
-title: Управление пользователями в Azure Блокчейн Workbench
+title: Управление пользователями в Azure Blockchain Workbench
 description: Как управлять пользователями в Azure Blockchain Workbench.
 ms.date: 05/09/2019
 ms.topic: article
 ms.reviewer: brendal
 ms.openlocfilehash: 573ec477a3e75beb91f90da0545fb7d4c0f9bf39
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79252185"
 ---
 # <a name="manage-users-in-azure-blockchain-workbench"></a>Управление пользователями в Azure Blockchain Workbench
 
 Azure Blockchain Workbench позволяет управлять пользователями как для отдельных сотрудников, так и для организаций, которые являются частью консорциума.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимо развертывание Blockchain Workbench. Дополнительные сведения о развертывании Azure Blockchain Workbench см. в [этой статье](deploy.md).
 
@@ -32,7 +32,7 @@ Azure Blockchain Workbench использует Azure Active Directory (Azure AD
 
     ![Новый пользователь](./media/manage-users/add-ad-user.png)
 
-5.  Заполните обязательные поля для нового пользователя. Нажмите кнопку **Создать**.
+5.  Заполните обязательные поля для нового пользователя. Выберите **Создать**.
 
 Дополнительные сведения о том, как управлять пользователями в Azure AD, см. в документации по [Azure AD](../../active-directory/fundamentals/add-users-azure-active-directory.md).
 
@@ -44,7 +44,7 @@ Azure Blockchain Workbench использует Azure Active Directory (Azure AD
 
 1.  Войдите на [портал Azure](https://portal.azure.com).
 2.  В правом верхнем углу выберите свою учетную запись, а затем перейдите в клиент Azure AD, связанный с Blockchain Workbench.
-3.  Выберите **Azure Active Directory > Корпоративные приложения**.
+3.  Выберите **azure Active Directory > корпоративных приложений.**
 4.  Выберите клиентское приложение Azure AD для Blockchain Workbench.
     
     ![Все регистрации корпоративных приложений](./media/manage-users/select-blockchain-client-app.png)

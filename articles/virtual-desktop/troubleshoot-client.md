@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок виртуального рабочего стола Windows удаленный рабочий стол Client — Azure
-description: Устранение проблем при настройке клиентских подключений в среде клиента виртуальных рабочих столов Windows.
+title: Устранение проблем удаленного рабочего стола Windows Виртуальный рабочий стол - Azure
+description: Как решить проблемы при настройке клиентских подключений в среде для арендаторов Windows Virtual Desktop.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -9,19 +9,19 @@ ms.date: 12/13/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: e3a240901ffca2c126e2b61eaee0cf287cc31d6e
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79127505"
 ---
-# <a name="troubleshoot-the-remote-desktop-client"></a>Устранение неполадок клиента удаленный рабочий стол
+# <a name="troubleshoot-the-remote-desktop-client"></a>Устранение проблем с клиентом удаленного рабочего стола
 
-В этой статье описаны распространенные проблемы с клиентом удаленный рабочий стол и способы их устранения.
+В этой статье описаны общие проблемы с клиентом Remote Desktop и способы их устранения.
 
-## <a name="remote-desktop-client-for-windows-7-or-windows-10-stops-responding-or-cannot-be-opened"></a>удаленный рабочий стол клиент для Windows 7 или Windows 10 перестает отвечать на запросы или не может быть открыт
+## <a name="remote-desktop-client-for-windows-7-or-windows-10-stops-responding-or-cannot-be-opened"></a>Удаленный настольный клиент для Windows 7 или Windows 10 перестает отвечать или не может быть открыт
 
-Используйте следующие командлеты PowerShell для очистки реестров клиента по внешнему каналу (OOB).
+Используйте следующие смдлеты PowerShell для очистки внеполосных (OOB) клиентских реестров.
 
 ```PowerShell
 Remove-ItemProperty 'HKCU:\Software\Microsoft\Terminal Server Client\Default' - Name FeedURLs
@@ -33,61 +33,61 @@ Remove-Item 'HKCU:\Software\Microsoft\RdClientRadc' -Recurse
 Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
 ```
 
-Перейдите по адресу **%аппдата%\рдклиентрадк** и удалите все содержимое.
+Перейдите на **:AppData%-RdClientRadc** и удалите весь контент.
 
-Удалите и переустановите удаленный рабочий стол клиент для Windows 7 и Windows 10.
+Удалить и переустановить клиент Remote Desktop для Windows 7 и Windows 10.
 
-## <a name="web-client-wont-open"></a>Веб-клиент не открывается
+## <a name="web-client-wont-open"></a>Веб-клиент не откроется
 
-Сначала проверьте подключение к Интернету, открыв другой веб-сайт в браузере. Например, [www.Bing.com](https://www.bing.com).
+Во-первых, проверить подключение к Интернету, открыв еще один веб-сайт в вашем браузере; например, [www.bing.com](https://www.bing.com).
 
-Используйте **nslookup** , чтобы подтвердить, что DNS может разрешить полное доменное имя:
+Используйте **nslookup** для подтверждения DNS может решить ФЗДН:
 
 ```cmd
 nslookup rdweb.wvd.microsoft.com
 ```
 
-Попробуйте подключиться с помощью другого клиента, например удаленный рабочий стол клиента для Windows 7 или Windows 10, и проверьте, можно ли открыть веб-клиент.
+Попробуйте подключиться к другому клиенту, например к клиенту Remote Desktop для Windows 7 или Windows 10, и проверьте, можете ли вы открыть веб-клиента.
 
-### <a name="opening-another-site-fails"></a>Не удается открыть другой сайт
+### <a name="opening-another-site-fails"></a>Открытие другого сайта не удается
 
-Обычно это происходит из-за проблем с сетевым подключением или сбоя сети. Рекомендуется обратиться в службу поддержки сети.
+Обычно это вызвано проблемами сетевого подключения или сбой в сети. Рекомендуем обратиться в службу поддержки сети.
 
-### <a name="nslookup-cannot-resolve-the-name"></a>Nslookup не удается разрешить имя
+### <a name="nslookup-cannot-resolve-the-name"></a>Nslookup не может решить имя
 
-Обычно это происходит из-за проблем с сетевым подключением или сбоя сети. Рекомендуется обратиться в службу поддержки сети.
+Обычно это вызвано проблемами сетевого подключения или сбой в сети. Рекомендуем обратиться в службу поддержки сети.
 
-### <a name="your-client-cant-connect-but-other-clients-on-your-network-can-connect"></a>Клиент не может подключиться, но можно подключиться к другим клиентам в сети
+### <a name="your-client-cant-connect-but-other-clients-on-your-network-can-connect"></a>Ваш клиент не может подключиться, но другие клиенты в вашей сети могут подключиться
 
-Если браузер начинает работу или перестает работать при использовании веб-клиента, следуйте приведенным ниже инструкциям, чтобы устранить неполадки.
+Если ваш браузер начинает действовать или перестает работать во время использования веб-клиента, следуйте этим инструкциям, чтобы устранить его неполадки:
 
 1. Перезапустите браузер.
-2. Очистите файлы cookie браузера. См. раздел [Удаление файлов cookie в Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
-3. Очистите кэш браузера. См. раздел [Очистка кэша браузера для браузера](https://binged.it/2RKyfdU).
-4. Откройте браузер в частном режиме.
+2. Очистить файлы cookie браузера. [Узнайте, как удалить файлы cookie в Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
+3. Очистите кэш браузера. Смотрите [четкий кэш браузера для вашего браузера.](https://binged.it/2RKyfdU)
+4. Открыть браузер в режиме Private.
 
-## <a name="web-client-stops-responding-or-disconnects"></a>Веб-клиент перестает отвечать или отключается
+## <a name="web-client-stops-responding-or-disconnects"></a>Веб-клиент перестает реагировать или отключается
 
 Попробуйте подключиться с помощью другого браузера или клиента.
 
-### <a name="other-browsers-and-clients-also-malfunction-or-fail-to-open"></a>Другие браузеры и клиенты также неисправен или не могут открыться
+### <a name="other-browsers-and-clients-also-malfunction-or-fail-to-open"></a>Другие браузеры и клиенты также не смогут открыться или не открыть
 
-Если проблемы продолжают возникать даже после переключения браузеров, проблема может быть не связана с браузером, но с вашей сетью. Рекомендуется обратиться в службу поддержки сети.
+Если проблемы продолжаются даже после того, как вы переключили браузеры, проблема может быть не с вашим браузером, а с вашей сетью. Рекомендуем обратиться в службу поддержки сети.
 
-## <a name="web-client-keeps-prompting-for-credentials"></a>Веб-клиент сохраняет запросы учетных данных
+## <a name="web-client-keeps-prompting-for-credentials"></a>Веб-клиент сохраняет запрос на учетные данные
 
-Если веб-клиент сохраняет запрос на ввод учетных данных, выполните следующие инструкции:
+Если веб-клиент продолжает побуждать учетные данные, следуйте следующим инструкциям:
 
-1. Убедитесь, что URL-адрес клиента указан правильно.
-2. Убедитесь, что используемые учетные данные предназначены для среды виртуальных рабочих столов Windows, привязанной к URL-адресу.
-3. Очистите файлы cookie браузера. Дополнительные сведения см. в разделе [Удаление файлов cookie в Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
-4. Очистите кэш браузера. Дополнительные сведения см. [в разделе Очистка кэша браузера для браузера](https://binged.it/2RKyfdU).
-5. Откройте браузер в частном режиме.
+1. Подтвердите, что URL-адрес веб-клиента является правильным.
+2. Подтвердите, что учетные данные, которые вы используете, для среды Windows Virtual Desktop привязаны к URL-.
+3. Очистить файлы cookie браузера. Для получения более подробной информации см. [Как удалить файлы cookie в Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
+4. Очистите кэш браузера. Для получения более подробной информации [см.](https://binged.it/2RKyfdU)
+5. Откройте браузер в режиме Private.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
-- Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
-- Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
-- Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Для обзора устранения неполадок Windows Virtual Desktop и треков эскалации [см.](troubleshoot-set-up-overview.md)
+- Для устранения неполадок при создании пула арендатора и хоста в среде Windows Virtual Desktop [см.](troubleshoot-set-up-issues.md)
+- Для устранения неполадок при настройке виртуальной машины (VM) в Windows Virtual Desktop [см.](troubleshoot-vm-configuration.md)
+- Для устранения неполадок при использовании [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md)PowerShell с Windows Virtual Desktop см.
+- Чтобы пройти через учебник по устранению неполадок, [см.](../azure-resource-manager/templates/template-tutorial-troubleshoot.md)

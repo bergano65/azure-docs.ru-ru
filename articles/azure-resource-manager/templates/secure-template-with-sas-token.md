@@ -1,22 +1,22 @@
 ---
-title: Безопасное развертывание шаблона с маркером SAS
-description: Развертывание ресурсов в Azure с помощью шаблона Azure Resource Manager, защищенного маркером SAS. Показывает Azure PowerShell и Azure CLI.
+title: Безопасноразразвертывание шаблон с токеном SAS
+description: Развертывание ресурсов в Azure с шаблоном управления ресурсами Azure, защищенным токеном SAS. Отображает Azure PowerShell и Azure CLI.
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: d30e685c35f33b6fc5d3872b9287e45190ad5713
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 42eaae316d4fd0575102323933f849a3058228a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79273713"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80156401"
 ---
-# <a name="deploy-private-resource-manager-template-with-sas-token"></a>Развертывание частного шаблона Resource Manager с использованием маркера SAS
+# <a name="deploy-private-arm-template-with-sas-token"></a>Развертывание частного шаблона ARM с токеном SAS
 
-Если шаблон находится в учетной записи хранения, вы можете ограничить доступ к нему, чтобы не предоставлять его открытым. Доступ к защищенному шаблону осуществляется путем создания маркера подписанного URL-адрес (SAS) для шаблона и предоставления маркера во время развертывания. В этой статье объясняется, как использовать Azure PowerShell или Azure CLI для развертывания шаблона с маркером SAS.
+Когда шаблон Azure Resource Manager (ARM) находится в учетной записи хранилища, можно ограничить доступ к шаблону, чтобы избежать публичного разоблачения. Вы получаете доступ к защищенному шаблону, создавая маркер общей подписи доступа (SAS) для шаблона и предоставляя этот маркер во время развертывания. В этой статье объясняется, как использовать Azure PowerShell или Azure CLI для развертывания шаблона с токеном SAS.
 
-## <a name="create-storage-account-with-secured-container"></a>Создание учетной записи хранения с защищенным контейнером
+## <a name="create-storage-account-with-secured-container"></a>Создание учетной записи хранилища с защищенным контейнером
 
-Следующий скрипт создает учетную запись хранения и контейнер с отключенным общим доступом.
+Следующий скрипт создает учетную запись хранения и контейнер с открытым доступом.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -37,7 +37,7 @@ New-AzStorageContainer `
   -Permission Off
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group create \
@@ -61,9 +61,9 @@ az storage container create \
 
 ---
 
-## <a name="upload-template-to-storage-account"></a>Отправить шаблон в учетную запись хранения
+## <a name="upload-template-to-storage-account"></a>Загрузить шаблон в учетную запись хранения
 
-Теперь вы готовы отправить шаблон в учетную запись хранения. Укажите путь к шаблону, который вы хотите использовать.
+Теперь вы готовы загрузить шаблон в учетную запись хранилища. Предоставьте путь к шаблону, который вы хотите использовать.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -73,7 +73,7 @@ Set-AzStorageBlobContent `
   -File c:\Templates\azuredeploy.json
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az storage blob upload \
@@ -90,7 +90,7 @@ az storage blob upload \
 Чтобы развернуть частный шаблон в учетной записи хранения, создайте маркер SAS и добавьте его в универсальный код ресурса (URI) для шаблона. Задайте срок действия, достаточный для выполнения развертывания.
 
 > [!IMPORTANT]
-> Большой двоичный объект, содержащий шаблон, доступен только владельцу учетной записи. Тем не менее, если создать маркер SAS для этого большого двоичного объекта, то он будет доступен любому пользователю, обладающему этим универсальным кодом ресурса (URI). Если другой пользователь перехватит этот универсальный код ресурса (URI), то сможет получить доступ к шаблону. Маркер SAS — это хороший способ ограничения доступа к шаблонам, но не следует включать конфиденциальные данные, такие как пароли, непосредственно в шаблон.
+> Капля, содержащая шаблон, доступна только владельцу учетной записи. Тем не менее, если создать маркер SAS для этого большого двоичного объекта, то он будет доступен любому пользователю, обладающему этим универсальным кодом ресурса (URI). Если другой пользователь перехватит этот универсальный код ресурса (URI), то сможет получить доступ к шаблону. Токен SAS является хорошим способом ограничения доступа к шаблонам, но вы не должны включать конфиденциальные данные, такие как пароли непосредственно в шаблоне.
 >
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -109,7 +109,7 @@ New-AzResourceGroupDeployment `
   -TemplateUri $templateuri
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 expiretime=$(date -u -d '30 minutes' +%Y-%m-%dT%H:%MZ)
@@ -129,7 +129,7 @@ url=$(az storage blob url \
     --name azuredeploy.json \
     --output tsv \
     --connection-string $connection)
-az group deployment create \
+az deployment group create \
   --resource-group ExampleGroup \
   --template-uri $url?$token
 ```
@@ -140,5 +140,5 @@ az group deployment create \
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Вводные сведения о развертывании шаблонов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](deploy-powershell.md).
+* Для введения в развертывание шаблонов см. [Развертывание ресурсов с шаблонами ARM и Azure PowerShell.](deploy-powershell.md)
 * Сведения об определении параметров в шаблоне см. в разделе [Создание шаблонов](template-syntax.md#parameters).

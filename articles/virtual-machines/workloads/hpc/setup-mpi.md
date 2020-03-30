@@ -1,5 +1,5 @@
 ---
-title: Настройка интерфейса передачи сообщений для HPC — виртуальные машины Azure | Документация Майкрософт
+title: Настройка интерфейса передачи сообщений для HPC - Виртуальные машины Azure (ru) Документы Майкрософт
 description: Узнайте, как настроить MPI для HPC в Azure.
 services: virtual-machines
 documentationcenter: ''
@@ -13,21 +13,21 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
 ms.openlocfilehash: 469e926932ffa11ef9f2a262b78a587ba435549e
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77023996"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Настройка интерфейса передачи сообщений для HPC
 
-Рабочие нагрузки интерфейса передачи сообщений (MPI) являются важной частью традиционных рабочих нагрузок HPC. Размеры виртуальных машин с поддержкой SR-IOV в Azure позволяют использовать почти любую разновидность MPI. 
+Рабочие нагрузки переходящего интерфейса сообщений (MPI) являются значительной частью традиционных рабочих нагрузок HPC. SR-IOV позволил размеры VM на Azure позволяют использовать практически любой вкус MPI. 
 
-Для выполнения заданий MPI на виртуальных машинах необходимо настроить ключи секций (p-ключи) в клиенте. Чтобы узнать о том, как определить значения p-ключа, выполните действия, описанные в разделе [Обнаружение ключей разделов](#discover-partition-keys) .
+Запуск заданий MPI на ВМ требует настройки ключей раздела (p-keys) между арендатором. Выполните последующие действия в разделе [Discover в](#discover-partition-keys) разделе для получения подробной информации об определении значений p-key.
 
-## <a name="ucx"></a>уккс
+## <a name="ucx"></a>Ucx
 
-[Уккс](https://github.com/openucx/ucx) обеспечивает наилучшую производительность при работе с Мпич и опенмпи.
+[UCX](https://github.com/openucx/ucx) предлагает лучшие показатели на IB и работает с MPICH и OpenMPI.
 
 ```bash
 wget https://github.com/openucx/ucx/releases/download/v1.4.0/ucx-1.4.0.tar.gz
@@ -37,15 +37,15 @@ cd ucx-1.4.0
 make -j 8 && make install
 ```
 
-## <a name="openmpi"></a>опенмпи
+## <a name="openmpi"></a>OpenMPI
 
-Установите УККС, как описано выше.
+Установите UCX, как описано ранее.
 
 ```bash
 sudo yum install –y openmpi
 ```
 
-Сборка Опенмпи.
+Создайте OpenMPI.
 
 ```bash
 wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.0.tar.gz
@@ -55,7 +55,7 @@ cd openmpi-4.0.0
 make -j 8 && make install
 ```
 
-Запустите Опенмпи.
+Выполнить OpenMPI.
 
 ```bash
 <ompi-install-path>/bin/mpirun -np 2 --map-by node --hostfile ~/hostfile -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1  -x UCX_IB_PKEY=0x0003  ./osu_latency
@@ -63,11 +63,11 @@ make -j 8 && make install
 
 Проверьте ключ раздела, как упоминалось выше.
 
-## <a name="mpich"></a>мпич
+## <a name="mpich"></a>МПИЧ
 
-Установите УККС, как описано выше.
+Установите UCX, как описано ранее.
 
-Сборка МПИЧ.
+Постройте MPICH.
 
 ```bash
 wget https://www.mpich.org/static/downloads/3.3/mpich-3.3.tar.gz
@@ -77,7 +77,7 @@ cd mpich-3.3
 make -j 8 && make install
 ```
 
-Выполнение МПИЧ.
+Запуск MPICH.
 
 ```bash
 <mpich-install-path>/bin/mpiexec -n 2 -hostfile ~/hostfile -env UCX_IB_PKEY=0x0003 -bind-to hwthread ./osu_latency
@@ -87,7 +87,7 @@ make -j 8 && make install
 
 ## <a name="mvapich2"></a>MVAPICH2
 
-Сборка MVAPICH2.
+Постройте MVAPICH2.
 
 ```bash
 wget http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/mvapich2-2.3.tar.gz
@@ -97,7 +97,7 @@ cd mvapich2-2.3
 make -j 8 && make install
 ```
 
-Выполнение MVAPICH2.
+Запуск MVAPICH2.
 
 ```bash
 <mvapich2-install-path>/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=48 ./osu_latency
@@ -105,7 +105,7 @@ make -j 8 && make install
 
 ## <a name="platform-mpi-community-edition"></a>Платформа MPI Community Edition
 
-Установите необходимые пакеты для платформы MPI.
+Установите необходимые пакеты для MpI платформы.
 
 ```bash
 sudo yum install libstdc++.i686
@@ -114,19 +114,19 @@ Download platform MPI at https://www.ibm.com/developerworks/downloads/im/mpi/ind
 sudo ./platform_mpi-09.01.04.03r-ce.bin
 ```
 
-Выполните процедуру установки.
+Следите за процессом установки.
 
 ## <a name="intel-mpi"></a>Intel MPI
 
-[Загрузите Intel MPI](https://software.intel.com/mpi-library/choose-download).
+[Скачать Intel MPI](https://software.intel.com/mpi-library/choose-download).
 
-Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте `I_MPI_FABRICS=shm:ofa`, а для 2019 — `I_MPI_FABRICS=shm:ofi`.
+Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018, использование `I_MPI_FABRICS=shm:ofa` и на `I_MPI_FABRICS=shm:ofi`2019 год, использование .
 
-По умолчанию закрепление процессов работает правильно для 15, 30 и 60 ППН.
+Процесс закрепления работает правильно для 15, 30 и 60 PPN по умолчанию.
 
-## <a name="osu-mpi-benchmarks"></a>Тесты производительности осу MPI
+## <a name="osu-mpi-benchmarks"></a>Ориентиры ОГУ MPI
 
-[Скачайте тесты производительности осу MPI](http://mvapich.cse.ohio-state.edu/benchmarks/) и распаковать.
+[Скачать OSU MPI benchmarks](http://mvapich.cse.ohio-state.edu/benchmarks/) и untar.
 
 ```bash
 wget http://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-5.5.tar.gz
@@ -134,26 +134,26 @@ tar –xvf osu-micro-benchmarks-5.5.tar.gz
 cd osu-micro-benchmarks-5.5
 ```
 
-Создавайте тесты производительности с помощью определенной библиотеки MPI:
+Создавайте контрольные показатели с помощью определенной библиотеки MPI:
 
 ```bash
 CC=<mpi-install-path/bin/mpicc>CXX=<mpi-install-path/bin/mpicxx> ./configure 
 make
 ```
 
-Тесты MPI находятся в папке `mpi/`.
+MPI Benchmarks `mpi/` находятся под папкой.
 
 
-## <a name="discover-partition-keys"></a>Обнаружение ключей разделов
+## <a name="discover-partition-keys"></a>Откройте для себя ключи раздела
 
-Обнаружение ключей разделов (p-Keys) для взаимодействия с другими виртуальными машинами в рамках одного клиента (группы доступности или масштабируемого набора ВМ).
+Откройте для себя ключи раздела (p-keys) для общения с другими вводом в рамках того же арендатора (Set availability или VM Scale Set).
 
 ```bash
 /sys/class/infiniband/mlx5_0/ports/1/pkeys/0
 /sys/class/infiniband/mlx5_0/ports/1/pkeys/1
 ```
 
-Чем больше из двух, тем ключ клиента следует использовать с MPI. Пример. Если используются следующие ключи p-Keys, 0x800b следует использовать с MPI.
+Чем больше из двух является арендатором ключ, который должен быть использован с MPI. Пример: Если ниже p-ключи, 0x800b следует использовать с MPI.
 
 ```bash
 cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/0
@@ -162,14 +162,14 @@ cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/1
 0x7fff
 ```
 
-Используйте раздел, отличный от ключа раздела по умолчанию (0x7FFF). УККС требует, чтобы был сброшен параметр p-Key. Например, задайте UCX_IB_PKEY как 0x000b для 0x800b.
+Используйте ключ раздела, кроме ключа раздела по умолчанию (0x7fff). UCX требует, чтобы MSB p-key был очищен. Например, установить UCX_IB_PKEY как 0x000b для 0x800b.
 
-Также обратите внимание, что пока существует клиент (AVSet или VMSS), PKEY остается неизменным. Это справедливо даже при добавлении или удалении узлов. Новые клиенты получают разные PKEY.
+Также обратите внимание, что до тех пор, как арендатор (AVSet или VMSS) существует, PKEYs остаются теми же. Это верно даже при добавлении/удалении узлов. Новые арендаторы получают различные PKEYs.
 
 
-## <a name="set-up-user-limits-for-mpi"></a>Настройка ограничений пользователей для MPI
+## <a name="set-up-user-limits-for-mpi"></a>Настройка пользовательских ограничений для MPI
 
-Настройте ограничения пользователей для MPI.
+Настройка пользовательских ограничений для MPI.
 
 ```bash
 cat << EOF | sudo tee -a /etc/security/limits.conf
@@ -181,9 +181,9 @@ EOF
 ```
 
 
-## <a name="set-up-ssh-keys-for-mpi"></a>Настройка ключей SSH для MPI
+## <a name="set-up-ssh-keys-for-mpi"></a>Настройка SSH-ключей для MPI
 
-Настройте ключи SSH для требуемых типов MPI.
+Настройка SSH-ключей для типов MPI, которые требуют этого.
 
 ```bash
 ssh-keygen -f /home/$USER/.ssh/id_rsa -t rsa -N ''
@@ -196,8 +196,8 @@ chmod 600 /home/$USER/.ssh/authorized_keys
 chmod 644 /home/$USER/.ssh/config
 ```
 
-В приведенном выше синтаксисе предполагается наличие общего домашнего каталога, иначе каталог. ssh должен быть скопирован на каждый узел.
+Вышеупомянутый синтаксис предполагает общий домашний каталог, иначе каталог .ssh должен быть скопирован на каждый узлы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.
+Узнайте больше о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) на Azure.

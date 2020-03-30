@@ -1,5 +1,5 @@
 ---
-title: Настройка входа с использованием учетной записи Twitter с помощью настраиваемых политик
+title: Настройка регистрации в учетной записи Twitter с помощью пользовательских политик
 titleSuffix: Azure AD B2C
 description: Настройка входа с помощью учетной записи Twitter с использованием пользовательских политик Azure в Active Directory B2C
 services: active-directory-b2c
@@ -11,20 +11,20 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 85af3457f83f06c107f8b4aa9bd88a9f915c776f
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 5804ded875ef03d7ade4414eb8f08885634748dd
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78187939"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80051592"
 ---
 # <a name="set-up-sign-in-with-a-twitter-account-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью учетной записи Twitter с использованием пользовательских политик Azure в Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье показано, как включить вход для пользователей учетной записи Twitter с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
+В этой статье показано, как включить запись для пользователей учетной записи Twitter с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Если у вас нет учетной записи Twitter, создайте ее на [странице регистрации Twitter](https://twitter.com/signup).
@@ -36,7 +36,7 @@ ms.locfileid: "78187939"
 1. Выполните вход на [веб-сайт разработчиков Twitter](https://developer.twitter.com/en/apps) с учетными данными для учетной записи Twitter.
 2. Выберите **Create an app** (Создать приложение).
 3. Введите **имя приложения** и **описание приложения**.
-4. В поле **Website URL** (URL-адрес веб-сайта) введите `https://your-tenant.b2clogin.com`. Замените `your-tenant` именем вашего клиента. Например, https://contosob2c.b2clogin.com.
+4. В поле **Website URL** (URL-адрес веб-сайта) введите `https://your-tenant.b2clogin.com`. Замените `your-tenant` именем вашего клиента. Например, `https://contosob2c.b2clogin.com`.
 5. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-policy-Id/oauth1/authresp`. Замените `your-tenant` именем своего клиента, а `your-policy-Id` — идентификатором своей политики. Например, `b2c_1A_signup_signin_twitter`. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
 6. В нижней части страницы прочтите условия использования и примите их, а затем щелкните **Create** (Создать).
 7. На странице **сведений о приложении** выберите **Edit > Edit details** (Изменить > Изменить сведения), установите флажок в поле **Enable Sign in with Twitter** (Включить вход через Twitter), а затем нажмите кнопку **Save** (Сохранить).
@@ -47,7 +47,7 @@ ms.locfileid: "78187939"
 Сохраните секретный ключ, который ранее был записан в клиенте Azure AD B2C.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий ваш арендатор Azure AD B2C. Выберите фильтр **подписки каталога** в верхнем меню и выберите каталог, содержащий ваш арендатор.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
@@ -111,11 +111,11 @@ ms.locfileid: "78187939"
 
 ### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
 
-Теперь вы настроили политику так, чтобы Azure AD B2C знала, как взаимодействовать с учетной записью Twitter. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
+К настоящему времени вы настроили свою политику таким образом, чтобы Azure AD B2C знал, как общаться с вашей учетной записью Twitter. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
 1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Щелкните **Отправить**.
+3. Нажмите кнопку **Отправка**.
 
 ## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
 
@@ -149,13 +149,13 @@ ms.locfileid: "78187939"
     <ClaimsExchange Id="TwitterExchange" TechnicalProfileReferenceId="Twitter-OAUTH1" />
     ```
 
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Twitter-OAUTH1`.
+    Обновитите значение **TechnicalProfileReferenceId** в идентификатор технического профиля, созданный ранее. Например, `Twitter-OAUTH1`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
+Связь с Azure AD B2C происходит через приложение, которое регистрируется в вашем арендаторе B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

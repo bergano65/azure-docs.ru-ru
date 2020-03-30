@@ -3,15 +3,15 @@ title: Создание Azure HPC Cache
 description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/11/2019
 ms.author: rohogue
-ms.openlocfilehash: 793a80e7019e72c1cb3087da02d5642639cb8d5e
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
-ms.translationtype: HT
+ms.openlocfilehash: c6090d19ce530829b79dca69636c2123e2519961
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647162"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80129556"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
@@ -57,7 +57,7 @@ Azure HPC Cache определяет, какие файлы необходимо
 
 ## <a name="finish-creating-the-cache"></a>Завершение создания кэша
 
-После настройки нового кэша перейдите на вкладку **Просмотр и создание**. Портал проверяет выбранные параметры и позволяет просматривать выбранные значения. Если все правильно, нажмите кнопку **Создать**.
+После настройки нового кэша щелкните вкладку **«Обзор» и создайте** его. Портал проверяет ваш выбор и позволяет просматривать ваши варианты. Если все правильно, нажмите кнопку **Создать**.
 
 Создание кэша занимает около 10 минут. Вы можете отслеживать ход создания на панели уведомлений на портале Azure.
 

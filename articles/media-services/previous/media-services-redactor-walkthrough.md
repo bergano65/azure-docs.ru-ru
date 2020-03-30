@@ -16,23 +16,23 @@ ms.date: 03/20/2019
 ms.author: ril
 ms.reviewer: juliako
 ms.openlocfilehash: a8db8de6ef062dcf757f3d264379677d6550ea3a
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69997677"
 ---
 # <a name="redact-faces-with-azure-media-analytics-walkthrough"></a>Пошаговое руководство скрытия лиц с помощью аналитики мультимедиа Azure
 
 ## <a name="overview"></a>Обзор
 
-**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](media-services-analytics-overview.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-redactor/).
+**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](media-services-analytics-overview.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Для получения дополнительной информации, смотрите [этот](https://azure.microsoft.com/blog/azure-media-redactor/) блог.
 
 Подробные сведения о **Azure Media Redactor** см. в разделе [Скрытие лиц с помощью медиа-аналитики Azure](media-services-face-redaction.md).
 
 В этом разделе приведены пошаговые инструкции по выполнению полного рабочего процесса скрытия с помощью Azure Media Services Explorer (AMSE) и Azure Media Redactor Visualizer (инструмент с открытым кодом).
 
-Дополнительную информацию см. в [этом](https://azure.microsoft.com/blog/redaction-preview-available-globally) блоге.
+Для получения дополнительной информации, смотрите [этот](https://azure.microsoft.com/blog/redaction-preview-available-globally) блог.
 
 ## <a name="azure-media-services-explorer-workflow"></a>Рабочий процесс Azure Media Services Explorer
 
@@ -40,7 +40,7 @@ ms.locfileid: "69997677"
 
 ### <a name="download-and-setup"></a>Скачивание и установка
 
-1. Скачайте средство AMSE для AMS v2 [отсюда.](https://aka.ms/amseforv2)
+1. Скачать AMSE для AMS v2 инструмент [отсюда](https://aka.ms/amseforv2).
 1. Войдите в свою учетную запись служб мультимедиа с помощью ключа службы.
 
     Чтобы получить имя учетной записи и сведения о ключе, перейдите на [портал Azure](https://portal.azure.com/) и выберите свою учетную запись AMS. Последовательно выберите "Параметры" > "Ключи". В окне "Управление ключами" отображается имя учетной записи, а также первичный и вторичный ключи. Скопируйте значения имени учетной записи и первичного ключа.
@@ -121,11 +121,11 @@ ms.locfileid: "69997677"
 6.  Передайте этот файл в выходной ресурс из шага 1. Передайте первоначальное видео в этот ресурс и укажите его в качестве основного ресурса. 
 7.  Выполните задание Redaction для этого ресурса в режиме "Redact" (Скрытие), чтобы получить окончательное отредактированное видео. 
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

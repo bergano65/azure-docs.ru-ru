@@ -7,12 +7,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: 7b9b536def2aa7da25fef9f3baa5efdd8b0ed6f7
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: 0314095a053087a7d490926c41c6ae386c304919
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78944611"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80066651"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -29,15 +29,15 @@ ms.locfileid: "78944611"
 
 Создайте группу ресурсов с именем *myResourceGroup* в расположении *Восточная часть США*.
 
-```bash
+```azurecli
 az group create --name myResourceGroup --location eastus
 ```
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). В этом примере создается учетная запись хранения с именем *mySTORAGEACCT\<случайное число >* и помещается имя этой учетной записи хранения в переменную **STORAGEACCT**. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
+Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). Этот пример создает учетную запись хранения под названием *mySTORAGEACCT\<случайный номер>* и помещает имя этой учетной записи хранения в переменной **STORAGEACCT**. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
 
-```bash
+```azurecli
 STORAGEACCT=$(az storage account create \
     --resource-group "myResourceGroup" \
     --name "mystorageacct$RANDOM" \
@@ -52,7 +52,7 @@ STORAGEACCT=$(az storage account create \
 
 Ключи учетной записи хранения можно просмотреть, выполнив команду [az storage account keys list](/cli/azure/storage/account/keys). В этом примере значение ключа 1 хранится в переменной **STORAGEKEY**.
 
-```bash
+```azurecli
 STORAGEKEY=$(az storage account keys list \
     --resource-group "myResourceGroup" \
     --account-name $STORAGEACCT \
@@ -67,7 +67,7 @@ STORAGEKEY=$(az storage account keys list \
 
 В этом примере создается файловый ресурс с именем *myshare* и квотой на 10 ГиБ. 
 
-```bash
+```azurecli
 az storage share create --name myshare \
     --quota 10 \
     --account-name $STORAGEACCT \
@@ -103,11 +103,12 @@ sudo mount -t cifs //$STORAGEACCT.file.core.windows.net/myshare /mnt/MyAzureFile
 ```bash
 //myaccountname.file.core.windows.net/mystorageshare /mnt/mymountpoint cifs vers=3.0,username=mystorageaccount,password=myStorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 ```
+
 Для обеспечения безопасности в рабочих средах следует хранить учетные данные за пределами fstab.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Настройка виртуальной машины Linux во время создания с помощь cloud-init](using-cloud-init.md)
+- [Использование облачного инаула для настройки Linux VM во время создания](using-cloud-init.md)
 - [Добавление диска к виртуальной машине Linux](add-disk.md)
-- [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-overview.md)
+- [Лазурное шифрование дисков для Linux VMs](disk-encryption-overview.md)
 

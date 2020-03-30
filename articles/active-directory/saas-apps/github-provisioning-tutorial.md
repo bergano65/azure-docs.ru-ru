@@ -1,5 +1,5 @@
 ---
-title: Учебник. подготовка пользователей для GitHub — Azure AD
+title: 'Учебник: Подготовка пользователей для GitHub - Azure AD'
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в GitHub.
 services: active-directory
 documentationcenter: ''
@@ -16,27 +16,27 @@ ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 82f7252f2d9cdd2c54fae593d8463bfe84bd6ce2
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77057657"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в GitHub и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в GitHub.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
 * клиент Azure Active Directory;
 * Организация GitHub, созданная в облаке [GitHub Enterprise](https://help.github.com/articles/github-s-products/#github-enterprise), которой требуется [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
-* Учетная запись пользователя в GitHub с разрешениями администратора для Организации.
-* Убедитесь, что для вашей организации предоставлен доступ OAuth, как описано [здесь](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization) .
+* Учетная запись пользователя в GitHub с разрешениями админа в организации
+* Убедитесь, что доступ OAuth был предоставлен вашей организации, как описано [здесь](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization)
 
 > [!NOTE]
-> Интеграция подготовки Azure AD зависит от [API GITHUB scim](https://developer.github.com/v3/scim/), который доступен для клиентов [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) в [плане выставления счетов на GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
+> Интеграция Azure AD опирается на [API GitHub SCIM,](https://developer.github.com/v3/scim/)который доступен для клиентов [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) в [плане выставления счетов GitHub Enterprise.](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations)
 
 ## <a name="assigning-users-to-github"></a>Назначение пользователей в GitHub
 
@@ -67,11 +67,11 @@ ms.locfileid: "77057657"
 
 3. Выберите экземпляр GitHub, а затем перейдите на вкладку **Подготовка**.
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите **режим обеспечения** **автоматического.**
 
     ![Подготовка GitHub](./media/github-provisioning-tutorial/GitHub1.png)
 
-5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. В новом окне браузера откроется диалоговое окно авторизации GitHub. Обратите внимание, что вы должны убедиться, что вы утверждены для авторизации доступа. Следуйте инструкциям, описанным [здесь](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
+5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. В новом окне браузера откроется диалоговое окно авторизации GitHub. Обратите внимание, что вам необходимо убедиться, что вы одобрены для авторизации доступа. Следуйте инструкциям, описанным [здесь](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
 
 6. В новом окне войдите в GitHub с использованием учетной записи администратора. В открывшемся диалоговом окне авторизации выберите команду GitHub, для которой необходимо включить подготовку, а затем щелкните **Авторизовать**. После завершения вернитесь на портал Azure для завершения настройки подготовки.
 
@@ -83,7 +83,7 @@ ms.locfileid: "77057657"
 
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок "Отправить уведомление по электронной почте при сбое".
 
-9. Выберите команду **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе "Сопоставления" выберите **Synchronize Azure Active Directory Users to GitHub** (Синхронизировать пользователей Azure Active Directory с GitHub).
 
@@ -91,7 +91,7 @@ ms.locfileid: "77057657"
 
 12. Чтобы включить службу подготовки Azure AD для GitHub, в разделе **Параметры** измените значение параметра **Состояние подготовки** на **Включено**.
 
-13. Выберите команду **Сохранить**.
+13. Нажмите **Сохранить**.
 
 После этого начнется начальная синхронизация всех пользователей и (или) групп, назначенных в GitHub в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий по подготовке, в которых зафиксированы все действия, выполняемые службой подготовки.
 
@@ -100,7 +100,7 @@ ms.locfileid: "77057657"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

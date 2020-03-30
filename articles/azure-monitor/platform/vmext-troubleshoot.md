@@ -1,25 +1,25 @@
 ---
-title: Устранение неполадок расширения виртуальной машины Azure Log Analytics в Azure Monitor | Документация Майкрософт
+title: Устранение проблем Azure Log Analytics VM расширение
 description: Описание симптомов, причин и решений для наиболее распространенных проблем с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux в Azure.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/06/2019
-ms.openlocfilehash: 88d76fc0c215653cf732ba7b827d82187d738fd9
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: e16531484505f055c1383aff5adb40518719d98a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77658478"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80054581"
 ---
-# <a name="troubleshooting-the-log-analytics-vm-extension-in-azure-monitor"></a>Устранение неполадок расширения Log Analytics VM в Azure Monitor
+# <a name="troubleshooting-the-log-analytics-vm-extension-in-azure-monitor"></a>Troubleshooting the Log Analytics VM extension in Azure Monitor (Устранение неполадок с расширением Log Analytics для виртуальной машины в Azure Monitor)
 В этой статье содержатся сведения об устранении ошибок, которые могут возникнуть с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux, работающих на платформе Microsoft Azure, и предлагаются возможные решения для их устранения.
 
 Чтобы проверить состояние расширения, выполните следующие действия на портале Azure.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **виртуальные машины**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Виртуальные машины**.
+1. Войти на [портал Azure](https://portal.azure.com).
+2. На портале Azure щелкните **все сервисы**. В списке ресурсов введите **виртуальные машины**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **виртуальные машины.**
 3. В списке найдите и выберите виртуальную машину.
 3. В колонке виртуальной машины щелкните **Расширения**.
 4. Просмотрите список, чтобы проверить, включено ли расширение Log Analytics.  На виртуальных машинах Linux агент отображается как **OMSAgentforLinux**. На виртуальных машинах Windows он отображается как **MicrosoftMonitoringAgent**.
@@ -37,7 +37,7 @@ ms.locfileid: "77658478"
 1. Следуя инструкции в статье базы знаний [KB 2965986](https://support.microsoft.com/kb/2965986#mt1), убедитесь, что агент виртуальной машины установлен и работает правильно.
    * Также можно проверить, существует ли файл журнала агента ВМ `C:\WindowsAzure\logs\WaAppAgent.log`.
    * Если журнал не создан, значит агент виртуальной машины не установлен.
-   * [Установка агента виртуальной машины Azure](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
+   * [Установка агента Azure VM](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
 2. Просмотрите файлы журнала расширения виртуальной машины Microsoft Monitoring Agent в папке `C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent`.
 3. Убедитесь, что на виртуальной машине можно запускать сценарии PowerShell.
 4. Убедитесь, что разрешения на доступ к папке C:\Windows\temp не были изменены.
@@ -58,6 +58,6 @@ ms.locfileid: "77658478"
 
 Подробные сведения см. в статье [Устранение неполадок расширения виртуальной машины Linux](../../virtual-machines/extensions/oms-linux.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные рекомендации по устранению неполадок, связанных с агентом Log Analytics для Linux, размещенном на компьютерах за пределами Azure, см. в статье об [устранении неполадок агента Azure Log Analytics для Linux](agent-linux-troubleshoot.md).  

@@ -1,6 +1,6 @@
 ---
-title: Высокий уровень доступности и аварийное восстановление — Пакетная служба Azure
-description: Узнайте, как спроектировать приложение пакетной службы для региональной непростоя. Рабочие нагрузки должны выполнить отработку отказа в другой регион или разделить их между двумя или более регионами.
+title: Высокая доступность и аварийное восстановление - Azure Batch
+description: Узнайте, как спроектировать приложение Batch для регионального сбоа. Рабочие нагрузки должны не перейти в другой регион или быть разделены между двумя или более регионами.
 services: batch
 documentationcenter: ''
 author: LauraBrenner
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/29/2019
 ms.author: labrenne
 ms.openlocfilehash: 84b0cce9557b4ae05586579f175cd0f5db14fdfc
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77026087"
 ---
 # <a name="design-your-application-for-high-availability"></a>Обеспечение высокого уровня доступности при проектировании приложения
@@ -49,5 +49,5 @@ ms.locfileid: "77026087"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о создании учетных записей пакетной службы с помощью [портал Azure](batch-account-create-portal.md), [Azure CLI](cli-samples.md), [PowerShell](batch-powershell-cmdlets-get-started.md)или [API управления пакетной](batch-management-dotnet.md)службой.
+- Подробнее о создании учетных записей пакетов на [портале Azure,](batch-account-create-portal.md) [Azure CLI,](cli-samples.md) [PowerShell](batch-powershell-cmdlets-get-started.md)или [API управления пакетом.](batch-management-dotnet.md)
 - Квоты по умолчанию связаны с учетной записью пакетной службы. В [этой статье](batch-quota-limit.md) подробно описываются значения квот по умолчанию и то, как их можно увеличить.

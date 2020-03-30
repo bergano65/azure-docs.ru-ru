@@ -1,7 +1,7 @@
 ---
-title: Устранение распространенных проблем с индексатором поиска
+title: Устранение проблем общие проблемы индекса поиска
 titleSuffix: Azure Cognitive Search
-description: Устранение ошибок и распространенных проблем с индексаторами в Когнитивный поиск Azure, включая подключение к источнику данных, брандмауэр и отсутствующие документы.
+description: Исправление ошибок и распространенных проблем с индексаторами в Azure Cognitive Search, включая подключение к источнику данных, брандмауэр и недостающие документы.
 manager: nitinme
 author: mgottein
 ms.author: magottei
@@ -9,15 +9,15 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 1e3692920c35a6965a23c0305aeeebfc80505d85
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77190931"
 ---
-# <a name="troubleshooting-common-indexer-issues-in-azure-cognitive-search"></a>Устранение распространенных проблем с индексатором в Azure Когнитивный поиск
+# <a name="troubleshooting-common-indexer-issues-in-azure-cognitive-search"></a>Устранение проблем с распространенными проблемами индекса в Azure Cognitive Search
 
-Индексаторы могут выполнять ряд проблем при индексировании данных в Azure Когнитивный поиск. Эти проблемы можно разделить на несколько основных категорий:
+Индексаторы могут столкнуться с рядом проблем при индексации данных в Azure Cognitive Search. Эти проблемы можно разделить на несколько основных категорий:
 
 * [Подключение к источнику данных или другим ресурсам](#connection-errors)
 * [обработка документов](#document-processing-errors);
@@ -26,48 +26,48 @@ ms.locfileid: "77190931"
 ## <a name="connection-errors"></a>Ошибки подключения
 
 > [!NOTE]
-> Индексаторы имеют ограниченную поддержку доступа к источникам данных и другим ресурсам, защищенным механизмами безопасности сети Azure. В настоящее время Индексаторы могут обращаться к источникам данных только через соответствующие механизмы ограничения диапазона IP-адресов или правила NSG, если применимо. Подробные сведения о доступе к каждому поддерживаемому источнику данных можно найти ниже.
+> Индексы имеют ограниченную поддержку доступа к источникам данных и другим ресурсам, которые защищены механизмами сетевой безопасности Azure. В настоящее время индексаторы могут получить доступ к источникам данных только через соответствующие механизмы ограничения диапазона IP-адресов или правила NSG, когда это применимо. Подробная информация о доступе к каждому поддерживаемому источнику данных приведена ниже.
 >
-> IP-адрес службы поиска можно узнать, обратившись к полному доменному имени (например, `<your-search-service-name>.search.windows.net`).
+> Вы можете узнать IP-адрес вашего поискового сервиса, повысив его полностью квалифицированное доменное имя (например, ). `<your-search-service-name>.search.windows.net`
 >
-> Диапазон IP-адресов `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) можно узнать с помощью [загружаемых файлов JSON](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
+> Вы можете узнать диапазон `AzureCognitiveSearch` [IP-адресов сервисного тега,](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) используя [загружаемые файлы JSON](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [Service Tag Discovery API.](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview) Диапазон IP-адресов обновляется еженедельно.
 
 ### <a name="configure-firewall-rules"></a>Настройка правил брандмауэра
 
-Служба хранилища Azure, CosmosDB и Azure SQL предоставляют настраиваемый брандмауэр. Включение брандмауэра нельзя связать с одним конкретным сообщением об ошибке. Как правило, ошибки брандмауэра являются универсальными и выглядят как `The remote server returned an error: (403) Forbidden` или `Credentials provided in the connection string are invalid or have expired`.
+Azure Storage, CosmosDB и Azure S'L обеспечивают настраиваемый брандмауэр. Включение брандмауэра нельзя связать с одним конкретным сообщением об ошибке. Как правило, ошибки брандмауэра являются общими и выглядят как `The remote server returned an error: (403) Forbidden` или `Credentials provided in the connection string are invalid or have expired`.
 
-Существует два варианта предоставления индексаторам доступа к этим ресурсам в таком экземпляре:
+Существует 2 варианта предоставления индексам доступа к этим ресурсам в таком случае:
 
-* Отключите брандмауэр, разрешая доступ из **всех сетей** (если возможно).
-* Кроме того, можно разрешить доступ для IP-адреса службы поиска и диапазона IP-адресов `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) в правилах брандмауэра ресурса (ограничение диапазона IP-адресов).
+* Отпустите брандмауэр, разрешив доступ от **всех сетей** (если это возможно).
+* Кроме того, можно разрешить доступ к IP-адресу службы поиска `AzureCognitiveSearch` и диапазону [услуг](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) IP-адреса в правилах брандмауэра вашего ресурса (ограничение диапазона IP-адресов).
 
-Сведения о настройке ограничений диапазона IP-адресов для каждого типа источника данных можно найти по следующим ссылкам:
+Подробную информацию для настройки ограничений диапазона IP-адресов для каждого типа источника данных можно найти по следующим ссылкам:
 
 * [Хранилище Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security#grant-access-from-an-internet-ip-range)
 
-* [База данных Cosmos](https://docs.microsoft.com/azure/storage/common/storage-network-security#grant-access-from-an-internet-ip-range)
+* [Cosmos DB](https://docs.microsoft.com/azure/storage/common/storage-network-security#grant-access-from-an-internet-ip-range)
 
 * [Azure SQL;](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules)
 
-**Ограничение**. как указано в документации по службе хранилища Azure, ограничения диапазона IP-адресов будут работать только в том случае, если служба поиска и учетная запись хранения находятся в разных регионах.
+**Ограничение**: Как указано в вышеупомянутой документации для Azure Storage, ограничения диапазона IP-адресов будут работать только в том случае, если служба поиска и учетная запись хранилища находятся в разных регионах.
 
-Функции Azure (которые могут использоваться в качестве [настраиваемых навыков веб-API](cognitive-search-custom-skill-web-api.md)) также поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/azure-functions/ip-addresses#ip-address-restrictions). Список IP-адресов для настройки будет IP-адресом службы поиска и диапазоном IP-адресов тега службы `AzureCognitiveSearch`.
+Функции Azure (которые могут быть использованы в качестве [навыка Custom Web Api)](cognitive-search-custom-skill-web-api.md)также поддерживают [ограничения IP-адресов.](https://docs.microsoft.com/azure/azure-functions/ip-addresses#ip-address-restrictions) Список IP-адресов для настройки будет IP-адрес вашей службы поиска и IP-адреса диапазон `AzureCognitiveSearch` обслуживания тега.
 
-Сведения о доступе к данным в SQL Server на виртуальной машине Azure приведены [здесь](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
+Подробная информация о доступе к данным на сервере S'L на VM Azure приведена [здесь](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 
-### <a name="configure-network-security-group-nsg-rules"></a>Настройка правил группы безопасности сети (NSG)
+### <a name="configure-network-security-group-nsg-rules"></a>Настройка правил сетевой безопасности (NSG)
 
-При доступе к данным в управляемом экземпляре SQL или при использовании виртуальной машины Azure в качестве URI веб-службы для [настраиваемого навыка веб-API](cognitive-search-custom-skill-web-api.md)клиенты не должны беспокоиться об использовании конкретных IP-адресов.
+При доступе к данным в управляемом экземпляре S'L или при использовании ВМ Azure в качестве веб-сервиса URI для [навыков Custom Web Api](cognitive-search-custom-skill-web-api.md)клиенты не должны беспокоиться о конкретных IP-адресах.
 
-В таких случаях виртуальную машину Azure или управляемый экземпляр SQL можно настроить так, чтобы они находились в виртуальной сети. После этого Группа безопасности сети может быть настроена для фильтрации типа сетевого трафика, который может передаваться в подсетях виртуальной сети и сетевых интерфейсов.
+В таких случаях экземпляр Azure VM или управляемый экземпляр S'L может быть настроен для устройства виртуальной сети. Затем можно настроить группу сетевой безопасности для фильтрации типа сетевого трафика, который может проникать в и из виртуальных сетевых подсетей и сетевых интерфейсов.
 
-Тег службы `AzureCognitiveSearch` можно использовать непосредственно в [правилах](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#work-with-security-rules) входящих подключений, не требуя поиска своего диапазона IP-адресов.
+Тег `AzureCognitiveSearch` службы может быть непосредственно использован в входящих [правилах NSG](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#work-with-security-rules) без необходимости искать диапазон IP-адресов.
 
-Дополнительные сведения о доступе к данным в управляемом экземпляре SQL см. [здесь](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md) .
+Более подробная информация о доступе к данным приведена в приведенном [в данном](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md) случае экземпляре
 
-### <a name="cosmosdb-indexing-isnt-enabled"></a>CosmosDB "индексирование" не включено
+### <a name="cosmosdb-indexing-isnt-enabled"></a>CosmosDB "Индексирование" не включено
 
-Когнитивный поиск Azure имеет неявную зависимость от Cosmos DB индексирования. Если вы отключаете автоматическое индексирование в Cosmos DB, Azure Когнитивный поиск возвращает состояние "успешно", но не может индексировать содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-azure-portal).
+Azure Cognitive Search имеет неявную зависимость от индексирования Cosmos DB. При отключении автоматической индексации в Cosmos DB Azure Cognitive Search возвращает успешное состояние, но не индексирует содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-azure-portal).
 
 ## <a name="document-processing-errors"></a>Ошибки обработки документов
 
@@ -90,7 +90,7 @@ api-key: [admin key]
 
 Индексатор больших двоичных объектов [находит и извлекает текст из больших двоичных объектов в контейнере](search-howto-indexing-azure-blob-storage.md#how-azure-search-indexes-blobs). При извлечении текста могут встречаться следующие проблемы.
 
-* Документ содержит только отсканированные изображения. Большие двоичные объекты в формате PDF, в которых есть только нетекстовое содержимое, например отсканированные изображения (JPG), не дают никаких результатов в стандартном конвейере индексирования BLOB-объектов. Если изображение имеет содержимое с текстовыми элементами, для поиска и извлечения текста можно использовать «поиск с помощью [слов](cognitive-search-concept-image-scenarios.md) ».
+* Документ содержит только отсканированные изображения. Большие двоичные объекты в формате PDF, в которых есть только нетекстовое содержимое, например отсканированные изображения (JPG), не дают никаких результатов в стандартном конвейере индексирования BLOB-объектов. Если у вас есть содержимое изображения с текстовыми элементами, вы можете использовать [когнитивный поиск,](cognitive-search-concept-image-scenarios.md) чтобы найти и извлечь текст.
 * Индексатор больших двоичных объектов индексирует только метаданные. Чтобы извлечь содержимое, индексатор больших двоичных объектов должен быть настроен на [извлечение содержимого и метаданных](search-howto-indexing-azure-blob-storage.md#controlling-which-parts-of-the-blob-are-indexed):
 
 ```
@@ -113,5 +113,5 @@ api-key: [admin key]
 * Документ еще не был проиндексирован. Проверьте на портале, был ли индексатор успешно выполнен.
 * Нужный документ обновился уже после выполнения индексатора. Если индексатор выполняется по [расписанию](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-schedule), он через некоторое время будет выполнен снова и учтет нужный документ.
 * Нужный документ исключается условиями [запроса](/rest/api/searchservice/create-data-source), который указан для этого источника данных. Индексаторы не могут индексировать документы, не являющихся частью источника данных.
-* [Сопоставления полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или [обогащение искусственного интеллекта](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменили документ, и он будет отличаться от предполагаемого.
+* [Полевые картографы](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или [обогащение ИИ](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменили документ, и он выглядит иначе, чем вы ожидаете.
 * Используйте [API поиска документа](https://docs.microsoft.com/rest/api/searchservice/lookup-document), чтобы найти нужный документ.

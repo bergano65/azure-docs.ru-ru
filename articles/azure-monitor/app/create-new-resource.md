@@ -3,55 +3,55 @@ title: Создание ресурса Azure Application Insights | Докуме
 description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 090c983dcca101557f8dec479d1267275d24908b
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: c1b3a6920723ad59b714cce4bd69e1b95fe1995f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79276053"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80132420"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
-В Azure Application Insights данные о приложении отображаются в *ресурсе* Microsoft Azure. Таким образом, создание нового ресурса является частью [настройки Application Insights для мониторинга нового приложения][start]. После создания нового ресурса можно получить его ключ инструментирования и использовать его для настройки пакета SDK для Application Insights. Ключ инструментирования связывает данные телеметрии с ресурсом.
+В Azure Application Insights данные о приложении отображаются в *ресурсе* Microsoft Azure. Таким образом, создание ресурса является частью [настройки Application Insights для мониторинга нового приложения][start]. После создания нового ресурса вы можете получить его ключ приборов и использовать его для настройки SDK Application Insights. Ключ приборов связывает телеметрию с ресурсом.
 
-## <a name="sign-in-to-microsoft-azure"></a>Войдите в Microsoft Azure
+## <a name="sign-in-to-microsoft-azure"></a>Войти на связь в Microsoft Azure
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если у вас нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись перед началом.
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
-Войдите в [портал Azure](https://portal.azure.com)и создайте ресурс Application Insights:
+Вопийте на [портале Azure](https://portal.azure.com)и создайте ресурс Application Insights:
 
-![Щелкните знак "+" в левом верхнем углу. Выберите Средства для разработчиков, за которым следует Application Insights](./media/create-new-resource/new-app-insights.png)
+![Нажмите на знак «К» в левом верхнем углу. Выберите инструменты разработчика, за которыми следуют исследования приложений](./media/create-new-resource/new-app-insights.png)
 
-   | Настройки        |  Значение           | Description  |
+   | Параметры        |  Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Название**      | Уникальное значение | Имя, идентифицирующее отслеживаемое приложение. |
-   | **Группа ресурсов**     | myResourceGroup      | Имя новой или существующей группы ресурсов для размещения данных App Insights. |
-   | **Местоположение** | Восточная часть США | Выберите расположение рядом с вами или рядом с ним, где размещено ваше приложение. |
+   | **Название**      | Уникальное значение | Имя, идентифицирует приложение, которое вы контролируете. |
+   | **Ресурсная группа**     | myResourceGroup      | Название новой или существующей группы ресурсов для размещения данных App Insights. |
+   | **Расположение** | Восточная часть США | Выберите место рядом с вами или рядом с местом размещения приложения. |
 
 > [!NOTE]
-> Хотя одно и то же имя ресурса можно использовать в разных группах ресурсов, может быть полезно использовать глобально уникальное имя. Это может быть полезно, если планируется [выполнять запросы перекрестных запросов](https://docs.microsoft.com/azure/azure-monitor/log-query/cross-workspace-query#identifying-an-application) , так как это упрощает необходимый синтаксис.
+> Хотя одно и то же имя ресурса можно использовать в различных группах ресурсов, может быть полезно использовать глобально уникальное имя. Это может быть полезно, если вы планируете [выполнять перекрестные ресурсные запросы,](https://docs.microsoft.com/azure/azure-monitor/log-query/cross-workspace-query#identifying-an-application) поскольку это упрощает требуемый синтаксис.
 
-Введите соответствующие значения в обязательные поля, а затем выберите **проверить и создать**.
+Введите соответствующие значения в требуемые поля, а затем выберите **Обзор и создайте**.
 
-![Введите значения в обязательные поля, а затем выберите "Проверка + создать".](./media/create-new-resource/review-create.png)
+![Введите значения в требуемые поля, а затем выберите "обзор и создание".](./media/create-new-resource/review-create.png)
 
-После создания приложения откроется новая область. В этой области отображаются данные о производительности и использовании отслеживаемого приложения. 
+Когда приложение создано, открывается новая панель. В этом стеле вы видите данные о производительности и использовании в ашего контролируемом приложении. 
 
 ## <a name="copy-the-instrumentation-key"></a>Копирование ключа инструментирования
 
-Ключ инструментирования определяет ресурс, с которым необходимо связать данные телеметрии. Чтобы добавить ключ инструментирования в код вашего приложения, потребуется скопировать.
+Ключ приборов определяет ресурс, с которым вы хотите связать данные телеметрии. Вам нужно будет скопировать ключ приборов и добавить его в код приложения.
 
-![Щелкните и скопируйте ключ инструментирования](./media/create-new-resource/instrumentation-key.png)
+![Нажмите и скопируйте клавишу приборов](./media/create-new-resource/instrumentation-key.png)
 
 ## <a name="install-the-sdk-in-your-app"></a>Установка пакета SDK в приложении
 
 Установите пакет SDK Application Insights в приложении. Выполнение этого шага зависит от типа приложения.
 
-Используйте ключ инструментирования для настройки [пакета SDK, устанавливаемого в приложении][start].
+Используйте ключ инструментирования для настройки [пакета SDK, который можно установить в приложении][start].
 
-Пакет SDK включает стандартные модули, которые отправляют данные телеметрии без необходимости написания дополнительного кода. Для более подробного отслеживания действий пользователя или диагностики проблем [Используйте API][api] для отправки собственных данных телеметрии.
+SDK включает в себя стандартные модули, которые отправляют телеметрию без необходимости писать какой-либо дополнительный код. Для более подробного отслеживания действий пользователей или диагностики неполадок отправляйте собственные данные телеметрии, [используя API][api].
 
 ## <a name="creating-a-resource-automatically"></a>Автоматическое создание ресурса
 
@@ -92,19 +92,19 @@ SamplingPercentage :
 TenantId           : {subid}
 ```
 
-Полную документацию по PowerShell для этого командлета и Узнайте, как получить ключ инструментирования, см. в [документации к Azure PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsights?view=azps-2.5.0).
+Для получения полной документации PowerShell для этого cmdlet, а также узнать, как получить ключ приборов, обратитесь к [документации Azure PowerShell.](https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsights?view=azps-2.5.0)
 
-### <a name="azure-cli-preview"></a>Azure CLI (Предварительная версия)
+### <a name="azure-cli-preview"></a>Azure CLI (предварительный просмотр)
 
-Чтобы получить доступ к предварительной версии Application Insights Azure CLI, необходимо выполнить первую команду:
+Чтобы получить доступ к предварительным командам Application Insights Azure CLI, сначала необходимо выполнить:
 
 ```azurecli
  az extension add -n application-insights
 ```
 
-Если не выполнить команду `az extension add`, появится сообщение об ошибке, в котором будет указано следующее: `az : ERROR: az monitor: 'app-insights' is not in the 'az monitor' command group. See 'az monitor --help'.`
+Если вы не запустите `az extension add` команду, вы увидите сообщение об ошибке, в которое говорится:`az : ERROR: az monitor: 'app-insights' is not in the 'az monitor' command group. See 'az monitor --help'.`
 
-Теперь можно выполнить следующие действия, чтобы создать ресурс Application Insights:
+Теперь вы можете запустить следующее для создания ресурса Application Insights:
 
 ```azurecli
 az monitor app-insights component create --app
@@ -149,10 +149,10 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 }
 ```
 
-Полный Azure CLI документации по этой команде и сведения о получении ключа инструментирования см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
+Для получения полной документации Azure CLI для этой команды и узнать, как получить ключ приборов, обратитесь к [документации Azure CLI.](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
+* [Диагностический поиск](../../azure-monitor/app/diagnostic-search.md)
 * [Изучение метрик](../../azure-monitor/app/metrics-explorer.md)
 * [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
 

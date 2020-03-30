@@ -1,6 +1,6 @@
 ---
-title: Сценарий PowerShell. Создать новую учетную запись общего ресурса Azure | Документация Майкрософт
-description: Этот сценарий PowerShell создает новую учетную запись для общей папки данных.
+title: 'Скрипт PowerShell: Создание новой учетной записи обмена данными Azure (ru) Документы Майкрософт'
+description: Этот скрипт PowerShell создает новую учетную запись обмена данными.
 services: data-share
 author: joannapea
 ms.service: data-share
@@ -10,15 +10,15 @@ ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
 ms.openlocfilehash: c3852dd5f1d3d3df8a982716ce5dab9426782869
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70307275"
 ---
-# <a name="use-powershell-to-create-a-data-share-account-in-azure"></a>Создание учетной записи общей папки данных в Azure с помощью PowerShell
+# <a name="use-powershell-to-create-a-data-share-account-in-azure"></a>Используйте PowerShell для создания учетной записи обмена данными в Azure
 
-Этот сценарий PowerShell создает новую учетную запись для общей папки данных. 
+Этот скрипт PowerShell создает новую учетную запись обмена данными. 
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -36,13 +36,13 @@ New-AzDataShareAccount -ResourceGroupName $resourceGroupName -Name $dataShareAcc
 
 Этот сценарий использует следующие команды: 
 
-| Command | Примечания |
+| Команда | Примечания |
 |---|---|
-| [New-Аздаташареаккаунт](/powershell/module/az.datashare/new-azdatashareaccount?view=azps-2.6.0) | Создает учетную запись общего ресурса данных. |
+| [Новый АзДатаДоляКл](/powershell/module/az.datashare/new-azdatashareaccount?view=azps-2.6.0) | Создает учетную запись обмена данными. |
 |||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 
-Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).
+Дополнительные образцы скриптов Azure Data Share PowerShell можно найти в [образцах Azure Data Share PowerShell.](../../samples-powershell.md)

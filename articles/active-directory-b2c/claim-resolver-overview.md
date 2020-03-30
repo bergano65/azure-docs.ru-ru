@@ -1,26 +1,26 @@
 ---
-title: Арбитры утверждений в пользовательских политиках
+title: Решатели претензий в пользовательских политиках
 titleSuffix: Azure AD B2C
-description: Узнайте, как использовать арбитры утверждений в пользовательской политике в Azure Active Directory B2C.
+description: Узнайте, как использовать разрешители требований в пользовательской политике в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/02/2020
+ms.date: 03/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 02277d2da2e431ac1cefdd9b018af4c25f7d5a9a
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: cba97b84f77bd4e2d4cfd97601fa4f8637105eb4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78189843"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80051409"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
-Арбитры утверждений в Azure Active Directory B2C (Azure AD B2C) [пользовательские политики](custom-policy-overview.md) предоставляют контекстные сведения о запросе авторизации, такие как имя политики, идентификатор корреляции запроса, язык пользовательского интерфейса и многое другое.
+Разрешительные действия в [пользовательских политиках](custom-policy-overview.md) Azure Active Directory B2C (Azure AD B2C) предоставляют контекстную информацию о запросе авторизации, такую как имя политики, идентификатор корреляции запроса, язык пользовательского интерфейса и многое другое.
 
 Чтобы использовать арбитр утверждений во входящем или исходящим утверждении, определите строку **ClaimType** в элементе [ClaimsSchema](claimsschema.md), а затем установите **DefaultValue** в арбитр утверждений в элементе входящего или исходящего утверждения. Azure AD B2C считывает значение арбитра утверждений и использует значение в техническом профиле.
 
@@ -46,7 +46,7 @@ ms.locfileid: "78189843"
 
 ### <a name="culture"></a>Язык и региональные параметры
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
@@ -55,7 +55,7 @@ ms.locfileid: "78189843"
 
 ### <a name="policy"></a>Политика
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | Имя политики проверяющей стороны. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
@@ -64,7 +64,7 @@ ms.locfileid: "78189843"
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Недоступно |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
@@ -72,27 +72,29 @@ ms.locfileid: "78189843"
 | {OIDC:LoginHint} |  Параметр `login_hint` строки запроса. | someone@contoso.com |
 | {OIDC:MaxAge} | `max_age`. | Недоступно |
 | {OIDC:Nonce} |Параметр `Nonce` строки запроса. | defaultNonce |
+| «OIDC:Пароль»| [Владелец паролей ресурса пароли потока](ropc-custom.md) пароль пользователя.| пароль1| 
 | {OIDC:Prompt} | Параметр `prompt` строки запроса. | login |
+| «OIDC:RedirectUri» |Параметр `redirect_uri` строки запроса. | https://jwt.ms |
 | {OIDC:Resource} |Параметр `resource` строки запроса. | Недоступно |
 | {OIDC:scope} |Параметр `scope` строки запроса. | OpenId |
-| {OIDC: RedirectUri} |Параметр `redirect_uri` строки запроса. | https://jwt.ms |
+| «OIDC:Имя пользователя»| [Владелец паролей ресурса, учетные данные потока](ropc-custom.md) пользователя имя пользователя.| emily@contoso.com| 
 
 ### <a name="context"></a>Контекст
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
 | {Context:DeploymentMode} |Режим развертывания политики.  | Производство |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
-| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. |  Да |
+| (Контекст:KMSI) | Указывает, выбирается ли [keep me signed in](custom-policy-keep-me-signed-in.md) checkbox. |  Да |
 
 ### <a name="non-protocol-parameters"></a>Не протокольные параметры
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
@@ -101,51 +103,51 @@ ms.locfileid: "78189843"
 
 ### <a name="oauth2"></a>OAuth2
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {oauth2:access_token} | Маркер доступа. | Недоступно |
 
 
 ### <a name="saml"></a>SAML
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
-| {SAML: Ауснконтекстклассреференцес} | Значение элемента `AuthnContextClassRef` из запроса SAML. | urn: Oasis: Names: TC: SAML: 2.0: AC: Classes: Пассвордпротектедтранспорт |
-| {SAML: Намеидполициформат} | Атрибут `Format` из элемента `NameIDPolicy` запроса SAML. | urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress |
-| {SAML: Issuer} |  Значение элемента `Issuer` SAML для запроса SAML.| https://contoso.com |
-| {SAML: Алловкреате} | Значение атрибута `AllowCreate`, из элемента `NameIDPolicy` запроса SAML. | True |
-| {SAML: Форцеаусн} | Значение атрибута `ForceAuthN`, из элемента `AuthnRequest` запроса SAML. | True |
-| {SAML: ProviderName} | Значение атрибута `ProviderName`, из элемента `AuthnRequest` запроса SAML.| Contoso.com |
+| «SAML:AuthnContextClassСсылки» | Значение `AuthnContextClassRef` элемента из запроса SAML. | урна:оазис:имена:tc:SAML:2.0:ac:классы:PasswordProtectedTransport |
+| «SAML:NameIdPolicyFormat» | Атрибут, `Format` от `NameIDPolicy` элемента запроса SAML. | urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress |
+| (SAML:Issuer) |  Значение элемента SAML `Issuer` запроса SAML.| `https://contoso.com` |
+| «SAML:AllowCreate» | Значение `AllowCreate` атрибута из `NameIDPolicy` элемента запроса SAML. | True |
+| (SAML:ForceAuthn) | Значение `ForceAuthN` атрибута из `AuthnRequest` элемента запроса SAML. | True |
+| «SAML:ProviderName» | Значение `ProviderName` атрибута из `AuthnRequest` элемента запроса SAML.| Contoso.com |
 
-## <a name="using-claim-resolvers"></a>Использование арбитров утверждений
+## <a name="using-claim-resolvers"></a>Использование решателей претензий
 
-Вы можете использовать арбитры утверждений со следующими элементами:
+Можно использовать разрешители претензий со следующими элементами:
 
-| Элемент | Элемент | Настройки |
+| Item | Элемент | Параметры |
 | ----- | ----------------------- | --------|
 |Технический профиль Application Insights |`InputClaim` | |
-|[Azure Active Directory](active-directory-technical-profile.md) технический профиль| `InputClaim`, `OutputClaim`| 1, 2|
+|Технический профиль [Active Directory Azure](active-directory-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
 |Технический профиль [OAuth2](oauth2-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
-|Технический профиль [OpenID Connect Connect](openid-connect-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
-|Технический профиль [преобразования утверждений](claims-transformation-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
+|Технический профиль [OpenID Connect](openid-connect-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
+|Технический профиль [трансформации претензий](claims-transformation-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
 |Технический профиль [поставщика RESTful](restful-technical-profile.md)| `InputClaim`| 1, 2|
 |Технический профиль [SAML2](saml-technical-profile.md)| `OutputClaim`| 1, 2|
-|[Самостоятельно утвержденный](self-asserted-technical-profile.md) технический профиль| `InputClaim`, `OutputClaim`| 1, 2|
-|[контентдефинитион](contentdefinitions.md)| `LoadUri`| |
-|[контентдефинитионпараметерс](relyingparty.md#contentdefinitionparameters)| `Parameter` | |
-|Технический профиль [релингпарти](relyingparty.md#technicalprofile)| `OutputClaim`| 2 |
+|[Самоасвиченный технический](self-asserted-technical-profile.md) профиль| `InputClaim`, `OutputClaim`| 1, 2|
+|[ContentDefinition](contentdefinitions.md)| `LoadUri`| |
+|[ContentDefinitionParameters](relyingparty.md#contentdefinitionparameters)| `Parameter` | |
+|Технический профиль [RelyingParty](relyingparty.md#technicalprofile)| `OutputClaim`| 2 |
 
 Параметры
-1. Для метаданных `IncludeClaimResolvingInClaimsHandling` должно быть задано значение `true`.
-1. `AlwaysUseDefaultValue` атрибута входящих или исходящих утверждений должен быть установлен в значение `true`.
+1. Метаданные `IncludeClaimResolvingInClaimsHandling` должны быть `true`настроены на .
+1. Атрибут ввода `AlwaysUseDefaultValue` или вывода требований `true`должен быть установлен на.
 
-## <a name="claim-resolvers-samples"></a>Примеры арбитров утверждений
+## <a name="claim-resolvers-samples"></a>Образцы разрешителей претензий
 
 ### <a name="restful-technical-profile"></a>Технический профиль REST
 
-В техническом профиле [REST](restful-technical-profile.md) вам может потребоваться отправить язык пользователя, имя политики, область резервирования и идентификатор клиента. На основе этих утверждений REST API может запускать пользовательскую бизнес-логику и при необходимости вызвать локализованное сообщение об ошибке.
+В техническом профиле [REST](restful-technical-profile.md) вам может потребоваться отправить язык пользователя, имя политики, область резервирования и идентификатор клиента. На основе утверждений API REST может запускать пользовательскую бизнес-логику и при необходимости поднимать локализованное сообщение об ошибке.
 
-В следующем примере показан технический профиль RESTFUL с использованием этого сценария:
+Следующий пример показывает технический профиль RESTful с этим сценарием:
 
 ```XML
 <TechnicalProfile Id="REST">
@@ -173,9 +175,9 @@ ms.locfileid: "78189843"
 
 ### <a name="dynamic-ui-customization"></a>Настройка динамического пользовательского интерфейса
 
-Azure AD B2C позволяет передавать параметры строки запроса конечным точкам определения содержимого HTML для динамического отображения содержимого страницы. Например, это позволяет изменять фоновое изображение на Azure AD B2C странице регистрации или входа в систему на основе настраиваемого параметра, передаваемого из веб-приложения или с помощью мобильных приложений. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization.md). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
+Azure AD B2C позволяет передавать параметры строки запроса в конечные точки определения HTML для динамического рендерирования содержимого страницы. Например, это позволяет изменять фоновое изображение на странице регистрации Azure AD B2C или входить в систему на основе пользовательского параметра, который вы передаете из веб-приложения или мобильного приложения. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization.md). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
 
-Следующий пример передает параметр строки запроса с именем **campaignId** со значением `hawaii`, кодом **языка** `en-US`и **приложением** , представляющим идентификатор клиента:
+Следующий пример проходит в параметре строки запроса, названной `en-US` **campaignId** со `Hawaii`значением, **языковым** кодом и **приложением,** представляющим идентификатор клиента:
 
 ```XML
 <UserJourneyBehaviors>
@@ -187,15 +189,15 @@ Azure AD B2C позволяет передавать параметры стро
 </UserJourneyBehaviors>
 ```
 
-В результате Azure AD B2C отправляет приведенные выше параметры на страницу содержимого HTML:
+В результате Azure AD B2C отправляет приведенные выше параметры на страницу HTML-контента:
 
 ```
 /selfAsserted.aspx?campaignId=hawaii&language=en-US&app=0239a9cc-309c-4d41-87f1-31288feb2e82
 ```
 
-### <a name="content-definition"></a>Определение содержимого
+### <a name="content-definition"></a>Определение содержания
 
-В `LoadUri`[контентдефинитион](contentdefinitions.md) можно отправить арбитры утверждений для извлечения содержимого из разных мест в зависимости от используемых параметров.
+В [ContentDefinition](contentdefinitions.md) `LoadUri`вы можете отправлять разрешения претензий для вытягивания содержимого из разных мест, в зависимости от используемых параметров.
 
 ```XML
 <ContentDefinition Id="api.signuporsignin">
@@ -222,9 +224,9 @@ Azure AD B2C позволяет передавать параметры стро
 </TechnicalProfile>
 ```
 
-### <a name="relying-party-policy"></a>Политика проверяющей стороны
+### <a name="relying-party-policy"></a>Опираясь на партийную политику
 
-В техническом профиле политики [проверяющей](relyingparty.md) стороны может ПОТРЕБОВАТЬСЯ отправить идентификатор клиента или идентификатор корреляции в приложение проверяющей стороны в JWT.
+В техническом профиле [политики Relying party](relyingparty.md) может потребоваться отправить идентификатор клиента или идентификатор корреляции в приложение relying party в рамках JWT.
 
 ```XML
 <RelyingParty>
