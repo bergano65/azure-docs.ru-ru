@@ -1,47 +1,47 @@
 ---
-title: Справочник по API агента Azure Application Insights
-description: Справочник по API агента Application Insights. Set-Аппликатионинсигхтсмониторингконфиг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
+title: Ссылка на API агентства API для анализа приложений приложений Azure
+description: Ссылка на API агента приложений. Set-ApplicationInsightsMonitoringConfig. Мониторинг производительности веб-сайта без передислокации веб-сайта. Работает с ASP.NET веб-приложений, размещенных на базе, в вдовых мыслях или на Azure.
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
 ms.openlocfilehash: 1226b3e10adf786ed3335844a5d3f4e530911705
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77671245"
 ---
-# <a name="application-insights-agent-api-set-applicationinsightsmonitoringconfig"></a>API агента Application Insights: Set-Аппликатионинсигхтсмониторингконфиг
+# <a name="application-insights-agent-api-set-applicationinsightsmonitoringconfig"></a>Приложение Insights Агент API: Set-ApplicationInsightsMonitoringConfig
 
-В этом документе описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
+В этом документе описывается cmdlet, который является членом [модуля Az.ApplicationMonitor PowerShell.](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/)
 
 ## <a name="description"></a>Описание
 
-Задает файл конфигурации без выполнения полной переустановки.
-Перезапустите IIS, чтобы изменения вступили в силу.
+Устанавливает файл конфигурации, не делая полной переустановки.
+Перезапустите IIS для вхастывания изменений.
 
 > [!IMPORTANT] 
-> Для этого командлета требуется сеанс PowerShell с разрешениями администратора.
+> Для этого cmdlet требуется сеанс PowerShell с разрешениями Admin.
 
 
 ## <a name="examples"></a>Примеры
 
-### <a name="example-with-a-single-instrumentation-key"></a>Пример с одним ключом инструментирования
-В этом примере всем приложениям на текущем компьютере будет назначен один ключ инструментирования.
+### <a name="example-with-a-single-instrumentation-key"></a>Пример с одним ключом приборов
+В этом примере всем приложениям на текущем компьютере будет назначен единый ключ прибора.
 
 ```powershell
 PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
-### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключа инструментирования
-В данном примере:
-- `MachineFilter` соответствует текущему компьютеру с помощью подстановочного знака `'.*'`.
-- `AppFilter='WebAppExclude'` предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
-- `AppFilter='WebAppOne'` Присваивает указанному приложению уникальный ключ инструментирования.
-- `AppFilter='WebAppTwo'` Присваивает указанному приложению уникальный ключ инструментирования.
-- Наконец, `AppFilter` также использует подстановочный знак `'.*'`, чтобы сопоставить все веб-приложения, не соответствующие предыдущим правилам, и назначить ключ инструментирования по умолчанию.
-- Для удобочитаемости добавляются пробелы.
+### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключей приборов
+В этом примере:
+- `MachineFilter`соответствует текущему компьютеру `'.*'` с помощью подстановочного знака.
+- `AppFilter='WebAppExclude'`обеспечивает `null` ключ приборов. Указанное приложение не будет инструментальным.
+- `AppFilter='WebAppOne'`присваивает указанному приложению уникальный ключ приборов.
+- `AppFilter='WebAppTwo'`присваивает указанному приложению уникальный ключ приборов.
+- Наконец, `AppFilter` также `'.*'` использует подстановочный знак, чтобы соответствовать всем веб-приложениям, которые не соответствуют предыдущим правилам, и назначить ключ приборов по умолчанию.
+- Пространства добавляются для читаемости.
 
 ```powershell
 Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap `
@@ -53,38 +53,38 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap `
 
 ## <a name="parameters"></a>Параметры
 
-### <a name="-instrumentationkey"></a>-InstrumentationKey
-**Обязательный параметр.** Используйте этот параметр, чтобы указать один ключ инструментирования для использования всеми приложениями на целевом компьютере.
+### <a name="-instrumentationkey"></a>-ИнструментацияКей
+**Обязательно.** Используйте этот параметр для предоставления единого ключа приборов для использования всеми приложениями на целевом компьютере.
 
-### <a name="-instrumentationkeymap"></a>-Инструментатионкэймап
-**Обязательный параметр.** Этот параметр используется для предоставления нескольких ключей инструментирования и сопоставления ключей инструментирования, используемых каждым приложением.
-Можно создать один скрипт установки для нескольких компьютеров, установив `MachineFilter`.
+### <a name="-instrumentationkeymap"></a>-ИнструментацияКейМап
+**Обязательно.** Используйте этот параметр для предоставления нескольких ключей приборов и отображения ключей приборов, используемых каждым приложением.
+Вы можете создать единый сценарий `MachineFilter`установки для нескольких компьютеров, установив.
 
 > [!IMPORTANT]
-> Приложения будут соответствовать правилам в том порядке, в котором предоставляются правила. Поэтому необходимо сначала указать наиболее конкретные правила, а также наиболее общие правила.
+> Приложения будут соответствовать правилам в порядке предоставления правил. Таким образом, вы должны указать наиболее конкретные правила первого и наиболее общие правила последнего.
 
-#### <a name="schema"></a>Схема
+#### <a name="schema"></a>схема
 `@(@{MachineFilter='.*';AppFilter='.*';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'})`
 
-- **Мачинефилтер** — это обязательное C# регулярное выражение имени компьютера или виртуальной машины.
-    - ". *" будет соответствовать всем
-    - "ComputerName" будет соответствовать только компьютерам с указанным именем.
-- **Аппфилтер** — это обязательное C# регулярное выражение имени компьютера или виртуальной машины.
-    - ". *" будет соответствовать всем
-    - "ApplicationName" будет сопоставлять только приложения IIS с указанным именем.
-- **InstrumentationKey** требуется для включения мониторинга приложений, соответствующих двум предыдущим фильтрам.
-    - Если необходимо определить правила для исключения мониторинга, оставьте значение null.
+- **MachineFilter** является обязательным регистратором компьютера или VM-именем.
+    - '.' будет соответствовать всем
+    - 'ComputerName' будет сопоставлять только компьютеры с указанным именем.
+- **AppFilter** является обязательным регистратором компьютера или VM-именем.
+    - '.' будет соответствовать всем
+    - 'ApplicationName' будет соответствовать только приложениям IIS с указанным именем.
+- **InstrumentationKey** требуется для обеспечения мониторинга приложений, которые соответствуют предыдущим двум фильтрам.
+    - Оставьте это значение недействительным, если вы хотите определить правила, чтобы исключить мониторинг.
 
 
 ### <a name="-verbose"></a>-Verbose
-**Общий параметр.** Используйте этот параметр для просмотра подробных журналов.
+**Общий параметр.** Используйте этот переключатель для отображения подробных журналов.
 
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Выходные данные
 
-По умолчанию выходные данные отсутствуют.
+По умолчанию, нет вывода.
 
-#### <a name="example-verbose-output-from-setting-the-config-file-via--instrumentationkey"></a>Пример подробных данных о настройке файла конфигурации с помощью-InstrumentationKey
+#### <a name="example-verbose-output-from-setting-the-config-file-via--instrumentationkey"></a>Пример многословного вывода от установки конфигурационного файла через -InstrumentationKey
 
 ```
 VERBOSE: Operation: InstallWithIkey
@@ -96,7 +96,7 @@ VERBOSE: Config File Path:
 C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\applicationInsights.ikey.config
 ```
 
-#### <a name="example-verbose-output-from-setting-the-config-file-via--instrumentationkeymap"></a>Пример подробных данных о настройке файла конфигурации с помощью-Инструментатионкэймап
+#### <a name="example-verbose-output-from-setting-the-config-file-via--instrumentationkeymap"></a>Пример многословного вывода от установки конфигурационного файла через -InstrumentationKeyMap
 
 ```
 VERBOSE: Operation: InstallWithIkeyMap
@@ -110,20 +110,20 @@ VERBOSE: Config File Path:
 C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\applicationInsights.ikey.config
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
   Просмотр телеметрии:
  - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
-- [Используйте аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
-- [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
+- [Используйте Аналитику](../../azure-monitor/app/analytics.md) для более продвинутых запросов.
+- [Создание панелей мониторинга.](../../azure-monitor/app/overview-dashboard.md)
  
  Добавление данных телеметрии:
- - [Создайте веб-тесты](monitor-web-app-availability.md) , чтобы убедиться, что ваш сайт остается активным.
-- [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
-- [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставлять вызовы трассировки и журнала.
+ - [Создайте веб-тесты](monitor-web-app-availability.md), чтобы убедиться, что ваш сайт продолжает работать.
+- [Добавьте телеметрию веб-клиента,](../../azure-monitor/app/javascript.md) чтобы увидеть исключения из кода веб-страницы и включить отслеживание вызовов.
+- [Добавьте SDK Application Insights в свой код,](../../azure-monitor/app/asp-net.md) чтобы вы могли вставлять вызовы трассий и журналов
  
- Другие действия с агентом Application Insights:
- - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.
- - [Получите конфигурацию](status-monitor-v2-api-get-config.md) , чтобы убедиться, что параметры записаны правильно.
- - [Получение состояния](status-monitor-v2-api-get-status.md) для проверки мониторинга.
+ Сделайте больше с агентом По анализу приложений:
+ - Используйте наше руководство для [устранения неполадок](status-monitor-v2-troubleshoot.md) ВИС Агента.
+ - [Получите конфигурацию,](status-monitor-v2-api-get-config.md) чтобы подтвердить, что ваши настройки были записаны правильно.
+ - [Получите статус](status-monitor-v2-api-get-status.md) для проверки мониторинга.

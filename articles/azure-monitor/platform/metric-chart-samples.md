@@ -1,5 +1,5 @@
 ---
-title: Пример диаграммы метрик Azure Monitor
+title: Пример диаграммы метки Azure Monitor
 description: Сведения о визуализации данных Azure Monitor.
 author: vgorbenko
 services: azure-monitor
@@ -8,13 +8,13 @@ ms.date: 01/29/2019
 ms.author: vitalyg
 ms.subservice: metrics
 ms.openlocfilehash: 1aaeb853a67b36a21a09db57e015029d10cd0c36
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77660876"
 ---
-# <a name="metric-chart-examples"></a>Примеры диаграмм метрик 
+# <a name="metric-chart-examples"></a>Примеры метрических диаграмм 
 
 Платформа Azure предоставляет [более тысячи метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported), многие из которых обладают измерениями. Используя [фильтры измерения](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), применяя тип диаграммы управления [разделение](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts) и изменяя параметры диаграммы, вы можете создавать эффективные представления и панели мониторинга диагностики, которые содержат подробные сведения о работоспособности инфраструктуры и приложения. В данной статье приведены некоторые примеры диаграмм, которые можно создать с помощью [Обозревателя метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), и инструкции с обязательными шагами, которые необходимо выполнить для настройки каждой диаграммы.
 
@@ -50,7 +50,7 @@ ms.locfileid: "77660876"
 
 Во время выбора метрики необходимо выбрать учетную запись хранения и метрику **Транзакции**. Измените тип диаграммы на **Линейчатая диаграмма**. Щелкните **Apply splitting** (Применить разделение) и выберите **API-имя** измерения. После этого щелкните **Добавить фильтр** и еще раз выберите измерение **API-имя**. В диалоговом окне фильтра выберите API, которые необходимо отобразить на диаграмме.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Azure Monitor см. в статье [Создание интерактивных отчетов с книгами Azure Monitor](../../azure-monitor/app/usage-workbooks.md).
 * Ознакомьтесь со статьей [Обозреватель метрик Azure Monitor](metrics-charts.md).

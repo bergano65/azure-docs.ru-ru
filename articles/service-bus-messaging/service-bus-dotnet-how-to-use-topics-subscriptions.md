@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/27/2019
 ms.author: aschhab
 ms.openlocfilehash: 3fba1d62b9347303d630c80733c4fbfa279b5296
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74560097"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Начало работы с разделами служебной шины
@@ -30,14 +30,14 @@ ms.locfileid: "74560097"
 1. Написание консольного приложения .NET Core для отправки набора сообщений в раздел.
 2. Написание консольного приложения .NET Core для получения этих сообщений из подписки.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните действия, описанные в [кратком руководстве: использование портал Azure для создания раздела служебной шины и подписок на раздел](service-bus-quickstart-topics-subscriptions-portal.md) для выполнения следующих задач.
-    1. Создайте **пространство имен** Служебной шины.
-    2. Получите **строку подключения**.
+2. Выполните следующие действия в [квикстарте: Используйте портал Azure для создания темы «Автобус обслуживания» и подписки](service-bus-quickstart-topics-subscriptions-portal.md) на эту тему для выполнения следующих задач:
+    1. Создайте **пространство имен**сервисного автобуса.
+    2. Получить **строку соединения**.
     3. Создайте **раздел** в пространстве имен.
-    4. Создайте **одну подписку** на раздел в пространстве имен.
+    4. Создайте **одну подписку** на тему в пространстве имен.
 3. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
 4. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
  
@@ -47,7 +47,7 @@ ms.locfileid: "74560097"
 
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
-Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)** .
+Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)**.
 
 ### <a name="add-the-service-bus-nuget-package"></a>Получение пакета NuGet для служебной шины
 
@@ -75,7 +75,7 @@ ms.locfileid: "74560097"
     static ITopicClient topicClient;
     ``` 
 
-3. Замените метод `Main()` следующим **асинхронным** `Main` методом, который асинхронно отправляет сообщения с помощью метода сендмессажесасинк, который будет добавлен на следующем шаге. 
+3. Замените `Main()` метод следующим методом **async,** `Main` который отправляет сообщения асинхронно с помощью метода SendMessagesAsync, который вы добавите на следующем этапе. 
 
     ```csharp
     public static async Task Main(string[] args)
@@ -188,7 +188,7 @@ ms.locfileid: "74560097"
 
 ## <a name="receive-messages-from-the-subscription"></a>Получение сообщений из подписки
 
-Чтобы получить отправленные сообщения, создайте другое консольное приложение .NET Core и установите пакет NuGet **Microsoft. Azure. servicebus** , аналогичный предыдущему приложению отправителя.
+Чтобы получать отправленные сообщения, создайте еще одно консольное приложение .NET Core и установите пакет **Microsoft.Azure.ServiceBus** NuGet, аналогичный предыдущему приложению отправителя.
 
 ### <a name="write-code-to-receive-messages-from-the-subscription"></a>Написание кода для получения сообщений из подписки
 
@@ -210,7 +210,7 @@ ms.locfileid: "74560097"
     static ISubscriptionClient subscriptionClient;
     ```
 
-3. Замените метод `Main()` следующим **асинхронным** методом `Main`. Он вызывает метод `RegisterOnMessageHandlerAndReceiveMessages()`, который будет добавлен на следующем шаге. 
+3. Замените `Main()` метод следующим методом **асин.** `Main` Он вызывает `RegisterOnMessageHandlerAndReceiveMessages()` метод, который вы добавите в следующем шаге. 
 
     ```csharp
     public static async Task Main(string[] args)

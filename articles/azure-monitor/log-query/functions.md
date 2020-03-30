@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 11/15/2018
 ms.openlocfilehash: 7d94e53abbe8f4d2953729aa2363c3906ce94f74
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77670225"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
@@ -19,11 +19,11 @@ ms.locfileid: "77670225"
 
 ## <a name="create-a-function"></a>Создание функции
 
-Создайте функцию с Log Analytics в портал Azure, нажав кнопку **сохранить** , а затем указав сведения в следующей таблице.
+Создайте функцию с помощью аналитики журналов на портале Azure, нажав кнопку **«Сохранение»,** а затем предоставив информацию в следующей таблице.
 
 | Параметр | Описание |
 |:---|:---|
-| Имя           | Отображаемое имя для запроса в **обозревателе запросов**. |
+| name           | Отображаемое имя для запроса в **обозревателе запросов**. |
 | Сохранить как        | Компонент |
 | Псевдоним функции | Короткое имя функции в других запросах. Не может содержать пробелы и должно быть уникальным. |
 | Категория       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |
@@ -53,13 +53,13 @@ Update
 security_updates_last_day | where Title contains "SQL"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными уроками о написании запросов журнала Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)
-- [Статистические функции в запросах Log Analytics](aggregations.md)
+- [Функции агрегирования](aggregations.md)
 - [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
 - [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
-- [Joins](joins.md)
-- [Создание графиков](charts.md)
+- [Соединения](joins.md)
+- [Диаграммы](charts.md)

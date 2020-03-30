@@ -1,6 +1,6 @@
 ---
-title: Установка и использование представлений log Analytics | Документация Майкрософт
-description: Узнайте, как установить и использовать представления log Analytics для Azure Active Directory
+title: Как установить и использовать представления аналитики журналов Документы Майкрософт
+description: Узнайте, как установить и использовать представления аналитики журналов для active Directory Azure
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -18,24 +18,24 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b17026e4cfbe69e36c8e459aa259fe16b1c9d80d
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74014416"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Установка и использование представлений Log Analytics для Azure Active Directory
 
 Представления Log Analytics в Azure Active Directory позволяют анализировать и искать журналы действий Azure AD в клиенте Azure AD. Журналы действий Azure AD включает в себя следующие:
 
-* Журналы аудита. [Отчет о действиях журналов аудита](concept-audit-logs.md) предоставляет доступ к истории каждой задачи, выполняемой в клиенте.
-* Журналы входов в систему. [Отчет о действиях входов в систему](concept-sign-ins.md) позволяет определить, кто выполнил задачи, указанные в отчете журналов аудита.
+* Журналы аудита: Отчет о [деятельности журналов аудита](concept-audit-logs.md) дает вам доступ к истории каждой задачи, выполняемой в вашем арендаторе.
+* Войти в журналы: С [помощью отчета о деятельности входа](concept-sign-ins.md)можно определить, кто выполнял задачи, о которых сообщается в журналах аудита.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать представления Log Analytics, вам потребуется следующее:
 
-* рабочая область Log Analytics в подписке Azure. Узнайте, [как создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
+* Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 * Сначала настройте передачу [журналов действий Azure AD в рабочую область Log Analytics](howto-integrate-activity-logs-with-log-analytics.md).
 * Скачайте представления из [репозитория GitHub](https://aka.ms/AADLogAnalyticsviews) на локальный компьютер.
 
@@ -56,10 +56,10 @@ ms.locfileid: "74014416"
 
 3. Выберите любое из этих представлений для перехода к отдельным отчетам. Можно также настроить оповещения для любого из параметров отчета. Например, давайте настроим оповещение, срабатывающее каждый раз, когда происходит ошибка входа в систему. Для этого сначала выберите представление **Sign-ins Events** (События входа в систему), выберите отчет **Sign-in errors over time** (Ошибки входа в систему со временем), а затем выберите **Аналитика**, чтобы открыть страницу сведений, содержащую также фактический запрос, формирующий этот отчет. 
 
-    ![Подробная информация](./media/howto-install-use-log-analytics-views/details.png)
+    ![Сведения](./media/howto-install-use-log-analytics-views/details.png)
 
 
-4. Выберите **Задание оповещения** и в разделе **Критерии оповещения&lt; выберите &gt;Whenever the Custom log search is** logic undefined (Всякий раз, когда логика пользовательского поиска по журналу не определена). Так как оповещение должно срабатывать каждый раз, когда происходит ошибка входа в систему, установите для **порогового значения** логики оповещений по умолчанию значение **1**, а затем щелкните **Готово**. 
+4. Выберите **Задание оповещения** и в разделе **Критерии оповещения** выберите **Whenever the Custom log search is &lt;logic undefined&gt;** (Всякий раз, когда логика пользовательского поиска по журналу не определена). Так как оповещение должно срабатывать каждый раз, когда происходит ошибка входа в систему, установите для **порогового значения** логики оповещений по умолчанию значение **1**, а затем щелкните **Готово**. 
 
     ![Настройка логики сигналов](./media/howto-install-use-log-analytics-views/configure-signal-logic.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "74014416"
 
 7. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение. Теперь оповещения будут отображаться каждый раз, когда произойдет ошибка входа в систему.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Анализ журналов действий с помощью журналов Azure Monitor](howto-analyze-activity-logs-log-analytics.md)
 * [Начало работы с журналами Azure Monitor на портале Azure](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal)

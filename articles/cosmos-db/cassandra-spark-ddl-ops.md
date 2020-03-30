@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: c0df05eff5dc84ef24e1ed5afcaf705d99f447ef
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77622577"
 ---
 # <a name="ddl-operations-in-azure-cosmos-db-cassandra-api-from-spark"></a>Операции DDL в API Cassandra для Azure Cosmos DB из Spark
@@ -82,10 +82,10 @@ DESCRIBE keyspaces;
 ```
 ## <a name="table-ddl-operations"></a>Операции DDL для таблиц
 
-**Рекомендации**  
+**Соображения:**  
 
 - Пропускную способность можно назначить на уровне таблицы с помощью инструкции create table.  
-- Один ключ секции может хранить 20 ГБ данных.  
+- Один ключ раздела может хранить 20 ГБ данных.  
 - Одна запись может хранить до 2 МБ данных.  
 - Один диапазон ключей секций может хранить несколько ключей секции.
 
@@ -136,7 +136,7 @@ USE books_ks;
 DESCRIBE tables;
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания пространства ключей и таблицы перейдите к следующим статьям об операциях CRUD и других аспектах:
  

@@ -1,20 +1,20 @@
 ---
-title: Восстановить приложение из резервной копии
-description: Узнайте, как восстановить приложение из резервной копии. Некоторые связанные базы данных можно восстановить вместе с приложением за одну операцию.
+title: Восстановление приложения из резервного копирования
+description: Узнайте, как восстановить приложение из резервной копии. Некоторые связанные базы данных могут быть восстановлены вместе с приложением в одной операции.
 ms.assetid: 4444dbf7-363c-47e2-b24a-dbd45cb08491
 ms.topic: article
 ms.date: 07/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: 1295080d0eec7a4e88029cdadd85863f5f40d034
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74689251"
 ---
 # <a name="restore-an-app-in-azure"></a>Восстановление приложения в Azure
 В этой статье описывается, как в [службе приложений Azure](../app-service/overview.md) восстановить приложение, для которого ранее была создана резервная копия (ознакомьтесь с [архивацией приложения в Azure](manage-backup.md)). Вы можете восстановить предыдущее состояние приложения и связанных с ним баз данных по запросу или создать новое приложение на основе одной из резервных копий исходного приложения. Служба приложений Azure поддерживает следующие базы данных для архивации и восстановления:
-- [База данных SQL](https://azure.microsoft.com/services/sql-database/)
+- [База данных S'L](https://azure.microsoft.com/services/sql-database/)
 - [База данных Azure для MySQL](https://azure.microsoft.com/services/mysql)
 - [База данных Azure для PostgreSQL](https://azure.microsoft.com/services/postgresql)
 - [MySQL в приложении](https://blogs.msdn.microsoft.com/appserviceteam/2017/03/06/announcing-general-availability-for-mysql-in-app).
@@ -50,7 +50,7 @@ ms.locfileid: "74689251"
    
     Вы также можете выбрать **Существующее приложение** для восстановления резервной копии приложения в другое приложение в той же группе ресурсов. Прежде чем использовать этот параметр, необходимо создать другое приложение в группе ресурсов с конфигурацией базы данных, аналогичной конфигурации базы данных в резервной копии приложения. Вы можете также **создать** приложение для восстановления содержимого.
 
-4. Последовательно выберите **ОК**.
+4. Нажмите кнопку **ОК**.
 
 <a name="StorageAccount"></a>
 
@@ -81,8 +81,8 @@ ms.locfileid: "74689251"
 
 Примеры см. в разделах:
 
-- [Примеры Azure CLI](samples-cli.md)
-- [Примеры сценариев Azure PowerShell](samples-powershell.md)
+- [Образцы Azure CLI](samples-cli.md)
+- [Образцы Azure PowerShell](samples-powershell.md)
 
 <!-- ## Next Steps
 You can backup and restore App Service apps using REST API. -->

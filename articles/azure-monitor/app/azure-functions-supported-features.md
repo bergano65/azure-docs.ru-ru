@@ -1,5 +1,5 @@
 ---
-title: Azure Application Insights — поддерживаемые функции функций Azure
+title: Анализ приложений Azure - Функции поддержки функций функций Azure
 description: Поддерживаемые функции Application Insights для службы "Функции Azure"
 ms.topic: reference
 author: TimothyMothra
@@ -7,23 +7,23 @@ ms.author: tilee
 ms.date: 4/23/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: cf0c97fd65f9966bf42fa22e2c8f92263952cb7a
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77655656"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
 Служба "Функции Azure" предлагает [встроенную интеграцию](../../azure-functions/functions-monitoring.md) с Application Insights, которая доступна через интерфейс ILogger. Ниже приведен список функций, поддерживаемых в настоящее время. Ознакомьтесь с руководством по службе "Функции Azure", чтобы [приступить к работе](../../azure-functions/functions-monitoring.md#enable-application-insights-integration).
 
-Дополнительные сведения о версиях среды выполнения функций см. [здесь](../../azure-functions/functions-versions.md).
+Более подробную информацию о версиях выполнения функций можно узнать [здесь.](../../azure-functions/functions-versions.md)
 
-Дополнительные сведения о совместимых версиях Application Insights см. в разделе [зависимости](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/).
+Для получения дополнительной информации о совместимых версиях Application Insights [см.](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/)
 
 ## <a name="supported-features"></a>Поддерживаемые функции
 
-| Функции Azure                       | V1                | V2 & v3   | 
+| Проверка                       | V1                | V2 & V3   | 
 |-----------------------------------    |---------------    |------------------ |
 | | | | 
 | **Автоматический сбор**        |                 |                   |               
@@ -46,7 +46,7 @@ ms.locfileid: "77655656"
 | &bull; Служебная шина                     |                   | Да               | 
 | &bull; EventHub                       |                   | Да               | 
 | | | | 
-| **Можно настроить**                      |                   |                   |           
+| **Настраиваемые**                      |                   |                   |           
 | &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Да                   | 
 
 
@@ -63,9 +63,9 @@ ms.locfileid: "77655656"
 
 Служба "Функции Azure" включает в своей конфигурации выборку по умолчанию. Дополнительные сведения см. в разделе [о настройке выборки](https://docs.microsoft.com/azure/azure-functions/functions-monitoring#configure-sampling).
 
-Если проект использует зависимость от пакета SDK Application Insights для ручного отслеживания телеметрии, то может наблюдаться странное поведение, если конфигурация выборки отличается от конфигурации выборки функций. 
+Если проект зависит от SDK Application Insights для ручного отслеживания телеметрии, возможно, вы обнаружите странное поведение, если конфигурация выборки отличается от конфигурации выборки функций. 
 
-Мы рекомендуем использовать ту же конфигурацию, что и функции. В **функциях версии 2**можно получить ту же конфигурацию с помощью внедрения зависимостей в конструкторе:
+Мы рекомендуем использовать ту же конфигурацию, что и функции. С **функциями v2**вы можете получить ту же конфигурацию с помощью инъекции зависимости в конструкторе:
 
 ```csharp
 using Microsoft.ApplicationInsights;

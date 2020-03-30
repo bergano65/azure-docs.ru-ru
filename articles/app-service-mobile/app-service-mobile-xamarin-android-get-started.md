@@ -1,16 +1,16 @@
 ---
-title: Начало работы с приложениями Xamarin. Android
-description: Следуйте указаниям этого руководства, чтобы приступить к работе с мобильными приложениями Azure для разработки Xamarin Android.
+title: Начало работы с приложениями Xamarin.Android
+description: Следуйте этому учебнику, чтобы начать использовать мобильные приложения Azure для разработки Xamarin Android.
 ms.assetid: 81649dd3-544f-40ff-b9b7-60c66d683e60
 ms.tgt_pltfrm: mobile-xamarin-android
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.openlocfilehash: b42205436c88f9075423bfcaf9e5a9fd931ee4f4
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77461374"
 ---
 # <a name="create-a-xamarinandroid-app"></a>Создание приложения Xamarin.Android
@@ -28,7 +28,7 @@ ms.locfileid: "77461374"
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с данным руководством вам потребуется:
 
-* Активная учетная запись Azure. Если у вас еще нет учетной записи, зарегистрируйтесь для использования пробной версии Azure и получите до 10 бесплатных мобильных приложений. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Активная учетная запись Azure. Если у вас еще нет учетной записи, зарегистрируйтесь для использования пробной версии Azure и получите до 10 бесплатных мобильных приложений. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/)
 * Visual Studio с Xamarin. Инструкции см. в статье об [установке и настройке Visual Studio и Xamarin](/visualstudio/cross-platform/setup-and-install).
 
 ## <a name="create-an-azure-mobile-app-backend"></a>Создание серверной части мобильного приложения Azure
@@ -38,25 +38,25 @@ ms.locfileid: "77461374"
 
 Итак, вы подготовили серверную часть мобильного Azure, которая может использоваться мобильными клиентскими приложениями. Теперь скачайте серверный проект со списком простых задач и опубликуйте его в Azure.
 
-## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка клиентского и серверного проекта
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание соединения базы данных и настройка проекта клиента и сервера
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="run-the-xamarinandroid-app"></a>Запуск приложения Xamarin. Android
-1. Откройте проект Xamarin. Android.
+## <a name="run-the-xamarinandroid-app"></a>Выполнить приложение Xamarin.Android
+1. Откройте проект Xamarin.Android.
 
-2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени приложения "test123" будет https://test123.azurewebsites.net.
+2. Перейдите на [портал Azure](https://portal.azure.com/) и перейдите к созданного вами мобильному приложению. На `Overview` лезвии ищите URL-адрес, который является общедоступной точкой зрения для вашего мобильного приложения. Пример - название сайта для моего приложения имя https://test123.azurewebsites.net"test123" будет .
 
-3. Откройте файл `ToDoActivity.cs` в этой папке — Xamarin. Android/ЗУМОАППНАМЕ/ToDoActivity. cs. Имя приложения — `ZUMOAPPNAME`.
+3. Откройте `ToDoActivity.cs` файл в этой папке - xamarin.android/UMOAPPNAME/ToDoActivity.cs. Имя приложения — `ZUMOAPPNAME`.
 
-4. В `ToDoActivity` классе Замените переменную `ZUMOAPPURL` на общую конечную точку выше.
+4. В `ToDoActivity` классе `ZUMOAPPURL` замените переменную общедоступной конечной точкой выше.
 
     `const string applicationURL = @"ZUMOAPPURL";`
 
-    преобразуется в
+    becomes
     
     `const string applicationURL = @"https://test123.azurewebsites.net";`
     
-5. Нажмите клавишу F5, чтобы развернуть и запустить приложение.
+5. Нажмите на ключ F5, чтобы развернуть и запустить приложение.
 
 6. В приложении введите содержательный текст, например *Работа с руководством*, и нажмите кнопку **Добавить**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "77461374"
    > [!NOTE]
    > Вы можете просмотреть код, который получает доступ к внутреннему серверу мобильного приложения для запроса и вставки данных, которые находятся в файле C# ToDoActivity.cs.
    
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 При проблемах со сборкой проекта запустите диспетчер пакетов NuGet и выполните обновление пакетов поддержки `Xamarin.Android`. Проекты быстрого запуска не всегда включают самые свежие версии.
 
 Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.

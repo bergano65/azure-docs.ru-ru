@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/29/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 8da4ce7801cc98f9ffb32eb7b506eaf1ccd877dd
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77562073"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
@@ -22,24 +22,24 @@ ms.locfileid: "77562073"
 
 В этой статье описаны следующие функции в примере приложения:
 
-* `E1_HelloSequence`: [функция Orchestrator](durable-functions-bindings.md#orchestration-trigger) , которая вызывает `E1_SayHello` несколько раз в последовательности. При этом сохраняются выходные данные каждого вызова `E1_SayHello` и записываются результаты.
-* `E1_SayHello`: [функция действия](durable-functions-bindings.md#activity-trigger) , которая добавляет строку в начало строки с "Hello".
-* `HttpStart`: функция, активируемая по протоколу HTTP, которая запускает экземпляр Orchestrator.
+* `E1_HelloSequence`: [Функция оркестратора,](durable-functions-bindings.md#orchestration-trigger) которая вызывает `E1_SayHello` несколько раз в последовательности. При этом сохраняются выходные данные каждого вызова `E1_SayHello` и записываются результаты.
+* `E1_SayHello`: [Функция активности,](durable-functions-bindings.md#activity-trigger) которая готовит строку с "Hello".
+* `HttpStart`: Функция срабатывания HTTP, которая запускает экземпляр оркестратора.
 
-### <a name="e1_hellosequence-orchestrator-function"></a>E1_HelloSequence Orchestrator, функция
+### <a name="e1_hellosequence-orchestrator-function"></a>E1_HelloSequence функция оркестратора
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=13-25)]
 
-Для всех функций оркестратора на C# должен использоваться параметр типа `DurableOrchestrationContext`, который присутствует в сборке `Microsoft.Azure.WebJobs.Extensions.DurableTask`. Этот объект контекста позволяет вызывать другие функции *действий* и передавать входные параметры с помощью метода `CallActivityAsync`.
+Для всех функций оркестратора на C# должен использоваться параметр типа `DurableOrchestrationContext`, который присутствует в сборке `Microsoft.Azure.WebJobs.Extensions.DurableTask`. Этот объект контекста *activity* позволяет вызывать другие функции `CallActivityAsync` активности и передавать параметры ввода с помощью своего метода.
 
 Этот код трижды последовательно вызывает `E1_SayHello` с разными значениями параметров. Значение, возвращаемое при каждом вызове, добавляется в список `outputs`, который возвращается в качестве результата функции.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 > [!NOTE]
-> Устойчивые функции JavaScript доступны только для среды выполнения функций 2,0.
+> Долговременные функции JavaScript доступны только для выполнения функций 2.0.
 
 #### <a name="functionjson"></a>function.json
 
@@ -50,41 +50,41 @@ ms.locfileid: "77562073"
 Самое важное здесь — это тип привязки `orchestrationTrigger`. Во всех функциях оркестратора должен использоваться такой тип триггера.
 
 > [!WARNING]
-> Чтобы не нарушать требование "без ввода и вывода", применяемое к функциям оркестратора, не используйте никакие привязки входных или выходных данных совместно с триггером привязки `orchestrationTrigger`.  Если вам нужны входные или выходные привязки, используйте их в контексте функций `activityTrigger`, которые вызываются оркестратором. Дополнительные сведения см. в статье [ограничения кода функции Orchestrator](durable-functions-code-constraints.md) .
+> Чтобы не нарушать требование "без ввода и вывода", применяемое к функциям оркестратора, не используйте никакие привязки входных или выходных данных совместно с триггером привязки `orchestrationTrigger`.  Если вам нужны входные или выходные привязки, используйте их в контексте функций `activityTrigger`, которые вызываются оркестратором. Для получения дополнительной [orchestrator function code constraints](durable-functions-code-constraints.md) информации см.
 
 #### <a name="indexjs"></a>Файл index.js
 
-Ниже приведена функция.
+Вот функция:
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/index.js)]
 
-Все функции оркестратора на JavaScript должны содержать модуль [`durable-functions`](https://www.npmjs.com/package/durable-functions). Это библиотека, позволяющая писать Устойчивые функции JavaScript. Есть три существенных различия между функциями оркестратора и другими функциями JavaScript:
+Все функции оркестровки JavaScript должны включать [ `durable-functions` модуль.](https://www.npmjs.com/package/durable-functions) Это библиотека, которая позволяет писать функции длительного в JavaScript. Есть три существенных различия между функциями оркестратора и другими функциями JavaScript:
 
-1. Функция является [функцией генератора.](https://docs.microsoft.com/scripting/javascript/advanced/iterators-and-generators-javascript)
-2. Эта функция упаковывается в вызов к методу `durable-functions` модуля `orchestrator` (в нашем примере это `df`).
+1. Функция генератора [функции.](https://docs.microsoft.com/scripting/javascript/advanced/iterators-and-generators-javascript).
+2. Эта функция упаковывается в вызов к методу `orchestrator` модуля `durable-functions` (в нашем примере это `df`).
 3. Функции должны быть синхронными. Так как метод orchestrator обрабатывает вызов аргумента context.done, функция должна возвращать значение.
 
-Объект `context` содержит объект контекста надежного оркестрации `df`, который позволяет вызывать другие функции *действий* и передавать входные параметры с помощью метода `callActivity`. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Возвращаемое значение каждого вызова добавляется в массив `outputs`, который возвращается в конце функции.
+Объект `context` содержит `df` прочный объект контекста оркестровки, который позволяет вызывать `callActivity` другие функции *активности* и передавать параметры ввода с помощью своего метода. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Значение возврата каждого вызова добавляется `outputs` в массив, который возвращается в конце функции.
 
 ---
 
-### <a name="e1_sayhello-activity-function"></a>Функция действия E1_SayHello
+### <a name="e1_sayhello-activity-function"></a>функция активности E1_SayHello
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=27-32)]
 
-Действия используют атрибут `ActivityTrigger`. Используйте предоставленные `IDurableActivityContext` для выполнения действий, связанных с действиями, таких как доступ к входному значению с помощью `GetInput<T>`.
+Действия используют `ActivityTrigger` атрибут. Используйте `IDurableActivityContext` предоставленное для выполнения действий, связанных `GetInput<T>`с действиями, такими как доступ к входной стоимости с использованием.
 
 Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
 
-Вместо привязки к `IDurableActivityContext`можно выполнить привязку непосредственно к типу, который передается в функцию действия. Например:
+Вместо `IDurableActivityContext`того, чтобы связываться с, вы можете связываться непосредственно с типом, который передается в функцию действия. Пример:
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=34-38)]
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-#### <a name="e1_sayhellofunctionjson"></a>E1_SayHello/функтион.жсон
+#### <a name="e1_sayhellofunctionjson"></a>E1_SayHello/function.json
 
 Файл *Function.json* для функции действия `E1_SayHello` будет таким же, как и для `E1_HelloSequence`, с одним исключением: в нем используется тип привязки `activityTrigger` вместо `orchestrationTrigger`.
 
@@ -95,7 +95,7 @@ ms.locfileid: "77562073"
 
 Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
 
-#### <a name="e1_sayhelloindexjs"></a>E1_SayHello/индекс.ЖС
+#### <a name="e1_sayhelloindexjs"></a>E1_SayHello/index.js
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/index.js)]
 
@@ -105,33 +105,33 @@ ms.locfileid: "77562073"
 
 ### <a name="httpstart-client-function"></a>Функция клиента HttpStart
 
-Вы можете запустить экземпляр функции Orchestrator с помощью клиентской функции. Для запуска экземпляров `E1_HelloSequence`будет использоваться функция, активируемая по HTTP `HttpStart`.
+Вы можете запустить экземпляр функции оркестратора с помощью клиентской функции. Вы будете `HttpStart` использовать функцию срабатывания HTTP для запуска `E1_HelloSequence`экземпляров.
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs?range=13-30)]
 
-Для взаимодействия с оркестрации функция должна включать входную привязку `DurableClient`. Для начала оркестрации используется клиент. Он также может помочь вернуть ответ HTTP, содержащий URL-адреса для проверки состояния нового оркестрации.
+Чтобы взаимодействовать с оркестрантами, `DurableClient` функция должна включать вхотовый переплет. Вы используете клиента для запуска оркестровки. Он также может помочь вам вернуть ответ HTTP, содержащий URL-адреса для проверки состояния новой оркестровки.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-#### <a name="httpstartfunctionjson"></a>HttpStart/Function. JSON
+#### <a name="httpstartfunctionjson"></a>HttpStart/function.json
 
 [!code-json[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json?highlight=16-20)]
 
-Для взаимодействия с оркестрации функция должна включать входную привязку `durableClient`.
+Чтобы взаимодействовать с оркестрантами, `durableClient` функция должна включать вхотовый переплет.
 
-#### <a name="httpstartindexjs"></a>HttpStart/index. js
+#### <a name="httpstartindexjs"></a>HttpStart/index.js
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
 
-Чтобы получить `DurableOrchestrationClient` объект, используйте `df.getClient`. Для начала оркестрации используется клиент. Он также может помочь вернуть ответ HTTP, содержащий URL-адреса для проверки состояния нового оркестрации.
+Используйте `df.getClient` для `DurableOrchestrationClient` получения объекта. Вы используете клиента для запуска оркестровки. Он также может помочь вам вернуть ответ HTTP, содержащий URL-адреса для проверки состояния новой оркестровки.
 
 ---
 
-## <a name="run-the-sample"></a>Запустить образец
+## <a name="run-the-sample"></a>Запуск примера
 
-Чтобы выполнить `E1_HelloSequence` оркестрации, отправьте следующий запрос HTTP POST в функцию `HttpStart`.
+Чтобы выполнить согласование, `E1_HelloSequence` отправьте следующий запрос HTTP POST на функцию. `HttpStart`
 
 ```
 POST http://{host}/orchestrators/E1_HelloSequence
@@ -174,9 +174,9 @@ Content-Type: application/json; charset=utf-8
 > [!NOTE]
 > Вы можете использовать аналогичную логику запуска и для других типов триггеров, например `queueTrigger`, `eventHubTrigger` или `timerTrigger`.
 
-Просмотрите журналы выполнения функции. Функция `E1_HelloSequence` запущена и выполнена несколько раз из-за поведения воспроизведения, описанного в разделе [надежность оркестрации](durable-functions-orchestrations.md#reliability) . С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
+Просмотрите журналы выполнения функции. Функция `E1_HelloSequence` запускалась и завершается несколько раз из-за поведения воспроизведения, описанного в теме [надежности оркестровки.](durable-functions-orchestrations.md#reliability) С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере показана простая оркестрация с цепочкой функций. В приведенном ниже примере кода показана реализация шаблона развертывания и объединения.
 

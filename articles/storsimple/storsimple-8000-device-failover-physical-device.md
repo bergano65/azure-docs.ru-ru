@@ -1,5 +1,5 @@
 ---
-title: Отработка отказа, аварийное восстановление на другое устройство StorSimple 8000
+title: Failover, аварийное восстановление другого устройства StorSimple 8000
 description: Информация о том, как выполнить отработку отказа физического устройства StorSimple серии 8000 на другое физическое устройство.
 services: storsimple
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 9e4e890ab5491e46ffe5ea0e1c168d168f9cc729
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77468615"
 ---
 # <a name="fail-over-to-a-storsimple-8000-series-physical-device"></a>Отработка отказа на физическое устройство StorSimple серии 8000
@@ -82,7 +82,7 @@ ms.locfileid: "77468615"
        ![Просмотр целевых контейнеров томов](./media/storsimple-8000-device-failover-disaster-recovery/failover-phy-dev16.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * После отработки отказа, возможно, нужно будет [отключить или удалить устройство StorSimple](storsimple-8000-deactivate-and-delete-device.md).
 * Сведения об использовании службы диспетчера устройств StorSimple см. в статье [Use the StorSimple Device Manager service to administer your StorSimple device](storsimple-8000-manager-service-administration.md) (Администрирование устройства StorSimple с помощью службы диспетчера устройств StorSimple).

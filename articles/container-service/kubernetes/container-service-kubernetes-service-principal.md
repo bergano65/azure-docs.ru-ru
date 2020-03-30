@@ -8,10 +8,10 @@ ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
 ms.openlocfilehash: 40d4dc898efe6b719ec5e1f1ec0471a9677d3c95
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79371126"
 ---
 # <a name="deprecated-set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров (НЕ РЕКОМЕНДУЕТСЯ)
@@ -21,7 +21,7 @@ ms.locfileid: "79371126"
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-[Субъект-служба Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) используется кластером Kubernetes в Службе контейнеров Azure для обеспечения взаимодействия с API-интерфейсами Azure. Субъект-служба используется для динамического управления ресурсами, например [определяемыми пользователем маршрутами](../../virtual-network/virtual-networks-udr-overview.md) и [Azure Load Balancer](../../load-balancer/load-balancer-overview.md) уровня 4.
+[Субъект-служба Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) используется кластером Kubernetes в Службе контейнеров Azure для обеспечения взаимодействия с API-интерфейсами Azure. Субъект-служба используется для динамического управления ресурсами, например [определяемыми пользователем маршрутами](../../virtual-network/virtual-networks-udr-overview.md) и [Azure Load Balancer уровня 4](../../load-balancer/load-balancer-overview.md).
 
 
 В этой статье показано, как настроить субъект-службу для кластера Kubernetes. Например, если вы установили и настроили [Azure CLI](/cli/azure/install-az-cli2), выполните команду [`az acs create`](/cli/azure/acs), чтобы одновременно создать кластер Kubernetes и субъект-службу.
@@ -33,9 +33,9 @@ ms.locfileid: "79371126"
 
 * **Область** — группа ресурсов.
 
-* **Роль** — участник.
+* **Роль**: Вкладчик
 
-* **Секрет клиента** — должен быть паролем. Сейчас субъект-службу нельзя использовать для проверки подлинности сертификата.
+* **Секрет клиента**: Должен быть пароль. Сейчас субъект-службу нельзя использовать для проверки подлинности сертификата.
 
 > [!IMPORTANT]
 > Чтобы создать субъект-службу, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Наличие этих разрешений можно [проверить на портале](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
@@ -61,7 +61,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscrip
 
 ![Создание субъекта-службы](./media/container-service-kubernetes-service-principal/service-principal-creds.png)
 
-Выделенные строки — это **идентификатор клиента** (`appId`) и **секрет клиента** (`password`), которые используются в качестве параметров субъекта-службы для развертывания кластера.
+Выделены **идентификатор клиента** `appId`()`password`и секрет **клиента** (), который вы используете в качестве основных параметров службы для развертывания кластера.
 
 
 ### <a name="specify-service-principal-when-creating-the-kubernetes-cluster"></a>Указание субъекта-службы во время создания кластера Kubernetes
@@ -78,7 +78,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscrip
 
 1. [Скачайте](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-acs-kubernetes/azuredeploy.parameters.json) файл параметров шаблона `azuredeploy.parameters.json` из репозитория GitHub.
 
-2. Чтобы указать субъект-службу, присвойте в файле значения параметрам `servicePrincipalClientId` и `servicePrincipalClientSecret`. (Также вам нужно присвоить собственные значения параметрам `dnsNamePrefix` и `sshRSAPublicKey`. Последний — открытый ключ SSH для доступа к кластеру.) Сохраните файл.
+2. Чтобы указать субъект-службу, присвойте в файле значения параметрам `servicePrincipalClientId` и `servicePrincipalClientSecret`. (Также вам нужно присвоить собственные значения параметрам `dnsNamePrefix` и `sshRSAPublicKey`. Последний является публичным ключом SSH для доступа к кластеру.) Сохранить файл.
 
     ![Передача параметров субъекта-службы](./media/container-service-kubernetes-service-principal/service-principal-params.png)
 
@@ -97,7 +97,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscrip
 
 ## <a name="option-2-generate-a-service-principal-when-creating-the-cluster-with-az-acs-create"></a>Вариант 2. Создание субъекта-службы при создании кластера с помощью `az acs create`
 
-При создании кластера Kubernetes с использованием команды [`az acs create`](/cli/azure/acs#az-acs-create) вы можете создать субъект-службу автоматически.
+Если вы [`az acs create`](/cli/azure/acs#az-acs-create) запускаете команду для создания кластера Kubernetes, у вас есть возможность автоматически генерировать основной сервис.
 
 Как и в случае с другими вариантами создания кластера Kubernetes, выполняя команду `az acs create`, вы можете указать параметры для существующего субъекта-службы. Но даже если вы не настроите эти параметры, Azure CLI создаст субъект-службу автоматически, который будет использоваться в Службе контейнеров. Субъект-служба создается открытым образом во время развертывания.
 
@@ -153,7 +153,7 @@ az ad app show --id <appId> --debug
 az ad sp reset-credentials --name <appId>
 ```
 
-Выходные данные.
+Выходные данные:
 
 ```json
 {
@@ -166,7 +166,7 @@ az ad sp reset-credentials --name <appId>
 
 Затем обновите учетные данные в файле `/etc/kubernetes/azure.json` на всех узлах кластера и перезапустите узлы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [начать работу с Kubernetes](container-service-kubernetes-walkthrough.md) в кластере службы контейнеров.
 

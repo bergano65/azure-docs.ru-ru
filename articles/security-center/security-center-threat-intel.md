@@ -1,5 +1,5 @@
 ---
-title: Аналитика угроз & схема оповещений системы безопасности — центр безопасности Azure
+title: Карта оповещения о безопасности & угроз - Центр безопасности Azure
 description: Узнайте, как использовать возможности анализа угроз и карту оповещений безопасности в центре безопасности Azure для выявления потенциальных угроз на виртуальных машинах и компьютерах.
 services: security-center
 documentationcenter: na
@@ -15,17 +15,17 @@ ms.workload: na
 ms.date: 09/3/2018
 ms.author: rkarlin
 ms.openlocfilehash: 39835d9d73adcbe474d3b70dfced313e18d1a3b3
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77603419"
 ---
 # <a name="security-alerts-map-and-threat-intelligence"></a>Карта оповещений системы безопасности и аналитика угроз
 Эта статья поможет вам использовать основанные на событиях безопасности карту оповещений безопасности и карту анализа угроз центра безопасности Azure для устранения неполадок, связанных с безопасностью.
 
 > [!NOTE]
-> Кнопка "схема *событий* безопасности" была снята 31 июля 2019. Дополнительные сведения и альтернативные службы см. в разделе [выбытие средств центра безопасности (июль 2019)](security-center-features-retirement-july2019.md#menu_securityeventsmap).
+> Кнопка карты *событий* безопасности была удалена 31 июля 2019 года. Для получения дополнительной информации и альтернативных услуг, см [Пенсионный Центр безопасности особенности (июль 2019)](security-center-features-retirement-july2019.md#menu_securityeventsmap).
 
 
 ## <a name="how-the-security-alerts-map-works"></a>Как работает схема оповещений безопасности
@@ -57,10 +57,10 @@ ms.locfileid: "77603419"
 
 
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 Из этой статьи вы узнали, как использовать анализ угроз в центре безопасности для выявления подозрительных действий. Дополнительные сведения о центре безопасности см. в следующих статьях:
 
-* [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Узнайте, как управлять оповещениями и реагировать на угрозы безопасности в центре безопасности.
+* [Управление и реагирование на оповещения безопасности в Центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts) Узнайте, как управлять оповещениями и реагировать на угрозы безопасности в центре безопасности.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
 * [Основные сведения об оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Дополнительные сведения о различных типах оповещений безопасности.
-* [Руководство по устранению неполадок в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide). Узнайте, как устранять типичные неполадки в центре безопасности.
+* [Руководство по устранению неполадок Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide). Узнайте, как устранять типичные неполадки в центре безопасности.

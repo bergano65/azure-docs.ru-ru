@@ -5,22 +5,22 @@ ms.topic: include
 ms.date: 11/27/2018
 ms.author: glenga
 ms.openlocfilehash: 85fbd7a65fe19e785488714411d671c8ee29ab40
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77562074"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-* [Выполните инструкции из краткого руководства](../articles/azure-functions/durable/durable-functions-create-first-csharp.md)
-* [Клонирование или скачивание проекта примеров из GitHub](https://github.com/Azure/azure-functions-durable-extension/tree/master/samples/precompiled)
+* [Заполните статью быстрого запуска](../articles/azure-functions/durable/durable-functions-create-first-csharp.md)
+* [Клонили или загружайте образцы проекта с GitHub](https://github.com/Azure/azure-functions-durable-extension/tree/master/samples/precompiled)
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-* [Выполните инструкции из краткого руководства](../articles/azure-functions/durable/quickstart-js-vscode.md)
-* [Клонирование или скачивание проекта примеров из GitHub](https://github.com/Azure/azure-functions-durable-extension/tree/master/samples/javascript)
+* [Заполните статью быстрого запуска](../articles/azure-functions/durable/quickstart-js-vscode.md)
+* [Клонили или загружайте образцы проекта с GitHub](https://github.com/Azure/azure-functions-durable-extension/tree/master/samples/javascript)
 
 ---

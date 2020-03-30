@@ -4,36 +4,36 @@ description: Мониторинг производительности веб-с
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.openlocfilehash: 63d632df61548d15a1e0a606cf2e198207faf341
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77670055"
 ---
-# <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
+# <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструмент веб-приложений во время выполнения с application Insights Codeless Attach
 
 > [!IMPORTANT]
-> Монитор состояния больше не рекомендуется использовать. Он был заменен агентом Azure Monitor Application Insights (прежнее название — монитор состояния v2). См. нашу документацию по [развертыванию локальных серверов](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) , [виртуальным машинам Azure и развертываниям масштабируемых наборов виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/app/azure-vm-vmss-apps).
+> Status Monitor больше не рекомендуется для использования. Он был заменен агентом Azure Monitor Application Insight (ранее названный Status Monitor v2). Ознакомьтесь с нашей документацией для [развертывания серверов](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) на месте или [виртуальной машины Azure и виртуальных машинных наборов.](https://docs.microsoft.com/azure/azure-monitor/app/azure-vm-vmss-apps)
 
 Действующее веб-приложение можно инструментировать с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода. Вам потребуется подписка [Microsoft Azure](https://azure.com) .
 
 Монитор состояний используется для инструментирования приложения .NET, размещенного в IIS (локально или на виртуальной машине).
 
-- Если приложение развернуто в ВИРТУАЛЬНОЙ машине Azure или в масштабируемом наборе виртуальных машин Azure, следуйте [этим инструкциям](azure-vm-vmss-apps.md).
+- Если ваше приложение развернуто в наборе виртуальных машин Azure vm или Azure, следуйте [этим инструкциям.](azure-vm-vmss-apps.md)
 - Если ваше приложение развернуто в службах приложений Azure, выполните [эти инструкции](azure-web-apps.md).
 - Если приложение развернуто на виртуальной машине Azure, вы можете включить мониторинг Application Insights на панели управления Azure.
-- (Существуют также отдельные статьи о инструментировании [облачных служб Azure](../../azure-monitor/app/cloudservices.md).)
+- (Есть также отдельные статьи о инструментарии [облачных служб Azure](../../azure-monitor/app/cloudservices.md).)
 
 
 ![Снимок экрана App Insights: графики, содержащие сведения о неудачных запросах, времени отклика сервера и запросов сервера](./media/monitor-performance-live-website-now/overview-graphs.png)
 
 Вы можете выбрать один из двух указанных ниже вариантов применения Application Insights для веб-приложений .NET.
 
-* **Время сборки:** [Добавьте пакет SDK для Application Insights][greenbrown] в код веб-приложения.
+* **Во время сборки.** [Добавьте пакет SDK для Application Insights][greenbrown] в код своего веб-приложения.
 * **Во время выполнения.** Инструментируйте веб-приложение на сервере, как описано ниже, без повторной сборки и развертывания кода.
 
 > [!NOTE]
-> При использовании инструментирования времени сборки инструментирование времени выполнения не будет работать, даже если оно включено.
+> Если вы используете приборы времени сборки, то аппаратура времени не будет работать даже если она включена.
 
 Ниже представлено общее сравнение предлагаемых вариантов.
 
@@ -43,10 +43,10 @@ ms.locfileid: "77670055"
 | [Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md) | |Да |
 | [Диагностика зависимостей](../../azure-monitor/app/asp-net-dependencies.md) |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
 | [Счетчики производительности системы](../../azure-monitor/app/performance-counters.md) |Да |Да |
-| [API для пользовательской телеметрии][api] |Да |Нет |
-| [Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md) |Да |Нет |
-| [Просмотр страницы и пользовательские данные](../../azure-monitor/app/javascript.md) |Да |Нет |
-| Требуется повторная сборка кода |Да | Нет |
+| [API для пользовательской телеметрии][api] |Да |нет |
+| [Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md) |Да |нет |
+| [Просмотр страницы и пользовательские данные](../../azure-monitor/app/javascript.md) |Да |нет |
+| Требуется повторная сборка кода |Да | нет |
 
 
 
@@ -58,7 +58,7 @@ ms.locfileid: "77670055"
 2. Если монитор состояний Application Insights еще не установлен, [скачайте и запустите установщик](#download).
 3. В мониторе состояний выберите установленное веб-приложение или веб-сайт, который требуется отслеживать. Выполните вход с использованием учетных данных Azure.
 
-    Настройте ресурс, в котором должны отображаться результаты на портале Application Insights. (Как правило, проще всего создать ресурс. Выберите существующий ресурс, если у вас уже есть [веб-тесты][availability] или [наблюдение за клиентами][client] для этого приложения.) 
+    Настройте ресурс, в котором должны отображаться результаты на портале Application Insights. (Как правило, проще всего создать ресурс. Выберите имеющийся ресурс, если у вас уже есть [веб-тесты][availability] или [наблюдение за клиентами][client] для этого приложения.) 
 
     ![Выберите приложение и ресурс.](./media/monitor-performance-live-website-now/appinsights-036-configAIC.png)
 
@@ -74,9 +74,9 @@ ms.locfileid: "77670055"
 
 ## <a name="when-you-re-publish-your-app-re-enable-application-insights"></a>При повторной публикации приложения необходимо повторно включить Application Insights
 
-Перед повторной публикацией приложения рассмотрите возможность [добавления Application Insights в код в Visual Studio][greenbrown]. Вы получите более подробные данные телеметрии и возможность написать пользовательскую телеметрию.
+Прежде чем повторно опубликовать приложение, необходимо [добавить Application Insights в код в Visual Studio][greenbrown]. Вы получите более подробные данные телеметрии и возможность написать пользовательскую телеметрию.
 
-Если вы хотите повторно опубликовать приложение, не добавляя Application Insights в код, имейте в виду, что в процессе развертывания библиотеки DLL и файл ApplicationInsights.config могут быть удалены из опубликованного веб-сайта. Поэтому необходимо учесть следующие моменты.
+Если вы хотите повторно опубликовать приложение, не добавляя Application Insights в код, имейте в виду, что в процессе развертывания библиотеки DLL и файл ApplicationInsights.config могут быть удалены из опубликованного веб-сайта. Таким образом:
 
 1. При редактировании файла ApplicationInsights.config сделайте его копию, прежде чем повторно опубликовать приложение.
 2. Повторно опубликуйте приложение.
@@ -84,7 +84,7 @@ ms.locfileid: "77670055"
 4. Восстановите изменения, внесенные в CONFIG-файл.
 
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshooting"></a><a name="troubleshoot"></a>Устранение неполадок
 
 ### <a name="confirm-a-valid-installation"></a>Подтверждение правильности установки 
 
@@ -128,7 +128,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 </dependentAssembly>
 ```
 
-Мы отслеживаем эту проблему [здесь](https://github.com/Microsoft/ApplicationInsights-Home/issues/301).
+Мы отслеживаем этот вопрос [здесь](https://github.com/Microsoft/ApplicationInsights-Home/issues/301).
 
 
 ### <a name="application-diagnostic-messages"></a>Диагностические сообщения приложения
@@ -144,7 +144,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 * Чтобы выводить подробные журналы, измените файл конфигурации `C:\Program Files\Microsoft Application Insights\Status Monitor\Microsoft.Diagnostics.Agent.StatusMonitor.exe.config` и добавьте `<add key="TraceLevel" value="All" />` для `appsettings`.
 Затем перезапустите монитор состояний.
 
-* Так как монитор состояния является приложением .NET, можно также включить [трассировку .NET, добавив соответствующие средства диагностики в файл конфигурации](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element). Например, в некоторых сценариях может быть полезно узнать, что происходит на уровне сети, [настроив трассировку сети](https://docs.microsoft.com/dotnet/framework/network-programming/how-to-configure-network-tracing) .
+* Поскольку Status Monitor — это приложение .NET, вы также можете включить [трассировку .net, добавив соответствующую диагностику в файл конфигурации.](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element) Например, в некоторых сценариях может быть полезно увидеть, что происходит на сетевом уровне путем [настройки отслеживания сети](https://docs.microsoft.com/dotnet/framework/network-programming/how-to-configure-network-tracing)
 
 ### <a name="insufficient-permissions"></a>Недостаточные разрешения
   
@@ -170,7 +170,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 ### <a name="additional-troubleshooting"></a>Дополнительные сведения об устранении неполадок
 
-* См. Дополнительные [сведения об устранении неполадок][qna].
+* Ознакомьтесь с дополнительными [сведениями об устранении неполадок][qna].
 
 ## <a name="system-requirements"></a>Требования к системе
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
@@ -181,7 +181,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 * Windows Server 2012 R2.
 * Windows Server 2016
 
-с последней версией SP и .NET Framework 4,5 (монитор состояния построена на основе этой версии платформы)
+с последними SP и .NET Framework 4.5 (Status Monitor построен на этой версии платформы)
 
 На клиентских компьютерах должна быть установлена ОС Windows 7, 8, 8.1 или 10 с платформой .NET Framework 4.5.
 
@@ -238,7 +238,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 `Update-ApplicationInsightsMonitoring -Name appName [-InstrumentationKey "0000000-0000-000-000-0000"`]
 
 * `-Name` — имя веб-приложения на сервере IIS.
-* `-InstrumentationKey` (необязательно.) Используйте этот параметр, чтобы изменить ресурс, в который отправляется телеметрии приложения.
+* `-InstrumentationKey`(Необязательно.) Используйте это, чтобы изменить ресурс, на который отправляется телеметрия приложения.
 * Этот командлет:
   * Обновляет именованное приложение до последней версии пакета SDK, загруженной на этот компьютер (работает, только если `SdkState==EnabledAfterDeployment`).
   * Если указан ключ инструментирования, именованное приложение повторно настраивается для отправки данных телеметрии в ресурс с этим ключом (работает, если `SdkState != Disabled`).
@@ -247,7 +247,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 * Загружает последний пакет SDK для Application Insights на сервер.
 
-## <a name="questions"></a>Вопросы о мониторе состояния
+## <a name="questions-about-status-monitor"></a><a name="questions"></a>Вопросы о мониторе состояния
 
 ### <a name="what-is-status-monitor"></a>Что такое монитор состояния?
 
@@ -275,7 +275,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 Сейчас монитор состояний устанавливает только пакет SDK Application Insights версии 2.3 или 2.4. 
 
-Пакет SDK для Application Insights версии 2,4 — это [Последняя версия для поддержки .net 4,0](https://github.com/microsoft/ApplicationInsights-dotnet/releases/tag/v2.5.0-beta1) , которая была [конца строки января 2016](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/). Таким образом, теперь монитор состояния можно использовать для инструментирования приложения .NET 4,0. 
+Приложение Исследования SDK Версия 2.4 является [последней версией для поддержки .NET 4.0,](https://github.com/microsoft/ApplicationInsights-dotnet/releases/tag/v2.5.0-beta1) который был [EOL января 2016](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/). Таким образом, в настоящее время Status Monitor может быть использован для инструмента .NET 4.0 приложения. 
 
 ### <a name="do-i-need-to-run-status-monitor-whenever-i-update-the-app"></a>Нужно ли запускать монитор состояния при каждом обновлении приложения?
 
@@ -287,7 +287,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 Для приложений, инструментированных во время выполнения с использованием монитора состояния:
 
-* HTTP-запросы
+* HTTP-запросы;
 * вызовы зависимостей;
 * Исключения
 * Счетчики производительности
@@ -300,29 +300,29 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 [Дополнительные сведения](https://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/)
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="download"></a>Скачивание монитора состояний
+## <a name="download-status-monitor"></a><a name="download"></a>Скачивание монитора состояний
 
-- Использование нового [модуля PowerShell](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview)
-- Скачайте и запустите [установщик монитора состояний](https://go.microsoft.com/fwlink/?LinkId=506648).
+- Используйте новый [модуль PowerShell](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview)
+- Скачать и запустить [установщик status Monitor](https://go.microsoft.com/fwlink/?LinkId=506648)
 - Как альтернативный вариант, запустите [установщик веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx) и найдите в нем монитор состояний Application Insights.
 
-## <a name="next"></a>Следующие шаги
+## <a name="next-steps"></a><a name="next"></a>Дальнейшие действия
 
 Просмотр телеметрии:
 
 * [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
-* [Поиск событий и журналов][diagnostic] для диагностики проблем
+* [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
 * [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
 
 Добавление данных телеметрии:
 
-* [Создайте веб-тесты][availability] , чтобы убедиться, что ваш сайт остается активным.
-* [Добавьте данные телеметрии веб-клиента][usage] , чтобы просмотреть исключения из кода веб-страницы и позволить вставлять вызовы трассировки.
-* [Добавьте в код пакет SDK для Application Insights][greenbrown] , чтобы можно было вставлять вызовы трассировки и журнала.
+* [Создайте веб-тесты][availability], чтобы убедиться, что ваш сайт продолжает работать.
+* [Добавьте телеметрию веб-клиента][usage], чтобы просматривать исключения в коде веб-страницы и вставлять вызовы трассировки.
+* [Добавьте пакет SDK для Application Insights в код][greenbrown], чтобы иметь возможность вставлять вызовы трассировки и журналов.
 
 <!--Link references-->
 

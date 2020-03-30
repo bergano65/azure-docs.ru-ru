@@ -12,12 +12,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/05/2018
-ms.openlocfilehash: f59b688b2ce41985d69e800d6d1f6c6d7ce5e0d4
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: cffa5677c5531f3887639c049998523d7d07586a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278332"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79455568"
 ---
 # <a name="check-resource-usage-against-limits"></a>Проверка использования ресурсов в соответствии с ограничениями
 
@@ -25,7 +25,7 @@ ms.locfileid: "76278332"
 
 ## <a name="azure-portal"></a>Портал Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войти на [портал](https://portal.azure.com)Azure .
 2. В верхнем левом углу окна портала Azure выберите **Все службы**.
 3. В поле **Фильтр** введите *Подписки*. Когда пункт **Подписки** появится в результатах поиска, выберите его.
 4. Выберите имя подписки, сведения об использовании которой вы хотите просмотреть.
@@ -46,9 +46,9 @@ ms.locfileid: "76278332"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы войти в Azure.
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы запустите PowerShell с компьютера, вам нужен модуль Azure PowerShell, версия 1.0.0 или позже. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы войти в Azure.
 
-Просмотрите сведения об использовании с ограничениями с помощью [Get-азнетворкусаже](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkusage). В следующем примере показано использование ресурсов по крайней мере с одним экземпляром, развернутым в восточной части США:
+Просматривайте свое использование по лимитам с [помощью Get-AzNetworkUsage](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkusage). В следующем примере показано использование ресурсов по крайней мере с одним экземпляром, развернутым в восточной части США:
 
 ```azurepowershell-interactive
 Get-AzNetworkUsage `
@@ -59,7 +59,7 @@ Get-AzNetworkUsage `
 
 Вы получите форматированные выходные данные, аналогичные приведенным ниже.
 
-```powershell
+```output
 ResourceType            CurrentValue Limit
 ------------            ------------ -----
 Virtual Networks                   1    50
@@ -69,7 +69,7 @@ Network Interfaces                 1 24000
 Network Watchers                   1     1
 ```
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этой статьи требуется Azure CLI 2.0.32 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). Если Azure CLI запущена локально, необходимо также выполнить командлет `az login`, чтобы войти в Azure.
 
@@ -83,7 +83,7 @@ az network list-usages \
 
 Вы получите форматированные выходные данные, аналогичные приведенным ниже.
 
-```azurecli
+```output
 Name                    CurrentValue Limit
 ------------            ------------ -----
 Virtual Networks                   1    50

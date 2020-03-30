@@ -1,21 +1,21 @@
 ---
-title: Модель данных телеметрии исключений Application Insights Azure
+title: Модель телеметрических данных azure Application Insights Исключение
 description: Модель данных Application Insights для телеметрии исключений
 ms.topic: conceptual
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: fa9bc4efd9549cbcb1d50439989c5dea79d9d60c
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77671942"
 ---
 # <a name="exception-telemetry-application-insights-data-model"></a>Телеметрия исключений: модель данных Application Insights
 
 В [Application Insights](../../azure-monitor/app/app-insights-overview.md) экземпляр исключения представляет обработанное или необработанное исключение, возникшее во время выполнения отслеживаемого приложения.
 
-## <a name="problem-id"></a>Код ошибки
+## <a name="problem-id"></a>Идентификатор проблемы
 
 Идентификатор места в коде, где возникло исключение. Используется для группирования исключений. Обычно это сочетание типа исключения и функции из стека вызовов.
 
@@ -37,7 +37,7 @@ ms.locfileid: "77671942"
 
 [!INCLUDE [application-insights-data-model-measurements](../../../includes/application-insights-data-model-measurements.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.
 - Вы можете научиться [диагностировать исключения в веб-приложениях с помощью Application Insights](../../azure-monitor/app/asp-net-exceptions.md).

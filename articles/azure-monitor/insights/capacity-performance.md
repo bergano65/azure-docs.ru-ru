@@ -1,26 +1,26 @@
 ---
-title: Емкость и производительность решение в Azure Monitor | Документация Майкрософт
-description: Используйте решение Емкость и производительность в мониторе, чтобы получить представление о емкости серверов Hyper-V.
+title: Решение для емкости и производительности в Azure Monitor Документы Майкрософт
+description: Используйте решение емкость и производительность в Monitor, чтобы помочь вам понять емкость ваших серверов Hyper-V.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
 ms.openlocfilehash: 75c65cf9f76e711a3aeed764de8b92ed619bad2f
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77666949"
 ---
-# <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование емкости виртуальных машин Hyper-V с помощью решения Емкость и производительность (не рекомендуется)
+# <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>План Hyper-V виртуальной емкости машины с мощностью и производительностью решения (унипраженные)
 
 ![Символ "Емкость и производительность"](./media/capacity-performance/capacity-solution.png)
 
 > [!NOTE]
 > Решение "Емкость и производительность" отмечено как нерекомендуемое.  Пользователи, установившие его, могут продолжать работать с ним, но решение "Емкость и производительность" нельзя добавить в новые рабочие области.
 
-Вы можете использовать решение Емкость и производительность в мониторе, чтобы получить представление о емкости серверов Hyper-V. Это решение предоставляет подробные сведения о среде Hyper-V, отображая данные о совокупном использовании (ресурсов ЦП, памяти и дисков) узлов и виртуальных машин, запущенных на этих узлах Hyper-V. Кроме того, оно собирает метрики ЦП, памяти и дисков на всех узлах и их виртуальных машинах.
+Вы можете использовать решение емкость и производительность в Monitor, чтобы помочь вам понять емкость ваших серверов Hyper-V. Это решение предоставляет подробные сведения о среде Hyper-V, отображая данные о совокупном использовании (ресурсов ЦП, памяти и дисков) узлов и виртуальных машин, запущенных на этих узлах Hyper-V. Кроме того, оно собирает метрики ЦП, памяти и дисков на всех узлах и их виртуальных машинах.
 
 Это решение:
 
@@ -42,16 +42,16 @@ ms.locfileid: "77666949"
 | Подключенный источник | Поддержка | Описание |
 |---|---|---|
 | [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
-| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет    | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
+| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | нет    | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
-| [Учетная запись хранения Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
+| [Учетная запись хранения Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Агенты Windows или Operations Manager должны быть установлены на узлах Hyper-V под управлением Windows Server 2012 (или более поздней версии), а не на виртуальных машинах.
 
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 Чтобы добавить решение "Емкость и производительность" в рабочую область, сделайте следующее:
 
@@ -128,5 +128,5 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 | Показатель общей задержки на всех общих томах кластера | Perf &#124; where ObjectName == "Capacity and Performance" and (CounterName == "CSV Read Latency" or CounterName == "CSV Write Latency") &#124; summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 1h), CounterName, InstanceName |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.

@@ -9,10 +9,10 @@ ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: 4f5d57bab51d537b64ce4b800737219663c3d7a7
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77198792"
 ---
 # <a name="run-opc-publisher"></a>Выполнение издателя OPC
@@ -369,7 +369,7 @@ docker run mcr.microsoft.com/iotedge/opc-publisher <applicationname> [<IoT Hubco
 Чтобы добавить издателя OPC в виде модуля в развертывание IoT Edge, перейдите к параметрам Центра Интернета вещей на портале Azure и выполните следующие действия:
 
 1. Откройте **IoT Edge**, создайте или выберите устройство IoT Edge.
-1. Щелкните **Set Modules** (Настроить модули).
+1. Выберите **набор модулей.**
 1. В разделе **Модули развертывания** выберите **Добавить**, а затем **Модуль IoT Edge**.
 1. В поле **Имя** введите **publisher** (издатель).
 1. В поле **URI образа** введите `mcr.microsoft.com/iotedge/opc-publisher:<tag>`.
@@ -710,6 +710,6 @@ current working set in MB: 90
 
 Он реализует несколько тегов, которые генерируют случайные данные и теги с аномальными результатами. Этот пример можно расширить, если потребуется имитировать значения других тегов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как запускать издателя OPC, мы рекомендуем перейти к изучению [двойника OPC](overview-opc-twin.md) и [хранилища OPC](overview-opc-vault.md).

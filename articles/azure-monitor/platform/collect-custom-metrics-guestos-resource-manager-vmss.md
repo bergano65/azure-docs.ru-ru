@@ -1,5 +1,5 @@
 ---
-title: Получение метрик масштабируемого набора Windows в Azure Monitor с помощью шаблона
+title: Сбор наборов данных шкалы Windows в Azure Monitor с помощью шаблона
 description: Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для масштабируемого набора виртуальных машин Windows
 author: anirudhcavale
 services: azure-monitor
@@ -8,10 +8,10 @@ ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: 24f83e4f6285d045e67bdaef431ebcff2345ef84
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77663902"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
@@ -26,19 +26,19 @@ ms.locfileid: "77663902"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Ваша подписка должна быть зарегистрирована в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Требуется установить [Azure PowerShell](/powershell/azure) или использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). 
 
-- Ресурс виртуальной машины должен находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions).
+- Ваш ресурс VM должен находиться в [регионе, поддерживающем пользовательские метрики.](metrics-custom-overview.md#supported-regions)
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Настройка Azure Monitor в качестве приемника данных 
-Расширение системы диагностики Azure использует функцию **приемников данных** для маршрутизации метрик и журналов в различные расположения. Ниже показано, как с помощью шаблона Resource Manager и PowerShell развернуть виртуальную машину, используя новый приемник данных Azure Monitor. 
+Расширение Azure Diagnostics использует функцию, называемую **раковинами данных,** для маршрутизаторов и журналов в разные места. Ниже показано, как с помощью шаблона Resource Manager и PowerShell развернуть виртуальную машину, используя новый приемник данных Azure Monitor. 
 
 ## <a name="author-a-resource-manager-template"></a>Создание шаблона Resource Manager 
-В этом примере можно использовать общедоступный [пример шаблона](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-autoscale).  
+В этом примере можно использовать общедоступный [шаблон образца:](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-autoscale)  
 
-- **Azuredeploy.json** — это предварительно настроенный шаблон Resource Manager для развертывания масштабируемого набора виртуальных машин.
+- **Azuredeploy.json** — это преднастроенный шаблон диспетчера ресурсов для развертывания виртуального набора масштабов машин.
 
 - **Azuredeploy.Parameters.json** — это файл параметров, в котором хранятся сведения, такие как имя пользователя и пароль, которые вы хотите задать для виртуальной машины. Во время развертывания шаблона Resource Manager используются параметры, заданные в этом файле. 
 
@@ -65,7 +65,7 @@ ms.locfileid: "77663902"
 "storageAccountName": "[concat('storage', uniqueString(resourceGroup().id))]", 
 ```
  
-Найдите определение масштабируемого набора виртуальных машин в разделе ресурсов и добавьте в конфигурацию раздел **identity**. Это позволит назначить набору системное удостоверение в Azure. Это действие также гарантирует, что виртуальные машины в масштабируемом наборе могут отправлять гостевые метрики о себе в Azure Monitor.  
+Найдите определение набора виртуальной шкалы машины в разделе ресурсов и добавьте раздел **идентификации** в конфигурацию. Это позволит назначить набору системное удостоверение в Azure. Это действие также гарантирует, что виртуальные машины в масштабируемом наборе могут отправлять гостевые метрики о себе в Azure Monitor.  
 
 ```json
     { 
@@ -197,7 +197,7 @@ ms.locfileid: "77663902"
 ```
 
 
-Добавьте **dependsOn** для учетной записи хранения, чтобы обеспечить ее создание в правильном порядке. 
+Добавьте **в зависимости** от учетной записи хранилища, чтобы убедиться, что она создана в правильном порядке: 
 
 ```json
 "dependsOn": [ 
@@ -232,7 +232,7 @@ ms.locfileid: "77663902"
 ## <a name="deploy-the-resource-manager-template"></a>Развертывание шаблона Resource Manager 
 
 > [!NOTE]  
-> Необходимо запустить расширение системы диагностики Azure 1.5 или более поздней версии, **а также** задать для свойства **autoUpgradeMinorVersion** значение **true** в шаблоне Resource Manager. Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон. 
+> Вы должны запустить версию расширения Azure Diagnostics 1.5 или выше **и** иметь **autoUpgradeMinorVersion:** свойство, установленное в шаблоне менеджера ресурсов. **true** Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон. 
 
 
 Чтобы развернуть шаблон Resource Manager, используйте Azure PowerShell.  
@@ -283,7 +283,7 @@ ms.locfileid: "77663902"
 
 1. В раскрывающемся меню ресурсов выберите масштабируемый набор виртуальных машин, который вы только что создали.  
 
-1. В раскрывающемся меню пространств имен выберите **azure.vm.windows.guest**. 
+1. В меню выпадающих зон имен выберите **azure.vm.windows.guest**. 
 
 1. В раскрывающемся меню метрик выберите **Memory\%Committed Bytes in Use** (Процент используемой выделенной памяти).  
 
@@ -291,7 +291,7 @@ ms.locfileid: "77663902"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 
 

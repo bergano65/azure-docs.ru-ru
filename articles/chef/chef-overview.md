@@ -5,10 +5,10 @@ keywords: azure, chef, devops, virtual machines, overview, automate
 ms.date: 02/22/2020
 ms.topic: article
 ms.openlocfilehash: c22faa69bf8f42111d328a9c156dc1a2432731b2
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77586348"
 ---
 # <a name="using-chef-with-azure"></a>Использование Chef в Azure
@@ -17,13 +17,13 @@ ms.locfileid: "77586348"
 В этой статье описываются преимущества использования Chef при управлении инфраструктурой Azure.
 
 ## <a name="chef-extension-on-azure"></a>Расширение Azure для Chef
-Подготавливает виртуальную машину с Chef Client, работающей в качестве фоновой службы с [расширением Chef](https://docs.microsoft.com/azure/chef/chef-extension-portal) на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040). После этого эти виртуальные машины готовы к управлению сервером Chef.
+Предоставить виртуальную машину с шеф-поваром клиента работает в качестве фонового сервиса с [шеф-повара расширение](https://docs.microsoft.com/azure/chef/chef-extension-portal) на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040). После этого эти виртуальные машины готовы к управлению сервером Chef.
 
 ## <a name="chef-cloud-shell"></a>Cloud Shell Chef
 Используйте рабочую станцию Chef непосредственно в Azure Cloud Shell! Запустите все ваши 	служебные программы Chef и InSpec справа от Cloud Shell. Можно использовать следующие команды Chef:
 
-* [chef](https://docs.chef.io/ctl_chef.html)
-* [kitchen](https://docs.chef.io/ctl_kitchen.html)
+* [Повар](https://docs.chef.io/ctl_chef.html)
+* [Кухня](https://docs.chef.io/ctl_kitchen.html)
 * [inspec](https://www.inspec.io/docs/reference/cli/)
 * [knife](https://docs.chef.io/knife.html)
 * [cookstyle](https://docs.chef.io/cookstyle.html)

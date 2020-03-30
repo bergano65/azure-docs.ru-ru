@@ -7,10 +7,10 @@ author: abshamsft
 ms.author: absha
 ms.date: 11/27/2018
 ms.openlocfilehash: 6ac610d7dcf9849b6b439741957684867b9d01aa
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77660756"
 ---
 # <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
@@ -23,8 +23,8 @@ ms.locfileid: "77660756"
 
 ![Мониторинг ExpressRoute](media/network-performance-monitor-expressroute/expressroute-intro.png)
 
-## <a name="configuration"></a>Конфигурация 
-Чтобы открыть конфигурацию Монитора производительности сети, откройте решение [Монитор производительности сети](network-performance-monitor.md) и нажмите кнопку **Настройка**.
+## <a name="configuration"></a>Параметр Configuration 
+Чтобы открыть конфигурацию для сетевого монитора производительности, откройте [решение Network Performance Monitor](network-performance-monitor.md) и **выберите настройку.**
 
 ### <a name="configure-network-security-group-rules"></a>Настройка правил группы безопасности сети 
 Для серверов в Azure, используемых для мониторинга посредством Монитора производительности сети, необходимо настроить правила группы безопасности сети (NSG), чтобы разрешить передачу TCP-трафика через порт, используемый Монитором производительности сети для искусственных транзакций. Используемый порт по умолчанию — 8084. Эта конфигурация позволяет агенту Log Analytics, установленному на виртуальных машинах Azure, взаимодействовать с локальным агентом мониторинга. 
@@ -139,5 +139,5 @@ ms.locfileid: "77660756"
 
  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

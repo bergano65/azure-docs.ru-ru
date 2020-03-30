@@ -9,10 +9,10 @@ ms.date: 02/18/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 26e76731f663ac9038bc87182d52c4bd245f1b6e
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77471714"
 ---
 ## <a name="limitations"></a>Ограничения
@@ -25,12 +25,12 @@ ms.locfileid: "77471714"
 
 ## <a name="deploy-an-azure-shared-disk"></a>Развертывание общего диска Azure
 
-Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте новое свойство `maxShares` и определите значение `>1`. Это сделает диск общим для нескольких виртуальных машин.
+Для развертывания управляемого диска с включенным функцией общего диска используйте новое свойство `maxShares` и определите значение. `>1` Это делает диск пригодным для общего обмена на нескольких ВМ.
 
 > [!IMPORTANT]
-> Значение `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
+> Значение `maxShares` может быть установлено или изменено только в том случае, если диск не установлен со всех VM. Просмотрите [размеры диска](#disk-sizes) для `maxShares`допустимых значений для.
 
-Перед использованием следующего шаблона замените `[parameters('dataDiskName')]`, `[resourceGroup().location]`, `[parameters('dataDiskSizeGB')]`и `[parameters('maxShares')]` собственными значениями.
+Перед использованием следующего `[parameters('dataDiskName')]` `[resourceGroup().location]`шаблона, заменить , , `[parameters('dataDiskSizeGB')]`и `[parameters('maxShares')]` с вашими собственными значениями.
 
 ```json
 { 
@@ -71,12 +71,12 @@ ms.locfileid: "77471714"
 }
 ```
 
-### <a name="using-azure-shared-disks-with-your-vms"></a>Использование общих дисков Azure с виртуальными машинами
+### <a name="using-azure-shared-disks-with-your-vms"></a>Использование общих дисков Azure с вашими vMs
 
-После развертывания общего диска с `maxShares>1`можно подключить диск к одной или нескольким виртуальным машинам.
+После развертывания общего диска `maxShares>1`можно смонтировать диск на один или несколько ваших ВМ.
 
 > [!IMPORTANT]
-> Все виртуальные машины, совместно использующие диск, должны быть развернуты в одной [группе размещения](../articles/virtual-machines/windows/proximity-placement-groups.md).
+> Все вмхоза, совместно наделяющие диск, должны быть развернуты в одной и той же [группе размещения.](../articles/virtual-machines/windows/proximity-placement-groups.md)
 
 ```azurepowershell-interactive
 
@@ -98,11 +98,11 @@ $vm = Add-AzVMDataDisk -VM $vm -Name "mySharedDisk" -CreateOption Attach -Manage
 update-AzVm -VM $vm -ResourceGroupName $resourceGroup
 ```
 
-## <a name="supported-scsi-pr-commands"></a>Поддерживаемые команды для запросов на SCSI
+## <a name="supported-scsi-pr-commands"></a>Поддерживаемые pr-команды SCSI
 
-После подключения общего диска к виртуальным машинам в кластере можно установить кворум и выполнить чтение и запись на диск с помощью SCSI-запроса. При использовании общих дисков Azure доступны следующие команды.
+После установки общего диска на вгруппа можно установить кворум и прочитать/написать на диск с помощью SCSI PR. Следующие PR-команды доступны при использовании общих дисков Azure:
 
-Чтобы взаимодействовать с диском, начните со списка "постоянное — резервирование — действие":
+Чтобы взаимодействовать с диском, начните со списка постоянных резерваций действий:
 
 ```
 PR_REGISTER_KEY 
@@ -120,7 +120,7 @@ PR_CLEAR_RESERVATION
 PR_RELEASE_RESERVATION 
 ```
 
-При использовании PR_RESERVE, PR_PREEMPT_RESERVATION или PR_RELEASE_RESERVATION укажите один из следующих типов постоянного резервирования:
+При использовании PR_RESERVE, PR_PREEMPT_RESERVATION или PR_RELEASE_RESERVATION укажите один из следующих устойчивых типов бронирования:
 
 ```
 PR_NONE 
@@ -138,9 +138,9 @@ PR_WRITE_EXCLUSIVE_ALL_REGISTRANTS
 PR_EXCLUSIVE_ACCESS_ALL_REGISTRANTS 
 ```
 
-Кроме того, при использовании PR_RESERVE, PR_REGISTER_AND_IGNORE, PR_REGISTER_KEY, PR_PREEMPT_RESERVATION, PR_CLEAR_RESERVATION или PR_RELEASE-RESERVATION необходимо указать постоянный ключ-резервирование.
+При использовании PR_RESERVE, PR_REGISTER_AND_IGNORE, PR_REGISTER_KEY, PR_PREEMPT_RESERVATION, PR_CLEAR_RESERVATION или PR_RELEASE-RESERVATION необходимо обеспечить стойкий ключ к бронированию.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы заинтересованы в попытке использовать общие диски, [Зарегистрируйтесь для использования предварительной версии](https://aka.ms/AzureSharedDiskPreviewSignUp).
+Если вы заинтересованы в попытке общих дисков, [подпишитесь на наш предварительный просмотр.](https://aka.ms/AzureSharedDiskPreviewSignUp)

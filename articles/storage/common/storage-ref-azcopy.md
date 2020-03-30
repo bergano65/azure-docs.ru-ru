@@ -1,6 +1,6 @@
 ---
-title: azcopy | Документация Майкрософт
-description: В этой статье содержатся справочные сведения о команде azcopy.
+title: азкопия Документы Майкрософт
+description: В этой статье содержится справочная информация для команды azcopy.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -9,53 +9,53 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 5da3a2e5d003a191bff66af6599cae4d34ab60c6
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74038089"
 ---
 # <a name="azcopy"></a>azcopy
 
-AzCopy — это программа командной строки, которая перемещает данные в службу хранилища Azure и из нее.
+AzCopy — это инструмент командной строки, который перемещает данные в и из хранилища Azure.
 
 ## <a name="synopsis"></a>Краткий обзор
 
 Общий формат команд: `azcopy [command] [arguments] --[flag-name]=[flag-value]`.
 
-Чтобы сообщить о проблемах или узнать больше об этом средстве, см. [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy).
+Чтобы сообщить о проблемах или [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy)узнать больше об этом инструменте, см.
 
-## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
+## <a name="related-conceptual-articles"></a>Похожие концептуальные статьи
 
 - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
-- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
+- [Передача данных с помощью хранилища AzCopy и Blob](storage-use-azcopy-blobs.md)
 - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="options"></a>Параметры
 
-**--Cap-Мбит/с UInt32**   Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
+**--кап-мбитп uint32**   Ограничивает скорость передачи, в мегабитах в секунду. Пропускная часть момент за моментом может незначительно отличаться от крышки. Если эта опция установлена до нуля или опущена, пропускная часть не ограничена.
 
-**-h,--Справка** Справка по azcopy
+**-h, --помощь** Справка по азкопии
       
-**--Output-Type**  Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
+**--выходтипа**  Формат вывода команды. Выбор включает в себя: текст, Json. Значение по умолчанию — это «текст». (по умолчанию "текст")
 
 ## <a name="see-also"></a>См. также
 
 - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
-- [azcopy Bench](storage-ref-azcopy-bench.md)
-- [копирование azcopy](storage-ref-azcopy-copy.md)
+- [azcopy bench](storage-ref-azcopy-bench.md)
+- [azcopy copy](storage-ref-azcopy-copy.md)
 - [azcopy doc](storage-ref-azcopy-doc.md)
 - [azcopy env](storage-ref-azcopy-env.md)
-- [задания azcopy](storage-ref-azcopy-jobs.md)
-- [Очистка заданий azcopy](storage-ref-azcopy-jobs-clean.md)
-- [список заданий azcopy](storage-ref-azcopy-jobs-list.md)
-- [Удаление заданий azcopy](storage-ref-azcopy-jobs-remove.md)
-- [возобновление заданий azcopy](storage-ref-azcopy-jobs-resume.md)
-- [отображаются задания azcopy](storage-ref-azcopy-jobs-show.md)
-- [Список azcopy](storage-ref-azcopy-list.md)
-- [имя входа azcopy](storage-ref-azcopy-login.md)
-- [azcopy Logout](storage-ref-azcopy-logout.md)
-- [azcopy](storage-ref-azcopy-make.md)
-- [azcopy удалить](storage-ref-azcopy-remove.md)
-- [Синхронизация azcopy](storage-ref-azcopy-sync.md)
+- [azcopy jobs](storage-ref-azcopy-jobs.md)
+- [azcopy jobs clean](storage-ref-azcopy-jobs-clean.md)
+- [azcopy jobs list](storage-ref-azcopy-jobs-list.md)
+- [azcopy jobs remove](storage-ref-azcopy-jobs-remove.md)
+- [azcopy jobs resume](storage-ref-azcopy-jobs-resume.md)
+- [azcopy jobs show](storage-ref-azcopy-jobs-show.md)
+- [azcopy list](storage-ref-azcopy-list.md)
+- [azcopy login](storage-ref-azcopy-login.md)
+- [azcopy logout](storage-ref-azcopy-logout.md)
+- [azcopy make](storage-ref-azcopy-make.md)
+- [azcopy remove](storage-ref-azcopy-remove.md)
+- [azcopy sync](storage-ref-azcopy-sync.md)

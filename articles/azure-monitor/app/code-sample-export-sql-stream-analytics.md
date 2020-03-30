@@ -4,14 +4,14 @@ description: Осуществляйте непрерывный экспорт д
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.openlocfilehash: 3ef0420cdab64f11b699fd4031ed2b0134f18609
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77663697"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
-В этой статье показано, как переместить данные телеметрии из [azure Application Insights][start] в базу данных SQL Azure с помощью [непрерывного экспорта][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
+В этой статье показано, как переместить данные телеметрии из [Azure Application Insights][start] в базу данных SQL Azure, используя [непрерывный экспорт][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
 
 Непрерывный экспорт позволяет переместить данные телеметрии в службу хранилища Azure в формате JSON. Мы выполним анализ объектов JSON, используя Azure Stream Analytics, и создадим строки в таблице базы данных.
 
@@ -73,7 +73,7 @@ ms.locfileid: "77663697"
 События записываются в JSON-файлы больших двоичных объектов. Каждый файл может содержать одно или несколько событий. Поэтому нам нужна возможность считывать данные событий и отфильтровывать необходимые поля. С данными можно выполнять любые действия, но сейчас мы будем использовать Stream Analytics для перемещения данных в базу данных SQL. Это облегчит выполнение многих любопытных запросов.
 
 ## <a name="create-an-azure-sql-database"></a>Создание базы данных SQL Azure
-После повторного запуска из подписки в [портал Azure][portal]создайте базу данных (и новый сервер, если у вас ее еще нет), в которую будут записываться данные.
+В своей подписке на [портале Azure][portal] создайте базу данных (и сервер, если у вас его еще нет), куда будут записываться данные.
 
 !["Создать", "Данные", SQL.](./media/code-sample-export-sql-stream-analytics/090-sql.png)
 
@@ -153,13 +153,13 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 
 #### <a name="set-path-prefix-pattern"></a>Установка шаблона префикса пути
 
-**Задайте в поле "Формат даты" значение в формате ГГГГ-ММ-ДД (с дефисами).**
+**Обязательно установите формат Даты для YYYY-MM-DD (с тире).**
 
 Шаблон префикса пути указывает, как Stream Analytics находит входные файлы в хранилище. Вам необходимо настроить это поле в соответствии с тем, как функция непрерывного экспорта сохраняет данные. Задайте следующее значение:
 
     webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
-В данном примере:
+В этом примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**). 
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 

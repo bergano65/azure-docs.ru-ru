@@ -14,10 +14,10 @@ ms.date: 09/10/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 50a6b4f15a7de02533e3bb51e5659f7b4c078b40
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77617293"
 ---
 # <a name="how-to-monitor-sap-hana-large-instances-on-azure"></a>Мониторинг SAP HANA на крупных экземплярах Azure
@@ -26,8 +26,8 @@ SAP HANA на крупных экземплярах Azure ничем не отл
 
 - ЦП
 - Память
-- Пропускная способность сети
-- Место на диске
+- пропускная способность сети;
+- Дисковое пространство
 
 В случае с виртуальными машинами Azure необходимо выяснить, достаточно ли перечисленных выше классов ресурсов или они будут исчерпаны. Ниже представлены подробные сведения о каждом классе.
 

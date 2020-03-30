@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
 ms.openlocfilehash: d91595a863901fcc420611ac644c7856e74320dd
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77655129"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
@@ -70,7 +70,7 @@ availabilityResults
 
 ## <a name="application-insights-scheduled-digest-report"></a>Отчет дайджеста планирования Application Insights
 
-1. На портале Azure последовательно выберите **Создать ресурс** > **Вычисление** > **Приложение-функция**.
+1. На портале Azure выберите **приложение «Создайте функции** > **вычислений** > **Function App**ресурсов».
 
    ![Снимок экрана "Создание приложения-функции ресурсов Azure"](./media/automate-custom-reports/function-app-01.png)
 
@@ -84,10 +84,10 @@ availabilityResults
 
    ![Снимок экрана "Создание функции"](./media/automate-custom-reports/function-app-03.png)
 
-5. Выберите **_Шаблон дайджеста планирования Application Insights_** .
+5. Выберите **_Шаблон дайджеста планирования Application Insights_**.
 
      > [!NOTE]
-     > По умолчанию приложения функций создаются с помощью среды выполнения версии 2. x. Необходимо [выбрать среду выполнения функций Azure версии](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) **1. x** , чтобы использовать шаблон планового дайджеста Application Insights.  снимок экрана времени выполнения ![](./../../../includes/media/functions-view-update-version-portal/function-app-view-version.png)
+     > По умолчанию функциональные приложения создаются с версией выполнения 2.x. Необходимо [настроить таргетинг на версию ожидания функций Azure](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) **1.x,** чтобы использовать шаблон дайджеста Application Insights.  ![Скриншот выполнения](./../../../includes/media/functions-view-update-version-portal/function-app-view-version.png)
 
 
 
@@ -97,7 +97,7 @@ availabilityResults
 
    ![Снимок экрана "Параметры функции"](./media/automate-custom-reports/function-app-05.png)
 
-7. Выберите **Приложение-функция** > **Функции платформы** > **Параметры приложения**.
+7. Выберите**платформу** >  **функциональных приложений** > с**настройками приложений.**
 
     ![Снимок экрана "Параметры приложения-функции Azure"](./media/automate-custom-reports/function-app-07.png)
 
@@ -114,7 +114,7 @@ availabilityResults
      > [!NOTE]
      > Если у вас нет учетной записи SendGrid, вы можете ее создать. Документация относительно функций Azure SendGrid находится [здесь](https://docs.microsoft.com/azure/azure-functions/functions-bindings-sendgrid). В конце статьи приведено сокращенное объяснение о том, как установить SendGrid и создать ключ API. 
 
-9. Выберите **Интегрировать** и в разделе "Выходные данные" щелкните **SendGrid ($return)** .
+9. Выберите **Интегрировать** и в разделе "Выходные данные" щелкните **SendGrid ($return)**.
 
      ![Снимок экрана "Выходные данные"](./media/automate-custom-reports/function-app-09.png)
 
@@ -142,11 +142,11 @@ availabilityResults
 
      ![Снимок экрана "API-ключ"](./media/automate-custom-reports/function-app-14.png)
 
-3. Это действие запустит сайт SendGrid. Выберите **Параметры** > **Ключи API**.
+3. Это действие запустит сайт SendGrid. Выберите**параметры API Keys.** **Settings** > 
 
      ![Снимок экрана "Создание и просмотр приложения Ключ API"](./media/automate-custom-reports/function-app-15.png)
 
-4. Создайте ключ API > выберите **Create & View** (Создать и просмотреть) (Ознакомьтесь с документацией SendGrid об ограниченном доступе, чтобы определить, какой уровень разрешений подходит для вашего ключа API. Здесь можно выбрать полный доступ, только в качестве примера).
+4. Создайте ключ API > выберите **Create & View **(Создать и просмотреть) (Ознакомьтесь с документацией SendGrid об ограниченном доступе, чтобы определить, какой уровень разрешений подходит для вашего ключа API. Здесь можно выбрать полный доступ, только в качестве примера).
 
    ![Снимок экрана "Полный доступ"](./media/automate-custom-reports/function-app-16.png)
 
@@ -154,7 +154,7 @@ availabilityResults
 
    ![Снимок экрана "Копирование ключа API"](./media/automate-custom-reports/function-app-17.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 * Дополнительные сведения о [программных запросах к данным Application Insights](https://dev.applicationinsights.io/).

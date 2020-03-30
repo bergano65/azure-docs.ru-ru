@@ -5,38 +5,38 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: 629de079f7cc7d95d10f8ff951a47b8b8fc62dad
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77474110"
 ---
-Ошибки, возникающие в функциях Azure, могут поступать из любого из следующих источников:
+Ошибки, поднятые в функциях Azure, могут исходить от любого из следующих истоков:
 
-- Использование встроенных [триггеров и привязок](..\articles\azure-functions\functions-triggers-bindings.md) функций Azure
-- Вызовы API базовых служб Azure
-- Вызовы конечных точек RESTFUL
-- Вызовы клиентских библиотек, пакетов или сторонних API
+- Использование встроенных [триггеров и привязок](..\articles\azure-functions\functions-triggers-bindings.md) Azure
+- Звонки в AIS базовых служб Azure
+- Звонки в конечные точки REST
+- Звонки в клиентские библиотеки, пакеты или сторонние AI
 
-Чтобы избежать потери данных или пропущенных сообщений, необходимо выполнить следующие надежные методы обработки ошибок. Рекомендуемые методы обработки ошибок включают следующие действия.
+После твердых методов обработки ошибок важно, чтобы избежать потери данных или пропущенных сообщений. Рекомендуемые методы обработки ошибок включают следующие действия:
 
-- [Включить Application Insights](../articles/azure-functions/functions-monitoring.md)
-- [Использование структурированной обработки ошибок](#use-structured-error-handling)
-- [Проектирование для идемпотентности](../articles/azure-functions/functions-idempotent.md)
-- [Реализация политик повтора](../articles/azure-functions/functions-reliable-event-processing.md) (при необходимости)
+- [Включение Application Insights](../articles/azure-functions/functions-monitoring.md)
+- [Используйте структурированную обработку ошибок](#use-structured-error-handling)
+- [Дизайн для идемпотенции](../articles/azure-functions/functions-idempotent.md)
+- [Реализация политик повторной притязаний](../articles/azure-functions/functions-reliable-event-processing.md) (при необходимости)
 
-### <a name="use-structured-error-handling"></a>Использование структурированной обработки ошибок
+### <a name="use-structured-error-handling"></a>Используйте структурированную обработку ошибок
 
-Запись и публикация ошибок очень важна для мониторинга работоспособности приложения. Самый верхний уровень кода функции должен включать блок try/catch. В блоке catch можно записывать и публиковать ошибки.
+Захват и публикация ошибок имеет решающее значение для мониторинга работоспособности приложения. Верхний уровень любого функционального кода должен включать блок try/catch. В блоке catch можно зафиксировать и публиковать ошибки.
 
-### <a name="retry-support"></a>Поддержка повторных попыток
+### <a name="retry-support"></a>Поддержка повтора
 
 Следующие триггеры поддерживают встроенный механизм повторных попыток:
 
-* [Хранилище BLOB-объектов Azure](../articles/azure-functions/functions-bindings-storage-blob.md)
-* [хранилище очередей Azure](../articles/azure-functions/functions-bindings-storage-queue.md);
+* [Хранение Azure Blob](../articles/azure-functions/functions-bindings-storage-blob.md)
+* [Хранение очереди Azure](../articles/azure-functions/functions-bindings-storage-queue.md)
 * [служебная шина Azure (очередь/тема)](../articles/azure-functions/functions-bindings-service-bus.md).
 
-По умолчанию эти запросы повторно поступают в пять раз. После пятой повторной попытки хранилище очередей Azure и триггеры служебной шины Azure записывают сообщение в [очередь подозрительных](..\articles\azure-functions\functions-bindings-storage-queue-trigger.md#poison-messages)сообщений.
+По умолчанию эти триггеры повторного запроса до пяти раз. После пятой повторной попытки и хранилище очереди Azure, и триггеры службы Azure записывают сообщение [в очередь с ядом.](..\articles\azure-functions\functions-bindings-storage-queue-trigger.md#poison-messages)
 
-Необходимо вручную реализовать политики повтора для любых других триггеров или типов привязок. Ручные реализации могут включать запись сведений об ошибках в [очередь подозрительных сообщений](..\articles\azure-functions\functions-bindings-storage-blob-trigger.md#poison-blobs). Написав в очередь подозрительных сообщений, вы сможете повторить операции позже. Этот подход аналогичен тому, который используется триггером хранилища BLOB-объектов.
+Необходимо вручную реализовать политики повторной попытки для любых других типов триггеров или привязок. Ручные реализации могут включать запись информации об ошибке в [очередь ядовых сообщений.](..\articles\azure-functions\functions-bindings-storage-blob-trigger.md#poison-blobs) Написав в очередь яда, у вас есть возможность повторить операции на более позднее время. Такой же подход использует и триггер хранилища BLOB-объектов.

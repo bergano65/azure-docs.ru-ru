@@ -1,5 +1,5 @@
 ---
-title: Регистрация и использование хранимых процедур, триггеров и определяемых пользователем функций в Azure Cosmos DB SDK
+title: Регистрация и использование сохраненных процедур, триггеров и функций, определяемых пользователем, в SDK Azure Cosmos DB
 description: Узнайте, как зарегистрировать и вызывать хранимые процедуры, триггеры и определяемые пользователем функции с помощью пакетов SDK для Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 02/24/2020
 ms.author: mjbrown
 ms.openlocfilehash: 00740bc2255962089789682e3227ce414fd0ce64
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77582506"
 ---
 # <a name="how-to-register-and-use-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 
-API SQL в Azure Cosmos DB поддерживает регистрацию и вызов хранимых процедур, триггеров и определяемых пользователем функций (UDF), написанных на языке JavaScript. Вы можете использовать SQL API [.NET](sql-api-sdk-dotnet.md), [.NET Core](sql-api-sdk-dotnet-core.md), [Java](sql-api-sdk-java.md), [JavaScript](sql-api-sdk-node.md), [Node.js](sql-api-sdk-node.md) или пакеты SDK для [Python](sql-api-sdk-python.md), чтобы регистрировать и вызывать хранимые процедуры. После определения одной или более хранимых процедур, триггеров и определяемых пользователем функций вы сможете загружать и просматривать их на [портале Azure](https://portal.azure.com/) с помощью обозревателя данных.
+API SQL в Azure Cosmos DB поддерживает регистрацию и вызов хранимых процедур, триггеров и определяемых пользователем функций (UDF), написанных на языке JavaScript. Вы можете использовать SQL API [.NET](sql-api-sdk-dotnet.md), [.NET Core](sql-api-sdk-dotnet-core.md), [Java](sql-api-sdk-java.md), [JavaScript](sql-api-sdk-node.md), [Node.js](sql-api-sdk-node.md) или пакеты SDK для [Python](sql-api-sdk-python.md), чтобы регистрировать и вызывать хранимые процедуры. После определения одной или нескольких сохраненных процедур, триггеров и функций, определяемых пользователем, можно загрузить и просмотреть их на [портале Azure](https://portal.azure.com/) с помощью Data Explorer.
 
-## <a id="stored-procedures"></a>Выполнение хранимых процедур
+## <a name="how-to-run-stored-procedures"></a><a id="stored-procedures"></a>Выполнение хранимых процедур
 
 Хранимые процедуры написаны с использованием JavaScript. Они могут создавать, обновлять, читать, запрашивать и удалять элементы в контейнере Azure Cosmos. Дополнительные сведения о том, как написать хранимую процедуру в Azure Cosmos DB см. в статье [Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-write-stored-procedures-triggers-udfs.md#stored-procedures).
 
@@ -26,9 +26,9 @@ API SQL в Azure Cosmos DB поддерживает регистрацию и в
 > [!NOTE]
 > Для секционированных контейнеров при выполнении хранимой процедуры в параметрах запроса необходимо указать значение ключа секции. Хранимые процедуры всегда ограничиваются ключом секции. Элементы с другим значением ключа секции не будут видны хранимой процедуре. Это также применяется к триггерам.
 
-### <a name="stored-procedures---net-sdk-v2"></a>Хранимые процедуры — пакет SDK для .NET v2
+### <a name="stored-procedures---net-sdk-v2"></a>Сохраненные процедуры - .NET SDK V2
 
-В следующем примере показано, как зарегистрировать хранимую процедуру с помощью пакета SDK для .NET версии 2.
+В следующем примере показано, как зарегистрировать сохраненную процедуру с помощью .NET SDK V2:
 
 ```csharp
 string storedProcedureId = "spCreateToDoItem";
@@ -42,7 +42,7 @@ var response = await client.CreateStoredProcedureAsync(containerUri, newStoredPr
 StoredProcedure createdStoredProcedure = response.Resource;
 ```
 
-В следующем коде показано, как вызвать хранимую процедуру с помощью пакета SDK для .NET версии 2:
+Следующий код показывает, как вызвать сохраненную процедуру с помощью .NET SDK V2:
 
 ```csharp
 dynamic newItem = new
@@ -58,9 +58,9 @@ RequestOptions options = new RequestOptions { PartitionKey = new PartitionKey("P
 var result = await client.ExecuteStoredProcedureAsync<string>(uri, options, newItem);
 ```
 
-### <a name="stored-procedures---net-sdk-v3"></a>Хранимые процедуры — пакет SDK для .NET v3
+### <a name="stored-procedures---net-sdk-v3"></a>Сохраненные процедуры - .NET SDK V3
 
-В следующем примере показано, как зарегистрировать хранимую процедуру с помощью пакета SDK для .NET v3.
+В следующем примере показано, как зарегистрировать сохраненную процедуру с помощью .NET SDK V3:
 
 ```csharp
 StoredProcedureResponse storedProcedureResponse = await client.GetContainer("database", "container").Scripts.CreateStoredProcedureAsync(new StoredProcedureProperties
@@ -70,7 +70,7 @@ StoredProcedureResponse storedProcedureResponse = await client.GetContainer("dat
 });
 ```
 
-В следующем коде показано, как вызвать хранимую процедуру с помощью пакета SDK версии 3 для .NET:
+Следующий код показывает, как вызвать сохраненную процедуру с помощью .NET SDK V3:
 
 ```csharp
 dynamic[] newItems = new dynamic[]
@@ -195,7 +195,7 @@ new_item = [{
 client.ExecuteStoredProcedure(sproc_link, new_item, {'partitionKey': 'Personal'}
 ```
 
-## <a id="pre-triggers"></a>Как выполнять предварительные триггеры
+## <a name="how-to-run-pre-triggers"></a><a id="pre-triggers"></a>Как выполнять предварительные триггеры
 
 В следующих примерах показано, как регистрировать и вызывать предварительный триггер с помощью пакетов SDK для Azure Cosmos DB. Используйте раздел [Пример предварительного триггера](how-to-write-stored-procedures-triggers-udfs.md#pre-triggers) как источник для этого предварительного триггера, который сохраняется как `trgPreValidateToDoItemTimestamp.js`.
 
@@ -204,9 +204,9 @@ client.ExecuteStoredProcedure(sproc_link, new_item, {'partitionKey': 'Personal'}
 > [!NOTE]
 > Несмотря на то что имя триггера передается в виде списка, по-прежнему можно выполнить только один триггер на каждую операцию.
 
-### <a name="pre-triggers---net-sdk-v2"></a>Предварительные триггеры — пакет SDK для .NET v2
+### <a name="pre-triggers---net-sdk-v2"></a>Предварительные триггеры - .NET SDK V2
 
-В следующем коде показано, как зарегистрировать предварительный триггер с помощью пакета SDK для .NET версии 2.
+Следующий код показывает, как зарегистрировать предварительный триггер с помощью .NET SDK V2:
 
 ```csharp
 string triggerId = "trgPreValidateToDoItemTimestamp";
@@ -221,7 +221,7 @@ Uri containerUri = UriFactory.CreateDocumentCollectionUri("myDatabase", "myConta
 await client.CreateTriggerAsync(containerUri, trigger);
 ```
 
-В следующем коде показано, как вызвать предварительный триггер с помощью пакета SDK для .NET версии 2:
+Следующий код показывает, как вызвать предварительнотриггер с помощью .NET SDK V2:
 
 ```csharp
 dynamic newItem = new
@@ -237,9 +237,9 @@ RequestOptions requestOptions = new RequestOptions { PreTriggerInclude = new Lis
 await client.CreateDocumentAsync(containerUri, newItem, requestOptions);
 ```
 
-### <a name="pre-triggers---net-sdk-v3"></a>Предварительные триггеры — пакет SDK для .NET v3
+### <a name="pre-triggers---net-sdk-v3"></a>Предварительные триггеры - .NET SDK V3
 
-В следующем коде показано, как зарегистрировать предварительный триггер с помощью пакета SDK для .NET v3.
+Следующий код показывает, как зарегистрировать предварительный триггер с помощью .NET SDK V3:
 
 ```csharp
 await client.GetContainer("database", "container").Scripts.CreateTriggerAsync(new TriggerProperties
@@ -251,7 +251,7 @@ await client.GetContainer("database", "container").Scripts.CreateTriggerAsync(ne
 });
 ```
 
-В следующем коде показано, как вызвать предварительный триггер с помощью пакета SDK для .NET v3:
+Следующий код показывает, как вызвать предварительнотриггер с помощью .NET SDK V3:
 
 ```csharp
 dynamic newItem = new
@@ -353,13 +353,13 @@ client.CreateItem(container_link, item, {
                   'preTriggerInclude': 'trgPreValidateToDoItemTimestamp'})
 ```
 
-## <a id="post-triggers"></a>Как выполнять триггеры после операции
+## <a name="how-to-run-post-triggers"></a><a id="post-triggers"></a>Как выполнять триггеры после операции
 
 В следующих примерах показано, как регистрировать триггер после операции с помощью пакетов SDK для Azure Cosmos DB. Используйте раздел [Пример триггера после операции](how-to-write-stored-procedures-triggers-udfs.md#post-triggers) как источник для этого триггера после операции, который сохраняется как `trgPostUpdateMetadata.js`.
 
-### <a name="post-triggers---net-sdk-v2"></a>После триггеров — пакет SDK для .NET v2
+### <a name="post-triggers---net-sdk-v2"></a>Посттриггеры - .NET SDK V2
 
-В следующем коде показано, как зарегистрировать после триггера с помощью пакета SDK для .NET версии 2.
+Следующий код показывает, как зарегистрировать посттриггер с помощью .NET SDK V2:
 
 ```csharp
 string triggerId = "trgPostUpdateMetadata";
@@ -374,7 +374,7 @@ Uri containerUri = UriFactory.CreateDocumentCollectionUri("myDatabase", "myConta
 await client.CreateTriggerAsync(containerUri, trigger);
 ```
 
-В следующем коде показано, как вызвать событие после триггера с помощью пакета SDK для .NET версии 2:
+Следующий код показывает, как вызвать пост-триггер с помощью .NET SDK V2:
 
 ```csharp
 var newItem = { 
@@ -388,9 +388,9 @@ Uri containerUri = UriFactory.CreateDocumentCollectionUri("myDatabase", "myConta
 await client.createDocumentAsync(containerUri, newItem, options);
 ```
 
-### <a name="post-triggers---net-sdk-v3"></a>После триггеров — пакет SDK для .NET v3
+### <a name="post-triggers---net-sdk-v3"></a>Посттриггеры - .NET SDK V3
 
-В следующем коде показано, как зарегистрировать событие после триггера с помощью пакета SDK для .NET v3.
+Следующий код показывает, как зарегистрировать посттриггер с помощью .NET SDK V3:
 
 ```csharp
 await client.GetContainer("database", "container").Scripts.CreateTriggerAsync(new TriggerProperties
@@ -402,7 +402,7 @@ await client.GetContainer("database", "container").Scripts.CreateTriggerAsync(ne
 });
 ```
 
-В следующем коде показано, как вызвать событие после триггера с помощью пакета SDK для .NET v3:
+Следующий код показывает, как вызвать пост-триггер с помощью .NET SDK V3:
 
 ```csharp
 var newItem = { 
@@ -500,13 +500,13 @@ client.CreateItem(container_link, item, {
                   'postTriggerInclude': 'trgPostUpdateMetadata'})
 ```
 
-## <a id="udfs"></a>Работа с определяемыми пользователем функциями
+## <a name="how-to-work-with-user-defined-functions"></a><a id="udfs"></a>Работа с определяемыми пользователем функциями
 
 В следующих примерах показано, как зарегистрировать определяемую пользователем функцию с помощью пакетов SDK для Azure Cosmos DB. Используйте раздел [Пример определяемой пользователем функции](how-to-write-stored-procedures-triggers-udfs.md#udfs) как источник для этого триггера после операции, который сохраняется как `udfTax.js`.
 
-### <a name="user-defined-functions---net-sdk-v2"></a>Определяемые пользователем функции — пакет SDK для .NET v2
+### <a name="user-defined-functions---net-sdk-v2"></a>Функции, определяемые пользователем - .NET SDK V2
 
-В следующем коде показано, как зарегистрировать определяемую пользователем функцию с помощью пакета SDK для .NET версии 2.
+Следующий код показывает, как зарегистрировать функцию, определяемую пользователем, с помощью .NET SDK V2:
 
 ```csharp
 string udfId = "Tax";
@@ -521,7 +521,7 @@ await client.CreateUserDefinedFunctionAsync(containerUri, udfTax);
 
 ```
 
-В следующем коде показано, как вызвать определяемую пользователем функцию с помощью пакета SDK для .NET версии 2:
+Следующий код показывает, как вызвать функцию, определяемую пользователем, с помощью .NET SDK V2:
 
 ```csharp
 Uri containerUri = UriFactory.CreateDocumentCollectionUri("myDatabase", "myContainer");
@@ -533,9 +533,9 @@ foreach (var result in results)
 }
 ```
 
-### <a name="user-defined-functions---net-sdk-v3"></a>Определяемые пользователем функции — пакет SDK для .NET v3
+### <a name="user-defined-functions---net-sdk-v3"></a>Функции, определяемые пользователем - .NET SDK V3
 
-В следующем коде показано, как зарегистрировать определяемую пользователем функцию с помощью пакета SDK для .NET v3.
+Следующий код показывает, как зарегистрировать функцию, определяемую пользователем, с помощью .NET SDK V3:
 
 ```csharp
 await client.GetContainer("database", "container").Scripts.CreateUserDefinedFunctionAsync(new UserDefinedFunctionProperties
@@ -545,7 +545,7 @@ await client.GetContainer("database", "container").Scripts.CreateUserDefinedFunc
 });
 ```
 
-В следующем коде показано, как вызвать определяемую пользователем функцию с помощью пакета SDK для .NET v3:
+Следующий код показывает, как вызвать функцию, определяемую пользователем, с помощью .NET SDK V3:
 
 ```csharp
 var iterator = client.GetContainer("database", "container").GetItemQueryIterator<dynamic>("SELECT * FROM Incomes t WHERE udf.Tax(t.income) > 20000");
@@ -640,11 +640,11 @@ results = list(client.QueryItems(
     container_link, 'SELECT * FROM Incomes t WHERE udf.Tax(t.income) > 20000'))
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как записать или использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 
-- [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions](stored-procedures-triggers-udfs.md) (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)
-- [Working with JavaScript language-integrated query API with Azure Cosmos DB](javascript-query-api.md) (Работа с API запросов на основе языка JavaScript в Azure Cosmos DB)
+- [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)](stored-procedures-triggers-udfs.md)
+- [API для выполнения запросов JavaScript в Azure Cosmos DB](javascript-query-api.md)
 - [Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-write-stored-procedures-triggers-udfs.md)
-- [How to write stored procedures and triggers in Azure Cosmos DB by using the JavaScript query API](how-to-write-javascript-query-api.md) (Как записывать хранимые процедуры и триггеры с помощью API запросов JavaScript в Azure Cosmos DB)
+- [Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript](how-to-write-javascript-query-api.md)

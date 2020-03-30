@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
 ms.openlocfilehash: ed92156df9d8e1e07b56cea4b1e64edee11d68d9
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77562128"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
@@ -28,7 +28,7 @@ ms.locfileid: "77562128"
 * Мониторы можно масштабировать. Та как каждый монитор является экземпляром оркестрации, можно создавать несколько мониторов без необходимости создавать новые функции или писать новый код.
 * Мониторы легко интегрируются в более крупные рабочие процессы. Монитором может быть один раздел более сложной функции оркестрации или [суборкестрация](durable-functions-sub-orchestrations.md).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="configuring-twilio-integration"></a>Настройка интеграции Twilio
 
@@ -38,7 +38,7 @@ ms.locfileid: "77562128"
 
 Этот пример включает в себя использование API Weather Underground для проверки текущих погодных условий для местоположения.
 
-Для начала потребуется учетная запись Weather Underground. Вы можете создать бесплатную учетную запись, перейдя по этому адресу [https://www.wunderground.com/signup](https://www.wunderground.com/signup). После этого нужно будет приобрести ключ API. Для этого откройте страницу [https://www.wunderground.com/weather/api](https://www.wunderground.com/weather/api/?MR=1), а затем выберите параметры ключа. Бесплатного плана Stratus Developer достаточно для запуска этого примера.
+Для начала потребуется учетная запись Weather Underground. Вы можете создать один [https://www.wunderground.com/signup](https://www.wunderground.com/signup)бесплатно на . После этого нужно будет приобрести ключ API. Вы можете сделать [https://www.wunderground.com/weather/api](https://www.wunderground.com/weather/api/?MR=1)это, посетив, а затем выбрав ключевые настройки. Бесплатного плана Stratus Developer достаточно для запуска этого примера.
 
 Получив ключ API, добавьте следующие **параметры приложения** в приложение-функцию.
 
@@ -50,19 +50,19 @@ ms.locfileid: "77562128"
 
 В этой статье описаны следующие функции в примере приложения:
 
-* `E3_Monitor`: [функция Orchestrator](durable-functions-bindings.md#orchestration-trigger) , которая периодически вызывает `E3_GetIsClear`. Она вызывает `E3_SendGoodWeatherAlert`, если `E3_GetIsClear` возвращает значение true.
-* `E3_GetIsClear`: [функция действия](durable-functions-bindings.md#activity-trigger) , которая проверяет текущие условия погоды для расположения.
+* `E3_Monitor`: [Функция оркестратора,](durable-functions-bindings.md#orchestration-trigger) которая вызывает `E3_GetIsClear` периодически. Она вызывает `E3_SendGoodWeatherAlert`, если `E3_GetIsClear` возвращает значение true.
+* `E3_GetIsClear`: [Функция активности,](durable-functions-bindings.md#activity-trigger) которая проверяет текущие погодные условия для местоположения.
 * `E3_SendGoodWeatherAlert`: функция действия, которая отправляет SMS-сообщение через Twilio.
 
-### <a name="e3_monitor-orchestrator-function"></a>E3_Monitor Orchestrator, функция
+### <a name="e3_monitor-orchestrator-function"></a>E3_Monitor функция оркестратора
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/Monitor.cs?range=41-78,97-115)]
 
-Orchestrator требует расположения для отслеживания и номера телефона для отправки сообщения, когда сообщение будет очищаться в месте. Эти данные передаются в Orchestrator как строго типизированный объект `MonitorRequest`.
+Оркестр требует место для мониторинга и номер телефона, чтобы отправить сообщение, когда становится ли становится ясным в месте. Эти данные передаются оркестратору как `MonitorRequest` сильно набранный объект.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 Функция **E3_Monitor** использует стандартный файл *function.json* для функций оркестратора.
 
@@ -81,19 +81,19 @@ Orchestrator требует расположения для отслеживан
 3. Вызывает **E3_GetIsClear**, чтобы определить, ясное ли небо в запрашиваемом местоположении.
 4. Если погода хорошая, вызывается **E3_SendGoodWeatherAlert**, чтобы отправить SMS-уведомление на запрошенный номер телефона.
 5. Создает устойчивый таймер для возобновления оркестрации во время следующего интервала опроса. Для краткости в образце используется жестко заданное значение.
-6. Продолжение выполняется до тех пор, пока текущее время в формате UTC не пройдет время окончания срока действия монитора или не будет отправлено оповещение SMS.
+6. Продолжает работать до тех пор, пока текущее время UTC не пройдет время истечения срока действия монитора или не будет отправлено SMS-оповещение.
 
-Несколько экземпляров Orchestrator можно запустить одновременно, вызвав функцию Orchestrator несколько раз. Можно указать местоположение для мониторинга и номер телефона для отправки SMS-оповещения.
+Несколько экземпляров оркестратора могут выполняться одновременно, вызывая функцию оркестратора несколько раз. Можно указать местоположение для мониторинга и номер телефона для отправки SMS-оповещения.
 
-### <a name="e3_getisclear-activity-function"></a>Функция действия E3_GetIsClear
+### <a name="e3_getisclear-activity-function"></a>функция активности E3_GetIsClear
 
 Вспомогательные функции действий, как и другие примеры, являются обычными функциями, которые используют привязку триггера `activityTrigger`. Функция **E3_GetIsClear** получает текущие погодные условия с использованием API Weather Underground и определяет, чистое ли небо.
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/Monitor.cs?range=80-85)]
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 Файл *function.json* выглядит следующим образом:
 
@@ -105,18 +105,18 @@ Orchestrator требует расположения для отслеживан
 
 ---
 
-### <a name="e3_sendgoodweatheralert-activity-function"></a>Функция действия E3_SendGoodWeatherAlert
+### <a name="e3_sendgoodweatheralert-activity-function"></a>функция активности E3_SendGoodWeatherAlert
 
 Функция **E3_SendGoodWeatherAlert** использует привязку Twilio для отправки SMS-сообщения, уведомляющего пользователя, что это подходящее время для прогулки.
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/Monitor.cs?range=87-96,140-205)]
 
 > [!NOTE]
-> Для запуска примера кода необходимо установить пакет NuGet `Microsoft.Azure.WebJobs.Extensions.Twilio`.
+> Для запуска примерного `Microsoft.Azure.WebJobs.Extensions.Twilio` кода необходимо установить пакет Nuget.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 Файл *function.json* выглядит просто:
 
@@ -128,7 +128,7 @@ Orchestrator требует расположения для отслеживан
 
 ---
 
-## <a name="run-the-sample"></a>Запустить образец
+## <a name="run-the-sample"></a>Запуск примера
 
 С помощью функций, активируемых по HTTP (перечисленных в примере), можно запустить оркестрацию, отправив следующий запрос HTTP POST:
 
@@ -175,7 +175,7 @@ RetryAfter: 10
 POST https://{host}/runtime/webhooks/durabletask/instances/f6893f25acf64df2ab53a35c09d52635/terminate?reason=Because&taskHub=SampleHubVS&connection=Storage&code={systemKey}
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере показано, как использовать устойчивые функции для контроля состояния внешнего источника с помощью [устойчивых таймеров](durable-functions-timers.md) и условной логики. В приведенном ниже примере показано, как использовать внешние события и [устойчивые таймеры](durable-functions-timers.md) для обработки действий человека.
 

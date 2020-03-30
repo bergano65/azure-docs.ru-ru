@@ -1,6 +1,6 @@
 ---
-title: Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
-description: Создайте параметры диагностики с помощью шаблона диспетчер ресурсов, чтобы пересылать журналы платформы Azure в журналы Azure Monitor, службу хранилища Azure или концентраторы событий Azure.
+title: Создание параметра диагностики в Azure с помощью шаблона Resource Manager
+description: Создавайте диагностические настройки с помощью шаблона «Менеджер ресурсов» для переадресации журналов платформы Azure в журналы Azure Monitor, хранилище Azure или концентраторы событий Azure.
 author: bwren
 services: azure-monitor
 ms.topic: conceptual
@@ -8,31 +8,31 @@ ms.date: 12/13/2019
 ms.author: bwren
 ms.subservice: ''
 ms.openlocfilehash: a2569ca3f998030680bd7dbd872d71ccd372a25d
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77672435"
 ---
-# <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
-[Параметры диагностики](diagnostic-settings.md) в Azure Monitor укажите, куда следует отправить [журналы платформы](platform-logs-overview.md) , собираемые ресурсами Azure и платформой Azure, от которых они зависят. В этой статье приводятся подробные сведения и примеры использования [шаблона Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для создания и настройки параметров диагностики для получения журналов платформы в разные места назначения.
+# <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание диагностической настройки в Azure с помощью шаблона диспетчера ресурсов
+[Диагностические настройки](diagnostic-settings.md) в Azure Monitor указывают, куда отправлять [журналы платформы,](platform-logs-overview.md) собранные ресурсами Azure и платформой Azure, от которой они зависят. В этой статье приведены подробные сведения и примеры использования [шаблона Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для создания и настройки диагностических настроек для сбора журналов платформ в разных пунктах назначения.
 
 > [!NOTE]
-> Так как вы не можете [создать параметр диагностики](diagnostic-settings.md) для журнала действий Azure с помощью POWERSHELL или CLI, например параметров диагностики для других ресурсов Azure, создайте шаблон диспетчер ресурсов для журнала действий, используя сведения в этой статье, а затем разверните шаблон с помощью POWERSHELL или CLI.
+> Поскольку нельзя [создать диагностическую настройку](diagnostic-settings.md) для журнала Azure Activity, используя PowerShell или CLI, как диагностические настройки для других ресурсов Azure, создайте шаблон менеджера ресурсов для журнала Activity с использованием информации в этой статье и развернуть шаблон с помощью PowerShell или CLI.
 
 ## <a name="deployment-methods"></a>Методы развертывания
-Вы можете развернуть шаблоны диспетчер ресурсов с помощью любого допустимого метода, включая PowerShell и CLI. Параметры диагностики для журнала действий должны быть развернуты в подписке с помощью `az deployment create` для CLI или `New-AzDeployment` для PowerShell. Параметры диагностики для журналов ресурсов должны быть развернуты в группе ресурсов с помощью `az group deployment create` для CLI или `New-AzResourceGroupDeployment` для PowerShell.
+Шаблоны менеджера ресурсов можно развернуть с помощью любого действительного метода, включая PowerShell и CLI. Диагностические настройки для журнала activity `az deployment create` должны быть `New-AzDeployment` развернуты в подписке, используя для CLI или для PowerShell. Диагностические настройки для журналов ресурсов `az group deployment create` должны быть `New-AzResourceGroupDeployment` развернуты в группе ресурсов, используюйдля CLI или PowerShell.
 
-Дополнительные сведения см. в статьях [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md) и [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md) . 
+Для получения подробной информации просмотрите [ресурсы «Развертывание» с шаблонами «Менеджер ресурсов» и ресурсами Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md) и [развертывании с шаблонами «Менеджер ресурсов» и Azure CLI.](../../azure-resource-manager/templates/deploy-cli.md) 
 
 
 
 
 
 ## <a name="resource-logs"></a>Журналы ресурсов
-Для журналов ресурсов добавьте в шаблон ресурс типа `<resource namespace>/providers/diagnosticSettings`. Раздел Properties соответствует формату, описанному в разделе [параметры диагностики — создание или обновление](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate). Укажите `category` в разделе `logs` для каждой категории, действующей для ресурса, который требуется получить. Добавьте свойство `metrics` для сбора метрик ресурсов в те же места назначения, если [ресурс поддерживает метрики](metrics-supported.md).
+Для журналов ресурсов добавьте `<resource namespace>/providers/diagnosticSettings` в шаблон ресурс типа. Раздел свойств следует формату, описанного в [диагностических настройках - Создание или обновление.](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate) Предоставьте `category` в `logs` разделе раздел для каждой из категорий, действительных для ресурса, который вы хотите собрать. Добавьте `metrics` свойство для сбора метрик ресурсов в те же направления, если [ресурс поддерживает метрики.](metrics-supported.md)
 
-Ниже приведен шаблон, собирающий категорию журнала ресурсов для определенного ресурса в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
+Ниже приводится шаблон, который собирает категорию журнала ресурсов для определенного ресурса в рабочее пространство анализа журналов, учетную запись хранения и концентратор событий.
 
 ```json
 "resources": [
@@ -69,7 +69,7 @@ ms.locfileid: "77672435"
 
 
 ### <a name="example"></a>Пример
-Ниже приведен пример, в котором создается параметр диагностики для параметра автомасштабирования, который обеспечивает потоковую передачу журналов ресурсов в концентратор событий, учетную запись хранения и рабочую область Log Analytics.
+Ниже приводится пример, который создает диагностическую настройку для автоматической настройки, которая позволяет передавать журналы ресурсов в концентратор событий, учетную запись хранения и рабочее пространство log Analytics.
 
 ```json
 {
@@ -144,7 +144,7 @@ ms.locfileid: "77672435"
 ```
 
 ## <a name="activity-log"></a>Журнал действий
-Для журнала действий Azure Добавьте ресурс типа `Microsoft.Insights/diagnosticSettings`. Доступные категории перечислены в списке [категории в журнале действий](activity-log-view.md#categories-in-the-activity-log). Ниже приведен шаблон, собирающий все категории журналов действий в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
+Для журнала Деятельности Azure добавьте `Microsoft.Insights/diagnosticSettings`ресурс типа . Доступные категории перечислены в [Категориях в журнале активности](activity-log-view.md#categories-in-the-activity-log). Ниже приводится шаблон, который собирает все категории журналов активности в рабочее пространство log Analytics, учетную запись хранения и концентратор событий.
 
 
 ```json
@@ -236,6 +236,6 @@ ms.locfileid: "77672435"
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
-* Узнайте больше о [журналах платформы в Azure](platform-logs-overview.md).
-* Сведения о [параметрах диагностики](diagnostic-settings.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Подробнее о [журналах платформ в Azure](platform-logs-overview.md).
+* Узнайте о [настройках диагностики.](diagnostic-settings.md)
