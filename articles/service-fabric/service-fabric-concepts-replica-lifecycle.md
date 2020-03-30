@@ -1,15 +1,15 @@
 ---
-title: Реплики и экземпляры в Azure Service Fabric
-description: Узнайте о репликах и экземплярах в Service Fabric, включая обзор их жизненных циклов и функций.
+title: Реплики и экземпляры в ткани службы Azure
+description: Узнайте о репликах и экземплярах в Service Fabric, включая обзор их жизненного цикла и функций.
 author: appi101
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: aprameyr
 ms.openlocfilehash: cf21af43de553a2802289e44eaece12952d077d3
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79258568"
 ---
 # <a name="replicas-and-instances"></a>Реплики и экземпляры 

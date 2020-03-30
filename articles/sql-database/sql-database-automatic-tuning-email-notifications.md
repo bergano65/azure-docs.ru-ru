@@ -1,5 +1,5 @@
 ---
-title: Руководство по электронной почте об автоматической настройке уведомлений
+title: Автоматическая настройка уведомлений по электронной почте как руководство
 description: Сведения о включении уведомлений по электронной почте об автоматической настройке службы "База данных SQL Azure".
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 06/03/2019
 ms.openlocfilehash: b48c37a6e607d121416ebae4d74e58f39670b79a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73821931"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
@@ -26,7 +26,7 @@ ms.locfileid: "73821931"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных Azure S'L, но все будущие разработки предназначены для модуля Az.Sql. Для этих cmdlets, см [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модулях Azrm существенно идентичны.
 
 ## <a name="automate-email-notifications-for-automatic-tuning-recommendations"></a>Автоматизация уведомлений по электронной почте о рекомендациях по автоматической настройке
 
@@ -58,9 +58,9 @@ ms.locfileid: "73821931"
 
 ## <a name="update-azure-automation-modules"></a>Обновление модулей службы автоматизации Azure
 
-Сценарий PowerShell для получения рекомендаций по автоматической настройке использует команды [Get-азресаурце](https://docs.microsoft.com/powershell/module/az.Resources/Get-azResource) и [Get-азсклдатабасерекоммендедактион](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlDatabaseRecommendedAction) , для которых требуется модуль Azure версии 4 и выше.
+В скрипте PowerShell для получения рекомендации по автоматическому тюнингу используются команды [Get-AzResource](https://docs.microsoft.com/powershell/module/az.Resources/Get-azResource) и [Get-AzSqlDatabaseRecommendedAction,](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlDatabaseRecommendedAction) для которых требуется версия Azure Module 4 и выше.
 
-- Если вашим модулям Azure требуется обновление, см. статью [Поддержка модуля az в службе автоматизации Azure](../automation/az-modules.md).
+- В случае необходимости обновления модулей [Az module support in Azure Automation](../automation/az-modules.md)Azure см.
 
 ## <a name="create-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "73821931"
 
 Выполните следующие действия, чтобы загрузить сценарий PowerShell в созданный runbook.
 
-- В области **Изменение Runbook PowerShell** выберите **Модули Runbook** в дереве меню, а затем разворачивайте представление, пока не увидите имя своего runbook (в этом примере —  **AutomaticTuningEmailAutomation**). Выберите этот runbook.
+- В области **Изменение Runbook PowerShell** выберите **Модули Runbook** в дереве меню, а затем разворачивайте представление, пока не увидите имя своего runbook (в этом примере — ** AutomaticTuningEmailAutomation**). Выберите этот runbook.
 - В первой строке области "Изменение PowerShell Runbook" (начинающейся с цифры 1) вставьте приведенный ниже код сценария PowerShell, предварительно скопировав его в буфер обмена. Этот сценарий PowerShell предоставляется "как есть" и дает возможность приступить к работе. Измените его в соответствии со своими потребностями.
 
 В заголовке предоставленного сценария PowerShell необходимо заменить `<SUBSCRIPTION_ID_WITH_DATABASES>` своим идентификатором подписки Azure. Чтобы узнать, как получить идентификатор подписки Azure, прочитайте раздел [Getting your Azure Subscription GUID (new portal)](https://blogs.msdn.microsoft.com/mschray/20../../getting-your-azure-subscription-guid-new-portal/) (Получение GUID подписки Azure на новом портале).

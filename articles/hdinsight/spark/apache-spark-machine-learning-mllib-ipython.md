@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: hrasheed
 ms.openlocfilehash: c8ead7abc454df387db31b2ce65d2ba714b0067d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73494079"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных
@@ -22,8 +22,8 @@ ms.locfileid: "73494079"
 
 MLlib — это основная библиотека Spark, содержащая множество служебных программ, которые подходят для задач машинного обучения, в частности:
 
-* классификация;
-* регрессия;
+* Классификация
+* Регрессия
 * Кластеризация
 * тематического моделирования;
 * сингулярного разложения и анализа по методу главных компонент;
@@ -43,9 +43,9 @@ MLlib — это основная библиотека Spark, содержаща
 
 ## <a name="create-an-apache-spark-mllib-machine-learning-app"></a>Создание приложения машинного обучения Apache Spark MLlib
 
-1. Создайте записную книжку Jupyter, используя ядро PySpark. Инструкции см. в разделе по [созданию записной книжки Jupyter](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook).
+1. Создайте записную книжку Jupyter, используя ядро PySpark. Для инструкций, см [Создать Ноутбук Jupyter](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook).
 
-2. Импортируйте типы, необходимые для этого приложения. Скопируйте и вставьте следующий код в пустую ячейку, а затем нажмите клавиши **SHIFT + ВВОД**.
+2. Импортируйте типы, необходимые для этого приложения. Копировать и вставить следующий код в пустую ячейку, а затем нажмите **SHIFT и ENTER**.
 
     ```PySpark
     from pyspark.ml import Pipeline
@@ -176,10 +176,10 @@ MLlib — это основная библиотека Spark, содержаща
 
     Результаты:
 
-    ![Выходные данные запроса SQL](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-query-output.png "Результат SQL-запроса")
+    ![Результат SQL-запроса](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-query-output.png "Результат SQL-запроса")
 
 
-3. Также вы можете создать диаграмму с помощью библиотеки визуализации данных [Matplotlib](https://en.wikipedia.org/wiki/Matplotlib). Так как диаграмма должна создаваться из локально сохраненного кадра данных **countResultsdf**, фрагмент кода должен начинаться с волшебного слова `%%local`. Это гарантирует, что код будет выполняться локально на сервере Jupyter.
+3. Вы также можете использовать [Matplotlib](https://en.wikipedia.org/wiki/Matplotlib), библиотека, используемая для построения визуализации данных, для создания участка. Так как диаграмма должна создаваться из локально сохраненного кадра данных **countResultsdf**, фрагмент кода должен начинаться с волшебного слова `%%local`. Это гарантирует, что код будет выполняться локально на сервере Jupyter.
 
     ```PySpark
     %%local
@@ -195,15 +195,15 @@ MLlib — это основная библиотека Spark, содержаща
 
     Результаты:
 
-    ![Выходные данные приложения машинного обучения Spark — круговая диаграмма с пятью отдельными результатами проверки](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-1.png "Выходные данные результатов машинного обучения Spark")
+    ![Выход приложения для машинного обучения Spark - круговая диаграмма с пятью различными результатами инспекции](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-1.png "Результат результатов машинного обучения Spark")
 
     Чтобы спрогнозировать результат проверки пищевых продуктов, вам нужно разработать модель для анализа нарушений. Логистическая регрессия является методом двоичной классификации, а значит данные целесообразно разделить на две категории: **Fail** и **Pass**.
 
-   - Pass;
-       - Pass;
+   - Успех
+       - Успех
        - Pass w/ conditions;
-   - Fail;
-       - Fail;
+   - Ошибка
+       - Ошибка
    - Игнорировать
        - Business not located;
        - Out of Business.
@@ -238,7 +238,7 @@ MLlib — это основная библиотека Spark, содержаща
 
 ## <a name="create-a-logistic-regression-model-from-the-input-dataframe"></a>Создание модели логистической регрессии на основе входной таблицы данных
 
-И последняя задача — преобразуйте данные с метками в такой формат, который удобен для анализа методом логистической регрессии. Входные данные для алгоритма логистической регрессии должны представлять собой *набор пар "метка — вектор признаков"* , где "вектор признаков" содержит числа, характеризующие точку входных данных. Таким образом, нам нужно преобразовать столбец violations, содержащий полуструктурированные данные и множество текстовых комментариев в свободной форме, в массив действительных чисел, которые может распознать компьютер.
+И последняя задача — преобразуйте данные с метками в такой формат, который удобен для анализа методом логистической регрессии. Входные данные для алгоритма логистической регрессии должны представлять собой *набор пар "метка — вектор признаков"*, где "вектор признаков" содержит числа, характеризующие точку входных данных. Таким образом, нам нужно преобразовать столбец violations, содержащий полуструктурированные данные и множество текстовых комментариев в свободной форме, в массив действительных чисел, которые может распознать компьютер.
 
 Стандартный метод обработки естественного языка в машинном обучении — назначить каждому отдельному слову индекс, а затем передать вектор в алгоритм машинного обучения, при этом значение каждого индекса должно содержать относительную частоту использования слова в текстовой строке.
 
@@ -350,22 +350,22 @@ model = pipeline.fit(labeledData)
     plt.axis('equal')
     ```
 
-    Вы должны увидеть следующий результат.
+    Должны выводиться следующие данные:
 
-    ![Выходные данные приложения машинного обучения Spark — процентные доли непройденных проверок пищи.](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-2.png "Выходные данные результатов машинного обучения Spark")
+    ![Выход приложения для машинного обучения Spark - процент ы неудавшихся проверок пищевых продуктов.](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-2.png "Результат результатов машинного обучения Spark")
 
     На этой диаграмме «положительный» результат представляет собой непройденную проверку, а отрицательный — пройденную.
 
 ## <a name="shut-down-the-notebook"></a>Завершение работы записной книжки
 Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Записная книжка завершит работу и закроется.
 
-## <a name="seealso"></a>Дополнительные материалы
+## <a name="see-also"></a><a name="seealso"></a>Смотрите также
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 * [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Анализ журнала веб-сайта с использованием Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 * [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
@@ -373,9 +373,9 @@ model = pipeline.fit(labeledData)
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 

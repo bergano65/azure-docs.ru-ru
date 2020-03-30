@@ -9,10 +9,10 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.openlocfilehash: 537369c9466b1083723642ec9e93fcdf25056c5e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68855342"
 ---
 # <a name="azure-storage-metrics-migration"></a>Перенос метрик службы хранилища Azure
@@ -45,7 +45,7 @@ ms.locfileid: "68855342"
 
 | Метрика прежних версий | Новая метрика |
 | ------------------- | ----------------- |
-| **Производительность**            | **BlobCapacity** с измерением **BlobType**, равным **BlockBlob** или **PageBlob**. |
+| **Capacity**            | **BlobCapacity** с измерением **BlobType**, равным **BlockBlob** или **PageBlob**. |
 | **ObjectCount**        | **BlobCount** с измерением **BlobType**, равным **BlockBlob** или **PageBlob**. |
 | **ContainerCount**      | **ContainerCount** |
 
@@ -73,13 +73,13 @@ ms.locfileid: "68855342"
 | **AnonymousServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, и измерением **Authentication**, равным **Anonymous** |
 | **AnonymousSuccess** | Transactions с измерением **ResponseType**, равным **Success**, и измерением **Authentication**, равным **Anonymous** |
 | **AnonymousThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**, и измерением **Authentication**, равным **Anonymous** |
-| **AuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
+| **АвторизацияОшибка** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
 | **Доступность** | **Доступность** |
 | **AverageE2ELatency** | **SuccessE2ELatency** |
 | **AverageServerLatency** | **SuccessServerLatency** |
 | **ClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
 | **ClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**. |
-| **NetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
+| **Сетеваяошибка** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
 | **PercentAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
 | **PercentClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
 | **PercentNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
@@ -95,16 +95,16 @@ ms.locfileid: "68855342"
 | **SASServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, и измерением **Authentication**, равным **SAS** |
 | **SASSuccess** | Transactions с измерением **ResponseType**, равным **Success**, и измерением **Authentication**, равным **SAS** |
 | **SASThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**, и измерением **Authentication**, равным **SAS** |
-| **ServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
-| **ServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
+| **СерверДругаяОшибка** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
+| **ServerTimeoutОшибка** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
 | **Success** | Transactions с измерением **ResponseType**, равным **Success**. |
 | **ThrottlingError** | **Transactions** с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**.|
 | **TotalBillableRequests** | **Транзакции** |
-| **TotalEgress** | **Исходящий трафик** |
-| **TotalIngress** | **Входящий трафик** |
+| **TotalEgress** | **Выход** |
+| **TotalIngress** | **Попадания** |
 | **TotalRequests** | **Транзакции** |
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>часто задаваемые вопросы
 
 ### <a name="how-should-i-migrate-existing-alert-rules"></a>Как перенести существующие правила генерации оповещений?
 
@@ -114,7 +114,7 @@ ms.locfileid: "68855342"
 
 Нет. Чтобы заархивировать данные метрик в учетную запись хранения, используйте [API настройки диагностики Azure Monitor](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Monitor](../../monitoring-and-diagnostics/monitoring-overview.md)
-* [Метрики службы хранилища в Azure Monitor](./storage-metrics-in-azure-monitor.md)
+* [Метрики хранения в Azure Monitor](./storage-metrics-in-azure-monitor.md)

@@ -10,10 +10,10 @@ ms.date: 02/07/2019
 ms.topic: conceptual
 ms.custom: seodec18
 ms.openlocfilehash: 20442a6618ca9357bb3be95879b68bffca45a40d
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77022959"
 ---
 # <a name="reference-architectures-for-azure-rendering"></a>Эталонные архитектуры для рендеринга в Azure
@@ -28,7 +28,7 @@ ms.locfileid: "77022959"
 
 * **Сеть** — Azure ExpressRoute или VPN в локальной сети. Виртуальная сеть Azure.
 
-* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync. Кроме того, Авере Вфкст к входным или выходным файлам с локальных устройств NAS с помощью NFS.
+* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync. Кроме того: Avere vFXT для ввода или вывода файлов из наемных устройств NAS с использованием NFS.
 
   ![Выход в облако — гибридное развертывание с NFS или CFS](./media/batch-rendering-architectures/hybrid-nfs-cfs-avere.png)
 

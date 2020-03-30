@@ -1,5 +1,5 @@
 ---
-title: Счетчики производительности для трассировки диспетчера сопоставления сегментов
+title: Счетчики производительности для отслеживания менеджера карты осколков
 description: Класс ShardMapManager и счетчики производительности для маршрутизации, зависящей от данных
 services: sql-database
 ms.service: sql-database
@@ -12,15 +12,15 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/07/2019
 ms.openlocfilehash: de481dad9dd39b301a21142c67b1baf2209f76e2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73823905"
 ---
-# <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>Создание счетчиков производительности для наблюдения за производительностью диспетчера карт сегментов
+# <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>Создание счетчиков производительности для отслеживания производительности менеджера карты осколков
 
-Счетчики производительности используются для наблюдения за производительностью операций [маршрутизации, зависящих от данных](sql-database-elastic-scale-data-dependent-routing.md) . Эти счетчики можно найти в системном мониторе в категории "Эластичная база данных: управление сегментами".
+Счетчики производительности используются для отслеживания производительности [операций, зависящих от данных, ныхпольных.](sql-database-elastic-scale-data-dependent-routing.md) Эти счетчики можно найти в системном мониторе в категории "Эластичная база данных: управление сегментами".
 
 Вы можете сохранять данные о производительности [диспетчера карты сегментов](sql-database-elastic-scale-shard-map-management.md), особенно при использовании [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md). Счетчики создаются с помощью методов класса Microsoft.Azure.SqlDatabase.ElasticScale.Client.  
 
@@ -65,7 +65,7 @@ ms.locfileid: "73823905"
 * Создание категории производительности и счетчиков следует выполнять только один раз, до создания объекта ShardMapManager. При каждом выполнении команды CreatePerformanceCategoryAndCounters() предыдущие значения счетчиков удаляются (данные теряются во всех экземплярах) и создаются новые.  
 * Экземпляры счетчиков производительности создаются для каждого процесса. Любой сбой приложения или удаление карты сегментов из кэша приведет к удалению экземпляров счетчиков производительности.  
 
-### <a name="see-also"></a>Дополнительные материалы
+### <a name="see-also"></a>См. также
 
 [Общие сведения о возможностях эластичных баз данных](sql-database-elastic-scale-introduction.md)  
 

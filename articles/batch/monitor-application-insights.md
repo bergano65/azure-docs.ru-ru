@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 04/05/2018
 ms.author: labrenne
 ms.openlocfilehash: b1f4fb0207d4f659861dbd3fdfd1b2d502409935
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77022466"
 ---
 # <a name="monitor-and-debug-an-azure-batch-net-application-with-application-insights"></a>Мониторинг и отладка приложения .NET пакетной службы Azure с помощью Application Insights
@@ -27,17 +27,17 @@ ms.locfileid: "77022466"
 Пример решения C# с кодом, который служит дополнением к этой статье, доступен в [GitHub](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/ApplicationInsights). В этом примере код инструментирования Application Insights добавляется в пример [TopNWords](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/TopNWords). Если вы не знакомы с этим примером, сначала создайте и запустите TopNWords. Это поможет вам получить представление о базовом рабочем процессе обработки набора входных больших двоичных объектов в параллельном режиме на нескольких вычислительных узлах в пакетной службе. 
 
 > [!TIP]
-> Также можно настроить в решении пакетной службы отображение данных из Application Insights, таких как счетчики производительности виртуальных машин в Batch Explorer. [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Скачайте [пакет установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. См. [репозиторий batch-insights](https://github.com/Azure/batch-insights) с описанием быстрых действий, позволяющих включить данные Application Insights в Batch Explorer. 
+> Также можно настроить в решении пакетной службы отображение данных из Application Insights, таких как счетчики производительности виртуальных машин в Batch Explorer. [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Загрузите [пакет для установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. См. [репозиторий batch-insights](https://github.com/Azure/batch-insights) с описанием быстрых действий, позволяющих включить данные Application Insights в Batch Explorer. 
 >
 
-## <a name="prerequisites"></a>Технические условия
-* [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/vs)
+## <a name="prerequisites"></a>Предварительные требования
+* [Визуальная студия 2017 или более поздней](https://www.visualstudio.com/vs)
 
 * [Учетная запись пакетной службы и связанная учетная запись хранения](batch-account-create-portal.md).
 
 * [Ресурс Application Insights](../azure-monitor/app/create-new-resource.md ).
   
-   * Создайте *ресурс* Application Insights на портале Azure. Выберите *Общий* **Тип приложения**.
+   * Создайте *ресурс* Application Insights на портале Azure. Выберите *Общие* **Тип приложения**.
 
    * Скопируйте [ключ инструментирования](../azure-monitor/app/create-new-resource.md #copy-the-instrumentation-key) на портале. Он понадобится вам позже.
   
@@ -45,7 +45,7 @@ ms.locfileid: "77022466"
   > За данные, хранимые в Application Insights, может [взиматься плата](https://azure.microsoft.com/pricing/details/application-insights/). В том числе и данные диагностики и мониторинга, о которых идет речь в этой статье.
   > 
 
-## <a name="add-application-insights-to-your-project"></a>Добавьте Application Insights в свой проект
+## <a name="add-application-insights-to-your-project"></a>Добавление Application Insights в ваш проект
 
 Для вашего проекта необходим пакет NuGet **Microsoft.ApplicationInsights.WindowsServer** и его зависимости. Добавьте или восстановите их в проект приложения. Чтобы установить пакет, используйте команду `Install-Package` или диспетчер пакетов NuGet.
 
@@ -288,7 +288,7 @@ for (int i = 1; i <= topNWordsConfiguration.NumberOfTasks; i++)
 Настраиваемые метрики также являются полезным средством на портале. Например, можно отобразить среднее время, затраченное на каждом вычислительном узле для загрузки необходимого текстового файла, который он обрабатывал.
 
 Создание примера диаграммы
-1. В ресурсе Application Insights щелкните **Обозреватель метрик** > **Добавить диаграмму**.
+1. На ресурсе Application Insights нажмите диаграмму **Metrics Explorer** > **Add.**
 2. Нажмите кнопку **Изменить** на добавленной диаграмме.
 2. Обновите сведения диаграммы следующим образом:
    * Для параметра **Тип диаграммы** задайте значение **Сетка**.

@@ -10,22 +10,22 @@ ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
 ms.openlocfilehash: 1d5313f3f0fff128dd09f9c9857b7dd9921ea4f8
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69992221"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
-Вы можете получать доступ к данным в учетной записи хранения и управлять ими с помощью интерфейса командной строки точно так же, как с [Распределенная файловая система Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). В этой статье приводятся некоторые примеры, которые помогут приступить к работе.
+Вы можете получить доступ к данным и управлять ими в учетной записи хранилища, используя интерфейс командной строки так же, как и с [помощью распределенной файловой системы Hadoop (HDFS).](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) В этой статье приведены некоторые примеры, которые помогут вам начать работу.
 
-HDInsight предоставляет доступ к распределенному контейнеру, который локально подключен к этим узлам. Доступ к этому контейнеру можно получить с помощью оболочки, которая напрямую взаимодействует с HDFS и другими файловыми системами, поддерживаемыми Hadoop.
+HDInsight предоставляет доступ к распределенному контейнеру, локально прикрепленному к вычислительным узлам. Вы можете получить доступ к этому контейнеру с помощью оболочки, которая непосредственно взаимодействует с HDFS и другими файловыми системами, которые поддерживает Hadoop.
 
-Дополнительные сведения об интерфейсе HDFS CLI см. в [официальной документации](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html) и руководстве по разрешениям [HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) .
+Для получения дополнительной информации о HDFS CLI, см [официальная документация](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html) и [руководство HDFS Разрешения](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html)
 
 >[!NOTE]
->Если вы используете Azure Databricks вместо HDInsight и хотите взаимодействовать с данными с помощью интерфейса командной строки, можно использовать CLI модуля данных для взаимодействия с файловой системой модуля данных. См. раздел [CLI кирпичей](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html).
+>Если вы используете Azure Databricks вместо HDInsight и хотите взаимодействовать с данными с помощью интерфейса командной строки, вы можете использовать Databricks CLI для взаимодействия с файловой системой Databricks. Смотрите [Databricks CLI](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html).
 
 ## <a name="use-the-hdfs-cli-with-an-hdinsight-hadoop-cluster-on-linux"></a>Использование HDFS CLI с кластером HDInsight Hadoop в Linux
 
@@ -44,11 +44,11 @@ hdfs dfs -mkdir /samplefolder
 >[!IMPORTANT]
 >Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. Сведения об удалении кластера см. в [статье на эту тему](../../hdinsight/hdinsight-delete-cluster.md). Данные, размещенные в учетной записи хранения с поддержкой Data Lake Storage 2-го поколения, сохраняются даже после удаления кластера HDInsight.
 
-## <a name="create-a-container"></a>Создать контейнер
+## <a name="create-a-container"></a>Создание контейнера
 
     hdfs dfs -D "fs.azure.createRemoteFileSystemDuringInitialization=true" -ls abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/
 
-* `<container-name>` Замените заполнитель именем, которое вы хотите присвоить контейнеру.
+* Замените заполнитель `<container-name>` именем, которое хотите присвоить своему контейнеру.
 
 * Замените заполнитель `<storage-account-name>` именем вашей учетной записи хранения.
 
@@ -56,15 +56,15 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -ls <path>
 
-`<path>` Замените заполнитель URI контейнера или папки контейнера.
+Замените `<path>` заполнитель НА URI контейнерной или контейнерной папки.
 
 Например: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
 
-## <a name="create-a-directory"></a>создать каталог;
+## <a name="create-a-directory"></a>Создание каталога
 
     hdfs dfs -mkdir [-p] <path>
 
-`<path>` Замените заполнитель именем корневого контейнера или папкой в контейнере.
+Замените `<path>` заполнитель на имя корневого контейнера или папку в контейнере.
 
 Например: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
 
@@ -80,7 +80,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -getfacl [-R] <path>
 
-Пример:
+Пример
 
 `hdfs dfs -getfacl -R /dir`
 
@@ -90,7 +90,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -setfacl [-R] [-b|-k -m|-x <acl_spec> <path>]|[--set <acl_spec> <path>]
 
-Пример:
+Пример
 
 `hdfs dfs -setfacl -m user:hadoop:rw- /file`
 
@@ -116,8 +116,8 @@ hdfs dfs -mkdir /samplefolder
 
 Полный список команд можно просмотреть на веб-сайте [Apache Hadoop 2.4.1 File System Guide](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](./data-lake-storage-quickstart-create-databricks-account.md)
 
-* [Сведения о списках управления доступом к файлам и каталогам](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
+* [Узнайте о списках управления доступом в файлах и каталогах](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)

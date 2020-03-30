@@ -1,5 +1,5 @@
 ---
-title: Обнаружение встроенного брандмауэра управляемого экземпляра
+title: Откройте для себя встроенный брандмауэр управляемого экземпляра
 description: Узнайте, как проверить защиту встроенного брандмауэра в Управляемом экземпляре Базы данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, carlrab
 ms.date: 12/04/2018
 ms.openlocfilehash: 555ef56aafa37a1e1d384f945b04f9237adc5f7d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73821800"
 ---
 # <a name="verifying-the-managed-instance-built-in-firewall"></a>Проверка встроенного брандмауэра Управляемого экземпляра

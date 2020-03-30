@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 02/05/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 89e3bf95a6b048e5e97cfb151ef9302b70eac1c9
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77048557"
 ---
 # <a name="azure-dedicated-hsm-deployment-architecture"></a>Архитектура развертывания Выделенного устройства HSM Azure
@@ -69,8 +69,8 @@ ms.locfileid: "77048557"
 Мы рекомендуем хорошо разобраться в основных понятиях службы, таких как высокий уровень доступности и безопасность, прежде чем переходить к подготовке устройств, разработке и развертыванию приложений.
 Дополнительные сведения об основных понятиях:
 
-* [Обеспечение высокого уровня доступности](high-availability.md)
+* [Высокая доступность](high-availability.md)
 * [Физическая безопасность](physical-security.md)
 * [Сеть](networking.md)
 * [Возможности поддержки](supportability.md)
-* [Мониторинг](monitoring.md)
+* [Мониторинга](monitoring.md)

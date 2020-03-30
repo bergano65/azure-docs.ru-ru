@@ -1,5 +1,5 @@
 ---
-title: Обновление до пакета SDK .NET для поиска Azure версии 1,1
+title: Обновление до Azure Search .NET SDK версия 1.1
 titleSuffix: Azure Cognitive Search
 description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 1.1 с предыдущих версий API. Сведения о новых возможностях и необходимых изменениях кода.
 manager: nitinme
@@ -10,13 +10,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 159aaa8424c3d7a711b587464b80696929f02186
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72792386"
 ---
-# <a name="upgrade-to-azure-search-net-sdk-version-11"></a>Обновление до пакета SDK .NET для поиска Azure версии 1,1
+# <a name="upgrade-to-azure-search-net-sdk-version-11"></a>Обновление до Azure Search .NET SDK версия 1.1
 
 Если вы используете версию 1.0.2-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то эта статья поможет вам обновить приложение для использования версии 1.1.
 
@@ -100,14 +100,14 @@ ms.locfileid: "72792386"
 
 Например, операция "Получить статистику индекса" в более старых версиях пакета SDK предоставляла эти подписи:
 
-В `IIndexOperations` добавьте:
+В `IIndexOperations`:
 
     // Asynchronous operation with all parameters
     Task<IndexGetStatisticsResponse> GetStatisticsAsync(
         string indexName,
         CancellationToken cancellationToken);
 
-В `IndexOperationsExtensions` добавьте:
+В `IndexOperationsExtensions`:
 
     // Asynchronous operation with only required parameters
     public static Task<IndexGetStatisticsResponse> GetStatisticsAsync(
@@ -121,7 +121,7 @@ ms.locfileid: "72792386"
 
 Подписи метода для той же операции в версии 1.1 выглядят следующим образом.
 
-В `IIndexesOperations` добавьте:
+В `IIndexesOperations`:
 
     // Asynchronous operation with lower-level HTTP features exposed
     Task<AzureOperationResponse<IndexGetStatisticsResult>> GetStatisticsWithHttpMessagesAsync(
@@ -130,7 +130,7 @@ ms.locfileid: "72792386"
         Dictionary<string, List<string>> customHeaders = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
-В `IndexesOperationsExtensions` добавьте:
+В `IndexesOperationsExtensions`:
 
     // Simplified asynchronous operation
     public static Task<IndexGetStatisticsResult> GetStatisticsAsync(
@@ -173,7 +173,7 @@ ms.locfileid: "72792386"
         };
 
 ### <a name="model-class-changes"></a>Изменение классов модели
-Из-за изменений подписи, описанных в разделе [Изменение метода операции](#OperationMethodChanges), многие классы в пространстве имен `Microsoft.Azure.Search.Models` были переименованы или удалены. Пример.
+Из-за изменений подписи, описанных в разделе [Изменение метода операции](#OperationMethodChanges), многие классы в пространстве имен `Microsoft.Azure.Search.Models` были переименованы или удалены. Пример:
 
 * `IndexDefinitionResponse` был заменен на `AzureOperationResponse<Index>`.
 * `DocumentSearchResponse` был переименован в `DocumentSearchResult`.

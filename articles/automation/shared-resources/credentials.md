@@ -10,37 +10,37 @@ ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 767c1fddbc3d1f46d4341a70c990c2b57ad40e54
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79252705"
 ---
 # <a name="credential-assets-in-azure-automation"></a>Ресурсы учетных данных в службе автоматизации Azure
 
-Ресурс-контейнер учетных данных службы автоматизации содержит объект, который содержит учетные данные безопасности, такие как имя пользователя и пароль. Модули Runbook и конфигурации DSC могут использовать командлеты, которые принимают объект PSCredential для проверки подлинности или извлекать имя пользователя и пароль объекта PSCredential, чтобы предоставить их каким-либо приложениям или службам, требующим проверку подлинности. Свойства для учетных данных безопасно хранятся в службе автоматизации Azure. К ним можно получить доступ в модуле Runbook или конфигурации DSC с помощью действия [Get-AutomationPSCredential](#activities).
+Актив учетных данных Automation содержит объект, содержащий учетные данные безопасности, такие как имя пользователя и пароль. Модули Runbook и конфигурации DSC могут использовать командлеты, которые принимают объект PSCredential для проверки подлинности или извлекать имя пользователя и пароль объекта PSCredential, чтобы предоставить их каким-либо приложениям или службам, требующим проверку подлинности. Свойства для учетных данных безопасно хранятся в службе автоматизации Azure. К ним можно получить доступ в модуле Runbook или конфигурации DSC с помощью действия [Get-AutomationPSCredential](#activities).
 
 [!INCLUDE [gdpr-dsr-and-stp-note.md](../../../includes/gdpr-dsr-and-stp-note.md)]
 
 > [!NOTE]
 > Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Этот ключ хранится в Key Vault. Перед сохранением защищенного ресурса ключ загружается из Key Vault, а затем используется для шифрования ресурса.
 
-## <a name="azure-powershell-az-cmdlets"></a>Azure PowerShell AZ командлеты
+## <a name="azure-powershell-az-cmdlets"></a>Azure PowerShell Az cmdlets
 
-Для Azure PowerShell AZ командлеты, приведенные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell. Они поставляются как часть [модуля азуреаз. Automation](/powershell/azure/new-azureps-module-az?view=azps-1.1.0), который доступен для использования в модулях Runbook службы автоматизации и конфигурациях DSC.
+Для модуля Azure PowerShell Az cmdlets в следующей таблице используются для создания и управления учетными данными автоматизации с помощью Windows PowerShell. Они погрузки в рамках [AzureAz.Automation модуль](/powershell/azure/new-azureps-module-az?view=azps-1.1.0), который доступен для использования в автоматизации runbooks и DSC конфигураций.
 
-| Командлеты | Description |
+| Командлеты | Описание |
 |:--- |:--- |
-| [Get-Азаутоматионкредентиал](/powershell/module/az.automation/get-azautomationcredential?view=azps-3.3.0) |Извлекает сведения о ресурсе учетных данных. Это не возвращает объект PSCredential.  |
-| [New-Азаутоматионкредентиал](/powershell/module/az.automation/new-azautomationcredential?view=azps-3.3.0) |Создает новые учетные данные службы автоматизации. |
-| [Remove-Азаутоматионкредентиал](/powershell/module/az.automation/remove-azautomationcredential?view=azps-3.3.0) |Удаляет учетные данные службы автоматизации. |
-| [Set-Азаутоматионкредентиал](/powershell/module/az.automation/set-azautomationcredential?view=azps-3.3.0) |Задает свойства для существующих учетных данных службы автоматизации. |
+| [Get-AzAutomationCredential](/powershell/module/az.automation/get-azautomationcredential?view=azps-3.3.0) |Извлекает сведения о ресурсе учетных данных. Это не возвращает объект PSCredential.  |
+| [Новый-AzAutomationCredential](/powershell/module/az.automation/new-azautomationcredential?view=azps-3.3.0) |Создает новые учетные данные службы автоматизации. |
+| [Удалить-AzAutomationCredential](/powershell/module/az.automation/remove-azautomationcredential?view=azps-3.3.0) |Удаляет учетные данные службы автоматизации. |
+| [Set-AzAutomationCredential](/powershell/module/az.automation/set-azautomationcredential?view=azps-3.3.0) |Задает свойства для существующих учетных данных службы автоматизации. |
 
 ## <a name="activities"></a>Действия
 
 Действия в следующей таблице используются для доступа к учетным данным в модуле Runbook и конфигурациях DSC.
 
-| Действия | Description |
+| Действия | Описание |
 |:--- |:--- |
 | Get-AutomationPSCredential |Получает учетные данные для использования в модуле Runbook или в конфигурации DSC. Возвращает объект [System.Management.Automation.PSCredential](/dotnet/api/system.management.automation.pscredential) . |
 
@@ -51,7 +51,7 @@ ms.locfileid: "79252705"
 
 Функция, приведенная в следующей таблице, используется для доступа к учетным данным в модуле Runbook Python2.
 
-| Компонент | Description |
+| Компонент | Описание |
 |:---|:---|
 | automationassets.get_automation_credential | Извлекает сведения о ресурсе учетных данных. |
 
@@ -64,14 +64,14 @@ ms.locfileid: "79252705"
 
 1. В учетной записи службы автоматизации в области **Общие ресурсы** выберите **Учетные данные**.
 1. Щелкните **Добавить учетные данные**.
-1. Заполните форму и выберите **создать** , чтобы сохранить новые учетные данные.
+1. Заполните форму и выберите **Создать** для сохранения новых учетных данных.
 
 > [!NOTE]
 > Учетные записи пользователей, которые используют многофакторную проверку подлинности, не поддерживаются для использования в службе автоматизации Azure.
 
 ### <a name="to-create-a-new-credential-asset-with-windows-powershell"></a>Создание нового ресурса учетных данных с помощью Windows PowerShell
 
-Команды, приведенные ниже в примере, демонстрируют создание новых учетных данных службы автоматизации. Сначала создается объект PSCredential с именем и паролем, а затем он используется для создания ресурса учетных данных. Кроме того, можно использовать командлет **Get-Credential** , чтобы отобразить запрос имени и пароля.
+Команды, приведенные ниже в примере, демонстрируют создание новых учетных данных службы автоматизации. Сначала создается объект PSCredential с именем и паролем, а затем он используется для создания ресурса учетных данных. Кроме того, можно использовать командлет **Get-Credential**, чтобы получить запрос на ввод имени и пароля.
 
 ```powershell
 $user = "MyDomain\MyUser"
@@ -85,7 +85,7 @@ New-AzureAutomationCredential -AutomationAccountName "MyAutomationAccount" -Name
 Для получения ресурса-контейнера учетных данных из модуля Runbook или конфигурации DSC используется действие **Get-AutomationPSCredential**. Этот метод возвращает [объект PSCredential](/dotnet/api/system.management.automation.pscredential), который можно использовать с действием или командлетом, требующим параметр PSCredential. Можно также получить свойства объекта учетных данных, чтобы использовать их по отдельности. Объект имеет свойство для имени пользователя и защищенного пароля, или же вы можете использовать метод **GetNetworkCredential** для возврата объекта [NetworkCredential](/dotnet/api/system.net.networkcredential), предоставляющего незащищенную версию пароля.
 
 > [!NOTE]
-> **Get-азаутоматионкредентиал** не возвращает значение **PSCredential** , которое можно использовать для проверки подлинности. Он предоставляет только сведения об учетных данных. Если необходимо использовать учетные данные в модуле Runbook, то для получения объекта **PSCredential** необходимо использовать **Get-AutomationPSCredential** .
+> **Get-AzAutomationCredential** не возвращает **PSCredential,** который может быть использован для проверки подлинности. Он предоставляет только информацию о учетных данных. Если вам нужно использовать учетные данные в runbook, вы должны использовать **Get-AutomationPSCredential** для извлечения объекта **PSCredential.**
 
 ### <a name="textual-runbook-sample"></a>Пример текстового Runbook
 
@@ -98,7 +98,7 @@ $securePassword = $myCredential.Password
 $password = $myCredential.GetNetworkCredential().Password
 ```
 
-Вы также можете использовать учетные данные для проверки подлинности в Azure с помощью [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount?view=azps-3.3.0). В большинстве случаев следует использовать [учетную запись запуска от имени](../manage-runas-account.md) и получать ее с помощью [Get-азаутоматионконнектион](../automation-connections.md).
+Вы также можете использовать учетные данные для проверки подлинности в Azure с [помощью Connect-AzAccount.](/powershell/module/az.accounts/connect-azaccount?view=azps-3.3.0) В большинстве случаев следует использовать [учетную запись Run As](../manage-runas-account.md) и получить ее с [помощью Get-AzAutomationConnection.](../automation-connections.md)
 
 ```azurepowershell
 $myCred = Get-AutomationPSCredential -Name 'MyCredential'
@@ -117,13 +117,13 @@ Connect-AzureRmAccount -Credential $myPsCred
 
 ![Добавление учетных данных на холст](../media/credentials/credential-add-canvas.png)
 
-На следующем рисунке показан пример использования учетных данных в графическом Runbook. В этом случае он используется для проверки подлинности модуля Runbook в ресурсах Azure, как описано в статье Проверка подлинности [модулей Runbook с помощью учетной записи пользователя Azure AD](../automation-create-aduser-account.md). Первое действие получает учетные данные с доступом к подписке Azure. Затем действие **Connect-AzureRmAccount** использует эти учетные данные для проверки подлинности всех действий, которые поступают после него. Здесь используется [конвейерная связь](../automation-graphical-authoring-intro.md#links-and-workflow) , так как **Get-AutomationPSCredential** ожидает один объект.  
+На следующем рисунке показан пример использования учетных данных в графическом Runbook. В этом случае он используется для обеспечения аутентификации для runbook для ресурсов Azure, как описано в [Authenticate Runbooks с учетной записью пользователя Azure AD.](../automation-create-aduser-account.md) Первое действие получает учетные данные с доступом к подписке Azure. Затем деятельность **Connect-AzureRmAccount** использует эту учетную запись для обеспечения аутентификации любых действий, которые появляются после нее. Здесь используется [конвейерная связь](../automation-graphical-authoring-intro.md#links-and-workflow) , так как **Get-AutomationPSCredential** ожидает один объект.  
 
 ![Добавление учетных данных на холст](../media/credentials/get-credential.png)
 
 ## <a name="using-a-powershell-credential-in-dsc"></a>Использование учетных данных PowerShell в DSC
 
-Хотя конфигурации DSC в службе автоматизации Azure могут ссылаться на ресурсы учетных данных с помощью командлета **Get-AutomationPSCredential**, ресурсы учетных данных также могут передаваться через параметры, если это необходимо. Дополнительные сведения см. в статье [Компилирование конфигураций в Azure Automation DSC](../automation-dsc-compile.md#credential-assets).
+В то время как конфигурации DSC в Azure Automation могут ссылаться на учетные данные с помощью **Get-AutomationPSCredential,** учетные данные также могут передаваться по параметрам, если требуется. Дополнительные сведения см. в статье [Компилирование конфигураций в Azure Automation DSC](../automation-dsc-compile.md#credential-assets).
 
 ## <a name="using-credentials-in-python2"></a>Использование учетных данных в Python2
 
@@ -144,5 +144,5 @@ print cred["password"]
 * Дополнительные сведения о графической разработке см. в разделе [Связи и рабочий процесс](../automation-graphical-authoring-intro.md#links-and-workflow).
 * Сведения о различных методах аутентификации в службе автоматизации см. в статье [Обеспечение безопасности в службе автоматизации Azure](../automation-security-overview.md).
 * Чтобы начать работу с графическими модулями Runbook, см. инструкции в статье [Первый графический Runbook](../automation-first-runbook-graphical.md).
-* Чтобы приступить к работе с модулями Runbook рабочих процессов PowerShell, обратитесь к статье [Мой первый модуль Runbook рабочего процесса PowerShell](../automation-first-runbook-textual.md)
+* Чтобы начать работу с runbooks рабочего процесса PowerShell, [см.](../automation-first-runbook-textual.md)
 * Сведения о том, как начать работу с модулями Runbook Python2, см. в статье [My first Python runbook](../automation-first-runbook-textual-python2.md) (Мой первый модуль Runbook Python). 

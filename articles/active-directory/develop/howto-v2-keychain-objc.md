@@ -1,7 +1,7 @@
 ---
 title: Настройка цепочки ключей
 titleSuffix: Microsoft identity platform
-description: Узнайте, как настроить цепочку ключей, чтобы приложение могла кэшировать маркеры в цепочке ключей.
+description: Узнайте, как настроить брелок таким образом, чтобы приложение мог кэшировать токены в брелоке.
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -14,39 +14,39 @@ ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
 ms.openlocfilehash: d94bf7ffe955c9ec9ee2a2e7f7c4dbaaa28df270
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77085865"
 ---
 # <a name="configure-keychain"></a>Настройка цепочки ключей
 
-Когда [Библиотека проверки подлинности Microsoft для iOS и macOS](msal-overview.md) (MSAL) входит в пользователь или обновляет маркер, он пытается кэшировать токены в цепочке ключей. Кэширование токенов в цепочке ключей позволяет MSAL предоставлять автоматический единый вход (SSO) между несколькими приложениями, распространяемыми одним и тем же разработчиком Apple. Единый вход осуществляется с помощью функций групп доступа к цепочке ключей. Дополнительные сведения см. в [документации по элементам цепочки ключей](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps?language=objc)Apple.
+Когда [Библиотека аутентификации Майкрософт для iOS и macOS](msal-overview.md) (MSAL) подписывает в пользователе или обновляет токен, она пытается кэшировать токены в брелоке. Кэширование токенов в брелоке позволяет MSAL предоставлять бесшумный одиночный ввод (SSO) между несколькими приложениями, которые распространяются одним и тем же разработчиком Apple. SSO достигается с помощью функциональности групп доступа к брелоку. Для получения дополнительной информации [Keychain Items documentation](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps?language=objc)см.
 
-В этой статье описывается, как настроить права приложений, чтобы MSAL мог записывать кэшированные маркеры в ОС iOS и macOS цепочку ключей.
+В этой статье рассказывается о том, как настроить права приложений таким образом, чтобы MSAL мог писать кэшированные токены на брелок iOS и macOS.
 
-## <a name="default-keychain-access-group"></a>Группа доступа к цепочке ключей по умолчанию
+## <a name="default-keychain-access-group"></a>Группа доступа к брелоку по умолчанию
 
 ### <a name="ios"></a>iOS
 
-MSAL в iOS по умолчанию использует группу доступа `com.microsoft.adalcache`. Это группа общего доступа, используемая как в пакетах SDK MSAL, так и в библиотеке аутентификация Azure AD Library (ADAL), и обеспечивает оптимальное взаимодействие единого входа между несколькими приложениями из одного издателя.
+MSAL на iOS `com.microsoft.adalcache` использует группу доступа по умолчанию. Это общая группа доступа, используемая как MSAL, так и SD-библиотекой aD AD (ADAL) и обеспечивает лучший опыт в один очном входе (SSO) между несколькими приложениями одного и того же издателя.
 
-В iOS добавьте группу `com.microsoft.adalcache` цепочку ключей в назначение приложения в XCode в разделе **Параметры проекта** > **возможности** > **совместное использование цепочки ключей**
+На iOS `com.microsoft.adalcache` добавьте группу брелоков в право вашего приложения в XCode в **настройках** > проекта**Capabilities** > **Keychain**
 
 ### <a name="macos"></a>macOS
 
-MSAL в macOS использует группу `com.microsoft.identity.universalstorage` доступа по умолчанию.
+MSAL на macOS использует `com.microsoft.identity.universalstorage` группу доступа по умолчанию.
 
-Из-за ограничений macOS цепочки ключей `access group` MSAL не переводится непосредственно в атрибут группы доступа к цепочке ключей (см. [ксекаттракцессграуп](https://developer.apple.com/documentation/security/ksecattraccessgroup?language=objc)) в macOS 10,14 и более ранних версиях. Однако он ведет себя аналогично с точки зрения единого входа, гарантируя, что несколько приложений, распространяемых одним и тем же разработчиком Apple, могут иметь автоматический единый вход.
+Из-за ограничений на брелок macOS MSAL `access group` напрямую переводится на атрибут группы доступа к брелоку (см. [kSecAttrAccessGroup)](https://developer.apple.com/documentation/security/ksecattraccessgroup?language=objc)на macOS 10.14 и ранее. Тем не менее, он ведет себя аналогично с точки зрения SSO, гарантируя, что несколько приложений, распространяемых одним и тем же разработчиком Apple, могут иметь молчаливый SSO.
 
-В macOS 10,15 (macOS Catalina) MSAL использует атрибут группы доступа к цепочке ключей для автоматического входа в систему, аналогично iOS.
+На macOS 10.15 года (macOS Catalina) MSAL использует атрибут группы доступа к брелоку для достижения бесшумной SSO, подобно iOS.
 
-## <a name="custom-keychain-access-group"></a>Пользовательская группа доступа к цепочке ключей
+## <a name="custom-keychain-access-group"></a>Пользовательская группа доступа к брелоку
 
-Если вы хотите использовать другую группу доступа к цепочке ключей, вы можете передать пользовательскую группу при создании `MSALPublicClientApplicationConfig` перед созданием `MSALPublicClientApplication`следующим образом:
+Если вы хотите использовать другую группу доступа к брелоку, `MSALPublicClientApplicationConfig` вы `MSALPublicClientApplication`можете пройти пользовательскую группу при создании перед созданием, как это:
 
-# <a name="objective-ctabobjc"></a>[Objective-C](#tab/objc)
+# <a name="objective-c"></a>[Objective-C](#tab/objc)
 
 ```objc
 MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"your-client-id"
@@ -62,7 +62,7 @@ MSALPublicClientApplication *application = [[MSALPublicClientApplication alloc] 
 // and only shared with other applications declaring the same access group
 ```
 
-# <a name="swifttabswift"></a>[Swift](#tab/swift)
+# <a name="swift"></a>[Swift](#tab/swift)
 
 ```swift
 let config = MSALPublicClientApplicationConfig(clientId: "your-client-id",
@@ -80,17 +80,17 @@ do {
 
 ---
 
-## <a name="disable-keychain-sharing"></a>Отключить общий доступ к цепочке ключей
+## <a name="disable-keychain-sharing"></a>Отключите обмен брелоком
 
-Если вы не хотите совместно использовать единый режим единого входа для нескольких приложений или группу доступа к цепочке ключей, отключите общий доступ к цепочке ключей, передав идентификатор пакета приложений в качестве Кэйчаинграуп:
+Если вы не хотите делиться состоянием SSO между несколькими приложениями или использовать любую группу доступа к брелоку, отключите обмен брелока, передав идентификатор пакета приложения в качестве брелокаГруппы:
 
-# <a name="objective-ctabobjc"></a>[Objective-C](#tab/objc)
+# <a name="objective-c"></a>[Objective-C](#tab/objc)
 
 ```objc
 config.cacheConfig.keychainSharingGroup = [[NSBundle mainBundle] bundleIdentifier];
 ```
 
-# <a name="swifttabswift"></a>[Swift](#tab/swift)
+# <a name="swift"></a>[Swift](#tab/swift)
 
 ```swift
 if let bundleIdentifier = Bundle.main.bundleIdentifier {
@@ -100,14 +100,14 @@ if let bundleIdentifier = Bundle.main.bundleIdentifier {
 
 ---
 
-## <a name="handle--34018-error-failed-to-set-item-into-keychain"></a>Handle-34018 Error (не удалось установить элемент в цепочку ключей)
+## <a name="handle--34018-error-failed-to-set-item-into-keychain"></a>Ошибка обработки -34018 (не установить элемент в брелок)
 
-Ошибка-34018 обычно означает, что цепочка ключей не настроена правильно. Убедитесь, что Группа доступа к цепочке ключей, настроенная в MSAL, соответствует настроенной в правах.
+Ошибка -34018 обычно означает, что брелок не был настроен правильно. Убедитесь, что группа доступа к брелоку, настроенная в MSAL, соответствует той, которая настроена в правах.
 
 ## <a name="ensure-your-application-is-properly-signed"></a>Убедитесь, что приложение подписано правильно
 
-В macOS приложения могут выполняться без подписи разработчика. Хотя большая часть функций MSAL будет продолжать работать, единый вход через цепочку ключей требует, чтобы приложение было подписано. Если у вас есть несколько запросов на цепочку ключей, убедитесь, что подпись приложения действительна.
+На macOS приложения могут выполняться без подписи разработчика. В то время как большая часть функциональности MSAL будет продолжать работать, SSO через доступ к брелоку требует подписи приложения. Если у вас возникло несколько запросов на брелок, убедитесь, что подпись приложения действительна.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о группах доступа к цепочке ключей в [общем доступе Apple к элементам цепочки ключей из статьи коллекция приложений](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps?language=objc) .
+Подробнее о группах доступа к брелоку читайте в материале журнала "Огонек" ["Доступ к ключевым цепочкам среди](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps?language=objc) раздела приложений".

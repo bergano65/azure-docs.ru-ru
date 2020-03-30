@@ -16,22 +16,22 @@ ms.date: 04/30/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: cad70169e88e1fafa129c02f30d5288d39e30a9c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70102148"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-resource-manager"></a>Настройка интеграции Azure Key Vault для SQL Server на виртуальных машинах Azure (Resource Manager)
 
 > [!div class="op_single_selector"]
-> * [Resource Manager](virtual-machines-windows-ps-sql-keyvault.md)
+> * [Менеджер ресурсов](virtual-machines-windows-ps-sql-keyvault.md)
 > * [Классический](../sqlclassic/virtual-machines-windows-classic-ps-sql-keyvault.md)
 
 ## <a name="overview"></a>Обзор
-Существует несколько функций шифрования SQL Server, например [прозрачное шифрование данных (TDE)](https://msdn.microsoft.com/library/bb934049.aspx), [шифрование на уровне столбцов (CLE)](https://msdn.microsoft.com/library/ms173744.aspx) и [шифрование резервной копии](https://msdn.microsoft.com/library/dn449489.aspx). Эти формы шифрования требуют хранить используемые для шифрования ключи и управлять ими. Хранилище ключей Azure (AKV) предназначено для повышения безопасности и управления этими ключами в расположении высокой надежности и безопасности. [Соединитель SQL Server](https://www.microsoft.com/download/details.aspx?id=45344) позволяет SQL Server использовать эти ключи из хранилища ключей Azure.
+Существует несколько функций шифрования SQL Server, например [прозрачное шифрование данных (TDE)](https://msdn.microsoft.com/library/bb934049.aspx), [шифрование на уровне столбцов (CLE)](https://msdn.microsoft.com/library/ms173744.aspx) и [шифрование резервной копии](https://msdn.microsoft.com/library/dn449489.aspx). Эти формы шифрования требуют хранить используемые для шифрования ключи и управлять ими. Хранилище ключей Azure (AKV) предназначено для повышения безопасности и управления этими ключами в расположении высокой надежности и безопасности. [Разъем сервера S'L](https://www.microsoft.com/download/details.aspx?id=45344) позволяет серверу S'L Server использовать эти ключи из Убежища ключей Azure.
 
-Если вы используете SQL Server с локальными машинами, выполните [шаги для доступа к хранилищу ключей Azure с локальной виртуальной машины SQL Server](https://msdn.microsoft.com/library/dn198405.aspx). Однако в случае SQL Server на виртуальных машинах Azure можно сэкономить время, воспользовавшись функцией *интеграции хранилища ключей Azure* .
+Если вы работаете под управлением сервера s'L Server с помощью штатных машин, вы [можете получить доступ к Azure Key Vault из вашего собственного серверного автомата S'L Server.](https://msdn.microsoft.com/library/dn198405.aspx) Но для сервера S'L в Azure VMs можно сэкономить время, используя функцию *интеграции Azure Key Vault.*
 
 Если эта функция включена, она автоматически устанавливает соединитель SQL Server, настраивает поставщик расширенного управления ключами для доступа к хранилищу ключей Azure и создает учетные данные, которые позволяют получить доступ к вашему хранилищу. Если вы изучили шаги в ранее упомянутой документации для локального компьютера, то увидели, что эта функция автоматизирует шаги 2 и 3. Единственное, что останется сделать вручную, — создать хранилище ключей и ключи. Далее вся настройка виртуальной машины SQL выполняется автоматически. После завершения установки этой функции можно выполнять инструкции T-SQL, чтобы начать шифрование базы данных или резервное копирование как обычно.
 
@@ -49,20 +49,20 @@ ms.locfileid: "70102148"
 
 ![Интеграция SQL с хранилищем ключей Azure](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)
 
-Подробное пошаговое руководство по подготовке см. [в разделе подготовка SQL Server виртуальной машины в портал Azure](virtual-machines-windows-portal-sql-server-provision.md).
+Подробную информацию о подготовке можно узнать на [портале Azure.](virtual-machines-windows-portal-sql-server-provision.md)
 
 ### <a name="existing-vms"></a>Существующие виртуальные машины
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Для существующих SQL Server виртуальных машин откройте [ресурс виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) и в разделе **Параметры**выберите пункт **Безопасность** . Выберите **включить** , чтобы включить интеграцию Azure Key Vault. 
+Для существующих виртуальных машин S'L Server откройте [ресурс виртуальных машин s'L](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) и выберите **безопасность** в **настройках.** Выберите **включить включить** интеграцию Azure Key Vault. 
 
 ![Интеграция AKV SQL для существующих виртуальных машин](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-rm-akv-existing-vms.png)
 
-По завершении нажмите кнопку **Применить** в нижней части страницы **Безопасность** , чтобы сохранить изменения.
+После завершения работы выберите кнопку **Apply** в нижней части **страницы безопасности,** чтобы сохранить изменения.
 
 > [!NOTE]
-> Имя учетных данных, которое мы создали здесь, будет сопоставлено с именем входа SQL позже. С помощью этих данных для входа в SQL можно получить доступ к хранилищу ключей. 
+> Имя учетных данных, которое мы создали здесь, будет отображено на логине позже. С помощью этих данных для входа в SQL можно получить доступ к хранилищу ключей. 
 
 
 > [!NOTE]

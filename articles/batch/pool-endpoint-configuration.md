@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/13/2018
 ms.author: labrenne
 ms.openlocfilehash: 098ccf999391412520989c4ec2433fd73bc0a72d
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77017230"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Настройка или отключение удаленного доступа к вычислительным узлам пула пакетной службы Azure
@@ -22,7 +22,7 @@ ms.locfileid: "77017230"
 В своей среде вам может потребоваться ограничить или отключить эти параметры внешнего доступа по умолчанию. Эти параметры можно изменить с помощью API пакетной службы для установки свойства [PoolEndpointConfiguration](/rest/api/batchservice/pool/add#poolendpointconfiguration). 
 
 ## <a name="about-the-pool-endpoint-configuration"></a>О конфигурации конечной точки пула
-Конфигурация конечной точки состоит из одного или нескольких [пулов преобразования сетевых адресов (NAT)](/rest/api/batchservice/pool/add#inboundnatpool) интерфейсных портов. (Не путайте пул NAT с пулом пакетной службы для кластерных узлов.) Вы настраиваете каждый пул NAT для переопределения параметров подключения по умолчанию на расчетных узлах пула. 
+Конфигурация конечной точки состоит из одного или нескольких [пулов преобразования сетевых адресов (NAT)](/rest/api/batchservice/pool/add#inboundnatpool) интерфейсных портов. (Не путайте пул NAT с пулом вычислительных узлов пакета.) Вы настраиваете каждый пул NAT для переопределения настроек соединения по умолчанию на вычислительных узлах пула. 
 
 Каждая конфигурация пула NAT включает одно или несколько правил [групп безопасности сети](/rest/api/batchservice/pool/add#networksecuritygrouprule), каждое из которых разрешает или запрещает определенный сетевой трафик к конечной точке. Вы можете разрешить или запретить весь трафик, трафик, определяемый по [тегу службы](../virtual-network/security-overview.md#service-tags) (например, "Интернет"), или трафик из определенных IP-адресов или подсетей.
 

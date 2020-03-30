@@ -1,6 +1,6 @@
 ---
-title: Проблемы пульса Apache Ambari в Azure HDInsight
-description: Анализ различных причин проблем пульса Apache Ambari в Azure HDInsight
+title: Проблемы с пульсом Apache Ambari в Azure HDInsight
+description: Обзор различных причин проблем с сердцебиением Apache Ambari в Azure HDInsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,29 +8,29 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/06/2020
 ms.openlocfilehash: ab88f65d535be2aef5f0b26fa1171c03276466e8
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77057079"
 ---
-# <a name="apache-ambari-heartbeat-issues-in-azure-hdinsight"></a>Проблемы пульса Apache Ambari в Azure HDInsight
+# <a name="apache-ambari-heartbeat-issues-in-azure-hdinsight"></a>Проблемы с пульсом Apache Ambari в Azure HDInsight
 
-В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
+В этой статье описаны шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="scenario-high-cpu-utilization"></a>Сценарий: высокая загрузка ЦП
+## <a name="scenario-high-cpu-utilization"></a>Сценарий: Высокое использование процессора
 
 ### <a name="issue"></a>Проблема
 
-Агент Ambari использует высокую загрузку ЦП, что приводит к предупреждениям пользовательского интерфейса Ambari, который для некоторых узлов теряет пульс агента Ambari. Предупреждение о потере пульса обычно является временным.
+Агент Ambari имеет высокую загрузку процессора, что приводит к предупреждениям от Ambari UI, что для некоторых узлов сердцебиение агента Ambari теряется. Сердцебиение потерял оповещение, как правило, переходный.
 
 ### <a name="cause"></a>Причина
 
-Из-за различных ошибок ambari-Agent в редких случаях ambari-Agent может иметь высокий уровень использования ЦП (близко к 100).
+Из-за различных ошибок ambari-агента, в редких случаях, ваш амбари-агент может иметь высокий (около 100) процент использования процессора.
 
 ### <a name="resolution"></a>Решение
 
-1. Идентификация идентификатора процесса (PID) ambari-Agent:
+1. Определить идентификатор процесса (pid) амбари-агента:
 
     ```bash
     ps -ef | grep ambari_agent
@@ -42,13 +42,13 @@ ms.locfileid: "77057079"
     top -p <ambari-agent-pid>
     ```
 
-1. Перезапустите ambari-Agent, чтобы устранить проблемы.
+1. Перезапуск ambari-агента для смягчения проблемы:
 
     ```bash
     service ambari-agent restart
     ```
 
-1. Если перезапуск не работает, завершите процесс ambari-Agent, а затем запустите его:
+1. Если перезагрузка не работает, убейте процесс амбари-агента, а затем запустите его:
 
     ```bash
     kill -9 <ambari-agent-pid>
@@ -57,11 +57,11 @@ ms.locfileid: "77057079"
 
 ---
 
-## <a name="scenario-ambari-agent-not-started"></a>Сценарий: агент Ambari не запущен
+## <a name="scenario-ambari-agent-not-started"></a>Сценарий: Агент Амбари не начал
 
 ### <a name="issue"></a>Проблема
 
-Агент Ambari не начал работу, что приводит к предупреждениям из пользовательского интерфейса Ambari, который для некоторых узлов теряет пульс агента Ambari.
+Агент Амбари не начал, что приводит к предупреждениям от Ambari UI, что для некоторых узлов агента Ambari сердцебиение теряется.
 
 ### <a name="cause"></a>Причина
 
@@ -69,34 +69,34 @@ ms.locfileid: "77057079"
 
 ### <a name="resolution"></a>Решение
 
-1. Подтвердите состояние ambari-Agent:
+1. Подтвердите статус амбари-агента:
 
     ```bash
     service ambari-agent status
     ```
 
-1. Проверьте, выполняются ли службы отказоустойчивого контроллера:
+1. Подтвердите, что службы контроллера сбоя работают:
 
     ```bash
     ps -ef | grep failover
     ```
 
-    Если службы контроллера отработки отказа не запущены, скорее всего, это связано с тем, что служба hdinsight-Agent не может запустить контроллер отработки отказа. Проверьте журнал hdinsight-Agent в файле `/var/log/hdinsight-agent/hdinsight-agent.out`.
+    Если службы контроллера сбоя не работают, это, скорее всего, из-за проблемы предотвратить hdinsight-агент от запуска контроллера failover. Проверьте журнал hdinsight-агента из `/var/log/hdinsight-agent/hdinsight-agent.out` файла.
 
-## <a name="scenario-heartbeat-lost-for-ambari"></a>Сценарий: потеря пульса для Ambari
+## <a name="scenario-heartbeat-lost-for-ambari"></a>Сценарий: Сердцебиение потерял для Амбари
 
 ### <a name="issue"></a>Проблема
 
-Агент пульса Ambari был потерян.
+Агент сердцебиения Амбари был потерян.
 
 ### <a name="cause"></a>Причина
 
-Журналы OMS вызывают высокую загрузку ЦП.
+OmS журналы вызывают высокое использование процессора.
 
 ### <a name="resolution"></a>Решение
 
-* Отключите ведение журнала Azure Monitor с помощью командлета PowerShell [Disable-аздинсигхтмониторинг](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightmonitoring) .
-* Удаление файла журнала `mdsd.warn`
+* Отключите журнал Azure Monitor с помощью смдлета [Disable-AzHDInsightMonitoring](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightmonitoring) PowerShell.
+* Удалить `mdsd.warn` файл журнала
 
 ---
 
@@ -104,8 +104,8 @@ ms.locfileid: "77057079"
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
 
-* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Связаться [@AzureSupport](https://twitter.com/azuresupport) с официальным аккаунтом Microsoft Azure для улучшения обслуживания клиентов, подключив сообщество Azure к нужным ресурсам: ответам, поддержке и экспертам.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации, пожалуйста, просмотрите [Как создать запрос поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)

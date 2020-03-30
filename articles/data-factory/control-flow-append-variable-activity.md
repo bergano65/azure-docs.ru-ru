@@ -12,10 +12,10 @@ manager: jroth
 ms.reviewer: maghan
 ms.date: 10/09/2018
 ms.openlocfilehash: bcecd3411b6e6e751032f33862a671d8adbca046
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73679972"
 ---
 # <a name="append-variable-activity-in-azure-data-factory"></a>Добавление действия переменной в фабрике данных Azure
@@ -24,15 +24,15 @@ ms.locfileid: "73679972"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description (Описание) | Обязательно
+Свойство | Описание | Обязательно
 -------- | ----------- | --------
 name | Имя действия в конвейере | Да
-description | Текст, описывающий действия | Нет
-type | Тип действия — AppendVariable | Да
-значение | Строковый литерал или значение объекта выражения, используемое для добавление указанной переменной | Да
-variableName | Имя переменной будет изменено действием, в то время как переменная должна иметь тип "Массив" | Да
+description | Текст, описывающий действия | нет
+type | Тип действия — AppendVariable | да
+значение | Строковый литерал или значение объекта выражения, используемое для добавление указанной переменной | да
+variableName | Имя переменной будет изменено действием, в то время как переменная должна иметь тип "Массив" | да
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о деятельности связанного потока управления, который поддерживается Фабрикой данных: 
 
-- [Установка действия переменной](control-flow-set-variable-activity.md)
+- [Действие задания переменной](control-flow-set-variable-activity.md)

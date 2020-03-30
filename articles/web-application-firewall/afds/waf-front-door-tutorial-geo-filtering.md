@@ -1,6 +1,6 @@
 ---
-title: Настройка политики брандмауэра веб-приложения для географической фильтрации для службы "Передняя дверь" Azure
-description: В этом руководстве вы узнаете, как создать политику географической фильтрации и связать ее с существующим интерфейсным узлом передней дверцы.
+title: Настройка политики геофильтрации веб-приложений для службы Azure Front Door
+description: В этом уроке вы узнаете, как создать политику геофильтрации и связать политику с существующим хостом Front Door
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
@@ -9,19 +9,19 @@ ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
 ms.openlocfilehash: abcef61d478eccb4e979b60eb845ac8d398a49f9
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79135876"
 ---
-# <a name="set-up-a-geo-filtering-waf-policy-for-your-front-door"></a>Настройка политики географической фильтрации WAF для передней дверцы
+# <a name="set-up-a-geo-filtering-waf-policy-for-your-front-door"></a>Настройка политики геофильтрации WAF для передней двери
 
 В этом руководстве показано, как с помощью Azure PowerShell создать простую политику геофильтрации и связать ее с имеющимся узлом внешнего интерфейса Front Door. Этот пример политики геофильтрации будет блокировать запросы от других стран или регионов, кроме США.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать настройку политики геофильтрации, настройте среду PowerShell и создайте профиль Front Door.
 ### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
@@ -29,7 +29,7 @@ ms.locfileid: "79135876"
 
 Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) на локальном компьютере и использовать его в любом сеансе PowerShell. Следуя инструкциям на странице, войдите с учетными данными Azure и установите модуль Az PowerShell.
 
-#### <a name="connect-to-azure-with-an-interactive-dialog-for-sign-in"></a>Подключение к Azure с помощью интерактивного диалогового окна для входа
+#### <a name="connect-to-azure-with-an-interactive-dialog-for-sign-in"></a>Подключение к Azure с интерактивным диалогом для входа в систему
 
 ```
 Install-Module -Name Az
@@ -48,11 +48,11 @@ Install-Module -Name Az.FrontDoor
 
 ### <a name="create-a-front-door-profile"></a>Создание профиля Front Door
 
-Создайте профиль передней дверцы, следуя инструкциям, приведенным в разделе [Краткое руководство по созданию профиля передней дверцы](../../frontdoor/quickstart-create-front-door.md).
+Создайте профиль передних дверей, следуя инструкциям, описанным в [профиле «Быстрый старт: Создайте переднюю дверь».](../../frontdoor/quickstart-create-front-door.md)
 
 ## <a name="define-geo-filtering-match-condition"></a>Определение условий соответствия геофильтрации
 
-Создайте пример условия соответствия, по которому выбираются запросы, поступающие не из региона "США", с использованием [New-AzFrontDoorWafMatchConditionObject](/powershell/module/az.frontdoor/new-azfrontdoorwafmatchconditionobject) в параметрах при создании условия соответствия. Два буквенных кода для сопоставления стран приведены в разделе [что такое географическая фильтрация в домене для передней дверцы Azure?](waf-front-door-geo-filtering.md).
+Создайте пример условия соответствия, по которому выбираются запросы, поступающие не из региона "США", с использованием [New-AzFrontDoorWafMatchConditionObject](/powershell/module/az.frontdoor/new-azfrontdoorwafmatchconditionobject) в параметрах при создании условия соответствия. Два кода страновых букв для картирования стран приведены в том, что [такое геофильтрация на домене для Двери передней двери Azure?.](waf-front-door-geo-filtering.md)
 
 ```azurepowershell-interactive
 $nonUSGeoMatchCondition = New-AzFrontDoorWafMatchConditionObject `
@@ -79,7 +79,7 @@ $nonUSBlockRule = New-AzFrontDoorWafCustomRuleObject `
 
 С помощью команды `Get-AzResourceGroup` найдите имя группы ресурсов, содержащей профиль Front Door. Затем создайте объект политики `geoPolicy`, содержащий `nonUSBlockRule`, используя команду [New-AzFrontDoorWafPolicy](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy) в указанной группе ресурсов, содержащей профиль Front Door. Укажите уникальное имя для политики геофильтрации. 
 
-В следующем примере используется имя группы ресурсов *myResourceGroupFD1* с предположением, что вы создали профиль передней дверцы с помощью инструкций, приведенных в статье [Краткое руководство по созданию передней дверцы](../../frontdoor/quickstart-create-front-door.md) . В следующем примере замените имя политики *geoPolicyAllowUSOnly* уникальным именем политики.
+В следующем примере используется название группы ресурсов *myResourceGroupFD1* с предположением, что вы создали профиль Front Door с помощью инструкций, приведенных в статье [«Быстрый старт: Создайте переднюю дверь».](../../frontdoor/quickstart-create-front-door.md) В следующем примере замените имя политики *geoPolicyAllowUSOnly* уникальным именем политики.
 
 ```
 $geoPolicy = New-AzFrontDoorWafPolicy `

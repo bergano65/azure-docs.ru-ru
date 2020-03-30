@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
 ms.openlocfilehash: 59ac3ab2e70bfa00f19bae7e551780f2b2bb8ccb
-ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79096711"
 ---
 # <a name="licensing-microsoft-smooth-streaming-client-porting-kit"></a>Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming 
@@ -29,7 +29,7 @@ ms.locfileid: "79096711"
 
 ![SSPK](./media/media-services-sspk/sspk-arch.png)
 
-## <a name="description"></a>Description
+## <a name="description"></a>Описание
 Условия лицензирования SSPK повышают коммерческую ценность этого предложения. Лицензия SSPK предоставляет предприятиям отрасли следующие возможности.
 
 * Исходный код пакета для портирования Smooth Streaming на языке C++, в котором: 
@@ -71,11 +71,11 @@ ms.locfileid: "79096711"
 * Отсутствие отчислений за первые 10 000 устройств в течение каждого года. 
 
 ## <a name="licensing-procedure-and-sspk-access"></a>Процедура лицензирования и доступ к SSPK.
-Все запросы на лицензирование отправляйте по электронной почте по адресу [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com).
+Электронная почта [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com) для всех запросов лицензирования.
 
 Зарегистрированные обладатели лицензии на промежуточный продукт получают доступ к [Порталу распространения SSPK](https://microsoft.sharepoint.com/teams/SSPKDOWNLOAD/) .
 
-Обладатели лицензий на промежуточные и конечные продукты SSPK могут отправлять технические вопросы на адрес электронной почты [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com).
+Промежуточные и окончательные лицензиаты SSPK могут задавать технические вопросы [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com).
 
 ## <a name="microsoft-smooth-streaming-client-interim-product-agreement-licensees"></a>Обладатели лицензий на промежуточный продукт пакета для портирования клиента Microsoft Smooth Streaming.
 
@@ -91,7 +91,7 @@ ms.locfileid: "79096711"
 * EchoStar Purchasing Corporation
 * Enseo, Inc.
 * Fluendo S.A.
-* Гуангзау Шикун электроника., Ltd.
+* Гуанчжоу Шикун Электроникс., Лтд.
 * HANDAN BroadInfoCom Co., Ltd.
 * Infomir GMBH
 * Irdeto USA Inc.
@@ -125,9 +125,9 @@ ms.locfileid: "79096711"
 * Dongguan Digital AV Technology Corp., Ltd.
 * EchoStar Purchasing Corporation
 * Enseo, Inc.
-* Филмфлекс фильмов
+* FilmFlex Фильмы Лимитед
 * Fluendo S.A.
-* ФУНАИ ЭЛЕКТРИЧЕСКИЙ CO, LTD
+* FUNAI ELECTRIC CO., LTD
 * Gibson Innovations Limited
 * Haier Information Applicantion S.R.L
 * HANDAN BroadInfoCom Co., Ltd.
@@ -141,7 +141,7 @@ ms.locfileid: "79096711"
 * Orange SA
 * Saffron Digital Limited
 * Sagemcom Broadband SAS
-* Шензен Чуангвеи — модель бытовой электроники по RGB, Ltd.
+* Шэньчжэнь Чуангвэй-РГБ Электроника Co.,Ltd.
 * Shenzhen Coship Electronics CO., LTD
 * Shenzhen Jiuzhou Electric Co., Ltd
 * Shenzhen Skyworth Digital Technology Co., Ltd

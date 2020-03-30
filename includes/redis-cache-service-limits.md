@@ -5,21 +5,21 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: wesmc
 ms.openlocfilehash: 1ab6243be39bf30bc060ed5745fbf600924743a9
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "71839230"
 ---
-| Resource | Ограничение |
+| Ресурс | Ограничение |
 | --- | --- |
 | Объем кэша |1,2 ТБ |
 | Базы данных |64 |
-| Максимальное число подключенных клиентов |40 000 |
-| Кэш Azure для реплик Redis для обеспечения высокой доступности |1 |
+| Максимально подключенные клиенты |40 000 |
+| Кэш Azure для реплик Redis для высокой доступности |1 |
 | Сегменты кэша уровня "Премиум" с включенной кластеризацией |10 |
 
-Ограничения и размер кэша Redis для Azure отличаются для каждой ценовой категории. Ценовые категории и связанные с ними размеры см. на странице [цен на Azure для Redis](https://azure.microsoft.com/pricing/details/cache/).
+Ограничения и размер кэша Redis для Azure отличаются для каждой ценовой категории. Чтобы увидеть уровни ценообразования и связанные с ними размеры, [см.](https://azure.microsoft.com/pricing/details/cache/)
 
 Дополнительные сведения об ограничениях конфигурации кэша Redis для Azure см. в разделе о [конфигурации сервера Redis по умолчанию](../articles/azure-cache-for-redis/cache-configure.md#default-redis-server-configuration).
 

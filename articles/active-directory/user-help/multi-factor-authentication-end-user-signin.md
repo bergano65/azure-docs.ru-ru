@@ -1,6 +1,6 @@
 ---
-title: Вход с использованием рабочей или учебной учетной записи Azure AD с помощью проверки подлинности
-description: Узнайте, как войти в рабочую или учебную учетную запись с помощью различных методов двухфакторной проверки подлинности.
+title: Восподписание с помощью аутентификации с помощью рабочей или школьной учетной записи - Azure AD
+description: Узнайте, как войти в свою учетную запись с помощью различных двухфакторных методов проверки.
 services: active-directory
 author: curtand
 manager: daveba
@@ -14,13 +14,13 @@ ms.author: curtand
 ms.reviewer: librown
 ms.custom: end-user, seo-update-azuread-jan
 ms.openlocfilehash: 33cf9e284d2206ea497af7a5da7c3cf4a890cc87
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77064093"
 ---
-# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Вход в рабочую или учебную учетную запись с помощью метода двухфакторной проверки подлинности
+# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Войти на работу или в школу с помощью двухфакторного метода проверки
 
 > [!NOTE]
 > В этой статье рассматривается стандартная процедура входа. Если у вас возникают проблемы со входом в систему см. статью [об устранении неполадок при двухфакторной проверке подлинности](multi-factor-authentication-end-user-troubleshoot.md).
@@ -32,7 +32,7 @@ ms.locfileid: "77064093"
 | --- |
 | [С помощью звонка на мобильный или рабочий телефон](#signing-in-with-a-phone-call) |
 | [С помощью текстового сообщения на мобильный телефон](#signing-in-with-a-text-message)
-| [Вход с помощью уведомлений Microsoft Authenticator](#to-sign-in-with-a-notification-from-the-microsoft-authenticator-app) |
+| [С помощью уведомлений из приложения Microsoft Authenticator](#to-sign-in-with-a-notification-from-the-microsoft-authenticator-app) |
 | С помощью кодов проверки приложения Microsoft Authenticator |
 | [С помощью другого метода, так как я не могу использовать прямо сейчас основной вариант](#signing-in-with-an-alternate-method) |
 

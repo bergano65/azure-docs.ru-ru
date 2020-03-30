@@ -1,6 +1,6 @@
 ---
 title: Использование секретов Azure Key Vault в действиях конвейера
-description: Узнайте, как извлечь сохраненные учетные данные из хранилища ключей Azure и использовать их во время выполнения конвейера фабрики данных.
+description: Узнайте, как получить сохраненные учетные данные из хранилища ключей Azure и использовать их во время запуска конвейера data Factory.
 services: data-factory
 author: ChrisLound
 manager: anandsub
@@ -11,62 +11,62 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
 ms.openlocfilehash: 09051ad3633ddc720cb34d3d145ccf649fa9cb08
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77200118"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
 
-Можно сохранить учетные данные или секретные значения в Azure Key Vault и использовать их во время выполнения конвейера для передачи в действия.
+Вы можете хранить учетные данные или секретные значения в Хранилище ключей Azure и использовать их во время выполнения конвейера для передачи вашей деятельности.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Эта функция основана на управляемом удостоверении фабрики данных.  Узнайте, как это работает из [управляемого удостоверения для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) и убедитесь, что фабрика данных имеет одну связь.
+Эта функция основана на управляемой итоге фабрики данных.  Узнайте, как это работает с [управляемой идентификацией для Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) и убедитесь, что на фабрике данных есть одна связанная.
 
 ## <a name="steps"></a>Шаги
 
-1. Откройте свойства фабрики данных и скопируйте значение идентификатора приложения управляемого удостоверения.
+1. Откройте свойства фабрики данных и скопируйте значение идентификатора управляемого identity.s.
 
-    ![Значение управляемого идентификатора](media/how-to-use-azure-key-vault-secrets-pipeline-activities/managedidentity.png)
+    ![Управляемое значение идентификации](media/how-to-use-azure-key-vault-secrets-pipeline-activities/managedidentity.png)
 
-2. Откройте политики доступа к хранилищу ключей и добавьте разрешения управляемого удостоверения для получения и перечисления секретов.
+2. Откройте политики доступа к хранилищам ключей и добавьте управляемые разрешения на идентификацию для получения и списка секретов.
 
     ![Политики доступа Key Vault](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies.png)
 
     ![Политики доступа Key Vault](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies-2.png)
 
-    Нажмите кнопку **Добавить**, а затем — **сохранить**.
+    Нажмите **Добавить,** а затем нажмите **Сохранить**.
 
-3. Перейдите к Key Vault секрету и скопируйте идентификатор секрета.
+3. Перейдите к секрету Key Vault и скопируйте секретный идентификатор.
 
-    ![Идентификатор секрета](media/how-to-use-azure-key-vault-secrets-pipeline-activities/secretidentifier.png)
+    ![Секретный идентификатор](media/how-to-use-azure-key-vault-secrets-pipeline-activities/secretidentifier.png)
 
-    Запишите URI секрета, который вы хотите получить во время выполнения конвейера фабрики данных.
+    Обратите внимание на ваш секретный URI, который вы хотите получить во время выполнения конвейера data Factory.
 
-4. В конвейере фабрики данных добавьте новое веб-действие и настройте его следующим образом.  
+4. В конвейере Data Factory добавьте новую веб-активность и настройте ее следующим образом.  
 
     |Свойство  |Значение  |
     |---------|---------|
-    |Безопасный вывод     |Истина         |
-    |URL-адрес     |[Значение URI секрета]? API-Version = 7.0         |
+    |Безопасный выход     |True         |
+    |URL-адрес     |«Ваше секретное значение URI»?api-версия 7.0         |
     |Метод     |GET         |
-    |Аутентификация     |MSI         |
+    |Проверка подлинности     |MSI         |
     |Ресурс        |https://vault.azure.net       |
 
     ![Веб-действие](media/how-to-use-azure-key-vault-secrets-pipeline-activities/webactivity.png)
 
     > [!IMPORTANT]
-    > Необходимо добавить **? API-Version = 7.0** в конец URI секрета.  
+    > Вы должны добавить **?api-версию 7.0** к концу вашего секретного URI.  
 
     > [!CAUTION]
-    > Задайте для параметра безопасный вывод значение true, чтобы предотвратить запись секретного значения в обычный текст.  Для всех дальнейших действий, использующих это значение, параметр Secure input должен иметь значение true.
+    > Установите опцию Secure Output, чтобы предотвратить ввоза секретного значения в простой текст.  Любые дальнейшие действия, потребляющие это значение, должны иметь свой параметр безопасного ввода.
 
-5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity(' web1 '). Output. Value**.
+5. Чтобы использовать значение в другом действии, используйте следующее выражение ** @activityкода ('Web1').output.value**.
 
     ![Выражение кода](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об использовании Azure Key Vault для хранения учетных данных для хранилищ данных и вычислений см. [в разделе Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
+Чтобы узнать, как использовать Azure Key Vault для хранения учетных данных для хранилищ данных и вычислений, смотрите [учетные данные Хранилища в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)

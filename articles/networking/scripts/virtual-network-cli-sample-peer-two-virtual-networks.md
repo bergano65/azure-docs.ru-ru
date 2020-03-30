@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
 ms.openlocfilehash: 0e5aaf07b49546aca9f44dcb9a43a79127c82341
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73890244"
 ---
 # <a name="peer-two-virtual-networks"></a>Пиринг между двумя виртуальными сетями
@@ -51,7 +51,7 @@ az group delete --name myResourceGroup --yes
 | [az network vnet peering create](https://docs.microsoft.com/cli/azure/network/vnet/peering) | Создает пиринг между двумя виртуальными сетями.  |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

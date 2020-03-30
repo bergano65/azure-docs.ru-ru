@@ -1,6 +1,6 @@
 ---
-title: Добавление проб работоспособности в модули AKS Pod
-description: В этой статье содержатся сведения о том, как добавить зонды работоспособности (готовность и/или Live) в AKS Pod с помощью шлюза приложений.
+title: Добавить зонды здоровья к вашим стручкам AKS
+description: В этой статье содержится информация о том, как добавить зонды работоспособности (готовность и/или живость) в стручки AKS с шлюзом приложения.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 5d0543a3a43d53e462a6406312faddf37d2653c6
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73795592"
 ---
-# <a name="add-health-probes-to-your-service"></a>Добавление проб работоспособности в службу
-По умолчанию входной контроллер выполняет инициализацию HTTP GET для предоставляемых модулей Pod.
-Свойства зонда можно настроить, добавив [проверку готовности или динамической проверки](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) в `deployment`/`pod` спецификации.
+# <a name="add-health-probes-to-your-service"></a>Добавление зондов работоспособности в свой сервис
+По умолчанию контроллер Ingress предоставит зонд HTTP GET для открытых стручков.
+Свойства зонда можно настроить, добавив [зонд Готовности или Liveness в](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) `deployment` / `pod` свой спецификацию.
 
-## <a name="with-readinessprobe-or-livenessprobe"></a>С `readinessProbe` или `livenessProbe`
+## <a name="with-readinessprobe-or-livenessprobe"></a>С `readinessProbe` или`livenessProbe`
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -45,22 +45,22 @@ spec:
           timeoutSeconds: 1
 ```
 
-Справочник по API Kubernetes:
-* [Зонды контейнеров](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
-* [Действие HttpGet](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#httpgetaction-v1-core)
+Ссылка на API Kubernetes:
+* [Контейнерные зонды](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
+* [HttpGet действий](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#httpgetaction-v1-core)
 
 > [!NOTE]
-> * `readinessProbe` и `livenessProbe` поддерживаются при настройке с помощью `httpGet`.
-> * Проверка на портах, отличных от показанных в модуле Pod, сейчас не поддерживается.
-> * `HttpHeaders`, `InitialDelaySeconds``SuccessThreshold` не поддерживаются.
+> * `readinessProbe`и `livenessProbe` поддерживаются при `httpGet`настройке с помощью .
+> * Зондирование на порту, кроме того, который подвергается на стручке, в настоящее время не поддерживается.
+> * `HttpHeaders`, `InitialDelaySeconds` `SuccessThreshold` не поддерживаются.
 
-##  <a name="without-readinessprobe-or-livenessprobe"></a>Без `readinessProbe` или `livenessProbe`
-Если указанные выше зонды не предоставлены, контроллер входящего трафика предполагала, что служба доступна в `Path`, указанной для `backend-path-prefix` аннотации, или `path`, указанных в определении `ingress` для службы.
+##  <a name="without-readinessprobe-or-livenessprobe"></a>Без `readinessProbe` или`livenessProbe`
+Если вышеуказанные зонды не предоставляются, то Ingress Controller делает `Path` предположение, что услуга достижима по указанной для `backend-path-prefix` аннотации или указанной `path` в `ingress` определении службы.
 
-## <a name="default-values-for-health-probe"></a>Значения по умолчанию для проверки работоспособности
-Для любого свойства, которое не может быть определено с помощью проверки готовности или жизни, устанавливаются значения по умолчанию.
+## <a name="default-values-for-health-probe"></a>Значения по умолчанию для зонда здоровья
+Для любого свойства, которое не может быть выведено зондом готовности/живости, устанавливаются значения по умолчанию.
 
-| Свойство проверки шлюза приложений | По умолчанию |
+| Свойство зонда шлюза применения | Значение по умолчанию |
 |-|-|
 | `Path` | / |
 | `Host` | localhost |

@@ -1,7 +1,7 @@
 ---
-title: Создание SAS службы для контейнера или большого двоичного объекта с помощью .NET
+title: Создание сервиса SAS для контейнера или капли с помощью .NET
 titleSuffix: Azure Storage
-description: Узнайте, как создать подписанный URL-адрес службы (SAS) для контейнера или большого двоичного объекта с помощью клиентской библиотеки .NET.
+description: Узнайте, как создать общую подпись доступа (SAS) для контейнера или капли с помощью клиентской библиотеки .NET.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,23 +11,23 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
 ms.openlocfilehash: 10045a760d7e0fcb02a754bc9bb52a5ebca970f4
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79137217"
 ---
-# <a name="create-a-service-sas-for-a-container-or-blob-with-net"></a>Создание SAS службы для контейнера или большого двоичного объекта с помощью .NET
+# <a name="create-a-service-sas-for-a-container-or-blob-with-net"></a>Создание сервиса SAS для контейнера или капли с помощью .NET
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать ключ учетной записи хранения для создания SAS службы для контейнера или большого двоичного объекта с [клиентской библиотекой хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
+В этой статье показано, как использовать ключ учетной записи хранилища для создания службы SAS для контейнера или капли с [библиотекой клиентов Azure Storage для .NET.](/dotnet/api/overview/azure/storage?view=azure-dotnet)
 
-## <a name="create-a-service-sas-for-a-blob-container"></a>Создание SAS службы для контейнера больших двоичных объектов
+## <a name="create-a-service-sas-for-a-blob-container"></a>Создание сервиса SAS для контейнера с каплями
 
-Чтобы создать SAS службы для контейнера, вызовите метод [CloudBlobContainer. GetSharedAccessSignature](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getsharedaccesssignature) .
+Чтобы создать сервис SAS для контейнера, позвоните по методу [CloudBlobContainer.GetSharedAccessSignature.](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getsharedaccesssignature)
 
-В следующем примере кода создается SAS для контейнера. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если хранимая политика доступа не указана, код создает нерегламентированный SAS в контейнере.
+Следующий пример кода создает SAS на контейнере. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если политика сохраненного доступа не предусмотрена, код создает специальный SAS на контейнере.
 
 ```csharp
 private static string GetContainerSasUri(CloudBlobContainer container, string storedPolicyName = null)
@@ -69,11 +69,11 @@ private static string GetContainerSasUri(CloudBlobContainer container, string st
 }
 ```
 
-## <a name="create-a-service-sas-for-a-blob"></a>Создание SAS службы для большого двоичного объекта
+## <a name="create-a-service-sas-for-a-blob"></a>Создание сервиса SAS для капли
 
-Чтобы создать SAS службы для большого двоичного объекта, вызовите метод [CloudBlob. GetSharedAccessSignature](/dotnet/api/microsoft.azure.storage.blob.cloudblob.getsharedaccesssignature) .
+Чтобы создать сервис SAS для капли, позвоните по методу [CloudBlob.GetSharedAccessSignature.](/dotnet/api/microsoft.azure.storage.blob.cloudblob.getsharedaccesssignature)
 
-В следующем примере кода создается SAS для большого двоичного объекта. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если хранимая политика доступа не указана, код создает нерегламентированный SAS в большом двоичном объекте.
+Следующий пример кода создает SAS на каплей. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если политика сохраненного доступа не предусмотрена, код создает специальный SAS на blob.
 
 ```csharp
 private static string GetBlobSasUri(CloudBlobContainer container, string blobName, string policyName = null)
@@ -122,5 +122,5 @@ private static string GetBlobSasUri(CloudBlobContainer container, string blobNam
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)
+- [Предоставляетограниченный доступ к ресурсам хранения Azure с помощью общих подписей доступа (SAS)](../common/storage-sas-overview.md)
 - [Create a service SAS](/rest/api/storageservices/create-service-sas) (Создание SAS на уровне службы)

@@ -1,5 +1,5 @@
 ---
-title: Настройка принудительного туннелирования для подключений "сеть — сеть"
+title: Настройка принудительного туннелирования для подключения сайта к сайту
 description: Как перенаправлять или принудительно туннелировать весь интернет-трафик обратно в локальное расположение.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/01/2018
 ms.author: cherylmc
 ms.openlocfilehash: fc35654403bbe1375d4188476b11fd0453f74345
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79244632"
 ---
 # <a name="configure-forced-tunneling-using-the-azure-resource-manager-deployment-model"></a>Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager
@@ -60,7 +60,7 @@ ms.locfileid: "79244632"
 
 Выполнив указанные ниже действия, можно настроить подключение DefaultSiteHQ в качестве подключения к сайту по умолчанию для принудительного туннелирования, а также настроить принудительное туннелирование для подсетей Midtier и Backend.
 
-## <a name="before"></a>Перед началом работы
+## <a name="before-you-begin"></a><a name="before"></a>Перед началом
 
 Установите последнюю версию командлетов PowerShell для Azure Resource Manager. Дополнительные сведения об установке командлетов PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 

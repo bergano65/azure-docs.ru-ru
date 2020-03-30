@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/13/2017
 ms.author: barclayn
 ms.openlocfilehash: 5635a9e1403731eabc20a04be880fd0aeb24d729
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68727335"
 ---
 # <a name="how-to-log-a-security-event-support-ticket"></a>Регистрация запроса о событии, связанном с безопасностью, в службу поддержки
@@ -28,11 +28,11 @@ ms.locfileid: "68727335"
 
     ![Тип и определение события](./media/event-support-ticket/chart.png)
 
-3. Выбрав тип и категорию проблемы, нажмите кнопку **Start request** (Начать запрос). Укажите приведенную ниже информацию, чтобы помочь нам лучше понять проблему.
+3. После выбора типа проблемы и категории нажмите кнопку **«Запуск запроса».** Укажите приведенную ниже информацию, чтобы помочь нам лучше понять проблему.
 
     i. В чем заключается проблема и (или) уязвимость?
 
-    ii. Для уязвимостей укажите CVE (mitre.org) или заполненный CVSS3 v3 калькулятор (https://www.first.org/cvss/calculator/3.0).
+    ii. Для уязвимостей, пожалуйста, предоставьте CVE (mitre.org) или заполненныйhttps://www.first.org/cvss/calculator/3.0)калькулятор CVSS3 v3 ( .
 
     iii. Доступно ли полное или частичное решение? Если да, укажите действия по исправлению.
 

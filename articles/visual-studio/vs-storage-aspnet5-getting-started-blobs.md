@@ -1,5 +1,5 @@
 ---
-title: Начало работы с хранилищем BLOB-объектов с помощью Visual Studio (ASP.NET Core)
+title: Начало работы с каплей хранения с помощью Visual Studio (ASP.NET Core)
 description: Начало работы с хранилищем BLOB-объектов Azure в проекте Visual Studio ASP.NET Core после создания учетной записи хранения с использованием подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -14,10 +14,10 @@ ms.date: 11/14/2017
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 81df41470c893f569fd17345e8bdf4b29641ec64
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72298832"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-aspnet-core"></a>Приступая к работе с хранилищем BLOB-объектов Azure и подключенными службами Visual Studio (ASP.NET Core)
@@ -172,6 +172,6 @@ CloudBlockBlob blockBlob = container.GetBlockBlobReference("myblob.txt");
 await blockBlob.DeleteAsync();
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]

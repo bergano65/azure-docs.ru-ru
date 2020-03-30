@@ -1,6 +1,6 @@
 ---
-title: Классические команды интерфейса командной строки Azure
-description: Команды интерфейса командной строки Azure (CLI) для управления ресурсами.
+title: Классические команды Azure CLI
+description: Интерфейс командной строки Azure (CLI) командует для управления ресурсами.
 author: cynthn
 manager: gwallace
 ms.service: virtual-machines
@@ -9,21 +9,21 @@ ms.topic: article
 ms.date: 04/18/2017
 ms.author: cynthn
 ms.openlocfilehash: ad213cc02f707609a837ea66b79e51c6f2a617f8
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79250885"
 ---
-# <a name="azure-classic-cli-commands"></a>Классические команды интерфейса командной строки Azure 
+# <a name="azure-classic-cli-commands"></a>Классические команды Azure CLI 
 
 [!INCLUDE [classic-vm-deprecation](../../includes/classic-vm-deprecation.md)]
 
-В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/).
+В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI.](https://docs.microsoft.com/cli/azure/)
 
-Эта статья содержит синтаксис и параметры для классических команд интерфейса командной строки Azure, которые обычно используются для создания ресурсов Azure и управления ими. Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. 
+В этой статье представлены синтаксис и опции для классических командных интерфейсов Azure (CLI), которые обычно используются для создания и управления ресурсами Azure. Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. 
 
-Чтобы приступить к работе, сначала [установите классический интерфейс командной строки Azure](../cli-install-nodejs.md) и [подключитесь к подписке Azure](/cli/azure/authenticate-azure-cli).
+Для начала сначала [установите классический CLI Azure](../cli-install-nodejs.md) и [подключитесь к подписке Azure.](/cli/azure/authenticate-azure-cli)
 
 Чтобы просмотреть текущий синтаксис и параметры команд в командной строке в режиме диспетчера ресурсов, введите `azure help`. Для получения справки по определенной команде введите `azure help [command]`. Вы также найдете примеры для командной строки в документации по созданию отдельных служб Azure и управлению ими.
 
@@ -112,7 +112,7 @@ ms.locfileid: "79250885"
 
     availset delete [options] <resource-group> <name>
 
-## <a name="local-settings"></a>Локальные параметры
+## <a name="local-settings"></a>Локальные настройки
 **Выводит параметры конфигурации Azure CLI**
 
     config list [options]
@@ -125,7 +125,7 @@ ms.locfileid: "79250885"
 
     config set <name> <value>
 
-**Задает для рабочего режима Azure CLI значение `arm` или `asm`** .
+**Задает для рабочего режима Azure CLI значение `arm` или `asm`**.
 
     config mode [options] <modename>
 
@@ -301,7 +301,7 @@ ms.locfileid: "79250885"
 
     hdinsight cluster disable-rdp-access [options] <clusterName>
 
-## <a name="insights-events-alert-rules-autoscale-settings-metrics"></a>Аналитика (события, правила генерации оповещений, параметры автомасштабирования, метрики)
+## <a name="insights-events-alert-rules-autoscale-settings-metrics"></a>Исследования (события, правила оповещения, настройки автомасштаба, метрики)
 **Получение журналов операций для подписки, идентификатор correlationId, группы ресурсов, ресурса или поставщика ресурсов**
 
     insights logs list [options]
@@ -1330,7 +1330,7 @@ ms.locfileid: "79250885"
 <br>
 
     network public-ip list [options] <resource-group>
-Список всех общедоступных IP-ресурсов в группе ресурсов.
+Перечисляет все общедоступные ресурсы ИС в группе ресурсов.
 
     azure network public-ip list -g myresourcegroup
 
@@ -1503,7 +1503,7 @@ ms.locfileid: "79250885"
 
     network gateway list [options] <resource-group>
 
-## <a name="resource-provider-registrations"></a>Регистрация поставщиков ресурсов
+## <a name="resource-provider-registrations"></a>Регистрация поставщика ресурсов
 **Список зарегистрированных поставщиков в Resource Manager**
 
     provider list [options]
@@ -1557,7 +1557,7 @@ ms.locfileid: "79250885"
     role assignment delete [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
 
 ## <a name="storage-objects"></a>Объекты хранилища
-**Команды для управления учетными записями хранилища**
+**Команды для управления учетными записями хранения**
 
     storage account list [options]
     storage account show [options] <name>

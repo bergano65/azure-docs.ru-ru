@@ -1,6 +1,6 @@
 ---
-title: Видеоролики по платформе Microsoft Identity | Службы
-description: Список видеороликов о платформе Microsoft Identity
+title: Видео платформы идентификации Майкрософт Azure
+description: Список видео о платформе идентификации Майкрософт
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -13,19 +13,19 @@ ms.author: marsma
 ms.custom: aaddev
 ms.reviewer: celested
 ms.openlocfilehash: 22149ccfa258852b36da61ffbabde5e1856df9de
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77085193"
 ---
 # <a name="microsoft-identity-platform-videos"></a>Видео по платформе удостоверений Майкрософт
 
-Сведения о платформе Microsoft Identity и библиотеках проверки подлинности Майкрософт (MSAL). Обычно это 1-2 минут.
+Узнайте больше о платформе идентификации Майкрософт и библиотеках подлинности Майкрософт (MSAL). Они, как правило, 1-2 минут.
 
 ## <a name="microsoft-identity-platform-basics"></a>Основы платформы идентификации Майкрософт
 
-**Основные понятия платформы идентификации Майкрософт**
+**Изучите основные концепции платформы идентификации Майкрософт**
 
 :::row:::
     :::column:::
@@ -41,13 +41,13 @@ ms.locfileid: "77085193"
 :::row-end:::
 :::row:::
     :::column:::
-        Общие сведения о библиотеках MSAL
+        Введение в библиотеки MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/apbbx2n4tnU]
     :::column-end:::
     :::column:::
-        Как MSAL упрощает проверку подлинности
+        Как MSAL упрощает аутентификацию
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/yLVEBU9Z96Q]
@@ -55,7 +55,7 @@ ms.locfileid: "77085193"
 :::row-end:::
 :::row:::
     :::column:::
-        Описание областей
+        Области объяснил
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/eiPHOoLmGJs]
@@ -69,13 +69,13 @@ ms.locfileid: "77085193"
 :::row-end:::
 :::row:::
     :::column:::
-        Что делают URI перенаправления
+        Что делают перенаправление УРИ
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/znSN_3JAuoU]
     :::column-end:::
     :::column:::
-        Описание клиентов
+        Арендаторы объяснили
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/mDhT4Zv1fZU]
@@ -97,32 +97,32 @@ ms.locfileid: "77085193"
 :::row-end:::
 :::row:::
     :::column:::
-        Различия в организационных и личных учетная запись Майкрософт
+        Организационные и личные различия в учетной записи Майкрософт
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/E2OUluQQKSk]
     :::column-end:::
     :::column:::
-        Различия в SPA и веб-приложениях
+        Различия В СПА и веб-приложениях
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/ZJirt7eTVw8?t=5]
     :::column-end:::
 :::row-end:::
 
-## <a name="migrate-from-v10-to-v20"></a>Миграция с версии 1.0 на v 2.0
+## <a name="migrate-from-v10-to-v20"></a>Миграция из v1.0 в v2.0
 
-**Сведения о переходе на последнюю версию платформы Microsoft Identity**
+**Подробнее о переходе на последнюю версию платформы майкрософт**
 
 :::row:::
     :::column:::
-        Конечные точки и преимущества перехода на v 2.0
+        Конечные точки и преимущества перехода на v2.0
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
     :::column-end:::
      :::column:::
-        Перенос базы кода ADAL в MSAL
+        Миграция кодовой базы ADAL в MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/xgL_z9yCnrE]
@@ -130,13 +130,13 @@ ms.locfileid: "77085193"
 :::row-end:::
 :::row:::
     :::column:::
-        Зачем выполнять миграцию из ADAL в MSAL
+        Зачем мигрировать из ADAL в MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
     :::column-end:::
     :::column:::
-        Преимущества MSAL через ADAL
+        Преимущества MSAL над ADAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/q-TDszj2O-4]

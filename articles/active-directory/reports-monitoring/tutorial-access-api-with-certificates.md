@@ -1,5 +1,5 @@
 ---
-title: Учебник по API отчетов AD с сертификатами | Документация Майкрософт
+title: Учебник для API aPI aPI с сертификатами Документы Майкрософт
 description: В этом руководстве описывается использования API отчетов Azure AD с учетными данными сертификатов для получения данных из каталогов без вмешательства пользователя.
 services: active-directory
 documentationcenter: ''
@@ -17,10 +17,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d723af5d994006c4ae4f90905ede73fa87326bf
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74014268"
 ---
 # <a name="tutorial-get-data-using-the-azure-active-directory-reporting-api-with-certificates"></a>Руководство. Получение данных с помощью API отчетов Azure Active Directory с сертификатами
@@ -29,7 +29,7 @@ ms.locfileid: "74014268"
 
 Из этого руководства вы узнаете, как создать тестовый сертификат и использовать его для доступа к API Microsoft Graph для создания отчетов. Мы не рекомендуем использовать тестовые сертификаты в рабочей среде. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Чтобы получить доступ к данным о входе в систему, вам потребуется клиент Azure Active Directory с лицензией Premium (P1 или P2). Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). Обратите внимание, если до обновления данные о действиях отсутствовали, данные отобразятся в отчетах через несколько дней после обновления до лицензии Premium. 
 
@@ -44,7 +44,7 @@ ms.locfileid: "74014268"
     - маркеры доступа пользователя, ключи приложений и сертификаты с использованием ADAL;
     - обработку результатов с разбивкой на страницы с помощью API Graph.
 
-6. Если вы используете модуль впервые, выполните командлет **Install-MSCloudIdUtilsModule** или же импортируйте его с помощью команды PowerShell **Import-Module**. Ваш сеанс должен выглядеть следующим образом: ![Windows PowerShell](./media/tutorial-access-api-with-certificates/module-install.png)
+6. Если вы используете модуль впервые, выполните командлет **Install-MSCloudIdUtilsModule** или же импортируйте его с помощью команды PowerShell **Import-Module**. Сеанс должен выглядеть так ![же, как на этом экране: Windows Powershell](./media/tutorial-access-api-with-certificates/module-install.png)
   
 7. Используйте командлет Powershell **New-SelfSignedCertificate** для создания тестового сертификата.
 
@@ -63,7 +63,7 @@ ms.locfileid: "74014268"
 
 1. Перейдите на [портал Azure](https://portal.azure.com), выберите **Azure Active Directory**, затем выберите **Регистрация приложений** и ваше приложение из списка. 
 
-2. Выберите **Параметры** > **Ключи**, а затем **Отправить открытый ключ**.
+2. Выберите**ключи** **настройки** > и выберите **открытый ключ загрузки.**
 
 3. Выберите файл сертификата из предыдущего шага и нажмите **Сохранить**. 
 
@@ -87,20 +87,20 @@ ms.locfileid: "74014268"
   
 7. Теперь вы можете получить маркер доступа для API Microsoft Graph, используя этот сертификат. Используйте командлет **Get MSCloudIdMSGraphAccessTokenFromCert** из PowerShell-модуля MSCloudIdUtils, передав идентификатор приложения и отпечаток, полученный на предыдущем шаге. 
 
-   ![портале Azure](./media/tutorial-access-api-with-certificates/getaccesstoken.png)
+   ![Портал Azure](./media/tutorial-access-api-with-certificates/getaccesstoken.png)
 
 8. Используйте маркер доступа в скрипте PowerShell для отправки запроса в API Graph. Используйте командлет **Invoke-MSCloudIdMSGraphQuery** из модуля MSCloudIDUtils для перечисления операций входа и запроса конечной точки diectoryAudits. Этот командлет обрабатывает результаты с разбивкой на несколько страниц и отправляет их в конвейер PowerShell.
 
 9. Запросите конечную точку directoryAudits для получения журналов аудита. 
-   ![портал Azure](./media/tutorial-access-api-with-certificates/query-directoryAudits.png)
+   ![Портал Azure](./media/tutorial-access-api-with-certificates/query-directoryAudits.png)
 
 10. Запросите конечную точку signins для получения журналов входа в систему.
-    ![портал Azure](./media/tutorial-access-api-with-certificates/query-signins.png)
+    ![Портал Azure](./media/tutorial-access-api-with-certificates/query-signins.png)
 
 11. Теперь можно экспортировать эти данные в CSV-файл и сохранить его в системе SIEM. Также можно перенести скрипт в запланированную задачу, чтобы периодически получать данные Azure AD из клиента без необходимости сохранять ключи приложений в исходном коде. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ознакомление с API отчетов](concept-reporting-api.md)
-* [Ссылка на API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
+* [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
 * [Справочник по API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)

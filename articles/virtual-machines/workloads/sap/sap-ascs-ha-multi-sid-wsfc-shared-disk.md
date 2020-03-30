@@ -1,5 +1,5 @@
 ---
-title: Уровень доступности SAP ASCS/SCS с несколькими ИД безопасности с WSFC & общим диском в Azure | Документация Майкрософт
+title: SAP ASCS/SCS multi-SID HA с WSFC&общим диском на Azure Документы Майкрософт
 description: Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
@@ -17,10 +17,10 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 446091263596a1fd5503f38c6a60316f9b0b6843
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79245178"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
@@ -208,7 +208,7 @@ ms.locfileid: "79245178"
 > ![Windows][Logo_Windows] Windows
 >
 
-В сентябре 2016 Корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [внутреннего балансировщика нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
+В сентябре 2016 года корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [баланса внутренней нагрузки Azure.][load-balancer-multivip-overview] Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
 
 Если у вас есть развертывание SAP, чтобы создать конфигурацию кластера Windows для экземпляров SAP Central Services (ASCS/SCS), необходимо использовать внутреннюю подсистему балансировки нагрузки.
 
@@ -222,11 +222,11 @@ ms.locfileid: "79245178"
 >Максимальное количество экземпляров SAP ASCS/SCS в одном кластере WSFC равно максимальному количеству частных внешних IP-адресов на одну внутреннюю подсистему балансировки нагрузки Azure.
 >
 
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в подразделе "частный интерфейсный IP-адрес на подсистему балансировки нагрузки" раздела [ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager].
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, с помощью **файлового ресурса**, как показано на этой схеме.
 
@@ -244,13 +244,13 @@ ms.locfileid: "79245178"
 
 ![Несколько кластеризованных экземпляров SAP ASCS/SCS в Azure][sap-ha-guide-figure-6002]
 
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в подразделе "частный интерфейсный IP-адрес на подсистему балансировки нагрузки" раздела [ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager].
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
 
 Общая картина с двумя системами SAP высокого уровня доступности будет выглядеть следующим образом:
 
 ![Установка SAP высокого уровня доступности с несколькими ИД безопасности и с двумя ИД безопасности системы SAP][sap-ha-guide-figure-6003]
 
-## <a name="25e358f8-92e5-4e8d-a1e5-df7580a39cb0"></a> Подготовка инфраструктуры для сценария SAP с несколькими идентификаторами безопасности
+## <a name="prepare-the-infrastructure-for-an-sap-multi-sid-scenario"></a><a name="25e358f8-92e5-4e8d-a1e5-df7580a39cb0"></a> Подготовка инфраструктуры для сценария SAP с несколькими идентификаторами безопасности
 
 Для подготовки инфраструктуры можно установить дополнительный экземпляр SAP ASCS/SCS со следующими параметрами.
 
@@ -388,7 +388,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 1. Добавьте дополнительный диск (или несколько дисков одного размера, которые необходимо чередовать) к каждому узлу кластера и отформатируйте их.
 2. Настройте репликацию хранилища с помощью SIOS DataKeeper.
 
-Для выполнения этой процедуры необходимо установить SIOS DataKeeper на компьютерах кластера WSFC. Если это программное решение установлено, теперь нужно настроить репликацию между компьютерами. Подробное описание процесса см. в [статье Install SIOS Me Cluster Edition для общего диска кластера SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-install-sios].  
+Для выполнения этой процедуры необходимо установить SIOS DataKeeper на компьютерах кластера WSFC. Если это программное решение установлено, теперь нужно настроить репликацию между компьютерами. Этот процесс подробно описан в руководстве по [установке SIOS DataKeeper Cluster Edition для создания общего диска кластера SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-install-sios].  
 
 ![Синхронное зеркальное отображение DataKeeper для нового общего диска SAP ASCS/SCS][sap-ha-guide-figure-6006]
 
@@ -401,16 +401,16 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 ## <a name="install-an-sap-netweaver-multi-sid-system"></a>Установка системы SAP NetWeaver с несколькими идентификаторами безопасности
 
-Описание полного процесса установки второй системы SAP SID2 см. [в статье Установка SAP Netweaver высокого уровня доступности в отказоустойчивом кластере Windows и на общем диске для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk].
+Полный процесс установки второй системы SAP SID2 см. в руководстве по [установке высокодоступной системы SAP NetWeaver с использованием отказоустойчивого кластера Windows и общего диска для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk].
 
 Основные действия:
 
-1. [Установите SAP с экземпляром ASCS/SCS высокого уровня доступности][sap-high-availability-installation-wsfc-shared-disk-install-ascs].  
+1. [Установите SAP с высокой доступностью экземпляра ASCS/SCS.][sap-high-availability-installation-wsfc-shared-disk-install-ascs]  
  На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 1 кластера WSFC.
 
-2. [Измените профиль SAP экземпляра ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile].
+2. [Измените профиль SAP экземпляра ASCS/SCS.][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile]
 
-3. [Настройте порт пробы][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].  
+3. [Настройка порта пробы][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].  
  На этом шаге настраивается порт пробы SAP-SID2-IP кластерного ресурса SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS.
 
 4. Установите экземпляр базы данных.  
@@ -420,21 +420,21 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
  На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 2 кластера WSFC. Чтобы установить второй кластер, выполните действия, описанные в руководстве по установке SAP.
 
 6. Откройте порты брандмауэра Windows для экземпляра SAP ASCS/SCS и порта пробы.  
-    На обоих узлах кластера, используемых для экземпляров SAP ASCS/SCS, откройте все порты брандмауэра Windows, используемые SAP ASCS/SCS. Эти порты экземпляров SAP ASCS/SCS перечислены в разделе [порты SAP ASCS/SCS][sap-net-weaver-ports-ascs-scs-ports].
+    На обоих узлах кластера, используемых для экземпляров SAP ASCS/SCS, откройте все порты брандмауэра Windows, используемые SAP ASCS/SCS. Эти порты экземпляров SAP ASCS/SCS перечислены в описании [портов SAP ASCS/SCS][sap-net-weaver-ports-ascs-scs-ports].
 
-    Список всех других портов SAP см. в статье [порты TCP/IP для всех продуктов SAP][sap-net-weaver-ports].  
+    Список остальных портов TCP/IP для всех продуктов SAP см. [здесь][sap-net-weaver-ports].  
 
-    Кроме того, откройте порт пробы внутренней подсистемы балансировки нагрузки Azure. В нашем случае это порт 62350. Он описан [в этой статье][sap-high-availability-installation-wsfc-shared-disk-win-firewall-probe-port].
+    Кроме того, откройте порт пробы внутренней подсистемы балансировки нагрузки Azure. В нашем случае это порт 62350. Он описан в [этой статье][sap-high-availability-installation-wsfc-shared-disk-win-firewall-probe-port].
 
-7. [Изменение типа запуска экземпляра службы Windows "Оценка полученного отчета о приемке SAP" (ERS)][sap-high-availability-installation-wsfc-shared-disk-change-ers-service-startup-type].
+7. [Измените тип запуска службы Windows для экземпляра SAP ERS][sap-high-availability-installation-wsfc-shared-disk-change-ers-service-startup-type].
 
 8. Установите основной сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.  
 
 9. Установите дополнительный сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.
 
-10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl].
+10. [Проверьте сбой экземпляра SAP ASCS/SCS и репликацию SIOS.][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager]
+- [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]

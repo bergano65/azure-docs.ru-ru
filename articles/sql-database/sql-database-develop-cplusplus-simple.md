@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/12/2018
 ms.openlocfilehash: fb6094ec418d2b212759bddd2c4d49c7e6193849
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73690706"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Подключение к базе данных SQL с помощью C и C++
@@ -27,21 +27,21 @@ ms.locfileid: "73690706"
 Убедитесь, что у вас есть указанные ниже компоненты.
 
 * Активная учетная запись Azure. Если у вас нет такой учетной записи, вы можете зарегистрироваться для использования [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* [Visual Studio](https://www.visualstudio.com/downloads/). Для разработки и запуска этого примера необходимо установить компоненты языка C++.
+* [Визуальная студия](https://www.visualstudio.com/downloads/). Для разработки и запуска этого примера необходимо установить компоненты языка C++.
 * [Инструменты разработки Visual Studio для Linux](https://visualstudiogallery.msdn.microsoft.com/725025cf-7067-45c2-8d01-1e0fd359ae6e). Если вы разрабатываете приложение на платформе Linux, необходимо также установить расширение Linux для Visual Studio.
 
-## <a id="AzureSQL"></a>База данных SQL Azure и SQL Server на виртуальных машинах
+## <a name="azure-sql-database-and-sql-server-on-virtual-machines"></a><a id="AzureSQL"></a>База данных SQL Azure и SQL Server на виртуальных машинах
 Компоненты Azure SQL основаны на Microsoft SQL Server и предназначены для обеспечения высокой доступности, производительности и масштабируемости служб. Использование SQL Azure с собственной локальной базой данных дает множество преимуществ. Благодаря SQL Azure вам не нужно устанавливать, настраивать, обслуживать базу данных или управлять ею. Вы работаете только с содержимым и структурой базы данных. В нее встроены такие возможности, как отказоустойчивость и избыточность, которые так важны при работе с базами данных.
 
 В данный момент Azure предлагает два варианта для обработки рабочих нагрузок сервера SQL: база данных SQL Azure (база данных как услуга) и сервер SQL на виртуальных машинах. Мы не будем подробно рассматривать различия между этими двумя вариантами, однако отметим, что база данных Azure SQL является лучшим решением для новых облачных приложений, так как она позволяет экономить средства и оптимизировать производительность облачных служб. Если вы рассматриваете возможность переноса или расширения своих локальных приложений в облако, сервер SQL на виртуальной машине Azure может быть хорошим выбором. Чтобы было проще следовать инструкциям в этой статье, создадим базу данных SQL Azure.
 
-## <a id="ODBC"></a>Технологии доступа к данным: ODBC и OLE DB
+## <a name="data-access-technologies-odbc-and-ole-db"></a><a id="ODBC"></a>Технологии доступа к данным: ODBC и OLE DB
 Подключение к базе данных SQL Azure ничем не отличается от обычной процедуры. В настоящее время существует два способа подключения к базам данных: ODBC и OLE DB. В последние годы корпорация Майкрософт поддерживает [ODBC для доступа к собственным реляционным данным](https://blogs.msdn.microsoft.com/sqlnativeclient/20../../microsoft-is-aligning-with-odbc-for-native-relational-data-access/). Технология ODBC относительно проста и работает гораздо быстрее, чем OLE DB. Единственное предостережение — ODBC использует старый API в стиле C.
 
-## <a id="Create"></a>Шаг 1. Создание базы данных SQL Azure
+## <a name="step-1--creating-your-azure-sql-database"></a><a id="Create"></a>Шаг 1. Создание базы данных SQL Azure
 Чтобы узнать, как создать образец базы данных, перейдите на страницу [Начало работы](sql-database-single-database-get-started.md) .  Кроме того, чтобы создать базу данных SQL Azure с помощью портала Azure, можно просмотреть [этот короткий 2-минутный видеоролик](https://azure.microsoft.com/documentation/videos/azure-sql-database-create-dbs-in-seconds/).
 
-## <a id="ConnectionString"></a>Шаг 2. Получение строки подключения
+## <a name="step-2--get-connection-string"></a><a id="ConnectionString"></a>Шаг 2. Получение строки подключения
 После подготовки базы данных SQL Azure необходимо выполнить следующие действия, чтобы найти информацию о подключении и добавить IP-адрес клиента для доступа через брандмауэр.
 
 На [портале Azure](https://portal.azure.com/) перейдите к строке подключения ODBC базы данных SQL Azure с помощью команды **Показать строки подключения к базам данных** в обзоре базы данных:
@@ -50,17 +50,17 @@ ms.locfileid: "73690706"
 
 ![ODBCConnectionStringProps](./media/sql-database-develop-cplusplus-simple/dbconnection.png)
 
-Скопируйте содержимое строки **ODBC (включает Node.js) [проверка подлинности SQL]** . Оно будет использоваться позже для подключения из интерпретатора командной строки ODBC C++. Эта строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных.
+Скопируйте содержимое строки **ODBC (включает Node.js) [проверка подлинности SQL]**. Оно будет использоваться позже для подключения из интерпретатора командной строки ODBC C++. Эта строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных.
 
-## <a id="Firewall"></a>Шаг 3. Добавление IP-адреса в брандмауэр
+## <a name="step-3--add-your-ip-to-the-firewall"></a><a id="Firewall"></a>Шаг 3. Добавление IP-адреса в брандмауэр
 Перейдите к разделу брандмауэра, где указан сервер базы данных, и добавьте IP-адрес клиента с помощью [этих действий](sql-database-configure-firewall-settings.md), чтобы установить подключение.
 
 ![AddyourIPWindow](./media/sql-database-develop-cplusplus-simple/ip.png)
 
 На этом этапе база данных SQL Azure настроена и готова к подключению из приложения C++.
 
-## <a id="Windows"></a>Шаг 4. Подключение из приложения Windows C/C++
-К базе данных SQL Azure можно подключиться при помощи ODBC в Windows с использованием [этого образца](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28windows%29), созданного с использованием Visual Studio. В этом примере используется интерпретатор командной строки ODBC, с помощью которого можно подключиться к базе данных SQL Azure. Данный пример принимает в качестве аргумента командной строки файл с именем базы данных-источника (DSN) или подробную строку подключения, скопированную на портале Azure ранее. Откройте страницу свойств для этого проекта и вставьте строку подключения в качестве аргумента команды, как показано ниже:
+## <a name="step-4-connecting-from-a-windows-cc-application"></a><a id="Windows"></a>Шаг 4. Подключение из приложения Windows C/C++
+К базе данных SQL Azure можно подключиться при помощи ODBC в Windows с использованием [этого примера](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28windows%29), созданного с использованием Visual Studio. В этом примере используется интерпретатор командной строки ODBC, с помощью которого можно подключиться к базе данных SQL Azure. Данный пример принимает в качестве аргумента командной строки файл с именем базы данных-источника (DSN) или подробную строку подключения, скопированную на портале Azure ранее. Откройте страницу свойств для этого проекта и вставьте строку подключения в качестве аргумента команды, как показано ниже:
 
 ![DSN Propsfile](./media/sql-database-develop-cplusplus-simple/props.png)
 
@@ -76,8 +76,8 @@ ms.locfileid: "73690706"
 
 Поздравляем! Вы успешно установили подключение к базе данных SQL Azure при помощи C++ и ODBC в Windows. Чтобы сделать то же самое для платформы Linux, см. сведения дальше в этой статье.
 
-## <a id="Linux"></a>Шаг 5. Подключение из приложения Linux C/C++
-Возможно, вы еще не знаете об этом, но теперь в Visual Studio можно разрабатывать приложения C++ для Linux. Об этой новой возможности можно прочитать в записи блога [Visual C++ for Linux Development](https://blogs.msdn.microsoft.com/vcblog/20../../visual-c-for-linux-development/) (Visual C++ для разработки на Linux). Чтобы создавать приложения для Linux, необходим удаленный компьютер, на котором запущен дистрибутив Linux. Если такой компьютер вам недоступен, его можно быстро настроить при помощи [виртуальных машин Linux Azure](../virtual-machines/linux/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+## <a name="step-5-connecting-from-a-linux-cc-application"></a><a id="Linux"></a>Шаг 5. Подключение из приложения Linux C/C++
+Возможно, вы еще не знаете об этом, но теперь в Visual Studio можно разрабатывать приложения C++ для Linux. Об этой новой возможности можно прочитать в записи блога [Visual C++ for Linux Development](https://blogs.msdn.microsoft.com/vcblog/20../../visual-c-for-linux-development/) (Разработка Visual C++ для Linux). Чтобы создавать приложения для Linux, необходим удаленный компьютер, на котором запущен дистрибутив Linux. Если у вас нет такого компьютера, его можно быстро настроить при помощи [виртуальных машин Linux Azure](../virtual-machines/linux/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Для выполнения инструкций этого руководства предположим, что у вас настроен дистрибутив Linux Ubuntu 16.04. Описанные здесь действия также должны работать для Ubuntu 15.10, Red Hat 6 и Red Hat 7.
 
@@ -121,14 +121,14 @@ ms.locfileid: "73690706"
 
 Поздравляем! Вы успешно выполнили инструкции руководства и теперь можете подключиться к базе данных SQL Azure из C++ на платформах Windows и Linux.
 
-## <a id="GetSolution"></a>Получение полного решения C/C++ для этого руководства
+## <a name="get-the-complete-cc-tutorial-solution"></a><a id="GetSolution"></a>Получение полного решения C/C++ для этого руководства
 Решение GetStarted, содержащее все примеры из этой статьи, можно найти в таких разделах GitHub:
 
 * [образец ODBC C++ Windows](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28windows%29) — загрузите образец ODBC C++ Windows для подключения к Azure SQL;
-* [образец ODBC C++ Linux](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28linux%29) – загрузите образец ODBC C++ Linux для подключения к Azure SQL.
+* [образец ODBC C++ Linux](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28linux%29) — загрузите образец ODBC C++ Linux для подключения к Azure SQL.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Ознакомьтесь с разделом [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
+* Обзор [обзора разработки базы данных S'L](sql-database-develop-overview.md)
 * См. дополнительные сведения в [справочнике по API ODBC](https://docs.microsoft.com/sql/odbc/reference/syntax/odbc-api-reference/)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

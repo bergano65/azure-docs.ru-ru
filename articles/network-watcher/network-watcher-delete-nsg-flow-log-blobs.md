@@ -1,6 +1,6 @@
 ---
-title: Удаление больших двоичных объектов хранилища для журналов потоков для групп безопасности сети в наблюдателе за сетями Azure | Документация Майкрософт
-description: В этой статье объясняется, как удалить большие двоичные объекты хранилища журналов потоков для групп безопасности сети, которые выходят за пределы политики хранения в наблюдателе за сетями Azure.
+title: Удаление капли хранения для журналов потока групп ыпомощи сети в Azure Network Watcher Документы Майкрософт
+description: В этой статье объясняется, как удалить капли хранения данных группы безопасности, которые находятся за пределами периода политики удержания в Azure Network Watcher.
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -14,19 +14,19 @@ ms.workload: infrastructure-services
 ms.date: 08/16/2019
 ms.author: damendo
 ms.openlocfilehash: 6d535bcc2e0831baae658796f76c8087d74c6a85
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77587215"
 ---
-# <a name="delete-network-security-group-flow-log-storage-blobs-in-network-watcher"></a>Удаление больших двоичных объектов хранилища журналов потоков для групп безопасности сети в наблюдателе за сетями
+# <a name="delete-network-security-group-flow-log-storage-blobs-in-network-watcher"></a>Удалить сетевой группы безопасности группы потока хранения капли хранения в сети Watcher
 
-Сейчас [журналы потоков группы безопасности сети(NSG)](network-watcher-nsg-flow-logging-overview.md) для Наблюдателя за сетями не удаляются автоматически из хранилища BLOB-объектов в соответствии с параметрами политики хранения. Теперь необходимо запустить сценарий PowerShell, чтобы вручную удалить журналы потоков из учетной записи хранения, как описано в этой статье.
+Сейчас [журналы потоков группы безопасности сети(NSG)](network-watcher-nsg-flow-logging-overview.md) для Наблюдателя за сетями не удаляются автоматически из хранилища BLOB-объектов в соответствии с параметрами политики хранения. Теперь необходимо запустить сценарий PowerShell, чтобы вручную удалить журналы потока из учетной записи хранилища, как описано в этой статье.
 
-## <a name="run-powershell-script-to-delete-nsg-flow-logs"></a>Запуск скрипта PowerShell для удаления журналов потоков NSG
+## <a name="run-powershell-script-to-delete-nsg-flow-logs"></a>Выполнить сценарий PowerShell для удаления журналов потока NSG
  
-Скопируйте и сохраните следующий скрипт в расположении, например в текущем рабочем каталоге. 
+Копируйте и сохраняйте следующий сценарий в таком месте, как текущий рабочий каталог. 
 
 ```powershell
 # This powershell script deletes all NSG flow log blobs that should not be retained anymore as per configured retention policy.
@@ -124,17 +124,17 @@ foreach ($Psflowlog in $FlowLogsList)
 Write-Output ('Retention policy for all NSGs evaluated and completed successfully')
 ```
 
-1. При необходимости введите следующие параметры в скрипте:
-   - **SubscriptionId** [обязательный]: идентификатор подписки, откуда вы хотите удалить BLOB-объекты журнала потоков NSG.
-   - **Location** [обязательный]: _строка расположения_ области группы безопасности сети, для которой необходимо удалить большие двоичные объекты журнала потоков NSG. Эти сведения можно просмотреть на портал Azure или на сайте [GitHub](https://github.com/Azure/azure-extensions-cli/blob/beb3d3fe984cfa9c7798cb11a274c5337968cbc5/regions.go#L23).
-   - **Подтверждение** [необязательно]: передайте флаг подтверждения, если вы хотите вручную подтвердить удаление каждого BLOB-объекта хранилища.
+1. Введите следующие параметры в скрипте по мере необходимости:
+   - **SubscriptionId** «Обязательный»: Идентификатор подписки от того, где вы хотели бы удалить капли NSG Flow Log.
+   - **Расположение** «Обязательно»: _Строка местоположения_ области NSGs, для которой вы хотели бы удалить капли nsG Flow Log. Эту информацию можно просмотреть на портале Azure или на [GitHub.](https://github.com/Azure/azure-extensions-cli/blob/beb3d3fe984cfa9c7798cb11a274c5337968cbc5/regions.go#L23)
+   - **Подтвердите:** Передайте флаг подтверждения, если вы хотите вручную подтвердить удаление каждой капли хранения.
 
-1. Запустите сохраненный скрипт, как показано в следующем примере, где файл скрипта был сохранен как **делете-нсгфловлогсблобс. ps1**:
+1. Выполнить сохраненный сценарий, как показано в следующем примере, где файл скрипта был сохранен как **Delete-NsgFlowLogsBlobs.ps1**:
    ```
    .\Delete-NsgFlowLogsBlobs.ps1 -SubscriptionId <subscriptionId> -Location  <location> -Confirm
    ```
     
 ## <a name="next-steps"></a>Дальнейшие действия
-- Клиенты могут автоматизировать выполнение скрипта с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) или [службы автоматизации Azure](https://azure.microsoft.com/services/automation/) .
-- Дополнительные сведения о ведении журнала NSG см. в разделе [журналы Azure Monitor для групп безопасности сети (группы безопасности сети)](../virtual-network/virtual-network-nsg-manage-log.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
+- Клиенты могут автоматизировать работу скрипта с помощью [приложений логики Azure](../logic-apps/logic-apps-overview.md) или [автоматизации Azure](https://azure.microsoft.com/services/automation/)
+- Чтобы узнать больше о регистрации NSG, см. [журналы Azure Monitor для групп сетевой безопасности (НСГ).](../virtual-network/virtual-network-nsg-manage-log.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)
 

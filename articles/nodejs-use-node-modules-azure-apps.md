@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/17/2016
 ms.author: routlaw
 ms.openlocfilehash: 61be6bcd957a4e81147d5ef472b8f850e5605e41
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70309276"
 ---
 # <a name="using-nodejs-modules-with-azure-applications"></a>Использование модулей Node.js с приложениями Azure
@@ -84,7 +84,7 @@ ms.locfileid: "70309276"
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы научились использовать модули Node.js с Azure, узнайте, как [указать версию Node.js](https://github.com/squillace/staging/blob/master/articles/nodejs-specify-node-version-azure-apps.md), [создать и развернуть веб-приложение Node.js](app-service/app-service-web-get-started-nodejs.md) и [использовать интерфейс командной строки Azure для Mac и Linux](https://azure.microsoft.com/blog/using-windows-azure-with-the-command-line-tools-for-mac-and-linux/).
 
 Дополнительную информацию см. в [центре разработчиков Node.js](/azure/javascript/).

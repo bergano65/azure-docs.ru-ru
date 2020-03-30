@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 14ea9113bf5712d6ffce356d02abb7224c21771a
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70067721"
 ---
 # <a name="implement-x-csrf-pattern"></a>Реализация шаблона X-CSRF
@@ -29,7 +29,7 @@ ms.locfileid: "70067721"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Get X-CSRF token from SAP gateway using send request.policy.xml)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 

@@ -13,10 +13,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 49ad9be7c70602132436b14234f01a4086d8e1fe
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70139141"
 ---
 # <a name="use-case---product-recommendations"></a>Вариант использования: система рекомендации товаров
@@ -38,7 +38,7 @@ ms.locfileid: "70139141"
 
 И наконец, продавцам нужно оценивать эффективность такого подхода путем отслеживания количества успешных дополнительных и перекрестных продаж (конверсия просмотров в продажи) и корректировать последующие рекомендации.
 
-## <a name="solution-overview"></a>Обзор решения
+## <a name="solution-overview"></a>Общие сведения о решении
 Этот пример решения испытан и реализован реальными пользователями Azure. При этом использовалась фабрика данных Azure и другие службы компонентов Cortana Intelligence, включая [HDInsight](https://azure.microsoft.com/services/hdinsight/) и [Power BI](https://powerbi.microsoft.com/).
 
 Для хранения данных на протяжении всего рабочего процесса интернет-магазин использует хранилище BLOB-объектов Azure, локальный сервер SQL, базу данных SQL Azure и киоск реляционных данных.  Хранилище BLOB-объектов содержит данные о клиентах, их поведении и сведения о товарах. Информация о товарах — это, в частности, сведения о торговых марках и каталоге товаров, который храниться локально в хранилище данных SQL. 
