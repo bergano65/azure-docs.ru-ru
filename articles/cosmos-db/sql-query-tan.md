@@ -1,6 +1,6 @@
 ---
-title: TAN на языке Azure Cosmos DB запросов
-description: Сведения о функции SQL System TAN в Azure Cosmos DB.
+title: TAN на языке запросов Azure Cosmos DB
+description: Узнайте о функции системы TAN в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/04/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 9d7187ba116067445e835769fc33aa70677ef80b
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78301987"
 ---
-# <a name="tan-azure-cosmos-db"></a>TAN (Azure Cosmos DB)
+# <a name="tan-azure-cosmos-db"></a>TAN (Azure Космос DB)
  Возвращает тангенс заданного угла в радианах для указанного выражения.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -48,10 +48,10 @@ SELECT TAN(PI()/2) AS tan
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

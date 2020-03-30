@@ -1,26 +1,26 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 02/13/2019
+ms.date: 03/19/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: afd4836229c60ebef1536d4fa1ca4206a492e56d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: d2dba0f657b418267db90c07014dc8996ed12a10
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185163"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80059925"
 ---
 После создания самозаверяющего корневого сертификата экспортируйте CER-файл его открытого ключа (не закрытый ключ). В дальнейшем вы загрузите этот файл в Azure. Чтобы экспортировать CER-файл для самозаверяющего корневого сертификата, сделайте следующее:
 
 1. Чтобы получить из сертификата CER-файл, откройте раздел **Управление сертификатами пользователей**. Найдите корневой самозаверяющий сертификат (обычно он находится в папке Certificates - <текущий_пользователь>\Personal\Certificates) и щелкните его правой кнопкой мыши. Щелкните **Все задачи** > **Экспорт**. Откроется **мастера экспорта сертификатов**. Если не удается найти сертификат в разделе <текущий_пользователь>\Personal\Certificates, возможно, вы случайно открыли "Certificates — Local Computer"вместо "Certificates— <текущий_пользователь>". Если вы хотите открыть диспетчер сертификатов в области текущего пользователя с помощью PowerShell, выполните команду *certmgr* в окне консоли.
 
-   ![Экспортировать](./media/vpn-gateway-certificates-export-public-key-include/export.png)
-2. В мастере нажмите кнопку **Далее**.
+   ![Экспорт](./media/vpn-gateway-certificates-export-public-key-include/export.png)
+2. В окне мастера нажмите **Далее**.
 
    ![Экспорт сертификата](./media/vpn-gateway-certificates-export-public-key-include/exportwizard.png)
 3. Выберите **Нет, не экспортировать закрытый ключ** и снова нажмите кнопку **Далее**.
@@ -29,10 +29,10 @@ ms.locfileid: "67185163"
 4. На странице **Формат экспортируемого файла** выберите **Файлы X.509 (.CER) в кодировке Base-64** и нажмите кнопку **Далее**.
 
    ![Выбор параметра "Файлы X.509 (.CER) в кодировке Base-64"](./media/vpn-gateway-certificates-export-public-key-include/base64.png)
-5. На странице **Имя экспортируемого файла** нажмите кнопку **Обзор**, чтобы перейти в расположение для экспорта сертификата. В поле **Имя файла**введите имя для файла сертификата. Затем щелкните **Далее**.
+5. На странице **Имя экспортируемого файла** нажмите кнопку **Обзор**, чтобы перейти в расположение для экспорта сертификата. В поле **Имя файла**введите имя для файла сертификата. Затем нажмите кнопку **Далее**.
 
    ![Обзор](./media/vpn-gateway-certificates-export-public-key-include/browse.png)
-6. Нажмите кнопку **Готово** , чтобы экспортировать сертификат.
+6. Нажмите кнопку **Готово**, чтобы выполнить экспорт сертификата.
 
    ![Готово](./media/vpn-gateway-certificates-export-public-key-include/finish.png)
 7. Сертификат успешно экспортирован.

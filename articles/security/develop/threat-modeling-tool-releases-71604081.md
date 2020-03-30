@@ -1,5 +1,5 @@
 ---
-title: Microsoft Threat Modeling Tool выпуск 4/9/2019
+title: Microsoft Угроза Моделирование Релиз 4/9/2019
 titleSuffix: Azure
 description: Документирование заметок о выпуске средства моделирования угроз
 author: jegeib
@@ -9,45 +9,45 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 04/03/2019
 ms.openlocfilehash: 59d385ba7de5bf7bceae4dc8ddadbca813046094
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78269730"
 ---
-# <a name="threat-modeling-tool-update-release-71604081---492019"></a>Threat Modeling Tool обновления выпуска 7.1.60408.1 — 4/9/2019
+# <a name="threat-modeling-tool-update-release-71604081---492019"></a>Угроза Моделирование Инструмент обновления релиз 7.1.60408.1 - 4/9/2019
 
-Версия 7.1.60408.1 Microsoft Threat Modeling Tool (ТМТ) была выпущена 9 2019 апреля и содержит следующие изменения:
+Версия 7.1.60408.1 инструмента моделирования угроз Microsoft (TMT) была выпущена 9 апреля 2019 года и содержит следующие изменения:
 
-- Новые наборы элементов для Azure Key Vault и диспетчера трафика Azure
-- Номер версии ТМТ теперь отображается на начальном экране
-- Ссылки на поддержку обновлены
+- Новые трафареты для Azure Key Vault и менеджера трафика Azure
+- Номер версии TMT теперь отображается на домашнем экране
+- Обновлены ссылки на поддержку
 - Исправления ошибок
 
 ## <a name="feature-changes"></a>Изменения функций
 
-### <a name="new-stencils-for-azure-key-vault-and-azure-traffic-manager"></a>Новые наборы элементов для Azure Key Vault и диспетчера трафика Azure
+### <a name="new-stencils-for-azure-key-vault-and-azure-traffic-manager"></a>Новые трафареты для Azure Key Vault и менеджера трафика Azure
 
-![Набор элементов Azure Key Vault](./media/threat-modeling-tool-releases-71604081/tmt_keyvault_trafficmanager.PNG)
+![Лазурный ключ Хранилище Stencil](./media/threat-modeling-tool-releases-71604081/tmt_keyvault_trafficmanager.PNG)
 
-В набор трафаретов Azure добавлены новые наборы элементов и угрозы для Azure Key Vault и диспетчера трафика Azure. При открытии моделей, основанных на наборе элементов Azure, пользователям будет предложено обновить шаблон, связанный с моделью. Обновление модели на основе набора элементов Azure также может инициироваться вручную с помощью команды "применить шаблон" в меню "файл" и повторного применения последнего файла облачных служб Azure. tb7.
+Новые трафареты и угрозы для Azure Key Vault и Azure Traffic Manager были добавлены в набор трафаретов Azure. При открытии моделей на основе набора трафаретов Azure пользователям будет предложено обновить шаблон, связанный с моделью. Обновление модели на основе набора трафаретов Azure также может быть инициировано вручную с помощью команды "Apply Template" в меню "File" и повторного применения последнего файла Azure Cloud Services.tb7.
 
-### <a name="tmt-version-number-is-now-shown-on-the-home-screen"></a>Номер версии ТМТ теперь отображается на начальном экране
+### <a name="tmt-version-number-is-now-shown-on-the-home-screen"></a>Номер версии TMT теперь отображается на домашнем экране
 
-Клиентская версия Threat Modeling Tool теперь отображается на начальном экране приложения для простоты доступа.
+Клиентская версия инструмента моделирования угроз теперь отображается на домашнем экране приложения для облегчения доступа.
 
-![Набор элементов Azure Key Vault](./media/threat-modeling-tool-releases-71604081/tmt_version.PNG)
+![Лазурный ключ Хранилище Stencil](./media/threat-modeling-tool-releases-71604081/tmt_version.PNG)
 
-### <a name="support-links-have-been-updated"></a>Ссылки на поддержку обновлены
+### <a name="support-links-have-been-updated"></a>Обновлены ссылки на поддержку
 
-Все ссылки на поддержку в средстве были обновлены для направления пользователей на [tmtextsupport@microsoft.com](mailto:tmtextsupport@microsoft.com) , а не на форум MSDN.
+Все ссылки поддержки в инструменте [tmtextsupport@microsoft.com](mailto:tmtextsupport@microsoft.com) были обновлены, чтобы направлять пользователей на форум MSDN.
 
 ## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
-  - [Юбилейное обновление Microsoft Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или более поздней версии
+  - [Microsoft Windows 10 Годовщина Обновление](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или позже
 - Требуемая версия .NET
-  - [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или более поздней версии
+  - [.Net 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или позже
 - Дополнительные требования
   - Для получения обновлений средства и шаблонов требуется подключение к Интернету.
 
@@ -55,6 +55,6 @@ ms.locfileid: "78269730"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

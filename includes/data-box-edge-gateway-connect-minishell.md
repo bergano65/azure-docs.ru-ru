@@ -5,32 +5,32 @@ ms.topic: include
 ms.date: 03/06/2019
 ms.author: alkohli
 ms.openlocfilehash: 348f7bdd333da4f4a6cb41a438b7aee08d6a6bbb
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185749"
 ---
-В зависимости от операционной системы клиента отличаются процедур удаленно подключиться к устройству.
+В зависимости от операционной системы клиента процедуры удаленного подключения к устройству различны.
 
-### <a name="remotely-connect-from-a-windows-client"></a>Удаленное подключение из клиента Windows
+### <a name="remotely-connect-from-a-windows-client"></a>Удаленное подключение от клиента Windows
 
-Перед началом работы убедитесь, что клиент Windows работает с Windows PowerShell 5.0 или более поздней версии.
+Прежде чем начать, убедитесь, что ваш клиент Windows работает под управлением Windows PowerShell 5.0 или позже.
 
-Выполните следующие действия для удаленного подключения от клиента Windows.
+Выполните следующие действия, чтобы удаленно подключиться к клиенту Windows.
 
-1. Запустите сеанс Windows PowerShell с правами администратора.
-2. Убедитесь, что служба удаленного управления Windows работает на клиентском компьютере. В командной строке выполните следующую команду:
+1. Запустите сеанс Windows PowerShell в качестве администратора.
+2. Убедитесь, что служба удаленного управления Windows работает на вашем клиенте. В командной строке введите:
 
     `winrm quickconfig`
 
-3. Назначьте переменную для IP-адрес устройства.
+3. Назначить переменную на IP-адрес устройства.
 
-    $ip = "<device_ip>"
+    $ip " <device_ip>"
 
-    Замените `<device_ip>` IP-адресом вашего устройства.
+    Замените `<device_ip>` IP-адрес вашего устройства.
 
-4. Чтобы добавить IP-адрес устройства к списку доверенных узлов клиента, введите следующую команду:
+4. Чтобы добавить IP-адрес вашего устройства в список доверенных хостов клиента, введите следующую команду:
 
     `Set-Item WSMan:\localhost\Client\TrustedHosts $ip -Concatenate -Force`
 
@@ -38,7 +38,7 @@ ms.locfileid: "67185749"
 
     `Enter-PSSession -ComputerName $ip -Credential $ip\EdgeUser -ConfigurationName Minishell`
 
-6. Укажите пароль при появлении запроса. Используйте тот же пароль, который используется для входа в локальный пользовательский Интерфейс. Пароль по умолчанию локального web UI *Password1*. При подключении к устройству с помощью удаленного PowerShell успешно, отобразится следующий результат:  
+6. Предоставьте пароль по запросу. Используйте тот же пароль, который используется для входного в локальном веб-ui. Локальный пароль веб-uI по умолчанию — *пароль 1.* При успешном подключении к устройству с помощью удаленного PowerShell вы увидите следующий выход образца:  
 
     ```
     Windows PowerShell
@@ -54,27 +54,27 @@ ms.locfileid: "67185749"
     [10.100.10.10]: PS>
     ```
 
-### <a name="remotely-connect-from-a-linux-client"></a>Удаленное подключение из клиента Linux
+### <a name="remotely-connect-from-a-linux-client"></a>Удаленное подключение от клиента Linux
 
-В клиенте Linux, который будет использоваться для подключения:
+На клиенте Linux, который вы будете использовать для подключения:
 
-- [Установить последнюю PowerShell Core для Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6) из GitHub, чтобы получить функции удаленного взаимодействия SSH. 
-- [Установить только `gss-ntlmssp` пакета из модуля NTLM](https://github.com/Microsoft/omi/blob/master/Unix/doc/setup-ntlm-omi.md). Для клиентов, Ubuntu используйте следующую команду:
+- [Установите новейшее ядро PowerShell для Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6) от GitHub, чтобы получить функцию удаления SSH. 
+- [Установите `gss-ntlmssp` только пакет из модуля NTLM.](https://github.com/Microsoft/omi/blob/master/Unix/doc/setup-ntlm-omi.md) Для клиентов Ubuntu используйте следующую команду:
     - `sudo apt-get install gss-ntlmssp`
 
-Дополнительные сведения см. в статье [удаленное взаимодействие PowerShell через SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-6).
+Для получения дополнительной информации, перейдите на [PowerShell remoting над SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-6).
 
-Выполните следующие действия для удаленного подключения от NFS-клиента.
+Выполните следующие действия, чтобы удаленно подключиться к клиенту NFS.
 
-1. Чтобы открыть сеанс PowerShell, введите следующую команду:
+1. Чтобы открыть сеанс PowerShell, введите:
 
     `sudo pwsh`
  
-2. Для подключения с помощью удаленного клиента, введите следующую команду:
+2. Для подключения с помощью удаленного клиента введите:
 
     `Enter-PSSession -ComputerName $ip -Authentication Negotiate -ConfigurationName Minishell -Credential ~\EdgeUser`
 
-    При запросе укажите пароль, используемый для входа в устройство.
+    При запросе предоставьте пароль, используемый для ввоза в устройство.
  
 > [!NOTE]
-> Эта процедура не работает в Mac OS.
+> Эта процедура не работает на Mac OS.

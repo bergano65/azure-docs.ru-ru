@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
@@ -9,15 +9,15 @@ ms.date: 09/20/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 1ec3ecdafb8e475f5f13372789528612ccd7b8b9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "66226023"
 ---
 ## <a name="using-rbac-to-share-images"></a>Предоставление общего доступа к образам с помощью RBAC
 
-Вы можете поделиться образы в подписках с помощью управления доступом на основе ролей (RBAC). Любой пользователь, имеющий разрешения на чтение версии образа даже в разных подписках, сможет развернуть виртуальную машину с помощью версии образа.
+Вы можете обмениваться изображениями по подпискам с помощью управления доступом на основе ролей (RBAC). Любой пользователь, имеющий разрешения на чтение версии образа даже в разных подписках, сможет развернуть виртуальную машину с помощью версии образа.
 
 Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli).
 

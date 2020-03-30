@@ -1,29 +1,27 @@
 ---
-title: Производительность выполняющейся в памяти OLTP улучшает транзакция производительности SQL
+title: In-Memory OLTP улучшает S'L txn perf
 description: Внедрите технологию In-Memory OLTP, чтобы повысить производительность транзакций в вашей базе данных SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
-ms.custom: ''
-ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: MightyPen
 ms.date: 11/07/2018
-ms.openlocfilehash: 0f10936867c101c07cc8d29d68dc45021bfad1b3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 653ed75341d5d56ecbe06cb59f0efafa1e68aa0f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73810306"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80067268"
 ---
 # <a name="use-in-memory-oltp-to-improve-your-application-performance-in-sql-database"></a>Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP
 
 [Выполняющуюся в памяти OLTP](sql-database-in-memory.md) можно использовать для повышения производительности обработки транзакций, приема данных и сценариев, связанных с временными данными, в базах данных уровней ["Премиум" и "Критически важный для бизнеса"](sql-database-service-tiers-vcore.md), не повышая ценовую категорию. 
 
 > [!NOTE] 
-> Узнайте, как [Quorum удваивает ключевую рабочую нагрузку на базу данных при одновременном сокращении DTU на 70 % благодаря использованию базы данных SQL](https://customers.microsoft.com/story/quorum-doubles-key-databases-workload-while-lowering-dtu-with-sql-database).
+> Узнайте, как [Кворум удваивает рабочую нагрузку ключевой базы данных при одновременном снижении DTU на 70% с помощью базы данных S'L](https://customers.microsoft.com/story/quorum-doubles-key-databases-workload-while-lowering-dtu-with-sql-database)
 
 
 Выполните следующие действия, чтобы внедрить выполняющуюся в памяти OLTP в существующую базу данных.
@@ -36,7 +34,7 @@ ms.locfileid: "73810306"
 SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 ```
 
-Сокращение *XTP* обозначает технологию *экстремальной обработки транзакций (Extreme Transaction Processing)* .
+Сокращение *XTP* обозначает технологию *экстремальной обработки транзакций (Extreme Transaction Processing)*.
 
 
 
@@ -46,7 +44,7 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 Для создания отчета в среде SSMS выполните следующие действия:
 
 * В **обозревателе объектов**щелкните узел своей базы данных правой кнопкой мыши.
-* Щелкните **Отчеты** > **Стандартные отчеты** > **Обзор анализа производительности транзакций**.
+* Нажмите **Отчеты Стандартные** > **отчеты** > о**производительность транзакций Обзор анализа производительности**.
 
 Дополнительные сведения см. в статье [Определение, должна ли таблица или хранимая процедура быть перенесена в выполняющуюся в памяти OLTP](https://msdn.microsoft.com/library/dn205133.aspx).
 
@@ -79,11 +77,11 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 2. В **обозревателе объектов** щелкните правой кнопкой мыши таблицу, а затем выберите пункт **Memory Optimization Advisor** (Помощник по оптимизации памяти).
    
    * Отобразится мастер **Помощник по оптимизации памяти таблицы** .
-3. В окне мастера щелкните **Проверка переноса** (или нажмите кнопку **Далее**). Так вы узнаете, содержит ли таблица функции, которые не поддерживаются в оптимизированных для памяти таблицах. Дополнительные сведения можно найти в разделе
+3. В окне мастера щелкните **Проверка переноса** (или нажмите кнопку **Далее**). Так вы узнаете, содержит ли таблица функции, которые не поддерживаются в оптимизированных для памяти таблицах. Дополнительные сведения см. в разделе:
    
    * *Контрольный список оптимизации памяти* в [помощнике по оптимизации памяти](https://msdn.microsoft.com/library/dn284308.aspx).
-   * [Конструкции языка Transact-SQL не поддерживаются компонентом In-Memory OLTP](https://msdn.microsoft.com/library/dn246937.aspx).
-   * [Миграция в компонент In-Memory OLTP](https://msdn.microsoft.com/library/dn247639.aspx).
+   * [Конструкции «Трансакт-СЗЛ», не поддерживаемые IN-Memory OLTP.](https://msdn.microsoft.com/library/dn246937.aspx)
+   * [Миграция в непамяти OLTP](https://msdn.microsoft.com/library/dn247639.aspx).
 4. Если в таблице нет неподдерживаемых функций, помощник выполнит фактический перенос схемы и данных автоматически.
 
 #### <a name="manual-t-sql"></a>Создание таблицы вручную с помощью инструкций T-SQL
@@ -93,7 +91,7 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 2. Получите полный сценарий T-SQL для таблицы и ее индексов.
    
    * В среде SSMS щелкните правой кнопкой мыши узел таблицы.
-   * Щелкните **Создать сценарий для таблицы** > **Используя CREATE** > **Новое окно запроса**.
+   * Нажмите **таблицу сценариев как** > **CREATE to** > **New Query Window.**
 3. В окне сценария добавьте в инструкцию CREATE TABLE параметр WITH (MEMORY_OPTIMIZED = ON).
 4. При необходимости измените для индекса параметр CLUSTERED (Кластеризовано) на NONCLUSTERED (Некластеризовано).
 5. Переименуйте существующую таблицу с помощью инструкции SP_RENAME.
@@ -112,7 +110,7 @@ INSERT INTO <new_memory_optimized_table>
 ### <a name="considerations-with-natively-compiled-stored-procedures"></a>Общие сведения о скомпилированных в собственном коде хранимых процедурах
 Скомпилированная в собственном коде хранимая процедура должна иметь следующие параметры в условии T-SQL:
 
-* NATIVE_COMPILATION;
+* NATIVE_COMPILATION
 * SCHEMABINDING — в таблицах хранимых процедур определения столбцов нельзя изменять, если это может повлиять на хранимую процедуру (исключением является удаление хранимой процедуры).
 
 Собственный модуль должен использовать один большой [блок ATOMIC](https://msdn.microsoft.com/library/dn452281.aspx) для управления транзакциями. Роли для явной транзакции BEGIN TRANSACTION или ROLLBACK TRANSACTION не существует. Если код обнаруживает нарушение бизнес-правила, он может завершить атомарный блок с помощью инструкции [THROW](https://msdn.microsoft.com/library/ee677615.aspx) .
@@ -135,8 +133,8 @@ CREATE PROCEDURE schemaname.procedurename
 
 * Для TRANSACTION_ISOLATION_LEVEL значение SNAPSHOT является наиболее распространенным при создании скомпилированной хранимой процедуры. Тем не менее поддерживаются и другие значения.
   
-  * REPEATABLE READ;
-  * SERIALIZABLE.
+  * REPEATABLE READ
+  * SERIALIZABLE
 * Значение LANGUAGE должно присутствовать в представлении sys.languages.
 
 ### <a name="how-to-migrate-a-stored-procedure"></a>Миграция хранимой процедуры

@@ -1,21 +1,21 @@
 ---
 title: Подготовка пропускной способности контейнера в Azure Cosmos DB
-description: Узнайте, как подготавливать пропускную способность на уровне контейнера в Azure Cosmos DB с помощью портал Azure, CLI, PowerShell и других пакетов SDK.
+description: Узнайте, как обеспечить пропускную способность на уровне контейнеров в Azure Cosmos DB с помощью портала Azure, CLI, PowerShell и различных других SDK.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: mjbrown
 ms.openlocfilehash: e416501cb3c532b3ba0a262442b35b236875a463
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78273294"
 ---
 # <a name="provision-throughput-on-an-azure-cosmos-container"></a>Подготовка пропускной способности для контейнера Azure Cosmos
 
-Узнайте, как подготовить пропускную способность для контейнера (коллекции, графа или таблицы) в Azure Cosmos DB. Вы можете подготовить пропускную способность для одного контейнера или [базы данных](how-to-provision-database-throughput.md) и предоставить к ней общий доступ для контейнеров в пределах этой базы данных. Пропускную способность для контейнера можно подготовить с помощью портала Azure, Azure CLI или пакетов SDK Azure Cosmos DB.
+Узнайте, как подготовить пропускную способность для контейнера (коллекции, графа или таблицы) в Azure Cosmos DB. Вы можете предоставить пропускную емкость в одном контейнере или [предоставить пропускную емкость в базе данных](how-to-provision-database-throughput.md) и поделиться ею между контейнерами в базе данных. Пропускную способность для контейнера можно подготовить с помощью портала Azure, Azure CLI или пакетов SDK Azure Cosmos DB.
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "78273294"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
+1. Откройте панель **Data Explorer** и выберите **новую коллекцию.** После этого предоставьте следующие сведения.
 
    * Укажите, создаете ли вы новую базу данных или используете существующую.
    * Укажите идентификатор контейнера (таблицы или графа).
@@ -35,10 +35,10 @@ ms.locfileid: "78273294"
 
 ## <a name="azure-cli-or-powershell"></a>Azure CLI или PowerShell
 
-Чтобы создать контейнер с выделенной пропускной способностью, см.
+Для создания контейнера со выделенной пропускной емкостью см.,
 
-* [Создание контейнера с помощью Azure CLI](manage-with-cli.md#create-a-container)
-* [Создание контейнера с помощью PowerShell](manage-with-powershell.md#create-container)
+* [Создание контейнера с помощью интерфейса командной строки Azure](manage-with-cli.md#create-a-container)
+* [Создание контейнера с помощью Powershell](manage-with-powershell.md#create-container)
 
 > [!Note]
 > При подготовке пропускной способности для учетной записи Azure Cosmos, настроенной с помощью API Azure Cosmos DB для MongoDB, используйте `/myShardKey` для пути к ключу секции. При подготовке пропускной способности для контейнера в учетной записи Azure Cosmos, настроенной с помощью API Cassandra, используйте `/myPrimaryKey` для пути к ключу секции.
@@ -48,7 +48,7 @@ ms.locfileid: "78273294"
 > [!Note]
 > Используйте пакеты SDK Cosmos для API SQL для подготовки пропускной способности для всех API Cosmos DB, кроме API Cassandra.
 
-### <a id="dotnet-most"></a>Интерфейсы API SQL, MongoDB, Gremlin и API таблиц
+### <a name="sql-mongodb-gremlin-and-table-apis"></a><a id="dotnet-most"></a>Интерфейсы API SQL, MongoDB, Gremlin и API таблиц
 ### <a name="net-v2-sdk"></a>Пакет SDK для .Net версии 2
 
 ```csharp
@@ -96,9 +96,9 @@ offer.content.offerThroughput = 2000;
 await client.offer(offer.id).replace(offer);
 ```
 
-### <a id="dotnet-cassandra"></a>API Cassandra
+### <a name="cassandra-api"></a><a id="dotnet-cassandra"></a>Кассандра API
 
-Аналогичные команды могут выдаваться любым драйвером, совместимым с CQL.
+Аналогичные команды могут быть выданы через любой драйвер, совместимый с C'L.
 
 ```csharp
 // Create a Cassandra table with a partition (primary) key and provision throughput of 400 RU/s
@@ -108,7 +108,7 @@ session.Execute("CREATE TABLE myKeySpace.myTable(
     lastName text) WITH cosmosdb_provisioned_throughput=400");
 
 ```
-### <a name="alter-or-change-throughput-for-cassandra-table"></a>Изменение или изменение пропускной способности для таблицы Cassandra
+### <a name="alter-or-change-throughput-for-cassandra-table"></a>Изменение или изменение пропускной выбора для таблицы Cassandra
 
 ```csharp
 // Altering the throughput too can be done through code by issuing following command
@@ -116,7 +116,7 @@ session.Execute("ALTER TABLE myKeySpace.myTable WITH cosmosdb_provisioned_throug
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать о подготовке пропускной способности в Cosmos DB, обратитесь к следующим статьям:
 
