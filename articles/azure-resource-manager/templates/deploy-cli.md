@@ -1,18 +1,20 @@
 ---
 title: Развертывание ресурсов с помощью Azure CLI и шаблона
-description: Используйте Azure Resource Manager и Azure CLI для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
+description: Для развертывания ресурсов в Azure и Azure clI используйте менеджер ресурсов Azure и ClI Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
-ms.date: 10/09/2019
-ms.openlocfilehash: 17307b1657afc133a7e1b1d7714363329573e48c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.date: 03/25/2020
+ms.openlocfilehash: 241b84bc7b8c0b213e74cd7ee5f3d7668fe0d808
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79273908"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80282653"
 ---
-# <a name="deploy-resources-with-resource-manager-templates-and-azure-cli"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI
+# <a name="deploy-resources-with-arm-templates-and-azure-cli"></a>Развертывание ресурсов с шаблонами ARM и Azure CLI
 
-В этой статье объясняется, как использовать Azure CLI и шаблоны Resource Manager для развертывания ресурсов в Azure. Если вы не знакомы с концепциями развертывания и управления решениями Azure, см. раздел [Общие сведения о развертывании шаблонов](overview.md).
+В этой статье объясняется, как использовать Azure CLI с шаблонами Azure Resource Manager (ARM) для развертывания ресурсов в Azure. Если вы не знакомы с концепциями развертывания и управления решениями Azure, [см.](overview.md)
+
+Команды развертывания изменены в версии Azure CLI 2.2.0. Примеры в этой статье требуют версии Azure CLI 2.2.0 или позже.
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
@@ -20,25 +22,41 @@ ms.locfileid: "79273908"
 
 ## <a name="deployment-scope"></a>Область развертывания
 
-Вы можете ориентироваться на развертывание либо в подписке Azure, либо в группу ресурсов в рамках подписки. В большинстве случаев вы планируете развертывание в группе ресурсов. Используйте развертывания подписок для применения политик и назначений ролей в рамках подписки. Вы также можете использовать развертывания подписок для создания группы ресурсов и развертывания в ней ресурсов. В зависимости от области развертывания используются разные команды.
+Развертывание можно нацелить на группу ресурсов, подписку, группу управления или арендатора. В большинстве случаев развертывание будет нацелено на группу ресурсов. Чтобы применить политики и назначения ролей в более широком диапазоне, используйте подписку, группу управления или развертывания клиентов. При развертывании в подписке можно создать группу ресурсов и развернуть ресурсы в ней.
 
-Для развертывания в **группе ресурсов**используйте команду [AZ Group Deployment Create](/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create):
+В зависимости от сферы развертывания используются различные команды.
 
-```azurecli-interactive
-az group deployment create --resource-group <resource-group-name> --template-file <path-to-template>
-```
-
-Для развертывания в **подписке**используйте команду [AZ Deployment Create](/cli/azure/deployment?view=azure-cli-latest#az-deployment-create):
+Для развертывания в **группе ресурсов**используйте [группу развертывания az, создайте:](/cli/azure/deployment/group?view=azure-cli-latest#az-deployment-group-create)
 
 ```azurecli-interactive
-az deployment create --location <location> --template-file <path-to-template>
+az deployment group create --resource-group <resource-group-name> --template-file <path-to-template>
 ```
 
-Дополнительные сведения о развертываниях уровня подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
+Для развертывания **в подписке**используйте [подгруппу развертывания az:](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-create)
 
-В настоящее время развертывания группы управления поддерживаются только в REST API. Дополнительные сведения о развертывании на уровне группы управления см. [в разделе Создание ресурсов на уровне группы управления](deploy-to-management-group.md).
+```azurecli-interactive
+az deployment sub create --location <location> --template-file <path-to-template>
+```
 
-В примерах этой статьи используются развертывания групп ресурсов.
+Для получения дополнительной информации о развертывании уровня подписки [см.](deploy-to-subscription.md)
+
+Для развертывания в **группе управления**используйте [az развертывание mg создать:](/cli/azure/deployment/mg?view=azure-cli-latest#az-deployment-mg-create)
+
+```azurecli-interactive
+az deployment mg create --location <location> --template-file <path-to-template>
+```
+
+Для получения дополнительной информации о развертываниях группы управления [см.](deploy-to-management-group.md)
+
+Для развертывания **для клиента**используйте [создание клиента развертывания az:](/cli/azure/deployment/tenant?view=azure-cli-latest#az-deployment-tenant-create)
+
+```azurecli-interactive
+az deployment tenant create --location <location> --template-file <path-to-template>
+```
+
+Для получения дополнительной информации о развертываниях уровня клиента [см.](deploy-to-tenant.md)
+
+Примеры в этой статье используют развертывания групп ресурсов.
 
 ## <a name="deploy-local-template"></a>Развертывание локального шаблона
 
@@ -54,7 +72,7 @@ az deployment create --location <location> --template-file <path-to-template>
 
 ```azurecli-interactive
 az group create --name ExampleGroup --location "Central US"
-az group deployment create \
+az deployment group create \
   --name ExampleDeployment \
   --resource-group ExampleGroup \
   --template-file storage.json \
@@ -69,13 +87,13 @@ az group deployment create \
 
 ## <a name="deploy-remote-template"></a>Развертывание удаленного шаблона
 
-Шаблоны Resource Manager можно хранить не на локальном компьютере, а на внешнем источнике. Вы можете хранить шаблоны в репозитории системы управления версиями (например, GitHub). А также их можно хранить в учетной записи хранения Azure для общего доступа в организации.
+Вместо того, чтобы хранить шаблоны ARM на локальной машине, вы можете предпочесть хранить их во внешнем месте. Вы можете хранить шаблоны в репозитории системы управления версиями (например, GitHub). А также их можно хранить в учетной записи хранения Azure для общего доступа в организации.
 
 Для развертывания внешнего шаблона используйте параметр **template-uri**. Используйте универсальный код ресурса (URI) в примере для развертывания примера шаблона из GitHub.
 
 ```azurecli-interactive
 az group create --name ExampleGroup --location "Central US"
-az group deployment create \
+az deployment group create \
   --name ExampleDeployment \
   --resource-group ExampleGroup \
   --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json" \
@@ -90,7 +108,7 @@ az group deployment create \
 
 ```azurecli-interactive
 az group create --name examplegroup --location "South Central US"
-az group deployment create --resource-group examplegroup \
+az deployment group create --resource-group examplegroup \
   --template-uri <copied URL> \
   --parameters storageAccountType=Standard_GRS
 ```
@@ -104,18 +122,18 @@ az group deployment create --resource-group examplegroup \
 Чтобы передать встроенные параметры, укажите значения в `parameters`. Например, строки и массив передаются в шаблон из оболочки Bash следующим образом:
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group testgroup \
   --template-file demotemplate.json \
   --parameters exampleString='inline string' exampleArray='("value1", "value2")'
 ```
 
-Если вы используете Azure CLI в командной строке Windows (CMD) или PowerShell, передайте массив в формате: `exampleArray="['value1','value2']"`.
+Если вы используете Azure CLI с помощью Командного запроса Windows (CMD) или PowerShell, передайте массив в формате: `exampleArray="['value1','value2']"`
 
 Можно также получить содержимое файла и предоставлять его в виде встроенного параметра.
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group testgroup \
   --template-file demotemplate.json \
   --parameters exampleString=@stringContent.txt exampleArray=@arrayContent.json
@@ -136,21 +154,21 @@ az group deployment create \
 
 Вместо передачи параметров в виде встроенных значений в сценарии вам может быть проще использовать JSON-файл, содержащий значения параметров. Файл параметров должен находиться в локальной среде. Внешние файлы параметров не поддерживаются в Azure CLI.
 
-Дополнительные сведения о файле параметров см. в разделе [Создание файла параметров Диспетчер ресурсов](parameter-files.md).
+Для получения дополнительной информации о файле параметра [см.](parameter-files.md)
 
 Для передачи локального файла параметров используйте `@`, чтобы указать локальный файл с именем storage.parameters.json.
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --name ExampleDeployment \
   --resource-group ExampleGroup \
   --template-file storage.json \
   --parameters @storage.parameters.json
 ```
 
-## <a name="handle-extended-json-format"></a>Обработку расширенного формата JSON
+## <a name="handle-extended-json-format"></a>Ручка расширенный формат JSON
 
-Чтобы развернуть шаблон с многострочными строками или комментариями, необходимо использовать параметр `--handle-extended-json-format`.  Пример:
+Чтобы развернуть шаблон с многолинейными строками или `--handle-extended-json-format` комментариями, необходимо использовать переключатель.  Пример:
 
 ```json
 {
@@ -172,10 +190,10 @@ az group deployment create \
 
 ## <a name="test-a-template-deployment"></a>Тестовое развертывание шаблона
 
-Чтобы проверить шаблон и значения параметров без фактического развертывания ресурсов, используйте [az group deployment validate](/cli/azure/group/deployment#az-group-deployment-validate).
+Чтобы проверить значения шаблона и параметров без фактического развертывания ресурсов, используйте [проверку группы развертывания az.](/cli/azure/group/deployment)
 
 ```azurecli-interactive
-az group deployment validate \
+az deployment group validate \
   --resource-group ExampleGroup \
   --template-file storage.json \
   --parameters @storage.parameters.json
@@ -223,9 +241,9 @@ az group deployment validate \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о откате к успешному развертыванию при возникновении ошибки см. в разделе [откат при ошибке для успешного развертывания](rollback-on-error.md).
+- Чтобы откатить к успешному развертыванию при ошибке, просмейте [откат по ошибке для успешного развертывания.](rollback-on-error.md)
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).
-- Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](template-syntax.md).
+- Чтобы понять, как определить параметры в шаблоне, [см.](template-syntax.md)
 - Советы по устранению распространенных ошибок развертывания см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
 - Сведения о развертывании шаблона, которому нужен токен SAS, см. в статье [Развертывание частного шаблона с помощью маркера SAS](secure-template-with-sas-token.md).
 - Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](deployment-manager-overview.md).

@@ -1,19 +1,18 @@
 ---
-title: Получение URI подписанного URL-адрес для образа виртуальной машины на основе Microsoft Azure | Azure Marketplace
+title: Получите общую подпись доступа URI для вашего VM-изображения на основе Microsoft Azure Лазурный рынок
 description: Сведения о получении универсального кода ресурса (URI) подписанного URL-адреса (SAS) для образа виртуальной машины.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/19/2018
-ms.author: pabutler
-ms.openlocfilehash: cb6f1772c7c6f9abd268a8cb58550b253f095dbf
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.author: dsindona
+ms.openlocfilehash: 6fe15fb18d8865911363a4696e44dd7fe1d90c09
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132443"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80277809"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Получение универсального кода ресурса (URI) подписанного URL-адреса для образа виртуальной машины
 
@@ -30,18 +29,17 @@ ms.locfileid: "74132443"
 
 URL-адрес SAS можно создать двумя способами с помощью следующих средств:
 
--   Обозреватель службы хранилища Microsoft Azure — графическое средство для Windows, macOS и Linux;
--   интерфейс командной строки Microsoft Azure — рекомендуется для ОС, отличных от Windows, а также для сред автоматической или непрерывной интеграции.
+- Обозреватель службы хранилища Microsoft Azure — графическое средство для Windows, macOS и Linux;
+- интерфейс командной строки Microsoft Azure — рекомендуется для ОС, отличных от Windows, а также для сред автоматической или непрерывной интеграции.
 
-
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Создайте URL-адрес SAS с помощью Azure CLI, выполнив следующие действия:
 
-1. Скачайте и установите [Microsoft Azure CLI](https://azure.microsoft.com/documentation/articles/xplat-cli-install/).  Доступны версии для macOS, Windows и различных дистрибутивов Linux.
+1. Скачайте и установите [Microsoft Azure CLI](https://azure.microsoft.com/documentation/articles/xplat-cli-install/). Доступны версии для macOS, Windows и различных дистрибутивов Linux.
 2. Создайте файл PowerShell (с расширением `.ps1`), скопируйте в него следующий код и сохраните его в локальной файловой системе.
 
-   ``` powershell
+   ```azurecli-interactive
    az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' --name <vhd-name> --permissions rl --start '<start-date>' --expiry '<expiry-date>'
    ```
 
@@ -54,8 +52,8 @@ URL-адрес SAS можно создать двумя способами с п
 
    Следующий пример демонстрирует правильное (на момент написания этой статьи) использование значений всех параметров.
 
-   ``` powershell
-       az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ONc+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net' --name vhds --permissions rl --start '2017-11-06T00:00:00Z' --expiry '2018-08-20T00:00:00Z'
+   ```azurecli-interactive
+   az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ONc+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net' --name vhds --permissions rl --start '2017-11-06T00:00:00Z' --expiry '2018-08-20T00:00:00Z'
    ```
 
 4. Сохраните изменения, внесенные в скрипт PowerShell.
@@ -81,7 +79,6 @@ URL-адрес SAS можно создать двумя способами с п
     `https://catech123.blob.core.windows.net/vhds/TestRGVM2.vhd?st=2018-05-06T07%3A00%3A00Z&se=2019-08-02T07%3A00%3A00Z&sp=rl&sv=2017-04-17&sr=c&sig=wnEw9RfVKeSmVgqDfsDvC9IHhis4x0fc9Hu%2FW4yvBxk%3D`
 
 Повторите эти шаги для каждого виртуального жесткого диска в публикуемом номере SKU.
-
 
 ### <a name="microsoft-storage-explorer"></a>Обозреватель хранилищ Microsoft Azure
 
@@ -119,17 +116,16 @@ URL-адрес SAS можно создать двумя способами с п
 
 Повторите эти шаги для каждого виртуального жесткого диска в публикуемом номере SKU.
 
-
 ## <a name="verify-the-sas-uri"></a>Проверка URI SAS
 
 Проверьте каждый созданный URI SAS, используя следующий контрольный список.  Проверьте следующее:
-- URI имеет правильный формат: `<blob-service-endpoint-url>` + `/vhds/` + `<vhd-name>?` + `<sas-connection-string>`.
+
+- URI имеет форму: `<blob-service-endpoint-url>` + `/vhds/` + `<vhd-name>?` +`<sas-connection-string>`
 - URI содержит имя файла образа виртуального жесткого диска, включая расширение .vhd.
 - Примерно в середине URI отображается строка `sp=rl`. Она обозначает разрешения на доступ `Read` и `List`.
 - После этого фрагмента отображается `sr=c`. Эта строка обозначает разрешения на уровне контейнера.
 - Скопируйте созданный URI и вставьте его в браузер, чтобы начать скачивание связанного большого двоичного объекта.  (Эту операцию можно отменить до завершения скачивания.)
 
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли трудности при создании URI SAS, см. [описание распространенных проблем с URL-адресом SAS](./cpp-common-sas-url-issues.md).  В противном случае сохраните URI SAS в надежном расположении для последующего использования. Он потребуется для [публикации предложения виртуальной машины](./cpp-publish-offer.md) на Портале Cloud Partner.

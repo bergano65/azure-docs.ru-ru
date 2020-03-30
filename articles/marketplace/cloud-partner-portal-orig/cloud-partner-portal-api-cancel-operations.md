@@ -1,19 +1,18 @@
 ---
-title: API операции отмены | Azure Marketplace
+title: Отмена API операции Лазурный рынок
 description: Отмена операций.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: 374425dbd2abacb2114b5792d7476bc341fa353a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 6d4c1f52f0f3b1e05ec06f5a66a36323f346d4eb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819784"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80280547"
 ---
 # <a name="cancel-operation"></a>Отмена операции 
 
@@ -26,10 +25,10 @@ ms.locfileid: "73819784"
 <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 --------------
 
-|  **имя**    |      **Описание**                                  |    **Тип данных**  |
+|  **Название**    |      **Описание**                                  |    **Тип данных**  |
 | ------------ |     ----------------                                  |     -----------   |
-| publisherid  |  Идентификатор издателя, например `contoso`         |   string          |
-| OfferId      |  Идентификатор предложения                                     |   string          |
+| publisherid  |  Идентификатор издателя, например `contoso`         |   Строка          |
+| offerId      |  Идентификатор предложения                                     |   Строка          |
 | api-version  |  Текущая версия клиента API                               |    Дата           |
 |  |  |  |
 
@@ -37,14 +36,14 @@ ms.locfileid: "73819784"
 <a name="header"></a>Заголовок
 ------
 
-|  **имя**              |  **Значение**         |
+|  **Название**              |  **Значение**         |
 |  ---------             |  ----------        |
 |  Content-Type          |  приложение/json  |
 |  Авторизация         |  Маркер носителя YOUR TOKEN |
 |  |  |
 
 
-<a name="body-example"></a>Пример текста
+<a name="body-example"></a>Пример текста запроса
 ------------
 
 ### <a name="request"></a>Запрос
@@ -59,7 +58,7 @@ ms.locfileid: "73819784"
 
 ### <a name="request-body-properties"></a>Свойства текста запроса
 
-|  **имя**                |  **Описание**                                               |
+|  **Название**                |  **Описание**                                               |
 |  --------                |  ---------------                                               |
 |  электронные уведомления     | Список адресов электронной почты, разделенных запятыми, для получения уведомлений о ходе публикации. |
 |  |  |
@@ -72,7 +71,7 @@ ms.locfileid: "73819784"
 
 ### <a name="response-header"></a>Заголовок ответа
 
-|  **имя**             |    **Значение**                       |
+|  **Название**             |    **Значение**                       |
 |  ---------            |    ----------                      |
 | Operation-Location    | URL-адрес, который можно запросить для определения текущего состояния операции. |
 |  |  |

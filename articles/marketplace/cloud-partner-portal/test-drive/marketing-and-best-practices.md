@@ -1,20 +1,18 @@
 ---
-title: Рекомендации по маркетингу для тестирования Azure Marketplace
-description: Рекомендации по маркетингу для тестирования для издателей
-services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
-manager: Ricardo.Villalobos
+title: Тест-драйв Маркетинг Передовой практики (ru) Лазурный рынок
+description: Тест-драйв маркетинга передовой практики для издателей
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: 177b4bd804ad878c8f983eefcd54399d1a72ba19
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 3520e2c16f9a0c891db0d641fa7c9b811cac7b10
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824543"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80278252"
 ---
 <a name="test-drive-marketing-and-best-practices"></a>Тестовый выпуск: рекомендации по маркетингу
 =======================================

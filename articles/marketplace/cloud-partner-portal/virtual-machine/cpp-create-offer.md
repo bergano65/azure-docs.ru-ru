@@ -1,19 +1,18 @@
 ---
-title: Создание предложения виртуальной машины в Azure Marketplace
+title: Создание предложения виртуальной машины на рынке Azure
 description: Списки шагов, необходимых для создания нового предложения виртуальной машины (VM) для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/19/2018
-ms.author: pabutler
-ms.openlocfilehash: 1e10bd22b91b51fb811601e49fad06d8f8b30127
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: bc1cf7a839307e65bd91eb29531663141e521472
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73817096"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80278047"
 ---
 # <a name="create-virtual-machine-offer"></a>Создание предложения виртуальной машины
 
@@ -34,7 +33,7 @@ ms.locfileid: "73817096"
 
 ## <a name="new-offer-form"></a>Форма нового предложения
 
-Войдите на [портал Cloud Partner](https://cloudpartner.azure.com/), щелкните в левой строке меню элемент **+Новое предложение**. В появившемся меню щелкните **Виртуальные машины**, чтобы отобразилась форма **Новое предложение**, и начните процесс определения ресурсов для нового предложения виртуальной машины. 
+После вступления в [систему Cloud Partner Portal](https://cloudpartner.azure.com/)щелкните элемент **«Новое предложение»** в левом меню. В появившемся меню щелкните **Виртуальные машины**, чтобы отобразилась форма **Новое предложение**, и начните процесс определения ресурсов для нового предложения виртуальной машины. 
 <!-- not all publishers see corevm or azure apps test, you need to be whitelisted to see them. we should hide those in these images. -->
 
 ![Выделенный фрагмент пользовательского интерфейса нового предложения виртуальной машины](./media/publishvm_003.png)
@@ -47,8 +46,8 @@ ms.locfileid: "73817096"
 
 В последующих темах этого раздела отображаются вкладки страницы **Новое предложение** (для типа предложения виртуальной машины).  Каждая из перечисленных ниже статей описывает, как использовать вкладку, чтобы определить группы ресурсов и службы поддержки для нового предложения виртуальной сети.
 
-- [Вкладка с параметрами предложения](./cpp-offer-settings-tab.md)
+- [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
 - [Вкладка "Номера SKU"](./cpp-skus-tab.md)
 - [Вкладка "Тестовый выпуск"](./cpp-test-drive-tab.md)
-- [Вкладка Marketplace](./cpp-marketplace-tab.md)
+- [Вкладка "Marketplace"](./cpp-marketplace-tab.md)
 - [Вкладка "Поддержка"](./cpp-support-tab.md)

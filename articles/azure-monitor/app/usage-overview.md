@@ -2,13 +2,13 @@
 title: Анализ использования с помощью Azure Application Insights | Документация Майкрософт
 description: Получение сведений о пользователях и их действиях с веб-приложением.
 ms.topic: conceptual
-ms.date: 09/19/2019
-ms.openlocfilehash: 9f34267a1820f8b2365a41569bd3c8eaed9f2f9c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.date: 03/25/2019
+ms.openlocfilehash: e964b1b5b9d5500f2d9f24ed765299389e6dbbb9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79275650"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80283962"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -20,9 +20,9 @@ ms.locfileid: "79275650"
 
 1. **Серверный код:** установите соответствующий модуль для своего приложения [ASP.NET](../../azure-monitor/app/asp-net.md), [Azure](../../azure-monitor/app/app-insights-overview.md), [Java](../../azure-monitor/app/java-get-started.md), [Node.js](../../azure-monitor/app/nodejs.md) или приложения [иного типа](../../azure-monitor/app/platforms.md).
 
-    * *Не хотите устанавливать серверный код? Просто [Создайте ресурс Azure Application Insights](../../azure-monitor/app/create-new-resource.md ).*
+    * *Не хотите устанавливать серверный код? Просто [создайте ресурс Azure Application Insights.](../../azure-monitor/app/create-new-resource.md )*
 
-2. **Код веб-страницы:** Добавьте следующий скрипт на веб-страницу перед закрывающим ``</head>``. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
+2. **Код веб-страницы:** До закрытия до закрытия до закрытия ``</head>``довключите следующий скрипт. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
     
     ```html
     <script type="text/javascript">
@@ -34,7 +34,7 @@ ms.locfileid: "79275650"
     </script>
     ```
 
-    Дополнительные сведения о дополнительных конфигурациях для мониторинга веб-сайтов см. в [справочной статье по пакету SDK для JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
+    Чтобы узнать более продвинутые конфигурации для мониторинга веб-сайтов, ознакомьтесь с [справочной статьей JavaScript SDK.](https://docs.microsoft.com/azure/azure-monitor/app/javascript)
 
 3. **Код мобильного приложения.** Используйте пакет SDK для App Center, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../../azure-monitor/learn/mobile-center-quickstart.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "79275650"
 
 Отчеты о пользователях и сеансах позволяют фильтровать данные по страницам или пользовательским событиям, а также разделять их по свойствам, таким как расположение, среда и страница. Можно также добавить собственные фильтры.
 
-![Users](./media/usage-overview/users.png)  
+![Пользователи](./media/usage-overview/users.png)  
 
 Аналитические сведения справа позволяют выделять важные закономерности в наборе данных.  
 
@@ -114,7 +114,7 @@ ms.locfileid: "79275650"
 
 При разработке каждого компонента приложения обдумайте, как вы будете измерять его успех у пользователей. Решите, какие бизнес-события необходимо записывать, и с самого начала запрограммируйте вызовы отслеживания для этих событий в приложении.
 
-## <a name="a--b-testing"></a>Тестирование A или B
+## <a name="a--b-testing"></a>Тестирование A или B 
 Если неизвестно, какой вариант функции будет более эффективен, выпустите их оба, чтобы каждый из них был доступен для разных пользователей. Измерьте успешность каждого варианта, а затем перейдите к единой версии.
 
 В рамках этого способа необходимо вложить разные значения свойств во все данные телеметрии, отправляемые каждой версией приложения. Для этого нужно определить свойства в активном контексте телеметрии TelemetryContext. Эти свойства по умолчанию добавляются к каждому сообщению телеметрии, которое отправляет приложение, — не только к настраиваемым сообщениям, но также к стандартным данным телеметрии.
@@ -123,16 +123,20 @@ ms.locfileid: "79275650"
 
 Для этого следует [настроить инициализатор телеметрии](../../azure-monitor/app/api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
-**Приложения ASP.NET**
+**ASP.NET приложения**
 
 ```csharp
     // Telemetry initializer class
     public class MyTelemetryInitializer : ITelemetryInitializer
     {
-        public void Initialize (ITelemetry telemetry)
-        {
-            telemetry.Properties["AppVersion"] = "v2.1";
-        }
+        public void Initialize(ITelemetry item)
+            {
+                var itemProperties = item as ISupportProperties;
+                if (itemProperties != null && !itemProperties.Properties.ContainsKey("AppVersion"))
+                {
+                    itemProperties.Properties["AppVersion"] = "v2.1";
+                }
+            }
     }
 ```
 
@@ -148,12 +152,12 @@ ms.locfileid: "79275650"
     }
 ```
 
-**ASP.NET Core приложения**
+**ASP.NET основные приложения**
 
 > [!NOTE]
-> Добавление инициализатора с помощью `ApplicationInsights.config` или `TelemetryConfiguration.Active` недопустимо для приложений ASP.NET Core. 
+> Добавление инициализатора с использованием `ApplicationInsights.config` или использованием `TelemetryConfiguration.Active` не является действительным для ASP.NET основных приложений. 
 
-Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений добавление нового `TelemetryInitializer` выполняется путем его добавления в контейнер внедрения зависимостей, как показано ниже. Это делается в методе `ConfigureServices` класса `Startup.cs`.
+Для [ASP.NET основных](asp-net-core.md#adding-telemetryinitializers) приложений добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер для инъекций зависимости, как показано ниже. Это делается `ConfigureServices` методом `Startup.cs` вашего класса.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -169,7 +173,7 @@ ms.locfileid: "79275650"
 ## <a name="next-steps"></a>Дальнейшие действия
    - [Пользователи, сеансы, события](usage-segmentation.md)
    - [Воронки](usage-funnels.md)
-   - [Сохранение](usage-retention.md)
-   - [Средство "Маршруты пользователей"](usage-flows.md)
+   - [Хранения](usage-retention.md)
+   - [Маршруты пользователей](usage-flows.md)
    - [книги](../../azure-monitor/app/usage-workbooks.md)
    - [Добавление контекста пользователей](usage-send-user-context.md)

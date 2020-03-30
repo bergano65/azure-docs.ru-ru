@@ -1,5 +1,5 @@
 ---
-title: Назначение общедоступных IP-адресов после отработки отказа с помощью Azure Site Recovery
+title: Назначить общедоступные IP-адреса после сбоя с восстановлением сайта Azure
 description: В этой статье описывается, как настраивать общедоступные IP-адреса с помощью диспетчера трафика Azure и Azure Site Recovery для аварийного восстановления и миграции.
 services: site-recovery
 author: mayurigupta13
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: mayg
 ms.openlocfilehash: b1f3ffa6fc90fc0cab0217d1b71907342f2dbd0d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79281955"
 ---
 # <a name="set-up-public-ip-addresses-after-failover"></a>Настройка общедоступных IP-адресов после отработки отказа
@@ -44,11 +44,11 @@ ms.locfileid: "79281955"
 Диспетчер трафика Azure позволяет выполнять маршрутизацию на уровне DNS между конечными точками и может помочь [снизить целевое время восстановления](../site-recovery/concepts-traffic-manager-with-site-recovery.md#recovery-time-objective-rto-considerations) для сценария аварийного восстановления. 
 
 Дополнительные сведения о сценарии отработки отказа с помощью диспетчера трафика:
-1. [Переход с локальной среды на отработку отказа Azure](../site-recovery/concepts-traffic-manager-with-site-recovery.md#on-premises-to-azure-failover) с помощью диспетчера трафика 
+1. [На территории Для Azure сбой](../site-recovery/concepts-traffic-manager-with-site-recovery.md#on-premises-to-azure-failover) с менеджером трафика 
 2. [Отработка отказа из Azure в Azure](../site-recovery/concepts-traffic-manager-with-site-recovery.md#azure-to-azure-failover) с помощью диспетчера трафика. 
 
 Конфигурация выглядит следующим образом:
-- Создайте [профиль диспетчера трафика](../traffic-manager/traffic-manager-create-profile.md).
+- Создайте [профиль менеджера трафика.](../traffic-manager/traffic-manager-create-profile.md)
 - Используя метод маршрутизации **по приоритету**, создайте две конечные точки — **первичную** в качестве источника и **отказоустойчивую** для Azure. **Первичной** присваивается приоритет 1, а **отказоустойчивой** — приоритет 2.
 - **Первичная** конечная точка может быть [Azure](../traffic-manager/traffic-manager-endpoint-types.md#azure-endpoints) или [внешней](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints) в зависимости от расположения исходной среды (внутри или за пределами Azure).
 - Таким образом, **отказоустойчивая** конечная точка создается как конечная точка **Azure**. Используйте **статический общедоступный IP-адрес**, так как это будет внешняя конечная точка для диспетчера трафика при аварийном событии.

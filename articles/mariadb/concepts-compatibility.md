@@ -1,27 +1,27 @@
 ---
-title: Совместимость драйверов и средств — база данных Azure для MariaDB
-description: В этой статье описываются драйверы и средства управления MariaDB, совместимые с базой данных Azure для MariaDB.
+title: Совместимость драйверов и инструментов - База данных Azure для MariaDB
+description: В этой статье описаны драйверы MariaDB и инструменты управления, совместимые с базой данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: daec0aaf04cae26b6467cc4472305e75517cee5d
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: a0cee198f028fd90e04dac15e98d7cd33aee9201
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74772993"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79532354"
 ---
-# <a name="mariadb-drivers-and-management-tools-compatible-with-azure-database-for-mariadb"></a>Драйверы MariaDB и средства управления, совместимые с базой данных Azure для MariaDB
+# <a name="mariadb-drivers-and-management-tools-compatible-with-azure-database-for-mariadb"></a>Драйверы mariaDB и инструменты управления, совместимые с базой данных Azure для MariaDB
 
-В этой статье описываются драйверы и средства управления, совместимые с базой данных Azure для MariaDB.
+В этой статье описаны драйверы и инструменты управления, совместимые с базой данных Azure для MariaDB.
 
-## <a name="mariadb-drivers"></a>Драйверы MariaDB
+## <a name="mariadb-drivers"></a>MariaDB Драйверы
 
-База данных Azure для MariaDB использует выпуск MariaDB Server Community Edition. Таким образом, она совместима с самыми разнообразными языками программирования и драйверами. API и протокол MariaDB совместимы с теми, которые используются в MySQL. Это означает, что соединители, работающие с MySQL, также должны работать с MariaDB.
+База данных Azure для MariaDB использует сообщество, использовав сервер MariaDB. Таким образом, она совместима с самыми разнообразными языками программирования и драйверами. API и протокол MariaDB совместимы с теми, которые используются MyS'L. Это означает, что разъемы, которые работают с MyS'L, также должны работать с MariaDB.
 
-Целью является поддержка трех последних версий драйверов MariaDB и усилий с авторами из сообщества Open Source, чтобы постоянно улучшать функциональность и удобство использования драйверов MariaDB. Список драйверов, которые были протестированы и совместимы с базой данных Azure для MariaDB 10,2, приведен в следующей таблице:
+Цель состоит в том, чтобы поддержать три последние версии MariaDB драйверов, и усилия с авторами из сообщества с открытым исходным кодом постоянно улучшить функциональность и удобство использования драйверов MariaDB продолжаются. Список драйверов, которые были протестированы и признаны совместимыми с базой данных Azure для MariaDB 10.2, приведен в следующей таблице:
 
 **Драйвер** | **Ссылки** | **Совместимые версии** | **Несовместимые версии** | **Примечания**
 ---|---|---|---|---
@@ -29,13 +29,13 @@ PHP | https://secure.php.net/downloads.php | 5.5, 5.6, 7.x | 5,3 | Для под
 .NET | [MySqlConnector на GitHub](https://github.com/mysql-net/MySqlConnector) <br> [Пакет установки из Nuget](https://www.nuget.org/packages/MySqlConnector/) | Версия 0.27 и более поздние версии | Версия 0.26.5 и предыдущие версии |
 MySQL Connector/NET | [MySQL Connector/NET](https://github.com/mysql/mysql-connector-net) | 8.0, 7.0, 6.10 |  | Ошибка кодирования может привести к сбою подключения в некоторых системах Windows, не поддерживающих UTF-8.
 Node.js |  [MySQLjs на GitHub](https://github.com/mysqljs/mysql/) <br> Пакет установки из NPM:<br> Запустите команду `npm install mysql` из NPM | 2.15 | Версия 2.14.1 и предыдущие версии
-GO | https://github.com/go-sql-driver/mysql/releases | 1,3, 1,4 | Версия 1.2 и предыдущие версии | Используйте `allowNativePasswords=true` в строке подключения для версии 1,3. Версия 1,4 содержит исправление, и `allowNativePasswords=true` больше не требуется.
+GO | https://github.com/go-sql-driver/mysql/releases | 1.3, 1.4 | Версия 1.2 и предыдущие версии | Используйте `allowNativePasswords=true` в строке соединения для версии 1.3. Версия 1.4 содержит `allowNativePasswords=true` исправление и больше не требуется.
 Python | https://pypi.python.org/pypi/mysql-connector-python | 1.2.3, 2.0, 2.1, 2.2 | Версия 1.2.2 и предыдущие версии |
-Java: | https://downloads.mariadb.org/connector-java/ | 2.1, 2.0, 1.6 | Версия 1.5.5 и предыдущие версии |
+Java | https://downloads.mariadb.org/connector-java/ | 2.1, 2.0, 1.6 | Версия 1.5.5 и предыдущие версии |
 
 ## <a name="management-tools"></a>Средства управления
 
-Преимущества совместимости также распространяются на инструменты управления базой данных. Существующие средства должны продолжать работать с базой данных Azure для MariaDB, если управление базой данных работает в пределах разрешений пользователя. В следующей таблице перечислены три стандартных средства управления базами данных, которые были протестированы и найдены для совместимости с базой данных Azure для MariaDB 10,2.
+Преимущества совместимости также распространяются на инструменты управления базой данных. Существующие инструменты должны продолжать работать с базой данных Azure для MariaDB, пока манипуляция базой данных работает в пределах пользовательских разрешений. Три общих инструмента управления базами данных, которые были протестированы и признаны совместимыми с базой данных Azure для MariaDB 10.2, перечислены в следующей таблице:
 
 | | **MySQL Workbench 6.x и более поздней версии** | **Navicat 12** | **PHPMyAdmin 4.x и более поздней версии**
 ---|---|---|---

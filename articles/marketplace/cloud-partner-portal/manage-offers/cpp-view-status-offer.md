@@ -1,29 +1,28 @@
 ---
-title: Просмотр состояния предложений Marketplace | Azure Marketplace
+title: Посмотреть состояние предложений на рынке Лазурный рынок
 description: Просмотр состояния предложений в AppSource и Azure Marketplace с помощью Портала Cloud Partner
-services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/11/2019
-ms.author: pabutler
-ms.openlocfilehash: e58670d37e01bb6e453b73e42a87e42e890d10d8
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 0cbe6a45ba205f32a764bdadb021dc0dcf5bf0cc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826704"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80275974"
 ---
 # <a name="view-the-publishing-status-of-azure-marketplace-and-appsource-offers"></a>Просмотр состояния публикации предложений в Azure Marketplace и AppSource
 
 После создания предложения, в особенности во время публикации, вы можете просмотреть состояние предложения на Портале Cloud Partner.  Общее состояние публикации доступно на страницах портала [**Все предложения**](../portal-tour/cpp-all-offers-page.md) и [**Утверждения**](../portal-tour/cpp-approvals-page.md).  Для каждого предложения должен отображаться один из следующих индикаторов состояния.  
 
-|            Состояние              |   Description (Описание)                                                           |
+|            Состояние              |   Описание                                                           |
 |            ------              |   -----------                                                           |
 | **-**                          | Предложение создано, но процесс публикации еще не начался.            |
 | **Publish in progress** (Публикация выполняется)        | Предложение проходит процесс публикации.   |
-| **Сбой публикации**             | Обнаружена критическая ошибка во время проверки корпорацией Майкрософт. |
+| **Опубликовать не удалось**             | Обнаружена критическая ошибка во время проверки корпорацией Майкрософт. |
 | **Publish canceled** (Публикация отменена)           | Издатель отменил процесс публикации предложения.  Если отображается это состояние, это не означает, что имеющееся предложение удалено из списка в Marketplace. | 
 | **Awaiting publisher sign out** (Ожидание выхода издателя) | Предложение проверено корпорацией Майкрософт и теперь ожидает окончательной проверки издателем. |
 | **Delisted** (Удалено из списка)                   | Ранее опубликованное предложение в Marketplace было удалено.      | 
@@ -40,7 +39,7 @@ ms.locfileid: "73826704"
 
 ![Ошибка на вкладке состояния службы консультирования](./media/consulting-service-error.png)
 
-В последнем примере состояния приложения Azure показана критическая проблема, обнаруженная при проверке корпорацией Майкрософт.  Он содержит горячую ссылку на элемент Azure DevOps, содержащий подробные сведения об этой ошибке проверки.  Дополнительную информацию см. в статье [Publish Azure Marketplace and AppSource offers](cpp-publish-offer.md) (Публикация предложений Azure Marketplace и AppSource).
+В последнем примере состояния приложения Azure показана критическая проблема, обнаруженная при проверке корпорацией Майкрософт.  Он содержит горячую ссылку на элемент Azure DevOps, содержащий подробную информацию об этой проблеме обзора.  Дополнительную информацию см. в статье [Publish Azure Marketplace and AppSource offers](cpp-publish-offer.md) (Публикация предложений Azure Marketplace и AppSource).
 
 ![Вкладка состояния приложения Azure с проблемой проверки](../azure-applications/media/status-tab-ms-review.png)
 

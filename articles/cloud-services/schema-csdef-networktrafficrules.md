@@ -1,5 +1,6 @@
 ---
-title: Схема DEF. NetworkTrafficRules для облачных служб Azure | Документация Майкрософт
+title: Облачные службы Azure Def. NetworkTrafficПравила Схема (ru) Документы Майкрософт
+description: Узнайте о NetworkTrafficRules, который ограничивает роли, которые могут получить доступ к внутренним конечным точкам роли. Он сочетается с ролями в файле определения службы.
 ms.custom: ''
 ms.date: 04/14/2015
 services: cloud-services
@@ -12,12 +13,12 @@ ms.assetid: 351b369f-365e-46c1-82ce-03fc3655cc88
 caps.latest.revision: 17
 author: tgore03
 ms.author: tagore
-ms.openlocfilehash: e6d156810b9fdee69ddac122eec06db7267ddf36
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e53c10395ec3168e656633cc43fb2d01902209fa
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75449044"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79534734"
 ---
 # <a name="azure-cloud-services-definition-networktrafficrules-schema"></a>Схема NetworkTrafficRules определения облачных служб Azure
 Узел `NetworkTrafficRules` — это необязательный элемент в файле определения службы, который указывает, как роли взаимодействуют друг с другом. Он ограничивает множество ролей, которые могут обращаться ко внутренним конечным точкам определенной роли. `NetworkTrafficRules` не является отдельным элементом. Он объединяется с двумя или более ролями в файле определения службы.
@@ -51,9 +52,9 @@ ms.locfileid: "75449044"
 
 [Элемент NetworkTrafficRules](#NetworkTrafficRules)
 
-[Элемент OnlyAllowTrafficTo](#OnlyAllowTrafficTo)
+[OnlyAllowtrafficto Элемент](#OnlyAllowTrafficTo)
 
-[Элемент Destinations](#Destinations)
+[Элемент направления](#Destinations)
 
 [Элемент RoleEndpoint](#RoleEndpoint)
 
@@ -63,19 +64,19 @@ ms.locfileid: "75449044"
 
 [Элемент FromRole](#FromRole)
 
-##  <a name="NetworkTrafficRules"></a> Элемент NetworkTrafficRules
+##  <a name="networktrafficrules-element"></a><a name="NetworkTrafficRules"></a>Элемент NetworkTrafficRules
 Элемент `NetworkTrafficRules` определяет роли, которые могут обмениваться данными с определенной конечной точкой в другой роли. Служба может содержать одно определение `NetworkTrafficRules`.
 
-##  <a name="OnlyAllowTrafficTo"></a> Элемент OnlyAllowTrafficTo
+##  <a name="onlyallowtrafficto-element"></a><a name="OnlyAllowTrafficTo"></a> Элемент OnlyAllowTrafficTo
 Элемент `OnlyAllowTrafficTo` описывает коллекцию целевых конечных точек и ролей, которые могут обмениваться данными с ними. Можно указать несколько узлов `OnlyAllowTrafficTo`.
 
-##  <a name="Destinations"></a> Элемент Destinations
+##  <a name="destinations-element"></a><a name="Destinations"></a> Элемент Destinations
 Элемент `Destinations` описывает коллекцию элементов RoleEndpoint, с которыми можно обмениваться данными.
 
-##  <a name="RoleEndpoint"></a> Элемент RoleEndpoint
+##  <a name="roleendpoint-element"></a><a name="RoleEndpoint"></a>Элемент RoleEndpoint
 Элемент `RoleEndpoint` описывает конечную точку в роли, с которой можно обмениваться данными. Можно указать несколько элементов `RoleEndpoint`, если в роли существует несколько конечных точек.
 
-| attribute      | Тип     | Description |
+| Атрибут      | Тип     | Описание |
 | -------------- | -------- | ----------- |
 | `endpointName` | `string` | Обязательный элемент. Имя конечной точки, к которой разрешается трафик.|
 | `roleName`     | `string` | Обязательный элемент. Имя веб-роли, с которой разрешается обмен данными.|
@@ -83,21 +84,21 @@ ms.locfileid: "75449044"
 ## <a name="allowalltraffic-element"></a>Элемент AllowAllTraffic
 Элемент `AllowAllTraffic` — это правило, которое разрешает всем ролям обмениваться данными с конечными точками, определенными в узле `Destinations`.
 
-##  <a name="WhenSource"></a> Элемент WhenSource
+##  <a name="whensource-element"></a><a name="WhenSource"></a>КогдаИсточник Элемент
 Элемент `WhenSource` описывает коллекцию ролей, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`.
 
-| attribute | Тип     | Description |
+| Атрибут | Тип     | Описание |
 | --------- | -------- | ----------- |
 | `matches` | `string` | Обязательный элемент. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
   
-##  <a name="FromRole"></a> Элемент FromRole
+##  <a name="fromrole-element"></a><a name="FromRole"></a>ИзРол Элемент
 Элемент `FromRole` указывает роли, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`. Можно указать несколько элементов `FromRole`, если существует несколько ролей, которые могут обмениваться данными с конечными точками.
 
-| attribute  | Тип     | Description |
+| Атрибут  | Тип     | Описание |
 | ---------- | -------- | ----------- |
 | `roleName` | `string` | Обязательный элемент. Имя роли, из которой разрешается обмен данными.|
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Схема определения облачных служб (классических)](schema-csdef-file.md).
 
 

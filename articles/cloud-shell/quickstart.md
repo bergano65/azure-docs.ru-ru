@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по Azure Cloud Shell-bash
-description: Узнайте, как использовать командную строку Bash в браузере с Azure Cloud Shell.
+title: Лакстарт облачной оболочки Квикстарт - Bash
+description: Узнайте, как использовать командную строку Bash в браузере с помощью Azure Cloud Shell.
 author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: damaerte
-ms.openlocfilehash: 574841b3a89385a3b8bf048d5ed36f40fac99a83
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 58d795a5aee79e4149864a79a923ce34950b31d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79252133"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79458075"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -25,7 +25,7 @@ ms.locfileid: "79252133"
 > Также вы можете ознакомиться с кратким руководством по использованию [PowerShell в Azure Cloud Shell](quickstart-powershell.md).
 
 ## <a name="start-cloud-shell"></a>Запуск Cloud Shell
-1. Запустите **Cloud Shell** на верхней панели навигации портала Azure. <br>
+1. Запуск **облачной оболочки** с верхней навигации портала Azure. <br>
 ![](media/quickstart/shell-icon.png)
 
 2. Выберите подписку для создания учетной записи хранения и общей папки для службы файлов Microsoft Azure.
@@ -85,7 +85,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
 
 ## <a name="cleaning-up"></a>Очистка. 
 1. Закройте сеанс SSH.
-   ```azurecli-interactive
+   ```
    exit
    ```
 

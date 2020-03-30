@@ -1,7 +1,7 @@
 ---
 title: Поддержка и обучение
 titleSuffix: ML Studio (classic) - Azure
-description: Получение поддержки и обучение и предоставление отзывов о Машинное обучение Azure Studio (классическая модель)
+description: Получите поддержку и обучение и обеспечите обратную связь для студии машинного обучения Azure (классический)
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -9,25 +9,25 @@ ms.topic: conceptual
 author: peterclu
 ms.author: amlstudiodocs
 ms.date: 01/18/2019
-ms.openlocfilehash: f7146db33368877b8eb029e106559477376c5953
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 5529d09d71eb9f4ef1d9b4d8185cafb11f644bc8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79217907"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79501319"
 ---
-# <a name="get-support-and-training-for-azure-machine-learning-studio-classic"></a>Техническая поддержка и обучение для Машинное обучение Azure Studio (классическая модель)
+# <a name="get-support-and-training-for-azure-machine-learning-studio-classic"></a>Получите поддержку и обучение для студии машинного обучения Azure (классический)
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
-В этой статье содержатся сведения о том, как узнать больше о Машинное обучение Azure Studio (классическая модель) и получить поддержку по вопросам и вопросам.
+В этой статье содержится информация о том, как узнать больше о студии машинного обучения Azure (классическая) и получить поддержку ваших вопросов и вопросов.
 
-## <a name="learn-more-about-studio-classic"></a>Дополнительные сведения о студии (классическая модель)
+## <a name="learn-more-about-studio-classic"></a>Узнайте больше о студии (классический)
 
 Ниже приведены ресурсы для обучения.
 + [Учебники и статьи с инструкциями](../studio/index.yml) 
 + [Задайте вопрос, на который можно ответить с помощью данных](../studio/data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) 
-+ [Памятка по алгоритмам машинного обучения для студии машинного обучения Azure](../studio/algorithm-cheat-sheet.md) 
++ [Памятка по алгоритмам машинного обучения для студии машинного обучения Azure](../../synapse-analytics/sql-data-warehouse/cheat-sheet.md) 
 
 ## <a name="submit-doc-feedback"></a>Отправка отзыва о документации
 
@@ -37,9 +37,9 @@ ms.locfileid: "79217907"
 
 Ознакомьтесь со следующими ресурсами поддержки:
 
-+ **Техническая поддержка для клиентов Azure**: [Отправка запросов на поддержку и управление ими](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) с помощью портал Azure.
++ **Техническая поддержка клиентов Azure:** [Отправка и управление запросами на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) через портал Azure.
 
-+ **Форум пользователей**: задавайте вопросы, ответьте на вопросы и подключайтесь к другим пользователям на [форуме поддержки машинное обучение Azure Studio (классическая модель) на сайте MSDN](https://aka.ms/aml-forum-studio).
++ **Форум пользователей**: Задавайте вопросы, отвечайте на вопросы и общайтесь с другими пользователями на [форуме поддержки Azure Machine Learning Studio (классический) на MSDN.](https://aka.ms/aml-forum-studio)
 
 + **Stack Overflow.** Посетите на сайте [StackOverflow](https://stackoverflow.com/questions/tagged/azure-machine-learning) сообщество службы "Машинное обучение Azure", отмеченное тегом Azure-Machine-Learning.
 
