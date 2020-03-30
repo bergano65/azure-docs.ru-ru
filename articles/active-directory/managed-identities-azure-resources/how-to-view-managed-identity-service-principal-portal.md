@@ -1,5 +1,5 @@
 ---
-title: Просмотр субъекта-службы управляемого удостоверения в портал Azure Azure AD
+title: Просмотр службы директор управляемой идентификации на портале Azure - Azure AD
 description: Пошаговое руководство по просмотру субъекта-службы управляемого удостоверения на портале Azure.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 11/29/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c12f15cc79d5329d028239ade4e18a853000bf01
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79298603"
 ---
 # <a name="view-the-service-principal-of-a-managed-identity-in-the-azure-portal"></a>Просмотр субъекта-службы управляемого удостоверения на портале Azure
@@ -29,9 +29,9 @@ ms.locfileid: "79298603"
 В этой статье описано, как просмотреть субъект-службу управляемого удостоверения на портале Azure.
 
  > [!NOTE] 
- > Субъекты-службы — это корпоративные приложения. 
+ > Директорами службявляются корпоративные приложения. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
@@ -42,12 +42,12 @@ ms.locfileid: "79298603"
 Вы можете просмотреть субъект-службу виртуальной машины с включенным управляемым удостоверением, назначаемым системой (те же действия применяются для приложения).
 
 1. Щелкните **Azure Active Directory** и выберите **Корпоративные приложения**.
-2. В разделе **Тип приложения**выберите **все приложения** , а затем нажмите кнопку **Применить**.
+2. В **типе приложения**выберите **все приложения,** а затем нажмите **Apply**.
 3. В поле фильтра поиска введите имя виртуальной машины или приложения с включенным управляемым удостоверением либо воспользуйтесь списком.
 
    ![Просмотр субъектов-служб для управляемых удостоверений на портале](./media/how-to-view-managed-identity-service-principal-portal/view-managed-identity-service-principal-portal.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Управляемые удостоверения для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/overview)
+[Управляемые идентификаторы для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/overview)
 

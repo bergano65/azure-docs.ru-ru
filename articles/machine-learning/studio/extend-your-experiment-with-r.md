@@ -1,7 +1,7 @@
 ---
 title: Расширение возможностей эксперимента с помощью R
 titleSuffix: ML Studio (classic) - Azure
-description: Как расширить функциональные возможности Машинное обучение Azure Studio (классическая модель) на языке R с помощью модуля выполнить сценарий R.
+description: Как расширить функциональность Студии машинного обучения Azure (классический) через язык R с помощью модуля Execute R Script.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -11,33 +11,33 @@ ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
 ms.openlocfilehash: 7b4b869695eb2073121a889cd81d99c4fc06d4b9
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79218036"
 ---
-# <a name="azure-machine-learning-studio-classic-extend-your-experiment-with-r"></a>Машинное обучение Azure Studio (классическая модель): расширение эксперимента с помощью R 
+# <a name="azure-machine-learning-studio-classic-extend-your-experiment-with-r"></a>Студия машинного обучения Azure (классическая): Продлите эксперимент с R 
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
-Функциональные возможности Машинное обучение Azure Studio (классическая модель) можно расширить с помощью языка R, используя модуль « [выполнение сценария r][execute-r-script] ».
+Вы можете расширить функциональность Студии машинного обучения Azure (классический) через язык R с помощью модуля [Execute R Script.][execute-r-script]
 
-Этот модуль принимает несколько входных наборов данных и выдает один выходной набор данных. Можно ввести скрипт R в параметр **r Script** модуля [EXECUTE r Script][execute-r-script] .
+Этот модуль принимает несколько входных наборов данных и выдает один выходной набор данных. Вы можете ввести сценарий R в качестве значения параметра **R-скрипт** в модуле [Выполнить сценарий R][execute-r-script].
 
 Для доступа к каждому входному порту модуля используется код, аналогичный приведенному ниже:
 
     dataset1 <- maml.mapInputPort(1)
 
 ## <a name="listing-all-currently-installed-packages"></a>Вывод списка всех установленных пакетов
-Список установленных пакетов может меняться. Список установленных в настоящее время пакетов можно найти в [пакетах R, поддерживаемых машинное обучение Azure Studio (классическая модель)](https://msdn.microsoft.com/library/azure/mt741980.aspx).
+Список установленных пакетов может меняться. Список установленных в настоящее время пакетов можно найти в [R-пакетах, поддерживаемых Azure Machine Learning Studio (классический).](https://msdn.microsoft.com/library/azure/mt741980.aspx)
 
-Вы также можете получить полный текущий список установленных пакетов, введя следующий код в модуль [выполнить сценарий R][execute-r-script] :
+Чтобы получить полный актуальный список установленных пакетов, введите следующий код в модуле [Выполнение скрипта R][execute-r-script]:
 
     out <- data.frame(installed.packages(,,,fields="Description"))
     maml.mapOutputPort("out")
 
-В результате список пакетов будет отправлен в порт вывода модуля [выполнить сценарий R][execute-r-script] .
-Чтобы просмотреть список пакетов, подключите модуль преобразования, например [Convert to CSV][convert-to-csv] , к левому выходу модуля [выполнить сценарий R][execute-r-script] , запустите эксперимент, а затем щелкните выходные данные модуля преобразования и выберите **загрузить**. 
+При этом список пакетов будет отправлен в порт вывода модуля [Выполнить сценарий R][execute-r-script].
+Чтобы просмотреть список пакетов, подключите модуль преобразования, например [Преобразовать в CSV][convert-to-csv], к выходным данным модуля [Выполнить сценарий R][execute-r-script] слева, выполните эксперимент, а затем щелкните выходные данные модуля преобразования и выберите **Скачать**. 
 
 ![Скачивание выходных данных модуля "Преобразовать в CSV"](./media/extend-your-experiment-with-r/download-package-list.png)
 
@@ -47,7 +47,7 @@ For convenience, here is the [current full list with version numbers in Excel fo
 -->
 
 ## <a name="importing-packages"></a>Импорт пакетов
-Вы можете импортировать пакеты, которые еще не установлены, с помощью следующих команд в модуле [выполнить сценарий R][execute-r-script] :
+Чтобы импортировать пакеты, которые еще не установлены, выполните следующие команды в модуле [Выполнение скрипта R][execute-r-script]:
 
     install.packages("src/my_favorite_package.zip", lib = ".", repos = NULL, verbose = TRUE)
     success <- library("my_favorite_package", lib.loc = ".", logical.return = TRUE, verbose = TRUE)

@@ -1,5 +1,5 @@
 ---
-title: Предварительные требования для API отчетов Azure Active Directory Документация Майкрософт
+title: Предпосылки для API представления активных каталогов Azure (API) Документы Майкрософт
 description: Узнайте о предварительных требованиях для доступа к API отчетов Azure AD
 services: active-directory
 documentationcenter: ''
@@ -18,15 +18,15 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 12abfc0d345c937ae886f9bfacfb8ce30227cc45
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78399305"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
-[API-интерфейсы отчетов Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-reporting-api) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Эти API можно вызывать из языков программирования и средств.
+[API-интерфейсы отчетов Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-reporting-api) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Вы можете вызвать эти AA из языков программирования и инструментов.
 
 API отчетов использует [OAuth](https://docs.microsoft.com/azure/api-management/api-management-howto-protect-backend-with-aad) для авторизации доступа к веб-API.
 
@@ -50,7 +50,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 ## <a name="register-an-application"></a>Регистрация приложения
 
-Регистрация необходима, даже если доступ к API отчетов осуществляется с помощью скрипта. Регистрация предоставляет **идентификатор приложения**, который необходим для вызовов авторизации и позволяет коду принимать маркеры.
+Регистрация необходима, даже если вы получаете доступ к API отчетности с помощью скрипта. Регистрация дает вам **идентификатор приложения,** который необходим для вызова авторизации и позволяет вашему коду получать токены.
 
 Чтобы настроить для каталога доступ к API отчетов AAD, необходимо войти на [портал Azure](https://portal.azure.com) с учетной записью администратора Azure, которой также назначена роль участника каталога **глобального администратора** в клиенте AAD.
 
@@ -68,30 +68,30 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/02.png) 
 
-3. На странице **Регистрация приложений** выберите пункт **Новая регистрация**.
+3. На странице **регистрации приложений** выберите **новую регистрацию.**
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/03.png)
 
-4. Страница **регистрации приложения** :
+4. Страница **Регистрации приложения:**
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/04.png)
 
     а. В текстовом поле **Имя** введите `Reporting API application`.
 
-    б. Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
+    b. Для **типа поддерживаемых учетных записей**выберите **учетные записи только в этой организации.**
 
-    в. В **текстовом поле** **URL-адрес перенаправления** выберите тип `https://localhost`.
+    c. В **url-адресе перенаправить** **веб-сообщение** введите тип `https://localhost`:
 
-    . Выберите **Зарегистрировать**. 
+    d. Выберите **Зарегистрировать**. 
 
 
-## <a name="grant-permissions"></a>Предоставление разрешений 
+## <a name="grant-permissions"></a>Предоставить разрешения 
 
 В зависимости от API, к которому вы хотите получить доступ, приложению необходимо предоставить следующие разрешения:  
 
 | API | Разрешение |
 | --- | --- |
-| Active Directory в Windows Azure | Чтение данных каталога |
+| Microsoft Azure Active Directory | Прочитать данные каталога |
 | Microsoft Graph | Прочитать все данные журнала аудита |
 
 
@@ -102,23 +102,23 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 **Вот как можно предоставить приложению разрешения на использование API.**
 
 
-1. Выберите **разрешения API** и **добавьте разрешение**. 
+1. Выберите **разрешения API,** а затем **добавьте разрешение.** 
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/05.png)
 
-2. На **странице разрешения API запроса**выберите **Поддержка устаревших API** **Azure Active Directory Graph**. 
+2. На **странице разрешений API запроса**найдите **график унаследованных API API** **Azure Active Directory Graph.** 
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/06.png)
 
-3. На странице **необходимые разрешения** выберите **разрешения приложения**, а затем — **флажок** каталог **. ReadAll**.  Выберите **Добавить разрешения**.
+3. На странице **Требуемых разрешений** выберите **Разрешения приложений,** расширьте чекбокс **каталога** **Directory.ReadAll**.  Выберите **Добавить разрешения**.
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/07.png)
 
-4. На странице **разрешения API приложения API отчетов** выберите **предоставить согласие администратора**. 
+4. На странице **приложения API - API Permissions** выберите **согласие админа Grant.** 
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/08.png)
 
-5. Примечание. **Microsoft Graph** добавляется по умолчанию во время регистрации API.
+5. Примечание: **Microsoft Graph** добавляется по умолчанию во время регистрации API.
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/15.png)
 
@@ -163,7 +163,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 
 ### <a name="get-your-applications-client-secret"></a>Получение секрета клиента приложения
- Избегайте ошибок при попытке доступа к журналам аудита или входу с помощью API.
+ Избегайте ошибок при доступе к журналам аудита или входа в систему с помощью API.
 
 **Вот как можно получить секрет клиента приложения.**
 
@@ -173,51 +173,51 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 2.  Выберите свое приложение на странице **Регистрация приложений**.
 
-3.  На странице **приложение API** выберите **Сертификаты и секреты** , в разделе **секреты клиента** щелкните **+ новый секрет клиента**. 
+3.  Выберите **Сертификаты и Секреты** на странице **приложения API,** в разделе **Секреты клиента,** нажмите **кнопку «Новый секрет клиента**». 
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/12.png)
 
-5. На странице **Добавление секрета клиента** добавьте:
+5. На **странице добавить секрет клиента,** добавить:
 
     а. В текстовом поле **Описание** введите `Reporting API`.
 
-    б. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
+    b. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
-    в. Нажмите кнопку **Сохранить**.
+    c. Нажмите **Сохранить**.
 
-    . Скопируйте значение ключа.
+    d. Скопируйте значение ключа.
 
 ## <a name="troubleshoot-errors-in-the-reporting-api"></a>Устранение ошибок в API отчетов
 
-В этом разделе перечислены распространенные сообщения об ошибках, с которыми можно столкнуться при доступе к отчетам о действиях с помощью Microsoft Graph API и действиях по их устранению.
+В этом разделе перечислены распространенные сообщения об ошибках, с которыми можно столкнуться при доступе к отчетам о действиях с использованием API Microsoft Graph, и шаги для их разрешения.
 
-### <a name="error-failed-to-get-user-roles-from-microsoft-graph"></a>Ошибка: не удалось получить роли пользователя из Microsoft Graph
+### <a name="error-failed-to-get-user-roles-from-microsoft-graph"></a>Ошибка: Не удалось получить роли пользователей от Microsoft Graph
 
- Войдите в свою учетную запись, используя кнопки входа в пользовательском интерфейсе проводника Graph, чтобы избежать ошибки при попытке входа с помощью Graph Explorer. 
+ Вопийте в свой аккаунт, используя обе кнопки ввески в uI Graph Explorer, чтобы избежать ошибки при попытке войти в систему С помощью Graph Explorer. 
 
-![Обозреватель Graph](./media/troubleshoot-graph-api/graph-explorer.png)
+![Песочница Graph](./media/troubleshoot-graph-api/graph-explorer.png)
 
-### <a name="error-failed-to-do-premium-license-check-from-microsoft-graph"></a>Ошибка: не удалось проверить лицензию Premium с Microsoft Graph 
+### <a name="error-failed-to-do-premium-license-check-from-microsoft-graph"></a>Ошибка: Не удалось сделать премиум проверки лицензии от Microsoft Graph 
 
 Если при попытке обращения ко входам с помощью песочницы Graph появляется это сообщение об ошибке, выберите **Изменить разрешения** под своей учетной записью на левой панели навигации, а затем выберите **Tasks.ReadWrite** и **Directory.Read.All**. 
 
 ![Пользовательский интерфейс для изменения разрешений](./media/troubleshoot-graph-api/modify-permissions.png)
 
-### <a name="error-tenant-is-not-b2c-or-tenant-doesnt-have-premium-license"></a>Ошибка: клиент не B2C, или у клиента нет лицензии Premium
+### <a name="error-tenant-is-not-b2c-or-tenant-doesnt-have-premium-license"></a>Ошибка: Арендатор не B2C или арендатор не имеет премиум лицензии
 
 Для доступа к отчетам о входе требуется лицензия Azure Active Directory Premium 1 (P1). Если вы видите это сообщение об ошибке при обращении ко входам, убедитесь, что клиент лицензируется по лицензии Azure AD P1.
 
-### <a name="error-the-allowed-roles-does-not-include-user"></a>Ошибка: разрешенные роли не включают пользователя. 
+### <a name="error-the-allowed-roles-does-not-include-user"></a>Ошибка: Разрешенные роли не включают пользователя. 
 
- Избегайте ошибок при попытке доступа к журналам аудита или входу с помощью API. Убедитесь, что ваша учетная запись является частью **средства чтения безопасности** или роли **читателя отчетов** в клиенте Azure Active Directory.
+ Избегайте ошибок при доступе к журналам аудита или входа в систему с помощью API. Убедитесь, что ваша учетная запись является частью роли **читателя безопасности** или **чтения отчетов** в вашем арендаторе Active Directory Azure.
 
 ### <a name="error-application-missing-aad-read-directory-data-permission"></a>Error: Application missing AAD 'Read directory data' permission (Ошибка: у приложения нет разрешения "Чтение данных каталога" AAD) 
 
-### <a name="error-application-missing-microsoft-graph-api-read-all-audit-log-data-permission"></a>Ошибка: в приложении отсутствует разрешение на чтение всех данных журнала аудита Microsoft Graph API
+### <a name="error-application-missing-microsoft-graph-api-read-all-audit-log-data-permission"></a>Ошибка: Приложение отсутствует Microsoft Graph API 'Читать все данные журнала аудита' разрешение
 
-Выполните действия, описанные в разделе [необходимые условия для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md) , чтобы убедиться, что приложение работает с нужным набором разрешений. 
+Выполните последующие действия в [Предпосылках для доступа к API-приложению от](howto-configure-prerequisites-for-reporting-api.md) отчетов Active Directory, чтобы убедиться, что ваше приложение работает с правильным набором разрешений. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
 * [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
