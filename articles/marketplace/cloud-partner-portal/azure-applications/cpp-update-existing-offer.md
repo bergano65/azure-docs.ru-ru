@@ -1,19 +1,18 @@
 ---
-title: Обновление существующего предложения приложения Azure | Azure Marketplace
+title: Обновление существующего предложения приложения Azure Лазурный рынок
 description: Обновление имеющегося предложения приложения Azure в Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.author: pabutler
-ms.openlocfilehash: 6854e445ea63639866e9e39a6afc725237bbc8fe
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 152fd24fbc5d2762d381ffce2a937bc448858b0a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826115"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80275957"
 ---
 # <a name="update-an-existing-azure-application-offer"></a>Обновление имеющегося предложения приложения Azure
 
@@ -34,7 +33,7 @@ ms.locfileid: "73826115"
 - Идентификатор предложения и идентификатор издателя предложения.
 - Идентификаторы существующих номеров SKU.
 - Теги версии, например: `1.0.1`
-- Модели выставления счетов и лицензирования для существующих номеров SKU.
+- модели выставления счетов и лицензирования для существующих номеров SKU;
 
 ## <a name="common-update-operations"></a>Стандартные операции обновления
 
@@ -67,11 +66,11 @@ ms.locfileid: "73826115"
 
 1. Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com/).
 2. В разделе **Все предложения** найдите предложение, которое нужно обновить.
-3. Перейдите на вкладку **Marketplace** . Используйте инструкции из статьи [Публикация предложения приложения Azure](./cpp-publish-offer.md) для внесения изменений в метаданные.
+3. Перейдите на вкладку **Marketplace.** Используйте инструкции в [предложении приложения Publish Azure,](./cpp-publish-offer.md) чтобы внести изменения метаданных.
 4. Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации изменений.
  
 >[!Note]
->Вы можете получить доступ к партнерским каналам поставщика облачных решений (CSP).  Дополнительные сведения о маркетинге вашего предложения с помощью партнерских каналов Microsoft CSP см. в статье [поставщики облачных решений](../../cloud-solution-providers.md) .
+>Поставщики облачных решений (CSP) партнеров канала отказ в 100 000.  Пожалуйста, ознакомьтесь с информацией о компании [Cloud Solution Providers,](../../cloud-solution-providers.md) чтобы получить дополнительную информацию о маркетинге вашего предложения по каналам партнеров Microsoft CSP.
 
 ## <a name="deleting-an-existing-offer"></a>Удаление существующего предложения
 

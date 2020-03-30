@@ -7,10 +7,10 @@ ms.author: cweining
 ms.date: 02/23/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 9c98cd5d3d4d76f9455e4c036aa32a4ead20cfff
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77671721"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler
@@ -47,7 +47,7 @@ ms.locfileid: "77671721"
     dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
     ```
 
-1. Включить Application Insights в Program.cs:
+1. Включите анализ приложений в Program.cs:
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -56,7 +56,7 @@ ms.locfileid: "77671721"
             .UseStartup<Startup>();
     ```
     
-1. Включить профилировщик в Startup.cs:
+1. Включить профиль в Startup.cs:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -150,7 +150,7 @@ ms.locfileid: "77671721"
 
 ## <a name="add-application-insights-to-monitor-your-web-apps"></a>Добавление Application Insights для мониторинга веб-приложений
 
-1. [Создайте ресурс Application Insights](./../../azure-monitor/app/create-new-resource.md ).
+1. [Создайте ресурс Application Insights.](./../../azure-monitor/app/create-new-resource.md )
 
 2. Скопируйте значение **iKey** ресурса Application Insights и задайте следующие параметры в веб-приложениях.
 
@@ -170,11 +170,11 @@ ms.locfileid: "77671721"
 
 ## <a name="known-issues"></a>Известные проблемы
 
-### <a name="profile-now-button-doesnt-work-for-linux-profiler"></a>Кнопка "профиль" не работает для профилировщика Linux
-Версия Linux профилировщика App Insights пока еще не поддерживает профилирование по требованию с помощью кнопки профиль сейчас.
+### <a name="profile-now-button-doesnt-work-for-linux-profiler"></a>Кнопка «Профиль сейчас» не работает для Linux Profiler
+Linux версия профилера App Insights пока не поддерживает профилирование по требованию с помощью кнопки профиля now.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы используете пользовательские контейнеры, размещенные в Службе приложений Azure, чтобы включить Application Insights Profiler, следуйте инструкциям из статьи [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerForContainerApp) (Включение профилировщика службы для контейнерного приложения ASP.NET Core).
 
 О каких-либо проблемах или предложениях сообщайте в репозиторий Github: [ApplicationInsights-Profiler-AspNetCore: Issues](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues) (ApplicationInsights-Profiler-AspNetCore: вопросы)

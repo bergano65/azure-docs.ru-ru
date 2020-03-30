@@ -17,10 +17,10 @@ ms.date: 02/13/2020
 ms.author: juergent
 ms.custom: ''
 ms.openlocfilehash: 43fc2e9369b9d11b1ac0205beddea01b633fb633
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77598380"
 ---
 # <a name="sap-certifications-and-configurations-running-on-microsoft-azure"></a>Сертификаты и конфигурации SAP на платформе Microsoft Azure
@@ -37,9 +37,9 @@ ms.locfileid: "77598380"
 | SAP HANA, версия для разработчиков (включая клиентское ПО HANA с драйверами SQLODBC, ODBO (только для ОС Windows), ODBC и JDBC, среду разработки HANA Studio и базу данных HANA) | Red Hat Enterprise Linux, SUSE Linux Enterprise | Семейство виртуальных машин серии D |
 | Business One в HANA | SUSE Linux Enterprise | DS14_v2, M32ts, M32ls, M64ls, M64s <br /> [Платформы IaaS, сертифицированные для SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure%23SAP%20Business%20One) |
 | SAP S/4 HANA | Red Hat Enterprise Linux, SUSE Linux Enterprise | Управляемая доступность для GS5. Полная поддержка M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, M208s_v2, M208ms_v2, M416s_v2, M416ms_v2, <br /> SAP HANA (крупные экземпляры) в Azure. [Платформы IaaS, сертифицированные для SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) |
-| Suite on HANA, OLTP | Red Hat Enterprise Linux, SUSE Linux Enterprise | M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, M208s_v2, M208ms_v2, <br /> M416s_v2, M416ms_v2, SAP HANA в Azure (крупные экземпляры) [SAP HANA сертифицированные платформы IaaS](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) |
-| HANA Enterprise для BW, OLAP | Red Hat Enterprise Linux, SUSE Linux Enterprise | GS5, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, M208s_v2, M208ms_v2, <br /> M416s_v2, M416ms_v2, SAP HANA в Azure (крупные экземпляры) [SAP HANA сертифицированные платформы IaaS](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) |
-| SAP BW/4 HANA | Red Hat Enterprise Linux, SUSE Linux Enterprise | GS5, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, M208s_v2, M208ms_v2, <br /> M416s_v2, M416ms_v2, SAP HANA в Azure (крупные экземпляры) <br /> [Платформы IaaS, сертифицированные для SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) |
+| Suite on HANA, OLTP | Red Hat Enterprise Linux, SUSE Linux Enterprise | M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, M208s_v2, M208ms_v2, <br /> M416s_v2, M416ms_v2, SAP HANA на Azure (Большие экземпляры) [Сертифицированные IaaS платформы SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) |
+| HANA Enterprise для BW, OLAP | Red Hat Enterprise Linux, SUSE Linux Enterprise | GS5, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, M208s_v2, M208ms_v2, <br /> M416s_v2, M416ms_v2, SAP HANA на Azure (Большие экземпляры) [Сертифицированные IaaS платформы SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) |
+| SAP BW/4 HANA | Red Hat Enterprise Linux, SUSE Linux Enterprise | GS5, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, M208s_v2, M208ms_v2, <br /> M416s_v2, M416ms_v2, SAP HANA на Azure (Большие экземпляры) <br /> [Платформы IaaS, сертифицированные для SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) |
 
 Обратите внимание, что термин "кластеризация" на странице с [платформами IaaS, сертифицированными для SAP HAN](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure), используется как синоним слова "горизонтальное масштабирование". Здесь не имеется в виду кластеризация с высоким уровнем доступности.
 
@@ -52,10 +52,10 @@ ms.locfileid: "77598380"
 
 | Продукт SAP | Гостевая ОС | Реляционная СУБД | Типы виртуальных машин |
 | --- | --- | --- | --- |
-| ПО SAP Business Suite | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3 , M208ms_v2, M416s_v2, M416ms_v2 |
-| SAP Business All-in-One | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3 , M208ms_v2, M416s_v2, M416ms_v2 |
-| Бизнес-аналитика SAP BusinessObjects | Windows |Недоступно |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3 , M208ms_v2, M416s_v2, M416ms_v2 |
-| SAP NetWeaver | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3 , M208ms_v2, M416s_v2, M416ms_v2 |
+| ПО SAP Business Suite | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От 5 до A11, D11 до D14, DS11 до DS14, DS11_v2 до DS15_v2, GS1 до GS5, от D2s_v3 до D64s_v3, от D2as_v4 до D64as_v4, E2s_v3 до E64s_v3, E2as_v4 до E64as_v4, M64s, M64ms, M128ms, M64ls, M32ls, M32ls, M32ts, M208s_v2 , M208ms_v2, M416s_v2, M416ms_v2 |
+| SAP Business All-in-One | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От 5 до A11, D11 до D14, DS11 до DS14, DS11_v2 до DS15_v2, GS1 до GS5, от D2s_v3 до D64s_v3, от D2as_v4 до D64as_v4, E2s_v3 до E64s_v3, E2as_v4 до E64as_v4, M64s, M64ms, M128ms, M64ls, M32ls, M32ls, M32ts, M208s_v2 , M208ms_v2, M416s_v2, M416ms_v2 |
+| Бизнес-аналитика SAP BusinessObjects | Windows |Недоступно |От 5 до A11, D11 до D14, DS11 до DS14, DS11_v2 до DS15_v2, GS1 до GS5, от D2s_v3 до D64s_v3, от D2as_v4 до D64as_v4, E2s_v3 до E64s_v3, E2as_v4 до E64as_v4, M64s, M64ms, M128ms, M64ls, M32ls, M32ls, M32ts, M208s_v2 , M208ms_v2, M416s_v2, M416ms_v2 |
+| SAP NetWeaver | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От 5 до A11, D11 до D14, DS11 до DS14, DS11_v2 до DS15_v2, GS1 до GS5, от D2s_v3 до D64s_v3, от D2as_v4 до D64as_v4, E2s_v3 до E64s_v3, E2as_v4 до E64as_v4, M64s, M64ms, M128ms, M64ls, M32ls, M32ls, M32ts, M208s_v2 , M208ms_v2, M416s_v2, M416ms_v2 |
 
 ## <a name="other-sap-workload-supported-on-azure"></a>Другие рабочие нагрузки SAP, поддерживаемые в Azure
 

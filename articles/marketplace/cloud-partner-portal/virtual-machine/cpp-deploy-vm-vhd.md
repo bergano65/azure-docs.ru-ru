@@ -1,19 +1,18 @@
 ---
-title: Развертывание виртуальной машины из виртуальных жестких дисков для Azure Marketplace
+title: Развертывание VM с ваших VHD для azure Marketplace
 description: Здесь описано, как зарегистрировать виртуальную машину из виртуального жесткого диска, развернутого в Azure.
-services: Azure, Marketplace, Cloud Partner Portal,
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/08/2019
-ms.author: evansma
-ms.openlocfilehash: 797c258c963d0daec32a8f9ac7c4e0665dc465d3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 5263d24c411ef8de4187c2fd750013374d779f04
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73813413"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80277945"
 ---
 # <a name="deploy-a-vm-from-your-vhds"></a>Развертывание виртуальной машины из дисков VHD
 
@@ -24,7 +23,7 @@ ms.locfileid: "73813413"
 Дополнительные сведения об образах виртуальных машин см. в следующих записях блога:
 
 - [Образ виртуальной машины](https://azure.microsoft.com/blog/vm-image-blog-post/)
-- [Запись блога о способах использования PowerShell при работе с образами виртуальных машин](https://azure.microsoft.com/blog/vm-image-powershell-how-to-blog-post/)
+- [VM изображение PowerShell 'Как'](https://azure.microsoft.com/blog/vm-image-powershell-how-to-blog-post/)
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
@@ -60,10 +59,10 @@ ms.locfileid: "73813413"
    |  -------------              |   ---------------                                                            |
    | User Storage Account Name (Имя учетной записи хранения)   | Имя учетной записи хранения, в которой находится обобщенный виртуальный жесткий диск                    |
    | User Storage Container Name (Имя контейнера хранилища пользователя) | Имя контейнера, в котором находится обобщенный виртуальный жесткий диск                          |
-   | DNS Name for Public IP (DNS-имя для общедоступного IP-адреса)      | DNS-имя общедоступного IP-адреса. DNS-имя — это виртуальная машина, которая будет определена на портале Azure после развертывания предложения.  |
+   | DNS Name for Public IP (DNS-имя для общедоступного IP-адреса)      | Публичное имя IP DNS. DNS Name — это имя VM, вы определите это на портале Azure после развертывания предложения.  |
    | Admin User Name (Имя администратора)             | Имя пользователя учетной записи администратора для новой виртуальной машины                                  |
    | Пароль администратора              | Пароль учетной записи администратора для новой виртуальной машины                                  |
-   | тип ОС;                     | Операционная система виртуальной машины: `Windows` \| `Linux`                                    |
+   | Тип ОС                     | Операционная система `Windows` \| VM:`Linux`                                    |
    | Идентификатор подписки             | Идентификатор выбранной подписки                                      |
    | Расположение                    | Географическое расположение развертывания                                        |
    | Размер виртуальной машины                     | [Размер виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), например `Standard_A2` |

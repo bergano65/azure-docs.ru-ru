@@ -1,14 +1,14 @@
 ---
-title: Резервное копирование сервера Exchange с помощью System Center DPM
+title: Резервное копирование сервера Exchange через System Center DPM
 description: Узнайте, как выполнить резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.openlocfilehash: 389713767409ff49c6fc83a4d6e8dc3c87272fc9
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77614371"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
@@ -44,7 +44,7 @@ ms.locfileid: "77614371"
 ## <a name="create-a-protection-group-for-the-exchange-server"></a>Создание группы защиты для сервера Exchange Server
 
 1. В консоли администратора DPM щелкните **Защита** и на ленте инструментов нажмите кнопку **Создать**. Откроется **мастер создания групп защиты**.
-2. На экране **приветствия** мастера нажмите кнопку **Далее**.
+2. На экране **Добро пожаловать** мастера, нажмите **Далее**.
 3. На экране **Выбор типа группы защиты** выберите **Серверы** и щелкните **Далее**.
 4. Выберите на сервере Exchange Server базу данных, которую требуется защитить, и нажмите кнопку **Далее**.
 
@@ -68,7 +68,7 @@ ms.locfileid: "77614371"
     После этого проверка согласованности резервного копирования будет выполняться на сервере DPM, что позволит исключить операции ввода-вывода при выполнении команды **eseutil** на сервере Exchange.
 
    > [!NOTE]
-   > Чтобы использовать этот параметр, скопируйте файлы Ese.dll и Eseutil.exe в каталог C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin на сервере DPM. В противном случае возникнет следующая ошибка:  
+   > Чтобы использовать этот параметр, скопируйте файлы Ese.dll и Eseutil.exe в каталог C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin на сервере DPM. В противном случае возникнет следующая ошибка:   
    > ![ошибка Eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
@@ -83,10 +83,10 @@ ms.locfileid: "77614371"
 11. Проверьте, есть ли на диске свободное место, и нажмите кнопку **Далее**.
 12. Выберите время создания сервером DPM начальной репликации и нажмите кнопку **Далее**.
 13. Выберите параметры проверки согласованности и нажмите кнопку **Далее**.
-14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Например:
+14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример:
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Например:
+15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Пример:
 
     ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 
@@ -120,6 +120,6 @@ ms.locfileid: "77614371"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

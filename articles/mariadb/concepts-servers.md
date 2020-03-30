@@ -1,17 +1,17 @@
 ---
-title: Серверы — база данных Azure для MariaDB
+title: Серверы - База данных Azure для MariaDB
 description: В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 048d9f3089a433dbf8c2647ed86ddab69c78ebaa
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 444d7f1574cf1517b01250bcb9d810731030182d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74772050"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79527798"
 ---
 # <a name="server-concepts-in-azure-database-for-mariadb"></a>Основные понятия работы с сервером в базе данных Azure для MariaDB
 В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MariaDB.
@@ -50,6 +50,6 @@ ms.locfileid: "74772050"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Общие сведения об этой службе см. в статье [Обзор базы данных Azure для MariaDB](./overview.md).
-- Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-pricing-tiers.md).
+- Для получения информации о конкретных квотах и ограничениях ресурсов, основанных на **уровне обслуживания,** [см.](./concepts-pricing-tiers.md)
 
 <!-- - For information about connecting to the service, see [Connection libraries for Azure Database for MariaDB](./concepts-connection-libraries.md). -->

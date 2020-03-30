@@ -1,10 +1,10 @@
 ---
-title: 'Известные проблемы: миграция из Oracle в базу данных Azure для PostgreSQL'
+title: "Известные проблемы: Переход из Oracle в базу данных Azure для PostgreS'L"
 titleSuffix: Azure Database Migration Service
-description: Сведения об известных проблемах и ограничениях миграции с миграцией из Oracle в базу данных Azure для PostgreSQL-Single Server с помощью Azure Database Migration Service.
+description: Узнайте об известных проблемах и ограничениях миграции с помощью онлайн-миграций с Oracle в базу данных Azure для сервера PostgreS-L- Single с помощью службы миграции базы данных Azure.
 services: database-migration
-author: pochiraju
-ms.author: rajpo
+author: HJToland3
+ms.author: jtoland
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,61 +12,61 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: 6ab1050290119a53ee0fb674e6939938a3b855e0
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: fcebc7eb170239e5d7efd8a32599a6e782f630bd
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77648604"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80235244"
 ---
-# <a name="known-issuesmigration-limitations-with-online-migrations-from-oracle-to-azure-db-for-postgresql-single-server"></a>Известные проблемы и ограничения миграции при оперативной миграции из Oracle в базу данных Azure для PostgreSQL — один сервер
+# <a name="known-issuesmigration-limitations-with-online-migrations-from-oracle-to-azure-db-for-postgresql-single-server"></a>Известные проблемы/ограничения миграции с миграцией в Интернет е-на-Ез до Azure DB для сервера PostgreS-L-Single
 
-Известные проблемы и ограничения, связанные с миграцией из Oracle в базу данных Azure для PostgreSQL-Single Server, описаны в следующих разделах.
+Известные проблемы и ограничения, связанные с миграцией в Интернет с Oracle в базу данных Azure для сервера PostgreS-L-Single, описаны в следующих разделах.
 
-## <a name="oracle-versions-supported-as-a-source-database"></a>Версии Oracle, поддерживаемые в качестве базы данных-источника
+## <a name="oracle-versions-supported-as-a-source-database"></a>Версии Oracle, поддерживаемые в качестве исходной базы данных
 
-Azure Database Migration Service поддерживает подключение к:
+Миграционная служба базы данных Azure поддерживает подключение к:
 
-- Oracle версии 10G, 11g и 12c.
+- Oracle версия 10g, 11g, и 12c.
 - Oracle Enterprise, Standard, Express и Personal Edition.
 
-Azure Database Migration Service не поддерживает подключение к базам данных контейнеров с несколькими клиентами (Кдбс).
+Миграционная служба лазурных данных не поддерживает подключение к многотентным контейнерным базам данных (CDB).
 
-## <a name="postgresql-versions-supported-as-a-target-database"></a>Версии PostgreSQL, поддерживаемые в качестве целевой базы данных
+## <a name="postgresql-versions-supported-as-a-target-database"></a>Версии PostgreS'L, поддерживаемые в качестве целевой базы данных
 
-Azure Database Migration Service поддерживает миграцию в базу данных Azure для PostgreSQL-Single Server версии 9,5, 9,6, 10 и 11. Актуальные сведения о поддержке версий в базе данных Azure для PostgreSQL-Single Server см. в статье [Поддерживаемые версии базы данных PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions) .
+Миграционная служба базы данных Azure поддерживает миграцию в базу данных Azure для версии серверов PostgreS-L-Single 9.5, 9.6, 10 и 11. Ознакомиться со статьей [«Поддерживаемые версии баз данных PostgreS'L»](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions) можно получить в базе данных Azure Database для сервера PostgreS-L.L.
 
 ## <a name="datatype-limitations"></a>Ограничения типа данных
 
-Следующие типы **не** будут перенесены:
+Следующие типы данных **не** будут мигрировать:
 
 - BFILE
 - ROWID
 - REF
 - UROWID
-- анидата
+- ANYDATA
 - SDO_GEOMETRY
 - Вложенные таблицы;
 - Определяемые пользователем типы данных
 - Примечания
 - Виртуальные столбцы
-- Материализованные представления, основанные на столбце ROWID
+- Материализованные представления на основе столбца ROWID
 
-Кроме того, пустые столбцы BLOB/CLOB сопоставляются со значением NULL в целевом объекте.
+Кроме того, пустые столбцы BLOB/CLOB отображаются на НУЛНайле на цели.
 
 ## <a name="lob-limitations"></a>Ограничения больших объектов
 
-- Если включен режим ограниченного размера (LOB), пустые большие объекты в источнике Oracle реплицируются как значения NULL.
-- Длинные имена объектов (свыше 30 байт) не поддерживаются.
-- Данные в ДЛИННом и ДЛИННом необработанном столбце не могут превышать 64 КБ. Все данные, превышающие 64 КБ, будут обрезаны.
-- В Oracle 12 любые изменения в столбцах LOB не поддерживаются (перенесены).
-- Обновления столбцов XMLTYPE и LOB не поддерживаются (перенесены).
+- При включении lob-режима ограниченного размера пустые LOB в источнике Oracle реплицируются как значения NULL.
+- Длинные имена объектов (более 30 байтов) не поддерживаются.
+- Данные в колонках LONG и LONG RAW не могут превышать 64 k. Любые данные за 64k будут усечены.
+- Только в Oracle 12 любые изменения в lob-столбцах не поддерживаются (мигрируют).
+- UPDATEs к столбику XMLTYPE и LOB не поддерживаются (мигрировали).
 
 ## <a name="known-issues-and-limitations"></a>Известные проблемы и ограничения
 
 - Клиенты должны использовать SYSDBA для подключения к Oracle.
-- Изменения данных, внесенные в результате операций секционирования и подраздела (Добавление, удаление, Обмен и УСЕЧЕНИЕ), не будут перенесены и могут вызвать следующие ошибки:
-  - Для операций добавления операции обновления и удаления для добавленных данных могут возвращать предупреждение "0 затронутых строк".
-  - При операциях удаления и УСЕЧЕНИЯ новые операции вставки могут привести к ошибкам "повторений".
-  - Для операций EXCHANGE могут возникать ошибки предупреждения "0 строк" и "повторение".
-- Таблицы, имена которых содержат апострофы, не могут быть реплицированы.
+- Изменения данных, возникающие в результате операций раздела/подраздела (ADD, DROP, EXCHANGE и TRUNCATE), не будут переноситься и могут привести к следующим ошибкам:
+  - Для операций ADD обновления и удаления на добавленных данных могут вернуть предупреждение "0 строк пострадавших".
+  - Для операций DROP и TRUNCATE новые вставки могут привести к ошибкам «дубликатов».
+  - Для операций EXCHANGE могут возникать как предупреждения "0 строк" и ошибки "дубликаты".
+- Таблицы, имена которых содержат апострофы, не могут быть воспроизведены.

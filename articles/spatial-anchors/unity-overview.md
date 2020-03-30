@@ -1,6 +1,6 @@
 ---
-title: Общие сведения об Unity для пространственных привязок Azure
-description: Узнайте, как можно использовать пространственные привязки Azure в приложениях Unity.
+title: Обзор единства пространственных якорей Azure
+description: Узнайте, как пространственные якоря Azure могут быть использованы в приложениях Unity. Просмотрите быстрые запуски для Unity для HoloLens, Unity для Android и Unity для iOS.
 author: rgarcia
 ms.author: rgarcia
 manager: vriveras
@@ -8,25 +8,25 @@ services: azure-spatial-anchors
 ms.service: azure-spatial-anchors
 ms.date: 02/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: eea2d57c708bd3563625d6f9da19ac043b604888
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: df28fc6b5e3a1ddd9813919c8afbf21f65d731b9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78246262"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79471092"
 ---
-# <a name="building-in-unity-with-azure-spatial-anchors"></a>Создание в Unity с помощью пространственных привязок Azure
+# <a name="building-in-unity-with-azure-spatial-anchors"></a>Строительство в единстве с лазурными пространственными якорями
 
-Разработчики могут выбрать Unity для создания и развертывания приложений смешанной реальности, использующих пространственные привязки Azure. Поддерживаются следующие платформы:
+Разработчики могут выбрать Unity для создания и развертывания приложений смешанной реальности, которые используют пространственные якоря Azure. Поддерживаются следующие платформы:
 
-**Unity для HoloLens**
+**Единство для HoloLens**
 
-[Краткое руководство. Создание приложения Unity, использующего пространственные привязки Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)
+[Быстрый запуск: Создайте приложение Unity HoloLens, использующее пространственные якоря Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)
 
-**Unity для Android**
+**Единство для Android**
 
-[Краткое руководство. Создание приложения Unity для Android, использующего пространственные привязки Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-android)
+[Быстрый запуск: Создайте приложение Unity Android, использующее пространственные якоря Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-android)
 
-**Unity для iOS**
+**Единство для iOS**
 
-[Краткое руководство. Создание приложения Unity для iOS, использующего пространственные привязки Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-ios)
+[Быстрый запуск: Создайте приложение Unity iOS, использующее пространственные якоря Azure](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-ios)

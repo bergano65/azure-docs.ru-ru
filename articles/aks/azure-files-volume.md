@@ -5,27 +5,27 @@ services: container-service
 ms.topic: article
 ms.date: 03/01/2019
 ms.openlocfilehash: 084ab5cd6736c9148bcab1faf048d3d9081855d4
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77596408"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-files-share-in-azure-kubernetes-service-aks"></a>Создание вручную и совместное использование тома с файловым ресурсом Azure в службе Azure Kubernetes (AKS)
 
-Контейнерные приложения часто требуются для обращения к данным и их хранения во внешнем томе данных. Если нескольким модулям Pod требуется одновременный доступ к тому же тому хранилища, можно использовать службу файлов Azure для подключения с помощью [протокола SMB][smb-overview]. В этой статье показано, как вручную создать файловый ресурс Azure и присоединить его к контейнеру в AKS.
+Контейнерные приложения часто требуются для обращения к данным и их хранения во внешнем томе данных. Если несколько модулей pod требуют одновременный доступ в одно и то же хранилище, используйте службу файлов Azure для подключения с помощью [протокола Server Message Block (SMB)][smb-overview]. В этой статье показано, как вручную создать файловый ресурс Azure и присоединить его к контейнеру в AKS.
 
-Дополнительные сведения о томах Kubernetes см. [в статье параметры хранения для приложений в AKS][concepts-storage].
+Для получения дополнительной информации о объемах Kubernetes [см.][concepts-storage]
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
+Вам также нужна версия Azure CLI 2.0.59 или более поздняя установка и настройка. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 
-Перед использованием файлов Azure в качестве тома Kubernetes необходимо создать учетную запись хранения Azure и файловый ресурс. Следующие команды создают группу ресурсов с именем *мяксшаре*, учетную запись хранения и общую папку с именем *аксшаре*:
+Перед использованием файлов Azure в качестве тома Kubernetes необходимо создать учетную запись хранения Azure и файловый ресурс. Следующие команды создают группу ресурсов под названием *myAKSShare*, учетную запись хранения и долю файлов под названием *aksshare:*
 
 ```azurecli-interactive
 # Change these four parameters as needed for your own environment
@@ -58,7 +58,7 @@ echo Storage account key: $STORAGE_KEY
 
 ## <a name="create-a-kubernetes-secret"></a>Создание секрета Kubernetes
 
-Kubernetes требуются учетные данные для доступа к файловому ресурсу, созданные на предыдущем шаге. Эти учетные данные хранятся в [Kubernetes секрете][kubernetes-secret], на который указывает ссылка при создании Kubernetes Pod.
+Kubernetes требуются учетные данные для доступа к файловому ресурсу, созданные на предыдущем шаге. Эти учетные данные хранятся в [секрете Kubernetes][kubernetes-secret], который указывается при создании pod Kubernetes.
 
 Создайте секрет с помощью команды `kubectl create secret`. Следующий пример создает ресурс с именем *azure-secret* и заполняет параметры *azurestorageaccountname* и *azurestorageaccountkey* данными, созданными на предыдущем шаге. Чтобы использовать существующую учетную запись Azure, укажите имя и ключ учетной записи.
 
@@ -68,7 +68,7 @@ kubectl create secret generic azure-secret --from-literal=azurestorageaccountnam
 
 ## <a name="mount-the-file-share-as-a-volume"></a>Подключение файлового ресурса в качестве тома
 
-Чтобы подключить общую папку службы файлов Azure к модулю, настройте том в спецификации контейнера. Создайте новый файл с именем `azure-files-pod.yaml` со следующим содержимым. Если вы изменили имя файлового ресурса или секрета, обновите *shareName* и *secretName*. При необходимости обновите `mountPath` — путь, в котором файловый ресурс установлен в pod. Для контейнеров Windows Server (в настоящее время на этапе предварительной версии в AKS) укажите *mountPath* с помощью соглашения о пути Windows, например *"d:"* .
+Чтобы установить долю файлов Azure в ваш модуль, настройте объем в `azure-files-pod.yaml` спецификации контейнера. Если вы изменили имя файлового ресурса или секрета, обновите *shareName* и *secretName*. При необходимости обновите `mountPath` — путь, в котором файловый ресурс установлен в pod. Для контейнеров Windows Server (в настоящее время в предварительном просмотре в AKS) укажите *mountPath* с помощью конвенции пути Windows, например *'D:'.*
 
 ```yaml
 apiVersion: v1
@@ -132,7 +132,7 @@ Volumes:
 
 ## <a name="mount-options"></a>Параметры подключения
 
-Значение по умолчанию для *fileMode* и *дирмоде* — *0755* для Kubernetes версии 1.9.1 и выше. При использовании кластера с Куберетес версии 1.8.5 или более поздней и статическим созданием объекта постоянного тома необходимо указать параметры подключения для объекта *персистентволуме* . В следующем примере задается значение *0777*.
+Значение по умолчанию для *fileMode* и *dirMode* составляет *0755* для версии Kubernetes 1.9.1 и выше. При использовании кластера с версией Kuberetes 1.8.5 или больше и статически создавая постоянный объект объема, параметры крепления должны быть указаны на объекте *PersistentVolume.* В следующем примере задается значение *0777*.
 
 ```yaml
 apiVersion: v1
@@ -158,9 +158,9 @@ spec:
   - nobrl
 ```
 
-При использовании кластера версии 1.8.0–1.8.4 контекст безопасности можно указать, задав для *runAsUser* значение *0*. Дополнительные сведения о контексте безопасности Pod см. в разделе [Настройка контекста безопасности][kubernetes-security-context].
+При использовании кластера версии 1.8.0–1.8.4 контекст безопасности можно указать, задав для *runAsUser* значение *0*. Дополнительные сведения о контексте безопасности Pod см. в разделе [Configure a Security Context][kubernetes-security-context] (Настройка контекста безопасности).
 
-Чтобы обновить параметры подключения, создайте файл *азурефиле-Mount-Options-PV. YAML* с *персистентволуме*. Например:
+Чтобы обновить параметры крепления, создайте *лазурный-монт-варианты-pv.yaml* файл с *persistentVolume.* Пример:
 
 ```yaml
 apiVersion: v1
@@ -186,7 +186,7 @@ spec:
   - nobrl
 ```
 
-Создайте файл *азурефиле-Mount-Options-PVC. YAML* с *Персистентволумеклаим* , использующим *персистентволуме*. Например:
+Создайте *лазурило-монтажный-варианты-pvc.yaml* файл с *persistentVolumeClaim,* который использует *PersistentVolume.* Пример:
 
 ```yaml
 apiVersion: v1
@@ -202,14 +202,14 @@ spec:
       storage: 5Gi
 ```
 
-Используйте команды `kubectl`, чтобы создать *персистентволуме* и *персистентволумеклаим*.
+Используйте `kubectl` команды для создания *PersistentVolume* и *PersistentVolumeClaim.*
 
 ```console
 kubectl apply -f azurefile-mount-options-pv.yaml
 kubectl apply -f azurefile-mount-options-pvc.yaml
 ```
 
-Убедитесь, что *персистентволумеклаим* создан и привязан к *персистентволуме*.
+Проверить ваш *PersistentVolumeClaim* создан и связан с *PersistentVolume*.
 
 ```console
 $ kubectl get pvc azurefile
@@ -218,7 +218,7 @@ NAME        STATUS   VOLUME      CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 azurefile   Bound    azurefile   5Gi        RWX            azurefile      5s
 ```
 
-Обновите спецификацию контейнера, чтобы она ссылалась на *персистентволумеклаим* и обновить свой модуль. Например:
+Обновите спецификацию контейнера, чтобы ссылаться на свой *PersistentVolumeClaim* и обновить ваш модуль. Пример:
 
 ```yaml
 ...
@@ -228,11 +228,11 @@ azurefile   Bound    azurefile   5Gi        RWX            azurefile      5s
       claimName: azurefile
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Соответствующие рекомендации см. в разделе рекомендации [по хранению и резервному копированию в AKS][operator-best-practices-storage].
+Для связанных с [Best practices for storage and backups in AKS][operator-best-practices-storage]этим рекомендаций см.
 
-Дополнительные сведения о взаимодействии кластеров AKS с файлами Azure см. в разделе [подключаемый модуль Kubernetes для файлов Azure][kubernetes-files].
+Дополнительные сведения о взаимодействии кластеров AKS с файлами Azure, см. в разделе [Подключаемый модуль Kubernetes для службы файлов Azure][kubernetes-files].
 
 <!-- LINKS - external -->
 [kubectl-create]: https://kubernetes.io/docs/user-guide/kubectl/v1.8/#create

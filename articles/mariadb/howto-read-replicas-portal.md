@@ -1,62 +1,62 @@
 ---
-title: Управление репликами чтения — портал Azure — база данных Azure для MariaDB
-description: В этой статье описывается, как настроить и управлять репликами чтения в базе данных Azure для MariaDB с помощью портала.
+title: Управление репликами чтения - Портал Azure - База данных Azure для MariaDB
+description: В этой статье описывается, как настроить и управлять репликами чтения в базе данных Azure для MariaDB с помощью портала
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 7e290e6d773485b84ef42c7a79abf084e3b0da9f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 5c28697b27e9cf910302b7379e1443f7e78e96b8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74765942"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79530620"
 ---
-# <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
+# <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать и управлять считывательными репликами в базе данных Azure для MariaDB с помощью портала Azure
 
-В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MariaDB" с помощью портал Azure.
+В этой статье вы узнаете, как создавать и управлять считывательными репликами в базе данных Azure для службы MariaDB с помощью портала Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md) , который будет использоваться в качестве главного сервера.
+- [База данных Azure для сервера MariaDB,](quickstart-create-mariadb-server-database-using-azure-portal.md) которая будет использоваться в качестве главного сервера.
 
 > [!IMPORTANT]
-> Функция чтения реплики доступна только для серверов базы данных Azure для MariaDB в общего назначения или ценовой категории, оптимизированные для памяти. Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
+> Функция считывателя реплики доступна только для базы данных Azure для серверов MariaDB на уровнях общего назначения или оптимизации цен на память. Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
 
 ## <a name="create-a-read-replica"></a>Создание реплики чтения
 
 Чтобы создать сервер-реплику чтения, выполните следующие действия.
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войти на [портал Azure](https://portal.azure.com/).
 
-2. Выберите существующий сервер базы данных Azure для MariaDB, который вы хотите использовать в качестве главного. Откроется страница **Обзор**.
+2. Выберите существующую базу данных Azure для сервера MariaDB, который вы хотите использовать в качестве мастера. Откроется страница **Обзор**.
 
 3. В меню в разделе **Параметры** выберите **Репликация**.
 
 4. Выберите **Добавить реплику**.
 
-   ![База данных Azure для MariaDB — репликация](./media/howto-read-replica-portal/add-replica.png)
+   ![База данных Azure для MariaDB - Репликация](./media/howto-read-replica-portal/add-replica.png)
 
-5. Введите имя сервера реплики.
+5. Введите имя для сервера реплики.
 
-    ![База данных Azure для MariaDB — имя реплики](./media/howto-read-replica-portal/replica-name.png)
+    ![База данных Azure для MariaDB - имя реплики](./media/howto-read-replica-portal/replica-name.png)
 
-6. Выберите расположение сервера реплики. Расположение по умолчанию совпадает с местоположением главного сервера.
+6. Выберите местоположение для сервера реплики. Местоположение по умолчанию такое же, как и у главного сервера.
 
-    ![База данных Azure для MariaDB — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
+    ![База данных Azure для MariaDB - Местоположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
    > [!NOTE]
-   > Межрегионовая репликация доступна в предварительной версии. Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
+   > Репликация кросс-региона находится в предварительном просмотре. Чтобы узнать больше о том, в каких регионах можно создать копию, посетите [статью о концепциях ремиссий.](concepts-read-replicas.md) 
 
-7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
+7. Выберите **OK,** чтобы подтвердить создание реплики.
 
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Чтобы сервер-реплика мог работать с главным сервером, рекомендуется, чтобы значения конфигурации сервера-реплики были равны или превосходили значения конфигурации главного сервера.
 
 Созданный сервер-реплику можно просмотреть в колонке **Репликация**.
 
-   ![База данных Azure для MariaDB. список реплик](./media/howto-read-replica-portal/list-replica.png)
+   ![База данных Azure для MariaDB - Список реплик](./media/howto-read-replica-portal/list-replica.png)
 
 ## <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
 
@@ -65,41 +65,41 @@ ms.locfileid: "74765942"
 
 Чтобы остановить репликацию между главным сервером и сервером-репликой на портале Azure, следуйте инструкциям ниже.
 
-1. В портал Azure выберите главную базу данных Azure для сервера MariaDB. 
+1. На портале Azure выберите мастер-базу данных Azure для сервера MariaDB. 
 
 2. В меню в разделе **Параметры** выберите **Репликация**.
 
 3. Выберите сервер-реплику, для которого нужно остановить репликацию.
 
-   ![База данных Azure для MariaDB — останавливает репликацию выбор сервера](./media/howto-read-replica-portal/stop-replication-select.png)
+   ![База данных Azure для MariaDB - Остановка репликации выбрать сервер](./media/howto-read-replica-portal/stop-replication-select.png)
 
-4. Щелкните **Остановить репликацию**.
+4. Выберите **Stop репликации.**
 
-   ![База данных Azure для MariaDB — завершение репликации](./media/howto-read-replica-portal/stop-replication.png)
+   ![База данных Azure для MariaDB - Остановка репликации](./media/howto-read-replica-portal/stop-replication.png)
 
 5. Подтвердите остановку репликации, нажав кнопку **ОК**.
 
-   ![База данных Azure для MariaDB — подтверждение отмены репликации](./media/howto-read-replica-portal/stop-replication-confirm.png)
+   ![База данных Azure для MariaDB - Подтверждение копирования остановки](./media/howto-read-replica-portal/stop-replication-confirm.png)
 
 ## <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
 Чтобы удалить сервер-реплику чтения на портале Azure, следуйте инструкциям ниже.
 
-1. В портал Azure выберите главную базу данных Azure для сервера MariaDB.
+1. На портале Azure выберите мастер-базу данных Azure для сервера MariaDB.
 
 2. В меню в разделе **Параметры** выберите **Репликация**.
 
 3. Выберите сервер-реплику, который нужно удалить.
 
-   ![База данных Azure для MariaDB — удаление реплики выбор сервера](./media/howto-read-replica-portal/delete-replica-select.png)
+   ![База данных Azure для MariaDB - Удалить выберите сервер реплики](./media/howto-read-replica-portal/delete-replica-select.png)
 
-4. Щелкните **Удалить реплику**.
+4. Выберите **реплику удалить**
 
-   ![База данных Azure для MariaDB — удаление реплики](./media/howto-read-replica-portal/delete-replica.png)
+   ![База данных Azure для MariaDB - Удалить реплику](./media/howto-read-replica-portal/delete-replica.png)
 
 5. Введите имя реплики и нажмите кнопку **Удалить**, чтобы подтвердить удаление реплики.  
 
-   ![Подтверждение удаления реплики базы данных Azure для MariaDB](./media/howto-read-replica-portal/delete-replica-confirm.png)
+   ![База данных Azure для MariaDB - Подтверждение удаления](./media/howto-read-replica-portal/delete-replica-confirm.png)
 
 ## <a name="delete-a-master-server"></a>Удаление главного сервера
 
@@ -108,19 +108,19 @@ ms.locfileid: "74765942"
 
 Чтобы удалить главный сервер на портале Azure, следуйте инструкциям ниже.
 
-1. В портал Azure выберите главную базу данных Azure для сервера MariaDB.
+1. На портале Azure выберите мастер-базу данных Azure для сервера MariaDB.
 
 2. На странице **Обзор** выберите **Удалить**.
 
-   ![База данных Azure для MariaDB — Удаление главного сервера](./media/howto-read-replica-portal/delete-master-overview.png)
+   ![База данных Azure для MariaDB - Мастер удаления](./media/howto-read-replica-portal/delete-master-overview.png)
 
 3. Введите имя главного сервера и нажмите кнопку **Удалить**, чтобы подтвердить его удаление  
 
-   ![База данных Azure для MariaDB — Удаление главного сервера](./media/howto-read-replica-portal/delete-master-confirm.png)
+   ![База данных Azure для MariaDB - Мастер удаления](./media/howto-read-replica-portal/delete-master-confirm.png)
 
 ## <a name="monitor-replication"></a>Мониторинг репликации
 
-1. В [портал Azure](https://portal.azure.com/)выберите реплику сервера базы данных Azure для MariaDB, которую требуется отслеживать.
+1. На [портале Azure](https://portal.azure.com/)выберите базу данных реплики Azure для сервера MariaDB, который вы хотите контролировать.
 
 2. В разделе боковой панели **Мониторинг** выберите **Метрики**.
 
@@ -132,7 +132,7 @@ ms.locfileid: "74765942"
 
    ![Выбор диапазона времени](./media/howto-read-replica-portal/monitor-replication-lag-time-range.png)
 
-5. Просмотрите задержку репликации для выбранного диапазона времени. На следующем рисунке показана последняя 30 минут для большой рабочей нагрузки.
+5. Просмотрите задержку репликации для выбранного диапазона времени. На рисунке ниже отображаются последние 30 минут для большой рабочей нагрузки.
 
    ![Выбор диапазона времени](./media/howto-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png)
 

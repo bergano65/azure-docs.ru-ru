@@ -4,10 +4,10 @@ description: Stream Analytics может непрерывно преобразо
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.openlocfilehash: b93bc49d005e3e54f1e5db84e6ff1adc49e25a65
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77664020"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
@@ -89,13 +89,13 @@ ms.locfileid: "77664020"
 
 ### <a name="set-path-prefix-pattern"></a>Установка шаблона префикса пути
 
-**Задайте в поле "Формат даты" значение в формате ГГГГ-ММ-ДД (с дефисами).**
+**Обязательно установите формат Даты для YYYY-MM-DD (с тире).**
 
 Шаблон префикса пути указывает, где Stream Analytics находит входные файлы в хранилище. Вам необходимо настроить это поле в соответствии с тем, как функция непрерывного экспорта сохраняет данные. Задайте следующее значение:
 
     webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
-В данном примере:
+В этом примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**).
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 
@@ -107,7 +107,7 @@ ms.locfileid: "77664020"
 > 
 
 ## <a name="add-new-output"></a>Добавление новых выходных данных
-Теперь выберите свое задание и последовательно нажмите элементы **Выходные данные** > **Добавить**.
+Теперь выберите работу > **выходы** > **Добавить**.
 
 ![](./media/export-stream-analytics/SA006.png)
 
@@ -204,15 +204,15 @@ ms.locfileid: "77664020"
 ## <a name="no-data"></a>Данные отсутствуют?
 * Проверьте правильность [формата даты](#set-path-prefix-pattern) — ГГГГ-ММ-ДД (с дефисами).
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 Ноам Бен Зив (Noam Ben Zeev) показывает, как обрабатывать экспортированные данные с помощью Stream Analytics.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Export-to-Power-BI-from-Application-Insights/player]
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
-* [непрерывный экспорт.](export-telemetry.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Непрерывный экспорт](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
 

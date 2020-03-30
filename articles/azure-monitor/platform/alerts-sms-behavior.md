@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/16/2018
 ms.subservice: alerts
 ms.openlocfilehash: b75bda626f887f1224c1b0f18a80887983a2367d
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77665312"
 ---
 # <a name="sms-alert-behavior-in-action-groups"></a>Поведение SMS-оповещений в группе действий
@@ -35,14 +35,14 @@ ms.locfileid: "77665312"
 | DISABLE `<Action Group Short name>` | Отключает получение SMS от группы действий |
 | ENABLE `<Action Group Short name>` | Повторно включает получение SMS от группы действий |
 | STOP | Отключает получение SMS от всех групп действий |
-| ПУСК | Повторно включает получение SMS от всех групп действий |
-| СПРАВКА | Пользователю будет отправлен ответ со ссылкой на данную статью. |
+| START | Повторно включает получение SMS от всех групп действий |
+| HELP | Пользователю будет отправлен ответ со ссылкой на данную статью. |
 
 >[!NOTE]
 >Если пользователь отменил подписку на SMS-оповещения, но затем был добавлен в новую группу действий, то он будет получать SMS-оповещения для этой группы действий, но не для прежних групп.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Изучите [обзор оповещений журнала действий](alerts-overview.md) и узнайте, как получать оповещения.  
 Узнайте больше об [ограничении частоты отправки SMS](alerts-rate-limiting.md).  
-Узнайте больше о [группах действий](../../azure-monitor/platform/action-groups.md).
+Подробнее о [группах действий](../../azure-monitor/platform/action-groups.md)
 

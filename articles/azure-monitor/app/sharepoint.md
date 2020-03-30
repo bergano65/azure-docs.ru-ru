@@ -4,17 +4,17 @@ description: Начало мониторинга нового приложени
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.openlocfilehash: 395e8d667985318f4a084428c6fd4c395ee8b956
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77671449"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
 Azure Application Insights позволяет отслеживать доступность, производительность и использование приложений. В этой статье вы узнаете, как настроить эту службу для сайта SharePoint.
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
-На [портале Azure](https://portal.azure.com)создайте новый ресурс Application Insights. Выберите приложение ASP.NET в качестве типа приложения.
+На [портале Azure](https://portal.azure.com) создайте ресурс Application Insights. Выберите приложение ASP.NET в качестве типа приложения.
 
 ![Нажмите «Свойства», выберите ключ и нажмите сочетание клавиш CTRL + C](./media/sharepoint/001.png)
 
@@ -39,7 +39,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 </script>
 ```
 
-Вставьте сценарий непосредственно перед &lt;/ХЕАД&gt; тега каждой страницы, которую нужно отвести. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
+Вставьте сценарий &lt;прямо&gt; перед / голова теги каждой странице вы хотите отслеживать. Если ваш сайт имеет главную страницу, вы можете поместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
 
 Сценарий содержит ключ инструментирования, который направляет данные телеметрии к ресурсу Application Insights.
 
@@ -132,7 +132,7 @@ function onRequestFail(sender, args) {
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 * [Использование веб-тестов](../../azure-monitor/app/monitor-web-app-availability.md) для мониторинга доступности сайта.
 * [Использование Application Insights](../../azure-monitor/app/app-insights-overview.md) для других типов приложений.
 

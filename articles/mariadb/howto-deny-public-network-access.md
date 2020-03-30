@@ -1,21 +1,21 @@
 ---
-title: Запрет доступа к общедоступной сети — портал Azure — база данных Azure для MariaDB
-description: Узнайте, как настроить запрет доступа к общедоступной сети с помощью портал Azure для базы данных Azure для MariaDB.
+title: Отказ в доступе к общедоступной сети - Портал Azure - База данных Azure для MariaDB
+description: Узнайте, как настроить "Отказ в доступе к публичной сети" с помощью портала Azure для базы данных Azure для MariaDB
 author: kummanish
 ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.openlocfilehash: 87b6033e486e9009573436628d0183c8a022aced
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79375243"
 ---
-# <a name="deny-public-network-access-in-azure-database-for-mariadb-using-azure-portal"></a>Запрет доступа к общедоступной сети в базе данных Azure для MariaDB с помощью портал Azure
+# <a name="deny-public-network-access-in-azure-database-for-mariadb-using-azure-portal"></a>Запретить доступ к публичной сети в базе данных Azure для MariaDB с помощью портала Azure
 
-В этой статье описывается, как настроить сервер базы данных Azure для MariaDB для запрета всех общедоступных конфигураций и разрешить только подключения через частные конечные точки для дальнейшего повышения безопасности сети.
+В этой статье описывается, как можно настроить базу данных Azure для сервера MariaDB, чтобы отказать во всех общедоступных конфигурациях и разрешить только соединения через частные конечные точки для дальнейшего повышения безопасности сети.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,24 +23,24 @@ ms.locfileid: "79375243"
 
 * [База данных Azure для MariaDB](quickstart-create-MariaDB-server-database-using-azure-portal.md)
 
-## <a name="set-deny-public-network-access"></a>Установка запрета доступа к общедоступной сети
+## <a name="set-deny-public-network-access"></a>Установить Запретить доступ к публичной сети
 
-Выполните следующие действия, чтобы настроить MariaDB Server для запрета доступа к общедоступной сети.
+Выполните следующие действия, чтобы установить сервер MariaDB Deny Public Network Access:
 
-1. В [портал Azure](https://portal.azure.com/)выберите существующий сервер базы данных Azure для MariaDB.
+1. На [портале Azure](https://portal.azure.com/)выберите существующую базу данных Azure для сервера MariaDB.
 
-1. На странице сервер MariaDB в разделе **Параметры**щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
+1. На странице сервера MariaDB, под **настройками,** нажмите **безопасности соединения,** чтобы открыть страницу конфигурации безопасности соединения.
 
-1. В списке запретить доступ к общедоступной сети выберите **Да** , чтобы включить запрет общего доступа для сервера MariaDB.
+1. В отказе в доступе к публичной сети выберите **«Да»,** чтобы отказать в открытом доступе для вашего сервера MariaDB.
 
-    ![Служба "база данных Azure для MariaDB" запрещает доступ к сети](./media/howto-deny-public-network-access/deny-public-network-access.PNG)
+    ![База данных Azure для доступа к сети MariaDB Deny](./media/howto-deny-public-network-access/deny-public-network-access.PNG)
 
 1. Чтобы сохранить изменения, нажмите кнопку **Сохранить**.
 
-1. Уведомление подтверждает успешное включение параметра безопасности подключения.
+1. Уведомление подтвердит, что настройка безопасности соединения была успешно включена.
 
-    ![Служба "база данных Azure для MariaDB" запретила доступ к сети](./media/howto-deny-public-network-access/deny-public-network-access-success.png)
+    ![База данных Azure для успеха доступа к сети MariaDB Deny](./media/howto-deny-public-network-access/deny-public-network-access-success.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте [, как создавать оповещения по метрикам](howto-alert-metric.md).
+Узнайте о [том, как создавать оповещения по метрикам.](howto-alert-metric.md)

@@ -1,17 +1,17 @@
 ---
-title: Репликация данных — база данных Azure для MySQL
-description: Сведения об использовании репликации данных для синхронизации с внешнего сервера в службе "база данных Azure для MySQL".
+title: Репликация данных - База данных Azure для MyS'L
+description: Узнайте об использовании репликации данных для синхронизации с внешнего сервера в базу данных Azure для службы MyS'L.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 18c53a53a57b3ddca1168fc1075ae09bcd86f000
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.date: 3/18/2020
+ms.openlocfilehash: 20be34191355e6ade40e0f3b218818bfa5345a28
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77462502"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79533238"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -23,7 +23,7 @@ ms.locfileid: "77462502"
 - **Гибридная синхронизация данных.** С помощью репликации входных данных можно обеспечить синхронизацию данных между локальными серверами и базой данных Azure для MySQL. Эта синхронизация полезна при создании гибридных приложений. Этот метод удобен, если у вас есть локальный сервер базы данных, но вы хотите переместить данные в регион, который расположен ближе к пользователям.
 - **Многооблачная синхронизация.** Для сложных облачных решений репликацию входных данных можно использовать, чтобы синхронизировать данные между базой данных Azure для MySQL и различными облачными поставщиками, включая виртуальные машины и службы баз данных, размещенные в этих облаках.
  
-Для сценариев миграции используйте [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/)(DMS).
+Для сценариев миграции воспользуйтесь [миграционной службой Лазурных баз данных](https://azure.microsoft.com/services/database-migration/)(DMS).
 
 ## <a name="limitations-and-considerations"></a>Ограничения и рекомендации
 
@@ -36,16 +36,16 @@ ms.locfileid: "77462502"
 - Каждая таблица должна иметь первичный ключ.
 - Главный сервер должен использовать ядро MySQL InnoDB.
 - Пользователь должен иметь разрешения на настройку ведения двоичного журнала и создания новых пользователей на главном сервере.
-- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mysql/howto-data-in-replication#link-master-and-replica-servers-to-start-data-in-replication) и параметр `master_ssl_ca`.
+- Если на главном сервере включен SSL, убедитесь, что сертификат SSL CA, предусмотренный для домена, был включен в сохраненную `mysql.az_replication_change_master` процедуру. Обратитесь к следующим `master_ssl_ca` [примерам](https://docs.microsoft.com/azure/mysql/howto-data-in-replication#link-master-and-replica-servers-to-start-data-in-replication) и параметру.
 - Убедитесь, что IP-адрес главного сервера был добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MySQL. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli).
 - Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
-- Убедитесь, что главный сервер имеет общедоступный **IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
+- Убедитесь, что главный сервер имеет **общедоступный IP-адрес,** DNS является общедоступным или имеет полностью квалифицированное доменное имя (ФЗДН).
 
-### <a name="other"></a>Прочее
+### <a name="other"></a>Другие
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 
-## <a name="next-steps"></a>Следующие шаги
-- Узнайте, как [настроить репликацию входных данных](howto-data-in-replication.md).
+## <a name="next-steps"></a>Дальнейшие действия
+- Узнайте, как [настроить репликацию данных](howto-data-in-replication.md)
 - Дополнительные сведения см. в статье [Реплики чтения в базе данных Azure для MySQL](concepts-read-replicas.md).
-- Сведения о [переносе данных с минимальным временем простоя с помощью DMS](howto-migrate-online.md)
+- Узнайте о том, как [мигрировать данные с минимальным временем простоя с помощью DMS](howto-migrate-online.md)

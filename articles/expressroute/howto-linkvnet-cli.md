@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: связывание виртуальной сети с цепью: CLI'
+title: 'Azure ExpressRoute: Свяжите VNet с цепью: CLI'
 description: В этой статье показано, как связать виртуальные сети с каналами ExpressRoute с помощью модели развертывания Resource Manager и Azure CLI.
 services: expressroute
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: cherylmc
-ms.openlocfilehash: c80c667cb281168de6f11bbb6a536c01fefb7935
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: fdd809bcba703dbd8f9ee1e7c18185fd20e4586f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78206968"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79476140"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
 
@@ -21,9 +21,9 @@ ms.locfileid: "78206968"
 > [!div class="op_single_selector"]
 > * [Портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-linkvnet-arm.md)
-> * [Azure CLI](howto-linkvnet-cli.md)
-> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
-> * [PowerShell (классическая модель)](expressroute-howto-linkvnet-classic.md)
+> * [Лазурный CLI](howto-linkvnet-cli.md)
+> * [Видео - Портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
+> * [PowerShell (классический)](expressroute-howto-linkvnet-classic.md)
 > 
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
@@ -85,7 +85,7 @@ az network express-route auth create --circuit-name MyCircuit -g ExpressRouteRes
 
 Ответ содержит ключ и состояние разрешения.
 
-```azurecli
+```output
 "authorizationKey": "0a7f3020-541f-4b4b-844a-5fb43472e3d7",
 "authorizationUseStatus": "Available",
 "etag": "W/\"010353d4-8955-4984-807a-585c21a22ae0\"",
@@ -123,7 +123,7 @@ az network express-route auth delete --circuit-name MyCircuit -g ExpressRouteRes
 
 Пользователь канала должен получить идентификатор однорангового узла и ключ разрешения от владельца канала. Ключ разрешения представляет собой идентификатор GUID.
 
-```azurecli
+```powershell
 Get-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
 ```
 
@@ -150,23 +150,23 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 az network vpn-connection update --name ERConnection --resource-group ExpressRouteResourceGroup --routing-weight 100
 ```
 
-Диапазон значений *RoutingWeight*: 0 до 32 000. По умолчанию используется значение 0.
+Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
 
-## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
-Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если канал expressroute включен в [expressroute Direct](expressroute-erdirect-about.md) , а виртуальный шлюз сеть — Ultra Performance или ErGw3AZ. Фастпас улучшает предсоответствие пути к данным, например количество пакетов в секунду и количество подключений в секунду между локальной сетью и виртуальной сетью. 
+## <a name="configure-expressroute-fastpath"></a>Настройка ExpressRoute FastPath 
+Вы можете включить [ExpressRoute FastPath,](expressroute-about-virtual-network-gateways.md) если ваша схема ExpressRoute находится на [ExpressRoute Direct](expressroute-erdirect-about.md) и ваш виртуальный шлюз Newtork является Ultra Performance или ErGw3A. FastPath улучшает пресежку пути передачи данных, например, пакеты в секунду и соединения в секунду между вашей предварительной сетью и виртуальной сетью. 
 
-**Настройка Фастпас для нового подключения**
+**Настройка FastPath на новом подключении**
 
 ```azurecli
 az network vpn-connection create --name ERConnection --resource-group ExpressRouteResourceGroup --express-route-gateway-bypass true --vnet-gateway1 VNet1GW --express-route-circuit2 MyCircuit
 ```
 
-**Обновление существующего подключения для включения Фастпас**
+**Обновление существующего соединения для включения FastPath**
 
 ```azurecli
 az network vpn-connection update --name ERConnection --resource-group ExpressRouteResourceGroup --express-route-gateway-bypass true
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
+Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)

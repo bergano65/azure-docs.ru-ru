@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: 8a515f01bfa9f8ec579c51b806c997d79b629250
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77670327"
 ---
 # <a name="creating-charts-and-diagrams-from-azure-monitor-log-queries"></a>Создание диаграмм и схем из запросов журнала Azure Monitor
@@ -33,7 +33,7 @@ Heartbeat
 
 По умолчанию результаты отображаются в виде таблицы:
 
-![Table](media/charts/table-display.png)
+![Таблица](media/charts/table-display.png)
 
 Чтобы получить более полное представление, выберите **Диаграмма** и выберите параметр **Круговая**, чтобы отображать результаты:
 
@@ -50,7 +50,7 @@ Perf
 | summarize avg(CounterValue), percentiles(CounterValue, 50, 95)  by bin(TimeGenerated, 1h)
 ```
 
-Выберите вариант отображения диаграммы **Линейная**.
+Выберите опцию отображения **диаграммы Line:**
 
 ![График](media/charts/charts-and-diagrams-multiSeries.png)
 
@@ -85,13 +85,13 @@ SecurityEvent
 
 ![Гистограмма AccountType](media/charts/charts-and-diagrams-multiDimension2.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)
-- [Статистические функции в запросах Log Analytics](aggregations.md)
+- [Функции агрегирования](aggregations.md)
 - [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
 - [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Joins](joins.md)
+- [Соединения](joins.md)

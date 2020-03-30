@@ -1,32 +1,32 @@
 ---
-title: Управление репликами чтения — Azure CLI, REST API — база данных Azure для MariaDB
+title: Управление репликами чтения - Azure CLI, REST API - База данных Azure для MariaDB
 description: В этой статье описывается, как настроить и управлять репликами чтения в базе данных Azure для MariaDB с помощью Azure CLI и REST API.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: e9353bb5d472cc8dc798e7e09aed2183e48124ed
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: abf80e98881b73bed53c5a939a79bc8b3a9de2db
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74765840"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79530586"
 ---
-# <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-cli-and-rest-api"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью Azure CLI и REST API
+# <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-cli-and-rest-api"></a>Как создавать и управлять считывательными репликами в базе данных Azure для MariaDB с помощью Azure CLI и REST API
 
-В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MariaDB" с помощью Azure CLI и REST API.
+В этой статье вы узнаете, как создавать и управлять считывательными репликами в базе данных Azure для службы MariaDB с помощью Azure CLI и REST API.
 
-## <a name="azure-cli"></a>Azure CLI
-Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
+## <a name="azure-cli"></a>Azure CLI
+Вы можете создавать и управлять считываемыми репликами с помощью ClI Azure.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-- [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md) , который будет использоваться в качестве главного сервера. 
+- [База данных Azure для сервера MariaDB,](quickstart-create-mariadb-server-database-using-azure-portal.md) которая будет использоваться в качестве главного сервера. 
 
 > [!IMPORTANT]
-> Функция чтения реплики доступна только для серверов базы данных Azure для MariaDB в общего назначения или ценовой категории, оптимизированные для памяти. Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
+> Функция считывателя реплики доступна только для базы данных Azure для серверов MariaDB на уровнях общего назначения или оптимизации цен на память. Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
 
 ### <a name="create-a-read-replica"></a>Создание реплики чтения
 
@@ -44,19 +44,19 @@ az mariadb server replica create --name mydemoreplicaserver --source-server myde
 | name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или идентификатор имеющегося главного сервера для репликации. |
 
-Чтобы создать реплику чтения между регионами, используйте параметр `--location`. 
+Для создания реплики чтения поперечного региона используйте `--location` параметр. 
 
 > [!NOTE]
-> Межрегионовая репликация доступна в предварительной версии.
+> Репликация кросс-региона находится в предварительном просмотре.
 
-Приведенный ниже пример интерфейса командной строки создает реплику в западной части США.
+Пример CLI ниже создает реплику в Западной США.
 
 ```azurecli-interactive
 az mariadb server replica create --name mydemoreplicaserver --source-server mydemoserver --resource-group myresourcegroup --location westus
 ```
 
 > [!NOTE]
-> Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
+> Чтобы узнать больше о том, в каких регионах можно создать копию, посетите [статью о концепциях ремиссий.](concepts-read-replicas.md) 
 
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Чтобы сервер-реплика мог работать с главным сервером, рекомендуется, чтобы значения конфигурации сервера-реплики были равны или превосходили значения конфигурации главного сервера.
@@ -96,7 +96,7 @@ az mariadb server replica stop --name mydemoreplicaserver --resource-group myres
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
-Для удаления сервера реплики чтения можно выполнить команду **[AZ MariaDB Server DELETE](/cli/azure/mariadb/server)** .
+Удаление сервера считываемых реплик может быть сделано путем запуска команды **[удаления сервера az mariadb.](/cli/azure/mariadb/server)**
 
 ```azurecli-interactive
 az mariadb server delete --resource-group myresourcegroup --name mydemoreplicaserver
@@ -107,17 +107,17 @@ az mariadb server delete --resource-group myresourcegroup --name mydemoreplicase
 > [!IMPORTANT]
 > Удаление главного сервера приводит к остановке репликации на все серверы-реплики и удалению самого главного сервера. Серверы-реплики становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
-Чтобы удалить главный сервер, можно выполнить команду **[AZ MariaDB Server DELETE](/cli/azure/mariadb/server)** .
+Чтобы удалить основной сервер, можно запустить команду **[удаления сервера az mariadb.](/cli/azure/mariadb/server)**
 
 ```azurecli-interactive
 az mariadb server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
-## <a name="rest-api"></a>REST API
-Вы можете создавать реплики чтения и управлять ими с помощью [REST API Azure](/rest/api/azure/).
+## <a name="rest-api"></a>REST API
+Вы можете создавать и управлять считываемыми репликами с помощью [API Azure REST.](/rest/api/azure/)
 
 ### <a name="create-a-read-replica"></a>Создание реплики чтения
-Вы можете создать реплику чтения с помощью [API создания](/rest/api/mariadb/servers/create):
+Вы можете создать реплику чтения с помощью [API создания:](/rest/api/mariadb/servers/create)
 
 ```http
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{replicaName}?api-version=2017-12-01
@@ -134,25 +134,25 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 ```
 
 > [!NOTE]
-> Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
+> Чтобы узнать больше о том, в каких регионах можно создать копию, посетите [статью о концепциях ремиссий.](concepts-read-replicas.md) 
 
-Если вы не установили параметр `azure.replication_support` для **реплики** на общего назначения или на главном сервере, оптимизированном для памяти, и перезапустили сервер, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
+Если вы не установили `azure.replication_support` параметр **REPLICA** на главном сервере общей цели или памяти, оптимизированный и перезапустили сервер, вы получите ошибку. Выполните эти два шага перед созданием реплики.
 
-Реплика создается с использованием тех же параметров вычислений и хранилища, что и у главного сервера. После создания реплики вы можете независимо от главного сервера изменять следующие ее параметры: поколение вычислительных ресурсов, число виртуальных ядер, объем хранилища и период хранения резервных копий. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
+Реплика создается с помощью тех же параметров вычислений и хранения, что и мастер. После создания реплики вы можете независимо от главного сервера изменять следующие ее параметры: поколение вычислительных ресурсов, число виртуальных ядер, объем хранилища и период хранения резервных копий. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
 
 
 > [!IMPORTANT]
-> Перед обновлением параметра главного сервера до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
+> Перед обновлением настройки сервера до нового значения обновите настройку реплики до равного или большего значения. Это действие помогает реплике идти в ногу с любыми изменениями, внесенными в мастер.
 
 ### <a name="list-replicas"></a>Список реплик
-Список реплик главного сервера можно просмотреть с помощью [API списка реплик](/rest/api/mariadb/replicas/listbyserver).
+Вы можете просмотреть список реплик главного сервера с помощью [API списка реплик:](/rest/api/mariadb/replicas/listbyserver)
 
 ```http
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{masterServerName}/Replicas?api-version=2017-12-01
 ```
 
 ### <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
-Репликацию между главным сервером и репликой чтения можно отключить с помощью [API обновления](/rest/api/mariadb/servers/update).
+Можно остановить репликацию между мастер-сервером и репликой чтения с помощью [API обновления.](/rest/api/mariadb/servers/update)
 
 Остановленную репликацию отменить невозможно. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
 
@@ -168,8 +168,8 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 }
 ```
 
-### <a name="delete-a-master-or-replica-server"></a>Удаление главного или сервер-реплики
-Для удаления главного или сервер-реплики используется [API удаления](/rest/api/mariadb/servers/delete).
+### <a name="delete-a-master-or-replica-server"></a>Удаление сервера мастер или реплики
+Чтобы удалить сервер master или replica, вы используете [API удаления:](/rest/api/mariadb/servers/delete)
 
 При удалении главного сервера репликация всех реплик чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 

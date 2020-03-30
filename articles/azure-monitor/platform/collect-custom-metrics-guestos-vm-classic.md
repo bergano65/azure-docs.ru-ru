@@ -1,5 +1,5 @@
 ---
-title: Отправка метрик виртуальной машины классической системы Windows в базу данных метрик Azure Monitor
+title: Отправка классических метрик Windows VM в базу данных метрик Azure Monitor
 description: Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
 author: anirudhcavale
 services: azure-monitor
@@ -8,19 +8,19 @@ ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: ''
 ms.openlocfilehash: 65bb1a3915ece384974da12b4e7a1ad0c1e08133
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77655824"
 ---
-# <a name="send-guest-os-metrics-to-the-azure-monitor-metrics-database-for-a-windows-virtual-machine-classic"></a>Отправка метрик гостевой ОС в базу данных метрик Azure Monitor для виртуальной машины Windows (классическая модель)
+# <a name="send-guest-os-metrics-to-the-azure-monitor-metrics-database-for-a-windows-virtual-machine-classic"></a>Отправка метрик Гостевой ОС в базу данных метрик Azure Monitor для виртуальной машины Windows (классическая)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [Расширение диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) Azure Monitor (также известное как WAD или "Диагностика") позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей на виртуальной машине, в облачной службе или в кластере Service Fabric. Это расширение может отправлять данные телеметрии во [множество различных расположений](https://docs.microsoft.com/azure/monitoring/monitoring-data-collection?toc=/azure/azure-monitor/toc.json).
 
-В этой статье описывается процесс отправки метрик производительности гостевой ОС для виртуальной машины Windows (классической) в базу данных метрик Azure Monitor. Начиная с версии 1.11 расширение диагностики позволяет записывать метрики напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы. 
+В этой статье описывается процесс отправки метрик производительности гостевой ОС для виртуальной машины Windows (классический) в метрическую базу данных Azure Monitor. Начиная с версии 1.11 расширение диагностики позволяет записывать метрики напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы. 
 
 Хранение их в этом расположении позволяет получить доступ к тем же действиям, которые доступны для метрик платформы. К этим действиям относятся оповещения практически в реальном времени, построение диаграмм, маршрутизация, доступ из REST API и многое другое. Ранее расширение диагностики записывало данные в службу хранилища Azure, а не в хранилище данных Azure Monitor. 
 
@@ -30,11 +30,11 @@ ms.locfileid: "77655824"
 
 - Вам необходимы права [администратора службы или соадминистратора](../../cost-management-billing/manage/add-change-subscription-administrator.md) в подписке Azure. 
 
-- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Ваша подписка должна быть зарегистрирована в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-- Ресурс виртуальной машины должен находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions).
+- Ваш ресурс VM должен находиться в [регионе, поддерживающем пользовательские метрики.](metrics-custom-overview.md#supported-regions)
 
 ## <a name="create-a-classic-virtual-machine-and-storage-account"></a>Создание классической виртуальной машины и учетной записи хранения
 
@@ -188,7 +188,7 @@ ms.locfileid: "77655824"
 
 1.  Перейдите на портал Azure. 
 
-1.  В меню слева выберите **Монитор**.
+1.  В левом меню выберите **Monitor.**
 
 1.  В колонке **Монитор** выберите **Метрики**.
 
@@ -196,12 +196,12 @@ ms.locfileid: "77655824"
 
 1. В раскрывающемся меню ресурсов выберите требуемую классическую виртуальную машину.
 
-1. В раскрывающемся меню пространств имен выберите **azure.vm.windows.guest**.
+1. В меню выпадающих зон имен выберите **azure.vm.windows.guest**.
 
-1. В раскрывающемся списке метрик выберите **Использование выделенной памяти (в байтах)** .
+1. В меню выпадения метрик выберите **Байты памяти**в использовании.
    ![График метрик](./media/collect-custom-metrics-guestos-vm-classic/plot-metrics.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

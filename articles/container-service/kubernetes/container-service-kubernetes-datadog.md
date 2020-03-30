@@ -8,10 +8,10 @@ ms.date: 12/09/2016
 ms.author: bburns
 ms.custom: mvc
 ms.openlocfilehash: 1f3f70c30ab397bd549a2f3305a738274ee4f64f
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79371177"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-cluster-with-datadog"></a>(УСТАРЕЛО) Мониторинг кластера Службы контейнеров Azure с помощью DataDog
@@ -52,7 +52,7 @@ Datadog представляет собой службу мониторинга,
 Kubernetes использует наборы DaemonSet для выполнения отдельного экземпляра контейнера на каждом узле в кластере.
 Они идеально подходят для выполнения агентов мониторинга.
 
-После входа в DataDog можно следовать [инструкциям к DataDog](https://app.datadoghq.com/account/settings#agent/kubernetes), чтобы установить на кластер агенты DataDog с помощью DaemonSet.
+После входа в Datadog вы можете следовать [инструкциям Datadog](https://app.datadoghq.com/account/settings#agent/kubernetes) для установки агентов Datadog в кластере с помощью DaemonSet.
 
 ## <a name="conclusion"></a>Заключение
 Вот и все! Через несколько минут после того, как агенты будут запущены и начнут работать, вы увидите данные в консоли. Вы можете посетить интегрированную [панель мониторинга Kubernetes](https://app.datadoghq.com/screen/integration/kubernetes), чтобы просмотреть сводку по кластеру.

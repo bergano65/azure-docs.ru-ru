@@ -1,6 +1,6 @@
 ---
-title: Отправка метрик классических облачных служб в базу данных метрик Azure Monitor
-description: Описание процесса отправки метрик производительности гостевой ОС для классических облачных служб Azure в хранилище метрик Azure Monitor.
+title: Отправка классических метрик облачных служб в базу данных метрик Azure Monitor
+description: Описывает процесс отправки показателей производительности гостевой ОС для классических облачных служб Azure в метрический магазин Azure Monitor.
 author: anirudhcavale
 services: azure-monitor
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: 3b390ffa20cf3cf79b8fb6311ad05b2978bd5d24
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77655806"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-classic-cloud-services"></a>Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для классических облачных служб 
@@ -30,11 +30,11 @@ ms.locfileid: "77655806"
 
 - Вам необходимы права [администратора службы или соадминистратора](../../cost-management-billing/manage/add-change-subscription-administrator.md) в подписке Azure. 
 
-- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Ваша подписка должна быть зарегистрирована в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-- Облачная служба должна находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions).
+- Облачный сервис должен находиться в [регионе, поддерживающем пользовательские метрики.](metrics-custom-overview.md#supported-regions)
 
 ## <a name="provision-a-cloud-service-and-storage-account"></a>Подготовка облачной службы и учетной записи хранения 
 
@@ -175,21 +175,21 @@ Set-AzureServiceDiagnosticsExtension -ServiceName <classicCloudServiceName> -Sto
 
    ![Метрики портала Azure](./media/collect-custom-metrics-guestos-vm-cloud-service-classic/navigate-metrics.png)
 
-2. В меню слева выберите **Монитор**.
+2. В левом меню выберите **Monitor.**
 
 3. В колонке **Монитор** выберите вкладку **Metrics Preview** (Предварительный просмотр метрик).
 
 4. В раскрывающемся меню ресурсов выберите требуемую классическую облачную службу.
 
-5. В раскрывающемся меню пространств имен выберите **azure.vm.windows.guest**. 
+5. В меню выпадающих зон имен выберите **azure.vm.windows.guest**. 
 
-6. В раскрывающемся списке метрик выберите **Использование выделенной памяти (в байтах)** . 
+6. В меню выпадения метрик выберите **Байты памяти**в использовании. 
 
 Можно использовать функции фильтрации и разделения по измерениям, чтобы просмотреть общий объем памяти, используемой определенной ролью или экземпляром роли. 
 
  ![Метрики портала Azure](./media/collect-custom-metrics-guestos-vm-cloud-service-classic/metrics-graph.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 
