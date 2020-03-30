@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 96c496ef67e26a3079577bf52e9d019d963467b8
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79265536"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-net-sdk"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
 > [!div class="op_single_selector"]
-> * [С использованием Java](data-lake-store-service-to-service-authenticate-java.md)
+> * [Использование Java](data-lake-store-service-to-service-authenticate-java.md)
 > * [Использование пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-service-to-service-authenticate-python.md)
 > * [Использование REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
@@ -29,29 +29,29 @@ ms.locfileid: "79265536"
 
 В этой статье описывается, как использовать пакет SDK для .NET для аутентификации между службами в Azure Data Lake Storage 1-го поколения. Дополнительные сведения об аутентификации пользователей в Azure Data Lake Storage 1-го поколения с помощью пакета SDK для .NET см. в статье [Аутентификация пользователя в Azure Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md).
 
-## <a name="prerequisites"></a>предварительные требования
-* **Visual Studio 2013 или более поздней версии**. В приведенных ниже инструкциях используется Visual Studio 2019.
+## <a name="prerequisites"></a>Предварительные требования
+* **Визуальная студия 2013 или выше**. Ниже приведены инструкции Visual Studio 2019.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 * **Создайте веб-приложение Azure Active Directory**. Вам нужно выполнить инструкции по [аутентификации между службами в Data Lake Storage 1-го поколения с помощью Azure Active Directory](data-lake-store-service-to-service-authenticate-using-active-directory.md).
 
 ## <a name="create-a-net-application"></a>Создание приложения .NET
-1. В Visual Studio выберите меню **файл** , **создать**, а затем **проект**.
-2. Выберите **консольное приложение (.NET Framework)** , а затем нажмите кнопку **Далее**.
+1. В Visual Studio выберите меню **файла,** **Новое**, а затем **проект**.
+2. Выберите **консоль App (.NET Framework),** а затем выберите **Следующий**.
 3. В окне**Имя проекта** введите `CreateADLApplication`, а затем выберите **Создать**.
 
 4. Добавьте пакеты NuGet в проект.
 
    1. В обозревателе решений щелкните правой кнопкой мыши имя проекта и выберите пункт **Управление пакетами NuGet**.
-   2. На вкладке **Диспетчер пакетов NuGet** в поле **Источник пакета** выберите **nuget.org** и установите флажок **Включить предварительные выпуски**.
+   2. Во вкладке **NuGet Package Manager** убедитесь, что **источник пакета** настроен на **nuget.org** и что включает флажок **для предварительного выпуска.**
    3. Найдите и установите следующие пакеты NuGet:
 
       * `Microsoft.Azure.Management.DataLake.Store`. В этом руководстве используется предварительная версия 2.1.3.
       * `Microsoft.Rest.ClientRuntime.Azure.Authentication`. В этом руководстве используется версия 2.2.12.
 
         ![Добавление источника NuGet](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Создание новой учетной записи Azure Data Lake")
-   4. Закройте **диспетчер пакетов NuGet**.
+   4. Закройте **менеджер пакета NuGet.**
 
 5. Откройте файл **Program.cs**, удалите существующий код и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
 

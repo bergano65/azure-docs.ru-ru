@@ -1,6 +1,6 @@
 ---
-title: Использование средств пакета SDK для службы подготовки устройств для центра Интернета вещей Azure
-description: В этом документе рассматриваются средства, предоставляемые пакетами SDK службы подготовки устройств для центра Интернета вещей Azure (DPS) для разработки.
+title: Используйте инструменты SDK службы sD-услуг службы предоставления устройств для устройств Azure IoT
+description: В этом документе рассматриваются инструменты, предоставляемые в SDK-сервисе для разработки устройств Azure IoT Hub
 author: robinsh
 ms.author: robinsh
 ms.date: 04/09/2018
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: b817b3cfe47ed08cae9e7e0b1c2c24363f2ccfed
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79271529"
 ---
 # <a name="how-to-use-tools-provided-in-the-sdks-to-simplify-development-for-provisioning"></a>Упрощение разработки для процесса подготовки с использованием инструментов, предоставляемых в пакетах SDK

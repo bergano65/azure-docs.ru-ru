@@ -9,19 +9,19 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/14/2020
 ms.openlocfilehash: 419a71acbca59c00bd0ffecf39d5d1ff38833b08
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79284594"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Понимание и использование пакетов SDK для Центра Интернета вещей Azure
 
 Есть две категории пакетов средств разработки (SDK) для работы с Центром Интернета вещей:
 
-* **Пакеты SDK для устройств Центра Интернета вещей** позволяют создавать приложения, работающие на ваших устройствах Интернета вещей, используя клиент устройства или клиент модуля. Эти приложения отправляют данные телеметрии в центр Интернета вещей и при необходимости получают из него сообщения, задания, методы или обновления двойников.  Вы также можете использовать клиент модуля для создания [модулей](../iot-edge/iot-edge-modules.md) для [среды выполнения Azure IoT Edge](../iot-edge/about-iot-edge.md).
+* **SDK-устройства IoT Hub позволяют** создавать приложения, которые работают на устройствах IoT с помощью клиента устройства или модуля. Эти приложения отправляют данные телеметрии в центр Интернета вещей и при необходимости получают из него сообщения, задания, методы или обновления двойников.  Вы также можете использовать клиент модуля для создания [модулей](../iot-edge/iot-edge-modules.md) для [среды выполнения Azure IoT Edge](../iot-edge/about-iot-edge.md).
 
-* **Пакеты SDK для служб Центра Интернета вещей** дают возможность создавать серверные приложения, чтобы управлять Центром Интернета вещей, а также отправлять сообщения, планировать задания, вызывать прямые методы и отправлять обновления необходимых свойств на устройствах Интернета вещей или модулях.
+* **SDK-службы концентратора IoT** позволяют создавать бэкэнд-приложения для управления концентратором IoT и дополнительно отправлять сообщения, планировать задания, вызывать прямые методы или отправлять желаемые обновления свойств на ваши устройства или модули.
 
 Кроме того, мы также предоставляем набор пакетов SDK для работы с [Службой подготовки устройств](../iot-dps/about-iot-dps.md).
 * **Пакеты SDK для устройств подготовки к работе** позволяют создавать приложения, которые запускаются на устройствах Интернета вещей, для связи со службой подготовки устройств.
@@ -37,7 +37,7 @@ ms.locfileid: "79284594"
 
 Поддерживаемые платформы для пакетов SDK можно найти в [Поддержка платформ пакетов SDK для устройств Azure IoT](iot-hub-device-sdk-platform-support.md).
 
-Дополнительные сведения о совместимости пакета SDK с определенными устройствами см. в [каталоге устройств, сертифицированных по программе Microsoft Azure Certified for IoT](https://catalog.azureiotsolutions.com/), или в описании для конкретного репозитория.
+Дополнительные сведения о совместимости пакета SDK с определенными устройствами см. в [каталоге устройств, сертифицированных по программе Microsoft Azure Certified for IoT](https://catalog.azureiotsolutions.com/) или в описании для конкретного репозитория.
 
 ## <a name="azure-iot-hub-device-sdks"></a>Пакеты SDK для устройств Центра Интернета вещей Azure
 
@@ -45,41 +45,41 @@ ms.locfileid: "79284594"
 
 Пакет SDK для устройств Azure IoT для .NET: 
 
-* Скачивание из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/).  Пространство имен — это Microsoft.Azure.Devices.Clients, который содержит клиенты устройств Центра Интернета вещей (DeviceClient, ModuleClient).
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-csharp).
-* [Справочник по API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices?view=azure-dotnet)
+* Скачать из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/).  Пространство имен — это Microsoft.Azure.Devices.Clients, который содержит клиенты устройств Центра Интернета вещей (DeviceClient, ModuleClient).
+* [исходный код](https://github.com/Azure/azure-iot-sdk-csharp).
+* [Ссылка на API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices?view=azure-dotnet)
 * [Справочник по модулям](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet).
 
 Пакет SDK для устройств Центра Интернета вещей Azure для C (ANSI C-C99):
 
 * Установка из [apt-get, MBED, Arduino IDE или iOS](https://github.com/Azure/azure-iot-sdk-c/blob/master/readme.md#packages-and-libraries)
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-c).
+* [исходный код](https://github.com/Azure/azure-iot-sdk-c).
 * [Компиляция пакета SDK для устройств C](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/readme.md#compiling-the-c-device-sdk).
-* [Справочник по API](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
+* [Ссылка на API](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 * [Справочник по модулям](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h).
 * [Перенос пакета SDK C для других платформ](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)
 * [Документация для разработчиков](https://github.com/Azure/azure-iot-sdk-c/tree/master/doc) содержит сведения о кроссплатформенной компиляции, начале работы на различных платформах и т. д.
-* [Сведения о потреблении ресурсов пакета SDK для центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/c_sdk_resource_information.md)
+* [Информация о потреблении ресурсов Azure IoT Hub C SDK](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/c_sdk_resource_information.md)
 
 Пакет SDK для устройств Azure IoT для Java: 
 
 * добавление в проект [Maven](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md#for-the-device-sdk);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-java).
-* [Справочник по API](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-java).
+* [Ссылка на API](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device)
 * [Справочник по модулям](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable).
 
 Пакет SDK для устройств Azure IoT для Node.js: 
 
 * установка из [npm](https://www.npmjs.com/package/azure-iot-device);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-node).
-* [Справочник по API](https://docs.microsoft.com/javascript/api/azure-iot-device/?view=azure-iot-typescript-latest)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-node).
+* [Ссылка на API](https://docs.microsoft.com/javascript/api/azure-iot-device/?view=azure-iot-typescript-latest)
 * [Справочник по модулям](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
 Пакет SDK для устройств Azure IoT для Python: 
 
 * установка из [pip](https://pypi.org/project/azure-iot-device/);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-python).
-* [Справочник по API](https://docs.microsoft.com/python/api/azure-iot-device)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-python).
+* [Ссылка на API](https://docs.microsoft.com/python/api/azure-iot-device)
 
 Пакет SDK для устройств Центра Интернета вещей для iOS: 
 
@@ -93,31 +93,31 @@ ms.locfileid: "79284594"
 
 Пакет SDK для службы Центра Интернета вещей для .NET:
 
-* Скачивание из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices/).  Пространство имен — это Microsoft.Azure.Devices, который содержит клиенты службы центра Интернета вещей (RegistryManager, ServiceClients).
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-csharp).
-* [Справочник по API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices)
+* Скачать из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices/).  Пространство имен — это Microsoft.Azure.Devices, который содержит клиенты службы центра Интернета вещей (RegistryManager, ServiceClients).
+* [исходный код](https://github.com/Azure/azure-iot-sdk-csharp).
+* [Ссылка на API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices)
 
 Пакет SDK для службы Центра Интернета вещей для Java: 
 
 * добавление в проект [Maven](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md#for-the-service-sdk);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-java).
-* [Справочник по API](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.service)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-java).
+* [Ссылка на API](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.service)
 
 Пакет SDK для службы Центра Интернета вещей для Node.js: 
 
 * скачивание из [npm](https://www.npmjs.com/package/azure-iothub);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-node).
-* [Справочник по API](https://docs.microsoft.com/javascript/api/azure-iothub/?view=azure-iot-typescript-latest)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-node).
+* [Ссылка на API](https://docs.microsoft.com/javascript/api/azure-iothub/?view=azure-iot-typescript-latest)
 
 Пакет SDK для службы Центра Интернета вещей для Пакет SDK для Python: 
 
 * скачивание из [pip](https://pypi.python.org/pypi/azure-iot-hub/);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-python/tree/master).
+* [исходный код](https://github.com/Azure/azure-iot-sdk-python/tree/master).
 
 Пакет SDK для службы Центра Интернета вещей для C: 
 
-* скачивание из [apt-get, MBED, Arduino IDE или Nuget](https://github.com/Azure/azure-iot-sdk-c/blob/master/readme.md);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-c).
+* скачивание с помощью [apt-get, MBED, Arduino IDE или Nuget](https://github.com/Azure/azure-iot-sdk-c/blob/master/readme.md);
+* [исходный код](https://github.com/Azure/azure-iot-sdk-c).
 
 Пакет SDK для служб Центра Интернета вещей для iOS: 
 
@@ -134,37 +134,37 @@ ms.locfileid: "79284594"
 Устройство подготовки Azure и пакеты SDK службы для C#:
 
 * Скачивание из [пакета SDK для устройств](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Client/) и [пакета SDK службы](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Service/) из NuGet.
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-csharp/).
-* [Справочник по API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.provisioning.client?view=azure-dotnet)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-csharp/).
+* [Ссылка на API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.provisioning.client?view=azure-dotnet)
 
 Устройство подготовки Azure и пакеты SDK службы для C:
 
 * Установка из [apt-get, MBED, Arduino IDE или iOS](https://github.com/Azure/azure-iot-sdk-c/blob/master/readme.md#packages-and-libraries)
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client).
-* [Справочник по API](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client).
+* [Ссылка на API](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 
 Устройство подготовки Azure и пакеты SDK службы для Java:
 
 * добавление в проект [Maven](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md#for-the-service-sdk);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-java/blob/master/provisioning).
-* [Справочник по API](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.provisioning.device?view=azure-java-stable)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-java/blob/master/provisioning).
+* [Ссылка на API](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.provisioning.device?view=azure-java-stable)
 
 Устройство подготовки Azure и пакеты SDK службы для Node.js:
 
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-node/tree/master/provisioning).
-* [Справочник по API](https://docs.microsoft.com/javascript/api/overview/azure/iothubdeviceprovisioning?view=azure-node-latest)
+* [исходный код](https://github.com/Azure/azure-iot-sdk-node/tree/master/provisioning).
+* [Ссылка на API](https://docs.microsoft.com/javascript/api/overview/azure/iothubdeviceprovisioning?view=azure-node-latest)
 * Скачивание [пакета SDK для устройств](https://badge.fury.io/js/azure-iot-provisioning-device) и [пакета SDK службы](https://badge.fury.io/js/azure-iot-provisioning-service) из npm
 
 Устройство подготовки Azure и пакеты SDK службы для Python:
 
-* [Исходный код](https://github.com/Azure/azure-iot-device).
+* [исходный код](https://github.com/Azure/azure-iot-device).
 * Скачивание [пакета SDK для устройств](https://pypi.org/project/azure-iot-device/) и [пакета SDK службы](https://pypi.org/project/azure-iothub-provisioningserviceclient/) из pip
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Пакеты SDK для Azure IoT также предоставляют набор инструментов для разработки:
 * [iothub-diagnostics](https://github.com/Azure/iothub-diagnostics) — средство кроссплатформенной командной строки для диагностирования проблем, связанных с подключением к Центру Интернета вещей;
-* [Azure-IOT-Explorer](https://github.com/Azure/azure-iot-explorer): многоплатформенное классическое приложение для подключения к центру Интернета вещей и добавления устройств Интернета вещей, управления ими и обмена данными с ними.
+* [azure-iot-explorer:](https://github.com/Azure/azure-iot-explorer)кросс-платформенное настольное приложение для подключения к вашему концентратору IoT и добавления/управления/связи с устройствами IoT.
 
 Соответствующие документы, относящиеся к разработке с помощью пакетов SDK для Azure IoT.
 * Дополнительные сведения о том, как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK центра Интернета вещей, см. в [этой статье](iot-hub-reliability-features-in-sdks.md).
@@ -174,8 +174,8 @@ ms.locfileid: "79284594"
 
 Другие справочные статьи в руководстве разработчика для Центра Интернета вещей:
 
-* [Конечные точки Центра Интернета вещей](iot-hub-devguide-endpoints.md)
-* [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md)
-* [Квоты и регулирование](iot-hub-devguide-quotas-throttling.md)
-* [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md)
+* [IoT Hub endpoints](iot-hub-devguide-endpoints.md) (Конечные точки Центра Интернета вещей)
+* [Язык запросов Центра Интернета вещей для двойников устройств, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md)
+* [Quotas and throttling](iot-hub-devguide-quotas-throttling.md) (Квоты и регулирование)
+* [Поддержка MQTT в Центре Интернета вещей](iot-hub-mqtt-support.md)
 * [Справочник по REST API Центра Интернета вещей](/rest/api/iothub/)

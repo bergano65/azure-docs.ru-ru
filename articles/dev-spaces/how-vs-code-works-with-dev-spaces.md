@@ -1,59 +1,59 @@
 ---
-title: Как Visual Studio Code работает с Azure Dev Spaces
+title: Как визуальный код студии работает с пространствами Azure Dev
 services: azure-dev-spaces
 ms.date: 07/08/2019
 ms.topic: conceptual
-description: Узнайте, как Visual Studio Code и Azure Dev Spaces помочь в отладке и быстром переборе Kubernetes приложений.
-keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры
-ms.openlocfilehash: b6ab1330399ab2eb7afc9be61a7767a22ca82320
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+description: Узнайте, как Visual Studio Code и Пространства Azure Dev помогут вам отладить и быстро итерировать приложения Kubernetes
+keywords: Пространства Azure Dev, Dev Spaces, Докер, Кубернетес, Лазурный берег, AKS, служба Azure Kubernetes, контейнеры
+ms.openlocfilehash: 91440e59fdb8c21579ef1f04e78e66f933221ba0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78942487"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80240448"
 ---
-# <a name="how-visual-studio-code-works-with-azure-dev-spaces"></a>Как Visual Studio Code работает с Azure Dev Spaces
+# <a name="how-visual-studio-code-works-with-azure-dev-spaces"></a>Как визуальный код студии работает с пространствами Azure Dev
 
-Вы можете использовать Visual Studio Code и [расширение Azure dev Spaces][azds-extension] для подготовки, запуска и отладки служб с помощью Azure dev Spaces. С помощью Visual Studio Code и расширения Azure Dev Spaces можно:
+Для подготовки, запуска и отладки служб с помощью Azure Dev Spaces можно использовать Visual Studio Code и [расширение Azure Dev Spaces.][azds-extension] С помощью Visual Studio Code и расширения Azure Dev Spaces вы можете:
 
-* Создание ресурсов для запуска и отладки служб в AKS
-* Запуск служб Java, Node. js и .NET Core в пространстве разработки
-* Непосредственная отладка служб Java, Node. js и .NET Core, работающих в пространстве разработки
+* Создание активов для работы и отладки служб в AKS
+* Запустите службы Java, Node.js и .NET Core в пространстве разработчиков
+* Непосредственно отладить Java, Node.js и .NET Основные службы, работающие в пространстве разработчиков
 
-## <a name="generate-assets"></a>Создание ресурсов
+## <a name="generate-assets"></a>Создание активов
 
-Visual Studio Code и расширение Azure Dev Spaces создают следующие ресурсы для проекта:
+Visual Studio Code и расширение Azure Dev Spaces создают следующие ресурсы для вашего проекта:
 
-* Файлы dockerfile для приложений Java с помощью Maven, приложений Node. js и приложений .NET Core
-* Helm диаграммы для практически любого языка с помощью Dockerfile
-* Файл `azds.yaml`, который является [файлом конфигурации Azure dev Spaces][azds-yaml] для проекта
-* `.vscode`ая папка с конфигурацией Visual Studio Code запуска проекта для приложений Java с помощью Maven, приложений Node. js и приложений .NET Core.
+* Dockerfiles для Java-приложений с использованием приложений Maven, Node.js и .NET Core
+* Диаграммы руля для почти любого языка с Dockerfile
+* Файл, `azds.yaml` который является [файлом конфигурации Azure Dev Spaces][azds-yaml] для вашего проекта
+* Папка `.vscode` с конфигурацией Visual Studio Code для Java-приложений с использованием приложений Maven, Node.js и .NET Core
 
-Dockerfile, Helm диаграмма и файлы `azds.yaml` — это те же ресурсы, которые создаются при запуске `azds prep`. Эти файлы можно также использовать вне Visual Studio Code для запуска проекта в AKS, например запуска `azds up`. Папка `.vscode` используется только Visual Studio Code для запуска проекта в AKS из Visual Studio Code.
+Диаграмма Dockerfile, Helm `azds.yaml` и файлы — `azds prep`это те же активы, генерируемые при запуске. Эти файлы также могут быть использованы за пределами кода Visual `azds up`Studio для запуска проекта в AKS, например, для выполнения. Папка `.vscode` используется только visual Studio код для запуска проекта в AKS от Visual Studio Code.
 
-## <a name="run-your-service-in-aks"></a>Запуск службы в AKS
+## <a name="run-your-service-in-aks"></a>Запустите свой сервис в AKS
 
-После создания ресурсов для проекта можно запустить службы Java, Node. js и .NET Core в существующем пространстве разработки из Visual Studio Code. На странице *отладка* Visual Studio Code можно вызвать конфигурацию запуска из каталога `.vscode`, чтобы запустить проект.
+После создания ресурсов для проекта можно запустить службы Java, Node.js и .NET Core в существующем пространстве разработчиков из Visual Studio Code. На странице *Debug* Visual Studio Code можно вызвать конфигурацию `.vscode` запуска из каталога для запуска проекта.
 
-Необходимо создать кластер AKS и включить Azure Dev Spaces в кластере вне Visual Studio Code. Например, для этой установки можно использовать Azure CLI или портал Azure. Можно повторно использовать существующие диаграммы файлы dockerfile, Helm и `azds.yaml` файлы, созданные за пределами Visual Studio Code, например ресурсы, созданные при выполнении `azds prep`. Если вы выполняете повторное использование ресурсов, созданных за пределами Visual Studio Code, вам по-прежнему потребуется `.vscode` каталог. Этот `.vscode` каталог можно повторно создать с помощью Visual Studio Code и расширения Azure Dev Spaces и не будет перезаписывать существующие ресурсы.
+Необходимо создать кластер AKS и включить пространства Azure Dev в кластере за пределами Visual Studio Code. Например, для этой настройки можно использовать портал Azure CLI или портал Azure. Можно повторно использовать существующие диаграммы Dockerfiles, Helm и `azds.yaml` файлы, созданные за `azds prep`пределами Visual Studio Code, такие как активы, генерируемые запуском. Если вы повторно используете активы, генерируемые за `.vscode` пределами Visual Studio Code, вам все равно необходимо иметь каталог. Этот `.vscode` каталог может быть регенерирован с помощью кода Visual Studio и расширения Azure Dev Spaces и не будет перезаписывать существующие ресурсы.
 
-Для проектов .NET Core необходимо установить [ C# расширение][csharp-extension] для запуска службы .NET из Visual Studio Code. Кроме того, для проектов Java, использующих Maven, необходимо установить [отладчик Java для Azure dev Spacesного расширения][java-extension] , а также [Maven, установленный и настроенный][maven] для запуска службы Java из Visual Studio Code.
+Для проектов .NET Core необходимо установить [расширение C'NET][csharp-extension] для запуска службы .NET из Visual Studio Code. Также для Java-проектов, использующих Maven, необходимо установить [расширение Java Debugger для Azure Dev Spaces,][java-extension] а также [установить и настроить Maven][maven] для запуска Java-сервиса из Visual Studio Code.
 
-## <a name="debug-your-service-in-aks"></a>Отладка службы в AKS
+## <a name="debug-your-service-in-aks"></a>Отожоблять свой сервис в AKS
 
-После запуска проекта можно выполнить отладку служб Java, Node. js и .NET Core, работающих в пространстве разработки, непосредственно из Visual Studio Code. Конфигурация запуска в каталоге `.vscode` предоставляет дополнительные отладочные сведения для запуска службы с включенной отладкой в пространстве разработки. Visual Studio Code также присоединяется к процессу отладки в работающем контейнере в пространствах разработки, что позволяет задавать точки останова, проверять переменные и выполнять другие операции отладки.
+После запуска проекта можно отладить службы Java, Node.js и .NET Core, работающие в пространстве разработчиков непосредственно из кода Visual Studio. Конфигурация запуска `.vscode` в каталоге обеспечивает дополнительную информацию об отладке для запуска службы с включенным отладкой в пространстве разработчиков. Visual Studio Code также прикрепляется к процессу отладки в запущенном контейнере в пространстве разработчиков, что позволяет устанавливать точки разрыва, проверять переменные и выполнять другие операции отладки.
 
 
-## <a name="use-visual-studio-code-with-azure-dev-spaces"></a>Использование Visual Studio Code с Azure Dev Spaces
+## <a name="use-visual-studio-code-with-azure-dev-spaces"></a>Используйте визуальный код студии с пространствами Azure Dev
 
-Visual Studio Code и расширение Azure Dev Spaces, работающее с Azure Dev Spaces, можно просмотреть в следующих кратких руководствах:
+Вы можете увидеть Visual Studio Code и расширение Azure Dev Spaces, работая с Пространствами Azure Dev, в следующих быстрых запусках:
 
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Java][quickstart-java]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и .NET][quickstart-netcore]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Node. js][quickstart-node]
+* [Быстро итерировать и отладить с Visual Studio code и Java][quickstart-java]
+* [Быстро итерировать и отладить с визуальным кодом студии и .NET][quickstart-netcore]
+* [Быстро итерировать и отладить с визуальным кодом студии и Node.js][quickstart-node]
 
 [azds-extension]: https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds
-[azds-yaml]: how-dev-spaces-works.md#prepare-your-code
+[azds-yaml]: how-dev-spaces-works-prep.md#prepare-your-code
 [csharp-extension]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
 [java-extension]: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debugger-azds
 [maven]: https://maven.apache.org

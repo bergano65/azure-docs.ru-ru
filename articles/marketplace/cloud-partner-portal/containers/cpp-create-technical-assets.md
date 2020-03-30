@@ -1,25 +1,24 @@
 ---
-title: Создание ресурсов Azure с изображениями в виде контейнеров | Azure Marketplace
+title: Создание технических активов изображений контейнеров Azure (фото) Лазурный рынок
 description: Создание технических ресурсов для контейнера Azure.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
-ms.author: pabutler
-ms.openlocfilehash: 6aae1957a3dcc58339eb4f3c9e250513843ceb18
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 71b3ec4bf505c333e5eca170e1f5e808ab51f41a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819052"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80280071"
 ---
 # <a name="prepare-your-container-technical-assets"></a>Подготовка технических ресурсов для контейнера
 
 В этой статье приведены инструкции по настройке предложения контейнера в Azure Marketplace и описаны требования к ней.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Ознакомьтесь с документацией по [Экземплярам контейнеров Azure](https://docs.microsoft.com/azure/container-instances), включающей руководства, примеры и другие материалы.
 
@@ -39,12 +38,12 @@ ms.locfileid: "73819052"
 
 Выберите одну или обе следующие среды сценариев, которые понадобятся вам при управлении образом контейнера:
 
--   [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
--   [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+-   [Лазурная силаШелл](https://docs.microsoft.com/powershell/azure/overview)
+-   [Лазурный CLI](https://docs.microsoft.com/cli/azure)
 
 Кроме того, мы рекомендуем добавить следующие инструменты в среду разработки:
 
--   [Azure Storage Explorer;](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+-   [Исследователь хранения azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
 -   [Visual Studio Code](https://code.visualstudio.com/)
     *   Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
     *   Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).
@@ -56,8 +55,8 @@ ms.locfileid: "73819052"
 
 Дополнительную информацию см. в следующих статьях:
 
-* [Руководство. Создание образа контейнера для развертывания в службе "экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
-* [Руководство. Создание и развертывание образов контейнеров в облаке с помощью задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
+* [Учебник: Создание изображения контейнера для развертывания в экземплярах контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
+* [Учебник: Создание и развертывание изображений контейнеров в облаке с помощью задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

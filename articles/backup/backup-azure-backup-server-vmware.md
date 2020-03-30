@@ -1,13 +1,13 @@
 ---
 title: Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
-description: Из этой статьи вы узнаете, как использовать Azure Backup Server для резервного копирования виртуальных машин VMware, работающих на сервере VMware vCenter или ESXi.
+description: В этой статье узнайте, как использовать сервер резервного копирования Azure для резервного копирования VMs- компаний VMware, работающих на сервере VMware vCenter/ESXi.
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.openlocfilehash: df85cba42118a2e814a4a1c8338f3927e4d75f36
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79273479"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
@@ -22,9 +22,9 @@ ms.locfileid: "79273479"
 - добавить сервер vCenter или ESXi в Azure Backup Server;
 - настроить группу защиты, которая содержит необходимые для резервного копирования виртуальные машины VMware, указать параметры резервного копирования и планировать его выполнение.
 
-## <a name="before-you-start"></a>Прежде чем начать
+## <a name="before-you-start"></a>Перед началом работы
 
-- Убедитесь, что вы используете версию vCenter/ESXi, которая поддерживается для резервного копирования. См. таблицу поддержки [здесь](https://docs.microsoft.com/azure/backup/backup-mabs-protection-matrix).
+- Убедитесь, что вы работаете версию vCenter/ESXi, которая поддерживается для резервного копирования. Обратитесь к матрице поддержки [здесь](https://docs.microsoft.com/azure/backup/backup-mabs-protection-matrix).
 - Убедитесь, что Azure Backup Server настроено. Если это еще не сделано, перед началом изучите [это](backup-azure-microsoft-azure-backup.md). Azure Backup Server следует запускать с последними обновлениями.
 
 ## <a name="create-a-secure-connection-to-the-vcenter-server"></a>Создание безопасного подключения к серверу vCenter
@@ -33,10 +33,10 @@ ms.locfileid: "79273479"
 
 ### <a name="before-you-begin"></a>Перед началом
 
-- Если вы не хотите использовать протокол HTTPS, можно [отключить проверку сертификата HTTPS для всех серверов VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
-- Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. В первый раз подключение не будет защищено и отобразится следующее.
+- Если вы не хотите использовать HTTPS, вы можете [отключить проверку сертификата HTTPS для всех серверов VMware.](backup-azure-backup-server-vmware.md#disable-https-certificate-validation)
+- Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. При первом сделать это соединение не является безопасным и покажет следующее.
 - Важно понимать, как Azure Backup Server обрабатывает резервные копии.
-  - Первым шагом будет создание Azure Backup Server резервной копии данных в локальном хранилище дисков. Azure Backup Server использует пул хранилища, набор дисков и томов, на которых Azure Backup Server хранит точки восстановления диска для защищенных данных. Пул хранения может быть хранилищем, подключенным напрямую (DAS), оптоволоконным каналом сети SAN или устройством или сетью хранения данных iSCSI. Важно убедиться в наличии достаточного объема хранилища для локального резервного копирования данных виртуальных машин VMware.
+  - Первым шагом будет создание Azure Backup Server резервной копии данных в локальном хранилище дисков. Azure Backup Server использует пул хранилища, набор дисков и томов, на которых Azure Backup Server хранит точки восстановления диска для защищенных данных. Пул хранения может быть хранилищем, подключенным напрямую (DAS), оптоволоконным каналом сети SAN или устройством или сетью хранения данных iSCSI. Важно обеспечить достаточное количество хранилища для локального резервного копирования данных VMware VM.
   - Затем Azure Backup Server создает резервные копии в Azure из локального хранилища дисков.
   - Чтобы выяснить, какой объем хранилища необходим, см. [этот раздел](https://docs.microsoft.com/system-center/dpm/create-dpm-protection-groups?view=sc-dpm-1807#figure-out-how-much-storage-space-you-need). Информация предназначена для DPM, но ее также можно использовать для сервера Azure Backup Server.
 
@@ -58,7 +58,7 @@ ms.locfileid: "79273479"
 
 4. Сохраните файл на компьютере Azure Backup Server с расширением ZIP.
 
-5. Правой кнопкой мыши щелкните **download.zip** > **Extract All** (Извлечь все). Содержимое сжатого ZIP-файла будет извлечено в папку **certs**, которая вмещает следующие элементы.
+5. Право-нажмите **sdownload.zip** > **Экстракт Все**. Содержимое сжатого ZIP-файла будет извлечено в папку **certs**, которая вмещает следующие элементы.
    - Файл корневого сертификата с расширением, которое начинается с нумерованной последовательности, например, .0 и .1.
    - Файл списка отзыва сертификатов имеет расширение, которое начинается с такой последовательности, как .r0 или .r1. Файл списка отзыва сертификатов связан с сертификатом.
 
@@ -90,9 +90,9 @@ ms.locfileid: "79273479"
 
 13. После подтверждения импорта сертификата войдите на vCenter Server, чтобы подтвердить, что подключение защищено.
 
-### <a name="disable-https-certificate-validation"></a>Отключить проверку сертификата HTTPS
+### <a name="disable-https-certificate-validation"></a>Проверка сертификата HTTPS
 
-Если в вашей организации есть безопасные границы и вы не хотите использовать протокол HTTPS между серверами VMware и Azure Backup Server компьютером, отключите HTTPS следующим образом:
+Если у вас есть безопасные границы в организации и вы не хотите использовать протокол HTTPS между серверами VMware и машиной Azure Backup Server, отпустите HTTPS следующим образом:
 
 1. Скопируйте приведенный ниже текст и вставьте его в TXT-файл.
 
@@ -115,11 +115,11 @@ Windows Registry Editor Version 5.00
 
     ![Администрирование](./media/backup-azure-backup-server-vmware/vmware-navigator-panel.png)
 
-3. В **Администрирование** > **Роли** щелкните значок добавления роли (символ "+").
+3. В**роли** **администрирования** > щелкните значок роли добавления (символ q).
 
     ![Добавление роли](./media/backup-azure-backup-server-vmware/vmware-define-new-role.png)
 
-4. В разделе**Создание роли** > **Имя роли** введите *BackupAdminRole*. Это может быть любое имя, описывающее назначение этой роли.
+4. В создать**имя роли** **роли,** > введите *BackupAdminRole*. Это может быть любое имя, описывающее назначение этой роли.
 
 5. Выберите привилегии, как описано в следующей таблице, а затем нажмите кнопку **ОК**.  В списке на панели **Роли** появится новая роль.
    - Щелкните значок рядом с родительской меткой, чтобы раскрыть родительский элемент и просмотреть дочерние привилегии.
@@ -130,41 +130,41 @@ Windows Registry Editor Version 5.00
 
 ### <a name="role-permissions"></a>Разрешения ролей
 
-| **Привилегии для учетной записи пользователя vCenter 6,5 и более поздней версии**        | **Привилегии для учетной записи пользователя vCenter 6,0**               | **Привилегии для учетной записи пользователя vCenter 5,5** |
+| **Привилегии для учетной записи пользователя vCenter 6.5 и более поздних версий**        | **Привилегии для учетной записи пользователя vCenter 6.0**               | **Привилегии для учетной записи пользователя vCenter 5.5** |
 | ------------------------------------------------------------ | --------------------------------------------------------- | ------------------------------------------- |
 | Datastore.AllocateSpace                                      |                                                           |                                             |
-| Хранилище данных. Обзор хранилища данных                                   | Datastore.AllocateSpace                                   | Network.Assign                              |
-| Операции с файлами в хранилище данных с низким уровнем                          | Глобальные. Управление настраиваемыми атрибутами                           | Datastore.AllocateSpace                     |
-| Кластер хранилища данных. Настройка кластера дататсторе             | Глобальный. Задание настраиваемого атрибута                               | VirtualMachine.Config.ChangeTracking        |
-| Методы Global. Disable                                       | Ведущие. local Operations. Создать виртуальную машину              | VirtualMachine.State.RemoveSnapshot         |
-| Методы Global. Enable                                        | Сети. Назначить сеть                                   | VirtualMachine.State.CreateSnapshot         |
-| Глобальные лицензии                                              | Ресурсов. Назначение виртуальной машины пулу ресурсов         | VirtualMachine.Provisioning.DiskRandomRead  |
-| Событие Global. log                                             | Виртуальная машина. Конфигурация. Добавление нового диска                | VirtualMachine.Interact.PowerOff            |
-| Глобальные. Управление настраиваемыми атрибутами                              | Виртуальная машина. Configuration. Advanced                    | VirtualMachine.Inventory.Create             |
-| Глобальный. Задание настраиваемого атрибута                                  | Виртуальная машина. Настройка. Отслеживание изменений на диске        | VirtualMachine.Config.AddNewDisk            |
-| Сеть. Назначение сети                                       | Виртуальная машина. USB-устройство Configuration. Host             | VirtualMachine.Config.HostUSBDevice         |
-| Ресурсов. Назначение виртуальной машины пулу ресурсов            | Виртуальная машина. Configuration. запрос несобственных файлов         | VirtualMachine.Config.AdvancedConfig        |
-| Виртуальная машина. Конфигурация. Добавление нового диска                   | Виртуальная машина. Размещение Configuration. файл подкачки          | VirtualMachine.Config.SwapPlacement         |
-| Виртуальная машина. Configuration. Advanced                       | Виртуальная машина. Взаимодействие. выключение                     | Global.ManageCustomFields                   |
-| Виртуальная машина. Настройка. Отслеживание изменений на диске           | Виртуальная машина. Товары. Создание                     |                                             |
-| Виртуальная машина. Настройка. Аренда диска                     | Виртуальная машина. Подготовка. разрешить доступ к диску            |                                             |
-| Виртуальная машина. Конфигурация. Расширение виртуального диска            | Виртуальная машина. Подготовки. Разрешить доступ к диску только для чтения |                                             |
-| Виртуальная машина. Гостевые операции. изменения гостевой операции | Виртуальная машина. Управление моментальными снимками. Создать моментальный снимок       |                                             |
-| Виртуальная машина. Гостевые операции. выполнение программы гостевой операции | Виртуальная машина. Управление моментальными снимками. Удалить моментальный снимок       |                                             |
-| Виртуальная машина. Гостевые операции. запросы гостевых операций     |                                                           |                                             |
-| Виртуальная машина. Взаимодействовать. Подключение устройства              |                                                           |                                             |
-| Виртуальная машина. Взаимодействовать. Управление операционной системой на виртуальной машине с помощью API Викс |                                                           |                                             |
-| Виртуальная машина. Опись. Register                          |                                                           |                                             |
-| Виртуальная машина. Inventory. Remove                            |                                                           |                                             |
-| Виртуальная машина. Подготовка. разрешить доступ к диску              |                                                           |                                             |
-| Виртуальная машина. Подготовка. разрешить доступ к диску только для чтения    |                                                           |                                             |
-| Виртуальная машина. Подготовка. разрешить скачивание виртуальной машины |                                                           |                                             |
-| Виртуальная машина. Управление моментальными снимками. Создание моментального снимка        |                                                           |                                             |
-| Виртуальная машина. Управление моментальными снимками. Удалить моментальный снимок         |                                                           |                                             |
-| Виртуальная машина. Управление моментальными снимками. Вернуться к моментальному снимку      |                                                           |                                             |
-| ВАПП. Добавление виртуальной машины                                     |                                                           |                                             |
-| ВАПП. назначение пула ресурсов                                    |                                                           |                                             |
-| ВАПП. Отмена регистрации                                              |                                                           |                                             |
+| Datastore.Browse datastore                                   | Datastore.AllocateSpace                                   | Network.Assign                              |
+| Datastore.Low-level file operations                          | Global.Manage custom attributes                           | Datastore.AllocateSpace                     |
+| Datastore cluster.Configure a datatstore cluster             | Global.Set custom attribute                               | VirtualMachine.Config.ChangeTracking        |
+| Global.Disable methods                                       | Host.Local operations.Create virtual machine              | VirtualMachine.State.RemoveSnapshot         |
+| Global.Enable methods                                        | Network. Assign network                                   | VirtualMachine.State.CreateSnapshot         |
+| Global.Licenses                                              | Resource. Assign virtual machine to resource pool         | VirtualMachine.Provisioning.DiskRandomRead  |
+| Global.Log event                                             | Virtual machine.Configuration.Add new disk                | VirtualMachine.Interact.PowerOff            |
+| Global.Manage custom attributes                              | Virtual machine.Configuration.Advanced                    | VirtualMachine.Inventory.Create             |
+| Global.Set custom attribute                                  | Virtual machine.Configuration.Disk change tracking        | VirtualMachine.Config.AddNewDisk            |
+| Network.Assign network                                       | Virtual machine.Configuration.Host USB device             | VirtualMachine.Config.HostUSBDevice         |
+| Resource. Assign virtual machine to resource pool            | Virtual machine.Configuration.Query unowned files         | VirtualMachine.Config.AdvancedConfig        |
+| Virtual machine.Configuration.Add new disk                   | Virtual machine.Configuration.Swapfile placement          | VirtualMachine.Config.SwapPlacement         |
+| Virtual machine.Configuration.Advanced                       | Virtual machine.Interaction.Power Off                     | Global.ManageCustomFields                   |
+| Virtual machine.Configuration.Disk change tracking           | Virtual machine.Inventory. Создание                     |                                             |
+| Virtual machine.Configuration.Disk lease                     | Virtual machine.Provisioning.Allow disk access            |                                             |
+| Virtual machine.Configuration.Extend virtual disk            | Virtual machine.Provisioning. Allow read-only disk access |                                             |
+| Virtual machine.Guest Operations.Guest Operation Modifications | Virtual machine.Snapshot management.Create snapshot       |                                             |
+| Virtual machine.Guest Operations.Guest Operation Program Execution | Virtual machine.Snapshot management.Remove Snapshot       |                                             |
+| Virtual machine.Guest Operations.Guest Operation Queries     |                                                           |                                             |
+| Virtual machine.Interaction.Device connection              |                                                           |                                             |
+| Virtual machine.Interaction.Guest operating system management by VIX API |                                                           |                                             |
+| Virtual machine.Inventory.Register                          |                                                           |                                             |
+| Virtual machine.Inventory.Remove                            |                                                           |                                             |
+| Virtual machine.Provisioning.Allow disk access              |                                                           |                                             |
+| Virtual machine.Provisioning.Allow read-only disk access    |                                                           |                                             |
+| Virtual machine.Provisioning.Allow virtual machine download |                                                           |                                             |
+| Virtual machine.Snapshot management. Создание моментального снимка        |                                                           |                                             |
+| Virtual machine.Snapshot management.Remove Snapshot         |                                                           |                                             |
+| Virtual machine.Snapshot management.Revert to snapshot      |                                                           |                                             |
+| vApp.Add virtual machine                                     |                                                           |                                             |
+| vApp.Assign resource pool                                    |                                                           |                                             |
+| vApp.Unregister                                              |                                                           |                                             |
 
 ## <a name="create-a-vmware-account"></a>Создание учетной записи VMware
 
@@ -172,7 +172,7 @@ Windows Registry Editor Version 5.00
 
     ![Пользователи и группы](./media/backup-azure-backup-server-vmware/vmware-userandgroup-panel.png)
 
-    Появится панель **Пользователи и группы vCenter** .
+    Отображаются панели **пользователей и групп vCenter.**
 
 2. На панели **vCenter Users and Groups** (Пользователи и группы vCenter) выберите вкладку **Users** (Пользователи), а затем щелкните значок добавления пользователей (знак "+").
 
@@ -206,7 +206,7 @@ Windows Registry Editor Version 5.00
 
     ![Значок Azure Backup Server](./media/backup-azure-backup-server-vmware/mabs-icon.png)
 
-2. На консоли Azure Backup Server щелкните **Управление** >  **Рабочие серверы** > **Manage VMware**  (Управление VMware).
+2. На консоли Azure Backup Server **нажмите** >  кнопку Управления**Производственными серверами** > **Управления VMware.**
 
     ![Консоль сервера Azure Backup Server](./media/backup-azure-backup-server-vmware/add-vmware-credentials.png)
 
@@ -214,7 +214,7 @@ Windows Registry Editor Version 5.00
 
     ![Диалоговое окно управления учетными данными на сервере Azure Backup Server](./media/backup-azure-backup-server-vmware/mabs-manage-credentials-dialog.png)
 
-4. В поле **Добавить учетные данные**введите имя и описание для новых учетных данных и укажите имя пользователя и пароль, определенные на сервере VMware. Имя *Contoso Vcenter credential* используется для идентификации учетных данных в этой процедуре. Если сервер VMware и Azure Backup Server размещены в разных доменах, укажите домен в имени пользователя.
+4. В **Add Credential**введите имя и описание для новых учетных данных и укажите имя пользователя и пароль, определенные на сервере VMware. Имя *Contoso Vcenter credential* используется для идентификации учетных данных в этой процедуре. Если сервер VMware и Azure Backup Server размещены в разных доменах, укажите домен в имени пользователя.
 
     ![Диалоговое окно добавления учетных данных на сервере Azure Backup Server](./media/backup-azure-backup-server-vmware/mabs-add-credential-dialog2.png)
 
@@ -226,15 +226,15 @@ Windows Registry Editor Version 5.00
 
 Добавление vCenter Server в Azure Backup Server
 
-1. На консоли Azure Backup Server щелкните **Управление** > **Рабочие серверы** > **Добавить**.
+1. На консоли Azure Backup Server нажмите кнопку **«Серверы** >  **Management** > управления**производством».**
 
     ![Открытие мастера добавления рабочего сервера](./media/backup-azure-backup-server-vmware/add-vcenter-to-mabs.png)
 
-2. На странице **Production Server Addition Wizard**(Мастер добавления рабочего сервера) > **Select Production Server type**  (Выбор типа рабочего сервера) выберите **VMware Servers** (Серверы VMware), а затем щелкните **Далее**.
+2. В **Production Server Addition Wizard** > Выберите страницу**типа Production Server,** выберите **серверы VMware,** а затем нажмите **далее.**
 
     ![Мастер добавления рабочего сервера](./media/backup-azure-backup-server-vmware/production-server-add-wizard.png)
 
-3. В поле **SELECT Computers**  **Server Name/IP Address**(выбор компьютеров) укажите полное доменное имя или IP-адрес сервера VMware. Если один и тот же сервер vCenter управляет всеми серверами ESXi, то укажите имя vCenter. В противном случае добавьте узел ESXi.
+3. На шаге **Выбрать компьютеры в строке **  **Server Name/IP Address Имя или IP-адрес сервера** (Имя или IP-адрес сервера) укажите полное доменное имя или IP-адрес сервера VMware. Если один и тот же сервер vCenter управляет всеми серверами ESXi, то укажите имя vCenter. В противном случае добавьте узел ESXi.
 
     ![Указывание сервера VMware](./media/backup-azure-backup-server-vmware/add-vmware-server-provide-server-name.png)
 
@@ -244,7 +244,7 @@ Windows Registry Editor Version 5.00
 
     ![Указание учетных данных](./media/backup-azure-backup-server-vmware/identify-creds.png)
 
-6. Щелкните **Добавить**, чтобы добавить сервер VMware в список серверов. Затем нажмите кнопку **Далее**.
+6. Щелкните **Добавить**, чтобы добавить сервер VMware в список серверов. Нажмите **Далее**.
 
     ![Добавление сервера VMware и учетных данных](./media/backup-azure-backup-server-vmware/add-vmware-server-credentials.png)
 
@@ -272,25 +272,25 @@ Windows Registry Editor Version 5.00
 
 1. На странице **Выбор типа группы защиты** выберите **Серверы** и нажмите кнопку **Далее**. Появится страница **Выбор элементов группы**.
 
-1. В окне **Выбор элементов группы**выберите виртуальные машины (или папки виртуальных машин), для которых требуется создать резервную копию. Затем нажмите кнопку **Далее**.
+1. В **группе Select**выберите vMs (или папки VM), которые вы хотите создать резервную. Нажмите **Далее**.
 
     - Когда вы выберите папку, виртуальные машины или папки внутри этой папки также будут выбраны для резервного копирования. Можно отменить выбор папок или виртуальных машин, для которых вы не хотите создавать резервную копию.
-1. Это сделать невозможно, если уже выполняется резервное копирование виртуальной машины или папки. Это гарантирует, что дублирование точек восстановления для виртуальной машины не создается.
+1. Это сделать невозможно, если уже выполняется резервное копирование виртуальной машины или папки. Это гарантирует, что дубликаты точек восстановления не будут созданы для VM.
 
     ![Выберите членов группы](./media/backup-azure-backup-server-vmware/server-add-selected-members.png)
 
-1. На странице **Select Data Protection Method** (Выбор метода защиты данных) введите имя для группы защиты и параметры защиты. Чтобы создать резервную копию Azure, установите краткосрочную защиту **Диска** и разрешите защиту в сети. Затем нажмите кнопку **Далее**.
+1. На странице **Select Data Protection Method** (Выбор метода защиты данных) введите имя для группы защиты и параметры защиты. Чтобы создать резервную копию Azure, установите краткосрочную защиту **Диска** и разрешите защиту в сети. Нажмите **Далее**.
 
     ![Выберите метод защиты данных](./media/backup-azure-backup-server-vmware/name-protection-group.png)
 
 1. В окне **Specify Short-Term Goals** (Выбор краткосрочных целей) укажите, как долго вы хотите хранить резервную копию данных на диске.
    - В окне **Диапазон хранения** укажите количество дней для хранения точек восстановления диска.
    - В окне **Частота синхронизации** укажите частоту создания точек восстановления диска.
-       - Если вы не хотите задавать интервал резервного копирования, можно проверить **непосредственно перед точкой восстановления** , чтобы резервное копирование выполнялось непосредственно перед планированием каждой точки восстановления.
+       - Если вы не хотите устанавливать интервал резервного копирования, вы можете проверить **перед точкой восстановления,** чтобы резервное копирование запускалось непосредственно перед расписанием каждой точки восстановления.
        - Краткосрочные резервные копии являются полными резервными копиями, а не добавочным.
        - Чтобы изменить дату или время, когда произошло краткосрочное резервное копирование, нажмите кнопку **Изменить**.
 
-         ![Задание краткосрочных целей](./media/backup-azure-backup-server-vmware/short-term-goals.png)
+         ![Выберите краткосрочные цели](./media/backup-azure-backup-server-vmware/short-term-goals.png)
 
 1. В окне **Проверить выделение дискового пространства** проверьте дисковое пространство для резервных копий виртуальных машин. Для виртуальных машин.
 
@@ -298,7 +298,7 @@ Windows Registry Editor Version 5.00
    - **Размер данных** — размер данных в группе защиты.
    - **Место на диске** — рекомендуемый объем дискового пространства для группы защиты. Если вы хотите изменить этот параметр, вы должны выделить общее место, объем которого будет немного превышать рассчитанный вами объем для каждого источника данных.
    - **Совместное размещение данных** — если вы включите совместное размещение, несколько источников данных в защите могут сопоставиться с отдельной репликой и томом точек восстановления. Совместное размещение поддерживается не для всех рабочих нагрузок.
-   - **Автоматическое увеличение:** Если включить этот параметр, то если данные в защищенной группе будут увеличивать начальное выделение, Azure Backup Server попытается увеличить размер диска на 25 процентов.
+   - **Автоматически расти:** Если вы включите эту настройку, если данные в защищенной группе перерастает первоначальное распределение, Azure Backup Server пытается увеличить размер диска на 25 процентов.
    - **Дополнительные сведения о пуле носителей** — этот параметр отображает состояние пула носителей, включая общий размер диска и оставшийся.
 
     ![Просмотр выделения дискового пространства](./media/backup-azure-backup-server-vmware/review-disk-allocation.png)
@@ -310,22 +310,22 @@ Windows Registry Editor Version 5.00
 
     ![Выберите метод создания реплики](./media/backup-azure-backup-server-vmware/replica-creation.png)
 
-1. На странице **Consistency Check Options** (Параметры проверки согласованности) выберите, как и когда автоматически запускать проверки на согласованность. Затем нажмите кнопку **Далее**.
+1. На странице **Consistency Check Options** (Параметры проверки согласованности) выберите, как и когда автоматически запускать проверки на согласованность. Нажмите **Далее**.
       - В случае несогласованности данных реплики вы можете запустить проверку на согласованность, либо эта проверка может выполняться по расписанию.
       - Если настраивать автоматическую проверку согласованности не требуется, можно выполнить проверку вручную. Чтобы это сделать, щелкните правой кнопкой мыши группу защиты, а затем нажмите **Perform Consistency Check** (Выполнить проверку согласованности).
 
-1. На странице **Specify Online Protection Data** (Указание данных для оперативной защиты) выберите виртуальные машины или папки виртуальной машины для создания резервной копии. Вы можете выбрать элементы по отдельности или же щелкнуть **Выделить все**. Затем нажмите кнопку **Далее**.
+1. На странице **Specify Online Protection Data** (Указание данных для оперативной защиты) выберите виртуальные машины или папки виртуальной машины для создания резервной копии. Вы можете выбрать элементы по отдельности или же щелкнуть **Выделить все**. Нажмите **Далее**.
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-server-vmware/select-data-to-protect.png)
 
-1. На странице **Specify Online Backup Schedule**  (Укажите расписание архивации в сети) укажите частоту резервного копирования данных из локального хранилища в Azure.
+1. На странице **Specify Online Backup Schedule ** (Укажите расписание архивации в сети) укажите частоту резервного копирования данных из локального хранилища в Azure.
 
-    - Точки восстановления для данных в облаке будут созданы согласно с расписанием. Затем нажмите кнопку **Далее**.
+    - Точки восстановления для данных в облаке будут созданы согласно с расписанием. Нажмите **Далее**.
     - Созданная точка восстановления передается в хранилище служб восстановления в Azure.
 
     ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-server-vmware/online-backup-schedule.png)
 
-1. На странице **Specify Online Retention Policy** (Выбор политику хранения в сети) укажите, каким образом точки восстановления, созданные из ежедневных, еженедельных, ежемесячных и ежегодных резервных копий, должны храниться в Azure. Затем нажмите **Далее**.
+1. На странице **Specify Online Retention Policy** (Выбор политику хранения в сети) укажите, каким образом точки восстановления, созданные из ежедневных, еженедельных, ежемесячных и ежегодных резервных копий, должны храниться в Azure. затем нажмите **Далее**.
 
     - Для хранения данных в Azure нет временных ограничений.
     - Единственным ограничением является то, что на защищенный экземпляр у вас может быть не более 9999 точек восстановления. В этом примере защищенным экземпляром является сервер VMware.
@@ -336,16 +336,16 @@ Windows Registry Editor Version 5.00
 
     ![Сводка параметров и элементов группы защиты](./media/backup-azure-backup-server-vmware/protection-group-summary.png)
 
-## <a name="vmware-vsphere-67"></a>VMWare vSphere 6,7
+## <a name="vmware-vsphere-67"></a>VMware vSphere 6.7
 
-Чтобы создать резервную копию vSphere 6,7, выполните следующие действия.
+Для резервного копирования vSphere 6.7, сделайте следующее:
 
-- Включение TLS 1,2 на сервере DPM
+- Включите протокол TLS 1.2 на сервере DPM.
 
 >[!NOTE]
->В VMWare 6,7 в качестве протокола связи включен протокол TLS.
+>VMWare 6.7 и далее был TLS включен в качестве протокола связи.
 
-- Задайте следующие разделы реестра:
+- Задайте разделы реестра следующим образом:
 
 ```text
 Windows Registry Editor Version 5.00

@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемого P2S экземпляра
+title: Настройка P2S - Управляемый экземпляр
 description: Сведения об установке подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure в SQL Server Management Studio с локального клиентского компьютера.
 services: sql-database
 ms.service: sql-database
@@ -12,29 +12,29 @@ ms.author: srbozovi
 ms.reviewer: sstein, carlrab, bonova, jovanpop
 ms.date: 03/13/2019
 ms.openlocfilehash: 30b2ba92174996ea2bae34e7553a3258d8ebee27
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79268890"
 ---
 # <a name="quickstart-configure-a-point-to-site-connection-to-an-azure-sql-database-managed-instance-from-on-premises"></a>Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера
 
 В этом кратком руководстве показано, как подключиться к Управляемому экземпляру Базы данных SQL Azure в [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) (SSMS) с локального клиентского компьютера через подключение "точка — сеть". См. сведения о [подключениях "точка — сеть"](../vpn-gateway/point-to-site-about.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом кратком руководстве:
 
 - В качестве начальной точки используются ресурсы, созданные в руководстве по [созданию управляемого экземпляра](sql-database-managed-instance-get-started.md).
-- Требуется PowerShell 5,1 и AZ PowerShell 1.4.0 или более поздней версии на локальном клиентском компьютере. При необходимости ознакомьтесь с инструкциями по [установке модуля PowerShell для Azure](https://docs.microsoft.com/powershell/azure/install-az-ps#install-the-azure-powershell-module).
+- Требуется PowerShell 5.1 и АЗ PowerShell 1.4.0 или позже на вашем клиентском компьютере. При необходимости ознакомьтесь с инструкциями по [установке модуля PowerShell для Azure](https://docs.microsoft.com/powershell/azure/install-az-ps#install-the-azure-powershell-module).
 - На локальном клиентском компьютере требуется последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) (SSMS).
 
 ## <a name="attach-a-vpn-gateway-to-your-managed-instance-virtual-network"></a>Подключение VPN-шлюза к виртуальной сети Управляемого экземпляра
 
-1. Откройте PowerShell на локальном клиентском компьютере.
+1. Open PowerShell на вашем клиентском компьютере.
 
-2. Скопируйте этот сценарий PowerShell. Этот сценарий подключает VPN-шлюз к виртуальной сети Управляемого экземпляра, созданной в кратком руководстве [Создание Управляемого экземпляра SQL Azure](sql-database-managed-instance-get-started.md). Этот сценарий использует модуль Azure PowerShell AZ и выполняет следующие действия для узлов на основе Windows или Linux:
+2. Скопируйте этот сценарий PowerShell. Этот сценарий подключает VPN-шлюз к виртуальной сети Управляемого экземпляра, созданной в кратком руководстве [Создание Управляемого экземпляра SQL Azure](sql-database-managed-instance-get-started.md). Этот скрипт использует модуль Azure PowerShell Az и будет выполнять следующие данные для узлов на базе Windows или Linux:
 
    - Создает и устанавливает сертификаты на клиентском компьютере.
    - Вычисляет будущий диапазон IP-адресов подсети VPN-шлюза.
@@ -59,26 +59,26 @@ ms.locfileid: "79268890"
 4. Выполните следующий сценарий PowerShell.
 
 > [!IMPORTANT]
-> Продолжайте работу до тех пор, пока не завершится выполнение сценария PowerShell.
+> Не продолжайте работать до завершения сценария PowerShell.
 
 ## <a name="create-a-vpn-connection-to-your-managed-instance"></a>Создание VPN-подключения к Управляемому экземпляру
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Откройте группу ресурсов, в которой вы создали шлюз виртуальной сети, а затем откройте ресурс шлюза виртуальной сети.
-3. Щелкните **Конфигурация "точка — сеть"** , а затем — **Скачивание VPN-клиента**.
+3. Щелкните **Конфигурация "точка — сеть"**, а затем — **Скачивание VPN-клиента**.
 
     ![Скачивание VPN-клиента](./media/sql-database-managed-instance-configure-p2s/download-vpn-client.png)  
-4. На локальном клиентском компьютере извлеките файлы из ZIP-файла, а затем откройте папку с извлеченными файлами.
-5. Откройте папку "**WindowsAmd64** " и откройте файл **VpnClientSetupAmd64. exe** .
+4. На вашем клиентском компьютере извлеките файлы из почтового файла, а затем откройте папку с извлеченными файлами.
+5. Откройте папку '**WindowsAmd64** и откройте файл **VpnClientupAmd64.exe.**
 6. Если появится сообщение **Windows protected your PC** (Система Windows защитила ваш компьютер), щелкните **Дополнительно**, а затем **Выполнить в любом случае**.
 
     ![Установка VPN-клиента](./media/sql-database-managed-instance-configure-p2s/vpn-client-defender.png)\
-7. В диалоговом окне Контроль учетных записей пользователей нажмите кнопку **Да** , чтобы продолжить.
-8. В диалоговом окне, ссылающемся на виртуальную сеть, выберите **Да** , чтобы установить VPN-клиент для виртуальной сети.
+7. Если откроется диалоговое окно Контроль учетных записей пользователей, нажмите кнопку **Да**, чтобы продолжить.
+8. В диалоговом окне, ссылающейся на виртуальную сеть, выберите **Yes** для установки VPN Client для виртуальной сети.
 
 ## <a name="connect-to-the-vpn-connection"></a>Установка соединения с VPN-подключением
 
-1. Перейдите к **VPN** в **сети & Интернет** на локальном клиентском компьютере и выберите виртуальную сеть управляемый экземпляр, чтобы установить подключение к этой виртуальной сети. На следующем рисунке такая виртуальная сеть называется **MyNewVNet**.
+1. Перейдите на **VPN** в **сети & Интернет** на вашем клиентском компьютере и выберите виртуальную сеть Managed Instance, чтобы установить подключение к этому VNet. На следующем рисунке такая виртуальная сеть называется **MyNewVNet**.
 
     ![VPN-подключение](./media/sql-database-managed-instance-configure-p2s/vpn-connection.png)  
 2. Выберите **Подключиться**.
@@ -106,4 +106,4 @@ ms.locfileid: "79268890"
 
 - Краткое руководство по подключению с виртуальной машины Azure см. в статье о [настройке подключения "точка — сеть"](sql-database-managed-instance-configure-p2s.md).
 - Обзор вариантов подключения для приложений см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md).
-- Чтобы восстановить имеющуюся базу данных SQL Server из локальной среды в управляемом экземпляре, можно использовать [Azure Database Migration Service для миграции](../dms/tutorial-sql-server-to-managed-instance.md) или [команду T-SQL RESTORE](sql-database-managed-instance-get-started-restore.md) для восстановления из файла резервной копии базы данных.
+- Для восстановления существующей базы данных сервера S'L от предварительной части до управляемой инстанции можно использовать службу [миграции базы данных Azure (DMS) для миграции](../dms/tutorial-sql-server-to-managed-instance.md) или [команду T-S'L RESTORE](sql-database-managed-instance-get-started-restore.md) для восстановления из файла резервного копирования базы данных.

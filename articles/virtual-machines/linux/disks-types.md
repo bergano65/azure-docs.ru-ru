@@ -1,6 +1,6 @@
 ---
-title: Выберите тип диска для виртуальных машин Azure IaaS под управлением Linux — управляемые диски
-description: Узнайте о доступных типах дисков Azure для виртуальных машин Linux, включая Ultra, Premium, Standard SSD и стандартные жесткие диски.
+title: Выберите тип диска для VMs-иносов Azure IaaS Linux - управляемых дисков
+description: Узнайте о доступных типах дисков Azure для виртуальных машин Linux, включая ультрадиски, премиальные SSD-диски, стандартные SSD-диски и стандартные HDD.
 author: roygara
 ms.author: rogarana
 ms.date: 11/04/2019
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.openlocfilehash: 7990c178f18ac5219fde0882c24d5854001ba63e
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79267382"
 ---
 # <a name="what-disk-types-are-available-in-azure"></a>Какие типы дисков доступны в Azure?
 [!INCLUDE [virtual-machines-disk-types](../../../includes/virtual-machines-managed-disks-types-overview.md)]
 
-Если вы хотите начать работу с Ultra Disks, см. нашу статью по теме: [Использование Azure Ultra Disks](disks-enable-ultra-ssd.md).
+Если вы хотите начать использовать ультра диски, смотрите нашу статью на эту тему: [Использование ультрадисков Azure](disks-enable-ultra-ssd.md).
 
 [!INCLUDE [virtual-machines-managed-disks-types-ga](../../../includes/virtual-machines-managed-disks-types-ga.md)]
 

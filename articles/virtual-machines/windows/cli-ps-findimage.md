@@ -1,5 +1,5 @@
 ---
-title: Выбор образов виртуальных машин Windows в Azure
+title: Выберите изображения Windows VM в Azure
 description: Вы можете использовать Azure PowerShell для определения издателя, предложения, номера SKU и версии для образов виртуальных машин из Marketplace.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 01/25/2019
 ms.author: cynthn
 ms.openlocfilehash: 2388b51c8103b6bcbae0c32d3c4d78a176caf282
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79266810"
 ---
 # <a name="find-windows-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>Поиск образов виртуальных машин Windows в Azure Marketplace с помощью Azure PowerShell
@@ -47,8 +47,8 @@ ms.locfileid: "79266810"
 | MicrosoftWindowsServer |WindowsServer |2012-Datacenter |
 | MicrosoftDynamicsNAV |DynamicsNAV |2017 |
 | MicrosoftSharePoint |MicrosoftSharePointServer |2019 |
-| MicrosoftSQLServer |SQL2019 WS2016 |Корпоративная |
-| MicrosoftRServer |RServer-WS2016 |Корпоративная |
+| MicrosoftSQLServer |SQL2019 WS2016 |Enterprise |
+| MicrosoftRServer |RServer-WS2016 |Enterprise |
 
 ## <a name="navigate-the-images"></a>Переход к образам
 
@@ -121,7 +121,7 @@ advantys
 ...
 ```
 
-Для издателя *MicrosoftWindowsServer*:
+Для издателя *MicrosoftWindowsServer:*
 
 ```powershell
 $pubName="MicrosoftWindowsServer"
@@ -212,7 +212,7 @@ DataDiskImages   : []
 
 ```
 
-В примере ниже показана подобная команда для образа *Виртуальной машины для обработки и анализа данных в Windows 2016*, имеющего следующие свойства `PurchasePlan`: `name`, `product` и `publisher`. Некоторые образы также имеют свойство `promotion code`. Ознакомьтесь со следующими разделами для развертывания этого образа, чтобы принять условия соглашения и включить программное развертывание.
+Приведенный ниже пример показывает аналогичную команду для *виртуальной машины Data Science - Windows 2016,* которая `PurchasePlan` имеет следующие свойства: `name`, `product`и `publisher`. Некоторые образы также имеют свойство `promotion code`. Ознакомьтесь со следующими разделами для развертывания этого образа, чтобы принять условия соглашения и включить программное развертывание.
 
 ```powershell
 Get-AzVMImage -Location "westus" -PublisherName "microsoft-ads" -Offer "windows-data-science-vm" -Skus "windows2016" -Version "0.2.02"
@@ -325,6 +325,6 @@ $vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Off
 Инструкции по быстрому созданию виртуальной машины с помощью командлета `New-AzVM` на основе полученных данных образа см. в статье [Создание виртуальной машины Windows с помощью PowerShell](quick-create-powershell.md).
 
 
-Ознакомьтесь с примерами сценариев PowerShell в статье [Создание полностью настроенной виртуальной машины с помощью PowerShell](../scripts/virtual-machines-windows-powershell-sample-create-vm.md).
+Смотрите пример сценария PowerShell для [создания полностью настроенной виртуальной машины.](../scripts/virtual-machines-windows-powershell-sample-create-vm.md)
 
 

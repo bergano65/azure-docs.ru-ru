@@ -1,15 +1,15 @@
 ---
-title: Обратный прокси-сервер Azure Service Fabric
+title: Azure Сервис Ткань обратный прокси
 description: Использование обратного прокси-сервера Service Fabric для взаимодействия с микрослужбами изнутри и извне кластера.
 author: BharatNarasimman
 ms.topic: conceptual
 ms.date: 11/03/2017
 ms.author: bharatn
 ms.openlocfilehash: 4fa4c6e46dd786b833087f892d995e85b5d2ea47
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79282228"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
@@ -68,7 +68,7 @@ http(s)://<Cluster FQDN | internal IP>:Port/<ServiceInstanceName>/<Suffix path>?
 * **http(s).** Обратный прокси-сервер можно настроить для приема трафика HTTP или HTTPS. После настройки обратного прокси-сервера для прослушивания по протоколу HTTPS ознакомьтесь со сведениями о переадресации HTTPS в статье [Подключение к безопасной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md).
 * **Cluster FQDN | internal IP.** Для внешних клиентов обратный прокси-сервер можно настроить таким образом, чтобы он был доступен через домен кластера (например, mycluster.eastus.cloudapp.azure.com). По умолчанию обратный прокси-сервер выполняется на каждом узле. Для внутреннего трафика он может быть доступен на узле localhost или по IP-адресу любого внутреннего узла (например, 10.0.0.1).
 * **Port.** Порт, например 19081, указанный для обратного прокси-сервера.
-* **ServiceInstanceName.** Полное имя развернутого экземпляра службы, к которому вы пытаетесь получить доступ, без использования схемы fabric:/. Например, чтобы подключиться к службе *fabric:/myapp/myservice/* , используется имя *myapp/myservice*.
+* **ServiceInstanceName.** Полное имя развернутого экземпляра службы, к которому вы пытаетесь получить доступ, без использования схемы fabric:/. Например, чтобы подключиться к службе *fabric:/myapp/myservice/*, используется имя *myapp/myservice*.
 
     В имени экземпляра службы учитывается регистр. Использование символов разного регистра в имени экземпляра службы в URL-адресе приводит к сбою запросов с ошибкой "404 (не найдено)".
 * **Suffix path**. Фактический URL-адрес службы, к которой вы подключаетесь, например *myapi/values/add/3*.
@@ -78,7 +78,7 @@ http(s)://<Cluster FQDN | internal IP>:Port/<ServiceInstanceName>/<Suffix path>?
 * **TargetReplicaSelector.** Данный параметр определяет, каким образом должна быть выбрана целевая реплика или экземпляр.
   * Если целевая служба является службой с отслеживанием состояния, то параметр TargetReplicaSelector может иметь значение PrimaryReplica, RandomSecondaryReplica или RandomReplica. Если этот параметр не указан, по умолчанию используется значение PrimaryReplica.
   * Если целевая служба является службой без отслеживания состояния, обратный прокси-сервер выбирает случайный экземпляр раздела службы, к которому направляется запрос.
-* **Timeout.** Время ожидания HTTP-запроса к службе, созданного обратным прокси-сервером от имени клиентского запроса. Значение по умолчанию составляет 60 секунд. Этот параметр является необязательным.
+* **Timeout.** Время ожидания HTTP-запроса к службе, созданного обратным прокси-сервером от имени клиентского запроса. Значение по умолчанию — 60 секунд. Этот параметр является необязательным.
 
 ### <a name="example-usage"></a>Пример использования
 Для примера рассмотрим службу *fabric:/MyApp/MyService*, которая открывает прослушиватель HTTP по приведенному ниже URL-адресу.
@@ -139,7 +139,7 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 
 ## <a name="special-handling-for-services-running-in-containers"></a>Специальные действия для служб, запущенных в контейнерах
 
-Чтобы создать `Fabric_NodeIPOrFQDN`URL-адрес обратного прокси-сервера[ для запущенных в контейнерах служб, можно использовать переменную среды ](#uri-format-for-addressing-services-by-using-the-reverse-proxy), как в следующем коде:
+Чтобы создать [URL-адрес обратного прокси-сервера](#uri-format-for-addressing-services-by-using-the-reverse-proxy) для запущенных в контейнерах служб, можно использовать переменную среды `Fabric_NodeIPOrFQDN`, как в следующем коде:
 
 ```csharp
     var fqdn = Environment.GetEnvironmentVariable("Fabric_NodeIPOrFQDN");

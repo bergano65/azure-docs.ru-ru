@@ -1,6 +1,6 @@
 ---
-title: Перемещение управляющего приложения, вызывающего веб-API, в рабочую среду — платформа Microsoft Identity | Службы
-description: Узнайте, как переместить управляющее приложение, которое вызывает веб-API в рабочую среду.
+title: Переместите приложение daemon, которое вызывает веб-AIS в производство - платформа идентификации Microsoft (ru) Azure
+description: Узнайте, как переместить приложение daemon, которое вызывает веб-AIS в производство
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -16,56 +16,56 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: db5f52c95daf4e93c140b4c93f39dad19971319d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79262624"
 ---
-# <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Приложение управляющей программы, вызывающее веб-API — переместить в рабочую среду
+# <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Daemon приложение, которое вызывает веб-AIS - перейти к производству
 
-Теперь, когда вы узнали, как получить и использовать маркер для вызова между службами, Узнайте, как переместить приложение в рабочую среду.
+Теперь, когда вы знаете, как приобрести и использовать токен для вызова службы в службу, узнайте, как переместить приложение в производство.
 
-## <a name="deployment---multitenant-daemon-apps"></a>Развертывание — многоклиентские приложения управляющей программы
+## <a name="deployment---multitenant-daemon-apps"></a>Развертывание - мультитенантные приложения daemon
 
-Если вы являетесь независимым поставщиком программного обеспечения, создающим управляющее приложение, которое может работать в нескольких клиентах, необходимо убедиться в том, что администратор клиента выполняет следующие действия.
+Если вы isV создаете приложение daemon, которое может работать в нескольких арендаторах, необходимо убедиться, что админ-арендатор:
 
-- Подготавливает субъект-службу для приложения.
-- Предоставляет согласие для приложения.
+- Обеспечивает директора службы для приложения.
+- Гранты дают согласие на применение.
 
-Вам необходимо объяснить своим заказчикам, как выполнять эти операции. Дополнительные сведения см. в разделе [запрос согласия для всего клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant).
+Вам нужно будет объяснить своим клиентам, как выполнять эти операции. Для получения дополнительной [информации см.](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вот несколько ссылок, которые помогут вам получить дополнительные сведения:
+Вот несколько ссылок, которые помогут вам узнать больше:
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-- Краткое руководство. [Получение маркера и вызов Microsoft Graph API из консольного приложения с помощью удостоверения приложения](./quickstart-v2-netcore-daemon.md).
-- Справочная документация по:
-  - Создание экземпляра [конфидентиалклиентаппликатион](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
-  - Вызов [аккуиретокенфорклиент](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder).
-- Другие примеры и учебники:
-  - [Microsoft-Identity-Platform-Console-DAEMON —](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) это простое консольное приложение управляющей программы .NET Core, в котором отображаются пользователи запросов клиентов Microsoft Graph.
+- Быстрый запуск: [Приобрести токен и вызов Microsoft Graph API из консольного приложения, используя личность приложения.](./quickstart-v2-netcore-daemon.md)
+- Справочная документация для:
+  - Мгновенное [конфиденциальноеклиентноеприложение](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
+  - Вызов [AcquireTokenForClient](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder).
+- Другие образцы/учебники:
+  - [Microsoft-идентификация-платформа-консоль-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) имеет простое приложение консоли .NET Core daemon, которое отображает пользователей арендатора запросmicrosoft Graph.
 
-    ![Пример топологии приложения управляющей программы](media/scenario-daemon-app/daemon-app-sample.svg)
+    ![Пример топологии приложения daemon](media/scenario-daemon-app/daemon-app-sample.svg)
 
-    В этом же примере также показан вариант с сертификатами:
+    В той же выборке также иллюстрируется вариация с сертификатами:
 
-    ![Пример топологии приложения управляющей программы — сертификаты](media/scenario-daemon-app/daemon-app-sample-with-certificate.svg)
+    ![Пример топологии приложения daemon - сертификаты](media/scenario-daemon-app/daemon-app-sample-with-certificate.svg)
 
-  - [Microsoft-Identity-Platform-ASPNET-webapp-DAEMON](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) включает в себя веб-приложение ASP.NET MVC, которое синхронизирует данные из Microsoft Graph с помощью удостоверения приложения, а не от имени пользователя. Этот пример также иллюстрирует процесс согласия администратора.
+  - [Microsoft-идентификация-платформа-aspnet-webapp-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) имеет ASP.NET MVC веб-приложение, которое синхронизирует данные из Microsoft Graph, используя личность приложения, а не от имени пользователя. Этот пример также иллюстрирует процесс согласия админ.
 
     ![Топология](media/scenario-daemon-app/damon-app-sample-web.svg)
 
 # <a name="python"></a>[Python](#tab/python)
 
-Попробуйте [получить маркер и вызвать Microsoft Graph API из консольного приложения Python, используя удостоверение приложения](./quickstart-v2-python-daemon.md).
+Попробуйте быстрый запуск [Приобрести маркер и вызов Microsoft Graph API из приложения консоли Python, используя личность приложения.](./quickstart-v2-python-daemon.md)
 
 # <a name="java"></a>[Java](#tab/java)
 
-MSAL Java в настоящее время находится в общедоступной предварительной версии. Дополнительные сведения см. в статье [MSAL Java dev Samples](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples).
+MSAL Java в настоящее время находится в открытом предварительном просмотре. Для получения дополнительной информации [см.](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples)
 
 ---
