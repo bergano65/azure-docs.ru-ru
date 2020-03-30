@@ -5,34 +5,34 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 03/06/2020
+ms.date: 03/24/2020
 ms.author: victorh
-ms.openlocfilehash: ad3289d9b93421df6776c685325f388d552bdba4
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 242fc115c5b2324c770de480fb19985e8b874893
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79279238"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80371267"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Ниже приведены часто задаваемые вопросы о шлюзе приложений Azure.
+Ниже приведены общие вопросы о шлюзе приложений Azure.
 
 ## <a name="general"></a>Общие сведения
 
 ### <a name="what-is-application-gateway"></a>Что такое шлюз приложений?
 
-Шлюз приложений Azure предоставляет контроллер доставки приложений (ADC) в качестве службы. Она предлагает различные возможности балансировки нагрузки уровня 7 для приложений. Эта служба обладает высокой доступностью, масштабируемостью и полностью управляется Azure.
+Azure Application Gateway предоставляет контроллер доставки приложений (ADC) в качестве службы. Он предлагает различные возможности балансировки нагрузки 7 уровня 7 для ваших приложений. Эта служба очень доступна, масштабируема и полностью управляется Azure.
 
 ### <a name="what-features-does-application-gateway-support"></a>Какие функции поддерживает Шлюз приложений?
 
-Шлюз приложений поддерживает автоматическое масштабирование, разгрузку SSL и сквозной протокол SSL, брандмауэр веб-приложения (WAF), сходство сеансов на основе файлов cookie, маршрутизацию на основе URL-пути, размещение с несколькими сайтами и другие компоненты. Полный список поддерживаемых функций см. в статье [Что такое Шлюз приложений Azure?](application-gateway-introduction.md)
+Приложение Gateway поддерживает автоматическое масштабирование, разгрузку SSL и сквозной SSL, брандмауэр веб-приложений (WAF), сродство сеансов на основе файлов cookie, маршрутизирование на основе URL-пути, многоузловое хостинг и другие функции. Полный список поддерживаемых функций см. в статье [Что такое Шлюз приложений Azure?](application-gateway-introduction.md)
 
-### <a name="how-do-application-gateway-and-azure-load-balancer-differ"></a>Чем отличаются шлюз приложений и Azure Load Balancer?
+### <a name="how-do-application-gateway-and-azure-load-balancer-differ"></a>Чем отличаются шлюз приложений и балансер загрузки Azure?
 
-Шлюз приложений — это подсистема балансировки нагрузки уровня 7, которая означает, что она работает только с веб-трафиком (HTTP, HTTPS, WebSocket и HTTP/2). Он поддерживает такие возможности, как завершение SSL, сходство сеансов на основе файлов cookie и циклический перебор трафика балансировки нагрузки. Load Balancer балансировки нагрузки трафика на уровне 4 (TCP или UDP).
+Приложение Gateway представляет собой балансизатор нагрузки уровня 7, что означает, что он работает только с веб-трафиком (HTTP, HTTPS, WebSocket и HTTP/2). Он поддерживает такие возможности, как sSL-прекращение, сродство сеансов на основе файлов cookie и круглый малиновка для балансировки нагрузки. Нагрузка балансер нагрузки-баланс движения на уровне 4 (TCP или UDP).
 
 ### <a name="what-protocols-does-application-gateway-support"></a>Какие протоколы поддерживает Шлюз приложений?
 
@@ -40,183 +40,187 @@ ms.locfileid: "79279238"
 
 ### <a name="how-does-application-gateway-support-http2"></a>Как Шлюз приложений поддерживает протокол HTTP/2?
 
-См. раздел [Поддержка HTTP/2](https://docs.microsoft.com/azure/application-gateway/configuration-overview#http2-support).
+Смотрите [поддержку HTTP/2](https://docs.microsoft.com/azure/application-gateway/configuration-overview#http2-support).
 
-### <a name="what-resources-are-supported-as-part-of-a-backend-pool"></a>Какие ресурсы поддерживаются как часть серверного пула?
+### <a name="what-resources-are-supported-as-part-of-a-backend-pool"></a>Какие ресурсы поддерживаются в рамках пула бэкэнда?
 
-См. раздел [Поддерживаемые серверные ресурсы](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#backend-pools).
+Смотрите [поддерживаемые ресурсы бэкэнда.](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#backend-pools)
 
 ### <a name="in-what-regions-is-application-gateway-available"></a>В каких регионах доступен шлюз приложений?
 
-Шлюз приложений доступен во всех регионах глобальной платформы Azure. Он также доступен в Azure для [государственных организаций](https://azure.microsoft.com/overview/clouds/government/)( [21vianet](https://www.azure.cn/) ).
+Шлюз приложений доступен во всех регионах глобальной платформы Azure. Он также доступен в [Azure China 21Vianet](https://www.azure.cn/) и [Azure правительства](https://azure.microsoft.com/overview/clouds/government/).
 
-### <a name="is-this-deployment-dedicated-for-my-subscription-or-is-it-shared-across-customers"></a>Это развертывание предназначено для моей подписки или доступно для всех клиентов?
+### <a name="is-this-deployment-dedicated-for-my-subscription-or-is-it-shared-across-customers"></a>Предназначено ли развертывание для моей подписки или оно является общим для всех клиентов?
 
 Шлюз приложений — это специальное развертывание в вашей виртуальной сети.
 
-### <a name="does-application-gateway-support-http-to-https-redirection"></a>Поддерживает ли шлюз приложений перенаправление HTTP-HTTPS?
+### <a name="does-application-gateway-support-http-to-https-redirection"></a>Поддерживает ли шлюз приложения HTTP-TO-HTTPS перенаправление?
 
-Перенаправление поддерживается. См. раздел [Обзор перенаправления шлюза приложений](application-gateway-redirect-overview.md).
+Перенаправление поддерживается. Смотрите [обзор приложения Gateway перенаправить](application-gateway-redirect-overview.md).
 
 ### <a name="in-what-order-are-listeners-processed"></a>В каком порядке обрабатываются прослушиватели?
 
-См. [порядок обработки прослушивателей](https://docs.microsoft.com/azure/application-gateway/configuration-overview#order-of-processing-listeners).
+Смотрите [порядок обработки слушателя.](https://docs.microsoft.com/azure/application-gateway/configuration-overview#order-of-processing-listeners)
 
-### <a name="where-do-i-find-the-application-gateway-ip-and-dns"></a>Где найти IP-адрес и DNS шлюза приложений?
+### <a name="where-do-i-find-the-application-gateway-ip-and-dns"></a>Где найти IP-адрес ip и DNS-портал приложений?
 
-Если вы используете общедоступный IP-адрес в качестве конечной точки, вы найдете сведения об IP-адресах и DNS в ресурсе общедоступного IP-адреса. Или найдите его на портале на странице Обзор шлюза приложений. Если вы используете внутренние IP-адреса, найдите информацию на странице Обзор.
+Если вы используете общедоступный IP-адрес в качестве конечной точки, вы найдете информацию об ИС и DNS на общедоступном ресурсе IP-адреса. Или найти его на портале, на странице обзора для портала приложения. Если вы используете внутренние IP-адреса, найдите информацию на странице обзора.
 
-Для номера SKU v2 Откройте ресурс общедоступного IP-адреса и выберите **Конфигурация**. Поле **Метка DNS-имени (необязательно)** доступно для настройки DNS-имени.
+Для v2 SKU откройте общедоступный ресурс IP и выберите **Конфигурацию.** Для настройки имени DNS доступно поле **марки DNS (необязательно).**
 
-### <a name="what-are-the-settings-for-keep-alive-timeout-and-tcp-idle-timeout"></a>Каковы параметры времени ожидания проверки активности и времени ожидания простоя TCP?
+### <a name="what-are-the-settings-for-keep-alive-timeout-and-tcp-idle-timeout"></a>Каковы настройки тайм-аута Keep-Alive и тайм-аута TCP?
 
-*Время ожидания проверки активности* регулируется временем, в течение которого шлюз приложений будет ожидать, пока клиент отправит другой HTTP-запрос на постоянное подключение, прежде чем использовать его повторно или закрыв. *Время ожидания простоя TCP* регулирует период времени, в течение которого TCP-подключение остается открытым в случае отсутствия активности. 
+*Тайм-аут Keep-Alive* определяет, как долго шлюз приложения будет ждать клиента, чтобы отправить другой запрос HTTP на постоянное соединение перед его повторного использования или закрытия. *Тайм-аут TCP определяет,* как долго подключение TCP остается открытым в случае отсутствия активности. 
 
-*Время ожидания проверки активности* в номере SKU шлюза приложений версии 1 составляет 120 секунд, а номер SKU v2 — 75 секунд. *Время ожидания простоя TCP* составляет 4 минуты по умолчанию на интерфейсном виртуальном IP-адресе (VIP) обоих SKU шлюза приложений: v1 и v2. 
+*Тайм-аут Keep-Alive* в Application Gateway v1 SKU составляет 120 секунд, а в v2 SKU - 75 секунд. *TCP простоя тайм-аут* 4-минутный по умолчанию на передней виртуальной IP (VIP) как v1 и v2 SKU приложения шлюза. 
 
-### <a name="does-the-ip-or-dns-name-change-over-the-lifetime-of-the-application-gateway"></a>Изменится ли IP-адрес или DNS-имя в течение времени существования шлюза приложений?
+### <a name="does-the-ip-or-dns-name-change-over-the-lifetime-of-the-application-gateway"></a>Изменяется ли имя IP или DNS в течение всего срока службы шлюза приложения?
 
-В SKU шлюза приложений версии 1 виртуальный IP-адрес может измениться, если вы останавливаете и запускаете шлюз приложений. Но DNS-имя, связанное с шлюзом приложений, не изменяется в течение времени существования шлюза. Так как DNS-имя не меняется, следует использовать псевдоним CNAME и указать его DNS-адрес шлюза приложений. В SKU шлюза приложений версии 2 можно задать статический IP-адрес, поэтому IP-адреса и DNS-имена не будут меняться в течение времени существования шлюза приложений. 
+В Application Gateway V1 SKU VIP может измениться, если вы остановитесь и запустите шлюз приложения. Но имя DNS, связанное с шлюзом приложения, не меняется в течение всего срока службы шлюза. Поскольку имя DNS не изменяется, следует использовать псевдоним CNAME и указать его на dNS-адрес шлюза приложения. В Application Gateway V2 SKU можно установить IP-адрес как статический, поэтому имя IP и DNS не изменится в течение всего срока службы шлюза приложения. 
 
 ### <a name="does-application-gateway-support-static-ip"></a>Поддерживает ли Шлюз приложений статические IP-адреса?
 
-Да, SKU шлюза приложений версии 2 поддерживает статические общедоступные IP-адреса. Номер SKU версии 1 поддерживает статические внутренние IP-адреса.
+Да, Application Gateway v2 SKU поддерживает статические общедоступные IP-адреса. Номер SKU версии 1 поддерживает статические внутренние IP-адреса.
 
 ### <a name="does-application-gateway-support-multiple-public-ips-on-the-gateway"></a>Поддерживает ли Шлюз приложений несколько общедоступных IP-адресов в шлюзе?
 
-Шлюз приложений поддерживает только один общедоступный IP-адрес.
+Шлюз приложения поддерживает только один общедоступный IP-адрес.
 
 ### <a name="how-large-should-i-make-my-subnet-for-application-gateway"></a>Каким должен быть размер подсети Шлюза приложений?
 
-См. раздел [рекомендации по размеру подсети шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-overview#size-of-the-subnet).
+Смотрите [соображения размера подсети Application Gateway.](https://docs.microsoft.com/azure/application-gateway/configuration-overview#size-of-the-subnet)
 
 ### <a name="can-i-deploy-more-than-one-application-gateway-resource-to-a-single-subnet"></a>Можно ли развернуть более одного ресурса шлюза приложений в одной подсети?
 
-Да. В дополнение к нескольким экземплярам данного развертывания шлюза приложений можно предоставить другой уникальный ресурс шлюза приложений для существующей подсети, содержащей другой ресурс шлюза приложений.
+Да. В дополнение к нескольким экземплярам заданного развертывания шлюза приложений можно предоставить другой уникальный ресурс Пристаного шлюза существующей подсети, содержащий другой ресурс Gateway application.
 
-Одна подсеть не может одновременно поддерживать как Standard_v2, так и стандартный шлюз приложений.
+Одна подсеть не может поддерживать как Standard_v2, так и стандартный шлюз приложений вместе.
+
+### <a name="does-application-gateway-v2-support-user-defined-routes-udr"></a>Поддерживает ли Application Gateway v2 маршруты, определяемые пользователями (UDR)?
+
+Да, но только конкретные сценарии. Для получения дополнительной информации смотрите [обзор конфигурации приложения Gateway](configuration-overview.md#user-defined-routes-supported-on-the-application-gateway-subnet).
 
 ### <a name="does-application-gateway-support-x-forwarded-for-headers"></a>Поддерживает ли Шлюз приложений заголовки X-Forwarded-For?
 
-Да. См. статью об [изменениях в запросе](https://docs.microsoft.com/azure/application-gateway/how-application-gateway-works#modifications-to-the-request).
+Да. Смотрите [изменения запроса](https://docs.microsoft.com/azure/application-gateway/how-application-gateway-works#modifications-to-the-request).
 
-### <a name="how-long-does-it-take-to-deploy-an-application-gateway-will-my-application-gateway-work-while-its-being-updated"></a>Сколько времени занимает развертывание шлюза приложений? Будет ли шлюз приложений работать в процессе обновления?
+### <a name="how-long-does-it-take-to-deploy-an-application-gateway-will-my-application-gateway-work-while-its-being-updated"></a>Сколько времени занимает развертывание шлюза приложения? Будет ли мой шлюз приложения работать во время его обновления?
 
-Подготовка новых развертываний номера SKU Шлюза приложений версии 1 может занять до 20 минут. Изменения размера или количества экземпляров не нарушаются, и шлюз остается активным в течение этого времени.
+Подготовка новых развертываний номера SKU Шлюза приложений версии 1 может занять до 20 минут. Изменения размера экземпляра или количества не являются разрушительными, и шлюз остается активным в течение этого времени.
 
-В большинстве развертываний, использующих SKU версии 2, инициализация занимает около 6 минут. Однако это может занять больше времени в зависимости от типа развертывания. Например, развертывание в нескольких Зоны доступности с несколькими экземплярами может занять более 6 минут. 
+Большинство развертываний, которые используют v2 SKU занимает около 6 минут, чтобы обеспечить. Однако это может занять больше времени в зависимости от типа развертывания. Например, развертывание в нескольких зонах доступности с большим количеством экземпляров может занять более 6 минут. 
 
-### <a name="can-i-use-exchange-server-as-a-backend-with-application-gateway"></a>Можно ли использовать сервер Exchange Server в качестве серверного шлюза?
+### <a name="can-i-use-exchange-server-as-a-backend-with-application-gateway"></a>Могу ли я использовать Exchange Server в качестве бэкэнда с помощью шлюза приложений?
 
-Нет. Шлюз приложений не поддерживает такие протоколы электронной почты, как SMTP, IMAP и POP3. 
+Нет. Приложение Gateway не поддерживает протоколы электронной почты, такие как SMTP, IMAP и POP3. 
 
 ## <a name="performance"></a>Производительность
 
 ### <a name="how-does-application-gateway-support-high-availability-and-scalability"></a>Каким образом Шлюз приложений поддерживает высокий уровень доступности и масштабируемость?
 
-SKU шлюза приложений версии 1 поддерживает сценарии высокого уровня доступности при развертывании двух или более экземпляров. Azure распространяет эти экземпляры между доменами обновления и сбоя, чтобы гарантировать, что экземпляры не завершатся одновременно. Номер SKU версии 1 поддерживает масштабируемость путем добавления нескольких экземпляров одного шлюза для распределения нагрузки.
+Приложение Gateway v1 SKU поддерживает сценарии высокой доступности при развертывании двух или более экземпляров. Azure распространяет эти экземпляры по областям обновления и неисправностей, чтобы гарантировать, что экземпляры не сбой в то же время. Номер SKU версии 1 поддерживает масштабируемость путем добавления нескольких экземпляров одного шлюза для распределения нагрузки.
 
-Номер SKU версии 2 автоматически гарантирует, что новые экземпляры распределяются между доменами сбоя и доменами обновления. При выборе избыточности зоны новейшие экземпляры также распределяются между зонами доступности, чтобы обеспечить устойчивость зональные к сбоям.
+Номер SKU версии 2 автоматически гарантирует, что новые экземпляры распределяются между доменами сбоя и доменами обновления. Если вы выбираете резервизм зоны, новейшие экземпляры также распределяются по зонам доступности, чтобы предложить устойчивость зональных сбоев.
 
-### <a name="how-do-i-achieve-a-dr-scenario-across-datacenters-by-using-application-gateway"></a>Разделы справки получить сценарий аварийного восстановления в центрах обработки данных с помощью шлюза приложений?
+### <a name="how-do-i-achieve-a-dr-scenario-across-datacenters-by-using-application-gateway"></a>Как достичь сценария DR в центрах обработки данных с помощью портала приложений?
 
-Используйте диспетчер трафика для распределения трафика между несколькими шлюзами приложений в разных центрах обработки данных.
+Используйте traffic Manager для распределения трафика по нескольким шлюзам приложений в различных центрах обработки данных.
 
-### <a name="does-application-gateway-support-autoscaling"></a>Поддерживает ли шлюз приложений Автомасштабирование?
+### <a name="does-application-gateway-support-autoscaling"></a>Поддерживает ли автоматический масштабирование шлюз приложения?
 
-Да, номер SKU Шлюза приложений версии 2 поддерживает автоматическое масштабирование. Дополнительные сведения см. в статье [Автомасштабирование и избыточное в зону шлюз приложений](application-gateway-autoscaling-zone-redundant.md).
+Да, номер SKU Шлюза приложений версии 2 поддерживает автоматическое масштабирование. Для получения дополнительной [информации см.](application-gateway-autoscaling-zone-redundant.md)
 
-### <a name="does-manual-or-automatic-scale-up-or-scale-down-cause-downtime"></a>Вызывает ли время простоя или автоматическое увеличение или уменьшение масштаба?
+### <a name="does-manual-or-automatic-scale-up-or-scale-down-cause-downtime"></a>Приводит ли ручной или автоматический масштаб или масштаб дауна время простоя?
 
 Нет. Экземпляры распределяются через домены обновления и домены сбоя.
 
 ### <a name="does-application-gateway-support-connection-draining"></a>Поддерживает ли Шлюз приложений фильтрацию подключений?
 
-Да. Можно настроить сток подключений, чтобы изменить элементы в внутреннем пуле без прерывания работы. Дополнительные сведения см. в [разделе сток подключений в шлюзе приложений](features.md#connection-draining).
+Да. Можно настроить соединение, истощающее для изменения членов в пуле бэкэнда без сбоев. Для получения дополнительной [информации](features.md#connection-draining)см.
 
 ### <a name="can-i-change-instance-size-from-medium-to-large-without-disruption"></a>Можно ли изменить размер экземпляра со среднего на большой без прерывания?
 
 Да.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="is-application-gateway-always-deployed-in-a-virtual-network"></a>Всегда ли Шлюз приложений развертывается в виртуальной сети?
 
-Да. Шлюз приложений всегда развертывается в подсети виртуальной сети. Эта подсеть может содержать только шлюзы приложений. Дополнительные сведения см. в статье [требования к виртуальной сети и подсети](https://docs.microsoft.com/azure/application-gateway/configuration-overview#azure-virtual-network-and-dedicated-subnet).
+Да. Приложение Gateway всегда развертывается в виртуальной сетевой подсети. Эта подсеть может содержать только шлюзы приложений. Для получения дополнительной информации [см.](https://docs.microsoft.com/azure/application-gateway/configuration-overview#azure-virtual-network-and-dedicated-subnet)
 
-### <a name="can-application-gateway-communicate-with-instances-outside-of-its-virtual-network-or-outside-of-its-subscription"></a>Может ли шлюз приложений взаимодействовать с экземплярами вне своей виртуальной сети или за пределами своей подписки?
+### <a name="can-application-gateway-communicate-with-instances-outside-of-its-virtual-network-or-outside-of-its-subscription"></a>Может ли Application Gateway общаться со экземплярами за пределами своей виртуальной сети или за пределами подписки?
 
-При наличии IP-подключения шлюз приложений может взаимодействовать с экземплярами за пределами виртуальной сети, в которой он находится. Шлюз приложений также может взаимодействовать с экземплярами вне подписки, в которой он находится. Если вы планируете использовать внутренние IP-адреса в качестве членов серверного пула, используйте [пиринг виртуальной сети](../virtual-network/virtual-network-peering-overview.md) или [шлюз VPN Azure](../vpn-gateway/vpn-gateway-about-vpngateways.md).
+Пока у вас есть IP-соединение, Application Gateway может общаться со экземплярами за пределами виртуальной сети, в которую он подключен. Приложение Gateway также может общаться со экземплярами вне подписки, в которых он вне. Если вы планируете использовать внутренние I-провайдеры в качестве бэкэнд-пула, используйте [виртуальную сеть пиринга](../virtual-network/virtual-network-peering-overview.md) или [Azure VPN Gateway.](../vpn-gateway/vpn-gateway-about-vpngateways.md)
 
 ### <a name="can-i-deploy-anything-else-in-the-application-gateway-subnet"></a>Можно ли развернуть еще что-нибудь в подсети шлюза приложений?
 
 Нет. Но вы можете развернуть другие шлюзы приложений в подсети.
 
-### <a name="are-network-security-groups-supported-on-the-application-gateway-subnet"></a>Поддерживаются ли группы безопасности сети в подсети шлюза приложений?
+### <a name="are-network-security-groups-supported-on-the-application-gateway-subnet"></a>Поддерживаются ли группы сетевой безопасности в подсети шлюза приложения?
 
-См. раздел [группы безопасности сети в подсети шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-overview#network-security-groups-on-the-application-gateway-subnet).
+Смотрите [группы сетевой безопасности в подсети Application Gateway.](https://docs.microsoft.com/azure/application-gateway/configuration-overview#network-security-groups-on-the-application-gateway-subnet)
 
-### <a name="does-the-application-gateway-subnet-support-user-defined-routes"></a>Поддерживает ли подсеть шлюза приложений определяемые пользователем маршруты?
+### <a name="does-the-application-gateway-subnet-support-user-defined-routes"></a>Поддерживает ли подсеть шлюза приложения маршруты, определяемые пользователем?
 
-См. раздел [определяемые пользователем маршруты, поддерживаемые в подсети шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-overview#user-defined-routes-supported-on-the-application-gateway-subnet).
+Смотрите [маршруты, поддерживаемые пользователями, в подсети Application Gateway.](https://docs.microsoft.com/azure/application-gateway/configuration-overview#user-defined-routes-supported-on-the-application-gateway-subnet)
 
 ### <a name="what-are-the-limits-on-application-gateway-can-i-increase-these-limits"></a>Какие у шлюза приложений ограничения? Можно ли увеличить предельные значения?
 
-См. раздел [ограничения шлюза приложений](../azure-resource-manager/management/azure-subscription-service-limits.md#application-gateway-limits).
+Посмотреть [лимиты шлюзов приложений](../azure-resource-manager/management/azure-subscription-service-limits.md#application-gateway-limits).
 
-### <a name="can-i-simultaneously-use-application-gateway-for-both-external-and-internal-traffic"></a>Можно ли одновременно использовать шлюз приложений как для внешнего, так и для внутреннего трафика?
+### <a name="can-i-simultaneously-use-application-gateway-for-both-external-and-internal-traffic"></a>Могу ли я одновременно использовать шлюз приложения как для внешнего, так и для внутреннего трафика?
 
-Да. Шлюз приложений поддерживает один внутренний IP-адрес и один внешний IP-адрес для шлюза приложений.
+Да. Application Gateway поддерживает один внутренний IP и один внешний IP на шлюз приложения.
 
-### <a name="does-application-gateway-support-virtual-network-peering"></a>Поддерживает ли шлюз приложений пиринг виртуальных сетей?
+### <a name="does-application-gateway-support-virtual-network-peering"></a>Поддерживает ли Application Gateway виртуальную сеть пиринга?
 
-Да. Пиринг виртуальных сетей обеспечивает балансировку нагрузки трафика в других виртуальных сетях.
+Да. Виртуальная сеть пиринга помогает нагрузки баланса трафика в других виртуальных сетей.
 
-### <a name="can-i-talk-to-on-premises-servers-when-theyre-connected-by-expressroute-or-vpn-tunnels"></a>Можно ли взаимодействовать с локальными серверами, подключенными с помощью виртуальных туннелей ExpressRoute или VPN?
+### <a name="can-i-talk-to-on-premises-servers-when-theyre-connected-by-expressroute-or-vpn-tunnels"></a>Могу ли я поговорить с наемными серверами, когда они подключены ExpressRoute или VPN туннелями?
 
 Да, при условии, что разрешен трафик.
 
-### <a name="can-one-backend-pool-serve-many-applications-on-different-ports"></a>Может ли один серверный пул обслуживать множество приложений на разных портах?
+### <a name="can-one-backend-pool-serve-many-applications-on-different-ports"></a>Может ли один бэкэнд-пул обслуживать множество приложений в разных портах?
 
-Поддерживается архитектура микрослужб. Для проверки на разных портах необходимо настроить несколько параметров HTTP.
+Архитектура микрослужб поддерживается. Чтобы исследовать на разных портах, необходимо настроить несколько настроек HTTP.
 
-### <a name="do-custom-probes-support-wildcards-or-regex-on-response-data"></a>Поддерживают ли пользовательские зонды подстановочные знаки или регулярные выражения в ответных данных?
+### <a name="do-custom-probes-support-wildcards-or-regex-on-response-data"></a>Поддерживают ли пользовательские зонды подстановочные знаки или regex по данным ответов?
 
 Нет. 
 
-### <a name="how-are-routing-rules-processed-in-application-gateway"></a>Как правила маршрутизации обрабатываются в шлюзе приложений?
+### <a name="how-are-routing-rules-processed-in-application-gateway"></a>Как обрабатываются правила реуктора в шлюзе приложения?
 
-См. раздел [порядок правил обработки](https://docs.microsoft.com/azure/application-gateway/configuration-overview#order-of-processing-rules).
+Смотрите [Правила обработки.](https://docs.microsoft.com/azure/application-gateway/configuration-overview#order-of-processing-rules)
 
-### <a name="for-custom-probes-what-does-the-host-field-signify"></a>Что означают поля узла для пользовательских зондов?
+### <a name="for-custom-probes-what-does-the-host-field-signify"></a>Что означает поле Host для пользовательских зондов?
 
-В поле Host указывается имя для отправки зонда при настройке многосайтового шлюза приложений. В противном случае используйте "127.0.0.1". Это значение отличается от имени узла виртуальной машины. Его формат: \<протокол\>://\<узел\>:\<порт\>\<путь\>.
+Поле Host определяет имя для отправки зонда, когда вы настроили мультисайт на шлюзе приложения. В противном случае используйте '127.0.0.1'. Это значение отличается от названия виртуального хоста машины. Его формат \<\>\<протокол ://\<\>\<хост\>\>: путь порта .
 
-### <a name="can-i-allow-application-gateway-access-to-only-a-few-source-ip-addresses"></a>Можно ли разрешить шлюзу приложений доступ только к некоторым исходным IP-адресам?
+### <a name="can-i-allow-application-gateway-access-to-only-a-few-source-ip-addresses"></a>Могу ли я разрешить доступ к Порталу приложений только к нескольким IP-адресам источника?
 
-Да. См. раздел [ограничение доступа к определенным исходным IP](https://docs.microsoft.com/azure/application-gateway/configuration-overview#allow-application-gateway-access-to-a-few-source-ips)-адресам.
+Да. Смотрите [ограничить доступ к определенным испытно-сноттам-источникам.](https://docs.microsoft.com/azure/application-gateway/configuration-overview#allow-application-gateway-access-to-a-few-source-ips)
 
-### <a name="can-i-use-the-same-port-for-both-public-facing-and-private-facing-listeners"></a>Можно ли использовать один и тот же порт как для общедоступных, так и для частных прослушивателей?
+### <a name="can-i-use-the-same-port-for-both-public-facing-and-private-facing-listeners"></a>Могу ли я использовать один и тот же порт как для слушателей, стоящих перед общественностью, так и для частных слушателей?
 
 Нет.
 
-### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Доступны ли рекомендации для перехода с SKU версии v1 на SKU v2?
+### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Есть ли рекомендации для перехода из v1 SKU в v2 SKU?
 
-Да. Дополнительные сведения см. в разделе [Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2](migrate-v1-v2.md).
+Да. Для получения подробной информации [см.](migrate-v1-v2.md)
 
-### <a name="does-application-gateway-support-ipv6"></a>Поддерживает ли шлюз приложений IPv6?
+### <a name="does-application-gateway-support-ipv6"></a>Поддерживает ли шлюз приложения IPv6?
 
-В настоящее время шлюз приложений версии 2 не поддерживает IPv6. Он может работать в виртуальной сети с двумя стеками, используя только IPv4, но подсеть шлюза должна быть только IPv4. Шлюз приложений версии 1 не поддерживает два виртуальных сетей стека. 
+Приложение Gateway v2 в настоящее время не поддерживает IPv6. Он может работать в двойном стеке VNet, используя только IPv4, но подсеть шлюза должна быть только IPv4. Application Gateway v1 не поддерживает двойной стек VNets. 
 
-## <a name="configuration---ssl"></a>Конфигурация — SSL
+## <a name="configuration---ssl"></a>Конфигурация - SSL
 
-### <a name="what-certificates-does-application-gateway-support"></a>Какие сертификаты поддерживает шлюз приложений?
+### <a name="what-certificates-does-application-gateway-support"></a>Какие сертификаты поддерживает шлюз приложения?
 
-Шлюз приложений поддерживает самозаверяющие сертификаты, сертификаты центров сертификации, сертификаты высокой надежности (EV) и сертификаты с подстановочными знаками.
+Приложение Gateway поддерживает самоподписанные сертификаты, сертификаты (CA), сертификаты расширенной валидации (EV) и сертификаты подстановочных знаков.
 
-### <a name="what-cipher-suites-does-application-gateway-support"></a>Какие наборы шифров поддерживают шлюз приложений?
+### <a name="what-cipher-suites-does-application-gateway-support"></a>Какие наборы шифров поддерживает сяочие наборы приложений?
 
-Шлюз приложений поддерживает следующие комплекты шифров. 
+Приложение Gateway поддерживает следующие наборы шифров. 
 
 - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
@@ -247,19 +251,19 @@ SKU шлюза приложений версии 1 поддерживает сц
 - TLS_RSA_WITH_3DES_EDE_CBC_SHA
 - TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA
 
-Сведения о настройке параметров SSL см. в статье [Настройка версий политик SSL и комплектов шифров на шлюзе приложений](application-gateway-configure-ssl-policy-powershell.md).
+Для получения информации о том, как настроить параметры SSL, [см.](application-gateway-configure-ssl-policy-powershell.md)
 
-### <a name="does-application-gateway-support-reencryption-of-traffic-to-the-backend"></a>Поддерживает ли шлюз приложений перешифрование трафика на серверную часть?
+### <a name="does-application-gateway-support-reencryption-of-traffic-to-the-backend"></a>Поддерживает ли Application Gateway повторное шифрование трафика в бэкэнде?
 
-Да. Шлюз приложений поддерживает разгрузку SSL и сквозной протокол SSL, который повторно шифрует трафик на серверную часть.
+Да. Приложение Gateway поддерживает Разгрузку SSL и сквозной SSL, который повторно шифрует трафик в бэкэнд.
 
-### <a name="can-i-configure-ssl-policy-to-control-ssl-protocol-versions"></a>Можно ли настроить политику SSL для управления версиями протокола SSL?
+### <a name="can-i-configure-ssl-policy-to-control-ssl-protocol-versions"></a>Могу ли я настроить политику SSL для управления версиями протоколов SSL?
 
-Да. Шлюз приложений можно настроить для запрета TLS 1.0, TLS 1.1 и TLS 1.2. По умолчанию SSL 2,0 и 3,0 уже отключены и не могут быть настроены.
+Да. Вы можете настроить шлюз приложения, чтобы отказать в TLS1.0, TLS1.1 и TLS1.2. По умолчанию SSL 2.0 и 3.0 уже отключены и не настраиваются.
 
 ### <a name="can-i-configure-cipher-suites-and-policy-order"></a>Можно ли настроить комплекты шифров и порядок политик?
 
-Да. В шлюзе приложений можно [настроить комплекты шифров](application-gateway-ssl-policy-overview.md). Чтобы определить пользовательскую политику, включите по меньшей мере один из следующих комплектов шифров. 
+Да. В приложении Gateway можно [настроить наборы шифров.](application-gateway-ssl-policy-overview.md) Чтобы определить пользовательскую политику, включите по крайней мере один из следующих наборов шифров. 
 
 * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 
 * TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
@@ -268,152 +272,152 @@ SKU шлюза приложений версии 1 поддерживает сц
 * TLS_RSA_WITH_AES_256_CBC_SHA256
 * TLS_RSA_WITH_AES_128_CBC_SHA256
 
-Шлюз приложений использует SHA256 для управления серверной частью.
+Приложение Gateway использует SHA256 для управления бэкэндом.
 
-### <a name="how-many-ssl-certificates-does-application-gateway-support"></a>Сколько SSL-сертификатов поддерживает шлюз приложений?
+### <a name="how-many-ssl-certificates-does-application-gateway-support"></a>Сколько SSL-сертификатов поддерживает Шлюз приложения?
 
-Шлюз приложений поддерживает до 100 SSL-сертификатов.
+Приложение Gateway поддерживает до 100 SSL-сертификатов.
 
-### <a name="how-many-authentication-certificates-for-backend-reencryption-does-application-gateway-support"></a>Сколько сертификатов проверки подлинности для перешифрования серверной части поддерживает шлюз приложений?
+### <a name="how-many-authentication-certificates-for-backend-reencryption-does-application-gateway-support"></a>Сколько сертификатов аутентификации для повторного шифрования бэкэнда поддерживает Application Gateway?
 
-Шлюз приложений поддерживает до 100 сертификатов проверки подлинности.
+Приложение Gateway поддерживает до 100 сертификатов аутентификации.
 
-### <a name="does-application-gateway-natively-integrate-with-azure-key-vault"></a>Поддерживает ли шлюз приложений встроенную интеграцию с Azure Key Vault?
+### <a name="does-application-gateway-natively-integrate-with-azure-key-vault"></a>Интегрируется ли шлюз приложений с Azure Key Vault?
 
-Да, SKU шлюза приложений версии 2 поддерживает Key Vault. Дополнительные сведения см. [в разделе завершение SSL с помощью сертификатов Key Vault](key-vault-certs.md).
+Да, Application Gateway v2 SKU поддерживает Key Vault. Для получения дополнительной [SSL termination with Key Vault certificates](key-vault-certs.md)информации см.
 
-### <a name="how-do-i-configure-https-listeners-for-com-and-net-sites"></a>Разделы справки настроить прослушиватели HTTPS для сайтов com и .NET? 
+### <a name="how-do-i-configure-https-listeners-for-com-and-net-sites"></a>Как настроить httpS слушателей для .com и .net сайтов? 
 
-Для маршрутизации на основе нескольких доменов (на основе узла) можно создать многосайтовые прослушиватели, настроить прослушиватели, использующие протокол HTTPS, в качестве протокола и связать прослушиватели с правилами маршрутизации. Дополнительные сведения см. в разделе [Размещение нескольких сайтов с помощью шлюза приложений](https://docs.microsoft.com/azure/application-gateway/multiple-site-overview).
+Для нескольких доменных (хост-ориентированных) реуктов можно создать многоузловые слушатели, настроить слушателей, которые используют HTTPS в качестве протокола, и связать слушателей с правилами разгрома. Для получения дополнительной информации [см. Хостинг нескольких сайтов с помощью приложения шлюз](https://docs.microsoft.com/azure/application-gateway/multiple-site-overview).
 
-### <a name="can-i-use-special-characters-in-my-pfx-file-password"></a>Можно ли использовать специальные символы в пароле PFX-файла?
+### <a name="can-i-use-special-characters-in-my-pfx-file-password"></a>Могу ли я использовать специальные символы в моем пароле файлов .pfx?
 
-Нет, используйте только буквенно-цифровые символы в пароле PFX-файла.
+Нет, используйте только буквенно-цифровые символы в пароле файлов .pfx.
 
-## <a name="configuration---web-application-firewall-waf"></a>Настройка — брандмауэр веб-приложения (WAF)
+## <a name="configuration---web-application-firewall-waf"></a>Конфигурация - брандмауэр веб-приложений (WAF)
 
-### <a name="does-the-waf-sku-offer-all-the-features-available-in-the-standard-sku"></a>Предлагает ли SKU WAF все функции, доступные в стандартном SKU?
+### <a name="does-the-waf-sku-offer-all-the-features-available-in-the-standard-sku"></a>Предлагает ли WAF SKU все функции, доступные в Стандартном SKU?
 
-Да. WAF поддерживает все функции SKU "Стандартный".
+Да. WAF поддерживает все функции в Стандартном SKU.
 
 ### <a name="how-do-i-monitor-waf"></a>Как выполнять мониторинг WAF?
 
-Мониторинг WAF с помощью ведения журнала диагностики. Дополнительные сведения см. в разделе [ведение журнала диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).
+Мониторинг WAF с помощью диагностических журналов. Для получения дополнительной [информации см.](application-gateway-diagnostics.md)
 
 ### <a name="does-detection-mode-block-traffic"></a>Блокируется ли трафик в режиме обнаружения?
 
-Нет. Режим обнаружения только регистрирует трафик, который запускает правило WAF.
+Нет. Режим обнаружения регистрирует только трафик, который запускает правило WAF.
 
 ### <a name="can-i-customize-waf-rules"></a>Могу ли я настроить правила WAF?
 
-Да. Дополнительные сведения см. в разделе [Настройка групп правил и правил WAF](application-gateway-customize-waf-rules-portal.md).
+Да. Для получения дополнительной [информации см.](application-gateway-customize-waf-rules-portal.md)
 
 ### <a name="what-rules-are-currently-available-for-waf"></a>Какие правила в настоящее время доступны для WAF?
 
-В настоящее время WAF поддерживает запросы CR [2.2.9](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp229), [3,0](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp30)и [3,1](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp31). Эти правила обеспечивают безопасность на основе большинства первых 10 уязвимостей, в которых открытый проект безопасности веб-приложений (OWASP) определяет: 
+WAF в настоящее время поддерживает CRS [2.2.9,](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp229) [3.0,](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp30)и [3.1](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp31). Эти правила обеспечивают базовую безопасность от большинства из топ-10 уязвимостей, которые Open Web Application Security Project (OWASP) определяет: 
 
 * Защита от внедрения кода SQL.
-* Защита от межсайтовых сценариев
-* Защита от распространенных веб-атак, таких как внедрение команд, HTTP-запрос несанкционированных, разделение HTTP-ответов и атака с удаленным включением файлов.
+* Защита от кросс-сайтов сценариев
+* Защита от распространенных веб-атак, таких как инъекция команд, контрабанда запроса HTTP, разделение ответов HTTP и атака удаленного включения файлов
 * Защита от нарушений протокола HTTP.
 * Защита от аномалий протокола HTTP, например отсутствия агента пользователя узла и заголовков accept.
 * Защита от программ-роботов, программ-обходчиков и сканеров.
-* Обнаружение распространенных недопустимых конфигураций приложений (то есть Apache, IIS и т. д.)
+* Обнаружение распространенных неправильных конфигураций приложений (то есть Apache, IIS и так далее)
 
-Дополнительные сведения см. в статье [OWASP Top-10 уязвимостей](https://www.owasp.org/index.php/Top10#OWASP_Top_10_for_2013).
+Для получения дополнительной [OWASP top-10 vulnerabilities](https://www.owasp.org/index.php/Top10#OWASP_Top_10_for_2013)информации см.
 
-### <a name="does-waf-support-ddos-protection"></a>Поддерживает ли WAF защиту от атак DDoS?
+### <a name="does-waf-support-ddos-protection"></a>Поддерживает ли WAF защиту DDoS?
 
-Да. Защиту от атак DDoS можно включить в виртуальной сети, в которой развернут шлюз приложений. Этот параметр гарантирует, что служба защиты Azure от атак DDoS также защищает виртуальный IP-адрес шлюза приложений (VIP).
+Да. Вы можете включить DDoS-защиту в виртуальной сети, где развертывается шлюз приложения. Эта настройка гарантирует, что служба DDoS-защиты Azure также защищает виртуальный IP-адрес приложения (VIP).
 
-### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Доступны ли рекомендации для перехода с SKU версии v1 на SKU v2?
+### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Есть ли рекомендации для перехода из v1 SKU в v2 SKU?
 
-Да. Дополнительные сведения см. в разделе [Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2](migrate-v1-v2.md).
+Да. Для получения подробной информации [см.](migrate-v1-v2.md)
 
-## <a name="configuration---ingress-controller-for-aks"></a>Конфигурация — входной контроллер для AKS
+## <a name="configuration---ingress-controller-for-aks"></a>Конфигурация - всколыхающий контроллер для AKS
 
-### <a name="what-is-an-ingress-controller"></a>Что такое входной контроллер?
+### <a name="what-is-an-ingress-controller"></a>Что такое контроллер входа?
 
-Kubernetes позволяет создавать ресурсы `deployment` и `service` для внутреннего представления группы модулей Pod в кластере. Чтобы обеспечить доступ к той же службе извне, определяется ресурс [`Ingress`](https://kubernetes.io/docs/concepts/services-networking/ingress/) , который обеспечивает балансировку нагрузки, завершение SSL и виртуальное размещение на основе имени.
-Для удовлетворения этого `Ingress`ного ресурса требуется входной контроллер, который прослушивает любые изменения в ресурсах `Ingress` и настраивает политики подсистемы балансировки нагрузки.
+Kubernetes позволяет `deployment` создавать `service` и ресурсы подвергать группу стручков внутри кластера. Чтобы разоблачить ту же [`Ingress`](https://kubernetes.io/docs/concepts/services-networking/ingress/) самую службу извне, определяется ресурс, обеспечивающий балансировку нагрузки, sSL-прекращение и виртуальный хостинг на основе имен.
+Для удовлетворения этого `Ingress` ресурса требуется контроллер Ingress, `Ingress` который выслушивает любые изменения ресурсов и настраивает политики балансировщика нагрузки.
 
-Контроллер входящего трафика шлюза приложений позволяет использовать [шлюз приложений Azure](https://azure.microsoft.com/services/application-gateway/) в качестве входящего трафика для [службы Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/) , также известной как кластер AKS.
+Контроллер входа в шлюз приложений позволяет использовать [шлюз приложений Azure](https://azure.microsoft.com/services/application-gateway/) в качестве входа в [службу Azure Kubernetes,](https://azure.microsoft.com/services/kubernetes-service/) также известную как кластер AKS.
 
-### <a name="can-a-single-ingress-controller-instance-manage-multiple-application-gateways"></a>Может ли один экземпляр входящего контроллера управлять несколькими шлюзами приложений?
+### <a name="can-a-single-ingress-controller-instance-manage-multiple-application-gateways"></a>Может ли один экземпляр контроллера управлять несколькими шлюзами приложений?
 
-В настоящее время один экземпляр входящего контроллера может быть связан только с одним шлюзом приложений.
+В настоящее время один экземпляр контроллера Ingress может быть связан только с одним шлюзом приложения.
 
 ## <a name="diagnostics-and-logging"></a>Диагностика и ведение журнала
 
-### <a name="what-types-of-logs-does-application-gateway-provide"></a>Какие типы журналов предоставляет шлюз приложений?
+### <a name="what-types-of-logs-does-application-gateway-provide"></a>Какие типы журналов предоставляет Портал приложений?
 
-Шлюз приложений предоставляет три журнала: 
+Приложение Шлюз предоставляет три журнала: 
 
-* **ApplicationGatewayAccessLog**: журнал доступа содержит каждый запрос, отправленный на интерфейсный сервер шлюза приложений. Данные включают в себя IP-адрес вызывающей стороны, запрошенный URL, задержку ответа, код возврата и байты. Журнал доступа собирается каждые 300 секунд. Он содержит одну запись для каждого шлюза приложений.
-* **ApplicationGatewayPerformanceLog**. Журнал производительности фиксирует сведения о производительности для каждого шлюза приложений. Сведения включают пропускную способность в байтах, общее число обслуженных запросов, количество неудачных запросов, а также работоспособное и неработоспособное число экземпляров сервера.
-* **ApplicationGatewayFirewallLog**. для шлюзов приложений, настроенных с помощью WAF, журнал брандмауэра содержит запросы, которые регистрируются в режиме обнаружения или в режиме предотвращения.
+* **ApplicationGatewayAccessLog**: Журнал доступа содержит каждый запрос, представленный в переднюю часть шлюза приложения. Данные включают IP-адрес вызываемого абонента, запрашиваемый URL-адрес, задержку ответа, код возврата и байты в и обратно. Журнал доступа собирается каждые 300 секунд. Он содержит одну запись на шлюз приложения.
+* **ApplicationGatewayPerformanceLog**: Журнал производительности фиксирует информацию о производительности для каждого шлюза приложения. Информация включает пропускную выливку в байты, общее количество поданных запросов, неудавальное количество запросов, а также неработоспособное и нездоровое количество экземпляров бэкэнда.
+* **ApplicationGatewayFirewallLog:** Для шлюзов приложений, которые вы настраиваете с помощью WAF, журнал брандмауэра содержит запросы, которые регистрируются либо через режим обнаружения, либо в режиме предотвращения.
 
-Дополнительные сведения см. в разделе [работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).
+Для получения дополнительной информации ознакомьтесь с [журналами backend health, журналами диагностики и метриками для шлюза приложений.](application-gateway-diagnostics.md)
 
 ### <a name="how-do-i-know-if-my-backend-pool-members-are-healthy"></a>Как узнать, работоспособны ли участники серверного пула?
 
-Проверьте работоспособность с помощью командлета PowerShell `Get-AzApplicationGatewayBackendHealth` или портала. Дополнительные сведения см. в разделе [Журналы диагностики](application-gateway-diagnostics.md).
+Проверьте здоровье с помощью `Get-AzApplicationGatewayBackendHealth` cmdlet PowerShell или портала. Для получения дополнительной [информации](application-gateway-diagnostics.md)см.
 
-### <a name="whats-the-retention-policy-for-the-diagnostic-logs"></a>Какова политика хранения для журналов диагностики?
+### <a name="whats-the-retention-policy-for-the-diagnostic-logs"></a>Какова политика удержания диагностических журналов?
 
-Журналы диагностики поступают в учетную запись хранения клиента. Клиенты могут настроить политику хранения в соответствии с их предпочтениями. Журналы диагностики можно также отправлять в концентратор событий или в журналы Azure Monitor. Дополнительные сведения см. в разделе [Журналы диагностики](application-gateway-diagnostics.md).
+Диагностические журналы поступают на учетную запись хранения клиента. Клиенты могут устанавливать политику удержания в зависимости от их предпочтений. Диагностические журналы также могут быть отправлены в концентратор событий или журналы Azure Monitor. Для получения дополнительной [информации](application-gateway-diagnostics.md)см.
 
 ### <a name="how-do-i-get-audit-logs-for-application-gateway"></a>Как получить журналы аудита для Шлюза приложений?
 
-На портале в колонке меню шлюза приложений выберите **Журнал действий** для доступа к журналу аудита. 
+На портале, в меню blade портала приложения, выберите **журнал активности** для доступа к журналу аудита. 
 
 ### <a name="can-i-set-alerts-with-application-gateway"></a>Можно ли настроить оповещения для Шлюза приложений?
 
-Да. В шлюзе приложений оповещения настраиваются на основе метрик. Дополнительные сведения см. в статьях [метрики шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-metrics) и [Получение уведомлений об оповещениях](../monitoring-and-diagnostics/insights-receive-alert-notifications.md).
+Да. В шлюзе приложений оповещения настраиваются на метрики. Для получения дополнительной информации смотрите [метрики шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-metrics) и [получайте уведомления о помесь.](../monitoring-and-diagnostics/insights-receive-alert-notifications.md)
 
 ### <a name="how-do-i-analyze-traffic-statistics-for-application-gateway"></a>Как анализировать статистику трафика для Шлюза приложений?
 
-Просматривать и анализировать журналы доступа можно несколькими способами. Используйте журналы Azure Monitor, Excel, Power BI и т. д.
+Вы можете просматривать и анализировать журналы доступа несколькими способами. Используйте журналы Azure Monitor, Excel, Power BI и так далее.
 
-Можно также использовать шаблон диспетчер ресурсов, который устанавливает и запускает популярный анализатор журнала [гоакцесс](https://goaccess.io/) для журналов доступа к шлюзу приложений. Гоакцесс предоставляет полезную статистику HTTP-трафика, такую как уникальные посетители, запрошенные файлы, узлы, операционные системы, браузеры и коды состояния HTTP. Дополнительные сведения см. в [файле сведений в папке Диспетчер ресурсов Template](https://aka.ms/appgwgoaccessreadme).
+Вы также можете использовать шаблон resource Manager, который устанавливает и запускает популярный анализатор журнала [GoAccess](https://goaccess.io/) для журналов доступа к access Application Gateway. GoAccess предоставляет ценную статистику трафика HTTP, такие как уникальные посетители, запрошенные файлы, хосты, операционные системы, браузеры и коды статуса HTTP. Для получения дополнительной информации в GitHub смотрите [файл Readme в папке шаблона ресурсного менеджера.](https://aka.ms/appgwgoaccessreadme)
 
-### <a name="what-could-cause-backend-health-to-return-an-unknown-status"></a>Что может вызвать работоспособность серверной части для возвращения неизвестного состояния?
+### <a name="what-could-cause-backend-health-to-return-an-unknown-status"></a>Что может привести к тому, что здоровье бэкэнда может вернуть неизвестный статус?
 
-Как правило, вы видите неизвестное состояние, когда доступ к серверной части блокируется группой безопасности сети (NSG), настраиваемой службой DNS или определяемой пользователем маршрутизацией (UDR) в подсети шлюза приложений. Дополнительные сведения см. в разделе [работоспособность серверной части, ведение журнала диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).
+Обычно вы видите неизвестный статус, когда доступ к бэкэнду блокируется группой сетевой безопасности (NSG), пользовательской DNS или пользовательской схемой (UDR) в подсети шлюза приложения. Для получения дополнительной [информации](application-gateway-diagnostics.md)см.
 
-### <a name="is-there-any-case-where-nsg-flow-logs-wont-show-allowed-traffic"></a>Есть ли в любом случае, когда в журналах потоков NSG не отображается разрешенный трафик?
+### <a name="is-there-any-case-where-nsg-flow-logs-wont-show-allowed-traffic"></a>Есть ли случай, когда журналы потока NSG не показывают разрешенный трафик?
 
-Да. Если конфигурация соответствует приведенной ниже ситуации, вы не увидите разрешенный трафик в журналах потоков NSG:
-- Вы развернули шлюз приложений версии 2
-- У вас есть NSG в подсети шлюза приложений
-- Вы включили журналы потоков NSG на этом NSG
+Да. Если конфигурация соответствует следующему сценарию, вы не увидите разрешенного трафика в журналах потока NSG:
+- Вы развернули шлюз приложений v2
+- У вас есть NSG в подсети шлюза приложения
+- Вы включили журналы потока NSG на этом NSG
 
-### <a name="how-do-i-use-application-gateway-v2-with-only-private-frontend-ip-address"></a>Разделы справки использовать шлюз приложений версии 2 только с частным интерфейсным IP-адресом?
+### <a name="how-do-i-use-application-gateway-v2-with-only-private-frontend-ip-address"></a>Как использовать Application Gateway V2 только с частным IP-адресом фронта?
 
-В настоящее время шлюз приложений версии 2 не поддерживает режим только частного IP-адреса. Он поддерживает следующие сочетания
-* Частный IP-адрес и общедоступный IP-адрес
-* Только общедоступный IP-адрес
+Приложение Gateway V2 в настоящее время поддерживает не только частный IP-режим. Он поддерживает следующие комбинации
+* Частные IP и общественного IP
+* Только публичный IP
 
-Но если вы хотите использовать шлюз приложений версии 2 только с частным IP-адресом, можно выполнить описанный ниже процесс.
-1. Создание шлюза приложений с общедоступным и частным интерфейсным IP-адресом
-2. Не создавайте прослушиватели для общедоступного внешнего IP-адреса. Шлюз приложений не будет ожидать передачи данных по общедоступному IP-адресу, если для него не созданы прослушиватели.
-3. Создайте и подключите [группу безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview) для подсети шлюза приложений со следующей конфигурацией в порядке приоритета:
+Но если вы хотите использовать Application Gateway V2 только с частным IP, вы можете следить за процессом ниже:
+1. Создание шлюза приложения как с государственным, так и с частным IP-адресом
+2. Не создавайте слушателей для ip-адреса общественного фронта. Приложение Gateway не будет слушать трафик на общедоступный IP-адрес, если для него не созданы слушатели.
+3. Создайте и прикрепите [группу сетевой безопасности](https://docs.microsoft.com/azure/virtual-network/security-overview) для подсети Application Gateway со следующей конфигурацией в порядке приоритета:
     
-    а. Разрешить передачу трафика из источника в качестве тега службы **гатевайманажер** и назначения в качестве **любого** порта назначения как **65200-65535**. Такой диапазон портов требуется для обмена данными в рамках инфраструктуры Azure. Эти порты защищены (заблокированы) проверкой подлинности сертификата. Внешние сущности, включая администраторов пользователей шлюза, не могут инициировать изменения на этих конечных точках без соответствующих сертификатов.
+    а. Разрешить трафик от источника, как **GatewayManager** сервисный тег и назначения, как **любой** и пункт назначения порта как **65200-65535**. Такой диапазон портов требуется для обмена данными в рамках инфраструктуры Azure. Эти порты защищены (заблокированы) проверкой подлинности сертификата. Внешние сущности, включая администраторов пользователей Gateway, не могут инициировать изменения на этих конечных точках без соответствующих сертификатов
     
-    б. Разрешить передачу трафика от источника в качестве тега службы **AzureLoadBalancer** , а также назначения и порта назначения как **любого**
+    b. Разрешить трафик из источника как tag обслуживания **AzureLoadBalancer** и порт назначения как **любой**
     
-    c. Запретите весь входящий трафик от источника **в виде тега**службы **Интернета** , а также назначения и порта назначения. Присвоить этому правилу *наименьший приоритет* в правилах для входящих подключений
+    c. Запретить весь входящий трафик от источника как **тег интернет-сервиса** и порт назначения как **Any.** Дайте этому правилу *наименьший приоритет* в входящих правилах
     
-    . Не заблокируйте правила по умолчанию, например разрешить VirtualNetwork, чтобы доступ к частному IP-адресу не блокировался.
+    d. Сохраняйте правила по умолчанию, такие как разрешение VirtualNetwork на входящие так, чтобы доступ на частный IP-адрес не был заблокирован
     
-    д) Исходящее подключение к Интернету не может быть заблокировано. В противном случае возникнут проблемы с ведением журнала, метриками и т. д.
+    д) Исходящее подключение к Интернету не может быть заблокировано. В противном случае вы столкнетесь с проблемами с журналированием, метриками и так далее.
 
-Пример конфигурации NSG для доступа только к частным IP-адресам: ![конфигурация NSG шлюза приложений только для доступа частного IP-адреса](./media/application-gateway-faq/appgw-privip-nsg.png)
+Пример конфигурации NSG для ![частного IP только доступа: Приложение шлюз V2 NSG Конфигурация для частного доступа IP только](./media/application-gateway-faq/appgw-privip-nsg.png)
 
-### <a name="does-application-gateway-affinity-cookie-support-samesite-attribute"></a>Поддерживает ли атрибут SameSite сопоставления шлюза приложений с файлом cookie?
-Да, в [обновлении V80](https://chromiumdash.appspot.com/schedule) [обозревателя Chromium](https://www.chromium.org/Home) введено требование для файлов cookie HTTP без атрибута SameSite, которые должны рассматриваться как SameSite = нестрогие. Это означает, что браузер не будет отправлять файл cookie для соответствия шлюза приложений в контексте стороннего разработчика. Для поддержки этого сценария шлюз приложений внедряет в дополнение к существующему файлу cookie *аппликатионгатевайаффинити* другой файл cookie с именем *аппликатионгатевайаффинитикорс* .  Эти файлы cookie похожи, но в файл cookie *аппликатионгатевайаффинитикорс* добавлены еще два атрибута: *SameSite = None; Безопасность*. Эти атрибуты поддерживают закрепленные сеансы даже для запросов между источниками. Дополнительные сведения см. в [разделе сходство на основе файлов cookie](configuration-overview.md#cookie-based-affinity) .
+### <a name="does-application-gateway-affinity-cookie-support-samesite-attribute"></a>Поддерживает ли маркеры сродства шлюзов application application?
+Да, [браузер Chromium](https://www.chromium.org/Home) [v80 обновление](https://chromiumdash.appspot.com/schedule) ввело мандат на HTTP печенье без SameSite атрибут, который будет рассматриваться как SameSite-Lax. Это означает, что cookie-файлы сродства шлюза приложений не будут отправлены браузером в сторонних контексте. Для поддержки этого сценария Application Gateway вводит еще одно файлcookieое печенье *под названием ApplicationGatewayAffinityCORS* в дополнение к существующему *cookie-файлу ApplicationGatewayAffinity.*  Эти файлы cookie похожи, но в *cookie-файлах ApplicationGatewayAffinityCORS* добавлены еще два атрибута: *SameSite-None; Безопасный*. Эти атрибуты поддерживают липкие сеансы даже для запросов кросс-происхождения. Для получения дополнительной информации можно ознакомиться с [разделом сродства на основе файлов cookie.](configuration-overview.md#cookie-based-affinity)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о шлюзе приложений см. в статье [что такое шлюз приложений Azure?](overview.md).
+Чтобы узнать больше о шлюзе приложений, [см.](overview.md)

@@ -1,15 +1,15 @@
 ---
-title: Service Fabric Azure с VS Code начало работы
+title: Ткань службы Azure с vs-кодом начинается
 description: В этой статье содержатся общие сведения о создании приложений Service Fabric с помощью Visual Studio Code.
 author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 17bff459a0399d39c6bfdd772ad16d0b5b2f6771
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79258490"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
@@ -21,13 +21,13 @@ ms.locfileid: "79258490"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимо обязательно установить следующие компоненты во всех средах:
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/)
+* [Git](https://git-scm.com/);
 * [Пакет SDK для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started)
 * Генераторы Yeoman (установите соответствующие генераторы для своего приложения)
 
@@ -69,7 +69,7 @@ ms.locfileid: "79258490"
 
 С помощью команды **Service Fabric: Create Application** (Service Fabric: создать приложение) в текущей рабочей области создается приложение Service Fabric. В зависимости от того, какие генераторы Yeoman установлены на компьютере разработки, возможно создание нескольких типов приложения Service Fabric, в том числе проектов Java, C#, а также контейнерных и гостевых проектов. 
 
-1.  Выберите команду **Service Fabric: создать приложение.**
+1.  Выберите **структуру службы: создайте** команду приложений
 2.  Выберите тип нового приложения Service Fabric. 
 3.  Введите имя приложения, которое необходимо создать.
 3.  Выберите тип службы, которую необходимо добавить в приложение Service Fabric. 
@@ -80,7 +80,7 @@ ms.locfileid: "79258490"
 ### <a name="service-fabric-add-service"></a>Service Fabric: Add Service (Service Fabric: добавить службу)
 Команда **Service Fabric: Add Service** (Service Fabric: добавить службу) добавляет новую службу в уже существующее приложение Service Fabric. Папка приложения, в которое добавляется служба, должна быть корневым каталогом рабочей области. 
 
-1.  Выберите команду **Service Fabric: Add Service** (Service Fabric: добавить службу).
+1.  Выберите **структуру службы: добавьте команду службы.**
 2.  Выберите тип текущего приложения Service Fabric. 
 3.  Выберите тип службы, которую необходимо добавить в приложение Service Fabric. 
 4.  Следуйте инструкциям, чтобы задать имя службы. 
@@ -98,7 +98,7 @@ ms.locfileid: "79258490"
 Команда **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение) развертывает приложение Service Fabric в локальном кластере. Перед использованием команды убедитесь, что локальный кластер запущен. 
 
 1. Выберите команду **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение).
-2. Просмотрите локальный кластер с Service Fabric Explorer (http:\//ЛОКАЛХОСТ: 19080/Explorer), чтобы убедиться, что приложение установлено. Это может занять некоторое время.
+2. Просмотр локального кластера с помощью Service Fabric Explorer (http:\//localhost:19080/Explorer), чтобы подтвердить, что приложение было установлено. Это может занять некоторое время.
 3. Для развертывания в локальном кластере можно также использовать команду **Service Fabric: Publish Application** (Service Fabric: опубликовать приложение) без параметров, заданных в файле Cloud.json.
 
 > [!NOTE]
@@ -111,7 +111,7 @@ ms.locfileid: "79258490"
 2.  Проверьте, удалено ли приложение. Для этого просмотрите кластер с помощью Service Fabric Explorer. Это может занять некоторое время.
 
 ### <a name="service-fabric-build-application"></a>Service Fabric: Build Application (Service Fabric: компилировать приложение)
-Команда **Service Fabric: Build Application** может создавать приложения Java или C# Service Fabric. 
+Служба **Ткань: Команда приложения сборки** может создавать приложения Java или C'Service Fabric. 
 
 1.  Перед выполнением команды убедитесь, что открыта корневая папка приложения. Команда определяет тип приложения (C# или Java) и компилирует его соответствующим образом.
 2.  Выберите команду **Service Fabric: Build Application** (Service Fabric: компилировать приложение).

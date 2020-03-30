@@ -6,12 +6,12 @@ ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/25/2019
-ms.openlocfilehash: 4438084a9471bf816b371b7e663856205f87f8ba
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 6f200e9649a00bfe890d46f86e62404f1a7e844f
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77461425"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80366289"
 ---
 # <a name="add-push-notifications-to-your-windows-app"></a>Добавление push-уведомлений в приложение Windows
 
@@ -23,15 +23,15 @@ ms.locfileid: "77461425"
 
 Если вы не используете скачанный проект сервера, необходимо добавить пакет расширений для push-уведомлений. Дополнительные сведения о пакетах расширений для сервера см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
 
-## <a name="configure-hub"></a>Настройка концентратора уведомлений
+## <a name="configure-a-notification-hub"></a><a name="configure-hub"></a>Настройка концентратора уведомлений
 
 [!INCLUDE [app-service-mobile-configure-notification-hub](../../includes/app-service-mobile-configure-notification-hub.md)]
 
 ## <a name="register-your-app-for-push-notifications"></a>Регистрация приложения для работы с push-уведомлениями
 
-Вам нужно отправить свое приложение в Microsoft Store, а затем настроить в проекте сервера интеграцию с [Windows Notification Services (WNS)](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) для отправки push-уведомлений.
+Вам нужно отправить приложение в Microsoft Store, а затем настроить проект сервера для интеграции с [службами уведомлений Windows Push (WNS)](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) для отправки push.
 
-1. В обозревателе решений Visual Studio щелкните правой кнопкой мыши проект приложения UWP, щелкните **Магазин** > **Связать приложение с Магазином…** .
+1. В Visual Studio Solution Explorer, правой кнопкой мыши проекта приложения UWP, нажмите **Store** > **Associate App с магазином ...**.
 
     ![Сопоставление приложения с Microsoft Store](./media/app-service-mobile-windows-store-dotnet-get-started-push/notification-hub-associate-uwp-app.png)
 
@@ -51,11 +51,11 @@ ms.locfileid: "77461425"
 
 [!INCLUDE [app-service-mobile-configure-wns](../../includes/app-service-mobile-configure-wns.md)]
 
-## <a id="update-service"></a>Обновление сервера для отправки push-уведомлений
+## <a name="update-the-server-to-send-push-notifications"></a><a id="update-service"></a>Обновление сервера для отправки push-уведомлений
 
 Используйте приведенную ниже процедуру, которая соответствует типу вашего серверного проекта &mdash;[серверный проект .NET](#dotnet) или [серверный проект Node.js](#nodejs).
 
-### <a name="dotnet"></a>Серверный проект .NET
+### <a name="net-backend-project"></a><a name="dotnet"></a>Проект бэкэнда .NET
 
 1. В Visual Studio щелкните правой кнопкой мыши серверный проект, затем щелкните **Управление пакетами NuGet**, найдите пакет Microsoft.Azure.NotificationHubs и нажмите кнопку **Установить**. Будет установлена клиентская библиотека центров уведомлений.
 2. Разверните **Контроллеры**, откройте TodoItemController.cs и добавьте следующие операторы using:
@@ -106,8 +106,8 @@ ms.locfileid: "77461425"
 
 4. Повторная публикация серверного проекта
 
-### <a name="nodejs"></a>Серверный проект Node.js
-1. Настройте серверный проект.
+### <a name="nodejs-backend-project"></a><a name="nodejs"></a>Проект бэкэнда Node.js
+1. Настройка бэкэнд-проекта.
 2. Замените существующий код в файле todoitem.js следующим кодом:
 
     ```javascript
@@ -156,10 +156,10 @@ ms.locfileid: "77461425"
 
 3. При редактировании этого файла на локальном компьютере повторно опубликуйте серверный проект.
 
-## <a id="update-app"></a>Добавление push-уведомлений в приложение
+## <a name="add-push-notifications-to-your-app"></a><a id="update-app"></a>Добавление push-уведомлений в приложение
 Затем приложение необходимо зарегистрировать для получения push-уведомлений при запуске. Если аутентификация уже включена, убедитесь, что пользователь выполняет вход прежде, чем пытается зарегистрироваться для использования push-уведомлений.
 
-1. Откройте файл проекта **App.xaml.cs** и добавьте следующие операторы `using`.
+1. Откройте **файл проекта App.xaml.cs** `using` и добавьте следующие заявления:
 
     ```csharp
     using System.Threading.Tasks;
@@ -197,11 +197,11 @@ ms.locfileid: "77461425"
 
 4. Перестройте проект приложения UWP. Теперь приложение готово к получению всплывающих уведомлений.
 
-## <a id="test"></a>Тестирование push-уведомлений в приложении
+## <a name="test-push-notifications-in-your-app"></a><a id="test"></a>Тестирование push-уведомлений в приложении
 
 [!INCLUDE [app-service-mobile-windows-universal-test-push](../../includes/app-service-mobile-windows-universal-test-push.md)]
 
-## <a id="more"></a>Следующие шаги
+## <a name="next-steps"></a><a id="more"></a>Дальнейшие действия
 
 Дополнительные сведения о push-уведомлениях:
 

@@ -1,5 +1,5 @@
 ---
-title: Облака и регионы, в которых доступны службы мультимедиа Azure v3
+title: Облака и регионы, в которых доступны услуги Azure Media Services v3
 description: В этой статье рассказывается об облаках Azure и регионах, в которых доступны Службы мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 01/21/2020
 ms.author: juliako
-ms.openlocfilehash: 58b5b749e81aab4d8563d09cbfd139629520531c
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 1257bf4dfb0d5b2c4995cac760290f97293a0c0f
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310580"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80382976"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -24,7 +24,7 @@ ms.locfileid: "76310580"
 
 ## <a name="feature-availability-in-azure-clouds"></a>Доступность функций в облаках Azure
 
-| Функция|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
+| Компонент|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
 | --- | --- | --- | --- | --- |
 | [Azure EventGrid](reacting-to-media-services-events.md) | Доступно | Недоступно | Недоступно | Недоступно |
 | [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
@@ -35,13 +35,13 @@ ms.locfileid: "76310580"
 
 ## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 
-[Регионы, в которых развернута служба служб мультимедиа Azure](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)
+[Регионы, в которых развернута служба медиаслужбы Azure](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)
 
-### <a name="region-code-name"></a>Кодовое имя региона 
+### <a name="region-code-name"></a>Кодовое имя региона
 
 Если необходимо предоставить параметр **расположение**, нужно указать имя и код региона в качестве значения **location**. Для получения кодового имени региона, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
-```bash
+```azurecli-interactive
 az account list-locations
 ```
 
@@ -66,18 +66,18 @@ az account list-locations
 
 ### <a name="global-azure"></a>Глобальная среда Azure
 
-|Конечные точки ||
-| --- | --- | 
+|Конечные точки||
+| --- | --- |
 | Azure Resource Manager |  `https://management.azure.com/` |
-| Проверка подлинности | `https://login.microsoftonline.com/` | 
+| Проверка подлинности | `https://login.microsoftonline.com/` |
 | Аудитория токена | `https://management.core.windows.net/` |
 
 ### <a name="azure-government"></a>Azure для государственных организаций
 
 |Конечные точки||
-| --- | --- | 
+| --- | --- |
 | Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
-| Проверка подлинности | `https://login.microsoftonline.us/` | 
+| Проверка подлинности | `https://login.microsoftonline.us/` |
 | Аудитория токена | `https://management.core.usgovcloudapi.net/` |
 
 ### <a name="azure-germany"></a>Azure для Германии
@@ -91,14 +91,14 @@ az account list-locations
 ### <a name="azure-china-21vianet"></a>Azure China 21Vianet
 
 |Конечные точки||
-| --- | --- | 
+| --- | --- |
 | Azure Resource Manager | `https://management.chinacloudapi.cn/` |
 | Проверка подлинности | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
 ## <a name="see-also"></a>См. также
 
-* [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
+* [Лазурные регионы](https://azure.microsoft.com/global-infrastructure/regions/)
 * [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
 * [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
 

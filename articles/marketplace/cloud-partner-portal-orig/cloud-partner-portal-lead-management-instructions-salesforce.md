@@ -1,19 +1,18 @@
 ---
-title: Настройка управления интересами для Salesforce | Azure Marketplace
-description: Настройка управления интересами в Salesforce для клиентов Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+title: Настройка руководства управления для Salesforce (ru) Лазурный рынок
+description: Налажить руководство в отделе продаж для клиентов Azure Marketplace.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.author: pabutler
-ms.openlocfilehash: fa1bfdcd172b17f88f6acf14a9d9b80e13767da8
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 4261f16cbe76a788f8a8a91445d432f2f810c4ec
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827705"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80280258"
 ---
 # <a name="configure-lead-management-for-salesforce"></a>Настройка управления интересами для Salesforce
 
@@ -32,4 +31,4 @@ ms.locfileid: "73827705"
 5. На **Создать форму Web-to-Lead** выберите **Создать** ![Создать Salesforce](./media/cloud-partner-portal-lead-management-instructions-salesforce/salesforce4.png)
 
 6. Скопируйте идентификатор объекта в образце и сохраните его. Вставьте его в поле **Идентификатор объекта** на облачном портале для партнеров.
-![идентификатор объекта Salesforce Get](./media/cloud-partner-portal-lead-management-instructions-salesforce/salesforce5.png)
+![Salesforce получить OID](./media/cloud-partner-portal-lead-management-instructions-salesforce/salesforce5.png)

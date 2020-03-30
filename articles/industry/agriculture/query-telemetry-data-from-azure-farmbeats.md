@@ -1,118 +1,125 @@
 ---
-title: Запрос полученных данных телеметрии
-description: В этой статье описывается, как запросить полученные данные телеметрии.
+title: Запрос попадает телеметрии данных
+description: В этой статье описывается, как задать запрос попананных телеметрических данных.
 author: sunasing
 ms.topic: article
 ms.date: 03/11/2020
 ms.author: sunasing
-ms.openlocfilehash: b871ccb5cb110cfc6154a415059541c4b94f4106
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.openlocfilehash: f717903b3f953e04c793092c86802f2006de7e82
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79137311"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80349806"
 ---
-# <a name="query-ingested-telemetry-data"></a>Запрос полученных данных телеметрии
+# <a name="query-ingested-telemetry-data"></a>Запрос попадает телеметрии данных
 
-В этой статье описывается, как запросить полученные данные датчика из Azure Фармбеатс.
+В этой статье описывается, как задать запрос данных датчиков с Azure FarmBeats.
 
-Получение данных из ресурсов "Интернет вещей" (IoT), таких как устройства и датчики, является распространенным сценарием в Фармбеатс. Вы создаете метаданные для устройств и датчиков, а затем принимаете исторические данные в Фармбеатс в каноническом формате. После того как данные датчика будут доступны в центре данных Фармбеатс, можно выполнить запрос к тому же, чтобы создать ценные сведения или модели сборки.
+Использование данных из ресурсов Интернета вещей (IoT), таких как устройства и датчики, является распространенным сценарием в FarmBeats. Вы создаете метаданные для устройств и датчиков, а затем глотаете исторические данные в FarmBeats в каноническом формате. Как только данные датчика доступны на FarmBeats Datahub, мы можем задать такой же запрос для генерации действенных сведений или построения моделей.
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Прежде чем продолжить работу с этой статьей, убедитесь, что вы установили Фармбеатс и полученные данные телеметрии датчика с устройств IoT на Фармбеатс.
-Чтобы принять данные телеметрии датчика, посетите страницу [приема исторических данных телеметрии](ingest-historical-telemetry-data-in-azure-farmbeats.md)
+Прежде чем приступить к этой статье, убедитесь, что вы установили FarmBeats и попадаете на данные телеметрии датчиков с ваших устройств IoT на FarmBeats.
 
-Прежде чем продолжить, убедитесь, что вы знакомы с Фармбеатс API-интерфейсами, так как будете запрашивать полученные данные телеметрии с помощью API. Дополнительные сведения об API-интерфейсах Фармбеатс см. в разделе [Фармбеатс API-интерфейсы RESTful](rest-api-in-azure-farmbeats.md). **Убедитесь, что вы можете выполнять запросы API к конечной точке концентратора данных Фармбеатс.**
+Чтобы глотать данные телеметрии датчика, посетите [данные о глотании исторических телеметрии](ingest-historical-telemetry-data-in-azure-farmbeats.md)
 
-## <a name="query-ingested-sensor-telemetry-data"></a>Запрос данных телеметрии для полученных датчиков
+Прежде чем продолжить работу, необходимо также убедиться, что вы знакомы с ApIs FarmBeats REST, так как вы будете загонить просачиваемую телеметрию с помощью AIS. Для получения дополнительной информации о [FarmBeats REST APIs](rest-api-in-azure-farmbeats.md)AIS FarmBeats см. **Убедитесь, что вы можете сделать запросы API на конечную точку FarmBeats Datahub.**
 
-Существует два способа доступа и запроса данных телеметрии из Фармбеатс: API и Time Series Insights (TSI). 
+## <a name="query-ingested-sensor-telemetry-data"></a>Запрос попадает датчик телеметрии данных
+
+Существует два способа доступа к телеметрическим данным и запросов от FarmBeats:
+
+- API и
+- Исследования временных рядов (TSI).
 
 ### <a name="query-using-rest-api"></a>Запрос с помощью REST API
 
-Выполните следующие действия, чтобы запросить полученные данные телеметрии датчика с помощью интерфейсов API Фармбеатс.
+Выполните последующие действия по запросу данных телеметрии датчиков с помощью APIs FarmBeats REST:
 
-1. Найдите датчик, который вас интересует. Это можно сделать, создав запрос GET в API/сенсор. Запишите **идентификатор** и **сенсормоделид** объекта заинтересованного датчика.
+1. Определите интересуемый вам датчик. Вы можете сделать это, сделав запрос GET на /Sensor API.
 
-2. Выполните GET/{ID} в API/Сенсормодел для **сенсормоделид** , как указано в шаге 1. "Модель датчика" содержит все метаданные и сведения о полученных данных телеметрии от датчика. Например, "мера датчика" в объекте "модель датчика" содержит подробные сведения о том, какие меры отправляются датчиком и в каких типах и единицах. Пример:
+> [!NOTE]
+> **Идентификатор** и **сенсорModelид** заинтересованного объекта датчика.
 
-```json
-{
-    "name": "moist_soil_last <name of the sensor measure - this is what we will receive as part of the queried telemetry data>",
-    "dataType": "Double <Data Type - eg. Double>",
-    "type": "SoilMoisture <Type of measure eg. temperature, soil moisture etc.>",
-    "unit": "Percentage <Unit of measure eg. Celsius, Percentage etc.>",
-    "aggregationType": "None <either of None, Average, Maximum, Minimum, StandardDeviation>",
-    "description": "<Description of the measure>"
-}
-```
-Запишите ответ вызова GET/{ID} для модели датчика.
+2. Сделайте GET /id' на /SensorModel API для **sensorModelId,** как указано в шаге 1. "Сенсорная модель" имеет все метаданные и сведения о проглоченной телеметрии с датчика. Например, **Sensor Measure** в объекте Sensor **Model** имеет подробную информацию о том, какие измерения отправляют датчики и в каких типах и единицах. Например,
 
-3. Выполнить вызов POST в API/Телеметри со следующими входными полезными данными
+  ```json
+  {
+      "name": "moist_soil_last <name of the sensor measure - this is what we will receive as part of the queried telemetry data>",
+      "dataType": "Double <Data Type - eg. Double>",
+      "type": "SoilMoisture <Type of measure eg. temperature, soil moisture etc.>",
+      "unit": "Percentage <Unit of measure eg. Celsius, Percentage etc.>",
+      "aggregationType": "None <either of None, Average, Maximum, Minimum, StandardDeviation>",
+      "description": "<Description of the measure>"
+  }
+  ```
+Обратите внимание на ответ от вызова GET /id для модели датчика.
 
-```json
-{
-  "sensorId": "<id of the sensor as noted in step 1>",
-  "searchSpan": {
-    "from": "<desired start timestamp in ISO 8601 format; default is UTC>",
-    "to": "<desired end timestamp in ISO 8601 format; default is UTC>"
-  },
-  "filter": {
-    "tsx": "string"
-  },
-  "projectedProperties": [
-    {
-      "additionalProp1": "string",
-      "additionalProp2": "string",
-      "additionalProp3": "string"
-    }
-  ]
-}
-```
-4. Ответ от API/Телеметри будет выглядеть примерно так:
+3. У POST вызова на / Телеметрия API со следующими входными полезной нагрузкой
 
-```json
-{
-  "timestamps": [
-    "2020-XX-XXT07:30:00Z",
-    "2020-XX-XXT07:45:00Z"
-  ],
-  "properties": [
-    {
-      "values": [
-        "<id of the sensor>",
-        "<id of the sensor>"
-      ],
-      "name": "Id",
-      "type": "String"
+  ```json
+  {
+    "sensorId": "<id of the sensor as noted in step 1>",
+    "searchSpan": {
+      "from": "<desired start timestamp in ISO 8601 format; default is UTC>",
+      "to": "<desired end timestamp in ISO 8601 format; default is UTC>"
     },
-    {
-      "values": [
-        2.1,
-        2.2
-      ],
-      "name": "moist_soil_last <name of the SensorMeasure as defined in the SensorModel object>",
-      "type": "Double <Data Type of the value - eg. Double>"
-    }
-  ]
-}
-```
-В приведенном выше примере ответа на запрос данные телеметрии датчика запрашивается наличие данных для двух меток времени, а также имени меры ("moist_soil_last") и значений данных телеметрии в этих двух отметках. Чтобы интерпретировать тип и единицу сообщаемых значений, необходимо обратиться к связанной модели датчика (как описано в шаге 2).
+    "filter": {
+      "tsx": "string"
+    },
+    "projectedProperties": [
+      {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      }
+    ]
+  }
+  ```
+4. Ответ от /Telemetry API будет выглядеть примерно так:
 
-### <a name="query-using-azure-time-series-insights-tsi"></a>Запрос с использованием службы "аналитика временных рядов Azure" (TSI)
+  ```json
+  {
+    "timestamps": [
+      "2020-XX-XXT07:30:00Z",
+      "2020-XX-XXT07:45:00Z"
+    ],
+    "properties": [
+      {
+        "values": [
+          "<id of the sensor>",
+          "<id of the sensor>"
+        ],
+        "name": "Id",
+        "type": "String"
+      },
+      {
+        "values": [
+          2.1,
+          2.2
+        ],
+        "name": "moist_soil_last <name of the SensorMeasure as defined in the SensorModel object>",
+        "type": "Double <Data Type of the value - eg. Double>"
+      }
+    ]
+  }
+  ```
+В приведенном выше ответе запрашиваемый датчик телеметрии дает данные для двух меток времени вместе с именем измерения ("moist_soil_last") и значениями заявленной телеметрии в двух метки времени. Для интерпретации типа и единицы сообщенных значений необходимо сослаться на связанную модель датчика (описанную в шаге 2).
 
-Фармбеатс использует службу ["аналитика временных рядов Azure" (TSI)](https://azure.microsoft.com/services/time-series-insights/) для приема, хранения, запроса и визуализации данных в масштабе "Интернет вещей" (IOT) — данные, которые сильно контекстуальны и оптимизированы для временных рядов.
+### <a name="query-using-azure-time-series-insights-tsi"></a>Запрос с использованием Azure Time Series Исследования (TSI)
 
-Данные телеметрии получаются на EventHub, а затем обрабатываются и отправляются в среду TSI в группе ресурсов Фармбеатс. Затем данные можно напрямую запрашивать из TSI. Дополнительные сведения см. в [документации по TSI](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-explorer) .
+FarmBeats использует [Azure Time Series Insights (TSI)](https://azure.microsoft.com/services/time-series-insights/) для глотания, хранения, запроса и визуализации данных в масштабе IoT - данных, которые высоко контекстуализированы и оптимизированы для временных рядов.
 
-Выполните следующие действия, чтобы визуализировать данные на TSI
+Телеметрические данные поступают на EventHub, а затем обрабатываются и перемещаются в среду TSI в группе ресурсов FarmBeats. Данные могут быть заданы непосредственно из TSI. Для получения дополнительной [информации](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-explorer) см.
 
-1. Перейдите на портал Azure — > Фармбеатс Датахуб группа ресурсов — > выберите Среда службы "аналитика временных рядов" (TSI-XXXX) — > политики доступа к данным. Добавьте пользователя с правами читателя или участника.
-2. Перейдите на страницу обзора среды Time Series Insights (TSI-XXXX) и выберите URL-адрес обозревателя "аналитика временных рядов". Теперь вы сможете визуализировать полученные данные телеметрии.
+Выполните последующие действия по визуализации данных о TSI:
 
-Помимо хранения, запроса и визуализации телеметрии TSI также обеспечивает интеграцию с Power BI панелью мониторинга. [Дополнительные сведения]( https://docs.microsoft.com/azure/time-series-insights/how-to-connect-power-bi)
+1. Перейдите на ресурсную группу **Azure Portal** > **FarmBeats DataHub** > выбрать среду **Time Series Insights** (tsi-xxxx) > **политик доступа к данным.** Добавить пользователя с доступом Reader или Contributor.
+2. Перейдите на страницу **Обзор** **среды Time Series Insights** (tsi-xxxx) и выберите **URL-адрес Time Series Insights Explorer.** Теперь вы сможете визуализировать пропавшую телеметрию.
+
+Помимо хранения, запроса и визуализации телеметрии, TSI также позволяет интегрироваться в приборную панель Power BI. Для получения дополнительной информации, смотрите [здесь]( https://docs.microsoft.com/azure/time-series-insights/how-to-connect-power-bi)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы запросили данные датчиков из экземпляра Azure Фармбеатс. Теперь Узнайте, как [создавать карты](generate-maps-in-azure-farmbeats.md#generate-maps) для ферм.
+Теперь вы запросили данные датчиков из экземпляра Azure FarmBeats. Теперь узнайте, как [создавать карты](generate-maps-in-azure-farmbeats.md#generate-maps) для ваших ферм.

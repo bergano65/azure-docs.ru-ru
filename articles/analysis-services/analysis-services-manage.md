@@ -1,6 +1,6 @@
 ---
 title: Управление службами Azure Analysis Services | Документация Майкрософт
-description: В этой статье описываются средства, используемые для управления задачами администрирования и управления сервером Azure Analysis Services.
+description: В этой статье описаны инструменты, используемые для управления задачами администрирования и управления для сервера аналитических служб Azure.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 10/28/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 28d7b2955c84833841760e441cd2919181e22bc7
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73572800"
 ---
 # <a name="manage-analysis-services"></a>Управление службами Analysis Services
@@ -30,7 +30,7 @@ ms.locfileid: "73572800"
 ### <a name="download-and-install-ssms"></a>Скачивание и установка SSMS
 Чтобы получить все новейшие функции и максимальное удобство при подключении к серверу Azure Analysis Services, используйте последнюю версию SSMS. 
 
-[Скачайте SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
+[Загрузите студию управления серверами S'L](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 
 
 ### <a name="to-connect-with-ssms"></a>Подключение с помощью SSMS
@@ -42,7 +42,7 @@ ms.locfileid: "73572800"
 2. В среде SSMS выберите **Обозреватель объектов** и щелкните **Подключиться** > **Analysis Services**.
 3. В диалоговом окне **Подключение к серверу** вставьте имя сервера, а затем в раскрывающемся списке **Проверка подлинности** выберите один из следующих типов проверки подлинности.   
     > [!NOTE]
-    > Рекомендуем использовать тип аутентификации **Active Directory — универсальная с поддержкой MFA**.
+    > Тип аутентификации, **Active Directory - Универсальный при поддержке МИД,** рекомендуется.
 
     > [!NOTE]
     > Если вы входите в систему с учетной записью Майкрософт, Live ID, Yahoo, Gmail и т. д., оставьте поле пароля пустым. Пароль запрашивается после нажатия кнопки "Подключиться".
@@ -56,11 +56,11 @@ ms.locfileid: "73572800"
     ![Подключение в среде SSMS](./media/analysis-services-manage/aas-manage-connect-ssms.png)
 
 ## <a name="server-administrators-and-database-users"></a>Администраторы сервера и пользователи базы данных
-В службах Azure Analysis Services существует два типа пользователей, администраторы сервера и пользователи базы данных. Оба типа пользователей должны находиться в Azure Active Directory и иметь настроенный адрес электронной почты организации или имя участника-пользователя. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md).
+В службах Azure Analysis Services существует два типа пользователей, администраторы сервера и пользователи базы данных. Оба типа пользователей должны находиться в Azure Active Directory и иметь настроенный адрес электронной почты организации или имя участника-пользователя. Чтобы узнать больше, смотрите [аутентификацию и пользовательские разрешения.](analysis-services-manage-users.md)
 
 
 ## <a name="troubleshooting-connection-problems"></a>Устранение неполадок с подключением
-Если при подключении с помощью SSMS возникают проблемы, может потребоваться очистить кэш входа. Ничего не кэшируется на диске. Чтобы очистить кэш, закройте и перезапустите процесс подключения. 
+Если при подключении с помощью SSMS возникают проблемы, может потребоваться очистить кэш входа. Ничто не кэшируется на диске. Чтобы очистить кэш, закройте и перезапустите процесс подключения. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Если вы все еще не развернули табличную модель нового сервера, сейчас самое время это сделать. Дополнительные сведения см. в статье [Deploy to Azure Analysis Services](analysis-services-deploy.md) (Развертывание в службы Azure Analysis Services).

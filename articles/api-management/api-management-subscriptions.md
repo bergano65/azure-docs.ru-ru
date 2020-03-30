@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
 ms.openlocfilehash: 9144af131e1427d0b3226655c871921ac1d91665
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70073417"
 ---
 # <a name="subscriptions-in-azure-api-management"></a>Подписки в службе управления API Azure
@@ -33,7 +33,7 @@ ms.locfileid: "70073417"
 > Управление API поддерживает также другие механизмы для защиты доступа к API, среди них:
 > - OAuth2.0 (дополнительные сведения см. [здесь](api-management-howto-protect-backend-with-aad.md));
 > - сертификаты клиентов (см. [эту статью](api-management-howto-mutual-certificates-for-clients.md));
-> - список разрешенных IP-адресов (приведен [здесь)](https://docs.microsoft.com/azure/api-management/api-management-access-restriction-policies#RestrictCallerIPs).
+> - [список разрешенных IP-адресов;](https://docs.microsoft.com/azure/api-management/api-management-access-restriction-policies#RestrictCallerIPs)
 
 ## <a name="scope-of-subscriptions"></a>Область подписок
 
@@ -41,7 +41,7 @@ ms.locfileid: "70073417"
 
 ### <a name="subscriptions-for-a-product"></a>Подписки для продукта
 
-Традиционно подписки в службе управления API связывались с одной областью [продукта API](api-management-terminology.md). Разработчики находят список продуктов на портале разработчика. Потом они отправляют запросы на подписку на продукт, который желают использовать. После утверждения запроса на подписку либо автоматически, либо издателями API Разработчик может использовать ключи в нем для доступа ко всем API в продукте. В настоящее время на портале разработчика отображаются подписки уровня продукта в разделе Профиль пользователя. 
+Традиционно подписки в службе управления API связывались с одной областью [продукта API](api-management-terminology.md). Разработчики находят список продуктов на портале разработчика. Потом они отправляют запросы на подписку на продукт, который желают использовать. После утверждения запроса на подписку, автоматически или издателей API, разработчик может использовать ключи в нем для доступа ко всем API в продукте. В настоящее время портал разработчика показывает только подписки на продукт ы в разделе профиля пользователя. 
 
 ![Подписки для продукта](./media/api-management-subscriptions/product-subscription.png)
 
@@ -55,13 +55,13 @@ ms.locfileid: "70073417"
 
 - Во-вторых, служба "Управление API" теперь поддерживает **автономные** подписки. Это означает, что подписки не обязательно должны быть связаны с учетной записью разработчика. Эта функция полезна в сценариях, когда одна подписка совместно используется несколькими разработчиками или группами.
 
-- И наконец, издатели API теперь могут создавать подписки непосредственно на портале Azure. Как это делать, см. в [этой статье](api-management-howto-create-subscriptions.md).
+- Наконец, издатели API теперь могут [создавать подписки](api-management-howto-create-subscriptions.md) непосредственно на портале Azure:
 
     ![Гибкие подписки](./media/api-management-subscriptions/flexible-subscription.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе управления API:
 
-+ Узнайте о терминологии Управления API в [этой статье](api-management-terminology.md).
-+ Ознакомьтесь с [руководствами](import-and-publish.md) по использованию службы управления API.
-+ Изучите страницу [Часто задаваемые вопросы о службе управления API Azure](api-management-faq.md).
++ Изучите другие [концепции](api-management-terminology.md) управления API.
++ Следите за [нашими учебниками,](import-and-publish.md) чтобы узнать больше об управлении API.
++ Проверьте нашу [страницу часто задаваемых вопросов](api-management-faq.md) для общих вопросов.

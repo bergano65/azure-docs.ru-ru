@@ -1,18 +1,18 @@
 ---
 title: Получение сведений о потенциальных клиентах в Azure Marketplace | Azure
 description: Сведения о получении сведений о потенциальных клиентах в Azure Marketplace и AppSource для издателей служб и приложений.
-author: jm-aditi-ms
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/05/2018
 ms.author: dsindona
-ms.openlocfilehash: 09282f3a54eeded52c63fab6bfe13528eaace48a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b41a29fb3548937e9071cfb9f065dd46f63df83e
+ms.sourcegitcommit: d0fd35f4f0f3ec71159e9fb43fcd8e89d653f3f2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286308"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80387620"
 ---
 # <a name="enable-lead-sharing"></a>Возможность общего доступа к данным о потенциальных клиентах
 Убедитесь, что управление потенциальными клиентами включено для вашего предложения в [Azure Marketplace](https://azuremarketplace.microsoft.com) или [Microsoft AppSource](https://appsource.microsoft.com), чтобы вы могли получать контактную информацию для следующих категорий аудитории.

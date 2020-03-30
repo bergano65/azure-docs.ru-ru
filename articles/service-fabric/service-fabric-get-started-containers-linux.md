@@ -1,13 +1,13 @@
 ---
-title: Создание приложения контейнера Azure Service Fabric в Linux
+title: Создание контейнерного приложения Azure Service Fabric на Linux
 description: Создание первого приложения-контейнера Linux в Azure Service Fabric. Создание образа Docker с приложением, отправка образа в реестр контейнеров, сборка и развертывание приложения-контейнера Service Fabric.
 ms.topic: conceptual
 ms.date: 1/4/2019
 ms.openlocfilehash: f2f8c7884323667f843382b02c73a570e58617f1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75457962"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
@@ -20,9 +20,9 @@ ms.locfileid: "75457962"
 > [!NOTE]
 > Эта статья касается среды разработки Linux.  Среда выполнения кластера Service Fabric и среда выполнения Docker должны работать под управлением одной операционной системы.  Контейнеры Linux нельзя запускать в кластере Windows.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
-  * [Пакет SDK и средства для Service Fabric](service-fabric-get-started-linux.md).
+  * [Сервис Ткань SDK и инструменты](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 
   * [Интерфейс командной строки Service Fabric](service-fabric-cli.md)
 
@@ -113,7 +113,7 @@ docker run -d -p 4000:80 --name my-web-site helloworldapp
 
 Параметр *name* присваивает имя запущенному контейнеру (вместо идентификатора контейнера).
 
-Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный через порт 4000, например http:\//ЛОКАЛХОСТ: 4000. Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный на\/порт 4000, например "http:/localhost:4000". Вы должны увидеть заголовок Hello World! в браузере.
 
 ![Привет, мир!][hello-world]
 
@@ -132,9 +132,9 @@ docker rm my-web-site
 ## <a name="push-the-image-to-the-container-registry"></a>Отправка образа в реестр контейнеров
 Убедившись, что приложение запускается в Docker, отправьте образ в реестр в реестре контейнеров Azure.
 
-Запустите `docker login`, чтобы войти в реестр контейнеров с помощью [учетных данных реестра](../container-registry/container-registry-authentication.md).
+Запуск, `docker login` чтобы войти в свой контейнер реестра с [реестром учетных данных](../container-registry/container-registry-authentication.md).
 
-Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Также можно выполнить вход с помощью имени пользователя и пароля реестра.
+Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Или вы можете войти в систему с помощью имени пользователя и пароля в реестре.
 
 ```bash
 docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword
@@ -171,10 +171,10 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 
 ## <a name="configure-container-repository-authentication"></a>Настройка аутентификации в репозитории
 
-Сведения о настройке различных типов проверки подлинности для загрузки образа контейнера см. в статье [Проверка подлинности репозитория контейнеров](configure-container-repository-credentials.md).
+Просмотрите [проверку подлинности контейнерного репозитория,](configure-container-repository-credentials.md)чтобы узнать, как настроить различные типы аутентификации для загрузки изображений контейнера.
 
 ## <a name="configure-isolation-mode"></a>Настройка режима изоляции
-В выпуске среды выполнения 6,3 изоляция виртуальных машин поддерживается для контейнеров Linux, тем самым обеспечивая поддержку двух режимов изоляции для контейнеров: Process и Hyper-V. В режиме изоляции Hyper-V ядра изолированы между каждым контейнером и узлом контейнера. Изоляция Hyper-V реализуется с помощью [очистки контейнеров](https://software.intel.com/en-us/articles/intel-clear-containers-2-using-clear-containers-with-docker). Режим изоляции кластеров Linux указывается в элементе `ServicePackageContainerPolicy` в файле манифеста приложения. Вы можете указать следующие режимы изоляции: `process`, `hyperv` и `default`. По умолчанию используется режим изоляции процессов. В указанном ниже фрагменте кода показано, как режим изоляции указывается в файле манифеста приложения.
+С 6.3 выпуском времени выполнения, изоляция VM поддерживается для контейнеров Linux, тем самым поддерживая два режима изоляции для контейнеров: process и Hyper-V. В режиме изоляции Hyper-V ядра изолированы между каждым контейнером и хостом контейнера. Изоляция Hyper-V реализована с использованием [чистых контейнеров.](https://software.intel.com/en-us/articles/intel-clear-containers-2-using-clear-containers-with-docker) Режим изоляции кластеров Linux указывается в элементе `ServicePackageContainerPolicy` в файле манифеста приложения. Вы можете указать следующие режимы изоляции: `process`, `hyperv` и `default`. По умолчанию используется режим изоляции процессов. В указанном ниже фрагменте кода показано, как режим изоляции указывается в файле манифеста приложения.
 
 ```xml
 <ServiceManifestImport>
@@ -208,7 +208,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 
 Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK**, то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК**, если значение *health_status* равно *healthy*. Если же значение *health_status* равно *unhealthy*, отобразится **предупреждение**. 
 
-Начиная с последнего обновления версии 6.4, вы можете указать, что оценки DOCKER HEALTHCHECK должны выводиться как ошибки. Если этот параметр включен, появится отчет о работоспособности **ОК** , если *health_status* *работоспособен* и при *неработоспособности* *health_status* появится **сообщение об ошибке** .
+Начиная с последнего обновления релиза v6.4, у вас есть возможность указать, что докер HEALTHCHECK оценки должны быть сообщены как ошибка. Если эта опция включена, отчет **OK** о работоспособности появится, когда *health_status* *является работоспособным,* а **ERROR** — когда *health_status* *неработоспособен.*
 
 В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK**, указывающая на фактическую проверку для отслеживания работоспособности контейнера.
 
@@ -232,11 +232,11 @@ docker push myregistry.azurecr.io/samples/helloworldapp
     </Policies>
 </ServiceManifestImport>
 ```
-По умолчанию *инклудедоккерхеалсстатусинсистемхеалсрепорт* имеет значение **true**, *RestartContainerOnUnhealthyDockerHealthStatus* имеет значение **false**, а *треатконтаинерунхеалсистатусасеррор* — **значение false**. 
+По умолчанию *IncludeDockerHealthStatusInSystemHealthHealthHealthReport* установлен на **верное,** *RestartContainerOnUnhealthyDockerHealthStatus* установлен на **ложные**, и *TreatContainerUnhealthyStatusAsError* установлен **на ложные**. 
 
 Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
 
-Если для *треатконтаинерунхеалсистатусасеррор* задано **значение true**, отчеты о работоспособности **ошибок** отобразятся, когда *health_status* контейнера *неработоспособен*.
+Если *TreatContainerUnhealthyStatusAsError* будет **верным,** отчеты о состоянии **ошибок** будут отображаться, когда *health_status* контейнера *является неработоспособным.*
 
 Если вы хотите отключить интеграцию с **HEALTHCHECK** во всем кластере Service Fabric, задайте для [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) значение **false**.
 
@@ -256,9 +256,9 @@ sfctl cluster select --endpoint http://localhost:19080
 ./install.sh
 ```
 
-Откройте браузер и перейдите в Service Fabric Explorer по адресу http:\//ЛОКАЛХОСТ: 19080/Explorer (замените localhost на частный IP-адрес виртуальной машины, если используется Vagrant на Mac OS X). Разверните узел приложения. Вы увидите одну запись для типа приложения и еще одну — для первого экземпляра этого типа.
+Откройте браузер и перейдите к\/Service Fabric Explorer на http: /localhost:19080/Explorer (замените localhost с частным IP VM при использовании Vagrant на Mac OS X). Разверните узел приложения. Вы увидите одну запись для типа приложения и еще одну — для первого экземпляра этого типа.
 
-Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный через порт 4000, например http:\//ЛОКАЛХОСТ: 4000. Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный на\/порт 4000, например "http:/localhost:4000". Вы должны увидеть заголовок Hello World! в браузере.
 
 ![Привет, мир!][hello-world]
 

@@ -1,17 +1,17 @@
 ---
-title: Настройка доступа на основе виртуальной сети для учетной записи Azure Cosmos
+title: Настройка виртуального сетевого доступа для учетной записи Azure Cosmos
 description: В этом документе описываются шаги, необходимые для настройки конечной точки службы для виртуальной сети для Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/28/2019
+ms.date: 03/26/2020
 ms.author: mjbrown
-ms.openlocfilehash: 36f6152e52d6cb45d0a30b385678596331232560
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 442623880c1b95f3d7e038ae44832b74853d2c4a
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980678"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80366235"
 ---
 # <a name="configure-access-from-virtual-networks-vnet"></a>Настройка доступа из виртуальных сетей (VNet)
 
@@ -30,7 +30,7 @@ ms.locfileid: "75980678"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a id="configure-using-portal"></a>Настройка конечной точки службы с помощью портала Azure
+## <a name="configure-a-service-endpoint-by-using-the-azure-portal"></a><a id="configure-using-portal"></a>Настройка конечной точки службы с помощью портала Azure
 
 ### <a name="configure-a-service-endpoint-for-an-existing-azure-virtual-network-and-subnet"></a>Настройка конечной точки службы для существующей виртуальной сети Azure и подсети
 
@@ -40,7 +40,7 @@ ms.locfileid: "75980678"
 
 1. Чтобы предоставить доступ к подсети имеющейся виртуальной сети, в разделе **Виртуальные сети** выберите **Add existing Azure virtual network** (Добавление имеющейся виртуальной сети Azure).
 
-1. Выберите **подписку**, из которой требуется добавить виртуальную сеть Azure. Выберите **виртуальную сеть** и **подсети** Azure, которым необходимо предоставить доступ к учетной записи Azure Cosmos DB. Затем выберите **Включить**, чтобы включить выбранные сети с конечными точками службы для Microsoft.AzureCosmosDB. После завершения работы мастера выберите **Добавить**.
+1. Выберите **подписку**, из которой требуется добавить виртуальную сеть Azure. Выберите **виртуальную сеть** и **подсети** Azure, которым необходимо предоставить доступ к учетной записи Azure Cosmos DB. Затем выберите **Включить**, чтобы включить выбранные сети с конечными точками службы для Microsoft.AzureCosmosDB. Когда он будет завершен, **выберите Добавить**.
 
    ![Выбор виртуальной сети и подсети](./media/how-to-configure-vnet-service-endpoint/choose-subnet-and-vnet.png)
 
@@ -52,9 +52,9 @@ ms.locfileid: "75980678"
 > Чтобы включить конечные точки служб для виртуальной сети, потребуются следующие права доступа к подписке:
 >   * подписка с виртуальной сетью — участник сетей;
 >   * подписка с учетной записью Azure Cosmos DB — участник учетной записи DocumentDB.
->   * Если ваша виртуальная сеть и учетная запись Azure Cosmos DB находятся в разных подписках, убедитесь, что в подписке с виртуальной сетью также зарегистрирован `Microsoft.DocumentDB` поставщик ресурсов. Сведения о регистрации поставщика ресурсов см. в статье [поставщики и типы ресурсов Azure](../azure-resource-manager/management/resource-providers-and-types.md) .
+>   * Если ваша виртуальная сеть и учетная запись Azure Cosmos DB находятся в `Microsoft.DocumentDB` разных подписках, убедитесь, что подписка с виртуальной сетью также зарегистрирована поставщиком ресурсов. Чтобы зарегистрировать поставщика ресурсов, [см.](../azure-resource-manager/management/resource-providers-and-types.md)
 
-Ниже приведены инструкции по регистрации подписки с помощью поставщика ресурсов.
+Вот направления регистрации подписки у поставщика ресурсов.
 
 ### <a name="configure-a-service-endpoint-for-a-new-azure-virtual-network-and-subnet"></a>Настройка конечной точки службы для новой виртуальной сети и подсети Azure
 
@@ -68,23 +68,23 @@ ms.locfileid: "75980678"
 
    ![Выбор виртуальной сети и подсети для новой виртуальной сети](./media/how-to-configure-vnet-service-endpoint/choose-subnet-and-vnet-new-vnet.png)
 
-Если учетная запись Azure Cosmos DB используется другими службами Azure, такими как Azure Когнитивный поиск, или доступ к ней осуществляется из Stream Analytics или Power BI, вы разрешаете доступ, выбрав **принять подключения из в глобальных центрах обработки данных Azure**.
+Если ваша учетная запись Azure Cosmos DB используется другими службами Azure, такими как Azure Cognitive Search, или доступна из stream Analytics или Power BI, вы разрешаете доступ, выбирая **соединения Accept из глобальных центров обработки данных Azure.**
 
 Чтобы иметь доступ к метрикам Azure Cosmos DB с портала, необходимо включить параметр **Разрешение доступа с портала Azure**. Дополнительные сведения об этих параметрах см. в статье [Настройка брандмауэра IP-адресов](how-to-configure-firewall.md). После включения доступа выберите **Сохранить** для сохранения настроек.
 
-## <a id="remove-vnet-or-subnet"></a>Удаление виртуальной сети или подсети
+## <a name="remove-a-virtual-network-or-subnet"></a><a id="remove-vnet-or-subnet"></a>Удаление виртуальной сети или подсети
 
 1. В колонке **Все ресурсы** найдите учетную запись Azure Cosmos DB, для которой назначены конечные точки службы.  
 
-2. Выберите **Брандмауэры и виртуальные сети** в меню параметров.  
+1. Выберите **Брандмауэры и виртуальные сети** в меню параметров.  
 
-3. Чтобы удалить правило подсети или виртуальной сети, выберите **...** рядом с виртуальной сетью или подсетью и нажмите **Удалить**.
+1. Чтобы удалить правило подсети или виртуальной сети, выберите **...** рядом с виртуальной сетью или подсетью и нажмите **Удалить**.
 
    ![Удаление виртуальной сети](./media/how-to-configure-vnet-service-endpoint/remove-a-vnet.png)
 
-4. Щелкните **Сохранить**, чтобы применить изменения.
+1. Щелкните **Сохранить**, чтобы применить изменения.
 
-## <a id="configure-using-powershell"></a>Настройка конечной точки службы с помощью Azure PowerShell
+## <a name="configure-a-service-endpoint-by-using-azure-powershell"></a><a id="configure-using-powershell"></a>Настройка конечной точки службы с помощью Azure PowerShell
 
 > [!NOTE]
 > Если вы используете PowerShell или интерфейс командной строки Azure, не забудьте указать полный список фильтров IP-адресов и ACL виртуальной сети в параметрах, а не только те, которые должны быть добавлены.
@@ -96,100 +96,67 @@ ms.locfileid: "75980678"
 1. Включите конечную точку службы для существующей подсети виртуальной сети.  
 
    ```powershell
-   $rgname = "<Resource group name>"
-   $vnName = "<Virtual network name>"
-   $sname = "<Subnet name>"
+   $resourceGroupName = "<Resource group name>"
+   $vnetName = "<Virtual network name>"
+   $subnetName = "<Subnet name>"
    $subnetPrefix = "<Subnet address range>"
+   $serviceEndpoint = "Microsoft.AzureCosmosDB"
 
    Get-AzVirtualNetwork `
-    -ResourceGroupName $rgname `
-    -Name $vnName | Set-AzVirtualNetworkSubnetConfig `
-    -Name $sname  `
-    -AddressPrefix $subnetPrefix `
-    -ServiceEndpoint "Microsoft.AzureCosmosDB" | Set-AzVirtualNetwork
+      -ResourceGroupName $resourceGroupName `
+      -Name $vnetName | Set-AzVirtualNetworkSubnetConfig `
+      -Name $subnetName `
+      -AddressPrefix $subnetPrefix `
+      -ServiceEndpoint $serviceEndpoint | Set-AzVirtualNetwork
    ```
 
 1. Получите сведения о виртуальной сети.
 
    ```powershell
-   $vnProp = Get-AzVirtualNetwork `
-     -Name $vnName `
-     -ResourceGroupName $rgName
+   $vnet = Get-AzVirtualNetwork `
+      -ResourceGroupName $resourceGroupName `
+      -Name $vnetName
+
+   $subnetId = $vnet.Id + "/subnets/" + $subnetName
    ```
 
-1. Получите свойства учетной записи Azure Cosmos DB, выполнив следующий командлет:  
+1. Подготовьте правило виртуальной сети Cosmos DB
 
    ```powershell
-   $apiVersion = "2015-04-08"
-   $acctName = "<Azure Cosmos DB account name>"
-
-   $cosmosDBConfiguration = Get-AzResource `
-     -ResourceType "Microsoft.DocumentDB/databaseAccounts" `
-     -ApiVersion $apiVersion `
-     -ResourceGroupName $rgName `
-     -Name $acctName
+   $vnetRule = New-AzCosmosDBVirtualNetworkRule `
+      -Id $subnetId
    ```
 
-1. Инициализируйте переменные для использования позже. Настройте все переменные из имеющегося определения учетной записи.
+1. Обновление свойств учетной записи Azure Cosmos DB с новой конфигурацией конечных точек Виртуальной сети: 
 
    ```powershell
-   $locations = @()
+   $accountName = "<Cosmos DB account name>"
 
-   foreach ($readLocation in $cosmosDBConfiguration.Properties.readLocations) {
-      $locations += , @{
-         locationName     = $readLocation.locationName;
-         failoverPriority = $readLocation.failoverPriority;
-      }
-   }
-
-   $virtualNetworkRules = @(@{
-      id = "$($vnProp.Id)/subnets/$sname";
-   })
-
-   if ($cosmosDBConfiguration.Properties.isVirtualNetworkFilterEnabled) {
-      $virtualNetworkRules = $cosmosDBConfiguration.Properties.virtualNetworkRules + $virtualNetworkRules
-   }
-   ```
-
-1. Обновите свойства учетной записи Azure Cosmos DB с новой конфигурацией, выполнив следующие командлеты: 
-
-   ```powershell
-   $cosmosDBProperties = @{
-      databaseAccountOfferType      = $cosmosDBConfiguration.Properties.databaseAccountOfferType;
-      consistencyPolicy             = $cosmosDBConfiguration.Properties.consistencyPolicy;
-      ipRangeFilter                 = $cosmosDBConfiguration.Properties.ipRangeFilter;
-      locations                     = $locations;
-      virtualNetworkRules           = $virtualNetworkRules;
-      isVirtualNetworkFilterEnabled = $True;
-   }
-
-   Set-AzResource `
-     -ResourceType "Microsoft.DocumentDB/databaseAccounts" `
-     -ApiVersion $apiVersion `
-     -ResourceGroupName $rgName `
-     -Name $acctName `
-     -Properties $CosmosDBProperties
+   Update-AzCosmosDBAccount `
+      -ResourceGroupName $resourceGroupName `
+      -Name $accountName `
+      -EnableVirtualNetwork $true `
+      -VirtualNetworkRuleObject @($vnetRule)
    ```
 
 1. Выполните следующую команду, чтобы убедиться, что ваша учетная запись Azure Cosmos DB обновлена с конечной точкой службы для виртуальной сети, настроенной на предыдущем этапе:
 
    ```powershell
-   $UpdatedcosmosDBConfiguration = Get-AzResource `
-     -ResourceType "Microsoft.DocumentDB/databaseAccounts" `
-     -ApiVersion $apiVersion `
-     -ResourceGroupName $rgName `
-     -Name $acctName
+   $account = Get-AzCosmosDBAccount `
+      -ResourceGroupName $resourceGroupName `
+      -Name $accountName
 
-   $UpdatedcosmosDBConfiguration.Properties
+   $account.IsVirtualNetworkFilterEnabled
+   $account.VirtualNetworkRules
    ```
 
-## <a id="configure-using-cli"></a>Настройка конечной точки службы с помощью интерфейса командной строки Azure
+## <a name="configure-a-service-endpoint-by-using-the-azure-cli"></a><a id="configure-using-cli"></a>Настройка конечной точки службы с помощью интерфейса командной строки Azure
 
-Учетные записи Azure Cosmos можно настроить для конечных точек службы, когда они будут созданы или обновлены позже, если для них уже настроена подсеть. Конечные точки службы также можно включить в учетной записи Cosmos, где для них еще не настроена подсеть, а затем начнет работать, когда подсеть будет настроена позже. Эта гибкость позволяет администраторам, которые не имеют доступа к ресурсам учетной записи Cosmos и виртуальной сети, делать свои конфигурации независимыми друг от друга.
+Учетные записи Azure Cosmos могут быть настроены для конечных точек службы, когда они создаются или обновляются позже, если подсеть уже настроена для них. Конечные точки обслуживания также могут быть включены в учетную запись Cosmos, где подсеть еще не настроена для них, а затем начнет работать, когда подсеть будет настроена позже. Такая гибкость позволяет администраторам, не имеющим доступа как к учетной записи Cosmos, так и к виртуальным сетевым ресурсам, делать свои конфигурации независимыми друг от друга.
 
-### <a name="create-a-new-cosmos-account-and-connect-it-to-a-back-end-subnet-for-a-new-virtual-network"></a>Создайте новую учетную запись Cosmos и подключите ее к внутренней подсети для новой виртуальной сети.
+### <a name="create-a-new-cosmos-account-and-connect-it-to-a-back-end-subnet-for-a-new-virtual-network"></a>Создайте новую учетную запись Cosmos и подключите ее к подсети задней части для новой виртуальной сети
 
-В этом примере виртуальная сеть и подсеть создаются с помощью конечных точек службы, которые будут включены при создании.
+В этом примере виртуальная сеть и подсеть создаются с помощью конечных точек обслуживания, включенных для обеих моментов создания.
 
 ```azurecli-interactive
 # Create an Azure Cosmos Account with a service endpoint connected to a backend subnet
@@ -233,9 +200,9 @@ az cosmosdb create \
    --virtual-network-rules $svcEndpoint
 ```
 
-### <a name="connect-and-configure-a-cosmos-account-to-a-back-end-subnet-independently"></a>Подключение и настройка учетной записи Cosmos для внутренней подсети
+### <a name="connect-and-configure-a-cosmos-account-to-a-back-end-subnet-independently"></a>Подключите и назначаем учетную запись Cosmos в подсеть задней части самостоятельно
 
-В этом примере показано, как подключить учетную запись Azure Cosmos к существующей новой виртуальной сети, в которой подсеть еще не настроена для конечных точек службы. Это делается с помощью параметра `--ignore-missing-vnet-service-endpoint`. Это позволяет завершить настройку учетной записи Cosmos без ошибок до завершения настройки подсети виртуальной сети. После завершения настройки подсети учетная запись Cosmos будет доступна через настроенную подсеть.
+Этот пример предназначен для того, чтобы показать, как подключить учетную запись Azure Cosmos к существующей новой виртуальной сети, где подсеть еще не настроена для конечных точек обслуживания. Это делается с `--ignore-missing-vnet-service-endpoint` помощью параметра. Это позволяет завершить конфигурацию учетной записи Cosmos без ошибок до завершения конфигурации в подсети виртуальной сети. После завершения настройки подсети учетная запись Cosmos будет доступна через настроенную подсеть.
 
 ```azurecli-interactive
 # Create an Azure Cosmos Account with a service endpoint connected to a backend subnet
@@ -291,90 +258,49 @@ az network vnet subnet update \
    --service-endpoints Microsoft.AzureCosmosDB
 ```
 
-## <a id="migrate-from-firewall-to-vnet"></a>Переход от использования правила брандмауэра для IP-адресов к использованию ACL виртуальной сети
+## <a name="migrating-from-an-ip-firewall-rule-to-a-virtual-network-acl"></a><a id="migrate-from-firewall-to-vnet"></a>Переход от использования правила брандмауэра для IP-адресов к использованию ACL виртуальной сети
 
-Выполняйте указанные ниже шаги только для учетных записей Azure Cosmos DB с существующими правилами брандмауэра для IP-адресов, разрешающими подсеть, когда нужно использовать виртуальную сеть и ACL на базе подсети вместо правила брандмауэра для IP-адресов.
+Чтобы перенести учетную запись Azure Cosmos DB с использования правил IP-брандмауэра на использование конечных точек виртуального сетевого обслуживания, используйте следующие шаги.
 
-После включения конечной точки службы для учетной записи Azure Cosmos DB для подсети запросы отправляются в источник, содержащий сведения о виртуальной сети и подсети, а не общедоступный IP-адрес. Эти запросы не соответствуют фильтру IP-адресов. Такое переключение источника происходит для всех учетных записей Azure Cosmos DB, доступ к которым осуществляется из подсети с включенной конечной точкой службы. Во избежание простоя сделайте следующее:
+После того, как учетная запись Azure Cosmos DB настроена для конечной точки службы для подсети, запросы из этой подсети отправляются в Azure Cosmos DB с виртуальной информацией об источнике сети и подсети вместо исходного общедоступного IP-адреса. Эти запросы больше не будут соответствовать IP-фильтру, настроенного на учетную запись Azure Cosmos DB, поэтому для предотвращения простоев необходимы следующие действия.
 
-1. Получите свойства учетной записи Azure Cosmos DB, выполнив следующий командлет:
+Перед началом работы включите конечную точку службы Azure Cosmos DB в виртуальной сети и подсети, используя указанный выше шаг в "Включить конечную точку службы для существующей подсети виртуальной сети".
 
-   ```powershell
-   $apiVersion = "2015-04-08"
-   $acctName = "<Azure Cosmos DB account name>"
-
-   $cosmosDBConfiguration = Get-AzResource `
-     -ResourceType "Microsoft.DocumentDB/databaseAccounts" `
-     -ApiVersion $apiVersion `
-     -ResourceGroupName $rgName `
-     -Name $acctName
-   ```
-
-1. Инициализируйте переменные для использования позже. Настройте все переменные из имеющегося определения учетной записи. Добавьте списки управления доступом виртуальной сети во все учетные записи Azure Cosmos DB, доступ к которым осуществляется из подсети с помощью флага `ignoreMissingVNetServiceEndpoint`.
+1. Получите информацию о виртуальной сети и подсети:
 
    ```powershell
-   $locations = @()
+   $resourceGroupName = "myResourceGroup"
+   $accountName = "mycosmosaccount"
+   $vnetName = "myVnet"
+   $subnetName = "mySubnet"
 
-   foreach ($readLocation in $cosmosDBConfiguration.Properties.readLocations) {
-      $locations += , @{
-         locationName     = $readLocation.locationName;
-         failoverPriority = $readLocation.failoverPriority;
-      }
-   }
+   $vnet = Get-AzVirtualNetwork `
+      -ResourceGroupName $resourceGroupName `
+      -Name $vnetName
 
-   $subnetID = "Subnet ARM URL" e.g "/subscriptions/f7ddba26-ab7b-4a36-a2fa-7d01778da30b/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/subnet1"
-
-   $virtualNetworkRules = @(@{
-      id = $subnetID;
-      ignoreMissingVNetServiceEndpoint = "True";
-   })
-
-   if ($cosmosDBConfiguration.Properties.isVirtualNetworkFilterEnabled) {
-      $virtualNetworkRules = $cosmosDBConfiguration.Properties.virtualNetworkRules + $virtualNetworkRules
-   }
+   $subnetId = $vnet.Id + "/subnets/" + $subnetName
    ```
 
-1. Обновите свойства учетной записи Azure Cosmos DB с новой конфигурацией, выполнив следующие командлеты:
+1. Подготовьте новый объект правил Виртуальной сети для учетной записи Azure Cosmos DB:
 
    ```powershell
-   $cosmosDBProperties = @{
-      databaseAccountOfferType      = $cosmosDBConfiguration.Properties.databaseAccountOfferType;
-      consistencyPolicy             = $cosmosDBConfiguration.Properties.consistencyPolicy;
-      ipRangeFilter                 = $cosmosDBConfiguration.Properties.ipRangeFilter;
-      locations                     = $locations;
-      virtualNetworkRules           = $virtualNetworkRules;
-      isVirtualNetworkFilterEnabled = $True;
-   }
-
-   Set-AzResource `
-      -ResourceType "Microsoft.DocumentDB/databaseAccounts" `
-      -ApiVersion $apiVersion `
-      -ResourceGroupName $rgName `
-      -Name $acctName `
-      -Properties $CosmosDBProperties
+   $vnetRule = New-AzCosmosDBVirtualNetworkRule `
+      -Id $subnetId
    ```
 
-1. Повторите шаги 1–3 для всех учетных записей Azure Cosmos DB, доступ к которым осуществляется из подсети.
+1. Обновление учетной записи Azure Cosmos DB, чтобы обеспечить доступ к конечным точкам службы из подсети:
 
-1.  Подождите 15 минут, а затем обновите подсеть, чтобы включить конечную точку службы.
+   ```powershell
+   Update-AzCosmosDBAccount `
+      -ResourceGroupName $resourceGroupName `
+      -Name $accountName `
+      -EnableVirtualNetwork $true `
+      -VirtualNetworkRuleObject @($vnetRule)
+   ```
 
-1.  Включите конечную точку службы для существующей подсети виртуальной сети.
+1. Повторите предыдущие шаги для всех учетных записей Azure Cosmos DB, доступ к ней из подсети.
 
-    ```powershell
-    $rgname= "<Resource group name>"
-    $vnName = "<virtual network name>"
-    $sname = "<Subnet name>"
-    $subnetPrefix = "<Subnet address range>"
-
-    Get-AzVirtualNetwork `
-       -ResourceGroupName $rgname `
-       -Name $vnName | Set-AzVirtualNetworkSubnetConfig `
-       -Name $sname `
-       -AddressPrefix $subnetPrefix `
-       -ServiceEndpoint "Microsoft.AzureCosmosDB" | Set-AzVirtualNetwork
-    ```
-
-1. Удалите правило брандмауэра для IP-адресов для подсети.
+1. Удалите правило IP-брандмауэра для подсети из правил Брандмауэра учетной записи Azure Cosmos DB.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

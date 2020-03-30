@@ -9,99 +9,114 @@ ms.author: magoedte
 ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 598be26024c22ba81c3f33510423605abc854b13
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: d4a4a92feb3e1b400c0f40076148f7898c4bdef1
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79216833"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80365836"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Средства переменных в службе автоматизации Azure
 
-Ресурсы переменных — это значения, доступные для всех модулей Runbook и конфигураций DSC в учетной записи службы автоматизации. Вы можете управлять ими из портал Azure, из PowerShell, в модуле Runbook или в конфигурации DSC.
+Переменные активы – это значения, доступные для всех runbooks и конфигураций DSC в вашей учетной записи Automation. Управлять ими можно с портала Azure, от PowerShell, в рамках runbook или в конфигурации DSC.
 
 Переменные автоматизации полезны в следующих случаях:
 
-- Совместное использование значений между несколькими модулями Runbook или конфигурациями DSC.
+- Совместное использование значения между несколькими конфигурациями runbooks или DSC.
 
-- Совместное использование значения несколькими заданиями из одного модуля Runbook или конфигурации DSC.
+- Совместное использование значения между несколькими заданиями из одной и той же конфигурации runbook или DSC.
 
-- Управление значением, используемым модулями Runbook или конфигурациями DSC, с портала или из командной строки PowerShell. Примером является набор общих элементов конфигурации, таких как конкретный список имен виртуальных машин, определенная группа ресурсов, доменное имя AD и многое другое.  
+- Управление значением, используемым конфигурациями runbooks или DSC с портала или из командной строки PowerShell. Примером может служить набор общих элементов конфигурации, таких как определенный список имен VM, определенная группа ресурсов, доменное имя AD и многое другое.  
 
-Так как переменные автоматизации сохраняются, они доступны даже в случае сбоя конфигурации модуля Runbook или DSC. Это поведение позволяет одному модулю Runbook или конфигурации DSC задать значение, которое затем используется другим модулем Runbook или тем же модулем Runbook или конфигурацией DSC при следующем запуске.
+Azure Automation сохраняет переменные и делает их доступными, даже если конфигурация runbook или DSC выходит из строя. Такое поведение позволяет одной конфигурации runbook или DSC установить значение, которое затем используется другим runbook, или той же конфигурацией runbook или DSC при следующем запуске.
 
-При создании переменной можно указать ее шифрование и хранение с помощью службы автоматизации Azure в качестве безопасного ресурса. К другим защищенным активам относятся учетные данные, сертификаты и подключения. Служба автоматизации Azure шифрует эти ресурсы и сохраняет их с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Ключ хранится в управляемом системой Key Vault. Перед сохранением защищенного ресурса служба автоматизации Azure загружает ключ из Key Vault и использует его для шифрования ресурса. 
-
-Служба автоматизации Azure хранит каждую зашифрованную переменную безопасно. Его значение невозможно получить с помощью командлета [Get-азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) , который поставляется в составе модуля Azure PowerShell. Единственным способом получения зашифрованного значения является использование действия `Get-AutomationVariable` в модуле Runbook или конфигурации DSC.
+Azure Automation надежно хранит каждую зашифрованную переменную. При создании переменной можно указать ее шифрование и хранение в Azure Automation как безопасный актив. Другие безопасные ресурсы включают учетные данные, сертификаты и соединения. Azure Automation шифрует эти ресурсы и хранит их с помощью уникального ключа, который генерируется для каждой учетной записи Автоматизации. Ключ хранится в управляемом системой Key Vault. Перед хранением защищенного актива Azure Automation загружает ключ из Key Vault, а затем использует его для шифрования ресурса. 
 
 >[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](../automation-update-azure-modules.md)
 
 ## <a name="variable-types"></a>Типы переменных
 
-При создании переменной с портал Azure необходимо указать тип данных из раскрывающегося списка, чтобы портал мог отображать соответствующий элемент управления для ввода значения переменной. Ниже приведены типы переменных, доступные в службе автоматизации Azure.
+При создании переменной с порталом Azure необходимо указать тип данных из списка выпадающих данных, чтобы портал мог отображать соответствующий элемент управления для ввода переменного значения. Ниже приведены типы переменных, доступные в Azure Automation:
 
-* String
+* Строка
 * Целое число
 * Дата и время
 * Логическое
 * NULL
 
-Переменная не ограничена назначенным типом данных. Если необходимо указать значение другого типа, необходимо задать переменную с помощью Windows PowerShell. Если указать **не определено**, значение переменной будет равно null, а значение необходимо задать с помощью командлета [Set-азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0) или действия `Set-AutomationVariable`.
+Переменная не ограничивается обозначенным типом данных. Необходимо установить переменную с помощью Windows PowerShell, если вы хотите указать значение другого типа. Если вы `Not defined`указываете, значение переменной установлено на null, и вы должны установить значение `Set-AutomationVariable` с [Set-AzAutomationПеременный](https://docs.microsoft.com/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0) cmdlet или деятельности.
 
-Нельзя использовать портал для создания или изменения значения для типа сложных переменных. Однако можно указать значение любого типа с помощью Windows PowerShell. Сложные типы извлекаются как [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject).
+Нельзя использовать портал Azure для создания или изменения значения для сложного типа переменных. Тем не менее, вы можете предоставить значение любого типа с помощью Windows PowerShell. Сложные типы извлекаются как [PSCustomObject.](/dotnet/api/system.management.automation.pscustomobject)
 
-Можно сохранить несколько значений в одну переменную, создав массив или хэш-таблицу и сохранив ее в переменной.
+Можно сохранить несколько значений в отдельной переменной, создав массив или хэш-таблицу и сохранив ее в переменную.
 
-## <a name="powershell-cmdlets-that-create-and-manage-variable-assets"></a>Командлеты PowerShell для создания ресурсов переменных и управления ими
+## <a name="powershell-cmdlets-that-create-and-manage-variable-assets"></a>Смдлеты PowerShell, которые создают и управляют переменными активами
 
-Для модуля AZ командлеты, приведенные в следующей таблице, используются для создания ресурсов переменных службы автоматизации и управления ими с помощью Windows PowerShell. Они поставляются в составе [модуля AZ. Automation](/powershell/azure/overview), который доступен для использования в модулях Runbook службы автоматизации и конфигурациях DSC.
+Для модуля Az cmdlets в следующей таблице используются для создания и управления переменными активами автоматизации с помощью Windows PowerShell. Они погрузки в рамках [модуля Az.Automation](/powershell/azure/overview), который доступен для использования в автоматизации runbooks и DSC конфигураций.
 
-| Командлет | Description |
+| Командлет | Описание |
 |:---|:---|
-|[Get-Азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) | Получает значение существующей переменной.|
-|[New-Азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationvariable?view=azps-3.5.0) | Создает новую переменную и устанавливает ее значение.|
-|[Remove-Азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationvariable?view=azps-3.5.0)| Удаляет существующую переменную.|
-|[Set-Азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0)| Получает значение существующей переменной.|
+|[Get-AzAutomationПеременный](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) | Получает значение существующей переменной. Вы не можете использовать этот cmdlet для получения значения зашифрованной переменной. Сделать это можно только с `Get-AutomationVariable` помощью действия в конфигурации runbook или DSC. |
+|[Нью-AzAutomationПеременный](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationvariable?view=azps-3.5.0) | Создает новую переменную и устанавливает ее значение.|
+|[Удалить-AzAutomationПеременный](https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationvariable?view=azps-3.5.0)| Удаляет существующую переменную.|
+|[Set-AzAutomationПеременный](https://docs.microsoft.com/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0)| Получает значение существующей переменной. |
 
-## <a name="activities-to-access-variables"></a>Действия для доступа к переменным
+## <a name="activities-to-access-variables-in-runbooks-and-dsc-configurations"></a>Мероприятия по доступу к переменным в конфигурациях runbooks и DSC
 
-Действия, приведенные в следующей таблице, используются для доступа к переменным в модулях Runbook и конфигурациях DSC. Разница между `Get-AzAutomationVariable` и `Get-AutomationVariable` объясняется для зашифрованных переменных в начале этой статьи.
+Действия в следующей таблице используются для доступа к переменным в конфигурациях runbooks и DSC. Cmdlets для этих мероприятий поставляются с глобальным модулем. `Orchestrator.AssetManagement.Cmdlets`
 
-| Действие | Description |
+| Действие | Описание |
 |:---|:---|
 |`Get-AutomationVariable`|Получает значение существующей переменной.|
 |`Set-AutomationVariable`|Получает значение существующей переменной.|
 
 > [!NOTE]
-> Избегайте использования переменных в параметре `Name` `Get-AutomationVariable` в модуле Runbook или конфигурации DSC. Использование этого параметра может усложнить обнаружение зависимостей между модулями Runbook или конфигурациями DSC и переменными автоматизации во время разработки.
+> Избегайте использования переменных в параметре `Name` в конфигурации `Get-AutomationVariable` runbook или DSC. Использование этого параметра может усложнить обнаружение зависимостей между рунами или конфигурациями DSC и переменными автоматизации во время проектирования.
 
-Функции, приведенные в следующей таблице, используются для доступа к переменным и их извлечения в модуле Runbook Python2.
+Обратите `Get-AutomationVariable` внимание, что не работает в PowerShell, но только в runbook или DSC конфигурации. Например, чтобы увидеть значение зашифрованной переменной, можно создать запуск, чтобы получить переменную, а затем написать ее в выходной поток:
+ 
+```powershell
+$mytestencryptvar = Get-AutomationVariable -Name TestVariable
+Write-output "The encrypted value of the variable is: $mytestencryptvar"
+```
 
-|Функции Python2|Description|
+## <a name="functions-to-access-variables-in-python-2-runbooks"></a>Функции для доступа к переменным в runbooks Python 2
+
+Функции в следующей таблице используются для доступа к переменным в ступеньке Python 2.
+
+|Функции Python 2|Описание|
 |:---|:---|
 |`automationassets.get_automation_variable`|Получает значение существующей переменной. |
 |`automationassets.set_automation_variable`|Получает значение существующей переменной. |
 
 > [!NOTE]
-> Чтобы получить доступ к функциям активов, необходимо импортировать модуль `automationassets` в верхней части модуля Runbook Python.
+> Для доступа `automationassets` к функциям актива необходимо импортировать модуль в верхней части вектора Python.
 
-## <a name="creating-a-new-automation-variable"></a>Создание новой переменной автоматизации
-
-### <a name="create-a-new-variable-using-the-azure-portal"></a>Создайте новую переменную с помощью портал Azure
-
-1. В учетной записи службы автоматизации щелкните плитку **ресурсы** , затем колонку **ресурсы** и выберите **переменные**.
-2. На плитке **Переменные** выберите **Добавить переменную**.
-3. Заполните параметры в колонке **Новая переменная** и нажмите кнопку **создать** , чтобы сохранить новую переменную.
+## <a name="working-with-automation-variables"></a>Работа с переменными автоматизации
 
 >[!NOTE]
->Если требуется удалить шифрование для переменной, необходимо удалить переменную и создать ее повторно как незашифрованную.
+>Если вы хотите удалить шифрование для переменной, необходимо удалить переменную и воссоздать ее как незашифрованную.
 
-### <a name="create-a-new-variable-with-windows-powershell"></a>Создание новой переменной с помощью Windows PowerShell
+### <a name="create-a-new-variable-using-the-azure-portal"></a>Создание новой переменной с помощью портала Azure
 
-Скрипт использует командлет `New-AzAutomationVariable`, чтобы создать новую переменную и задать ее начальное значение. Затем он может получить значение с помощью `Get-AzAutomationVariable`. Если значение является простым типом, то этот же тип извлекается. Если это сложный тип, то извлекается тип `PSCustomObject`.
+1. С вашей учетной записи автоматизации щелкните плитку **Активов,** затем лезвие **активов** и выберите **переменные.**
+2. На плитке **Переменные** выберите **Добавить переменную**.
+3. Заполните параметры на **новом лезвии переменной,** а затем нажмите **Создать,** чтобы сохранить новую переменную.
 
-В следующем примере показано, как создать переменную типа String и затем вернуть ее значение.
+> [!NOTE]
+> После того как вы сохранили зашифрованную переменную, ее нельзя просмотреть на портале. Он может быть только обновлен.
+
+### <a name="create-and-use-a-variable-in-windows-powershell"></a>Создание и использование переменной в Windows PowerShell
+
+Скрипт PowerShell `New-AzAutomationVariable` использует cmdlet, или его эквивалент модуля AzureRM, для создания новой переменной и установки ее начального значения. Если переменная зашифрована, вызов должен `Encrypted` использовать параметр.
+
+Скрипт получает значение переменной с помощью [Get-AzAutomationVariable](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0). Если значение является простым типом, cmdlet получает тот же тип. Если это сложный тип, `PSCustomObject` тип извлекается.
+
+>[!NOTE]
+>Скрипт PowerShell не может получить зашифрованное значение. Единственный способ сделать это `Get-AutomationVariable` — использовать действие в конфигурации runbook или DSC.
+
+В следующем примере показано, как создать переменную строки типа, а затем вернуть ее значение.
 
 ```powershell
 New-AzAutomationVariable -ResourceGroupName "ResourceGroup01" 
@@ -111,7 +126,7 @@ $string = (Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
 –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable').Value
 ```
 
-В следующем примере показано, как создать переменную с составным типом и затем извлечь ее свойства. В этом случае используется объект виртуальной машины из [Get-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Get-AzVM?view=azps-3.5.0) .
+В следующем примере показано, как создать переменную со сложным типом, а затем получить ее свойства. В этом случае используется виртуальный объект машины от [Get-AzVM.](https://docs.microsoft.com/powershell/module/Az.Compute/Get-AzVM?view=azps-3.5.0)
 
 ```powershell
 $vm = Get-AzVM -ResourceGroupName "ResourceGroup01" –Name "VM01"
@@ -123,19 +138,18 @@ $vmName = $vmValue.Name
 $vmIpAddress = $vmValue.IpAddress
 ```
 
-## <a name="using-a-variable-in-a-runbook-or-dsc-configuration"></a>Использование переменной в модуле Runbook или конфигурации DSC
+### <a name="create-and-use-a-variable-in-a-runbook-or-dsc-configuration"></a>Создание и использование переменной в конфигурации runbook или DSC
 
-Используйте действие `Set-AutomationVariable`, чтобы задать значение переменной службы автоматизации в модуле Runbook PowerShell или конфигурации DSC, а также `Get-AutomationVariable`, чтобы получить его. Не следует использовать командлеты `Set-AzAutomationVariable` и `Get-AzAutomationVariable` или их эквиваленты модуля AzureRM в модуле Runbook или конфигурации DSC, так как они менее эффективны, чем действия рабочего процесса. 
+Единственный способ создать новую переменную из конфигурации runbook `New-AzAutomationVariable` или DSC — использовать cmdlet или эквивалент модуля AzureRM. Скрипт использует этот cmdlet для установки начального значения переменной. Затем скрипт может получить `Get-AzAutomationVariable`значение с помощью. Если значение является простым типом, тот же тип извлекается. Если это сложный тип, `PSCustomObject` то тип извлекается.
 
-Обратите внимание, что нельзя получить значение безопасной переменной с помощью `Get-AzAutomationVariable` или его эквивалента модуля AzureRM. 
-
-Единственный способ создать новую переменную из модуля Runbook или конфигурации DSC — использовать командлет `New-AzAutomationVariable`.
+>[!NOTE]
+>Единственный способ получить зашифрованное значение — `Get-AutomationVariable` использовать действие в конфигурации Runbook или DSC. 
 
 ### <a name="textual-runbook-samples"></a>Текстовые примеры модуля Runbook
 
-#### <a name="set-and-retrieve-a-simple-value-from-a-variable"></a>Установка и получение простого значения из переменной
+#### <a name="set-and-retrieve-a-simple-value-from-a-variable"></a>Установите и извлеките простое значение из переменной
 
-Приведенные ниже примеры команд демонстрируют задание и получение переменной в текстовом модуле Runbook. В этом примере предполагается создание целочисленных переменных с именами `NumberOfIterations` и `NumberOfRunnings` и строковая переменная с именем `SampleMessage`.
+Приведенные ниже примеры команд демонстрируют задание и получение переменной в текстовом модуле Runbook. Этот пример предполагает создание инкеме переменных имени `NumberOfIterations` и `NumberOfRunnings` `SampleMessage`строки переменной имени.
 
 ```powershell
 $NumberOfIterations = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" -Name 'NumberOfIterations'
@@ -150,9 +164,9 @@ for ($i = 1; $i -le $NumberOfIterations; $i++) {
 Set-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
 ```
 
-#### <a name="set-and-retrieve-a-variable-in-a-python2-runbook"></a>Установка и получение переменной в модуле Runbook python2
+#### <a name="set-and-retrieve-a-variable-in-a-python-2-runbook"></a>Установите и извлеките переменную в книге Python 2
 
-В следующем примере показано, как использовать переменную, задать переменную и выполнить обработку исключения для несуществующей переменной в модуле Runbook python2.
+В следующем примере показано, как использовать переменную, установить переменную и обрабатывать исключение для несуществующей переменной в runbook Python 2.
 
 ```python
 import automationassets
@@ -176,17 +190,17 @@ except AutomationAssetNotFound:
 
 ### <a name="graphical-runbook-samples"></a>Графические примеры для модуля Runbook
 
-В графическом модуле Runbook можно добавить действие `Get-AutomationVariable` или `Set-AutomationVariable`. Просто щелкните правой кнопкой мыши переменную в области библиотека графического редактора и выберите нужное действие.
+В графическом runbook можно `Get-AutomationVariable` добавить `Set-AutomationVariable` или действия. Просто нажмите на кнопку переменной в панели библиотеки графического редактора и выберите действия, которые вы хотите.
 
 ![Добавление переменной в полотно](../media/variables/runbook-variable-add-canvas.png)
 
-#### <a name="set-values-in-a-variable"></a>Задание значений в переменной
+#### <a name="set-values-in-a-variable"></a>Установка значений в переменной
 
-На следующем рисунке приведен пример добавления в переменную простого значения в графическом модуле Runbook. В этом примере `Get-AzVM` извлекает одну виртуальную машину Azure и сохраняет имя компьютера в существующей строковой переменной службы автоматизации. Не имеет значения, [является ли ссылка конвейером или последовательностью](../automation-graphical-authoring-intro.md#links-and-workflow) , так как в коде требуется только один объект в выходных данных.
+На следующем рисунке приведен пример добавления в переменную простого значения в графическом модуле Runbook. В этом `Get-AzVM` примере извлекается одна виртуальная машина Azure и сохраняет имя компьютера для существующей переменной строки Автоматизации. Не имеет значения, является ли [соединение конвейером или последовательностью,](../automation-graphical-authoring-intro.md#links-and-workflow) так как код ожидает только один объект на выходе.
 
 ![Задание простой переменной](../media/variables/runbook-set-simple-variable.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о подключении действий в графической разработке см. [в разделе ссылки в графической разработке](../automation-graphical-authoring-intro.md#links-and-workflow).
-- Чтобы приступить к работе с графическими модулями Runbook, см. раздел [Мой первый графический модуль Runbook](../automation-first-runbook-graphical.md).
+- Чтобы узнать больше о подключении деятельности в графическом авторизации, см [Ссылки в графическом авторизации](../automation-graphical-authoring-intro.md#links-and-workflow).
+- Чтобы начать работу с графических runbooks, [см.](../automation-first-runbook-graphical.md)

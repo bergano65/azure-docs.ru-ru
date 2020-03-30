@@ -1,5 +1,5 @@
 ---
-title: Характеристики взаимодействия нескольких клиентов с Azure AD | Документация Майкрософт
+title: Характеристики многократного взаимодействия с арендаторами - Azure AD Документы Майкрософт
 description: Управление клиентами Azure Active Directory как полностью независимыми ресурсами.
 services: active-tenant
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.custom: it-pro
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f4eb09ab7fa31af5edf14b113a6a88e08df2d115
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77562264"
 ---
 # <a name="understand-how-multiple-azure-active-directory-tenants-interact"></a>Сведения о взаимодействии нескольких клиентов Azure Active Directory
@@ -46,8 +46,8 @@ ms.locfileid: "77562264"
 Чтобы добавить клиент Azure AD на портале Azure, войдите на [портал Azure](https://portal.azure.com) под учетной записью глобального администратора Azure AD, а затем щелкните слева **Создать**.
 
 > [!NOTE]
-> В отличие от других ресурсов Azure, клиенты не являются дочерними ресурсами подписки Azure. Если ваша подписка Azure отменена или истек срок ее действия, вы по-прежнему можете получать доступ к данным клиента с помощью Azure PowerShell, API Microsoft Graph или центра администрирования Microsoft 365. Можно также [связать другую подписку с клиентом](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
+> В отличие от других ресурсов Azure, клиенты не являются дочерними ресурсами подписки Azure. Если подписка Azure отменена или просрочена, вы все равно можете получить доступ к данным клиента с помощью Azure PowerShell, API Microsoft Graph или центра админатора Microsoft 365. Можно также [связать другую подписку с клиентом](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Общие сведения о лицензировании Azure AD и рекомендации по работе с этой службой см. в статье [Основы группового лицензирования в Azure Active Directory](../fundamentals/active-directory-licensing-whatis-azure-portal.md).

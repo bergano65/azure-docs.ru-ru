@@ -13,16 +13,18 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/29/2019
-ms.openlocfilehash: 6f4d237d5e923aab61ae34a235d2e1f759399e6d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d67f007ac91d4830557a2cae646698b130b02314
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68640904"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345788"
 ---
 # <a name="tutorial-deploy-a-clustering-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по Развертывание модели кластеризации на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 
 В последней части этой серии руководств, состоящей из трех частей, объясняется, как развернуть модель кластеризации, разработанную на языке R, в базе данных SQL с помощью Служб машинного обучения службы "База данных SQL Azure" (предварительная версия).
+
+[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 Вы создадите хранимую процедуру с внедренным сценарием R, который выполняет кластеризацию. Так как ваша модель выполняется в Базе данных SQL Azure, ее легко можно обучить с помощью данных, хранящихся в базе данных.
 

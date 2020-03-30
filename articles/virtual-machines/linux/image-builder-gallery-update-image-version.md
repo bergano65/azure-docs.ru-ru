@@ -1,6 +1,6 @@
 ---
-title: Создание новой версии образа виртуальной машины из существующей версии образа с помощью Azure Image Builder (Предварительная версия)
-description: Создание новой версии образа виртуальной машины из существующей версии образа с помощью Azure Image Builder.
+title: Создайте новую версию изображения VM из существующей версии изображений с помощью Azure Image Builder (предварительный просмотр)
+description: Создайте новую версию изображения VM из существующей версии изображения с помощью Azure Image Builder.
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
@@ -8,34 +8,34 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 manager: gwallace
-ms.openlocfilehash: 4a3a9bd518b9bc695855ad2b0b659d3cf1834c05
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: 5766e91dc6a17d50c46d396dd8a68d17081e0926
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78945032"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80246812"
 ---
-# <a name="preview-create-a-new-vm-image-version-from-an-existing-image-version-using-azure-image-builder"></a>Предварительная версия. Создание новой версии образа виртуальной машины из существующей версии образа с помощью Azure Image Builder
+# <a name="preview-create-a-new-vm-image-version-from-an-existing-image-version-using-azure-image-builder"></a>Предварительный просмотр: Создайте новую версию изображения VM из существующей версии изображений с помощью Azure Image Builder
 
-В этой статье показано, как взять существующую версию образа в [коллекции общих образов](shared-image-galleries.md), обновить ее и опубликовать в коллекции как новую версию образа.
+В этой статье показано, как взять существующую версию изображения в [общей галерее изображений,](shared-image-galleries.md)обновить ее и опубликовать в качестве новой версии изображения в галерее.
 
-Мы будем использовать шаблон Sample. JSON для настройки образа. JSON-файл, который мы используем: [хеллоимажетемплатефорсигфромсиг. JSON](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/8_Creating_a_Custom_Linux_Shared_Image_Gallery_Image_from_SIG/helloImageTemplateforSIGfromSIG.json). 
+Мы будем использовать образец шаблона .json для настройки изображения. Файл .json, который мы используем, здесь: [helloImageTemplateforSIGfromSIG.json](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/2_Creating_a_Custom_Linux_Shared_Image_Gallery_Image_from_SIG/helloImageTemplateforSIGfromSIG.json). 
 
 
-## <a name="register-the-features"></a>Регистрация компонентов
-Чтобы использовать Azure Image Builder во время предварительной версии, необходимо зарегистрировать новую функцию.
+## <a name="register-the-features"></a>Регистрация функций
+Для использования Azure Image Builder во время предварительного просмотра необходимо зарегистрировать новую функцию.
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview
 ```
 
-Проверьте состояние регистрации компонента.
+Проверьте состояние регистрации функций.
 
 ```azurecli-interactive
 az feature show --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview | grep state
 ```
 
-Проверьте регистрацию.
+Проверьте свою регистрацию.
 
 ```azurecli-interactive
 az provider show -n Microsoft.VirtualMachineImages | grep registrationState
@@ -43,7 +43,7 @@ az provider show -n Microsoft.VirtualMachineImages | grep registrationState
 az provider show -n Microsoft.Storage | grep registrationState
 ```
 
-Если они не зарегистрированы, выполните следующую команду:
+Если они не говорят зарегистрированы, запустить следующее:
 
 ```azurecli-interactive
 az provider register -n Microsoft.VirtualMachineImages
@@ -52,14 +52,14 @@ az provider register -n Microsoft.Storage
 ```
 
 
-## <a name="set-variables-and-permissions"></a>Задание переменных и разрешений
+## <a name="set-variables-and-permissions"></a>Установка переменных и разрешений
 
-Если вы использовали [Создание образа и распространяете его в общую коллекцию образов](image-builder-gallery.md) для создания коллекции общих образов, вы уже создали некоторые из нужных переменных. Если нет, настройте некоторые переменные для использования в этом примере.
+Если вы использовали Создание изображения и распространение в [общей галерее изображений](image-builder-gallery.md) для создания общей галереи изображений, вы уже создали некоторые из переменных, которые нам нужны. Если нет, пожалуйста, установите некоторые переменные, которые будут использоваться для этого примера.
 
-Для предварительной версии построитель изображений поддерживает создание пользовательских образов в той же группе ресурсов, что и исходный управляемый образ. Обновите имя группы ресурсов в этом примере, чтобы оно совпадало с группой ресурсов исходного управляемого образа.
+Для Preview строитель изображений будет поддерживать только создание пользовательских изображений в той же группе ресурсов, что и управляемое исходным изображением. Обновление имени группы ресурсов в этом примере, чтобы быть той же группой ресурсов, что и управляемое исходным изображением.
 
 
-```azurecli-interactive
+```console
 # Resource group name 
 sigResourceGroup=ibLinuxGalleryRG
 # Gallery location 
@@ -74,15 +74,15 @@ imageDefName=myIbImageDef
 runOutputName=aibSIGLinuxUpdate
 ```
 
-Создайте переменную для идентификатора подписки. Его можно получить с помощью `az account show | grep id`.
+Создайте переменную для идентификатора подписки. Вы можете получить `az account show | grep id`это с помощью .
 
-```azurecli-interactive
+```console
 subscriptionID=<Subscription ID>
 ```
 
-Получение версии образа, которую требуется обновить.
+Получите версию изображения, которую вы хотите обновить.
 
-```
+```azurecli
 sigDefImgVersionId=$(az sig image-version list \
    -g $sigResourceGroup \
    --gallery-name $sigName \
@@ -91,7 +91,7 @@ sigDefImgVersionId=$(az sig image-version list \
 ```
 
 
-Если у вас уже есть собственная коллекция общих образов и вы не следовали предыдущему примеру, вам нужно будет назначить разрешения для доступа к группе ресурсов для построителя изображений, чтобы она могла получить доступ к коллекции.
+Если у вас уже есть общая галерея изображений, и вы не последовали предыдущему примеру, вам нужно будет назначить разрешения для Image Builder для доступа к группе ресурсов, чтобы она могла получить доступ к галерее.
 
 
 ```azurecli-interactive
@@ -102,13 +102,13 @@ az role assignment create \
 ```
 
 
-## <a name="modify-helloimage-example"></a>Пример изменения Хеллоимаже
-Вы можете ознакомиться с примером, который мы будем использовать, открыв JSON файл здесь: [хеллоимажетемплатефорсигфромсиг. JSON](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/8_Creating_a_Custom_Linux_Shared_Image_Gallery_Image_from_SIG/helloImageTemplateforSIGfromSIG.json) и [ссылку на шаблон построителя образов](image-builder-json.md). 
+## <a name="modify-helloimage-example"></a>Изменить пример helloImage
+Вы можете просмотреть пример, который мы собираемся использовать, открыв файл .json здесь: [helloImageTemplateforSIG.json](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/2_Creating_a_Custom_Linux_Shared_Image_Gallery_Image_from_SIG/helloImageTemplateforSIGfromSIG.json) вместе со [ссылкой на шаблон Image Builder.](image-builder-json.md) 
 
 
-Скачайте пример JSON и настройте его с помощью переменных. 
+Загрузите пример .json и навядите его с переменными. 
 
-```azurecli-interactive
+```console
 curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/8_Creating_a_Custom_Linux_Shared_Image_Gallery_Image_from_SIG/helloImageTemplateforSIGfromSIG.json -o helloImageTemplateforSIGfromSIG.json
 sed -i -e "s/<subscriptionID>/$subscriptionID/g" helloImageTemplateforSIGfromSIG.json
 sed -i -e "s/<rgName>/$sigResourceGroup/g" helloImageTemplateforSIGfromSIG.json
@@ -122,7 +122,7 @@ sed -i -e "s/<runOutputName>/$runOutputName/g" helloImageTemplateforSIGfromSIG.j
 
 ## <a name="create-the-image"></a>Создание образа
 
-Отправьте конфигурацию образа в службу "Построитель образов виртуальных машин".
+Отправить конфигурацию изображения в службу vM Image Builder Service.
 
 ```azurecli-interactive
 az resource create \
@@ -133,7 +133,7 @@ az resource create \
     -n helloImageTemplateforSIGfromSIG01
 ```
 
-Запустите сборку образа.
+Начало сборки изображения.
 
 ```azurecli-interactive
 az resource invoke-action \
@@ -143,7 +143,7 @@ az resource invoke-action \
      --action Run 
 ```
 
-Дождитесь завершения сборки и репликации образа, прежде чем переходить к следующему шагу.
+Подождите, пока изображение будет построено и реплицировано, прежде чем перейти к следующему шагу.
 
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины
@@ -158,15 +158,15 @@ az vm create \
   --generate-ssh-keys
 ```
 
-Создайте SSH-подключение к виртуальной машине, используя общедоступный адрес виртуальной машины.
+Создайте соединение SSH с VM с помощью общедоступного IP-адреса VM.
 
-```azurecli-interactive
+```console
 ssh azureuser@<pubIp>
 ```
 
-Вы должны увидеть, что образ был настроен с сообщением дня, как только подключение SSH установлено.
+Вы должны увидеть, что изображение было настроено с "Сообщение дня", как только ваше соединение SSH установлено.
 
-```console
+```output
 *******************************************************
 **            This VM was built from the:            **
 **      !! AZURE VM IMAGE BUILDER Custom Image !!    **
@@ -174,9 +174,9 @@ ssh azureuser@<pubIp>
 *******************************************************
 ```
 
-Введите `exit`, чтобы закрыть SSH-подключение.
+Введите `exit` для закрытия соединения SSH.
 
-Вы также можете перечислить версии образов, которые теперь доступны в коллекции.
+Вы также можете перечислить версии изображений, которые теперь доступны в вашей галерее.
 
 ```azurecli-interactive
 az sig image-version list -g $sigResourceGroup -r $sigName -i $imageDefName -o table
@@ -185,4 +185,4 @@ az sig image-version list -g $sigResourceGroup -r $sigName -i $imageDefName -o t
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Чтобы узнать больше о компонентах файла .json, используемого в этой статье, [см.](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

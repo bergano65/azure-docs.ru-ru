@@ -1,5 +1,5 @@
 ---
-title: 'VPN-шлюз Azure: Удаление шлюза: PowerShell'
+title: 'Azure VPN шлюз: Удалить шлюз: PowerShell'
 description: Удаление шлюза виртуальной сети посредством PowerShell в модели развертывания с помощью Resource Manager.
 services: vpn-gateway
 author: cherylmc
@@ -8,17 +8,17 @@ ms.date: 02/07/2019
 ms.author: cherylmc
 ms.topic: conceptual
 ms.openlocfilehash: f351f14796ec736bd5525f139a518c9a0dd3d19f
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77162112"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell"></a>Удаление шлюза виртуальной сети с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [Портал Azure](vpn-gateway-delete-vnet-gateway-portal.md)
 > * [PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
-> * [PowerShell (классическая модель)](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
+> * [PowerShell (классический)](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
 >
 >
 
@@ -32,7 +32,7 @@ ms.locfileid: "77162112"
 
 
 
-### <a name="1-download-the-latest-azure-resource-manager-powershell-cmdlets"></a>1. Скачайте последнюю версию командлетов PowerShell Azure Resource Manager.
+### <a name="1-download-the-latest-azure-resource-manager-powershell-cmdlets"></a>1. Загрузите последний менеджер ресурсов Azure PowerShell cmdlets.
 
 Скачайте и установите последнюю версию командлетов PowerShell для Azure Resource Manager. Дополнительные сведения о скачивании и установке командлетов PowerShell см. в статье [Get started with Azure PowerShell cmdlets](/powershell/azure/overview) (Приступая к работе с командлетами Azure PowerShell).
 
@@ -56,7 +56,7 @@ Get-AzSubscription
 Select-AzSubscription -SubscriptionName "Replace_with_your_subscription_name"
 ```
 
-## <a name="S2S"></a>Удаление VPN-шлюза типа "сеть — сеть"
+## <a name="delete-a-site-to-site-vpn-gateway"></a><a name="S2S"></a>Удаление VPN-шлюза типа "сеть — сеть"
 
 Чтобы удалить шлюз виртуальной сети для конфигурации "сеть — сеть", необходимо сначала удалить каждый ресурс, относящийся к этому шлюзу виртуальной сети. Ресурсы должны быть удалены в определенном порядке из-за зависимостей. При работе с приведенными ниже примерами некоторые значения необходимо указывать, тогда как другие значения находятся в выходных данных. В примерах для демонстрационных целей мы используем следующие конкретные значения.
 
@@ -66,20 +66,20 @@ Select-AzSubscription -SubscriptionName "Replace_with_your_subscription_name"
 
 Приведенные ниже инструкции относятся к модели развертывания с помощью Resource Manager.
 
-### <a name="1-get-the-virtual-network-gateway-that-you-want-to-delete"></a>1. получите шлюз виртуальной сети, который необходимо удалить.
+### <a name="1-get-the-virtual-network-gateway-that-you-want-to-delete"></a>1. Получить виртуальный сетевой шлюз, который вы хотите удалить.
 
 ```powershell
 $GW=get-Azvirtualnetworkgateway -Name "GW1" -ResourceGroupName "RG1"
 ```
 
-### <a name="2-check-to-see-if-the-virtual-network-gateway-has-any-connections"></a>2. Проверьте наличие подключений у шлюза виртуальной сети.
+### <a name="2-check-to-see-if-the-virtual-network-gateway-has-any-connections"></a>2. Проверьте, есть ли у виртуального сетевого шлюза какие-либо соединения.
 
 ```powershell
 get-Azvirtualnetworkgatewayconnection -ResourceGroupName "RG1" | where-object {$_.VirtualNetworkGateway1.Id -eq $GW.Id}
 $Conns=get-Azvirtualnetworkgatewayconnection -ResourceGroupName "RG1" | where-object {$_.VirtualNetworkGateway1.Id -eq $GW.Id}
 ```
 
-### <a name="3-delete-all-connections"></a>3. Удалите все подключения.
+### <a name="3-delete-all-connections"></a>3. Удалить все соединения.
 
 Может потребоваться подтвердить удаление каждого подключения.
 
@@ -87,7 +87,7 @@ $Conns=get-Azvirtualnetworkgatewayconnection -ResourceGroupName "RG1" | where-ob
 $Conns | ForEach-Object {Remove-AzVirtualNetworkGatewayConnection -Name $_.name -ResourceGroupName $_.ResourceGroupName}
 ```
 
-### <a name="4-delete-the-virtual-network-gateway"></a>4. Удалите шлюз виртуальной сети.
+### <a name="4-delete-the-virtual-network-gateway"></a>4. Удалите виртуальный сетевой шлюз.
 
 Может потребоваться подтвердить его удаление. Если кроме конфигурации типа "сеть — сеть" в этой виртуальной сети есть конфигурация типа "точка — сеть", то удаление шлюза виртуальной сети приведет к автоматическому отключению всех клиентов P2S без предупреждения.
 
@@ -98,7 +98,7 @@ Remove-AzVirtualNetworkGateway -Name "GW1" -ResourceGroupName "RG1"
 
 На этом этапе шлюз виртуальной сети будет удален. Вы можете выполнить следующие шаги, чтобы удалить любые неиспользуемые ресурсы.
 
-### <a name="5-delete-the-local-network-gateways"></a>5\. Удалите шлюзы локальной сети.
+### <a name="5-delete-the-local-network-gateways"></a>5. Удалите шлюзы локальной сети.
 
 Получите список соответствующих шлюзов локальной сети.
 
@@ -112,7 +112,7 @@ $LNG=Get-AzLocalNetworkGateway -ResourceGroupName "RG1" | where-object {$_.Id -I
 $LNG | ForEach-Object {Remove-AzLocalNetworkGateway -Name $_.Name -ResourceGroupName $_.ResourceGroupName}
 ```
 
-### <a name="6-delete-the-public-ip-address-resources"></a>6. Удалите ресурсы общедоступного IP-адреса.
+### <a name="6-delete-the-public-ip-address-resources"></a>6. Удалить ресурсы общедоступных IP-адресов.
 
 Получите конфигурации IP шлюза виртуальной сети.
 
@@ -132,14 +132,14 @@ $PubIP=Get-AzPublicIpAddress | where-object {$_.Id -In $GWIpConfigs.PublicIpAddr
 $PubIP | foreach-object {remove-AzpublicIpAddress -Name $_.Name -ResourceGroupName "RG1"}
 ```
 
-### <a name="7-delete-the-gateway-subnet-and-set-the-configuration"></a>7. Удалите подсеть шлюза и настройте конфигурацию.
+### <a name="7-delete-the-gateway-subnet-and-set-the-configuration"></a>7. Удалите подсеть шлюза и установите конфигурацию.
 
 ```powershell
 $GWSub = Get-AzVirtualNetwork -ResourceGroupName "RG1" -Name "VNet1" | Remove-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet"
 Set-AzVirtualNetwork -VirtualNetwork $GWSub
 ```
 
-## <a name="v2v"></a>Удаление VPN-шлюза типа "виртуальная сеть — виртуальная сеть"
+## <a name="delete-a-vnet-to-vnet-vpn-gateway"></a><a name="v2v"></a>Удаление VPN-шлюза типа "виртуальная сеть — виртуальная сеть"
 
 Чтобы удалить шлюз виртуальной сети для конфигурации "виртуальная сеть — виртуальная сеть", необходимо сначала удалить каждый ресурс, относящийся к этому шлюзу виртуальной сети. Ресурсы должны быть удалены в определенном порядке из-за зависимостей. При работе с приведенными ниже примерами некоторые значения необходимо указывать, тогда как другие значения находятся в выходных данных. В примерах для демонстрационных целей мы используем следующие конкретные значения.
 
@@ -149,13 +149,13 @@ Set-AzVirtualNetwork -VirtualNetwork $GWSub
 
 Приведенные ниже инструкции относятся к модели развертывания с помощью Resource Manager.
 
-### <a name="1-get-the-virtual-network-gateway-that-you-want-to-delete"></a>1. получите шлюз виртуальной сети, который необходимо удалить.
+### <a name="1-get-the-virtual-network-gateway-that-you-want-to-delete"></a>1. Получить виртуальный сетевой шлюз, который вы хотите удалить.
 
 ```powershell
 $GW=get-Azvirtualnetworkgateway -Name "GW1" -ResourceGroupName "RG1"
 ```
 
-### <a name="2-check-to-see-if-the-virtual-network-gateway-has-any-connections"></a>2. Проверьте наличие подключений у шлюза виртуальной сети.
+### <a name="2-check-to-see-if-the-virtual-network-gateway-has-any-connections"></a>2. Проверьте, есть ли у виртуального сетевого шлюза какие-либо соединения.
 
 ```powershell
 get-Azvirtualnetworkgatewayconnection -ResourceGroupName "RG1" | where-object {$_.VirtualNetworkGateway1.Id -eq $GW.Id}
@@ -167,7 +167,7 @@ get-Azvirtualnetworkgatewayconnection -ResourceGroupName "RG1" | where-object {$
 get-Azvirtualnetworkgatewayconnection -ResourceGroupName "RG2" | where-object {$_.VirtualNetworkGateway2.Id -eq $GW.Id}
 ```
 
-### <a name="3-get-the-list-of-connections-in-both-directions"></a>3. получите список подключений в обоих направлениях.
+### <a name="3-get-the-list-of-connections-in-both-directions"></a>3. Получить список соединений в обоих направлениях.
 
 Так как это конфигурация "виртуальная сеть — виртуальная сеть", необходим список подключений в обоих направлениях.
 
@@ -181,7 +181,7 @@ $ConnsL=get-Azvirtualnetworkgatewayconnection -ResourceGroupName "RG1" | where-o
  $ConnsR=get-Azvirtualnetworkgatewayconnection -ResourceGroupName "<NameOfResourceGroup2>" | where-object {$_.VirtualNetworkGateway2.Id -eq $GW.Id}
  ```
 
-### <a name="4-delete-all-connections"></a>4. Удалите все подключения.
+### <a name="4-delete-all-connections"></a>4. Удалить все соединения.
 
 Может потребоваться подтвердить удаление каждого подключения.
 
@@ -190,7 +190,7 @@ $ConnsL | ForEach-Object {Remove-AzVirtualNetworkGatewayConnection -Name $_.name
 $ConnsR | ForEach-Object {Remove-AzVirtualNetworkGatewayConnection -Name $_.name -ResourceGroupName $_.ResourceGroupName}
 ```
 
-### <a name="5-delete-the-virtual-network-gateway"></a>5. Удалите шлюз виртуальной сети.
+### <a name="5-delete-the-virtual-network-gateway"></a>5. Удалите виртуальный сетевой шлюз.
 
 Может потребоваться подтвердить его удаление. Если кроме конфигурации типа "виртуальная сеть — виртуальная сеть" в ваших виртуальных сетях есть конфигурация типа "точка — сеть", то удаление шлюзов виртуальных сетей приведет к автоматическому отключению всех клиентов P2S без предупреждения.
 
@@ -200,7 +200,7 @@ Remove-AzVirtualNetworkGateway -Name "GW1" -ResourceGroupName "RG1"
 
 На этом этапе шлюз виртуальной сети будет удален. Вы можете выполнить следующие шаги, чтобы удалить любые неиспользуемые ресурсы.
 
-### <a name="6-delete-the-public-ip-address-resources"></a>6. Удаление ресурсов общедоступного IP-адреса
+### <a name="6-delete-the-public-ip-address-resources"></a>6. Удалить ресурсы публичных IP-адресов
 
 Получите конфигурации IP шлюза виртуальной сети.
 
@@ -220,14 +220,14 @@ $PubIP=Get-AzPublicIpAddress | where-object {$_.Id -In $GWIpConfigs.PublicIpAddr
 $PubIP | foreach-object {remove-AzpublicIpAddress -Name $_.Name -ResourceGroupName "<NameOfResourceGroup1>"}
 ```
 
-### <a name="7-delete-the-gateway-subnet-and-set-the-configuration"></a>7. Удалите подсеть шлюза и настройте конфигурацию.
+### <a name="7-delete-the-gateway-subnet-and-set-the-configuration"></a>7. Удалите подсеть шлюза и установите конфигурацию.
 
 ```powershell
 $GWSub = Get-AzVirtualNetwork -ResourceGroupName "RG1" -Name "VNet1" | Remove-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet"
 Set-AzVirtualNetwork -VirtualNetwork $GWSub
 ```
 
-## <a name="deletep2s"></a>Удаление VPN-шлюза типа "точка — сеть"
+## <a name="delete-a-point-to-site-vpn-gateway"></a><a name="deletep2s"></a>Удаление VPN-шлюза типа "точка — сеть"
 
 Чтобы удалить шлюз виртуальной сети для конфигурации "точка — сеть", необходимо сначала удалить каждый ресурс, относящийся к этому шлюзу виртуальной сети. Ресурсы должны быть удалены в определенном порядке из-за зависимостей. При работе с приведенными ниже примерами некоторые значения необходимо указывать, тогда как другие значения находятся в выходных данных. В примерах для демонстрационных целей мы используем следующие конкретные значения.
 
@@ -243,13 +243,13 @@ Set-AzVirtualNetwork -VirtualNetwork $GWSub
 >
 >
 
-### <a name="1-get-the-virtual-network-gateway-that-you-want-to-delete"></a>1. получите шлюз виртуальной сети, который необходимо удалить.
+### <a name="1-get-the-virtual-network-gateway-that-you-want-to-delete"></a>1. Получить виртуальный сетевой шлюз, который вы хотите удалить.
 
 ```powershell
 $GW=get-Azvirtualnetworkgateway -Name "GW1" -ResourceGroupName "RG1"
 ```
 
-### <a name="2-delete-the-virtual-network-gateway"></a>2. Удалите шлюз виртуальной сети.
+### <a name="2-delete-the-virtual-network-gateway"></a>2. Удалите виртуальный сетевой шлюз.
 
 Может потребоваться подтвердить его удаление.
 
@@ -259,7 +259,7 @@ Remove-AzVirtualNetworkGateway -Name "GW1" -ResourceGroupName "RG1"
 
 На этом этапе шлюз виртуальной сети будет удален. Вы можете выполнить следующие шаги, чтобы удалить любые неиспользуемые ресурсы.
 
-### <a name="3-delete-the-public-ip-address-resources"></a>3. Удалите ресурсы общедоступного IP-адреса.
+### <a name="3-delete-the-public-ip-address-resources"></a>3. Удалить ресурсы публичных IP-адресов
 
 Получите конфигурации IP шлюза виртуальной сети.
 
@@ -279,24 +279,24 @@ $PubIP=Get-AzPublicIpAddress | where-object {$_.Id -In $GWIpConfigs.PublicIpAddr
 $PubIP | foreach-object {remove-AzpublicIpAddress -Name $_.Name -ResourceGroupName "<NameOfResourceGroup1>"}
 ```
 
-### <a name="4-delete-the-gateway-subnet-and-set-the-configuration"></a>4. Удалите подсеть шлюза и настройте конфигурацию.
+### <a name="4-delete-the-gateway-subnet-and-set-the-configuration"></a>4. Удалите подсеть шлюза и установите конфигурацию.
 
 ```powershell
 $GWSub = Get-AzVirtualNetwork -ResourceGroupName "RG1" -Name "VNet1" | Remove-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet"
 Set-AzVirtualNetwork -VirtualNetwork $GWSub
 ```
 
-## <a name="delete"></a>Удаление VPN-шлюза путем удаления группы ресурсов
+## <a name="delete-a-vpn-gateway-by-deleting-the-resource-group"></a><a name="delete"></a>Удаление VPN-шлюза путем удаления группы ресурсов
 
 Если не требуется сохранить какие-либо ресурсы из группы ресурсов и вы просто хотите начать все заново, то вы можете удалить всю группу ресурсов. Это быстрый способ удалить все сразу. Приведенные ниже инструкции относятся только к модели развертывания с помощью Resource Manager.
 
-### <a name="1-get-a-list-of-all-the-resource-groups-in-your-subscription"></a>1. получите список всех групп ресурсов в подписке.
+### <a name="1-get-a-list-of-all-the-resource-groups-in-your-subscription"></a>1. Получите список всех групп ресурсов в подписке.
 
 ```powershell
 Get-AzResourceGroup
 ```
 
-### <a name="2-locate-the-resource-group-that-you-want-to-delete"></a>2. Выберите группу ресурсов, которую необходимо удалить.
+### <a name="2-locate-the-resource-group-that-you-want-to-delete"></a>2. Найдите группу ресурсов, которую вы хотите удалить.
 
 Найдите группу ресурсов, которую нужно удалить, и просмотрите список содержащихся в ней ресурсов. В этом примере группа ресурсов называется RG1. Измените пример, чтобы получить список всех ресурсов.
 
@@ -308,7 +308,7 @@ Find-AzResource -ResourceGroupNameContains RG1
 
 Получив список ресурсов, просмотрите его, чтобы удостовериться, что вы хотите удалить все ресурсы в группе ресурсов, а также саму группу ресурсов. Если вы хотите сохранить какие-либо ресурсы из группы ресурсов, следуйте инструкциям в предыдущих разделах данной статьи, чтобы удалить шлюз.
 
-### <a name="4-delete-the-resource-group-and-resources"></a>4. Удалите группу ресурсов и ресурсы.
+### <a name="4-delete-the-resource-group-and-resources"></a>4. Удалить группу ресурсов и ресурсы.
 
 Чтобы удалить группу ресурсов и ее ресурсы, измените приведенный пример и выполните его.
 
@@ -316,7 +316,7 @@ Find-AzResource -ResourceGroupNameContains RG1
 Remove-AzResourceGroup -Name RG1
 ```
 
-### <a name="5-check-the-status"></a>5. Проверьте состояние.
+### <a name="5-check-the-status"></a>5. Проверьте статус.
 
 Для удаления всех ресурсов платформе Azure потребуется некоторое время. С помощью приведенного ниже командлета можно проверить состояние группы ресурсов.
 

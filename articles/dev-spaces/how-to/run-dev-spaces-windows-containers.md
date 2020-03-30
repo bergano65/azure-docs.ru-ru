@@ -3,24 +3,24 @@ title: Взаимодействие с контейнерами Windows
 services: azure-dev-spaces
 ms.date: 01/16/2020
 ms.topic: conceptual
-description: Узнайте, как запускать Azure Dev Spaces в существующем кластере с контейнерами Windows
-keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, контейнеры Windows
-ms.openlocfilehash: d376aca45778060c8913924fd2a44031109390d2
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+description: Узнайте, как запустить пробелы Azure Dev в существующем кластере с контейнерами Windows
+keywords: Пространства Azure Dev, Dev Spaces, Докер, Кубернетес, Лазурный, AKS, Служба Azure Kubernetes, контейнеры, контейнеры для Windows
+ms.openlocfilehash: 0b3f221c9e62343a02ba8742e4cf988c7cf26c12
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77538795"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80240482"
 ---
-# <a name="interact-with-windows-containers-using-azure-dev-spaces"></a>Взаимодействие с контейнерами Windows с помощью Azure Dev Spaces
+# <a name="interact-with-windows-containers-using-azure-dev-spaces"></a>Взаимодействие с контейнерами Windows с помощью пространства Azure Dev
 
-Можно включить Azure Dev Spaces как для новых, так и для существующих пространств имен Kubernetes. Azure Dev Spaces будут запускать и инструментированные службы, работающие в контейнерах Linux. Эти службы также могут взаимодействовать с приложениями, которые работают в контейнерах Windows, в одном пространстве имен. В этой статье показано, как использовать пространства разработки для запуска служб в пространстве имен с существующими контейнерами Windows. В настоящее время нельзя выполнять отладку или присоединение к контейнерам Windows с Azure Dev Spaces.
+Вы можете включить пространства Azure Dev как в новых, так и в существующих пространствах имен Kubernetes. Azure Dev Spaces будет работать и инструменты услуг, которые работают на linux контейнеров. Эти службы также могут взаимодействовать с приложениями, запускаемыми в контейнерах Windows в том же пространстве имен. В этой статье показано, как использовать Dev Spaces для запуска служб в пространстве имен с существующими контейнерами Windows. В настоящее время нельзя отладить или прикрепить контейнеры Windows с помощью Azure Dev Spaces.
 
 ## <a name="set-up-your-cluster"></a>Настройка кластера
 
-В этой статье предполагается, что у вас уже есть кластер с пулами узлов Windows и Linux. Если необходимо создать кластер с пулами узлов Windows и Linux, следуйте приведенным [здесь][windows-container-cli]инструкциям.
+В этой статье предполагается, что у вас уже есть кластер с пулами узлов Linux и Windows. Если вам нужно создать кластер с пулами узлов Linux и Windows, вы можете следовать инструкциям [здесь.][windows-container-cli]
 
-Подключитесь к кластеру с помощью [kubectl][kubectl], клиента командной строки Kubernetes. Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][az-aks-get-credentials]. Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования.
+Подключитесь к кластеру с помощью [kubectl,][kubectl]клиент командной строки Kubernetes. Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][az-aks-get-credentials]. Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -32,7 +32,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 kubectl get nodes
 ```
 
-В следующем примере выходных данных показан кластер с узлом Windows и Linux. Перед продолжением убедитесь, что состояние *Готово* для каждого узла.
+В следующем примере вывод показывает кластер с узлами Windows и Linux. Убедитесь, что статус *готов для* каждого узла перед началом работы.
 
 ```console
 NAME                                STATUS   ROLES   AGE    VERSION
@@ -41,27 +41,27 @@ aks-nodepool1-12345678-vmss000001   Ready    agent   13m    v1.14.8
 aksnpwin000000                      Ready    agent   108s   v1.14.8
 ```
 
-Примените [таинт][using-taints] к узлам Windows. Таинт на узлах Windows не позволяет пространствам разработки планировать работу контейнеров Linux на узлах Windows. Следующая команда примера команды применяет таинт к узлу Windows *aksnpwin987654* из предыдущего примера.
+Примените [запятнание][using-taints] к узлам Windows. Запятнание узлов Windows не позволяет Dev Spaces планировать контейнеры Linux для работы на узлах Windows. В следующем примере команды команда применяет запятнание к узлам Windows *aksnpwin987654* из предыдущего примера.
 
 ```azurecli-interactive
 kubectl taint node aksnpwin987654 sku=win-node:NoSchedule
 ```
 
 > [!IMPORTANT]
-> При применении таинт к узлу необходимо настроить сопоставление в шаблоне развертывания службы для запуска службы на этом узле. В примере приложения уже настроено [сопоставление][sample-application-toleration-example] с таинт, настроенным в предыдущей команде.
+> При применении запятнания к уему необходимо настроить соответствующую терпимую кондиционацию в шаблоне развертывания службы для запуска службы на этом уде. Приложение образца уже настроено с [соответствующей терпимости][sample-application-toleration-example] к запятнанию, настроенной в предыдущей команде.
 
-## <a name="run-your-windows-service"></a>Запуск службы Windows
+## <a name="run-your-windows-service"></a>Запустите службу Windows
 
-Запустите службу Windows в кластере AKS и убедитесь, что она находится в *запущенном* состоянии. В этой статье используется [пример приложения][sample-application] для демонстрации службы Windows и Linux, работающей в кластере.
+Запустите службу Windows в кластере AKS и убедитесь, что он находится в состоянии *запуска.* В этой статье используется [пример приложения][sample-application] для демонстрации службы Windows и Linux, работая в кластере.
 
-Клонировать пример приложения из GitHub и переходить в каталог `dev-spaces/samples/existingWindowsBackend/mywebapi-windows`:
+Клонировать образец приложения от GitHub `dev-spaces/samples/existingWindowsBackend/mywebapi-windows` и перемещаться в каталоге:
 
 ```console
 git clone https://github.com/Azure/dev-spaces
 cd dev-spaces/samples/existingWindowsBackend/mywebapi-windows
 ```
 
-Пример приложения использует [Helm 3][helm-installed] для запуска службы Windows в кластере. Перейдите в каталог `charts` и используйте Helm для запуска службы Windows:
+Пример приложения использует [Helm 3][helm-installed] для запуска службы Windows в кластере. Перейдите `charts` в каталог и используйте службу Руля, запускайте службу Windows:
 
 ```console
 cd charts/
@@ -69,9 +69,9 @@ kubectl create ns dev
 helm install windows-service . --namespace dev
 ```
 
-Приведенная выше команда использует Helm для запуска службы Windows в пространстве имен *dev* . Если у вас нет пространства имен с именем *dev*, оно будет создано.
+Вышеупомянутая команда использует Шлем для запуска службы Windows в пространстве имен *разработчиков.* Если у вас нет пространства имен с именем *dev,* оно будет создано.
 
-Используйте команду `kubectl get pods`, чтобы убедиться в том, что служба Windows работает в кластере. 
+Используйте `kubectl get pods` команду для проверки того, что служба Windows работает в кластере. 
 
 ```console
 $ kubectl get pods --namespace dev --watch
@@ -81,19 +81,19 @@ myapi-4b9667d123-1a2b3   0/1     ContainerCreating   0          47s
 myapi-4b9667d123-1a2b3   1/1     Running             0          98s
 ```
 
-## <a name="enable-azure-dev-spaces"></a>Включить Azure Dev Spaces
+## <a name="enable-azure-dev-spaces"></a>Включить пространства Azure Dev
 
-Включите пространства разработки в том же пространстве имен, которое использовалось для запуска службы Windows. Следующая команда включает пространства разработки в пространстве имен *dev* :
+Включить Dev Spaces в том же пространстве имен, что и для запуска службы Windows. Следующая команда позволяет Dev Spaces в пространстве имен *разработчиков:*
 
 ```console
 az aks use-dev-spaces -g myResourceGroup -n myAKSCluster --space dev --yes
 ```
 
-## <a name="update-your-windows-service-for-dev-spaces"></a>Обновление службы Windows для пространств разработки
+## <a name="update-your-windows-service-for-dev-spaces"></a>Обновление службы Windows для Dev Spaces
 
-При включении пространств разработки в существующем пространстве имен с уже запущенными контейнерами пространства разработки по умолчанию будут пытаться использовать все новые контейнеры, выполняемые в этом пространстве имен. Пространства разработки также попытаются и инструментировать все новые контейнеры, созданные для службы, уже запущенной в пространстве имен. Чтобы запретить пространства разработки инструментирования контейнера, работающего в пространстве имен, добавьте заголовок *без прокси-сервера* в `deployment.yaml`.
+При вводе Dev Spaces в существующем пространстве имен с контейнерами, которые уже запущены, по умолчанию Dev Spaces попытается сделать инструмент любые новые контейнеры, которые работают в этом пространстве имен. Dev Spaces также попытается сделать инструмент ы любыми новыми контейнерами, созданными для обслуживания, уже работающими в пространстве имен. Чтобы предотвратить дев пробелы от инструментирования контейнера работает в вашем `deployment.yaml`пространстве имен, добавить *не-прокси* заголовок в .
 
-Добавьте `azds.io/no-proxy: "true"` в файл `existingWindowsBackend/mywebapi-windows/charts/templates/deployment.yaml`:
+Добавить `azds.io/no-proxy: "true"` `existingWindowsBackend/mywebapi-windows/charts/templates/deployment.yaml` в файл:
 
 ```yaml
 apiVersion: apps/v1
@@ -112,7 +112,7 @@ spec:
         azds.io/no-proxy: "true"
 ```
 
-Используйте `helm list`, чтобы составить список развертывания для службы Windows:
+Используйте `helm list` для рассылки развертывания для службы Windows:
 
 ```cmd
 $ helm list --namespace dev
@@ -120,17 +120,17 @@ NAME              REVISION  UPDATED                     STATUS      CHART       
 windows-service 1           Wed Jul 24 15:45:59 2019    DEPLOYED    mywebapi-0.1.0  1.0         dev  
 ```
 
-В приведенном выше примере имя развертывания — *Windows-Service*. Обновите службу Windows с помощью новой конфигурации, используя `helm upgrade`:
+В приведенном выше примере название развертывания — *служба windows.* Обновление службы Windows с `helm upgrade`помощью новой конфигурации:
 
 ```cmd
 helm upgrade windows-service . --namespace dev
 ```
 
-Так как вы обновили `deployment.yaml`, пространства разработки не будут пытаться выполнять инструментирование службы.
+Так как `deployment.yaml`вы обновили ваш, Dev пространства не будет пытаться инструмент вашего сервиса.
 
-## <a name="run-your-linux-application-with-azure-dev-spaces"></a>Запуск приложения Linux с Azure Dev Spaces
+## <a name="run-your-linux-application-with-azure-dev-spaces"></a>Запустите приложение Linux с помощью Azure Dev Spaces
 
-Перейдите в каталог `webfrontend` и используйте команды `azds prep` и `azds up` для запуска приложения Linux в кластере.
+Перейдите `webfrontend` в каталог и `azds prep` `azds up` используйте команды и команды для запуска приложения Linux в кластере.
 
 ```console
 cd ../../webfrontend-linux/
@@ -138,10 +138,10 @@ azds prep --enable-ingress
 azds up
 ```
 
-Команда `azds prep --enable-ingress` создает диаграмму Helm и файлы dockerfile для приложения.
+Команда `azds prep --enable-ingress` генерирует диаграмму Хелма и Dockerfiles для вашего приложения.
 
 > [!TIP]
-> Azure Dev Spaces использует [Dockerfile и диаграмму Helm](../how-dev-spaces-works.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
+> Azure Dev Spaces использует [Dockerfile и диаграмму Helm](../how-dev-spaces-works-prep.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
 
 Команда `azds up` запускает службу в пространстве имен.
 
@@ -161,11 +161,11 @@ Service 'webfrontend' port 'http' is available at http://dev.webfrontend.abcdef0
 Service 'webfrontend' port 80 (http) is available via port forwarding at http://localhost:57648
 ```
 
-Вы можете увидеть, как работает служба, открыв общедоступный URL-адрес, который отображается в выходных данных команды аздс up. В этом примере общедоступный URL-адрес `http://dev.webfrontend.abcdef0123.eus.azds.io/`. Перейдите к службе в браузере и щелкните *About (сведения* ) вверху. Убедитесь, что вы видите сообщение от службы *mywebapi* , содержащей версию Windows, используемую контейнером.
+Вы можете увидеть службу, запущенную, открыв общедоступный URL-адрес, который отображается в выводе из команды azds up. В этом примере общедоступный URL-адрес — `http://dev.webfrontend.abcdef0123.eus.azds.io/`. Перейдите к службе в браузере и нажмите на *О'кей* в верхней части. Убедитесь, что вы видите сообщение от службы *mywebapi,* содержащее версию Windows контейнер использует.
 
-![Пример приложения, в котором отображается версия Windows из mywebapi](../media/run-dev-spaces-windows-containers/sample-app.png)
+![Пример приложения, показывающего версию Windows от mywebapi](../media/run-dev-spaces-windows-containers/sample-app.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

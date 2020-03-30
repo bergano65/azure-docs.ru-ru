@@ -1,20 +1,20 @@
 ---
 title: Руководство по Поиск нескольких маршрутов по видам транспорта | Microsoft Azure Maps
 description: Из этого руководства вы узнаете, как найти маршруты для различных видов транспорта с помощью службы Microsoft Azure Maps.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 01/14/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 628a3003cec2cc2ca58f1b133cf3236417dfa94e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c7ed2421f468dfbb64c635683a7909b517105bc7
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77209500"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80333792"
 ---
 # <a name="tutorial-find-routes-for-different-modes-of-travel-using-azure-maps"></a>Руководство по Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 

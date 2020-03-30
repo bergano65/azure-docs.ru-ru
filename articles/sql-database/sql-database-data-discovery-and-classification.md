@@ -13,12 +13,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 02/05/2020
 tags: azure-synapse
-ms.openlocfilehash: eb4e7907c3dcffed035307c2084160ce6051be13
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 98b21969ce86f84b20fbe78dbdf3002769ef65f5
+ms.sourcegitcommit: d0fd35f4f0f3ec71159e9fb43fcd8e89d653f3f2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79409955"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80387875"
 ---
 # <a name="data-discovery--classification-for-azure-sql-database-and-azure-synapse-analytics"></a>Обнаружение данных & классификацию для базы данных Azure S'L и аналитики Synapse Azure
 
@@ -89,17 +89,11 @@ Data Discovery & Классификация является частью пре
 
 4. Чтобы скачать отчет в формате Excel, щелкните параметр **Экспорт** в верхнем меню окна.
 
-   ![Экспорт в Excel](./media/sql-data-discovery-and-classification/3_data_classification_export_report.png)
-
 5. <a id="step-5"></a>Чтобы начать классификацию данных, щелкните вкладку **Классификация** в верхней части окна.
-
-    ![Классификация данных](./media/sql-data-discovery-and-classification/4_data_classification_classification_tab_click.png)
 
 6. Механизм классификации сканирует базу данных для столбцов, содержащих потенциально конфиденциальные данные, и предоставляет список **рекомендуемых классификаций столбцов.** Вот как можно просмотреть и применить рекомендации по классификации.
 
-   - Чтобы просмотреть список рекомендуемых классификаций столбцов, щелкните панель рекомендаций в нижней части окна.
-
-      ![Классификация данных](./media/sql-data-discovery-and-classification/5_data_classification_recommendations_panel.png)
+   - Чтобы просмотреть список рекомендуемых классификаций столбцов, нажмите на панель рекомендаций в нижней части окна
 
    - Просмотрите список рекомендаций. Чтобы принять рекомендацию для определенного столбца, установите флажок в левом столбце соответствующей строки. Вы также можете принять *все рекомендации*, установив флажок в заголовке таблицы рекомендаций.
 
@@ -107,21 +101,15 @@ Data Discovery & Классификация является частью пре
 
    - Чтобы применить выбранные рекомендации, нажмите синюю кнопку **Принять выбранные рекомендации**.
 
-      ![Применение рекомендаций](./media/sql-data-discovery-and-classification/7_data_classification_accept_selected_recommendations.png)
-
 7. Вы также можете **классифицировать столбцы вручную** вместо использования рекомендованных классификаций или в дополнение к ним.
 
    - В меню в верхней части страницы щелкните **Добавить классификацию**.
-
-      ![Добавление классификации вручную](./media/sql-data-discovery-and-classification/8_data_classification_add_classification_button.png)
 
    - В открывшемся контекстном окне выберите схему, таблицу и столбец, которые нужно классифицировать, а затем выберите тип сведений и метку классификации. После этого нажмите синюю кнопку **Добавить классификацию** в нижней части контекстного окна.
 
       ![Выбор столбца для классификации](./media/sql-data-discovery-and-classification/9_data_classification_manual_classification.png)
 
 8. Чтобы завершить классификацию и назначить столбцам базы данных новые метаданные (метки) классификации, щелкните элемент **Сохранить** в меню в верхней части окна.
-
-   ![Сохранять](./media/sql-data-discovery-and-classification/10_data_classification_save.png)
 
 ## <a name="auditing-access-to-sensitive-data"></a><a id="subheading-3"></a>Аудит доступа к конфиденциальным данным
 
@@ -183,7 +171,7 @@ Data Discovery & Классификация является частью пре
 
 ## <a name="next-steps"></a><a id="subheading-6"></a>Дальнейшие действия
 
-- Дополнительные сведения о [расширенной защите данных](sql-database-advanced-data-security.md).
+- Подробнее о [расширенной безопасности данных](sql-database-advanced-data-security.md).
 - Рекомендуется настроить [аудит базы данных SQL Azure](sql-database-auditing.md) для мониторинга и аудита доступа к секретным конфиденциальным данным.
 - Для презентации на YouTube, которая включает в себя классификацию & data Discovery, см [&. Данные разоблачены](https://www.youtube.com/watch?v=itVi9bkJUNc).
 

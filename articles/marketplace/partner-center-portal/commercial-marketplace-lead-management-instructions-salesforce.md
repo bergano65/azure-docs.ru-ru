@@ -1,70 +1,69 @@
 ---
-title: Настройка управления интересами для Salesforce | Azure Marketplace
-description: Настройка управления интересами в Salesforce для клиентов Azure Marketplace.
-services: Azure, Marketplace, commercial marketplace, Partner Center
+title: Настройка руководства управления для Salesforce (ru) Лазурный рынок
+description: Налажить руководство в отделе продаж для клиентов Azure Marketplace.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.author: evansma
-ms.openlocfilehash: bdd3bb50fc69083c73eb01a84bf0fb0db82a8a65
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 1720026b4beff941b02a60cd1c755a043d66bdb5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73812159"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80281499"
 ---
 # <a name="configure-lead-management-for-salesforce"></a>Настройка управления интересами для Salesforce
 
-В этой статье описывается, как настроить систему salesforce для обработки интересов продаж из предложения Marketplace.
+В этой статье описывается, как настроить систему Salesforce для обработки продаж приводит от вашего предложения рынка.
 
 ## <a name="set-up-your-salesforce-system"></a>Настройка системы Salesforce
 
 1. Войдите в Salesforce.
-2. Если вы используете интерфейс освещения Salesforce.
-    1. Выберите **Настройка** на домашней странице Salesforce.
+2. Если вы используете опыт освещения Salesforce.
+    1. Выберите **настройку** на главной странице Salesforce.
     ![Установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-1.png)
 
-    1. На странице Программа установки перейдите к разделу средства "Навигация" в левой части окна " **инструменты платформы" — > параметры компонентов — > Marketing — > "Интернет-к-интерес**".
+    1. Со страницы настройки перейдите через левую навигацию на **платформу Инструменты >настройки функции >Маркетинг->Web-to-Lead**.
     ![SalesForce Web-to-Lead](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-2.png)
 
-3. При использовании классического интерфейса SalesForce:
-    1. Выберите **Настройка** на домашней странице Salesforce.
-    ![классической установки Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-setup.png)
+3. Если вы используете опыт Salesforce Classic:
+    1. Выберите **настройку** на главной странице Salesforce.
+    ![Классическая установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-setup.png)
 
-    1. На странице Настройка перейдите по левой панели навигации, чтобы **построить-> customize-> интересы — > веб-to-Lead**.
-    ![классическая веб-](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
+    1. Со страницы настройки перейдите через левую навигацию в **Build->Настроить->ведет >Web-to-Lead.**
+    ![Salesforce классический веб-к-ведущего](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
 
-Остальные инструкции одинаковы, независимо от используемого интерфейса SalesForce.
+Остальные инструкции одинаковы, независимо от того, какой опыт Salesforce вы используете.
 
-4. На **странице Настройка с веб-сайта**нажмите кнопку **создать форму Web-to-Lead** .
+4. На **странице настройки Web-to-Lead**выберите кнопку **«Создание веб-формы».**
 5. На **установке Web-to-Lead** выберите **Создать форму Web-to-Lead**.
-    ](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-3.png) установки ![Salesforce-Web-to-Lead
+    ![Salesforce - Настройка веб-руководства](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-3.png)
 
-6. В **форме создание веб-формы**убедитесь, что `the Include reCAPTCHA in HTML` параметр снят, и нажмите кнопку **создать**. 
-    ![Salesforce — создание формы с Интернет-руководителем](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-4.png)
+6. При **создании формы Web-to-Lead**убедитесь, что `the Include reCAPTCHA in HTML` настройка не проверена, и выберите **Generate.** 
+    ![Salesforce - Создание веб-формы](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-4.png)
 
-7. Появится текст HTML. Найдите текст "OID" и скопируйте **значение OID** из текста HTML (только текст между кавычками) и сохраните его. Это значение будет вставлено в поле **идентификатор организации** на портале публикации.
-    ![Salesforce — создание формы с Интернет-руководителем](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-5.png)
+7. Вам будет представлен текст HTML. Поиск текста "oid" и скопировать **значение oid** из текста HTML (только текст между кавычками) и сохранить его. Это значение будет вклеено в поле **идентификатора Организации** на портале публикации.
+    ![Salesforce - Создание веб-формы](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-5.png)
 
-8. Выбранные **Завершенные**.
+8. Выбранный **Законченный**.
 
-## <a name="configure-your-offer-to-send-leads-to-salesforce"></a>Настройка предложения для отправки интересов в Salesforce
+## <a name="configure-your-offer-to-send-leads-to-salesforce"></a>Напередите предложение отправить литые в Salesforce
 
-Когда вы будете готовы к настройке сведений об управлении интересами для вашего предложения на портале публикации, выполните следующие действия.
+Когда вы будете готовы настроить информацию о руководстве для вашего предложения на портале публикации, выполните ниже:
 
 1. Перейдите на страницу **настройки предложения** для вашего предложения.
-1. Выберите **Подключиться** в разделе Управление интересами.
-    ![управление интересами. Подключение](./media/commercial-marketplace-lead-management-instructions-salesforce/lead-management-connect.png)
+1. Выберите **Подключение** в разделе «Управление ведущим иссяка».
+    ![Руководство - Подключение](./media/commercial-marketplace-lead-management-instructions-salesforce/lead-management-connect.png)
 
-1. Во всплывающем окне Connection Details (сведения о подключении) выберите **Salesforce** для **целевого адресата** и вставьте `oid` из формы Web to-Lead, созданной на предыдущем шаге, в поле **идентификатор организации** .
+1. На всплывающем окне подключения выберите **Salesforce** для **ведущего** назначения `oid` и вставьте в созданной из веб-формы, созданной вами, следуя более ранним шагам в поле **идентификатора Организации.**
 
-1. Щелкните **Сохранить**. 
+1. Нажмите кнопку **Сохранить**. 
 
     >[!Note]
-    >Необходимо завершить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить интересы для предложения.
+    >Вы должны закончить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить приводит для предложения.
 
-    ![Сведения о подключении. Выбор назначения интереса](./media/commercial-marketplace-lead-management-instructions-salesforce/choose-lead-destination.png)
+    ![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/choose-lead-destination.png)
 
-    ![Сведения о подключении. Выбор назначения интереса](./media/commercial-marketplace-lead-management-instructions-salesforce/connection-details.png)
+    ![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/connection-details.png)

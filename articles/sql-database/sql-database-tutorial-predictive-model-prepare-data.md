@@ -13,16 +13,18 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/26/2019
-ms.openlocfilehash: c1271d5b63fa796fe44b7a40c364953464a87539
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 505f58f13a7186948a228fefe872d74fb98eba33
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68596666"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345775"
 ---
 # <a name="tutorial-prepare-data-to-train-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по подготовке данных для обучения прогнозной модели на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 
 В первой части этого руководства, состоящего из трех частей, объясняется, как импортировать и подготовить данные из базы данных SQL Azure с помощью R. Далее в этой серии эти данные будут использоваться для обучения и развертывания прогнозной модели машинного обучения на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия).
+
+[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 Для этой серии учебников представим, что вы владелец бизнеса по прокату лыж, и вам нужно спрогнозировать количество прокатов в будущем. Эта информация поможет вам подготовить инвентарь, персонал и пункты проката.
 

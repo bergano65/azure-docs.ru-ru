@@ -1,5 +1,5 @@
 ---
-title: Изменение хэш-алгоритма подписи для отношения доверия с проверяющей стороной Office 365 — Azure
+title: Изменить алгоритм хэша подписи для Office 365, полагаясь на доверие партии - Azure
 description: Эта страница содержит рекомендации по изменению алгоритма SHA для доверия федерации с Office 365
 keywords: SHA1,SHA256,O365,федерация,aadconnect,adfs,ad fs,изменение sha,доверие федерации,отношение доверия с проверяющей стороной
 services: active-directory
@@ -18,10 +18,10 @@ ms.date: 10/26/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2233b434fda628dcf812a62f06541fc4b0296aba
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76897341"
 ---
 # <a name="change-signature-hash-algorithm-for-office-365-relying-party-trust"></a>Изменение хэш-алгоритма подписи для отношения доверия с проверяющей стороной Office 365

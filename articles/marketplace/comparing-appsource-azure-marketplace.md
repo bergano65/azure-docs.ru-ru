@@ -1,18 +1,18 @@
 ---
 title: Сравнение AppSource и Azure Marketplace | Azure
 description: В этой статье описываются онлайн-магазины в Microsoft AppSource и Azure Marketplace.
-author: jm-aditi-ms
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/05/2018
 ms.author: dsindona
-ms.openlocfilehash: c07bba7340a1934fc422598c798022602e7c046a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bd6c375231facc3d7afb35df74210d26b5f50ba8
+ms.sourcegitcommit: d0fd35f4f0f3ec71159e9fb43fcd8e89d653f3f2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281618"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80387790"
 ---
 # <a name="comparing-appsource-and-the-azure-marketplace"></a>Сравнение AppSource и Azure Marketplace
 Онлайн-магазины в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [Microsoft AppSource](https://appsource.microsoft.com) удовлетворяют уникальным требованиям клиентов. В онлайн-магазинах можно определять целевую аудиторию в соответствии с ролями клиентов. Вы можете предложить подходящее решение или службу с учетом требований клиента.

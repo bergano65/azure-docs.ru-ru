@@ -13,16 +13,18 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/29/2019
-ms.openlocfilehash: 800dbfc05c47a949bf024e9a5c671979b49ad201
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2241b69e36e3b17475dba115b8d2ae94fe2189a7
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68639969"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345844"
 ---
 # <a name="tutorial-prepare-data-to-perform-clustering-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по Подготовка данных для выполнения кластеризации на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 
 В первой части этого руководства, состоящего из трех частей, объясняется, как импортировать и подготовить данные из базы данных SQL Azure с помощью R. Далее в этой серии эти данные будут использоваться для обучения и развертывания модели кластеризации на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия).
+
+[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 *Кластеризацию* можно описать как организацию данных по группам, где члены группы каким-либо образом похожи друг на друга.
 Вы будете использовать метод **k-средних** для кластеризации клиентов в наборе данных о покупках и возвратах продуктов. Благодаря кластеризации клиентов вы можете более эффективно осуществлять маркетинговую деятельность, ориентируясь на конкретные группы.

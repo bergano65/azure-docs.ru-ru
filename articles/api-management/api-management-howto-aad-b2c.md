@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 4f311d2772a6a60798795b4f2e6237e8153b9547
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: b8215cd852d54283bfc6bd47e77d7d63ee4e2582
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76981227"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79475499"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -36,9 +36,9 @@ Azure Active Directory B2C — это облачное решение, позв
 1. Чтобы приступить к работе, перейдите на [портал Azure](https://portal.azure.com) и найдите свой экземпляр управления API.
 
    > [!NOTE]
-   > Если вы еще не создали экземпляр службы управления API, ознакомьтесь со статьей [Создание экземпляра службы управления API][Create an API Management service instance] в [руководстве Приступая к работе с управлением API Azure][Get started with Azure API Management].
+   > Если вы еще не создали экземпляр службы управления API, см. [Get started with Azure API Management tutorial][Get started with Azure API Management] [Create an API Management service instance][Create an API Management service instance]
 
-1. В разделе **удостоверения**. В верхней части меню щелкните **+Добавить**.
+1. Под **удостоверениями**. Нажмите **кнопку «Добавить** сверху».
 
    Справа отобразится область **Добавление поставщика удостоверений**. Выберите **Azure Active Directory B2C**.
     
@@ -60,11 +60,11 @@ Azure Active Directory B2C — это облачное решение, позв
 
    ![Регистрация нового приложения 3][api-management-howto-aad-b2c-app-details]
 
-1. Если вы используете новый портал разработчика (не устаревший портал разработчика), включите в утверждения приложения **заданное имя**, **фамилию**и **идентификатор объекта пользователя** .
+1. Если вы используете новый портал разработчика (не портал устаревшего разработчика), включите в заявки запросы **имя,** **фамилию**и **идентификатор объекта пользователя.**
 
-    ![Утверждения приложений](./media/api-management-howto-aad-b2c/api-management-application-claims.png)
+    ![Утверждения приложения](./media/api-management-howto-aad-b2c/api-management-application-claims.png)
 
-1. Нажмите кнопку **Создать** . Когда приложение будет создано, оно появится в колонке **Приложения**. Щелкните имя приложения, чтобы просмотреть сведения о нем.
+1. Нажмите кнопку **Создать**. Когда приложение будет создано, оно появится в колонке **Приложения**. Щелкните имя приложения, чтобы просмотреть сведения о нем.
 
    ![Регистрация нового приложения 4][api-management-howto-aad-b2c-app-created]
 
@@ -80,9 +80,9 @@ Azure Active Directory B2C — это облачное решение, позв
 
 1.  Вернитесь на панель **Добавление поставщика удостоверений** управления API и вставьте ключ в текстовое поле **секрет клиента**.
     
-1.  Укажите доменное имя клиента Azure Active Directory B2C в **клиенте SignIn**.
+1.  Укажите доменное имя арендатора Azure Active Directory B2C в **арендаторе Signin.**
 
-1.  Поле " **центр** " позволяет управлять используемым URL-адресом входа Azure AD B2C. Задайте значение **< your_b2c_tenant_name >. b2clogin. com**.
+1.  Поле **органа** позволяет управлять URL-адресом входа ВКС AD B2C в Azure AD. Установите значение для **<your_b2c_tenant_name>.b2clogin.com**.
 
 1. Из политик клиента B2C укажите **политику регистрации** и **политику входа**. Дополнительно можно также указать **политику редактирования профиля** и **политику сброса пароля**.
 
@@ -90,18 +90,18 @@ Azure Active Directory B2C — это облачное решение, позв
 
     После сохранения изменений разработчики смогут создавать новые учетные записи и входить на портал разработчика с помощью Azure Active Directory B2C.
 
-## <a name="developer-portal---add-azure-ad-b2c-account-authentication"></a>Портал разработчика. Добавление проверки подлинности учетной записи Azure AD B2C
+## <a name="developer-portal---add-azure-ad-b2c-account-authentication"></a>Портал разработчиков - добавьте аутентификацию учетной записи Azure AD B2C
 
-На портале разработчика вход с помощью AAD B2C возможен с помощью **кнопки входа: мини-приложение OAuth** . Мини-приложение уже включено на странице входа в содержимое портала разработчика по умолчанию.
+На портале разработчиков, входе в систему с AAD B2C можно с **кнопкой ввески: виджет OAuth.** Виджет уже включен на странице ввне страницы содержимого портала разработчика по умолчанию.
 
-Несмотря на то что новая учетная запись будет создана автоматически при входе нового пользователя с AAD B2C, вы можете добавить это же мини-приложение на страницу регистрации.
+Хотя новая учетная запись будет автоматически создаваться всякий раз, когда новый пользователь впишется в AAD B2C, вы можете добавить тот же виджет на страницу регистрации.
 
-**Форма регистрации: мини-приложение OAuth** представляет форму, используемую для регистрации с помощью OAuth.
+**Форма регистрации: виджет OAuth** представляет форму, используемую для регистрации с OAuth.
 
 > [!IMPORTANT]
-> Чтобы изменения AAD вступили в силу, необходимо [повторно опубликовать портал](api-management-howto-developer-portal-customize.md#publish) .
+> Необходимо [переиздать портал](api-management-howto-developer-portal-customize.md#publish) для встыковок изменений AAD.
 
-## <a name="legacy-developer-portal---how-to-sign-up-with-azure-ad-b2c"></a>Устаревший портал разработчика. Регистрация с помощью Azure AD B2C
+## <a name="legacy-developer-portal---how-to-sign-up-with-azure-ad-b2c"></a>Портал разработчиков Legacy - как зарегистрироваться в Azure AD B2C
 
 [!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
@@ -118,7 +118,7 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 
@@ -194,7 +194,6 @@ Azure Active Directory B2C — это облачное решение, позв
 
 [https://oauth.net/2/]: https://oauth.net/2/
 [WebApp-GraphAPI-DotNet]: https://github.com/AzureADSamples/WebApp-GraphAPI-DotNet
-[Accessing the Graph API]: https://msdn.microsoft.com/library/azure/dn132599.aspx#BKMK_Graph
 [Azure Active Directory B2C: регистрация и вход пользователей в приложения]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview
 [Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure]: https://docs.microsoft.com/azure/api-management/api-management-howto-aad
 [Azure Active Directory B2C: расширяемая инфраструктура политик]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies
