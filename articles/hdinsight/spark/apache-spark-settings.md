@@ -1,6 +1,6 @@
 ---
 title: Настройка параметров Spark для Azure HDInsight
-description: Просмотр и Настройка параметров Apache Spark для кластера Azure HDInsight
+description: Как просмотреть и настроить настройки Apache Spark для кластера Azure HDInsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.openlocfilehash: 48f19e5da8c7703cc597518246c2f62ebce3ae17
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79272023"
 ---
 # <a name="configure-apache-spark-settings"></a>Настройка параметров Apache Spark
@@ -57,7 +57,7 @@ spark.sql.files.openCostInBytes 1099511627776
 
 ## <a name="view-cluster-configuration-settings"></a>Просмотр параметров конфигурации кластера
 
-Прежде чем выполнять оптимизацию производительности кластера, проверьте текущие параметры конфигурации кластера HDInsight. Запустите панель мониторинга HDInsight на портале Azure, щелкнув ссылку **Панель мониторинга** в области кластера Spark. Войдите с помощью имени пользователя и пароля администратора кластера.
+Прежде чем выполнять оптимизацию производительности кластера, проверьте текущие параметры конфигурации кластера HDInsight. Запустите панель мониторинга HDInsight на портале Azure, щелкнув ссылку **Панель мониторинга** в области кластера Spark. Вопинье с именем пользователя и паролем администратора кластера.
 
 Отобразится веб-интерфейс Apache Ambari с представлением ключевых метрик использования ресурсов кластера.  На панели мониторинга Ambari отображается конфигурация Apache Spark и другие установленные службы. На панели мониторинга есть вкладка **Config History** (История конфигураций). Здесь содержится информация о конфигурации всех установленных служб, включая Spark.
 
@@ -124,8 +124,8 @@ YARN управляет максимальным объемом памяти, и
 
 * Ядро Spark, Spark SQL, потоковые API-интерфейсы Spark, GraphX и Apache Spark MLlib.
 * Anaconda — диспетчер пакетов Python.
-* [Apache Livy](https://livy.incubator.apache.org/) — удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API.
-* Записные книжки [Jupyter](https://jupyter.org/) и [Apache Zeppelin](https://zeppelin.apache.org/) — интерактивный браузерный интерфейс для взаимодействия с кластером Spark.
+* [Apache Livy](https://livy.incubator.apache.org/) - Apache Spark REST API, используемый для отправки удаленных заданий в кластер HDInsight Spark.
+* [Ноутбуки Jupyter](https://jupyter.org/) и [Apache Цеппелин](https://zeppelin.apache.org/) - интерактивный интерфейс на основе браузера для взаимодействия с кластером Spark.
 * Драйвер ODBC. Соединяет кластеры Spark в HDInsight со средствами бизнес-аналитики, такими как Microsoft Power BI и Tableau.
 
 Чтобы изменить конфигурацию для приложений, запущенных в записной книжке Jupyter, можно использовать команду `%%configure`. Эти изменения конфигурации будут применены к заданиям Spark, запущенным из экземпляра записной книжки. Необходимо вносить такие изменения на раннем этапе выполнения приложения, перед запуском первой ячейки кода. Измененная конфигурация будет применена к сеансу Livy, когда он будет создан.

@@ -1,5 +1,5 @@
 ---
-title: Мониторинг хранилища XTP в памяти
+title: Монитор XTP В памяти хранения
 description: Сведения об оценке и мониторинге использования и емкости хранилища XTP в памяти и об устранении нехватки памяти 41823
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: jrasnick
 ms.reviewer: genemi
 ms.date: 01/25/2019
 ms.openlocfilehash: 22ff83b1ccd009624082e45073123a45006df70f
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79209435"
 ---
 # <a name="monitor-in-memory-oltp-storage"></a>Мониторинг хранилища выполняющейся в памяти OLTP
