@@ -1,5 +1,5 @@
 ---
-title: Создание кластера Azure обозреватель данных & DB с помощью Python
+title: Создание кластера Azure Data Explorer & DB с помощью Python
 description: Сведения о создании кластера и базы данных Azure Data Explorer с использованием Python.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
@@ -8,23 +8,23 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.openlocfilehash: 8425058c9f6ac5b90c37a99f749a810672b406fc
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77560513"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-python"></a>Создание кластера и базы данных Azure Data Explorer с использованием Python
 
 > [!div class="op_single_selector"]
 > * [Портал](create-cluster-database-portal.md)
-> * [CLI](create-cluster-database-cli.md)
+> * [Cli](create-cluster-database-cli.md)
 > * [PowerShell](create-cluster-database-powershell.md)
-> * [C#](create-cluster-database-csharp.md)
+> * [C #](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)
 > * [Шаблон ARM](create-cluster-database-resource-manager.md)
 
-В этой статье вы создадите кластер и базу данных Azure обозреватель данных с помощью Python. Azure Data Explorer — это быстрая и полностью управляемая служба для аналитики большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать обозреватель данных Azure, сначала создайте кластер, а затем создайте одну или несколько баз данных в этом кластере. Затем принимаете или загружает данные в базу данных, чтобы можно было выполнять запросы к ней.
+В этой статье вы создаете кластер и базу данных Azure Data Explorer с помощью Python. Azure Data Explorer — это быстрая и полностью управляемая служба для аналитики большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать Azure Data Explorer, сначала создайте кластер и создайте одну или несколько баз данных в этом кластере. Затем глотать или загружать данные в базу данных, чтобы можно было запускать запросы против нее.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,18 +32,18 @@ ms.locfileid: "77560513"
 
 * [Python версии 3.4+](https://www.python.org/downloads/).
 
-* [Приложение Azure AD и субъект-служба, которые имеют доступ к ресурсам](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). Получение значений для `Directory (tenant) ID`, `Application ID`и `Client Secret`.
+* [Приложение Azure AD и директор службы, которые могут получить доступ к ресурсам.](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) Получить значения `Directory (tenant) ID`для `Application ID`, `Client Secret`и .
 
 ## <a name="install-python-package"></a>Установка пакета Python
 
-Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути. Выполните команду:
+Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути. Выполните следующую команду:
 
 ```
 pip install azure-common
 pip install azure-mgmt-kusto
 ```
-## <a name="authentication"></a>Аутентификация
-Для выполнения примеров в этой статье нам потребуется приложение Azure AD и субъект-служба, которые могут получать доступ к ресурсам. Установите флажок [создать приложение Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) , чтобы создать бесплатное приложение Azure AD и назначить роль в области действия подписки. В нем также показано, как получить `Directory (tenant) ID`, `Application ID`и `Client Secret`.
+## <a name="authentication"></a>Проверка подлинности
+Для запуска примеров в этой статье нам необходимо приложение Azure AD и директор службы, которые могут получить доступ к ресурсам. Проверьте [создание приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) для создания бесплатного приложения Azure AD и добавления ролевых заданий в области подписки. Он также `Directory (tenant) ID`показывает, как `Application ID`получить `Client Secret`, , и .
 
 ## <a name="create-the-azure-data-explorer-cluster"></a>Создание кластера Azure Data Explorer
 
@@ -86,12 +86,12 @@ pip install azure-mgmt-kusto
    |---|---|---|
    | cluster_name | *mykustocluster* | Необходимое имя кластера.|
    | sku_name | *Standard_D13_v2* | Номер SKU, который будет использоваться для кластера. |
-   | уровень | *Standard Edition* | Уровень SKU. |
-   | capacity | *number* | Число экземпляров кластера. |
+   | Уровень | *Стандартный* | Уровень SKU. |
+   | Емкость | *Номер* | Количество экземпляров кластера. |
    | resource_group_name | *testrg* | Имя группы ресурсов, в которой будет создан кластер. |
 
     > [!NOTE]
-    > **Создание кластера** — это длительная операция. Метод **create_or_update** возвращает экземпляр лрополлер, см. раздел [класс лрополлер](/python/api/msrest/msrest.polling.lropoller?view=azure-python) для получения дополнительных сведений.
+    > **Создание кластера** — это длительная операция. Метод **create_or_update** возвращает экземпляр LROPoller, см. [класс LROPoller,](/python/api/msrest/msrest.polling.lropoller?view=azure-python) чтобы получить больше информации.
 
 1. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
 
@@ -143,13 +143,13 @@ pip install azure-mgmt-kusto
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-* Если вы планируете следовать нашим другим статьям, не заполняйте созданные ресурсы.
+* Если вы планируете следовать нашим другим статьям, сохраните созданные ресурсы.
 * Чтобы очистить ресурсы, удалите кластер. При удалении кластера также удаляются все содержащиеся в нем базы данных. Для удаления кластера используйте следующую команду:
 
     ```Python
     cluster_operations.delete(resource_group_name = resource_group_name, cluster_name = clusterName)
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)
+* [Проем данных с помощью библиотеки Azure Data Explorer Python](python-ingest-data.md)

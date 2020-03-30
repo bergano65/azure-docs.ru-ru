@@ -1,5 +1,5 @@
 ---
-title: Не удалось создать или удалить базу данных или таблицу в Azure обозреватель данных
+title: Неспособность создать или удалить DB или таблицу в Azure Data Explorer
 description: В этой статье описываются действия по устранению неполадок при создании и удалении баз данных и таблиц в обозревателе данных Azure.
 author: orspod
 ms.author: orspodek
@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 67e4c33498b05884fe667a7977ddb40e647ab4c8
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77562400"
 ---
 # <a name="troubleshoot-failure-to-create-or-delete-a-database-or-table-in-azure-data-explorer"></a>Устранение неполадок. Не удается создать или удалить базу данных или таблицу в обозревателе данных Azure
@@ -50,7 +50,7 @@ ms.locfileid: "77562400"
 
 Дополнительные сведения о разрешениях см. в разделе [Управлять разрешениями базы данных](manage-database-permissions.md).
 
-## <a name="general-guidance"></a>Общее руководство
+## <a name="general-guidance"></a>Общие рекомендации
 
 1. Проверьте [панель мониторинга работоспособности службы Azure](https://azure.microsoft.com/status/). Просмотрите состояние обозревателя данных Azure в регионе, где вы работаете с базой данных или таблицей.
 
@@ -58,6 +58,6 @@ ms.locfileid: "77562400"
 
 1. Если вам нужна помощь в решении проблемы, откройте запрос на поддержку на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Проверка работоспособности кластера](check-cluster-health.md)

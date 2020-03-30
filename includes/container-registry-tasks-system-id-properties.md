@@ -9,13 +9,13 @@ ms.date: 07/12/2019
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: 700dbfde3be2f24eb57acbdeb9d2841ef2bdfe44
-ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77112298"
 ---
-В выходных данных команды в разделе `identity` показано удостоверение типа `SystemAssigned` задается в задаче. `principalId` является ИДЕНТИФИКАТОРом субъекта для удостоверения задачи:
+На выводе `identity` команды раздел показывает идентификацию типа, `SystemAssigned` установленную в задаче. Является `principalId` основным идентификатором идентификатора задачи:
 
 ```console
 [...]
@@ -28,7 +28,7 @@ ms.locfileid: "77112298"
   "location": "eastus",
 [...]
 ``` 
-Используйте команду [AZ запись контроля][az-acr-task-show] доступа, чтобы сохранить principalId в переменной для использования в последующих командах. Замените имя задачи и реестра в следующей команде:
+Используйте [команду шоу-задачи az acr][az-acr-task-show] для хранения principalId в переменной, чтобы использовать более поздние команды. Заменить название задачи и регистратуры в следующей команде:
 
 ```azurecli
 principalID=$(az acr task show --name mytask --registry myregistry --query identity.principalId --output tsv)

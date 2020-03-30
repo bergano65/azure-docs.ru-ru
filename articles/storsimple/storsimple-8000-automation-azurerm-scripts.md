@@ -1,5 +1,5 @@
 ---
-title: Использование сценариев PowerShell AzureRM для управления устройствами StorSimple
+title: Используйте скрипты AzureRM PowerShell для управления устройствами StorSimple
 description: Узнайте, как использовать сценарии Azure Resource Manager для автоматизации заданий StorSimple
 author: alkohli
 ms.service: storsimple
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 03a5ef49b2d58d351d882b30b5d11e4a5ba90264
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77471964"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
@@ -97,7 +97,7 @@ ms.locfileid: "77471964"
 
     ```
 
-### <a name="sample-output"></a>Образец полученных результатов
+### <a name="sample-output"></a>Пример выходных данных
 
 При запуске примера сценария можно получить следующие выходные данные. Выходные данные содержат все задания, работающие на зарегистрированном устройстве, запущенном 25 сентября 2017 г. и завершенном 2 октября 2017 г.
 
@@ -166,6 +166,6 @@ PS C:\Scripts\StorSimpleSDKTools>
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

@@ -6,11 +6,11 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: thweiss
-ms.openlocfilehash: 86e9854cb5a522a56cca09a6e1ea155fd8a62f14
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: c5699bb851bd0a818a987228155c62683e93f51a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77585906"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
@@ -79,9 +79,9 @@ while (query.HasMoreResults)
 
 Объекты, возвращаемые из [пакета SDK для .NET версии 3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) предоставляют свойство `RequestCharge`:
 
-:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos/tests/Microsoft.Azure.Cosmos.Tests/SampleCodeForDocs/CustomDocsSampleCode.cs" id="GetRequestCharge":::
+[!code-csharp[](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos/tests/Microsoft.Azure.Cosmos.Tests/SampleCodeForDocs/CustomDocsSampleCode.cs?name=GetRequestCharge)]
 
-Дополнительные сведения см. [в разделе Краткое руководство. Создание веб-приложения .NET с помощью учетной записи API SQL в Azure Cosmos DB](create-sql-api-dotnet.md).
+Для получения дополнительной информации [см.](create-sql-api-dotnet.md)
 
 ### <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
 
@@ -111,7 +111,7 @@ feedResponse.forEach(result -> {
 });
 ```
 
-Дополнительные сведения см. в разделе [Краткое руководство. Создание приложения Java с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-java.md).
+Для получения дополнительной информации [см.](create-sql-api-java.md)
 
 ### <a name="use-the-nodejs-sdk"></a>Использование пакета SDK для Node.js
 
@@ -146,7 +146,7 @@ while (query.hasMoreResults()) {
 }
 ```
 
-Дополнительные сведения см. в разделе [Краткое руководство. Создание приложения Node. js с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-nodejs.md). 
+Для получения дополнительной информации [см.](create-sql-api-nodejs.md) 
 
 ### <a name="use-the-python-sdk"></a>Использование пакета SDK для Python
 
@@ -162,7 +162,7 @@ response = client.ExecuteStoredProcedure(
 request_charge = client.last_response_headers['x-ms-request-charge']
 ```
 
-Дополнительные сведения см. в разделе [Краткое руководство. Создание приложения Python с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-python.md). 
+Для получения дополнительной информации [см.](create-sql-api-python.md) 
 
 ## <a name="azure-cosmos-db-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 
@@ -203,7 +203,7 @@ Dictionary<string, object> stats = database.RunCommand(new GetLastRequestStatist
 double requestCharge = (double)stats["RequestCharge"];
 ```
 
-Дополнительные сведения см. в разделе [Краткое руководство. Создание веб-приложения .NET с помощью Azure Cosmos DB API для MongoDB](create-mongodb-dotnet.md).
+Для получения дополнительной информации [см.](create-mongodb-dotnet.md)
 
 ### <a name="use-the-mongodb-java-driver"></a>Использование драйвера Java для MongoDB
 
@@ -215,7 +215,7 @@ Document stats = database.runCommand(new Document("getLastRequestStatistics", 1)
 Double requestCharge = stats.getDouble("RequestCharge");
 ```
 
-Дополнительные сведения см. [в разделе Краткое руководство. Создание веб-приложения с помощью Azure Cosmos DB API для MongoDB и пакета SDK для Java](create-mongodb-java.md).
+Для получения дополнительной информации [см.](create-mongodb-java.md)
 
 ### <a name="use-the-mongodb-nodejs-driver"></a>Использование драйвера Node.js для MongoDB
 
@@ -228,7 +228,7 @@ db.command({ getLastRequestStatistics: 1 }, function(err, result) {
 });
 ```
 
-Дополнительные сведения см. [в разделе Краткое руководство. Перенос существующего веб-приложения MongoDB Node. js в Azure Cosmos DB](create-mongodb-nodejs.md).
+Для получения дополнительной информации [см.](create-mongodb-nodejs.md)
 
 ## <a name="cassandra-api"></a>API Cassandra
 
@@ -243,7 +243,7 @@ RowSet rowSet = session.Execute("SELECT table_name FROM system_schema.tables;");
 double requestCharge = BitConverter.ToDouble(rowSet.Info.IncomingPayload["RequestCharge"].Reverse().ToArray(), 0);
 ```
 
-Дополнительные сведения см. [в разделе Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB](create-cassandra-dotnet.md).
+Для получения дополнительной информации [см.](create-cassandra-dotnet.md)
 
 ### <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
 
@@ -254,7 +254,7 @@ ResultSet resultSet = session.execute("SELECT table_name FROM system_schema.tabl
 Double requestCharge = resultSet.getExecutionInfo().getIncomingPayload().get("RequestCharge").getDouble();
 ```
 
-Дополнительные сведения см. [в разделе Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Java и Azure Cosmos DB](create-cassandra-java.md).
+Для получения дополнительной информации [см.](create-cassandra-java.md)
 
 ## <a name="gremlin-api"></a>API Gremlin
 
@@ -273,7 +273,7 @@ ResultSet<dynamic> results = client.SubmitAsync<dynamic>("g.V().count()").Result
 double requestCharge = (double)results.StatusAttributes["x-ms-request-charge"];
 ```
 
-Дополнительные сведения см. в разделе [Краткое руководство. создание .NET Framework или основного приложения с помощью учетной записи API Azure Cosmos DB Gremlin](create-graph-dotnet.md).
+Для получения дополнительной информации [см.](create-graph-dotnet.md)
 
 ### <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
 
@@ -284,7 +284,7 @@ ResultSet results = client.submit("g.V().count()");
 Double requestCharge = (Double)results.statusAttributes().get().get("x-ms-request-charge");
 ```
 
-Дополнительные сведения см. [в разделе Краткое руководство. Создание базы данных Graph в Azure Cosmos DB с помощью пакета SDK для Java](create-graph-java.md).
+Для получения дополнительной информации [см.](create-graph-java.md)
 
 ## <a name="table-api"></a>API таблиц
 
@@ -299,16 +299,16 @@ if (tableResult.RequestCharge.HasValue) // would be false when using Azure Stora
 }
 ```
 
-Дополнительные сведения см. [в разделе Краткое руководство. создание API таблиц приложения с помощью пакета SDK для .NET и Azure Cosmos DB](create-table-dotnet.md).
+Для получения дополнительной информации [см.](create-table-dotnet.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об оптимизации потребления ЕЗ см. в следующих статьях:
 
 * [Пропускная способность и единицы запросов в Azure Cosmos DB](request-units.md)
 * [Optimize provisioned throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация стоимости подготовленной пропускной способности в Azure Cosmos DB)
 * [Optimize query cost in Azure Cosmos DB](optimize-cost-queries.md) (Оптимизация затрат на отправку запросов в Azure Cosmos DB)
-* [Globally scale provisioned throughput](scaling-throughput.md) (Глобальное масштабирование подготовленной пропускной способности)
+* [Глобальное масштабирование подготовленной пропускной способности](scaling-throughput.md)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
 * [Подготовка пропускной способности для контейнера](how-to-provision-container-throughput.md)
 * [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)

@@ -4,13 +4,13 @@ ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
 ms.openlocfilehash: 8931ba97cf72891c78e20389be10178dd2c0317a
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77594288"
 ---
-В оболочке на основе PowerShell в Windows используйте `Invoke-WebRequest` для загрузки выпуска диаграммы Consul Helm, а затем извлеките с помощью `Expand-Archive` следующим образом:
+В оболочке на основе PowerShell `Invoke-WebRequest` на Windows используйте для загрузки `Expand-Archive` диаграммы Consul Helm, а затем извлекайте следующие данные:
 
 ```powershell
 # Specify the Consul Helm chart version that will be leveraged throughout these instructions

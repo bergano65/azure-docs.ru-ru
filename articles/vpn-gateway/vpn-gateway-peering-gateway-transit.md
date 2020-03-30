@@ -10,10 +10,10 @@ ms.tgt_pltfrm: na
 ms.date: 03/25/2018
 ms.author: yushwang
 ms.openlocfilehash: 3917101ee7ac151cf624e5be0f51ccf01c8cb1cc
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77161891"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
@@ -48,16 +48,16 @@ ms.locfileid: "77161891"
 2. [Создание пиринга между виртуальными сетями с одинаковой моделью развертывания](../virtual-network/tutorial-connect-virtual-networks-portal.md)
 3. [Создание пиринга между виртуальными сетями с разными моделями развертывания](../virtual-network/create-peering-different-deployment-models.md)
 
-## <a name="permissions"></a>Permissions
+## <a name="permissions"></a><a name="permissions"></a>Разрешения
 
 У учетных записей, используемых для создания пиринга между виртуальными сетями, должны быть необходимые роли или разрешения. В приведенном ниже примере при создании пиринга между двумя виртуальными сетями Hub-RM и Spoke-Classic вашей учетной записи должны быть назначены следующие роли или разрешения для каждой виртуальной сети.
     
 |Виртуальная сеть|Модель развертывания|Роль|Разрешения|
 |---|---|---|---|
 |Hub-RM|Resource Manager|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write|
-| |Классический|[Участник классической сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Недоступно|
+| |Классический|[Классический сетевой вклад](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Недоступно|
 |Spoke-Classic|Resource Manager|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/peer|
-||Классический|[Участник классической сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Microsoft.ClassicNetwork/virtualNetworks/peer|
+||Классический|[Классический сетевой вклад](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Microsoft.ClassicNetwork/virtualNetworks/peer|
 
 Подробнее о [встроенных ролях](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) и присвоении разрешений, определенных для [настраиваемых ролей](../active-directory/role-based-access-control-custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (только для Resource Manager).
 

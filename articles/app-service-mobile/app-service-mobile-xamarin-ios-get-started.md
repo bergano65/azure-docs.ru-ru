@@ -1,5 +1,5 @@
 ---
-title: Начало работы с приложениями Xamarin. iOS
+title: Начало работы с приложениями Xamarin.iOS
 description: Этот учебник поможет приступить к использованию мобильных приложений в разработке для Xamarin.iOS.
 ms.assetid: 14428794-52ad-4b51-956c-deb296cafa34
 ms.tgt_pltfrm: mobile-xamarin-ios
@@ -7,10 +7,10 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.openlocfilehash: 6c35189e7c841fa2724f1cfe84afc689d5510676
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77459010"
 ---
 # <a name="create-a-xamarinios-app"></a>Создание приложения Xamarin.iOS
@@ -24,34 +24,34 @@ ms.locfileid: "77459010"
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с данным руководством вам потребуется:
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, зарегистрируйтесь для получения бесплатной пробной версии Azure и получите до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Visual Studio для Mac. См. раздел [Установка и установка для Visual Studio для Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
-* Компьютер Mac с Xcode 9,0 или более поздней версии.
+* Активная учетная запись Azure. Если у вас нет учетной записи, зарегистрируйтесь для получения бесплатной пробной версии Azure и получите до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/)
+* Visual Studio для Mac. Смотрите [Настройка и установка для визуальной студии для Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
+* Mac с Xcode 9.0 или более поздно.
   
 ## <a name="create-an-azure-mobile-app-backend"></a>Создание серверной части мобильного приложения Azure
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка клиентского и серверного проекта
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание соединения базы данных и настройка проекта клиента и сервера
 [!INCLUDE [app-service-mobile-configure-new-backend](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="run-the-xamarinios-app"></a>Запуск приложения Xamarin. iOS
-1. Откройте проект Xamarin. iOS.
+## <a name="run-the-xamarinios-app"></a>Выполнить приложение Xamarin.iOS
+1. Откройте проект Xamarin.iOS.
 
-2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени приложения "test123" будет https://test123.azurewebsites.net.
+2. Перейдите на [портал Azure](https://portal.azure.com/) и перейдите к созданного вами мобильному приложению. На `Overview` лезвии ищите URL-адрес, который является общедоступной точкой зрения для вашего мобильного приложения. Пример - название сайта для моего приложения имя https://test123.azurewebsites.net"test123" будет .
 
-3. Откройте файл `QSTodoService.cs` в этой папке — Xamarin. iOS/ЗУМОАППНАМЕ. Имя приложения — `ZUMOAPPNAME`.
+3. Откройте `QSTodoService.cs` файл в этой папке - xamarin.iOS/ЗУМОАППНАМЕ. Имя приложения — `ZUMOAPPNAME`.
 
-4. В `QSTodoService` классе Замените переменную `ZUMOAPPURL` на общую конечную точку выше.
+4. В `QSTodoService` классе `ZUMOAPPURL` замените переменную общедоступной конечной точкой выше.
 
     `const string applicationURL = @"ZUMOAPPURL";`
 
-    преобразуется в
+    becomes
     
     `const string applicationURL = @"https://test123.azurewebsites.net";`
     
 5. Нажмите клавишу F5, чтобы развернуть и запустить приложение в эмуляторе iPhone.
 
-6. В приложении введите содержательный текст, например *Завершение работы с руководством* , а затем нажмите кнопку +.
+6. В приложении введите значимый текст, например, *заполните учебник,* а затем нажмите кнопку «К.».
 
     ![][10]
 

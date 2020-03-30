@@ -9,10 +9,10 @@ ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 40e5a1bf940e46aed566a1e3fa6dcb4e6b2d9230
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77135052"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
@@ -32,14 +32,14 @@ ms.locfileid: "77135052"
 
 ### <a name="nvidia-grid-drivers"></a>Драйверы NVIDIA GRID
 
-Корпорация Майкрософт повторно распространяет установщики драйверов сетки NVIDIA для виртуальных машин серии NV и NVv3, используемых в качестве виртуальных рабочих станций или для виртуальных приложений. Устанавливайте только эти драйверы сетки на виртуальных машинах Azure серии NV только в операционных системах, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure. Вам не нужно настраивать сервер лицензий на программное обеспечение NVIDIA GPU.
+Корпорация Майкрософт перераспределяет установки драйверов NVIDIA GRID для Виртуальных и NVv3-серий, используемых в качестве виртуальных рабочих станций или для виртуальных приложений. Установите только эти драйверы GRID на VMs-мизанс серии Azure NV, только на операционные системы, перечисленные в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure. Вам не нужно настраивать сервер лицензии на программное обеспечение NVIDIA vGPU.
 
-Обратите внимание, что расширение NVIDIA всегда установит последнюю версию драйвера. Мы предоставляем ссылки на предыдущую версию для клиентов, которые имеют зависимость от более старой версии.
+Обратите внимание, что расширение Nvidia всегда будет устанавливать последний драйвер. Мы предоставляем ссылки на предыдущую версию здесь для клиентов, которые имеют зависимость от старой версии.
 
 Для Windows Server 2019, Windows Server 2016 и Windows 10 (до сборки 1909):
-- [Сетка 10,1 (442,06)](https://go.microsoft.com/fwlink/?linkid=874181) (. exe)
-- [Сетка 10,0 (441,66)](https://download.microsoft.com/download/2/a/3/2a316e62-3be9-4ddb-ae8e-c04b6df6e22d/441.66_grid_win10_server2016_server2019_64bit_international.exe) (. exe) 
+- [ГРИД 10.1 (442.06)](https://go.microsoft.com/fwlink/?linkid=874181) (.exe)
+- [ГРИД 10.0 (441.66)](https://download.microsoft.com/download/2/a/3/2a316e62-3be9-4ddb-ae8e-c04b6df6e22d/441.66_grid_win10_server2016_server2019_64bit_international.exe) (.exe) 
 
 Для Windows Server 2012 R2, Windows Server 2008 R2, Windows 8 и Windows 7: 
-- [Сетка 10,1 (442,06)](https://go.microsoft.com/fwlink/?linkid=874184) (. exe)
-- [Сетка 10,0 (441,66)](https://download.microsoft.com/download/d/8/0/d80091f8-0d55-47c2-958a-bacd136f432a/441.66_grid_win7_win8_server2008R2_server2012R2_64bit_international.exe) (. exe)  
+- [ГРИД 10.1 (442.06)](https://go.microsoft.com/fwlink/?linkid=874184) (.exe)
+- [ГРИД 10.0 (441.66)](https://download.microsoft.com/download/d/8/0/d80091f8-0d55-47c2-958a-bacd136f432a/441.66_grid_win7_win8_server2008R2_server2012R2_64bit_international.exe) (.exe)  

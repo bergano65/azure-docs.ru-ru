@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d4b52a3025bfb15e2679709353cebf28254a75c2
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77185497"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
@@ -47,36 +47,36 @@ ms.locfileid: "77185497"
   - Не требуются сложные локальные развертывания или настройка сети.
   - В локальной среде необходимо установить лишь упрощенный клиент.
   - Отсутствие накладных расходов на управление. Агент автоматически получает усовершенствования и исправления ошибок.
-- *Безопасность*
+- *Безопасный*
   - Локальные пароли ни в каком виде не хранятся в облаке.
   - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../conditional-access/concept-conditional-access-conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
   - Агент устанавливает только исходящие подключения из вашей сети. Таким образом, вам не нужно устанавливать агент в сети периметра.
   - Обмен данными между агентом и Azure AD защищен с помощью проверки подлинности на основе сертификата. Эти сертификаты автоматически продлеваются каждые несколько месяцев средствами Azure AD.
-- *Высокая доступность*
+- *Высокодоступные*
   - Дополнительные агенты можно установить на нескольких локальных серверах, чтобы достичь высокого уровня доступности запросов на вход.
 
 ## <a name="feature-highlights"></a>Краткие сведения о возможностях
 
 - Поддерживает вход пользователей во все браузерные приложения и клиентские приложения Microsoft Office, которые используют [современную проверку подлинности](https://aka.ms/modernauthga).
 - Именем пользователя для входа может быть либо локальное имя пользователя по умолчанию (`userPrincipalName`), либо другой атрибут, настроенный в Azure AD Connect (известный как `Alternate ID`).
-- Эта функция легко работает с функциями [условного доступа](../active-directory-conditional-access-azure-portal.md) , такими как многофакторная идентификация (MFA) для защиты пользователей.
+- Функция работает бесшовно с [функциями условного доступа,](../active-directory-conditional-access-azure-portal.md) такими как Multi-Factor Authentication (MFA), чтобы помочь защитить пользователей.
 - Она интегрирована с [самостоятельным управлением паролями](../authentication/active-directory-passwords-overview.md) на основе облака, включая обратную запись паролей в локальный каталог Active Directory и защиту пароля с помощью запрета часто используемых паролей.
 - Среды с несколькими лесами поддерживаются, если между лесами AD существуют отношения доверия и правильно настроена маршрутизация по суффиксу имени.
 - Это бесплатная функция, и для ее использования не требуются платные выпуски Azure AD.
-- Функцию можно включить с помощью [Azure AD Connect](whatis-hybrid-identity.md).
+- Он может быть включен через [Azure AD Connect.](whatis-hybrid-identity.md)
 - Она использует упрощенный локальный агент, который прослушивает запросы на проверку пароля и отвечает на них.
 - Установка нескольких агентов обеспечивает высокий уровень доступности запросов на вход.
 - Она [защищает](../authentication/howto-password-smart-lockout.md) локальные учетные записи от атак методом подбора пароля в облаке.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство](how-to-connect-pta-quick-start.md) . получение и запуск сквозной проверки подлинности Azure AD.
+- [Быстрый старт](how-to-connect-pta-quick-start.md) - Вставать и запускать Azure AD проходной аутентификации.
 - [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
-- [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Настройка возможности интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
+- [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Настройте возможность интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
-- [Подробное техническое руководство.](how-to-connect-pta-how-it-works.md) Сведения о том, как работает эта функция.
+- [Техническое руководство по сквозной проверке подлинности Azure Active Directory](how-to-connect-pta-how-it-works.md). Сведения о том, как работает эта функция.
 - [Часто задаваемые вопросы.](how-to-connect-pta-faq.md) Ответы на часто задаваемые вопросы.
 - [Устранение неполадок.](tshoot-connect-pass-through-authentication.md) Узнайте, как устранить самые распространенные проблемы с этой функцией.
-- [Подробный обзор безопасности](how-to-connect-pta-security-deep-dive.md). Дополнительные технические сведения об этом компоненте.
-- [Простой единый вход Azure AD](how-to-connect-sso.md). Сведения об этой дополнительной функции.
-- [UserVoice.](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect) Отправка запросов на новые функции.
+- [Руководство по безопасности](how-to-connect-pta-security-deep-dive.md). Дополнительные технические сведения об этом компоненте.
+- [Простой единый вход Azure Active Directory](how-to-connect-sso.md). Дополнительные сведения об этой дополнительной функции.
+- [UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Отправка запросов новых функций.

@@ -1,42 +1,42 @@
 ---
-title: Проверка подлинности из кластера Kubernetes
-description: Узнайте, как предоставить кластеру Kubernetes доступ к образам в реестре контейнеров Azure путем создания опрашивающего секрета с помощью субъекта-службы.
+title: Аутентификат из кластера Кубернете
+description: Узнайте, как предоставить кластерkubernetes доступ к изображениям в реестре контейнеров Azure, создав секрет притяжения с помощью принципа службы
 ms.topic: article
 author: karolz-ms
 ms.author: karolz
 ms.reviewer: danlep
 ms.date: 02/10/2020
 ms.openlocfilehash: 0608ca0e0e53acf2f19910a7f1107dacf67d4e61
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77154898"
 ---
-# <a name="pull-images-from-an-azure-container-registry-to-a-kubernetes-cluster"></a>Извлечение образов из реестра контейнеров Azure в кластер Kubernetes
+# <a name="pull-images-from-an-azure-container-registry-to-a-kubernetes-cluster"></a>Вытяните изображения из реестра контейнеров Azure в кластер Kubernetes
 
-Вы можете использовать реестр контейнеров Azure в качестве источника образов контейнеров с любым кластером Kubernetes, включая локальные кластеры Kubernetes, такие как [minikube](https://minikube.sigs.k8s.io/) и [Kind](https://kind.sigs.k8s.io/). В этой статье показано, как создать Kubernetes опрашивающий секрет на основе субъекта-службы Azure Active Directory. Затем используйте секрет для извлечения образов из реестра контейнеров Azure в развертывании Kubernetes.
+Реестр контейнеров Azure можно использовать в качестве источника изображений контейнеров с любым кластером Kubernetes, включая «местные» кластеры Kubernetes, такие как [minikube](https://minikube.sigs.k8s.io/) и [kind.](https://kind.sigs.k8s.io/) В этой статье показано, как создать секрет притяжения Kubernetes на основе принципа службы Active Directory Azure. Затем используйте секрет для вытягивания изображений из реестра контейнеров Azure в развертывании Kubernetes.
 
 > [!TIP]
-> Если вы используете управляемую [службу Kubernetes Azure](../aks/intro-kubernetes.md), вы также можете [интегрировать кластер](../aks/cluster-container-registry-integration.md?toc=/azure/container-registry/toc.json&bc=/azure/container-registry/breadcrumb/toc.json) с целевым реестром контейнеров Azure для извлечения образа. 
+> Если вы используете управляемую [службу Azure Kubernetes,](../aks/intro-kubernetes.md)вы также можете [интегрировать кластер](../aks/cluster-container-registry-integration.md?toc=/azure/container-registry/toc.json&bc=/azure/container-registry/breadcrumb/toc.json) с целевым реестром контейнеров Azure для вытягивания изображений. 
 
-В этой статье предполагается, что вы уже создали частный реестр контейнеров Azure. Кроме того, необходимо запустить кластер Kubernetes и получить доступ к нему с помощью программы командной строки `kubectl`.
+В этой статье предполагается, что вы уже создали частный реестр контейнеров Azure. Кроме того, необходимо, чтобы кластер Kubernetes `kubectl` работал и был доступен с помощью инструмента командной строки.
 
 [!INCLUDE [container-registry-service-principal](../../includes/container-registry-service-principal.md)]
 
-Если пароль субъекта-службы не сохранен или не запоминать, его можно сбросить с помощью команды [AZ AD SP Credential rereset][az-ad-sp-credential-reset] :
+Если вы не сохранили или не запоминают основной пароль службы, вы можете сбросить его с помощью команды [сбросить учетные данные az ad sp:][az-ad-sp-credential-reset]
 
 ```azurecli
 az ad sp credential reset  --name http://<service-principal-name> --query password --output tsv
 ```
 
-Эта команда возвращает новый, допустимый пароль для субъекта-службы.
+Эта команда возвращает новый, действительный пароль для основного обслуживания.
 
-## <a name="create-an-image-pull-secret"></a>Создание секрета для извлечения образа
+## <a name="create-an-image-pull-secret"></a>Создание секрета притяжения изображения
 
-Kubernetes использует *секрет опрашивающего образа* для хранения сведений, необходимых для проверки подлинности в реестре. Чтобы создать секрет для получения по запросу для реестра контейнеров Azure, укажите идентификатор субъекта-службы, пароль и адрес реестра. 
+Kubernetes использует *секрет притяжения изображения* для хранения информации, необходимой для проверки подлинности в вашем реестре. Чтобы создать секрет притяжения для реестра контейнеров Azure, вы предоставляете основной идентификатор службы, пароль и URL-адрес реестра. 
 
-Создайте секрет для извлечения образа с помощью следующей команды `kubectl`:
+Создайте секрет притяжения `kubectl` изображения со следующей командой:
 
 ```console
 kubectl create secret docker-registry <secret-name> \
@@ -47,17 +47,17 @@ kubectl create secret docker-registry <secret-name> \
 ```
 где:
 
-| Значение | Description |
+| Значение | Описание |
 | :--- | :--- |
-| `secret-name` | Имя секрета для получения образа, например запись *контроля доступа — секретный код* |
-| `namespace` | Пространство имен Kubernetes для помещения секрета в <br/> Требуется только в том случае, если вы хотите поместить секрет в пространство имен, отличное от пространства имен по умолчанию |
-| `container-registry-name` | Имя реестра контейнеров Azure |
-| `service-principal-ID` | ИДЕНТИФИКАТОР субъекта-службы, который будет использоваться Kubernetes для доступа к реестру. |
-| `service-principal-password` | Пароль субъекта-службы |
+| `secret-name` | Название изображения тянуть секрет, например, *акр-секретно* |
+| `namespace` | Kubernetes namespace, чтобы положить секрет в <br/> Только необходимо, если вы хотите разместить секрет в пространстве имен, кроме пространства имен по умолчанию |
+| `container-registry-name` | Имя вашего реестра контейнеров Azure |
+| `service-principal-ID` | Идентификатор основного обслуживания, который будет использоваться Kubernetes для доступа к вашему реестру |
+| `service-principal-password` | Основной пароль службы |
 
-## <a name="use-the-image-pull-secret"></a>Использование секрета для извлечения образа
+## <a name="use-the-image-pull-secret"></a>Используйте секрет притяжения изображения
 
-После создания секрета на извлечение образа его можно использовать для создания модулей Kubernetes и развертываний. Укажите имя секрета в разделе `imagePullSecrets` в файле развертывания. Пример:
+После того как вы создали секрет притяжения изображения, вы можете использовать его для создания стручков И развертывания Kubernetes. Укажите имя секрета `imagePullSecrets` в файле развертывания. Пример:
 
 ```yaml
 apiVersion: v1
@@ -74,13 +74,13 @@ spec:
     - name: acr-secret
 ```
 
-В предыдущем примере `your-awesome-app:v1` — это имя образа, который нужно извлечь из реестра контейнеров Azure, а `acr-secret` — имя секрета для получения, созданного для доступа к реестру. При развертывании Pod Kubernetes автоматически извлекает образ из реестра, если он еще не существует в кластере.
+В предыдущем примере это имя изображения, которое можно вытащить `acr-secret` из реестра контейнеров Azure, и это имя секрета притяжения, `your-awesome-app:v1` созданного для доступа к реестру. При развертывании стручка Kubernetes автоматически вытягивает изображение из реестра, если оно еще не присутствует в кластере.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о работе с субъектами-службами и реестром контейнеров Azure см. [в статье Проверка подлинности реестра контейнеров Azure с помощью субъектов-служб](container-registry-auth-service-principal.md) .
-* Дополнительные сведения о секретных параметрах образа см. в [документации по Kubernetes](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod) .
+* Подробнее о работе с принципами обслуживания и реестром контейнеров Azure можно узнать в [реестре контейнеров Azure с принципами обслуживания](container-registry-auth-service-principal.md)
+* Подробнее о секретах вытягивания изображений читайте в [документации Kubernetes](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod)
 
 
 <!-- IMAGES -->

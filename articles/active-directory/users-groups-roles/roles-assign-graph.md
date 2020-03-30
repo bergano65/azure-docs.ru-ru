@@ -1,6 +1,6 @@
 ---
-title: Назначение ролей администратора Azure AD с помощью Microsoft Graph API | Документация Майкрософт
-description: Назначение и удаление ролей администратора Azure AD с помощью API Graph в Azure Active Directory
+title: Назначить функции админора Azure Ad с помощью API-графика Microsoft Graph (ru) Документы Майкрософт
+description: Назначать и удалять роли администратора Azure AD с помощью API-изнажима графика в active-каталоге Azure
 services: active-directory
 author: curtand
 manager: daveba
@@ -14,23 +14,23 @@ ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3632f8a360df8837569104232b7380fdc8383953
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77559153"
 ---
-# <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Назначение пользовательских ролей администратора с помощью Microsoft Graph API в Azure Active Directory 
+# <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Назначайте пользовательские функции админса с помощью API-извне Графика Майкрософт в active Directory Azure 
 
-Способ назначения ролей учетным записям пользователей можно автоматизировать с помощью API Microsoft Graph. В этой статье рассматриваются операции POST, GET и DELETE в roleAssignments.
+Можно автоматизировать присвоение ролей учетным записям пользователей с помощью API Microsoft Graph. В этой статье рассматриваются операции POST, GET и DELETE по роженазначениям.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
-Подключитесь к клиенту Azure AD с помощью учетной записи глобального администратора или администратора привилегированных удостоверений, чтобы назначить или удалить роли.
+Подключитесь к вашему администратору Azure AD с помощью учетной записи Глобального администратора или администратора привилегирового identity для присвоения или удаления ролей.
 
-## <a name="post-operations-on-roleassignment"></a>Операции POST в RoleAssignment
+## <a name="post-operations-on-roleassignment"></a>Операции POST по назначению ролей
 
-HTTP-запрос на создание назначения роли между пользователем и определением роли.
+HTTP просит создать назначение ролей между пользователем и определением роли.
 
 POST
 
@@ -55,7 +55,7 @@ Content-type: application/json
 HTTP/1.1 201 Created
 ```
 
-HTTP-запрос на создание назначения роли, в котором не существует субъект или определение роли
+ЗАПРОС HTTP для создания назначения ролей, в котором не существует основного или ролевой определения
 
 POST
 
@@ -79,10 +79,10 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 HTTP/1.1 404 Not Found
 ```
 
-HTTP-запрос на создание одного назначения роли с областью действия для встроенного определения роли.
+HTTP просит создать единое назначение ролей с областью охвата ресурсов по встроенному определению роли.
 
 > [!NOTE] 
-> В настоящее время встроенные роли имеют ограничение, где их можно ограничить только областью "/" всей организации или областью "/Ау/*". Область одного ресурса не работает для встроенных ролей, но работает для пользовательских ролей.
+> Встроенные роли сегодня имеют ограничение, когда они могут быть приобщены только к общеорганизационным областям или области "/АС/З". Единое отслеживание ресурсов не работает для встроенных ролей, а работает для пользовательских ролей.
 
 POST
 
@@ -124,9 +124,9 @@ HTTP/1.1 400 Bad Request
 }
 ```
 
-## <a name="get-operations-on-roleassignment"></a>ПОЛУЧЕНИЕ операций в RoleAssignment
+## <a name="get-operations-on-roleassignment"></a>ОПЕРАЦИИ GET по назначению ролей
 
-HTTP-запрос на получение назначения роли для данного участника
+ЗАПРОС HTTP для получения ролевой задания для данного основного
 
 GET
 
@@ -152,7 +152,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-HTTP-запрос на получение назначения роли для заданного определения роли.
+HTTP просит получить назначение роли для определения данной роли.
 
 GET
 
@@ -172,7 +172,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-HTTP-запрос на получение назначения роли по ИДЕНТИФИКАТОРу.
+HTTP запрос на назначение роли по идентификатору.
 
 GET
 
@@ -192,9 +192,9 @@ HTTP/1.1 200 OK
 }
 ```
 
-## <a name="delete-operations-on-roleassignment"></a>Удаление операций с RoleAssignment
+## <a name="delete-operations-on-roleassignment"></a>DELETE Операции по назначению ролей
 
-HTTP-запрос на удаление назначения роли между пользователем и определением роли.
+HTTP просит удалить назначение ролей между пользователем и определением роли.
 
 DELETE
 
@@ -207,7 +207,7 @@ GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lA
 HTTP/1.1 204 No Content
 ```
 
-HTTP-запрос на удаление назначения роли, которое больше не существует
+Запрос HTTP об удалении назначения ролей, которое больше не существует
 
 DELETE
 
@@ -221,7 +221,7 @@ GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lA
 HTTP/1.1 404 Not Found
 ```
 
-HTTP-запрос на удаление назначения роли между самои встроенным определением роли
+ЗАПРОС HTTP об удалении назначения ролей между определением самостоятельности и встроенной роли
 
 DELETE
 
@@ -247,7 +247,7 @@ HTTP/1.1 400 Bad Request
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 * Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

@@ -1,6 +1,6 @@
 ---
-title: Создание одностраничного приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
-description: Узнайте, как создать одностраничное приложение, вызывающее веб-API.
+title: Создайте одностраничное приложение, вызывая веб-API - платформу идентификации Microsoft Azure
+description: Узнайте, как создать одностраничное приложение, которое вызывает web API
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
@@ -15,21 +15,21 @@ ms.date: 05/06/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.openlocfilehash: ccece6c840033913ec6d96b446dcb98c4befb32f
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77160004"
 ---
-# <a name="single-page-application-call-a-web-api"></a>Одностраничное приложение: вызов веб-API
+# <a name="single-page-application-call-a-web-api"></a>Одностраничное приложение: Вызов веб-API
 
-Рекомендуется вызвать метод `acquireTokenSilent`, чтобы получить или продлить маркер доступа перед вызовом веб-API. После создания маркера можно вызвать защищенный веб-API.
+Мы рекомендуем вам `acquireTokenSilent` вызвать метод приобретения или обновления токена доступа, прежде чем вызвать веб-API. После того, как у вас есть маркер, вы можете вызвать защищенный веб-API.
 
 ## <a name="call-a-web-api"></a>Вызов веб-API
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Используйте полученный маркер доступа в качестве носителя в HTTP-запросе для вызова любого веб-API, например Microsoft Graph API. Пример:
+Используйте приобретенный токен доступа в качестве носителя в запросе HTTP для вызова любого веб-API, например Microsoft Graph API. Пример:
 
 ```javascript
     var headers = new Headers();
@@ -47,13 +47,13 @@ ms.locfileid: "77160004"
         }
 ```
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
-Угловая оболочка MSAL использует преимущества перехватчика HTTP для автоматического получения маркеров доступа и их присоединения к API-запросам. Дополнительные сведения см. в разделе [Получение маркера для вызова API](scenario-spa-acquire-token.md).
+Обертка MSAL Angular использует перехватчик HTTP, чтобы автоматически получать токены доступа и прикреплять их к запросам HTTP к AIS. Для получения дополнительной информации [см. Приобрести токен для вызова API.](scenario-spa-acquire-token.md)
 
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Переместить в рабочую среду](scenario-spa-production.md)
+> [Перенос в рабочую среду](scenario-spa-production.md)

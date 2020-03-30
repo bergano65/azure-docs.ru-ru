@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 752529454a5b6293d9cbfdf8378b46947aed5a0e
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77564650"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
@@ -28,7 +28,7 @@ ms.locfileid: "77564650"
 
 Для работы с этим руководством необходимо развернутое решение для удаленного мониторинга:
 
-* [Развертывание акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Развертывание ускорителя решений удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 
 ## <a name="create-a-consumer-group"></a>Создание группы потребителей
 
@@ -51,7 +51,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. Выберите **Создать ресурс** > **Интернет вещей** > **Аналитика временных рядов**.
+1. Выберите **Создать ресурс** > **Интернет вещей** > **Время серии Исследования**.
 
     ![Новая среда "Аналитика временных рядов Azure"](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/new-time-series-insights.png)
 
@@ -60,8 +60,8 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
     | Параметр | Значение |
     | ------- | ----- |
     | Имя среды | На следующем снимке экрана используется имя **contorosrmtsi**. Выберите собственное уникальное имя после завершения этого шага. |
-    | Subscription | Выберите подписку Azure в раскрывающемся списке. |
-    | Группа ресурсов | **Использовать имеющуюся**. Выберите имя существующей группы ресурсов удаленного мониторинга. |
+    | Подписка | Выберите подписку Azure в раскрывающемся списке. |
+    | Группа ресурсов | **Используйте существующие**. Выберите имя существующей группы ресурсов удаленного мониторинга. |
     | Расположение | Мы используем регион **Восточная часть США**. Создайте среду в том же регионе, что и решение для удаленного мониторинга, если это возможно. |
     | Sku |**S1** |
     | Capacity | **1** |
@@ -96,7 +96,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
     | Имя политики Центра Интернета вещей | **iothubowner** гарантирует, что используется политика владельца. |
     | Ключ политики Центра Интернета вещей | Это поле заполняется автоматически. |
     | Группа потребителей Центра Интернета вещей | **timeseriesinsights** |
-    | Формат сериализации событий | **JSON**     | 
+    | Формат сериализации событий | **Json**     | 
     | Имя свойства для метки времени | Не указывайте |
 
     ![Создание источника событий](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/time-series-insights-event-source-create.png)
@@ -136,7 +136,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
 1. Выберите группу ресурсов **ContosoRM**.
 
-1. В списке ресурсов найдите задание потоковой передачи Azure Stream Analytics (ASA). Имя ресурса начинается со **streamingjobs-** .
+1. В списке ресурсов найдите задание потоковой передачи Azure Stream Analytics (ASA). Имя ресурса начинается со **streamingjobs-**.
 
 1. В верхней части страницы нажмите кнопку, чтобы остановить задания потоковой передачи ASA.
 
@@ -209,13 +209,13 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 1. На портале Azure на панели слева выберите вкладку **Azure Active Directory**.
 
-1. Щелкните **Регистрация приложений**.
+1. Нажмите на **регистрацию приложений**.
 
 1. Найдите и выберите приложение **ContosoRM**.
 
-1. Перейдите в раздел **Параметры** > **Ключи** и создайте ключ для приложения. Скопируйте значение ключа в безопасное место.
+1. Перейдите к**ключам** **настроек,** > а затем создайте новый ключ для приложения. Скопируйте значение ключа в безопасное место.
 
-1. Извлеките [последнюю версию YAML-файла Docker Compose](https://github.com/Azure/pcs-cli/tree/5a9b4e0dbe313172eff19236e54a4d461d4f3e51/solutions/remotemonitoring/single-vm) из репозитория GitHub с помощью тега latest. 
+1. Вытяните [последний докер составить yaml файл](https://github.com/Azure/pcs-cli/tree/5a9b4e0dbe313172eff19236e54a4d461d4f3e51/solutions/remotemonitoring/single-vm) из GitHub репо с помощью последнего тега. 
 
 1. Установите SSH-подключение к виртуальной машине, выполнив инструкции в разделе [Создание и использование ключей SSH](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows).
 
@@ -238,7 +238,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 1. Перезапустите контейнеры Docker, выполнив команду `sudo ./start.sh` из виртуальной машины.
 
 > [!NOTE]
-> Приведенная выше конфигурация переменных среды является допустимой для удаленных версий мониторинга до версии 1.0.2.
+> Вышеупомянутая конфигурация переменных среды действительна для версий удаленного мониторинга до 1.0.2
 
 ### <a name="standard-deployments"></a>Стандартные развертывания
 
@@ -296,7 +296,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
             key: telemetry.storage.type
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об изучении данных и диагностике оповещений в обозревателе Аналитики временных рядов см. в учебнике по [проведению анализа первопричин](iot-accelerators-remote-monitoring-root-cause-analysis.md).
 

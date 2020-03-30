@@ -1,20 +1,20 @@
 ---
-title: Хранилище секретов Azure Service Fabric Central
-description: В этой статье описывается, как использовать центральное хранилище секретов в Azure Service Fabric.
+title: Azure сервис Ткань Центральный секреты магазин
+description: В этой статье описывается, как использовать Central Secrets Store в azure Service Fabric.
 ms.topic: conceptual
 ms.date: 07/25/2019
 ms.openlocfilehash: 11fb94a9fba40e6f2474ad64f5eb0c454be28ca0
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77589170"
 ---
-# <a name="central-secrets-store-in-azure-service-fabric"></a>Центральное хранилище секретов в Azure Service Fabric 
-В этой статье описывается, как использовать центральное хранилище секретов (CSS) в Service Fabric Azure для создания секретов в Service Fabric приложениях. CSS — это локальный кэш хранилища секретов, в котором хранятся конфиденциальные данные, такие как пароль, маркеры и ключи, зашифрованные в памяти.
+# <a name="central-secrets-store-in-azure-service-fabric"></a>Центральный магазин секретов в лазурном сервисе Ткань 
+В этой статье описывается, как использовать Central Secrets Store (CSS) в Azure Service Fabric для создания секретов в приложениях Service Fabric. CSS — это локальный секретный кэш хранилища, который хранит конфиденциальные данные, такие как пароль, маркеры и ключи, зашифрованные в памяти.
 
-## <a name="enable-central-secrets-store"></a>Включить центральное хранилище секретов
-Добавьте следующий скрипт в конфигурацию кластера в разделе `fabricSettings`, чтобы включить CSS. Для CSS рекомендуется использовать сертификат, отличный от сертификата кластера. Убедитесь, что сертификат шифрования установлен на всех узлах и у `NetworkService` есть разрешение на чтение закрытого ключа сертификата.
+## <a name="enable-central-secrets-store"></a>Включить центральный магазин секретов
+Добавьте следующий скрипт `fabricSettings` в конфигурацию кластера под включить CSS. Мы рекомендуем использовать сертификат, отличный от кластерного сертификата для CSS. Убедитесь, что сертификат шифрования установлен `NetworkService` на всех узлах и который считывает разрешение на личный ключ сертификата.
   ```json
     "fabricSettings": 
     [
@@ -46,12 +46,12 @@ ms.locfileid: "77589170"
         ...
      ]
 ```
-## <a name="declare-a-secret-resource"></a>Объявление секретного ресурса
-Секретный ресурс можно создать с помощью шаблона Azure Resource Manager или REST API.
+## <a name="declare-a-secret-resource"></a>Объявить секретный ресурс
+Вы можете создать секретный ресурс, используя шаблон Azure Resource Manager или API REST.
 
-### <a name="use-resource-manager"></a>Использование диспетчер ресурсов
+### <a name="use-resource-manager"></a>Использование Resource Manager
 
-Используйте следующий шаблон, чтобы использовать диспетчер ресурсов для создания секретного ресурса. Шаблон создает `supersecret` секретный ресурс, но пока значение для секретного ресурса еще не задано.
+Используйте следующий шаблон для использования ресурса Manager для создания секретного ресурса. Шаблон создает `supersecret` секретный ресурс, но значение для секретного ресурса пока не установлено.
 
 
 ```json
@@ -73,18 +73,18 @@ ms.locfileid: "77589170"
 
 ### <a name="use-the-rest-api"></a>Использование REST API
 
-Чтобы создать `supersecret` секретный ресурс с помощью REST API, выполните запрос на размещение `https://<clusterfqdn>:19080/Resources/Secrets/supersecret?api-version=6.4-preview`. Для создания секретного ресурса необходим сертификат кластера или сертификат клиента администратора.
+Чтобы создать `supersecret` секретный ресурс с помощью REST API, сделайте запрос `https://<clusterfqdn>:19080/Resources/Secrets/supersecret?api-version=6.4-preview`PUT. Для создания секретного ресурса нужен сертификат кластера или сертификат клиента админа.
 
 ```powershell
 $json = '{"properties": {"kind": "inlinedValue", "contentType": "text/plain", "description": "supersecret"}}'
 Invoke-WebRequest  -Uri https://<clusterfqdn>:19080/Resources/Secrets/supersecret?api-version=6.4-preview -Method PUT -CertificateThumbprint <CertThumbprint> -Body $json
 ```
 
-## <a name="set-the-secret-value"></a>Установка значения секрета
+## <a name="set-the-secret-value"></a>Установите секретное значение
 
-### <a name="use-the-resource-manager-template"></a>Использование шаблона диспетчер ресурсов
+### <a name="use-the-resource-manager-template"></a>Использование шаблона менеджера ресурсов
 
-Используйте следующий шаблон диспетчер ресурсов, чтобы создать и задать значение секрета. Этот шаблон задает значение секрета для `supersecret` секретного ресурса как версия `ver1`.
+Используйте следующий шаблон менеджера ресурсов для создания и установки секретного значения. Этот шаблон устанавливает секретное `supersecret` значение для `ver1`секретного ресурса в качестве версии.
 ```json
   {
   "parameters": {
@@ -124,20 +124,20 @@ Invoke-WebRequest  -Uri https://<clusterfqdn>:19080/Resources/Secrets/supersecre
   ```
 ### <a name="use-the-rest-api"></a>Использование REST API
 
-Используйте следующий скрипт, чтобы использовать REST API для задания значения секрета.
+Используйте следующий скрипт, чтобы использовать API REST для настройки секретного значения.
 ```powershell
 $Params = '{"properties": {"value": "mysecretpassword"}}'
 Invoke-WebRequest -Uri https://<clusterfqdn>:19080/Resources/Secrets/supersecret/values/ver1?api-version=6.4-preview -Method PUT -Body $Params -CertificateThumbprint <ClusterCertThumbprint>
 ```
-### <a name="examine-the-secret-value"></a>Проверка значения секрета
+### <a name="examine-the-secret-value"></a>Изучите секретное значение
 ```powershell
 Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -Uri "https:<clusterfqdn>/Resources/Secrets/supersecret/values/ver1/list_value?api-version=6.4-preview"
 ```
-## <a name="use-the-secret-in-your-application"></a>Использование секрета в приложении
+## <a name="use-the-secret-in-your-application"></a>Используйте секрет в приложении
 
 Выполните следующие действия, чтобы использовать секрет в приложении Service Fabric.
 
-1. Добавьте раздел в файл **Settings. XML** с помощью следующего фрагмента кода. Обратите внимание, что значение имеет формат {`secretname:version`}.
+1. Добавьте раздел в файл **settings.xml** со следующим фрагментом. Обратите внимание, что значение находится`secretname:version`в формате ..
 
    ```xml
      <Section Name="testsecrets">
@@ -145,7 +145,7 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
      </Section>
    ```
 
-1. Импортируйте раздел в **ApplicationManifest. XML**.
+1. Импортируйте раздел в **ApplicationManifest.xml**.
    ```xml
      <ServiceManifestImport>
        <ServiceManifestRef ServiceManifestName="testservicePkg" ServiceManifestVersion="1.0.0" />
@@ -158,12 +158,12 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
      </ServiceManifestImport>
    ```
 
-   Переменная среды `SecretPath` будет указывать на каталог, где хранятся все секреты. Каждый параметр, указанный в разделе `testsecrets`, хранится в отдельном файле. Теперь приложение может использовать секрет, как показано ниже.
+   Переменная `SecretPath` среды укажет на каталог, где хранятся все секреты. Каждый параметр, указанный в `testsecrets` разделе, хранится в отдельном файле. Приложение теперь может использовать секрет следующим образом:
    ```C#
    secretValue = IO.ReadFile(Path.Join(Environment.GetEnvironmentVariable("SecretPath"),  "TopSecret"))
    ```
-1. Подключите секреты к контейнеру. Единственное изменение, необходимое для предоставления секретов в контейнере, заключается в `specify` точки подключения в `<ConfigPackage>`.
-Следующий фрагмент кода является модифицированным **ApplicationManifest. XML**.  
+1. Установите секреты в контейнер. Единственное изменение, необходимое, чтобы сделать `specify` секреты `<ConfigPackage>`доступны внутри контейнера является точка крепления в .
+Следующим фрагментом является модифицированный **ApplicationManifest.xml**.  
 
    ```xml
    <ServiceManifestImport>
@@ -179,9 +179,9 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
        </Policies>
      </ServiceManifestImport>
    ```
-   Секреты доступны в точке подключения внутри контейнера.
+   Секреты доступны под точкой крепления внутри контейнера.
 
-1. Можно привязать секрет к переменной среды процесса, указав `Type='SecretsStoreRef`. В следующем фрагменте кода приведен пример привязки `supersecret` версии `ver1` к переменной среды `MySuperSecret` в **ServiceManifest. XML**.
+1. Вы можете связать секрет с переменной `Type='SecretsStoreRef`среды процесса, указав. Следующий фрагмент является примером того, `supersecret` как `ver1` связать версию с переменной `MySuperSecret` среды в **ServiceManifest.xml**.
 
    ```xml
    <EnvironmentVariables>
@@ -190,4 +190,4 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
+Подробнее о [безопасности приложений и сервиса.](service-fabric-application-and-service-security.md)
