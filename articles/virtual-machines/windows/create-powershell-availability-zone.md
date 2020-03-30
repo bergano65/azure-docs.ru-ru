@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины с зоной на основе Windows — Azure PowerShell
+title: Создание зональных Windows VM - Azure PowerShell
 description: Создание виртуальной машины Windows в зоне доступности с помощью Azure PowerShell
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -16,21 +16,21 @@ ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: ''
 ms.openlocfilehash: 5cecc6e43dfeda3838ae52fdd0c028a7739ff227
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75497946"
 ---
 # <a name="create-a-windows-virtual-machine-in-an-availability-zone-with-powershell"></a>Создание виртуальной машины Windows в зоне доступности с помощью PowerShell
 
-В этой статье описывается использование Azure PowerShell для создания виртуальной машины Azure под управлением Windows Server 2016 в зоне доступности Azure. [Зона доступности](../../availability-zones/az-overview.md) представляет собой физически отдельную зону в регионе Azure. Зоны доступности позволяют защитить приложения и данные от маловероятных сбоев и потери всего центра обработки данных.
+В этой статье описывается использование Azure PowerShell для создания виртуальной машины Azure под управлением Windows Server 2016 в зоне доступности Azure. [Зона доступности](../../availability-zones/az-overview.md) — это физически отдельная зона в регионе Azure. Зоны доступности позволяют защитить приложения и данные от маловероятных сбоев и потери всего центра обработки данных.
 
 Чтобы использовать зону доступности, создайте виртуальную машину в [поддерживаемом регионе Azure](../../availability-zones/az-overview.md#services-support-by-region).
 
  
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -177,4 +177,4 @@ Tags               : {}
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Дополнительные сведения о [доступности](availability.md) для виртуальных машин Azure.
+Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Подробнее о [доступности](availability.md) для VMs Azure.

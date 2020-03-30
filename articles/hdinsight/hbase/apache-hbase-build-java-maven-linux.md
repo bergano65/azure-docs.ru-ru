@@ -1,5 +1,5 @@
 ---
-title: Создание клиента Java HBase для Azure HDInsight с помощью Apache Maven
+title: Используйте Apache Maven для создания клиента Java HBase для Azure HDInsight
 description: Сведения об использовании Apache Maven для создания приложения Java для Apache HBase и его последующем развертывании в HBase в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seodec18
 ms.date: 12/24/2019
 ms.openlocfilehash: 3e9b23ce450e45dfedcee8b20e09b1c2b52b6e68
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75495785"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
@@ -21,25 +21,25 @@ ms.locfileid: "75495785"
 
 В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Apache HBase в HDInsight. См. статью [Начало работы с Apache HBase](./apache-hbase-tutorial-get-started-linux.md).
+* Кластер Apache HBase на HDInsight. Смотрите [Начало работы с Apache HBase](./apache-hbase-tutorial-get-started-linux.md).
 
-* [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks).
+* [Java Разработчик Комплект (JDK) версия 8](https://aka.ms/azure-jdks).
 
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам понадобится [модуль a .](https://docs.microsoft.com/powershell/azure/overview)
 
-* Текстовый редактор. В этой статье используется Блокнот Microsoft Notepad.
+* Текстовый редактор. В этой статье используется блокнот Microsoft.
 
 ## <a name="test-environment"></a>Тестовая среда
 
-Среда, используемая для этой статьи, была компьютер под Windows 10.  Команды были выполнены в командной строке, а различные файлы были изменены с помощью блокнота. Измените соответствующим образом для своей среды.
+Среда, используемая для этой статьи, была компьютером под управлением Windows 10.  Команды выполнялись в командном запросе, а различные файлы были отредактированы с помощью блокнота. Изменяйте соответственно для вашей среды.
 
-В командной строке введите приведенные ниже команды, чтобы создать рабочую среду.
+Из запроса команд введите команды ниже, чтобы создать рабочую среду:
 
 ```cmd
 IF NOT EXIST C:\HDI MKDIR C:\HDI
@@ -48,7 +48,7 @@ cd C:\HDI
 
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
-1. Введите следующую команду, чтобы создать проект Maven с именем **hbaseapp**:
+1. Введите следующую команду для создания проекта Maven под названием **hbaseapp:**
 
     ```cmd
     mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -57,13 +57,13 @@ cd C:\HDI
     mkdir conf
     ```
 
-    Эта команда создает каталог с именем `hbaseapp` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет рабочий каталог на `hbaseapp`. Третья команда создает новый каталог, `conf`, который будет использоваться позже. Каталог `hbaseapp` содержит следующие элементы:
+    Эта команда создает каталог с именем `hbaseapp` в текущем расположении, содержащий базовый проект Maven. Вторая команда меняет рабочий `hbaseapp`каталог на . Третья команда создает новый `conf`каталог, который будет использоваться позже. Каталог `hbaseapp` содержит следующие элементы:
 
-    * `pom.xml`: объектная модель проекта ([POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) содержит информацию и сведения о конфигурации, используемые для сборки проекта.
+    * `pom.xml`: Модель объекта проекта[(POM)](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)содержит информацию и детали конфигурации, используемые для построения проекта.
     * `src\main\java\com\microsoft\examples` содержит код приложения;
     * `src\test\java\com\microsoft\examples` содержит тесты для приложения.
 
-2. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java`и `App.java`, введя приведенные ниже команды.
+2. Удалите сгенерированный пример кода. Удалите генерируемые `AppTest.java`файлы тестов и приложений, а `App.java` также введя команды ниже:
 
     ```cmd
     DEL src\main\java\com\microsoft\examples\App.java
@@ -72,7 +72,7 @@ cd C:\HDI
 
 ## <a name="update-the-project-object-model"></a>Обновление модели объекта проекта
 
-Полную ссылку на файл POM. XML см. в разделе https://maven.apache.org/pom.html.  Откройте `pom.xml`, введя следующую команду:
+Все справочные материалы по файлу pom.xml см. по адресу https://maven.apache.org/pom.html.  Откройте, `pom.xml` введя команду ниже:
 
 ```cmd
 notepad pom.xml
@@ -80,7 +80,7 @@ notepad pom.xml
 
 ### <a name="add-dependencies"></a>Добавление зависимостей
 
-В `pom.xml`добавьте следующий текст в раздел `<dependencies>`.
+В `pom.xml`, добавить следующий текст в `<dependencies>` разделе:
 
 ```xml
 <dependency>
@@ -111,7 +111,7 @@ notepad pom.xml
 
 Подключаемые модули Maven позволяют настроить этапы сборки проекта. Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки.
 
-Добавьте следующий код в файл `pom.xml`, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
+Добавьте следующий `pom.xml` код в файл, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
 
 ```xml
 <build>
@@ -169,7 +169,7 @@ maven-shade-plugin также создает так называемый uber ja
 
 ### <a name="download-the-hbase-sitexml"></a>Скачивание файла hbase-site.xml
 
-Для копирования конфигурации HBase из кластера HBase в каталог `conf` используйте следующую команду. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите команду:
+Для копирования конфигурации HBase из кластера HBase в каталог `conf` используйте следующую команду. Замените `CLUSTERNAME` имя кластера HDInsight и введите команду:
 
 ```cmd
 scp sshuser@CLUSTERNAME-ssh.azurehdinsight.net:/etc/hbase/conf/hbase-site.xml ./conf/hbase-site.xml
@@ -179,13 +179,13 @@ scp sshuser@CLUSTERNAME-ssh.azurehdinsight.net:/etc/hbase/conf/hbase-site.xml ./
 
 ### <a name="implement-a-createtable-class"></a>Реализация класса CreateTable
 
-Введите следующую команду, чтобы создать и открыть новый файл `CreateTable.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+Введите команду ниже, чтобы `CreateTable.java`создать и открыть новый файл. Выберите **Да** в запросе для создания нового файла.
 
 ```cmd
 notepad src\main\java\com\microsoft\examples\CreateTable.java
 ```
 
-Затем скопируйте и вставьте приведенный ниже код Java в новый файл. Затем закройте файл.
+Затем скопируйте и вставьте код Java ниже в новый файл. Затем закройте файл.
 
 ```java
 package com.microsoft.examples;
@@ -257,17 +257,17 @@ public class CreateTable {
 }
 ```
 
-Этот код является классом `CreateTable`, который создает таблицу с именем `people` и заполняет ее некоторыми предопределенными пользователями.
+Этот код `CreateTable` представляет собой класс, `people` который создает таблицу с именем и заполняет его некоторыми предопределенными пользователями.
 
 ### <a name="implement-a-searchbyemail-class"></a>Реализация класса SearchByEmail
 
-Введите следующую команду, чтобы создать и открыть новый файл `SearchByEmail.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+Введите команду ниже, чтобы `SearchByEmail.java`создать и открыть новый файл. Выберите **Да** в запросе для создания нового файла.
 
 ```cmd
 notepad src\main\java\com\microsoft\examples\SearchByEmail.java
 ```
 
-Затем скопируйте и вставьте приведенный ниже код Java в новый файл. Затем закройте файл.
+Затем скопируйте и вставьте код Java ниже в новый файл. Затем закройте файл.
 
 ```java
 package com.microsoft.examples;
@@ -342,17 +342,17 @@ public class SearchByEmail {
 }
 ```
 
-Класс `SearchByEmail` может использоваться для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
+Класс `SearchByEmail` можно использовать для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
 
 ### <a name="implement-a-deletetable-class"></a>Реализация класса DeleteTable
 
-Введите следующую команду, чтобы создать и открыть новый файл `DeleteTable.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+Введите команду ниже, чтобы `DeleteTable.java`создать и открыть новый файл. Выберите **Да** в запросе для создания нового файла.
 
 ```cmd
 notepad src\main\java\com\microsoft\examples\DeleteTable.java
 ```
 
-Затем скопируйте и вставьте приведенный ниже код Java в новый файл. Затем закройте файл.
+Затем скопируйте и вставьте код Java ниже в новый файл. Затем закройте файл.
 
 ```java
 package com.microsoft.examples;
@@ -376,7 +376,7 @@ public class DeleteTable {
 }
 ```
 
-Класс `DeleteTable` очищает таблицы HBase, созданные в этом примере, отключая и удаляя таблицу, созданную классом `CreateTable`.
+Класс `DeleteTable` очищает таблицы HBase, созданные в этом примере, отключая `CreateTable` и сбросив таблицу, созданную классом.
 
 ## <a name="build-and-package-the-application"></a>Сборка и создание пакета приложения
 
@@ -397,19 +397,19 @@ public class DeleteTable {
 
 В следующих действиях используется команда `scp` для копирования JAR-файла в головной узел Apache HBase в кластере HDInsight. С помощью команды `ssh` выполняется подключение к кластеру; пример запускается непосредственно на головном узле.
 
-1. Отправьте JAR-файл в кластер. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите следующую команду:
+1. Загрузите банку в кластер. Замените `CLUSTERNAME` имя кластера HDInsight и введите следующую команду:
 
     ```cmd
     scp ./target/hbaseapp-1.0-SNAPSHOT.jar sshuser@CLUSTERNAME-ssh.azurehdinsight.net:hbaseapp-1.0-SNAPSHOT.jar
     ```
 
-2. Подключитесь к кластеру HBase. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите следующую команду:
+2. Подключитесь к кластеру HBase. Замените `CLUSTERNAME` имя кластера HDInsight и введите следующую команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
-3. Чтобы создать таблицу HBase с помощью приложения Java, используйте следующую команду в открытом SSH-подключении:
+3. Для создания таблицы HBase с помощью приложения Java используйте следующую команду в открытом соединении ssh:
 
     ```bash
     yarn jar hbaseapp-1.0-SNAPSHOT.jar com.microsoft.examples.CreateTable
@@ -440,9 +440,9 @@ public class DeleteTable {
 
 ## <a name="upload-the-jar-and-run-jobs-powershell"></a>Передача JAR-файла и запуск заданий (PowerShell)
 
-В следующих шагах используется [модуль Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) для передачи JAR-файла в хранилище по умолчанию для кластера Apache HBase. Затем командлеты HDInsight используются для удаленного запуска примеров.
+Следующие шаги используют модуль Azure PowerShell [АЗ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) для загрузки JAR в хранилище по умолчанию для кластера Apache HBase. Затем командлеты HDInsight используются для удаленного запуска примеров.
 
-1. После установки и настройки модуля AZ создайте файл с именем `hbase-runner.psm1`. В качестве содержимого файла добавьте следующий текст:
+1. После установки и настройки модуля Аз- создайте файл с именем `hbase-runner.psm1`. В качестве содержимого файла добавьте следующий текст:
 
    ```powershell
     <#
@@ -646,9 +646,9 @@ public class DeleteTable {
    * **Add-HDInsightFile** — используется для загрузки файлов в кластер;
    * **Start-HBaseExample** — используется для запуска классов, созданных ранее.
 
-2. Сохраните файл `hbase-runner.psm1` в каталоге `hbaseapp`.
+2. Сохранить `hbase-runner.psm1` файл в `hbaseapp` каталоге.
 
-3. Зарегистрируйте модули с помощью Azure PowerShell. Откройте новое окно Azure PowerShell и измените приведенную ниже команду, заменив `CLUSTERNAME` именем кластера. Затем введите следующие команды:
+3. Зарегистрируйте модули с помощью Azure PowerShell. Откройте новое окно Azure PowerShell и отодвите команду ниже, заменив `CLUSTERNAME` название кластера. Затем введите следующие команды:
 
     ```powershell
     cd C:\HDI\hbaseapp
@@ -705,4 +705,4 @@ public class DeleteTable {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Узнайте, как использовать SQLLine с Apache HBase.](apache-hbase-query-with-phoenix.md)
+[Узнайте, как использовать S'LLine с Apache HBase](apache-hbase-query-with-phoenix.md)

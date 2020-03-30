@@ -1,5 +1,5 @@
 ---
-title: Производительность Apache Spark — кэш ввода-вывода Azure HDInsight (Предварительная версия)
+title: Производительность Apache Spark - Azure HDInsight IO Cache (Предварительный просмотр)
 description: Узнайте о службе IO Cache для Azure HDInsight и ее использовании для повышения производительности Apache Spark.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,13 +8,13 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/23/2019
 ms.openlocfilehash: 43875b87d26f144b85454077fd3c044c820132bf
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75494989"
 ---
-# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight
+# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Улучшение производительности рабочих нагрузок Apache Spark с помощью кэша Azure HDInsight IO
 
 IO Cache — это служба кэширования данных для Azure HDInsight, который повышает производительность заданий Apache Spark. IO Cache также поддерживает рабочие нагрузки [Apache Tez](https://tez.apache.org/) и [Apache Hive](https://hive.apache.org/), которые могут выполняться в кластерах [Apache Spark](https://spark.apache.org/). IO Cache использует компонент кэширования с открытым исходным кодом RubiX. Локальный дисковый кэш RubiX предназначен для использования с модулями аналитики больших данных, которые получают данные из систем облачного хранения. RubiX выделяется в ряду систем кэширования, поскольку использует для хранения данных не оперативную память, а твердотельные накопители (SSD). Служба IO Cache запускает серверы метаданных RubiX на каждом рабочем узле кластера и управляет ими. Она также настраивает прозрачное использование кэша RubiX для всех служб кластера.
 
@@ -22,7 +22,7 @@ IO Cache — это служба кэширования данных для Azur
 
 > [!Note]  
 > В настоящее время IO Cache использует RubiX в качестве компонента кэширования, но в будущих версиях службы это может измениться. Используйте интерфейсы IO Cache, не создавая никаких прямых зависимостей от реализации RubiX.
->В настоящее время кэш операций ввода-вывода поддерживается только в хранилище больших двоичных объектов Azure.
+>В настоящее время IO Cache поддерживается только при хранении Azure BLOB.
 
 ## <a name="benefits-of-azure-hdinsight-io-cache"></a>Преимущества IO Cache для Azure HDInsight
 
@@ -32,22 +32,22 @@ IO Cache — это служба кэширования данных для Azur
 
 ## <a name="getting-started"></a>Начало работы
 
-IO Cache для Azure HDInsight по умолчанию отключен в предварительной версии. Служба IO Cache доступна в кластерах Azure HDInsight 3.6 и более поздних версий с Apache Spark 2.3.  Чтобы активировать кэш ввода-вывода в HDInsight 4,0, выполните следующие действия.
+IO Cache для Azure HDInsight по умолчанию отключен в предварительной версии. Служба IO Cache доступна в кластерах Azure HDInsight 3.6 и более поздних версий с Apache Spark 2.3.  Чтобы активировать кэш IO на HDInsight 4.0, сделайте следующие шаги:
 
-1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — имя кластера.
+1. Из веб-браузера, `https://CLUSTERNAME.azurehdinsight.net`перейдите к , где `CLUSTERNAME` имя вашего кластера.
 
 1. Выберите службу **IO Cache** в левой части страницы.
 
-1. Выберите **действия** (**действия службы** в HDi 3,6) и **активируйте**.
+1. Выберите **действия** **(Действия службы** в ИРЧП 3.6) и **активируйте.**
 
-    ![Включение службы кэша ввода-вывода в Ambari](./media/apache-spark-improve-performance-iocache/ambariui-enable-iocache.png "Включение службы кэша ввода-вывода в Ambari")
+    ![Включение службы IO Cache в Амбари](./media/apache-spark-improve-performance-iocache/ambariui-enable-iocache.png "Включение службы IO Cache в Амбари")
 
 1. Подтвердите перезапуск всех затрагиваемых служб в кластере.
 
 > [!NOTE]  
 > Несмотря на значение индикатора выполнения, фактически IO Cache активируется только после перезапуска всех затрагиваемых служб.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
   
 После включения IO Cache при выполнении заданий Spark могут возникать ошибки отсутствия места на диске. Эти ошибки связаны с тем, что Spark также использует место на локальном диске для хранения данных во время операций перетасовки. Может случиться так, что после включения IO Cache на твердотельном накопителе закончится свободное место для Spark. По умолчанию IO Cache использует половину от общего объема твердотельного накопителя. В Ambari можно настроить параметры использования места на диске для IO Cache. Если вы столкнетесь с ошибками отсутствия места на диске, сократите объем памяти на твердотельном накопителе, используемый для IO Cache, и перезапустите службу. Чтобы изменить настройки пространства для IO Cache, выполните следующие действия:
 
@@ -55,7 +55,7 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Выберите вкладки **Configs** (Конфигурации) и **Advanced** (Дополнительно).
 
-    ![Изменить расширенную конфигурацию HDFS](./media/apache-spark-improve-performance-iocache/ambariui-hdfs-service-configs-advanced.png "Изменить расширенную конфигурацию HDFS")
+    ![Оторитите расширенную конфигурацию HDFS](./media/apache-spark-improve-performance-iocache/ambariui-hdfs-service-configs-advanced.png "Оторитите расширенную конфигурацию HDFS")
 
 1. Прокрутите вниз и разверните область **Custom core-site** (Пользовательский основной сайт).
 
@@ -63,18 +63,18 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Измените значение в этом поле.
 
-    ![Изменение полных значений в кэше ввода-вывода](./media/apache-spark-improve-performance-iocache/ambariui-cache-data-fullness-percentage-property.png "Изменение полных значений в кэше ввода-вывода")
+    ![Изменение IO кэш апотой полноты Процент](./media/apache-spark-improve-performance-iocache/ambariui-cache-data-fullness-percentage-property.png "Изменение IO кэш апотой полноты Процент")
 
 1. Выберите **Сохранить** в правом верхнем углу.
 
-1. Выберите **Restart** (Перезапустить)  > **Restart All Affected** (Перезапустить все затрагиваемые).
+1. Выберите **перезагрузку** > **перезагрузки всех пострадавших.**
 
-    ![Apache Ambari перезапускает все затронутые](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезапустить все затронутые")
+    ![Apache Ambari перезапускает все пострадавших](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезагрузить все затронутые")
 
-1. Щелкните **Confirm Restart All** (Подтвердить перезапуск всех).
+1. Выберите **Подтвердить Перезагрузить все**.
 
-Если это не сработает, отключите кэш ввода-вывода.
+Если это не работает, отогнайте IO Cache.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Дополнительная информация об IO Cache, в том числе о сравнительных тестах производительности, приведена в [этой записи блога](https://azure.microsoft.com/blog/apache-spark-speedup-with-hdinsight-io-cache/)

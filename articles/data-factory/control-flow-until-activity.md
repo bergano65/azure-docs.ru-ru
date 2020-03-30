@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: b4786b612dedb065239f57e0286bafb688180dff
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75440374"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Действие Until в фабрике данных Azure
@@ -51,12 +51,12 @@ ms.locfileid: "75440374"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description | Допустимые значения | Обязательно для заполнения
+Свойство | Описание | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
-name | Имя действия `Until`. | String | Да
-type | Необходимо задать **Until**. | String | Да
+name | Имя действия `Until`. | Строка | Да
+type | Необходимо задать **Until**. | Строка | Да
 expression | Выражение, для которого возвращается значение true или false. | Выражение.  | Да
-timeout | Цикл do-until выполняется, пока не истечет указанное здесь время ожидания. | Строка. `d.hh:mm:ss` (или) `hh:mm:ss`. Значение по умолчанию — 7 дней. Максимальное значение — 90 дней. | Нет
+timeout | Цикл do-until выполняется, пока не истечет указанное здесь время ожидания. | Строка. `d.hh:mm:ss` (или) `hh:mm:ss`. Значение по умолчанию — 7 дней. Максимальное значение — 90 дней. | нет
 Действия | Набор действий, которые выполняются до тех пор, пока выражение не получит значение `true`. | Массив действий. |  Да
 
 ## <a name="example-1"></a>Пример 1
@@ -290,7 +290,7 @@ while ($True) {
 
 - [Действие условия If](control-flow-if-condition-activity.md)
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
-- [Действие ForEach](control-flow-for-each-activity.md)
+- [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
-- [Веб-действие](control-flow-web-activity.md)
+- [Веб-активность](control-flow-web-activity.md)
