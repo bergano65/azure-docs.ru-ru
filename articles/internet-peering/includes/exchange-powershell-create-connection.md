@@ -9,17 +9,17 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 0014b67443797f45de51ec1bc459f71bde55cdc9
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774436"
 ---
-В следующем примере показано, как создать подключение к Exchange в Equinix Internet Exchange в Сиэтле. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
+Ниже приводится следующий пример, как создать соединение Exchange на Интернет-бирже Equinix в Сиэтле. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
 
-Используйте командлет PowerShell **New-азпиринжексчанжеконнектионобжект** , чтобы создать объекты подключения PowerShell, которые будут использоваться для создания нового запроса пиринга:
+Используйте PowerShell cmdlet **New-AzPeeringExchangeConnectionObject** для создания объектов подключения PowerShell, которые будут использоваться для генерации нового запроса на пиринг:
 
-Ниже приведен пример создания подключения к Exchange.
+Ниже приведен пример для создания Exchange Connection:
 
 ```powershell
 $connection1 = New-AzPeeringExchangeConnectionObject `
@@ -30,7 +30,7 @@ $connection1 = New-AzPeeringExchangeConnectionObject `
     -MaxPrefixesAdvertisedIPv6 2000 `
 ```
 
-Создайте другое подключение в случае, если требуется избыточность в указанном расположении пиринга:
+Создайте другое соединение в случае необходимости избыточности в данном месте пиринга:
 
 ```powershell
 $connection2 = New-AzPeeringExchangeConnectionObject `
@@ -41,7 +41,7 @@ $connection2 = New-AzPeeringExchangeConnectionObject `
     -MaxPrefixesAdvertisedIPv6 2000 `
 ```
 
-Командлет PowerShell **New-азпиринг** можно использовать для создания нового пиринга Exchange.
+PowerShell cmdlet **New-AzPeering** может быть использован для создания нового вглядывания Exchange:
 
 ```powershell
 $asn = Get-AzPeerAsn
@@ -73,10 +73,10 @@ Tags              : {}
 ```
 
 > [!IMPORTANT]
-> Корпорация Майкрософт начнет подготовку запрошенного пиринга, и `ConnectionState` будет отражать ход выполнения.
-> Инструкции по подготовке см. в документе [Пошаговое руководство по пирингу Exchange](../walkthrough-exchange-all.md) .
+> Корпорация Майкрософт приступит к подготовке запрошенного пиринга, и `ConnectionState` будет отражать прогресс.
+> Обратитесь к [пошаговый](../walkthrough-exchange-all.md) документ Exchange для подготовки соответствующих шагов.
 
-Вы можете проверить ConnectionState, как показано ниже:
+Вы можете проверить Состояние соединения, как показано ниже:
 
 ```powershell
 

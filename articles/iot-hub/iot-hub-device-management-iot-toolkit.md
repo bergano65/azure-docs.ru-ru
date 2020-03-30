@@ -1,5 +1,5 @@
 ---
-title: Управление устройствами Azure IoT с помощью средств Azure IoT для VSCode
+title: Управление устройствами Azure IoT с инструментами Azure IoT для VSCode
 description: Используйте средства Интернета вещей Azure для Visual Studio Code, чтобы управлять устройствами Интернета вещей Azure, используя прямые методы и возможности управления требуемыми свойствами двойника.
 author: formulahendry
 ms.service: iot-hub
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
 ms.openlocfilehash: 9d4d82472664900c96b77b31740573d0463465b8
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75911911"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code
@@ -47,8 +47,8 @@ ms.locfileid: "75911911"
 
 * Активная подписка Azure.
 * Центр Интернета вещей Azure в подписке;
-* [Код Visual Studio](https://code.visualstudio.com/)
-* [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [открыть эту ссылку в Visual Studio Code](vscode:extension/vsciot-vscode.azure-iot-tools).
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Инструменты Azure IoT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [откройте эту ссылку в Visual Studio Code.](vscode:extension/vsciot-vscode.azure-iot-tools)
 
 ## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
 
@@ -63,7 +63,7 @@ ms.locfileid: "75911911"
 5. Через несколько секунд на вкладке **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure) отобразится список устройств.
 
    > [!Note]
-   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите строку подключения политики **iothubowner** для центра Интернета вещей, к которому подключается устройство IOT во всплывающем окне.
+   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите строку подключения к политике **iothubowner** для концентратора IoT, к которому подключается устройство IoT в всплывающем окне.
 
 ## <a name="direct-methods"></a>Прямые методы
 
@@ -71,7 +71,7 @@ ms.locfileid: "75911911"
 
 2. В поле ввода введите имя метода и полезные данные.
 
-3. Результаты будут показаны в **выходных данных** > представлении **центра Интернета вещей Azure** .
+3. Результаты будут отображаться в представлении **OUTPUT** > **Azure IoT Hub.**
 
 ## <a name="read-device-twin"></a>Чтение двойников устройств
 
@@ -87,7 +87,7 @@ ms.locfileid: "75911911"
 
 3. Выберите **Update Device Twin** (Обновить двойник устройства), чтобы обновить его.
 
-## <a name="send-cloud-to-device-messages"></a>Отправка сообщений между устройством и облаком
+## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
 
 Чтобы отправить сообщение из Центра Интернета вещей на устройство, выполните следующие действия.
  
@@ -95,7 +95,7 @@ ms.locfileid: "75911911"
 
 2. Введите сообщение в поле ввода.
 
-3. Результаты будут показаны в **выходных данных** > представлении **центра Интернета вещей Azure** .
+3. Результаты будут отображаться в представлении **OUTPUT** > **Azure IoT Hub.**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

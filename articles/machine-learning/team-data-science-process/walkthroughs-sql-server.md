@@ -1,6 +1,6 @@
 ---
 title: Аналитика на SQL Server с использованием R, Python и T-SQL — Процесс обработки и анализа данных группы
-description: Примеры использования R, Python и T-SQL в SQL Server для прогнозной аналитики.
+description: Примеры, которые проходят через использование R, Python и T-S'L в сервере S'L для прогностической аналитики.
 services: machine-learning
 author: marktab
 manager: marktab
@@ -12,13 +12,13 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 880ee0a4a1eb396312ea9692b7586d724d6fd410
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75864100"
 ---
-# <a name="sql-server-data-science-walkthroughs-using-r-python-and-t-sql"></a>SQL Server пошаговые руководства по обработке и анализу данных с помощью R, Python и T-SQL
+# <a name="sql-server-data-science-walkthroughs-using-r-python-and-t-sql"></a>Пошаговые пошаговые листы по анализу данных серверов сервера с использованием R, Python и T-S'L
 
 В этих пошаговых руководствах для выполнения прогнозной аналитики используются SQL Server, службы R для SQL Server и службы Python для SQL Server. Код R и Python развертывается в хранимых процедурах. Они предусматривают выполнение инструкций, описанных в процессе обработки и анализа данных группы. Процесс обработки и анализа данных группы представлен в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md). 
 
@@ -27,12 +27,12 @@ ms.locfileid: "75864100"
 
 ## <a name="predict-taxi-tips-using-python-and-sql-queries-with-sql-server"></a>Прогнозирование чаевых за поездку в такси с помощью запросов Python и SQL с SQL Server 
 
-Пошаговое руководство по [использованию SQL Server](sql-walkthrough.md) демонстрирует создание и развертывание моделей машинного обучения и модели регрессии.  Данные представляют собой общедоступный Нью такси и набор данных FARE.
+[Пошаг-пошаг-погонсии «Использовать сервер»](sql-walkthrough.md) показывает, как создается и развертывается модели классификации машинного обучения и регрессии.  Данные являются общедоступной поездкой на такси и набором данных о тарифах.
 
 
 ## <a name="predict-taxi-tips-using-microsoft-r-with-sql-server"></a>Прогнозирование чаевых за поездку в такси с помощью Microsoft R с SQL Server 
 
-В пошаговом руководстве по [использованию SQL Server R Services](https://msdn.microsoft.com/library/mt612857.aspx) показано, как создать и развернуть модель R для SQL Server. Пошаговое руководство предназначено для ознакомления разработчиков R со службами R Services (в базе данных).
+Пошаговый промыс данный вариант «Использование сервера R» показывает, как создавать и развертывать модель R на сервере [S'L.](https://msdn.microsoft.com/library/mt612857.aspx) Пошаговое руководство предназначено для ознакомления разработчиков R со службами R Services (в базе данных).
 
 
 ## <a name="predict-taxi-tips-using-r-from-t-sql-or-stored-procedures-with-sql-server"></a>Прогнозирование чаевых за поездку в такси с помощью R из T-SQL или хранимых процедур с SQL Server

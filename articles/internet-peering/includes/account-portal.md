@@ -9,22 +9,22 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 7316dba7559c4a50e94771d69ce03bac51c0f3c2
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774540"
 ---
-В браузере перейдите на [портал](https://portal.azure.com/) и выполните вход с помощью учетной записи Azure.
+Из браузера перейдите на [портал](https://portal.azure.com/) и войдите в систему с помощью учетной записи Azure.
 
-Если у вас несколько подписок и необходимо переключить подписки:
+Если у вас несколько подписок и вам необходимо переключить подписку:
 
-1. Нажмите кнопку профиль, а затем выберите **Переключение каталога**.
-
-    > [!div class="mx-imgBorder"]
-    > ![выберите параметр](../media/choose-subscription-2.png) Directory (коммутатор).
-
-1. Выберите подписку, которую вы хотите использовать для настройки пиринга.
+1. Нажмите на кнопку профиля, а затем выберите **коммутатор каталога**.
 
     > [!div class="mx-imgBorder"]
-    > ![выбрать](../media/choose-subscription-3.png) подписки
+    > ![Выберите каталог коммутатора](../media/choose-subscription-2.png)
+
+1. Выберите подписку, которая требуется использовать для настройки пиринга.
+
+    > [!div class="mx-imgBorder"]
+    > ![Выбор подписки](../media/choose-subscription-3.png)

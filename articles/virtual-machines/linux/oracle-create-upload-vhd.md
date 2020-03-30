@@ -1,9 +1,9 @@
 ---
-title: Создание и передача Oracle Linux виртуального жесткого диска
+title: Создание и загрузка VHD Oracle Linux
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD-файл) Azure, содержащий операционную систему Oracle Linux.
 services: virtual-machines-linux
 documentationcenter: ''
-author: mimckitt
+author: gbowerman
 manager: gwallace
 editor: tysonn
 tags: azure-service-management,azure-resource-manager
@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/10/2019
-ms.author: mimckitt
-ms.openlocfilehash: 240333e55f23f2536d3cf14d2bb817e5776c8139
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.author: guybo
+ms.openlocfilehash: 784d6c01125a9fd6ec291f32e989e4b22e7607af
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251595"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80066582"
 ---
 # <a name="prepare-an-oracle-linux-virtual-machine-for-azure"></a>Подготовка виртуальной машины Oracle Linux для Azure
 
@@ -27,20 +27,20 @@ ms.locfileid: "78251595"
 
 ## <a name="oracle-linux-installation-notes"></a>Замечания по установке Oracle Linux
 * Дополнительные сведения о подготовке Linux для Azure см. в разделе [Общие замечания по установке Linux](create-upload-generic.md#general-linux-installation-notes).
-* Hyper-V и Azure поддерживают Oracle Linux с неповрежденным ядром Enterprise (UEK) или ядром, совместимым с Red Hat.
+* Hyper-V и Azure поддерживают Oracle Linux либо с нерушимым ядром предприятия (UEK), либо ядром сосовместимых с Red Hat.
 * Oracle UEK2 не поддерживается в Hyper-V и Azure, поскольку не включает необходимые драйверы.
 * Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd.
-* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. Для дисков данных можно использовать [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* Версии ядра Linux ниже 2.6.37 не поддерживают NUMA в Hyper-V с виртуальными машинами большего размера. Эта проблема в основном влияет на старые дистрибутивы с использованием вышестоящего ядра Red Hat 2.6.32 и была исправлена в Oracle Linux 6,6 и более поздних версиях.
+* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) могут быть использованы на дисках данных, если предпочтительнее.
+* Версии ядра Linux ниже 2.6.37 не поддерживают NUMA в Hyper-V с виртуальными машинами большего размера. Эта проблема в первую очередь затрагивает старые дистрибутивы с использованием ядра Red Hat 2.6.32, и была исправлена в Oracle Linux 6.6 и позже
 * Не настраивайте раздел подкачки на диске с ОС. Можно настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны далее.
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. См. дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
-* Убедитесь, что `Addons` включен репозиторий. Измените файл `/etc/yum.repos.d/public-yum-ol6.repo`(Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo`(Oracle Linux 7) и измените строку `enabled=0` на `enabled=1` в разделе **[ol6_addons]** или **[ol7_addons]** в этом файле.
+* Убедитесь, что `Addons` включен репозиторий. Отспособите `/etc/yum.repos.d/public-yum-ol6.repo`файл (Oracle `/etc/yum.repos.d/public-yum-ol7.repo`Linux 6) или (Oracle `enabled=0` `enabled=1` Linux 7) и измените строку в соответствии с **«ol6_addons»** или **«ol7_addons»** в этом файле.
 
-## <a name="oracle-linux-64-and-later"></a>Oracle Linux 6,4 и более поздних версий
+## <a name="oracle-linux-64-and-later"></a>Oracle Linux 6.4 и более поздние
 Необходимо выполнить определенные действия с конфигурацией операционной системы, чтобы виртуальная машина запускалась в среде Azure.
 
 1. На центральной панели диспетчера Hyper-V выберите виртуальную машину.
-2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
+2. Щелкните **Подключиться**, чтобы открыть окно для виртуальной машины.
 3. Удалите NetworkManager, выполнив следующую команду:
    
         # sudo rpm -e --nodeps NetworkManager
@@ -69,7 +69,7 @@ ms.locfileid: "78251595"
 8. Установите python-pyasn1, выполнив следующую команду:
    
         # sudo yum install python-pyasn1
-9. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте "/Boot/GRUB/menu.lst" в текстовом редакторе и убедитесь, что ядро содержит следующие параметры:
+9. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого открыть "/загрузка/grub/menu.lst" в текстовом редакторе и убедиться, что ядро включает в себя следующие параметры:
    
         console=ttyS0 earlyprintk=ttyS0 rootdelay=300
    
@@ -102,20 +102,20 @@ ms.locfileid: "78251595"
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
-14. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
+14. Нажмите **Action -> Выключите** в Hyper-V Manager. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ---
-## <a name="oracle-linux-70-and-later"></a>Oracle Linux 7,0 и более поздних версий
+## <a name="oracle-linux-70-and-later"></a>Oracle Linux 7.0 и более поздние
 **Изменения в Oracle Linux 7**
 
 Подготовка виртуальной машины Oracle Linux 7 для Azure в значительной степени аналогична версии Oracle Linux 6, однако есть несколько важных отличий:
 
-* Azure поддерживает Oracle Linux с неповрежденным ядром Enterprise (UEK) или ядром, совместимым с Red Hat. Рекомендуется Oracle Linux с UEK.
+* Azure поддерживает Oracle Linux либо с нерушимым ядром предприятия (UEK), либо совместимым ядром Red Hat. Рекомендуется Oracle Linux с UEK.
 * Пакет NetworkManager больше не конфликтует с агентом Azure Linux. Этот пакет устанавливается по умолчанию, и мы рекомендуем не удалять его.
 * В качестве загрузчика по умолчанию теперь используется GRUB2, поэтому изменилась процедура правки параметров ядра (см. ниже).
 * XFS теперь является файловой системой по умолчанию. При желании можно продолжать использование файловой системы ext4.
 
-**Шаги настройки**
+**Шаги конфигурации**
 
 1. В диспетчере Hyper-V выберите виртуальную машину.
 2. Щелкните **Подключение** , чтобы открыть окно консоли для виртуальной машины.
@@ -149,7 +149,7 @@ ms.locfileid: "78251595"
    
         GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
    
-   Это также гарантирует отправку всех сообщений консоли на первый последовательный порт, что может помочь технической поддержке Azure в плане отладки. Он также отключает соглашения об именовании сетевых карт в Oracle Linux 7 с неповрежденным ядром предприятия. Помимо вышесказанного, рекомендуется *удалить* следующие параметры:
+   Это также гарантирует отправку всех сообщений консоли на первый последовательный порт, что может помочь технической поддержке Azure в плане отладки. Он также выключает именования конвенций для NICs в Oracle Linux 7 с нерушимым ядром предприятия. Помимо вышесказанного, рекомендуется *удалить* следующие параметры:
    
        rhgb quiet crashkernel=auto
    
@@ -178,7 +178,7 @@ ms.locfileid: "78251595"
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
-15. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
+15. Нажмите **Action -> Выключите** в Hyper-V Manager. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы можете создавать новые виртуальные машины в Azure с помощью VHD-файла системы Oracle Linux. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).

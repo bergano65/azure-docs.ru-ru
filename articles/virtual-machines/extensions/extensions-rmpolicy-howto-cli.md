@@ -1,5 +1,5 @@
 ---
-title: Ограничение установки расширения виртуальной машины с помощью политики Azure
+title: Используйте политику Azure для ограничения установки расширения VM
 description: Служба "Политика Azure" позволяет ограничить развертывание расширений на виртуальных машинах.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,18 +13,18 @@ ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 113736198f40510981c80909c862282fa07ac68d
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3c660f7e05af43c2aad6f7283e32cfc1d85571ab
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073770"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80066831"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-linux-vms"></a>Ограничение установки расширений на виртуальных машинах Linux с помощью службы "Политика Azure"
 
 Если нужно заблокировать использование или установку определенных расширений на виртуальные машины Linux, можно создать через интерфейс командной строки политику Azure, которая ограничивает расширения для виртуальных машин в определенной группе ресурсов. 
 
-В этом руководстве используется интерфейс командной строки в Azure Cloud Shell, который постоянно обновляется до последней версии. Если вы намерены запустить Azure CLI локально, установите версию не ниже 2.0.26. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+В этом руководстве используется интерфейс командной строки в Azure Cloud Shell, который постоянно обновляется до последней версии. Если вы намерены запустить Azure CLI локально, установите версию не ниже 2.0.26. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.]( /cli/azure/install-azure-cli) 
 
 ## <a name="create-a-rules-file"></a>Создание файла правил
 
@@ -34,7 +34,7 @@ ms.locfileid: "74073770"
 
 В [оболочке Bash Cloud Shell](https://shell.azure.com/bash) введите такой текст:
 
-```azurecli-interactive 
+```bash
 vim ~/clouddrive/azurepolicy.rules.json
 ```
 
@@ -75,7 +75,7 @@ vim ~/clouddrive/azurepolicy.rules.json
 
 В [оболочке Bash Cloud Shell](https://shell.azure.com/bash) введите такой текст:
 
-```azurecli-interactive
+```bash
 vim ~/clouddrive/azurepolicy.parameters.json
 ```
 
@@ -171,6 +171,6 @@ az policy assignment delete --name 'not-allowed-vmextension-linux' --resource-gr
 az policy definition delete --name 'not-allowed-vmextension-linux'
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)

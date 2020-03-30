@@ -1,24 +1,24 @@
 ---
-title: Ссылка на C# конечную точку настраиваемого поставщика
-description: Содержит базовый справочник по конечной точке RESTful настраиваемых поставщиков C# Azure. Конечная точка предоставляется через приложение-функцию Azure.
+title: Пользовательский поставщик C' RESTful конечная точка ссылки
+description: Предоставляет базовую ссылку для пользовательских поставщиков Azure C' RESTful endpoint. Конечная точка предоставляется через приложение функции Azure.
 ms.topic: conceptual
 ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: b6ecb22cb968e0d963242c8c2d5dd1a6cb24229c
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75651180"
 ---
-# <a name="custom-provider-c-restful-endpoint-reference"></a>Ссылка на C# конечную точку настраиваемого поставщика
+# <a name="custom-provider-c-restful-endpoint-reference"></a>Пользовательский поставщик C' RESTful конечная точка ссылки
 
-Эта статья является основной ссылкой на настраиваемую конечную C# точку RESTful поставщика. Если вы еще не знакомы с настраиваемыми поставщиками Azure, перейдите к этой [обзорной статье](overview.md).
+Эта статья является основной ссылкой для пользовательского поставщика C' RESTful конечная точка. Если вы еще не знакомы с настраиваемыми поставщиками Azure, перейдите к этой [обзорной статье](overview.md).
 
-## <a name="azure-function-app-restful-endpoint"></a>Конечная точка RESTFUL приложения функции Azure
+## <a name="azure-function-app-restful-endpoint"></a>Функция функции Azure RESTful конечная точка
 
-Следующий код работает с приложением функции Azure. Сведения о настройке приложения функции Azure для работы с настраиваемыми поставщиками Azure см. [в руководстве по настройке функций Azure для настраиваемых поставщиков](./tutorial-custom-providers-function-setup.md)Azure.
+Следующий код работает с приложением функции Azure. Чтобы узнать, как настроить приложение функции Azure для работы с пользовательскими провайдерами Azure, смотрите [учебник по настройке функций Azure для пользовательских провайдеров Azure.](./tutorial-custom-providers-function-setup.md)
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -255,7 +255,7 @@ public static async Task<HttpResponseMessage> RemoveCustomResource(HttpRequestMe
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обзор поставщиков настраиваемых ресурсов Azure](overview.md)
-- [Руководство. Создание настраиваемого поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)
-- [Как добавлять настраиваемые действия в Azure REST API](./custom-providers-action-endpoint-how-to.md)
-- [Справочник: Справочник по пользовательскому кэшу ресурсов](proxy-cache-resource-endpoint-reference.md)
+- [Обзор поставщиков пользовательских ресурсов Azure](overview.md)
+- [Учебник: Создание поставщика пользовательских ресурсов Azure и развертывание пользовательских ресурсов](./create-custom-provider.md)
+- [Как: Добавление пользовательских действий в API Azure REST](./custom-providers-action-endpoint-how-to.md)
+- [Справка: Ссылка на пользовательский кэш ресурсов](proxy-cache-resource-endpoint-reference.md)

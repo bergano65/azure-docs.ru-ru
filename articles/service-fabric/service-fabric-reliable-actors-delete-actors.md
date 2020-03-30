@@ -1,15 +1,15 @@
 ---
-title: Удаление субъектов Azure Service Fabric Actors
-description: Узнайте, как вручную и полностью удалить Reliable Actors и их состояние в приложении Service Fabric Azure.
+title: Удаление актеров Службы обслуживания Azure Fabric
+description: Узнайте, как вручную и полностью удалить надежных актеров и их состояние в приложении Azure Service Fabric.
 author: amanbha
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: amanbha
 ms.openlocfilehash: b90c5a10c64e273f1c8f48c7bf5713859796db65
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645622"
 ---
 # <a name="delete-reliable-actors-and-their-state"></a>Удаление субъектов Reliable Actors и данных их состояния
@@ -46,12 +46,12 @@ myActorServiceProxy.deleteActorAsync(actorToDelete);
 
 Дополнительные сведения о Reliable Actors см. в следующих документах:
 * [Таймеры и напоминания субъекта](service-fabric-reliable-actors-timers-reminders.md)
-* [События субъекта](service-fabric-reliable-actors-events.md)
-* [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)
+* [Актер события](service-fabric-reliable-actors-events.md)
+* [Ретрансция актера](service-fabric-reliable-actors-reentrancy.md)
 * [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
-* [Пример кода C#](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
-* [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
+* [Код образца СИ](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Код Java Sample](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-lifecycle/garbage-collection.png

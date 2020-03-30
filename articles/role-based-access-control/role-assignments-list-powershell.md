@@ -1,6 +1,6 @@
 ---
-title: Вывод списка назначений ролей с помощью Azure RBAC и Azure PowerShell
-description: Узнайте, как определить, к каким ресурсам пользователи, группы, субъекты-службы или управляемые удостоверения имеют доступ с помощью управления доступом на основе ролей (RBAC) Azure и Azure PowerShell.
+title: Список ролевых заданий с помощью Azure RBAC и Azure PowerShell
+description: Узнайте, как определить, какие ресурсы пользователи, группы, принципы служб или управляемые идентификаторы имеют доступ к использованию управления доступом на основе ролей Azure (RBAC) и Azure PowerShell.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,28 +15,28 @@ ms.date: 01/10/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 0ec3153e5b1bfbe04a079d1cfc44e8e8709784d4
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75931151"
 ---
-# <a name="list-role-assignments-using-azure-rbac-and-azure-powershell"></a>Вывод списка назначений ролей с помощью Azure RBAC и Azure PowerShell
+# <a name="list-role-assignments-using-azure-rbac-and-azure-powershell"></a>Список ролевых заданий с помощью Azure RBAC и Azure PowerShell
 
-в [!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] этой статье описывается, как вывести список назначений ролей с помощью Azure PowerShell.
+[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)]В этой статье описывается, как перечислить ролевые назначения с помощью Azure PowerShell.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
 > [!NOTE]
-> Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
+> Если организация передала функции управления на внешний подряд поставщику услуг, который использует [управление делегированными ресурсами Azure,](../lighthouse/concepts/azure-delegated-resource-management.md)назначения ролей, авторизованные этим поставщиком услуг, не будут отображаться здесь.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- [PowerShell в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure PowerShell](/powershell/azure/install-az-ps)
+- [Мощность Shell в облачной оболочке Azure](/azure/cloud-shell/overview) или [Azure PowerShell](/powershell/azure/install-az-ps)
 
-## <a name="list-role-assignments-for-the-current-subscription"></a>Вывод списка назначений ролей для текущей подписки
+## <a name="list-role-assignments-for-the-current-subscription"></a>Список ролевых заданий для текущей подписки
 
-Самый простой способ получить список всех назначений ролей в текущей подписке (включая наследуемые назначения ролей из корневых и групп управления) — использовать [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment) без параметров.
+Самый простой способ получить список всех назначений ролей в текущей подписке (включая унаследованные назначения ролей от корневых и управленческих групп) — использовать [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment) без каких-либо параметров.
 
 ```azurepowershell
 Get-AzRoleAssignment
@@ -70,7 +70,7 @@ CanDelegate        : False
 
 ## <a name="list-role-assignments-for-a-subscription"></a>Получение списка назначений ролей для подписки
 
-Чтобы получить список всех назначений ролей в области действия подписки, используйте [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment). Чтобы получить идентификатор подписки, его можно найти в колонке **подписки** в портал Azure или воспользоваться [Get-азсубскриптион](/powershell/module/Az.Accounts/Get-AzSubscription).
+Чтобы перечислить все ролевые задания в области подписки, используйте [Get-AzRoleAssignment.](/powershell/module/az.resources/get-azroleassignment) Чтобы получить идентификатор **подписки,** вы можете найти его на лезвии подписки на портале Azure или вы можете использовать [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription).
 
 ```azurepowershell
 Get-AzRoleAssignment -Scope /subscriptions/<subscription_id>
@@ -108,7 +108,7 @@ Get-AzRoleAssignment -SignInName isabella@example.com -ExpandPrincipalGroups | F
 
 ## <a name="list-role-assignments-for-a-resource-group"></a>Вывод списка назначений ролей для группы ресурсов
 
-Чтобы получить список всех назначений ролей в области группы ресурсов, используйте [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment).
+Чтобы перечислить все назначения ролей в области группы ресурсов, используйте [Get-AzRoleAssignment.](/powershell/module/az.resources/get-azroleassignment)
 
 ```azurepowershell
 Get-AzRoleAssignment -ResourceGroupName <resource_group_name>
@@ -132,7 +132,7 @@ Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourc
 
 ## <a name="list-role-assignments-for-a-management-group"></a>Список назначений ролей для группы управления
 
-Чтобы получить список всех назначений ролей в области группы управления, используйте [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment). Чтобы получить идентификатор группы управления, его можно найти в колонке " **группы управления** " в портал Azure или можно использовать [Get-азманажементграуп](/powershell/module/az.resources/get-azmanagementgroup).
+Чтобы перечислить все назначения ролей в области группы управления, используйте [Get-AzRoleAssignment.](/powershell/module/az.resources/get-azroleassignment) Чтобы получить идентификатор группы управления, вы можете найти его на лезвии **групп управления** на портале Azure или использовать [Get-AzManagementGroup.](/powershell/module/az.resources/get-azmanagementgroup)
 
 ```azurepowershell
 Get-AzRoleAssignment -Scope /providers/Microsoft.Management/managementGroups/<group_id>
@@ -150,17 +150,17 @@ PS C:\> Get-AzRoleAssignment -Scope /providers/Microsoft.Management/managementGr
 Get-AzRoleAssignment -IncludeClassicAdministrators
 ```
 
-## <a name="list-role-assignments-for-a-managed-identity"></a>Вывод списка назначений ролей для управляемого удостоверения
+## <a name="list-role-assignments-for-a-managed-identity"></a>Список назначений ролей для управляемого удостоверения
 
-1. Возвращает идентификатор объекта назначенного системой или управляемого пользователем удостоверения. 
+1. Получите идентификатор объекта назначенного системы или управляемого удостоверения, назначенного пользователем. 
 
-    Чтобы получить идентификатор объекта для управляемого пользователем удостоверения, можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal).
+    Чтобы получить идентификатор объекта управляемого удостоверения, назначенный пользователем, можно использовать [Get-AzADServicePrincipal.](/powershell/module/az.resources/get-azadserviceprincipal)
 
     ```azurepowershell
     Get-AzADServicePrincipal -DisplayNameBeginsWith "<name> or <vmname>"
     ```
 
-1. Чтобы получить список назначений ролей, используйте [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment).
+1. Чтобы перечислить ролевые задания, используйте [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment).
 
     ```azurepowershell
     Get-AzRoleAssignment -ObjectId <objectid>
@@ -168,4 +168,4 @@ Get-AzRoleAssignment -IncludeClassicAdministrators
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Добавление и удаление назначений ролей с помощью Azure RBAC и Azure PowerShell](role-assignments-powershell.md)
+- [Добавление или удаление ролевых заданий с помощью Azure RBAC и Azure PowerShell](role-assignments-powershell.md)

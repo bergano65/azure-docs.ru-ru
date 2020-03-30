@@ -1,5 +1,5 @@
 ---
-title: Открытие портов для виртуальной машины с помощью Azure PowerShell
+title: Откройте порты для VM с помощью Azure PowerShell
 description: Узнайте, как открыть порт или создать конечную точку для виртуальной машины Windows, используя модель развертывания с помощью Azure Resource Manager и Azure PowerShell.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,17 +14,17 @@ ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: cynthn
 ms.openlocfilehash: 547ca9c98d77b2aaa6d3630bff4b2ec10dcc5be0
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75754174"
 ---
 # <a name="how-to-open-ports-and-endpoints-to-a-vm-in-azure-using-powershell"></a>Как открыть порты и конечные точки для виртуальной машины в Azure с помощью PowerShell
 [!INCLUDE [virtual-machines-common-nsg-quickstart](../../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 ## <a name="quick-commands"></a>Быстрые команды
-Для создания группы безопасности сети и правил ACL потребуется [последняя версия Azure PowerShell](/powershell/azureps-cmdlets-docs). Эти действия можно также [выполнить с помощью портала Azure](nsg-quickstart-portal.md).
+Для создания группы безопасности сети и правил ACL потребуется [последняя версия Azure PowerShell](/powershell/azureps-cmdlets-docs). Вы также можете [выполнить эти действия с помощью портала Azure.](nsg-quickstart-portal.md)
 
 Войдите в свою учетную запись Azure.
 
@@ -34,7 +34,7 @@ Connect-AzAccount
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *mystorageaccount* и *myVM*.
 
-Создайте правило с помощью командлета [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig). В следующем примере создается правило с именем *myNetworkSecurityGroupRule*. Это правило разрешает *TCP*-трафик через порт *80*:
+Создайте правило с помощью командлета [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig). Следующий пример создает правило под названием *myNetworkSecurityGroupRule,* чтобы позволить *tcp* трафик на порту *80*:
 
 ```powershell
 $httprule = New-AzNetworkSecurityRuleConfig `
@@ -50,7 +50,7 @@ $httprule = New-AzNetworkSecurityRuleConfig `
     -DestinationPortRange 80
 ```
 
-Затем создайте группу безопасности сети с помощью командлета [New-AzureNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup) и назначьте только что созданное правило HTTP, как показано ниже. В следующем примере создается группа безопасности сети с именем *myNetworkSecurityGroup*.
+Затем создайте группу безопасности сети с помощью командлета [New-AzureNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup) и назначьте только что созданное правило HTTP, как показано ниже. Следующий пример создает группу сетевой безопасности под названием *myNetworkSecurityGroup*:
 
 ```powershell
 $nsg = New-AzNetworkSecurityGroup `
@@ -95,7 +95,7 @@ Set-AzVirtualNetwork -VirtualNetwork $vnet
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом примере создано простое правило, разрешающее трафик HTTP. Информацию о создании более детализированных сред можно найти в следующих статьях.
 
-* [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md)
+* [Обзор менеджера ресурсов Azure](../../azure-resource-manager/management/overview.md)
 * [Безопасность сети](../../virtual-network/security-overview.md)
-* [Обзор Azure Load Balancer](../../load-balancer/load-balancer-overview.md)
+* [Обзор баланса нагрузки Azure](../../load-balancer/load-balancer-overview.md)
 

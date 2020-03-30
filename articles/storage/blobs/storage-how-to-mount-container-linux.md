@@ -3,21 +3,22 @@ title: Как подключить хранилище BLOB-объектов Azur
 description: Подключение контейнера хранилища BLOB-объектов Azure с FUSE в Linux
 author: rishabpoh
 ms.service: storage
+ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: 35a4313d10231aec74685069a67d803ea32e68b1
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.openlocfilehash: a0a03df59bc6ecffcb4f0a701616297f2da78fdb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73847557"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80061428"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
 ## <a name="overview"></a>Обзор
-[Blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. blobfuse позволяет получить доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Blobfuse использует схему виртуального каталога с косой чертой "/" в качестве разделителя.  
+[blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. blobfuse позволяет получить доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Blobfuse использует виртуальную схему каталога с передним слэшом '/' в качестве делимитеда.  
 
 В этом руководстве показано, как использовать blobfuse, подключить контейнер хранилища BLOB-объектов в Linux, а также получить доступ к данным. Дополнительные сведения о blobfuse см. в [репозитории blobfuse](https://github.com/Azure/azure-storage-fuse).
 
@@ -29,7 +30,7 @@ ms.locfileid: "73847557"
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
 Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
 
-Blobfuse поддерживает установку на Ubuntu 14,04, 16,04 и 18,04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
+Blobfuse поддерживает установку на Ubuntu 14.04, 16.04 и 18.04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
 ```
 lsb_release -a
 ```
@@ -51,11 +52,11 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 ```
 
-Аналогичным образом измените URL-адрес на `.../ubuntu/16.04/...` или `.../ubuntu/18.04/...` для ссылки на другую версию Ubuntu.
+Аналогичным образом, измените URL `.../ubuntu/16.04/...` или `.../ubuntu/18.04/...` ссылку на другую версию Ubuntu.
 
 ### <a name="install-blobfuse"></a>Установка blobfuse
 
-В дистрибутиве Ubuntu/Debian:
+О дистрибутиве Ubuntu/Debian:
 ```bash
 sudo apt-get install blobfuse
 ```
@@ -97,15 +98,15 @@ accountName myaccount
 accountKey storageaccesskey
 containerName mycontainer
 ```
-`accountName` — это префикс для учетной записи хранения, а не полный URL-адрес.
+Это `accountName` приставка для вашей учетной записи хранения - не полный URL.
 
-Создать этот файл с помощью:
+Создайте этот файл с помощью:
 
 ```
 touch ~/fuse_connection.cfg
 ```
 
-После создания и изменения этого файла необходимо ограничить доступ, чтобы другие пользователи не могли его читать.
+После того как вы создали и отредактировали этот файл, убедитесь, что ограничить доступ, чтобы никакие другие пользователи не могли прочитать его.
 ```bash
 chmod 600 fuse_connection.cfg
 ```

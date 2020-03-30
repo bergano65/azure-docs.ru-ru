@@ -1,124 +1,120 @@
 ---
 title: Известные проблемы с Azure Data Lake Storage 2-го поколения | Документация Майкрософт
-description: Сведения об ограничениях и известных проблемах Azure Data Lake Storage 2-го поколения.
+description: Узнайте об ограничениях и известных проблемах хранения azure Data Lake Storage Gen2.
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/25/2020
+ms.date: 03/20/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 7fd76be8d17dc1c632e555a56d038d4f5c1e1486
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 4f8fae6580272ed53b8d440ba3e74c6a1ed1e61a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79268513"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80061507"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
-В этой статье описываются ограничения и известные проблемы Azure Data Lake Storage 2-го поколения.
+В этой статье описаны ограничения и известные проблемы хранения Azure Data Lake Data Gen2.
 
-## <a name="supported-blob-storage-features"></a>Поддерживаемые функции хранилища BLOB-объектов
+## <a name="supported-blob-storage-features"></a>Поддерживаемые функции хранения Blob
 
-Теперь все большее число функций хранилища BLOB-объектов работает с учетными записями, имеющими иерархическое пространство имен. Полный список см. в разделе [функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md).
+Все большее число функций хранения Blob теперь работают с учетными записями, которые имеют иерархическое пространство имен. Полный список можно найти [в функции хранилища данных Blob, доступные в Azure Data Lake Storage.](data-lake-storage-supported-blob-storage-features.md)
 
 ## <a name="supported-azure-service-integrations"></a>Поддерживаемые интеграции служб Azure
 
-ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Список поддерживаемых служб Azure см. в статье [службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md).
+ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Для списка поддерживаемых служб Azure можно ознакомиться с [службами Azure, которые поддерживают данные Azure Data Lake Storage Gen2.](data-lake-storage-supported-azure-services.md)
 
-Ознакомьтесь [со службами Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md).
+Просмотрите [службы Azure, поддерживающие систему хранения данных Azure Data Lake Data Gen2.](data-lake-storage-supported-azure-services.md)
 
 ## <a name="supported-open-source-platforms"></a>Поддерживаемые платформы с открытым исходным кодом
 
-Несколько платформ с открытым исходным кодом, которые поддерживают Data Lake Storage 2-го поколения. Полный список см. в разделе [платформы с открытым исходным кодом, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md).
+Несколько платформ с открытым исходным кодом, которые поддерживают Data Lake Storage 2-го поколения. Полный список можно найти на [платформах с открытым исходным кодом, поддерживающих хранение данных Azure Data Lake Data Gen2.](data-lake-storage-supported-open-source-platforms.md)
 
-См. раздел [платформы с открытым исходным кодом, поддерживающий Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md).
+Смотрите [платформы с открытым исходным кодом, поддерживающие данные Azure Data Lake Storage Gen2.](data-lake-storage-supported-open-source-platforms.md)
 
 ## <a name="blob-storage-apis"></a>API хранилища BLOB-объектов
 
-API больших двоичных объектов и интерфейсы API Data Lake Storage 2-го поколения могут обрабатывать одни и те же данные.
+Blob AБИ и AA-аПЫ хранения данных Озера Gen2 могут работать на одних и тех же данных.
 
-В этом разделе описываются проблемы и ограничения использования API больших двоичных объектов и Data Lake Storage 2-го поколения API-интерфейсов для обработки одних и тех же данных.
+В этом разделе описаны проблемы и ограничения с использованием blob AIS и AA-аДИ Data Lake Storage Gen2 для работы на одних и тех же данных.
 
-* Для записи в один и тот же экземпляр файла нельзя использовать интерфейсы API BLOB и Data Lake Storage API. При записи в файл с помощью Data Lake Storage 2-го поколения API, блоки этого файла не будут видны для вызовов API [получения списка блоков](https://docs.microsoft.com/rest/api/storageservices/get-block-list) . Файл можно перезаписать с помощью Data Lake Storage 2-го поколения API или API больших двоичных объектов. Это не повлияет на свойства файла.
+* Нельзя использовать aIS Blob и AA,slake Storage для записи в один и тот же экземпляр файла. Если вы пишете в файл с помощью API Data Lake Storage Gen2, то блоки этого файла не будут видны для вызовов на API [Blob Get Block List.](https://docs.microsoft.com/rest/api/storageservices/get-block-list) Перезапись файла можно с помощью aIS Data Lake Storage Gen2 или APIs Blob. Это не повлияет на свойства файлов.
 
-* При использовании операции " [список больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) " без указания разделителя в результаты будут включены как каталоги, так и большие двоичные объекты. Если вы решили использовать разделитель, используйте только косую черту (`/`). Это единственный поддерживаемый разделитель.
+* При использовании операции [List Blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) без указания делимитера результаты будут включать как каталоги, так и капли. Если вы решите использовать делимитер, используйте`/`только передний слэш (). Это единственный поддерживаемый делимитер.
 
-* Если удалить каталог с помощью API [удаления BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/delete-blob) , этот каталог будет удален только в том случае, если он пуст. Это означает, что вы не сможете рекурсивно использовать API удаления каталогов.
+* Если вы используете API [Delete Blob](https://docs.microsoft.com/rest/api/storageservices/delete-blob) для удаления каталога, этот каталог будет удален только в том случае, если он пуст. Это означает, что вы не можете использовать каталоги удаления Blob API.
 
-API-интерфейсы RESTFUL для больших двоичных объектов не поддерживаются:
+Эти APIs Blob REST не поддерживаются:
 
-* [Разместить BLOB-объект (страница)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
+* [Положите Блоб (Страница)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
 * [Put Page](https://docs.microsoft.com/rest/api/storageservices/put-page)
-* [Получить диапазоны страниц](https://docs.microsoft.com/rest/api/storageservices/get-page-ranges)
-* [Добавочное копирование большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/incremental-copy-blob)
-* [Размещение страницы по URL-адресу](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url)
-* [Размещение большого двоичного объекта (добавление)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
+* [Get Page Ranges (Получение диапазона страницы)](https://docs.microsoft.com/rest/api/storageservices/get-page-ranges)
+* [Инкрементная копия Blob](https://docs.microsoft.com/rest/api/storageservices/incremental-copy-blob)
+* [Поместите страницу с URL](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url)
+* [Положите Blob (приложение)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
 * [Append Block](https://docs.microsoft.com/rest/api/storageservices/append-block)
-* [Добавить блок из URL-адреса](https://docs.microsoft.com/rest/api/storageservices/append-block-from-url)
+* [Блок приложения с URL](https://docs.microsoft.com/rest/api/storageservices/append-block-from-url)
 
-Неуправляемые диски виртуальной машины не поддерживаются в учетных записях, имеющих иерархическое пространство имен. Если вы хотите включить иерархическое пространство имен в учетной записи хранения, разместите неуправляемые диски виртуальной машины в учетной записи хранения, для которой не включена функция иерархического пространства имен.
+Неуправляемые vM-диски не поддерживаются в учетных записях, которые имеют иерархическое пространство имен. Если требуется включить иерархическое пространство имен в учетной записи хранилища, поместите неуправляемые vM-диски в учетную запись хранения, в которой нет включенной иерархической функции пространства имен.
 
 <a id="api-scope-data-lake-client-library" />
 
-## <a name="file-system-support-in-sdks"></a>Поддержка файловой системы в пакетах SDK
+## <a name="file-system-support-in-sdks"></a>Поддержка файловой системы в SDK
 
-- [.NET](data-lake-storage-directory-file-acl-dotnet.md), [Java](data-lake-storage-directory-file-acl-java.md) и [Python](data-lake-storage-directory-file-acl-python.md), [JavaScript](data-lake-storage-directory-file-acl-javascript.md) и поддержка доступны в общедоступной предварительной версии. Другие пакеты SDK в настоящее время не поддерживаются.
-- Операции получения и установки ACL в настоящее время не являются рекурсивными.
+Получить и установить ACL операции в настоящее время не повторяются.
 
 ## <a name="file-system-support-in-powershell-and-azure-cli"></a>Поддержка файловой системы в PowerShell и Azure CLI
 
-- Поддержка [PowerShell](data-lake-storage-directory-file-acl-powershell.md) и [Azure CLI](data-lake-storage-directory-file-acl-cli.md) доступна в общедоступной предварительной версии.
-- Операции получения и установки ACL в настоящее время не являются рекурсивными.
+- [Поддержка PowerShell](data-lake-storage-directory-file-acl-powershell.md) и [Azure CLI](data-lake-storage-directory-file-acl-cli.md) представлена в открытом доступе.
+- Получить и установить ACL операции в настоящее время не повторяются.
 
 ## <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
 
-* Удаление моментальных снимков BLOB-объектов пока не поддерживается.  
+* Удаление снимков blob пока не поддерживается.  
 
-* В настоящее время существуют ошибки, затрагивающие политики управления жизненным циклом и уровень доступа архива. 
+## <a name="archive-tier"></a>Архивный уровень
 
-## <a name="diagnostic-logs"></a>Журналы диагностики
+В настоящее время существует ошибка, которая влияет на уровень доступа к архиву.
 
-Обозреватель службы хранилища Azure 1.10. x не может использоваться для просмотра журналов диагностики. Чтобы просмотреть журналы, используйте AzCopy или пакеты SDK.
 
 ## <a name="blobfuse"></a>Blobfuse
 
 Blobfuse не поддерживается.
 
-
-
 <a id="known-issues-tools" />
 
 ## <a name="azcopy"></a>AzCopy
 
-Используйте только последнюю версию AzCopy ([AzCopy V10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)). Более ранние версии AzCopy, например AzCopy v 8.1, не поддерживаются.
+Используйте только последнюю версию AzCopy ([AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)).Более ранние версии AzCopy, такие как AzCopy v8.1, не поддерживаются.
 
 <a id="storage-explorer" />
 
 ## <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
 
-Используйте только версии `1.6.0` или выше. В настоящее время существует ошибка хранилища, влияющая на `1.11.0`версии  , которая может привести к ошибкам проверки подлинности в определенных сценариях. Исправлено исправление ошибки хранилища, но в качестве обходного решения рекомендуется использовать версию `1.10.x` , которая доступна для [бесплатной загрузки](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-relnotes). на `1.10.x` не влияет ошибка хранилища.
+Используйте `1.6.0` только версии или выше.
 
 <a id="explorer-in-portal" />
 
-## <a name="storage-explorer-in-the-azure-portal"></a>Обозреватель службы хранилища в портал Azure
+## <a name="storage-explorer-in-the-azure-portal"></a>Исследователь хранения на портале Azure
 
-Списки управления доступом пока не поддерживаются.
+ACLs еще не поддерживаются.
 
 <a id="third-party-apps" />
 
-## <a name="thirdpartyapplications"></a>Сторонние приложения
+## <a name="thirdpartyapplications"></a>Заявки третьих сторон
 
-Сторонние приложения, использующие API-интерфейсы RESTFUL для работы, продолжают работать, если использовать их с Data Lake Storage 2-го поколения приложениями, которые вызывают API больших двоичных объектов, скорее всего, будут работать.
+Сторонние приложения, которые используют REST AIS для работы, будут продолжать работать, если вы используете их с приложениями Data Lake Storage Gen2, которые называют Blob AIS, скорее всего, будут работать.
 
-## <a name="access-control-lists-acl-and-anonymous-read-access"></a>Списки управления доступом (ACL) и анонимный доступ на чтение
+## <a name="access-control-lists-acl-and-anonymous-read-access"></a>Списки управления доступом (ACL) и анонимный доступ к чтению
 
-Если контейнеру предоставлен [анонимный доступ на чтение](storage-manage-access-to-resources.md) , ACL не влияют на этот контейнер или файлы в этом контейнере.
+Если [анонимный доступ к чтению](storage-manage-access-to-resources.md) был предоставлен контейнеру, то ACL не влияют на этот контейнер или файлы в этом контейнере.
 
-## <a name="windows-azure-storage-blob-wasb-driver"></a>Драйвер Windows Azure Storage Blob (WASB)
+## <a name="windows-azure-storage-blob-wasb-driver"></a>Драйвер хранения данных Windows Azure (WASB)
 
-В настоящее время существует несколько проблем, связанных с использованием драйвера WASB вместе с учетными записями с иерархическим пространством имен. Мы рекомендуем использовать драйвер [файловой системы BLOB-объектов Azure (абфс)](data-lake-storage-abfs-driver.md) в рабочих нагрузках. 
+В настоящее время существует несколько проблем, связанных с использованием драйвера WASB вместе с учетными записями, которые имеют иерархическое пространство имен. Рекомендуем использовать драйвер [файловой системы Azure Blob (ABFS)](data-lake-storage-abfs-driver.md) в рабочих нагрузках. 
 
 
 

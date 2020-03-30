@@ -9,22 +9,22 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 86e1a9cce1864ce259fe07b6949be2e32be242a8
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774423"
 ---
-Для пиринга Exchange поддерживаются следующие операции изменения
-1. Добавление подключений пиринга Exchange
-1. Удаление подключений пиринга Exchange
-1. Добавить сеанс IPv4/IPv6 в активных соединениях.
-1. Удаление сеанса IPv4 или IPv6 на активных подключениях.
+После операции модификации поддерживаются для пиринга Exchange
+1. Добавление внравных соединений Exchange
+1. Удалить соединения пиринга Exchange
+1. Добавьте сеанс IPv4/IPv6 на активных соединениях.
+1. Удалите сеанс IPv4/IPv6 на активных соединениях.
 
 
-### <a name="add-exchange-peering-connections"></a>Добавление подключений пиринга Exchange
+### <a name="add-exchange-peering-connections"></a>Добавление внравных соединений Exchange
 
-В приведенном ниже примере описывается добавление подключений к существующему пирингу Exchange.
+Ниже приведенпримеры, как добавить соединения к существующему пирингу Exchange
 
 ```powershell
 
@@ -43,9 +43,9 @@ $exchangePeering | Update-AzPeering
 
 ```
 
-### <a name="remove-exchange-peering-connections"></a>Удаление подключений пиринга Exchange
+### <a name="remove-exchange-peering-connections"></a>Удалить соединения пиринга Exchange
 
-Ниже приведен пример, в котором описывается удаление подключений к существующему пирингу Exchange.
+Ниже приведенпримеры, как удалить соединения с существующими вглядывающимися Exchange
 
 ```powershell
 
@@ -53,7 +53,7 @@ $exchangePeering = Get-AzPeering -Name "SeattleExchangePeering" -ResourceGroupNa
 
 ```
 
-Просмотрите все подключения и выберите подключение, которое нужно удалить. 
+Просмотр всех подключений и выберите соединение, которые вы хотите удалить. 
 
 ```powershell
 
@@ -73,7 +73,7 @@ Tags              : {}
 
 ```
 
-В приведенной ниже команде вместо 0 введите номер индекса для соединения, которое требуется удалить.
+В приведенной ниже команде вместо 0 введите номер индекса для соединения, который вы хотите удалить.
 
 ```powershell
 
@@ -85,9 +85,9 @@ $exchangePeering | Update-AzPeering
 
 ```
 
-### <a name="add-ipv4ipv6-session-on-active-connections"></a>Добавить сеанс IPv4/IPv6 на активных подключениях
+### <a name="add-ipv4ipv6-session-on-active-connections"></a>Добавление сеанса IPv4/IPv6 на активных соединениях
 
-В приведенном ниже примере описывается добавление сеанса IPv6 к существующему соединению Exchange.
+Ниже приведенпример, как добавить сеанс IPv6 в существующее обменное соединение.
 
 ```powershell
 
@@ -99,6 +99,6 @@ $exchangePeering | Update-AzPeering
 
 ```
 
-### <a name="remove-ipv4ipv6-session-on-active-connections"></a>Удалить сеанс IPv4 или IPv6 на активных подключениях
+### <a name="remove-ipv4ipv6-session-on-active-connections"></a>Удалить сеанс IPv4/IPv6 на активных соединениях
 
-Удаление сеанса IPv4 или IPv6 из существующего подключения в настоящее время не поддерживается в PowerShell. Обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
+Удаление сеанса IPv4/IPv6 из существующего соединения в настоящее время не поддерживается на PowerShell. Обратитесь в [экспертные штаты Майкрософт](mailto:peeringexperience@microsoft.com).

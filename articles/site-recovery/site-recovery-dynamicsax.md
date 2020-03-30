@@ -1,15 +1,15 @@
 ---
-title: Аварийное восстановление Dynamics AX с Azure Site Recovery
-description: Узнайте, как настроить аварийное восстановление для Dynamics AX с Azure Site Recovery
+title: Аварийное восстановление динамики AX с восстановлением сайта Azure
+description: Узнайте, как настроить аварийное восстановление для Dynamics AX с восстановлением сайта Azure
 author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 11/27/2018
 ms.openlocfilehash: 0b32f00374aa8ce6c41415e28f319e3e7d5abddb
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75941591"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX   
@@ -25,7 +25,7 @@ ms.locfileid: "75941591"
 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для реализации аварийного восстановления для приложения Dynamics AX с помощью Site Recovery необходимо выполнить следующие предварительные требования:
 
@@ -37,25 +37,25 @@ ms.locfileid: "75941591"
 
 ## <a name="site-recovery-support"></a>Поддержка Site Recovery
 
-При написании этой статьи использовались виртуальные машины VMware с Dynamics AX 2012 R3 под управлением Windows Server 2012 R2 Enterprise. Поскольку Site Recovery репликация не зависит от приложения, мы планируем, чтобы рекомендации, приведенные здесь, содержались в следующих сценариях.
+При написании этой статьи использовались виртуальные машины VMware с Dynamics AX 2012 R3 под управлением Windows Server 2012 R2 Enterprise. Поскольку репликация восстановления сайта является агностиком приложений, мы ожидаем, что рекомендации, представленные здесь, будут содержаться в следующих сценариях.
 
 ### <a name="source-and-target"></a>Исходный и целевой объект
 
 **Сценарий** | **На дополнительный сайт** | **В Azure**
 --- | --- | ---
 **Hyper-V** | Да | Да
-**VMware** | Да | Да
+**Vmware** | Да | Да
 **Физический сервер** | Да | Да
 
 ## <a name="enable-disaster-recovery-of-the-dynamics-ax-application-by-using-site-recovery"></a>Включение аварийного восстановления приложения Dynamics AX с помощью Site Recovery
 ### <a name="protect-your-dynamics-ax-application"></a>Защита приложения Dynamics AX
 Чтобы можно было включить полные репликацию и восстановление приложения, должен быть защищен каждый компонент Dynamics AX.
 
-### <a name="1-set-up-active-directory-and-dns-replication"></a>1. Настройка Active Directory и репликации DNS
+### <a name="1-set-up-active-directory-and-dns-replication"></a>1. Настройка ретринии Active Directory и DNS
 
 Служба Active Directory должна быть развернута на сайте аварийного восстановления для нормального функционирования приложения Dynamics AX. В зависимости от сложности локальной среды клиента мы рекомендуем два варианта защиты.
 
-**Вариант 1**
+**Вариант 1**
 
 Если у пользователя немного приложений и один контроллер домена для всего локального сайта и он планирует выполнить обработку отказа всего сайта, мы рекомендуем использовать Site Recovery для репликации контроллера домена на дополнительный сайт (для сценария репликации как с сайта на сайт, так и с сайта в Azure).
 
@@ -65,10 +65,10 @@ ms.locfileid: "75941591"
 
  Дополнительные сведения см. в статье [Защита Active Directory и DNS с Azure Site Recovery](site-recovery-active-directory.md). Далее в этом документе подразумевается, что контроллер домена доступен на сайте аварийного восстановления.
 
-### <a name="2-set-up-sql-server-replication"></a>2. Настройка репликации SQL Server
+### <a name="2-set-up-sql-server-replication"></a>2. Настройка репликации сервера S'L
 Технические рекомендации по решению для защиты на уровне SQL см. в статье [Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery](site-recovery-sql.md).
 
-### <a name="3-enable-protection-for-the-dynamics-ax-client-and-application-object-server-vms"></a>3. Включение защиты для виртуальных машин клиента Dynamics AX и сервера прикладных объектов
+### <a name="3-enable-protection-for-the-dynamics-ax-client-and-application-object-server-vms"></a>3. Обеспечить защиту для клиента Dynamics AX и VMs-сервера объектов приложений
 Установите соответствующие конфигурации Site Recovery в зависимости от того, развертываются ли виртуальные машины на узле [Hyper-V](site-recovery-hyper-v-site-to-azure.md) или [VMware](site-recovery-vmware-to-azure.md).
 
 > [!TIP]
@@ -79,8 +79,8 @@ ms.locfileid: "75941591"
 
 ![Защищенные элементы](./media/site-recovery-dynamics-ax/protecteditems.png)
 
-### <a name="4-configure-networking"></a>4. Настройка сети
-**Настройка параметров вычислений и сети для виртуальной машины**
+### <a name="4-configure-networking"></a>4. Настройка сетей
+**Настройка VM-вычислений и сетевых настроек**
 
 Для виртуальных машин Dynamics AX и Application Object Server настройте параметры сети в Site Recovery таким образом, чтобы сети виртуальных машин подключались к нужной сети аварийного восстановления после отработки отказа. Убедитесь в возможности маршрутизации сети аварийного восстановления для этих уровней до уровня SQL.
 
@@ -93,7 +93,7 @@ ms.locfileid: "75941591"
     ![Параметры сети](./media/site-recovery-dynamics-ax/vmpropertiesaos1.png)
 
 
-### <a name="5-create-a-recovery-plan"></a>5. Создание плана восстановления
+### <a name="5-create-a-recovery-plan"></a>5. Создать план восстановления
 
 Вы можете создать план восстановления в Site Recovery, чтобы автоматизировать процесс отработки отказа. Добавьте в план восстановления уровень приложений и веб-уровень. Распределите их по разным группам, чтобы внешний уровень интерфейса завершал работу до уровня приложений.
 
