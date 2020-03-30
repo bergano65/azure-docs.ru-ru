@@ -1,27 +1,27 @@
 ---
-title: Управление правилами брандмауэра — Azure CLI — база данных Azure для MariaDB
+title: Управление правилами брандмауэра - Azure CLI - База данных Azure для MariaDB
 description: В этой статье описывается, как создать правила брандмауэра Базы данных Azure для MariaDB и управлять ими с помощью интерфейса командной строки Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 6690c0862b83af70f3beda4190547d6fbb80a601
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 898b65f07140bca04bd97ff7314b01920b783914
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74764258"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79530637"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
-Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для MariaDB с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Обзор брандмауэров базы данных Azure для MariaDB см. в статье [правила брандмауэра сервера базы данных Azure для MariaDB](./concepts-firewall-rules.md).
+Правила брандмауэра уровня сервера могут использоваться для управления доступом к базе данных Azure для MariaDB Server с определенного IP-адреса или ряда IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Для обзора базы данных Azure для брандмауэров MariaDB [см.](./concepts-firewall-rules.md)
 
-Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-cli.md).
+Для обеспечения доступа к серверу также можно использовать правила виртуальной сети (VNet). Подробнее о [создании и управлении конечными точками и правилами службы виртуальной сети с помощью Azure CLI.](howto-manage-vnet-cli.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
-* [Сервер Базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
+* [База данных Azure для сервера и базы данных MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
 ## <a name="firewall-rule-commands"></a>Команды для правил брандмауэра:
 Команда **az mariadb server firewall-rule** используется в Azure CLI для создания, удаления, вывода списка, отображения и обновления правил брандмауэра.
@@ -33,7 +33,7 @@ ms.locfileid: "74764258"
 - **show**: отображение сведений о правиле брандмауэра сервера Azure MariaDB.
 - **update**: обновление правила брандмауэра сервера Azure MariaDB.
 
-## <a name="sign-in-to-azure-and-list-your-azure-database-for-mariadb-servers"></a>Войдите в Azure и выведите список серверов базы данных Azure для MariaDB.
+## <a name="sign-in-to-azure-and-list-your-azure-database-for-mariadb-servers"></a>Вопийте в Azure и перечислите базу данных Azure для серверов MariaDB
 Безопасно подключитесь к Azure CLI с помощью своей учетной записи Azure, используя команду **az login**.
 
 1. В командной строке выполните следующую команду.
@@ -42,9 +42,9 @@ ms.locfileid: "74764258"
    ```
    Эта команда выведет код, который понадобится на следующем шаге.
 
-2. Откройте браузер, перейдите на страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin), а затем введите код.
+2. Используйте веб-браузер, [https://aka.ms/devicelogin](https://aka.ms/devicelogin)чтобы открыть страницу, а затем ввести код.
 
-3. В командной строке выполните вход с использованием учетных данных Azure.
+3. В запросе воспользуйтесь учетными данными Azure.
 
 4. После авторизации имени для входа в консоли отобразится список подписок. Скопируйте идентификатор необходимой подписки, чтобы выбрать текущую подписку для использования. Введите команду [az account set](/cli/azure/account#az-account-set).
    ```azurecli-interactive
@@ -120,5 +120,5 @@ az mariadb server firewall-rule delete --resource-group myresourcegroup --server
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [правилах брандмауэра сервера Базы данных Azure для MariaDB](./concepts-firewall-rules.md).
-- [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)
-- Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-cli.md).
+- [Создавайте и управляйте базой данных Azure для правил брандмауэра MariaDB с помощью портала Azure.](./howto-manage-firewall-portal.md)
+- Дальнейший безопасный доступ к серверу путем [создания и управления конечными точками и правилами службы Виртуальной сети с помощью Azure CLI.](howto-manage-vnet-cli.md)

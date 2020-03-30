@@ -1,7 +1,7 @@
 ---
-title: Безопасное хранение учетных данных доступа
+title: Безопасно хранить учетные данные доступа
 titleSuffix: Azure Data Science Virtual Machine
-description: Описание безопасного хранения учетных данных для доступа на виртуальной машине для обработки и анализа данных. Вы узнаете, как использовать управляемые удостоверения служб и Azure Key Vault для хранения учетных данных доступа.
+description: Описание безопасного хранения учетных данных для доступа на виртуальной машине для обработки и анализа данных. Вы узнаете, как использовать учетные данные управляемых служб и Хранилище ключей Azure для хранения учетных данных доступа.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
 ms.service: machine-learning
@@ -10,27 +10,26 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 05/08/2018
-ms.openlocfilehash: 17e611007d2b5400497597946159826df7aa4848
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 1cb0c5094d49eac5a1c8f63406a28d2927d8fa94
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195611"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79477329"
 ---
-# <a name="store-access-credentials-securely-on-an-azure-data-science-virtual-machine"></a>Безопасное хранение учетных данных доступа на виртуальной машине Azure для обработки и анализа данных
+# <a name="store-access-credentials-securely-on-an-azure-data-science-virtual-machine"></a>Безопасно храните учетные данные доступа на виртуальной машине Azure Data Science
 
-Как правило, код в облачных приложениях содержит учетные данные для проверки подлинности в облачных службах. Как управлять этими учетными данными и защищать их — хорошо известная задача при создании облачных приложений. В идеале учетные данные никогда не должны отображаться на рабочих станциях разработчиков или возвращены в систему управления версиями.
+Обычно код в облачных приложениях содержит учетные данные для аутентификации облачных служб. Как управлять и обезопасить эти учетные данные является хорошо известной задачей в создании облачных приложений. В идеале учетные данные никогда не должны отображаться на рабочих станциях разработчика или проверяться на элемент управления исходными данными.
 
-Функция [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview) упрощает решение этой проблемы, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
+Управляемая [идентификаторы для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview) упрощает решение этой проблемы, предоставляя службам Azure автоматически управляемый идентификатор в Active Directory Azure (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
 
-Одним из способов защиты учетных данных является использование установщик Windows (MSI) в сочетании с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), управляемой службой Azure для безопасного хранения секретов и криптографических ключей. Вы можете получить доступ к хранилищу ключей с помощью управляемого удостоверения, а затем получить из хранилища ключей полномочные секреты и криптографические ключи.
+Одним из способов обеспечения учетных данных является использование установки Windows (MSI) в сочетании с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), управляемым сервисом Azure для безопасного хранения секретов и криптографических ключей. Вы можете получить доступ к хранилищу ключей, используя управляемую идентификацию, а затем получить авторизованные секреты и криптографические ключи из хранилища ключей.
 
-В документации по управляемым удостоверениям для ресурсов и Key Vault Azure содержатся исчерпывающие сведения об этих службах. Оставшаяся часть этой статьи представляет собой руководство по использованию MSI и Key Vault на виртуальной машине для обработки и анализа данных (DSVM) для доступа к ресурсам Azure. 
+Документация об управляемых идентификаторах для ресурсов Azure и Key Vault включает в себя всеобъемлющий ресурс для получения подробной информации об этих службах. Оставшаяся часть этой статьи представляет собой руководство по использованию MSI и Key Vault на виртуальной машине для обработки и анализа данных (DSVM) для доступа к ресурсам Azure. 
 
-## <a name="create-a-managed-identity-on-the-dsvm"></a>Создание управляемого удостоверения на DSVM 
+## <a name="create-a-managed-identity-on-the-dsvm"></a>Создание управляемого удостоверения на DSVM
 
-
-```
+```azurecli-interactive
 # Prerequisite: You have already created a Data Science VM in the usual way.
 
 # Create an identity principal for the VM.
@@ -39,9 +38,9 @@ az vm assign-identity -g <Resource Group Name> -n <Name of the VM>
 az resource list -n <Name of the VM> --query [*].identity.principalId --out tsv
 ```
 
+## <a name="assign-key-vault-access-permissions-to-a-vm-principal"></a>Назначить разрешения доступа Key Vault главному директору VM
 
-## <a name="assign-key-vault-access-permissions-to-a-vm-principal"></a>Назначение Key Vault разрешений на доступ к субъекту виртуальной машины
-```
+```azurecli-interactive
 # Prerequisite: You have already created an empty Key Vault resource on Azure by using the Azure portal or Azure CLI.
 
 # Assign only get and set permissions but not the capability to list the keys.
@@ -50,7 +49,7 @@ az keyvault set-policy --object-id <Principal ID of the DSVM from previous step>
 
 ## <a name="access-a-secret-in-the-key-vault-from-the-dsvm"></a>Доступ к секрету в Key Vault с помощью DSVM
 
-```
+```bash
 # Get the access token for the VM.
 x=`curl http://localhost:50342/oauth2/token --data "resource=https://vault.azure.net" -H Metadata:true`
 token=`echo $x | python -c "import sys, json; print(json.load(sys.stdin)['access_token'])"`
@@ -61,7 +60,7 @@ curl https://<Vault Name>.vault.azure.net/secrets/SQLPasswd?api-version=2016-10-
 
 ## <a name="access-storage-keys-from-the-dsvm"></a>Доступ к хранилищу данных из виртуальной машины DSVM
 
-```
+```bash
 # Prerequisite: You have granted your VMs MSI access to use storage account access keys based on instructions at https://docs.microsoft.com/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-storage. This article describes the process in more detail.
 
 y=`curl http://localhost:50342/oauth2/token --data "resource=https://management.azure.com/" -H Metadata:true`
@@ -70,6 +69,7 @@ curl https://management.azure.com/subscriptions/<SubscriptionID>/resourceGroups/
 
 # Now you can access the data in the storage account from the retrieved storage account keys.
 ```
+
 ## <a name="access-the-key-vault-from-python"></a>Доступ к Key Vault с помощью Python
 
 ```python
@@ -101,7 +101,7 @@ print("My secret value is {}".format(secret.value))
 
 ## <a name="access-the-key-vault-from-azure-cli"></a>Доступ к Key Vault с помощью Azure CLI
 
-```
+```azurecli-interactive
 # With managed identities for Azure resources set up on the DSVM, users on the DSVM can use Azure CLI to perform the authorized functions. The following commands enable access to the key vault from Azure CLI without requiring login to an Azure account.
 # Prerequisites: MSI is already set up on the DSVM as indicated earlier. Specific permissions, like accessing storage account keys, reading specific secrets, and writing new secrets, are provided to the MSI.
 

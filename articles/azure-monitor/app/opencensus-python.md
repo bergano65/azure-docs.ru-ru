@@ -1,76 +1,76 @@
 ---
-title: Мониторинг приложений Python с помощью Azure Monitor (Предварительная версия) | Документация Майкрософт
-description: Содержит инструкции по установлению связи Опенценсус Python с Azure Monitor
+title: Мониторинг приложений Python с azure Monitor (предварительный просмотр) Документы Майкрософт
+description: Предоставляет инструкции для провода OpenCensus Python с Azure Monitor
 ms.topic: conceptual
 author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 61fdc2a4694405d4f56600b2d2b71e9e37232a7a
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: 6ef0675e3ae3f7a5da38138177f3033051723411
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78943247"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79537114"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Настройка Azure Monitor для приложения Python
 
-Azure Monitor поддерживает распределенную трассировку, сбор метрик и ведение журнала приложений Python с помощью интеграции с [опенценсус](https://opencensus.io). В этой статье описывается процесс настройки Опенценсус для Python и отправки данных мониторинга в Azure Monitor.
+Azure Monitor поддерживает распределенный отслеживание, сбор метрик и регистрацию приложений Python через интеграцию с [OpenCensus.](https://opencensus.io) В этой статье вы проведете процесс настройки OpenCensus для Python и отправки данных мониторинга в Azure Monitor.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-- Установка Python. В этой статье используется [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будут работать с незначительными изменениями.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Установка python. Эта статья использует [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будет работать с незначительными изменениями.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портал Azure](https://portal.azure.com/).
 
-## <a name="create-an-application-insights-resource-in-azure-monitor"></a>Создание Application Insights ресурса в Azure Monitor
+## <a name="create-an-application-insights-resource-in-azure-monitor"></a>Создание ресурса Insights приложений в Azure Monitor
 
-Сначала необходимо создать ресурс Application Insights в Azure Monitor, который создаст ключ инструментирования (iKey). Затем iKey используется для настройки пакета SDK Опенценсус для отправки данных телеметрии в Azure Monitor.
+Сначала необходимо создать ресурс Application Insights в Azure Monitor, который будет генерировать ключ приборов (ikey). Затем ikey используется для настройки OpenCensus SDK для отправки телеметрических данных в Azure Monitor.
 
-1. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**.
+1. Выберите **Создать ресурс** > **Разработчик инструментов** > **Application Insights**.
 
-   ![Добавление ресурса Application Insights](./media/opencensus-python/0001-create-resource.png)
+   ![Добавление ресурса «Исследования приложений»](./media/opencensus-python/0001-create-resource.png)
 
-1. Появится окно конфигурации. Используйте следующую таблицу для заполнения полей ввода.
+1. Отображается окно конфигурации. Используйте следующую таблицу для заполнения входных полей.
 
-   | Параметр        | Значение           | Description  |
+   | Параметр        | Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Название**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
-   | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных Application Insights |
-   | **Местоположение** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
+   | **Название**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **Ресурсная группа**     | myResourceGroup      | Название для новой группы ресурсов для размещения данных Application Insights |
+   | **Расположение** | Восточная часть США | Место рядом с вами или рядом с местом размещения приложения |
 
-1. Нажмите кнопку **Создать**.
+1. Выберите **Создать**.
 
-## <a name="instrument-with-opencensus-python-sdk-for-azure-monitor"></a>Инструмент с пакетом SDK для Опенценсус Python для Azure Monitor
+## <a name="instrument-with-opencensus-python-sdk-for-azure-monitor"></a>Инструмент с OpenCensus Python SDK для Azure Monitor
 
-Установите Опенценсус Azure Monitor:
+Установите экспортеров OpenCensus Azure Monitor:
 
 ```console
 python -m pip install opencensus-ext-azure
 ```
 
-Полный список пакетов и интеграции см. в разделе [пакеты опенценсус](https://docs.microsoft.com/azure/azure-monitor/app/nuget#common-packages-for-python-using-opencensus).
+Полный список пакетов и интеграций можно узнать в [пакетах OpenCensus.](https://docs.microsoft.com/azure/azure-monitor/app/nuget#common-packages-for-python-using-opencensus)
 
 > [!NOTE]
-> В команде `python -m pip install opencensus-ext-azure` предполагается, что для установки Python задана `PATH`ая переменная среды. Если вы не настроили эту переменную, необходимо указать полный путь к каталогу, в котором находится исполняемый файл Python. Результатом является команда, подобная следующей: `C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe -m pip install opencensus-ext-azure`.
+> Команда `python -m pip install opencensus-ext-azure` предполагает, что для `PATH` установки Python у вас есть переменная среды. Если вы еще не настроили эту переменную, необходимо дать полный путь каталога к месту, где находится ваш Python, исполняемый. Результатом является команда, `C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe -m pip install opencensus-ext-azure`как это: .
 
-Пакет SDK использует три Azure Monitor экспорта для отправки различных типов телеметрии в Azure Monitor: трассировка, метрики и журналы. Дополнительные сведения об этих типах телеметрии см. [в разделе Общие сведения о платформе данных](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform). Используйте следующие инструкции для отправки этих типов телеметрии с помощью трех средств экспорта.
+SDK использует трех экспортеров Azure Monitor для отправки различных типов телеметрии в Azure Monitor: трассировку, метрики и журналы. Для получения дополнительной информации об этих типах телеметрии [см.](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform) Используйте следующие инструкции для отправки этих типов телеметрии через трех экспортеров.
 
-## <a name="telemetry-type-mappings"></a>Сопоставления типов телеметрии
+## <a name="telemetry-type-mappings"></a>Отображение типа телеметрии
 
-Ниже приведены программы экспорта, которые Опенценсус сопоставляются с типами данных телеметрии, которые вы увидите в Azure Monitor.
+Вот экспортеры, которые OpenCensus предоставляет отображены к типам телеметрии, которые вы увидите в Azure Monitor.
 
-![Снимок экрана: сопоставление типов телеметрии из Опенценсус с Azure Monitor](./media/opencensus-python/0012-telemetry-types.png)
+![Скриншот отображения типов телеметрии от OpenCensus до Azure Monitor](./media/opencensus-python/0012-telemetry-types.png)
 
 ### <a name="trace"></a>Трассировка
 
 > [!NOTE]
-> `Trace` в Опенценсус относится к [распределенной трассировке](https://docs.microsoft.com/azure/azure-monitor/app/distributed-tracing). `AzureExporter` отправляет данные телеметрии `requests` и `dependency` Azure Monitor.
+> `Trace`в OpenCensus относится к [распределенной трассировки](https://docs.microsoft.com/azure/azure-monitor/app/distributed-tracing). Отправки `AzureExporter` `requests` и `dependency` телеметрия в Azure Monitor.
 
-1. Сначала давайте создадим некоторые данные трассировки локально. В режиме простоя Python или в любом редакторе введите следующий код.
+1. Во-первых, давайте создаем некоторые данные о следах локально. В Python IDLE, или ваш редактор по выбору, введите следующий код.
 
     ```python
     from opencensus.trace.samplers import ProbabilitySampler
@@ -91,7 +91,7 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-2. При выполнении кода вам несколько раз будет предложено ввести значение. При каждой записи значение будет напечатано в оболочке, а модуль Опенценсус Python создаст соответствующий фрагмент `SpanData`. Проект Опенценсус определяет [трассировку в виде дерева диапазонов](https://opencensus.io/core-concepts/tracing/).
+2. При выполнении кода вам несколько раз будет предложено ввести значение. С каждой записью значение будет напечатано на оболочке, а модуль `SpanData`OpenCensus Python будет генерировать соответствующую часть . Проект OpenCensus определяет [трассировку в виде дерева диапазонов](https://opencensus.io/core-concepts/tracing/).
     
     ```
     Enter a value: 4
@@ -105,7 +105,7 @@ python -m pip install opencensus-ext-azure
     [SpanData(name='test', context=SpanContext(trace_id=8aa41bc469f1a705aed1bdb20c342603, span_id=None, trace_options=TraceOptions(enabled=True), tracestate=None), span_id='f3f9f9ee6db4740a', parent_span_id=None, attributes=BoundedDict({}, maxlen=32), start_time='2019-06-27T18:21:46.157732Z', end_time='2019-06-27T18:21:47.269583Z', child_span_count=0, stack_trace=None, annotations=BoundedList([], maxlen=32), message_events=BoundedList([], maxlen=128), links=BoundedList([], maxlen=32), status=None, same_process_as_parent_span=None, span_kind=0)]
     ```
 
-3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете мы хотим выдать `SpanData` для Azure Monitor. Передайте строку подключения непосредственно в средство экспорта или укажите ее в переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING`. Измените код с предыдущего шага на основе следующего примера кода:
+3. Хотя ввод значений полезен для демонстрационных целей, в конечном итоге мы хотим `SpanData` излучать в Azure Monitor. Передайте строку соединения непосредственно экспортеру, или вы `APPLICATIONINSIGHTS_CONNECTION_STRING`можете указать ее в переменной среды. Измените код с предыдущего шага на основе следующего образца кода:
 
     ```python
     from opencensus.ext.azure.trace_exporter import AzureExporter
@@ -132,24 +132,24 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-4. Теперь при запуске скрипта Python вам по-прежнему будет предложено ввести значения, но только значение будет напечатано в оболочке. Созданный `SpanData` будет отправлен на Azure Monitor. Выпущенные данные span можно найти в разделе `dependencies`. Дополнительные сведения об исходящих запросах см. в разделе [зависимости](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python-dependency)Python опенценсус.
-Дополнительные сведения о входящих запросах см. в разделе [запросы](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python-request)Python опенценсус.
+4. Теперь, когда вы запустите сценарий Python, вам все равно следует ввести значения, но в оболочке печатается только значение. Созданный `SpanData` будет отправлен в Azure Monitor. Вы можете найти испускаемые данные диапазона под `dependencies`. Для получения более подробной информации об исходящих [запросах](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python-dependency)см.
+Для получения более подробной информации о [requests](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python-request)входящих запросах см.
 
 #### <a name="sampling"></a>Выборка
 
-Сведения о выборке в Опенценсус см. [в подборке в опенценсус](sampling.md#configuring-fixed-rate-sampling-for-opencensus-python-applications).
+Для получения информации о выборке в OpenCensus, взгляните на [выборку в OpenCensus](sampling.md#configuring-fixed-rate-sampling-for-opencensus-python-applications).
 
 #### <a name="trace-correlation"></a>Корреляция трассировки
 
-Дополнительные сведения о корреляции телеметрии в данных трассировки см. в описании [корреляции телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/correlation#telemetry-correlation-in-opencensus-python)опенценсус Python.
+Для получения подробной информации о телеметрии корреляции в ваших данных трассировки, взгляните на OpenCensus Python [телеметрии корреляции](https://docs.microsoft.com/azure/azure-monitor/app/correlation#telemetry-correlation-in-opencensus-python).
 
 #### <a name="modify-telemetry"></a>Изменение телеметрии
 
-Дополнительные сведения об изменении отслеживания телеметрии перед отправкой в Azure Monitor см. в разделе Опенценсус Python [телеметрии обработчики](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#opencensus-python-telemetry-processors).
+Подробную информацию о том, как изменять гусеничной телеметрии перед отправкой в Azure Monitor, можно узнать об [процессорах телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#opencensus-python-telemetry-processors)OpenCensus Python.
 
 ### <a name="metrics"></a>Метрики
 
-1. Сначала создадим данные локальной метрики. Мы создадим простую метрику для контроля числа нажатий клавиш ВВОД.
+1. Во-первых, давайте создаем некоторые локальные метрические данные. Мы создадим простую метрику для отслеживания количества нажатий пользователя Enter.
 
     ```python
     from datetime import datetime
@@ -189,7 +189,7 @@ python -m pip install opencensus-ext-azure
     if __name__ == "__main__":
         main()
     ```
-2. Выполнение кода приведет к многократному появлении запроса на нажатие клавиши ВВОД. Метрика создается для контроля числа нажатий клавиши ВВОД. При каждой записи значение будет увеличено, а сведения о метриках будут отображаться в консоли. Сведения включают текущее значение и текущую отметку времени при обновлении метрики.
+2. Запуск кода будет неоднократно побуждать вас нажимать Enter. Для отслеживания количества нажатий Enter создается метрика. С каждой записью значение будет приравливать и метрическая информация будет отображаться в консоли. Информация включает текущее значение и текущую отметку времени при обновлении метрики.
 
     ```
     Press enter.
@@ -200,7 +200,7 @@ python -m pip install opencensus-ext-azure
     Point(value=ValueLong(7), timestamp=2019-10-09 20:58:07.138614)
     ```
 
-3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете мы хотим выдавать данные метрики Azure Monitor. Передайте строку подключения непосредственно в средство экспорта или укажите ее в переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING`. Измените код с предыдущего шага на основе следующего примера кода:
+3. Хотя ввод значений полезен для демонстрационных целей, в конечном итоге мы хотим излучать метрические данные в Azure Monitor. Передайте строку соединения непосредственно экспортеру, или вы `APPLICATIONINSIGHTS_CONNECTION_STRING`можете указать ее в переменной среды. Измените код с предыдущего шага на основе следующего образца кода:
 
     ```python
     from datetime import datetime
@@ -248,11 +248,11 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-4. Программа экспорта будет отсылать данные метрик в Azure Monitor с фиксированным интервалом. Значение по умолчанию — каждые 15 секунд. Мы отслеживаем одну метрику, поэтому данные метрик с любыми значениями и отметками времени, которые она содержит, будут отправляться каждый интервал. Данные можно найти в разделе `customMetrics`.
+4. Экспортер будет отправлять метрические данные в Azure Monitor с фиксированным интервалом. По умолчанию каждые 15 секунд. Мы отслеживаем одну метрику, так что эти метрические данные, с любым значением и временным штампом, который он содержит, будут отправляться с каждым интервалом. Вы можете найти `customMetrics`данные под .
 
 #### <a name="standard-metrics"></a>Стандартные метрики
 
-По умолчанию средство экспорта метрик будет отсылать набор стандартных метрик для Azure Monitor. Это можно отключить, задав для флага `enable_standard_metrics` значение `False` в конструкторе программы экспорта метрик.
+По умолчанию экспортер метрик отправит набор стандартных метрик в Azure Monitor. Вы можете отключить это, `enable_standard_metrics` установив `False` флаг в конструкторе экспортера метрик.
 
     ```python
     ...
@@ -261,24 +261,25 @@ python -m pip install opencensus-ext-azure
       connection_string='InstrumentationKey=<your-instrumentation-key-here>')
     ...
     ```
-Ниже приведен список стандартных метрик, которые в настоящее время отправляются:
+Ниже приведен список стандартных метрик, которые в настоящее время отправлены:
 
-- Объем доступной памяти (в байтах)
-- Процессорное время ЦП (в процентах)
-- Частота входящих запросов (в секунду)
-- Среднее время выполнения входящего запроса (в миллисекундах)
-- Частота исходящих запросов (в секунду)
-- Загрузка ЦП процессом (в процентах)
-- Байтов исключительного выполнения процесса (байт)
+- Доступная память (байты)
+- Время процессора процессора (в процентах)
+- Входящие Коэффициент запроса (в секунду)
+- Среднее время выполнения запроса (миллисекунды)
+- Исходящие коэффициенты запроса (в секунду)
+- Использование процессора процесса (в процентах)
+- Процесс частных байтов (байты)
 
-Эти метрики должны быть доступны в `performanceCounters`. Частота входящих запросов будет в `customMetrics`.
+Вы должны быть в состоянии `performanceCounters`видеть эти метрики в . Входящие ставки запроса будет под `customMetrics`. Для получения дополнительной [информации см.](https://docs.microsoft.com/azure/azure-monitor/app/performance-counters)
+
 #### <a name="modify-telemetry"></a>Изменение телеметрии
 
-Дополнительные сведения об изменении отслеживания телеметрии перед отправкой в Azure Monitor см. в разделе Опенценсус Python [телеметрии обработчики](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#opencensus-python-telemetry-processors).
+Подробную информацию о том, как изменять гусеничной телеметрии перед отправкой в Azure Monitor, можно узнать об [процессорах телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#opencensus-python-telemetry-processors)OpenCensus Python.
 
 ### <a name="logs"></a>Журналы
 
-1. Сначала создадим некоторые данные локального журнала.
+1. Во-первых, давайте создаем некоторые локальные данные журнала.
 
     ```python
     import logging
@@ -297,7 +298,7 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-2.  Код будет постоянно запрашивать значение для входа. Запись журнала создается для каждого введенного значения.
+2.  Код будет постоянно запрашивать значение, подносиве себя. Запись журнала испускается для каждого введенного значения.
 
     ```
     Enter a value: 24
@@ -310,7 +311,7 @@ python -m pip install opencensus-ext-azure
     90
     ```
 
-3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете, мы хотим выдавать данные журнала в Azure Monitor. Передайте строку подключения непосредственно в средство экспорта или укажите ее в переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING`. Измените код с предыдущего шага на основе следующего примера кода:
+3. Хотя ввод значений полезен для демонстрационных целей, в конечном итоге мы хотим излучать данные журнала в Azure Monitor. Передайте строку соединения непосредственно экспортеру, или вы `APPLICATIONINSIGHTS_CONNECTION_STRING`можете указать ее в переменной среды. Измените код с предыдущего шага на основе следующего образца кода:
 
     ```python
     import logging
@@ -335,12 +336,12 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-4. Программа экспорта отправляет данные журнала в Azure Monitor. Данные можно найти в разделе `traces`. 
+4. Экспортер отправит данные журнала в Azure Monitor. Вы можете найти `traces`данные под . 
 
 > [!NOTE]
-> `traces` в этом контексте не совпадает с `Tracing`. `traces` относится к типу телеметрии, который будет отображаться в Azure Monitor при использовании `AzureLogHandler`. `Tracing` ссылается на концепцию в Опенценсус и относится к [распределенной трассировке](https://docs.microsoft.com/azure/azure-monitor/app/distributed-tracing).
+> `traces`в этом контексте не `Tracing`то же самое, что . `traces`относится к типу телеметрии, которую вы увидите `AzureLogHandler`в Azure Monitor при использовании . `Tracing`относится к концепции в OpenCensus и относится к [распределенной трассировки](https://docs.microsoft.com/azure/azure-monitor/app/distributed-tracing).
 
-5. Чтобы отформатировать сообщения журнала, можно использовать `formatters` в встроенном [API ведения журнала](https://docs.python.org/3/library/logging.html#formatter-objects)Python.
+5. Для формата сообщений журнала `formatters` можно использовать встроенный [API регистрации](https://docs.python.org/3/library/logging.html#formatter-objects)Python.
 
     ```python
     import logging
@@ -369,9 +370,9 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-6. Вы также можете добавить пользовательские свойства в сообщения журнала в аргументе *ключевого* слова refield, используя поле custom_dimensions. Они будут отображаться в виде пар "ключ-значение" в `customDimensions` в Azure Monitor.
+6. Вы также можете добавить пользовательские свойства в свои сообщения журнала в *дополнительном* аргументе ключевого слова, используя поле custom_dimensions. Они будут отображаться в виде `customDimensions` пар с ключевым значением в Azure Monitor.
 > [!NOTE]
-> Чтобы эта функция работала, необходимо передать словарь в поле custom_dimensions. При передаче аргументов любого другого типа средство ведения журнала будет игнорировать их.
+> Чтобы эта функция работала, необходимо передать словарь в поле custom_dimensions. Если вы передаете аргументы любого другого типа, регистратор будет игнорировать их.
 
     ```python
     import logging
@@ -388,56 +389,76 @@ python -m pip install opencensus-ext-azure
 
     # Use properties in logging statements
     logger.warning('action', extra=properties)
+    ```
+
+#### <a name="sending-exceptions"></a>Отправка исключений
+
+OpenCensus Python не отслеживает `exception` автоматически и не отправляет телеметрию. Они отправляются `AzureLogHandler` через с помощью исключений через библиотеку регистрации Python. Вы можете добавить пользовательские свойства так же, как с обычной регистрации.
+
+    ```python
+    import logging
+    
+    from opencensus.ext.azure.log_exporter import AzureLogHandler
+    
+    logger = logging.getLogger(__name__)
+    # TODO: replace the all-zero GUID with your instrumentation key.
+    logger.addHandler(AzureLogHandler(
+        connection_string='InstrumentationKey=00000000-0000-0000-0000-000000000000')
+    )
+
+    properties = {'custom_dimensions': {'key_1': 'value_1', 'key_2': 'value_2'}}
 
     # Use properties in exception logs
     try:
         result = 1 / 0  # generate a ZeroDivisionError
     except Exception:
-    logger.exception('Captured an exception.', extra=properties)
+        logger.exception('Captured an exception.', extra=properties)
     ```
+Поскольку необходимо явно регистрировать исключения, пользователь должен входить в систему необработанного исключения. OpenCensus не накладывал ограничений на то, как пользователь хочет это сделать, если он явно регистрирует телеметрию исключения.
+
 #### <a name="sampling"></a>Выборка
 
-Сведения о выборке в Опенценсус см. [в подборке в опенценсус](sampling.md#configuring-fixed-rate-sampling-for-opencensus-python-applications).
+Для получения информации о выборке в OpenCensus, взгляните на [выборку в OpenCensus](sampling.md#configuring-fixed-rate-sampling-for-opencensus-python-applications).
 
 #### <a name="log-correlation"></a>Корреляция журналов
 
-Дополнительные сведения о том, как расширить журналы с помощью данных контекста трассировки, см. в разделе [Интеграция журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#log-correlation)опенценсус Python.
+Подробную информацию о том, как обогатить журналы данными о контексте трассировки, можно найти [интеграцию журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#log-correlation)OpenCensus Python.
 
 #### <a name="modify-telemetry"></a>Изменение телеметрии
 
-Дополнительные сведения об изменении отслеживания телеметрии перед отправкой в Azure Monitor см. в разделе Опенценсус Python [телеметрии обработчики](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#opencensus-python-telemetry-processors).
+Подробную информацию о том, как изменять гусеничной телеметрии перед отправкой в Azure Monitor, можно узнать об [процессорах телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#opencensus-python-telemetry-processors)OpenCensus Python.
 
 ## <a name="view-your-data-with-queries"></a>Просмотр данных с помощью запросов
 
-Данные телеметрии, отправленные из приложения, можно просмотреть на вкладке **журналы (аналитика)** .
+Данные телеметрии, отправленные из приложения, можно просмотреть через вкладку **«Логи »Аналитика».**
 
-![Снимок экрана панели "Обзор" с "журналами (аналитика)", выделенными в красном поле](./media/opencensus-python/0010-logs-query.png)
+![Скриншот панели обзора с "Логи (аналитика)" выбран в красной коробке](./media/opencensus-python/0010-logs-query.png)
 
-В списке **активно**:
+В списке под **Active**:
 
-- Для телеметрии, отправленной с помощью программы экспорта трассировки Azure Monitor, входящие запросы отображаются в разделе `requests`. Исходящие или внутрипроцессный запросы отображаются в разделе `dependencies`.
-- Для данных телеметрии, отправляемых с помощью программы экспорта метрик Azure Monitor, в разделе `customMetrics`отображаются метрики отправки.
-- Для телеметрии, отправленной с помощью программы экспорта журналов Azure Monitor, в разделе `traces`отображаются журналы. Исключения отображаются в разделе `exceptions`.
+- Для телеметрии, отправленной с экспортером отслеживания `requests`Azure Monitor, входящие запросы отображаются под . Исходящие или в процессе `dependencies`запросы отображаются под .
+- Для телеметрии, отправленной с экспортером метрик `customMetrics`Azure Monitor, отправленные метрики отображаются под .
+- Для телеметрии, отправленной с экспортером журналов `traces`Azure Monitor, журналы отображаются под . Исключения отображаются под `exceptions`.
 
-Более подробные сведения об использовании запросов и журналов см. [в разделе журналы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-logs).
+Более подробную информацию об использовании запросов и журналов можно узнать [в журнале Журналы Azure Monitor.](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-logs)
 
-## <a name="learn-more-about-opencensus-for-python"></a>Дополнительные сведения о Опенценсус для Python
+## <a name="learn-more-about-opencensus-for-python"></a>Подробнее об OpenCensus для Python
 
-* [Опенценсус Python на GitHub](https://github.com/census-instrumentation/opencensus-python)
+* [Открытый питон на GitHub](https://github.com/census-instrumentation/opencensus-python)
 * [Настройка](https://github.com/census-instrumentation/opencensus-python/blob/master/README.rst#customization)
-* [Azure Monitor экспорты на GitHub](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure)
-* [Интеграции Опенценсус](https://github.com/census-instrumentation/opencensus-python#extensions)
-* [Azure Monitor примеров приложений](https://github.com/Azure-Samples/azure-monitor-opencensus-python)
+* [Экспортеры Azure Monitor на GitHub](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure)
+* [Интеграция открытой переписи](https://github.com/census-instrumentation/opencensus-python#extensions)
+* [Примеры приложений Azure Monitor](https://github.com/Azure-Samples/azure-monitor-opencensus-python)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отслеживание входящих запросов](./../../azure-monitor/app/opencensus-python-dependency.md)
 * [Отслеживание исходящих запросов](./../../azure-monitor/app/opencensus-python-request.md)
-* [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
+* [Карта приложения](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)
 
 ### <a name="alerts"></a>видны узлы
 
 * [Тесты доступности.](../../azure-monitor/app/monitor-web-app-availability.md) Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
 * [Интеллектуальная диагностика.](../../azure-monitor/app/proactive-diagnostics.md) Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
-* [Оповещения метрики](../../azure-monitor/app/alerts.md). Настройте оповещения, чтобы предупредить вас, если метрика превышает пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
+* [Метрические оповещения:](../../azure-monitor/app/alerts.md)Установите оповещения, чтобы предупредить вас, если метрика пересекает порог. Их можно настроить для пользовательских метрик, добавляемых в код приложения.

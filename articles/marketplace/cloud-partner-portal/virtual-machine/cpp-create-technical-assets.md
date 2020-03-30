@@ -1,25 +1,24 @@
 ---
-title: Создание технических ресурсов для предложения виртуальной машины в Azure Marketplace
+title: Создание технических активов для виртуального предложения машины для Azure Marketplace
 description: В этой статье объясняется, как создать технические ресурсы для предложения виртуальной машине в Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/20/2018
-ms.author: pabutler
-ms.openlocfilehash: 45d0ff5b7b3fea1566b13b61bd01cc17da61e4b3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 57f56a341cfc3db6a5f0664503809e6ab6cf3d3d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824511"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80278030"
 ---
 # <a name="create-technical-assets-for-a-virtual-machine-offer"></a>Создание технических ресурсов для предложения виртуальной машины
 
 В этой статье описана процедура создания и настройки технических ресурсов для предложения виртуальной машины в Azure Marketplace.  Виртуальная машина содержит два компонента: виртуальный жесткий диск (VHD) решения и дополнительные связанные диски данных.  
 
-- *Виртуальные жесткие диски (VHD)* , содержащие операционную систему и решение, которые будут развернуты вместе с предложением Azure Marketplace. Процесс подготовки VHD отличается в зависимости от типа виртуальной машины: Linux, Windows или пользовательская.
+- *Виртуальные жесткие диски (VHD)*, содержащие операционную систему и решение, которые будут развернуты вместе с предложением Azure Marketplace. Процесс подготовки VHD отличается в зависимости от типа виртуальной машины: Linux, Windows или пользовательская.
 - *Диски данных* представляют выделенное постоянное хранилище для виртуальной машины. *Не используйте* виртуальный жесткий диск решения (например, диск `C:`) для хранения постоянных данных.
 
 Образ VM содержит один диск операционной системы и от нуля до нескольких дисков данных. Для одного диска требуется один VHD. VHD необходимо создавать даже для пустых дисков данных.
@@ -29,13 +28,13 @@ ms.locfileid: "73824511"
 > Вне зависимости от используемой операционной системы добавляйте минимальное количество дисков данных, необходимое для номера SKU. Ваши клиенты не смогут удалить диски, которые являются частью образа, на стадии развертывания, однако всегда смогут добавить новые диски во время или после развертывания. 
 
 > [!IMPORTANT]
-> *Не изменяйте число дисков в новой версии образа.* Если в образе необходимо перенастроить диски с данными, определите новый SKU. Публикация новой версии образа с другим числом дисков может привести к ошибке нового развертывания на основе новой версии образа в случае автоматического масштабирования, автоматического развертывания решений с помощью шаблонов Azure Resource Manager и других сценариев.
+> *Не изменяйте число дисков в новой версии образа.*  Если в образе необходимо перенастроить диски с данными, определите новый SKU. Публикация новой версии образа с другим числом дисков может привести к ошибке нового развертывания на основе новой версии образа в случае автоматического масштабирования, автоматического развертывания решений с помощью шаблонов Azure Resource Manager и других сценариев.
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
-Проектирование, сборка и тестирование этих ресурсов занимает время и требует технических знаний о платформе Azure и технологиях, используемых для создания предложения. Помимо домена решения, группа разработчиков должна иметь знания о следующих технологиях Майкрософт: 
+Проектирование, создание и тестирование этих ресурсов требует времени и технических знаний как платформы Azure, так и технологий, используемых для создания предложения. В дополнение к домену решения, ваша команда инженеров должна иметь знания о следующих технологиях Майкрософт: 
 -   базовое представление о [службах Azure](https://azure.microsoft.com/services/); 
 -   умение [разработать приложения Azure](https://azure.microsoft.com/solutions/architecture/);
 -   опыт работы с [виртуальными машинами Azure](https://azure.microsoft.com/services/virtual-machines/), [службой хранилища Azure](https://azure.microsoft.com/services/?filter=storage) и [сетями Azure](https://azure.microsoft.com/services/?filter=networking);
@@ -46,12 +45,12 @@ ms.locfileid: "73824511"
 ## <a name="suggested-tools"></a>Рекомендуемые инструменты 
 
 Выберите одну или обе следующие среды сценариев, которые понадобятся вам в управлении VHD и виртуальными машинами:
--   [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
--   [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+-   [Лазурная силаШелл](https://docs.microsoft.com/powershell/azure/overview)
+-   [Лазурный CLI](https://docs.microsoft.com/cli/azure)
 
 Кроме того, мы рекомендуем добавить следующие инструменты в среду разработки: 
 
--   [Azure Storage Explorer;](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+-   [Исследователь хранения azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
 -   [Visual Studio Code](https://code.visualstudio.com/)
     *   Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
     *   Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).

@@ -1,21 +1,21 @@
 ---
-title: Репликация данных — база данных Azure для MariaDB
-description: Сведения об использовании репликации данных для синхронизации с внешнего сервера в службе "база данных Azure для MariaDB".
+title: Репликация данных - База данных Azure для MariaDB
+description: Узнайте об использовании репликации данных для синхронизации с внешнего сервера в базу данных Azure для службы MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: e98f0dffe1ae004905c2b0969d825a1bca89014a
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 1fbcc1fb27d5e6df4641f79c0d634580f74000b8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74772644"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79532066"
 ---
 # <a name="replicate-data-into-azure-database-for-mariadb"></a>Репликация данных в базу данных Azure для MariaDB
 
-Репликация входных данных позволяет синхронизировать данные сервера MariaDB, работающего локально, на виртуальных машинах или в службах баз данных, размещенных другими облачными поставщиками, со службой базы данных Azure для MariaDB. Репликация входных данных основана на функции собственной репликации в MariaDB на основе позиции файла двоичного журнала (binlog). Дополнительные сведения о репликации binlog см. в [этой статье](https://mariadb.com/kb/en/library/replication-overview/).
+Репликация входных данных позволяет синхронизировать данные сервера MariaDB, работающего локально, на виртуальных машинах или в службах баз данных, размещенных другими облачными поставщиками, со службой Базы данных Azure для MariaDB. Репликация входных данных основана на функции собственной репликации в MariaDB на основе позиции файла двоичного журнала (binlog). Дополнительные сведения о репликации binlog см. в [этой статье](https://mariadb.com/kb/en/library/replication-overview/).
 
 ## <a name="when-to-use-data-in-replication"></a>Когда следует использовать репликацию входных данных
 Ниже приведены основные сценарии применения репликации входных данных.
@@ -34,12 +34,12 @@ ms.locfileid: "74772644"
 - Каждая таблица должна иметь первичный ключ.
 - Главный сервер должен использовать ядро InnoDB.
 - Пользователь должен иметь разрешения на настройку ведения двоичного журнала и создания новых пользователей на главном сервере.
-- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mariadb.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mariadb/howto-data-in-replication#link-the-master-and-replica-servers-to-start-data-in-replication) и параметр `master_ssl_ca`.
+- Если на главном сервере включен SSL, убедитесь, что сертификат SSL CA, предусмотренный для домена, был включен в сохраненную `mariadb.az_replication_change_master` процедуру. Обратитесь к следующим `master_ssl_ca` [примерам](https://docs.microsoft.com/azure/mariadb/howto-data-in-replication#link-the-master-and-replica-servers-to-start-data-in-replication) и параметру.
 - Убедитесь, что IP-адрес главного сервера добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MariaDB. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-cli).
 - Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
-- Убедитесь, что главный сервер имеет общедоступный **IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
+- Убедитесь, что главный сервер имеет **общедоступный IP-адрес,** DNS является общедоступным или имеет полностью квалифицированное доменное имя (ФЗДН).
 
-### <a name="other"></a>Прочее
+### <a name="other"></a>Другие
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 
 ## <a name="next-steps"></a>Дальнейшие действия

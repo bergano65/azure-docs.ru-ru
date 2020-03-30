@@ -1,5 +1,5 @@
 ---
-title: Перемещение виртуальных машин Windows AWS в Azure
+title: Перемещение VMs-м устройствами СWindows AWS в Azure
 description: Перемещение экземпляра виртуальной машины Windows EC2 из Amazon Web Services (AWS) на виртуальную машину Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/01/2018
 ms.author: cynthn
 ms.openlocfilehash: 9bd01f24ac2cada02f51089d238519cd6c7e0248
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74039285"
 ---
 # <a name="move-a-windows-vm-from-amazon-web-services-aws-to-an-azure-virtual-machine"></a>Перемещение виртуальной машины Windows из Amazon Web Services (AWS) на виртуальную машину Azure
@@ -38,7 +38,7 @@ ms.locfileid: "74039285"
 
  
 - **Специализированный виртуальный жесткий диск**. На специализированном VHD сохраняются учетные записи пользователей, приложения и другие данные о состоянии исходной виртуальной машины. Если вы планируете использовать виртуальный жесткий диск "как есть" для создания виртуальной машины, то необходимо выполнить следующие действия:  
-    * [Подготовьте виртуальный жесткий диск Windows к передаче в Azure](prepare-for-upload-vhd-image.md). **Не выполняйте** подготовку виртуальной машины к использованию с помощью Sysprep. 
+    * [Подготовьте Windows VHD для загрузки в Azure.](prepare-for-upload-vhd-image.md) **Не выполняйте** подготовку виртуальной машины к использованию с помощью Sysprep. 
     * Удалите все гостевые инструменты и агенты виртуализации, которые установлены на виртуальной машине (т. е. инструменты VMware). 
     * Убедитесь, что виртуальная машина настроена на получение IP-адреса и параметров DNS через DHCP. Таким образом, сервер будет получать IP-адрес в виртуальной сети при запуске.  
 
@@ -47,7 +47,7 @@ ms.locfileid: "74039285"
 
 Экспортируйте экземпляр EC2 на VHD в контейнере Amazon S3. Выполните действия, описанные в документации Amazon в статье [Exporting an Instance as a VM Using VM Import/Export](https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html) (Экспорт экземпляра виртуальной машины с помощью службы импорта и экспорта виртуальных машин) и выполните команду [create-instance-export-task](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-instance-export-task.html), чтобы экспортировать экземпляр EC2 в VHD-файл. 
 
-Экспортированный VHD-файл сохраняется в указанном контейнере Amazon S3. Базовый синтаксис для экспорта виртуального жесткого диска приведен ниже, просто замените текст заполнителя в \<квадратных скобках > информацией.
+Экспортированный VHD-файл сохраняется в указанном контейнере Amazon S3. Базовый синтаксис для экспорта VHD ниже, просто \<заменить текст заполнителя в скобках> с вашей информацией.
 
 ```
 aws ec2 create-instance-export-task --instance-id <instanceID> --target-environment Microsoft \
@@ -60,7 +60,7 @@ aws ec2 create-instance-export-task --instance-id <instanceID> --target-environm
 > В AWS взимается плата за передачу данных при скачивании VHD-файла. Дополнительные сведения см. на странице [Цены на Amazon S3](https://aws.amazon.com/s3/pricing/).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно передать VHD в Azure и создать виртуальную машину. 
 

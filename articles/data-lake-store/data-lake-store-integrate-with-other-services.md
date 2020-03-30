@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: e28863f9980d6403bef1f88de01b7a9b5271b444
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 43024b63a355646f607adbb6623cc6c349374ea8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60197091"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79535601"
 ---
 # <a name="integrating-azure-data-lake-storage-gen1-with-other-azure-services"></a>Интеграция Azure Data Lake Storage 1-го поколения с другими службами Azure
 Azure Data Lake Storage 1-го поколения можно использовать вместе с другими службами Azure для охвата более широкого диапазона сценариев. В следующей статье перечислены службы, с которыми может интегрироваться Data Lake Storage 1-го поколения.
@@ -60,13 +60,13 @@ Power BI можно использовать, чтобы импортирова�
 Вы можете использовать диспетчер подключений Data Lake Storage 1-го поколения в SSIS для подключения пакета служб SSIS к Data Lake Storage 1-го поколения. См. дополнительные сведения об [использовании Data Lake Storage 1-го поколения со службами SSIS](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager).
 
 ## <a name="use-data-lake-storage-gen1-with-sql-data-warehouse"></a>Использование Data Lake Storage 1-го поколения с хранилищем данных SQL
-С помощью PolyBase вы можете загружать данные из Data Lake Storage 1-го поколения в хранилище данных SQL. См. дополнительные сведения об [использовании Data Lake Storage 1-го поколения с хранилищем данных SQL](../sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store.md).
+С помощью PolyBase вы можете загружать данные из Data Lake Storage 1-го поколения в хранилище данных SQL. См. дополнительные сведения об [использовании Data Lake Storage 1-го поколения с хранилищем данных SQL](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store.md).
 
 ## <a name="use-data-lake-storage-gen1-with-azure-event-hubs"></a>Использование Data Lake Storage 1-го поколения с центрами событий Azure
 Azure Data Lake Storage 1-го поколения можно использовать для архивации и сбора данных, полученных центрами событий Azure. Дополнительные сведения см. в статье [Запись данных из центров событий с помощью Data Lake Storage 1-го поколения](data-lake-store-archive-eventhub-capture.md).
 
 ## <a name="see-also"></a>См. также
-* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Начало работы с Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md)
-* [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)  
+* [Начало работы с Data Lake Storage Gen1 с помощью PowerShell](data-lake-store-get-started-powershell.md)  
 

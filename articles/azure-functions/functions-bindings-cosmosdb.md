@@ -7,22 +7,22 @@ ms.topic: reference
 ms.date: 11/21/2017
 ms.custom: seodec18
 ms.openlocfilehash: e30b256d9fa43402c3b2c444aa1a0e0dc16cfdcf
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79277548"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
-> [!div class="op_single_selector" title1="Выберите версию используемой среды выполнения функций Azure: "]
+> [!div class="op_single_selector" title1="Выберите версию времени выполнения функций Azure, которые вы используете: "]
 > * [Версия 1](functions-bindings-cosmosdb.md)
 > * [Версия 2](functions-bindings-cosmosdb-v2.md)
 
 В этой статье описывается использование привязок [Azure Cosmos DB](../cosmos-db/serverless-computing-database.md) в службе "Функции Azure". Служба "Функции Azure" поддерживает привязки триггера, а также входные и выходные привязки для Azure Cosmos DB.
 
 > [!NOTE]
-> Эта статья предназначена для службы "Функции Azure" версии 1.x. Дополнительные сведения об использовании этих привязок в функциях 2. x и более поздних см. в разделе [привязки Azure Cosmos DB для функций Azure 2. x](functions-bindings-cosmosdb-v2.md).
+> Эта статья предназначена для службы "Функции Azure" версии 1.x. Для получения информации о том, как использовать эти привязки в функциях 2.x и выше, см. [привязки Azure Cosmos DB для Azure Functions 2.x.](functions-bindings-cosmosdb-v2.md)
 >
 >Эта привязка называлась DocumentDB. В Функциях версии 1.x только триггер был переименован в Cosmos DB. Входная и выходная привязка, а также пакет NuGet сохраняют имя DocumentDB.
 
@@ -43,7 +43,7 @@ ms.locfileid: "79277548"
 
 ## <a name="trigger---example"></a>Пример триггера
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), вызываемая при вставке или обновлении в указанной базе данных и коллекции.
 
@@ -76,7 +76,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
 
@@ -112,7 +112,7 @@ namespace CosmosDBSamplesV1
     }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
 
@@ -145,7 +145,7 @@ namespace CosmosDBSamplesV1
 
 ## <a name="trigger---attributes"></a>Атрибуты триггера
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [CosmosDBTrigger](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/Trigger/CosmosDBTriggerAttribute.cs).
 
@@ -164,41 +164,41 @@ namespace CosmosDBSamplesV1
 
 Полный пример см. в разделе [Пример C# в триггере](#trigger).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 ---
 
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
+В следующей таблице объясняется свойства связывающей конфигурации, `CosmosDBTrigger` установленные в файле *function.json* и атрибуте.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `cosmosDBTrigger`. |
+|**тип** | Недоступно | Нужно задать значение `cosmosDBTrigger`. |
 |**direction** | Недоступно | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
 |**name** | Недоступно | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
-|**connectionStringSetting**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
-|**databaseName**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
-|**collectionName** |**CollectionName** | Имя отслеживаемой коллекции. |
+|**подключениеСтнетНастройка**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
+|**databaseName**|**Databasename**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
+|**сборИмя** |**CollectionName** | Имя отслеживаемой коллекции. |
 |**leaseConnectionStringSetting** | **LeaseConnectionStringSetting** | (Необязательно.) Имя параметра приложения, содержащее строку подключения для службы, содержащей коллекцию аренды. Если значение не задано, используется значение `connectionStringSetting`. Этот параметр задается автоматически при создании привязки на портале. Строка подключения для коллекции аренд должна иметь разрешения на запись.|
 |**leaseDatabaseName** |**LeaseDatabaseName** | (Необязательно.) Имя базы данных, в которой содержится коллекция, используемая для хранения аренд. Если значение не задано, используется значение параметра `databaseName`. Этот параметр задается автоматически при создании привязки на портале. |
-|**leaseCollectionName** | **LeaseCollectionName** | (Необязательно.) Имя коллекции, используемой для хранения аренд. Если значение не задано, используется значение `leases`. |
-|**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. Значение по умолчанию — `false`. |
+|**leaseCollectionNameName** | **LeaseCollectionName** | (Необязательно.) Имя коллекции, используемой для хранения аренд. Если значение не задано, используется значение `leases`. |
+|**createLeaseCollectionifNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. Значение по умолчанию — `false`. |
 |**leasesCollectionThroughput**| **LeasesCollectionThroughput**| (Необязательно.) Определяет количество единиц запросов для назначения при создании коллекции аренд. Этот параметр используется, только если для `createLeaseCollectionIfNotExists` задано значение `true`. Этот параметр задается автоматически при создании привязки с помощью портала.
 |**leaseCollectionPrefix**| **LeaseCollectionPrefix**| (Дополнительно) Если параметр задан, то он добавляет префикс к созданной аренде в коллекции аренды для этой функции, позволяя двум разным функциям Azure совместно эффективно использовать коллекцию аренд с помощью различных префиксов.
 |**feedPollDelay**| **FeedPollDelay**| (Дополнительно) Если параметр задан, то он определяет задержку между опросами секции на наличие новых изменений в веб-канале, после того как все текущие изменения будут утеряны (в миллисекундах). По умолчанию это 5000 (5 секунд).
-|**leaseAcquireInterval**| **LeaseAcquireInterval**| (Дополнительно) Если параметр задан, то он определяет интервал для запуска задачи вычисления при условии равномерности распределения секций между известными экземплярами узла (в миллисекундах). По умолчанию это 13000 (13 секунд).
-|**leaseExpirationInterval**| **LeaseExpirationInterval**| (Дополнительно) Если параметр задан, то он определяет интервал, за который берется аренда, представляющая секцию (в миллисекундах). Если аренда не будет обновлена в течение этого интервала, это приведет к ее истечению и владение секцией перейдет к другому экземпляру. По умолчанию это 60000 (60 секунд).
-|**leaseRenewInterval**| **LeaseRenewInterval**| (Дополнительно) Если параметр задан, то он определяет интервал продления для всех аренд в разделах, которые на данный момент занятые экземплярами (в миллисекундах). По умолчанию это 17000 (17 секунд).
-|**checkpointFrequency**| **CheckpointFrequency**| (Дополнительно) Если параметр задан, то он определяет интервал между контрольными точками аренды (в миллисекундах). После каждого вызова функции всегда используется значение по умолчанию.
-|**maxItemsPerInvocation**| **MaxItemsPerInvocation**| (Дополнительно) Если параметр задан, то он устанавливает максимально получаемое количество элементов за вызов функции.
-|**startFromBeginning**| **StartFromBeginning**| (Необязательно.) Если параметр задан, значит, триггер может начать чтение изменений с начала журнала коллекции, а не с текущего момента времени. Это возможно только при первом запуске триггера, так как при последующих запусках контрольные точки уже будут сохранены. Если установить значение `true` для этого параметра при уже созданных арендах, этот параметр не будет иметь никакого эффекта.
+|**арендаAcquireInterval**| **LeaseAcquireInterval**| (Дополнительно) Если параметр задан, то он определяет интервал для запуска задачи вычисления при условии равномерности распределения секций между известными экземплярами узла (в миллисекундах). По умолчанию это 13000 (13 секунд).
+|**арендаЭкспирацияInterval**| **LeaseExpirationInterval**| (Дополнительно) Если параметр задан, то он определяет интервал, за который берется аренда, представляющая секцию (в миллисекундах). Если аренда не будет обновлена в течение этого интервала, это приведет к ее истечению и владение секцией перейдет к другому экземпляру. По умолчанию это 60000 (60 секунд).
+|**арендаRenewInterval**| **LeaseRenewInterval**| (Дополнительно) Если параметр задан, то он определяет интервал продления для всех аренд в разделах, которые на данный момент занятые экземплярами (в миллисекундах). По умолчанию это 17000 (17 секунд).
+|**Контрольно-пропускной пунктЧастота**| **CheckpointFrequency**| (Дополнительно) Если параметр задан, то он определяет интервал между контрольными точками аренды (в миллисекундах). После каждого вызова функции всегда используется значение по умолчанию.
+|**maxItemsPerInvocation**| **MaxitemsperInvocation**| (Дополнительно) Если параметр задан, то он устанавливает максимально получаемое количество элементов за вызов функции.
+|**startFromStart**| **StartFromBeginning**| (Необязательно.) Если параметр задан, значит, триггер может начать чтение изменений с начала журнала коллекции, а не с текущего момента времени. Это возможно только при первом запуске триггера, так как при последующих запусках контрольные точки уже будут сохранены. Если установить значение `true` для этого параметра при уже созданных арендах, этот параметр не будет иметь никакого эффекта.
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -215,7 +215,7 @@ namespace CosmosDBSamplesV1
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 Этот раздел содержит следующие примеры.
 
@@ -241,7 +241,7 @@ namespace CosmosDBSamplesV1
 
 <a id="queue-trigger-look-up-id-from-json-c"></a>
 
-### <a name="queue-trigger-look-up-id-from-json"></a>Триггер очереди, поиск идентификатора из JSON
+### <a name="queue-trigger-look-up-id-from-json"></a>Триггер очереди, поисковый идентификатор из JSON
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Очередь триггера анализирует JSON в объект с именем `ToDoItemLookup`, который содержит идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -290,7 +290,7 @@ namespace CosmosDBSamplesV1
 
 <a id="http-trigger-look-up-id-from-query-string-c"></a>
 
-### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поиск идентификатора из строки запроса
+### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поисковый идентификатор из строки запроса
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -332,7 +332,7 @@ namespace CosmosDBSamplesV1
 
 <a id="http-trigger-look-up-id-from-route-data-c"></a>
 
-### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поиск идентификатора из данных маршрута
+### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поисковый идентификатор из данных маршрута
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -379,7 +379,7 @@ namespace CosmosDBSamplesV1
 
 <a id="http-trigger-look-up-id-from-route-data-using-sqlquery-c"></a>
 
-### <a name="http-trigger-look-up-id-from-route-data-using-sqlquery"></a>Триггер HTTP, поиск идентификатора из данных маршрута с помощью SqlQuery
+### <a name="http-trigger-look-up-id-from-route-data-using-sqlquery"></a>Триггер HTTP, поисковый идентификатор из данных маршрута, используется SqlQuery
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -421,7 +421,7 @@ namespace CosmosDBSamplesV1
 
 <a id="http-trigger-get-multiple-docs-using-sqlquery-c"></a>
 
-### <a name="http-trigger-get-multiple-docs-using-sqlquery"></a>Триггер HTTP, получение нескольких документов с помощью SqlQuery
+### <a name="http-trigger-get-multiple-docs-using-sqlquery"></a>Триггер HTTP, получение нескольких документов, используется SqlQuery
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает список документов. Функция активируется с помощью HTTP-запроса. Запрос указывается в свойстве атрибута `SqlQuery`.
 
@@ -523,7 +523,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 Этот раздел содержит следующие примеры.
 
@@ -549,7 +549,7 @@ namespace CosmosDBSamplesV1
 
 <a id="queue-trigger-look-up-id-from-string-c-script"></a>
 
-### <a name="queue-trigger-look-up-id-from-string"></a>Триггер очереди, поиск идентификатора из строки
+### <a name="queue-trigger-look-up-id-from-string"></a>Триггер очереди, поисковый идентификатор из строки
 
 В следующем примере показаны входная привязка Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция считывает один документ и обновляет текстовое значение в документе.
 
@@ -584,7 +584,7 @@ namespace CosmosDBSamplesV1
 
 <a id="queue-trigger-get-multiple-docs-using-sqlquery-c-script"></a>
 
-### <a name="queue-trigger-get-multiple-docs-using-sqlquery"></a>Триггер очереди, получение нескольких документов, использование SqlQuery
+### <a name="queue-trigger-get-multiple-docs-using-sqlquery"></a>Триггер очереди, получение нескольких документов, используется SqlQuery
 
 В следующем примере показана входная привязка Azure Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция извлекает несколько документов, указанных SQL-запросом, используя триггер очереди для настройки параметров запроса.
 
@@ -625,7 +625,7 @@ namespace CosmosDBSamplesV1
 
 <a id="http-trigger-look-up-id-from-query-string-c-script"></a>
 
-### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поиск идентификатора из строки запроса
+### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поисковый идентификатор из строки запроса
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -686,7 +686,7 @@ public static HttpResponseMessage Run(HttpRequestMessage req, ToDoItem toDoItem,
 
 <a id="http-trigger-look-up-id-from-route-data-c-script"></a>
 
-### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поиск идентификатора из данных маршрута
+### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поисковый идентификатор из данных маршрута
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -748,7 +748,7 @@ public static HttpResponseMessage Run(HttpRequestMessage req, ToDoItem toDoItem,
 
 <a id="http-trigger-get-multiple-docs-using-sqlquery-c-script"></a>
 
-### <a name="http-trigger-get-multiple-docs-using-sqlquery"></a>Триггер HTTP, получение нескольких документов с помощью SqlQuery
+### <a name="http-trigger-get-multiple-docs-using-sqlquery"></a>Триггер HTTP, получение нескольких документов, используется SqlQuery
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает список документов. Функция активируется с помощью HTTP-запроса. Запрос указывается в свойстве атрибута `SqlQuery`.
 
@@ -805,7 +805,7 @@ public static HttpResponseMessage Run(HttpRequestMessage req, IEnumerable<ToDoIt
 
 <a id="http-trigger-get-multiple-docs-using-documentclient-c-script"></a>
 
-### <a name="http-trigger-get-multiple-docs-using-documentclient"></a>Триггер HTTP, получение нескольких документов с помощью DocumentClient
+### <a name="http-trigger-get-multiple-docs-using-documentclient"></a>Триггер HTTP, получение нескольких документов, используется DocumentClient
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает список документов. Функция активируется с помощью HTTP-запроса. Код использует экземпляр `DocumentClient`, предоставленный привязкой Azure Cosmos DB для считывания списка документов. Экземпляр `DocumentClient` может также использоваться для операций записи.
 
@@ -881,7 +881,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 Этот раздел содержит следующие примеры.
 
@@ -893,7 +893,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 
 <a id="queue-trigger-look-up-id-from-json-javascript"></a>
 
-### <a name="queue-trigger-look-up-id-from-json"></a>Триггер очереди, поиск идентификатора из JSON
+### <a name="queue-trigger-look-up-id-from-json"></a>Триггер очереди, поисковый идентификатор из JSON
 
 В следующем примере показана входная привязка Cosmos DB в файле *function.json* и функция [JavaScript](functions-reference-node.md), которая использует привязку. Функция считывает один документ и обновляет текстовое значение в документе.
 
@@ -937,7 +937,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 
 <a id="http-trigger-look-up-id-from-query-string-javascript"></a>
 
-### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поиск идентификатора из строки запроса
+### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поисковый идентификатор из строки запроса
 
 В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -995,7 +995,7 @@ module.exports = function (context, req, toDoItem) {
 
 <a id="http-trigger-look-up-id-from-route-data-javascript"></a>
 
-### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поиск идентификатора из данных маршрута
+### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поисковый идентификатор из данных маршрута
 
 В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -1054,7 +1054,7 @@ module.exports = function (context, req, toDoItem) {
 
 <a id="queue-trigger-get-multiple-docs-using-sqlquery-javascript"></a>
 
-### <a name="queue-trigger-get-multiple-docs-using-sqlquery"></a>Триггер очереди, получение нескольких документов, использование SqlQuery
+### <a name="queue-trigger-get-multiple-docs-using-sqlquery"></a>Триггер очереди, получение нескольких документов, используется SqlQuery
 
 В следующем примере показана входная привязка Azure Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку. Функция извлекает несколько документов, указанных SQL-запросом, используя триггер очереди для настройки параметров запроса.
 
@@ -1093,66 +1093,66 @@ module.exports = function (context, req, toDoItem) {
 
 ## <a name="input---attributes"></a>Входные атрибуты
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [DocumentDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.DocumentDB/DocumentDBAttribute.cs).
 
 Конструктор атрибута принимает имя базы данных и имя коллекции. Дополнительные сведения о параметрах и других свойствах, которые можно настроить, см. в следующем разделе о [настройке](#input---configuration).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 ---
 
 ## <a name="input---configuration"></a>Входная конфигурация
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
+В следующей таблице объясняется свойства связывающей конфигурации, `DocumentDB` установленные в файле *function.json* и атрибуте.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | Недоступно | Нужно задать значение `documentdb`.        |
+|**тип**     | Недоступно | Нужно задать значение `documentdb`.        |
 |**direction**     | Недоступно | Нужно задать значение `in`.         |
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
-|**databaseName** |**DatabaseName** |База данных, содержащая документ.        |
-|**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
-|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
-|**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция.|
-|**connection**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
-|**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки.|
+|**databaseName** |**Databasename** |База данных, содержащая документ.        |
+|**сборИмя** |**CollectionName** | Имя коллекции, содержащей документ. |
+|**id**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
+|**квл-Квери**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция.|
+|**Подключения**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
+|**Partitionkey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="input---usage"></a>Использование входной привязки
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-После успешного выхода из функции все изменения, внесенные во входной документ с помощью именованных входных параметров, сохраняются автоматически.
+Когда функция успешно выходит, любые изменения, внесенные в входной документ через именованные параметры ввода, автоматически сохраняются.
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-После успешного выхода из функции все изменения, внесенные во входной документ с помощью именованных входных параметров, сохраняются автоматически.
+Когда функция успешно выходит, любые изменения, внесенные в входной документ через именованные параметры ввода, автоматически сохраняются.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Обновления не выполняются автоматически после выхода из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. См. [Пример входных данных](#input).
+Обновления не производятся автоматически при выходе функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Смотрите [пример ввода.](#input)
 
 ---
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Выходные данные
 
 Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL.
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
-* Триггер очереди, запись документов с помощью `IAsyncCollector`
+* Очередь триггера, писать документы с помощью`IAsyncCollector`
 
 В примерах используется `ToDoItem` простого типа:
 
@@ -1233,12 +1233,12 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
-* Триггер очереди, запись документов с помощью `IAsyncCollector`
+* Очередь триггера, писать документы с помощью`IAsyncCollector`
 
 ### <a name="queue-trigger-write-one-doc"></a>Триггер очереди, запись одного документа
 
@@ -1361,7 +1361,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В следующем примере показана выходная привязка Azure Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция использует входную привязку очереди для очереди, которую получает JSON в следующем формате:
 
@@ -1420,7 +1420,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 ## <a name="output---attributes"></a>Выходные атрибуты
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [DocumentDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.DocumentDB/DocumentDBAttribute.cs).
 
@@ -1436,33 +1436,33 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
     }
 ```
 
-Полный пример см. в разделе [Output](#output).
+Для полного примера [см.](#output)
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 ---
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
+В следующей таблице объясняется свойства связывающей конфигурации, `DocumentDB` установленные в файле *function.json* и атрибуте.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | Недоступно | Нужно задать значение `documentdb`.        |
+|**тип**     | Недоступно | Нужно задать значение `documentdb`.        |
 |**direction**     | Недоступно | Нужно задать значение `out`.         |
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
-|**databaseName** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
-|**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
-|**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/documentdb/).  |
-|**partitionKey**|**PartitionKey** |Если для `CreateIfNotExists` задано значение true, определяется путь к ключу раздела для созданной коллекции.|
-|**CollectionThroughput**|**CollectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
-|**connection**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
+|**databaseName** | **Databasename**|База данных, содержащая коллекцию, в которой создается документ.     |
+|**сборИмя** |**CollectionName**  | Имя коллекции, в которой создается документ. |
+|**createifNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Для получения дополнительной информации смотрите [страницу ценообразования](https://azure.microsoft.com/pricing/details/documentdb/).  |
+|**Partitionkey**|**PartitionKey** |Если для `CreateIfNotExists` задано значение true, определяется путь к ключу раздела для созданной коллекции.|
+|**collectionThroughput**|**CollectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
+|**Подключения**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 

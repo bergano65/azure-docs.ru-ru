@@ -1,19 +1,18 @@
 ---
-title: Настройка WinRM после создания виртуальной машины Azure | Azure Marketplace
+title: НастроиТе WinRM после создания виртуальной машины Azure (ru) Лазурный рынок
 description: Описание процесса настройки службы удаленного управления Windows (WinRM) после создания виртуальной машины, размещенной в Azure.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2018
-ms.author: pabutler
-ms.openlocfilehash: 7d050b32b212f66623a24bcf87d40111fc5973a5
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.author: dsindona
+ms.openlocfilehash: 673fe1f31f6a8602225e7cde3bf1eb4c3b28b8a3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77481380"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80278150"
 ---
 # <a name="configure-winrm-after-virtual-machine-creation"></a>Настройка WinRM после создания виртуальной машины
 
@@ -25,9 +24,9 @@ ms.locfileid: "77481380"
 
 ## <a name="enabling-port-traffic"></a>Включение передачи трафика через порт
 
-Протокол WinRM через HTTPS использует порт 5986, который не включен по умолчанию на предварительно настроенных виртуальных машинах Windows, предлагаемых в Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
+В протоколе WinRM over HTTPS используется порт 5986, который по умолчанию не включен на предварительно настроенных вдыхаемых Windows-виз, предлагаемых на Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
 
-1.  Перейдите к колонке **Виртуальные машины >**   <*имя_виртуальной_машины*>    **> Параметры/Сети**.
+1.  Перейдите к лезвию **Виртуальные машины >**   < *vm-имя* >   **> Настройки / Сети**.
 2.  Щелкните имя группы безопасности сети (в этом примере **testvm11002**) для отображения ее свойств:
 
     ![Свойства группы безопасности сети](./media/nsg-properties.png)

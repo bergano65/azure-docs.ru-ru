@@ -1,7 +1,7 @@
 ---
-title: Добавление IPv6 в приложение IPv4 в виртуальной сети Azure Azure CLI
+title: Добавление IPv6 в приложение IPv4 в виртуальной сети Azure - Azure CLI
 titlesuffix: Azure Virtual Network
-description: В этой статье показано, как развернуть IPv6-адреса в существующем приложении в виртуальной сети Azure с помощью Azure CLI.
+description: В этой статье показано, как развертывать адреса IPv6 в существующее приложение в виртуальной сети Azure с помощью Azure CLI.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -13,52 +13,54 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/23/2019
 ms.author: kumud
-ms.openlocfilehash: 0631ea51894e7e0642a55cedee54422fddab623b
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 5dc231febc2e9b605b9e7f603f5d036b8a2c62eb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72952112"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80240754"
 ---
-# <a name="add-ipv6-to-an-ipv4-application-in-azure-virtual-network---azure-cli-preview"></a>Добавление IPv6 в приложение IPv4 в виртуальной сети Azure — Azure CLI (Предварительная версия)
+# <a name="add-ipv6-to-an-ipv4-application-in-azure-virtual-network---azure-cli-preview"></a>Добавьте IPv6 в приложение IPv4 в виртуальной сети Azure - Azure CLI (Предварительный просмотр)
 
-В этой статье показано, как добавить IPv6-адреса в приложение, которое использует общедоступный IP-адрес IPv4 в виртуальной сети Azure для Load Balancer (цен. категория "Стандартный") с помощью Azure CLI. Обновление на месте включает виртуальную сеть и подсеть, Load Balancer (цен. категория "Стандартный") с многоадресными конфигурациями IPv4 и IPV6, виртуальные машины с сетевыми картами, которые имеют конфигурации IPv4 + IPv6, группу безопасности сети и общедоступные IP-адреса.
+В этой статье показано, как добавить адреса IPv6 в приложение, использующее общедоступный IP-адрес IPv4 в виртуальной сети Azure для балансора стандартной нагрузки с помощью Azure CLI. Обновление на месте включает в себя виртуальную сеть и подсеть, балансер стандартной нагрузки с конфигурациями ipV4 и IPV6, виртуальные компьютеры с NICs, которые имеют конфигурации IPv4 и IPv6, группу сетевой безопасности и публичные IP-адреса.
 
 > [!Important]
-> Поддержка IPv6 для виртуальной сети Azure в настоящее время доступна в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Поддержка IPv6 для виртуальной сети Azure в настоящее время находится в открытом доступе. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать Azure CLI локально, для выполнения инструкций из этого руководства вам потребуется использовать Azure CLI 2.0.28 или более поздней версии. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="register-the-service"></a>Регистрация службы
+### <a name="register-the-service"></a>Регистрация услуги
 
-Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку для этой предварительной версии, используя следующие Azure CLI:
+Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку на эту функцию предварительного просмотра с помощью следующего clI Azure:
 
 ```azurecli
 az feature register --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
 az feature register --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```
-Регистрация функции занимает до 30 минут. Состояние регистрации можно проверить, выполнив следующую команду Azure CLI:
 
-```azurelci
+Регистрация функции занимает до 30 минут. Проверить свой регистрационный статус можно, запустив следующую команду Azure CLI:
+
+```azurecli
 az feature show --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
 az feature show --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```
+
 После регистрации выполните следующую команду:
 
-```azurelci
+```azurecli
 az provider register --namespace Microsoft.Network
 ```
 
-### <a name="create-a-standard-load-balancer"></a>создание подсистемы балансировки нагрузки уровня "Стандартный";
-В этой статье предполагается, что вы развернули Load Balancer (цен. категория "Стандартный"), как описано в разделе [Краткое руководство по созданию Load Balancer (цен. категория "Стандартный") Azure CLI](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
+### <a name="create-a-standard-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Стандартный"
+В этой статье предполагается, что вы развернули балансовик стандартной нагрузки, как описано в [квикстарте: Создайте баланс- стандартный баланс - Azure CLI.](../load-balancer/quickstart-load-balancer-standard-public-cli.md)
 
-## <a name="create-ipv6-addresses"></a>Создание IPv6-адресов
+## <a name="create-ipv6-addresses"></a>Создание адресов IPv6
 
-Создайте Общедоступный IPv6-адрес с помощью команды [AZ Network public-IP Create](/cli/azure/network/public-ip) для Load Balancer (цен. Категория "Стандартный"). В следующем примере создается общедоступный IP-адрес IPv6 с именем *PublicIP_v6* в группе ресурсов *myResourceGroupSLB* :
+Создайте общедоступный адрес IPv6 с помощью [веб-ip-приложения сети az](/cli/azure/network/public-ip) для вашего балансора стандартной нагрузки. Следующий пример создает ip-адрес IPv6 *с* PublicIP_v6 в группе ресурсов *myResourceGroupSLB:*
 
 ```azurecli
   
@@ -71,9 +73,9 @@ az network public-ip create \
 --version IPv6
 ```
 
-## <a name="configure-ipv6-load-balancer-frontend"></a>Настройка внешнего интерфейса балансировщика нагрузки IPv6
+## <a name="configure-ipv6-load-balancer-frontend"></a>Настройка баланса нагрузки IPv6 передняя
 
-Настройте подсистему балансировки нагрузки с новым IP-адресом IPv6 с помощью команды [AZ Network фунтов интерфейсного IP-адреса Create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create) , как показано ниже.
+COnfigure балансиватель нагрузки с новым IP-адресом IPv6 с помощью [az сети lb frontend-IP создать](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create) следующим образом:
 
 ```azurecli
 az network lb frontend-ip create \
@@ -83,9 +85,9 @@ az network lb frontend-ip create \
 --public-ip-address PublicIP_v6
 ```
 
-## <a name="configure-ipv6-load-balancer-backend-pool"></a>Настройка внутреннего пула подсистемы балансировки нагрузки IPv6
+## <a name="configure-ipv6-load-balancer-backend-pool"></a>Настройка пула бэкэнда нагрузоза IPv6
 
-Создайте внутренний пул для сетевых карт с IPv6-адресами, используя команду [AZ Network фунтов Address-Pool Create](https://docs.microsoft.com/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create) , как показано ниже.
+Создайте пул бэкэнда для NICs с адресами IPv6 с помощью [адреса-пула az network lb:](https://docs.microsoft.com/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create)
 
 ```azurecli
 az network lb address-pool create \
@@ -94,9 +96,9 @@ az network lb address-pool create \
 --resource-group MyResourceGroupSLB
 ```
 
-## <a name="configure-ipv6-load-balancer-rules"></a>Настройка правил подсистемы балансировки нагрузки IPv6
+## <a name="configure-ipv6-load-balancer-rules"></a>Настройка правил балансировора нагрузки IPv6
 
-Создайте правила подсистемы балансировки нагрузки IPv6 с помощью команды [AZ Network фунтов Rule Create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create).
+Создайте правила балансобаланса нагрузки IPv6 с [помощью правила az network lb.](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create)
 
 ```azurecli
 az network lb rule create \
@@ -110,9 +112,9 @@ az network lb rule create \
 --backend-pool-name dsLbBackEndPool_v6
 ```
 
-## <a name="add-ipv6-address-ranges"></a>Добавить диапазоны IPv6-адресов
+## <a name="add-ipv6-address-ranges"></a>Добавление диапазонов адресов IPv6
 
-Добавьте диапазоны IPv6-адресов в виртуальную сеть и подсеть, в которых размещен балансировщик нагрузки, следующим образом:
+Добавьте диапазоны адресов IPv6 в виртуальную сеть и подсеть, где размещается баланселер нагрузки следующим образом:
 
 ```azurecli
 az network vnet update \
@@ -127,9 +129,9 @@ az network vnet subnet update \
 --address-prefixes  "10.0.0.0/24"  "ace:cab:deca:deed::/64"  
 ```
 
-## <a name="add-ipv6-configuration-to-nics"></a>Добавление конфигурации IPv6 в сетевые карты
+## <a name="add-ipv6-configuration-to-nics"></a>Добавление конфигурации IPv6 в NICs
 
-Настройте сетевые карты виртуальных машин с адресом IPv6 с помощью команды [AZ Network NIC IP-config Create](https://docs.microsoft.com/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create) , как показано ниже.
+Настроите VM NICs с адресом IPv6 с помощью [az network nic ip-config создать](https://docs.microsoft.com/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create) следующее:
 
 ```azurecli
 az network nic ip-config create \
@@ -164,15 +166,15 @@ az network nic ip-config create \
 
 ```
 
-## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Просмотр двух виртуальных сетей IPv6 с двумя стеками в портал Azure
-Виртуальную сеть с двумя стеками IPv6 можно просмотреть в портал Azure следующим образом:
-1. На панели поиска портала введите *myVnet*.
-2. Когда в результатах поиска появится **myVnet** , выберите его. Откроется страница **обзора** для виртуальной сети с двумя стеками с именем *myVNet*. В виртуальной сети с двумя стеками показаны три сетевых адаптера с конфигурациями IPv4 и IPv6, расположенными в подсети с двойным стеком с именем *mySubnet*.
+## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Просмотр виртуальной сети IPv6 с двойным стеком на портале Azure
+Виртуальную сеть IPv6 с двойным стеком можно просмотреть следующим образом:
+1. В панели поиска портала введите *myVnet*.
+2. Когда **myVnet** появится в результатах поиска, выберите его. Это запускает **Обзор** страницы двойного стека виртуальной сети под названием *myVNet*. Виртуальная сеть двойного стека показывает три NICs с конфигурациями IPv4 и IPv6, расположенными в подсети с двойным стеком под названием *mySubnet.*
 
-  ![Виртуальная сеть с двумя стеками IPv6 в Azure](./media/ipv6-add-to-existing-vnet-powershell/ipv6-dual-stack-vnet.png)
+  ![Виртуальная сеть IPv6 с двойным стеком в Azure](./media/ipv6-add-to-existing-vnet-powershell/ipv6-dual-stack-vnet.png)
 
 > [!NOTE]
-> Виртуальная сеть IPv6 для виртуальной сети Azure доступна в портал Azure в режиме только для чтения для этой предварительной версии.
+> Виртуальная сеть IPv6 для Azure доступна на портале Azure только для этого предварительного просмотра.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -184,4 +186,4 @@ Remove-AzResourceGroup -Name MyAzureResourceGroupSLB
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы обновили существующую Load Balancer (цен. категория "Стандартный") с многоинтерфейсной IP-конфигурацией IPv4 для конфигурации с двумя стеками (IPv4 и IPv6). Вы также добавили конфигурации IPv6 в сетевые адаптеры виртуальных машин в серверном пуле. Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в статье [что такое IPv6 для виртуальной сети Azure?](ipv6-overview.md)
+В этой статье вы обновили существующий балансироворовую стандартную нагрузку с конфигурацией IP-адреса IPv4 до двойной стек (IPv4 и IPv6). Вы также добавили конфигурации IPv6 в NICs VMs в пул бэкэнда. Подробнее о поддержке IPv6 в виртуальных сетях Azure читайте в пример [IPv6 для виртуальной сети Azure?](ipv6-overview.md)

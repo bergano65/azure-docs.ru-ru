@@ -1,16 +1,16 @@
 ---
-title: Реализация функций в Azure Service Fabric Actors
+title: Реализация функций в элементах Azure Service Fabric
 description: В статье описано, как написать собственную службу субъекта, которая реализует функции на уровне службы так же, как это делается при наследовании StatefulService.
 author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: vturecek
-ms.openlocfilehash: 9f5f9e00c374b16026f22d4efdee51ec94d2902a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 55ee4c7498dcda3060d4e4221711793b80132bdf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426716"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79502284"
 ---
 # <a name="implement-service-level-features-in-your-actor-service"></a>Реализация функций уровня службы в службе субъектов
 
@@ -143,7 +143,7 @@ public class Program
 
 ## <a name="implement-actor-backup-and-restore"></a>Реализация резервного копирования и восстановления субъектов
 
-Пользовательская служба субъектов предоставляет метод для резервного копирования данных субъектов с использованием прослушивателя удаленных взаимодействий, уже присутствующего в `ActorService`. См. дополнительные сведения о [резервном копировании и восстановлении субъектов](service-fabric-reliable-actors-backup-and-restore.md).
+Пользовательская служба субъектов предоставляет метод для резервного копирования данных субъектов с использованием прослушивателя удаленных взаимодействий, уже присутствующего в `ActorService`. См. дополнительные сведения о [резервном копировании и восстановлении субъектов](../synapse-analytics/sql-data-warehouse/backup-and-restore.md).
 
 ## <a name="actor-that-uses-a-remoting-v2-interface-compatible-stack"></a>Субъект, использующий стек удаленного взаимодействия версии 2 (с совместимым интерфейсом)
 
@@ -214,9 +214,9 @@ public class Program
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
-* [Жизненный цикл субъектов и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
+* [Актер жизненный цикл и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
-* [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Код образца .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->

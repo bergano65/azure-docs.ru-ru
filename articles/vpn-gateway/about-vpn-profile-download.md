@@ -1,71 +1,27 @@
 ---
-title: 'VPN-шлюз Azure: Общие сведения о профилях VPN-клиента P2S'
-description: Это поможет вам работать с файлом клиентского профиля.
+title: 'Azure VPN Gateway: О профилях клиентов P2S VPN'
+description: Это поможет вам работать с файлом профиля клиента
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 03/11/2020
+ms.date: 03/17/2020
 ms.author: cherylmc
-ms.openlocfilehash: 762f62fa0901672c447da42f416e5b003e7419b2
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: b78d32dbb7b4e0d9a3b13ff741e6e38c12be0e62
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79127297"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79528512"
 ---
-# <a name="about-p2s-vpn-client-profiles"></a>О профилях VPN-клиента P2S
+# <a name="about-p2s-vpn-client-profiles"></a>О профилях клиентов P2S VPN
 
-Скачанный файл профиля содержит сведения, необходимые для настройки VPN-подключения. Эта статья поможет вам получить и понять сведения, необходимые для профиля клиента VPN.
+Загруженный файл профиля содержит информацию, необходимую для настройки VPN-соединения. Эта статья поможет вам получить и понять информацию, необходимую для профиля клиента VPN.
 
-## <a name="1-download-the-file"></a>1. Скачайте файл
+[!INCLUDE [client profiles](../../includes/vpn-gateway-vwan-vpn-profile-download.md)]
 
-Выполните команды ниже. Скопируйте полученный URL-адрес в браузер, чтобы скачать его.
-
-```azurepowershell-interactive
-$profile = New-AzVpnClientConfiguration -ResourceGroupName AADAuth -Name AADauthGW -AuthenticationMethod "EapTls"
-   
-$PROFILE.VpnProfileSASUrl
-```
-
-## <a name="2-extract-the-zip-file"></a>2. извлечение ZIP-файла
-
-Извлеките ZIP-файл. Файл содержит следующие папки:
-
-* AzureVPN
-* Универсальный шаблон
-* Опенвпн (если вы включили параметры проверки подлинности Опенвпн и Azure AD на шлюзе. См. раздел [Создание клиента](openvpn-azure-ad-tenant.md).)
-
-## <a name="3-retrieve-information"></a>3. Получение сведений
-
-В папке **AzureVPN** перейдите к файлу ***азуревпнконфиг. XML*** и откройте его в блокноте. Запишите текст между следующими тегами.
-
-```
-<audience>          </audience>
-<issuer>            </issuer>
-<tennant>           </tennant>
-<fqdn>              </fqdn>
-<serversecret>      </serversecret>
-```
-
-## <a name="profile-details"></a>Сведения о профиле
-
-При добавлении подключения используйте сведения, собранные на предыдущем шаге, на странице сведения о профиле. Поля соответствуют следующим сведениям:
-
-   * **Аудитория:** Определяет ресурс получателя, для которого предназначен маркер
-   * **Издатель:** Определяет службу маркеров безопасности (STS), которая выдает маркер, а также клиент Azure AD.
-   * **Клиент:** Содержит неизменяемый уникальный идентификатор клиента каталога, который выдал токен.
-   * **Полное доменное имя:** Полное доменное имя (FQDN) VPN-шлюза Azure;
-   * **Серверсекрет:** Общий ключ VPN-шлюза
-
-## <a name="folder-contents"></a>Содержимое папки
-
-* **Папка опенвпн** содержит профиль *ОВПН* , который необходимо изменить, чтобы включить ключ и сертификат. Дополнительные сведения см. в статье [Настройка клиентов опенвпн для VPN-шлюза Azure](vpn-gateway-howto-openvpn-clients.md#windows). Если на VPN-шлюзе выбрана проверка подлинности Azure AD, эта папка не будет находиться в файле zip. Вместо этого азуревпнконфиг. XML будет находиться в папке AzureVPN.
-
-* **Общая папка** содержит общедоступный сертификат сервера и файл файл vpnsettings. XML. Файл файл vpnsettings. XML содержит сведения, необходимые для настройки универсального клиента.
-
-* Скачанный ZIP-файл также может содержать папки **WindowsAmd64** и **WindowsX86** . Эти папки содержат установщик для клиентов SSTP и IKEv2 для Windows. Для их установки требуются права администратора на клиенте.
+* **Папка OpenVPN** содержит профиль *ovpn,* который необходимо модифицировать, чтобы включить ключ и сертификат. Для получения дополнительной [Configure OpenVPN clients for Azure VPN Gateway](vpn-gateway-howto-openvpn-clients.md#windows)информации см. Эта папка не будет присутствовать в почтовом файле, если аутентификация Azure AD выбрана на шлюзе VPN. Вместо этого, azurevpnconfig.xml будет в папке AzureVPN.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о "точка — сеть" см. в разделе [сведения о точках на](point-to-site-about.md)узел.
+Для получения дополнительной информации о пункте к сайту, [см.](point-to-site-about.md)

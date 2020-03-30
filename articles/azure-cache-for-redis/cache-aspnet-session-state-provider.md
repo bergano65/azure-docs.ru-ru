@@ -1,17 +1,17 @@
 ---
 title: Поставщик состояний сеансов ASP.NET кэша
-description: Узнайте, как хранить состояние сеанса ASP.NET в памяти с помощью кэша Azure для Redis.
+description: Узнайте, как хранить в ASP.NET состояния в памяти с помощью кэша Azure для Redis.
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 05/01/2017
-ms.openlocfilehash: 5c9af862ca2df3d812384c0f4ab660730aece872
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 25cef95e2d01012506148f03be45104e455e1fcd
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433562"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79530280"
 ---
 # <a name="aspnet-session-state-provider-for-azure-cache-for-redis"></a>Поставщик состояний сеансов ASP.NET для кэша Azure для Redis
 
@@ -125,6 +125,11 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 * Распределенный в памяти поставщик состояний сеансов, например поставщик состояний сеансов для кэша Azure для Redis, обладает преимуществами предыдущих двух поставщиков. Веб-приложение может использовать простой, быстрый и масштабируемый поставщик состояний сеансов. Этот поставщик сохраняет состояние сеанса в кэше, поэтому ваше приложение должно принимать в расчет все характеристики, связанные с распределенным кэшем в памяти, например временные неполадки в сети. Рекомендации по использованию кэша см. в статье [Руководство по кэшированию](../best-practices-caching.md) из коллекции шаблонов и рекомендаций Майкрософт [Руководство по разработке и реализации облачного приложения Azure](https://github.com/mspnp/azure-guidance).
 
 Дополнительные сведения о состоянии сеанса и другие рекомендации см. в статье [Рекомендации по веб-разработке (создание реальных облачных приложений с помощью Azure)](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices).
+
+## <a name="third-party-session-state-providers"></a>Поставщики государств-сеансов сторонних сторон
+
+* [NCache](https://www.alachisoft.com/ncache/session-index.html)
+* [Апач воспламенился](https://apacheignite-net.readme.io/docs/aspnet-session-state-caching)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
