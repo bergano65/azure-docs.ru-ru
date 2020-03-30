@@ -1,6 +1,6 @@
 ---
-title: Скачивание результатов задания с помощью служб мультимедиа Azure
-description: В этой статье показано, как скачать результаты задания.
+title: Скачать результаты работы - Azure Media Services
+description: В этой статье показано, как загрузить результаты задания.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -11,18 +11,22 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
-ms.openlocfilehash: 0c81523d43fd316c3dc65cc2a5b34557f24014b5
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: bae7104eaded8c2ed153bc141faf7eba0bb86bae
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78303415"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80346288"
 ---
 # <a name="download-the-results-of-a-job"></a>Скачать результаты задания
 
-В службах мультимедиа Azure при обработке видео (например, кодирование или анализ) необходимо создать выходной [ресурс](assets-concept.md) для хранения результатов [задания](transforms-jobs-concept.md). Затем эти результаты можно загрузить в локальную папку с помощью службы мультимедиа и API-интерфейсов хранилища. 
+В Службах мультимедиа Azure при обработке видео (например, кодировании или анализе) необходимо создать выходный [актив](assets-concept.md) для хранения результата [вашей работы.](transforms-jobs-concept.md) Затем эти результаты можно загрузить в локальную папку с помощью AIS Media Service и Storage. 
 
-В этой статье показано, как загрузить результаты с помощью пакетов SDK для Java и .NET.
+В этой статье показано, как загрузить результаты с помощью Java и .NET SDK.
+
+## <a name="prerequisites"></a>Предварительные требования 
+
+Обзор [управления активами.](manage-asset-concept.md)
 
 ## <a name="java"></a>Java
 
@@ -67,7 +71,7 @@ private static void downloadResults(MediaManager manager, String resourceGroup, 
 }
 ```
 
-См. полный пример кода: [енкодингвисмеспредефинедпресет](https://github.com/Azure-Samples/media-services-v3-java/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/src/main/java/sample/EncodingWithMESPredefinedPreset.java)
+Посмотреть полный пример кода: [КодированиеСМЕСПредопределениеПредсет](https://github.com/Azure-Samples/media-services-v3-java/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/src/main/java/sample/EncodingWithMESPredefinedPreset.java)
 
 ## <a name="net"></a>.NET
 
@@ -116,8 +120,8 @@ private async static Task DownloadResults(IAzureMediaServicesClient client, stri
 }
 ```
 
-См. полный пример кода: [енкодингвисмеспредефинедпресет](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/Program.cs)
+Посмотреть полный пример кода: [КодированиеСМЕСПредопределениеПредсет](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/Program.cs)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Создание входных данных задания из URL-адреса HTTPS](job-input-from-http-how-to.md)
+[Создание ввода задания из URL HTTPS.](job-input-from-http-how-to.md)
