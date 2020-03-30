@@ -1,7 +1,7 @@
 ---
-title: Отправка рабочего процесса с помощью нескольких входных данных
+title: Отправка рабочего процесса с использованием нескольких входов
 titleSuffix: Microsoft Genomics
-description: В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если входной файл является несколькими файлами FASTQ-или BAM из одного и того же примера.
+description: В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если ваш входной файл состоит из нескольких файлов FAST или BAM из одного и того же образца.
 services: genomics
 ms.service: genomics
 author: grhuynh
@@ -10,25 +10,25 @@ ms.author: grhuynh
 ms.topic: conceptual
 ms.date: 02/05/2018
 ms.openlocfilehash: b426015906a8e17674123c0c3ad2fccb9c43798f
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72248567"
 ---
 # <a name="submit-a-workflow-using-multiple-inputs-from-the-same-sample"></a>Отправка рабочего процесса с помощью нескольких входных данных из одного примера
 
-В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если входной файл является несколькими файлами FASTQ-или BAM **, поступающими из одного и того же примера**. Например, если вы запустили **тот же пример** в нескольких полосах в Sequencer, вы можете получить по паре файлов FASTQ для каждой полосы. Вместо объединения этих файлов FASTQ до выравнивания и определения вариантов, можно отправить все эти входные данные непосредственно в клиент `msgen`. Выходные данные клиента `msgen` будут представлены **одним набором** файлов, включая файлы с расширениями .bam, .bai и .vcf. 
+В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если ваш входной файл состоит из нескольких файлов FAST или BAM, **поступающих из одного и того же образца.** Например, если вы запустили **тот же пример** в нескольких полосах в Sequencer, вы можете получить по паре файлов FASTQ для каждой полосы. Вместо объединения этих файлов FASTQ до выравнивания и определения вариантов, можно отправить все эти входные данные непосредственно в клиент `msgen`. Выходные данные клиента `msgen` будут представлены **одним набором** файлов, включая файлы с расширениями .bam, .bai и .vcf. 
 
 Однако следует помнить, что **нельзя** смешивать FASTQ- и BAM-файлы в рамках одной отправки. Кроме того, вы **не можете** отправлять несколько файлов FASTQ или BAM от нескольких отдельных пользователей. 
 
-В этой статье предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с помощью предоставленных примеров данных, можно приступать к работе с этой статьей. 
+В этой статье предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно представили рабочий процесс, используя предоставленные данные образца, вы готовы приступить к этой статье. 
 
 
 ## <a name="multiple-bam-files"></a>Несколько BAM-файлов
 
 ### <a name="upload-your-input-files-to-azure-storage"></a>Передача входных файлов в службу хранилища Azure
-Предположим, что у вас есть несколько BAM-файлов в качестве входных данных — *reads.bam*, *additional_reads.bam* и *yet_more_reads.bam* — и вы передали их в свою учетную запись хранения *myaccount* в Azure. У вас есть URL-адрес API и ключ доступа. Вы хотите разместить выходные данные на странице **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>** .
+Предположим, что у вас есть несколько BAM-файлов в качестве входных данных — *reads.bam*, *additional_reads.bam* и *yet_more_reads.bam* — и вы передали их в свою учетную запись хранения *myaccount* в Azure. У вас есть URL-адрес API и ключ доступа. Вы хотите разместить выходные данные на странице **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>**.
 
 
 ### <a name="submit-your-job-to-the-msgen-client"></a>Отправка задания в клиент `msgen` 
@@ -91,7 +91,7 @@ output_storage_account_container: outputs
 ## <a name="multiple-paired-fastq-files"></a>Несколько пар FASTQ-файлов
 
 ### <a name="upload-your-input-files-to-azure-storage"></a>Передача входных файлов в службу хранилища Azure
-Предположим, что у вас есть несколько пар FASTQ-файлов в качестве входных данных — *reads_1.fq.gz* и *reads_2.fq.gz*, *additional_reads_1.fq.gz* и *additional_reads_2.fq.gz*, *yet_more_reads_1.fq.gz* и *yet_more_reads_2.fq.gz*. Вы отправили их в свою учетную запись хранения *myaccount* в Azure, и у вас есть URL-адрес API и ключ доступа. Вы хотите разместить выходные данные на странице **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>** .
+Предположим, что у вас есть несколько пар FASTQ-файлов в качестве входных данных — *reads_1.fq.gz* и *reads_2.fq.gz*, *additional_reads_1.fq.gz* и *additional_reads_2.fq.gz*, *yet_more_reads_1.fq.gz* и *yet_more_reads_2.fq.gz*. Вы отправили их в свою учетную запись хранения *myaccount* в Azure, и у вас есть URL-адрес API и ключ доступа. Вы хотите разместить выходные данные на странице **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>**.
 
 
 ### <a name="submit-your-job-to-the-msgen-client"></a>Отправка задания в клиент `msgen` 
@@ -155,5 +155,5 @@ output_storage_account_container: outputs
 
 Отправьте файл `config.txt` с помощью этого вызова: `msgen submit -f config.txt`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали, как передать несколько BAM-файлов или пар FASTQ-файлов в службу хранилища Azure и как отправить рабочий процесс в службу Microsoft Genomics через клиент Python `msgen`. Дополнительные сведения об отправке рабочего процесса и других командах, которые можно использовать в службе Microsoft Genomics, см. в разделе [вопросов и ответов](frequently-asked-questions-genomics.md). 

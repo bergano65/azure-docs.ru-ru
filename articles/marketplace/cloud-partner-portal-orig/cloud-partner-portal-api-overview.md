@@ -1,19 +1,18 @@
 ---
-title: Справочник по Портал Cloud Partner API | Azure Marketplace
+title: Ссылка на API портала облачных партнеров (ru) Лазурный рынок
 description: Описание предварительных требований и список операций Marketplace API.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: b6591e1780d03cbfaff70fbd19ec3dfd274fae79
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 296c667876807bdd05a6281de461df76207b5490
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819619"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80288552"
 ---
 <a name="cloud-partner-portal-api-reference"></a>Справочные материалы по API портала Cloud Partner
 ==================================
@@ -44,7 +43,7 @@ REST API портала Cloud Partner позволяют осуществлят�
 -   [Получение всех предложений](./cloud-partner-portal-api-retrieve-offers.md)
 -   [Получение определенного предложения](./cloud-partner-portal-api-retrieve-specific-offer.md)
 -   [Получение состояния предложения](./cloud-partner-portal-api-retrieve-offer-status.md)
--   [Создание предложения](./cloud-partner-portal-api-creating-offer.md)
+-   [Создать предложение](./cloud-partner-portal-api-creating-offer.md)
 -   [Публикация предложения](./cloud-partner-portal-api-publish-offer.md)
 
 ### <a name="operations"></a>Операции
@@ -54,7 +53,7 @@ REST API портала Cloud Partner позволяют осуществлят�
 
 ### <a name="publish-an-app"></a>Публикация приложения
 
--   [Запуск](./cloud-partner-portal-api-go-live.md)
+-   [Перейти жить](./cloud-partner-portal-api-go-live.md)
 
 ### <a name="other-tasks"></a>Другие задачи
 

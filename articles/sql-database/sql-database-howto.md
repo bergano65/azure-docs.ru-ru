@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 11/14/2019
 ms.openlocfilehash: c3f7b33e4b42b08334cfb687024985c878dc3713
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79209423"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Использование Базы данных SQL Azure
@@ -33,18 +33,18 @@ ms.locfileid: "79209423"
 ### <a name="data-sync"></a>Синхронизация данных
 
 - [Синхронизация данных SQL](sql-database-sync-data.md)
-- [Агент синхронизации данных](sql-database-data-sync-agent.md)
-- [Репликация изменений схемы](sql-database-update-sync-schema.md)
+- [Data Sync Agent](sql-database-data-sync-agent.md)
+- [Повторите изменения схемы](sql-database-update-sync-schema.md)
 - [Отслеживание с помощью OMS](sql-database-sync-monitor-oms.md)
-- [Рекомендации по синхронизации данных](sql-database-best-practices-data-sync.md)
-- [Устранение ошибок синхронизации данных](sql-database-troubleshoot-data-sync.md)
+- [Рекомендации по Синхронизации данных](sql-database-best-practices-data-sync.md)
+- [Устранение ошибок Синхронизации данных](sql-database-troubleshoot-data-sync.md)
 
 ## <a name="monitoring-and-tuning"></a>Мониторинг и настройка
 
 - [Настройка вручную](sql-database-performance-guidance.md)
 - [Использование динамических административных представлений для мониторинга производительности](sql-database-monitoring-with-dmvs.md)
 - [Использование хранилища запросов для мониторинга производительности](https://docs.microsoft.com/sql/relational-databases/performance/best-practice-with-the-query-store#Insight)
-- [Устранение проблем производительности с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md)
+- [Устранение проблем с производительностью с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md)
 - [Использование журнала диагностики Intelligent Insights](sql-database-intelligent-insights-use-diagnostics-log.md)
 - [Мониторинг используемого пространства в хранилище выполняющейся в памяти OLTP](sql-database-in-memory-oltp-monitoring.md)
 
@@ -61,17 +61,17 @@ ms.locfileid: "79209423"
 - [Многофакторная проверка подлинности с помощью AAD](sql-database-ssms-mfa-authentication.md)
 - [Настройка многофакторной проверки подлинности](sql-database-ssms-mfa-authentication-configure.md)
 - [Настройка политики временного хранения](sql-database-temporal-tables-retention-policy.md)
-- [Настройка TDE и BYOK](transparent-data-encryption-byok-azure-sql-configure.md)
-- [Смена ключей TDE BYOK](transparent-data-encryption-byok-azure-sql-key-rotation.md)
+- [Настройка BYOK для TDE](transparent-data-encryption-byok-azure-sql-configure.md)
+- [Смена ключей BYOK для TDE](transparent-data-encryption-byok-azure-sql-key-rotation.md)
 - [Удаление предохранителя TDE](transparent-data-encryption-byok-azure-sql-remove-tde-protector.md)
 - [Настройка In-Memory OLTP](sql-database-in-memory-oltp-migration.md)
 - [Настройка службы автоматизации Azure](sql-database-manage-automation.md)
 
 ## <a name="develop-applications"></a>Разработка приложений
 
-- [Соединение](sql-database-libraries.md)
+- [Подключения](sql-database-libraries.md)
 - [Использование соединителя Spark](sql-database-spark-connector.md)
-- [Аутентификация приложения](sql-database-client-id-keys.md)
+- [Приложение authenticate](sql-database-client-id-keys.md)
 - [Использование пакетной обработки для лучшей производительности](sql-database-use-batching-to-improve-performance.md)
 - [Руководство по настройке подключений](sql-database-connectivity-issues.md)
 - [Псевдонимы DNS](dns-alias-overview.md)
@@ -84,7 +84,7 @@ ms.locfileid: "79209423"
 
 - [Разработка для аварийного восстановления](sql-database-designing-cloud-solutions-for-disaster-recovery.md)
 - [Разработка для эластичных пулов](sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md)
-- [Разработка для обновлений приложений](sql-database-manage-application-rolling-upgrade.md)
+- [Разработка для обновления приложений](sql-database-manage-application-rolling-upgrade.md)
 
 ### <a name="design-multi-tenant-saas-applications"></a>Разработка мультитенантных приложений SaaS
 

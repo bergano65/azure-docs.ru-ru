@@ -1,5 +1,5 @@
 ---
-title: Сквозное выполнение заданий с помощью шаблонов — Пакетная служба Azure
+title: Запуск заданий сквозной с помощью шаблонов - Azure Batch
 description: Используя только команды CLI, можно создать пул, отправить входные данные, создать задания и связанные задачи и загрузить результаты выходных данных.
 services: batch
 author: LauraBrenner
@@ -12,10 +12,10 @@ ms.date: 12/07/2018
 ms.author: labrenne
 ms.custom: seodec18
 ms.openlocfilehash: c7459c4dc700f034feafbf133b831a52b9233d11
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77020171"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов
@@ -143,7 +143,7 @@ az extension add --name azure-batch-cli-extensions
 az batch pool create --template pool-ffmpeg.json
 ```
 
-От CLI вы получите запрос ввести значения для параметров `poolId` и `nodeCount`. Можно также указать параметры в файле JSON. Пример.
+От CLI вы получите запрос ввести значения для параметров `poolId` и `nodeCount`. Можно также указать параметры в файле JSON. Пример:
 
 ```json
 {
@@ -260,7 +260,7 @@ az batch job create --template job-ffmpeg.json
 
 Чтобы отправить шаблон, сделайте следующее:
 
-1. В Batch Explorer выберите **Коллекция** > **Локальные шаблоны**.
+1. В Batch Explorer выберите**локальные шаблоны** **Gallery.** > 
 
 2. Выберите или перетащите шаблон задания или локального пула.
 

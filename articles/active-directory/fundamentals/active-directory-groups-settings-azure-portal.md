@@ -14,10 +14,10 @@ ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dc06abca08b2522ac57552e85f7c1bac3ef854af
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68561881"
 ---
 # <a name="edit-your-group-information-using-azure-active-directory"></a>Изменение сведений о группе с помощью Azure Active Directory
@@ -39,23 +39,23 @@ ms.locfileid: "68561881"
 
 4. Выберите группу **Политика управления мобильными устройствами — Запад**, а затем выберите **Свойства** в разделе **Управление**.
 
-    ![Страница "Обзор группы" с выделенным параметром-членом и сведениями](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
+    ![Страница обзор группы, с опцией участника и информацией, выделенной](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
 
 5. Измените **Общие параметры** по необходимости, например:
 
     ![Параметры свойств для группы](media/active-directory-groups-settings-azure-portal/group-properties-settings.png)
 
-    - **Имя группы.** Измените существующее имя группы.
+    - **Название группы.** Измените существующее имя группы.
     
-    - **Описание группы.** Измените существующее описание группы.
+    - **Описание группы**. Измените существующее описание группы.
 
     - **Тип группы.** Тип группы нельзя изменить после создания. Чтобы изменить **тип группы**, необходимо удалить группу и создать новую.
     
-    - **Тип членства.** Измените тип членства. Дополнительные сведения о различных типах членства см. в статье [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](active-directory-groups-create-azure-portal.md).
+    - **Тип членства.** Измените тип членства. Для получения дополнительной информации о различных доступных типах участников [см. Как: Создать базовую группу и добавить участников с помощью портала Active Directory Azure.](active-directory-groups-create-azure-portal.md)
     
     - **Идентификатор объекта.** Невозможно изменить идентификатор объекта, но можно скопировать его и использовать в командах PowerShell для группы. Дополнительные сведения об использовании командлетов PowerShell см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 - [Просмотр групп и участников](active-directory-groups-view-azure-portal.md)

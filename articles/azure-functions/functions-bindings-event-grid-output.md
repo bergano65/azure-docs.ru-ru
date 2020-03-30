@@ -1,35 +1,35 @@
 ---
-title: Выходная привязка сетки событий Azure для функций Azure
-description: Узнайте, как отправить событие службы "Сетка событий" в функциях Azure.
+title: Привязка выходной сетки событий Azure для функций Azure
+description: Научитесь отправлять событие Event Grid в Azure Functions.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: fasttrack-edit
 ms.openlocfilehash: e7a2611312ffc33703dd5cc9d0a2d7142ddb0532
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77368952"
 ---
-# <a name="azure-event-grid-output-binding-for-azure-functions"></a>Выходная привязка сетки событий Azure для функций Azure
+# <a name="azure-event-grid-output-binding-for-azure-functions"></a>Привязка выходной сетки событий Azure для функций Azure
 
-Используйте выходную привязку сетки событий для записи событий в пользовательский раздел. Необходимо иметь допустимый [ключ доступа для пользовательского раздела](../event-grid/security-authentication.md#custom-topic-publishing).
+Используйте привязку вывода Event Grid для записи событий на пользовательскую тему. Вы должны иметь действительный [ключ доступа для пользовательской темы.](../event-grid/security-authentication.md#custom-topic-publishing)
 
-Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](./functions-bindings-event-grid.md).
+Для получения информации о настройке и деталях конфигурации, [см.](./functions-bindings-event-grid.md)
 
 > [!NOTE]
-> Выходная привязка сетки событий не поддерживает подписанные URL-адрес (токены SAS). Необходимо использовать ключ доступа раздела.
+> Привязка к выходу Event Grid не поддерживает общие подписи доступа (токены SAS). Вы должны использовать ключ доступа темы.
 
 > [!IMPORTANT]
-> Выходная привязка сетки событий доступна только для функций 2. x и более поздних версий.
+> Привязка выходной сетки событий доступна только для функций 2.x и выше.
 
 ## <a name="example"></a>Пример
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-В следующем примере показана [ C# функция](functions-dotnet-class-library.md) , которая записывает сообщение в пользовательский раздел сетки событий, используя возвращаемое значение метода в качестве выходных данных:
+В следующем примере [показана функция C-,](functions-dotnet-class-library.md) которая записывает сообщение на пользовательскую тему Event Grid, используя значение возврата метода в качестве вывода:
 
 ```csharp
 [FunctionName("EventGridOutput")]
@@ -40,7 +40,7 @@ public static EventGridEvent Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTim
 }
 ```
 
-В следующем примере показано, как использовать интерфейс `IAsyncCollector` для отправки пакета сообщений.
+В следующем примере показано, как использовать `IAsyncCollector` интерфейс для отправки пакета сообщений.
 
 ```csharp
 [FunctionName("EventGridAsyncOutput")]
@@ -57,9 +57,9 @@ public static async Task Run(
 }
 ```
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-В следующем примере показана привязка данных сетки событий к выходной привязке в файле *Function. JSON* .
+В следующем примере показаны данные связывания выходной сетки событий в файле *function.json.*
 
 ```json
 {
@@ -71,7 +71,7 @@ public static async Task Run(
 }
 ```
 
-Ниже приведен C# код сценария, который создает одно событие:
+Вот код скрипта C', который создает одно событие:
 
 ```cs
 #r "Microsoft.Azure.EventGrid"
@@ -85,7 +85,7 @@ public static void Run(TimerInfo myTimer, out EventGridEvent outputEvent, ILogge
 }
 ```
 
-Ниже приведен C# код сценария, создающий несколько событий:
+Вот код скрипта C', который создает несколько событий:
 
 ```cs
 #r "Microsoft.Azure.EventGrid"
@@ -100,9 +100,9 @@ public static void Run(TimerInfo myTimer, ICollector<EventGridEvent> outputEvent
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-В следующем примере показана привязка данных сетки событий к выходной привязке в файле *Function. JSON* .
+В следующем примере показаны данные связывания выходной сетки событий в файле *function.json.*
 
 ```json
 {
@@ -114,7 +114,7 @@ public static void Run(TimerInfo myTimer, ICollector<EventGridEvent> outputEvent
 }
 ```
 
-Вот код JavaScript, создающий одно событие:
+Вот код JavaScript, который создает одно событие:
 
 ```javascript
 module.exports = async function (context, myTimer) {
@@ -132,7 +132,7 @@ module.exports = async function (context, myTimer) {
 };
 ```
 
-Ниже приведен код JavaScript, создающий несколько событий:
+Вот код JavaScript, который создает несколько событий:
 
 ```javascript
 module.exports = function(context) {
@@ -160,23 +160,23 @@ module.exports = function(context) {
 };
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-Выходная привязка сетки событий недоступна для Python.
+Привязка вывода Event Grid недоступна для Python.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Выходная привязка сетки событий недоступна для Java.
+Привязка вывода Event Grid недоступна для Java.
 
 ---
 
-## <a name="attributes-and-annotations"></a>Атрибуты и заметки
+## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-Для [ C# библиотек классов](functions-dotnet-class-library.md)используйте атрибут [евентгридаттрибуте](https://github.com/Azure/azure-functions-eventgrid-extension/blob/dev/src/EventGridExtension/OutputBinding/EventGridAttribute.cs) .
+Для [библиотек класса СЗ](functions-dotnet-class-library.md)используйте атрибут [EventGridAttribute.](https://github.com/Azure/azure-functions-eventgrid-extension/blob/dev/src/EventGridExtension/OutputBinding/EventGridAttribute.cs)
 
-Конструктор атрибута принимает имя параметра приложения, которое содержит имя пользовательского раздела, и имя параметра приложения, содержащего ключ раздела. Дополнительные сведения об этих параметрах см. в разделе [Привязки концентраторов событий функций Azure](#configuration). Ниже приведен пример атрибута `EventGrid`.
+Конструктор атрибута получает название настройки приложения, содержащей название пользовательской темы, и название настройки приложения, содержащей ключ темы. Дополнительные сведения об этих параметрах см. в разделе [Привязки концентраторов событий функций Azure](#configuration). Ниже приведен пример атрибута `EventGrid`.
 
 ```csharp
 [FunctionName("EventGridOutput")]
@@ -187,67 +187,67 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 }
 ```
 
-Полный пример см. в разделе [Пример](#example).
+Для полного примера [см.](#example)
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-Выходная привязка сетки событий недоступна для Python.
+Привязка вывода Event Grid недоступна для Python.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Выходная привязка сетки событий недоступна для Java.
+Привязка вывода Event Grid недоступна для Java.
 
 ---
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `EventGrid`.
+В следующей таблице объясняется свойства связывающей конфигурации, `EventGrid` установленные в файле *function.json* и атрибуте.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Необходимо задать значение "eventGrid". |
+|**тип** | Недоступно | Должен быть установлен на "eventGrid". |
 |**direction** | Недоступно | Для этого свойства необходимо задать значение out. Этот параметр задается автоматически при создании привязки на портале Azure. |
 |**name** | Недоступно | Имя переменной, используемое в коде функции, которая представляет событие. |
-|**топицендпоинтури** |**топицендпоинтури** | Имя параметра приложения, содержащего универсальный код ресурса (URI) для пользовательского раздела, например `MyTopicEndpointUri`. |
-|**топиккэйсеттинг** |**топиккэйсеттинг** | Имя параметра приложения, содержащего ключ доступа для пользовательского раздела. |
+|**topicEndpointUri** |**TopicEndpointuri** | Название параметра приложения, содержащего URI для пользовательской темы, `MyTopicEndpointUri`например. |
+|**topicKeySetting** |**ТемаКейКснастройка** | Название параметра приложения, содержащего ключ доступа к пользовательской теме. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 > [!IMPORTANT]
-> Убедитесь, что в качестве значения свойства конфигурации `TopicEndpointUri` задано имя параметра приложения, содержащего универсальный код ресурса (URI) пользовательского раздела. Не указывайте URI пользовательского раздела непосредственно в этом свойстве.
+> Убедитесь, что вы `TopicEndpointUri` установите значение свойства конфигурации к названию настройки приложения, содержащей URI пользовательской темы. Не указывая URI пользовательской темы непосредственно в этом свойстве.
 
 ## <a name="usage"></a>Использование
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-Отправка сообщений с помощью параметра метода, например `out EventGridEvent paramName`. Для записи нескольких сообщений можно использовать `ICollector<EventGridEvent>` или `IAsyncCollector<EventGridEvent>` вместо `out EventGridEvent`.
+Отправка сообщений с помощью параметра метода, такого как `out EventGridEvent paramName`. Для записи нескольких сообщений можно использовать `ICollector<EventGridEvent>` или `IAsyncCollector<EventGridEvent>` вместо `out EventGridEvent`.
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Отправка сообщений с помощью параметра метода, например `out EventGridEvent paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<EventGridEvent>` или `IAsyncCollector<EventGridEvent>` вместо `out EventGridEvent`.
+Отправка сообщений с помощью параметра метода, такого как `out EventGridEvent paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<EventGridEvent>` или `IAsyncCollector<EventGridEvent>` вместо `out EventGridEvent`.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Получите доступ к выходному событию с помощью `context.bindings.<name>`, где `<name>` — это значение, указанное в свойстве `name` файла *Function. JSON*.
+Доступ к событию `context.bindings.<name>` `<name>` вывода, используя, `name` где значение, указанное в свойстве *function.json*.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-Выходная привязка сетки событий недоступна для Python.
+Привязка вывода Event Grid недоступна для Python.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Выходная привязка сетки событий недоступна для Java.
+Привязка вывода Event Grid недоступна для Java.
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отправка события сетки событий](./functions-bindings-event-grid-trigger.md)

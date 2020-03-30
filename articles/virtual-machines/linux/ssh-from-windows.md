@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
 ms.openlocfilehash: e01fb23bbf1720f7d8df9c269373c1b8dc3ec75c
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74034805"
 ---
 # <a name="how-to-use-ssh-keys-with-windows-on-azure"></a>Как использовать ключи SSH с Windows в Azure
@@ -30,24 +30,24 @@ ms.locfileid: "74034805"
 [!INCLUDE [virtual-machines-common-ssh-support](../../../includes/virtual-machines-common-ssh-support.md)]
 
 ## <a name="windows-packages-and-ssh-clients"></a>Пакеты Windows и SSH-клиенты
-Пользователи могут подключаться к виртуальным машинам Linux в Azure и управлять ими с помощью *SSH-клиента*. Компьютеры под управлением Linux или macOS обычно используют набор команд SSH для создания ключей SSH и управления ими, а также для установления SSH-подключений. 
+Вы подключаетесь к Linux VMs и управляете им в Azure с помощью *клиента SSH.* Компьютеры под управлением Linux или macOS обычно используют набор команд SSH для создания ключей SSH и управления ими, а также для установления SSH-подключений. 
 
-На компьютерах Windows не всегда установлены сравнимые команды SSH. Последние версии Windows 10 содержат [команды клиента OpenSSH](https://blogs.msdn.microsoft.com/commandline/2018/03/07/windows10v1803/) для создания и управления ключами SSH и установления SSH-подключений из командной строки. Последние версии Windows 10 с [подсистемой Windows для Linux](https://docs.microsoft.com/windows/wsl/about) позволяют запускать и использовать такие служебные программы, как SSH-клиент, в собственной оболочке Bash. 
+На компьютерах Windows не всегда установлены сравнимые команды SSH. Последние версии Windows 10 предоставляют [клиентские команды OpenSSH](https://blogs.msdn.microsoft.com/commandline/2018/03/07/windows10v1803/) для создания и управления sSH-ключами и создания SSH-соединений из командного запроса. Последние версии Windows 10 с [подсистемой Windows для Linux](https://docs.microsoft.com/windows/wsl/about) позволяют запускать и использовать такие служебные программы, как SSH-клиент, в собственной оболочке Bash. 
 
 Другие общераспространенные SSH-клиенты для Windows, доступные для установки локально, входят в состав следующих пакетов:
 
-* [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/);
-* [Git для Windows](https://git-for-windows.github.io/);
+* [PuTTY;](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
+* [Git для Windows](https://git-for-windows.github.io/)
 * [MobaXterm](https://mobaxterm.mobatek.net/)
 * [Cygwin](https://cygwin.com/)
 
 Вы можете также использовать служебные программы SSH, доступные в Bash в [Azure Cloud Shell](../../cloud-shell/overview.md). 
 
-* Перейдите к Cloud Shell в веб-браузере по адресу [https://shell.azure.com](https://shell.azure.com) или с помощью [портала Azure](https://portal.azure.com). 
+* Доступ к облачной оболочке в веб-браузере на [https://shell.azure.com](https://shell.azure.com) портале Azure или на [ней.](https://portal.azure.com) 
 * Чтобы использовать окно терминала для Cloud Shell в Visual Studio Code, установите [расширение для учетных записей Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 ## <a name="create-an-ssh-key-pair"></a>Создание пары ключей SSH
-В этом разделе ниже описано два способа создания пары ключей SSH в Windows. Вы можете использовать команду оболочки (`ssh-keygen`) или средство графического пользовательского инструмента (PuTTYgen). Также обратите внимание, что при использовании PowerShell для создания ключа отправьте открытый ключ в формате SSH. com (СЕКШ). При использовании интерфейса командной строки перед отправкой преобразуйте ключ в формат OpenSSH. 
+В этом разделе ниже описано два способа создания пары ключей SSH в Windows. Вы можете использовать команду оболочки (`ssh-keygen`) или средство графического пользовательского инструмента (PuTTYgen). Также обратите внимание, при использовании Powershell для создания ключа, загрузить открытый ключ как ssh.com (SECSH) формат. При использовании CLI преобразуйте ключ в формат OpenSSH перед загрузкой. 
 
 ### <a name="create-ssh-keys-with-ssh-keygen"></a>Создание ключей SSH с помощью ssh-keygen
 
@@ -67,7 +67,7 @@ ssh-keygen -t rsa -b 2048
 
 1. Запустите PuTTYgen.
 
-2. Щелкните **Generate** (Создать). По умолчанию PuTTYgen создает 2048-разрядный ключ SSH-2 RSA.
+2. Щелкните **Создать**. По умолчанию PuTTYgen создает 2048-разрядный ключ SSH-2 RSA.
 
 4. Переместите указатель мыши на пустую область, чтобы обеспечить случайность ключа.
 
@@ -81,7 +81,7 @@ ssh-keygen -t rsa -b 2048
 
     ![Сохранение файла закрытого ключа PuTTY](./media/ssh-from-windows/save-ppk-file.png)
 
-    Если вы хотите сохранить закрытый ключ в формате OpenSSH, используемом многими клиентами SSH, щелкните **Conversions** (Преобразование)  > **Export OpenSSH key** (Экспортировать ключ OpenSSH).
+    Если вы хотите сохранить закрытый ключ в формате OpenSSH, формат частного ключа, используемый многими клиентами SSH, выберите ключ **Конверсии** > **Export OpenSSH.**
 
 ## <a name="provide-an-ssh-public-key-when-deploying-a-vm"></a>Предоставление открытого ключа SSH при развертывании виртуальной машины
 
@@ -117,13 +117,13 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
     ![Открытие нового подключения PuTTY](./media/ssh-from-windows/putty-new-connection.png)
 
-3. Выберите категорию **Подключение** > **SSH** > **Авторизация**. Укажите закрытый ключ PuTTY (PPK-файл).
+3. Выберите категорию **Connection** > **SSH** > **Auth.** Укажите закрытый ключ PuTTY (PPK-файл).
 
     ![Выбор закрытого ключа PuTTY для аутентификации](./media/ssh-from-windows/putty-auth-dialog.png)
 
 4. Щелкните **Open** (Открыть) для подключения к виртуальной машине.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробные инструкции, параметры и дополнительные примеры работы с ключами SSH приведены в статье [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 

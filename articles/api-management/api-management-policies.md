@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
 ms.openlocfilehash: 2b6e056fbfb134f0b1218b4281b9f971a0e24202
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71219471"
 ---
 # <a name="api-management-policies"></a>Политики управления API
@@ -24,9 +24,9 @@ ms.locfileid: "71219471"
   
  Политики представляют собой одну из эффективных функций системы, позволяющих издателю изменять поведение интерфейса API путем его настройки. Политика — это коллекция операторов, которые выполняются последовательно по запросу интерфейса API или при получении из него ответа. К часто используемым операторам относятся преобразование формата из XML в JSON, а также ограничение скорости вызовов, позволяющее ограничивать количество входящих вызовов от разработчика. Также существует много готовых политик.  
   
- Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (включая [управление потоками](api-management-advanced-policies.md#choose) и [настройку переменной](api-management-advanced-policies.md#set-variable)) основаны на выражениях политики. Дополнительную информацию см. в документации по [расширенным политикам](api-management-advanced-policies.md#AdvancedPolicies) и [выражениям политики](api-management-policy-expressions.md).  
+ Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (в том числе [Поток управления](api-management-advanced-policies.md#choose) и [Задание переменной](api-management-advanced-policies.md#set-variable)) основаны на выражениях политики. Для получения дополнительной [информации](api-management-advanced-policies.md#AdvancedPolicies) [Policy expressions](api-management-policy-expressions.md)см.  
   
-##  <a name="ProxyPolicies"></a> Политики  
+##  <a name="policies"></a><a name="ProxyPolicies"></a>Политики  
   
 -   [Политики ограничения доступа](api-management-access-restriction-policies.md#AccessRestrictionPolicies)  
     -   [Проверка заголовка HTTP](api-management-access-restriction-policies.md#CheckHTTPHeader) – обеспечивает принудительный ввод заголовка HTTP и/или его значения.  
@@ -40,22 +40,22 @@ ms.locfileid: "71219471"
     -   [Поток управления](api-management-advanced-policies.md#choose) — условно применяет правила политики на основе вычисления логических выражений.  
     -   [Перенаправляющий запрос](api-management-advanced-policies.md#ForwardRequest) — перенаправляет запрос в серверную службу.
     -   [Ограничения параллелизма](api-management-advanced-policies.md#LimitConcurrency) не позволяет, чтобы заключенные политики одновременно выполнялись запросами, количество которых выше указанного.
-    -   [Регистрация в концентраторе событий](api-management-advanced-policies.md#log-to-eventhub) — отправляет сообщения в определенном формате объекту, который указан средством ведения журнала.
+    -   [Регистрация в концентраторе событий](api-management-advanced-policies.md#log-to-eventhub) — отправляет сообщения в определенном формате объекту, который указан сущностью Logger.
     -   [Макетирование ответа](api-management-advanced-policies.md#mock-response) — прекращает выполнение конвейера и возвращает макетированный ответ непосредственно вызывающему объекту.
     -   [Повторить](api-management-advanced-policies.md#Retry) — повторяет выполнение инструкций встраиваемой политики, если не выполнено условие и до тех пор пока оно не будет выполнено. Выполнение будет повторяться через определенные промежутки времени и до указанного количества повторных попыток.  
     -   [Возврат ответа](api-management-advanced-policies.md#ReturnResponse) — прекращает выполнение конвейера и возвращает указанный ответ непосредственно вызывающему объекту.  
     -   [Отправка одностороннего запроса](api-management-advanced-policies.md#SendOneWayRequest) — отправляет запрос на указанный URL-адрес и не ожидает ответа.  
     -   [Отправка запроса](api-management-advanced-policies.md#SendRequest) — отправляет запрос на указанный URL-адрес.
     -   [Установка прокси-сервера HTTP](api-management-advanced-policies.md#SetHttpProxy) — позволяет маршрутизировать перенаправленные запросы через прокси-сервер HTTP.
-    -   [Задание переменной](api-management-advanced-policies.md#set-variable) — сохраняет значение в именованной переменной контекста для последующего использования.  
+    -   [Установка переменной](api-management-advanced-policies.md#set-variable) — сохраняет значение в именованной переменной контекста для последующего использования.  
     -   [Установка метода запроса](api-management-advanced-policies.md#SetRequestMethod) — позволяет изменить метод HTTP для запроса.  
     -   [Установка кода состояния](api-management-advanced-policies.md#SetStatus) — меняет код состояния HTTP на указанное значение.  
-    -   [Трассировка](api-management-advanced-policies.md#Trace) . Добавляет пользовательские трассировки в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) , Application Insights телеметрии и журналы диагностики.  
-    -   [Ожидание](api-management-advanced-policies.md#Wait) — ожидает завершения вложенных политик [отправки запроса](api-management-advanced-policies.md#SendRequest), [получения значения из кэша](api-management-caching-policies.md#GetFromCacheByKey) или [управления потоком](api-management-advanced-policies.md#choose) перед продолжением.  
+    -   [Trace](api-management-advanced-policies.md#Trace) - Добавляет пользовательские следы в выход [API Inspector,](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) телеметрии Application Insights и диагностические журналы.  
+    -   [Подождите](api-management-advanced-policies.md#Wait) - Ожидается прилагаемый [запрос Отправить,](api-management-advanced-policies.md#SendRequest) [Получить значение из кэша,](api-management-caching-policies.md#GetFromCacheByKey)или [политики потока управления](api-management-advanced-policies.md#choose) для завершения перед началом.  
 -   [Политики аутентификации](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [Обычная проверка подлинности](api-management-authentication-policies.md#Basic) – обычная проверка подлинности внутренней службы.  
     -   [Аутентификация с помощью сертификата клиента](api-management-authentication-policies.md#ClientCertificate) – аутентификация внутренней службы с помощью сертификатов клиентов.  
-    -   [Аутентификация с помощью управляемого удостоверения](api-management-authentication-policies.md#ManagedIdentity) — аутентификация в серверной службе с помощью [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
+    -   [Authenticate с управляемой идентификацией](api-management-authentication-policies.md#ManagedIdentity) - Authenticate с бэкэнд-сервисом с использованием [управляемой идентификации.](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)  
 -   [Политики кэширования](api-management-caching-policies.md#CachingPolicies)  
     -   [Получение из кэша](api-management-caching-policies.md#GetFromCache) – выполнение операции поиска в кэше и возврат допустимого кэшированного ответа при его наличии.  
     -   [Сохранение в кэше](api-management-caching-policies.md#StoreToCache) – помещение в кэш ответа в соответствии с заданной конфигурацией управления кэшем.  
@@ -67,20 +67,20 @@ ms.locfileid: "71219471"
     -   [CORS](api-management-cross-domain-policies.md#CORS) – добавляет поддержку общего доступа к ресурсам независимо от источника (CORS) для операции или API, чтобы разрешить кросс-доменные вызовы от клиентов на основе браузера.  
     -   [JSONP](api-management-cross-domain-policies.md#JSONP) – добавляет поддержку JSON с заполнением (JSONP) для операции или API, чтобы разрешить кросс-доменные вызовы из браузерных клиентов JavaScript.  
 -   [Политики преобразования](api-management-transformation-policies.md#TransformationPolicies)  
-    -   [Преобразование JSON в XML](api-management-transformation-policies.md#ConvertJSONtoXML) – преобразует текст запроса или ответа в формате JSON в формат XML.  
-    -   [Преобразование XML в JSON](api-management-transformation-policies.md#ConvertXMLtoJSON) – преобразует текст запроса или ответа в формате XML в формат JSON.  
-    -   [Поиск и замена строки в тексте](api-management-transformation-policies.md#Findandreplacestringinbody) – отыскивает подстроку запроса или ответа и заменяет ее на другую подстроку.  
+    -   [Преобразование JSON в XML](api-management-transformation-policies.md#ConvertJSONtoXML) — преобразует текст запроса или ответа в формате JSON в формат XML.  
+    -   [Преобразование XML в JSON](api-management-transformation-policies.md#ConvertXMLtoJSON) — преобразует текст запроса или ответа в формате XML в формат JSON.  
+    -   [Поиск и замена строки в тексте](api-management-transformation-policies.md#Findandreplacestringinbody) — позволяет найти подстроку запроса или ответа и заменить ее на другую подстроку.  
     -   [Маскировка URL-адресов в содержимом](api-management-transformation-policies.md#MaskURLSContent) — перезаписывает (маскирует) ссылки в тексте ответа так, чтобы каждая из них указывала на эквивалентную ссылку через шлюз.  
     -   [Задание внутренней службы](api-management-transformation-policies.md#SetBackendService) – изменяет внутреннюю службу для входящего запроса.  
     -   [Задание текста](api-management-transformation-policies.md#SetBody) – задает текст сообщения для входящих и исходящих запросов.  
     -   [Установка HTTP-заголовка](api-management-transformation-policies.md#SetHTTPheader) -– назначает значение существующему заголовку ответа и/или запроса или добавляет новый заголовок ответа и/или запроса.  
     -   [Настройка параметра строки запроса](api-management-transformation-policies.md#SetQueryStringParameter) - добавляет, заменяет значение или удаляет параметр строки запроса.  
-    -   [Перезапись URL-адреса](api-management-transformation-policies.md#RewriteURL) – преобразует URL-адрес запроса из его общедоступной формы в форму, ожидаемую веб-службой.  
-    -   [Преобразование XML с помощью XSLT](api-management-transformation-policies.md#XSLTransform) — применяет преобразование данных в формате XSL в формат XML в тексте запроса или ответа.  
+    -   [Перезапись URL-адреса](api-management-transformation-policies.md#RewriteURL) — преобразовывает URL-адрес запроса из его общедоступной формы в форму, ожидаемую веб-службой.  
+    -   [Преобразование XML с помощью XSLT](api-management-transformation-policies.md#XSLTransform) — применяет преобразование данных в формате XSL в формат XML в тексте запроса или ответа.  
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Политики в управлении API](api-management-howto-policies.md)

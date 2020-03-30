@@ -16,17 +16,17 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 48df954f680c6774b0aa189453615156f4f0b4a8
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77063277"
 ---
 # <a name="tutorial-configure-salesforce-sandbox-for-automatic-user-provisioning"></a>Руководство по настройке Salesforce Sandbox для автоматической подготовки пользователей
 
 Цель этого учебника — показать, как в песочнице Salesforce и Azure AD необходимо выполнять автоматическую подготовку и отмену подготовки учетных записей пользователей из Azure AD в песочницу Salesforce.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -60,13 +60,13 @@ ms.locfileid: "77063277"
 
 В этом разделе показано, как включить подготовку учетных записей пользователей Active Directory для песочницы Salesforce.
 
-1. На [портале Azure](https://portal.azure.com) перейдите в раздел **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. На [портале Azure](https://portal.azure.com)посетите раздел **Azure Active Directory > Enterprise Apps > всех приложений.**
 
 1. Если в песочнице Salesforce уже настроен единый вход, найдите свой экземпляр песочницы Salesforce с помощью поля поиска. В противном случае щелкните **Добавить** и выполните поиск **песочницы Salesforce** в коллекции приложений. Выберите песочницу Salesforce в результатах поиска и добавьте ее в список приложений.
 
 1. Выберите экземпляр песочницы Salesforce, а затем перейдите на вкладку **Подготовка**.
 
-1. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+1. Установите **режим обеспечения** **автоматического.**
 
     ![Подготовка](./media/salesforce-sandbox-provisioning-tutorial/provisioning.png)
 
@@ -96,7 +96,7 @@ ms.locfileid: "77063277"
 
 1. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок.
 
-1. Нажмите кнопку **Сохранить**.  
+1. Нажмите **Сохранить.**  
     
 1.  В разделе сопоставления выберите **Synchronize Azure Active Directory Users to Salesforce Sandbox** (Синхронизировать пользователей Azure Active Directory с песочницей Salesforce).
 
@@ -104,7 +104,7 @@ ms.locfileid: "77063277"
 
 1. Чтобы включить службу подготовки Azure AD для песочницы Salesforce, измените значение параметра **Provisioning Status** (Статус подготовки) на **On** (Включено) в разделе "Настройки".
 
-1. Нажмите кнопку **Сохранить**.
+1. Нажмите **Сохранить.**
 
 После этого начнется начальная синхронизация всех пользователей и групп, назначенные в песочнице Salesforce в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий по подготовке, в которых зафиксированы все действия, выполняемые в песочнице Salesforce службой подготовки.
 
@@ -113,5 +113,5 @@ ms.locfileid: "77063277"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Настройка единого входа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-salesforce-sandbox-tutorial)
+* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
+* [Настройка единого ввоза](https://docs.microsoft.com/azure/active-directory/active-directory-saas-salesforce-sandbox-tutorial)

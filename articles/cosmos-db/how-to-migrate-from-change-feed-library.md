@@ -1,54 +1,54 @@
 ---
-title: Миграция из библиотеки обработчика веб-канала изменений в пакет SDK для .NET v3 Azure Cosmos DB
-description: Узнайте, как перенести приложение из использования библиотеки обработчика веб-канала изменений в Azure Cosmos DB SDK v3.
+title: Миграция из библиотеки процессоров из изменений в Azure Cosmos DB .NET V3 SDK
+description: Узнайте, как перенести приложение с использования библиотеки процессоров изменений в Azure Cosmos DB SDK V3
 author: ealsur
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/17/2019
 ms.author: maquaran
-ms.openlocfilehash: f651beb181430f65d0b4c86f285e74958f8366eb
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 9570a8512e3437b12ecce2ef0c708a74a8806482
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77588889"
 ---
-# <a name="migrate-from-the-change-feed-processor-library-to-the-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки обработчика веб-канала изменений в пакет SDK для .NET v3 Azure Cosmos DB
+# <a name="migrate-from-the-change-feed-processor-library-to-the-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки процессоров из изменений в Azure Cosmos DB .NET V3 SDK
 
-В этой статье описываются шаги, необходимые для переноса кода существующего приложения, использующего [библиотеку обработчика веб-канала изменений](https://github.com/Azure/azure-documentdb-changefeedprocessor-dotnet) , в функцию [веб-канала изменений](change-feed.md) в последней версии пакета SDK для .NET (также называется пакетом SDK для .NET v3).
+В этой статье описаны необходимые шаги для переноса кода существующего приложения, используюшего [библиотеку процессоров изменения в](https://github.com/Azure/azure-documentdb-changefeedprocessor-dotnet) функцию [подачи изменений](change-feed.md) в последней версии .NET SDK (также именуемый .NET V3 SDK).
 
-## <a name="required-code-changes"></a>Необходимые изменения в коде
+## <a name="required-code-changes"></a>Необходимые изменения кода
 
-Пакет SDK для .NET v3 имеет несколько критических изменений, поэтому ниже приведены основные этапы миграции приложения.
+В .NET V3 SDK есть несколько изменений, следующие ключевые шаги для переноса приложения:
 
-1. Преобразуйте `DocumentCollectionInfo` экземпляры в ссылки `Container` для контейнеров отслеживаемых и арендных адресов.
-1. Настройки, использующие `WithProcessorOptions`, должны быть обновлены для использования `WithLeaseConfiguration` и `WithPollInterval` для интервалов, `WithStartTime` [для времени начала](how-to-configure-change-feed-start-time.md)и `WithMaxItems` для определения максимального числа элементов.
-1. Установите `processorName` на `GetChangeFeedProcessorBuilder` в соответствии со значением, настроенным в `ChangeFeedProcessorOptions.LeasePrefix`, или используйте `string.Empty` в противном случае.
-1. Изменения больше не доставляются в качестве `IReadOnlyList<Document>`, вместо этого `IReadOnlyCollection<T>`, где `T` — это тип, который необходимо определить, но класс базового элемента больше не существует.
-1. Чтобы обрабатывал изменения, больше не требуется реализация, вместо этого необходимо [определить делегат](change-feed-processor.md#implementing-the-change-feed-processor). Делегат может быть статической функцией или, если необходимо поддерживать состояние между выполнениями, можно создать собственный класс и передать метод экземпляра в качестве делегата.
+1. Преобразуйте `DocumentCollectionInfo` `Container` экземпляры в ссылки на контролируемые и арендуемые контейнеры.
+1. Настройки, которые `WithProcessorOptions` используются должны `WithLeaseConfiguration` `WithPollInterval` быть обновлены `WithStartTime` для использования `WithMaxItems` и для интервалов, для начала [времени,](how-to-configure-change-feed-start-time.md)и определить максимальное количество элементов.
+1. Установите `processorName` `GetChangeFeedProcessorBuilder` на соответствие значения, `ChangeFeedProcessorOptions.LeasePrefix`настроенного `string.Empty` на, или использовать в противном случае.
+1. Изменения больше не поставляются `IReadOnlyList<Document>`как, вместо `IReadOnlyCollection<T>` этого, это, где `T` тип, который необходимо определить, нет класса базового элемента больше.
+1. Для обработки изменений больше не нужна реализация, вместо этого необходимо [определить делегата.](change-feed-processor.md#implementing-the-change-feed-processor) Делегат может быть статичной функцией или, если вам нужно поддерживать состояние в выполнении, можно создать свой собственный класс и пройти метод экземпляра в качестве делегата.
 
-Например, если исходный код для сборки обработчика веб-канала изменений выглядит следующим образом:
+Например, если исходный код для создания процессора подачи изменений выглядит следующим образом:
 
-:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="ChangeFeedProcessorLibrary":::
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=ChangeFeedProcessorLibrary)]
 
-Перенесенный код будет выглядеть следующим образом:
+Миграционный код будет выглядеть следующим:
 
-:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="ChangeFeedProcessorMigrated":::
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=ChangeFeedProcessorMigrated)]
 
-Делегат может быть статическим методом:
+И делегат, может быть статическим методом:
 
-:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="Delegate":::
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=Delegate)]
 
-## <a name="state-and-lease-container"></a>Контейнер состояния и аренды
+## <a name="state-and-lease-container"></a>Контейнер для государства и аренды
 
-Как и в случае с библиотекой обработчика канала изменений, функция веб-канала изменений в пакете SDK для .NET v3 использует [контейнер аренды](change-feed-processor.md#components-of-the-change-feed-processor) для хранения состояния. Однако схемы различаются.
+Подобно библиотеке процессоров с изменением, функция подачи изменений в .NET V3 SDK использует [контейнер аренды](change-feed-processor.md#components-of-the-change-feed-processor) для хранения состояния. Тем не менее, схемы разные.
 
-Обработчик веб-канала изменений пакета SDK v3 обнаружит старое состояние библиотеки и автоматически перенесет его в новую схему при первом выполнении перенесенного кода приложения. 
+Процессор подачи изменения SDK V3 обнаружит любое старое состояние библиотеки и автоматически переносит его в новую схему при первом выполнении мигрированного кода приложения. 
 
-Вы можете безопасно остановить приложение с помощью старого кода, перенести код в новую версию, запустить перенесенное приложение и все изменения, произошедшие во время остановки приложения, будут отобраны и обработаны новой версией.
+Вы можете безопасно остановить приложение, используя старый код, перенести код в новую версию, запустить перемотанный приложение, и любые изменения, которые произошли в то время как приложение было остановлено, будут подобраны и обработаны новой версией.
 
 > [!NOTE]
-> Миграция из приложений, использующих библиотеку для пакета SDK для .NET v3, является односторонней, так как состояние (аренда) будет перенесено в новую схему. Миграция не имеет обратной совместимости.
+> Миграция из приложений, использующих библиотеку, в .NET V3 SDK является односторонней, так как государство (аренда) будет перенесено на новую схему. Миграция не совместима с обратной.
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
@@ -63,4 +63,4 @@ ms.locfileid: "77588889"
 
 * [Обработчик канала изменений в Azure Cosmos DB](change-feed-processor.md)
 * [Использование оценщика канала изменений](how-to-use-change-feed-estimator.md)
-* [Настройка времени запуска обработчика канала изменений](how-to-configure-change-feed-start-time.md)
+* [Время запуска обработчика канала изменений](how-to-configure-change-feed-start-time.md)

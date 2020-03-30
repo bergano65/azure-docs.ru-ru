@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 09/13/2019
 ms.author: magattus
 ms.openlocfilehash: e2827a11f4ec2a5c0467c3699cd9990aaf7ae97a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73495480"
 ---
 # <a name="understanding-azure-cdn-billing"></a>Общие сведения о выставлении счетов в Azure CDN
@@ -62,7 +62,7 @@ ms.locfileid: "73495480"
 - Передача в ГБ: количество передаваемых данных для заполнения кэша CDN.
 
 > [!NOTE]
-> Начиная с 2019 октября, если вы используете Azure CDN от Майкрософт, затраты на перенос данных из источников, размещенных в Azure в CDN, не взимается. Azure CDN от Verizon и Azure CDN из Akamai подчиняются указанным ниже тарифам.
+> Начиная с октября 2019 года, если вы используете Azure CDN от корпорации Майкрософт, стоимость передачи данных от Origins, размещенных в Azure, на CDN PoPs, бесплатна. Лазурный CDN от Verizon и Azure CDN из Akamai зависят от тарифов, описанных ниже.
 
 Дополнительную информацию о выставлении счетов на службу хранилища см. в записи блога [Understanding Windows Azure Storage Billing – Bandwidth, Transactions, and Capacity](https://blogs.msdn.microsoft.com/windowsazurestorage/2010/07/08/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity/) (Общие сведения о выставлении счетов за использование службы хранилища Azure Windows — пропускная способность, транзакции и емкость).
 
@@ -87,8 +87,8 @@ ms.locfileid: "73495480"
 
 - Влияние TTL. Чем длиннее срок жизни объекта, тем реже нужно извлекать его из источника. Это также означает, что такие клиенты, как браузеры, могут кэшировать объект дольше, что может уменьшить число транзакций в CDN.
 
-## <a name="which-origin-services-are-eligible-for-free-data-transfer-with-azure-cdn-from-microsoft"></a>Какие службы источника имеют право на бесплатную пересылку данных с Azure CDN от Майкрософт? 
-Если вы используете одну из следующих служб Azure в качестве источника CDN, вы не будете получать оплату за перенос данных из источника в POP CDN. 
+## <a name="which-origin-services-are-eligible-for-free-data-transfer-with-azure-cdn-from-microsoft"></a>Какие службы происхождения имеют право на бесплатную передачу данных с помощью Azure CDN от корпорации Майкрософт? 
+Если вы используете одну из следующих служб Azure в качестве источника CDN, с передачи данных из Origin в CDN PoPs не взимается плата. 
 
 - Хранилище Azure
 - Службы мультимедиа Azure
@@ -105,9 +105,9 @@ ms.locfileid: "73495480"
 - Azure Front Door Service
 - Бастион Azure
 - Служба приложений Azure.
-- Функции Azure
+- Проверка
 - Фабрика данных Azure
-- Cлужба управления Azure API
+- Cлужба управления Azure API 
 - Пакетная служба Azure 
 - Azure Data Explorer
 - HDInsight
@@ -115,7 +115,7 @@ ms.locfileid: "73495480"
 - Хранилище озера данных Azure
 - Машинное обучение Azure 
 - База данных SQL Azure
-- Кэш Azure для Redis
+- Кэш Redis для Azure
 
 ## <a name="how-do-i-manage-my-costs-most-effectively"></a>Как эффективней управлять расходами?
 Установите самый длинный срок жизни для своего содержимого. 

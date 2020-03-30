@@ -1,6 +1,6 @@
 ---
 title: Задания эластичной базы данных (предварительная версия)
-description: Настройте задания обработки эластичных баз данных (Предварительная версия) для выполнения скриптов Transact-SQL (T-SQL) в наборе из одной или нескольких баз данных SQL Azure.
+description: Настройка упругих заданий баз данных (предварительный просмотр) для запуска скриптов Transact-S'L (T-S'L) в наборе или нескольких баз данных Azure S'L
 services: sql-database
 ms.service: sql-database
 ms.subservice: scale-out
@@ -12,10 +12,10 @@ ms.author: srinia
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: e5b07ac0e9421cbca034b17c573cab16641f49f7
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79214480"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
@@ -27,19 +27,19 @@ ms.locfileid: "79214480"
 ## <a name="create-and-configure-the-agent"></a>Создание и настройка агента
 
 1. Создайте или определите пустую базу данных SQL с уровнем обслуживания S0 или выше. Она будет использоваться в качестве *базы данных задания* при создании агента задания обработки эластичных баз данных.
-2. Создайте агент заданий обработки эластичных баз данных на [портале](https://portal.azure.com/#create/Microsoft.SQLElasticJobAgent) или с помощью [PowerShell](elastic-jobs-powershell.md#create-the-elastic-job-agent).
+2. Создайте упругий агент работы на [портале](https://portal.azure.com/#create/Microsoft.SQLElasticJobAgent) или с [Помощью PowerShell.](elastic-jobs-powershell.md#create-the-elastic-job-agent)
 
    ![Создание агента задания обработки эластичных баз данных](media/elastic-jobs-overview/create-elastic-job-agent.png)
 
 ## <a name="create-run-and-manage-jobs"></a>Создание, запуск заданий и управление ими
 
-1. Создание учетных данных для выполнения заданий в *базе данных заданий* с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#create-a-credential-for-job-execution).
-2. Определите целевую группу (базы данных, для которой требуется выполнить задание) с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#create-a-target-group-servers).
+1. Создайте учетные данные для выполнения задания в *базе данных «Работа»* с помощью [PowerShell](elastic-jobs-powershell.md) или [T-S'L.](elastic-jobs-tsql.md#create-a-credential-for-job-execution)
+2. Определите целевую группу (базы данных, против которым вы хотите выполнить задание) с помощью [PowerShell](elastic-jobs-powershell.md) или [T-S'L.](elastic-jobs-tsql.md#create-a-target-group-servers)
 3. Создайте учетные данные агента заданий в каждой базе данных, где будет запущено задание [(добавьте пользователя (или роль) в каждую базу данных в группе)](sql-database-manage-logins.md). Пример см. в [руководстве по PowerShell](elastic-jobs-powershell.md).
-4. Создайте задание с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
+4. Создайте задание с помощью [PowerShell](elastic-jobs-powershell.md) или [T-S'L.](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases)
 5. Добавьте шаги задания с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
-6. Запустите задание с помощью [PowerShell](elastic-jobs-powershell.md#run-the-job) или [T-SQL](elastic-jobs-tsql.md#begin-ad-hoc-execution-of-a-job).
-7. Отслеживайте состояние выполнения заданий с помощью портала, [PowerShell](elastic-jobs-powershell.md#monitor-status-of-job-executions) или [T-SQL](elastic-jobs-tsql.md#monitor-job-execution-status).
+6. Выполнить задание с помощью [PowerShell](elastic-jobs-powershell.md#run-the-job) или [T-S'L](elastic-jobs-tsql.md#begin-ad-hoc-execution-of-a-job).
+7. Мониторинг состояния выполнения задания с помощью портала, [PowerShell](elastic-jobs-powershell.md#monitor-status-of-job-executions) или [T-S'L.](elastic-jobs-tsql.md#monitor-job-execution-status)
 
    ![Портал](media/elastic-jobs-overview/elastic-job-executions-overview.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "79214480"
 
 Настройка правильных учетных данных для запуска задания может быть немного запутанной, поэтому учитывайте следующие моменты:
 
-- Учетные данные для базы данных должны быть созданы в *базе данных заданий*.
+- Учетные данные с областью базы данных должны быть созданы в *базе данных Job.*
 - **Все целевые базы данных должны иметь вход с [достаточными разрешениями](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine) для успешного завершения задания** (`jobuser` на диаграмме ниже).
 - Учетные данные будут повторно использоваться в заданиях, а пароли учетных данных будут зашифрованы и защищены от пользователей, имеющих доступ только для чтения объектов заданий.
 
@@ -77,7 +77,7 @@ ms.locfileid: "79214480"
 
 Чтобы ресурсы не перегружались при работе с базами данных в эластичном пуле SQL, задания можно настроить для ограничения количества баз данных, в которых может одновременно работать задание.
 
-Задайте количество одновременных баз данных, на которых выполняется задание, задав параметр `@max_parallelism` хранимой процедуры `sp_add_jobstep` в T-SQL или `Add-AzSqlElasticJobStep -MaxParallelism` в PowerShell.
+Установите количество одновременных баз данных, `sp_add_jobstep` на которые `@max_parallelism` выполняется задание, установив `Add-AzSqlElasticJobStep -MaxParallelism` параметр сохраненной процедуры в T-S'L или в PowerShell.
 
 ## <a name="best-practices-for-creating-jobs"></a>Рекомендации по созданию заданий
 
@@ -99,5 +99,5 @@ IF NOT EXISTS (some_object)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
+- [Создавайте и управляйте эластичными заданиями с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

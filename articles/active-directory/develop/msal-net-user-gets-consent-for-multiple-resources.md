@@ -1,7 +1,7 @@
 ---
-title: Получение согласия для нескольких ресурсов (MSAL.NET) | Службы
+title: Получить согласие на несколько ресурсов (MSAL.NET) Azure
 titleSuffix: Microsoft identity platform
-description: Узнайте, как пользователь может получить предварительное согласие на использование нескольких ресурсов с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
+description: Узнайте, как пользователь может получить предварительное согласие на несколько ресурсов, используя библиотеку подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -14,24 +14,24 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 94c9a2b6a46262ad293da9ca3ba493d6f898c870
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77085840"
 ---
 # <a name="user-gets-consent-for-several-resources-using-msalnet"></a>Пользователь получает согласие на использование нескольких ресурсов с помощью MSAL.NET
-Конечная точка платформы Microsoft Identity не позволяет получить маркер для нескольких ресурсов одновременно. При использовании библиотеки проверки подлинности Microsoft для .NET (MSAL.NET) параметр областей в методе получения маркера должен содержать только области для одного ресурса. Однако вы можете заранее согласиться с несколькими ресурсами, указав дополнительные области с помощью метода `.WithExtraScopeToConsent` Builder.
+Конечная точка платформы идентификации Майкрософт не позволяет получить токен сразу для нескольких ресурсов. При использовании Библиотеки аутентификации Майкрософт для .NET (MSAL.NET) параметр областей в методе приобретения токенов должен содержать только области для одного ресурса. Тем не менее, можно предварительно дать согласие на несколько `.WithExtraScopeToConsent` ресурсов авансом, указав дополнительные области с помощью метода builder.
 
 > [!NOTE]
-> Получение согласия для нескольких ресурсов работает для платформы Microsoft Identity, но не для Azure AD B2C. Azure AD B2C поддерживает только разрешение администратора, а не согласие пользователя.
+> Получение согласия на несколько ресурсов работает для платформы идентификации Майкрософт, но не для Azure AD B2C. Azure AD B2C поддерживает только согласие админа, а не согласие пользователя.
 
-Например, при наличии двух ресурсов с двумя областями:
+Например, если у вас есть два ресурса, которые имеют 2 области каждый:
 
-- HTTPS:\//mytenant.onmicrosoft.com/customerapi (с 2 областями `customer.read` и `customer.write`)
-- HTTPS:\//mytenant.onmicrosoft.com/vendorapi (с 2 областями `vendor.read` и `vendor.write`)
+- https:\//mytenant.onmicrosoft.com/customerapi (с `customer.read` 2 `customer.write`областями и )
+- https:\//mytenant.onmicrosoft.com/vendorapi (с `vendor.read` 2 `vendor.write`областями и )
 
-Следует использовать модификатор `.WithExtraScopeToConsent`, который имеет параметр *екстраскопестоконсент* , как показано в следующем примере:
+Следует использовать `.WithExtraScopeToConsent` модификатор, который имеет параметр *extraScopesToConsent,* показанный в следующем примере:
 
 ```csharp
 string[] scopesForCustomerApi = new string[]
@@ -52,7 +52,7 @@ var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
                      .ExecuteAsync();
 ```
 
-Это позволит получить маркер доступа для первого веб-API. Затем, когда вам нужно получить доступ ко второму веб-API, вы можете получить маркер из кэша маркеров без вывода сообщений.
+Это даст вам токен доступа к первому веб-API. Затем, когда вам нужно получить доступ ко второму веб-API, вы можете бесшумно приобрести токен из кэша токенов:
 
 ```csharp
 AcquireTokenSilent(scopesForVendorApi, accounts.FirstOrDefault()).ExecuteAsync();

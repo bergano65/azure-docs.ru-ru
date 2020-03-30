@@ -16,16 +16,16 @@ ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: 7909fbb958a66d00616d4ed1b844d02bb47d997e
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77152505"
 ---
 # <a name="use-the-newtek-tricaster-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика NewTek TriCaster для отправки односкоростного обновляющегося потока  
 > [!div class="op_single_selector"]
 > * [Tricaster](media-services-configure-tricaster-live-encoder.md)
-> * [Elemental Live](media-services-configure-elemental-live-encoder.md)
+> * [Элементарная жизнь](media-services-configure-elemental-live-encoder.md)
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
 >
 >
@@ -37,9 +37,9 @@ ms.locfileid: "77152505"
 При использовании Tricaster для отправки веб-канала доставки в каналы AMS с поддержкой кодирования в реальном времени возможны временные сбои видео или звука интерактивного события, если используются некоторые возможности Tricaster, например быстрый монтаж разных веб-каналов или переключение на баннеры и обратно. Команда AMS работает над устранением этих проблем. Сейчас не рекомендуется использовать эти возможности.
 
 > [!NOTE]
->  Рассмотрите возможность перехода на TLS 1,2, версию префферред TLS.
+>  Рассмотрите возможность перехода на TLS 1.2, преффересную версию TLS.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Создайте учетную запись служб мультимедиа Azure](media-services-portal-create-account.md).
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
@@ -54,7 +54,7 @@ ms.locfileid: "77152505"
 
 ## <a name="create-a-channel"></a>Создание канала
 
-1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...** в меню.
+1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...**  в меню.
 
     ![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster1.png)
 
@@ -71,18 +71,18 @@ ms.locfileid: "77152505"
 >
 >
 
-Во время запуска канала можно [настроить кодировщик](media-services-configure-tricaster-live-encoder.md#configure_tricaster_rtmp).
+Пока канал запускается, можно [настроить коделер.](media-services-configure-tricaster-live-encoder.md#configure_tricaster_rtmp)
 
 > [!IMPORTANT]
 > Тарификация начинается сразу же после перехода канала в состояние готовности. Дополнительные сведения см. в разделе о [состояниях каналов](media-services-manage-live-encoder-enabled-channels.md#states).
 >
 >
 
-## <a name="a-idconfigure_tricaster_rtmpconfigure-the-newtek-tricaster-encoder"></a><a id="configure_tricaster_rtmp"/>Настройка кодировщика NewTek TriCaster
+## <a name="configure-the-newtek-tricaster-encoder"></a><a id="configure_tricaster_rtmp"/>Настройка кодировщика NewTek TriCaster
 
 В этом руководстве используются указанные ниже параметры вывода. В оставшейся части этого раздела этапы настройки описываются более подробно.
 
-**Видео:**
+**Видео**:
 
 * Кодек: H.264
 * Профиль: High (уровень 4.0)
@@ -90,7 +90,7 @@ ms.locfileid: "77152505"
 * Опорный кадр: 2 секунды (60 секунд)
 * Частота кадров: 30
 
-**Звук:**
+**Аудио**:
 
 * Кодек: AAC (LC)
 * Скорость: 192 Кбит/с
@@ -147,7 +147,7 @@ ms.locfileid: "77152505"
 
 ## <a name="create-a-program"></a>Создание программы
 
-1. После проверки воспроизведения канала создайте программу. На вкладке **Live** (Передача) в инструменте AMSE щелкните правой кнопкой мыши в области программы и выберите команду **Create New Program** (Создать программу).  
+1. После проверки воспроизведения канала создайте программу. Под вкладкой **Live** в инструменте AMSE, правой кнопкой мыши в области программы и выберите **Создать новую программу**.  
 
     ![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster9.png)
 2. Укажите имя программы и при необходимости измените параметр **Archive Window Length** (Длительность периода архивации); по умолчанию она составляет четыре часа. Также можно указать расположение для хранения или оставить значение по умолчанию.  

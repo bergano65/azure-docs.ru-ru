@@ -1,7 +1,7 @@
 ---
-title: Порядок сортировки по Справочнику OData
+title: Ссылка на заказ OData
 titleSuffix: Azure Cognitive Search
-description: Справочная документация по синтаксису и языку для использования предложения ORDER-BY в запросах Когнитивный поиск Azure.
+description: Синтаксис и языковая справочная документация для использования заказов в запросах Azure Cognitive Search.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -20,19 +20,19 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 99ec639b88f3334530243242aadfa0ab52a40df0
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74113147"
 ---
-# <a name="odata-orderby-syntax-in-azure-cognitive-search"></a>Синтаксис $orderby OData в Azure Когнитивный поиск
+# <a name="odata-orderby-syntax-in-azure-cognitive-search"></a>OData $orderby синтаксис в когнитивном поиске Azure
 
- С помощью [параметра **$OrderBy** OData](query-odata-filter-orderby-syntax.md) можно применить пользовательский порядок сортировки для результатов поиска в Azure когнитивный Поиск. В этой статье подробно описывается синтаксис **$OrderBy** . Дополнительные общие сведения об использовании **$OrderBy** при представлении результатов поиска см. [в статье работа с результатами поиска в Azure когнитивный Поиск](search-pagination-page-layout.md).
+ Вы можете использовать [параметр OData **$orderby** ](query-odata-filter-orderby-syntax.md) для применения пользовательского заказа сортировки для результатов поиска в Azure Cognitive Search. В этой статье подробно описывается синтаксис **$orderby.** Более подробную информацию о том, как использовать **$orderby** при представлении результатов поиска, можно [найти в Azure Cognitive Search.](search-pagination-page-layout.md)
 
 ## <a name="syntax"></a>Синтаксис
 
-Параметр **$OrderBy** принимает разделенный запятыми список из 32 **предложений упорядочения**. Синтаксис предложения ORDER-BY описывается следующим EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)):
+Параметр **$orderby** принимает разделенный на запятую список до 32 **положений заказа.** Синтаксис оговорки по заказу описан следующим eBNF[(Расширенная форма Backus-Naur):](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -42,21 +42,21 @@ order_by_clause ::= (field_path | sortable_function) ('asc' | 'desc')?
 sortable_function ::= geo_distance_call | 'search.score()'
 ```
 
-Доступна также интерактивная схема синтаксиса:
+Также доступна интерактивная диаграмма синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/#order_by_clause)
+> [Диаграмма синтаксиса OData для когнитивного поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#order_by_clause)
 
 > [!NOTE]
-> Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
+> Смотрите [ссылку синтаксиса выражения OData для Azure Cognitive Search](search-query-odata-syntax-reference.md) для полного EBNF.
 
-Каждое предложение имеет критерий сортировки, при необходимости за которым следует направление сортировки (`asc` по возрастанию или `desc` по убыванию). Если не указать направление, по умолчанию используется значение по возрастанию. Критерий сортировки может быть либо путем `sortable` поля, либо вызовом функций [`geo.distance`](search-query-odata-geo-spatial-functions.md) или [`search.score`](search-query-odata-search-score-function.md) .
+Каждое положение имеет критерии сортировки, по желанию следуют сортировки`asc` (для восходящего или `desc` для спуска). Если вы не укажете направление, значение значения по умолчанию возрастает. Критериями сортировки могут `sortable` быть либо путь поля, либо вызов к функциям [`geo.distance`](search-query-odata-geo-spatial-functions.md) или функциям. [`search.score`](search-query-odata-search-score-function.md)
 
-Если несколько документов имеют одинаковые критерии сортировки и функция `search.score` не используется (например, если сортировка выполняется по числовому `Rating` полю, а три документа имеют оценку 4), то в порядке убывания эти предложения будут разорваны. Если оценки документа одинаковы (например, если в запросе не указан запрос полнотекстового поиска), относительный порядок связанных документов является неопределенным.
+Если несколько документов имеют `search.score` одинаковые критерии сортировки и функция не `Rating` используется (например, если вы сортируете по числовому полю и три документа имеют рейтинг 4), связи будут нарушены счетом документа в порядке убывания. Когда оценки документов одинаковы (например, когда в запросе нет полнотекстовых поисковых запросов), относительный заказ связанных документов неопределенный.
 
-Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, чтобы отсортировать по убыванию по показателям, за которыми следует оценка, синтаксис будет `$orderby=search.score() desc,Rating desc`.
+Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, для сортировки нисходящего балла, за `$orderby=search.score() desc,Rating desc`которым следует рейтинг, синтаксис будет .
 
-Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании функции `geo.distance` в **$orderby** поле, к которому она применяется, должно быть сортируемым (`Edm.GeographyPoint`) и иметь тип `sortable`.
+Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании функции `geo.distance` в **$orderby** поле, к которому она применяется, должно быть сортируемым (`sortable`) и иметь тип `Edm.GeographyPoint`.
 
 Синтаксис для `search.score` в **$orderby** — `search.score()`. Функция `search.score` не принимает никаких параметров.
 
@@ -70,17 +70,17 @@ sortable_function ::= geo_distance_call | 'search.score()'
 
     $orderby=Rating desc,BaseRate
 
-Сортировка гостиниц по убыванию по рейтингу, затем по возрастанию по расстоянию от заданных координат:
+Сортировать отели, спускающиеся по рейтингу, затем поднимаясь на расстояние от данных координат:
 
     $orderby=Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
 
-Сортировка гостиниц в порядке убывания по поиску. Оценка и оценка, а затем в порядке возрастания по расстоянию от заданных координат. Между двумя гостиницами с одинаковыми показателями релевантности и рейтингами в первую очередь указывается ближайшее значение:
+Сортировать отели в порядке убывания по search.score и рейтингу, а затем в порядке возрастания на расстоянии от данных координат. Между двумя отелями с одинаковыми показателями релевантности и рейтингами, самый близкий указан первым:
 
     $orderby=search.score() desc,Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
-- [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
-- [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
-- [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Когнитивный поиск Azure REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Как работать с результатами поиска в Azure Cognitive Search](search-pagination-page-layout.md)
+- [Обзор языка выражения OData для когнитивного поиска Azure](query-odata-filter-orderby-syntax.md)
+- [Ссылка синтаксиса выражения OData для когнитивного поиска Azure](search-query-odata-syntax-reference.md)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)

@@ -1,14 +1,14 @@
 ---
 title: Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 description: Изучите принципы действия арендаторов, пользователей и ролей Azure Active Directory, а также узнайте о том, как их можно использовать в сценариях Azure Lighthouse.
-ms.date: 01/16/2020
+ms.date: 03/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 344e104201a83b3589dae6dbd3b02e49e4575e00
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 7540e17fd80f9a1d8e996295000c126614b838d2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156341"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80246897"
 ---
 # <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 
@@ -31,7 +31,7 @@ ms.locfileid: "76156341"
 - Встроенная роль [Администратор доступа пользователей](../../role-based-access-control/built-in-roles.md#user-access-administrator) поддерживается, но только для [назначения ролей для управляемого удостоверения в арендаторе клиента](../how-to/deploy-policy-remediation.md#create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant). Никакие другие разрешения, обычно предоставляемые этой ролью, применяться не будут. При определении пользователя с этой ролью необходимо также указать встроенные роли, которые этот пользователь может назначить управляемым удостоверениям.
 
 > [!NOTE]
-> После добавления в Azure соответствующей новой встроенной роли ее можно назначить при подключении [клиента с помощью шаблонов Azure Resource Manager](../how-to/onboard-customer.md). Возможна задержка, прежде чем вновь добавленная роль станет доступной в Портал Cloud Partner при [публикации предложения управляемой службы](../how-to/publish-managed-services-offers.md).
+> После добавления в Azure новой встроенной роли он может быть назначен при [посадке клиента с помощью шаблонов Azure Resource Manager.](../how-to/onboard-customer.md) Возможно, будет задержка до того, как недавно добавленная роль станет доступна в облачном партнерском портале при [публикации предложения управляемых услуг.](../how-to/publish-managed-services-offers.md)
 
 ## <a name="best-practices-for-defining-users-and-roles"></a>Рекомендации по определению пользователей и ролей
 
@@ -41,6 +41,9 @@ ms.locfileid: "76156341"
 - Обязательно следуйте принципам минимальных привилегий, чтобы у пользователей были только разрешения, необходимые для выполнения их заданий. Это помогает снизить вероятность непреднамеренных ошибок. Дополнительные сведения см. в статье [Recommended security practices](../concepts/recommended-security-practices.md) (Рекомендации по безопасности).
 - Добавьте пользователя с ролью [Managed Services Registration Assignment Delete](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) (Удаление назначенных регистраций управляемых служб), чтобы можно было при необходимости [удалить доступ к делегированию](../how-to/onboard-customer.md#remove-access-to-a-delegation) позже. Если эта роль не назначена, делегированные ресурсы могут быть удалены только пользователем в арендаторе клиента.
 - Убедитесь, что любой пользователь, которому нужно [просматривать страницу "Мои клиенты" на портале Azure](../how-to/view-manage-customers.md), имеет роль [Читатель](../../role-based-access-control/built-in-roles.md#reader) (или другую встроенную роль, которая предоставляет доступ для чтения).
+
+> [!IMPORTANT]
+> Для добавления разрешений для группы Azure AD **тип группы** должен быть **безопасности,** а не **Office 365.** Эта опция выбирается при создании группы. Дополнительные сведения см. в разделе [Создание базовой группы и добавление членов с помощью Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

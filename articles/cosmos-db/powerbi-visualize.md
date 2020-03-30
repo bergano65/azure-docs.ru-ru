@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sngun
 ms.openlocfilehash: 1dbdd428a54ebf38c7b880bb9530935c0f748226
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69616810"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
@@ -32,21 +32,21 @@ ms.locfileid: "69616810"
 
 * загруженному из GitHub [примеру данных о вулканах](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json);
 
-* [Создайте учетную запись базы данных Azure Cosmos](https://azure.microsoft.com/documentation/articles/create-account/) и импортируйте данные о вулканах с помощью [средства переноса данных Azure Cosmos DB](import-data.md). При импорте данных советуем использовать в средстве переноса следующие параметры источника и целевых расположений:
+* [Создайте учетную запись базы данных Azure Cosmos](https://azure.microsoft.com/documentation/articles/create-account/) и импортируйте данные вулкана с помощью [инструмента миграции данных Azure Cosmos DB.](import-data.md) При импорте данных советуем использовать в средстве переноса следующие параметры источника и целевых расположений:
 
    * **Параметры источника** 
 
-       * **Импортировать из:** JSON-файлы
+       * **Импорт от:** Файл JSON (ы)
 
    * **Параметры целевых расположений** 
 
-      * **Строка подключения:** `AccountEndpoint=<Your_account_endpoint>;AccountKey=<Your_primary_or_secondary_key>;Database= <Your_database_name>` 
+      * **Строка подключения:**`AccountEndpoint=<Your_account_endpoint>;AccountKey=<Your_primary_or_secondary_key>;Database= <Your_database_name>` 
 
       * **Ключ секции**: /страна 
 
-      * **Collection throughput** (Пропускная способность коллекции): 1000 
+      * **Пропускная часть коллекции:** 1000 
 
-Для совместного использования отчетов в службе PowerBI.com необходимо настроить учетную запись в PowerBI.com.  Дополнительные сведения о Power BI и Power BI Pro см. по ссылке [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing).
+Для совместного использования отчетов в службе PowerBI.com необходимо настроить учетную запись в PowerBI.com.  Чтобы узнать больше о Power BI [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing)и Power BI Pro, см.
 
 ## <a name="lets-get-started"></a>Начало работы
 Для работы с этим руководством представим, что вы геолог, изучающий вулканы по всему миру. Данные о вулканах хранятся в учетной записи Azure Cosmos DB, а формат документа JSON выглядит следующим образом.
@@ -122,7 +122,7 @@ ms.locfileid: "69616810"
 8. Укажите имя нового столбца, например LatLong.
 9. Затем укажите настраиваемую формулу для нового столбца.  В нашем примере мы соединим значения широты и долготы, разделяя их запятыми, как показано ниже, используя следующую формулу: `Text.From([coordinates]{1})&","&Text.From([coordinates]{0})`. Нажмите кнопку **ОК**.
    
-    Дополнительные сведения о выражениях анализа данных (DAX), включая функции DAX, см. в статьях [основы DAX в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-quickstart-learn-dax-basics).
+    Для получения дополнительной информации о выражениях анализа данных (DAX), включая функции DAX, пожалуйста, посетите [DAX Основы в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-quickstart-learn-dax-basics).
    
     ![Руководство по Power BI для соединителя Power BI Azure Cosmos DB — добавление пользовательского столбца](./media/powerbi-visualize/power_bi_connector_pbicustomlatlong.png)
 
@@ -209,7 +209,7 @@ For a scheduled refresh, do the following.
 5. Expand **Schedule Refresh** and set up the schedule you want to refresh the dataset. 
 6. Click **Apply** and you are done setting up the scheduled refresh.
 -->
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о Power BI см. в статье [Приступая к работе с Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 * Дополнительные сведения об Azure Cosmos DB см. на [целевой странице документации по Azure Cosmos DB](https://azure.microsoft.com/documentation/services/cosmos-db/).
 

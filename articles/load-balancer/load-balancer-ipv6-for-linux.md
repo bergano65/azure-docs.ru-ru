@@ -1,7 +1,7 @@
 ---
 title: Настройка DHCPv6 для виртуальных машин Linux
 titleSuffix: Azure Load Balancer
-description: Из этой статьи вы узнаете, как настроить DHCPv6 для виртуальных машин Linux.
+description: В этой статье узнайте, как настроить DHCPv6 для Linux VMs.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: allensu
 ms.openlocfilehash: 6ea215b6aa826231e940f88c3687bb65591303f2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74225316"
 ---
 # <a name="configure-dhcpv6-for-linux-vms"></a>Настройка DHCPv6 для виртуальных машин Linux
@@ -54,9 +54,9 @@ ms.locfileid: "74225316"
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
     ```
-Начиная с Ubuntu 17,10, механизмом сетевой конфигурации по умолчанию является [нетплан]( https://netplan.io).  При установке или создании экземпляра НЕТПЛАН считывает конфигурацию сети из файлов конфигурации YAML в этом расположении:/{Либ, т. е. Run}/нетплан/*. YAML.
+Начиная с Ubuntu 17.10, механизм конфигурации сети по умолчанию [netPLAN]( https://netplan.io).  Во время установки/мгновенности NETPLAN считывает конфигурацию сети из файлов конфигурации YAML в этом месте: /'lib,etc,run/netplan/.yaml.
 
-Для каждого интерфейса Ethernet в конфигурации необходимо включить инструкцию *dhcp6: true* .  Например,
+Пожалуйста, включите *заявление dhcp6: истинное* заявление для каждого интерфейса Ethernet в вашей конфигурации.  Пример:
   
         network:
           version: 2
@@ -64,7 +64,7 @@ ms.locfileid: "74225316"
             eno1:
               dhcp6: true
 
-Во время раннего запуска нетплан "модуль подготовки отчетов" записывает конфигурацию в/Run для передачи управления устройствами в указанную сетевую управляющую программу для справочных сведений об НЕТПЛАН, см. https://netplan.io/reference.
+Во время ранней загрузки, netplan "сетевой рендер" записывает конфигурацию/ чтобы передать управление устройствами в https://netplan.io/referenceуказанную сеть daemon Для справочной информации о NETPLAN, см.
  
 ## <a name="debian"></a>Debian
 

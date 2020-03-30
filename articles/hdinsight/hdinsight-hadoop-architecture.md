@@ -1,6 +1,6 @@
 ---
 title: Архитектура Apache Hadoop в Azure HDInsight
-description: Описание Apache Hadoop хранения и обработки в кластерах Azure HDInsight.
+description: Описывает хранение и обработку Apache Hadoop в кластерах Azure HDInsight.
 author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/07/2020
 ms.openlocfilehash: 3feacd94558ba275c81469827993aef106ae633c
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77162214"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Архитектура Apache Hadoop в HDInsight
 
-[Apache Hadoop](https://hadoop.apache.org/) состоит из двух основных компонентов — [распределенной файловой системы (HDFS) Apache Hadoop](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html), обеспечивающей хранение, и [модуля управления ресурсами Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html), обеспечивающего обработку. Благодаря возможностям хранения и обработки на кластере можно запускать программы [MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html), чтобы выполнять требуемую обработку данных.
+[Apache Hadoop](https://hadoop.apache.org/) состоит из двух основных компонентов — [распределенной файловой системы (HDFS) Apache Hadoop](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html), обеспечивающей хранение, и [модуля управления ресурсами Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html), обеспечивающего обработку. Благодаря возможностям хранения и обработки кластер становится способным выполнять программы [MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) для выполнения желаемой обработки данных.
 
 > [!NOTE]  
 > Обычно HDFS не развернута в кластере HDInsight для предоставления хранилища. Вместо этого компоненты Hadoop используют HDFS-совместимый слой интерфейса. Фактическая емкость хранилища предоставляется службой хранилища Azure или Azure Data Lake Storage. Для Hadoop задания MapReduce выполняются в кластере HDInsight как будто HDFS присутствует и поэтому не требуют изменений для удовлетворения потребностей в хранении. В Hadoop в HDInsight хранилище является внешним, но обработка YARN остается внутренним компонентом. Дополнительную информацию см. во [введении в Azure HDInsight](hadoop/apache-hadoop-introduction.md).
@@ -45,28 +45,28 @@ NodeManager запускает задачи, составляющие прило
 
 YARN развертывается во всех типах кластера HDInsight. Для обеспечения высокого уровня доступности ResourceManager развертывается в двух экземплярах (первичный и вторичный), выполняющимися на первом и втором головных узлах в кластере соответственно. Одновременно может быть активным только один экземпляр ResourceManager. Экземпляры NodeManager выполняются на рабочих узлах, доступных в кластере.
 
-![Apache YARN в Azure HDInsight](./media/hdinsight-hadoop-architecture/apache-yarn-on-hdinsight.png)
+![Apache YARN на Azure HDInsight](./media/hdinsight-hadoop-architecture/apache-yarn-on-hdinsight.png)
 
-## <a name="soft-delete"></a>Обратимое удаление
+## <a name="soft-delete"></a>Мягкое удаление
 
-Чтобы отменить удаление файла из учетной записи хранения, см.:
+Чтобы удалить файл из учетной записи хранилища, см.
 
 ### <a name="azure-storage"></a>Хранилище Azure
 
 * [Soft delete for Azure Storage blobs](../storage/blobs/storage-blob-soft-delete.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
-* [Отменить удаление BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/undelete-blob)
+* [Неудалить Blob](https://docs.microsoft.com/rest/api/storageservices/undelete-blob)
 
-### <a name="azure-data-lake-storage-gen-1"></a>Azure Data Lake Storage Gen 1
+### <a name="azure-data-lake-storage-gen-1"></a>Лазурное хранилище озер данных Gen 1
 
-[Restore-Аздаталакестоределетедитем](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem)
+[Восстановление-AzDataLakeStoreDeletedItem](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem)
 
 ### <a name="azure-data-lake-storage-gen-2"></a>Azure Data Lake Storage 2-го поколения
 
 [Известные проблемы с Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-known-issues.md)
 
-## <a name="trash-purging"></a>Удаление корзины
+## <a name="trash-purging"></a>Очистка мусора
 
-Свойство `fs.trash.interval` из **HDFS** > **Advanced Core — сайт** должно оставаться на значении по умолчанию `0`, так как не следует хранить данные в локальной файловой системе. Это значение не влияет на удаленные учетные записи хранения (WASB, ADLS GEN1, АБФС)
+Свойство `fs.trash.interval` из**основного сайта** **HDFS** > Advanced `0` должно оставаться на уровне значения по умолчанию, поскольку не следует хранить какие-либо данные в локальной файловой системе. Это значение не влияет на учетные записи удаленных хранилищ (WASB, ADLS GEN1, ABFS)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

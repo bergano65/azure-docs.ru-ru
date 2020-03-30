@@ -1,6 +1,6 @@
 ---
-title: Что случилось с моим проектом веб-задания (хранилище Azure в Visual Studio)?
-description: Описывает, что произошло в проекте веб-задания Azure после подключения к учетной записи хранения с помощью подключенных служб Visual Studio
+title: Что случилось с моим проектом WebJob (Visual Studio Azure Storage)?
+description: Описывает, что произошло в проекте Azure WebJob после подключения к учетной записи хранилища с помощью подключенных сервисов Visual Studio
 services: storage
 author: ghogen
 manager: jillfra
@@ -14,10 +14,10 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 17861b7c25dfaf9bc9399e5261cdf2a5b43caf21
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72298729"
 ---
 # <a name="what-happened-to-my-webjob-project-visual-studio-azure-storage-connected-service"></a>Что произошло с моим проектом веб-заданий (подключенными к службе хранилища Azure службами Visual Studio)?

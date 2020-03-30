@@ -1,5 +1,5 @@
 ---
-title: Пакетная аналитика Azure
+title: Аналитика пакетов Azure
 description: Статьи по пакетной аналитике содержат справочные сведения о событиях и оповещениях, доступных для ресурсов пакетной службы.
 services: batch
 author: LauraBrenner
@@ -12,10 +12,10 @@ ms.workload: big-compute
 ms.date: 04/20/2017
 ms.author: labrenne
 ms.openlocfilehash: d9538461dfa48a961f9325566b2adaf265e8daeb
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77025968"
 ---
 # <a name="batch-analytics"></a>Пакетная аналитика
@@ -29,10 +29,10 @@ ms.locfileid: "77025968"
 
 **События журнала службы**
 * [Создание пула](batch-pool-create-event.md)
-* [Начало удаления пула](batch-pool-delete-start-event.md)
-* [Завершение удаления пула](batch-pool-delete-complete-event.md)
+* [Pool delete start](batch-pool-delete-start-event.md)
+* [Pool delete complete](batch-pool-delete-complete-event.md)
 * [Начало изменения размера пула](batch-pool-resize-start-event.md)
-* [Завершение изменения размера пула](batch-pool-resize-complete-event.md)
+* [Pool resize complete](batch-pool-resize-complete-event.md)
 * [Начало выполнения задачи](batch-task-start-event.md)
-* [Завершение выполнения задачи](batch-task-complete-event.md)
-* [Сбой выполнения задачи](batch-task-fail-event.md)
+* [Task complete](batch-task-complete-event.md)
+* [Task fail](batch-task-fail-event.md)

@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с хранилищем очередей с помощью Visual Studio (ASP.NET Core)
+title: Начало работы с хранением очередей с помощью Visual Studio (ASP.NET Core)
 description: Начало работы с хранилищем очередей Azure в проекте ASP.NET Core в Visual Studio.
 services: storage
 author: ghogen
@@ -14,10 +14,10 @@ ms.date: 11/14/2017
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 5cdf6f2644788674df91b533c9444fc88ab30b09
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72300023"
 ---
 # <a name="get-started-with-queue-storage-and-visual-studio-connected-services-aspnet-core"></a>Приступая к работе с хранилищем очередей и подключенными службами Visual Studio (ASP.NET Core)
@@ -67,7 +67,7 @@ ms.locfileid: "72300023"
 
 ### <a name="create-a-queue-in-code"></a>Создание очереди в коде
 
-Чтобы создать очередь Azure в коде, вызовите `CreateIfNotExistsAsync`:
+Чтобы создать очередь Azure в `CreateIfNotExistsAsync`коде, позвоните:
 
 ```cs
 // Create the CloudQueue if it does not exist.
@@ -172,6 +172,6 @@ Console.WriteLine("Deleted message");
 messageQueue.Delete();
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: roygara
 ms.service: virtual-machines
@@ -9,10 +9,10 @@ ms.date: 07/08/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 86d03e980a233a60e4f3a6541462264dae0862af
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74005564"
 ---
 В этой статье приведены рекомендации по разработке высокопроизводительных приложений с использованием хранилища Azure класса «Премиум». Указания в этом документе можно использовать вместе с рекомендациями по производительности, применимыми к технологиям, которые используются приложением. Чтобы продемонстрировать упомянутые рекомендации, в этом документе в качестве примера использован SQL Server, запущенный в хранилище класса «Премиум».

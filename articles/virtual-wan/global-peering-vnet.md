@@ -1,6 +1,6 @@
 ---
-title: Настройка пиринга глобальной сети для виртуальной глобальной сети Azure | Документация Майкрософт
-description: Подключите виртуальную сеть в другом регионе к концентратору виртуальной глобальной сети.
+title: Направляй глобальную внедренную систему VNet для виртуального WAN Azure (ru) Документы Майкрософт
+description: Подключите VNet в другом регионе к виртуальному концентратору WAN.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -8,41 +8,41 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: cherylmc
 ms.openlocfilehash: 340472f84d2dd2c4f46d180992745a57e8ad1884
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73588230"
 ---
-# <a name="configure-global-vnet-peering-cross-region-vnet-for-virtual-wan"></a>Настройка пиринга глобальной виртуальной сети (виртуальной сети с несколькими регионами) для виртуальной WAN
+# <a name="configure-global-vnet-peering-cross-region-vnet-for-virtual-wan"></a>Нанастройка глобального внедрального внебрачного (кросс-региона VNet) для виртуального WAN
 
-Виртуальную сеть в другом регионе можно подключить к концентратору виртуальной глобальной сети.
+Вы можете подключить VNet в другом регионе к виртуальному концентратору WAN.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Убедитесь, что вы выполнили следующие критерии:
 
-* Виртуальная сеть с несколькими регионами не подключена к другому виртуальному концентратору глобальной сети. Периферийную копию можно подключить только к одному виртуальному концентратору.
-* Виртуальная сеть (периферийная) не содержит шлюз виртуальной сети (например, VPN-шлюз Azure или шлюз виртуальной сети ExpressRoute). Если виртуальная сеть содержит шлюз виртуальной сети, необходимо удалить шлюз, прежде чем подключить периферийную виртуальную сеть к концентратору.
+* Кросс-регион VNet (смена) не подключен к другому виртуальному концентратору WAN. Спина может быть подключена только к одному виртуальному узлу.
+* VNet (говорит) не содержит виртуального сетевого шлюза (например, azure VPN Gateway или виртуальный сетевой шлюз ExpressRoute). Если VNet содержит виртуальный сетевой шлюз, необходимо удалить шлюз перед подключением спица VNet к концентратору.
 
-## <a name="register"></a>Регистрация этой возможности
+## <a name="register-this-feature"></a><a name="register"></a>Регистрация этой возможности
 
-Вы можете зарегистрироваться для использования этой функции с помощью PowerShell. Если выбрать вариант "попробовать" из приведенного ниже примера, откроется Azure Cloud-Shell, и вам не потребуется устанавливать командлеты PowerShell локально на компьютер. При необходимости можно изменить подписки с помощью командлета "Select-Азсубскриптион-SubscriptionId <subid>".
+Вы можете зарегистрироваться для этой функции с помощью PowerShell. Если вы выберете "Try It" из приведенного ниже примера, Azure Cloud-Shell откроется, и вам не нужно будет устанавливать cmdlets PowerShell локально на ваш компьютер. При необходимости можно изменить подписку с помощью cmdlet 'Select-AzSubscription-SubscriptionId'. <subid>
 
 ```azurepowershell-interactive
 Register-AzProviderFeature -FeatureName AllowCortexGlobalVnetPeering -ProviderNamespace Microsoft.Network
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.Network'
 ```
 
-## <a name="verify"></a>Проверка регистрации
+## <a name="verify-registration"></a><a name="verify"></a>Проверка регистрации
 
 ```azurepowershell-interactive
 Get-AzProviderFeature -FeatureName AllowCortexGlobalVnetPeering -ProviderNamespace Microsoft.Network
 ```
 
-## <a name="hub"></a>Подключение виртуальной сети к концентратору
+## <a name="connect-a-vnet-to-the-hub"></a><a name="hub"></a>Подключение VNet к концентратору
 
-На этом шаге вы создадите подключение пиринга между центром и виртуальной сетью между регионами. Повторите эти шаги для каждой виртуальной сети, которую вы хотите подключить.
+На этом этапе создается вpeering соединение между концентратором и кросс-регионом VNet. Повторите эти шаги для каждой виртуальной сети, которую вы хотите подключить.
 
 1. На странице своей глобальной сети щелкните **Подключения к виртуальной сети**.
 2. На странице подключения к виртуальной сети щелкните **+Добавить подключение**.
@@ -56,4 +56,4 @@ Get-AzProviderFeature -FeatureName AllowCortexGlobalVnetPeering -ProviderNamespa
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о виртуальной глобальной сети см. в статье [Обзор виртуальных глобальных сетей](virtual-wan-about.md).
+Чтобы узнать больше о виртуальном WAN, смотрите [виртуальный обзор WAN](virtual-wan-about.md).

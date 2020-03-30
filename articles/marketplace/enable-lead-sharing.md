@@ -1,20 +1,18 @@
 ---
 title: Получение сведений о потенциальных клиентах в Azure Marketplace | Azure
 description: Сведения о получении сведений о потенциальных клиентах в Azure Marketplace и AppSource для издателей служб и приложений.
-services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: jm-aditi-ms
-manager: pabutler
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/05/2018
-ms.author: ellacroi
-ms.openlocfilehash: 4475f6aecb0fe80cd20138eb885b79b6e7e82208
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 09282f3a54eeded52c63fab6bfe13528eaace48a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818682"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286308"
 ---
 # <a name="enable-lead-sharing"></a>Возможность общего доступа к данным о потенциальных клиентах
 Убедитесь, что управление потенциальными клиентами включено для вашего предложения в [Azure Marketplace](https://azuremarketplace.microsoft.com) или [Microsoft AppSource](https://appsource.microsoft.com), чтобы вы могли получать контактную информацию для следующих категорий аудитории.
@@ -55,4 +53,4 @@ ms.locfileid: "73818682"
 Дополнительные сведения о получении доступа к программе совместных продаж см. в статье [Развитие бизнеса с помощью Майкрософт](./promote-your-business-with-microsoft.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Ознакомьтесь со статьей [Руководство по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).
+Просмотрите [Руководство по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/02/2017
 ms.author: mbaldwin
 ms.openlocfilehash: 07502b4c4487a7517e2fe73b62eae0a237a6f22b
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70883267"
 ---
 # <a name="azure-key-vault-net-20---release-notes-and-migration-guide"></a>Хранилище ключей Azure .NET 2.0. Руководство по миграции и заметки о выпуске
@@ -48,12 +48,12 @@ ms.locfileid: "70883267"
 
 * *Secret* — изменено на *SecretBundle*.
 * *Dictionary* — изменено на *IDictionary*.
-* *List\<t >, строка []* изменена *на\<IList T >*
+* *Список\<T>, строка изменена* на *IList\<T>*
 * *NextList* — изменено на *NextPageLink*.
 
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
 
-* **KeyList** и **SecretList** теперь возвращают *IPage\<T >* вместо *listkeysresponsemessage.*
+* **KeyList** и **SecretList** теперь возвращает *IPage\<T>* вместо *ListKeysResponseMessage*
 * Созданный метод **BackupKeyAsync** теперь возвращает *BackupKeyResult* (содержит *Value* — большой двоичный объект для резервного копирования). Ранее метод был внутренним и возвращал только значение.
 
 ## <a name="exceptions"></a>Исключения
@@ -90,7 +90,7 @@ ms.locfileid: "70883267"
 ## <a name="class-changes"></a>Изменения в классах
 
 * Класс **UnixEpoch** удален.
-* Класс **Base64UrlConverter** переименован в **Base64UrlJsonConverter**.
+* **Класс Base64UrlConverter** переименован в **Base64UrlJsonConverter.**
 
 ## <a name="other-changes"></a>Другие изменения
 
@@ -98,7 +98,7 @@ ms.locfileid: "70883267"
 
 ## <a name="microsoftazuremanagementkeyvault-nuget"></a>Microsoft.Azure.Management.KeyVault NuGet
 
-* Для операций, которые возвращали *vault*, возвращаемый тип был представлен классом, который содержал свойство **Vault**. Теперь возвращаемый тип — *Vault*.
+* Для операций, вернувшихся *хранилище,* тип возврата был классом, содержащим свойство **Убежища.** Теперь возвращаемый тип — *Vault*.
 * *PermissionsToKeys* и *PermissionsToSecrets* — изменено на *Permissions.Keys* и *Permissions.Secrets*.
 * Определенные изменения типов возвращаемых значений применяются также на уровне управления.
 

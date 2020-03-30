@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 89bf49fb44d8575b251a0b33698bc4ce8425cc2b
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77160973"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
@@ -47,7 +47,7 @@ ms.locfileid: "77160973"
 
 ## <a name="use-the-development-support-tools"></a>Использование средств технической поддержки для разработки
 
-| Инструмент  | Description  |
+| Инструмент  | Описание  |
 |---------|---------|
 | [jwt.ms](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
 | [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph. |
@@ -60,27 +60,27 @@ Stack Overflow — это идеальное место для вопросов
 
 |Компонент/область  | Теги |
 |---------|---------|
-| Библиотека ADAL | [[adal]](https://stackoverflow.com/questions/tagged/adal) |
-| Библиотека MSAL     | [[msal]](https://stackoverflow.com/questions/tagged/msal) |
-| ПО промежуточного слоя OWIN  | [[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
+| Библиотека ADAL | [(Адал)](https://stackoverflow.com/questions/tagged/adal) |
+| Библиотека MSAL     | [(Мсал)](https://stackoverflow.com/questions/tagged/msal) |
+| ПО промежуточного слоя OWIN  | [«Лазурно-активный каталог»](https://stackoverflow.com/questions/tagged/azure-active-directory) |
 | [Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)  | [[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
 | [Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[azure-ad-b2c]](https://stackoverflow.com/questions/tagged/azure-ad-b2c) |
-| [API Microsoft Graph](https://developer.microsoft.com/graph/) | [[microsoft-graph]](https://stackoverflow.com/questions/tagged/microsoft-graph) |
-| Любая другая область, которая относится к аутентификации или авторизации | [[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
+| [API Microsoft Graph](https://developer.microsoft.com/graph/) | [(Microsoft-граф)](https://stackoverflow.com/questions/tagged/microsoft-graph) |
+| Любая другая область, которая относится к аутентификации или авторизации | [«Лазурно-активный каталог»](https://stackoverflow.com/questions/tagged/azure-active-directory) |
 
 Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуя этим рекомендациям, вы повысите вероятность того, что участники сообщества быстро отреагируют на ваш вопрос.
 
-* [How do I ask a good question](https://stackoverflow.com/help/how-to-ask) (Как правильно задать вопрос).
+* [Как задать хороший вопрос](https://stackoverflow.com/help/how-to-ask)
 * [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример)
 
 ## <a name="create-a-github-issue"></a>Сообщение о проблеме на GitHub
 
 Если возникла ошибка или проблема, связанная с нашими библиотеками, сообщите о ней на сайте GitHub. Так как в наших библиотеках используется открытый код, вы также можете отправить запрос на вытягивание.
 
-Список библиотек и их репозиториев GitHub см. в следующих статьях:
+Список библиотек и их репозитории GitHub можно узнать следующее:
 
-* Библиотеки [библиотеки проверки Подлинности Azure Active Directory (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) и репозитории GitHub
-* Библиотеки [проверки подлинности Microsoft (MSAL)](reference-v2-libraries.md) и репозитории GitHub
+* [Библиотеки и](../azuread-dev/active-directory-authentication-libraries.md) репозитории GitHub
+* Библиотеки [библиотеки Microsoft Authentication Library (MSAL)](reference-v2-libraries.md) и репозитории GitHub
 
 ## <a name="open-a-support-request"></a>Подача запроса в службу поддержки
 

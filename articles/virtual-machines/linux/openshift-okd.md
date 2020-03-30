@@ -15,17 +15,17 @@ ms.workload: infrastructure
 ms.date: 10/15/2019
 ms.author: haroldw
 ms.openlocfilehash: 6ecae09b0efbc0e35e591b31dbb54fb49ce101b3
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74035408"
 ---
 # <a name="deploy-okd-in-azure"></a>Развертывание OKD в Azure
 
 Существует два способа развертывания OKD (ранее OpenShift Origin) в Azure.
 
-- Вы можете вручную развернуть все необходимые компоненты инфраструктуры Azure, а затем следовать инструкциям из [документации](https://docs.okd.io) по источнику OKD.
+- Можно вручную развернуть все необходимые компоненты инфраструктуры Azure, а затем следовать [документации OKD.](https://docs.okd.io)
 - Вы можете воспользоваться [шаблоном Resource Manager](https://github.com/Microsoft/openshift-origin), который упрощает развертывание кластера OKD.
 
 ## <a name="deploy-using-the-okd-template"></a>Развертывание с помощью шаблона OKD
@@ -40,7 +40,7 @@ ms.locfileid: "74035408"
 
 [Шаблон OKD](https://github.com/Microsoft/openshift-origin) содержит несколько ветвей, доступных для разных версий OKD.  В соответствии с потребностями вы можете выполнять развертывание непосредственно из репозитория или создать вилку репозитория, чтобы вносить изменения перед развертыванием.
 
-Используйте для параметра `appId` значение `aadClientId` из созданного ранее субъекта-службы.
+Используйте для параметра `aadClientId` значение `appId` из созданного ранее субъекта-службы.
 
 Следующий примере создает файл параметров с именем azuredeploy.parameters.json, который содержит все необходимые входные данные.
 
@@ -161,7 +161,7 @@ $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift](./openshift-container-platform-3x-troubleshooting.md)

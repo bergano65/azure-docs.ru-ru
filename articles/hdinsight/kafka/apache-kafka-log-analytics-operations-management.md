@@ -1,5 +1,5 @@
 ---
-title: Журналы Azure Monitor для Apache Kafka Azure HDInsight
+title: Журналы Azure Monitor для Apache Kafka - Azure HDInsight
 description: Узнайте, как использовать журналы Azure Monitor для анализа журналов из кластера Apache Kafka в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,50 +9,50 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/17/2020
 ms.openlocfilehash: 3f8ff3cbc24f6e3a7e0eccf1b18e01941c9584b9
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77471186"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
-Узнайте, как использовать журналы Azure Monitor для анализа журналов, созданных Apache Kafka в HDInsight.
+Узнайте, как использовать журналы Azure Monitor для анализа журналов, генерируемых Apache Kafka на HDInsight.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="logs-location"></a>Расположение журналов
+## <a name="logs-location"></a>Местоположение журналов
 
-Apache Kafka журналы в кластере находятся в `/var/log/kafka`. Журналы Kafka не сохраняются и не сохраняются в течение жизненного цикла кластера, независимо от того, используются ли управляемые диски. В следующей таблице показаны доступные журналы.
+Входы Apache Kafka в кластере расположены по адресу `/var/log/kafka`. Журналы Kafka не сохраняются и не сохраняются в жизненных циклах кластеров, независимо от того, используются ли управляемые диски. В следующей таблице показаны доступные журналы.
 
 |Журнал |Описание |
 |---|---|
-|Kafka. out|stdout и stderr процесса Kafka. В этом файле находятся журналы запуска и завершения работы Kafka.|
-|Server. log|Основной журнал сервера Kafka. Все журналы Kafka Broker находятся здесь.|
-|контроллер. log|Журналы контроллера, если брокер работает как контроллер.|
-|StateChange. log|Все события изменения состояния в брокеры регистрируются в этом файле.|
-|Кафка-ГК. log|Статистика сбора мусора Kafka.|
+|kafka.out|stdout и stderr процесса Кафки. В этом файле вы найдете журналы запуска и выключения Kafka.|
+|server.log|Основной журнал сервера Kafka. Все журналы брокера Кафки заканчиваются здесь.|
+|controller.log|Контроллер журналы, если брокер выступает в качестве контроллера.|
+|statechange.log|Все события изменения состояния для брокеров регистрируются в этом файле.|
+|kafka-gc.log|Статистика сбора мусора Кафка.|
 
-## <a name="enable-azure-monitor-logs-for-apache-kafka"></a>Включение Azure Monitor журналов для Apache Kafka
+## <a name="enable-azure-monitor-logs-for-apache-kafka"></a>Включить журналы Azure Monitor для Apache Kafka
 
-Действия по включению журналов Azure Monitor для HDInsight одинаковы для всех кластеров HDInsight. Чтобы узнать, как создать и настроить необходимые службы, воспользуйтесь ссылками ниже.
+Шаги, позволяющие включить журналы Azure Monitor для HDInsight, одинаковы для всех кластеров HDInsight. Чтобы узнать, как создать и настроить необходимые службы, воспользуйтесь ссылками ниже.
 
-1. Создание рабочей области Log Analytics. Дополнительные сведения см. в разделе [журналы в Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) документе.
+1. Создание рабочей области Log Analytics. Для получения дополнительной информации смотрите документ [журналы в документе Azure Monitor.](../../azure-monitor/platform/data-platform-logs.md)
 
 2. Создание Kafka в кластере HDInsight. Дополнительные сведения см. в документе [Приступая к работе с Apache Kafka (предварительная версия) в HDInsight](apache-kafka-get-started.md).
 
-3. Настройте кластер Kafka для использования журналов Azure Monitor. Дополнительные сведения см. в разделе [Использование журналов Azure Monitor для мониторинга документа HDInsight](../hdinsight-hadoop-oms-log-analytics-tutorial.md) .
+3. Найдите кластер Kafka для использования журналов Azure Monitor. Для получения дополнительной [информации смотрите журналы «Используйте монитор Azure» для мониторинга документа HDInsight.](../hdinsight-hadoop-oms-log-analytics-tutorial.md)
 
 > [!IMPORTANT]  
-> Доступ к данным для журналов Azure Monitor может занять около 20 минут.
+> Это может занять около 20 минут, прежде чем данные доступны для журналов Azure Monitor.
 
 ## <a name="query-logs"></a>Журналы запросов
 
-1. На [портале Azure](https://portal.azure.com) выберите рабочую область Log Analytics.
+1. На [портале Azure](https://portal.azure.com)выберите рабочее пространство для анализа журналов.
 
-2. В меню слева в разделе **Общие**выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить**. Ниже приведены некоторые примеры поисковых запросов:
+2. Из левого меню, под **общим**, выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса, а затем выберите **Выполнить.** Ниже приведены некоторые примеры поисковых запросов:
 
-* Использование диска:
+* Использование дискового пространства: 
 
     ```kusto
     Perf
@@ -60,7 +60,7 @@ Apache Kafka журналы в кластере находятся в `/var/log/
     | summarize AggregatedValue = avg(CounterValue) by Computer, bin(TimeGenerated, 1h)
     ```
 
-* Загрузка ЦП:
+* Загрузка ЦП: 
 
     ```kusto
     Perf 
@@ -68,7 +68,7 @@ Apache Kafka журналы в кластере находятся в `/var/log/
     | summarize AggregatedValue = avg(CounterValue) by Computer, bin(TimeGenerated, 1h)
     ```
 
-* Входящих сообщений в секунду: (замените `your_kafka_cluster_name` именем кластера.)
+* Входящие сообщения в секунду: (Заменить `your_kafka_cluster_name` имя кластера.)
 
     ```kusto
     metrics_kafka_CL 
@@ -76,7 +76,7 @@ Apache Kafka журналы в кластере находятся в `/var/log/
     | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_MessagesInPerSec_Count_value_d) by HostName_s, bin(TimeGenerated, 1h)
     ```
 
-* Входящих байт в секунду: (замените `wn0-kafka` именем узла рабочего узла.)
+* Входящие байты в секунду: (Заменить `wn0-kafka` имя узла рабочего узла.)
 
     ```kusto
     metrics_kafka_CL 
@@ -84,7 +84,7 @@ Apache Kafka журналы в кластере находятся в `/var/log/
     | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesInPerSec_Count_value_d) by bin(TimeGenerated, 1h)
     ```
 
-* Исходящих байт в секунду: (замените `your_kafka_cluster_name` именем кластера.)
+* Исходящие байты в `your_kafka_cluster_name` секунду: (Заменить имя кластера.)
 
     ```kusto
     metrics_kafka_CL 
@@ -100,15 +100,15 @@ Apache Kafka журналы в кластере находятся в `/var/log/
     | log\_kafkacontroller\_CL | Брокер Kafka, controller.log |
     | metrics\_kafka\_CL | Метрики Kafka JMX |
 
-    ![Использование ЦП в службе log Analytics для Apache Kafka](./media/apache-kafka-log-analytics-operations-management/apache-kafka-cpu-usage.png)
+    ![Apache kafka журнал аналитики CPU использования](./media/apache-kafka-log-analytics-operations-management/apache-kafka-cpu-usage.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure Monitor см. в статьях [обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md)и [запрос Azure Monitor журналов для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
+Для получения дополнительной информации о Azure Monitor смотрите [обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md)и [журналы мониторинга запросов Azure Monitor для мониторинга кластеров HDInsight.](../hdinsight-hadoop-oms-log-analytics-use-queries.md)
 
 Дополнительные сведения о работе с Apache Kafka см. в следующих документах:
 
 * [Зеркальное отображение Apache Kafka в кластерах HDInsight](apache-kafka-mirroring.md)
-* [Увеличение масштаба Apache Kafka в HDInsight](apache-kafka-scalability.md)
+* [Увеличьте масштаб Apache Kafka на HDInsight](apache-kafka-scalability.md)
 * [Использование потоковой передачи Apache Spark (DStream) с Apache Kafka](../hdinsight-apache-spark-with-kafka.md)
 * [Использование структурированной потоковой передачи Apache Spark с Apache Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)

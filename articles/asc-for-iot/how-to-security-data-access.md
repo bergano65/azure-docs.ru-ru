@@ -1,6 +1,6 @@
 ---
-title: Доступ к данным с помощью центра безопасности Azure для IoT | Документация Майкрософт
-description: Узнайте, как получить доступ к данным оповещений системы безопасности и рекомендациям при использовании центра безопасности Azure для Интернета вещей.
+title: Доступ к данным с помощью Центра безопасности Azure для IoT Документы Майкрософт
+description: Узнайте о том, как получить доступ к данным оповещения и рекомендаций безопасности при использовании Центра безопасности Azure для IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -16,36 +16,36 @@ ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
 ms.openlocfilehash: 3ddd9b2c8373746a65cd78f0a81b60d097cd9f38
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68597180"
 ---
 # <a name="access-your-security-data"></a>Доступ к данным безопасности 
 
-Центр безопасности Azure для Интернета вещей хранит оповещения системы безопасности, рекомендации и необработанные данные безопасности (если вы решили сохранить их) в рабочей области Log Analytics.
+Центр безопасности Azure для IoT хранит оповещения, рекомендации и необработанные данные безопасности (если вы решите сохранить их) в рабочем пространстве журнала Analytics.
 
 ## <a name="log-analytics"></a>Log Analytics
 
-Чтобы настроить используемую рабочую область Log Analytics:
+Для настройки рабочего пространства Log Analytics используется:
 
 1. Откройте Центр Интернета вещей.
-1. Щелкните колонку **Обзор** в разделе **Безопасность** .
-2. Щелкните **Параметры**и измените конфигурацию рабочей области log Analytics.
+1. Нажмите на лезвие **обзора** под разделом **безопасности**
+2. Нажмите **Настройки**и измените конфигурацию рабочего пространства Log Analytics.
 
-Чтобы получить доступ к оповещениям и рекомендациям в рабочей области Log Analytics после настройки:
+Чтобы получить доступ к оповещениям и рекомендациям в рабочем пространстве журнала Analytics после настройки:
 
-1. Выберите оповещение или рекомендацию в центре безопасности Azure для Интернета вещей. 
-2. Щелкните **дальнейшее исследование**, а затем щелкните, **чтобы узнать, какие устройства имеют это оповещение щелкните здесь и просмотрите столбец DeviceID**.
+1. Выберите оповещение или рекомендацию в Центре безопасности Azure для IoT. 
+2. Нажмите **дальнейшее исследование,** затем нажмите, **чтобы увидеть, какие устройства имеют это предупреждение нажмите здесь и просмотреть столбец DeviceId**.
 
-Дополнительные сведения о запросах данных из Log Analytics см. [в разделе Начало работы с запросами в log Analytics](https://docs.microsoft.com//azure/log-analytics/query-language/get-started-queries).
+Подробную информацию о данных запросов из журналов Analytics можно узнать в [журнале «Начало с запросами» в журнале Analytics.](https://docs.microsoft.com//azure/log-analytics/query-language/get-started-queries)
 
 ## <a name="security-alerts"></a>Оповещения безопасности
 
-Оповещения системы безопасности хранятся в таблице _азуресекуритйофсингс. секуритялерт_ в log Analytics рабочей области, настроенной для решения "Центр безопасности Azure для Интернета вещей".
+Оповещения о безопасности хранятся в таблице _AzureSecurityOfThings.SecurityAlert_ в рабочем пространстве журнала Analytics, настроенном для решения IoT Центра безопасности Azure.
 
-ןנוהמסעאגכום ряд полезных запросов, которые помогут начать изучение оповещений системы безопасности.
+Мы предоставили ряд полезных запросов, которые помогут вам начать изучать оповещения о безопасности.
 
 ### <a name="sample-records"></a>Образцы записей
 
@@ -66,15 +66,15 @@ SecurityAlert
 | take 3
 ```
 
-| TimeGenerated           | иосубид                                                                                                       | Идентификатор устройства      | AlertSeverity | DisplayName                           | Описание                                             | ExtendedProperties                                                                                                                                                             |
+| TimeGenerated           | IoTHubId                                                                                                       | deviceId      | AlertSeverity | DisplayName                           | Описание                                             | ExtendedProperties                                                                                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2018-11-18T18:10:29.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Высокий          | Успешная атака методом подбора           | Атака методом подбора на устройстве успешно выполнена        |    {"Полный исходный адрес": "[\"10.165.12.18:\"]", "имена пользователей": "[\"\"]", "DeviceID": "IoT-Device-Linux"}                                                                       |
-| 2018-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Высокий          | Успешное локальное имя входа на устройстве      | Обнаружено успешное локальное имя входа на устройство     | {"Удаленный адрес": "?", "удаленный порт": "", "локальный порт": "", "оболочка входа": "/бин/Су", "идентификатор процесса входа": "28207", "имя пользователя": "злоумышленник", "DeviceId": "IoT-Device-Linux"} |
-| 2018-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Высокий          | Неудачная попытка локального входа на устройство  | Обнаружена неудачная попытка локального входа на устройство |  {"Удаленный адрес": "?", "удаленный порт": "", "локальный порт": "", "оболочка входа": "/бин/Су", "идентификатор процесса входа": "22644", "имя пользователя": "злоумышленник", "DeviceId": "IoT-Device-Linux"} |
+| 2018-11-18T18:10:29.000 | /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Высокий          | Нападение грубой силы удалось           | Нападение грубой силы на устройство было успешным        |    "Полный исходный\"адрес": "Я 10.165.12.18:\""З",\"\""Имена пользователей": "Я", "Deviceid": "IoT-Устройство-Linux"                                                                       |
+| 2018-11-19T12:40:31.000 | /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Высокий          | Успешный локальный вход на устройство      | Обнаружен успешный локальный вход на устройство     | "Удаленный адрес": "?", "Удаленный порт": "", "Местный порт": "", "Логин Шелл": "/бин/су", "Логин Процесс Id": "28207", "Имя пользователя": "нападающий", "DeviceId": "IoT-Device-Linux" |
+| 2018-11-19T12:40:31.000 | /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Высокий          | Неудачная попытка локального входа на устройстве  | Обнаружена неудачная попытка локального входа в устройство |  "Удаленный адрес": "?", "Удаленный порт": "", "Местный порт": "", "Логин Шелл": "/бин/су", "Логин Процесс Ид": "22644", "Имя пользователя": "нападающий", "DeviceId": "IoT-Device-Linux" |
 
-### <a name="device-summary"></a>Сводка по устройствам
+### <a name="device-summary"></a>Резюме устройства
 
-Получение числа отдельных оповещений системы безопасности, обнаруженных за последнюю неделю, сгруппированных по центру Интернета вещей, устройству, серьезности оповещения, типу оповещения.
+Получите количество различных предупреждений безопасности, обнаруженных на прошлой неделе, сгруппированных IoT Концентратор, устройство, серьезность оповещения, тип оповещения.
 
 ```
 // Get the number of distinct security alerts detected in the last week, grouped by 
@@ -89,16 +89,16 @@ SecurityAlert
     DisplayName
 ```
 
-| иосубид                                                                                                       | Идентификатор устройства      | AlertSeverity | DisplayName                           | Count |
+| IoTHubId                                                                                                       | deviceId      | AlertSeverity | DisplayName                           | Count |
 |----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|-----|
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Высокий          | Успешная атака методом подбора           | 9   |   
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Среднее        | Неудачная попытка локального входа на устройство  | 242 |    
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Высокий          | Успешное локальное имя входа на устройстве      | 31  |
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Среднее        | Криптография монет Miner                     | 4   |
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Высокий          | Нападение грубой силы удалось           | 9   |   
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Средний        | Неудачная попытка локального входа на устройстве  | 242 |    
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Высокий          | Успешный локальный вход на устройство      | 31  |
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Средний        | Крипто Монета Майнер                     | 4   |
 
-### <a name="iot-hub-summary"></a>Сводка центра Интернета вещей
+### <a name="iot-hub-summary"></a>Резюме концентратора IoT
 
-Выберите несколько уникальных устройств с предупреждениями за последнюю неделю, центр Интернета вещей, серьезность оповещения, тип оповещения
+Выберите ряд различных устройств, которые были оповещения на прошлой неделе, по IoT концентратор, серьезность оповещения, тип оповещения
 
 ```
 // Select number of distinct devices which had alerts in the last week, by 
@@ -113,18 +113,18 @@ SecurityAlert
     DisplayName
 ```
 
-| иосубид                                                                                                       | AlertSeverity | DisplayName                           | кнтдевицес |
+| IoTHubId                                                                                                       | AlertSeverity | DisplayName                           | CntDevices |
 |----------------------------------------------------------------------------------------------------------------|---------------|---------------------------------------|------------|
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | Высокий          | Успешная атака методом подбора           | 1          |    
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | Среднее        | Неудачная попытка локального входа на устройство  | 1          | 
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | Высокий          | Успешное локальное имя входа на устройстве      | 1          |
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | Среднее        | Криптография монет Miner                     | 1          |
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | Высокий          | Нападение грубой силы удалось           | 1          |    
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | Средний        | Неудачная попытка локального входа на устройстве  | 1          | 
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | Высокий          | Успешный локальный вход на устройство      | 1          |
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | Средний        | Крипто Монета Майнер                     | 1          |
 
-## <a name="security-recommendations"></a>Рекомендации по безопасности
+## <a name="security-recommendations"></a>Рекомендации по обеспечению безопасности
 
-Рекомендации по безопасности хранятся в таблице _азуресекуритйофсингс. секуритирекоммендатион_ в log Analytics рабочей области, настроенной для решения "Центр безопасности Azure для Интернета вещей".
+Рекомендации по безопасности хранятся в таблице _AzureSecurityOfThings.Security Recommendation_ в рабочей области журнала Analytics, настроенной для решения IoT центра безопасности Azure.
 
-Мы предоставили ряд полезных запросов, которые помогут приступить к изучению рекомендаций по безопасности.
+Мы предоставили ряд полезных запросов, которые помогут вам начать изучение рекомендаций по безопасности.
 
 ### <a name="sample-records"></a>Образцы записей
 
@@ -146,14 +146,14 @@ SecurityRecommendation
 | take 2
 ```
     
-| TimeGenerated | иосубид | Идентификатор устройства | рекоммендатионсеверити | рекоммендатионстате | рекоммендатиондисплайнаме | Описание | рекоммендатионаддитионалдата |
+| TimeGenerated | IoTHubId | deviceId | РекомендацияSeverity | РекомендацияГосударство | РекомендацияDisplayName | Описание | РекомендацииAdditionalеДанные |
 |---------------|----------|----------|------------------------|---------------------|---------------------------|-------------|------------------------------|
-| 2019-03-22T10:21:06.060 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Среднее | Активен | Обнаружено разрешительное правило брандмауэра во входной цепочке | Обнаружено правило брандмауэра, которое содержит разрешительный шаблон для широкого диапазона IP-адресов или портов. | {"Rules": "[\"{\"саурцеаддресс\":\"\",\"саурцепорт\":\",дестинатионаддресс\":\" \"\" ,\"Дестинатионпорт\":\"1337}]"}\" |
-| 2019-03-22T10:50:27.237 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Среднее | Активен | Обнаружено разрешительное правило брандмауэра во входной цепочке | Обнаружено правило брандмауэра, которое содержит разрешительный шаблон для широкого диапазона IP-адресов или портов. | {"Rules": "[\"{\"саурцеаддресс\":\"\",\"саурцепорт\":\",дестинатионаддресс\":\" \"\" ,\"Дестинатионпорт\":\"1337}]"}\" |
+| 2019-03-22T10:21:06.060 | /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Средний | Активна | Найдено правило разрешительного брандмауэра в цепочке ввода | Установлено правило в брандмауэре, содержащее разрешительный шаблон для широкого круга IP-адресов или портов | «Правила»» —\"\"SourceАдрес\"\"\":\",\"\"\"ИсточникПорт\"\"\":\",\"\"НазначениеАдрес :\", DestinationPort : 1337 |
+| 2019-03-22T10:50:27.237 | /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Средний | Активна | Найдено правило разрешительного брандмауэра в цепочке ввода | Установлено правило в брандмауэре, содержащее разрешительный шаблон для широкого круга IP-адресов или портов | «Правила»» —\"\"SourceАдрес\"\"\":\",\"\"\"ИсточникПорт\"\"\":\",\"\"НазначениеАдрес :\", DestinationPort : 1337 |
 
-### <a name="device-summary"></a>Сводка по устройствам
+### <a name="device-summary"></a>Резюме устройства
 
-Получите количество уникальных активных рекомендаций по безопасности, сгруппированных по центру Интернета вещей, устройству, серьезности рекомендаций и типу.
+Получите количество четких рекомендаций по безопасности, сгруппированных концентратором IoT, устройством, серьезностью рекомендаций и типом.
 
 ```
 // Get the number of distinct active security recommendations, grouped by by 
@@ -166,17 +166,17 @@ SecurityRecommendation
 | summarize Cnt=count() by IoTHubId, DeviceId, RecommendationSeverity
 ```
 
-| иосубид                                                                                                       | Идентификатор устройства      | рекоммендатионсеверити | Count |
+| IoTHubId                                                                                                       | deviceId      | РекомендацияSeverity | Count |
 |----------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----|
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Высокий          | 2   |    
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Среднее        | 1 |  
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Высокий          | 1  |
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < DEVICE_NAME > | Среднее        | 4   |
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Высокий          | 2   |    
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Средний        | 1 |  
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Высокий          | 1  |
+| /подписка/<subscription_id>/ресурсгруппы/<resource_group>/провайдеры/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Средний        | 4   |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с [обзором](overview.md) центра безопасности Azure для IOT
-- Узнайте о центре безопасности Azure для [архитектуры](architecture.md) IOT
-- Узнайте [об оповещениях центра безопасности Azure для Интернета вещей](concept-security-alerts.md) и изучите их
-- Ознакомьтесь с [рекомендациями центра безопасности Azure для IOT](concept-recommendations.md)
+- Прочтите Обзор обзора Системы безопасности Azure для [Обзора](overview.md) IoT
+- Узнайте больше о Центре безопасности Azure для [IoT-архитектуры](architecture.md)
+- Понимание и изучение [Центра безопасности Azure для оповещений IoT](concept-security-alerts.md)
+- Понять и изучить [Центр безопасности Azure для рекомендаций IoT](concept-recommendations.md)

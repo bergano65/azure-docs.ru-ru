@@ -1,7 +1,7 @@
 ---
-title: Нерекомендуемые профессиональные навыки
+title: Обезуменные когнитивные навыки
 titleSuffix: Azure Cognitive Search
-description: На этой странице приведен список признанных навыков, которые считаются устаревшими и не будут поддерживаться в ближайшем будущем в Azure Когнитивный поиск навыков.
+description: Эта страница содержит список когнитивных навыков, которые считаются универсленными и не будут поддерживаться в ближайшем будущем в навыках Azure Cognitive Search.
 manager: nitinme
 author: luiscabrer
 ms.author: luisca
@@ -9,18 +9,18 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 5f3587e4398be28cbaa2372be720258196bb48ff
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72792020"
 ---
-# <a name="deprecated-cognitive-skills-in-azure-cognitive-search"></a>Нерекомендуемые профессиональные навыки в Azure Когнитивный поиск
+# <a name="deprecated-cognitive-skills-in-azure-cognitive-search"></a>Уборные когнитивные навыки в Azure Cognitive Search
 
 В этом документе описываются когнитивные навыки, которые считаются устаревшими. Ознакомьтесь со следующими понятиями:
 
 * Имя навыка. Имя навыка, который станет устаревшим. Оно сопоставляется с атрибутом @odata.type.
-* Последняя доступная версия API. Последняя версия общедоступного API Когнитивный поиск Azure, с помощью которой можно создать или обновить навыков, содержащий соответствующий устаревший навык.
+* Последняя доступная версия api: Последняя версия общедоступного API Azure Cognitive Search, с помощью которого можно создавать/обновлять наборы навыков, содержащие соответствующие унищренные навыки.
 * Прекращение поддержки. Последний день, после которого соответствующий навык не будет поддерживаться. Ранее созданные наборы навыков по-прежнему будут работать, но пользователям рекомендуется прекратить их использование.
 * Рекомендации. Способ перехода для использования поддерживаемого навыка. Пользователям следует придерживаться этих рекомендаций, чтобы продолжать получать поддержку.
 
@@ -145,8 +145,8 @@ ms.locfileid: "72792020"
         }
         ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Навык распознавания сущностей](cognitive-search-skill-entity-recognition.md)

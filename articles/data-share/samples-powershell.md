@@ -1,35 +1,35 @@
 ---
-title: Примеры Azure PowerShell для общей папки данных Azure
-description: Дополнительные сведения о Azure PowerShell примерах сценариев для создания общих папок данных и управления ими в общем ресурсе данных Azure.
+title: Образцы Azure PowerShell для совместного использования данных Azure
+description: Узнайте о скриптах Azure PowerShell, которые помогут вам создавать и управлять долями данных в Azure Data Share.
 ms.service: data-share
 author: joannapea
 ms.author: joanpo
 ms.topic: conceptual
 ms.date: 07/06/2019
 ms.openlocfilehash: c2593c4c03f48624b8b9e3b9d72a3558f5f581be
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73499299"
 ---
-# <a name="azure-powershell-samples-for-azure-data-share"></a>Примеры Azure PowerShell для общей папки данных Azure
+# <a name="azure-powershell-samples-for-azure-data-share"></a>Образцы Azure PowerShell для совместного использования данных Azure
 
-В следующей таблице приведены ссылки на примеры сценариев Azure PowerShell для общего ресурса данных Azure.
+В следующей таблице приведены ссылки на образцы скриптов Azure PowerShell для совместного использования данных Azure.
 
 | |  |
 |---|---|
-|**Примеры для PowerShell**||
-|[Создать новую учетную запись общей папки данных](scripts/powershell/create-new-share-account-powershell.md)| Этот сценарий PowerShell создает новую учетную запись для общей папки данных. |
-|[Создание новой общей папки данных](scripts/powershell/create-new-share-powershell.md)| Этот сценарий PowerShell создает новую общую папку данных. |
-|[Добавление наборов данных в общую папку](scripts/powershell/add-datasets-powershell.md)| Этот сценарий PowerShell добавляет набор данных большого двоичного объекта в существующую учетную запись общей папки данных. |
-|[Настройка и просмотр синхронизации общего ресурса](scripts/powershell/set-view-synchronizations-powershell.md)| Этот сценарий PowerShell создает и просматривает синхронизацию существующей общей папки данных. |
-|[Создание приглашения для общего доступа к данным](scripts/powershell/create-share-invitation-powershell.md)| Этот пример сценария PowerShell создает приглашение для доступа к существующей общей папке данных. |
-|[Просмотр отправленных приглашений на общий доступ](scripts/powershell/view-sent-invitations-powershell.md)| Этот пример скрипта PowerShell извлекает список приглашений, отправленных из существующей общей папки данных. |
-|[Принимать приглашения на получение общего доступа](scripts/powershell/accept-share-invitations-powershell.md)| Этот пример сценария PowerShell принимает приглашение на обмен данными|
-|[Просмотр сведений об общих ресурсах данных](scripts/powershell/view-share-details-powershell.md)| Этот пример скрипта PowerShell перечисляет и извлекает сведения об общих ресурсах данных. |
-|[Отслеживание использования общих данных](scripts/powershell/monitor-usage-powershell.md)| Этот пример скрипта PowerShell отслеживает использование отправленных общих данных. |
-|[Создание и просмотр триггеров моментальных снимков](scripts/powershell/create-view-trigger-powershell.md)| Этот пример скрипта PowerShell создает триггеры моментальных снимков для общей папки.
+|**Образцы силовой оболочки**||
+|[Создание новой учетной записи обмена данными](scripts/powershell/create-new-share-account-powershell.md)| Этот скрипт PowerShell создает новую учетную запись обмена данными. |
+|[Создание нового общего обмена данными](scripts/powershell/create-new-share-powershell.md)| Этот скрипт PowerShell создает новый обмен данными. |
+|[Добавление наборов данных в общий доступ](scripts/powershell/add-datasets-powershell.md)| Этот скрипт PowerShell добавляет набор данных blob в существующую учетную запись обмена данными. |
+|[Настройка и синхронизация доли](scripts/powershell/set-view-synchronizations-powershell.md)| Этот скрипт PowerShell создает и просматривает синхронизацию существующего общего обмена данными. |
+|[Создание приглашения на совместное использование данных](scripts/powershell/create-share-invitation-powershell.md)| Этот пример скрипт PowerShell создает приглашение для доступа к существующему обмену данными. |
+|[Просмотр отправленных приглашений общего обмена](scripts/powershell/view-sent-invitations-powershell.md)| Этот пример скрипт PowerShell получает список приглашений, отправленных из существующего общего обмена данными. |
+|[Принять полученные приглашения на обмен акциями](scripts/powershell/accept-share-invitations-powershell.md)| Этот пример сценария PowerShell принимает приглашение на обмен данными|
+|[Просмотр сведений о долях данных](scripts/powershell/view-share-details-powershell.md)| В этом примере скрипт PowerShell перечисляется и извлекает сведения о долях данных. |
+|[Мониторинг использования общих данных](scripts/powershell/monitor-usage-powershell.md)| Этот пример сценария PowerShell отслеживает использование отправленных общих данных. |
+|[Создание и просмотр триггеров моментального просмотра](scripts/powershell/create-view-trigger-powershell.md)| Этот образец скрипта PowerShell создает триггеры моментального снимка доли.
 
 
 

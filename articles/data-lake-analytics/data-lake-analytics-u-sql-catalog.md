@@ -1,6 +1,6 @@
 ---
-title: Используйте каталог U-SQL в Azure Data Lake Analytics
-description: Сведения об использовании каталога U-SQL для совместного использования кода и данных. Создание функций, возвращающих табличное значение, создание представлений, создание таблиц и выполнение запросов к ним.
+title: Используйте каталог U-S'L в аналитике Azure Data Lake
+description: Сведения об использовании каталога U-SQL для совместного использования кода и данных. Создавайте функции, ценные для таблицы, создавайте представления, создавайте таблицы и запрашивайте их.
 services: data-lake-analytics
 ms.service: data-lake-analytics
 author: saveenr
@@ -10,10 +10,10 @@ ms.assetid: 57143396-ab86-47dd-b6f8-613ba28c28d2
 ms.topic: conceptual
 ms.date: 05/09/2017
 ms.openlocfilehash: f3b9f14be4422373fb30f8c3d4909fd9c9546fdf
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71672844"
 ---
 # <a name="get-started-with-the-u-sql-catalog-in-azure-data-lake-analytics"></a>Начало работы с каталогом U-SQL в Azure Data Lake Analytics
@@ -108,7 +108,7 @@ OUTPUT @res
     USING Outputters.Csv();
 ```
 
-## <a name="create-tables"></a>создание таблиц.
+## <a name="create-tables"></a>Создание таблиц
 Как и в случае с таблицами реляционной базы данных, U-SQL позволяет создать таблицу с предварительно определенной схемой или же создать таблицу и определить схему из запроса, который заполняет таблицу (CREATE TABLE AS SELECT или CTAS).
 
 Следующий скрипт создает базу данных и две таблицы:
@@ -170,7 +170,7 @@ OUTPUT @res
  >[!NOTE]
  >Сейчас выполнять SELECT для таблицы в том же скрипте, где создается таблица, нельзя.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
-* [Устранение неполадок с заданиями аналитики озера данных Azure с помощью портала Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+* [Мониторинг и устранение неполадок задания Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)

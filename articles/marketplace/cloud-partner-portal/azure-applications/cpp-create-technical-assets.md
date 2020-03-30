@@ -1,25 +1,24 @@
 ---
-title: Создание технических ресурсов приложения Azure | Azure Marketplace
+title: Создание технических активов приложений Azure Лазурный рынок
 description: Создание технических ресурсов для предложения приложения Azure.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/13/2018
-ms.author: pabutler
-ms.openlocfilehash: c9abaab4597e9fea43a2f0dcabc0e4a527ed5a6a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 041b2133ed63a906d3fea3ab67890a0057151b9b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827605"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80285271"
 ---
 # <a name="prepare-your-azure-application-technical-assets"></a>Подготовка технических ресурсов для приложения Azure
 
 В этой статье описываются средства подготовки технических ресурсов для предложения приложения Azure.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Просмотрите видео ниже ([Building Solution Templates, and Managed Applications for the Azure Marketplace](https://channel9.msdn.com/Events/Build/2018/BRK3603) (Создание шаблонов решений и управление приложениями в Azure Marketplace)), в котором рассказывается, как создать шаблон Azure Resource Manager для определения решения Azure и как после этого выполнить публикацию предложения приложения в Azure Marketplace.
 
@@ -31,21 +30,21 @@ ms.locfileid: "73827605"
 - [Описание структуры и синтаксиса шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates)
 - Краткие руководства:
 
-  - [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/)
+  - [Шаблоны Azure кикстарт](https://azure.microsoft.com/documentation/templates/)
   - [Шаблоны быстрого запуска Azure в GitHub](https://github.com/azure/azure-quickstart-templates)
   - [Публикация определения приложения](https://docs.microsoft.com/azure/managed-applications/publish-managed-app-definition-quickstart)
   - [Развертывание приложения из каталога служб](https://docs.microsoft.com/azure/managed-applications/deploy-service-catalog-quickstart)
 
   
-- Руководства:
+- Руководства.
 
   - [Создание файлов определений](https://docs.microsoft.com/azure/managed-applications/publish-service-catalog-app)
-  - [Публикация приложения из Marketplace](https://docs.microsoft.com/azure/managed-applications/publish-marketplace-app)
+  - [Публикация приложения из marketplace](https://docs.microsoft.com/azure/managed-applications/publish-marketplace-app)
 
   - Примеры:
 
-    - [Интерфейс командной строки Azure](https://docs.microsoft.com/azure/managed-applications/cli-samples)
-    - [Azure PowerShell](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
+    - [Лазурный CLI](https://docs.microsoft.com/azure/managed-applications/cli-samples)
+    - [Лазурная силаШелл](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
     - [Решения для управляемых приложений](https://docs.microsoft.com/azure/managed-applications/sample-projects)
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
@@ -56,20 +55,20 @@ ms.locfileid: "73827605"
 
 - базовое представление о [службах Azure](https://azure.microsoft.com/services/);
 - умение [разработать приложения Azure](https://azure.microsoft.com/solutions/architecture/);
-- с [виртуальными машинами Azure](https://azure.microsoft.com/services/virtual-machines/), [службой хранилища Azure](https://azure.microsoft.com/services/?filter=storage) и [сетями Azure](https://azure.microsoft.com/services/?filter=networking);
+- Рабочие знания [виртуальных машин Azure,](https://azure.microsoft.com/services/virtual-machines/) [хранения azure](https://azure.microsoft.com/services/?filter=storage)и [сети Azure](https://azure.microsoft.com/services/?filter=networking)
 - опыт работы с [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/);
-- с форматом [JSON](https://www.json.org/).
+- Рабочие знания [JSON](https://www.json.org/)
 
 ## <a name="suggested-tools"></a>Рекомендуемые инструменты
 
 Выберите одну или обе следующие среды создания скриптов, которые понадобятся вам при управлении приложением Azure:
 
-- [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
-- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+- [Лазурная силаШелл](https://docs.microsoft.com/powershell/azure/overview)
+- [Лазурный CLI](https://docs.microsoft.com/cli/azure)
 
 Мы рекомендуем добавить следующие инструменты в среду разработки:
 
-- [Azure Storage Explorer;](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+- [Исследователь хранения azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
 - [Visual Studio Code](https://code.visualstudio.com/) со следующими расширениями:
 
   - Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).

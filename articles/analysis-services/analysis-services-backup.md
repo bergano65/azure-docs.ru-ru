@@ -1,6 +1,6 @@
 ---
 title: Архивация и восстановление базы данных Azure Analysis Services | Документы Майкрософт
-description: В этой статье описывается, как выполнять резервное копирование и восстановление метаданных модели и данных из базы данных Azure Analysis Services.
+description: В этой статье описывается, как резервное копирование и восстановление метаданных моделей и данных из базы данных Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 3f63ecf560a14248fed6dea53c30a27acdf9a938
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73573449"
 ---
-# <a name="backup-and-restore"></a>Архивация и восстановление
+# <a name="backup-and-restore"></a>Резервное копирование и восстановление
 
 Архивация баз данных табличной модели в Azure Analysis Services во многом аналогична процедуре для локальных служб Analysis Services. Основное различие заключается в расположении для хранения архивных файлов. Архивные файлы следует сохранять в контейнер в [учетной записи хранения Azure](../storage/common/storage-create-storage-account.md). Можно использовать уже имеющиеся учетную запись хранения и контейнер либо создать их при настройке параметров хранилища для сервера.
 
@@ -23,7 +23,7 @@ ms.locfileid: "73573449"
 > 
 > 
 
-Резервные копии сохраняются с расширением ABF. Для табличных моделей в памяти сохраняются как данные, так и метаданные модели. Для табличных моделей с прямым запросом (DirectQuery) сохраняются только метаданные моделей. В зависимости от выбранных вами параметров архивные копии могут быть сжаты и зашифрованы.
+Резервное копирование сохраняется с расширением .abf. Для табличных моделей в памяти сохраняются как данные, так и метаданные модели. Для табличных моделей с прямым запросом (DirectQuery) сохраняются только метаданные моделей. В зависимости от выбранных вами параметров архивные копии могут быть сжаты и зашифрованы.
 
 
 ## <a name="configure-storage-settings"></a>Настройка параметров хранения
@@ -49,13 +49,13 @@ ms.locfileid: "73573449"
 
     ![Сохранение параметров архивации](./media/analysis-services-backup/aas-backup-save.png)
 
-## <a name="backup"></a>Azure Backup
+## <a name="backup"></a>Резервное копирование
 
 ### <a name="to-backup-by-using-ssms"></a>Архивация с помощью SSMS
 
 1. В среде SSMS щелкните правой кнопкой мыши базу данных и выберите **Архивировать**.
 
-2. В разделе **Резервное копирование базы данных** > **Файл резервной копии** нажмите кнопку **Обзор**.
+2. В**файле резервного копирования** **базы данных** > нажмите **«Просмотреть».**
 
 3. В диалоговом окне **Сохранить файл как** проверьте путь к папке, а затем введите имя для архивного файла. 
 
@@ -73,7 +73,7 @@ ms.locfileid: "73573449"
 ### <a name="powershell"></a>PowerShell
 Используйте командлет [Backup-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/backup-asdatabase).
 
-## <a name="restore"></a>Восстановление
+## <a name="restore"></a>Восстановить
 При восстановлении файл архивной копии должен находиться в учетной записи хранения, настроенной для вашего сервера. Если нужно переместить файл архивной копии из локального расположения в учетную запись хранилища, используйте [обозреватель хранилищ Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer) или служебную программу командной строки [AzCopy](../storage/common/storage-use-azcopy.md). 
 
 
@@ -101,7 +101,7 @@ ms.locfileid: "73573449"
 Используйте командлет [Restore-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/restore-asdatabase).
 
 
-## <a name="related-information"></a>Связанные сведения
+## <a name="related-information"></a>Дополнительные сведения
 
 [Учетные записи хранения Azure](../storage/common/storage-create-storage-account.md)  
 [Высокая доступность](analysis-services-bcdr.md)     
