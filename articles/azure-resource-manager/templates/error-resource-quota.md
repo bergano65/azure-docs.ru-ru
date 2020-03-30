@@ -1,13 +1,13 @@
 ---
-title: Ошибки квоты
-description: Описывает, как устранять ошибки квот ресурсов при развертывании ресурсов с помощью Azure Resource Manager.
+title: Ошибки квот
+description: Описывает, как устранить ошибки квот ресурсов при развертывании ресурсов с помощью менеджера ресурсов Azure.
 ms.topic: troubleshooting
 ms.date: 03/09/2018
 ms.openlocfilehash: 410b086b39d63d03491d390364f4aec6300fc7c1
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79273791"
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Устранение ошибок квот ресурсов
@@ -93,7 +93,7 @@ Virtual Machines                             0 10000 Count
 >
 >
 
-1. Выберите **Подписки**.
+1. Выберите **Подписку**.
 
    ![Подписки](./media/error-resource-quota/subscriptions.png)
 
@@ -101,11 +101,11 @@ Virtual Machines                             0 10000 Count
 
    ![Выбор подписки](./media/error-resource-quota/select-subscription.png)
 
-3. Выберите **Использование и квоты**.
+3. Выберите **Квоты использования**
 
    ![Использование и квоты](./media/error-resource-quota/select-usage-quotas.png)
 
-4. В правом верхнем углу выберите **Запросить увеличение**.
+4. В правом верхнем углу выберите **увеличение запроса.**
 
    ![Запросить увеличение](./media/error-resource-quota/request-increase.png)
 

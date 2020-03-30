@@ -1,5 +1,5 @@
 ---
-title: Экспорт групп ресурсов Azure, содержащих расширения ВМ
+title: Экспорт групп ресурсов Azure, содержащих расширения VM
 description: Экспорт шаблонов Resource Manager, которые включают расширения виртуальной машины.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: akjosh
 ms.openlocfilehash: 79991dad96742109817d579b951082d1a30e3951
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79253914"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Экспорт групп ресурсов, которые содержат расширения виртуальной машины

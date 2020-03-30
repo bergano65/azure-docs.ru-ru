@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 08/27/2019
 ms.author: alkohli
 ms.openlocfilehash: 13d5bce46883ea4ddca91d7222f68a19ba65c21c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79260050"
 ---
 # <a name="azure-data-box-limits"></a>Ограничения Azure Data Box
@@ -26,7 +26,7 @@ ms.locfileid: "79260050"
 ## <a name="data-box-limits"></a>Ограничения Data Box
 
 - В устройстве Data Box может храниться до 500 миллионов файлов.
-- Data Box поддерживает не более 512 контейнеров или общих папок в облаке. Каталоги верхнего уровня в общей папке пользователя преобразуются в контейнеры или общие файловые ресурсы Azure в облаке. 
+- Data Box поддерживает максимум 512 контейнеров или акций в облаке. Каталоги верхнего уровня в доле пользователя становятся контейнерами или долями файлов Azure в облаке. 
 
 ## <a name="azure-storage-limits"></a>Ограничения службы хранилища Azure
 

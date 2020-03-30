@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 01/15/2019
 ms.openlocfilehash: 958d937ad85fd62249c7ce3f0e0ab2f8cc1d1b80
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73819944"
 ---
 # <a name="getting-started-with-json-features-in-azure-sql-database"></a>Приступая к работе с функциями JSON в Базе данных SQL Azure
@@ -69,7 +69,7 @@ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
 }
 ```
 
-В этом примере мы вернули отдельный объект JSON вместо массива, указав параметр [WITHOUT_ARRAY_WRAPPER](https://msdn.microsoft.com/library/mt631354.aspx). Этот параметр можно использовать, если вы знаете, что результатом запроса является отдельный объект.
+В этом примере мы вернули один объект JSON вместо массива, указав [WITHOUT_ARRAY_WRAPPER](https://msdn.microsoft.com/library/mt631354.aspx) опцию. Этот параметр можно использовать, если вы знаете, что результатом запроса является отдельный объект.
 
 Основная ценность предложения FOR JSON заключается в том, что оно дает возможность возвращать сложные иерархические данные из базы данных в виде вложенных объектов JSON или массивов JSON. В приведенном ниже примере показано, как добавить строки из таблицы `Orders`, принадлежащие `Customer`, в виде вложенного массива объектов `Orders`.
 

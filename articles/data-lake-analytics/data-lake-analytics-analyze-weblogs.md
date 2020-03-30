@@ -1,6 +1,6 @@
 ---
 title: Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
-description: Узнайте, как анализировать журналы веб-сайта с помощью Azure Data Lake Analytics для выполнения функций и запросов U-SQL.
+description: Узнайте, как анализировать журналы веб-сайтов с помощью Azure Data Lake Analytics для выполнения функций и запросов ВС-У.
 services: data-lake-analytics
 author: saveenr
 ms.author: saveenr
@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 04c6d4c74a82ccfbcbb0faecb0dca5ec495f6663
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71672877"
 ---
 # <a name="analyze-website-logs-using-azure-data-lake-analytics"></a>Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
@@ -21,7 +21,7 @@ ms.locfileid: "71672877"
 
 ## <a name="prerequisites"></a>Предварительные требования
 * **Visual Studio 2015 или Visual Studio 2013**.
-* **[Средства Data Lake для Visual Studio](https://aka.ms/adltoolsvs)** .
+* **[Средства Data Lake для Visual Studio](https://aka.ms/adltoolsvs)**.
 
     После установки Средств Data Lake для Visual Studio вы увидите пункт **Data Lake** в меню **Сервис** Visual Studio.
 
@@ -29,7 +29,7 @@ ms.locfileid: "71672877"
 * **Базовые знания о Data Lake Analytics и инструментах Data Lake для Visual Studio**. Чтобы начать работу, см. следующие статьи.
 
   * [Разработка сценария U-SQL с помощью средств озера данных для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
-* **Учетная запись Data Lake Analytics**.  Ознакомьтесь с разделом [Создание учетной записи Azure Data Lake Analytics](data-lake-analytics-get-started-portal.md).
+* **Учетная запись Data Lake Analytics.**  Ознакомьтесь с разделом [Создание учетной записи Azure Data Lake Analytics](data-lake-analytics-get-started-portal.md).
 * **Установка образца данных.** На портале Azure откройте учетную запись Data Lake Analytics и в левом меню щелкните **Примеры сценариев**, а затем — **Копировать демонстрационные данные**. 
 
 ## <a name="connect-to-azure"></a>Подключение к Azure
@@ -37,7 +37,7 @@ ms.locfileid: "71672877"
 
 **Подключение к аналитике озера данных**
 
-1. Откройте Visual Studio.
+1. Запустите Visual Studio.
 2. Щелкните **Data Lake > Параметры и настройки**.
 3. Щелкните **Вход** или **Изменить пользователя**, если кто-то уже выполнил вход, и выполните инструкции для входа.
 4. Нажмите кнопку **ОК** , чтобы закрыть диалоговое окно параметров и настроек.
@@ -45,7 +45,7 @@ ms.locfileid: "71672877"
 **Просмотр учетных записей аналитики озера данных**
 
 1. В Visual Studio откройте **обозреватель серверов**, нажав клавиши **CTRL + ALT + S**.
-2. В **обозревателе серверов** разверните **Azure**, а затем — **Data Lake Analytics**. Будет выведен список учетных записей аналитики озера данных, если они есть. Создать учетную запись аналитики озера данных в Studio невозможно. Описание создания учетной записи см. в [руководстве по началу работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md) или [руководстве по началу работы с Azure Data Lake Analytics с помощью Azure PowerShell](data-lake-analytics-get-started-powershell.md).
+2. В **обозревателе серверов** разверните **Azure**, а затем — **Data Lake Analytics**. Будет выведен список учетных записей аналитики озера данных, если они есть. Создать учетную запись аналитики озера данных в Studio невозможно. Чтобы создать учетную запись, [см. Начало работы с Azure Data Lake Analytics с помощью Azure Portal](data-lake-analytics-get-started-portal.md) или начать работу с [Azure Data Lake Analytics с помощью Azure PowerShell.](data-lake-analytics-get-started-powershell.md)
 
 ## <a name="develop-u-sql-application"></a>Разработка приложения U-SQL
 Приложение U-SQL представляет собой главным образом сценарий U-SQL. Дополнительные сведения о языке U-SQL см. в статье [Приступая к работе с U-SQL](data-lake-analytics-u-sql-get-started.md).

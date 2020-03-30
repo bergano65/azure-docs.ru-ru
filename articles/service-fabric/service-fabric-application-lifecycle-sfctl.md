@@ -1,22 +1,22 @@
 ---
-title: Управление приложениями Service Fabric Azure с помощью sfctl
+title: Управление приложениями Azure Service Fabric с помощью sfctl
 description: Узнайте, как развертывать приложения в кластере Azure Service Fabric и удалять их из него с помощью интерфейса командной строки Azure Service Fabric.
 author: Christina-Kang
 ms.topic: conceptual
 ms.date: 07/31/2018
 ms.author: bikang
 ms.openlocfilehash: 7d361d44c349bc7a6e3c041f78d00ad66182fa15
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79259075"
 ---
 # <a name="manage-an-azure-service-fabric-application-by-using-azure-service-fabric-cli-sfctl"></a>Управление приложениями Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric (sfctl)
 
 Узнайте, как создавать и удалять приложения, выполняющиеся в кластере Azure Service Fabric.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите интерфейс командной строки Service Fabric и выберите кластер Service Fabric. Дополнительные сведения см. в статье [Azure Service Fabric command line](service-fabric-cli.md) (Интерфейс командной строки Azure Service Fabric).
 

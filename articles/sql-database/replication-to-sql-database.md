@@ -12,17 +12,17 @@ ms.author: xiwu
 ms.reviewer: mathoma
 ms.date: 01/25/2019
 ms.openlocfilehash: f718bc17b987926f4324635f096d5983acdb63fc
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79256475"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в пуле службы "База данных SQL Azure"
 
 На [сервере Базы данных SQL](sql-database-servers.md) в Базе данных SQL Azure репликацию SQL Server можно настроить как для отдельной базы данных, так и для базы данных в пуле.  
 
-## <a name="supported-configurations"></a>**Поддерживаемые конфигурации**
+## <a name="supported-configurations"></a>**Поддерживаемые конфигурации:**
   
 - SQL Server может быть экземпляром SQL Server, работающим локально или на виртуальной машине Azure в облаке. Дополнительные сведения см. в статье [Обзор SQL Server на виртуальных машинах Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-sql-server-infrastructure-services/).  
 - База данных SQL Azure должна быть подписана на сообщения, отправляемые издателем SQL Server.  
@@ -32,14 +32,14 @@ ms.locfileid: "79256475"
 
 ## <a name="versions"></a>Версии  
 
-Локальные издатели SQL Server и распространители должны использовать (по крайней мере) одну из следующих версий:  
+Издатели и дистрибьюторы на территории S'L Server должны использовать (по крайней мере) одну из следующих версий:  
 
-- SQL Server 2016 и выше
-- SQL Server 2014 [RTM Cu10 (12.0.4427.24)](https://support.microsoft.com/help/3094220/cumulative-update-10-for-sql-server-2014) или [пакет обновления 1 (SP1) CU3 (12.0.2556.4)](https://support.microsoft.com/help/3094221/cumulative-update-3-for-sql-server-2014-service-pack-1)
-- SQL Server 2012 [с пакетом обновления 2 (SP2) CU8 (11.0.5634.1)](https://support.microsoft.com/help/3082561/cumulative-update-8-for-sql-server-2012-sp2) или [SP3 (11.0.6020.0)](https://www.microsoft.com/download/details.aspx?id=49996)
+- Сервер S'L 2016 и больше
+- Сервер СЗЛ 2014 [RTM CU10 (12.0.4427.24)](https://support.microsoft.com/help/3094220/cumulative-update-10-for-sql-server-2014) или [SP1 CU3 (12.0.2556.4)](https://support.microsoft.com/help/3094221/cumulative-update-3-for-sql-server-2014-service-pack-1)
+- Сервер S'L 2012 [SP2 CU8 (11.0.5634.1)](https://support.microsoft.com/help/3082561/cumulative-update-8-for-sql-server-2012-sp2) или [SP3 (11.0.6020.0)](https://www.microsoft.com/download/details.aspx?id=49996)
 
 > [!NOTE]
-> Попытка настроить репликацию с использованием неподдерживаемой версии может привести к появлению номера ошибки MSSQL_REPL20084 (процессу не удалось подключиться к подписчику.) и MSSQL_REPL40532 (не удается открыть имя сервера \<> запрашиваемое именем для входа. Вход в систему не выполнен").  
+> Попытка настройки репликации с помощью неподдерживаемой версии может привести к MSSQL_REPL20084 числа ошибок (процесс \<не может подключиться к абоненту.) и MSSQL_REPL40532 (Не может открыть имя сервера> запрошенному логином. Вход в систему не выполнен").  
 
 Чтобы использовать все функции Базы данных SQL Azure, необходимо использовать последние версии [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).  
 
@@ -54,7 +54,7 @@ ms.locfileid: "79256475"
 - Одна публикация на сервере SQL Server может поддерживать подписчиков и Базы данных SQL Azure, и SQL Server (локально и SQL Server на виртуальной машине Azure).  
 - Управление репликацией, ее мониторинг и устранение неполадок должны выполняться на локальном SQL Server.  
 - В Базе данных SQL Azure поддерживаются только принудительные подписки.  
-- В `@subscriber_type = 0`sp_addsubscription**для Базы данных SQL поддерживается только**.  
+- В **sp_addsubscription** для Базы данных SQL поддерживается только `@subscriber_type = 0`.  
 - База данных SQL Azure не поддерживает двунаправленную, немедленную, обновляемую или одноранговую репликацию.
 
 ## <a name="replication-architecture"></a>Архитектура репликации  
@@ -108,14 +108,14 @@ ms.locfileid: "79256475"
 
 Создайте публикацию и принудительную подписку. Дополнительные сведения см. в разделе:
   
-- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени сервера Базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'** ) и имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
+- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
+- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени сервера Базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'**) и имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
 
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
 
 - [Репликация транзакций](sql-database-managed-instance-transactional-replication.md)
-- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
+- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)
 - [Типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication)
-- [Мониторинг (репликация)](https://docs.microsoft.com/sql/relational-databases/replication/monitor/monitoring-replication)
+- [Наблюдение (репликация)](https://docs.microsoft.com/sql/relational-databases/replication/monitor/monitoring-replication)
 - [Инициализация подписки](https://docs.microsoft.com/sql/relational-databases/replication/initialize-a-subscription)  

@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок соединений — Azure PowerShell
+title: Соединения для устранения неполадок - Azure PowerShell
 titleSuffix: Azure Network Watcher
 description: Узнайте, как использовать функцию устранения неполадок подключений службы "Наблюдатель за сетями Azure" с помощью PowerShell.
 services: network-watcher
@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: damendo
 ms.openlocfilehash: abc9389c2c5fd5576795c26a89e3941b6eb5a939
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76842841"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-powershell"></a>Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" с помощью PowerShell
@@ -25,15 +25,15 @@ ms.locfileid: "76842841"
 > [!div class="op_single_selector"]
 > - [Портал](network-watcher-connectivity-portal.md)
 > - [PowerShell](network-watcher-connectivity-powershell.md)
-> - [Azure CLI](network-watcher-connectivity-cli.md)
-> - [Azure REST API](network-watcher-connectivity-rest.md)
+> - [Лазурный CLI](network-watcher-connectivity-cli.md)
+> - [REST API Azure](network-watcher-connectivity-rest.md)
 
 Узнайте, как проверить возможность прямого подключения TCP между виртуальной машиной и определенной конечной точкой с помощью функции устранения неполадок подключения.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Экземпляр службы "Наблюдатель за сетями" в регионе, в котором нужно устранить проблему подключения.
 * Виртуальные машины, на которых требуется устранить неполадки подключения.

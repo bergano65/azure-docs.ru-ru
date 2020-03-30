@@ -1,6 +1,6 @@
 ---
 title: Сертификация активов в службе автоматизации Azure
-description: Сертификаты безопасно находятся в службе автоматизации Azure, поэтому они могут быть доступны модулям Runbook или конфигурациям DSC для проверки подлинности в Azure и сторонних ресурсах.  В этой статье подробно рассматриваются сертификаты и работа с ними при создании текстовых и графических модулей.
+description: Сертификаты надежно защищены в Azure Automation, поэтому к ним можно получить доступ в запущенных книгах или конфигурациях DSC для проверки подлинности в отношении ресурсов Azure и сторонних сторонних групп.  В этой статье подробно рассматриваются сертификаты и работа с ними при создании текстовых и графических модулей.
 services: automation
 ms.service: automation
 ms.subservice: shared-capabilities
@@ -10,28 +10,28 @@ ms.date: 04/02/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: a66f73e028594cf90f1fa1765910a3df3adbad1a
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74849485"
 ---
 # <a name="certificate-assets-in-azure-automation"></a>Сертификация активов в службе автоматизации Azure
 
-Сертификаты хранятся в службе автоматизации Azure в безопасном режиме, поэтому они могут быть доступны для модулей Runbook или конфигураций DSC с помощью действия **Get-AzureRmAutomationCertificate** для Azure Resource Managerных ресурсов. Эта возможность позволяет создавать модули runbook и конфигурации DSC, которые используют сертификаты для аутентификации или добавляют их в ресурсы Azure либо ресурсы сторонних производителей.
+Сертификаты надежно хранятся в Azure Automation, чтобы к ним можно было получить доступ в запущенных книгах или конфигурациях DSC с помощью деятельности **Get-AzureRmAutomationCertificate** для ресурсов Azure Resource Manager. Эта возможность позволяет создавать модули runbook и конфигурации DSC, которые используют сертификаты для аутентификации или добавляют их в ресурсы Azure либо ресурсы сторонних производителей.
 
 >[!NOTE]
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Этот ключ хранится в хранилище ключей, управляемом системой. Перед сохранением защищенного ресурса ключ загружается из Key Vault, а затем используется для шифрования ресурса. Этим процессом управляет служба автоматизации Azure.
 
 ## <a name="azurerm-powershell-cmdlets"></a>Командлеты PowerShell для AzureRM
 
-Для AzureRM командлеты, представленные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell. Они поставляются как часть [модуля AzureRM. Automation](/powershell/azure/overview), который доступен для использования в модулях Runbook службы автоматизации и конфигурациях DSC.
+Для AzureRM командлеты, представленные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell. Они погрузки в рамках [AzureRM.Automation модуль](/powershell/azure/overview), который доступен для использования в автоматизации runbooks и DSC конфигураций.
 
 |Командлеты|Описание|
 |:---|:---|
 |[Get-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/get-azurermautomationcertificate)|Извлекает сведения о сертификате для использования в модуле Runbook или в конфигурации DSC. Сам сертификат можно извлечь только с помощью действия Get-AutomationCertificate.|
-|[New-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/new-azurermautomationcertificate)|Создает сертификат в службе автоматизации Azure.|
-[Remove-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/remove-azurermautomationcertificate)|Удаляет сертификат из службы автоматизации Azure.|
+|[Новый AzureRmAutomationCertificate](/powershell/module/azurerm.automation/new-azurermautomationcertificate)|Создает сертификат в службе автоматизации Azure.|
+[Удалить-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/remove-azurermautomationcertificate)|Удаляет сертификат из службы автоматизации Azure.|
 |[Set-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/set-azurermautomationcertificate)|Задает свойства для существующего сертификата, включая отправку файла сертификата и задание пароля для PFX-файла.|
 |[Add-AzureCertificate](/powershell/module/servicemanagement/azure/add-azurecertificate)|Отправляет сертификат службы в заданную облачную службу.|
 
@@ -50,7 +50,7 @@ ms.locfileid: "74849485"
 
 Функция, приведенная в следующей таблице, используется для доступа к сертификатам в runbook Python2.
 
-| Функция | Описание |
+| Компонент | Описание |
 |:---|:---|
 | automationassets.get_automation_certificate | Извлекает сведения о ресурсе сертификата. |
 
@@ -59,18 +59,18 @@ ms.locfileid: "74849485"
 
 ## <a name="creating-a-new-certificate"></a>Создание нового сертификата
 
-При создании нового сертификата в службу автоматизации Azure передается CER- или PFX-файл. Если пометить сертификат как экспортируемый, его можно будет переместить из хранилища сертификатов службы автоматизации Azure. Если он не является экспортируемым, то его можно использовать только для подписывания в Runbook или конфигурации DSC. Службе автоматизации Azure требуется, чтобы у сертификата был поставщик: **Microsoft Enhanced RSA and AES Cryptographic Provider**.
+При создании нового сертификата в службу автоматизации Azure передается CER- или PFX-файл. Если пометить сертификат как экспортируемый, его можно будет переместить из хранилища сертификатов службы автоматизации Azure. Если он не экспортируется, то он может быть использован только для подписания в конфигурации runbook или DSC. Службе автоматизации Azure требуется, чтобы у сертификата был поставщик: **Microsoft Enhanced RSA and AES Cryptographic Provider**.
 
 ### <a name="to-create-a-new-certificate-with-the-azure-portal"></a>Создание нового сертификата на портале Azure
 
-1. В учетной записи службы автоматизации щелкните плитку **ресурсы** , чтобы открыть страницу **ресурсы** .
-2. Щелкните плитку **Сертификаты** , чтобы открыть страницу **Сертификаты** .
-3. Щелкните **Добавить сертификат** в верхней части страницы.
-4. Введите имя сертификата в поле **Имя** .
-5. Чтобы перейти к CER- или PFX-файлу, щелкните **Выбрать файл** в разделе **Отправка файла сертификата**. Если вы выбрали PFX-файл, укажите пароль и возможность его экспорта.
+1. С вашей учетной записи Автоматизация щелкните плитку **Активов,** чтобы открыть страницу **Активов.**
+2. Нажмите на плитку **Сертификатов,** чтобы открыть страницу **Сертификатов.**
+3. Нажмите **Добавить сертификат** в верхней части страницы.
+4. Введите имя сертификата в поле **Имя**.
+5. Чтобы перейти к CER- или PFX-файлу, щелкните **Выбрать файл** в разделе **Отправка файла сертификата**. Если вы выберете файл .pfx, укажите пароль и можно ли его экспортировать.
 6. Щелкните **Создать** для сохранения нового ресурса сертификата.
 
-### <a name="to-create-a-new-certificate-with-powershell"></a>Создание нового сертификата с помощью PowerShell
+### <a name="to-create-a-new-certificate-with-powershell"></a>Создание нового сертификата с PowerShell
 
 В примере, приведенном ниже, демонстрируется, как создать сертификат службы автоматизации и пометить его как экспортируемый. Вследствие этого импортируется существующий PFX-файл.
 
@@ -83,9 +83,9 @@ $ResourceGroup = "ResourceGroup01"
 New-AzureRmAutomationCertificate -AutomationAccountName "MyAutomationAccount" -Name $certificateName -Path $PfxCertPath –Password $CertificatePassword -Exportable -ResourceGroupName $ResourceGroup
 ```
 
-### <a name="create-a-new-certificate-with-resource-manager-template"></a>Создание нового сертификата с помощью шаблона диспетчер ресурсов
+### <a name="create-a-new-certificate-with-resource-manager-template"></a>Создание нового сертификата с шаблоном «Менеджер ресурсов»
 
-В следующем примере показано, как развернуть сертификат в учетной записи службы автоматизации с помощью шаблона диспетчер ресурсов с помощью PowerShell:
+Ниже приводится следующий пример, как развернуть сертификат в учетную запись автоматизации с помощью шаблона менеджера ресурсов через PowerShell:
 
 ```powershell-interactive
 $AutomationAccountName = "<automation account name>"
@@ -128,7 +128,7 @@ New-AzureRmResourceGroupDeployment -Name NewCert -ResourceGroupName TestAzureAut
 
 ## <a name="using-a-certificate"></a>Использование сертификата
 
-Чтобы использовать сертификат, примените действие **Get-AutomationCertificate**. Нельзя использовать командлет [Get-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/get-azurermautomationcertificate) , так как он возвращает сведения о ресурсе сертификата, но не сам сертификат.
+Чтобы использовать сертификат, примените действие **Get-AutomationCertificate**. Вы не можете использовать [cmdlet Get-AzureRmAutomationCertificate,](/powershell/module/azurerm.automation/get-azurermautomationcertificate) так как он возвращает информацию об активе сертификата, но не сам сертификат.
 
 ### <a name="textual-runbook-sample"></a>Пример текстового Runbook
 
@@ -144,11 +144,11 @@ Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
 
 ### <a name="graphical-runbook-sample"></a>Пример графического Runbook
 
-Чтобы добавить команду **Get-AutomationCertificate** в графический модуль Runbook, щелкните сертификат правой кнопкой мыши в области Библиотека и выберите **Добавить на холст**.
+Вы добавляете **Get-AutomationCertificate** в графический runbook, нажав на сертификат в панели библиотеки и выбрав **Добавить в холст.**
 
 ![Добавление сертификата на холст](../media/certificates/automation-certificate-add-to-canvas.png)
 
-На следующем рисунке показан пример использования сертификата в графическом Runbook. Это аналогично предыдущему примеру, в котором показано, как добавить сертификат в облачную службу из текстового модуля Runbook.
+На следующем рисунке показан пример использования сертификата в графическом Runbook. Это то же самое, что и предыдущий пример, в ходе которого показано, как добавить сертификат в облачную службу из текстовой службы.
 
 ![Пример графической разработки](../media/certificates/graphical-runbook-add-certificate.png)
 
