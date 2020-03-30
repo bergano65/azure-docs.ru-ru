@@ -1,5 +1,5 @@
 ---
-title: Правила маршрутизации на основе URL-пути с помощью интерфейса командной строки — шлюз приложений Azure
+title: Правила маршрутизации на основе URL с помощью CLI - Azure Application Gateway
 description: Узнайте, как создать правила маршрутизации на основе URL-пути для шлюза приложений и масштабируемого набора виртуальных машин с помощью Azure CLI.
 services: application-gateway
 author: vhorne
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/13/2019
 ms.author: victorh
 ms.openlocfilehash: 5f75ae1104297c461584e061f5a94aecd987caad
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78246786"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-routing-rules-using-the-azure-cli"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи Azure CLI | Документация Майкрософт
@@ -27,11 +27,11 @@ ms.locfileid: "78246786"
 
 ![Пример маршрутизации для URL-адресов](./media/application-gateway-create-url-route-cli/scenario.png)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -229,11 +229,11 @@ az network public-ip show \
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/application-gateway-create-url-route-cli/application-gateway-nginx.png)
 
-Измените URL-адрес на `http://<ip-address>:8080/video/test.html` до конца базового URL-адреса, и вы увидите нечто вроде следующего:
+Измените `http://<ip-address>:8080/video/test.html` URL-адрес в конец базового URL, и вы увидите что-то вроде следующего примера:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/application-gateway-create-url-route-cli/application-gateway-nginx-images.png)
 
-Измените URL-адрес на `http://<ip-address>:8080/video/test.html`, и вы увидите нечто вроде приведенного ниже примера.
+Измените URL-адрес, `http://<ip-address>:8080/video/test.html` и вы увидите что-то вроде следующего примера.
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/application-gateway-create-url-route-cli/application-gateway-nginx-video.png)
 

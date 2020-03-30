@@ -12,37 +12,37 @@ ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
 ms.openlocfilehash: 3a9568e1a0307cd1713c511ef42c065424306548
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302888"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
-Чтобы видео в выходном ресурсе стали доступны для воспроизведения в клиентах, необходимо создать [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators), а затем сформировать URL-адреса потоковой передачи. Чтобы создать URL-адрес, необходимо объединить имя узла конечной точки потоковой передачи и путь указателя потоковой передачи. Пример .NET приведен в разделе [Создание указателя потоковой передачи](stream-files-tutorial-with-api.md#get-a-streaming-locator).
+Чтобы видео в выходном ресурсе стали доступны для воспроизведения в клиентах, необходимо создать [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators), а затем сформировать URL-адреса потоковой передачи. Чтобы создать URL-адрес, необходимо сцепить имя узла конечной точки потоковой передачи и путь указателя потоковой передачи. Пример .NET приведен в разделе [Создание указателя потоковой передачи](stream-files-tutorial-with-api.md#get-a-streaming-locator).
 
-Процесс создания **указателя потоковой передачи** называется публикацией. По умолчанию **указатель потоковой передачи** допустим сразу после выполнения вызова API и действует, пока не будет удален, если не настроить дополнительное начальное и конечное время. 
+Процесс создания **потокового локатора** называется публикацией. По умолчанию **потоковый локатор** действителен сразу после выполнения вызовов API и длится до тех пор, пока он не будет удален, если только вы не наверстируете дополнительное время начала и окончания. 
 
-При создании **указателя потоковой передачи**необходимо указать имя **ресурса** и имя **политики потоковой передачи** . Дополнительные сведения см. в следующих разделах:
+При создании **потокового locator**необходимо указать имя **актива** и имя **политики потоковой передачи.** Дополнительные сведения см. в следующих разделах:
 
-* [Ресурсы](assets-concept.md)
+* [Активы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
 * [Политики ключа содержимого](content-key-policy-concept.md)
 
-Можно также указать время начала и окончания для указателя потоковой передачи, что позволит пользователю воспроизводить содержимое в указанное время (например, от 5/1/2019 до 5/5/2019).  
+Вы также можете указать время начала и окончания на вашем потоковом Locator, который позволит пользователю воспроизводить содержимое только между этими временами (например, между 5/1/2019 до 5/5/2019).  
 
 ## <a name="considerations"></a>Рекомендации
 
-* Не удается обновить **указатели потоковой передачи** . 
+* **Потоковые локаторы** не являются updatable. 
 * Свойства **указателей потоковой передачи** типа Datetime всегда задаются в формате UTC.
 * Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. Дополнительные сведения см. в статье [Квоты и ограничения](limits-quotas-constraints.md).
 
-## <a name="create-streaming-locators"></a>Создание указателей потоковой передачи  
+## <a name="create-streaming-locators"></a>Создание потоковых локаторов  
 
 ### <a name="not-encrypted"></a>Не зашифровано
 
-Если вы хотите выполнить потоковую передачу файла в (не зашифрованном), задайте предопределенную политику очистки потоковой передачи: в "Predefined_ClearStreamingOnly" (в .NET можно использовать перечисление Предефинедстреамингполици. Клеарстреамингонли).
+Если вы хотите передавать файл в ясном (незашифрованном) установите предопределенную четкую политику потоковой передачи: к "Predefined_ClearStreamingOnly" (в .NET можно использовать PredefinedStreamingPolicy.ClearStreamingOnly enum).
 
 ```csharp
 StreamingLocator locator = await client.StreamingLocators.CreateAsync(
@@ -58,7 +58,7 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 
 ### <a name="encrypted"></a>зашифрованные; 
 
-Если необходимо зашифровать содержимое с помощью шифрования CENC, задайте для политики значение "Predefined_MultiDrmCencStreaming". Шифрование Widevine будет применяться к потоку ШТРИХа, а PlayReady — к Smooth. Ключ будет доставлен клиенту воспроизведения на основе настроенных лицензий DRM.
+Если вам необходимо зашифровать содержимое с помощью шифрования CENC, установите политику на "Predefined_MultiDrmCencStreaming". Шифрование Widevine будет применено к потоку DASH и PlayReady to Smooth. Ключ будет доставлен клиенту воспроизведения на основе настроенных лицензий DRM.
 
 ```csharp
 StreamingLocator locator = await client.StreamingLocators.CreateAsync(
@@ -73,38 +73,38 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
     });
 ```
 
-Если вы хотите также зашифровать поток HLS с помощью CBCS (FairPlay), используйте "Predefined_MultiDrmStreaming".
+Если вы также хотите зашифровать поток HLS с помощью CBCS (FairPlay), используйте "Predefined_MultiDrmStreaming".
 
 > [!NOTE]
 > Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="associate-filters-with-streaming-locators"></a>Связывание фильтров с указателями потоковой передачи
+## <a name="associate-filters-with-streaming-locators"></a>Ассоциированные фильтры с потоковыми локаторами
 
-См. раздел [фильтры: связывание с указателями потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
+Смотрите [фильтры: ассоциируется с потоковыми локаторами](filters-concept.md#associating-filters-with-streaming-locator).
 
-## <a name="filter-order-page-streaming-locator-entities"></a>Сущности «фильтр», «порядок», «указатель потоковой передачи»
+## <a name="filter-order-page-streaming-locator-entities"></a>Фильтр, порядок, объекты потоковой передачи страниц
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="list-streaming-locators-by-asset-name"></a>Перечисление указателей потоковой передачи по имени ресурса
+## <a name="list-streaming-locators-by-asset-name"></a>Список потоковых локаторов по имени активов
 
-Чтобы получить указатели потоковой передачи на основе имени связанного ресурса, используйте следующие операции:
+Чтобы получить потоковые локаторы на основе связанного имени актива, используйте следующие операции:
 
 |Язык|API|
 |---|---|
-|REST|[листстреаминглокаторс](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators)|
-|CLI|[AZ AMS Asset List-Streaming-Locator](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest#az-ams-asset-list-streaming-locators)|
-|.NET|[листстреаминглокаторс](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocators?view=azure-dotnet#Microsoft_Azure_Management_Media_AssetsOperationsExtensions_ListStreamingLocators_Microsoft_Azure_Management_Media_IAssetsOperations_System_String_System_String_System_String_)|
-|Java|[ассетстреаминглокатор](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
+|REST|[liststreaminglocators](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators)|
+|CLI|[az ams список активов-поток-локаторы](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest#az-ams-asset-list-streaming-locators)|
+|.NET|[ListStreamingLocators](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocators?view=azure-dotnet#Microsoft_Azure_Management_Media_AssetsOperationsExtensions_ListStreamingLocators_Microsoft_Azure_Management_Media_IAssetsOperations_System_String_System_String_System_String_)|
+|Java|[AssetStreamingLocator](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
 |Node.js|[listStreamingLocators](https://docs.microsoft.com/javascript/api/@azure/arm-mediaservices/assets#liststreaminglocators-string--string--string--msrest-requestoptionsbase-)|
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
-* [Ресурсы](assets-concept.md)
+* [Активы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
 * [Политики ключа содержимого](content-key-policy-concept.md)
-* [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
+* [Учебник: Загружать, кодировать и передавать видео с помощью .NET](stream-files-tutorial-with-api.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Создание указателя потоковой передачи и URL-адресов сборки](create-streaming-locator-build-url.md)
+[Как создать потоковое локатор и создать URL-адреса](create-streaming-locator-build-url.md)

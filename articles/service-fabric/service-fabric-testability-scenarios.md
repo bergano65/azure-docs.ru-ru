@@ -1,15 +1,15 @@
 ---
-title: Создание Chaos и отработки отказа для Azure Service Fabric
+title: Создание тестов хаоса и сбоя для Сервиса Azure Fabric
 description: Использование сценариев тестов на хаос и отработку отказа Service Fabric для провоцирования ошибок и проверки надежности служб.
 author: motanv
 ms.topic: conceptual
 ms.date: 10/1/2019
 ms.author: motanv
 ms.openlocfilehash: 206b02024ad052a12e87cfdf1773815027e8aec4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75465532"
 ---
 # <a name="testability-scenarios"></a>Сценарии Testability
@@ -124,7 +124,7 @@ class Test
 
 PowerShell
 
-Модуль Service Fabric PowerShell содержит два способа запуска сценария Chaos. `Invoke-ServiceFabricChaosTestScenario` работает на клиенте, и если клиентский компьютер завершает работу в течение этого теста, дальнейшие ошибки не будут добавлены. Кроме того, существует набор команд, предназначенных для сохранения выполнения теста в случае завершения работы компьютера. `Start-ServiceFabricChaos` использует системную службу с отслеживанием состояния и надежной системной службой под названием службы анализа сбоев, гарантируя, что ошибки будут отображаться до тех пор, пока не завершится TimeToRun. `Stop-ServiceFabricChaos` можно использовать, чтобы вручную отключить сценарий, `Get-ServiceFabricChaosReport` получите отчет. Дополнительные сведения см. в [справочнике по Azure Service Fabric PowerShell](https://docs.microsoft.com/powershell/module/servicefabric/?view=azureservicefabricps) и [принудительном управлении Chaos в кластерах Service Fabric](service-fabric-controlled-chaos.md).
+Модуль Service Fabric Powershell включает в себя два способа начать сценарий хаоса. `Invoke-ServiceFabricChaosTestScenario`клиентосновенна, и если клиентская машина выключена в середине теста, никаких дальнейших неисправностей не будет введено. Кроме того, существует набор команд, предназначенных для поддержания работы теста в случае выключения машины. `Start-ServiceFabricChaos`использует штатную и надежную системную службу под названием FaultAnalysisService, гарантируя, что неисправности будут сохраняться до тех пор, пока TimeToRun не будет запущен. `Stop-ServiceFabricChaos`может быть использован для ручной `Get-ServiceFabricChaosReport` остановки сценария и получит отчет. Для получения дополнительной информации см. [ссылку На службу Azure Fabric Powershell](https://docs.microsoft.com/powershell/module/servicefabric/?view=azureservicefabricps) и [индуцирование контролируемого хаоса в кластерах Service Fabric.](service-fabric-controlled-chaos.md)
 
 ```powershell
 $connection = "localhost:19000"
@@ -159,7 +159,7 @@ Invoke-ServiceFabricChaosTestScenario -TimeToRunMinute $timeToRun -MaxClusterSta
 * **WaitTimeBetweenFaults**— время ожидания между каждым циклом сбоя и проверки.
 
 ### <a name="how-to-run-the-failover-test"></a>Выполнение теста отработки отказа
-**C#**
+**C #**
 
 ```csharp
 using System;

@@ -1,5 +1,5 @@
 ---
-title: Обработка событий в режиме реального времени с помощью Azure Stream Analytics
+title: Обработка событий в режиме реального времени с помощью аналитики Потокового потока Azure
 description: В этой статье описывается эталонная архитектура для аналитики и обработки событий с помощью Azure Stream Analytics в режиме реального времени.
 author: jseb225
 ms.author: jeanb
@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/24/2017
 ms.openlocfilehash: d219b3fcb27b23527c0a651bc8e842a9e036bfc2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75431486"
 ---
 # <a name="reference-architecture-real-time-event-processing-with-microsoft-azure-stream-analytics"></a>Эталонная архитектура: обработка событий в режиме реального времени средствами Microsoft Azure Stream Analytics
@@ -22,13 +22,13 @@ ms.locfileid: "75431486"
 
 Платформа Microsoft Azure предлагает богатый ассортимент аналитических технологий, позволяющих реализовать самые разные сценарии и решения с различными требованиями. Выбор оптимальной службы Azure для развертывания комплексного решения может оказаться непростой задачей с учетом всех возможных вариантов. В этом документе описаны возможности и принципы взаимодействия различных служб Azure, позволяющих реализовать решение для потоковой обработки событий. В нем также рассматриваются возможные сценарии эффективного использования этого подхода клиентами.
 
-## <a name="contents"></a>Контент
+## <a name="contents"></a>Содержимое
 * Аннотация
 * Общие сведения об аналитике в режиме реального времени
 * Ценность средств Azure для работы с данными в режиме реального времени
 * Распространенные сценарии применения средств аналитики в режиме реального времени
 * Архитектура и компоненты
-  * Источники данных
+  * обозревателе решений
   * Уровень интеграции данных
   * Уровень аналитики в режиме реального времени
   * Уровень хранения данных
@@ -41,14 +41,14 @@ ms.locfileid: "75431486"
 
 **Версия:** 1.0
 
-**Загрузка:** [Обработка событий в режиме реального времени с помощью Microsoft Azure Stream Analytics](https://download.microsoft.com/download/6/2/3/623924DE-B083-4561-9624-C1AB62B5F82B/real-time-event-processing-with-microsoft-azure-stream-analytics.pdf)
+**Ссылка для загрузки:** [Обработка событий в режиме реального времени средствами Microsoft Azure Stream Analytics](https://download.microsoft.com/download/6/2/3/623924DE-B083-4561-9624-C1AB62B5F82B/real-time-event-processing-with-microsoft-azure-stream-analytics.pdf)
 
-## <a name="get-help"></a>Справка
+## <a name="get-help"></a>Получить справку
 За дополнительной помощью обращайтесь на [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

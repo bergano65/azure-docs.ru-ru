@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: mikhegn
 ms.openlocfilehash: 0bca690fd585b288f15cbab21c1c951474390318
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78196985"
 ---
 # <a name="manage-applications-for-multiple-environments"></a>Управление приложениями для использования в нескольких средах
@@ -40,9 +40,9 @@ Azure Service Fabric позволяет создавать кластеры, д�
 
 При создании именованных экземпляров приложения в Service Fabric имеется возможность передавать параметры. Способ их передачи зависит от того, как создается экземпляр приложения.
 
-  - В PowerShell командлет [`New-ServiceFabricApplication`](https://docs.microsoft.com/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps) принимает параметры приложения в виде хэш-таблицы.
-  - При использовании sfctl команда [`sfctl application create`](https://docs.microsoft.com/azure/service-fabric/service-fabric-sfctl-application#sfctl-application-create) принимает параметры в виде строки JSON. Сценарий install.sh использует sfctl.
-  - Visual Studio предоставляет набор файлов параметров в папке Parameters в проекте приложения. Эти файлы параметров используются при публикации из Visual Studio с помощью Azure DevOps Services или Azure DevOps Server. В Visual Studio файлы параметров передаются в сценарий Deploy-FabricApplication.ps1.
+  - В PowerShell [`New-ServiceFabricApplication`](https://docs.microsoft.com/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps) cmdlet принимает параметры приложения как хэшбит.
+  - Используя sfctl, [`sfctl application create`](https://docs.microsoft.com/azure/service-fabric/service-fabric-sfctl-application#sfctl-application-create) команда использует параметры как строку JSON. Сценарий install.sh использует sfctl.
+  - Visual Studio предоставляет набор файлов параметров в папке Parameters в проекте приложения. Эти файлы параметров используются при публикации из Visual Studio, с помощью служб Azure DevOps или Azure DevOps Server. В Visual Studio файлы параметров передаются в сценарий Deploy-FabricApplication.ps1.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В приведенных ниже статьях описывается, как использовать некоторые основные понятия, приведенные в этой статье:

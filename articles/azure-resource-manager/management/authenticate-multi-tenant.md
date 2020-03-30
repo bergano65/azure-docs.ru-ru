@@ -4,10 +4,10 @@ description: В этой статье описывается, как Azure Resou
 ms.topic: conceptual
 ms.date: 10/11/2019
 ms.openlocfilehash: 7a13ba6f6cbfc10c52484c45e4011da7a0d8ee4c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75478829"
 ---
 # <a name="authenticate-requests-across-tenants"></a>Запросы на аутентификацию в разных клиентах
@@ -18,10 +18,10 @@ ms.locfileid: "75478829"
 
 Запрос содержит следующие значения заголовков аутентификации.
 
-| Имя заголовка | Description | Пример значения |
+| Имя заголовка | Описание | Пример значения |
 | ----------- | ----------- | ------------ |
 | Авторизация | Основной токен | Bearer &lt;основной_токен&gt; |
-| x-ms-authorization-auxiliary | Вспомогательные токены | Носитель &lt;вспомогательная токен1&gt;, Енкриптедбеарер &lt;вспомогательная токен2&gt;, Bearer &lt;вспомогательная token3&gt; |
+| x-ms-authorization-auxiliary | Вспомогательные токены | Носитель &lt;&gt;auxiliary-token1 , EncryptedBearer &lt;auxiliary-token2&gt;, Bearer &lt;auxiliary-token3&gt; |
 
 Дополнительный заголовок может содержать до трех вспомогательных токенов. 
 
@@ -35,5 +35,5 @@ ms.locfileid: "75478829"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о запросах проверки подлинности см. в разделе [потоки проверки подлинности и сценарии приложений](../../active-directory/develop/authentication-flows-app-scenarios.md).
+* Чтобы узнать о запросах аутентификации, [см.](../../active-directory/develop/authentication-flows-app-scenarios.md)
 * Дополнительные сведения о токенах см. в статье [Маркеры доступа в Azure Active Directory](../../active-directory/develop/access-tokens.md).

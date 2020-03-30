@@ -1,6 +1,6 @@
 ---
-title: EXP на языке запросов Azure Cosmos DB
-description: Сведения о функции SQL System экспоненты (EXP) в Azure Cosmos DB, возвращающей экспоненциальное значение указанного числового выражения
+title: EXP на языке запроса Azure Cosmos DB
+description: Узнайте о функции системы Exponent (EXP) в Azure Cosmos DB, чтобы вернуть экспоненциальную ценность указанного численного выражения
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 76d614264124e1ce4138663b702ff6d899b3aa4e
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74873324"
 ---
 # <a name="exp-azure-cosmos-db"></a>EXP (Azure Cosmos DB)
@@ -28,15 +28,15 @@ EXP (<numeric_expr>)
 *numeric_expr*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
-  Константа **e** (2,718281…) является основанием натуральных логарифмов.  
+  Константа **e** (2,718281...) является основанием натуральных логарифмов.  
   
-  Экспонента числа — это константа **e** степени числа. Например, EXP(1.0) = e^1.0 = 2,71828182845905 и EXP(10) = e^10 = 22026,4657948067.  
+  Экспонента числа является константой **e**, возведенной в степень числа. Например, EXP(1.0) = e^1.0 = 2,71828182845905 и EXP(10) = e^10 = 22026,4657948067.  
   
   Экспонента натурального логарифма числа — это само число. Например, EXP (LOG (n)) = n. Натуральный логарифм экспоненты числа также является числом. Например, LOG (EXP (n)) = n.  
   
@@ -68,6 +68,6 @@ SELECT EXP(LOG(20)) AS exp1, LOG(EXP(20)) AS exp2
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

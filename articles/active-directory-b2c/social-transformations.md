@@ -1,7 +1,7 @@
 ---
-title: Примеры преобразования заявок на учетную запись социальных сетей для пользовательских политик
+title: Примеры трансформации социальных счетов для пользовательских политик
 titleSuffix: Azure AD B2C
-description: Примеры преобразования заявок на учетную запись социальных сетей (инфраструктура процедур идентификации) для схемы Azure Active Directory B2C.
+description: Примеры преобразования социальных счетов для схемы интерфейса identity Experience (IEF) Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,17 +12,17 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: cb713651aca266ab2546ff26c3cd0175a4cbc289
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78183760"
 ---
 # <a name="social-accounts-claims-transformations"></a>Преобразования утверждений учетных записей социальных сетей
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В Azure Active Directory B2C (Azure AD B2C) идентификаторы учетных записей социальных сетей хранятся в атрибуте `userIdentities` типа утверждения **алтернативесекуритидколлектион** . Каждый элемент в утверждении **alternativeSecurityIdCollection** задает издателя (имя поставщика удостоверений, например facebook.com) и `issuerUserId` — уникальный идентификатор пользователя для издателя.
+В Azure Active Directory B2C (Azure AD B2C) `userIdentities` идентификаторы социальных учетных записей хранятся в атрибуте альтернативного типа **требованияSecurityIdCollection.** Каждый элемент в утверждении **alternativeSecurityIdCollection** задает издателя (имя поставщика удостоверений, например facebook.com) и `issuerUserId` — уникальный идентификатор пользователя для издателя.
 
 ```JSON
 "userIdentities": [{
@@ -39,9 +39,9 @@ ms.locfileid: "78183760"
 
 ## <a name="createalternativesecurityid"></a>CreateAlternativeSecurityId
 
-Создает представление JSON свойства alternativeSecurityId пользователя, которое можно использовать в вызовах Azure Active Directory. Дополнительные сведения см. в схеме [AlternativeSecurityId](https://docs.microsoft.com/graph/api/resources/alternativesecurityid) .
+Создает представление JSON свойства alternativeSecurityId пользователя, которое можно использовать в вызовах Azure Active Directory. Для получения дополнительной [информации](https://docs.microsoft.com/graph/api/resources/alternativesecurityid) см.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | ключ | строка | Тип ClaimType, который указывает уникальный идентификатор пользователя, используемый поставщиком удостоверений социальных сетей. |
 | InputClaim | identityProvider | строка | Тип ClaimType, который указывает имя поставщика удостоверений учетных записей социальных сетей, например facebook.com. |
@@ -73,7 +73,7 @@ ms.locfileid: "78183760"
 
 Добавляет `AlternativeSecurityId` к утверждению `alternativeSecurityIdCollection`.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | item | строка | Тип ClaimType, добавляемый к исходящему утверждению. |
 | InputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, используемые при преобразовании утверждений (если типы доступны в политике). Если это значение указано, при преобразовании утверждений в конец коллекции добавляется `item`. |
@@ -110,7 +110,7 @@ ms.locfileid: "78183760"
 
 Возвращает список издателей из утверждения **alternativeSecurityIdCollection** в новое утверждение **stringCollection**.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | alternativeSecurityIdCollection | alternativeSecurityIdCollection | Тип ClaimType, используемый для получения списка поставщиков удостоверений (издатель). |
 | outputClaim | identityProvidersCollection | stringCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Список поставщиков удостоверений, связанных со входящим утверждением alternativeSecurityIdCollection |
@@ -137,7 +137,7 @@ ms.locfileid: "78183760"
 
 Удаляет **AlternativeSecurityId** из утверждения **alternativeSecurityIdCollection**.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | identityProvider | строка | Тип ClaimType, который содержит имя поставщика удостоверений, удаляемое из коллекции. |
 | InputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, используемые в преобразовании утверждений. При преобразовании утверждений identityProvider удаляется из коллекции. |
@@ -147,7 +147,7 @@ ms.locfileid: "78183760"
 1. В технических профилях **AAD-UserReadUsingAlternativeSecurityId** и **AAD-UserReadUsingObjectId** выведите утверждение пользователя **alternativeSecurityIds**.
 2. Попросите пользователя выбрать учетную запись социальной сети, которая будет удалена из списка поставщиков удостоверений, связанных с этим пользователем.
 3. Вызовите технический профиль преобразования утверждений, который вызывает преобразование утверждений **RemoveAlternativeSecurityIdByIdentityProvider**, при котором было удалено выбранное удостоверение социальной сети, с использованием имени поставщика удостоверений.
-4. Сохраните утверждение **alternativeSecurityIds** в учетной записи пользователя.
+4. Упорство **alternativeSecurityIds претензии** к учетной записи пользователя.
 
 ```XML
 <ClaimsTransformation Id="RemoveAlternativeSecurityIdByIdentityProvider" TransformationMethod="RemoveAlternativeSecurityIdByIdentityProvider">

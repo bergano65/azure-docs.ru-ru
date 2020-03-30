@@ -1,7 +1,7 @@
 ---
-title: Настройка потока учетных данных для пароля владельца ресурса с помощью настраиваемых политик
+title: Настройка потока учетных данных владельца ресурса с помощью пользовательских политик
 titleSuffix: Azure AD B2C
-description: Узнайте, как настроить поток учетных данных для пароля владельца ресурса (РОПК) с помощью пользовательских политик в Azure Active Directory B2C.
+description: Узнайте, как настроить поток учетных данных владельца паролей владельца ресурса (ROPC) с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,21 +12,21 @@ ms.date: 02/27/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 55b4750d2c601a4d3c66bcd8235a9718d6daaf9d
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78187015"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-В Azure Active Directory B2C (Azure AD B2C) поток учетных данных для пароля владельца ресурса (РОПК) является стандартным потоком проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
+В Azure Active Directory B2C (Azure AD B2C) поток учетных данных паролей владельца ресурса (ROPC) является стандартным потоком аутентификации OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
 
 [!INCLUDE [active-directory-b2c-ropc-notes](../../includes/active-directory-b2c-ropc-notes.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 
@@ -124,7 +124,7 @@ ms.locfileid: "78187015"
     </TechnicalProfile>
     ```
 
-    Замените **DefaultValue** **client_id** идентификатором приложения ProxyIdentityExperienceFramework, созданным в руководстве по предварительной установке. Затем замените **DefaultValue** **resource_id** идентификатором приложения приложения IdentityExperienceFramework, которое также было создано в учебнике по необходимым компонентам.
+    Замените **DefaultValue** **client_id** идентификатором приложения ProxyIdentityExperienceFramework, созданным в обязательном учебном пособии. Затем **замените DefaultValue** **resource_id** идентификатором приложения IdentityExperienceFramework, которое вы также создали в обязательном учебном пособии.
 
 5. Добавьте следующие элементы **ClaimsProvider** с техническими профилями в элемент **ClaimsProviders**.
 
@@ -219,7 +219,7 @@ ms.locfileid: "78187015"
 
 7. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 8. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-9. Щелкните **Отправить**.
+9. Нажмите кнопку **Отправка**.
 
 ## <a name="create-a-relying-party-file"></a>Создание файла проверяющей стороны
 
@@ -239,8 +239,8 @@ ms.locfileid: "78187015"
     ```
 
 5. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-6. Включите **Перезапись политики, если она существует**, а затем найдите и выберите файл *ROPC_Auth. XML* .
-7. Щелкните **Отправить**.
+6. Включите **Перезапись политики, если она существует,** а затем просмотреть и выберите файл *ROPC_Auth.xml.*
+7. Нажмите кнопку **Отправка**.
 
 ## <a name="test-the-policy"></a>Проверка политики
 
@@ -251,7 +251,7 @@ ms.locfileid: "78187015"
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Клавиши | Значение |
+| Ключ | Значение |
 | --- | ----- |
 | username | `user-account` |
 | password | `password1` |
@@ -296,7 +296,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Клавиши | Значение |
+| Ключ | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |

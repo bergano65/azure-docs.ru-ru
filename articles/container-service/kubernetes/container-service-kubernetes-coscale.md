@@ -8,10 +8,10 @@ ms.date: 05/22/2017
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: f1d0ca1ffc2e7a3d645ac5acbaafdf45f85550be
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76271100"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-kubernetes-cluster-with-coscale"></a>Мониторинг кластера Kubernetes в Службе контейнеров Azure с помощью CoScale (не рекомендуется)
@@ -30,7 +30,7 @@ CoScale представляет собой платформу для монит
 Как показано в этой статье, вы можете установить агенты в кластер Kubernetes для выполнения CoScale в качестве решения SaaS. CoScale также можно установить локально, если необходимо хранить данные на месте.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сначала потребуется [создать учетную запись CoScale](https://web.archive.org/web/20170507123133/https://www.coscale.com/free-trial).
 
@@ -59,7 +59,7 @@ az acs kubernetes install-cli
 ```
 
 ## <a name="installing-the-coscale-agent-with-a-daemonset"></a>Установка агента CoScale с помощью DaemonSet
-Kubernetes использует наборы [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) для выполнения отдельного экземпляра контейнера на каждом узле в кластере.
+[DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) используются Kubernetes для выполнения одного экземпляра контейнера на каждом узлах в кластере.
 Они идеально подходят для выполнения агентов мониторинга, таких как CoScale.
 
 После входа в CoScale перейдите на [страницу агента](https://app.coscale.com/), чтобы установить в кластер агенты CoScale с помощью DaemonSet. Пользовательский интерфейс CoScale содержит пошаговые инструкции настройки по созданию агента и запуску мониторинга всего кластера Kubernetes.

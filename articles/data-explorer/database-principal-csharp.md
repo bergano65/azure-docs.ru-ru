@@ -1,6 +1,6 @@
 ---
-title: Добавление участников базы данных для обозреватель данных Azure с помощьюC#
-description: Из этой статьи вы узнаете, как добавить субъекты базы данных для Azure обозреватель данных с C#помощью.
+title: 'Добавление основ базы данных для Azure Data Explorer с помощью C #'
+description: В этой статье вы узнаете, как добавить принципы базы данных для Azure Data Explorer с помощью C.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -8,37 +8,37 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.openlocfilehash: 797d1253d44739f2026563e3df72bc85a8ef382e
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76965038"
 ---
-# <a name="add-database-principals-for-azure-data-explorer-by-using-c"></a>Добавление участников базы данных для обозреватель данных Azure с помощьюC#
+# <a name="add-database-principals-for-azure-data-explorer-by-using-c"></a>Добавление основ базы данных для Azure Data Explorer с помощью C #
 
 > [!div class="op_single_selector"]
-> * [C#](database-principal-csharp.md)
+> * [C #](database-principal-csharp.md)
 > * [Python](database-principal-python.md)
-> * [Шаблон Azure Resource Manager](database-principal-resource-manager.md)
+> * [Шаблон менеджера ресурсов Azure](database-principal-resource-manager.md)
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы добавите участников базы данных для Azure обозреватель данных с помощью C#.
+Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы добавляете принципы базы данных для Azure Data Explorer с помощью C'.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Если вы не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** [версию Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
+* Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Убедитесь, что вы **включите разработку Azure** во время установки Visual Studio.
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-* [Создайте кластер и базу данных](create-cluster-database-csharp.md).
+* [Создание кластера и базы данных](create-cluster-database-csharp.md).
 
-## <a name="install-c-nuget"></a>Установка C# NuGet
+## <a name="install-c-nuget"></a>Установка СЗ NuGet
 
-* Установите [Microsoft. Azure. Management. kusto](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
-* Установите [Microsoft. RESTful. ClientRuntime. Azure. Authentication](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication) для проверки подлинности.
+* Установка [Microsoft.Azure.Management.kusto](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
+* Установите [Microsoft.Rest.ClientRuntime.Azure.Authentication](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication) для проверки подлинности.
 
 [!INCLUDE [data-explorer-authentication](../../includes/data-explorer-authentication.md)]
 
-## <a name="add-a-database-principal"></a>Добавление участника базы данных
+## <a name="add-a-database-principal"></a>Добавление основной базы данных
 
-В следующем примере показано, как добавить участника базы данных программным способом.
+Следующий пример показывает, как добавить основную базу данных программно.
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -68,19 +68,19 @@ await kustoManagementClient.DatabasePrincipalAssignments.CreateOrUpdateAsync(res
 
 |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
 |---|---|---|
-| tenantId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента. Также известен как идентификатор каталога.|
-| subscriptionId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор подписки, используемый для создания ресурсов.|
-| clientid | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
-| clientSecret | *кскскскскскскскскскскскскскс* | Секрет клиента приложения, которое может получить доступ к ресурсам в клиенте. |
-| имя_группы_ресурсов | *testrg* | Имя группы ресурсов, содержащей кластер.|
-| clusterName | *mykustocluster* | Имя кластера.|
+| tenantId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента. Также известен как идентификатор каталога.|
+| subscriptionId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор подписки, который используется для создания ресурсов.|
+| clientid | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента приложения, который может получить доступ к ресурсам в вашем арендаторе.|
+| clientSecret | *xxxxxxxxxxxxxxxxxxxx* | Секрет клиента приложения, которое может получить доступ к ресурсам в вашем арендаторе. |
+| имя_группы_ресурсов | *testrg* | Название группы ресурсов, содержащей кластер.|
+| clusterName | *mykustocluster* | Название кластера.|
 | databaseName | *mykustodatabase* | Имя базы данных.|
-| принЦипалассигнментнаме | *databasePrincipalAssignment1* | Имя ресурса участника базы данных.|
-| principalId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор участника, который может быть адресом электронной почты пользователя, ИДЕНТИФИКАТОРом приложения или именем группы безопасности.|
-| роль | *Администратор* | Роль участника базы данных, которой может быть "admin", "принимающий", "Monitor", "User", "Унрестриктедвиеверс", "Viewer".|
-| тенантидфорпринЦипал | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента участника.|
-| принЦипалтипе | *Приложение* | Тип участника, который может иметь значение "User", "App" или "Group"|
+| mainAssignmentName | *База данныхПринципиальноеназначение1* | Имя основного ресурса базы данных.|
+| principalId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Основным идентификатором, который может быть электронной почтой пользователя, идентификатором приложения или именем группы безопасности.|
+| роль | *Администрирование* | Роль основного специалиста базы данных, которая может быть 'Админ', 'Ingestor', 'Монитор', 'Пользователь', 'Неограниченные Зрители', 'Viewer'.|
+| tenantIdForPrincipal | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор арендатора доверителя.|
+| principalType | *Приложение* | Тип принципала, который может быть 'Пользователь', 'App', или 'Группа'|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Прием данных с помощью библиотеки Node в Azure Data Explorer](node-ingest-data.md)
+* [Проем данных с помощью библиотеки узлов Azure Data Explorer](node-ingest-data.md)

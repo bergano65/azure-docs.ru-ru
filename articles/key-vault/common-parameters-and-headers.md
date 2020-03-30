@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
 ms.openlocfilehash: d0ada9c1e6b45b1be17b15b67f67fc64fc266203
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78197595"
 ---
 # <a name="common-parameters-and-headers"></a>Распространенные параметры и заголовки
@@ -26,7 +26,7 @@ ms.locfileid: "78197595"
 - Замена `{resource-group-name}` на группу ресурсов. Дополнительные сведения см. в статье об использовании групп ресурсов для управления ресурсами Azure.
 - Замена `{vault-name}` на имя хранилища ключей в URI.
 - Установка значения application/json в качестве заголовка Content-Type.
-- Установка веб-маркера JSON, полученного из Azure Active Directory (AAD), в качестве заголовка авторизации. Дополнительные сведения см. в статье [Authentication, requests and responses](authentication-requests-and-responses.md) (Аутентификация, запросы и ответы).
+- Установка веб-маркера JSON, полученного из Azure Active Directory (AAD), в качестве заголовка авторизации. Для получения дополнительной информации смотрите запросы [менеджера ресурсов Authenticating Azure.](authentication-requests-and-responses.md)
 
 ## <a name="common-error-response"></a>Распространенное сообщение об ошибке
 Служба будет использовать коды состояния HTTP для указания успеха или сбоя. Кроме того, ошибки содержат ответ в следующем формате:
@@ -40,12 +40,12 @@ ms.locfileid: "78197595"
    }  
 ```
 
-|Имя элемента | Тип | Description |
+|Имя элемента | Тип | Описание |
 |---|---|---|
 | код | строка | Тип возникшей ошибки.|
 | message | строка | Описание причины ошибки. |
 
 
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
  [Azure Key Vault REST API reference](/rest/api/keyvault/) (Справочник по REST API для Azure Key Vault)

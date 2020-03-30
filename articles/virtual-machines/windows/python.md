@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Windows в Azure и управление ею с помощью Python
+title: Создание и управление Windows VM в Azure с помощью Python
 description: Сведения об использовании Python для создания виртуальных машин Windows в Azure с помощью Python и управления ими.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
 ms.openlocfilehash: a85a9c28acd2d50d95159883a01b27c8ed1d2f1a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75461093"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
@@ -39,8 +39,8 @@ ms.locfileid: "75461093"
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
 1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка на Python** и нажмите кнопку **Установить**. В сводке вы увидите, что вариант **64-разрядная версия Python 3 (3.6.0)** выберется автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку Python с помощью средства запуска Visual Studio.
-2. После установки и запуска Visual Studio щелкните **Файл** > **Создать** > **Проект**.
-3. В разделе **Шаблоны** > **Python** > **Приложение Python** укажите имя *myPythonProject* и расположение проекта, а затем нажмите кнопку **ОК**.
+2. После установки и запуска Visual Studio нажмите **Файл** > **Новый** > **проект**.
+3. Нажмите **шаблоны** > **Python** > **Python Application,** введите *myPythonProject* для названия проекта, выберите местоположение проекта, а затем нажмите **OK**.
 
 ## <a name="install-packages"></a>Установка пакетов
 
@@ -125,7 +125,7 @@ compute_client = ComputeManagementClient(
 
 ### <a name="create-the-vm-and-supporting-resources"></a>Создание виртуальной машины и ресурсов поддержки
 
-Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/management/overview.md).
+Все ресурсы должны содержаться в [группе ресурсов.](../../azure-resource-manager/management/overview.md)
 
 1. Чтобы создать группу ресурсов, добавьте эту функцию после переменных в PY-файле:
 
@@ -572,6 +572,6 @@ compute_client = ComputeManagementClient(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении неполадок развертываний групп ресурсов с помощью портала Azure](../../resource-manager-troubleshoot-deployments-portal.md).
+- Если возникли проблемы с развертыванием, следующим шагом будет поиск [развертываний группы ресурсов Troubleshooting с порталом Azure](../../resource-manager-troubleshoot-deployments-portal.md)
 - Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).
 

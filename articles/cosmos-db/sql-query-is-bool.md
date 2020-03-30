@@ -1,6 +1,6 @@
 ---
-title: IS_BOOL языка запросов Azure Cosmos DB
-description: Сведения о IS_BOOL системных функций SQL в Azure Cosmos DB.
+title: IS_BOOL на языке запросов Запроса Azure Cosmos DB
+description: Узнайте о функции системы S'L IS_BOOL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: b7f1cfb09121309e246b314d57a5e4e475bd0983
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78303874"
 ---
 # <a name="is_bool-azure-cosmos-db"></a>IS_BOOL (Azure Cosmos DB)
@@ -26,7 +26,7 @@ IS_BOOL(<expr>)
 ## <a name="arguments"></a>Аргументы
   
 *expr*  
-   Любое выражение.  
+   Есть любое выражение.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -34,7 +34,7 @@ IS_BOOL(<expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере выполняется проверка объектов Boolean, число, строка, null, объект, массив и неопределенные типы с помощью функции `IS_BOOL`.  
+  Следующий пример проверяет объекты JSON Boolean, число, строку, null, `IS_BOOL` объект, массив и неопределенные типы с помощью функции.  
   
 ```sql
 SELECT   
@@ -55,10 +55,10 @@ SELECT
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
+Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Функции проверки типов Azure Cosmos DB](sql-query-type-checking-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Функции проверки типа Azure Cosmos DB](sql-query-type-checking-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

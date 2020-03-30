@@ -11,24 +11,24 @@ ms.workload: infrastructure-services
 ms.date: 05/15/2018
 ms.author: rohink
 ms.openlocfilehash: 4e017dc940e1d32888ff279904e44d34db1fd5c3
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76936889"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli"></a>Управление записями и наборами записей DNS в Azure DNS с помощью Azure CLI
 
 > [!div class="op_single_selector"]
-> * [портале Azure](dns-operations-recordsets-portal.md)
-> * [Azure CLI](dns-operations-recordsets-cli.md)
+> * [Портал Azure](dns-operations-recordsets-portal.md)
+> * [Лазурный CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье показано, как управлять записями DNS для зоны DNS с помощью кроссплатформенного Azure CLI, доступного для Windows, Mac и Linux. Записями DNS также можно управлять с помощью [Azure PowerShell](dns-operations-recordsets.md) или [портала Azure](dns-operations-recordsets-portal.md).
 
 Для работы с этой статьей необходимо [установить интерфейс командной строки Azure, войти в учетную запись и создать зону DNS](dns-operations-dnszones-cli.md).
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Вступление
 
 Чтобы создавать записи DNS в Azure DNS, нужно понимать, как Azure DNS организует записи DNS в соответствующие наборы записей.
 
@@ -38,7 +38,7 @@ ms.locfileid: "76936889"
 
 ## <a name="create-a-dns-record"></a>Создание записи DNS
 
-Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, SRV, txt и т. д.) Дополнительные сведения см. в разделе `az network dns record-set --help`.
+Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, srv, txt и т.д.) Для справки, см. `az network dns record-set --help`
 
 Создавая запись, вам нужно определить для нее имя группы ресурсов, имя зоны, имя набора записей, тип записей и сведения о создаваемой записи. Имя набора записей должно быть *относительным*, т. е. оно не должно содержать имя зоны.
 

@@ -1,16 +1,16 @@
 ---
-title: Отладка приложений Service Fabric Azure в Linux
+title: Приложения Debug Azure Service Fabric в Linux
 description: Сведения о мониторинге и диагностике служб Service Fabric на локальном компьютере разработчика под управлением Linux.
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: d8b5ec2f2190586f5eced5eee112b190a82504c3
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75526300"
 ---
-# <a name="monitor-and-diagnose-services-in-a-local-linux-machine-development-setup"></a>Мониторинг и диагностика служб в локальной настройке разработки машин Linux
+# <a name="monitor-and-diagnose-services-in-a-local-linux-machine-development-setup"></a>Мониторинг и диагностика услуг в локальной настройке разработки машины Linux
 
 
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "75526300"
 
 ## <a name="debugging-service-fabric-java-applications"></a>Отладка приложений Java в Service Fabric
 
-Для приложений Java доступно [несколько платформ ведения журналов](https://en.wikipedia.org/wiki/Java_logging_framework) . Так как `java.util.logging` является параметром по умолчанию в среде JRE, он также используется для [примеров кода в GitHub](https://github.com/Azure-Samples/service-fabric-java-getting-started). Далее в этой статье описывается настройка платформы `java.util.logging` .
+Для приложений Java доступно [несколько платформ ведения журналов](https://en.wikipedia.org/wiki/Java_logging_framework) . Поскольку `java.util.logging` опция по умолчанию является опцией JRE, она также используется для [примеров кода в GitHub.](https://github.com/Azure-Samples/service-fabric-java-getting-started) Далее в этой статье описывается настройка платформы `java.util.logging` .
 
 С помощью java.util.logging журналы приложения можно перенаправлять в память, потоки вывода, файлы консоли или сокеты. Для каждого из этих вариантов существуют обработчики по умолчанию, входящие в состав платформы. Чтобы настроить обработчик файлов для приложения, который будет перенаправлять все журналы в локальный файл, можно создать файл `app.properties`.
 
@@ -53,7 +53,7 @@ java -Djava.library.path=$LD_LIBRARY_PATH -Djava.util.logging.config.file=<path 
 
 Если обработчик не настроен явно, по умолчанию регистрируется обработчик консоли. Просмотреть журналы в системном журнале можно в папке /var/log/syslog.
 
-Дополнительные сведения см. на странице GitHub с [примерами кода](https://github.com/Azure-Samples/service-fabric-java-getting-started).
+Для получения дополнительной информации смотрите [примеры кода в GitHub](https://github.com/Azure-Samples/service-fabric-java-getting-started).
 
 
 ## <a name="debugging-service-fabric-c-applications"></a>Отладка приложений C# в Service Fabric

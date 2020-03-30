@@ -1,47 +1,47 @@
 ---
-title: Azure Monitor для сопоставлений областей контейнеров
-description: В этой статье описываются сопоставления регионов, поддерживаемые между Azure Monitor для контейнеров, Log Analytics рабочей области и настраиваемых метрик.
+title: Azure Monitor для картирования регионов контейнеров
+description: В этой статье описаны отображения регионов, поддерживаемые между Azure Monitor для контейнеров, рабочего пространства для аналитики журналов и пользовательских метрик.
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.openlocfilehash: a058f9cac987bb5c7130019f50370c6a176b09ac
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75403420"
 ---
-# <a name="region-mappings-supported-by-azure-monitor-for-containers"></a>Сопоставления регионов, поддерживаемые Azure Monitor для контейнеров
+# <a name="region-mappings-supported-by-azure-monitor-for-containers"></a>Картирование регионов, поддерживаемое Azure Monitor для контейнеров
 
- При включении Azure Monitor для контейнеров поддерживаются только определенные регионы для связывания Log Analytics рабочей области и кластера AKS и сбора пользовательских метрик, отправленных на Azure Monitor.
+ При включении Azure Monitor для контейнеров поддерживаются только определенные регионы для увязки рабочего пространства журналов Analytics и кластера AKS, а также для сбора пользовательских метрик, представленных в Azure Monitor.
 
-## <a name="log-analytics-workspace-supported-mappings"></a>Поддерживаемые сопоставления рабочей области Log Analytics
+## <a name="log-analytics-workspace-supported-mappings"></a>Рабочее пространство журнала Analytics поддерживает сяокопию отображений
 
-Ресурсы кластера AKS или Рабочая область Log Analytics могут находиться в других регионах, а в следующей таблице приведены сопоставления.
+Ресурсы кластера AKS или рабочее пространство Log Analytics могут проживать в других регионах, а в следующей таблице показаны наши отображения.
 
-|**Регион кластера AKS** | **Регион Log Analytics рабочей области** |
+|**Кластерный регион АКС** | **Область рабочего пространства аналитики журналов** |
 |-----------------------|------------------------------------|
 |**Африка** | |
-|саусафриканорс |WestEurope |
-|саусафрикавест |WestEurope |
+|SouthAfricaNorth |WestEurope |
+|SouthAfricaWest |WestEurope |
 |**Австралия** | |
-|AustraliaEast |AustraliaEast |
-|аустралиацентрал |аустралиацентрал |
-|AustraliaCentral2 |аустралиацентрал |
-|AustraliaEast |AustraliaEast |
+|АвстралияВосток |АвстралияВосток |
+|АвстралияЦентральный |АвстралияЦентральный |
+|АвстралияЦентральный2 |АвстралияЦентральный |
+|АвстралияВосток |АвстралияВосток |
 |**Азиатско-Тихоокеанский регион** | |
 |EastAsia |EastAsia |
 |SoutheastAsia |SoutheastAsia |
 |**Бразилия** | |
-|бразилсаус | SouthCentralUS |
-|**Канада** ||
+|БразилияСаут | SouthCentralUS |
+|**Canada** ||
 |CanadaCentral |CanadaCentral |
 |CanadaEast |CanadaCentral |
 |**Европа** | |
-|францецентрал |францецентрал |
-|францесаус |францецентрал |
-|норсеуропе |норсеуропе |
+|ФранцияЦентральный |ФранцияЦентральный |
+|FranceSouth |ФранцияЦентральный |
+|Североевропа |Североевропа |
 |UKSouth |UKSouth |
-|уквест |UKSouth |
+|UKWest |UKSouth |
 |WestEurope |WestEurope |
 |**Индия** | |
 |CentralIndia |CentralIndia |
@@ -49,25 +49,25 @@ ms.locfileid: "75403420"
 |WestIndia |CentralIndia |
 |**Япония** | |
 |JapanEast |JapanEast |
-|жапанвест |JapanEast |
+|ЯпонияЗапад |JapanEast |
 |**Корея** | |
 |KoreaCentral |KoreaCentral |
 |KoreaSouth |KoreaCentral |
-|**США** | |
-|CentralUS |CentralUS|
+|**Нам** | |
+|ЦентральныйUS |ЦентральныйUS|
 |EastUS |EastUS |
 |EastUS2 |EastUS2 |
 |WestUS |WestUS |
 |WestUS2 |WestUS2 |
-|WestCentralUS<sup>1</sup>|EastUS<sup>1</sup>|
+|WestCentralUS<sup>1</sup>|Восток США<sup>1</sup>|
 |US Gov (Вирджиния) |US Gov (Вирджиния) |
 
-<sup>1</sup> из-за емкости ограничений регион недоступен при создании новых ресурсов. Это относится к рабочей области Log Analytics. Однако уже существующие связанные ресурсы в регионе должны продолжать работать.
+<sup>1</sup> Из-за ограничений в емкости, регион не доступен при создании новых ресурсов. Это включает в себя рабочее пространство log Analytics. Однако существующие в регионе связанные ресурсы должны продолжать работать.
 
-## <a name="custom-metrics-supported-regions"></a>Регионы, поддерживаемые пользовательскими метриками
+## <a name="custom-metrics-supported-regions"></a>Пользовательские метрики, поддерживаемые регионами
 
-Сбор метрик из узлов кластеров Azure Kubernetes Services (AKS) и модулей Pod поддерживается для публикации в качестве пользовательских метрик только в следующих [регионах Azure](../platform/metrics-custom-overview.md#supported-regions).
+Сбор метрик из узлов и стручков кластеров Azure Kubernetes (AKS) поддерживается для публикации в качестве пользовательских метрик только в [следующих регионах Azure.](../platform/metrics-custom-overview.md#supported-regions)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы начать мониторинг кластера AKS, ознакомьтесь со сведениями о том, [как включить Azure Monitor для контейнеров](container-insights-onboard.md) , чтобы понять требования и доступные методы для включения мониторинга.  
+Чтобы начать мониторинг кластера AKS, [просмотрите, как включить Azure Monitor для контейнеров](container-insights-onboard.md) в соответствии с требованиями и доступными методами для обеспечения мониторинга.  

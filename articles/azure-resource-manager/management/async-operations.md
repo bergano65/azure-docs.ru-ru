@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 12/09/2018
 ms.custom: seodec18
 ms.openlocfilehash: 1cf8898e5fd63e35447f6580e13347ba6d7fc413
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75485446"
 ---
 # <a name="track-asynchronous-azure-operations"></a>Отслеживание асинхронных операций Azure
@@ -73,7 +73,7 @@ response.Headers.GetValues("Azure-AsyncOperation").GetValue(0)
 Операции, которые создают, обновляют или удаляют ресурсы (PUT, PATCH, DELETE), обычно возвращают значение `provisioningState`. После завершения операции возвращается одно из следующих трех значений: 
 
 * Выполнено
-* Сбой
+* Ошибка
 * Отменено
 
 Любое другое значение означает, что операция еще выполняется. Поставщик ресурсов может возвращать настраиваемое значение, указывающее его состояние. Например, значение **Accepted** (Принято) может сигнализировать о том, что запрос успешно получен и выполняется.
@@ -185,4 +185,4 @@ https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Документацию по каждой операции REST см. в [справочнике по REST API](/rest/api/).
-* Сведения о развертывании шаблонов с помощью REST API диспетчер ресурсов см. в статье [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и диспетчер ресурсов REST API](../templates/deploy-rest.md).
+* Для получения информации о развертывании шаблонов через API resource Manager REST см. [Ресурсные ресурсы с шаблонами менеджера ресурсов и API менеджера ресурсов REST API.](../templates/deploy-rest.md)

@@ -1,15 +1,15 @@
 ---
-title: Запуск скрипта при запуске службы Service Fabric Azure
+title: Выполнить скрипт при запуске службы Azure Service Fabric
 description: Сведения о настройке политики для точки входа настройки службы Service Fabric и выполнения скрипта во время запуска службы.
 author: athinanthny
 ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: atsenthi
 ms.openlocfilehash: a25f16f08ab8ae9564363f179d19d4b30c5315fa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75464283"
 ---
 # <a name="run-a-service-startup-script-as-a-local-user-or-system-account"></a>Выполнение скрипта при запуске службы от имени локального пользователя или системной учетной записи
@@ -136,9 +136,9 @@ ms.locfileid: "75464283"
 ## <a name="run-a-script-from-the-setup-entry-point"></a>Запуск скрипта из точки входа установки
 Теперь добавьте в проект скрипт запуска, который будет выполняться с правами администратора. 
 
-В Visual Studio щелкните проект службы правой кнопкой мыши и добавьте новый файл *MySetup.bat*.
+В Visual Studio, право йннажмите сервисный проект и добавьте новый файл под названием *MySetup.bat*.
 
-Затем убедитесь, что файл *MySetup.bat* включен в пакет службы. По умолчанию он не включен. Щелкните файл правой кнопкой мыши, чтобы открыть контекстное меню, и выберите **Свойства**. Убедитесь, что в диалоговом окне "Свойства" параметр **Копировать в выходной каталог** имеет значение **Копировать, если новее**. Экран должен выглядеть следующим образом.
+Затем убедитесь, что файл *MySetup.bat* включен в пакет услуг. По умолчанию он не включен. Щелкните файл правой кнопкой мыши, чтобы открыть контекстное меню, и выберите **Свойства**. Убедитесь, что в диалоговом окне "Свойства" параметр **Копировать в выходной каталог** имеет значение **Копировать, если новее**. Экран должен выглядеть следующим образом.
 
 ![Свойство CopyToOutput в Visual Studio для пакетного файла SetupEntryPoint][image1]
 
@@ -154,7 +154,7 @@ REM To delete this system variable us
 REM REG delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v TestVariable /f
 ```
 
-Затем скомпилируйте и разверните решение в кластере локальной разработки. После запуска службы (это будет видно в [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)) вы можете убедиться в успешном выполнении файла MySetup.bat двумя способами. Откройте командную строку PowerShell и введите следующую команду.
+Затем скомпилируйте и разверните решение в кластере локальной разработки. После запуска сервиса, как показано в [Service Fabric Explorer,](service-fabric-visualizing-your-cluster.md)вы можете видеть, что файл MySetup.bat был успешным двумя способами. Откройте командную строку PowerShell и введите следующую команду.
 
 ```
 PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine")

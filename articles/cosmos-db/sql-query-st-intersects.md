@@ -1,6 +1,6 @@
 ---
-title: ST_INTERSECTS языка запросов Azure Cosmos DB
-description: Сведения о ST_INTERSECTS системных функций SQL в Azure Cosmos DB.
+title: ST_INTERSECTS на языке запросов Запроса Azure Cosmos DB
+description: Узнайте о функции системы S'L ST_INTERSECTS в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: f3c3878956b90ffb45556ed819046af9eb7618f1
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78303143"
 ---
 # <a name="st_intersects-azure-cosmos-db"></a>ST_INTERSECTS (Azure Cosmos DB)
@@ -26,7 +26,7 @@ ST_INTERSECTS (<spatial_expr>, <spatial_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *spatial_expr*  
-   — Это выражение геообъектной точки, многоугольника или объекта LineString.  
+   Является выражением объекта GeoJSON, Polygon или LineString.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -53,10 +53,10 @@ WHERE ST_INTERSECTS(a.location, {
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция будет полезна из [геопространственных индексов](index-policy.md#spatial-indexes).
+Эта функция системы будет пользоваться [геопространственным индексом.](index-policy.md#spatial-indexes)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

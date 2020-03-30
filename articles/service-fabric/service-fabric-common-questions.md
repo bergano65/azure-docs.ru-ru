@@ -1,14 +1,14 @@
 ---
-title: Распространенные вопросы о Microsoft Azure Service Fabric
-description: Часто задаваемые вопросы о Service Fabric, включая возможности, варианты использования и распространенные сценарии.
+title: Общие вопросы о Microsoft Azure Service Fabric
+description: Часто задаваемые вопросы о Service Fabric, включая возможности, случаи использования и общие сценарии.
 ms.topic: troubleshooting
 ms.date: 08/18/2017
 ms.author: pepogors
 ms.openlocfilehash: bf61858b446c1ac6d4a0210571fffaa721ad0166
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78254888"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
@@ -94,7 +94,7 @@ ms.locfileid: "78254888"
 Хотя мы работаем над упрощением этой задачи, в настоящее время вы отвечаете за обновление. Вам необходимо обновить образ ОС на виртуальных машинах кластера поочередно. 
 
 ### <a name="can-i-encrypt-attached-data-disks-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли зашифровать присоединенные диски данных в типе узла кластера (масштабируемый набор виртуальных машин)?
-Да.  Дополнительные сведения см. [в статье Создание кластера с подключенными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/disk-encryption-overview.md).
+Да.  Для получения дополнительной информации [см. Создать кластер с прикрепленными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и [шифрованием azure Disk для виртуальных наборов шкалы машин.](../virtual-machine-scale-sets/disk-encryption-overview.md)
 
 ### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли использовать низкоприоритетные виртуальные машины с типом узла кластера (масштабируемый набор виртуальных машин)?
 Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
@@ -126,7 +126,7 @@ ms.locfileid: "78254888"
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
 A. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-Б. Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [извлечь свои секреты из KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
+Б. Для виртуального набора системы машин, установленных MSI, вы можете разработать простой PowerShell SetupEntryPoint для вашего приложения SF, чтобы получить [токен доступа из конечных точек MSI,](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token)а затем [получить ваши секреты из KeyVault.](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret)
 
 ## <a name="application-design"></a>Проектирование приложений
 
@@ -136,8 +136,8 @@ Reliable Collection обычно содержит несколько [разде
 
 - Создать службу, которая направляет запросы во все разделы другой службы для извлечения необходимых данных.
 - Создать службу, которая может получать данные из всех разделов другой службы.
-- Периодически передавать данные из каждой службы во внешнее хранилище. Этот подход подходит только в том случае, если выполняемые Вами запросы не являются частью основной бизнес-логики, так как данные внешнего хранилища будут устаревшими.
-- Кроме того, храните данные, которые должны поддерживать запросы для всех записей непосредственно в хранилище данных, а не в надежной коллекции. Это устраняет проблемы с устаревшими данными, но не позволяет использовать преимущества надежных коллекций.
+- Периодически передавать данные из каждой службы во внешнее хранилище. Этот подход удобен только в том случае, если выполняемые запросы не являются частью вашей основной бизнес-логики, так как данные внешнего хранилища будут устаревшими.
+- Кроме того, храните данные, которые должны поддерживать запросы во всех записях непосредственно в хранилище данных, а не в надежном сборе. Это устраняет проблему с устаревшими данными, но не позволяет использовать преимущества надежных коллекций.
 
 
 ### <a name="whats-the-best-way-to-query-data-across-my-actors"></a>Как лучше запрашивать данные из моих субъектов?

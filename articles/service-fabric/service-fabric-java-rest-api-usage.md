@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: rapatchi
 ms.openlocfilehash: 0a243c1cd0ab0dcb93a1cc6169c89ba18606f346
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75451670"
 ---
 # <a name="azure-service-fabric-java-client-apis"></a>Клиентские API-интерфейсы Java в Azure Service Fabric
@@ -117,11 +117,11 @@ ms.locfileid: "75451670"
 Для каждого API имеется четыре метода перегрузки реализации. Если имеются необязательные параметры, вы увидите еще четыре дополнительных варианта (включая эти необязательные параметры). Рассмотрим для примера API ``removeReplica``.
  1. **public void removeReplica (строка nodeName, UUID partitionId, строка replicaId, логическое значение forceRemove, долгое время ожидания)**
     * Это синхронный вариант вызова API removeReplica.
- 2. **Public Сервицефутуре\<void > removeReplicaAsync (строка nodeName, UUID partitionId, строка replicaId, логическое forceRemove, длительное время ожидания, окончательное ServiceCallback\<void > serviceCallback)**
+ 2. **public ServiceFuture\<Void> удалитьReplicaAsync (String nodeName, UUID partitionId, String replicaId, Boolean\<forceRemove, Long timeout, final ServiceCallback Void> serviceCallback)**
     * Этот вариант вызова API можно применять, если необходимо использовать обратные вызовы и асинхронное программирование на основе событий в будущем.
- 3. **общедоступный наблюдаемый\<void > removeReplicaAsync (строка nodeName, UUID partitionId, строка replicaId)**
+ 3. **общественные\<наблюдаемые Пустота> удалитьReplicaAsync (String nodeName, UUID разделИд, струнный replicaId)**
     * Этот вариант вызова API можно применять, если необходимо использовать реактивное асинхронное программирование.
- 4. **Public наблюдаемый\<Сервицереспонсе\<void > > Ремоверепликависсервицереспонсеасинк (строка nodeName, UUID partitionId, строка replicaId)**
+ 4. **public Observable\<\<ServiceResponse Void>> удалитьReplicaWithServiceResponseAsync (String nodeName, UUID partitionId, String replicaId)**
     * Этот вариант вызова API можно применять, если необходимо использовать реактивное асинхронное программирование и работать с ответом REST без форматирования.
 
 ## <a name="next-steps"></a>Дальнейшие действия

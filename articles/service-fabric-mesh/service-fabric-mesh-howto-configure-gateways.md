@@ -1,5 +1,5 @@
 ---
-title: Настройка шлюза для маршрутизации запросов
+title: Настройка шлюза для запросов маршрутов
 description: Сведения о настройке шлюза, который обрабатывает входящий трафик для приложений, работающих на платформе "Сетка Service Fabric"
 author: dkkapur
 ms.topic: conceptual
@@ -7,10 +7,10 @@ ms.date: 11/28/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: ec408403d4baa0f211c6bfe867a15c96513693cb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75461954"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Настройка шлюза для маршрутизации запросов
@@ -219,8 +219,8 @@ ms.locfileid: "75461954"
 ```
 
 Для этого шлюза настраивается приложение Linux "meshAppLinux", содержащее по меньшей мере две службы, helloWorldService и counterService, которые прослушивают порт 80. В зависимости от структуры URL-адреса входящего запроса этот шлюз перенаправит запрос к одной из этих служб. 
-* "\<IPAddress >: 80/helloWorld/\<запрос\>" приведет к тому, что запрос будет направлен в "Хелловорлдлистенер" в helloWorldService. 
-* "\<IPAddress >: 80/Counter/\<запрос\>" приведет к тому, что запрос будет направлен в "Каунтерлистенер" в Каунтерсервице. 
+* "\<IPAddress>:80/helloWorld/\<request\>" приведет к тому, что запрос будет направлен на "helloWorldListener" в helloWorldService. 
+* "\<IPAddress>:80/counter/request"\<\>приведет к тому, что запрос будет направлен "контрслушателю" в контрсервис. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Разверните [пример для входящих данных](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/ingress), чтобы увидеть шлюзы в действии.

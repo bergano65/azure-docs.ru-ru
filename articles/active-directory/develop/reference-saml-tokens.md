@@ -1,5 +1,5 @@
 ---
-title: Токены Azure AD & типы утверждений | Документация Майкрософт
+title: Токен Azure AD & типов претензий Документы Майкрософт
 description: Руководство с общими данными и анализом утверждений в токенах SAML 2.0 и веб-токенах JSON (JWT), выдаваемых службой Azure Active Directory (AAD)
 documentationcenter: na
 author: rwike77
@@ -18,10 +18,10 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.openlocfilehash: e4fcb7835c6315e8a67103883e1635f0ddab1098
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78299760"
 ---
 # <a name="azure-ad-saml-token-reference"></a>Справочник по токенам SAML в Azure AD
@@ -31,19 +31,19 @@ ms.locfileid: "78299760"
 ## <a name="claims-in-saml-tokens"></a>Утверждения в токенах SAML
 
 > [!div class="mx-codeBreakAll"]
-> | Имя | Эквивалентное утверждение JWT | Description | Пример |
+> | name | Эквивалентное утверждение JWT | Описание | Пример |
 > | --- | --- | --- | ------------|
 > |Аудитория | `aud` |Целевой получатель маркера. Приложение, которое получает токен, должно проверять, верно ли значение, обозначающее аудиторию, и отклонять любые токены, предназначенные для другой аудитории. | `<AudienceRestriction>`<br>`<Audience>`<br>`https://contoso.com`<br>`</Audience>`<br>`</AudienceRestriction>`  |
 > | Время выполнения проверки подлинности | |Фиксирует дату и время выполнения сеанса проверки подлинности. | `<AuthnStatement AuthnInstant="2011-12-29T05:35:22.000Z">` | 
 > |Метод проверки подлинности | `amr` |Указывает способ проверки подлинности субъекта токена. | `<AuthnContextClassRef>`<br>`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod/password`<br>`</AuthnContextClassRef>` |
 > |Имя | `given_name` |Указывает на имя или заданное имя пользователя, которое задали в объекте пользователя Azure AD. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">`<br>`<AttributeValue>Frank<AttributeValue>`  |
-> |Группы | `groups` |Предоставляет идентификаторы объектов, представляющие членство субъекта в группах. Эти значения уникальны (см. раздел «Object ID»), их можно безопасно использовать для управления доступом, например для принудительной авторизации для доступа к ресурсу. Группы, входящие в утверждение Groups, настраиваются для конкретного приложения с помощью свойства groupMembershipClaims манифеста приложения. Если установлено значение null, исключаются все группы, если значение SecurityGroup — включается только членство в группах безопасности Active Directory, а значение All подразумевает включение как групп безопасности, так и списков рассылки Office 365. <br><br> **Примечания** <br> Если число групп, в которые входит пользователь, превышает лимит (150 для SAML и 200 для JWT), тогда избыточное утверждение будет добавлено к источникам утверждений, указывая на конечную точку Graph, содержащую список групп для пользователя. . | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/groups">`<br>`<AttributeValue>07dd8a60-bf6d-4e17-8844-230b77145381</AttributeValue>` |
+> |Группы | `groups` |Предоставляет идентификаторы объектов, представляющие членство субъекта в группах. Эти значения уникальны (см. раздел «Object ID»), их можно безопасно использовать для управления доступом, например для принудительной авторизации для доступа к ресурсу. Группы, входящие в утверждение Groups, настраиваются для конкретного приложения с помощью свойства groupMembershipClaims манифеста приложения. Если установлено значение null, исключаются все группы, если значение SecurityGroup — включается только членство в группах безопасности Active Directory, а значение All подразумевает включение как групп безопасности, так и списков рассылки Office 365. <br><br> **Примечания**. <br> Если число групп, в которые входит пользователь, превышает лимит (150 для SAML и 200 для JWT), тогда избыточное утверждение будет добавлено к источникам утверждений, указывая на конечную точку Graph, содержащую список групп для пользователя. . | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/groups">`<br>`<AttributeValue>07dd8a60-bf6d-4e17-8844-230b77145381</AttributeValue>` |
 > | Индикатор превышения групп | `groups:src1` | Для запросов маркеров, которые не ограничены по длине (см. `hasgroups` выше), но все еще слишком большие для маркеров, будет добавлена ссылка на полный список групп, в которые входит пользователь. Для SAML ссылка добавляется в качестве нового утверждения вместо утверждения `groups`. | `<Attribute Name=" http://schemas.microsoft.com/claims/groups.link">`<br>`<AttributeValue>https://graph.windows.net/{tenantID}/users/{userID}/getMemberObjects<AttributeValue>` |
 > |Поставщик удостоверений | `idp` |Фиксирует поставщика удостоверений, который проверил подлинность субъекта маркера. Это значение идентично значению утверждения Issuer за исключением случаев, когда учетная запись пользователя и издатель принадлежат разным клиентам. | `<Attribute Name=" http://schemas.microsoft.com/identity/claims/identityprovider">`<br>`<AttributeValue>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/<AttributeValue>` |
 > |IssuedAt | `iat` |Указывает время выдачи токена. Оно часто используется для определения времени существования токена. | `<Assertion ID="_d5ec7a9b-8d8f-4b44-8c94-9812612142be" IssueInstant="2014-01-06T20:20:23.085Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">` |
 > |Издатель | `iss` |Обозначает службу токенов безопасности (STS), которая создает и возвращает токен. В возвращаемых службой Azure AD токенах указан следующий издатель: sts.windows.net. Идентификатор GUID в значении утверждения Issuer — это идентификатор клиента каталога Azure AD. Идентификатор клиента представляет собой неизменяемый и надежный идентификатор каталога. | `<Issuer>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/</Issuer>` |
 > |Фамилия | `family_name` |Указывает фамилию пользователя в соответствии с определением в объекте пользователя Azure AD. | `<Attribute Name=" http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">`<br>`<AttributeValue>Miller<AttributeValue>` |
-> |Имя | `unique_name` |Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение не обязательно должно быть уникальным в пределах клиента. Оно предназначено только для отображения. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">`<br>`<AttributeValue>frankm@contoso.com<AttributeValue>`|
+> |name | `unique_name` |Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение не обязательно должно быть уникальным в пределах клиента. Оно предназначено только для отображения. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">`<br>`<AttributeValue>frankm@contoso.com<AttributeValue>`|
 > |Идентификатор объекта. | `oid` |Содержит уникальный идентификатор объекта в Azure AD. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Используйте идентификатор объекта для идентификации объекта в запросах, адресованных Azure AD. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">`<br>`<AttributeValue>528b2ac2-aa9c-45e1-88d4-959b53bc7dd0<AttributeValue>` |
 > |Роли | `roles` |Представляет все роли приложения, предоставленные субъекту напрямую или косвенно через членство в группе, и может использоваться для реализации управления доступом на основе ролей. Роли приложения определяются на уровне приложения с использованием свойства `appRoles` манифеста приложения. Свойство `value` каждой роли приложения представляет значение, которое отображается в утверждении Roles. | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/role">`|
 > |Тема | `sub` |Указывает субъекта, сведения о котором утверждает токен, например данные о пользователе приложения. Это значение является неизменным, его невозможно назначить другому объекту или использовать повторно. Следовательно, это значение можно использовать для безопасного проведения проверок авторизации. Так как субъект всегда присутствует в выдаваемых Azure AD токенах, мы советуем использовать это значение в системе авторизации общего назначения. <br> `SubjectConfirmation` не является утверждением. Он описывает, как проверяется субъект токена. `Bearer` указывает, что субъект подтвержден благодаря владению токеном. | `<Subject>`<br>`<NameID>S40rgb3XjhFTv6EQTETkEzcgVmToHKRkZUIsJlmLdVc</NameID>`<br>`<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" />`<br>`</Subject>`|
@@ -154,9 +154,9 @@ ms.locfileid: "78299760"
       <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>
     </t:RequestSecurityTokenResponse>
 
-## <a name="related-content"></a>См. также
+## <a name="related-content"></a>Связанная информация
 
-* Дополнительные сведения об управлении политикой времени существования маркеров с помощью API Microsoft Graph см. в разделе [ресурс политики](https://docs.microsoft.com/graph/api/resources/policy?view=graph-rest-beta).
+* См. [ресурс Policy,](https://docs.microsoft.com/graph/api/resources/policy?view=graph-rest-beta)чтобы узнать больше об управлении политикой срока службы токенов с помощью API Microsoft Graph.
 * Дополнительные сведения об управлении политиками посредством командлетов PowerShell, включая примеры, см. в разделе [Configurable Token Lifetimes in Azure Active Directory (Public Preview)](../develop/active-directory-configurable-token-lifetimes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) (Настраиваемое время существования маркеров в Azure Active Directory (общедоступная предварительная версия)). 
 * Добавьте [пользовательские и необязательные утверждения](../develop/active-directory-optional-claims.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) в токены для приложения.
 * Используйте [единый вход с помощью SAML](single-sign-on-saml-protocol.md).

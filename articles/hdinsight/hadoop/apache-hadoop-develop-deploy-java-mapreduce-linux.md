@@ -9,27 +9,27 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 01/16/2020
 ms.openlocfilehash: a37a8bb45c11d5b74f3059a153806e3d083cf452
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76311960"
 ---
 # <a name="develop-java-mapreduce-programs-for-apache-hadoop-on-hdinsight"></a>Разработка программ MapReduce на Java для Apache Hadoop в HDInsight
 
 Узнайте, как использовать Apache Maven, чтобы создать приложение MapReduce на основе Java, а также запустить его с помощью Apache Hadoop в Azure HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks).
+* [Java Разработчик Комплект (JDK) версия 8](https://aka.ms/azure-jdks).
 
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 
 ## <a name="configure-development-environment"></a>Настройка среды разработки
 
-Среда, используемая для этой статьи, была компьютер под Windows 10. Команды были выполнены в командной строке, а различные файлы были изменены с помощью блокнота. Измените соответствующим образом для своей среды.
+Среда, используемая для этой статьи, была компьютером под управлением Windows 10. Команды выполнялись в командном запросе, а различные файлы были отредактированы с помощью блокнота. Изменяйте соответственно для вашей среды.
 
-В командной строке введите приведенные ниже команды, чтобы создать рабочую среду.
+Из запроса команд введите команды ниже, чтобы создать рабочую среду:
 
 ```cmd
 IF NOT EXIST C:\HDI MKDIR C:\HDI
@@ -38,19 +38,19 @@ cd C:\HDI
 
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
-1. Введите следующую команду, чтобы создать проект Maven с именем **Каталог wordcountjava**:
+1. Введите следующую команду для создания проекта Maven под названием **wordcountjava:**
 
    ```bash
    mvn archetype:generate -DgroupId=org.apache.hadoop.examples -DartifactId=wordcountjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
    ```
 
-    Эта команда создает каталог с именем, указанным в параметре `artifactID` (в этом примере это**Каталог wordcountjava** ). Этот каталог содержит следующие элементы:
+    Эта команда создает каталог с именем, указанным параметром `artifactID` **(слово countjava** в этом примере.) Этот каталог содержит следующие элементы:
 
     * `pom.xml` — это [объектная модель проекта (POM)](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), которая содержит сведения и данные конфигурации, использующиеся при сборке проекта;
-    * срк\маин\жава\орг\апаче\хадуп\ексамплес: содержит код приложения.
-    * срк\тест\жава\орг\апаче\хадуп\ексамплес: содержит тесты для вашего приложения.
+    * примеры src-main-java-org-apache-hadoop: Содержит код приложения.
+    * примеры src'test-java-org-apache-hadoop: Содержит тесты для вашего приложения.
 
-1. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java`и `App.java`, введя приведенные ниже команды.
+1. Удалите сгенерированный пример кода. Удалите генерируемые `AppTest.java`файлы тестов и приложений, а `App.java` также введя команды ниже:
 
     ```cmd
     cd wordcountjava
@@ -60,7 +60,7 @@ cd C:\HDI
 
 ## <a name="update-the-project-object-model"></a>Обновление модели объекта проекта
 
-Полную ссылку на файл POM. XML см. в разделе https://maven.apache.org/pom.html. Откройте `pom.xml`, введя следующую команду:
+Все справочные материалы по файлу pom.xml см. по адресу https://maven.apache.org/pom.html. Откройте, `pom.xml` введя команду ниже:
 
 ```cmd
 notepad pom.xml
@@ -68,7 +68,7 @@ notepad pom.xml
 
 ### <a name="add-dependencies"></a>Добавление зависимостей
 
-В `pom.xml`добавьте следующий текст в раздел `<dependencies>`.
+В `pom.xml`, добавить следующий текст в `<dependencies>` разделе:
 
 ```xml
 <dependency>
@@ -102,7 +102,7 @@ notepad pom.xml
 
 Подключаемые модули Maven позволяют настроить этапы сборки проекта. Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки.
 
-Добавьте следующий код в файл `pom.xml`, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
+Добавьте следующий `pom.xml` код в файл, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
 
 ```xml
 <build>
@@ -139,7 +139,7 @@ notepad pom.xml
 </build>
 ```
 
-В этом разделе настраивается подключаемый модуль компилятора Apache Maven и подключаемый модуль Apache Maven. Подключаемый модуль компилятора используется для компиляции топологии. Подключаемый модуль shade используется для предотвращения дублирования лицензии в JAR-файле, собранном Maven. Этот подключаемый модуль используется для предотвращения ошибки с дублированием файлов лицензий, которая появляется во время выполнения на кластере HDInsight. Использование maven-shade-plugin с реализацией `ApacheLicenseResourceTransformer` позволяет избежать этой ошибки.
+В этом разделе настраивается Apache Maven Compiler Plugin и Apache Maven Shade Plugin. Подключаемый модуль компилятора используется для компиляции топологии. Подключаемый модуль shade используется для предотвращения дублирования лицензии в JAR-файле, собранном Maven. Этот подключаемый модуль используется для предотвращения ошибки с дублированием файлов лицензий, которая появляется во время выполнения на кластере HDInsight. Использование maven-shade-plugin с реализацией `ApacheLicenseResourceTransformer` позволяет избежать этой ошибки.
 
 maven-shade-plugin также создает так называемый uber jar, который содержит все зависимости, требуемые для приложения.
 
@@ -147,13 +147,13 @@ maven-shade-plugin также создает так называемый uber ja
 
 ## <a name="create-the-mapreduce-application"></a>Создание приложения MapReduce
 
-1. Введите следующую команду, чтобы создать и открыть новый файл `WordCount.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+1. Введите команду ниже, чтобы `WordCount.java`создать и открыть новый файл. Выберите **Да** в запросе для создания нового файла.
 
     ```cmd
     notepad src\main\java\org\apache\hadoop\examples\WordCount.java
     ```
 
-2. Затем скопируйте и вставьте приведенный ниже код Java в новый файл. Затем закройте файл.
+2. Затем скопируйте и вставьте код Java ниже в новый файл. Затем закройте файл.
 
     ```java
     package org.apache.hadoop.examples;
@@ -247,13 +247,13 @@ mvn clean package
 
 В следующих действиях используется команда `scp` для копирования JAR-файла в головной узел Apache HBase в кластере HDInsight. С помощью команды `ssh` выполняется подключение к кластеру; пример запускается непосредственно на головном узле.
 
-1. Отправьте JAR-файл в кластер. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите следующую команду:
+1. Загрузите банку в кластер. Замените `CLUSTERNAME` имя кластера HDInsight и введите следующую команду:
 
     ```cmd
     scp target/wordcountjava-1.0-SNAPSHOT.jar sshuser@CLUSTERNAME-ssh.azurehdinsight.net:
     ```
 
-1. Подключитесь к кластеру. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите следующую команду:
+1. Подключите к кластеру. Замените `CLUSTERNAME` имя кластера HDInsight и введите следующую команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
@@ -286,5 +286,5 @@ mvn clean package
 В этом документе объясняется, как разработать задание MapReduce на Java. Чтобы узнать о других методах работы с HDInsight, см. следующие документы.
 
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hdinsight-use-hive.md)
-* [Использование MapReduce с HDInsight](hdinsight-use-mapreduce.md)
-* [Центр разработчиков Java](https://azure.microsoft.com/develop/java/)
+* [Использование MapReduce в Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Центр java-разработчиков](https://azure.microsoft.com/develop/java/)

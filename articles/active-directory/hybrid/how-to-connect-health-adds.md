@@ -17,10 +17,10 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e27287a414a2a4edef3e9090b7d91beb1c70f554
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76897323"
 ---
 # <a name="using-azure-ad-connect-health-with-ad-ds"></a>Использование Azure AD Connect Health с AD DS
@@ -49,10 +49,10 @@ ms.locfileid: "76897323"
 
 ![Состояние репликации](./media/how-to-connect-health-adds/aadconnect-health-adds-replication.png)
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 Эта функция позволяет в графической форме отобразить тенденции разных счетчиков производительности, данные которых постоянно собираются со всех отслеживаемых контроллеров домена. Производительность контроллера домена можно легко сравнить с производительностью всех остальных отслеживаемых контроллеров домена в лесу. Кроме того, вы можете просматривать различные счетчики производительности параллельно. Эти данные могут пригодиться при устранении неполадок в среде.
 
-![Мониторинг](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
+![Наблюдение](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
 
 По умолчанию выделены четыре счетчика производительности. Но вы можете включить другие. Для этого щелкните команду "Фильтр" и выберите нужные счетчики или отмените выбор ненужных. Если дважды щелкнуть график счетчика производительности, откроется новая колонка, содержащая точки данных каждого отслеживаемого контроллера домена.
 
@@ -61,7 +61,7 @@ ms.locfileid: "76897323"
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Операции Azure AD Connect Health](how-to-connect-health-operations.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)
-* [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md)
+* [Использование системы синхронизации Azure AD Connect](how-to-connect-health-sync.md)
 * [Часто задаваемые вопросы об Azure AD Connect Health](reference-connect-health-faq.md)
-* [Azure AD Connect Health: история версий](reference-connect-health-version-history.md)
+* [История версии версии работоспособности Azure Connect](reference-connect-health-version-history.md)
 

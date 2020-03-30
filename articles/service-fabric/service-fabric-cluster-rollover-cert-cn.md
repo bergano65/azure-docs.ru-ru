@@ -1,13 +1,13 @@
 ---
-title: Переносите сертификат кластера Azure Service Fabric
-description: Узнайте, как выполнить переработку Service Fabric сертификата кластера, определяемого общим именем сертификата.
+title: Пролетной над сертификатом кластера Azure Service Fabric
+description: Узнайте, как пролонгировать кластерный сертификат Service Fabric, идентифицированный общим именем сертификата.
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.openlocfilehash: 94cc6841886b1b0eb4271ac0f727a2e3561e0081
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75451964"
 ---
 # <a name="manually-roll-over-a-service-fabric-cluster-certificate"></a>Смена сертификата для кластера Service Fabric вручную
@@ -73,7 +73,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Name $VmssName -Virtual
 >[!NOTE]
 > Так как каждый секрет является уникальным ресурсом с контролем версий, секреты масштабируемого набора виртуальных машин в Вычислительных средах не поддерживают один идентификатор ресурса для двух отдельных секретов. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
-* Дополнительные сведения о безопасности кластеров см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).
+* Узнайте о [безопасности кластеров.](service-fabric-cluster-security.md)
 * [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)

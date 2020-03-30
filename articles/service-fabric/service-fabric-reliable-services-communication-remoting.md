@@ -1,21 +1,21 @@
 ---
-title: Удаленное взаимодействие служб с C# помощью в Service Fabric
+title: Сервисное ремотивацию с помощью СЗ в сервисной ткани
 description: Удаленное взаимодействие Service Fabric позволяет осуществлять обмен данными между службами и клиентами и службами C# с помощью удаленного вызова процедур.
 author: vturecek
 ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: vturecek
 ms.openlocfilehash: 0d59275f25931a11b2d551a2e9eb019838e4c1b3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75433886"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
 > [!div class="op_single_selector"]
-> * [C# в Windows](service-fabric-reliable-services-communication-remoting.md)
+> * [C на Windows](service-fabric-reliable-services-communication-remoting.md)
 > * [Java в Linux](service-fabric-reliable-services-communication-remoting-java.md)
 >
 >
@@ -313,7 +313,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Чтобы обновить версию 1 до версии 2 (с совместимым интерфейсом, или версия 2_1), выполните двухэтапное обновление. Соблюдайте порядок действий в этой процедуре.
 
 > [!NOTE]
-> При обновлении с версии v1 на v2 убедитесь, что пространство имен `Remoting` Обновлено для использования версии 2. Пример: "Microsoft. ServiceFabric. Services. Remoting. v2. FabricTransport. Client"
+> При обновлении с V1 `Remoting` на V2 убедитесь, что пространство имен обновляется для использования V2. Пример: 'Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Client'
 >
 >
 

@@ -1,25 +1,25 @@
 ---
-title: Присвоение псевдонимов в Azure Cosmos DB
-description: Узнайте, как использовать псевдонимы в запросах SQL Azure Cosmos DB для различения двух свойств с одинаковыми именами
+title: Прозвище в Azure Космос DB
+description: Узнайте, как использовать псевдоним в запросах Azure Cosmos DB S'L, чтобы дифференцировать два свойства с одинаковым именем
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mjbrown
 ms.openlocfilehash: 74849eec4c5808a584894321269c49c41f0b8a5c
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74873477"
 ---
-# <a name="aliasing-in-azure-cosmos-db"></a>Присвоение псевдонимов в Azure Cosmos DB
+# <a name="aliasing-in-azure-cosmos-db"></a>Прозвище в Azure Космос DB
 
-В запросах можно явно задавать псевдонимы значений. Если запрос содержит два свойства с одинаковым именем, используйте псевдонимы для переименования одного или обоих свойств, чтобы они были неоднозначной в прогнозируемом результате.
+Вы можете явно псевдоним значения в запросах. Если запрос имеет два свойства с одинаковым именем, используйте псевдоним, чтобы переименовать одно или оба свойства, чтобы они были disambiguated в прогнозируемом результате.
 
 ## <a name="examples"></a>Примеры
 
-Ключевое слово AS, используемое для псевдонима, является необязательным, как показано в следующем примере при проецировании второго значения в `NameInfo`:
+Ключевое слово AS, используемое для псевдонима, является необязательным, как `NameInfo`показано в следующем примере при проецирование второго значения как:
 
 ```sql
     SELECT 
@@ -29,7 +29,7 @@ ms.locfileid: "74873477"
     WHERE f.id = "AndersenFamily"
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [{
@@ -46,5 +46,5 @@ ms.locfileid: "74873477"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
-- [Предложение SELECT](sql-query-select.md)
-- [Предложение FROM](sql-query-from.md)
+- [Оговорка SELECT](sql-query-select.md)
+- [ИЗ ПУНКТА](sql-query-from.md)

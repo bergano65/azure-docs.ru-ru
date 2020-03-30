@@ -1,6 +1,6 @@
 ---
-title: Добавление субъектов кластера для обозреватель данных Azure с помощьюC#
-description: Из этой статьи вы узнаете, как добавить субъекты кластера для обозреватель данных Azure с помощью C#.
+title: 'Добавление основок кластеров для Azure Data Explorer с помощью C #'
+description: В этой статье вы узнаете, как добавить принципы кластеров для Azure Data Explorer с помощью C..
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -8,37 +8,37 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.openlocfilehash: e6c3970890dfe2c669dee1acf631e9dd45ab1085
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76965064"
 ---
-# <a name="add-cluster-principals-for-azure-data-explorer-by-using-c"></a>Добавление субъектов кластера для обозреватель данных Azure с помощьюC#
+# <a name="add-cluster-principals-for-azure-data-explorer-by-using-c"></a>Добавление основок кластеров для Azure Data Explorer с помощью C #
 
 > [!div class="op_single_selector"]
-> * [C#](cluster-principal-csharp.md)
+> * [C #](cluster-principal-csharp.md)
 > * [Python](cluster-principal-python.md)
-> * [Шаблон Azure Resource Manager](cluster-principal-resource-manager.md)
+> * [Шаблон менеджера ресурсов Azure](cluster-principal-resource-manager.md)
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы добавите субъекты кластера для Azure обозреватель данных с помощью C#.
+Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы добавляете принципы кластеров для Azure Data Explorer с помощью C'.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Если вы не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** [версию Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
+* Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Убедитесь, что вы **включите разработку Azure** во время установки Visual Studio.
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * [Создайте кластер](create-cluster-database-csharp.md).
 
-## <a name="install-c-nuget"></a>Установка C# NuGet
+## <a name="install-c-nuget"></a>Установка СЗ NuGet
 
-* Установите [Microsoft. Azure. Management. kusto](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
-* Установите [Microsoft. RESTful. ClientRuntime. Azure. Authentication](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication) для проверки подлинности.
+* Установка [Microsoft.Azure.Management.kusto](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
+* Установите [Microsoft.Rest.ClientRuntime.Azure.Authentication](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication) для проверки подлинности.
 
 [!INCLUDE [data-explorer-authentication](../../includes/data-explorer-authentication.md)]
 
-## <a name="add-a-cluster-principal"></a>Добавление субъекта кластера
+## <a name="add-a-cluster-principal"></a>Добавление основного кластера
 
-В следующем примере показано, как добавить субъект кластера программным способом.
+Следующий пример показывает, как добавить основной кластер программно.
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -67,18 +67,18 @@ await kustoManagementClient.ClusterPrincipalAssignments.CreateOrUpdateAsync(reso
 
 |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
 |---|---|---|
-| tenantId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента. Также известен как идентификатор каталога.|
-| subscriptionId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор подписки, используемый для создания ресурсов.|
-| clientid | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
-| clientSecret | *кскскскскскскскскскскскскскс* | Секрет клиента приложения, которое может получить доступ к ресурсам в клиенте. |
-| имя_группы_ресурсов | *testrg* | Имя группы ресурсов, содержащей кластер.|
-| clusterName | *mykustocluster* | Имя кластера.|
-| принЦипалассигнментнаме | *clusterPrincipalAssignment1* | Имя ресурса субъекта кластера.|
-| principalId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор участника, который может быть адресом электронной почты пользователя, ИДЕНТИФИКАТОРом приложения или именем группы безопасности.|
-| роль | *аллдатабасесадмин* | Роль субъекта кластера, которая может иметь значение "Аллдатабасесадмин'" или "Аллдатабасесвиевер".|
-| тенантидфорпринЦипал | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента участника.|
-| принЦипалтипе | *Приложение* | Тип участника, который может иметь значение "User", "App" или "Group"|
+| tenantId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента. Также известен как идентификатор каталога.|
+| subscriptionId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор подписки, который используется для создания ресурсов.|
+| clientid | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента приложения, который может получить доступ к ресурсам в вашем арендаторе.|
+| clientSecret | *xxxxxxxxxxxxxxxxxxxx* | Секрет клиента приложения, которое может получить доступ к ресурсам в вашем арендаторе. |
+| имя_группы_ресурсов | *testrg* | Название группы ресурсов, содержащей кластер.|
+| clusterName | *mykustocluster* | Название кластера.|
+| mainAssignmentName | *кластерПринципназначения1* | Имя основного ресурса кластера.|
+| principalId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Основным идентификатором, который может быть электронной почтой пользователя, идентификатором приложения или именем группы безопасности.|
+| роль | *AllDatabasesAdmin* | Роль основного кластера, которая может быть 'AllDatabasesAdmin' или 'AllDatabasesViewer'.|
+| tenantIdForPrincipal | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор арендатора доверителя.|
+| principalType | *Приложение* | Тип принципала, который может быть 'Пользователь', 'App', или 'Группа'|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Добавление участников базы данных](database-principal-csharp.md)
+* [Добавление основ базы данных](database-principal-csharp.md)

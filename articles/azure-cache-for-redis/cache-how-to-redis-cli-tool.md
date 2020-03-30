@@ -1,16 +1,16 @@
 ---
-title: Как использовать Redis-CLI с кэшем Azure для Redis
-description: Узнайте, как использовать *клиент Redis-CLI. exe* в качестве средства командной строки для взаимодействия с кэшем Azure для Redis в качестве клиента.
+title: Как использовать redis-cli с Azure Cache для Redis
+description: Узнайте, как использовать *redis-cli.exe* в качестве инструмента командной строки для взаимодействия с Кэшом Azure для Redis в качестве клиента.
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 03/22/2018
 ms.openlocfilehash: a48e69f19db88c7823365964c2fe9c0629a078bc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75412674"
 ---
 # <a name="how-to-use-the-redis-command-line-tool-with-azure-cache-for-redis"></a>Использование программы командной строки Redis с кэшем Redis для Azure
@@ -19,7 +19,7 @@ ms.locfileid: "75412674"
 
 Программа доступна для платформ Windows — скачайте [программы командной строки Redis для Windows](https://github.com/MSOpenTech/redis/releases/). 
 
-Если вы хотите запустить программу командной строки на другой платформе, скачайте кэш Redis для Azure по адресу: [https://redis.io/download](https://redis.io/download).
+Если вы хотите запустить инструмент командной строки на другой платформе, [https://redis.io/download](https://redis.io/download)загрузите Кэш Azure для Redis с сайта.
 
 ## <a name="gather-cache-access-information"></a>Сбор сведений для доступа к кэшу
 
@@ -40,7 +40,7 @@ ms.locfileid: "75412674"
 
 При использовании кэша Redis для Azure только один SSL-порт (6380) включен по умолчанию. Программа командной строки `redis-cli.exe` не поддерживает SSL. У вас есть два варианта конфигурации для использования программы.
 
-1. [Включите порт, отличный от SSL (6379)](cache-configure.md#access-ports) - **такая конфигурация не рекомендуется**, так как ключи доступа отправляются по TCP в виде открытого текста. Это изменение может нарушить доступ к кэшу. Единственным сценарием, где может потребоваться эта конфигурация, является просто доступ к кэшу теста.
+1. [Включить не-SSL порт (6379)](cache-configure.md#access-ports) - **Эта конфигурация не рекомендуется,** потому что в этой конфигурации, ключи доступа отправляются через TCP в ясном тексте. Это изменение может нарушить доступ к кэшу. Единственным сценарием, где может потребоваться эта конфигурация, является просто доступ к кэшу теста.
 
 2. Скачайте и установите [stunnel](https://www.stunnel.org/downloads.html).
 
@@ -48,7 +48,7 @@ ms.locfileid: "75412674"
 
     Щелкните правой кнопкой мыши значок сервера stunnel и выберите пункт **Show Log Window** (Открыть окно журнала).
 
-    В меню "Log Window" (Окно журнала) выберите **Конфигурация** > **Изменить конфигурацию**, чтобы открыть текущий файл конфигурации.
+    В меню stunnel Log Window нажмите **Configuration Toit Configuration,** > **Edit Configuration** чтобы открыть текущий файл конфигурации.
 
     В разделе **Определения службы** добавьте следующую запись для программы *redis cli.exe*. Вместо `yourcachename` вставьте фактическое имя кэша. 
 
@@ -61,7 +61,7 @@ ms.locfileid: "75412674"
 
     Сохраните и закройте файл конфигурации. 
   
-    В меню "Log Window" (Окно журнала) stunnel выберите **Конфигурация** > **Перезагрузить конфигурацию**.
+    В меню stunnel Log Window нажмите **Configuration Configuration.** > **Reload Configuration**
 
 
 ## <a name="connect-using-the-redis-command-line-tool"></a>Подключитесь с помощью программы командной строки Redis.

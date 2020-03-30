@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/02/2020
 ms.custom: sfrev
 ms.openlocfilehash: f08c6b0675475b4e15ce6db3a9dbe0e2863b9ddb
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78252765"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
@@ -21,9 +21,9 @@ ms.locfileid: "78252765"
 >
 >
 
-Чтобы создать и запустить [приложения Service Fabric Azure][1] на компьютере разработки Windows, установите среду выполнения Service Fabric, пакет SDK и средства. Вам также нужно [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution), включенных в пакет SDK.
+Чтобы создавать и запускать [приложения Service Fabric][1] на компьютере для разработки Windows, установите среду выполнения Service Fabric, пакет SDK и инструменты. Необходимо также [включить выполнение скриптов Windows PowerShell, включенных](#enable-powershell-script-execution) в SDK.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
 
@@ -37,7 +37,7 @@ ms.locfileid: "78252765"
 
 > [!NOTE]
 > Поддержка Windows 7:
-> - Windows 7 по умолчанию поставляется с Windows PowerShell версии 2.0. Для выполнения командлетов PowerShell для Service Fabric требуется PowerShell начиная с версии 3.0. [Windows PowerShell 5,1 можно загрузить][powershell5-download] из центра загрузки Майкрософт.
+> - Windows 7 по умолчанию поставляется с Windows PowerShell версии 2.0. Для выполнения командлетов PowerShell для Service Fabric требуется PowerShell начиная с версии 3.0. Вы можете [скачать Windows PowerShell 5.1][powershell5-download] из Центра загрузки Microsoft.
 > - Обратный прокси-сервер Service Fabric недоступен в Windows 7.
 
 ## <a name="install-the-sdk-and-tools"></a>Установка пакета SDK и инструментов
@@ -47,12 +47,12 @@ ms.locfileid: "78252765"
 > [!NOTE]
 > Обновления локального кластера разработки Service Fabric не поддерживаются.
 
-### <a name="to-use-visual-studio-2017-or-2019"></a>Использование Visual Studio 2017 или 2019
+### <a name="to-use-visual-studio-2017-or-2019"></a>Использовать Visual Studio 2017 или 2019
 
-Средства Service Fabric являются частью рабочей нагрузки разработки Azure в Visual Studio 2017 и 2019. Эту рабочую нагрузку необходимо включить при установке Visual Studio.
+Инструменты Service Fabric Tools являются частью рабочей нагрузки по разработке Azure в Visual Studio 2017 и 2019. Эту рабочую нагрузку необходимо включить при установке Visual Studio.
 Кроме того, необходимо установить пакет SDK и среду выполнения Microsoft Azure Service Fabric, используя установщик веб-платформы.
 
-* [Установите пакет SDK для Microsoft Azure Service Fabric][core-sdk]
+* [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
 
 ### <a name="to-use-visual-studio-2015-requires-visual-studio-2015-update-2-or-later"></a>Для использования Visual Studio 2015 (требуется Visual Studio 2015 с обновлением 2 или более поздней версии)
 
@@ -64,12 +64,12 @@ ms.locfileid: "78252765"
 
 Если вам требуется только пакет SDK, можно установить этот пакет:
 
-* [Установите пакет SDK для Microsoft Azure Service Fabric][core-sdk]
+* [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
 
 Текущие версии:
 
-* Service Fabric SDK и средства 4.0.470
-* 7\.0.470 среды выполнения Service Fabric
+* Сервис Ткань SDK и инструменты 4.0.470
+* Обслуживание Ткань время выполнения 7.0.470
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).
 
@@ -96,11 +96,11 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 * [Информация о моделях программирования: Reliable Services и Reliable Actors](service-fabric-choose-framework.md)
 * [Ознакомление с примерами кода Service Fabric на GitHub](https://aka.ms/servicefabricsamples)
 * [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
-* [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)
+* Узнайте о [вариантах поддержки Service Fabric](service-fabric-support.md)
 
 [1]: https://azure.microsoft.com/campaigns/service-fabric/ "Страница кампании Service Fabric"
 [2]: https://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
-[full-bundle-vs2015]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015 "Ссылка на WebPI VS 2015"
-[full-bundle-dev15]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15 "Ссылка на WebPI Dev15"
-[core-sdk]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Ссылка на WebPI Core SDK"
+[full-bundle-vs2015]:https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015 "Ссылка на WebPI VS 2015"
+[full-bundle-dev15]:https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15 "Ссылка на WebPI Dev15"
+[core-sdk]:https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Ссылка на WebPI Core SDK"
 [powershell5-download]:https://www.microsoft.com/download/details.aspx?id=54616

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
 ms.openlocfilehash: df3c8d2abf59de6c9f685ad8d93e6689738df8e6
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302531"
 ---
 # <a name="configure-iot-hub-file-uploads-using-azure-cli"></a>Настройка отправки файлов в Центре Интернета вещей с помощью Azure CLI
@@ -23,13 +23,13 @@ ms.locfileid: "78302531"
 
 Для работы с этим учебником требуется:
 
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+* Активная учетная запись Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за пару минут.
 
-* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Лазурный CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-* Центр интернета вещей Azure. Чтобы создать Центр Интернета вещей, выполните [команду `az iot hub create`](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-create) или [Создайте Центр Интернета вещей с помощью портала Azure](iot-hub-create-through-portal.md).
+* Центр интернета вещей Azure. Если у вас нет концентратора IoT, вы можете использовать [ `az iot hub create` команду](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-create) для создания или [создания концентратора IoT с помощью портала.](iot-hub-create-through-portal.md)
 
-* Учетная запись хранения Azure. Если у вас нет учетной записи хранения Azure, можно использовать Azure CLI, чтобы создать ее. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md).
+* Учетная запись хранения Azure. Если у вас нет учетной записи хранилища Azure, можно использовать CLI Azure для ее создания. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md).
 
 ## <a name="sign-in-and-set-your-azure-account"></a>Выполнение входа и установка учетной записи Azure
 
@@ -133,16 +133,16 @@ az iot hub show --name {your iot hub name}
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о возможностях Центра Интернета вещей, связанных с отправкой файлов, см. в разделе [Отправка файлов с помощью Центра Интернета вещей](iot-hub-devguide-file-upload.md).
+Дополнительные сведения о возможностях Центра Интернета вещей, касающихся отправки файлов, см. в разделе об [отправке файлов с устройства](iot-hub-devguide-file-upload.md).
 
 Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
-* [Массовое управление удостоверениями устройств Интернета вещей](iot-hub-bulk-identity-mgmt.md)
-* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
+* [Массовое управление удостоверениями устройств Центра Интернета вещей](iot-hub-bulk-identity-mgmt.md)
+* [Метрики Центра Интернета вещей](iot-hub-metrics.md)
 * [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
 * [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
-* [Комплексная защита в Интернете вещей](../iot-fundamentals/iot-security-ground-up.md)
+* [Все аспекты безопасности решения Центра Интернета вещей](../iot-fundamentals/iot-security-ground-up.md)

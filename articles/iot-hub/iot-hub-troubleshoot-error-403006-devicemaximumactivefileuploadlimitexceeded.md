@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок центра Интернета вещей Azure 403006 Девицемаксимумактивефилеуплоадлимитексцеедед
-description: Сведения об исправлении ошибки 403006 Девицемаксимумактивефилеуплоадлимитексцеедед
+title: Устранение неполадок Azure IoT концентратор ошибка 403006 DeviceMaximumActiveFileUploadLimit
+description: Понять, как исправить ошибку 403006 DeviceMaximumActiveFileUploadРазпревысил
 author: jlian
 manager: briz
 ms.service: iot-hub
@@ -9,30 +9,30 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 1e3c05e4cc3ccf34573b55d3729aded16e26d66e
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76960845"
 ---
-# <a name="403006-devicemaximumactivefileuploadlimitexceeded"></a>403006 Девицемаксимумактивефилеуплоадлимитексцеедед
+# <a name="403006-devicemaximumactivefileuploadlimitexceeded"></a>403006 DeviceMaximumActiveFileUploadLimitExceeded
 
-В этой статье описываются причины и решения для ошибок **403006 девицемаксимумактивефилеуплоадлимитексцеедед** .
+В этой статье описаны причины и решения для **403006 DeviceMaximumActiveFileUploadLimitExceeded** ошибок.
 
 ## <a name="symptoms"></a>Симптомы
 
-Запрос на отправку файла завершается ошибкой с кодом **403006** и сообщением "число активных запросов на отправку файлов не может превышать 10".
+Ваш запрос загрузки файла не справляется с кодом ошибки **403006** и сообщение "Количество активных запросов загрузки файлов не может превышать 10".
 
 ## <a name="cause"></a>Причина
 
-Каждый клиент устройства ограничен [10 параллельными передачами файлов](./iot-hub-devguide-quotas-throttling.md#other-limits). 
+Каждый клиент устройства ограничен [10 одновременными загрузками файлов.](./iot-hub-devguide-quotas-throttling.md#other-limits) 
 
-Вы можете легко превысить это ограничение, если устройство не уведомляет центр Интернета вещей о завершении передачи файлов. Эта проблема обычно вызвана ненадежной сетью на стороне устройства.
+Вы можете легко превысить лимит, если устройство не уведомит IoT Hub о завершении загрузки файлов. Эта проблема обычно вызвана ненадежной боковой сетью устройства.
 
 ## <a name="solution"></a>Решение
 
-Убедитесь, что устройство может немедленно [уведомить о завершении отправки файла центра Интернета вещей](./iot-hub-devguide-file-upload.md#notify-iot-hub-of-a-completed-file-upload). Затем попробуйте [уменьшить срок жизни маркера SAS для конфигурации отправки файла](iot-hub-configure-file-upload.md).
+Убедитесь, что устройство может оперативно [уведомить о завершении загрузки файла IoT Hub.](./iot-hub-devguide-file-upload.md#notify-iot-hub-of-a-completed-file-upload) Затем попробуйте [уменьшить токен SAS TTL для конфигурации загрузки файлов.](iot-hub-configure-file-upload.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о передаче файлов см. в разделе [Отправка файлов с помощью центра Интернета вещей](./iot-hub-devguide-file-upload.md) и [Настройка отправки файлов центра Интернета вещей с помощью портал Azure](./iot-hub-configure-file-upload.md).
+Чтобы узнать больше о загрузках файлов, смотрите [Загружать файлы с IoT концентратором](./iot-hub-devguide-file-upload.md) и [настроить ioT концентратор загружается с помощью портала Azure](./iot-hub-configure-file-upload.md).

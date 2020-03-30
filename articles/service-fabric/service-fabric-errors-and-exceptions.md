@@ -1,15 +1,15 @@
 ---
-title: Распространенные исключения FabricClient
+title: Общие исключения FabricClient брошены
 description: Описание распространенных исключений и ошибок, которые могут выдаваться интерфейсами API FabricClient при управлении приложениями и кластерами.
 author: oanapl
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: oanapl
 ms.openlocfilehash: 9ad3097a490d4728e05ea90652c17c24b79cac2c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75457935"
 ---
 # <a name="common-exceptions-and-errors-when-working-with-the-fabricclient-apis"></a>Распространенные исключения и ошибки при работе с интерфейсами API FabricClient
@@ -20,14 +20,14 @@ ms.locfileid: "75457935"
 | Исключение | Вызывается, когда |
 | --- |:--- |
 | [System.Fabric.FabricObjectClosedException](https://docs.microsoft.com/dotnet/api/system.fabric.fabricobjectclosedexception) |Объект [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient) находится в закрытом состоянии. Удалите используемый объект [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient) и создайте экземпляр объекта [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient). |
-| [System.TimeoutException](https://docs.microsoft.com/dotnet/core/api/system.timeoutexception) |Время ожидания операции истекло. [Оператионтимедаут](https://docs.microsoft.com/dotnet/api/system.fabric.fabricerrorcode) возвращается, если для завершения операции требуется больше MaxOperationTimeout. |
+| [System.TimeoutException](https://docs.microsoft.com/dotnet/core/api/system.timeoutexception) |Операция была проведена. [ОперацияTimedOut](https://docs.microsoft.com/dotnet/api/system.fabric.fabricerrorcode) возвращается, когда операция занимает больше, чем MaxOperationTimeout для завершения. |
 | [System.UnauthorizedAccessException](https://docs.microsoft.com/dotnet/core/api/system.unauthorizedaccessexception) |Не удалось выполнить проверку доступа для операции. Возвращается E_ACCESSDENIED. |
 | [System.Fabric.FabricException](https://docs.microsoft.com/dotnet/api/system.fabric.fabricexception) |При выполнении операции произошла ошибка времени выполнения. Любой из методов FabricClient может вызвать исключение [FabricException](https://docs.microsoft.com/dotnet/api/system.fabric.fabricexception). Причина этого исключения определяется [ErrorCode](https://docs.microsoft.com/dotnet/api/system.fabric.fabricexception.ErrorCode). Коды ошибок определяются в перечислении [FabricErrorCode](https://docs.microsoft.com/dotnet/api/system.fabric.fabricerrorcode). |
 | [System.Fabric.FabricTransientException](https://docs.microsoft.com/dotnet/api/system.fabric.fabrictransientexception) |Не удалось выполнить операцию из-за временной ошибки какого-либо вида. Например, операция может завершиться ошибкой, так как кворум реплик временно недоступен. Временные исключения соответствуют невыполненным операциям, которые могут быть выполнены повторно. |
 
 Некоторые самые распространенные ошибки [FabricErrorCode](https://docs.microsoft.com/dotnet/api/system.fabric.fabricerrorcode), которые могут быть возвращены в [FabricException](https://docs.microsoft.com/dotnet/api/system.fabric.fabricexception), включают:
 
-| Ошибка | Условие |
+| Error | Условие |
 | --- |:--- |
 | CommunicationError |Ошибка связи привела к сбою операции; повторите операцию. |
 | InvalidCredentialType |Недопустимый тип учетных данных. |

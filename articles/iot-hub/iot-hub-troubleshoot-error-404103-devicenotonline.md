@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок центра Интернета вещей Azure 404103 Девиценотонлине
-description: Сведения об исправлении ошибки 404103 Девиценотонлине
+title: Устранение неполадок Azure IoT концентратор ошибка 404103 DeviceNotOnline
+description: Понять, как исправить ошибку 404103 DeviceNotOnline
 author: jlian
 manager: briz
 ms.service: iot-hub
@@ -9,24 +9,24 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: e648428f924cfc33421c8591c41f7ac85b05a033
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76960819"
 ---
-# <a name="404103-devicenotonline"></a>404103 Девиценотонлине
+# <a name="404103-devicenotonline"></a>404103 DeviceNotOnline
 
-В этой статье описываются причины и решения для ошибок **404103 девиценотонлине** .
+В этой статье описаны причины и решения ошибок **404103 DeviceNotOnline.**
 
 ## <a name="symptoms"></a>Симптомы
 
-Прямой метод для устройства завершается ошибкой **404103 девиценотонлине** , даже если устройство находится в режиме «в сети». 
+Прямой метод к устройству не удается с ошибкой **404103 DeviceNotOnline,** даже если устройство находится в сети. 
 
 ## <a name="cause"></a>Причина
 
-Если известно, что устройство находится в сети и по-прежнему получает ошибку, вероятно, это вызвано тем, что обратный вызов прямого метода не зарегистрирован на устройстве.
+Если вы знаете, что устройство находится в сети и по-прежнему получить ошибку, это вероятно, потому что прямой метод обратного вызова не зарегистрирован на устройстве.
 
 ## <a name="solution"></a>Решение
 
-Чтобы правильно настроить устройство для обратных вызовов прямого метода, см. раздел [Работа с прямым методом на устройстве](iot-hub-devguide-direct-methods.md#handle-a-direct-method-on-a-device).
+Чтобы настроить устройство правильно для прямого вызова вызова метода, [см.](iot-hub-devguide-direct-methods.md#handle-a-direct-method-on-a-device)

@@ -1,15 +1,15 @@
 ---
-title: Агрегирование событий Service Fabric Azure с помощью EventFlow
+title: Агрегация событий Azure Service Fabric с EventFlow
 description: Ознакомьтесь со сведениями об агрегировании и сборе событий с использованием EventFlow для мониторинга и диагностики кластеров Azure Service Fabric.
 author: srrengar
 ms.topic: conceptual
 ms.date: 2/25/2019
 ms.author: srrengar
 ms.openlocfilehash: cde24657cc8ed78b91e72df16d51df4077a6e030
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75463093"
 ---
 # <a name="event-aggregation-and-collection-using-eventflow"></a>Агрегирование и сбор событий с помощью EventFlow
@@ -24,7 +24,7 @@ ms.locfileid: "75463093"
 
 Появится список различных пакетов, которые помечены как "Входные данные" и "Выходные данные". EventFlow поддерживает различные регистраторы и анализаторы журналов. Служба, в которой размещается EventFlow, должна содержать соответствующие пакеты в зависимости от источника и назначения журналов приложений. Помимо основного пакета ServiceFabric, также требуется настроить по крайней мере один ввод и один вывод. Например, можно добавить следующие пакеты для отправки событий EventSource в Application Insights:
 
-* `Microsoft.Diagnostics.EventFlow.Inputs.EventSource` для сбора данных из класса EventSource службы и стандартных классов EventSource, например *Microsoft-ServiceFabric-Services* и *Microsoft-ServiceFabric-Actors*
+* `Microsoft.Diagnostics.EventFlow.Inputs.EventSource`для сбора данных из класса EventSource службы, а также из стандартных EventSources, таких как *Microsoft-ServiceFabric-Сервисы* и *Microsoft-ServiceFabric-Actors*)
 * `Microsoft.Diagnostics.EventFlow.Outputs.ApplicationInsights` (мы собираемся отправлять журналы в ресурс Azure Application Insights)
 * `Microsoft.Diagnostics.EventFlow.ServiceFabric` (позволяет инициализировать конвейер EventFlow из конфигурации службы Service Fabric и сообщать о всех проблемах отправки диагностических данных в виде отчетов о работоспособности Service Fabric)
 

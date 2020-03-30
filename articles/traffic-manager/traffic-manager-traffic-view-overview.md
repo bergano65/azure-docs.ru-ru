@@ -1,6 +1,6 @@
 ---
 title: Представление трафика в диспетчере трафика Azure
-description: В этом обзоре вы узнаете, как работает представление трафика диспетчера трафика.
+description: В этом введении узнайте, как работает представление диспетчера движения трафика.
 services: traffic-manager
 documentationcenter: traffic-manager
 author: rohinkoul
@@ -13,10 +13,10 @@ ms.date: 03/16/2018
 ms.author: rohink
 ms.custom: ''
 ms.openlocfilehash: d5a03fde564b14baee97f50fa63fd58bf83694b7
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76938353"
 ---
 # <a name="traffic-manager-traffic-view"></a>Представление трафика в диспетчере трафика
@@ -36,7 +36,7 @@ ms.locfileid: "76938353"
 Представление трафика работает следующим образом. Диспетчер трафика просматривает входящие запросы, полученные за последние семь дней, для профиля, в котором включена эта функция. Представление трафика извлекает исходный IP-адрес сопоставителя DNS из параметров входящих запросов и использует этот адрес как представление расположения пользователей. Затем эти запросы группируются на уровне детализации сопоставителя DNS, чтобы создать регионы баз пользователей с помощью географических данных IP-адресов, поддерживаемых диспетчером трафика. Диспетчер трафика далее считывает регионы Azure, куда был перенаправлен запрос, и создает карту потока трафика для пользователей из этих регионов.  
 На следующем шаге диспетчер трафика сопоставляет регион базы пользователя с регионом Azure и определяет среднее время задержки для пользователей из этого региона при подключении к регионам Azure, используя таблицы с собранными данными о сетевых задержках для множества пользовательских сетей. Все эти вычисления обобщаются на уровне IP-адресов локальных сопоставителей DNS и отображаются в представлении. Вы можете использовать эту информацию разными способами.
 
-Частота обновления данных в представлении трафика зависит от нескольких внутренних переменных службы. Однако данные обычно обновляются каждые 24 часа.
+Частота обновления данных просмотра трафика зависит от нескольких внутренних переменных службы. Тем не менее, данные обычно обновляются один раз в 24 часа.
 
 >[!NOTE]
 >Задержки, описанные в Представлении трафика, отражают задержку между пользователем и регионом Azure, к которому этот пользователь обращается, а не задержку запроса DNS. Функция "Представление трафика" обеспечивает оптимальную оценку задержки между локальным сопоставителем DNS и регионом Azure, в который направлен запрос. Если данных недостаточно, для задержки возвращается значение NULL. 
@@ -45,7 +45,7 @@ ms.locfileid: "76938353"
 
 Открыв раздел **Представление трафика** на странице диспетчера трафика, вы увидите географическую карту с наложением аналитических сведений Представления трафика. На карте представлены сведения о базе пользователей и конечных точках из профиля диспетчера трафика.
 
-![Диспетчер трафика Представление трафика географическое представление][1]
+![Географический вид traffic Manager Traffic View][1]
 
 ### <a name="user-base-information"></a>Сведения о базе пользователей
 
@@ -72,23 +72,23 @@ ms.locfileid: "76938353"
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
-* [Что Представление трафика делать?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-does-traffic-view-do)
+* [Что делает представление трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-does-traffic-view-do)
 
-* [Как можно воспользоваться преимуществами использования Представление трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-benefit-from-using-traffic-view)
+* [Какую пользу можно получить от представления трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-benefit-from-using-traffic-view)
 
-* [Как Представление трафика отличается от метрик диспетчера трафика, доступных в Azure Monitor?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-is-traffic-view-different-from-the-traffic-manager-metrics-available-through-azure-monitor)
+* [Чем представление трафика отличается от метрик диспетчера трафика, доступных через монитор Azure?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-is-traffic-view-different-from-the-traffic-manager-metrics-available-through-azure-monitor)
 
-* [Представление трафика использовать сведения о подсети клиента EDNS?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-view-use-edns-client-subnet-information)
+* [Использует ли представление трафика сведения о подсети клиента EDNS?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-view-use-edns-client-subnet-information)
 
-* [Сколько дней данных Представление трафика использовать?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-days-of-data-does-traffic-view-use)
+* [За какой срок отображаются данные в представлении трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-days-of-data-does-traffic-view-use)
 
-* [Как Представление трафика обрабатывает внешние конечные точки?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-handle-external-endpoints)
+* [Как представление трафика обрабатывает внешние конечные точки](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-handle-external-endpoints)
 
-* [Нужно ли включать Представление трафика для каждого профиля в моей подписке?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-need-to-enable-traffic-view-for-each-profile-in-my-subscription)
+* [Нужно ли включать просмотр трафика для каждого профиля в подписке?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-need-to-enable-traffic-view-for-each-profile-in-my-subscription)
 
-* [Как отключить Представление трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-turn-off-traffic-view)
+* [Как отключить представление трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-turn-off-traffic-view)
 
-* [Как работает выставление счетов Представление трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-billing-work)
+* [Как выставляются счета за представление трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-billing-work)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

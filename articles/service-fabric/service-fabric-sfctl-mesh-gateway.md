@@ -1,15 +1,15 @@
 ---
-title: Azure Service Fabric CLI — шлюз сетки sfctl
-description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для получения и удаления Service Fabric ресурсов шлюза сетки.
+title: Azure сервис Ткань CLI- sfctl сетки шлюз
+description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для получения и удаляния ресурсов шлюза Service Fabric Mesh.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 3e398ff8a1a0a28fd9d0650a7c9d18ba04817d33
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76906017"
 ---
 # <a name="sfctl-mesh-gateway"></a>sfctl mesh gateway
@@ -17,11 +17,11 @@ ms.locfileid: "76906017"
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|Description|
+|Команда|Описание|
 | --- | --- |
 | удалить | Удаляет ресурс шлюза. |
 | list | Отображает список всех ресурсов шлюза. |
-| показать | Возвращает ресурс шлюза вместе с заданным именем. |
+| show | Возвращает ресурс шлюза вместе с заданным именем. |
 
 ## <a name="sfctl-mesh-gateway-delete"></a>sfctl mesh gateway delete
 Удаляет ресурс шлюза.
@@ -30,13 +30,13 @@ ms.locfileid: "76906017"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --name -n [обязательный параметр] | Имя ресурса шлюза. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -51,7 +51,7 @@ ms.locfileid: "76906017"
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -66,13 +66,13 @@ ms.locfileid: "76906017"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --name -n [обязательный параметр] | Имя ресурса шлюза. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -82,5 +82,5 @@ ms.locfileid: "76906017"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
+- [Настройка](service-fabric-cli.md) службы Ткань CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
