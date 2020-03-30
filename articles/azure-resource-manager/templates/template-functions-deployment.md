@@ -1,23 +1,23 @@
 ---
-title: Функции шаблонов — развертывание
+title: Функции шаблона - развертывание
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения сведений о развертывании.
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.openlocfilehash: b241aaf43ee3204c9960d0099ce3c61d4c1a80ee
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 86a1d3d7e05fedacd7a3c044ecab241ca9d059c5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79274272"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80156333"
 ---
-# <a name="deployment-functions-for-azure-resource-manager-templates"></a>Функции развертывания для шаблонов Azure Resource Manager 
+# <a name="deployment-functions-for-arm-templates"></a>Функции развертывания для шаблонов ARM 
 
-Диспетчер ресурсов предоставляет следующие функции для получения значений, связанных с текущим развертыванием:
+Диспетчер ресурсов предоставляет следующие функции для получения значений, связанных с текущим развертыванием шаблона Управления ресурсами Azure (ARM):
 
-* [deployment](#deployment)
-* [PXE](#environment)
-* [parameters](#parameters)
-* [variables](#variables)
+* [Развертывания](#deployment)
+* [Среды](#environment)
+* [Параметры](#parameters)
+* [Переменные](#variables)
 
 Сведения о получении значений из ресурсов, групп ресурсов или подписки см. в разделе [Функции для работы с ресурсами](template-functions-resource.md).
 
@@ -137,11 +137,11 @@ ms.locfileid: "79274272"
 
 `environment()`
 
-Возвращает сведения о среде Azure, используемой для развертывания.
+Возвращает информацию о среде развертывания Azure, используемой для развертывания.
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Эта функция возвращает свойства для текущей среды Azure. В следующем примере показаны свойства для глобального Azure. Облака независимых могут возвращать несколько разных свойств.
+Эта функция возвращает свойства для текущей среды Azure. В следующем примере показаны свойства для глобального Azure. Суверенные облака могут возвращать несколько иные свойства.
 
 ```json
 {
@@ -179,7 +179,7 @@ ms.locfileid: "79274272"
 
 ### <a name="example"></a>Пример
 
-В следующем примере шаблона возвращается объект среды.
+Следующий пример шаблона возвращает объект среды.
 
 ```json
 {
@@ -195,7 +195,7 @@ ms.locfileid: "79274272"
 }
 ```
 
-Предыдущий пример возвращает следующий объект при развертывании в глобальном Azure:
+Предыдущий пример возвращает следующий объект при развертывании в глобальную Azure:
 
 ```json
 {
@@ -239,7 +239,7 @@ ms.locfileid: "79274272"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | parameterName |Да |строка |Имя параметра, который требуется вернуть. |
 
@@ -326,15 +326,15 @@ ms.locfileid: "79274272"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| name | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | String | вариант 1 |
+| stringOutput | Строка | вариант 1 |
 | intOutput | Int | 1 |
 | objectOutput | Объект | {"one": "a", "two": "b"} |
 | arrayOutput | Array | [1, 2, 3] |
-| crossOutput | String | вариант 1 |
+| crossOutput | Строка | вариант 1 |
 
-Дополнительные сведения об использовании параметров см. [в разделе Параметры в Azure Resource Manager шаблоне](template-parameters.md).
+Для получения дополнительной информации об использовании параметров [см.](template-parameters.md)
 
 ## <a name="variables"></a>variables
 
@@ -344,9 +344,9 @@ ms.locfileid: "79274272"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| variableName |Да |String |Имя переменной, которую необходимо вернуть. |
+| variableName |Да |Строка |Имя переменной, которую необходимо вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -392,7 +392,7 @@ ms.locfileid: "79274272"
         "var4": {
             "property1": "value1",
             "property2": "value2"
-        }
+          }
     },
     "resources": [],
     "outputs": {
@@ -418,18 +418,18 @@ ms.locfileid: "79274272"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| name | Тип | Значение |
 | ---- | ---- | ----- |
-| exampleOutput1 | String | myVariable |
+| exampleOutput1 | Строка | myVariable |
 | exampleOutput2 | Array | [1, 2, 3, 4] |
-| exampleOutput3 | String | myVariable |
+| exampleOutput3 | Строка | myVariable |
 | exampleOutput4 |  Объект | {"property1": "value1", "property2": "value2"} |
 
-Дополнительные сведения об использовании переменных см. [в разделе переменные в шаблоне Azure Resource Manager](template-variables.md).
+Для получения дополнительной информации об использовании переменных [см.](template-variables.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
+* Для описания разделов в шаблоне менеджера ресурсов Azure [см.](template-syntax.md)
 * Инструкции по объединению нескольких шаблонов см. в статье [Функции развертывания для шаблонов Azure Resource Manager](linked-templates.md).
-* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
+* Чтобы итерировать определенное количество раз при создании типа ресурса, [см. Создать несколько экземпляров ресурсов в azure Resource Manager.](copy-resources.md)
 * Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
 

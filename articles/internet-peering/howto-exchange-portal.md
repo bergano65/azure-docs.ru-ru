@@ -1,7 +1,7 @@
 ---
-title: Создание или изменение пиринга Exchange с помощью портала
+title: Создание или изменение пиринга через точку обмена с помощью портала
 titleSuffix: Azure
-description: Создание или изменение пиринга Exchange с помощью портала
+description: Создание или изменение пиринга через точку обмена с помощью портала
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,44 +9,44 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 2c186decf68d167ab2c5ab7696c2dfb51d77a071
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774579"
 ---
-# <a name="create-or-modify-an-exchange-peering-using-the-portal"></a>Создание или изменение пиринга Exchange с помощью портала
+# <a name="create-or-modify-an-exchange-peering-using-the-portal"></a>Создание или изменение пиринга через точку обмена с помощью портала
 
-В этой статье описывается, как создать пиринг Microsoft Exchange с помощью портала. В этой статье также показано, как проверить состояние ресурса, обновить его или удалить и отменить его предоставление.
+В этой статье описывается, как создать пиринг биржи Майкрософт с помощью портала. В этой статье также показано, как проверить состояние ресурса, обновить его или удалить и дезавуировать его.
 
-При желании вы можете выполнить инструкции с помощью [PowerShell](howto-exchange-powershell.md).
+Если вы предпочитаете, вы можете завершить это руководство с помощью [PowerShell](howto-exchange-powershell.md).
 
-## <a name="before-you-begin"></a>Перед началом работы
-* Прежде чем приступить к настройке, ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по Exchange пиринга](walkthrough-exchange-all.md) .
-* Если у вас есть пиринг Exchange с корпорацией Майкрософт, которые не будут преобразованы в ресурсы Azure, см. статью [Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью портала](howto-legacy-exchange-portal.md) .
+## <a name="before-you-begin"></a>Перед началом
+* Просмотрите [предпосылки](prerequisites.md) и [обменпирирования пошаговое решение,](walkthrough-exchange-all.md) прежде чем начать конфигурацию.
+* В случае, если у вас уже есть кондиционирования Exchange с корпорацией Майкрософт, которые не преобразуются в ресурсы Azure, обратитесь [к преобразованию устаревшего Ресурса Azure с помощью портала](howto-legacy-exchange-portal.md)
 
-## <a name="create-and-provision-an-exchange-peering"></a>Создание и инициализация пиринга Exchange
+## <a name="create-and-provision-an-exchange-peering"></a>Создание и предоставление пиринга Exchange
 
-### <a name="sign-in-to-portal-and-select-your-subscription"></a>Войдите на портал и выберите свою подписку.
+### <a name="sign-in-to-portal-and-select-your-subscription"></a>Вопийте на портале и выберите подписку
 [!INCLUDE [Account](./includes/account-portal.md)]
 
-### <a name=create></a>Создание пиринга Exchange
+### <a name="create-an-exchange-peering"></a><a name=create></a>Создание пиринга Exchange
 
-Новый запрос пиринга можно создать с помощью **однорангового** ресурса.
+Вы можете создать новый запрос на пиринг с помощью ресурса **Peering.**
 
-#### <a name="launch-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка основных параметров
+#### <a name="launch-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка базовых настроек
 [!INCLUDE [direct-peering-basic](./includes/direct-portal-basic.md)]
 
-#### <a name="configure-connections-and-submit"></a>Настройка подключений и отправка
+#### <a name="configure-connections-and-submit"></a>Настройка соединений и отправка
 [!INCLUDE [exchange-peering-configuration](./includes/exchange-portal-configuration.md)]
 
-### <a name=get></a>Проверка пиринга Exchange
+### <a name="verify-an-exchange-peering"></a><a name=get></a>Проверить врали биржи
 [!INCLUDE [peering-exchange-get-portal](./includes/exchange-portal-get.md)]
 
-## <a name="modify"></a>Изменение пиринга Exchange
+## <a name="modify-an-exchange-peering"></a><a name="modify"></a>Изменение пиринга Биржи
 [!INCLUDE [peering-exchange-modify-portal](./includes/exchange-portal-modify.md)]
 
-## <a name="delete"></a>Отменить подготовку пиринга Exchange
+## <a name="deprovision-an-exchange-peering"></a><a name="delete"></a>Деобеспечение биры пиринг
 [!INCLUDE [peering-exchange-delete-portal](./includes/delete.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -56,4 +56,4 @@ ms.locfileid: "75774579"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Дополнительные сведения см. на странице [часто задаваемые вопросы об пиринга через Интернет](faqs.md)
+Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)

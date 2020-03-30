@@ -16,10 +16,10 @@ ms.date: 01/15/2019
 ms.author: labrenne
 ms.custom: seodec18
 ms.openlocfilehash: 26691ca6b9d078ef18ac852c67fa2ac88dff2722
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77023010"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Управление ресурсами пакетной службы с помощью командлетов PowerShell
@@ -30,7 +30,7 @@ ms.locfileid: "77023010"
 
 В этой статье описаны командлеты модуля пакетной службы Azure 1.0.0. Рекомендуется регулярно обновлять модули Azure PowerShell, чтобы пользоваться всеми преимуществами службы.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Установите и настройте последнюю версию модуля Azure PowerShell](/powershell/azure/overview). Установить определенный модуль пакетной службы Azure, например модуль предварительной версии, можно из [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.Batch/1.0.0).
 
@@ -48,15 +48,15 @@ ms.locfileid: "77023010"
 
 ## <a name="manage-batch-accounts-and-keys"></a>Управление учетными записями пакетной службы и ключами
 
-### <a name="create-a-batch-account"></a>Создание учетной записи пакетной службы
+### <a name="create-a-batch-account"></a>Создание учетной записи Пакетной службы
 
-Командлет **New-AzBatchAccount** создает учетную запись пакетной службы в указанной группе ресурсов. Если у вас еще нет группы ресурсов, создайте ее, выполнив командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Укажите один из регионов Azure в параметре **Location**, например Central US. Пример.
+Командлет **New-AzBatchAccount** создает учетную запись пакетной службы в указанной группе ресурсов. Если у вас еще нет группы ресурсов, создайте ее, выполнив командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Укажите один из регионов Azure в параметре **Location**, например Central US. Пример:
 
 ```powershell
 New-AzResourceGroup –Name MyBatchResourceGroup –Location "Central US"
 ```
 
-Далее создайте учетную запись пакетной службы в новой группе ресурсов. Укажите имя учетной записи вместо <*account_name*>, а также расположение и имя группы ресурсов. Создание учетной записи пакетной службы может занять некоторое время. Пример.
+Далее создайте учетную запись пакетной службы в новой группе ресурсов. Укажите имя учетной записи вместо <*account_name*>, а также расположение и имя группы ресурсов. Создание учетной записи пакетной службы может занять некоторое время. Пример:
 
 ```powershell
 New-AzBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName <res_group_name>
@@ -90,7 +90,7 @@ New-AzBatchAccountKey -AccountName <account_name> -KeyType Primary
 
 ### <a name="delete-a-batch-account"></a>Удаление учетной записи Пакетной службы
 
-**Remove-AzBatchAccount** удаляет учетную запись пакетной службы. Пример.
+**Remove-AzBatchAccount** удаляет учетную запись пакетной службы. Пример:
 
 ```powershell
 Remove-AzBatchAccount -AccountName <account_name>
@@ -111,7 +111,7 @@ $context = Get-AzBatchAccountKeys -AccountName <account_name>
 > [!NOTE]
 > По умолчанию первичный ключ учетной записи используется для проверки подлинности, но вы можете явно выбрать ключ, который нужно использовать, изменив свойство **KeyInUse** объекта BatchAccountContext: `$context.KeyInUse = "Secondary"`.
 
-### <a name="azure-active-directory-authentication"></a>Проверка подлинности Azure Active Directory
+### <a name="azure-active-directory-authentication"></a>Аутентификация Azure Active Directory
 
 ```powershell
 $context = Get-AzBatchAccount -AccountName <account_name>
@@ -119,13 +119,13 @@ $context = Get-AzBatchAccount -AccountName <account_name>
 
 ## <a name="create-and-modify-batch-resources"></a>Создание и изменение ресурсов пакетной службы
 
-Чтобы создать ресурсы в учетной записи пакетной службы, используйте командлеты **New-AzBatchPool**, **New-AzBatchJob** и **New-AzBatchTask**. Чтобы обновить свойства ресурсов в учетной записи пакетной службы, используйте соответствующие командлеты **Get-** и **Set-** , а чтобы удалить ресурсы — командлет **Remove-** .
+Чтобы создать ресурсы в учетной записи пакетной службы, используйте командлеты **New-AzBatchPool**, **New-AzBatchJob** и **New-AzBatchTask**. Чтобы обновить свойства ресурсов в учетной записи пакетной службы, используйте соответствующие командлеты **Get-** и **Set-**, а чтобы удалить ресурсы — командлет **Remove-**.
 
 При использовании этих командлетов вам нужно не только передать объект BatchContext, но также создать или передать объекты, которые содержат параметры с подробными настройками ресурсов, как показано в следующем примере. Дополнительные примеры доступны в справочных материалах по каждому командлету.
 
 ### <a name="create-a-batch-pool"></a>Создание пула пакетной службы
 
-Создавая или обновляя пул пакетной службы, вам нужно выбрать конфигурацию облачных служб или виртуальной машины для операционной системы на вычислительных узлах (см. [общие сведения о функциях пакетной службы](batch-api-basics.md#pool)). Если вы указываете конфигурацию облачных служб, образы вычислительных узлов будут созданы на основе одного из [выпусков гостевых ОС Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases). При указании конфигурации виртуальной машины можно указать один из поддерживаемых образов виртуальных машин Linux или Windows, перечисленных в [магазине виртуальных машин Azure][vm_marketplace], или предоставить подготовленный пользовательский образ.
+Создавая или обновляя пул пакетной службы, вам нужно выбрать конфигурацию облачных служб или виртуальной машины для операционной системы на вычислительных узлах (см. [общие сведения о функциях пакетной службы](batch-api-basics.md#pool)). Если вы указываете конфигурацию облачных служб, образы вычислительных узлов будут созданы на основе одного из [выпусков гостевых ОС Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases). Если вы указываете конфигурацию виртуальной машины, можно выбрать один из поддерживаемых образов виртуальных машин Linux или Windows, доступных в [магазине виртуальных машин Azure Marketplace][vm_marketplace], или предоставить настраиваемый образ, подготовленный вами.
 
 При выполнении командлета **New-AzBatchPool** передайте параметры операционной системы в объекте PSCloudServiceConfiguration или PSVirtualMachineConfiguration. Например, следующий фрагмент кода создает пул пакетной службы с вычислительными узлами размера Standard_A1 в конфигурации виртуальной машины с ОС Ubuntu Server 18.04-LTS. Здесь параметр **VirtualMachineConfiguration** определяет переменную *$configuration* как объект PSCloudServiceConfiguration. Параметр **BatchContext** определяет ранее заданную переменную *$context* как объект BatchAccountContext.
 
@@ -175,7 +175,7 @@ Get-AzBatchPool -Id "myPool" -BatchContext $context
 
 ### <a name="use-the-maxcount-parameter"></a>Использование параметра MaxCount
 
-По умолчанию каждый командлет возвращает максимум 1000 объектов. Если этот предел достигнут, уточните параметры фильтра, чтобы он возвращал меньшее количество объектов, или явно задайте максимальное значение с помощью параметра **MaxCount** . Пример.
+По умолчанию каждый командлет возвращает максимум 1000 объектов. Если этот предел достигнут, уточните параметры фильтра, чтобы он возвращал меньшее количество объектов, или явно задайте максимальное значение с помощью параметра **MaxCount** . Пример:
 
 ```powershell
 Get-AzBatchTask -MaxCount 2500 -BatchContext $context
@@ -235,7 +235,7 @@ $application.ApplicationPackages
 Remove-AzBatchApplicationPackage -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication" -ApplicationVersion "1.0"
 ```
 
-**Удалите** приложение:
+**Удалить** приложение
 
 ```powershell
 Remove-AzBatchApplication -AccountName <account_name> -ResourceGroupName <res_group_name> -ApplicationId "MyBatchApplication"

@@ -1,15 +1,15 @@
 ---
-title: Развертывание кода с помощью ZIP-файла или с файлом WAR
+title: Развертывание кода с файлом «ЗИП» или «Война»
 description: Узнайте, как развернуть приложение в Службе приложений Azure с помощью ZIP-файла (или WAR-файла для разработчиков Java).
 ms.topic: article
 ms.date: 08/12/2019
 ms.reviewer: sisirap
 ms.custom: seodec18
 ms.openlocfilehash: 716f6813e37aec086a7d496e001fe2ca0f4aab57
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75945180"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Развертывание приложения в Службе приложений Azure с помощью ZIP- или WAR-файла
@@ -22,22 +22,22 @@ ms.locfileid: "75945180"
 - включение процесса сборки по умолчанию, в том числе восстановления пакетов;
 - настройку развертывания, в том числе выполнение скриптов развертывания;  
 - журналы развертывания. 
-- Предельный размер файла в 2048 МБ.
+- Предельный размер файла 2048 МБ.
 
 Дополнительные сведения см. в [документации по Kudu](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file).
 
 [WAR](https://wikipedia.org/wiki/WAR_(file_format))-файл развертывается в службе приложений для запуска веб-приложения Java. См. раздел [Развертывание WAR-файла](#deploy-war-file).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить действия, описанные в этой статье, [Создайте приложение службы приложений](/azure/app-service/)или используйте приложение, созданное для другого руководства.
+Чтобы выполнить шаги в этой статье, [создайте приложение Службы приложений](/azure/app-service/)или используйте приложение, созданное для другого учебника.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [Create a project ZIP file](../../includes/app-service-web-deploy-zip-prepare.md)]
 
 [!INCLUDE [Deploy ZIP file](../../includes/app-service-web-deploy-zip.md)]
-В настоящее время указанная выше конечная точка не работает для служб приложений Linux. Вместо этого рекомендуется использовать FTP или [API-интерфейс развертывания ZIP](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-faq#continuous-integration-and-deployment) .
+Вышеупомянутая конечная точка не работает для Linux App Services в настоящее время. Вместо этого рассмотрите возможность использования [API-развернения](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-faq#continuous-integration-and-deployment) FTP или ip-код.
 
 ## <a name="deploy-zip-file-with-azure-cli"></a>Развертывание ZIP-файла с помощью с Azure CLI
 
@@ -51,7 +51,7 @@ az webapp deployment source config-zip --resource-group <group-name> --name <app
 
 Эта команда позволяет развертывать файлы и каталоги из ZIP-файлов в папку для приложения службы приложений по умолчанию (`\home\site\wwwroot`). Затем приложение перезапускается.
 
-По умолчанию подсистема развертывания предполагает, что ZIP-файл готов к выполнению "как есть" и не выполняет автоматизацию сборки. Чтобы включить ту же автоматизацию сборки, что и в [развертывании Git](deploy-local-git.md), задайте параметр приложения `SCM_DO_BUILD_DURING_DEPLOYMENT`, выполнив следующую команду в [Cloud Shell](https://shell.azure.com):
+По умолчанию движок развертывания предполагает, что файл «ЗИП» готов к работе как есть, и не запускает автоматизацию сборки. Для обеспечения такой же автоматизации сборки, `SCM_DO_BUILD_DURING_DEPLOYMENT` как и в [развертывании Git,](deploy-local-git.md)установите настройку приложения, запустив следующую команду в [облачной оболочке:](https://shell.azure.com)
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
@@ -63,9 +63,9 @@ az webapp config appsettings set --resource-group <group-name> --name <app-name>
 
 ## <a name="deploy-war-file"></a>Развертывание WAR-файла
 
-Чтобы развернуть WAR-файл в службе приложений, отправьте запрос POST в `https://<app-name>.scm.azurewebsites.net/api/wardeploy`. В тексте сообщения запроса POST должен содержаться WAR-файл. Учетные данные развертывания для приложения указываются в запросе с использованием обычной проверки подлинности HTTP.
+Чтобы развернуть файл WAR в Службу `https://<app-name>.scm.azurewebsites.net/api/wardeploy`приложений, отправьте запрос POST на запрос . В тексте сообщения запроса POST должен содержаться WAR-файл. Учетные данные развертывания для приложения указываются в запросе с использованием обычной проверки подлинности HTTP.
 
-Всегда используйте `/api/wardeploy` при развертывании WAR-файлов. Этот API расширяет WAR-файл и размещает его на общем файловом диске. использование других API-интерфейсов развертывания может привести к несовместимости поведения. 
+Всегда `/api/wardeploy` используйте при развертывании файлов WAR. Этот API расширит ваш файл WAR и разместит его на общем диске файла. использование других AIS развертывания может привести к несогласованному поведению. 
 
 Для обычной аутентификации HTTP требуются учетные данные развертывания службы приложений. См. дополнительные сведения об [установке и сбросе учетных данных на уровне пользователя](deploy-configure-credentials.md#userscope).
 
@@ -79,7 +79,7 @@ curl -X POST -u <username> --data-binary @"<war-file-path>" https://<app-name>.s
 
 ### <a name="with-powershell"></a>С помощью PowerShell
 
-В следующем примере с помощью [Publish-азвебапп](/powershell/module/az.websites/publish-azwebapp) загружаются файлы. War. Замените заполнители `<group-name>`, `<app-name>` и `<war-file-path>`.
+Следующий пример использует [Publish-AzWebapp](/powershell/module/az.websites/publish-azwebapp) загрузить файл .war. Замените заполнители `<group-name>`, `<app-name>` и `<war-file-path>`.
 
 ```powershell
 Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <war-file-path>

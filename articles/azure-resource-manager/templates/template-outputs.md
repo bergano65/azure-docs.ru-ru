@@ -1,20 +1,20 @@
 ---
-title: Выходные данные в шаблонах
-description: Описывает, как определить выходные значения в шаблоне Azure Resource Manager.
+title: Выходы в шаблонах
+description: Описывает, как определить значения вывода в шаблоне управления ресурсами Azure.
 ms.topic: conceptual
 ms.date: 02/25/2020
-ms.openlocfilehash: ec96b45cdc5ccf488d46c2d8da03caf16d002dfa
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 203bfc66e9515ef14a5fe1315ef5b9ee07075041
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77622838"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79460030"
 ---
-# <a name="outputs-in-azure-resource-manager-template"></a>Выходные данные в шаблоне Azure Resource Manager
+# <a name="outputs-in-azure-resource-manager-template"></a>Выходы в шаблоне менеджера ресурсов Azure
 
-В этой статье описывается, как определить выходные значения в шаблоне Azure Resource Manager. Выходные данные используются при необходимости возврата значений из развернутых ресурсов.
+В этой статье описывается, как определить значения выходных данных в шаблоне Azure Resource Manager. Выможете использовать результаты, когда необходимо вернуть значения из развернутых ресурсов.
 
-## <a name="define-output-values"></a>Определение выходных значений
+## <a name="define-output-values"></a>Определение значений вывода
 
 В следующем примере показано, как вернуть идентификатор ресурса для общедоступного IP-адреса.
 
@@ -27,9 +27,9 @@ ms.locfileid: "77622838"
 }
 ```
 
-## <a name="conditional-output"></a>Условный вывод
+## <a name="conditional-output"></a>Условный выход
 
-В разделе Outputs можно условно возвращать значение. Как правило, условие используется в выходных данных при [условном развертывании](conditional-resource-deployment.md) ресурса. В следующем примере показано, как условно вернуть идентификатор ресурса для общедоступного IP-адреса в зависимости от того, был ли развернут новый.
+В разделе выводов можно условно вернуть значение. Обычно условие используется в выводах при [условном развертывании](conditional-resource-deployment.md) ресурса. В следующем примере показано, как условно вернуть идентификатор ресурса для общедоступного IP-адреса в зависимости от того, был ли развернут новый:
 
 ```json
 "outputs": {
@@ -41,11 +41,11 @@ ms.locfileid: "77622838"
 }
 ```
 
-Простой пример условного вывода см. в разделе [шаблон условного вывода](https://github.com/bmoore-msft/AzureRM-Samples/blob/master/conditional-output/azuredeploy.json).
+Для простого примера условного вывода [см.](https://github.com/bmoore-msft/AzureRM-Samples/blob/master/conditional-output/azuredeploy.json)
 
-## <a name="dynamic-number-of-outputs"></a>Динамическое число выходов
+## <a name="dynamic-number-of-outputs"></a>Динамическое количество выходов
 
-В некоторых случаях неизвестно число экземпляров значения, которое необходимо вернуть при создании шаблона. Можно вернуть переменное число значений с помощью элемента **Copy** .
+В некоторых сценариях вы не знаете количество экземпляров значения, необходимого для возврата при создании шаблона. Вы можете вернуть переменное количество значений с помощью элемента **копирования.**
 
 ```json
 "outputs": {
@@ -59,11 +59,11 @@ ms.locfileid: "77622838"
 }
 ```
 
-Дополнительные сведения см. [в разделе выходные данные итерации в шаблонах Azure Resource Manager](copy-outputs.md).
+Для получения дополнительной информации смотрите [итерацию выходов в шаблонах Azure Resource Manager.](copy-outputs.md)
 
 ## <a name="linked-templates"></a>Связанные шаблоны
 
-Чтобы получить выходное значение из связанного шаблона, используйте функцию [Reference](template-functions-resource.md#reference) в родительском шаблоне. В родительском шаблоне используется следующий синтаксис:
+Чтобы получить значение вывода из связанного шаблона, используйте [функцию ссылки](template-functions-resource.md#reference) в шаблоне родительского вывода. Синтаксис в шаблоне родительского составляет:
 
 ```json
 "[reference('<deploymentName>').outputs.<propertyName>.value]"
@@ -71,7 +71,7 @@ ms.locfileid: "77622838"
 
 При получении выходного свойства из связанного шаблона имя свойства не должно содержать тире.
 
-В следующем примере показано, как задать IP-адрес в подсистеме балансировки нагрузки, извлекая значение из связанного шаблона.
+В следующем примере показано, как установить IP-адрес на балансере нагрузки, извлекая значение из связанного шаблона.
 
 ```json
 "publicIPAddress": {
@@ -81,11 +81,11 @@ ms.locfileid: "77622838"
 
 Вы не можете использовать функцию `reference` в разделе выходных данных [вложенного шаблона](linked-templates.md#nested-template). Чтобы извлечь значения для развернутого ресурса во вложенном шаблоне, преобразуйте этот шаблон в связанный.
 
-## <a name="get-output-values"></a>Получение выходных значений
+## <a name="get-output-values"></a>Получить значения вывода
 
-После завершения развертывания выходные значения автоматически возвращаются в результатах развертывания.
+При успешном развертывании значения вывода автоматически возвращаются в результатах развертывания.
 
-Чтобы получить выходные значения из журнала развертывания, можно использовать скрипт.
+Чтобы получить значения вывода из истории развертывания, можно использовать сценарий.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -95,10 +95,10 @@ ms.locfileid: "77622838"
   -Name <deployment-name>).Outputs.resourceID.value
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
 
 ```azurecli-interactive
-az group deployment show \
+az deployment group show \
   -g <resource-group-name> \
   -n <deployment-name> \
   --query properties.outputs.resourceID.value
@@ -108,14 +108,14 @@ az group deployment show \
 
 ## <a name="example-templates"></a>Образцы шаблонов
 
-В следующих примерах демонстрируются сценарии использования выходных данных.
+В следующих примерах показаны сценарии использования выходных данных.
 
-|Шаблон  |Description  |
+|Шаблон  |Описание  |
 |---------|---------|
 |[Копирование переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) | Позволяет создать сложные переменные и вывести эти значения. Не используется для развертывания ресурсов. |
-|[Общедоступный IP-адрес](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) | Позволяет создать общедоступный IP-адрес и вывести идентификатор ресурса. |
-|[Подсистема балансировки нагрузки](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) | Позволяет создать ссылку на предыдущий шаблон. При создании подсистемы балансировки нагрузки использует идентификатор ресурса в выходных данных. |
+|[Общественный IP-адрес](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) | Позволяет создать общедоступный IP-адрес и вывести идентификатор ресурса. |
+|[Балансизатор нагрузки](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) | Позволяет создать ссылку на предыдущий шаблон. При создании подсистемы балансировки нагрузки использует идентификатор ресурса в выходных данных. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о доступных свойствах выходных данных см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
+* Чтобы узнать о доступных свойствах для выводов, [см. Понимание структуры и синтаксиса шаблонов Azure Resource Manager.](template-syntax.md)

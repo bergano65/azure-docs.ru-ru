@@ -1,5 +1,5 @@
 ---
-title: Приложение .NET без интерактивной проверки подлинности — Azure HDInsight
+title: Неинтерактивная аутентификация .NET - Azure HDInsight
 description: Узнайте, как создавать приложения Microsoft .NET с неинтерактивной проверкой подлинности в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/23/2019
 ms.openlocfilehash: 5e6a0586bc750f8972586920c15dbb297295aa20
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79371279"
 ---
 # <a name="create-a-non-interactive-authentication-net-hdinsight-application"></a>Создание приложения .NET HDInsight с неинтерактивной проверкой подлинности
 
-Запустите приложение Microsoft .NET Azure HDInsight в собственном удостоверении приложения (не в интерактивном режиме) или в удостоверении пользователя, выполнившего вход в приложение (интерактивное). В этой статье описано, как создать приложение .NET с неинтерактивной проверкой подлинности для подключения к Azure и управления HDInsight. Пример интерактивного приложения см. в разделе [Подключение к Azure HDInsight](hdinsight-administer-use-dotnet-sdk.md#connect-to-azure-hdinsight).
+Запустите приложение Microsoft .NET Azure HDInsight либо под собственным именем приложения (неинтерактивным), либо под идентификацией пользователя приложения (интерактивного). В этой статье описано, как создать приложение .NET с неинтерактивной проверкой подлинности для подключения к Azure и управления HDInsight. Пример интерактивного приложения см. в разделе [Подключение к Azure HDInsight](hdinsight-administer-use-dotnet-sdk.md#connect-to-azure-hdinsight).
 
 Из неинтерактивного приложения .NET, вам потребуется следующее:
 
 * Идентификатор клиента для подписки Azure (также называется *идентификатором каталога*). Дополнительные сведения см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
-* Идентификатор клиента для приложения Azure Active Directory (Azure AD). Дополнительные сведения см. в разделах [Создание приложения Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) и [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
+* Идентификатор клиента для приложения Azure Active Directory (Azure AD). Смотрите [Создать приложение Active Directory Azure](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) и получить [идентификатор приложения.](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in)
 * Секретный ключ приложения Azure AD. Дополнительные сведения см. в разделе [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -31,21 +31,21 @@ ms.locfileid: "79371279"
 
 ## <a name="assign-a-role-to-the-azure-ad-application"></a>Назначение роли приложению Azure AD
 
-Назначьте приложению Azure AD определенную [роль](../role-based-access-control/built-in-roles.md), чтобы предоставить ему разрешения на выполнение действий. Вы можете задать область действия на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, Добавление приложения в роль читатель для группы ресурсов означает, что приложение может считывать группу ресурсов и все ресурсы в ней. В этой статье вы настроите область на уровне группы ресурсов. Дополнительные сведения см. в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../role-based-access-control/role-assignments-portal.md).
+Назначьте приложению Azure AD определенную [роль](../role-based-access-control/built-in-roles.md), чтобы предоставить ему разрешения на выполнение действий. Вы можете задать область действия на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, добавление приложения к роли Reader для группы ресурсов означает, что приложение может прочитать группу ресурсов и любые ресурсы в ней. В этой статье вы устанавливаете область действия на уровне группы ресурсов. Дополнительные сведения см. в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../role-based-access-control/role-assignments-portal.md).
 
 **Добавление роли владельца в приложение Azure AD**
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Перейдите к группе ресурсов с кластером HDInsight, в которой будет выполняться запрос Hive далее в этой статье. Если у вас много групп ресурсов, для поиска нужной можно использовать фильтр.
-1. В меню группы ресурсов щелкните **Управление доступом (IAM)** .
+1. Перейдите к группе ресурсов с кластером HDInsight, на котором вы запустите запрос Hive позже в этой статье. Если у вас много групп ресурсов, для поиска нужной можно использовать фильтр.
+1. В меню группы ресурсов щелкните **Управление доступом (IAM)**.
 1. Выберите вкладку **Назначения ролей**, чтобы просмотреть текущие назначения ролей.
-1. В верхней части страницы выберите **+ Добавить**.
+1. В верхней части страницы выберите **и добавьте**.
 1. Выполните инструкции по добавлению роли владельца в приложение Azure AD. После успешного добавления роли приложение отобразится в списке роли владельца.
 
 ## <a name="develop-an-hdinsight-client-application"></a>Разработка клиентского приложения HDInsight
 
 1. Создайте приложение командной строки на языке C#.
-2. Добавьте следующие пакеты [NuGet](https://www.nuget.org/):
+2. Добавьте следующие пакеты [NuGet:](https://www.nuget.org/)
 
         Install-Package Microsoft.Azure.Common.Authentication -Pre
         Install-Package Microsoft.Azure.Management.HDInsight -Pre
@@ -119,7 +119,7 @@ ms.locfileid: "79371279"
     }
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание приложения Azure Active Directory и субъекта-службы на портале Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 * Узнайте, как [выполнять проверку подлинности субъекта-службы в Azure Resource Manager](../active-directory/develop/howto-authenticate-service-principal-powershell.md).

@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 742bc307c90ad58b83b7d4c92f9546b87c163c3b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77019287"
 ---
 # <a name="move-azure-ad-connect-database-from-sql-server-express-to-sql-server"></a>Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server 
@@ -25,28 +25,28 @@ ms.locfileid: "77019287"
 ## <a name="about-this-scenario"></a>Сведения об этом сценарии
 Ниже представлена краткая информация об этом сценарии.  В соответствии с ним база данных Azure AD Connect версии (1.1.819.0) установлена на одном контроллере домена Windows Server 2016.  Для своей базы данных он использует встроенный SQL Server 2012 Express Edition.  База данных будет перемещена на сервер SQL Server 2017.
 
-![Архитектура сценария](media/how-to-connect-install-move-db/move1.png)
+![архитектура сценария](media/how-to-connect-install-move-db/move1.png)
 
 ## <a name="move-the-azure-ad-connect-database"></a>Перемещение базы данных Azure AD Connect
 Выполните следующие действия, чтобы переместить базу данных Azure AD Connect на удаленный сервер SQL Server.
 
 1. На сервере Azure AD Connect перейдите в раздел **Службы** и остановите службу **Microsoft Azure AD Sync**.
-2. Откройте папку **%ProgramFiles%\Microsoft Azure AD синк\дата** и скопируйте файлы **ADSync. mdf** и **ADSync_log. ldf** на удаленный SQL Server.
+2. Найдите **папку «%-»Microsoft Azure AD Sync-Data** и скопируйте файлы **ADSync.mdf** и **ADSync_log.ldf** на удаленный сервер S'L.
 3. Перезапустите службу **Microsoft Azure AD Sync** на сервере Azure AD Connect.
 4. Удалите базу данных Azure AD Connect, последовательно выбрав "Панель управления" > "Программы" > "Программы и компоненты".  Выберите Microsoft Azure AD Connect и нажмите кнопку "Удалить" вверху.
 5. На удаленном сервере SQL Server откройте SQL Server Management Studio.
 6. Правой кнопкой мыши щелкните элемент "Базы данных" и выберите пункт "Вложить".
 7. На экране **Присоединение баз данных** щелкните **Добавить** и перейдите к файлу ADSync.mdf.  Нажмите кнопку **ОК**.
-   ![присоединение базы данных](media/how-to-connect-install-move-db/move2.png)
+   ![прикрепить базу данных](media/how-to-connect-install-move-db/move2.png)
 
 8. После присоединения базы данных вернитесь на сервер Azure AD Connect и установите базу данных Azure AD Connect.
 9. По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".
    ![Добро пожаловать!](./media/how-to-connect-install-move-db/db1.png)
-10. Запустите новую командную строку или сеанс PowerShell. Перейдите в папку \<диск > \Program files\Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
+10. Запустите новую командную строку или сеанс PowerShell. Перейдите на \<папку диска> файлы программы»Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
     ![PowerShell](./media/how-to-connect-install-move-db/db2.png)
 11. Появится экран приветствия Azure AD Connect. После принятия условий лицензии и заявления о конфиденциальности, щелкните **Продолжить**.
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db3.png)
-12. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример.         
+12. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример:         
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db4.png)           
 
 13. На экране **Подключение к Azure AD** необходимо предоставить учетные данные глобального администратора для каталога Azure AD. Рекомендуется использовать учетную запись в домене onmicrosoft.com по умолчанию. Эта учетная запись используется только для создания учетной записи службы в Azure AD и не используется после завершения работы мастера.
@@ -60,7 +60,7 @@ ms.locfileid: "77019287"
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db7.png)
  
  
-16. После предоставления учетных данных красный значок с крестиком заменяется зеленым значком с галочкой. Щелкните **Далее**.
+16. После предоставления учетных данных красный значок с крестиком заменяется зеленым значком с галочкой. Нажмите кнопку **Далее**.
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db8.png)
  
  
@@ -72,7 +72,7 @@ ms.locfileid: "77019287"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+- Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
 - [Установка Azure AD Connect с помощью имеющейся базы данных ADSync](how-to-connect-install-existing-database.md)
-- [Установка Azure AD Connect с помощью разрешений делегированного администратора SQL](how-to-connect-install-sql-delegation.md)
+- [Установка Azure AD Connect с использованием делегированных разрешений администратора SQL](how-to-connect-install-sql-delegation.md)
 

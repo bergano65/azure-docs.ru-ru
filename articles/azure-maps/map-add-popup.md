@@ -1,7 +1,7 @@
 ---
-title: Добавление всплывающего окна в точку на карте | Карты Microsoft Azure
-description: В этой статье вы узнаете, как добавить всплывающее окно в точку с помощью веб-пакета SDK Microsoft Azure Maps.
-author: jingjing-z
+title: Добавьте всплывающее окно в точку на карте Карты Microsoft Azure
+description: В этой статье вы узнаете, как добавить всплывающее окно в точку с помощью Microsoft Azure Maps Web SDK.
+author: jinzh-azureiot
 ms.author: jinzh
 ms.date: 02/27/2020
 ms.topic: conceptual
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 588de08666930937c3ad965b2609f8e207b75eca
-ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
+ms.openlocfilehash: cf6424d2a6cbcfb7c5052201b5a9190c81fddaff
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78208854"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80055952"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
 
@@ -22,7 +22,7 @@ ms.locfileid: "78208854"
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-Следующий код добавляет функцию Point, которая содержит `name` и `description` свойства, на карту с помощью слоя символов. Экземпляр [класса Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна. При наведении указателя мыши свойство `position` всплывающего окна обновляется с указанием позиции маркера, а параметр `content` обновляется с помощью HTML-кода, который заключает в оболочку свойства `name` и `description` указателя. Затем всплывающее окно отображается на карте с помощью функции `open`.
+Следующий код добавляет функцию `name` точки, которая имеет и `description` свойства, на карту с помощью слоя символа. Экземпляр класса [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup) создается, но не отображается. События мыши добавляются в слой символа, чтобы вызвать открытие и закрытие всплывающих. Когда символ маркера завис, `position` свойство всплывающих обновлено обновляется `content` с позицией маркера, и `name` `description` опция обновляется с некоторыми HTML, который обертывания и свойства точки функции завис. Всплывающее окно затем отображается на `open` карте с использованием его функции.
 
 ```javascript
 //Define an HTML template for a custom popup content laypout.
@@ -76,7 +76,7 @@ map.events.add('mouseleave', symbolLayer, function (){
 });
 ```
 
-Ниже приведен полный пример выполнения кода описанной выше функциональности.
+Ниже приводится полный выборка кода приведена вышеуказанной функциональности.
 
 <br/>
 
@@ -85,168 +85,193 @@ map.events.add('mouseleave', symbolLayer, function (){
 
 ## <a name="reusing-a-popup-with-multiple-points"></a>Повторное использование всплывающего окна с несколькими точками
 
-В некоторых случаях лучшим подходом является создание одного всплывающего окна и его повторное использование. Например, у вас может быть большое количество точек, и в каждый момент времени нужно отображать только одно всплывающее окно. При повторном использовании всплывающего окна количество элементов DOM, созданных приложением, значительно сокращается, что может повысить производительность. В следующем примере создаются 3-точечные функции. Если щелкнуть любую из них, отобразится всплывающее окно с содержимым этой функции точки.
+Есть случаи, когда лучший подход заключается в создании одного всплывающих и повторно использовать его. Например, вы можете иметь большое количество очков и хотите показать только одно всплывающее окно за один раз. При повторном использовании всплывающих элементов количество элементов DOM, созданных приложением, значительно уменьшается, что может обеспечить лучшую производительность. Следующий пример создает 3-точечные функции. Если щелкнуть любую из них, отобразится всплывающее окно с содержимым этой функции точки.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Повторное использование всплывающего окна с несколькими закреплениями' src='//codepen.io/azuremaps/embed/rQbjvK/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/rQbjvK/'>повторного использования всплывающего окна с несколькими закреплениями</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="customizing-a-popup"></a>Настройка всплывающего окна
+## <a name="customizing-a-popup"></a>Настройка всплывающего пацана
 
-По умолчанию всплывающее окно имеет белый фон, стрелку указателя внизу и кнопку Закрыть в правом верхнем углу. В следующем примере цвет фона изменяется на черный с помощью параметра `fillColor` всплывающего окна. Кнопка Закрыть удаляется путем присвоения параметру `CloseButton` значения false. HTML-содержимое всплывающего окна использует отступ от 10 пикселей от края всплывающего окна. Текст становится белым, поэтому он хорошо отображается на черном фоне.  
+По умолчанию всплывающее окно имеет белый фон, стрелка указателя внизу и кнопку закрытия в правом верхнем углу. Следующий образец изменяет цвет `fillColor` фона на черный, используя опцию всплывающих данных. Кнопка закрытия удаляется, `CloseButton` установив опцию на ложную. HTML-содержимое всплывающих данных использует 10 пикселей от краев всплывающих данных. Текст сделан белым, поэтому он хорошо появляется на черном фоне.  
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Настраиваемое всплывающее окно" src="//codepen.io/azuremaps/embed/ymKgdg/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. <a href='https://codepen.io/azuremaps/pen/ymKgdg/'>всплывающее окно, настроенное</a> пером, Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Индивидуальный всплывающий" src="//codepen.io/azuremaps/embed/ymKgdg/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите Pen <a href='https://codepen.io/azuremaps/pen/ymKgdg/'>Индивидуальные Popup</a> по<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="add-popup-templates-to-the-map"></a>Добавление всплывающих шаблонов на карту
 
-Всплывающие Шаблоны упрощают создание макетов, управляемых данными, для всплывающих окон. В следующих разделах показано использование различных шаблонов всплывающих окон для создания форматированного содержимого с помощью свойств функций.
+Шаблоны popup упрощают создание макетов на основе данных для всплывающих данных. В приведенных ниже разделах показано использование различных всплывающих шаблонов для создания отформатированных содержимых с использованием свойств функций.
 
-### <a name="string-template"></a>Строковый шаблон
+> [!NOTE]
+> По умолчанию все содержимое, отображаемый, использует всплывающий шаблон, будет застечено в песочнице в iframe в качестве функции безопасности. Однако существуют ограничения:
+>
+> - Все скрипты, формы, блокировка указателей и функция верхней навигации отключены. Ссылки могут открываться в новой вкладке при нажатии. 
+> - Старые браузеры, не `srcdoc` поддерживающие параметр на iframes, будут ограничены рендерингом небольшого количества содержимого.
+> 
+> Если вы доверяете загрузке данных во всплывающие данные и потенциально хотите, чтобы эти скрипты, загруженные во всплывающие данные, могли получить доступ к вашему приложению, вы можете отключить это, установив опцию всплывающих шаблонов `sandboxContent` на ложную. 
 
-Шаблон строки заменяет заполнители значениями свойств компонента. Свойствам компонента не обязательно присваивать значение типа String. Например, `value1` содержит целое число. Затем эти значения передаются в свойство Content объекта `popupTemplate`. 
+### <a name="string-template"></a>Шаблон строки
 
-Параметр `numberFormat` задает формат отображаемого числа. Если `numberFormat` не указан, код будет использовать формат даты всплывающего шаблона. Параметр `numberFormat` форматирует числа с помощью функции [Number. toLocaleString](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) . Для форматирования больших чисел рекомендуется использовать параметр `numberFormat` с функциями из [NumberFormat. Format](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat/format). Например, в фрагменте кода ниже используется `maximumFractionDigits` для ограничения числа десятичных разрядов до двух.
+Шаблон строки заменяет заполнителей значениями свойств функций. Свойства функции не должны быть присвоены значение типа строки. Например, `value1` держит сятку. Эти значения затем передаются в свойство содержимого `popupTemplate`. 
+
+Опция `numberFormat` определяет формат номера для отображения. `numberFormat` Если не указано, код будет использовать формат даты всплывающих шаблонов. Вариант `numberFormat` форматирует номера, используя [функцию Number.toLocaleString.](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) Для формата больших чисел рассмотрите возможность использования `numberFormat` опции с функциями [numberFormat.format](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat/format). Например, фрагмент кода ниже `maximumFractionDigits` использует для ограничения числа цифр фракции двумя цифрами.
 
 > [!Note]
-> Существует только один способ, в котором шаблон строки может отображать изображения. Сначала строковый шаблон должен содержать тег Image. Значение, передаваемое в тег Image, должно быть URL-адресом изображения. Затем шаблон строкового шаблона должен иметь `isImage` в `HyperLinkFormatOptions`значение true. Параметр `isImage` указывает, что гиперссылка предназначена для изображения, и Гиперссылка будет загружена в тег Image. При щелчке гиперссылки откроется изображение.
+> Есть только один способ визуализации изображений шаблона String. Во-первых, шаблон строки должен иметь тег изображения в нем. Значение, передаваемые на тег изображения, должно быть URL-адресом изображения. Затем шаблон строки должен `isImage` быть установлен `HyperLinkFormatOptions`на истину в . Опция `isImage` указывает, что гиперссылка предназначена для изображения, а гиперссылка будет загружена в тег изображения. При нажатии гиперссылки изображение откроется.
 
 ```javascript
-new atlas.data.Feature(new atlas.data.Point([-20, -20]), {
+var templateOptions = {
+  content: 'This template uses a string template with placeholders.<br/><br/> - Value 1 = {value1}<br/> - Value 2 = {value2/subValue}<br/> - Array value [2] = {arrayValue/2}',
+  numberFormat: {
+    maximumFractionDigits: 2
+  }
+};
+
+var feature = new atlas.data.Feature(new atlas.data.Point([0, 0]), {
     title: 'Template 1 - String template',
     value1: 1.2345678,
     value2: {
         subValue: 'Pizza'
     },
-    arrayValue: [3, 4, 5, 6],
-    popupTemplate: {
-        content: 'This template uses a string template with placeholders.<br/><br/> - Value 1 = {value1}<br/> - Value 2 = {value2/subValue}<br/> - Array value [2] = {arrayValue/2}',
-        numberFormat: {
-            maximumFractionDigits: 2
-        }
-    }
-}),
+    arrayValue: [3, 4, 5, 6]
+});
+
+var popup = new atlas.Popup({
+  content: atlas.PopupTemplate.applyTemplate(feature.properties, templateOptions),
+  position: feature.geometry.coordinates
+});
 ```
 
-### <a name="propertyinfo-template"></a>PropertyInfo, шаблон
+### <a name="propertyinfo-template"></a>Шаблон PropertyInfo
 
-Шаблон PropertyInfo отображает доступные свойства компонента. Параметр `label` задает текст, отображаемый пользователю. Если `label` не указан, будет отображаться гиперссылка. Если гиперссылка является изображением, будет отображено значение, присвоенное тегу "Alt". `dateFormat` задает формат даты, и если формат даты не указан, то дата будет отображена в виде строки. Параметр `hyperlinkFormat` отображает ссылки, которые можно щелкать, так же как и параметр `email` может использоваться для отображения отображаемых адресов электронной почты.
+Шаблон PropertyInfo отображает доступные свойства функции. Опция `label` определяет текст для отображения пользователю. Если `label` не указано, то гиперссылка будет отображаться. И, если гиперссылка является изображением, значение, присвоенное тегу "alt", будет отображаться. В `dateFormat` определяем формат даты, и если формат даты не указан, то дата будет отображаться как строка. Опция `hyperlinkFormat` отображает интерактивные ссылки, `email` аналогичным образом, параметр может быть использован для визуализации кликабельных адресов электронной почты.
 
-Перед тем как шаблон PropertyInfo отобразит свойства для конечного пользователя, он рекурсивно проверяет, что для этой функции действительно определены свойства. Он также игнорирует отображение свойств Style и Title. Например, он не будет отображать `color`, `size`, `anchor`, `strokeOpacity`и `visibility`. Таким образом, после завершения проверки пути свойства в серверной части шаблон PropertyInfo отображает содержимое в табличном формате.
+Перед тем, как шаблон PropertyInfo отобразит свойства конечному пользователю, он повторно проверяет, действительно ли свойства определены для этой функции. Он также игнорирует отображение стиля и свойства названия. Например, он не `color`будет `size` `anchor`отображаться, , `strokeOpacity`и `visibility`. Таким образом, как только проверка пути свойств завершена в бэк-энде, шаблон PropertyInfo показывает содержимое в формате таблицы.
 
 ```javascript
-new atlas.data.Feature(new atlas.data.Point([20, -20]), {
+var templateOptions = {
+  content: [
+    {
+        propertyPath: 'createDate',
+        label: 'Created Date'
+    },
+    {
+        propertyPath: 'dateNumber',
+        label: 'Formatted date from number',
+        dateFormat: {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          timeZone: 'UTC',
+          timeZoneName: 'short'
+        }
+    },
+    {
+        propertyPath: 'url',
+        label: 'Code samples',
+        hideLabel: true,
+        hyperlinkFormat: {
+          lable: 'Go to code samples!',
+          target: '_blank'
+        }
+    },
+    {
+        propertyPath: 'email',
+        label: 'Email us',
+        hideLabel: true,
+        hyperlinkFormat: {
+          target: '_blank',
+          scheme: 'mailto:'
+        }
+    }
+  ]
+};
+
+var feature = new atlas.data.Feature(new atlas.data.Point([0, 0]), {
     title: 'Template 2 - PropertyInfo',
     createDate: new Date(),
     dateNumber: 1569880860542,
     url: 'https://aka.ms/AzureMapsSamples',
-    email: 'info@microsoft.com',
-    popupTemplate: {
-        content: [{
-    propertyPath: 'createDate',
-    label: 'Created Date'
-    },
-    {
-    propertyPath: 'dateNumber',
-    label: 'Formatted date from number',
-    dateFormat: {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        timeZone: 'UTC',
-        timeZoneName: 'short'
-    }
-    },
-    {
-    propertyPath: 'url',
-    label: 'Code samples',
-    hideLabel: true,
-    hyperlinkFormat: {
-        lable: 'Go to code samples!',
-        target: '_blank'
-    }
-    },
-    {
-    propertyPath: 'email',
-    label: 'Email us',
-    hideLabel: true,
-    hyperlinkFormat: {
-        target: '_blank',
-        scheme: 'mailto:'
-        }
-    }
-        ]
-    }
+    email: 'info@microsoft.com'
 }),
 
+var popup = new atlas.Popup({
+  content: atlas.PopupTemplate.applyTemplate(feature.properties, templateOptions),
+  position: feature.geometry.coordinates
+});
 ```
 
 ### <a name="multiple-content-templates"></a>Несколько шаблонов содержимого
 
-Функция также может отображать содержимое, используя сочетание шаблона строк и шаблона PropertyInfo. В этом случае шаблон строки подготавливает значения заполнителей на белом фоне.  И шаблон PropertyInfo визуализирует изображение с полной шириной внутри таблицы. Свойства в этом образце похожи на свойства, описанные в предыдущих примерах.
+Функция может также отображать содержимое, используя комбинацию шаблона строки и шаблона PropertyInfo. В этом случае шаблон Строка отображает значения заполнителей на белом фоне.  И шаблон PropertyInfo отображает изображение полной ширины внутри таблицы. Свойства в этом образце аналогичны свойствам, которые мы объясняли в предыдущих образцах.
 
 ```javascript
-new atlas.data.Feature(new atlas.data.Point([0, 0]), {
+var templateOptions = {
+  content: [
+    'This template has two pieces of content; a string template with placeholders and a array of property info which renders a full width image.<br/><br/> - Value 1 = {value1}<br/> - Value 2 = {value2/subValue}<br/> - Array value [2] = {arrayValue/2}',
+    [{
+      propertyPath: 'imageLink',
+      label: 'Image',
+      hideImageLabel: true,
+      hyperlinkFormat: {
+        isImage: true
+      }
+    }]
+  ],
+  numberFormat: {
+    maximumFractionDigits: 2
+  }
+};
+
+var feature = new atlas.data.Feature(new atlas.data.Point([0, 0]), {
     title: 'Template 3 - Multiple content template',
     value1: 1.2345678,
     value2: {
     subValue: 'Pizza'
     },
     arrayValue: [3, 4, 5, 6],
-    imageLink: 'https://azuremapscodesamples.azurewebsites.net/common/images/Pike_Market.jpg',
-    popupTemplate: {
-    content: [
-      'This template has two pieces of content; a string template with placeholders and a array of property info which renders a full width image.<br/><br/> - Value 1 = {value1}<br/> - Value 2 = {value2/subValue}<br/> - Array value [2] = {arrayValue/2}',
-      [{
-        propertyPath: 'imageLink',
-        label: 'Image',
-        hideImageLabel: true,
-        hyperlinkFormat: {
-          isImage: true
-        }
-      }]
-    ],
-    numberFormat: {
-      maximumFractionDigits: 2
-    }
-    }
-    }),
-]);
+    imageLink: 'https://azuremapscodesamples.azurewebsites.net/common/images/Pike_Market.jpg'
+});
+
+var popup = new atlas.Popup({
+  content: atlas.PopupTemplate.applyTemplate(feature.properties, templateOptions),
+  position: feature.geometry.coordinates
+});
 ```
 
-### <a name="points-without-a-defined-template"></a>Точки без определенного шаблона
+### <a name="points-without-a-defined-template"></a>Очки без определенного шаблона
 
-Если шаблон всплывающего окна не определен как строковый шаблон, шаблон PropertyInfo или сочетание обоих параметров, то используются параметры по умолчанию. Если `title` и `description` являются единственными назначенными свойствами, в шаблоне всплывающего окна отображается белый фон, кнопка закрытия в правом верхнем углу. А на небольших и средних экранах в нижней части отображается стрелка. Параметры по умолчанию отображают в таблице все свойства, кроме `title` и `description`. Даже при возврате к значениям по умолчанию шаблон Popup по-прежнему может управляться программно. Например, пользователи могут отключить обнаружение гиперссылок, и параметры по умолчанию будут применяться к другим свойствам.
+Когда шаблон Popup не определяется как шаблон строки, шаблон PropertyInfo или комбинация обоих, то он использует настройки по умолчанию. Когда `title` и `description` являются единственными назначенными свойствами, шаблон всплывающих данных показывает белый фон, кнопку закрытия в правом верхнем углу. А на малых и средних экранах изображена стрелка внизу. Настройки по умолчанию отображаемы `title` внутри `description`таблицы для всех свойств, кроме и . Даже при возврате к настройкам по умолчанию шаблоном всплывающих окновсе можно манипулировать программно. Например, пользователи могут отключить обнаружение гиперссылок, а параметры по умолчанию по-прежнему будут применяться к другим свойствам.
 
-Щелкните точки на карте в CodePen. Существует точка на карте для каждого из следующих контекстных шаблонов: строковый шаблон, шаблон PropertyInfo и несколько шаблонов содержимого. Также есть три пункта, демонстрирующие отрисовку шаблонов с использованием параметров по умолчанию.
+Нажмите на точки на карте в CodePen. Существует точка на карте для каждого из следующих шаблонов всплывающих: шаблон строки, шаблон PropertyInfo, и шаблон несколько содержание. Есть также три момента, чтобы показать, как шаблоны рендеринга с помощью параметров по умолчанию.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='попуптемплатес' src='//codepen.io/azuremaps/embed/dyovrzL/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/dyovrzL/'>Попуптемплатес</a> пера by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Всплывающие шаблоны' src='//codepen.io/azuremaps/embed/dyovrzL/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/dyovrzL/'>PopupTemplates</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="reuse-popup-template"></a>Повторное использование шаблона всплывающего окна
+## <a name="reuse-popup-template"></a>Повторное использование шаблона всплывающих
 
-Как и при повторном использовании всплывающего окна, можно многократно использовать всплывающие шаблоны. Этот подход удобен, если для нескольких точек требуется одновременно отобразить только один шаблон всплывающего окна. При повторном использовании шаблона всплывающего окна количество элементов DOM, созданных приложением, уменьшается, что повышает производительность приложения. В следующем примере используется один и тот же шаблон всплывающего окна для трех точек. Если щелкнуть любую из них, отобразится всплывающее окно с содержимым этой функции точки.
+Как и в повторном использовании всплывающих, вы можете повторно использовать всплывающие шаблоны. Этот подход полезен, если вы хотите показать только один всплывающий шаблон за один раз, для нескольких точек. При повторном использовании всплывающих шаблонов количество элементов DOM, созданных приложением, уменьшается, что затем повышает производительность приложения. В следующем примере используется тот же всплывающий шаблон для трех точек. Если щелкнуть любую из них, отобразится всплывающее окно с содержимым этой функции точки.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='реусепопуптемплате' src='//codepen.io/azuremaps/embed/WNvjxGw/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/WNvjxGw/'>Реусепопуптемплате</a> пера by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='ПовторноеиспользованиеПопперлахлк' src='//codepen.io/azuremaps/embed/WNvjxGw/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/WNvjxGw/'>ReusePopupTemplate</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="popup-events"></a>События всплывающего окна
+## <a name="popup-events"></a>Всплывающие мероприятия
 
-Всплывающие окна можно открывать, закрывать и перетаскивать. Класс Popup предоставляет события, помогающие разработчикам реагировать на эти события. В следующем примере показано, какие события срабатывают, когда пользователь открывает, закрывает или перетаскивает всплывающее окно. 
+Всплывающие окно могут быть открыты, закрыты и перетаскиваются. Всплывающий класс предоставляет события, чтобы помочь разработчикам реагировать на эти события. В следующем примере выделяется, какие события сравняют, когда пользователь открывает, закрывает или перетаскивает всплывающее окно. 
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="События всплывающего окна" src="//codepen.io/azuremaps/embed/BXrpvB/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Просмотрите <a href='https://codepen.io/azuremaps/pen/BXrpvB/'>события всплывающего окна</a> пера по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Всплывающие мероприятия" src="//codepen.io/azuremaps/embed/BXrpvB/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите события Pen <a href='https://codepen.io/azuremaps/pen/BXrpvB/'>Popup</a> по<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -254,10 +279,13 @@ new atlas.data.Feature(new atlas.data.Point([0, 0]), {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest)
+> [Контекстное меню](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup)
 
 > [!div class="nextstepaction"]
-> [PopupOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popupoptions?view=azure-iot-typescript-latest)
+> [PopupOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popupoptions)
+
+> [!div class="nextstepaction"]
+> [Всплывающие шаблоны](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popuptemplate)
 
 Полные примеры кода см. в следующих превосходных статьях:
 
@@ -268,7 +296,7 @@ new atlas.data.Feature(new atlas.data.Point([0, 0]), {
 > [Добавление маркера HTML](./map-add-custom-html.md)
 
 > [!div class="nextstepaction"]
-> [Добавить слой линий](map-add-line-layer.md)
+> [Добавление слоя линий](map-add-line-layer.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя многоугольников](map-add-shape.md)

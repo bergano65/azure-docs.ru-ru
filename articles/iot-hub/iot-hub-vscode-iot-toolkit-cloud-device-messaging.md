@@ -1,5 +1,5 @@
 ---
-title: Использование средств Azure IoT для VSCode для обмена сообщениями в центре ИТ-центра
+title: Используйте инструменты Azure IoT для VSCode для менеджера обмена сообщениями ИТ-центра
 description: Узнайте, как использовать средства Интернета вещей Azure для Visual Studio Code для мониторинга и отправки сообщений между облаком и устройством в Центре Интернета вещей Azure.
 author: formulahendry
 ms.service: iot-hub
@@ -9,10 +9,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 01/18/2019
 ms.author: junhan
 ms.openlocfilehash: 0b081229dcb382786fea03dff358b5cc47d77ee7
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75912021"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения набора средств Центра Интернета вещей Azure для Visual Studio Code
@@ -39,9 +39,9 @@ ms.locfileid: "75912021"
 
 * Центр Интернета вещей Azure в подписке;
 
-* [Код Visual Studio](https://code.visualstudio.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
-* [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [открыть эту ссылку в Visual Studio Code](vscode:extension/vsciot-vscode.azure-iot-tools).
+* [Инструменты Azure IoT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [откройте эту ссылку в Visual Studio Code.](vscode:extension/vsciot-vscode.azure-iot-tools)
 
 ## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
 
@@ -56,19 +56,19 @@ ms.locfileid: "75912021"
 5. Через несколько секунд на вкладке **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure) отобразится список устройств.
 
    > [!Note]
-   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите строку подключения политики **iothubowner** для центра Интернета вещей, к которому подключается устройство IOT во всплывающем окне.
+   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите строку подключения к политике **iothubowner** для концентратора IoT, к которому подключается устройство IoT в всплывающем окне.
 
 ## <a name="monitor-device-to-cloud-messages"></a>Отслеживание сообщений, отправляемых с устройства в облако
 
 Чтобы отслеживать сообщения, отправляемые в Центр Интернета вещей с устройства, выполните следующие действия.
 
-1. Щелкните устройство правой кнопкой мыши и выберите команду **начать мониторинг встроенной конечной точки события**.
+1. Нажмите на устройство и выберите **встроенную конечную точку мониторинга Start Monitoring.**
 
-2. Наблюдаемые сообщения будут отображаться в **выходных данных** > представлении **центра Интернета вещей Azure** .
+2. Контролируемые сообщения будут отображаться в представлении **output** > **Azure IoT Hub.**
 
-3. Чтобы отключить мониторинг, щелкните правой кнопкой мыши представление **выходных данных** и выберите пункт **закончить мониторинг встроенной конечной точки события**.
+3. Чтобы остановить мониторинг, нажмите правой кнопкой зрения **OUTPUT** и выберите **Stop Monitoring Встроенный в событии Endpoint.**
 
-## <a name="send-cloud-to-device-messages"></a>Отправка сообщений между устройством и облаком
+## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
 
 Чтобы отправить сообщение из Центра Интернета вещей на устройство, выполните следующие действия.
 
@@ -76,7 +76,7 @@ ms.locfileid: "75912021"
 
 2. Введите сообщение в поле ввода.
 
-3. Результаты будут показаны в **выходных данных** > представлении **центра Интернета вещей Azure** .
+3. Результаты будут отображаться в представлении **OUTPUT** > **Azure IoT Hub.**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

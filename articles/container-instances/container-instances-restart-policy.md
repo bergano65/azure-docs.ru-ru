@@ -1,14 +1,14 @@
 ---
-title: Политика перезапуска для задач однократного запуска
+title: Политика перезагрузки задач запуска
 description: Узнайте, как использовать Экземпляры контейнеров Azure для задач, выполняемых до завершения, включая сборку, тестирование или преобразование изображений.
 ms.topic: article
 ms.date: 04/15/2019
-ms.openlocfilehash: f814b1c99827c07f8dadfb0cfd80c87a93377cdc
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 8ef4ef228038242f53abc8041470f7f596ab1157
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533458"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80131493"
 ---
 # <a name="run-containerized-tasks-with-restart-policies"></a>Выполнение контейнерных задач с помощью политики перезапуска
 
@@ -16,7 +16,7 @@ ms.locfileid: "74533458"
 
 Настраиваемая политика перезапуска позволяет указать, что контейнер нужно остановить после завершения всех его процессов. Так как работа экземпляров контейнеров оплачивается посекундно, в счет включаются только те вычислительные ресурсы, которые использовались во время выполнения контейнера с задачей.
 
-В этой статье представлены примеры, в которых используется Azure CLI. Для их выполнения потребуется [локально установленная][azure-cli-install] версия Azure CLI 2.0.21 или выше. Также можно использовать CLI в [Azure Cloud Shell](../cloud-shell/overview.md).
+В этой статье представлены примеры, в которых используется Azure CLI. Для их выполнения потребуется [локально установленная][azure-cli-install] версия Azure CLI 2.0.21 или выше. Кроме того, можно использовать CLI в [Azure Cloud Shell](../cloud-shell/overview.md).
 
 ## <a name="container-restart-policy"></a>Политика перезапуска контейнера
 
@@ -30,7 +30,7 @@ ms.locfileid: "74533458"
 
 ## <a name="specify-a-restart-policy"></a>Указание политики перезапуска
 
-Способ определения политики перезапуска зависит от способа создания экземпляра контейнера: с помощью Azure CLI, командлетов PowerShell Azure или портала Azure. В Azure CLI укажите параметр `--restart-policy` при вызове команды [AZ Container Create][az-container-create].
+Способ определения политики перезапуска зависит от способа создания экземпляра контейнера: с помощью Azure CLI, командлетов PowerShell Azure или портала Azure. В Azure CLI следует указать параметр `--restart-policy` при вызове команды [az container create][az-container-create].
 
 ```azurecli-interactive
 az container create \
@@ -42,9 +42,9 @@ az container create \
 
 ## <a name="run-to-completion-example"></a>Пример выполнения до завершения
 
-Чтобы увидеть политику перезапуска в действии, создайте экземпляр контейнера из образа Microsoft [ACI-WordCount][aci-wordcount-image] и укажите политику перезапуска `OnFailure`. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
+Чтобы увидеть политику перезагрузки в действии, создайте экземпляр контейнера из изображения `OnFailure` [Microsoft aci-wordcount][aci-wordcount-image] и укажите политику перезагрузки. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
 
-Запустите пример контейнера с помощью следующей команды [AZ Container Create][az-container-create] :
+Запустите этот контейнер с помощью команды [az container create][az-container-create], как показано ниже.
 
 ```azurecli-interactive
 az container create \
@@ -54,10 +54,13 @@ az container create \
     --restart-policy OnFailure
 ```
 
-Служба "Экземпляры контейнеров Azure" запускает контейнер, а затем останавливает его, когда завершится работа его приложения (или скрипта, как в нашем примере). Когда служба "Экземпляры контейнеров Azure" останавливает контейнер, для которого указана политика перезапуска `Never` или `OnFailure`, для состояния контейнера устанавливается значение **Terminated** (Завершено). Состояние контейнера можно проверить с помощью команды [AZ Container показывать][az-container-show] :
+Служба "Экземпляры контейнеров Azure" запускает контейнер, а затем останавливает его, когда завершится работа его приложения (или скрипта, как в нашем примере). Когда служба "Экземпляры контейнеров Azure" останавливает контейнер, для которого указана политика перезапуска `Never` или `OnFailure`, для состояния контейнера устанавливается значение **Terminated** (Завершено). Текущее состояние контейнера вы можете проверить с помощью команды [az container show][az-container-show], как показано ниже.
 
 ```azurecli-interactive
-az container show --resource-group myResourceGroup --name mycontainer --query containers[0].instanceView.currentState.state
+az container show \
+    --resource-group myResourceGroup \
+    --name mycontainer \
+    --query containers[0].instanceView.currentState.state
 ```
 
 Выходные данные примера:
@@ -66,7 +69,7 @@ az container show --resource-group myResourceGroup --name mycontainer --query co
 "Terminated"
 ```
 
-Когда состояние контейнера примет значение *Terminated* (Завершено), вы сможете просмотреть выходные данные выполненной в нем задачи, используя журналы контейнера. Выполните команду [AZ Container Logs][az-container-logs] , чтобы просмотреть выходные данные скрипта:
+Когда состояние контейнера примет значение *Terminated* (Завершено), вы сможете просмотреть выходные данные выполненной в нем задачи, используя журналы контейнера. Для просмотра выходных данных скрипта выполните команду [az container logs][az-container-logs], как показано ниже.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name mycontainer
@@ -91,7 +94,7 @@ az container logs --resource-group myResourceGroup --name mycontainer
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сценарии на основе задач, такие как пакетная обработка большого набора данных с несколькими контейнерами, могут воспользоваться преимуществами пользовательских [переменных среды](container-instances-environment-variables.md) или [командных строк](container-instances-start-command.md) во время выполнения.
+Сценарии, основанные на задачах, такие как пакетная обработка большого набора данных с несколькими контейнерами, могут использовать [пользовательские переменные среды](container-instances-environment-variables.md) или [командные строки](container-instances-start-command.md) во время выполнения.
 
 Дополнительные сведения о том, как сохранить выходные данные контейнеров, которые выполняются до завершения, вы найдете в статье [Подключение файлового ресурса Azure с помощью Экземпляров контейнеров Azure](container-instances-mounting-azure-files-volume.md).
 

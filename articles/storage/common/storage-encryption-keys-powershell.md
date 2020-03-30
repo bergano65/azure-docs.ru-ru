@@ -1,7 +1,7 @@
 ---
-title: Использование PowerShell для настройки ключей, управляемых клиентом
+title: Используйте PowerShell для настройки ключей, управляемых клиентом
 titleSuffix: Azure Storage
-description: Узнайте, как использовать PowerShell для настройки ключей, управляемых клиентом, для шифрования службы хранилища Azure. Ключи, управляемые клиентом, позволяют создавать, поворачивать, отключать и отзывать элементы управления доступом.
+description: Узнайте, как использовать PowerShell для настройки управляемых клиентом ключей для шифрования Azure Storage.
 services: storage
 author: tamram
 ms.service: storage
@@ -10,24 +10,24 @@ ms.date: 03/10/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: d7e4843bfbd622ad99cad4d9048e91a0cb49b1c1
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.openlocfilehash: 264dbbaedca5a28c8741d699a683b3e2b2385383
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79136250"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80061161"
 ---
-# <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-powershell"></a>Настройка ключей, управляемых клиентом, с Azure Key Vault с помощью PowerShell
+# <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-powershell"></a>Налаживание ключей, управляемых клиентами, с помощью Хранилища ключей Azure с помощью PowerShell
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 
-В этой статье показано, как настроить Azure Key Vault с управляемыми клиентом ключами с помощью PowerShell. Сведения о создании хранилища ключей с помощью Azure CLI см. в разделе [Краткое руководство. Настройка и извлечение секрета из Azure Key Vault с помощью PowerShell](../../key-vault/quick-create-powershell.md).
+В этой статье показано, как настроить Хранилище ключей Azure с ключами, управляемыми клиентами, с помощью PowerShell. Чтобы узнать, как создать хранилище ключей с помощью Azure CLI, [см.](../../key-vault/quick-create-powershell.md)
 
-## <a name="assign-an-identity-to-the-storage-account"></a>Назначение удостоверения учетной записи хранения
+## <a name="assign-an-identity-to-the-storage-account"></a>Присвоить удостоверение личности учетной записи хранилища
 
-Чтобы включить управляемые клиентом ключи для учетной записи хранения, сначала назначьте назначенное системой управляемое удостоверение учетной записи хранения. Вы будете использовать это управляемое удостоверение, чтобы предоставить учетной записи хранения разрешения на доступ к хранилищу ключей.
+Чтобы включить управляемые клиентом ключи для учетной записи хранилища, сначала назначьте учетную запись, назначенную системой, управляемую учетную запись. Это управляемое удостоверение будет использоваться для предоставления разрешения учетной записи хранилища на доступ к хранилищу ключей.
 
-Чтобы назначить управляемое удостоверение с помощью PowerShell, вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
+Чтобы назначить управляемую идентификацию с помощью PowerShell, позвоните [set-AzStorageAccount](/powershell/module/az.storage/set-azstorageaccount). Не забудьте заменить значения заполнителя в скобках с вашими собственными значениями.
 
 ```powershell
 $storageAccount = Set-AzStorageAccount -ResourceGroupName <resource_group> `
@@ -35,13 +35,13 @@ $storageAccount = Set-AzStorageAccount -ResourceGroupName <resource_group> `
     -AssignIdentity
 ```
 
-Дополнительные сведения о настройке управляемых удостоверений, назначенных системой с помощью PowerShell, см. [в статье Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md).
+Для получения дополнительной информации о настройке назначенных системами управляемых идентификаторов с PowerShell см. [Наверстные управляемые идентификаторы для ресурсов Azure на Azure VM с помощью PowerShell.](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
 
 ## <a name="create-a-new-key-vault"></a>Создание нового хранилища ключей
 
-Чтобы создать новое хранилище ключей с помощью PowerShell, вызовите [New-азкэйваулт](/powershell/module/az.keyvault/new-azkeyvault). Хранилище ключей, используемое для хранения управляемых клиентом ключей для шифрования службы хранилища Azure, должно включать два параметра защиты ключей: **обратимое удаление** и **не очищать**.
+Чтобы создать новый хранилище ключей с помощью PowerShell, [позвоните в New-AzKeyVault.](/powershell/module/az.keyvault/new-azkeyvault) В хранилище ключей, которое используется для хранения управляемых клиентом ключей для шифрования Azure Storage, должно быть включено два ключевых настройки защиты: **Soft Delete** и Do **Not Purge.**
 
-Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
+Не забудьте заменить значения заполнителя в скобках с вашими собственными значениями.
 
 ```powershell
 $keyVault = New-AzKeyVault -Name <key-vault> `
@@ -51,13 +51,13 @@ $keyVault = New-AzKeyVault -Name <key-vault> `
     -EnablePurgeProtection
 ```
 
-Сведения о том, как включить **обратимое удаление** и **не выполнять очистку** в существующем хранилище ключей с помощью PowerShell, см. в разделах **Включение обратимого удаления** и **Включение защиты от вирусов** в статье [Использование обратимого удаления с помощью PowerShell](../../key-vault/key-vault-soft-delete-powershell.md).
+Чтобы узнать, как включить Soft **Delete** и **Не очищайте** на **Enabling soft-delete** существующем хранилище ключей с [How to use soft-delete with PowerShell](../../key-vault/key-vault-soft-delete-powershell.md)PowerShell, см. **Enabling Purge Protection**
 
 ## <a name="configure-the-key-vault-access-policy"></a>Настройка политики доступа к хранилищу ключей
 
-Затем настройте политику доступа для хранилища ключей, чтобы у учетной записи хранения были разрешения на доступ к ней. На этом шаге вы будете использовать управляемое удостоверение, назначенное ранее учетной записи хранения.
+Затем наверсните политику доступа для хранилища ключей таким образом, чтобы учетная запись хранилища получила разрешение на доступ к нему. На этом этапе вы будете использовать управляемую идентификацию, которую вы ранее назначили учетной записи хранилища.
 
-Чтобы задать политику доступа для хранилища ключей, вызовите [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+Чтобы установить политику доступа для хранилища ключей, позвоните [set-AzKeyVaultAccessPolicy.](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) Не забудьте заменить значения заполнителя в скобках на собственные значения и использовать переменные, определенные в предыдущих примерах.
 
 ```powershell
 Set-AzKeyVaultAccessPolicy `
@@ -68,17 +68,17 @@ Set-AzKeyVaultAccessPolicy `
 
 ## <a name="create-a-new-key"></a>Создание ключа
 
-Затем создайте новый ключ в хранилище ключей. Чтобы создать новый ключ, вызовите [Add-азкэйваулткэй](/powershell/module/az.keyvault/add-azkeyvaultkey). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+Затем создайте новый ключ в хранилище ключей. Чтобы создать новый ключ, позвоните [add-AzKeyVaultKey](/powershell/module/az.keyvault/add-azkeyvaultkey). Не забудьте заменить значения заполнителя в скобках на собственные значения и использовать переменные, определенные в предыдущих примерах.
 
 ```powershell
 $key = Add-AzKeyVaultKey -VaultName $keyVault.VaultName -Name <key> -Destination 'Software'
 ```
 
-## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью управляемых клиентом ключей
+## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью ключей, управляемых клиентом
 
-По умолчанию шифрование службы хранилища Azure использует ключи, управляемые корпорацией Майкрософт. На этом шаге настройте учетную запись хранения Azure для использования ключей, управляемых клиентом, и укажите ключ, связываемый с учетной записью хранения.
+По умолчанию шифрование Azure Storage использует ключи, управляемые корпорацией Майкрософт. На этом этапе наймите учетную запись Azure Storage, чтобы использовать управляемые клиентом ключи и укажите ключ, который можно связать с учетной записью хранилища.
 
-Вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) , чтобы обновить параметры шифрования учетной записи хранения, как показано в следующем примере. Включите параметр **-кэйваултенкриптион** , чтобы включить управляемые клиентом ключи для учетной записи хранения. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+Позвоните [Set-AzStorageAccount,](/powershell/module/az.storage/set-azstorageaccount) чтобы обновить настройки шифрования учетной записи хранилища, как показано в следующем примере. Включите опцию **-KeyvaultEncryption,** чтобы включить управляемые клиентом ключи для учетной записи хранения. Не забудьте заменить значения заполнителя в скобках на собственные значения и использовать переменные, определенные в предыдущих примерах.
 
 ```powershell
 Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
@@ -89,26 +89,26 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
     -KeyVaultUri $keyVault.VaultUri
 ```
 
-## <a name="update-the-key-version"></a>Обновление версии ключа
+## <a name="update-the-key-version"></a>Обновление ключевой версии
 
-При создании новой версии ключа необходимо обновить учетную запись хранения, чтобы она использовала новую версию. Сначала вызовите [Get-азкэйваулткэй](/powershell/module/az.keyvault/get-azkeyvaultkey) , чтобы получить последнюю версию ключа. Затем вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) , чтобы обновить параметры шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем разделе.
+При создании новой версии ключа необходимо обновить учетную запись хранилища, чтобы использовать новую версию. Во-первых, позвоните [Get-AzKeyVaultKey,](/powershell/module/az.keyvault/get-azkeyvaultkey) чтобы получить последнюю версию ключа. Затем [позвоните set-AzStorageAccount,](/powershell/module/az.storage/set-azstorageaccount) чтобы обновить настройки шифрования учетной записи хранилища, чтобы использовать новую версию ключа, как показано в предыдущем разделе.
 
-## <a name="use-a-different-key"></a>Использовать другой ключ
+## <a name="use-a-different-key"></a>Используйте другой ключ
 
-Чтобы изменить ключ, используемый для шифрования службы хранилища Azure, вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) , как показано в разделе [Настройка шифрования с помощью управляемых клиентом ключей](#configure-encryption-with-customer-managed-keys) и предоставление нового имени и версии ключа. Если новый ключ находится в другом хранилище ключей, также обновите URI хранилища ключей.
+Чтобы изменить ключ, используемый для шифрования хранилища Azure, позвоните [Set-AzStorageAccount,](/powershell/module/az.storage/set-azstorageaccount) как показано в [шифровании Configure с ключами, управляемыми клиентом,](#configure-encryption-with-customer-managed-keys) и предоставьте новое ключевое имя и версию. Если новый ключ находится в другом хранилище ключей, также обновите хранилище ключей URI.
 
-## <a name="revoke-customer-managed-keys"></a>Отозвать ключи, управляемые клиентом
+## <a name="revoke-customer-managed-keys"></a>Отозвать ключи, управляемые клиентами
 
-Если вы считаете, что ключ может быть скомпрометирован, можно отозвать ключи, управляемые клиентом, удалив политику доступа к хранилищу ключей. Чтобы отозвать ключ, управляемый клиентом, вызовите команду [Remove-азкэйваултакцессполици](/powershell/module/az.keyvault/remove-azkeyvaultaccesspolicy) , как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+Если вы считаете, что ключ может быть скомпрометирован, вы можете отозвать ключи, управляемые клиентом, удалив политику доступа к хранилищу ключей. Чтобы отозвать ключ, управляемый клиентом, позвоните в команду [Remove-AzKeyVaultAccessPolicy,](/powershell/module/az.keyvault/remove-azkeyvaultaccesspolicy) как показано в следующем примере. Не забудьте заменить значения заполнителя в скобках на собственные значения и использовать переменные, определенные в предыдущих примерах.
 
 ```powershell
 Remove-AzKeyVaultAccessPolicy -VaultName $keyVault.VaultName `
     -ObjectId $storageAccount.Identity.PrincipalId `
 ```
 
-## <a name="disable-customer-managed-keys"></a>Отключение ключей, управляемых клиентом
+## <a name="disable-customer-managed-keys"></a>Отключить ключи, управляемые клиентом
 
-При отключении управляемых пользователем ключей учетная запись хранения снова шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) с параметром `-StorageEncryption`, как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+При отключении ключей, управляемых клиентом, ваша учетная запись хранилища снова шифруется ключами, управляемыми корпорацией Майкрософт. Чтобы отключить клавиши, управляемые клиентом, позвоните `-StorageEncryption` [set-AzStorageAccount](/powershell/module/az.storage/set-azstorageaccount) с опцией, как показано в следующем примере. Не забудьте заменить значения заполнителя в скобках на собственные значения и использовать переменные, определенные в предыдущих примерах.
 
 ```powershell
 Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
@@ -118,5 +118,5 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
-- [Что такое Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)?
+- [Шифрование хранилища Azure для данных в состоянии покоя](storage-service-encryption.md)
+- [Что такое Убежище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-overview)

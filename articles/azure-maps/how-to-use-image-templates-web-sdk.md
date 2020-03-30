@@ -1,6 +1,6 @@
 ---
-title: Шаблоны изображений в Azure Maps веб-пакете SDK | Карты Microsoft Azure
-description: В этой статье вы узнаете, как использовать шаблоны изображений с маркерами HTML и различными слоями в веб-пакете SDK Microsoft Azure Maps.
+title: Шаблоны изображений в веб-SDK Azure Maps Карты Microsoft Azure
+description: В этой статье вы узнаете, как использовать шаблоны изображений с HTML-маркерами и различными слоями в Веб-SDK Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 8/6/2019
@@ -10,33 +10,33 @@ services: azure-maps
 manager: cpendleton
 ms.custom: codepen
 ms.openlocfilehash: f3b1141ea3c3c8e33b8a2ae12c22b6962a90d32b
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77198230"
 ---
 # <a name="how-to-use-image-templates"></a>Использование шаблонов образов
 
-Изображения можно использовать с маркерами HTML и различными слоями в Azure Maps веб-пакете SDK:
+Изображения могут быть использованы с HTML маркерами и различными слоями в веб-SDK Azure Maps:
 
- - Слои символов позволяют отображать точки на карте с помощью значка изображения. Символы также можно визуализировать по линиям.
- - Слои многоугольников можно визуализировать с помощью изображения шаблона заливки. 
- - Маркеры HTML могут отображать точки с помощью изображений и других элементов HTML.
+ - Слои символа могут отображать точки на карте с помощью значка изображения. Символы также могут быть отображаются вдоль пути линий.
+ - Слои полигона могут быть отрисованы с изображением шаблона заполнения. 
+ - HTML-маркеры могут отображать точки с помощью изображений и других элементов HTML.
 
-Чтобы обеспечить хорошую производительность при работе с слоями, перед отрисовкой Загрузите изображения в ресурс с изображением Sprite. [Иконоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions)(симболлайер) предварительно загружает несколько изображений маркера в несколько цветов в спрайт изображения Map по умолчанию. Эти изображения маркеров и многое другое доступны в виде шаблонов SVG. Они могут использоваться для создания изображений с настраиваемыми масштабами или использования в качестве основного и дополнительного цветов клиента. В итоге предусмотрено 42 шаблонов изображений: 27 значков символов и 15 узоров заливки многоугольников.
+Для обеспечения хорошей производительности слоями загрузите изображения в ресурс спрайта изображения карты перед рендерированием. [IconOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions), из SymbolLayer, предварительно загружает пару маркерных изображений в горстке цветов в спрайт изображения карты, по умолчанию. Эти маркерные изображения и многое другое доступны в виде шаблонов SVG. Они могут быть использованы для создания изображений с пользовательскими весами, или использовать в качестве основного и вторичного цвета клиента. Всего предусмотрено 42 шаблона изображений: 27 иконок символов и 15 шаблонов заполнения полигонов.
 
-Шаблоны изображений можно добавить в ресурсы с изображением Sprite с помощью функции `map.imageSprite.createFromTemplate`. Эта функция позволяет передавать до пяти параметров;
+Шаблоны изображений могут быть добавлены к ресурсам `map.imageSprite.createFromTemplate` спрайта изображения карты с помощью функции. Эта функция позволяет передавать до пяти параметров;
 
 ```javascript
 createFromTemplate(id: string, templateName: string, color?: string, secondaryColor?: string, scale?: number): Promise<void>
 ```
 
-`id` — это уникальный идентификатор, который вы создаете. `id` назначается образу при его добавлении в спрайт изображений Maps. Используйте этот идентификатор в слоях, чтобы указать, какой ресурс изображения следует визуализировать. `templateName` указывает используемый шаблон изображения. Параметр `color` задает основной цвет изображения, а параметры `secondaryColor` задает вторичный цвет изображения. Параметр `scale` масштабирует шаблон изображения перед его применением к спрайту изображений. Когда изображение применяется к спрайту изображений, оно преобразуется в PNG. Чтобы обеспечить четкое отображение, лучше масштабировать шаблон изображения перед добавлением его к спрайту, чем масштабировать его в слое.
+Это `id` уникальный идентификатор, который вы создаете. Присваивается `id` изображение при добавлении к спрайтам изображения на картах. Используйте этот идентификатор в слоях, чтобы указать, какой ресурс изображения для визуализации. Определяет, `templateName` какой шаблон изображения использовать. Параметр `color` устанавливает основной цвет изображения, а `secondaryColor` параметры задает вторичный цвет изображения. Опция `scale` масштабирует шаблон изображения перед нанесением его на спрайт изображения. Когда изображение применяется к срайту изображения, оно преобразуется в PNG. Для обеспечения четкой визуализации лучше масштабировать шаблон изображения перед добавлением его в спрайт, чем масштабировать его в слой.
 
-Эта функция асинхронно загружает изображение в спрайт изображений. Таким же методом возвращается обещание, которое можно ожидать завершения этой функции.
+Эта функция асинхронно загружает изображение в спрайт изображения. Таким образом, он возвращает Обещание, которое вы можете ждать, пока эта функция будет завершена.
 
-В следующем коде показано, как создать изображение из одного из встроенных шаблонов и использовать его с уровнем символов.
+Следующий код показывает, как создать изображение из одного из встроенных шаблонов, и использовать его со слоем символа.
 
 ```javascript
 map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#fff').then(function () {
@@ -50,160 +50,160 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 });
 ```
 
-## <a name="use-an-image-template-with-a-symbol-layer"></a>Использование шаблона изображения с уровнем символов
+## <a name="use-an-image-template-with-a-symbol-layer"></a>Используйте шаблон изображения со слоем символов
 
-После загрузки шаблона изображения в спрайт изображений карт его можно визуализировать как символ на уровне символов, ссылаясь на идентификатор ресурса изображения в параметре `image` `iconOptions`.
+После загрузки шаблона изображения в спрайт изображения карты его можно отобразить в качестве символа в `image` слое `iconOptions`символа, ссылаясь на идентификатор ресурса изображения в варианте .
 
-В следующем примере слой символов визуализируется с помощью шаблона изображения `marker-flat` с бирюзовым основным цветом и белым вторичным цветом. 
+Следующий образец отображает слой `marker-flat` символа с помощью шаблона изображения с чирок основного цвета и белого вторичного цвета. 
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Слой символов с встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/VoQMPp/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/VoQMPp/'>слой символов пера со встроенным шаблоном значка</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Слой символа со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/VoQMPp/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите <a href='https://codepen.io/azuremaps/pen/VoQMPp/'>слой pen Symbol со встроенным шаблоном значка</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="use-an-image-template-along-a-lines-path"></a>Использование шаблона изображения вдоль строкового пути
+## <a name="use-an-image-template-along-a-lines-path"></a>Используйте шаблон изображения по пути линий
 
-После загрузки шаблона изображения в спрайт изображений карт его можно визуализировать по пути линии, добавив LineString к источнику данных и используя слой символов с параметром `lineSpacing`и обратившись по ИДЕНТИФИКАТОРу ресурса изображения в параметре `image` `iconOptions`. 
+После загрузки шаблона изображения в спрайт изображения карты его можно отобразить по пути строки, добавив LineString `lineSpacing`в источник данных и используя слой символа `image` с `iconOptions`опцией и ссылаясь на идентификатор ресурса изображения в опции th . 
 
-В следующем примере показана розовая линия на карте и используется слой символов с помощью шаблона изображения `car` с синим основным цветом тускло-Васильковый и белым вторичным цветом. 
-
-<br/>
-
-<iframe height="500" style="width: 100%;" scrolling="no" title="Слой линий со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/KOQvJe/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/KOQvJe/'>слой линии пера со встроенным шаблоном значка</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-> [!TIP]
-> Если вы указываете шаблон изображения, установите для параметра значка `rotation` на уровне символов значение 90, если хотите, чтобы он указывал на то же направление, что и линия.
-
-## <a name="use-an-image-template-with-a-polygon-layer"></a>Использование шаблона изображения с слоем многоугольников
-
-После загрузки шаблона изображения в спрайт изображений карт его можно визуализировать как шаблон заливки на слое многоугольников, ссылаясь на идентификатор ресурса изображения в параметре `fillPattern` слоя.
-
-В следующем примере слой многоугольников визуализируется с помощью шаблона изображения `dot` с красным основным цветом и прозрачным вторичным цветом.  
+Следующий образец отображает розовую линию на карте `car` и использует слой символа, используя шаблон изображения с уклонистом синего первичного цвета и белым вторичным цветом. 
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Заливка многоугольника с помощью встроенного шаблона значка" src="//codepen.io/azuremaps/embed/WVMEmz/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/WVMEmz/'>Заливка многоугольника с помощью встроенного шаблона значка</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Линейный слой со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/KOQvJe/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите слой линии pen <a href='https://codepen.io/azuremaps/pen/KOQvJe/'>со встроенным шаблоном значка</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
-> Установка вторичного цвета шаблонов заливки упрощает просмотр базовой схемы, тем самым предоставляя первичный шаблон. 
+> Если шаблон изображения указывает вверх, установите опцию `rotation` значка слоя символа до 90, если вы хотите, чтобы он указал в том же направлении, что и линия.
 
-## <a name="use-an-image-template-with-an-html-marker"></a>Использование шаблона изображения с маркером HTML
+## <a name="use-an-image-template-with-a-polygon-layer"></a>Используйте шаблон изображения со слоем полигона
 
-Шаблон изображения можно получить с помощью функции `altas.getImageTemplate` и использовать в качестве содержимого HTML-маркера. Шаблон можно передать в параметр `htmlContent` маркера, а затем настроить с помощью параметров `color`, `secondaryColor`и `text`.
+После загрузки шаблона изображения в спрайт изображения карты его можно отобразить в виде шаблона заполнения в многогоновом слое, ссылаясь на идентификатор ресурса изображения в `fillPattern` варианте слоя.
 
-В следующем примере используется шаблон `marker-arrow` с красным основным цветом, розовым вторичным цветом и текстовым значением "00".
+Следующий образец отображает многоугольный `dot` слой с использованием шаблона изображения с красным первичным цветом и прозрачным вторичным цветом.  
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="HTML-маркер со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/EqQvzq/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Просмотрите HTML- <a href='https://codepen.io/azuremaps/pen/EqQvzq/'>маркер пера со встроенным шаблоном значка</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Заполните полигон встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/WVMEmz/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите полигон Pen <a href='https://codepen.io/azuremaps/pen/WVMEmz/'>Fill со встроенным шаблоном значка</a> от Azure Maps ()<a href='https://codepen.io/azuremaps'>@azuremaps</a>на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="create-custom-reusable-templates"></a>Создание настраиваемых многократно используемых шаблонов
+> [!TIP]
+> Установка вторичного цвета шаблонов заполнения облегчает представление основной карты, которая по-прежнему будет обеспечивать основной узор. 
 
-Если приложение использует один и тот же значок с разными значками или если вы создаете модуль, который добавляет дополнительные шаблоны изображений, вы можете легко добавлять и получать эти значки из веб-пакета SDK Azure Maps. Используйте следующие статические функции в пространстве имен `atlas`.
+## <a name="use-an-image-template-with-an-html-marker"></a>Используйте шаблон изображения с помощью HTML-маркера
 
-| Имя | Тип возвращаемого значения | Описание | 
+Шаблон изображения можно получить с `altas.getImageTemplate` помощью функции и использовать в качестве содержимого HTML-маркера. Шаблон можно передать в `htmlContent` опцию маркера, а затем `color` `secondaryColor`настроить `text` с помощью, и параметры.
+
+В следующем примере `marker-arrow` используется шаблон с красным первичным цветом, розовым вторичным цветом и текстовым значением "00".
+
+<br/>
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="HTML Маркер со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/EqQvzq/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите Pen <a href='https://codepen.io/azuremaps/pen/EqQvzq/'>HTML Маркер со встроенным шаблоном значок</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+## <a name="create-custom-reusable-templates"></a>Создание пользовательских многоразовых шаблонов
+
+Если приложение использует один и тот же значок с различными иконками или если вы создаете модуль, который добавляет дополнительные шаблоны изображений, вы можете легко добавить и получить эти значки из веб-SDK Azure Maps. Используйте следующие статические функции в `atlas` пространстве имен.
+
+| name | Тип возвращаемых данных | Описание | 
 |-|-|-|
-| `addImageTemplate(templateName: string, template: string, override: boolean)` | | Добавляет пользовательский шаблон изображения SVG в пространство имен Atlas. |
-|  `getImageTemplate(templateName: string, scale?: number)`| string | Извлекает шаблон SVG по имени. |
+| `addImageTemplate(templateName: string, template: string, override: boolean)` | | Добавляет пользовательский шаблон изображения SVG в пространство имен атласа. |
+|  `getImageTemplate(templateName: string, scale?: number)`| строка | Извлекает шаблон SVG по имени. |
 | `getAllImageTemplateNames()` | string[] |  Извлекает шаблон SVG по имени. |
 
-Шаблоны изображений SVG поддерживают следующие значения заполнителей:
+Шаблоны изображений SVG поддерживают следующие значения заполнителя:
 
-| Заместитель | Описание |
+| Заполнитель | Описание |
 |-|-|
 | `{color}` | Основной цвет. | 
 | `{secondaryColor}` | Вторичный цвет. | 
-| `{scale}` | Изображение SVG преобразуется в изображение PNG при добавлении в спрайт изображений карт. Этот заполнитель можно использовать для масштабирования шаблона перед его преобразованием, чтобы обеспечить его четкое отображение. | 
-| `{text}` | Расположение для отрисовки текста при использовании с маркером HTML. |
+| `{scale}` | Изображение SVG преобразуется в изображение png при добавлении на спрайт изображения карты. Этот заполнитель может быть использован для масштабирования шаблона, прежде чем он преобразуется, чтобы убедиться, что он отображает четко. | 
+| `{text}` | Местоположение для визуализации текста при использовании с HTML-маркером. |
 
-В следующем примере показано, как взять шаблон SVG и добавить его в Azure Maps веб-пакет SDK в качестве шаблона многократно используемого значка. 
+В следующем примере показано, как взять шаблон SVG и добавить его в веб-SDK Azure Maps в качестве многоразового шаблона значка. 
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление пользовательского шаблона значка в пространство имен Atlas" src="//codepen.io/azuremaps/embed/NQyvEX/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/NQyvEX/'>Добавление пользовательского шаблона значка в пространство имен Atlas</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление пользовательского шаблона значка в пространство имен атласа" src="//codepen.io/azuremaps/embed/NQyvEX/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите шаблон значка Pen Add в пространство имен<a href='https://codepen.io/azuremaps'>@azuremaps</a> <a href='https://codepen.io/azuremaps/pen/NQyvEX/'>атласа</a> по Azure Maps () на <a href='https://codepen.io'>CodePen.</a>
 </iframe>
 
 ## <a name="list-of-image-templates"></a>Список шаблонов изображений
 
-В этой таблице перечислены все шаблоны изображений, доступные в данный момент в Azure Maps веб-пакете SDK. Имя шаблона выше каждого изображения. По умолчанию основным цветом является синий цвет, а дополнительный — белым. Чтобы сделать дополнительный цвет более удобным для просмотра на белом фоне, на следующих изображениях дополнительный цвет устанавливается в черный.
+В этой таблице перечислены все шаблоны изображений, доступные в настоящее время в рамках веб-SDK Azure Maps. Имя шаблона выше каждого изображения. По умолчанию основной цвет синий, а вторичный белый. Чтобы сделать вторичный цвет легче увидеть на белом фоне, следующие изображения имеют вторичный цвет, установленный на черный.
 
-**Шаблоны значков символов**
-
-|||||
-|:-:|:-:|:-:|:-:|
-| marker | жирный маркер | маркер-окружность | Плоский маркер |
-|![значок маркера](./media/image-templates/marker.png)|![значок жирного маркера](./media/image-templates/marker-thick.png)|![значок "маркер-окружность"](./media/image-templates/marker-circle.png)|![значок с плоским маркером](./media/image-templates/marker-flat.png)|
-||||
-| квадратный маркер | маркер-квадратный — кластер | стрелка-маркер | маркер-шарик-закрепление | 
-|![значок квадратного маркера](./media/image-templates/marker-square.png)|![значок "маркер — квадратный — кластер"](./media/image-templates/marker-square-cluster.png)|![значок стрелки-маркера](./media/image-templates/marker-arrow.png)|![значок "маркер-шарик-закрепление"](./media/image-templates/marker-ball-pin.png)|
-||||
-| маркер-квадратное округление | маркер-квадратный-Скругленный — кластер | flag | Flag-треугольник |
-| ![значок "маркер-квадрат-Скругленный"](./media/image-templates/marker-square-rounded.png) | ![значок "маркер-квадрат-Скругленный — кластер"](./media/image-templates/marker-square-rounded-cluster.png) | ![значок флага](./media/image-templates/flag.png) | ![значок флага-треугольник](./media/image-templates/flag-triangle.png) |
-||||
-| значок | треугольник — толстый | стрелка на треугольник вверх | треугольная стрелка — слева |
-| ![значок треугольника](./media/image-templates/triangle.png) | ![значок с толстым треугольником](./media/image-templates/triangle-thick.png) | ![значок стрелки "треугольник"](./media/image-templates/triangle-arrow-up.png) | ![значок стрелки влево](./media/image-templates/triangle-arrow-left.png) |
-||||
-| шестиугольник | шестиугольник — толстая | шестиугольник — округленный | шестиугольник-Скругленный-толстый |
-| ![значок шестиугольника](./media/image-templates/hexagon.png) | ![шестиугольник — толстый значок](./media/image-templates/hexagon-thick.png) | ![значок в кружке](./media/image-templates/hexagon-rounded.png) | ![значок в шестиугольнике-закругленный — толстый](./media/image-templates/hexagon-rounded-thick.png) |
-||||
-| pin | закрепить-округлить | Скругленный квадрат | скругленное-квадратное-толстое |
-| ![значок закрепления](./media/image-templates/pin.png) | ![значок "закрепить на круге"](./media/image-templates/pin-round.png) | ![значок скругленного квадрата](./media/image-templates/rounded-square.png) | ![значок со скругленной квадратной линией](./media/image-templates/rounded-square-thick.png) |
-||||
-| Стрелка вверх | стрелка — тонкая | автомобиль ||
-| ![значок стрелки "вверх"](./media/image-templates/arrow-up.png) | ![Стрелка-вверх-тонкий значок](./media/image-templates/arrow-up-thin.png) | ![значок автомобиля](./media/image-templates/car.png) | |
-
-**Шаблоны узорной заливки многоугольников**
+**Шаблоны значков символа**
 
 |||||
 |:-:|:-:|:-:|:-:|
-| программы | повернутый | круги | круги — с интервалами |
-| ![значок проверки](./media/image-templates/checker.png) | ![значок, повернутый в шашку](./media/image-templates/checker-rotated.png) | ![значок кругов](./media/image-templates/circles.png) | ![значок "кружки — пробел"](./media/image-templates/circles-spaced.png) |
-|||||
-| по диагонали вверх | диагональные линии вниз | диагональные полосы | диагональные полосы-вниз |
-| ![значок "диагональные линии"](./media/image-templates/diagonal-lines-up.png) | ![значок "диагональные линии"](./media/image-templates/diagonal-lines-down.png) | ![значок "диагональные полосы"](./media/image-templates/diagonal-stripes-up.png) | ![значок "диагональные полосы"](./media/image-templates/diagonal-stripes-down.png) |
-|||||
-| Сетка-линии | повернутый-Grid-Line | повернутый-Grid-полосковые полосы | Заливка x |
-| ![значок сетки — линии](./media/image-templates/grid-lines.png) | ![значок "повернутый-Grid-Line"](./media/image-templates/rotated-grid-lines.png) | ![значок "повернутый-Grid-полоск"](./media/image-templates/rotated-grid-stripes.png) | ![значок "x-Fill"](./media/image-templates/x-fill.png) |
-|||||
-| зигзаг — зигзаг | зигзаг-зигзаг-по вертикали | количество |  |
-| ![значок зигзаг-зигзаг](./media/image-templates/zig-zag.png) | ![значок зигзаг-зигзаг-Vertical](./media/image-templates/zig-zag-vertical.png) | ![значок точек](./media/image-templates/dots.png) | |
+| marker | маркер толстый | маркер-круг | маркер-плоский |
+|![значок маркера](./media/image-templates/marker.png)|![маркер-толстый значок](./media/image-templates/marker-thick.png)|![значок маркер-круг](./media/image-templates/marker-circle.png)|![маркер-плоский значок](./media/image-templates/marker-flat.png)|
+||||
+| маркер-квадрат | маркер-квадрат-кластер | маркер-стрелка | маркер-шар-контакт | 
+|![маркер квадратный значок](./media/image-templates/marker-square.png)|![значок маркера квадратного кластера](./media/image-templates/marker-square-cluster.png)|![маркер-стрелка значок](./media/image-templates/marker-arrow.png)|![маркер-шар-контакт значок](./media/image-templates/marker-ball-pin.png)|
+||||
+| маркер-квадрат округленный | маркер-квадрат-округлен-кластер | Флаг | флаг-треугольник |
+| ![маркер-квадратокруглая круглая значок](./media/image-templates/marker-square-rounded.png) | ![значок маркер-квадрат-округлен-кластер](./media/image-templates/marker-square-rounded-cluster.png) | ![значок флага](./media/image-templates/flag.png) | ![значок флаг-треугольник](./media/image-templates/flag-triangle.png) |
+||||
+| треугольник | треугольник толщиной | треугольник-стрелка-вверх | треугольник-стрелка-левый |
+| ![значок треугольника](./media/image-templates/triangle.png) | ![треугольник толщиной значок](./media/image-templates/triangle-thick.png) | ![треугольник-стрелка-вверх значок](./media/image-templates/triangle-arrow-up.png) | ![треугольник-стрелка-левый значок](./media/image-templates/triangle-arrow-left.png) |
+||||
+| Шестиугольник | шестиугольник толщиной | шестиугольник округлые | шестиугольник-круглый толщиной |
+| ![шестиугольник значок](./media/image-templates/hexagon.png) | ![шестиугольник толщиной значок](./media/image-templates/hexagon-thick.png) | ![шестиугольник-округленная икона](./media/image-templates/hexagon-rounded.png) | ![шестиугольник-круглый толщиной значок](./media/image-templates/hexagon-rounded-thick.png) |
+||||
+| закрепление | пин-круглый | округленный квадрат | округлые квадратные толщиной |
+| ![значок закрепления](./media/image-templates/pin.png) | ![значок пин-круглый](./media/image-templates/pin-round.png) | ![значок округлого квадрата](./media/image-templates/rounded-square.png) | ![округлые квадратные толщиной значок](./media/image-templates/rounded-square-thick.png) |
+||||
+| стрелка вверх | стрелка-вверх-тонкий | автомобиль ||
+| ![стрелка вверх значок](./media/image-templates/arrow-up.png) | ![стрелка-вверх-тонкий значок](./media/image-templates/arrow-up-thin.png) | ![значок автомобиля](./media/image-templates/car.png) | |
 
-## <a name="try-it-now-tool"></a>Попробуйте это средство
+**Шаблоны шаблонов заполнения полигона**
 
-С помощью следующего средства можно отобразить различные встроенные шаблоны изображений различными способами и настроить основной и дополнительный цвета и масштаб.
+|||||
+|:-:|:-:|:-:|:-:|
+| Проверки | шашка-поворот | круги | круги-пространство |
+| ![значок проверки](./media/image-templates/checker.png) | ![шашка-повернутый значок](./media/image-templates/checker-rotated.png) | ![круги значок](./media/image-templates/circles.png) | ![круговые значок](./media/image-templates/circles-spaced.png) |
+|||||
+| диагональные линии-вверх | диагональные линии вниз | диагональные полосы-вверх | диагональные полосы вниз |
+| ![значок диагональных линий](./media/image-templates/diagonal-lines-up.png) | ![значок диагонали-линии вниз](./media/image-templates/diagonal-lines-down.png) | ![значок диагонали-полосы](./media/image-templates/diagonal-stripes-up.png) | ![значок диагонали-полосы вниз](./media/image-templates/diagonal-stripes-down.png) |
+|||||
+| сетки-линии | вращающиеся линии сетки | вращающиеся-сетки-полосы | x-заполнить |
+| ![значок сетки линий](./media/image-templates/grid-lines.png) | ![Значок вращающихся линий сетки](./media/image-templates/rotated-grid-lines.png) | ![вращаемый-сетка-полосы значок](./media/image-templates/rotated-grid-stripes.png) | ![x-заполнить значок](./media/image-templates/x-fill.png) |
+|||||
+| зигзаг | зигзаг-вертикаль | Точки |  |
+| ![зигзагообразная икона](./media/image-templates/zig-zag.png) | ![зигзагообразно-вертикальная икона](./media/image-templates/zig-zag-vertical.png) | ![значок точек](./media/image-templates/dots.png) | |
+
+## <a name="try-it-now-tool"></a>Попробуйте сейчас инструмент
+
+С помощью следующего инструмента можно различными способами внедренировать различные встроенные шаблоны изображений и настраивать первичные и вторичные цвета и масштаб.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Параметры шаблона значка" src="//codepen.io/azuremaps/embed/NQyaaO/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Сведения о <a href='https://codepen.io/azuremaps/pen/NQyaaO/'>параметрах шаблона значок</a> пера см. Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Параметры шаблона значок" src="//codepen.io/azuremaps/embed/NQyaaO/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите <a href='https://codepen.io/azuremaps/pen/NQyaaO/'>параметры шаблона pen Icon</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>по Картам Azure () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [имажеспритеманажер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.imagespritemanager)
+> [ImageSpriteManager](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.imagespritemanager)
 
 > [!div class="nextstepaction"]
-> [пространство имен Atlas](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas?view=azure-maps-typescript-latest#functions
+> [атласное пространство имен](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas?view=azure-maps-typescript-latest#functions
 )
 
-Дополнительные примеры кода, в которых можно использовать шаблоны изображений, см. в следующих статьях:
+Смотрите следующие статьи для получения дополнительных образцов кода, где можно использовать шаблоны изображений:
 
 > [!div class="nextstepaction"]
 > [Добавление слоя символов](map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Добавить слой линий](map-add-line-layer.md)
+> [Добавление слоя линий](map-add-line-layer.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя многоугольников](map-add-shape.md)

@@ -1,6 +1,6 @@
 ---
-title: Добавление панели инструментов рисования в карту | Карты Microsoft Azure
-description: В этой статье вы узнаете, как добавить панель инструментов рисования на карту с помощью веб-пакета SDK Microsoft Azure Maps.
+title: Добавьте панель инструментов для рисования на карту Карты Microsoft Azure
+description: В этой статье вы узнаете, как добавить панель инструментов для рисования на карту с помощью Microsoft Azure Maps Web SDK
 author: rbrundritt
 ms.author: richbrun
 ms.date: 12/05/2019
@@ -9,85 +9,85 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.openlocfilehash: cf9c79f608aa3ffd1137be41ff3348f62b890867
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77198315"
 ---
-# <a name="drawing-tool-events"></a>События инструмента рисования
+# <a name="drawing-tool-events"></a>Рисование событий инструмента
 
-При использовании средств рисования на карте полезно реагировать на определенные события, когда пользователь рисует на карте. В этой таблице перечислены все события, поддерживаемые классом `DrawingManager`.
+При использовании инструментов рисования на карте полезно реагировать на определенные события по мере того, как пользователь рисует на карте. В этой таблице перечислены все `DrawingManager` события, поддерживаемые классом.
 
 | Событие | Описание |
 |-------|-------------|
-| `drawingchanged` | Срабатывает при добавлении или изменении любой координаты в фигуре. | 
-| `drawingchanging` | Активируется при отображении любой координаты предварительного просмотра для фигуры. Например, это событие будет срабатывать несколько раз при перетаскивании координат. | 
-| `drawingcomplete` | Возникает после завершения рисования фигуры или выхода из режима редактирования. |
-| `drawingmodechanged` | Возникает при изменении режима рисования. Новый режим рисования передается в обработчик событий. |
-| `drawingstarted` | Возникает, когда пользователь начинает рисовать фигуру или помещает фигуру в режим правки.  |
+| `drawingchanged` | Выстрел, когда любая координат в форме была добавлена или изменена. | 
+| `drawingchanging` | Выстрел при отображении координат предварительного просмотра для формы. Например, это событие будет стрелять несколько раз, как координаты перетаскивается. | 
+| `drawingcomplete` | Выстрел, когда форма закончила быть нарисованы или выведены из режима изменения. |
+| `drawingmodechanged` | Работается при изменении режима рисования. Новый режим рисования передается в обработчик событий. |
+| `drawingstarted` | Увольняется, когда пользователь начинает рисовать фигуру или вводит форму в режим edit.  |
 
-В следующем коде показано, как работают события в модуле средств рисования. Нарисуйте фигуры на карте и просмотрите их при срабатывании событий.
+Следующий код показывает, как работают события в модуле Drawing Tools. Нарисуйте фигуры на карте и смотреть, как события огня.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="События инструментов рисования" src="https://codepen.io/azuremaps/embed/dyPMRWo?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/dyPMRWo'>события инструментов рисования</a> пера по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="События, нарисовав инструменты," src="https://codepen.io/azuremaps/embed/dyPMRWo?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите <a href='https://codepen.io/azuremaps/pen/dyPMRWo'>события инструментов Pen Drawing</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>по картам Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <br/>
 
 ## <a name="examples"></a>Примеры
 
-Рассмотрим некоторые распространенные сценарии, в которых используются события средств рисования.
+Давайте посмотрим некоторые общие сценарии, в которых используются события инструментов рисования.
 
-### <a name="select-points-in-polygon-area"></a>Выбор точек в области многоугольника
+### <a name="select-points-in-polygon-area"></a>Выберите точки в области полигона
 
-Этот код демонстрирует, как отслеживать событие пользовательских фигур. В этом примере код отслеживает фигуры многоугольников, прямоугольников и кругов. Затем он определяет, какие точки данных на карте находятся в рисуемой области. Событие `drawingcomplete` используется для активации логики выбора. В логике выбора код выполняет перебор всех точек данных на карте. Он проверяет, существует ли пересечение точки и области рисуемой фигуры. В этом примере используется библиотека [Турф. js](https://turfjs.org/) с открытым кодом для выполнения вычисления пространственного пересечения.
+В этом коде показано, как контролировать событие фигурирования пользовательского рисунка. Например, код отслеживает формы полигонов, прямоугольников и кругов. Затем определяется, какие точки данных на карте находятся в пределах нарисованной области. Событие `drawingcomplete` используется для запуска логики выбора. В выбранной логике код просматривает все точки данных на карте. Он проверяет, есть ли пересечение точки и области нарисованной формы. В этом примере используется библиотека [Turf.js](https://turfjs.org/) с открытым исходным кодом для выполнения расчета пространственного пересечения.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Выбор данных в области рисования многоугольника" src="https://codepen.io/azuremaps/embed/XWJdeja?height=500&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Посмотрите на перо, <a href='https://codepen.io/azuremaps/pen/XWJdeja'>выберите данные в рисуемой области многоугольника</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Выберите данные в нарисованной области полигона" src="https://codepen.io/azuremaps/embed/XWJdeja?height=500&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите данные Pen <a href='https://codepen.io/azuremaps/pen/XWJdeja'>Select в нарисованной области полигона</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <br/>
 
-### <a name="draw-and-search-in-polygon-area"></a>Рисование и поиск в области многоугольника
+### <a name="draw-and-search-in-polygon-area"></a>Рисовать и искать в области полигона
 
-Этот код выполняет поиск точек интересов в области фигуры после того, как пользователь завершил Рисование фигуры. Чтобы изменить и выполнить код, нажмите кнопку "изменить в коде пера" в правом верхнем углу рамки. Событие `drawingcomplete` используется для активации логики поиска. Если пользователь рисует прямоугольник или многоугольник, выполняется поиск в геометрии. При рисовании окружности точка радиуса и Центральная используется для выполнения поиска в процентах. Событие `drawingmodechanged` используется, чтобы определить, когда пользователь переключается в режим рисования, и это событие очищает полотно.
+Этот код ищет точки интересов внутри области формы после того, как пользователь закончил рисовать фигуру. Вы можете изменить и выполнить код, нажав кнопку "Изменить на кодовой ручке" в правом верхнем углу кадра. Событие `drawingcomplete` используется для запуска логики поиска. Если пользователь рисует прямоугольник или полигон, выполняется поиск внутри геометрии. Если круг нарисован, радиус и положение центра используются для выполнения поиска точки интереса. Событие `drawingmodechanged` используется для определения того, когда пользователь переключается в режим чертежа, и это событие очищает холст чертежа.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Рисование и поиск в области многоугольника" src="https://codepen.io/azuremaps/embed/eYmZGNv?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/eYmZGNv'>Рисование и поиск в области многоугольников</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Рисовать и искать в области полигона" src="https://codepen.io/azuremaps/embed/eYmZGNv?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Смотрите <a href='https://codepen.io/azuremaps/pen/eYmZGNv'>Pen Draw и поиск в области полигона</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <br/>
 
-### <a name="create-a-measuring-tool"></a>Создание инструмента измерения
+### <a name="create-a-measuring-tool"></a>Создание измерительного инструмента
 
-В приведенном ниже коде показано, как можно использовать события рисования для создания инструмента измерения. `drawingchanging` используется для отслеживания формы, как она рисуется. По мере того, как пользователь перемещает мышь, выполняется вычисление размеров фигуры. Событие `drawingcomplete` используется для выполнения окончательного вычисления фигуры после ее прорисовки. Событие `drawingmodechanged` используется, чтобы определить, когда пользователь переключается в режим рисования. Кроме того, событие `drawingmodechanged` очищает холст рисования и очищает старую информацию об измерении.
+В приведенном ниже коде показано, как события чертежа могут быть использованы для создания измерительного инструмента. Используется `drawingchanging` для мониторинга формы, как это обращается. При движении мыши размеры формы вычисляются. Событие `drawingcomplete` используется для окончательного расчета формы после того, как оно было нарисовано. Событие `drawingmodechanged` используется для определения того, когда пользователь переходит в режим чертежа. Кроме того, `drawingmodechanged` событие очищает холст чертежа и очищает старую информацию измерения.
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Измерительный инструмент" src="https://codepen.io/azuremaps/embed/RwNaZXe?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/RwNaZXe'>инструмент измерения</a> пера, Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+Смотрите <a href='https://codepen.io/azuremaps/pen/RwNaZXe'>инструмент измерения</a> пера по<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <br/>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как использовать дополнительные функции модуля "инструменты рисования":
+Узнайте, как использовать дополнительные функции модуля инструментов рисования:
 
 > [!div class="nextstepaction"]
-> [Получение данных фигуры](map-get-shape-data.md)
+> [Получение данных о фигуре](map-get-shape-data.md)
 
 > [!div class="nextstepaction"]
 > [Типы взаимодействия и сочетания клавиш](drawing-tools-interactions-keyboard-shortcuts.md)
 
-Дополнительные сведения о модуле "службы":
+Подробнее о модуле Услуг:
 
 > [!div class="nextstepaction"]
 > [Модуль служб](how-to-use-services-module.md)
