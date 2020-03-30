@@ -1,7 +1,7 @@
 ---
 title: Обзор языка OData
 titleSuffix: Azure Cognitive Search
-description: Общие сведения о языке OData для запросов Azure Когнитивный поиск.
+description: Обзор языка OData для фильтров, выбора и заказа для запросов Azure Cognitive Search.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -20,33 +20,33 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: f3a1be435e297ab4a9ba7f8bfbd5f3ce3451d8a8
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77153882"
 ---
-# <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Общие сведения о языке OData для `$filter`, `$orderby`и `$select` в Azure Когнитивный поиск
+# <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Обзор языка OData `$filter` `$orderby`для, `$select` и в Azure Когнитивный поиск
 
-Когнитивный поиск Azure поддерживает подмножество синтаксиса выражений OData для выражений **$Filter**, **$OrderBy**и **$SELECT** . Выражения для фильтрации вычисляются при синтаксическом анализе запроса. Они ограничивают поиск конкретными полями или добавляют критерии соответствия, используемые во время обработки индекса. Выражения ORDER-BY применяются в качестве прохода после обработки результирующего набора для сортировки возвращаемых документов. Выбор выражений определяет, какие поля документа включаются в результирующий набор. Синтаксис этих выражений отличается от синтаксиса [простого](query-simple-syntax.md) или [полного](query-lucene-syntax.md) запроса, используемого в параметре **поиска** , хотя существует некоторое перекрытие синтаксиса для ссылок на поля.
+Azure Cognitive Search поддерживает подмножество синтаксиса выражения OData для **выражения $filter,** **$orderby**и **$select** выражений. Выражения для фильтрации вычисляются при синтаксическом анализе запроса. Они ограничивают поиск конкретными полями или добавляют критерии соответствия, используемые во время обработки индекса. Выражения заказа применяются как шаг после обработки по сравнению с результатом, установленным для сортировки возвращенных документов. Выберите выражения, определяющие, какие поля документов включены в набор результатов. Синтаксис этих выражений отличается от [простого](query-simple-syntax.md) или [полного](query-lucene-syntax.md) синтаксиса запроса, который используется в параметре **поиска,** хотя в синтаксисе есть некоторое совпадение для ссылок.
 
-В этой статье представлен обзор языка выражений OData, используемого в выражениях Filters, ORDER-BY и SELECT. Язык представлен "снизу вверх", начиная с самых базовых элементов и заканчивая их созданием. Синтаксис верхнего уровня для каждого параметра описан в отдельной статье:
+В этой статье содержится обзор языка выражения OData, используемого в фильтрах, упорядочении и выборах. Язык представлен «снизу вверх», начиная с самых элементарных элементов и опираясь на них. Синтаксис верхнего уровня для каждого параметра описан в отдельной статье:
 
-- [синтаксис $filter](search-query-odata-filter.md)
-- [синтаксис $orderby](search-query-odata-orderby.md)
-- [синтаксис $select](search-query-odata-select.md)
+- [$filter синтаксис](search-query-odata-filter.md)
+- [$orderby синтаксис](search-query-odata-orderby.md)
+- [$select синтаксис](search-query-odata-select.md)
 
-Выражения OData находятся в диапазоне от простых до очень сложных, но все они совместно используют общие элементы. Ниже перечислены основные части выражения OData в Azure Когнитивный поиск.
+Выражения OData варьируются от простых до очень сложных, но все они имеют общие элементы. Наиболее основными частями выражения OData в Azure Cognitive Search являются:
 
-- **Пути к полям**, которые ссылаются на определенные поля индекса.
-- **Константы**, являющиеся литеральными значениями определенного типа данных.
+- **Полевые пути,** которые относятся к определенным полям вашего индекса.
+- **Константы,** которые являются буквальнозначениями определенного типа данных.
 
 > [!NOTE]
-> Терминология в Azure Когнитивный поиск отличается от [стандарта OData](https://www.odata.org/documentation/) несколькими способами. Вызов **поля** в Azure когнитивный Поиск называется **свойством** в OData и аналогичным образом для **пути поля** и **пути к свойству**. **Индекс** , содержащий **документы** в когнитивный Поиск Azure, часто упоминается в OData как **набор сущностей** , содержащий **сущности**. Терминология Azure Когнитивный поиск используется по всей этой ссылке.
+> Терминология в когнитивном поиске Azure отличается от [стандарта OData](https://www.odata.org/documentation/) несколькими способами. То, что мы называем **полем** в Azure Cognitive Search, называется **свойством** в OData и аналогично для **полевых путей** по сравнению с **траекторией свойства.** **Индекс,** содержащий **документы** в Azure Cognitive Search, в более общем плане упоминается в OData как **набор сущностей,** содержащий **сущности.** В этой ссылке используется терминология когнитивного поиска Azure.
 
-## <a name="field-paths"></a>Пути к полям
+## <a name="field-paths"></a>Полевые дорожки
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику путей к полям.
+Следующие EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику полевых путей.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -56,62 +56,62 @@ field_path ::= identifier('/'identifier)*
 identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 ```
 
-Доступна также интерактивная схема синтаксиса:
+Также доступна интерактивная диаграмма синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/#field_path)
+> [Диаграмма синтаксиса OData для когнитивного поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#field_path)
 
 > [!NOTE]
-> Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
+> Смотрите [ссылку синтаксиса выражения OData для Azure Cognitive Search](search-query-odata-syntax-reference.md) для полного EBNF.
 
-Путь к полю состоит из одного или нескольких **идентификаторов** , разделенных косыми чертами. Каждый идентификатор представляет собой последовательность символов, которая должна начинаться с буквы ASCII или знака подчеркивания и содержать только буквы ASCII, цифры и символы подчеркивания. Буквы могут быть в верхнем или нижнем регистре.
+Полевый путь состоит из одного или нескольких **идентификаторов,** разделенных слэшами. Каждый идентификатор представляет собой последовательность символов, которые должны начинаться с письма ASCII или подчеркивать, и содержат только ASCII буквы, цифры или подчеркнутые. Буквы могут быть верхнего или нижнего корпуса.
 
-Идентификатор может ссылаться либо на имя поля, либо на **переменную диапазона** в контексте [выражения коллекции](search-query-odata-collection-operators.md) (`any` или `all`) в фильтре. Переменная диапазона похожа на переменную цикла, которая представляет текущий элемент коллекции. Для сложных коллекций эта переменная представляет объект, поэтому можно использовать пути полей для ссылки на подполя переменной. Это аналогично точечной нотации во многих языках программирования.
+Идентификатор может относиться либо к имени поля, либо к **переменной** `all`диапазона в контексте выражения [коллекции](search-query-odata-collection-operators.md) (или)`any` в фильтре. Переменная диапазона подобна переменной цикла, представляющей текущий элемент коллекции. Для сложных коллекций эта переменная представляет объект, поэтому можно использовать полевые пути для обозначения подполей переменной. Это аналогично обозначению точек на многих языках программирования.
 
-Примеры путей к полям приведены в следующей таблице.
+Примеры полевых путей приведены в следующей таблице:
 
-| Путь к полю | Описание |
+| Полевый путь | Описание |
 | --- | --- |
-| `HotelName` | Ссылается на поле индекса верхнего уровня |
-| `Address/City` | Относится к `City` подполе сложного поля в индексе; в этом примере `Address` имеет тип `Edm.ComplexType` |
-| `Rooms/Type` | Ссылается на подполе `Type` поля сложной коллекции в индексе; в этом примере `Rooms` имеет тип `Collection(Edm.ComplexType)` |
-| `Stores/Address/Country` | Относится к вложенному полю `Country` поля `Address` сложной коллекции в индексе. `Stores` имеет тип `Collection(Edm.ComplexType)`, а `Address` имеет тип `Edm.ComplexType` в этом примере |
-| `room/Type` | Относится к подполю `Type` переменной диапазона `room`, например в критерии фильтра `Rooms/any(room: room/Type eq 'deluxe')` |
-| `store/Address/Country` | Относится к под`Country` подполя `Address` подполя `store` переменной диапазона, например в критерии фильтра `Stores/any(store: store/Address/Country eq 'Canada')` |
+| `HotelName` | Относится к области верхнего уровня индекса |
+| `Address/City` | Относится `City` к подпою сложного поля в индексе; `Address` тип `Edm.ComplexType` в этом примере |
+| `Rooms/Type` | Относится `Type` к подпою сложного поля сбора в индексе; `Rooms` тип `Collection(Edm.ComplexType)` в этом примере |
+| `Stores/Address/Country` | В индексе `Country` речь идет `Address` о подполе подполя сложного поля сбора в индексе; `Stores` тип `Collection(Edm.ComplexType)` и `Address` тип `Edm.ComplexType` в этом примере |
+| `room/Type` | Относится `Type` к подполе `room` переменной диапазона, например, в выражении фильтра`Rooms/any(room: room/Type eq 'deluxe')` |
+| `store/Address/Country` | Относится `Country` к подполе `Address` подполя переменной `store` диапазона, например, в выражении фильтра`Stores/any(store: store/Address/Country eq 'Canada')` |
 
-Значение пути к полю различается в зависимости от контекста. В фильтрах поле пути к полю относится к значению *одного экземпляра* поля в текущем документе. В других контекстах, таких как **$OrderBy**, **$SELECT**или в [поле поиска в полном синтаксисе Lucene](query-lucene-syntax.md#bkmk_fields), путь к полю относится к самому полю. Это различие имеет некоторые последствия использования путей к полям в фильтрах.
+Значение пути поля отличается в зависимости от контекста. В фильтрах путь поля относится к значению *одного экземпляра* поля в текущем документе. В других контекстах, таких как **$orderby,** **$select,** или в [полевом поиске в полном синтаксисе Lucene,](query-lucene-syntax.md#bkmk_fields)поле путь относится к самому полю. Эта разница имеет некоторые последствия для использования полевых путей в фильтрах.
 
-Рассмотрим путь поля `Address/City`. В фильтре это относится к одному городу для текущего документа, например "Сан-Франциско". Напротив, `Rooms/Type` относится к вспомогательному полю `Type` для многих комнат (например, "Стандартный" для первой комнаты, "Deluxe" для второй комнаты и т. д.). Поскольку `Rooms/Type` не ссылается на *единственный экземпляр* `Type`подполя, его нельзя использовать непосредственно в фильтре. Вместо этого для фильтрации по типу комнаты можно использовать [лямбда-выражение](search-query-odata-collection-operators.md) с переменной диапазона, например:
+Рассмотрим путь `Address/City`поля. В фильтре это относится к одному городу для текущего документа, как "Сан-Франциско". В отличие `Rooms/Type` от `Type` этого, относится к подпою для многих номеров (например, "стандарт" для первого номера, "люкс" для второго номера, и так далее). Поскольку `Rooms/Type` не относится к *одному экземпляру* подполя, `Type`он не может быть использован непосредственно в фильтре. Вместо этого, чтобы отфильтровать тип комнаты, вы бы использовали [выражение lambda](search-query-odata-collection-operators.md) с переменной диапазона, как это:
 
     Rooms/any(room: room/Type eq 'deluxe')
 
-В этом примере переменная диапазона `room` отображается в пути к полю `room/Type`. Таким образом, `room/Type` ссылается на тип текущей комнаты в текущем документе. Это единственный экземпляр подполя `Type`, поэтому его можно использовать непосредственно в фильтре.
+В этом примере `room` переменная `room/Type` диапазона отображается в поле. Таким образом, `room/Type` относится к типу текущей комнаты в текущем документе. Это единичная инстанция `Type` подполя, поэтому его можно использовать непосредственно в фильтре.
 
-### <a name="using-field-paths"></a>Использование путей к полям
+### <a name="using-field-paths"></a>Использование полевых путей
 
-Пути к полям используются во многих параметрах [интерфейсов API службы Azure когнитивный Поиск](https://docs.microsoft.com/rest/api/searchservice/). В следующей таблице перечислены все места, где их можно использовать, а также все ограничения на их использование.
+Полевые пути используются во многих параметрах [ApIs Azure Cognitive Search REST.](https://docs.microsoft.com/rest/api/searchservice/) В следующей таблице перечислены все места, где они могут быть использованы, а также любые ограничения на их использование:
 
 | API | Имя параметра | Ограничения |
 | --- | --- | --- |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | None |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/text/weights` | Может ссылаться только на поля с **возможностью поиска** |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/functions/fieldName` | Может ссылаться только на **фильтруемые** поля |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `search`, когда `queryType` `full` | Может ссылаться только на поля с **возможностью поиска** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `facet` | Может ссылаться только на поля с **аспектами** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `highlight` | Может ссылаться только на поля с **возможностью поиска** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `searchFields` | Может ссылаться только на поля с **возможностью поиска** |
-| [Предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions) и [Автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `searchFields` | Может ссылаться только на поля, являющиеся частью средства [подбора](index-add-suggesters.md) |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents), [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions)и [Автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `$filter` | Может ссылаться только на **фильтруемые** поля |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) и [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions) | `$orderby` | Может ссылаться только на поля, доступные для **сортировки** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents), [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions)и [Поиск](https://docs.microsoft.com/rest/api/searchservice/lookup-document) | `$select` | Может ссылаться только на **извлекаемые** поля |
+| [Создание](https://docs.microsoft.com/rest/api/searchservice/create-index) или [обновление индекса](https://docs.microsoft.com/rest/api/searchservice/update-index) | `suggesters/sourceFields` | None |
+| [Создание](https://docs.microsoft.com/rest/api/searchservice/create-index) или [обновление индекса](https://docs.microsoft.com/rest/api/searchservice/update-index) | `scoringProfiles/text/weights` | Можно ссылаться только на **поля поиска** |
+| [Создание](https://docs.microsoft.com/rest/api/searchservice/create-index) или [обновление индекса](https://docs.microsoft.com/rest/api/searchservice/update-index) | `scoringProfiles/functions/fieldName` | Может относиться только к **фильтруемым полям** |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `search`когда `queryType` это`full` | Можно ссылаться только на **поля поиска** |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `facet` | Может относиться только к **facetable** поля |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `highlight` | Можно ссылаться только на **поля поиска** |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `searchFields` | Можно ссылаться только на **поля поиска** |
+| [Предложить](https://docs.microsoft.com/rest/api/searchservice/suggestions) и [автозаполнить](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `searchFields` | Может ссылаться только на поля, являющиеся частью средства [подбора](index-add-suggesters.md) |
+| [Поиск,](https://docs.microsoft.com/rest/api/searchservice/search-documents) [Предложение,](https://docs.microsoft.com/rest/api/searchservice/suggestions)и [Автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `$filter` | Может относиться только к **фильтруемым полям** |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) и [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions) | `$orderby` | Может относиться только к **сортируемым полям** |
+| [Поиск,](https://docs.microsoft.com/rest/api/searchservice/search-documents) [Предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions), и [поиск](https://docs.microsoft.com/rest/api/searchservice/lookup-document) | `$select` | Может относиться только к **извлекаемым полям** |
 
 ## <a name="constants"></a>Константы
 
-Константы в OData — это литеральные значения заданного типа [EDM](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) (EDM). Список поддерживаемых типов см. в разделе [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) когнитивный Поиск Azure. Константы типов коллекций не поддерживаются.
+Константы в OData являются буквальными значениями данного типа [модели данных entity](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) Data (EDM). Смотрите [поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) для списка поддерживаемых типов в Azure Cognitive Search. Константы типов коллекций не поддерживаются.
 
-В следующей таблице приведены примеры констант для каждого из типов данных, поддерживаемых Когнитивный поиск Azure.
+В следующей таблице приведены примеры констант для каждого из типов данных, поддерживаемых Azure Cognitive Search:
 
-| Тип данных | Примеры констант |
+| Тип данных | Пример константы |
 | --- | --- |
 | `Edm.Boolean` | `true`, `false` |
 | `Edm.DateTimeOffset` | `2019-05-06T12:30:05.451Z` |
@@ -122,18 +122,18 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 | `Edm.Int64` | `283032927235` |
 | `Edm.String` | `'hello'` |
 
-### <a name="escaping-special-characters-in-string-constants"></a>Экранирование специальных символов в строковых константах
+### <a name="escaping-special-characters-in-string-constants"></a>Спасаясь от специальных персонажей в константах строки
 
-Строковые константы в OData разделяются одинарными кавычками. Если необходимо создать запрос со строковой константой, которая может содержать одинарные кавычки, можно попытаться поэкранировать внедренные кавычки, выполнив их удвоение.
+Строковые константы в OData разграничены отдельными котировками. Если вам нужно построить запрос с константой строки, которая сама по себе может содержать одиночные котировки, вы можете избежать встроенных кавычек, удвоив их.
 
-Например, фраза с неформатированным апострофом, например "Мария-автомобиль", будет представлена в OData в качестве строковой константы `'Alice''s car'`.
+Например, фраза с неформатизированным апострофом, как "автомобиль Алисы" будет `'Alice''s car'`представлена в OData как строка постоянной .
 
 > [!IMPORTANT]
-> При создании фильтров программным способом важно помнить о том, что строковые константы поступают из вводимых пользователем данных. Это позволяет снизить вероятность [атак путем внедрения](https://wikipedia.org/wiki/SQL_injection), особенно при использовании фильтров для реализации [фильтрации по безопасности](search-security-trimming-for-azure-search.md).
+> При построении фильтров программно, важно помнить, чтобы избежать строки константы, которые приходят от пользовательского ввода. Это делается для уменьшения возможности [атак впрыска,](https://wikipedia.org/wiki/SQL_injection)особенно при использовании фильтров для [реализации обрезки безопасности.](search-security-trimming-for-azure-search.md)
 
-### <a name="constants-syntax"></a>Синтаксис констант
+### <a name="constants-syntax"></a>Синтаксис константа
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для большинства констант, показанных в приведенной выше таблице. Грамматику для геопространственных типов можно найти в [геопространственных функциях OData в Azure когнитивный Поиск](search-query-odata-geo-spatial-functions.md).
+Следующие EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для большинства констант, показанных в приведенной выше таблице. Грамматику для геопространственных типов можно найти в [геопространственных функциях OData в Azure Cognitive Search.](search-query-odata-geo-spatial-functions.md)
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -195,21 +195,21 @@ exponent ::= 'e' sign? integer_literal
 boolean_literal ::= 'true' | 'false'
 ```
 
-Доступна также интерактивная схема синтаксиса:
+Также доступна интерактивная диаграмма синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/#constant)
+> [Диаграмма синтаксиса OData для когнитивного поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#constant)
 
 > [!NOTE]
-> Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
+> Смотрите [ссылку синтаксиса выражения OData для Azure Cognitive Search](search-query-odata-syntax-reference.md) для полного EBNF.
 
-## <a name="building-expressions-from-field-paths-and-constants"></a>Создание выражений из путей и констант полей
+## <a name="building-expressions-from-field-paths-and-constants"></a>Создание выражений из полевых путей и констант
 
-Пути к полям и константы — это основная часть выражения OData, но они уже являются полными выражениями. Фактически, параметр **$SELECT** в Azure когнитивный Поиск имеет значение Nothing, но разделенный запятыми список путей к полям, а **$OrderBy** не намного сложнее, чем **$SELECT**. Если в индексе имеется поле типа `Edm.Boolean`, можно даже написать фильтр, не имеющий пути к этому полю. Константы `true` и `false` также являются допустимыми фильтрами.
+Полевые пути и константы являются основной частью выражения OData, но они уже сами по себе являются полными выражениями. На самом деле, **$select** параметр в Azure Cognitive Search является не чем иным, как запятой разделенных список полевых путей, и **$orderby** не намного сложнее, чем **$select**. Если в индексе есть `Edm.Boolean` поле типа, можно даже написать фильтр, который является не чем иным, как траекторией этого поля. `true` Константы `false` и также действительные фильтры.
 
-Однако в большинстве случаев требуются более сложные выражения, ссылающиеся на более чем одно поле и константу. Эти выражения создаются различными способами в зависимости от параметра.
+Тем не менее, большую часть времени вам понадобятся более сложные выражения, которые относятся к более чем одному полю и констант. Эти выражения строятся по-разному в зависимости от параметра.
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для параметров **$Filter**, **$OrderBy**и **$SELECT** . Они основаны на более простых выражениях, которые ссылаются на пути к полям и константы:
+Следующие EBNF[(Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для **$filter,** **$orderby**и **$select** параметров. Они построены из более простых выражений, которые относятся к полевым путям и константам:
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -221,26 +221,26 @@ order_by_expression ::= order_by_clause(',' order_by_clause)*
 select_expression ::= '*' | field_path(',' field_path)*
 ```
 
-Доступна также интерактивная схема синтаксиса:
+Также доступна интерактивная диаграмма синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/#filter_expression)
+> [Диаграмма синтаксиса OData для когнитивного поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#filter_expression)
 
 > [!NOTE]
-> Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
+> Смотрите [ссылку синтаксиса выражения OData для Azure Cognitive Search](search-query-odata-syntax-reference.md) для полного EBNF.
 
-Параметры **$OrderBy** и **$SELECT** являются разделенными запятыми списками более простых выражений. Параметр **$Filter** является логическим выражением, состоящим из более простых подвыражений. Эти вложенные выражения комбинируются с помощью логических операторов, таких как [`and`, `or`и `not`](search-query-odata-logical-operators.md), таких операторов сравнения, как [`eq`, `lt`, `gt`и т. д](search-query-odata-comparison-operators.md)., а также операторов коллекций, таких как [`any` и `all`](search-query-odata-collection-operators.md).
+**Параметры $orderby** и **$select** являются как запятыми, разделенными списками более простых выражений. Параметр **$filter** является выражением Boolean, которое состоит из более простых субвыражений. Эти подвыражения объединяются с использованием логических операторов, таких как [ `and`, `or`и, `not` ](search-query-odata-logical-operators.md)сравнительные операторы, такие как [ `eq`, `lt` `gt`, и так далее,](search-query-odata-comparison-operators.md)и операторы сбора, такие как [ `any` и `all` ](search-query-odata-collection-operators.md).
 
-Параметры **$Filter**, **$OrderBy**и **$SELECT** подробно рассматриваются в следующих статьях:
+**Параметры $filter,** **$orderby**и **$select** более подробно рассматриваются в следующих статьях:
 
-- [Синтаксис $filter OData в Azure Когнитивный поиск](search-query-odata-filter.md)
-- [Синтаксис $orderby OData в Azure Когнитивный поиск](search-query-odata-orderby.md)
-- [Синтаксис $select OData в Azure Когнитивный поиск](search-query-odata-select.md)
+- [OData $filter синтаксис в когнитивном поиске Azure](search-query-odata-filter.md)
+- [OData $orderby синтаксис в когнитивном поиске Azure](search-query-odata-orderby.md)
+- [OData $select синтаксис в когнитивном поиске Azure](search-query-odata-select.md)
 
-## <a name="see-also"></a>См. также раздел  
+## <a name="see-also"></a>См. также  
 
-- [Навигация с аспектами в Azure Когнитивный поиск](search-faceted-navigation.md)
-- [Фильтры в Когнитивный поиск Azure](search-filters.md)
-- [Поиск документов &#40;Когнитивный поиск Azure REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Граненая навигация в azure Cognitive Search](search-faceted-navigation.md)
+- [Фильтры в когнитивном поиске Azure](search-filters.md)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
 - [Синтаксис запросов Lucene](query-lucene-syntax.md)
-- [Простой синтаксис запросов в Azure Когнитивный поиск](query-simple-syntax.md)
+- [Простой синтаксис запроса в когнитивном поиске Azure](query-simple-syntax.md)

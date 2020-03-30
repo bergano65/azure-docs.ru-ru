@@ -1,16 +1,16 @@
 ---
-title: Развертывание приложений с помощью шаблонов
-description: Ознакомьтесь с руководством по созданию шаблонов Azure Resource Manager для предоставления и развертывания приложений службы приложений.
+title: Развертывание приложений с шаблонами
+description: Найдите рекомендации по созданию шаблонов Управления ресурсами Azure для предоставления и развертывания приложений Службы приложений.
 author: tfitzmac
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
 ms.openlocfilehash: dfdfa9f69e00aa644c21fc96cb70e9fa460ca0c1
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77211697"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
@@ -22,7 +22,7 @@ ms.locfileid: "77211697"
 Определение зависимостей веб-приложений требует понимания того, как ресурсы взаимодействуют в пределах веб-приложения. Если указать зависимости в неверном порядке, это может привести к возникновению ошибок при развертывании или к наличию состояния гонки, что, в свою очередь, приводит к зависанию развертывания.
 
 > [!WARNING]
-> Если вы включили в шаблон расширение сайта MSDeploy, необходимо установить все ресурсы настройки как зависимые от ресурса MSDeploy. Изменение конфигурации приводит к асинхронной перезагрузке сайта. Если сделать ресурсы настройки зависимыми от MSDeploy, работа MSDeploy будет завершаться до перезагрузки сайта. Без этих зависимостей сайт может перезагрузиться в процессе развертывания MSDeploy. Пример шаблона WordPress с зависимостью веб-развертывания см. в [этом](https://github.com/davidebbo/AzureWebsitesSamples/blob/master/ARMTemplates/WordpressTemplateWebDeployDependency.json) разделе.
+> Если вы включили в шаблон расширение сайта MSDeploy, необходимо установить все ресурсы настройки как зависимые от ресурса MSDeploy. Изменение конфигурации приводит к асинхронной перезагрузке сайта. Если сделать ресурсы настройки зависимыми от MSDeploy, работа MSDeploy будет завершаться до перезагрузки сайта. Без этих зависимостей сайт может перезагрузиться в процессе развертывания MSDeploy. Для примера шаблона см. [шаблон WordPress с зависимостей веб-развертывания.](https://github.com/davidebbo/AzureWebsitesSamples/blob/master/ARMTemplates/WordpressTemplateWebDeployDependency.json)
 
 На следующем изображении показан порядок зависимостей для различных ресурсов службы приложений:
 
@@ -41,7 +41,7 @@ ms.locfileid: "77211697"
 **Уровень 3**
 * Система управления версиями — зависит от веб-приложения.
 * Расширение сайта MSDeploy — зависит от веб-приложения.
-* Экземпляр Application Insights Azure, предназначенный для веб-приложения, зависит от веб-приложения.
+* Пример Azure Application Insights, нацеленный на веб-приложение, зависит от веб-приложения.
 
 **Уровень 4**
 * Сертификат службы приложений — зависит от системы управления версиями или MSDeploy (если не имеется одной из этих служб). В противном случае зависит от веб-приложения.
@@ -90,7 +90,7 @@ ms.locfileid: "77211697"
 
 1. Перейдите на [консоль Kudu](https://github.com/projectkudu/kudu/wiki/Kudu-console) сайта.
 2. Перейдите в папку по следующему пути: D:\home\LogFiles\SiteExtensions\MSDeploy.
-3. Найдите файлы appManagerStatus.xml и appManagerLog.xml. В первом файле указано состояние. Во втором файле содержатся сведения об ошибке. Если ошибка не устранена, ее можно включить при запросе справки на [форуме](https://docs.microsoft.com/answers/topics/azure-webapps.html).
+3. Найдите файлы appManagerStatus.xml и appManagerLog.xml. В первом файле указано состояние. Во втором файле содержатся сведения об ошибке. Если ошибка не ясна для вас, вы можете включить его, когда вы просите о помощи на [форуме](https://docs.microsoft.com/answers/topics/azure-webapps.html).
 
 ## <a name="choose-a-unique-web-app-name"></a>Выбор уникального имени веб-приложения
 
@@ -125,13 +125,13 @@ Set-AzKeyVaultAccessPolicy `
 
 В хранилище Key Vault выберите **Сертификаты** и нажмите **Создать или импортировать**, чтобы отправить сертификат.
 
-![Импортировать сертификат](media/web-sites-rm-template-guidance/import-certificate.png)
+![Импорт сертификата](media/web-sites-rm-template-guidance/import-certificate.png)
 
 В шаблоне укажите имя сертификата для `keyVaultSecretName`.
 
 Пример шаблона см. в разделе [Развертывание сертификата веб-приложения из секрета Key Vault и его использование для создания SSL-привязки](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Руководство по развертыванию веб-приложений с помощью шаблона см. [здесь](deploy-complex-application-predictably.md).
 * Сведения о синтаксисе JSON и свойствах типов ресурсов в шаблонах см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).
