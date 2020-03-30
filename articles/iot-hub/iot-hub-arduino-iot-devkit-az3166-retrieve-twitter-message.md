@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
 ms.openlocfilehash: dc4ff35ff04680e8635d54c25212c8ae639ae472
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60779904"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
@@ -29,8 +29,8 @@ ms.locfileid: "60779904"
 
 Активная подписка Azure. Если у вас ее нет, зарегистрируйтесь одним из следующих способов:
 
-* Вы можете активировать [бесплатную 30-дневную пробную учетную запись Microsoft Azure](https://azure.microsoft.com/free/).
-* Запросите [деньги на счете в Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), если у вас есть подписка MSDN или Visual Studio.
+* Активируйте [бесплатную 30-дневную пробную версию учетной записи Microsoft Azure](https://azure.microsoft.com/free/)
+* Claim your [Azure credit](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) if you are an MSDN or Visual Studio subscriber
 
 ## <a name="open-the-project-folder"></a>Открытие папки проекта
 
@@ -52,7 +52,7 @@ ms.locfileid: "60779904"
 Разверните раздел **Arduino Examples** (Примеры Arduino) слева, перейдите в папку **Examples for MXCHIP AZ3166 (Примеры для MXCHIP AZ3166) > AzureIoT** и выберите **ShakeShake**. Откроется новое окно VS Code с папкой проекта. Если не видите раздел с MXCHIP AZ3166, проверьте правильность подключения устройства и перезапустите Visual Studio Code.  
 ![Мини-решение: примеры](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/vscode_examples.png)
 
-Пример проекта также можно открыть из палитры команд. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, затем найдите и выберите **Arduino: Examples** (Arduino: примеры).
+Пример проекта также можно открыть из палитры команд. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, а затем найдите и выберите **Arduino: Examples** (Arduino: примеры).
 
 ## <a name="provision-azure-services"></a>Подготовка служб Azure
 
@@ -92,7 +92,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 1. Нажмите `Ctrl+P`, чтобы запустить задачу `task device-upload`.
 
-2. Терминал предложит перейти в режим настройки. Для этого выполните следующие действия:
+2. Терминал предложит перейти в режим настройки. Для этого:
 
    * Нажмите и удерживайте кнопку A.
 
@@ -157,7 +157,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 Эскиз Arduino отправляет событие в Центр Интернета вещей Azure. Это событие запускает приложение решения "Функции Azure". Приложение решения "Функции Azure" содержит логику для подключения к API Twitter и получения твитов. Полученный твит упаковывается в сообщение C2D (из облака на устройство) и отправляется на вызывающее устройство.
 
-## <a name="optional-use-your-own-twitter-bearer-token"></a>Необязательно: настройка собственного маркера носителя Twitter
+## <a name="optional-use-your-own-twitter-bearer-token"></a>Необязательный шаг: настройка собственного маркера носителя Twitter
 
 Для тестирования в этом примере используется предварительно настроенный тестовый маркер носителя Twitter. Но для каждой учетной записи Twitter существует [ограничение скорости](https://dev.twitter.com/rest/reference/get/search/tweets). Если вы хотите применить собственный маркер, выполните следующие действия:
 
@@ -167,7 +167,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 3. С помощью подходящей [служебной программы](https://gearside.com/nebula/utilities/twitter-bearer-token-generator/) создайте из этих двух ключей маркер носителя Twitter.
 
-4. На [портале Azure](https://portal.azure.com/){:target="_blank"} откройте **Группа ресурсов** и найдите функцию Azure (Тип: Служба приложений) для проекта "Shake, Shake". Это имя обязательно содержит строку "shake...".
+4. На [портале Azure](https://portal.azure.com/){:target="_blank"} откройте **группу ресурсов** и найдите функцию Azure (тип: служба приложений) для проекта "Shake, Shake". Это имя обязательно содержит строку "shake...".
 
    ![azure-function](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function.png)
 
@@ -197,7 +197,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
    ![azure-function-restart](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function-restart.png)
 
-### <a name="feedback"></a>Отзыв
+### <a name="feedback"></a>Отзывы
 
 Если вы столкнулись с другими проблемами, изучите [часто задаваемые вопросы по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или свяжитесь с нами по любому из доступных каналов:
 
@@ -208,4 +208,4 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и получить твит. Выполните следующие шаги в рамках дальнейшего обучения:
 
-* [Общие сведения об акселераторе решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
+* [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)

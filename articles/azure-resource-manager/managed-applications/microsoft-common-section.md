@@ -1,15 +1,15 @@
 ---
-title: Элемент пользовательского интерфейса раздела
-description: Сведения об элементе пользовательского интерфейса Microsoft.Common.Section для портала Azure. Используйте для группировки элементов на портале для развертывания управляемых приложений.
+title: Элемент uI раздела
+description: Сведения об элементе пользовательского интерфейса Microsoft.Common.Section для портала Azure. Используется для группирования элементов на портале для развертывания управляемых приложений.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: tomfitz
 ms.openlocfilehash: 999a7386ee7c5b3ef76f87280cc2d0cd45f143cd
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75652259"
 ---
 # <a name="microsoftcommonsection-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.Section

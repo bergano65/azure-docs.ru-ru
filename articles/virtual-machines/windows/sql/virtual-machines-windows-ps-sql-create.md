@@ -16,17 +16,17 @@ ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: b1578547fbca4caaecb209021569f0fbb2f1ae24
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74790637"
 ---
 # <a name="how-to-provision-sql-server-virtual-machines-with-azure-powershell"></a>Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell
 
 В этом руководстве рассматриваются варианты создания виртуальных машин SQL Server под управлением ОС Windows с помощью Azure PowerShell. Краткий пример Azure PowerShell с дополнительными значениями по умолчанию приведен в статье [Создание виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell](quickstart-sql-vm-create-powershell.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az.md](../../../../includes/updated-for-az.md)]
 
@@ -138,7 +138,7 @@ $OSDiskName = $VMName + "OSDisk"
 New-AzResourceGroup -Name $ResourceGroupName -Location $Location
 ```
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранилища
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](https://docs.microsoft.com/powershell/module/servicemanagement/azure/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, инициализированные ранее для имени учетной записи хранения, SKU хранилища и расположения.
 
 Выполните этот командлет, чтобы создать учетную запись хранения.
@@ -337,7 +337,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualM
 > Если вы получите сообщение об ошибке диагностики загрузки, ее можно пропустить. Стандартная учетная запись хранения создается для диагностики загрузки, так как для диска виртуальной машины указана учетная запись хранилища класса Premium.
 
 ## <a name="install-the-sql-iaas-agent"></a>Установка агента SQL IaaS
-Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Чтобы установить агент на новой виртуальной машине и зарегистрировать его с помощью поставщика ресурсов, выполните команду [New-азсклвм](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для виртуальной машины SQL Server, выбрав одну из [преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/)с оплатой по мере использования или с помощью собственной лицензии. Дополнительные сведения о лицензировании см. в разделе [модель лицензирования](virtual-machines-windows-sql-ahb.md). 
+Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Чтобы установить агент на новый VM и зарегистрировать его у поставщика ресурсов, запустите команду [New-AzSqlVM](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для вашего S'L Server VM, выбирая между оплатой по мере от вас или принести свою собственную лицензию через [Azure Hybrid Benefit.](https://azure.microsoft.com/pricing/hybrid-benefit/) Для получения дополнительной информации о лицензировании [см.](virtual-machines-windows-sql-ahb.md) 
 
 
    ```powershell
@@ -353,7 +353,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualM
 Stop-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
 ```
 
-С помощью команды **Remove-AzResourceGroup** вы можете удалить все ресурсы, связанные с виртуальной машиной, без возможности восстановления. Это также приведет к окончательному удалению самой виртуальной машины, поэтому указанную команду следует использовать с осторожностью.
+С помощью команды **Remove-AzResourceGroup** вы можете удалить все ресурсы, связанные с виртуальной машиной, без возможности восстановления. Это также приведет к окончательному удалению самой виртуальной машины, поэтому используйте указанную команду с осторожностью.
 
 ## <a name="example-script"></a>Пример сценария
 Файл ниже содержит полный сценарий PowerShell для этого руководства. Предполагается, что вы уже настроили подписку Azure для использования с командами **Connect-AzAccount** и **Select-AzSubscription**.
@@ -429,7 +429,7 @@ New-AzSqlVM -ResourceGroupName $ResourceGroupName -Name $VMName -Location $Locat
 
 - подключаться к виртуальной машине с помощью протокола удаленного рабочего стола (RDP);
 - Настраивать параметры SQL Server на портале для виртуальной машины, включая:
-   - [параметры хранилища](virtual-machines-windows-sql-server-storage-configuration.md); 
+   - [Настройки хранения](virtual-machines-windows-sql-server-storage-configuration.md) 
    - [автоматизированные задачи управления](virtual-machines-windows-sql-server-agent-extension.md).
 - [настраивать подключение](virtual-machines-windows-sql-connect.md);
 - подключать клиентов и приложения к новому экземпляру SQL Server.

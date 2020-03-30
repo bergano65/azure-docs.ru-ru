@@ -15,13 +15,13 @@ ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 2d427a8b40fcb537801ce76aae6bc32fcda3a307
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71056928"
 ---
-# <a name="troubleshooting-failed-to-delete-a-virtual-network-in-azure"></a>Устранение неполадок: Не удалось удалить виртуальную сеть в Azure
+# <a name="troubleshooting-failed-to-delete-a-virtual-network-in-azure"></a>Устранение неполадок: не удалось удалить виртуальную сеть в Azure
 
 При попытке удаления виртуальной сети в Microsoft Azure могут возникать ошибки. В этой статье приведены действия по устранению этой проблемы. 
 
@@ -29,8 +29,8 @@ ms.locfileid: "71056928"
 
 ## <a name="troubleshooting-guidance"></a>Рекомендации по устранению неполадок 
 
-1. [Проверьте, работает ли шлюз виртуальной сети в виртуальной сети](#check-whether-a-virtual-network-gateway-is-running-in-the-virtual-network).
-2. [Проверьте, работает ли шлюз приложений в виртуальной сети](#check-whether-an-application-gateway-is-running-in-the-virtual-network).
+1. [Проверьте, работает ли виртуальный сетевой шлюз в виртуальной сети.](#check-whether-a-virtual-network-gateway-is-running-in-the-virtual-network)
+2. [Проверьте, работает ли шлюз приложения в виртуальной сети.](#check-whether-an-application-gateway-is-running-in-the-virtual-network)
 3. [Проверьте, включена ли доменная служба Active Directory Azure в виртуальной сети](#check-whether-azure-active-directory-domain-service-is-enabled-in-the-virtual-network).
 4. [Проверьте, подключена ли виртуальная сеть к другому ресурсу](#check-whether-the-virtual-network-is-connected-to-other-resource).
 5. [Проверьте, работает ли виртуальная машина в виртуальной сети](#check-whether-a-virtual-machine-is-still-running-in-the-virtual-network).
@@ -90,7 +90,7 @@ ms.locfileid: "71056928"
 
     Move-AzureVirtualNetwork -VirtualNetworkName "Name" -Abort
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Виртуальная сеть Azure](virtual-networks-overview.md)
 - [Виртуальная сеть Azure: часто задаваемые вопросы](virtual-networks-faq.md)

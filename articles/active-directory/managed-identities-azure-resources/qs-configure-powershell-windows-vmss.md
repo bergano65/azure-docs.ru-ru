@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых удостоверений в масштабируемых наборах виртуальных машин с помощью PowerShell — Azure AD
+title: Настройка управляемых идентификаторов на виртуальных наборах масштабов машин с помощью PowerShell - Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений, назначаемых системой и назначаемых пользователем, в масштабируемом наборе виртуальных машин с помощью PowerShell.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 755aee312fd0492fd57a82cb7a437b04ebf72987
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74547273"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-virtual-machine-scale-sets-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемых наборах виртуальных машин с помощью PowerShell
@@ -34,9 +34,9 @@ ms.locfileid: "74547273"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-the-managed-identities-for-azure-resources-work)** .
+- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-the-managed-identities-for-azure-resources-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Для выполнения операций управления, описанных в этой статье, учетной записи требуются следующие назначения управления доступом на основе ролей Azure:
 
@@ -56,7 +56,7 @@ ms.locfileid: "74547273"
 
 Чтобы создать масштабируемый набор виртуальных машин с включенным управляемым удостоверением, назначаемым системой, сделайте следующее.
 
-1. См. *Пример 1* в статье Справочник по командлетам [New-азвмссконфиг](/powershell/module/az.compute/new-azvmssconfig) , чтобы создать масштабируемый набор виртуальных машин с управляемым удостоверением, назначенным системой.  Добавьте параметр `-IdentityType SystemAssigned` в командлет `New-AzVmssConfig`:
+1. Обратитесь к *примеру 1* в справочной статье [New-AzVmssConfig](/powershell/module/az.compute/new-azvmssconfig) cmdlet для создания виртуального набора масштабов машин с установленным системой управляемым удостоверением личности.  Добавьте параметр `-IdentityType SystemAssigned` в командлет `New-AzVmssConfig`:
 
     ```powershell
     $VMSS = New-AzVmssConfig -Location $Loc -SkuCapacity 2 -SkuName "Standard_A0" -UpgradePolicyMode "Automatic" -NetworkInterfaceConfiguration $NetCfg -IdentityType SystemAssigned`
@@ -74,7 +74,7 @@ ms.locfileid: "74547273"
    Connect-AzAccount
    ```
 
-2. Сначала получите свойства масштабируемого набора виртуальных машин с помощью командлета [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss). Затем, чтобы включить управляемое удостоверение, назначаемое системой, используйте параметр `-IdentityType` в командлете [Update-AzVmss](/powershell/module/az.compute/update-azvmss).
+2. Сначала извлеките свойства набора виртуальной машины с помощью [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss) cmdlet. Затем, чтобы включить управляемое удостоверение, назначаемое системой, используйте параметр `-IdentityType` в командлете [Update-AzVmss](/powershell/module/az.compute/update-azvmss).
 
    ```powershell
    Update-AzVmss -ResourceGroupName myResourceGroup -Name -myVmss -IdentityType "SystemAssigned"

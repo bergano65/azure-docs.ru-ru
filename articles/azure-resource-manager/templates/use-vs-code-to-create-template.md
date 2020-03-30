@@ -1,124 +1,124 @@
 ---
-title: Создание шаблонов с помощью Visual Studio Code
-description: Узнайте, как установить и использовать Visual Studio Code и расширение средств Azure Resource Manager.
+title: Используйте Visual Studio Code для создания шаблонов
+description: Узнайте, как установить и использовать visual Studio Code и расширение инструментов управления ресурсами Azure.
 author: mumian
 ms.topic: conceptual
 ms.date: 08/30/2019
 ms.author: jgao
 ms.openlocfilehash: 585e2773ea5d6af184f85e65b63d39b60d632146
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79273635"
 ---
-# <a name="use-visual-studio-code-to-create-azure-resource-manager-templates"></a>Использование Visual Studio Code для создания шаблонов Azure Resource Manager
+# <a name="use-visual-studio-code-to-create-azure-resource-manager-templates"></a>Используйте Visual Studio Code для создания шаблонов менеджера ресурсов Azure
 
-Visual Studio Code — это упрощенный, многоплатформенный редактор с открытым исходным кодом. Расширение "средства шаблонов Azure Resource Manager" — это подключаемый модуль для разработки шаблонов диспетчер ресурсов. Расширение добавляет поддержку языка для шаблонов, чтобы обеспечить IntelliSense, выделение синтаксиса, встроенную справку и многие другие языковые функции. Вместе они предоставляют Рекомендуемые возможности для разработки шаблонов.
+Visual Studio Code — это легкий, многоплатформенный редактор с открытым исходным кодом. Расширение Azure Resource Manager Template Tools — это плагин для разработки шаблонов Ресурсного менеджера. Расширение добавляет языковую поддержку шаблонов, чтобы дать вам intellisense, выделение синтаксиса, помощь в строке и многие другие функции языка. Вместе они предоставляют рекомендуемый опыт разработки шаблонов.
 
 ## <a name="install-visual-studio-code"></a>Установка Visual Studio Code
 
-Visual Studio Code поддерживает MacOS, Windows и Linux.  Его можно установить из [Visual Studio Code](https://code.visualstudio.com/).
+Visual studio Code поддерживает MacOS, Windows и Linux.  Он может быть установлен из [Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="install-resource-manager-tools-extension"></a>Установка расширения для средств Resource Manager
 
 1. Откройте Visual Studio Code.
-1. В меню слева выберите **расширения** . В меню **вид** выберите **расширения** , чтобы открыть панель расширения.
+1. Выберите **расширения** из левого меню. Или из меню **View** выберите **расширения,** чтобы открыть панель расширений.
 
-    ![Установить расширение средств диспетчер ресурсов Visual Studio Code](./media/use-vs-code-to-create-template/resource-manager-visual-studio-code-tools-extension.png)
-1. Выполните поиск по запросу **Диспетчер ресурсов**.
-1. Выберите пункт **установить** в разделе **Azure Resource Manager инструменты**.
+    ![Установка visual Studio Code Resource Manager Tools](./media/use-vs-code-to-create-template/resource-manager-visual-studio-code-tools-extension.png)
+1. Поиск **менеджера ресурсов**.
+1. Выберите **Установку** под **инструментами управления ресурсами Azure.**
 
 ## <a name="the-extension-features"></a>Функции расширения
 
-### <a name="colorization-for-template-language-expressions"></a>Выделение цветом для выражений языка шаблона
+### <a name="colorization-for-template-language-expressions"></a>Раскраска для выражений языка шаблонов
 
-Параметры, переменные, функции, имена и выражения имеют цветовую кодировку, как показано на следующем снимке экрана:
+Параметры, переменные, функции, имена и выражения закодированы цветом, как показано на следующем скриншоте:
 
-![Раскраска расширений средств диспетчер ресурсов Visual Studio Code](./media/use-vs-code-to-create-template/resource-manager-tools-extension-colorization.png)
+![Visual Studio Code Resource Manager инструменты расширения окраски](./media/use-vs-code-to-create-template/resource-manager-tools-extension-colorization.png)
 
-Представление структуры шаблонов упрощает навигацию по большим шаблонам.
+Представление набросков шаблонов позволяет легко перемещаться по большим шаблонам.
 
 ### <a name="intellisense"></a>Intellisense
 
-Расширение шаблона диспетчер ресурсов известно возможное завершение имен функций, параметров, переменных и ссылок. При вводе появляется всплывающее предложение IntelliSense. Если вы продолжите вводить символы, список членов (переменных, методов и т. д.) фильтруется, добавляя только те элементы, которые содержат введенные символы. Нажатие клавиши **Tab** или **Ввод** вставляет выбранный элемент.
+Расширение шаблона менеджера ресурсов знает возможные завершения для имен функций, параметров, переменных и ссылок. Предложения IntelliSense всплывают при вводе. Если вы продолжаете печатать символы, список участников (переменные, методы и т.д.) фильтруется, чтобы включить только символы, содержащие набранные символы. Нажатие **вкладки** или **ввода** вставляет выбранный участник.
 
-- Имена встроенных функций
+- Встроенные имена функций
 
-    ![Функции IntelliSense Visual Studio Code расширения средств диспетчер ресурсов](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-functions.png)
+    ![Visual Studio Code Resource Manager инструменты расширения функций intellisense](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-functions.png)
 
 - Ссылки на параметры
 
-    ![Visual Studio Code параметры IntelliSense расширения средств диспетчер ресурсов](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-parameters.png)
+    ![Visual Studio Code Resource Manager инструменты расширения intellisense параметры](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-parameters.png)
 
-- Ссылки на переменные
+- Переменные ссылки
 
-    ![Visual Studio Code переменные IntelliSense расширения средств диспетчер ресурсов](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-variables.png)
+    ![Visual Studio Code Resource Manager инструменты расширения intellisense переменных](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-variables.png)
 
-- свойства resourceGroup ()
+- ресурсгруппа () свойства
 
-    ![Функции IntelliSense Visual Studio Code расширения средств диспетчер ресурсов](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-resourcegroup.png)
+    ![Visual Studio Code Resource Manager инструменты расширения функций intellisense](./media/use-vs-code-to-create-template/resource-manager-tools-extension-intellisense-resourcegroup.png)
 
-Кроме того, IntelliSense также работает с свойствами подписки () и свойствами ссылок на переменные, являющиеся объектами.
+Кроме того, intellisense также работает с свойствами подписки () и свойствами ссылок на переменные, которые являются объектами.
 
-### <a name="signature-help-for-function-parameters"></a>Справка по сигнатуре для параметров функции
+### <a name="signature-help-for-function-parameters"></a>Справка по подписи для параметров функции
 
-При наведении указателя мыши на имена функций в расширении отображается справка по сигнатуре для параметров функции.
+При нависке над именами функций расширение показывает справку подписи для параметров функции.
 
-![Функция подписи расширений Visual Studio Code диспетчер ресурсов Tools](./media/use-vs-code-to-create-template/resource-manager-tools-extension-signature-function.png)
+![Visual Studio Code Resource Manager инструменты расширения функции подписи](./media/use-vs-code-to-create-template/resource-manager-tools-extension-signature-function.png)
 
-### <a name="go-to-definition-for-variable-and-parameter-references"></a>Переход к определению для ссылок на переменные и параметры
+### <a name="go-to-definition-for-variable-and-parameter-references"></a>Перейти к определению для переменных и параметрных ссылок
 
-Вы можете перейти к определению с помощью **сочетания клавиш CTRL + щелчок**или в контекстном меню, как показано на снимке экрана: ![Visual Studio Code диспетчер ресурсов Tools Extensions Go to Definition](./media/use-vs-code-to-create-template/resource-manager-tools-extension-context-menu.png)
+Вы можете перейти к определению с **помощью Ctrl-Click**, или ![с помощью контекстного меню, как показано на скриншоте: Visual Studio Code Resource Manager инструменты расширения перейти к определению](./media/use-vs-code-to-create-template/resource-manager-tools-extension-context-menu.png)
 
-Вы можете открыть определение рядом с помощью **клавиш Ctrl + Alt + щелчок**.
+Вы можете открыть определение в сторону с **помощью Ctrl-Alt-Нажмите**.
 
-### <a name="peek-for-variable-and-parameter-definitions"></a>Просмотр определений переменных и параметров
+### <a name="peek-for-variable-and-parameter-definitions"></a>Подглядывание для определения переменных и параметров
 
-Чтобы открыть просматриваемый редактор, используйте контекстное меню, как показано на предыдущем снимке экрана.
+Чтобы открыть заглянунный редактор, используйте контекстное меню, как показано на предыдущем скриншоте.
 
-На следующем снимке экрана показан редактор просмотра:
+На следующем скриншоте показан редактор peek:
 
-![Редактор просмотра Visual Studio Code инструментов диспетчер ресурсов Tools](./media/use-vs-code-to-create-template/resource-manager-tools-extension-peek-editor.png)
+![Visual Studio Code Resource Manager инструменты расширения заглянуть редактор](./media/use-vs-code-to-create-template/resource-manager-tools-extension-peek-editor.png)
 
-### <a name="find-all-references-for-variables-and-parameters"></a>Найти все ссылки для переменных и параметров
+### <a name="find-all-references-for-variables-and-parameters"></a>Найти все ссылки на переменные и параметры
 
-Чтобы найти все ссылки, используйте контекстное меню, как показано на предыдущем снимке экрана.
+Чтобы найти все ссылки, используйте контекстное меню, как показано на предыдущем скриншоте.
 
-На следующем снимке экрана показано, как будут выделены ссылки:
+На следующем скриншоте показано, как высвещаются ссылки:
 
-![Расширения средств диспетчер ресурсов инструментов Visual Studio Code найти все ссылки](./media/use-vs-code-to-create-template/resource-manager-tools-extension-find-all-references.png)
+![Визуальный Studio Code Ресурс Менеджер инструменты расширения найти все ссылки](./media/use-vs-code-to-create-template/resource-manager-tools-extension-find-all-references.png)
 
-### <a name="rename-all-references-for-variables-and-parameters"></a>Переименование всех ссылок для переменных и параметров
+### <a name="rename-all-references-for-variables-and-parameters"></a>Переименуй все ссылки для переменных и параметров
 
-Чтобы переименовать все ссылки для переменных и параметров, используйте контекстное меню, как показано на предыдущем снимке экрана.
+Чтобы переименовать все ссылки для переменных и параметров, используйте контекстное меню, как показано на предыдущем скриншоте.
 
-### <a name="hover-for-parameter-description"></a>Наведите указатель мыши на описание параметра
+### <a name="hover-for-parameter-description"></a>Нависшие для описания параметров
 
-![Определение Visual Studio Code расширений диспетчер ресурсов инструментов](./media/use-vs-code-to-create-template/resource-manager-tools-extension-hover-parameters.png)
+![Visual Studio Code Resource Manager инструменты расширений нависшие определение](./media/use-vs-code-to-create-template/resource-manager-tools-extension-hover-parameters.png)
 
 ### <a name="brace-matching"></a>Соответствие скобок
 
-Парные скобки выделяются сразу же после того, как курсор находится рядом с одним из них. При нажатии фигурной скобки также выделяется парная фигурная скобка, как показано на следующем снимке экрана:
+Соответствующие скобки подчеркиваются, как только курсор находится рядом с одним из них. При нажатии скобки, соответствующие скобки также выделены, как показано на следующем скриншоте:
 
-![Visual Studio Code расширения средств диспетчер ресурсов средства сопоставления фигурных скобок](./media/use-vs-code-to-create-template/resource-manager-tools-extension-brace-matching.png)
+![Visual Studio Code Resource Manager инструменты расширения скобки соответствия](./media/use-vs-code-to-create-template/resource-manager-tools-extension-brace-matching.png)
 
-### <a name="show-errors-and-warnings"></a>Показывать ошибки и предупреждения
+### <a name="show-errors-and-warnings"></a>Отображение ошибок и предупреждений
 
-К ошибкам, идентифицируемым расширением, относятся:
+Ошибки, выявленные расширением, включают:
 
-- Ссылки на неопределенные параметры
-- Неопределенные ссылки на переменные
-- Нераспознанные имена функций
-- Использование функции Reference () в определении переменной
-- Неверное число аргументов в функциях
+- Неопределенные ссылки параметра
+- Неопределенные ссылки переменной
+- Непризнанные имена функций
+- использование функций в переменном определении
+- Неправильное количество аргументов в функциях
 
-В число предупреждений входят следующие:
+Предупреждения включают в себя:
 
-- Неиспользуемые параметры
-- Неиспользуемые переменные
+- Неиспользованные параметры
+- Неиспользованные переменные
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о создании шаблонов Azure Resource Manager см. в разделе [учебник. Создание и развертывание первого шаблона Azure Resource Manager](template-tutorial-create-first-template.md).
-- Чтобы выполнить быстрый запуск с помощью Visual Studio Code, см [. раздел Краткое руководство. Создание шаблонов Azure Resource Manager с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md)
+- Чтобы узнать о создании шаблонов [Tutorial: Create and deploy your first Azure Resource Manager template](template-tutorial-create-first-template.md)управления ресурсами Azure, см.
+- Чтобы пройти быстрый запуск с помощью Visual Studio Code, [см.](quickstart-create-templates-use-visual-studio-code.md)

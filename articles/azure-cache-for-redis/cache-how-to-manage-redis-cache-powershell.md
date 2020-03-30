@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
 ms.openlocfilehash: a385d3ed7ef46389f96de72c98ffc29cebf60ec4
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79278536"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
 > * [PowerShell](cache-how-to-manage-redis-cache-powershell.md)
-> * [Azure CLI](cache-manage-cli.md)
+> * [Лазурный CLI](cache-manage-cli.md)
 > 
 > 
 
@@ -28,7 +28,7 @@ ms.locfileid: "79278536"
 
 Дополнительные сведения о классической модели развертывания см. в статье [Azure Resource Manager vs. classic deployment: Understand deployment models and the state of your resources](../azure-resource-manager/management/deployment-models.md) (Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Если вы уже установили Azure PowerShell, необходимо использовать Azure PowerShell 1.0.0 или более поздней версии. Установленную версию Azure PowerShell можно узнать в командной строке Azure PowerShell с помощью такой команды:
 
     Get-Module Az | format-table version
@@ -117,10 +117,10 @@ ms.locfileid: "79278536"
 ### <a name="properties-used-for-azure-cache-for-redis-powershell"></a>Свойства, используемые в командлетах PowerShell кэша Azure для Redis
 Приведенная ниже таблица содержит свойства и описания параметров, часто используемых при создании экземпляров кэша Azure для Redis с помощью Azure PowerShell и управлении такими экземплярами.
 
-| Параметр | Description | По умолчанию |
+| Параметр | Описание | Значение по умолчанию |
 | --- | --- | --- |
-| Имя |Имя кэша | |
-| Location |Расположение кэша | |
+| name |Имя кэша | |
+| Расположение |Расположение кэша | |
 | ResourceGroupName |Имя группы ресурсов, в которой необходимо создать кэш | |
 | Размер |Размер кэша. Допустимые значения: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250 МБ, 1 ГБ, 2,5 ГБ, 6 ГБ, 13 ГБ, 26 ГБ, 53 ГБ |1 ГБ |
 | ShardCount |Число сегментов, которые будут созданы при создании кэша уровня Premium с включенной кластеризацией. Допустимые значения: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
@@ -134,7 +134,7 @@ ms.locfileid: "79278536"
 | KeyType |Определяет, какой ключ доступа будет создаваться повторно при обновлении ключей доступа. Допустимые значения: Primary, Secondary | |
 
 ### <a name="redisconfiguration-properties"></a>Свойства RedisConfiguration
-| Свойство | Description | Ценовые категории |
+| Свойство | Описание | Ценовые категории |
 | --- | --- | --- |
 | rdb-backup-enabled |Указывает на то, включен ли параметр [Сохраняемость данных Redis](cache-how-to-premium-persistence.md) . |Только "Премиум" |
 | rdb-storage-connection-string |Строка подключения к учетной записи хранения для параметра [Сохраняемость данных Redis](cache-how-to-premium-persistence.md) |Только "Премиум" |

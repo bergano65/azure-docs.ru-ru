@@ -1,7 +1,7 @@
 ---
-title: Справочник по логическому оператору OData
+title: Ссылка на логический оператор OData
 titleSuffix: Azure Cognitive Search
-description: Справочная документация по синтаксису и использованию логических операторов OData, и, или, а не в запросах Azure Когнитивный поиск.
+description: Синтаксис и справочная документация для использования логических операторов OData, а также, или, или нет, в запросах Azure Cognitive Search.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -20,25 +20,25 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 2d3952f7d2adc26892cbebcd962f2ea25b86de7d
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74113187"
 ---
-# <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Логические операторы OData в Azure Когнитивный поиск — `and`, `or`, `not`
+# <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Логические операторы OData в `and` `or`Azure Cognitive Search -`not`
 
-[Выражения фильтра OData](query-odata-filter-orderby-syntax.md) в когнитивный Поиск Azure — это логические выражения, которые оцениваются как `true` или `false`. Сложный фильтр можно написать, написав ряд [простых фильтров](search-query-odata-comparison-operators.md) и создав их с помощью логических операторов из последовательности [логических](https://en.wikipedia.org/wiki/Boolean_algebra)операций:
+[Выражения фильтра OData](query-odata-filter-orderby-syntax.md) в Azure Cognitive Search являются `true` `false`выражениями Boolean, которые оценивают или . Вы можете написать сложный фильтр, написав серию [простых фильтров](search-query-odata-comparison-operators.md) и составляя их с помощью логических операторов из [Allean algebra:](https://en.wikipedia.org/wiki/Boolean_algebra)
 
-- `and`: бинарный оператор, результатом которого является `true`, если оба его левого и правого вложенных выражения имеют `true`.
-- `or`: бинарный оператор, который вычисляет значение `true`, если одно из его левых или правых выражений имеет значение `true`.
-- `not`: унарный оператор, результатом которого является `true`, если его вложенное выражение имеет значение `false`, и наоборот.
+- `and`: Двоичный оператор, `true` который оценивает, если его левая `true`и правая суб-выражения оценить.
+- `or`: Двоичный оператор, `true` который оценивает, если либо один из его `true`левых или правых суб-выражений оценивает .
+- `not`: Неат-оператор, `true` который оценивает, если его `false`подвыражение оценивает, и наоборот.
 
-Вместе с [операторами коллекций `any` и `all`](search-query-odata-collection-operators.md)позволяют создавать фильтры, которые могут выразить очень сложные условия поиска.
+Они, вместе с [операторами `any` сбора и, `all` ](search-query-odata-collection-operators.md)позволяют создавать фильтры, которые могут выразить очень сложные критерии поиска.
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику выражения OData, в которой используются логические операторы.
+Следующая форма EBNF[(Расширенная форма Backus-Naur)](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)определяет грамматику выражения OData, использующее логических операторов.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -48,31 +48,31 @@ logical_expression ::=
     | 'not' boolean_expression
 ```
 
-Доступна также интерактивная схема синтаксиса:
+Также доступна интерактивная диаграмма синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/#logical_expression)
+> [Диаграмма синтаксиса OData для когнитивного поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#logical_expression)
 
 > [!NOTE]
-> Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
+> Смотрите [ссылку синтаксиса выражения OData для Azure Cognitive Search](search-query-odata-syntax-reference.md) для полного EBNF.
 
-Существует две формы логических выражений: binary (`and`/`or`), где есть два подвыражения и унарный (`not`), где имеется только один. Подвыражения могут быть логическими выражениями любого типа:
+Есть две формы логических выражений: двоичный (`and`/`or`), где есть`not`два суб-выражений, и неарий ( ), где есть только один. Подвыражениями могут быть булейские выражения любого рода:
 
-- Поля или переменные диапазона типа `Edm.Boolean`
-- Функции, возвращающие значения типа `Edm.Boolean`, такие как `geo.intersects` или `search.ismatch`
-- [Выражения сравнения](search-query-odata-comparison-operators.md), такие как `rating gt 4`
-- [Выражения коллекции](search-query-odata-collection-operators.md), такие как `Rooms/any(room: room/Type eq 'Deluxe Room')`
-- Логические литералы `true` или `false`.
-- Другие логические выражения, созданные с помощью `and`, `or`и `not`.
+- Поля или переменные диапазона типа`Edm.Boolean`
+- Функции, возвращающие `Edm.Boolean`значения типа, такие как `geo.intersects` или`search.ismatch`
+- [Выражения сравнения,](search-query-odata-comparison-operators.md)такие как`rating gt 4`
+- [Выражения коллекции,](search-query-odata-collection-operators.md)такие как`Rooms/any(room: room/Type eq 'Deluxe Room')`
+- Boolean буквальные `true` или `false`.
+- Другие логические выражения `and` `or`построены `not`с использованием , и .
 
 > [!IMPORTANT]
-> Существуют ситуации, когда не все виды вложенных выражений можно использовать с `and`/`or`, особенно внутри лямбда-выражений. Дополнительные сведения см. [в разделе операторы коллекции OData в когнитивный Поиск Azure](search-query-odata-collection-operators.md#limitations) .
+> Есть некоторые ситуации, когда не все виды суб-выражения могут быть использованы с `and` / `or`, особенно внутри lambda выражений. Подробнее о [операторах сбора данных oData читайте в материале Azure Cognitive Search.](search-query-odata-collection-operators.md#limitations)
 
-### <a name="logical-operators-and-null"></a>Логические операторы и `null`
+### <a name="logical-operators-and-null"></a>Логические операторы и`null`
 
-Большинство логических выражений, таких как функции и сравнения, не могут формировать `null` значений, а логические операторы не могут применяться к литералу `null` напрямую (например, `x and null` не разрешено). Однако логические поля можно `null`, поэтому необходимо знать, как работают операторы `and`, `or`и `not` при наличии значения NULL. Это приводится в следующей таблице, где `b` является полем типа `Edm.Boolean`:
+Большинство выражений Boolean, таких как `null` функции и сравнения, не могут `null` производить значения, и `x and null` логические операторы не могут быть применены к буквальному непосредственно (например, не допускается). Тем не менее, `null`Boolean поля могут быть, `and`так `or`что `not` вы должны быть осведомлены о том, как , и операторы ведут себя в присутствии нуля. Это кратко в следующей таблице, где `b` поле `Edm.Boolean`типа:
 
-| Выражение | Результат, когда `b` `null` |
+| Выражение | Результат, `b` когда есть`null` |
 | --- | --- |
 | `b` | `false` |
 | `not b` | `true` |
@@ -87,29 +87,29 @@ logical_expression ::=
 | `b or true` | `true` |
 | `b or false` | `false` |
 
-Если логическое поле `b` отображается само по себе в критерии фильтра, оно ведет себя так, как если бы оно было написано `b eq true`, поэтому если `b` `null`, выражение принимает значение `false`. Аналогичным образом `not b` ведет себя как `not (b eq true)`, поэтому он принимает значение `true`. Таким образом, `null` поля ведут себя так же, как `false`. Это согласуется с тем, как они работают при объединении с другими выражениями с использованием `and` и `or`, как показано в таблице выше. Несмотря на это, прямое сравнение `false` (`b eq false`) по-прежнему будет иметь `false`. Иными словами, `null` не равно `false`, хотя он работает так же, как в логических выражениях.
+Когда `b` поле Boolean появляется само по себе в выражении фильтра, `b eq true`оно `b` ведет `null`себя так, как если бы оно было написано, так что если есть, то выражение оценивается в. `false` Аналогичным `not b` образом, ведет `not (b eq true)`себя как , `true`так что он оценивает . Таким образом, `null` поля ведут себя `false`так же, как и . Это согласуется с тем, как они ведут `and` `or`себя в сочетании с другими выражениями, использующими и, как показано в таблице выше. Несмотря на это, `false` `b eq false`прямое сравнение `false`с ( ) будет по-прежнему оценивать . Другими словами, `null` не `false`равна , даже если он ведет себя, как это в Boolean выражений.
 
 ## <a name="examples"></a>Примеры
 
-Сопоставление документов, в которых поле `rating` находится в диапазоне от 3 до 5 включительно:
+Документы матча, `rating` где поле между 3 и 5, включительно:
 
     rating ge 3 and rating le 5
 
-Сопоставление документов, в которых все элементы поля `ratings` меньше 3 или больше 5:
+Документы соответствия, `ratings` где все элементы поля меньше, чем 3 или больше, чем 5:
 
     ratings/all(r: r lt 3 or r gt 5)
 
-Сопоставление документов, в которых поле `location` находится внутри заданного многоугольника, а документ не содержит термин "общедоступный".
+Совпадение `location` документов, где поле находится в пределах данного полигона, и документ не содержит термина "общественный".
 
     geo.intersects(location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))') and not search.ismatch('public')
 
-Сопоставьте документы для гостиниц в Vancouver, Канаде, где имеется комната Deluxe с базовой частотой менее 160:
+Матч документы для отелей в Ванкувере, Канада, где есть номер повышенной комфортности с базовой ставкой менее 160:
 
     Address/City eq 'Vancouver' and Address/Country eq 'Canada' and Rooms/any(room: room/Type eq 'Deluxe Room' and room/BaseRate lt 160)
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
-- [Фильтры в Когнитивный поиск Azure](search-filters.md)
-- [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
-- [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Когнитивный поиск Azure REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Фильтры в когнитивном поиске Azure](search-filters.md)
+- [Обзор языка выражения OData для когнитивного поиска Azure](query-odata-filter-orderby-syntax.md)
+- [Ссылка синтаксиса выражения OData для когнитивного поиска Azure](search-query-odata-syntax-reference.md)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)

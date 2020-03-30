@@ -5,36 +5,36 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc
 ms.openlocfilehash: f5788f07dd4a4f03a95efaea4b741cd64c930ac5
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78251789"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
 Из этой статьи вы узнаете как развернуть кластер Service Fabric на платформе Linux в [виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md) с помощью Azure CLI и шаблона. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы
 
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [интерфейс командной строки Service Fabric](service-fabric-cli.md).
-* Установите [Azure CLI](/cli/azure/install-azure-cli).
+* Если у вас нет подписки НаAz, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* Установка [сервисной ткани CLI](service-fabric-cli.md)
+* Установка [Azure CLI](/cli/azure/install-azure-cli)
 * Чтобы узнать об основных понятиях кластеров, прочитайте статью [Общие сведения о кластерах Service Fabric в Azure](service-fabric-azure-clusters-overview.md).
 * [Спланируйте и подготовьте](service-fabric-cluster-azure-deployment-preparation.md) развертывание рабочего кластера.
 
-Ниже приведены процедуры для создания кластера Service Fabric с семью узлами. Чтобы рассчитать затраты, связанные с запуском кластера Service Fabric в Azure, используйте [калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/).
+Ниже приведены процедуры для создания кластера Service Fabric с семью узлами. Чтобы рассчитать затраты, связанные с выполнением кластера Service Fabric в Azure, используйте [калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/).
 
 ## <a name="download-and-explore-the-template"></a>Скачивание и изучение шаблона
 
 Скачайте следующие файлы шаблона Resource Manager:
 
-* [AzureDeploy. JSON][template]
-* [AzureDeploy. parameters. JSON][parameters]
+* [AzureDeploy.json][template]
+* [AzureDeploy.Parameters.json][parameters]
 
-Этот шаблон позволяет развернуть безопасный кластер семи виртуальных машин и трех типов узлов в виртуальную сеть.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). [AzureDeploy. JSON][template] развертывает числовые ресурсы, включая следующие.
+Этот шаблон позволяет развернуть безопасный кластер семи виртуальных машин и трех типов узлов в виртуальную сеть.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). [AzureDeploy.json][template] развертывает ряд ресурсов, включая следующие.
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
@@ -70,7 +70,7 @@ ms.locfileid: "78251789"
 
 ## <a name="set-template-parameters"></a>Установка параметров шаблона
 
-В файле параметров [AzureDeploy. parameters][parameters] объявляются многие значения, используемые для развертывания кластера и связанных с ним ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
+В файле параметров [AzureDeploy.Parameters][parameters] объявляются многие значения, используемые для развертывания кластера и связанных ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
 
 |Параметр|Пример значения|Примечания|
 |---|---||
@@ -86,7 +86,7 @@ ms.locfileid: "78251789"
 
 ## <a name="deploy-the-virtual-network-and-cluster"></a>Развертывание кластера и виртуальной сети
 
-Настройте топологию сети и разверните кластер Service Fabric. Шаблон диспетчер ресурсов [AzureDeploy. JSON][template] создает виртуальную сеть (vnet) и подсеть для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
+Настройте топологию сети и разверните кластер Service Fabric. Шаблон Resource Manager [AzureDeploy.json][template] создает виртуальную сеть и подсеть для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
 
 Шаблон в этой статье развертывает кластер, использующий отпечаток сертификата для идентификации сертификата кластера.  Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет управление сертификатами. Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им.  Сведения о том, как обновить кластер для использования общих имен сертификата для управления сертификатами, см. в статье [Переход с отпечатка на общее имя сертификата для кластера](service-fabric-cluster-change-cert-thumbprint-to-cn.md).
 

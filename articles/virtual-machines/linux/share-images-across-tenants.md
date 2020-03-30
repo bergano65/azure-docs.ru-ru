@@ -1,6 +1,6 @@
 ---
-title: Совместное использование образов коллекций в клиентах в Azure
-description: Узнайте, как совместно использовать образы виртуальных машин в клиентах Azure с помощью общих коллекций образов.
+title: Совместное изображение галереи между арендаторами в Azure
+description: Узнайте, как обмениваться изображениями VM между арендаторами Azure с помощью общих галерей изображений.
 services: virtual-machines-linux
 author: cynthn
 manager: gwallace
@@ -11,24 +11,24 @@ ms.topic: article
 ms.date: 04/05/2019
 ms.author: cynthn
 ms.openlocfilehash: 18337620a6f9506e402149909667026e4a8ba7eb
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74034971"
 ---
-# <a name="share-gallery-vm-images-across-azure-tenants"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure
+# <a name="share-gallery-vm-images-across-azure-tenants"></a>Поделитесь изображениями галереи VM между арендаторами Azure
 
-Коллекции общих образов позволяют обмениваться изображениями с помощью RBAC. RBAC можно использовать для совместного использования образов в клиенте и даже для пользователей за пределами клиента. Дополнительные сведения об этом простом параметре общего доступа см. в разделе [общий доступ к коллекции](/azure/virtual-machines/linux/shared-images-portal#share-the-gallery).
+Общие изображения галереи позволяют обмениваться изображениями с помощью RBAC. Вы можете использовать RBAC для обмена изображениями в вашем арендаторе, и даже для физических лиц за пределами вашего арендатора. Для получения дополнительной информации об этом простом варианте [совместного](/azure/virtual-machines/linux/shared-images-portal#share-the-gallery)использования см.
 
 [!INCLUDE [virtual-machines-share-images-across-tenants](../../../includes/virtual-machines-share-images-across-tenants.md)]
 
 > [!IMPORTANT]
-> Вы не можете использовать портал для развертывания виртуальной машины из образа в другом клиенте Azure. Чтобы создать виртуальную машину из образа, совместно используемого клиентами, необходимо использовать Azure CLI или [PowerShell](../windows/share-images-across-tenants.md).
+> Вы не можете использовать портал для развертывания VM из изображения в другом лазурном арендаторе. Для создания VM из изображения, совместно гостем, совместно с арендаторами, необходимо использовать Azure CLI или [Powershell.](../windows/share-images-across-tenants.md)
 
-## <a name="create-a-vm-using-azure-cli"></a>Создание виртуальной машины с помощью Azure CLI
+## <a name="create-a-vm-using-azure-cli"></a>Создание VM с помощью Azure CLI
 
-Войдите в субъект-службу для клиента 1, используя appID, ключ приложения и идентификатор клиента 1. При необходимости можно использовать `az account show --query "tenantId"` для получения идентификаторов клиентов.
+Войти в основной сервис для арендатора 1 с помощью appID, ключа приложения и идентификатора арендатора 1. Вы можете `az account show --query "tenantId"` использовать, чтобы получить итоговые иудки арендатора, если это необходимо.
 
 ```azurecli-interactive
 az account clear
@@ -36,14 +36,14 @@ az login --service-principal -u '<app ID>' -p '<Secret>' --tenant '<tenant 1 ID>
 az account get-access-token 
 ```
  
-Войдите в субъект-службу для клиента 2, используя appID, ключ приложения и идентификатор клиента 2:
+Войти в основной сервис для арендатора 2 с помощью appID, ключа приложения и идентификатора арендатора 2:
 
 ```azurecli-interactive
 az login --service-principal -u '<app ID>' -p '<Secret>' --tenant '<tenant 2 ID>'
 az account get-access-token
 ```
 
-Создайте виртуальную машину. Замените сведения в примере собственными.
+Создайте виртуальную машину. Замените информацию в примере своей.
 
 ```azurecli-interactive
 az vm create \
@@ -54,6 +54,6 @@ az vm create \
   --generate-ssh-keys
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок с коллекциями общих образов](troubleshooting-shared-images.md).

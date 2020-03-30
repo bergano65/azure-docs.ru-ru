@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2018
 ms.author: kumud
-ms.openlocfilehash: f84e8a24e8f28cdccc987afbd1449cb17422ce0c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 6939ea2497a9f12321e1a6dfb9bf9fbb353bc7db
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79279758"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80240777"
 ---
 # <a name="diagnose-a-virtual-machine-network-traffic-filter-problem"></a>Диагностика проблемы с фильтрацией трафика на виртуальной машине
 
@@ -79,9 +79,9 @@ ms.locfileid: "79279758"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если PowerShell работает локально, необходимо также выполнить `Connect-AzAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы запустите PowerShell с компьютера, вам нужен модуль Azure PowerShell, версия 1.0.0 или позже. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы работаете в PowerShell локально, `Connect-AzAccount` вам также необходимо запустить для входа в Azure с учетной записью, которая имеет [необходимые разрешения.](virtual-network-network-interface.md#permissions)
 
-Получите действующие правила безопасности для сетевого интерфейса с помощью [Get-азеффективенетворксекуритиграуп](/powershell/module/az.network/get-azeffectivenetworksecuritygroup). В следующем примере извлекаются действующие правила безопасности для сетевого интерфейса с именем *myVMVMNic*, который находится в группе ресурсов с именем *myResourceGroup*:
+Получите эффективные правила безопасности для сетевого интерфейса с [Get-AzEffectiveNetworkSecurityGroup.](/powershell/module/az.network/get-azeffectivenetworksecuritygroup) В следующем примере извлекаются действующие правила безопасности для сетевого интерфейса с именем *myVMVMNic*, который находится в группе ресурсов с именем *myResourceGroup*:
 
 ```azurepowershell-interactive
 Get-AzEffectiveNetworkSecurityGroup `
@@ -103,7 +103,7 @@ $VM.NetworkProfile
 
 Вы получите примерно такой результат:
 
-```powershell
+```output
 NetworkInterfaces
 -----------------
 {/subscriptions/<ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic
@@ -113,9 +113,9 @@ NetworkInterfaces
 
 ## <a name="diagnose-using-azure-cli"></a>Диагностика с помощью Azure CLI
 
-При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этой статьи требуется Azure CLI 2.0.32 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI работает локально, необходимо также выполнить `az login` и войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этой статьи требуется Azure CLI 2.0.32 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli) Если Azure CLI работает локально, необходимо также выполнить `az login` и войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
 
-Получите действующие правила безопасности для сетевого интерфейса с помощью [az network nic list-effective-nsg](/cli/azure/network/nic#az-network-nic-list-effective-nsg). В следующем примере извлекаются действующие правила безопасности для сетевого интерфейса с именем *myVMVMNic*, который находится в группе ресурсов с именем *myResourceGroup*:
+Получите действующие правила безопасности для сетевого интерфейса с помощью [az network nic list-effective-nsg](/cli/azure/network/nic#az-network-nic-list-effective-nsg). Следующий пример получает эффективные правила безопасности для сетевого интерфейса под названием *myVMVMNic,* который находится в группе ресурсов под названием *myResourceGroup:*
 
 ```azurecli-interactive
 az network nic list-effective-nsg \
@@ -138,7 +138,7 @@ az vm show \
 
 В возвращенном результате отобразятся примерно такие сведения:
 
-```azurecli
+```output
 "networkProfile": {
     "additionalProperties": {},
     "networkInterfaces": [
@@ -177,13 +177,13 @@ az vm show \
 | Протокол                | TCP                                                                                |
 | Действие                  | Allow                                                                              |
 | Приоритет                | 100                                                                                |
-| Имя                    | Allow-HTTP-All                                                                     |
+| name                    | Allow-HTTP-All                                                                     |
 
 Когда вы создадите правило, входящий трафик из Интернета через порт 80 будет разрешен, так как приоритет этого правила выше, чем приоритет правила безопасности по умолчанию с именем *DenyAllInBound*, запрещающего передачу трафика. Узнайте, как [создать правило безопасности](manage-network-security-group.md#create-a-security-rule). Если с сетевым интерфейсом и подсетью связаны разные группы NSG, создайте одинаковое правило в обеих NSG.
 
 Когда в Azure обрабатывается входящий трафик, сначала применяются правила в группе NSG, связанной с подсетью (при наличии такой группы NSG), а затем — правила в группе NSG, связанной с сетевым интерфейсом. Если группа NSG связана и с сетевым интерфейсом, и с подсетью, нужно открыть порт в обеих NSG, чтобы трафик мог поступать на виртуальную машину. Чтобы упростить решение проблем с администрированием и обменом данными, рекомендуем связать NSG с подсетью, а не с отдельными сетевыми интерфейсами. Если для виртуальных машин в подсети требуются разные правила безопасности, можно сделать сетевые интерфейсы членами группы безопасности приложения (ASG) и указать ASG в качестве источника и назначения для правила безопасности. Дополнительные сведения см. в статье о [группах безопасности приложений](security-overview.md#application-security-groups).
 
-Если у вас по-прежнему возникают проблемы с подключениями, ознакомьтесь с разделами [Рекомендации](#considerations) и "Дополнительная диагностика".
+Если у вас все еще возникают проблемы с коммуникацией, [см.](#considerations)
 
 ## <a name="considerations"></a>Рекомендации
 

@@ -5,14 +5,14 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: a69df0cc9ea14a2c9fa172c77663afb1d6861f9b
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185787"
 ---
 #### <a name="configure-the-ios-project-in-xamarin-studio"></a>Настройка проекта iOS в Xamarin Studio
-1. В Xamarin.Studio откройте **Info.plist** и обновите поле **Bundle Identifier** (Идентификатор пакета), указав идентификатор пакета, созданный ранее с помощью идентификатора нового приложения.
+1. В Xamarin.Studio откройте **Info.plist**и обновите **идентификатор комплекта** с помощью идентификатора пакета, который вы создали ранее, с помощью нового идентификатора приложения.
 
     ![](./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-21.png)
 2. Прокрутите вниз до раздела **Background Modes** (Фоновые режимы). Установите флажки **Enable Background Modes** (Разрешить фоновые режимы) и **Remote notifications** (Удаленные уведомления).

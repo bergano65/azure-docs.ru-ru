@@ -1,5 +1,5 @@
 ---
-title: 'Подключение виртуальной сети к виртуальной сети с помощью подключения между виртуальными сетями: Azure CLI'
+title: 'Подключение VNet к VNet с помощью соединения VNet-to-VNet: Azure CLI'
 description: Установка подключения "виртуальная сеть — виртуальная сеть" между виртуальными сетями с помощью Azure CLI.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/14/2018
 ms.author: cherylmc
 ms.openlocfilehash: a354f8031c26ca86876dc6f3a2092610226cc84b
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75834574"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
@@ -24,14 +24,14 @@ ms.locfileid: "75834574"
 > [!div class="op_single_selector"]
 > * [Портал Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
-> * [Azure CLI](vpn-gateway-howto-vnet-vnet-cli.md)
+> * [Лазурный CLI](vpn-gateway-howto-vnet-vnet-cli.md)
 > * [Портал Azure (классический)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 > * [Подключение с использованием разных моделей развертывания — портал Azure](vpn-gateway-connect-different-deployment-models-portal.md)
 > * [Подключение с использованием разных моделей развертывания — PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
 >
 >
 
-## <a name="about"></a>Сведения о подключении виртуальных сетей
+## <a name="about-connecting-vnets"></a><a name="about"></a>Сведения о подключении виртуальных сетей
 
 Подключить виртуальные сети можно несколькими способами. В следующих разделах описаны различные способы подключения виртуальных сетей.
 
@@ -47,7 +47,7 @@ ms.locfileid: "75834574"
 
 Вы можете подключить виртуальные сети с помощью пиринга виртуальных сетей. При пиринге виртуальных сетей не используется VPN-шлюз и применяются другие ограничения. Кроме того, [цены на пиринг виртуальных сетей](https://azure.microsoft.com/pricing/details/virtual-network) рассчитываются не так, как [цены на VPN-шлюз "виртуальная сеть — виртуальная сеть"](https://azure.microsoft.com/pricing/details/vpn-gateway). Дополнительную информацию см. в статье [Пиринговая связь между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
 
-## <a name="why"></a>Зачем создавать подключение "виртуальная сеть — виртуальная сеть"
+## <a name="why-create-a-vnet-to-vnet-connection"></a><a name="why"></a>Зачем создавать подключение "виртуальная сеть — виртуальная сеть"?
 
 Возможно, вам потребуется подключить виртуальные сети с помощью подключения "виртуальная сеть — виртуальная сеть" по следующим причинам.
 
@@ -61,28 +61,28 @@ ms.locfileid: "75834574"
 
 Подключение типа "виртуальная сеть — виртуальная сеть" можно комбинировать с многосайтовыми конфигурациями. Это позволяет настраивать топологии сети, совмещающие распределенные подключения с подключениями между виртуальными сетями.
 
-## <a name="steps"></a>Какие действия по созданию подключения "виртуальная сеть — виртуальная сеть" следует использовать?
+## <a name="which-vnet-to-vnet-steps-should-i-use"></a><a name="steps"></a>Какие действия по созданию подключения "виртуальная сеть — виртуальная сеть" следует использовать?
 
 В этой статье приведены два разных набора действий по созданию подключения "виртуальная сеть — виртуальная сеть". Один предназначен для [виртуальных сетей в одной подписке](#samesub), а другой — для [виртуальных сетей в разных подписках](#difsub). 
 
 Для этого вы можете объединить конфигурации или выбрать ту, с которой предпочитаете работать. Во всех конфигурациях используется подключение "виртуальная сеть — виртуальная сеть". Сетевой трафик передается между виртуальными сетями, которые напрямую подключены друг к другу. В этом руководстве трафик не перенаправляется из TestVNet4 в TestVNet5.
 
-* [Виртуальные сети в рамках одной подписки:](#samesub) в инструкциях по работе с этой конфигурацией используются сети TestVNet1 и TestVNet4.
+* [VNets, которые находятся в той же подписке:](#samesub) В шагах для этой конфигурации используются TestVNet1 и TestVNet4.
 
   ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-cli/v2vrmps.png)
 
-* [Виртуальные сети в разных подписках:](#difsub) в инструкциях по работе с этой конфигурацией используются сети TestVNet1 и TestVNet5.
+* [VNets, которые проживают в различных подписках:](#difsub) В шагах для этой конфигурации используются TestVNet1 и TestVNet5.
 
   ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-cli/v2vdiffsub.png)
 
 
-## <a name="samesub"></a>Подключение виртуальных сетей из одной подписки
+## <a name="connect-vnets-that-are-in-the-same-subscription"></a><a name="samesub"></a>Подключение виртуальных сетей из одной подписки
 
-### <a name="before-you-begin"></a>Перед началом работы
+### <a name="before-you-begin"></a>Перед началом
 
 Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд CLI см. в руководстве по [установке Azure](/cli/azure/install-azure-cli).
 
-### <a name="Plan"></a>Планирование диапазонов IP-адресов
+### <a name="plan-your-ip-address-ranges"></a><a name="Plan"></a>Планирование диапазонов IP-адресов
 
 Далее мы создадим две виртуальные сети с соответствующими конфигурациями и подсетями шлюзов. Затем мы создадим VPN-подключение между двумя виртуальными сетями. В конфигурации сети важно задать диапазоны IP-адресов. Имейте в виду, необходимо убедиться в том, что ни один из диапазонов виртуальных сетей или диапазонов локальных сетей никак не перекрываются. В этих примерах мы не включаем DNS-сервер. Сведения о разрешении имен виртуальных машин см. в [этой статье](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
@@ -117,11 +117,11 @@ ms.locfileid: "75834574"
 * Тип VPN: RouteBased
 * Подключение: VNet4toVNet1
 
-### <a name="Connect"></a>Шаг 1. Подключение к подписке
+### <a name="step-1---connect-to-your-subscription"></a><a name="Connect"></a>Шаг 1. Подключение к подписке
 
 [!INCLUDE [CLI login](../../includes/vpn-gateway-cli-login-numbers-include.md)]
 
-### <a name="TestVNet1"></a>Шаг 2. Создание и настройка TestVNet1
+### <a name="step-2---create-and-configure-testvnet1"></a><a name="TestVNet1"></a>Шаг 2. Создание и настройка TestVNet1
 
 1. Создайте группу ресурсов.
 
@@ -159,7 +159,7 @@ ms.locfileid: "75834574"
    az network vnet-gateway create -n VNet1GW -l eastus --public-ip-address VNet1GWIP -g TestRG1 --vnet TestVNet1 --gateway-type Vpn --sku VpnGw1 --vpn-type RouteBased --no-wait
    ```
 
-### <a name="TestVNet4"></a>Шаг 3. Создание и настройка TestVNet4
+### <a name="step-3---create-and-configure-testvnet4"></a><a name="TestVNet4"></a>Шаг 3. Создание и настройка TestVNet4
 
 1. Создайте группу ресурсов.
 
@@ -194,11 +194,11 @@ ms.locfileid: "75834574"
    az network vnet-gateway create -n VNet4GW -l westus --public-ip-address VNet4GWIP -g TestRG4 --vnet TestVNet4 --gateway-type Vpn --sku VpnGw1 --vpn-type RouteBased --no-wait
    ```
 
-### <a name="createconnect"></a>Шаг 4. Создание подключений
+### <a name="step-4---create-the-connections"></a><a name="createconnect"></a>Шаг 4. Создание подключений
 
 Теперь у вас есть две виртуальные сети с VPN-шлюзами. Далее необходимо установить подключения VPN-шлюза между шлюзами виртуальной сети. Если вы использовали пример выше, шлюзы виртуальной сети находятся в разных группах ресурсов. В этом случае при установке подключения необходимо определить и задать идентификаторы ресурсов для каждого шлюза. Если виртуальные сети находятся в той же группе ресурсов, используйте [второй набор инструкций](#samerg), так как указывать идентификаторы ресурсов не нужно.
 
-### <a name="diffrg"></a>Подключение виртуальных сетей, расположенных в разных группах ресурсов
+### <a name="to-connect-vnets-that-reside-in-different-resource-groups"></a><a name="diffrg"></a>Подключение виртуальных сетей, расположенных в разных группах ресурсов
 
 1. Получите идентификатор ресурса VNet1GW из выходных данных следующей команды:
 
@@ -225,7 +225,7 @@ ms.locfileid: "75834574"
    "ipConfigurations":
    ```
 
-   Скопируйте значения в кавычках после **"id":** .
+   Скопируйте значения в кавычках после **"id":**.
 
    ```
    "id": "/subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW"
@@ -249,7 +249,7 @@ ms.locfileid: "75834574"
    ```
 5. Проверьте подключения. Дополнительные сведения см. в разделе [Проверка подключений](#verify).
 
-### <a name="samerg"></a>Подключение виртуальных сетей, расположенных в той же группе ресурсов
+### <a name="to-connect-vnets-that-reside-in-the-same-resource-group"></a><a name="samerg"></a>Подключение виртуальных сетей, расположенных в той же группе ресурсов
 
 1. Создайте подключение между TestVNet1 и TestVNet4. На этом шаге вы создадите подключение между TestVNet1 и TestVNet4. Обратите внимание, что группы ресурсов в этих примерах совпадают. В этих примерах вы также увидите ссылки на общий ключ. Вы можете использовать собственные значения общего ключа, но они должны совпадать для обоих подключений. Создание подключения занимает некоторое время.
 
@@ -263,15 +263,15 @@ ms.locfileid: "75834574"
    ```
 3. Проверьте подключения. Дополнительные сведения см. в разделе [Проверка подключений](#verify).
 
-## <a name="difsub"></a>Подключение виртуальных сетей из разных подписок
+## <a name="connect-vnets-that-are-in-different-subscriptions"></a><a name="difsub"></a>Подключение виртуальных сетей из разных подписок
 
 В этом сценарии мы создадим подключение между TestVNet1 и TestVNet5. Виртуальные сети находятся в разных подписках. Подписки не обязательно должны быть связаны с одним и тем же клиентом Active Directory. В этой конфигурации добавляется дополнительное подключение между виртуальными сетями для подключения TestVNet1 к TestVNet5.
 
-### <a name="TestVNet1diff"></a>Шаг 5. Создание и настройка TestVNet1
+### <a name="step-5---create-and-configure-testvnet1"></a><a name="TestVNet1diff"></a>Шаг 5. Создание и настройка TestVNet1
 
-Перед выполнением этих инструкций следует выполнить действия в предыдущих разделах. Чтобы создать и настроить сеть TestVNet1 и VPN-шлюз для нее, необходимо выполнить [шаг 1](#Connect) и [шаг 2](#TestVNet1). В этой конфигурации не нужно создавать TestVNet4 из предыдущего раздела. Но если вы создадите эту виртуальную сеть, она не помешает при выполнении этих шагов. Выполнив шаг 1 и 2, перейдите к шагу 6.
+Перед выполнением этих инструкций следует выполнить действия в предыдущих разделах. Вы должны завершить [Шаг 1](#Connect) и [Шаг 2](#TestVNet1) для создания и настройки TestVNet1 и VPN шлюз для TestVNet1. В этой конфигурации не нужно создавать TestVNet4 из предыдущего раздела. Но если вы создадите эту виртуальную сеть, она не помешает при выполнении этих шагов. Выполнив шаг 1 и 2, перейдите к шагу 6.
 
-### <a name="verifyranges"></a>Шаг 6. Проверка диапазонов IP-адресов
+### <a name="step-6---verify-the-ip-address-ranges"></a><a name="verifyranges"></a>Шаг 6. Проверка диапазонов IP-адресов
 
 При создании дополнительных подключений важно проследить, чтобы пространство IP-адресов новой виртуальной сети не пересекалось с диапазонами других виртуальных сетей или диапазонами других локальных сетевых шлюзов. В этом упражнении используйте следующие значения для сети TestVNet5.
 
@@ -290,9 +290,9 @@ ms.locfileid: "75834574"
 * Подключение: VNet5toVNet1
 * Тип подключения: VNet2VNet
 
-### <a name="TestVNet5"></a>Шаг 7. Создание и настройка TestVNet5
+### <a name="step-7---create-and-configure-testvnet5"></a><a name="TestVNet5"></a>Шаг 7. Создание и настройка TestVNet5
 
-Это действие необходимо выполнить в контексте новой подписки — подписки 5. Эту часть может выполнить администратор в другой организации, которой принадлежит подписка. Для переключения между подписками используйте `az account list --all`, чтобы получить список подписок, доступных для вашей учетной записи, а затем используйте `az account set --subscription <subscriptionID>`, чтобы переключиться на подписку, которую хотите использовать.
+Это действие необходимо выполнить в контексте новой подписки — подписки 5. Эту часть может выполнить администратор в другой организации, которой принадлежит подписка. Для переключения `az account list --all` между подписками используйте список подписок, доступных для вашей учетной записи, а затем переключитесь `az account set --subscription <subscriptionID>` на подписку, которую вы хотите использовать.
 
 1. Проверьте подключение к подписке 5, а затем создайте группу ресурсов.
 
@@ -329,9 +329,9 @@ ms.locfileid: "75834574"
    az network vnet-gateway create -n VNet5GW -l japaneast --public-ip-address VNet5GWIP -g TestRG5 --vnet TestVNet5 --gateway-type Vpn --sku VpnGw1 --vpn-type RouteBased --no-wait
    ```
 
-### <a name="connections5"></a>Шаг 8. Создание подключений
+### <a name="step-8---create-the-connections"></a><a name="connections5"></a>Шаг 8. Создание подключений
 
-Так как шлюзы находятся в разных подписках, мы разделили этот шаг на два сеанса интерфейса командной строки, обозначенные **[Подписка 1]** и **[Подписка 5]** . Для переключения между подписками используйте `az account list --all`, чтобы получить список подписок, доступных для вашей учетной записи, а затем используйте `az account set --subscription <subscriptionID>`, чтобы переключиться на подписку, которую хотите использовать.
+Так как шлюзы находятся в разных подписках, мы разделили этот шаг на два сеанса интерфейса командной строки, обозначенные **[Подписка 1]** и **[Подписка 5]**. Для переключения `az account list --all` между подписками используйте список подписок, доступных для вашей учетной записи, а затем переключитесь `az account set --subscription <subscriptionID>` на подписку, которую вы хотите использовать.
 
 1. **[Подписка 1].** Войдите в систему и подключитесь к подписке 1. Чтобы получить имя и идентификатор шлюза из выходных данных, выполните следующую команду:
 
@@ -355,7 +355,7 @@ ms.locfileid: "75834574"
 
    Скопируйте значение "id":. Отправьте идентификатор и имя шлюза виртуальной сети (VNet5GW) администратору подписки 1 по электронной почте или другим способом.
 
-3. **[Подписка 1].** На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Вы можете использовать собственные значения общего ключа, но они должны совпадать для обоих подключений. Создание подключения может занять некоторое время. Убедитесь, что вы подключаются к подписке 1.
+3. **[Подписка 1].** На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Вы можете использовать собственные значения общего ключа, но они должны совпадать для обоих подключений. Создание подключения может занять некоторое время.Обязательно подключитесь к подписке 1.
 
    ```azurecli
    az network vpn-connection create -n VNet1ToVNet5 -g TestRG1 --vnet-gateway1 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW -l eastus --shared-key "eeffgg" --vnet-gateway2 /subscriptions/e7e33b39-fe28-4822-b65c-a4db8bbff7cb/resourceGroups/TestRG5/providers/Microsoft.Network/virtualNetworkGateways/VNet5GW
@@ -367,12 +367,12 @@ ms.locfileid: "75834574"
    az network vpn-connection create -n VNet5ToVNet1 -g TestRG5 --vnet-gateway1 /subscriptions/e7e33b39-fe28-4822-b65c-a4db8bbff7cb/resourceGroups/TestRG5/providers/Microsoft.Network/virtualNetworkGateways/VNet5GW -l japaneast --shared-key "eeffgg" --vnet-gateway2 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW
    ```
 
-## <a name="verify"></a>Проверка подключений
+## <a name="verify-the-connections"></a><a name="verify"></a>Проверка подключений
 [!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
 
 [!INCLUDE [verify connections](../../includes/vpn-gateway-verify-connection-cli-rm-include.md)]
 
-## <a name="faq"></a>Часто задаваемые вопросы о подключениях типа "виртуальная сеть — виртуальная сеть"
+## <a name="vnet-to-vnet-faq"></a><a name="faq"></a>Часто задаваемые вопросы о подключениях типа "виртуальная сеть — виртуальная сеть"
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
