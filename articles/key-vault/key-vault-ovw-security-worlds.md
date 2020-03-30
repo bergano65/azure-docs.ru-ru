@@ -1,5 +1,6 @@
 ---
 title: Системы безопасности Azure Key Vault | Документация Майкрософт
+description: Azure Key Vault — это мультитенантная услуга. Он использует пул HSMs в каждом месте Azure. Все местоположения в географическом регионе имеют общую криптографическую границу.
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
@@ -7,12 +8,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 07/03/2017
-ms.openlocfilehash: 35d2683495a12b864378f8fb6f5edb6663d92c27
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 3584f83c5e1a5e83d069373395227b70c084eae9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78194926"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79457395"
 ---
 # <a name="azure-key-vault-security-worlds-and-geographic-boundaries"></a>Системы безопасности и географические ограничения Azure Key Vault
 
@@ -31,7 +32,7 @@ Azure Key Vault —это мультитенантная служба, кото
 
 ## <a name="regions-and-products"></a>Регионы и продукты
 
-- [Регионы Azure](https://azure.microsoft.com/regions/)
+- [Лазурные регионы](https://azure.microsoft.com/regions/)
 - [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/)
 
 Регионы, которые сопоставлены с системами безопасности, выделены как заголовки в таблицах.

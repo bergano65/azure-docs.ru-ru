@@ -1,7 +1,7 @@
 ---
 title: Создание внутренней подсистемы балансировки нагрузки уровня "Базовый" с помощью Azure CLI
 titleSuffix: Azure Load Balancer
-description: Из этой статьи вы узнаете, как создать внутреннюю подсистему балансировки нагрузки с помощью Azure CLI
+description: В этой статье узнайте, как создать внутренний баланселизатор нагрузки с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/27/2018
 ms.author: allensu
-ms.openlocfilehash: 8726991682ca8c2eabd628f1539ff940bf94e03d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 51df1936e5d8725b2243e7c0084973370139c540
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79284113"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79457017"
 ---
 # <a name="create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -26,7 +26,7 @@ ms.locfileid: "79284113"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.]( /cli/azure/install-azure-cli)
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -39,9 +39,10 @@ ms.locfileid: "79284113"
     --name myResourceGroupILB \
     --location eastus
 ```
+
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-С помощью команды *az network vnet create* создайте виртуальную сеть с именем *myVnet*, содержащую подсеть *mySubnet*, в группе ресурсов [myResourceGroup](https://docs.microsoft.com/cli/azure/network/vnet).
+Создайте виртуальную сеть под названием *myVnet* с подсетью под названием *mySubnet* в *myResourceGroup* с помощью [az сети vnet создать](https://docs.microsoft.com/cli/azure/network/vnet).
 
 ```azurecli-interactive
   az network vnet create \
@@ -50,6 +51,7 @@ ms.locfileid: "79284113"
     --location eastus \
     --subnet-name mySubnet
 ```
+
 ## <a name="create-basic-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Базовый"
 
 В этом разделе описано, как создать и настроить следующие компоненты подсистемы балансировки нагрузки:
@@ -60,7 +62,7 @@ ms.locfileid: "79284113"
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-Создайте внутренний Load Balancer с помощью команды [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **myLoadBalancer** , которая включает внешнюю IP-конфигурацию с именем **myFrontEnd**, внутренний пул с именем **myBackEndPool** , связанный с частным IP-адресом * * 10.0.0.7.
+Создайте внутренний балансоровый баланс с [az сетевой фунт создать](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) под названием **myLoadBalancer,** который включает в себя конфигурацию переднего IP имени **myFrontEnd**, бэк-энд бассейн под названием **myBackEndPool,** который связан с частным IP-адресом No 10.0.0.0.7.
 
 ```azurecli-interactive
   az network lb create \
@@ -71,10 +73,11 @@ ms.locfileid: "79284113"
     --backend-pool-name myBackEndPool \
     --vnet-name myVnet \
     --subnet mySubnet      
-  ```
+```
+
 ### <a name="create-the-health-probe"></a>Создание зонда работоспособности
 
-Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
+Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд здоровья с [az зондом lb сети создать](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) для того чтобы контролировать работоспособность фактически машин. 
 
 ```azurecli-interactive
   az network lb probe create \
@@ -87,7 +90,7 @@ ms.locfileid: "79284113"
 
 ### <a name="create-the-load-balancer-rule"></a>Создание правила подсистемы балансировки нагрузки
 
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды *az network lb rule create* создайте правило LB с именем [myHTTPRule](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
+Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) создайте правило LB с именем *myHTTPRule* для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
 
 ```azurecli-interactive
   az network lb rule create \
@@ -128,9 +131,9 @@ done
 
 ### <a name="create-an-availability-set"></a>Создание группы доступности
 
-Создайте группу доступности с помощью команды [az vm availabilityset create](/cli/azure/network/nic).
+Создание набора доступности с [созданием доступности az vm](/cli/azure/network/nic)
 
- ```azurecli-interactive
+```azurecli-interactive
   az vm availability-set create \
     --resource-group myResourceGroupILB \
     --name myAvailabilitySet
@@ -180,11 +183,11 @@ runcmd:
   - npm init
   - npm install express -y
   - nodejs index.js
-``` 
- 
+```
+
 Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az-vm-create).
 
- ```azurecli-interactive
+```azurecli-interactive
 for i in `seq 1 2`; do
   az vm create \
     --resource-group myResourceGroupILB \
@@ -196,6 +199,7 @@ for i in `seq 1 2`; do
     --custom-data cloud-init.txt
     done
 ```
+
 Развертывание виртуальных машин может занять несколько минут.
 
 ### <a name="create-a-vm-for-testing-the-load-balancer"></a>Создание виртуальной машины для проверки работы подсистемы балансировки нагрузки
@@ -221,14 +225,15 @@ for i in `seq 1 2`; do
   az network lb show \
     --name myLoadBalancer \
     --resource-group myResourceGroupILB
-``` 
+```
+
 ![Проверка балансировщика нагрузки](./media/load-balancer-get-started-ilb-arm-cli/load-balancer-test.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Вы можете удалить ставшие ненужными группу ресурсов, подсистему балансировки нагрузки и все связанные с ними ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete).
 
-```azurecli-interactive 
+```azurecli-interactive
   az group delete --name myResourceGroupILB
 ```
 

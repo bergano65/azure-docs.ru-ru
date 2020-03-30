@@ -2,25 +2,25 @@
 author: Blackmist
 ms.service: machine-learning
 ms.topic: include
-ms.date: 01/10/2019
+ms.date: 03/16/2020
 ms.author: larryfr
-ms.openlocfilehash: 469d87a828df19ca30260cada9dcea43859be9e0
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: d36bf2db05113656a77e76ff900d95910f313c73
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75902052"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79477261"
 ---
-Чтобы обновить веб-службу, используйте метод `update`. Можно обновить веб-службу, чтобы использовать новую модель, новый скрипт записи или новые зависимости, которые можно указать в конфигурации вывода. Дополнительные сведения см. в документации по [WebService. Update](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py#update--args-).
+Для обновления веб-службы `update` используйте метод. Можно обновить веб-службу, чтобы использовать новую модель, новый скрипт входа или новые зависимости, которые могут быть указаны в конфигурации выводов. Для получения дополнительной информации смотрите документацию для [Webservice.update](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py#update--args-).
 
 > [!IMPORTANT]
-> При создании новой версии модели необходимо вручную обновить каждую службу, которая будет использовать ее.
+> При создании новой версии модели необходимо вручную обновлять каждую службу, которую вы хотите использовать.
 >
-> Пакет SDK нельзя использовать для обновления веб-службы, опубликованной из конструктора Машинное обучение Azure.
+> Вы не можете использовать SDK для обновления веб-сервиса, опубликованного дизайнером машинного обучения Azure.
 
 **Использование пакета SDK**
 
-В следующем коде показано, как использовать пакет SDK для обновления сценария модели, среды и входа для веб-службы.
+Следующий код показывает, как использовать SDK для обновления модели, среды и скрипта входа для веб-службы:
 
 ```python
 from azureml.core import Environment
@@ -53,7 +53,7 @@ print(service.get_logs())
 
 **Использование интерфейса командной строки**
 
-Вы также можете обновить веб-службу с помощью интерфейса командной строки ML. В следующем примере демонстрируется регистрация новой модели и обновление веб-службы для использования новой модели.
+Вы также можете обновить веб-сервис с помощью ML CLI. Следующий пример демонстрирует регистрацию новой модели, а затем обновление веб-сервиса для использования новой модели:
 
 ```azurecli
 az ml model register -n sklearn_mnist  --asset-path outputs/sklearn_mnist_model.pkl  --experiment-name myexperiment --output-metadata-file modelinfo.json
@@ -61,8 +61,8 @@ az ml service update -n myservice --model-metadata-file modelinfo.json
 ```
 
 > [!TIP]
-> В этом примере документ JSON используется для передачи сведений о модели из команды регистрации в команду Update.
+> В этом примере документ JSON используется для передачи информации о модели из команды регистрации в команду обновления.
 >
-> Чтобы обновить службу для использования нового скрипта записи или среды, создайте [файл конфигурации вывода](/azure/machine-learning/service/reference-azure-machine-learning-cli#inference-configuration-schema) и укажите его с помощью параметра `ic`.
+> Чтобы обновить службу, чтобы использовать новый скрипт входа или среду, `ic` создайте [файл конфигурации выводов](/azure/machine-learning/service/reference-azure-machine-learning-cli#inference-configuration-schema) и укажите его с параметром.
 
-Дополнительные сведения см. в документации по [AZ ML Service Update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext-azure-cli-ml-az-ml-service-update) .
+Для получения дополнительной [az ml service update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext-azure-cli-ml-az-ml-service-update) информации см.

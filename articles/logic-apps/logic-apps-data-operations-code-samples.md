@@ -1,16 +1,16 @@
 ---
-title: Примеры кода для использования операций с данными
-description: Воспользуйтесь примерами кода, показывающими, как можно использовать операции с данными в автоматизированных рабочих процессах, созданных с помощью Azure Logic Apps
+title: Образцы кода для использования операций с данными
+description: Попробуйте эти образцы кода, которые показывают, как можно использовать операции данных в автоматизированных рабочих процессах, созданных с помощью приложений логики Azure
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 09/01/2019
 ms.openlocfilehash: c56c31bb6f56efb10808ce25b6b232089391e831
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79270528"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Примеры кода операций с данными для Azure Logic Apps

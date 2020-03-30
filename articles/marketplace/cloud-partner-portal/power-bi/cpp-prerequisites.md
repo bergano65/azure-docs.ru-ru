@@ -1,45 +1,44 @@
 ---
-title: Необходимые условия для Power BI приложения | Azure Marketplace
-description: Предоставляет необходимые компоненты для публикации Power BI приложения в AppSource.
-services: Azure, AppSource, Marketplace, Cloud Partner Portal, Power BI
-author: v-miclar
+title: Мощность BI App предлагают предпосылки Лазурный рынок
+description: Предоставляет предпосылки для публикации приложения Power BI для AppSource.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/13/2019
-ms.author: pabutler
-ms.openlocfilehash: 486a1b9ca213828b5a26571de7bc34d06f56d434
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 5c95c50f5597eee51c66cc68273478b1b9f0e2df
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826027"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286342"
 ---
-# <a name="power-bi-app-offer-prerequisites"></a>Предварительные требования для Power BI приложения
+# <a name="power-bi-app-offer-prerequisites"></a>Предварительные требования для предложений Power BI
 
-В этой статье приводятся технические и бизнес-требования, которые необходимо выполнить перед публикацией предложения Power BI приложения в AppSource Marketplace.  Если вы еще не сделали этого, ознакомьтесь с [руководством по публикации для Office 365, Dynamics 365, PowerApps и Power BI](../../appsource-offer-publishing-guide.md).
+В этой статье представлены технические и бизнес-требования, которые необходимо выполнить, прежде чем вы сможете опубликовать предложение Power BI App на рынке AppSource.  Если вы еще не сделали этого, просмотрите [Office 365, Dynamics 365, PowerApps и Power BI Предложение Издательское руководство](../../appsource-offer-publishing-guide.md).
 
 
 ## <a name="technical-requirements"></a>Технические требования
 
-Основным техническим ресурсом, который потребуется для этого типа предложения, является [Power BI приложение](https://go.microsoft.com/fwlink/?linkid=2028636). Дополнительные сведения см. в статье [Создание технических ресурсов приложения Power BI](./cpp-create-technical-assets.md).
+Основным техническим активом, который вам понадобится для этого типа предложения, является [приложение Power BI.](https://go.microsoft.com/fwlink/?linkid=2028636) Дополнительные сведения см. в статье [Создание технических ресурсов приложения Power BI](./cpp-create-technical-assets.md).
 
-После создания и тестирования приложения службы в Power BI необходимо сохранить URL-адрес установки приложения, который Power BI создает. Он понадобится для [создания предложения приложения Power BI](./cpp-create-offer.md).
+После создания и тестирования приложения службы в Power BI следует сохранить URL-адрес установки приложения, который генерирует Power BI. Вы будете нуждаться в нем, чтобы [создать предложение Power BI App](./cpp-create-offer.md).
 
 ## <a name="business-requirements"></a>Бизнес-требования
 
-Бизнес-требования включают в себя процедурные, договорные и юридические обязательства.  Необходимо следующее:
+Требования к бизнесу включают процессуальные, договорные и юридические обязательства.  Необходимо сделать следующее:
 
-- Быть зарегистрированным издателем Cloud Marketplace. Если вы не зарегистрировались, выполните действия, описанные в [статьях издатель Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).
+- Будьте зарегистрированным издателем облачного рынка. Если вы не зарегистрированы, выполните последующие действия в [журнале Become a Cloud Marketplace Publisher.](https://docs.microsoft.com/azure/marketplace/become-publisher)
 
     > [!NOTE] 
-    > Используйте ту же учетную запись регистрации центра разработчиков Майкрософт для входа в [портал Cloud Partner](https://cloudpartner.azure.com). У вас должна быть только одна учетная запись Майкрософт для публикации предложений в AppSource. Учетные записи не должны быть специфичными для отдельных служб или предложений.
+    > Используйте ту же учетную запись регистрации Центра разработчиков Майкрософт, чтобы войти в [веб-портал Cloud Partner.](https://cloudpartner.azure.com) У вас должна быть только одна учетная запись Майкрософт для публикации предложений в AppSource. Не следует использовать разные учетные записи для отдельных служб или приложений.
  
 - Предоставьте клиентам экономически обоснованную техническую поддержку.
-- Укажите содержимое, удовлетворяющее критериям предложения, которые будут перечислены в AppSource. Дополнительные сведения см [. в разделе приложение для перечисления в AppSource. Вот как это](https://appsource.microsoft.com/blogs/have-an-app-to-list-on-appsource-here-s-how)делать.
-- Соблюдайте [заявление о конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement).
+- Предоставьте контент, отвечающий критериям для вашего предложения, который будет указан в AppSource. Для получения дополнительной информации, [смотрите Есть приложение, чтобы перечислить на AppSource? Вот как](https://appsource.microsoft.com/blogs/have-an-app-to-list-on-appsource-here-s-how).
+- Соответствие [выписке о конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После выполнения всех требований можно приступать к [созданию предложения Power BI приложения](./cpp-create-offer.md) в портал Cloud Partner.
+После того как вы выполнили все требования, вы готовы [создать предложение Power BI App](./cpp-create-offer.md) в облачном партнерской портале.

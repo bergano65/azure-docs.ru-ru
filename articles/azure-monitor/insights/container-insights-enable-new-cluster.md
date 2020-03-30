@@ -1,20 +1,20 @@
 ---
-title: Мониторинг нового кластера Azure Kubernetes Service (AKS) | Документация Майкрософт
-description: Узнайте, как включить мониторинг для нового кластера Azure Kubernetes Service (AKS) с Azure Monitor для подписки на контейнеры.
+title: Мониторинг нового кластера Службы Azure Kubernetes (AKS) Документы Майкрософт
+description: Узнайте, как включить мониторинг для нового кластера службы Azure Kubernetes (AKS) с подпиской Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.openlocfilehash: c731826f2780c45358730f9ce20d6a6151f6f259
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79275442"
 ---
-# <a name="enable-monitoring-of-a-new-azure-kubernetes-service-aks-cluster"></a>Включение мониторинга нового кластера Azure Kubernetes Service (AKS)
+# <a name="enable-monitoring-of-a-new-azure-kubernetes-service-aks-cluster"></a>Включить мониторинг нового кластера Службы Azure Kubernetes (AKS)
 
-В этой статье описывается, как настроить Azure Monitor для контейнеров, чтобы отслеживать управляемый кластер Kubernetes, размещенный в [службе Kubernetes Azure](https://docs.microsoft.com/azure/aks/) , которая готовится к развертыванию в вашей подписке.
+В этой статье описывается, как настроить Azure Monitor для контейнеров для мониторинга управляемого кластера Kubernetes, размещенного в [службе Azure Kubernetes,](https://docs.microsoft.com/azure/aks/) которую вы готовите развернуть в подписке.
 
-Мониторинг кластера AKS можно включить с помощью одного из поддерживаемых методов:
+Мониторинг кластера AKS можно с помощью одного из поддерживаемых методов:
 
 * Azure CLI
 * Terraform
@@ -24,7 +24,7 @@ ms.locfileid: "79275442"
 Чтобы включить мониторинг нового кластера AKS, созданного с помощью Azure CLI, следуйте указаниям в разделе [Создание кластера AKS](../../aks/kubernetes-walkthrough.md#create-aks-cluster).  
 
 >[!NOTE]
->Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.74 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). Если вы установили расширение CLI AKS-Preview версии 0.4.12 или более поздней, удалите все внесенные изменения, чтобы включить предварительную версию расширения, так как она может переопределить поведение Azure CLI по умолчанию, так как функции предварительной версии AKS недоступны в Azure US министерстве Cloud.
+>Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Вы должны запустить версию Azure CLI 2.0.74 или позже. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). Если вы установили версию расширения CLI aks-preview 0.4.12 или выше, удалите все внесенные изменения, чтобы включить расширение предварительного просмотра, поскольку оно может переопределить поведение Azure CLI по умолчанию, поскольку функции AKS Preview не доступны в облаке Azure US Governmnet.
 
 ## <a name="enable-using-terraform"></a>Включение с помощью Terraform
 
@@ -116,4 +116,4 @@ az aks show -g <resourceGroupofAKSCluster> -n <nameofAksCluster>
 
 * Если при попытке подключить решение у вас возникли проблемы, ознакомьтесь с [руководством по устранению неполадок](container-insights-troubleshoot.md).
 
-* С включенным наблюдением для получения сведений о работоспособности и использовании ресурсов кластером AKS и рабочими нагрузками, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
+* Благодаря мониторингу, позволяющим собирать работоспособность и использование ресурсов кластера AKS и рабочих нагрузок, работающих на них, [научитесь использовать](container-insights-analyze.md) Azure Monitor для контейнеров.

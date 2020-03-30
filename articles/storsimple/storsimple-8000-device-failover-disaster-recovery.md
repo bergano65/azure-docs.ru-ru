@@ -1,5 +1,5 @@
 ---
-title: Отработка отказа и аварийное восстановление для устройств StorSimple 8000
+title: Failover and disaster recovery for StorSimple 8000 series devices (Отработка отказа и аварийное восстановление для устройств StorSimple серии 8000)
 description: Информация о том, как выполнить отработку отказа устройства StorSimple на то же устройство либо другое физическое или облачное устройство.
 services: storsimple
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/03/2017
 ms.author: alkohli
 ms.openlocfilehash: c1acc084d5abe3385fe311873dfd64c9009e83f2
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79254967"
 ---
 # <a name="failover-and-disaster-recovery-for-your-storsimple-8000-series-device"></a>Отработка отказа и аварийное восстановление для устройств StorSimple серии 8000
@@ -83,8 +83,8 @@ ms.locfileid: "79254967"
 
 В случае аварии можно выбрать отработку отказа устройства StorSimple:
 
-* [на физическое устройство;](storsimple-8000-device-failover-physical-device.md)
-* [на само устройство;](storsimple-8000-device-failover-same-device.md)
+* [К физическому устройству](storsimple-8000-device-failover-physical-device.md).
+* [Самому себе](storsimple-8000-device-failover-same-device.md).
 * [на облачное устройство.](storsimple-8000-device-failover-cloud-appliance.md)
 
 Указанные выше статьи содержат подробное описание действий для каждого из вышеперечисленных случаев отработки отказа.
@@ -132,7 +132,7 @@ A.  В случае сбоя удаления контейнеры томов м
 
 Если вы готовы выполнить отработку отказа устройства, выберите один из следующих сценариев, чтобы получить подробные инструкции.
 
-- [Отработка отказа на физическое устройство](storsimple-8000-device-failover-physical-device.md)
+- [Отработка отказа на другое физическое устройство](storsimple-8000-device-failover-physical-device.md)
 - [Отработка отказа на то же устройство](storsimple-8000-device-failover-same-device.md)
 - [Отработка отказа на облачное устройство StorSimple](storsimple-8000-device-failover-cloud-appliance.md)
 

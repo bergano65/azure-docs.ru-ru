@@ -1,6 +1,6 @@
 ---
-title: Стандартные форматы и кодеки кодировщика — Azure
-description: Эта статья содержит список наиболее распространенных форматов файлов импорта и экспорта, которые можно использовать с Стандарденкодерпресет.
+title: Форматы и кодерики Standard Encoder - Azure
+description: В этой статье содержится список наиболее распространенных форматов для импорта и экспорта файлов, которые можно использовать с StandardEncoderPreset.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -15,13 +15,13 @@ ms.date: 02/10/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: f1d4d4f4006702ebe0d057e56cf24a022e73b83e
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79251366"
 ---
-# <a name="standard-encoder-formats-and-codecs"></a>Стандартные форматы и кодеки кодировщика
+# <a name="standard-encoder-formats-and-codecs"></a>Форматы и кодерики Standard Encoder
 
 В этой статье содержится список наиболее распространенных форматов для импорта и экспорта файлов, которые можно использовать с [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). Сведения о создании настраиваемых предустановок с помощью **StandardEncoderPreset** см. в разделе [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md).
 
@@ -43,7 +43,7 @@ ms.locfileid: "79251366"
 
 ### <a name="audio-formats-in-input-containers"></a>Форматы аудио во входных контейнерах
 
-Стандартный кодировщик поддерживает следующие звуковые форматы во входных контейнерах:
+Стандартный encoder поддерживает проведение следующих аудио форматов в входных контейнерах:
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
@@ -82,7 +82,7 @@ ms.locfileid: "79251366"
 | MP3 (MPEG-1 Audio Layer 3) |Да |
 | Windows Media Audio |Да |
 | WAV/PCM |Да |
-| [FLAC](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
+| [Flac](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Да |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Да |
 | AMR (adaptive multi-rate) |Да |

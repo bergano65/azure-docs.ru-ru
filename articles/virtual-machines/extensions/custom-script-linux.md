@@ -1,5 +1,5 @@
 ---
-title: Выполнение пользовательских скриптов на виртуальных машинах Linux в Azure
+title: Запуск пользовательских скриптов на Linux VMs в Azure
 description: Автоматизируйте задачи настройки виртуальных машин Linux с помощью расширения настраиваемых скриптов версии 2.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
-ms.openlocfilehash: 9a53cae61e48a8d0aa19b138d4084ca257ea705b
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.openlocfilehash: b75b232c048a1ea49256b12ce1b65c4bd87a1cf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79299249"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79535448"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -38,7 +38,7 @@ ms.locfileid: "79299249"
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение настраиваемых скриптов для Linux будет работать в поддерживаемых им ОС. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).
+Пользовательский сценарий расширение для Linux будет работать на расширение поддерживается [article](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros)расширение ОС, для получения дополнительной информации, см.
 
 ### <a name="script-location"></a>Расположение сценария
 
@@ -55,13 +55,13 @@ ms.locfileid: "79299249"
 * Выполняемые скрипты не должны запрашивать ввод данных пользователем.
 * На выполнение скрипта отводится 90 минут. Более продолжительное действие вызовет сбой подготовки расширения.
 * Не следует помещать перезагрузки в скрипт, так как будут возникать проблемы с другими устанавливаемыми расширениями и после перезагрузки расширение прекратит работать. 
-* Если у вас есть сценарий, который приведет к перезагрузке, установите приложения и запустите сценарии и т. д. Следует запланировать перезагрузку с помощью задания cron или таких средств, как DSC или Chef, расширения Puppet.
-* Расширение будет запускать скрипт только один раз. Чтобы запускать скрипт при каждой загрузке, можно воспользоваться [образом cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) и модулем [скриптов при загрузке](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#scripts-per-boot). Кроме того, с помощью скрипта можно создать системную единицу службы.
+* Если у вас есть скрипт, который вызовет перезагрузку, а затем установить приложения и запустить скрипты и т.д. Вы должны запланировать перезагрузку с помощью задания Cron, или с помощью таких инструментов, как DSC, или шеф-повар, кукольные расширения.
+* Расширение будет запускать скрипт только один раз. Чтобы запускать скрипт при каждой загрузке, можно воспользоваться [образом cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) и модулем [скриптов при загрузке](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#scripts-per-boot). Кроме того, скрипт можно использовать для создания службы SystemD.
 * Чтобы запланировать время выполнения скрипта, необходимо создать задание Cron с помощью расширения. 
 * Во время выполнения скрипта вы увидите на портале Microsoft Azure или в CLI только переходное состояние расширения. Если требуются более частые обновления состояния выполняющегося скрипта, следует создать собственное решение.
-* Расширение настраиваемых скриптов не имеет собственной поддержки прокси-серверов, однако можно использовать средство передачи файлов, которое поддерживает прокси-серверы в скрипте, например *Curl*. 
+* Пользовательское расширение скрипта не поддерживает прокси-серверы, однако вы можете использовать инструмент передачи файлов, который поддерживает прокси-серверы в вашем скрипте, например *Curl.* 
 * Следует учитывать настраиваемые расположения каталогов, которые могут использоваться скриптами или командами, и иметь в распоряжении логику для обработки таких случаев.
-*  При развертывании пользовательского скрипта в рабочем экземпляре VMSS рекомендуется выполнить развертывание с помощью шаблона JSON и сохранить учетную запись хранения скрипта, где вы можете управлять маркером SAS. 
+*  При развертывании пользовательского скрипта в производственных экземплярах VMSS предлагается развернуть через шаблон json и сохранить учетную запись хранения скриптов, где у вас есть контроль над токеном SAS. 
 
 
 ## <a name="extension-schema"></a>Схема расширения
@@ -106,37 +106,37 @@ ms.locfileid: "79299249"
 ```
 
 >[!NOTE]
-> Свойство managedIdentity **не должно** использоваться в сочетании со свойствами StorageAccountName или storageAccountKey
+> управляемое свойствоIdentity **не должно** использоваться в сочетании с свойствами storageAccountName или storageAccountKey
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных | 
+| name | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
 | версия_API | 2019-03-01 | Дата |
 | publisher | Microsoft.Compute.Extensions | строка |
 | type | CustomScript | строка |
 | typeHandlerVersion | 2.1 | INT |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массиве |
-| commandToExecute (пример) | MyPythonScript.py Python \<> My-Param1 | строка |
+| commandToExecute (пример) | питон \<MyPythonScript.py мой-парам1> | строка |
 | скрипт | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
 | skipDos2Unix (например) | false | Логическое |
 | метка времени (например) | 123456789 | 32-разрядное целое число |
 | storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
-| managedIdentity (например,) | {} или {"clientId": "31b403aa-c364-4240-A7FF-d85fb6cd7232"} или {"objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b"} | объект JSON |
+| управляемыйИдентичность (например) | Вопросы "clientId": "31b403aa-c364-4240-a7ff-d85fb6cd7232" или "objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b" | объект json |
 
 ### <a name="property-value-details"></a>Сведения о значениях свойств
-* `apiVersion`. наиболее актуальные apiVersion можно найти с помощью [Обозреватель ресурсов](https://resources.azure.com/) или из Azure CLI с помощью следующей команды `az provider list -o json`
+* `apiVersion`: Самая актуальная apiVersion может быть найдена с помощью [Resource Explorer](https://resources.azure.com/) или из Azure CLI, используя следующую команду`az provider list -o json`
 * `skipDos2Unix` — (необязательное, логическое) пропустите преобразование dos2unix URL-адресов файла на основе сценария или скрипта.
 * `timestamp` — (необязательный, 32-битное целое число) используется только для повторного запуска скрипта при изменении значения этого поля.  Любое целочисленное значение допустимо, оно только должно отличаться от предыдущего значения.
-  * `commandToExecute`: (**обязательное**, если скрипт не задан, строка) выполняемый скрипт точки входа. Используйте это поле, если команда содержит секретные данные, например пароли.
+* `commandToExecute`: (**обязательное**, если скрипт не задан, строка) выполняемый скрипт точки входа. Используйте это поле, если команда содержит секретные данные, например пароли.
 * `script` — (**необходимо**, если не задан параметр необязательный, строка) скрипт в кодировке Base64 (и при необходимости сжатый), выполненный с помощью /bin/sh.
 * `fileUris`: (необязательное, строковый массив) URL-адреса файлов для скачивания.
 * `storageAccountName`: (необязательное, строка) имя учетной записи хранения. Если указаны учетные данные хранилища, все значения `fileUris` должны иметь формат URL-адресов для BLOB-объектов Azure.
 * `storageAccountKey`: (необязательное, строка) ключ доступа для учетной записи хранения.
-* `managedIdentity`: (необязательный, объект JSON) [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для скачивания файлов
-  * `clientId`: (необязательный, строковый) идентификатор клиента управляемого удостоверения.
-  * `objectId`: (необязательный, строковый) идентификатор объекта управляемого удостоверения.
+* `managedIdentity`: (необязательно, объект json) [управляемый итог](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файла (ы)
+  * `clientId`: (необязательно, строка) идентификатор клиента управляемого удостоверения
+  * `objectId`: (необязательно, строка) идентификатор объекта управляемого удостоверения
 
 
 Указанные ниже значения можно задавать либо в открытых, либо в защищенных параметрах. Расширение отклонит любую конфигурацию, в которой приведенные ниже значения будут указаны в открытых и защищенных параметрах одновременно.
@@ -208,13 +208,13 @@ cat script | gzip -9 | base64 -w 0
  1. Запишите декодированное (и при необходимости распакованное) значение на диск (/var/lib/waagent/custom-script/#/script.sh)
  1. Выполните скрипт, используя _/bin/sh -c /var/lib/waagent/custom-script/#/script.sh.
 
-####  <a name="property-managedidentity"></a>Свойство: managedIdentity
+####  <a name="property-managedidentity"></a>Недвижимость: управляемоеИдентичность
 
-CustomScript (начиная с версии 2,1) поддерживает [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файлов с URL-адресов, указанных в параметре "fileUris". Это позволяет CustomScript доступ к частным BLOB-объектам или контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
+CustomScript (версия 2.1 далее) поддерживает [управляемый итог](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файла (ы) из URL-адресов, представленных в настройках "fileUris". Это позволяет CustomScript получить доступ к частным каплям или контейнерам Azure Storage без необходимости передавать секреты, такие как токены SAS или ключи учетной записи хранилища.
 
-Чтобы использовать эту функцию, пользователь должен добавить [назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) или [назначенное пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity) удостоверение в виртуальную машину или VMSS, где ожидается запуск CustomScript, и [предоставить управляемому удостоверению доступ к контейнеру или BLOB-объекту службы хранилища Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access).
+Чтобы использовать эту функцию, пользователь должен добавить [установленную системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) или [назначенную пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity) идентификацию в VM или VMSS, где ожидается запуск CustomScript, и [предоставить управляемый доступ к контейнеру хранения Azure или кабро.](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access)
 
-Чтобы использовать назначенное системой удостоверение на целевой виртуальной машине или VMSS, задайте для поля "managedidentity" пустой объект JSON. 
+Чтобы использовать установленное системой удостоверение на целевом VM/VMSS, установите поле "управляемой идентичности" на пустой объект json. 
 
 > Пример
 >
@@ -226,7 +226,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 > }
 > ```
 
-Чтобы использовать назначенное пользователем удостоверение на целевой виртуальной машине или VMSS, настройте в поле "managedidentity" идентификатор клиента или идентификатор объекта управляемого удостоверения.
+Чтобы использовать установленное пользователем удостоверение личности на целевом VM/VMSS, назначаем поле "управляемой идентичности" с идентификатором клиента или идентификатором объекта управляемого удостоверения.
 
 > Примеры:
 >
@@ -246,7 +246,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 > ```
 
 > [!NOTE]
-> Свойство managedIdentity **не должно** использоваться в сочетании со свойствами StorageAccountName или storageAccountKey
+> управляемое свойствоIdentity **не должно** использоваться в сочетании с свойствами storageAccountName или storageAccountKey
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Для запуска расширения пользовательских сценариев во время развертывания шаблона Azure Resource Manager в нем можно использовать схему JSON, описанную в предыдущем разделе. Пример шаблона, который содержит расширение пользовательских сценариев, можно найти на сайте [GitHub](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-linux).
@@ -390,7 +390,8 @@ az vm extension set \
 ```
 
 Необходимо обратить внимание на выполнение расширения. Оно будет выглядеть примерно так:
-```text
+
+```output
 2018/04/26 17:47:22.110231 INFO [Microsoft.Azure.Extensions.customScript-2.0.6] [Enable] current handler state is: notinstalled
 2018/04/26 17:47:22.306407 INFO Event: name=Microsoft.Azure.Extensions.customScript, op=Download, message=Download succeeded, duration=167
 2018/04/26 17:47:22.339958 INFO [Microsoft.Azure.Extensions.customScript-2.0.6] Initialize extension directory
@@ -400,6 +401,7 @@ az vm extension set \
 2018/04/26 17:47:23.476151 INFO [Microsoft.Azure.Extensions.customScript-2.0.6] Enable extension [bin/custom-script-shim enable]
 2018/04/26 17:47:24.516444 INFO Event: name=Microsoft.Azure.Extensions.customScript, op=Enable, message=Launch command succeeded: bin/custom-sc
 ```
+
 Некоторые замечания
 1. Enable — означает момент запуска команды.
 2. Download — относится к скачиванию пакета расширения CustomScript из Azure, а не файлов скрипта, указанных в fileUris.
@@ -411,8 +413,9 @@ az vm extension set \
 /var/log/azure/custom-script/handler.log
 ```
 
-Следует обратить внимание на отдельное выполнение, оно будет выглядеть примерно так:
-```text
+Вы должны искать индивидуальное исполнение, оно будет выглядеть примерно так:
+
+```output
 time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=0 event=start
 time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=0 event=pre-check
 time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=0 event="comparing seqnum" path=mrseq
@@ -436,6 +439,7 @@ time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=
 time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=0 event=enabled
 time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=0 event=end
 ```
+
 Здесь отображаются следующие компоненты:
 * команда Enable, запускающая этот журнал;
 * параметры, переданные в расширение;
@@ -450,7 +454,7 @@ az vm extension list -g myResourceGroup --vm-name myVM
 
 Выходные данные выглядят так:
 
-```azurecli
+```output
 info:    Executing command vm extension get
 + Looking up the VM "scripttst001"
 data:    Publisher                   Name                                      Version  State

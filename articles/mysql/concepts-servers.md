@@ -1,17 +1,17 @@
 ---
-title: Основные понятия сервера — база данных Azure для MySQL
+title: Концепции сервера - База данных Azure для MyS'L
 description: В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 9a2e2eb022d96af1437ea4189d11f5fa69339325
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 300470b2e8fb10fda7cfc59517cef00c07bf0632
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770005"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79537012"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Основные понятия работы с сервером в базе данных Azure для MySQL
 
@@ -53,5 +53,5 @@ ms.locfileid: "74770005"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Обзор службы содержится в статье [What is Azure Database for MySQL? Service Introduction](./overview.md) (Что такое база данных Azure для MySQL? Общие сведения о службе).
-- Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-service-tiers.md).
+- Для получения информации о конкретных квотах и ограничениях ресурсов, основанных на **уровне обслуживания,** [см.](./concepts-service-tiers.md)
 - Сведения о подключении к службе см. в статье [Библиотеки подключений для базы данных Azure для MySQL](./concepts-connection-libraries.md).

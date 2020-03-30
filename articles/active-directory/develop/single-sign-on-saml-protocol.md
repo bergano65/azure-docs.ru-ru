@@ -18,10 +18,10 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.openlocfilehash: cecb78a82eb2925813bdc7f6df2503fae94b6437
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79262429"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
@@ -46,16 +46,16 @@ xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
 </samlp:AuthnRequest>
 ```
 
-| Параметр |  | Description |
+| Параметр |  | Описание |
 | --- | --- | --- |
 | ID | Обязательно | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
 | Версия | Обязательно | Этот параметр должен иметь значение **2.0**. |
 | IssueInstant | Обязательно | Это строка DateTime со значением в формате всемирного времени (UTC) и с [преобразованием без потери данных ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение DateTime этого типа, но не оценивает и не использует его. |
-| AssertionConsumerServiceUrl | Необязательно | Если указан, то он должен соответствовать параметру `RedirectUri` облачной службы в Azure AD. |
-| ForceAuthn | Необязательно | Это логическое значение. Если задано значение true, то это означает, что пользователь должен будет повторно выполнить проверку подлинности, даже если время его сеанса в Azure AD еще не истекло. |
-| IsPassive | Необязательно | Это логическое значение, которое указывает, должна ли служба Azure AD автоматически выполнять аутентификацию пользователя, без прямого его участия, используя файл cookie сеанса (если он существует). Если задано значение true, то Azure AD попытается аутентифицировать пользователя с помощью файла cookie сеанса. |
+| AssertionConsumerServiceUrl | Необязательный | Если указан, то он должен соответствовать параметру `RedirectUri` облачной службы в Azure AD. |
+| ForceAuthn | Необязательный | Это логическое значение. Если задано значение true, то это означает, что пользователь должен будет повторно выполнить проверку подлинности, даже если время его сеанса в Azure AD еще не истекло. |
+| IsPassive | Необязательный | Это логическое значение, которое указывает, должна ли служба Azure AD автоматически выполнять аутентификацию пользователя, без прямого его участия, используя файл cookie сеанса (если он существует). Если задано значение true, то Azure AD попытается аутентифицировать пользователя с помощью файла cookie сеанса. |
 
-Все остальные атрибуты `AuthnRequest`, включая Consent, Destination, AssertionConsumerServiceIndex, AttributeConsumerServiceIndex и ProviderName, **игнорируются**.
+Все `AuthnRequest` остальные атрибуты, такие как Согласие, Назначение, AssertionConsumerServiceIndex, AttributeConsumerServiceIndex и ProviderName **игнорируются.**
 
 Azure AD также игнорирует элемент `Conditions` в `AuthnRequest`.
 
@@ -89,7 +89,7 @@ Azure AD также игнорирует элемент `Conditions` в `AuthnRe
 Azure AD игнорирует атрибут `AllowCreate` .
 
 ### <a name="requestauthncontext"></a>RequestAuthnContext
-Элемент `RequestedAuthnContext` указывает нужные методы проверки подлинности. Он необязателен в элементах `AuthnRequest` , отправленных в Azure AD. Azure AD поддерживает `AuthnContextClassRef` значения, такие как `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`.
+Элемент `RequestedAuthnContext` указывает нужные методы проверки подлинности. Он необязателен в элементах `AuthnRequest` , отправленных в Azure AD. Azure AD `AuthnContextClassRef` поддерживает такие `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`значения, как .
 
 ### <a name="scoping"></a>Scoping
 Элемент `Scoping`, который включает список поставщиков удостоверений, необязателен в элементах `AuthnRequest`, отправленных в Azure AD.
@@ -157,7 +157,7 @@ Azure AD игнорирует элемент `Subject` элементов `Authn
 
 ### <a name="issuer"></a>Издатель
 
-Azure AD задает элемент `Issuer` для `https://login.microsoftonline.com/<TenantIDGUID>/`, где \<Тенантидгуид > является ИДЕНТИФИКАТОРом клиента Azure AD.
+Azure AD `Issuer` устанавливает `https://login.microsoftonline.com/<TenantIDGUID>/` элемент, в котором \<TenantIDGUID> является идентификатором арендатора ad-клиента Azure AD.
 
 Например, ответ с элементом Issuer может выглядеть следующим образом:
 
@@ -192,7 +192,7 @@ Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
 
 #### <a name="issuer"></a>Издатель
 
-Он имеет значение `https://sts.windows.net/<TenantIDGUID>/`, где \<Тенантидгуид > — идентификатор клиента Azure AD.
+Это `https://sts.windows.net/<TenantIDGUID>/`установлено, \<где TenantIDGUID> является идентификатором арендатора ad-клиента Azure AD.
 
 ```
 <Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
@@ -270,7 +270,7 @@ Azure AD подписывает утверждение в ответ на усп
 </AttributeStatement>
 ```        
 
-* **Утверждение Name**. Значение атрибута `Name` (`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`) — это имя участника-пользователя, прошедшего проверку подлинности, например `testuser@managedtenant.com`.
+* **Название претензии** - `Name` Значение`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`атрибута ( ) является основным именем пользователя `testuser@managedtenant.com`аутентифицированных пользователей, таких как .
 * **Утверждение ObjectIdentifier**. Значение `ObjectIdentifier` атрибута (`http://schemas.microsoft.com/identity/claims/objectidentifier`) — это `ObjectId` объекта каталога, который представляет пользователя, прошедшего проверку подлинности в Azure AD. Значение `ObjectId` неизменяемое, глобально уникальное и повторно использует безопасный идентификатор пользователя, прошедшего проверку подлинности.
 
 #### <a name="authnstatement"></a>AuthnStatement

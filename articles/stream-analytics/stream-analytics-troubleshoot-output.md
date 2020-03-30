@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: d40157523a074547885a14a3d92379f8e8b6f351
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79254291"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
@@ -22,7 +22,7 @@ ms.locfileid: "79254291"
 ## <a name="output-not-produced-by-job"></a>Выходные данные, не созданные заданием
 1.  Проверьте подключение к портам вывода с помощью кнопки **Проверить подключение** для всех выходных данных.
 
-2.  Просмотрите [**метрики мониторинга**](stream-analytics-monitoring.md) на вкладке **монитор** . Так как значения суммируются, метрики откладываются на несколько минут.
+2.  Посмотрите на [**метрики мониторинга**](stream-analytics-monitoring.md) на вкладке **Монитор.** Поскольку значения агрегируются, метрики задерживаются на несколько минут.
     - Если значение параметра "Входные события" больше 0, задание может читать данные. Если значение параметра "Входные события" меньше 0, сделайте следующее:
       - Чтобы узнать, используются ли в источнике данных допустимые данные, проверьте [обозреватель служебной шины](https://code.msdn.microsoft.com/windowsapps/Service-Bus-Explorer-f2abca5a). Эта проверка применяется, если задание использует концентратор событий в качестве точки ввода.
       - Проверьте формат сериализации и шифрования данных.
@@ -90,18 +90,18 @@ ms.locfileid: "79254291"
 * Вы можете задать параметр IGNORE_DUP_KEY для уникального индекса при помощи ALTER INDEX. Это ограничение отличается от PRIMARY KEY или UNIQUE и создается с использованием определения CREATE INDEX или INDEX.  
 * IGNORE_DUP_KEY не применяется к индексам хранилища столбцов, так как нельзя обеспечить уникальность таких индексов.  
 
-## <a name="column-names-are-lower-cased-by-azure-stream-analytics"></a>Имена столбцов записываются в нижнем регистре Azure Stream Analytics
-При использовании исходного уровня совместимости (1,0) Azure Stream Analytics используется для изменения имен столбцов на нижний регистр. Это поведение было исправлено на более поздних уровнях совместимости. Чтобы сохранить вариант, мы советуем клиентам перейти на уровень совместимости 1,1 и более поздней версии. Дополнительные сведения об [уровне совместимости для Azure Stream Analyticsных заданий](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level)см. здесь.
+## <a name="column-names-are-lower-cased-by-azure-stream-analytics"></a>Названия столбцов ниже, чем в Azure Stream Analytics
+При использовании исходного уровня совместимости (1.0) аналитика Azure Stream Analytics изменяет названия столбцов на более низкий случай. Это поведение было зафиксировано в более поздних уровнях совместимости. Для того, чтобы сохранить дело, мы советуем клиентам перейти к уровню совместимости 1.1 и позже. Вы можете найти более подробную информацию об [уровне совместимости для заданий Azure Stream Analytics.](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level)
 
 
 ## <a name="get-help"></a>Получить справку
 
-За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
+Для получения дополнительной помощи попробуйте наш [форум Azure Stream Analytics.](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

@@ -1,15 +1,15 @@
 ---
-title: Обзор жизненного цикла субъекта Azure Service Fabric
+title: Обзор жизненного цикла актера Службы Лазурной службы Fabric
 description: Описание жизненного цикла Reliable Actors Service Fabric, сбора мусора и ручного удаления субъектов и их состояний.
 author: amanbha
 ms.topic: conceptual
 ms.date: 10/06/2017
 ms.author: amanbha
 ms.openlocfilehash: b05da78091260297d94062c06cba100d01ce7e2e
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79258321"
 ---
 # <a name="actor-lifecycle-automatic-garbage-collection-and-manual-delete"></a>Жизненный цикл субъектов, автоматическая сборка мусора и удаление вручную
@@ -50,7 +50,7 @@ ms.locfileid: "79258321"
 Прежде чем перейти к подробному рассмотрению деактивации, важно определить два понятия:
 
 * *Интервал сканирования*. Это интервал, с которым среда выполнения проверяет таблицу активных субъектов, чтобы определить, какие субъекты можно деактивировать и удалить во время сборки мусора. По умолчанию интервал равен 1 минуте.
-* *Время ожидания в состоянии простоя*. Это период времени, в течение которого субъект должен находиться в неиспользуемом состоянии (в состоянии простоя) до того, как он будет деактивирован и удален сборщиком мусора. По умолчанию это время равно 60 минутам.
+* *Простой тайм-аут*. Это период времени, в течение которого субъект должен находиться в неиспользуемом состоянии (в состоянии простоя) до того, как он будет деактивирован и удален сборщиком мусора. По умолчанию это время равно 60 минутам.
 
 Как правило, эти значения изменять не требуется. При необходимости этот период времени можно изменить, вызвав метод `ActorServiceSettings` при регистрации [службы субъектов](service-fabric-reliable-actors-platform.md):
 
@@ -85,7 +85,7 @@ public class Program
     }
 }
 ```
-Для каждого активного субъекта среда выполнения субъектов хранит информацию о времени, в течение которого он простаивает (не используется). Среда выполнения субъекта проверяет каждый из субъектов каждый `ScanIntervalInSeconds`, чтобы определить, может ли он быть собран сборщиком мусора, и помечает его в неактивном состоянии для `IdleTimeoutInSeconds`.
+Для каждого активного субъекта среда выполнения субъектов хранит информацию о времени, в течение которого он простаивает (не используется). Актер runtime проверяет каждого из `ScanIntervalInSeconds` актеров каждый, чтобы увидеть, если он может `IdleTimeoutInSeconds`быть мусор собран ы и отмечает его, если он был простоя для .
 
 При каждом использовании субъекта его время ожидания в состоянии простоя обнуляется. После этого субъект может быть удален сборщиком мусора только после бездействия в течение интервала времени, равного `IdleTimeoutInSeconds`. Считается, что субъект был использован, если метод вызван через интерфейс субъекта или если выполнен обратный вызов по напоминанию. **Не** считается, что субъект был использован, если выполняется обратный вызов по таймеру.
 
@@ -109,12 +109,12 @@ public class Program
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Таймеры и напоминания субъекта](service-fabric-reliable-actors-timers-reminders.md)
-* [События субъекта](service-fabric-reliable-actors-events.md)
-* [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)
+* [Актер события](service-fabric-reliable-actors-events.md)
+* [Ретрансция актера](service-fabric-reliable-actors-reentrancy.md)
 * [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
-* [Пример кода C#](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
-* [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
+* [Код образца СИ](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Код Java Sample](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-lifecycle/garbage-collection.png

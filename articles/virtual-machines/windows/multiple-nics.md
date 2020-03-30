@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальных машин Windows в Azure и управление ими, которые используют несколько сетевых интерфейсов
+title: Создание и управление Выхоженными компьютерами Windows в Azure, которые используют несколько NICs
 description: Узнайте, как создать виртуальную машину Windows с несколькими сетевыми адаптерами с помощью Azure PowerShell или шаблонов Resource Manager, а также, как управлять ими.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,23 +14,23 @@ ms.workload: infrastructure
 ms.date: 09/26/2017
 ms.author: cynthn
 ms.openlocfilehash: 20a595e1386a8d33c919ad4ff151d65e30b31eda
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79249988"
 ---
 # <a name="create-and-manage-a-windows-virtual-machine-that-has-multiple-nics"></a>Создание виртуальной машины Windows, использующей несколько сетевых адаптеров, и управление ею
 Виртуальные машины (VM) в Azure могут иметь несколько виртуальных сетевых адаптеров (NIC). Распространенный сценарий состоит в том, чтобы иметь разные подсети для интерфейсных и внутренних подключений. Вы можете связать несколько сетевых адаптеров на виртуальной машине с несколькими подсетями, но эти подсети должны находиться в одной и той же виртуальной сети (vNet). В этой статье подробно описывается, как создать виртуальную машину с несколькими сетевыми адаптерами. Вы также узнаете, как добавить или удалить сетевые адаптеры на существующей виртуальной машине. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myVnet* и *myVM*.
 
  
 
 ## <a name="create-a-vm-with-multiple-nics"></a>Создание виртуальной машины с несколькими сетевыми адаптерами
-Сначала создайте группу ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *EastUs*:
+Сначала создайте группу ресурсов. Следующий пример создает группу ресурсов под названием *myResourceGroup* в местоположении *EastUs:*
 
 ```powershell
 New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
@@ -78,7 +78,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
 
 Обычно также создается [группа безопасности сети](../../virtual-network/security-overview.md) для фильтрации трафика для виртуальной машины и [подсистема балансировки нагрузки](../../load-balancer/load-balancer-overview.md) для распределения трафика между несколькими виртуальными машинами.
 
-### <a name="create-the-virtual-machine"></a>создание виртуальной машины;
+### <a name="create-the-virtual-machine"></a>Создание виртуальной машины
 Теперь начните создание конфигурации виртуальной машины. Для каждого размера виртуальной машины существует ограничение на общее количество сетевых карт, которые можно в нее добавить. Дополнительные сведения см. в статье [Размеры виртуальных машин Windows в Azure](sizes.md).
 
 1. Задайте переменной `$cred` учетные данные виртуальной машины, как показано ниже:
@@ -139,7 +139,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     $vm = Get-AzVm -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью *Add-AzVMNetworkInterface* он подключается к виртуальной машине *myVM* в [myResourceGroup](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface)
+3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface) он подключается к виртуальной машине *myVM* в *myResourceGroup*
 
     ```powershell
     # Get info for the back end subnet

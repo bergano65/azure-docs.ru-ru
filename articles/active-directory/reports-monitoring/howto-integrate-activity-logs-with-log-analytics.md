@@ -1,6 +1,6 @@
 ---
-title: Потоковая передача журналов Azure Active Directory в журналы Azure Monitor | Документация Майкрософт
-description: Сведения о том, как интегрировать журналы Azure Active Directory с журналами Azure Monitor
+title: Поток журналов активных каталогов Azure в журналы Azure Monitor Документы Майкрософт
+description: Узнайте, как интегрировать журналы активных каталогов Azure в журналы Azure Monitor
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -18,13 +18,13 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 213fb6e73ae2fc4314320d0e3e593632d8eb7f85
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79266446"
 ---
-# <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Интеграция журналов Azure AD с Azure Monitor журналами
+# <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Интеграция журналов Azure AD с журналами Azure Monitor
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -51,7 +51,7 @@ ms.locfileid: "79266446"
 > В настоящее время журналы действий аудита и входов в систему в клиенте B2C не поддерживаются.
 >
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Для использования этой функции необходимо иметь следующее.
 
@@ -60,11 +60,11 @@ ms.locfileid: "79266446"
 * Пользователь, который является *глобальным администратором* или *администратором безопасности* для этого клиента Azure AD.
 * Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 
-## <a name="send-logs-to-azure-monitor"></a>Отправка журналов в Azure Monitor
+## <a name="send-logs-to-azure-monitor"></a>Отправка журналов на монитор Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 
-2. Выберите **Azure Active Directory** > **Параметры диагностики** -> **Добавить параметры диагностики**. Чтобы получить доступ к странице конфигурации параметров диагностики, можно выбрать **Параметры экспорта** со страницы **Журналы аудита** или **Вход в систему**.  
+2. Выберите > **настройки диагностики** ->  **active Каталога Azure****Добавление диагностических параметров.** Чтобы получить доступ к странице конфигурации параметров диагностики, можно выбрать **Параметры экспорта** со страницы **Журналы аудита** или **Вход в систему**.  
     
 3. В меню **Параметры диагностики** установите флажок **Send to Log Analytics workspace**(Отправить в рабочую область Log Analytics), а затем выберите **Настроить**.
 
@@ -83,4 +83,4 @@ ms.locfileid: "79266446"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)](howto-analyze-activity-logs-log-analytics.md)
-* [Установка и использование представлений Log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)
+* [Установка и использование представлений аналитики журналов для active Directory Azure](howto-install-use-log-analytics-views.md)

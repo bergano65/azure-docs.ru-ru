@@ -1,17 +1,17 @@
 ---
-title: Разработка приложений — База данных Azure для MySQL
+title: Разработка приложений - База данных Azure для MyS'L
 description: Представлены рекомендации по проектированию, которые разработчик должен учитывать при написании кода приложения для подключения к базе данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 74abf680223d562522a11ecb8999fedb37de9907
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 02ce6b00b6555f849d162b9f3b381c0ab358d712
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770277"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79532847"
 ---
 # <a name="application-development-overview-for-azure-database-for-mysql"></a>Обзор разработки приложений для базы данных Azure для MySQL 
 В этой статье рассматриваются рекомендации по проектированию, которые разработчик должен учитывать при написании кода приложения для подключения к базе данных Azure для MySQL. 
@@ -22,7 +22,7 @@ ms.locfileid: "74770277"
 ## <a name="language-and-platform"></a>Язык и платформа
 Доступны примеры кода на разных языках программирования и для разных платформ. Ссылки на примеры кода вы найдете в статье [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).
 
-## <a name="tools"></a>Средства
+## <a name="tools"></a>Инструменты
 База данных Azure для MySQL использует версию MySQL для сообщества, совместимую с распространенными средствами управления MySQL, такими как Workbench или служебные программы MySQL (mysql.exe, [phpMyAdmin](https://www.phpmyadmin.net/), [Navicat](https://www.navicat.com/products/navicat-for-mysql) и др.). Для взаимодействия со службой базы данных также можно использовать портал Azure, Azure CLI и интерфейсы REST API.
 
 ## <a name="resource-limitations"></a>Ограничения ресурсов
@@ -33,7 +33,7 @@ ms.locfileid: "74770277"
 ## <a name="security"></a>Безопасность
 База данных Azure для MySQL предоставляет ресурсы для ограничения доступа, защиты данных, настройки пользователей и ролей и мониторинга действий в базе данных MySQL.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 База данных Azure для MySQL поддерживает аутентификацию пользователей и имен для входа на сервере.
 
 ## <a name="resiliency"></a>Устойчивость

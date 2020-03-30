@@ -5,29 +5,29 @@ ms.subservice: cloud-provisioning
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
-ms.openlocfilehash: ba1bdd60a3363cfab694bae9b8ee3cf63e24b054
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3aa1571b46938b03f556fa124d3f0a2a70f2c5c3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76907582"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "79504368"
 ---
-## <a name="steps-to-enable-single-sign-on"></a>Действия по включению единого входа
-Подготовка облака работает с единым входом.  В настоящее время невозможно включить единый вход при установке агента, однако можно выполнить приведенные ниже действия, чтобы включить единый вход и использовать его. 
+## <a name="steps-to-enable-single-sign-on"></a>Шаги для включения единого включения
+Облачное подготовка работает с однозначным вводом.  В настоящее время нет возможности включить SSO при установке агента, однако вы можете использовать шаги ниже, чтобы включить SSO и использовать его. 
 
-### <a name="step-1-download-and-extract-azure-ad-connect-files"></a>Шаг 1. скачивание и извлечение файлов Azure AD Connect
-1.  Сначала скачайте последнюю версию [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594)
-2.  Откройте командную строку с правами администратора и перейдите к только что загруженному MSI.
-3.  Выполните следующую команду: `msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
-4. Измените FilePath и екстрактфолдер, чтобы они соответствовали пути к файлу и имени папки извлечения.  Теперь содержимое должно находиться в папке извлечения.
+### <a name="step-1-download-and-extract-azure-ad-connect-files"></a>Шаг 1: Скачать и извлечь файлы Azure AD Connect
+1.  Во-первых, загрузите последнюю версию [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594)
+2.  Откройте запрос команды, используя административные привилегии, и перейдите к только что загруженной msi.
+3.  Выполнить следующее:`msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
+4. Измените файлопат и экскновировать, чтобы соответствовать пути файла и названию папки извлечения.  Содержимое теперь должно быть в папке экстракции.
 
-### <a name="step-2-import-the-seamless-sso-powershell-module"></a>Шаг 2. импорт модуля PowerShell для простого единого входа
+### <a name="step-2-import-the-seamless-sso-powershell-module"></a>Шаг 2: Импорт бесшовный модуль SSO PowerShell
 
-1. Скачайте и установите [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
+1. Скачать и установить [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
 2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
 3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
 
-### <a name="step-3-get-the-list-of-active-directory-forests-on-which-seamless-sso-has-been-enabled"></a>Шаг 3. Получение списка Active Directory лесов, в которых включен простой единый вход
+### <a name="step-3-get-the-list-of-active-directory-forests-on-which-seamless-sso-has-been-enabled"></a>Шаг 3: Получить список активных лесов каталога, на котором Seamless SSO была включена
 
 1. Откройте сеанс PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. При запросе введите учетные данные глобального администратора своего клиента.
 2. Вызовите процедуру `Get-AzureADSSOStatus`. Эта команда выводит список лесов Active Directory (см. список "Домены"), в которых включена эта функция.
@@ -37,10 +37,10 @@ ms.locfileid: "76907582"
 1. Вызовите процедуру `Enable-AzureADSSOForest`. При запросе введите свои учетные данные администратора домена для нужного леса Active Directory.
 
    > [!NOTE]
-   >Имя пользователя учетных данных администратора домена необходимо указать в формате имени учетной записи SAM (contoso\johndoe или contoso. ком\жохндое). Мы используем доменную часть имени пользователя для указания контроллера домена администратора домена с помощью DNS.
+   >Имя пользователя domain administrator учетных данных должно быть внесено в формат sam имя учетной записи (contoso'johndoe или contoso.com'johndoe). Мы используем доменную часть имени пользователя для поиска контроллера домена администратора домена с помощью DNS.
 
    >[!NOTE]
-   >Используемая учетная запись администратора домена не должна быть членом группы "защищенные пользователи". В этом случае операция завершится ошибкой.
+   >Используемая учетная запись администратора домена не должна быть членом группы защищенных пользователей. Если это так, операция завершится неудачей.
 
 2. Повторите предыдущие шаги для каждого леса Active Directory, в котором должна быть настроена эта функция.
 

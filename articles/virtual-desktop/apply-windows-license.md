@@ -1,6 +1,6 @@
 ---
-title: Применение лицензии Windows к виртуальным машинам узла сеансов — Azure
-description: Описание применения лицензии Windows для виртуальных машин виртуальных рабочих столов Windows.
+title: Применить лицензию Windows для виртуальных компьютеров-
+description: Описывает, как применять лицензию Windows для виртуальных настольных компьютеров Windows.
 services: virtual-desktop
 author: ChristianMontoya
 ms.service: virtual-desktop
@@ -8,26 +8,26 @@ ms.topic: conceptual
 ms.date: 08/14/2019
 ms.author: chrimo
 ms.openlocfilehash: 2543dd12e8a75a038a1fc04371b8c562ef696e25
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79254239"
 ---
-# <a name="apply-windows-license-to-session-host-virtual-machines"></a>Применение лицензии Windows к виртуальным машинам узла сеансов
+# <a name="apply-windows-license-to-session-host-virtual-machines"></a>Применить лицензию Windows для виртуальных компьютеров- испотечных хостов
 
-Клиенты, имеющие право на выполнение рабочих нагрузок виртуальных рабочих столов Windows, могут применить лицензию Windows к виртуальным машинам узла сеансов и запускать их без оплаты за другую лицензию. Дополнительные сведения см. в разделе [цены на виртуальные рабочие столы Windows](https://azure.microsoft.com/pricing/details/virtual-desktop/).
+Клиенты, которые имеют надлежащую лицензию на запуск рабочих нагрузок Windows Virtual Desktop, имеют право применить лицензию Windows к виртуальным компьютерам- изапустить их без оплаты другой лицензии. Для получения дополнительной информации, см [Windows Виртуальный настольный цены](https://azure.microsoft.com/pricing/details/virtual-desktop/).
 
-## <a name="ways-to-use-your-windows-virtual-desktop-license"></a>Способы использования лицензии на виртуальные рабочие столы Windows
-Лицензирование виртуальных рабочих столов Windows позволяет применять лицензии к любой виртуальной машине Windows или Windows Server, зарегистрированной как узел сеанса в пуле узлов и принимающей подключения пользователей. Эта лицензия не распространяется на виртуальные машины, работающие в качестве серверов файловых ресурсов, контроллеров домена и т. д.
+## <a name="ways-to-use-your-windows-virtual-desktop-license"></a>Способы использования лицензии Windows Virtual Desktop
+Лицензирование Windows Virtual Desktop позволяет применять лицензию к любой виртуальной машине Windows или Windows Server, которая зарегистрирована в качестве хоста в пуле хостов и получает пользовательские соединения. Эта лицензия не распространяется на виртуальные машины, которые работают как серверы обмена файлами, контроллеры доменов и так далее.
 
-Существует несколько способов использования лицензии на виртуальные рабочие столы Windows.
-- Вы можете создать пул узлов и виртуальные машины узла сеансов с помощью [предложения Azure Marketplace](./create-host-pools-azure-marketplace.md). Виртуальные машины, созданные таким образом, автоматически применяют лицензию.
-- Пул узлов и виртуальные машины узла сеансов можно создать с помощью [шаблона Azure Resource Manager GitHub](./create-host-pools-arm-template.md). Виртуальные машины, созданные таким образом, автоматически применяют лицензию.
-- Вы можете применить лицензию к существующей виртуальной машине узла сеансов. Для этого сначала следуйте инструкциям в разделе [Создание пула узлов с помощью PowerShell](./create-host-pools-powershell.md) для создания пула узлов и связанных виртуальных машин, а затем вернитесь к этой статье, чтобы узнать, как применить эту лицензию.
+Существует несколько способов использования лицензии Windows Virtual Desktop:
+- Вы можете создать пул хоста и его виртуальные машины, хост сеанса, используя [предложение Azure Marketplace.](./create-host-pools-azure-marketplace.md) Виртуальные машины, созданные таким образом, автоматически применяют лицензию.
+- Вы можете создать пул хоста и его виртуальные машины, хост сеанса, используя [шаблон GitHub Azure Resource Manager.](./create-host-pools-arm-template.md) Виртуальные машины, созданные таким образом, автоматически применяют лицензию.
+- Вы можете применить лицензию к существующей виртуальной машине хоста сеанса. Для этого сначала следуйте инструкциям в [создании пула хоста с PowerShell](./create-host-pools-powershell.md) для создания пула хостов и связанных с ними ВМ, а затем вернитесь к этой статье, чтобы узнать, как применить лицензию.
 
-## <a name="apply-a-windows-license-to-a-session-host-vm"></a>Применение лицензии Windows к виртуальной машине узла сеансов
-Убедитесь, что у вас [установлена и настроена последняя версия Azure PowerShell](/powershell/azure/overview). Выполните следующий командлет PowerShell, чтобы применить лицензию Windows:
+## <a name="apply-a-windows-license-to-a-session-host-vm"></a>Примените лицензию Windows к хосте сеанса VM
+Убедитесь, что у вас [установлена и настроена последняя версия Azure PowerShell](/powershell/azure/overview). Выполнить следующий Смдлет PowerShell, чтобы применить лицензию Windows:
 
 ```powershell
 $vm = Get-AzVM -ResourceGroup <resourceGroupName> -Name <vmName>
@@ -35,13 +35,13 @@ $vm.LicenseType = "Windows_Client"
 Update-AzVM -ResourceGroupName <resourceGroupName> -VM $vm
 ```
 
-## <a name="verify-your-session-host-vm-is-utilizing-the-licensing-benefit"></a>Проверка того, что виртуальная машина узла сеансов использует преимущества лицензирования
-После развертывания виртуальной машины выполните командлет, чтобы проверить тип лицензии:
+## <a name="verify-your-session-host-vm-is-utilizing-the-licensing-benefit"></a>Проверка вашего хостатора сеанса VM использует лицензионное пособие
+После развертывания VM запустите этот cmdlet ot, проверить тип лицензии:
 ```powershell
 Get-AzVM -ResourceGroupName <resourceGroupName> -Name <vmName>
 ```
 
-Виртуальная машина узла сеансов с примененной лицензией Windows отобразит примерно следующее:
+Ведущий сеанса VM с приложенной лицензией Windows покажет вам что-то вроде этого:
 
 ```powershell
 Type                     : Microsoft.Compute/virtualMachines
@@ -49,7 +49,7 @@ Location                 : westus
 LicenseType              : Windows_Client
 ```
 
-Виртуальные машины без примененной лицензии Windows будут показывать примерно следующее:
+VMs без прикладной лицензии Windows покажет вам что-то вроде этого:
 
 ```powershell
 Type                     : Microsoft.Compute/virtualMachines
@@ -57,7 +57,7 @@ Location                 : westus
 LicenseType              :
 ```
 
-Выполните следующий командлет, чтобы просмотреть список всех виртуальных машин узла сеансов, к которым назначена лицензия Windows в вашей подписке Azure:
+Запустите следующий cmdlet, чтобы увидеть список всех vMs-миноносов, в которых есть лицензия Windows, примененная в подписке Azure:
 
 ```powershell
 $vms = Get-AzVM

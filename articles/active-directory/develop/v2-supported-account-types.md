@@ -1,5 +1,5 @@
 ---
-title: Поддерживаемые типы учетных записей — платформа Microsoft Identity | Службы
+title: Поддерживаемые типы учетных записей - платформа идентификации Майкрософт Azure
 description: Концептуальная документация по аудиториям и поддерживаемым типам учетных записей в приложениях
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,15 +17,15 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
 ms.openlocfilehash: de90c81f56b6017b2d53ecbfb2c400a4c9f05d81
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79262286"
 ---
 # <a name="supported-account-types"></a>Поддерживаемые типы учетных записей
 
-В этой статье объясняется, какие типы учетных записей (иногда называемые аудиторами) поддерживаются в приложениях.
+В этой статье объясняется, какие типы учетных записей (иногда именуемых аудиторий) поддерживаются в приложениях.
 
 <!-- This section can be in an include for many of the scenarios (SPA, Web App signing-in users, protecting a Web API, Desktop (depending on the flows), Mobile -->
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/10/2019
-ms.openlocfilehash: e2d63626ec548f0107d7af935af32e90d6972849
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2680304bd73bdbae35b29b89f38ae2665615f5e7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435526"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80239920"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Apache Hadoop с помощью REST API Azure
 
@@ -28,9 +28,9 @@ Azure REST API позволяет управлять службами, разм�
 
 ## <a name="create-a-template"></a>Создание шаблона
 
-Azure Resource Manager шаблоны — это документы JSON, описывающие **группу ресурсов** и все ресурсы в ней (например, HDInsight). Этот подход на основе шаблонов позволяет определить ресурсы, необходимые для HDInsight, в одном шаблоне.
+Шаблоны Менеджера ресурсов Azure — это документы JSON, описывающие **группу ресурсов** и все ресурсы в ней (например, HDInsight). Этот шаблонный подход позволяет определить ресурсы, необходимые для HDInsight в одном шаблоне.
 
-Ниже приведен документ JSON, в котором объединены файлы параметров и шаблона, доступного по адресу [https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password). В результате создается кластер под управлением Linux с паролем для защиты учетной записи пользователя SSH.
+Следующий документ JSON представляет собой слияние файлов [https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password)шаблонов и параметров из , который создает linux-кластер с помощью пароля для защиты учетной записи пользователя SSH.
 
    ```json
    {
@@ -212,7 +212,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 >
 > Дополнительные сведения о размерах узлов и их стоимости см. на странице с [ценами на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-## <a name="sign-in-to-your-azure-subscription"></a>Войдите в подписку Azure.
+## <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
 
 Выполните действия, описанные в статье [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2), и подключитесь к подписке, используя команду `az login`.
 
@@ -223,7 +223,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 
 1. Используйте следующую команду в командной строке, чтобы вывести список подписок Azure.
 
-   ```bash
+   ```azurecli
    az account list --query '[].{Subscription_ID:id,Tenant_ID:tenantId,Name:name}'  --output table
    ```
 
@@ -231,7 +231,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 
 2. Используйте следующую команду, чтобы создать приложение в Azure Active Directory.
 
-   ```bash
+   ```azurecli
    az ad app create --display-name "exampleapp" --homepage "https://www.contoso.org" --identifier-uris "https://www.contoso.org/example" --password <Your password> --query 'appId'
    ```
 
@@ -244,7 +244,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 
 3. Используйте следующую команду, чтобы создать субъект-службу с помощью **App ID**:
 
-   ```bash
+   ```azurecli
    az ad sp create --id <App ID> --query 'objectId'
    ```
 
@@ -252,7 +252,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 
 4. Назначьте роль **Владелец** субъекту-службе, используя значение **Object ID**. Используйте **идентификатор подписки**, полученный ранее.
 
-   ```bash
+   ```azurecli
    az role assignment create --assignee <Object ID> --role Owner --scope /subscriptions/<Subscription ID>/
    ```
 
@@ -347,12 +347,12 @@ curl -X "GET" "https://management.azure.com/subscriptions/$SUBSCRIPTIONID/resour
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы успешно создали кластер HDInsight, используйте следующую информацию, чтобы узнать, как работать с кластером.
+Теперь, когда вы успешно создали кластер HDInsight, используйте следующее, чтобы узнать, как работать с кластером.
 
 ### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
 
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
-* [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
+* [Использование MapReduce в Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
 ### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase
 

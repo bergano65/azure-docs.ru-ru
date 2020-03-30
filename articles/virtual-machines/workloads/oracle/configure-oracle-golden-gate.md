@@ -14,24 +14,24 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 31137bba8c9b6b88c6a8b9569c02ae887e73e8d0
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 0706b7d3c238c154d3694b5760266299a7d788ae
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309603"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79536876"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux 
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом руководстве описывается, как с помощью Azure CLI развернуть базу данных Oracle 12c, используя образ из коллекции Azure Marketplace. 
 
-В этом документе демонстрируется пошаговое создание, установка и настройка Oracle Golden Gate на виртуальной машине Azure. В этом руководстве две виртуальные машины настраиваются в группе доступности в одном регионе. Этот же учебник можно использовать для настройки шлюза Ораклеголден для виртуальных машин в разных Зоны доступности в одном регионе Azure или для установки виртуальных машин в двух разных регионах.
+В этом документе демонстрируется пошаговое создание, установка и настройка Oracle Golden Gate на виртуальной машине Azure. В этом учебнике две виртуальные машины настраиваются в наборе доступности в одном регионе. Один и тот же учебник можно использовать для настройки OracleGolden Gate для вс-миноносцев в различных зонах доступности в одном регионе Azure или для установки ВМ в двух разных регионах.
 
 Перед началом работы убедитесь, что вы установили Azure CLI. Дополнительные сведения см. в [руководстве по установке Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
 
-Чтобы выполнить установку Oracle Golden Gate, вам необходимо создать две виртуальные машины Azure в одной и той же группе доступности. Образ Marketplace, который вы будете использовать для создания виртуальных машин, — **Oracle:Oracle-Database-Ee:12.1.0.2:latest**.
+Чтобы выполнить установку Oracle Golden Gate, вам необходимо создать две виртуальные машины Azure в одной и той же группе доступности. Изображение Marketplace, используюееееееееееедляе для создания ВМ, — **Oracle-Database-Ee:12.1.0.2:последнее**.
 
 Кроме того, необходимо уметь работать с редактором Unix и иметь базовое представление об x11 (X Windows).
 
@@ -40,7 +40,7 @@ Azure CLI используется для создания ресурсов Azur
 > |  | **Основной сайт** | **Сайт репликации** |
 > | --- | --- | --- |
 > | **Версия Oracle** |Версия 2 Oracle 12c — (12.1.0.2) |Версия 2 Oracle 12c — (12.1.0.2)|
-> | **Имя компьютера** |myVM1 |myVM2 |
+> | **Название машины** |myVM1 |myVM2 |
 > | **Операционная система** |Oracle Linux 6.x |Oracle Linux 6.x |
 > | **ИД безопасности Oracle** |CDB1 |CDB1 |
 > | **Схема репликации** |TEST|TEST |
@@ -48,7 +48,7 @@ Azure CLI используется для создания ресурсов Azur
 > | **Процесс Golden Gate** |EXTORA |REPORA|
 
 
-### <a name="sign-in-to-azure"></a>Войдите в Azure 
+### <a name="sign-in-to-azure"></a>Вход в Azure 
 
 Войдите в подписку Azure, используя команду [az login](/cli/azure/reference-index). Затем выполните инструкции на экране.
 
@@ -56,17 +56,17 @@ Azure CLI используется для создания ресурсов Azur
 az login
 ```
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
-В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении `westus`.
+В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении именем `westus`.
 
 ```azurecli
 az group create --name myResourceGroup --location westus
 ```
 
-### <a name="create-an-availability-set"></a>Создать группу доступности
+### <a name="create-an-availability-set"></a>"Создать группу доступности"
 
 Следующий шаг необязателен, но мы рекомендуем его выполнить. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](https://docs.microsoft.com/azure/virtual-machines/windows/infrastructure-availability-sets-guidelines).
 
@@ -78,13 +78,14 @@ az vm availability-set create \
     --platform-update-domain-count 2
 ```
 
-### <a name="create-a-virtual-machine"></a>Создать виртуальную машину
+### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
 Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). 
 
 В следующем примере создаются две виртуальные машины — `myVM1` и `myVM2`, а также ключи SSH, если они еще не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`.
 
 #### <a name="create-myvm1-primary"></a>Создайте myVM1 (основная):
+
 ```azurecli
 az vm create \
      --resource-group myResourceGroup \
@@ -97,7 +98,7 @@ az vm create \
 
 После создания виртуальной машины в Azure CLI отображается информация следующего вида. (Запишите значение `publicIpAddress`. Этот адрес используется для доступа к виртуальной машине.)
 
-```azurecli
+```output
 {
   "fqdns": "",
   "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
@@ -111,6 +112,7 @@ az vm create \
 ```
 
 #### <a name="create-myvm2-replicate"></a>Создайте myVM2 (репликация):
+
 ```azurecli
 az vm create \
      --resource-group myResourceGroup \
@@ -139,7 +141,7 @@ az network nsg rule create --resource-group myResourceGroup\
 
 Результат должен выглядеть следующим образом:
 
-```bash
+```output
 {
   "access": "Allow",
   "description": null,
@@ -168,11 +170,11 @@ az network nsg rule create --resource-group myResourceGroup\
     --destination-address-prefix '*' --destination-port-range 1521 --access allow
 ```
 
-### <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
+### <a name="connect-to-the-virtual-machine"></a>Подключитесь к виртуальной машине
 
 Используйте следующую команду для создания сеанса SSH с виртуальной машиной. Замените IP-адрес общедоступным IP-адресом виртуальной машины (значение `publicIpAddress`).
 
-```bash 
+```bash
 ssh <publicIpAddress>
 ```
 
@@ -207,9 +209,10 @@ $ dbca -silent \
    -storageType FS \
    -ignorePreReqs
 ```
+
 Результат должен выглядеть следующим образом:
 
-```bash
+```output
 Copying database files
 1% complete
 2% complete
@@ -259,6 +262,7 @@ export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 ```
 
 ### <a name="start-oracle-listener"></a>Запуск прослушивателя Oracle
+
 ```bash
 $ lsnrctl start
 ```
@@ -268,6 +272,7 @@ $ lsnrctl start
 ```bash
 sudo su - oracle
 ```
+
 Создание базы данных
 
 ```bash
@@ -289,6 +294,7 @@ $ dbca -silent \
    -storageType FS \
    -ignorePreReqs
 ```
+
 Задайте переменные ORACLE_SID и ORACLE_HOME.
 
 ```bash
@@ -309,6 +315,7 @@ export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 ```
 
 ### <a name="start-oracle-listener"></a>Запуск прослушивателя Oracle
+
 ```bash
 $ sudo su - oracle
 $ lsnrctl start
@@ -355,7 +362,7 @@ SQL> EXIT;
    $ scp fbo_ggs_Linux_x64_shiphome.zip <publicIpAddress>:<folder>
    ```
 
-3. Переместите ZIP-файлы в папку **/opt**. Затем измените владельца файлов следующим образом:
+3. Переместите файлы .zip в папку **/opt.** Затем измените владельца файлов следующим образом:
 
    ```bash
    $ sudo su -
@@ -409,7 +416,7 @@ SQL> EXIT;
    > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
    >  
 
-6. Запустите PuTTY. В области **Категория** выберите **Подключение** > **SSH** > **Проверка подлинности**. В поле **Private key file for authentication** (Файл закрытого ключа для проверки подлинности) выберите созданный ранее ключ.
+6. Запустите PuTTY. В панели **категории** выберите **Connection** > **SSH** > **Auth.** В **файле Private key для проверки подлинности** просматривайте ключ, созданный ранее.
 
    ![Снимок экрана со страницей настройки закрытого ключа](./media/oracle-golden-gate/setprivatekey.png)
 
@@ -425,12 +432,13 @@ SQL> EXIT;
 
 Чтобы установить Oracle Golden Gate, сделайте следующее:
 
-1. Выполните вход в качестве пользователя oracle. Вы сможете войти, не вводя пароль. Перед установкой убедитесь, что Xming работает.
- 
+1. Выполните вход в качестве пользователя oracle. (Вы должны быть в состоянии войти в систему без побужденный пароль.) Убедитесь, что Xming работает перед началом установки.
+
    ```bash
    $ cd /opt/fbo_ggs_Linux_x64_shiphome/Disk1
    $ ./runInstaller
    ```
+
 2. Выберите Oracle GoldenGate for Oracle Database 12c (Oracle GoldenGate для базы данных Oracle 12c). Нажмите кнопку **Далее**, чтобы продолжить.
 
    ![Снимок экрана со страницей выбора установки в установщике](./media/oracle-golden-gate/golden_gate_install_01.png)
@@ -536,6 +544,7 @@ SQL> EXIT;
 
    GGSCI> EDIT PARAMS EXTORA
    ```
+
 5. Добавьте следующий файл параметров EXTRACT (с помощью команды vi). Нажмите клавишу ESC, ":wq!" чтобы сохранить файл. 
 
    ```bash
@@ -550,6 +559,7 @@ SQL> EXIT;
    TABLE pdb1.test.TCUSTMER;
    TABLE pdb1.test.TCUSTORD;
    ```
+
 6. Зарегистрируйте извлечение, интегрированное с помощью EXTRACT:
 
    ```bash
@@ -565,6 +575,7 @@ SQL> EXIT;
 
    GGSCI> exit
    ```
+
 7. Настройте контрольные точки извлечения и запустите извлечение в режиме реального времени:
 
    ```bash
@@ -587,6 +598,7 @@ SQL> EXIT;
    MANAGER     RUNNING
    EXTRACT     RUNNING     EXTORA      00:00:11      00:00:04
    ```
+
    На этом шаге найдите начальный сайт SCN, который будет использоваться позже в другом разделе:
 
    ```bash
@@ -684,6 +696,7 @@ SQL> EXIT;
    $ ./ggsci
    GGSCI> EDIT PARAMS REPORA  
    ```
+
    Содержимое файла параметров REPORA:
 
    ```bash
@@ -697,7 +710,7 @@ SQL> EXIT;
    MAP pdb1.test.*, TARGET pdb1.test.*;
    ```
 
-5. Настройка репликации контрольной точки:
+5. Настройка контрольно-пропускного пункта репликации:
 
    ```bash
    GGSCI> ADD REPLICAT REPORA, INTEGRATED, EXTTRAIL ./dirdat/rt
@@ -719,19 +732,21 @@ SQL> EXIT;
 
 ### <a name="set-up-the-replication-myvm1-and-myvm2"></a>Настройка репликации (myVM1 и myVM2)
 
-#### <a name="1-set-up-the-replication-on-myvm2-replicate"></a>1. Настройка репликации на myVM2 (репликация)
+#### <a name="1-set-up-the-replication-on-myvm2-replicate"></a>1. Настройка репликации на myVM2 (реплицировать)
 
   ```bash
   $ cd /u01/app/oracle/product/12.1.0/oggcore_1
   $ ./ggsci
   GGSCI> EDIT PARAMS MGR
   ```
+
 Обновите файл с использованием следующего содержимого:
 
   ```bash
   PORT 7809
   ACCESSRULE, PROG *, IPADDR *, ALLOW
   ```
+
 Затем перезапустите службу диспетчера:
 
   ```bash
@@ -740,7 +755,7 @@ SQL> EXIT;
   GGSCI> EXIT
   ```
 
-#### <a name="2-set-up-the-replication-on-myvm1-primary"></a>2. Настройка репликации на myVM1 (основная)
+#### <a name="2-set-up-the-replication-on-myvm1-primary"></a>2. Настройка репликации на myVM1 (первичный)
 
 Запустите начальную нагрузку и проверьте наличие ошибок:
 
@@ -750,7 +765,8 @@ $ ./ggsci
 GGSCI> START EXTRACT INITEXT
 GGSCI> VIEW REPORT INITEXT
 ```
-#### <a name="3-set-up-the-replication-on-myvm2-replicate"></a>3. Настройка репликации на myVM2 (репликация)
+
+#### <a name="3-set-up-the-replication-on-myvm2-replicate"></a>3. Настройка репликации на myVM2 (реплицировать)
 
 Измените номер SCN на полученный ранее номер:
 
@@ -759,6 +775,7 @@ GGSCI> VIEW REPORT INITEXT
   $ ./ggsci
   START REPLICAT REPORA, AFTERCSN 1857887
   ```
+
 Репликация началась и вы можете протестировать ее, вставив новые записи в таблицы TEST.
 
 
@@ -802,7 +819,7 @@ GGSCI> VIEW REPORT INITEXT
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 

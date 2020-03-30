@@ -1,48 +1,48 @@
 ---
-title: Настройка правил приложения брандмауэра Azure с помощью полных доменных имен SQL
-description: Из этой статьи вы узнаете, как настроить полные доменные имена SQL в правилах приложения брандмауэра Azure.
+title: Настройка правил применения приложения Azure Firewall с помощью F-DN СЗЛ
+description: В этой статье вы узнаете, как настроить F-DN с S'L в правилах применения Azure Firewall.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
 ms.date: 07/19/2019
 ms.author: victorh
-ms.openlocfilehash: a42d6bcdcec2a5de7432f11216a4d8dd0c1deef9
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: 858cfc9a8c15f1e33e688bb5086a58f194e7173f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78942572"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79501493"
 ---
-# <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Настройка правил приложения брандмауэра Azure с помощью полных доменных имен SQL
+# <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Настройка правил применения приложения Azure Firewall с помощью F-DN СЗЛ
 
 > [!IMPORTANT]
-> Правила приложений брандмауэра Azure с полным доменным имен SQL в настоящее время находятся в общедоступной предварительной версии.
+> Правила применения приложения Azure Firewall с S'L ФЗНв в настоящее время находятся в открытом доступе.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Теперь правила приложения брандмауэра Azure можно настроить с помощью полных доменных имен SQL. Это позволяет ограничить доступ в виртуальных сетях только указанными экземплярами SQL Server.
+Теперь можно настроить правила применения приложения Azure Firewall с помощью F-DN СЗЛ. Это позволяет ограничить доступ из виртуальных сетей только в указанные экземпляры сервера S'L.
 
-С помощью полных доменных имен SQL можно фильтровать трафик:
+С помощью СЗЛ ФЗДН можно фильтровать трафик:
 
-- Из виртуальных сетей в базу данных SQL Azure или хранилище данных SQL Azure. Например: разрешить доступ только к *SQL-Server1.Database.Windows.NET*.
-- Из локальной среды в управляемые экземпляры SQL Azure или SQL IaaS, работающие в виртуальных сетей.
-- От периферийных серверов до управляемых экземпляров SQL Azure или SQL IaaS, работающих в виртуальных сетей.
+- От VNets к базе данных Azure S'L или складу данных Azure S'L. Например: Разрешить доступ к *sql-server1.database.windows.net*только .
+- От наемных помещений до управляемых экземпляров Azure S'L или S'L IaaS, работающих в ваших VNets.
+- От выступления до управляемых экземпляров Azure S'L или S'L IaaS, работающих в ваших VNets.
 
-В общедоступной предварительной версии Фильтрация полного доменного имени SQL поддерживается только в [прокси-режиме](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) (порт 1433). При использовании SQL в режиме перенаправления по умолчанию можно отфильтровать доступ с помощью тега службы SQL в рамках [сетевых правил](overview.md#network-traffic-filtering-rules).
-Если для трафика IaaS SQL используются порты не по умолчанию, эти порты можно настроить в правилах брандмауэра приложения.
+Во время публичного предварительного просмотра фильтрация S'L F'DN поддерживается только в [прокси-режиме](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) (порт 1433). Если вы используете S'L в режиме перенаправления по умолчанию, вы можете фильтровать доступ с помощью тега службы S'L как часть [сетевых правил.](overview.md#network-traffic-filtering-rules)
+Если вы используете порты без дефолта для трафика S'L IaaS, вы можете настроить эти порты в правилах приложения брандмауэра.
 
-Правила приложений с полным доменным имен SQL в настоящее время доступны во всех регионах с помощью портал Azure, Azure CLI, других и шаблонов.
+Правила применения с S'L ФЗНв в настоящее время доступны во всех регионах через портал Azure, Azure CLI, REST и шаблоны.
 
 ## <a name="configure-using-azure-cli"></a>Настройка с помощью Azure CLI
 
-1. Разверните [брандмауэр Azure с помощью Azure CLI](deploy-cli.md).
-2. Если вы фильтруете трафик в базу данных SQL Azure, хранилище данных SQL или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения о том, как переключить режим подключения SQL, см. в статье [Параметры подключения к SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settingse#change-azure-sql-database-connection-policy).
+1. Развертывание [брандмауэра Azure с помощью Azure CLI.](deploy-cli.md)
+2. При фильтрации трафика в базу данных Azure S'L, Хранилище данных S'L или управляемый экземпляр S'L убедитесь, что режим подключения S'L настроен на **прокси.** Чтобы узнать, как переключить режим [Azure SQL Connectivity Settings](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli)подключения, см.
 
    > [!NOTE]
-   > Режим *прокси* SQL может привести к увеличению задержки по сравнению с *перенаправлением*. Если вы хотите продолжить использовать режим перенаправления, который используется по умолчанию для клиентов, подключающихся в Azure, можно отфильтровать доступ с помощью [тега службы](service-tags.md) SQL в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
+   > *Прокси-режим* S'L может привести к большей задержке по сравнению с *перенаправлением.* Если вы хотите продолжать использовать режим перенаправления, который является по умолчанию для клиентов, подключенных к Azure, вы можете фильтровать доступ с помощью [тега службы](service-tags.md) S'L в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
 
-3. Настройте правило приложения с полным доменным именем SQL, чтобы разрешить доступ к SQL Server:
+3. Навлажив правило приложения с помощью S'L ФЗДН, чтобы обеспечить доступ к серверу S'L:
 
    ```azurecli
    az extension add -n azure-firewall
@@ -57,17 +57,17 @@ ms.locfileid: "78942572"
    --target-fqdns sql-serv1.database.windows.net
    ```
 
-## <a name="configure-using-the-azure-portal"></a>Настройка с помощью портал Azure
-1. Разверните [брандмауэр Azure с помощью Azure CLI](deploy-cli.md).
-2. Если вы фильтруете трафик в базу данных SQL Azure, хранилище данных SQL или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения о том, как переключить режим подключения SQL, см. в статье [Параметры подключения к SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settingse#change-azure-sql-database-connection-policy).  
+## <a name="configure-using-the-azure-portal"></a>Настройка с помощью портала Azure
+1. Развертывание [брандмауэра Azure с помощью Azure CLI.](deploy-cli.md)
+2. При фильтрации трафика в базу данных Azure S'L, Хранилище данных S'L или управляемый экземпляр S'L убедитесь, что режим подключения S'L настроен на **прокси.** Чтобы узнать, как переключить режим [Azure SQL Connectivity Settings](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli)подключения, см.  
 
    > [!NOTE]
-   > Режим *прокси* SQL может привести к увеличению задержки по сравнению с *перенаправлением*. Если вы хотите продолжить использовать режим перенаправления, который используется по умолчанию для клиентов, подключающихся в Azure, можно отфильтровать доступ с помощью [тега службы](service-tags.md) SQL в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
-3. Добавьте правило приложения с соответствующим протоколом, портом и полным доменным именем SQL, а затем нажмите кнопку **сохранить**.
-   ![правило приложения с полным доменным именем SQL](media/sql-fqdn-filtering/application-rule-sql.png)
-4. Получите доступ к SQL из виртуальной машины в виртуальной сети, которая фильтрует трафик через брандмауэр. 
-5. Убедитесь, что в [журналах брандмауэра Azure](log-analytics-samples.md) разрешено отображение трафика.
+   > *Прокси-режим* S'L может привести к большей задержке по сравнению с *перенаправлением.* Если вы хотите продолжать использовать режим перенаправления, который является по умолчанию для клиентов, подключенных к Azure, вы можете фильтровать доступ с помощью [тега службы](service-tags.md) S'L в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
+3. Добавьте правило приложения с соответствующим протоколом, портовым и S'L ФЗДН, а затем выберите **Сохранить.**
+   ![правило применения с Помощью СЗЛ ФЗДН](media/sql-fqdn-filtering/application-rule-sql.png)
+4. Доступ к S'L с виртуальной машины в VNet, который фильтрует трафик через брандмауэр. 
+5. Проверка [журналов Azure Firewall,](log-analytics-samples.md) показывающее, что трафик разрешен.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о прокси-сервере SQL и режимах перенаправления см. в статье [Архитектура подключения к базе данных SQL Azure](../sql-database/sql-database-connectivity-architecture.md).
+Чтобы узнать о режимах прокси-серверов и перенаправления см. [Azure SQL database connectivity architecture](../sql-database/sql-database-connectivity-architecture.md)

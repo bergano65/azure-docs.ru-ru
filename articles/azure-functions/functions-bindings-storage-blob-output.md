@@ -1,26 +1,26 @@
 ---
-title: Выходная привязка хранилища BLOB-объектов Azure для функций Azure
-description: Узнайте, как предоставить данные хранилища BLOB-объектов Azure функции Azure.
+title: Привязка к выходу хранилища Azure Blob для функций Azure
+description: Узнайте, как предоставить данные хранения данных Azure Blob функции Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.openlocfilehash: c6e15c9a99a78f0f3637f718b35462fe49fd5ee6
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79277249"
 ---
-# <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Выходная привязка хранилища BLOB-объектов Azure для функций Azure
+# <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Привязка к выходу хранилища Azure Blob для функций Azure
 
-Выходная привязка позволяет изменять и удалять данные хранилища BLOB-объектов в функции Azure.
+Выходная привязка позволяет изменять и удалять данные хранения каблов в функции Azure.
 
-Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](./functions-bindings-storage-blob.md).
+Для получения информации о настройке и деталях конфигурации, [см.](./functions-bindings-storage-blob.md)
 
 ## <a name="example"></a>Пример
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 Ниже приведен пример [функции C#](functions-dotnet-class-library.md), которая использует триггер большого двоичного объекта и две выходные привязки больших двоичных объектов. Эта функция активируется путем создания большого двоичного объекта образа в контейнере *sample-images*. Она создает небольшие и средние копии большого двоичного объекта образа.
 
@@ -73,11 +73,11 @@ public class ResizeImages
 }
 ```
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 <!--Same example for input and output. -->
 
-В примере ниже показаны входная и выходная привязки больших двоичных объектов в файле *function.json*, а также код [скрипта C# (CSX)](functions-reference-csharp.md), который использует эти привязки. Функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект получает имя *{originalblobname}-Copy*.
+В примере ниже показаны входная и выходная привязки больших двоичных объектов в файле *function.json*, а также код [скрипта C# (CSX)](functions-reference-csharp.md), который использует эти привязки. Функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новая капля называется *«originalblobname»-Copy*.
 
 В файле *function.json* свойство метаданных `queueTrigger` используется для указания имени большого двоичного объекта в свойствах `path`:
 
@@ -122,11 +122,11 @@ public static void Run(string myQueueItem, string myInputBlob, out string myOutp
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 <!--Same example for input and output. -->
 
-В примере ниже показаны входная и выходная привязки BLOB-объектов в файле *function.json*, а также код [скрипта JavaScript](functions-reference-node.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект получает имя *{originalblobname}-Copy*.
+В примере ниже показаны входная и выходная привязки BLOB-объектов в файле *function.json*, а также код [скрипта JavaScript](functions-reference-node.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новая капля называется *«originalblobname»-Copy*.
 
 В файле *function.json* свойство метаданных `queueTrigger` используется для указания имени большого двоичного объекта в свойствах `path`:
 
@@ -175,7 +175,7 @@ module.exports = function(context) {
 
 <!--Same example for input and output. -->
 
-В приведенном ниже примере показаны входная и выходная привязки больших двоичных объектов в файле *function.json* и [код Python](functions-reference-python.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект получает имя *{originalblobname}-Copy*.
+В приведенном ниже примере показаны входная и выходная привязки больших двоичных объектов в файле *function.json* и [код Python](functions-reference-python.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новая капля называется *«originalblobname»-Copy*.
 
 В файле *function.json* свойство метаданных `queueTrigger` используется для указания имени большого двоичного объекта в свойствах `path`:
 
@@ -293,9 +293,9 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream,
 
 ---
 
-## <a name="attributes-and-annotations"></a>Атрибуты и заметки
+## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [BlobAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobAttribute.cs).
 
@@ -323,69 +323,69 @@ public static void Run(
 }
 ```
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+Атрибуты не поддерживаются Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Атрибут `@BlobOutput` предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте для `dataType` значение `binary`. Дополнительные сведения см. в [примере выходных данных](#example) .
+Атрибут `@BlobOutput` дает вам доступ к каплей, которая вызвала функцию. Если вы используете массив байт `dataType` с `binary`атрибутом, установите на . Для подробной информации обратитесь к [примеру вывода.](#example)
 
 ---
 
-Полный пример см. в разделе [пример выходных данных](#example).
+Для полного примера [см.](#example)
 
 Чтобы указать учетную запись хранения на уровне класса, метода или параметра, можно использовать атрибут `StorageAccount`. Дополнительные сведения см. в разделе [Атрибуты триггера для предкомпилированного кода C#](./functions-bindings-storage-blob-trigger.md#attributes-and-annotations).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Blob`.
+В следующей таблице объясняется свойства связывающей конфигурации, `Blob` установленные в файле *function.json* и атрибуте.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `blob`. |
+|**тип** | Недоступно | Нужно задать значение `blob`. |
 |**direction** | Недоступно | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
-|**путь** |**BlobPath** | Путь к контейнеру больших двоичных объектов. |
-|**connection** |**Соединение**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
+|**Путь** |**BlobPath** | Путь к контейнеру с каплями. |
+|**Подключения** |**Подключения**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 |Недоступно | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="usage"></a>Использование
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 [!INCLUDE [functions-bindings-blob-storage-output-usage.md](../../includes/functions-bindings-blob-storage-output-usage.md)]
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 [!INCLUDE [functions-bindings-blob-storage-output-usage.md](../../includes/functions-bindings-blob-storage-output-usage.md)]
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В JavaScript получите доступ к данным больших двоичных объектов с помощью `context.bindings.<name from function.json>`.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Параметры функции можно объявить как следующие типы для записи в хранилище BLOB-объектов:
+Вы можете объявить параметры функции в качестве следующих типов, чтобы выписать на хранение капли:
 
-* Строки как `func.Out(str)`
-* Потоки как `func.Out(func.InputStream)`
+* Строки как`func.Out(str)`
+* Потоки как`func.Out(func.InputStream)`
 
-Дополнительные сведения см. в [примере выходных данных](#example) .
+Для подробной информации обратитесь к [примеру вывода.](#example)
 
 # <a name="java"></a>[Java](#tab/java)
 
-Атрибут `@BlobOutput` предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте для `dataType` значение `binary`. Дополнительные сведения см. в [примере выходных данных](#example) .
+Атрибут `@BlobOutput` дает вам доступ к каплей, которая вызвала функцию. Если вы используете массив байт `dataType` с `binary`атрибутом, установите на . Для подробной информации обратитесь к [примеру вывода.](#example)
 
 ---
 
@@ -399,5 +399,5 @@ public static void Run(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Выполнение функции при изменении данных хранилища BLOB-объектов](./functions-bindings-storage-blob-trigger.md)
-- [Чтение данных хранилища BLOB-объектов при выполнении функции](./functions-bindings-storage-blob-input.md)
+- [Выполнить функцию при изменении данных хранения каблики](./functions-bindings-storage-blob-trigger.md)
+- [Чтение данных о хранении капли при запуске функции](./functions-bindings-storage-blob-input.md)
