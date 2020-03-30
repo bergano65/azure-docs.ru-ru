@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 11/29/2017
 ms.author: cshoe
 ms.openlocfilehash: 9ed2b81c12c698822b9542bb6903189c865b572b
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79277470"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
@@ -24,7 +24,7 @@ ms.locfileid: "79277470"
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
-## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
+## <a name="packages---functions-2x-and-higher"></a>Пакеты - Функции 2.x и выше
 
 Привязки SendGrid доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.SendGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SendGrid) версии 3.x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.SendGrid/).
 
@@ -32,7 +32,7 @@ ms.locfileid: "79277470"
 
 ## <a name="example"></a>Пример
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая использует триггер очереди служебной шины и выходную привязку SendGrid.
 
@@ -100,7 +100,7 @@ public class OutgoingEmail
 
 Вы можете не задавать свойство атрибута `ApiKey` при наличии ключа API в настройка приложения с именем AzureWebJobsSendGridApiKey.
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 В следующем примере показаны выходная привязка SendGrid в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку.
 
@@ -159,7 +159,7 @@ public class Message
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В следующем примере показаны выходная привязка SendGrid в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку.
 
@@ -203,7 +203,7 @@ module.exports = function (context, input) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показана функция, активируемая по HTTP, которая отправляет сообщение электронной почты с помощью привязки SendGrid. В конфигурации привязки можно указать значения по умолчанию. Например, адрес отправной *электронной почты* настраивается в *Function. JSON*. 
+В следующем примере показана функция HTTP-триггера, которая отправляет электронное письмо с помощью привязки SendGrid. Вы можете предоставить значения по умолчанию в конфигурации связывания. Например, адрес *электронной* почты настроен в *function.json.* 
 
 ```json
 {
@@ -232,7 +232,7 @@ module.exports = function (context, input) {
 }
 ```
 
-Следующая функция показывает, как можно указать пользовательские значения для необязательных свойств.
+Следующая функция показывает, как можно предоставить пользовательские значения для дополнительных свойств.
 
 ```python
 import logging
@@ -260,7 +260,7 @@ def main(req: func.HttpRequest, sendGridMessage: func.Out[str]) -> func.HttpResp
 
 # <a name="java"></a>[Java](#tab/java)
 
-В следующем примере используется заметка `@SendGridOutput` из [библиотеки среды выполнения функций Java](/java/api/overview/azure/functions/runtime) для отправки сообщения электронной почты с помощью выходной привязки SendGrid.
+В следующем примере `@SendGridOutput` используется аннотация из [библиотеки выполнения функций Java](/java/api/overview/azure/functions/runtime) для отправки электронной почты с помощью связывания вывода SendGrid.
 
 ```java
 package com.function;
@@ -312,9 +312,9 @@ public class HttpTriggerSendGrid {
 
 ---
 
-## <a name="attributes-and-annotations"></a>Атрибуты и заметки
+## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [SendGrid](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.SendGrid/SendGridAttribute.cs).
 
@@ -332,40 +332,40 @@ public static void Run(
 
 Полный пример см. в разделе [Пример C#](#example).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+Атрибуты не поддерживаются Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Заметка [сендгридаутпут](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/SendGridOutput.java) позволяет декларативно настроить привязку SendGrid, предоставив значения конфигурации. Дополнительные сведения см. в разделах [примеры](#example) и [Конфигурация](#configuration) .
+Аннотация [SendGridOutput](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/SendGridOutput.java) позволяет декларативно настроить привязку SendGrid, предоставляя значения конфигурации. Более подробно ознакомьтесь с разделами [примера](#example) и [конфигурации.](#configuration)
 
 ---
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
-В следующей таблице перечислены свойства конфигурации привязки, доступные в файле *Function. JSON* , а также атрибут `SendGrid` или Аннотация.
+В следующей таблице перечислены свойства связывающей конфигурации, доступные в файле *function.json,* а также `SendGrid` атрибут/аннотация.
 
-| Свойство *Function. JSON* | Свойство атрибута или заметки | Description | Необязательно |
+| *свойство function.json* | Свойство атрибутики/аннотации | Описание | Необязательный |
 |--------------------------|-------------------------------|-------------|----------|
 | type |Недоступно| Нужно задать значение `sendGrid`.| нет |
 | direction |Недоступно| Нужно задать значение `out`.| нет |
-| name |Недоступно| Имя переменной, используемое в коде функции для запроса или текста запроса. Это значение равно `$return` при наличии только одного возвращаемого значения. | нет |
-| apiKey | ApiKey | Имя параметра приложения, в котором содержится ваш ключ API. Если параметр не задан, по умолчанию используется имя параметра приложения *AzureWebJobsSendGridApiKey*.| нет |
+| name |Недоступно| Переменное имя, используемое в функциональном коде для тела запроса или запроса. Это значение равно `$return` при наличии только одного возвращаемого значения. | нет |
+| apiKey | ApiKey | Имя параметра приложения, в котором содержится ваш ключ API. Если не установить, имя настройки приложения по умолчанию — *AzureWebWebJobsSendGridApiKey.*| нет |
 | значение| Чтобы | Адрес электронной почты получателя. | Да |
 | из| От | Адрес электронной почты отправителя. |  Да |
 | subject| Тема | Тема сообщения электронной почты. | Да |
-| text| текст | Содержимое электронной почты. | Да |
+| text| Text | Содержимое электронной почты. | Да |
 
-Необязательные свойства могут иметь значения по умолчанию, определенные в привязке, а также добавлять или переопределять программно.
+Дополнительные свойства могут иметь значения по умолчанию, определенные в связке и либо добавленные, либо переопределенные программно.
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -373,7 +373,7 @@ public static void Run(
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример файла host. JSON ниже содержит только параметры версии 2. x + для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версиях 2. x и более поздних версий см. в [справочнике по Host. JSON для функций Azure](functions-host-json.md).
+В этом разделе описаны глобальные настройки конфигурации, доступные для этого привязки в версиях 2.x и выше. Приведенный ниже файл «Пример host.json» содержит только настройки версии 2.x для этой привязки. Для получения дополнительной информации о настройках глобальной конфигурации в версиях 2.x и далее см. [ссылку host.json на функции Azure.](functions-host-json.md)
 
 > [!NOTE]
 > Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
@@ -389,7 +389,7 @@ public static void Run(
 }
 ```  
 
-|Свойство  |По умолчанию | Description |
+|Свойство  |Значение по умолчанию | Описание |
 |---------|---------|---------| 
 |из|Недоступно|Адрес электронной почты для всех функций.| 
 

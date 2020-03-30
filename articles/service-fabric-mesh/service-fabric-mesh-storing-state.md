@@ -1,15 +1,15 @@
 ---
-title: Варианты хранения состояния в сети Azure Service Fabric
+title: Варианты хранения состояния на сетке Ткани службы Azure
 description: Узнайте о надежном сохранении состояний в приложениях службы "Сетка Service Fabric", работающих в службе "Сетка Azure Service Fabric".
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/27/2018
 ms.topic: conceptual
 ms.openlocfilehash: 0b0bd611fa86d155bb5bf2e07808e7365e28871c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79259101"
 ---
 # <a name="state-management-with-service-fabric"></a>Управление состояниями с помощью Service Fabric
@@ -26,7 +26,7 @@ Service Fabric поддерживает множество разных спос
 
 ### <a name="service-fabric-reliable-volume"></a>Надежный том Service Fabric
 
-Надежный том Service Fabric — это драйвер тома Docker, используемый для подключения локального тома к контейнеру. Операции чтения и записи являются локальными и выполняются быстро. Данные реплицируются на дополнительные узлы, обеспечивая высокий уровень доступности. Отработка отказа также выполняется быстро. В случае сбоя контейнера выполняется отработка отказа с добавлением на тот узел, где уже есть копия ваших данных. Пример см. в статье [Подключение тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric"](service-fabric-mesh-howto-deploy-app-sfreliable-disk-volume.md).
+Надежный том Service Fabric — это драйвер тома Docker, используемый для подключения локального тома к контейнеру. Операции чтения и записи являются локальными и выполняются быстро. Данные реплицируются на дополнительные узлы, обеспечивая высокий уровень доступности. Отработка отказа также выполняется быстро. В случае сбоя контейнера выполняется отработка отказа с добавлением на тот узел, где уже есть копия ваших данных. Например, [см. Как развернуть приложение с надежным объемом Service Fabric.](service-fabric-mesh-howto-deploy-app-sfreliable-disk-volume.md)
 
 ### <a name="azure-files-volume"></a>Том службы "Файлы Azure"
 

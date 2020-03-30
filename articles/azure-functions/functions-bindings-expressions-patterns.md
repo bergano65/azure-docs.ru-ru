@@ -1,26 +1,26 @@
 ---
-title: Выражения и шаблоны привязок функций Azure
-description: Научитесь создавать различные выражения привязки функций Azure на основе общих шаблонов.
+title: Функции Azure привязывает выражения и шаблоны
+description: Научитесь создавать различные связывающие выражения Azure Functions, основанные на общих шаблонах.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
 ms.openlocfilehash: 2d0cf18de09932c5d66e269a85919f4d85383c5b
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79277652"
 ---
-# <a name="azure-functions-binding-expression-patterns"></a>Шаблоны выражений привязки функций Azure
+# <a name="azure-functions-binding-expression-patterns"></a>Шаблоны связывания выражения Azure Functions
 
-Одной из самых эффективных функций [триггеров и привязок](./functions-triggers-bindings.md) являются *выражения привязки*. В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
+Одной из самых мощных особенностей [триггеров и привязок](./functions-triggers-bindings.md) является *связывающее выражение.* В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
 
 Большинство выражений определяются путем их заключения в фигурные скобки. Например, в функции триггера очереди `{queueTrigger}` разрешается в текст сообщения очереди. Если свойство `path` для выходной привязки большого двоичного объекта — `container/{queueTrigger}`, а функция активируется сообщением очереди `HelloWorld`, создается большой двоичный объект с именем `HelloWorld`.
 
 Типы выражений привязки
 
-* [Параметры приложения](#binding-expressions---app-settings)
+* [Настройки приложения](#binding-expressions---app-settings)
 * [Имя файла триггера](#trigger-file-name)
 * [Метаданные триггера](#trigger-metadata)
 * [Полезные данные JSON](#json-payloads)
@@ -131,7 +131,7 @@ public static void Run(
 
 ```
 
-Можно также создать выражения для частей имени файла. В следующем примере функция активируется только для имен файлов, соответствующих шаблону: `anyname-anyfile.csv`
+Можно также создавать выражения для частей имени файла. В следующем примере функция запускается только на именах файлов, которые соответствуют шаблону:`anyname-anyfile.csv`
 
 ```json
 {
@@ -154,7 +154,7 @@ public static void Run(
 * QueueTrigger (содержимое активирующего сообщения, если строка допустима)
 * DequeueCount
 * ExpirationTime
-* Id
+* Идентификатор
 * InsertionTime
 * NextVisibleTime
 * PopReceipt
@@ -319,4 +319,4 @@ public class BlobName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Использование возвращаемого значения функции Azure](./functions-bindings-return-value.md)
+> [Использование значения возврата функции Azure](./functions-bindings-return-value.md)

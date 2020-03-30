@@ -4,10 +4,10 @@ description: Узнайте, как разрабатывать Функции Az
 ms.topic: reference
 ms.date: 09/12/2018
 ms.openlocfilehash: cfa53fe2defca768196af595c1d088d41bc60f71
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79277067"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
@@ -21,28 +21,28 @@ ms.locfileid: "79277067"
 В статье предполагается, что вы уже прочли следующие статьи:
 
 * [Руководство для разработчиков по Функциям Azure](functions-reference.md)
-* [Средства Visual Studio 2019 для функций Azure](functions-develop-vs.md)
+* [Инструменты Azure Functions Visual Studio 2019](functions-develop-vs.md)
 
 ## <a name="supported-versions"></a>Поддерживаемые версии
 
-Версии среды выполнения функций работают с конкретными версиями .NET. В следующей таблице показан самый высокий уровень .NET Core, .NET Framework и .NET Core, которые можно использовать с определенной версией функций в проекте. 
+Версии выполнения функций работают с конкретными версиями .NET. В следующей таблице показан самый высокий уровень .NET Core и .NET Framework и .NET Core, который может быть использован с конкретной версией Функций в проекте. 
 
-| Версия среды выполнения функций | Максимальная версия .NET |
+| Версия времени выполнения функций | Версия Max .NET |
 | ---- | ---- |
-| Функции 3. x | .NET Core 3,1 |
+| Функции 3.x | .NET Core 3.1 |
 | Функции 2.x | .NET Core 2.2 |
 | Функции 1.x | .NET Framework 4.6 |
 
-Дополнительные сведения см. в статье [Обзор версий среды выполнения функций Azure](functions-versions.md) .
+Чтобы узнать больше, смотрите [обзор версий расписания выполнения функций Azure](functions-versions.md)
 
 ## <a name="functions-class-library-project"></a>Проект библиотеки классов функций
 
 В Visual Studio шаблон проекта **Функции Azure** создает проект библиотеки классов C#, содержащий следующие файлы:
 
 * [host.json](functions-host-json.md) — хранит параметры конфигурации, которые влияют на все функции в проекте при выполнении в локальной среде или в Azure.
-* [local.settings.json](functions-run-local.md#local-settings-file) — хранит параметры приложений и строки подключения, которые используются при выполнении в локальной среде. Этот файл содержит секретные данные и не будет опубликован в приложении-функции в Azure. Вместо этого [добавьте параметры приложения в приложение функции](functions-develop-vs.md#function-app-settings).
+* [local.settings.json](functions-run-local.md#local-settings-file) — хранит параметры приложений и строки подключения, которые используются при выполнении в локальной среде. Этот файл содержит секретные данные и не будет опубликован в приложении-функции в Azure. Вместо этого [добавьте настройки приложения в приложение функции.](functions-develop-vs.md#function-app-settings)
 
-При построении проекта структура папок, которая выглядит следующим образом, создается в выходном каталоге сборки:
+При построении проекта в каталоге вывода сборки создается структура папки, которая выглядит следующим примером:
 
 ```
 <framework.version>
@@ -77,7 +77,7 @@ public static class SimpleExample
 } 
 ```
 
-Атрибут `FunctionName` помечает метод как точку входа функции. Имя должно быть уникальным в пределах проекта, начинаться с буквы и содержать только буквы, цифры, `_`и `-`, Длина до 127 символов. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
+Атрибут `FunctionName` помечает метод как точку входа функции. Название должно быть уникальным в рамках проекта, начать с буквы и содержать только буквы, цифры, `_`и `-`, до 127 символов в длину. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
 
 Атрибут триггера указывает тип триггера и привязывает входные данные к параметру метода. Пример функции срабатывает по сообщению очереди, а сообщение очереди передается методу в параметре `myQueueItem`.
 
@@ -136,7 +136,7 @@ public static class BindingExpressionsExample
 
 Процесс сборки создает файл *function.json* в папке функции в папке сборки. Как уже говорилось, этот файл не предназначен для непосредственного редактирования. Невозможно изменить конфигурацию привязки или отключить функцию путем редактирования этого файла. 
 
-Цель этого файла — предоставить сведения контроллеру масштабирования, который будет использоваться для [принятия решений о масштабировании в плане потребления](functions-scale.md#how-the-consumption-and-premium-plans-work). По этой причине файл содержит только сведения о триггерах, но не о входных или выходных привязках.
+Цель юношу — предоставить информацию контроллеру масштаба для использования для [масштабирования решений по плану потребления.](functions-scale.md#how-the-consumption-and-premium-plans-work) По этой причине файл содержит только сведения о триггерах, но не о входных или выходных привязках.
 
 Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Ниже приведен пример:
 
@@ -186,7 +186,7 @@ public static class BindingExpressionsExample
 </ItemGroup>
 ```
 
-К зависимостям пакетов `Sdk` относятся триггеры и привязки. Проект 1. x ссылается на триггеры и привязки 1. x, так как эти триггеры и привязки предназначены для .NET Framework, а триггеры и привязки 2. x предназначены для .NET Core.
+К зависимостям пакетов `Sdk` относятся триггеры и привязки. Проект 1.x относится к триггерам и привязкам 1.x, поскольку эти триггеры и привязки нацелены на рамочку .NET, в то время как триггеры 2.x и привязки нацелены на ядро .NET.
 
 Пакет `Sdk` также зависит от пакета [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) и косвенно от пакета [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage). Эти зависимости гарантируют, что проект использует версии пакетов, совместимые с версией среды выполнения Функций, для которой он предназначен. Например, при использовании платформы .NET Framework 4.6.1 пакет `Newtonsoft.Json` имеет версию 11, но среда выполнения Функций, предназначенная для платформы .NET Framework 4.6.1, совместима только с пакетом `Newtonsoft.Json` версии 9.0.1. Поэтому код функции в этом проекте также должен использовать пакет `Newtonsoft.Json` версии 9.0.1.
 
@@ -216,7 +216,7 @@ Visual Studio выполняет проекты Функций с помощью
 
 ## <a name="writing-multiple-output-values"></a>Написание нескольких значений выходных данных
 
-Чтобы записать несколько значений в привязку для вывода или если после успешного вызова функции не возвращается значение для передачи в привязку для вывода, используйте типы [`ICollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [`IAsyncCollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs). Эти типы представляют собой доступные только для записи коллекции, записываемые в выходную привязку по завершении метода.
+Для записи нескольких значений в привязку вывода или если успешное вызов функции может [`ICollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) [`IAsyncCollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) не привести к тому, что что-либо перейдет к связыванию вывода, используйте типы или типы. Эти типы представляют собой доступные только для записи коллекции, записываемые в выходную привязку по завершении метода.
 
 В следующем примере записываются несколько сообщений очереди в ту же очередь с помощью `ICollector`:
 
@@ -236,7 +236,7 @@ public static class ICollectorExample
 }
 ```
 
-## <a name="logging"></a>Logging
+## <a name="logging"></a>Ведение журнала
 
 Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Мы рекомендуем использовать имя `log`, как показано в следующем примере:  
 
@@ -255,7 +255,7 @@ public static class SimpleExample
 
 Не используйте `Console.Write` в Функциях Azure. Дополнительные сведения см. в разделе [Запись журналов в функциях C#](functions-monitoring.md#write-logs-in-c-functions) статьи **Мониторинг Функций Azure**.
 
-## <a name="async"></a>Асинхронный режим
+## <a name="async"></a>Async
 
 Чтобы сделать функцию [асинхронной](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
 
@@ -339,7 +339,7 @@ public static class EnvironmentVariablesExample
 Определите принудительную привязку следующим образом.
 
 - **Не** добавляйте атрибут в сигнатуру функции для нужных императивных привязок.
-- Передайте входной параметр [`Binder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Host/Bindings/Runtime/Binder.cs) или [`IBinder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IBinder.cs).
+- Передайте в вхотворный параметр [`Binder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Host/Bindings/Runtime/Binder.cs) или [`IBinder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IBinder.cs).
 - Используйте следующий шаблон C# для привязки данных,
 
   ```cs
@@ -349,7 +349,7 @@ public static class EnvironmentVariablesExample
   }
   ```
 
-  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [ICollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) с императивной привязкой.
+  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, связывание таблицы мобильных приложений поддерживает [шесть типов выходных данных,](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22)но использовать [ICollector\<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector\<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) с императивным связыванием.
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 

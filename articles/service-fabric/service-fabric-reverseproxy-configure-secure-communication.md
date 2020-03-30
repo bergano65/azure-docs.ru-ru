@@ -1,15 +1,15 @@
 ---
-title: Безопасный обмен данными с обратным прокси-сервером Azure Service Fabric
-description: Настройте обратный прокси-сервер, чтобы обеспечить безопасное сквозное взаимодействие в приложении Service Fabric Azure.
+title: Azure Service Fabric обратная прокси-безопасность связи
+description: Настройте обратный прокси для обеспечения безопасной сквозной связи в приложении Azure Service Fabric.
 author: kavyako
 ms.topic: conceptual
 ms.date: 08/10/2017
 ms.author: kavyako
 ms.openlocfilehash: 4cfeaf34a39231ffa91ea970a61f66632bae40c7
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79282254"
 ---
 # <a name="connect-to-a-secure-service-with-the-reverse-proxy"></a>Подключение к защищенной службе с помощью обратного прокси-сервера
@@ -22,7 +22,7 @@ ms.locfileid: "79282254"
 ## <a name="secure-connection-establishment-between-the-reverse-proxy-and-services"></a>Установление безопасного подключения между обратным прокси-сервером и службами 
 
 ### <a name="reverse-proxy-authenticating-to-services"></a>Обратный прокси-сервер проходит аутентификацию в службах
-Обратный прокси-сервер идентифицирует себя в службах с помощью своего сертификата. Для кластеров Azure сертификат указывается с помощью свойства ***reverseProxyCertificate*** в [разделе типа ресурса](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. ServiceFabric/Clusters**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) шаблона диспетчер ресурсов. Для автономных кластеров сертификат указывается с помощью свойства ***ReverseProxyCertificate*** или ***ReverseProxyCertificateCommonNames*** в разделе **Security** файла ClusterConfig.json. Дополнительные сведения см. в разделе [Enable reverse proxy on standalone clusters](service-fabric-reverseproxy-setup.md#enable-reverse-proxy-on-standalone-clusters) (Включение обратного прокси-сервера в автономных кластерах). 
+Обратный прокси-сервер идентифицирует себя в службах с помощью своего сертификата. Для кластеров Azure сертификат указывается с помощью свойства ***ReverseProxyCertificate*** ресурса [**Microsoft.ServiceFabric/clusters** в ](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) [разделе типов ресурсов](../azure-resource-manager/templates/template-syntax.md) шаблона Resource Manager. Для автономных кластеров сертификат указывается с помощью свойства ***ReverseProxyCertificate*** или ***ReverseProxyCertificateCommonNames*** в разделе **Security** файла ClusterConfig.json. Дополнительные сведения см. в разделе [Enable reverse proxy on standalone clusters](service-fabric-reverseproxy-setup.md#enable-reverse-proxy-on-standalone-clusters) (Включение обратного прокси-сервера в автономных кластерах). 
 
 Службы могут реализовать логику для проверки сертификата, представленного обратным прокси-сервером. Службы могут указывать сведения о принятом сертификате клиента как параметры конфигурации в пакете конфигурации. Их можно считывать во время выполнения и использовать для проверки сертификата, представленного обратным прокси-сервером. Сведения о добавлении параметров конфигурации см. в статье [Управление параметрами приложения](service-fabric-manage-multiple-environment-app-configuration.md). 
 
@@ -188,7 +188,7 @@ Service Fabric поддерживает настройку нескольких 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Установка и настройка обратного прокси-сервера в кластере](service-fabric-reverseproxy-setup.md)
-* Сведения о [подключении к защищенным службам см. в статье Настройка обратных прокси-серверов](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Reverse-Proxy-Sample#configure-reverse-proxy-to-connect-to-secure-services)
+* Ссылка на [настройку обратного прокси для подключения к защищенным службам](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Reverse-Proxy-Sample#configure-reverse-proxy-to-connect-to-secure-services)
 * Пример обмена данными по протоколу HTTP между службами представлен в [примере проекта на сайте GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started).
 * [Удаленное взаимодействие службы с Reliable Services](service-fabric-reliable-services-communication-remoting.md)
 * [Начало работы со службами веб-API Microsoft Azure Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)

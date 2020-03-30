@@ -1,5 +1,5 @@
 ---
-title: SQL Server миграции базы данных в одну базу данных или в составе пула
+title: Миграция базы данных серверов S'L Server в единую/объединенную базу данных
 description: Сведения о том, как выполнить миграцию базы данных SQL Server в отдельную базу данных или эластичный пул в Базе данных SQL Azure.
 keywords: миграция базы данных, миграция базы данных SQL Server, средства миграции базы данных, миграция базы данных, миграция базы данных SQL
 services: sql-database
@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 02/11/2019
 ms.openlocfilehash: 9cec91ccc80b9072b1a3da756f26f47eb88b951c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79268617"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
@@ -84,14 +84,14 @@ ms.locfileid: "79268617"
 
 1. Настройка распространения
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_1).
-   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_2)
+   - [Использование Трансакт-СЗЛ](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_2)
 
 2. Создание публикации
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_1).
-   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2)
+   - [Использование Трансакт-СЗЛ](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2)
 3. Создавать подписку
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_0).
-   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1)
+   - [Использование Трансакт-СЗЛ](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1)
 
 Некоторые советы и описание различий при миграции в базу данных SQL
 
@@ -107,9 +107,9 @@ ms.locfileid: "79268617"
 Существует широкий спектр проблем совместимости, которые могут возникнуть в зависимости от версии исходной базы данных SQL Server и сложности базы данных, для которой выполняется миграция. В более старых версиях SQL Server имеются дополнительные проблемы совместимости. Воспользуйтесь поиском в Интернете, а также следующими ресурсами:
 
 - [Функции базы данных SQL Server, которые не поддерживаются в Базе данных SQL Azure](sql-database-transact-sql-information.md)
-- [Неподдерживаемые функции ядра СУБД в SQL Server 2016](https://msdn.microsoft.com/library/ms144262%28v=sql.130%29)
-- [Неподдерживаемые функции ядра СУБД в SQL Server 2014](https://msdn.microsoft.com/library/ms144262%28v=sql.120%29)
-- [Неподдерживаемые функции ядра СУБД в SQL Server 2012](https://msdn.microsoft.com/library/ms144262%28v=sql.110%29)
+- [Нерекомендуемые функции ядра СУБД в SQL Server 2016](https://msdn.microsoft.com/library/ms144262%28v=sql.130%29)
+- [Прекратив функцию движка базы данных в сервере S'L 2014](https://msdn.microsoft.com/library/ms144262%28v=sql.120%29)
+- [Прекратив функцию движка базы данных в сервере S'L 2012](https://msdn.microsoft.com/library/ms144262%28v=sql.110%29)
 - [Неподдерживаемые функции ядра СУБД в SQL Server 2008 R2](https://msdn.microsoft.com/library/ms144262%28v=sql.105%29)
 - [Неподдерживаемые функции ядра СУБД в SQL Server 2005](https://msdn.microsoft.com/library/ms144262%28v=sql.90%29)
 

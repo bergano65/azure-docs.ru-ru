@@ -1,13 +1,13 @@
 ---
-title: Наблюдение за производительностью веб-приложений в Azure Application Insights
+title: Мониторинг производительности веб-приложений - Azure Application Insights
 description: Как Application Insights встраивается в цикл разработки и операций (DevOps)
 ms.topic: conceptual
 ms.date: 12/21/2018
 ms.openlocfilehash: 24095aade80022d1e1ebb38357971512bfc873c0
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77669698"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Углубленная диагностика для веб-приложений и служб с помощью Application Insights
@@ -124,7 +124,7 @@ ms.locfileid: "77669698"
 * Отследить длительность сеансов и время отклика для определенных пользователей, что позволяет службе поддержки и операционной группе оказывать немедленную помощь пользователям.
 * Определить часто используемые функции приложения, чтобы правильно выполнить расстановку приоритетов для компонентов.
 
-Пользователь DNN сообщил следующее: "Благодаря Application Insights мы получили недостающую часть уравнения и теперь можем комбинировать, сортировать, запрашивать и фильтровать данные так, как нам требуется. Это дает нашей команде возможность полагаться на собственную изобретательность и опыт при поиске данных. А мощный язык запросов позволяет нам получать подробные сведения и решать проблемы, о которых мы раньше даже не знали. Много интересных решений появляются во время поиска ответов на вопросы, которые начинаются с *Интересно знать...* .
+Пользователь DNN сообщил следующее: "Благодаря Application Insights мы получили недостающую часть уравнения и теперь можем комбинировать, сортировать, запрашивать и фильтровать данные так, как нам требуется. Это дает нашей команде возможность полагаться на собственную изобретательность и опыт при поиске данных. А мощный язык запросов позволяет нам получать подробные сведения и решать проблемы, о которых мы раньше даже не знали. Много интересных решений появляются во время поиска ответов на вопросы, которые начинаются с *Интересно знать...*.
 
 ## <a name="development-tools-integration"></a>Интеграция средств разработки
 ### <a name="configuring-application-insights"></a>Настройка Application Insights
@@ -150,14 +150,14 @@ Visual Studio и Eclipse оснащены инструментами для на
 * [Цены](../../azure-monitor/app/pricing.md) — начать работу можно бесплатно, и при небольших объемах такой режим сохраняется.
 
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Начать работу с Application Insights легко. Ниже перечислены основные возможности.
 
-* [Серверы IIS](../../azure-monitor/app/monitor-performance-live-website-now.md), а также [служба приложений Azure](../../azure-monitor/app/app-insights-overview.md).
+* [IIS-серверы,](../../azure-monitor/app/monitor-performance-live-website-now.md)а также для [службы приложений Azure](../../azure-monitor/app/app-insights-overview.md).
 * Инструментирование проекта во время разработки. Это можно сделать для приложений [ASP.NET](../../azure-monitor/app/asp-net.md) или [Java](../../azure-monitor/app/java-get-started.md), а также для [Node.js](../../azure-monitor/app/nodejs.md) и узлов [других типов](../../azure-monitor/app/platforms.md). 
 * Инструментирование [любой веб-страницы](../../azure-monitor/app/javascript.md) с помощью добавления небольшого фрагмента кода.
 

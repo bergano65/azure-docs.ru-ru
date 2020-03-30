@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
 ms.openlocfilehash: 4b402975a151d26e8f335c07930274c156ac52fb
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79272374"
 ---
 # <a name="migrate-net-solutions-for-windows-based-hdinsight-to-linux-based-hdinsight"></a>Перенос решений .NET из HDInsight под управлением Windows в HDInsight под управлением Linux
 
-Для запуска приложений .NET в кластерах HDInsight под управлением Linux используется [Mono (https://mono-project.com)](https://mono-project.com). Mono позволяет использовать компоненты .NET, такие как приложения MapReduce, с HDInsight под управлением Linux. В этом документе вы узнаете, как перенести решения .NET, созданные для кластеров HDInsight под управлением Windows, на кластеры HDInsight под управлением Linux для работы с Mono.
+В кластерах HDInsight под управлением Linux для запуска приложений .NET используется [Mono (https://mono-project.com)](https://mono-project.com). Mono позволяет использовать компоненты .NET, такие как приложения MapReduce, с HDInsight под управлением Linux. В этом документе вы узнаете, как перенести решения .NET, созданные для кластеров HDInsight под управлением Windows, на кластеры HDInsight под управлением Linux для работы с Mono.
 
 ## <a name="mono-compatibility-with-net"></a>Совместимость Mono с .NET
 
@@ -34,15 +34,15 @@ Mono версии 4.2.1 входит в состав HDInsight версии 3.6.
 
 1. Установите [.NET Portability Analyzer](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Во время установки выберите используемую версию Visual Studio.
 
-2. В Visual Studio 2015 выберите __Анализ__ > __Portability Analyzer Settings__ (Параметры анализатора переносимости) и убедитесь, что в разделе __Mono__ установлен флажок __4.5__.
+2. Из Visual Studio 2015 выберите __Анализ__ > __настройки анализа портной__и убедитесь, что __4.5__ проверен в разделе __Mono.__
 
     ![Установленный флажок "4.5" для Mono в разделе параметров анализатора](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-settings.png)
 
     Нажмите кнопку __ОК__, чтобы сохранить конфигурацию.
 
-3. Выберите __Анализ__ > __Analyze Assembly Portability__ (Анализ переносимости сборки). Выберите сборку, содержащую решение, а затем щелкните __Открыть__, чтобы начать анализ.
+3. Выберите __анализ__ > __портативности сборки.__ Выберите сборку, содержащую решение, а затем щелкните __Открыть__, чтобы начать анализ.
 
-4. После завершения анализа выберите __Анализ__ > __View analysis reports__ (Просмотр отчетов об анализе). В разделе __Portability Analysis Results__ (Результаты анализа переносимости) щелкните __Открыть отчет__, чтобы открыть отчет.
+4. Как только анализ завершен, выберите__отчеты анализа__ __анализа анализа analyse.__ >  В разделе __Portability Analysis Results__ (Результаты анализа переносимости) щелкните __Открыть отчет__, чтобы открыть отчет.
 
     ![Диалоговое окно результатов анализатора переносимости](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-results.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Проверка подлинности Azure Stream Analytics для Azure Data Lake Storage 1-го поколения
+title: Authenticate Azure Stream Analytics для хранения данных Azure Data Lake Gen1
 description: В этой статье объясняется, как использовать управляемые удостоверения для аутентификации заданий Azure Stream Analytics для вывода данных в Azure Data Lake Storage 1-го поколения.
 author: mamccrea
 ms.author: mamccrea
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: seodec18
 ms.openlocfilehash: 01741ea56b9e6f55c1393e88fc7991d410c33119
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79254382"
 ---
-# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Проверка подлинности Stream Analytics для Azure Data Lake Storage 1-го поколения с помощью управляемых удостоверений
+# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Authenticate Stream Analytics для хранения данных Azure Data Lake StorageGen Gen1 с использованием управляемых идентификаторов
 
 Azure Stream Analytics поддерживает аутентификацию с помощью управляемого удостоверения для вывода данных в Azure Data Lake Storage (ADLS) 1-го поколения. Удостоверение — это зарегистрированное в Azure Active Directory управляемое приложение, представляющее данное задание Stream Analytics и используемое для аутентификации в целевом ресурсе. Управляемые удостоверения устраняют ограничения пользовательских методов аутентификации, такие как необходимость повторной аутентификации из-за изменения пароля или после истечения срока действия пользовательских токенов (каждые 90 дней). Кроме того, управляемые удостоверения позволяют автоматизировать развертывания заданий Stream Analytics, которые выводят данные в Azure Data Lake Storage 1-го поколения.
 
@@ -24,11 +24,11 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
 ## <a name="azure-portal"></a>Портал Azure
 
-1. Начните с создания задания Stream Analytics или открытия имеющегося задания на портале Azure. В строке меню, расположенной в левой части экрана, выберите **управляемое удостоверение** , расположенное в разделе **Настройка**.
+1. Начните с создания задания Stream Analytics или открытия имеющегося задания на портале Azure. Из панели меню, расположенной на левой стороне экрана, выберите **Управляемую идентификацию,** расположенную под **настройкой.**
 
-   ![Настройка управляемого удостоверения Stream Analytics](./media/stream-analytics-managed-identities-adls/stream-analytics-managed-identity-preview.png)
+   ![Настройка управляемой итог Stream Analytics](./media/stream-analytics-managed-identities-adls/stream-analytics-managed-identity-preview.png)
 
-2. Установите флажок **использовать управляемое системой удостоверение** из окна, отображаемого справа. Щелкните **сохранить** в субъекте-службе, чтобы получить удостоверение задания Stream Analytics в Azure Active Directory. Жизненным циклом нового удостоверения будет управлять Azure. При удалении задания Stream Analytics Azure автоматически удаляет связанное удостоверение (то есть субъект-службу).
+2. Выберите **«Управляемая идентификация» «Использование системы»** из окна, которое отображается справа. Нажмите **«Сохранить»** в главном сервисе для идентификации задания Stream Analytics в Active Directory Azure. Жизненным циклом нового удостоверения будет управлять Azure. При удалении задания Stream Analytics Azure автоматически удаляет связанное удостоверение (то есть субъект-службу).
 
    Если конфигурация сохраняется, идентификатор объекта (OID) субъекта-службы отображается в качестве идентификатора субъекта, как показано ниже:
 
@@ -36,7 +36,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
  
    Субъект-служба имеет то же имя, что и задание Stream Analytics. Например, если имя задания — **MyASAJob**, имя созданного субъекта-службы будет также **MyASAJob**.
 
-3. В окне Выходные свойства приемника выходных данных ADLS 1-го поколения щелкните раскрывающийся список режим проверки подлинности и выберите * * управляемое удостоверение * *.
+3. В окне выходных свойств выходной раковины ADLS Gen1 щелкните в режиме аутентификации и выберите «Управляемая идентичность».
 
 4. Укажите остальные свойства. Дополнительные сведения о создании выходных данных для ADLS см. в статье [Потоковая передача данных из большого двоичного объекта службы хранилища Azure в Data Lake Storage 1-го поколения с помощью Azure Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md). Закончив, нажмите кнопку **Сохранить**.
 
@@ -54,7 +54,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
    ![Выбор имени субъекта-службы](./media/stream-analytics-managed-identities-adls/stream-analytics-service-principal-name.png)
  
-8. В области **Разрешения** выберите разрешения **Запись** и **Выполнить** и установите переключатель **К этой папке и всем вложенным элементам**. Нажмите кнопку **ОК**.
+8. В области **Разрешения** выберите разрешения **Запись** и **Выполнить** и установите переключатель **К этой папке и всем вложенным элементам**. Затем нажмите **Ok**.
 
    ![Выбор разрешений на запись и выполнение](./media/stream-analytics-managed-identities-adls/stream-analytics-select-permissions.png)
  
@@ -70,7 +70,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
    ![Управляемые идентификаторы конфигурации задания Stream Analytics](./media/stream-analytics-managed-identities-adls/adls-mi-jobconfig-vs.png)
 
-2. В окне Выходные свойства приемника выходных данных ADLS 1-го поколения щелкните раскрывающийся список режим проверки подлинности и выберите * * управляемое удостоверение * *.
+2. В окне выходных свойств выходной раковины ADLS Gen1 щелкните в режиме аутентификации и выберите «Управляемая идентичность».
 
    ![Управляемые удостоверения выходных данных ADLS](./media/stream-analytics-managed-identities-adls/adls-mi-output-vs.png)
 
@@ -173,14 +173,14 @@ Azure Stream Analytics поддерживает аутентификацию с 
    User -Id 14c6fd67-d9f5-4680-a394-cd7df1f9bacf -Permissions WriteExecute
    ```
 
-   Дополнительные сведения о команде PowerShell см. в документации по [Set-аздаталакестореитемаклентри](/powershell/module/az.datalakestore/set-azdatalakestoreitemaclentry) .
+   Чтобы узнать больше о вышеупомянутой команде PowerShell, обратитесь к [документации Set-AzDataLakeStoreItemAclEntry.](/powershell/module/az.datalakestore/set-azdatalakestoreitemaclentry)
 
 ## <a name="limitations"></a>Ограничения
-Эта функция не поддерживает следующие компоненты:
+Эта функция не поддерживает следующее:
 
-1. **Многоклиентский доступ**. субъект-служба, созданная для данного задания Stream Analytics, будет находиться в Azure Active Directoryном клиенте, на котором было создано задание, и не может использоваться для ресурса, который находится в другом клиенте Azure Active Directory. Таким образом, можно использовать только MSI для ресурсов ADLS Gen 1, которые находятся в том же Azure Active Directory клиенте, что и задание Azure Stream Analytics. 
+1. **Мультитенантный доступ:** Основной сервис, созданный для заданного задания Stream Analytics, будет находиться на арендаторе Azure Active Directory, на котором было создано задание, и не может быть использован против ресурса, находящегося на другом арендаторе Active Directory Azure. Таким образом, можно использовать MSI только на ресурсах ADLS Gen 1, которые находятся в пределах того же арендатора Active Directory Azure, что и задания Azure Stream Analytics. 
 
-2. **[Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md)** :, не поддерживается. Это означает, что пользователь не может ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба создается Azure Stream Analytics.
+2. **[Назначенный пользователем идентификационный данный](../active-directory/managed-identities-azure-resources/overview.md)**: не поддерживается. Это означает, что пользователь не может ввести свой собственный принцип обслуживания, который будет использоваться их работой Stream Analytics. Основной сервис генерируется Аналитикой потоков Azure Stream.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

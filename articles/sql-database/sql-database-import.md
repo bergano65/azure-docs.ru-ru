@@ -1,5 +1,5 @@
 ---
-title: Импорт BACPAC-файла для создания базы данных
+title: Импорт файла BACPAC для создания базы данных
 description: Создайте базу данных SQL Azure, импортировав BACPAC-файл.
 services: sql-database
 ms.service: sql-database
@@ -12,13 +12,13 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/20/2019
 ms.openlocfilehash: 05698596f966f879da1affc58af0122d08d519ff
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79256241"
 ---
-# <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database"></a>Краткое руководство. импорт BACPAC-файла в базу данных в базе данных SQL Azure
+# <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database"></a>Быстрый запуск: Импортируйте файл BACPAC в базу данных в базе данных Azure S'L
 
 С помощью файла [BACPAC](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) вы можете импортировать базу данных SQL Server в Базу данных SQL Azure. Вы можете импортировать данные из файла `BACPAC`, которые хранятся в хранилище BLOB-объектов Azure (только цен. категория "Стандартный"), или из локального хранилища в локальное расположение. Чтобы развернуть скорость импорта, предоставив дополнительные ресурсы и ускоренную скорость доступа к ним, масштабируйте базу данных до более высокого уровня службы и объема вычислительных ресурсов во время процесса импорта. После завершения импорта эти значения можно уменьшить.
 
@@ -30,16 +30,16 @@ ms.locfileid: "79256241"
 
 ## <a name="using-azure-portal"></a>Использование портала Azure
 
-Просмотрите это видео, чтобы узнать, как импортировать данные из BACPAC-файла в портал Azure или продолжить чтение ниже:
+Просмотрите это видео, чтобы узнать, как импортировать файл BACPAC на портале Azure или продолжить чтение ниже:
 
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Its-just-SQL-Restoring-a-database-to-Azure-SQL-DB-from-backup/player?WT.mc_id=dataexposed-c9-niner]
 
-[Портал Azure](https://portal.azure.com) поддерживает создание *только* одной базы данных в базе данных SQL Azure и *только* из BACPAC-файла, хранящегося в хранилище BLOB-объектов Azure.
+[Портал Azure поддерживает создание ](https://portal.azure.com) *только* отдельной базы данных в Базе данных SQL Azure и *только* из файла BACPAC, который хранится в хранилище BLOB-объектов Azure.
 
-Миграция базы данных в [управляемый экземпляр](sql-database-managed-instance.md) из BACPAC-файла с помощью Azure PowerShell в настоящее время не поддерживается. Вместо этого используйте SQL Server Management Studio или SQLPackage.
+Преобразование базы данных в [управляемый экземпляр](sql-database-managed-instance.md) из файла BACPAC с использованием Azure PowerShell в настоящее время не поддерживается. Вместо этого используйте студию управления серверами s'L или S'LPackage.
 
 > [!NOTE]
-> Компьютеры, обрабатывающие запросы на импорт и экспорт, отправленные с помощью портал Azure или PowerShell, должны хранить BACPAC-файл, а также временные файлы, созданные платформой приложения уровня данных (DacFX). Необходимое дисковое пространство существенно различается в базах данных с одинаковым размером и может потребовать места на диске в 3 раза больше размера базы данных. Компьютеры, на которых работает запрос на импорт или экспорт, имеют только 450GB место на локальном диске. В результате некоторые запросы могут завершиться с ошибкой `There is not enough space on the disk`. В этом случае решение заключается в запуске SqlPackage. exe на компьютере с достаточным местом на локальном диске. Мы советуем использовать SqlPackage для импорта и экспорта баз данных, превышающих 150 ГБ, чтобы избежать этой проблемы.
+> Машины, обрабатывающие импорт/экспорт запросы, подаваемые через портал Azure или PowerShell, должны хранить файл BACPAC, а также временные файлы, генерируемые Рамочной системой приложений Data-Tier (DacFX). Требуемое дисковое пространство значительно варьируется между базами данных с одинаковым размером и может потребовать дискового пространства до 3 раз больше базы данных. Машины, запускаемые для запроса на импорт/экспорт, имеют только 450 ГБ локального дискового пространства. В результате некоторые запросы могут `There is not enough space on the disk`выполнить ошибку. В этом случае, обходной путь заключается в запуске sqlpackage.exe на машине с достаточным пространством локального диска. Мы рекомендуем использовать SqlPackage для импорта/экспорта баз данных размером более 150 ГБ, чтобы избежать этой проблемы.
 
 1. Чтобы импортировать из файла BACPAC в новую отдельную базу данных с помощью портала Azure, откройте требуемую страницу сервера базы данных, а затем выберите **Импорт базы данных** на панели инструментов.  
 
@@ -83,17 +83,17 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 ## <a name="using-powershell"></a>Использование PowerShell
 
 > [!NOTE]
-> В настоящее время [управляемый экземпляр](sql-database-managed-instance.md) не поддерживает миграцию базы данных в экземпляр базы данных из BACPAC-файла с помощью Azure PowerShell. Чтобы импортировать в управляемый экземпляр, используйте SQL Server Management Studio или SQLPackage.
+> [Управляемый экземпляр](sql-database-managed-instance.md) в настоящее время не поддерживает миграцию базы данных в базу данных экземпляров из файла BACPAC с помощью Azure PowerShell. Чтобы импортировать в управляемый экземпляр, используйте SQL Server Management Studio или SQLPackage.
 
 > [!NOTE]
-> Компьютеры, обрабатывающие запросы на импорт и экспорт, отправленные с помощью портала или PowerShell, должны хранить BACPAC-файл, а также временные файлы, созданные платформой приложения уровня данных (DacFX). Требуемое дисковое пространство значительно различается в баз данных с одинаковым размером и может занять до 3 раз из размера базы данных. Компьютеры, на которых работает запрос на импорт или экспорт, имеют только 450GB место на локальном диске. В результате некоторые запросы могут завершиться ошибкой "на диске недостаточно места". В этом случае решение заключается в запуске SqlPackage. exe на компьютере с достаточным местом на локальном диске. При импорте или экспорте баз данных, размер которых превышает 150 ГБ, используйте SqlPackage, чтобы избежать этой проблемы.
+> Машины, обрабатывающие импорт/экспорт запросы, представленные через портал или Powershell, должны хранить файл bacpac, а также временные файлы, генерируемые Рамочной системой применения Data-Tier (DacFX). Требуемое дисковое пространство значительно варьируется среди DB с одинаковым размером и может занять до 3 раз от размера базы данных. Машины, запускаемые для запроса на импорт/экспорт, имеют только 450 ГБ локального дискового пространства. В результате некоторые запросы могут выполнить ошибку "На диске недостаточно места". В этом случае, обходной путь заключается в запуске sqlpackage.exe на машине с достаточным пространством локального диска. При импорте/экспорте баз данных больше, чем 150 ГБ, используйте SqlPackage, чтобы избежать этой проблемы.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
+> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных Azure S'L, но все будущие разработки предназначены для модуля Az.Sql. Модуль AzureRM будет получать исправления ошибок по крайней мере до декабря 2020 года.  Аргументы для команд в модуле Az и в модулях Azrm существенно идентичны. Подробнее об их совместимости читайте [в новом модуле Azure PowerShell Az.](/powershell/azure/new-azureps-module-az)
 
-Используйте командлет [New-азсклдатабасеимпорт](/powershell/module/az.sql/new-azsqldatabaseimport) , чтобы отправить запрос на импорт базы данных в службу базы данных SQL Azure. Операция импорта может занять некоторое время в зависимости от размера базы данных.
+Для отправки запроса на импортную базу данных в службу базы данных Azure S'L воспользуйтесь смдlet [New-AzSqlDatabaseImport.](/powershell/module/az.sql/new-azsqldatabaseimport) Операция импорта может занять некоторое время в зависимости от размера базы данных.
 
 ```powershell
 $importRequest = New-AzSqlDatabaseImport -ResourceGroupName "<resourceGroupName>" `
@@ -107,7 +107,7 @@ $importRequest = New-AzSqlDatabaseImport -ResourceGroupName "<resourceGroupName>
         -AdministratorLoginPassword $(ConvertTo-SecureString -String "<password>" -AsPlainText -Force)
 ```
 
-Для проверки хода выполнения импорта можно использовать командлет [Get-азсклдатабасеимпортекспортстатус](/powershell/module/az.sql/get-azsqldatabaseimportexportstatus) . Выполнение командлета сразу же после запроса обычно возвращает `Status: InProgress`. Импорт завершается, когда отображается `Status: Succeeded`.
+Для проверки хода импорта можно использовать cmdlet [Get-AzSqlDatabaseImportExportStatus.](/powershell/module/az.sql/get-azsqldatabaseimportexportstatus) Запуск cmdlet сразу после запроса обычно возвращается `Status: InProgress`. Импорт завершен, когда `Status: Succeeded`вы видите.
 
 ```powershell
 $importStatus = Get-AzSqlDatabaseImportExportStatus -OperationStatusLink $importRequest.OperationStatusLink
@@ -123,9 +123,9 @@ while ($importStatus.Status -eq "InProgress") {
 $importStatus
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
 
-Используйте команду [AZ-SQL-DB-Import](/cli/azure/sql/db#az-sql-db-import) , чтобы отправить запрос на импорт базы данных в службу базы данных SQL Azure. Операция импорта может занять некоторое время в зависимости от размера базы данных.
+Используйте команду [az-sql-db-import,](/cli/azure/sql/db#az-sql-db-import) чтобы отправить запрос на базу данных импорта в службу базы данных Azure S'L. Операция импорта может занять некоторое время в зависимости от размера базы данных.
 
 ```azurecli
 # get the storage account key
@@ -155,7 +155,7 @@ az sql db import --resource-group "<resourceGroup>" --server "<server>" --name "
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о подключении к импортированной базе данных SQL и выполнении запросов к ней см. в разделе [Краткое руководство по базе данных SQL Azure: использование SQL Server Management Studio для подключения и запроса данных](sql-database-connect-query-ssms.md).
+- Чтобы узнать, как подключиться к импортируемой [Quickstart: Azure SQL Database: Use SQL Server Management Studio to connect and query data](sql-database-connect-query-ssms.md)базе данных S'L и задать запрос, см.
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://techcommunity.microsoft.com/t5/DataCAT/Migrating-from-SQL-Server-to-Azure-SQL-Database-using-Bacpac/ba-p/305407).
 - Описание процесса миграции базы данных SQL Server в базу данных SQL Azure, включая рекомендации по его использованию, см. в [этой статье](sql-database-single-database-migrate.md).
 - Чтобы узнать, как безопасно управлять ключами к хранилищу данных и подписанными URL-адресами и совместно их использовать, ознакомьтесь с [руководством по безопасности службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-security-guide).

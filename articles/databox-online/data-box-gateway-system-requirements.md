@@ -9,13 +9,13 @@ ms.topic: article
 ms.date: 05/08/2019
 ms.author: alkohli
 ms.openlocfilehash: e8932097bcdef782b1a551d386c2872e02d8abfd
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79260193"
 ---
-# <a name="azure-data-box-gateway-system-requirements"></a>Шлюз Azure Data Box требования к системе
+# <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure Data Box Gateway
 
 В этой статье описаны важные требования к системе и рекомендации для решения на основе шлюза Microsoft Azure Data Box и для клиентов, подключающихся к нему. Прежде чем развертывать шлюз Data Box, внимательно ознакомьтесь с приведенной ниже информацией и по мере необходимости возвращайтесь к ней во время развертывания и последующих действий.
 
@@ -29,7 +29,7 @@ ms.locfileid: "79260193"
 
 Чтобы подготовить виртуальное устройство Data Box, базовая главная система Шлюза Azure Data Box должна быть в состоянии выделить указанный ниже объем ресурсов.
 
-| Характеристики                                          | Description              |
+| Спецификации                                          | Описание              |
 |---------------------------------------------------------|--------------------------|
 | Виртуальные процессоры (ядра)   | Минимум 4 |
 | Память  | Минимум 8 ГБ|
@@ -85,7 +85,7 @@ ms.locfileid: "79260193"
 
 [!INCLUDE [URL patterns for firewall](../../includes/data-box-edge-gateway-url-patterns-firewall.md)]
 
-### <a name="url-patterns-for-azure-government"></a>Шаблоны URL-адресов для Azure для государственных организаций
+### <a name="url-patterns-for-azure-government"></a>Шаблоны URL для правительства Azure
 
 [!INCLUDE [Azure Government URL patterns for firewall](../../includes/data-box-edge-gateway-gov-url-patterns-firewall.md)]
 

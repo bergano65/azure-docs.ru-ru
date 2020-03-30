@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальных сетей для кластеров Azure HDInsight
-description: Узнайте, как создать виртуальную сеть Azure для подключения HDInsight к другим облачным ресурсам или ресурсам в вашем центре обработки данных.
+description: Узнайте, как создать виртуальную сеть Azure для подключения HDInsight к другим облачным ресурсам или ресурсам в центре обработки данных.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,33 +9,33 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
 ms.openlocfilehash: 6fd23e3d41dda15b1ec439c1e8b02073722b8871
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79272543"
 ---
 # <a name="create-virtual-networks-for-azure-hdinsight-clusters"></a>Создание виртуальных сетей для кластеров Azure HDInsight
 
-В этой статье приведены примеры и примеры кода для создания и настройки [виртуальных сетей Azure](../virtual-network/virtual-networks-overview.md) для использования с кластерами Azure HDInsight. Далее представлены подробные примеры создания групп безопасности сети (группы безопасности сети) и настройки DNS. 
+В этой статье приведены примеры и образцы кода для создания и настройки [виртуальных сетей Azure](../virtual-network/virtual-networks-overview.md) для использования с кластерами Azure HDInsight. Представлены подробные примеры создания групп сетевой безопасности (НСГ) и настройки DNS. 
 
-Общие сведения об использовании виртуальных сетей с Azure HDInsight см. в статье [планирование виртуальной сети для Azure hdinsight](hdinsight-plan-virtual-network-deployment.md).
+Для получения справочной информации об использовании [Plan a virtual network for Azure HDInsight](hdinsight-plan-virtual-network-deployment.md)виртуальных сетей с Azure HDInsight см.
 
-## <a name="prerequisites-for-code-samples-and-examples"></a>Предварительные требования для примеров кода и примеров
+## <a name="prerequisites-for-code-samples-and-examples"></a>Предпосылки для образцов кода и примеров
 
-Перед выполнением любого из примеров кода в этой статье подразделение должно иметь представление о сетях TCP/IP. Если вы не знакомы с сетями TCP/IP, проконсультируйтесь с пользователями, которые прежде, чем вносить изменения в рабочие сети.
+Прежде чем выполнить любой из образцов кода в этой статье, вы должны иметь представление о tCP / IP сетей. Если вы не знакомы с tCP / IP сетей, проконсультируйтесь с кем-то, кто до внесения изменений в производственные сети.
 
-Ниже приведены другие необходимые условия для примеров в этой статье.
+Другие предпосылки для образцов в этой статье включают в себя следующее:
 
-* Если вы используете PowerShell, необходимо установить [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
-* Если вы хотите использовать Azure CLI и еще не установили ее, см. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* Если вы используете PowerShell, вам нужно будет установить [модуль Аз](https://docs.microsoft.com/powershell/azure/overview).
+* Если вы хотите использовать Azure CLI и еще [Install the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)не установили его, см.
 
 > [!IMPORTANT]  
 > Пошаговые инструкции по подключению HDInsight к локальной сети с помощью виртуальной сети Azure см. в статье [Подключение HDInsight к локальной сети](connect-on-premises-network.md).
 
-## <a id="hdinsight-nsg"></a>Пример: группы безопасности сети с HDInsight
+## <a name="example-network-security-groups-with-hdinsight"></a><a id="hdinsight-nsg"></a>Пример: группы безопасности сети с HDInsight
 
-В примерах в этом разделе демонстрируется порядок создания правил группы безопасности сети, которые разрешают HDInsight взаимодействовать со службами управления Azure. Прежде чем использовать эти примеры, настройте IP-адреса в соответствии с теми, которые применяются для вашего региона Azure. Эти сведения можно найти в списке [IP-адреса управления HDInsight](hdinsight-management-ip-addresses.md).
+В примерах в этом разделе демонстрируется порядок создания правил группы безопасности сети, которые разрешают HDInsight взаимодействовать со службами управления Azure. Прежде чем использовать эти примеры, настройте IP-адреса в соответствии с теми, которые применяются для вашего региона Azure. Вы можете найти эту информацию в [HDInsight управления IP-адреса](hdinsight-management-ip-addresses.md).
 
 ### <a name="azure-resource-management-template"></a>Шаблон управления ресурсами Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "79272543"
 Используйте следующий сценарий PowerShell для создания виртуальной сети, которая ограничивает входящий трафик и разрешает трафик с IP-адресов для региона Северная Европа.
 
 > [!IMPORTANT]  
-> Измените IP-адреса для `hdirule1` и `hdirule2` в этом примере в соответствии с используемым регионом Azure. Эти сведения можно найти по [IP-адресам управления HDInsight](hdinsight-management-ip-addresses.md).
+> Измените IP-адреса для `hdirule1` и `hdirule2` в этом примере, чтобы соответствовать области Azure, который вы используете. Вы можете найти эту информацию [HDInsight управления IP-адресов](hdinsight-management-ip-addresses.md).
 
 ```powershell
 $vnetName = "Replace with your virtual network name"
@@ -151,7 +151,7 @@ Set-AzVirtualNetworkSubnetConfig `
 $vnet | Set-AzVirtualNetwork
 ```
 
-В этом примере показано, как добавить правила, чтобы разрешить входящий трафик на требуемые IP-адреса. В нем не содержится правило, ограничивающее входящий доступ из других источников. В следующем коде показано, как включить доступ по протоколу SSH из Интернета:
+В этом примере показано, как добавить правила, чтобы разрешить входящий трафик на требуемые IP-адреса. В нем не содержится правило, ограничивающее входящий доступ из других источников. Следующий код демонстрирует, как включить доступ SSH из Интернета:
 
 ```powershell
 Get-AzNetworkSecurityGroup -Name hdisecure -ResourceGroupName RESOURCEGROUP |
@@ -162,7 +162,7 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
 Ниже приведен порядок действий по созданию виртуальной сети, которая ограничивает входящий трафик, но разрешает трафик с IP-адресов, требуемых для HDInsight.
 
-1. Используйте следующую команду, чтобы создать новую группу безопасности сети с именем `hdisecure`. Замените `RESOURCEGROUP` группой ресурсов, которая содержит виртуальную сеть Azure. Замените `LOCATION` расположением (регионом), в котором была создана группа.
+1. Используйте следующую команду, чтобы создать новую группу безопасности сети с именем `hdisecure`. Замените `RESOURCEGROUP` группу ресурсов, содержащую виртуальную сеть Azure. Заменить `LOCATION` местоположение (регион), в которое была создана группа.
 
     ```azurecli
     az network nsg create -g RESOURCEGROUP -n hdisecure -l LOCATION
@@ -170,10 +170,10 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
     После создания группы вы получите сведения о новой группе.
 
-2. Используйте следующую команду для добавления правил в новую группу безопасности сети. Эти правила разрешают входящий трафик через порт 443 от службы работоспособности и управления Azure HDInsight. Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть Azure.
+2. Используйте следующую команду для добавления правил в новую группу безопасности сети. Эти правила разрешают входящий трафик через порт 443 от службы работоспособности и управления Azure HDInsight. Замените `RESOURCEGROUP` название группы ресурсов, содержащей виртуальную сеть Azure.
 
     > [!IMPORTANT]  
-    > Измените IP-адреса для `hdirule1` и `hdirule2` в этом примере в соответствии с используемым регионом Azure. Эти сведения можно найти в списке [IP-адреса управления HDInsight](hdinsight-management-ip-addresses.md).
+    > Измените IP-адреса для `hdirule1` и `hdirule2` в этом примере, чтобы соответствовать области Azure, который вы используете. Вы можете найти эту информацию в [HDInsight управления IP-адреса](hdinsight-management-ip-addresses.md).
 
     ```azurecli
     az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n hdirule1 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "52.164.210.96" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 300 --direction "Inbound"
@@ -194,7 +194,7 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
         "/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
 
-4. Используйте следующую команду, чтобы применить группу безопасности сети к подсети. Замените значения `GUID` и `RESOURCEGROUP` значениями, возвращенными из предыдущего шага. Замените `VNETNAME` и `SUBNETNAME` именем виртуальной сети и именем подсети, которые вы хотите создать.
+4. Используйте следующую команду, чтобы применить группу безопасности сети к подсети. Замените `GUID` `RESOURCEGROUP` значения и значения теми, которые были возвращены с предыдущего шага. `VNETNAME` Замените `SUBNETNAME` и с виртуальным названием сети и подсеть имя, которое вы хотите создать.
 
     ```azurecli
     az network vnet subnet update -g RESOURCEGROUP --vnet-name VNETNAME --name SUBNETNAME --set networkSecurityGroup.id="/subscriptions/GUID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
@@ -205,13 +205,13 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
 Данные действия только открывают доступ к службе работоспособности и управления HDInsight в облаке Azure. Весь остальной доступ к кластеру HDInsight из-за пределов виртуальной сети блокируется. Чтобы разрешить доступ из-за пределов виртуальной сети, необходимо добавить дополнительные правила группы безопасности сети.
 
-В следующем коде показано, как включить доступ по протоколу SSH из Интернета:
+Следующий код демонстрирует, как включить доступ SSH из Интернета:
 
 ```azurecli
 az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protocol "*" --source-port-range "*" --destination-port-range "22" --source-address-prefix "*" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 306 --direction "Inbound"
 ```
 
-## <a id="example-dns"></a> Пример: конфигурация DNS
+## <a name="example-dns-configuration"></a><a id="example-dns"></a> Пример: конфигурация DNS
 
 ### <a name="name-resolution-between-a-virtual-network-and-a-connected-on-premises-network"></a>Разрешение DNS-имен между виртуальной сетью и подключенной локальной сетью
 
@@ -227,7 +227,7 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 
 1. Воспользуйтесь Azure PowerShell или Azure CLI для поиска DNS-суффикса виртуальной сети:
 
-    Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
+    Замените `RESOURCEGROUP` название группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
 
     ```powershell
     $NICs = Get-AzNetworkInterface -ResourceGroupName "RESOURCEGROUP"
@@ -309,7 +309,7 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 
 1. Воспользуйтесь Azure PowerShell или Azure CLI для поиска DNS-суффикса в обеих виртуальных сетях:
 
-    Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
+    Замените `RESOURCEGROUP` название группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
 
     ```powershell
     $NICs = Get-AzNetworkInterface -ResourceGroupName "RESOURCEGROUP"
@@ -372,10 +372,10 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение HDInsight к локальной сети](./connect-on-premises-network.md).
-* Сведения о настройке кластеров Apache HBase в виртуальных сетях Azure см. [в статье Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure](hbase/apache-hbase-provision-vnet.md).
+* Для настройки кластеров Apache HBase в виртуальных сетях Azure [см.](hbase/apache-hbase-provision-vnet.md)
 * См. инструкции по [настройке георепликации кластера Apache HBase в виртуальных сетях Azure](hbase/apache-hbase-replication.md).
 * Дополнительные сведения о виртуальных сетях Azure см. в статье [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md).
 
 * Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 
-* Дополнительные сведения о пользовательских маршрутах см. в статье [User-defined routes and IP forwarding](../virtual-network/virtual-networks-udr-overview.md) (Определяемые пользователем маршруты и IP-пересылка).
+* Для получения дополнительной информации о [User-defined routes and IP forwarding](../virtual-network/virtual-networks-udr-overview.md)маршрутах, определяемых пользователями, см.

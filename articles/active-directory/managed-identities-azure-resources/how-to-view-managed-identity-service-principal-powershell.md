@@ -1,5 +1,5 @@
 ---
-title: Просмотр субъекта-службы управляемого удостоверения с помощью PowerShell — Azure AD
+title: Просмотр принципа службы управляемого удостоверения с помощью PowerShell - Azure AD
 description: Пошаговое руководство по просмотру субъекта-службы управляемого удостоверения с помощью PowerShell.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 11/29/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 33fc6fbfd7c47b5809e8aff8ee9806c9eeac1162
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79298688"
 ---
 # <a name="view-the-service-principal-of-a-managed-identity-using-powershell"></a>Просмотр субъекта-службы управляемого удостоверения с помощью PowerShell
@@ -30,12 +30,12 @@ ms.locfileid: "79298688"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
 - [Включите назначенное системой удостоверение в виртуальной машине](/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm#system-assigned-managed-identity) или [приложении](/azure/app-service/overview-managed-identity#add-a-system-assigned-identity).
-- Установка последней версии [Azure PowerShell](/powershell/azure/install-az-ps)
+- Установите последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="view-the-service-principal"></a>Просмотр субъекта-службы
 

@@ -1,6 +1,6 @@
 ---
-title: Ограничения Azure Data Box Heavy | Документация Майкрософт
-description: Описание системных ограничений и рекомендуемых размеров для Microsoft Azure Data Box Heavy компонентов и подключений.
+title: Ограничения Azure Data Box Heavy Документы Майкрософт
+description: Описывает предельные размеры системи и рекомендуемые размеры компонентов и соединений Microsoft Azure Data Box Heavy.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 08/28/2019
 ms.author: alkohli
 ms.openlocfilehash: 76e543a5bec749db55eb77649d2f6e0526f2cb1d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79260102"
 ---
 # <a name="azure-data-box-heavy-limits"></a>Ограничения Azure Data Box Heavy
@@ -24,12 +24,12 @@ ms.locfileid: "79260102"
 
 [!INCLUDE [data-box-service-limits](../../includes/data-box-service-limits.md)]
 
-## <a name="data-box-heavy-limits"></a>Ограничения Data Box Heavy
+## <a name="data-box-heavy-limits"></a>Ограничения коробки данных
 
-- Data Box Heavy может хранить не более 1 000 000 000 файлов на каждом узле.
-- Data Box Heavy поддерживает не более 512 контейнеров или общих папок для каждого узла в облаке. Каталоги верхнего уровня в общей папке пользователя преобразуются в контейнеры или общие файловые ресурсы Azure в облаке.
+- Data Box Heavy может хранить не более 1 миллиарда файлов на узел.
+- Data Box Heavy поддерживает максимум 512 контейнеров или акций на узла в облаке. Каталоги верхнего уровня в доле пользователя становятся контейнерами или долями файлов Azure в облаке.
 
-## <a name="azure-storage-limits"></a>Ограничения хранилища Azure
+## <a name="azure-storage-limits"></a>Ограничения хранения Azure
 
 [!INCLUDE [data-box-storage-limits](../../includes/data-box-storage-limits.md)]
 

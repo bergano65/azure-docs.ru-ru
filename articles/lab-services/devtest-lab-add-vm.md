@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/25/2019
 ms.author: spelluru
 ms.openlocfilehash: 22060cc6dd5eb15e81a0c397a7b0255f16780d74
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79284256"
 ---
 # <a name="add-a-vm-to-a-lab-in-azure-devtest-labs"></a>Добавление виртуальной машины в лабораторию в Azure DevTest Labs
@@ -66,7 +66,7 @@ ms.locfileid: "79284256"
 Существующие артефакты можно добавить при создании виртуальной машины. Каждая лаборатория включает в себя артефакты из общедоступного репозитория артефактов DevTest Labs, а также артефакты, созданные и добавленные в ваш собственный репозиторий артефактов.
 
 * *Артефакты* Azure DevTest Labs позволяют указывать *действия*, которые выполняются при подготовке виртуальной машины, включая запуск скриптов Windows PowerShell, выполнение команд Bash и установку программного обеспечения.
-* *Параметры* артефакта позволяют настроить артефакт для определенной ситуации.
+* *Параметры артефакта* позволяют настроить артефакт для конкретного сценария
 
 Дополнительные сведения о создании артефактов см. в статье [Создание пользовательских артефактов для виртуальной машины DevTest Lab](devtest-lab-artifact-author.md).
 
@@ -122,4 +122,4 @@ ms.locfileid: "79284256"
 ## <a name="next-steps"></a>Дальнейшие действия
 * После создания виртуальной машины к ней можно подключиться, щелкнув **Подключиться** в области виртуальной машины.
 * Узнайте, как [создавать пользовательские артефакты для виртуальной машины DevTest Labs](devtest-lab-artifact-author.md).
-* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).
+* Исследуйте [галерею шаблонов DevTest Labs Azure Resource Manager в галерее быстрого запуска.](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates)

@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по Azure Cloud Shell-PowerShell
-description: Узнайте, как использовать PowerShell в браузере с Azure Cloud Shell.
+title: Лакстарт облачной оболочки - PowerShell
+description: Узнайте, как использовать PowerShell в браузере с помощью Облачной оболочки Azure.
 author: maertendmsft
 ms.author: damaerte
 tags: azure-resource-manager
@@ -10,10 +10,10 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 10/18/2018
 ms.openlocfilehash: 72261989b7cee9d2251eb18b36431ec807b0e874
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79273011"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell
@@ -140,7 +140,7 @@ MyFileShare3  \\MyStorageAccountName.file.core.windows.net\MyFileShare3;AccountN
 net use <DesiredDriveLetter>: \\<MyStorageAccountName>.file.core.windows.net\<MyFileShareName> <AccountKey> /user:Azure\<MyStorageAccountName>
 ```
 
-Дополнительные сведения см. [в разделе Подключение общей папки службы файлов Azure и доступ к общей папке в Windows][azmount].
+Дополнительные сведения см. в статье [Подключение общей папки Azure и получение доступа к этой папке в Windows][azmount].
 
 Кроме того, можно перейти в каталоги в файловом ресурсе Azure, как показано ниже.
 
@@ -261,7 +261,7 @@ mywebapp3       Running  MyResourceGroup3   {mywebapp3.azurewebsites.net...   So
 
 ### <a name="using-ssh"></a>Использование SSH
 
-Следуйте инструкциям [, чтобы создать](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) новую конфигурацию виртуальной машины с помощью командлетов Azure PowerShell.
+Следуйте инструкциям [здесь,](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) чтобы создать новую конфигурацию VM с помощью смдлетов Azure PowerShell.
 Прежде чем вызвать `New-AzVM` для запуска развертывания, добавьте открытый ключ SSH в конфигурацию виртуальной машины.
 Новая виртуальная машина будет содержать открытый ключ в расположении `~\.ssh\authorized_keys`. Это позволит запускать на виртуальной машине сеансы SSH без учетных данных.
 
@@ -290,7 +290,7 @@ ssh azureuser@MyVM.Domain.Com
 
 ## <a name="install-custom-modules"></a>Установка пользовательских модулей
 
-Вы можете запустить `Install-Module`, чтобы установить модули из [коллекция PowerShell][gallery].
+Можно выполнить команду `Install-Module`, чтобы установить модули из [коллекции PowerShell][gallery].
 
 ## <a name="get-help"></a>Get-Help
 
@@ -328,11 +328,11 @@ Hello World!
 Можно настроить среду PowerShell, создав профили PowerShell `profile.ps1` (или `Microsoft.PowerShell_profile.ps1`).
 Сохраните профиль на диске `$profile.CurrentUserAllHosts` (или `$profile.CurrentUserAllHosts`), чтобы его можно было загрузить в каждый сеанс PowerShell в Cloud Shell.
 
-Сведения о создании профиля см. в разделе [о профилях][profile].
+О том, как создать профиль, можно узнать в разделе [About Profiles][profile] (О профилях).
 
 ## <a name="use-git"></a>Использование Git
 
-Чтобы клонировать репозиторий Git в Cloud Shell, необходимо создать [личный маркер доступа][githubtoken] и использовать его в качестве имени пользователя. Создав маркер, клонируйте репозиторий, как показано ниже.
+Чтобы клонировать репо Git в облачной оболочке, необходимо создать [токен для личного доступа][githubtoken] и использовать его в качестве имени пользователя. Создав маркер, клонируйте репозиторий, как показано ниже.
 
 ```azurepowershell-interactive
   git clone https://<your-access-token>@github.com/username/repo.git

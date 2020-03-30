@@ -1,5 +1,5 @@
 ---
-title: Конфигурации партнерских VPN-устройств для подключения к VPN-шлюзам Azure
+title: Конфигурации VPN-устройств партнеров для подключения к VPN шлюзам Azure
 description: В этой статье содержится обзор конфигураций партнерских VPN-устройств, позволяющих подключаться к VPN-шлюзам Azure.
 services: vpn-gateway
 author: yushwang
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/20/2017
 ms.author: yushwang
 ms.openlocfilehash: b914afaa6725920078da309981bcda5bb765e155
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79279407"
 ---
 # <a name="overview-of-partner-vpn-device-configurations"></a>Обзор конфигураций партнерских VPN-устройств
@@ -22,7 +22,7 @@ ms.locfileid: "79279407"
 ## <a name="device-requirements"></a>Требования к устройствам
 В VPN-шлюзах Azure используются стандартные наборы протоколов IPsec/IKE для VPN-туннелей типа "сайт — сайт" (S2S). Список параметров IPsec/IKE и алгоритмы шифрования для VPN-шлюзов Azure приведены в статье [VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз](vpn-gateway-about-vpn-devices.md). Также можно указать точные алгоритмы и уровни стойкости ключа для определенного подключения, как описано в статье [Требования к шифрованию и VPN-шлюзы Azure](vpn-gateway-about-compliance-crypto.md).
 
-## <a name ="singletunnel"></a>Одиночный VPN-туннель
+## <a name="single-vpn-tunnel"></a><a name ="singletunnel"></a>Одиночный VPN-туннель
 Первая конфигурация в примере состоит из одного VPN-туннеля S2S между VPN-шлюзом Azure и локальным устройством VPN. При необходимости можно также настроить [протокол BGP поверх VPN-туннеля](#bgp).
 
 ![Схема одиночного VPN-туннеля S2S](./media/vpn-gateway-3rdparty-device-config-overview/singletunnel.png)
@@ -32,7 +32,7 @@ ms.locfileid: "79279407"
 ### <a name="connection-parameters"></a>Параметры подключения
 В этом разделе перечислены параметры для примеров, описанных в предыдущих разделах.
 
-| **Параметр**                | **Value**                    |
+| **Параметр**                | **Значение**                    |
 | ---                          | ---                          |
 | Префиксы адресов виртуальной сети        | 10.11.0.0/16;<br>10.12.0.0/16 |
 | IP-адрес VPN-шлюза Azure         | IP-адрес VPN-шлюза Azure         |
@@ -111,7 +111,7 @@ $lng5gw  = Get-AzLocalNetworkGateway -Name $LNGName5 -ResourceGroupName $RG1
 New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $False
 ```
 
-### <a name ="policybased"></a>(Необязательно) Использование настраиваемой политики IPsec/IKE с параметром UsePolicyBasedTrafficSelectors
+### <a name="optional-use-custom-ipsecike-policy-with-usepolicybasedtrafficselectors"></a><a name ="policybased"></a>(Необязательно) Используйте пользовательскую политику IPsec/IKE с UsePolicyBasedTrafficSelectors
 Если ваши VPN-устройства не поддерживают селекторы трафика "любой к любому", такие как конфигурация на основе маршрутов или на основе VTI, то создайте настраиваемую политику IPsec/IKE с параметром [UsePolicyBasedTrafficSelectors](vpn-gateway-connect-multiple-policybased-rm-ps.md).
 
 > [!IMPORTANT]
@@ -133,7 +133,7 @@ $lng5gw  = Get-AzLocalNetworkGateway -Name $LNGName5 -ResourceGroupName $RG1
 New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $False -IpsecPolicies $ipsecpolicy5 -UsePolicyBasedTrafficSelectors $True
 ```
 
-### <a name ="bgp"></a>[Необязательно] Использование BGP в VPN-подключении типа "сеть — сеть"
+### <a name="optional-use-bgp-on-s2s-vpn-connection"></a><a name ="bgp"></a>(Необязательно) Использование BGP на S2S VPN соединение
 При создании VPN-подключения типа "сеть — сеть" (S2S) можно использовать [BGP для VPN-шлюза](vpn-gateway-bgp-resource-manager-ps.md). Такой подход имеет два отличия:
 
 * Префиксы адресов в локальной среде могут быть адресом одиночного хоста. IP-адрес узла BGP в локальной среде указывается следующим образом:

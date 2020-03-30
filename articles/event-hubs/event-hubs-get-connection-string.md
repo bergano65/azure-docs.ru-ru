@@ -11,10 +11,10 @@ ms.custom: seodec18
 ms.date: 02/19/2019
 ms.author: spelluru
 ms.openlocfilehash: 77a768f907ad989a457ee498f26ad0f6e004f786
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79264938"
 ---
 # <a name="get-an-event-hubs-connection-string"></a>Получение строки подключения Центров событий
@@ -37,14 +37,14 @@ Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>
 Получения строки подключения различными способами описано в этой статье.
 
 ## <a name="get-connection-string-from-the-portal"></a>Получение строки подключения на портале
-1. Войдите на [портал Azure](https://portal.azure.com). 
+1. Войти на [портал Azure](https://portal.azure.com). 
 2. В меню слева выберите **Все службы**. 
 3. В разделе **Аналитика** выберите **Центры событий**. 
 4. Выберите свой концентратор событий из списка концентраторов.
 6. На странице **Пространство имен Центров событий** выберите **Политики общего доступа** в меню слева.
 
     ![Элемент меню "Политики общего доступа"](./media/event-hubs-get-connection-string/event-hubs-get-connection-string1.png)
-7. В списке политик выберите **Политика общего доступа**. По умолчанию он имеет имя: **рутманажешаредакцессполици**. Вы можете добавить политику с соответствующими разрешениями (чтения, записи) и использовать ее. 
+7. В списке политик выберите **Политика общего доступа**. По умолчанию один называется: **RootManageSharedAccessPolicy**. Вы можете добавить политику с соответствующими разрешениями (чтения, записи) и использовать ее. 
 
     ![Политики общего доступа Центров событий](./media/event-hubs-get-connection-string/event-hubs-get-connection-string2.png)
 8. Щелкните кнопку **копирования** справа от текстового поля **Connection string-primary key** (Первичный ключ строки подключения). 
@@ -55,7 +55,7 @@ Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете использовать [Get-азевенсубкэй](/powershell/module/az.eventhub/get-azeventhubkey) , чтобы получить строку подключения для конкретной политики или имени правила, как показано ниже.
+Вы можете использовать [Get-AzEventHubKey,](/powershell/module/az.eventhub/get-azeventhubkey) чтобы получить строку соединения для конкретного имени политики/правила, как показано ниже:
 
 ```azurepowershell-interactive
 Get-AzEventHubKey -ResourceGroupName dummyresourcegroup -NamespaceName dummynamespace -AuthorizationRuleName RootManageSharedAccessKey
@@ -68,7 +68,7 @@ Get-AzEventHubKey -ResourceGroupName dummyresourcegroup -NamespaceName dummyname
 az eventhubs namespace authorization-rule keys list --resource-group dummyresourcegroup --namespace-name dummynamespace --name RootManageSharedAccessKey
 ```
 
-Чтобы получить строку подключения для сущности EventHub, можно также использовать следующую команду:
+Или вы можете использовать следующее, чтобы получить строку соединения для сущности EventHub:
 
 ```azurecli-interactive
 az eventhubs eventhub authorization-rule keys list --resource-group dummyresourcegroup --namespace-name dummynamespace --eventhub-name dummyeventhub --name RootManageSharedAccessKey

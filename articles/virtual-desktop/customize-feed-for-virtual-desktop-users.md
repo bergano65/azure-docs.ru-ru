@@ -1,6 +1,6 @@
 ---
-title: Настройка веб-канала для пользователей виртуальных рабочих столов Windows в Azure
-description: Настройка веб-канала для пользователей виртуальных рабочих столов Windows с помощью командлетов PowerShell.
+title: Настройка корма для пользователей виртуального рабочего стола Windows - Azure
+description: Как настроить канал для пользователей виртуального рабочего стола Windows с помощью cmdlets PowerShell.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -9,15 +9,15 @@ ms.date: 08/29/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 24a295d220cfaa7efe2fdc0d4eee53bb5c409708
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79128082"
 ---
 # <a name="customize-feed-for-windows-virtual-desktop-users"></a>Настройка канала для пользователей Виртуального рабочего стола Windows
 
-Вы можете настроить веб-канал таким образом, чтобы ресурсы RemoteApp и удаленный рабочий стол отображались для пользователей с распознаваемым способом.
+Вы можете настроить канал, чтобы удаленные приложения и удаленные настольные ресурсы отображались в узнаваемым образом для ваших пользователей.
 
 Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](/powershell/windows-virtual-desktop/overview/) для использования в сеансе PowerShell (если вы еще это не сделали). После этого выполните следующий командлет, чтобы войти в учетную запись:
 
@@ -25,45 +25,45 @@ ms.locfileid: "79128082"
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 ```
 
-## <a name="customize-the-display-name-for-a-remoteapp"></a>Настройка отображаемого имени для RemoteApp
+## <a name="customize-the-display-name-for-a-remoteapp"></a>Настройка имени дисплея для Удаленного Приложения
 
-Вы можете изменить отображаемое имя для опубликованного RemoteApp, задав понятное имя. По умолчанию понятное имя совпадает с именем удаленного приложения RemoteApp.
+Вы можете изменить название дисплея для опубликованного RemoteApp, установив дружественное имя. По умолчанию, дружественное имя такое же, как и название программы RemoteApp.
 
-Чтобы получить список опубликованных RemoteApp для группы приложений, выполните следующий командлет PowerShell:
+Чтобы получить список опубликованных Удаленных Приложений для группы приложений, запустите следующее cmdlet PowerShell:
 
 ```powershell
 Get-RdsRemoteApp -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGroupName <appgroupname>
 ```
-![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](media/get-rdsremoteapp.png)
+![Скриншот PowerShell cmdlet Get-RDSRemoteApp с именем и FriendlyName выделены.](media/get-rdsremoteapp.png)
 
-Чтобы назначить понятное имя RemoteApp, выполните следующий командлет PowerShell:
+Чтобы присвоить дружественное имя RemoteApp, запустите следующее cmdlet PowerShell:
 
 ```powershell
 Set-RdsRemoteApp -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGroupName <appgroupname> -Name <existingappname> -FriendlyName <newfriendlyname>
 ```
-![Снимок экрана командлета PowerShell Set-Рдсремотеапп с именем и новым FriendlyName.](media/set-rdsremoteapp.png)
+![Скриншот PowerShell cmdlet Set-RDSRemoteApp с именем и New FriendlyName выделены.](media/set-rdsremoteapp.png)
 
-## <a name="customize-the-display-name-for-a-remote-desktop"></a>Настройка отображаемого имени для удаленный рабочий стол
+## <a name="customize-the-display-name-for-a-remote-desktop"></a>Настройка имени дисплея для удаленного рабочего стола
 
-Вы можете изменить отображаемое имя для опубликованного удаленного рабочего стола, указав Понятное имя. Если вы вручную создали пул узлов и группу классических приложений с помощью PowerShell, понятное имя по умолчанию — "сеанс рабочего стола". Если вы создали пул узлов и группу классических приложений с помощью шаблона Azure Resource Manager GitHub или предложения Azure Marketplace, понятное имя по умолчанию совпадает с именем пула узлов.
+Вы можете изменить имя дисплея для опубликованного удаленного рабочего стола, установив дружественное имя. Если вы вручную создали пул хоста и группу настольных приложений через PowerShell, то дружественным по умолчанию названием является "Session Desktop". Если вы создали группу пула хоста и настольного приложения через шаблон GitHub Azure Resource Manager или предложение Azure Marketplace, имя, дружественное по умолчанию, совпадает с именем пула.
 
-Чтобы получить ресурс удаленного рабочего стола, выполните следующий командлет PowerShell:
+Чтобы получить ресурс удаленного рабочего стола, запустите следующее cmdlet PowerShell:
 
 ```powershell
 Get-RdsRemoteDesktop -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGroupName <appgroupname>
 ```
-![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](media/get-rdsremotedesktop.png)
+![Скриншот PowerShell cmdlet Get-RDSRemoteApp с именем и FriendlyName выделены.](media/get-rdsremotedesktop.png)
 
-Чтобы назначить понятное имя ресурсу удаленного рабочего стола, выполните следующий командлет PowerShell:
+Чтобы присвоить дружественное имя ресурсу удаленного рабочего стола, запустите следующее cmdlet PowerShell:
 
 ```powershell
 Set-RdsRemoteDesktop -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGroupName <appgroupname> -FriendlyName <newfriendlyname>
 ```
-![Снимок экрана командлета PowerShell Set-Рдсремотеапп с именем и новым FriendlyName.](media/set-rdsremotedesktop.png)
+![Скриншот PowerShell cmdlet Set-RDSRemoteApp с именем и New FriendlyName выделены.](media/set-rdsremotedesktop.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы настроили веб-канал для пользователей, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать его. Для этого перейдите к инструкциям по подключению к виртуальному рабочему столу Windows.
+Теперь, когда вы настроили канал для пользователей, вы можете войти в Windows Virtual Desktop клиента, чтобы проверить его. Чтобы сделать это, продолжить подключение к Windows Виртуальный настольный Как-tos:
     
  * [Подключение из Windows 10 или Windows 7](connect-windows-7-and-10.md)
  * [Подключение из веб-браузера](connect-web.md) 

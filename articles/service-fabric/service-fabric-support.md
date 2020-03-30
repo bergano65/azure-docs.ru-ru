@@ -1,15 +1,15 @@
 ---
-title: Дополнительные сведения о вариантах поддержки Service Fabric Azure
+title: Узнайте о вариантах поддержки ткани службы Azure
 description: Поддерживаемые версии кластера Service Fabric и ссылки для отправки запросов в службу поддержки.
 author: pkcsf
 ms.topic: troubleshooting
 ms.date: 8/24/2018
 ms.author: pkc
 ms.openlocfilehash: 7494f0072f27f2c9b00db7070f19dfc05627eacf
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79282098"
 ---
 # <a name="azure-service-fabric-support-options"></a>Варианты поддержки Azure Service Fabric
@@ -26,9 +26,9 @@ ms.locfileid: "79282098"
 - [Поддержка Premier](https://support.microsoft.com/en-us/premier).
 
 > [!Note]
-> Кластеры, работающие на уровне бронзовой надежности или кластере с одним узлом, позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером, работающим на основе бронзовой надежности или кластера с одним узлом, Группа поддержки Майкрософт поможет вам устранить эту неполадку, но не выполнит анализ основных причин. Дополнительные сведения см. в разделе [характеристики надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-reliability-characteristics-of-the-cluster) .
+> Кластеры, работающие на бронзовом уровне надежности или кластере одного узла, позволят вам запускать только тестовые рабочие нагрузки. Если возникли проблемы с кластером, работающим на бронзовом надежности или кластере одного узла, группа поддержки Майкрософт поможет вам в устранении проблемы, но не будет выполнять анализ корневых причин. Для более подробной информации о [характеристиках надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-reliability-characteristics-of-the-cluster) обратитесь.
 >
-> Дополнительные сведения о том, что требуется для готового к работе кластера, см. в [контрольном списке готовности к рабочей среде](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist).
+> Для получения дополнительной информации о том, что требуется для производственного готового кластера, пожалуйста, обратитесь к [контрольному списку готовности к производству.](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist)
 
 <a id="getlivesitesupportonprem"></a>
 
@@ -51,11 +51,11 @@ ms.locfileid: "79282098"
 
 ### <a name="stackoverflow-and-msdn-forums"></a>Сайт StackOverflow и форум MSDN
 
-[Тег Service Fabric на StackOverflow][stackoverflow] и [форум Service Fabric в MSDN][msdn-forum] лучше использовать для указания вопросов о том, как работает платформа, и о том, как можно выполнять определенные задачи с ее помощью.
+[Тег Service Fabric на сайте StackOverflow][stackoverflow] и [форум MSDN по Service Fabric][msdn-forum] очень удобно использовать, чтобы задавать вопросы о принципах работы платформы и о том, как выполнять различные задачи с ее помощью.
 
 ### <a name="azure-feedback-forum"></a>Форум отзывов и предложений по Azure
 
-[Форум обратной связи Azure для Service Fabric][uservoice-forum] — лучшее место для отправки идей с большим числом функций, которые вы используете для продукта, так как мы рассматриваем самые популярные запросы, которые являются частью нашего среднего и долгосрочного планирования. Мы рекомендуем вам обращаться с предложениями в службу поддержки в этом сообществе.
+[Форум отзывов и предложений по Azure по Service Fabric][uservoice-forum] — лучший форум, на котором можно поделиться идеями о важных функциях для продукта, так как мы рассматриваем наиболее популярные запросы в процессе среднесрочного и долгосрочного планирования. Мы рекомендуем вам обращаться с предложениями в службу поддержки в этом сообществе.
 
 ## <a name="service-fabric-preview-versions---unsupported-for-production-use"></a>Предварительные версии Service Fabric не поддерживают работу в рабочей среде.
 

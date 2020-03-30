@@ -1,16 +1,16 @@
 ---
 title: Управление политиками индексирования в Azure Cosmos DB
-description: Узнайте, как управлять политиками индексации, включать или исключать свойства из индексирования, определять индексацию с помощью различных пакетов SDK Azure Cosmos DB
+description: Узнайте, как управлять политиками индексирования, включать или исключать свойство из индексирования, как определить индексацию с помощью различных SDK Azure Cosmos DB
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: thweiss
 ms.openlocfilehash: 58a1ee13afa76b152723cb71d4037f9c31cc8d4e
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79252081"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
@@ -19,7 +19,7 @@ ms.locfileid: "79252081"
 
 ## <a name="indexing-policy-examples"></a>Примеры политик индексирования
 
-Ниже приведены некоторые примеры политик индексации, которые отображаются в [формате JSON](index-policy.md#include-exclude-paths), то есть о том, как они представлены в портал Azure. Значения параметров можно задать с помощью Azure CLI или любого пакета SDK.
+Вот несколько примеров политикиндексирования, показанных в [формате JSON,](index-policy.md#include-exclude-paths)которые разоблачаются на портале Azure. Значения параметров можно задать с помощью Azure CLI или любого пакета SDK.
 
 ### <a name="opt-out-policy-to-selectively-exclude-some-property-paths"></a>Политика отказа для выборочного исключения некоторых путей к свойствам
 
@@ -42,7 +42,7 @@ ms.locfileid: "79252081"
     }
 ```
 
-Эта политика индексации эквивалентна приведенной ниже, которая вручную задает значения по умолчанию ```kind```, ```dataType```и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексирования эквивалентна той, ниже ```kind``` ```dataType```которой ```precision``` вручную устанавливается, и к их значениям по умолчанию. Эти свойства больше не являются необходимыми для четкого набора, и вы можете полностью упустить их из политики индексирования (как показано в приведенном выше примере).
 
 ```json
     {
@@ -96,7 +96,7 @@ ms.locfileid: "79252081"
     }
 ```
 
-Эта политика индексации эквивалентна приведенной ниже, которая вручную задает значения по умолчанию ```kind```, ```dataType```и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексирования эквивалентна той, ниже ```kind``` ```dataType```которой ```precision``` вручную устанавливается, и к их значениям по умолчанию. Эти свойства больше не являются необходимыми для четкого набора, и вы можете полностью упустить их из политики индексирования (как показано в приведенном выше примере).
 
 ```json
     {
@@ -172,7 +172,7 @@ ms.locfileid: "79252081"
 
 ## <a name="composite-indexing-policy-examples"></a>Примеры политик составного индексирования
 
-Кроме добавления и удаления путей отдельных свойств, вы также можете указать составной индекс. Если вы хотите выполнить запрос, который содержит предложение `ORDER BY` для нескольких свойств, эти свойства должны содержать [составной индекс](index-policy.md#composite-indexes) Кроме того, составные индексы будут иметь преимущество в производительности для запросов, имеющих фильтр и предложения ORDER BY для различных свойств.
+Кроме добавления и удаления путей отдельных свойств, вы также можете указать составной индекс. Если вы хотите выполнить запрос, который содержит предложение `ORDER BY` для нескольких свойств, эти свойства должны содержать [составной индекс](index-policy.md#composite-indexes) Кроме того, составные индексы будут иметь преимущество в производительности для запросов, которые имеют фильтр и имеют положение ORDER BY о различных свойствах.
 
 ### <a name="composite-index-defined-for-name-asc-age-desc"></a>Определенный составной индекс (name asc, age desc):
 
@@ -201,7 +201,7 @@ ms.locfileid: "79252081"
     }
 ```
 
-Приведенный выше составной индекс по имени и возрасту необходим для #1 запросов и #2 запросов:
+Вышеуказанный составной индекс по имени и возрасту необходим для #1 запроса и #2 запросов:
 
 Запрос 1:
 
@@ -219,9 +219,9 @@ ms.locfileid: "79252081"
     ORDER BY c.name DESC, c.age ASC
 ```
 
-Этот составной индекс поможет #3 запросов и #4 запросов и оптимизации фильтров.
+Этот составной индекс принесет пользу #3 запроса и #4 и оптимизации фильтров:
 
-#3 запроса:
+Запрос #3:
 
 ```sql
 SELECT *
@@ -230,7 +230,7 @@ WHERE c.name = "Tim"
 ORDER BY c.name DESC, c.age ASC
 ```
 
-#4 запроса:
+#4 запросов:
 
 ```sql
 SELECT *
@@ -238,7 +238,7 @@ FROM c
 WHERE c.name = "Tim" AND c.age > 18
 ```
 
-### <a name="composite-index-defined-for-name-asc-age-asc-and-name-asc-age-desc"></a>Составной индекс, определенный для (Name ASC, Age ASC) и (Name ASC, Age DESC):
+### <a name="composite-index-defined-for-name-asc-age-asc-and-name-asc-age-desc"></a>Композитный индекс, определяемый для (имя ASC, возраст ASC) и (имя ASC, возраст DESC):
 
 Вы можете определить несколько разных составных индексов в одной и той же политике индексирования.
 
@@ -277,7 +277,7 @@ WHERE c.name = "Tim" AND c.age > 18
     }
 ```
 
-### <a name="composite-index-defined-for-name-asc-age-asc"></a>Составной индекс, определенный для (Name ASC, Age ASC):
+### <a name="composite-index-defined-for-name-asc-age-asc"></a>Композитный индекс, определяемый для (название ASC, возраст ASC):
 
 Порядок указывать необязательно. Если он не указан, по умолчанию используется порядок по возрастанию.
 
@@ -320,7 +320,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ### <a name="no-indexing"></a>Без индексирования
 
-Эта политика отключит индексирование. Если `indexingMode` имеет значение `none`, то для контейнера нельзя задать TTL.
+Эта политика отключит индексацию. Если `indexingMode` `none`установлен, вы не можете установить TTL на контейнере.
 
 ```json
     {
@@ -328,19 +328,19 @@ WHERE c.name = "Tim" AND c.age > 18
     }
 ```
 
-## <a name="updating-indexing-policy"></a>Обновление политики индексации
+## <a name="updating-indexing-policy"></a>Политика обновления индексирования
 
-В Azure Cosmos DB политику индексирования можно обновить одним из следующих способов.
+В Azure Cosmos DB политика индексирования может быть обновлена с помощью любого из приведенных ниже методов:
 
 - на портале Azure;
 - с помощью Azure CLI;
-- Использование PowerShell
+- с помощью PowerShell
 - с помощью одного из пакетов SDK.
 
 [Обновление политики индексирования](index-policy.md#modifying-the-indexing-policy) приводит к преобразованию индекса. Ход выполнения этого преобразования можно отслеживать с помощью пакетов SDK.
 
 > [!NOTE]
-> При обновлении политики индексации операции записи в Azure Cosmos DB будут непрерывными. Во время повторного индексирования запросы могут возвращать частичные результаты по мере обновления индекса.
+> При обновлении политики индексации записи в Azure Cosmos DB будут непрерывными. Во время повторной индексации запросы могут возвращать частичные результаты по мере обновления индекса.
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
@@ -362,15 +362,15 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-Сведения о создании контейнера с пользовательской политикой индексации см. в разделе [Создание контейнера с настраиваемой политикой индексов с помощью интерфейса командной строки](manage-with-cli.md#create-a-container-with-a-custom-index-policy) .
+Для создания контейнера с типоиковой политикой индексирования [см.](manage-with-cli.md#create-a-container-with-a-custom-index-policy)
 
 ## <a name="use-powershell"></a>Использование PowerShell
 
-Сведения о создании контейнера с пользовательской политикой индексации см. в разделе [Создание контейнера с настраиваемой политикой индексов с помощью PowerShell](manage-with-powershell.md#create-container-custom-index) .
+Для создания контейнера с типоичной политикой индексирования [см.](manage-with-powershell.md#create-container-custom-index)
 
 ## <a name="use-the-net-sdk-v2"></a>Использование пакета SDK для .NET версии 2
 
-Объект `DocumentCollection` из [пакета SDK .NET v2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode`, а также добавить или удалить `IncludedPaths` и `ExcludedPaths`.
+Объект `DocumentCollection` из [.NET SDK v2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) `IndexingPolicy` предоставляет свойство, `IndexingMode` которое позволяет `IncludedPaths` `ExcludedPaths`изменять и добавлять или удалять и .
 
 ```csharp
 // Retrieve the container's details
@@ -398,9 +398,9 @@ ResourceResponse<DocumentCollection> container = await client.ReadDocumentCollec
 long indexTransformationProgress = container.IndexTransformationProgress;
 ```
 
-## <a name="use-the-net-sdk-v3"></a>Использование пакета SDK для .NET v3
+## <a name="use-the-net-sdk-v3"></a>Используйте .NET SDK V3
 
-Объект `ContainerProperties` из [пакета SDK .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) (см. [это краткое руководство](create-sql-api-dotnet.md) по его использованию) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode` и добавить или удалить `IncludedPaths` и `ExcludedPaths`.
+Объект `ContainerProperties` из [.NET SDK v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) (см. [этот быстрый запуск](create-sql-api-dotnet.md) относительно его использования) предоставляет свойство, `IndexingPolicy` которое позволяет изменить `IndexingMode` и добавить или удалить `IncludedPaths` и `ExcludedPaths`.
 
 ```csharp
 // Retrieve the container's details
@@ -424,7 +424,7 @@ containerResponse.Resource.IndexingPolicy.CompositeIndexes.Add(new Collection<Co
 await client.GetContainer("database", "container").ReplaceContainerAsync(containerResponse.Resource);
 ```
 
-Чтобы отслеживать ход преобразования индекса, передайте объект `RequestOptions`, который задает для свойства `PopulateQuotaInfo` значение `true`, а затем извлеките его из заголовка ответа `x-ms-documentdb-collection-index-transformation-progress`.
+Чтобы отследить прогресс преобразования `RequestOptions` индекса, `PopulateQuotaInfo` передайте `true`объект, который устанавливает `x-ms-documentdb-collection-index-transformation-progress` свойство, затем извлеките значение из заголовка ответа.
 
 ```csharp
 // retrieve the container's details
@@ -433,7 +433,7 @@ ContainerResponse containerResponse = await client.GetContainer("database", "con
 long indexTransformationProgress = long.Parse(containerResponse.Headers["x-ms-documentdb-collection-index-transformation-progress"]);
 ```
 
-При определении пользовательской политики индексирования при создании нового контейнера API-интерфейс V3's Fluent пакета SDK позволяет быстро и эффективно писать это определение:
+При определении политики пользовательской индексации при создании нового контейнера, свободно aPI SDK V3 позволяет написать это определение кратким и эффективным способом:
 
 ```csharp
 await client.GetDatabase("database").DefineContainer(name: "container", partitionKeyPath: "/myPartitionKey")
@@ -541,13 +541,13 @@ containerResponse.subscribe(result -> {
 
 Интерфейс `ContainerDefinition` из [пакета SDK для Node.js](https://www.npmjs.com/package/@azure/cosmos) (его использование описано в [этом кратком руководстве](create-sql-api-nodejs.md)) предоставляет свойство `indexingPolicy`, которое позволяет изменить `indexingMode` и добавить или удалить `includedPaths` и `excludedPaths`.
 
-Получение сведений о контейнере
+Извлекать данные контейнера
 
 ```javascript
 const containerResponse = await client.database('database').container('container').read();
 ```
 
-Установить режим индексирования "последовательный"
+Установите режим индексации на соответствие
 
 ```javascript
 containerResponse.body.indexingPolicy.indexingMode = "consistent";
@@ -607,24 +607,24 @@ const containerResponse = await client.database('database').container('container
 const indexTransformationProgress = replaceResponse.headers['x-ms-documentdb-collection-index-transformation-progress'];
 ```
 
-## <a name="use-the-python-sdk-v3"></a>Использование пакета SDK для Python v3
+## <a name="use-the-python-sdk-v3"></a>Используйте Python SDK V3
 
-При использовании [пакета SDK версии 3 для Python](https://pypi.org/project/azure-cosmos/) (см. [это краткое руководство](create-sql-api-python.md) по использованию) конфигурация контейнера управляется как словарь. Из этого словаря можно осуществлять доступ к политике индексации и всем ее атрибутам.
+При использовании [Python SDK V3](https://pypi.org/project/azure-cosmos/) (см. [этот квистарт](create-sql-api-python.md) относительно его использования), конфигурация контейнера управляется как словарь. Из этого словаря можно осуществлять доступ к политике индексации и всем ее атрибутам.
 
-Получение сведений о контейнере
+Извлекать данные контейнера
 
 ```python
 containerPath = 'dbs/database/colls/collection'
 container = client.ReadContainer(containerPath)
 ```
 
-Установить режим индексирования "последовательный"
+Установите режим индексации на соответствие
 
 ```python
 container['indexingPolicy']['indexingMode'] = 'consistent'
 ```
 
-Определение политики индексации с помощью включаемого пути и пространственного индекса
+Определение политики индексирования с включенным путем и пространственным индексом
 
 ```python
 container["indexingPolicy"] = {
@@ -638,7 +638,7 @@ container["indexingPolicy"] = {
 }
 ```
 
-Определение политики индексации с исключенным путем
+Определение политики индексирования с исключенным способом
 
 ```python
 container["indexingPolicy"] = {
@@ -648,7 +648,7 @@ container["indexingPolicy"] = {
 }
 ```
 
-Добавление составного индекса
+Добавить составной индекс
 
 ```python
 container['indexingPolicy']['compositeIndexes'] = [
@@ -671,11 +671,11 @@ container['indexingPolicy']['compositeIndexes'] = [
 response = client.ReplaceContainer(containerPath, container)
 ```
 
-## <a name="use-the-python-sdk-v4"></a>Использование пакета SDK для Python v4
+## <a name="use-the-python-sdk-v4"></a>Используйте Python SDK V4
 
-При использовании [пакета SDK для Python v4](https://pypi.org/project/azure-cosmos/)конфигурация контейнеров управляется как словарь. Из этого словаря можно осуществлять доступ к политике индексации и всем ее атрибутам.
+При использовании [Python SDK V4](https://pypi.org/project/azure-cosmos/)конфигурация контейнера управляется как словарь. Из этого словаря можно осуществлять доступ к политике индексации и всем ее атрибутам.
 
-Получение сведений о контейнере
+Извлекать данные контейнера
 
 ```python
 database_client = cosmos_client.get_database_client('database')
@@ -683,7 +683,7 @@ container_client = database_client.get_container_client('container')
 container = container_client.read()
 ```
 
-Установить режим индексирования "последовательный"
+Установите режим индексации на соответствие
 
 ```python
 indexingPolicy = {
@@ -691,7 +691,7 @@ indexingPolicy = {
 }
 ```
 
-Определение политики индексации с помощью включаемого пути и пространственного индекса
+Определение политики индексирования с включенным путем и пространственным индексом
 
 ```python
 indexingPolicy = {
@@ -704,7 +704,7 @@ indexingPolicy = {
 }
 ```
 
-Определение политики индексации с исключенным путем
+Определение политики индексирования с исключенным способом
 
 ```python
 indexingPolicy = {
@@ -714,7 +714,7 @@ indexingPolicy = {
 }
 ```
 
-Добавление составного индекса
+Добавить составной индекс
 
 ```python
 indexingPolicy['compositeIndexes'] = [

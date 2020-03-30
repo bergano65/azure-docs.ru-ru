@@ -1,6 +1,6 @@
 ---
 title: Форматы и кодеки Media Encoder Standard — Azure
-description: В этой статье приводятся общие сведения о форматах Media Encoder Standard и кодеках.
+description: В этой статье представлен обзор форматов и кодеков Media Encoder Standard.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -15,15 +15,15 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: e2ccce13e4ef09426d0f3a02dcbce2f330b0ead8
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79251028"
 ---
 # <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки Media Encoder Standard
 
-> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите версию медиа-услуг, которые вы используете:"]
 > * [Версия 2](media-services-media-encoder-standard-formats.md)
 > * [Версия 3](../latest/media-encoder-standard-formats.md)
 
@@ -89,7 +89,7 @@ ms.locfileid: "79251028"
 | MP3 (MPEG-1 Audio Layer 3) |Да |
 | Windows Media Audio |Да |
 | WAV/PCM |Да |
-| [FLAC](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
+| [Flac](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Да |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Да |
 | AMR (adaptive multi-rate) |Да |
@@ -112,7 +112,7 @@ ms.locfileid: "79251028"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 [Кодирование содержимого по запросу с помощью служб мультимедиа Azure](media-services-encode-asset.md)
 
 [Кодирование с помощью стандартного кодировщика мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md)

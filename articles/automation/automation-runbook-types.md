@@ -6,17 +6,17 @@ ms.subservice: process-automation
 ms.date: 03/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: 6346c29210b6390f11c884ff51e0b60af89bbbb7
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79278614"
 ---
 # <a name="azure-automation-runbook-types"></a>Типы модулей Runbook в службе автоматизации Azure
 
 Служба автоматизации Azure поддерживает несколько типов модулей Runbook, кратко описанных в приведенной ниже таблице.  Следующие разделы содержат дополнительную информацию о каждом типе, включая рекомендацию по использованию.
 
-| Тип | Description |
+| Тип | Описание |
 |:--- |:--- |
 | [Графический](#graphical-runbooks)|Опирается на Windows PowerShell, а полностью создается и редактируется в графическом редакторе на портале Azure. |
 | [Графический модуль рабочего процесса PowerShell](#graphical-runbooks)|Опирается на рабочий процесс Windows PowerShell, а полностью создается и редактируется в графическом редакторе на портале Azure. |
@@ -41,7 +41,7 @@ ms.locfileid: "79278614"
 * Редактировать модуль Runbook за пределами портала Azure нельзя.
 * Для выполнения сложной логики может потребоваться действие Code, содержащее код PowerShell.
 * Вам не удастся отобразить или напрямую изменить код PowerShell, созданный графическим рабочим процессом. Вы можете просматривать код в любых действиях Code.
-* Не удается выполнить в гибридной рабочей роли Runbook Linux
+* Не может быть запущен на Linux Гибридный Runbook работника
 
 ## <a name="powershell-runbooks"></a>Модули Runbook PowerShell
 
@@ -51,7 +51,7 @@ ms.locfileid: "79278614"
 
 * Реализация сложной логики с помощью кода рабочего процесса PowerShell без дополнительного усложнения рабочего процесса PowerShell.
 * Модуль Runbook запускается быстрее, чем модули рабочего процесса PowerShell, поскольку не требуют предварительной компиляции.
-* Может быть запущен в Azure или в гибридных рабочих ролях Runbook для Linux и Windows
+* Можно запускать в Azure или на linux и Windows Hybrid Runbook работников
 
 ### <a name="limitations"></a>Ограничения
 
@@ -64,8 +64,8 @@ ms.locfileid: "79278614"
 
 Ниже перечислены проблемы с модулями Runbook PowerShell, известные на данный момент.
 
-* Модули Runbook PowerShell не могут извлечь незашифрованный [переменный ресурс](automation-variables.md) со значением NULL.
-* Модули Runbook PowerShell не имеют возможности извлекать [ресурс переменной](automation-variables.md), в имени которого есть символ *~* .
+* Runbooks PowerShell не может получить незашифрованный [переменный актив](automation-variables.md) с нулевым значением.
+* Модули Runbook PowerShell не имеют возможности извлекать [ресурс переменной](automation-variables.md), в имени которого есть символ *~*.
 * Модуль Get-Process в цикле в модуле Runbook PowerShell может аварийно завершить работу после примерно 80 итераций.
 * Модуль Runbook PowerShell может завершиться ошибкой, если попытается записать слишком большой объем данных в поток вывода за один раз.   Обычно эту проблему можно обойти, выводя при работе с большими объектами только необходимые данные.  Например, вместо использования метода *Get-Process* можно вывести только требуемые поля, указав *Get-Process | Select ProcessName, CPU*.
 
@@ -86,7 +86,7 @@ Runbook рабочих процессов PowerShell представляют с
 * Runbook должен справляться с усложнениями рабочего процесса PowerShell, например с [десериализованными объектами](automation-powershell-workflow.md#code-changes).
 * Модуль Runbook запускается дольше, чем модули Runbook PowerShell, поскольку требует предварительной компиляции.
 * Runbook PowerShell можно включать только как дочерние Runbook с помощью командлета Start-AzureAutomationRunbook, который создает задание.
-* Не удается выполнить в гибридной рабочей роли Runbook Linux
+* Не может быть запущен на Linux Гибридный Runbook работника
 
 ## <a name="python-runbooks"></a>Модули Runbook Python
 
@@ -95,7 +95,7 @@ Runbook рабочих процессов PowerShell представляют с
 ### <a name="advantages"></a>Преимущества
 
 * Вы можете использовать надежные библиотеки Python.
-* Может быть запущен в Azure или в гибридных рабочих ролях Runbook Linux. Гибридные рабочие роли Runbook Windows поддерживаются с установленным [Python 2.7](https://www.python.org/downloads/release/latest/python2) .
+* Можно запускать в Azure или на обоих Linux Hybrid Runbook работников. Windows Hybrid Runbook Работников поддерживаются с [python2.7](https://www.python.org/downloads/release/latest/python2) установлен.
 
 ### <a name="limitations"></a>Ограничения
 
@@ -115,4 +115,4 @@ Runbook рабочих процессов PowerShell представляют с
 * Дополнительные сведения о графической разработке модулей Runbook см. в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
 * Чтобы понять различия между PowerShell и рабочими процессами PowerShell для модулей Runbook, см. статью [Изучение рабочего процесса Windows PowerShell](automation-powershell-workflow.md).
 * Дополнительные сведения о создании и импорте модуля Runbook см. в статье [Создание или импорт модуля Runbook в службе автоматизации Azure](manage-runbooks.md).
-* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+* Для получения дополнительной информации о PowerShell, включая языковые справочные и учебные модули, обратитесь к [документам PowerShell](https://docs.microsoft.com/powershell/scripting/overview).

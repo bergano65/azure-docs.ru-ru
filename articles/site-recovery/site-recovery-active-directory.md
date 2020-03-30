@@ -1,5 +1,5 @@
 ---
-title: Настройка аварийного восстановления Active Directory и DNS с помощью Azure Site Recovery
+title: Настройка восстановления аварийности Active Directory/DNS с восстановлением сайта Azure
 description: В этой статье описывается, как реализовать решение аварийного восстановления для Active Directory и DNS с помощью Azure Site Recovery.
 author: mayurigupta13
 manager: rochakm
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
 ms.openlocfilehash: 8c1f85217db12b60cdcd8ea0bdb65792b8d02648
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79257814"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
@@ -22,10 +22,10 @@ ms.locfileid: "79257814"
 
 Из этой статьи вы узнаете, как создать решение аварийного восстановления для Active Directory. Здесь указаны предварительные требования и инструкции по отработке отказа. Перед началом работы необходимо ознакомиться с Active Directory и Site Recovery.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если выполняется репликация в Azure, [подготовьте ресурсы Azure](tutorial-prepare-azure.md), включая подписку, виртуальную сеть Azure, учетную запись хранения и хранилище служб восстановления.
-* [Ознакомьтесь](site-recovery-support-matrix-to-azure.md) с требованиями поддержки для всех компонентов.
+* Просмотрите [требования к поддержке](site-recovery-support-matrix-to-azure.md) всех компонентов.
 
 ## <a name="replicate-the-domain-controller"></a>Репликация контроллера домена
 
@@ -50,7 +50,7 @@ Site Recovery можно использовать для защиты вирту
 ## <a name="protect-active-directory"></a>Защита Active Directory
 
 ### <a name="site-to-site-protection"></a>Защита "сайт-сайт"
-Создайте контроллер домена на дополнительном сайте. При повышении роли сервера до роли контроллера домена укажите имя домена, которое используется на основном сайте. Чтобы настроить параметры объекта связывания сайтов, в который добавляются сайты, можно использовать оснастку **Active Directory — сайты и службы**. Настраивая параметры связи между сайтами, можно указать время и периодичность репликации между двумя или несколькими сайтами. Дополнительные сведения см. в статье [Расписание репликации между сайтами](https://technet.microsoft.com/library/cc731862.aspx).
+Создайте контроллер домена на дополнительном сайте. При повышении роли сервера до роли контроллера домена укажите имя домена, которое используется на основном сайте. Чтобы настроить параметры объекта связывания сайтов, в который добавляются сайты, можно использовать оснастку **Active Directory — сайты и службы**. Настраивая параметры связи между сайтами, можно указать время и периодичность репликации между двумя или несколькими сайтами. Для получения дополнительной информации смотрите [копирование расписания между сайтами.](https://technet.microsoft.com/library/cc731862.aspx)
 
 ### <a name="site-to-azure-protection"></a>Защита "сайт-Azure"
 Сначала создайте контроллер домена в виртуальной сети Azure. При повышении роли сервера до роли контроллера домена укажите имя домена, которое используется на основном сайте.
@@ -104,9 +104,9 @@ Site Recovery можно использовать для защиты вирту
 Начиная с Windows Server 2012 в [Active Directory Domain Services (AD DS) предусмотрены дополнительные меры безопасности](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100). Эти меры безопасности помогают защитить виртуализированные контроллеры домена от откатов USN при условии, что базовая платформа низкоуровневой оболочки поддерживает **VM-GenerationID**. Azure поддерживает **VM-GenerationID**. А это значит, что контроллеры доменов, которые работают под управлением Windows Server 2012 или более поздних версий на виртуальных машинах Azure, будут защищены дополнительными мерами безопасности.
 
 
-Когда выполняется сброс **VM-GenerationID**, значение **InvocationID** базы данных AD DS также сбрасывается. Кроме того, пул RID отбрасывается, а папка SYSVOL помечается как не заслуживающий доверия. Дополнительные сведения см. в документах, посвященных [знакомству с виртуализацией доменных служб Active Directory](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) и [безопасной виртуализации DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
+Когда выполняется сброс **VM-GenerationID**, значение **InvocationID** базы данных AD DS также сбрасывается. Кроме того, пул RID отбрасывается, а папка sysvol помечена как неавторитетная. Для получения дополнительной информации [см. Введение в active Directory Domain Services виртуализации](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) и [безопасной виртуализации DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
 
-Отработка отказа в Azure может привести к сбросу **VM-GenerationID**. Сброс **VM-GenerationID** запускает дополнительные меры безопасности при запуске виртуальной машины с контроллером домена в Azure. Это может привести к *значительной задержке* при входе на виртуальную машину контроллера домена.
+Отработка отказа в Azure может привести к сбросу **VM-GenerationID**. Сброс **VM-GenerationID** запускает дополнительные меры безопасности при запуске виртуальной машины с контроллером домена в Azure. Это может привести к *значительной задержке* в возможности входа в виртуальную машину контроллера домена.
 
 Так как этот контроллер домена будет использоваться только для тестовой отработки отказа, меры безопасности виртуализации не обязательны. Чтобы значение **VM-GenerationID** виртуальной машины с контроллером домена не изменялось, присвойте следующему параметру DWORD на локальном контроллере домена значение **4**.
 
@@ -126,11 +126,11 @@ Site Recovery можно использовать для защиты вирту
 
     ![Изменение идентификатора вызова](./media/site-recovery-active-directory/Event1109.png)
 
-* Папка SYSVOL и общие папки NETLOGON недоступны.
+* Папка Sysvol и акции NETLOGON недоступны.
 
-    ![Общая папка SYSVOL](./media/site-recovery-active-directory/sysvolshare.png)
+    ![Доля папок Sysvol](./media/site-recovery-active-directory/sysvolshare.png)
 
-    ![Папка NtFrs SYSVOL](./media/site-recovery-active-directory/Event13565.png)
+    ![Папка NtFrs sysvol](./media/site-recovery-active-directory/Event13565.png)
 
 * Базы данных DFSR удалены.
 
@@ -144,7 +144,7 @@ Site Recovery можно использовать для защиты вирту
 >
 >
 
-1. В командной строке выполните следующую команду, чтобы проверить, являются ли папка SYSVOL и папка NETLOGON общими:
+1. В запросе команды запустите следующую команду, чтобы проверить, являются ли папки sysvol и папку NETLOGON общими:
 
     `NET SHARE`
 
@@ -164,7 +164,7 @@ Site Recovery можно использовать для защиты вирту
     * Несмотря на то, что мы не рекомендуем [репликацию FRS](https://blogs.technet.microsoft.com/filecab/2014/06/25/the-end-is-nigh-for-frs/), при ее использовании выполните действия для заслуживающего доверия восстановления. Процесс описан в статье об [использовании раздела реестра BurFlags для повторной инициализации службы репликации файлов](https://support.microsoft.com/kb/290762).
 
         Дополнительные сведения о BurFlags см. в этой [записи блога](https://blogs.technet.microsoft.com/janelewis/2006/09/18/d2-and-d4-what-is-it-for/).
-    * Если используется репликация DFSR, выполните действия для заслуживающего доверия восстановления. Процесс описан в разделе [Принудительная и неофициальная синхронизация для реплицированной папки SYSVOL (например, D4/D2 для FRS)](https://support.microsoft.com/kb/2218556).
+    * Если используется репликация DFSR, выполните действия для заслуживающего доверия восстановления. Процесс описан в [Силе авторитетной и неавторитетной синхронизации для папки сисвола DFSR (например, "D4/D2" для FRS).](https://support.microsoft.com/kb/2218556)
 
         Вы можете также использовать функции PowerShell. Дополнительные сведения см. в статье [DFSR-SYSVOL Authoritative / Non-Authoritative Restore Powershell Functions](https://blogs.technet.microsoft.com/thbouche/2013/08/28/dfsr-sysvol-authoritative-non-authoritative-restore-powershell-functions/) (Функции PowerShell заслуживающие и не заслуживающего доверия восстановления DFSR SYSVOL).
 

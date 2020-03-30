@@ -9,28 +9,28 @@ ms.topic: conceptual
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
 ms.openlocfilehash: 31e85876d60ae6fcd8f3b29633506d698a323acb
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79272439"
 ---
 # <a name="connect-to-hdinsight-apache-hadoop-using-ssh"></a>Подключение к HDInsight (Apache Hadoop) с помощью SSH
 
-Сведения о выполнении безопасного подключения к Apache Hadoop в Azure HDInsight с помощью [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). Сведения о подключении через виртуальную сеть см. в статье [Архитектура виртуальной сети Azure hdinsight](./hdinsight-virtual-network-architecture.md) и [Планирование развертывания виртуальной сети для кластеров Azure hdinsight](./hdinsight-plan-virtual-network-deployment.md).
+Сведения о выполнении безопасного подключения к Apache Hadoop в Azure HDInsight с помощью [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). Для получения информации о подключении через виртуальную сеть см. [архитектуру виртуальной сети Azure HDInsight](./hdinsight-virtual-network-architecture.md) и [запланируйте виртуальное развертывание сети для кластеров Azure HDInsight.](./hdinsight-plan-virtual-network-deployment.md)
 
-В следующей таблице содержатся сведения об адресе и порте, необходимые при подключении к HDInsight с помощью клиента SSH.
+Следующая таблица содержит информацию адреса и порта, необходимую при подключении к HDInsight с помощью клиента SSH:
 
-| Адрес | Port | Подключается к... |
+| Адрес | Порт | Подключается к... |
 | ----- | ----- | ----- |
 | `<clustername>-ssh.azurehdinsight.net` | 22 | Основной головной узел |
 | `<clustername>-ssh.azurehdinsight.net` | 23 | Дополнительный головной узел |
-| `<clustername>-ed-ssh.azurehdinsight.net` | 22 | граничные узлы (службы ML в HDInsight) |
-| `<edgenodename>.<clustername>-ssh.azurehdinsight.net` | 22 | краевой узел (любой другой тип кластера, если существует краевой узел) |
+| `<clustername>-ed-ssh.azurehdinsight.net` | 22 | край узла (ML Услуги на HDInsight) |
+| `<edgenodename>.<clustername>-ssh.azurehdinsight.net` | 22 | край узла (любой другой тип кластера, если узла края существует) |
 
 Замените `<clustername>` именем кластера. Замените `<edgenodename>` на имя граничного узла.
 
-Мы рекомендуем __всегда подключаться к граничному узлу__ (при наличии его в кластере) с помощью SSH. Службы, размещенные на головных узлах, критически важны для работоспособности Hadoop. Граничный узел выполняет только размещаемые на нем службы. Дополнительные сведения об использовании граничных узловсм. в разделе [Доступ к граничному узлу](hdinsight-apps-use-edge-node.md#access-an-edge-node).
+Мы рекомендуем __всегда подключаться к граничному узлу__ (при наличии его в кластере) с помощью SSH. Службы, размещенные на головных узлах, критически важны для работоспособности Hadoop. Граничный узел выполняет только размещаемые на нем службы. Дополнительные сведения об использовании граничных узловсм. в разделе Доступ к граничному узлу.
 
 > [!TIP]  
 > При первом подключении к HDInsight клиент SSH может отобразить предупреждение о том, что не удается установить подлинность узла. При появлении запроса выберите "Да", чтобы добавить узел в список доверенных серверов клиента SSH.
@@ -41,21 +41,21 @@ ms.locfileid: "79272439"
 
 Системы Linux, Unix и macOS предоставляют команды `ssh` и `scp`. Клиент `ssh` обычно используется для создания удаленного сеанса командной строки с помощью системы на основе Unix или Linux. С помощью `scp` можно безопасно копировать файлы между клиентской и удаленной системой.
 
-По умолчанию в Microsoft Windows не устанавливаются клиенты SSH. Клиенты `ssh` и `scp` для Windows доступны в следующих пакетах:
+Microsoft Windows не устанавливает sSH-клиентов по умолчанию. Клиенты `ssh` и `scp` для Windows доступны в следующих пакетах:
 
-* [Клиент OpenSSH](https://docs.microsoft.com/windows-server/administration/openssh/openssh_install_firstuse). Этот клиент является дополнительным компонентом, представленным в обновлении Windows 10 для дизайнеров.
+* [OpenSSH Клиент](https://docs.microsoft.com/windows-server/administration/openssh/openssh_install_firstuse). Этот клиент является дополнительной функцией, представленной в Windows 10 Fall Creators Update.
 
-* [Bash на Ubuntu в Windows 10](https://docs.microsoft.com/windows/wsl/about).
+* [Bash на Ubuntu на Windows 10](https://docs.microsoft.com/windows/wsl/about).
 
-* [Azure Cloud Shell](../cloud-shell/quickstart.md). Cloud Shell предоставляет среду Bash в браузере.
+* [Лазурная облачная оболочка](../cloud-shell/quickstart.md). Облачная оболочка обеспечивает среду Bash в вашем браузере.
 
 * [Git](https://git-scm.com/).
 
-Существует также несколько графических SSH-клиентов, таких как [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) и [MobaXterm](https://mobaxterm.mobatek.net/). Хотя эти клиенты можно использовать для подключения к HDInsight, процесс подключения отличается от использования служебной программы `ssh`. Дополнительные сведения см. в документации графического клиента, который вы используете.
+Есть также несколько графических клиентов SSH, таких как [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) и [MobaXterm](https://mobaxterm.mobatek.net/). Хотя эти клиенты можно использовать для подключения к HDInsight, процесс подключения отличается от использования служебной программы `ssh`. Для получения дополнительной информации ознакомьтесь с документацией графического клиента, который вы используете.
 
-## <a id="sshkey"></a>Аутентификация. Ключи SSH
+## <a name="authentication-ssh-keys"></a><a id="sshkey"></a>Проверка подлинности с помощью ключей SSH
 
-Ключи SSH используют [Шифрование с открытым ключом](https://en.wikipedia.org/wiki/Public-key_cryptography) для проверки подлинности сеансов SSH. В отличие от паролей, они являются более безопасными и предоставляют простой способ защиты доступа к кластеру Hadoop.
+SSH-ключи используют [криптографию с открытым ключом](https://en.wikipedia.org/wiki/Public-key_cryptography) для проверки подлинности сеансов SSH. В отличие от паролей, они являются более безопасными и предоставляют простой способ защиты доступа к кластеру Hadoop.
 
 Если учетная запись SSH защищена ключом, при подключении клиент должен предоставить соответствующий закрытый ключ.
 
@@ -74,7 +74,7 @@ ms.locfileid: "79272439"
 
     ssh-keygen -t rsa -b 2048
 
-В процессе создания ключа Вам будет предложено ввести сведения. например о том, где хранятся ключи и следует ли использовать парольную фразу. После завершения этой процедуры будут созданы два файла: файл открытого ключа и файл закрытого ключа.
+Вы подсказывали информацию в процессе создания ключей. например о том, где хранятся ключи и следует ли использовать парольную фразу. После завершения этой процедуры будут созданы два файла: файл открытого ключа и файл закрытого ключа.
 
 * __Открытый ключ__ используется для создания кластера HDInsight. Этот файл имеет расширение `.pub`.
 
@@ -87,14 +87,14 @@ ms.locfileid: "79272439"
 
 | Метод создания | Использование открытого ключа |
 | ------- | ------- |
-| Портал Azure | Снимите флажок __использовать пароль для входа в кластер для SSH__, а затем выберите __открытый ключ__ в качестве типа проверки подлинности SSH. Наконец, выберите файл открытого ключа или вставьте текстовое содержимое файла в поле __Открытый ключ SSH__.</br>![Диалоговое окно открытого ключа SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-public-key.png) |
-| Azure PowerShell | Используйте параметр `-SshPublicKey` командлета [New-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) и передайте содержимое открытого ключа в виде строки.|
-| Azure CLI | Используйте параметр `--sshPublicKey` команды [AZ hdinsight Create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) и передайте содержимое открытого ключа в виде строки. |
+| Портал Azure | Отключите пароль для входа кластера __для SSH,__ а затем выберите __Public Key__ в качестве типа проверки подлинности SSH. Наконец, выберите файл открытого ключа или вставьте текстовое содержимое файла в поле __Открытый ключ SSH__.</br>![Диалоговое окно открытого ключа SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-public-key.png) |
+| Azure PowerShell | Используйте `-SshPublicKey` параметр смдлета [New-AzHdinsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) и передайте содержимое общедоступного ключа в виде строки.|
+| Azure CLI | Используйте `--sshPublicKey` параметр [az hdinsight создать](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) команду и передать содержимое общедоступного ключа в виде строки. |
 | Шаблон Resource Manager | Пример использования ключей SSH с помощью шаблона см. на странице [Deploy HDInsight on Linux (w/ Azure Storage, SSH key)](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-publickey/) (Развертывание HDInsight в Linux с использованием службы хранилища Azure и ключа SSH). Элемент `publicKeys` в файле [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-publickey/azuredeploy.json) используется для передачи ключей в Azure при создании кластера. |
 
-## <a name="authentication-password"></a>Проверка подлинности: Пароль
+## <a name="authentication-password"></a>Аутентификация: Пароль
 
-Учетные записи SSH можно защитить с помощью пароля. При подключении к HDInsight с помощью SSH вам будет предложено ввести пароль.
+Учетные записи SSH можно защитить с помощью пароля. Когда вы подключаетесь к HDInsight с помощью SSH, вам предлагается ввести пароль.
 
 > [!WARNING]  
 > Мы не советуем использовать такой метод аутентификации для SSH. Пароли можно угадать. К тому же они подвержены атакам методом подбора. Вместо этого рекомендуется использовать [проверку подлинности с помощью ключей SSH](#sshkey).
@@ -106,20 +106,20 @@ ms.locfileid: "79272439"
 
 | Метод создания | Указание пароля |
 | --------------- | ---------------- |
-| Портал Azure | По умолчанию учетная запись пользователя SSH содержит тот же пароль, что и учетная запись входа кластера. Чтобы использовать другой пароль, снимите флажок __использовать пароль для входа в кластер для SSH__, а затем введите пароль в поле __пароль SSH__ .</br>![Диалоговое окно пароля SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-password.png)|
-| Azure PowerShell | Используйте параметр `--SshCredential` командлета [New-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) и передайте объект `PSCredential`, содержащий имя и пароль учетной записи пользователя SSH. |
-| Azure CLI | Используйте параметр `--sshPassword` команды [AZ hdinsight Create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) и укажите значение пароля. |
+| Портал Azure | По умолчанию учетная запись пользователя SSH содержит тот же пароль, что и учетная запись входа кластера. Чтобы использовать другой пароль, отоверьте __используйте кластерный пароль для входа в SSH,__ а затем введите пароль в поле __паролей SSH.__</br>![Диалоговое окно пароля SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-password.png)|
+| Azure PowerShell | Используйте `--SshCredential` параметр смдлета [New-AzHdinsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) и передайте `PSCredential` объект, содержащий имя учетной записи sSH и пароль. |
+| Azure CLI | Используйте `--sshPassword` параметр [az hdinsight создать](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) команду и обеспечить значение пароля. |
 | Шаблон Resource Manager | Пример использования пароля с помощью шаблона см. на странице [Deploy HDInsight cluster with Storage and SSH password](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/) (Развертывание HDInsight с использованием службы хранилища и пароля SSH). Элемент `linuxOperatingSystemProfile` в файле [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-password/azuredeploy.json) используется для передачи имени учетной записи SSH и пароля в Azure при создании кластера.|
 
 ### <a name="change-the-ssh-password"></a>Изменение пароля SSH
 
 Дополнительные сведения об изменении пароля учетной записи пользователя SSH см. в разделе __Изменение паролей__ статьи [Управление кластерами Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md#change-passwords).
 
-## <a name="authentication-domain-joined-hdinsight"></a>Домен аутентификации, присоединенный к HDInsight
+## <a name="authentication-domain-joined-hdinsight"></a>Домен аутентификации присоединился к HDInsight
 
-Если вы используете __кластер HDInsight, присоединенный к домену__, необходимо использовать команду `kinit` после подключения с локальным пользователем SSH. Эта команда запрашивает имя и пароль пользователя домена и проверяет подлинность сеанса с помощью домена Azure Active Directory, связанного с кластером.
+Если вы используете __кластер HDInsight, подключенный к домену,__ вы должны использовать `kinit` команду после подключения к локальному пользователю SSH. Эта команда запрашивает имя и пароль пользователя домена и проверяет подлинность сеанса с помощью домена Azure Active Directory, связанного с кластером.
 
-Можно также включить проверку подлинности Kerberos на каждом присоединенном к домену узле (например, головном узле, пограничном узле) к SSH с помощью учетной записи домена. Для этого измените файл конфигурации sshd:
+Вы также можете включить керберос аутентификацию на каждом домене, объединенном узлах (например, головной узлы, краевого узла) в ss с помощью учетной записи домена. Для этого измените файл конфигурации sshd:
 
 ```bash
 sudo vi /etc/ssh/sshd_config
@@ -131,13 +131,13 @@ sudo vi /etc/ssh/sshd_config
 sudo service sshd restart
 ```
 
-Используйте команду `klist`, чтобы убедиться, что проверка подлинности Kerberos прошла успешно.
+Используйте `klist` команду, чтобы проверить, была ли проверка подлинности Kerberos успешной.
 
 Дополнительные сведения см. в статье [Настройка присоединенных к домену кластеров HDInsight (предварительная версия)](./domain-joined/apache-domain-joined-configure.md).
 
 ## <a name="connect-to-nodes"></a>Подключение к узлам
 
-Головные и граничные узлы (если таковые имеются) доступны через Интернет через порты 22 и 23.
+Головные узлы и краевой узлы (если он есть) можно получить через Интернет в портах 22 и 23.
 
 * При подключении к __головному узлу__ используйте порт __22__, чтобы подключиться к первичному головному узлу, и порт __23__, чтобы подключиться к вторичному головному узлу. Используйте полное доменное имя `clustername-ssh.azurehdinsight.net`, где `clustername` — имя кластера.
 
@@ -160,11 +160,11 @@ sudo service sshd restart
 > [!IMPORTANT]  
 > В предыдущих примерах предполагается, что вы используете аутентификацию на основе пароля или что аутентификация на основе сертификата выполняется автоматически. Если вы используете пару ключей SSH для проверки подлинности и сертификат не используется автоматически, укажите закрытый ключ с помощью параметра `-i`. Например, `ssh -i ~/.ssh/mykey sshuser@clustername-ssh.azurehdinsight.net`.
 
-После подключения запрос изменится, указывая имя пользователя SSH и узел, к которому вы подключены. Например, если к первичному головному узлу подключается пользователь `sshuser`, командная строка выглядит так: `sshuser@<active-headnode-name>:~$`.
+После подключения оперативные изменения указывают имя пользователя SSH и узла, к которому вы подключены. Например, если к первичному головному узлу подключается пользователь `sshuser`, командная строка выглядит так: `sshuser@<active-headnode-name>:~$`.
 
 ### <a name="connect-to-worker-and-apache-zookeeper-nodes"></a>Подключение к рабочим узлам и узлам Apache Zookeeper
 
-Рабочие узлы и узлы Zookeeper недоступны из Интернета напрямую. но к ним можно получить доступ с головного или граничного узла кластера. Шаги ниже описывают общую процедуру подключения к другим узлам.
+Рабочие узлы и узлы зоозащитника не доступны напрямую из Интернета. но к ним можно получить доступ с головного или граничного узла кластера. Шаги ниже описывают общую процедуру подключения к другим узлам.
 
 1. Используйте SSH, чтобы подключиться к головному или граничному узлу:
 
@@ -187,7 +187,7 @@ sudo service sshd restart
 > [!NOTE]  
 > Другой способ получить прямой доступ ко всем узлам кластера — установить HDInsight в виртуальной сети Azure. Затем к той же виртуальной сети можно присоединить удаленный компьютер и получить прямой доступ ко всем узлам кластера.
 >
-> Дополнительные сведения см. [в статье Планирование виртуальной сети для HDInsight](hdinsight-plan-virtual-network-deployment.md).
+> Для получения дополнительной информации [см.](hdinsight-plan-virtual-network-deployment.md)
 
 ### <a name="configure-ssh-agent-forwarding"></a>Настройка перенаправления SSH-агента
 
@@ -217,9 +217,9 @@ sudo service sshd restart
     /tmp/ssh-rfSUL1ldCldQ/agent.1792
     ```
 
-    Если ничего не возвращается, `ssh-agent` не работает. Чтобы получить сведения о скриптах запуска агентов, см. документ по [использованию агента SSH с SSH (http://mah.everybody.org/docs/ssh)](http://mah.everybody.org/docs/ssh) или документацию по соответствующему SSH-клиенту.
+    Если ничего не `ssh-agent` возвращается, то не работает. Чтобы получить сведения о скриптах запуска агентов, см. документ по [использованию агента SSH с SSH (http://mah.everybody.org/docs/ssh)](http://mah.everybody.org/docs/ssh) или документацию по соответствующему SSH-клиенту.
 
-4. Убедившись, что **ssh-агент** работает, добавьте к агенту закрытый ключ SSH с помощью следующей команды:
+4. После того как вы проверили, что **ssh-агент** работает, используйте следующее, чтобы добавить ваш SSH частный ключ к агенту:
 
     ```bash
     ssh-add ~/.ssh/id_rsa
@@ -259,5 +259,5 @@ scp sshuser@clustername-ssh.azurehdinsight.net:test.txt .
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md)
-* [Планирование виртуальной сети с помощью HDInsight](hdinsight-plan-virtual-network-deployment.md)
+* [Запланируйте виртуальную сеть с помощью HDInsight](hdinsight-plan-virtual-network-deployment.md)
 * [Доступ к граничному узлу](hdinsight-apps-use-edge-node.md#access-an-edge-node)

@@ -1,5 +1,5 @@
 ---
-title: Stackify. перетрассировка расширения агента Linux для Azure
+title: Расширение агента Стекифиса Azure
 description: Разверните агент Stackify Retrace для Linux на виртуальной машине Linux.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 04/12/2018
 ms.author: akjosh
 ms.openlocfilehash: 5914947bd994ee405f253e34c3dd919dd6561898
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79253797"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Расширение агента Stackify Retrace для Linux
@@ -37,7 +37,7 @@ Retrace — это единственный инструмент, который
 
 Это расширение предоставляет путь установки агента Retrace для Linux. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система 
 

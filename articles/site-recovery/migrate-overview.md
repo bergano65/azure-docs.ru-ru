@@ -1,6 +1,6 @@
 ---
-title: Перенос серверов и виртуальных машин в Azure с помощью Azure Site Recovery
-description: В этой статье описывается, как перенести локальные виртуальные машины Azure IaaS в Azure с помощью службы Azure Site Recovery.
+title: Миграция серверов и ВМ в Azure с восстановлением сайта Azure
+description: Описывает, как мигрировать на местах и Azure IaaS ВМ в Azure с помощью службы восстановления сайта Azure.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: raynew
 ms.openlocfilehash: 8e256aac16bb8c2d2f1eca494981458f71cc2e4d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79257944"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
@@ -26,7 +26,7 @@ ms.locfileid: "79257944"
 - **Перенести AWS в Azure**: миграция экземпляров AWS под управлением Windows на виртуальные машины IaaS Azure. 
 
 > [!NOTE]
-> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "Миграция Azure". [Дополнительные сведения](../migrate/migrate-overview.md)
+> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "Миграция Azure". Ознакомьтесь с [дополнительными сведениями](../migrate/migrate-overview.md).
 
 ## <a name="what-do-we-mean-by-migration"></a>Что подразумевает собой перенос?
 
@@ -38,14 +38,14 @@ Azure Site Recovery можно использовать не только для
 
 ## <a name="migration-scenarios"></a>Сценарии миграции
 
-**Сценарий** | **Сведения**
+**Сценарий** | **Подробно**
 --- | ---
-**Миграция из локальной среды в Azure** | Вы можете переносить в Azure локальные виртуальные машины VMware и Hyper-V, а также физические серверы. Для этого вам нужно выполнить практически те же действия, что и при полном аварийном восстановлении. Вы просто не выполняете отработку отказа для виртуальных машин из Azure на локальный сайт.
+**Миграция из нахлажи в Лазурный завод** | Вы можете переносить в Azure локальные виртуальные машины VMware и Hyper-V, а также физические серверы. Для этого вам нужно выполнить практически те же действия, что и при полном аварийном восстановлении. Вы просто не выполняете отработку отказа для виртуальных машин из Azure на локальный сайт.
 **Миграция между регионами Azure** | Вы можете перенести виртуальные машины Azure из одного региона Azure в другой. После завершения миграции можно настроить аварийное восстановление для виртуальных машин Azure в дополнительном регионе, в который был выполнен перенос.
-**Перенос виртуальных машин Amazon Web Services (AWS) в Azure** | Экземпляры AWS можно перенести на виртуальные машины Azure. Для переноса служба Site Recovery обрабатывает экземпляры AWS как физические серверы. 
+**Перенос AWS в Azure** | Экземпляры AWS можно перенести на виртуальные машины Azure. Для переноса служба Site Recovery обрабатывает экземпляры AWS как физические серверы. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Миграция локальных компьютеров в Azure](migrate-tutorial-on-premises-azure.md)
 - [Перенос виртуальных машин IaaS Azure между регионами Azure с помощью Azure Site Recovery](azure-to-azure-tutorial-migrate.md)
-- [Перенос виртуальных машин Amazon Web Services (AWS) в Azure](migrate-tutorial-aws-azure.md)
+- [Перенос AWS в Azure](migrate-tutorial-aws-azure.md)

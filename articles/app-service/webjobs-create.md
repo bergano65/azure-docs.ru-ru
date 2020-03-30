@@ -1,6 +1,6 @@
 ---
-title: Выполнение фоновых задач с помощью веб-заданий
-description: Узнайте, как использовать веб-задания для выполнения фоновых задач в службе приложений Azure. Выберите один из множества форматов скриптов и запустите их с помощью выражений CRON.
+title: Запуск фоновых задач с помощью WebJobs
+description: Узнайте, как использовать WebJobs для выполнения фоновых задач в службе приложений Azure. Выберите из множества форматов скриптов и запустите их с помощью выражений CRON.
 author: ggailey777
 ms.assetid: af01771e-54eb-4aea-af5f-f883ff39572b
 ms.topic: conceptual
@@ -9,13 +9,13 @@ ms.author: glenga
 ms.reviewer: msangapu;david.ebbo;suwatch;pbatum;naren.soni
 ms.custom: seodec18
 ms.openlocfilehash: 4c568c95a5dbc1799a765c95a2b224de53dfbe9f
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79279147"
 ---
-# <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Выполнение фоновых задач с помощью веб-заданий в службе приложений Azure
+# <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Выполнить фоновые задачи с WebJobs в службе приложений Azure
 
 В этой статье показано, как развертывать веб-задания с помощью [портала Azure](https://portal.azure.com) для отправки исполняемого файла или сценария. Дополнительные сведения о том, как разрабатывать и развертывать веб-задания с помощью Visual Studio см. в статье [Develop and deploy WebJobs using Visual Studio - Azure App Service](webjobs-dotnet-deploy-vs.md) (Разработка и развертывание веб-заданий с помощью Visual Studio в службе приложений Azure).
 
@@ -42,7 +42,7 @@ ms.locfileid: "79279147"
 
 [!INCLUDE [webjobs-always-on-note](../../includes/webjobs-always-on-note.md)]
 
-## <a name="acceptablefiles"></a>Поддерживаемые типы файлов для сценариев и программ
+## <a name="supported-file-types-for-scripts-or-programs"></a><a name="acceptablefiles"></a>Поддерживаемые типы файлов для сценариев и программ
 
 Поддерживаются следующие типы файлов:
 
@@ -54,7 +54,7 @@ ms.locfileid: "79279147"
 * .js (с использованием Node.js)
 * .jar (с использованием Java)
 
-## <a name="CreateContinuous"></a>Создание непрерывного веб-задания
+## <a name="create-a-continuous-webjob"></a><a name="CreateContinuous"></a>Создание непрерывного веб-задания
 
 <!-- 
 Several steps in the three "Create..." sections are identical; 
@@ -75,12 +75,12 @@ when making changes in one don't forget the other two.
 
    ![Страница добавления веб-задания](./media/web-sites-create-web-jobs/addwjcontinuous.png)
 
-   | Параметр      | Образец значения   | Description  |
+   | Параметр      | Образец значения   | Описание  |
    | ------------ | ----------------- | ------------ |
    | **Название** | myContinuousWebJob | Имя, которое является уникальным в пределах приложения службы приложений. Оно должно начинаться с буквы или цифры и не может содержать специальные символы, отличные от "-" и "_". |
-   | **Передача файла** | ConsoleApp.zip | *ZIP*-файл, который содержит исполняемый файл или файл сценария, а также все вспомогательные файлы, необходимые для запуска программы или сценария. Поддерживаемые типы исполняемых файлов или файлов сценариев перечислены в разделе [Поддерживаемые типы файлов](#acceptablefiles). |
+   | **Загрузка файлов** | ConsoleApp.zip | *ZIP*-файл, который содержит исполняемый файл или файл сценария, а также все вспомогательные файлы, необходимые для запуска программы или сценария. Поддерживаемые типы исполняемых файлов или файлов сценариев перечислены в разделе [Поддерживаемые типы файлов](#acceptablefiles). |
    | **Тип** | Непрерывные | [Типы веб-заданий](#webjob-types) описаны ранее в этой статье. |
-   | **Масштабирование** | Несколько экземпляров | Доступно только для непрерывных веб-заданий. Определяет, будет ли программа или сценарий выполняться на всех экземплярах или только на одном экземпляре. Вариант для запуска на нескольких экземплярах не применяется в [ценовых категориях](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) "Бесплатный" или "Общий". | 
+   | **Масштаб** | Несколько экземпляров | Доступно только для непрерывных веб-заданий. Определяет, будет ли программа или сценарий выполняться на всех экземплярах или только на одном экземпляре. Вариант для запуска на нескольких экземплярах не применяется в [ценовых категориях](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) "Бесплатный" или "Общий". | 
 
 4. Нажмите кнопку **ОК**.
 
@@ -92,7 +92,7 @@ when making changes in one don't forget the other two.
 
     ![Остановка непрерывного веб-задания](./media/web-sites-create-web-jobs/continuousstop.png)
 
-## <a name="CreateOnDemand"></a>Создание активируемого вручную веб-задания
+## <a name="create-a-manually-triggered-webjob"></a><a name="CreateOnDemand"></a>Создание активируемого вручную веб-задания
 
 <!-- 
 Several steps in the three "Create..." sections are identical; 
@@ -113,10 +113,10 @@ when making changes in one don't forget the other two.
 
    ![Страница добавления веб-задания](./media/web-sites-create-web-jobs/addwjtriggered.png)
 
-   | Параметр      | Образец значения   | Description  |
+   | Параметр      | Образец значения   | Описание  |
    | ------------ | ----------------- | ------------ |
    | **Название** | myTriggeredWebJob | Имя, которое является уникальным в пределах приложения службы приложений. Оно должно начинаться с буквы или цифры и не может содержать специальные символы, отличные от "-" и "_".|
-   | **Передача файла** | ConsoleApp.zip | *ZIP*-файл, который содержит исполняемый файл или файл сценария, а также все вспомогательные файлы, необходимые для запуска программы или сценария. Поддерживаемые типы исполняемых файлов или файлов сценариев перечислены в разделе [Поддерживаемые типы файлов](#acceptablefiles). |
+   | **Загрузка файлов** | ConsoleApp.zip | *ZIP*-файл, который содержит исполняемый файл или файл сценария, а также все вспомогательные файлы, необходимые для запуска программы или сценария. Поддерживаемые типы исполняемых файлов или файлов сценариев перечислены в разделе [Поддерживаемые типы файлов](#acceptablefiles). |
    | **Тип** | Активируемые | [Типы веб-заданий](#webjob-types) описаны ранее в этой статье. |
    | **Триггеры** | Вручную | |
 
@@ -130,7 +130,7 @@ when making changes in one don't forget the other two.
    
     ![Запуск веб-задания](./media/web-sites-create-web-jobs/runondemand.png)
 
-## <a name="CreateScheduledCRON"></a> Создание запланированного веб-задания
+## <a name="create-a-scheduled-webjob"></a><a name="CreateScheduledCRON"></a> Создание запланированного веб-задания
 
 <!-- 
 Several steps in the three "Create..." sections are identical; 
@@ -151,10 +151,10 @@ when making changes in one don't forget the other two.
 
    ![Страница добавления веб-задания](./media/web-sites-create-web-jobs/addwjscheduled.png)
 
-   | Параметр      | Образец значения   | Description  |
+   | Параметр      | Образец значения   | Описание  |
    | ------------ | ----------------- | ------------ |
    | **Название** | myScheduledWebJob | Имя, которое является уникальным в пределах приложения службы приложений. Оно должно начинаться с буквы или цифры и не может содержать специальные символы, отличные от "-" и "_". |
-   | **Передача файла** | ConsoleApp.zip | *ZIP*-файл, который содержит исполняемый файл или файл сценария, а также все вспомогательные файлы, необходимые для запуска программы или сценария. Поддерживаемые типы исполняемых файлов или файлов сценариев перечислены в разделе [Поддерживаемые типы файлов](#acceptablefiles). |
+   | **Загрузка файлов** | ConsoleApp.zip | *ZIP*-файл, который содержит исполняемый файл или файл сценария, а также все вспомогательные файлы, необходимые для запуска программы или сценария. Поддерживаемые типы исполняемых файлов или файлов сценариев перечислены в разделе [Поддерживаемые типы файлов](#acceptablefiles). |
    | **Тип** | Активируемые | [Типы веб-заданий](#webjob-types) описаны ранее в этой статье. |
    | **Триггеры** | По расписанию | Для надежной работы расписания включите функцию Always On. Она доступна только в ценовых категориях "Базовый", "Стандартный" и "Премиум".|
    | **Выражение CRON** | 0 0/20 * * * * | Выражения [CRON](#ncrontab-expressions) описаны в следующем разделе. |
@@ -165,9 +165,9 @@ when making changes in one don't forget the other two.
 
    ![Список веб-заданий](./media/web-sites-create-web-jobs/listallwebjobs.png)
 
-## <a name="ncrontab-expressions"></a>Выражения НКРОНТАБ
+## <a name="ncrontab-expressions"></a>Выражения NCRONTAB
 
-Можно ввести [выражение нкронтаб](../azure-functions/functions-bindings-timer.md#ncrontab-expressions) на портале или включить файл `settings.job` в корень *ZIP* -файла веб-задания, как показано в следующем примере:
+Вы можете ввести [выражение NCRONTAB](../azure-functions/functions-bindings-timer.md#ncrontab-expressions) на `settings.job` портале или включить файл в корне файла WebJob *.zip,* как в следующем примере:
 
 ```json
 {
@@ -175,11 +175,11 @@ when making changes in one don't forget the other two.
 }
 ```
 
-Дополнительные сведения см. в разделе [Планирование запуска веб-задания](webjobs-dotnet-deploy-vs.md#scheduling-a-triggered-webjob).
+Чтобы узнать больше, [см. Планирование срабатывания WebJob](webjobs-dotnet-deploy-vs.md#scheduling-a-triggered-webjob).
 
 [!INCLUDE [webjobs-cron-timezone-note](../../includes/webjobs-cron-timezone-note.md)]
 
-## <a name="ViewJobHistory"></a>Просмотр журнала заданий
+## <a name="view-the-job-history"></a><a name="ViewJobHistory"></a>Просмотр журнала заданий
 
 1. Выберите веб-задание, журнал которого необходимо просмотреть, а затем нажмите кнопку **Журналы**.
    
@@ -201,6 +201,6 @@ when making changes in one don't forget the other two.
    
     ![Список веб-заданий на панели мониторинга журнала](./media/web-sites-create-web-jobs/webjobslist.png)
    
-## <a name="NextSteps"></a> Дальнейшие действия
+## <a name="next-steps"></a><a name="NextSteps"></a> Дальнейшие действия
 
 Пакет SDK веб-заданий Azure может использоваться с веб-заданиями для упрощения многих задач программирования. Дополнительные сведения см. в разделе [Информация о пакете SDK веб-заданий](https://github.com/Azure/azure-webjobs-sdk/wiki).

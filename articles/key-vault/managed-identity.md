@@ -1,6 +1,6 @@
 ---
-title: Использовать управляемое системой удостоверение для доступа к Azure Key Vault
-description: Узнайте, как создать управляемое удостоверение для приложений службы приложений и как использовать его для доступа к Azure Key Vault
+title: Используйте назначенную системой управляемую инификатор для доступа к Azure Key Vault
+description: Узнайте, как создать управляемый идентификатор для приложений Службы приложений и как использовать его для доступа к Использованию ключей Vault
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -11,36 +11,36 @@ ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 36a4871339401629300eedd77b6441aed10aabf3
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79270957"
 ---
-# <a name="provide-key-vault-authentication-with-a-managed-identity"></a>Предоставление Key Vault проверки подлинности с помощью управляемого удостоверения
+# <a name="provide-key-vault-authentication-with-a-managed-identity"></a>Обеспечить аутентификацию Key Vault с управляемой идентификацией
 
-Управляемое удостоверение из Azure Active Directory позволяет приложению легко получать доступ к другим ресурсам, защищенным с помощью Azure AD. Удостоверения управляются платформой Azure, и для них не нужно подготавливать или изменять секреты. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md) 
+Управляемый имитизм из active-каталога Azure позволяет приложению легко получить доступ к другим защищенным Азовому АДУ ресурсам. Удостоверения управляются платформой Azure, и для них не нужно подготавливать или изменять секреты. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md) 
 
-В этой статье показано, как создать управляемое удостоверение для приложения службы приложений и использовать его для доступа к Azure Key Vault. Сведения о приложениях, размещенных на виртуальных машинах Azure, см. [в статье Использование управляемого удостоверения, назначенного системой виртуальной машины Windows для доступа к Azure Key Vault](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-nonaad.md).
+В этой статье показано, как создать управляемое удостоверение для приложения Службы Приложений и использовать его для доступа к Использованию ключей Azure Vault. Для приложений, размещенных в Azure VMs, [см.](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-nonaad.md)
 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 
-Для работы с этим руководством необходимы следующие ресурсы. 
+Для выполнения этого руководства необходимо иметь следующие ресурсы. 
 
 - Хранилище ключей. Вы можете использовать существующее хранилище ключей или создать новое, выполнив действия, описанные в одном из этих кратких руководств:
    - [Создание хранилища ключей с помощью интерфейса командной строки Azure](quick-create-cli.md)
    - [Создание хранилища ключей с помощью Azure PowerShell](quick-create-powershell.md)
    - [Создание хранилища ключей с помощью портала Azure](quick-create-portal.md)
-- Существующее приложение службы приложений, к которому предоставляется доступ к хранилищу ключей. Его можно быстро создать, выполнив действия, описанные в [документации по службе приложений](../app-service/overview.md).
+- Существующее приложение Службы приложений, к которому можно предоставить доступ к хранилищу ключей. Вы можете быстро создать один, выследуя шаги в [документации службы приложений.](../app-service/overview.md)
 - [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview). Кроме того, можно использовать [портал Azure](https://portal.azure.com).
 
 
 ## <a name="adding-a-system-assigned-identity"></a>Добавление назначаемого системой удостоверения 
 
-Во-первых, необходимо добавить назначенное системой удостоверение в приложение. 
+Во-первых, необходимо добавить в приложение удостоверение, назначенное системой. 
  
 ### <a name="azure-portal"></a>Портал Azure 
 
@@ -50,23 +50,23 @@ ms.locfileid: "79270957"
 
 1. Выберите **Управляемое удостоверение**. 
 
-1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Выберите команду **Сохранить**. 
+1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Нажмите **Сохранить**. 
 
     ![](./media/managed-identity-system-assigned.png)
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Для этого краткого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, какая версия используется сейчас, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
+Этот быстрый запуск требует версии Azure CLI 2.0.4 или позже. Чтобы узнать, какая версия используется сейчас, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
-Чтобы войти с помощью Azure CLI, используйте команду [AZ login](/cli/azure/reference-index?view=azure-cli-latest#az-login) :
+Чтобы войти в систему с Azure CLI, используйте команду [входа в az:](/cli/azure/reference-index?view=azure-cli-latest#az-login)
 
 ```azurecli-interactive
 az login
 ```
 
-Дополнительные сведения о параметрах входа с Azure CLI см. в разделе [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest). 
+Для получения дополнительной информации о опциях входа в систему с Azure CLI можно [ознакомиться с помощью Azure CLI.](/cli/azure/authenticate-azure-cli?view=azure-cli-latest) 
 
-Чтобы создать удостоверение для этого приложения, используйте команду Azure CLI [AZ webapp Identity Assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) или [AZ functionapp Identity Assign](/cli/azure/functionapp/identity?view=azure-cli-latest#az-functionapp-identity-assign) :
+Чтобы создать идентификацию для этого приложения, используйте команду идентификации WebApp Azure CLI [az webapp,](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) [назначаемую](/cli/azure/functionapp/identity?view=azure-cli-latest#az-functionapp-identity-assign) команду:
 
 
 ```azurecli-interactive
@@ -77,7 +77,7 @@ az webapp identity assign --name myApp --resource-group myResourceGroup
 az functionapp identity assign --name myApp --resource-group myResourceGroup
 ```
 
-Запишите `PrincipalId`, который потребуется в следующем разделе.
+Сделать к `PrincipalId`сведению, которые будут необходимы в следующем разделе.
 
 ```json
 {
@@ -86,25 +86,25 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
   "type": "SystemAssigned"
 }
 ```
-## <a name="grant-your-app-access-to-key-vault"></a>Предоставьте приложению доступ к Key Vault 
+## <a name="grant-your-app-access-to-key-vault"></a>Предоставить приложению доступ к Key Vault 
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1.  Перейдите к Key Vault ресурсу. 
+1.  Перейдите к ресурсу Key Vault. 
 
-1.  Выберите **политики доступа** и щелкните **Добавить политику доступа**. 
+1.  Выберите **политики доступа** и нажмите **«Дополнительная политика доступа».** 
 
-1.  В окне « **секретные разрешения**» выберите **Get, List**. 
+1.  В **секретных разрешений,** выберите **Получить, Список**. 
 
-1.  Выберите **выбрать субъект**и в поле поиска введите имя приложения.  Выберите приложение в списке результатов и нажмите кнопку **выбрать**. 
+1.  Выберите **выберите принцип,** и в поле поиска введите имя приложения.  Выберите приложение в списке результатов и нажмите **Выберите**. 
 
-1.  Нажмите кнопку **Добавить** , чтобы завершить добавление новой политики доступа.
+1.  **Нажмите Добавить,** чтобы закончить добавление новой политики доступа.
 
     ![](./media/managed-identity-access-policy.png)
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Чтобы предоставить приложению доступ к хранилищу ключей, используйте команду Azure CLI [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) , указав параметр **ObjectID** с указанным выше **principalId** .
+Чтобы предоставить приложению доступ к хранилищу ключей, используйте команду [набора keyvault](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) Azi az, поставляя параметр **ObjectId** с **принципом principalId,** который вы отметили выше.
 
 ```azurecli-interactive
 az keyvault set-policy --name myKeyVault --object-id <PrincipalId> --secret-permissions get list 
@@ -112,9 +112,9 @@ az keyvault set-policy --name myKeyVault --object-id <PrincipalId> --secret-perm
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Key Vault безопасность: Управление удостоверениями и доступом](overview-security.md#identity-and-access-management)
-- [Предоставление Key Vault проверки подлинности с помощью политики управления доступом](key-vault-group-permissions-for-apps.md)
-- [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
-- [Обеспечение безопасности хранилища ключей](key-vault-secure-your-key-vault.md).
+- [Безопасность Azure Key Vault: управление идентификацией и доступом](overview-security.md#identity-and-access-management)
+- [Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом](key-vault-group-permissions-for-apps.md)
+- [О ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
+- [Защищайте хранилище ключей.](key-vault-secure-your-key-vault.md)
 - [Руководство разработчика Azure Key Vault](key-vault-developers-guide.md)
 - [Рекомендации по Azure Key Vault](key-vault-best-practices.md)

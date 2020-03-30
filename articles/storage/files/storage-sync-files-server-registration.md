@@ -8,10 +8,10 @@ ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 2656716560b981481273c3032fc0c7b1a06be8a2
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79255097"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Управление зарегистрированными серверами в службе "Синхронизация файлов Azure"
@@ -22,7 +22,7 @@ ms.locfileid: "79255097"
 ## <a name="registerunregister-a-server-with-storage-sync-service"></a>Регистрация и отмена регистрации сервера в службе синхронизации хранилища
 Регистрация сервера в службе синхронизации файлов Azure устанавливает отношения доверия между Windows Server и Azure. На основе этой связи на сервере можно создать *конечные точки сервера*, которые представляют определенные папки, синхронизируемые с общим файловым ресурсом Azure (которые также называется *облачная конечная точка*). 
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 Чтобы зарегистрировать сервер в службе синхронизации хранилища, для него должны быть выполнены все предварительные требования.
 
 * Сервер должен работать под управлением поддерживаемой версии Windows Server. Дополнительные сведения см. в разделе [Системные требования к службе "Синхронизация файлов Azure" и ее возможности взаимодействия](storage-sync-files-planning.md#windows-file-server-considerations).
@@ -146,7 +146,7 @@ Get-AzStorageSyncGroup -ResourceGroupName $resourceGroup -StorageSyncServiceName
 #### <a name="unregister-the-server"></a>Отмена регистрации сервера
 Теперь, когда все данные восстановлены и сервер удален из всех групп синхронизации, можно отменить регистрацию этого сервера. 
 
-1. На портале Azure перейдите к разделу *Registered servers* (Зарегистрированные серверы) для службы синхронизации хранилища.
+1. На портале Azure перейдите на раздел *Зарегистрированных серверов* службы синхронизации хранения.
 2. Щелкните правой кнопкой мыши сервер, для которого нужно отменить регистрацию, и выберите "Отменить регистрацию сервера".
 
     ![Отмена регистрации сервера](media/storage-sync-files-server-registration/unregister-server-1.png)
@@ -185,8 +185,8 @@ Get-StorageSyncNetworkLimit | ForEach-Object { Remove-StorageSyncNetworkLimit -I
 ### <a name="use-windows-server-storage-qos"></a>Использование функции качества обслуживания Windows Server для хранилища 
 Если служба "Синхронизация файлов Azure" размещается на виртуальной машине под управлением узла виртуализации Windows Server, вы можете с помощью функции качества обслуживания ограничить потребление ресурсов хранилища. Политика качества обслуживания хранилища позволяет задать максимальный уровень (ограничение, которое действует аналогично описанным выше лимитам StorageSyncNetwork) или минимальный уровень (резервирование). Если использовать минимальные ограничения вместо максимальных, служба "Синхронизация файлов Azure" сможет активно использовать доступную пропускную способность хранилища, когда она не используется другими рабочими нагрузками. Дополнительные сведения см. в статье [Качество обслуживания хранилища](https://docs.microsoft.com/windows-server/storage/storage-qos/storage-qos-overview).
 
-## <a name="see-also"></a>См. также раздел
-- [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
-- [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
-- [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)
+## <a name="see-also"></a>См. также
+- [Планирование развертывания синхронизации файлов Azure](storage-sync-files-planning.md)
+- [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)
+- [Мониторинг службы "Синхронизация файлов Azure"](storage-sync-files-monitoring.md)
 - [Устранение неполадок службы "Синхронизация файлов Azure"](storage-sync-files-troubleshoot.md)
