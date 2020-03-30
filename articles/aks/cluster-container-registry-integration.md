@@ -1,35 +1,35 @@
 ---
-title: Интеграция реестра контейнеров Azure с помощью службы Kubernetes Azure
-description: Узнайте, как интегрировать службу Kubernetes Azure (AKS) с реестром контейнеров Azure (запись контроля доступа).
+title: Интеграция реестра контейнеров Azure с сервисом Azure Kubernetes
+description: Узнайте, как интегрировать службу Azure Kubernetes (AKS) в реестр контейнеров Azure (ACR)
 services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 02/25/2020
 ms.openlocfilehash: f83faf05eb7099557d5b653e0b24591062c44d11
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79368457"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
-При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. В этой статье приведены примеры настройки проверки подлинности между этими двумя службами Azure.
+При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. В этой статье приводятся примеры настройки аутентификации между этими двумя службами Azure.
 
-Вы можете настроить AKS для интеграции записей контроля доступа в нескольких простых командах с Azure CLI.
+Вы можете настроить AKS для интеграции ACR в нескольких простых команд с Azure CLI.
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Для этих примеров требуется:
+Для этих примеров требуются:
 
 * Роль **владельца** или **администратора учетной записи Azure** в **подписке Azure**
-* Azure CLI версии 2.0.73 или более поздней
+* Версия Azure CLI 2.0.73 или позже
 
-Чтобы избежать необходимости в роли администратора или **владельца** **учетной записи Azure** , можно вручную настроить субъект-службу или использовать существующий субъект-службу для проверки ПОдлинности записей контроля доступа из AKS. Дополнительные сведения см. в статье [Проверка подлинности записей контроля доступа с субъектами-службами](../container-registry/container-registry-auth-service-principal.md) или [Проверка подлинности из Kubernetes с помощью секрета Pull](../container-registry/container-registry-auth-kubernetes.md).
+Чтобы избежать необходимости роли администратора учетной записи **владельца** или **администратора учетной записи Azure,** можно настроить основную службу вручную или использовать существующий принцип службы для проверки подлинности ACR от AKS. Для получения дополнительной информации, см [ACR аутентификации с основой службы](../container-registry/container-registry-auth-service-principal.md) или [аутентификации из Kubernetes с тайной тянуть](../container-registry/container-registry-auth-kubernetes.md).
 
-## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Создание нового кластера AKS с интеграцией записей контроля доступа
+## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Создание нового кластера AKS с интеграцией ACR
 
-Вы можете настроить интеграцию AKS и записей контроля доступа во время первоначального создания кластера AKS.  Чтобы разрешить кластеру AKS взаимодействовать с записью контроля доступа, используется **субъект-служба** Azure Active Directory. Следующая команда CLI позволяет авторизовать существующую запись контроля доступа в подписке и настроить соответствующую роль **акрпулл** для субъекта-службы. Укажите допустимые значения для параметров ниже.
+Вы можете настроить интеграцию AKS и ACR при первоначальном создании кластера AKS.  Для того чтобы кластер AKS взаимодействовал с ACR, используется **принцип службы** active Directory Azure. Следующая команда CLI позволяет авторизовать существующий ACR в подписке и настраивает соответствующую роль **ACRPull** для основного обслуживания. Поставка действительных значений для параметров ниже.
 
 ```azurecli
 # set this to the name of your Azure Container Registry.  It must be globally unique
@@ -42,7 +42,7 @@ az acr create -n $MYACR -g myContainerRegistryResourceGroup --sku basic
 az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr $MYACR
 ```
 
-Кроме того, можно указать имя записи контроля доступа с помощью идентификатора ресурса записей контроля доступа в следующем формате:
+Кроме того, можно указать имя ACR с помощью идентификатора ресурса ACR, который имеет следующий формат:
 
 `/subscriptions/\<subscription-id\>/resourceGroups/\<resource-group-name\>/providers/Microsoft.ContainerRegistry/registries/\<name\>` 
 
@@ -50,11 +50,11 @@ az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-ac
 az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr /subscriptions/<subscription-id>/resourceGroups/myContainerRegistryResourceGroup/providers/Microsoft.ContainerRegistry/registries/myContainerRegistry
 ```
 
-Выполнение этого шага может занять несколько минут.
+Этот шаг может занять несколько минут.
 
-## <a name="configure-acr-integration-for-existing-aks-clusters"></a>Настройка интеграции записей контроля доступа для существующих кластеров AKS
+## <a name="configure-acr-integration-for-existing-aks-clusters"></a>Настройка интеграции ACR для существующих кластеров AKS
 
-Интегрируйте существующую запись контроля доступа с существующими кластерами AKS, указав допустимые значения для записей **контроля учетных** записей с именем или записи **контроля доступа (ИД ресурса** ), как показано ниже.
+Интегрируйте существующий ACR с существующими кластерами AKS, предоставляя действительные значения для **acr-name** или **acr-resource-id** в качестве ниже.
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acrName>
@@ -66,7 +66,7 @@ az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acrName>
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 ```
 
-Вы также можете удалить интеграцию между записью контроля доступа и кластером AKS, выполнив следующие
+Вы также можете удалить интеграцию между кластером ACR и AKS со следующими
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
@@ -78,26 +78,26 @@ az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
 ```
 
-## <a name="working-with-acr--aks"></a>Работа с записью контроля доступа & AKS
+## <a name="working-with-acr--aks"></a>Работа с ACR & AKS
 
-### <a name="import-an-image-into-your-acr"></a>Импорт изображения в запись контроля доступа
+### <a name="import-an-image-into-your-acr"></a>Импортируйте изображение в ACR
 
-Импортируйте образ из DOCKER Hub в запись контроля доступа, выполнив следующую команду:
+Импортируйте изображение из концентратора докеров в ACR, запустив следующее:
 
 
 ```azurecli
 az acr import  -n <myContainerRegistry> --source docker.io/library/nginx:latest --image nginx:v1
 ```
 
-### <a name="deploy-the-sample-image-from-acr-to-aks"></a>Развертывание примера образа из записи контроля доступа в AKS
+### <a name="deploy-the-sample-image-from-acr-to-aks"></a>Развертывание образца изображения с ACR в AKS
 
-Убедитесь, что у вас есть правильные учетные данные AKS
+Убедитесь, что у вас есть надлежащие учетные данные AKS
 
 ```azurecli
 az aks get-credentials -g myResourceGroup -n myAKSCluster
 ```
 
-Создайте файл с именем записи **контроля доступа nginx. YAML** , который содержит следующее:
+Создайте файл под названием **acr-nginx.yaml,** содержащий следующее:
 
 ```yaml
 apiVersion: apps/v1
@@ -123,19 +123,19 @@ spec:
         - containerPort: 80
 ```
 
-Затем запустите это развертывание в кластере AKS:
+Затем запустите развертывание в кластере AKS:
 
 ```console
 kubectl apply -f acr-nginx.yaml
 ```
 
-Вы можете отслеживать развертывание, выполнив:
+Вы можете контролировать развертывание, запустив:
 
 ```console
 kubectl get pods
 ```
 
-Необходимо иметь два работающих модуля.
+У тебя должно быть два ходовых стручка.
 
 ```output
 NAME                                 READY   STATUS    RESTARTS   AGE

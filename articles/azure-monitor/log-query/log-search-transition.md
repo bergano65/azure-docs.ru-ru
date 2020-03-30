@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 01/16/2019
 ms.openlocfilehash: 6cc7fc94162ed101d06fbbbc4722867be46987b6
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77670140"
 ---
 # <a name="transition-from-log-analytics-log-search-to-azure-monitor-logs"></a>Переход с поиска по журналам Log Analytics на анализ журналов Azure Monitor
@@ -26,11 +26,11 @@ ms.locfileid: "77670140"
 ![Фильтр журналов](media/log-search-transition/filter-logs.png)
 
 ## <a name="extract-custom-fields"></a>Извлечение настраиваемых полей 
-В поиске по журналам вы извлекаете [настраиваемые поля](../platform/custom-fields.md) из представления списка, где меню поля включает в себя действие _Извлечь поля из "название таблицы"_ .
+В поиске по журналам вы извлекаете [настраиваемые поля](../platform/custom-fields.md) из представления списка, где меню поля включает в себя действие _Извлечь поля из "название таблицы"_.
 
 ![Извлечение полей в интерфейсе поиска по журналам](media/log-search-transition/extract-fields-log-search.png)
 
-В журналах Azure Monitor настраиваемые поля извлекаются из представления таблицы. Разверните запись, щелкнув стрелку слева от нее, а затем щелкните многоточие, чтобы получить доступ к действию _Извлечь поля из "название таблицы"_ .
+В журналах Azure Monitor настраиваемые поля извлекаются из представления таблицы. Разверните запись, щелкнув стрелку слева от нее, а затем щелкните многоточие, чтобы получить доступ к действию _Извлечь поля из "название таблицы"_.
 
 ![Извлечение полей журналов](media/log-search-transition/extract-fields-logs.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "77670140"
 
 ![Детализация поиска по журналам](media/log-search-transition/drilldown-search.png)
 
-В журналах Azure Monitor необходимо изменить запрос, чтобы возвращать эти записи. Разверните одну из строк в результатах и щелкните **+** рядом со значением, чтобы добавить значение в запрос. Затем закомментируйте команду **summarize** и повторите запрос.
+В журналах Azure Monitor необходимо изменить запрос, чтобы возвращать эти записи. Расширьте одну из строк в результатах и нажмите на следующее **+** значение, чтобы добавить его в запрос. Затем закомментируйте команду **summarize** и повторите запрос.
 
 ![Детализация журналов Azure Monitor](media/log-search-transition/drilldown-logs.png)
 
@@ -66,6 +66,6 @@ ms.locfileid: "77670140"
 
 ![Группа действий](media/log-search-transition/action-group.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье о [работе с журналами Azure Monitor](get-started-portal.md).

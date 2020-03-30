@@ -1,5 +1,5 @@
 ---
-title: Функции безопасности, используемые с виртуальными машинами Azure
+title: Функции безопасности, используемые с помощью VMs Azure
 titleSuffix: Azure security
 description: В этой статье содержатся общие сведения о базовых компонентах безопасности Azure, которые можно использовать при работе с виртуальными машинами Azure.
 services: security
@@ -17,14 +17,14 @@ ms.workload: na
 ms.date: 10/2/2019
 ms.author: terrylan
 ms.openlocfilehash: a1726e18ea8c1ba86d77d7b9ca3d50c444620361
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77657169"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Общие сведения о безопасности при использовании виртуальных машин Azure
-В этой статье представлен обзор основных функций безопасности Azure, которые можно использовать с виртуальными машинами.
+В этой статье представлен обзор основных функций безопасности Azure, которые можно использовать с помощью виртуальных машин.
 
 Виртуальные машины Azure позволяют выполнять гибкое развертывание разных вычислительных решений. Служба поддерживает Microsoft Windows, Linux, Microsoft SQL Server, Oracle, IBM, SAP и службы BizTalk Azure. Поэтому можно развернуть любую рабочую нагрузку и любой язык практически в любой операционной системе.
 
@@ -38,7 +38,7 @@ ms.locfileid: "77657169"
 * распознают и обнаруживают угрозы;
 * соответствуют нормативным требованиям.  
 
-## <a name="antimalware"></a>Защита от вредоносных программ
+## <a name="antimalware"></a>Защита от вредоносных программ;
 
 Azure предлагает антивредоносное ПО таких поставщиков систем безопасности, как корпорация Майкрософт, Symantec, Trend Micro и Kaspersky. Это ПО помогает защитить ваши виртуальные машины от вредоносных файлов, программ для показа рекламы и других угроз.
 
@@ -46,12 +46,12 @@ Azure предлагает антивредоносное ПО таких пос
 
 Антивредоносное ПО для Azure — это единый агент для приложений и клиентских сред. Он работает в фоновом режиме и не требует вмешательства пользователя. Вы можете развернуть систему защиты, соответствующую рабочим нагрузкам своих приложений, и использовать базовую конфигурацию защиты (по умолчанию) или расширенную настраиваемую конфигурацию, включающую отслеживание вредоносных программ.
 
-Узнайте больше о [антивредоносном по Майкрософт для Azure](antimalware.md) и доступных основных функциях.
+Узнайте больше о [Microsoft Antimalware для Azure](antimalware.md) и основных доступных функциях.
 
 Дополнительные сведения об антивредоносном ПО для защиты виртуальных машин:
 
 * [Развертывание решений по защите от вредоносных программ на виртуальных машинах Azure](https://azure.microsoft.com/blog/deploying-antimalware-solutions-on-azure-virtual-machines/)
-* [Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows](/azure/virtual-machines/windows/classic/install-trend)
+* [Как установить и настроить Trend Micro Deep Security как услугу на Windows VM](/azure/virtual-machines/windows/classic/install-trend)
 * [Установка и настройка Symantec Endpoint Protection на виртуальной машине Windows](/azure/virtual-machines/windows/classic/install-symantec)
 * [Решения для защиты, представленные в Azure Marketplace](https://azure.microsoft.com/marketplace/?term=security)
 
@@ -66,7 +66,7 @@ Azure предлагает антивредоносное ПО таких пос
 * [управление и API-интерфейсы](/windows/security/threat-protection/windows-defender-atp/management-apis);
 * [защита от угроз (Microsoft)](/windows/security/threat-protection/windows-defender-atp/threat-protection-integration);
 
-Подробнее:
+Дополнительные сведения:
 
 * [Начало работы с WDATP](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)  
 * [Общие сведения о возможностях WDATP](/windows/security/threat-protection/windows-defender-atp/overview)  
@@ -77,18 +77,18 @@ Azure предлагает антивредоносное ПО таких пос
 
 Хранилище ключей позволяет хранить ключи в аппаратных модулях безопасности (HSM), сертифицированных в соответствии со стандартами FIPS 140-2 (уровень 2). Ваши ключи шифрования SQL Server для резервного копирования или [прозрачного шифрования данных](https://msdn.microsoft.com/library/bb934049.aspx) могут храниться в хранилище ключей вместе с любыми ключами или секретными кодами приложений. Управление разрешениями и доступом к защищенным элементам осуществляется с помощью [Azure Active Directory](https://azure.microsoft.com/documentation/services/active-directory/).
 
-Подробнее:
+Дополнительные сведения:
 
 * [Что такое хранилище ключей Azure?](/azure/key-vault/key-vault-overview)
 * [Блог о хранилище ключей Azure](https://blogs.technet.microsoft.com/kv/)
 
 ## <a name="virtual-machine-disk-encryption"></a>Шифрование дисков виртуальной машины.
 
-Шифрование дисков Azure — это новая функция, позволяющая шифровать диски виртуальных машин Windows и Linux. Для шифрования дисков Azure используются стандартные для отрасли функции ([BitLocker](https://technet.microsoft.com/library/cc732774.aspx) в Windows и [dm-crypt](https://en.wikipedia.org/wiki/Dm-crypt) в Linux), которые обеспечивают шифрование томов дисков ОС и дисков данных.
+Шифрование дисков Azure — это новая функция, позволяющая шифровать диски виртуальных машин Windows и Linux. Лазурное шифрование дисков использует стандартную в отрасли функцию [BitLocker](https://technet.microsoft.com/library/cc732774.aspx) Windows и функцию [dm-crypt](https://en.wikipedia.org/wiki/Dm-crypt) Linux для обеспечения громкости шифрования для ОС и дисков данных.
 
 Шифрование дисков Azure интегрировано в Azure Key Vault, что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault и контролировать их. Эта служба также обеспечивает шифрование всех неактивных данных на дисках виртуальных машин в службе хранилища Azure.
 
-Подробнее:
+Дополнительные сведения:
 
 * [Шифрование дисков Azure для виртуальных машин IaaS](/azure/security/azure-security-disk-encryption-overview)
 * [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](../../virtual-machines/linux/disk-encryption-powershell-quickstart.md)
@@ -97,10 +97,10 @@ Azure предлагает антивредоносное ПО таких пос
 
 Azure Backup — это масштабируемое решение, которое защищает данные приложения при нулевых капитальных вложениях и минимальных эксплуатационных затратах. Ошибки приложений могут повредить данные, а ошибки пользователей — привести к ошибкам в коде приложений. Служба архивации Azure защитит виртуальные машины Windows и Linux.
 
-Подробнее:
+Дополнительные сведения:
 
-* [Что такое служба архивации Azure?](/azure/backup/backup-introduction-to-azure-backup)
-* [Служба Azure Backup: часто задаваемые вопросы](/azure/backup/backup-azure-backup-faq)
+* [Что такое резервное копирование Azure?](/azure/backup/backup-introduction-to-azure-backup)
+* [Часто задаваемые вопросы службы резервного копирования Azure](/azure/backup/backup-azure-backup-faq)
 
 ## <a name="azure-site-recovery"></a>Azure Site Recovery
 
@@ -114,10 +114,10 @@ Site Recovery выполняет следующие задачи.
 * **Устранение необходимости в дополнительном центре обработки данных**. Вы можете выполнять репликацию на дополнительный локальный сайт или в Azure. Используя Azure в качестве целевого расположения при аварийном восстановлении, можно избежать затрат и сложностей, которыми сопровождается поддержка дополнительного сайта. Реплицированные данные хранятся в службе хранилища Azure.
 * **Интеграция с имеющимися технологиями BCDR**. Служба Site Recovery взаимодействует с другими компонентами приложений в рамках стратегии BCDR. Например, можно использовать службу Site Recovery для защиты серверной части SQL Server для корпоративных рабочих нагрузок. Это подразумевает встроенную поддержку SQL Server Always On для управления отработкой отказа групп доступности.
 
-Подробнее:
+Дополнительные сведения:
 
-* [Что собой представляет служба Azure Site Recovery?](/azure/site-recovery/site-recovery-overview)
-* [Как работает служба Azure Site Recovery?](/azure/site-recovery/site-recovery-components)
+* [Что такое Azure Site Recovery?](/azure/site-recovery/site-recovery-overview)
+* [Как работает восстановление сайта Azure?](/azure/site-recovery/site-recovery-components)
 * [Какие рабочие нагрузки можно защитить с помощью службы Azure Site Recovery?](/azure/site-recovery/site-recovery-workload)
 
 ## <a name="virtual-networking"></a>Виртуальная сеть
@@ -126,11 +126,11 @@ Site Recovery выполняет следующие задачи.
 
 Виртуальная сеть Azure — это логическая конструкция, созданная на основе структуры физических сетей Azure. Каждая логическая виртуальная сеть Azure изолирована от всех прочих виртуальных сетей Azure. Такая изоляция ограничивает доступ других клиентов Microsoft Azure к сетевому трафику в ваших развернутых службах.
 
-Подробнее:
+Дополнительные сведения:
 
 * [Обзор сетевой безопасности Azure](network-overview.md)
 * [Обзор виртуальной сети](/azure/virtual-network/virtual-networks-overview)
-* [Networking features and partnerships for Enterprise scenarios](https://azure.microsoft.com/blog/networking-enterprise/) (Сетевые функции и партнерские решения для корпоративных сценариев)
+* [Сетевые функции и партнерские отношения для корпоративных сценариев](https://azure.microsoft.com/blog/networking-enterprise/)
 
 ## <a name="security-policy-management-and-reporting"></a>Управление политикой безопасности и отчеты.
 
@@ -141,7 +141,7 @@ Site Recovery выполняет следующие задачи.
 * Предоставление [рекомендаций по обеспечению безопасности](/azure/security-center/security-center-recommendations) для виртуальных машин. Эти рекомендации включают в себя применение обновлений для системы, настройку конечных точек списков управления доступом, защиту от вредоносных программ, использование групп безопасности сети и применение шифрования дисков.
 * Наблюдение за состоянием виртуальных машин.
 
-Подробнее:
+Дополнительные сведения:
 
 * [Введение в Центр безопасности Azure](/azure/security-center/security-center-intro)
 * [Центр безопасности Azure: часто задаваемые вопросы](/azure/security-center/security-center-faq)
@@ -151,7 +151,7 @@ Site Recovery выполняет следующие задачи.
 
 Виртуальные машины Azure сертифицированы в соответствии со стандартами FISMA, FedRAMP, HIPAA, PCI DSS (уровень 1), а также другими ключевыми стандартами. Сертификация упрощает обеспечение соответствия для приложений, а также позволяет соблюдать многочисленные местные и международные нормативные требования.
 
-Подробнее:
+Дополнительные сведения:
 
 * [Microsoft Trust Center: Compliance (Центр управления безопасностью корпорации Майкрософт: соответствие нормативным требованиям)](https://www.microsoft.com/en-us/trustcenter/compliance)
 * [Доверенное облако: безопасность, конфиденциальность и соответствие требованиям в Microsoft Azure](https://download.microsoft.com/download/1/6/0/160216AA-8445-480B-B60F-5C8EC8067FCA/WindowsAzure-SecurityPrivacyCompliance.pdf)
@@ -164,11 +164,11 @@ Site Recovery выполняет следующие задачи.
 
 TEE гарантирует, что вы не сможете из внешней среды просмотреть данные или внутренние операции с ними даже с помощью отладчика. Кроме того, TEE гарантирует, что только авторизованный код имеет доступ к данным. Если код был каким-либо образом изменен, все операции отклоняются и среда отключается. Доверенная среда выполнения применяет эти меры защиты ко всем этапам выполнения кода в ней.
 
-Подробнее:
+Дополнительные сведения:
 
 * [Знакомство с конфиденциальными вычислениями Azure](https://azure.microsoft.com/blog/introducing-azure-confidential-computing/)  
 * [Конфиденциальные вычисления Azure](https://azure.microsoft.com/blog/azure-confidential-computing/)  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с [рекомендациями по обеспечению безопасности](iaas.md) для виртуальных машин и операционных систем.
+Узнайте о [рекомендациях по безопасности](iaas.md) для вс-м и операционных систем.

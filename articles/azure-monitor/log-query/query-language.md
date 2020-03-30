@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 01/11/2019
 ms.openlocfilehash: fc943ac3cf82d22a58d0ba3390ad8d9bbee6a4c9
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77669393"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
@@ -20,14 +20,14 @@ ms.locfileid: "77669393"
 
 ## <a name="getting-started"></a>Начало работы
 
-- [Начало работы с Azure Monitor log Analytics](get-started-portal.md) — это занятие для написания запросов и работы с результатами в портал Azure.
+- [Начало работы с Azure Monitor Log Analytics](get-started-portal.md) — это урок для написания запросов и работы с результатами на портале Azure.
 - Статья о [начале работы с запросами к журналам в Azure Monitor](get-started-queries.md) — это руководство по созданию запросов с использованием данных журнала Azure Monitor.
 
-## <a name="concepts"></a>Концепции
+## <a name="concepts"></a>Основные понятия
 - В статье об [анализе данных журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) кратко описаны запросы к журналам и структура данных в журналах Azure Monitor.
 - В статье о [просмотре и анализе данных журналов в Azure Monitor](../../azure-monitor/log-query/portals.md) описаны порталы, на которых создаются и выполняются запросы к журналам.
 
-## <a name="reference"></a>Ссылки
+## <a name="reference"></a>Справочник
 
 - [Справочник по языку запросов](/azure/kusto/query) содержит подробную и полную информацию о языке запросов Kusto.
 - В статье о [различиях в языках запросов к журналам Azure Monitor](data-explorer-difference.md) сравниваются разные версии языка запросов Kusto.
@@ -56,6 +56,6 @@ ms.locfileid: "77669393"
 -  Статья об [SQL-запросах к журналам Azure Monitor](sql-cheatsheet.md) предназначена для пользователей, которые уже знакомы с SQL.
 -  Статья о [Splunk-запросах к журналу Azure Monitor](splunk-cheatsheet.md) предназначена для пользователей, которые уже знакомы со Splunk.
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).

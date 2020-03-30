@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 393563427e936e07315cd44b78cb793d4292b352
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79243930"
 ---
 # <a name="product-templates-in-azure-api-management"></a>Шаблоны продуктов в службе управления API Azure
@@ -37,7 +37,7 @@ ms.locfileid: "79243930"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="ProductList"></a> Список продуктов  
+##  <a name="product-list"></a><a name="ProductList"></a>Список продуктов  
  Шаблон **списка продуктов** позволяет настроить текст страницы со списком продуктов на портале разработчика.  
   
  ![Список продуктов](./media/api-management-product-templates/APIM_ProductsListTemplatePage.png "APIM_ProductsListTemplatePage")  
@@ -70,18 +70,18 @@ ms.locfileid: "79243930"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [paging-control](api-management-page-controls.md#paging-control)  
+-   [контроль над paging](api-management-page-controls.md#paging-control)  
   
--   [search-control](api-management-page-controls.md#search-control)  
+-   [поиск-контроль](api-management-page-controls.md#search-control)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Description|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
-|Разбиение по страницам|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
+|Разбивка на страницы|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
 |Фильтрация|Сущность [фильтрации](api-management-template-data-model-reference.md#Filtering).|Сведения о фильтрации для страницы со списком продуктов.|  
 |Продукты|Коллекция сущностей [Продукт](api-management-template-data-model-reference.md#Product).|Все продукты, которые доступны для текущего пользователя.|  
   
@@ -123,10 +123,10 @@ ms.locfileid: "79243930"
 }  
 ```  
   
-##  <a name="Product"></a> Продукт  
+##  <a name="product"></a><a name="Product"></a>Продукта  
  Шаблон **продукта** позволяет настроить текст страницы со информацией о продукте на портале разработчика.  
   
- ![Страница продукта портала разработчика](./media/api-management-product-templates/APIM_ProductPage.png "APIM_ProductPage")  
+ ![Страница продукта портала разработчиков](./media/api-management-product-templates/APIM_ProductPage.png "APIM_ProductPage")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -197,14 +197,14 @@ ms.locfileid: "79243930"
 {% endif %}  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [subscribe-button](api-management-page-controls.md#subscribe-button)  
+-   [кнопка подписки](api-management-page-controls.md#subscribe-button)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Description|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |Продукт|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
 |IsDeveloperSubscribed|Логическое|Указывает, подписан ли текущий пользователь на этот продукт.|  

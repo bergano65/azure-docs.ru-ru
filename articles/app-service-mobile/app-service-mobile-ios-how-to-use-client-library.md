@@ -1,5 +1,5 @@
 ---
-title: Использование пакета SDK для iOS
+title: Использование IOS SDK
 description: Использование пакета iOS SDK для мобильных приложений Azure
 ms.assetid: 4e8e45df-c36a-4a60-9ad4-393ec10b7eb9
 ms.tgt_pltfrm: mobile-ios
@@ -7,10 +7,10 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 06/25/2019
 ms.openlocfilehash: 1bf8f8e198f6c4a4a0af308262cd830685698a80
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79249351"
 ---
 # <a name="how-to-use-ios-client-library-for-azure-mobile-apps"></a>Использование клиентской библиотеки iOS для мобильных приложений Azure
@@ -18,11 +18,11 @@ ms.locfileid: "79249351"
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
 
 ## <a name="overview"></a>Обзор
-В этом руководстве описывается, как выполнять типичные сценарии с помощью последнего [пакета SDK iOS для мобильных приложений Azure][1]. Если вы не знакомы с мобильными приложениями Azure, изучите статью [Быстрый запуск мобильного приложения Azure], чтобы создать серверную часть и таблицу, а также скачать предварительно собранный проект Xcode для iOS. В данном руководстве мы сосредоточимся на клиентской части пакета iOS SDK. Дополнительные сведения о серверном пакете SDK для внутреннего сервера см. практических руководствах по пакету SDK для сервера.
+В данном руководстве показано, как реализовать типичные сценарии с использованием последней версии [пакета SDK iOS для мобильных приложений Azure][1]. Если вы не знакомы с мобильными приложениями Azure, изучите статью [Быстрый запуск мобильного приложения Azure], чтобы создать серверную часть и таблицу, а также скачать предварительно собранный проект Xcode для iOS. В данном руководстве мы сосредоточимся на клиентской части пакета iOS SDK. Дополнительные сведения о серверном пакете SDK для внутреннего сервера см. практических руководствах по пакету SDK для сервера.
 
 ## <a name="reference-documentation"></a>Справочная документация
 
-Справочная документация по пакету SDK для клиента iOS находится здесь: [Справочник по клиенту iOS для мобильных приложений Azure][2].
+Справочная документация по пакету SDK для клиента iOS находится здесь: [Справочник по клиенту iOS мобильных приложений Azure][2].
 
 ## <a name="supported-platforms"></a>Поддерживаемые платформы
 
@@ -31,47 +31,47 @@ ms.locfileid: "79249351"
 "Серверная" аутентификация использует WebView для представляемого пользовательского интерфейса.  Если устройство не может представить пользовательский интерфейс WebView, потребуется применить другие способы аутентификации, которые выходят за рамки данного продукта.  
 Поэтому данный пакет SDK не подходит для различного рода часов и других устройств с аналогичными ограничениями.
 
-## <a name="Setup"></a>Настройка и необходимые компоненты
+## <a name="setup-and-prerequisites"></a><a name="Setup"></a>Настройка и предпосылки
 
 В данном руководстве предполагается, что вы уже создали серверную часть с таблицей. В этом руководстве предполагается, что в таблице используется та же схему, что и в таблицах, приведенных в этих учебниках. Кроме того, в данном руководстве предполагается, что в коде можно ссылаться на `MicrosoftAzureMobile.framework` и импортировать `MicrosoftAzureMobile/MicrosoftAzureMobile.h`.
 
-## <a name="create-client"></a>Создание клиента
+## <a name="how-to-create-client"></a><a name="create-client"></a>Создание клиента
 
 Чтобы получить доступ к серверной части мобильных приложений Azure в вашем проекте, создайте `MSClient`. Замените `AppUrl` на URL-адрес приложения. Параметры `gatewayURLString` и `applicationKey` можно оставить пустыми. Если вы настроите шлюз для проверки подлинности, укажите в параметре `gatewayURLString` его URL-адрес.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl"];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 let client = MSClient(applicationURLString: "AppUrl")
 ```
 
-## <a name="table-reference"></a>Практическое руководство. Создание ссылки на таблицу
+## <a name="how-to-create-table-reference"></a><a name="table-reference"></a>Практическое руководство. Создание ссылки на таблицу
 
 Для доступа к данным или их обновления создайте ссылку на таблицу серверной части. Замените `TodoItem` на имя таблицы.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 MSTable *table = [client tableWithName:@"TodoItem"];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 let table = client.tableWithName("TodoItem")
 ```
 
-## <a name="querying"></a>Практическое руководство. Запрос данных
+## <a name="how-to-query-data"></a><a name="querying"></a>Практическое руководство. Запрос данных
 
 Чтобы создать запрос к базе данных, отправьте запрос объекта `MSTable` . Следующий запрос возвращает все элементы в `TodoItem` и регистрирует в журнале текст каждого из них.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 [table readWithCompletion:^(MSQueryResult *result, NSError *error) {
@@ -85,7 +85,7 @@ let table = client.tableWithName("TodoItem")
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 table.readWithCompletion { (result, error) in
@@ -99,13 +99,13 @@ table.readWithCompletion { (result, error) in
 }
 ```
 
-## <a name="filtering"></a>Практическое руководство. Фильтрация возвращаемых данных
+## <a name="how-to-filter-returned-data"></a><a name="filtering"></a>Практическое руководство. Фильтрация возвращаемых данных
 
 Есть множество способов фильтрации результатов.
 
 Для фильтрации данных с использованием предиката используйте `NSPredicate` и `readWithPredicate`. Следующие фильтры позволяют возвращать только незавершенные элементы Todo.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 // Create a predicate that finds items where complete is false
@@ -122,7 +122,7 @@ NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 // Create a predicate that finds items where complete is false
@@ -139,18 +139,18 @@ table.readWithPredicate(predicate) { (result, error) in
 }
 ```
 
-## <a name="query-object"></a>Практическое руководство. Использование MSQuery
+## <a name="how-to-use-msquery"></a><a name="query-object"></a>Практическое руководство. Использование MSQuery
 
 Чтобы выполнить сложный запрос (в том числе на сортировку и подкачку), создайте объект `MSQuery` непосредственно или с помощью предиката:
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 MSQuery *query = [table query];
 MSQuery *query = [table queryWithPredicate: [NSPredicate predicateWithFormat:@"complete == NO"]];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 let query = table.query()
@@ -168,11 +168,11 @@ let query = table.queryWithPredicate(NSPredicate(format: "complete == NO"))
 
 Выполнение `MSQuery` запроса путем вызова `readWithCompletion` для объекта.
 
-## <a name="sorting"></a>Практическое руководство. Сортировка данных с помощью MSQuery
+## <a name="how-to-sort-data-with-msquery"></a><a name="sorting"></a>Практическое руководство. Сортировка данных с помощью MSQuery
 
 На примере ниже показано, как сортировать результаты. Для сортировки по возрастанию значений поля text, а затем по убыванию по значению complete, вызовите `MSQuery` следующим образом.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 [query orderByAscending:@"text"];
@@ -188,7 +188,7 @@ let query = table.queryWithPredicate(NSPredicate(format: "complete == NO"))
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 query.orderByAscending("text")
@@ -204,17 +204,17 @@ query.readWithCompletion { (result, error) in
 }
 ```
 
-## <a name="selecting"></a><a name="parameters"></a>Практическое руководство. Ограничение возвращаемых полей и развертывание строковых параметров запроса с помощью MSQuery
+## <a name="how-to-limit-fields-and-expand-query-string-parameters-with-msquery"></a><a name="selecting"></a><a name="parameters"></a>Практическое руководство. Ограничение возвращаемых полей и развертывание строковых параметров запроса с помощью MSQuery
 
 Чтобы ограничить поля, возвращаемые в запросе, укажите имена полей в свойстве **selectFields** . Данный пример возвращает только текст и заполненные поля.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 query.selectFields = @[@"text", @"complete"];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 query.selectFields = ["text", "complete"]
@@ -222,7 +222,7 @@ query.selectFields = ["text", "complete"]
 
 Чтобы включить дополнительные строковые параметры в запрос сервера (например, так как они используются в настраиваемом серверном скрипте), заполните `query.parameters` следующим образом:
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 query.parameters = @{
@@ -231,13 +231,13 @@ query.parameters = @{
 };
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 query.parameters = ["myKey1": "value1", "myKey2": "value2"]
 ```
 
-## <a name="paging"></a>Практическое руководство. Настройка размера страницы
+## <a name="how-to-configure-page-size"></a><a name="paging"></a>Практическое руководство. Настройка размера страницы
 
 При использовании мобильных приложений Azure размер страницы определяет количество записей, одновременно извлекаемых из таблиц серверной части. Вызов данных `pull` приведет к пакетному извлечению данных на основе этого размера страницы до тех пор, пока не будут извлечены все соответствующие записи.
 
@@ -251,7 +251,7 @@ query.parameters = ["myKey1": "value1", "myKey2": "value2"]
 
 Если увеличить размер страницы клиента, также следует увеличить размер страницы на сервере. Инструкции см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
   MSPullSettings *pullSettings = [[MSPullSettings alloc] initWithPageSize:3];
@@ -263,7 +263,7 @@ query.parameters = ["myKey1": "value1", "myKey2": "value2"]
                            }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 let pullSettings = MSPullSettings(pageSize: 3)
@@ -274,7 +274,7 @@ table.pullWithQuery(query, queryId:nil, settings: pullSettings) { (error) in
 }
 ```
 
-## <a name="inserting"></a>Практическое руководство. Вставка данных
+## <a name="how-to-insert-data"></a><a name="inserting"></a>Практическое руководство. Вставка данных
 
 Чтобы вставить новую строку таблицы, создайте `NSDictionary` и вызовите `table insert`. Если включена [динамическая схема], то серверная часть мобильной службы службы приложений Azure автоматически создает столбцы на основе `NSDictionary`.
 
@@ -282,7 +282,7 @@ table.pullWithQuery(query, queryId:nil, settings: pullSettings) { (error) in
 
 `result` содержит новый элемент, который был вставлен. В зависимости от логики вашего сервера он может иметь дополнительные или измененные данные, по сравнению с теми, которые были переданы на сервер.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 NSDictionary *newItem = @{@"id": @"custom-id", @"text": @"my new item", @"complete" : @NO};
@@ -295,7 +295,7 @@ NSDictionary *newItem = @{@"id": @"custom-id", @"text": @"my new item", @"comple
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 let newItem = ["id": "custom-id", "text": "my new item", "complete": false]
@@ -308,11 +308,11 @@ table.insert(newItem) { (result, error) in
 }
 ```
 
-## <a name="modifying"></a>Практическое руководство. Изменение данных
+## <a name="how-to-modify-data"></a><a name="modifying"></a>Как изменить данные
 
 Чтобы обновить существующую строку, измените элемент и вызовите `update`:
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 NSMutableDictionary *newItem = [oldItem mutableCopy]; // oldItem is NSDictionary
@@ -326,7 +326,7 @@ NSMutableDictionary *newItem = [oldItem mutableCopy]; // oldItem is NSDictionary
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 if let newItem = oldItem.mutableCopy() as? NSMutableDictionary {
@@ -343,7 +343,7 @@ if let newItem = oldItem.mutableCopy() as? NSMutableDictionary {
 
 Можно также указать идентификатор строки и обновляемое поле:
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 [table update:@{@"id":@"custom-id", @"text":"my EDITED item"} completion:^(NSDictionary *result, NSError *error) {
@@ -355,7 +355,7 @@ if let newItem = oldItem.mutableCopy() as? NSMutableDictionary {
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 table.update(["id": "custom-id", "text": "my EDITED item"]) { (result, error) in
@@ -369,11 +369,11 @@ table.update(["id": "custom-id", "text": "my EDITED item"]) { (result, error) in
 
 При обновлении необходимо по крайней мере задать атрибут `id` .
 
-## <a name="deleting"></a>Практическое руководство. Удаление данных
+## <a name="how-to-delete-data"></a><a name="deleting"></a>Практическое руководство. Удаление данных
 
 Чтобы удалить элемент, вызовите `delete` с элементом:
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 [table delete:item completion:^(id itemId, NSError *error) {
@@ -385,7 +385,7 @@ table.update(["id": "custom-id", "text": "my EDITED item"]) { (result, error) in
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 table.delete(newItem as [NSObject: AnyObject]) { (itemId, error) in
@@ -399,7 +399,7 @@ table.delete(newItem as [NSObject: AnyObject]) { (itemId, error) in
 
 Кроме того, для удаления элемента можно указать идентификатор строки:
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 [table deleteWithId:@"37BBF396-11F0-4B39-85C8-B319C729AF6D" completion:^(id itemId, NSError *error) {
@@ -411,7 +411,7 @@ table.delete(newItem as [NSObject: AnyObject]) { (itemId, error) in
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 table.deleteWithId("37BBF396-11F0-4B39-85C8-B319C729AF6D") { (itemId, error) in
@@ -425,13 +425,13 @@ table.deleteWithId("37BBF396-11F0-4B39-85C8-B319C729AF6D") { (itemId, error) in
 
 При удалении необходимо по крайней мере задать атрибут `id` .
 
-## <a name="customapi"></a>Практическое руководство. Вызов настраиваемого интерфейса API
+## <a name="how-to-call-custom-api"></a><a name="customapi"></a>Практическое руководство. Вызов настраиваемого интерфейса API
 
 С помощью настраиваемого API можно включить любые функциональные возможности серверной части. Они не должны совпадать с операциями с таблицами. Вы не только расширяете контроль над процессом обмена сообщениями, но также получаете возможность читать и задавать заголовки и изменять формат текста ответа.
 
-Для вызова настраиваемого API вызовите `MSClient.invokeAPI`. Содержимое запроса и ответа содержимого рассматривается как JSON. Чтобы использовать другие типы носителей, [используйте другую перегрузку `invokeAPI`][5].  Чтобы сделать запрос `GET` вместо запроса `POST`, задайте для параметра `HTTPMethod` значение `"GET"`, а для `body` параметра — `nil` (так как запросы GET не содержат тела сообщений). Если пользовательский API поддерживает другие HTTP-команды, измените `HTTPMethod` соответствующим образом.
+Для вызова настраиваемого API вызовите `MSClient.invokeAPI`. Содержимое запроса и ответа содержимого рассматривается как JSON. Чтобы использовать другие типы носителей, [воспользуйтесь другой перегрузкой `invokeAPI`][5].  Чтобы сделать запрос `POST` вместо запроса, установите параметр `HTTPMethod` `"GET"` и `body` параметр (поскольку `nil` запросы GET не имеют органов сообщений). `GET` Если пользовательский API поддерживает другие `HTTPMethod` глаголы HTTP, измените соответствующим образом.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 [self.client invokeAPI:@"sendEmail"
@@ -448,7 +448,7 @@ table.deleteWithId("37BBF396-11F0-4B39-85C8-B319C729AF6D") { (itemId, error) in
             }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 client.invokeAPI("sendEmail",
@@ -466,11 +466,11 @@ client.invokeAPI("sendEmail",
         }
 ```
 
-## <a name="templates"></a>Использование шаблонов для отправки кроссплатформенных push- уведомлений
+## <a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a><a name="templates"></a>Использование шаблонов для отправки кроссплатформенных push- уведомлений
 
 Чтобы зарегистрировать шаблоны, передайте их с помощью метода **client.push registerDeviceToken** в свое клиентское приложение.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 [client.push registerDeviceToken:deviceToken template:iOSTemplate completion:^(NSError *error) {
@@ -480,7 +480,7 @@ client.invokeAPI("sendEmail",
 }];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 client.push?.registerDeviceToken(NSData(), template: iOSTemplate, completion: { (error) in
@@ -492,33 +492,33 @@ client.push?.registerDeviceToken(NSData(), template: iOSTemplate, completion: { 
 
 Шаблоны относятся к типу NSDictionary и могут содержать несколько шаблонов в следующем формате.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 NSDictionary *iOSTemplate = @{ @"templateName": @{ @"body": @{ @"aps": @{ @"alert": @"$(message)" } } } };
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 let iOSTemplate = ["templateName": ["body": ["aps": ["alert": "$(message)"]]]]
 ```
 
-Все теги будут удалены из запроса в целях безопасности.  В статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure][4]показано, как добавлять теги для установки устройства или шаблоны в пределах установки.  Для отправки уведомлений с помощью этих зарегистрированных шаблонов обратитесь к [интерфейсам API концентраторов уведомлений][3].
+Все теги будут удалены из запроса в целях безопасности.  В статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure][4] показано, как добавлять теги для установки или шаблоны в пределах установки.  Для отправки уведомлений с использованием зарегистрированных шаблонов используйте [API центров уведомлений][3].
 
-## <a name="errors"></a>Практическое руководство. Обработка ошибок
+## <a name="how-to-handle-errors"></a><a name="errors"></a>Как: Обработка ошибок
 
 При вызове серверной части мобильной службы службы приложений Azure блок завершения содержит параметр `NSError`. Если возникает ошибка, этот параметр не является пустым. В коде необходимо проверить этот параметр и обработать ошибку по мере необходимости, как показано во фрагментах кода выше.
 
-[`<WindowsAzureMobileServices/MSError.h>`][6] файлов определяет константы `MSErrorResponseKey`, `MSErrorRequestKey`и `MSErrorServerItemKey`. Вот как можно получить дополнительные данные об ошибке.
+Файл [`<WindowsAzureMobileServices/MSError.h>`][6] определяет константы, `MSErrorResponseKey` `MSErrorRequestKey` `MSErrorServerItemKey`и . Вот как можно получить дополнительные данные об ошибке.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 NSDictionary *serverItem = [error.userInfo objectForKey:MSErrorServerItemKey];
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 let serverItem = error.userInfo[MSErrorServerItemKey]
@@ -526,23 +526,23 @@ let serverItem = error.userInfo[MSErrorServerItemKey]
 
 Кроме того, этот файл определяет константы для каждого кода ошибки.
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 if (error.code == MSErrorPreconditionFailed) {
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 if (error.code == MSErrorPreconditionFailed) {
 ```
 
-## <a name="adal"></a>Практическое руководство. Проверка подлинности пользователей с помощью библиотеки проверки подлинности Active Directory
+## <a name="how-to-authenticate-users-with-the-active-directory-authentication-library"></a><a name="adal"></a>Практическое руководство. Проверка подлинности пользователей с помощью библиотеки проверки подлинности Active Directory
 
 Библиотеку проверки подлинности Active Directory (ADAL) можно использовать для входа пользователей в приложение с помощью Azure Active Directory. Клиентский поток аутентификации с использованием пакета SDK поставщика удостоверений предпочтительнее использования метода `loginWithProvider:completion:` .  Клиентский поток аутентификации обеспечивает более удобный пользовательский интерфейс входа и позволяет выполнять дополнительную настройку.
 
-1. Настройте серверную часть мобильного приложения для входа с помощью AAD, следуя указаниям в учебнике [Настройка приложения службы приложений для использования службы входа Azure Active Directory][7] . Обязательно выполните дополнительный этап регистрации собственного клиентского приложения. Для iOS мы рекомендуем использовать универсальный код ресурса (URI) перенаправления следующего вида: `<app-scheme>://<bundle-id>`. Дополнительные сведения см. в [руководстве по ADAL iOS][8].
+1. Настройте серверную часть мобильного приложения для входа с помощью AAD, следуя указаниям в учебнике [Настройка приложения службы приложений для использования службы входа Azure Active Directory][7] . Обязательно выполните дополнительный этап регистрации собственного клиентского приложения. Для iOS мы рекомендуем использовать универсальный код ресурса (URI) перенаправления следующего вида: `<app-scheme>://<bundle-id>`. Чтобы узнать больше, ознакомьтесь с [кратким руководством по ADAL для iOS][8].
 2. Установите ADAL с помощью Cocoapods. Измените файл Podfile: добавьте в него следующее определение, заменив **YOUR-PROJECT** именем проекта Xcode.
 
         source 'https://github.com/CocoaPods/Specs.git'
@@ -556,12 +556,12 @@ if (error.code == MSErrorPreconditionFailed) {
 3. С помощью приложения Terminal запустите `pod install` из каталога, содержащего проект, а затем откройте созданную рабочую область Xcode (не проект).
 4. Добавьте в приложение приведенный ниже код, соответствующий используемому языку. Выполните следующие замены:
 
-   * Замените строку **INSERT-AUTHORITY-HERE** именем клиента, в котором подготовлено приложение. Его необходимо указать в формате https://login.microsoftonline.com/contoso.onmicrosoft.com. Это значение можно скопировать на вкладке "Домен" в разделе Azure Active Directory на [Портал Azure].
+   * Замените строку **INSERT-AUTHORITY-HERE** именем клиента, в котором подготовлено приложение. Его необходимо указать в формате https://login.microsoftonline.com/contoso.onmicrosoft.com. Это значение можно скопировать на вкладке "Домен" в разделе Azure Active Directory на [портале Azure].
    * Замените текст **INSERT-RESOURCE-ID-HERE** идентификатором клиента для серверной части мобильного приложения. Идентификатор клиента можно скопировать на портале в разделе **Настройки Azure Active Directory** на вкладке **Дополнительно**.
    * Замените текст **INSERT-CLIENT-ID-HERE** идентификатором клиента, скопированным из собственного клиентского приложения.
-   * Замените текст **INSERT-REDIRECT-URI-HERE** конечной точкой сайта */.auth/login/done* , используя схему HTTPS. Это значение должно быть аналогично *https://contoso.azurewebsites.net/.auth/login/done* .
+   * Замените текст **INSERT-REDIRECT-URI-HERE** конечной точкой сайта */.auth/login/done* , используя схему HTTPS. Это значение должно *https://contoso.azurewebsites.net/.auth/login/done*быть похоже на .
 
-**Objective-C**:
+**Цель-C**:
 
 ```objc
 #import <ADALiOS/ADAuthenticationContext.h>
@@ -597,7 +597,7 @@ if (error.code == MSErrorPreconditionFailed) {
 }
 ```
 
-**Swift**:
+**Свифт**:
 
 ```swift
 // add the following imports to your bridging header:
@@ -625,12 +625,12 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 }
 ```
 
-## <a name="facebook-sdk"></a>Практическое руководство: проверка подлинности пользователей с помощью пакета SDK Facebook для iOS
+## <a name="how-to-authenticate-users-with-the-facebook-sdk-for-ios"></a><a name="facebook-sdk"></a>Практическое руководство: проверка подлинности пользователей с помощью пакета SDK Facebook для iOS
 
 Пакет SDK Facebook для iOS можно использовать для входа пользователей в приложение с помощью Facebook.  Использование клиентского потока аутентификации предпочтительнее использования метода `loginWithProvider:completion:` .  Клиентский поток аутентификации обеспечивает более удобный пользовательский интерфейс входа и позволяет выполнять дополнительную настройку.
 
-1. Настройте серверную часть мобильного приложения для входа в Facebook, следуя инструкциям в учебнике [Настройка службы приложений для входа в Facebook][9] .
-2. Установите пакет SDK для Facebook для iOS, следуя документации по [пакету SDK Facebook для iOS-начало работы][10] . Вместо создания приложения можно добавить платформу iOS в имеющуюся регистрацию.
+1. Настройте серверную часть мобильного приложения для входа с помощью Facebook, следуя указаниям в руководстве [Как настроить приложение службы приложений для использования имени для входа Facebook][9].
+2. Установите пакет SDK Facebook для iOS, как описано в документе [Facebook SDK for iOS - Getting Started][10] (Пакет SDK Facebook для iOS. Приступая к работе). Вместо создания приложения можно добавить платформу iOS в имеющуюся регистрацию.
 3. Документация Facebook содержит код Objective-C в делегате приложения. При использовании **Swift** можно использовать следующие переводы для AppDelegate.swift.
 
     ```swift
@@ -652,7 +652,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 4. Кроме добавления в проект `FBSDKCoreKit.framework` необходимо таким же образом добавить ссылку на `FBSDKLoginKit.framework`.
 5. Добавьте в приложение приведенный ниже код, соответствующий используемому языку.
 
-    **Objective-C**:
+    **Цель-C**:
 
     ```objc
     #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -680,7 +680,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-    **Swift**:
+    **Свифт**:
 
     ```swift
     // Add the following imports to your bridging header:
@@ -704,19 +704,19 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-## <a name="twitter-fabric"></a>Практическое руководство: проверка подлинности пользователей с помощью структуры Twitter для iOS
+## <a name="how-to-authenticate-users-with-twitter-fabric-for-ios"></a><a name="twitter-fabric"></a>Практическое руководство: проверка подлинности пользователей с помощью структуры Twitter для iOS
 
 Структуру для iOS можно использовать для входа пользователей в приложение с помощью Twitter. Использование клиентского потока аутентификации является более предпочтительным, чем использование метода `loginWithProvider:completion:` , так как он обеспечивает более удобный пользовательский интерфейс входа и позволяет выполнять дополнительную настройку.
 
 1. Настройте серверную часть мобильного приложения для входа с помощью Twitter, следуя указаниям в учебнике [Как настроить приложение службы приложений для использования имени для входа Twitter](../app-service/configure-authentication-provider-twitter.md) .
-2. Добавьте структуру в проект, как описано в документе [Структура для iOS. Приступая к работе] (Структура для iOS. Приступая к работе), а также установите TwitterKit.
+2. Добавьте структуру в проект, как описано в документе [Fabric for iOS - Getting Started] (Структура для iOS. Приступая к работе), а также установите TwitterKit.
 
    > [!NOTE]
    > По умолчанию структура создаст приложение Twitter. Чтобы избежать создания этого приложения, можно зарегистрировать ключ клиента и секрет клиента, которые вы создали ранее, с помощью фрагментов кода ниже.    Кроме того, можно заменить значения ключа клиента и секрета клиента, которые предоставляются службе приложений, на значения, отображаемые на [панели мониторинга структуры]. Если выбран этот параметр, не забудьте задать URL-адрес обратного вызова для значения заполнителя, например `https://<yoursitename>.azurewebsites.net/.auth/login/twitter/callback`.
 
     Если вы решили использовать ранее созданные секреты, добавьте в делегат приложения следующий фрагмент кода.
 
-    **Objective-C**:
+    **Цель-C**:
 
     ```objc
     #import <Fabric/Fabric.h>
@@ -731,7 +731,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-    **Swift**:
+    **Свифт**:
 
     ```swift
     import Fabric
@@ -747,7 +747,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 
 3. Добавьте в приложение приведенный ниже код, соответствующий используемому языку.
 
-    **Objective-C**:
+    **Цель-C**:
 
     ```objc
     #import <TwitterKit/TwitterKit.h>
@@ -768,7 +768,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-    **Swift**:
+    **Свифт**:
 
     ```swift
     import TwitterKit
@@ -786,7 +786,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-## <a name="google-sdk"></a>Практическое руководство: проверка подлинности пользователей с помощью пакета SDK Google Sign-In для iOS
+## <a name="how-to-authenticate-users-with-the-google-sign-in-sdk-for-ios"></a><a name="google-sdk"></a>Практическое руководство: проверка подлинности пользователей с помощью пакета SDK Google Sign-In для iOS
 
 Пакет SDK Google Sign-In для iOS можно использовать для входа пользователей в приложение с помощью учетной записи Google.  Недавно компания Google объявила о внесении изменений в свои политики безопасности OAuth.  Эти изменения политик в дальнейшем потребуют использовать пакет SDK для Google.
 
@@ -794,7 +794,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 2. Установите пакет SDK Google для iOS, следуя инструкциям в статье [Google Sign-In for iOS - Start integrating](https://developers.google.com/identity/sign-in/ios/start-integrating) (Google Sign-In для iOS — начало интеграции). Раздел "Authenticate with a Backend Server" (Аутентификация на внутреннем сервере) можно пропустить.
 3. Добавьте в метод `signIn:didSignInForUser:withError:` делегата код, приведенный ниже (в соответствии с используемым языком).
 
-    **Objective-C**:
+    **Цель-C**:
     ```objc
     NSDictionary *payload = @{
                                 @"id_token":user.authentication.idToken,
@@ -806,7 +806,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }];
     ```
 
-    **Swift**:
+    **Свифт**:
 
     ```swift
     let payload: [String: String] = ["id_token": user.authentication.idToken, "authorization_code": user.serverAuthCode]
@@ -817,13 +817,13 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 
 4. Добавьте также показанный ниже код в `application:didFinishLaunchingWithOptions:` в делегате приложения, заменив SERVER_CLIENT_ID тем же идентификатором, с помощью которого вы настроили службу приложений на этапе 1.
 
-    **Objective-C**:
+    **Цель-C**:
 
     ```objc
     [GIDSignIn sharedInstance].serverClientID = @"SERVER_CLIENT_ID";
     ```
 
-     **Swift**:
+     **Свифт**:
 
     ```swift
     GIDSignIn.sharedInstance().serverClientID = "SERVER_CLIENT_ID"
@@ -831,7 +831,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 
 5. Добавьте приведенный ниже код в приложение в UIViewController, который реализует протокол `GIDSignInUIDelegate` (в соответствии с используемым языком).  Вы вышли перед повторным входом, и хотя вам не нужно повторно вводить учетные данные, вы увидите диалоговое окно согласия.  Вызывайте этот метод, только когда истек срок маркера сеанса.
 
-   **Objective-C**:
+   **Цель-C**:
 
     ```objc
     #import <Google/SignIn.h>
@@ -844,7 +844,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-   **Swift**:
+   **Свифт**:
 
     ```swift
     // ...
@@ -898,7 +898,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 [Permissions]: https://msdn.microsoft.com/library/windowsazure/jj193161.aspx
 [Service-side Authorization]: mobile-services-javascript-backend-service-side-authorization.md
 [Use scripts to authorize users]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
-[динамическая схема]: https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/dynamic-schema
+[Динамическая схема]: https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/dynamic-schema
 [How to: access custom parameters]: /develop/mobile/how-to-guides/work-with-server-scripts#access-headers
 [Create a table]: https://msdn.microsoft.com/library/windowsazure/jj193162.aspx
 [NSDictionary object]: https://go.microsoft.com/fwlink/p/?LinkId=301965

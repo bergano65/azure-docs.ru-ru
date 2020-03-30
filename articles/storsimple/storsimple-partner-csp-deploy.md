@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
 ms.openlocfilehash: 7f1927a67127766c72be463c283225135b2a2aad
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77466915"
 ---
 # <a name="deploy-storsimple-virtual-array-for-cloud-solution-provider-program"></a>Развертывание виртуального массива StorSimple для программы поставщика облачных решений
@@ -83,7 +83,7 @@ ms.locfileid: "77466915"
                               
 2. В левой области щелкните **Клиенты**. Найдите клиента, для которого требуется добавить подписку, или перейдите к нему. Щелкните значок ![значок галочки развертывания](./media/storsimple-partner-csp-deploy/expand_pane_icon.png), чтобы развернуть строку имени компании для клиента. В области сведений щелкните **Добавить подписки**.
 
-    ![Заказчики](./media/storsimple-partner-csp-deploy/image10.png)
+    ![Клиенты](./media/storsimple-partner-csp-deploy/image10.png)
 
 3. Проверьте **Microsoft Azure** на наличие лучших предложений в разделе **Лучшие предложения** в подписку и нажмите кнопку **Отправить**. После этого будет создана подписка.
 
@@ -101,7 +101,7 @@ ms.locfileid: "77466915"
 
     ![Создание службы диспетчера устройств StorSimple](./media/storsimple-partner-csp-deploy/image8.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к статье [StorSimple in CSP: Frequently asked questions](storsimple-partner-csp-faq.md) (StorSimple в CSP: часто задаваемые вопросы).
 - Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).

@@ -4,13 +4,13 @@ description: Не отображаются данные в Azure Application Ins
 ms.topic: conceptual
 ms.date: 07/23/2018
 ms.openlocfilehash: 2627fde55f4177798d04aab02db169f3117d32dd
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77665907"
 ---
-# <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок без Application Insights данных для .NET и .NET Core
+# <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение проблем без данных - Исследования приложений для .NET/.NET Core
 
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
 *В Application Insights отображается только часть событий, создаваемых приложением.*
@@ -18,15 +18,15 @@ ms.locfileid: "77665907"
 * Если постоянно отображается одна и та же часть, это может быть связано с адаптивной [выборкой](../../azure-monitor/app/sampling.md). Чтобы проверить это, откройте область поиска (из колонки "Обзор") и посмотрите на экземпляр запроса или другого события. В нижней части раздела свойств нажмите кнопку "...", чтобы отобразить все сведения свойств. Если число запросов > 1, то выборка работает.
 * В противном случае, возможно, превышено [ограничение на скорость передачи данных](../../azure-monitor/app/pricing.md#limits-summary) для вашего плана ценообразования. Эти ограничения применяются в пропорционально по минутам.
 
-*Я столкнулся с потерей данных случайным образом.*
+*Я испытываю потерю данных случайным образом.*
 
-* Проверьте, возникают ли потери данных в [канале телеметрии](telemetry-channels.md#does-the-application-insights-channel-guarantee-telemetry-delivery-if-not-what-are-the-scenarios-in-which-telemetry-can-be-lost)
+* Проверьте, если вы испытываете потерю данных в [Telemetry Channel](telemetry-channels.md#does-the-application-insights-channel-guarantee-telemetry-delivery-if-not-what-are-the-scenarios-in-which-telemetry-can-be-lost)
 
-* Проверьте наличие известных проблем в [репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet/issues) канала телеметрии.
+* Проверьте наличие известных проблем в Репо Telemetry Channel [GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet/issues)
 
-*Я столкнулся с потерей данных в консольном приложении или в веб-приложении, когда приложение собирается закончить работу.*
+*Я испытываю потерю данных в console App или в Web App, когда приложение вот-вот прекратится.*
 
-* Канал пакета SDK хранит данные телеметрии в буфере и отправляет их в пакетах. Если приложение завершает работу, может потребоваться явно вызвать метод [flush ()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от фактического используемого [канала](telemetry-channels.md#built-in-telemetry-channels) .
+* Канал SDK сохраняет телеметрию в буфере и отправляет их партиями. Если приложение закрывается, возможно, потребуется явно вызвать [флеш()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от используемого [канала.](telemetry-channels.md#built-in-telemetry-channels)
 
 ## <a name="no-data-from-my-server"></a>Нет данных с моего сервера
 *На моем веб-сервере установлено приложение, но данные телеметрии сервера не отображаются. На компьютере разработки все работало хорошо.*
@@ -34,19 +34,19 @@ ms.locfileid: "77665907"
 * Возможно, проблема в брандмауэре. [Установите исключения брандмауэра для отправки данных Application Insights](../../azure-monitor/app/ip-addresses.md).
 * На сервере IIS могут отсутствовать некоторые предварительные условия: расширяемость .NET 4.5 и ASP.NET 4.5.
 
-*Я [установил монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md) на моем веб-сервере для мониторинга существующих приложений. Результаты не отображаются.*
+*Я [установил status Monitor](../../azure-monitor/app/monitor-performance-live-website-now.md) на своем веб-сервере для мониторинга существующих приложений. Я не вижу никаких результатов.*
 
 * См. раздел [Устранение неполадок](../../azure-monitor/app/monitor-performance-live-website-now.md#troubleshoot).
 
-## <a name="q01"></a>Параметр "Добавление Application Insights" в Visual Studio не отображается
+## <a name="no-add-application-insights-option-in-visual-studio"></a><a name="q01"></a>Параметр "Добавление Application Insights" в Visual Studio не отображается
 *Когда я щелкаю существующий проект в обозревателе решений правой кнопкой мыши, параметры Application Insights не отображаются.*
 
 * Средства Application Insights поддерживают не все типы проектов .NET. Проекты WCF и веб-проекты поддерживаются. В проекты других типов, например в приложения-службы и классические приложения, можно [вручную добавить пакет SDK службы Application Insights](../../azure-monitor/app/windows-desktop.md).
 * Убедитесь в том, что установлена версия [Visual Studio 2013 с обновлением 3 или более поздним](https://docs.microsoft.com/visualstudio/releasenotes/vs2013-update3-rtm-vs). Решение поставляется предварительно установленным с аналитическими средствами для разработчиков в рамках пакета Application Insights SDK.
 * Выберите элементы **Сервис**, **Расширения и обновления** и убедитесь, что пакет **Аналитические средства для разработчиков** установлен и включен. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
-* Откройте диалоговое окно "Новый проект" и выберите "Веб-приложение ASP.NET". Если параметр Application Insights отображается, соответствующие средства установлены. В противном случае попробуйте удалить и повторно установить Developer Analytics Tools.
+* Откройте диалоговое окно "Новый проект" и выберите "Веб-приложение ASP.NET". Если параметр Application Insights отображается, соответствующие средства установлены. Если нет, попробуйте установить, а затем переустановить инструменты для аналитики разработчиков.
 
-## <a name="q02"></a>Сбой при добавлении Application Insights
+## <a name="adding-application-insights-failed"></a><a name="q02"></a>Сбой при добавлении Application Insights
 *При попытке добавить Application Insights в существующий проект я вижу сообщение об ошибке.*
 
 Вероятные причины:
@@ -55,18 +55,18 @@ ms.locfileid: "77665907"
 * В вашей учетной записи Azure возникли неполадки.
 * У вас есть только [доступ на чтение в подписке или группе, в которой вы пытаетесь создать новый ресурс](../../azure-monitor/app/resources-roles-access-control.md).
 
-Устранение ошибки:
+Исправление:
 
 * Убедитесь, что вы указали правильные учетные данные для входа в учетную запись Azure.
 * В браузере убедитесь, что у вас есть доступ к [порталу Azure](https://portal.azure.com). Откройте параметры и проверьте, нет ли каких-либо ограничений.
 * [Добавьте Application Insights в существующий проект](../../azure-monitor/app/asp-net.md). В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт "Добавить Application Insights".
 
-## <a name="emptykey"></a>Появляется сообщение об ошибке «ключ инструментирования не может быть пустым»
+## <a name="i-get-an-error-instrumentation-key-cannot-be-empty"></a><a name="emptykey"></a>Появляется сообщение об ошибке «ключ инструментирования не может быть пустым»
 Вероятно, произошла ошибка при установке Application Insights или же адаптера ведения журнала.
 
 В обозревателе решений щелкните проект правой кнопкой мыши и выберите **Application Insights > Настроить Application Insights**. Появится диалоговое окно с предложением войти в Azure и создать новый ресурс Application Insights или повторно использовать уже существующий.
 
-## <a name="NuGetBuild"></a> На сервере сборки возникает ошибка NuGet package(s) are missing (Пакеты NuGet отсутствуют).
+## <a name="nuget-packages-are-missing-on-my-build-server"></a><a name="NuGetBuild"></a> На сервере сборки возникает ошибка NuGet package(s) are missing (Пакеты NuGet отсутствуют).
 *Когда я выполняю отладку на компьютере для разработки, сборка выполняется без ошибок, но на сервере сборки отображается ошибка NuGet.*
 
 См. сведения о [восстановлении пакетов NuGet](https://docs.nuget.org/Consume/Package-Restore) и [автоматическом восстановлении пакетов](https://docs.nuget.org/Consume/package-restore/migrating-to-automatic-package-restore).
@@ -80,13 +80,13 @@ ms.locfileid: "77665907"
 * Аналитические средства для разработчиков отключены в Visual Studio.
 * У вас установлена более старая версия Visual Studio, чем версия 2013 с обновлением 3.
 
-Устранение ошибки:
+Исправление:
 
 * Обновите Visual Studio до версии 2013 с обновлением 3 или более поздней.
-* Выберите элементы **Сервис**, **Расширения и обновления** и убедитесь, что пакет **Аналитические средства для разработчиков** установлен и включен. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
+* Выберите **инструменты,** **расширения и обновления** и убедитесь, что **инструменты Developer Analytics** установлены и включены. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
 * В обозревателе решений щелкните проект правой кнопкой мыши. Если вы видите команду **Application Insights > Настроить Application Insights**, используйте ее, чтобы подключить проект к ресурсу в службе Application Insights.
 
-В противном случае тип проекта не поддерживается напрямую средствами аналитики для разработчиков. Для просмотра данных телеметрии войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
+В противном случае тип проекта не поддерживается напрямую инструментами аналитики разработчиков. Для просмотра данных телеметрии войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
 
 ## <a name="access-denied-on-opening-application-insights-from-visual-studio"></a>При открытии Application Insights из Visual Studio возникает ошибка "Доступ запрещен"
 *При выборе команды меню "Открыть Application Insights" выполняется переход на портал Azure, но при этом появляется сообщение об ошибке "Доступ запрещен".*
@@ -94,7 +94,7 @@ ms.locfileid: "77665907"
 При вводе учетных данных Майкрософт, которые вы в последний раз использовали в стандартном браузере, отсутствует доступ к [ресурсу, который был создан при добавлении Application Insights в это приложение](../../azure-monitor/app/asp-net.md). Есть две вероятные причины:
 
 * Возможно, у вас не одна учетная запись Майкрософт, а несколько — например, рабочая и личная. В последний раз вы использовали в браузере по умолчанию не ту учетную запись, с помощью которой [добавляли Application Insights в проект](../../azure-monitor/app/asp-net.md).
-  * Исправление. Щелкните свое имя в правом верхнем углу окна браузера и выйдите из него. Затем войдите в систему, используя учетную запись с доступом. Затем на панели навигации слева щелкните Application Insights и выберите приложение.
+  * Исправление: Нажмите на свое имя в правом верхнем ряде с окном браузера и выйти. Затем вопием со счетом, который имеет доступ. Затем на панели навигации слева щелкните Application Insights и выберите приложение.
 * Кто-то другой добавил Application Insights в проект и забыл предоставить вам [доступ к группе ресурсов](../../azure-monitor/app/resources-roles-access-control.md) , в которой он был создан.
   * Исправление: если этот пользователь использовал рабочую или учебную учетную запись, возможно, он добавил вас в группу или предоставил вам индивидуальный доступ к группе ресурсов.
 
@@ -108,19 +108,19 @@ ms.locfileid: "77665907"
 
 Ключ инструментирования в файле ApplicationInsights.config контролирует, куда отправляются данные телеметрии. Строка в файле проекта контролирует, какой ресурс открывается при использовании команды в Visual Studio.
 
-Устранение ошибки:
+Исправление:
 
 * В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт Application Insights, а затем — "Настроить Application Insights". В открывшемся диалоговом окне можно отправить данные телеметрии в существующий ресурс или создать новый. Или сделайте так:
 * Откройте ресурс напрямую. Войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
 
 ## <a name="where-do-i-find-my-telemetry"></a>Где найти мои данные телеметрии
-*Я вошел в [портал Microsoft Azure](https://portal.azure.com), и я ищу панель мониторинга домашней панели Azure. Итак, где найти данные Application Insights?*
+*Я вписался на [портал Microsoft Azure](https://portal.azure.com)и смотрю на домашнюю панель мониторинга Azure. Так где же я могу найти данные application Insights?*
 
 * На панели навигации слева щелкните Application Insights и выберите имя приложения. Если проекты не отображаются, [добавьте или настройте Application Insights в своем веб-проекте](../../azure-monitor/app/asp-net.md).  
   Вы увидите несколько сводных диаграмм. Щелкните любую из них, чтобы увидеть более подробные данные.
 * В Visual Studio во время отладки приложения нажмите кнопку Application Insights.
 
-## <a name="q03"></a> Не отображаются данные сервера (или вообще какие-либо данные)
+## <a name="no-server-data-or-no-data-at-all"></a><a name="q03"></a> Не отображаются данные сервера (или вообще какие-либо данные)
 *После запуска приложения и открытия службы Application Insights в Microsoft Azure на всех диаграммах отображаются сообщения "Сведения о сборе…" или "Не настроено".* Или отображаются *только представление страницы и пользовательские данные, но нет данных сервера.*
 
 * Запустите приложение в режиме отладки в Visual Studio (F5). Используйте приложение таким образом, чтобы создать данные телеметрии. Проверьте, можете ли вы просматривать события, зарегистрированные в окне вывода Visual Studio.  
@@ -136,7 +136,7 @@ ms.locfileid: "77665907"
 * Возможно, вы написали код для [серверного пакета SDK](../../azure-monitor/app/api-custom-events-metrics.md), который мог изменить ключ инструментирования в экземплярах `TelemetryClient` или в `TelemetryContext`. Или вы создали [конфигурацию фильтра или выборки](../../azure-monitor/app/api-filtering-sampling.md) , которая отфильтровывает слишком много данных.
 * Если вы вносили изменения в файл ApplicationInsights.config, внимательно проверьте конфигурацию [TelemetryInitializer и TelemetryProcessor](../../azure-monitor/app/api-filtering-sampling.md). Тип или параметр с неправильным именем может стать причиной неотправки данных пакетом SDK.
 
-## <a name="q04"></a>Нет данных об использовании, браузере и просмотрах страниц
+## <a name="no-data-on-page-views-browsers-usage"></a><a name="q04"></a>Нет данных об использовании, браузере и просмотрах страниц
 *Данные отображаются на диаграммах "Время ответа сервера" и "Запросы сервера", но отсутствуют в колонках "Время загрузки страницы", "Браузер" или "Использование".*
 
 Данные поступают из сценариев на веб-страницах. 
@@ -159,10 +159,10 @@ ms.locfileid: "77665907"
 
 ## <a name="i-used-to-see-data-but-it-has-stopped"></a>Ранее видимые данные перестали отображаться
 * Проверьте [блог состояний](https://blogs.msdn.com/b/applicationinsights-status/).
-* Вы достигли месячной квоты точек данных? Чтобы узнать, откройте параметры, квоту и цены. Если это так, вы можете обновить план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
+* Вы достигли месячной квоты точек данных? Откройте настройки /квоты и цены, чтобы узнать. Если это так, вы можете обновить свой план, или платить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
 
 ## <a name="i-dont-see-all-the-data-im-expecting"></a>Не отображаются все данные, которые ожидалось увидеть
-Если ваше приложение отправляет большие объемы данных, а вы используете Application Insights SDK для ASP.NET версии 2.0.0-beta3 или более поздней, может сработать функция [адаптивной выборки](../../azure-monitor/app/sampling.md) и будет отправлена только часть данных телеметрии.
+Если ваше приложение отправляет много данных, и вы используете Application Insights SDK для ASP.NET версии 2.0.0-beta3 или позже, функция [адаптивной выборки](../../azure-monitor/app/sampling.md) может работать и отправлять только процент от вашей телеметрии.
 
 Ее можно отключить, но это не рекомендуется. Выборка разработана таким образом, чтобы связанные данные телеметрии правильно передавались для диагностических целей.
 
@@ -209,7 +209,7 @@ ms.locfileid: "77665907"
 
 1. Установите пакет [Microsoft.AspNet.ApplicationInsights.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNet.ApplicationInsights.HostingStartup) из NuGet. Устанавливаемая версия должна соответствовать текущей установленной версии `Microsoft.ApplicationInsights`
 
-Последняя версия Microsoft. ApplicationInsights. AspNetCore — 2.8.2, и она ссылается на Microsoft. ApplicationInsights версии 2.11.2. Таким образом, устанавливаемая версия Microsoft. AspNet. ApplicationInsights. Хостингстартуп должна быть 2.11.2
+Последняя версия Microsoft.ApplicationInsights.AspNetCore составляет 2.8.2, и это относится к версии Microsoft.ApplicationInsights 2.11.2. Таким образом, версия Microsoft.AspNet.ApplicationInsights.HostingStartup, который будет установлен должен быть 2.11.2
 
 2. Изменить `ConfigureServices` метод в вашем `Startup.cs` классе:
 
@@ -228,24 +228,24 @@ ms.locfileid: "77665907"
 4. Когда вы закончите, отмените эти изменения.
 
 
-## <a name="PerfView"></a>Получение журналов с помощью PerfView
-[PerfView](https://github.com/Microsoft/perfview) — это бесплатное средство диагностики и анализа производительности, которое помогает изолировать ресурсы ЦП, памяти и другие проблемы, собирая и визуализируя диагностические сведения из многих источников.
+## <a name="collect-logs-with-perfview"></a><a name="PerfView"></a>Сбор журналов с Помощью PerfView
+[PerfView](https://github.com/Microsoft/perfview) — это бесплатный инструмент диагностики и анализа производительности, который помогает изолировать процессор, память и другие проблемы, собирая и визуализируя информацию о диагностике из многих источников.
 
-Журнал Application Insights SDK регистрирует журналы самостоятельного устранения неполадок, которые можно записать с помощью PerfView.
+Приложение Insights SDK журналevent EventSource самоустранения журналов, которые могут быть захвачены PerfView.
 
-Чтобы получить журналы, скачайте PerfView и выполните следующую команду:
+Чтобы собрать журналы, загрузите PerfView и запустите эту команду:
 ```cmd
 PerfView.exe collect -MaxCollectSec:300 -NoGui /onlyProviders=*Microsoft-ApplicationInsights-Core,*Microsoft-ApplicationInsights-Data,*Microsoft-ApplicationInsights-WindowsServer-TelemetryChannel,*Microsoft-ApplicationInsights-Extensibility-AppMapCorrelation-Dependency,*Microsoft-ApplicationInsights-Extensibility-AppMapCorrelation-Web,*Microsoft-ApplicationInsights-Extensibility-DependencyCollector,*Microsoft-ApplicationInsights-Extensibility-HostingStartup,*Microsoft-ApplicationInsights-Extensibility-PerformanceCollector,*Microsoft-ApplicationInsights-Extensibility-EventCounterCollector,*Microsoft-ApplicationInsights-Extensibility-PerformanceCollector-QuickPulse,*Microsoft-ApplicationInsights-Extensibility-Web,*Microsoft-ApplicationInsights-Extensibility-WindowsServer,*Microsoft-ApplicationInsights-WindowsServer-Core,*Microsoft-ApplicationInsights-Extensibility-EventSourceListener,*Microsoft-ApplicationInsights-AspNetCore
 ```
 
-При необходимости эти параметры можно изменить.
-- **Максколлектсек**. Задайте этот параметр, чтобы предотвратить неограниченный запуск PerfView и влияние на производительность сервера.
-- **Онлипровидерс**. Установите этот параметр, чтобы получать только журналы из пакета SDK. Этот список можно настроить в соответствии с конкретным расследованиям. 
-- **Ногуи**. Установите этот параметр, чтобы получать журналы без графического пользовательского интерфейса.
+Вы можете изменить эти параметры по мере необходимости:
+- **MaxCollectSec**. Установите этот параметр, чтобы предотвратить бессрочное запуск PerfView и повлиять на производительность сервера.
+- **Толькопоставщики**. Установите этот параметр, чтобы собирать только журналы из SDK. Вы можете настроить этот список на основе ваших конкретных исследований. 
+- **NoGui**. Установите этот параметр для сбора журналов без Gui.
 
 
-Для получения дополнительных сведений
-- [Запись трассировок производительности с помощью PerfView](https://github.com/dotnet/roslyn/wiki/Recording-performance-traces-with-PerfView).
+Дополнительные сведения
+- [Запись следов производительности с PerfView](https://github.com/dotnet/roslyn/wiki/Recording-performance-traces-with-PerfView).
 - [Источники событий Application Insights](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/ETW)
 
 ## <a name="still-not-working"></a>По-прежнему не работает...

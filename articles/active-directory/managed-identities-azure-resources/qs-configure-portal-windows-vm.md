@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых удостоверений с помощью портал Azure Azure AD
+title: Настройка управляемых идентификаторов с помощью портала Azure - Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью портала Azure.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 11/10/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 75971dbd35a6b29306bc87988423ab662a343705
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79266667"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-vm-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure
@@ -30,7 +30,7 @@ ms.locfileid: "79266667"
 
 Из этой статьи вы узнаете, как включать и отключать управляемые удостоверения, назначаемые пользователем и назначаемые системой, для виртуальной машины Azure с помощью портала Azure. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -61,7 +61,7 @@ ms.locfileid: "79266667"
 
 2. Перейдите к нужной виртуальной машине и выберите **Удостоверение**.
 
-3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.** , а затем — **Сохранить**.
+3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.**, а затем — **Сохранить**.
 
    ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png)  
 
@@ -75,7 +75,7 @@ ms.locfileid: "79266667"
 
 2. Перейдите к нужной виртуальной машине и выберите **Удостоверение**.
 
-3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Выкл.** , а затем — **Сохранить**.
+3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Выкл.**, а затем — **Сохранить**.
 
    ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png)
 

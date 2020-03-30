@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: aebd6dee9314d6e5641988767c024790b6b721f4
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79251158"
 ---
 # <a name="create-contentkeys-with-net"></a>Создание ContentKey с использованием .NET 
 > [!div class="op_single_selector"]
-> * [REST](media-services-rest-create-contentkey.md)
+> * [Остальные](media-services-rest-create-contentkey.md)
 > * [.NET](media-services-dotnet-create-contentkey.md)
 > 
 > 
@@ -70,7 +70,7 @@ ms.locfileid: "79251158"
     }
 ```
 
-## <a id="envelope_contentkey"></a>Создание ContentKey конвертного типа
+## <a name="create-envelope-type-contentkey"></a><a id="envelope_contentkey"></a>Создание ContentKey конвертного типа
 В следующем фрагменте кода создается ключ содержимого конвертного типа шифрования. Затем ключ связывается с указанным ресурсом.
 
 ```csharp
@@ -108,7 +108,7 @@ call
 ```
 
 
-## <a id="common_contentkey"></a>Создание ContentKey общего типа
+## <a name="create-common-type-contentkey"></a><a id="common_contentkey"></a>Создание ContentKey общего типа
 В следующем фрагменте кода создается ключ содержимого общего типа шифрования. Затем ключ связывается с указанным ресурсом.
 
 ```csharp

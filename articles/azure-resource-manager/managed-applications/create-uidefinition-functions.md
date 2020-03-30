@@ -1,15 +1,15 @@
 ---
-title: Создание функций определения пользовательского интерфейса
+title: Создание функций определения uI
 description: Сведения о функциях, используемых при создании определений пользовательского интерфейса для управляемых приложений Azure.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 10/12/2017
 ms.author: tomfitz
 ms.openlocfilehash: 6e56c5e528a17d42a75da54158f00857a917645c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79248454"
 ---
 # <a name="createuidefinition-functions"></a>Функции CreateUiDefinition
@@ -362,7 +362,7 @@ ms.locfileid: "79248454"
 ## <a name="logical-functions"></a>Логические функции
 Эти функции можно использовать в условных выражениях. Некоторые функции не поддерживают все типы данных JSON.
 
-### <a name="equals"></a>equals (равно)
+### <a name="equals"></a>equals
 Возвращает `true`, если оба параметра имеют один и тот же тип и значение. Эта функция поддерживает все типы данных JSON.
 
 В следующем примере возвращается `true`.

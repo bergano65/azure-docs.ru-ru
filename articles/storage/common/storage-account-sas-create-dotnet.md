@@ -1,7 +1,7 @@
 ---
-title: Создание SAS учетной записи с помощью .NET
+title: Создание учетной записи SAS с помощью .NET
 titleSuffix: Azure Storage
-description: Узнайте, как создать подписанный URL-адрес учетной записи (SAS) с помощью клиентской библиотеки .NET.
+description: Узнайте, как создать общую подпись доступа (SAS) с помощью клиентской библиотеки .NET.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,21 +11,21 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 9da27cef7bafa94715a42db86fc5a5675a049eb1
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79137875"
 ---
-# <a name="create-an-account-sas-with-net"></a>Создание SAS учетной записи с помощью .NET
+# <a name="create-an-account-sas-with-net"></a>Создание учетной записи SAS с помощью .NET
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать ключ учетной записи хранения для создания SAS учетной записи с [клиентской библиотекой службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
+В этой статье показано, как использовать ключ учетной записи хранилища для создания sAS учетной записи с [библиотекой клиентов Azure Storage для .NET.](/dotnet/api/overview/azure/storage?view=azure-dotnet)
 
-## <a name="create-an-account-sas"></a>Создание SAS учетной записи
+## <a name="create-an-account-sas"></a>Create an account SAS (Создание SAS на уровне учетной записи)
 
-Чтобы создать SAS учетной записи для контейнера, вызовите метод [CloudStorageAccount. GetSharedAccessSignature](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.getsharedaccesssignature) .
+Чтобы создать учетную запись SAS для контейнера, позвоните в [метод CloudStorageAccount.GetSharedAccessSignature.](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.getsharedaccesssignature)
 
 В следующем примере кода показано создание подписанного URL-адреса учетной записи, который действует для службы BLOB-объектов или службы файлов и предоставляет клиенту права на чтение, запись и получение списков через API-интерфейсы уровня службы. В SAS учетной записи указано ограничение на использование протоколов, поэтому запрос должен быть выполнен с помощью протокола HTTPS. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -51,9 +51,9 @@ static string GetAccountSASToken()
 }
 ```
 
-## <a name="use-an-account-sas-from-a-client"></a>Использование SAS учетной записи из клиента
+## <a name="use-an-account-sas-from-a-client"></a>Использование учетной записи SAS от клиента
 
-Чтобы использовать SAS учетной записи для доступа к API уровня службы для службы BLOB-объектов, создайте объект клиента службы BLOB-объектов, используя SAS и конечную точку хранилища BLOB-объектов для вашей учетной записи хранения. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
+Чтобы использовать учетную запись SAS для доступа к AA уровня обслуживания для службы Blob, постройте клиентский объект Blob, используя SAS и конечную точку хранения Blob для вашей учетной записи хранения. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```csharp
 static void UseAccountSAS(string sasToken)
@@ -97,5 +97,5 @@ static void UseAccountSAS(string sasToken)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](storage-sas-overview.md)
+- [Предоставляетограниченный доступ к ресурсам хранения Azure с помощью общих подписей доступа (SAS)](storage-sas-overview.md)
 - [Create an account SAS](/rest/api/storageservices/create-account-sas) (Создание SAS на уровне учетной записи)

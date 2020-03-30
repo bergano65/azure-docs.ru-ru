@@ -1,6 +1,6 @@
 ---
 title: Последовательность сообщений и метки времени служебной шины Azure | Документация Майкрософт
-description: В этой статье объясняется, как сохранить последовательность и упорядочение (с метками времени) сообщений служебной шины Azure.
+description: В этой статье объясняется, как сохранить секвенирование и заказ (с метками времени) сообщений Azure Service Bus.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 54d774c00fa650cb9608f46cc07b9d899709eaa5
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79261662"
 ---
 # <a name="message-sequencing-and-timestamps"></a>Последовательность сообщений и метки времени

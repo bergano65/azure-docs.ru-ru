@@ -4,10 +4,10 @@ description: Сведения о способах проверки подлин�
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.openlocfilehash: a1f4abbabe428a09492efefca4a8da9801b9f68d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79258581"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Безопасное подключение к кластеру
@@ -344,7 +344,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 `https://<your-cluster-endpoint>:19080/Explorer`
 
-Вам будет автоматически предложено войти в систему с помощью AAD.
+Вам автоматически предлагается войти в систему AAD.
 
 ### <a name="connect-to-a-secure-cluster-using-a-client-certificate"></a>Подключение к защищенному кластеру с использованием сертификата клиента
 

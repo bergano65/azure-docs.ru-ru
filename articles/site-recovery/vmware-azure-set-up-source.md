@@ -1,5 +1,5 @@
 ---
-title: Настройка исходных параметров для аварийного восстановления VMware в Azure с помощью Azure Site Recovery
+title: Настройка параметров исходных настойки VMware для восстановления аварийного газа в Azure с помощью восстановления сайта Azure
 description: В этой статье описано, как настроить локальное окружение для репликации виртуальных машин VMware в Azure с помощью Azure Site Recovery.
 services: site-recovery
 author: Rajeswari-Mamilla
@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: ff01aed92669acb193ff149ea9298550134f42a3
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79257060"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
-В этой статье описано, как настроить исходное локальное окружение для репликации виртуальных машин VMware в Azure. Эта статья содержит инструкции по выбору сценария репликации, настройке локального компьютера в качестве сервера конфигурации Site Recovery и автоматическому обнаружению локальных виртуальных машин.
+В этой статье описано, как настроить исходное локальное окружение для репликации виртуальных машин VMware в Azure. Статья включает в себя шаги для выбора сценария репликации, настройки натерритории машины в качестве сервера конфигурации сайта и автоматического обнаружения предпосылок для вс-мина.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы:
 
@@ -31,9 +31,9 @@ ms.locfileid: "79257060"
 
 1. В колонке **Хранилища служб восстановления** выберите имя хранилища. В этом сценарии мы используем имя **ContosoVMVault**.
 2. В разделе **Приступая к работе** выберите Site Recovery. Затем выберите **Подготовка инфраструктуры**.
-3. Выберите **Protection goal** (Цель защиты)  > **Where are your machines located** (Где находятся компьютеры?), а затем — **On-premises** (Локально).
-4. В разделе **Куда следует реплицировать компьютеры?** выберите **To Azure** (В Azure).
-5. В разделе **Are your machines virtualized** (Ваши компьютеры виртуализированы?) выберите **Yes, with VMware vSphere Hypervisor** (Да, с помощью гипервизора VMware vSphere). Нажмите кнопку **ОК**.
+3. В **цели** > защиты**Где находятся ваши машины,** выберите **On-premises**.
+4. **Где вы хотите воспроизвести ваши машины,** выберите для **Azure**.
+5. В разделе **Are your machines virtualized** (Ваши компьютеры виртуализированы?) выберите **Yes, with VMware vSphere Hypervisor** (Да, с помощью гипервизора VMware vSphere). Затем выберите **OK**.
 
 ## <a name="set-up-the-configuration-server"></a>Настройка сервера конфигурации
 
@@ -41,7 +41,7 @@ ms.locfileid: "79257060"
 
 1. Изучите дополнительные сведения о [необходимых компонентах](vmware-azure-deploy-configuration-server.md#prerequisites) для развертывания сервера конфигурации.
 2. [Проверьте значения емкости](vmware-azure-deploy-configuration-server.md#sizing-and-capacity-requirements) для развертывания.
-3. [Скачайте](vmware-azure-deploy-configuration-server.md#download-the-template) и [импортируйте](vmware-azure-deploy-configuration-server.md#import-the-template-in-vmware) шаблон OVA для настройки локальной виртуальной машины VMware, работающей на сервере конфигурации. Лицензия, предоставленная с помощью шаблона, является лицензией оценки и действительна в течение 180 дней. Разместите этот период, клиент должен активировать Windows с приобретенной лицензией.
+3. [Скачайте](vmware-azure-deploy-configuration-server.md#download-the-template) и [импортируйте](vmware-azure-deploy-configuration-server.md#import-the-template-in-vmware) шаблон OVA для настройки локальной виртуальной машины VMware, работающей на сервере конфигурации. Лицензия с шаблоном является лицензией оценки и действительна в течение 180 дней. После этого периода клиент угаданно активирует окна с закупленной лицензией.
 4. Включите виртуальную машину VMware и [зарегистрируйте ее](vmware-azure-deploy-configuration-server.md#register-the-configuration-server-with-azure-site-recovery-services) в хранилище служб восстановления.
 
 ## <a name="azure-site-recovery-folder-exclusions-from-antivirus-program"></a>Исключение папок Azure Site Recovery из антивирусной программы
@@ -69,7 +69,7 @@ ms.locfileid: "79257060"
   - C:\ProgramData\ASRSetupLogs.
   - C:\ProgramData\LogUploadServiceLogs.
   - C:\inetpub.
-  - Каталог установки Site Recovery Server. Например, это может быть E:\Program Files (x86) \Microsoft Azure Site Recovery.
+  - Каталог установки сервера восстановления сайта. Например, это может быть E:\Program Files (x86) \Microsoft Azure Site Recovery.
 
 ### <a name="if-antivirus-software-is-active-on-scale-out-process-servermaster-target"></a>Антивирусное программное обеспечение работает на горизонтально масштабируемом сервере процессов или главном целевом объекте
 
@@ -81,7 +81,7 @@ ms.locfileid: "79257060"
 4. C:\ProgramData\ASRSetupLogs.
 5. C:\ProgramData\LogUploadServiceLogs.
 6. C:\ProgramData\Microsoft Azure Site Recovery.
-7. Azure Site Recovery каталог установки сервера обработки с балансировкой нагрузки, например: C:\Program Files (x86) \Microsoft Azure Site Recovery
+7. Восстановление сайта Azure загружает сбалансированный каталог установки сервера процесса, Пример: C: «Файлы программы (x86)»Восстановление сайта Microsoft Azure
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,7 +1,7 @@
 ---
 title: Экспорт и удаление данных
 titleSuffix: ML Studio (classic) - Azure
-description: Данные в продукте, хранящиеся в Машинное обучение Azure Studio (классическая модель), доступны для экспорта и удаления с помощью портал Azure, а также через API-интерфейсы RESTFUL, прошедшие проверку подлинности. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. В этой статье показано, как это сделать.
+description: Данные о продуктах, хранящиеся в Azure Machine Learning Studio (классические), доступны для экспорта и удаления через портал Azure, а также через аутентифицированные AAP REST. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. В этой статье показано, как это сделать.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -11,17 +11,17 @@ ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 05/25/2018
 ms.openlocfilehash: c380d10d0c68794ec3810cea25341d68bb41400d
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79251691"
 ---
-# <a name="export-and-delete-in-product-user-data-from-azure-machine-learning-studio-classic"></a>Экспорт и удаление данных из пользовательского продукта из Машинное обучение Azure Studio (классическая модель)
+# <a name="export-and-delete-in-product-user-data-from-azure-machine-learning-studio-classic"></a>Экспорт и удаление данных пользователей в продукте из студии машинного обучения Azure (классический)
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
-Вы можете удалять или экспортировать данные продукции, хранящиеся в Машинное обучение Azure Studio (классическая модель), с помощью портал Azure, интерфейса Studio (классическая модель), PowerShell и API-интерфейсов RESTFUL с проверкой подлинности. В этой статье описано, каким образом это можно сделать. 
+Вы можете удалять или экспортировать данные о продукте, хранящиеся в Azure Machine Learning Studio (классический) с помощью портала Azure, интерфейса Studio (классический), PowerShell и аутентифицированных АПЫ REST. В этой статье описано, каким образом это можно сделать. 
 
 Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. 
 
@@ -29,17 +29,17 @@ ms.locfileid: "79251691"
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="what-kinds-of-user-data-does-studio-classic-collect"></a>Какие виды данных пользователей выполняет (классический) выбор из Studio?
+## <a name="what-kinds-of-user-data-does-studio-classic-collect"></a>Какие пользовательские данные собирает Студия (классический)?
 
 В этой службе данные пользователя состоят из информации о пользователях, имеющих разрешение на доступ к рабочим областям и записям телеметрии взаимодействия пользователя со службой.
 
-В Машинное обучение Studio (классическая модель) существует два типа пользовательских данных:
+В студии машинного обучения существует два вида пользовательских данных (классический):
 - **Личные данные учетной записи**. Идентификаторы учетной записи и адреса электронной почты, связанные с учетной записью.
 - **Данные клиента**. Данные, загружаемые для анализа.
 
-## <a name="studio-classic-account-types-and-how-data-is-stored"></a>Типы учетной записи Studio (классическая модель) и сведения о хранении данных
+## <a name="studio-classic-account-types-and-how-data-is-stored"></a>Типы учетных записей студии и способ хранения данных
 
-В Машинное обучение Studio (классическая модель) есть три типа учетных записей. Тип учетной записи определяет способ хранения данных и способы их удаления или экспорта.
+Есть три вида счетов в машинном обучении Studio (классический). Тип учетной записи определяет способ хранения данных и способы их удаления или экспорта.
 
 - **Гостевая рабочая область** — это бесплатная анонимная учетная запись. Вы регистрируетесь без предоставления учетных данных, таких как адрес электронной почты или пароль.
     -  Данные удаляются после истечения срока действия гостевой рабочей области.
@@ -55,13 +55,13 @@ ms.locfileid: "79251691"
     - Экспортировать пользовательские данные и данные о клиенте можно через пользовательский интерфейс, REST API или PowerShell.
     - Вы можете удалить данные на портале Azure.
 
-## <a name="delete"></a>Удаление данных рабочей области в студии (классическая модель) 
+## <a name="delete-workspace-data-in-studio-classic"></a><a name="delete"></a>Удаление данных рабочего пространства в Studio (классический) 
 
 ### <a name="delete-individual-assets"></a>Удаление отдельных ресурсов
 
 Пользователи могут удалять ресурсы в рабочей области, выделив их и нажав кнопку "Удалить".
 
-![Удаление ресурсов в Машинное обучение Studio (классическая модель)](./media/export-delete-personal-data-dsr/delete-studio-asset.png)
+![Удаление активов в студии машинного обучения (классический)](./media/export-delete-personal-data-dsr/delete-studio-asset.png)
 
 ### <a name="delete-an-entire-workspace"></a>Удаление всей рабочей области
 
@@ -69,11 +69,11 @@ ms.locfileid: "79251691"
 - Платная рабочая область. Удаление через портал Azure.
 - Бесплатная рабочая область. Используйте кнопку "Удалить" в области **Параметры**.
 
-![Удаление бесплатной рабочей области в Машинное обучение Studio (классическая модель)](./media/export-delete-personal-data-dsr/delete-studio-data-workspace.png)
+![Удаление свободного рабочего пространства в студии машинного обучения (классический)](./media/export-delete-personal-data-dsr/delete-studio-data-workspace.png)
  
-## <a name="export-studio-classic-data-with-powershell"></a>Экспорт данных студии (классическая модель) с помощью PowerShell
-Используйте PowerShell, чтобы экспортировать всю информацию в переносимый формат из Машинное обучение Azure Studio (классической) с помощью команд. Дополнительные сведения см. в статье [модуль PowerShell для машинное обучение Azure Studio (классическая модель)](powershell-module.md) .
+## <a name="export-studio-classic-data-with-powershell"></a>Экспортные студии (классические) данные с PowerShell
+Используйте PowerShell для экспорта всей информации в портативный формат из Azure Machine Learning Studio (классический) с помощью команд. Для получения информации смотрите модуль PowerShell для статьи [Azure Machine Learning Studio (классическая).](powershell-module.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Документацию, посвященную веб-службам и плану обязательств, см. в разделе [машинное обучение Azure Studio (классическая модель) REST API справочнике](https://docs.microsoft.com/rest/api/machinelearning/). 
+Для получения документации, охватывающей [Azure Machine Learning Studio (classic) REST API reference](https://docs.microsoft.com/rest/api/machinelearning/)веб-сервисы и биллинг плана обязательств, см. 

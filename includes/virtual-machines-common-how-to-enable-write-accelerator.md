@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: msraiye
 ms.service: virtual-machines
@@ -9,10 +9,10 @@ ms.date: 11/27/2019
 ms.author: raiye
 ms.custom: include file
 ms.openlocfilehash: 456d550659c04b2272c048fcd64fe73b1a11522a
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74566346"
 ---
 Ускоритель записи — это функция диска для виртуальных машин серии M в хранилище уровня "Премиум", использующих исключительно управляемые диски Azure. Как очевидно из названия, целью функции является уменьшение задержки операций ввода-вывода при записи в службу хранилища Azure уровня "Премиум". Ускоритель записи идеально подходит для случаев, когда требуется высокопроизводительное сохранение на диск обновлений файлов журнала для современных баз данных.
@@ -47,9 +47,9 @@ ms.locfileid: "74566346"
 | SKU виртуальной машины | Число дисков с ускорителем записи | Число дисковых операций ввода-вывода в секунду на виртуальную машину при использовании ускорителя записи |
 | --- | --- | --- |
 | M416ms_v2, M416s_v2| 16 | 20 000 |
-| M208ms_v2, M208s_v2| 8 | 10 000 |
+| M208ms_v2, M208s_v2| 8 | 10000 |
 | M128ms, M128s | 16 | 20 000 |
-| M64ms, M64ls, M64s | 8 | 10 000 |
+| M64ms, M64ls, M64s | 8 | 10000 |
 | M32ms, M32ls, M32ts, M32s | 4 | 5000 |
 | M16ms, M16s | 2 | 2500 |
 | M8ms, M8s | 1 | 1250 |
@@ -60,7 +60,7 @@ ms.locfileid: "74566346"
 
 В нескольких разделах ниже описано, как включить ускоритель записи на виртуальных жестких дисках службы хранилища Azure уровня "Премиум".
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 На данный момент к использованию ускорителя записи применяются предварительные требования, приведенные ниже.
 
@@ -171,7 +171,7 @@ Update-AzVM -ResourceGroupName $rgname -VM $vm
 
 Чтобы подключить диск с включенным ускорителем записи, выполните команду [az vm disk attach](https://docs.microsoft.com/cli/azure/vm/disk?view=azure-cli-latest#az-vm-disk-attach). Вы можете использовать следующий пример, если подставите собственные значения: `az vm disk attach -g group1 -vm-name vm1 -disk d1 --enable-write-accelerator`.
 
-Чтобы отключить ускоритель записи, выполните команду [az vm update](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-update), задав для свойств значение false: `az vm update -g group1 -n vm1 -write-accelerator 0=false 1=false`.
+Чтобы отключить ускоритель Write, используйте [обновление az vm,](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-update)установив свойства на ложные:`az vm update -g group1 -n vm1 -write-accelerator 0=false 1=false`
 
 ## <a name="enabling-write-accelerator-using-rest-apis"></a>Включение ускорителя записи через интерфейсы REST API
 

@@ -4,13 +4,13 @@ description: Счетчики производительности, событи
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.openlocfilehash: 5ff3d6a2b31425a3fb6857c8c6aed45f7ef18d64
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77669613"
 ---
-# <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений DOCKER в Application Insights (не рекомендуется)
+# <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений Docker в application Insights (Обезвреженные)
 
 > [!NOTE]
 > Эта статья признана устаревшей. Дополнительные сведения о наших текущих инвестициях в мониторинг контейнеров см. в статье [Общие сведения об Azure Monitor для контейнеров (предварительная версия)](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).
@@ -92,12 +92,12 @@ ms.locfileid: "77669613"
 
 * Установите пакет SDK Application Insights в приложении. Узнайте, как это сделать в [веб-приложениях Java](../../azure-monitor/app/java-get-started.md) и [Windows](../../azure-monitor/app/asp-net.md).
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Application Insights для Java](../../azure-monitor/app/java-get-started.md)
-* [Application Insights для Node.js](../../azure-monitor/app/nodejs.md)
+* [Использование Application Insights с Node.js](../../azure-monitor/app/nodejs.md)
 * [Application Insights для ASP.NET](../../azure-monitor/app/asp-net.md)

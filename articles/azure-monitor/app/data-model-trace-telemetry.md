@@ -1,21 +1,21 @@
 ---
-title: Модель данных Application Insights Azure — данные телеметрии трассировки
+title: Модель анализа данных приложений Azure - Телеметрия трассировки
 description: Модель данных Application Insights для телеметрии трассировки
 ms.topic: conceptual
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: 31958b26cdb8a7897cf0051af6600014c07949fd
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77671959"
 ---
 # <a name="trace-telemetry-application-insights-data-model"></a>Телеметрия трассировки: модель данных Application Insights
 
 Телеметрия трассировки (в [Application Insights](../../azure-monitor/app/app-insights-overview.md)) представляет инструкции трассировки стиля `printf`, доступные для текстового поиска. `Log4Net`, `NLog` и другие записи файла журнала на основе текста преобразуются в экземпляры этого типа. Трассировка не имеет измерений в качестве расширения.
 
-## <a name="message"></a>Message
+## <a name="message"></a>Сообщение
 
 Сообщение трассировки.
 
@@ -29,10 +29,10 @@ ms.locfileid: "77671959"
 
 [!INCLUDE [application-insights-data-model-properties](../../../includes/application-insights-data-model-properties.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр журналов трассировки .NET в Application Insights](../../azure-monitor/app/asp-net-trace-logs.md).
-- [Просмотр журналов трассировки Java в Application Insights](../../azure-monitor/app/java-trace-logs.md).
+- [Исследуйте журналы трасс Ява в Application Insights.](../../azure-monitor/app/java-trace-logs.md)
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.
 - [Написание пользовательской телеметрии трассировки](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace)
 - Ознакомление с [платформами](../../azure-monitor/app/platforms.md), поддерживаемыми Application Insights.

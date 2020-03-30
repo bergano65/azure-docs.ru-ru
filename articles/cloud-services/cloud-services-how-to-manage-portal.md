@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: 185bb9d03bec042a5c8e9223616b40eba6629e36
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79247531"
 ---
 # <a name="manage-cloud-services-in-the-azure-portal"></a>Управление облачными службами с помощью портала Azure
@@ -81,7 +81,7 @@ ms.locfileid: "79247531"
 
 Обратите внимание, что обновления гостевой ОС и операции восстановления службы также могут быть причиной сбоя переключения развертывания. Дополнительные сведения см. в статье [Устранение неполадок, которые могут возникнуть при развертывании облачной службы](cloud-services-troubleshoot-deployment-problems.md).
 
-**Переключается ли время простоя приложения? Как мне справиться?**
+**Навлекнет ли своп время простоя для моего приложения? Как я должен справиться с этим?**
 
 Как описано в предыдущем разделе, переключение развертывания обычно происходит быстро, потому что это просто изменение конфигурации в Azure Load Balancer. В некоторых случаях это может занять около 10 секунд и привести к временному сбою подключения. Чтобы ограничить воздействие на клиентов, рассмотрите возможность реализации [логики повтора для клиента](../best-practices-retry-general.md).
 
@@ -123,7 +123,7 @@ ms.locfileid: "79247531"
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).
-* Настройка [SSL-сертификатов](cloud-services-configure-ssl-certificate-portal.md).
+* Настройка [SSL-сертификатов.](cloud-services-configure-ssl-certificate-portal.md)
 
 
 

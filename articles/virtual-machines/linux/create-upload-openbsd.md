@@ -1,28 +1,28 @@
 ---
-title: Создание и передача образа OpenBSD
+title: Создание и загрузка изображения OpenBSD
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD-файл), содержащий операционную систему OpenBSD, для создания виртуальной машины Azure с помощью Azure CLI.
-author: thomas1206
+author: gbowerman
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 05/24/2017
-ms.author: huishao
-ms.openlocfilehash: d4ecc539d71933c4aecc9124b903c57cb72838de
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.author: guybo
+ms.openlocfilehash: 1ad1a66d67be7aefe4d9a7acae993e8788cbb193
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78969483"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80066744"
 ---
 # <a name="create-and-upload-an-openbsd-disk-image-to-azure"></a>Создание и передача образа жесткого диска OpenBSD в Azure
 В этой статье описывается, как создать и передать виртуальный жесткий диск, содержащий операционную систему OpenBSD. После передачи его можно использовать как свой собственный образ для создания виртуальной машины в Azure с помощью Azure CLI.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В данной статье предполагается, что у вас есть следующие элементы:
 
-* **Подписка Azure.** Если у вас нет учетной записи, то ее можно создать, что займет всего лишь несколько минут. Если у вас есть подписка MSDN, см. страницу [Ежемесячная сумма денег на счете в Azure для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). В противном случае узнайте, как [создать бесплатную пробную учетную запись](https://azure.microsoft.com/pricing/free-trial/).  
+* **Подписка Azure.** Если у вас нет учетной записи, то ее можно создать, что займет всего лишь несколько минут. Если у вас есть подписка MSDN, [см.](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) В противном случае узнайте, как [создать бесплатную пробную учетную запись](https://azure.microsoft.com/pricing/free-trial/).  
 * **Azure CLI.** Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
-* **Операционная система OpenBSD, установленная в VHD-файле** — поддерживаемая операционная система OpenBSD ([6,6 версии AMD64](https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/)) должна быть установлена на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов. Например, для создания VHD-файла и установки операционной системы можно использовать решение для виртуализации, например Hyper-V. Инструкции по установке и использованию Hyper-V см. в статье [Установка Hyper-V и создание виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
+* **Операционная система OpenBSD, установленная в файле .vhd** - поддерживаемая операционная система OpenBSD[(6.6 версия AMD64](https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/)) должна быть установлена на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов. Например, для создания VHD-файла и установки операционной системы можно использовать решение для виртуализации, например Hyper-V. Инструкции по установке и использованию Hyper-V см. в статье [Установка Hyper-V и создание виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 
 ## <a name="prepare-openbsd-image-for-azure"></a>Подготовка образа OpenBSD для Azure
@@ -94,7 +94,7 @@ Convert-VHD OpenBSD61.vhdx OpenBSD61.vhd -VHDType Fixed
 ```
 
 ## <a name="create-storage-resources-and-upload"></a>Создание и передача ресурсов хранилища
-Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Следующий пример создает группу ресурсов под названием *myResourceGroup* в *восточном* месте:
 
 ```azurecli
 az group create --name myResourceGroup --location eastus

@@ -17,15 +17,15 @@ ms.reviewer: jroth
 experimental: true
 experimental_id: d51f3cc6-753b-4e
 ms.openlocfilehash: 4627d9c4fa5c87e8e80ab80892062dabd77e9229
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79249715"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure-classic-deployment"></a>Подключение к виртуальной машине SQL Server в Azure (классическое развертывание)
 > [!div class="op_single_selector"]
-> * [Resource Manager](../sql/virtual-machines-windows-sql-connect.md)
+> * [Менеджер ресурсов](../sql/virtual-machines-windows-sql-connect.md)
 > * [Классический](../classic/sql-connect.md)
 > 
 > 
@@ -34,7 +34,7 @@ ms.locfileid: "79249715"
 В этом разделе показано, как подключиться к экземпляру SQL Server, выполняемому на виртуальной машине Azure. Сначала рассматриваются некоторые [общие сценарии подключения](#connection-scenarios), а затем предоставляются [подробные инструкции по настройке подключений SQL Server на виртуальной машине Azure](#steps-for-configuring-sql-server-connectivity-in-an-azure-vm).
 
 > [!IMPORTANT] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Если вы используете виртуальные машины Resource Manager, то ознакомьтесь со статьей [Подключение к виртуальной машине SQL Server в Azure (диспетчер ресурсов)](../sql/virtual-machines-windows-sql-connect.md).
+> Azure имеет две различные модели развертывания для создания и работы с ресурсами: [менеджер ресурсов и Classic.](../../../azure-resource-manager/management/deployment-models.md) В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Если вы используете виртуальные машины Resource Manager, то ознакомьтесь со статьей [Подключение к виртуальной машине SQL Server в Azure (диспетчер ресурсов)](../sql/virtual-machines-windows-sql-connect.md).
 
 ## <a name="connection-scenarios"></a>Сценарии подключения
 Способ подключения клиента к системе SQL Server, выполняемой на виртуальной машине, зависит от расположения клиента, а также конфигурации компьютера и сети. Ниже приведены соответствующие сценарии.
@@ -58,7 +58,7 @@ ms.locfileid: "79249715"
 ### <a name="connect-to-sql-server-over-the-internet"></a>Подключение к SQL Server через Интернет
 Если вы хотите подключиться к ядру СУБД SQL Server из Интернета, необходимо создать конечную точку виртуальной машины для входящих подключений TCP. На данном этапе настройки Azure направляет входящий трафик TCP-порта на TCP-порт, доступный для виртуальной машины.
 
-Для подключения через Интернет необходимо использовать DNS-имя и номер порта конечной точки виртуальной машины (их настройка описывается далее в этой статье). Чтобы найти DNS-имя, перейдите на портал Azure и щелкните **Виртуальные машины (классика)** . Затем выберите свою виртуальную машину. **DNS-имя** показано в разделе **Обзор**.
+Для подключения через Интернет необходимо использовать DNS-имя и номер порта конечной точки виртуальной машины (их настройка описывается далее в этой статье). Чтобы найти имя DNS, перейдите на портал Azure и выберите **виртуальные машины (классические).** Затем выберите свою виртуальную машину. **DNS-имя** показано в разделе **Обзор**.
 
 Например, рассмотрим классическую виртуальную машину **mysqlvm** с DNS-именем **mysqlvm7777.cloudapp.net** и конечной точкой **57500**. При условии, что подключение настроено правильно, для доступа к виртуальной машине из любого расположения в Интернете может использоваться следующая строка подключения.
 
@@ -89,9 +89,9 @@ ms.locfileid: "79249715"
 * [Открытие портов TCP в брандмауэре Windows](#open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine)
 * [Настройка SQL Server для прослушивания через протокол TCP](#configure-sql-server-to-listen-on-the-tcp-protocol)
 * [Настройка SQL Server для аутентификации в смешанном режиме](#configure-sql-server-for-mixed-mode-authentication)
-* [Создание имен входа для аутентификации SQL Server](#create-sql-server-authentication-logins)
-* [Определение DNS-имени виртуальной машины](#determine-the-dns-name-of-the-virtual-machine)
-* [Подключение к ядру СУБД с другого компьютера](#connect-to-the-database-engine-from-another-computer)
+* [Создание логинов проверки подлинности сервера S'L](#create-sql-server-authentication-logins)
+* [Определить название DNS виртуальной машины](#determine-the-dns-name-of-the-virtual-machine)
+* [Подключение к движку базы данных с другого компьютера](#connect-to-the-database-engine-from-another-computer)
 
 Процедура подключения показана на следующей схеме:
 

@@ -1,64 +1,64 @@
 ---
-title: Восстановление файловых ресурсов Azure с помощью REST API
-description: Узнайте, как использовать REST API для восстановления файловых ресурсов Azure или отдельных файлов из точки восстановления, созданной с помощью Azure Backup
+title: Восстановление акций файлов Azure с помощью REST API
+description: Узнайте, как использовать REST API для восстановления акций файлов Azure или определенных файлов из точки восстановления, созданной резервным копированием Azure
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.openlocfilehash: 1c3160491ef92c62745af1468556e7d5c30437fc
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79252510"
 ---
-# <a name="restore-azure-file-shares-using-rest-api"></a>Восстановление файловых ресурсов Azure с помощью REST API
+# <a name="restore-azure-file-shares-using-rest-api"></a>Восстановление акций файлов Azure с помощью REST API
 
-В этой статье объясняется, как восстановить всю общую папку или отдельные файлы из точки восстановления, созданной [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview) с помощью REST API.
+В этой статье объясняется, как восстановить всю общую часть файла или определенные файлы из точки восстановления, созданной [резервным копированием Azure,](https://docs.microsoft.com/azure/backup/backup-overview) с помощью REST API.
 
-В конце этой статьи вы узнаете, как выполнять следующие операции с помощью REST API.
+К концу этой статьи вы узнаете, как выполнять следующие операции с помощью REST API:
 
-* Просмотр точек восстановления для резервной копии файлового ресурса Azure.
-* Восстановите полную общую папку Azure.
+* Просмотр точек восстановления для резервного копирования раздела файла Azure.
+* Восстановить полный общий объем файлов Azure.
 * Восстановление отдельных файлов или папок.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Предполагается, что у вас уже есть архивный файловый ресурс, который вы хотите восстановить. В противном случае проверьте [файловый ресурс Azure Backup с помощью REST API](backup-azure-file-share-rest-api.md) , чтобы узнать, как ее создать.
+Мы предполагаем, что у вас уже есть резервный файл, который вы хотите восстановить. Если вы этого не сможете, проверьте [совместное использование файлов Backup Azure с помощью REST API,](backup-azure-file-share-rest-api.md) чтобы узнать, как его создать.
 
-В этой статье мы будем использовать следующие ресурсы:
+Для этой статьи мы будем использовать следующие ресурсы:
 
-* **RecoveryServicesVault**: *азурефилесваулт*
-* **Группа ресурсов**: *azurefiles*
-* **Учетная запись хранения**: *афсаккаунт*
-* **Общая папка**: *azurefiles*
+* **RecoveryServicesVault**: *лазуриции*
+* **Группа ресурсов**: *лазуриты*
+* **Учетная запись хранения**: *afsaccount*
+* **Доля файлов**: *лазурные файлы*
 
-## <a name="fetch-containername-and-protecteditemname"></a>Извлечение ContainerName и Протектедитемнаме
+## <a name="fetch-containername-and-protecteditemname"></a>Fetch ContainerName и ProtectedItemName
 
-Для большинства вызовов API, связанных с восстановлением, необходимо передать значения для параметров URI {containerName} и {Протектедитемнаме}. Используйте атрибут ID в тексте ответа операции [Get баккуппротектаблеитемс](https://docs.microsoft.com/rest/api/backup/protecteditems/get) , чтобы получить значения для этих параметров. В нашем примере идентификатор общей папки, которую мы хотим защитить:
+Для большинства вызовов API восстановления необходимо передать значения для параметров URI «containerName» и «protectedItemName». Используйте атрибут идентификатора в теле ответа операции [GET backupprotectableableitems](https://docs.microsoft.com/rest/api/backup/protecteditems/get) для получения значений для этих параметров. В нашем примере идентификатор общего файла, который мы хотим защитить,:
 
 `"/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/storagecontainer;storage;azurefiles;afsaccount/protectableItems/azurefileshare;azurefiles`
 
-Таким образом, значения преобразуются следующим образом:
+Таким образом, значения переводят следующим образом:
 
-* {containername} — *storagecontainer; хранилище; azurefiles; афсаккаунт*
-* {Протектедитемнаме} — *azurefileshare; azurefiles*
+* «контейнерное имя» - *контейнер для хранения;хранение;лазуриты;afsaccount*
+* «ЗащищенныйДеталь» - *лазуридой;лазурификаций*
 
-## <a name="fetch-recovery-points-for-backed-up-azure-file-share"></a>Получение точек восстановления для резервного копирования файлового ресурса Azure
+## <a name="fetch-recovery-points-for-backed-up-azure-file-share"></a>Получение точек восстановления для резервного копирования общего файла Azure
 
-Чтобы восстановить резервные копии файлов или общих папок, сначала выберите точку восстановления для выполнения операции восстановления. Доступные точки восстановления резервного элемента можно указать с помощью вызова REST API [списка точек восстановления](https://docs.microsoft.com/rest/api/site-recovery/recoverypoints/listbyreplicationprotecteditems) . Это операция GET со всеми соответствующими значениями.
+Чтобы восстановить резервную копию файла или файлы, сначала выберите точку восстановления для выполнения операции восстановления. Доступные точки восстановления резервного элемента можно перечислить с помощью [aPI-вызова REST-List Recovery Point.](https://docs.microsoft.com/rest/api/site-recovery/recoverypoints/listbyreplicationprotecteditems) Это операция GET со всеми соответствующими значениями.
 
 ```http
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints?api-version=2019-05-13&$filter={$filter}
 ```
 
-Задайте значения URI следующим образом:
+Установите значения URI следующим образом:
 
-* {fabricName}: *Azure*
-* {vaultName}: *азурефилесваулт*
-* {containername}: *storagecontainer; хранилище; azurefiles; афсаккаунт*
-* {Протектедитемнаме}: *azurefileshare; azurefiles*
-* {ResourceGroupName}: *azurefiles*
+* «FabricName»: *Azure*
+* «VaultName»: *лазурификаций*
+* «контейнерное имя»: *контейнер для хранения;хранение;лазуриты;afsaccount*
+* «ЗащищенныйДеталь»: *лазуридой;лазурификаций*
+* «РесурсНаягруппа»: *лазуриты*
 
-URI GET содержит все обязательные параметры. Нет необходимости в дополнительном тексте запроса.
+URI GET имеет все необходимые параметры. Нет необходимости в дополнительном органе запроса.
 
 ```http
 GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;storage;azurefiles;afsaccount/protectedItems/AzureFileShare;azurefiles/recoveryPoints?api-version=2019-05-13
@@ -66,7 +66,7 @@ GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af
 
 ### <a name="example-response"></a>Пример ответа
 
-После отправки URI GET возвращается ответ 200:
+После представления GET URI возвращается ответ 200:
 
 ```http
 HTTP/1.1" 200 None
@@ -139,18 +139,18 @@ HTTP/1.1" 200 None
   },
 ```
 
-Точка восстановления определяется с помощью поля {Name} в приведенном выше ответе.
+Точка восстановления отождествляется с полем «имя» в вышеуказанном ответе.
 
-## <a name="full-share-recovery-using-rest-api"></a>Полное восстановление общего ресурса с помощью REST API
+## <a name="full-share-recovery-using-rest-api"></a>Полное восстановление доли с помощью REST API
 
-Используйте этот вариант восстановления, чтобы восстановить полную общую папку в исходном или альтернативном расположении.
-Активация восстановления является запросом POST, и эту операцию можно выполнить с помощью REST API [восстановления триггера](https://docs.microsoft.com/rest/api/backup/restores/trigger) .
+Используйте эту опцию восстановления для восстановления полной доли файла в исходном или альтернативном месте.
+Восстановление триггера — это запрос POST, и вы можете выполнить эту операцию с помощью [триггерного восстановления](https://docs.microsoft.com/rest/api/backup/restores/trigger) REST API.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore?api-version=2019-05-13
 ```
 
-Значения {containerName} и {Протектедитемнаме} заданы [здесь](#fetch-containername-and-protecteditemname) , а recoveryPointID — поле {Name} точки восстановления, упомянутой выше.
+Значения «containerName» и «protectedItemName» установлены [здесь,](#fetch-containername-and-protecteditemname) а recoveryPointID — поле «имя» точки восстановления, упомянутой выше.
 
 ```http
 POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;storage;azurefiles;afsaccount/protectedItems/AzureFileShare%3Bazurefiles/recoveryPoints/932886657837421071/restore?api-version=2019-05-13'
@@ -158,19 +158,19 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 ### <a name="create-request-body"></a>Создание текста запроса
 
-Чтобы активировать восстановление для файлового ресурса Azure, необходимо выполнить следующие компоненты текста запроса:
+Чтобы вызвать восстановление совместного файла Azure, следующие компоненты тела запроса:
 
-Имя |  Тип   |   Description
+name |  Тип   |   Описание
 --- | ---- | ----
-Свойства | азурефилешарересторерекуест | Свойства Ресторерекуестресаурце
+Свойства | AzureFileShareВосстановлениеЗапрос | Свойства RestoreRequestРесурс
 
-Полный список определений текста запроса и другие сведения см. в [REST API документе восстановление триггера](https://docs.microsoft.com/rest/api/backup/restores/trigger#request-body).
+Для получения полного перечня определений тела запроса и других деталей обратитесь к [документу Триггера Restore REST API.](https://docs.microsoft.com/rest/api/backup/restores/trigger#request-body)
 
 ### <a name="restore-to-original-location"></a>Восстановить в исходном месте
 
-#### <a name="request-body-example"></a>Пример текста запроса
+#### <a name="request-body-example"></a>Пример тела запроса
 
-Следующий текст запроса определяет свойства, необходимые для активации восстановления файлового ресурса Azure:
+Следующий орган запроса определяет свойства, необходимые для запуска восстановления доли файла Azure:
 
 ```json
 {
@@ -186,15 +186,15 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 ### <a name="restore-to-alternate-location"></a>Восстановление в альтернативном расположении
 
-Укажите следующие параметры для восстановления в альтернативном расположении:
+Укажите следующие параметры для восстановления альтернативного местоположения:
 
-* **targetResourceId**: учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
-* **имя**: общая папка в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
-* **targetFolderPath**: папка в общей папке, в которую восстанавливаются данные.
+* **targetResourceId**: Учетная запись хранилища, с которой восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
+* **имя**: Доля файла в учетной записи целевого хранилища, к которой восстанавливается резервное содержимое.
+* **targetFolderPath**: Папка под файлом общего обмена, к которому данные восстанавливаются.
 
-#### <a name="request-body-example"></a>Пример текста запроса
+#### <a name="request-body-example"></a>Пример тела запроса
 
-Следующий текст запроса восстанавливает общую папку *azurefiles* в учетной записи хранения *афсаккаунт* в общую папку *azurefiles1* в учетной записи хранения *afaccount1* .
+Следующий орган запроса восстанавливает долю файла *azurefiles* в учетной записи хранения *afsaccount* на долю файла *azurefiles1* в учетной записи хранения *afaccount1.*
 
 ```json
 {
@@ -219,12 +219,12 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 ### <a name="response"></a>Ответ
 
-Триггер операции восстановления является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Эта операция создает другую операцию, которую необходимо отслеживаниь отдельно.
-Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
+Срабатывание операции восстановления является [асинхронной операцией.](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations) Эта операция создает еще одну операцию, которую необходимо отслеживать отдельно.
+Он возвращает два ответа: 202 (Принято) при создании другой операции и 200 (OK) при завершении операции.
 
 #### <a name="response-example"></a>Пример ответа
 
-После отправки URI *POST* для запуска восстановления начальный ответ — 202 (принято) с заголовком расположения или Azure-Async-Header.
+После отправки *POST* URI для запуска восстановления, первоначальный ответ 202 (Принято) с заголовком местоположения или Заголовком Azure-async.
 
 ```http
 HTTP/1.1" 202
@@ -245,7 +245,7 @@ HTTP/1.1" 202
 'Date': 'Wed, 05 Feb 2020 07:43:47 GMT'
 ```
 
-Затем отследите итоговую операцию с помощью заголовка Location или заголовка Azure-AsyncOperation с командой GET.
+Затем отслеживайте полученную операцию с помощью заголовка местоположения или заголовка Azure-AsyncOperation с помощью команды GET.
 
 ```http
 GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupOperations/68ccfbc1-a64f-4b29-b955-314b5790cfa9?api-version=2016-12-01
@@ -304,7 +304,7 @@ HTTP/1.1" 200
 }
 ```
 
-Для восстановления в альтернативном расположении текст ответа будет выглядеть следующим образом:
+Для альтернативного восстановления местоположения, ответ тела будет так:
 
 ```http
 {
@@ -352,15 +352,15 @@ HTTP/1.1" 200
 
 Так как задание резервного копирования — это длительная операция, оно должно отслеживаться, как описано в [документе REST API о мониторинге заданий](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-managejobs#tracking-the-job).
 
-## <a name="item-level-recovery-using-rest-api"></a>Восстановление на уровне элементов с помощью REST API
+## <a name="item-level-recovery-using-rest-api"></a>Восстановление уровня элементов с помощью REST API
 
-С помощью этого параметра можно восстановить отдельные файлы или папки в исходном или альтернативном расположении.
+Эту опцию восстановления можно использовать для восстановления отдельных файлов или папок в исходном или альтернативном месте.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore?api-version=2019-05-13
 ```
 
-Значения {containerName} и {Протектедитемнаме} заданы [здесь](#fetch-containername-and-protecteditemname) , а recoveryPointID — поле {Name} точки восстановления, упомянутой выше.
+Значения «containerName» и «protectedItemName» установлены [здесь,](#fetch-containername-and-protecteditemname) а recoveryPointID — поле «имя» точки восстановления, упомянутой выше.
 
 ```http
 POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;storage;azurefiles;afsaccount/protectedItems/AzureFileShare%3Bazurefiles/recoveryPoints/932886657837421071/restore?api-version=2019-05-13'
@@ -368,19 +368,19 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 ### <a name="create-request-body"></a>Создание текста запроса
 
-Чтобы активировать восстановление для файлового ресурса Azure, необходимо выполнить следующие компоненты текста запроса:
+Чтобы вызвать восстановление совместного файла Azure, следующие компоненты тела запроса:
 
-Имя |  Тип   |   Description
+name |  Тип   |   Описание
 --- | ---- | ----
-Свойства | азурефилешарересторерекуест | Свойства Ресторерекуестресаурце
+Свойства | AzureFileShareВосстановлениеЗапрос | Свойства RestoreRequestРесурс
 
-Полный список определений текста запроса и другие сведения см. в [REST API документе восстановление триггера](https://docs.microsoft.com/rest/api/backup/restores/trigger#request-body).
+Для получения полного перечня определений тела запроса и других деталей обратитесь к [документу Триггера Restore REST API.](https://docs.microsoft.com/rest/api/backup/restores/trigger#request-body)
 
 ### <a name="restore-to-original-location"></a>Восстановить в исходном месте
 
-Следующий текст запроса — восстановление файла *ресторетест. txt* в общей папке *azurefiles* в учетной записи хранения *афсаккаунт* .
+Следующий орган запроса заключается в восстановлении файла *Restoretest.txt* в файле *azurefiles* в учетной записи хранения *afsaccount.*
 
-Создать текст запроса
+Создание органа запроса
 
 ```json
 {
@@ -404,7 +404,7 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 ### <a name="restore-to-alternate-location"></a>Восстановление в альтернативном расположении
 
-Следующий текст запроса заключается в восстановлении файла *ресторетест. txt* в общей папке *azurefiles* в учетной записи хранения *афсаккаунт* в папке *ресторедата* общего файлового ресурса *azurefiles1* в учетной записи хранения *afaccount1* .
+Следующий орган запроса заключается в восстановлении файла *Restoretest.txt* в файле *azurefiles* в учетной записи хранения *afsaccount* в папку *хранения данных* о файле *azurefiles1* в учетной записи хранения *afaccount1.*
 
 Создание текста запроса
 
@@ -431,8 +431,8 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 }
 ```
 
-Ответ должен обрабатываться так же, как описано выше для [полного восстановления общего ресурса](#full-share-recovery-using-rest-api).
+Ответ должен быть обработан таким же образом, как указано выше для [полного восстановления доли.](#full-share-recovery-using-rest-api)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как [управлять резервным копированием файловых ресурсов Azure с помощью API-интерфейса RESTful](manage-azure-file-share-rest-api.md).
+* Узнайте, как [управлять резервным копированием файлов Azure с помощью Rest API.](manage-azure-file-share-rest-api.md)

@@ -1,5 +1,5 @@
 ---
-title: Azure Monitor конструктора представлений для преобразования плиток в книгах
+title: Дизайнер представления Azure Monitor для конверсий плитки в трудовых книжках
 description: ''
 author: austonli
 ms.author: aul
@@ -7,25 +7,25 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.openlocfilehash: f07d15521c787dfd588c285bff57616059caa2f3
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77658632"
 ---
-# <a name="azure-monitor-view-designer-tile-conversions"></a>Преобразования плиток конструктора представлений Azure Monitor
-[Конструктор представлений](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, помогающие визуализировать данные в рабочей области log Analytics, с диаграммами, списками и временными шкалами. Они выводятся и заменяются книгами, которые предоставляют дополнительные функциональные возможности. В этой статье приводятся сведения о преобразовании различных плиток в книги.
+# <a name="azure-monitor-view-designer-tile-conversions"></a>Преобразование дизайнерской плитки Azure Monitor
+[Дизайнер представления](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, чтобы помочь вам визуализировать данные в рабочем пространстве Log Analytics с диаграммами, списками и сроками. Они постепенно сворачиваются и заменяются трудовыми книжеками, которые обеспечивают дополнительную функциональность. В этой статье приведены подробные сведения для преобразования различных плиток в трудовые книжки.
 
-## <a name="donut--list-tile"></a>Плитка со списком & кольца
+## <a name="donut--list-tile"></a>Плитка списка & дона
 
-![Список кольца](media/view-designer-conversion-tiles/donut-list.png)
+![Список пончиков](media/view-designer-conversion-tiles/donut-list.png)
 
-Повторное создание элемента кольца & списка в книгах включает две отдельные визуализации. Для части кольца существует два варианта.
-Для начала нажмите кнопку **Добавить запрос** и вставьте исходный запрос из конструктора представлений в ячейку.
+Воссоздание плитки списка & пончика в трудовых книжках включает в себя две отдельные визуализации. Для пончик аксута есть два варианта.
+Для обоих начать с выбора **Добавить запрос** и вставить исходный запрос из представления дизайнера в ячейку.
 
-**Вариант 1.** Выберите пункт **круговая диаграмма** в раскрывающемся списке **визуализация** : ![меню визуализации круговой диаграммы](media/view-designer-conversion-tiles/pie-chart.png)
+**Вариант 1:** Выберите **pie Chart** из меню ![ **визуализации:** меню визуализации диаграммы пирога](media/view-designer-conversion-tiles/pie-chart.png)
 
-**Вариант 2.** Выберите **задать по запросу** в раскрывающемся списке **визуализация** и добавьте `| render piechart` в запрос:
+**Вариант 2:** Выберите **Набор запроса** из отбрасываемого **визуализации** и добавьте `| render piechart` в запрос:
 
  ![Меню визуализации](media/view-designer-conversion-tiles/set-by-query.png)
 
@@ -46,16 +46,16 @@ search *
 | render piechart
 ```
 
-Сведения о создании списка и включении спарклайнов см. в статье [Общие задачи](view-designer-conversion-tasks.md).
+Для создания списка и включения искры, [common tasks](view-designer-conversion-tasks.md)см.
 
-Ниже приведен пример того, как плитка & списка кольца может быть повторно интерпретирована в книгах:
+Ниже приведен пример того, как плитка списка & пончика может быть переосмыслена в трудовых книжках:
 
-![Книги в виде кольцевых списков](media/view-designer-conversion-tiles/donut-workbooks.png)
+![Пончик список трудовых книжек](media/view-designer-conversion-tiles/donut-workbooks.png)
 
-## <a name="line-chart--list-tile"></a>Плитка графика & списка
-![Список графиков](media/view-designer-conversion-tiles/line-list.png) 
+## <a name="line-chart--list-tile"></a>Плитка & список строк
+![Список диаграмм строк](media/view-designer-conversion-tiles/line-list.png) 
 
-Чтобы повторно создать график, обновите запрос следующим образом:
+Чтобы воссоздать часть диаграммы строки, обновите запрос следующим образом:
 
 Исходный запрос
 ```KQL
@@ -69,13 +69,13 @@ search *
 | make-series Count = count() default=0 on TimeGenerated from {TimeRange:start} to {TimeRange:end} step {TimeRange:grain} by Type
 ```
 
-Существует два варианта визуализации графика
+Существует два варианта визуализации линейной диаграммы
 
-**Вариант 1.** Выберите **график** из раскрывающегося списка **визуализация** :
+**Вариант 1:** Выберите **диаграмму строки** из сброса **визуализации:**
  
- ![Меню графика](media/view-designer-conversion-tiles/line-visualization.png)
+ ![Меню диаграммы строки](media/view-designer-conversion-tiles/line-visualization.png)
 
-**Вариант 2.** Выберите **задать по запросу** в раскрывающемся списке **визуализация** и добавьте `| render linechart` в запрос:
+**Вариант 2:** Выберите **Набор запроса** из отбрасываемого **визуализации** и добавьте `| render linechart` в запрос:
 
  ![Меню визуализации](media/view-designer-conversion-tiles/set-by-query.png)
 
@@ -87,17 +87,17 @@ search *
 | render linechart_
 ```
 
-Сведения о создании списка и включении спарклайнов см. в статье [Общие задачи](view-designer-conversion-tasks.md).
+Для создания списка и включения искры, [common tasks](view-designer-conversion-tasks.md)см.
 
-Ниже приведен пример повторной интерпретации элемента графика & списка в книгах:
+Ниже приводится пример того, как строка диаграммы & список плитки могут быть переосмыслены в трудовых книжках:
 
-![График списка книг](media/view-designer-conversion-tiles/line-workbooks.png)
+![Список рабочих книг диаграммстрок](media/view-designer-conversion-tiles/line-workbooks.png)
 
-## <a name="number--list-tile"></a>Плитка числа & списка
+## <a name="number--list-tile"></a>Плитка списка & номер
 
- ![Список плиток](media/view-designer-conversion-tiles/tile-list-example.png)
+ ![Список плитки](media/view-designer-conversion-tiles/tile-list-example.png)
 
-Для плитки число обновите запрос следующим образом:
+Для текучих чиней обновите запрос следующим образом:
 
 Исходный запрос
 ```KQL
@@ -112,23 +112,23 @@ search *
 | summarize Count = count()
 ```
 
-Измените раскрывающийся список визуализации на **плитки** , а затем выберите **Параметры плитки**.
- ](media/view-designer-conversion-tiles/tile-visualization.png) визуализации плитки ![
+Измените выпадение визуализации на **плитки,** а затем выберите **настройки плитки.**
+ ![Визуализация плитки](media/view-designer-conversion-tiles/tile-visualization.png)
 
-Оставьте **заголовок** раздела пустым и выберите **слева**. Измените значение параметра **использовать столбец:** для параметра **число**, а для модуля **подготовки столбцов** — **большое число**:
+Оставьте раздел **Раздел заголовка** пустым и выберите **левый**. Измените значение для **столбца Использования:** **для подсчета,** и **отобрасыватель столбцов** к **большому числу:**
 
-![Параметры плитки](media/view-designer-conversion-tiles/tile-settings.png)
+![Настройки плитки](media/view-designer-conversion-tiles/tile-settings.png)
 
  
-Сведения о создании списка и включении спарклайнов см. в статье [Общие задачи](view-designer-conversion-tasks.md).
+Для создания списка и включения искры, [common tasks](view-designer-conversion-tasks.md)см.
 
-Ниже приведен пример того, как в книгах может быть повторно интерпретирована плитка числа & списка:
+Ниже приводится пример того, как число & плитки списка могут быть переосмыслены в трудовых книжках:
 
-![Книги списка чисел](media/view-designer-conversion-tiles/number-workbooks.png)
+![Справочники по списку номеров](media/view-designer-conversion-tiles/number-workbooks.png)
 
 ## <a name="timeline--list"></a>Временная шкала и список
 
- ![Список временной шкалы](media/view-designer-conversion-tiles/time-list.png)
+ ![Список временных шкал](media/view-designer-conversion-tiles/time-list.png)
 
 Для временной шкалы обновите запрос следующим образом:
 
@@ -144,21 +144,21 @@ search *
 | summarize Count = count() by Computer, bin(TimeGenerated,{TimeRange:grain})
 ```
 
-Существует два варианта визуализации запроса в виде линейчатой диаграммы.
+Существует два варианта визуализации запроса в виде диаграммы бара:
 
-**Вариант 1.** Выберите **линейчатую диаграмму** из раскрывающегося списка **визуализация** : ![визуализация барчарт](media/view-designer-conversion-tiles/bar-visualization.png)
+**Вариант 1:** Выберите **диаграмму бара** из ![выпадения **визуализации:** визуализация Барчарта](media/view-designer-conversion-tiles/bar-visualization.png)
  
-**Вариант 2.** Выберите **задать по запросу** в раскрывающемся списке **визуализация** и добавьте `| render barchart` в запрос:
+**Вариант 2:** Выберите **Набор запроса** из отбрасываемого **визуализации** и добавьте `| render barchart` в запрос:
 
  ![Меню визуализации](media/view-designer-conversion-tiles/set-by-query.png)
 
  
-Сведения о создании списка и включении спарклайнов см. в статье [Общие задачи](view-designer-conversion-tasks.md).
+Для создания списка и включения искры, [common tasks](view-designer-conversion-tasks.md)см.
 
-Ниже приведен пример того, как в книгах может быть повторно интерпретирована плитка & списка временной шкалы:
+Ниже приводится пример того, как плитка & списка сроков может быть переосмыслена в трудовых книжках:
 
-![Книги из списка временной шкалы](media/view-designer-conversion-tiles/time-workbooks.png)
+![Справочник хронологии](media/view-designer-conversion-tiles/time-workbooks.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обзор конструктора представлений для перехода к книгам](view-designer-conversion-overview.md)
+- [Обзор представления дизайнера к переходу к трудовым книгам](view-designer-conversion-overview.md)

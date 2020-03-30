@@ -12,10 +12,10 @@ ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
 ms.openlocfilehash: cb4eb4474ad074a3e69dc146c97b48d54343595b
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79213949"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
@@ -31,14 +31,14 @@ ms.locfileid: "79213949"
 
 Дополнительные сведения о расширенных событиях для Базы данных SQL Azure и Microsoft SQL Server доступны в следующих разделах.
 
-- [Краткое руководство. Расширенные события в SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
+- [Быстрый запуск: Расширенные события в сервере S'L](https://msdn.microsoft.com/library/mt733217.aspx)
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В данной статье предполагается, чтобы вы уже ознакомились со следующими компонентами:
 
-- [Служба "База данных SQL Azure"](https://azure.microsoft.com/services/sql-database/);
+- [Служба баз данных Azure S'L](https://azure.microsoft.com/services/sql-database/).
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx) в Microsoft SQL Server.
 
 - Большинство документации о расширенных событиях относится и к SQL Server, и к Базе данных SQL.
@@ -56,12 +56,12 @@ ms.locfileid: "79213949"
 Связанные разделы содержат два примера кода.
 
 
-- [Код целевого объекта "Кольцевой буфер" для расширенных событий в Базе данных SQL](sql-database-xevent-code-ring-buffer.md)
+- [Код целевого объекта "Кольцевой буфер" для расширенных событий в базе данных SQL](sql-database-xevent-code-ring-buffer.md)
     - Простой короткий сценарий Transact-SQL.
     - В этой статье с примером кода подчеркивается, что после завершения работы с целевым объектом "Кольцевой буфер" необходимо освободить задействованные им ресурсы с помощью инструкции изменения и удаления `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` . Впоследствии вы сможете добавить другой экземпляр кольцевого буфера с помощью оператора `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...`.
 
 
-- [Код целевого объекта "Файл событий" для расширенных событий в Базе данных SQL](sql-database-xevent-code-event-file.md)
+- [Код целевого файла событий для расширенных событий в Базе данных SQL](sql-database-xevent-code-event-file.md)
     - Этап 1. PowerShell: создание контейнера хранилища Azure в облаке.
     - Этап 2. Transact-SQL: использование контейнера хранилища Azure.
 
@@ -81,7 +81,7 @@ ms.locfileid: "79213949"
 
 Функцию расширенных событий поддерживают несколько [представлений каталога](https://msdn.microsoft.com/library/ms174365.aspx). Представления каталога сообщают *метаданные или определения* сеансов событий, созданных пользователями в текущей базе данных. Представления не возвращают сведения об экземплярах активных сеансов событий.
 
-| Имя<br/>представления каталога | Description |
+| Имя<br/>представления каталога | Описание |
 |:--- |:--- |
 | **sys.database_event_session_actions** |Возвращает строку для каждого действия над каждым событием из сеанса событий. |
 | **sys.database_event_session_events** |Возвращает строку для каждого события в сеансе событий. |
@@ -89,13 +89,13 @@ ms.locfileid: "79213949"
 | **sys.database_event_session_targets** |Возвращает строку для каждой цели события для сеанса событий. |
 | **sys.database_event_sessions** |Возвращает строку для каждого сеанса событий в Базе данных SQL. |
 
-В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_* . Шаблон имени выглядит как **sys.server_event_%** .
+В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_*. Шаблон имени выглядит как **sys.server_event_%**.
 
 ## <a name="new-dynamic-management-views-dmvs"></a>Новые динамические административные представления [(DMV)](https://msdn.microsoft.com/library/ms188754.aspx)
 
 База данных SQL Azure включает [динамические административные представления (DMV)](https://msdn.microsoft.com/library/bb677293.aspx) , которые поддерживают расширенные события. DMV сообщают об *активных* сеансах событий.
 
-| Имя DMV | Description |
+| Имя DMV | Описание |
 |:--- |:--- |
 | **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях сеанса событий. |
 | **sys.dm_xe_database_session_events** |Возвращает сведения о событиях сеанса. |
@@ -103,7 +103,7 @@ ms.locfileid: "79213949"
 | **sys.dm_xe_database_session_targets** |Возвращает сведения о целевых объектах сеанса. |
 | **sys.dm_xe_database_sessions** |Возвращает строку для каждого сеанса событий, относящегося к текущей базе данных. |
 
-В Microsoft SQL Server имена аналогичных представлений каталога не содержат указание *\_database* и выглядят следующим образом:
+В сервере Microsoft S'L Server аналогичные представления каталога называются без части имени * \_базы данных,* например:
 
 - **sys.dm_xe_sessions** вместо имени<br/>**sys.dm_xe_database_sessions**.
 
@@ -180,7 +180,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 При появлении сообщения о превышении максимального объема памяти можно предпринять следующие коррекционные меры:
 
 - уменьшить количество одновременно запущенных сеансов событий;
-- уменьшить объем памяти, заданный в предложении **MAX**MEMORY **, с помощью операторов** CREATE **и \_ALTER**.
+- уменьшить объем памяти, заданный в предложении **MAX\_MEMORY**, с помощью операторов **CREATE** и **ALTER**.
 
 ### <a name="network-latency"></a>Задержки сети
 
@@ -190,7 +190,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Использование Azure PowerShell со службой хранилища Azure](../storage/common/storage-powershell-guide-full.md)
+- [Использование Azure PowerShell с лазурным хранилищем.](../storage/common/storage-powershell-guide-full.md)
 - [Командлеты службы хранилища Azure](https://docs.microsoft.com/powershell/module/Azure.Storage)
 - [Использование Azure PowerShell с хранилищем Azure](../storage/common/storage-powershell-guide-full.md) — статья содержит полную информацию о PowerShell и службе хранилища Azure.
 - [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)

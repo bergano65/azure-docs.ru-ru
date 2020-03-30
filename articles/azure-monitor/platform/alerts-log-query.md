@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.subservice: alerts
 ms.openlocfilehash: fdf492b8f103e725046b9b1cbbd079c4d249664a
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77667794"
 ---
 # <a name="log-alert-queries-in-azure-monitor"></a>Запросы оповещений журналов в Azure Monitor
 [Правила генерации оповещений на основе журналов Azure Monitor](alerts-unified-log.md) выполняются с регулярными интервалами, поэтому следует убедиться, что они написаны так, чтобы минимизировать накладные расходы и задержку. В этой статье приводятся рекомендации по написанию эффективных запросов для оповещений журналов и по преобразованию существующих запросов. 
 
 ## <a name="types-of-log-queries"></a>Типы запросов к журналу
-[Запросы к журналу в Azure Monitor](../log-query/log-query-overview.md) начинаются с оператора "Таблица" или " [Поиск](/azure/kusto/query/searchoperator) " или " [объединение](/azure/kusto/query/unionoperator) ".
+[Запросы в журнале Azure Monitor](../log-query/log-query-overview.md) начинаются либо с таблицы, либо с [поискового](/azure/kusto/query/searchoperator) или [профсоюзного](/azure/kusto/query/unionoperator) оператора.
 
 Например, следующий запрос к таблице _SecurityEvent_ ищет определенный идентификатор события. Это единственная таблица, которую должен обработать запрос.
 
@@ -214,7 +214,7 @@ on Hour
 | count 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об [оповещениях журналов](alerts-log.md) в Azure Monitor.
 - Дополнительные сведения о [запросах журналов](../log-query/log-query-overview.md).
 

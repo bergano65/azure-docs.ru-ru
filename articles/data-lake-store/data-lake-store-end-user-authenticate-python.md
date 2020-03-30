@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: c69f6c1f587285c5c52280c4c49008764d5b20d8
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79265601"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-python"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Python
 > [!div class="op_single_selector"]
-> * [С использованием Java](data-lake-store-end-user-authenticate-java-sdk.md)
+> * [Использование Java](data-lake-store-end-user-authenticate-java-sdk.md)
 > * [Использование пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-end-user-authenticate-python.md)
 > * [Использование REST API](data-lake-store-end-user-authenticate-rest-api.md)
@@ -34,7 +34,7 @@ ms.locfileid: "79265601"
 
 В этой статье рассматриваются оба типа. См. дополнительные сведения о [проверке подлинности между службами в Data Lake Storage 1-го поколения с помощью Python](data-lake-store-service-to-service-authenticate-python.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
@@ -48,7 +48,7 @@ ms.locfileid: "79265601"
 
 * Модуль `azure-mgmt-resource`, который включает в себя модули Azure для Active Directory и т. д.
 * Модуль `azure-mgmt-datalake-store`, который включает в себя операции по управлению учетной записью Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю управления Azure Data Lake Storage 1-го поколения](/python/api/azure-mgmt-datalake-store/).
-* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю файловой системы Azure Data Lake Store](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core/).
+* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Для получения дополнительной информации об этом модуле, см [Azure-Datalake-магазин Filesystem модуль модуля .](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core/)
 
 Чтобы установить модули, используйте следующие команды.
 
@@ -60,7 +60,7 @@ pip install azure-datalake-store
 
 ## <a name="create-a-new-python-application"></a>Создание приложения Python
 
-1. Для создания приложения Python используйте любую IDE, например **mysample.py**.
+1. В IDE по вашему выбору создайте новое приложение Python, например, **mysample.py**.
 
 2. Чтобы импортировать необходимые модули, добавьте следующий фрагмент кода.
 

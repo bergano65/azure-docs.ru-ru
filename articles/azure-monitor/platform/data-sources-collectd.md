@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 11/27/2018
 ms.openlocfilehash: b8c09d4ac5d0856eb0d448a1cabd9adc567850c4
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77670616"
 ---
 # <a name="collect-data-from-collectd-on-linux-agents-in-azure-monitor"></a>Сбор данных CollectD с помощью агентов Linux в Azure Monitor
@@ -63,14 +63,14 @@ ms.locfileid: "77670616"
     </filter>
 
 > [!NOTE]
-> Значение по умолчанию — чтение значений с [интервалом](https://collectd.org/wiki/index.php/Interval)10 секунд. Так как это напрямую влияет на объем данных, отправляемых в журналы Azure Monitor, может потребоваться настроить этот интервал в собранной конфигурации, чтобы подвести хороший баланс между требованиями к мониторингу и связанными затратами и использованием журналов Azure Monitor.
+> Сбор по умолчанию устанавливается для чтения значений с интервалом в 10 [секунд.](https://collectd.org/wiki/index.php/Interval) Поскольку это непосредственно влияет на объем данных, отправляемых в журналы Azure Monitor, возможно, потребуется настроить этот интервал в конфигурации CollectD, чтобы найти хороший баланс между требованиями к мониторингу и связанными с ними затратами и использованием журналов Azure Monitor.
 
 ## <a name="versions-supported"></a>Поддерживаемые версии
 - Azure Monitor сейчас поддерживает CollectD версии 4.8 и более поздней.
 - Для сбора метрик CollectD необходим агент Log Analytics для Linux версии 1.1.0-217 или более поздней.
 
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 Ниже приведены основные шаги по настройке сбора данных CollectD в Azure Monitor.
 
 1. Настройте отправку данных CollectD в агент Log Analytics для Linux с помощью подключаемого модуля write_http.  
@@ -108,14 +108,14 @@ ms.locfileid: "77670616"
 | Поле метрики CollectD | Поле Azure Monitor |
 |:--|:--|
 | `host` | Компьютер |
-| `plugin` | Нет |
-| `plugin_instance` | Имя экземпляра<br>Если **plugin_instance** имеет значение *null*, то InstanceName=" *_Total*" |
+| `plugin` | None |
+| `plugin_instance` | Имя экземпляра<br>Если **plugin_instance** имеет значение *null*, то InstanceName="*_Total*" |
 | `type` | ObjectName |
 | `type_instance` | CounterName<br>Если **type_instance** имеет значение *null*, то CounterName=**blank** |
 | `dsnames[]` | CounterName |
-| `dstypes` | Нет |
+| `dstypes` | None |
 | `values[]` | CounterValue |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
 * Используйте [настраиваемые поля](custom-fields.md) для анализа данных из записей системного журнала в отдельных полях.

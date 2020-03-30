@@ -1,13 +1,13 @@
 ---
-title: Рекомендации для надежных коллекций
-description: Рекомендации и рекомендации по использованию Service Fabric надежных коллекций в приложении Service Fabric Azure.
+title: Руководящие принципы для надежных коллекций
+description: Руководящие принципы и рекомендации по использованию надежных коллекций Service Fabric в приложении Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 12/10/2017
 ms.openlocfilehash: 37c734205877f9e0cb98ef2834462691e8e483d9
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645486"
 ---
 # <a name="guidelines-and-recommendations-for-reliable-collections-in-azure-service-fabric"></a>Инструкции и рекомендации для надежных коллекций в Azure Service Fabric
@@ -21,7 +21,7 @@ ms.locfileid: "75645486"
 * Не используйте транзакцию после того, как она была зафиксирована, прервана или удалена.
 * Не используйте перечисление за пределами области транзакции, в которой оно было создано.
 * Не создавайте транзакцию в операторе `using` другой транзакции, так как это может привести к возникновению взаимоблокировки.
-* Не создавайте надежное состояние с `IReliableStateManager.GetOrAddAsync` и используйте надежное состояние в той же транзакции. Это приводит к возникновению исключения InvalidOperationException.
+* Не создавайте надежное состояние с `IReliableStateManager.GetOrAddAsync` помощью надежного состояния в одной и той же транзакции. Это приводит к недействительнойОперации Исключение.
 * Убедитесь, что реализация `IComparable<TKey>` правильна. Система использует соответствующую зависимость `IComparable<TKey>` для слияния контрольных точек и строк.
 * Используете блокировку изменения при чтении элемента с целью обновить его, чтобы предотвратить взаимоблокировки определенного класса.
 * Рекомендуем использовать менее 1000 надежных коллекций на раздел. Лучше использовать большее количество элементов в надежных коллекциях, чем большее количество надежных коллекций с меньшим количеством элементов.
@@ -50,5 +50,5 @@ ms.locfileid: "75645486"
   * [Влияние сериализации данных на обновление приложений](service-fabric-application-upgrade-data-serialization.md)
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
 * Прочее
-  * [Краткое руководство по надежным службам Reliable Services](service-fabric-reliable-services-quick-start.md)
+  * [Надежные услуги быстро ежекты](service-fabric-reliable-services-quick-start.md)
   * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)

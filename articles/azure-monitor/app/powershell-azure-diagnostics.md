@@ -1,16 +1,16 @@
 ---
 title: Настройка Application Insights в Azure с помощью PowerShell | Документация Майкрософт
-description: Автоматизируйте настройку система диагностики Azure для передачи данных по конвейеру в Application Insights.
+description: Автоматизировать настройку Azure Diagnostics на данные труб в Application Insights.
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.openlocfilehash: da1796c8af5b9463d8223615f4b0629ba65eb3e8
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77669809"
 ---
-# <a name="using-powershell-to-set-up-application-insights-for-azure-cloud-services"></a>Настройка Application Insights для облачных служб Azure с помощью PowerShell
+# <a name="using-powershell-to-set-up-application-insights-for-azure-cloud-services"></a>Использование PowerShell для настройки анализа приложений для облачных служб Azure
 
 [Microsoft Azure](https://azure.com) можно [настроить для отправки данных системы диагностики Azure](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md) в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md). Данные диагностики связаны с облачными службами Azure и виртуальными машинами Azure. Они дополняют данные телеметрии, отправляемые из приложения с помощью пакета SDK Application Insights. В рамках автоматизации создания новых ресурсов в Azure вы можете настроить диагностику с помощью PowerShell.
 
@@ -38,7 +38,7 @@ ms.locfileid: "77669809"
 * `myWebAppName` — идентификатор веб-приложения.
 
 ## <a name="enable-diagnostics-extension-as-part-of-deploying-a-cloud-service"></a>Включение расширения диагностики как части развертывания облачной службы
-Параметр `New-AzureDeployment` командлета `ExtensionConfiguration` принимает массив значений для конфигурации диагностики. Их можно создать с помощью командлета `New-AzureServiceDiagnosticsExtensionConfig` . Например:
+Параметр `ExtensionConfiguration` командлета `New-AzureDeployment` принимает массив значений для конфигурации диагностики. Их можно создать с помощью командлета `New-AzureServiceDiagnosticsExtensionConfig` . Пример:
 
 ```ps
 
@@ -125,7 +125,7 @@ ms.locfileid: "77669809"
 ```
 
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 * [Мониторинг приложений облачных служб Azure с помощью Application Insights](../../azure-monitor/app/cloudservices.md)
 * [Отправка данных системы диагностики Azure в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Use PowerShell to set alerts in Application Insights](powershell-alerts.md)

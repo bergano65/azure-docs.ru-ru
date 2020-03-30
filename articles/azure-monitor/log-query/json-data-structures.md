@@ -1,22 +1,22 @@
 ---
 title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
-description: В этой статье содержится руководство по использованию Azure Monitor Log Analytics в портал Azure для запроса и анализа данных журнала в Azure Monitor.
+description: В этой статье содержится учебник по использованию аналитики журналов Azure Monitor на портале Azure для запроса и анализа данных журналов в Azure Monitor.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: 8be4f318149590ff08b73fda719e99a17220ec2e
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77670157"
 ---
 # <a name="working-with-json-and-data-structures-in-azure-monitor-log-queries"></a>Работа с JSON и структурой данных в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Перед выполнением этого занятия необходимо завершить [работу с Azure Monitor log Analytics](get-started-portal.md) и [начать работу с Azure Monitor запросами к журналу](get-started-queries.md) .
+> Перед завершением этого урока необходимо завершить [работу с аналитикой журналов Azure Monitor Log Analytics](get-started-portal.md) и начать работу с [запросами журналов Azure Monitor.](get-started-queries.md)
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -25,7 +25,7 @@ ms.locfileid: "77670157"
 ## <a name="working-with-json-strings"></a>Работа со строками JSON
 Используйте `extractjson`, чтобы получить доступ к определенному элементу JSON с известным путем. Эта функция требует выражение пути, которое использует следующие правила.
 
-- _$_ для обращения к корневой папке
+- _$_ для обозначения корневой папки
 - Использование скобок или точечной нотации для обращения к индексам и элементам, как показано в следующих примерах.
 
 
@@ -123,13 +123,13 @@ print hosts_object
 
 ![Создание схемы](media/json-data-structures/buildschema.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала в Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)
-- [Статистические функции в запросах Log Analytics](aggregations.md)
+- [Функции агрегирования](aggregations.md)
 - [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Joins](joins.md)
-- [Создание графиков](charts.md)
+- [Соединения](joins.md)
+- [Диаграммы](charts.md)
