@@ -1,5 +1,5 @@
 ---
-title: Шифрование дисков для масштабируемых наборов Azure с помощью Azure PowerShell
+title: Шифрование дисков для наборов масштабов Azure с помощью Azure PowerShell
 description: Узнайте, как использовать Azure PowerShell для шифрования экземпляров виртуальной машины и подключенных к ним дисков в масштабируемом наборе виртуальных машин Windows.
 author: msmbaldwin
 manager: rkarlin
@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: mbaldwin
 ms.openlocfilehash: bd7f92c104e06896f4b3c8bb2adef45983cf5d4d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76278986"
 ---
-# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-azure-powershell"></a>Зашифруйте ОС и подключенные диски данных в масштабируемом наборе виртуальных машин с помощью Azure PowerShell
+# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-azure-powershell"></a>Шифрование ОС и прилагаемых дисков данных в виртуальном наборе масштабов машины с Azure PowerShell
 
-Модуль PowerShell используется для создания ресурсов Azure и управления ими с помощью командной строки PowerShell или скриптов.  В этой статье показано, как использовать Azure PowerShell для создания и шифрования масштабируемого набора виртуальных машин. Дополнительные сведения о применении шифрования дисков Azure к масштабируемому набору виртуальных машин см. в статье [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md).
+Модуль PowerShell используется для создания ресурсов Azure и управления ими с помощью командной строки PowerShell или сценариев.  В этой статье показано, как использовать Azure PowerShell для создания и шифрования виртуального набора масштабов машины. Для получения дополнительной информации о применении шифрования Azure Disk к виртуальному набору масштабов машины [см.](disk-encryption-overview.md)
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -25,7 +25,7 @@ ms.locfileid: "76278986"
 
 В хранилище ключей Azure можно хранить ключи, секреты или пароли, что позволяет безопасно реализовать их в приложениях и службах. Криптографические ключи хранятся в хранилище ключей Azure с применением защиты программного обеспечения. В качестве альтернативы можно импортировать или создать ключи аппаратных модулей безопасности (HSM), сертифицированных по стандартам уровня 2 FIPS 140-2. Эти криптографические ключи используются для шифрования и расшифровки виртуальных дисков, подключенных к виртуальной машине. Вы сохраняете контроль над этими криптографическими ключами и можете проводить аудит их использования.
 
-Чтобы создать Key Vault, используйте командлет [New-AzKeyVault](/powershell/module/az.keyvault/new-azkeyvault). Чтобы этот Key Vault можно было использовать для шифрования диска, укажите параметр *EnabledForDiskEncryption*. Следующий пример определяет переменные для имени группы ресурсов, имени и расположения Key Vault. Укажите уникальное имя для Key Vault:
+Создайте Убежище ключей с [помощью New-AzKeyVault.](/powershell/module/az.keyvault/new-azkeyvault) Чтобы этот Key Vault можно было использовать для шифрования диска, укажите параметр *EnabledForDiskEncryption*. Следующий пример определяет переменные для имени группы ресурсов, имени и расположения Key Vault. Укажите уникальное имя для Key Vault:
 
 ```azurepowershell-interactive
 $rgName="myResourceGroup"
@@ -88,9 +88,9 @@ Set-AzVmssDiskEncryptionExtension -ResourceGroupName $rgName -VMScaleSetName $vm
 
 В ответ на запрос введите *y*, чтобы подтвердить продолжение процесса шифрования диска для экземпляров масштабируемого набора виртуальных машин.
 
-### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Включение шифрования с помощью KEK для переноса ключа
+### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Включить шифрование с помощью KEK для обертывания ключа
 
-Ключ шифрования ключа можно также использовать для повышения безопасности при шифровании масштабируемого набора виртуальных машин.
+Вы также можете использовать ключ шифрования ключ для дополнительной безопасности при шифровании виртуального набора масштаба машины.
 
 ```azurepowershell-interactive
 $diskEncryptionKeyVaultUrl=(Get-AzKeyVault -ResourceGroupName $rgName -Name $vaultName).VaultUri
@@ -103,10 +103,10 @@ Set-AzVmssDiskEncryptionExtension -ResourceGroupName $rgName -VMScaleSetName $vm
 ```
 
 > [!NOTE]
->  Синтаксис значения параметра Disk-Encryption-keyvault — это строка полного идентификатора:</br>
-/Subscriptions/[Subscription-ID-GUID]/resourceGroups/[ресурс-группа-имя]/providers/Microsoft.KeyVault/vaults/[KeyVault-name]</br></br>
-> Синтаксис значения параметра key-Encryption-key — это полный универсальный код ресурса (URI) для KEK, как в:</br>
-HTTPS://[keyvault]. Vault. Azure. NET/ключи/[кекнаме]/[KEK-Unique-ID]
+>  Синтаксис для значения параметра диск-шифрования-keyvault является полной строкой идентификатора:</br>
+/подписка/«подписка-id-guid»/resourceGroups/«ресурс-группа-имя»/провайдеры/Microsoft.KeyVault/vaults/»keyvault-name»</br></br>
+> Синтаксис для значения параметра ключа-шифрования ключа является полным URI к KEK, как в:</br>
+https://'keyvault-name.vault.azure.net/keys/'kekname) /kek-unique-id
 
 ## <a name="check-encryption-progress"></a>Проверка хода выполнения шифрования
 
@@ -148,5 +148,5 @@ Disable-AzVmssDiskEncryption -ResourceGroupName $rgName -VMScaleSetName $vmssNam
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure PowerShell. Можно также использовать шаблоны [Azure CLI](disk-encryption-cli.md) или [Azure Resource Manager](disk-encryption-azure-resource-manager.md).
-- Если вы хотите, чтобы шифрование дисков Azure применялось после подготовки другого расширения, можно использовать [виртуализацию расширения](virtual-machine-scale-sets-extension-sequencing.md).
+- В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure PowerShell. Вы также можете использовать шаблоны [Azure CLI](disk-encryption-cli.md) или [Azure Resource Manager.](disk-encryption-azure-resource-manager.md)
+- Если вы хотите, чтобы шифрование Azure Disk было применено после того, как будет подготовлено другое расширение, можно использовать [секвенирование расширения.](virtual-machine-scale-sets-extension-sequencing.md)

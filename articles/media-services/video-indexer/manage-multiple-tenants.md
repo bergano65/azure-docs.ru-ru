@@ -14,10 +14,10 @@ ms.custom: ''
 ms.date: 05/15/2019
 ms.author: ikbarmen
 ms.openlocfilehash: 18f2cf3daa281400151ba223e1735e7138d97e8e
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76990510"
 ---
 # <a name="manage-multiple-tenants"></a>Управление несколькими арендаторами
@@ -68,7 +68,7 @@ ms.locfileid: "76990510"
 
 ## <a name="azure-subscription-per-tenant"></a>Подписка Azure для каждого арендатора 
 
-При использовании этой архитектуры каждый клиент будет иметь собственную подписку Azure. Для каждого пользователя вы создаете в подписке соответствующего арендатора учетную запись Индексатора видео.
+При использовании этой архитектуры каждый арендатор будет иметь свою собственную подписку Azure. Для каждого пользователя вы создаете в подписке соответствующего арендатора учетную запись Индексатора видео.
 
 ![Подписка Azure для каждого арендатора](./media/manage-multiple-tenants/azure-subscription-per-tenant.png)
 
