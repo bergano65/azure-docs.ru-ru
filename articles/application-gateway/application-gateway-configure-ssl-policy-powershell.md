@@ -1,5 +1,5 @@
 ---
-title: Настройка политики SSL с помощью PowerShell
+title: Настройка политики SSL с использованием PowerShell
 titleSuffix: Azure Application Gateway
 description: В этой статье содержатся инструкции по настройке политики SSL на шлюзе приложений Azure
 services: application-gateway
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: 105b0b3e40e6e9433ee456914cd5babc1d17d036
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74075237"
 ---
 # <a name="configure-ssl-policy-versions-and-cipher-suites-on-application-gateway"></a>Настройка версий политики SSL и комплектов шифров на шлюзе приложений
@@ -116,7 +116,7 @@ CipherSuites:
 * TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
 
 > [!IMPORTANT]
-> При настройке пользовательской политики SSL необходимо выбрать TLS_RSA_WITH_AES_256_CBC_SHA256. Шлюз приложений использует этот комплект шифров для управления серверной частью. Его можно использовать в сочетании с любыми другими наборами, но этот параметр также должен быть выбран. 
+> TLS_RSA_WITH_AES_256_CBC_SHA256 должны быть выбраны при настройке пользовательской политики SSL. Портал приложений использует этот набор шифров для управления бэкэндом. Вы можете использовать это в сочетании с любыми другими люксами, но этот также должен быть выбран. 
 
 ```powershell
 # get an application gateway resource
@@ -215,6 +215,6 @@ $AppGw = get-Azapplicationgateway -Name $AppGWname -ResourceGroupName $RG
 $SetGW = Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о перенаправлении трафика HTTP на конечную точку HTTPS см. в статье [Общие сведения о перенаправлении для шлюза приложений](application-gateway-redirect-overview.md).

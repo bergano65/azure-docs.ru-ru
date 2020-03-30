@@ -1,5 +1,5 @@
 ---
-title: Использование Работоспособность ресурсов Azure для мониторинга работоспособности базы данных
+title: Используйте здоровье ресурсов Azure для мониторинга работоспособности баз данных
 description: Служба "Работоспособность ресурсов Azure" для мониторинга работоспособности Базы данных SQL поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы SQL.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
 ms.date: 02/26/2019
 ms.openlocfilehash: 9e19e904b47d69444b491dd88ffe49ff812aafc3
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79208874"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Устранение неполадок подключения к базе данных SQL Azure с помощью службы "Работоспособность ресурсов Azure"
@@ -40,7 +40,7 @@ ms.locfileid: "79208874"
 
 ### <a name="degraded"></a>Деградация
 
-Состояние **Деградация** означает, что служба "Работоспособность ресурсов Azure" обнаружила большую часть успешных и некоторые неудачные операции входа. Это скорее всего временные ошибки входа. Чтобы уменьшить влияние проблем с подключением, вызванных временными ошибками входа, реализуйте в коде [логику повторных подключений](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors).
+Состояние **деградированных** означает, что ресурс здоровье обнаружило большинство успешных логинов, но некоторые сбои, а также. Это скорее всего временные ошибки входа. Чтобы уменьшить влияние проблем с подключением, вызванных временными ошибками входа, реализуйте в коде [логику повторных подключений](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors).
 
 ![Деградация](./media/sql-database-resource-health/sql-resource-health-degraded.jpg)
 
@@ -78,4 +78,4 @@ ms.locfileid: "79208874"
 - [Устранение, диагностика и предотвращение ошибок подключения SQL и временных ошибок для базы данных SQL](./sql-database-connectivity-issues.md)
 - Узнайте подробнее о [настройке оповещений службы "Работоспособность ресурсов Azure"](../service-health/resource-health-alert-arm-template-guide.md)
 - Общие сведения о [службе "Работоспособность ресурсов Azure"](../service-health/resource-health-overview.md)
-- [Часто задаваемые вопросы о службе "Работоспособность ресурсов Azure"](../service-health/resource-health-faq.md)
+- [Часто задаваемые вопросы о службе "Работоспособность ресурсов"](../service-health/resource-health-faq.md)

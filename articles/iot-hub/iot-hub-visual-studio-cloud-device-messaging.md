@@ -1,5 +1,5 @@
 ---
-title: Использование VS Cloud Explorer для управления обменом сообщениями устройств центра Интернета вещей Azure
+title: Используйте VS Cloud Explorer для управления сообщениями устройств Azure IoT Hub
 description: Узнайте, как использовать Cloud Explorer для Visual Studio для мониторинга сообщений между облаком и устройством в Центре Интернета вещей Azure.
 author: shizn
 ms.service: iot-hub
@@ -8,27 +8,27 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
 ms.openlocfilehash: c56bb7030b2ebc12e3afc24e2d8cb29ce2dda0bf
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74079478"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Использование Cloud Explorer для Visual Studio для обмена сообщениями между устройством и Центром Интернета вещей
 
-![Сквозная схема](./media/iot-hub-visual-studio-cloud-device-messaging/e-to-e-diagram.png)
+![Комплексная схема](./media/iot-hub-visual-studio-cloud-device-messaging/e-to-e-diagram.png)
 
-[Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) — это полезное расширение для Visual Studio. Оно позволяет просматривать ресурсы Azure, проверять их свойства и выполнять основные действия разработчика в среде Visual Studio. Эта статья посвящена использованию Cloud Explorer для отправки и получения сообщений между устройством и центром.
+[Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) — это полезное расширение для Visual Studio. Оно позволяет просматривать ресурсы Azure, проверять их свойства и выполнять основные действия разработчика в среде Visual Studio. В этой статье основное внимание уделяется использованию Cloud Explorer для отправки и получения сообщений между устройством и концентратором.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-Из этой статьи вы узнаете, как использовать Cloud Explorer для Visual Studio для отслеживания сообщений, отправляемых с устройства в облако, и отправки сообщений из облака на устройство. В сообщениях, отправляемых с устройства в облако, могут содержаться данные датчиков, которые устройство собирает и отправляет в Центр Интернета вещей. Сообщения, отправляемые из облака на устройство, могут содержать команды, которые Центр Интернета вещей отправляет на устройство. Например, для активации светодиодного индикатора, подключенного к устройству.
+В этой статье вы узнаете, как использовать Cloud Explorer для Visual Studio для мониторинга сообщений от устройства к облаку и отправки сообщений от облака до устройства. В сообщениях, отправляемых с устройства в облако, могут содержаться данные датчиков, которые устройство собирает и отправляет в Центр Интернета вещей. Сообщения, отправляемые из облака на устройство, могут содержать команды, которые Центр Интернета вещей отправляет на устройство. Например, для активации светодиодного индикатора, подключенного к устройству.
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
-В этой статье вы выполните следующие задачи:
+В этой статье вы выполняете следующие задачи:
 
 - Мониторинг сообщений, отправляемых с устройства в облако, с помощью Cloud Explorer для Visual Studio.
 
@@ -42,29 +42,29 @@ ms.locfileid: "74079478"
 
 - Центр Интернета вещей Azure в подписке.
 
-- Microsoft Visual Studio 2017 с обновлением 9 или более поздней версии. В этой статье используется [Visual Studio 2019](https://www.visualstudio.com/vs/).
+- Microsoft Visual Studio 2017 Обновление 9 или более поздней версии. Эта статья использует [Visual Studio 2019](https://www.visualstudio.com/vs/).
 
-- Компонент Cloud Explorer из Visual Studio Installer, который по умолчанию выбран в рабочей нагрузке Azure.
+- Компонент Cloud Explorer от Visual Studio Installer, который по умолчанию выбирается с помощью рабочей нагрузки Azure.
 
 ## <a name="update-cloud-explorer-to-latest-version"></a>Обновление Cloud Explorer до последней версии
 
-Компонент Cloud Explorer из Visual Studio Installer для Visual Studio 2017 поддерживает мониторинг сообщений, отправляемых с устройства в облако и из облака на устройство. Чтобы использовать Visual Studio 2017, скачайте и установите последнюю версию [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS).
+Компонент Cloud Explorer от Visual Studio Installer for Visual Studio 2017 поддерживает только мониторинг сообщений от устройства к облаку и облачным устройствам. Чтобы использовать Visual Studio 2017, загрузите и установите новейший [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS).
 
-## <a name="sign-in-to-access-your-hub"></a>Войдите, чтобы получить доступ к концентратору
+## <a name="sign-in-to-access-your-hub"></a>Войти на вход, чтобы получить доступ к концентратору
 
-Чтобы получить доступ к концентратору, выполните следующие действия.
+Чтобы получить доступ к концентратору, выполните следующие действия:
 
-1. В Visual Studio выберите **просмотреть** > **Cloud Explorer** , чтобы открыть Cloud Explorer.
+1. В Visual Studio выберите **View** > **Cloud Explorer,** чтобы открыть Cloud Explorer.
 
-1. Щелкните значок управления учетной записью, чтобы отобразить подписки.
+1. Выберите значок управления учетной записью, чтобы показать подписку.
 
-    ![Значок управления учетной записью](media/iot-hub-visual-studio-cloud-device-messaging/account-management-icon.png)
+    ![Значок управления счетами](media/iot-hub-visual-studio-cloud-device-messaging/account-management-icon.png)
 
-1. Если вы вошли в Azure, ваши учетные записи будут отображаться. Чтобы войти в Azure в первый раз, выберите **Добавить учетную запись**.
+1. Если вы вписались в Azure, отображаются учетные записи. Чтобы войти в Azure в первый раз, **выберите учетную запись**.
 
-1. Выберите подписки Azure, которые вы хотите использовать, и нажмите кнопку **Применить**.
+1. Выберите подписи Azure, которые вы хотите использовать, и выберите **Apply.**
 
-1. Разверните подписку, а затем — **центры Интернета вещей**.  В каждом концентраторе можно увидеть устройства для этого центра.
+1. Расширьте подписку, а затем расширьте **концентраторы IoT.**  Под каждым концентратором можно увидеть устройства для этого концентратора.
 
     ![Список устройств](media/iot-hub-visual-studio-cloud-device-messaging/hub-device-list.png)
 
@@ -76,7 +76,7 @@ ms.locfileid: "74079478"
 
     ![Действие Start Monitoring D2C Message (Начать мониторинг сообщений D2C)](media/iot-hub-visual-studio-cloud-device-messaging/start-monitoring-d2c-message-vs2019.png)
 
-1. Наблюдаемые сообщения отображаются в разделе **выходные данные**.
+1. Контролируемые сообщения отображаются под **выходом**.
 
     ![Результаты мониторинга сообщений D2C](media/iot-hub-visual-studio-cloud-device-messaging/monitor-d2c-message-result-vs2019.png)
 
@@ -92,11 +92,11 @@ ms.locfileid: "74079478"
 
     ![Действие Send C2D Message (Отправить сообщение C2D)](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-test.png)
 
-    Результаты отображаются в разделе **выходные данные**.
+    Результаты отображаются под **выходом**.
 
     ![Результаты отправки сообщения C2D](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-result-vs2019.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 

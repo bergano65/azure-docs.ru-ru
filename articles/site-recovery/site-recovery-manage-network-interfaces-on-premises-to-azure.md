@@ -1,5 +1,5 @@
 ---
-title: Управление сетевыми адаптерами для локального аварийного восстановления с помощью Azure Site Recovery
+title: Управление сетевыми адаптерами для восстановления вне штатном режиме с помощью восстановления сайта Azure
 description: В статье описано, как управлять сетевыми интерфейсами при аварийном восстановлении из локальной среды в Azure с помощью Azure Site Recovery
 author: mayurigupta13
 manager: rochakm
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
 ms.openlocfilehash: 2a4752b501e40f9e8a4f3bc82cb2533c11f9e526
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73954593"
 ---
-# <a name="manage-vm-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>Управление сетевыми интерфейсами виртуальной машины для локального аварийного восстановления в Azure
+# <a name="manage-vm-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>Управление сетевыми интерфейсами VM для восстановления в ней в помещениях для Azure
 
 К виртуальной машине в Azure должен быть подключен по крайней мере один сетевой интерфейс. К виртуальной машине можно подключить столько сетевых интерфейсов, сколько поддерживает ее размер.
 
@@ -68,5 +68,5 @@ ms.locfileid: "73954593"
 
 6. Щелкните **Сохранить**, чтобы сохранить все изменения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
   [Узнайте больше](../virtual-network/virtual-network-network-interface-vm.md) о сетевых интерфейсах для виртуальных машин Azure.

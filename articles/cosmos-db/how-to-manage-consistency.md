@@ -1,16 +1,16 @@
 ---
-title: Управление согласованностью в Azure Cosmos DB
-description: Узнайте, как настраивать уровни согласованности и управлять ими в Azure Cosmos DB с помощью портал Azure, пакета SDK для .NET, пакета SDK для Java и различных других пакетов SDK.
+title: Управление уровнями согласованности в Azure Cosmos DB
+description: Узнайте, как настроить и управлять уровнями согласованности в Azure Cosmos DB с помощью портала Azure, .Net SDK, Java SDK и различных других SDK
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mjbrown
 ms.openlocfilehash: 651daa0af8188b386220d97390e7a61615f94120
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79369409"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
@@ -69,7 +69,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 Клиенты могут переопределить уровень согласованности по умолчанию, который задается службой. Уровень согласованности можно задать для каждого запроса. В этом случае будет переопределен уровень согласованности по умолчанию на уровне учетной записи.
 
-### <a id="override-default-consistency-dotnet"></a>Пакет SDK для .NET версии 2
+### <a name="net-sdk-v2"></a><a id="override-default-consistency-dotnet"></a>Пакет SDK для .NET версии 2
 
 ```csharp
 // Override consistency at the client level
@@ -81,7 +81,7 @@ RequestOptions requestOptions = new RequestOptions { ConsistencyLevel = Consiste
 var response = await client.CreateDocumentAsync(collectionUri, document, requestOptions);
 ```
 
-### <a id="override-default-consistency-dotnet-v3"></a>Пакет SDK для .NET версии 3
+### <a name="net-sdk-v3"></a><a id="override-default-consistency-dotnet-v3"></a>.NET SDK V3
 
 ```csharp
 // Override consistency at the request level via request options
@@ -94,7 +94,7 @@ var response = await client.GetContainer(databaseName, containerName)
         requestOptions);
 ```
 
-### <a id="override-default-consistency-java-async"></a>Пакет SDK для Java (асинхронная модель)
+### <a name="java-async-sdk"></a><a id="override-default-consistency-java-async"></a>Пакет SDK для Java (асинхронная модель)
 
 ```java
 // Override consistency at the client level
@@ -108,7 +108,7 @@ AsyncDocumentClient client =
                 .withConnectionPolicy(policy).build();
 ```
 
-### <a id="override-default-consistency-java-sync"></a>Пакет SDK для Java (синхронная модель)
+### <a name="java-sync-sdk"></a><a id="override-default-consistency-java-sync"></a>Пакет SDK для Java (синхронная модель)
 
 ```java
 // Override consistency at the client level
@@ -116,7 +116,7 @@ ConnectionPolicy connectionPolicy = new ConnectionPolicy();
 DocumentClient client = new DocumentClient(accountEndpoint, accountKey, connectionPolicy, ConsistencyLevel.Eventual);
 ```
 
-### <a id="override-default-consistency-javascript"></a>Пакет SDK для Node.js, JavaScript и TypeScript
+### <a name="nodejsjavascripttypescript-sdk"></a><a id="override-default-consistency-javascript"></a>Пакет SDK для Node.js, JavaScript и TypeScript
 
 ```javascript
 // Override consistency at the client level
@@ -129,7 +129,7 @@ const client = new CosmosClient({
 const { body } = await item.read({ consistencyLevel: ConsistencyLevel.Eventual });
 ```
 
-### <a id="override-default-consistency-python"></a>Пакет SDK для Python
+### <a name="python-sdk"></a><a id="override-default-consistency-python"></a>Пакет SDK для Python
 
 ```python
 # Override consistency at the client level
@@ -144,7 +144,7 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
 
 Чтобы управлять токенами сеанса вручную, получите токен сеанса из ответа и установите их для каждого запроса. Если у вас нет необходимости управлять токенами сеанса вручную, то вам не нужно использовать эти примеры. Пакет SDK отслеживает токены сеанса автоматически. Если токен сеанса не задан вручную, по умолчанию в пакете SDK используется последний.
 
-### <a id="utilize-session-tokens-dotnet"></a>Пакет SDK для .NET версии 2
+### <a name="net-sdk-v2"></a><a id="utilize-session-tokens-dotnet"></a>Пакет SDK для .NET версии 2
 
 ```csharp
 var response = await client.ReadDocumentAsync(
@@ -157,7 +157,7 @@ var response = await client.ReadDocumentAsync(
                 UriFactory.CreateDocumentUri(databaseName, collectionName, "SalesOrder1"), options);
 ```
 
-### <a id="utilize-session-tokens-dotnet-v3"></a>Пакет SDK для .NET версии 3
+### <a name="net-sdk-v3"></a><a id="utilize-session-tokens-dotnet-v3"></a>.NET SDK V3
 
 ```csharp
 Container container = client.GetContainer(databaseName, collectionName);
@@ -169,7 +169,7 @@ options.SessionToken = sessionToken;
 ItemResponse<SalesOrder> response = await container.ReadItemAsync<SalesOrder>(salesOrder.Id, new PartitionKey(salesOrder.PartitionKey), options);
 ```
 
-### <a id="utilize-session-tokens-java-async"></a>Пакет SDK для Java (асинхронная модель)
+### <a name="java-async-sdk"></a><a id="utilize-session-tokens-java-async"></a>Пакет SDK для Java (асинхронная модель)
 
 ```java
 // Get session token from response
@@ -191,7 +191,7 @@ requestOptions.setSessionToken(sessionToken);
 Observable<ResourceResponse<Document>> readObservable = client.readDocument(document.getSelfLink(), options);
 ```
 
-### <a id="utilize-session-tokens-java-sync"></a>Пакет SDK для Java (синхронная модель)
+### <a name="java-sync-sdk"></a><a id="utilize-session-tokens-java-sync"></a>Пакет SDK для Java (синхронная модель)
 
 ```java
 // Get session token from response
@@ -204,7 +204,7 @@ options.setSessionToken(sessionToken);
 ResourceResponse<Document> response = client.readDocument(documentLink, options);
 ```
 
-### <a id="utilize-session-tokens-javascript"></a>Пакет SDK для Node.js, JavaScript и TypeScript
+### <a name="nodejsjavascripttypescript-sdk"></a><a id="utilize-session-tokens-javascript"></a>Пакет SDK для Node.js, JavaScript и TypeScript
 
 ```javascript
 // Get session token from response
@@ -215,7 +215,7 @@ const sessionToken = headers["x-ms-session-token"];
 const { body } = await item.read({ sessionToken });
 ```
 
-### <a id="utilize-session-tokens-python"></a>Пакет SDK для Python
+### <a name="python-sdk"></a><a id="utilize-session-tokens-python"></a>Пакет SDK для Python
 
 ```python
 // Get the session token from the last response headers
@@ -231,18 +231,18 @@ item = client.ReadItem(doc_link, options)
 
 ## <a name="monitor-probabilistically-bounded-staleness-pbs-metric"></a>Мониторинг метрики вероятностного ограниченного устаревания (PBS)
 
-Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)** ](https://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **метрики** и перейдите на вкладку **согласованность** . Просмотрите граф с именем **вероятность строго согласованных операций чтения на основе рабочей нагрузки (см. PBS)** .
+Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)**](https://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **метрик** и выберите вкладку **Consistency.** Посмотрите на график под названием **Вероятность сильно последовательных считываний на основе рабочей нагрузки (см. PBS).**
 
 ![График PBS на портале Azure](./media/how-to-manage-consistency/pbs-metric.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. См. следующие статьи:
 
 * [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
 * [Управление конфликтами между регионами](how-to-manage-conflicts.md)
 * [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
-* [Consistency Tradeoffs in Modern Distributed Database Systems Design](https://www.computer.org/csdl/magazine/co/2012/02/mco2012020037/13rRUxjyX7k) (Достижение компромиссов согласованности в современных распределенных базах данных)
+* [Компромиссы согласованности в современной конструкции распределенных систем баз данных](https://www.computer.org/csdl/magazine/co/2012/02/mco2012020037/13rRUxjyX7k)
 * [Высокая доступность](high-availability.md)
 * [Соглашение об уровне обслуживания для Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_2/)

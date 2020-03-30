@@ -1,18 +1,18 @@
 ---
-title: Пример триггера и привязки функций Azure
-description: Научитесь настраивать привязки функций Azure.
+title: Пример триггера и связывания функций Azure
+description: Научитесь настраивать привязки функций Azure
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
 ms.openlocfilehash: 8685c0fe02ad6c68918736e857c2015e2bfb4595
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74227239"
 ---
-# <a name="azure-functions-trigger-and-binding-example"></a>Пример триггера и привязки функций Azure
+# <a name="azure-functions-trigger-and-binding-example"></a>Пример триггера и связывания функций Azure
 
 В этой статье показано, как настроить [триггер и привязки](./functions-triggers-bindings.md) в функции Azure.
 
@@ -82,7 +82,7 @@ public class Person
 
 ## <a name="javascript-example"></a>Пример JavaScript
 
-Один и тот же файл *Function. JSON* можно использовать с функцией JavaScript:
+Тот же файл *function.json* можно использовать с функцией JavaScript:
 
 ```javascript
 // From an incoming queue message that is a JSON object, add fields and write to Table Storage
@@ -130,9 +130,9 @@ public class Person
 }
 ```
 
-Теперь у вас есть рабочая функция, активируемая очередью Azure, которая выводит данные в хранилище таблиц Azure.
+Теперь у вас есть рабочая функция, которая запускается очередей Azure и выводит данные в хранилище таблицы Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Шаблоны выражений привязки функций Azure](./functions-bindings-expressions-patterns.md)
+> [Шаблоны связывания выражения Azure Functions](./functions-bindings-expressions-patterns.md)

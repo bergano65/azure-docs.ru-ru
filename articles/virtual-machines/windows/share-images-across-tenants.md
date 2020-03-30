@@ -1,6 +1,6 @@
 ---
-title: Совместное использование образов коллекций в клиентах в Azure
-description: Узнайте, как совместно использовать образы виртуальных машин в клиентах Azure с помощью общих коллекций образов.
+title: Совместное изображение галереи между арендаторами в Azure
+description: Узнайте, как обмениваться изображениями VM между арендаторами Azure с помощью общих галерей изображений.
 services: virtual-machines-windows
 author: cynthn
 manager: gwallace
@@ -11,25 +11,25 @@ ms.topic: article
 ms.date: 07/15/2019
 ms.author: cynthn
 ms.openlocfilehash: 9b7e7066f186017b7cc4408cd4f7edcc7e5f0dcd
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74065516"
 ---
-# <a name="share-gallery-vm-images-across-azure-tenants"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure
+# <a name="share-gallery-vm-images-across-azure-tenants"></a>Поделитесь изображениями галереи VM между арендаторами Azure
 
-Коллекции общих образов позволяют обмениваться изображениями с помощью RBAC. RBAC можно использовать для совместного использования образов в клиенте и даже для пользователей за пределами клиента. Дополнительные сведения об этом простом параметре общего доступа см. в разделе [общий доступ к коллекции](/azure/virtual-machines/windows/shared-images-portal#share-the-gallery).
+Общие изображения галереи позволяют обмениваться изображениями с помощью RBAC. Вы можете использовать RBAC для обмена изображениями в вашем арендаторе, и даже для физических лиц за пределами вашего арендатора. Для получения дополнительной информации об этом простом варианте [совместного](/azure/virtual-machines/windows/shared-images-portal#share-the-gallery)использования см.
 
 [!INCLUDE [virtual-machines-share-images-across-tenants](../../../includes/virtual-machines-share-images-across-tenants.md)]
 
 
 > [!IMPORTANT]
-> Вы не можете использовать портал для развертывания виртуальной машины из образа в другом клиенте Azure. Чтобы создать виртуальную машину из образа, совместно используемого клиентами, необходимо использовать [Azure CLI](../linux/share-images-across-tenants.md) или PowerShell.
+> Вы не можете использовать портал для развертывания VM из изображения в другом лазурном арендаторе. Для создания VM из изображения, совместно с которым они могут использоваться совместно с арендаторами, необходимо использовать [Azure CLI](../linux/share-images-across-tenants.md) или Powershell.
 
 ## <a name="create-a-vm-using-powershell"></a>Создание виртуальной машины с помощью PowerShell
 
-Войдите в оба клиента, используя идентификатор приложения, секрет и идентификатор клиента. 
+Войти в оба арендатора, используя идентификатор приложения, секретный и идентификатор клиента. 
 
 ```azurepowershell-interactive
 $applicationId = '<App ID>'
@@ -42,7 +42,7 @@ Connect-AzAccount -ServicePrincipal -Credential $cred  -Tenant "<Tenant 1 ID>"
 Connect-AzAccount -ServicePrincipal -Credential $cred -Tenant "<Tenant 2 ID>"
 ```
 
-Создайте виртуальную машину в группе ресурсов, имеющей разрешение на регистрацию приложения. Замените сведения в этом примере собственными.
+Создайте VM в группе ресурсов, которая имеет разрешение на регистрацию приложения. Замените информацию в этом примере своей собственной.
 
 
 
@@ -84,6 +84,6 @@ Add-AzVMNetworkInterface -Id $nic.Id
 New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Вы также можете создавать ресурсы коллекции общих образов с помощью [портал Azure](shared-images-portal.md).
+Вы также можете создать общие ресурсы галереи изображений с помощью [портала Azure.](shared-images-portal.md)

@@ -1,5 +1,5 @@
 ---
-title: Ограничение установки расширения виртуальной машины с помощью политики Azure
+title: Используйте политику Azure для ограничения установки расширения VM
 description: Служба "Политика Azure" позволяет ограничить развертывание расширений.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,10 +14,10 @@ ms.date: 03/23/2018
 ms.author: akjosh
 ms.reviewer: cynthn
 ms.openlocfilehash: 428db340ce43463939ce71ffadd4188060f3e732
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74073115"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-windows-vms"></a>Ограничение установки расширений на виртуальных машинах Windows с помощью службы "Политика Azure"
@@ -141,7 +141,7 @@ $assignment
 
 ## <a name="test-the-policy"></a>Проверка политики
 
-Чтобы проверить политику, попробуйте применить расширение для доступа к виртуальной машине. Следующая ошибка должна завершиться с сообщением "Set-Азвмакцессекстенсион: Resource" Мивмакцесс "запрещено политикой".
+Чтобы проверить политику, попробуйте применить расширение для доступа к виртуальной машине. Следующие должны не сбой с сообщением "Set-AzVMAccessExtension : Ресурс 'myVMAccess' был запрещен политикой".
 
 ```azurepowershell-interactive
 Set-AzVMAccessExtension `
@@ -165,5 +165,5 @@ Remove-AzPolicyAssignment -Name not-allowed-vmextension-windows -Scope $scope
 Remove-AzPolicyDefinition -Name not-allowed-vmextension-windows
 ```
     
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)

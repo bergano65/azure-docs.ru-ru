@@ -1,5 +1,5 @@
 ---
-title: Обзор агента виртуальной машины Linux в Azure
+title: Обзор агента Azure Linux VM
 description: Узнайте, как установить и настроить агент Linux (waagent) для управления взаимодействием виртуальной машины с Azure Fabric Controller.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 10/17/2016
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5f22fbd77069488e7aaf490f93f42cde747444a8
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74073854"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
@@ -51,7 +51,7 @@ ms.locfileid: "74073854"
   * Настраивает виртуальную архитектуру NUMA (отключить для ядра версий ранее `2.6.37`)
   * Использование энтропии Hyper-V для /dev/random
   * Настройка времени ожидания SCSI для корневого устройства (может быть удаленным)
-* **Диагностика**
+* **Диагностики**
   
   * Перенаправление консоли на последовательный порт
 * **Развернутые приложения SCVMM**
@@ -60,7 +60,7 @@ ms.locfileid: "74073854"
 * **Расширение виртуальной машины**
   
   * Вставка компонента, созданного корпорацией Майкрософт и ее партнерами, в виртуальную машину Linux (IaaS) для включения программного обеспечения и автоматизации настройки
-  * Эталонная реализация расширения виртуальной машины на сайте [https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions).
+  * Реализация ссылки На Расширение VM на[https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions)
 
 ## <a name="communication"></a>Обмен данными
 Поток информации от платформы к агенту передается по двум каналам:
@@ -72,7 +72,7 @@ ms.locfileid: "74073854"
 Следующие системы протестированы и гарантированно поддерживают работу с агентом Linux для Azure:
 
 > [!NOTE]
-> Этот список может отличаться от официального списка систем, поддерживаемых платформой Microsoft Azure, который доступен на странице: [https://support.microsoft.com/kb/2805216](https://support.microsoft.com/kb/2805216).
+> Этот список может отличаться от официального списка поддерживаемых систем на платформе Microsoft Azure, описанного здесь:[https://support.microsoft.com/kb/2805216](https://support.microsoft.com/kb/2805216)
 > 
 > 
 
@@ -118,7 +118,7 @@ ms.locfileid: "74073854"
   * Настройка имени сервера в /etc/resolv.conf
   * Корневой пароль из /etc/shadow (если в файле конфигурации для Provisioning.DeleteRootPassword указано значение «y»)
   * Кэшированные аренды DHCP-клиентов
-  * Возвращает имя узла localhost.localdomain
+  * возвращается имя узла localhost.localdomain;
 
 > [!WARNING]
 > Отмена подготовки не гарантирует, что из образа будет удалена вся конфиденциальная информация и что он будет готов к повторному распространению.
@@ -337,12 +337,12 @@ Default: y
   
   * **ResourceDisk.Format;**
   * **ResourceDisk.Filesystem;**
-  * **ResourceDisk.MountPoint;**
-  * **ResourceDisk.EnableSwap;**
+  * **ResourceDisk.MountPoint**
+  * **ResourceDisk.EnableSwap**
   * **ResourceDisk.SwapSizeMB.**
 
 * Если вам нужно настроить точку подключения диска ресурсов и пространство подкачки в образах облаков Ubuntu во время подготовки, см. следующие ресурсы.
   
   * [Вики-сайт по Ubuntu: настройка разделов подкачки](https://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
-  * [Включение пользовательских данных в виртуальную машину Azure](../windows/classic/inject-custom-data.md)
+  * [Инъекция пользовательских данных в виртуальную машину Azure](../windows/classic/inject-custom-data.md)
 

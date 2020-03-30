@@ -1,5 +1,5 @@
 ---
-title: Внешнее перенаправление с помощью PowerShell
+title: Внешнее перенаправление с использованием PowerShell
 titleSuffix: Azure Application Gateway
 description: Узнайте, как создать шлюз приложений, который перенаправляет веб-трафик на внешний сайт с помощью Azure PowerShell.
 services: application-gateway
@@ -9,24 +9,24 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: 6596cdb2df0a916c49086f80466db60b02a81467
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74047759"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure PowerShell
 
 С помощью Azure PowerShell можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы настроите прослушиватель и правило, которое перенаправляет веб-трафик, поступающий на шлюз приложений, на внешний сайт.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
 > * создание прослушивателя и правила перенаправления;
 > * Создание шлюза приложений
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -44,7 +44,7 @@ New-AzResourceGroup -Name myResourceGroupAG -Location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Создайте конфигурацию подсети *myAGSubnet* с помощью команды [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть с именем *myVNet* , используя [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork) с конфигурацией подсети. Наконец, создайте общедоступный IP-адрес, выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
+Создайте конфигурацию подсети *myAGSubnet* с помощью [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть под названием *myVNet* с помощью [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) с конфигурацией подсети. Наконец, создайте общедоступный IP-адрес, выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
 
 ```azurepowershell-interactive
 $agSubnetConfig = New-AzVirtualNetworkSubnetConfig `
@@ -87,7 +87,7 @@ $frontendport = New-AzApplicationGatewayFrontendPort `
 
 ### <a name="create-the-backend-pool-and-settings"></a>Создание серверного пула и настройка параметров
 
-Создайте внутренний пул с именем *дефаултпул* для шлюза приложений с помощью [New-азаппликатионгатевайбаккендаддресспул](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
+Создайте пул бэкэнда под названием *defaultPool* для шлюза приложения с помощью [New-AzApplicationGatewayBackendAddressPool.](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool) Настройте параметры для пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
 
 ```azurepowershell-interactive
 $defaultPool = New-AzApplicationGatewayBackendAddressPool `
@@ -102,7 +102,7 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 ### <a name="create-the-listener-and-rule"></a>Создание прослушивателя и правила
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик. Создайте прослушиватель с помощью команды [New-азаппликатионгатевайхттплистенер](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с интерфейсной конфигурацией и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, куда отправлять входящий трафик. Создайте базовое правило с именем *redirectRule* , используя [New-азаппликатионгатевайрекуестраутингруле](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик. Создайте слушателя с помощью [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с конфигурацией переднего и переднего порта, который вы ранее создали. Правило требуется для того, чтобы указать прослушивателю, куда отправлять входящий трафик. Создайте базовое правило под названием *redirectRule* с помощью [New-AzApplicationGatewayRequestRoutingRule.](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule)
 
 ```azurepowershell-interactive
 $defaultListener = New-AzApplicationGatewayHttpListener `
@@ -155,7 +155,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 В браузере должен открыться сайт *bing.com*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

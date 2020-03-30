@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.author: hrasheed
 ms.openlocfilehash: 2c153d818136c5d8804dae72004dfaf17fd1bf7a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73494523"
 ---
 # <a name="known-issues-for-apache-spark-cluster-on-hdinsight"></a>Известные проблемы в работе кластера Apache Spark в HDInsight
@@ -22,7 +22,7 @@ ms.locfileid: "73494523"
 ## <a name="apache-livy-leaks-interactive-session"></a>Утечка интерактивного сеанса Apache Livy
 При перезапуске [Apache Livy](https://livy.incubator.apache.org/) (из [Apache Ambari](https://ambari.apache.org/) или в связи с перезапуском виртуальной машины headnode 0) во время работы интерактивного сеанса происходит утечка сеанса интерактивного задания. В результате этого новые задания могут "зависнуть" в состоянии "Принято".
 
-**Устранение.**
+**Устранение рисков.**
 
 Для решения этой проблемы выполните указанные ниже действия:
 
@@ -32,7 +32,7 @@ ms.locfileid: "73494523"
 
         yarn application –list
 
-    Если задания запущены с помощью интерактивного сеанса Livy без явно заданных имен, по умолчанию используются имена Livy. Для сеанса Livy, запущенного [Jupyter Notebook](https://jupyter.org/), имя задания начинается с `remotesparkmagics_*`.
+    Если задания запущены с помощью интерактивного сеанса Livy без явно заданных имен, по умолчанию используются имена Livy. Для сессии Livy, начатой [Jupyter Notebook,](https://jupyter.org/)название задания начинается с `remotesparkmagics_*`.
 
 3. Чтобы аннулировать эти задания, выполните следующую команду:
 
@@ -43,7 +43,7 @@ ms.locfileid: "73494523"
 ## <a name="spark-history-server-not-started"></a>Сервер журналов Spark не запускается
 Сервер журналов Spark не запускается автоматически после создания кластера.  
 
-**Устранение.**
+**Устранение рисков.**
 
 Вручную запустите сервер журналов из Ambari.
 
@@ -56,7 +56,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 При этом журнал драйверов не ведется.
 
-**Устранение.**
+**Устранение рисков.**
 
 1. Добавьте hdiuser в группу Hadoop.
 2. После создания кластера предоставьте разрешения 777 для каталога /var/log/spark.
@@ -67,7 +67,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 Кластеры HDInsight Spark не поддерживают соединитель Spark-Phoenix.
 
-**Устранение.**
+**Устранение рисков.**
 
 Вместо него необходимо использовать соединитель Spark-HBase. Инструкции см. в записи блога об [использовании соединителя Spark-HBase](https://web.archive.org/web/20190112153146/https://blogs.msdn.microsoft.com/azuredatalake/2016/07/25/hdinsight-how-to-use-spark-hbase-connector/).
 
@@ -81,9 +81,9 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 ### <a name="error-while-loading-notebooks-of-larger-sizes"></a>Ошибка при загрузке записных книжек большого размера
 
-При загрузке записных книжек большого размера может возникнуть ошибка **`Error loading notebook`** .  
+Вы можете увидеть **`Error loading notebook`** ошибку при загрузке ноутбуков, которые больше по размеру.  
 
-**Устранение.**
+**Устранение рисков.**
 
 Появление этой ошибки не означает, что данные повреждены или утрачены.  Записные книжки по-прежнему хранятся на диске в каталоге `/var/lib/jupyter`, и вы можете получить к ним доступ, подключившись к кластеру по протоколу SSH. См. дополнительные сведения об [использовании SSH в HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
@@ -91,14 +91,14 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 Чтобы избежать этой ошибки в будущем, необходимо следовать некоторым рекомендациям.
 
-* Записная книжка должна быть небольшого размера. В записной книжке сохраняются любые выходные данные заданий Spark, которые отправляются обратно в Jupyter.  Рекомендуется использовать Jupyter в целом, чтобы не выполнять `.collect()` для больших RDD или кадров данных. Вместо этого, если вы хотите просмотреть содержимое RDD, рассмотрите возможность запуска `.take()` или `.sample()`, чтобы выходные данные не были слишком большими.
+* Записная книжка должна быть небольшого размера. В записной книжке сохраняются любые выходные данные заданий Spark, которые отправляются обратно в Jupyter.  Это лучшая практика с Jupyter в `.collect()` целом, чтобы избежать работы на больших RDD или dataframes; вместо этого, если вы хотите заглянуть в содержимое `.take()` `.sample()` RDD, рассмотрите возможность запуска или так, чтобы ваш выход не был слишком большим.
 * Кроме того, если при сохранении записной книжки очистить все ячейки выходных данных, это также поможет уменьшить размер.
 
 ### <a name="notebook-initial-startup-takes-longer-than-expected"></a>Начальная загрузка записной книжки загружается дольше ожидаемого
 
 Выполнение первой инструкции кода в записной книжке Jupyter с использованием волшебного слова Spark может занимать больше минуты.  
 
-**Пояснение**
+**Объяснение:**
 
 Это происходит из-за выполнения первой ячейки кода. В фоновом режиме инициируется конфигурация сеанса и задается контекст Spark, SQL и Hive. После настройки этих контекстов выполняется первая инструкция, и из-за этого кажется, что она выполняется долго.
 
@@ -106,7 +106,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 Если кластеру Spark не хватает ресурсов, при попытке создать сеанс работа ядер Spark и Pyspark в записной книжке Jupyter приостанавливается.
 
-**Устранение**
+**Смягчения последствий:**
 
 1. Освободите часть ресурсов в кластере Spark.
 
@@ -115,7 +115,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 2. Перезапустите записную книжку, которую вы пытались запустить. Теперь ресурсов должно быть достаточно для создания сеанса.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
@@ -124,7 +124,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 * [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журнала веб-сайта с использованием Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 
@@ -134,9 +134,9 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 ### <a name="tools-and-extensions"></a>Средства и расширения
 
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 

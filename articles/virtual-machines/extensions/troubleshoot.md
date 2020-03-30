@@ -1,5 +1,5 @@
 ---
-title: Устранение ошибок расширения виртуальной машины Windows
+title: Устранение сбоев в расширении Windows VM
 description: Узнайте об устранении неполадок в работе расширений виртуальной машины Windows в Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 03/29/2016
 ms.author: kundanap
 ms.openlocfilehash: bc99a9c9e9ff985730ec97dbacd1d7c1de06a45e
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74073651"
 ---
 # <a name="troubleshooting-azure-windows-vm-extension-failures"></a>Troubleshooting Azure Windows VM extension failures
@@ -27,9 +27,9 @@ ms.locfileid: "74073651"
 ## <a name="viewing-extension-status"></a>Просмотр состояния расширения
 Шаблоны Azure Resource Manager можно выполнять из Azure PowerShell. После выполнения шаблона состояние расширения можно узнать в обозревателе ресурсов Azure или с помощью программ командной строки.
 
-Пример:
+Например:
 
-Azure PowerShell.
+Azure PowerShell:
 
       Get-AzVM -ResourceGroupName $RGName -Name $vmName -Status
 

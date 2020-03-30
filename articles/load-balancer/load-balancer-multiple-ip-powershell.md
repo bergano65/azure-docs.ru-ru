@@ -1,7 +1,7 @@
 ---
 title: Балансировка нагрузки в конфигурациях с несколькими IP-адресами — Azure CLI
 titleSuffix: Azure Load Balancer
-description: Из этой статьи вы узнаете о балансировке нагрузки в основной и дополнительной IP-конфигурациях с помощью Azure CLI.
+description: В этой статье узнайте о балансировке нагрузки в первичных и вторичных конфигурациях IP с помощью Azure CLI.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -14,17 +14,17 @@ ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
 ms.openlocfilehash: 6ac9e362314cc45e6adbdcf1390f70cbe6b05de8
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74075961"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-using-powershell"></a>Балансировка нагрузки в конфигурациях с несколькими IP-адресами с помощью PowerShell
 
 > [!div class="op_single_selector"]
 > * [Портал](load-balancer-multiple-ip.md)
-> * [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](load-balancer-multiple-ip-cli.md)
+> * [Cli](load-balancer-multiple-ip-cli.md)
 > * [PowerShell](load-balancer-multiple-ip-powershell.md)
 
 
@@ -141,6 +141,6 @@ ms.locfileid: "74075961"
 
 13. Наконец, необходимо настроить записи ресурсов DNS, чтобы они указывали на соответствующие интерфейсные IP-адреса подсистемы балансировки нагрузки. Домены можно разместить в Azure DNS. Дополнительные сведения об использовании Azure DNS с подсистемой балансировки нагрузки см. в разделе [Использование Azure DNS с другими службами Azure](../dns/dns-for-azure-services.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше о том, как объединять службы балансировки нагрузки, в статье [Использование служб балансировки нагрузки в Azure](../traffic-manager/traffic-manager-load-balancing-azure.md).
-- Узнайте, как можно использовать различные типы журналов в Azure для управления подсистемой балансировки нагрузки и устранения неполадок в [журналах Azure Monitor для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md).
+- Узнайте, как можно использовать различные типы журналов в Azure для управления и устранения неполадок в [журналах Azure Monitor для Azure Load Balancer.](../load-balancer/load-balancer-monitor-log.md)

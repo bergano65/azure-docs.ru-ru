@@ -1,6 +1,6 @@
 ---
-title: Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия) | Документация Майкрософт
-description: Узнайте, как обрабатывать журналы веб-каналов изменений в клиентском приложении .NET.
+title: Подача изменения процесса в хранилище Azure Blob (Предварительный просмотр) Документы Майкрософт
+description: Узнайте, как обрабатывать журналы изменений в клиентском приложении .NET
 author: normesta
 ms.author: normesta
 ms.date: 11/04/2019
@@ -9,36 +9,36 @@ ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
 ms.openlocfilehash: 75995eeb3f8255cb4c60d5be267f9c343edfea89
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74111857"
 ---
-# <a name="process-change-feed-in-azure-blob-storage-preview"></a>Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
+# <a name="process-change-feed-in-azure-blob-storage-preview"></a>Подача изменения процесса в хранилище Azure Blob (Предварительный просмотр)
 
-Веб-канал изменений предоставляет журналы транзакций всех изменений, происходящих в больших двоичных объектах и метаданных больших двоичных объектов в вашей учетной записи хранения. В этой статье показано, как считывать записи веб-канала изменений с помощью библиотеки обработчика канала изменений больших двоичных объектов.
+Лента изменений предоставляет журналы транзакций всех изменений, которые происходят с каплями и метаданными капли в вашей учетной записи хранения. В этой статье показано, как читать записи изврапроментов изменений с помощью библиотеки процессоров для переставок из blob.
 
-Дополнительные сведения о канале изменений см. [в статье канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md).
+Подробнее об ленте изменений читайте [в ленте Change Feed в azure Blob Storage (Preview)](storage-blob-change-feed.md).
 
 > [!NOTE]
-> Веб-канал изменений находится в общедоступной предварительной версии и доступен в регионах **westcentralus** и **westus2** . Дополнительные сведения об этой функции вместе с известными проблемами и ограничениями см. [в статье поддержка веб-канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md). Библиотека обработчика веб-канала изменений может быть изменена между сейчас и когда эта библиотека становится общедоступной.
+> Канал изменений находится в открытом предварительном просмотре и доступен в **регионах westcentralus** и **westus2.** Чтобы узнать больше об этой функции вместе [Change feed support in Azure Blob Storage](storage-blob-change-feed.md)с известными проблемами и ограничениями, см. Библиотека процессоров изменяемых каналов может изменяться в период до момента, когда эта библиотека становится общедоступной.
 
-## <a name="get-the-blob-change-feed-processor-library"></a>Получение библиотеки обработчика канала изменений больших двоичных объектов
+## <a name="get-the-blob-change-feed-processor-library"></a>Получите библиотеку процессора компоновки подачи по каблу
 
-1. В Visual Studio добавьте URL-адрес `https://azuresdkartifacts.blob.core.windows.net/azuresdkpartnerdrops/index.json` в источники пакетов NuGet. 
+1. В Visual Studio добавьте URL-адрес `https://azuresdkartifacts.blob.core.windows.net/azuresdkpartnerdrops/index.json` в свои источники пакетов NuGet. 
 
-   Дополнительные сведения см. в разделе [источники пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#package-sources).
+   Чтобы узнать, как, [см.](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#package-sources)
 
-2. В диспетчере пакетов NuGet найдите пакет **Microsoft. Azure. Storage. пр** и установите его в свой проект. 
+2. В наборе NuGet Manager найдите пакет **Microsoft.Azure.Storage.Changefeed** и установите его в свой проект. 
 
-   Дополнительные сведения см. в разделе [Поиск и установка пакета](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).
+   Чтобы узнать, как, см [Найти и установить пакет](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).
 
 ## <a name="connect-to-the-storage-account"></a>Подключение к учетной записи хранения
 
-Проанализируйте строку подключения, вызвав метод [CloudStorageAccount. TryParse](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse) . 
+Пропаривать строку соединения, позвонив по методу [CloudStorageAccount.TryParse.](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse) 
 
-Затем создайте объект, который представляет хранилище BLOB-объектов в вашей учетной записи хранения, вызвав метод [CloudStorageAccount. креатеклаудблобклиент](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.blobaccountextensions.createcloudblobclient) .
+Затем создайте объект, представляющий Blob Storage в вашей учетной записи хранения, позвонив по методу [CloudStorageAccount.CreateCloudBlobClient.](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.blobaccountextensions.createcloudblobclient)
 
 ```cs
 public bool GetBlobClient(ref CloudBlobClient cloudBlobClient, string storageConnectionString)
@@ -58,16 +58,16 @@ public bool GetBlobClient(ref CloudBlobClient cloudBlobClient, string storageCon
 }
 ```
 
-## <a name="initialize-the-change-feed"></a>Инициализация веб-канала изменений
+## <a name="initialize-the-change-feed"></a>Инициализация канала изменения
 
-Добавьте следующие операторы using в начало файла кода. 
+Добавьте следующие операторы с помощью в верхней части файла кода. 
 
 ```csharp
 using Avro.Generic;
 using ChangeFeedClient;
 ```
 
-Затем создайте экземпляр класса **пр** , вызвав метод **жетконтаинерреференце** . Передайте имя контейнера веб-канала изменений.
+Затем создайте экземпляр класса **ChangeFeed,** позвонив в метод **GetContainerReference.** Передайте во имя контейнера подачи изменений.
 
 ```csharp
 public async Task<ChangeFeed> GetChangeFeed(CloudBlobClient cloudBlobClient)
@@ -85,11 +85,11 @@ public async Task<ChangeFeed> GetChangeFeed(CloudBlobClient cloudBlobClient)
 ## <a name="reading-records"></a>Чтение записей
 
 > [!NOTE]
-> Веб-канал изменений является неизменяемой сущностью и доступна только для чтения в вашей учетной записи хранения. Любое количество приложений может одновременно считывать и обрабатывать канал изменений, а также независимо от их удобства. Записи не удаляются из веб-канала изменений, когда приложение считывает их. Состояние чтения или итерации каждого потребляемого модуля чтения является независимым и поддерживается только приложением.
+> Лента изменений — это неизменяемая сущность, основанная только на чтении, в вашей учетной записи хранения данных. Любое количество приложений может читать и обрабатывать канал изменения одновременно и самостоятельно по своему усмотрению. Записи не удаляются из ленты изменений, когда приложение читает их. Состояние чтения или итерации каждого потребляющего читателя является независимым и поддерживается только вашим приложением.
 
-Самый простой способ считать записи — создать экземпляр класса **чанжефидреадер** . 
+Самый простой способ чтения записей — создать экземпляр класса **ChangeFeedReader.** 
 
-В этом примере выполняется перебор всех записей в веб-канале изменений, а затем на консоль выводятся несколько значений из каждой записи. 
+Этот пример пронизан всеми записями в ленте изменений, а затем печатает на консоли несколько значений из каждой записи. 
  
 ```csharp
 public async Task ProcessRecords(ChangeFeed changeFeed)
@@ -116,15 +116,15 @@ public async Task ProcessRecords(ChangeFeed changeFeed)
 }
 ```
 
-## <a name="resuming-reading-records-from-a-saved-position"></a>Возобновление чтения записей из сохраненной должности
+## <a name="resuming-reading-records-from-a-saved-position"></a>Возобновление записей чтения из сохраненной позиции
 
-Вы можете сохранить свое расположение чтения в веб-канале изменений и возобновить итерацию записей в будущем. Состояние итерации веб-канала изменений можно сохранить в любое время с помощью метода **чанжефидреадер. сериализестате ()** . Состояние представляет собой **строку** , и приложение может сохранить это состояние в зависимости от структуры приложения (например, в базе данных или файле).
+Вы можете сохранить свое чтение позиции в ленте изменений и возобновить итерирование записей в будущем. Вы можете сохранить состояние итерации канала изменения в любое время с помощью метода **ChangeFeedReader.SerializeState()** . Состояние — это **строка,** и приложение может сохранить это состояние на основе дизайна приложения (например, в базу данных или файл).
 
 ```csharp
     string currentReadState = processor.SerializeState();
 ```
 
-Можно продолжить итерацию записей из последнего состояния, создав **чанжефидреадер** с помощью метода **креатечанжефидреадерфромпоинтерасинк** .
+Вы можете продолжить итерацию записей из последнего состояния, создав **ChangeFeedReader** с помощью метода **CreateChangeFeedReaderFromPointerAsync.**
 
 ```csharp
 public async Task ProcessRecordsFromLastPosition(ChangeFeed changeFeed, string lastReadState)
@@ -152,9 +152,9 @@ public async Task ProcessRecordsFromLastPosition(ChangeFeed changeFeed, string l
 
 ```
 
-## <a name="stream-processing-of-records"></a>Потоковая обработка записей
+## <a name="stream-processing-of-records"></a>Обработка потоков записей
 
-Вы можете обрабатывать записи веб-канала изменений по мере их поступления. См. [спецификации](storage-blob-change-feed.md#specifications).
+Вы можете выбрать обработку записей изменения корма по мере их поступления. Посмотреть [спецификации](storage-blob-change-feed.md#specifications).
 
 ```csharp
 public async Task ProcessRecordsStream(ChangeFeed changeFeed, int waitTimeMs)
@@ -186,13 +186,13 @@ public async Task ProcessRecordsStream(ChangeFeed changeFeed, int waitTimeMs)
 }
 ```
 
-## <a name="reading-records-within-a-time-range"></a>Чтение записей в диапазоне времени
+## <a name="reading-records-within-a-time-range"></a>Чтение записей в пределах временного диапазона
 
-Канал изменений организован в почасовые сегменты на основе времени события изменения. См. [спецификации](storage-blob-change-feed.md#specifications). Вы можете читать записи из сегментов веб-канала изменений, которые попадают в указанный диапазон времени.
+Канал изменения организован в почасовые сегменты на основе времени события изменения. Посмотреть [спецификации](storage-blob-change-feed.md#specifications). Вы можете читать записи из сегментов каналов изменений, которые подпадают под определенный временной диапазон.
 
-В этом примере получается время начала всех сегментов. Затем он проходит по этому списку, пока время начала не выходит за пределы времени последнего потребляемого сегмента или за время окончания требуемого диапазона. 
+Этот пример получает время начала всех сегментов. Затем он итерирует этот список до начала времени либо за пределами времени последнего расходного сегмента или за пределами окончания желаемого диапазона. 
 
-### <a name="selecting-segments-for-a-time-range"></a>Выбор сегментов для диапазона времени
+### <a name="selecting-segments-for-a-time-range"></a>Выбор сегментов для временного диапазона
 
 ```csharp
 public async Task<List<DateTimeOffset>> GetChangeFeedSegmentRefsForTimeRange
@@ -237,7 +237,7 @@ public async Task<List<DateTimeOffset>> GetChangeFeedSegmentRefsForTimeRange
 
 ### <a name="reading-records-in-a-segment"></a>Чтение записей в сегменте
 
-Можно считывать записи из отдельных сегментов или диапазонов сегментов.
+Вы можете читать записи из отдельных сегментов или диапазонов сегментов.
 
 ```csharp
 public async Task ProcessRecordsInSegment(ChangeFeed changeFeed, DateTimeOffset segmentOffset)
@@ -269,9 +269,9 @@ public async Task ProcessRecordsInSegment(ChangeFeed changeFeed, DateTimeOffset 
 
 ## <a name="read-records-starting-from-a-time"></a>Чтение записей, начиная с времени
 
-Можно считывать записи веб-канала изменений из начального сегмента до конца. Как и при чтении записей в диапазоне времени, можно перечислить сегменты и выбрать сегмент для начала итерации.
+Вы можете прочитать записи канала изменения от стартового сегмента до конца. Подобно записи чтения в пределах временного диапазона, вы можете перечислить сегменты и выбрать сегмент, чтобы начать итерации с.
 
-В этом примере получается значение [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?view=netframework-4.8) первого сегмента для обработки.
+Этот пример получает [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?view=netframework-4.8) первого сегмента для обработки.
 
 ```csharp
 public async Task<DateTimeOffset> GetChangeFeedSegmentRefAfterTime
@@ -304,7 +304,7 @@ public async Task<DateTimeOffset> GetChangeFeedSegmentRefAfterTime
 }
 ```
 
-В этом примере выполняется обработка записей веб-канала изменений, начиная с [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?view=netframework-4.8) начального сегмента.
+Этот пример процессов изменяет записи каналов, начиная с [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?view=netframework-4.8) стартового сегмента.
 
 ```csharp
 public async Task ProcessRecordsStartingFromSegment(ChangeFeed changeFeed, DateTimeOffset segmentStart)
@@ -367,8 +367,8 @@ private async Task<bool> IsSegmentConsumableAsync(ChangeFeed changeFeed, ChangeF
 ```
 
 >[!TIP]
-> Сегмент может иметь журналы веб-канала изменений в одном или нескольких *чункфилепас*. В случае нескольких *чункфилепас* система внутренним образом разделяет записи на несколько сегментов, чтобы управлять пропускной способностью публикации. Гарантируется, что каждая секция сегмента будет содержать изменения взаимоисключающих больших двоичных объектов и может обрабатываться независимо, без нарушения порядка. Класс **чанжефидсегментшардреадер** можно использовать для перебора записей на уровне сегментов, если это наиболее эффективно для вашего сценария.
+> Сегмент может иметь журналы подачизменения изменений в одном или нескольких *chunkFilePath.* В случае нескольких *chunkFilePath* система внутренне разделена записей на несколько осколков для управления пропускной стоимостью публикации. Гарантируется, что каждый раздел сегмента будет содержать изменения для взаимоисключающих капли и может быть обработан самостоятельно, не нарушая порядок. Вы можете использовать класс **ChangeFeedSegmentShardReader** для итератировать записи на уровне осколка, если это наиболее эффективно для вашего сценария.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md)
+Подробнее об изменениях журналов каналов. Смотрите [ленту изменений в хранилище Azure Blob (Предварительный просмотр)](storage-blob-change-feed.md)

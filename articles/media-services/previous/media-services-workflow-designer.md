@@ -16,14 +16,14 @@ ms.date: 03/20/2019
 ms.author: anilmur
 ms.reviewer: juliako;johndeu
 ms.openlocfilehash: 4dceb558532305c6d2e84563e25ab05508423090
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72801953"
 ---
 # <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенного кодирования с помощью конструктора рабочих процессов  
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 **Конструктор рабочих процессов** — это классическое средство Windows, которое используется для разработки и создания настраиваемых рабочих процессов шифрования с использованием **рабочего процесса Media Encoder Premium**.
 Возможности конструктора рабочих процессов позволяют проектировать и создавать сложные рабочие процессы, которые будут выполняться в **Media Encoder Premium**.  
 
@@ -41,7 +41,7 @@ ms.locfileid: "72801953"
 
 После создания файла рабочего процесса его можно передать как ресурс, а затем использовать для кодирования файлов мультимедиа. Сведения о том, как выполнять кодирование, используя **рабочий процесс Media Encoder Premium** и **.NET** см. в разделе [Дополнительное кодирование с помощью рабочего процесса Premium кодировщика мультимедиа](media-services-encode-with-premium-workflow.md).
 
-## <a id="existing_workflows"></a>Изменение существующих рабочих процессов
+## <a name="modify-existing-workflows"></a><a id="existing_workflows"></a>Изменение существующих рабочих процессов
 [Опубликованные рабочие процессы](media-services-workflow-designer.md#existing_workflows) по умолчанию можно редактировать с помощью средств конструктора. Файлы используемого по умолчанию рабочего процесса можно получить [здесь](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows). Папка также содержит описание этих файлов.
 
 Указанные ниже видеоматериалы демонстрируют, как использовать конструктор.
@@ -79,16 +79,16 @@ ms.locfileid: "72801953"
 > 
 > 
 
-## <a name="need-help"></a>Нужна помощь?
+## <a name="need-help"></a>Требуется помощь?
 
-Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
+Вы можете открыть билет поддержки, перенаправившись в [Новый запрос поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

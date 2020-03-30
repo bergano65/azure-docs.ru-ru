@@ -1,5 +1,5 @@
 ---
-title: Загрузка данных из CSV-файла в базу данных (BCP)
+title: Загрузка данных из файла CSV в базу данных (bcp)
 description: Для импорта небольших объемов данных в базу данных SQL Azure используйте программу bcp.
 services: sql-database
 ms.service: sql-database
@@ -12,17 +12,17 @@ ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 01/25/2019
 ms.openlocfilehash: b0df3d588f1d9b0a50c3ea7a583b0704e7e85c39
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73827492"
 ---
 # <a name="load-data-from-csv-into-azure-sql-database-flat-files"></a>Загрузка данных из CSV-файла в базу данных SQL Azure (неструктурированные файлы)
 
 Для импорта данных из CSV-файла в Базу данных SQL Azure можно использовать программу командной строки bcp.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -32,13 +32,13 @@ ms.locfileid: "73827492"
 * установленная служебная программа командной строки bcp;
 * установленная служебная программа командной строки sqlcmd.
 
-Вы можете загрузить служебные программы bcp и sqlcmd в [Центре загрузки Майкрософт][Microsoft Download Center].
+Вы можете скачать служебные программы bcp и sqlcmd в [Центре загрузки Майкрософт][Microsoft Download Center].
 
 ### <a name="data-in-ascii-or-utf-16-format"></a>Данные в формате ASCII или UTF-16
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо использовать данные в формате ASCII или UTF-16, так как bcp не поддерживает кодировку UTF-8. 
 
-## <a name="1-create-a-destination-table"></a>1. Создание целевой таблицы
+## <a name="1-create-a-destination-table"></a>1. Создание таблицы назначения
 
 Определите таблицу в базе данных SQL как целевую таблицу. Столбцы в таблице должны соответствовать данным в каждой строке файла данных.
 
@@ -82,7 +82,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 bcp <TableName> out C:\Temp\DimDate2_export.txt -S <ServerName> -d <DatabaseName> -U <Username> -P <Password> -q -c -t , 
 ```
 
-## <a name="3-load-the-data"></a>3. Загрузка данных
+## <a name="3-load-the-data"></a>3. Загрузить данные
 
 Чтобы загрузить данные, откройте окно командной строки и выполните следующую команду, подставив собственные значения имени сервера, базы данных, пользователя и пароль.
 
@@ -103,15 +103,15 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 | 20150101 |1 |3 |
 | 20150201 |1 |3 |
 | 20150301 |1 |3 |
-| 20150401 |2 |4\. |
-| 20150501 |2 |4\. |
-| 20150601 |2 |4\. |
+| 20150401 |2 |4 |
+| 20150501 |2 |4 |
+| 20150601 |2 |4 |
 | 20150701 |3 |1 |
 | 20150801 |3 |1 |
 | 20150801 |3 |1 |
-| 20151001 |4\. |2 |
-| 20151101 |4\. |2 |
-| 20151201 |4\. |2 |
+| 20151001 |4 |2 |
+| 20151101 |4 |2 |
+| 20151201 |4 |2 |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,6 +1,6 @@
 ---
-title: Анализ Azure Data Lake Storage 1-го поколения с помощью Apache Spark HDInsight
-description: Выполнение заданий Apache Spark для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения
+title: Анализ Данных хранения данных Az1 с помощью HDInsight Apache Spark
+description: Выполнить задания Apache Spark для анализа данных, хранящихся в Azure Data Lake Storage Gen1
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,19 +9,19 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.openlocfilehash: f7a6ab954aff1bcc2e3dae3fc035db4b136ccbbe
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73818171"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения
 
-В этой статье вы используете [Jupyter Notebook](https://jupyter.org/) , доступных в кластерах HDInsight Spark для выполнения задания, считывающего данные из учетной записи Data Lake Storage.
+В этой статье используется [ноутбук Jupyter,](https://jupyter.org/) доступный с кластерами HDInsight Spark для выполнения задания, считывающегося данных из учетной записи хранилища данных.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись Azure Data Lake Storage 1-го поколения. Следуйте инструкциям в статье [Начало работы с Azure Data Lake Storage 1-го поколения с помощью портала Azure](../../data-lake-store/data-lake-store-get-started-portal.md).
+* Учетная запись Azure Data Lake Storage 1-го поколения. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](../../data-lake-store/data-lake-store-get-started-portal.md).
 
 * Кластер Azure HDInsight Spark с Data Lake Storage 1-го поколения в качестве хранилища. Следуйте инструкциям из статьи [Краткое руководство по установке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
@@ -38,7 +38,7 @@ ms.locfileid: "73818171"
 
         AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/<blob name> /dest swebhdfs://<dest_adls_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container>
 
-    Скопируйте пример файла данных **HVAC.csv**, расположенный в папке **/HdiSamples/HdiSamples/SensorSampleData/hvac/** , в учетную запись Azure Data Lake Storage. Фрагмент кода должен иметь следующий вид.
+    Скопируйте пример файла данных **HVAC.csv**, расположенный в папке **/HdiSamples/HdiSamples/SensorSampleData/hvac/**, в учетную запись Azure Data Lake Storage. Фрагмент кода должен иметь следующий вид.
 
         AdlCopy /Source https://mydatastore.blob.core.windows.net/mysparkcluster/HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv /dest swebhdfs://mydatalakestore.azuredatalakestore.net/hvac/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ==
 
@@ -56,7 +56,7 @@ ms.locfileid: "73818171"
 
 ## <a name="use-an-hdinsight-spark-cluster-with-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark с Data Lake Storage 1-го поколения
 
-1. На [портал Azure](https://portal.azure.com/)в начальной панели щелкните плитку для кластера Apache Spark (если он закреплен в начальной панели). Кроме того, вы можете перейти к кластеру, последовательно щелкнув **Просмотреть все** > **Кластеры HDInsight**.
+1. С [портала Azure](https://portal.azure.com/)со стартовой доски щелкните плитку для кластера Apache Spark (если вы прикрепили ее к старту). Вы также можете перейти к кластеру под **просматривать все** > **кластеры HDInsight**.
 
 2. В колонке кластера Spark щелкните **Быстрые ссылки**, затем в колонке **Панель мониторинга кластера** выберите **Записная книжка Jupyter**. При появлении запроса введите учетные данные администратора для кластера.
 
@@ -67,13 +67,13 @@ ms.locfileid: "73818171"
 
 3. Создайте новую записную книжку. Щелкните **Создать**, а затем выберите **PySpark**.
 
-    ![Создание записной книжки Jupyter](./media/apache-spark-use-with-data-lake-store/hdinsight-create-jupyter-notebook.png "Создание новой записной книжки Jupyter")
+    ![Создание новой записной книжки Jupyter](./media/apache-spark-use-with-data-lake-store/hdinsight-create-jupyter-notebook.png "Создание новой записной книжки Jupyter")
 
 4. Так как записная книжка была создана с помощью ядра PySpark, задавать контексты явно необязательно. Контексты Spark и Hive будут созданы автоматически при выполнении первой ячейки кода. Можно начать с импорта различных типов, необходимых для этого сценария. Для этого вставьте следующий фрагмент кода в ячейку и нажмите сочетание клавиш **SHIFT+ВВОД**.
 
         from pyspark.sql.types import *
 
-    При каждом запуске задания в Jupyter в заголовке окна веб-браузера будет отображаться состояние **(Занято)** , а также название записной книжки. Кроме того, рядом с надписью **PySpark** в верхнем правом углу окна будет показан закрашенный кружок. После завершения задания этот значок изменится на кружок без заливки.
+    При каждом запуске задания в Jupyter в заголовке окна веб-браузера будет отображаться состояние **(Занято)**, а также название записной книжки. Кроме того, рядом с надписью **PySpark** в верхнем правом углу окна будет показан закрашенный кружок. После завершения задания этот значок изменится на кружок без заливки.
 
      ![Состояние задания записной книжки Jupyter](./media/apache-spark-use-with-data-lake-store/hdinsight-jupyter-job-status.png "Состояние задания записной книжки Jupyter")
 
@@ -115,11 +115,11 @@ ms.locfileid: "73818171"
 
 7. После успешного выполнения задания по умолчанию будет показаны следующие табличные данные.
 
-      ![Выходные данные таблицы результатов запроса](./media/apache-spark-use-with-data-lake-store/jupyter-tabular-output.png "Табличные выходные данные для результата запроса")
+      ![Табличные выходные данные для результата запроса](./media/apache-spark-use-with-data-lake-store/jupyter-tabular-output.png "Табличные выходные данные для результата запроса")
 
      Результаты также можно просмотреть и в других визуализациях. Например, диаграмма областей для тех же выходных данных будет выглядеть следующим образом.
 
-     ![Диаграмма с областями результата запроса](./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png "Диаграмма областей для результата запроса")
+     ![Диаграмма областей для результата запроса](./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png "Диаграмма областей для результата запроса")
 
 8. Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в записной книжке в меню **Файл** выберите пункт **Close and Halt** (Закрыть и остановить). Это завершит работу записной книжки и закроет ее.
 
@@ -129,4 +129,4 @@ ms.locfileid: "73818171"
 * [Создание автономного приложения Scala для работы в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-create-standalone-application.md)
 * [Создание приложений Apache Spark для кластера HDInsight с помощью набора средств Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse](apache-spark-eclipse-tool-plugin.md)
-* [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)
+* [Используйте хранилище данных Azure Data Lake Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)

@@ -1,5 +1,5 @@
 ---
-title: Правила маршрутизации на основе URL-пути с помощью PowerShell
+title: Правила маршрутизации на основе URL с помощью PowerShell
 titleSuffix: Azure Application Gateway
 description: Узнайте, как создать правила маршрутизации на основе URL-пути для шлюза приложений и масштабируемый набор виртуальных машин с помощью Azure PowerShell.
 services: application-gateway
@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: e7934ba0b33bff7ffb8e89e7b56c5b998a232289
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74048054"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-routing-rules-using-azure-powershell"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи Azure PowerShell
 
-Для настройки [правил маршрутизации на основе URL-пути](application-gateway-url-route-overview.md) при создании [шлюза приложений](application-gateway-introduction.md) можно использовать Azure PowerShell. В этом руководстве мы создадим серверные пулы с использованием [масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). Затем мы создадим правила маршрутизации, которые обеспечивают поступление веб-трафика на соответствующие серверы в пуле.
+Для настройки [правил маршрутизации на основе URL-пути](application-gateway-url-route-overview.md) при создании [шлюза приложений](application-gateway-introduction.md) можно использовать Azure PowerShell. В этом руководстве мы создадим внутренние пулы с использованием [масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). Затем мы создадим правила маршрутизации, которые обеспечивают поступление веб-трафика на соответствующие серверы в пуле.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
@@ -28,7 +28,7 @@ ms.locfileid: "74048054"
 
 ![Пример маршрутизации для URL-адресов](./media/application-gateway-create-url-route-arm-ps/scenario.png)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -72,7 +72,7 @@ $pip = New-AzPublicIpAddress `
 
 ### <a name="create-the-ip-configurations-and-frontend-port"></a>Создание IP-конфигураций и интерфейсного порта
 
-Свяжите созданную ранее подсеть *myAGSubnet* со шлюзом приложений, используя командлет [New-AzApplicationGatewayIPConfiguration](/powershell/module/az.network/new-azapplicationgatewayipconfiguration). Назначьте *myAGPublicIPAddress* шлюзу приложений с помощью [New-азаппликатионгатевайфронтендипконфиг](/powershell/module/az.network/new-azapplicationgatewayfrontendipconfig).
+Свяжите созданную ранее подсеть *myAGSubnet* со шлюзом приложений, используя командлет [New-AzApplicationGatewayIPConfiguration](/powershell/module/az.network/new-azapplicationgatewayipconfiguration). Назначайте *myAGPublicIPАдрес* на шлюз приложения с помощью [New-AzApplicationGatewayFrontFRONTIPConfig](/powershell/module/az.network/new-azapplicationgatewayfrontendipconfig).
 
 ```azurepowershell-interactive
 $vnet = Get-AzVirtualNetwork `
@@ -110,9 +110,9 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 ### <a name="create-the-default-listener-and-rule"></a>Создание прослушивателя по умолчанию и правила
 
-Прослушиватель требуется, чтобы шлюз приложений правильно маршрутизировал трафик в серверный пул. В этом руководстве создается два прослушивателя. Первым создается базовый прослушиватель, который ожидает передачи данных по корневому URL-адресу. Вторым создается прослушиватель, который ожидает передачи данных по определенным URL-адресам.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создается два прослушивателя. Первым создается базовый прослушиватель, который ожидает передачи данных по корневому URL-адресу. Вторым создается прослушиватель, который ожидает передачи данных по определенным URL-адресам.
 
-Создайте прослушиватель по умолчанию с именем *myDefaultListener*, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener), с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. Правило требуется, чтобы указать прослушивателю, какой серверный пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+Создайте прослушиватель по умолчанию с именем *myDefaultListener*, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener), с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
 $defaultlistener = New-AzApplicationGatewayHttpListener `
@@ -151,9 +151,9 @@ $appgw = New-AzApplicationGateway `
   -Sku $sku
 ```
 
-### <a name="add-image-and-video-backend-pools-and-port"></a>Добавление внутреннего порта и серверных пулов для изображений и видео
+### <a name="add-image-and-video-backend-pools-and-port"></a>Добавление внутреннего порта и внутренних пулов для изображений и видео
 
-Вы можете добавить серверные пулы с именами *imagesBackendPool* и *videoBackendPool* в шлюз приложений с помощью [Add-азаппликатионгатевайбаккендаддресспул](/powershell/module/az.network/add-azapplicationgatewaybackendaddresspool). Добавьте интерфейсный порт для пулов с помощью командлета [Add-AzApplicationGatewayFrontendPort](/powershell/module/az.network/add-azapplicationgatewayfrontendport). Затем отправьте изменения в шлюз приложений с помощью командлета [Set-AzApplicationGateway](/powershell/module/az.network/set-azapplicationgateway).
+Вы можете добавить бэкэнд пулы под названием *imagesBackendPool* и *videoBackendPool* в шлюз приложения с помощью [Add-AzApplicationGatewayBackendAddressPool.](/powershell/module/az.network/add-azapplicationgatewaybackendaddresspool) Добавьте интерфейсный порт для пулов с помощью командлета [Add-AzApplicationGatewayFrontendPort](/powershell/module/az.network/add-azapplicationgatewayfrontendport). Затем отправьте изменения в шлюз приложений с помощью командлета [Set-AzApplicationGateway](/powershell/module/az.network/set-azapplicationgateway).
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -196,7 +196,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ### <a name="add-url-path-map"></a>Добавление сопоставления URL-путей
 
-Сопоставления URL-путей гарантируют, что для определенных URL-адресов выполняется маршрутизация в определенные серверные пулы. Можно создать карты URL-пути с именами *imagePathRule* и *Videopathrule при помощи* с помощью [New-азаппликатионгатевайпасрулеконфиг](/powershell/module/az.network/new-azapplicationgatewaypathruleconfig) и [Add-азаппликатионгатевайурлпасмапконфиг](/powershell/module/az.network/add-azapplicationgatewayurlpathmapconfig).
+Сопоставления URL-путей гарантируют, что определенные URL-адрес маршрутизируются в определенные внутренние пулы. Вы можете создавать карты URL-маршрутов под названием *imagePathRule* и *videoPathRule* с помощью [New-AzApplicationGatewayPathRuleConfig](/powershell/module/az.network/new-azapplicationgatewaypathruleconfig) и [Add-AzApplicationGatewayUrlPathMapConfig.](/powershell/module/az.network/add-azapplicationgatewayurlpathmapconfig)
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -235,7 +235,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ### <a name="add-routing-rule"></a>Добавление правила маршрутизации
 
-Правило маршрутизации связывает сопоставление URL-адресов с созданным прослушивателем. Правило с именем **Rule2* можно добавить с помощью [Add-азаппликатионгатевайрекуестраутингруле](/powershell/module/az.network/add-azapplicationgatewayrequestroutingrule).
+Правило маршрутизации связывает сопоставление URL-адресов с созданным прослушивателем. Вы можете добавить правило под названием no*rule2* с помощью [Add-AzApplicationGatewayRequestRoutingRule.](/powershell/module/az.network/add-azapplicationgatewayrequestroutingrule)
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -354,15 +354,15 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest.png)
 
-Измените URL-адрес на `http://<ip-address>:8080/video/test.htm`, подставив IP-адрес для `<ip-address>`, и вы увидите нечто вроде следующего:
+Измените URL-адрес на, `http://<ip-address>:8080/video/test.htm`заменив `<ip-address>`свой IP-адрес на, и вы увидите что-то вроде следующего примера:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest-images.png)
 
-Измените URL-адрес на `http://<ip-address>:8080/video/test.htm`, и вы увидите нечто вроде следующего:
+Измените URL-адрес, `http://<ip-address>:8080/video/test.htm` и вы увидите что-то вроде следующего примера:
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest-video.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

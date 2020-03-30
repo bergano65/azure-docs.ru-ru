@@ -14,20 +14,20 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: d5b84a9d216457720e9bd4e17b002d6ab9490f9d
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73888600"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST  
 > [!div class="op_single_selector"]
 > * [.NET](media-services-dotnet-upload-files.md)
-> * [REST](media-services-rest-upload-files.md)
+> * [Остальные](media-services-rest-upload-files.md)
 > * [Портал](media-services-portal-upload-files.md)
 > 
 
-В службах мультимедиа цифровые файлы отправляются в актив. Сущность [Asset](https://docs.microsoft.com/rest/api/media/operations/asset) может содержать видео, аудио, изображения, коллекции эскизов, текстовые дорожки и файлы скрытых субтитров (а также метаданные этих файлов).  После передачи файлов в ресурс содержимое будет безопасно сохранено в облаке для дальнейшей обработки и потоковой передачи. 
+В службах мультимедиа цифровые файлы отправляются в актив. Сущность [Asset](https://docs.microsoft.com/rest/api/media/operations/asset) может содержать видео, аудио, изображения, коллекции эскизов, текстовые треки и закрытые файлы заголовков (и метаданные об этих файлах).  После загрузки файлов в актив содержимое надежно хранится в облаке для дальнейшей обработки и потоковой передачи. 
 
 Из этого руководства вы узнаете, как отправить файл и выполнить другие операции из следующего списка.
 
@@ -40,12 +40,12 @@ ms.locfileid: "73888600"
 > * Отправка файла в хранилище больших двоичных объектов с помощью URL-адреса отправки.
 > * Создание в ресурсе метаданных для переданного файла мультимедиа.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
-- [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+- [Создание учетной записи медиаслужбы Azure с помощью портала Azure.](media-services-portal-create-account.md)
 - Ознакомьтесь со статьей [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
-- Кроме того, дополнительные сведения см. в статье [использование аутентификации Azure AD для доступа к API служб мультимедиа с помощью функции RESTful](https://docs.microsoft.com/azure/media-services/previous/media-services-rest-connect-with-aad) .
+- Также для получения дополнительной информации просмотрите [аутентификацию Use Azure AD для доступа к API медиа-служб со](https://docs.microsoft.com/azure/media-services/previous/media-services-rest-connect-with-aad) статьей REST.
 - Настройте **Postman**, как описано в статье [Configure Postman for Media Services REST API calls](media-rest-apis-with-postman.md) (Настройка Postman для вызовов к API REST служб мультимедиа).
 
 ## <a name="considerations"></a>Рекомендации
@@ -53,7 +53,7 @@ ms.locfileid: "73888600"
 При работе с REST API служб мультимедиа соблюдайте следующие рекомендации.
  
 * При доступе к сущностям через REST API служб мультимедиа необходимо использовать в HTTP-запросах определенные поля и значения заголовков. Дополнительную информацию см. в статье [Обзор интерфейса REST API служб мультимедиа](media-services-rest-how-to-use.md). <br/>Коллекция Postman, используемая в этом руководстве, правильно устанавливает все необходимые заголовки.
-* Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, http://{AMSAccount}. Origin. mediaservices. Windows. NET/{GUID}/{IAssetFile. Name}/streamingParameters.) По этой причине процентное кодирование запрещено. Значение свойства **Name** не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла.
+* Службы мультимедиа используют значение IAssetFile.Name свойствпри создании URL-адресов для потокового контента (например, http://AMSAccount.origin.mediaservices.windows.net/'GUID/IAssetFile/streamingParameters).) По этой причине кодирование процентов не допускается. Значение свойства **Name** не может иметь ни одного из [следующих символов, зарезервированных на процент:](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)!''();::'&$,,/?% . Кроме того, может использоваться только один знак "." для расширения имени файла.
 * Длина имени не должна превышать 260 знаков.
 * Существует ограничение на максимальный размер файла, который могут обработать службы мультимедиа. Подробные сведения об этих ограничениях см. [здесь](media-services-quotas-and-limitations.md).
 
@@ -65,11 +65,11 @@ ms.locfileid: "73888600"
 
 1. Добавьте в среду параметры подключения. 
 
-    Некоторые переменные, которые являются частью **среды** [MediaServices](postman-environment.md), необходимо установить вручную перед выполнением описанных в [коллекции](postman-collection.md) операций.
+    Некоторые переменные, входят в [среду](postman-environment.md) **MediaServices,** должны быть установлены вручную, прежде чем вы сможете приступить к выполнения операций, определенных в [коллекции.](postman-collection.md)
 
     Значения для первых пяти из этих переменных вы найдете в статье [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-import-env.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-import-env.png)
 2. Укажите значение для переменной среды **MediaFileName**.
 
     Укажите имя файла мультимедиа, который вы собираетесь передать. В нашем примере это файл BigBuckBunny.mp4. 
@@ -87,11 +87,11 @@ ms.locfileid: "73888600"
         ]
     }
     ```
-4. В левой части окна **POST** щелкните **1. Получите маркер проверки подлинности AAD** -> **получить маркер Azure AD для субъекта-службы**.
+4. Слева от окна **Почтальона** нажмите на **1. Получите токен** -> AAD Auth**Получите токен Azure AD для основного обслуживания.**
 
-    Часть URL-адреса заполняется переменной среды **AzureADSTSEndpoint** (ранее в этом руководстве вы задали значения переменных среды, поддерживающих коллекции).
+    Часть URL заполнена переменной среды **AzureADSTSEndpoint** (ранее в учебнике были установлены значения переменных среды, поддерживающих коллекцию).
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postment-get-token.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postment-get-token.png)
 
 5. Нажмите кнопку **Отправить**.
 
@@ -104,16 +104,16 @@ ms.locfileid: "73888600"
 ### <a name="overview"></a>Обзор 
 
 >[!NOTE]
->Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Дополнительные сведения см. в [этой статье](media-services-dotnet-manage-entities.md#limit-access-policies).
+>Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Для получения дополнительной информации смотрите [эту](media-services-dotnet-manage-entities.md#limit-access-policies) статью.
 
 Перед отправкой файлов в хранилище больших двоичных объектов настройте для политики доступа права на запись в ресурс. Для этого отправьте запрос HTTP POST в набор сущностей AccessPolicy. При создании сущности необходимо задать значение DurationInMinutes. В противном случае вы получите сообщение 500 (внутренняя ошибка сервера). Дополнительную информацию о сущностях AccessPolicy см. в разделе [AccessPolicy](https://docs.microsoft.com/rest/api/media/operations/accesspolicy).
 
 ### <a name="create-an-access-policy"></a>Создание политики доступа
 
-1. Выберите **AccessPolicy** -> **Create AccessPolicy for Upload** (Создать AccessPolicy для отправки).
+1. Выберите **AccessPolicy** -> **Создание AccessPolicy для загрузки**.
 2. Нажмите кнопку **Отправить**.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-access-policy.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-access-policy.png)
 
     Скрипт test получает идентификатор AccessPolicy и сохраняет его в соответствующей переменной среды.
 
@@ -121,9 +121,9 @@ ms.locfileid: "73888600"
 
 ### <a name="overview"></a>Обзор
 
-[Ресурс](https://docs.microsoft.com/rest/api/media/operations/asset) — это контейнер, содержащий объекты служб мультимедиа разного типа, в том числе видео, аудио, изображения, коллекции эскизов, текстовые каналы и файлы скрытых субтитров. Для создания ресурса в REST API нужно отправить запрос POST службам мультимедиа и разместить любую информацию о свойствах ресурса в тексте запроса.
+[Актив](https://docs.microsoft.com/rest/api/media/operations/asset) — это контейнер для нескольких типов или наборов объектов в Службах Мультимедиа, включая видео, аудио, изображения, коллекции эскизов, текстовые треки и закрытые файлы заголовков. Для создания ресурса в REST API нужно отправить запрос POST службам мультимедиа и разместить любую информацию о свойствах ресурса в тексте запроса.
 
-При создании ресурса можно добавить некоторые свойства, в том числе **Options**. Вы можете указать один из следующих методов шифрования: **None** (без шифрования — используется по умолчанию), **StorageEncrypted** (для содержимого, которое зашифровано с помощью шифрования хранилища на стороне клиента), **CommonEncryptionProtected** или **EnvelopeEncryptionProtected**. Для каждого зашифрованного актива нужно настроить политику доставки. Дополнительные сведения см. в статье о [настройке политик доставки ресурсов](media-services-rest-configure-asset-delivery-policy.md).
+При создании ресурса можно добавить некоторые свойства, в том числе **Options**. Вы можете указать один из следующих методов шифрования: **None** (без шифрования — используется по умолчанию), **StorageEncrypted** (для содержимого, которое зашифровано с помощью шифрования хранилища на стороне клиента), **CommonEncryptionProtected** или **EnvelopeEncryptionProtected**. Для каждого зашифрованного актива нужно настроить политику доставки. Для получения дополнительной [информации см.](media-services-rest-configure-asset-delivery-policy.md)
 
 Если для ресурса вы используете шифрование, следует создать сущность **ContentKey** и связать ее с ресурсом, как описано в статье [о создании ключей содержимого](media-services-rest-create-contentkey.md). Обратите внимание, что после передачи файлов в ресурс нужно обновить свойства шифрования для сущности **AssetFile**, используя значения, полученные во время шифрования ресурса **Asset**. Сделать это можно с помощью HTTP-запроса **MERGE** . 
 
@@ -131,10 +131,10 @@ ms.locfileid: "73888600"
 
 ### <a name="create-an-asset"></a>Создание ресурса
 
-1. Выберите **Ресурсы** -> **Создать ресурс**.
+1. Выберите **активы** -> **Создание активов**.
 2. Нажмите кнопку **Отправить**.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-create-asset.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-asset.png)
 
     Скрипт test получает идентификатор ресурса и сохраняет его в соответствующей переменной среды.
 
@@ -162,12 +162,12 @@ ms.locfileid: "73888600"
 
 ### <a name="create-a-sas-locator"></a>Создание указателя SAS
 
-1. Выберите **Указатель** -> **Создать указатель SAS**.
+1. Выберите **Locator** -> **Создать SAS Locator**.
 2. Нажмите кнопку **Отправить**.
 
     Скрипт test создает URL-адрес отправки, используя указанное вами имя файла мультимедиа и сведения о локаторе SAS, а затем сохраняет его в соответствующей переменной среды.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
 
 ## <a name="upload-a-file-to-blob-storage-using-the-upload-url"></a>Отправка файла в хранилище больших двоичных объектов с помощью URL-адреса отправки.
 
@@ -186,15 +186,15 @@ ms.locfileid: "73888600"
 Запрос на отправку не входит в коллекцию **AzureMedia**. 
 
 Создайте и настройте новый запрос.
-1. Нажмите **+** , чтобы создать новую вкладку запроса.
-2. Выберите операцию **PUT** и скопируйте в URL-адрес значение **{{UploadURL}}** .
+1. Нажмите, **+** чтобы создать новую вкладку запроса.
+2. Выберите операцию **PUT** и скопируйте в URL-адрес значение **{{UploadURL}}**.
 2. Оставьте вкладку **Авторизация** без изменений (не устанавливайте значение **маркера носителя**).
 3. На вкладке **Заголовки** укажите следующие значения: **Key**: "x-ms-blob-type" и **Value**: "BlockBlob".
 2. На вкладке **Текст** выберите вариант **двоичный**.
 4. Выберите файл с именем, которое сохранено в переменной среды **MediaFileName**.
 5. Нажмите кнопку **Отправить**.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-upload-file.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-upload-file.png)
 
 ##  <a name="create-a-metadata-in-the-asset"></a>Создание метаданных в ресурсе
 
@@ -203,11 +203,11 @@ ms.locfileid: "73888600"
 1. Выберите **AssetFiles** -> **CreateFileInfos**.
 2. Нажмите кнопку **Отправить**.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-create-file-info.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-file-info.png)
 
 Это действие запускает отправку файла и создание метаданных.
 
-## <a name="validate"></a>Проверка
+## <a name="validate"></a>Проверить
 
 Чтобы убедиться, что файл успешно отправлен, получите значение [AssetFile](https://docs.microsoft.com/rest/api/media/operations/assetfile) и сравните его параметры (например, **ContentFileSize**) с теми значениями, которые соответствуют свойствам нового ресурса. 
 
@@ -222,7 +222,7 @@ ms.locfileid: "73888600"
     "ContentFileSize": "3186542",
     "ParentAssetId": "nb:cid:UUID:0b8f3b04-72fb-4f38-8e7b-d7dd78888938",
             
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно закодировать отправленные ресурсы. Дополнительную информацию см. в статье, посвященной [кодированию ресурсов](media-services-portal-encode.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Установка расширения браузера для панели доступа к приложениям — Azure AD
+title: Установка расширения панели доступа приложений - Azure AD
 description: Исправление распространенных ошибок при установке расширения браузера для панели доступа.
 services: active-directory
 documentationcenter: ''
@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: japere,asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 771ba79f067cbff1ab8bbfece64f4028b4ca50b0
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74275856"
 ---
 # <a name="install-the-access-panel-browser-extension"></a>Установка расширения браузера для панели доступа
@@ -52,7 +52,7 @@ ms.locfileid: "74275856"
 3.  Когда появится окно с запросом, выберите **Установить сейчас**.  
     В вашем браузере откроется ссылка для загрузки. 
     
-4.  Выберите **Добавить**.
+4.  Нажмите кнопку **Добавить**.
 
 5.  Если появится запрос, **включите** или **разрешите** расширение.
 
@@ -89,8 +89,8 @@ ms.locfileid: "74275856"
        В списке **Недавно использованные** отобразятся последние три запущенные приложения.
        
 * Чтобы использовать внутренние URL-адреса компании во время удаленного доступа, выполните следующие действия.
-    1. [Настройте прокси приложения](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable) на вашем клиенте.
-    2. [Опубликуйте приложение](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-azure-portal) и URL-адрес с помощью прокси приложения.
+    1. [Настройка прокси-сервера приложения](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable) на арендатора
+    2. [Опубликовать приложение](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-azure-portal) и URL через приложение Прокси
     3. Установите расширение и войдите в него, выбрав "Войти", чтобы приступить к работе.
     4. Теперь вы можете просматривать внутренний URL-адрес компании даже при удаленном подключении.
 
@@ -127,5 +127,5 @@ ms.locfileid: "74275856"
 -   часовой пояс и время или интервал времени, когда произошла ошибка;
 -   трассировки Fiddler.
 
-## <a name="next-steps"></a>Дополнительная информация
-[Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](what-is-single-sign-on.md)
+## <a name="next-steps"></a>Дальнейшие действия
+[Что такое доступ к приложениям и единый вход в каталог Azure Active?](what-is-single-sign-on.md)

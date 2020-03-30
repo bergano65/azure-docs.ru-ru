@@ -12,16 +12,16 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
 ms.openlocfilehash: 83d24d45d7628a2e02068c8757fa6568d6d3fc37
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73823473"
 ---
 # <a name="using-elastic-database-client-library-with-dapper"></a>Использование клиентской библиотеки эластичной базы данных с Dapper
 Документ предназначен для разработчиков, которые используют Dapper для создания приложений, но также хотят применять [инструменты эластичной базы данных](sql-database-elastic-scale-introduction.md), чтобы создавать приложения, реализующие сегментирование для развертывания уровня данных.  В документе показаны изменения, которые следует внести в приложениях на базе Dapper, для интеграции со средствами эластичной базы данных. Внимание уделяется совмещению методов управления сегментами эластичной базы данных и маршрутизации, зависящей от данных, с помощью Dapper. 
 
-**Пример кода.** [Elastic DB Tools for Azure SQL - Dapper Integration](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f) (Средства эластичной базы данных для Базы данных SQL Azure — интеграция с Dapper).
+**Пример кода.**[Elastic DB Tools for Azure SQL - Dapper Integration](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f) (Средства эластичной базы данных для Базы данных SQL Azure — интеграция с Dapper).
 
 Интеграция **Dapper** и **DapperExtensions** с клиентской библиотекой эластичной базы данных для Базы данных SQL Azure — это просто. Приложения могут использовать данные в зависимости от маршрутизации путем создания и открытия новых объектов [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx), чтобы использовать вызов [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) из [клиентской библиотеки](https://msdn.microsoft.com/library/azure/dn765902.aspx). Это ограничивает внесение изменений в приложении местами создания и открытия новых подключений. 
 
@@ -83,7 +83,7 @@ ms.locfileid: "73823473"
 
 Объект сопоставления сегментов создает открытое подключение к сегменту, в котором содержится шардлет, соответствующий заданному ключу сегментирования. Клиентские API-интерфейсы эластичной базы данных также помечают подключение тегом для реализации гарантий согласованности. Так как при вызове [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) возвращается регулярный объект подключения клиента SQL, последующий вызов метода расширения **Execute** из Dapper выполняется по стандартной схеме.
 
-Запросы формируются в целом одинаково: сначала открывается подключение с помощью [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) из клиентского API-интерфейса, а затем используются регулярные методы расширения Dapper для сопоставления результатов SQL-запроса в объектах .NET:
+Запросы работают почти так же - сначала вы открываете соединение с помощью [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) от aPI клиента. а затем используются регулярные методы расширения Dapper для сопоставления результатов SQL-запроса в объектах .NET:
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
                     key: tenantId1,

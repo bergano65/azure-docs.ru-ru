@@ -1,5 +1,5 @@
 ---
-title: Перенос имеющихся баз данных для горизонтального увеличения масштаба | Документация Майкрософт
+title: Перенос имеющихся баз данных для масштабирования | Документация Майкрософт
 description: Преобразование сегментированных баз данных для использования средств эластичной базы данных путем создания диспетчера сопоставления сегментов
 services: sql-database
 ms.service: sql-database
@@ -12,13 +12,13 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
 ms.openlocfilehash: c776f4ac09626f0abd1eb754cde391a1c5447627
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74421218"
 ---
-# <a name="migrate-existing-databases-to-scale-out"></a>Перенос существующих баз данных для горизонтального увеличения масштаба
+# <a name="migrate-existing-databases-to-scale-out"></a>Перенос существующих баз данных для развертывания
 
 Вы можете легко управлять существующими масштабируемыми сегментированными базами данных с помощью средств Базы данных SQL Azure (таких как [клиентская библиотека для эластичных баз данных](sql-database-elastic-database-client-library.md)). Для использования [диспетчера сопоставления сегментов](sql-database-elastic-scale-shard-map-management.md) следует сначала преобразовать существующий набор баз данных.
 
@@ -100,7 +100,7 @@ $ShardMap = New-ListShardMap -KeyType $([int]) -ListShardMapName 'ListShardMap' 
 $ShardMap = New-RangeShardMap -KeyType $([int]) -RangeShardMapName 'RangeShardMap' -ShardMapManager $ShardMapManager
 ```
 
-### <a name="option-3-list-mappings-on-an-individual-database"></a>Вариант 3. список сопоставлений в отдельной базе данных
+### <a name="option-3-list-mappings-on-an-individual-database"></a>Вариант 3: Список карт в отдельной базе данных
 
 Для настройки этого шаблона также требуется создать карту списков, как показано в разделе "Шаг 2, вариант 1".
 
@@ -149,11 +149,11 @@ Get-Shards -ShardMap $ShardMap
 Get-Mappings -ShardMap $ShardMap
 ```
 
-## <a name="summary"></a>summary
+## <a name="summary"></a>Сводка
 
 После завершения настройки можно начать работу с клиентской библиотекой эластичной базы данных. Кроме того, можно воспользоваться [маршрутизацией, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), и [формированием многосегментных запросов](sql-database-elastic-scale-multishard-querying.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте сценарии PowerShell со страницы [Azure SQL DB-Elastic Database tools scripts](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) (База данных SQL Azure — сценарии для инструментов эластичной базы данных).
 

@@ -1,6 +1,6 @@
 ---
-title: Настройка домена Нфсв 4.1 по умолчанию для Azure NetApp Files | Документация Майкрософт
-description: Описание настройки клиента NFS для использования Нфсв 4.1 с Azure NetApp Files.
+title: Налаживать домен NFSv4.1 по умолчанию для файлов NetApp Azure (ru) Документы Майкрософт
+description: Описывает, как настроить клиент NFS для использования NFSv4.1 с azure NetApp Files.
 documentationcenter: ''
 author: b-juche
 manager: ''
@@ -14,63 +14,63 @@ ms.topic: conceptual
 ms.date: 11/08/2019
 ms.author: b-juche
 ms.openlocfilehash: 77178a23206eadae941794c92b8dd99fe2ca1e05
-ms.sourcegitcommit: f226cdd6406372b5693d46b6d04900f2f0cda4e6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73906290"
 ---
-# <a name="configure-nfsv41-default-domain-for-azure-netapp-files"></a>Настройка домена Нфсв 4.1 по умолчанию для Azure NetApp Files
+# <a name="configure-nfsv41-default-domain-for-azure-netapp-files"></a>Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files
 
-В NFSv4 введена концепция домена проверки подлинности. В настоящее время Azure NetApp Files поддерживает только корневое сопоставление пользователей из службы с клиентом NFS. Чтобы использовать функциональность Нфсв 4.1 с Azure NetApp Files, необходимо обновить клиент NFS.
+NFSv4 вводит понятие домена аутентификации. В настоящее время Azure NetApp Files поддерживает отображение пользователей только для корней от службы до клиента NFS. Чтобы использовать функциональность NFSv4.1 с помощью файлов Azure NetApp, необходимо обновить клиент NFS.
 
-## <a name="default-behavior-of-usergroup-mapping"></a>Поведение по умолчанию при сопоставлении пользователей и групп
+## <a name="default-behavior-of-usergroup-mapping"></a>Поведение пользователя/группы по умолчанию
 
-Корневое сопоставление по умолчанию имеет `nobody` пользователя, так как домен NFSv4 имеет значение `localdomain`. При подключении тома Azure NetApp Files Нфсв 4.1 в качестве привилегированного пользователя вы увидите разрешения для файлов следующим образом:  
+Корневая картографирование по умолчанию `nobody` для пользователя, `localdomain`потому что домен NFSv4 установлен на . При установке объема Azure NetApp Files NFSv4.1 в качестве корня вы увидите разрешения файлов следующим образом:  
 
-![Поведение по умолчанию сопоставления пользователей и групп для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-default-behavior-user-group-mapping.png)
+![Поведение пользователя/группы по умолчанию для NFSv4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-default-behavior-user-group-mapping.png)
 
-Как показано в приведенном выше примере, пользователь `file1` должен быть `root`, но по умолчанию он сопоставлен с `nobody`.  В этой статье показано, как задать для пользователя `file1` значение `root`.  
+Как показано выше приведенное `file1` в `root`приведенном примере, пользователь должен быть, но он карты по `nobody` умолчанию.  В этой статье показано, `file1` как `root`настроить пользователя на .  
 
-## <a name="steps"></a>Действия 
+## <a name="steps"></a>Шаги 
 
-1. Измените файл `/etc/idmapd.conf` на клиенте NFS.   
-    Раскомментируйте строку `#Domain` (то есть удалите `#` из строки) и измените значение `localdomain` на `defaultv4iddomain.com`. 
+1. Отображай `/etc/idmapd.conf` файл на клиенте NFS.   
+    Не комментируйте `#Domain` строку (то `#` есть удалите из `localdomain` `defaultv4iddomain.com`строки) и измените значение на . 
 
-    Начальная конфигурация: 
+    Первоначальная конфигурация: 
     
-    ![Начальная конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-initial-config.png)
+    ![Первоначальная конфигурация для NFSv4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-initial-config.png)
 
     Обновленная конфигурация:
     
-    ![Обновленная конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-updated-config.png)
+    ![Обновленная конфигурация для NFSv4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-updated-config.png)
 
-2. Отключите все подключенные в данный момент тома NFS.
+2. Открепите все в настоящее время установленные объемы NFS.
 3. Обновите файл `/etc/idmapd.conf`.
-4. Перезапустите службу `rpcbind` на узле (`service rpcbind restart`) или просто перезагрузите узел.
-5. При необходимости подключите тома NFS.   
+4. Перезапустите `rpcbind` службу на`service rpcbind restart`хосте (), или просто перезагрузите усте.
+5. Смонтировать объемы NFS по мере необходимости.   
 
-    См. раздел [подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md). 
+    Смотрите [маунт или открепить громкость для виртуальных машин Windows или Linux.](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md) 
 
-В следующем примере показан результат изменения пользователя или группы: 
+Следующий пример показывает полученное изменение пользователя/группы: 
 
-![Результирующая конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-resulting-config.png)
+![Резкая конфигурация для NFSv4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-resulting-config.png)
 
-Как показано в примере, пользователь или группа теперь изменились с `nobody` на `root`.
+Как показано на примере, пользователь/группа `nobody` `root`теперь изменилась с .
 
-## <a name="behavior-of-other-non-root-users-and-groups"></a>Поведение других (не корневых) пользователей и групп
+## <a name="behavior-of-other-non-root-users-and-groups"></a>Поведение других (некорневых) пользователей и групп
 
-Azure NetApp Files поддерживает локальных пользователей (пользователей, созданных локально на узле), имеющих разрешения, связанные с файлами или папками в томах Нфсв 4.1. Однако служба в настоящее время не поддерживает сопоставление пользователей и групп между несколькими узлами. Таким образом, пользователи, созданные на одном узле, по умолчанию не сопоставляются с пользователями, созданными на другом узле. 
+Azure NetApp Files поддерживает местных пользователей (пользователей, созданных локально на хосте), у которых есть разрешения, связанные с файлами или папками в томах NFSv4.1. Однако в настоящее время служба не поддерживает отображение пользователей/групп в нескольких узлах. Таким образом, пользователи, созданные на одном узеле, не отображают по умолчанию карту для пользователей, созданных на другом узеле. 
 
-В следующем примере `Host1` содержит три учетных записи тестовых пользователей (`testuser01`, `testuser02`, `testuser03`): 
+В следующем примере `Host1` имеется три`testuser01`существующих `testuser02` `testuser03`учетных записи тестовых пользователей (, , 
 
-![Результирующая конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-host1-users.png)
+![Резкая конфигурация для NFSv4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-host1-users.png)
 
-На `Host2`Обратите внимание, что учетные записи тестовых пользователей не были созданы, но один и тот же том подключен на обоих узлах:
+На `Host2`, обратите внимание, что учетные записи тестпользователя не были созданы, но тот же объем устанавливается на обоих узлах:
 
-![Результирующая конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-host2-users.png)
+![Резкая конфигурация для NFSv4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-host2-users.png)
 
-## <a name="next-step"></a>Дальнейшие действия 
+## <a name="next-step"></a>Следующий шаг 
 
 [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 

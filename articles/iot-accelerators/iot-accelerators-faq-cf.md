@@ -1,6 +1,6 @@
 ---
 title: Решение "Подключенная фабрика Azure" — часто задаваемые вопросы | Документация Майкрософт
-description: В этой статье содержатся ответы на часто задаваемые вопросы по комплекту Solution Accelerator для подключенной фабрики. Он содержит ссылки на репозиторий GitHub.
+description: В этой статье ответы на часто задаваемые вопросы для ускорителя решений Connected Factory. Он включает в себя ссылки на репозиторий GitHub.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
 ms.openlocfilehash: c84452ff71fa34a65b2e56ec753b68bf551c7e35
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73826282"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"
@@ -68,7 +68,7 @@ IP-адрес можно удалить двумя вариантами.
 1. Используйте следующее имя пользователя: `docker`.
 1. Используемый пароль зависит от версии, с помощью которой выполнялось развертывание.
     * Для решений, развертываемых с помощью сценария build.ps1 до 1 июня 2017 г., используйте пароль `Passw0rd`.
-    * Для решений, развертываемых с помощью сценария build.ps1 после 1 июня 2017 г., пароль можно найти в файле `<name of your deployment>.config.user`. Пароль хранится в параметре **VmAdminPassword**. Пароль формируется случайным образом во время развертывания (если он не указан с помощью параметра `build.ps1` сценария `-VmAdminPassword`).
+    * Для решений, развертываемых с помощью сценария build.ps1 после 1 июня 2017 г., пароль можно найти в файле `<name of your deployment>.config.user`. Пароль хранится в параметре **VmAdminPassword**. Пароль формируется случайным образом во время развертывания (если он не указан с помощью параметра `-VmAdminPassword` сценария `build.ps1`).
 
 ### <a name="how-do-i-stop-and-start-all-docker-processes-in-the-simulation-vm"></a>Как остановить и запустить все процессы docker на виртуальной машине симуляции?
 
@@ -76,13 +76,13 @@ IP-адрес можно удалить двумя вариантами.
 1. Чтобы проверить, какие контейнеры активны, выполните команду `docker ps`.
 1. Чтобы остановить все контейнеры симуляции, выполните команду `./stopsimulation`.
 1. Чтобы запустить все контейнеры симуляции, сделайте следующее:
-    * Экспортируйте переменную оболочки с именем **IOTHUB_CONNECTIONSTRING**. Используйте значение **IotHubOwnerConnectionString** в файле `<name of your deployment>.config.user`. Например:
+    * Экспортируйте переменную оболочки с именем **IOTHUB_CONNECTIONSTRING**. Используйте значение **IotHubOwnerConnectionString** в файле `<name of your deployment>.config.user`. Пример:
 
         ```sh
         export IOTHUB_CONNECTIONSTRING="HostName={yourdeployment}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={your key}"
         ```
 
-    * Запустите `./startsimulation`.
+    * Выполните `./startsimulation`.
 
 ### <a name="how-do-i-update-the-simulation-in-the-vm"></a>Как обновить симуляцию на виртуальной машине?
 
@@ -148,7 +148,7 @@ IP-адрес можно удалить двумя вариантами.
 
 После развертывания вы также можете добавить ключ учетной записи Azure Maps в акселератор решений. Перейдите на портал Azure и получите доступ к ресурсу службы приложений в развертывании решения "Подключенная фабрика". Перейдите к **параметрам приложений**, где можно найти раздел **Параметры приложения**. Задайте значение **MapApiQueryKey** для [ключа учетной записи Azure Maps](../azure-maps/how-to-manage-account-keys.md). Сохраните параметры, а затем перейдите к области **Обзор** и перезапустите службу приложений.
 
-### <a name="how-do-i-create-an-azure-maps-account"></a>Разделы справки создать учетную запись Azure Maps?
+### <a name="how-do-i-create-an-azure-maps-account"></a>Как создать учетную запись Azure Maps?
 
 Ознакомьтесь со статьей [Как управлять учетной записью и ключами службы "Карты Azure"](../azure-maps/how-to-manage-account-keys.md).
 
@@ -194,6 +194,6 @@ IP-адрес можно удалить двумя вариантами.
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
+* [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
-* [Комплексная защита в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up)
+* [Все аспекты безопасности Интернета вещей](/azure/iot-fundamentals/iot-security-ground-up)

@@ -8,10 +8,10 @@ ms.date: 01/17/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: c05b79d2f1da8076b507ca9ee7a06504de21d5ea
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72333176"
 ---
 # <a name="overview-of-share-snapshots-for-azure-files"></a>Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure 
@@ -71,7 +71,7 @@ http://storagesample.core.file.windows.net/myshare?snapshot=2011-03-09T01:42:34.
 
 Он остается неизменным после копирования, однако базовый файловый ресурс перезаписывается копией данных, доступных в моментальном снимке. Все восстановленные файлы считаются измененным содержимым.
 
-Файл в моментальном снимке общего ресурса можно скопировать в другое место назначения с другим именем. Полученный конечный файл является записываемым файлом, а не моментальным снимком файлового ресурса. В этом случае базовый файловый ресурс останется без изменений.
+Вы можете скопировать файл в моментальный снимок общего назначения в другой пункт назначения с другим именем. Полученный конечный файл является записываемым файлом, а не моментальным снимком файлового ресурса. В этом случае доля базового файла останется нетронутой.
 
 Если конечный файл восстанавливается из его копии, это не влияет на связанные с ним моментальные снимки.
 
@@ -85,6 +85,6 @@ http://storagesample.core.file.windows.net/myshare?snapshot=2011-03-09T01:42:34.
 ## <a name="next-steps"></a>Дальнейшие действия
 - Работа с моментальными снимками общих ресурсов с помощью:
     - [PowerShell](storage-how-to-use-files-powershell.md)
-    - [CLI](storage-how-to-use-files-cli.md)
+    - [Cli](storage-how-to-use-files-cli.md)
     - [Windows](storage-how-to-use-files-windows.md#accessing-share-snapshots-from-windows)
     - [Часто задаваемые вопросы о службе "Файлы Azure"](storage-files-faq.md#share-snapshots)

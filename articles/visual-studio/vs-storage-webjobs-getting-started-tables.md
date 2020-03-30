@@ -1,5 +1,5 @@
 ---
-title: Начало работы со службой хранилища Azure с помощью Visual Studio (проекты веб-заданий)
+title: Начало работы с хранилищем Azure с помощью Visual Studio (проекты WebJob)
 description: Как приступить к работе, используя табличное хранилище Azure в проекте веб-задания Azure в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -14,17 +14,17 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: e4d8299c06bfa5b0f33bff8fa592a2fa549c695c
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74707602"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Начало работы со службой хранилища Azure (проекты веб-заданий Azure)
 
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 Эта статья содержит примеры кода C#, в которых показано, как использовать пакет SDK для веб-заданий Azure версии 1.x со службой хранилища таблиц Azure. В примерах кода используется [пакет SDK для веб-заданий](https://github.com/Azure/azure-webjobs-sdk/wiki) версии 1.x.
 
 В службе хранилища таблиц Azure можно хранить большие объемы структурированных данных. Эта служба — хранилище данных NoSQL, которое принимает вызовы внутри и снаружи облака Azure с проверкой подлинности. Таблицы Azure идеально подходят для хранения нереляционных структурированных данных.  Дополнительные сведения см. в разделе [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../cosmos-db/tutorial-develop-table-dotnet.md#create-a-table).
@@ -33,7 +33,7 @@ ms.locfileid: "74707602"
 
 ## <a name="how-to-add-entities-to-a-table"></a>Как добавить сущность в таблицу
 
-Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector\<t >** или **IAsyncCollector\<t >** , где **t** указывает схему сущностей, которую нужно добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
+Чтобы добавить объекты в таблицу, используйте атрибут **таблицы** с **iCollector\<T>** или **iAsyncCollector\<T>** параметр, где **T** определяет схему объектов, которые вы хотите добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
 
 Следующий пример кода добавляет сущности **Person** в таблицу с именем *Ingress*.
 
@@ -88,7 +88,7 @@ public class Person
 
 ## <a name="how-to-read-multiple-entities-from-a-table"></a>Как выполнять чтение нескольких сущностей из таблицы
 
-Для чтения таблицы используйте атрибут **Table** с параметром **iqueryable\<t >** , где тип **t** является производным от **TableEntity** или реализует **ITableEntity**.
+Чтобы прочитать таблицу, используйте атрибут **таблицы** с параметром **\<I'siiable T>,** где тип **T** происходит от **TableEntity** или реализует **ITableEntity.**
 
 Следующий пример кода считывает и записывает все строки таблицы **Ingress** .
 

@@ -1,5 +1,5 @@
 ---
-title: Настройка доступа к WinRM для виртуальной машины Azure
+title: Настройка доступа WinRM для VM Azure
 description: Настройте доступ WinRM для использования с виртуальной машиной Azure, созданной в модели развертывания Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/16/2016
 ms.author: kasing
 ms.openlocfilehash: ca52a458104b4de0f7b3ed2aa3f76109a5623c97
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74067315"
 ---
 # <a name="setting-up-winrm-access-for-virtual-machines-in-azure-resource-manager"></a>Настройка доступа WinRM для виртуальных машин в Azure Resource Manager
@@ -26,7 +26,7 @@ ms.locfileid: "74067315"
 Ниже приведены шаги, которые необходимо выполнить для настройки виртуальной машины с возможностью подключения WinRM:
 
 1. Создание хранилища ключей
-2. создать самозаверяющий сертификат;
+2. Создание самозаверяющего сертификата
 3. передать самозаверяющий сертификат в хранилище ключей;
 4. получить URL-адрес для самозаверяющего сертификата в хранилище ключей;
 5. сослаться на URL-адрес самозаверяющего сертификата при создании виртуальной машины.
@@ -82,7 +82,7 @@ Set-AzKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValu
 При подготовке виртуальной машины поставщику ресурсов Microsoft.Compute требуется URL-адрес для секрета в хранилище ключей. Это позволяет поставщику ресурсов Microsoft.Compute скачать секрет и создать эквивалент сертификата на виртуальной машине.
 
 > [!NOTE]
-> URL-адрес секрета также должен включать в себя версию. Пример URL-адреса выглядит следующим образом:\//contosovault.vault.azure.net:443/secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve.
+> URL-адрес секрета также должен включать в себя версию. Пример URL выглядит ниже https:\//contosovault.vault.azure.net:443/secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
 
 #### <a name="templates"></a>Шаблоны
 Получить ссылку на URL-адрес в шаблоне можно с помощью следующего кода:

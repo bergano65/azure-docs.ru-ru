@@ -1,5 +1,5 @@
 ---
-title: Маршрутизация трафика для обеспечения высокой доступности приложений — Azure PowerShell — диспетчер трафика
+title: Трафик маршрута для HA приложений - Azure PowerShell - Менеджер трафика
 description: Пример скрипта Azure PowerShell для маршрутизация трафика с целью обеспечения высокой доступности приложений.
 services: traffic-manager
 documentationcenter: traffic-manager
@@ -13,17 +13,17 @@ ms.workload: traffic-manager
 ms.date: 05/16/2017
 ms.author: allensu
 ms.openlocfilehash: 183599fccfad1806faae3cb90de225d388b77da8
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74049236"
 ---
-# <a name="route-traffic-for-high-availability-of-applications---azure-powershell"></a>Маршрутизация трафика для обеспечения высокой доступности приложений — Azure PowerShell
+# <a name="route-traffic-for-high-availability-of-applications---azure-powershell"></a>Трафик маршрутов для высокой доступности приложений - Azure PowerShell
 
 Этот скрипт создает группу ресурсов, два плана службы приложений, два веб-приложения, профиль и две конечные точки диспетчера трафика. Диспетчер трафика направляет трафик в приложение в основном регионе. Если оно недоступно, трафик направляется в дополнительный регион. Перед выполнением этого скрипта необходимо задать уникальные в Azure значения MyWebApp, MyWebAppL1 и MyWebAppL2. После выполнения вы сможете подключиться к приложению в основном регионе, используя URL-адрес mywebapp.trafficmanager.net.
 
-При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
+При необходимости установите Azure PowerShell, используя инструкцию, найденную `Connect-AzAccount` в [руководстве Azure PowerShell,](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/)а затем запустите для создания соединения с Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -55,7 +55,7 @@ Remove-AzResourceGroup -Name myResourceGroup2
 | [New-AzTrafficManagerProfile](/powershell/module/az.trafficmanager/new-aztrafficmanagerprofile) | Создает профиль диспетчера трафика Azure. |
 | [New-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/new-aztrafficmanagerendpoint) | Добавление конечной точки в профиль диспетчера трафика Azure. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 

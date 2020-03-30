@@ -1,5 +1,5 @@
 ---
-title: Создание запроса & Azure Data Lake Analytics PowerShell
+title: Создание & запроса на аналитику Azure Data Lake - PowerShell
 description: Создание учетной записи Azure Data Lake Analytics и отправка задания U-SQL с помощью Azure PowerShell.
 ms.service: data-lake-analytics
 author: saveenr
@@ -9,10 +9,10 @@ ms.assetid: 8a4e901e-9656-4a60-90d0-d78ff2f00656
 ms.topic: conceptual
 ms.date: 05/04/2017
 ms.openlocfilehash: 8b176434ce450382cc6463e7d21d341a74581ed8
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71316613"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-powershell"></a>Начало работы с Azure Data Lake Analytics с помощью Azure PowerShell
@@ -27,7 +27,7 @@ ms.locfileid: "71316613"
 
 Перед началом работы с этим руководством необходимо иметь следующую информацию:
 
-* **Учетная запись Azure Data Lake Analytics**. См. раздел [Начало работы с Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-get-started-portal).
+* **Учетная запись Аналитики озер данных Azure.** См. раздел [Начало работы с Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-get-started-portal).
 * **Рабочая станция с Azure PowerShell**. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
 ## <a name="log-in-to-azure"></a>Вход в Azure

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,13 +15,13 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: e52433cfae1e889f07818f582fc3aef0752932ea
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "74482493"
 ---
-Прежде чем читать эту статью, необходимо ознакомиться со следующими понятиями.
+Прежде чем читать эту статью, вы должны быть знакомы со следующими понятиями:
 
 - [Обзор платформы идентификации Майкрософт](../articles/active-directory/develop/v2-overview.md)
 - [Основные сведения об аутентификации](../articles/active-directory/develop/authentication-scenarios.md)

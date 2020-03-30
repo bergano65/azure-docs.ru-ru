@@ -1,6 +1,6 @@
 ---
-title: Добавление артефакта в виртуальную машину в Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как добавить артефакт в виртуальную машину в лаборатории Azure DevTest Labs
+title: Добавить артефакт в VM в Лабораториях Azure DevTest (ru) Документы Майкрософт
+description: Узнайте, как добавить артефакт в виртуальную машину в лаборатории в Лабораториях Azure DevTest
 services: devtest-lab,virtual-machines
 documentationcenter: na
 author: spelluru
@@ -15,23 +15,23 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
 ms.openlocfilehash: 27fec279582d845972b87ac635c87c16c239924e
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73901323"
 ---
 # <a name="add-an-artifact-to-a-vm"></a>Добавление артефакта на виртуальную машину
-При создании виртуальной машины в нее можно добавить существующие артефакты. Эти артефакты могут находиться в [общедоступном репозитории Git DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или в собственном репозитории Git. В этой статье показано, как добавить артефакты в портал Azure и с помощью Azure PowerShell. 
+При создании VM можно добавить в него существующие артефакты. Эти артефакты могут быть получены либо из [общего репозитория DevTest Labs Git,](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) либо из вашего собственного репозитория Git. В этой статье показано, как добавлять артефакты на порталAz, а также с помощью Azure PowerShell. 
 
 *Артефакты* Azure DevTest Labs позволяют указывать *действия*, которые выполняются при подготовке виртуальной машины, включая запуск скриптов Windows PowerShell, выполнение команд Bash и установку программного обеспечения. *Параметры* артефакта позволяют настроить артефакт для конкретной ситуации.
 
-Дополнительные сведения о создании пользовательских артефактов см. в статье [Создание пользовательских артефактов](devtest-lab-artifact-author.md).
+Чтобы узнать о том, как создавать пользовательские артефакты, смотрите статью: [Создайте пользовательские артефакты](devtest-lab-artifact-author.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="use-azure-portal"></a>Использование портала Azure 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. Из списка лабораторий выберите ту, где содержится виртуальная машина, с которой вы будете работать.  
 1. Выберите **My virtual machines** (Мои виртуальные машины).
@@ -65,7 +65,7 @@ ms.locfileid: "73901323"
 1. Нажмите кнопку **ОК**, чтобы закрыть область **Выбранные артефакты**.
 
 ## <a name="use-powershell"></a>Использование PowerShell
-Следующий скрипт применяет указанный артефакт к указанной виртуальной машине. Команда [Invoke-азресаурцеактион](/powershell/module/az.resources/invoke-azresourceaction) выполняет операцию.  
+Следующий скрипт применяет указанный артефакт к указанному VM. Команда [Invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction) выполняет операцию.  
 
 ```powershell
 #Requires -Module Az.Resources
@@ -163,10 +163,10 @@ if ($virtualMachine -ne $null) {
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о артефактах см. в следующих статьях:
+## <a name="next-steps"></a>Дальнейшие действия
+Смотрите следующие статьи об артефактах:
 
-- [Укажите обязательные артефакты для лаборатории](devtest-lab-mandatory-artifacts.md)
+- [Указать обязательные артефакты для вашей лаборатории](devtest-lab-mandatory-artifacts.md)
 - [Создание настраиваемых артефактов](devtest-lab-artifact-author.md)
 - [Добавление репозитория артефактов в лабораторию](devtest-lab-artifact-author.md)
 - [Диагностика сбоев артефактов](devtest-lab-troubleshoot-artifact-failure.md)

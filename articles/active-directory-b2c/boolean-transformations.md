@@ -1,34 +1,34 @@
 ---
-title: Примеры преобразования логических утверждений для пользовательских политик
+title: Boolean утверждает примеры трансформации для пользовательских политик
 titleSuffix: Azure AD B2C
-description: Примеры преобразования логических утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
+description: Boolean утверждает примеры трансформации для схемы интерфейса identity Experience (IEF) Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/03/2020
+ms.date: 03/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e470ea65085bf71f0052567d5bf367661852d1cb
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.openlocfilehash: ea3b273070702144d5296d07cb8712da044819a8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78268024"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79471971"
 ---
 # <a name="boolean-claims-transformations"></a>Преобразования логических утверждений
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приведены примеры использования логических преобразований утверждений схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приводятся примеры использования преобразований булеаных утверждений в схеме интерфейса Identity Experience в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
 ## <a name="andclaims"></a>Утверждение AndClaims
 
 Выполняет операцию AND для двух логических элементов InputClaim и задает элемент OutputClaim с результатом операции.
 
-| Элемент  | TransformationClaimType  | Тип данных  | Примечания |
+| Item  | TransformationClaimType  | Тип данных  | Примечания |
 |-------| ------------------------ | ---------- | ----- |
 | InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
 | InputClaim | inputClaim2  | Логическое | Второй оцениваемый элемент ClaimType. |
@@ -61,12 +61,12 @@ ms.locfileid: "78268024"
 
 Проверяет, равны ли логические значения двух утверждений, и создает исключение, если это не так.
 
-| Элемент | TransformationClaimType  | Тип данных  | Примечания |
+| Item | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
 | InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
 
-Преобразование утверждений **AssertBooleanClaimIsEqualToValue** всегда выполняется с помощью [технического профиля проверки](validation-technical-profile.md), вызываемого через [самоподтвержденный технический профиль](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationBooleanValueIsNotEqual** управляют сообщением, поступающим пользователю из технического профиля.
+Преобразование утверждений **AssertBooleanClaimIsEqualToValue** всегда выполняется с помощью [технического профиля проверки](validation-technical-profile.md), вызываемого через [самоподтвержденный технический профиль](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationBooleanValueIsNotEqual** управляют сообщением, поступающим пользователю из технического профиля. Сообщения об ошибках могут быть [локализованы.](localization-string-ids.md#claims-transformations-error-messages)
 
 ![Выполнение AssertStringClaimsAreEqual](./media/boolean-transformations/assert-execution.png)
 
@@ -114,18 +114,18 @@ ms.locfileid: "78268024"
     - **valueToCompareTo**: true.
 - Результат: возникла ошибка.
 
-## <a name="comparebooleanclaimtovalue"></a>компаребулеанклаимтовалуе
+## <a name="comparebooleanclaimtovalue"></a>СравнениеBooleanclaimtoValue
 
-Проверяет, что логическое значение утверждения равно `true` или `false`, и возвращает результат сжатия.
+Проверяет, что boolean значение претензии равна `true` или `false`, и вернуть результат сжатия.
 
-| Элемент | TransformationClaimType  | Тип данных  | Примечания |
+| Item | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
 | InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
-| outputClaim | компарересулт | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
+| outputClaim | сравнитеРезультат | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
 
 
-В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если значение параметра `IsAgeOver21Years`, равное `true`, преобразование утверждений возвращает `true`, в противном случае `false`.
+В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если `IsAgeOver21Years` значение ClaimType `true`равно, преобразование претензий возвращается, `true`в противном случае. `false`
 
 ```XML
 <ClaimsTransformation Id="AssertAccountEnabled" TransformationMethod="CompareBooleanClaimToValue">
@@ -148,7 +148,7 @@ ms.locfileid: "78268024"
 - Входные параметры:
     - **valueToCompareTo**: true.
 - Исходящие утверждения:
-    - **компарересулт**: false
+    - **compareResult**: ложный
 
 
 
@@ -156,7 +156,7 @@ ms.locfileid: "78268024"
 
 Выполняет операцию Not для логического элемента inputClaim и задает элемент outputClaim с результатом операции.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | Логическое | Обрабатываемое утверждение. |
 | outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова данного ClaimsTransformation (true или false). |
@@ -184,7 +184,7 @@ ms.locfileid: "78268024"
 
 Вычисляет значение Or для двух логических элементов InputClaim и задает элемент outputClaim с результатом операции.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
 | InputClaim | inputClaim2 | Логическое | Второй оцениваемый элемент ClaimType. |

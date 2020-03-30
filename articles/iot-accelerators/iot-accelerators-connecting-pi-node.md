@@ -1,5 +1,5 @@
 ---
-title: Подключение Raspberry Pi к решению для удаленного мониторинга — Node. js — Azure | Документация Майкрософт
+title: Подключите Raspberry Pi к решению для удаленного мониторинга - Node.js - Azure Документы Майкрософт
 description: В статье описывается, как подключить устройство Raspberry Pi к акселератору решения для удаленного мониторинга с помощью приложения на Node.js.
 author: dominicbetts
 manager: timlt
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: dobett
 ms.openlocfilehash: 98d947e8aabf20fbfdb192cb80c9bc881007d5da
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73889267"
 ---
 # <a name="connect-your-raspberry-pi-device-to-the-remote-monitoring-solution-accelerator-nodejs"></a>Подключение устройства Raspberry Pi к акселератору решения для удаленного мониторинга с помощью Node.js
@@ -32,7 +32,7 @@ ms.locfileid: "73889267"
 - Raspberry Pi 3;
 - карта MicroSD (с NOOBS);
 - кабель MiniUSB;
-- кабель Ethernet.
+- кабель Ethernet;
 
 ### <a name="required-desktop-software"></a>Необходимое ПО для настольного компьютера
 

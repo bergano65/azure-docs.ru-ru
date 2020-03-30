@@ -1,14 +1,14 @@
 ---
 title: Заметки о выпуске Microsoft Azure Backup Server версии 3
-description: В этой статье содержатся сведения об известных проблемах и способах их решения для Microsoft Azure Backup Server (MABS) v3.
+description: В этой статье приводится информация об известных проблемах и обходных решениях для сервера резервного копирования Microsoft Azure (MABS) v3.
 ms.topic: conceptual
 ms.date: 11/22/2018
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
 ms.openlocfilehash: b47d83e0e3714f3f035397acaadeac9cda39d12a
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74172281"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
@@ -71,6 +71,6 @@ ms.locfileid: "74172281"
 
 9. Запустите службу MSDPM.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Новые возможности в Microsoft Azure Backup Server](backup-mabs-whats-new-mabs.md)
+[Что нового в MABS V3](backup-mabs-whats-new-mabs.md)

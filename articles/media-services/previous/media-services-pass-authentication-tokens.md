@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 15d4cbc372f5d5ec0d323170189329152ed436e3
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73684944"
 ---
 # <a name="learn-how-clients-pass-tokens-to-the-azure-media-services-key-delivery-service"></a>Сведения о том, как клиенты передают маркеры в службу доставки ключей Служб мультимедиа Azure
@@ -29,7 +29,7 @@ ms.locfileid: "73684944"
 
 - С использованием заголовка авторизации HTTP.
     > [!NOTE]
-    > Для каждой спецификации OAuth 2.0. ожидается префикс Bearer. На [странице демоверсии](https://ampdemo.azureedge.net/) Проигрывателя мультимедиа Azure приведен пример проигрывателя с конфигурацией маркера. Выберите **AES (маркер JWT)** или **AES (маркер SWT)** , чтобы указать источник видео. Маркер передается через заголовок авторизации.
+    > Для каждой спецификации OAuth 2.0. ожидается префикс Bearer. На [странице демоверсии](https://ampdemo.azureedge.net/) Проигрывателя мультимедиа Azure приведен пример проигрывателя с конфигурацией маркера. Выберите **AES (маркер JWT)** или **AES (маркер SWT)**, чтобы указать источник видео. Маркер передается через заголовок авторизации.
 
 - Путем добавления параметра запроса URL-адреса со строкой token=tokenvalue.  
     > [!NOTE]

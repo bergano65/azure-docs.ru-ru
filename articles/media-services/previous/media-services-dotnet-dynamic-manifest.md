@@ -16,16 +16,16 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: cenkdin
 ms.openlocfilehash: c60b223f91a151bf63cabc5e95816f2545022503
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69016605"
 ---
 # <a name="creating-filters-with-media-services-net-sdk"></a>Создание фильтров с помощью пакета SDK Служб мультимедиа для .NET 
 > [!div class="op_single_selector"]
 > * [.NET](media-services-dotnet-dynamic-manifest.md)
-> * [REST](media-services-rest-dynamic-manifest.md)
+> * [Остальные](media-services-rest-dynamic-manifest.md)
 > 
 > 
 
@@ -42,7 +42,7 @@ ms.locfileid: "69016605"
 
 * **IStreamingFilter**.  В основе этого типа лежит следующий интерфейс API REST: [Filter](https://docs.microsoft.com/rest/api/media/operations/filter)
 * **IStreamingAssetFilter**. В основе этого типа лежит следующий интерфейс API REST: [AssetFilter](https://docs.microsoft.com/rest/api/media/operations/assetfilter)
-* **PresentationTimeRange**. В основе этого типа лежит следующий интерфейс API REST: [PresentationTimeRange](https://docs.microsoft.com/rest/api/media/operations/presentationtimerange)
+* **ПрезентацияTimeRange**. В основе этого типа лежит следующий интерфейс API REST: [PresentationTimeRange](https://docs.microsoft.com/rest/api/media/operations/presentationtimerange)
 * **FilterTrackSelectStatement** и **IFilterTrackPropertyCondition**. В основе этих типов лежат следующие интерфейсы API REST: [FilterTrackSelect и FilterTrackPropertyCondition](https://docs.microsoft.com/rest/api/media/operations/filtertrackselect)
 
 ## <a name="createupdatereaddelete-global-filters"></a>Создание, обновление, чтение и удаление глобальных фильтров
@@ -124,7 +124,7 @@ ms.locfileid: "69016605"
 
     http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3, filter=MyFilter)
 
-**Smooth Streaming**
+**Плавная потоковая передача**
 
     http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyFilter)
 
@@ -132,7 +132,7 @@ ms.locfileid: "69016605"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

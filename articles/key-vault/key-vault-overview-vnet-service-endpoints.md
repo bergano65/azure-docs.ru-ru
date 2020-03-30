@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 47dc1a84fbc80925e5b65db8c03683f9f026271b
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 2d7ea5618f4c0e8b6d348ea6c34127492b3e1096
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78194994"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79457412"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -54,7 +54,7 @@ ms.locfileid: "78194994"
 > Следует учитывать следующие ограничения конфигурации:
 > * Допускается не более 127 правил виртуальной сети и 127 правил IPv4. 
 > * Не поддерживаются малые диапазоны адресов с префиксом /31 или /32. Такие диапазоны следует настраивать в отдельных правилах для IP-адресов.
-> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. Частные сети включают адреса, начинающиеся с **10.** , **172.16-31**и **192,168.** . 
+> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. Частные сети включают адреса, которые начинаются с **10.**, **172.16-31,** и **192.168.**. 
 > * Сейчас поддерживаются только IPV4-адреса.
 
 ## <a name="trusted-services"></a>Доверенные службы
@@ -66,7 +66,7 @@ ms.locfileid: "78194994"
 |Служба развертывания виртуальных машин Azure|[Развертывание сертификатов на виртуальных машинах из хранилища ключей, управляемого пользователем](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/)|
 |Служба развертывания шаблонов Azure Resource Manager|[Передача защищенных значений в процессе развертывания](../azure-resource-manager/templates/key-vault-parameter.md).|
 |Служба шифрования томов для шифрования дисков Azure|Разрешение доступа к ключу BitLocker (виртуальная машина Windows), парольной фразе DM (виртуальная машина Linux) и ключу шифрования ключей во время развертывания виртуальной машины. Это позволяет включить [шифрование дисков Azure](../security/fundamentals/encryption-overview.md).|
-|Azure Backup|Разрешение резервного копирования и восстановления соответствующих ключей и секретов во время резервного копирования виртуальной машины Azure с помощью службы [Azure Backup](../backup/backup-introduction-to-azure-backup.md).|
+|Azure Backup|Разрешить резервное копирование и восстановление соответствующих ключей и секретов во время резервного копирования виртуальных машин Azure с помощью [резервного копирования Azure.](../backup/backup-introduction-to-azure-backup.md)|
 |Exchange Online и SharePoint Online|Разрешение доступа к ключу клиента для функции шифрования службы хранилища Azure с использованием [ключа пользователя](/microsoft-365/compliance/customer-key-overview).|
 |Azure Information Protection|Разрешение доступа к ключу клиента для [Azure Information Protection.](https://docs.microsoft.com/azure/information-protection/what-is-information-protection)|
 |Служба приложений Azure|[Развертывание сертификата веб-приложения Azure через Key Vault](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html)|
@@ -74,11 +74,11 @@ ms.locfileid: "78194994"
 |Хранилище Azure|[Шифрование службы хранилища с помощью управляемых пользователем ключей в Azure Key Vault](../storage/common/storage-service-encryption-customer-managed-keys.md).|
 |Хранилище озера данных Azure|[Шифрование данных в Azure Data Lake Storage](../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
 |Azure Databricks|[Быстрая и простая служба аналитики на основе Apache Spark для совместной работы](../azure-databricks/what-is-azure-databricks.md).|
-|Cлужба управления Azure API|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../api-management/api-management-howto-use-managed-service-identity.md#use-the-managed-service-identity-to-access-other-resources)|
-|Фабрика данных Azure|[Выбор учетных данных хранилища данных в Key Vault из фабрики данных](https://go.microsoft.com/fwlink/?linkid=2109491)|
-|Центры событий Azure|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key)|
-|Служебная шина Azure|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](https://docs.microsoft.com/azure/service-bus-messaging/configure-customer-managed-key)|
-
+|Cлужба управления Azure API |[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../api-management/api-management-howto-use-managed-service-identity.md#use-the-managed-service-identity-to-access-other-resources)|
+|Фабрика данных Azure|[Извлечение учетных данных хранилища данных в Key Vault из фабрики данных](https://go.microsoft.com/fwlink/?linkid=2109491)|
+|Центры событий Azure|[Разрешить доступ к хранилищу ключей для сценария ключей, управляемых клиентом](https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key)|
+|Служебная шина Azure|[Разрешить доступ к хранилищу ключей для сценария ключей, управляемых клиентом](https://docs.microsoft.com/azure/service-bus-messaging/configure-customer-managed-key)|
+|Служба импорта и экспорта Azure| [Используйте ключи, управляемые клиентами, в Сервисе Azure Key Vault для обслуживания импорта/экспорта](https://docs.microsoft.com/azure/storage/common/storage-import-export-encryption-key-portal)
 
 > [!NOTE]
 > Настройте политики доступа в Key Vault так, чтобы разрешить доступ к Key Vault соответствующим службам.

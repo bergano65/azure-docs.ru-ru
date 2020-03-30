@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Analysis Services с помощью Excel | Документы Майкрософт
-description: Сведения о подключении к серверу Azure Analysis Services с помощью Excel. После подключения пользователи могут создавать сводные таблицы для просмотра данных.
+description: Сведения о подключении к серверу Azure Analysis Services с помощью Excel. После подключения пользователи могут создавать PivotTables для изучения данных.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,19 +8,19 @@ ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: bb76accfef94327386d0ff58d003782a9fe3b0d2
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73573151"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
 
 После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными. 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
-Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Дополнительные сведения см. в разделе о [проверке подлинности и разрешениях пользователя](analysis-services-manage-users.md). 
+Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Чтобы узнать больше, смотрите [аутентификацию и пользовательские разрешения.](analysis-services-manage-users.md) 
 
 ## <a name="connect-in-excel"></a>Подключение в Excel
 
@@ -42,7 +42,7 @@ ms.locfileid: "73573151"
 
 ## <a name="see-also"></a>См. также
 
-[Клиентские библиотеки](analysis-services-data-providers.md)   
+[Библиотеки клиентов](analysis-services-data-providers.md)   
 [Управление службами Analysis Services](analysis-services-manage.md)     
 
 

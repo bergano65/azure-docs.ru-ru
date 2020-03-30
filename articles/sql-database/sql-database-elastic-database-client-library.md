@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/25/2018
 ms.openlocfilehash: ae26f669ddbe2cc2c5b6e25a9c1c0229e88dc2e1
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73823907"
 ---
 # <a name="building-scalable-cloud-databases"></a>Создание масштабируемых облачных баз данных
@@ -29,14 +29,14 @@ ms.locfileid: "73823907"
 
 ## <a name="documentation"></a>Документация
 
-1. [Приступая к работе с инструментами эластичных баз данных](sql-database-elastic-scale-get-started.md)
+1. [Начало работы с инструментами упругой базы данных](sql-database-elastic-scale-get-started.md)
 2. [Функции эластичных баз данных](sql-database-elastic-scale-introduction.md)
 3. [Управление размещением сегментов](sql-database-elastic-scale-shard-map-management.md)
 4. [Перенос существующих баз данных для развертывания](sql-database-elastic-convert-to-use-elastic-tools.md)
 5. [Маршрутизация, зависящая от данных](sql-database-elastic-scale-data-dependent-routing.md)
 6. [Запросы к нескольким сегментам](sql-database-elastic-scale-multishard-querying.md)
 7. [Добавление сегмента с использованием средств эластичных баз данных](sql-database-elastic-scale-add-a-shard.md)
-8. [Мультитенантные приложения со средствами эластичных баз данных и безопасностью на уровне строк](sql-database-elastic-tools-multi-tenant-row-level-security.md)
+8. [Мультитенантные приложения с эластичными инструментами базы данных и безопасностью уровня строки](sql-database-elastic-tools-multi-tenant-row-level-security.md)
 9. [Обновление библиотеки клиентских приложений](sql-database-elastic-scale-upgrade-client-library.md) 
 10. [Обзор эластичных запросов](sql-database-elastic-query-overview.md)
 11. [Глоссарий по средствам работы с эластичными базами данных](sql-database-elastic-scale-glossary.md)
@@ -61,14 +61,14 @@ ms.locfileid: "73823907"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Скачайте](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22) клиентскую библиотеку эластичной базы данных ([Java](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/), **.NET**).
+- **Скачайте** клиентскую библиотеку эластичной базы данных ([Java](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22), [.NET](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)).
 
 - См. статью [Приступая к работе с инструментами эластичных баз данных](sql-database-elastic-scale-get-started.md), чтобы изучить **пример приложения**, который демонстрирует функции клиента.
 
 - Предложите свои идеи для кода [Java](https://github.com/Microsoft/elastic-db-tools-for-java/blob/master/README.md) или [.NET](https://github.com/Azure/elastic-db-tools) на сайте GitHub.
 - См. сведения в [обзоре эластичных запросов к базе данных SQL Azure](sql-database-elastic-query-overview.md).
 
-- Инструкции по использованию [средства разбиения и слияния](sql-database-elastic-scale-overview-split-and-merge.md) см. в статье **Перемещение данных между масштабируемыми облачными базами данных**.
+- Инструкции по использованию **средства разбиения и слияния** см. в статье [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).
 
 
 

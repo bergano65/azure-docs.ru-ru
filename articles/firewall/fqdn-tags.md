@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
 ms.openlocfilehash: 6396f8292a4c54f7fce237439f37c3e8156d59e8
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74169050"
 ---
 # <a name="fqdn-tags-overview"></a>Общие сведения о тегах FQDN
@@ -26,20 +26,20 @@ ms.locfileid: "74169050"
 
 В следующей таблице показаны текущие теги FQDN, которые можно использовать. Корпорация Майкрософт поддерживает эти теги и периодически будет добавлять новые.
 
-## <a name="current-fqdn-tags"></a>Текущие теги полного доменного имени
+## <a name="current-fqdn-tags"></a>Текущие теги ФЗДН
 
-|Тег FQDN  |ОПИСАНИЕ  |
+|Тег FQDN  |Описание  |
 |---------|---------|
 |Центр обновления Windows     |Разрешает исходящий доступ к Центру обновления Майкрософт, как описано в разделе [Настройка брандмауэра для обновлений программного обеспечения](https://technet.microsoft.com/library/bb693717.aspx).|
 |диагностика Windows.|Разрешает исходящий доступ ко всем [конечным точкам диагностики Windows](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#endpoints).|
 |Служба Microsoft Active Protection Service (MAPS)|Разрешает исходящий доступ к [MAPS](https://cloudblogs.microsoft.com/enterprisemobility/2016/05/31/important-changes-to-microsoft-active-protection-service-maps-endpoint/).|
 |Среда службы приложений (ASE).|Разрешает исходящий доступ к трафику платформы ASE. Этот тег не распространяется на конечные точки пользовательского хранилища и SQL, созданные ASE. Требуется включение с использованием [конечных точек службы](../virtual-network/tutorial-restrict-network-access-to-resources.md) или добавление вручную.<br><br>Дополнительные сведения об интеграции Брандмауэра Azure со средой службы приложений Azure см. в статье [Блокирование среды службы приложений](../app-service/environment/firewall-integration.md#configuring-azure-firewall-with-your-ase).|
-|Служба архивации Azure|Разрешает исходящий доступ к службам Azure Backup.|
-|Azure HDInsight|Разрешает исходящий доступ для трафика платформы HDInsight. Этот тег не охватывает специфические для клиента хранилища или трафик SQL из HDInsight. Включите их с помощью [конечных точек службы](../virtual-network/tutorial-restrict-network-access-to-resources.md) или добавьте их вручную.|
+|Azure Backup|Разрешает исходящий доступ к службам Azure Backup.|
+|Azure HDInsight|Позволяет доступ к исходящим платформам HDInsight. Этот тег не охватывает клиент-специфический трафик хранения или трафик S'L от HDInsight. Включите их с помощью [конечных точек службы](../virtual-network/tutorial-restrict-network-access-to-resources.md) или добавьте их вручную.|
 
 > [!NOTE]
 > При выборе тега FQDN в правиле приложения поле protocol:port должно иметь значение **https**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о том, как [развернуть и настроить Брандмауэр Azure с помощью портала Azure](tutorial-firewall-deploy-portal.md).

@@ -1,5 +1,5 @@
 ---
-title: Не найдена Рабочая группа соединителей для приложения прокси приложения
+title: Не найдена рабочая группа разъема для приложения Application Proxy
 description: В этой статье описаны проблемы, которые могут возникнуть при отсутствии рабочего соединителя или группы соединителей для приложения прокси приложения.
 services: active-directory
 documentationcenter: ''
@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 96ab0d1b3bbab9c97c04da4f918f3aaa2f1d07e4
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74275620"
 ---
 # <a name="no-working-connector-group-found-for-an-application-proxy-application"></a>Не удается найти рабочую группу соединителей для приложения прокси приложения
@@ -32,7 +32,7 @@ ms.locfileid: "74275620"
 
 -   При отсутствии соединителей в группе можно выполнить следующие действия:
 
-    -   Скачайте новый соединитель справа на локальном сервере и назначьте его этой группе.
+    -   Скачать новый разъем справа на сервере помещения, и назначить его этой группе
 
     -   Переместите активный соединитель в группу
 
@@ -68,7 +68,7 @@ ms.locfileid: "74275620"
 
 Дополнительные сведения о решении этой проблемы см. в документе "Решение проблем с портами".
 
-## <a name="next-steps"></a>Дополнительная информация
-[Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
+## <a name="next-steps"></a>Дальнейшие действия
+[Понять разъемы прокси-приложений Azure AD](application-proxy-connectors.md)
 
 

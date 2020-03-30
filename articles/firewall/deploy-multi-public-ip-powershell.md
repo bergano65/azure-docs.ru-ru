@@ -1,6 +1,6 @@
 ---
 title: Развертывание брандмауэра Azure с несколькими общедоступными IP-адресами с помощью PowerShell
-description: Из этой статьи вы узнаете, как развернуть брандмауэр Azure с несколькими общедоступными IP-адресами с помощью Azure PowerShell.
+description: В этой статье вы узнаете, как развернуть брандмауэр Azure с несколькими общедоступными IP-адресами с помощью Azure PowerShell.
 services: firewall
 author: vhorne
 ms.service: firewall
@@ -8,29 +8,29 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
 ms.openlocfilehash: ad54b60d8f15e36636f887015d97967740123669
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74195862"
 ---
-# <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Развертывание брандмауэра Azure с несколькими общедоступными IP-адресами с помощью Azure PowerShell
+# <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Развертывание Брандмауэра Azure с использованием нескольких общедоступных IP-адресов с помощью Azure PowerShell
 
-Эта функция позволяет выполнять следующие сценарии.
+Эта функция позволяет следующие сценарии:
 
 - **DNAT**. Позволяет преобразовать несколько стандартных экземпляров порта для внутренних серверов. Например, если существует два общедоступных IP-адреса, то для обоих IP-адреса можно преобразовать TCP-порт 3389 (RDP).
 - **SNAT**. Дополнительные порты доступны для исходящих SNAT подключений, что снижает вероятность нехватки SNAT портов. На данный момент Брандмауэр Azure случайно выбирает общедоступные IP-адреса источника, которые можно использовать для подключения. Если в сети установлена любая фильтрация, необходимо разрешить все публичные IP-адреса, которые связанные с брандмауэром.
  
-Портал Azure, Azure PowerShell, Azure CLI, REST и шаблоны позволяют использовать брандмауэр Azure с несколькими общедоступными IP-адресами. Вы можете развернуть брандмауэр Azure, содержащий до 100 общедоступных IP-адресов.
+Портал Azure, Azure PowerShell, Azure CLI, REST и шаблоны позволяют использовать брандмауэр Azure с несколькими общедоступными IP-адресами. Можно развернуть брандмауэр Azure с до 100 общедоступными IP-адресами.
 
-В следующих примерах Azure PowerShell показано, как можно настроить, добавить и удалить общедоступные IP-адреса для брандмауэра Azure.
+Следующие примеры Azure PowerShell показывают, как можно настроить, добавить и удалить общедоступные IP-адреса для Azure Firewall.
 
 > [!NOTE]
-> Вы не можете удалить первую конфигурацию с страницы конфигурации общедоступного IP-адреса брандмауэра Azure. Если вы хотите изменить IP-адрес, можно использовать Azure PowerShell.
+> Вы не можете удалить первую ipConfiguration со страницы конфигурации IP-адреса общедоступного IP-адреса Azure Firewall. Если вы хотите изменить IP-адрес, вы можете использовать Azure PowerShell.
 
 ## <a name="create-a-firewall-with-two-or-more-public-ip-addresses"></a>Создание брандмауэра с двумя или более общедоступными IP-адресами
 
-В этом примере создается брандмауэр, подключенный к *виртуальной сети виртуальных сетей с* двумя общедоступными IP-адресами.
+Этот пример создает брандмауэр, прикрепленный к виртуальной сети *Vnet* с двумя общедоступными IP-адресами.
 
 ```azurepowershell
 $rgName = "resourceGroupName"
@@ -63,7 +63,7 @@ New-AzFirewall `
 
 ## <a name="add-a-public-ip-address-to-an-existing-firewall"></a>Добавление общедоступного IP-адреса в существующий брандмауэр
 
-В этом примере общедоступный IP-адрес *azFwPublicIp1* подключен к брандмауэру.
+В этом примере к брандмауэру прикрепляется общедоступный IP-адрес *azFwPublicIp1.*
 
 ```azurepowershell
 $pip = New-AzPublicIpAddress `
@@ -82,9 +82,9 @@ $azFw.AddPublicIpAddress($pip)
 $azFw | Set-AzFirewall
 ```
 
-## <a name="remove-a-public-ip-address-from-an-existing-firewall"></a>Удаление общедоступного IP-адреса из существующего брандмауэра
+## <a name="remove-a-public-ip-address-from-an-existing-firewall"></a>Удалить общедоступный IP-адрес из существующего брандмауэра
 
-В этом примере общедоступный IP-адрес *azFwPublicIp1* отсоединяется от брандмауэра.
+В этом примере общедоступный IP-адрес *azFwPublicIp1* отделен от брандмауэра.
 
 ```azurepowershell
 $pip = Get-AzPublicIpAddress `
@@ -100,6 +100,6 @@ $azFw.RemovePublicIpAddress($pip)
 $azFw | Set-AzFirewall
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство. Журналы мониторинга брандмауэра Azure](./tutorial-diagnostics.md)

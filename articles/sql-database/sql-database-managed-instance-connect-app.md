@@ -1,5 +1,5 @@
 ---
-title: Приложение для подключения к управляемому экземпляру
+title: Управляемый экземпляр подключить приложение
 description: В этой статье описывается, как подключить приложение к Управляемому экземпляру Базы данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -12,13 +12,13 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
 ms.openlocfilehash: 9f592c345b7cfcf5f21d816fde1fae6b8e6b98c7
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73823385"
 ---
-# <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Подключение приложения к управляемому экземпляру базы данных SQL Azure
+# <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Connect your application to Azure SQL Database managed instance (Подключение приложения к управляемому экземпляру Базы данных SQL Azure)
 
 Сейчас вам доступно много вариантов для размещения приложений.
 
@@ -26,7 +26,7 @@ ms.locfileid: "73823385"
 
 Независимо от выбранной схемы, вы можете подключить приложение к Управляемому экземпляру.  
 
-![Высокая доступность](./media/sql-database-managed-instance/application-deployment-topologies.png)
+![высокий уровень доступности](./media/sql-database-managed-instance/application-deployment-topologies.png)
 
 ## <a name="connect-an-application-inside-the-same-vnet"></a>Подключение приложений внутри одной виртуальной сети
 
@@ -38,13 +38,13 @@ ms.locfileid: "73823385"
 
 Существует два варианта подключения виртуальных сетей.
 
-- [Пиринговая связь между виртуальными сетями Azure](../virtual-network/virtual-network-peering-overview.md).
+- [Пиринговая связь между виртуальными сетями Azure](../virtual-network/virtual-network-peering-overview.md)
 - VPN-шлюз между виртуальными сетями ([портал Azure](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md), [Azure CLI](../vpn-gateway/vpn-gateway-howto-vnet-vnet-cli.md)).
 
 Лучше использовать пиринговую связь, поскольку она использует магистральную сеть корпорации Майкрософт и не добавляет существенных задержек по сравнению с подключением виртуальных машин в одной виртуальной сети. Пиринг виртуальной сети ограничен сетями в том же регионе.  
 
 > [!IMPORTANT]
-> Сценарий пиринга виртуальной сети для службы "Управляемый экземпляр" ограничен сетями в том же регионе из-за [ограничений пиринга глобальной виртуальной сети](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
+> Сценарий пиринга виртуальной сети для службы "Управляемый экземпляр" ограничен сетями в том же регионе из-за [ограничений пиринга глобальной виртуальной сети](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Более подробную информацию смотрите также в соответствующем разделе статьи о [часто задаваемых](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) вопросах Azure Virtual Networks. 
 
 ## <a name="connect-an-on-premises-application"></a>Подключение локального приложения
 
@@ -55,7 +55,7 @@ ms.locfileid: "73823385"
 - VPN-подключение типа "сеть — сеть" ([Портал Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md), [Azure CLI](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md)).
 - Подключение [ExpressRoute](../expressroute/expressroute-introduction.md).  
 
-Если локальное подключение к Azure установлено и вы не можете установить подключение к Управляемый экземпляр, проверьте, имеет ли брандмауэр открытое исходящее подключение через порт SQL 1433, а также диапазон портов 11000-11999 для перенаправления.
+Если вы успешно установили подключение к Azure и не можете установить подключение к Управляемому экземпляру, проверьте, имеет ли брандмауэр открытое исходящие соединения в порту 1433, а также 11000-1199 диапазон портов для перенаправления.
 
 ## <a name="connect-an-application-on-the-developers-box"></a>Подключение приложения через окно разработчика
 
@@ -95,7 +95,7 @@ ms.locfileid: "73823385"
 
 Для устранения проблем с подключением просмотрите следующие сведения:
 
-- Если не удается подключиться к Управляемый экземпляр из виртуальной машины Azure в той же виртуальной сети, но другой подсеть, проверьте, установлен ли в подсети виртуальной машины набор групп безопасности сети, который может блокировать доступ. Кроме того, обратите внимание, что необходимо открыть исходящее подключение на порте SQL 1433, а также порты в диапазоне 11000-11999, так как они необходимы для подключения через перенаправление в границах Azure.
+- Если вы не можете подключиться к управляемой инстанции из виртуальной машины Azure в той же VNet, но другой подсети, проверьте, есть ли у вас группа сетевой безопасности, установленная в подсети VM, которая может блокировать доступ. Кроме того, обратите внимание, что вам необходимо открыть исходящие соединения на порте 1433, а также в портах в диапазоне 11000-11999, так как они необходимы для подключения через перенаправление внутри границы Azure.
 - Убедитесь, что распространение BGP **включено** для таблицы маршрутов, которая связана с виртуальной сетью.
 - Если используется VPN-подключение типа "точка — сеть", в конфигурации на портале Azure проверьте, отображаются ли числа для **входящего и исходящего трафика**. Ненулевые значения указывают, что Azure направляет трафик в локальную сеть и из нее.
 
@@ -137,7 +137,7 @@ ms.locfileid: "73823385"
 
 Ниже приведены рекомендуемые минимальные версии средств и драйверов, необходимые, чтобы подключиться к Управляемому экземпляру.
 
-| Драйвер или средство | Version (версия) |
+| Драйвер или средство | Версия |
 | --- | --- |
 |.NET Framework | 4.6.1 (или .NET Core) |
 |Драйвер ODBC| версия 17 |
@@ -145,8 +145,8 @@ ms.locfileid: "73823385"
 |Драйвер JDBC| 6.4.0 |
 |Драйвер Node.js| 2.1.1 |
 |Драйвер OLEDB| 18.0.2.0 |
-|SSMS| 18,0 или [более поздней версии](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
-|[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или более поздней версии |
+|SSMS| 18.0 или [выше](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
+|[Smo](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или выше |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

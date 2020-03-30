@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: примеры конфигурации маршрутизатора'
+title: 'Azure ExpressRoute: образцы конфигурации маршрутизатора'
 description: Эта страница содержит примеры конфигурации для маршрутизаторов серий Cisco ASA и Juniper MX.
 services: expressroute
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: cherylmc
 ms.openlocfilehash: 2c37dadeb669fb88f858b5487379828a8dddec6c
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74076665"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-routing"></a>Примеры конфигурации маршрутизатора для настройки и управления маршрутизацией
@@ -63,7 +63,7 @@ ms.locfileid: "74076665"
      exit-address-family
     !
 
-### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов для объявления в сеансе BGP
+### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов, которые будут рекламироваться в течение сессии BGP
 Маршрутизатор можно настроить для объявления выбранных префиксов в Майкрософт. Это можно сделать с помощью примера ниже.
 
     router bgp <Customer_ASN>
@@ -76,7 +76,7 @@ ms.locfileid: "74076665"
      exit-address-family
     !
 
-### <a name="4-route-maps"></a>4. карты маршрутов
+### <a name="4-route-maps"></a>4. Карты маршрутов
 Для фильтрации префиксов, распространяемых в сети, можно использовать карты маршрутизации и списки префиксов. Для выполнения этой задачи можно использовать следующий пример. Убедитесь, что вы задали соответствующие настройки списков префиксов.
 
     router bgp <Customer_ASN>
@@ -148,7 +148,7 @@ ms.locfileid: "74076665"
         }                                   
     }
 
-### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов для объявления в сеансе BGP
+### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов, которые будут рекламироваться в течение сессии BGP
 Маршрутизатор можно настроить для объявления выбранных префиксов в Майкрософт. Это можно сделать с помощью примера ниже.
 
     policy-options {
@@ -173,7 +173,7 @@ ms.locfileid: "74076665"
     }
 
 
-### <a name="4-route-maps"></a>4. карты маршрутов
+### <a name="4-route-maps"></a>4. Карты маршрутов
 Для фильтрации префиксов, распространяемых в сети, можно использовать карты маршрутизации и списки префиксов. Для выполнения этой задачи можно использовать следующий пример. Убедитесь, что вы задали соответствующие настройки списков префиксов.
 
     policy-options {
@@ -203,6 +203,6 @@ ms.locfileid: "74076665"
         }                                   
     }
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 Дополнительные сведения см. в разделе [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 
