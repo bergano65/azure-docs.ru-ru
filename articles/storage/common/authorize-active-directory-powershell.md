@@ -1,7 +1,7 @@
 ---
-title: Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
+title: Запуск команд PowerShell с учетными данными Azure AD для доступа к данным blob или очереди
 titleSuffix: Azure Storage
-description: PowerShell поддерживает вход с использованием учетных данных Azure AD для выполнения команд в хранилище BLOB-объектов Azure и очередей данных. Маркер доступа предоставляется для сеанса и позволяет авторизовать вызов операций. Разрешения зависят от роли RBAC, назначенной субъекту безопасности Azure AD.
+description: PowerShell поддерживает вешку с учетными данными Azure AD для выполнения команд на blob Хранилища Azure и в очередях данных. Маркер доступа предоставляется для сеанса и позволяет авторизовать вызов операций. Разрешения зависят от роли RBAC, назначенной директору безопасности Azure AD.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,41 +11,41 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 373b939ac63f31ccaf6a9f01fac92920e19074ed
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75553453"
 ---
-# <a name="run-powershell-commands-with-azure-ad-credentials-to-access-blob-or-queue-data"></a>Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
+# <a name="run-powershell-commands-with-azure-ad-credentials-to-access-blob-or-queue-data"></a>Запуск команд PowerShell с учетными данными Azure AD для доступа к данным blob или очереди
 
-Служба хранилища Azure предоставляет расширения для PowerShell, которые позволяют входить в систему и выполнять команды сценариев с учетными данными Azure Active Directory (Azure AD). При входе в PowerShell с учетными данными Azure AD возвращается маркер доступа OAuth 2,0. Этот маркер автоматически используется PowerShell для авторизации последующих операций с данными в хранилище BLOB-объектов или очередей. Для поддерживаемых операций больше не требуется передавать ключ учетной записи или маркер SAS с помощью команды.
+Azure Storage предоставляет расширения для PowerShell, которые позволяют входить в систему и запускать команды сценариев с помощью учетных данных Azure Active Directory (Azure AD). При вхобьем в PowerShell с учетными данными Azure AD возвращается токен доступа OAuth 2.0. Этот маркер автоматически используется PowerShell для авторизации последующих операций данных против хранилища Blob или Очереди. Для поддерживаемых операций больше не требуется передавать ключ учетной записи или маркер SAS с помощью команды.
 
-Вы можете назначать разрешения для данных BLOB-объектов и очередей субъекту безопасности Azure AD через Управление доступом на основе ролей (RBAC). Дополнительные сведения о ролях RBAC в службе хранилища Azure см. в статье [Управление правами доступа к данным службы хранилища Azure с помощью RBAC](storage-auth-aad-rbac.md).
+Можно присвоить разрешения данным blob и очереди директору безопасности Azure AD с помощью элемента управления доступом на основе ролей (RBAC). Для получения дополнительной информации о роли RBAC в хранилище Azure [см. Управление правами доступа к данным хранения Azure с помощью RBAC.](storage-auth-aad-rbac.md)
 
 ## <a name="supported-operations"></a>Поддерживаемые операции
 
-Расширения службы хранилища Azure поддерживаются для операций с данными BLOB-объектов и очередей. Действия, которые можно вызывать, зависят от разрешений, предоставленных субъекту безопасности Azure AD, с помощью которого вы входите в PowerShell. Разрешения для контейнеров или очередей службы хранилища Azure назначаются через RBAC. Например, если вы назначили роль **читателя данных большого двоичного объекта** , то можете выполнять команды сценариев, считывающие данные из контейнера или очереди. Если вы назначили роль **участника данных большого двоичного объекта** , то можете выполнять команды сценариев, которые считывают, записывают или удаляют контейнер или очередь или содержащиеся в них данные.
+Расширения хранилища Azure поддерживаются для операций с данными капли и очереди. Какие операции вы можете вызвать, зависит от разрешений, выданных директору безопасности Azure AD, с которым вы впишетесь в PowerShell. Разрешения на контейнеры или очереди хранилища Azure назначаются через RBAC. Например, если вам была назначена роль **читателя данных Blob,** можно запустить команды по сценарию, которые считывались данные из контейнера или очереди. Если вам была назначена роль **вкладчика данных Blob,** вы можете запускать команды по сценарию, которые считываются, пишут или удаляют контейнер или очередь или содержащиеся в них данные.
 
-Дополнительные сведения о разрешениях, необходимых для каждой операции службы хранилища Azure в контейнере или очереди, см. в разделе [операции хранилища вызовов с токенами OAuth](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens).  
+Для получения подробной информации о разрешениях, необходимых для [Call storage operations with OAuth tokens](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens)каждой операции хранения Azure в контейнере или очереди, см.  
 
-## <a name="call-powershell-commands-using-azure-ad-credentials"></a>Вызов команд PowerShell с использованием учетных данных Azure AD
+## <a name="call-powershell-commands-using-azure-ad-credentials"></a>Вызов команд PowerShell с помощью учетных данных Azure AD
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Чтобы использовать Azure PowerShell для входа и выполнения последующих операций в службе хранилища Azure с помощью учетных данных Azure AD, создайте контекст хранилища для ссылки на учетную запись хранения и включите параметр `-UseConnectedAccount`.
+Для использования Azure PowerShell для вхотворения и выполнения последующих операций против Azure Storage с помощью учетных данных Azure AD создайте контекст хранения для ссылки на учетную запись хранилища и включите `-UseConnectedAccount` параметр.
 
-В следующем примере показано, как создать контейнер в новой учетной записи хранения из Azure PowerShell с помощью учетных данных Azure AD. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
+В следующем примере показано, как создать контейнер в новой учетной записи хранения данных из Azure PowerShell с помощью учетных данных Azure AD. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
-1. Войдите в свою учетную запись Azure с помощью команды [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) :
+1. Вопийте в учетную запись Azure с помощью команды [Connect-AzAccount:](/powershell/module/az.accounts/connect-azaccount)
 
     ```powershell
     Connect-AzAccount
     ```
 
-    Дополнительные сведения о входе в Azure с помощью PowerShell см. [в разделе Вход с помощью Azure PowerShell](/powershell/azure/authenticate-azureps).
+    Для получения дополнительной информации о вхене в Azure с PowerShell, [см.](/powershell/azure/authenticate-azureps)
 
-1. Создайте группу ресурсов Azure, вызвав командлет [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). 
+1. Создайте группу ресурсов Azure, позвонив в [New-AzResourceGroup.](/powershell/module/az.resources/new-azresourcegroup) 
 
     ```powershell
     $resourceGroup = "sample-resource-group-ps"
@@ -53,7 +53,7 @@ ms.locfileid: "75553453"
     New-AzResourceGroup -Name $resourceGroup -Location $location
     ```
 
-1. Создайте учетную запись хранения, вызвав командлет [New-азсторажеаккаунт](/powershell/module/az.storage/new-azstorageaccount).
+1. Создайте учетную запись хранения, позвонив в [New-AzStorageAccount.](/powershell/module/az.storage/new-azstorageaccount)
 
     ```powershell
     $storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroup `
@@ -62,18 +62,18 @@ ms.locfileid: "75553453"
       -Location $location `
     ```
 
-1. Получите контекст учетной записи хранения, указывающий новую учетную запись хранения, вызвав [New-азсторажеконтекст](/powershell/module/az.storage/new-azstoragecontext). При работе с учетной записью хранения можно ссылаться на контекст, а не повторять передачу учетных данных. Включите параметр `-UseConnectedAccount` для вызова любых последующих операций с данными с использованием учетных данных Azure AD:
+1. Получите контекст учетной записи хранилища, который определяет новую учетную запись хранения, позвонив в [New-AzStorageContext.](/powershell/module/az.storage/new-azstoragecontext) При действии на учетную запись хранилища можно ссылаться на контекст, а не на повторное прохождение учетных данных. Включите `-UseConnectedAccount` параметр для вызова любых последующих операций данных с помощью учетных данных Azure AD:
 
     ```powershell
     $ctx = New-AzStorageContext -StorageAccountName "<storage-account>" -UseConnectedAccount
     ```
 
-1. Перед созданием контейнера назначьте себе роль [участника данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor) . Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей RBAC см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](storage-auth-aad-rbac.md).
+1. Перед созданием контейнера присвоите себе роль [вкладчика хранилища данных Blob.](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor) Даже если вы являетесь владельцем учетной записи, вам нужны четкие разрешения для выполнения операций данных в отношении учетной записи хранилища. Для получения дополнительной информации о назначении ролей RBAC см. [Грант доступ к каплям Azure и данным очереди с RBAC на портале Azure.](storage-auth-aad-rbac.md)
 
     > [!IMPORTANT]
-    > Назначений ролей RBAC может потребоваться несколько минут для распространения.
+    > Распространение ролевых заданий RBAC может занять несколько минут.
 
-1. Создайте контейнер, вызвав [New-азсторажеконтаинер](/powershell/module/az.storage/new-azstoragecontainer). Так как этот вызов использует контекст, созданный на предыдущих шагах, контейнер создается с использованием учетных данных Azure AD.
+1. Создайте контейнер, позвонив в [New-AzStorageContainer.](/powershell/module/az.storage/new-azstoragecontainer) Поскольку этот вызов использует контекст, созданный в предыдущих шагах, контейнер создается с помощью учетных данных Azure AD.
 
     ```powershell
     $containerName = "sample-container"
@@ -82,5 +82,5 @@ ms.locfileid: "75553453"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Назначение роли RBAC доступа к данным большого двоичного объекта и очереди с помощью PowerShell](storage-auth-aad-rbac-powershell.md)
-- [Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure](storage-auth-aad-msi.md)
+- [Используйте PowerShell для присвоения роли RBAC для доступа к данным о каплях и очередях](storage-auth-aad-rbac-powershell.md)
+- [Разрешить доступ к данным о каплях и очередях с управляемыми идентификаторами для ресурсов Azure](storage-auth-aad-msi.md)

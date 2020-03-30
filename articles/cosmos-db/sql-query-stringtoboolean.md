@@ -1,6 +1,6 @@
 ---
-title: Стрингтобулеан на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System Стрингтобулеан в Azure Cosmos DB.
+title: StringToBoolean на языке запросов Azure Cosmos DB
+description: Узнайте о функции системы S'L StringToBoolean в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,14 +8,14 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: ce11db91eff51e669f0917fbf34b1d560d0e9f07
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78296547"
 ---
-# <a name="stringtoboolean-azure-cosmos-db"></a>Стрингтобулеан (Azure Cosmos DB)
- Возвращает выражение, преобразованное в логическое значение. Если выражение не может быть преобразовано, возвращает значение undefine.  
+# <a name="stringtoboolean-azure-cosmos-db"></a>StringToBoolean (Azure Космос DB)
+ Возвращает выражение, переведенное на boolean. Если выражение не может быть переведено, возвращается неопределенным.  
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -26,19 +26,19 @@ StringToBoolean(<str_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Строковое выражение, анализируемое как логическое выражение.  
+   Это строка выражение следует разогнать как выражение Boolean.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
-  Возвращает логическое выражение или значение undefine.  
+  Возвращает выражение Булеан или неопределенный.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как `StringToBoolean` ведет себя между различными типами. 
+  Ниже приводится `StringToBoolean` следующий пример, как ведет себя в разных типах. 
  
- Ниже приведены примеры с допустимыми входными данными.
+ Ниже приведены примеры с допустимыми входными мерами.
 
-Пробелы допускаются только до или после "true"/"false".
+Whitespace допускается только до или после "истинного"/"ложного".
 
 ```sql
 SELECT 
@@ -53,9 +53,9 @@ SELECT
 [{"b1": true, "b2": false, "b3": false}]
 ```  
 
-Ниже приведены примеры с недопустимыми входными данными.
+Ниже приведены примеры с недействительными входными.
 
- Логические значения вводятся с учетом регистра и должны быть записаны со всеми символами нижнего регистра, например "true" и "false".
+ Booleans являются случае чувствительны и должны быть написаны со всеми символами нижнего регистра, т.е. "истинный" и "ложный".
 
 ```sql
 SELECT 
@@ -69,7 +69,7 @@ SELECT
 [{}]
 ``` 
 
-Переданное выражение будет проанализировано как логическое выражение. для этих входных данных не вычисляется тип Boolean, поэтому возвращается значение undefine.
+Пройденое выражение будет разогнано как выражение Булеан; эти входы не оцениваются для ввода Boolean и, таким образом, возвращаются неопределенными.
 
 ```sql
 SELECT 
@@ -88,10 +88,10 @@ SELECT
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Строка функции Azure Космос DB](sql-query-string-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

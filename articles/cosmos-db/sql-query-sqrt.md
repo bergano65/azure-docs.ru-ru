@@ -1,6 +1,6 @@
 ---
-title: Функция SQRT в языке запросов Azure Cosmos DB
-description: Сведения о системной функции SQL System SQRT в Azure Cosmos DB.
+title: СЗРТ на языке запроса Azure Cosmos DB
+description: Узнайте о функции системы S'L в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 3d5452e5ba650b487acff03f622cdbb170275dce
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78303466"
 ---
-# <a name="sqrt-azure-cosmos-db"></a>SQRT (Azure Cosmos DB)
+# <a name="sqrt-azure-cosmos-db"></a>СЗРТ (Azure Космос DB)
  Возвращает квадратный корень из указанного числового значения.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -48,10 +48,10 @@ SELECT SQRT(1) AS s1, SQRT(2.0) AS s2, SQRT(3) AS s3
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

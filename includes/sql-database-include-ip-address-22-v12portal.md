@@ -11,13 +11,13 @@ ms.topic: include
 ms.date: 07/13/2018
 ms.author: ninarn
 ms.openlocfilehash: 8d0f9899dbb7599340b8d15ca010a0157011fb9e
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185366"
 ---
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. В меню слева выберите пункт **Все службы**.
 
@@ -39,7 +39,7 @@ ms.locfileid: "67185366"
 
     * Удобными могут оказаться нижнее значение, оканчивающееся на **.0**, и верхнее, оканчивающееся на **.255**.
 
-11. Щелкните **Сохранить**.
+11. Нажмите кнопку **Сохранить**.
 
 <!-- Image references. -->
 

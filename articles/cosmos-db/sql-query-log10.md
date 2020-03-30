@@ -1,6 +1,6 @@
 ---
-title: LOG10 на языке запросов Azure Cosmos DB
-description: Сведения о системной функции LOG10 SQL в Azure Cosmos DB для возврата десятичного логарифма указанного числового выражения
+title: LOG10 на языке запроса Azure Cosmos DB
+description: Узнайте о функции системы LOG10 S'L в Azure Cosmos DB, чтобы вернуть базовый-10 logarithm указанного численного выражения
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 6f47200f6978d91f46c010640bb9c2bb26e9b7d5
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302497"
 ---
-# <a name="log10-azure-cosmos-db"></a>LOG10 (Azure Cosmos DB)
+# <a name="log10-azure-cosmos-db"></a>LOG10 (Azure Космос DB)
  Возвращает десятичный логарифм от указанного числового выражения.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -52,10 +52,10 @@ SELECT LOG10(100) AS log10
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

@@ -5,10 +5,10 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.openlocfilehash: baf0f07002a21a8e4e60bc17186107b471243202
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185794"
 ---
 1. Создайте класс в проекте с именем `ToDoBroadcastReceiver`.
@@ -49,7 +49,7 @@ ms.locfileid: "67185794"
     }
     ```
 
-    В приведенном выше коде необходимо заменить *`<PROJECT_NUMBER>`* номером проекта, назначенным службой Google при подготовке приложения к работе на портале разработчика Google. 
+    В приведенном выше коде необходимо заменить *`<PROJECT_NUMBER>`* номер проекта, присвоенный Google при подготовке приложения на портале разработчиков Google. 
 
 5. В файле проекта ToDoBroadcastReceiver.cs добавьте следующий код, который определяет класс **PushHandlerService** :
 
@@ -66,7 +66,7 @@ ms.locfileid: "67185794"
     Обратите внимание, что этот класс является производным от **GcmServiceBase**, поэтому к нему необходимо применить атрибут **Service**.
 
     > [!NOTE]
-    > Класс **GcmServiceBase** реализует методы **OnRegistered()** , **OnUnRegistered()** , **OnMessage()** и **OnError()** . Эти методы необходимо переопределить в классе **PushHandlerService** .
+    > Класс **GcmServiceBase** реализует методы **OnRegistered()**, **OnUnRegistered()**, **OnMessage()** и **OnError()**. Эти методы необходимо переопределить в классе **PushHandlerService** .
 
 6. Добавьте приведенный ниже код в класс **PushHandlerService**, который переопределяет обработчик событий **OnRegistered**.
 
@@ -109,7 +109,7 @@ ms.locfileid: "67185794"
     }
     ```
 
-    В этом методе возвращенный идентификатор регистрации GCM используется для регистрации push-уведомлений в службе Azure. Теги могут добавляться к регистрации только после ее создания. Дополнительные сведения см. в статье [Правила Добавление тегов для определенного устройства, чтобы включить push-уведомлений с использованием тегов](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
+    В этом методе возвращенный идентификатор регистрации GCM используется для регистрации push-уведомлений в службе Azure. Теги могут добавляться к регистрации только после ее создания. Дополнительные сведения см. в разделе [Практическое руководство. Включение принудительной отправки push-уведомлений с использованием тегов](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
 
 7. Переопределите метод **OnMessage** в **PushHandlerService** с использованием следующего кода:
 

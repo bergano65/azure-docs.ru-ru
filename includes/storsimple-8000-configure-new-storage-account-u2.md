@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: d6bad1ec584b28fee77bc654eba8a2d0c7b5df30
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185350"
 ---
 #### <a name="to-add-a-storage-account-credential-in-the-same-azure-subscription-as-the-storsimple-device-manager-service"></a>Добавление учетных данных учетной записи хранения, которая связана с той же подпиской Azure, что и служба диспетчера устройств StorSimple
@@ -19,7 +19,7 @@ ms.locfileid: "67185350"
 
 2. В колонке **Учетные данные для учетной записи хранения** щелкните **+ Add** (+ Добавить).
 
-    ![Добавление учетных данных учетной записи хранения](./media/storsimple-8000-configure-new-storage-account-u2/createnewstorageacct2.png)
+    ![добавление учетных данных учетной записи хранения;](./media/storsimple-8000-configure-new-storage-account-u2/createnewstorageacct2.png)
 
 3. В колонке **добавления учетных данных для учетной записи хранения** выполните следующие действия:
 

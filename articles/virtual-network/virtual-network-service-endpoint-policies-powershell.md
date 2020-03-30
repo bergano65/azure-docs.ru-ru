@@ -1,6 +1,6 @@
 ---
-title: Ограничение утечка данных в службе хранилища Azure Azure PowerShell
-description: Из этой статьи вы узнаете, как ограничить и ограничить утечка данных виртуальной сети ресурсами хранилища Azure с помощью политик конечной точки службы виртуальной сети, используя Azure PowerShell.
+title: Ограничьте эксфильтрацию данных для хранения данных Azure - Azure PowerShell
+description: В этой статье вы узнаете, как ограничить и ограничить эксфильтрацию виртуальных сетевых данных ресурсами хранения azure с помощью политик идентимативных сетевых сетевых сетевых сетевых сетевых сетей с помощью Azure PowerShell.
 services: virtual-network
 documentationcenter: virtual-network
 author: RDhillon
@@ -18,28 +18,28 @@ ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
 ms.openlocfilehash: 673431e2ddfc9a641bb1c640891daac79350cb3a
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78253030"
 ---
-# <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-azure-powershell"></a>Управление данными утечка в учетные записи хранения Azure с помощью политик конечной точки службы виртуальной сети с использованием Azure PowerShell
+# <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-azure-powershell"></a>Управление эксфильтрацией данных для учетных записей хранения Azure с помощью политик иного направления виртуальной сетевой системы с помощью Azure PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Политики конечной точки службы виртуальной сети позволяют применять управление доступом к учетным записям хранения Azure из виртуальной сети через конечные точки службы. Это ключ к обеспечению безопасности рабочих нагрузок, управлению учетными записями хранения и разрешениим утечка данных.
+Политики виртуальной точки зрения сетевого обслуживания позволяют применять элементы управления доступом к учетным записям хранения Azure из виртуальной сети над конечными точками обслуживания. Это ключ к обеспечению безопасности рабочих нагрузок, управлению тем, какие учетные записи хранилища разрешены и где разрешена эксфильтрация данных.
 Вы узнаете, как выполнять следующие задачи:
 
 * Создайте виртуальную сеть.
-* Добавьте подсеть и включите конечную точку службы для хранилища Azure.
-* Создайте две учетные записи хранения Azure и разрешите сетевой доступ к ней из созданной выше подсети.
-* Создайте политику конечной точки службы, чтобы разрешить доступ только к одной из учетных записей хранения.
-* Разверните виртуальную машину (ВМ) в подсети.
-* Подтвердите доступ к разрешенной учетной записи хранения из подсети.
-* Убедитесь, что доступ запрещен учетной записи хранения, неразрешенной из подсети.
+* Добавьте подсеть и включите конечную точку службы для хранения Azure.
+* Создайте две учетные записи хранилища Azure и позвольте сети получить к нему доступ из созданной выше подсети.
+* Создайте политику конечной точки службы, чтобы разрешить доступ только к одной из учетных записей хранилища.
+* Развертывание виртуальной машины (VM) в подсеть.
+* Подтвердите доступ к разрешенной учетной записи хранилища из подсети.
+* Подтвердить доступ к неразрешенной учетной записи хранилища из подсети.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -79,9 +79,9 @@ $subnetConfigPrivate = Add-AzVirtualNetworkSubnetConfig `
 $virtualNetwork | Set-AzVirtualNetwork
 ```
 
-## <a name="restrict-network-access-for-the-subnet"></a>Ограничение сетевого доступа для подсети
+## <a name="restrict-network-access-for-the-subnet"></a>Ограничение доступа к сети для подсети
 
-Создайте правила безопасности группы безопасности сети с помощью [New-азнетворксекуритирулеконфиг](/powershell/module/az.network/new-aznetworksecurityruleconfig). Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
+Создание правил безопасности группы сетевой безопасности с [помощью New-AzNetworkSecurityRuleConfig.](/powershell/module/az.network/new-aznetworksecurityruleconfig) Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
 
 ```azurepowershell-interactive
 $rule1 = New-AzNetworkSecurityRuleConfig `
@@ -134,7 +134,7 @@ $nsg = New-AzNetworkSecurityGroup `
   -SecurityRules $rule1,$rule2,$rule3
 ```
 
-Свяжите группу безопасности сети с *частной* подсетью с помощью [Set-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) , а затем запишите конфигурацию подсети в виртуальную сеть. В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
+Связать группу сетевой безопасности с *частной* подсетью с [Set-AzVirtualNetworkSubnetConfig,](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) а затем написать конфигурацию подсети в виртуальную сеть. В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
 
 ```azurepowershell-interactive
 Set-AzVirtualNetworkSubnetConfig `
@@ -147,13 +147,13 @@ Set-AzVirtualNetworkSubnetConfig `
 $virtualNetwork | Set-AzVirtualNetwork
 ```
 
-## <a name="restrict-network-access-to-azure-storage-accounts"></a>Ограничение сетевого доступа к учетным записям хранения Azure
+## <a name="restrict-network-access-to-azure-storage-accounts"></a>Ограничьте доступ к учетным записям хранения azure
 
 Действия, необходимые для ограничения сетевого доступа к ресурсам, созданным с помощью служб Azure, использующих конечные точки службы, отличаются в зависимости службы. Ознакомьтесь с документацией по отдельным службам, чтобы получить точные инструкции для них. В оставшейся части этой статьи в качестве примера приведены инструкции по ограничению сетевого доступа для учетной записи хранения Azure.
 
-### <a name="create-two-storage-accounts"></a>Создание двух учетных записей хранения
+### <a name="create-two-storage-accounts"></a>Создание двух учетных записей хранилища
 
-Создайте учетную запись хранения Azure с помощью [New-азсторажеаккаунт](/powershell/module/az.storage/new-azstorageaccount).
+Создайте учетную запись хранения данных Azure с [помощью New-AzStorageAccount.](/powershell/module/az.storage/new-azstorageaccount)
 
 ```azurepowershell-interactive
 $storageAcctName1 = 'allowedaccount'
@@ -166,7 +166,7 @@ New-AzStorageAccount `
   -Kind StorageV2
 ```
 
-После создания учетной записи хранения получите ключ для учетной записи хранения в переменной с помощью [Get-азсторажеаккаунткэй](/powershell/module/az.storage/get-azstorageaccountkey):
+После создания учетной записи хранилища извлеките ключ для учетной записи хранилища в переменную с [Get-AzStorageAccountAccountKey:](/powershell/module/az.storage/get-azstorageaccountkey)
 
 ```azurepowershell-interactive
 $storageAcctKey1 = (Get-AzStorageAccountKey -ResourceGroupName myResourceGroup -AccountName $storageAcctName1).Value[0]
@@ -174,7 +174,7 @@ $storageAcctKey1 = (Get-AzStorageAccountKey -ResourceGroupName myResourceGroup -
 
 Этот ключ потребуется для создания файлового ресурса на более позднем этапе. Введите `$storageAcctKey` и запишите значение, так как позже его потребуется ввести вручную при подключении файлового ресурса как диска на виртуальной машине.
 
-Теперь повторите описанные выше действия, чтобы создать вторую учетную запись хранения.
+Теперь повторите вышеперечисленные шаги, чтобы создать вторую учетную запись хранения.
 
 ```azurepowershell-interactive
 $storageAcctName2 = 'notallowedaccount'
@@ -187,15 +187,15 @@ New-AzStorageAccount `
   -Kind StorageV2
 ```
 
-Также извлеките ключ учетной записи хранения из этой учетной записи, чтобы использовать его позже для создания общей папки.
+Кроме того, извлеките ключ учетной записи хранилища из этой учетной записи для последующего использования для создания файла.
 
 ```azurepowershell-interactive
 $storageAcctKey2 = (Get-AzStorageAccountKey -ResourceGroupName myResourceGroup -AccountName $storageAcctName2).Value[0]
 ```
 
-### <a name="create-a-file-share-in-each-of-the-storage-account"></a>Создайте общую папку в каждой учетной записи хранения.
+### <a name="create-a-file-share-in-each-of-the-storage-account"></a>Создание доли файлов в каждой учетной записи хранилища
 
-Создайте контекст для учетной записи хранения и ключ с помощью [New-азсторажеконтекст](/powershell/module/az.storage/new-AzStoragecontext). Этот контекст инкапсулирует имя учетной записи хранения и ее ключ.
+Создайте контекст для учетной записи хранения данных и ключов с [помощью New-AzStorageContext.](/powershell/module/az.storage/new-AzStoragecontext) Этот контекст инкапсулирует имя учетной записи хранения и ее ключ.
 
 ```azurepowershell-interactive
 $storageContext1 = New-AzStorageContext $storageAcctName1 $storageAcctKey1
@@ -203,7 +203,7 @@ $storageContext1 = New-AzStorageContext $storageAcctName1 $storageAcctKey1
 $storageContext2 = New-AzStorageContext $storageAcctName2 $storageAcctKey2
 ```
 
-Создайте общую папку с помощью [New-азсторажешаре](/powershell/module/az.storage/new-azstorageshare):
+Создайте файл с [помощью New-AzStorageShare:](/powershell/module/az.storage/new-azstorageshare)
 
 ```azurepowershell-interactive
 $share1 = New-AzStorageShare my-file-share -Context $storageContext1
@@ -211,9 +211,9 @@ $share1 = New-AzStorageShare my-file-share -Context $storageContext1
 $share2 = New-AzStorageShare my-file-share -Context $storageContext2
 ```
 
-### <a name="deny-all-network-access-to-a-storage-accounts"></a>Запрет всех сетевых прав доступа к учетным записям хранения
+### <a name="deny-all-network-access-to-a-storage-accounts"></a>Запретить доступ сети к учетным записям хранения
 
-По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ к выбранным сетям, измените действие по умолчанию на *запретить* с помощью [Update-азсторажеаккаунтнетворкрулесет](/powershell/module/az.storage/update-azstorageaccountnetworkruleset). После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
+По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ к выбранным сетям, измените действие по умолчанию на *Отрицание* с [помощью Update-AzStorageAccountNetworkRuleSetSet.](/powershell/module/az.storage/update-azstorageaccountnetworkruleset) После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
 
 ```azurepowershell-interactive
 Update-AzStorageAccountNetworkRuleSet `
@@ -227,9 +227,9 @@ Update-AzStorageAccountNetworkRuleSet  `
   -DefaultAction Deny
 ```
 
-### <a name="enable-network-access-only-from-the-vnet-subnet"></a>Включение сетевого доступа только из подсети VNet
+### <a name="enable-network-access-only-from-the-vnet-subnet"></a>Включить доступ к сети только из подсети VNet
 
-Получите созданную виртуальную сеть с помощью [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork) , а затем извлеките объект частной подсети в переменную с помощью [Get-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/get-azvirtualnetworksubnetconfig):
+Извлеките созданную виртуальную сеть с [помощью Get-AzVirtualNetwork,](/powershell/module/az.network/get-azvirtualnetwork) а затем извлеките частный объект субсети в переменную с [Get-AzVirtualNetworkSubnetConfig:](/powershell/module/az.network/get-azvirtualnetworksubnetconfig)
 
 ```azurepowershell-interactive
 $privateSubnet = Get-AzVirtualNetwork `
@@ -238,7 +238,7 @@ $privateSubnet = Get-AzVirtualNetwork `
   | Get-AzVirtualNetworkSubnetConfig -Name Private
 ```
 
-Разрешите сетевой доступ к учетной записи хранения из *частной* подсети с помощью [Add-азсторажеаккаунтнетворкруле](/powershell/module/az.network/add-aznetworksecurityruleconfig).
+Разрешить доступ к учетной записи хранилища из *частной* подсети с [Add-AzStorageAccountNetworkRule](/powershell/module/az.network/add-aznetworksecurityruleconfig).
 
 ```azurepowershell-interactive
 Add-AzStorageAccountNetworkRule `
@@ -252,21 +252,21 @@ Add-AzStorageAccountNetworkRule `
   -VirtualNetworkResourceId $privateSubnet.Id
 ```
 
-## <a name="apply-policy-to-allow-access-to-valid-storage-account"></a>Применение политики для разрешения доступа к допустимой учетной записи хранения
+## <a name="apply-policy-to-allow-access-to-valid-storage-account"></a>Применить политику, чтобы разрешить доступ к действительной учетной записи хранилища
 
-Чтобы пользователи виртуальной сети могли получить доступ только к надежным и разрешенным учетным записям хранения Azure, можно создать политику конечной точки службы со списком разрешенных учетных записей хранения в определении. Затем эта политика применяется к подсети виртуальной сети, которая подключена к хранилищу через конечные точки службы.
+Чтобы убедиться, что пользователи виртуальной сети могут получить доступ только к безопасным и разрешенным учетным записям Хранилища Azure, можно создать политику конечной точки службы со списком разрешенных учетных записей хранилища в определении. Затем эта политика применяется к подсети виртуальной сети, которая подключена к хранению через конечные точки службы.
 
 ### <a name="create-a-service-endpoint-policy"></a>Создание политики конечной точки службы.
 
-В этом разделе создается определение политики со списком разрешенных ресурсов для доступа к конечной точке службы.
+В этом разделе создается определение политики со списком разрешенных ресурсов для доступа к конечной точке службы
 
-Получение идентификатора ресурса для первой (допустимой) учетной записи хранения 
+Извлечение идентификатора ресурса для первой (разрешенной) учетной записи хранения 
 
 ```azurepowershell-interactive
 $resourceId = (Get-AzStorageAccount -ResourceGroupName myresourcegroup -Name $storageAcctName1).id
 ```
 
-Создайте определение политики, чтобы разрешить указанный выше ресурс.
+Создайте определение политики, чтобы вышеуказанный ресурс
 
 ```azurepowershell-interactive
 $policyDefinition = New-AzServiceEndpointPolicyDefinition -Name mypolicydefinition `
@@ -275,7 +275,7 @@ $policyDefinition = New-AzServiceEndpointPolicyDefinition -Name mypolicydefiniti
   -ServiceResource $resourceId
 ```
 
-Создайте политику конечной точки службы с помощью созданного выше определения политики.
+Создание политики конечных точек службы с использованием определения политики, созданного выше
 
 ```azurepowershell-interactive
 $sepolicy = New-AzServiceEndpointPolicy -ResourceGroupName myresourcegroup `
@@ -283,9 +283,9 @@ $sepolicy = New-AzServiceEndpointPolicy -ResourceGroupName myresourcegroup `
   -ServiceEndpointPolicyDefinition $policyDefinition
 ```
 
-### <a name="associate-the-service-endpoint-policy-to-the-virtual-network-subnet"></a>Связывание политики конечной точки службы с подсетью виртуальной сети
+### <a name="associate-the-service-endpoint-policy-to-the-virtual-network-subnet"></a>Связать политику конечных точек службы с виртуальной сетевой подсетью
 
-После создания политики конечной точки службы ее необходимо связать с целевой подсетью с конфигурацией конечной точки службы для хранилища Azure.
+После создания политики конечных точек службы вы свяжете ее с целевой подсетью с конфигурацией конечных точек службы для Azure Storage.
 
 ```azurepowershell-interactive
 Set-AzVirtualNetworkSubnetConfig -VirtualNetwork $VirtualNetwork `
@@ -297,13 +297,13 @@ Set-AzVirtualNetworkSubnetConfig -VirtualNetwork $VirtualNetwork `
 
 $virtualNetwork | Set-AzVirtualNetwork
 ```
-## <a name="validate-access-restriction-to-azure-storage-accounts"></a>Проверка ограничения доступа для учетных записей хранения Azure
+## <a name="validate-access-restriction-to-azure-storage-accounts"></a>Проверка ограничения доступа к учетным записям хранения Azure
 
 ### <a name="deploy-the-virtual-machine"></a>Развертывание виртуальной машины
 
-Чтобы проверить сетевой доступ к учетной записи хранения, разверните виртуальную машину в подсети.
+Чтобы протестировать доступ сети к учетной записи хранилища, разместите VM в подсети.
 
-Создайте виртуальную машину в *частной* подсети с помощью [New-AzVM](/powershell/module/az.compute/new-azvm). При выполнении следующей команды будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины. Параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме, чтобы можно было перейти к следующему шагу.
+Создайте виртуальную машину в *частной* подсети с [New-AzVM.](/powershell/module/az.compute/new-azvm) При выполнении следующей команды будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины. Параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме, чтобы можно было перейти к следующему шагу.
 
 ```azurepowershell-interactive
 New-AzVm -ResourceGroupName myresourcegroup `
@@ -321,7 +321,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 1      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
 ```
 
-### <a name="confirm-access-to-the-allowed-storage-account"></a>Подтверждение доступа к *разрешенной* учетной записи хранения
+### <a name="confirm-access-to-the-allowed-storage-account"></a>Подтвердить доступ к *разрешенной* учетной записи хранилища
 
 Чтобы получить общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress). Приведенный ниже пример возвращает общедоступный IP-адрес виртуальной машины *myVmPrivate*:
 
@@ -340,7 +340,7 @@ mstsc /v:<publicIpAddress>
 
 Будет создан и скачан на ваш компьютер файл протокола удаленного рабочего стола (RDP-файл). Откройте этот RDP-файл. При появлении запроса выберите **Подключиться**. Введите имя пользователя и пароль, указанные при создании виртуальной машины. Возможно, потребуется выбрать **More choices** (Дополнительные варианты), а затем **Use a different account** (Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины. Нажмите кнопку **ОК**. При входе в систему может появиться предупреждение о сертификате. Если вы получили предупреждение, выберите **Да** или **Продолжить**.
 
-На виртуальной машине *myVmPrivate* сопоставьте файловый ресурс Azure с разрешенной учетной записью хранения с диском Z с помощью PowerShell. 
+На *myVmPrivate* VM отображают долю файла Azure с разрешенной учетной записи хранилища, чтобы управлять с помощью PowerShell. 
 
 ```powershell
 $acctKey = ConvertTo-SecureString -String $storageAcctKey1 -AsPlainText -Force
@@ -360,9 +360,9 @@ Z                                      FileSystem    \\allowedaccount.file.core.
 
 Закройте сеанс удаленного рабочего стола с виртуальной машиной *myVmPrivate*.
 
-### <a name="confirm-access-is-denied-to-non-allowed-storage-account"></a>Подтверждение отказа в доступе к учетной записи хранения, которая *не разрешена*
+### <a name="confirm-access-is-denied-to-non-allowed-storage-account"></a>Подтверждение отказа в доступе к *неразрешенной* учетной записи хранилища
 
-На той же виртуальной машине *myVmPrivate* попытайтесь соотнести файловый ресурс Azure с диском X. 
+На том же *myVmPrivate* VM попытайтесь сопоставить совместное представление файлов Azure для привода X. 
 
 ```powershell
 $acctKey = ConvertTo-SecureString -String $storageAcctKey1 -AsPlainText -Force
@@ -370,7 +370,7 @@ $credential = New-Object System.Management.Automation.PSCredential -ArgumentList
 New-PSDrive -Name X -PSProvider FileSystem -Root "\\notallowedaccount.file.core.windows.net\my-file-share" -Credential $credential
 ```
 
-Доступ к файловому ресурсу будет запрещен, и отобразится сообщение об ошибке `New-PSDrive : Access is denied`. Отказано в доступе, так как учетная запись хранения *ноталловедаккаунт* не входит в список разрешенных ресурсов в политике конечных точек службы. 
+Доступ к файловому ресурсу будет запрещен, и отобразится сообщение об ошибке `New-PSDrive : Access is denied`. Доступ указано из-за того, что учетная запись *хранилища, не* указанная в списке разрешенных ресурсов, в политике конечных точек службы. 
 
 Закройте сеанс удаленного рабочего стола с виртуальной машиной *myVmPublic*.
 
@@ -384,4 +384,4 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы применили политику конечной точки службы к службе хранилища Azure для конечной точки службы виртуальной сети Azure. Вы создали учетные записи хранения Azure и ограниченный сетевой доступ только к определенным учетным записям хранения (и, таким же, отклонили другие) из подсети виртуальной сети. Дополнительные сведения о политиках конечной точки службы см. в статье [Общие сведения о политиках конечных точек служб](virtual-network-service-endpoint-policies-overview.md).
+В этой статье вы применили политику конечных точек службы в отношении точки фактической сетевой службы Azure к хранилищем Azure. Вы создали учетные записи хранилища Azure и ограниченный доступ к сети только к определенным учетным записям хранения (и, таким образом, отрицали другие) из виртуальной сетевой подсети. Чтобы узнать больше о политиках [Service endpoints policies overview](virtual-network-service-endpoint-policies-overview.md)конечных точек службы, см.

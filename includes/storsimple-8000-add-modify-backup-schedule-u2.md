@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 2ab3b089ce65c9f27457fd1cfb360d6776ed6244
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185476"
 ---
 #### <a name="to-add-or-modify-a-storsimple-backup-schedule"></a>Добавление или изменение расписания резервного копирования StorSimple
@@ -19,7 +19,7 @@ ms.locfileid: "67185476"
 
     ![Управление расписаниями](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule1.png)
 
-3. В колонке **Добавить расписание** измените тип моментального снимка, частоту архивации, период удержания, начальную дату и время. Щелкните **Добавить**.
+3. В колонке **Добавить расписание** измените тип моментального снимка, частоту архивации, период удержания, начальную дату и время. Нажмите кнопку **Добавить**.
 
     ![Управление расписаниями](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule5.png)
 

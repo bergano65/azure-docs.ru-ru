@@ -15,16 +15,16 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 79c24eb078cc3de764ecc1c814e5b8772777eab6
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78199501"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Использование общего динамического шифрования PlayReady и (или) Widevine DRM
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > Новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> Для работы с этим учебником требуется учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/)   > никаких новых функций или функциональных возможностей в Media Services v2 не добавляется. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
 >   
 
 ## <a name="overview"></a>Обзор
@@ -39,11 +39,11 @@ ms.locfileid: "78199501"
 * [EZDRM](https://ezdrm.com/); 
 * [castLabs](https://castlabs.com/company/partners/azure/) 
 
-Дополнительные сведения см. в статьях, посвященных интеграции с [Axinom](media-services-axinom-integration.md) и [castLabs](media-services-castlabs-integration.md).
+Для получения дополнительной информации, см интеграции с [Axinom](media-services-axinom-integration.md) и [castLabs](media-services-castlabs-integration.md).
 
-Службы мультимедиа поддерживают несколько способов авторизации пользователей, которые запрашивают ключи. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в форматах [простого веб-маркера](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2) (SWT) и [JSON Web Token](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3) (JWT). 
+Службы мультимедиа поддерживают несколько способов авторизации пользователей, которые запрашивают ключи. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Медиа-сервисы поддерживают токены в [простых форматах веб-токенов](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2) (SWT) и [JSON Web Token](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3) (JWT). 
 
-Дополнительную информацию см. в разделе [Настройка политики авторизации ключа контента](media-services-protect-with-aes128.md#configure_key_auth_policy).
+Для получения дополнительной информации [см.](media-services-protect-with-aes128.md#configure_key_auth_policy)
 
 Чтобы воспользоваться преимуществами динамического шифрования, требуется ресурс, содержащий набор многоскоростных MP4-файлов или многоскоростных исходных файлов Smooth Streaming. Вам также потребуется настроить политику доставки для ресурса (описывается далее в этой статье). В зависимости от формата, указанного в URL-адресе потоковой передачи, сервер потокового воспроизведения по запросу обеспечивает доставку содержимого по выбранному протоколу. Благодаря этому можно хранить и оплачивать файлы в одном формате хранения. Службы мультимедиа создают и обрабатывают соответствующий ответ HTTP на каждый запрос клиента.
 
@@ -98,17 +98,17 @@ ms.locfileid: "78199501"
 
 Инструкции по кодированию см. в статье [Кодирование ресурса-контейнера с помощью Media Encoder Standard и .NET](media-services-dotnet-encode-with-media-encoder-standard.md).
 
-## <a id="create_contentkey"></a>Создание ключа содержимого и связывание его с закодированным ресурсом-контейнером
+## <a name="create-a-content-key-and-associate-it-with-the-encoded-asset"></a><a id="create_contentkey"></a>Создание ключа содержимого и связывание его с закодированным ресурсом-контейнером
 В службах мультимедиа ключ содержимого содержит ключ, который используется для шифрования ресурса-контейнера.
 
 Дополнительные сведения см. в руководстве по [созданию ключей содержимого](media-services-dotnet-create-contentkey.md).
 
-## <a id="configure_key_auth_policy"></a>Настройка политики авторизации для ключа содержимого
+## <a name="configure-the-content-keys-authorization-policy"></a><a id="configure_key_auth_policy"></a>Настройка политики авторизации ключа содержимого
 Службы мультимедиа поддерживают несколько способов аутентификации пользователей, которые запрашивают ключи. Потребуется настроить политику авторизации для ключа содержимого. Прежде чем ключ будет доставлен в клиент (проигрыватель), его нужно привести в соответствие с политикой. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера.
 
 Дополнительную информацию см. в статье о [настройке политики авторизации для ключа содержимого](media-services-dotnet-configure-content-key-auth-policy.md#playready-dynamic-encryption).
 
-## <a id="configure_asset_delivery_policy"></a>Настройка политики доставки для ресурса
+## <a name="configure-an-asset-delivery-policy"></a><a id="configure_asset_delivery_policy"></a>Настройка политики доставки для ресурса
 Настройте политику доставки для ресурса-контейнера. Вот некоторые элементы, входящие в конфигурацию политики доставки:
 
 * URL-адрес для приобретения лицензии DRM.
@@ -117,7 +117,7 @@ ms.locfileid: "78199501"
 
 Дополнительные сведения см. в статье о [настройке политики доставки для ресурсов-контейнеров](media-services-dotnet-configure-asset-delivery-policy.md).
 
-## <a id="create_locator"></a>Создание указателя потоковой передачи по запросу для получения URL-адреса для потоковой передачи
+## <a name="create-an-ondemand-streaming-locator-to-get-a-streaming-url"></a><a id="create_locator"></a>Создание указателя потоковой передачи по запросу для получения URL-адреса для потоковой передачи
 При использовании протоколов Smooth Streaming, DASH или HLS вам необходимо предоставить пользователю URL-адрес для потоковой передачи.
 
 > [!NOTE]
@@ -616,10 +616,10 @@ namespace DynamicEncryptionWithDRM
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Использование CENC с несколькими подсистемами DRM и контролем доступа](media-services-cenc-with-multidrm-access-control.md)
 * [Настройка упаковки Widevine с использованием служб мультимедиа](https://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
-* [Приступая к работе с клиентским пакетом SDK для Java для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use)
+* [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use)
 * Чтобы скачать последний пакет SDK для PHP для служб мультимедиа, найдите версию 0.5.7 пакета Microsoft/WindowsAzure в [репозитории Packagist](https://packagist.org/packages/microsoft/windowsazure#v0.5.7). 
 

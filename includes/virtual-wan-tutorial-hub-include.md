@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -9,10 +9,10 @@ ms.date: 02/27/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 0a81d8c97b916fd15e7be5fde05e9ea25ba1151d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: HT
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185189"
 ---
 Концентратор имеет шлюз. За созданный концентратор будет взиматься плата, даже если вы не присоединяете сайты. Создание концентратора и шлюза занимает 30 минут.
@@ -22,7 +22,7 @@ ms.locfileid: "67185189"
 3. На странице **Создание виртуального концентратора** заполните следующие поля:
 
    * Расположение
-   * ИМЯ
+   * name
    * Закрытое адресное пространство центра
 
-Щелкните **Подтвердить**, чтобы создать центр. Щелкните **Обновить**, чтобы отобразить концентратор на странице **Концентраторы**.
+Щелкните **Подтвердить**, чтобы создать центр. Нажмите **Refresh,** чтобы просмотреть концентратор на странице **концентраторов.**

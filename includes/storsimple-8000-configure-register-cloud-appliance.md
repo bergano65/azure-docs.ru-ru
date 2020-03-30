@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: d004de75284011f4ceaaca88fd19e61900824f51
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185347"
 ---
 #### <a name="to-configure-and-register-the-cloud-appliance"></a>Настройка и регистрация облачного устройства
@@ -18,7 +18,7 @@ ms.locfileid: "67185347"
     ![Облачное устройство StorSimple в списке устройств](./media/storsimple-8000-create-cloud-appliance-u2/sca-create3.png)
 2. В колонке **Настройка устройства** выполните следующие действия:
     
-    1. Введите **Ключ шифрования данных службы** в соответствующем поле. Этот ключ создается при регистрации первого физического устройства в службе диспетчера устройств StorSimple.
+    1. В соответствующем поле введите **ключ шифрования данных службы**. Этот ключ создается при регистрации первого физического устройства в службе диспетчера устройств StorSimple.
 
     2. Введите **пароли администратора устройства** и **Snapshot Manager**, соответствующие заданным параметрам и длине.
 

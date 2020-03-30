@@ -1,6 +1,6 @@
 ---
-title: ARRAY_CONCAT языка запросов Azure Cosmos DB
-description: Узнайте, как системная функция Concat массива SQL в Azure Cosmos DB возвращает массив, являющийся результатом сцепления двух или более значений массива.
+title: ARRAY_CONCAT на языке запросов Запроса Azure Cosmos DB
+description: Узнайте о том, как система Array Concat S'L в Azure Cosmos DB возвращает массив, который является результатом совмещения двух или более значений массива
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 8f2b37181e5d743809bb1f60be4056cb4442a8d2
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78295884"
 ---
 # <a name="array_concat-azure-cosmos-db"></a>ARRAY_CONCAT (Azure Cosmos DB)
@@ -26,7 +26,7 @@ ARRAY_CONCAT (<arr_expr1>, <arr_expr2> [, <arr_exprN>])
 ## <a name="arguments"></a>Аргументы
   
 *arr_expr*  
-   Выражение массива для сцепления с другими значениями. Для функции `ARRAY_CONCAT` требуется по крайней мере два аргумента *arr_expr* .  
+   Является выражением массива, чтобы примириться с другими значениями. Функция `ARRAY_CONCAT` требует не менее двух *аргументов arr_expr.*  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -48,10 +48,10 @@ SELECT ARRAY_CONCAT(["apples", "strawberries"], ["bananas"]) AS arrayConcat
   
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Array функции Azure Космос DB](sql-query-array-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

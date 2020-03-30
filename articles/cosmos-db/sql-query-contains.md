@@ -1,6 +1,6 @@
 ---
-title: СОДЕРЖИТ в Azure Cosmos DB языке запросов
-description: Сведения о том, как функция CONTAINS SQL System в Azure Cosmos DB возвращает логическое значение, указывающее, содержит ли первое строковое выражение вторую
+title: СНАГНОВ На языке запросов Запроса Azure Cosmos DB
+description: Узнайте о том, как функция системы CONTAINS S'L в Azure Cosmos DB возвращает Булеану, указывающего, содержит ли первое выражение строки второе
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: c0c25b63fb6a7bf42bd2ec5b9503cac2cce7583f
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302599"
 ---
-# <a name="contains-azure-cosmos-db"></a>CONTAINS (Azure Cosmos DB)
+# <a name="contains-azure-cosmos-db"></a>ССОДЕРЖИТ (Azure Космос DB)
  Возвращает значение логического типа, указывающее, содержит ли первое строковое выражение второе.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -29,7 +29,7 @@ CONTAINS(<str_expr1>, <str_expr2>)
    Строковое выражение, в котором выполняется поиск.  
   
 *str_expr2*  
-   Искомое строковое выражение.  
+   Это строка выражение, чтобы найти.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -37,7 +37,7 @@ CONTAINS(<str_expr1>, <str_expr2>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере проверяется, содержит ли "ABC" "AB", а если "ABC" содержит "d".  
+  Следующий пример проверяет, если "abc" содержит "ab" и если "abc" содержит "d".  
   
 ```sql
 SELECT CONTAINS("abc", "ab") AS c1, CONTAINS("abc", "d") AS c2 
@@ -51,10 +51,10 @@ SELECT CONTAINS("abc", "ab") AS c1, CONTAINS("abc", "d") AS c2
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Строка функции Azure Космос DB](sql-query-string-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

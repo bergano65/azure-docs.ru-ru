@@ -1,7 +1,7 @@
 ---
-title: Примеры преобразования утверждений StringCollection для пользовательских политик
+title: StringCollection утверждает примеры трансформации для пользовательских политик
 titleSuffix: Azure AD B2C
-description: Примеры преобразования утверждений StringCollection для схемы платформы идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
+description: StringCollection претендует на примеры преобразования для схемы интерфейса identity Experience (IEF) Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,27 +12,27 @@ ms.date: 02/27/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 6aea537ebff4ae61e00861e6cafe742a7feb165e
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78186783"
 ---
 # <a name="stringcollection-claims-transformations"></a>Преобразования утверждений StringCollection
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приведены примеры использования преобразований утверждений коллекций строк схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приводятся примеры использования преобразований требований строк и схемы интерфейса Identity Experience в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
 ## <a name="additemtostringcollection"></a>AddItemToStringCollection
 
-Добавляет утверждение строки в новое уникальное значение утверждения stringCollection.
+Добавляет строку претензии к новым уникальным значениям stringsCollection претензии.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | item | строка | Тип ClaimType, добавляемый к исходящему утверждению. |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
-| outputClaim | коллекция | stringCollection | Значение параметра, созданное после вызова этого преобразования утверждений, со значением, указанным во входном утверждении. |
+| outputClaim | коллекция | stringCollection | ClaimType, который производится после этого преобразования претензий был вызван, со значением, указанным в претензии ввода. |
 
 Используйте это преобразование утверждений, чтобы добавить строку в новый или существующий элемент stringCollection. Оно обычно используется в техническом профиле **AAD-UserWriteUsingAlternativeSecurityId**. Перед созданием новой учетной записи социальной сети преобразование утверждений **CreateOtherMailsFromEmail** считывает ClaimType и добавляет значение в элемент ClaimType **otherMails**.
 
@@ -53,16 +53,16 @@ ms.locfileid: "78186783"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **collection**: ["someone@outlook.com"].
-  - **item**: "admin@contoso.com".
+  - **коллекции**:someone@outlook.com» »
+  - **пункт**:admin@contoso.com"
 - Исходящие утверждения:
-  - **collection**: ["someone@outlook.com", "admin@contoso.com"].
+  - **коллекции**:someone@outlook.com"admin@contoso.com" " "
 
 ## <a name="addparametertostringcollection"></a>AddParameterToStringCollection
 
-Добавляет строковый параметр в новое уникальное значение утверждения stringCollection.
+Добавляет параметр строки к новой уникальной заявке строки значенийCollection.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
 | InputParameter | item | строка | Значение, добавляемое к исходящему утверждению. |
@@ -87,17 +87,17 @@ ms.locfileid: "78186783"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **collection**: ["someone@outlook.com"].
+  - **коллекции**:someone@outlook.com» »
 - Входные параметры
-  - **item**: "admin@contoso.com".
+  - **пункт**:admin@contoso.com"
 - Исходящие утверждения:
-  - **collection**: ["someone@outlook.com", "admin@contoso.com"].
+  - **коллекции**:someone@outlook.com"admin@contoso.com" " "
 
 ## <a name="getsingleitemfromstringcollection"></a>GetSingleItemFromStringCollection
 
 Получает первый элемент из предоставленной коллекции строк.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
 | outputClaim | extractedItem | строка | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Первый элемент в коллекции. |
@@ -118,23 +118,23 @@ ms.locfileid: "78186783"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **collection**: ["someone@outlook.com", "someone@contoso.com"].
+  - **коллекции**:someone@outlook.com"someone@contoso.com" " "
 - Исходящие утверждения:
-  - **extractedItem**: "someone@outlook.com".
+  - **извлеченныйПункт**:someone@outlook.com" "
 
 
-## <a name="stringcollectioncontains"></a>стрингколлектионконтаинс
+## <a name="stringcollectioncontains"></a>StringCollectionContains
 
-Проверяет, содержит ли тип утверждения StringCollection элемент
+Проверяет, содержит ли тип требования StringCollection элемент
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim | stringCollection | Тип утверждения, для которого выполняется поиск. |
-|InputParameter|item|строка|Искомое значение.|
+| InputClaim | InputClaim | stringCollection | Тип претензии, который необходимо искать. |
+|InputParameter|item|строка|Значение для поиска.|
 |InputParameter|ignoreCase|строка|Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк.|
-| outputClaim | outputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. Логический индикатор, если коллекция содержит такую строку |
+| outputClaim | outputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. Индикатор булеана, если коллекция содержит такую строку |
 
-В следующем примере проверяется, содержит ли тип утверждения `roles` stringCollection значение **Admin**.
+Следующий пример `roles` проверяет, содержит ли тип требования stringCollection значение **админ.**
 
 ```XML
 <ClaimsTransformation Id="IsAdmin" TransformationMethod="StringCollectionContains">
@@ -152,11 +152,11 @@ ms.locfileid: "78186783"
 ```
 
 - Входящие утверждения:
-    - **inputClaim**: ["читатель", "author", "admin"]
+    - **inputClaim**: «читатель», «автор», «админ»
 - Входные параметры:
-    - **элемент**: "admin"
-    - **ignoreCase**: "true"
+    - **пункт**: "Админ"
+    - **ignoreCase**: "правда"
 - Исходящие утверждения:
-    - **outputClaim**: "true"
+    - **выходНая претензия**: "правда"
 
 
