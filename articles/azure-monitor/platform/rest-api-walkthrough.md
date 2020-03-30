@@ -4,12 +4,12 @@ description: Эта статья содержит сведения об ауте
 ms.subservice: metrics
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.openlocfilehash: 42a7034c586f4e01066e989dcb2b9fae4eebfa85
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: f52776fc6b5f5f530cc368a2f148a2ff63fb5b40
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79248558"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80294624"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 
@@ -84,7 +84,7 @@ $authHeader = @{
 2. получение значений метрик.
 
 > [!NOTE]
-> Дополнительные сведения о проверке подлинности в Azure REST API см. в [справочнике по azure REST API](https://docs.microsoft.com/rest/api/azure/).
+> Для получения дополнительной информации о проверке подлинности с помощью API Azure REST, пожалуйста, обратитесь к [API-справке Azure REST.](https://docs.microsoft.com/rest/api/azure/)
 >
 >
 
@@ -94,7 +94,7 @@ $authHeader = @{
 
 **Метод**: GET
 
-**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
+**Запрос URI**:\/\/https: management.azure.com/subscriptions/*«subscriptionId»*(ресурсгруппы/*«ресурсGroup' /ресурсGroupName»*/провайдеры /*«ресурсА» (ресурсА)*/*(ресурс)»)/провайдеры/microsoft.insights/metricDefinitions?api-version»**{resourceType}*/*(apiVersion)*
 
 Например, запрос на получение определений метрик для учетной записи хранения Azure будет выглядеть следующим образом:
 
@@ -238,7 +238,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: HTTPS\://Management.Azure.com/Subscriptions/ *{Subscription-ID}* /resourceGroups/ *{Resource-Group-Name}* /providers/ *{ресурс-поставщик-пространство имен* }/ *{ресурс-тип}* / *{Resource-Name}* /providers/Microsoft.Insights/Metrics? metricnames = *{Метрика}* & TimeSpan = *{StartTime/EndTime}* & $Filter = *{Filter}* & resultType = метаданные & API-Version = *{ apiVersion}*
+**Запрос URI**:\:https //management.azure.com/subscriptions/*«подписка-id»*(ресурсгруппы/*«ресурс-группа-имя»*/провайдеры */поставщики ресурсов-имен»*/*(ресурс-тип) «ресурс-имя»*/*{resource-name}*(провайдеры/microsoft.insights/metrics?metricnames»*»метрика» «метрики»*&время*запуска/конца»*&&*&* $filter»* }*
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -311,7 +311,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https://management.azure.com/subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/ *{пространство_имен_поставщиков_ресурсов}* / *{тип_ресурса}* / *{имя_ресурса}* /providers/microsoft.insights/metrics?metricnames= *{метрика}* &timespan= *{время_начала/время_окончания}* &$filter= *{фильтр}* &interval= *{интервал_времени}* &aggregation= *{агрегирование}* &api-version= *{версия_API}*
+**Запрос**URI https://management.azure.com/subscriptions/: *«подписка-id»/ресурсныегруппы**/«ресурс-группа-имя»*/поставщики */ресурс-поставщик-имя»*/*(ресурс-тип)*/*(ресурс-имя)*/поставщики/microsoft.insights/metrics?metricnames»*(метрика)*&время времени»*(время запуска/конца)* *{aggreation}*&$filter"&*&* *&.* * apiVersion*
 
 Например, чтобы вывести первые 3 API-интерфейса в убывающем порядке по величине показателя "Транзакции" в течение 5-минутного диапазона, где для GeoType установлено значение "Primary", используйте следующий запрос:
 
@@ -390,7 +390,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
+**Запрос URI**:\/\/https: management.azure.com/subscriptions/*«subscriptionId»*(ресурсгруппы/*«ресурсGroup' /ресурсGroupName»*/провайдеры /*«ресурсА» (ресурсА)*/*(ресурс)»)/провайдеры/microsoft.insights/metricDefinitions?api-version»**{resourceType}*/*(apiVersion)*
 
 Например, чтобы получить определения метрик для приложения логики Azure, запрос будет выглядеть следующим образом:
 
@@ -463,7 +463,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https://management.azure.com/subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/ *{пространство_имен_поставщиков_ресурсов}* / *{тип_ресурса}* / *{имя_ресурса}* /providers/microsoft.insights/metrics?$filter= *{фильтр}* &api-version= *{версия_API}*
+**Запрос URI**:`https://management.azure.com/subscriptions/\*{subscription-id}*/resourceGroups/*{resource-group-name}*/providers/*{resource-provider-namespace}*/*{resource-type}*/*{resource-name}*/providers/microsoft.insights/metrics?$filter=*{filter}*&api-version=*{apiVersion}*`
 
 Например, запрос для получения точек данных метрики RunsSucceeded в заданном диапазоне времени с интервалом в 1 час будет выглядеть следующим образом.
 
@@ -601,13 +601,13 @@ armclient GET /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups
 
 Приведенный ниже список содержит несколько примеров форматов идентификаторов различных ресурсов Azure.
 
-* **Центр Интернета вещей**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Devices/IotHubs/ *{имя_центра}* .
-* **Пул эластичных баз данных SQL**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Sql/servers/ *{база_данных_в_пуле}* /elasticpools/ *{имя_пула_SQL}* .
-* **База данных SQL (версии 12)** : /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Sql/servers/ *{имя_сервера}* /databases/ *{имя_базы_данных}* .
-* **Служебная шина**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.ServiceBus/ *{пространство_имен}* / *{имя_служебной_шины}* .
-* **Масштабируемые наборы виртуальных машин**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Compute/virtualMachineScaleSets/ *{имя_ВМ}* .
-* **Виртуальные машины**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Compute/virtualMachines/ *{имя_ВМ}* .
-* **Центры событий**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.EventHub/namespaces/ *{пространство_имен_центров_событий}* .
+* **Центр Интернета вещей**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Devices/IotHubs/*{имя_центра}*.
+* **Пул эластичных баз данных SQL**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Sql/servers/*{база_данных_в_пуле}*/elasticpools/*{имя_пула_SQL}*.
+* **База данных SQL (версии 12)**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Sql/servers/*{имя_сервера}*/databases/*{имя_базы_данных}*.
+* **Служебная шина**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.ServiceBus/*{пространство_имен}*/*{имя_служебной_шины}*.
+* **Масштабируемые наборы виртуальных машин**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Compute/virtualMachineScaleSets/*{имя_ВМ}*.
+* **Виртуальные машины**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Compute/virtualMachines/*{имя_ВМ}*.
+* **Центры событий**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.EventHub/namespaces/*{пространство_имен_центров_событий}*.
 
 Существуют альтернативные подходы к извлечению идентификатора ресурса, включая использование Azure Resource Explorer, PowerShell, интерфейса командной строки Azure и просмотр требуемого ресурса на портале Azure.
 
@@ -653,7 +653,7 @@ Version        : 08586982649483762729
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Чтобы получить идентификатор ресурса для учетной записи хранения Azure с помощью Azure CLI, выполните команду `az storage account show`, как показано в следующем примере:
+Чтобы получить идентификатор ресурсов для учетной записи хранилища `az storage account show` Azure с помощью CLI Azure, выполните команду, как показано в следующем примере:
 
 ```azurecli
 az storage account show -g azmon-rest-api-walkthrough -n contosotweets2017

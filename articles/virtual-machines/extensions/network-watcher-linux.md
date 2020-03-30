@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальной машины агента наблюдателя за сетями Azure для Linux
+title: Azure Network Watcher Agent виртуальное расширение машины для Linux
 description: Развертывание агента Наблюдателя за сетями на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
-ms.openlocfilehash: 69d2bfe4576a9350e905fc10f3d7617619e6284a
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 712ec177996cd54d7bd6d184fea306009b58b083
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77915492"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79531028"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Linux
 
@@ -35,7 +35,7 @@ ms.locfileid: "77915492"
 
 Расширение виртуальной машины для агента службы "Наблюдатель за сетями" можно настроить для следующих дистрибутивов Linux.
 
-| Распределение | Версия |
+| Distribution | Версия |
 |---|---|
 | Ubuntu | 12+ |
 | Debian | 7 и 8 |
@@ -75,11 +75,11 @@ ms.locfileid: "77915492"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример |
+| name | Значение и пример |
 | ---- | ---- |
 | версия_API | 2015-06-15 |
 | publisher | Microsoft.Azure.NetworkWatcher |
-| тип | NetworkWatcherAgentLinux |
+| type | NetworkWatcherAgentLinux |
 | typeHandlerVersion | 1.4 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
@@ -92,7 +92,7 @@ ms.locfileid: "77915492"
 
 Следующий пример развертывает расширение виртуальной машины для агента службы "Наблюдатель за сетями" на существующей виртуальной машине, развернутой с помощью классической модели.
 
-```azurecli
+```console
 azure config mode asm
 azure vm extension set myVM1 NetworkWatcherAgentLinux Microsoft.Azure.NetworkWatcher 1.4
 ```
@@ -107,7 +107,7 @@ az vm extension set --resource-group myResourceGroup1 --vm-name myVM1 --name Net
 
 ## <a name="troubleshooting-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshooting"></a>Диагностика
+### <a name="troubleshooting"></a>Устранение неполадок
 
 Сведения о состоянии развертываний расширения можно получить на портале Azure или при помощи Azure CLI.
 
@@ -119,4 +119,4 @@ az vm extension show --name NetworkWatcherAgentLinux --resource-group myResource
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете ознакомиться с [документацией по службе "Наблюдатель за сетями"](/azure/network-watcher/) или обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в какой-либо момент этой статьи, вы можете обратиться к [документации Network Watcher](/azure/network-watcher/)или связаться с экспертами Azure на [форумах MSDN Azure и Stack Overflow.](https://azure.microsoft.com/support/forums/) Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

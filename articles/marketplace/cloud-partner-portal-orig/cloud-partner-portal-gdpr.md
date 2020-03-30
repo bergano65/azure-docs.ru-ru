@@ -1,19 +1,18 @@
 ---
-title: Соответствие GDPR | Azure Marketplace
+title: Соответствие GDPR (англ.) Лазурный рынок
 description: Портал Cloud Partner и Общий регламент по защите данных (GDPR).
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: bc43a6cb3c30638d8c3904d7ca5b004e0905f1d2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: f09bc60a59ff2a6e21d0cdae1917a1faed072ea4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824305"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80280292"
 ---
 <a name="cloud-partner-portal-gdpr-compliance"></a>Соответствия GDPR и портала Cloud Partner
 ====================================
@@ -25,12 +24,12 @@ ms.locfileid: "73824305"
 <a name="discover"></a>Поиск
 --------
 
-Портал Cloud Partner предоставляет доступ ко всем данным на вкладке Пользователи. Здесь можно найти личные данные. Как добавлять или удалять пользователей, см. в [документациях](./cloud-partner-portal-manage-users.md).
+Облачный партнерский портал предоставляет доступ ко всем вашим данным во вкладке пользователей. Вы можете идентифицировать свои личные данные там. Как добавлять или удалять пользователей, см. в [документациях](./cloud-partner-portal-manage-users.md).
 
 <a name="manage"></a>Управление
 ------
 
-Вы можете управлять личными данными, нажав клавишу DELETE в учетной записи пользователя на вкладке Пользователи. У нас есть роли **владельца** и **участника** , которые могут быть назначены каждому конкретному пользователю и могут быть назначены, скопированы, обновлены или удалены.
+Вы можете управлять своими личными данными, нажимая на удаление в учетную запись пользователя во вкладке Пользователей. У нас есть роли **владельца** и **участника,** которые могут быть назначены каждому конкретному пользователю, и оба могут быть назначены/скопированы/обновлены/удалены.
 
 <a name="consent"></a>Согласие на предоставление разрешений
 -------

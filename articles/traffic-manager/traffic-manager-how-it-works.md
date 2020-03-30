@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: rohink
-ms.openlocfilehash: 709e89b94ba10db954aa5cf3f70aeffb0d239edb
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 4863ffd383cfcd46bad462156e26293d145fd418
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76938624"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80294867"
 ---
 # <a name="how-traffic-manager-works"></a>Как работает диспетчер трафика
 
@@ -34,7 +34,7 @@ ms.locfileid: "76938624"
 
 ## <a name="traffic-manager-example"></a>Пример диспетчера трафика
 
-Корпорация Contoso разработала новый партнерский портал. URL-адрес этого портала — https://partners.contoso.com/login.aspx. Приложение размещается в трех регионах Azure. Чтобы повысить доступность и общую производительность, компания использует диспетчер трафика, который направляет запросы клиентов в ближайшую доступную конечную точку.
+Корпорация Contoso разработала новый партнерский портал. URL-адрес этого портала — `https://partners.contoso.com/login.aspx`. Приложение размещается в трех регионах Azure. Чтобы повысить доступность и общую производительность, компания использует диспетчер трафика, который направляет запросы клиентов в ближайшую доступную конечную точку.
 
 Чтобы добиться такой конфигурации, сделайте следующее:
 
@@ -49,7 +49,7 @@ ms.locfileid: "76938624"
 
 ### <a name="how-clients-connect-using-traffic-manager"></a>Как клиенты могут подключаться с помощью диспетчера трафика
 
-Когда пользователь в рамках описанной конфигурации запрашивает страницу https://partners.contoso.com/login.aspx, его клиент выполняет следующие действия, чтобы разрешить имя DNS и установить подключение:
+Когда пользователь в рамках описанной конфигурации запрашивает страницу `https://partners.contoso.com/login.aspx`, его клиент выполняет следующие действия, чтобы разрешить имя DNS и установить подключение:
 
 ![Установка подключения с помощью диспетчера трафика][2]
 
@@ -60,7 +60,7 @@ ms.locfileid: "76938624"
 
     - состояние каждой конечной точки (отключенные конечные точки не возвращаются);
     - работоспособность каждой конечной точки, определенная с помощью средства проверки работоспособности диспетчера трафика. Дополнительные сведения см. в статье [Мониторинг и отработка отказов конечной точки диспетчера трафика](traffic-manager-monitoring.md).
-    - выбранный метод маршрутизации трафика. Дополнительные сведения см. в статье [Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md).
+    - выбранный метод маршрутизации трафика. Для получения дополнительной [информации см.](traffic-manager-routing-methods.md)
 
 5. Возвращается запись DNS CNAME с именем выбранной конечной точки. В нашем примере это — contoso-us.cloudapp.net.
 6. Теперь рекурсивная служба DNS находит серверы доменных имен для домена cloudapp.net. Она обращается к этим серверам доменных имен и запрашивает запись DNS для contoso-us.cloudapp.net. Возвращается запись DNS A, которая содержит IP-адрес конечной точки службы, размещенной в США.
@@ -71,27 +71,27 @@ ms.locfileid: "76938624"
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
-* [Какой IP-адрес используется диспетчером трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-ip-address-does-traffic-manager-use)
+* [Какой IP-адрес использует диспетчер трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-ip-address-does-traffic-manager-use)
 
-* [Какие типы трафика могут маршрутизироваться с помощью диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-traffic-can-be-routed-using-traffic-manager)
+* [Какого типа трафик можно маршрутизировать с помощью диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-traffic-can-be-routed-using-traffic-manager)
 
-* [Поддерживает ли диспетчер трафика "прикрепленные" сеансы?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-sticky-sessions)
+* [Поддерживает ли диспетчер трафика «липкие» сеансы?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-sticky-sessions)
 
-* [Почему при использовании диспетчера трафика отображается ошибка HTTP?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-seeing-an-http-error-when-using-traffic-manager)
+* [Почему при использовании диспетчера трафика отображается HTTP-ошибка?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-seeing-an-http-error-when-using-traffic-manager)
 
-* [Каковы последствия производительности при использовании диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-is-the-performance-impact-of-using-traffic-manager)
+* [Как сказывается на производительности использование диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-is-the-performance-impact-of-using-traffic-manager)
 
-* [Какие протоколы приложений можно использовать с диспетчером трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-application-protocols-can-i-use-with-traffic-manager)
+* [Какие протоколы приложения пригодны для использования с диспетчером трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-application-protocols-can-i-use-with-traffic-manager)
 
-* [Можно ли использовать диспетчер трафика с именем домена "naked"?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-a-naked-domain-name)
+* [Могу ли я использовать traffic Manager с «голым» доменным именем?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-a-naked-domain-name)
 
 * [Учитывает ли диспетчер трафика адрес подсети клиента при обработке запросов DNS?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-consider-the-client-subnet-address-when-handling-dns-queries)
 
 * [Что такое срок жизни DNS и как он влияет на пользователей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-is-dns-ttl-and-how-does-it-impact-my-users)
 
-* [Насколько высокий или низкий можно задать TTL для ответов диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-high-or-low-can-i-set-the-ttl-for-traffic-manager-responses)
+* [Каковы минимальный и максимальный сроки жизни, которые можно задать для ответов диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-high-or-low-can-i-set-the-ttl-for-traffic-manager-responses)
 
-* [Как понять объем запросов, поступающих в мой профиль?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-understand-the-volume-of-queries-coming-to-my-profile)
+* [Что подразумевается под объемом запросов, поступающих в мой профиль?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-understand-the-volume-of-queries-coming-to-my-profile)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

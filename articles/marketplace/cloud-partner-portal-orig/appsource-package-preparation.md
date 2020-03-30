@@ -1,20 +1,18 @@
 ---
-title: Подготовка пакета AppSource | Azure Marketplace
+title: Подготовка пакета AppSource (англ.) Лазурный рынок
 description: Сведения о подготовке и сборке пакетов AppSource.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
-manager: Ricardo.Villalobos
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: 2c6b78e62afb43562910c872d31e2c9f564040da
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 76f8cbd6cb16b585a7dbda7b2ffa5eeeeb1b68d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73806095"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80280615"
 ---
 # <a name="appsource-package-preparation"></a>Подготовка пакета AppSource
 
@@ -32,7 +30,7 @@ ms.locfileid: "73806095"
 
 Пакет для средства Package Deployer является частью пакета AppSource.
 
-Чтобы создать пакет для средства Package Deployer, выполните инструкции, перейдя по следующей ссылке: [https://msdn.microsoft.com/library/dn688182.aspx](https://msdn.microsoft.com/library/dn688182.aspx). По завершении создания ваш пакет будет состоять из следующих ресурсов:
+Чтобы создать пакет для развертывателя пакетов, используйте следующие инструкции: [https://msdn.microsoft.com/library/dn688182.aspx](https://msdn.microsoft.com/library/dn688182.aspx). По завершении создания ваш пакет будет состоять из следующих ресурсов:
 
 1. Папка пакета, которая содержит все решения, данные конфигурации, неструктурированные файлы и содержимое для вашего пакета. _Примечание. В следующем примере папка пакета называется PkgFolder_.
 2. Библиотека DLL. Сборка содержит пользовательский код для вашего пакета. _Примечание. В следующем примере этот файл называется MicrosoftSample.dll._
@@ -81,7 +79,7 @@ ms.locfileid: "73806095"
 1. JPG (разрешение 32 x 32).
 2. HTML (файл форматирования HTML).
 3. **Content_Types.xml** (упомянутый выше).
-4. xml
+4. Xml
 
 Ниже приведен пример кода для файла input.xml. Определения см. в приведенной ниже таблице.
 
@@ -103,7 +101,7 @@ ms.locfileid: "73806095"
         </Locales>
     </PvsPackageData>
  
-**Описание.**
+**Где:**
 
 |Поле|Сведения|
 |---|---|
@@ -112,7 +110,7 @@ ms.locfileid: "73806095"
 |SolutionAnchorName |Имя ZIP-файла решения в Package Deployer, который используется для отображаемого имени и описания ресурсов решения.|
 | StartDate| Это день, когда пакет решения станет доступен. Формат — ММ/ДД/ГГГГ.|
 |EndDate|Это день, когда пакет решений станет недоступным. Формат — ММ/ДД/ГГГГ. |
-|SupportedCountries |Это разделенный запятыми список стран или регионов, которые должны видеть этот пакет. За списком всех текущих кодов стран обратитесь к веб-службам. В настоящее время в списке представлены следующие коды: AE,AL,AM,AO,AR,AT,AU,AZ,BA,BB,BD,BE,BG,BH,BM,BN,BO,BR,BY,CA,CH,CI,CL,CM,CO,CR,CV,CW,CY,CZ,DE,DK,DO,DZ,EC,EE,EG,ES,FI,FR,GB,GE,GH,GR,GT,HK,HN,HR,HU,ID,IE,IL,IN,IQ,IS,IT,JM,JO,JP,KE,KG,KN,KR,KW,KY,KZ,LB,LK,LT,LU,LV,LY,MA,MC,MD,ME,MK,MN,MO,MT,MU,MX,MY,NG,NI,NL,NO,NZ,OM,PA,PE,PH,PK,PL,PR,PS,PT,PY,QA,RO,RS,RU,RW,SA,SE,SG,SI,SK,SN,SV,TH,TM,TN,TR,TT,TW,UA,US,UY,UZ,VE,VI,VN,ZA,ZW. |
+|SupportedCountries |Это запятой разграничения список стран / регионов, которые должны видеть этот пакет. За списком всех текущих кодов стран обратитесь к веб-службам. В настоящее время в списке представлены следующие коды: AE,AL,AM,AO,AR,AT,AU,AZ,BA,BB,BD,BE,BG,BH,BM,BN,BO,BR,BY,CA,CH,CI,CL,CM,CO,CR,CV,CW,CY,CZ,DE,DK,DO,DZ,EC,EE,EG,ES,FI,FR,GB,GE,GH,GR,GT,HK,HN,HR,HU,ID,IE,IL,IN,IQ,IS,IT,JM,JO,JP,KE,KG,KN,KR,KW,KY,KZ,LB,LK,LT,LU,LV,LY,MA,MC,MD,ME,MK,MN,MO,MT,MU,MX,MY,NG,NI,NL,NO,NZ,OM,PA,PE,PH,PK,PL,PR,PS,PT,PY,QA,RO,RS,RU,RW,SA,SE,SG,SI,SK,SN,SV,TH,TM,TN,TR,TT,TW,UA,US,UY,UZ,VE,VI,VN,ZA,ZW. |
 |LearnMoreLink | URL-адрес страницы с дополнительными сведениями для этого пакета. |
 |Locales|Один экземпляр этого узла для каждого языка пользовательского интерфейса, который должен поддерживаться в предпочтительном пользовательском интерфейсе решения. Этот узел содержит дочерние элементы, которые описывают языковой стандарт, логотип и термины каждого языка.|
 |Locales: PackageLocale.Code|Код языка для этого узла. Например, английский язык (US) — 1033.|
@@ -128,7 +126,7 @@ ms.locfileid: "73806095"
 
 1. ZIP-файл (созданный ранее).
 2. Файл **Content_Types.xml**.
-3. xml
+3. Xml
 4. png
 5. html
 

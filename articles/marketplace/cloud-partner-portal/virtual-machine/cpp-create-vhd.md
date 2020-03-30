@@ -1,26 +1,25 @@
 ---
-title: Создание виртуального жесткого диска, совместимого с Azure, для Azure Marketplace
+title: Создание VHD-совместимого с Azure для Azure Marketplace
 description: В этой статье объясняется, как создать виртуальный жесткий диск для предложения виртуальной машине в Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/27/2018
-ms.author: pabutler
-ms.openlocfilehash: 37fecb8100ec40ace02960a4f3390420a8bfc735
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 2014a775edd4e24f5d302d863d0b69d83009b8a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73816807"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80277996"
 ---
 # <a name="create-an-azure-compatible-vhd"></a>Создание виртуального жесткого диска, совместимого с Azure
 
 В этой статье описываются действия по созданию виртуального жесткого диска для предложения виртуальной машины в Azure Marketplace.  Здесь также содержатся рекомендации касательно различных аспектов, таких как использование протокола удаленного рабочего стола, выбор размера для виртуальной машины, установка последних обновлений Windows и обобщение образа виртуального жесткого диска.  Следующие разделы главным образом сосредоточены на виртуальных жестких дисках на платформе Windows. Дополнительные сведения о создании виртуальных жестких дисков на платформе Linux см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](../../../virtual-machines/linux/endorsed-distros.md). 
 
 > [!WARNING]
-> Настоятельно рекомендуется следовать инструкциям в этом разделе, чтобы с использованием Azure создать виртуальную машину, содержащую предварительно настроенную рекомендуемую операционную систему.  Если это несовместимо с решением, можно создать и настроить локальную виртуальную машину с помощью утвержденной операционной системы.  Затем ее можно настроить и подготовить к отправке, как описано в статье [Подготовка диска VHD или VHDX для Windows к отправке в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
+> Настоятельно рекомендуется следовать инструкциям в этом разделе, чтобы с использованием Azure создать виртуальную машину, содержащую предварительно настроенную рекомендуемую операционную систему.  Если это не совместимо с вашим решением, то можно создать и настроить на месте VM с помощью утвержденной операционной системы.  Затем ее можно настроить и подготовить к отправке, как описано в статье [Подготовка диска VHD или VHDX для Windows к отправке в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
 
 
 ## <a name="select-an-approved-base"></a>Выбор утвержденной базы
@@ -28,8 +27,8 @@ ms.locfileid: "73816807"
 Для начала создайте виртуальную машину из одного из следующих образов, расположенных на портале Microsoft Azure:
 
 -   Windows Server ([2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016), [2012 R2 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), [2012 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), [2008 R2 SP1](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview));
--   [SQL Server 2014](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Enterprise, Standard, Web);
--   [SQL Server 2012 SP2](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Enterprise, Standard, Web).
+-   [Сервер S'L 2014](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Предприятие, Стандарт, Веб)
+-   [Сервер S'L 2012 SP2](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Предприятие, Стандарт, Веб)
 
 > [!TIP]
 > Если вы используете текущую версию портала Azure или PowerShell, используйте образы Windows Server, опубликованные 8 сентября 2014 г. или позднее, одобренные для Azure.
@@ -50,7 +49,7 @@ ms.locfileid: "73816807"
 
 5. После выбора правильного виртуального образа введите следующие значения:
    * В колонке **Основные сведения** укажите **имя** виртуальной машины длиной от 1 до 15 буквенно-цифровых символов. (В этом примере используется `DemoVm009`.)
-   * Введите в соответствующих полях **имя пользователя** и надежный **пароль**, которые будут использоваться для создания локальной учетной записи на виртуальной машине.  (Здесь `adminUser` используется.)  Пароль должен содержать 8-123 символов и соответствовать трем из четырех следующих требований сложности: одна строчная буква, одна прописная буква, одна цифра и один специальный символ. Дополнительные сведения см. в разделе [Какие требования к имени пользователя при создании виртуальной машины?](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-faq#what-are-the-username-requirements-when-creating-a-vm)
+   * Введите в соответствующих полях **имя пользователя** и надежный **пароль**, которые будут использоваться для создания локальной учетной записи на виртуальной машине.  (Здесь `adminUser` используется.)  Пароль должен быть 8-123 символов длиной и соответствовать трем из четырех следующих требований сложности: один нижний символ корпуса, один верхний символ корпуса, один номер и один специальный символ. Дополнительные сведения см. в разделе [Какие требования к имени пользователя при создании виртуальной машины?](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-faq#what-are-the-username-requirements-when-creating-a-vm)
    * Выберите созданную группу ресурсов (здесь используется `DemoResourceGroup`).
    * Выберите **расположение** центра обработки данных Azure (здесь используется `West US`).
    * Нажмите кнопку **ОК**, чтобы сохранить эти значения. 
@@ -62,7 +61,7 @@ ms.locfileid: "73816807"
 
    ![Размер колонки новой виртуальной машины](./media/publishvm_015.png)
 
-7. В колонке **Параметры** задайте для параметра **Use Managed Disk** (Использование управляемого диска) значение **Нет**.  Так вы сможете вручную управлять новым виртуальным жестким диском. (В колонке **Параметры** также можно изменить другие параметры хранилища и сети, например выбрать **Premium (SSD)** в **поле Тип диска**).  Нажмите кнопку **ОК** , чтобы продолжить.
+7. В колонке **Параметры** задайте для параметра **Use Managed Disk** (Использование управляемого диска) значение **Нет**.  Так вы сможете вручную управлять новым виртуальным жестким диском. **(Лезвие настроек** также позволяет изменять другие параметры хранения и сети, например, выбрав **Premium (SSD)** в **типе диска.)**  Нажмите **OK,** чтобы продолжить.
 
     ![Колонка "Параметры" новой виртуальной машины](./media/publishvm_016.png)
 

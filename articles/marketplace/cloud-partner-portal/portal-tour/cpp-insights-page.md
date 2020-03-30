@@ -1,19 +1,18 @@
 ---
-title: Страница "аналитика" для Azure Marketplace
-description: Общие сведения о странице Insights в Портал Cloud Partner для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+title: Страница Исследования для Azure Marketplace
+description: Обзор страницы Insights на облачном портале партнеров для Azure Marketplace.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/14/2018
-ms.author: pabutler
-ms.openlocfilehash: b1b8d716beec17b7da82968ede8d24ced348e04a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 8002d67ebd6dbeb70282bbbae84b115a778cffaf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821522"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80288875"
 ---
 # <a name="insights-page"></a>Страница "Аналитические сведения"
 
@@ -25,10 +24,10 @@ ms.locfileid: "73821522"
 | **Сводка**       | графы, тенденции и значения статистических данных, определяющих действия с предложениями издателя в Marketplace |
 | **Выплата**        | выплаты и связанные с ними транзакции в форме графиков и в форматах, доступных для скачивания |
 | **Orders & usage** (Заказы и использование) | информация о заказах и их выполнении, которая представлена в форме графиков и в форматах, доступных для скачивания |
-| **Клиент**      | информация о клиенте, включая его профиль покупателя |
+| **Клиентов**      | информация о клиенте, включая его профиль покупателя |
 | **Развертывание**    | информация об успешных и неудачных развертываниях, которая представлена как в форматах графиков, так и в форматах уровня события |
-| **Загрузки**     | список запросов на скачивание за последние 30 дней |
-| **Analytics**     | сводка веб-аналитики и анализ эффективности кампании |
+| **Файлы для скачивания**     | список запросов на скачивание за последние 30 дней |
+| **Аналитики**     | сводка веб-аналитики и анализ эффективности кампании |
 |  |  |
 
 

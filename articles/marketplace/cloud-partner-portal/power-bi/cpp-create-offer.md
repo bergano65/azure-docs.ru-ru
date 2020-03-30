@@ -1,19 +1,18 @@
 ---
-title: Создание предложения для Power BI приложения | Azure Marketplace
+title: Создайте предложение Power BI App (ru) Лазурный рынок
 description: Создание предложения приложения Power BI для Microsoft AppSource Marketplace.
-services: Azure, AppSource, Marketplace, Cloud Partner Portal, Power BI
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.author: pabutler
-ms.openlocfilehash: e0ee26672697517556a2f639b533a1217712d03d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: ee3501e7feec77c842f3784f6c2820af05637e6b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822687"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286393"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
 
@@ -21,10 +20,10 @@ ms.locfileid: "73822687"
 
 Группы основных ресурсов описаны в таблице ниже.
 
-|   Группа ресурсов      | Description (Описание)                                                                         |
+|   Группа ресурсов      | Описание                                                                         |
 | ----------------   | ----------------                                                                    |
 | Параметры предложения     | Первичные идентифицирующие данные и название предложения.                                      |
-| Технические сведения     | URL-адрес установщика, который используется для установки приложения в рабочей области Power BI клиента. Дополнительные сведения о создании этого URL-адреса см. в [документации по приложениям Power BI](https://go.microsoft.com/fwlink/?linkid=2028636). |
+| Технические сведения     | URL-адрес установки, который используется для установки приложения в рабочей области Power BI клиента. Дополнительные сведения о создании этого URL-адреса см. в [документации по приложениям Power BI](https://go.microsoft.com/fwlink/?linkid=2028636). |
 | Подробные сведения об онлайн-магазинах | Содержит маркетинговые, юридические ресурсы и ресурсы управления потенциальными клиентами. Маркетинговые ресурсы включают описание и логотипы предложения, а юридические — политику конфиденциальности, условия использования и другие юридические документы. Политика управления потенциальными клиентами позволяет указать способ обработки потенциальных клиентов пользовательского портала AppSource. |
 | Контакты           | Содержит сведения о поддержке контактных данных и политики.                                     |
 
@@ -42,7 +41,7 @@ ms.locfileid: "73822687"
 
 В следующих статьях описаны вкладки на странице **Новое предложение** для типа предложения приложения Power BI. Каждая статья описывает группы ресурсов и вспомогательные службы для нового предложения приложения Power BI.
 
--  [Вкладка с параметрами предложения](./cpp-offer-settings-tab.md)
--  [Вкладка с техническими сведениями](./cpp-technical-info-tab.md)
--  [Вкладка со сведениями об онлайн-магазине](./cpp-storefront-details-tab.md)
+-  [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
+-  [Вкладка "Технические сведения"](./cpp-technical-info-tab.md)
+-  [Вкладка "Сведения об онлайн-магазине"](./cpp-storefront-details-tab.md)
 -  [Вкладка "Контакты"](./cpp-contacts-tab.md)

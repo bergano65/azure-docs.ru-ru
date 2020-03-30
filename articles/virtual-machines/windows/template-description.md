@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: e1b513344b6ea16c25d829939e64cd5ca1063c87
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: c9bf1cf0564655c932e066e5b74225382375e9c2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243241"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80235421"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -155,7 +155,7 @@ ms.locfileid: "79243241"
 
 При развертывании ресурсов с помощью шаблона необходимо указать версию API, которую следует использовать. В примере ниже показан ресурс виртуальной машины, использующий такой элемент apiVersion:
 
-```
+```json
 "apiVersion": "2016-04-30-preview",
 ```
 
@@ -172,7 +172,7 @@ ms.locfileid: "79243241"
 
 [Параметры](../../resource-group-authoring-templates.md) позволяют легко задавать значения для шаблона при его запуске. В примере используются следующие параметры.
 
-```        
+```json
 "parameters": {
   "adminUsername": { "type": "string" },
   "adminPassword": { "type": "securestring" },
@@ -184,7 +184,7 @@ ms.locfileid: "79243241"
 
 [Переменные](../../resource-group-authoring-templates.md) позволяют легко настраивать в шаблоне значения, которые в нем многократно используются или могут изменяться со временем. В примере используются следующие переменные.
 
-```
+```json
 "variables": { 
   "storageName": "mystore1",
   "accountid": "[concat('/subscriptions/', subscription().subscriptionId, 
@@ -221,7 +221,7 @@ ms.locfileid: "79243241"
 
 Если для приложения требуется несколько виртуальных машин, в шаблоне можно использовать элемент копирования. Этот необязательный элемент циклически создает число виртуальных машин, заданное с помощью параметра.
 
-```
+```json
 "copy": {
   "name": "virtualMachineLoop", 
   "count": "[parameters('numberOfInstances')]"
@@ -230,7 +230,7 @@ ms.locfileid: "79243241"
 
 Обратите внимание, что в примере при указании некоторых значений для ресурса используется индекс цикла. Например, если введенное число экземпляров равно трем, то именами дисков ОС будут myOSDisk1, myOSDisk2 и myOSDisk3.
 
-```
+```json
 "osDisk": { 
   "name": "[concat('myOSDisk', copyindex())]",
   "caching": "ReadWrite", 
@@ -245,7 +245,7 @@ ms.locfileid: "79243241"
 
 При создании цикла для одного ресурса в шаблоне может потребоваться использовать цикл при создании других ресурсов или получении к ним доступа. Например, несколько виртуальных машин не могут использовать сетевой интерфейс. Поэтому если шаблон циклически создает три виртуальные машины, он также циклически создает три сетевых интерфейса. При назначении сетевого интерфейса виртуальной машине для его идентификации используется индекс цикла.
 
-```
+```json
 "networkInterfaces": [ { 
   "id": "[resourceId('Microsoft.Network/networkInterfaces',
     concat('myNIC', copyindex()))]" 
@@ -256,7 +256,7 @@ ms.locfileid: "79243241"
 
 Корректная работа большинства ресурсов зависит от других ресурсов. Виртуальные машины должны быть связаны с виртуальной сетью, для чего необходим сетевой интерфейс. Элемент [dependsOn](../../resource-group-define-dependencies.md) используется, чтобы перед созданием виртуальных машин убедиться в том, что сетевой интерфейс готов к использованию.
 
-```
+```json
 "dependsOn": [
   "[concat('Microsoft.Network/networkInterfaces/', 'myNIC', copyindex())]" 
 ],
@@ -266,7 +266,7 @@ Resource Manager параллельно развертывает все ресу
 
 Как узнать, требуется ли зависимость? Взгляните на значения, заданные в шаблоне. Если элемент в ресурсе виртуальной машины указывает на другой ресурс, который развернут в том же шаблоне, зависимость необходима. Например, в примере виртуальный машины определен профиль сети.
 
-```
+```json
 "networkProfile": { 
   "networkInterfaces": [ { 
     "id": "[resourceId('Microsoft.Network/networkInterfaces',
@@ -281,10 +281,10 @@ Resource Manager параллельно развертывает все ресу
 
 При определении ресурса виртуальной машины используются несколько элементов профиля. Некоторые являются обязательными, а другие — необязательными. Например, элементы hardwareProfile, osProfile, storageProfile и networkProfile являются обязательными, а diagnosticsProfile — необязательным. С помощью этих профилей задаются следующие параметры:
    
-- [size](sizes.md)
+- [Размер](sizes.md)
 - [имя](/azure/architecture/best-practices/resource-naming) и учетные данные;
 - диск и [параметры операционной системы;](cli-ps-findimage.md)
-- [сетевой интерфейс;](../../virtual-network/virtual-network-deploy-multinic-classic-ps.md) 
+- [сетевой интерфейс](../../virtual-network/virtual-network-deploy-multinic-classic-ps.md) 
 - диагностика загрузки.
 
 ## <a name="disks-and-images"></a>Диски и образы
@@ -295,7 +295,7 @@ Resource Manager параллельно развертывает все ресу
 
 При создании виртуальной машины необходимо решить, какую операционную систему использовать. Элемент imageReference используется для определения операционной системы новой виртуальной машины. В примере ниже показано определение для операционной системы Windows Server.
 
-```
+```json
 "imageReference": { 
   "publisher": "MicrosoftWindowsServer", 
   "offer": "WindowsServer", 
@@ -306,7 +306,7 @@ Resource Manager параллельно развертывает все ресу
 
 Если вы хотите создать операционную систему Linux, можно использовать следующее определение.
 
-```
+```json
 "imageReference": {
   "publisher": "Canonical",
   "offer": "UbuntuServer",
@@ -317,7 +317,7 @@ Resource Manager параллельно развертывает все ресу
 
 Параметры конфигурации диска ОС назначаются с помощью элемента osDisk. В примере определяется новый управляемый диск с режимом кэширования **ReadWrite** и указывается, что диск создается из [образа платформы](cli-ps-findimage.md).
 
-```
+```json
 "osDisk": { 
   "name": "[concat('myOSDisk', copyindex())]",
   "caching": "ReadWrite", 
@@ -329,7 +329,7 @@ Resource Manager параллельно развертывает все ресу
 
 Если вы хотите создать виртуальные машины из существующих дисков, удалите элементы imageReference и osProfile и определите параметры диска.
 
-```
+```json
 "osDisk": { 
   "osType": "Windows",
   "managedDisk": { 
@@ -344,7 +344,7 @@ Resource Manager параллельно развертывает все ресу
 
 Если вы хотите создать виртуальную машину из управляемого образа, измените элемент imageReference и определите приведенные ниже параметры диска.
 
-```
+```json
 "storageProfile": { 
   "imageReference": {
     "id": "[resourceId('Microsoft.Compute/images', 'myImage')]"
@@ -362,7 +362,7 @@ Resource Manager параллельно развертывает все ресу
 
 При необходимости к виртуальным машинам можно добавить диски данных. [Число дисков](sizes.md) зависит от размера диска операционной системы, который используется. Если размер виртуальных машин установлен как Standard_DS1_v2, максимальное количество дисков данных, которые к ним можно добавить, равно двум. В примере ниже к каждой виртуальной машине добавляется один управляемый диск данных.
 
-```
+```json
 "dataDisks": [
   {
     "name": "[concat('myDataDisk', copyindex())]",
@@ -374,11 +374,11 @@ Resource Manager параллельно развертывает все ресу
 ],
 ```
 
-## <a name="extensions"></a>Модули
+## <a name="extensions"></a>Расширения
 
 Хотя функции [расширения](extensions-features.md) являются отдельным ресурсом, они тесно связаны с виртуальными машинами. Расширения можно добавить как дочерний ресурс виртуальной машины или как отдельный ресурс. В примере показано добавление [расширения системы диагностики](extensions-diagnostics-template.md) к виртуальным машинам.
 
-```
+```json
 { 
   "name": "Microsoft.Insights.VMDiagnosticsSettings", 
   "type": "extensions", 
@@ -413,7 +413,7 @@ Resource Manager параллельно развертывает все ресу
 
 Существует множество расширений, которые можно установить на виртуальной машине, но наиболее полезным является [расширение пользовательских скриптов](extensions-customscript.md). В примере скрипт PowerShell с именем start.ps1 выполняется на каждой виртуальной машине при первом запуске.
 
-```
+```json
 {
   "name": "MyCustomScriptExtension",
   "type": "extensions",

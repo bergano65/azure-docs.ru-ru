@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: 432b8855ffb9542a1e052c8c97b52bcddeb5c824
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 36a77d49b507d3d0158d1b4b492d0141350de50f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79272712"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80240643"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
 
@@ -175,7 +175,7 @@ _hdiManagementClient.Clusters.DeleteAsync("<Resource Group Name>", "<Cluster Nam
     Ниже приведен пример использования команды CLI для повторной балансировки топологии Storm:
     
 
-    ```cli
+    ```console
     ## Reconfigure the topology "mytopology" to use 5 worker processes,
     ## the spout "blue-spout" to use 3 executors, and
     ## the bolt "yellow-bolt" to use 10 executors
@@ -226,7 +226,7 @@ _hdiManagementClient.Clusters.ConfigureHttpSettings("<Resource Group Name>, <Clu
 > [!NOTE]  
 > Предоставляя или отменяя доступ, вы сбрасываете имя пользователя и пароль кластера.
 
-Это также можно сделать через портал. См. раздел [Управление кластерами Apache Hadoop в HDInsight с помощью портал Azure](hdinsight-administer-use-portal-linux.md).
+Это также можно сделать через портал. [См. Кластеры Apache Hadoop в HDInsight с помощью портала Azure.](hdinsight-administer-use-portal-linux.md)
 
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
 
@@ -264,16 +264,16 @@ foreach (var key in results.Configuration.Keys)
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище BLOB-объектов Azure
 
-См. раздел [Отправка данных в HDInsight][hdinsight-upload-data].
+Ознакомьтесь со статьей [Отправка данных в HDInsight][hdinsight-upload-data].
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 * [Справочная документация к пакету SDK для HDInsight .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight)
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Администрирование HDInsight с помощью интерфейса командной строки][hdinsight-admin-cli]
 * [Создание кластеров HDInsight][hdinsight-provision]
-* [Отправка данных в HDInsight][hdinsight-upload-data]
-* [Приступая к работе с Azure HDInsight][hdinsight-get-started]
+* [Загрузка данных в HDInsight][hdinsight-upload-data]
+* [Начало работы с Azure HDInsight][hdinsight-get-started]
 
 [azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/

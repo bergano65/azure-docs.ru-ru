@@ -1,32 +1,31 @@
 ---
-title: Поддержка Портал Cloud Partner | Azure Marketplace
+title: Поддержка облачного портала партнеров (ru) Лазурный рынок
 description: Получите поддержку на портале Cloud Partner.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.author: pabutler
-ms.openlocfilehash: 30fc0ea4a8baba4f0677c9cceb12a7887d205f21
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: d27482fbec91700f24e5d0f25d4796ab24f1a9e5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827673"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80276178"
 ---
 # <a name="get-support-for-cloud-partner-portal"></a>Получение поддержки на портале Cloud Partner
 
 Корпорация Майкрософт предоставляет поддержку самых разнообразных продуктов и услуг.
 Нам важно гарантировать, что ваш запрос всегда будет передан соответствующей группе поддержки, и вы своевременно получите ответ на него. Чтобы отправить ваш запрос правильной группе поддержки, учитывайте следующие сценарии.
 
--   Если вы являетесь издателем и у вас есть вопрос у клиента, попросите его отправить запрос на поддержку с помощью ссылок на службу поддержки на [портале Azure](https://portal.azure.com/) .
+-   Если вы являетесь издателем и у вас есть вопрос от клиента, попросите клиента запросить поддержку, используя ссылки на поддержку на [портале Azure](https://portal.azure.com/)
 
 -   Если вы издатель и имеете вопросы, относящиеся к вашему приложению или службе, для открытия запроса в службу поддержки соблюдайте действия приведенные ниже.
 
 ## <a name="to-open-a-support-ticket"></a>Открытие запроса в службу поддержки
 
-1. Перейдите по адресу [портал Cloud Partner](https://cloudpartner.azure.com/) и выполните вход с помощью рабочей или учебной учетной записи.
+1. Перейдите на [облачный партнерский портал](https://cloudpartner.azure.com/) и войдите в систему с помощью рабочей или школьной учетной записи.
 
 2. В верхнем меню в правой части страницы, выберите значок **Справка** и выберите **Поддержка**.
 

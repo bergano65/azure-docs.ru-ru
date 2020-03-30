@@ -1,82 +1,78 @@
 ---
-title: Чтение и запись пространственных данных | Карты Microsoft Azure
-description: Узнайте, как считывать и записывать данные с помощью модуля пространственных операций ввода-вывода, предоставляемого Azure Maps Web SDK.
-author: farah-alyasari
-ms.author: v-faalya
+title: Читать и писать пространственные данные Карты Microsoft Azure
+description: Узнайте, как читать и писать данные с помощью модуля Spatial IO, предоставленного Azure Maps Web SDK.
+author: philmea
+ms.author: philmea
 ms.date: 03/01/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 458b307cf1158c467100e032e3f789462e8fdcca
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 4c47335689401ebce98224992c74c3396821a1dd
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370912"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80334156"
 ---
 # <a name="read-and-write-spatial-data"></a>Чтение и запись пространственных данных
 
-В таблице ниже перечислены форматы пространственных файлов, которые поддерживаются для операций чтения и записи с помощью модуля пространственного ввода-вывода.
+В таблице ниже перечислены форматы пространственных файлов, которые поддерживаются для чтения и записи с помощью модуля Spatial IO.
 
 | Формат данных       | Чтение | запись |
 |-------------------|------|-------|
 | GeoJSON           | ✓  |  ✓  |
-| жеорсс            | ✓  |  ✓  |
-| GML               | ✓  |  ✓  |
-| GPX)               | ✓  |  ✓  |
-| кмл               | ✓  |  ✓  |
-| кмз               | ✓  |  ✓  |
+| ГеоРСС            | ✓  |  ✓  |
+| Gml               | ✓  |  ✓  |
+| Gpx               | ✓  |  ✓  |
+| Kml               | ✓  |  ✓  |
+| Kmz               | ✓  |  ✓  |
 | Пространственный CSV       | ✓  |  ✓  |
 | Известный текст   | ✓  |  ✓  |
 
-В следующих разделах описаны различные средства чтения и записи пространственных данных с помощью модуля пространственного ввода-вывода.
+В следующих разделах изложены все различные инструменты для чтения и записи пространственных данных с помощью модуля Spatial IO.
 
 ## <a name="read-spatial-data"></a>Чтение пространственных данных
 
-Функция `atlas.io.read` — это Главная функция, используемая для чтения стандартных форматов пространственных данных, таких как КМЛ, GPX), Жеорсс, геоjson и CSV-файлы с пространственными данными. Эта функция также может считывать сжатые версии этих форматов в виде ZIP-файла или файла КМЗ. Формат файла КМЗ — это сжатая версия КМЛ, которая также может включать ресурсы, например изображения. Кроме того, функция Read может принимать URL-адрес, указывающий на файл в любом из этих форматов. URL-адреса должны размещаться на конечной точке с поддержкой CORs, или в параметрах чтения должна быть указана прокси-служба. Прокси-служба используется для загрузки ресурсов в доменах, которые не включены в CORs. Функция Read возвращает обещание для добавления значков изображения на карту и асинхронно обрабатывает данные, чтобы снизить воздействие на поток пользовательского интерфейса.
+Функция `atlas.io.read` является основной функцией, используемой для чтения общих форматов пространственных данных, таких как KML, GPX, GeoRSS, GeoJSON и CSV файлы с пространственными данными. Эта функция также может читать сжатые версии этих форматов, как почтовый файл или файл KM. Формат файла КМЗ представляет собой сжатую версию KML, которая также может включать в себя такие активы, как изображения. Кроме того, функция чтения может принимать URL-адрес, который указывает на файл в любом из этих форматов. URL-адреса должны размещаться на конечную точку с включенной CORS или прокси-сервис должен быть предоставлен в опциях чтения. Прокси-сервис используется для загрузки ресурсов на домены, которые не включены CORS. Функция чтения возвращает обещание добавить значки изображений на карту и обрабатывает данные асинхронно, чтобы свести к минимуму воздействие на поток uI.
 
-При чтении сжатого файла в формате ZIP или КМЗ он будет распакован и проверен на наличие первого допустимого файла. Например, doc. КМЛ или файл с другим допустимым расширением, например:. КМЛ,. XML, геоjson,. JSON,. csv,. tsv или. txt. Затем образы, указанные в файлах КМЛ и Жеорсс, предварительно загружаются, чтобы обеспечить их доступность. Недоступные данные изображения могут загружать альтернативное резервное изображение или будут удалены из стилей. Образы, извлеченные из файлов КМЗ, будут преобразованы в универсальные коды ресурса (URI) данных.
+При чтении сжатого файла, как молния или КМЗ, он будет расстегнул и отсканирован для первого действительного файла. Например, doc.kml или файл с другим допустимым расширением, например: .kml, .xml, geojson, .json, .csv, .tsv или .txt. Затем изображения, на которые ссылаются в файлах KML и GeoRSS, предварительно загружаются, чтобы обеспечить их доступность. Недоступные данные изображения могут загрузить альтернативное резервное изображение или будут удалены из стилей. Изображения, извлеченные из файлов КМЗ, будут преобразованы в URIs данных данных.
 
-Результатом функции Read является объект `SpatialDataSet`. Этот объект расширяет Феатуреколлектион класс геоjson. Его можно легко передать в `DataSource` "как есть" для отрисовки его функций на карте. `SpatialDataSet` не только содержит сведения о компонентах, но также может включать наложение заземления КМЛ, метрики обработки и другие сведения, как описано в следующей таблице.
+Результатом функции чтения `SpatialDataSet` является объект. Этот объект расширяет класс GeoJSON FeatureCollection. Он может быть легко `DataSource` передан в качестве есть, чтобы сделать его особенности на карте. Информация `SpatialDataSet` не только содержит сведения о функциях, но и может включать наземные накладки KML, метрики обработки и другие детали, изложенные в следующей таблице.
 
-| Имя свойства | Тип | Description | 
+| Имя свойства | Тип | Описание | 
 |---------------|------|-------------|
-| `bbox` | `BoundingBox` | Ограничивающий прямоугольник всех данных в наборе данных. |
-| `features` | `Feature[]` | Функции геоjson в наборе данных. |
-| `groundOverlays` | `(atlas.layer.ImageLayer | atlas.layers.OgcMapLayer)[]` | Массив КМЛ Граундоверлайс. |
-| `icons` | Строка&lt;записи, строка&gt; | Набор URL-адресов значков. Key = имя значка, значение = URL-адрес. |
-| properties | any | Сведения о свойствах, предоставляемые на уровне документа для пространственного набора данных. |
-| `stats` | `SpatialDataSetStats` | Статистика по содержимому и времени обработки пространственных наборов данных. |
-| `type` | `'FeatureCollection'` | Только чтение значения геодоступного типа JSON. |
+| `bbox` | `BoundingBox` | Привязка всех данных в наборе данных. |
+| `features` | `Feature[]` | Функции GeoJSON в наборе данных. |
+| `groundOverlays` | `(atlas.layer.ImageLayer | atlas.layers.OgcMapLayer)[]` | Массив KML GroundOverlays. |
+| `icons` | Запись&lt;строки, строка&gt; | Набор URL-адресов значков. Имя значка ключа, значение и URL. |
+| properties | any | Информация о собственности, предоставляемая на уровне документов в наборе пространственных данных. |
+| `stats` | `SpatialDataSetStats` | Статистика о содержании и времени обработки набора пространственных данных. |
+| `type` | `'FeatureCollection'` | Значение типа GeoJSON только для чтения. |
 
 ## <a name="examples-of-reading-spatial-data"></a>Примеры чтения пространственных данных
 
-В следующем коде показано, как считать простой набор пространственных данных и визуализировать его на карте с помощью класса `SimpleDataLayer`. В коде используется файл GPX), на который указывает URL-адрес.
+Следующий код показывает, как читать набор пространственных данных, и `SimpleDataLayer` отобразить его на карте с помощью класса. В коде используется файл GPX, на который указывает URL.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Простая загрузка пространственных данных' src='//codepen.io/azuremaps/embed/yLNXrZx/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Дополнительные сведения о <a href='https://codepen.io/azuremaps/pen/yLNXrZx/'>загрузке пространственных данных</a> с помощью пера см. Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Загрузка пространственных данных проста' src='//codepen.io/azuremaps/embed/yLNXrZx/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/yLNXrZx/'>Load Пространственные данные Простые</a> по Azure Maps ( )<a href='https://codepen.io/azuremaps'>@azuremaps</a>на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-В следующей демонстрации кода показано, как считывать и загружать КМЛ или КМЗ на карту. КМЛ может содержать наложения заземления, которые будут иметь форму `ImageLyaer` или `OgcMapLayer`. Эти наложения должны быть добавлены на карту отдельно от функций. Кроме того, если в наборе данных есть настраиваемые значки, эти значки должны быть загружены в ресурсы карты до загрузки компонентов.
+На следующем демо-версии кода показано, как читать и загружать KML, или KM, на карту. KML может содержать наземные накладки, которые `ImageLyaer` `OgcMapLayer`будут в виде или . Эти наложения должны быть добавлены на карте отдельно от объектов. Кроме того, если набор данных имеет пользовательские значки, эти значки должны быть загружены на ресурсы карт, прежде чем объекты будут загружены.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Загрузить КМЛ на карту' src='//codepen.io/azuremaps/embed/XWbgwxX/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/XWbgwxX/'>КМЛ нагрузки на карту</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Нагрузка KML Onto Карта' src='//codepen.io/azuremaps/embed/XWbgwxX/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/XWbgwxX/'>Load KML Onto Карта</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-При необходимости вы можете предоставить прокси-службу для доступа к междоменным ресурсам, которые могут не включать CORs. Этот фрагмент кода показывает, что можно предоставить прокси-службу:
+Вы можете по желанию предоставить прокси-сервис для доступа к кроссдоменным ресурсам, которые могут не иметь включенного CORS. Функция чтения будет пытаться получить доступ к файлам на другом домене с помощью CORS в первую очередь. После первого раза он не может получить доступ к любому ресурсу на другом домене с помощью CORS он будет запрашивать дополнительные файлы только в том случае, если прокси-сервис был предоставлен. Функция чтения придает URL-адрес файла концу предоставленного URL-адреса прокси. На этом фрагменте кода показано, как передать прокси-сервис в прочитанном функции:
 
 ```javascript
-
-//Set the location of your proxyServiceUrl file 
-var proxyServiceUrl = window.location.origin + '/CorsEnabledProxyService.ashx?url=';
-
-//Read a KML file from a URL or pass in a raw KML string.
-atlas.io.read('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1717245/2007SanDiegoCountyFires.kml', {
+//Read a file from a URL or pass in a raw data as a string.
+atlas.io.read('https://nonCorsDomain.example.com/mySuperCoolData.xml', {
     //Provide a proxy service
-    proxyService: proxyServiceUrl
+    proxyService: window.location.origin + '/YourCorsEnabledProxyService.ashx?url='
 }).then(async r => {
     if (r) {
         // Some code goes here . . .
@@ -85,119 +81,110 @@ atlas.io.read('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1717245/2007SanDiego
 
 ```
 
-В последней демонстрации ниже показано, как прочитать файл с разделителями и отобразить его на карте. В этом случае в коде используется CSV-файл со столбцами пространственных данных.
+Демо ниже показывает, как читать делимитированные файл и отобразить его на карте. В этом случае в коде используется файл CSV с пространственными столбцов данных.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Добавление файла с разделителями' src='//codepen.io/azuremaps/embed/ExjXBEb/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Ознакомьтесь с пером <a href='https://codepen.io/azuremaps/pen/ExjXBEb/'>Добавление файла с разделителями</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Добавление файла с лимитированным' src='//codepen.io/azuremaps/embed/ExjXBEb/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/ExjXBEb/'>Добавить делимитированный файл</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="write-spatial-data"></a>Запись пространственных данных
 
-В модуле пространственного ввода-вывода есть две основные функции записи. Функция `atlas.io.write` создает строку, а функция `atlas.io.writeCompressed` создает сжатый ZIP-файл. Сжатый ZIP-файл будет содержать текстовый файл с пространственными данными. Обе эти функции возвращают обещание для добавления данных в файл. И они могут записывать следующие данные: `SpatialDataSet`, `DataSource`, `ImageLayer`, `OgcMapLayer`, коллекция признаков, компонент, геометрия или массив любого сочетания этих типов данных. При записи с помощью любой из этих функций можно указать требуемый формат файла. Если формат файла не указан, данные будут записаны как КМЛ.
+В пространственном модуле IO есть две основные функции записи. Функция `atlas.io.write` генерирует строку, в `atlas.io.writeCompressed` то время как функция генерирует сжатый почтовый файл. Сжатый почтовый файл будет содержать текстовый файл с пространственными данными в нем. Обе эти функции возвращают обещание добавить данные в файл. И, они оба могут написать `SpatialDataSet`любой из следующих данных: , `DataSource`, `ImageLayer`, `OgcMapLayer`коллекция функций, функция, геометрия, или массив любой комбинации этих типов данных. При написании с помощью обеих функций можно указать нужный формат файла. Если формат файла не указан, то данные будут записаны как KML.
 
-В приведенном ниже средстве показаны большинство параметров записи, которые можно использовать с функцией `atlas.io.write`.
-
-<br/>
-
-<iframe height='700' scrolling='no' title='Параметры записи пространственных данных' src='//codepen.io/azuremaps/embed/YzXxXPG/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/YzXxXPG/'>Параметры записи пространственных данных</a> пера с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-## <a name="example-of-writing-spatial-data"></a>Пример записи пространственных данных
-
-Следующий пример позволяет перетаскивать и загружать пространственные файлы на карте. Данные геоjson можно экспортировать из схемы и записывать в один из поддерживаемых форматов пространственных данных в виде строки или в виде сжатого файла.
+Инструмент ниже демонстрирует большинство вариантов записи, которые `atlas.io.write` могут быть использованы с функцией.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Перетаскивание пространственных файлов на карту' src='//codepen.io/azuremaps/embed/zYGdGoO/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/zYGdGoO/'>перетаскивание пространственных файлов на карте</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Параметры записи пространственных данных' src='//codepen.io/azuremaps/embed/YzXxXPG/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите <a href='https://codepen.io/azuremaps/pen/YzXxXPG/'>параметры записи пространственных данных</a> Pen<a href='https://codepen.io/azuremaps'>@azuremaps</a>по картам Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-При необходимости вы можете предоставить прокси-службу для доступа к междоменным ресурсам, которые могут не включать CORs. В этом фрагменте кода показано, как можно включить прокси-службу:
+## <a name="example-of-writing-spatial-data"></a>Пример написания пространственных данных
+
+Следующий пример позволяет перетащить и упасть, а затем загрузить пространственные файлы на карте. Вы можете экспортировать данные GeoJSON с карты и записывать их в одном из поддерживаемых форматов пространственных данных в виде строки или в виде сжатого файла.
+
+<br/>
+
+<iframe height='700' scrolling='no' title='Перетащите и отбросьте пространственные файлы на карту' src='//codepen.io/azuremaps/embed/zYGdGoO/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/zYGdGoO/'>Drag и падение пространственных файлов на</a> карту<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+Вы можете по желанию предоставить прокси-сервис для доступа к кроссдоменным ресурсам, которые могут не иметь включенного CORS. Этот фрагмент кода показывает, что вы можете включить прокси-сервис:
 
 ```javascript
-
-//Set the location of your proxyServiceUrl file 
-var proxyServiceUrl = window.location.origin + '/CorsEnabledProxyService.ashx?url=';
-
-function readData(data, fileName) {
-    loadingIcon.style.display = '';
-    fileCount++;
-    //Attempt to parse the file and add the shapes to the map.
-    atlas.io.read(data, {
-        //Provide a proxy service
-        proxyService: proxyServiceUrl
-    }).then(
-        //Success
-        function(r) {
-            //some code goes here ...
-        }
-    );
-}
+atlas.io.read(data, {
+    //Provide a proxy service
+    proxyService: window.location.origin + '/YourCorsEnabledProxyService.ashx?url='
+}).then(
+    //Success
+    function(r) {
+        //some code goes here ...
+    }
+);
 ```
 
-## <a name="read-and-write-well-known-text-wkt"></a>Чтение и запись хорошо известного текста (WKT)
+## <a name="read-and-write-well-known-text-wkt"></a>Читать и писать известный текст (WKT)
 
-[Известный текст](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) (WKT) — это стандартный открытый ГЕОПРОСТРАНСТВЕННЫЙ консорциум (OGC), представляющий пространственные геометрические объекты в виде текста. Многие геопространственные системы поддерживают WKT, такие как Azure SQL и Azure PostgreSQL, с помощью подключаемого модуля PostGIS. Как и большинство стандартов OGC, координаты форматируются как "Долгота широты" для согласования с соглашением "x y". Например, точка со долготой-110 и Широта 45 может быть написана как `POINT(-110 45)` с помощью формата WKT.
+[Известный текст](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) (WKT) является стандартом Открытого геопространственного консорциума (OGC) для представления пространственных геометрий в виде текста. Многие геопространственные системы поддерживают WKT, такие как Azure S'L и Azure PostgreS'L с помощью плагина PostGIS. Как и большинство стандартов OGC, координаты отформатированы как "длинная широта", чтобы привести их в соответствие с конвенцией "x y". Например, точка при долготе -110 и широте 45 может быть написана как `POINT(-110 45)` с использованием формата WKT.
 
-Хорошо известный текст можно считать с помощью функции `atlas.io.ogc.WKT.read` и написать с помощью функции `atlas.io.ogc.WKT.write`.
+Известный текст можно прочитать `atlas.io.ogc.WKT.read` с помощью `atlas.io.ogc.WKT.write` функции и написать с помощью функции.
 
-## <a name="examples-of-reading-and-writing-well-known-text-wkt"></a>Примеры чтения и записи хорошо известного текста (WKT)
+## <a name="examples-of-reading-and-writing-well-known-text-wkt"></a>Примеры чтения и письма Хорошо известный текст (WKT)
 
-В следующем коде показано, как считать известную текстовую строку `POINT(-122.34009 47.60995)` и визуализировать ее на карте с помощью пузырькового слоя.
-
-<br/>
-
-<iframe height='500' scrolling='no' title='Чтение хорошо известного текста' src='//codepen.io/azuremaps/embed/XWbabLd/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. раздел Знакомство с помощью пера с <a href='https://codepen.io/azuremaps/pen/XWbabLd/'>известным текстом</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-Следующий код демонстрирует чтение и запись хорошо известного текста.
+Следующий код показывает, как читать известную строку `POINT(-122.34009 47.60995)` текста и отобразить ее на карте с помощью слоя пузыря.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Чтение и запись хорошо известного текста' src='//codepen.io/azuremaps/embed/JjdyYav/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите, что перо <a href='https://codepen.io/azuremaps/pen/JjdyYav/'>читает и пишет хорошо известный текст</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Читайте хорошо известный текст' src='//codepen.io/azuremaps/embed/XWbabLd/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/XWbabLd/'>Читать хорошо известный</a> текст<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="read-and-write-gml"></a>Чтение и запись GML
+Следующий код демонстрирует чтение и написание хорошо известного текста взад и вперед.
 
-GML — это спецификация пространственных XML-файлов, которая часто используется в качестве расширения для других спецификаций XML. Данные геоjson можно записать в формате XML с помощью тегов GML, используя функцию `atlas.io.core.GmlWriter.write`. XML-код, содержащий GML, можно считать с помощью функции `atlas.io.core.GmlReader.read`. Функция Read имеет два варианта:
+<br/>
 
-- Параметр `isAxisOrderLonLat`. порядок осей в координатах «Широта, Долгота» и «Долгота, Широта» может различаться в зависимости от набора данных, и он не всегда определен правильно. По умолчанию средство чтения GML считывает данные координаты как "Широта, Долгота", но при установке этого параметра в значение "true" будет считаться "Долгота, Широта".
-- Параметр `propertyTypes` — это таблица уточняющих значений ключа, где ключ — это имя свойства в наборе данных. Значение — это тип объекта для приведения значения при синтаксическом анализе. Поддерживаются следующие значения типа: `string`, `number`, `boolean`и `date`. Если свойство не находится в таблице поиска или тип не определен, свойство будет проанализировано как строка.
+<iframe height='700' scrolling='no' title='Читать и писать известный текст' src='//codepen.io/azuremaps/embed/JjdyYav/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите Pen <a href='https://codepen.io/azuremaps/pen/JjdyYav/'>Читать и писать известный текст</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
-Функция `atlas.io.read` будет по умолчанию выполнять функцию `atlas.io.core.GmlReader.read`, когда обнаруживает, что входные данные являются XML, но данные не являются одной из других поддерживаемых пространственных форматов XML.
+## <a name="read-and-write-gml"></a>Читать и писать GML
+
+GML — это пространственная спецификация файлов XML, которая часто используется в качестве расширения для других спецификаций XML. Данные GeoJSON могут быть записаны как XML с Тегами GML с помощью функции. `atlas.io.core.GmlWriter.write` XML, содержащий GML, можно `atlas.io.core.GmlReader.read` прочитать с помощью функции. Функция чтения имеет два варианта:
+
+- Вариант `isAxisOrderLonLat` - порядок координат оси "широта, долгота" или "долгота, широта" может варьироваться в зависимости от набора данных, и это не всегда четко определены. По умолчанию читатель GML читает данные координат как "широту, долготу", но установка этой опции на истину будет читать его как "долгота, широта".
+- Опция `propertyTypes` - Эта опция представляет собой таблицу поиска ключевого значения, где ключом является имя свойства в наборе данных. Значение — это тип объекта, на который можно отбросить значение при разборе. Значения поддерживаемого типа: `string` `number`, `boolean`, `date`и . Если свойствнее не в таблице поиска или тип не определен, свойство будет разобрано как строка.
+
+Функция `atlas.io.read` будет по `atlas.io.core.GmlReader.read` умолчанию выполнять функцию, когда обнаруживает, что входные данные являются XML, но данные не являются одним из других форматов поддержки пространственного XML.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [статические функции atlas.io](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io)
+> [atlas.io статические функции](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io)
 
 > [!div class="nextstepaction"]
-> [спатиалдатасет](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdataset)
+> [ПространственныйНабор данных](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdataset)
 
 > [!div class="nextstepaction"]
-> [спатиалдатасетстатс](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdatasetstats)
+> [ПространственныеDataSetStats](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdatasetstats)
 
 > [!div class="nextstepaction"]
-> [гмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader?view=azure-maps-typescript-latest)
+> [GmlReader](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader?view=azure-maps-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [гмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter?view=azure-maps-typescript-latest)
+> [GmlWriter](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter?view=azure-maps-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [функции Atlas. IO. OGC. WKT](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.ogc.wkt)
+> [функции atlas.io.ogc.WKT](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.ogc.wkt)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление слоя OGC Map](spatial-io-add-ogc-map-layer.md)
+> [Добавление слоя карты OGC](spatial-io-add-ogc-map-layer.md)
 
 > [!div class="nextstepaction"]
-> [Подключение к службе ВФС](spatial-io-connect-wfs-service.md)
+> [Подключение к службе WFS](spatial-io-connect-wfs-service.md)
 
 > [!div class="nextstepaction"]
-> [Использование основных операций](spatial-io-core-operations.md)
+> [Кредитное использование основных операций](spatial-io-core-operations.md)
 
 > [!div class="nextstepaction"]
-> [Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)
+> [Детали формата поддерживаемых данных](spatial-io-supported-data-format-details.md)

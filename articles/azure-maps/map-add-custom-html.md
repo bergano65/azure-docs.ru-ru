@@ -1,7 +1,7 @@
 ---
-title: Добавление HTML-маркера к сопоставлению | Карты Microsoft Azure
-description: В этой статье вы узнаете, как добавить маркер HTML к карте с помощью веб-пакета SDK Microsoft Azure Maps.
-author: jingjing-z
+title: Добавьте HTML-маркер на карту Карты Microsoft Azure
+description: В этой статье вы узнаете о том, как добавить HTML-маркер на карту с помощью веб-SDK Microsoft Azure Maps Web SDK.
+author: jinzh-azureiot
 ms.author: jinzh
 ms.date: 07/29/2019
 ms.topic: conceptual
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 4cc3b1789ef2f7ef44e5421cbacb5a93c2a0a1ff
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 2700d42c25d58911fb275ad9ce6c5610cd22624d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933610"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79536774"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -24,13 +24,13 @@ ms.locfileid: "76933610"
 > Маркеры HTML не подключаются к источникам данных. Вместо этого сведения о положении добавляются непосредственно к маркеру, который добавляется в свойство карт `markers` — [HtmlMarkerManager](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarkermanager?view=azure-iot-typescript-latest).
 
 > [!IMPORTANT]
-> В отличие от большинства слоев в веб-элементе управления Azure Maps, использующих WebGL для отрисовки, маркеры HTML используют традиционные элементы модели DOM для отрисовки. Таким образом, чем больше маркеров HTML добавляется на страницу, тем больше элементов DOM есть. Производительность может снизиться после добавления нескольких сотен маркеров HTML. Для более крупных наборов данных рекомендуется кластеризация данных или использование слоя символа или пузырьков.
+> В отличие от большинства слоев в веб-элементе управления Azure Maps, использующих WebGL для отрисовки, маркеры HTML используют традиционные элементы модели DOM для отрисовки. Таким образом, чем больше HTML маркеров добавлено на страницу, тем больше элементов DOM. Производительность может снизиться после добавления нескольких сотен маркеров HTML. Для более крупных наборов данных рекомендуется кластеризация данных или использование слоя символа или пузырьков.
 
 ## <a name="add-an-html-marker"></a>Добавление маркера HTML
 
-Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, имеющий `{color}` и `{text}` заполнитель. Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
+Класс [HtmlMarker](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стиль HTML маркера по умолчанию — это шаблон `{color}` `{text}` SVG с заполнителем. Установите свойства цвета и текста в вариантах HTML маркера для быстрой настройки. 
 
-Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру прикрепляется всплывающее окно, а для переключения видимости всплывающего окна используется событие `click`.
+Следующий код создает HTML маркер и устанавливает цветовое свойство до "DodgerBlue" и свойство текста на "10". Всплывающее окно прилагается к `click` маркеру и событие используется для переключения видимости всплывающих.
 
 ```javascript
 //Create an HTML marker and add it to the map.
@@ -52,7 +52,7 @@ map.events.add('click',marker, () => {
 });
 ```
 
-Ниже приведен полный пример выполнения кода описанной выше функциональности.
+Ниже приводится полный выборка кода приведена вышеуказанной функциональности.
 
 <br/>
 
@@ -69,7 +69,7 @@ map.events.add('click',marker, () => {
 </iframe>
 
 > [!TIP]
-> Веб-пакет SDK Azure Maps предоставляет несколько шаблонов изображений SVG, которые можно использовать с маркерами HTML. Дополнительные сведения см. в документе [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md) .
+> Веб-SDK Azure Maps предоставляет несколько шаблонов изображений SVG, которые можно использовать с помощью HTML-маркеров. Для получения дополнительной информации смотрите документ [«Как использовать шаблоны изображений».](how-to-use-image-templates-web-sdk.md)
 
 ## <a name="add-a-css-styled-html-marker"></a>Добавление маркера HTML стиля CSS
 
@@ -82,7 +82,7 @@ map.events.add('click',marker, () => {
 
 ## <a name="draggable-html-markers"></a>Перетаскиваемые маркеры HTML
 
-В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag`, `dragstart`и события `dragend`.
+В этом примере показано, как сделать перетаскиваемый маркер HTML. HTML-маркеры `drag` `dragstart`поддерживают `dragend` и события.
 
 <br/>
 
@@ -114,10 +114,10 @@ map.events.add('click',marker, () => {
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md)
+> [Использование шаблонов образов](how-to-use-image-templates-web-sdk.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя символов](./map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Добавление слоя пузырьков](./map-add-bubble-layer.md)
+> [Добавить слой пузыря](./map-add-bubble-layer.md)

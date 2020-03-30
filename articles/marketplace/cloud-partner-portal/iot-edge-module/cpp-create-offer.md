@@ -1,19 +1,18 @@
 ---
-title: Создание предложения модуля Azure IoT Edge | Azure Marketplace
+title: Создайте модуль Azure IoT Edge Лазурный рынок
 description: Процесс публикации модуля IoT Edge в Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/18/2018
-ms.author: pabutler
-ms.openlocfilehash: c1e2f5ac6078309b7bd8753a3fc57a592a67dcec
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 164b26560020054f4da8bd1aa0ba2a3ecff1875a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826089"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286631"
 ---
 # <a name="create-a-new-iot-edge-module-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение модуля IoT Edge с помощью портала Cloud Partner.
 
@@ -28,7 +27,7 @@ ms.locfileid: "73826089"
 
 ## <a name="new-offer-form"></a>Форма нового предложения 
 
-Войдите на [портал Cloud Partner](https://cloudpartner.azure.com/), а затем в строке меню слева выберите **+Новое предложение**. Чтобы отобразить форму **Новое предложение** и начать процесс определения ресурсов для нового предложения модуля IoT Edge, в меню "Новое предложение" выберите **Модули IoT Edge**. 
+Вопийте на [портале cloud Partner,](https://cloudpartner.azure.com/)а затем выберите **новое предложение** в левом меню. Чтобы отобразить форму **Новое предложение** и начать процесс определения ресурсов для нового предложения модуля IoT Edge, в меню "Новое предложение" выберите **Модули IoT Edge**. 
 
 ![Выделенный фрагмент пользовательского интерфейса нового предложения модуля IoT Edge](./media/new-iot-edge-module-offer.png)
 
@@ -36,7 +35,7 @@ ms.locfileid: "73826089"
 
 Страница **Новое предложение** для предложения модуля IoT Edge предоставляет набор вкладок и поля форм, которые будут использоваться для создания нового предложения. Каждая из перечисленных ниже статей описывает, как использовать вкладку, чтобы определить группы ресурсов и службы поддержки для нового предложения модуля IoT Edge.
 
-- [Вкладка с параметрами предложения](./cpp-offer-settings-tab.md)
+- [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
 - [Вкладка "Номера SKU"](./cpp-skus-tab.md)
-- [Вкладка Marketplace](./cpp-marketplace-tab.md)
+- [Вкладка "Marketplace"](./cpp-marketplace-tab.md)
 - [Вкладка "Поддержка"](./cpp-support-tab.md)

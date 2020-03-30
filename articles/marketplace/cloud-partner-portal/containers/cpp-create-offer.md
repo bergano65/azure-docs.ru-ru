@@ -1,19 +1,18 @@
 ---
-title: Создание предложения контейнеров Azure | Azure Marketplace
+title: Создайте предложение контейнеров Azure (ru) Лазурный рынок
 description: Как опубликовать новое предложение контейнеров в Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
-ms.author: pabutler
-ms.openlocfilehash: a9766f234b074fd259eeb7bcc184573e21e390a7
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: d2a18d0fee4352cd88e4c64ab99a7dfc1b08ed75
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823215"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80280088"
 ---
 # <a name="create-a-new-container-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение контейнеров с помощью Портала Cloud Partner.
 
@@ -36,7 +35,7 @@ ms.locfileid: "73823215"
 
 Страница **Новое предложение** для предложения контейнеров предоставляет набор вкладок и полей форм, которые будут использоваться для создания нового предложения. В каждой из перечисленных ниже статей описано, как использовать вкладку, чтобы определить группы ресурсов и вспомогательные службы для нового предложения контейнеров.
 
-- [Вкладка с параметрами предложения](./cpp-offer-settings-tab.md)
+- [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
 - [Вкладка "Номера SKU"](./cpp-skus-tab.md)
-- [Вкладка Marketplace](./cpp-marketplace-tab.md)
+- [Вкладка "Marketplace"](./cpp-marketplace-tab.md)
 - [Вкладка "Поддержка"](./cpp-support-tab.md)

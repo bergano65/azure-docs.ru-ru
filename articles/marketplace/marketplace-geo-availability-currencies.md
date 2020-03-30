@@ -1,25 +1,24 @@
 ---
-title: Поддержка географической доступности и валюты | Службы
+title: Географическая доступность и валютная поддержка Azure
 description: Географическая доступность в Azure Marketplace и AppSource
-services: Azure, Marketplace, Compute, Storage, Networking
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/29/2020
-ms.author: ellacroi
-ms.openlocfilehash: f2369388f00f6a023ac77865ab8e3540bc35de70
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.author: dsindona
+ms.openlocfilehash: 79965180d897b91afc1fb1a27e777e385108d2c1
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905671"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80288433"
 ---
-# <a name="geographic-availability-and-currency-support"></a>Поддержка географической доступности и валюты
+# <a name="geographic-availability-and-currency-support"></a>Географическая доступность и валютная поддержка
 
-Предложения Azure Marketplace и AppSource можно приобрести в 141 географических единиц в соответствии с адресом для выставления счетов клиента, а транзакции могут быть завершены в 17 валютах. В следующей таблице перечислены все поддерживаемые географические расположения, их [буквенно-цифровой код ISO 3166 2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)и назначенная Валюта.
+Предложения Azure Marketplace и AppSource можно приобрести в 141 географии, как это определено по счету клиента, а транзакции могут быть завершены в 17 валютах. В таблице ниже перечислены каждое поддерживаемое географическое местоположение, его [двузначный альфа-код ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)и назначенная валюта.
 
-|   Название страны или региона               |   ISO-2   |   Валюта   |
+|   Название страны/региона               |   ISO-2   |   Валюта   |
 |-------------------------------------|-----------|--------------|
 | Афганистан                         | AF        | USD          |
 | Албания                             | AL        | USD          |
@@ -37,26 +36,26 @@ ms.locfileid: "76905671"
 | Беларусь                             | BY        | USD          |
 | Бельгия                             | BE        | EUR          |
 | Белиз                              | BZ        | USD          |
-| Бермуды                             | BM        | USD          |
+| Бермудские о-ва                             | BM        | USD          |
 | Боливия                             | BO        | USD          |
 | Босния и Герцеговина              | BA        | USD          |
 | Ботсвана                            | BW        | USD          |
-| Бразилия                              | BR        | БРАЗИЛЬСКИХ\*        |
+| Бразилия                              | BR        | BRL\*        |
 | Бруней-Даруссалам                              | BN        | USD          |
 | Болгария                            | BG        | EUR          |
 | Камерун                            | CM        | USD          |
-| Канада                              | CA        | CAD          |
+| Canada                              | CA        | CAD          |
 | Кабо-Верде                          | CV        | USD          |
 | Каймановы о-ва                      | KY        | USD          |
 | Чили                               | CL        | USD          |
-| *\*Китая                            | CN        | Н/Д          |
+| Китай\**                            | CN        | Недоступно          |
 | Колумбия                            | CO        | USD          |
 | Коста-Рика                          | CR        | USD          |
-| Кот-д'Ивуар                       | CI        | USD          |
-| Хорватия                             | Управление персоналом        | EUR          |
-| Кюрасао                             | КОРПОРАТИВ        | USD          |
+| Кот д'Ивуар                       | CI        | USD          |
+| Хорватия                             | HR        | EUR          |
+| Кюрасао                             | Cw        | USD          |
 | Кипр                              | CY        | EUR          |
-| Чехия                      | CZ        | EUR          |
+| Чешская Республика                      | CZ        | EUR          |
 | Дания                             | DK        | DKK          |
 | Доминиканская Республика                  | DO        | USD          |
 | Эквадор                             | EC        | USD          |
@@ -64,12 +63,12 @@ ms.locfileid: "76905671"
 | Эль-Сальвадор                         | SV        | USD          |
 | Эстония                             | EE        | EUR          |
 | Эфиопия                            | ET        | USD          |
-| Фарерские острова                       | FO        | DKK          |
+| Фарерские о-ва                       | FO        | DKK          |
 | Фиджи                                | FJ        | AUD          |
 | Финляндия                             | FI        | EUR          |
 | Франция                              | СВ        | EUR          |
-| Грузия                             | GE        | USD          |
-| Германия                             | Германия        | EUR          |
+| Джорджия                             | GE        | USD          |
+| Германия                             | DE        | EUR          |
 | Гана                               | GH        | USD          |
 | Греция                              | GR        | EUR          |
 | Гватемала                           | GT        | USD          |
@@ -82,13 +81,13 @@ ms.locfileid: "76905671"
 | Ирак                                | IQ        | USD          |
 | Ирландия                             | IE        | EUR          |
 | Израиль                              | IL        | USD          |
-| Италия                               | ИТ        | EUR          |
+| Италия                               | IT        | EUR          |
 | Ямайка                             | JM        | USD          |
 | Япония                               | JP        | JPY          |
 | Иордания                              | JO        | USD          |
 | Казахстан                          | KZ        | USD          |
 | Кения                               | KE        | USD          |
-| Корея (Южная)                       | KR        | KRW          |
+| Корея (юг)                       | KR        | KRW          |
 | Кувейт                              | KW        | USD          |
 | Киргизия                          | KG        | USD          |
 | Латвия                              | LV        | EUR          |
@@ -108,7 +107,7 @@ ms.locfileid: "76905671"
 | Монголия                            | MN        | USD          |
 | Черногория                          | ME        | USD          |
 | Марокко                             | MA        | USD          |
-| Намибия                             | Нет данных        | USD          |
+| Намибия                             | Н/Д        | USD          |
 | Непал                               | NP        | USD          |
 | Нидерланды                         | NL        | EUR          |
 | Никарагуа                           | NI        | USD          |
@@ -117,7 +116,7 @@ ms.locfileid: "76905671"
 | Норвегия                              | NO        | NOK          |
 | Оман                                | OM        | USD          |
 | Пакистан                            | PK        | USD          |
-| Палестинская национальная администрация               | PS        | USD          |
+| Палестинская Автономия               | PS        | USD          |
 | Панама                              | PA        | USD          |
 | Парагвай                            | PY        | USD          |
 | Перу                                | PE        | USD          |
@@ -136,7 +135,7 @@ ms.locfileid: "76905671"
 | Сингапур                           | SG        | USD          |
 | Словакия                            | SK        | EUR          |
 | Словения                            | SI        | EUR          |
-| Южно-Африканская республика                        | ZA        | USD          |
+| ЮАР                        | ZA        | USD          |
 | Испания                               | ES        | EUR          |
 | Шри-Ланка                           | LK        | USD          |
 | Швеция                              | SE        | SEK          |
@@ -149,12 +148,12 @@ ms.locfileid: "76905671"
 | Тунис                             | TN        | USD          |
 | Турция                              | TR        | USD          |
 | Туркменистан                        | TM        | USD          |
-| Ватикан (Великий см.)             | VA        | EUR          |
-| Виргинские острова (США) | VI        | USD          |
+| Ватикан (Святой Престол)             | VA        | EUR          |
+| Виргинские острова США | VI        | USD          |
 | Уганда                              | UG        | USD          |
 | Украина                             | UA        | USD          |
 | ОАЭ                | AE        | USD          |
-| Соединенное Королевство                      | ГБ        | GBP          |
+| United Kingdom                      | ГБ        | GBP          |
 | США                       | США        | USD          |
 | Уругвай                             | UY        | USD          |
 | Узбекистан                          | UZ        | USD          |
@@ -165,6 +164,6 @@ ms.locfileid: "76905671"
 | Зимбабве                            | ZW        | USD          |
 |   |   |   |
 
-\* для клиентов в Бразилии, в Marketplace с помощью поставщиков облачных решений (CSP) используется USD.
+\*Для клиентов в Бразилии Marketplace через поставщиков облачных решений (CSP) использует USD.
 
-только \** бесплатные и BYOL образы виртуальных машин.
+\*Бесплатные и BYOL VM изображения только.

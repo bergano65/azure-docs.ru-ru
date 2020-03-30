@@ -1,19 +1,18 @@
 ---
-title: Настройка управления интересами в Marketo | Azure Marketplace
-description: Настройка управления интересами для Marketo для клиентов Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+title: Настройка руководства управления в Marketo (ru) Лазурный рынок
+description: Направляй руководство для Marketo для клиентов рынка Azure.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.author: pabutler
-ms.openlocfilehash: 7949507c8c7ef57cded25cde8579c1945aa93a81
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 9fa05eae2d297cbd6ae7243d191cae5a7a3f990e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825199"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80288535"
 ---
 # <a name="configure-lead-management-in-marketo"></a>Настройка управления интересами в Marketo
 
@@ -42,7 +41,7 @@ ms.locfileid: "73825199"
 `<script src="//app-ys12.marketo.com/js/forms2/js/forms2.min.js"></script>`
 
     <form id="mktoForm_1179"></form>
-    <script>MktoForms2.loadForm("("//app-ys12.marketo.com", "123-PQR-789", 1179);</script>
+    <script>MktoForms2.loadForm("//app-ys12.marketo.com", "123-PQR-789", 1179);</script>
 
 1. Скопируйте значения, указанные в коде внедрения, чтобы вы могли настроить идентификаторы **сервера**, **Munchkin** и **формы** в полях Marketo на портале облачных партнеров.
 
@@ -50,4 +49,4 @@ ms.locfileid: "73825199"
 
 - Идентификатор сервера = **ys12**
 - Идентификатор Munchkin = **123-PQR-789**
-- Идентификатор формы = **1179**\
+- Идентификатор формы = **1179**

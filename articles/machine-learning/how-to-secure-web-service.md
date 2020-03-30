@@ -1,7 +1,7 @@
 ---
-title: Защита веб-служб с помощью TLS
+title: Безопасные веб-сервисы с помощью TLS
 titleSuffix: Azure Machine Learning
-description: Узнайте, как включить протокол HTTPS для защиты веб-службы, развернутой с помощью Машинное обучение Azure. Машинное обучение Azure использует TLS версии 1,2 для защиты моделей, развернутых как веб-службы.
+description: Узнайте, как включить HTTPS, чтобы обеспечить безопасность веб-службы, развернутой в Azure Machine Learning. Azure Machine Learning использует версию TLS 1.2 для защиты моделей, развернутых в качестве веб-служб.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,94 +11,94 @@ ms.author: aashishb
 author: aashishb
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1f4b699476902fa24fa285754f13b1c61ddca8f0
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: a58b0120feaba907c62bc646f4f85d9185227fed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78355533"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80287345"
 ---
-# <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинное обучение Azure
+# <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Используйте TLS для обеспечения безопасности веб-службы через Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье показано, как защитить веб-службу, развернутую с помощью Машинное обучение Azure.
+В этой статье показано, как обеспечить безопасность веб-службы, развернутой с помощью Машинного обучения Azure.
 
-[Протокол HTTPS](https://en.wikipedia.org/wiki/HTTPS) используется для ограничения доступа к веб-службам и защиты данных, отправляемых клиентами. Протокол HTTPS обеспечивает безопасность обмена данными между клиентом и веб-службой путем шифрования обмена данными между ними. Шифрование использует [протокол TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). Протокол TLS иногда по-прежнему называется *SSL* (SSL), который был предшественником TLS.
+Вы используете [HTTPS](https://en.wikipedia.org/wiki/HTTPS) для ограничения доступа к веб-службам и защиты данных, которые отправляют клиенты. HTTPS помогает обеспечить безопасность связи между клиентом и веб-службой, шифруя сообщения между ними. Шифрование использует [безопасность транспортного уровня (TLS).](https://en.wikipedia.org/wiki/Transport_Layer_Security) TLS иногда все еще называют *Безопасный слой розеток* (SSL), который был предшественником TLS.
 
 > [!TIP]
-> В пакете SDK для Машинное обучение Azure используется термин "SSL" для свойств, связанных с безопасной связью. Это не означает, что веб-служба не использует *TLS*. SSL — это просто более широко распознанный термин.
+> В SDK Azure Machine Learning используется термин «SSL» для свойств, связанных с безопасной связью. Это не означает, что ваш веб-сервис не использует *TLS.* SSL является лишь более общепризнанным термином.
 >
-> В частности, веб-службы, развернутые с помощью Машинное обучение Azure, поддерживают только TLS версии 1,2.
+> В частности, веб-сервисы, развернутые через Azure Machine Learning, поддерживают только версию TLS 1.2.
 
-Протоколы TLS и SSL используют *цифровые сертификаты*, которые помогают в шифровании и проверке личности. Дополнительные сведения о работе цифровых сертификатов см. в статье об [инфраструктуре открытых ключей](https://en.wikipedia.org/wiki/Public_key_infrastructure)в разделе Википедии.
+TLS и SSL полагаются на *цифровые сертификаты,* которые помогают с шифрованием и проверкой личности. Для получения дополнительной информации о том, [Public key infrastructure](https://en.wikipedia.org/wiki/Public_key_infrastructure)как работают цифровые сертификаты, см.
 
 > [!WARNING]
-> Если для веб-службы не используется протокол HTTPS, данные, отправляемые в службу и из нее, могут быть видны другим пользователям в Интернете.
+> Если вы не используете HTTPS для веб-службы, данные, отправленные в службу и из нее, могут быть видны другим пользователям в Интернете.
 >
-> HTTPS также позволяет клиенту проверять подлинность сервера, к которому он подключается. Эта функция защищает клиентов от атак типа ["злоумышленник в середине"](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) .
+> HTTPS также позволяет клиенту проверить подлинность сервера, к которого он подключается. Эта функция защищает клиентов от атак [«человек в середине».](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
 
-Это общий процесс защиты веб-службы:
+Это общий процесс для обеспечения веб-службы:
 
 1. Получите имя домена.
 
-2. Получение цифрового сертификата.
+2. Получить цифровой сертификат.
 
-3. Развертывание или обновление веб-службы с включенным протоколом SSL.
+3. Развертывание или обновление веб-службы с включенным TLS.
 
 4. Обновите имя DNS, чтобы оно указывало на веб-службу.
 
 > [!IMPORTANT]
-> При развертывании в службе Azure Kubernetes Service (AKS) можно приобрести собственный сертификат или использовать сертификат, предоставляемый корпорацией Майкрософт. Если вы используете сертификат от корпорации Майкрософт, вам не нужно получать имя домена или SSL-сертификат. Дополнительные сведения см. в разделе [Включение SSL и развертывание](#enable) этой статьи.
+> При развертывании в службе Azure Kubernetes Service (AKS) вы можете приобрести собственный сертификат или использовать сертификат, предоставленный корпорацией Майкрософт. Если вы используете сертификат от корпорации Майкрософт, вам не нужно получать доменное имя или сертификат TLS/SSL. Для получения дополнительной информации ознакомьтесь [с разделом Включить TLS и развернуть](#enable) раздел этой статьи.
 
-Существуют небольшие отличия при защите между [целями развертывания](how-to-deploy-and-where.md).
+Есть небольшие различия, когда вы обеспечиваете s по всем [целям развертывания.](how-to-deploy-and-where.md)
 
 ## <a name="get-a-domain-name"></a>Получение доменного имени
 
-Если вы еще не владеете доменным именем, приобретите его у *регистратора доменных имен*. Процесс и цена отличаются между регистраторами. Регистратор предоставляет средства для управления доменным именем. С помощью этих средств можно сопоставлять полное доменное имя (например, www\.contoso.com) с IP-адресом, на котором размещена веб-служба.
+Если у вас еще нет доменного имени, купите его у *регистратора доменных имен.* Процесс и цена различаются между регистраторами. Регистратор предоставляет инструменты для управления доменным именем. Эти инструменты используются для картирования полностью квалифицированного доменного\.имени (F-DN) (например, www contoso.com) на IP-адрес, на котором размещен ваш веб-сервис.
 
-## <a name="get-an-ssl-certificate"></a>Получите SSL-сертификат.
+## <a name="get-a-tlsssl-certificate"></a>Получить сертификат TLS/SSL
 
-Есть много способов получить SSL-сертификат (цифровой сертификат). Наиболее распространенным является приобретение одного из *центра сертификации* (ЦС). Независимо от того, где вы получаете сертификат, вам потребуются следующие файлы:
+Есть много способов получить сертификат TLS/SSL (цифровой сертификат). Наиболее распространенным является приобретение одного из *сертификатов органа* (CA). Независимо от того, где вы получаете сертификат, вам нужны следующие файлы:
 
-* **Сертификат**. Сертификат должен содержать всю цепочку сертификатов и должен иметь значение "PEM-Encoded".
-* **Ключ**. Ключ также должен быть закодирован в виде PEM.
+* **Сертификат**. Сертификат должен содержать полную цепочку сертификатов, и он должен быть "PEM-кодированный".
+* **Ключ**. Ключ также должен быть закодирован PEM.
 
-При запросе сертификата необходимо указать полное доменное имя адреса, который планируется использовать для веб-службы (например, www\.contoso.com). Адрес, который был отмечен в сертификате, и адрес, используемый клиентами, сравнивается с целью проверки удостоверения веб-службы. Если эти адреса не совпадают, клиент получает сообщение об ошибке.
+При запросе сертификата необходимо предоставить адрес, который вы планируете использовать для веб-службы\.(например, www.contoso.com). Адрес, вкоторыйемый в сертификат, и адрес, который используют клиенты, сравниваются для проверки личности веб-сервиса. Если эти адреса не совпадают, клиент получает сообщение об ошибке.
 
 > [!TIP]
-> Если центр сертификации не может предоставить сертификат и ключ в виде файлов в кодировке PEM, для изменения формата можно использовать служебную программу, например [OpenSSL](https://www.openssl.org/) .
+> Если сертификат не может предоставить сертификат и ключ в виде закодированных файлов PEM, можно использовать утилиту, такую как [OpenSSL,](https://www.openssl.org/) чтобы изменить формат.
 
 > [!WARNING]
-> Используйте *самозаверяющие* сертификаты только для разработки. Не используйте их в рабочих средах. Самозаверяющие сертификаты могут вызвать проблемы в клиентских приложениях. Дополнительные сведения см. в документации по сетевым библиотекам, используемым клиентским приложением.
+> Используйте *самоподписанные* сертификаты только для разработки. Не используйте их в производственных средах. Самозаверяющие сертификаты могут вызвать проблемы в клиентских приложениях. Для получения дополнительной информации ознакомьтесь с документацией для сетевых библиотек, которые использует клиентское приложение.
 
-## <a id="enable"></a>Включение SSL и развертывание
+## <a name="enable-tls-and-deploy"></a><a id="enable"></a>Включить TLS и развернуть
 
-Чтобы развернуть (или повторно развернуть) службу с включенным протоколом SSL, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
+Для развертывания (или передислокации) службы с включенным TLS установите *параметр ssl_enabled* "True", где бы это ни было применимо. Установите *ssl_certificate* параметр к значению файла *сертификата.* Установите *ssl_key* значение *файла ключа.*
 
-### <a name="deploy-on-aks-and-field-programmable-gate-array-fpga"></a>Развертывание в AKS и программируемом массиве Gates (FPGA)
+### <a name="deploy-on-aks-and-field-programmable-gate-array-fpga"></a>Развертывание на AKS и поле-программируемых ворот массива (FPGA)
 
   > [!NOTE]
-  > Сведения в этом разделе также применяются при развертывании безопасной веб-службы для конструктора. Если вы не знакомы с использованием пакета SDK для Python, см. статью [что такое пакет SDK для машинное обучение Azure для Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
+  > Информация в этом разделе также применяется при развертывании безопасного веб-сервиса для конструктора. Если вы не знакомы с использованием Python SDK, [см.](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
 
-При развертывании в AKS можно создать новый кластер AKS или подключить существующий. Дополнительные сведения о создании или присоединении кластера см. в статье [развертывание модели в кластере службы Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
+При развертывании в AKS можно создать новый кластер AKS или прикрепить существующий кластер. Для получения дополнительной информации о создании или присоединении кластера см. [Развертывание модели в кластере службы Azure Kubernetes.](how-to-deploy-azure-kubernetes-service.md)
   
--  При создании нового кластера используется **[акскомпуте. provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#provisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** .
-- При присоединении существующего кластера используется **[акскомпуте. attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** . Оба возвращают объект конфигурации, имеющий метод **enable_ssl** .
+-  При создании нового кластера используется **[AksCompute.provisioning_configuration()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#provisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)**.
+- При подключении существующего кластера используется **[AksCompute.attach_configuration()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)**. Оба возвращают объект конфигурации с **enable_ssl** методом.
 
-Метод **enable_ssl** может использовать сертификат, предоставляемый корпорацией Майкрософт или сертификатом, который вы приобрели.
+Метод **enable_ssl** может использовать сертификат, предоставленный корпорацией Майкрософт, или приобретенный сертификат.
 
-  * При использовании сертификата от корпорации Майкрософт необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение Contoso создает доменное имя "Contoso\<шести случайных символов >.\<благодаря >. cloudapp. Azure. com ", где \<благодаря > — это регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label*.
+  * При использовании сертификата от корпорации Майкрософт необходимо использовать *leaf_domain_label* параметр. Этот параметр генерирует имя DNS для службы. Например, значение "contoso" создает доменное имя "contoso\<шесть случайных символов>. \<azureregion>.cloudapp.azure.com", \<где лазуривный> является областью, содержащей службу. Дополнительно можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label.*
 
-    Чтобы развернуть (или повторно развернуть) службу с включенным протоколом SSL, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
+    Для развертывания (или передислокации) службы с включенным TLS установите *параметр ssl_enabled* "True", где бы это ни было применимо. Установите *ssl_certificate* параметр к значению файла *сертификата.* Установите *ssl_key* значение *файла ключа.*
 
     > [!IMPORTANT]
-    > При использовании сертификата от корпорации Майкрософт вам не нужно приобретать собственный сертификат или имя домена.
+    > При использовании сертификата от корпорации Майкрософт вам не нужно приобретать собственный сертификат или доменное имя.
 
-    В следующем примере показано, как создать конфигурацию, которая включает SSL-сертификат от корпорации Майкрософт:
+    В следующем примере показано, как создать конфигурацию, позволяющую получить сертификат TLS/SSL от корпорации Майкрософт:
 
     ```python
     from azureml.core.compute import AksCompute
-    # Config used to create a new AKS cluster and enable SSL
+    # Config used to create a new AKS cluster and enable TLS
     provisioning_config = AksCompute.provisioning_configuration()
     # Leaf domain label generates a name using the formula
     #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
@@ -106,7 +106,7 @@ ms.locfileid: "78355533"
     provisioning_config.enable_ssl(leaf_domain_label = "contoso")
 
 
-    # Config used to attach an existing AKS cluster to your workspace and enable SSL
+    # Config used to attach an existing AKS cluster to your workspace and enable TLS
     attach_config = AksCompute.attach_configuration(resource_group = resource_group,
                                           cluster_name = cluster_name)
     # Leaf domain label generates a name using the formula
@@ -115,11 +115,11 @@ ms.locfileid: "78355533"
     attach_config.enable_ssl(leaf_domain_label = "contoso")
     ```
 
-  * При использовании *приобретенного сертификата*вы используете параметры *ssl_cert_pem_file*, *ssl_key_pem_file*и *ssl_cname* . В следующем примере показано, как использовать *PEM* -файлы для создания конфигурации, использующей приобретенный сертификат SSL.
+  * При *использовании сертификата, который вы приобрели,* вы используете *ssl_cert_pem_file,* *ssl_key_pem_file*и *ssl_cname* параметров. Ниже приводится следующий пример, как использовать файлы *.pem* для создания конфигурации, используюейтой сертификатом TLS/SSL, который вы приобрели:
 
     ```python
     from azureml.core.compute import AksCompute
-    # Config used to create a new AKS cluster and enable SSL
+    # Config used to create a new AKS cluster and enable TLS
     provisioning_config = AksCompute.provisioning_configuration()
     provisioning_config.enable_ssl(ssl_cert_pem_file="cert.pem",
                                         ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
@@ -130,11 +130,11 @@ ms.locfileid: "78355533"
                                         ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
     ```
 
-Дополнительные сведения о *enable_ssl*см. в разделе [акспровисионингконфигуратион. enable_ssl ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksprovisioningconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-) и [аксаттачконфигуратион. enable_ssl ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksattachconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-).
+Для получения дополнительной информации о *enable_ssl*, см. [AksProvisioningConfiguration.enable_ssl()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksprovisioningconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-) и [AksAttachConfiguration.enable_ssl()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksattachconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-).
 
-### <a name="deploy-on-azure-container-instances"></a>Развертывание в службе "экземпляры контейнеров Azure"
+### <a name="deploy-on-azure-container-instances"></a>Развертывание на экземплярах контейнеров Azure
 
-При развертывании в службе "экземпляры контейнеров Azure" вы предоставляете значения для параметров, связанных с SSL, как показано в следующем фрагменте кода:
+При развертывании в azure Container Instances вы предоставляете значения для параметров, связанных с TLS, как показано на следующем фрагменте кода:
 
 ```python
 from azureml.core.webservice import AciWebservice
@@ -143,36 +143,36 @@ aci_config = AciWebservice.deploy_configuration(
     ssl_enabled=True, ssl_cert_pem_file="cert.pem", ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
 ```
 
-Дополнительные сведения см. в разделе [аЦивебсервице. deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-).
+Для получения дополнительной информации см. [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none-).
 
 ## <a name="update-your-dns"></a>Обновление DNS
 
 Теперь необходимо обновить DNS, чтобы оно указывало на веб-службу.
 
-+ **Для экземпляров контейнеров:**
++ **Для контейнерных инстанций:**
 
-  Используйте средства регистратора доменных имен, чтобы обновить запись DNS для доменного имени. Запись должна указывать на IP-адрес службы.
+  Используйте инструменты от регистратора доменных имен для обновления записи DNS для вашего доменного имени. Запись должна указывать на IP-адрес службы.
 
-  Может быть задержка в минутах или часах, прежде чем клиенты смогут разрешить доменное имя в зависимости от регистратора и срока жизни (TTL), настроенного для доменного имени.
+  Там может быть задержка минут или часов, прежде чем клиенты могут решить доменное имя, в зависимости от регистратора и "время жить" (TTL), который настроен для доменного имени.
 
-+ **Для AKS:**
++ **Для АКС:**
 
   > [!WARNING]
-  > Если вы использовали *leaf_domain_label* для создания службы с помощью сертификата от Майкрософт, не обновляйте вручную значение DNS для кластера. Значение должно быть задано автоматически.
+  > Если вы использовали *leaf_domain_label* для создания службы с помощью сертификата от Microsoft, не обновляйте вручную значение DNS для кластера. Значение должно быть установлено автоматически.
 
-  Обновите DNS общедоступного IP-адреса кластера AKS на вкладке **Конфигурация** в разделе **Параметры** в левой области. (См. следующее изображение.) Общедоступный IP-адрес — это тип ресурса, который создается в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
+  Обновление DNS публичного IP-адреса кластера AKS на вкладке **Конфигурация** под **настройками** в левом стеле. (См. следующее изображение.) Публичный IP-адрес — это тип ресурсов, созданный в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
 
-  [![Машинное обучение Azure: Защита веб-служб с помощью SSL](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)
+  [![Машинное обучение Azure: обеспечение безопасности веб-сервисов с помощью TLS](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)
 
-## <a name="update-the-ssl-certificate"></a>Обновление SSL-сертификата
+## <a name="update-the-tlsssl-certificate"></a>Обновление сертификата TLS/SSL
 
-Срок действия SSL-сертификатов истекает, и их необходимо продлить. Обычно это происходит каждый год. Используйте сведения в следующих разделах, чтобы обновить и продлить сертификат для моделей, развернутых в службе Kubernetes Azure:
+Срок действия сертификатов TLS/SSL истекает и должен быть продлен. Обычно это происходит каждый год. Используйте информацию в следующих разделах для обновления и обновления сертификата для моделей, развернутых в службе Azure Kubernetes:
 
-### <a name="update-a-microsoft-generated-certificate"></a>Обновление сертификата, созданного корпорацией Майкрософт
+### <a name="update-a-microsoft-generated-certificate"></a>Обновление созданного майкрософт сертификата
 
-Если сертификат изначально был создан корпорацией Майкрософт (при использовании *leaf_domain_label* для создания службы), используйте один из следующих примеров для обновления сертификата.
+Если сертификат был первоначально создан корпорацией Майкрософт (при использовании *leaf_domain_label* для создания службы), используйте один из следующих примеров для обновления сертификата:
 
-**Использование пакета SDK**
+**Использование SDK**
 
 ```python
 from azureml.core.compute import AksCompute
@@ -194,20 +194,20 @@ aks_target.update(update_config)
 az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-leaf-domain-label "myaks" --ssl-overwrite-domain True
 ```
 
-Дополнительные сведения см. в следующих справочных документах:
+Для получения дополнительной информации см.
 
-* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
-* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
+* [SslConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
+* [АксUpdateConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
 
-### <a name="update-custom-certificate"></a>Обновить пользовательский сертификат
+### <a name="update-custom-certificate"></a>Обновление пользовательского сертификата
 
-Если сертификат был изначально создан центром сертификации, выполните следующие действия.
+Если сертификат был первоначально создан органом сертификата, используйте следующие действия:
 
-1. Чтобы продлить сертификат, используйте документацию, предоставленную центром сертификации. Этот процесс создает новые файлы сертификатов.
+1. Для продления сертификата используйте документацию, предоставленную органом по сертификации. Этот процесс создает новые файлы сертификатов.
 
-1. Используйте пакет SDK или CLI для обновления службы с помощью нового сертификата:
+1. Используйте sDK или CLI для обновления службы с новым сертификатом:
 
-    **Использование пакета SDK**
+    **Использование SDK**
 
     ```python
     from azureml.core.compute import AksCompute
@@ -234,14 +234,14 @@ az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n 
     az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-cname "myaks"--ssl-cert-file "cert.pem" --ssl-key-file "key.pem"
     ```
 
-Дополнительные сведения см. в следующих справочных документах:
+Для получения дополнительной информации см.
 
-* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
-* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
+* [SslConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
+* [АксUpdateConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
 
-## <a name="disable-ssl"></a>Отключение SSL
+## <a name="disable-tls"></a>Отключить TLS
 
-Чтобы отключить SSL для модели, развернутой в службе Kubernetes Azure, создайте `SslConfiguration` с `status="Disabled"`, а затем выполните обновление.
+Чтобы отключить TLS для модели, развернутой в службе Azure `SslConfiguration` `status="Disabled"`Kubernetes, создайте с помощью, а затем выполните обновление:
 
 ```python
 from azureml.core.compute import AksCompute
@@ -251,7 +251,7 @@ from azureml.core.compute.aks import SslConfiguration
 # Get the existing cluster
 aks_target = AksCompute(ws, clustername)
 
-# Disable SSL
+# Disable TLS
 ssl_configuration = SslConfiguration(status="Disabled")
 update_config = AksUpdateConfiguration(ssl_configuration)
 aks_target.update(update_config)
@@ -260,4 +260,4 @@ aks_target.update(update_config)
 ## <a name="next-steps"></a>Дальнейшие действия
 Вы узнаете, как выполнять следующие задачи:
 + [Использование модели Машинного обучения, развернутой в качестве веб-службы](how-to-consume-web-service.md)
-+ [Безопасный запуск экспериментов и вывод в виртуальной сети Azure](how-to-enable-virtual-network.md)
++ [Безопасно еранжируйте эксперименты и выводы внутри виртуальной сети Azure](how-to-enable-virtual-network.md)

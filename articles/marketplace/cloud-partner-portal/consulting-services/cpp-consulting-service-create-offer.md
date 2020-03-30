@@ -1,21 +1,20 @@
 ---
-title: Создание предложения консультации | Azure Marketplace
-description: Создайте предложение службы консультационных услуг Azure или Dynamics 365 в Портал Cloud Partner для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
+title: Создайте консалтинговое предложение Лазурный рынок
+description: Создайте предложение консалтинговых услуг Azure or Dynamics 365 на портале облачных партнеров для Azure Marketplace.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: pabutler
-ms.openlocfilehash: 0cea0810300db1448540f58aa25b5f3197080d0e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: c2700339a7ac8342da0250227cff898c20e60118
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818155"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80278558"
 ---
-# <a name="create-a-consulting-offer"></a>Создание предложения консультации
+# <a name="create-a-consulting-offer"></a>Создание консалтингового предложения
 
 В этой статье описывается, как создать и опубликовать предложение консультационных услуг.
 
@@ -35,5 +34,5 @@ ms.locfileid: "73818155"
 
 Страница **Новое предложение** для предложения консультационной услуги содержит вкладки и поля форм, которые будут использоваться для создания нового предложения. Перечисленные ниже статьи содержат описание использования вкладок, чтобы определить параметры предложения и сведения об интернет-магазине для нового предложения.
 
--   [Определение параметров предложения](./cpp-consulting-service-define-offer-settings.md)
+-   [Определите настройки предложения](./cpp-consulting-service-define-offer-settings.md)
 -   [Вкладка со сведениями об онлайн-магазине](./cpp-consulting-service-storefront-details.md)

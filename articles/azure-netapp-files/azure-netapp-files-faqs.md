@@ -1,6 +1,6 @@
 ---
-title: Часто задаваемые вопросы о Azure NetApp Files | Документация Майкрософт
-description: Ответы на часто задаваемые вопросы о Azure NetApp Files.
+title: Часто задаваемые вопросы о файлах NetApp Azure (ru) Документы Майкрософт
+description: Ответы часто задаваемые вопросы о Файлах NetApp Azure.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -12,200 +12,216 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/06/2020
+ms.date: 03/25/2020
 ms.author: b-juche
-ms.openlocfilehash: 0713f59889962960b4f3ad5eba58ddb7b32e95ff
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.openlocfilehash: 79c23c49cbf3c869b41e5a2dbfc6ec0aaa93e4ae
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79369749"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80258181"
 ---
-# <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
+# <a name="faqs-about-azure-netapp-files"></a>Задаваемые вопросы о файлах NetApp Azure
 
-В этой статье содержатся ответы на часто задаваемые вопросы о Azure NetApp Files. 
+В этой статье часто задаются вопросы (часто задаваемые вопросы) о файлах NetApp Azure. 
 
-## <a name="networking-faqs"></a>Вопросы и ответы о сети
+## <a name="networking-faqs"></a>Задаваемые вопросы о сети
 
-### <a name="does-the-nfs-data-path-go-over-the-internet"></a>Выполняет ли путь к данным NFS через Интернет?  
+### <a name="does-the-nfs-data-path-go-over-the-internet"></a>Проходит ли путь данных NFS через Интернет?  
 
-Нет. Путь к данным NFS не переходит через Интернет. Azure NetApp Files — это собственная служба Azure, которая развертывается в виртуальной сети Azure (VNet), где доступна эта служба. Azure NetApp Files использует делегированную подсеть и подготавливает сетевой интерфейс непосредственно в виртуальной сети. 
+Нет. Путь данных NFS не проходит через Интернет. Azure NetApp Files — это назаленная служба Azure, развернутая в виртуальной сети Azure (VNet), где эта служба доступна. Azure NetApp Files использует делегированную подсеть и предоставляет сетевой интерфейс непосредственно на VNet. 
 
-Дополнительные сведения см. [в разделе рекомендации по Azure NetApp Files планировании сети](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) .  
+Ознакомиться с инструкциями по [планированию сети Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) можно.  
 
-### <a name="can-i-connect-a-vnet-that-i-already-created-to-the-azure-netapp-files-service"></a>Можно ли подключить уже созданную виртуальную сеть к службе Azure NetApp Files?
+### <a name="can-i-connect-a-vnet-that-i-already-created-to-the-azure-netapp-files-service"></a>Могу ли я подключить VNet, который я уже создал, к службе файлов NetApp Azure?
 
-Да, можно подключить виртуальных сетей, созданный вами к службе. 
+Да, вы можете подключить созданные vNets к службе. 
 
-Дополнительные сведения см. [в разделе рекомендации по Azure NetApp Files планировании сети](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) .  
+Ознакомиться с инструкциями по [планированию сети Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) можно.  
 
-### <a name="can-i-mount-an-nfs-volume-of-azure-netapp-files-using-dns-fqdn-name"></a>Можно ли подключить том NFS Azure NetApp Files, используя полное доменное имя DNS?
+### <a name="can-i-mount-an-nfs-volume-of-azure-netapp-files-using-dns-fqdn-name"></a>Могу ли я установить объем NFS файлов NetApp Azure с использованием имени DNS F-DN?
 
-Да, можно, если создать необходимые записи DNS. Azure NetApp Files предоставляет IP-адрес службы для подготовленного тома. 
+Да, вы можете, если вы создаете необходимые записи DNS. Azure NetApp Files поставляет IP-адрес службы для подготовленного объема. 
 
 > [!NOTE] 
-> При необходимости Azure NetApp Files может развернуть дополнительные IP-адреса для службы.  Может потребоваться периодически обновлять записи DNS.
+> Файлы Azure NetApp могут развертывать дополнительные I-файлы для службы по мере необходимости.  Записи DNS, возможно, должны периодически обновляться.
 
 ## <a name="security-faqs"></a>Часто задаваемые вопросы о безопасности
 
-### <a name="can-the-network-traffic-between-the-azure-vm-and-the-storage-be-encrypted"></a>Может ли шифроваться сетевой трафик между виртуальной машиной Azure и хранилищем?
+### <a name="can-the-network-traffic-between-the-azure-vm-and-the-storage-be-encrypted"></a>Можно ли шифровать сетевой трафик между Azure VM и хранилищем?
 
-Трафик данных (трафик от клиента NFSv3, Нфсв 4.1 или SMBv3 к Azure NetApp Filesным томам) не шифруется. Тем не менее трафик от виртуальной машины Azure (с клиентом NFS или SMB) на Azure NetApp Files является безопасным, как и любой другой трафик Azure-ВМ-VM. Этот трафик является локальным для сети центра обработки данных Azure. 
+Трафик данных (трафик от NFSv3, NFSv4.1 или SMBv3 клиента до объемов Файлов Сети) не зашифрован. Однако трафик с Azure VM (работает с nFS или SMB-клиентом) в Файлы NetApp Azure так же безопасен, как и любой другой трафик Azure-VM-to-VM. Этот трафик является локальным для сети центров обработки данных Azure. 
 
-### <a name="can-the-storage-be-encrypted-at-rest"></a>Может ли хранилище быть зашифровано неактивных данных?
+### <a name="can-the-storage-be-encrypted-at-rest"></a>Можно ли шифровать хранилище в состоянии покоя?
 
-Все Azure NetApp Filesные тома шифруются с использованием стандарта FIPS 140-2. Все ключи управляются службой Azure NetApp Files. 
+Все объемы файлов Azure NetApp шифруются по стандарту FIPS 140-2. Все ключи управляются службой Файлов NetApp Azure. 
 
-### <a name="how-are-encryption-keys-managed"></a>Как осуществляется управление ключами шифрования? 
+### <a name="how-are-encryption-keys-managed"></a>Как управляется ключи шифрования? 
 
-Управление ключами для Azure NetApp Files обрабатывается службой. Для каждого тома создается уникальный ключ шифрования данных XTS-AES-256. Иерархия ключей шифрования используется для шифрования и защиты всех ключей томов. Эти ключи шифрования никогда не отображаются или не передаются в виде незашифрованного формата. Ключи шифрования немедленно удаляются при удалении тома.
+Служба обрабатывает ключевое управление файлами NetApp Azure. Для каждого тома создается уникальный ключ шифрования данных XTS-AES-256. Иерархия ключей шифрования используется для шифрования и защиты всех ключей громкости. Эти ключи шифрования никогда не отображаются и не сообщаются в незашифрованном формате. Ключи шифрования удаляются сразу же при удалении громкости.
 
-Поддержка управляемых пользователем ключей (использование собственных ключей) с помощью выделенного HSM-модуля Azure доступна на управляемом уровне в Восточная часть США, США West2 и Юго-Центральный регион США.  Клиент может запросить доступ на anffeedback@microsoft.com, а также по мере доступности емкости запросы будут утверждены.
+Поддержка управляемых пользователем ключей (Bring Your Own Keys) с помощью Azure Dedicated HSM доступна на контролируемой основе в регионах Востоксша, Запад США 2 и США на юге.  Вы можете запросить доступ по адресу **anffeedback@microsoft.com**. По мере наличия емкости запросы будут утверждены.
 
-### <a name="can-i-configure-the-nfs-export-policy-rules-to-control-access-to-the-azure-netapp-files-service-mount-target"></a>Можно ли настроить правила политики экспорта NFS для контроля доступа к целевому объекту подключения службы Azure NetApp Files?
+### <a name="can-i-configure-the-nfs-export-policy-rules-to-control-access-to-the-azure-netapp-files-service-mount-target"></a>Могу ли я настроить правила экспортной политики NFS для контроля доступа к целевому показателю установки файлов NetApp Azure?
 
 
-Да, можно настроить до пяти правил в одной политике экспорта NFS.
+Да, вы можете настроить до пяти правил в одной экспортной политике NFS.
 
-### <a name="does-azure-netapp-files-support-network-security-groups"></a>Поддерживает ли Azure NetApp Files группы безопасности сети?
+### <a name="does-azure-netapp-files-support-network-security-groups"></a>Поддерживают ли файлы Сети файлы Azure NetApp?
 
-Нет, в настоящее время нельзя применять группы безопасности сети к делегированной подсети Azure NetApp Files или к сетевым интерфейсам, созданным службой.
+Нет, в настоящее время вы не можете применять группы сетевой безопасности к делегированной подсети файлов NetApp Azure или сетевым интерфейсам, созданным службой.
 
-### <a name="can-i-use-azure-iam-with-azure-netapp-files"></a>Можно ли использовать Azure IAM с Azure NetApp Files?
+### <a name="can-i-use-azure-iam-with-azure-netapp-files"></a>Можно ли использовать Azure IAM с файлами NetApp Azure?
 
-Да, Azure NetApp Files поддерживает функции RBAC с помощью Azure IAM.
+Да, Azure NetApp Files поддерживает функции RBAC с Azure IAM.
 
-## <a name="performance-faqs"></a>Вопросы и ответы по производительности
+## <a name="performance-faqs"></a>Часто задаваемые вопросы производительности
 
-### <a name="what-should-i-do-to-optimize-or-tune-azure-netapp-files-performance"></a>Что делать, чтобы оптимизировать или настроить производительность Azure NetApp Files?
+### <a name="what-should-i-do-to-optimize-or-tune-azure-netapp-files-performance"></a>Что я должен сделать, чтобы оптимизировать или настроить производительность файлов NetApp Azure?
 
-В соответствии с требованиями к производительности можно выполнять следующие действия. 
-- Убедитесь, что размер виртуальной машины соответствует требованиям.
-- Включите ускоренную сеть для виртуальной машины.
-- Выберите требуемый уровень обслуживания и размер для пула емкости.
-- Создайте том с требуемым размером квоты для емкости и производительности.
+Вы можете предпринять следующие действия в соответствии с требованиями к производительности: 
+- Убедитесь, что виртуальная машина имеет соответствующий размер.
+- Включить ускоренную сеть для VM.
+- Выберите желаемый уровень обслуживания и размер для пула емкости.
+- Создайте объем с желаемым размером квоты для емкости и производительности.
 
-### <a name="how-do-i-convert-throughput-based-service-levels-of-azure-netapp-files-to-iops"></a>Разделы справки преобразовывать уровни обслуживания на основе пропускной способности Azure NetApp Files в операции ввода-вывода?
+### <a name="how-do-i-convert-throughput-based-service-levels-of-azure-netapp-files-to-iops"></a>Как преобразовать уровень пропускной связи файлов Azure NetApp в IOPS?
 
-Можно преобразовать МБ/с в операции ввода-вывода с помощью следующей формулы:  
+Вы можете преобразовать MB/s в IOPS, используя следующую формулу:  
 
 `IOPS = (MBps Throughput / KB per IO) * 1024`
 
-### <a name="how-do-i-change-the-service-level-of-a-volume"></a>Разделы справки изменить уровень обслуживания тома?
+### <a name="how-do-i-change-the-service-level-of-a-volume"></a>Как изменить уровень обслуживания тома?
 
-Изменение уровня обслуживания тома в настоящее время не поддерживается.
+Изменение уровня обслуживания объема в настоящее время не поддерживается.
 
-### <a name="how-do-i-monitor-azure-netapp-files-performance"></a>Разделы справки монитор Azure NetApp Files производительность?
+### <a name="how-do-i-monitor-azure-netapp-files-performance"></a>Как контролировать производительность файлов Сети Azure NetApp?
 
-Azure NetApp Files предоставляет метрики производительности тома. Можно также использовать Azure Monitor для мониторинга метрик использования для Azure NetApp Files.  Список метрик производительности для Azure NetApp Files см. в разделе [метрики для Azure NetApp Files](azure-netapp-files-metrics.md) .
+Файлы Azure NetApp предоставляют показатели производительности громкости. Вы также можете использовать Azure Monitor для мониторинга метрик использования файлов Azure NetApp.  Ознакомиться с материалами для файлов NetApp Azure можно по смотреть в [метрики](azure-netapp-files-metrics.md) производительности для файлов Azure NetApp.
 
-## <a name="nfs-faqs"></a>Вопросы и ответы по NFS
+## <a name="nfs-faqs"></a>Часто задаваемые вопросы NFS
 
-### <a name="i-want-to-have-a-volume-mounted-automatically-when-an-azure-vm-is-started-or-rebooted--how-do-i-configure-my-host-for-persistent-nfs-volumes"></a>Я хочу автоматически подключить том при запуске или перезагрузке виртуальной машины Azure.  Разделы справки настроить узел для постоянных томов NFS?
+### <a name="i-want-to-have-a-volume-mounted-automatically-when-an-azure-vm-is-started-or-rebooted--how-do-i-configure-my-host-for-persistent-nfs-volumes"></a>Я хочу автоматически установить громкость при начале или перезагрузке VM Azure.  Как настроить узла для постоянных объемов NFS?
 
-Чтобы том NFS автоматически подключаться при запуске или перезагрузке виртуальной машины, добавьте запись в файл `/etc/fstab` на узле. 
+Для автоматического монтажа тома NFS при запуске или `/etc/fstab` перезагрузке VM добавьте запись в файл на универсале. 
 
-Дополнительные сведения см. [в статье подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md) .  
+Смотрите [Маунт или открепить громкость для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md) для получения подробной информации.  
 
-### <a name="why-does-the-df-command-on-nfs-client-not-show-the-provisioned-volume-size"></a>Почему команда DF на клиенте NFS не показывает подготовленный размер тома?
+### <a name="why-does-the-df-command-on-nfs-client-not-show-the-provisioned-volume-size"></a>Почему команда DF в клиенте NFS не показывает размер объема?
 
-Размер тома, сообщаемый в DF, — это максимальный размер, который может увеличить Azure NetApp Files том. Размер Azure NetApp Filesого тома в команде DF не является отражающим квоту или размер тома.  Вы можете получить Azure NetApp Files размер или квоту тома с помощью портал Azure или API.
+Размер объема, зарегистрированный в DF, — это максимальный размер, до которых может увеличиться объем файлов NetApp Azure. Размер объема файлов NetApp Azure в команде DF не отражает квоту или размер объема.  Вы можете получить объем или квоту файлов Azure NetApp через портал Azure или API.
 
-### <a name="what-nfs-version-does-azure-netapp-files-support"></a>Какая версия NFS поддерживает Azure NetApp Files?
+### <a name="what-nfs-version-does-azure-netapp-files-support"></a>Какую версию NFS поддерживает Файлы NetApp Azure?
 
-Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы можете создать том с помощью версии NFS. 
+Файлы Azure NetApp поддерживают NFSv3 и NFSv4.1. Вы можете [создать том,](azure-netapp-files-create-volumes.md) используя обе версии NFS. 
 
-> [!IMPORTANT] 
-> Для доступа к функции NFS версии 4.1 требуется внесение в список разрешений.  Чтобы запросить внесение в список разрешений, отправьте запрос по адресу <anffeedback@microsoft.com>. 
+### <a name="how-do-i-enable-root-squashing"></a>Как включить сквошинг корневой корня?
 
+Корневая сквошинг в настоящее время не поддерживается.
 
-### <a name="how-do-i-enable-root-squashing"></a>Разделы справки включить корневую использование параметра Squash?
+## <a name="smb-faqs"></a>Часто задаваемые вопросы с мсм
 
-Корневой использование параметра squash в настоящее время не поддерживается.
+### <a name="is-an-active-directory-connection-required-for-smb-access"></a>Требуется ли для доступа к SMB подключение active Directory? 
 
-## <a name="smb-faqs"></a>Часто задаваемые вопросы по SMB
+Да, перед развертыванием объема SMB необходимо создать соединение Active Directory. Указанные контроллеры доменов должны быть доступны в делегированной подсети файлов Azure NetApp для успешного подключения.  Подробнее о [создании объема SMB.](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb) 
 
-### <a name="is-an-active-directory-connection-required-for-smb-access"></a>Требуется Active Directoryое подключение для доступа по протоколу SMB? 
+### <a name="how-many-active-directory-connections-are-supported"></a>Сколько подключений Active Directory поддерживается?
 
-Да, перед развертыванием тома SMB необходимо создать подключение Active Directory. Для успешного подключения указанные контроллеры домена должны быть доступны для делегированной подсети Azure NetApp Files.  Дополнительные сведения см. [в разделе Создание тома SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb) . 
+Файлы Azure NetApp не поддерживают несколько подключений Active Directory (AD) в одном *регионе,* даже если подключения AD находятся в разных учетных записях NetApp. Тем не менее, вы можете иметь несколько подключения AD в одной *подписке,* до тех пор, как соединения AD находятся в разных регионах. Если вам требуется несколько подключения AD в одном регионе, для этого можно использовать отдельные подписки. 
 
-### <a name="how-many-active-directory-connections-are-supported"></a>Сколько Active Directory подключений поддерживается?
+Подключение AD настроено на учетную запись NetApp; подключение AD отображается только через созданную учетную запись NetApp.
 
-Azure NetApp Files не поддерживает множественные подключения Active Directory (AD) в одном *регионе*, даже если подключения к Active Directory находятся в разных учетных записях NetApp. Однако в одной *подписке*можно использовать несколько подключений AD, если они находятся в разных регионах. Если требуется несколько подключений AD в одном регионе, для этого можно использовать отдельные подписки. 
+### <a name="does-azure-netapp-files-support-azure-active-directory"></a>Поддерживают ли файлы Azure NetApp Active Directory? 
 
-Подключение AD настраивается для каждой учетной записи NetApp; подключение Active Directory доступно только через учетную запись NetApp, в которой он создан.
+Поддерживаются как [службы домена Azure Active Directory (AD),](https://docs.microsoft.com/azure/active-directory-domain-services/overview) так и [службы домена Active Directory Domain (AD DS).](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) Вы можете использовать существующие контроллеры доменов Active Directory с помощью файлов Azure NetApp. Контроллеры домена могут распорядиться в Azure как виртуальные машины, так и в помещениях через ExpressRoute или S2S VPN. В настоящее время Файлы Azure NetApp не поддерживают присоединение AD к [active Directory Azure.](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/)
 
-### <a name="does-azure-netapp-files-support-azure-active-directory"></a>Поддерживает ли Azure NetApp Files Azure Active Directory? 
+Если вы используете файлы Azure NetApp с помощью служб `OU=AADDC Computers` домена Active Directory, путь организационного подразделения — при настройке Active Directory для учетной записи NetApp.
 
-Поддерживаются [службы доменов Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/overview) и [домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут размещаться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В настоящее время Azure NetApp Files не поддерживает присоединение к AD для [Azure Active Directory](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/) .
+### <a name="what-versions-of-windows-server-active-directory-are-supported"></a>Какие версии активного каталога Windows Server поддерживаются?
 
-При использовании Azure NetApp Files с доменными службами Azure Active Directory путь подразделения `OU=AADDC Computers` при настройке Active Directory для учетной записи NetApp.
+Azure NetApp Files поддерживает Windows Server 2008r2SP1-2019 версии служб домена Active Directory.
 
-### <a name="what-versions-of-windows-server-active-directory-are-supported"></a>Какие версии Windows Server Active Directory поддерживаются?
+### <a name="why-does-the-available-space-on-my-smb-client-not-show-the-provisioned-size"></a>Почему доступное пространство в клиенте SMB не показывает приготовивого размера?
 
-Azure NetApp Files поддерживает версии домен Active Directory служб Windows Server 2008r2SP1-2019.
-
-### <a name="why-does-the-available-space-on-my-smb-client-not-show-the-provisioned-size"></a>Почему доступное пространство на моем клиенте SMB не показывает подготовленный размер?
-
-Размер тома, сообщаемый SMB-клиентом, — это максимальный размер, который может увеличить Azure NetApp Files том. Размер тома Azure NetApp Files, как показано на SMB-клиенте, не отражен в размере квоты или размера тома. Вы можете получить Azure NetApp Files размер или квоту тома с помощью портал Azure или API.
+Размер объема, о которых сообщает клиент SMB, — это максимальный размер, до которым может вырасти объем файлов NetApp Azure. Размер объема файлов Azure NetApp, показанный на клиенте SMB, не отражает квоту или размер объема. Вы можете получить объем или квоту файлов Azure NetApp через портал Azure или API.
 <!--
 ### Does Azure NetApp Files support LDAP signing? 
 
 Yes, Azure NetApp Files supports LDAP signing by default. This functionality enables secure LDAP lookups between the Azure NetApp Files service and the user-specified [Active Directory Domain Services domain controllers](https://docs.microsoft.com/windows/win32/ad/active-directory-domain-services). For more information, see [ADV190023 | Microsoft Guidance for Enabling LDAP Channel Binding and LDAP Signing](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).
 --> 
 
-## <a name="capacity-management-faqs"></a>Вопросы и ответы по управлению емкостью
+## <a name="capacity-management-faqs"></a>Часто задаваемые вопросы управления потенциалом
 
-### <a name="how-do-i-monitor-usage-for-capacity-pool-and-volume-of-azure-netapp-files"></a>Разделы справки отслеживать использование пула емкости и объема Azure NetApp Files? 
+### <a name="how-do-i-monitor-usage-for-capacity-pool-and-volume-of-azure-netapp-files"></a>Как контролировать использование пула емкости и объема файлов Azure NetApp? 
 
-Azure NetApp Files предоставляет метрики емкости пула и использования томов. Можно также использовать Azure Monitor для мониторинга использования Azure NetApp Files. Дополнительные сведения см. в разделе [метрики для Azure NetApp Files](azure-netapp-files-metrics.md) . 
+Файлы Azure NetApp предоставляют показатели пула емкости и объема. Вы также можете использовать Azure Monitor для мониторинга использования файлов NetApp Azure. Подробности смотрите в материалах для [файлов Azure NetApp.](azure-netapp-files-metrics.md) 
 
-### <a name="can-i-manage-azure-netapp-files-through-azure-storage-explorer"></a>Можно ли управлять Azure NetApp Files с помощью Обозреватель службы хранилища Azure?
+### <a name="can-i-manage-azure-netapp-files-through-azure-storage-explorer"></a>Можно ли управлять файлами NetApp Azure через Azure Storage Explorer?
 
-Нет. Azure NetApp Files не поддерживается Обозреватель службы хранилища Azure.
+Нет. Файлы Azure NetApp не поддерживаются Azure Storage Explorer.
 
-## <a name="data-migration-and-protection-faqs"></a>Часто задаваемые вопросы по переносу и защите данных
+### <a name="how-do-i-determine-if-a-directory-is-approaching-the-limit-size"></a>Как определить, приближается ли каталог к предельного размера?
 
-### <a name="how-do-i-migrate-data-to-azure-netapp-files"></a>Разделы справки перенести данные в Azure NetApp Files?
-Azure NetApp Files предоставляет тома NFS и SMB.  Для переноса данных в службу можно использовать любое средство копирования на основе файлов. 
+Вы можете `stat` использовать команду клиента, чтобы увидеть, приближается ли каталог к пределу максимального размера (320 МБ).
 
-NetApp предлагает решение на основе SaaS, [NetApp облачную синхронизацию](https://cloud.netapp.com/cloud-sync-service).  Решение позволяет реплицировать данные NFS или SMB в Azure NetApp Files экспорта NFS или общих ресурсах SMB. 
+Для каталога 320 МБ количество блоков составляет 655360, при этом размер каждого блока составляет 512 байтов.  (То есть, 320x1024x1024/512.)  
 
-Можно также использовать широкий набор бесплатных средств для копирования данных. Для NFS можно использовать средства рабочих нагрузок, такие как [rsync](https://rsync.samba.org/examples.html) , для копирования и синхронизации исходных данных в том Azure NetApp Files. Для SMB можно использовать рабочие нагрузки с помощью средства [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) аналогичным образом.  Эти средства также могут выполнять репликацию разрешений для файлов и папок. 
+Примеры:
 
-Ниже приведены требования к переносу данных из локальной среды в Azure NetApp Files. 
+    [makam@cycrh6rtp07 ~]$ stat bin
+    File: 'bin'
+    Size: 4096            Blocks: 8          IO Block: 65536  directory
 
-- Убедитесь, что Azure NetApp Files доступен в целевом регионе Azure.
-- Проверьте сетевое подключение между исходным и Azure NetApp Files целевым IP-адресом тома. Обмен данными между локальным и Azure NetApp Files службой поддерживается через ExpressRoute.
-- Создайте целевой Azure NetApp Files том.
-- Перенесите исходные данные на целевой том с помощью предпочтительного средства копирования файлов.
+    [makam@cycrh6rtp07 ~]$ stat tmp
+    File: 'tmp'
+    Size: 12288           Blocks: 24         IO Block: 65536  directory
+ 
+    [makam@cycrh6rtp07 ~]$ stat tmp1
+    File: 'tmp1'
+    Size: 4096            Blocks: 8          IO Block: 65536  directory
 
-### <a name="how-do-i-create-a-copy-of-an-azure-netapp-files-volume-in-another-azure-region"></a>Разделы справки создать копию тома Azure NetApp Files в другом регионе Azure?
+## <a name="data-migration-and-protection-faqs"></a>Миграция данных и защита часто задаваемых вопросов
+
+### <a name="how-do-i-migrate-data-to-azure-netapp-files"></a>Как перенести данные в файлы NetApp Azure?
+Файлы Azure NetApp предоставляют объемы NFS и SMB.  Для переноса данных в службу можно использовать любой файловый инструмент копирования. 
+
+NetApp предлагает решение на основе SaaS, [NetApp Cloud Sync](https://cloud.netapp.com/cloud-sync-service).  Решение позволяет реплицировать данные NFS или SMB на экспорт NFS-файлов Azure NetApp или акции SMB. 
+
+Вы также можете использовать широкий спектр бесплатных инструментов для копирования данных. Для NFS можно использовать инструменты рабочих нагрузок, такие как [rsync,](https://rsync.samba.org/examples.html) для копирования и синхронизации исходных данных в объем файлов NetApp Azure. Для малого и среднего бизнеса можно использовать [робокопию](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) рабочих нагрузок таким же образом.  Эти инструменты также могут реплицировать разрешения файлов или папок. 
+
+Требования к миграции данных из файлов Azure NetApp следующие: 
+
+- Убедитесь, что файлы Azure NetApp доступны в целевом регионе Azure.
+- Проверка подключения к сети между источником и ip-адресом целевого объема Файлов Сети NetApp. Передача данных между помещениями и сервисом Azure NetApp Files поддерживается через ExpressRoute.
+- Создайте целевой объем файлов NetApp Azure.
+- Перенесите исходные данные в целевой объем с помощью предпочтительного инструмента копирования файлов.
+
+### <a name="how-do-i-create-a-copy-of-an-azure-netapp-files-volume-in-another-azure-region"></a>Как создать копию объема файлов NetApp Azure в другом регионе Azure?
     
-Azure NetApp Files предоставляет тома NFS и SMB.  Любое средство копирования на основе файлов можно использовать для репликации данных между регионами Azure. 
+Файлы Azure NetApp предоставляют объемы NFS и SMB.  Любой инструмент копирования файлов может использоваться для репликации данных между регионами Azure. 
 
-NetApp предлагает решение на основе SaaS, [NetApp облачную синхронизацию](https://cloud.netapp.com/cloud-sync-service).  Решение позволяет реплицировать данные NFS или SMB в Azure NetApp Files экспорта NFS или общих ресурсах SMB. 
+NetApp предлагает решение на базе SaaS, [NetApp Cloud Sync](https://cloud.netapp.com/cloud-sync-service).  Решение позволяет реплицировать данные NFS или SMB на экспорт NFS-файлов Azure NetApp или акции SMB. 
 
-Можно также использовать широкий набор бесплатных средств для копирования данных. Для NFS можно использовать средства рабочих нагрузок, такие как [rsync](https://rsync.samba.org/examples.html) , для копирования и синхронизации исходных данных в том Azure NetApp Files. Для SMB можно использовать рабочие нагрузки с помощью средства [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) аналогичным образом.  Эти средства также могут выполнять репликацию разрешений для файлов и папок. 
+Вы также можете использовать широкий спектр бесплатных инструментов для копирования данных. Для NFS можно использовать инструменты рабочих нагрузок, такие как [rsync,](https://rsync.samba.org/examples.html) для копирования и синхронизации исходных данных в объем файлов NetApp Azure. Для малого и среднего бизнеса можно использовать [робокопию](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) рабочих нагрузок таким же образом.  Эти инструменты также могут реплицировать разрешения файлов или папок. 
 
-Ниже приведены требования к репликации Azure NetApp Files тома в другой регион Azure. 
-- Убедитесь, что Azure NetApp Files доступен в целевом регионе Azure.
-- Проверьте сетевое подключение между виртуальных сетей в каждом регионе. В настоящее время глобальный пиринг между виртуальных сетей не поддерживается.  Вы можете установить подключение между виртуальных сетей, связав его с каналом ExpressRoute или с помощью VPN-подключения S2S. 
-- Создайте целевой Azure NetApp Files том.
-- Перенесите исходные данные на целевой том с помощью предпочтительного средства копирования файлов.
+Требования к репликации объема файлов NetApp Azure в другой регион Azure следующие: 
+- Убедитесь, что файлы Azure NetApp доступны в целевом регионе Azure.
+- Проверка подключения к сети между VNets в каждом регионе. В настоящее время глобальное пиринг между VNets не поддерживается.  Вы можете установить связь между VNets, связавшись с схемой ExpressRoute или используя соединение S2S VPN. 
+- Создайте целевой объем файлов NetApp Azure.
+- Перенесите исходные данные в целевой объем с помощью предпочтительного инструмента копирования файлов.
 
-### <a name="is-migration-with-azure-data-box-supported"></a>Поддерживается ли миграция с Azure Data Box?
+### <a name="is-migration-with-azure-data-box-supported"></a>Поддерживается ли миграция с помощью ящика данных Azure?
 
-Нет. Azure Data Box не поддерживает Azure NetApp Files в данный момент. 
+Нет. В настоящее время Azure Data Box не поддерживает файлы NetApp Azure. 
 
-### <a name="is-migration-with-azure-importexport-service-supported"></a>Поддерживается ли миграция с поддержкой службы импорта и экспорта Azure?
+### <a name="is-migration-with-azure-importexport-service-supported"></a>Поддерживается ли миграция с помощью службы импорта/экспорта Azure?
 
-Нет. Служба импорта и экспорта Azure не поддерживает Azure NetApp Files в настоящее время.
+Нет. Служба импорта/экспорта Azure в настоящее время не поддерживает файлы NetApp Azure.
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
-- [Microsoft Azure ExpressRoute часто задаваемые вопросы](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
-- [Вопросы и ответы по виртуальная сеть Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)
+- [Часто задаваемые вопросы Microsoft Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
+- [Задаваемые вопросы виртуальной сети Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)
 - [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)
 - [Azure Data Box](https://docs.microsoft.com/azure/databox-family/)
-- [Часто задаваемые вопросы о производительности SMB для Azure NetApp Files](azure-netapp-files-smb-performance.md)
+- [Часто задаваемые вопросы о производительности SMB для файлов Azure NetApp](azure-netapp-files-smb-performance.md)
