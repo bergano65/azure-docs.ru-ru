@@ -1,24 +1,24 @@
 ---
-title: Справочник по артефактам шаблона
-description: Содержит пример артефакта шаблона развертывания для управляемых приложений Azure.
+title: Ссылка на артефакт шаблона
+description: Приводит пример артефакта шаблона развертывания для управляемых приложений Azure.
 ms.topic: conceptual
 ms.author: lazinnat
 author: lazinnat
 ms.date: 07/11/2019
 ms.openlocfilehash: 2bc0017d71e159ac490041494bcf37db035ef421
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75651466"
 ---
-# <a name="reference-deployment-template-artifact"></a>Ссылка: артефакт шаблона развертывания
+# <a name="reference-deployment-template-artifact"></a>Справка: артефакт шаблона развертывания
 
-Эта статья представляет собой справочник по артефакту *mainTemplate. JSON* в управляемых приложениях Azure. Дополнительные сведения о создании шаблона развертывания см. в разделе [шаблоны Azure Resource Manager](../templates/template-syntax.md).
+Эта статья является ссылкой на артефакт *mainTemplate.json* в управляемых приложениях Azure. Для получения дополнительной информации об [Azure Resource Manager templates](../templates/template-syntax.md)шаблоне развертывания авторов см.
 
 ## <a name="deployment-template"></a>Шаблон развертывания
 
-В следующем JSON показан пример файла *mainTemplate. JSON* для управляемых приложений Azure:
+Следующие JSON показывает пример файла *mainTemplate.json* для управляемых приложений Azure:
 
 ```json
 {
@@ -189,6 +189,6 @@ ms.locfileid: "75651466"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник. Создание управляемого приложения с настраиваемыми действиями и ресурсами](tutorial-create-managed-app-with-custom-provider.md)
-- [Ссылка: артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
-- [Ссылка: Просмотр артефакта определения](reference-view-definition-artifact.md)
+- [Учебник: Создание управляемого приложения с помощью пользовательских действий и ресурсов](tutorial-create-managed-app-with-custom-provider.md)
+- [Справка: Артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
+- [Ссылка: Артефакт определения представления](reference-view-definition-artifact.md)

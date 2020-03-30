@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: yegu
 ms.openlocfilehash: 61e93e3700b9a396d2ac4fdcbb51fc5c874cf9cb
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68286245"
 ---
 Приложения .NET могут использовать клиент кэша **StackExchange.Redis** , который можно настроить в Visual Studio, используя пакет NuGet, упрощающий настройку клиентских приложений кэша. 
@@ -18,14 +18,14 @@ ms.locfileid: "68286245"
 >
 >
 
-Чтобы настроить клиентское приложение в Visual Studio, используя пакет StackExchange.Redis из NuGet, щелкните правой кнопкой мыши **обозреватель решений** и выберите **Управление пакетами NuGet**. 
+Чтобы настроить использование пакета NuGet StackExchange.Redis клиентским приложением в Visual Studio, щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите пункт **Управление пакетами NuGet**. 
 
 ![Управление пакетами NuGet](media/redis-cache-configure-stackexchange-redis-nuget/redis-cache-manage-nuget-menu.png)
 
 Введите в поле поиска **StackExchange.Redis** или **StackExchange.Redis.StrongName**, выберите в результатах нужную версию и щелкните **Установить**.
 
 > [!NOTE]
-> Если вы хотите использовать версию клиентской библиотеки **StackExchange.Redis** со строгими именами, выберите **StackExchange.Redis.StrongName**, в противном случае выберите **StackExchange.Redis**.
+> Если требуется использовать версию клиентской библиотеки **StackExchange.Redis** со строгим именем, выберите **StackExchange.Redis.StrongName**; в противном случае выберите **StackExchange.Redis**.
 >
 >
 
@@ -38,7 +38,7 @@ ms.locfileid: "68286245"
 >
 >
 
-Вы также можете установить пакет StackExchange.Redis NuGet, щелкнув в меню **Средства** **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**, а затем выполнив в окне **консоли диспетчера пакетов** следующую команду.
+Вы также можете установить пакет StackExchange.Redis NuGet, щелкнув в меню **Средства****Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**, а затем выполнив в окне **консоли диспетчера пакетов** следующую команду.
 
 ```
 Install-Package StackExchange.Redis

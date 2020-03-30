@@ -1,27 +1,27 @@
 ---
-title: Подключить секретный том к группе контейнеров
+title: Маунт секретный том для контейнерной группы
 description: Узнайте, как подключить том secret для хранения конфиденциальной информации, чтобы обеспечить доступ экземплярам контейнеров
 ms.topic: article
 ms.date: 07/19/2018
 ms.openlocfilehash: 913e3d147519bc73c3c57b8da383f9d373f3666d
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78249953"
 ---
 # <a name="mount-a-secret-volume-in-azure-container-instances"></a>Подключение тома secret в службе "Экземпляры контейнеров Azure"
 
 Используйте том *secret*, чтобы предоставить конфиденциальную информацию контейнерам в группе контейнеров. В томе *secret* в файлах хранятся секреты, к которым у контейнеров в группе контейнеров есть доступ. С помощью секретов в томе *secret* можно избежать добавления конфиденциальных данных, например ключей SSH или учетных данных базы данных, в коде приложения.
 
-Все *секретные* тома поддерживаются [тмпфс][tmpfs], файловой системой, поддерживающей ОЗУ; их содержимое никогда не записывается в долговременное хранилище.
+Все тома *secret* поддерживает [tmpfs][tmpfs] — файловая система, сохраняющая данные в ОЗУ. Их содержимое никогда не записывается в хранилище для долговременного хранения данных.
 
 > [!NOTE]
-> Тома *secret* сейчас ограничены контейнерами Linux. Сведения о том, как передавать переменные безопасной среды для контейнеров Windows и Linux см. в статье [Настройка переменных среды](container-instances-environment-variables.md). Пока мы работаем над переносом всех компонентов в контейнеры Windows, в [обзоре](container-instances-overview.md#linux-and-windows-containers)можно найти различия в текущих платформах.
+> Тома *secret* сейчас ограничены контейнерами Linux. Сведения о том, как передавать переменные безопасной среды для контейнеров Windows и Linux см. в статье [Настройка переменных среды](container-instances-environment-variables.md). В то время как мы работаем над тем, чтобы привести все функции в контейнеры Windows, вы можете найти текущие различия платформы в [обзоре.](container-instances-overview.md#linux-and-windows-containers)
 
 ## <a name="mount-secret-volume---azure-cli"></a>Подключение тома secret в Azure CLI
 
-Чтобы развернуть контейнер с одним или несколькими секретами с помощью Azure CLI, включите параметры `--secrets` и `--secrets-mount-path` в команду [AZ Container Create][az-container-create] . В этом примере том *secret*, состоящий из двух секретов, "mysecret1" и "mysecret2", подключается к `/mnt/secrets`:
+Чтобы развернуть контейнер с одним или несколькими секретами с помощью Azure CLI, добавьте параметры `--secrets` и `--secrets-mount-path` в команду [az container create][az-container-create]. В этом примере том *secret*, состоящий из двух секретов, "mysecret1" и "mysecret2", подключается к `/mnt/secrets`:
 
 ```azurecli-interactive
 az container create \
@@ -32,7 +32,7 @@ az container create \
     --secrets-mount-path /mnt/secrets
 ```
 
-В следующем выводе [AZ Container Exec][az-container-exec] показано, как открыть оболочку в работающем контейнере, вывести список файлов на секретном томе, а затем отобразить их содержимое:
+В следующих выходных данных [az container exec][az-container-exec] показано открытие оболочки в выполняемом контейнере, список файлов в томе secret, а затем их содержимое:
 
 ```azurecli
 az container exec --resource-group myResourceGroup --name secret-volume-demo --exec-command "/bin/sh"
@@ -87,7 +87,7 @@ tags: {}
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
-Чтобы выполнить развертывание с помощью шаблона YAML, сохраните предыдущую YAML в файл с именем `deploy-aci.yaml`, а затем выполните команду [AZ Container Create][az-container-create] с параметром `--file`:
+Для развертывания с помощью шаблона YAML сохраните предыдущий YAML в файл с именем `deploy-aci.yaml`, а затем выполните команду [az container create][az-container-create] с параметром `--file`:
 
 ```azurecli-interactive
 # Deploy with YAML template
@@ -107,7 +107,7 @@ az container create --resource-group myResourceGroup --file deploy-aci.yaml
 <!-- https://github.com/Azure/azure-docs-json-samples/blob/master/container-instances/aci-deploy-volume-secret.json -->
 [!code-json[volume-secret](~/azure-docs-json-samples/container-instances/aci-deploy-volume-secret.json)]
 
-Чтобы выполнить развертывание с помощью шаблона диспетчер ресурсов, сохраните предыдущий JSON в файл с именем `deploy-aci.json`, а затем выполните команду [AZ Group Deployment Create][az-group-deployment-create] с параметром `--template-file`:
+Для развертывания с помощью шаблона Resource Manager сохраните предыдущий JSON в файл с именем `deploy-aci.json`, а затем выполните команду [az group deployment create][az-group-deployment-create] с параметром `--template-file`:
 
 ```azurecli-interactive
 # Deploy with Resource Manager template
@@ -121,7 +121,7 @@ az group deployment create --resource-group myResourceGroup --template-file depl
 Сведения о подключении других типов томов в службе "Экземпляры контейнеров Azure" см. в следующих статьях:
 
 * [Mount an Azure file share in Azure Container Instances](container-instances-volume-azure-files.md) (Подключение файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure")
-* [Mount an emptyDir volume in Azure Container Instances](container-instances-volume-emptydir.md) (Подключение тома emptyDir в службе "Экземпляры контейнеров Azure")
+* [Подключение тома emptyDir в службе "Экземпляры контейнеров Azure"](container-instances-volume-emptydir.md)
 * [Подключение тома gitRepo в службе "Экземпляры контейнеров Azure"](container-instances-volume-gitrepo.md)
 
 ### <a name="secure-environment-variables"></a>Защита переменных среды

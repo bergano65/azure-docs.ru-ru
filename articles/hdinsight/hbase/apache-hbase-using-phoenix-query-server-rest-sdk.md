@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/01/2020
 ms.openlocfilehash: 84c2bad1004029fe61dcfc19321957a170284587
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75612263"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
@@ -71,7 +71,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Ниже приведены некоторые важные свойства.
 
-| Свойство | Description |
+| Свойство | Описание |
 | -- | -- |
 | AutoCommit | Логическое значение, обозначающее, включено ли свойство `autoCommit` для транзакций Phoenix. |
 | ReadOnly | Логическое значение, обозначающее, является ли подключение доступным только для чтения. |
@@ -82,7 +82,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Возможные значения `TransactionIsolation`:
 
-| Значение изоляции | Description |
+| Значение изоляции | Описание |
 | -- | -- |
 | 0 | Транзакции не поддерживаются. |
 | 1 | Могут возникать операции чтения "грязных" данных, а также неповторяемые и фантомные операции чтения. |
@@ -94,7 +94,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 В HBase, как и в любой другой реляционной СУБД, данные хранятся в таблицах. Phoenix использует стандартные запросы SQL для создания новых таблиц при определении первичного ключа и типов столбцов.
 
-В этом примере и всех последующих примерах используется созданный объект `PhoenixClient`, как определено в [экземпляре нового объекта PhoenixClient](#instantiate-new-phoenixclient-object).
+Этот пример и все более поздние `PhoenixClient` примеры, используйте мгновенный объект, как это определено в [Instantiate новый объект PhoenixClient](#instantiate-new-phoenixclient-object).
 
 ```csharp
 string connId = Guid.NewGuid().ToString();
@@ -277,7 +277,7 @@ finally
 }
 ```
 
-Структура выполнения инструкции insert аналогична созданию новой таблицы. В конце блока `try` транзакция зафиксирована явным образом. В этом примере транзакция insert повторяется 300 раз. В следующем примере показан более эффективный процесс пакетной вставки.
+Структура выполнения инструкции insert аналогична созданию новой таблицы. В конце `try` блока транзакция явно совершается. В этом примере транзакция insert повторяется 300 раз. В следующем примере показан более эффективный процесс пакетной вставки.
 
 ## <a name="batch-insert-data"></a>Пакетная вставка данных
 

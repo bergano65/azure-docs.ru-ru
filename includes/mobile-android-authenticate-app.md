@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: crdun
 ms.openlocfilehash: eded2d6a9f2c270a2b3ccca296277b0a016733fd
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67185974"
 ---
 1. Откройте проект в Android Studio.
@@ -27,7 +27,7 @@ ms.locfileid: "67185974"
     import com.microsoft.windowsazure.mobileservices.authentication.MobileServiceUser;
     ```
 
-3. Добавьте в класс **ToDoActivity** следующий метод:
+3. Добавьте следующий метод в класс **ToDoActivity:**
 
     ```java
     // You can choose any unique number here to differentiate auth providers from each other. Note this is the same code at login() and onActivityResult().
@@ -62,7 +62,7 @@ ms.locfileid: "67185974"
     Этот код создает метод для обработки процесса проверки подлинности Google. В диалоговом окне отображается идентификатор пользователя, прошедшего проверку подлинности. Вы сможете продолжить, только если проверка подлинности выполнена успешно.
 
     > [!NOTE]
-    > Если вы используете поставщик удостоверений, отличный от Google, измените значение, передаваемое **входа** метода к одному из следующих значений: _MicrosoftAccount_, _Facebook_, _Twitter_, или _windowsazureactivedirectory_.
+    > Если вы используете поставщик удостоверений, отличный от Google, измените значение, переданное в методе **login**, на одно из следующих значений: _MicrosoftAccount_, _Facebook_, _Twitter_ или _windowsazureactivedirectory_.
 
 4. Добавьте в метод **onCreate** следующую строку после кода, который формирует экземпляр объекта `MobileServiceClient`.
 
@@ -72,7 +72,7 @@ ms.locfileid: "67185974"
 
     Этот вызов запускает процесс проверки подлинности.
 
-5. Переместите оставшийся код после `authenticate();` в методе **onCreate** в новый метод **createTable**.
+5. Переместите `authenticate();` оставшийся код после в методе **onCreate** в новый метод **createTable:**
 
     ```java
     private void createTable() {
@@ -135,6 +135,6 @@ ms.locfileid: "67185974"
 9. В меню **Запуск** щелкните **Запуск приложения**, чтобы запустить приложение и выполнить вход с помощью выбранного поставщика удостоверений.
 
 > [!WARNING]
-> Упомянутая схема URL-адреса чувствительная к регистру. Убедитесь, что во всех вхождениях `{url_scheme_of_you_app}` используется один и тот же регистр.
+> В упомянутой схеме URL-адресов учитывается регистр. Убедитесь, что во всех вхождениях `{url_scheme_of_you_app}` используется один и тот же регистр.
 
 После входа мобильное приложение должно работать без ошибок, а у вас должна быть возможность отправлять запросы в серверную службу и обновлять данные.

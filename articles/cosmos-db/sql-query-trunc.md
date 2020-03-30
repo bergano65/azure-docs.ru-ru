@@ -1,6 +1,6 @@
 ---
 title: TRUNC на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System TRUNC в Azure Cosmos DB.
+description: Узнайте о функции системы TRUNC в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 8bad33f593bae2679c83d59ae4567dcab4a64809
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78304231"
 ---
-# <a name="trunc-azure-cosmos-db"></a>TRUNC (Azure Cosmos DB)
+# <a name="trunc-azure-cosmos-db"></a>TRUNC (Azure Космос DB)
  Возвращает числовое значение, округленное до ближайшего целого значения в меньшую сторону.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -48,10 +48,10 @@ SELECT TRUNC(2.4) AS t1, TRUNC(2.6) AS t2, TRUNC(2.5) AS t3, TRUNC(-2.4) AS t4, 
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
+Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

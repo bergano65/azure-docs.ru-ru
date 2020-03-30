@@ -5,17 +5,17 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: fe4ecc237b56575f99844d3ec074225fadb69d3c
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67673494"
 ---
 ## <a name="configure-your-application-to-access-azure-storage"></a>Настройка приложения для доступа к хранилищу Azure
 Существует два способа проверки подлинности приложения при получении доступа к службам хранения:
 
-* Общий ключ: Использование общего ключа только для целей тестирования
-* Подписанные URL-адреса (SAS): Использовать SAS для рабочих приложений
+* Общий ключ — следует использовать только для тестирования.
+* Подписанный URL-адрес (SAS) — используется для рабочих приложений.
 
 ### <a name="shared-key"></a>Общий ключ
 Проверка подлинности с помощью общего ключа означает, что приложение будет использовать имя и ключ учетной записи для доступа к службам хранилища. Чтобы быстро показать, как использовать эту библиотеку, в данном руководстве по началу работы мы используем аутентификацию с общим ключом.
@@ -49,5 +49,5 @@ ms.locfileid: "67673494"
    
    `"SharedAccessSignature=sv=2015-04-05&ss=b&srt=sco&sp=rw&se=2016-07-21T18%3A00%3A00Z&sig=3ABdLOJZosCp0o491T%2BqZGKIhafF1nlM3MzESDDD3Gg%3D;BlobEndpoint=https://youraccount.blob.core.windows.net"`
 
-Как видите, при использовании SAS в приложении вам не нужно предоставлять ключ учетной записи. Дополнительные сведения о SAS и рекомендации по использованию SAS путем извлечения [подписей общего доступа: Общие сведения о модели SAS](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md).
+Как видите, при использовании SAS в приложении вам не нужно предоставлять ключ учетной записи. Дополнительные сведения и рекомендации по использованию SAS см. в статье [о подписанных URL-адресах и общих сведениях о модели SAS](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md).
 

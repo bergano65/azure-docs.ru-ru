@@ -1,5 +1,5 @@
 ---
-title: Microsoft Threat Modeling Tool выпуск 1/29/2019
+title: Microsoft Угроза Моделирование Релиз 1/29/2019
 titleSuffix: Azure
 description: Документирование заметок о выпуске средства моделирования угроз
 author: jegeib
@@ -9,17 +9,17 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 01/25/2019
 ms.openlocfilehash: 7d0be8d7243331264c10a407e3d78370ea798928
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78269778"
 ---
 # <a name="threat-modeling-tool-update-release-71601261---1292019"></a>Threat Modeling Tool, выпуск обновления 7.1.60126.1 от 29.01.2019
 
 29 января 2019 г. была выпущена версия 7.1.60126.1 средства Microsoft Threat Modeling Tool со следующими изменениями.
 
-- Минимальная требуемая версия .NET была увеличена до [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262).
+- Минимальная требуемая версия .NET увеличена до [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262).
 - Минимальная требуемая версия Windows повышена до [юбилейного обновления Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) из-за зависимости от .NET.
 - В меню параметров средства добавлена функция переключения для проверки моделей.
 - Обновлено несколько ссылок в свойствах угроз.
@@ -30,7 +30,7 @@ ms.locfileid: "78269778"
 
 ### <a name="model-validation-option"></a>Параметр проверки модели
 
-На основе отзывов клиентов в средство был добавлен параметр для включения или отключения проверки модели. Ранее, если шаблон использовал один однонаправленный поток данных между двумя объектами, вы могли получить сообщение об ошибке в кадре messages, о котором говорится: Обжектснаме требует хотя бы одного "Any". Отключение проверки модели предотвратит отображение этих предупреждений в представлении.
+На основе отзывов клиентов в средство был добавлен параметр для включения или отключения проверки модели. Ранее, если ваш шаблон использовал один однонаправленный поток данных между двумя объектами, вы могли получить сообщение об ошибке в кадре Сообщений, в котором говорилось: ObjectsName требует по крайней мере одного "Любого". Отключение проверки модели предотвратит отображение этих предупреждений в представлении.
 
 Параметр включения и выключения проверки модели можно найти в меню "Файл->Настройки->Параметры". Значением по умолчанию для этого параметра является "Отключено".
 
@@ -39,9 +39,9 @@ ms.locfileid: "78269778"
 ## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
-  - [Юбилейное обновление Microsoft Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или более поздней версии
+  - [Microsoft Windows 10 Годовщина Обновление](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или позже
 - Требуемая версия .NET
-  - [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или более поздней версии
+  - [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или позже
 - Дополнительные требования
   - Для получения обновлений средства и шаблонов требуется подключение к Интернету.
 
@@ -61,6 +61,6 @@ ms.locfileid: "78269778"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

@@ -1,15 +1,15 @@
 ---
-title: Запрос событий кластера с помощью API-интерфейсов Евентсторе
+title: Запрос для кластерных событий с использованием AIS EventStore
 description: Узнайте, как использовать интерфейсы API EventStore в Azure Service Fabric для запроса событий платформы.
 author: srrengar
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: srrengar
 ms.openlocfilehash: 48350caef6bdaafda9aff7ac776d67b314aeaf8c
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75614406"
 ---
 # <a name="query-eventstore-apis-for-cluster-events"></a>Выполнение запросов к интерфейсам API EventStore для получения событий кластера

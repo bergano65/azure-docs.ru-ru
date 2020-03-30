@@ -1,6 +1,6 @@
 ---
 title: Асинхронное обновление для моделей Azure Analysis Services | Документация Майкрософт
-description: Описывает использование REST API Azure Analysis Services для кода асинхронного обновления данных модели.
+description: Описывает, как использовать API для анализа Azure REST для кодирования асинхронного обновления данных модели.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,17 +8,17 @@ ms.date: 01/14/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 6457f062a40e60a491220fcf977585e8b07445b2
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78273718"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
 Вы можете задать асинхронное обновление данных в табличных моделях Azure Analysis Services, используя любой язык программирования, с помощью которого можно вызвать REST. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
 
-Операции обновления данных могут занять некоторое время в зависимости от ряда факторов, включая объем данных, уровень оптимизации с использованием секций и т. д. Эти операции традиционно были вызваны с помощью существующих методов, таких как использование [Tom](https://docs.microsoft.com/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) (табличная модель объектов), командлеты [PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) или [TMSL](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (язык сценариев табличной модели). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
+Операции по обновлению данных могут занять некоторое время в зависимости от ряда факторов, включая объем данных, уровень оптимизации с помощью разделов и т.д. Эти операции традиционно использовались с помощью существующих методов, таких как использование [TOM](https://docs.microsoft.com/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) (Tabular Object Model), [PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) cmdlets или [TMSL](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (язык сценариев табулярной модели). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
 
 REST API для Azure Analysis Services позволяет выполнять обновления данных асинхронно. REST API устраняет необходимость в длительных подключениях через клиентские приложения. Кроме того, здесь предусмотрены другие возможности, обеспечивающие надежность работы, такие как выполнение повторных попыток и пакетных фиксаций.
 
@@ -30,7 +30,7 @@ REST API для Azure Analysis Services позволяет выполнять о
 https://<rollout>.asazure.windows.net/servers/<serverName>/models/<resource>/
 ```
 
-Например, рассмотрим модель с именем AdventureWorks на сервере с именем `myserver`, расположенную в регионе Azure "Западная часть США". Тогда у сервера будет такое имя:
+Например, рассмотрим модель под названием `myserver`AdventureWorks на сервере под названием, расположенном в регионе Западного региона Azure. Тогда у сервера будет такое имя:
 
 ```
 asazure://westus.asazure.windows.net/myserver 
@@ -56,7 +56,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/
 https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refreshes
 ```
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Все вызовы должны проходить проверку подлинности, для чего нужен допустимый токен Azure Active Directory (OAuth 2) в заголовке авторизации, и соответствовать следующим требованиям:
 
@@ -97,10 +97,10 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-| Имя             | Тип  | Описание  |По умолчанию  |
+| name             | Тип  | Описание  |Значение по умолчанию  |
 |------------------|-------|--------------|---------|
-| `Type`           | Enum  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/analysis-services/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
-| `CommitMode`     | Enum  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  транзакции       |
+| `Type`           | Перечисление.  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/analysis-services/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
+| `CommitMode`     | Перечисление.  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
 | `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/analysis-services/tmsl/sequence-command-tmsl) или другими способами.       | 10        |
 | `RetryCount`     | Int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
 | `Objects`        | Array | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
@@ -110,20 +110,20 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 > [!NOTE]
 > На момент написания статьи требуется, чтобы размер пакета был равен значению MaxParallelism, но это могло измениться.
 
-### <a name="status-values"></a>Значения состояния
+### <a name="status-values"></a>Значения статуса
 
 |Значение состояния  |Описание  |
 |---------|---------|
-|`notStarted`    |   Операция еще не запущена.      |
+|`notStarted`    |   Операция еще не началась.      |
 |`inProgress`     |   Выполняется операция.      |
-|`timedOut`     |    Время ожидания операции истекло на основе указанного пользователем времени ожидания.     |
+|`timedOut`     |    Операция приурочена к указанному пользователем тайм-ауту.     |
 |`cancelled`     |   Операция отменена пользователем или системой.      |
 |`failed`     |   Ошибка при выполнении операции.      |
 |`succeeded`      |   Операция успешно завершена.      |
 
 ## <a name="get-refreshesrefreshid"></a>GET /refreshes/\<refreshId>
 
-Чтобы проверить состояние обновления, используйте команду GET с идентификатором обновления. Ниже приведен пример текста ответа. Если операция выполняется, `inProgress` возвращается в состояние.
+Чтобы проверить состояние обновления, используйте команду GET с идентификатором обновления. Ниже приведен пример текста ответа. Если операция выполняется, `inProgress` возвращается в статус.
 
 ```
 {
@@ -177,7 +177,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 ## <a name="post-sync"></a>POST для /sync
 
-После выполнения операций обновления может потребоваться синхронизация новых данных с репликами для масштабирования запроса. Чтобы выполнить операцию синхронизации для модели, используйте команду POST для функции/Sync. Под заголовком Location в ответе будет указан идентификатор операции.
+Выполняя операции обновления, может потребоваться синхронизация новых данных с репликами для масштабирования запросов. Для выполнения операции синхронизации для модели используйте глагол POST на функции /sync. Под заголовком Location в ответе будет указан идентификатор операции.
 
 ## <a name="get-sync-status"></a>GET для состояния /sync
 
@@ -202,7 +202,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 - 3 — сбой операции.
 - 4 — финализация. Синхронизация завершена, но еще выполняется очистка.
 
-## <a name="code-sample"></a>Образец кода
+## <a name="code-sample"></a>Пример кода
 
 Здесь приведен пример кода C# для начала работы: [RestApiSample на GitHub](https://github.com/Microsoft/Analysis-Services/tree/master/RestApiSample).
 
@@ -211,7 +211,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 1.  Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
 2.  Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
 
-В примере кода используется проверка подлинности [субъекта-службы](#service-principal) .
+В образце кода используется основная аутентификация [службы.](#service-principal)
 
 ### <a name="service-principal"></a>Субъект-служба
 
@@ -222,9 +222,9 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 3.  Запустите образец.
 
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
-[Примеры](analysis-services-samples.md)   
+[Образцы](analysis-services-samples.md)   
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)   
 
 

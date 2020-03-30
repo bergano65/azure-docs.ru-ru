@@ -1,22 +1,22 @@
 ---
-title: Настройка безопасных подключений к кластерам Azure Service Fabric
+title: Настройка безопасных кластерных соединений Azure Service Fabric
 description: Узнайте о том, как использовать Visual Studio для настройки безопасных подключений, поддерживаемых кластером Azure Service Fabric.
 author: cawaMS
 ms.topic: conceptual
 ms.date: 8/04/2017
 ms.author: cawa
 ms.openlocfilehash: 11f76153726d3fc92118fb46cc61b4627ab6a1b2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75464094"
 ---
 # <a name="configure-secure-connections-to-a-service-fabric-cluster-from-visual-studio"></a>Настройка безопасных подключений к кластеру Service Fabric из Visual Studio
 Узнайте, как использовать Azure Visual Studio для безопасного доступа к кластеру Service Fabric с настроенной политикой контроля доступа.
 
 ## <a name="cluster-connection-types"></a>Типы подключения кластера
-Кластер Azure Service Fabric поддерживает два типа соединений: **небезопасные** соединения и безопасные соединения **на основе сертификата x509**. (Для Service Fabric кластеров, размещенных локально, также поддерживаются проверки подлинности **Windows** и **dSTS** .) При создании кластера необходимо настроить тип подключения кластера. После создания изменить тип подключения нельзя.
+Кластер Azure Service Fabric поддерживает два типа соединений: **небезопасные** соединения и безопасные соединения **на основе сертификата x509**. (Для кластеров Service Fabric, размещенных на месте, также поддерживаются аутентификации **Windows** и **dSTS.)** При создании кластера необходимо настроить тип кластерного соединения. После создания изменить тип подключения нельзя.
 
 Средства Service Fabric Visual Studio поддерживают все типы проверки подлинности для подключения к кластеру для публикации. Инструкции по настройке безопасного кластера Service Fabric см. в статье [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-cluster-creation-via-portal.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Области для приложений версии 1.0 (MSAL) | Службы
+title: Области для приложений v1.0 (MSAL) Azure
 description: Дополнительные сведения об областях разрешений для приложения версии 1.0, использующего библиотеку проверки подлинности Майкрософт (MSAL).
 services: active-directory
 author: mmacy
@@ -13,19 +13,19 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: d5b2ef57af112169fb39e0da7a60b095698ff504
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78299836"
 ---
 # <a name="scopes-for-a-web-api-accepting-v10-tokens"></a>Области для веб-API, которые принимают маркеры версии 1.0
 
-Разрешения OAuth2 — это области разрешений, которые предоставляют клиентским приложениям Azure Active Directory (Azure AD) для разработчиков (версия 1.0). Эти области действия разрешений могут быть назначены клиентским приложениям во время предоставления согласия. Дополнительные сведения об `oauth2Permissions` см. в [справке по манифестам приложений Azure Active Directory](reference-app-manifest.md#manifest-reference).
+Разрешения OAuth2 — это области разрешений, которые приложение Azure Active Directory (Azure AD) для разработчиков (v1.0) приложение Web API (ресурс) предоставляет клиентским приложениям. Эти области действия разрешений могут быть назначены клиентским приложениям во время предоставления согласия. Дополнительные сведения об `oauth2Permissions` см. в [справке по манифестам приложений Azure Active Directory](reference-app-manifest.md#manifest-reference).
 
 ## <a name="scopes-to-request-access-to-specific-oauth2-permissions-of-a-v10-application"></a>Области для запроса доступа к конкретным разрешениям OAuth2 в приложении версии 1.0
 
-Чтобы получить токены для конкретных областей приложения версии 1.0 (например, Microsoft Graph API, который https://graph.microsoft.com), создайте области путем сцепления требуемого идентификатора ресурса с нужным разрешением OAuth2 для этого ресурса.
+Приобрести токены для определенных областей приложения v1.0 (например, https://graph.microsoft.com)Microsoft Graph API, который является, создать области, совышая желаемый идентификатор ресурса с желаемым разрешением OAuth2 для этого ресурса.
 
 Например, для доступа от имени пользователя веб-API версии 1.0 с URI идентификатора приложения `ResourceId`:
 
@@ -37,7 +37,7 @@ var scopes = new [] {  ResourceId+"/user_impersonation"};
 var scopes = [ ResourceId + "/user_impersonation"];
 ```
 
-Для чтения и записи в MSAL.NET Azure AD с помощью API Microsoft Graph (HTTPS:\//graph.microsoft.com/) необходимо создать список областей, как показано в следующих примерах:
+Чтобы читать и писать с помощью MSAL.NET Azure AD\/с помощью API Microsoft Graph (https: /graph.microsoft.com/), необходимо создать список областей, показанных в следующих примерах:
 
 ```csharp
 string ResourceId = "https://graph.microsoft.com/";
@@ -49,7 +49,7 @@ var ResourceId = "https://graph.microsoft.com/";
 var scopes = [ ResourceId + "Directory.Read", ResourceID + "Directory.Write"];
 ```
 
-Чтобы записать область, соответствующую Azure Resource Manager API (HTTPS:\//management.core.windows.net/), необходимо запросить следующую область (Обратите внимание на две косые черты):
+Чтобы написать область, соответствующую API-менеджеру\/ресурсов Azure (https:/management.core.windows.net/), необходимо запросить следующую область (обратите внимание на два слэша):
 
 ```csharp
 var scopes = new[] {"https://management.core.windows.net//user_impersonation"};
@@ -63,9 +63,9 @@ var result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 
 Azure AD использует следующую логику:
 
-- Для конечной точки ADAL (Azure AD v 1.0) с маркером доступа v 1.0 (только возможный), AUD = Resource.
-- Для конечной точки MSAL (Microsoft Identity Platform (v 2.0)), запрашивающей маркер доступа для ресурса, принимающего токены версии 2.0, `aud=resource.AppId`
-- Для MSAL (конечная точка версии 2.0) с запросом маркера доступа для ресурса, который принимает маркер доступа v 1.0 (этот вариант описан выше), Azure AD анализирует нужную аудиторию из запрошенной области, принимая все до последней косой черты и используя ее в качестве идентификатора ресурса. Таким образом, если HTTPS:\//database.windows.net требуется аудитория "https:\//database.windows.net/", необходимо запросить область "https:\//database.windows.net//.default". См. также вопрос GitHub [#747: Конечная косая черта URL-адреса ресурса пропущена, что привело к сбою проверки подлинности SQL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
+- Для ADAL (Azure AD v1.0) конечная точка с токеном доступа v1.0 (единственно возможно), aud'resource
+- Для MSAL (платформа идентификации Microsoft (v2.0)) запросить токен доступа для ресурса, принимающего токены v2.0,`aud=resource.AppId`
+- Для MSAL (конечная точка v2.0) запрашивает токен доступа для ресурса, который принимает токен доступа v1.0 (что имеет место выше), Azure AD разбирает нужную аудиторию из запрашиваемой области, забрав все до последней слэши и используя его в качестве идентификатора ресурсов. Поэтому, если https:\//database.windows.net ожидает аудиторию\/"https: /database.windows.net/", вам нужно будет\/запросить область "https: /database.windows.net//.default". Смотрите также GitHub вопрос [#747: Ресурс URL в задней черта опущена, что вызвало sql Auth сбоя](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="scopes-to-request-access-to-all-the-permissions-of-a-v10-application"></a>Области для запроса доступа ко всем разрешениям в приложении версии 1.0
 
@@ -81,6 +81,6 @@ var ResourceId = "someAppIDURI";
 var scopes = [ ResourceId + "/.default"];
 ```
 
-## <a name="scopes-to-request-for-a-client-credential-flowdaemon-app"></a>Области для запроса приложения потока учетных данных клиента или управляющей программы
+## <a name="scopes-to-request-for-a-client-credential-flowdaemon-app"></a>Области запроса приложения потока/daemon клиента
 
 Если используется клиентский поток учетных данных, следует передать область `/.default`. Для AAD это означает "все разрешения на уровне приложения, которые администратор согласился предоставлять при регистрации приложения".

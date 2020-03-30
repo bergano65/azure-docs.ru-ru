@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: c44effe0bde3c7e880e53706fcb59d91a8605e7b
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185338"
 ---
 #### <a name="to-complete-the-minimum-storsimple-device-setup"></a>Минимальная настройка устройства StorSimple
@@ -36,7 +36,7 @@ ms.locfileid: "67185338"
 
             ![Test-HcsmConnection, показывающий маршрутизируемые IP-адреса](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig3.png)
 
-1. Последовательно выберите **ОК**. Запускается конфигурация устройства. После завершения конфигурации устройства вы получите уведомление. В колонке **устройств** состояние устройства изменится на **Подключено**.
+1. Нажмите кнопку **ОК**. Запускается конфигурация устройства. После завершения конфигурации устройства вы получите уведомление. В колонке **устройств** состояние устройства изменится на **Подключено**.
 
     ![Сетевые интерфейсы для минимальной настройки устройства StorSimple](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig4.png)
 
