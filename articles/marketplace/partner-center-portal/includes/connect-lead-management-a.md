@@ -1,37 +1,31 @@
 ---
-title: включение файла
-description: включение файла
-services: commercial marketplace
+title: включить файл
+description: включить файл
 documentationcenter: partner-center-commercial-marketplace
 author: qianw211
-manager: evansma
-editor: ''
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.devlang: na
 ms.topic: include
-ms.tgt_pltfrm: na
-ms.workload: identity
 ms.date: 10/09/2019
-ms.author: v-qiwe
+ms.author: dsindona
 ms.custom: include file
-ms.openlocfilehash: b8fae52224d601fabce1470d9886512aa5acfd4c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: f79b25c98ae2e764f607fc5a12bc311ed0edacae
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825572"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286189"
 ---
-Напрямую Подключайтесь к клиентам, перечисляя свое предложение в Marketplace и применяя систему управления отношениями с клиентами (CRM), чтобы вы могли получить контактные данные клиента сразу же после того, как клиент выражает интерес или развертывает продукта.
+Общайтесь с клиентами напрямую, перечисляя ваше предложение на рынках и подключив систему управления взаимоотношениями с клиентами (CRM), чтобы вы могли получать контактную информацию о клиентах сразу же после того, как клиент выразит интерес или развернет вашу Продукта.
 
-- **Выберите назначение "интерес** " (раскрывающееся меню): укажите сведения о подключении к системе CRM, куда вы хотите отправить клиентские интересы. 
+- **Выберите направление** (меню падения): Предоставьте сведения о подключении к системе CRM, где вы хотели бы, чтобы мы отправили интересы клиентов. 
 
-Центр партнеров поддерживает следующие системы CRM для управления интересами. Выберите ссылку на инструкции по настройке.
+Партнерский центр поддерживает следующие CRM-системы для управления свинцом. Выберите ссылку для инструкций по настройке.
 
-- [BLOB-объект Azure](../commercial-marketplace-lead-management-instructions-azure-blob.md) . Укажите адрес электронной почты, имя контейнера и строку подключения к учетной записи хранения. 
-- [Таблица Azure](../commercial-marketplace-lead-management-instructions-azure-table.md) . Укажите адрес электронной почты и строку подключения к учетной записи хранения. 
-- [Dynamics CRM Online](../commercial-marketplace-lead-management-instructions-dynamics.md) — укажите контактную почту, URL-адрес и режим проверки подлинности (Office 365 или Azure Active Directory).
-- [Конечная точка HTTPS](../commercial-marketplace-lead-management-instructions-https.md) — укажите контактную почту и URL-адрес КОНЕЧНОЙ точки HTTPS. 
-- [Marketo](../commercial-marketplace-lead-management-instructions-marketo.md) — укажите контактный адрес электронной почты, идентификатор формы, идентификатор учетной записи Munchkin и идентификатор сервера.
-- [Salesforce](../commercial-marketplace-lead-management-instructions-salesforce.md) — укажите контактный адрес электронной почты и идентификатор организации. 
+- [Azure Blob](../commercial-marketplace-lead-management-instructions-azure-blob.md) - Предоставьте контактную электронную почту, имя контейнера и строку подключения к учетной записи хранилища. 
+- [Таблица Azure](../commercial-marketplace-lead-management-instructions-azure-table.md) - Предоставьте строку подключения к электронной почте и учетной записи хранилища контакта. 
+- [Dynamics CRM Online](../commercial-marketplace-lead-management-instructions-dynamics.md) - Предоставьте контактную электронную почту, URL и режим аутентификации (Office 365 или Azure Active Directory).
+- [Конечная точка Https](../commercial-marketplace-lead-management-instructions-https.md) - Предоставьте контактную электронную почту и URL-адрес https endpoint. 
+- [Marketo](../commercial-marketplace-lead-management-instructions-marketo.md) - Предоставьте контактную электронную почту, идентификатор формы, идентификатор учетной записи Munchkin и идентификатор сервера.
+- [Salesforce](../commercial-marketplace-lead-management-instructions-salesforce.md) - Предоставите контактную электронную почту и идентификатор организации. 
 

@@ -1,14 +1,14 @@
 ---
-title: Модель данных для телеметрии метрик в Azure Application Insights
+title: Модель данных для метрической телеметрии - Azure Application Insights
 description: Модель данных Application Insights для телеметрии метрик
 ms.topic: conceptual
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: 3e4a1fc3de58b8e65ab9c7a288bdf3eb37e7bae0
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77671976"
 ---
 # <a name="metric-telemetry-application-insights-data-model"></a>Телеметрия метрик: модель данных Application Insights
@@ -33,7 +33,7 @@ ms.locfileid: "77671976"
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Request Execution Time`   | Ведется работа... | [requestExecutionTime](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestExecutionTime) | Среднее время выполнения запросов
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Requests In Application Queue` | Ведется работа... | [requestsInQueue](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestsInQueue) | Количество запросов в очереди, ожидающих обработки
 
-## <a name="name"></a>Имя
+## <a name="name"></a>name
 
 Имя метрики, которое нужно отобразить на портале Application Insights и в пользовательском интерфейсе. 
 
@@ -41,7 +41,7 @@ ms.locfileid: "77671976"
 
 Отдельное значение для измерения. Сумма отдельных измерений для агрегата.
 
-## <a name="count"></a>Число
+## <a name="count"></a>Count
 
 Вес вычисленной метрики. Не следует задавать для измерения.
 
@@ -63,7 +63,7 @@ ms.locfileid: "77671976"
 
 [!INCLUDE [application-insights-data-model-properties](../../../includes/application-insights-data-model-properties.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Вы можете узнать, как использовать [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric).
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.

@@ -1,38 +1,38 @@
 ---
-title: ВЫПОЛНЯЮТСЯ и дайджесты ссылок на коллекции | Документация Майкрософт
-description: Расширьте свои знания о надежности сайта с помощью этих ресурсов
+title: Коллекции ссылок и дайджестов SRE Документы Майкрософт
+description: Расширьте свои знания по проектированию надежности сайта с помощью этих ресурсов
 author: dnblankedelman
 manager: efreeman
 ms.service: site-reliability-engineering
 ms.topic: article
 ms.date: 02/18/2020
 ms.author: dnb
-ms.openlocfilehash: be6e00ba0d20d11f75954d3b9c6b056160a5016b
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: a891b580b5cb62d111e5d8a6980f4f547345deb6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77599006"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79471257"
 ---
-# <a name="sources-for-site-reliability-engineering-information"></a>Источники сведений об обеспечении надежности сайта
+# <a name="sources-for-site-reliability-engineering-information"></a>Источники инженерной информации о надежности сайта
 
-Существует множество различных источников информации по проектированию надежности сайта (выполняются) в Интернете.
+Есть много, много источников для разработки надежности сайта (SRE) информации в Интернете.
 
-## <a name="curated-link-lists"></a>Списки проверенных ссылок
+## <a name="curated-link-lists"></a>Куратор списки ссыло
 
-Ниже приведены некоторые хорошие проверенные списки ссылок на разделы, посвященные выполняются и выполняются:
+Вот несколько хороших куратор списки ссылок на SRE и SRE,связанных с темами:
 
-* [Эффективное проектирование надежности сайта](https://github.com/dastergon/awesome-sre)
-* [Средства проектирования надежности веб-сайтов Awesome](https://github.com/squadcastHQ/awesome-sre-tools)
-* [Шаблоны масштабируемых, надежных и производительных крупномасштабных систем](http://awesome-scalability.com)
-* [Awesome распределенные системы](https://github.com/theanalyst/awesome-distributed-systems)
-* [Awesome консенсус](https://github.com/dgryski/awesome-consensus)
-* [Awesome-Monitoring](https://github.com/crazy-canux/awesome-monitoring)
-* [Великолепная Наблюдаемость](https://github.com/adriannovegil/awesome-observability)
+* [Потрясающая инженерия надежности сайта](https://github.com/dastergon/awesome-sre)
+* [Потрясающие инженерные инструменты надежности сайта](https://github.com/SquadcastHub/awesome-sre-tools)
+* [Шаблоны масштабируемых, надежных и эффективных крупномасштабных систем](http://awesome-scalability.com)
+* [потрясающие распределенные системы](https://github.com/theanalyst/awesome-distributed-systems)
+* [Потрясающий консенсус](https://github.com/dgryski/awesome-consensus)
+* [удивительный мониторинг](https://github.com/crazy-canux/awesome-monitoring)
+* [Потрясающая обсерватория](https://github.com/adriannovegil/awesome-observability)
 
 ## <a name="weekly-digests-of-interest-to-site-reliability-engineers"></a>Еженедельные дайджесты, представляющие интерес для инженеров по надежности сайта
 
-* [Выполняются еженедельно](https://sreweekly.com) — "выполняются еженедельно — информационный бюллетень, посвященный всем, что можно сделать, чтобы обеспечить единообразную доступность сайта или службы."
-* [Devops еженедельно](https://www.devopsweekly.com) — «еженедельный срез Devops новостей, Гарет рушгрове».
-* [На этой неделе в DevOps](https://thisweekindevops.com) -«DevOps newss без устанавливать ориентиры».
-* [Кубевикли](https://kubeweekly.io) — "еженедельные информационные бюллетени для всех вещей Kubernetes".
+* [SRE Еженедельник](https://sreweekly.com) - "SRE Еженедельник является информационный бюллетень, посвященный всему, что связано с сохранением сайта или услуги доступны как можно более последовательно".
+* [Devops Weekly](https://www.devopsweekly.com) - "Еженедельный кусок devops новости принес вам Гарет Рашгроув".
+* [На этой неделе в DevOps](https://thisweekindevops.com) - "DevOps новости без ажиотажа".
+* [KubeWeekly](https://kubeweekly.io) - "Еженедельные информационные бюллетени для всех вещей Kubernetes".

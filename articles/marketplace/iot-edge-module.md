@@ -1,20 +1,18 @@
 ---
 title: Модули Azure IoT Edge
 description: Предложение модуля IoT Edge в Azure Marketplace для издателей приложений и служб.
-services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, IoT Edge module offer
 author: qianw211
-manager: pabutler
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/22/2018
-ms.author: pabutler
-ms.openlocfilehash: db501c34a4418bc7b08b19105a9b28585288f877
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: aadbf33914f919e393a5ec88cf6fc0a6103911b0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823068"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286155"
 ---
 # <a name="iot-edge-modules"></a>Модули IoT Edge
 
@@ -48,7 +46,7 @@ Azure IoT Edge позволяет развертывать модули бизн
 
 Marketplace в настоящее время поддерживает **бесплатные** и **собственные лицензии (BYOL)** как варианты выставления счетов для модулей IoT Edge.
  
-**Варианты публикации**
+**Параметры публикации**
 
 Во всех случаях необходимо выбирать для модулей IoT Edge вариант публикации **Транзакция**.  Варианты публикации см. в [этой статье](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).  
 
@@ -77,7 +75,7 @@ Marketplace в настоящее время поддерживает **бесп
 
 ## <a name="documentation-and-resources"></a>Документация и ресурсы
 
-[Создание предложения модуля IOT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) . действия по публикации нового модуля IOT Edgeного предложения с помощью портала Cloud Publishing.
+[Создайте предложение модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) - Шаги для публикации нового модуля IoT Edge с помощью облачного издательского портала.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

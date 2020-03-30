@@ -10,10 +10,10 @@ ms.assetid: d4213a19-4d0f-49c9-871c-9cd6ed7cf731
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.openlocfilehash: d40658e1510c9ae8a2e3e1f865df7ac95f61abfb
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68355979"
 ---
 # <a name="manage-azure-data-lake-analytics-using-python"></a>Управление Azure Data Lake Analytics с помощью Python
@@ -24,17 +24,17 @@ ms.locfileid: "68355979"
 ## <a name="supported-python-versions"></a>Поддерживаемые версии Python
 
 * Используйте 64-разрядную версию Python.
-* Можно использовать стандартную распространяемую версию Python, опубликованную в **[разделе загрузок на сайте Python.org](https://www.python.org/downloads/)** . 
-* Многим разработчикам удобнее использовать **[распространяемую версию Anaconda Python](https://www.anaconda.com/download/)** .  
+* Можно использовать стандартную распространяемую версию Python, опубликованную в **[разделе загрузок на сайте Python.org](https://www.python.org/downloads/)**. 
+* Многим разработчикам удобнее использовать **[распространяемую версию Anaconda Python](https://www.anaconda.com/download/)**.  
 * При написании данной статьи использовалась версия 3.6 стандартного распространяемого пакета Python
 
 ## <a name="install-azure-python-sdk"></a>Установка пакета Azure SDK для Python
 
 Установите следующие модули:
 
-* Модуль **azure-mgmt-resource** содержит другие модули Azure для Active Directory и др.
-* Модуль **azure-datalake-store** содержит операции файловой системы Azure Data Lake Store. 
-* Модуль **azure-mgmt-datalake-store** содержит операции по управлению учетной записью Azure Data Lake Store.
+* Модуль **лазурно-мgmt-ресурса** включает в себя другие модули Azure для Active Directory и т.д.
+* Модуль **лазурного хранилища datalake** включает в себя операции файловой системы Azure Data Lake Store. 
+* Модуль **azure-mgmt-datalake-store** включает в себя операции по управлению счетами Azure Data Lake Store.
 * Модуль **azure-mgmt-datalake-analytics** содержит операции Azure Data Lake Analytics. 
 
 Во-первых, убедитесь, что установлена актуальная версия компонента `pip`, выполнив следующую команду:
@@ -259,7 +259,7 @@ adlaAccountClient.computePolicies.createOrUpdate(
     rg, adla, "GaryMcDaniel", newPolicyParams)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Для просмотра учебника с помощью других средств используйте вкладки-селекторы в верхней части страницы.
 - Для знакомства с U-SQL см. статью о [начале работы с языком U-SQL для Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md).

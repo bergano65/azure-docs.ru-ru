@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: eee95a2b6acde3ad3b7d94cf5cdd0f74f9f09fd9
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79265965"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
@@ -27,16 +27,16 @@ ms.locfileid: "79265965"
 С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц API на портале разработчика.  
   
 -   [Список API](#APIList)  
--   [Операция](#Product)  
+-   [Операции](#Product)  
 -   [Примеры кода](#CodeSamples)  
     -   [Curl](#Curl)  
-    -   [C#](#CSharp)  
+    -   [C #](#CSharp)  
     -   [Java](#Stub)  
-    -   [JavaScript](#JavaScript)  
-    -   [Objective C](#ObjectiveC)  
-    -   [PHP](#PHP)  
+    -   [Javascript](#JavaScript)  
+    -   [Цель C](#ObjectiveC)  
+    -   [Php](#PHP)  
     -   [Python](#Python)  
-    -   [Ruby](#Ruby)  
+    -   [Руби](#Ruby)  
 
 > [!NOTE]
 >  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
@@ -45,10 +45,10 @@ ms.locfileid: "79265965"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-## <a name="APIList"></a>Список API  
+## <a name="api-list"></a><a name="APIList"></a>Список API  
  Шаблон **списка API** позволяет настроить текст страницы со списком API на портале разработчика.  
   
- ![Список API портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-API-List.png "Список API шаблонов портала разработчика APIM")  
+ ![Список API портала разработчиков](./media/api-management-api-templates/APIM-Developer-Portal-Templates-API-List.png "APIM Разработчик Портал Шаблоны API Список")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -80,16 +80,16 @@ ms.locfileid: "79265965"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `API list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [paging-control](api-management-page-controls.md#paging-control)  
+-   [контроль над paging](api-management-page-controls.md#paging-control)  
   
--   [search-control](api-management-page-controls.md#search-control)  
+-   [поиск-контроль](api-management-page-controls.md#search-control)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Description|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |`apis`|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
   
@@ -113,10 +113,10 @@ ms.locfileid: "79265965"
 }  
 ```  
   
-## <a name="Product"></a> Операция  
+## <a name="operation"></a><a name="Product"></a>Операции  
  Шаблон **операции** позволяет настроить текст страницы операции на портале разработчика.  
   
- ![Страница операций портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-templates-Operation-page.png "Страница "операция" шаблонов портала разработчика APIM")  
+ ![Страница операции портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-templates-Operation-page.png "Шаблоны APIM Developer Portal")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -339,20 +339,20 @@ ms.locfileid: "79265965"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `Operation` нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Description|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |`apiId`|строка|Идентификатор текущего API.|  
 |`apiName`|строка|Имя API.|  
 |`apiDescription`|строка|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
-|`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
+|`operation`|[Операции](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
 |`sampleUrl`|строка|URL-адрес текущей операции.|  
-|`operationMenu`|[Меню операций](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
+|`operationMenu`|[Меню операции](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
 |`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
 |`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
   
@@ -643,28 +643,28 @@ ms.locfileid: "79265965"
 }  
 ```  
   
-## <a name="CodeSamples"></a> Примеры кода  
+## <a name="code-samples"></a><a name="CodeSamples"></a> Примеры кода  
  Следующие шаблоны позволяют настроить текст отдельных примеров кода на странице операции.  
   
- ![Примеры кода для шаблонов портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-Code-samples.png "Примеры кода для шаблонов портала разработчика APIM")  
+ ![Образцы кода шаблонов портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-Code-samples.png "ApIM Разработчик Портал шаблоны образцы кода")  
   
 -   [Curl](#Curl)  
   
--   [C#](#CSharp)  
+-   [C #](#CSharp)  
   
 -   [Java](#Stub)  
   
--   [JavaScript](#JavaScript)  
+-   [Javascript](#JavaScript)  
   
--   [Objective C](#ObjectiveC)  
+-   [Цель C](#ObjectiveC)  
   
--   [PHP](#PHP)  
+-   [Php](#PHP)  
   
 -   [Python](#Python)  
   
--   [Ruby](#Ruby)  
+-   [Руби](#Ruby)  
   
-### <a name="Curl"></a> Curl  
+### <a name="curl"></a><a name="Curl"></a>Curl  
  Шаблон **DocumentationSamplesCurl** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -682,7 +682,7 @@ curl -v -X {{method}} "{{scheme}}://{{host}}{{path}}{{query | escape }}"
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -717,7 +717,7 @@ curl -v -X {{method}} "{{scheme}}://{{host}}{{path}}{{query | escape }}"
 }  
 ```  
   
-### <a name="CSharp"></a> C#  
+### <a name="c"></a><a name="CSharp"></a>C #  
  Шаблон **DocumentationSamplesCsharp** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -861,7 +861,7 @@ namespace CSHttpClientSample
 }     
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -896,7 +896,7 @@ namespace CSHttpClientSample
 }  
 ```  
   
-### <a name="Stub"></a> Java  
+### <a name="java"></a><a name="Stub"></a>Java  
  Шаблон **DocumentationSamplesJava** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -957,7 +957,7 @@ public class JavaSample
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -992,7 +992,7 @@ public class JavaSample
 }  
 ```  
   
-### <a name="JavaScript"></a> JavaScript  
+### <a name="javascript"></a><a name="JavaScript"></a>Javascript  
  Шаблон **DocumentationSamplesJs** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1046,7 +1046,7 @@ public class JavaSample
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1081,7 +1081,7 @@ public class JavaSample
 }  
 ```  
   
-### <a name="ObjectiveC"></a>Objective C  
+### <a name="objective-c"></a><a name="ObjectiveC"></a>Objective C  
  Шаблон **DocumentationSamplesObjc** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1158,7 +1158,7 @@ int main(int argc, const char * argv[])
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1193,7 +1193,7 @@ int main(int argc, const char * argv[])
 }  
 ```  
   
-### <a name="PHP"></a> PHP  
+### <a name="php"></a><a name="PHP"></a>Php  
  Шаблон **DocumentationSamplesPhp** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1248,7 +1248,7 @@ catch (HttpException $ex)
 ?>  
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1283,7 +1283,7 @@ catch (HttpException $ex)
 }  
 ```  
   
-### <a name="Python"></a> Python  
+### <a name="python"></a><a name="Python"></a>Python  
  Шаблон **DocumentationSamplesPython** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1366,7 +1366,7 @@ except Exception as e:
 ####################################  
 ```
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1401,7 +1401,7 @@ except Exception as e:
 }  
 ```  
   
-### <a name="Ruby"></a> Ruby  
+### <a name="ruby"></a><a name="Ruby"></a> Ruby  
  Шаблон **DocumentationSamplesRuby** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1437,7 +1437,7 @@ puts response.body
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: ce56c406c884471c445b25343d5c42f9edcbe4c4
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79249546"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Шаблоны страниц в службе управления API Azure
@@ -25,7 +25,7 @@ ms.locfileid: "79249546"
   
  С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц входа, регистрации и страницы с ошибкой "Страница не найдена" на портале разработчика.  
   
--   [Вход](#SignIn)  
+-   [Войти](#SignIn)  
   
 -   [Регистрация](#SignUp)  
   
@@ -38,10 +38,10 @@ ms.locfileid: "79249546"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="SignIn"></a> Вход  
+##  <a name="sign-in"></a><a name="SignIn"></a>Войти  
  Шаблон **входа** позволяет настроить страницу входа на портале разработчика.  
   
- ![Страница входа](./media/api-management-page-templates/APIM-Sign-In-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для страницы входа в APIM")  
+ ![Войти в страницу](./media/api-management-page-templates/APIM-Sign-In-Page-Developer-Portal-Templates.png "APIM Подпишитев в шаблонах портала портала разработчика страницы")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -99,10 +99,10 @@ ms.locfileid: "79249546"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  Шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [basic-signin](api-management-page-controls.md#basic-signin)  
+-   [базовый-сизин](api-management-page-controls.md#basic-signin)  
   
 -   [providers](api-management-page-controls.md#providers)  
   
@@ -137,10 +137,10 @@ ms.locfileid: "79249546"
 }
 ```  
   
-##  <a name="SignUp"></a> Регистрация  
+##  <a name="sign-up"></a><a name="SignUp"></a>Регистрация  
  Шаблон **регистрации** позволяет настроить страницу регистрации на портале разработчика.  
   
- ![Страница регистрации](./media/api-management-page-templates/APIM-Sign-Up-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика страницы регистрации APIM")  
+ ![Зарегистрируйтесь на странице](./media/api-management-page-templates/APIM-Sign-Up-Page-Developer-Portal-Templates.png "APIM Зарегистрируйтеся Шаблоны портала разработчиков страниц")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -158,7 +158,7 @@ ms.locfileid: "79249546"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  Шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [sign-up](api-management-page-controls.md#sign-up)  
@@ -185,10 +185,10 @@ ms.locfileid: "79249546"
 }  
 ```  
   
-##  <a name="PageNotFound"></a> Страница не найдена  
+##  <a name="page-not-found"></a><a name="PageNotFound"></a> Страница не найдена  
  Шаблон страницы с ошибкой **Страница не найдена** позволяет настроить страницу с ошибкой "Страница не найдена" на портале разработчика.  
   
- ![Страница "не найдено"](./media/api-management-page-templates/APIM-Not-Found-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для APIM не найденных страниц")  
+ ![Не найдена страница](./media/api-management-page-templates/APIM-Not-Found-Page-Developer-Portal-Templates.png "APIM не найдено шаблонов портала разработчиков страниц")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -222,12 +222,12 @@ ms.locfileid: "79249546"
 </p>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  Этот шаблон не может использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Description|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |referenceCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
 |errorCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  

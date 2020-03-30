@@ -1,22 +1,22 @@
 ---
-title: Справочник по Maven сети Azure Service Fabric
+title: Ссылка на услуги Azure Fabric Mesh Maven
 description: Справочная информация по использованию подключаемого модуля Maven для службы "Сетка Service Fabric"
 author: suhuruli
 ms.author: suhuruli
 ms.date: 11/26/2018
 ms.topic: reference
 ms.openlocfilehash: bcc3fb7c6c3adce0997d0960c4d98227089b048b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75459025"
 ---
 # <a name="maven-plugin-for-service-fabric-mesh"></a>Подключаемый модуль Maven для службы "Сетка Service Fabric"
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Пакет Java SDK
+- Пакет SDK для Java
 - Maven
 - Azure CLI с расширением сетки
 - Интерфейс командной строки Service Fabric
@@ -36,7 +36,7 @@ ms.locfileid: "75459025"
 - Создает YAML-файл `gateway` с указанным именем шлюза в папке `appresources`. 
 
 #### `azure-sfmesh:addvolume`
-- Создает `volume` YAML с указанным именем тома в папке `appresources`.
+- Генерирует `volume` YAML с предоставленным именем `appresources` громкости в папке.
 
 ### `azure-sfmesh:addsecret`
 - Создает YAML-файл `secret` с указанным именем секрета в папке `appresources`. 
