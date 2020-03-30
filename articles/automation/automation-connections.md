@@ -6,47 +6,47 @@ ms.subservice: shared-capabilities
 ms.date: 01/13/2020
 ms.topic: conceptual
 ms.openlocfilehash: b6276153921feb0e6f27194d36d1c32c1d0ffb3d
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75940831"
 ---
 # <a name="connection-assets-in-azure-automation"></a>Ресурсы подключений в службе автоматизации Azure
 
 Ресурс-контейнер подключения службы автоматизации содержит информацию, необходимую для подключения к внешней службе, приложению из модуля Runbook или конфигурации DSC. Это может включать данные, необходимые для аутентификации, такие как имя пользователя и пароль, а также информацию о подключении, например URL-адрес или порт. Вместо создания нескольких переменных значение подключения хранит в одном ресурсе все свойства для подключения к определенному приложению. Пользователь может изменять значения для подключения в одном месте, а передать имя подключения в модуль Runbook или конфигурацию DSC можно в одном параметре. К свойствам подключения можно получить доступ в модуле Runbook или конфигурации DSC с помощью действия **Get-AutomationConnection** .
 
-При создании подключения необходимо указать его *тип*. Тип подключения — это шаблон, определяющий набор его свойств. Подключение определяет значения для каждого свойства, определенного в его типе. Типы подключения в службе автоматизации Azure добавляются в модули интеграции или создаются с помощью [API службы автоматизации](/previous-versions/azure/reference/mt163818(v=azure.100)), если модуль интеграции содержит тип подключения и импортируется в учетную запись службы автоматизации. В противном случае следует создать файл метаданных и указать в нем тип подключения для службы автоматизации. Дополнительные сведения об этом см. в разделе [модули интеграции](automation-integration-modules.md).
+При создании подключения необходимо указать *тип подключения*. Тип подключения — это шаблон, определяющий набор его свойств. Подключение определяет значения для каждого свойства, определенного в его типе. Типы подключения в службе автоматизации Azure добавляются в модули интеграции или создаются с помощью [API службы автоматизации](/previous-versions/azure/reference/mt163818(v=azure.100)), если модуль интеграции содержит тип подключения и импортируется в учетную запись службы автоматизации. В противном случае следует создать файл метаданных и указать в нем тип подключения для службы автоматизации. Для получения дополнительной информации об этом, см [Интеграция Модули](automation-integration-modules.md).
 
 >[!NOTE]
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Этот ключ хранится в хранилище ключей, управляемом системой. Перед сохранением защищенного ресурса ключ загружается из Key Vault, а затем используется для шифрования ресурса. Этим процессом управляет служба автоматизации Azure.
 
 ## <a name="connection-types"></a>Типы подключений
 
-В службе автоматизации Azure доступны три типа встроенных подключений:
+В Azure Automation доступны три типа встроенных подключений:
 
 * **Azure** — это подключение можно использовать для управления классическими ресурсами.
 * **AzureClassicCertificate** — это подключение используется учетной записью **AzureClassicRunAs**.
 * **AzureServicePrincipal** — это подключение используется учетной записью **AzureRunAs**.
 
-В большинстве случаев не нужно создавать ресурс подключения, так как он создается при создании [учетной записи запуска от имени](manage-runas-account.md).
+В большинстве случаев не требуется создавать ресурс соединения, поскольку он создается при создании [учетной записи RunAs.](manage-runas-account.md)
 
 ## <a name="windows-powershell-cmdlets"></a>Командлеты Windows PowerShell
 
-Командлеты, представленные в следующей таблице, используются для создания подключений и управления ими с помощью Windows PowerShell в службе автоматизации Azure. Они поставляются в составе [модуля Azure PowerShell](/powershell/azure/overview), который можно использовать в модулях Runbook службы автоматизации и конфигурациях DSC.
+Командлеты, представленные в следующей таблице, используются для создания подключений и управления ими с помощью Windows PowerShell в службе автоматизации Azure. Они погрузки в рамках [модуля Azure PowerShell](/powershell/azure/overview), который доступен для использования в автоматизации runbooks и DSC конфигураций.
 
-|Командлет|Description|
+|Командлет|Описание|
 |:---|:---|
 |[Get-AzureRmAutomationConnection](/powershell/module/azurerm.automation/get-azurermautomationconnection)|Извлекает подключение. Содержит хэш-таблицу со значениями полей подключения.|
 |[New-AzureRmAutomationConnection](/powershell/module/azurerm.automation/new-azurermautomationconnection)|Создает новое подключение.|
-|[Remove-AzureRmAutomationConnection](/powershell/module/azurerm.automation/remove-azurermautomationconnection)|Удаляет существующее подключение.|
+|[Удалить-AzureRmAutomationConnection](/powershell/module/azurerm.automation/remove-azurermautomationconnection)|Удаляет существующее подключение.|
 |[Set-AzureRmAutomationConnectionFieldValue](/powershell/module/azurerm.automation/set-azurermautomationconnectionfieldvalue)|Задает значение определенного поля для существующего подключения.|
 
 ## <a name="activities"></a>Действия
 
 Действия в следующей таблице используются для доступа к подключениям в модуле Runbook или конфигурации DSC.
 
-|Действия|Description|
+|Действия|Описание|
 |---|---|
 |Get-AutomationConnection | Получает подключение для использования. Возвращает хэш-таблицу со свойствами подключения.|
 
@@ -58,7 +58,7 @@ ms.locfileid: "75940831"
 
 Функция, приведенная в следующей таблице, используется для доступа к подключениям в модуле Runbook Python2.
 
-| Компонент | Description |
+| Компонент | Описание |
 |:---|:---|
 | automationassets.get_automation_connection | Извлекает подключение. Возвращает словарь со свойствами подключения. |
 
@@ -77,7 +77,7 @@ ms.locfileid: "75940831"
 
 ### <a name="to-create-a-new-connection-with-windows-powershell"></a>Создание нового подключения с помощью Windows PowerShell
 
-Создайте новое подключение с помощью командлета Windows PowerShell [New-AzureRmAutomationConnection](/powershell/module/azurerm.automation/new-azurermautomationconnection). У этого командлета есть параметр **ConnectionFieldValues** , который ожидает [хэш-таблицу](https://technet.microsoft.com/library/hh847780.aspx) , задающую значения для каждого свойства, определенного типом подключения.
+Создайте новое подключение с помощью командлета Windows PowerShell [New-AzureRmAutomationConnection](/powershell/module/azurerm.automation/new-azurermautomationconnection). Этот командлет имеет параметр с именем **ConnectionFieldValues**, ожидающий [хэш-таблицу](https://technet.microsoft.com/library/hh847780.aspx), в которой заданы значения для каждого свойства, определенного типом подключения.
 
 Если вы знаете, как в службе автоматизации используется [учетная запись запуска от имени](automation-sec-configure-azure-runas-account.md) для аутентификации модулей Runbook с помощью субъекта-службы, то это поможет вам понять сценарий PowerShell, который можно использовать вместо учетной записи запуска от имени. Приведенные ниже примеры команд создают новый ресурс подключения.
 
@@ -87,11 +87,11 @@ $ConnectionFieldValues = @{"ApplicationId" = $Application.ApplicationId; "Tenant
 New-AzureRmAutomationConnection -ResourceGroupName $ResourceGroup -AutomationAccountName $AutomationAccountName -Name $ConnectionAssetName -ConnectionTypeName AzureServicePrincipal -ConnectionFieldValues $ConnectionFieldValues
 ```
 
-С помощью этого скрипта вы сможете создать ресурс подключения, так как при создании учетной записи автоматизации она по умолчанию автоматически включает несколько глобальных модулей и тип подключения **AzurServicePrincipal**, которые нужны для создания ресурса подключения **AzureRunAsConnection**. Важно помнить о том, что при попытке использовать другой метод аутентификации вы не сможете создать ресурс подключения для подключения к службе или приложению, так как другие типы подключения не определены в учетной записи службы автоматизации. Дополнительные сведения о создании собственного типа подключения для пользовательского или модуля из [коллекция PowerShell](https://www.powershellgallery.com)см. в разделе [модули интеграции](automation-integration-modules.md) .
+С помощью этого скрипта вы сможете создать ресурс подключения, так как при создании учетной записи автоматизации она по умолчанию автоматически включает несколько глобальных модулей и тип подключения **AzurServicePrincipal**, которые нужны для создания ресурса подключения **AzureRunAsConnection**. Важно помнить о том, что при попытке использовать другой метод аутентификации вы не сможете создать ресурс подключения для подключения к службе или приложению, так как другие типы подключения не определены в учетной записи службы автоматизации. Для получения дополнительной информации о том, как создать свой собственный тип соединения для вашего пользовательского или модуля из [галереи PowerShell](https://www.powershellgallery.com), см [Интеграция Модули](automation-integration-modules.md)
 
 ## <a name="using-a-connection-in-a-runbook-or-dsc-configuration"></a>Использование подключения в модуле Runbook или конфигурации DSC
 
-Для получения подключения в модуле Runbook или конфигурации DSC используется командлет **Get-AutomationConnection** . Вы не можете использовать действие [Get-AzureRmAutomationConnection](/powershell/module/azurerm.automation/get-azurermautomationconnection). Это действие получает значения различных полей в соединении и возвращает их в виде [хэш-таблицы](https://go.microsoft.com/fwlink/?LinkID=324844), которую затем можно использовать с соответствующими командами в модуле Runbook или конфигурации DSC.
+Для получения подключения в модуле Runbook или конфигурации DSC используется командлет **Get-AutomationConnection** . Вы не можете использовать действие [Get-AzureRmAutomationConnection](/powershell/module/azurerm.automation/get-azurermautomationconnection). Это действие извлекает значения различных полей в соединении и возвращает их в качестве [хэш-таблицы,](https://go.microsoft.com/fwlink/?LinkID=324844)которая затем может быть использована с соответствующими командами в конфигурации runbook или DSC.
 
 ### <a name="textual-runbook-sample"></a>Пример текстового Runbook
 
@@ -107,7 +107,7 @@ Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $
 
 ### <a name="graphical-runbook-samples"></a>Графические примеры для модуля Runbook
 
-Чтобы добавить действие **Get-AutomationConnection** в графический модуль Runbook, щелкните правой кнопкой мыши соединение в области **Библиотека** графического редактора и выберите команду **Добавить на холст**.
+Вы добавляете **активность Get-AutomationConnection** в графический runbook, нажав на соединение в **библиотечном** стекол графического редактора и выбрав **Добавить в холст.**
 
 ![Добавление на холст](media/automation-connections/connection-add-canvas.png)
 

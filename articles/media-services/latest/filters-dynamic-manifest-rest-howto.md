@@ -1,5 +1,5 @@
 ---
-title: Создание фильтров с помощью служб мультимедиа Azure v3 REST API
+title: Создание фильтров с помощью API Media Services Azure media aPI
 description: В этом разделе описывается создание фильтров, с помощью которых клиент может передавать определенные секции потока. Для достижения такой выборочной потоковой передачи службы мультимедиа создают динамические манифесты.
 services: media-services
 documentationcenter: ''
@@ -14,24 +14,24 @@ ms.topic: article
 ms.date: 06/13/2019
 ms.author: juliako
 ms.openlocfilehash: f9134dd3bc926e6e2f454e5187e03365e91ed22a
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75780340"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Создание фильтров с помощью REST API Служб мультимедиа
 
 При распространении содержимого пользователям (потоковой трансляции событий или видео по запросу) клиенту может потребоваться больше возможностей, чем определено в файле манифеста ресурса-контейнера по умолчанию. Службы мультимедиа Azure позволяют определять фильтры учетной записи и фильтры ресурсов для содержимого. 
 
-Подробное описание этой функции и сценариев, в которых она используется, см. в разделе [динамические манифесты](filters-dynamic-manifest-overview.md) и [фильтры](filters-concept.md).
+Для подробного описания этой функции и сценариев, [Filters](filters-concept.md)где она используется, [см.](filters-dynamic-manifest-overview.md)
 
 В этой статье показано, как определить фильтр для ресурса-контейнера видео по запросу и использовать REST API, чтобы создать [фильтры учетных записей](https://docs.microsoft.com/rest/api/media/accountfilters) и [фильтры ресурсов-контейнеров](https://docs.microsoft.com/rest/api/media/assetfilters). 
 
 > [!NOTE]
-> Обязательно ознакомьтесь с [пресентатионтимеранже](filters-concept.md#presentationtimerange).
+> Убедитесь в том, чтобы просмотреть [презентациюTimeRange](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -83,7 +83,7 @@ ms.locfileid: "75780340"
 
 ## <a name="create-account-filters"></a>Создание фильтров учетной записи
 
-В загруженной ранее коллекции Postman последовательно выберите **Account Filters (Фильтры учетной записи)** ->**Create or update an Account Filter (Создать или обновить фильтр учетной записи)** .
+В загрузили коллекцию Почтальона, выберите **фильтры учетной записи**->**Создать или обновить фильтр учетной записи.**
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
@@ -93,7 +93,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 
-Нажмите кнопку **Отправить**. 
+Выберите **Отправить**. 
 
 Фильтр создан.
 
@@ -101,7 +101,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ## <a name="create-asset-filters"></a>Создание фильтров ресурсов  
 
-В загруженной ранее коллекции Postman "Службы мультимедиа версии 3" выберите **Ресурсы-контейнеры**->**Создать или обновить фильтр ресурса-контейнера**.
+В коллекции Почтальона «Медиа Сервисы v3», которую вы скачали, выберите-> **«Создайте****или обновите фильтр активов».**
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
@@ -111,19 +111,19 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 
-Нажмите кнопку **Отправить**. 
+Выберите **Отправить**. 
 
 Фильтр ресурса-контейнера создан.
 
 Дополнительные сведения см. в статье о [создании или обновлении фильтров ресурсов-контейнеров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate). Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate#create-an-asset-filter). 
 
-## <a name="associate-filters-with-streaming-locator"></a>Связывание фильтров с указателем потоковой передачи
+## <a name="associate-filters-with-streaming-locator"></a>Ассоциированные фильтры с потоковым локатором
 
-Можно указать список фильтров активов или учетных записей, которые будут применяться к указателю потоковой передачи. [Динамический упаковщик (конечная точка потоковой передачи)](dynamic-packaging-overview.md) применяет этот список фильтров вместе с тем, что ваш клиент указывает в URL-адресе. Это сочетание создает [динамический манифест](filters-dynamic-manifest-overview.md), основанный на фильтрах в URL-адресах и фильтрах, указанных при указателе потоковой передачи. Рекомендуется использовать эту функцию, если вы хотите применить фильтры, но не хотите предоставлять имена фильтров в URL-адресе.
+Можно указать список фильтров активов или учетных записей, которые будут применяться к потоковому locator. [Динамический packager (Streaming Endpoint)](dynamic-packaging-overview.md) применяет этот список фильтров вместе с теми, которые ваш клиент указывает в URL. Эта комбинация генерирует [динамический манифест,](filters-dynamic-manifest-overview.md)который основан на фильтрах в фильтрах URL, которые вы указываете на потоковом локаторе. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не хотите, чтобы разоблачить имена фильтров в URL.
 
-Чтобы создать и связать фильтры с указателем потоковой передачи с помощью функции RESTFUL, используйте API [указателей Streaming-Create](https://docs.microsoft.com/rest/api/media/streaminglocators/create) и укажите `properties.filters` в [тексте запроса](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body).
+Для создания и связывания фильтров с потоковым локатором с помощью REST используйте [потоковые локаторы - Создайте](https://docs.microsoft.com/rest/api/media/streaminglocators/create) API и укажите `properties.filters` в [органе запроса.](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body)
                                 
-## <a name="stream-using-filters"></a>Поток с использованием фильтров
+## <a name="stream-using-filters"></a>Поток с помощью фильтров
 
 После определения фильтров клиенты могут использовать их в URL-адресах потоковой передачи. Фильтры можно применять к протоколам потоковой передачи с переменной скоростью: Apple HTTP Live Streaming (HLS), MPEG-DASH и Smooth Streaming.
 

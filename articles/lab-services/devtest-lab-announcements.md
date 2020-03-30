@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 84120b07de3a03a049493eb973b6dc46f8668387
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75976453"
 ---
 # <a name="post-an-announcement-to-a-lab-in-azure-devtest-labs"></a>Публикация объявления в лабораторию в Azure DevTest Labs
@@ -161,10 +161,10 @@ ms.locfileid: "75976453"
 Вы можете развернуть шаблон Azure Resource Manager одним из следующих способов:
 
 - [Портал Azure](../azure-resource-manager/templates/deploy-portal.md)
-- [Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
-- [Azure CLI](../azure-resource-manager/templates/deploy-cli.md)
+- [Лазурная силаШелл](../azure-resource-manager/templates/deploy-powershell.md)
+- [Лазурный CLI](../azure-resource-manager/templates/deploy-cli.md)
 - [REST API](../azure-resource-manager/templates/deploy-rest.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Когда вы изменяете или создаете политику лаборатории, об этом можно сообщить пользователям с помощью объявления. Статья [Управление всеми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md) содержит сведения о применении ограничений и соглашений для всей подписки с помощью настраиваемых политик.
-* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).
+* Исследуйте [галерею шаблонов DevTest Labs Azure Resource Manager в галерее быстрого запуска.](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates)

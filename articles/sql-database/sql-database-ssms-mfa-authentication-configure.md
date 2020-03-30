@@ -11,24 +11,24 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/27/2019
-ms.openlocfilehash: 7849f6d391cad7e973babfa97f2859b9df40f23e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 5d4d410f6fca566dab14e601972952b5996c331a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820896"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80124889"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Настройка Многофакторной идентификации для SQL Server Management Studio и Azure AD
 
-В этом разделе показано, как настроить Многофакторную идентификацию (MFA) Azure Active Directory для SQL Server Management Studio. Многофакторная идентификация Azure AD может использоваться при подключении SSMS или SqlPackage.exe к службе [База данных SQL](sql-database-technical-overview.md) и [Хранилищу данных SQL Azure](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Обзор многофакторной проверки подлинности в Базе данных SQL Azure приведен в разделе [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md).
+В этом разделе показано, как настроить Многофакторную идентификацию (MFA) Azure Active Directory для SQL Server Management Studio. Многофакторная идентификация Azure AD может использоваться при подключении SSMS или SqlPackage.exe к службе [База данных SQL](sql-database-technical-overview.md) и [Хранилищу данных SQL Azure](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Для получения обзора многофакторной аутентификации базы данных Azure S'L [см.](sql-database-ssms-mfa-authentication.md)
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
 
 ## <a name="configuration-steps"></a>Этапы настройки
 
-1. **Настройка Azure Active Directory.** Дополнительные сведения см. в статьях [Управление каталогом Azure AD](https://msdn.microsoft.com/library/azure/hh967611.aspx), [Интеграция локальных удостоверений с Azure Active Directory](../active-directory/hybrid/whatis-hybrid-identity.md) и [AzureADHelp](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) и записях блога [Add your own domain name to Azure AD](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Добавление собственного имени домена в Azure AD) и [Microsoft Azure now supports federation with Windows Server Active Directory](https://msdn.microsoft.com/library/azure/jj151815.aspx) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
-2. **Настройка MFA.** Пошаговые инструкции см. в разделах [Что такое Многофакторная идентификация Azure?](../active-directory/authentication/multi-factor-authentication.md) и [Условный доступ (MFA) и база данных SQL Azure и хранилище данных](sql-database-conditional-access.md). (Для полного условного доступа требуется Azure Active Directory Premium (Azure AD). Azure AD Standard обеспечивает ограниченные возможности MFA).
+1. **Настройка Azure Active Directory.** Дополнительные сведения см. в статьях [Управление каталогом Azure AD](https://msdn.microsoft.com/library/azure/hh967611.aspx), [Интеграция локальных удостоверений с Azure Active Directory](../active-directory/hybrid/whatis-hybrid-identity.md) и [AzureADHelp](https://msdn.microsoft.com/library/azure/jj151815.aspx) и записях блога [Add your own domain name to Azure AD](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Добавление собственного имени домена в Azure AD) и [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
+2. **Настройка MFA.** Пошаговые инструкции см. в разделах [Что такое Многофакторная идентификация Azure?](../active-directory/authentication/multi-factor-authentication.md) и [Условный доступ (MFA) и база данных SQL Azure и хранилище данных](sql-database-conditional-access.md). (Полный условный доступ требует premium Azure Active Directory (Azure AD). Azure AD Standard обеспечивает ограниченные возможности MFA).
 3. **Настройка базы данных SQL или хранилища данных SQL для аутентификации Azure AD.** Пошаговые инструкции см. в статье [Подключение к базе данных SQL или хранилищу данных SQL c использованием проверки подлинности Azure Active Directory](sql-database-aad-authentication.md).
 4. **Скачивание SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx). Для всех функций в этом разделе используйте по крайней мере версию 17.2 за июль 2017 года.  
 
@@ -40,13 +40,13 @@ ms.locfileid: "73820896"
    ![1mfa-universal-connect][1]  
 2. Заполните поле **Имя пользователя** учетными данными Azure Active Directory в формате `user_name@domain.com`.  
    ![1mfa-universal-connect-user](./media/sql-database-ssms-mfa-auth/1mfa-universal-connect-user.png)   
-3. Если вы подключаетесь от имени гостевого пользователя, вам больше не нужно заполнять поле доменного имени AD или идентификатора клиента для гостевых пользователей, так как SSMS 18. x или более поздней версии автоматически распознает его. Дополнительные сведения см. в разделе [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md).
-   ![MFA-No-клиент-SSMS](./media/sql-database-ssms-mfa-auth/mfa-no-tenant-ssms.png)
+3. Если вы подключаетесь в качестве гостевого пользователя, вам больше не нужно заполнять доменное имя AD или поле идентификатора клиента для гостевых пользователей, потому что SSMS 18.x или позже автоматически распознает его. Дополнительные сведения см. в разделе [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md).
+   ![mfa-no-tenant-ssms](./media/sql-database-ssms-mfa-auth/mfa-no-tenant-ssms.png)
 
-   Однако если вы подключаетесь от имени гостевого пользователя с помощью SSMS 17. x или более ранней версии, необходимо нажать кнопку **Параметры**и в диалоговом окне **Свойства соединения** и заполнить поле **доменное имя AD или идентификатор клиента** .
+   Однако, если вы подключаетесь в качестве гостевого пользователя с помощью SSMS 17.x или старше, вы должны нажать **Параметры**, и на поле диалога **подключения собственности,** и завершить **AD доменное имя или окно ID арендатора.**
    ![mfa-tenant-ssms](./media/sql-database-ssms-mfa-auth/mfa-tenant-ssms.png)
 
-4. Как и для базы данных SQL и хранилища данных SQL, необходимо щелкнуть **Параметры** и указать базу данных в диалоговом окне **Параметры**. (Если подключенный пользователь является гостевым (т. е. joe@outlook.com), нужно установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров.) Дополнительные сведения см. в статье [Универсальная проверка подлинности для Базы данных SQL и Хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md). Щелкните **Подключить**.  
+4. Как обычно, для базы данных s'L и хранилища данных S'L, необходимо нажать **параметры** и указать базу данных в диалоговом поле **Options.** (Если подключенный пользователь является гостевым (т. е. joe@outlook.com), нужно установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров.) Дополнительные сведения см. в статье [Универсальная проверка подлинности для Базы данных SQL и Хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md). Затем нажмите кнопку **Соединить**.  
 5. Когда откроется диалоговое окно **Вход в учетную запись** , укажите учетную запись и пароль своего удостоверения Azure Active Directory. Пароль не требуется, если пользователь является частью домена в федерации с Azure AD.  
    ![2mfa-sign-in][2]  
 

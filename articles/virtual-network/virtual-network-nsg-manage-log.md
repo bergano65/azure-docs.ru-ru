@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
 ms.openlocfilehash: 9829e713f19ab9755e9dc79d676446c8048e09b3
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75751184"
 ---
 # <a name="diagnostic-logging-for-a-network-security-group"></a>Журнал ведения диагностики для группы безопасности сети
@@ -37,7 +37,7 @@ ms.locfileid: "75751184"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Войдите на [портал](https://portal.azure.com).
+1. Войти на [портал](https://portal.azure.com).
 2. Щелкните **Все службы**, затем введите *группы безопасности сети*. Когда элемент **Группы безопасности сети** появится в результатах поиска, выберите его.
 3. Выберите NSG, для которой хотите включить ведение журнала.
 4. В разделе **Мониторинг** выберите **Журналы диагностики** и выберите **Включить диагностику**, как показано на следующем рисунке.
@@ -48,7 +48,7 @@ ms.locfileid: "75751184"
 
     | Параметр                                                                                     | Значение                                                          |
     | ---------                                                                                   |---------                                                       |
-    | Имя                                                                                        | Имя на ваш выбор.  Например: *myNsgDiagnostics*.      |
+    | name                                                                                        | Имя на ваш выбор.  Например: *myNsgDiagnostics*.      |
     | **Архивировать в учетной записи хранения**, **Передать в концентратор событий** и **Отправить в Log Analytics** | Можно выбрать любые назначения. Узнайте больше в разделе [Целевое расположение для журналов](#log-destinations).                                                                                                                                           |
     | LOG                                                                                         | Выберите одну или обе категории журналов. Чтобы узнать больше о данных, записываемых в каждую категорию, ознакомьтесь с разделом [Категории журналов](#log-categories).                                                                                                                                             |
 6. Просмотрите и проанализируйте журналы. Дополнительные сведения см. в разделе [Просмотр и анализ журналов](#view-and-analyze-logs).
@@ -57,11 +57,11 @@ ms.locfileid: "75751184"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы используете PowerShell локально, вам также потребуется запустить `Connect-AzAccount`, чтобы войти в Azure с учетной записью, имеющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы запустите PowerShell с компьютера, вам нужен модуль Azure PowerShell, версия 1.0.0 или позже. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы работаете на уровне PowerShell `Connect-AzAccount` локально, вам также необходимо запустить для вху-на-А. В Azure с учетной записью, которая имеет [необходимые разрешения.](virtual-network-network-interface.md#permissions)
 
-Чтобы включить журнал ведения диагностики, требуется идентификатор существующей NSG. Если у вас нет существующего NSG, вы можете создать его с помощью [New-азнетворксекуритиграуп](/powershell/module/az.network/new-aznetworksecuritygroup).
+Чтобы включить журнал ведения диагностики, требуется идентификатор существующей NSG. Если у вас нет существующей NSG, вы можете создать его с [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup).
 
-Получите группу безопасности сети, для которой необходимо включить ведение журнала диагностики, с помощью [Get-азнетворксекуритиграуп](/powershell/module/az.network/get-aznetworksecuritygroup). Например, чтобы получить NSG *myNsg* в группе ресурсов *myResourceGroup*, введите следующую команду.
+Извлеките группу сетевой безопасности, которую вы хотите включить диагностическую систему регистрации с [Get-AzNetworkSecurityGroup.](/powershell/module/az.network/get-aznetworksecuritygroup) Например, чтобы получить NSG *myNsg* в группе ресурсов *myResourceGroup*, введите следующую команду.
 
 ```azurepowershell-interactive
 $Nsg=Get-AzNetworkSecurityGroup `
@@ -69,7 +69,7 @@ $Nsg=Get-AzNetworkSecurityGroup `
   -ResourceGroupName myResourceGroup
 ```
 
-Журналы диагностики можно записывать в назначения трех типов. Дополнительные сведения см. в разделе [Целевое расположение для журналов](#log-destinations). В этой статье журналы отправляются в *Log Analytics* в качестве примера. Получите существующую рабочую область Log Analytics с помощью [Get-азоператионалинсигхтсворкспаце](/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspace). Например, чтобы получить рабочую область *myWorkspace* в группе ресурсов *myWorkspaces*, введите следующую команду:
+Журналы диагностики можно записывать в назначения трех типов. Дополнительные сведения см. в разделе [Целевое расположение для журналов](#log-destinations). В этой статье журналы отправляются в *Log Analytics* в качестве примера. Извлеките существующее рабочее пространство Log Analytics с [помощью Get-AzOperationalInsightsWorkspace.](/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspace) Например, чтобы получить рабочую область *myWorkspace* в группе ресурсов *myWorkspaces*, введите следующую команду:
 
 ```azurepowershell-interactive
 $Oms=Get-AzOperationalInsightsWorkspace `
@@ -77,9 +77,9 @@ $Oms=Get-AzOperationalInsightsWorkspace `
   -Name myWorkspace
 ```
 
-Если у вас нет рабочей области, вы можете создать ее с помощью [New-азоператионалинсигхтсворкспаце](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace).
+Если у вас нет существующего рабочего пространства, вы можете создать его с [помощью New-AzOperationalInsightsWorkspace](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace).
 
-Существуют две категории, для которых можно включить журналы. Дополнительные сведения см. в разделе [Категории журналов](#log-categories). Включите ведение журнала диагностики для NSG с помощью [Set-аздиагностиксеттинг](/powershell/module/az.monitor/set-azdiagnosticsetting). Следующий пример записывает в журнал данные о категориях событий и счетчиков и сохраняет его в рабочую область для NSG, используя идентификаторы NSG и рабочей области, полученные ранее.
+Существуют две категории, для которых можно включить журналы. Дополнительные сведения см. в разделе [Категории журналов](#log-categories). Включите диагностическую систему регистрации для NSG с [set-AzDiagnosticSetting.](/powershell/module/az.monitor/set-azdiagnosticsetting) Следующий пример записывает в журнал данные о категориях событий и счетчиков и сохраняет его в рабочую область для NSG, используя идентификаторы NSG и рабочей области, полученные ранее.
 
 ```azurepowershell-interactive
 Set-AzDiagnosticSetting `
@@ -92,7 +92,7 @@ Set-AzDiagnosticSetting `
 
 Просмотрите и проанализируйте журналы. Дополнительные сведения см. в разделе [Просмотр и анализ журналов](#view-and-analyze-logs).
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/bash) или Azure CLI на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Для запуска CLI на компьютере требуется версия 2.0.38 или выше. Выполните `az --version` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Если CLI работает локально, необходимо также выполнить `az login`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
 
@@ -132,13 +132,13 @@ az monitor diagnostic-settings create \
 Назначения данных диагностики:
 - [Запись в учетную запись хранения](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
 - [Потоковая передача журнала в концентратор событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
-- [Записывается в журналы Azure Monitor](../azure-monitor/platform/resource-logs-collect-storage.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- [Написано в журналах Azure Monitor](../azure-monitor/platform/resource-logs-collect-storage.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="log-categories"></a>Категории журналов
 
 Данные в формате JSON записываются в журналы следующих категорий.
 
-### <a name="event"></a>Мероприятие
+### <a name="event"></a>Событие
 
 Журнал событий содержит сведения о том, какие правила NSG на основе MAC-адреса применяются к виртуальным машинам. Эти данные регистрируются для каждого события. В следующем примере данные зарегистрированы для виртуальной машины с IP-адресом 192.168.1.4 и MAC-адресом 00-0D-3A-92-6A-7C.
 
@@ -199,8 +199,8 @@ az monitor diagnostic-settings create \
 ## <a name="view-and-analyze-logs"></a>Просмотр и анализ журналов
 
 Узнайте, как просмотреть данные журнала диагностики, ознакомившись с [обзором журналов диагностики Azure](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Если данные диагностики отправляются в:
-- **Журналы Azure Monitor**. Вы можете использовать решение для [анализа групп безопасности сети](../azure-monitor/insights/azure-networking-analytics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-network-security-group-analytics-solution-in-azure-monitor
-) для получения расширенных сведений. Это решение наглядно представляет правила NSG, которые разрешают или запрещают трафик по MAC-адресу сетевого интерфейса в виртуальной машине.
+- **Журналы Azure Monitor:** Вы можете использовать решение [для анализа групп ы безопасности сети](../azure-monitor/insights/azure-networking-analytics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-network-security-group-analytics-solution-in-azure-monitor
+) для получения расширенной информации. Это решение наглядно представляет правила NSG, которые разрешают или запрещают трафик по MAC-адресу сетевого интерфейса в виртуальной машине.
 - **учетную запись хранения**, то данные записываются в файл PT1H.json. Расположение журналов:
   - журнал событий: `insights-logs-networksecuritygroupevent/resourceId=/SUBSCRIPTIONS/[ID]/RESOURCEGROUPS/[RESOURCE-GROUP-NAME-FOR-NSG]/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/[NSG NAME]/y=[YEAR]/m=[MONTH/d=[DAY]/h=[HOUR]/m=[MINUTE]`
   - журнал счетчика правил: `insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/[ID]/RESOURCEGROUPS/[RESOURCE-GROUP-NAME-FOR-NSG]/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/[NSG NAME]/y=[YEAR]/m=[MONTH/d=[DAY]/h=[HOUR]/m=[MINUTE]`

@@ -1,5 +1,5 @@
 ---
-title: Управление безопасностью Azure — безопасная конфигурация
+title: Контроль безопасности Azure - Безопасная конфигурация
 description: Безопасная конфигурация управления безопасностью
 author: msmbaldwin
 manager: rkarlin
@@ -9,107 +9,107 @@ ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
 ms.openlocfilehash: 03564effeee36ddb3316d48329ccab8ccfce75b9
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75934290"
 ---
-# <a name="security-control-secure-configuration"></a>Управление безопасностью: безопасная конфигурация
+# <a name="security-control-secure-configuration"></a>Контроль безопасности: Безопасная конфигурация
 
-Установите, реализуйте и активно Управляйте (Отслеживайте, сообщайте об исправьте) конфигурацию безопасности ресурсов Azure, чтобы предотвратить взлом злоумышленниками уязвимых служб и параметров.
+Создание, внедрение и активное управление (отслеживание, отчет, исправление) конфигурации безопасности ресурсов Azure, чтобы предотвратить использование злоумышленниками уязвимых служб и настроек.
 
-## <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: Установите безопасные конфигурации для всех ресурсов Azure.
+## <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1: Создание безопасных конфигураций для всех ресурсов Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.1 | 5.1 | Customer |
 
-Используйте политику Azure или центр безопасности Azure, чтобы поддерживать конфигурации безопасности для всех ресурсов Azure.
+Для поддержания конфигураций безопасности для всех ресурсов Azure используйте Azure Policy или Azure Security Center.
 
-Как настроить политику Azure и управлять ей:
+Как настроить и управлять политикой Azure:
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-## <a name="72-establish-secure-operating-system-configurations"></a>7,2: Установка безопасных конфигураций операционной системы
+## <a name="72-establish-secure-operating-system-configurations"></a>7.2: Создание безопасных конфигураций операционных систем
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.2 | 5.1 | Customer |
 
-Используйте рекомендацию центра безопасности Azure &quot;исправьте уязвимости в конфигурациях безопасности на виртуальных машинах&quot; для поддержки конфигураций безопасности во всех ресурсах вычислений.
+Для поддержания конфигураций безопасности на всех вычислительных ресурсах используйте рекомендации &quot;Центра безопасности Azure Исправления уязвимостей в конфигурациях безопасности на ваших виртуальных машинах.&quot;
 
-Как отслеживать рекомендации центра безопасности Azure:
+Как следить за рекомендациями Центра безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-recommendations
 
-Как исправлять рекомендации центра безопасности Azure:
+Как уделать рекомендации Центра безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations
 
-## <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: поддержание защищенных конфигураций ресурсов Azure
+## <a name="73-maintain-secure-azure-resource-configurations"></a>7.3: Поддержание безопасных конфигураций ресурсов Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.3 | 5,2 | Customer |
 
-Используйте политику Azure [Deny] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
+Используйте политику Azure «отрицать» и «развертывать, если не существует», чтобы обеспечить безопасные настройки в ресурсах Azure.
 
-Как настроить политику Azure и управлять ей:
+Как настроить и управлять политикой Azure:
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Общие сведения о влиянии политики Azure:
+Понять эффекты политики Azure:
 
 https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
-## <a name="74-maintain-secure-operating-system-configurations"></a>7,4: поддержание защищенных конфигураций операционных систем
+## <a name="74-maintain-secure-operating-system-configurations"></a>7.4: Поддержание безопасных конфигураций операционных систем
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
-| 7.4 | 5,2 | Общая |
+| 7.4 | 5,2 | Shared |
 
-Базовые образы операционной системы управляются и обслуживаются корпорацией Майкрософт.
+Базовые изображения операционной системы управляются и поддерживаются корпорацией Майкрософт.
 
-Однако параметры безопасности, необходимые для Организации, можно применить с помощью шаблонов Azure Resource Manager и (или) настройки требуемого состояния.
+Тем не менее, можно применить параметры безопасности, требуемые организацией, с помощью шаблонов Azure Resource Manager и/или конфигурации состояния.
 
-Как создать виртуальную машину Azure на основе шаблона Azure Resource Manager:
+Как создать виртуальную машину Azure из шаблона управления ресурсами Azure:
 
 https://docs.microsoft.com/azure/virtual-machines/windows/ps-template
 
-Общие сведения о конфигурации требуемого состояния для виртуальных машин Azure:
+Поймите желаемую конфигурацию состояния для виртуальных машин Azure:
 
 https://docs.microsoft.com/azure/virtual-machines/extensions/dsc-overview
 
-## <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: безопасное хранение конфигурации ресурсов Azure
+## <a name="75-securely-store-configuration-of-azure-resources"></a>7.5: Безопасное хранение конфигурации ресурсов Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.5 | 5,3 | Customer |
 
-Если вы используете пользовательские определения политики Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
+При использовании пользовательских определений политики Azure используйте Azure DevOps или Azure Repos для безопасного хранения и управления кодом.
 
-Как сохранить код в Azure DevOps:
+Как хранить код в Azure DevOps:
 
 https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
 
-Документация по Azure Repos:
+Документация Репос Azure:
 
 https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
-## <a name="76-securely-store-custom-operating-system-images"></a>7,6: безопасное хранение пользовательских образов операционной системы
+## <a name="76-securely-store-custom-operating-system-images"></a>7.6: Безопасно хранить пользовательские изображения операционной системы
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.6 | 5,3 | Customer |
 
-При использовании пользовательских образов используйте RBAC, чтобы обеспечить доступ к образам только полномочным пользователям. Для образов контейнеров Храните их в реестре контейнеров Azure и используйте RBAC, чтобы обеспечить доступ к образам только полномочным пользователям.
+При использовании пользовательских изображений используйте RBAC, чтобы обеспечить доступ к изображениям только авторизованным пользователям. Для изображений контейнеров храните их в реестре контейнеров Azure и используете RBAC для обеспечения доступа к изображениям только авторизованных пользователей.
 
-Общие сведения о RBAC в Azure:
+Поймите RBAC в Azure:
 
 https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles
 
-Общие сведения о RBAC для реестра контейнеров:
+Поймите RBAC для контейнерного реестра:
 
 https://docs.microsoft.com/azure/container-registry/container-registry-roles
 
@@ -117,98 +117,98 @@ https://docs.microsoft.com/azure/container-registry/container-registry-roles
 
 https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal
 
-## <a name="77-deploy-system-configuration-management-tools"></a>7,7: развертывание средств управления конфигурацией системы
+## <a name="77-deploy-system-configuration-management-tools"></a>7.7: Инструменты управления конфигурацией конфигурации системы развертывание
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.7 | 5.4 | Customer |
 
-Используйте политику Azure для оповещения, аудита и принудительного применения конфигураций системы. Кроме того, разрабатывайте процесс и конвейер для управления исключениями политик.
+Используйте политику Azure для оповещения, аудита и обеспечения безопасности конфигураций систем. Кроме того, разработайте процесс и конвейер для управления исключениями политики.
 
-Как настроить политику Azure и управлять ей:
+Как настроить и управлять политикой Azure:
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-## <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7,8: развертывание средств управления конфигурацией системы для операционных систем
+## <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8: Развертывать инструменты управления конфигурацией системы для операционных систем
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.8 | 5.4 | Customer |
 
-Используйте расширения вычислений Azure, такие как настройка требуемого состояния PowerShell для расширения Windows Compute или Linux Chef для Linux.
+Используйте расширения Azure для вычислений, такие как конфигурация состояния PowerShell Desired state Configuration для Windows compute или linux Chef Extension for Linux.
 
-Как установить расширения виртуальной машины в Azure:
+Как установить виртуальные расширения машины в Azure:
 
 https://docs.microsoft.com/azure/virtual-machines/extensions/overview#how-can-i-install-an-extension
 
-## <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7,9. Реализация автоматического мониторинга конфигурации для служб Azure
+## <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7.9: Внедрение автоматизированного мониторинга конфигурации для служб Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.9 | 5.5 | Customer |
 
-Использование центра безопасности Azure для выполнения проверок базовых показателей ресурсов Azure
+Используйте Центр безопасности Azure для выполнения базовых сканирований ресурсов Azure
 
-Как исправить рекомендации в центре безопасности Azure:
+Как уделать рекомендации в Центре безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations
 
-## <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7,10. Реализация автоматического мониторинга конфигурации для операционных систем
+## <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10: Внедрение автоматизированного мониторинга конфигурации для операционных систем
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.1 | 5.5 | Customer |
 
-Используйте центр безопасности Azure для выполнения проверок базовых параметров ОС и DOCKER для контейнеров.
+Используйте Центр безопасности Azure для выполнения базовых сканов для настроек ОС и докеров для контейнеров.
 
-Сведения о рекомендациях по контейнеру центра безопасности Azure:
+Поймите рекомендации контейнерного центра безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-container-recommendations
 
-## <a name="711-manage-azure-secrets-securely"></a>7,11: безопасное управление секретами Azure 
+## <a name="711-manage-azure-secrets-securely"></a>7.11: Надежное управление секретами Azure 
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.11 | Версия 13.1 | Customer |
 
-Используйте Управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами для облачных приложений.
+Используйте идентификатор управляемой службы совместно с Azure Key Vault для упрощения и обеспечения секретного управления облачными приложениями.
 
-Как интегрироваться с управляемыми удостоверениями Azure:
+Как интегрироваться с управляемыми идентификаторами Azure:
 
 https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-Создание Key Vault.
+Как создать Убежище ключей:
 
 https://docs.microsoft.com/azure/key-vault/quick-create-portal
 
-Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения:
+Как обеспечить аутентификацию Key Vault с управляемой идентификацией:
 
 https://docs.microsoft.com/azure/key-vault/managed-identity
 
-## <a name="712-manage-identities-securely-and-automatically"></a>7,12: безопасно управляйте удостоверениями и автоматически
+## <a name="712-manage-identities-securely-and-automatically"></a>7.12: Управление идентификаторами безопасно и автоматически
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
 | 7.12 | 4.1 | Customer |
 
-Используйте управляемые удостоверения для предоставления служб Azure с автоматически управляемым удостоверением в Azure AD. Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Key Vault без каких бы то ни было учетных данных в коде.
+Используйте управляемые идентификаторы для предоставления службам Azure автоматического управления идентификаторами в Azure AD. Управляемые идентификаторы позволяют аутентифицировать проверку любой службы, которая поддерживает аутентификацию Azure AD, включая Key Vault, без каких-либо учетных данных в коде.
 
-Как настроить управляемые удостоверения:
+Как настроить управляемые идентификаторы:
 
 https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm
 
-## <a name="713-eliminate-unintended-credential-exposure"></a>7,13: устранение непреднамеренной раскрытия учетных данных
+## <a name="713-eliminate-unintended-credential-exposure"></a>7.13: Устранить непреднамеренное воздействие учетных данных
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
-| 7,13 | 13.3 | Customer |
+| 7.13 | 13.3 | Customer |
 
-Реализуйте средство проверки учетных данных для обнаружения учетных данных в коде. Средство проверки учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault. 
+Реализация сканера учетных данных для идентификации учетных данных в коде. Сканер учетных данных также будет способствовать перемещению обнаруженных учетных данных в более безопасные места, такие как Убежище ключей Azure. 
 
-Настройка средства проверки учетных данных:
+Как настроить сканер учетных данных:
 
 https://secdevtools.azurewebsites.net/helpcredscan.html
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. следующий контроль безопасности: [Защита от вредоносных программ](security-control-malware-defense.md)
+Смотрите следующий контроль безопасности: [Защита от вредоносных программ](security-control-malware-defense.md)

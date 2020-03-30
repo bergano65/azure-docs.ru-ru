@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 01/27/2017
 ms.openlocfilehash: 918516a5629f8570d54c641ffc29f2367937266f
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74792373"
 ---
 # <a name="decode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Декодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -24,7 +24,7 @@ ms.locfileid: "74792373"
 Вам понадобится следующее:
 
 * Учетная запись Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-* [Учетная запись интеграции](logic-apps-enterprise-integration-create-integration-account.md), уже определенная и связанная с подпиской Azure. Для работы с соединителем для декодирования сообщений X12 потребуется учетная запись интеграции.
+* Учетная [запись интеграции,](logic-apps-enterprise-integration-create-integration-account.md) которая уже определена и связана с подпиской Azure. Для работы с соединителем для декодирования сообщений X12 потребуется учетная запись интеграции.
 * В учетной записи интеграции должны быть определены по крайней мере два [партнера](logic-apps-enterprise-integration-partners.md).
 * В учетной записи интеграции должно быть определено [соглашение X12](logic-apps-enterprise-integration-x12.md).
 
@@ -51,13 +51,13 @@ ms.locfileid: "74792373"
 
 5.  Когда все будет готово, данные для подключения должны выглядеть примерно так, как показано в примере. Чтобы завершить создание подключения, нажмите кнопку **Создать**.
    
-    ![Сведения о подключении к учетной записи интеграции](media/logic-apps-enterprise-integration-x12-decode/x12decodeimage5.png) 
+    ![сведения о подключении к учетной записи интеграции](media/logic-apps-enterprise-integration-x12-decode/x12decodeimage5.png) 
 
 6. Когда подключение будет создано, как показано в этом примере, выберите неструктурированный файл сообщения X12 для декодирования.
 
     ![создано подключение к учетной записи интеграции](media/logic-apps-enterprise-integration-x12-decode/x12decodeimage6.png) 
 
-    Пример.
+    Пример:
 
     ![Выбор неструктурированного файла сообщения X12 для декодирования](media/logic-apps-enterprise-integration-x12-decode/x12decodeimage7.png) 
 
@@ -103,5 +103,5 @@ ms.locfileid: "74792373"
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/x12/). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
+[Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Узнайте больше о пакете корпоративной интеграции") 
 

@@ -16,17 +16,17 @@ ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: kumud
 ms.openlocfilehash: 66050c16f40e0a06117327ef53e3aae87d03c5db
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76043545"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
 
 Вы можете создать виртуальную машину со статическим общедоступным IP-адресом. Общедоступный IP-адрес позволяет подключиться к виртуальной машине из Интернета. Присвойте статический общедоступный IP-адрес, а не динамический, чтобы гарантировать, что адрес никогда не изменится. Подробнее о [статических общедоступных IP-адресах](virtual-network-ip-addresses-overview-arm.md#allocation-method). Чтобы изменить общедоступный IP-адрес, присвоенный существующей виртуальной машине, с динамического на статический или использовать частные IP-адреса, см. статью [Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure](virtual-network-network-interface-addresses.md). За использование общедоступных IP-адресов взимается [номинальная плата](https://azure.microsoft.com/pricing/details/ip-addresses). Кроме того, существует [ограничение](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) на число общедоступных IP-адресов, которые можно использовать в рамках одной подписки.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 
@@ -38,12 +38,12 @@ ms.locfileid: "76043545"
 
     |Параметр|Значение|
     |---|---|
-    |Имя|myVM|
+    |name|myVM|
     |Имя пользователя| Введите выбранное имя пользователя.|
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-    |Subscription| Выберите свою подписку.|
+    |Подписка| Выберите свою подписку.|
     |Группа ресурсов| Щелкните **Использовать существующую** и выберите **myResourceGroup**.|
-    |Расположение| Выберите **Восточная часть США**.|
+    |Расположение| Выберите **Восток США**|
 
 4. Выберите размер виртуальной машины и щелкните **Выбрать**.
 5. В разделе **Параметры** выберите **Общедоступный IP-адрес**.
@@ -79,7 +79,7 @@ ms.locfileid: "76043545"
 
 1. В поле **Поиск** в верхней части портала введите *myResourceGroup*. Когда группа ресурсов **myResourceGroup** появится в результатах поиска, выберите ее.
 2. Выберите **Удалить группу ресурсов**.
-3. Введите *myResourceGroup* в поле **TYPE THE RESOURCE GROUP NAME:** (Введите имя группы ресурсов:) и нажмите кнопку **Удалить**.
+3. Введите *myResourceGroup* для **TYPE THE RESOURCE GROUP NAME:** и выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Использование Azure PowerShell для включения диагностики на виртуальной машине Windows
+title: Используйте Azure PowerShell для диагностики на Windows VM
 services: virtual-machines-windows
 documentationcenter: ''
 description: Описание процедуры включения системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell.
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 12/15/2015
 ms.author: saurabh
 ms.openlocfilehash: 55afeb52323ead7db8be7e8fd1dabc880328e888
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77921544"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell
@@ -42,9 +42,9 @@ ms.locfileid: "77921544"
 
 Если файл конфигурации диагностики содержит элемент **StorageAccount** с именем учетной записи хранения, сценарий *Set-AzVMDiagnosticsExtension* автоматически настраивает для расширения диагностики отправку диагностических данных в эту учетную запись. Для этого учетная запись хранения должна входить в ту же подписку, что и виртуальная машина.
 
-Если в конфигурации диагностики нет элемента **StorageAccount** , в командлет необходимо передать параметр *StorageAccountName* . Если параметр *StorageAccountName* указан, командлет использует учетную запись хранения, указанную в этом параметре, а не в файле конфигурации диагностики.
+Если в конфигурации диагностики нет элемента **StorageAccount** , в командлет необходимо передать параметр *StorageAccountName* . Если указан параметр *StorageAccountName,* то cmdlet всегда будет использовать учетную запись хранилища, указанную в параметре, а не ту, которая указана в файле конфигурации диагностики.
 
-Если учетная запись хранения диагностики и виртуальная машина относятся к разным подпискам, то в командлет необходимо явно передать параметры *StorageAccountName* и *StorageAccountKey*. Параметр *StorageAccountKey* не требуется, если учетная запись хранения диагностики входит в ту же подписку, так как при включении расширения диагностики командлет автоматически запрашивает и устанавливает значение ключа. Если же учетная запись хранения диагностики входит в другую подписку, командлет не сможет получить ключ автоматически, а значит, его необходимо явно указать с помощью параметра *StorageAccountKey*.  
+Если учетная запись хранения диагностики и виртуальная машина относятся к разным подпискам, то в командлет необходимо явно передать параметры *StorageAccountName* и *StorageAccountKey*. Параметр *StorageAccountKey* не нужен, когда учетная запись хранения диагностики находится в той же подписке, так как cmdlet может автоматически задать запрос и установить ключевое значение при включении расширения диагностики. Однако, если учетная запись хранения диагностики находится в другой подписке, то cmdlet не сможет получить ключ автоматически, и вам нужно явно указать ключ через параметр *StorageAccountKey.*  
 
     Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name -DiagnosticsConfigurationPath $diagnosticsconfig_path -StorageAccountName $diagnosticsstorage_name -StorageAccountKey $diagnosticsstorage_key
 
@@ -198,7 +198,7 @@ ms.locfileid: "77921544"
     </PublicConfig>
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные рекомендации по использованию системы диагностики Azure и других методов для устранения неполадок см. в статье [Включение системы диагностики Azure в облачных службах Azure](../../cloud-services/cloud-services-dotnet-diagnostics.md).
 * Пояснение различных параметров XML-конфигураций для расширения диагностики см. в статье, посвященной [схеме конфигураций диагностики](https://msdn.microsoft.com/library/azure/mt634524.aspx).
 

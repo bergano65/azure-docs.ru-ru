@@ -9,43 +9,43 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: a40c7bbc9f37135814b7bba3396d368faf97a166
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75775203"
 ---
-# <a name="convert-a-legacy-exchange-peering-to-azure-resource-using-the-portal"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью портала
+# <a name="convert-a-legacy-exchange-peering-to-azure-resource-using-the-portal"></a>Преобразование устаревшего пиринга через точку обмена в ресурс Azure с помощью портала
 
-В этой статье описывается, как преобразовать имеющийся устаревший пиринг Exchange в ресурс Azure с помощью портала.
+В этой статье описывается, как преобразовать существующую устаревшую биржу, вглядывающуюся в ресурс Azure с помощью портала.
 
-При желании вы можете выполнить инструкции с помощью [PowerShell](howto-legacy-exchange-powershell.md).
+Если вы предпочитаете, вы можете завершить это руководство с помощью [PowerShell](howto-legacy-exchange-powershell.md).
 
-## <a name="before-you-begin"></a>Перед началом работы
-* Прежде чем приступить к настройке, ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по Exchange пиринга](walkthrough-exchange-all.md) .
+## <a name="before-you-begin"></a>Перед началом
+* Просмотрите [предпосылки](prerequisites.md) и [обменпирирования пошаговое решение,](walkthrough-exchange-all.md) прежде чем начать конфигурацию.
 
-## <a name="convert-a-legacy-exchange-peering-to-azure-resource"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure
+## <a name="convert-a-legacy-exchange-peering-to-azure-resource"></a>Преобразование устаревшего пиринга через точку обмена в ресурс Azure
 
-### <a name="sign-in-to-portal-and-select-your-subscription"></a>Войдите на портал и выберите свою подписку.
+### <a name="sign-in-to-portal-and-select-your-subscription"></a>Вопийте на портале и выберите подписку
 [!INCLUDE [Account](./includes/account-portal.md)]
 
-### <a name=create></a>Преобразование устаревшего пиринга Exchange
+### <a name="convert-legacy-exchange-peering"></a><a name=create></a>Преобразование взаистого вонзательного замысла
 
-Можно преобразовать устаревшие подключения пиринга с помощью ресурса **пиринга** .
+Можно преобразовать устаревшие пиринговые соединения с помощью ресурса **Peering.**
 
-#### <a name="launch-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка основных параметров
+#### <a name="launch-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка базовых настроек
 [!INCLUDE [direct-peering-basic](./includes/direct-portal-basic.md)]
 
-#### <a name="configure-connections-and-submit"></a>Настройка подключений и отправка
+#### <a name="configure-connections-and-submit"></a>Настройка соединений и отправка
 [!INCLUDE [exchange-peering-configuration](./includes/exchange-portal-configuration-legacy.md)]
 
-### <a name=get></a>Проверка пиринга Exchange
+### <a name="verify-exchange-peering"></a><a name=get></a>Проверить врали Exchange
 [!INCLUDE [peering-exchange-get-portal](./includes/exchange-portal-get.md)]
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Дополнительные сведения см. на странице [часто задаваемые вопросы об пиринга через Интернет](faqs.md)
+Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание или изменение пиринга Exchange с помощью портала](howto-exchange-portal.md)
+* [Создание или изменение пиринга через точку обмена с помощью портала](howto-exchange-portal.md)

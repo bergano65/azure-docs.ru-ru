@@ -1,21 +1,21 @@
 ---
-title: Миграция из пакета SDK для Java в Maven
+title: Мигрировать из Java SDK в Maven
 description: Обновите старые приложения Java, которые используют пакет SDK для Java Service Fabric, чтобы получить зависимости Java в Service Fabric из Maven. По завершении этой настройки ваши старые приложения Java смогут выполнять сборку.
 author: rapatchi
 ms.topic: conceptual
 ms.date: 08/23/2017
 ms.author: rapatchi
 ms.openlocfilehash: b5e126ebdf3b89470472391c59d378c7a6d39b86
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75609814"
 ---
 # <a name="update-your-previous-java-service-fabric-application-to-fetch-java-libraries-from-maven"></a>Обновление старого приложения Java в Service Fabric для получения библиотек Java из Maven
 Мы недавно разместили двоичные файлы Java Service Fabric из пакета SDK для Java Service Fabric в Maven. Теперь вы можете использовать **mavencentral** для получения последних зависимостей Service Fabric Java. С помощью этого краткого руководства вы обновите существующие приложения Java, созданные ранее для использования с пакетом SDK для Java Service Fabric. Чтобы обеспечить совместимость со сборкой Maven, будет использован шаблон Yeoman или Eclipse.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 1. Сначала удалите существующий пакет SDK для Java.
 
    ```bash
@@ -80,7 +80,7 @@ ms.locfileid: "75609814"
   ```
 
 ### <a name="others"></a>Прочее
-#### <a name="transport"></a>Транспорт
+#### <a name="transport"></a>Транспортировка
 
 Поддержка транспортного уровня для приложения Java в Service Fabric. Вам не нужно явно добавлять эту зависимость в приложения Reliable Actors или Reliable Services, если ваша программа не находится на транспортном уровне.
 
@@ -158,7 +158,7 @@ task copyDeps <<{
     }
 }
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
 ```
 repositories {
         mavenCentral()
@@ -232,7 +232,7 @@ dependencies {
 .
 .
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
 ```
 repositories {
     mavenCentral()
@@ -304,7 +304,7 @@ task copyDeps<< {
     }
 }
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
 ```
 repositories {
     mavenCentral()
@@ -404,7 +404,7 @@ task copyDeps<< {
         }
 }
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
 ```
 repositories {
     mavenCentral()

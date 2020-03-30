@@ -16,30 +16,30 @@ ms.date: 12/04/2019
 ms.author: cathys
 keywords: visualstudio
 ms.openlocfilehash: 2977fb6f14468429eb651e4f8a6034c060cdee2f
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75895948"
 ---
 # <a name="visual-studio-images-on-azure"></a>Образы Visual Studio в Azure
 Запуск Visual Studio на предварительно настроенной виртуальной машине Azure — простой и быстрый способ получить "с нуля" готовую к работе среду разработки. Образы системы с различными конфигурациями Visual Studio доступны в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images%3Bmicrosoft%3Bwindows&page=1&subcategories=application-infrastructure).
 
-Впервые работаете с Azure? [Создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free).
+Впервые работаете с Azure? [Создайте бесплатную учетную запись Azure.](https://azure.microsoft.com/free)
 
 > [!NOTE]
-> Не все подписки подходят для развертывания образов Windows 10. Дополнительные сведения см. [в статье Использование клиента Windows в Azure для сценариев разработки и тестирования](https://docs.microsoft.com/azure/virtual-machines/windows/client-images) .
+> Не все подписки имеют право на развертывание изображений Windows 10. Для получения дополнительной информации [см. Используйте клиента Windows в Azure для сценариев отклонений/тестов](https://docs.microsoft.com/azure/virtual-machines/windows/client-images)
 
 ## <a name="what-configurations-and-versions-are-available"></a>Какие конфигурации и версии доступны?
 Образы большинства последних основных версий (Visual Studio 2019, Visual Studio 2017 и Visual Studio 2015) можно найти в Azure Marketplace.  Для каждой выпущенной основной версии доступна исходная версия "выпущено для веб" (RTW) и последние обновленные версии.  Для каждой из этих версий доступны выпуски Visual Studio Enterprise и Visual Studio Community.  Эти образы обновляются по крайней мере раз в месяц для включения последних обновлений Visual Studio и Windows.  Хотя имена образов не меняются, описание каждого образа содержит версию установленного продукта и дату выпуска образа.
 
 | Версия выпуска                                                                                                                                                | Выпуски              | Версия продукта   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------:|:-----------------:|
-| [Visual Studio 2019: Последняя (версия 16,4)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019latest?tab=Overview) | Enterprise, Community | Версия 16.4.0    |
-| [Visual Studio 2019: RTW](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019?tab=Overview)                         | Enterprise, Community | Версия 16.0.9    |
-| [Visual Studio 2017: Последняя (версия 15,9)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)           | Enterprise, Community | Версия 15.9.17   |
-| [Visual Studio 2017: RTW](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)                             | Enterprise, Community | Версия 15.0.27  |
-| [Visual Studio 2015: Последняя версия (обновление 3)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)               | Enterprise, Community | Версия 14.0.25431.01 |
+| [Визуальная студия 2019: Последние (Версия 16.4)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019latest?tab=Overview) | Enterprise, Community | Версия 16.4.0    |
+| [Визуальная студия 2019: RTW](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019?tab=Overview)                         | Enterprise, Community | Версия 16.0.9    |
+| [Visual Studio 2017: последняя версия (15.9)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)           | Enterprise, Community | Версия 15.9.17   |
+| [Visual Studio 2017 RTW](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)                             | Enterprise, Community | Версия 15.0.27  |
+| [Последняя версия Visual Studio 2015 (обновление 3)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)               | Enterprise, Community | Версия 14.0.25431.01 |
 
 > [!NOTE]
 > В соответствии с политикой обслуживания корпорации Майкрософт истек срок обслуживания изначально выпущенной версии (RTW) Visual Studio 2015. Visual Studio 2015 с обновлением 3 — единственная предлагаемая версия в линейке продуктов Visual Studio 2015.

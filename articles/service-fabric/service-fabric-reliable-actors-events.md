@@ -1,15 +1,15 @@
 ---
-title: События в Azure Service Fabric Actors на основе субъектов
-description: Сведения о событиях для Service Fabric Reliable Actors, эффективного способа связи между субъектом и клиентом.
+title: События в актерах на основе Azure Службы Ткань актеров
+description: Узнайте о событиях для сервисных надежных актеров, эффективный способ общения между актером и клиентом.
 author: vturecek
 ms.topic: conceptual
 ms.date: 10/06/2017
 ms.author: amanbha
 ms.openlocfilehash: 73c149a0d0992fecd1acf633891057570285df64
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75639672"
 ---
 # <a name="actor-events"></a>События субъекта
@@ -100,9 +100,9 @@ event.gameScoreUpdated(Id.getUUIDId(), score);
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)
+* [Ретрансция актера](service-fabric-reliable-actors-reentrancy.md)
 * [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
-* [Пример кода C#](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Код образца СИ](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода C# .NET Core](https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-started)
-* [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
+* [Код Java Sample](https://github.com/Azure-Samples/service-fabric-java-getting-started)

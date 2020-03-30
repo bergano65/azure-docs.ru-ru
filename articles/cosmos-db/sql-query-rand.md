@@ -1,6 +1,6 @@
 ---
-title: СЛЧИС на языке запросов Azure Cosmos DB
-description: Сведения о системной функции SQL RAND в Azure Cosmos DB.
+title: RAND на языке запросов Azure Cosmos DB
+description: Узнайте о функции системы S'L RAND в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,14 +8,14 @@ ms.date: 09/16/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: e44878b6d65725f08aeca4eb07088315ae2bb78a
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302225"
 ---
-# <a name="rand-azure-cosmos-db"></a>RAND (Azure Cosmos DB)
- Возвращает сгенерированное случайным образом числовое значение из [0, 1).
+# <a name="rand-azure-cosmos-db"></a>RAND (Azure Космос DB)
+ Возвращает случайно сгенерированное числовое значение от 0,1.
  
 ## <a name="syntax"></a>Синтаксис
   
@@ -29,11 +29,11 @@ RAND ()
 
 ## <a name="remarks"></a>Remarks
 
-  `RAND` является недетерминированной функцией. Повторяющиеся вызовы `RAND` не возвращают одинаковые результаты.
+  `RAND` является недетерминированной функцией. Повторяющиеся вызовы `RAND` не возвращают одни и те же результаты.
 
 ## <a name="examples"></a>Примеры
   
-  В следующем примере возвращается числовое значение, сформированное случайным образом.
+  Следующий пример возвращает случайно сгенерированное числовое значение.
   
 ```sql
 SELECT RAND() AS rand 
@@ -47,10 +47,10 @@ SELECT RAND() AS rand
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

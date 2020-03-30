@@ -1,14 +1,14 @@
 ---
-title: Различия в Azure Service Fabric между Linux и Windows
+title: Различия в возможностях обслуживания Azure между Linux и Windows
 description: Различия между Azure Service Fabric для Linux и Azure Service Fabric для Windows.
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.custom: sfrev
 ms.openlocfilehash: c064291491110b17c172a561afbd1e65d6c08d06
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75748533"
 ---
 # <a name="differences-between-service-fabric-on-linux-and-windows"></a>Различия между Service Fabric для Linux и для Windows
@@ -83,6 +83,6 @@ ms.locfileid: "75748533"
 * [Подготовка среды разработки в Linux](service-fabric-get-started-linux.md)
 * [Настройка среды разработки для Mac OS X](service-fabric-get-started-mac.md)
 * [Создание первого приложения Azure Service Fabric](service-fabric-create-your-first-linux-application-with-java.md)
-* [Getting started with Eclipse Plugin for Service Fabric Java application development](service-fabric-get-started-eclipse.md) (Начало работы с подключаемым модулем Eclipse для разработки приложения Service Fabric на Java)
+* [Создайте и разместите свое первое приложение Service Fabric Java на Linux с помощью Service Fabric Plugin для Eclipse](service-fabric-get-started-eclipse.md)
 * [Создание первого приложения Azure Service Fabric](service-fabric-create-your-first-linux-application-with-csharp.md)
 * [Manage an Azure Service Fabric application by using Azure Service Fabric CLI](service-fabric-application-lifecycle-sfctl.md) (Управление приложением Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric)

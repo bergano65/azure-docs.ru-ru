@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 02/14/2019
 ms.author: alkohli
 ms.openlocfilehash: 69f77bf969c5d9adfb084682fbbc9eb9e762c8b4
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67185735"
 ---
 Устройства позволяют продолжить работу, если подключение к Интернету работает медленно или прервано. В нормальных рабочих условиях мы рекомендуем использовать следующее: 

@@ -9,13 +9,13 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: badba278e88e5065d8a4ff57ca9506fe1f9ad203
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774202"
 ---
-1. Просмотр подключений для выбранного прямого пиринга.
+1. Просмотр соединений в выбранном прямом пиринге.
     ```powershell
     $directPeering.Connections
 
@@ -31,7 +31,7 @@ ms.locfileid: "75774202"
     SessionStateV6              : None
     ConnectionState             : Active
     ```
-1. Выберите подключение, которое вы хотите включить для службы пиринга. В этом примере мы будем использовать только доступное подключение.
+1. Выберите соединение, включаемый для Peering Service. Для этого примера мы будем использовать единственное доступное соединение.
     ```powershell
     $directPeering.Connections[1] = $directPeering.Connections[1] | Set-AzPeeringDirectConnectionObject -UseForPeeringService $true
 
@@ -47,12 +47,12 @@ ms.locfileid: "75774202"
     SessionStateV6              : None
     ConnectionState             : Active
     ```
-1. Теперь сохраните изменения, внесенные в прямой пиринг, с помощью приведенной ниже команды.
+1. Теперь сохраните изменения, внесенные в Direct peering, используя команду ниже.
     ```powershell
     $directPeering | Update-AzPeering
     ```
     
-    Ниже приведен пример выходных данных:
+    Ниже приведен пример выхода:
     
     ```powershell
         Name                 : SeattleDirectPeering

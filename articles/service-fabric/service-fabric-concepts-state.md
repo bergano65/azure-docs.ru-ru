@@ -1,15 +1,15 @@
 ---
-title: Управление состоянием в службах Service Fabric Azure
-description: Сведения о состоянии в Service Fabric Azure, включая определение состояния службы и управление ей в службах Service Fabric.
+title: Управление состоянием в службах службы Azure
+description: Узнайте о состоянии в структуре службы Azure, в том числе о том, как определить состояние службы и управлять в службах Service Fabric.
 author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 9acd3031d1071d1822791b333976aaf76161600f
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75614576"
 ---
 # <a name="service-state"></a>Состояние службы

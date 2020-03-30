@@ -1,20 +1,20 @@
 ---
-title: Безопасная связь удаленного взаимодействия со службой Java
+title: Безопасная служба, отменяющая связь с Java
 description: Узнайте, как защитить удаленное взаимодействие со службой для служб Reliable Services на Java, запущенных в кластере Azure Service Fabric.
 author: PavanKunapareddyMSFT
 ms.topic: conceptual
 ms.date: 06/30/2017
 ms.author: pakunapa
 ms.openlocfilehash: adefeadf939d398268624343d82c18cbf5ec87cd
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75609644"
 ---
 # <a name="secure-service-remoting-communications-in-a-java-service"></a>Безопасное удаленное взаимодействие со службой для службы Java
 > [!div class="op_single_selector"]
-> * [C# в Windows](service-fabric-reliable-services-secure-communication.md)
+> * [C на Windows](service-fabric-reliable-services-secure-communication.md)
 > * [Java в Linux](service-fabric-reliable-services-secure-communication-java.md)
 >
 >

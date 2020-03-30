@@ -1,38 +1,38 @@
 ---
-title: Настройка Azure Monitor для Prometheus интеграции контейнеров | Документация Майкрософт
-description: В этой статье описывается настройка Azure Monitor для агента контейнеров для сбора метрик из Prometheus в кластере Kubernetes.
+title: Наконфигурните azure Monitor для контейнеров Prometheus Интеграция (ru) Документы Майкрософт
+description: В этой статье описывается, как можно настроить Azure Monitor для агента контейнеров для скобливания метрик из Прометея с вашим кластером Kubernetes.
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.openlocfilehash: b774bf042778ca9118a7bc9f051655b200d87659
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75931425"
 ---
-# <a name="configure-scraping-of-prometheus-metrics-with-azure-monitor-for-containers"></a>Настройка брака/отхода метрик Prometheus с Azure Monitor для контейнеров
+# <a name="configure-scraping-of-prometheus-metrics-with-azure-monitor-for-containers"></a>Настроить налаживание метрик Prometheus с помощью Azure Monitor для контейнеров
 
-[Prometheus](https://prometheus.io/) — это популярное решение для мониторинга метрик с открытым исходным кодом, которое входит в состав [облачной среды вычислений машинного](https://www.cncf.io/)кода. Azure Monitor для контейнеров обеспечивает простой процесс адаптации для сбора метрик Prometheus. Как правило, для использования Prometheus необходимо настроить сервер Prometheus и управлять им с помощью магазина. При интеграции с Azure Monitor сервер Prometheus не требуется. Вам нужно просто предоставить конечную точку метрик Prometheus с помощью средств экспорта или модулей (приложения), а контейнерный агент для Azure Monitor контейнеров может поцарапать метрики за вас. 
+[Prometheus](https://prometheus.io/) является популярным решением мониторинга метрики с открытым исходным кодом и является частью [Фонда Cloud Native Compute.](https://www.cncf.io/) Azure Monitor для контейнеров обеспечивает бесшовный опыт посадки для сбора метрик Prometheus. Как правило, для использования Prometheus необходимо настроить и управлять сервером Prometheus с магазином. Интеграция с Azure Monitor не требуется серверprous. Вам просто нужно разоблачить конечную точку промедляя через ваших экспортеров или стручки (приложение), и контейнерный агент для Azure Monitor для контейнеров может очистить метрики для вас. 
 
-![Архитектура мониторинга контейнеров для Prometheus](./media/container-insights-prometheus-integration/monitoring-kubernetes-architecture.png)
+![Архитектура мониторинга контейнеров для «Прометея»](./media/container-insights-prometheus-integration/monitoring-kubernetes-architecture.png)
 
 >[!NOTE]
->Минимальная версия агента, поддерживаемая для брака Prometheus метрик, — ciprod07092019 или более поздней версии, а версия агента, поддерживаемая для записи ошибок конфигурации и агента в `KubeMonAgentEvents` таблице, — ciprod10112019. Дополнительные сведения о версиях агентов и о том, что входит в каждый выпуск, см. в разделе [заметки о выпуске агента](https://github.com/microsoft/Docker-Provider/tree/ci_feature_prod). Чтобы проверить версию агента, на вкладке **узел** выберите узел и в области свойства запишите значение свойства **тег образа агента** .
+>Минимальная версия агента, поддерживаемая для соскабливания метрик Prometheus, является ciprod07092019 `KubeMonAgentEvents` или более поздней версией, поддерживаемой для написания конфигурации и ошибок агента в таблице ciprod10112019. Для получения дополнительной информации о версиях агента и [agent release notes](https://github.com/microsoft/Docker-Provider/tree/ci_feature_prod)о том, что включено в каждый релиз, см. To verify your agent version, from the **Node** tab select a node, and in the properties pane note value of the **Agent Image Tag** property.
 
-Отходы метрик Prometheus поддерживаются в кластерах Kubernetes, размещенных на:
+Очистка метрик Prometheus поддерживается кластерами Kubernetes, размещенными на:
 
 - Служба Azure Kubernetes (AKS)
-- Служба "Экземпляры контейнеров Azure"
-- Azure Stack или локально
+- Экземпляры контейнеров Azure
+- Лазурный стек или на территории
 - Azure Red Hat OpenShift
 
 >[!NOTE]
->Для Azure Red Hat OpenShift в пространстве имен *OpenShift-Azure-Logging* создается файл шаблона ConfigMap. Он не настроен на активное отслеживание метрик или сбор данных от агента.
+>Для Azure Red Hat OpenShift файл шаблона ConfigMap создается в пространстве имен *openshift-azure-logging.* Он не настроен для активного скоблить метрики или сбор данных от агента.
 >
 
-## <a name="azure-red-hat-openshift-prerequisites"></a>Предварительные требования для OpenShift в Azure Red Hat
+## <a name="azure-red-hat-openshift-prerequisites"></a>Предпосылки для OpenShift Azure Red Hat
 
-Прежде чем начать, подтвердите, что вы являетесь членом роли администратора кластера Azure Red Hat OpenShift, чтобы настроить контейнерные параметры агента и Prometheus. Чтобы убедиться, что вы являетесь членом группы *OSA-Customer-администраторы* , выполните следующую команду:
+Перед тем, как начать работу, подтвердите, что вы являетесь членом роли клиента кластера Admin вашего кластера Azure Red Hat OpenShift для настройки контейнерного агента и настроек соскабливания Prometheus. Чтобы убедиться, что вы являетесь членом *группы osa-customer-adins,* запустите следующую команду:
 
 ``` bash
   oc get groups
@@ -45,7 +45,7 @@ NAME                  USERS
 osa-customer-admins   <your-user-account>@<your-tenant-name>.onmicrosoft.com
 ```
 
-Если вы являетесь членом группы *"OSA — клиент-Администраторы"* , вы можете получить список `container-azm-ms-agentconfig` ConfigMap с помощью следующей команды:
+Если вы являетесь членом *группы osa-customer-adins,* `container-azm-ms-agentconfig` вы должны иметь возможность перечислить ConfigMap, используя следующую команду:
 
 ``` bash
 oc get configmaps container-azm-ms-agentconfig -n openshift-azure-logging
@@ -58,58 +58,58 @@ NAME                           DATA      AGE
 container-azm-ms-agentconfig   4         56m
 ```
 
-### <a name="prometheus-scraping-settings"></a>Параметры отхода Prometheus
+### <a name="prometheus-scraping-settings"></a>Настройки соскабливания Prometheus
 
-Активные отходы метрик из Prometheus выполняются с одной из двух перспектив:
+Активное выскабливание метрик из Прометея выполняется с одной из двух точек зрения:
 
-* URL-адрес на уровне кластера и обнаружение целей из указанных конечных точек службы. Например, K8S службы, такие как KUBE-DNS и KUBE-State-метрики, и заметки Pod, относящиеся к приложению. Метрики, собранные в этом контексте, будут определены в разделе ConfigMap *[Prometheus data_collection_settings. Cluster]* .
-* URL-адрес на уровне узла и обнаружение целей из указанных конечных точек службы. Метрики, собранные в этом контексте, будут определены в разделе ConfigMap *[Prometheus_data_collection_settings. Node]* .
+* Кластерный - HTTP URL и обнаружение целей из перечисленных конечных точек службы. Например, службы k8, такие как kube-dns и kube-state-metrics, и аннотации стручка, характерные для приложения. Метрики, собранные в этом контексте, будут определены в разделе ConfigMap *«Прометей data_collection_settings.кластера».*
+* Узел- HTTP URL и обнаружить цели из перечисленных конечных точек службы. Метрики, собранные в этом контексте, будут определены в разделе ConfigMap *(Prometheus_data_collection_settings.node).*
 
-| Конечная точка | Область действия | Пример |
+| Конечная точка | Область | Пример |
 |----------|-------|---------|
-| Аннотация к Pod | На уровне кластера | Примечания <br>`prometheus.io/scrape: "true"` <br>`prometheus.io/path: "/mymetrics"` <br>`prometheus.io/port: "8000"` <br>`prometheus.io/scheme: "http"` |
-| Служба Kubernetes | На уровне кластера | `http://my-service-dns.my-namespace:9100/metrics` <br>`https://metrics-server.kube-system.svc.cluster.local/metrics` |
-| URL-адрес или конечная точка | На узел или на уровне кластера | `http://myurl:9101/metrics` |
+| Аннотация стручка | Кластерный | Аннотации: <br>`prometheus.io/scrape: "true"` <br>`prometheus.io/path: "/mymetrics"` <br>`prometheus.io/port: "8000"` <br>`prometheus.io/scheme: "http"` |
+| Служба Kubernetes | Кластерный | `http://my-service-dns.my-namespace:9100/metrics` <br>`https://metrics-server.kube-system.svc.cluster.local/metrics` |
+| url/конечная точка | Per-узел и/или кластерный | `http://myurl:9101/metrics` |
 
-Если указан URL-адрес, Azure Monitor для контейнеров только перемещается в конечную точку. Если указана служба Kubernetes, имя службы разрешается с помощью DNS-сервера кластера для получения IP-адреса, а затем разрешенная служба переводится в отходы.
+Когда URL указан, Azure Monitor для контейнеров только царапает конечную точку. Когда указансервис Kubernetes, имя службы решается с кластерным DNS-сервером, чтобы получить IP-адрес, а затем разрешитая служба соскребита.
 
-|Область действия | Ключ | Тип данных | Значение | Description |
+|Область | Ключ | Тип данных | Значение | Описание |
 |------|-----|-----------|-------|-------------|
-| На уровне кластера | | | | Укажите один из следующих трех методов, чтобы отбракировать конечные точки для метрик. |
-| | `urls` | String | Массив с разделителями-запятыми | Конечная точка HTTP (указан IP-адрес или допустимый путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы.) |
-| | `kubernetes_services` | String | Массив с разделителями-запятыми | Массив Kubernetes служб для сбора метрик из KUBE-State-метрик. Например, `kubernetes_services = ["https://metrics-server.kube-system.svc.cluster.local/metrics", http://my-service-dns.my-namespace:9100/metrics]`.|
-| | `monitor_kubernetes_pods` | Логическое | true или false | Если задано значение `true` в параметрах на уровне кластера, Azure Monitor для агента контейнеров будет Kubernetes модули Pod во всем кластере для следующих заметок Prometheus:<br> `prometheus.io/scrape:`<br> `prometheus.io/scheme:`<br> `prometheus.io/path:`<br> `prometheus.io/port:` |
-| | `prometheus.io/scrape` | Логическое | true или false | Включает брак/отход модуля Pod. Для параметра `monitor_kubernetes_pods` нужно задать значение `true`. |
-| | `prometheus.io/scheme` | String | HTTP или HTTPS | По умолчанию используется отработка отказа по протоколу HTTP. При необходимости задайте значение `https`. | 
-| | `prometheus.io/path` | String | Массив с разделителями-запятыми | Путь HTTP-ресурса, из которого извлекать метрики. Если путь метрик не `/metrics`, определите его с помощью этой заметки. |
-| | `prometheus.io/port` | String | 9102 | Укажите порт, из которого будет списано значение. Если параметр port не установлен, по умолчанию будет 9102. |
-| | `monitor_kubernetes_pods_namespaces` | String | Массив с разделителями-запятыми | Список разрешенных пространств имен для брака метрики из модулей Kubernetes.<br> Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`. |
-| На уровне узла | `urls` | String | Массив с разделителями-запятыми | Конечная точка HTTP (указан IP-адрес или допустимый путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы.) |
-| На уровне узла или на уровне кластера | `interval` | String | 60 | Интервал сбора по умолчанию равен одной минуте (60 секунд). Коллекцию можно изменить для *[prometheus_data_collection_settings. Node]* и (или) *[prometheus_data_collection_settings. Cluster]* на единицы времени, например s, m, h. |
-| На уровне узла или на уровне кластера | `fieldpass`<br> `fielddrop`| String | Массив с разделителями-запятыми | Вы можете указать метрики, которые должны быть собраны или не передаваться из конечной точки, установив список разрешений (`fieldpass`) и запретить (`fielddrop`). Сначала необходимо задать список разрешений. |
+| Кластерный | | | | Укажите любой из следующих трех методов, чтобы очистить конечные точки для метрик. |
+| | `urls` | Строка | Блок, разделенный запятой | Конечная точка HTTP (либо IP-адрес, либо указанный определенный путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE IP является специфическим azure Monitor для параметров контейнеров и может использоваться вместо IP-адреса узлов. Должно быть все верхние части.) |
+| | `kubernetes_services` | Строка | Блок, разделенный запятой | Массив kubernetes услуг для царапин метрик из kube-государство-метрики. Например, `kubernetes_services = ["https://metrics-server.kube-system.svc.cluster.local/metrics",http://my-service-dns.my-namespace:9100/metrics]`.|
+| | `monitor_kubernetes_pods` | Логическое | true или false | При установке `true` в кластерных настройках Azure Monitor для агента контейнеров будет соскребать стручки Kubernetes по всему кластеру для следующих аннотаций Prometheus:<br> `prometheus.io/scrape:`<br> `prometheus.io/scheme:`<br> `prometheus.io/path:`<br> `prometheus.io/port:` |
+| | `prometheus.io/scrape` | Логическое | true или false | Позволяет выскабливание стручка. Для параметра `monitor_kubernetes_pods` нужно задать значение `true`. |
+| | `prometheus.io/scheme` | Строка | HTTP или HTTPS | По умолчанию на слом более HTTP. При необходимости `https`установите. | 
+| | `prometheus.io/path` | Строка | Блок, разделенный запятой | Путь ресурса HTTP, на котором можно получить метрики. Если траектория метрик не `/metrics`является, определите его с помощью этой аннотации. |
+| | `prometheus.io/port` | Строка | 9102 | Укажите порт для очистки от. Если порт не установлен, он будет по умолчанию 9102. |
+| | `monitor_kubernetes_pods_namespaces` | Строка | Блок, разделенный запятой | Разрешите список именных пространств для скобливания метрик из стручков Kubernetes.<br> Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`. |
+| Узел по всей | `urls` | Строка | Блок, разделенный запятой | Конечная точка HTTP (либо IP-адрес, либо указанный определенный путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE IP является специфическим azure Monitor для параметров контейнеров и может использоваться вместо IP-адреса узлов. Должно быть все верхние части.) |
+| Узел-широкий или кластер-широкий | `interval` | Строка | 60-е годы | По умолчанию интервал сбора составляет одну минуту (60 секунд). Вы можете изменить коллекцию для *«prometheus_data_collection_settings.узла»* и/или *«prometheus_data_collection_settings.кластера»* для единиц времени, таких как s, m, h. |
+| Узел-широкий или кластер-широкий | `fieldpass`<br> `fielddrop`| Строка | Блок, разделенный запятой | Вы можете указать определенные метрики, которые должны`fieldpass`быть собраны или`fielddrop`нет из конечных точек, установив допустимый () и запретить ( ) листинг. Сначала необходимо установить список разрешений. |
 
-Конфигмапс является глобальным списком, и к нему может быть применен только один ConfigMap. У вас не может быть другой Конфигмапс.
+ConfigMaps является глобальным списком, и к агенту может быть применен только один ConfigMap. Вы не можете иметь другой ConfigMaps отменяя коллекции.
 
-## <a name="configure-and-deploy-configmaps"></a>Настройка и развертывание Конфигмапс
+## <a name="configure-and-deploy-configmaps"></a>Настройка и развертывание ConfigMaps
 
-Выполните следующие действия, чтобы настроить файл конфигурации ConfigMap для кластеров Kubernetes.
+Выполните следующие шаги для настройки файла конфигурации ConfigMap для кластеров Kubernetes.
 
-1. [Скачайте](https://github.com/microsoft/OMS-docker/blob/ci_feature_prod/Kubernetes/container-azm-ms-agentconfig.yaml) файл шаблона ConfigMap YAML и сохраните его как Container-АЗМ-MS-ажентконфиг. YAML.
+1. [Загрузите](https://github.com/microsoft/OMS-docker/blob/ci_feature_prod/Kubernetes/container-azm-ms-agentconfig.yaml) шаблон файла ConfigMap yaml и сохраните его в виде контейнера-azm-ms-agentconfig.yaml.
 
    >[!NOTE]
    >Этот шаг не требуется при работе с Azure Red Hat OpenShift, так как шаблон ConfigMap уже существует в кластере.
 
-2. Измените файл YAML ConfigMap, дополнив настройки, чтобы забракировать метрики Prometheus. Если вы редактируете файл YAML ConfigMap для Azure Red Hat OpenShift, сначала выполните команду `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging`, чтобы открыть файл в текстовом редакторе.
+2. Отспособьте файл ConfigMap yaml с настройками, чтобы соскребать метрики Prometheus. Если вы редактируете файл ConfigMap yaml для Azure `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging` Red Hat OpenShift, сначала запустите команду, чтобы открыть файл в текстовом редакторе.
 
     >[!NOTE]
-    >Для предотвращения выверки в метаданных *Container-АЗМ-MS-ажентконфиг* ConfigMap необходимо добавить следующее примечание `openshift.io/reconcile-protect: "true"`. 
+    >Следующая аннотация `openshift.io/reconcile-protect: "true"` должна быть добавлена под метаданные *контейнера-azm-ms-agentconfig* ConfigMap для предотвращения сверки. 
     >```
     >metadata:
     >   annotations:
     >       openshift.io/reconcile-protect: "true"
     >```
 
-    - Чтобы собираются службы Kubernetes Services на уровне кластера, настройте файл ConfigMap, используя следующий пример.
+    - Чтобы собрать кластерные службы Kubernetes, наймите файл ConfigMap на следующем примере.
 
         ```
         prometheus-data-collection-settings: |- 
@@ -121,7 +121,7 @@ container-azm-ms-agentconfig   4         56m
         kubernetes_services = ["http://my-service-dns.my-namespace:9102/metrics"]
         ```
 
-    - Чтобы настроить отходы метрик Prometheus по определенному URL-адресу в кластере, настройте файл ConfigMap, используя следующий пример.
+    - Чтобы настроить соскоб метрик Prometheus из определенного URL-адреса кластера, наконзначайте файл ConfigMap на следующем примере.
 
         ```
         prometheus-data-collection-settings: |- 
@@ -133,7 +133,7 @@ container-azm-ms-agentconfig   4         56m
         urls = ["http://myurl:9101/metrics"] ## An array of urls to scrape metrics from
         ```
 
-    - Чтобы настроить отходы метрик Prometheus из набора управляющих программ агента для каждого отдельного узла в кластере, настройте следующие параметры в ConfigMap:
+    - Чтобы настроить выскабливание метрик Prometheus из DaemonSet агента для каждого отдельного узла в кластере, назначайте следующее в ConfigMap:
     
         ```
         prometheus-data-collection-settings: |- 
@@ -146,9 +146,9 @@ container-azm-ms-agentconfig   4         56m
         ```
 
         >[!NOTE]
-        >$NODE _IP — это конкретный Azure Monitor для параметра Containers, который можно использовать вместо IP-адреса узла. Оно должно быть в верхнем регистре. 
+        >$NODE IP является специфическим azure Monitor для параметров контейнеров и может использоваться вместо IP-адреса узлов. Это должно быть все верхнее дело. 
 
-    - Чтобы настроить отходы метрик Prometheus, указав аннотацию Pod, выполните следующие действия.
+    - Для настройки соскабливания метрик Prometheus путем указания аннотации стручка выполните следующие действия:
 
        1. В ConfigMap укажите следующее:
 
@@ -160,7 +160,7 @@ container-azm-ms-agentconfig   4         56m
             monitor_kubernetes_pods = true 
             ```
 
-       2. Укажите следующую конфигурацию для заметок Pod:
+       2. Укажите следующую конфигурацию для аннотаций стручка:
 
            ```
            - prometheus.io/scrape:"true" #Enable scraping for this pod 
@@ -169,75 +169,75 @@ container-azm-ms-agentconfig   4         56m
            - prometheus.io/port:"8000" #If port is not 9102 use this annotation
            ```
     
-          Если вы хотите ограничить мониторинг определенными пространствами имен для модулей Pod с заметками, например, включайте только модули памяти, выделенные для рабочих нагрузок, установите `monitor_kubernetes_pod` в значение `true` в ConfigMap и добавьте фильтр пространства имен `monitor_kubernetes_pods_namespaces` указав пространства имен, из которых следует избавиться. Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`.
+          Если вы хотите ограничить мониторинг определенными пространствами имен для стручков, которые имеют аннотации, например, `true` включите только стручки, `monitor_kubernetes_pods_namespaces` предназначенные для производственных нагрузок, установите `monitor_kubernetes_pod` в ConfigMap и добавьте фильтр пространства имен, определяющий пространства имен, чтобы соскребать. Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`.
 
-3. Для кластеров, отличных от Azure Red Hat OpenShift, выполните следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
+3. Для кластеров, помимо Azure Red Hat OpenShift, запустите следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
     
-    Пример: `kubectl apply -f container-azm-ms-agentconfig.yaml`. 
+    Например, `kubectl apply -f container-azm-ms-agentconfig.yaml`. 
 
     Для Azure Red Hat OpenShift сохраните изменения в редакторе.
 
-До вступления в силу изменение конфигурации может занять несколько минут, и все omsagent Pod в кластере будут перезапущены. Перезагрузка является пошаговым перезапуском для всех модулей omsagent Pod, а не всех перезапусков одновременно. После завершения перезагрузки отображается сообщение, похожее на следующее и содержащее результат: `configmap "container-azm-ms-agentconfig" created`.
+Изменение конфигурации может занять несколько минут, прежде чем вступит в силу, и все стручки omsagent в кластере будут перезастраны. Перезагрузка является перезапуском для всех стручков omsagent, не все перезагрузки в то же время. Когда перезагрузка закончена, отображается сообщение, аналогичное следующему и включает `configmap "container-azm-ms-agentconfig" created`результат: .
 
-Вы можете просмотреть обновленный ConfigMap для Azure Red Hat OpenShift, выполнив команду `oc describe configmaps container-azm-ms-agentconfig -n openshift-azure-logging`. 
+Вы можете просмотреть обновленный ConfigMap для Azure Red `oc describe configmaps container-azm-ms-agentconfig -n openshift-azure-logging`Hat OpenShift, запустив команду, . 
 
-## <a name="applying-updated-configmap"></a>Применение обновленных ConfigMap
+## <a name="applying-updated-configmap"></a>Применение обновленного ConfigMap
 
-Если вы уже развернули ConfigMap в кластер и хотите обновить его с помощью более новой конфигурации, вы можете изменить ранее использовавшийся файл ConfigMap, а затем применить те же команды, что и раньше.
+Если вы уже развернули ConfigMap в кластер и хотите обновить его с помощью более новой конфигурации, можно отобразить файл ConfigMap, который вы использовали ранее, а затем применить с помощью тех же команд, что и раньше.
 
-Для кластеров Kubernetes, отличных от Azure Red Hat OpenShift, выполните команду `kubectl apply -f <configmap_yaml_file.yaml`. 
+Для кластеров Kubernetes, помимо Azure Red `kubectl apply -f <configmap_yaml_file.yaml`Hat OpenShift, запустите команду. 
 
-Для кластера Azure Red Hat OpenShift выполните команду, `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging`, чтобы открыть файл в редакторе по умолчанию, чтобы изменить и сохранить его.
+Для кластера Azure Red Hat OpenShift запустите команду, `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging` чтобы открыть файл в редакторе по умолчанию, чтобы изменить, а затем сохранить его.
 
-До вступления в силу изменение конфигурации может занять несколько минут, и все omsagent Pod в кластере будут перезапущены. Перезагрузка является пошаговым перезапуском для всех модулей omsagent Pod, а не всех перезапусков одновременно. После завершения перезагрузки отображается сообщение, похожее на следующее и содержащее результат: `configmap "container-azm-ms-agentconfig" updated`.
+Изменение конфигурации может занять несколько минут, прежде чем вступит в силу, и все стручки omsagent в кластере будут перезастраны. Перезагрузка является перезапуском для всех стручков omsagent, не все перезагрузки в то же время. Когда перезагрузка закончена, отображается сообщение, аналогичное следующему и включает `configmap "container-azm-ms-agentconfig" updated`результат: .
 
 ## <a name="verify-configuration"></a>Проверка конфигурации
 
-Чтобы убедиться, что конфигурация была успешно применена к кластеру, выполните следующую команду, чтобы проверить журналы из модуля Pod: `kubectl logs omsagent-fdf58 -n=kube-system`. 
+Чтобы проверить, что конфигурация была успешно применена к кластеру, используйте `kubectl logs omsagent-fdf58 -n=kube-system`следующую команду для просмотра журналов из стручка агента: . 
 
 >[!NOTE]
->Эта команда неприменима к кластеру Azure Red Hat OpenShift.
+>Эта команда не применима к кластеру Azure Red Hat OpenShift.
 > 
 
-При наличии ошибок конфигурации из модулей Pod omsagent в выходных данных отобразятся ошибки, аналогичные приведенным ниже.
+При наличии ошибок конфигурации из стручков omsagent на выходе будут отображаться ошибки, аналогичные следующим:
 
 ``` 
 ***************Start Config Processing******************** 
 config::unsupported/missing config schema version - 'v21' , using defaults
 ```
 
-Ошибки, связанные с применением изменений конфигурации, также доступны для проверки. Следующие параметры позволяют выполнить дополнительные действия по устранению изменений конфигурации и браку в Prometheus метриках.
+Ошибки, связанные с изменением конфигурации, также доступны для просмотра. Доступны следующие варианты для выполнения дополнительных неполадок изменений конфигурации и соскабливания метрик Prometheus:
 
-- Из журналов Pod агента с помощью одной и той же команды `kubectl logs` 
+- Из журналов стручка агента `kubectl logs` с использованием той же команды 
     >[!NOTE]
-    >Эта команда неприменима к кластеру Azure Red Hat OpenShift.
+    >Эта команда не применима к кластеру Azure Red Hat OpenShift.
     > 
 
-- Из динамических данных (Предварительная версия). В журналах интерактивных данных (Предварительная версия) отображаются ошибки, аналогичные следующим:
+- Из данных в реальном времени (предварительный просмотр). В журналах Live Data (preview) отображается ошибка, аналогичная следующим:
 
     ```
     2019-07-08T18:55:00Z E! [inputs.prometheus]: Error in plugin: error making HTTP request to http://invalidurl:1010/metrics: Get http://invalidurl:1010/metrics: dial tcp: lookup invalidurl on 10.0.0.10:53: no such host
     ```
 
-- Из таблицы **кубемонажентевентс** в рабочей области log Analytics. Данные отправляются каждый час с серьезностью *предупреждения* для ошибок конфигурации и серьезности *ошибки* . Если ошибок нет, запись в таблице будет содержать данные со *сведениями об*уровне серьезности, которые не сообщают об ошибках. Свойство **Tags** содержит дополнительные сведения о Pod и идентификаторе контейнера, в которых произошла ошибка, а также первое вхождение, Последнее вхождение и количество за последний час.
+- Из таблицы **KubeMonAgentEvents** в рабочем пространстве журнала Analytics. Данные отправляются каждый час с *серьезностью предупреждения* для ошибок царапин и серьезности *ошибки* для ошибок конфигурации. Если нет ошибок, запись в таблице будет иметь данные с серьезностью *Информация*, которая не сообщает ошибок. Свойство **Тегов** содержит больше информации о капсуле и идентификаторе контейнера, на котором произошла ошибка, а также о первом возникновении, последнем возникновении и подсчете в последний час.
 
-- Для Azure Red Hat OpenShift просмотрите журналы omsagent, выполнив поиск в таблице **контаинерлог** , чтобы проверить, включено ли ведение журнала OpenShift-Azure-Logging.
+- Для Azure Red Hat OpenShift проверьте журналы omsagent, исключив таблицу **ContainerLog,** чтобы проверить, включена ли коллекция журналов openshift-azure-logging.
 
-Ошибки не позволяют omsagent анализировать файл, что приводит к перезапуску и использованию конфигурации по умолчанию. После исправления ошибок в ConfigMap для кластеров, отличных от Azure Red Hat OpenShift, сохраните файл YAML и примените обновленную Конфигмапс, выполнив команду `kubectl apply -f <configmap_yaml_file.yaml`. 
+Ошибки не позволяют omsagent разбирать файл, заставляя его перезапустить и использовать конфигурацию по умолчанию. После исправления ошибки (ы) в ConfigMap на кластерах, помимо Azure Red Hat OpenShift, сохраните `kubectl apply -f <configmap_yaml_file.yaml`файл yaml и примените обновленные ConfigMaps, запустив команду: . 
 
-Для Azure Red Hat OpenShift измените и сохраните обновленный Конфигмапс, выполнив команду: `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging`.
+Для Azure Red Hat OpenShift отредконите и сохраните `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging`обновленные ConfigMaps, запустив команду: .
 
-## <a name="query-prometheus-metrics-data"></a>Запрос данных метрик Prometheus
+## <a name="query-prometheus-metrics-data"></a>Данные метрик запроса Prometheus
 
-Чтобы просмотреть метрики Prometheus, которые выводятся Azure Monitor и ошибки конфигурации или брака/отхода, о которых сообщил агент, просмотрите [данные метрик запросов Prometheus](container-insights-log-search.md#query-prometheus-metrics-data) и конфигурацию [запроса или ошибки](container-insights-log-search.md#query-config-or-scraping-errors).
+Для просмотра метрик prometheus, соскобленных Azure Monitor, и любых ошибок конфигурации/царапин, сообщаемых агентом, просмотрите [данные метрик и](container-insights-log-search.md#query-prometheus-metrics-data) [конфигурацию запроса или ошибки соскабливания.](container-insights-log-search.md#query-config-or-scraping-errors)
 
-## <a name="view-prometheus-metrics-in-grafana"></a>Просмотр метрик Prometheus в Grafana
+## <a name="view-prometheus-metrics-in-grafana"></a>Просмотр метрик Prometheus в Графане
 
-Azure Monitor для контейнеров поддерживает просмотр метрик, хранящихся в рабочей области Log Analytics, на панелях мониторинга Grafana. Мы предоставили шаблон, который можно скачать из [репозитория панели мониторинга](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) Grafana, чтобы получить сведения о том, как запросить дополнительные данные из наблюдаемых кластеров для визуализации на пользовательских панелях мониторинга Grafana. 
+Azure Monitor для контейнеров поддерживает метрики просмотра, хранящиеся в рабочем пространстве log Analytics в панели мониторинга Grafana. Мы предоставили шаблон, который можно загрузить из [репозитория панели мониторинга](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) Grafana, чтобы начать работу и ссылку, чтобы помочь вам узнать, как задать запрос дополнительных данных из контролируемых кластеров, чтобы визуализировать в пользовательских панелях мониторинга Grafana. 
 
-## <a name="review-prometheus-data-usage"></a>Проверка использования данных Prometheus
+## <a name="review-prometheus-data-usage"></a>Просмотрите использование данных Prometheus
 
-Чтобы определить, является ли объем приема для каждого метрики размером в ГБ в день, чтобы понять, насколько он высокий, предоставляется следующий запрос.
+Чтобы определить объем приема каждого размера метрикв в ГБ в день, чтобы понять, является ли он высоким, предоставляется следующий запрос.
 
 ```
 InsightsMetrics 
@@ -247,11 +247,11 @@ InsightsMetrics
 | order by VolumeInGB desc
 | render barchart
 ```
-В выходных данных отобразятся результаты, аналогичные приведенным ниже.
+На выходе будут показаны результаты, аналогичные следующим:
 
-![Регистрация результатов запроса для тома приема данных](./media/container-insights-prometheus-integration/log-query-example-usage-03.png)
+![Результаты запроса журнала об объеме приема данных](./media/container-insights-prometheus-integration/log-query-example-usage-03.png)
 
-Чтобы оценить, какой размер метрик в Гб соответствует месяцу, чтобы понять, является ли объем данных, полученных в рабочей области, большим, предоставляется следующий запрос.
+Чтобы оценить, какой размер каждой метрики в ГБ в течение месяца, чтобы понять, является ли объем данных, полученных в рабочей области, высок, предоставляется следующий запрос.
 
 ```
 InsightsMetrics 
@@ -262,12 +262,12 @@ InsightsMetrics
 | render barchart
 ```
 
-В выходных данных отобразятся результаты, аналогичные приведенным ниже.
+На выходе будут показаны результаты, аналогичные следующим:
 
-![Регистрация результатов запроса для тома приема данных](./media/container-insights-prometheus-integration/log-query-example-usage-02.png)
+![Результаты запроса журнала об объеме приема данных](./media/container-insights-prometheus-integration/log-query-example-usage-02.png)
 
-Дополнительные сведения о мониторинге использования данных и анализе затрат см. в руководствах по [управлению использованием и затратами Azure Monitor журналов](../platform/manage-cost-storage.md).
+Более подробная информация о том, как контролировать использование данных и анализировать затраты, доступна в [журнале Manage и costs с помощью журналов Azure Monitor.](../platform/manage-cost-storage.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о настройке параметров коллекции агентов для stdout, stderr и переменных среды из рабочих нагрузок контейнера см. [здесь](container-insights-agent-config.md). 
+Подробнее о настройке параметров сбора агентов для stdout, stderr и экологических переменных из контейнерных нагрузок [можно ознакомиться здесь.](container-insights-agent-config.md) 

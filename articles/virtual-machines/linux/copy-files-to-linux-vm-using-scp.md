@@ -1,5 +1,5 @@
 ---
-title: Перемещение файлов на виртуальные машины Linux в Azure и обратно с помощью SCP
+title: Перемещение файлов в и из Azure Linux VMs с помощью SCP
 description: Безопасное перемещение файлов на виртуальную машину Linux в Azure и с нее с помощью SCP и пары ключей SSH.
 author: cynthn
 ms.service: virtual-machines-linux
@@ -9,10 +9,10 @@ ms.date: 07/12/2017
 ms.author: cynthn
 ms.subservice: disks
 ms.openlocfilehash: a0837790b70de42073338bf085ee0f3976b866f6
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969601"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Перемещение файлов на виртуальную машину Linux и с нее с помощью SCP
@@ -65,7 +65,7 @@ scp ~/.azure/config azureuser@myserver.eastus.cloudapp.com:/home/azureuser/confi
 scp -r azureuser@myserver.eastus.cloudapp.com:/home/azureuser/logs/. /tmp/
 ```
 
-Флаг `-r` указывает, что SCP должен рекурсивно копировать файлы и каталоги с точки каталога, указанной в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
+Флаг `-r` поручает SCP повторно копировать файлы и каталоги с точки каталога, указанной в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

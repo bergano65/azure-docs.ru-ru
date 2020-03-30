@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
 ms.openlocfilehash: a9d71c8aebb9cc4a0adbd461aead6e2612bd13bd
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75552497"
 ---
 # <a name="run-apache-hive-queries-using-hdinsight-net-sdk"></a>Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight
@@ -24,7 +24,7 @@ ms.locfileid: "75552497"
 > [!NOTE]  
 > Действия, описанные в этой статье, необходимо выполнять из клиента Windows. Чтобы получить сведения об использовании клиента Linux, OS X или Unix для работы с Hive, воспользуйтесь выбором вкладок в верхней части статьи.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 
@@ -33,7 +33,7 @@ ms.locfileid: "75552497"
     > [!IMPORTANT]  
     > Начиная с 15 сентября 2017 г. пакет SDK для HDInsight .NET поддерживает возвращение результатов запроса Hive только из учетных записей хранения Azure. Если использовать этот пример с кластером HDInsight, в котором Azure Data Lake Storage применяется в качестве основного хранилища, вы не сможете получить результаты поиска с помощью пакета SDK для .NET.
 
-* [Visual Studio](https://visualstudio.microsoft.com/vs/community/) 2013 и более поздние. Должна быть установлена по крайней мере Рабочая нагрузка на **разработку классических приложений .NET** .
+* [Visual Studio](https://visualstudio.microsoft.com/vs/community/) 2013 и далее. По крайней мере, должна быть установлена рабочая нагрузка **.NET разработки рабочего стола.**
 
 ## <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
@@ -45,7 +45,7 @@ ms.locfileid: "75552497"
 
         Install-Package Microsoft.Azure.Management.HDInsight.Job
 
-1. Измените приведенный ниже код, чтобы инициализировать значения переменных: `ExistingClusterName, ExistingClusterUsername, ExistingClusterPassword,DefaultStorageAccountName,DefaultStorageAccountKey,DefaultStorageContainerName`. Затем используйте измененный код в качестве всего содержимого **Program.CS** в Visual Studio.
+1. Отспособите код ниже, чтобы инициализировать значения для переменных: `ExistingClusterName, ExistingClusterUsername, ExistingClusterPassword,DefaultStorageAccountName,DefaultStorageAccountKey,DefaultStorageContainerName`. Затем используйте пересмотренный код в качестве всего содержимого **Program.cs** в Visual Studio.
 
     ```csharp
     using System.Collections.Generic;
@@ -134,15 +134,15 @@ ms.locfileid: "75552497"
 
 1. Нажмите клавишу **F5** для запуска приложения.
 
-Выходные данные приложения должны выглядеть следующим образом:
+Выход приложения должен быть аналогичен:
 
 ![Выходные данные задания Hadoop Hive в HDInsight](./media/apache-hadoop-use-hive-dotnet-sdk/hdinsight-hadoop-use-hive-net-sdk-output.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали, как отправлять запросы Apache Hive с помощью пакета SDK для HDInsight .NET. Дополнительные сведения см. в следующих статьях:
+В этой статье вы узнали, как отправлять запросы Apache Hive с помощью HDInsight .NET SDK. Дополнительные сведения см. в следующих статьях:
 
-* [Приступая к работе с Azure HDInsight](apache-hadoop-linux-tutorial-get-started.md)
+* [Начало работы с Azure HDInsight](apache-hadoop-linux-tutorial-get-started.md)
 * [Создание кластеров Apache Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md)
 * [Справочник по пакетам SDK HDInsight для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight)
 * [Использование Apache Sqoop с HDInsight](apache-hadoop-use-sqoop-mac-linux.md)

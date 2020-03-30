@@ -1,20 +1,20 @@
 ---
-title: Рекомендации по мониторингу Service Fabric Azure
-description: Рекомендации и соображения по проектированию для мониторинга кластеров и приложений с помощью Azure Service Fabric.
+title: Мониторинг передовых практик Azure Service Fabric
+description: Рекомендации по разработке кластеров и приложений с использованием Azure Service Fabric.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
 ms.openlocfilehash: af03223e8b007cbd2a00d54c3076056cd110ecc9
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75551822"
 ---
 # <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
 
-[Мониторинг и диагностика](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-overview) критически важны для разработки, тестирования и развертывания рабочих нагрузок в любой облачной среде. Например, вы можете отслеживать использование приложений, действия, предпринимаемые платформой Service Fabric, использование ресурсов (с помощью счетчиков производительности) и общую работоспособность кластера. Эту информацию можно использовать для диагностики и устранения проблем, а также для предотвращения их возникновения в будущем.
+[Мониторинг и диагностика](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-overview) имеют решающее значение для разработки, тестирования и развертывания рабочих нагрузок в любой облачной среде. Например, вы можете отслеживать использование приложений, действия, предпринимаемые платформой Service Fabric, использование ресурсов (с помощью счетчиков производительности) и общую работоспособность кластера. Эту информацию можно использовать для диагностики и устранения проблем, а также для предотвращения их возникновения в будущем.
 
 ## <a name="application-monitoring"></a>Мониторинг приложений
 
@@ -24,13 +24,13 @@ ms.locfileid: "75551822"
 
 Одна из целей создания Service Fabric — сделать работу приложений устойчивой в случае сбоев оборудования. Это достигается благодаря способности системных служб платформы обнаруживать проблемы с инфраструктурой и быстро выполнять отработку отказа рабочих нагрузок на другие узлы в кластере. Но что делать, если в самих системных службах есть проблемы? Или если при попытке развертывания или перемещения рабочей нагрузки нарушаются правила размещения служб? Service Fabric предоставляет средства диагностики этих и других проблем, чтобы убедиться в том, что вы получаете уведомление о взаимодействии платформы Service Fabric с вашими приложениями, службами, контейнерами и узлами.
 
-Для кластеров Windows рекомендуется настроить мониторинг кластера с помощью [агента диагностики](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-aggregation-wad) и [журналов Azure Monitor](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-setup).
+Для кластеров Windows рекомендуется настроить мониторинг кластеров с [помощью диагностического агента](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-aggregation-wad) и [журналов Azure Monitor.](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-setup)
 
-Для кластеров Linux также рекомендуемым средством для мониторинга платформы и инфраструктуры Azure является Azure Monitor журналов. Системы диагностики для платформы Linux требуют другую конфигурацию, записанную в статье [События кластера Service Fabric под управлением Linux в системном журнале](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-syslog).
+Для кластеров Linux журналы Azure Monitor также рекомендуются для платформы Azure и мониторинга инфраструктуры. Системы диагностики для платформы Linux требуют другую конфигурацию, записанную в статье [События кластера Service Fabric под управлением Linux в системном журнале](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-syslog).
 
 ## <a name="infrastructure-monitoring"></a>Мониторинг инфраструктуры
 
-Для наблюдения за событиями уровня кластера рекомендуется использовать [журналы Azure Monitor](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-agent) . После настройки агента Log Analytics с рабочей областью, как описано в предыдущей статье, вы сможете собирать метрики производительности, например использование ЦП, счетчики производительности .NET, такие как использование ЦП на уровне процесса, счетчики производительности Service Fabric, например число исключений из надежной службы, а также метрики контейнера, такие как использование ЦП.  Необходимо будет записать журналы контейнеров в stdout или stderr, чтобы они были доступны в журналах Azure Monitor.
+Для мониторинга событий уровня кластеров рекомендуется [журналazure Monitor.](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-agent) После настройки агента Log Analytics с рабочей областью, как описано в предыдущей статье, вы сможете собирать метрики производительности, например использование ЦП, счетчики производительности .NET, такие как использование ЦП на уровне процесса, счетчики производительности Service Fabric, например число исключений из надежной службы, а также метрики контейнера, такие как использование ЦП.  Вам нужно будет написать журналы контейнеров для stdout или stderr, чтобы они были доступны в журналах Azure Monitor.
 
 ## <a name="watchdogs"></a>Модули наблюдения
 
@@ -38,10 +38,10 @@ ms.locfileid: "75551822"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Приступите к работе с инструментированием приложений: [события уровня приложения и создание журнала](service-fabric-diagnostics-event-generation-app.md).
+* Начало инструментирования приложений: [событие уровня приложения и генерации журналов.](service-fabric-diagnostics-event-generation-app.md)
 * Выполните процедуру настройки Application Insights для приложения, следуя указаниям в разделе [Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric](service-fabric-tutorial-monitoring-aspnet.md).
-* Дополнительные сведения о мониторинге платформы и Service Fabricх событий см. в статье [события уровня платформы и создание журнала](service-fabric-diagnostics-event-generation-infra.md).
-* Настройка Azure Monitor журналов интеграция с Service Fabric: [Настройка журналов Azure Monitor для кластера](service-fabric-diagnostics-oms-setup.md)
-* Узнайте, как настроить журналы Azure Monitor для мониторинга контейнеров: [мониторинг и диагностика контейнеров Windows в Service Fabric Azure](service-fabric-tutorial-monitoring-wincontainers.md).
+* Узнайте больше о мониторинге платформы и событий, которые обеспечивает для вас сервис службы: [событие уровня платформы и генерация журналов.](service-fabric-diagnostics-event-generation-infra.md)
+* Настройка интеграции журналов Azure Monitor с помощью service Fabric: [Настройка журналов Azure Monitor для кластера](service-fabric-diagnostics-oms-setup.md)
+* Узнайте, как настроить журналы Azure Monitor для мониторинга контейнеров: [мониторинг и диагностика контейнеров Windows в комплекте службы Azure.](service-fabric-tutorial-monitoring-wincontainers.md)
 * Примеры проблем и решений диагностики с помощью Service Fabric см. в описании [диагностики распространенных сценариев](service-fabric-diagnostics-common-scenarios.md).
-* Ознакомьтесь с общими рекомендациями по мониторингу ресурсов Azure: рекомендации по [мониторингу и диагностике](https://docs.microsoft.com/azure/architecture/best-practices/monitoring).
+* Узнайте об общих рекомендациях мониторинга ресурсов Azure: [Лучшие практики - мониторинг и диагностика.](https://docs.microsoft.com/azure/architecture/best-practices/monitoring)

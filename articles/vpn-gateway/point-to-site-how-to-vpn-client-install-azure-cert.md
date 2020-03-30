@@ -1,5 +1,5 @@
 ---
-title: VPN-шлюз Azure. Установка сертификата клиента "точка — сеть"
+title: 'Azure VPN Gateway: Установка сертификата клиента от точки к сайту'
 description: Установка сертификата клиента для аутентификации на основе сертификата для подключения "точка — сеть" (Windows, Mac, Linux).
 services: vpn-gateway
 author: cherylmc
@@ -8,25 +8,25 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: cherylmc
 ms.openlocfilehash: 787b8a34ed4b232b9e6cc033e67b1a8162c85f6c
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75902852"
 ---
 # <a name="install-client-certificates-for-p2s-certificate-authentication-connections"></a>Установка сертификатов клиента для аутентификации Azure на основе сертификата для подключения "точка — сеть"
 
 Для настройки подключений типа "точка — сеть" между клиентами и виртуальной сетью с использованием аутентификации Azure на основе сертификата требуется сертификат клиента. В этой статье описано, как установить сертификат клиента для аутентификации при подключении типа "точка — сеть" к виртуальной сети.
 
-## <a name="generate"></a>Получение сертификата клиента
+## <a name="acquire-a-client-certificate"></a><a name="generate"></a>Получение сертификата клиента
 
 Независимо от того, из какой клиентской операционной системы вам нужно установить подключение, обязательно требуется сертификат клиента. Вы можете создать сертификат клиента либо на основе корневого сертификата, созданного с помощью корпоративного ЦС, либо на основе самозаверяющего сертификата. Ознакомьтесь с инструкциями по созданию сертификата клиента для [PowerShell](vpn-gateway-certificates-point-to-site.md), [MakeCert](vpn-gateway-certificates-point-to-site-makecert.md) или [Linux](vpn-gateway-certificates-point-to-site-linux.md). 
 
-## <a name="installwin"></a>Windows
+## <a name="windows"></a><a name="installwin"></a>Windows
 
 [!INCLUDE [Install on Windows](../../includes/vpn-gateway-certificates-install-client-cert-include.md)]
 
-## <a name="installmac"></a>Mac
+## <a name="mac"></a><a name="installmac"></a>Mac
 
 >[!NOTE]
 >VPN-клиенты Mac поддерживают только модель развертывания на основе Resource Manager. Классическую модель использовать нельзя.
@@ -35,7 +35,7 @@ ms.locfileid: "75902852"
 
 [!INCLUDE [Install on Mac](../../includes/vpn-gateway-certificates-install-mac-client-cert-include.md)]
 
-## <a name="installlinux"></a>Linux
+## <a name="linux"></a><a name="installlinux"></a>Linux
 
 Сертификат клиента для Linux устанавливается в клиенте в рамках настройки. Ознакомьтесь с инструкциями по [настройке клиента для Linux](point-to-site-vpn-client-configuration-azure-cert.md#linuxinstallcli).
 

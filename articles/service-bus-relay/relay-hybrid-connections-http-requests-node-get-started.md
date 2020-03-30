@@ -1,5 +1,5 @@
 ---
-title: Azure Relay гибридные подключения-запросов HTTP в узле
+title: Гибридные соединения Azure Relay - HTTP запросы в узеле
 description: Создание консольного приложения Node.js для HTTP-запросов гибридных подключений Azure Relay в Node.
 services: service-bus-relay
 documentationcenter: node
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/01/2018
 ms.author: clemensv
 ms.openlocfilehash: d71386b86bf7133bb73ddce2e65c3b88743009ad
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75462021"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-node"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в Node
@@ -35,9 +35,9 @@ ms.locfileid: "75462021"
 4. Создайте клиентское консольное приложение (отправитель) для отправки сообщений.
 5. Запустите приложения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 - [Node.js](https://nodejs.org/en/).
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+- Подписка Azure. Если у вас его нет, [создайте бесплатную учетную запись,](https://azure.microsoft.com/free/) прежде чем начать.
 
 ## <a name="create-a-namespace-using-the-azure-portal"></a>Создание пространства имен с помощью портала Azure
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]

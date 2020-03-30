@@ -1,6 +1,6 @@
 ---
 title: Решения для распространенных ошибок и проблем в сценариях B2B
-description: Поиск решений для распространенных ошибок и проблем при устранении неполадок в сценариях B2B в Azure Logic Apps
+description: Поиск решений для распространенных ошибок и проблем при устранении неполадок B2B-сценариев в приложениях логики Azure
 services: logic-apps
 ms.suite: integration
 author: divyaswarnkar
@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/02/2017
 ms.openlocfilehash: 38e281ce3d8117bff719b1bb572f09acbbb89669
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75666692"
 ---
 # <a name="b2b-errors-and-solutions-for-azure-logic-apps"></a>Ошибки B2B и их решения для Azure Logic Apps
@@ -63,7 +63,7 @@ ms.locfileid: "75666692"
 | Рекомендуемые действия | Добавьте в сообщение AS2 параметр @base64ToBinary перед отправкой партнеру. |
 |||
 
-Пример.
+Пример:
 
 ```json
 "HTTP": {
@@ -83,7 +83,7 @@ ms.locfileid: "75666692"
 | Рекомендуемые действия | Добавьте в сообщение MDN параметр @base64ToBinary перед отправкой партнеру. | 
 |||
 
-Пример.
+Пример:
 
 ```json
 "Response": {

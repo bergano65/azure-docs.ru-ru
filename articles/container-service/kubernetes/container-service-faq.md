@@ -10,10 +10,10 @@ ms.date: 08/30/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017, mvc
 ms.openlocfilehash: f031f55bbff534181459bb1bf7469f315aee27cb
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75887790"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров (не рекомендуется)
@@ -24,7 +24,7 @@ ms.locfileid: "75887790"
 
 ### <a name="which-container-orchestrators-do-you-support-on-azure-container-service"></a>Какие оркестраторы контейнеров поддерживает Служба контейнеров Azure? 
 
-Служба контейнеров Azure поддерживает компоненты DC/OS, Docker Swarm и Kubernetes с открытым кодом. Дополнительные сведения см. в статье [Общие сведения о Службе контейнеров Azure](container-service-intro-kubernetes.md).
+Служба контейнеров Azure поддерживает компоненты DC/OS, Docker Swarm и Kubernetes с открытым кодом. Для получения дополнительной информации смотрите [обзор](container-service-intro-kubernetes.md).
  
 ### <a name="do-you-support-docker-swarm-mode"></a>Поддерживается ли режим Docker Swarm? 
 
@@ -52,7 +52,7 @@ ms.locfileid: "75887790"
 
 Чтобы создать для кластера пару ключей SSH RSA (открытый и закрытый), используемых для проверки подлинности виртуальных машин, можно воспользоваться стандартными средствами операционной системы. Пошаговые инструкции см. в руководстве для [OS X, Linux](../../virtual-machines/linux/mac-create-ssh-keys.md) или [Windows](../../virtual-machines/linux/ssh-from-windows.md). 
 
-Если для развертывания кластера службы контейнеров используются Azure CLI команды, для кластера могут быть автоматически созданы ключи SSH.
+Если для развертывания кластера службы контейнеров используются команды Azure CLI, то ключи SSH создаются автоматически.
 
 ### <a name="how-do-i-create-a-service-principal-for-my-kubernetes-cluster"></a>Как создать субъект-службу для кластера Kubernetes?
 
@@ -104,7 +104,7 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 
 4. На странице **Сводка** в разделе **Выходные данные** доступно несколько ссылок на кластеры. **SSHMaster0** предоставляет строку SSH-подключения к первому главному узлу в кластере службы контейнеров. 
 
-Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Пример.
+Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Пример:
 
 ```bash
 ssh userName@masterFQDN –A –p 22 
@@ -112,9 +112,9 @@ ssh userName@masterFQDN –A –p 22 
 
 Дополнительные сведения см. в статье [Подключение к кластеру службы контейнеров Azure](../../container-service/kubernetes/container-service-connect.md).
 
-### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS. Что мне делать?
+### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS. Что делать?
 
-В Windows есть некоторые известные проблемы с DNS, исправления которых по-прежнему находятся в активном состоянии. Убедитесь, что вы используете наиболее обновленную версию ядра ACS и Windows (с установленными [KB4074588](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4074588) и [KB4089848](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4089848) ), чтобы среда могла использовать преимущества. В противном случае см. инструкции по устранению проблем в следующей таблице:
+Есть некоторые известные проблемы DNS на Windows, чьи исправления по-прежнему активно сворачиваются. Пожалуйста, убедитесь, что вы используете самые обновленные ACS-двигатель и Windows версии (с [KB4074588](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4074588) и [KB4089848](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4089848) установлен), так что ваша среда может извлечь выгоду из этого. В противном случае см. инструкции по устранению проблем в следующей таблице:
 
 | Симптом DNS | Обходной путь  |
 |-------------|-------------|

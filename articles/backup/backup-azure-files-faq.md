@@ -4,10 +4,10 @@ description: В этой статье вы найдете ответы на ча
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.openlocfilehash: c69d4642aefbd599d3783dcdfa059a0cd9d129d9
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302548"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
@@ -36,7 +36,7 @@ ms.locfileid: "78302548"
 
 ### <a name="can-i-change-the-vault-to-which-i-back-up-my-file-shares"></a>Можно ли изменить хранилище, в котором создана резервная копия моих файловых ресурсов?
 
-Да. Тем не менее, необходимо [Отключить защиту общей папки](manage-afs-backup.md#stop-protection-on-a-file-share) из подключенного хранилища, [отменить регистрацию](troubleshoot-azure-files.md#configuring-backup) этой учетной записи хранения, а затем защитить ее из другого хранилища.
+Да. Тем не менее, вам нужно будет [остановить защиту на файле из](manage-afs-backup.md#stop-protection-on-a-file-share) подключенного Убежища, [отменить](troubleshoot-azure-files.md#configuring-backup) эту учетную запись хранения, а затем защитить его от другого Убежища.
 
 ### <a name="in-which-geos-can-i-back-up-azure-file-shares"></a>В каких географических областях можно выполнять резервное копирование файловых ресурсов Azure?
 
@@ -70,20 +70,20 @@ ms.locfileid: "78302548"
 - US Gov (Аризона) (UGA)
 - US Gov (Техас) (UGT)
 - US Gov (Вирджиния) (UGV)
-- Центральная Австралия (ACL)
-- Западная Индия (ИНВ)
-- Север Южная Африка (SAN)
-- Север в ОАЭ (Уан)
-- Центральная Франция (ФРК)
-- Северная Германия (GN)                       
-- Центрально-Западная Германия (ГВК)
-- Южная Африка (запад)
-- Центральная часть ОАЭ (UAC)
-- NРЕКОМЕНДУЕТСЯ (Норвегия восток)     
-- НВВ (Западная Норвегия)
-- СЗН (Северная Швейцария)
+- Австралия Сентрал (ACL)
+- Индия Запад (INW)
+- Северная южная Африка (SAN)
+- Северная часть ОАЭ (UAN)
+- Франция Центральной (FRC)
+- Германия Север (GN)                       
+- Германия Западный Центральный (GWC)
+- Запад южной Африки (SAW)
+- Центральный (UAC)
+- NWE (Норвегия Восток)     
+- NWW (Норвегия Запад)
+- СЗН (Швейцария Север)
 
-Отправьте электронное сообщение по адресу [AskAzureBackupTeam@microsoft.com](mailto:askazurebackupteam@microsoft.com), если вам нужно использовать функцию в географическом регионе, не указанном выше.
+Напишите, [AskAzureBackupTeam@microsoft.com](mailto:askazurebackupteam@microsoft.com) если вам нужно использовать его в конкретной гео, которая не указана выше.
 
 ### <a name="how-many-azure-file-shares-can-i-protect-in-a-vault"></a>Сколько файловых ресурсов Azure можно защитить в хранилище?
 

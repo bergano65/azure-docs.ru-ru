@@ -1,15 +1,15 @@
 ---
-title: Мониторинг производительности с помощью система диагностики Azure Windows
+title: Мониторинг производительности с помощью диагностики Windows Azure
 description: Использование Диагностики Azure для Windows для сбора данных счетчиков производительности для кластеров Azure Service Fabric.
 author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
 ms.openlocfilehash: 0819ca02d088aeb9ada5de1269467f70242bbcca
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75609916"
 ---
 # <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Мониторинг производительности с помощью расширения для Диагностики Azure для Windows
@@ -189,9 +189,9 @@ ms.locfileid: "75609916"
     New-AzResourceGroupDeployment -ResourceGroupName <ResourceGroup> -TemplateFile <PathToTemplateFile> -TemplateParameterFile <PathToParametersFile> -Verbose
     ```
 
-1. По завершении обновления (оно занимает 15–45 минут в зависимости от ряда факторов, в частности от размера группы ресурсов и того, первый ли раз выполняется развертывание) система диагностики Microsoft Azure должна собирать данные счетчиков производительности и отправлять их в таблицу с именем WADPerformanceCountersTable в учетной записи хранения, связанной с вашим кластером. Просматривайте данные счетчиков производительности в Application Insights, [добавив приемник AI в шаблон Resource Manager](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template).
+1. По завершении обновления (оно занимает 15–45 минут в зависимости от ряда факторов, в частности от размера группы ресурсов и того, первый ли раз выполняется развертывание) система диагностики Microsoft Azure должна собирать данные счетчиков производительности и отправлять их в таблицу с именем WADPerformanceCountersTable в учетной записи хранения, связанной с вашим кластером. Просматривайте счетчики производительности в Application Insights, [добавляя раковину ИИ в шаблон «Менеджер ресурсов».](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Собирайте данные дополнительных счетчиков производительности для кластера. Список счетчиков, данные которых следует собирать, см. в статье [Метрики производительности](service-fabric-diagnostics-event-generation-perf.md).
 * [Используйте мониторинг и систему диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../virtual-machines/windows/extensions-diagnostics-template.md), чтобы внести изменения в раздел `WadCfg`, включая настройку дополнительных учетных записей хранения для отправки данных диагностики.
-* Посетите [Построитель WadCfg](https://azure.github.io/azure-diagnostics-tools/config-builder/) , чтобы создать шаблон с нуля и убедиться в правильности синтаксиса. (https://azure.github.io/azure-diagnostics-tools/config-builder/), чтобы создать шаблон с нуля и убедиться в правильности синтаксиса.
+* Посетите [конструктор WadCfg,](https://azure.github.io/azure-diagnostics-tools/config-builder/) чтобы создать шаблон с нуля и убедиться, что ваш синтаксис правильный. (чтобыhttps://azure.github.io/azure-diagnostics-tools/config-builder/) построить шаблон с нуля и убедитесь, что ваш синтаксис является правильным.

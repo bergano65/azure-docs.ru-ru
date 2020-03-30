@@ -1,5 +1,5 @@
 ---
-title: Microsoft Threat Modeling Tool выпуск 11/1/2018
+title: Microsoft Угроза Моделирование Релиз 11/1/2018
 titleSuffix: Azure
 description: Документирование заметок о выпуске средства моделирования угроз
 author: jegeib
@@ -9,10 +9,10 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 01/15/2019
 ms.openlocfilehash: 3d6057c729b2f3f9d7157e91656db1912422f168
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78269749"
 ---
 # <a name="threat-modeling-tool-update-release-71510231---1112018"></a>Threat Modeling Tool, выпуск обновления 7.1.51023.1 — 1.11.2018
@@ -25,14 +25,14 @@ ms.locfileid: "78269749"
 
 ## <a name="feature-changes"></a>Изменения функций
 
-- Нет
+- None
 
 ## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
   - Microsoft Windows 10
 - Требуемая версия .NET
-  - 3\.5.2 .NET
+  - .NET 3.5.2
 - Дополнительные требования
   - Для получения обновлений средства и шаблонов требуется подключение к Интернету.
 
@@ -40,6 +40,6 @@ ms.locfileid: "78269749"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

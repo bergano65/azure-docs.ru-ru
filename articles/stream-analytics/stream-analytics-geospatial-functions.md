@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.openlocfilehash: f47f34b60c858bb9a0feafd25176e4a811046630
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75426223"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Сведения о геопространственных функциях Azure Stream Analytics
@@ -22,7 +22,7 @@ ms.locfileid: "75426223"
 
 * Совместное использование в поездке
 * Управление автотранспортным парком
-* Отслеживание ресурсов
+* Отслеживание данных ресурсов
 * Установка геозон
 * Отслеживание телефона на сотовых веб-сайтах
 
@@ -159,8 +159,8 @@ FROM input
   
 |datacenterArea|stormArea|  
 |--------------------|---------------|  
-|{"Type": "LineString", "координаты": [[-10,0, 0,0], [0,0, 0,0], [10,0, 0,0]]}|{"Type": "LineString", "координаты": [[0,0, 10,0], [0,0, 0,0], [0,0,-10,0]]}|  
-|{"Type": "LineString", "координаты": [[-10,0, 0,0], [0,0, 0,0], [10,0, 0,0]]}|{"Type": "LineString", "координаты": [[-10,0, 10,0], [0,0, 10,0], [10,0, 10,0]]}|  
+|«тип»:LineString», «координаты»: »-10.0, 0.0», «0.0, 0.0», «10.0, 0.0»|«тип»:LineString», «координаты»: »0.0, 10.0», «0.0, 0.0», «0.0, -10.0»|  
+|«тип»:LineString», «координаты»: »-10.0, 0.0», «0.0, 0.0», «10.0, 0.0»|«тип»:LineString», «координаты»: »-10.0, 10.0», «0.0, 10.0», «10.0, 10.0»|  
   
 ### <a name="output-example"></a>Пример выходных данных  
 
@@ -185,8 +185,8 @@ FROM input
   
 |deliveryDestination|Хранилище данных|  
 |-------------------------|---------------|  
-|{"Type": "Point", "координаты": [76,6, 10,1]}|{"Type": "Polygon", "координаты": [[0,0, 0,0], [10,0, 0,0], [10,0, 10,0], [0,0, 10,0], [0,0, 0,0]]}|  
-|{"Type": "Point", "координаты": [15,0, 15,0]}|{"Type": "Polygon", "координаты": [[10,0, 10,0], [20,0, 10,0], [20,0, 20,0], [10,0, 20,0], [10,0, 10,0]]}|  
+|«тип»: «Точка», «координаты»: 76,6, 10,1|«тип»:«Полигон», «координаты»: »0,0, 0,0», «10.0, 0.0», «10.0, 10.0», «0.0, 10.0», «0.0», «0.0, 0.0»|  
+|«тип»:«Точка», «координаты»: 15.0, 15.0»|«тип»:«Полигон», «координаты»: »10.0, 10.0», «20.0, 10.0», «20.0, 20.0», «10.0, 20.0», «10.0, 10.0»|  
   
 ### <a name="output-example"></a>Пример выходных данных  
 
@@ -199,7 +199,7 @@ FROM input
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

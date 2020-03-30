@@ -9,10 +9,10 @@ ms.date: 09/07/2018
 ms.author: dobett
 ms.custom: include file
 ms.openlocfilehash: bd08812f83413a997ce655d68d866b145b20dcef
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75912510"
 ---
 ## <a name="extended-iot-scenarios"></a>Расширенные сценарии Интернета вещей
@@ -21,9 +21,9 @@ ms.locfileid: "75912510"
 
 | Сценарий                                                   | Служба или средство Azure              |
 |----------------------------------------------------------- |------------------------------------|
-| [Управление сообщениями Центра Интернета вещей](../articles/iot-hub/iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)                  | VS Code расширение центра Интернета вещей Azure|
+| [Управление сообщениями Центра Интернета вещей](../articles/iot-hub/iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)                  | Расширение концентратора VS Code Azure IoT|
 | [Управление устройством IoT](../articles/iot-hub/iot-hub-device-management-iot-extension-azure-cli-2-0.md)                        | Azure CLI и расширение Интернета вещей    |
-| [Управление устройством IoT](../articles/iot-hub/iot-hub-device-management-iot-toolkit.md)                | VS Code расширение центра Интернета вещей Azure|
+| [Управление устройством IoT](../articles/iot-hub/iot-hub-device-management-iot-toolkit.md)                | Расширение концентратора VS Code Azure IoT|
 | [Сохранение сообщений Центра Интернета вещей в службе хранилища Azure](../articles/iot-hub/iot-hub-store-data-in-azure-table-storage.md)  | Хранилище таблиц Azure                |
 | [Визуализации данных датчика](../articles/iot-hub/iot-hub-live-data-visualization-in-power-bi.md)                      | Microsoft Power BI                 |
 | [Визуализации данных датчика](../articles/iot-hub/iot-hub-live-data-visualization-in-web-apps.md)                      | Веб-приложения Azure                     |

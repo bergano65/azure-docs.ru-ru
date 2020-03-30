@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: apimpm
 ms.openlocfilehash: 2c021a6d10c95b58ac444de8ea895ca01371a2b0
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75902456"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Обработка ошибок в политиках управления API
@@ -59,32 +59,32 @@ ms.locfileid: "75902456"
 
 В разделе `on-error` можно использовать следующие политики.
 
--   [choose](api-management-advanced-policies.md#choose)
--   [set-variable](api-management-advanced-policies.md#set-variable)
+-   [Выбрать](api-management-advanced-policies.md#choose)
+-   [набор-переменный](api-management-advanced-policies.md#set-variable)
 -   [find-and-replace](api-management-transformation-policies.md#Findandreplacestringinbody)
 -   [return-response](api-management-advanced-policies.md#ReturnResponse)
 -   [set-header](api-management-transformation-policies.md#SetHTTPheader)
 -   [set-method](api-management-advanced-policies.md#SetRequestMethod)
 -   [set-status](api-management-advanced-policies.md#SetStatus)
 -   [send-request](api-management-advanced-policies.md#SendRequest)
--   [send-one-way-request](api-management-advanced-policies.md#SendOneWayRequest)
+-   [отправить в один сторону-запрос](api-management-advanced-policies.md#SendOneWayRequest)
 -   [log-to-eventhub](api-management-advanced-policies.md#log-to-eventhub)
 -   [json-to-xml](api-management-transformation-policies.md#ConvertJSONtoXML)
 -   [xml-to-json](api-management-transformation-policies.md#ConvertXMLtoJSON)
 
 ## <a name="lasterror"></a>lastError
 
-Если возникает ошибка и управление переходит к разделу политики `on-error`, то ошибка сохраняется в [контексте. Свойство LastError](api-management-policy-expressions.md#ContextVariables) , к которому могут обращаться политики в разделе `on-error`. LastError имеет следующие свойства.
+При возникновении ошибки и `on-error` перепрыгивании элемента управления в раздел политики ошибка сохраняется в [контексте. Свойство LastError,](api-management-policy-expressions.md#ContextVariables) к которому можно `on-error` получить доступ по политикам в разделе. LastError имеет следующие свойства.
 
-| Имя       | Тип   | Description                                                                                               | Обязательно для заполнения |
+| name       | Тип   | Описание                                                                                               | Обязательно |
 | ---------- | ------ | --------------------------------------------------------------------------------------------------------- | -------- |
-| `Source`   | string | Указывает имя элемента, в котором произошла ошибка. Может быть либо политикой, либо встроенным именем шага конвейера.      | Да      |
-| `Reason`   | string | Код ошибки в машинном формате, который удобно использовать для обработки ошибок.                                       | Нет       |
-| `Message`  | string | Описание ошибки в понятном для человека формате.                                                                         | Да      |
-| `Scope`    | string | Имя области, в которой возникла ошибка. Здесь возможны следующие значения: global, product, api или operation. | Нет       |
-| `Section`  | string | Имя раздела, в котором произошла ошибка. Возможные значения: inbound, backend, outbound или on-error.      | Нет       |
-| `Path`     | string | Задает вложенные политики, например: choose[3]/when[2].                                                 | Нет       |
-| `PolicyId` | string | Значение атрибута `id` для политики, в которой произошла ошибка (если указано клиентом).             | Нет       |
+| `Source`   | строка | Указывает имя элемента, в котором произошла ошибка. Может быть либо политика, либо встроенное имя шага конвейера.      | Да      |
+| `Reason`   | строка | Код ошибки в машинном формате, который удобно использовать для обработки ошибок.                                       | нет       |
+| `Message`  | строка | Описание ошибки в понятном для человека формате.                                                                         | Да      |
+| `Scope`    | строка | Имя области, в которой возникла ошибка. Здесь возможны следующие значения: global, product, api или operation. | нет       |
+| `Section`  | строка | Имя раздела, в котором произошла ошибка. Возможные значения: inbound, backend, outbound или on-error.      | нет       |
+| `Path`     | строка | Задает вложенные политики, например: choose[3]/when[2].                                                 | нет       |
+| `PolicyId` | строка | Значение атрибута `id` для политики, в которой произошла ошибка (если указано клиентом).             | нет       |
 
 > [!TIP]
 > Доступ к коду состояния можно получить с помощью context.Response.StatusCode.
@@ -101,9 +101,9 @@ ms.locfileid: "75902456"
 | настройка | URI не соответствует ни одному API или операции | OperationNotFound       | Unable to match incoming request to an operation. (Не удалось сопоставить входящий запрос с операцией.)                                                                      |
 | авторизация | Не предоставлен ключ подписки             | SubscriptionKeyNotFound | Access denied due to missing subscription key. Make sure to include subscription key when making requests to this API. (Доступ запрещен из-за отсутствия ключа подписки. Обязательно включайте ключ подписки в запросы к этому API.) |
 | авторизация | Недопустимое значение ключа подписки         | SubscriptionKeyInvalid  | Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. (Доступ запрещен из-за недопустимого ключа подписки. Укажите допустимый ключ активной подписки.)            |
-| установка нескольких | Подчиненное соединение (от клиента к шлюзу управления API) было прервано клиентом, хотя запрос был отложен | клиентконнектионфаилуре | установка нескольких |
-| установка нескольких | Вышестоящее подключение (от шлюза управления API к серверной службе) не было установлено или было прервано серверной частью | баккендконнектионфаилуре | установка нескольких |
-| установка нескольких | Во время вычисления определенного выражения возникло исключение времени выполнения | експрессионвалуивалуатионфаилуре | установка нескольких |
+| несколько | Подключение вниз по течению (от клиента к шлюзу Управления API) было прервано клиентом во время рассмотрения запроса | КлиентПодключениеОтказ | несколько |
+| несколько | Upstream соединение (от шлюза Управления API до бэкэнд-сервиса) не было установлено или было прервано бэкэндом | BackendConnectionОтказ | несколько |
+| несколько | Исключение в продолжительности произошло при оценке конкретного выражения | ExpressionValueEvaluationFailure | несколько |
 
 ## <a name="predefined-errors-for-policies"></a>Стандартные ошибки для политик
 
@@ -128,7 +128,7 @@ ms.locfileid: "75902456"
 | validate-jwt | В маркере отсутствуют необходимые утверждения                          | TokenClaimNotFound        | JWT token is missing the following claims: <c1\>, <c2\>, … Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                            |
 | validate-jwt | Несоответствие значений утверждения                                           | TokenClaimValueNotAllowed | Claim {claim-name} value of {claim-value} is not allowed. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                             |
 | validate-jwt | Прочие сбои при проверке данных                                       | JwtInvalid                | <сообщение из библиотеки jwt\>                                                                                                          |
-| прямой запрос или отправка запроса | Код и заголовки состояния ответа HTTP не были получены из серверной части в течение заданного времени ожидания | Время ожидания | установка нескольких |
+| форвард-запрос или отправка-запрос | Код статуса ответа И заголовки http не были получены из бэкэнда в пределах настроенного тайм-аута | Время ожидания | несколько |
 
 ## <a name="example"></a>Пример
 

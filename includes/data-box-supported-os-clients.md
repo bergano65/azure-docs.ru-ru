@@ -6,13 +6,13 @@ ms.topic: include
 ms.date: 07/10/2019
 ms.author: alkohli
 ms.openlocfilehash: 2c95095147f6984fb67ba3faa476ec42c9e7ec4e
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "67812476"
 ---
-Ниже приведен список поддерживаемых операционных систем для операции копирования данных с помощью клиентов, подключенных к устройству.
+Вот список поддерживаемых операционных систем для операции копирования данных через клиентов, подключенных к устройству.
 
 | **Операционная система** | **Версии** |
 | --- | --- |

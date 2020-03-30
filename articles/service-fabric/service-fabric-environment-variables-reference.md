@@ -1,22 +1,22 @@
 ---
-title: Переменные среды Azure Service Fabric
-description: Сведения о переменных среды в Azure Service Fabric. Содержит ссылку на полный список переменных и их использование.
+title: Переменные среды службы Azure
+description: Узнайте о переменных среды в структуре службы Azure. Содержит ссылку на полный список переменных и их использование.
 author: mikkelhegn
 ms.topic: reference
 ms.date: 12/07/2017
 ms.author: mikhegn
 ms.openlocfilehash: b13522b1d9f2acd2aa3f7923c1b623fab696056d
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645690"
 ---
 # <a name="service-fabric-environment-variables"></a>Переменные среды Service Fabric
 
 В Service Fabric есть встроенные переменные среды, задаваемые для каждого экземпляра службы. Полный список этих переменных среды приведен ниже.
 
-| Переменная среды                         | Description                                                            | Пример                                                              |
+| Переменная среды                         | Описание                                                            | Пример                                                              |
 |----------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
 | Fabric_ApplicationName                       | Универсальный код ресурса (URI) структуры для приложения.                                 | fabric:/MyApplication                                                |
 | Fabric_CodePackageName                       | Имя пакета кода, которому принадлежит процесс.              | Код                                                                 |

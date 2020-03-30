@@ -1,15 +1,15 @@
 ---
-title: Изменить параметры FabricTransport
-description: Узнайте, как настроить параметры связи с Service Fabric субъекта Azure для различных конфигураций субъектов.
+title: Изменение настроек FabricTransport
+description: Узнайте о настройке настроек взаимодействия актеров Azure Service Fabric для различных конфигураций актеров.
 author: suchiagicha
 ms.topic: conceptual
 ms.date: 04/20/2017
 ms.author: pepogors
 ms.openlocfilehash: 182b35194a647f5de706f9ada07b8e9db51bb4c2
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645588"
 ---
 # <a name="configure-fabrictransport-settings-for-reliable-actors"></a>Настройка параметров FabricTransport для Reliable Actors

@@ -1,15 +1,15 @@
 ---
-title: Элемент пользовательского интерфейса StorageAccountSelector
+title: Элемент uI учета хранилища
 description: Сведения об элементе пользовательского интерфейса Microsoft.Storage.StorageAccountSelector для портала Azure.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: tomfitz
 ms.openlocfilehash: 4fcaf0e5842ce8a65175d2fc1dfa2483a1203b2f
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75651895"
 ---
 # <a name="microsoftstoragestorageaccountselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Storage.StorageAccountSelector
@@ -65,7 +65,7 @@ ms.locfileid: "75651895"
 - Если необходимо, параметр `defaultValue.name` автоматически проверяется на уникальность. Если имя учетной записи хранения не является уникальным, пользователь должен указать другое имя или выбрать существующую учетную запись хранения.
 - Значением по умолчанию для параметра `defaultValue.type` является **Premium_LRS**.
 - Любой тип, не указанный в `constraints.allowedTypes`, скрыт, а любой тип, не указанный в `constraints.excludedTypes`, отображается. Параметры `constraints.allowedTypes` и `constraints.excludedTypes` являются необязательными. При этом их нельзя использовать одновременно.
-- Если для параметра `options.hideExisting` задано значение **true**, пользователь не может выбрать имеющуюся учетную запись хранения. Значение по умолчанию — **false**.
+- Если для параметра `options.hideExisting` задано значение **true**, пользователь не может выбрать имеющуюся учетную запись хранения. По умолчанию используется значение **false**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).

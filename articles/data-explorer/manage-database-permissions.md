@@ -1,5 +1,5 @@
 ---
-title: Управление разрешениями базы данных в Azure обозреватель данных
+title: Управление разрешениями базы данных в Azure Data Explorer
 description: В этой статье описываются элементы управления доступом на основе ролей для баз данных и таблиц в обозревателе данных Azure.
 author: orspod
 ms.author: orspodek
@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: b4d5e56e990c0353f44209c6b19ae2d1727de27a
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76030088"
 ---
 # <a name="manage-azure-data-explorer-database-permissions"></a>Управление разрешениями баз данных обозревателя данных Azure
@@ -56,13 +56,13 @@ ms.locfileid: "76030088"
 
     ![Управление разрешениями на портале Azure](media/manage-database-permissions/new-principals.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
     ![Управление разрешениями на портале Azure](media/manage-database-permissions/save-permission.png)
 
 ## <a name="manage-permissions-with-management-commands"></a>Управление разрешениями с помощью команд управления
 
-1. Войдите в систему на сайте [https://dataexplorer.azure.com](https://dataexplorer.azure.com) и добавьте кластер, если он еще не доступен.
+1. Войти на [https://dataexplorer.azure.com](https://dataexplorer.azure.com)ввесенку и добавить кластер, если он еще не доступен.
 
 1. На панели слева выберите соответствующую базу данных.
 
@@ -74,7 +74,7 @@ ms.locfileid: "76030088"
 
     В выходных данных команды отобразится список существующих пользователей и назначенных им ролей в базе данных.
     
-    Примеры, относящиеся к Azure Active Directory и модели авторизации Kusto, см. в разделе [принципы и поставщики удостоверений](https://docs.microsoft.com/azure/kusto/management/access-control/principals-and-identity-providers) .
+    Для примеров, относящихся к Active Directory Azure и модели авторизации Kusto, пожалуйста, ознакомьтесь с [поставщиками принципов и идентификации](https://docs.microsoft.com/azure/kusto/management/access-control/principals-and-identity-providers)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

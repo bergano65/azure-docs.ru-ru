@@ -9,10 +9,10 @@ ms.date: 01/26/2017
 ms.author: twooley
 ms.subservice: common
 ms.openlocfilehash: 33e6ecca0eb4ca05b1f6bf53cdb3bd4ac8c8d8a9
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75978431"
 ---
 # <a name="reviewing-azure-importexport-job-status-with-copy-log-files"></a>Просмотр состояния задания импорта и экспорта Azure с помощью файлов журнала копирования
@@ -31,7 +31,7 @@ ms.locfileid: "75978431"
 ## <a name="next-steps"></a>Дальнейшие действия
 
  * [Настройка средства импорта и экспорта Azure](storage-import-export-tool-setup-v1.md)   
- * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
- * [Подготовка задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
- * [Подготовка задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)   
- * [Устранение неполадок со средством импорта и экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)
+ * [Подготовка жестких дисков для выполнения задания по импорту](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
+ * [Ремонт задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
+ * [Исправление задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)   
+ * [Устранение проблем с инструментом импорта/экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)

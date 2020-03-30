@@ -1,5 +1,5 @@
 ---
-title: 'VPN-шлюз: изменение параметров IP-адреса шлюза: портал Azure'
+title: 'VPN Gateway: Изменение настроек IP-адресов шлюза: портал Azure'
 description: Из этой статьи вы узнаете, как изменять префиксы IP-адресов для шлюза локальной сети с помощью портала Azure.
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/19/2017
 ms.author: cherylmc
 ms.openlocfilehash: fdb98242cede36f818604a7a5d713f5f7c75daad
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75864032"
 ---
 # <a name="modify-local-network-gateway-settings-using-the-azure-portal"></a>Изменение параметров шлюза локальной сети с помощью портала Azure
@@ -23,18 +23,18 @@ ms.locfileid: "75864032"
 > [!div class="op_single_selector"]
 > * [Портал Azure](vpn-gateway-modify-local-network-gateway-portal.md)
 > * [PowerShell](vpn-gateway-modify-local-network-gateway.md)
-> * [Azure CLI](vpn-gateway-modify-local-network-gateway-cli.md)
+> * [Лазурный CLI](vpn-gateway-modify-local-network-gateway-cli.md)
 >
 >
 
 
-## <a name="ipaddprefix"></a>Изменение префиксов IP-адресов
+## <a name="modify-ip-address-prefixes"></a><a name="ipaddprefix"></a>Изменение префиксов IP-адресов
 
 При изменении префиксов IP-адресов выполняемые действия зависят от того, имеет ли шлюз локальной сети подключение.
 
 [!INCLUDE [modify prefix](../../includes/vpn-gateway-modify-ip-prefix-portal-include.md)]
 
-## <a name="gwip"></a>Изменение IP-адреса шлюза
+## <a name="modify-the-gateway-ip-address"></a><a name="gwip"></a>Изменение IP-адреса шлюза
 
 Если общедоступный IP-адрес VPN-устройства, к которому вы хотите подключиться, изменился, измените шлюз локальной сети в соответствии с изменениями. При изменении общедоступного IP-адреса выполняемые действия зависят от того, имеет ли шлюз локальной сети подключение.
 

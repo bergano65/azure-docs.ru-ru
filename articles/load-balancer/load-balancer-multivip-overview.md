@@ -1,6 +1,6 @@
 ---
-title: Несколько внешних интерфейсов — Azure Load Balancer
-description: По этой схеме обучения приступите к обзору нескольких внешних интерфейсов на Azure Load Balancer
+title: Несколько фронтов - Балансер загрузки Azure
+description: С помощью этого пути обучения, начать с обзором нескольких фронтов на Azure Load Balancer
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.date: 08/07/2019
 ms.author: allensu
 ms.openlocfilehash: 0a54416a70a8561edfad5915944100e0ce686bbf
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75771263"
 ---
-# <a name="multiple-frontends-for-azure-load-balancer"></a>Несколько внешних интерфейсов для Azure Load Balancer
+# <a name="multiple-frontends-for-azure-load-balancer"></a>Несколько фронтенов для баланса загрузки Azure
 
 Azure Load Balancer позволяет выполнять балансировку нагрузки между службами на нескольких портах, нескольких IP-адресах или обоими этими способами. Вы можете воспользоваться определениями общедоступного и внутреннего балансировщика нагрузки для выполнения балансировки потоков в наборе виртуальных машин.
 
@@ -64,12 +64,12 @@ Azure Load Balancer позволяет сочетать оба типа прав
 
 | Правило | Сопоставить внешний интерфейс | С внутренним пулом |
 | --- | --- | --- |
-| 1 |![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP1:80, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP2:80 |
-| 2 |![Виртуальный IP-адрес](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP1:81, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP2:81 |
+| 1 |![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP1:80, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png)  DIP2:80 |
+| 2 |![Виртуальный IP-адрес](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP1:81, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png)  DIP2:81 |
 
 Полное сопоставление в Azure Load Balancer теперь выглядит следующим образом:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Место назначения | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |Выделенный IP-адрес (DIP) |80 |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |Выделенный IP-адрес (DIP) |81 |
@@ -98,24 +98,24 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 * Внешний интерфейс 1: интерфейс замыкания на себя в гостевой ОС, настроенной с IP-адресом внешнего интерфейса 1.
 * Внешний интерфейс 2: интерфейс замыкания на себя в гостевой ОС, настроенной с IP-адресом внешнего интерфейса 2.
 
-Для каждой виртуальной машины во внутреннем пуле выполните следующие команды в командной строке Windows.
+Для каждого VM в пуле бэкэнда выполняй следующие команды в командном пункте Windows.
 
-Чтобы получить список имен интерфейсов на виртуальной машине, введите следующую команду:
+Чтобы получить список имен интерфейсов, которые у вас есть на VM, введите эту команду:
 
     netsh interface show interface 
 
-Для сетевого адаптера виртуальной машины (под управлением Azure) введите следующую команду:
+Для VM NIC (управляемый Azure) введите эту команду:
 
     netsh interface ipv4 set interface “interfacename” weakhostreceive=enabled
-   (замените InterfaceName именем этого интерфейса)
+   (заменить имя интерфейса с названием этого интерфейса)
 
-Для каждого добавленного интерфейса замыкания на себя повторите следующие команды:
+Для каждого добавленного интерфейса loopback повторите следующие команды:
 
     netsh interface ipv4 set interface “interfacename” weakhostreceive=enabled 
-   (замените InterfaceName на имя этого интерфейса замыкания на себя)
+   (заменить имя интерфейса с именем этого интерфейса loopback)
      
     netsh interface ipv4 set interface “interfacename” weakhostsend=enabled 
-   (замените InterfaceName на имя этого интерфейса замыкания на себя)
+   (заменить имя интерфейса с именем этого интерфейса loopback)
 
 > [!IMPORTANT]
 > Настройка интерфейсов замыкания на себя выполняется в гостевой ОС. Эта настройка не выполняется и не управляется Azure. Без данной настройки правила не будут функционировать. Определения проб работоспособности используют выделенный IP-адрес (DIP) виртуальной машины, а не интерфейс замыкания на себя, представляющий интерфейс с прямым ответом от сервера. Поэтому служба должна предоставить на порте DIP ответы проб, которые отражают состояние службы, предлагаемое на интерфейсе замыкания на себя, представляющем интерфейс с прямым ответом от сервера.
@@ -137,7 +137,7 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 
 Следующая таблица демонстрирует полное сопоставление в балансировщике нагрузки:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Место назначения | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.1) |такое, как у внешнего интерфейса (80) |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.2) |такое, как у внешнего интерфейса (80) |
@@ -151,7 +151,7 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 ## <a name="limitations"></a>Ограничения
 
 * Конфигурации с несколькими внешними интерфейсами поддерживаются только при использовании виртуальных машин IaaS.
-* При использовании правила с плавающим IP-адресом приложение должно использовать основную IP-конфигурацию для исходящих потоков SNAT. Если ваше приложение привязывается к интерфейсному IP-адресу, настроенному в интерфейсе замыкания на себя гостевой ОС, то исходящая SNAT Azure не будет доступна для перезаписи исходящего потока, и поток завершится ошибкой.  Проверьте [сценарии исходящего трафика](load-balancer-outbound-connections.md).
+* С правилом Floating IP приложение должно использовать основную конфигурацию IP для исходящих потоков SNAT. Если приложение привязывается к IP-адресу интерфейса интерфейса интерфейса loopback в гостевой ОС, исходящий SNAT Azure недоступен для переписывания исходящего потока, и поток выходит из строя.  Просмотр [исходящих сценариев](load-balancer-outbound-connections.md).
 * Общедоступные IP-адреса оказывают влияние на выставление счетов. Дополнительные сведения см. в статье [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/).
 * Действуют ограничения подписки. Дополнительные сведения см. в разделе [Ограничения определенных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 

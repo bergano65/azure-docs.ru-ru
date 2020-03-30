@@ -1,5 +1,5 @@
 ---
-title: Руководство по ценам & Управление затратами
+title: Руководство по ценам & управление затратами
 description: Рекомендации по выбору подходящей модели ценообразования для виртуальны машин SQL Server.
 services: virtual-machines-windows
 documentationcenter: na
@@ -16,15 +16,15 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: b7a8f7136d0899ab3afe04bce2d25bc2e7f8d3e2
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75981713"
 ---
-# <a name="pricing-guidance-for-azure-sql-server-vms"></a>Руководство по ценам для виртуальных машин Azure SQL Server
+# <a name="pricing-guidance-for-azure-sql-server-vms"></a>Руководство по выбору ценовой категории для виртуальных машин Azure SQL Server
 
-В этой статье приводятся рекомендации по выбору ценовой категории для [виртуальных машин SQL Server](virtual-machines-windows-sql-server-iaas-overview.md) в Azure. На затраты влияет несколько параметров, поэтому важно выбрать соответствующий образ, чтобы затраты были соизмеримы с потребностями организации.
+В этой статье содержатся рекомендации по ценообразованию для [виртуальных машин сервера S'L Server](virtual-machines-windows-sql-server-iaas-overview.md) в Azure. На затраты влияет несколько параметров, поэтому важно выбрать соответствующий образ, чтобы затраты были соизмеримы с потребностями организации.
 
 > [!TIP]
 > Если необходимо узнать примерную стоимость конкретного сочетания выпуска SQL Server и размера виртуальной машины, см. страницу со сведениями о ценах для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows) или [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux). Выберите платформу и выпуск SQL Server из списка **ОС или программное обеспечение**.
@@ -45,7 +45,7 @@ ms.locfileid: "75981713"
 
 | Платформа | Образы с бесплатными лицензиями |
 |---|---|
-| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonWindowsServer2016) |
+| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonWindowsServer2016) |
 | Red Hat Enterprise Linux | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonRedHatEnterpriseLinux74) |
 | SUSE Linux Enterprise Server | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonSLES12SP2)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonSLES12SP2) |
 | Ubuntu | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonUbuntuServer1604LTS)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonUbuntuServer1604LTS) |
@@ -56,29 +56,29 @@ ms.locfileid: "75981713"
 
 | Выпуск SQL Server | Рабочая нагрузка |
 |-----|-----|
-| Web | Небольшие веб-сайты |
-| Стандартный | Небольшие и средние рабочие нагрузки |
+| Интернет | Небольшие веб-сайты |
+| Standard | Небольшие и средние рабочие нагрузки |
 | Enterprise | Большие и критически важные рабочие нагрузки|
 
-Существуют два варианта оплаты лицензий для этих выпусков SQL Server: *оплата за использование* или *использование собственных лицензий (BYOL)* .
+Существуют два варианта оплаты лицензий для этих выпусков SQL Server: *оплата за использование* или *использование собственных лицензий (BYOL)*.
 
 ## <a name="pay-per-usage"></a>Оплата за использование
 
-**Оплата SQL Server лицензий на использование** (также известная как **"Оплата по мере**использования") означает, что в секунду на выполнение виртуальной машины Azure взимается стоимость лицензии на SQL Server. Цены на разные выпуски SQL Server (Web, Standard, Enterprise) можно узнать на странице со сведениями о ценах на виртуальные машины Azure для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows) или [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux).
+**Оплата лицензии S'L Server за использование** (также известной как оплата по **мере использования)** означает, что в секунду стоимость запуска Azure VM включает стоимость лицензии S'L Server. Цены на разные выпуски SQL Server (Web, Standard, Enterprise) можно узнать на странице со сведениями о ценах на виртуальные машины Azure для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows) или [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux).
 
 Стоимость одинакова для всех версий SQL Server (от версии 2012 SP3 до 2017). Стоимость секунды лицензии зависит от числа виртуальных ЦП виртуальной машины.
 
 Оплата за использование лицензий SQL Server рекомендуется в следующих случаях.
 
-- **Временные или периодические рабочие нагрузки**. Например, это может быть приложение, которое должно поддерживать какое-либо событие в течение пары месяцев каждый год или выполнять бизнес-анализ по понедельникам.
+- **Временные или периодические нагрузки.** Например, это может быть приложение, которое должно поддерживать какое-либо событие в течение пары месяцев каждый год или выполнять бизнес-анализ по понедельникам.
 
-- **Рабочие нагрузки с неизвестным временем существования или масштабом**. Например, это может быть приложение, не востребованное в течение нескольких месяцев, или приложение, которое может требовать больше или меньше вычислительной мощности в зависимости от потребностей.
+- **Рабочие нагрузки с неизвестным сроком службы или масштабом.** Например, это может быть приложение, не востребованное в течение нескольких месяцев, или приложение, которое может требовать больше или меньше вычислительной мощности в зависимости от потребностей.
 
-Чтобы создать виртуальную машину Azure SQL Server 2017 с одним из этих образов с оплатой по мере использования, ознакомьтесь со следующими ссылками:
+Для создания VM Azure 2017 с одним из таких изображений с оплатой по мере схожи см.
 
 | Платформа | Лицензированные образы |
 |---|---|
-| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseWindowsServer2016) |
+| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseWindowsServer2016) |
 | Red Hat Enterprise Linux | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonRedHatEnterpriseLinux74) |
 | SUSE Linux Enterprise Server | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonSLES12SP2)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonSLES12SP2)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonSLES12SP2) |
 | Ubuntu | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonUbuntuServer1604LTS)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonUbuntuServer1604LTS)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonUbuntuServer1604LTS) |
@@ -91,29 +91,29 @@ ms.locfileid: "75981713"
 >Она не включает в себя дополнительные расходы на лицензирование SQL Server для выпусков Web, Standard и Enterprise. Чтобы получить самую точную расчетную стоимость, выберите свою операционную систему и выпуск SQL Server на странице расценок для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) или [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).
 
 > [!NOTE]
-> Теперь вы можете изменить модель лицензирования с оплатой за использование на модель использования собственной лицензии (BYOL) и наоборот. Дополнительные сведения см. в статье об [изменение модели лицензирования для виртуальной машины SQL](virtual-machines-windows-sql-ahb.md). 
+> Теперь вы можете изменить модель лицензирования с оплатой за использование на модель использования собственной лицензии (BYOL) и наоборот. Для получения дополнительной информации [см.](virtual-machines-windows-sql-ahb.md) 
 
-## <a id="byol"></a> Использование собственных лицензий (BYOL)
+## <a name="bring-your-own-license-byol"></a><a id="byol"></a>Принесите свою собственную лицензию (BYOL)
 
 **Использование собственной лицензии SQL Server посредством License Mobility** (**BYOL**) означает использование на виртуальной машине Azure существующей корпоративной лицензии SQL Server в рамках программы Software Assurance. При использовании виртуальной машины SQL Server с BYOL взимается только плата за выполнение виртуальной машины, но не за лицензию SQL Server, так как вы уже приобрели лицензии и участвуете в программе Software Assurance в рамках программы корпоративного лицензирования.
 
 > [!IMPORTANT]
-> Для образов BYOL требуется соглашение Enterprise с подпиской Software Assurance. Сейчас эти образы не предоставляются в рамках программы Azure Cloud Solution Partner (CSP). Клиенты CSP могут использовать собственную лицензию путем развертывания образа с оплатой по мере использования и включения [преимущество гибридного использования Azure](virtual-machines-windows-sql-ahb.md).
+> Для образов BYOL требуется соглашение Enterprise с подпиской Software Assurance. Сейчас эти образы не предоставляются в рамках программы Azure Cloud Solution Partner (CSP). Клиенты CSP могут получить собственную лицензию, развернув изображение с оплатой по мере вашего узла, а затем [включив гибридную выгоду Azure.](virtual-machines-windows-sql-ahb.md)
 
 > [!NOTE]
 > Сейчас образы BYOL доступны только для виртуальных машин Windows. Но вы можете вручную установить SQL Server на виртуальной машине только с ОС Linux. Дополнительные сведения см. в статье [Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure](../../linux/sql/sql-server-linux-faq.md).
 
 Использование собственных лицензий SQL посредством License Mobility рекомендуется для следующих ситуаций.
 
-- **Непрерывные рабочие нагрузки**. Например, это может быть приложение, которое требуется для круглосуточной поддержки бизнес-операций.
+- **Непрерывные рабочие нагрузки.** Например, это может быть приложение, которое требуется для круглосуточной поддержки бизнес-операций.
 
-- **Рабочие нагрузки с известным временем существования и масштабом**. Например, это может быть приложение, которое востребовано на протяжении всего года и потребности которого спрогнозированы.
+- **Рабочие нагрузки с известным сроком службы и масштабом.** Например, это может быть приложение, которое востребовано на протяжении всего года и потребности которого спрогнозированы.
 
-Чтобы использовать BYOL с виртуальной машиной SQL Server, необходимо иметь лицензию на SQL Server Standard или SQL Server Enterprise и участвовать в программе [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx#tab=1). Это обязательный компонент в некоторых программах корпоративного лицензирования и необязательная покупка в других программах. Уровень ценообразования, предоставляемый в рамках программ корпоративного лицензирования, может отличаться в зависимости от типа соглашения и количества лицензий и/или обязательств по SQL Server. Как правило, использование собственных лицензий для непрерывных рабочих нагрузок дает следующие преимущества.
+Для использования BYOL с VM сервера S'L, вы должны иметь лицензию на S'L Server Standard или Enterprise and [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx#tab=1), которая является необходимым вариантом через некоторые программы корпоративного лицензирования и необязательную покупку с другими. Уровень ценообразования, предоставляемый в рамках программ корпоративного лицензирования, может отличаться в зависимости от типа соглашения и количества лицензий и/или обязательств по SQL Server. Как правило, использование собственных лицензий для непрерывных рабочих нагрузок дает следующие преимущества.
 
-| Преимущество BYOL | Description |
+| Преимущество BYOL | Описание |
 |-----|-----|
-| **Уменьшение затрат** | [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) обеспечивает экономию до 55%. Дополнительные сведения см. в разделе [Переключение модели лицензирования](virtual-machines-windows-sql-ahb.md) |
+| **Экономия денежных средств** | [Гибридная льгота Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) предлагает до 55% экономии. Для получения дополнительной [Switch licensing model](virtual-machines-windows-sql-ahb.md) информации см. |
 | **Бесплатная пассивная вторичная реплика** | Еще одно преимущество использования собственной лицензии — [бесплатная лицензия на одну пассивную вторичную реплику](https://azure.microsoft.com/pricing/licensing-faq/) на каждый сервер SQL Server, предназначенную обеспечить высокий уровень доступности. Это наполовину снижает стоимость лицензии на высокодоступное развертывание SQL Server (например, с использованием групп доступности AlwaysOn). Права на запуск пассивной вторичной реплики предоставляются посредством серверов отработки отказа (преимущество Software Assurance). |
 
 Чтобы создать виртуальную машину SQL Server 2017 в Azure с одним из этих образов с использованием собственной лицензии, ищите виртуальные машины с префиксом "{BYOL}":
@@ -125,15 +125,15 @@ ms.locfileid: "75981713"
 > Сообщите нам в течение 10 дней количество лицензий на SQL Server, которые вы используете в Azure. По ссылкам на предыдущие образы доступны инструкции о том, как это сделать.
 
 > [!NOTE]
-> Теперь вы можете изменить модель лицензирования с оплатой за использование на модель использования собственной лицензии (BYOL) и наоборот. Дополнительные сведения см. в статье об [изменение модели лицензирования для виртуальной машины SQL](virtual-machines-windows-sql-ahb.md). 
+> Теперь вы можете изменить модель лицензирования с оплатой за использование на модель использования собственной лицензии (BYOL) и наоборот. Для получения дополнительной информации [см.](virtual-machines-windows-sql-ahb.md) 
 
 
 
-## <a name="reduce-costs"></a>Сокращайте затраты
+## <a name="reduce-costs"></a>Сокращение затрат
 
 Чтобы избежать ненужных затрат, выберите оптимальный размер виртуальной машины и периодически выключайте непостоянные рабочие нагрузки.
 
-### <a id="machinesize"></a>Выбор оптимального размера виртуальной машины
+### <a name="correctly-size-your-vm"></a><a id="machinesize"></a>Выбор оптимального размера виртуальной машины
 
 Стоимость лицензирования SQL Server напрямую связана с количеством виртуальных ЦП. Выберите размер виртуальной машины, который соответствует требованиям к ожидаемому использованию ЦП, памяти, хранилища и пропускной способности ввода-вывода. Полный список размеров виртуальных машин см. в статьях [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes) и [Размеры виртуальных машин Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
@@ -141,8 +141,8 @@ ms.locfileid: "75981713"
 
 | Размер виртуальной машины | Число виртуальных ЦП | Память | Максимальное количество дисков | Максимальная пропускная способность ввода-вывода | Стоимость лицензии SQL | Общая себестоимость (вычисление + лицензирование) |
 |---|---|---|---|---|---|---|
-| **Standard_DS14v2** | 16 | 112 ГБ | 32 | 51 200 операций ввода-вывода в секунду (IOPS) или 768 МБ/с | | |
-| **Standard_DS14-4v2** | 4 | 112 ГБ | 32 | 51 200 операций ввода-вывода в секунду (IOPS) или 768 МБ/с | на 75 % ниже | на 57 % ниже |
+| **Standard_DS14v2** | 16 | 112 ГБ | 32 | 51 200 операций ввода-вывода в секунду (IOPS) или 768 МБ/с | | |
+| **Standard_DS14-4v2** | 4 | 112 ГБ | 32 | 51 200 операций ввода-вывода в секунду (IOPS) или 768 МБ/с | на 75 % ниже | на 57 % ниже |
 
 > [!IMPORTANT]
 > Это пример "на момент времени". Самые последние спецификации можно найти в статьях о размерах виртуальных машин и на странице цен Azure для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) и [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).

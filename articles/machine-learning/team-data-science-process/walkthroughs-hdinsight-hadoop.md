@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: f72ea6ed5f0eec076d181ef56c99c4f1308a7741
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75864168"
 ---
 # <a name="hdinsight-hadoop-data-science-walkthroughs-using-hive-on-azure"></a>Пошаговое руководство по обработке и анализу данных HDInsight Hadoop с использованием Hive в Azure 
@@ -36,7 +36,7 @@ ms.locfileid: "75864168"
 
 ## <a name="predict-advertisement-clicks-using-hive-with-hdinsight-hadoop"></a>Прогнозирование переходов по рекламным объявлениям с помощью Hive с HDInsight Hadoop
 
-[Использование кластеров Azure HDInsight Hadoop в пошаговом руководстве по набору данных объемом 1 ТБ](hive-criteo-walkthrough.md) использует общедоступный [Criteoный](https://labs.criteo.com/downloads/download-terabyte-click-logs/) набор данных, чтобы спрогнозировать, оплачивается ли Совет и ожидаемые суммы. Сценарий реализуется с помощью Hive с [кластером Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) и используется для хранения, изучения, проектирования признаков и сокращения выборки данных. В сценарии применяется машинное обучение Azure для создания, обучения и оценки модели двоичной классификации, прогнозирующей, щелкнет ли пользователь рекламное объявление. В конце пошагового руководства показано, как опубликовать одну из этих моделей в качестве веб-службы.
+[В кластерах Use Ure HDInsight Hadoop на 1-Tb-наборе данных](hive-criteo-walkthrough.md) используется общедоступный набор данных [Criteo](https://labs.criteo.com/downloads/download-terabyte-click-logs/) click, чтобы предсказать, оплачивается ли чаевые и ожидаемые суммы. Сценарий реализуется с помощью Hive с [кластером Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) и используется для хранения, изучения, проектирования признаков и сокращения выборки данных. В сценарии применяется машинное обучение Azure для создания, обучения и оценки модели двоичной классификации, прогнозирующей, щелкнет ли пользователь рекламное объявление. В конце пошагового руководства показано, как опубликовать одну из этих моделей в качестве веб-службы.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

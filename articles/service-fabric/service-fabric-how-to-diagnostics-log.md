@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: srrengar
 ms.openlocfilehash: 8c4721584e74bd7f7111c516f2d16bd190392bb5
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75614372"
 ---
 # <a name="add-logging-to-your-service-fabric-application"></a>Добавление ведения журнала в приложение Service Fabric
@@ -96,8 +96,8 @@ internal sealed class ServiceEventSource : EventSource
 
 Ведение журнала ASP.NET Core ([пакет Microsoft.Extensions.Logging NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging)) — это платформа ведения журнала, которая предоставляет стандартный API для ведения журналов в приложениях. К системе ведения журнала ASP.NET Core можно подключить поддержку других серверных систем для ведения журнала. Этот метод дает вам широкий спектр ресурсов для ведения и обработки журналов в приложении, не требуя значительных изменений в коде.
 
-1. Добавьте пакет NuGet **Microsoft.Extensions.Logging** в проект, для которого вы настраиваете инструментирование. Кроме того, добавьте все пакеты поставщиков. Дополнительные сведения см. в разделе [Introduction to Logging in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging) (Вводные сведения о ведении журналов в ASP.NET Core).
-2. Добавьте в файл службы директиву **using** для **Microsoft.Extensions.Logging**.
+1. Добавьте пакет **Microsoft.Extensions.Logging** NuGet в проект, который вы хотите инструментировать. Кроме того, добавьте все пакеты поставщиков. Дополнительные сведения см. в разделе [Introduction to Logging in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging) (Вводные сведения о ведении журналов в ASP.NET Core).
+2. Добавьте **директиву для** **Microsoft.Extensions.Logging** в файл службы.
 3. Определите частную переменную в классе службы.
 
    ```csharp
