@@ -1,19 +1,18 @@
 ---
 title: Руководство по публикации в Azure Marketplace и AppSource
 description: Обзор Azure Marketplace и Microsoft AppSource для издателей приложений и служб.
-services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-author: ellacroi
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/05/2018
-ms.author: ellacroi
-ms.openlocfilehash: fba9c481ad9b3da1eb0dd5d8a4ff2499240a8cfa
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 368cb4fdce23e695c074b4893dcdc314c974dd54
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826484"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80288399"
 ---
 # <a name="azure-marketplace-and-appsource-publishing-guide"></a>Руководство по публикации в Azure Marketplace и AppSource
 
@@ -31,7 +30,7 @@ ms.locfileid: "73826484"
 
 Это руководство содержит техническую и деловую информацию о шагах, которые необходимо предпринять перед публикацией приложений и служб. Используйте оглавление для перехода к различным разделам руководства и непосредственно к ключевым темам.
 
-Если у вас останутся вопросы об Azure Marketplace и AppSource, отправьте сообщение в разделе **Тип проблемы** > **Marketplace Onboarding** (подключение к Marketplace).  Группа адаптации издателя Marketplace будет помогать вам! 
+Для вопросов о Azure Marketplace и AppSource отправьте нам сообщение в > **рамках onboarding** **Типа проблем.** Наши сотрудники из группы подключения издателей к Marketplace будут рады вам помочь! 
 
 ## <a name="benefits-of-participating-in-the-marketplace"></a>Преимущества участия в Marketplace 
 
@@ -53,7 +52,7 @@ Marketplace — это стартовая площадка для маркети
 
 Получайте сведения о производительности своих предложений из аналитической информации, доступной через Marketplace. Получайте больше сведений об эффективности кампаний, заказах и выплатах, а также о возможностях повысить эффективность маркетинговой кампании для продвигаемого решения.
 
-### <a name="commercial-marketplace-benefits"></a>Преимущества коммерческой Marketplace 
+### <a name="commercial-marketplace-benefits"></a>Коммерческие преимущества рынка 
 
 Новые предложения в Marketplace получают целый ряд бесплатных преимуществ, которые помогают партнерам развивать свой бизнес в Marketplace. Эти преимущества подразделяются на следующие категории: 
 
@@ -63,9 +62,9 @@ Marketplace — это стартовая площадка для маркети
 
 *   Совместные продажи. Marketplace — это отправная точка, с которой можно не только начать свой путь к продажам совместно с Майкрософт, но и ускорить этот процесс. Доступ к программам и поддержке позволит создать возможности для совместных продаж с Майкрософт.
 
-Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  Дополнительные сведения см. [в статье Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
+Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  [Узнайте, как создать учетную запись Центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) для получения дополнительной информации.
 
-Узнайте больше о [преимуществах коммерческого рынка](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits).
+Узнайте больше о [преимуществах коммерческого рынка.](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,17 +8,14 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 69be71a58c3aed4f52b77e63c9ddf12365301b08
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.openlocfilehash: cbd6f821326c86983ceb3ae5b90969e522c187fe
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79299201"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80343055"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
-
-### <a name="supported-regions"></a>Поддерживаемые регионы
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-regions](virtual-machines-disks-incremental-snapshots-regions.md)]
 
 ## <a name="restrictions"></a>Ограничения
 
@@ -26,17 +23,17 @@ ms.locfileid: "79299201"
 
 ## <a name="cli"></a>CLI
 
-Вы можете создать добавочный моментальный снимок с Azure CLI, вам потребуется последняя версия Azure CLI. 
+Вы можете создать дополнительный снимок с Azure CLI, вам понадобится последняя версия Azure CLI. 
 
-В Windows Следующая команда установит или обновит существующую установку до последней версии:
+В Windows следующая команда либо установит, либо обновит существующую установку до последней версии:
 ```PowerShell
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
 ```
-В Linux Установка интерфейса командной строки будет зависеть от версии операционной системы.  См. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) для конкретной версии Linux.
+На Linux установка CLI будет варьироваться в зависимости от версии операционной системы.  Смотрите [установить Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) для вашей конкретной версии Linux.
 
-Чтобы создать добавочный моментальный снимок, используйте команду [AZ snapshot Create](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) с параметром `--incremental`.
+Чтобы создать дополнительный снимок, используйте `--incremental` [создание снимка аз](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) с параметром.
 
-В следующем примере создается добавочный моментальный снимок, заменяются `<yourDesiredSnapShotNameHere>`, `<yourResourceGroupNameHere>`,`<exampleDiskName>`и `<exampleLocation>` с собственными значениями, а затем выполняется пример:
+Следующий пример создает дополнительный снимок, `<yourDesiredSnapShotNameHere>` `<yourResourceGroupNameHere>`заменяет, ,`<exampleDiskName>`и `<exampleLocation>` с вашими собственными значениями, а затем запустить пример:
 
 ```bash
 sourceResourceId=$(az disk show -g <yourResourceGroupNameHere> -n <exampleDiskName> --query '[id]' -o tsv)
@@ -48,13 +45,13 @@ az snapshot create -g <yourResourceGroupNameHere> \
 --incremental
 ```
 
-Можно выявление добавочных моментальных снимков с того же диска с `SourceResourceId` и `SourceUniqueId` свойствами моментальных снимков. `SourceResourceId` — это Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId` — это значение, унаследованное от свойства `UniqueId` диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение свойства `UniqueId` изменится.
+Вы можете определить дополнительные снимки с `SourceResourceId` одного `SourceUniqueId` диска с свойствами снимков. `SourceResourceId`— это идентификатор ресурса Azure Manager родительского диска. `SourceUniqueId`это значение, унаследованное от `UniqueId` свойства диска. Если вы удалили диск, а затем создали новый диск с `UniqueId` тем же именем, значение свойства изменяется.
 
-Для создания списка всех моментальных снимков, связанных с определенным диском, можно использовать `SourceResourceId` и `SourceUniqueId`. В следующем примере будут перечислены все добавочные моментальные снимки, связанные с конкретным диском, но они требуют установки.
+Можно использовать `SourceResourceId` `SourceUniqueId` и создавать список всех снимков, связанных с определенным диском. В следующем примере будут указаны все дополнительные снимки, связанные с определенным диском, но для этого требуется некоторая настройка.
 
-В этом примере для запроса данных используется JQ. Чтобы запустить пример, необходимо [установить JQ](https://stedolan.github.io/jq/download/).
+Этот пример использует jq для запроса данных. Чтобы запустить пример, необходимо [установить jq.](https://stedolan.github.io/jq/download/)
 
-Замените `<yourResourceGroupNameHere>` и `<exampleDiskName>` значениями, затем можно использовать следующий пример, чтобы получить список существующих добавочных моментальных снимков, если вы также установили JQ:
+`<yourResourceGroupNameHere>` Заменить `<exampleDiskName>` и с значениями, то вы можете использовать следующий пример, чтобы перечислить существующие дополнительные снимки, до тех пор, как вы также установили jq:
 
 ```bash
 sourceUniqueId=$(az disk show -g <yourResourceGroupNameHere> -n <exampleDiskName> --query '[uniqueId]' -o tsv)
@@ -68,7 +65,7 @@ az snapshot list -g <yourResourceGroupNameHere> -o json \
 
 ## <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-Можно также использовать шаблоны Azure Resource Manager для создания добавочного моментального снимка. Необходимо убедиться, что для apiVersion задано значение **2019-03-01** и для свойства инкремента задано значение true. В следующем фрагменте кода приведен пример создания добавочного моментального снимка с помощью шаблонов диспетчер ресурсов.
+Вы также можете использовать шаблоны менеджерресурсов Azure для создания дополнительного снимка. Вы должны убедиться, что apiVersion установлен на **2019-03-01** и что инкрементное свойство также установлен на истину. Следующий фрагмент является примером того, как создать дополнительный снимок с шаблонами resource Manager:
 
 ```json
 {
@@ -104,4 +101,4 @@ az snapshot list -g <yourResourceGroupNameHere> -o json \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы хотите просмотреть пример кода, демонстрирующий возможность создания добавочных моментальных снимков с помощью .NET, см. статью [копирование резервных копий управляемых дисков Azure в другой регион с помощью разностных моментальных снимков](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots).
+Если вы хотите увидеть пример кода, демонстрирующий дифференциальную возможность дополнительных снимков, с помощью .NET, см. [Copy Azure Managed Disks в другой регион с дифференциальной возможностью дополнительных снимков.](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots)

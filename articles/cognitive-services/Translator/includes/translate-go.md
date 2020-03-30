@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
 ms.openlocfilehash: 2ead85da805bb33247ca54bea51cccc57b0e4e94
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69906748"
 ---
 [!INCLUDE [Prerequisites](prerequisites-go.md)]
@@ -78,7 +78,7 @@ func translate(subscriptionKey string, uri string) {
 }
 ```
 
-Теперь давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода`Add()`. В этом примере мы переводим с английского на итальянский и немецкий: `de` и `it`.
+Теперь давайте создадим URL-адрес. URL-адрес создается с использованием методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере мы переводим с английского на итальянский и немецкий: `de` и `it`.
 
 Скопируйте следующий код в функцию `translate`.
 
@@ -92,7 +92,7 @@ u.RawQuery = q.Encode()
 ```
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [переводу с помощью API перевода текстов 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запроса см. в статье [API перевода текстов 3.0: транслитерация](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate).
 
 ## <a name="create-a-struct-for-your-request-body"></a>Создание структуры для текста запроса
 
@@ -181,7 +181,7 @@ go run translate-text.go
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 

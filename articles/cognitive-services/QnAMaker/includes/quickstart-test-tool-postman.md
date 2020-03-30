@@ -11,15 +11,15 @@ ms.custom: include file
 ms.date: 02/08/2020
 ms.author: diberry
 ms.openlocfilehash: 46947579ea72e2199af116442472eec330b38009
-ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77112350"
 ---
 В этом кратком руководстве описывается, как получить ответ из базы знаний с помощью Postman.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Последняя версия [**Postman**](https://www.getpostman.com/).
 * Вам понадобится:
@@ -215,7 +215,7 @@ ms.locfileid: "77112350"
 
 Если вы хотите получить ответ от тестовой базы знаний, используйте в тексте свойство `isTest`.
 
-В Postman измените только объект JSON в запросе, добавив свойство `isTest`. Теперь JSON будет выглядеть так:
+В Postman измените только объект JSON, добавив свойство `isTest`. Теперь JSON будет выглядеть так:
 
 ```json
 {

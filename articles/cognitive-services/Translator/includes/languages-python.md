@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
 ms.openlocfilehash: 7f14a12d5de64206f64e8c7205beb2c59c4f1f2a
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69906999"
 ---
 [!INCLUDE [Prerequisites](prerequisites-python.md)]
@@ -43,7 +43,7 @@ endpoint = os.environ[endpoint_var_name]
 Конечная точка для перевода текстов задается как `endpoint`. Параметр `path` задает маршрут `languages` и определяет, что нужно использовать версию 3 API.
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: API перевода текстов 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
 
 ```python
 path = '/languages?api-version=3.0'
@@ -187,7 +187,7 @@ python get-languages.py
 
 Если вы закодировали свой ключ подписки в программе, обязательно удалите его после завершения работы с этим кратким руководством.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 

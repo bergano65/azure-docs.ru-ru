@@ -1,25 +1,25 @@
 ---
-title: Azure Application Insights переопределить конечные точки пакета SDK по умолчанию
-description: Измените Azure Monitor по умолчанию конечные точки пакета SDK Application Insights для регионов, таких как Azure для государственных организаций.
+title: Исследования приложений Azure переопределяют конечные точки SDK по умолчанию
+description: Изменение конечных точек приложения Azure Monitor Для таких регионов, как Azure Government, измените конечные точки приложения Azure Monitor.
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: 3aa18a6b96458533c3dc53f3f420ed264b298a3e
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: b4ab05c7ee815b385ffb2d1ff9e621063d744dd7
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77671993"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80298316"
 ---
-# <a name="application-insights-overriding-default-endpoints"></a>Application Insights переопределение конечных точек по умолчанию
+# <a name="application-insights-overriding-default-endpoints"></a>Анализ приложений переопределяет конечные точки по умолчанию
 
-Чтобы отправить данные из Application Insights в определенные регионы, необходимо переопределить адреса конечных точек по умолчанию. Каждый пакет SDK требует немного других изменений, все из которых описаны в этой статье. Для этих изменений требуется настроить пример кода и заменить значения заполнителей для `QuickPulse_Endpoint_Address`, `TelemetryChannel_Endpoint_Address`и `Profile_Query_Endpoint_address` фактическими адресами конечной точки для вашего региона. В конце этой статьи содержатся ссылки на адреса конечных точек для регионов, где требуется такая конфигурация.
+Для отправки данных из Application Insights в определенные регионы необходимо переопределить адреса конечных точек по умолчанию. Каждый SDK требует несколько различных изменений, все из которых описаны в этой статье. Эти изменения требуют корректировки кода выборки и `QuickPulse_Endpoint_Address`замены значений заполнителя для, `TelemetryChannel_Endpoint_Address`и `Profile_Query_Endpoint_address` с фактическими адресами конечных точек для вашего конкретного региона. Конец этой статьи содержит ссылки на конечные адреса для регионов, где требуется эта конфигурация.
 
-## <a name="sdk-code-changes"></a>Изменения кода пакета SDK
+## <a name="sdk-code-changes"></a>Изменения кода SDK
 
-### <a name="net-with-applicationinsightsconfig"></a>.NET с applicationinsights. config
+### <a name="net-with-applicationinsightsconfig"></a>.NET с applicationinsights.config
 
 > [!NOTE]
-> Файл applicationinsights. config автоматически перезаписывается в любое время, когда выполняется обновление пакета SDK. После обновления пакета SDK необходимо повторно ввести значения конечной точки, относящиеся к региону.
+> Файл applicationinsights.config автоматически перезаписываются в любое время выполнения обновления SDK. После выполнения обновления SDK обязательно введите определенные значения конечной точки региона.
 
 ```xml
 <ApplicationInsights>
@@ -43,7 +43,7 @@ ms.locfileid: "77671993"
 
 ### <a name="aspnet-core"></a>ASP.NET Core
 
-Измените файл appSettings. JSON в проекте следующим образом, чтобы настроить основную конечную точку.
+Изменяйте файл appsettings.json в проекте следующим образом, чтобы настроить основную конечную точку:
 
 ```json
 "ApplicationInsights": {
@@ -54,7 +54,7 @@ ms.locfileid: "77671993"
   }
 ```
 
-Значения динамических метрик и конечной точки запроса профиля можно задать только с помощью кода. Чтобы переопределить значения по умолчанию для всех значений конечных точек с помощью кода, внесите следующие изменения в метод `ConfigureServices` файла `Startup.cs`:
+Значения для Live Metrics и конечная точка запроса профиля могут быть установлены только с помощью кода. Чтобы переопределить значения по умолчанию для всех значений конечной `ConfigureServices` точки с `Startup.cs` помощью кода, внести следующие изменения в метод файла:
 
 ```csharp
 using Microsoft.ApplicationInsights.Extensibility.Implementation.ApplicationId;
@@ -69,15 +69,15 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPuls
     //Place in the ConfigureServices method. Place this before services.AddApplicationInsightsTelemetry("instrumentation key"); if it's present
 ```
 
-### <a name="azure-functions-v2x"></a>Функции Azure версии 2. x
+### <a name="azure-functions-v2x"></a>Функции Azure v2.x
 
-Установите следующие пакеты в проект функции:
+Установите следующие пакеты в свой функциональный проект:
 
-- Microsoft. ApplicationInsights версии 2.10.0
-- Microsoft. ApplicationInsights. Перфкаунтерколлектор версия 2.10.0
-- Microsoft. ApplicationInsights. WindowsServer. Телеметричаннел версии 2.10.0
+- Microsoft.ApplicationInsights версия 2.10.0
+- Microsoft.ApplicationInsights.PerfCounterCollector версия 2.10.0
+- Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel версия 2.10.0
 
-Затем добавьте (или измените) код запуска для приложения-функции:
+Затем добавьте (или измените) код запуска для приложения функции:
 
 ```csharp
 [assembly: WebJobsStartup(typeof(Example.Startup))]
@@ -122,7 +122,7 @@ namespace Example
 
 ### <a name="java"></a>Java
 
-Измените файл applicationinsights. XML, чтобы изменить адрес конечной точки по умолчанию.
+Измените файл applicationinsights.xml, чтобы изменить адрес конечных точек по умолчанию.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -149,7 +149,7 @@ namespace Example
 
 ### <a name="spring-boot"></a>Spring Boot
 
-Измените файл `application.properties` и добавьте:
+Измените `application.properties` файл и добавьте:
 
 ```yaml
 azure.application-insights.channel.in-process.endpoint-address= TelemetryChannel_Endpoint_Address
@@ -166,7 +166,7 @@ appInsights.defaultClient.config.quickPulseHost = "QuickPulse_Endpoint_Address";
 appInsights.Configuration.start();
 ```
 
-Конечные точки можно также настроить с помощью переменных среды:
+Конечные точки также могут быть настроены с помощью переменных среды:
 
 ```
 Instrumentation Key: "APPINSIGHTS_INSTRUMENTATIONKEY"
@@ -187,21 +187,25 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 </script>
 ```
 
-## <a name="regions-that-require-endpoint-modification"></a>Регионы, требующие изменения конечной точки
+### <a name="python"></a>Python
 
-Сейчас только регионы, требующие внесения изменений в конечную точку, — это [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights) и [Azure для Китая](https://docs.microsoft.com/azure/china/resources-developer-guide).
+Для получения рекомендаций по изменению точки приема для Opencensus-питон SDK обратитесь к [opencensus-питон репо.](https://github.com/census-instrumentation/opencensus-python/blob/af284a92b80bcbaf5db53e7e0813f96691b4c696/contrib/opencensus-ext-azure/opencensus/ext/azure/common/__init__.py)
+
+## <a name="regions-that-require-endpoint-modification"></a>Регионы, требующие модификации конечных точек
+
+В настоящее время единственными регионами, требующими модификации конечных точек, являются [Azure Government](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights) и [Azure China.](https://docs.microsoft.com/azure/china/resources-developer-guide)
 
 |Регион |  Имя конечной точки | Значение |
 |-----------------|:------------|:-------------|
 | Azure для Китая | Канал телеметрии | `https://dc.applicationinsights.azure.cn/v2/track` |
-| Azure для Китая | Куиккпулсе (динамические метрики) |`https://live.applicationinsights.azure.cn/QuickPulseService.svc` |
-| Azure для Китая | Запрос профиля |`https://dc.applicationinsights.azure.cn/api/profiles/{0}/appId`  |
+| Azure для Китая | БыстрыйПульс (прямая метрика) |`https://live.applicationinsights.azure.cn/QuickPulseService.svc` |
+| Azure для Китая | Профильный запрос |`https://dc.applicationinsights.azure.cn/api/profiles/{0}/appId`  |
 | Azure для государственных организаций | Канал телеметрии |`https://dc.applicationinsights.us/v2/track` |
-| Azure для государственных организаций | Куиккпулсе (динамические метрики) |`https://quickpulse.applicationinsights.us/QuickPulseService.svc` |
-| Azure для государственных организаций | Запрос профиля |`https://dc.applicationinsights.us/api/profiles/{0}/appId` |
+| Azure для государственных организаций | БыстрыйПульс (прямая метрика) |`https://quickpulse.applicationinsights.us/QuickPulseService.svc` |
+| Azure для государственных организаций | Профильный запрос |`https://dc.applicationinsights.us/api/profiles/{0}/appId` |
 
-Если в настоящее время используется [Application Insights REST API](https://dev.applicationinsights.io/
-) , доступ к которому обычно осуществляется через "API.applicationinsights.IO", необходимо использовать конечную точку, которая является локальной для вашего региона:
+Если в настоящее время используется [API Application Insights REST,](https://dev.applicationinsights.io/
+) к которому обычно обращаются через "api.applicationinsights.io", вам необходимо использовать локальную точку, которая является локальной для вашего региона:
 
 |Регион |  Имя конечной точки | Значение |
 |-----------------|:------------|:-------------|
@@ -209,9 +213,9 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 | Azure для государственных организаций | REST API | `api.applicationinsights.us`|
 
 > [!NOTE]
-> Мониторинг на основе модуля и агента без кода для служб приложений Azure **сейчас не поддерживается** в этих регионах. Как только эта функция станет доступна, эта статья будет обновлена.
+> Мониторинг на основе бескодатого агента/расширения для служб приложений Azure в **настоящее время не поддерживается** в этих регионах. Как только эта функциональность станет доступна, эта статья будет обновлена.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о настраиваемых изменениях для Azure для государственных организаций см. в подробных руководствах по [мониторингу и управлению Azure](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights).
-- Дополнительные сведения о Azure для Китая см. в [сборник тренировочных заданийе Azure для Китая](https://docs.microsoft.com/azure/china/).
+- Чтобы узнать больше о пользовательских модификациях для правительства Azure, обратитесь к подробным рекомендациям по [мониторингу и управлению Azure.](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights)
+- Чтобы узнать больше о Azure China, обратитесь в [журнал Azure China Playbook.](https://docs.microsoft.com/azure/china/)

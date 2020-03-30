@@ -1,6 +1,6 @@
 ---
 title: Использование служебной шины Azure на платформе .NET с протоколом AMQP 1.0 | Документация Майкрософт
-description: В этой статье описывается, как использовать служебную шину Azure из приложения .NET с помощью AMQP (Улучшенный протокол очереди обмена сообщениями).
+description: В этой статье описывается, как использовать автобус службы Azure из приложения .NET с помощью AM-P (Расширенный протокол обмена сообщениями).
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 536c315077cb74a1dfa8db457f0f0b3725edf7a1
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 8157efac5ff1fc135659a84b4f4825ff36307480
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759253"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80297656"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Использование служебной шины на платформе .NET с протоколом AMQP 1.0
 
@@ -49,13 +49,13 @@ ms.locfileid: "76759253"
 
 `Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp`
 
-Где `namespace` и `SAS key` получаются из [портал Azure][Azure portal] при создании пространства имен служебной шины. Дополнительные сведения см. [в разделе Создание пространства имен служебной шины с помощью портал Azure][Create a Service Bus namespace using the Azure portal].
+Где `namespace` и `SAS key` предоставляются на [портале Azure][Azure portal] при создании пространства имен служебной шины. Дополнительные сведения см. в статье [Создание пространства имен служебной шины с помощью портала Azure][Create a Service Bus namespace using the Azure portal].
 
 Если вы используете AMQP, добавьте строку подключения с `;TransportType=Amqp`. Эта запись сообщает клиентской библиотеке о подключении к служебной шине по протоколу AMQP 1.0.
 
 ## <a name="message-serialization"></a>Сериализация сообщений
 
-Если вы используете протокол по умолчанию, в клиентской библиотеке .NET по умолчанию используется тип [DataContractSerializer][DataContractSerializer] для сериализации экземпляра [BrokeredMessage][BrokeredMessage]. Это делает возможным транспорт между клиентской библиотекой и службой служебной шины. При использовании транспортного режима AMQP клиентская библиотека использует систему типов AMQP для сериализации [сообщения посредника][BrokeredMessage] в сообщение AMQP. Сериализация позволяет получать и распознавать сообщение принимающим приложением, выполняемым на разных платформах. Например, это может быть приложение Java, которое использует JMS API для доступа к служебной шине.
+Если вы используете протокол по умолчанию, в клиентской библиотеке .NET по умолчанию используется тип [DataContractSerializer][DataContractSerializer] для сериализации экземпляра [BrokeredMessage][BrokeredMessage]. Это делает возможным транспорт между клиентской библиотекой и службой служебной шины. При использовании транспортного режима AMQP клиентская библиотека применяет систему типов AMQP для сериализации [сообщение в брокере][BrokeredMessage] в сообщение AMQP. Сериализация позволяет получать и распознавать сообщение принимающим приложением, выполняемым на разных платформах. Например, это может быть приложение Java, которое использует JMS API для доступа к служебной шине.
 
 Создавая экземпляр [BrokeredMessage][BrokeredMessage], вы можете передать объект .NET конструктору в качестве параметра (как текст сообщения). Для объектов, которые могут быть сопоставлены с простыми типами AMQP, текст сообщения сериализуется в типы данных AMQP. Если объект не удается непосредственно сопоставить с простым типом AMQP (когда пользовательский тип определяется приложением), объект сериализуется с использованием [DataContractSerializer][DataContractSerializer], а сериализованные байты отправляются в сообщении данных AMQP.
 
@@ -70,16 +70,16 @@ ms.locfileid: "76759253"
 | ulong |ulong |Значение AMQP |
 | sbyte |byte |Значение AMQP |
 | short |short |Значение AMQP |
-| int |int |Значение AMQP |
+| INT |INT |Значение AMQP |
 | long |long |Значение AMQP |
 | FLOAT |FLOAT |Значение AMQP |
 | double |double |Значение AMQP |
 | Decimal |decimal128 |Значение AMQP |
 | char |char |Значение AMQP |
 | Дата и время |TIMESTAMP |Значение AMQP |
-| GUID |uuid |Значение AMQP |
+| Guid |uuid |Значение AMQP |
 | byte[] |binary |Значение AMQP |
-| string |string |Значение AMQP |
+| строка |строка |Значение AMQP |
 | System.Collections.IList |list |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
 | System.Array |массиве |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
 | System.Collections.IDictionary |карта |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. Примечание: поддерживаются только строковые ключи. |
@@ -105,12 +105,12 @@ ms.locfileid: "76759253"
 
 ## <a name="control-amqp-protocol-settings"></a>Параметры управления протоколом AMQP
 
-[API-интерфейсы .NET](/dotnet/api/) предоставляют несколько параметров для управления поведением протокола AMQP.
+[AIS .NET](/dotnet/api/) предоставляют несколько параметров для контроля поведения протокола АМЗП:
 
-* **[MessageReceiver.PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagereceiver.prefetchcount?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessageReceiver_PrefetchCount)** определяет начальные разрешения, которые применяются к ссылке. Значение по умолчанию равно 0.
+* **[MessageReceiver.PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagereceiver.prefetchcount?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessageReceiver_PrefetchCount)**: Контролирует первоначальный кредит, применяемый к ссылке. Значение по умолчанию равно 0.
 * **[MessagingFactorySettings.AmqpTransportSettings.MaxFrameSize](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.maxframesize?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_MaxFrameSize)** определяет максимальный размер кадра AMQP, доступный во время согласования при открытии подключения. Значение по умолчанию: 65 536 байт.
-* **[MessagingFactorySettings.AmqpTransportSettings.BatchFlushInterval](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.batchflushinterval?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_BatchFlushInterval)** если передачу данных можно разбить на пакеты, это значение определяет максимальную задержку отправки стратегий обработки. По умолчанию наследуется отправителями и получателями. Отдельные отправители или получатели могут переопределить значение по умолчанию, составляющее 20 миллисекунд.
-* **[MessagingFactorySettings.AmqpTransportSettings.UseSslStreamSecurity](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.usesslstreamsecurity?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_UseSslStreamSecurity)** определяет, устанавливаются ли AMQP-подключения с использованием протокола SSL. Значение по умолчанию — **true**.
+* **[MessagingFactorySettings.AmqpTransportSettings.BatchFlushInterval](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.batchflushinterval?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_BatchFlushInterval)**: Если переводы можно сделать пакетом, это значение определяет максимальную задержку для отправки распоряжений. По умолчанию наследуется отправителями и получателями. Отдельные отправители или получатели могут переопределить значение по умолчанию, составляющее 20 миллисекунд.
+* **[MessagingFactorySettings.AmqpTransportSettings.UseSslStreamSecurity](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.usesslstreamsecurity?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_UseSslStreamSecurity)**: Контролирует, устанавливаются ли соединения Am-P по подключению TLS. По умолчанию **это правда**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

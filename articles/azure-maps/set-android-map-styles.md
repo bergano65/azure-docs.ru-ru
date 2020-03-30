@@ -1,33 +1,33 @@
 ---
-title: Задание стиля схемы с помощью Azure Maps пакет SDK для Android | Карты Microsoft Azure
-description: В этой статье вы узнаете о функциях, связанных со стилем Microsoft Azure Maps для пакет SDK для Android.
-author: farah-alyasari
-ms.author: v-faalya
+title: Установите стиль карты с помощью Azure Maps Android SDK Карты Microsoft Azure
+description: В этой статье вы узнаете о функциональных возможностях, связанных со стилем Microsoft Azure Maps для Android SDK.
+author: philmea
+ms.author: philmea
 ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 96564a89a2b64203eef913b0d8300f0dafa332c5
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: a4d761abf54682ed0263922d0a118debc9eccf0a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77209585"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80334356"
 ---
-# <a name="set-map-style-using-azure-maps-android-sdk"></a>Задание стиля схемы с помощью Azure Maps пакет SDK для Android
+# <a name="set-map-style-using-azure-maps-android-sdk"></a>Установите стиль карты с помощью Azure Maps Android SDK
 
-В этой статье показано два способа установки стилей карт с помощью пакет SDK для Android Azure Maps. Azure Maps имеет шесть различных стилей карт для выбора. Дополнительные сведения о поддерживаемых стилях карт см. [в разделе Поддерживаемые стили карт в Azure Maps](./supported-map-styles.md).
+В этой статье показаны два способа настройки стилей карт с помощью Azure Maps Android SDK. Azure Maps имеет шесть различных стилей карт на выбор. Для получения дополнительной информации о стилях поддерживаемых карт смотрите [поддерживаемые стили карт в Azure Maps.](./supported-map-styles.md)
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
+Чтобы завершить процесс в этой статье, необходимо установить [Azure Maps Android SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) для загрузки карты.
 
 
-## <a name="set-map-style-in-the-layout"></a>Задать стиль схемы в макете
+## <a name="set-map-style-in-the-layout"></a>Установите стиль карты в макете
 
-Стиль схемы можно задать в файле макета для класса действия. Измените **разметку res > > activity_main. XML**, поэтому он выглядит следующим образом:
+Вы можете установить стиль карты в файле макета для класса активности. Edit **res > макет > activity_main.xml,** так что это выглядит как один ниже:
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -51,15 +51,15 @@ ms.locfileid: "77209585"
 </FrameLayout>
 ```
 
-Приведенный выше атрибут `mapcontrol_style` устанавливает стиль отображения **grayscale_dark**. 
+Атрибут `mapcontrol_style` выше устанавливает стиль карты **для grayscale_dark.** 
 
 <center>
 
-grayscale_dark стиля ![](./media/set-android-map-styles/grayscale-dark.png)</center>
+![стиль grayscale_dark](./media/set-android-map-styles/grayscale-dark.png)</center>
 
-## <a name="set-map-style-in-the-activity-class"></a>Задание стиля схемы в классе действия
+## <a name="set-map-style-in-the-activity-class"></a>Установите стиль карты в классе действий
 
-Стиль схемы можно задать в классе действия. Скопируйте следующий фрагмент кода в метод **OnCreate ()** класса `MainActivity.java`. Этот код установит стиль отображения **satellite_road_labels**.
+Стиль карты можно установить в классе активности. Скопируйте следующий фрагмент кода в метод **onCreate()** вашего `MainActivity.java` класса. Этот код установит стиль карты для **satellite_road_labels.**
 
 ```Java
 mapControl.onReady(map -> {
@@ -73,4 +73,4 @@ mapControl.onReady(map -> {
 
 <center>
 
-стиль ![-"вспомогательные метки"](./media/set-android-map-styles/satellite-road-labels.png)</center>
+![стиль-спутник-дорожные этикетки](./media/set-android-map-styles/satellite-road-labels.png)</center>

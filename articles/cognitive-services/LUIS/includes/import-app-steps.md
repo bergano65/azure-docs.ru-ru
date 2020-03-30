@@ -8,10 +8,10 @@ ms.topic: include
 ms.date: 12/03/2019
 ms.author: diberry
 ms.openlocfilehash: b0d1735df7a3ac36e20af771939aec6b8013f2df
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74840822"
 ---
 1. На [портале LUIS (предварительная версия)](https://preview.luis.ai) выберите на странице **My apps** (Мои приложения) действие **Import** (Импортировать), а затем — **Import as JSON** (Импортировать в JSON-файл). Найдите JSON-файл, который вы сохранили на предыдущем шаге. Имя приложения можно не менять. Щелкните **Готово**.

@@ -9,13 +9,13 @@ ms.topic: include
 ms.date: 01/31/2020
 ms.author: diberry
 ms.openlocfilehash: 23ac98f91c989c9bedb6b91e6a7ce26dc164ac5a
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76987805"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Python 3.6](https://www.python.org/downloads/) или более поздней версии.
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -25,13 +25,13 @@ ms.locfileid: "76987805"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Щелкните [Создать **Распознавание речи**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne).
-1. Введите все необходимые параметры для ключа **Среды выполнения**:
+1. Введите все необходимые параметры для ключа **среды выполнения**:
 
     |Параметр|Значение|
     |--|--|
     |Имя|Требуемое имя (от 2 до 64 символов)|
-    |Подписка|Выберите соответствующую подписку|
-    |Расположение|Выберите доступное поблизости расположение|
+    |Subscription|Выберите соответствующую подписку|
+    |Location|Выберите доступное поблизости расположение|
     |Ценовая категория|`F0` — минимальная ценовая категория|
     |Группа ресурсов|Выберите доступную группу ресурсов|
 

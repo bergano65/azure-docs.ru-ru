@@ -1,21 +1,19 @@
 ---
-title: Управление пользователями на Портал Cloud Partner | Azure Marketplace
-description: Устаревшая статья CPP, указанная в статье о ПК; WAS — «Управление пользователями на портале облачных партнеров»
-services: Azure, Marketplace, Cloud Partner Portal, Partner Center
-author: ChJenk
-manager: pbutlerm
+title: Управление пользователями на облачном портале партнеров (ru) Лазурный рынок
+description: Устаревая статья CPP, указал на статью PC; было "Управление пользователями на облачном портале партнеров"
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.author: v-chjen
-ms.openlocfilehash: 15c173748f6e38d72f6f05d83a93bbf1fd4a243d
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.author: dsindona
+ms.openlocfilehash: d0a83f0a6c842e7b364e7fa8553768bab063dc68
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666415"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80288484"
 ---
-# <a name="managing-users-on-the-cloud-partner-portal"></a>Управление пользователями на Портал Cloud Partner
+# <a name="managing-users-on-the-cloud-partner-portal"></a>Управление пользователями на облачном портале партнеров
 
-Эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Управление учетной записью коммерческого магазина в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account).
+Эта функция была перемещена на [портал Microsoft Partner Center.](https://partner.microsoft.com/) Для получения дополнительной информации смотрите [как управлять своей учетной записью Коммерческого рынка в Partner Center.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account)

@@ -1,6 +1,6 @@
 ---
-title: Вывод списка назначений ролей с помощью Azure RBAC и Azure CLI
-description: Узнайте, как определить, к каким ресурсам пользователи, группы, субъекты-службы или управляемые удостоверения имеют доступ с помощью управления доступом на основе ролей (RBAC) Azure и Azure CLI.
+title: Список ролевых заданий с помощью Azure RBAC и Azure CLI
+description: Узнайте, как определить, какие ресурсы пользователи, группы, принципы служб или управляемые идентификаторы имеют доступ к использованию управления доступом на основе ролей Azure (RBAC) и Azure CLI.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,41 +14,41 @@ ms.workload: identity
 ms.date: 01/10/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b02ec00544ef11ca1048fd6d3bd9bdf3fccd8c8c
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 5716e7bb89d017866bd1575256e2d119bb7acbe5
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77471420"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80385067"
 ---
-# <a name="list-role-assignments-using-azure-rbac-and-azure-cli"></a>Вывод списка назначений ролей с помощью Azure RBAC и Azure CLI
+# <a name="list-role-assignments-using-azure-rbac-and-azure-cli"></a>Список ролевых заданий с помощью Azure RBAC и Azure CLI
 
-в [!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] этой статье описывается, как вывести список назначений ролей с помощью Azure CLI.
+[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)]В этой статье описывается, как перечислить назначения ролей с помощью Azure CLI.
 
 > [!NOTE]
-> Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
+> Если организация передала функции управления на внешний подряд поставщику услуг, который использует [управление делегированными ресурсами Azure,](../lighthouse/concepts/azure-delegated-resource-management.md)назначения ролей, авторизованные этим поставщиком услуг, не будут отображаться здесь.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Bash в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure CLI](/cli/azure)
+- [Bash в облачной оболочке Azure](/azure/cloud-shell/overview) или [Azure CLI](/cli/azure)
 
 ## <a name="list-role-assignments-for-a-user"></a>Список назначений ролей для пользователя
 
 Чтобы вывести список назначений ролей для конкретного пользователя, используйте команду [az role assignment list](/cli/azure/role/assignment#az-role-assignment-list).
 
-```azurecli
+```azurecli-interactive
 az role assignment list --assignee <assignee>
 ```
 
-По умолчанию будут отображаться только назначения ролей для текущей подписки. Чтобы просмотреть назначения ролей для текущей подписки и ниже, добавьте параметр `--all`. Чтобы просмотреть наследуемые назначения ролей, добавьте параметр `--include-inherited`.
+По умолчанию будут отображаться только ролевые назначения для текущей подписки. Для просмотра назначений `--all` ролей для текущей подписки и ниже добавьте параметр. Чтобы просмотреть унаследованные `--include-inherited` назначения ролей, добавьте параметр.
 
-В следующем примере перечисляются назначения ролей, назначенные непосредственно пользователю *патлонг\@contoso.com* :
+В следующем примере перечислены назначения ролей, которые назначаются непосредственно пользователю *\@patlong contoso.com:*
 
-```azurecli
+```azurecli-interactive
 az role assignment list --all --assignee patlong@contoso.com --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
 ```
 
-```Output
+```
 {
   "principalName": "patlong@contoso.com",
   "roleDefinitionName": "Backup Operator",
@@ -63,19 +63,19 @@ az role assignment list --all --assignee patlong@contoso.com --output json | jq 
 
 ## <a name="list-role-assignments-for-a-resource-group"></a>Вывод списка назначений ролей для группы ресурсов
 
-Чтобы получить список назначений ролей, существующих в области группы ресурсов, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list).
+Чтобы перечислить назначения ролей, которые существуют в области группы ресурсов, используйте [список назначений ролей az:](/cli/azure/role/assignment#az-role-assignment-list)
 
-```azurecli
+```azurecli-interactive
 az role assignment list --resource-group <resource_group>
 ```
 
-В следующем примере перечислены назначения ролей для группы ресурсов *Pharma-Sales* .
+В следующем примере перечислены назначения ролей для группы *ресурсов фармацевтических продаж:*
 
-```azurecli
+```azurecli-interactive
 az role assignment list --resource-group pharma-sales --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
 ```
 
-```Output
+```
 {
   "principalName": "patlong@contoso.com",
   "roleDefinitionName": "Backup Operator",
@@ -92,52 +92,56 @@ az role assignment list --resource-group pharma-sales --output json | jq '.[] | 
 
 ## <a name="list-role-assignments-for-a-subscription"></a>Получение списка назначений ролей для подписки
 
-Чтобы получить список всех назначений ролей в области действия подписки, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list). Чтобы получить идентификатор подписки, его можно найти в колонке **подписки** в портал Azure или использовать команду [AZ Account List](/cli/azure/account#az-account-list).
+Чтобы перечислить все назначения ролей в области подписки, используйте [список назначений ролей az.](/cli/azure/role/assignment#az-role-assignment-list) Чтобы получить идентификатор **подписки,** вы можете найти его на лезвии подписки на портале Azure или вы можете использовать [список учетных записей az.](/cli/azure/account#az-account-list)
 
-```azurecli
+```azurecli-interactive
 az role assignment list --subscription <subscription_name_or_id>
 ```
 
-```Example
+Пример
+
+```azurecli-interactive
 az role assignment list --subscription 00000000-0000-0000-0000-000000000000 --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
 ```
 
 ## <a name="list-role-assignments-for-a-management-group"></a>Список назначений ролей для группы управления
 
-Чтобы получить список всех назначений ролей в области группы управления, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list). Чтобы получить идентификатор группы управления, его можно найти в колонке " **группы управления** " в портал Azure или можно использовать команду [AZ Account Management-Group List](/cli/azure/account/management-group#az-account-management-group-list).
+Чтобы перечислить все назначения ролей в области группы управления, используйте [список назначений ролей az.](/cli/azure/role/assignment#az-role-assignment-list) Чтобы получить идентификатор группы управления, вы можете найти его на лезвии **групп управления** на портале Azure или использовать [список групп управления учетными записями.](/cli/azure/account/management-group#az-account-management-group-list)
 
-```azurecli
+```azurecli-interactive
 az role assignment list --scope /providers/Microsoft.Management/managementGroups/<group_id>
 ```
 
-```Example
+Пример
+
+```azurecli-interactive
 az role assignment list --scope /providers/Microsoft.Management/managementGroups/marketing-group --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
 ```
 
-## <a name="list-role-assignments-for-a-managed-identity"></a>Вывод списка назначений ролей для управляемого удостоверения
+## <a name="list-role-assignments-for-a-managed-identity"></a>Список назначений ролей для управляемого удостоверения
 
-1. Возвращает идентификатор объекта назначенного системой или управляемого пользователем удостоверения. 
+1. Получите идентификатор объекта, назначенный системой или назначенный пользователем управляемый идентификатор.
 
-    Чтобы получить идентификатор объекта для управляемого удостоверения, назначенного пользователем, можно использовать команду [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list) или [AZ Identity List](/cli/azure/identity#az-identity-list).
+    Чтобы получить идентификатор объекта управляемого идентификатора, вы можете использовать [список спа-объявление az](/cli/azure/ad/sp#az-ad-sp-list) или [список идентификационных данных az.](/cli/azure/identity#az-identity-list)
 
-    ```azurecli
+    ```azurecli-interactive
     az ad sp list --display-name "<name>" --query [].objectId --output tsv
     ```
 
-    Для получения идентификатора объекта управляемого удостоверения, назначенного системой, можно использовать команду [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list).
+    Чтобы получить идентификатор объекта управляемого идентификатора, можно использовать [список az ad sp.](/cli/azure/ad/sp#az-ad-sp-list)
 
-    ```azurecli
+    ```azurecli-interactive
     az ad sp list --display-name "<vmname>" --query [].objectId --output tsv
     ```
 
-1. Чтобы получить список назначений ролей, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list).
+1. Чтобы перечислить назначения ролей, используйте [список назначений ролей az.](/cli/azure/role/assignment#az-role-assignment-list)
 
-    По умолчанию будут отображаться только назначения ролей для текущей подписки. Чтобы просмотреть назначения ролей для текущей подписки и ниже, добавьте параметр `--all`. Чтобы просмотреть наследуемые назначения ролей, добавьте параметр `--include-inherited`.
+    По умолчанию будут отображаться только ролевые назначения для текущей подписки. Для просмотра назначений `--all` ролей для текущей подписки и ниже добавьте параметр. Чтобы просмотреть унаследованные `--include-inherited` назначения ролей, добавьте параметр.
 
-    ```azurecli
+    ```azurecli-interactive
     az role assignment list --assignee <objectid>
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Добавление и удаление назначений ролей с помощью Azure RBAC и Azure CLI](role-assignments-cli.md)
+- [Добавление или удаление ролевых заданий с помощью Azure RBAC и Azure CLI](role-assignments-cli.md)

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
 ms.openlocfilehash: ad5c51b3d373947e8a09762b0cb27afff990e6da
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69906622"
 ---
 [!INCLUDE [Prerequisites](prerequisites-java.md)]
@@ -106,7 +106,7 @@ String url = endpoint + "/transliterate?api-version=3.0&language=ja&fromScript=j
 OkHttpClient client = new OkHttpClient();
 ```
 
-Далее создайте запрос POST. Текст для транслитерации можно легко изменить.
+Затем создайте запрос POST. Текст для транслитерации можно легко изменить.
 
 ```java
 // This function performs a POST request.
@@ -123,7 +123,7 @@ public String Post() throws IOException {
 }
 ```
 
-## <a name="create-a-function-to-parse-the-response"></a>Создайте функцию для анализа ответа
+## <a name="create-a-function-to-parse-the-response"></a>Создание функции для анализа ответа
 
 Эта простая функция анализирует и упорядочивает ответ JSON от службы "Перевод текстов".
 
@@ -178,7 +178,7 @@ gradle run
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 

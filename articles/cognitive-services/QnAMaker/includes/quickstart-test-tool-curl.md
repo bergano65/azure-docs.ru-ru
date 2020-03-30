@@ -11,23 +11,23 @@ ms.custom: include file
 ms.date: 02/08/2020
 ms.author: diberry
 ms.openlocfilehash: f3a1a33b2fe859839deec587191b3b3a319c0cf8
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77495302"
 ---
 В этом кратком руководстве описывается, как получить ответ из базы знаний с помощью cURL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Последние [**cURL**](https://curl.haxx.se/).
-* Необходимо иметь следующее
-    * [Служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md)
+* Вам понадобится:
+    * [Служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
     * Обученная и опубликованная база знаний с вопросами и ответами, на основе предыдущего [краткого руководства](../Quickstarts/add-question-metadata-portal.md), с настроенными метаданными и беседой.
 
 > [!NOTE]
-> Когда вы будете готовы создать ответ на вопрос из базы знаний, вам будет нужно [обучить](../Quickstarts/create-publish-knowledge-base.md#save-and-train) и [опубликовать](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) эту базу знаний. После публикации базы знаний на странице **публикации** отображаются параметры запроса HTTP для создания ответа. Вкладка **cURL** отображает параметры, необходимые для создания ответа из командной строки.
+> Когда вы будете готовы создать ответ на вопрос из базы знаний, [обучите](../Quickstarts/create-publish-knowledge-base.md#save-and-train) и [опубликуйте](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) эту базу знаний. После публикации базы знаний на странице **публикации** отображаются параметры запроса HTTP для создания ответа. Вкладка **cURL** отображает параметры, необходимые для создания ответа из командной строки.
 
 ## <a name="use-metadata-to-filter-answer"></a>Применение метаданных для фильтрации ответов
 
@@ -202,7 +202,7 @@ curl -X POST https://replace-with-your-resource-name.azurewebsites.net/qnamaker/
 В ответе в формате JSON используется та же схема, что и в запросе к опубликованной базе знаний.
 
 > [!NOTE]
-> Если тестовая и опубликованная базы знаний полностью совпадают, то незначительные вариации могут возникать из-за того, что тестовый индекс является общим для всех баз знаний в ресурсе.
+> Если тестовая и опубликованная базы знаний полностью совпадают, незначительные вариации могут возникать из-за того, что тестовый индекс является общим для всех баз знаний в ресурсе.
 
 ## <a name="use-curl-to-query-for-a-chit-chat-answer"></a>Использование cURL для запроса ответа в беседе
 

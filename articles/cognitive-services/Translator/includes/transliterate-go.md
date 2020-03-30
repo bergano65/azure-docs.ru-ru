@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
 ms.openlocfilehash: 5510088925b7a628417c7f3c11bb89c5ce915381
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "69906632"
 ---
 [!INCLUDE [Prerequisites](prerequisites-go.md)]
@@ -67,7 +67,7 @@ func main() {
 
 ## <a name="create-a-function-to-transliterate-text"></a>Создание функции для транслитерации текста
 
-Давайте создадим функцию для транслитерации текста. Эта функция будет принимать один аргумент — ключ подписки API перевода текстов.
+Давайте создадим функцию для транслитерации текста. Эта функция будет принимать один аргумент — ключ подписки API перевода текстов.
 
 ```go
 func transliterate(subscriptionKey string, uri string) {
@@ -78,9 +78,9 @@ func transliterate(subscriptionKey string, uri string) {
 }
 ```
 
-Теперь давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере японский текст транслитерируется в текст на латинице.
+Теперь давайте создадим URL-адрес. URL-адрес создается с использованием методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере японский текст транслитерируется в текст на латинице.
 
-Скопируйте этот код в функцию `transliterate`.
+Скопируйте следующий код в функцию `transliterate`.
 
 ```go
 // Build the request URL. See: https://golang.org/pkg/net/url/#example_URL_Parse
@@ -93,7 +93,7 @@ u.RawQuery = q.Encode()
 ```
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [API перевода текстов 3.0: транслитерация](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-transliterate).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Transliterate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-transliterate).
 
 ## <a name="create-a-struct-for-your-request-body"></a>Создание структуры для текста запроса
 
@@ -168,7 +168,7 @@ go run transliterate-text.go
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 

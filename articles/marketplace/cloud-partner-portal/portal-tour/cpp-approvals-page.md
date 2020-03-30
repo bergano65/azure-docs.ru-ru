@@ -1,23 +1,22 @@
 ---
-title: Страница "утверждения" для Azure Marketplace
-description: Обзор страницы "утверждения" в Портал Cloud Partner для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+title: Страница утверждений для Azure Marketplace
+description: Обзор страницы утверждений на облачном партнерской портале Azure Marketplace.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/13/2018
-ms.author: pabutler
-ms.openlocfilehash: de6ad58ebd0442772eddfcf14792bc77cd76aad6
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 8bd00e3b71e74775697a615152885e55703a41fb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821536"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80288943"
 ---
 # <a name="approvals-page"></a>Страница "Утверждения"
 
-Страница [**Утверждения** ](https://cloudpartner.azure.com/#approvals) содержит список утвержденных предложений, включая их имена, издателей, типы и текущие действия.  Утвержденные предложения либо уже опубликованы, либо еще публикуются.  Результаты можно упорядочить по столбцу или отфильтровать по определенной строке.  В области состояния в нижней части страницы отображается общее количество записей и страниц. Кроме того, здесь расположены навигационные элементы для перехода между страницами списка.  Если в списке выбрать какое-то предложение, откроется редактор соответствующего предложения. 
+Страница [**Утверждения**](https://cloudpartner.azure.com/#approvals) содержит список утвержденных предложений, включая их имена, издателей, типы и текущие действия.  Утвержденные предложения либо уже опубликованы, либо еще публикуются.  Результаты можно упорядочить по столбцу или отфильтровать по определенной строке.  В области состояния в нижней части страницы отображается общее количество записей и страниц. Кроме того, здесь расположены навигационные элементы для перехода между страницами списка.  Если в списке выбрать какое-то предложение, откроется редактор соответствующего предложения. 
 
 
 ## <a name="example-page"></a>Пример страницы

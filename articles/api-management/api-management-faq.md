@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 21b46ba0012b71ed0e09dc09d041ceb020824843
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: c32fdc67c74e100e0e31dad3afde128c05c356d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79259361"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80335971"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
@@ -40,8 +40,8 @@ ms.locfileid: "79259361"
 * [Можно ли настроить на сервере авторизации OAuth 2.0 систему безопасности служб федерации Active Directory?](#can-i-configure-an-oauth-20-authorization-server-with-ad-fs-security)
 * [Какой метод маршрутизации использует служба управления API при развертывании в нескольких географических расположениях?](#what-routing-method-does-api-management-use-in-deployments-to-multiple-geographic-locations)
 * [Можно ли использовать шаблон Azure Resource Manager, чтобы создать экземпляр службы управления API?](#can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance)
-* [Можно ли использовать самозаверяющий сертификат SSL для сервера?](#can-i-use-a-self-signed-ssl-certificate-for-a-back-end)
-* [Почему происходит ошибка проверки подлинности при попытке клонировать репозиторий Git?](#why-do-i-get-an-authentication-failure-when-i-try-to-clone-a-git-repository)
+* [Могу ли я использовать самоподписанный сертификат TLS/SSL для задней части?](#can-i-use-a-self-signed-tlsssl-certificate-for-a-back-end)
+* [Почему при клонировании репозитория GIT у меня происходит сбой проверки подлинности?](#why-do-i-get-an-authentication-failure-when-i-try-to-clone-a-git-repository)
 * [Работает ли управление API с Azure ExpressRoute?](#does-api-management-work-with-azure-expressroute)
 * [Зачем требуется выделенная подсеть в виртуальных сетях типа Resource Manager, если в них развернута служба управления API?](#why-do-we-require-a-dedicated-subnet-in-resource-manager-style-vnets-when-api-management-is-deployed-into-them)
 * [Каков минимальный размер подсети, требуемый при развертывании службы управления API в виртуальной сети?](#what-is-the-minimum-subnet-size-needed-when-deploying-api-management-into-a-vnet)
@@ -62,8 +62,8 @@ ms.locfileid: "79259361"
 Существует несколько способов защитить такое подключение. Вы можете:
 
 * Использование обычной проверки подлинности HTTP. Дополнительные сведения см. в статье об [импорте и публикации первого API](import-and-publish.md).
-* использовать взаимную проверку подлинности SSL, как описано в статье [Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management](api-management-howto-mutual-certificates.md).
-* использовать разрешенный список IP-адресов во внутренних службах. На всех уровнях управления API за исключением уровня потребления IP-адрес шлюза остается постоянным, с помощью нескольких предостережений, описанных в [статье о документации по IP](api-management-howto-ip-addresses.md).
+* Используйте взаимную аутентификацию TLS, описанную в [каком порядке обезопасить бэк-энд-сервисы, используя аутентификацию сертификата клиента в Azure API Management.](api-management-howto-mutual-certificates.md)
+* использовать разрешенный список IP-адресов во внутренних службах. Во всех уровнях управления API, за исключением уровня потребления, IP-адрес шлюза остается неизменным, с некоторыми оговорками, описанными в [статье документации IP](api-management-howto-ip-addresses.md).
 * подключить экземпляр службы управления API к виртуальной сети Azure.
 
 ### <a name="how-do-i-copy-my-api-management-service-instance-to-a-new-instance"></a>Как скопировать экземпляр службы управления API в новый экземпляр?
@@ -85,7 +85,7 @@ ms.locfileid: "79259361"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Перейдите в группу ресурсов, где содержится экземпляр службы управления API, который нужно обновить.
-3. В службе управления API назначьте пользователю роль **участника "Служба управления API** ".
+3. В API Management отосваивай роль **вкладчика Службы управления Api.**
 
 Теперь добавленный участник сможет использовать [командлеты](https://docs.microsoft.com/powershell/azure/overview) Azure PowerShell. Войдите в систему от имени администратора:
 
@@ -113,13 +113,13 @@ ms.locfileid: "79259361"
 При развертывании в нескольких географических расположениях служба управления API применяет [маршрутизацию трафика для повышения производительности](../traffic-manager/traffic-manager-routing-methods.md#performance). Входящий трафик направляется на ближайший шлюз API. Если регион становится недоступен, входящий трафик автоматически маршрутизируется на следующий ближайший шлюз. Дополнительные сведения о методах маршрутизации см. в статье [Методы маршрутизации трафика диспетчером трафика](../traffic-manager/traffic-manager-routing-methods.md).
 
 ### <a name="can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance"></a>Можно ли использовать шаблон Azure Resource Manager, чтобы создать экземпляр службы управления API?
-Да. См. шаблоны быстрого запуска [службы управления API Azure](https://aka.ms/apimtemplate) .
+Да. Ознакомьтесь с шаблонами быстрого запуска [службы управления API Azure.](https://aka.ms/apimtemplate)
 
-### <a name="can-i-use-a-self-signed-ssl-certificate-for-a-back-end"></a>Можно ли использовать самозаверяющий сертификат SSL для сервера?
+### <a name="can-i-use-a-self-signed-tlsssl-certificate-for-a-back-end"></a>Могу ли я использовать самоподписанный сертификат TLS/SSL для задней части?
 Да. Это можно сделать с помощью PowerShell или отправить сертификат непосредственно в API. После этого будет отключена проверка цепочки сертификатов, и вы сможете использовать самозаверяющий или подписанный в частном порядке сертификат при обмене данными между управлением API и службами серверной части.
 
 #### <a name="powershell-method"></a>Метод PowerShell ####
-Используйте командлеты PowerShell [`New-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementbackend) (для новой серверной части) или [`Set-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementbackend) (для существующей серверной части) и задайте для параметра `-SkipCertificateChainValidation` значение `True`.
+Используйте [`New-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementbackend) (для нового задней части) или [`Set-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementbackend) (для существующего задней части) PowerShell cmdlets и установите `-SkipCertificateChainValidation` параметр. `True`
 
 ```powershell
 $context = New-AzApiManagementContext -resourcegroup 'ContosoResourceGroup' -servicename 'ContosoAPIMService'

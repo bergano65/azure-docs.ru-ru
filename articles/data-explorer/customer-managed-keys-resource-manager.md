@@ -1,32 +1,35 @@
 ---
-title: Настройка ключей, управляемых клиентом, в Azure обозреватель данных с помощью шаблона Azure Resource Manager
-description: В этой статье описывается, как настроить шифрование ключей, управляемых клиентом, на основе данных в Azure обозреватель данных с помощью шаблона Azure Resource Manager.
+title: Настройка ключей, управляемых клиентами, в Explorer данных Azure с помощью шаблона управления ресурсами Azure
+description: В этой статье описывается, как настроить шифрование ключей, управляемых клиентом, на данных в Azure Data Explorer с помощью шаблона Azure Resource Manager.
 author: saguiitay
 ms.author: itsagui
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: d0f7085342f972f227fc549c423672296697d7de
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: 454a80089b5f74d4a70015ffcd03d0212e8c08a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281263"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80297903"
 ---
-# <a name="configure-customer-managed-keys-using-the-azure-resource-manager-template"></a>Настройка ключей, управляемых клиентом, с помощью шаблона Azure Resource Manager
+# <a name="configure-customer-managed-keys-using-the-azure-resource-manager-template"></a>Настройка управляемых клиентами ключей с помощью шаблона управления ресурсами Azure
 
 > [!div class="op_single_selector"]
-> * [C#](customer-managed-keys-csharp.md)
-> * [Шаблон Azure Resource Manager](customer-managed-keys-resource-manager.md)
+> * [Портал](customer-managed-keys-portal.md)
+> * [C #](customer-managed-keys-csharp.md)
+> * [Шаблон менеджера ресурсов Azure](customer-managed-keys-resource-manager.md)
 
 [!INCLUDE [data-explorer-configure-customer-managed-keys](../../includes/data-explorer-configure-customer-managed-keys.md)]
 
-## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью управляемых клиентом ключей
+[!INCLUDE [data-explorer-configure-customer-managed-keys part 2](../../includes/data-explorer-configure-customer-managed-keys-b.md)]
 
-В этом разделе вы настраиваете управляемые клиентом ключи с помощью шаблонов Azure Resource Manager. По умолчанию в Azure обозреватель данных Encryption используются ключи, управляемые корпорацией Майкрософт. На этом шаге настройте кластер Azure обозреватель данных для использования ключей, управляемых клиентом, и укажите ключ, связываемый с кластером.
+## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью ключей, управляемых клиентом
 
-Шаблон Azure Resource Manager можно развернуть с помощью портал Azure или с помощью PowerShell.
+В этом разделе вы настраиваете управляемые клиентом ключи с помощью шаблонов Azure Resource Manager. По умолчанию шифрование Azure Data Explorer использует управляемые Корпорацией Майкрософт ключи. На этом этапе наймина кластер Azure Data Explorer для использования ключей, управляемых клиентами, и укажите ключ для ассоциированного с кластером.
+
+Шаблон управления ресурсами Azure можно развернуть с помощью портала Azure или с помощью PowerShell.
 
 ```json
 {
@@ -72,14 +75,14 @@ ms.locfileid: "76281263"
 }
 ```
 
-## <a name="update-the-key-version"></a>Обновление версии ключа
+## <a name="update-the-key-version"></a>Обновление ключевой версии
 
-При создании новой версии ключа необходимо обновить кластер для использования новой версии. Сначала вызовите `Get-AzKeyVaultKey`, чтобы получить последнюю версию ключа. Затем обновите свойства хранилища ключей кластера, чтобы использовать новую версию ключа, как показано в разделе [Настройка шифрования с помощью управляемых клиентом ключей](#configure-encryption-with-customer-managed-keys).
+При создании новой версии ключа необходимо обновить кластер, чтобы использовать новую версию. Во-первых, позвоните, `Get-AzKeyVaultKey` чтобы получить последнюю версию ключа. Затем обновите свойства ключа хранилища кластера, чтобы использовать новую версию ключа, как показано в [шифровании Настройки с ключами, управляемыми клиентом.](#configure-encryption-with-customer-managed-keys)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Защита кластеров Azure обозреватель данных в Azure](security.md)
-* [Настройка управляемых удостоверений для кластера Azure обозреватель данных](managed-identities.md)
-* [Защитите свой кластер в Azure обозреватель данных — портал Azure](manage-cluster-security.md) , включив шифрование неактивных компонентов.
-* [Настройка ключей, управляемых клиентом, с помощьюC#](customer-managed-keys-csharp.md)
+* [Защита кластеров Исследователей данных Azure в Azure](security.md)
+* [Настройка управляемых идентификаторов для кластера Azure Data Explorer](managed-identities.md)
+* [Защитите свой кластер на портале Azure Data Explorer - Azure,](manage-cluster-security.md) включив шифрование в состоянии покоя.
+* [Настройка управляемых клиентами ключей с помощью C #](customer-managed-keys-csharp.md)
 

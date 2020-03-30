@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.author: aahi
 ms.openlocfilehash: 019abc79091527b105238ef83bfca1913fae600b
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "78925844"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Python. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
@@ -20,7 +20,7 @@ ms.locfileid: "78925844"
 Хотите увидеть код прямо сейчас? Примеры для [клиентских библиотек Поиска Bing для Python](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/tree/master/samples/search) доступны на сайте GitHub.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Пакет SDK Поиска в Интернете Bing совместим с Python версии 2.7, 3.3, 3.4, 3.5 и 3.6. Мы рекомендуем использовать для этого руководства виртуальное окружение.
 
 * Python версии 2.7, 3.3, 3.4, 3.5 или 3.6

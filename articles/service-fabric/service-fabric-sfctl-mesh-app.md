@@ -1,15 +1,15 @@
 ---
-title: Azure Service Fabric CLI — приложение для сетки sfctl
-description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для управления ресурсами приложения Service Fabricной сетки.
+title: Azure Сервис Ткань CLI- sfctl сетки приложение
+description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для управления ресурсами приложений сетки Service Fabric.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 7c571136e6bef64c2024c81db85ef736f64a4e01
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76906060"
 ---
 # <a name="sfctl-mesh-app"></a>sfctl mesh app
@@ -17,11 +17,11 @@ ms.locfileid: "76906060"
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|Description|
+|Команда|Описание|
 | --- | --- |
 | удалить | Удаляет ресурс приложения. |
 | list | Выводит список всех ресурсов приложения. |
-| показать | Получает ресурс приложения с заданным именем. |
+| show | Получает ресурс приложения с заданным именем. |
 
 ## <a name="sfctl-mesh-app-delete"></a>sfctl mesh app delete
 Удаляет ресурс приложения.
@@ -30,13 +30,13 @@ ms.locfileid: "76906060"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --name -n [обязательный параметр] | Имя приложения. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -51,7 +51,7 @@ ms.locfileid: "76906060"
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -66,13 +66,13 @@ ms.locfileid: "76906060"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --name -n [обязательный параметр] | Имя приложения. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Description|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
@@ -82,5 +82,5 @@ ms.locfileid: "76906060"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
+- [Настройка](service-fabric-cli.md) службы Ткань CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
