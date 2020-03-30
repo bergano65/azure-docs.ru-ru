@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/22/2017
 ms.author: tagore
 ms.openlocfilehash: 1e49a0935a70a2470267e5458fa1f55e3059e965
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77469771"
 ---
 # <a name="enabling-azure-diagnostics-in-azure-cloud-services"></a>Включение системы диагностики Azure в облачных службах Azure
@@ -35,7 +35,7 @@ ms.locfileid: "77469771"
 6. Создайте свое решение, чтобы проверить, что в нем нет ошибок.
 
 ### <a name="step-2-instrument-your-code"></a>Шаг 2. Инструментирование кода
-Замените содержимое файла WorkerRole.cs следующим кодом. Класс SampleEventSourceWriter, унаследованный от [класса EventSource][EventSource Class], реализует четыре метода ведения журнала: **SendEnums**, **MessageMethod**, **SetOther** и **HighFreq**. Первый параметр для метода **WriteEvent** определяет идентификатор соответствующего события. Метод Run реализует бесконечный цикл, который вызывает каждый из методов ведения журнала, реализованных в классе **SampleEventSourceWriter** , каждые 10 секунд.
+Замените содержимое файла WorkerRole.cs следующим кодом. Класс SampleEventSourceWriter, наследуемый от [класса EventSource][EventSource Class], реализует четыре метода ведения журнала: **SendEnums**, **MessageMethod**, **SetOther** и **HighFreq**. Первый параметр для метода **WriteEvent** определяет идентификатор соответствующего события. Метод Run реализует бесконечный цикл, который вызывает каждый из методов ведения журнала, реализованных в классе **SampleEventSourceWriter** , каждые 10 секунд.
 
 ```csharp
 using Microsoft.WindowsAzure.ServiceRuntime;
@@ -124,7 +124,7 @@ namespace WorkerRole1
 
 1. Разверните свою рабочую роль в Azure из Visual Studio, выбрав проект **WadExample** в обозревателе решений, а затем выбрав команду **Опубликовать** в меню **Сборка**.
 2. Выберите свою подписку.
-3. В диалоговом окне **Параметры публикации Microsoft Azure** щелкните **Создать**.
+3. В диалоге **о настройках настроек Microsoft Azure** выберите **«Создайте новые...».**
 4. В диалоговом окне **Создание облачной службы и учетной записи хранилища** введите **имя** (например, WadExample) и выберите регион или территориальную группу.
 5. Выберите для параметра **Среда** значение **Промежуточная среда**.
 6. Измените любые другие **Параметры** по необходимости и щелкните **Опубликовать**.
@@ -136,10 +136,10 @@ namespace WorkerRole1
     ```powershell
     (Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd'
     ```
-2. Добавьте XML-файл в свой проект **WorkerRole1**, щелкнув правой кнопкой мыши проект **WorkerRole1** и выбрав **Добавить** -> **Создать элемент…** . -> **Элементы Visual C#**  -> **Данные** -> **XML-файл**. Назовите файл «WadExample.xml».
+2. Добавьте XML-файл в свой проект **WorkerRole1**, щелкнув правой кнопкой мыши проект **WorkerRole1** и выбрав **Добавить** -> **Создать элемент…**. -> **Визуальные элементы** -> C'**Data** -> **XML File**. Назовите файл «WadExample.xml».
 
    ![CloudServices_diag_add_xml](./media/cloud-services-dotnet-diagnostics/AddXmlFile.png)
-3. Свяжите файл WadConfig.xsd с файлом конфигурации. Убедитесь, что окно редактора WadExample.xml активно. Нажмите клавишу **F4**, чтобы открыть окно **Свойства**. Щелкните свойство **Схемы** в окне **Свойства**. Щелкните **…** in the **Schemas** . Щелкните **Добавить…** , перейдите в расположение, где сохранен XSD-файл, и выберите файл WadConfig.xsd. Нажмите кнопку **ОК**.
+3. Свяжите файл WadConfig.xsd с файлом конфигурации. Убедитесь, что окно редактора WadExample.xml активно. Нажмите клавишу **F4**, чтобы открыть окно **Свойства**. Щелкните свойство **Схемы** в окне **Свойства**. Нажмите **на ...** in the **Schemas** . Нажмите **добавить...** , перейдите в расположение, где сохранен XSD-файл, и выберите файл WadConfig.xsd. Нажмите кнопку **ОК**.
 
 4. Замените содержимое файла настройки WadExample.xml приведенным кодом XML и сохраните файл. Этот файл конфигурации определяет пару счетчиков производительности: один — для использование ЦП, и один — для использования памяти. Затем конфигурация определяет четыре события, соответствующие методам в классе SampleEventSourceWriter.
 
@@ -189,10 +189,10 @@ Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -Diagnostic
 ## <a name="configuration-file-schema"></a>Схема файла конфигурации
 Файл конфигурации системы диагностики определяет значения, которые используются для инициализации параметров конфигурации диагностики, когда запускается агент диагностики. Допустимые значения и примеры см. в [последнем справочнике по схеме](/azure/azure-monitor/platform/diagnostics-extension-schema).
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 Если возникли проблемы, см. сведения в статье [Устранение неполадок с помощью системы диагностики Azure](../azure-diagnostics-troubleshooting.md). Это поможет вам устранить распространенные проблемы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 [См. перечень статей о системе диагностики виртуальных машин Azure](../azure-monitor/platform/diagnostics-extension-overview.md), чтобы изменить данные, которые вы собираете, устранить неполадки или больше узнать о диагностике в целом.
 
 [EventSource Class]: https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx

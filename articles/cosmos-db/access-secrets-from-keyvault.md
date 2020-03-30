@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.reviewer: sngun
 ms.openlocfilehash: 55e6bbc338c1ac6f9ef935b4a3a05c32f2b5e9f5
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72755223"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Защита ключей Azure Cosmos с помощью Azure Key Vault 
@@ -24,13 +24,13 @@ ms.locfileid: "72755223"
 
 * Создание хранилища ключей  
 * добавление ключей доступа Azure Cosmos DB в Key Vault;  
-* Создание веб-приложения Azure  
+* создание веб-приложения Azure;  
 * Регистрация приложения и предоставление ему разрешений на чтение из Key Vault  
 
 
 ## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
-1. Вход на [портал Azure](https://portal.azure.com/).  
+1. Войти на [портал Azure](https://portal.azure.com/).  
 2. Выберите **Создать ресурс > Безопасность > Key Vault**.  
 3. В разделе **Создать Key Vault** введите приведенные ниже сведения.  
    * **Имя**. Укажите уникальное имя для Key Vault.  
@@ -44,7 +44,7 @@ ms.locfileid: "72755223"
 1. Перейдите в хранилище Key Vault, созданное на предыдущем шаге, и откройте вкладку **Секреты**.  
 2. Выберите **+ Создать или импортировать**. 
 
-   * Выберите **параметр отправки** **Вручную**.
+   * Выберите **Руководство** для **вариантов загрузки.**
    * Укажите **имя** для секрета.
    * Укажите строку подключения вашей учетной записи Cosmos DB в поле **Значение**. Затем нажмите кнопку **Создать**.
 
@@ -54,7 +54,7 @@ ms.locfileid: "72755223"
 
    `https://<Key_Vault_Name>.vault.azure.net/secrets/<Secret _Name>/<ID>`
 
-## <a name="create-an-azure-web-application"></a>Создание веб-приложения Azure
+## <a name="create-an-azure-web-application"></a>создание веб-приложения Azure;
 
 1. Создайте веб-приложение Azure или загрузите его из [репозитория GitHub](https://github.com/Azure/azure-cosmosdb-dotnet/tree/master/Demo/keyvaultdemo). Это простое приложение MVC.  
 
@@ -91,5 +91,5 @@ ms.locfileid: "72755223"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Чтобы настроить брандмауэр для Azure Cosmos DB, см. статью [Поддерживаемые брандмауэры](firewall-support.md).
+* Для настройки брандмауэра для Azure Cosmos DB смотрите статью [поддержки брандмауэра.](firewall-support.md)
 * Чтобы настроить конечную точку службы для виртуальной сети, перейдите к статье [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы для виртуальной сети Azure](vnet-service-endpoint.md).

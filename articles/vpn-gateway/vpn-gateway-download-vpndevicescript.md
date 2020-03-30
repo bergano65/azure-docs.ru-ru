@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 01/09/2019
 ms.author: yushwang
 ms.openlocfilehash: f905e27f48a0bf9181625bbba07549a13d9420cb
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77162142"
 ---
 # <a name="download-vpn-device-configuration-scripts-for-s2s-vpn-connections"></a>Загрузка сценариев конфигурации VPN-устройств для VPN-подключений типа "сеть — сеть"
@@ -26,7 +26,7 @@ ms.locfileid: "77162142"
 
 [!INCLUDE [scripts](../../includes/vpn-gateway-device-configuration-scripts.md)]
 
-## <a name="about"></a>О сценариях конфигурации VPN-устройств
+## <a name="about-vpn-device-configuration-scripts"></a><a name="about"></a>О сценариях конфигурации VPN-устройств
 
 VPN-подключение между локальными сетями состоит из VPN-шлюза Azure, локального VPN-устройства и VPN-туннеля IPsec S2S, соединяющего шлюз и устройство. Стандартный рабочий процесс включает следующие этапы.
 
@@ -50,7 +50,7 @@ VPN-подключение между локальными сетями сост
 
 Создайте VPN-шлюз Azure, локальный сетевой шлюз и ресурс подключения для их соединения. В статье ниже описываются шаги, которые нужно выполнить.
 
-* [Создание подключения типа "сеть — сеть" на портале Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md);
+* [Создание подключения к сайту на портале Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 
 После создания ресурса подключения следуйте приведенным ниже инструкциям, чтобы загрузить сценарии конфигурации VPN-устройства:
 

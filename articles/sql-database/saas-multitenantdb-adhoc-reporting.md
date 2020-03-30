@@ -1,5 +1,5 @@
 ---
-title: Автоматизированная нерегламентированная отчетность по нескольким базам данных
+title: Специальные запросы отчетности в нескольких базах данных
 description: Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL на примере мультитенантного приложения.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: craigg
 ms.reviewer: sstein
 ms.date: 10/30/2018
 ms.openlocfilehash: c0d1829c52041446b4feb43d8af262265e2680fc
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73822185"
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL Azure
@@ -52,7 +52,7 @@ ms.locfileid: "73822185"
 
 ## <a name="get-the-wingtip-tickets-saas-multi-tenant-database-application-source-code-and-scripts"></a>Получение скриптов и исходного кода для SaaS-приложения Wingtip Tickets c мультитенантной БД
 
-Сценарии для приложения SaaS Wingtip Tickets c мультитенантной базой данных и исходный код этого приложения вы найдете в репозитории GitHub [WingtipTicketsSaaS-MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB). Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
+Скрипты Ибн-антеролетов И исходный код базы данных Wingtip Tickets SaaS и исходный код приложения доступны в репо [WingtipTicketsSaaS-MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB) GitHub. Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 
 ## <a name="create-ticket-sales-data"></a>Создание данных о продажах билетов
 
@@ -72,7 +72,7 @@ ms.locfileid: "73822185"
 
 Этот пример развертывает базу данных *adhocreporting*. Это головная база данных, которая будет содержать схему, используемую для выполнения запросов по всем базам данных клиента. Эта база данных развертывается на имеющемся сервере каталога, используемом для всех баз данных для управления в данном примере приложения.
 
-1. В \\интегрированной среде сценариев PowerShell\\ откройте скрипт …\\Learning Modules\\Operational Analytics*Adhoc Reporting* *Demo-AdhocReporting.ps1* и задайте в нем следующие значения.
+1. В \\интегрированной среде сценариев PowerShell\\ откройте скрипт …\\Learning Modules\\Operational Analytics*Adhoc Reporting**Demo-AdhocReporting.ps1* и задайте в нем следующие значения.
    * **$DemoScenario** = 2, **Развертывание базы данных автоматизированной системы отчетности**.
 
 2. Нажмите клавишу **F5**, чтобы выполнить скрипт и создать базу данных *adhocreporting*.
@@ -95,7 +95,7 @@ ms.locfileid: "73822185"
 
     ![Создание внешнего источника данных](media/saas-multitenantdb-adhoc-reporting/create-external-data-source.png)
 
-   В определении внешних таблиц, которые ссылаются на клиентские таблицы, указан параметр **DISTRIBUTION = SHARDED(VenueId)** . Эта инструкция перенаправляет запрос для определенного значения *VenueId* в соответствующую базу данных, что во многих сценариях повышает производительность запроса, как показано в следующем разделе.
+   В определении внешних таблиц, которые ссылаются на клиентские таблицы, указан параметр **DISTRIBUTION = SHARDED(VenueId)**. Эта инструкция перенаправляет запрос для определенного значения *VenueId* в соответствующую базу данных, что во многих сценариях повышает производительность запроса, как показано в следующем разделе.
 
     ![Создание внешних таблиц](media/saas-multitenantdb-adhoc-reporting/external-tables.png)
 
@@ -138,7 +138,7 @@ ms.locfileid: "73822185"
 
    Этот запрос выполняет более сложное соединение и агрегирование. Важно отметить, что большая часть обработки выполняется удаленно, и опять же, мы возвращаем только те строки, которые необходимы, получая только одну строку для общего числа проданных билетов за день для каждого места проведения.
 
-   ![запрос](media/saas-multitenantdb-adhoc-reporting/query3-plan.png)
+   ![query](media/saas-multitenantdb-adhoc-reporting/query3-plan.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -158,4 +158,4 @@ ms.locfileid: "73822185"
 * Additional [tutorials that build upon the Wingtip Tickets SaaS Multi-tenant Database application](saas-multitenantdb-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
 -->
 
-* [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](sql-database-elastic-query-overview.md)
+* [Упругий запрос](sql-database-elastic-query-overview.md)

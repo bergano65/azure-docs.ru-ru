@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с общими образами в Azure
+title: Проблемы устранения проблем с общими изображениями в Azure
 description: Подробные сведения об устранении неполадок c коллекциями общих образов.
 services: virtual-machine-windows
 documentationcenter: virtual-machine-scale-sets
@@ -17,10 +17,10 @@ ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
 ms.openlocfilehash: 945c5fb4c1641f425c842ac4f6048c7db75db5de
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74068105"
 ---
 # <a name="troubleshooting-shared-image-galleries"></a>Устранение неполадок c коллекциями общих образов
@@ -28,6 +28,6 @@ ms.locfileid: "74068105"
 
 [!INCLUDE [virtual-machines-common-shared-image-troubleshooting](../../../includes/virtual-machines-common-shared-image-troubleshooting.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье [Обзор коллекций общих образов](shared-image-galleries.md).
+Дополнительные сведения см. в статье [Обзор коллекции общих образов](shared-image-galleries.md).

@@ -7,10 +7,10 @@ ms.devlang: java
 ms.topic: article
 ms.date: 06/25/2019
 ms.openlocfilehash: 6fec85c028e992c15fb9503ffb599023e668c58f
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77459945"
 ---
 # <a name="add-push-notifications-to-your-android-app"></a>Добавление push-уведомлений в приложение Android
@@ -60,7 +60,7 @@ ms.locfileid: "77459945"
 
 Далее следует установить службы Google Play. Firebase Cloud Messaging предъявляет некоторые требования к минимальному уровню API для разработки и тестирования, которым должно удовлетворять свойство **minSdkVersion** в манифесте.
 
-Если вы тестируете приложение на более старом устройстве, обратитесь к руководству [Добавление Firebase в проект Android] (Добавление Firebase в проект Android), чтобы определить, насколько малым можно задать это значение.
+Если вы тестируете приложение на более старом устройстве, обратитесь к руководству [Add Firebase to Your Android Project] (Добавление Firebase в проект Android), чтобы определить, насколько малым можно задать это значение.
 
 ### <a name="add-firebase-cloud-messaging-to-the-project"></a>Добавление Firebase Cloud Messaging в проект
 
@@ -74,15 +74,15 @@ ms.locfileid: "77459945"
 
 Приложение можно проверить, подключив телефон Android напрямую с помощью USB-кабеля или используя виртуальное устройство в эмуляторе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы изучили это руководство и теперь можете перейти к ознакомлению с одной из следующих тем.
 
-* [Добавление аутентификации в приложение Android](app-service-mobile-android-get-started-users.md).
+* [Добавьте аутентификацию в ваше приложение для Android.](app-service-mobile-android-get-started-users.md)
   Узнайте, как добавить аутентификацию в проект быстрого запуска ToDoList для Android с помощью поддерживаемого поставщика удостоверений.
 * [Включение автономной синхронизации для приложения Android](app-service-mobile-android-get-started-offline-data.md).
   Узнайте, как добавить в приложение поддержку автономной работы с помощью серверной части мобильных приложений. Автономная синхронизация позволяет пользователям взаимодействовать с мобильным приложением (&mdash;просматривать, добавлять или изменять данные&mdash;) даже при отсутствии подключения к сети.
 
 <!-- URLs -->
 [ознакомительный проект для платформы Android]: app-service-mobile-android-get-started.md
-[Добавление Firebase в проект Android]: https://firebase.google.com/docs/android/setup
+[Добавление Firebase в проект Android]:https://firebase.google.com/docs/android/setup

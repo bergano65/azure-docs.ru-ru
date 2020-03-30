@@ -1,28 +1,28 @@
 ---
-title: Привязки центра Интернета вещей Azure для функций Azure
-description: Узнайте, как реагировать на события, отправляемые в поток событий центра Интернета вещей в функциях Azure.
+title: Привязка концентратора Azure IoT для функций Azure
+description: Научитесь отвечать на события, отправленные в поток событий концентратора IoT в Azure Functions.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/21/2020
 ms.author: cshoe
 ms.openlocfilehash: f63fe965b3f37add8ddf9d262f1ef1dae9fff966
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77589731"
 ---
-# <a name="azure-iot-hub-trigger-for-azure-functions"></a>Триггер центра Интернета вещей Azure для функций Azure
+# <a name="azure-iot-hub-trigger-for-azure-functions"></a>Срабатывание концентратора Azure IoT для функций Azure
 
-В этой статье объясняется, как работать с привязками функций Azure для центра Интернета вещей. Поддержка центра Интернета вещей основана на [привязке концентраторов событий Azure](functions-bindings-event-hubs.md).
+В этой статье объясняется, как работать с привязками функций Azure для IoT Концентратора. Поддержка концентратора IoT основана на [связывании концентраторов событий Azure.](functions-bindings-event-hubs.md)
 
-Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](functions-bindings-event-iot.md).
+Для получения информации о настройке и деталях конфигурации, [см.](functions-bindings-event-iot.md)
 
 > [!IMPORTANT]
-> Хотя в следующих примерах кода используется API концентратора событий, заданный синтаксис применим к функциям центра Интернета вещей.
+> В то время как следующие образцы кода используют API концентратора событий, данный синтаксис применим к функциям IoT Hub.
 
 [!INCLUDE [functions-bindings-event-hubs](../../includes/functions-bindings-event-hubs-trigger.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Запись событий в поток событий (Выходная привязка)](./functions-bindings-event-iot-output.md)
+- [Запись событий в поток событий (связка вывода)](./functions-bindings-event-iot-output.md)

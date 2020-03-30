@@ -1,6 +1,6 @@
 ---
 title: Изменения, внесенные в проекты WebAPI при подключении к Azure AD
-description: Описывает, что происходит с проектом WebAPI при подключении к Azure AD с помощью Visual Studio
+description: Описывает, что происходит с вашим проектом WebAPI при подключении к Azure AD с помощью Visual Studio
 author: ghogen
 manager: jillfra
 ms.assetid: 57630aee-26a2-4326-9dbb-ea2a66daa8b0
@@ -12,17 +12,17 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.openlocfilehash: 595a89ca58e970a9c886d0b6c2dd05aecd1411ef
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77159392"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом WebApi в подключенной службе Visual Studio Azure Active Directory
 
 > [!div class="op_single_selector"]
 > - [Начало работы](vs-active-directory-webapi-getting-started.md)
-> - [Что произошло?](vs-active-directory-webapi-what-happened.md)
+> - [Что случилось](vs-active-directory-webapi-what-happened.md)
 
 В этой статье описаны конкретные изменения, которые вносятся в проекты ASP.NET WebAPI, одностраничного приложения ASP.NET и API-интерфейса Azure ASP.NET при добавлении [подключенной службы Azure Active Directory с помощью Visual Studio](vs-active-directory-add-connected-service.md). Это также касается и проектов мобильной службы Azure ASP.NET в Visual Studio 2015.
 
@@ -124,9 +124,9 @@ ms.locfileid: "77159392"
 - Создано приложение Azure AD в домене, который вы выбрали при добавлении подключенной службы.
 - В приложение добавлены разрешения на **чтение данных каталога**, если вы выбрали соответствующий параметр.
 
-[Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
+[Узнайте больше об активном каталоге Azure](https://azure.microsoft.com/services/active-directory/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
+- [Сценарии аутентификации для активного каталога Azure](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

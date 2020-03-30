@@ -12,10 +12,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 09/12/2019
 ms.openlocfilehash: 9f115d51657993562642391a235de79420aa434a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73823375"
 ---
 # <a name="create-a-virtual-network-for-azure-sql-database-managed-instance"></a>Создание виртуальной сети для Управляемого экземпляра Базы данных SQL Azure
@@ -34,10 +34,10 @@ ms.locfileid: "73823375"
 >
 > Если вы планируете использовать имеющуюся виртуальную сеть, необходимо изменить ее конфигурацию, чтобы она соответствовала управляемому экземпляру. Дополнительные сведения см. в статье [Настройка имеющейся виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-configure-vnet-subnet.md).
 >
-> После создания управляемого экземпляра перемещение управляемого экземпляра или виртуальной сети в другую группу ресурсов или подписку не поддерживается.
+> После создания управляемого экземпляра перемещение управляемого экземпляра или VNet в другую группу ресурсов или подписку не поддерживается.
 
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Самый простой способ создания и настройки виртуальной сети — использовать шаблон развертывания Azure Resource Manager.
 
@@ -64,4 +64,4 @@ ms.locfileid: "73823375"
 - [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).
 - Узнайте, как [изменять имеющиеся виртуальные сети для Управляемого экземпляра](sql-database-managed-instance-configure-vnet-subnet.md).
 - Чтобы узнать, как создать виртуальную сеть и Управляемый экземпляр, а также восстановить базу данных из резервной копии базы данных, ознакомьтесь со статьей [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
-- Во избежание проблем при настройке DNS ознакомьтесь со сведениями в статье [Настройка пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-custom-dns.md).
+- Для проблем DNS [см.](sql-database-managed-instance-custom-dns.md)
