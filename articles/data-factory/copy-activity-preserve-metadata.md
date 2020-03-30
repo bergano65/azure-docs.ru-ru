@@ -1,6 +1,6 @@
 ---
-title: Сохранение метаданных и ACL с помощью действия копирования в фабрике данных Azure
-description: Узнайте, как сохранить метаданные и списки ACL во время копирования с помощью действия копирования в фабрике данных Azure.
+title: Сохранение метаданных и ACL с помощью копирования на фабрике данных Azure
+description: Узнайте о том, как сохранить метаданные и АКЛ во время копирования с помощью копирования на фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -9,38 +9,38 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/12/2019
+ms.date: 03/24/2020
 ms.author: jingwang
-ms.openlocfilehash: 056909f5fd5838e5ae50fb84bd3535029d862acf
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: b73cd73a18d286f221c7be2c624719e1d23d7c06
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79260843"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80153834"
 ---
-#  <a name="preserve-metadata-and-acls-using-copy-activity-in-azure-data-factory"></a>Сохранение метаданных и ACL с помощью действия копирования в фабрике данных Azure
+#  <a name="preserve-metadata-and-acls-using-copy-activity-in-azure-data-factory"></a>Сохранение метаданных и ACL с помощью копирования на фабрике данных Azure
 
-При использовании действия копирования фабрики данных Azure для копирования данных из источника в приемник в следующих сценариях можно также сохранить метаданные и списки ACL.
+При использовании активности копирования Azure Data Factory для копирования данных из источника в раковину в следующих сценариях можно также сохранить метаданные и АКЛ.
 
-## <a name="preserve-metadata"></a>Сохранение метаданных для Lake Migration
+## <a name="preserve-metadata-for-lake-migration"></a><a name="preserve-metadata"></a>Сохранение метаданных для миграции озер
 
-При переносе данных из одного Data Lake в другой, включая [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md)и [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), можно сохранить метаданные файла вместе с данными.
+При переносе данных из одного озера данных в другое, включая [Amazon S3,](connector-amazon-simple-storage-service.md) [Azure Blob](connector-azure-blob-storage.md)и [Azure Data Lake Storage Gen2,](connector-azure-data-lake-storage.md)вы можете сохранить метаданные файлов вместе с данными.
 
-Действие копирования поддерживает сохранение следующих атрибутов во время копирования данных:
+Активность копирования поддерживает сохранение следующих атрибутов во время копирования данных:
 
 - **Все указанные клиентом метаданные** 
-- И следующие **пять встроенных системных свойств хранилища данных**: `contentType`, `contentLanguage` (за исключением Amazon S3), `contentEncoding`, `contentDisposition`, `cacheControl`.
+- И следующие **пять данных хранения встроенных системных свойств** `contentEncoding`: `contentDisposition` `cacheControl`, `contentType` `contentLanguage` (кроме Amazon S3), , .
 
-При копировании файлов "как есть" из Amazon S3/Azure Data Lake Storage 2-го поколения или большого двоичного объекта Azure в Azure Data Lake Storage 2-го поколения или BLOB-объект Azure с двоичным форматом параметр " **сохранить** " можно найти на вкладке " **действие копирования** " > " **Параметры** " для создания действий или на странице " **Параметры** " в средстве копирование данных.
+При копировании файлов как-то из Amazon S3/Azure Data Lake Storage Gen2/Azure Blob в Azure Data Lake Storage Gen2/Azure Blob с бинарным форматом можно найти **опцию «Сохранение»** на вкладке **«Настройки** **активности копирования»** > для авторства действий или **страницы настроек** в инструменте копирования данных.
 
-![Сохранить метаданные действия копирования](./media/copy-activity-preserve-metadata/copy-activity-preserve-metadata.png)
+![Копирование активности сохранения метаданных](./media/copy-activity-preserve-metadata/copy-activity-preserve-metadata.png)
 
-Ниже приведен пример конфигурации JSON действия копирования (см. `preserve`): 
+Вот пример конфигурации копирования JSON `preserve`(см.): 
 
 ```json
 "activities":[
     {
-        "name": "CopyFromGen1ToGen2",
+        "name": "CopyAndPreserveMetadata",
         "type": "Copy",
         "typeProperties": {
             "source": {
@@ -76,34 +76,34 @@ ms.locfileid: "79260843"
 ]
 ```
 
-## <a name="preserve-acls"></a>Сохранение списков управления доступом из Data Lake Storage 1-го поколения в Gen2
+## <a name="preserve-acls-from-data-lake-storage-gen1gen2-to-gen2"></a><a name="preserve-acls"></a>Сохранение ACLs от хранения данных озера Gen1/Gen2 до Gen2
 
-При обновлении с Azure Data Lake Storage 1-го поколения до Gen2 можно сохранить список управления доступом (ACL) POSIX вместе с файлами данных. Дополнительные сведения об управлении доступом см. в разделе [Контроль доступа в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-access-control.md) и [управление доступом в Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-access-control.md).
+При обновлении с Azure Data Lake Storage Gen1 до Gen2 или копировании данных между ADLS Gen2 можно сохранить списки управления доступом POSIX (ACLs) вместе с файлами данных. Для получения дополнительной информации о контроле доступа см. [Контроль доступа в Azure Data Lake Storage Gen1](../data-lake-store/data-lake-store-access-control.md) и [control Access в Azure Data Lake Storage Gen2.](../storage/blobs/data-lake-storage-access-control.md)
 
-Действие копирования поддерживает сохранение следующих типов списков ACL во время копирования данных. Можно выбрать один или несколько типов:
+Копирование активности поддерживает сохранение следующих типов ACL во время копирования данных. Вы можете выбрать один или несколько типов:
 
-- **ACL**: копирование и сохранение списков управления доступом POSIX для файлов и каталогов. Он копирует все существующие списки ACL из источника в приемник. 
-- **Владелец**: Скопируйте и сохраните пользователя-владельца файлов и каталогов. Требуется доступ суперпользователя к Data Lake Storage 2-го поколения приемника.
-- **Группа**: копирование и сохранение группы владельцев файлов и каталогов. Необходим доступ суперпользователя к Data Lake Storage 2-го поколения приемника или пользователю-владельцу (если владелец также является членом Целевой группы).
+- **ACL**: Копирование и сохранение списков управления доступом POSIX в файлах и каталогах. Он копирует полные существующие ACLs от источника до раковины. 
+- **Владелец**: Копировать и сохранять владельца пользователя файлов и каталогов. Супер-пользователь доступ к раковине Data Lake Storage Gen2 не требуется.
+- **Группа**: Копирование и сохранение группы файлов и каталогов. Требуется сверхпользовательский доступ к sink Data Lake Storage Gen2 или пользователю-владелецу (если пользователь-владелец также является членом целевой группы).
 
-Если вы укажете копирование из папки, фабрика данных реплицирует списки управления доступом для указанной папки, а также файлы и каталоги, если `recursive` имеет значение true. Если указать копирование из одного файла, то списки ACL для этого файла будут скопированы.
+Если вы укажете скопировать из папки, Data Factory воспроизводит ACLs для этой `recursive` папки, а также файлы и каталоги под ней, если она установлена на достоверное. Если указать копирование из одного файла, ACLs в этом файле копируются.
 
 >[!NOTE]
->При использовании ADF для сохранения списков ACL из Data Lake Storage 1-го поколения в Gen2 существующие списки ACL на Gen2's соответствующих папках и файлах будут перезаписаны.
+>При использовании ADF для сохранения ACLs от хранения данных Lake Storage Gen1/Gen2 до Gen2 существующие ACL на соответствующей папке/файлах Gen2 будут перезаписаны.
 
 >[!IMPORTANT]
->Если вы решили сохранить списки управления доступом, убедитесь, что вы предоставляли достаточно высокий уровень разрешений для работы фабрики данных с учетной записью Data Lake Storage 2-го поколения приемника. Например, используйте проверку подлинности с помощью ключа учетной записи или назначьте роль владельца данных BLOB-объекта хранилища субъекту-службе или управляемому удостоверению.
+>При выборе сохранения АКЛ убедитесь, что вы предоставляете достаточно высокие разрешения для Data Factory для работы против вашей учетной записи Data Lake Storage Gen2. Например, используйте аутентификацию ключа учетной записи или присвоите роль владельца данных Storage Blob главному или управляемому удостоверению.
 
-При настройке источника как Data Lake Storage 1-го поколения с двоичным форматом или параметром копирования в двоичном формате, а также для приемника как Data Lake Storage 2-го поколения с двоичным форматом или с параметром двоичного копирования, параметр **сохранить** можно найти на странице **Параметры** в копирование данных средстве или на вкладке **Параметры** > **копирования** для создания действий.
+При настройке источника в виде Data Lake Storage Gen1/Gen2 с бинарным форматом или опцией бинарной копии и раковиной в виде Data Lake Storage Gen2 с бинарным форматом или опцией бинарной копии можно найти **опцию «Сохранение»** на странице **«Настройки»** в инструменте copy Data Tool или на вкладке **«Настройки** **активности копирования»** > для нараставания.
 
-![Data Lake Storage 1-го поколения Gen2 сохранить список ACL](./media/connector-azure-data-lake-storage/adls-gen2-preserve-acl.png)
+![Хранение данных озера Gen1/Gen2 для Gen2 Сохранить ACL](./media/connector-azure-data-lake-storage/adls-gen2-preserve-acl.png)
 
-Ниже приведен пример конфигурации JSON действия копирования (см. `preserve`): 
+Вот пример конфигурации копирования JSON `preserve`(см.): 
 
 ```json
 "activities":[
     {
-        "name": "CopyFromGen1ToGen2",
+        "name": "CopyAndPreserveACLs",
         "type": "Copy",
         "typeProperties": {
             "source": {
@@ -127,7 +127,7 @@ ms.locfileid: "79260843"
         },
         "inputs": [
             {
-                "referenceName": "<Binary dataset name for Azure Data Lake Storage Gen1 source>",
+                "referenceName": "<Binary dataset name for Azure Data Lake Storage Gen1/Gen2 source>",
                 "type": "DatasetReference"
             }
         ],
@@ -145,5 +145,5 @@ ms.locfileid: "79260843"
 
 См. другие статьи о действиях копирования:
 
-- [Действие копирования в фабрике данных Azure](copy-activity-overview.md)
+- [Общие сведения о действии копирования](copy-activity-overview.md)
 - [Руководство по настройке производительности действия копирования](copy-activity-performance.md)

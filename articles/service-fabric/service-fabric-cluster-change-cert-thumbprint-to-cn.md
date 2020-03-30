@@ -4,10 +4,10 @@ description: Сведения о переключении кластера Servi
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.openlocfilehash: 66c49ccb7b7633d0eff392b676bb381118eb64a2
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75610205"
 ---
 # <a name="change-cluster-from-certificate-thumbprint-to-common-name"></a>Переход с отпечатка на общее имя сертификата для кластера
@@ -91,7 +91,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
 > Так как каждый секрет является уникальным ресурсом с контролем версий, секреты масштабируемого набора не поддерживают один идентификатор ресурса для двух отдельных секретов. 
 
 ## <a name="download-and-update-the-template-from-the-portal"></a>Скачивание и обновление шаблона с портала
-Сертификат установлен в базовом масштабируемом наборе, но вам также необходимо обновить кластер Service Fabric для использования этого сертификата и его общего имени.  Теперь загрузите шаблон для развертывания кластера.  Войдите в [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, в которой размещен кластер.  В разделе **Настройки** выберите **Развертывания**.  Выберите последние развертывания и щелкните **Просмотреть шаблон**.
+Сертификат установлен в базовом масштабируемом наборе, но вам также необходимо обновить кластер Service Fabric для использования этого сертификата и его общего имени.  Теперь загрузите шаблон для развертывания кластера.  Войдите на [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, худившей кластер.  В разделе **Настройки** выберите **Развертывания**.  Выберите последние развертывания и щелкните **Просмотреть шаблон**.
 
 ![Просмотр шаблонов][image1]
 
@@ -116,9 +116,9 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
     },
     ```
 
-    Также рассмотрите возможность удаления *certificateThumbprint*, но на него больше нельзя ссылаться в шаблоне диспетчер ресурсов.
+    Также рассмотрите возможность удаления *сертификатаThumbprint,* на него больше не может быть ссылки в шаблоне менеджера ресурсов.
 
-2. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В параметрах **virtualMachineProfile**->**extenstionProfile**->**extensions**->**properties**->**settings**->**certificate** добавьте `"commonNames": ["[parameters('certificateCommonName')]"],` и удалите `"thumbprint": "[parameters('certificateThumbprint')]",`.
+2. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В **virtualMachineProfile**->**расширения**->**extensions**->**свойства настройки**->**settings**->**сертификата,** добавить `"commonNames": ["[parameters('certificateCommonName')]"],` и удалить. `"thumbprint": "[parameters('certificateThumbprint')]",`
     ```json
         "virtualMachineProfile": {
         "extensionProfile": {
@@ -179,7 +179,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
         ...
     ```
 
-Дополнительные сведения см [. в статье развертывание Service Fabric кластера, в котором вместо отпечатка используется общее имя сертификата.](https://docs.microsoft.com/azure/service-fabric/service-fabric-create-cluster-using-cert-cn)
+Для получения дополнительной информации [см. Развертывание кластера Service Fabric, в который вместо отпечатков пальцев используется общее имя сертификата.](https://docs.microsoft.com/azure/service-fabric/service-fabric-create-cluster-using-cert-cn)
 
 ## <a name="deploy-the-updated-template"></a>Развертывание обновленного шаблона
 Повторно разверните обновленный шаблон после внесения изменений.
@@ -192,7 +192,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $groupname -Verbose `
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения о безопасности кластеров см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).
+* Узнайте о [безопасности кластеров.](service-fabric-cluster-security.md)
 * Дополнительные сведения о [выделении сертификата кластера](service-fabric-cluster-rollover-cert-cn.md).
 * [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)
 

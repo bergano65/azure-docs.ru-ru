@@ -1,7 +1,7 @@
 ---
 title: Развертывание подсистемы балансировки нагрузки с доступом в Интернет и поддержкой IPv6 с помощью шаблона Azure
 titleSuffix: Azure Load Balancer
-description: Узнайте, как развернуть поддержку IPv6 для Azure Load Balancer и виртуальных машин с балансировкой нагрузки с помощью шаблона Azure.
+description: Узнайте, как развернуть поддержку IPv6 для баланса загрузки Azure и сбалансированных с нагрузкой VM с помощью шаблона Azure.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -15,22 +15,22 @@ ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
 ms.openlocfilehash: eb9703a1944a650f41d76c05d79764f8bdf8cd52
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76045454"
 ---
 # <a name="deploy-an-internet-facing-load-balancer-solution-with-ipv6-using-a-template"></a>Развертывание решения балансировки нагрузки для Интернета с поддержкой IPv6 с помощью шаблона
 
 > [!div class="op_single_selector"]
 > * [PowerShell](load-balancer-ipv6-internet-ps.md)
-> * [Azure CLI](load-balancer-ipv6-internet-cli.md)
+> * [Лазурный CLI](load-balancer-ipv6-internet-cli.md)
 > * [Шаблон](load-balancer-ipv6-internet-template.md)
 
 
 >[!NOTE] 
->В этой статье описывается вводная функция IPv6, позволяющая базовым подсистемам балансировки нагрузки предоставлять подключения IPv4 и IPv6. Комплексное подключение IPv6 теперь доступно с [IPv6 для Azure виртуальных сетей](../virtual-network/ipv6-overview.md) , которое интегрирует IPv6-подключения с виртуальными сетями и включает основные функции, такие как правила группы безопасности сети IPv6, определяемая пользователем маршрутизация IPv6, базовая и стандартная балансировка нагрузки IPv6 и многое другое.  IPv6 для Azure виртуальных сетей является рекомендуемым стандартом для приложений IPv6 в Azure. См. раздел [IPv6 для развертывания Azure vnet PowerShell](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md)  
+>В этой статье описывается вводная функция IPv6, позволяющая балансирум basic Load обеспечивающих подключение IPv4 и IPv6. Всеобъемлющее подключение IPv6 теперь доступно с [IPv6 для Azure VNETs,](../virtual-network/ipv6-overview.md) которое интегрирует подключение IPv6 с вашими виртуальными сетями и включает в себя ключевые функции, такие как правила Группы сетевой безопасности IPv6, IPv6 пользователь-определяемая, балансировка iPv6 Basic и Standard load и многое другое.  IPv6 для Azure VNETs является рекомендуемым стандартом для приложений IPv6 в Azure. [См. IPv6 для развертывания Azure VNET Powershell](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md)  
 
 Azure Load Balancer является балансировщиком нагрузки 4-го уровня (TCP, UDP). Балансировщик нагрузки обеспечивает высокий уровень доступности, распределяя входящий трафик между работоспособными экземплярами службы в облачных службах или виртуальных машинах, определенных в наборе балансировщика нагрузки. Azure Load Balancer может также представить данные службы на нескольких портах, нескольких IP-адресах или обоими этими способами.
 

@@ -9,19 +9,19 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 33ae3c3f9a2a213bd8135af846b4e72901b3df0d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774449"
 ---
-Чтобы получить список пиринга, выполните команду `Get-AzPeering`:
+Чтобы получить список пирингов, `Get-AzPeering` запустите команду:
 
 ```powershell
 Get-AzPeering ResourceGroupName "PeeringResourceGroup" -Name "SeattleExchangePeering"
 ```
 
-Ниже приведен пример ответа после успешного завершения подготовки к завершению.
+Ниже приведен пример ответа, когда сквозная подготовка была успешно завершена:
 
 ```powershell
     Name                     : SeattleExchangePeering

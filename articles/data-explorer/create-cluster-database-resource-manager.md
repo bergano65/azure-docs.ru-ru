@@ -1,6 +1,6 @@
 ---
-title: Создание кластера и базы данных Azure обозреватель данных с помощью шаблона Azure Resource Manager
-description: Узнайте, как создать кластер и базу данных Azure обозреватель данных с помощью шаблона Azure Resource Manager
+title: Создание кластера и базы данных Azure Data Explorer с помощью шаблона управления ресурсами Azure
+description: Узнайте, как создать кластер и базу данных Azure Data Explorer с помощью шаблона управления ресурсами Azure
 author: orspod
 ms.author: orspodek
 ms.reviewer: lugoldbe
@@ -8,31 +8,31 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/26/2019
 ms.openlocfilehash: 56639d8a29ad8eac465845c8d354d04b31ba6093
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75911961"
 ---
-# <a name="create-an-azure-data-explorer-cluster-and-database-by-using-an-azure-resource-manager-template"></a>Создание кластера и базы данных Azure обозреватель данных с помощью шаблона Azure Resource Manager
+# <a name="create-an-azure-data-explorer-cluster-and-database-by-using-an-azure-resource-manager-template"></a>Создание кластера и базы данных Azure Data Explorer с помощью шаблона управления ресурсами Azure
 
 > [!div class="op_single_selector"]
 > * [Портал](create-cluster-database-portal.md)
-> * [CLI](create-cluster-database-cli.md)
+> * [Cli](create-cluster-database-cli.md)
 > * [PowerShell](create-cluster-database-powershell.md)
-> * [C#](create-cluster-database-csharp.md)
+> * [C #](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)
-> * [Шаблон Azure Resource Manager](create-cluster-database-resource-manager.md)
+> * [Шаблон менеджера ресурсов Azure](create-cluster-database-resource-manager.md)
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. 
 
-В этой статье вы создадите кластер и базу данных Azure обозреватель данных с помощью [шаблона Azure Resource Manager](../azure-resource-manager/management/overview.md). Здесь показано, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. Сведения о создании шаблонов см. в разделе [authoring Azure Resource Manager Templates](/azure/azure-resource-manager/resource-group-authoring-templates). Синтаксис и свойства JSON, используемые в шаблоне, см. в разделе [типы ресурсов Microsoft. Kusto](/azure/templates/microsoft.kusto/allversions).
+В этой статье вы создаете кластер и базу данных Azure Data Explorer с помощью [шаблона Azure Resource Manager.](../azure-resource-manager/management/overview.md) Здесь показано, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. Для получения [информации](/azure/azure-resource-manager/resource-group-authoring-templates)о создании шаблонов см. Для использования в шаблоне синтаксиса и свойств JSON [см.](/azure/templates/microsoft.kusto/allversions)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
 
-## <a name="azure-resource-manager-template-for-cluster-and-database-creation"></a>Шаблон Azure Resource Manager для создания кластера и базы данных
+## <a name="azure-resource-manager-template-for-cluster-and-database-creation"></a>Шаблон управления ресурсами Azure для создания кластеров и баз данных
 
-В этой статье вы используете [существующий шаблон краткого руководства](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-kusto-cluster-database/azuredeploy.json)
+В этой статье используется [существующий шаблон быстрого запуска](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-kusto-cluster-database/azuredeploy.json)
 
 ```json
 {
@@ -98,11 +98,11 @@ ms.locfileid: "75911961"
 
 ## <a name="deploy-the-template-and-verify-template-deployment"></a>Развертывание шаблона и проверка развертывания шаблона
 
-Шаблон Azure Resource Manager можно развернуть с [помощью портал Azure](#use-the-azure-portal-to-deploy-the-template-and-verify-template-deployment) или [с помощью PowerShell](#use-powershell-to-deploy-the-template-and-verify-template-deployment).
+Шаблон управления ресурсами Azure можно развернуть [с помощью портала Azure](#use-the-azure-portal-to-deploy-the-template-and-verify-template-deployment) или [с помощью powershell.](#use-powershell-to-deploy-the-template-and-verify-template-deployment)
 
-### <a name="use-the-azure-portal-to-deploy-the-template-and-verify-template-deployment"></a>Развертывание шаблона и проверка развертывания шаблона с помощью портал Azure
+### <a name="use-the-azure-portal-to-deploy-the-template-and-verify-template-deployment"></a>Используйте портал Azure для развертывания шаблона и проверки развертывания шаблонов
 
-1. Чтобы создать кластер и базу данных, используйте следующую кнопку для запуска развертывания. Чтобы закончить выполнение инструкций из этой статьи, щелкните правой кнопкой мыши и выберите ссылку **Открыть в новом окне**.
+1. Чтобы создать кластер и базу данных, используйте следующую кнопку для начала развертывания. Чтобы закончить выполнение инструкций из этой статьи, щелкните правой кнопкой мыши и выберите ссылку **Открыть в новом окне**.
 
     [![Развертывание в Azure](media/create-cluster-database-resource-manager/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-kusto-cluster-database%2Fazuredeploy.json)
 
@@ -110,16 +110,16 @@ ms.locfileid: "75911961"
 
     ![Развертывание в Azure](media/create-cluster-database-resource-manager/deploy-2-azure.png)
 
-    Шаблон можно [изменить и развернуть в портал Azure](/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal#edit-and-deploy-the-template) с помощью формы.
+    Шаблон можно [отсеивать и развертывать на портале Azure,](/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal#edit-and-deploy-the-template) используя форму.
 
-1. Выполните **Основные сведения** и разделы о **параметрах** . Выберите уникальные имена кластера и базы данных.
-Создание кластера Azure обозреватель данных и базы данных занимает несколько минут.
+1. Заполните **разделы BASICS** и **SETTINGS.** Выберите уникальные названия кластеров и баз данных.
+Создание кластера и базы данных Azure Data Explorer занимает несколько минут.
 
-1. Чтобы проверить развертывание, откройте группу ресурсов в [портал Azure](https://portal.azure.com) , чтобы найти новый кластер и базу данных. 
+1. Чтобы проверить развертывание, вы открываете группу ресурсов [на портале Azure](https://portal.azure.com) для поиска нового кластера и базы данных. 
 
-### <a name="use-powershell-to-deploy-the-template-and-verify-template-deployment"></a>Развертывание шаблона и проверка развертывания шаблона с помощью PowerShell
+### <a name="use-powershell-to-deploy-the-template-and-verify-template-deployment"></a>Используйте powershell для развертывания шаблона и проверки развертывания шаблонов
 
-#### <a name="deploy-the-template-using-powershell"></a>Развертывание шаблона с помощью PowerShell
+#### <a name="deploy-the-template-using-powershell"></a>Развертывание шаблона с помощью powershell
 
 1. Выберите **Попробовать** в следующем блоке кода и следуйте инструкциям, чтобы войти в Azure Cloud Shell.
 
@@ -138,11 +138,11 @@ ms.locfileid: "75911961"
 
 1. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
 1. Щелкните правой кнопкой в консоли оболочки и выберите **Вставить**.
-Создание кластера Azure обозреватель данных и базы данных занимает несколько минут.
+Создание кластера и базы данных Azure Data Explorer занимает несколько минут.
 
-#### <a name="verify-the-deployment-using-powershell"></a>Проверка развертывания с помощью PowerShell
+#### <a name="verify-the-deployment-using-powershell"></a>Проверить развертывание с помощью PowerShell
 
-Чтобы проверить развертывание, используйте следующий скрипт Azure PowerShell.  Если Cloud Shell по-прежнему открыт, вам не нужно копировать или запускать первую строку (Read-Host). Дополнительные сведения об управлении ресурсами обозреватель данных Azure в PowerShell см. в статье [AZ. Kusto](/powershell/module/az.kusto/?view=azps-2.7.0). 
+Для проверки развертывания используйте следующий скрипт Azure PowerShell.  Если облачная оболочка по-прежнему открыта, вам не нужно копировать/запускать первую строку (Read-Host). Для получения дополнительной информации об управлении ресурсами Azure Data Explorer в PowerShell, читайте [Az.Kusto](/powershell/module/az.kusto/?view=azps-2.7.0). 
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter the same project name that you used in the last procedure"
@@ -159,4 +159,4 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Прием данных в кластер и базу данных Azure обозреватель данных](ingest-data-overview.md)
+[Ввоз данных в кластер и базу данных Azure Data Explorer](ingest-data-overview.md)

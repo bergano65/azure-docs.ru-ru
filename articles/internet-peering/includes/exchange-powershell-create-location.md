@@ -9,30 +9,30 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 6f5d2dc30ac0f6316587fa0836b87cbd4efc0a8b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774397"
 ---
-Командлет PowerShell **Get-азпиринглокатион** возвращает список расположений пиринга с обязательным параметром `Kind`, который вы будете использовать в последующих шагах:
+PowerShell cmdlet **Get-AzPeeringLocation** возвращает список вглядывающихся мест с обязательным параметром, `Kind`который вы будете использовать в последующих шагах:
 
 ```powershell
 Get-AzPeeringLocation -Kind "Exchange"
 ```
 
-Расположения пиринга Exchange содержат следующие поля:
-* ексчанженаме
-* пиринглокатион
-* Страна
-* пирингдбфаЦилитид
-* пирингдбфаЦилитилинк
-* MicrosoftIPv4Address
-* MicrosoftIPv6Address
+Местоположения exchange peering содержат следующие поля:
+* ExchangeName
+* PeeringLocation
+* Country
+* PeeringDBFacilityid
+* PeeringDBFacilityLink
+* Адрес MicrosoftIPv4
+* Адрес MicrosoftIPv6
 
-Проверьте наличие нужного средства пиринга, обратившись к [пирингдб](https://w www.peeringdb.com).
+Проверка того, что вы присутствуете на желаемом объекте пиринга, ссылаясь на [PeeringDB](https://wwww.peeringdb.com).
 
-Ниже приведен пример, демонстрирующий использование Сиэтле в качестве расположения пиринга для создания пиринга.
+Ниже приведен пример, который показывает, как использовать Сиэтл в качестве вглядывающей сядутки для создания пиринга:
 
 ```powershell
 $exchangeLocations = Get-AzPeeringLocation -Kind Exchange

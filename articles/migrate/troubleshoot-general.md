@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок в службе "Миграция Azure" | Документация Майкрософт
-description: Содержит общие сведения об известных проблемах в службе "миграция Azure", а также советы по устранению распространенных ошибок.
+description: Предоставляет обзор известных проблем в службе Azure Migrate, а также советы по устранению ошибок для устранения ошибок.
 author: musa-57
 ms.manager: abhemraj
 ms.service: azure-migrate
@@ -8,32 +8,32 @@ ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: hamusa
 ms.openlocfilehash: 433f3cc29e334a9034fa073d4ace735fc7e7e3ea
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75725875"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
-Служба " [Миграция Azure](migrate-services-overview.md) " предоставляет центр средств для оценки и миграции, а также предложения независимых поставщиков программного обеспечения (ISV) сторонних разработчиков. Эта статья поможет вам устранить неполадки, связанные с миграцией Azure, оценкой сервера Azure для миграции и миграцией Azure Migration Server.
+[Azure Migrate](migrate-services-overview.md) предоставляет центр инструментов для оценки и миграции, а также сторонних независимых поставщиков программного обеспечения (ISV). Эта статья помогает выснять проблемы с проблемами Azure Migrate, Azure Migrate Server Assessment и Azure Migrate Server Migration.
 
-## <a name="how-do-i-create-or-find-a-project"></a>Разделы справки создать или найти проект?
+## <a name="how-do-i-create-or-find-a-project"></a>Как создать или найти проект?
 
-Ознакомьтесь с [руководством по устранению неполадок проекта в службе "миграция Azure](troubleshoot-project.md)".
+Просмотрите [руководство по устранению неполадок проекта Azure Migrate.](troubleshoot-project.md)
 
-## <a name="i-cant-get-the-appliance-working"></a>Не удается заставить устройство работать
+## <a name="i-cant-get-the-appliance-working"></a>Я не могу заставить прибор работать
 
-Ознакомьтесь с [ответами на распространенные проблемы](troubleshoot-appliance-discovery.md) при развертывании устройств.
+Просмотрите [ответы на общие проблемы](troubleshoot-appliance-discovery.md) с развертыванием приборов.
 
-## <a name="machines-arent-discovered"></a>Компьютеры не обнаружены
+## <a name="machines-arent-discovered"></a>Машины не обнаружены
 
-Обзор распространенных проблем обнаружения.
+Просмотрите общие проблемы обнаружения.
 
 ## <a name="app-discovery-isnt-working"></a>Обнаружение приложений не работает
 
-Обнаружение приложений, ролей и функций, выполняющихся на локальных компьютерах, в настоящее время поддерживается только для виртуальных машин VMware. [Ознакомьтесь с распространенными ошибками](troubleshoot-appliance-discovery.md#common-app-discovery-errors) при обнаружении приложений.
+Открытие приложений, ролей и функций, работающих на банкоматах, в настоящее время поддерживается только для VMware VMs. [Просмотрите распространенные ошибки](troubleshoot-appliance-discovery.md#common-app-discovery-errors) для обнаружения приложений.
 
 ## <a name="assessment-isnt-working"></a>Оценка не работает
 
-[Ознакомьтесь](troubleshoot-assessment.md) с общими проблемами и ошибками оценки.
+[Просмотрите](troubleshoot-assessment.md) общие проблемы и ошибки оценки.
