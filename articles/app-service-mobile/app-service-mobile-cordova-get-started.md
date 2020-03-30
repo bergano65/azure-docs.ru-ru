@@ -8,10 +8,10 @@ ms.devlang: javascript
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.openlocfilehash: 99fb4a4b07ecbd4a85abbc62ec52a0f5960654c5
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77461578"
 ---
 # <a name="create-an-apache-cordova-app"></a>Создание приложения Apache Cordova
@@ -26,15 +26,15 @@ ms.locfileid: "77461578"
 Для работы с данным руководством вам потребуется:
 
 * компьютер с [Visual Studio Community 2017] или более поздней версии;
-* [Инструменты Visual Studio для Apache Cordova];
-* [Активная учетная запись Azure](https://azure.microsoft.com/pricing/free-trial/).
+* [набор средств Visual Studio для Apache Cordova];
+* [активная учетная запись Azure](https://azure.microsoft.com/pricing/free-trial/);
 
 Можно также обойтись без Visual Studio и использовать командную строку Apache Cordova напрямую.  Эта командная строка пригодится, если вы работаете с данным руководством на компьютере Mac.  Компиляция клиентских приложений Apache Cordova с помощью командной строки в этом учебнике не рассматривается.
 
 ## <a name="create-an-azure-mobile-app-backend"></a>Создание серверной части мобильного приложения Azure
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка клиентского и серверного проекта
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание соединения базы данных и настройка проекта клиента и сервера
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
 ## <a name="download-and-run-the-apache-cordova-app"></a>Загрузка и запуск приложения Apache Cordova
@@ -44,4 +44,4 @@ ms.locfileid: "77461578"
 [Azure portal]: https://portal.azure.com/
 
 [Visual Studio Community 2017]: https://www.visualstudio.com/
-[Инструменты Visual Studio для Apache Cordova]: https://www.visualstudio.com/en-us/features/cordova-vs.aspx
+[Инструменты визуальной студии для Apache Cordova]: https://www.visualstudio.com/en-us/features/cordova-vs.aspx

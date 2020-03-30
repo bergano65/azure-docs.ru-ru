@@ -14,15 +14,15 @@ ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 6c37ba61005c9936e6421d06369d1f52b93ac264
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77201702"
 ---
 # <a name="configure-reverse-lookup-zones-for-an-smtp-banner-check"></a>Настройка зон обратного просмотра для проверки заголовка SMTP
 
-В этой статье описывается, как использовать обратную зону в Azure DNS и создавать обратную запись DNS (PTR) для проверки баннера SMTP.
+В этой статье описывается, как использовать обратную зону в Azure DNS и создать запись Обратной DNS (PTR) для проверки баннеров SMTP.
 
 ## <a name="symptom"></a>Симптом
 

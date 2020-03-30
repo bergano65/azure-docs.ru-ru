@@ -5,19 +5,19 @@ ms.topic: include
 ms.date: 02/21/2020
 ms.author: cshoe
 ms.openlocfilehash: 1e25656b58fe675cfbe87fef75af4fcb174b7f55
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77589744"
 ---
 Используйте выходную привязку Центров событий для записи событий в поток событий. Чтобы записывать события в концентратор событий, необходимо иметь разрешение на оправку в него событий.
 
-Прежде чем пытаться реализовать выходную привязку, убедитесь в наличии необходимых ссылок на пакеты.
+Убедитесь, что необходимые ссылки на пакет имеются перед попыткой реализовать выходную привязку.
 
 <a id="example" name="example"></a>
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В следующем примере показана [функция C#](../articles/azure-functions/functions-dotnet-class-library.md), которая записывает сообщение в концентратор событий, используя возвращаемое значение метода в качестве выходных данных.
 
@@ -31,7 +31,7 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 }
 ```
 
-В следующем примере показано, как использовать интерфейс `IAsyncCollector` для отправки пакета сообщений. Этот сценарий часто используется при обработке сообщений, поступающих из одного концентратора событий, и при отправке результата в другой концентратор событий.
+В следующем примере показано, как использовать `IAsyncCollector` интерфейс для отправки пакета сообщений. Этот сценарий является общим, когда вы обрабатываете сообщения, поступающие из одного концентратора событий, и отправляете результат в другой концентратор событий.
 
 ```csharp
 [FunctionName("EH2EH")]
@@ -51,11 +51,11 @@ public static async Task Run(
 }
 ```
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция сценария C#](../articles/azure-functions/functions-reference-csharp.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. Первый пример — для функций 2. x и более поздних, а второй — для функций 1. x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. Первый пример предназначен для функций 2.x и выше, а второй — для функций 1.x. 
 
 ```json
 {
@@ -103,11 +103,11 @@ public static void Run(TimerInfo myTimer, ICollector<string> outputEventHubMessa
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция JavaScript](../articles/azure-functions/functions-reference-node.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. Первый пример — для функций 2. x и более поздних, а второй — для функций 1. x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. Первый пример предназначен для функций 2.x и выше, а второй — для функций 1.x. 
 
 ```json
 {
@@ -202,9 +202,9 @@ public String sendTime(
 
 ---
 
-## <a name="attributes-and-annotations"></a>Атрибуты и заметки
+## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](../articles/azure-functions/functions-dotnet-class-library.md) используйте атрибут [EventHubAttribute](https://github.com/Azure/azure-functions-eventhubs-extension/blob/master/src/Microsoft.Azure.WebJobs.Extensions.EventHubs/EventHubAttribute.cs).
 
@@ -219,70 +219,70 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#example).
+Для полного примера [см.](#example)
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+Атрибуты не поддерживаются Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
-В [библиотеке времени выполнения функций Java](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)используйте аннотацию [евенсубаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) в параметрах, значение которых будет опубликовано в концентраторе событий. Параметр должен иметь тип `OutputBinding<T>`, где `T` является POJO или любым собственным типом Java.
+В [библиотеке выполнения функций Java](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)используйте аннотацию [EventHubOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) по параметрам, значение которых будет опубликовано в Концентраторе событий. Параметр должен быть `OutputBinding<T>` типа, где `T` находится POJO или любой родной тип Java.
 
 ---
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `EventHub`.
+В следующей таблице объясняется свойства связывающей конфигурации, `EventHub` установленные в файле *function.json* и атрибуте.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Для этого свойства необходимо задать значение "eventHub" |
+|**тип** | Недоступно | Для этого свойства необходимо задать значение "eventHub" |
 |**direction** | Недоступно | Для этого свойства необходимо задать значение out. Этот параметр задается автоматически при создании привязки на портале Azure. |
 |**name** | Недоступно | Имя переменной, используемое в коде функции, которая представляет событие. |
-|**путь** |**EventHubName** | Только служба "Функции" версии 1.x. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
-|**eventHubName** |**EventHubName** | Функции 2. x и более поздних версий. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
-|**connection** |**Соединение** | Имя параметра приложения, содержащего строку подключения к пространству имен концентратора событий. Скопируйте эту строку подключения, нажав кнопку **Сведения о подключении** для *пространства имен*, а не сам концентратор событий. Чтобы отправлять сообщения в поток событий, эта строка подключения должна иметь разрешения на отправку.|
+|**Путь** |**EventHubName** | Только служба "Функции" версии 1.x. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
+|**eventHubName** |**EventHubName** | Функции 2.x и выше. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
+|**Подключения** |**Подключения** | Имя параметра приложения, содержащего строку подключения к пространству имен концентратора событий. Скопируйте эту строку подключения, нажав кнопку **Сведения о подключении** для *пространства имен*, а не сам концентратор событий. Чтобы отправлять сообщения в поток событий, эта строка подключения должна иметь разрешения на отправку.|
 
 [!INCLUDE [app settings to local.settings.json](../articles/azure-functions/../../includes/functions-app-settings-local.md)]
 
 ## <a name="usage"></a>Использование
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-Отправка сообщений с помощью параметра метода, например `out string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<string>` или `IAsyncCollector<string>` вместо `out string`.
+Отправка сообщений с помощью параметра метода, такого как `out string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<string>` или `IAsyncCollector<string>` вместо `out string`.
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Отправка сообщений с помощью параметра метода, например `out string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<string>` или `IAsyncCollector<string>` вместо `out string`.
+Отправка сообщений с помощью параметра метода, такого как `out string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<string>` или `IAsyncCollector<string>` вместо `out string`.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Получите доступ к выходному событию с помощью `context.bindings.<name>`, где `<name>` — это значение, указанное в свойстве `name` файла *Function. JSON*.
+Доступ к событию `context.bindings.<name>` `<name>` вывода, используя, `name` где значение, указанное в свойстве *function.json*.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Существует два варианта вывода сообщения концентратора событий из функции:
+Существует два варианта выхода сообщения концентратора событий из функции:
 
-- **Возвращаемое значение**: задайте `$return`для свойства `name` в *Function. JSON* . В этой конфигурации возвращаемое значение функции сохраняется как сообщение концентратора событий.
+- **Значение возврата**: `name` Установите свойство `$return`в *function.json* к . При этой конфигурации значение возврата функции сохраняется как сообщение концентратора событий.
 
-- **Императив**: передайте значение в метод [Set](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set`, сохраняется как сообщение концентратора событий.
+- **Императив**: Передайте значение [установленного](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) методу параметра, объявленного как тип [Out.](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python) Передаваемые `set` значения сохраняются в виде сообщения концентратора событий.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Существует два варианта вывода сообщения концентратора событий из функции с помощью аннотации [евенсубаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) :
+Существует два варианта вывода сообщения концентратора событий из функции с помощью аннотации [EventHubOutput:](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput)
 
-- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как сообщение концентратора событий.
+- **Значение возврата**: Приприменении аннотации к самой функции, значение возврата функции сохраняется как сообщение концентратора событий.
 
-- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding), где `T` является POJO или любым собственным типом Java. При такой конфигурации передача значения методу `setValue` сохраняет значение как сообщение концентратора событий.
+- **Императив**: Чтобы явно установить значение сообщения, примените аннотацию к определенному параметру типа, [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding)где `T` находится POJO или любой родной тип Java. В этой конфигурации передача `setValue` значения методу сохраняетзначение в виде сообщения концентратора событий.
 
 ---
 
@@ -296,7 +296,7 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример файла host. JSON ниже содержит только параметры версии 2. x + для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версиях 2. x и более поздних версий см. в [справочнике по Host. JSON для функций Azure](../articles/azure-functions/functions-host-json.md).
+В этом разделе описаны глобальные настройки конфигурации, доступные для этого привязки в версиях 2.x и выше. Приведенный ниже файл «Пример host.json» содержит только настройки версии 2.x для этой привязки. Для получения дополнительной информации о настройках глобальной конфигурации в версиях 2.x и далее см. [ссылку host.json на функции Azure.](../articles/azure-functions/functions-host-json.md)
 
 > [!NOTE]
 > Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](../articles/azure-functions/functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
@@ -316,8 +316,8 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 }  
 ```
 
-|Свойство  |По умолчанию | Description |
+|Свойство  |Значение по умолчанию | Описание |
 |---------|---------|---------|
 |`maxBatchSize`|10|Максимальное число событий, получаемых в цикле получения.|
-|`prefetchCount`|300|Счетчик предварительной выборки по умолчанию, используемый базовым `EventProcessorHost`.|
+|`prefetchCount`|300|По умолчанию предварительный подсчет, `EventProcessorHost`используемый базовым .|
 |`batchCheckpointFrequency`|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.|

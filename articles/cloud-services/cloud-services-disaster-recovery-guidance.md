@@ -1,5 +1,5 @@
 ---
-title: Обработка прерываний служб Azure, влияющих на облачные службы Azure
+title: Обработка сбоя службы Azure, которая влияет на облачные службы Azure
 titleSuffix: Azure Cloud Services
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на облачные службы Azure.
 services: cloud-services
@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/04/2017
 ms.author: memccror
 ms.openlocfilehash: e3f0fd88eb302dac208f43d0622ae28b31dcddc2
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77157513"
 ---
 # <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
@@ -46,7 +46,7 @@ ms.locfileid: "77157513"
 
 В зависимости от источников данных приложения может потребоваться проверка процедур восстановления для источника данных приложения.
 
-* Источники данных службы хранилища Azure см. в статье [избыточность службы хранилища Azure](../storage/common/storage-redundancy.md) для проверки доступных параметров на основе выбранной модели избыточности для вашего приложения.
+* В источниках данных хранилища Azure см. [избыточность хранилища Azure,](../storage/common/storage-redundancy.md) чтобы проверить параметры, доступные на основе выбранной модели избыточности для приложения.
 * Аналогичные сведения для источников данных базы данных SQL приведены в разделе [Обзор. Непрерывность облачных бизнес-процессов и аварийное восстановление баз данных с базой данных SQL](../sql-database/sql-database-business-continuity.md) .
 
 

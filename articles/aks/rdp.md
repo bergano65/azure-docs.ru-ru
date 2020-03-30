@@ -1,37 +1,37 @@
 ---
-title: Подключение RDP к узлам Windows Server кластера Azure Kubernetes Service (AKS)
-description: Узнайте, как создать подключение по протоколу RDP с узлами Windows Server в кластере Azure Kubernetes Service (AKS) для решения задач по устранению неполадок и обслуживанию.
+title: RDP в блокальные узлы Windows Server Службы Azure (AKS)
+description: Узнайте, как создать соединение RDP с кластером Azure Kubernetes (AKS) кластера Windows Server для устранения неполадок и задач обслуживания.
 services: container-service
 ms.topic: article
 ms.date: 06/04/2019
 ms.openlocfilehash: 897504aa9902d0feaf4245c719d3a4a3c6fd2241
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77594487"
 ---
-# <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу RDP к узлам Windows Server в кластере Kubernetes Service (AKS) для обслуживания или устранения неполадок
+# <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключитесь к блоку Службы Windows Server с RDP в кластере Azure Kubernetes (AKS) для технического обслуживания или устранения неполадок
 
-На протяжении жизненного цикла кластера Azure Kubernetes Service (AKS) может потребоваться доступ к узлу AKS Windows Server. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Доступ к узлам AKS Windows Server можно получить с помощью протокола удаленного рабочего стола. Кроме того, если вы хотите использовать SSH для доступа к узлам AKS Windows Server и у вас есть доступ к одной и той же пары ключей, которая использовалась при создании кластера, вы можете выполнить действия, описанные в [разделе Подключение SSH к узлу кластера Azure Kubernetes Service (AKS)][ssh-steps]. В целях безопасности узлы Службы Azure Kubernetes (AKS) недоступны через Интернет.
+На протяжении всего жизненного цикла кластера Azure Kubernetes Service (AKS) может потребоваться доступ к узелу AKS Windows Server. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Вы можете получить доступ к узлам AKS Windows Server с помощью RDP. Кроме того, если вы хотите использовать SSH для доступа к узлам AKS Windows Server и у вас есть доступ к той же паре ключей, которая использовалась при создании кластера, вы можете следовать шагам в [SSH в кластерные узлы Azure Kubernetes Service (AKS).][ssh-steps] В целях безопасности узлы Службы Azure Kubernetes (AKS) недоступны через Интернет.
 
-Поддержка узла Windows Server в настоящее время доступна в предварительной версии в AKS.
+Поддержка узлов Windows Server в настоящее время находится в предварительном просмотре в AKS.
 
-В этой статье показано, как создать подключение RDP с узлом AKS, используя их частные IP-адреса.
+В этой статье показано, как создать соединение RDP с узлами AKS с помощью своих частных IP-адресов.
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас уже есть кластер AKS с узлом Windows Server. Если вам нужен кластер AKS, см. статью о [создании кластера AKS с контейнером Windows с помощью Azure CLI][aks-windows-cli]. Необходимо имя пользователя и пароль администратора Windows для узла Windows Server, для которого требуется устранить неполадки. Вам также потребуется клиент RDP, например [Удаленный рабочий стол (Майкрософт)][rdp-mac].
+В этой статье предполагается, что у вас есть существующий кластер AKS с узлами Windows Server. Если вам нужен кластер AKS, смотрите статью о [создании кластера AKS с контейнером Windows с помощью Azure CLI.][aks-windows-cli] Вам нужно имя пользователя администратора Windows и пароль для узла Windows Server, который вы хотите устранить. Вам также нужен клиент RDP, такой как [Microsoft Remote Desktop.][rdp-mac]
 
-Также требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
+Вам также нужна версия Azure CLI 2.0.61 или более поздняя установка и настройка. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="deploy-a-virtual-machine-to-the-same-subnet-as-your-cluster"></a>Развертывание виртуальной машины в той же подсети, что и кластер
 
-На узлах Windows Server кластера AKS нет доступных извне IP-адресов. Чтобы создать подключение по протоколу RDP, можно развернуть виртуальную машину с общедоступным IP-адресом в той же подсети, что и узлы Windows Server.
+Узлы Windows Server кластера AKS не имеют внешних IP-адресов. Чтобы сделать соединение RDP, можно развернуть виртуальную машину с общедоступным IP-адресом в той же подсети, что и узлы Windows Server.
 
-В следующем примере создается виртуальная машина с именем *myVM* в группе ресурсов *myResourceGroup* .
+Следующий пример создает виртуальную машину под названием *myVM* в группе ресурсов *myResourceGroup.*
 
-Сначала получите подсеть, используемую пулом узлов Windows Server. Чтобы получить идентификатор подсети, необходимо имя подсети. Чтобы получить имя подсети, требуется имя виртуальной сети. Получите имя виртуальной сети, выполнив запрос к кластеру для получения списка сетей. Чтобы запросить кластер, необходимо его имя. Все эти действия можно получить, выполнив следующую команду в Azure Cloud Shell:
+Во-первых, получите подсеть, используемую пулом узлов Windows Server. Чтобы получить идентификатор подсети, вам нужно название подсети. Чтобы получить название подсети, вам нужно имя vnet. Получите имя Vnet, задав запрос кластера для его списка сетей. Для запроса кластера необходимо его имя. Вы можете получить все это, запустив следующие в оболочке облака Azure:
 
 ```azurecli-interactive
 CLUSTER_RG=$(az aks show -g myResourceGroup -n myAKSCluster --query nodeResourceGroup -o tsv)
@@ -40,7 +40,7 @@ SUBNET_NAME=$(az network vnet subnet list -g $CLUSTER_RG --vnet-name $VNET_NAME 
 SUBNET_ID=$(az network vnet subnet show -g $CLUSTER_RG --vnet-name $VNET_NAME --name $SUBNET_NAME --query id -o tsv)
 ```
 
-Теперь, когда у вас есть SUBNET_ID, выполните следующую команду в том же окне Azure Cloud Shell, чтобы создать виртуальную машину:
+Теперь, когда у вас есть SUBNET_ID, запустите следующую команду в том же окне облака Azure, чтобы создать VM:
 
 ```azurecli-interactive
 az vm create \
@@ -53,23 +53,23 @@ az vm create \
     --query publicIpAddress -o tsv
 ```
 
-В следующем примере выходных данных показано, что виртуальная машина успешно создана, и отобразится общедоступный IP-адрес виртуальной машины.
+Следующий пример вывода показывает, что VM был успешно создан и отображает общедоступный IP-адрес виртуальной машины.
 
 ```console
 13.62.204.18
 ```
 
-Запишите общедоступный IP-адрес виртуальной машины. Этот адрес будет использоваться на следующем шаге.
+Запись общедоступного IP-адреса виртуальной машины. Этот адрес будет использоваться на более позднем этапе.
 
 ## <a name="allow-access-to-the-virtual-machine"></a>Разрешить доступ к виртуальной машине
 
-Подсети пула узлов AKS по умолчанию защищаются с помощью группы безопасности сети (групп безопасности сети). Чтобы получить доступ к виртуальной машине, необходимо включить доступ в NSG.
+Подсети пула узлов AKS защищены НСК (группы сетевой безопасности) по умолчанию. Чтобы получить доступ к виртуальной машине, вам придется ввести доступ в NSG.
 
 > [!NOTE]
-> Группы безопасности сети управляются службой AKS. Любые изменения, вносимые в NSG, будут перезаписаны на плоскости управления в любое время.
+> НСГ контролируются службой АКС. Любые изменения, которые вы внесете в NSG, будут перезаписаны в любое время на плоскости управления.
 >
 
-Сначала получите группу ресурсов и NSG имя NSG, чтобы добавить правило:
+Во-первых, получить группу ресурсов и ng имя nsg, чтобы добавить правило:
 
 ```azurecli-interactive
 CLUSTER_RG=$(az aks show -g myResourceGroup -n myAKSCluster --query nodeResourceGroup -o tsv)
@@ -82,9 +82,9 @@ NSG_NAME=$(az network nsg list -g $CLUSTER_RG --query [].name -o tsv)
 az network nsg rule create --name tempRDPAccess --resource-group $CLUSTER_RG --nsg-name $NSG_NAME --priority 100 --destination-port-range 3389 --protocol Tcp --description "Temporary RDP access to Windows nodes"
 ```
 
-## <a name="get-the-node-address"></a>Получение адреса узла
+## <a name="get-the-node-address"></a>Получить адрес узла
 
-Управлять кластером Kubernetes можно c помощью [kubectl][kubectl], клиента командной строки Kubernetes. Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Чтобы установить `kubectl` локально, используйте команду [az aks install-cli][az-aks-install-cli]:
+Управлять кластером Kubernetes можно при помощи [kubectl][kubectl], клиента командной строки Kubernetes. Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Чтобы установить `kubectl` локально, используйте команду [az aks install-cli][az-aks-install-cli]:
     
 ```azurecli-interactive
 az aks install-cli
@@ -96,13 +96,13 @@ az aks install-cli
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Выведите список внутренних IP-адресов узлов Windows Server с помощью команды [kubectl Get][kubectl-get] :
+Перечислите внутренний IP-адрес узлов Windows Server с помощью [команды kubectl:][kubectl-get]
 
 ```console
 kubectl get nodes -o wide
 ```
 
-В выходных данных примера ниже показаны внутренние IP-адреса всех узлов в кластере, включая узлы Windows Server.
+В следующем выводе примера показаны внутренние IP-адреса всех узлов кластера, включая узлы Windows Server.
 
 ```console
 $ kubectl get nodes -o wide
@@ -111,27 +111,27 @@ aks-nodepool1-42485177-vmss000000   Ready    agent   18h   v1.12.7   10.240.0.4 
 aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67   <none>        Windows Server Datacenter   10.0.17763.437
 ```
 
-Запишите внутренний IP-адрес узла Windows Server, который вы хотите устранить. Этот адрес будет использоваться на следующем шаге.
+Запишите внутренний IP-адрес узла Windows Server, который вы хотите устранить. Этот адрес будет использоваться на более позднем этапе.
 
-## <a name="connect-to-the-virtual-machine-and-node"></a>Подключение к виртуальной машине и узлу
+## <a name="connect-to-the-virtual-machine-and-node"></a>Подключение к виртуальной машине и узлам
 
-Подключитесь к общедоступному IP-адресу виртуальной машины, созданной ранее с помощью клиента RDP, например [Удаленный рабочий стол (Майкрософт)][rdp-mac].
+Подключайтесь к общедоступному IP-адресу виртуальной машины, созданной ранее, с помощью клиента RDP, такого как [Microsoft Remote Desktop.][rdp-mac]
 
 ![Изображение подключения к виртуальной машине с помощью клиента RDP](media/rdp/vm-rdp.png)
 
-После подключения к виртуальной машине подключитесь к *внутреннему IP-адресу* узла Windows Server, на котором вы хотите устранить неполадки, используя клиент RDP из виртуальной машины.
+После подключения к виртуальной машине подключитесь к *внутреннему IP-адресу* узла Windows Server, который необходимо устранить с помощью клиента RDP внутри виртуальной машины.
 
-![Изображение подключения к узлу Windows Server с помощью клиента RDP](media/rdp/node-rdp.png)
+![Изображение подключения к узлам Сервера Windows с помощью клиента RDP](media/rdp/node-rdp.png)
 
-Теперь вы подключены к узлу Windows Server.
+Теперь вы подключены к узлам Windows Server.
 
-![Изображение окна CMD в узле Windows Server](media/rdp/node-session.png)
+![Изображение окна cmd в узло сервера Windows Server](media/rdp/node-session.png)
 
-Теперь можно выполнять любые команды устранения неполадок в окне *cmd* . Поскольку узлы Windows Server используют Windows Server Core, при подключении к узлу Windows Server по протоколу удаленного рабочего стола не нужно использовать полный графический интерфейс или другие средства графического пользовательского интерфейса.
+Теперь вы можете запускать любые команды по устранению неполадок в *окне cmd.* Поскольку узлы Windows Server используют ядро Windows Server Core, при подключении к узлу Сервера Windows -10 не существует полного графического интерфейса или других инструментов графического интерфейса.
 
-## <a name="remove-rdp-access"></a>Удаление доступа по протоколу RDP
+## <a name="remove-rdp-access"></a>Удаление доступа К RDP
 
-После этого Завершите подключение RDP к узлу Windows Server и завершите сеанс RDP на виртуальной машине. После выхода из обоих сеансов RDP Удалите виртуальную машину с помощью команды [AZ VM Delete][az-vm-delete] :
+После этого выйдите из RDP-соединения в узла Windows Server, а затем выйдите из сеанса RDP в виртуальную машину. После выхода из обоих сеансов RDP удалите виртуальную машину с командой [удаления az vm:][az-vm-delete]
 
 ```azurecli-interactive
 az vm delete --resource-group myResourceGroup --name myVM
@@ -150,7 +150,7 @@ az network nsg rule delete --resource-group $CLUSTER_RG --nsg-name $NSG_NAME --n
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если требуются дополнительные данные по устранению неполадок, можно [Просмотреть журналы главного узла Kubernetes][view-master-logs] или [Azure Monitor][azure-monitor-containers].
+Если вам нужны дополнительные данные по устранению неполадок, можно [просмотреть журналы узлов Kubernetes][view-master-logs] или [Azure Monitor.][azure-monitor-containers]
 
 <!-- EXTERNAL LINKS -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/

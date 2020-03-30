@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
 ms.openlocfilehash: 8b0db4a1e55b53165e40e176834d66b62926e24b
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74421558"
 ---
 # <a name="moving-data-between-scaled-out-cloud-databases"></a>Перемещение данных между масштабируемыми облачными базами данных
@@ -33,12 +33,12 @@ ms.locfileid: "74421558"
 ## <a name="documentation"></a>Документация
 
 1. [Учебник по инструменту разбиения и объединения эластичной базы данных](sql-database-elastic-scale-configure-deploy-split-and-merge.md)
-2. [Настройка безопасности служб разделения и объединения](sql-database-elastic-scale-split-merge-security-configuration.md)
+2. [Конфигурация безопасности Split-Merge](sql-database-elastic-scale-split-merge-security-configuration.md)
 3. [Вопросы безопасности служб разделения и объединения](sql-database-elastic-scale-split-merge-security-configuration.md)
 4. [Управление размещением сегментов](sql-database-elastic-scale-shard-map-management.md)
 5. [Перенос существующих баз данных для масштабирования](sql-database-elastic-convert-to-use-elastic-tools.md)
-6. [Инструменты эластичных баз данных](sql-database-elastic-scale-introduction.md)
-7. [Глоссарий по средствам работы с эластичными базами данных](sql-database-elastic-scale-glossary.md)
+6. [Упругие инструменты базы данных](sql-database-elastic-scale-introduction.md)
+7. [Эластичная база данных инструменты глоссарий](sql-database-elastic-scale-glossary.md)
 
 ## <a name="why-use-the-split-merge-tool"></a>Зачем использовать инструмент разделения и объединения?
 
@@ -180,7 +180,7 @@ ms.locfileid: "74421558"
 
 Служба разбиения и объединения выполняется как облачная служба в подписке Microsoft Azure. Поэтому плата взимается с вашего экземпляра облачных служб. Если вы нечасто выполняете операции разбиения, объединения и перемещения, рекомендуем удалить облачную службу разбиения и объединения. Это поможет сократить расходы на действующие или развернутые экземпляры облачной службы. Готовую к работе конфигурацию можно повторно развернуть и запустить всякий раз, когда потребуется выполнить операции разбиения и объединения.
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 ### <a name="status-tables"></a>Таблицы состояния
 
@@ -190,7 +190,7 @@ ms.locfileid: "74421558"
 
   Время и дата начала запроса.
 
-- **OperationId**
+- **ОперацияId**
 
   Глобальный уникальный идентификатор запроса. Этот идентификатор также может использоваться для отмены операции во время ее выполнения.
 
@@ -202,11 +202,11 @@ ms.locfileid: "74421558"
 
   Флаг, указывающий, отменен ли запрос.
 
-- **Progress**
+- **Прогресс**
 
   Процентная оценка хода выполнения операции. Значение 50, указывает, что операция завершена примерно на 50 %.
 
-- **Дополнительные сведения**
+- **Подробно**
 
   Более подробный отчет о ходе выполнения в формате XML. Отчет о ходе выполнения периодически обновляется по мере копирования наборов строк из исходного в целевой сегмент. В случаях ошибок или исключений в этом столбце также содержится более подробная информация об ошибке.
 
@@ -219,7 +219,7 @@ ms.locfileid: "74421558"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных Azure S'L, но все будущие разработки предназначены для модуля Az.Sql. Для этих cmdlets, см [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модулях Azrm существенно идентичны.
 
 Чтобы включить наблюдение и диагностику с помощью конфигурации диагностики для веб- и рабочих ролей, предоставленных пакетом NuGet, выполните следующие команды с помощью Azure PowerShell:
 

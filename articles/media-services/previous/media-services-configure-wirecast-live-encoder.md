@@ -16,10 +16,10 @@ ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: cenkdin;anilmur
 ms.openlocfilehash: 1d9d63aa6b3da1b8d8389722bd5af0eeed585d03
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77134977"
 ---
 # <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока 
@@ -34,9 +34,9 @@ ms.locfileid: "77134977"
 В этом учебнике показано, как управлять службами мультимедиа Azure (AMS) с помощью Обозревателя служб мультимедиа Azure. Это средство запускается только на компьютерах с ОС Windows. Если вы используете Mac или Linux, воспользуйтесь классическим порталом Azure для создания [каналов](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) и [программ](media-services-portal-creating-live-encoder-enabled-channel.md).
 
 > [!NOTE]
-> Кодировщики должны поддерживать TLS 1,2 при использовании протоколов РТМПС. Используйте Wirecast версии 13.0.2 или выше из-за требования TLS 1,2.
+> При использовании протоколов RTMPS кодеры должны поддерживать TLS 1.2. Используйте версию Wirecast 13.0.2 или выше из-за требования TLS 1.2.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 * [Создайте учетную запись служб мультимедиа Azure](media-services-portal-create-account.md).
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
 * Установите последнюю версию средства [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) .
@@ -48,7 +48,7 @@ ms.locfileid: "77134977"
 * При использовании программных кодировщиков закройте все ненужные программы.
 
 ## <a name="create-a-channel"></a>Создание канала
-1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...** в меню.
+1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...**  в меню.
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast1.png)
 
@@ -65,17 +65,17 @@ ms.locfileid: "77134977"
 >
 >
 
-Во время запуска канала можно [настроить кодировщик](media-services-configure-wirecast-live-encoder.md#configure_wirecast_rtmp).
+Пока канал запускается, можно [настроить коделер.](media-services-configure-wirecast-live-encoder.md#configure_wirecast_rtmp)
 
 > [!IMPORTANT]
 > Тарификация начинается сразу же после перехода канала в состояние готовности. Дополнительные сведения см. в разделе о [состояниях каналов](media-services-manage-live-encoder-enabled-channels.md#states).
 >
 >
 
-## <a name="a-idconfigure_wirecast_rtmp-configure-the-telestream-wirecast-encoder"></a><a id="configure_wirecast_rtmp" />Настройка кодировщика Telestream Wirecast
+## <a name="configure-the-telestream-wirecast-encoder"></a><a id="configure_wirecast_rtmp" />Настройка кодировщика Telestream Wirecast
 В этом руководстве используются указанные ниже параметры вывода. В оставшейся части этого раздела этапы настройки описываются более подробно.
 
-**Видео:**
+**Видео**:
 
 * Кодек: H.264
 * Профиль: High (уровень 4.0)
@@ -83,7 +83,7 @@ ms.locfileid: "77134977"
 * Опорный кадр: 2 секунды (60 секунд)
 * Частота кадров: 30
 
-**Звук:**
+**Аудио**:
 
 * Кодек: AAC (LC)
 * Скорость: 192 Кбит/с
@@ -97,7 +97,7 @@ ms.locfileid: "77134977"
 3. Нажмите кнопку **ОК**.
 4. На странице параметров в поле **Destination** (Назначение) задайте значение **Azure Media Services** (Службы мультимедиа Azure).
 
-    В поле «Профиль кодировки» будет выбран профиль **Azure H.264 720 p 16:9 (1280 x 720)** . Чтобы настроить эти параметры, выберите значок шестеренки справа от раскрывающегося списка и затем выберите **New Preset**(Новая предустановка).
+    В поле «Профиль кодировки» будет выбран профиль **Azure H.264 720 p 16:9 (1280 x 720)**. Чтобы настроить эти параметры, выберите значок шестеренки справа от раскрывающегося списка и затем выберите **New Preset**(Новая предустановка).
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast3.png)
 5. Настройка предустановок кодировщика.
@@ -156,7 +156,7 @@ ms.locfileid: "77134977"
 При получении сообщения об ошибке необходимо сбросить канал и настроить параметры кодировщика. Дополнительные сведения см. в руководстве по [устранению неполадок](media-services-troubleshooting-live-streaming.md).  
 
 ## <a name="create-a-program"></a>Создание программы
-1. После проверки воспроизведения канала создайте программу. На вкладке **Live** (Передача) в инструменте AMSE щелкните правой кнопкой мыши в области программы и выберите команду **Create New Program** (Создать программу).  
+1. После проверки воспроизведения канала создайте программу. Под вкладкой **Live** в инструменте AMSE, правой кнопкой мыши в области программы и выберите **Создать новую программу**.  
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast9.png)
 2. Укажите имя программы и при необходимости измените параметр **Archive Window Length** (Длительность периода архивации); по умолчанию она составляет четыре часа. Также можно указать расположение для хранения или оставить значение по умолчанию.  

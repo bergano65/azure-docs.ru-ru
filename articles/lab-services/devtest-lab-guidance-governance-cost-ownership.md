@@ -1,6 +1,6 @@
 ---
-title: Управление затратами и владением в Azure DevTest Labs
-description: В этой статье содержатся сведения, которые помогут вам оптимизировать затраты и распределить владение в среде.
+title: Управление затратами и владением в Лабораториях Azure DevTest
+description: В этой статье содержится информация, которая поможет оптимизировать затраты и выровнять право собственности в вашей среде.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -14,10 +14,10 @@ ms.date: 11/26/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: b82d338f85f1b43712296ac7f27bdad55f8f1919
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74561662"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---manage-cost-and-ownership"></a>Система управления инфраструктурой Azure DevTest Labs — контроль затрат и владение
@@ -37,7 +37,7 @@ ms.locfileid: "74561662"
 
 - особые низкие тарифы для разработки и тестирования на виртуальные машины Windows, облачные службы, HDInsight, Службу приложений и Logic Apps;
 - отличные тарифы на другие службы Azure в рамках Соглашения Enterprise;
-- доступ к эксклюзивным образам разработки и тестирования в коллекции, включая Windows 8.1 и Windows 10;
+- доступ к эксклюзивным образам разработки и тестирования в коллекции, включая Windows 8.1 и Windows 10.
  
 Только активные подписчики Visual Studio (стандартные подписки, годовые облачные подписки и месячные облачные подписки) могут использовать ресурсы Azure, запущенные в подписке "Enterprise — разработка и тестирование". Пользователи также могут получить доступ к приложению, чтобы предоставить отзыв об опыте использования и выполнить приемочное тестирование. Использование ресурсов в рамках этой подписки ограничивается разработкой и тестированием приложений, и гарантия безотказной работы не предоставляется.
 

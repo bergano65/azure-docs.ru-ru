@@ -1,5 +1,5 @@
 ---
-title: Активация настраиваемой роли Azure AD — управление привилегированными пользователями (PIM)
+title: Активировать пользовательскую роль Azure AD - Привилегированное управление идентификацией (PIM)
 description: Сведения о том, как активировать настраиваемую роль AAD через Privileged Identity Management (PIM)
 services: active-directory
 documentationcenter: ''
@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cbd60d1311bd84adb303a0d329ab4e42f4d61525
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77498732"
 ---
 # <a name="activate-an-azure-ad-custom-role-in-privileged-identity-management"></a>Активация настраиваемой роли AAD через Privileged Identity Management
@@ -28,23 +28,23 @@ ms.locfileid: "77498732"
 Privileged Identity Management (PIM) в Azure Active Directory (AAD) теперь поддерживает привязанные к задачам и ограниченные по времени назначения настраиваемых ролей, созданных для управления приложениями в административном интерфейсе управления пользователями и доступом. Дополнительные сведения о создании настраиваемых ролей для делегирования управления приложениями в AAD см. в статье [о настраиваемых ролях администратора в Azure Active Directory (предварительная версия)](../users-groups-roles/roles-custom-overview.md).
 
 > [!NOTE]
-> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей. Если вы видите следующий баннер, эти роли должны управляться [во встроенной функции ролей](pim-how-to-activate-role.md) , и эта статья не применяется.
+> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей. Если вы видите следующий баннер, эти роли должны управляться [в встроенных ролей опыт](pim-how-to-activate-role.md) и эта статья не применяется:
 >
 > [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 ## <a name="activate-a-role"></a>Активация роли
 
-Чтобы активировать настраиваемую роль Azure AD, запросите активацию, выбрав параметр "Моя роль" в управление привилегированными пользователями.
+При необходимости активации пользовательской роли Azure AD запросите активацию, выбрав навигационную опцию «Мои роли» в Privileged Identity Management.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
-1. Откройте страницу Azure AD [Privileged Identity Management](https://portal.azure.com/?Microsoft_AAD_IAM_enableCustomRoleManagement=true&Microsoft_AAD_IAM_enableCustomRoleAssignment=true&feature.rbacv2roles=true&feature.rbacv2=true&Microsoft_AAD_RegisteredApps=demo#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart).
+1. Войти на [портал Azure](https://portal.azure.com).
+1. Открытое управление [привилегированным удостоверением личности](https://portal.azure.com/?Microsoft_AAD_IAM_enableCustomRoleManagement=true&Microsoft_AAD_IAM_enableCustomRoleAssignment=true&feature.rbacv2roles=true&feature.rbacv2=true&Microsoft_AAD_RegisteredApps=demo#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart)Azure AD.
 
 1. Выберите **Azure AD custom roles** (Настраиваемые роли AAD) для просмотра доступных назначений настраиваемых ролей AAD.
 
    ![Просмотр списка допустимых назначений настраиваемых ролей AAD](./media/azure-ad-custom-roles-activate/view-preview-roles.png)
 
 > [!Note] 
->  Перед назначением роли необходимо создать или настроить роль. Дополнительные сведения о настройке пользовательских ролей AAD см. [здесь] (https://docs.microsoft.com/azure/active-directory/privileged-identity-management/azure-ad-custom-roles-configure)
+>  Перед назначением роли необходимо создать/настроить роль. Для получения дополнительной информации о настройке пользовательских ролей AAD см.https://docs.microsoft.com/azure/active-directory/privileged-identity-management/azure-ad-custom-roles-configure)
 
 1. На странице **Azure AD custom roles (Preview)** (Настраиваемые роли AAD (предварительная версия)) найдите нужное назначение.
 1. Щелкните **Активируйте роль**, чтобы открыть страницу **Активация**.

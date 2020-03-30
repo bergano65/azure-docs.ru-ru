@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых удостоверений в Azure VMSS — Azure AD
+title: Настройка управляемых идентификаторов на Azure VMSS - Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью портала Azure.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 02/20/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 32d8944b55794412eb322697469933030e2fbb56
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74184037"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью портала Azure
@@ -57,7 +57,7 @@ ms.locfileid: "74184037"
 
 2. Перейдите к нужному масштабируемому набору виртуальных машин.
 
-3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.** , а затем — **Сохранить**.
+3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.**, а затем — **Сохранить**.
 
    ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png) 
 
@@ -69,7 +69,7 @@ ms.locfileid: "74184037"
 
 2. Перейдите к нужному масштабируемому набору виртуальных машин.
 
-3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Выкл.** , а затем — **Сохранить**.
+3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Выкл.**, а затем — **Сохранить**.
 
    ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vmss/disable-windows-vmss-portal-configuration-blade.png)
 
@@ -102,7 +102,7 @@ ms.locfileid: "74184037"
    ![Удаление удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин](./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vmss-screenshot.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - С помощью портала Azure предоставьте управляемому удостоверению масштабируемого набора виртуальных машин Azure [доступ к другому ресурсу Azure](howto-assign-access-portal.md).
 

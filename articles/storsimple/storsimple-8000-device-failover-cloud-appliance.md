@@ -1,5 +1,5 @@
 ---
-title: Отработка отказа и аварийное восстановление на облачное устройство StorSimple
+title: Failover и аварийное восстановление с помощью облачного прибора StorSimple
 description: Узнайте, как выполнять отработку отказа физического устройства StorSimple серии 8000 на облачное устройство.
 services: storsimple
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 347b899608d4322a7873b9f80f38ca1c767194d7
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77468751"
 ---
 # <a name="fail-over-to-your-storsimple-cloud-appliance"></a>Отработка отказа на облачное устройство StorSimple
@@ -90,7 +90,7 @@ ms.locfileid: "77468751"
        ![Просмотр целевых контейнеров томов](./media/storsimple-8000-device-failover-disaster-recovery/failover-phy-dev17.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * После отработки отказа, возможно, нужно будет [отключить или удалить устройство StorSimple](storsimple-8000-deactivate-and-delete-device.md).
 

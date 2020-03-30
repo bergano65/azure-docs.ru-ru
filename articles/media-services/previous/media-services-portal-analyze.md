@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 0e49e90209c7337081458b7c214d27b37d3b4da1
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74462616"
 ---
 # <a name="analyze-your-media-using-the-azure-portal"></a>Анализ данных мультимедиа с помощью портала Azure 
 
 > [!IMPORTANT]
-> Ознакомьтесь с [планами выбытия](media-services-analytics-overview.md#retirement-plans) некоторых процессоров мультимедиа.
+> Просмотрите [планы выхода на пенсию](media-services-analytics-overview.md#retirement-plans) некоторых медиапроцессоров.
 
 ## <a name="overview"></a>Обзор
 Медиааналитика служб мультимедиа Azure — это набор речевых и визуальных компонентов корпоративного уровня, соответствующий нормам безопасности и доступный по всему миру. Используя медиааналитику для анализа видеофайлов, компании и организации могут получать ценную информацию для принятия решений. Подробные сведения об аналитике служб мультимедиа Azure см. в [этой статье](media-services-analytics-overview.md). 
@@ -32,7 +32,7 @@ ms.locfileid: "74462616"
 В этой статье рассматриваются способы обработки мультимедиа с помощью мультимедийных данных служб медиааналитики на портале Azure. Обработчики мультимедийных данных служб медиааналитики создают файлы в формате MP4 или JSON. Если обработчик мультимедиа создает файл в формате MP4, такой файл можно скачать постепенно. Если обработчик мультимедиа создает файл в формате JSON, такой файл можно скачать из хранилища BLOB-объектов. 
 
 ## <a name="choose-an-asset-that-you-want-to-analyze"></a>Выбор ресурса-контейнера для анализа
-1. Создание учетной записи служб мультимедиа Azure с помощью [портала Azure](https://portal.azure.com/).
+1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
 2. В окне **Параметры** выберите элемент **Ресурсы**.  
    
     ![Анализ видео](./media/media-services-portal-analyze/media-services-portal-analyze001.png)
@@ -137,7 +137,7 @@ ms.locfileid: "74462616"
 ### <a name="mode"></a>Режим
 Версия 2.0 игнорирует параметр `Mode`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

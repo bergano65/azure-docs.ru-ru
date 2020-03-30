@@ -1,5 +1,5 @@
 ---
-title: Синхронизация учетных записей локального партнера с облаком в качестве пользователей B2B — Azure AD
+title: Синхронизация локальных учетных записей партнеров для облака как B2B-пользователей - Azure AD
 description: Предоставление локально управляемым внешним партнерам доступа к локальным и облачным ресурсам на основе одного комплекта учетных данных с помощью службы совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dcc8c0538bb3362818a4172dd42905fd72b19812
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74272617"
 ---
 # <a name="grant-locally-managed-partner-accounts-access-to-cloud-resources-using-azure-ad-b2b-collaboration"></a>Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам через службу совместной работы Azure Active Directory B2B
@@ -32,7 +32,7 @@ ms.locfileid: "74272617"
 Для этого существуют два распространенных подхода.
 
 - Назначьте неиспользуемый локальный атрибут Active Directory (например, extensionAttribute1) в качестве исходного атрибута. 
-- Кроме того, можно получить значение атрибута UserType из других свойств. Например, вы хотите синхронизировать всех пользователей в качестве гостя, если их локальный атрибут Active Directory UserPrincipalName заканчивается доменом *\@Partners.contoso.com*.
+- Кроме того, можно получить значение атрибута UserType из других свойств. Например, необходимо синхронизировать всех пользователей в качестве гостя, если их атрибут Active Directory UserPrincipalName заканчивается * \@partners.contoso.com*домена.
  
 Подробные требования к атрибутам приведены в разделе [Включение синхронизации атрибута UserType](../hybrid/how-to-connect-sync-change-the-configuration.md#enable-synchronization-of-usertype). 
 
@@ -42,7 +42,7 @@ ms.locfileid: "74272617"
 
 Инструкции по реализации приведены в разделе [Включение синхронизации атрибута UserType](../hybrid/how-to-connect-sync-change-the-configuration.md#enable-synchronization-of-usertype).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Служба совместной работы Azure Active Directory B2B для гибридных организаций](hybrid-organizations.md)
 - [Предоставление пользователям B2B в Azure AD доступа к локальным приложениям](hybrid-cloud-to-on-premises.md)

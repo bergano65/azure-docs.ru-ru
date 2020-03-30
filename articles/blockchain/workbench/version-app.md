@@ -1,23 +1,23 @@
 ---
-title: Управление версиями приложений блокчейн — Azure Блокчейн Workbench
-description: Использование версий приложений в предварительной версии Azure Блокчейн Workbench.
+title: Версия приложения Blockchain - Azure Blockchain Workbench
+description: Как использовать версии приложений в Azure Blockchain Workbench Preview.
 ms.date: 11/20/2019
 ms.topic: article
 ms.reviewer: brendal
 ms.openlocfilehash: 45219790cf0cd064e0fcd456e262b2f93aa03ac9
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74323912"
 ---
-# <a name="azure-blockchain-workbench-preview-application-versioning"></a>Управление версиями в предварительной версии приложения Azure Блокчейн Workbench
+# <a name="azure-blockchain-workbench-preview-application-versioning"></a>Версия приложения Azure Blockchain Workbench
 
-Вы можете создать и использовать несколько версий приложения Azure Блокчейн Workbench Preview. Если передано несколько версий одного и того же приложения, доступен журнал версий и пользователи могут выбирать версию, которую они хотят использовать.
+Вы можете создать и использовать несколько версий приложения Azure Blockchain Workbench Preview. Если передано несколько версий одного и того же приложения, доступен журнал версий и пользователи могут выбирать версию, которую они хотят использовать.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Развертывание Blockchain Workbench. Дополнительные сведения о развертывании Azure Blockchain Workbench см. в [этой статье](deploy.md).
 * Развернутое блокчейн-приложение в Blockchain Workbench. Сведения см. в статье [Создание блокчейн-приложения в Azure Blockchain Workbench](create-app.md).
@@ -54,6 +54,6 @@ ms.locfileid: "74323912"
 
     Вы можете создать новые контракты или выполнять действия с контрактами предыдущих версий. Версия приложения отображается после имени приложения. При использовании старой версии отображается соответствующее предупреждение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок в Azure Blockchain Workbench](troubleshooting.md)

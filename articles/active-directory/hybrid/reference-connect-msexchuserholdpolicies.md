@@ -1,6 +1,6 @@
 ---
-title: 'Azure AD Connect: МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес | Документация Майкрософт'
-description: В этом разделе описывается поведение атрибутов атрибутов МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес.
+title: 'Подключение Azure AD: msExchUserHoldПолитика и cloudMsExchUserHoldПолитика (ru) Документы Майкрософт'
+description: В этой теме описывается поведение атрибутов атрибутов атрибутов msExchUserHoldPolicies и cloudMsExuserHoldPolicies
 services: active-directory
 documentationcenter: ''
 author: billmath
@@ -15,60 +15,60 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f4c637a01825616334cda8faa594efd08f29de8d
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74213075"
 ---
-# <a name="azure-ad-connect---msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Azure AD Connect МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес
-В следующем справочном документе описываются эти атрибуты, используемые Exchange, и правильный способ изменения правил синхронизации по умолчанию.
+# <a name="azure-ad-connect---msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Подключение Azure AD - msExchUserHoldПолитика и cloudMsExchUserHoldПолитика
+В следующем справочном документе описаны эти атрибуты, используемые Exchange, и правильный способ отсвазания правил синхронизации по умолчанию.
 
-## <a name="what-are-msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Что такое МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес?
-Существует два типа [удержаний](https://docs.microsoft.com/Exchange/policy-and-compliance/holds/holds?view=exchserver-2019) , доступных для сервера Exchange: судебное хранение и хранение на месте. Если удержание судебного разбирательства включено, все элементы почтового ящика помещаются в удержание.  Хранение на месте используется для сохранения только тех элементов, которые удовлетворяют критериям поискового запроса, определенного с помощью средства встроенного обнаружения электронных данных.
+## <a name="what-are-msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Что такое msExchUserHoldPolicies и cloudMsExchUserHoldPolicies?
+Для Exchange Server доступны два типа [удержаний:](https://docs.microsoft.com/Exchange/policy-and-compliance/holds/holds?view=exchserver-2019) Удержание судебного процесса и удержание места. При включении удержания судебных дел все почтовые ящики все элементы перемещаются в удержание.  Удержание In-Place используется для сохранения только тех элементов, которые отвечают критериям поискового запроса, которые вы определили с помощью инструмента In-Place eDiscovery.
 
-Атрибуты МсексчусерхолдполЦиес и КлаудмсексчусерхолдполиЦиес позволяют локальным AD и Azure AD определить, какие пользователи находятся в удержании, в зависимости от того, использует ли они локальную среду Exchange или Exchange.
+Атрибуты MsExchUserHoldPolcies и cloudMsExchUserHoldPolicies позволяют на месте AD и Azure AD определять, какие пользователи находятся под удержанием в зависимости от того, используют ли они в режиме он-лайн Exchange или Exchange.
 
-## <a name="msexchuserholdpolicies-synchronization-flow"></a>поток синхронизации МсексчусерхолдполиЦиес
-По умолчанию МсексчусерхолдполЦиес синхронизируется с Azure AD Connect непосредственно к атрибуту МсексчусерхолдполиЦиес в метавселенной, а затем к атрибуту Мсексчусерхолдполицес в Azure AD.
+## <a name="msexchuserholdpolicies-synchronization-flow"></a>msExchUserHoldПолитика мгновеющая сяре всбытом потоке синхронизации
+По умолчанию MsExchUserHoldPolcies синхронизируется Azure AD Connect непосредственно с атрибутом msExchUserHoldPolicies в метавселенной, а затем с атрибутом msExchUserHoldPolices в Azure AD
 
-В следующих таблицах описывается последовательность.
+Следующие таблицы описывают поток:
 
-Входящий трафик из локальной Active Directory:
+Входящий из предварительного Active Directory:
 
-|Атрибут Active Directory|Имя атрибута|Flow type (Тип потока)|Атрибут метавселенной|Правило синхронизации|
+|Атрибут активного каталога|Имя атрибута|Flow type (Тип потока)|Метаверс атрибут|Правило синхронизации|
 |-----|-----|-----|-----|-----|
-|Локальная служба Active Directory|msExchUserHoldPolicies|Напрямую|мсексчусерхолдполицес|В от AD-user Exchange|
+|Локальная служба Active Directory|msExchUserHoldPolicies|Прямой доступ|msExchUserHoldPolices|В от AD - Обмен пользователей|
 
-Исходящий трафик в Azure AD:
+Выход в Azure AD:
 
-|Атрибут метавселенной|Имя атрибута|Flow type (Тип потока)|Атрибут Azure AD|Правило синхронизации|
+|Метаверс атрибут|Имя атрибута|Flow type (Тип потока)|Атрибут Azure AD|Правило синхронизации|
 |-----|-----|-----|-----|-----|
-|Azure Active Directory|msExchUserHoldPolicies|Напрямую|msExchUserHoldPolicies|Out To AAD — Усерексчанжеонлине|
+|Azure Active Directory|msExchUserHoldPolicies|Прямой доступ|msExchUserHoldPolicies|Выход к AAD - UserExchangeOnline|
 
-## <a name="cloudmsexchuserholdpolicies-synchronization-flow"></a>поток синхронизации КлаудмсексчусерхолдполиЦиес
-По умолчанию КлаудмсексчусерхолдполиЦиес синхронизируется путем Azure AD Connect непосредственно к атрибуту КлаудмсексчусерхолдполиЦиес в метавселенной. Затем, если Мсексчусерхолдполицес не имеет значение NULL в метавселенной, атрибут в потоке передается в Active Directory.
+## <a name="cloudmsexchuserholdpolicies-synchronization-flow"></a>поток синхронизации cloudMsExchUserHoldПолитикам
+По умолчанию cloudMsExchUserHoldPolicies синхронизируется Azure AD Connect непосредственно с атрибутом cloudMsExchUserHoldPolicies в метавселенной. Затем, если msExchUserHoldPolices не является недействительным в метавселенной, атрибут в вытекает в Active Directory.
 
-В следующих таблицах описывается последовательность.
+Следующие таблицы описывают поток:
 
-Входящий трафик из Azure AD:
+Входящие из Azure AD:
 
-|Атрибут Active Directory|Имя атрибута|Flow type (Тип потока)|Атрибут метавселенной|Правило синхронизации|
+|Атрибут активного каталога|Имя атрибута|Flow type (Тип потока)|Метаверс атрибут|Правило синхронизации|
 |-----|-----|-----|-----|-----|
-|Локальная служба Active Directory|клаудмсексчусерхолдполиЦиес|Напрямую|клаудмсексчусерхолдполиЦиес|В от AAD-User Exchange|
+|Локальная служба Active Directory|cloudMsExchUserHoldПолитика|Прямой доступ|cloudMsExchUserHoldПолитика|В от AAD - Обмен пользователей|
 
-Исходящий трафик в локальную Active Directory:
+Выход в предпосылок Active Directory:
 
-|Атрибут метавселенной|Имя атрибута|Flow type (Тип потока)|Атрибут Azure AD|Правило синхронизации|
+|Метаверс атрибут|Имя атрибута|Flow type (Тип потока)|Атрибут Azure AD|Правило синхронизации|
 |-----|-----|-----|-----|-----|
-|Azure Active Directory|клаудмсексчусерхолдполиЦиес|ЕСЛИ (НЕ NULL)|msExchUserHoldPolicies|Out To AD — Усерексчанжеонлине|
+|Azure Active Directory|cloudMsExchUserHoldПолитика|ЕСЛИ (НЕ NULL)|msExchUserHoldPolicies|Выход к AD - UserExchangeOnline|
 
-## <a name="information-on-the-attribute-behavior"></a>Сведения о поведении атрибута
-МсексчанжеусерхолдполиЦиес является одним атрибутом Authority.  Один атрибут Authority может быть задан для объекта (в данном случае это объект пользователя) в локальном каталоге или в облачном каталоге.  При запуске правил центра определяется, что если атрибут синхронизирован из локальной среды, Azure AD не сможет обновить этот атрибут.
+## <a name="information-on-the-attribute-behavior"></a>Информация о поведении атрибутов
+msExchangeUserHoldPolicies является единым атрибутом органа.  Один атрибут органа может быть установлен на объекте (в данном случае объекте пользователя) в каталоге на месте или в каталоге облака.  Правила запуска органа диктуют, что если атрибут синхронизирован с помещениями, то Azure AD не будет разрешено обновлять этот атрибут.
 
-Чтобы разрешить пользователям задавать политику удержания для объекта пользователя в облаке, используется атрибут КлаудмсексчанжеусерхолдполиЦиес. Этот атрибут используется, так как Azure AD не может задать МсексчанжеусерхолдполиЦиес напрямую на основе описанных выше правил.  Этот атрибут затем будет синхронизироваться с локальным каталогом, если параметр МсексчанжеусерхолдполиЦиес не равен null и заменит текущее значение МсексчанжеусерхолдполиЦиес.
+Чтобы позволить пользователям настроить политику удержания на объекте пользователя в облаке, используется атрибут cloudMSExchangeUserHoldПолитика. Этот атрибут используется потому, что Azure AD не может устанавливать msExchangeUserHoldPolicies напрямую на основе правил, изложенных выше.  Этот атрибут затем синхронизируется с каталогом на месте, если msExchangeUserHoldPolicies не является нулевым и заменяет текущую стоимость msExchangeUserHoldPolicies.
 
-При определенных обстоятельствах, например, если оба были изменены локально и в Azure одновременно, это может привести к некоторым проблемам.  
+Например, при определенных обстоятельствах, если оба были изменены в помещениях и в Azure одновременно, это может вызвать некоторые проблемы.  
 
-## <a name="next-steps"></a>Дополнительная информация
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

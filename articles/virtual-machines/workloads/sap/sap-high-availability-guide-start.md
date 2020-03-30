@@ -1,5 +1,5 @@
 ---
-title: Высокий уровень доступности виртуальных машин Azure для SAP NetWeaver | Документация Майкрософт
+title: Azure VMs высокой доступности для SAP NetWeaver (ru) Документы Майкрософт
 description: Руководство по обеспечению высокого уровня доступности для SAP NetWeaver на виртуальных машинах Azure
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
@@ -17,10 +17,10 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 25a0ac9ab349cfe8bef8e33d3f533bc5942e6323
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77623830"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver"></a>Руководство по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure
@@ -193,11 +193,11 @@ ms.locfileid: "77623830"
 * шаги по установке SAP для развертывания в Azure высокодоступных систем SAP с использованием модели развертывания Azure Resource Manager.
 
     > [!IMPORTANT]
-    > Для установки приложений SAP настоятельно рекомендуется использовать модель развертывания с помощью Azure Resource Manager. Она предлагает преимущества, недоступные в классической модели развертывания. См. дополнительные сведения о [моделях развертывания Azure][virtual-machines-azure-resource-manager-architecture-benefits-arm].   
+    > Для установки приложений SAP настоятельно рекомендуется использовать модель развертывания с помощью Azure Resource Manager. Она предлагает преимущества, недоступные в классической модели развертывания. Подробнее о [моделях развертывания][virtual-machines-azure-resource-manager-architecture-benefits-arm]Azure.   
     >
 * Высокий уровень доступности SAP в:
-  * ![Windows][Logo_Windows]**Windows**с помощью **отказоустойчивого кластера Windows Server (WSFC)**
-  * ![Linux][Logo_Linux] **Linux**с использованием **платформы кластеров Linux**
+  * ![Windows][Logo_Windows]  **Windows** с использованием **отказоустойчивого кластера Windows Server (WSFC)**.
+  * ![Linux][Logo_Linux] **Linux** с использованием **кластерной платформы Linux**.
 
 Из этих статей вы узнаете, как защитить компоненты с единой точкой отказа (SPOF), включая службы SAP Central Services (ASCS/SCS) и системы управления базами данных (СУБД). Также вы узнаете об избыточных компонентах в Azure,включая сервер приложений SAP.
 
@@ -205,46 +205,46 @@ ms.locfileid: "77623830"
 
 **Сводка.** В этой статье описывается высокодоступная архитектура системы SAP в Azure. Мы узнаем, как обеспечить высокий уровень доступности для единой точки отказа SAP (SPOF) и избыточных компонентов, а также рассмотрим особенности высокодоступной инфраструктуры Azure. Также мы узнаем, как эти составляющие связаны с компонентами системы SAP. Все темы будут рассмотрены с учетом особенностей Windows и Linux. Здесь также описываются разные сценарии обеспечения высокой доступности SAP.
 
-**Обновлено:** октябрь 2017 г.
+**Обновлено:** Октябрь 2017 г.
 
-* [Архитектура высокого уровня доступности виртуальных машин Azure и сценарии для SAP NetWeaver][sap-high-availability-architecture-scenarios]
+* [Высокодоступная архитектура виртуальных машин Azure и сценарии для SAP NetWeaver][sap-high-availability-architecture-scenarios]
 
-В этой статье рассматриваются как ![Windows][Logo_Windows] **Windows** , так и ![Linux][Logo_Linux] **Linux**.
+В статье описаны платформы ![Windows][Logo_Windows] **Windows** и ![Linux][Logo_Linux] **Linux**.
 
 
 ## <a name="azure-infrastructure-preparation-for-sap-netweaver-high-availability-deployment"></a>Подготовка инфраструктуры Azure для высокодоступного развертывания SAP NetWeaver
 
 **Сводка.** В перечисленных здесь статьях рассматриваются инструкции по развертыванию инфраструктуры Azure при подготовке к установке SAP. Чтобы упростить развертывание, процесс можно автоматизировать с помощью шаблонов Azure Resource Manager для SAP.
 
-**Обновлено:** Март 2019
+**Обновлено:** Март 2019 г.
 
-* ![Windows][Logo_Windows] [Подготовка инфраструктуры Azure для обеспечения высокого уровня доступности SAP с помощью отказоустойчивого кластера Windows и **общего диска** для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
+* ![Windows][Logo_Windows] [Подготовка высокодоступной инфраструктуры Azure для SAP с использованием отказоустойчивого кластера Windows и **общего диска** для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
 
-* ![Windows][Logo_Windows] [Подготовка инфраструктуры Azure для обеспечения высокой доступности SAP с помощью отказоустойчивого кластера Windows и **файлового ресурса** для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
+* ![Windows][Logo_Windows] [Подготовка высокодоступной инфраструктуры Azure для SAP с использованием отказоустойчивого кластера Windows и **общего файлового ресурса** для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
 
-* ![Linux][Logo_Linux] [Подготовка инфраструктуры Azure для обеспечения высокой доступности SAP с помощью SUSE Linux Enterprise Server платформы кластеров для экземпляров SAP ASCS/SCS][sap-suse-ascs-ha-setting-ha-nfs]
+* ![Linux][Logo_Linux] [Подготовка высокодоступной инфраструктуры Azure для SAP с использованием кластерной платформы SUSE Linux Enterprise Server для экземпляров SAP ASCS/SCS][sap-suse-ascs-ha-setting-ha-nfs]
 
-* ![Linux][Logo_Linux] [Подготовка инфраструктуры Azure для обеспечения высокой доступности SAP с помощью SUSE Linux Enterprise Server платформы кластеров для экземпляров SAP ASCS/SCS с файлами NetApp в Azure][sap-suse-ascs-ha-setting-ha-anf]
+* ![Linux][Logo_Linux] [подготовит инфраструктуру Azure для высокой доступности SAP, используя кластер SUSE Linux Enterprise Server для экземпляров SAP ASCS/SCS с файлами Azure NetApp][sap-suse-ascs-ha-setting-ha-anf]
 
-* ![RHEL][Logo_Linux] [Подготовка инфраструктуры Azure для обеспечения высокой доступности SAP ASCS/SCS. Настройка глустерфс на RHEL][high-availability-guide-rhel-glusterfs]
+* ![RHEL][Logo_Linux] [Подготовьте инфраструктуру Azure для высокой доступности SAP ASCS/SCS - настроите GlusterFS на RHEL][high-availability-guide-rhel-glusterfs]
 
-* ![RHEL][Logo_Linux] [Подготовка инфраструктуры Azure для обеспечения высокой доступности SAP ASCS/SCS. Настройка Pacemaker на RHEL][high-availability-guide-rhel-pacemaker]
+* ![RHEL][Logo_Linux] [Подготовьте инфраструктуру Azure для высокой доступности SAP ASCS/SCS - настроили Pacemaker на RHEL][high-availability-guide-rhel-pacemaker]
 
 ## <a name="installation-of-an-sap-netweaver-high-availability-system-in-azure"></a>Установка высокодоступной системы SAP NetWeaver в Azure
 
 **Сводка.** В перечисленных здесь статьях представлены инструкции по установке и настройке высокодоступной системы SAP в отказоустойчивом кластере Windows Server или на кластерной платформе Linux в Azure.
 
-**Обновлено:** Март 2019
+**Обновлено:** Март 2019 г.
 
-* ![Windows][Logo_Windows] [Установка высокого уровня доступности SAP NetWeaver с помощью отказоустойчивого кластера Windows и **общего диска** для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]
+* ![Windows][Logo_Windows] [Установка высокодоступной системы SAP NetWeaver с использованием отказоустойчивого кластера Windows и **общего диска** для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]
 
-* ![Windows][Logo_Windows] [Установка высокого уровня доступности SAP NetWeaver с помощью отказоустойчивого кластера Windows и **файлового ресурса** для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]
+* ![Windows][Logo_Windows] [Установка высокодоступной системы SAP NetWeaver с использованием отказоустойчивого кластера Windows и **общего файлового ресурса** для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]
 
-* ![Linux][Logo_Linux] [Установка высокого уровня доступности SAP NetWeaver с помощью SUSE Linux Enterprise Server платформы кластеров для экземпляров SAP ASCS/SCS][sap-suse-ascs-ha-sap-installation]
+* ![Linux][Logo_Linux] [Установка высокодоступной системы SAP NetWeaver с использованием кластерной платформы SUSE Linux Enterprise Server для экземпляров SAP ASCS/SCS][sap-suse-ascs-ha-sap-installation]
 
-* ![Linux][Logo_Linux] [установить высокий уровень доступности SAP NetWeaver с помощью SUSE Linux Enterprise Server платформы кластеров для экземпляров SAP ASCS/SCS с Azure NetApp Files][sap-suse-ascs-ha-sap-installation-anf]
+* ![Linux][Logo_Linux] [Установить SAP NetWeaver высокой доступности с помощью SUSE Linux Enterprise Server кластера рамки для SAP ASCS / SCS экземпляров с Azure NetApp файлов][sap-suse-ascs-ha-sap-installation-anf]
 
-* ![RHEL][Logo_Linux] [установите SAP NETWEAVER ASCS/SCS в конфигурации высокого уровня доступности на RHEL][sap-rhel-ascs-ha]
+* ![RHEL][Logo_Linux] [Установить SAP NetWeaver ASCS/SCS в высокой конфигурации доступности на RHEL][sap-rhel-ascs-ha]
 
-* ![RHEL][Logo_Linux] [установите SAP NETWEAVER ASCS/SCS в конфигурации с высоким уровнем доступности в RHEL с помощью Azure NetApp Files][sap-rhel-ascs-ha-sap-installation-anf]
+* ![RHEL][Logo_Linux] [Установить SAP NetWeaver ASCS/SCS в высокой конфигурации доступности на RHEL с Azure NetApp файлов][sap-rhel-ascs-ha-sap-installation-anf]
 

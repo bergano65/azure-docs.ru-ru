@@ -1,6 +1,6 @@
 ---
-title: Руководство. Настройка Insight4GRC для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в Insight4GRC.
+title: 'Учебник: Налаживайте Insight4GRC для автоматического предоставления пользовательского запроса с помощью Active Directory Azure (ru) Документы Майкрософт'
+description: Узнайте, как автоматически предоставлять и депредоставлять учетные записи пользователей из Azure AD в Insight4GRC.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -16,65 +16,65 @@ ms.topic: article
 ms.date: 02/04/2020
 ms.author: Zhchia
 ms.openlocfilehash: 1404854e054c8fc4967ba863486969b8a87db526
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77621513"
 ---
-# <a name="tutorial-configure-insight4grc-for-automatic-user-provisioning"></a>Учебник. Настройка Insight4GRC для автоматической подготовки пользователей
+# <a name="tutorial-configure-insight4grc-for-automatic-user-provisioning"></a>Учебник: Настройка Insight4GRC для автоматического подготовки пользователей
 
-В этом руководстве описываются действия, которые необходимо выполнить в Insight4GRC и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. При настройке Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп для [Insight4GRC](https://www.rsmuk.com/) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
+В этом уроке описаны шаги, которые необходимо выполнить как в Insight4GRC, так и в Active Directory Azure (Azure AD) для настройки автоматической подготовки пользователей. При настройке Azure AD автоматически провизии и де-положения пользователей и групп [Insight4GRC](https://www.rsmuk.com/) с помощью службы обеспечения Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
 
 
-## <a name="capabilities-supported"></a>Поддерживаемые возможности
+## <a name="capabilities-supported"></a>Возможности, поддерживаемые
 > [!div class="checklist"]
 > * Создание пользователей в Insight4GRC
-> * Удалить пользователей в Insight4GRC, когда им больше не нужен доступ
-> * Синхронизация атрибутов пользователей между Azure AD и Insight4GRC
-> * Подготавливайте группы и членство в группах в Insight4GRC
-> * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/insight4grc-tutorial) в Insight4GRC (рекомендуется)
+> * Удалите пользователей в Insight4GRC, если им больше не требуется доступ
+> * Сохраняйте синхронизацию атрибутов пользователя между Azure AD и Insight4GRC
+> * Группы по предоставлению и членству в группах в Insight4GRC
+> * [Единый знак на](https://docs.microsoft.com/azure/active-directory/saas-apps/insight4grc-tutorial) Insight4GRC (рекомендуется)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD;](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
-* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
-* Учетная запись пользователя в Insight4GRC с разрешениями администратора.
+* [клиент Azure AD;](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложений или глобальный администратор). 
+* Учетная запись пользователя в Insight4GRC с разрешениями Admin.
 
-## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания подготовки
-1. Узнайте [, как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
-2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Определите, какие данные должны [сопоставляться между Azure AD и Insight4GRC](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания
+1. Узнайте о [том, как работает служба обеспечения.](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning)
+2. Определите, кто будет находиться в [сфере подготовки.](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts)
+3. Определите, какие данные следует [сопоставить между Azure AD и Insight4GRC.](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) 
 
-## <a name="step-2-configure-insight4grc-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка Insight4GRC для поддержки подготовки с помощью Azure AD
+## <a name="step-2-configure-insight4grc-to-support-provisioning-with-azure-ad"></a>Шаг 2. Нанастройка Insight4GRC для поддержки подготовки с Azure AD
 
-Перед настройкой Insight4GRC для автоматической подготовки пользователей с помощью Azure AD необходимо включить подготовку SCIM для Insight4GRC.
+Прежде чем настроить Insight4GRC для автоматического предоставления пользовательских данных с Azure AD, необходимо включить SCIM в подготовку на Insight4GRC.
 
-1. Чтобы получить маркер носителя, конечному пользователю необходимо обратиться в службу [поддержки](mailto:support.ss@rsmuk.com).
-2. Чтобы получить URL-адрес конечной точки SCIM, необходимо подготовить доменное имя Insight4GRC, так как оно будет использоваться для создания URL-адреса конечной точки SCIM. Вы можете получить имя домена Insight4GRC в рамках первоначальной покупки программного обеспечения с помощью Insight4GRC.
+1. Чтобы получить токен на предъявителя, конечным клиентам необходимо связаться с [группой поддержки.](mailto:support.ss@rsmuk.com)
+2. Чтобы получить URL-адрес endpoint SCIM, вам нужно будет подготовить доменное имя Insight4GRC, поскольку оно будет использоваться для построения URL-адреса sciM. Вы можете получить доменное имя Insight4GRC в рамках первоначальной покупки программного обеспечения с Insight4GRC.
 
-## <a name="step-3-add-insight4grc-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Insight4GRC из коллекции приложений Azure AD
+## <a name="step-3-add-insight4grc-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Insight4GRC из галереи приложений Azure AD
 
-Добавьте Insight4GRC из коллекции приложений Azure AD, чтобы начать управление подготовкой в Insight4GRC. Если вы ранее настроили Insight4GRC для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
+Добавьте Insight4GRC из галереи приложений Azure AD, чтобы начать управление подготовкой к Insight4GRC. Если вы ранее настраивали Insight4GRC для SSO, вы можете использовать то же приложение. Однако рекомендуется создать отдельное приложение при тестировании интеграции на начальном этапе. Подробнее о добавлении приложения из галереи [можно](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)здесь. 
 
-## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей, которые будут находиться в области подготовки 
+## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определить, кто будет находиться в сфере подготовки 
 
-Служба подготовки Azure AD позволяет определить, кто будет подготовлен в соответствии с назначением приложения, или на основе атрибутов пользователя или группы. Если вы решили указать, кто будет подготовлен для приложения на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md) , чтобы назначить пользователей и группы для приложения. Если выбрать область, для которой будет выполняться подготовка на основе только атрибутов пользователя или группы, можно использовать фильтр области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+Служба предоставления AD Azure AD позволяет использовать область охвата, которая будет подготовлена на основе назначения приложения и или на основе атрибутов пользователя/группы. Если вы выбираете область, которая будет подготовлена к вашему приложению на основе назначения, вы можете использовать следующие [шаги](../manage-apps/assign-user-or-group-access-portal.md) для назначения пользователей и групп приложения. Если вы выбираете область, которая будет подготовлена исключительно на основе атрибутов пользователя или группы, вы можете использовать фильтр проверки, как описано [здесь.](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) 
 
-* При назначении пользователей и групп для Insight4GRC необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью доступа по умолчанию исключаются из подготовки и будут помечены как неэффективное в журналах подготовки. Если единственной ролью, доступной в приложении, является роль доступа по умолчанию, можно [обновить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) , чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп Insight4GRC необходимо выбрать роль, не связанную с **доступом к по умолчанию.** Пользователи с ролью доступа по умолчанию исключены из подготовки и будут помечены как не имеющие эффективного права в журналах подготовки. Если единственной ролью, доступной в приложении, является роль доступа по умолчанию, можно [обновить манифест приложения,](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) чтобы добавить дополнительные роли. 
 
-* Запуск Small. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если для параметра область подготовки задано значение назначенные пользователи и группы, это можно контролировать, назначив приложению одного или двух пользователей или групп. Если для параметра scope задано значение все пользователи и группы, можно указать [Фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+* Начните с малого. Тест с небольшим набором пользователей и групп, прежде чем выкатить для всех. Когда область подготовки устанавливается для назначенных пользователей и групп, вы можете управлять этим, назначив одному или двум пользователям или группам приложение. Когда область расположена для всех пользователей и групп, можно указать [фильтр сканирования на основе атрибутов.](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-insight4grc"></a>Шаг 5. Настройка автоматической подготовки пользователей в Insight4GRC 
+## <a name="step-5-configure-automatic-user-provisioning-to-insight4grc"></a>Шаг 5. Настройка автоматического представления о пользователе на Insight4GRC 
 
-В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в TestApp на основе назначений пользователей и групп в Azure AD.
+В этом разделе вы проведет шаги по настройке службы предоставления AD Azure AD для создания, обновления и отработки пользователей и/или групп в TestApp на основе пользовательских и/или групповых заданий в Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-insight4grc-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Insight4GRC в Azure AD, сделайте следующее:
+### <a name="to-configure-automatic-user-provisioning-for-insight4grc-in-azure-ad"></a>Для настройки автоматического представления о предоставлении пользователям Insight4GRC в Azure AD:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения,** затем выберите **все приложения.**
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -82,56 +82,56 @@ ms.locfileid: "77621513"
 
     ![Ссылка на Insight4GRC в списке "Приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Выберите вкладку **«Подготовка».**
 
-    ![Вкладка "подготовка"](common/provisioning.png)
+    ![Вкладка подготовки](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите **режим обеспечения** **автоматического.**
 
-    ![Вкладка "подготовка"](common/provisioning-automatic.png)
+    ![Вкладка подготовки](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите URL-адрес КОНЕЧНОЙ точки scim в поле **URL-адрес клиента**. URL-адрес енпоинт должен быть в формате `https://<Insight4GRC Domain Name>.insight4grc.com/public/api/scim/v2 ` где **Insight4GRC доменное имя** — это значение, полученное на предыдущих шагах. Введите значение токена носителя, полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Insight4GRC. Если подключение не выполняется, убедитесь, что у учетной записи Insight4GRC есть разрешения администратора, и повторите попытку.
+5. В разделе **Учетные данные Admin** ввейди URL-адрес endpoint SCIM в **URL-адрес клиента.** URL-адрес должен находиться `https://<Insight4GRC Domain Name>.insight4grc.com/public/api/scim/v2 ` в формате, в котором **доменное имя Insight4GRC** — это значение, извлеченное в предыдущих шагах. Ввейте значение маркера предъявителя, полученное ранее в **Secret Token.** Нажмите **на тестовое соединение,** чтобы обеспечить подключение Azure AD к Insight4GRC. Если соединение не удается, убедитесь, что ваша учетная запись Insight4GRC имеет разрешения admin и повторите попытку.
 
     ![Подготовка](./media/insight4grc-provisioning-tutorial/provisioning.png)
 
-6. В поле **уведомление по электронной почте** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, и установите флажок **Отправить уведомление по электронной почте при возникновении сбоя** .
+6. В поле **"Уведомление email"** введите адрес электронной почты человека или группы, которые должны получать уведомления об ошибке и выберите **уведомление отправить сообщение по электронной почте, когда происходит сбой.**
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Insight4GRC**.
+8. В разделе **Картпинги** выберите **синхронизацию активных пользователей каталога Azure в Insight4GRC.**
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Insight4GRC в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Insight4GRC для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), необходимо убедиться, что API Insight4GRC поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Просмотрите атрибуты пользователя, синхронизированные с Azure AD с Insight4GRC в разделе **Атрибут-Картирование.** Атрибуты, выбранные в качестве свойств **соответствия,** используются для сопоставления учетных записей пользователей в Insight4GRC для операций обновления. Если вы решите изменить [соответствующий целевой атрибут,](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)необходимо убедиться, что API Insight4GRC поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-   |attribute|Тип|
+   |Атрибут|Тип|
    |---|---|
-   |userName|String|
-   |externalId|String|
+   |userName|Строка|
+   |externalId|Строка|
    |active|Логическое|
-   |title|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |emails[type eq "work"].value|String|
-   |phoneNumbers[type eq "work"].value|String|
+   |title|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |emails[type eq "work"].value|Строка|
+   |phoneNumbers[type eq "work"].value|Строка|
 
-10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Insight4GRC**.
+10. В разделе **Картпинги** выберите **синхронизацию групп активных каталогов Azure в Insight4GRC.**
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Insight4GRC в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Insight4GRC для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Просмотрите атрибуты группы, синхронизированные с Azure AD с Insight4GRC в разделе **Атрибут-Картирование.** Атрибуты, выбранные в качестве свойств **соответствия,** используются для соответствия группам в Insight4GRC для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-      |attribute|Тип|
+      |Атрибут|Тип|
       |---|---|
-      |displayName|String|
-      |externalId|String|
+      |displayName|Строка|
+      |externalId|Строка|
       |members|Справочник|
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Чтобы включить службу подготовки Azure AD для Insight4GRC, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+13. Чтобы включить службу предоставления Azure AD для Insight4GRC, измените **статус подготовки** в разделе **«Настройки».** **On**
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-14. Определите пользователей и (или) группы, которые вы хотите подготавливать к Insight4GRC, выбрав нужные значения в **области** в разделе **Параметры** .
+14. Определите пользователей и/или группы, которые вы хотели бы предоставить Insight4GRC, выбрав желаемые значения в **разделе Область** в разделе **Параметры.**
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -139,20 +139,20 @@ ms.locfileid: "77621513"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-Эта операция запускает начальный цикл синхронизации всех пользователей и групп, определенных в **области** в разделе **параметров** . Выполнение начального цикла занимает больше времени, чем последующие циклы, что происходит примерно каждые 40 минут, пока выполняется служба подготовки Azure AD. 
+Эта операция запускает начальный цикл синхронизации всех пользователей и групп, определенных в **разделе Область** в разделе **Настройки.** Первоначальный цикл занимает больше времени, чем последующие циклы, которые происходят примерно каждые 40 минут при запуске службы обеспечения Azure AD. 
 
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания:
 
-* Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) , чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-* Проверьте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user) , чтобы просмотреть состояние цикла подготовки и его завершения.
-* Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о состояниях карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+* Используйте [журналы подготовки,](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) чтобы определить, какие пользователи были подготовлены успешно или безуспешно.
+* Проверьте [панель прогресса,](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user) чтобы увидеть состояние цикла подготовки и насколько он близок к завершению.
+* Если конфигурация подготовки, как представляется, в неработоспособном состоянии, приложение будет идти в карантин. Узнайте больше о карантинных состояниях [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md).
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+* [Управление подготовкой учетной записи пользователя для корпоративных приложений.](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md).
+* [Узнайте, как просматривать журналы и получать отчеты о деятельности по подготовке.](../app-provisioning/check-status-user-account-provisioning.md)

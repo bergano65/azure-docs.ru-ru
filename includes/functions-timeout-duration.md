@@ -9,27 +9,27 @@ ms.date: 02/21/2018
 ms.author: nzthiago
 ms.custom: include file
 ms.openlocfilehash: eca2d3359614875e5bff0c9bb67f006f0a8cdba1
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77198332"
 ---
-## <a name="timeout"></a>Длительность ожидания приложения-функции 
+## <a name="function-app-timeout-duration"></a><a name="timeout"></a>Длительность тайм-аута функционального приложения 
 
-Длительность времени ожидания для приложения-функции определяется свойством `functionTimeout` в файле проекта [Host. JSON](../articles/azure-functions/functions-host-json.md#functiontimeout) . В следующей таблице показаны значения по умолчанию и максимальное значение в минутах для обоих планов и различных версий среды выполнения.
+Продолжительность тайм-аута приложения функции `functionTimeout` определяется свойством в файле проекта [host.json.](../articles/azure-functions/functions-host-json.md#functiontimeout) В следующей таблице показаны значения по умолчанию и максимальные значения в минутах как для планов, так и для различных версий времени выполнения:
 
-| План | Версия среды выполнения | По умолчанию | Максимальное значение |
+| План | Runtime Версия | Значение по умолчанию | Максимальная |
 |------|---------|---------|---------|
 | Потребление | 1.x | 5 | 10 |
 | Потребление | 2.x | 5 | 10 |
 | Потребление | 3.x | 5 | 10 |
-| Расширенный | 1.x | 30 | Без ограничений |
-| Расширенный | 2.x | 30 | Без ограничений |
-| Расширенный | 3.x | 30 | Без ограничений |
-| Служба приложений | 1.x | Без ограничений | Без ограничений |
-| Служба приложений | 2.x | 30 | Без ограничений |
-| Служба приложений | 3.x | 30 | Без ограничений |
+| Premium | 1.x | 30 | Неограниченно |
+| Premium | 2.x | 30 | Неограниченно |
+| Premium | 3.x | 30 | Неограниченно |
+| Служба приложений | 1.x | Неограниченно | Неограниченно |
+| Служба приложений | 2.x | 30 | Неограниченно |
+| Служба приложений | 3.x | 30 | Неограниченно |
 
 > [!NOTE] 
-> Независимо от параметра времени ожидания приложения-функции 230 секунд — это максимальное время, которое функция, активируемая HTTP, может реагировать на запрос. Это связано с тем, что [время ожидания простоя по умолчанию Azure Load Balancer](../articles/app-service/faq-availability-performance-application-issues.md#why-does-my-request-time-out-after-230-seconds). Для более длительной обработки можно использовать [шаблон асинхронного устойчивые функции](../articles/azure-functions/durable/durable-functions-overview.md#async-http) или [отложить фактическую работу и вернуть немедленный ответ](../articles/azure-functions/functions-best-practices.md#avoid-long-running-functions).
+> Независимо от настройки тайм-аута приложения, 230 секунд — это максимальное количество времени, которое функция HTTP-срабатывает, чтобы ответить на запрос. Это связано с выходом на [безделье по умолчанию из Баланса загрузки Azure.](../articles/app-service/faq-availability-performance-application-issues.md#why-does-my-request-time-out-after-230-seconds) Для более длительного времени обработки рассмотрите возможность использования [шаблона асинаторов сроков действия и](../articles/azure-functions/durable/durable-functions-overview.md#async-http) [отложить фактическую работу и немедленно гоним ответ.](../articles/azure-functions/functions-best-practices.md#avoid-long-running-functions)

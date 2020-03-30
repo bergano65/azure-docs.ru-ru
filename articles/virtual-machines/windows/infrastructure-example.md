@@ -1,5 +1,5 @@
 ---
-title: Примеры инфраструктуры Azure
+title: Пример прохождения инфраструктуры Azure
 description: Изучите основные рекомендации по проектированию и реализации, касающиеся развертывания примера инфраструктуры в Azure.
 documentationcenter: ''
 services: virtual-machines-windows
@@ -16,10 +16,10 @@ ms.date: 12/15/2017
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ab6f304d78357e261c68ebbcfcb3746844edce8a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74038563"
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-windows-vms"></a>Пошаговое руководство по примеру инфраструктуры Azure для виртуальных машин Windows
@@ -52,15 +52,15 @@ Adventure Works Cycles хочет создать приложение интер
 Все вышеуказанное соответствует соглашению об именовании.
 
 * В Adventure Works Cycles используется префикс **[рабочая нагрузка ИТ-среды]-[расположение]-[ресурс Azure]** .
-  * Например, **azos** (интернет-магазин Azure) — это имя рабочей нагрузки ИТ, а **use** (восточная часть США 2) — это расположение.
-* Для виртуальных сетей используется формат AZOS-USE-VN **[номер]** .
-* Для групп доступности используется формат azos-use-as- **[роль]** .
-* Для имен виртуальных машин используется формат use azos-use-vm- **[имя_виртуальной_машины]** .
+  * Для этого примера, «**azos»**(Azure Online Store) — название Рабочей нагрузки ИТ, а **«использование»**(East US 2) — это местоположение
+* Для виртуальных сетей используется формат AZOS-USE-VN **[номер]**.
+* Для групп доступности используется формат azos-use-as-**[роль]**.
+* Для имен виртуальных машин используется формат use azos-use-vm-**[имя_виртуальной_машины]**.
 
-## <a name="azure-subscriptions-and-accounts"></a>Подписки на Azure и учетные записи Azure
+## <a name="azure-subscriptions-and-accounts"></a>Подписки и учетные записи Azure
 Компания Adventure Works Cycles использует подписку Enterprise Subscription под названием "Adventure Works Enterprise Subscription" для выставления счетов за эту рабочую нагрузку ИТ-среды.
 
-## <a name="storage"></a>служба хранилища.
+## <a name="storage"></a>Хранилище
 В компании Adventure Works Cycles решили использовать Управляемые диски Azure. При создании виртуальных машин используются оба доступных уровня хранилища:
 
 * **хранилище уровня "Стандартный"** для веб-серверов, серверов приложений, контроллеров домена и их дисков данных;

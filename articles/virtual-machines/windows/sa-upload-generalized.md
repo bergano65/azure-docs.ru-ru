@@ -1,5 +1,5 @@
 ---
-title: Отправка виртуального жесткого диска generalize для создания нескольких виртуальных машин в Azure
+title: Загрузите обобщенный VHD для создания нескольких VMs в Azure
 description: Отправка универсального виртуального жесткого диска в учетную запись хранения Azure для создания виртуальной машины Windows, которая будет использоваться в модели развертывания Azure Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 05/18/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
 ms.openlocfilehash: 933b648f15418c4838d3da1ea8379267765c784b
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74073328"
 ---
 # <a name="upload-a-generalized-vhd-to-azure-to-create-a-new-vm"></a>Отправка универсального виртуального жесткого диска в Azure для создания новой виртуальной машины
@@ -36,13 +36,13 @@ ms.locfileid: "74073328"
 
 Из универсального VHD удалены все данные вашей личной учетной записи с помощью Sysprep. Если вы планируете использовать виртуальный жесткий диск в качестве образа для создания виртуальных машин, то выполните следующие действия:
   
-  * [Подготовьте виртуальный жесткий диск Windows к передаче в Azure](prepare-for-upload-vhd-image.md). 
+  * [Подготовьте Windows VHD для загрузки в Azure.](prepare-for-upload-vhd-image.md) 
   * Подготовка виртуальной машины к использованию с помощью Sysprep
 
 ### <a name="generalize-a-windows-virtual-machine-using-sysprep"></a>Обобщение виртуальной машины Windows с помощью Sysprep
 В этом разделе содержатся сведения о том, как обобщить виртуальную машину Windows для ее дальнейшего использования в качестве образа. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. в статье [Использование программы Sysprep: введение](https://technet.microsoft.com/library/bb457073.aspx).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в статье [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) (Поддержка серверных ролей в Sysprep).
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Для получения дополнительной [информации](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) см.
 
 > [!IMPORTANT]
 > Если вы еще не отправили виртуальный жесткий диск в Azure и собираетесь запустить Sysprep первый раз, прежде чем это делать, [подготовьте виртуальную машину](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -50,12 +50,12 @@ ms.locfileid: "74073328"
 > 
 
 1. Выполните вход на виртуальную машину Windows.
-2. Откройте окно командной строки с правами администратора. Измените каталог на **%windir%\system32\sysprep** и запустите файл `sysprep.exe`.
+2. Откройте окно командной строки с правами администратора. Измените каталог на **%windir%-system32'sysprep**, `sysprep.exe`а затем запустите .
 3. В диалоговом окне **Программа подготовки системы** выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
-4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
+4. В окне **Параметры завершения работы** выберите параметр **Завершение работы**.
 5. Нажмите кнопку **ОК**.
    
-    ![Запустите Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
+    ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. 
 
 > [!IMPORTANT]
@@ -112,7 +112,7 @@ Get-AzStorageAccount
     New-AzResourceGroup -Name myResourceGroup -Location "West US"
     ```
 
-2. С помощью командлета **New-AzStorageAccount** создайте в этой группе ресурсов учетную запись хранения с именем [mystorageaccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount):
+2. С помощью командлета [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount) создайте в этой группе ресурсов учетную запись хранения с именем **mystorageaccount**:
    
     ```powershell
     New-AzStorageAccount -ResourceGroupName myResourceGroup -Name mystorageaccount -Location "West US" `
@@ -161,8 +161,8 @@ $imageURI = "https://mystorageaccount.blob.core.windows.net/mycontainer/myVhd.vh
 ```
 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
-Создайте виртуальную сеть и подсеть [виртуальной сети](../../virtual-network/virtual-networks-overview.md).
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+Создайте vNet и подсеть [виртуальной сети.](../../virtual-network/virtual-networks-overview.md)
 
 1. Создание подсети. В следующем примере создается подсеть с именем **mySubnet** в группе ресурсов **myResourceGroup** с префикс адреса **10.0.0.0/24**.  
    
@@ -171,7 +171,7 @@ $imageURI = "https://mystorageaccount.blob.core.windows.net/mycontainer/myVhd.vh
     $subnetName = "mySubnet"
     $singleSubnet = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix 10.0.0.0/24
     ```
-2. Создание виртуальной сети. В следующем примере создается виртуальная сеть с именем **myVnet** в расположении **Запад США** с префиксом адреса **10.0.0.0/16**.  
+2. Создание виртуальной сети. В следующем примере создается виртуальная сеть с именем **myVnet** в расположении **западная часть США** с префиксом адреса **10.0.0.0/16**.  
    
     ```powershell
     $location = "WestUS"
@@ -289,7 +289,7 @@ $vnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vnetName
     $vmList.Name
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения об управлении созданной виртуальной машиной с помощью Azure PowerShell см. в статье [Управление виртуальными машинами Azure с помощью Azure Resource Manager и PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 

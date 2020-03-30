@@ -1,6 +1,6 @@
 ---
 title: Отправка и получение событий из концентраторов событий Azure с помощью .NET (старый)
-description: В этой статье представлено пошаговое руководство по созданию приложения .NET Core, которое отправляет и получает события в концентраторы событий Azure, используя старый пакет Microsoft. Azure. EventHubs.
+description: В этой статье содержится пошаговый шаг для создания приложения .NET Core, которое отправляет/получает события в/из концентраторов Azure Event с помощью старого пакета Microsoft.Azure.EventHubs.
 services: event-hubs
 documentationcenter: na
 author: spelluru
@@ -14,44 +14,44 @@ ms.workload: na
 ms.date: 02/11/2020
 ms.author: spelluru
 ms.openlocfilehash: 1d399ffec2cd702dcfa39310803bc780b85bfde1
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77187461"
 ---
-# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью .NET Core (Microsoft. Azure. EventHubs)
-В этом кратком руководстве показано, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft. Azure. EventHubs** .NET Core.
+# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий в центры событий Azure или получать их с помощью .NET Core (Microsoft.Azure.EventHubs)
+Этот быстрый запуск показывает, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft.Azure.EventHubs** .NET Core.
 
 > [!WARNING]
-> В этом кратком руководстве используется старый пакет **Microsoft. Azure. EventHubs** . Краткое руководство, в котором используется последняя библиотека **Azure. Messaging. EventHubs** , см. в статье [Отправка и получение событий с помощью библиотеки Azure. Messaging. EventHubs](get-started-dotnet-standard-send-v2.md). Чтобы переместить приложение из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md).
+> Этот быстрый запуск использует старый пакет **Microsoft.Azure.EventHubs.** Для быстрого запуска, использующего последнюю библиотеку **Azure.Messaging.EventHubs,** [см.](get-started-dotnet-standard-send-v2.md) Для перемещения приложения из старой библиотеки в новую можно [просмотреть Руководство по переходу с Microsoft.Azure.EventHubs на Azure.Messaging.EventHubs.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
-Если вы не знакомы с концентраторами событий Azure, ознакомьтесь с [обзором концентраторов событий](event-hubs-about.md) , прежде чем выполнять инструкции из этого руководства. 
+Если вы впервые используете Центры событий Azure, ознакомьтесь с общими сведениями в [этой статье](event-hubs-about.md), прежде чем приступить к работе с этим руководством. 
 
 Для работы с данным руководством необходимо следующее:
 
-- **Подписка Microsoft Azure**. Для использования служб Azure, включая концентраторы событий Azure, требуется подписка.  Если у вас нет существующей учетной записи Azure, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/free/) или воспользоваться преимуществами подписчиков MSDN при [создании учетной записи](https://azure.microsoft.com).
+- **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
 - [Microsoft Visual Studio 2019](https://www.visualstudio.com).
 - [Инструментарий Visual Studio 2015 или Visual Studio 2017 для .NET Core](https://www.microsoft.com/net/core). 
-- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите **строку подключения для пространства имен концентратора событий** , следуя инструкциям из статьи: [Получение строки подключения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения используется далее в этом кратком руководстве.
+- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен кцентров событий типа и получения учетных данных управления, необходимых вашему приложению для связи с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите **строку соединения для пространства имен концентратора событий,** следуя инструкциям из статьи: [Получить строку соединения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий 
-В этом разделе показано, как создать консольное приложение .NET Core для отправки событий в концентратор событий. 
+В этом разделе показано, как создать консольное приложение .NET Core, которое отправляет события в концентратор событий. 
 
 > [!NOTE]
-> Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Кроме того, можно выполнить действия, описанные в этом кратком руководстве, чтобы создать собственный.
+> Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого краткого руководства, чтобы создать собственное решение.
 
 
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
-Запустите среду Visual Studio. В меню **Файл** выберите команду **Создать**, а затем — **Проект**. Создайте консольное приложение .NET Core.
+Запустите среду Visual Studio. Из меню **файла,** нажмите **Новый**, а затем нажмите **проекта**. Создайте консольное приложение .NET Core.
 
 ![Новый проект](./media/event-hubs-dotnet-standard-getstarted-send/netcoresnd.png)
 
 ### <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для Центров событий
 
-Добавьте пакет NuGet библиотеки .NET Core [`Microsoft.Azure.EventHubs`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) в проект, сделав следующее: 
+Добавьте [`Microsoft.Azure.EventHubs`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) пакет NuGet Core .NET, выполняя следующие действия: 
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
 2. Откройте вкладку **Обзор**, а затем выполните поиск по фразе Microsoft.Azure.EventHubs и выберите пакет **Microsoft.Azure.EventHubs**. Щелкните **Установить** , чтобы выполнить установку, а затем закройте это диалоговое окно.
@@ -199,15 +199,15 @@ ms.locfileid: "77187461"
 6. Запустите программу и убедитесь в отсутствии ошибок.
 
 ## <a name="receive-events"></a>Получение событий
-В этом разделе показано, как создать консольное приложение .NET Core, которое получает сообщения из концентратора событий с помощью [узла обработчика событий](event-hubs-event-processor-host.md). [Узел обработчика событий](event-hubs-event-processor-host.md) представляет собой класс .NET, который упрощает прием событий из концентраторов событий путем управления постоянными контрольными точками и одновременно принимает сообщения от этих концентраторов событий. С помощью класса EventProcessorHost можно разделить события между несколькими получателями даже в том случае, если они размещены в разных узлах. В этом примере показано, как использовать EventProcessorHost для одного получателя.
+В этом разделе показано, как написать консоль .NET Core, которое получает сообщения из концентратора событий с помощью [хоста процессора событий.](event-hubs-event-processor-host.md) [EventProcessorHost](event-hubs-event-processor-host.md) представляет собой класс .NET, который упрощает прием событий от концентраторов событий путем управления постоянными контрольными точками и одновременно принимает сообщения от этих концентраторов событий в параллельном режиме. С помощью класса EventProcessorHost можно разделить события между несколькими получателями даже в том случае, если они размещены в разных узлах. В этом примере показано, как использовать EventProcessorHost для одного получателя.
 > [!NOTE]
-> Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver), заменить строки `EventHubConnectionString`, а также `EventHubName`, `StorageAccountName`, `StorageAccountKey` и `StorageContainerName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
+> Вы можете скачать этот quickstart в качестве образца `StorageAccountName` `StorageAccountKey`из `StorageContainerName` [GitHub,](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver)заменить `EventHubConnectionString` и `EventHubName`, , и строки с значениями концентратора событий, и запустить его. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
 [!INCLUDE [event-hubs-create-storage](../../includes/event-hubs-create-storage.md)]
 
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
-Запустите среду Visual Studio. В меню **Файл** выберите команду **Создать**, а затем — **Проект**. Создайте консольное приложение .NET Core.
+Запустите среду Visual Studio. Из меню **файла,** нажмите **Новый**, а затем нажмите **проекта**. Создайте консольное приложение .NET Core.
 
 ![Новый проект](./media/event-hubs-dotnet-standard-getstarted-receive-eph/netcorercv.png)
 
@@ -368,14 +368,14 @@ ms.locfileid: "77187461"
 4. Запустите программу и убедитесь в отсутствии ошибок.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями:
 
-- [Примеры управления доступом на основе ролей (RBAC)](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
+- [Образцы управления доступом на основе ролей (RBAC).](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac) 
     
-    В этих примерах используется старая библиотека **Microsoft. Azure. EventHubs** , но вы можете легко обновить ее, используя последнюю библиотеку **Azure. Messaging. EventHubs** . Чтобы переместить пример из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md).)
+    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно см. руководство [по переходу с Microsoft.Azure.EventHubs на Azure.Messaging.EventHubs.)](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md)
 - [EventProcessorHost](event-hubs-event-processor-host.md)
-- [Функции и терминология в Центрах событий Azure](event-hubs-features.md)
-- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+- [Особенности и терминология в концентрах событий Azure](event-hubs-features.md)
+- [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
 
 

@@ -1,6 +1,6 @@
 ---
-title: Вопросы и ответы по технологиям с открытым кодом
-description: Получите ответы на часто задаваемые вопросы о технологиях с открытым кодом в службе приложений Azure.
+title: Часто задаваемые вопросы с открытым исходным кодом
+description: Получите ответы на часто задаваемые вопросы о технологиях с открытым исходным кодом в Службе приложений Azure.
 author: genlin
 manager: dcscontentpm
 tags: top-support-issue
@@ -10,10 +10,10 @@ ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
 ms.openlocfilehash: 33590f9fc7e6c4d46123cbc7088086a3197d52ae
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74672427"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
@@ -27,14 +27,14 @@ ms.locfileid: "74672427"
 Чтобы включить ведение журнала PHP, сделайте следующее:
 
 1. Перейдите на [веб-сайт Kudu](https://*yourwebsitename*.scm.azurewebsites.net).
-2. В верхнем меню выберите **Консоль отладки** > **CMD**.
+2. В верхнем меню выберите **Debug Console** > **CMD.**
 3. Выберите папку **Site**.
 4. Выберите папку **wwwroot**.
-5. Щелкните значок **+** , а затем выберите **Создать файл**.
+5. Выберите **+** значок, а затем выберите **новый файл.**
 6. Задайте файлу имя **.user.ini**.
 7. Щелкните значок карандаша рядом с файлом **.user.ini**.
 8. Добавьте в файл следующий код: `log_errors=on`.
-9. Щелкните **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 10. Щелкните значок карандаша рядом с файлом **wp-config.php**.
 11. Вместо текста в файле добавьте следующий код:
     ```php
@@ -138,7 +138,7 @@ The web application[ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but
 
 1. Удалите файл sqljdbc*.jar из папки app/lib.
 2. При использовании пользовательского веб-сервера Tomcat или веб-сервера Tomcat из Microsoft Azure Marketplace скопируйте этот JAR-файл в папку lib.
-3. При включении Java на портале Azure (выберите **Java 1.8** > **Tomcat server** (Сервер Tomcat)) скопируйте файл sqljdbc.* jar в папку, связанную с приложением. Затем добавьте в файл web.config следующий параметр classpath:
+3. Если вы используете Java с портала Azure (выберите сервер **Java 1.8** > **Tomcat),** скопируйте файл банка sqljdbc.' в папке, параллели с вашим приложением. Затем добавьте в файл web.config следующий параметр classpath:
 
     ```xml
     <httpPlatform>
@@ -171,7 +171,7 @@ The process cannot access the file because it is being used by another process.
 
 Файл журнала для развертываний Microsoft Azure Marketplace и пользовательских развертываний расположен в папке D:\home\site\wwwroot\bin\jetty-distribution-9.1.2.v20140210\logs. Обратите внимание, что расположение папки зависит от используемой версии Jetty. Например, приведенный выше путь предназначен для Jetty версии 9.1.2. Найдите файл jetty_*ГГГГ_ММ_ДД*.stderrout.log.
 
-Файл журнала для развертываний из меню "Параметры приложения" портала находится в папке D:\home\LogFiles. Найдите файл jetty_*ГГГГ_ММ_ДД*.stderrout.log.
+Файл журнала для развертываний из меню "Параметры приложения" портала находится в папке D:\home\LogFiles. Ищите jetty_*YYYY_MM_DD*.stderrout.log
 
 ## <a name="can-i-send-email-from-my-azure-web-app"></a>Можно ли отправлять электронные сообщения из веб-приложения Azure?
 

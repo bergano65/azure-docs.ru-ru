@@ -1,6 +1,6 @@
 ---
-title: Вопросы и ответы по центру безопасности Azure — вопросы о разрешениях
-description: В этой статье содержатся ответы на вопросы о разрешениях в центре безопасности Azure — продукте, который помогает предотвращать, обнаруживать угрозы и реагировать на них.
+title: Часто задаваемые вопросы Центра безопасности Azure — вопросы о разрешениях
+description: В этом часто задаваемые вопросы отвечают вопросы о разрешениях в Azure Security Center, который помогает предотвращать, обнаруживать и реагировать на угрозы.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -14,15 +14,15 @@ ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
 ms.openlocfilehash: 66a260fbb03f770ee98ec29a5f5e15e3d7dd1310
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77599396"
 ---
 # <a name="permissions"></a>Разрешения
 
-## <a name="how-do-permissions-work-in-azure-security-center"></a>Как работают разрешения в центре безопасности Azure?
+## <a name="how-do-permissions-work-in-azure-security-center"></a>Как работают разрешения в Центре безопасности Azure?
 
 Центр безопасности Azure использует [управление доступом на основе ролей (RBAC)](../role-based-access-control/role-assignments-portal.md), в котором предусмотрены [встроенные роли](../role-based-access-control/built-in-roles.md). Эти роли можно назначать пользователям, группам и службам.
 

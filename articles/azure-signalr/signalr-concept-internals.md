@@ -1,16 +1,16 @@
 ---
 title: Внутренние компоненты службы Azure SignalR
-description: Сведения о внутренних компонентах службы Azure SignalR, архитектуре, подключениях и способах передачи данных.
+description: Узнайте о внутренних службах Azure SignalR, архитектуре, соединениях и способе передачи данных.
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: 62afa5ee6993aa1bb3c7b5926e5320ab1fa510a2
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74157593"
 ---
 # <a name="azure-signalr-service-internals"></a>Внутренние компоненты службы Azure SignalR
@@ -25,7 +25,7 @@ ms.locfileid: "74157593"
 
 Кроме того, рассматриваются отличия от локального приложения ASP.NET Core SignalR.
 
-![Архитектура](./media/signalr-concept-internals/arch.png)
+![Architecture](./media/signalr-concept-internals/arch.png)
 
 ## <a name="server-connections"></a>Подключения к серверу
 

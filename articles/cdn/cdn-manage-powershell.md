@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 11/20/2019
 ms.author: magattus
 ms.openlocfilehash: 476779eff41cb9ce1c0a9c79430813ce9a39e91f
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74286665"
 ---
 # <a name="manage-azure-cdn-with-powershell"></a>Управление Azure CDN с помощью PowerShell
 PowerShell — это одно из самых гибких средств управления профилями и конечными точками Azure CDN.  PowerShell можно использовать интерактивно или подготовить скрипты для автоматизации задач управления.  В этом руководстве описано несколько распространенных задач по управлению профилями и конечными точками Azure CDN, которые можно выполнять с помощью PowerShell.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -250,8 +250,8 @@ Get-AzCdnProfile | Get-AzCdnEndpoint | Stop-AzCdnEndpoint
 Get-AzCdnProfile | Get-AzCdnEndpoint | Start-AzCdnEndpoint
 ```
 
-## <a name="creating-standard-rules-engine-policy-and-applying-to-an-existing-cdn-endpoint"></a>Создание политики обработчика стандартных правил и применение ее к существующей конечной точке CDN
-`New-AzCdnDeliveryRule`, `New=AzCdnDeliveryRuleCondition`и `New-AzCdnDeliveryRuleAction` можно использовать для настройки обработчика стандартных правил Azure CDN для Azure CDN из профилей Майкрософт. 
+## <a name="creating-standard-rules-engine-policy-and-applying-to-an-existing-cdn-endpoint"></a>Создание политики двигателя стандартных правил и применение к существующей конечной точке CDN
+`New-AzCdnDeliveryRule`, `New=AzCdnDeliveryRuleCondition`и `New-AzCdnDeliveryRuleAction` может быть использован для настройки azure CDN Стандартные правила двигателя на Azure CDN из профилей Microsoft. 
 
 ```powershell
 # Create a new http to https redirect rule
@@ -287,7 +287,7 @@ Get-AzCdnProfile -ProfileName CdnPoshDemo -ResourceGroupName CdnDemoRG | Get-AzC
 Remove-AzCdnProfile -ProfileName CdnPoshDemo -ResourceGroupName CdnDemoRG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 Узнайте об автоматизации Azure CDN с помощью [.NET](cdn-app-dev-net.md) или [Node.js](cdn-app-dev-node.md).
 
 Сведения о функциях CDN см. в статье [Общие сведения о сети доставки содержимого (CDN) Azure](cdn-overview.md).

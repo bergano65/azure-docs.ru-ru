@@ -1,6 +1,6 @@
 ---
-title: Развертывание модулей из Visual Studio Code Azure IoT Edge
-description: Используйте Visual Studio Code с помощью средств Azure IoT, чтобы отправить модуль IoT Edge из центра Интернета вещей на устройство IoT Edge, настроенное манифестом развертывания.
+title: Развертывание модулей из Visual Studio Code - Azure IoT Edge
+description: Используйте Visual Studio Code с инструментами Azure IoT, чтобы подтолкнуть модуль IoT Edge от концентратора IoT на устройство IoT Edge, настроенный манифестом развертывания.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -10,24 +10,24 @@ ms.reviewer: ''
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: e1b2e2a80670cf0409f8f8477563b9a209cc8706
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77209211"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-visual-studio-code"></a>Развертывание модулей Azure IoT Edge из Visual Studio Code
 
 Создав модули IoT Edge с в соответствии с определенной бизнес-логикой, вы наверняка захотите развернуть их на устройствах, которые будут работать в граничной среде. Если у вас есть несколько модулей, которые работают вместе для сбора и обработки данных, вы можете развернуть их одновременно и объявить правила маршрутизации, которые их соединяют.
 
-В этой статье показано, как создать манифест развертывания JSON и применить этот файл для отправки этого развертывания на устройство IoT Edge. Сведения о создании развертывания, предназначенного для нескольких устройств на основе их общих тегов, см. [в разделе Deploy IOT Edge modules in Scale by using Visual Studio Code](how-to-deploy-monitor-vscode.md).
+В этой статье показано, как создать манифест развертывания JSON и применить этот файл для отправки этого развертывания на устройство IoT Edge. Для получения информации о создании развертывания, ориентированного на несколько устройств на основе общих тегов, [см. Модули Deploy IoT Edge в масштабе с помощью Visual Studio Code.](how-to-deploy-monitor-vscode.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
+* [Концентратор IoT](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
 * [Устройство IoT Edge](how-to-register-device.md#register-with-visual-studio-code) с установленной средой выполнения IoT Edge.
-* [Visual Studio Code](https://code.visualstudio.com/).
-* [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools#overview) для Visual Studio Code.
+* [Визуальный код студии](https://code.visualstudio.com/).
+* [Инструменты Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools#overview) для визуального кода студии.
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
 
@@ -107,11 +107,11 @@ ms.locfileid: "77209211"
 
 1. Откройте в Visual Studio Code представление **Explorer**.
 
-1. В нижней части обозревателя разверните раздел **центр Интернета вещей Azure** .
+1. В нижней части Explorer расширьте раздел **Azure IoT Hub.**
 
-   ![Развертывание раздела центра Интернета вещей Azure](./media/how-to-deploy-modules-vscode/azure-iot-hub-devices.png)
+   ![Расширить раздел Azure IoT концентратор](./media/how-to-deploy-modules-vscode/azure-iot-hub-devices.png)
 
-1. Щелкните.. **.** в заголовке раздела центра **Интернета вещей Azure** . Если значок многоточия не отображается, наведите курсор на заголовок.
+1. Нажмите на **раздел** **Azure IoT Hub.** Если значок многоточия не отображается, наведите курсор на заголовок.
 
 1. Щелкните **Выбрать Центр Интернета вещей**.
 
@@ -125,7 +125,7 @@ ms.locfileid: "77209211"
 
 Для развертывания модулей на устройстве следует применить манифест развертывания, в который были заранее внесены сведения о модулях.
 
-1. В представлении обозревателя Visual Studio Code разверните раздел **центр Интернета вещей Azure** , а затем узел **устройства** .
+1. В представлении Visual Studio Code explorer расширьте раздел **Azure IoT Hub,** а затем расширьте узел **устройств.**
 
 1. Щелкните правой кнопкой мыши на устройстве IoT Edge, которое необходимо настроить с помощью манифеста развертывания.
 
@@ -142,12 +142,12 @@ ms.locfileid: "77209211"
 
 ## <a name="view-modules-on-your-device"></a>Просмотр модулей, установленных на устройстве
 
-После развертывания модулей на устройстве вы можете просмотреть их все в разделе **центра Интернета вещей Azure** . Выберите стрелку рядом с устройством IoT Edge, чтобы развернуть его. Отобразятся все модули, которые выполняются в настоящий момент.
+После развертывания модулей на устройство можно просмотреть все их в разделе **Azure IoT Hub.** Выберите стрелку рядом с устройством IoT Edge, чтобы развернуть его. Отобразятся все модули, которые выполняются в настоящий момент.
 
 Если вы недавно развернули новые модули на устройстве, наведите указатель мыши на заголовок раздела **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure) и выберите значок обновления, чтобы обновить представление.
 
 Щелкните правой кнопкой мыши на название модуля, чтобы его просмотреть и отредактировать.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как [развертывать и отслеживать модули IOT EDGE в масштабе с помощью Visual Studio Code](how-to-deploy-monitor.md)
+Узнайте, как [развертывать и контролировать модули IoT Edge в масштабе с помощью Visual Studio Code](how-to-deploy-monitor.md)

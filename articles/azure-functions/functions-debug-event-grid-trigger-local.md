@@ -6,17 +6,17 @@ ms.topic: reference
 ms.date: 10/18/2018
 ms.author: cshoe
 ms.openlocfilehash: 97509001aa66c2c1bf0c91b6b2a5ab25f9d6ec88
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74227067"
 ---
 # <a name="azure-function-event-grid-trigger-local-debugging"></a>Локальная отладка триггера Сетки событий для функций Azure
 
 В этой статье показано, как отладить локальную функцию, которая обрабатывает событие в Сетке событий Azure, вызванное учетной записью хранения. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Создайте новое приложение-функцию или используйте существующее.
 - Создайте новую учетную запись хранения или используйте существующую.
@@ -81,7 +81,7 @@ ngrok http -host-header=localhost 7071
 > [!IMPORTANT]
 > Каждый раз при запуске *ngrok* создается URL-адрес HTTPS и изменяется значение. Поэтому требуется создавать новую подписку на события каждый раз, когда функция взаимодействует с Azure посредством *ngrok*.
 
-## <a name="upload-a-file"></a>отправить файл;
+## <a name="upload-a-file"></a>Отправка файла
 
 Теперь можно отправить файл в учетную запись хранения, чтобы активировать событие в Сетке событий. Это событие будет обработано локальной функцией. 
 
@@ -105,7 +105,7 @@ ngrok http -host-header=localhost 7071
 
 Чтобы очистить ресурсы, созданные при изучении этой статьи, удалите контейнер с именем **test** из своей учетной записи хранения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Автоматическое изменение размера переданных изображений с помощью сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md)
+- [Автоматизация повторного размера загруженных изображений с помощью Event Grid](../event-grid/resize-images-on-storage-blob-upload-event.md)
 - [Триггер службы "Сетка событий" для Функций Azure](./functions-bindings-event-grid.md)

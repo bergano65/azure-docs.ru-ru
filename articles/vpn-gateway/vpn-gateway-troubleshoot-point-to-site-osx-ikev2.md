@@ -1,5 +1,5 @@
 ---
-title: 'VPN-шлюз Azure: Устранение неполадок подключений типа "точка — сеть": клиенты Mac OS X'
+title: 'Azure VPN Gateway: Соединения с точки зрения схватки: клиенты Mac OS X'
 description: Инструкции по устранению неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 services: vpn-gateway
 author: anzaman
@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 03/27/2018
 ms.author: alzam
 ms.openlocfilehash: f88053c93884e10e46a0f7d70106bda67b057562
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77425733"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
@@ -25,7 +25,7 @@ ms.locfileid: "77425733"
 * версия ОС (10.11 или более поздняя).
 
 
-## <a name="VPNClient"></a> Устранение неполадок с аутентификацией на основе сертификата
+## <a name="troubleshoot-certificate-based-authentication"></a><a name="VPNClient"></a> Устранение неполадок с аутентификацией на основе сертификата
 1. Проверьте параметры VPN-клиента. Откройте **Network Setting** (Настройки сети), нажав клавиши Command+Shift, а затем введите VPN, чтобы перейти к параметрам VPN-клиента. В открывшемся списке щелкните VPN-запись, которую нужно проверить.
 
    ![Аутентификация на основе сертификата IKEv2](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2cert1.jpg)
@@ -38,7 +38,7 @@ ms.locfileid: "77425733"
 6. Убедитесь, что в раскрывающемся списке выбран вариант **Сертификат**.
 7. Щелкните **Выбрать** и убедитесь, что выбран правильный сертификат. Щелкните **OK**, чтобы сохранить изменения.
 
-## <a name="ikev2"></a> Устранение неполадок с аутентификацией на основе имени пользователя и пароля
+## <a name="troubleshoot-username-and-password-authentication"></a><a name="ikev2"></a> Устранение неполадок с аутентификацией на основе имени пользователя и пароля
 
 1. Проверьте параметры VPN-клиента. Откройте **Network Setting** (Настройки сети), нажав клавиши Command+Shift, а затем введите VPN, чтобы перейти к параметрам VPN-клиента. В открывшемся списке щелкните VPN-запись, которую нужно проверить.
 
@@ -51,7 +51,7 @@ ms.locfileid: "77425733"
    ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.png)
 6. Убедитесь, что введены правильные учетные данные.
 
-## <a name="additional"></a>Дополнительные действия
+## <a name="additional-steps"></a><a name="additional"></a>Дополнительные действия
 
 Если при выполнении описанных выше шагов не возникли ошибки в конфигурации, скачайте средство [Wireshark](https://www.wireshark.org/#download) и выполните захват пакетов.
 
@@ -60,7 +60,7 @@ ms.locfileid: "77425733"
 
    ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
   
-3. Если в трассировке сети нет ответа сервера, проверьте, включен ли протокол IKEv2 на странице конфигурации шлюза Azure на веб-сайте портал Azure.
+3. Если на трассировках сети нет ответа сервера, убедитесь, что на странице конфигурации Azure Gateway на веб-сайте портала Azure включен протокол IKEv2.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Если потребуется дополнительная поддержка, обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

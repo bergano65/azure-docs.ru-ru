@@ -1,6 +1,6 @@
 ---
 title: Поддержка добавления виртуальных машин Azure в существующую группу доступности | Документы Майкрософт
-description: Эта статья содержит матрицу поддержки, в которой можно смешивать серии виртуальных машин в одной группе доступности.
+description: Эта статья предоставляет матрицу поддержки, о которой серии VM можно смешивать в том же наборе доступности
 documentationcenter: ''
 author: Deland-Han
 manager: dcscontentpm
@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.openlocfilehash: a9ca8f219bef787de04b51600209bfd3a24dd166
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77122926"
 ---
 # <a name="supportability-of-adding-azure-vms-to-an-existing-availability-set"></a>Поддержка добавления виртуальных машин Azure в существующую группу доступности
@@ -32,4 +32,4 @@ ms.locfileid: "77122926"
 
 Все остальные серии не могут находиться в одной и той же группе доступности, так как для них требуется определенное оборудование.
 
-Размер виртуальной машины A8/A9 не может быть смешан из-за необходимости в выделенной внутренней сети RDMA.
+Размер A8/A9 VM не может быть смешан из-за требования к выделенной сети бэкэнда RDMA.

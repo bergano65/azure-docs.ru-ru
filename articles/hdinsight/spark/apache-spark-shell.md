@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/10/2020
 ms.openlocfilehash: f8737f645df2aefbf9ce544199f0cc45ce6a3d60
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77162809"
 ---
 # <a name="run-apache-spark-from-the-spark-shell"></a>Запуск Apache Spark из оболочки Spark
@@ -21,13 +21,13 @@ ms.locfileid: "77162809"
 
 ## <a name="run-an-apache-spark-shell"></a>Запуск оболочки Apache Spark
 
-1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
+1. Используйте [команду ssh](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Отоверьте приведенную ниже команду, заменив CLUSTERNAME на имя кластера, а затем введите команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
-1. Spark предоставляет оболочки для Scala (Spark-Shell) и Python (pyspark). В сеансе SSH введите *одну* из следующих команд:
+1. Spark предоставляет оболочки для Scala (искра-оболочки), и Python (pyspark). В сеансе SSH введите *одну из* следующих команд:
 
     ```bash
     spark-shell
@@ -43,9 +43,9 @@ ms.locfileid: "77162809"
     # pyspark --num-executors 4 --executor-memory 4g --executor-cores 2 --driver-memory 8g --driver-cores 4
     ```
 
-    Если вы планируете использовать любую необязательную конфигурацию, убедитесь, что вы сначала просматриваете [исключение OutOfMemoryError для Apache Spark](./apache-spark-troubleshoot-outofmemory.md).
+    Если вы собираетесь использовать любую дополнительную конфигурацию, убедитесь, что сначала просмотрите [исключение OutOfMemoryError для Apache Spark.](./apache-spark-troubleshoot-outofmemory.md)
 
-1. Несколько простых команд. Выберите соответствующий язык:
+1. Несколько основных команд примера. Выберите соответствующий язык:
 
     ```spark-shell
     val textFile = spark.read.textFile("/example/data/fruits.txt")
@@ -59,13 +59,13 @@ ms.locfileid: "77162809"
     textFile.filter(textFile.value.contains("apple")).show()
     ```
 
-1. Запросите CSV-файл. Обратите внимание, что язык, указанный ниже, подходит для `spark-shell` и `pyspark`.
+1. Запрос файла CSV. Обратите внимание на `spark-shell` язык `pyspark`ниже работает для и .
 
     ```scala
     spark.read.csv("/HdiSamples/HdiSamples/SensorSampleData/building/building.csv").show()
     ```
 
-1. Запросите CSV-файл и сохраните результаты в переменной:
+1. Запрос CSV файла и хранения результатов в переменной:
 
     ```spark-shell
     var data = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/HdiSamples/HdiSamples/SensorSampleData/building/building.csv")
@@ -75,7 +75,7 @@ ms.locfileid: "77162809"
     data = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/HdiSamples/HdiSamples/SensorSampleData/building/building.csv")
     ```
 
-1. Отобразить результаты:
+1. Результаты отображения:
 
     ```spark-shell
     data.show()
@@ -105,9 +105,9 @@ ms.locfileid: "77162809"
 
 ## <a name="important-shell-parameters"></a>Важные параметры оболочки
 
-Команда оболочки Spark (`spark-shell`или `pyspark`) поддерживает множество параметров командной строки. Чтобы просмотреть полный список параметров, запустите оболочку Spark с параметром `--help`. Некоторые из этих параметров могут применяться только к `spark-submit`, для которых оболочка Spark заносится в оболочку.
+Команда Spark Shell`spark-shell`(или `pyspark`) поддерживает многие параметры командной строки. Чтобы просмотреть полный список параметров, запустите оболочку Spark с параметром `--help`. Некоторые из этих параметров `spark-submit`могут применяться только к , которые Spark Shell обертывает.
 
-| Параметр | description | пример |
+| switch | description | пример |
 | --- | --- | --- |
 | --master MASTER_URL | Позволяет задать основной URL-адрес. В HDInsight всегда используется значение `yarn`. | `--master yarn`|
 | --jars JAR_LIST | Список разделенных запятыми локальных JAR-файлов, которые добавляются в пути к классам драйвера и исполнителя. В HDInsight этот список состоит из путей к файловой системе по умолчанию в службе хранилища Azure или в Data Lake Storage. | `--jars /path/to/examples.jar` |
