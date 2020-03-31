@@ -12,10 +12,10 @@ ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
 ms.openlocfilehash: fabdd221ef99414eae0156babbd76dedb1f0745d
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72243024"
 ---
 # <a name="project-acoustics-unity-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unity
@@ -94,7 +94,7 @@ Project Acoustics выполняет вычисления в области мо
 
 * Увеличьте время затухания во всем пространстве, перемещая ползунок **Decay Time Scale** (Шкала времени затухания). Если результат моделирования для пары расположения источника и слушателя имеет время затухания в 2,5 с, а для параметра **Decay Time Scale** (Шкала времени затухания) задано значение 1.5, время затухания, применяемое к источнику, составляет 3 с.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Более подробные сведения см. в [учебнике по проектированию в Project Acoustics с Unity](unity-workflow.md).
 * Продолжите изучение [принципов процесса проектирования](design-process.md).
 * [Создайте учетную запись Azure](create-azure-account.md), чтобы ознакомиться с процессами предварительного и фактического моделирования.

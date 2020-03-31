@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 09/13/2019
 ms.author: erhopf
 ms.openlocfilehash: 0bcdd315fe11b7472166a5a9ad4f7395e22d2126
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72675628"
 ---
 Чтобы создать проект Visual Studio для кросс-платформенной разработки .NET для мобильных приложений с помощью Xamarin, вам потребуется:
@@ -56,7 +56,7 @@ ms.locfileid: "72675628"
 
 1. В разделе **Платформа** установите флажки **Android**, **iOS** и **Windows (UWP)** .
 
-1. Нажмите кнопку **ОК**. Вы возвращаетесь в интегрированную среду разработки Visual Studio. Проект создан и отображается в области **Обозреватель решений**.
+1. Щелкните **ОК**. Вы возвращаетесь в интегрированную среду разработки Visual Studio. Проект создан и отображается в области **Обозреватель решений**.
 
    ![Проект helloworld Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-xamarin-helloworld.png)
 
@@ -68,7 +68,7 @@ ms.locfileid: "72675628"
 
 1. Щелкните правой кнопкой мыши файл решения в **обозревателе решений**. Выберите **Manage NuGet Packages for Solution** (Управление пакетами NuGet для решения), чтобы открыть окно **NuGet — Solution** (NuGet — решение).
 
-1. Щелкните **Обзор**.
+1. Нажмите кнопку **Обзор**.
 
    ![Снимок экрана диалогового окна "Управление пакетами для решения"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-nuget-solution-browse.png)
 
@@ -83,7 +83,7 @@ ms.locfileid: "72675628"
 
 1. В области состояния пакета рядом с результатами поиска выберите все проекты: **helloworld**, **helloworld.Android**, **helloworld.iOS** и **helloworld.UWP**.
 
-1. Щелкните **Установить**.
+1. Выберите пункт **Установить**.
 
 1. В диалоговом окне **Просмотр изменений** нажмите **ОК**.
 

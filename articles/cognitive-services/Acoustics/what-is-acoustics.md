@@ -12,10 +12,10 @@ ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
 ms.openlocfilehash: 65678f08399f378b8580eed79e49197dd4d84c64
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71351150"
 ---
 # <a name="what-is-project-acoustics"></a>Что такое Project Acoustics?
@@ -63,7 +63,7 @@ Project Acoustics — это подсистема волновой акусти
 ## <a name="contact-us"></a>Свяжитесь с нами
 * [Обсуждение Project Acoustics и отчеты по проблемам](https://github.com/microsoft/ProjectAcoustics/issues)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь с [кратким руководством по Project Acoustics для Unity](unity-quickstart.md) или [Unreal](unreal-quickstart.md)
 * Изучите [философию проектирования звука Project Acoustics](design-process.md)
 

@@ -11,14 +11,14 @@ metadata:
   manager: nitinme
   ms.service: speech-service
   ms.topic: hub-page
-  ms.date: 03/04/2020
+  ms.date: 03/24/2020
   ms.author: dapine
-  ms.openlocfilehash: 0071d4da31e4739ccf53e9570bc7d0ed61c01bc4
-  ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+  ms.openlocfilehash: f047af5d14ed6b18c559f814b35d730ba7ce0f6a
+  ms.sourcegitcommit: 940e16ff194d5163f277f98d038833b1055a1a3e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/09/2020
-  ms.locfileid: "78943317"
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "80244330"
 highlightedContent:
   items:
   - title: Что собой представляет служба "Речь"
@@ -37,15 +37,15 @@ conceptualContent:
   items:
   - title: Преобразование речи в текст
     links:
+    - itemType: how-to-guide
+      text: Основы распознавания речи
+      url: speech-to-text-basics.md
     - itemType: quickstart
       text: Распознавание речи с микрофона
       url: quickstarts/speech-to-text-from-microphone.md
     - itemType: quickstart
-      text: Распознавание речи в пакетном режиме
-      url: batch-transcription.md
-    - itemType: how-to-guide
-      text: Настройка распознавания речи для приложений
-      url: how-to-custom-speech.md
+      text: Распознавание речи из звукового файла
+      url: quickstarts/speech-to-text-from-file.md
     footerLink:
       text: Подробнее
       url: index-speech-to-text.yml
@@ -94,10 +94,10 @@ conceptualContent:
   - title: Сценарии бесед
     links:
     - itemType: overview
-      text: Транскрибирование бесед
+      text: Сведения о транскрибировании бесед (собрания)
       url: conversation-transcription.md
     - itemType: overview
-      text: Ведение беседы с использованием нескольких устройств
+      text: Сведения о ведении беседы с использованием нескольких устройств (собрания)
       url: multi-device-conversation.md
     - itemType: how-to-guide
       text: Транскрибирование звонков в колл-центр
@@ -152,9 +152,6 @@ conceptualContent:
     - itemType: how-to-guide
       text: Миграция из API "Распознавание речи Bing"
       url: how-to-migrate-from-bing-speech.md
-    - itemType: how-to-guide
-      text: Миграция из службы "Пользовательское распознавание речи"
-      url: how-to-migrate-from-custom-speech-service.md
     - itemType: how-to-guide
       text: Миграция из API "Перевод речи"
       url: how-to-migrate-from-translator-speech-api.md
