@@ -19,10 +19,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: c938b6174226ef9ea1104c5e95968d6122e922cf
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72386324"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
@@ -76,14 +76,14 @@ ms.locfileid: "72386324"
 
 Теперь центр уведомлений настроен для работы с GCM, а у вас есть строки подключения, с помощью которых вы можете зарегистрировать приложение для получения и отправки push-уведомлений.
 
-## <a id="connecting-app"></a>Подключение приложения к центру уведомлений
+## <a name="connect-your-app-to-the-notification-hub"></a><a id="connecting-app"></a>Подключение приложения к центру уведомлений
 
 ### <a name="create-a-new-android-project"></a>Создание нового проекта Android
 
 1. В Android Studio создайте новый проект Android Studio.
 
    ![Android Studio — новый проект][13]
-2. Выберите форм-фактор **Phone and Tablet** (Телефон и планшет) и минимальную версию пакета SDK (с помощью параметра **Minimum SDK**), которые нужно поддерживать. Нажмите кнопку **Далее**.
+2. Выберите форм-фактор **Phone and Tablet** (Телефон и планшет) и минимальную версию пакета SDK (с помощью параметра **Minimum SDK**), которые нужно поддерживать. Затем нажмите кнопку **Далее**.
 
    ![Android Studio — рабочий процесс создания проекта][14]
 3. Выберите для основного действия значение **Empty Activity** (Пустое действие), нажмите кнопку **Next** (Далее), а затем — **Finish** (Готово).
@@ -167,8 +167,8 @@ ms.locfileid: "72386324"
     Обновите три заполнителя в следующем коде для класса `NotificationSettings`:
 
    * `SenderId`: номер проекта, полученный ранее в [консоли Google Cloud](https://cloud.google.com/console).
-   * `HubListenConnectionString`: укажите для центра строку подключения `DefaultListenAccessSignature`. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [портале Azure].
-   * `HubName`: используйте имя центра уведомлений, которое отображается на [портале Azure] на странице центра.
+   * `HubListenConnectionString`: укажите для центра строку подключения `DefaultListenAccessSignature`. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [Портал Azure].
+   * `HubName`: используйте имя центра уведомлений, которое отображается на [Портал Azure] на странице центра.
 
      `NotificationSettings` :
 
@@ -468,7 +468,7 @@ ms.locfileid: "72386324"
 
 ### <a name="test-send-push-notifications-from-the-azure-portal"></a>Проверка отправки push-уведомлений с портала Azure
 
-Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [портале Azure].
+Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [Портал Azure].
 
 1. В разделе **Устранение неполадок** выберите **Тестовая отправка**.
 2. В качестве **платформы** выберите **Android**.
@@ -518,7 +518,7 @@ ms.locfileid: "72386324"
     ```
 3. В файле `NotificationSetting.java` добавьте приведенный ниже параметр в класс `NotificationSettings`.
 
-    Добавьте в `HubFullAccess` следующую строку подключения к центру: **DefaultFullSharedAccessSignature** . Чтобы скопировать эту строку подключения на [портале Azure], щелкните **Политики доступа** на странице **Параметры** в центре уведомлений.
+    Добавьте в `HubFullAccess` следующую строку подключения к центру: **DefaultFullSharedAccessSignature** . Чтобы скопировать эту строку подключения на [Портал Azure], щелкните **Политики доступа** на странице **Параметры** в центре уведомлений.
 
     ```java
     public static String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
@@ -714,7 +714,7 @@ ms.locfileid: "72386324"
     }
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого руководства вы отправили широковещательные уведомления на все устройства Android, зарегистрированные в серверной части. Чтобы узнать, как отправлять push-уведомления на конкретные устройства Android, перейдите к следующему руководству:  
 
@@ -746,4 +746,4 @@ ms.locfileid: "72386324"
 [Notification Hubs Guidance]: https://msdn.microsoft.com/library/jj927170.aspx
 [Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
-[портале Azure]: https://portal.azure.com
+[Портал Azure]: https://portal.azure.com
