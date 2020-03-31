@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: cynthn
-ms.openlocfilehash: 3b1f4ef9d4e36c35cc72716125392aaff05eab6d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 2a636ae5609d9cb5c81782af5a419a27d7880106
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034476"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80154378"
 ---
 # <a name="tutorial-install-a-lamp-web-server-on-a-linux-virtual-machine-in-azure"></a>Руководство по Установка веб-сервера LAMP на виртуальной машине Linux в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "74034476"
 > * создание виртуальной машины Ubuntu (L в названии стека LAMP);
 > * Открытие порта 80 для веб-трафика
 > * Установка Apache, PHP и MySQL
-> * проверка установки и настройки;
+> * Проверка установки и настройки
 > * установка WordPress на сервере LAMP.
 
 Эта настройка выполняется для быстрых тестов или подтверждения концепции. Дополнительные сведения о стеке LAMP, включая рекомендации для рабочей среды, см. в [документации Ubuntu](https://help.ubuntu.com/community/ApacheMySQLPHP).
@@ -111,21 +111,21 @@ sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/info.php'
 
 [!INCLUDE [virtual-machines-linux-tutorial-wordpress.md](../../../includes/virtual-machines-linux-tutorial-wordpress.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как развернуть сервер LAMP в Azure. Вы научились выполнять следующие задачи:
+Из этого руководства вы узнали, как развернуть сервер LAMP в Azure. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины Ubuntu.
 > * Открытие порта 80 для веб-трафика
 > * Установка Apache, PHP и MySQL
-> * проверка установки и настройки;
+> * Проверка установки и настройки
 > * установка WordPress на сервере LAMP.
 
-Перейдите к следующему руководству, чтобы узнать, как защитить веб-серверы с помощью SSL-сертификатов.
+Перейдите к следующему руководству, чтобы узнать, как защитить веб-серверы с помощью TLS/SSL-сертификатов.
 
 > [!div class="nextstepaction"]
-> [Secure a web server with SSL certificates on a Linux virtual machine in Azure](tutorial-secure-web-server.md) (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
+> [Защита веб-сервера с помощью TLS](tutorial-secure-web-server.md)
 
 [2]: ./media/tutorial-lamp-stack/phpsuccesspage.png
 [3]: ./media/tutorial-lamp-stack/apachesuccesspage.png

@@ -6,13 +6,13 @@ author: bjcmit
 ms.author: brysmith
 ms.service: machine-learning
 ms.topic: tutorial
-ms.date: 02/10/2020
-ms.openlocfilehash: 5a7c4ce6d5868efef4cfb4fbe2183ec8337ff5b6
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.date: 03/13/2020
+ms.openlocfilehash: f40c2b5f7134458b3f8cb492652bebf14388634c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78301851"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79477142"
 ---
 # <a name="tutorial-convert-ml-experimental-code-to-production-code"></a>Руководство по Преобразование экспериментального кода машинного обучения в рабочий код
 
@@ -29,7 +29,7 @@ ms.locfileid: "78301851"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Создайте [шаблон MLOpsPython](https://github.com/microsoft/MLOpsPython/generate) и используйте записные книжки `experimentation/Diabetes Ridge Regression Training.ipynb` и `experimentation/Diabetes Ridge Regression Scoring.ipynb`. Эти записные книжки используются в качестве примера преобразования кода эксперимента в рабочий код.
+- Создайте [шаблон MLOpsPython](https://github.com/microsoft/MLOpsPython/generate) и используйте записные книжки `experimentation/Diabetes Ridge Regression Training.ipynb` и `experimentation/Diabetes Ridge Regression Scoring.ipynb`. Эти записные книжки используются в качестве примера преобразования кода эксперимента в рабочий код. Эти записные книжки можно найти по адресу [https://github.com/microsoft/MLOpsPython/tree/master/experimentation](https://github.com/microsoft/MLOpsPython/tree/master/experimentation).
 - Установите nbconvert. Выполните только инструкции по установке в разделе __Установка nbconvert__ на странице [Установка](https://nbconvert.readthedocs.io/en/latest/install.html).
 
 ## <a name="remove-all-nonessential-code"></a>Удаление всего ненужного кода

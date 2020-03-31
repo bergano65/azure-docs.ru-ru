@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 286d00ce718a34dea15a075984cc3b2a5e4cfec3
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 762d67a291ec33e13ca9e7311b0cf11da140dd6c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064658"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80154276"
 ---
 # <a name="tutorial-install-the-sql-iis-net-stack-in-a-windows-vm-with-azure-powershell"></a>Руководство по Установка стека SQL, IIS и .NET на виртуальной машине Windows с помощью Azure PowerShell
 
@@ -127,9 +127,9 @@ Set-AzVMSqlServerExtension `
    -Location "EastUS"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы установили стек для SQL, IIS и .NET с помощью Azure PowerShell. Вы научились выполнять следующие задачи:
+В этом руководстве вы установили стек для SQL, IIS и .NET с помощью Azure PowerShell. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины 
@@ -137,8 +137,8 @@ Set-AzVMSqlServerExtension `
 > * создание виртуальной машины с SQL Server;
 > * установка расширения SQL Server.
 
-Перейдите к следующему руководству, чтобы узнать, как защитить веб-сервер IIS с помощью SSL-сертификатов.
+Перейдите к следующему руководству, чтобы узнать, как защитить веб-сервер IIS с помощью TLS/SSL-сертификатов.
 
 > [!div class="nextstepaction"]
-> [Защита веб-сервера IIS с помощью SSL-сертификатов](tutorial-secure-web-server.md)
+> [Защита веб-сервера IIS с помощью TLS/SSL-сертификатов](tutorial-secure-web-server.md)
 

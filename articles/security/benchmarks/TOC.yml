@@ -32,11 +32,23 @@
   items:
     - name: Сведения об элементах управления безопасностью Azure
       href: security-baselines-overview.md
+    - name: Базовая конфигурация безопасности для Кэша Azure для Redis
+      href: ../../azure-cache-for-redis/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
       href: ../../batch/security-baseline.md
-    - name: Базовый уровень безопасности Key Vault
-      href: ../../key-vault/security-baseline.md
+    - name: Базовая конфигурация безопасности для Реестра контейнеров
+      href: ../../container-registry/security-baseline.md
+    - name: "Базовая конфигурация безопасности для Cosmos\_DB"
+      href: ../../cosmos-db/security-baseline.md
     - name: Базовый уровень безопасности HDInsight
       href: ../../hdinsight/security-baseline.md
+    - name: Базовый уровень безопасности Key Vault
+      href: ../../key-vault/security-baseline.md
+    - name: Базовый уровень безопасности MariaDB
+      href: ../../mariadb/security-baseline.md
+    - name: Базовый уровень безопасности MySQL
+      href: ../../mysql/security-baseline.md
+    - name: Базовый уровень безопасности PostgreSQL
+      href: ../../postgresql/security-baseline.md
     - name: Базовый уровень безопасности Базы данных SQL
       href: ../../sql-database/security-baseline.md

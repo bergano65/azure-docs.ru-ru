@@ -69,18 +69,24 @@
           href: boot-diagnostics.md
         - name: Ошибки BitLocker
           href: troubleshoot-bitlocker-boot-error.md
-        - name: Проверка ошибок файловой системы
-          href: troubleshoot-check-disk-boot-error.md
         - name: Ошибки "синий экран"
           href: troubleshoot-common-blue-screen-error.md
-        - name: Зависание виртуальной машины при запуске
-          href: troubleshoot-vm-boot-configure-update.md
+        - name: Проверка ошибок файловой системы
+          href: troubleshoot-check-disk-boot-error.md
+        - name: Критический процесс отключен
+          href: troubleshoot-guide-critical-process-died.md
         - name: Сбой критически важной службы
           href: troubleshoot-critical-service-failed-boot-error.md
+        - name: 'Диск, не поддерживающий загрузку'
+          href: troubleshoot-guide-not-bootable-disk.md
         - name: Цикл перезагрузки
           href: troubleshoot-reboot-loop.md
         - name: Зависание при запуске обновления Windows
           href: troubleshoot-stuck-updating-boot-error.md
+        - name: Зависание виртуальной машины при запуске
+          href: troubleshoot-vm-boot-configure-update.md
+        - name: Не удается загрузить виртуальную машину из-за диспетчера загрузки Windows
+          href: troubleshoot-guide-windows-boot-manager-menu.md
 - name: Не удается подключиться к виртуальной машине
   items:
     - name: RDP

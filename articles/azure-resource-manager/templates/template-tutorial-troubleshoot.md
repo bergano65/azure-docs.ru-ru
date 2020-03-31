@@ -5,16 +5,16 @@ author: mumian
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ab12b206d5bb82956a8b607368af44ea0eaca40e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 30b66414e87f642bc72b8723ebff57f2e9009f17
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471039"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239235"
 ---
-# <a name="tutorial-troubleshoot-resource-manager-template-deployments"></a>Руководство. Устранение неполадок развертывания шаблонов Resource Manager
+# <a name="tutorial-troubleshoot-arm-template-deployments"></a>Руководство по устранению неполадок при развертывании шаблонов ARM
 
-Узнайте, как устранять неполадки при развертывании шаблонов Resource Manager. В этом руководстве вы настроите две ошибки в шаблоне и узнаете, как использовать журналы операций и историю развертывания для решения ошибок.
+Узнайте, как устранять неполадки при развертывании шаблонов Azure Resource Manager (ARM). В этом руководстве вы настроите две ошибки в шаблоне и узнаете, как использовать журналы операций и историю развертывания для решения ошибок.
 
 Существует два типа ошибок, связанных с развертыванием шаблона.
 
@@ -35,11 +35,11 @@ ms.locfileid: "75471039"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
 
 ## <a name="create-a-problematic-template"></a>Создание проблемного шаблона
 
@@ -128,4 +128,4 @@ New-AzResourceGroupDeployment : 4:48:50 PM - Resource Microsoft.Storage/storageA
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как устранять ошибки развертывания шаблона Resource Manager.  Дополнительные сведения см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
+Из этого руководства вы узнали, как устранять ошибки, связанные с развертыванием шаблона ARM.  Дополнительные сведения см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).

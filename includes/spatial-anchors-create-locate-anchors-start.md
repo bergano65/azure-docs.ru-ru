@@ -5,14 +5,14 @@ ms.topic: include
 ms.date: 02/21/2019
 ms.author: rgarcia
 ms.openlocfilehash: d2b00697ce4487b6d24889e824511adf7973faa0
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67184981"
 ---
 ![Кроссплатформенная поддержка](./media/spatial-anchors-azure-concepts/place-anchor.gif)
 
 ## <a name="initialize-the-session"></a>Инициализация сеанса
 
-Главная точка входа для пакета SDK — класс, представляющий сеанс. Обычно поля в классе, который управляет представление и собственного сеанса AR объявлю.
+Основной точкой входа для пакета SDK является класс, представляющий ваш сеанс. Обычно нужно объявить поле в классе, который управляет представлением и нативным сеансом AR.

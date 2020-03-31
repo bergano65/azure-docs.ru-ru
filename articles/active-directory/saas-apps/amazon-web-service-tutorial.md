@@ -1,5 +1,5 @@
 ---
-title: Учебник. Azure Active Directory интеграция единого входа с Amazon Web Services (AWS) | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS) | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Amazon Web Services (AWS).
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6970debd3885a513ac0e30d6cc5391b0db66cf9b
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
-ms.translationtype: MT
+ms.openlocfilehash: 40fd8217285643aa7d706d194d7f78ba0634dd32
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78668730"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80048961"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Учебник. Azure Active Directory интеграция единого входа с Amazon Web Services (AWS)
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
 В этом руководстве описано, как интегрировать Amazon Web Services (AWS) с Azure Active Directory (Azure AD). Интеграция Amazon Web Services (AWS) с Azure AD обеспечивает следующие возможности.
 
@@ -53,11 +53,11 @@ ms.locfileid: "78668730"
 > [!Note]
 > Убедитесь, что используется только приложение из коллекции.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка AWS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -93,7 +93,7 @@ ms.locfileid: "78668730"
 1. **[Настройка единого входа в Amazon Web Services (AWS)](#configure-amazon-web-services-aws-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Amazon Web Services (AWS)](#create-amazon-web-services-aws-test-user)** требуется для того, чтобы в Amazon Web Services (AWS) существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
     1. **[Настройка подготовки ролей в Amazon Web Services (AWS)](#how-to-configure-role-provisioning-in-amazon-web-services-aws)**
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -103,7 +103,7 @@ ms.locfileid: "78668730"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** отображаются видите предварительно настроенные параметры приложения и обязательные URL-адреса. Пользователю нужно сохранить конфигурацию, нажав кнопку**Сохранить**.
 
@@ -173,7 +173,7 @@ ms.locfileid: "78668730"
 
     а. В качестве **типа поставщика** выберите **SAML**.
 
-    b. В качестве **имени поставщика**введите имя поставщика (например: *WAAD*).
+    b. В поле **Provider Name** (Имя поставщика) введите имя поставщика (например: *WAAD*).
 
     c. Чтобы отправить загруженный **файл метаданных** с портала Azure, нажмите кнопку **Choose File** (Выбрать файл).
 
@@ -193,13 +193,13 @@ ms.locfileid: "78668730"
 
     а. В разделе **Select type of trusted entity** (Выбор типа доверенной сущности) выберите **SAML 2.0 federation** (Федерация SAML 2.0).
 
-    b. В разделе **Выбор поставщика saml 2,0**выберите ранее созданный **поставщик SAML** (например: *WAAD*).
+    b. В разделе **Choose a SAML 2.0 Provider** (Выбор поставщика SAML 2.0) выберите созданный ранее **поставщик SAML** (например: *WAAD*).
 
     c. Установите флажок **Allow programmatic and AWS Management Console access** (Разрешить программный доступ и доступ через консоль управления AWS).
   
-    d. Нажмите кнопку **Далее: разрешения**.
+    d. По завершении выберите **Next: разрешения**.
 
-9. В диалоговом окне **Attach Permissions Policies** (Вложение политик разрешений) добавьте подходящую политику для вашей организации. Затем нажмите кнопку **Далее: Проверка**.  
+9. В диалоговом окне **Attach Permissions Policies** (Вложение политик разрешений) добавьте подходящую политику для вашей организации. Затем щелкните **Next: Review** (Далее: проверка).  
 
     ![Снимок экрана: диалоговое окно Attach Permissions Policies (Вложение политик разрешений)][33]
 
@@ -294,7 +294,7 @@ ms.locfileid: "78668730"
 
     b. Выполните поиск только что созданной политики в разделе фильтра **AzureAD_SSOUserRole_Policy**.
 
-    c. Выберите политику и нажмите кнопку **Далее: Проверка**.
+    c. Выберите политику и щелкните **Next: Review** (Далее: проверка).
 
 19. Просмотрите политику для подключенного пользователя.
 
@@ -337,10 +337,10 @@ ms.locfileid: "78668730"
     ![Снимок экрана: раздел "Параметры" с выделенным пунктом "Включено"](./media/amazon-web-service-tutorial/provisioning2.png)
 
 > [!NOTE]
-> Служба подготовки импортирует роли только из AWS в Azure AD. Служба не подготавливает пользователей и группы из Azure AD в AWS.
+> Служба подготовки только импортирует роли из AWS в Azure AD. Эта служба не подготавливает пользователей и группы из Azure AD для работы в AWS.
 
 > [!NOTE]
-> После сохранения учетных данных подготовки необходимо дождаться запуска начального цикла синхронизации. Для завершения синхронизации обычно требуется около 40 минут. Состояние можно увидеть в нижней части страницы **Подготовка** в разделе **Текущее состояние**.
+> После подготовки учетных данных необходимо дождаться запуска цикла начальной синхронизации. Выполнение синхронизации обычно занимает около 40 минут. Состояние отображается в нижней части страницы **Подготовка** в разделе **Текущее состояние**.
 
 ### <a name="create-amazon-web-services-aws-test-user"></a>Создание тестового пользователя Amazon Web Services (AWS)
 
@@ -370,9 +370,9 @@ ms.locfileid: "78668730"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

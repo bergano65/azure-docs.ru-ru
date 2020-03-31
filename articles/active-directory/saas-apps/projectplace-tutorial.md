@@ -17,10 +17,10 @@ ms.date: 05/29/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 179721075484c35c5ebbb3d936b83bc407b75a8d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093525"
 ---
 # <a name="tutorial-integrate-projectplace-with-azure-active-directory"></a>Руководство по интеграции Projectplace с Azure Active Directory
@@ -36,9 +36,9 @@ ms.locfileid: "67093525"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Projectplace с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -77,7 +77,7 @@ ms.locfileid: "67093525"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если нужно настроить приложение в режиме, инициируемом **поставщиком удостоверений**, то в разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
@@ -116,7 +116,7 @@ ms.locfileid: "67093525"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon и как предоставить этому пользователю доступ к Projectplace.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Projectplace**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -143,15 +143,15 @@ ms.locfileid: "67093525"
 
 2. Перейдите к разделу **People** (Люди) и щелкните **Members** (Участники).
    
-    ![Переход к разделу "People" (Люди) и выбор "Members" (Участники)](./media/projectplace-tutorial/ic790228.png "\"People\" (Люди)")
+    ![Переход к разделу People (Люди) и выбор элемента Members (Участники)](./media/projectplace-tutorial/ic790228.png "Люди")
 
 3. Щелкните **Add Member** (Добавить участника).
    
-    ![Выбор "Add Member" (Добавить участника)](./media/projectplace-tutorial/ic790232.png "\"Add Members\" (Добавление участников)")
+    ![Выбор элемента Add Member (Добавить участника)](./media/projectplace-tutorial/ic790232.png "Добавление участников")
 
 4. В разделе **Add Member** (Добавление участника) выполните следующие действия.
    
-    ![Раздел "Add Member" (Добавление участника)](./media/projectplace-tutorial/ic790233.png "\"New Members\" (Новые участники)")
+    ![Раздел Add Member (Добавление участника)](./media/projectplace-tutorial/ic790233.png "Новые участники")
    
     1. В поле **New Members** (Новые участники) введите адрес электронной почты действующей учетной записи Azure AD, которую вы хотите добавить.
    
@@ -173,4 +173,4 @@ ms.locfileid: "67093525"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

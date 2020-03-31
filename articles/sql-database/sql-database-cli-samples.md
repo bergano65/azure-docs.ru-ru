@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/03/2019
-ms.openlocfilehash: 023651d61f891c5a73eee234a14306add838bf98
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 459a5ea69e11a8614c572f68fce039b6cabbb1ed
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821844"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80061713"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для Базы данных SQL Azure
 
@@ -26,37 +26,50 @@ ms.locfileid: "73821844"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
-## <a name="single-database--elastic-poolstabsingle-database"></a>[Отдельная база данных и эластичные пулы](#tab/single-database)
+# <a name="single-database--elastic-pools"></a>[Отдельная база данных и эластичные пулы](#tab/single-database)
 
-В следующей таблице содержатся ссылки на примеры сценариев Azure CLI для Базы данных SQL Azure.
-
-| |  |
+| | |
 |---|---|
 |**Создание отдельной базы данных и эластичного пула**||
-| [Создание отдельной базы данных и настройка правила брандмауэра](scripts/sql-database-create-and-configure-database-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот сценарий Azure CLI создает отдельную базу данных SQL Azure и настраивает правило брандмауэра на уровне сервера. |
-| [Создание эластичных пулов и перемещение баз данных в пуле](scripts/sql-database-move-database-between-pools-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот сценарий Azure CLI создает эластичные пулы SQL и перемещает базы данных SQL Azure в составе пулов, а также изменяет объемы вычислительных ресурсов.|
+| [Создание отдельной базы данных и настройка правила брандмауэра](scripts/sql-database-create-and-configure-database-cli.md) | Создает базу данных SQL Azure и настраивает правило брандмауэра уровня сервера. |
+| [Создание эластичных пулов и перемещение баз данных в пуле](scripts/sql-database-move-database-between-pools-cli.md) | Создает эластичные пулы SQL и перемещает базы данных SQL Azure в составе пулов, а также изменяет объемы вычислительных ресурсов. |
 |**Масштабирование отдельной базы данных и эластичного пула**||
-| [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует отдельную базу данных SQL Azure до другого объема вычислительных ресурсов после запроса на получение сведений о размере базы данных. |
-| [Масштабирование эластичного пула](scripts/sql-database-scale-pool-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует эластичный пул SQL, изменяя объем его вычислительных ресурсов.  |
-|**Группы отработки отказа**||
-| [Добавление отдельных баз данных в группу отработки отказа](scripts/sql-database-add-single-db-to-failover-group-cli.md?toc=%2fcli%2fazure%2ftoc.json)| Этот скрипт CLI создает базу данных и группу отработки отказа, добавляет базу данных в эту группу и тестирует отработку отказа на сервер-получатель.|
+| [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-cli.md) | Масштабирует базу данных SQL Azure до другого объема вычислительных ресурсов после запроса на получение сведений о размере базы данных. |
+| [Масштабирование эластичного пула](scripts/sql-database-scale-pool-cli.md) | Масштабирует эластичный пул SQL, изменяя объем его вычислительных ресурсов. |
+|**Настройка георепликации и отработка отказа**||
+| [Добавление отдельных баз данных в группу отработки отказа](scripts/sql-database-add-single-db-to-failover-group-cli.md)| Создает базу данных и группу отработки отказа, добавляет базу данных в эту группу, а потом тестирует отработку отказа на сервер-получатель. |
+| [Use PowerShell to add an Azure SQL Database elastic pool to a failover group](scripts/sql-database-add-elastic-pool-to-failover-group-cli.md) (Добавление эластичного пула Базы данных SQL Azure в группу отработки отказа с помощью PowerShell) | Создает базу данных, добавляет ее в эластичный пул, добавляет эластичный пул в группу отработки отказа, а потом тестирует отработку отказа на сервер-получатель. |
+| [Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-cli.md)| Настраивает активную георепликацию для базы данных SQL Azure и выполняет для нее отработку отказа на вторичную реплику. |
+| [Настройка активной георепликации для базы данных SQL Azure в пуле с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-cli.md)| Настраивает активную георепликацию для базы данных SQL Azure в составе эластичного пула SQ, а потом выполняет для нее отработку отказа на вторичную реплику. |
+| **Аудит и обнаружение угроз** |
+| [Настройка аудита и обнаружения угроз](scripts/sql-database-auditing-and-threat-detection-cli.md)| Настраивает политики аудита и обнаружения угроз для базы данных SQL Azure. |
+| **Резервное копирование, восстановление, копирование и импорт базы данных**||
+| [Резервное копирование базы данных](scripts/sql-database-backup-database-cli.md)| Создает резервную копию базы данных SQL Azure в резервной копии хранилища Azure. |
+| [Восстановление базы данных](scripts/sql-database-restore-database-cli.md)| Восстанавливает базу данных SQL Azure из геоизбыточной резервной копии и восстанавливает последнюю резервную копию удаленной базы данных SQL Azure. |
+| [Копирование базы данных на новый сервер](scripts/sql-database-copy-database-to-new-server-cli.md) | Создает копию существующей базы данных SQL Azure на новом сервере SQL Azure. |
+| [Импорт базы данных из BACPAC-файла](scripts/sql-database-import-from-bacpac-cli.md)| Импортирует базу данных из *.bacpac* на сервер SQL Azure. |
 |||
 
-См. дополнительные сведения об [API управления отдельной базой данных с помощью Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases).
+Дополнительные сведения см. в разделе [Управление серверами баз данных и отдельными базами данных с помощью Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases).
 
-## <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
+# <a name="managed-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
 В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для Управляемого экземпляра Базы данных SQL Azure.
 
-| |  |
+| | |
 |---|---|
-| [Создание Управляемого экземпляра](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../create-azure-sql-managed-instance-using-azure-cli/) | В этом скрипте CLI показано, как создать Управляемый экземпляр. |
-| [Обновление Управляемого экземпляра](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../modify-azure-sql-database-managed-instance-using-azure-cli/) | В этом скрипте CLI показано, как обновить Управляемый экземпляр. |
-| [Перемещение базы данных в другой Управляемый экземпляр](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/) | В этом скрипте CLI показано, как восстановить резервную копию базы данных из одного экземпляра в другой. |
+| **Создание Управляемого экземпляра**||
+| [Создание управляемого экземпляра](scripts/sql-database-create-configure-managed-instance-cli.md)| Создает управляемый экземпляр |
+| **Настройка прозрачного шифрования данных (TDE)**||
+| [Управление прозрачным шифрованием данных в Управляемом экземпляре с использованием Azure Key Vault](scripts/transparent-data-encryption-byok-sql-managed-instance-cli.md)| Настраивает прозрачное шифрование данных (TDE) в Управляемом экземпляре Azure SQL используя Azure Key Vault с различными ключевыми сценариями. |
+|**Настройка группы отработки отказа**||
+| [Настройка группы отработки отказа для управляемого экземпляра](scripts/sql-database-add-managed-instance-to-failover-group-cli.md) | Создает два управляемых экземпляра, добавляет их в группу отработки отказа, а затем проверяет отработку отказа с основного на дополнительный управляемый экземпляр. |
 |||
 
-См. дополнительные сведения об [API управления Управляемым экземпляром с помощью Azure CLI](sql-database-managed-instance-create-manage.md#azure-cli-create-and-manage-managed-instances). Дополнительные примеры можно найти [здесь](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44).
+Дополнительные примеры работы с Управляемым экземпляром см. в скриптах [создание](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../create-azure-sql-managed-instance-using-azure-cli/), [обновление](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../modify-azure-sql-database-managed-instance-using-azure-cli/), [перемещение базы данных](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/), [работа с](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44).
+
+Дополнительные сведения см. в разделе [Создание управляемых экземпляров с помощью Azure CLI, а также управление ими](sql-database-managed-instance-create-manage.md#azure-cli-create-and-manage-managed-instances).
 
 ---

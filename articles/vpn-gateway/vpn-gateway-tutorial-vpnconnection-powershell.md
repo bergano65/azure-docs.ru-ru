@@ -5,17 +5,17 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: tutorial
-ms.date: 01/10/2020
+ms.date: 03/11/2020
 ms.author: yushwang
 ms.custom: mvc
-ms.openlocfilehash: 1f4687a6af9cae7172a70527f336b98c75d0e9cd
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: c42d164647d608fc45e1135cd4111ff3900a733c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903390"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79137166"
 ---
-# <a name="tutorial-create-and-manage-s2s-vpn-connections-using-powershell"></a>Руководство. Создание и администрирование VPN-подключений S2S с помощью PowerShell
+# <a name="tutorial-create-and-manage-s2s-vpn-connections-using-powershell"></a>Руководство по Создание и администрирование VPN-подключений S2S с помощью PowerShell
 
 VPN-подключения Azure S2S предоставляют безопасное распределенное подключение между локальными сетями клиента и Azure. Это пошаговое руководство по жизненным циклам VPN-подключений Azure S2S, таким как создание VPN-подключения Azure S2S и управление им. Вы узнаете, как выполнять следующие задачи:
 
@@ -25,13 +25,13 @@ VPN-подключения Azure S2S предоставляют безопасн
 > * Добавление дополнительных VPN-подключений.
 > * Удаление VPN-подключения.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 На следующей схеме показана топология для этого руководства:
 
 ![Схема по VPN-подключению типа "сеть — сеть"](./media/vpn-gateway-tutorial-vpnconnection-powershell/site-to-site-diagram.png)
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+### <a name="working-with-azure-cloud-shell-and-azure-powershell"></a>Работа с Azure PowerShell и Azure Cloud Shell
+
+[!INCLUDE [working with cloud shell](../../includes/vpn-gateway-cloud-shell-powershell.md)]
 
 ## <a name="requirements"></a>Требования
 

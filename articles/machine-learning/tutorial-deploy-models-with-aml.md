@@ -1,7 +1,7 @@
 ---
 title: Руководство по классификации изображений. Развертывание моделей
 titleSuffix: Azure Machine Learning
-description: В этом руководстве показано, как использовать Машинное обучение Azure для развертывания модели классификации изображений с помощью Scikit-learn в Jupyter Notebook для Python. Это руководство представляет собой вторую часть серии, состоящей из двух частей.
+description: Это руководство представляет собой вторую часть серии, состоящей из двух частей. В нем показано, как использовать Машинное обучение Azure для развертывания модели классификации изображений с помощью Scikit-learn в Jupyter Notebook для Python.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,19 +10,17 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 02/10/2020
 ms.custom: seodec18
-ms.openlocfilehash: 071a8dd40d87e5df6fc5c65b789bb63b515dc60a
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 81e02492f7e79b87e1513a910afe4719908adbbb
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77116503"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159093"
 ---
-# <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство. Развертывание модели классификации изображений в Экземплярах контейнеров Azure
+# <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство по Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Это руководство представляет собой **вторую часть серии, состоящей из двух частей**. В [предыдущем руководстве](tutorial-train-models-with-aml.md) вы обучили модели машинного обучения и затем зарегистрировали модель в рабочей области в облаке.  
-
-Теперь вы готовы развернуть модель как веб-службу в [Экземплярах контейнеров Azure](https://docs.microsoft.com/azure/container-instances/). Веб-служба — это образ. В данном случае образ Docker. Он инкапсулирует логику оценки и саму модель. 
+Это руководство представляет собой **вторую часть серии, состоящей из двух частей**. В [предыдущем руководстве](tutorial-train-models-with-aml.md) вы обучили модели машинного обучения и затем зарегистрировали модель в рабочей области в облаке.  Теперь вы готовы развернуть модель как веб-службу. Веб-служба — это образ. В данном случае образ Docker. Он инкапсулирует логику оценки и саму модель. 
 
 В этой части показано, как с помощью Машинного обучения Azure выполнить следующие задачи:
 
@@ -50,7 +48,7 @@ ms.locfileid: "77116503"
 > Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода.
 > Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
 
-## <a name="start"></a>Настройка среды
+## <a name="set-up-the-environment"></a><a name="start"></a>Настройка среды
 
 Начните с создания тестовой среды.
 
@@ -299,7 +297,6 @@ service.wait_for_deployment(show_output=True)
 ```python
 print(service.scoring_uri)
 ```
-
 
 ## <a name="test-the-deployed-service"></a>Тестирование развернутой службы
 

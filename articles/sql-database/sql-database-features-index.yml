@@ -3,7 +3,7 @@ documentType: LandingData
 title: Компоненты
 metadata:
   title: Возможности Базы данных SQL Azure
-  meta.description: Learn about the features in Azure SQL Database.
+  description: 'Откройте для себя функции базы данных в Базе данных SQL Azure, которые позволяют выполнять более сложные операции и реализовывать сложные сценарии.'
   services: sql-database
   author: jovanpop-msft
   manager: craigg
@@ -12,7 +12,7 @@ metadata:
   ms.devlang: null
   ms.topic: overview
   ms.date: 02/06/2019
-  ms.author: jovanpop-msft
+  ms.author: jovanpop
 sections:
   - items:
       - type: paragraph

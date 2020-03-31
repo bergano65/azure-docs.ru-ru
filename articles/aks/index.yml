@@ -1,101 +1,90 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Служба Azure Kubernetes (AKS)
+summary: AKS позволяет быстро развертывать готовые к использованию в рабочей среде кластеры Kubernetes в Azure. Узнайте, как использовать AKS, изучив эти краткие руководства, учебные материалы и примеры.
 metadata:
-  title: "Документация по службе Azure Kubernetes (AKS). Руководства и справочник по API\_| Документация Майкрософт"
-  meta.description: 'AKS allows you to quickly deploy a production ready Kubernetes cluster in Azure. Learn how to use AKS with these quickstarts, tutorials, and samples.'
-  services: container-service
-  author: georgewallace
-  manager: gwallace
+  title: Служба Azure Kubernetes (AKS)
+  description: AKS позволяет быстро развертывать готовые к использованию в рабочей среде кластеры Kubernetes в Azure. Узнайте, как использовать AKS, изучив эти краткие руководства, учебные материалы и примеры.
+  ms.service: container-service
   ms.topic: landing-page
-  ms.date: 07-21-2017
-  ms.author: gwallace
-abstract:
-  description: 'Служба Azure Kubernetes (AKS) управляет размещенной средой Kubernetes, позволяя быстро и легко развертывать контейнерные приложения и управлять ими, даже если вы никогда не оркестрировали контейнеры. Также вам не нужно выполнять текущие операции и обслуживание, так как эта служба подготавливает, обновляет и масштабирует ресурсы по требованию, не отключая приложения от сети.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Дополнительные сведения о развертывании кластера AKS:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Azure CLI
-            href: /azure/aks/kubernetes-walkthrough
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Портал Azure
-            href: /azure/aks/kubernetes-walkthrough-portal
-      - type: paragraph
-        text: 'Узнайте, как разрабатывать приложения и выполнять их отладку с помощью AKS:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_java.svg'
-            text: Java
-            href: ../dev-spaces/quickstart-java.md
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_NETcore.svg'
-            text: .NET и VS Code
-            href: ../dev-spaces/quickstart-netcore.md
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
-            text: .NET и Visual Studio
-            href: ../dev-spaces/quickstart-netcore-visualstudio.md
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_nodejs.svg'
-            text: Node.js
-            href: ../dev-spaces/quickstart-nodejs.md
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Сведения о развертывании, администрировании и обновлении приложений в кластере AKS.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/aks/tutorial-kubernetes-prepare-app">Создание образов контейнеров из приложения</a>
-          - html: <a href="/azure/aks/tutorial-kubernetes-prepare-acr">Передача образов контейнеров в Реестр контейнеров Azure</a>
-          - html: <a href="/azure/aks/tutorial-kubernetes-deploy-cluster">Развертывание кластера AKS</a>
-          - html: <a href="/azure/aks/tutorial-kubernetes-deploy-application">Запуск образов контейнеров в Kubernetes</a>
-          - html: <a href="/azure/aks/tutorial-kubernetes-scale">Масштабирование приложений и инфраструктуры Kubernetes</a>
-          - html: '<a href="/azure/aks/tutorial-kubernetes-app-update">Обновление приложений, выполняющихся в Kubernetes</a>'
-          - html: <a href="/azure/aks/tutorial-kubernetes-upgrade-cluster">Обновление кластера AKS</a>
-          - html: <a href="/azure/architecture/reference-architectures/microservices/aks">Изучение и реализация эталонной архитектуры микрослужб</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Общие сведения о контейнерах в Azure
-            href: /learn/modules/intro-to-containers/
-            image:
-              src: /learn/achievements/intro-to-containers.svg
-              href: /learn/modules/intro-to-containers/
-          - title: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
-            href: /learn/modules/run-docker-with-azure-container-instances/
-            image:
-              src: /learn/achievements/run-docker-with-azure-container-instances.svg
-              href: /learn/modules/run-docker-with-azure-container-instances/
-          - title: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
-            href: /learn/modules/build-and-store-container-images/
-            image:
-              src: /learn/achievements/build-and-store-container-images.svg
-              href: /learn/modules/build-and-store-container-images/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-container-registry%2Cazure-container-instances">Дополнительные интерактивные руководства…</a>
-  - title: Справочник
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/cli/azure/aks">Azure CLI</a></p>
-          - title: Языки
-            html: <p><a href="/dotnet/api/overview/azure/containerservice">.NET</a></p><p><a href="/python/api/overview/azure/containerservice">Python</a></p><p><a href="/java/api/overview/azure/containerservice">Java</a></p><p><a href="/javascript/api/overview/azure/container-service">Node.js</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/aks">REST API</a></p>
+  author: laurenhughes
+  ms.author: lahugh
+  ms.date: 03/25/2020
+  ms.openlocfilehash: 7482eb14fb6bcb80bc8f8b9d06057287cb862a27
+  ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/27/2020
+  ms.locfileid: "80335987"
+landingContent:
+- title: Сведения о Службе Azure Kubernetes (AKS)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое AKS?
+      url: intro-kubernetes.md
+  - linkListType: concept
+    links:
+    - text: Ключевые понятия Kubernetes для AKS
+      url: concepts-clusters-workloads.md
+    - text: Кластеры и рабочие нагрузки
+      url: concepts-clusters-workloads.md
+    - text: Параметры доступа и идентификации
+      url: concepts-identity.md
+    - text: Безопасность
+      url: concepts-security.md
+    - text: Сеть
+      url: concepts-network.md
+    - text: Память
+      url: concepts-storage.md
+    - text: Масштабирование
+      url: concepts-scale.md
+- title: Развертывание кластера AKS за пять минут
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure CLI
+      url: kubernetes-walkthrough.md
+    - text: Портал Azure
+      url: kubernetes-walkthrough-portal.md
+    - text: Шаблон Resource Manager
+      url: kubernetes-walkthrough-rm-template.md
+- title: Разработка и отладка приложений с помощью AKS и Dev Spaces
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Java
+      url: ../dev-spaces/quickstart-java.md
+    - text: .NET и VS Code
+      url: ../dev-spaces/quickstart-netcore.md
+    - text: .NET и Visual Studio
+      url: ../dev-spaces/quickstart-netcore-visualstudio.md
+    - text: Node.js
+      url: ../dev-spaces/quickstart-nodejs.md
+- title: Развертывание и обновление приложений, а также управление ими
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 1. Подготовка приложения для AKS
+      url: tutorial-kubernetes-prepare-app.md
+    - text: 2. Развертывание реестра контейнеров Azure и его использование
+      url: tutorial-kubernetes-prepare-acr.md
+    - text: 3. Развертывание кластера AKS
+      url: tutorial-kubernetes-deploy-cluster.md
+    - text: 4. Запуск приложения
+      url: tutorial-kubernetes-deploy-application.md
+    - text: 5. Масштабирование приложений
+      url: tutorial-kubernetes-scale.md
+    - text: 6. Обновление приложения
+      url: tutorial-kubernetes-app-update.md
+    - text: 7. Обновление Kubernetes в AKS
+      url: tutorial-kubernetes-upgrade-cluster.md
+- title: Развитие навыков с помощью Microsoft Learn
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Общие сведения о службе Azure Kubernetes
+      url: https://docs.microsoft.com/learn/modules/intro-to-azure-kubernetes-service/
+    - text: Общие сведения о контейнерах в Azure
+      url: https://docs.microsoft.com/learn/modules/intro-to-containers/
+    - text: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
+      url: https://docs.microsoft.com/learn/modules/build-and-store-container-images/

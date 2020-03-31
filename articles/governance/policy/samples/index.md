@@ -1,14 +1,14 @@
 ---
 title: Индекс примеров политик
 description: Индекс встроенных определений Политики Azure. Теги категорий, соответствие нормативным требованиям, Key Vault, Kubernetes, гостевая конфигурация и многое другое.
-ms.date: 01/31/2020
+ms.date: 03/25/2020
 ms.topic: sample
-ms.openlocfilehash: 11e36ba71e1b88f279e824948dffa809f16fd443
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: d990f911612c8e1f5ab7cdbdae7efe362aa70bb5
+ms.sourcegitcommit: 2a09565db8681cdb76607e7ed51eecf68f4ff8f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/25/2020
-ms.locfileid: "77168032"
+ms.locfileid: "80257178"
 ---
 # <a name="azure-policy-samples"></a>Примеры для Политики Azure
 
@@ -31,6 +31,10 @@ ms.locfileid: "77168032"
 - [Оператор count](./pattern-count-operator.md)
 - [Группирование определений политик в инициативу](./pattern-group-with-initiative.md)
 - [Развертывание ресурсов с использованием deployIfNotExists](./pattern-deploy-resources.md)
+
+## <a name="other-samples"></a>Другие примеры
+
+- [GitHub — репозиторий политики сообщества](https://github.com/Azure/Community-Policy)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

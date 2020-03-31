@@ -1,7 +1,7 @@
 ---
 title: Руководство по классификации изображений. Обучение моделей
 titleSuffix: Azure Machine Learning
-description: Узнайте, как с помощью Машинного обучения Azure обучить модель классификации изображений, используя Scikit-learn в Jupyter Notebook для Python. Это руководство представляет собой первую часть серии, состоящей из двух частей.
+description: Узнайте, как с помощью Машинного обучения Azure обучить модель классификации изображений, используя Scikit-learn в Jupyter Notebook для Python. Это руководство представляет первую часть серии (всего две части).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,14 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 02/10/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5a2ff4d78c1e0e67b390f607da69cc299e2dce4a
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 8cf46db06a4a2f8fa86f97dab5a8477cf427c999
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77116493"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159091"
 ---
-# <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Руководство. Обучение моделей классификации изображений с помощью данных MNIST и scikit-learn в Службе машинного обучения Azure
+# <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Руководство по обучению моделей классификации изображений с использованием данных MNIST и Scikit-learn 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом руководстве необходимо обучить модель машинного обучения на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для Машинного обучения Azure в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
@@ -34,7 +34,7 @@ ms.locfileid: "77116493"
 
 Во [второй части этого руководства](tutorial-deploy-models-with-aml.md) описано, как выбрать и развернуть модель.
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 >[!NOTE]
 > Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) версии 1.0.65.
@@ -57,7 +57,7 @@ ms.locfileid: "77116493"
 > Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода. 
 > Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
 
-## <a name="start"></a>Настройка среды разработки
+## <a name="set-up-your-development-environment"></a><a name="start"></a>Настройка среды разработки
 
 Все настройки для работы по разработке можно сделать в записной книжке Python. Настройка включает следующие действия:
 

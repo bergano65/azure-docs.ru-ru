@@ -11,53 +11,57 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 06/25/2019
-ms.openlocfilehash: 96a27d5bfc76c78688d6b6b2a02c988dde764248
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 191de1fdbbee3e31bfcd366cbec8a70732b23b5c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691609"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80061814"
 ---
 # <a name="use-cli-to-monitor-and-scale-a-single-sql-database"></a>Мониторинг и масштабирование отдельной базы данных SQL с помощью интерфейса командной строки
 
 Этот пример сценария Azure CLI масштабирует отдельную базу данных SQL Azure до другого объема вычислительных ресурсов после запроса на получение сведений о размере базы данных.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
-
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="sample-script"></a>Пример скрипта
+
+### <a name="sign-in-to-azure"></a>Вход в Azure
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+```azurecli-interactive
+$subscription = "<subscriptionId>" # add subscription here
+
+az account set -s $subscription # ...or use 'az login'
+```
+
+### <a name="run-the-script"></a>Выполнение скрипта
 
 [!code-azurecli-interactive[main](../../../cli_scripts/sql-database/monitor-and-scale-database/monitor-and-scale-database.sh "Monitor and scale single SQL Database")]
 
 > [!TIP]
-> Список операций, выполняемых в базе данных, можно получить при помощи [az sql db op list](/cli/azure/sql/db/op?#az-sql-db-op-list). Чтобы отменить операцию обновления в базе данных, воспользуйтесь [az sql db op cancel](/cli/azure/sql/db/op#az-sql-db-op-cancel).
+> Список операций, выполняемых в базе данных, можно получить с помощью команды [az sql db op list](/cli/azure/sql/db/op?#az-sql-db-op-list). Чтобы отменить операцию обновления в базе данных, воспользуйтесь командой [az sql db op cancel](/cli/azure/sql/db/op#az-sql-db-op-cancel).
 
-## <a name="clean-up-deployment"></a>Очистка развертывания
+### <a name="clean-up-deployment"></a>Очистка развертывания
 
-Используйте следующую команду, чтобы удалить группу ресурсов и все связанные с ней ресурсы.
+Используйте приведенную ниже команду, чтобы удалить группу ресурсов и все связанные с ней ресурсы.
 
 ```azurecli-interactive
-az group delete --name $resourceGroupName
+az group delete --name $resource
 ```
 
-## <a name="script-explanation"></a>Описание скрипта
+## <a name="sample-reference"></a>Примеры
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| | |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az sql server create](https://docs.microsoft.com/cli/azure/sql/server#az-sql-server-create) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
-| [az sql db show-usage](https://docs.microsoft.com/cli/azure/sql#az-sql-show-usage) | Отображает сведения об используемом размере отдельной базы данных или базы данных в пуле. |
-| [az sql db update](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update) | Обновляет свойства базы данных (например, уровень служб или объем вычислительных ресурсов) или перемещает базу данных в эластичный пул, из него или между эластичными пулами. |
-| [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
-|||
+| [az sql server](/cli/azure/sql/server) | Команды сервера. |
+| [az sql db show-usage](/cli/azure/sql#az-sql-show-usage) | Отображает сведения об используемом размере отдельной базы данных или базы данных в пуле. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).

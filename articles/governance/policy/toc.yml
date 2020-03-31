@@ -11,14 +11,14 @@
     - name: Назначение политики с помощью портала
       displayName: 'assign, compliance'
       href: assign-policy-portal.md
-    - name: Назначение политики с помощью PowerShell
+    - name: "Назначение политики\_— Azure PowerShell"
       displayName: 'assign, compliance'
       href: assign-policy-powershell.md
     - name: Назначение политики с помощью Azure CLI
       displayName: 'assign, compliance'
       href: assign-policy-azurecli.md
-    - name: Назначение политики с помощью шаблона
-      displayName: 'assign, compliance, resource manager, ARM'
+    - name: "Назначение политики\_— шаблон Resource Manager"
+      displayName: 'assign, compliance, resource manager'
       href: assign-policy-template.md
 - name: Учебники
   items:
@@ -81,7 +81,7 @@
     - name: Политика Azure для Kubernetes
       items:
         - name: Политика для AKS
-          displayName: 'aks, rego, k8s, opa, open policy agent, gatekeeper, v2'
+          displayName: 'aks, rego, k8s, opa, open policy agent, gatekeeper, v3, crd, constraints'
           href: ./concepts/rego-for-aks.md
         - name: Политика для обработчика AKS
           displayName: 'aks, k8s, opa, open policy agent, gatekeeper, v3, crd, constraints'
@@ -100,9 +100,12 @@
     - name: Создание политик для свойств массива
       displayName: 'array property, alias, aliases, in, notIn, type, defaultValue'
       href: ./how-to/author-policies-for-arrays.md
-    - name: Создание политики гостевой конфигурации
-      displayName: 'powershell, dsc, chef, linux, windows'
+    - name: Создание политики гостевой конфигурации в Windows
+      displayName: 'powershell, dsc, chef, windows'
       href: ./how-to/guest-configuration-create.md
+    - name: Создание политики гостевой конфигурации в Linux
+      displayName: 'powershell, dsc, chef, linux'
+      href: ./how-to/guest-configuration-create-linux.md
     - name: Получение данных о соответствии
       displayName: 'evaluation, scan, summarize, query, events, log analytics'
       href: ./how-to/get-compliance-data.md
@@ -148,6 +151,12 @@
           href: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
         - name: Определения политик
           href: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+    - name: SDK Azure для Node
+      items:
+        - name: Политика
+          href: /javascript/api/@azure/arm-policy
+        - name: Анализ политик
+          href: /javascript/api/@azure/arm-policyinsights
     - name: SDK Azure для Python
       items:
         - name: Политика
@@ -186,6 +195,8 @@
   items:
     - name: 'GitHub: примеры для Политики Azure'
       href: 'https://github.com/Azure/azure-policy'
+    - name: "GitHub\_— репозиторий политики сообщества"
+      href: 'https://github.com/Azure/Community-Policy'
     - name: "Видео: Build\_2018"
       href: 'https://channel9.msdn.com/events/Build/2018/THR2030'
     - name: 'Канал на YouTube, посвященный системе управления'

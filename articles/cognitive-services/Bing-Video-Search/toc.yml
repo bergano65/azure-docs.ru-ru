@@ -8,7 +8,7 @@
     - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
-- name: Краткие руководства по REST API
+- name: Краткие руководства
   expanded: true
   items:
     - name: REST API
@@ -27,14 +27,8 @@
           href: quickstarts/ruby.md
     - name: SDK
       items:
-        - name: 'Использование C#'
-          href: quickstarts/sdk-csharp-quickstart.md
-        - name: Использование Node.js
-          href: quickstarts/sdk-node-quickstart.md
-        - name: Использование Python
-          href: quickstarts/sdk-python-quickstart.md
-        - name: Использование Java
-          href: quickstarts/sdk-java-quickstart.md
+        - name: Клиентские библиотеки Поиска видео Bing
+          href: ./quickstarts/client-libraries.md
 - name: Учебники
   items:
     - name: Создание одностраничного веб-приложения

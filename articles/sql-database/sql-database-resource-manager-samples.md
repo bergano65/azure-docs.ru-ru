@@ -11,18 +11,18 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 02/04/2019
-ms.openlocfilehash: 16091286aecc6dfdbcfa833a76920ff4bc9c64de
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: b254621cc414fb9b2b76263957adc80da6e9c22d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821129"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79214007"
 ---
 # <a name="azure-resource-manager-templates-for-azure-sql-database"></a>Шаблоны Azure Resource Manager для Базы данных SQL Azure
 
 Шаблоны Azure Resource Manager позволяют определить инфраструктуру как код и развертывать решения в облаке Azure.
 
-## <a name="single-database--elastic-pooltabsingle-database"></a>[Отдельная база данных или эластичный пул](#tab/single-database)
+## <a name="single-database--elastic-pool"></a>[Отдельная база данных или эластичный пул](#tab/single-database)
 
 В следующей таблице представлены ссылки на шаблоны Azure Resource Manager для Базы данных SQL Azure.
 
@@ -34,14 +34,14 @@ ms.locfileid: "73821129"
 | [Группы отработки отказа](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-with-failover-group) | Этот шаблон создает два логических сервера SQL Azure, базу данных SQL и группу отработки отказа.|
 | [Обнаружение угроз](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-threat-detection-db-policy-multiple-databases) | Этот шаблон позволяет развернуть логический сервер SQL Azure и набор баз данных SQL Azure с включенным обнаружением угроз и адресом электронной почты для оповещений для каждой базы данных. Обнаружение угроз является частью предложения Расширенной защиты от угроз (ATP) и предоставляет слой безопасности, который отвечает на потенциальные угрозы через серверы и базы данных SQL.|
 | [Аудит в хранилище BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage) | Этот шаблон позволяет развернуть логический сервер SQL Azure с включенным аудитом для записи журналов аудита в хранилище BLOB-объектов. Аудит базы данных SQL Azure отслеживает события базы данных и записывает их в журнал аудита, который можно разместить в учетной записи хранения Azure, рабочей области OMS или Центрах событий.|
-| [Аудит в концентраторе событий Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub) | Этот шаблон позволяет развернуть сервер SQL Azure с включенным аудитом для записи журналов аудита в имеющийся концентратор событий. Чтобы отправить события аудита в концентратор событий, задайте параметры аудита с помощью `Enabled` `State` и задайте `IsAzureMonitorTargetEnabled` значение `true`. Кроме того, настройте параметры диагностики с помощью категории журналов диагностики `SQLSecurityAuditEvents` в базе данных `master` (для аудита на уровне обслуживания). Аудит базы данных SQL Azure и Хранилища данных SQL отслеживает события базы данных и записывает их в журнал аудита, который можно разместить в учетной записи хранения Azure, в рабочей области OMS или в Центрах событий.|
+| [Аудит в концентраторе событий Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub) | Этот шаблон позволяет развернуть сервер SQL Azure с включенным аудитом для записи журналов аудита в имеющийся концентратор событий. Чтобы отправить события аудита в концентратор событий, задайте параметры аудита с помощью `Enabled` `State` и задайте `IsAzureMonitorTargetEnabled` значение `true`. Кроме того, настройте параметры диагностики, указав категорию журналов диагностики `SQLSecurityAuditEvents`, в базе данных `master` (для аудита на уровне обслуживания). Аудит базы данных SQL Azure и Хранилища данных SQL отслеживает события базы данных и записывает их в журнал аудита, который можно разместить в учетной записи хранения Azure, в рабочей области OMS или в Центрах событий.|
 | [Веб-приложение Azure с Базой данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database) | Этот пример создает бесплатное веб-приложение Azure и Базу данных SQL с уровнем обслуживания "Базовый".|
 | [Веб-приложение Azure и Кэш Redis с Базой данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-redis-cache-sql-database) | Этот шаблон создает веб-приложение, Кэш Redis и Базу данных SQL в той же группе ресурсов и создает две строки подключения в веб-приложении для Базы данных SQL и Кэша Redis.|
 | [Импорт данных из хранилища BLOB-объектов с помощью ADF V2](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-v2-blob-to-sql-copy) | Этот шаблон Azure Resource Manager создает Фабрику данных Azure версии 2, копирующую данные из хранилища BLOB-объектов Azure в Базу данных SQL.|
 | [Кластер HDInsight с Базой данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-with-sql-database) | Этот шаблон позволяет создать кластер HDInsight, сервер Базы данных SQL, Базу данных SQL и две таблицы. Этот шаблон используется в статье [Использование Apache Sqoop с Hadoop в HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/hdinsight-use-sqoop) |
 | [Приложение логики Azure, выполняющее хранимую процедуру SQL по расписанию](https://github.com/Azure/azure-quickstart-templates/tree/master/101-logic-app-sql-proc) | Этот шаблон позволяет создать приложение логики, которое будет запускать хранимую процедуру SQL по расписанию. Все аргументы для процедуры можно поместить в раздел body шаблона.|
 
-## <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
+## <a name="managed-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
 В следующей таблице представлены ссылки на шаблоны Azure Resource Manager для Управляемого экземпляра Базы данных SQL Azure.
 

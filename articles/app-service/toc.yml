@@ -265,6 +265,8 @@
           href: 'https://azure.microsoft.com/documentation/scripts/'
     - name: Устранение неполадок
       items:
+        - name: Устранение ошибок прерывистого исходящего подключения
+          href: troubleshoot-intermittent-outbound-connection-errors.md
         - name: Устранение неполадок с помощью Visual Studio
           href: troubleshoot-dotnet-visual-studio.md
         - name: Устранение неполадок с приложением Node.js

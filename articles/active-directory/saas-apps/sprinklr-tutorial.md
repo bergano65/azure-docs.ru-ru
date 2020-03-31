@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 9e4025d040783bff1cd85fb46d571e3a89967892
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67089662"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sprinklr"></a>Руководство по Интеграция Azure Active Directory со Sprinklr
@@ -38,7 +38,7 @@ ms.locfileid: "67089662"
 
 Чтобы настроить интеграцию Azure AD с Sprinklr, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Sprinklr с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,13 +99,13 @@ ms.locfileid: "67089662"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Sprinklr](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.sprinklr.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.sprinklr.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.sprinklr.com`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67089662"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -140,13 +140,13 @@ ms.locfileid: "67089662"
 
 1. Щелкните **+ Добавить параметры единого входа**.
 
-    ![Единый вход](./media/sprinklr-tutorial/ic782909.png "Единый вход")
+    ![Параметры единого входа](./media/sprinklr-tutorial/ic782909.png "Единый вход")
 
 1. На странице **Единый вход** сделайте следующее:
 
-    ![Единый вход](./media/sprinklr-tutorial/ic782910.png "Единый вход")
+    ![Параметры единого входа](./media/sprinklr-tutorial/ic782910.png "Единый вход")
 
-    a. В текстовое поле **Name** (Имя) введите имя конфигурации (например *WAADSSOTest*).
+    а. В текстовое поле **Name** (Имя) введите имя конфигурации (например *WAADSSOTest*).
 
     b. Щелкните **Включено**.
 
@@ -154,9 +154,9 @@ ms.locfileid: "67089662"
 
     d. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений**.
 
-    д. В текстовое поле **Entity Id** (Идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
+    д) В текстовое поле **Entity Id** (Идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
-    Е. В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
+    е) В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
     ж. В текстовое поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -229,17 +229,17 @@ ms.locfileid: "67089662"
 
 1. В области слева выберите **Manage Client (Управление клиентом) \> Users (Пользователи)** .
 
-    ![Параметры](./media/sprinklr-tutorial/ic782914.png "Параметры")
+    ![Параметры](./media/sprinklr-tutorial/ic782914.png "Настройки")
 
 1. Нажмите кнопку **Add User**(Добавить пользователя).
 
-    ![Параметры](./media/sprinklr-tutorial/ic782915.png "Параметры")
+    ![Параметры](./media/sprinklr-tutorial/ic782915.png "Настройки")
 
 1. В диалоговом окне **Изменение пользователя** сделайте следующее:
 
     ![Изменение пользователя](./media/sprinklr-tutorial/ic782916.png "Изменение пользователя")
 
-    a. В текстовых полях **Email** (Электронная почта), **First Name** (Имя) и **Last Name** (Фамилия) введите данные учетной записи пользователя Azure AD, которую необходимо подготовить.
+    а. В текстовых полях **Email** (Электронная почта), **First Name** (Имя) и **Last Name** (Фамилия) введите данные учетной записи пользователя Azure AD, которую необходимо подготовить.
 
     b. Установите флажок **Пароль отключен**.
 
@@ -247,7 +247,7 @@ ms.locfileid: "67089662"
 
     d. Выберите **Тип пользователя**.
 
-    д. Нажмите кнопку **Обновить**.
+    д) Нажмите кнопку **Обновить**.
 
     > [!IMPORTANT]
     > **Пароль отключен** , чтобы дать пользователю возможность входить через поставщик удостоверений. 
@@ -256,7 +256,7 @@ ms.locfileid: "67089662"
 
     ![Роли партнера](./media/sprinklr-tutorial/ic782917.png "Роли партнера")
 
-    a. В списке **Global** (Глобальные) выберите **ALL_Permissions**.  
+    а. В списке **Global** (Глобальные) выберите **ALL_Permissions**.  
 
     b. Нажмите кнопку **Обновить**.
 
@@ -275,4 +275,4 @@ ms.locfileid: "67089662"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

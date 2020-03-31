@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 642cc42a9853fe0a93a40ca65652b6dc5fcd8d40
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: f69b65ece09a63c7a1d9e23d5cd488d9659724ad
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78387294"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79457429"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -37,9 +37,9 @@ ms.locfileid: "78387294"
 >
 
 Общие сведения об Azure Key Vault см. в статье [Что такое хранилище ключей Azure?](key-vault-overview.md)
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать команды Azure CLI из этой строки, вам необходимо следующее:
 
@@ -219,27 +219,27 @@ az keyvault set-policy --name "ContosoKeyVault" --spn 8f8c4bbd-485b-45fd-98f7-ec
 az keyvault set-policy --name "ContosoKeyVault" --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --secret-permissions get
 ```
 
-## <a name="bkmk_KVperCLI"></a> Установка политик расширенного доступа к хранилищу ключей
+## <a name="setting-key-vault-advanced-access-policies"></a><a name="bkmk_KVperCLI"></a> Установка политик расширенного доступа к хранилищу ключей
 
 Включите политики расширенного доступа к хранилищу ключей с помощью команды [az keyvault update](/cli/azure/keyvault#az-keyvault-update).
 
- Включение хранилища ключей для развертывания — позволяет виртуальным машинам получать сертификаты, хранимые в виде секретов, из хранилища.
+ Включение хранилища ключей для развертывания: позволяет виртуальным машинам получать сертификаты, хранимые в виде секретов, из хранилища.
 
  ```azurecli
  az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-deployment "true"
  ```
 
-Включение хранилища ключей для шифрования диска — требуется при использовании хранилища для шифрования диска Azure.
+Включение хранилища ключей для шифрования дисков: требуется при использовании хранилища для шифрования дисков Azure.
 
  ```azurecli
  az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-disk-encryption "true"
  ```  
 
-Включение хранилища ключей для развертывания шаблона — позволяет диспетчеру ресурсов получать секреты из хранилища.
+Включение хранилища ключей для развертывания шаблона: позволяет Resource Manager получать секреты из хранилища.
 
-```azurecli 
- az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-template-deployment "true"
- ```
+```azurecli
+az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-template-deployment "true"
+```
 
 ## <a name="working-with-hardware-security-modules-hsms"></a>Работа с аппаратными модулями безопасности (HSM)
 

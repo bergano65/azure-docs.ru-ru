@@ -10,12 +10,12 @@ metadata:
   author: DCtheGeek
   ms.author: dacoulte
   ms.date: 11/04/2019
-  ms.openlocfilehash: 1a91f7fe63753ddc7c8b88d487064b15206fcfe3
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.openlocfilehash: d4ebb4dbc8fb2bc71ac9f061ef6d4500b86831ff
+  ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "73494346"
+  ms.lasthandoff: 03/26/2020
+  ms.locfileid: "80289198"
 landingContent:
 - title: Сведения о службе "Политика Azure"
   linkLists:
@@ -109,10 +109,6 @@ landingContent:
       url: /powershell/module/az.resources/#policies
     - text: Azure PowerShell (служба анализа политик)
       url: /powershell/module/az.policyinsights#policy_insights
-    - text: Пакет Azure SDK для .NET (назначения)
-      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
-    - text: Пакет Azure SDK для .NET (определения политик)
-      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
     - text: REST (анализ политик)
       url: /rest/api/policy-insights/
     - text: REST (назначения)
@@ -123,3 +119,21 @@ landingContent:
       url: /rest/api/resources/policysetdefinitions
     - text: Шаблоны Resource Manager
       url: /azure/templates/microsoft.authorization/allversions
+- title: Справка (дополнительно)
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Пакет Azure SDK для .NET (назначения)
+      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
+    - text: Пакет Azure SDK для .NET (определения политик)
+      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+    - text: Пакет SDK Azure для Node (Policy)
+      url: /javascript/api/@azure/arm-policy
+    - text: Пакет SDK Azure для Node (PolicyInsights)
+      url: /javascript/api/@azure/arm-policyinsights
+    - text: Пакет SDK Azure для Python (Policy)
+      url: /python/api/azure-mgmt-resource/azure.mgmt.resource.policy
+    - text: Пакет SDK Azure для Python (PolicyClient)
+      url: /python/api/azure-mgmt-resource/azure.mgmt.resource.policyclient
+    - text: Пакет SDK Azure для Python (PolicyInsights)
+      url: /python/api/azure-mgmt-policyinsights/azure.mgmt.policyinsights

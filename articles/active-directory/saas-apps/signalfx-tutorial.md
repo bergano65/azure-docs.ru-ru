@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/24/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc8ba01ea8a443c4f8a3a8e7b911dcc605ee61ea
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: 149718dcd325ef6bd6a6754ba100ffdc34be0a07
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78967706"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79136420"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-signalfx"></a>Руководство по Интеграция единого входа Azure Active Directory с SignalFx
 
@@ -30,7 +30,7 @@ ms.locfileid: "78967706"
 * Вы можете включить автоматический вход пользователей в SignalFx с помощью учетных записей Azure AD.
 * Вы также можете централизовано управлять учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/what-is-single-sign-on)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -57,7 +57,7 @@ ms.locfileid: "78967706"
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите и выберите **SignalFx**.
-    * Дождитесь добавления приложения в клиент (на это может потребоваться несколько минут).
+     * Дождитесь добавления приложения в клиент (на это может потребоваться несколько минут).
 1. Оставьте портал Azure открытым, а затем откройте новую вкладку в веб-браузере.    
 
 ## <a name="step-2-begin-signalfx-sso-configuration"></a>Шаг 2. Начло настройки единого входа в SignalFx
@@ -175,7 +175,7 @@ ms.locfileid: "78967706"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/what-is-single-sign-on)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

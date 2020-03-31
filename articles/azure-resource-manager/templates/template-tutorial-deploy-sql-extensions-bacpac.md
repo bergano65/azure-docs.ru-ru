@@ -5,18 +5,18 @@ author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 27ac4b67aa19aa59abe80ccf9409acf7b587a22b
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 8e65ebbfa0971bf2156165b55ca18eee3cc74bc9
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250097"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239273"
 ---
-# <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство по Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
+# <a name="tutorial-import-sql-bacpac-files-with-arm-templates"></a>Руководство по Импорт BACPAC-файлов SQL с помощью шаблонов ARM
 
-Здесь приведены сведения о том, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager. Артефакты развертывания — это любые файлы, которые помимо файлов основного шаблона необходимы для выполнения развертывания. BACPAC-файл является артефактом. 
+Узнайте, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager (ARM). Артефакты развертывания — это любые файлы, которые помимо файлов основного шаблона необходимы для выполнения развертывания. BACPAC-файл является артефактом. 
 
-В этом учебнике вы создадите шаблон для развертывания Azure SQL Server, Базы данных SQL и импорта BACPAC-файла. Сведения о развертывании расширений виртуальной машины Azure с помощью шаблонов Azure Resource Manager см. в статье [Руководство. Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](./template-tutorial-deploy-vm-extensions.md).
+В этом учебнике вы создадите шаблон для развертывания Azure SQL Server, Базы данных SQL и импорта BACPAC-файла. См. сведения о развертывании расширений виртуальной машины Azure с помощью шаблонов ARM в руководстве по [ развертыванию расширений виртуальной машины с помощью шаблонов ARM](./template-tutorial-deploy-vm-extensions.md).
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -33,20 +33,20 @@ ms.locfileid: "78250097"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](./use-vs-code-to-create-template.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора Azure SQL Server. Ниже приведен пример создания пароля.
 
     ```console
     openssl rand -base64 32
     ```
 
-    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
+    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона ARM](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="prepare-a-bacpac-file"></a>Подготовка BACPAC-файла
 
 BACPAC-файл доступен на сайте [GitHub](https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac). Сведения о создании собственного файла см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](../../sql-database/sql-database-export.md). Если вы решили опубликовать файл в своем расположении, необходимо обновить шаблон позже в этом руководстве.
 
-BACPAC-файл должен храниться в учетной записи службы хранилища Azure, прежде чем его можно будет импортировать с помощью шаблона Resource Manager. Следующий скрипт PowerShell подготавливает BACPAC-файл:
+BACPAC-файл нужно сохранить в учетной записи службы хранилища Azure, прежде чем его можно будет импортировать с помощью шаблона ARM. Следующий скрипт PowerShell подготавливает BACPAC-файл:
 
 * Скачивание BACPAC-файла.
 * Создание учетной записи хранения Azure.

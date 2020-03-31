@@ -31,6 +31,11 @@
     - name: Управление данными службы автоматизации Azure
       href: automation-managing-data.md
       displayName: backup
+    - name: Диагностика
+      items:
+        - name: Устранение неполадок с учетной записью службы автоматизации
+          href: troubleshoot/automation-account.md
+          displayName: troubleshoot
 - name: Автоматизация процессов
   items:
     - name: Обзор гибридного компонента Runbook Worker

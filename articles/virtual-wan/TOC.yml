@@ -10,6 +10,8 @@
           href: migrate-from-hub-spoke-topology.md
         - name: Архитектура глобальной транзитной сети
           href: virtual-wan-global-transit-network-architecture.md
+        - name: Межсоединение с Китаем
+          href: interconnect-china.md
 - name: Учебники
   items:
     - name: Создание подключения "сеть — сеть"
@@ -20,6 +22,8 @@
       href: virtual-wan-expressroute-portal.md
 - name: Основные понятия
   items:
+    - name: Дистанционная работа
+      href: work-remotely-support.md
     - name: Расположения и партнеры
       items:
         - name: Расположения концентраторов и партнеры
@@ -28,8 +32,6 @@
           href: virtual-wan-configure-automation-providers.md
     - name: Политики IPsec
       href: virtual-wan-ipsec.md
-    - name: "Общие сведения о VPN-подключении типа \"точка\_— сеть\""
-      href: ../vpn-gateway/point-to-site-about.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
 - name: Практические руководства
   items:
     - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
@@ -52,25 +54,31 @@
           href: virtual-wan-site-to-site-portal.md
     - name: "Пользовательские VPN-подключения (точка\_— сеть)"
       items:
-        - name: "Создание пользовательских VPN-подключений (точка\_— сеть)"
+        - name: Создание пользовательского VPN-подключения
           href: virtual-wan-point-to-site-portal.md
-        - name: Настройка сертификатов для пользовательских VPN-подключений
+        - name: Создайте сертификаты.
           href: certificates-point-to-site.md
-        - name: "Настройка клиента Azure\_AD для VPN пользователя"
+        - name: Настройка клиента Azure AD
           href: openvpn-azure-ad-tenant.md
-        - name: Настройка VPN-туннеля Always On для пользователя
-          href: ../vpn-gateway/vpn-gateway-howto-always-on-user-tunnel.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
-        - name: Настройка VPN-туннеля Always On для устройства
-          href: ../vpn-gateway/vpn-gateway-howto-always-on-device-tunnel.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
-        - name: Включение многофакторной идентификации для VPN пользователя
-          href: openvpn-azure-ad-mfa.md
-        - name: "Настройка аутентификации Azure\_AD для VPN пользователя"
-          href: virtual-wan-point-to-site-azure-ad.md
-        - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях"
-          href: openvpn-azure-ad-tenant-multi-app.md
-        - name: Скачивание глобальных профилей пользовательских VPN-подключений и профилей на основе концентраторов
+        - name: Клиентский профиль
+          href: about-vpn-profile-download.md
+        - name: Глобальный профиль и профиль на основе концентратора
           href: global-hub-profile.md
-    - name: Настройка маршрутизации
+        - name: Настройка клиентов OpenVPN
+          href: howto-openvpn-clients.md?
+        - name: Настройка VPN-туннеля Always On для пользователя
+          href: howto-always-on-user-tunnel.md
+        - name: Настройка VPN-туннеля Always On для устройства
+          href: howto-always-on-device-tunnel.md
+        - name: Включение многофакторной проверки подлинности (MFA)
+          href: openvpn-azure-ad-mfa.md
+        - name: "Настройка проверки подлинности Azure\_AD"
+          href: virtual-wan-point-to-site-azure-ad.md
+        - name: "Настройка VPN-клиента Azure для Windows\_10"
+          href: openvpn-azure-ad-client.md
+        - name: "Настройка проверка подлинности Azure\_AD в нескольких приложениях"
+          href: openvpn-azure-ad-tenant-multi-app.md
+    - name: Маршрутизация
       items:
         - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
           items:

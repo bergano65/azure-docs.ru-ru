@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Azure Load Balancer
+    - name: Что такое Azure Load Balancer?
       href: load-balancer-overview.md
 - name: Краткое руководство
   items:
@@ -64,6 +64,14 @@
       href: load-balancer-security-controls.md
 - name: Практическое руководство
   items:
+    - name: Масштабируемые наборы виртуальных машин
+      items:
+        - name: "Использование с существующим решением Azure Load Balancer\_— портал"
+          href: configure-vm-scale-set-portal.md
+        - name: "Использование с существующим решением Azure Load Balancer\_— PowerShell"
+          href: configure-vm-scale-set-powershell.md
+        - name: "Использование с существующим решением Azure Load Balancer\_— CLI"
+          href: configure-vm-scale-set-cli.md
     - name: Обновление Load Balancer с ценовой категории "Базовый" до ценовой категории "Стандартный"
       items:
         - name: Обновление общедоступной версии Load Balancer ценовой категории "Базовый"

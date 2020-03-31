@@ -6,14 +6,14 @@ ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.date: 12/02/2019
+ms.date: 3/18/2020
 ms.custom: mvc
-ms.openlocfilehash: 91283b453e71e476d247e752b24e9eec0047a814
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 455d7a0c1b3826060ade1083ec6eea99e397574b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74776800"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79534853"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-azure-cli"></a>Руководство по Проектирование Базы данных Azure для MariaDB с помощью Azure CLI
 
@@ -24,7 +24,7 @@ ms.locfileid: "74776800"
 > * настройка брандмауэра сервера;
 > * использование [программы командной строки MySQL](https://dev.mysql.com/doc/refman/5.7/en/mysql.html) для создания базы данных.
 > * Загрузка примера данных
-> * Запрос данных
+> * Данные запросов
 > * Обновление данных
 > * восстановление данных.
 
@@ -44,7 +44,7 @@ az account set --subscription 00000000-0000-0000-0000-000000000000
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), выполнив команду [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
-В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении `westus`.
+В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `westus`.
 
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
@@ -185,7 +185,7 @@ az mariadb server restore --resource-group myresourcegroup --name mydemoserver-r
 
 Для команды `az mariadb server restore` необходимо настроить следующие параметры:
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
@@ -196,13 +196,13 @@ az mariadb server restore --resource-group myresourcegroup --name mydemoserver-r
 
 Команда выполняется в синхронном режиме и будет возвращена после восстановления сервера. После завершения восстановления найдите созданный сервер. Убедитесь, что данные восстановлены надлежащим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как выполнять следующие операции:
 > [!div class="checklist"]
 > * Создание сервера Базы данных Azure для MariaDB
 > * настройка брандмауэра сервера;
 > * использование [программы командной строки MySQL](https://dev.mysql.com/doc/refman/5.7/en/mysql.html) для создания базы данных.
 > * Загрузка примера данных
-> * Запрос данных
+> * Данные запросов
 > * Обновление данных
 > * восстановление данных.

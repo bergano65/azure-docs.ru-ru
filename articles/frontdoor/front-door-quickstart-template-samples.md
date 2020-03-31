@@ -1,5 +1,5 @@
 ---
-title: Примеры шаблонов Azure Resource Manager для Azure Front Door Service
+title: Примеры шаблонов Azure Resource Manager для Azure Front Door
 description: Примеры шаблонов Azure Resource Manager для службы Azure Front Door
 services: frontdoor
 documentationcenter: ''
@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/13/2018
 ms.author: sharadag
-ms.openlocfilehash: 2684c9852cb3e946d8ec1840fc166053204dfae0
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: de3b13162e7828542331e7e7a34d0101f7feaf71
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184596"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79471664"
 ---
 # <a name="azure-resource-manager-deployment-model-templates-for-front-door"></a>Шаблоны модели развертывания Azure Resource Manager для Front Door
 
-В приведенной ниже таблице представлены ссылки на шаблоны модели развертывания Azure Resource Manager для службы Azure Front Door. 
+В приведенной ниже таблице представлены ссылки на шаблоны модели развертывания с помощью Azure Resource Manager для службы Azure Front Door. 
 
 | | |
 | ---| ---|
@@ -36,7 +36,7 @@ ms.locfileid: "74184596"
 | [Настройка ограничения скорости для Front Door](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-rate-limiting)| Настраивает Front Door на ограничение скорости входящего трафика для заданного интерфейсного узла. |
 | | |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).
 - Дополнительные сведения о том, [как работает Front Door](front-door-routing-architecture.md).
