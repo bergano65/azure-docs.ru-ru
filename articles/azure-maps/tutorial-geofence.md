@@ -1,20 +1,20 @@
 ---
 title: Руководство. Создание геозоны и отслеживание устройств на карте | Microsoft Azure Maps
 description: Сведения о настройке геозоны и отслеживании устройств относительно геозоны с помощью службы пространственных данных Microsoft Azure Maps.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 1/15/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: e0e918a2508bb65de176b030a73598e221aff676
-ms.sourcegitcommit: f255f869c1dc451fd71e0cab340af629a1b5fb6b
+ms.openlocfilehash: 126829f12d71e40511c26e781cb191988c1d031e
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2020
-ms.locfileid: "77370166"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80333866"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>Руководство по Настройка геозоны с использованием Azure Maps
 
@@ -150,13 +150,13 @@ ms.locfileid: "77370166"
    }
    ```
 
-5. Отправьте данные и проверьте заголовок ответа. Если запрос выполнен успешно, заголовок **Location** будет содержать URI проверки состояния. URI проверки состояния имеет следующий формат. 
+5. Отправьте данные и проверьте заголовок ответа. Если запрос выполнен успешно, заголовок **Location** будет содержать URI проверки состояния. URI проверки состояния имеет следующий формат. Значение uploadStatusId выходит за рамки { }. Обычно рекомендуется использовать {} для отображения значений, которые должен ввести пользователь, или значений, которые отличаются для разных пользователей.
 
    ```HTTP
    https://atlas.microsoft.com/mapData/{uploadStatusId}/status?api-version=1.0
    ```
 
-6. Скопируйте URI проверки состояния и добавьте к нему ключ подписки. Итоговый URI проверки состояния должен иметь примерно такой формат. Обратите внимание, что в этом формате нужно заменить строку {subscription-key}, включая фигурные скобки {}, значением ключа подписки.
+6. Скопируйте URI проверки состояния и добавьте к нему ключ подписки. Итоговый URI проверки состояния должен иметь примерно такой формат. Обратите внимание, что в этом формате нужно заменить строку {subscription-key} (не включая фигурные скобки {}) значением ключа подписки.
 
    ```HTTP
    https://atlas.microsoft.com/mapData/{uploadStatusId}/status?api-version=1.0&subscription-key={Subscription-key}
@@ -166,7 +166,8 @@ ms.locfileid: "77370166"
 
    ```JSON
    {
-    "udid" : "{udId}"
+    "status": "Succeeded",
+    "resourceLocation": "https://atlas.microsoft.com/mapData/metadata/{udId}?api-version=1.0"
    }
    ```
 
