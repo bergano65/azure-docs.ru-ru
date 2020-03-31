@@ -12,10 +12,10 @@ ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
 ms.openlocfilehash: d3afcded894f72626a4f24bcbe85c34ac1329c29
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72242926"
 ---
 # <a name="project-acoustics-unrealwwise-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unreal и Wwise
@@ -96,6 +96,6 @@ ms.locfileid: "72242926"
 
 Project Acoustics выполняет вычисления в "области моделирования", размещенной вокруг каждого моделируемого расположения игрока. Ресурсы акустических характеристик в примере пакета были смоделированы в области моделирования с радиусом 45 метров. Затухание должно сократиться до 0 при достижении расстояния в 45 метров. Несмотря на то что это снижение не является обязательным требованием, оно представляет собой предупреждение о том, что эффект окклюзии звуков будут создавать только предметы в пределах 45 метров.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Интегрируйте подключаемый модуль Project Acoustics](unreal-integration.md) в проект Unreal.
 * [Создайте учетную запись Azure](create-azure-account.md) для собственных сборок сцены.

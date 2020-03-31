@@ -12,10 +12,10 @@ ms.topic: quickstart
 ms.date: 02/03/2020
 ms.author: diberry
 ms.openlocfilehash: e06bb4c09b3ebab25c0c0ef8ac5c51f6842f34cd
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76987960"
 ---
 # <a name="quickstart-get-intent-with-a-browser"></a>Краткое руководство. Получение намерения с помощью браузера
@@ -34,7 +34,7 @@ ms.locfileid: "76987960"
 1. Откройте веб-браузер.
 1. Используйте полные URL-адреса, приведенные ниже, заменив `YOUR-KEY` своим собственным ключом разработки или прогнозирования LUIS. Запросы — это запросы GET, которые включает авторизацию с ключом разработки или прогнозирования LUIS в качестве параметра строки запроса.
 
-    #### <a name="v3-prediction-requesttabv3-1-1"></a>[Запрос на прогнозирование V3](#tab/V3-1-1)
+    #### <a name="v3-prediction-request"></a>[Запрос на прогнозирование V3](#tab/V3-1-1)
 
 
     Формат URL-адреса V3 для запроса **GET** к конечной точке:
@@ -43,7 +43,7 @@ ms.locfileid: "76987960"
     https://westus.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2/slots/production/predict?query=turn on all lights&subscription-key=YOUR-KEY
     `
 
-    #### <a name="v2-prediction-requesttabv2-1-2"></a>[Запрос на прогнозирование V2](#tab/V2-1-2)
+    #### <a name="v2-prediction-request"></a>[Запрос на прогнозирование V2](#tab/V2-1-2)
 
     Формат URL-адреса V2 для запроса **GET** к конечной точке:
 
@@ -53,7 +53,7 @@ ms.locfileid: "76987960"
 
 1. Вставьте URL-адрес в окне браузера и нажмите клавишу ВВОД. В браузере отображается результат JSON, который указывает, что LUIS определяет намерение `HomeAutomation.TurnOn` как основное и сущность `HomeAutomation.Operation` со значением `on`.
 
-    #### <a name="v3-prediction-responsetabv3-2-1"></a>[Ответ на прогнозирование V3](#tab/V3-2-1)
+    #### <a name="v3-prediction-response"></a>[Ответ на прогнозирование V3](#tab/V3-2-1)
 
     ```JSON
     {
@@ -74,7 +74,7 @@ ms.locfileid: "76987960"
     }
     ```
 
-    #### <a name="v2-prediction-responsetabv2-2-2"></a>[Ответ на прогнозирование V2](#tab/V2-2-2)
+    #### <a name="v2-prediction-response"></a>[Ответ на прогнозирование V2](#tab/V2-2-2)
 
     ```json
     {
@@ -99,7 +99,7 @@ ms.locfileid: "76987960"
 
 1. Чтобы увидеть все намерения, добавьте соответствующий параметр строки запроса.
 
-    #### <a name="v3-prediction-endpointtabv3-3-1"></a>[Конечная точка прогнозирования V3](#tab/V3-3-1)
+    #### <a name="v3-prediction-endpoint"></a>[Конечная точка прогнозирования V3](#tab/V3-3-1)
 
     Добавьте `show-all-intents=true` в конец строки запроса, чтобы **показать все намерения**:
 
@@ -132,7 +132,7 @@ ms.locfileid: "76987960"
     }
     ```
 
-    #### <a name="v2-prediction-endpointtabv2"></a>[Конечная точка прогнозирования V2](#tab/V2)
+    #### <a name="v2-prediction-endpoint"></a>[Конечная точка прогнозирования V2](#tab/V2)
 
     Добавьте `verbose=true` в конец строки запроса, чтобы **показать все намерения**:
 

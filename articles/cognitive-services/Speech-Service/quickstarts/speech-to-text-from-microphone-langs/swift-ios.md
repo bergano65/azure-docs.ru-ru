@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 12/23/2019
 ms.author: chlandsi
 ms.openlocfilehash: 31f5339c70d52019400ca5f1fe873de4790a3bd6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75380530"
 ---
 # <a name="quickstart-recognize-speech-in-swift-on-ios-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Swift с использованием iOS и пакета SDK службы "Речь"
@@ -23,7 +23,7 @@ ms.locfileid: "75380530"
 
 Из этой статьи вы узнаете, как с помощью пакета SDK для службы "Речь" в Azure Cognitive Services можно создать приложение iOS на Swift, которое будет преобразовывать микрофонную запись речи в текст.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы вам потребуются:
 

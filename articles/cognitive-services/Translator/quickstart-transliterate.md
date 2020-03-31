@@ -12,10 +12,10 @@ ms.date: 02/10/2020
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-one
 ms.openlocfilehash: 4247983fd39cd8d9acf256d313ae10aa2002585f
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77525130"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text"></a>Краткое руководство. Транслитерация текста с помощью API Перевода текстов

@@ -12,10 +12,10 @@ ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
 ms.openlocfilehash: fd00e4105ce4edae9d014df2a83c5ae3aaf778da
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68854267"
 ---
 # <a name="project-acoustics-unity-design-tutorial"></a>Руководство по разработке Project Acoustics в Unity
@@ -91,6 +91,6 @@ Acoustics выполняет вычисления в области модели
 
 ![Снимок экрана с объемными пикселями Project Acoustics во время выполнения](media/voxels-runtime.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите материалы с описанием принципов, лежащих в основе [процесса разработки](design-process.md)
 
