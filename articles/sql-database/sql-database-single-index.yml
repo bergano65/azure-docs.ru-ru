@@ -1,16 +1,16 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Подключение к базе данных SQL Azure и Отдельная база данных
+title: База данных SQL Azure
 metadata:
-  title: Документация по отдельным базам данных
-  meta.description: Learn how to use Azure SQL databases.
+  title: "Документация\_— отдельная база данных, сервер базы данных, эластичный пул"
+  description: 'Ознакомьтесь с краткими руководствами, учебными материалами и примерами для отдельных баз данных в Базе данных SQL Azure, эластичных пулов и серверов баз данных.'
   services: sql-database
   requires-business-manager-approval: false
   ms.service: sql-database
   ms.subservice: single-database
   ms.topic: overview
   author: jovanpop-msft
-  ms.author: jovanpop-msft
+  ms.author: jovanpop
   ms.reviewer: carlrab
   manager: craigg
   ms.date: 04/26/2019

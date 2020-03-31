@@ -21,6 +21,8 @@
           href: cognitive-search-quickstart-blob.md
         - name: Создание хранилища знаний
           href: knowledge-store-create-portal.md
+        - name: Подача запросов с использованием обозревателя поиска
+          href: search-explorer.md
     - name: 'C#'
       href: search-get-started-dotnet.md
     - name: Java
@@ -231,10 +233,10 @@
           href: search-query-simple-examples.md
         - name: Использование полного синтаксиса Lucene
           href: search-query-lucene-examples.md
-        - name: Использование обозревателя поиска (портал)
-          href: search-explorer.md
         - name: Специальные символы и частично указанные термины
           href: search-query-partial-matching.md
+        - name: Подача запросов из Power Apps
+          href: search-howto-powerapps.md
         - name: Справочник по синтаксису
           items:
             - name: Простой синтаксис запросов

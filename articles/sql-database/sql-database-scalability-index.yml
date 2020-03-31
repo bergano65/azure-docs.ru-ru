@@ -3,7 +3,7 @@ documentType: LandingData
 title: Масштабируемость
 metadata:
   title: "База данных SQL Azure\_— масштабируемость"
-  meta.description: Learn how to scale your Azure SQL Database.
+  description: 'Узнайте, как База данных SQL Azure позволяет легко масштабировать базу данных путем добавления вычислительной мощности (вертикальное масштабирование) или дополнительных единиц базы данных (горизонтальное масштабирование).'
   services: sql-database
   ms.subservice: scale-out
   author: jovanpop-msft
@@ -14,7 +14,7 @@ metadata:
   ms.devlang: null
   ms.topic: overview
   ms.date: 01/25/2019
-  ms.author: jovanpop-msft
+  ms.author: jovanpop
 sections:
   - items:
       - type: paragraph

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 18f76ea4acc99038939a2653bb66875154529126
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67184980"
 ---
-Если вам нужно выполнить асинхронную работу в обработчике, можно отложить установки токена, запрашивая `deferral` объект и затем завершить его, как показано в следующем примере.
+Если нужно выполнить асинхронные операции в обработчике, можете отложить установку маркера, запросив объект `deferral`, а затем завершить установку, как показано в следующем примере.

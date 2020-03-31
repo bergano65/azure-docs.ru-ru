@@ -14,7 +14,8 @@
           href: kubernetes-walkthrough.md
         - name: Использование портала Azure
           href: kubernetes-walkthrough-portal.md
-        - name: Использование шаблона Resource Manager
+        - name: Использование шаблона ARM
+          displayName: Resource Manager
           href: kubernetes-walkthrough-rm-template.md
     - name: Разработка приложений
       expanded: true
@@ -73,6 +74,8 @@
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md
+    - name: Автоматическое восстановление узла
+      href: node-auto-repair.md
     - name: Рекомендации
       items:
         - name: Обзор
@@ -123,6 +126,8 @@
           href: upgrade-cluster.md
         - name: Обновления ОС узла процесса
           href: node-updates-kured.md
+        - name: Настройка кластера AKS.
+          href: cluster-configuration.md
         - name: Интеграция ACR с кластером AKS
           href: cluster-container-registry-integration.md
         - name: Создание виртуальных узлов
@@ -198,7 +203,7 @@
       items:
         - name: Создание субъекта-службы
           href: kubernetes-service-principal.md
-        - name: Использование управляемых удостоверений (предварительная версия)
+        - name: Использование управляемых удостоверений
           href: use-managed-identity.md
         - name: Ограничение доступа к файлу конфигурации кластера
           href: control-kubeconfig-access.md
@@ -216,6 +221,8 @@
           href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:
+            - name: "Интеграция Azure\_AD (предварительная версия)"
+              href: azure-ad-v2.md
             - name: Использование Azure CLI
               href: azure-ad-integration-cli.md
             - name: Использование портала Azure

@@ -41,6 +41,10 @@
       href: tutorial-visual-search-image-upload.md
     - name: Обрезка и поиск области изображения
       href: tutorial-visual-search-crop-area-results.md
+    - name: Поиск похожих изображений в результатах предыдущих поисковых запросов
+      href: tutorial-visual-search-insights-token.md
+    - name: Создание одностраничного веб-приложения
+      href: tutorial-bing-visual-search-single-page-app.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -63,10 +67,6 @@
     - name: Изменение размера и обрезка эскизов
       maintainContext: true
       href: ../bing-web-search/resize-and-crop-thumbnails.md
-    - name: Поиск изображения с помощью токенов аналитических сведений об изображении
-      href: tutorial-visual-search-insights-token.md
-    - name: Создание одностраничного веб-приложения
-      href: tutorial-bing-visual-search-single-page-app.md
 - name: Справочник
   items:
     - name: REST API версии 7

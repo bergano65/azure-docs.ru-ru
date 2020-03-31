@@ -24,6 +24,8 @@
           href: cloud-governed-management-for-on-premises.md
         - name: Четыре действия по настройке строгой идентификации
           href: four-steps.md
+        - name: Выбор метода проверки подлинности на основе гибридных удостоверений
+          href: choose-ad-authn.md
     - name: Azure AD Connect с расширением Azure AD Connect Health
       items:
         - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
@@ -90,7 +92,7 @@
           href: concept-azure-ad-connect-sync-user-and-contacts.md
         - name: Общие сведения о теневых атрибутах
           href: how-to-connect-syncservice-shadow-attributes.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Установка и обновление
       items:
@@ -280,13 +282,13 @@
               href: how-to-connect-sync-service-manager-ui-mvdesigner.md
             - name: Поиск в метавселенной
               href: how-to-connect-sync-service-manager-ui-mvsearch.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: "Общие сведения об агенте администратора Azure\_AD Connect"
           href: whatis-aadc-admin-agent.md
         - name: Что собой представляет модуль PowerShell ADConnectivityTools
           href: how-to-connect-adconnectivitytools.md
-        - name: Возможность подключения
+        - name: Соединение
           href: tshoot-connect-connectivity.md
         - name: Ошибки при синхронизации
           href: tshoot-connect-sync-errors.md
@@ -312,7 +314,9 @@
           href: tshoot-connect-attribute-not-syncing.md
         - name: Проблемы с установкой
           href: tshoot-connect-install-issues.md
-- name: Справочные материалы
+        - name: Изменения имени субъекта-пользователя
+          href: howto-troubleshoot-upn-changes.md
+- name: Справочник
   items:
     - name: 'Порты и протоколы, необходимые для гибридной идентификации'
       href: reference-connect-ports.md

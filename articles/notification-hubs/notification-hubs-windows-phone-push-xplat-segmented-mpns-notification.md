@@ -17,14 +17,14 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 88326b07a96dcc8ce7a72f8709a88c2662f48707
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 72ecb5bdb6bb024c5e4422548dd11888c03e4799
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213388"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80126941"
 ---
-# <a name="tutorial-push-notifications-to-specific-windows-phone-devices-by-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений на конкретные устройства Windows Phone с помощью Центров уведомлений Azure
+# <a name="tutorial-send-push-notifications-to-specific-windows-phones-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений на конкретные телефоны Windows с помощью Центров уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "71213388"
 > [!NOTE]
 > Центры уведомлений Windows Phone SDK не поддерживают использование службы push-уведомлений Windows (WNS) с приложениями Windows Phone 8.1 Silverlight. Использование WNS (вместо MPNS) с приложениями Windows Phone 8.1 Silverlight описано в статье [Центр уведомлений: учебник для Windows Phone Silverlight] на примере REST API.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Добавление возможности выбора категорий в мобильное приложение
@@ -308,7 +308,7 @@ ms.locfileid: "71213388"
 
     ![Сообщение с уведомлением][3]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как отправлять push-уведомления на определенные устройства, при регистрации которых указаны теги. Сведения о том, как отправлять push-уведомления конкретным пользователям с несколькими устройствами, см. в следующем руководстве: 
 

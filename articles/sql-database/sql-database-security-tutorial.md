@@ -10,12 +10,12 @@ ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 09/03/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 05ea21f7b3221425e5b052797d79e629fdfe3ba5
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 9e3c5c12157a007bcad59a78b4623ff4d5a0041f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78360429"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222591"
 ---
 # <a name="tutorial-secure-a-single-or-pooled-database"></a>Руководство по Защита отдельной базы данных или базы данных в пуле
 
@@ -149,7 +149,7 @@ ms.locfileid: "78360429"
 
 ## <a name="manage-database-access"></a>Управление доступом к базе данных
 
-Управляйте доступом к базе данных, добавляя пользователей в базу данных или предоставляя доступ с помощью безопасных строк подключения. Строки подключения можно использовать для внешних приложений. Дополнительные сведения см. в статьях [Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"](sql-database-control-access.md) и [Использование аутентификации Azure Active Directory для аутентификации с помощью SQL](sql-database-aad-authentication.md).
+Управляйте доступом к базе данных, добавляя пользователей в базу данных или предоставляя доступ с помощью безопасных строк подключения. Строки подключения можно использовать для внешних приложений. Дополнительные сведения см. в статьях [Управление именами входа и учетными записями пользователей](sql-database-manage-logins.md) и [Проверка подлинности с помощью Active Directory](sql-database-aad-authentication.md).
 
 Чтобы добавить пользователей, выберите тип аутентификации базы данных:
 

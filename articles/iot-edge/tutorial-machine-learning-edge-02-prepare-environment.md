@@ -4,16 +4,16 @@ description: Руководство по Подготовка среды для 
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 1/23/2020
+ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9809a9b4d644a1fa11fe9cce1cbd35b037206b29
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: 42c776d4d6c3973e7c222c9c9adf3e5105f6c84f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78944295"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79296814"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство по настройке среды для машинного обучения в IoT Edge
 
@@ -189,18 +189,19 @@ ms.locfileid: "78944295"
 
 1. Разверните раздел **Хранение**:
 
-   ![Проверка наличия элемента turbofandevicestorage в списке пользовательских конечных точек](media/tutorial-machine-learning-edge-02-prepare-environment/custom-endpoints.png)
+   ![Проверка наличия элемента turbofanDeviceStorage в списке пользовательских конечных точек](media/tutorial-machine-learning-edge-02-prepare-environment/custom-endpoints.png)
 
-   Элемент **turbofandevicestorage** отображается в списке пользовательских конечных точек. Обратите внимание на следующие характеристики этой конечной точки:
+   Элемент **turbofanDeviceStorage** отображается в списке пользовательских конечных точек. Обратите внимание на следующие характеристики этой конечной точки:
 
    * Она указывает на контейнер хранилища BLOB-объектов, созданный с помощью `devicedata`, как указано в столбце **Имя контейнера**.
    * В столбце **Формат имени файла** последний элемент имени — partition. Мы считаем этот формат более удобным для файловых операций, которые мы будем выполнять с Записными книжками Azure позже в рамках этого руководства.
+   * Состояние конечной точки должно иметь значение **Работоспособна**.
 
 1. Выберите вкладку **Маршруты**.
 
 1. Выберите маршрут с именем **turbofanDeviceDataToStorage**.
 
-1. Обратите внимание, что на странице **Routes details** (Сведения о маршрутах) конечной точкой маршрута является конечная точка **turbofanDeviceStorage**.
+1. Обратите внимание, что на странице **Сведения о маршрутизации** конечной точкой маршрута является **turbofanDeviceStorage**.
 
    ![Просмотр сведений о маршруте turbofanDeviceDataToStorage.](media/tutorial-machine-learning-edge-02-prepare-environment/route-details.png)
 

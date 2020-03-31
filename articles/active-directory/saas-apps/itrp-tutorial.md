@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: d44391624e29d2bdd182bb07452e0e8def2d1407
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67656698"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itrp"></a>Руководство по Интеграция Azure Active Directory с ITRP
@@ -39,7 +39,7 @@ ms.locfileid: "67656698"
 
 Чтобы настроить интеграцию Azure AD с ITRP, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка ITRP с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -79,7 +79,7 @@ ms.locfileid: "67656698"
 2. **[Настройка единого входа в ITRP](#configure-itrp-single-sign-on)** на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить ему использовать единый вход Azure AD.
-5. **[Создание тестового пользователя ITRP](#create-an-itrp-test-user)**, связанного с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя ITRP](#create-an-itrp-test-user)** , связанного с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться, что конфигурация работает правильно.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -139,17 +139,17 @@ ms.locfileid: "67656698"
 
 1. В верхней части окна щелкните значок **Settings** (Параметры).
 
-    ![Значок "Settings" (Параметры)](./media/itrp-tutorial/ic775570.png "Значок \"Settings\" (Параметры)")
+    ![Значок "Параметры"](./media/itrp-tutorial/ic775570.png "Значок "Параметры"")
 
 1. В левой области выберите **Single Sign-On** (Единый вход).
 
-    ![Выбор "Single Sign-On" (Единый вход)](./media/itrp-tutorial/ic775571.png "Выбор \"Single Sign-On\" (Единый вход)")
+    ![Выбор пункта Single Sign-On (Единый вход)](./media/itrp-tutorial/ic775571.png "Выбор параметра "Единый вход"")
 
 1. В разделе конфигурации **Single Sign-On** (Единый вход) выполните следующие действия.
 
-    ![Раздел "Single Sign-On" (Единый вход)](./media/itrp-tutorial/ic775572.png "Раздел \"Single Sign-On\" (Единый вход)")
+    ![Раздел Single Sign-On (Единый вход)](./media/itrp-tutorial/ic775572.png "Раздел Single Sign-On (Единый вход)")
 
-    ![Раздел "Single Sign-On" (Единый вход)](./media/itrp-tutorial/ic775573.png "Раздел \"Single Sign-On\" (Единый вход)")
+    ![Раздел Single Sign-On (Единый вход)](./media/itrp-tutorial/ic775573.png "Раздел Single Sign-On (Единый вход)")
 
     1. Щелкните **Включено**.
 
@@ -179,11 +179,11 @@ ms.locfileid: "67656698"
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>**. (Например, BrittaSimon@contoso.com).
+    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>** . (Например, BrittaSimon@contoso.com).
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -221,19 +221,19 @@ ms.locfileid: "67656698"
 
 1. В верхней части окна щелкните значок **Records** (Записи).
 
-    ![Значок "Records" (Записи)](./media/itrp-tutorial/ic775575.png "Значок \"Records\" (Записи)")
+    ![Значок Records (Записи)](./media/itrp-tutorial/ic775575.png "Значок Records (Записи)")
 
 1. В меню выберите **People** (Люди).
 
-    ![Выбор "People" (Люди)](./media/itrp-tutorial/ic775587.png "Выбор \"People\" (Люди)")
+    ![Выбор пункта People (Люди)](./media/itrp-tutorial/ic775587.png "Выбор пункта People (Люди)")
 
-1. Щелкните знак плюса (**+**), чтобы добавить нового пользователя.
+1. Щелкните знак плюса ( **+** ), чтобы добавить нового пользователя.
 
-    ![Выбор знака плюса](./media/itrp-tutorial/ic775576.png "Выбор знака плюса")
+    ![Выбор знака "плюс"](./media/itrp-tutorial/ic775576.png "Выбор знака "плюс"")
 
 1. В диалоговом окне **Add New Person** (Добавление пользователя) выполните следующие действия.
 
-    ![Диалоговое окно "Add New Person" (Добавление пользователя)](./media/itrp-tutorial/ic775577.png "Диалоговое окно \"Add New Person\" (Добавление пользователя)")
+    ![Диалоговое окно Add New Person (Добавление пользователя)](./media/itrp-tutorial/ic775577.png "Диалоговое окно Add New Person (Добавление пользователя)")
 
     1. Введите имя и адрес электронной почты действующей учетной записи Azure AD, которую вы хотите добавить.
 
@@ -246,7 +246,7 @@ ms.locfileid: "67656698"
 
 Теперь необходимо проверить конфигурацию единого входа Azure AD с помощью Панели доступа.
 
-Щелкнув элемент "ITRP" на Панели доступа, вы автоматически войдете в экземпляр ITRP, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Доступ и использование приложений на портале Мои приложения](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув элемент "ITRP" на Панели доступа, вы автоматически войдете в экземпляр ITRP, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Access and use apps on the My Apps portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Доступ к приложениям и их использование на портале "Мои приложения").
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -254,4 +254,4 @@ ms.locfileid: "67656698"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/20/2019
 ms.author: jeedes
 ms.openlocfilehash: 2149b8410104b39652b176895a31b42e094265f5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67100089"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство по Интеграция Azure Active Directory с InsideView
@@ -39,7 +39,7 @@ ms.locfileid: "67100089"
 
 Чтобы настроить интеграцию Azure AD с InsideView, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка InsideView с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -135,7 +135,7 @@ ms.locfileid: "67100089"
 
 1. В разделе **Add a New SAML** (Добавление конфигурации SAML) сделайте следующее.
 
-    ![Раздел "Add a New SAML" (Добавление конфигурации SAML)](./media/insideview-tutorial/ic794136.png "Раздел \"Add a New SAML\" (Добавление конфигурации SAML)")
+    ![Раздел добавления конфигурации SAML](./media/insideview-tutorial/ic794136.png "Раздел добавления конфигурации SAML")
 
     1. В поле **STS Name** (Имя службы токенов безопасности) введите имя конфигурации.
 
@@ -175,7 +175,7 @@ ms.locfileid: "67100089"
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -216,7 +216,7 @@ ms.locfileid: "67100089"
 
 Теперь необходимо проверить конфигурацию единого входа Azure AD с помощью Панели доступа.
 
-Щелкнув элемент "InsideView" на Панели доступа, вы автоматически войдете в экземпляр InsideView, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Доступ и использование приложений на портале Мои приложения](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув элемент "InsideView" на Панели доступа, вы автоматически войдете в экземпляр InsideView, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Access and use apps on the My Apps portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Доступ к приложениям и их использование на портале "Мои приложения").
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -224,4 +224,4 @@ ms.locfileid: "67100089"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

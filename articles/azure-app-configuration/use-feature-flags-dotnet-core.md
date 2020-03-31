@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: b04fe3b6451fd7250bc3b05970d49fdb8e7003bd
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3182961f928a9befc5a55fb6d58e22c74ba81089
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899296"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79473444"
 ---
-# <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство. использованию флагов функций в приложении ASP.NET Core
+# <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство по использованию флагов функций в приложении ASP.NET Core
 
 Библиотеки управления функциями .NET Core обеспечивают идиоматическую поддержку реализации флагов функций в приложении .NET или ASP.NET Core. Эти библиотеки позволяют декларативно добавлять флаги функций в код, чтобы вам не пришлось записывать все операторы `if` для них вручную.
 
@@ -37,6 +37,8 @@ ms.locfileid: "76899296"
 
 ## <a name="set-up-feature-management"></a>Настройка управления функциями
 
+Чтобы использовать диспетчер функций .NET Core, добавьте ссылку на пакет NuGet `Microsoft.FeatureManagement`.
+    
 Диспетчер функций .NET Core `IFeatureManager` возвращает флаги функций из собственной системы конфигурации платформы. Таким образом, вы можете определить флаги функций приложения, используя любой источник конфигурации, поддерживаемый .NET Core, включая локальный файл *appsettings.json* или переменные среды. В `IFeatureManager` используется внедрение зависимостей .NET Core. Вы можете зарегистрировать службы управления функциями с помощью стандартных соглашений:
 
 ```csharp

@@ -1,5 +1,5 @@
 ---
-title: Отправка push-уведомлений в приложения Windows Phone с помощью Центров уведомлений Azure | Документация Майкрософт
+title: Отправка push-уведомлений в приложения Windows Phone с помощью Центров уведомлений Azure | Документация Майкрософт
 description: Из этого учебника вы узнаете, как использовать центры уведомлений Azure для отправки push-уведомлений в приложение Silverlight для Windows Phone 8 или Windows Phone 8.1.
 services: notification-hubs
 documentationcenter: windows
@@ -18,14 +18,14 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 7f026dd5953dd233b0183d8ce7978f647fb8c6af
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 9cad4bfc474ef23492858ed3b0a6447932b589b4
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213461"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80127087"
 ---
-# <a name="tutorial-push-notifications-to-windows-phone-apps-by-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в конкретные приложения Windows Phone с помощью Центров уведомлений Azure
+# <a name="tutorial-send-push-notifications-to-windows-phone-apps-using-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения Windows Phone с помощью Центров уведомлений
 
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
@@ -36,7 +36,7 @@ ms.locfileid: "71213461"
 > [!NOTE]
 > Центры уведомлений Windows Phone SDK не поддерживают использование службы push-уведомлений Windows (WNS) с приложениями Windows Phone 8.1 Silverlight. Использование WNS (вместо MPNS) с приложениями Windows Phone 8.1 Silverlight описано в статье [Центр уведомлений: учебник для Windows Phone Silverlight], в котором используются API REST.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание концентратора уведомлений
@@ -149,7 +149,7 @@ ms.locfileid: "71213461"
 
     ![Уведомление на телефоне под управлением Windows](./media/notification-hubs-windows-phone-get-started/notification-on-windows-phone.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом простом примере осуществляется широковещательная рассылка push-уведомлений на все устройства Windows Phone 8. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству:
 

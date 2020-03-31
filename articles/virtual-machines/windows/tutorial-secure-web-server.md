@@ -1,6 +1,6 @@
 ---
-title: Руководство. Защита веб-сервера Windows с помощью SSL-сертификатов в Azure
-description: В этом руководстве описано, как использовать Azure PowerShell для защиты виртуальной машины Windows, запущенной на веб-сервере IIS, с помощью SSL-сертификатов, хранящихся в Azure Key Vault.
+title: Руководство по защите веб-сервера Windows с помощью TLS/SSL-сертификатов в Azure
+description: В этом руководстве описано, как использовать Azure PowerShell для защиты виртуальной машины Windows, запущенной на веб-сервере IIS, с помощью TLS/SSL-сертификатов, хранимых в Azure Key Vault.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
@@ -15,25 +15,25 @@ ms.workload: infrastructure
 ms.date: 02/09/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 6185ad4f0e043329c4e833b97a09922ba0238a82
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 5b084f8a226d1cfd5bab2cc81512fb51fa6bf41c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264243"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80154293"
 ---
-# <a name="tutorial-secure-a-web-server-on-a-windows-virtual-machine-in-azure-with-ssl-certificates-stored-in-key-vault"></a>Руководство. Защита веб-сервера на виртуальной машине Windows в Azure с помощью SSL-сертификатов, хранимых в Key Vault
+# <a name="tutorial-secure-a-web-server-on-a-windows-virtual-machine-in-azure-with-tlsssl-certificates-stored-in-key-vault"></a>Руководство по защите веб-сервера на виртуальной машине Windows в Azure с помощью TLS/SSL-сертификатов, хранимых в Key Vault
 
 > [!NOTE]
 > Сейчас это руководство подходит только для универсальных образов. Если попытаться выполнить инструкции, приведенные в этом руководстве, со специализированным диском, появится сообщение об ошибке. 
 
-Чтобы защитить веб-серверы, можно использовать SSL-сертификат (Secure Sockets Layer) для шифрования веб-трафика. SSL-сертификаты могут храниться в Azure Key Vault и разрешать безопасное развертывание сертификатов на виртуальных машинах Windows в Azure. Из этого руководства вы узнаете, как выполнить следующие задачи:
+Чтобы защитить веб-серверы, для шифрования веб-трафика можно использовать протокол TLS, который ранее назывался протоколом SSL. TLS/SSL-сертификаты могут храниться в Azure Key Vault и разрешать безопасное развертывание сертификатов на виртуальных машинах Windows в Azure. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * создать Azure Key Vault;
 > * создать или передать сертификат в Key Vault;
 > * Создание виртуальной машины и установка веб-сервера IIS
-> * Внедрение сертификата в виртуальную машину и настройка IIS с помощью SSL-привязки
+> * внедрение сертификата в виртуальную машину и настройка IIS с помощью TLS-привязки.
 
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
@@ -172,13 +172,13 @@ Get-AzPublicIPAddress -ResourceGroupName $resourceGroup -Name "myPublicIPAddress
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-С помощью этого руководства вы защитили веб-сервер IIS SSL-сертификатом, который хранится в Azure Key Vault. Вы ознакомились с выполнением следующих задач:
+Выполнив инструкции, приведенные в этом руководстве, вы защитили веб-сервер IIS TLS/SSL-сертификатом, который хранится в Azure Key Vault. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * создать Azure Key Vault;
 > * создать или передать сертификат в Key Vault;
 > * Создание виртуальной машины и установка веб-сервера IIS
-> * Внедрение сертификата в виртуальную машину и настройка IIS с помощью SSL-привязки
+> * внедрение сертификата в виртуальную машину и настройка IIS с помощью TLS-привязки.
 
 Чтобы увидеть предварительно созданные примеры скриптов виртуальной машины, перейдите по ссылке ниже.
 

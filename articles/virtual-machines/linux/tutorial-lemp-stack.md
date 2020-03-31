@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: cynthn
-ms.openlocfilehash: 1de2e70ccafbbde49e764437bfe8ce94602747b6
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6d603dbf2746608f499ba37b4f17b533b64bc941
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034453"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80154361"
 ---
 # <a name="tutorial-install-a-lemp-web-server-on-a-linux-virtual-machine-in-azure"></a>Руководство по Установка веб-сервера LEMP на виртуальной машине Linux в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "74034453"
 > * Создание виртуальной машины Ubuntu ("L" в названии стека LEMP).
 > * Открытие порта 80 для веб-трафика
 > * Установка NGINX, MySQL и PHP
-> * Проверка установки и настройки.
+> * Проверка установки и настройки
 > * Установка WordPress на сервере LEMP.
 
 Эта настройка выполняется для быстрых тестов или подтверждения концепции.
@@ -159,9 +159,9 @@ sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/info.php'
 
 [!INCLUDE [virtual-machines-linux-tutorial-wordpress.md](../../../includes/virtual-machines-linux-tutorial-wordpress.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как развернуть сервер LEMP в Azure. Вы научились выполнять следующие задачи:
+Из этого руководства вы узнали, как развернуть сервер LEMP в Azure. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины Ubuntu.
@@ -170,10 +170,10 @@ sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/info.php'
 > * Проверка установки и настройки
 > * Установка WordPress в стеке LEMP.
 
-Перейдите к следующему руководству, чтобы узнать, как защитить веб-серверы с помощью SSL-сертификатов.
+Перейдите к следующему руководству, чтобы узнать, как защитить веб-серверы с помощью TLS/SSL-сертификатов.
 
 > [!div class="nextstepaction"]
-> [Secure a web server with SSL certificates on a Linux virtual machine in Azure](tutorial-secure-web-server.md) (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
+> [Защита веб-сервера с помощью TLS](tutorial-secure-web-server.md)
 
 [2]: ./media/tutorial-lemp-stack/phpsuccesspage.png
 [3]: ./media/tutorial-lemp-stack/nginx.png
