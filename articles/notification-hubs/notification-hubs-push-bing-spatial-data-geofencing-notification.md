@@ -18,14 +18,14 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 510e2648db3076a0e3ee2535c6058f7ed212f558
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 9f8697332d34fc044c805db6c6595fdf067ed054
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387482"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80127193"
 ---
-# <a name="tutorial-send-location-based-push-notifications-with-azure-notification-hubs-and-bing-spatial-data"></a>Руководство по Отправка push-уведомлений с учетом географического расположения с помощью Центров уведомлений Azure и Bing Spatial Data
+# <a name="tutorial-send-location-based-push-notifications-with-notification-hubs-and-bing-spatial-data"></a>Руководство по отправке push-уведомлений с учетом географического расположения с помощью Центров уведомлений и Bing Spatial Data
 
 В этом руководстве вы узнаете, как отправлять push-уведомления с учетом географического расположения с помощью Центров уведомлений Azure и Bing Spatial Data.
 
@@ -78,7 +78,7 @@ ms.locfileid: "72387482"
 8. Перейдите на вкладку **Published Data Sources** (Опубликованные источники данных) и убедитесь, что в списке отображается ваш источник данных.
 
     ![](./media/notification-hubs-geofence/bing-maps-published-data.png)
-9. Выберите **Изменить** Вы увидите, какие расположения представлены в данных.
+9. Выберите команду **Изменить**. Вы увидите, какие расположения представлены в данных.
 
     ![](./media/notification-hubs-geofence/bing-maps-data-details.png)
 
@@ -164,7 +164,7 @@ ms.locfileid: "72387482"
     }
     ```
 
-    Дополнительные сведения о получении сведений о расположении пользователя в приложениях UWP см. в [этой статье](https://msdn.microsoft.com/library/windows/apps/mt219698.aspx).
+    Дополнительные сведения о получении данных о расположении пользователя в приложениях UWP см. в [этой статье](https://msdn.microsoft.com/library/windows/apps/mt219698.aspx).
 5. Чтобы проверить, работает ли получение сведений о местоположении, откройте код главной страницы (`MainPage.xaml.cs`). В конструкторе `MainPage` создайте обработчик событий для события `Loaded`.
 
     ```csharp
@@ -348,7 +348,7 @@ ms.locfileid: "72387482"
     ```
 
     > [!NOTE]
-    > Для параметра `POST_URL` задайте расположение развернутого веб-приложения. Сейчас его можно запустить локально. Но если планируется развернуть общедоступную версию, его необходимо разместить у внешнего поставщика.
+    > Для параметра `POST_URL` задайте расположение развернутого веб-приложения. Сейчас его можно запустить локально. Но если планируется развернуть общедоступную версию, веб-приложение необходимо разместить у внешнего поставщика.
 2. Зарегистрируйте приложение UWP для работы с push-уведомлениями. В Visual Studio выберите **Проект** > **Магазин** > **Связать приложение с Магазином**.
 
     ![](./media/notification-hubs-geofence/vs-associate-with-store.png)
@@ -389,7 +389,7 @@ ms.locfileid: "72387482"
 
     ![](./media/notification-hubs-geofence/notification-hubs-test-notification.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы решение было готово для работы, нужно выполнить несколько действий.
 

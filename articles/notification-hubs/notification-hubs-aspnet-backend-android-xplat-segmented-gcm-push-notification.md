@@ -17,14 +17,14 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: aa2aa7b77bf174f4a2ca89408ee037b398a32e4d
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 57a11eac47baace0ad9fa7dcae82dca6eeee0988
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387442"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80127307"
 ---
-# <a name="tutorial-push-notifications-to-specific-android-devices-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
+# <a name="tutorial-send-push-notifications-to-specific-android-devices-using-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений на конкретные устройства Android с Google Cloud Messaging (не рекомендуется к использованию)
 
 > [!WARNING]
 > С 10 апреля 2018 года компания Google не рекомендует использовать Google Cloud Messaging (GCM). Интерфейсы API сервера и клиента GCM являются нерекомендуемыми и будут удалены после 29 мая 2019 года. Дополнительные сведения см. в статье [GCM and FCM Frequently Asked Questions](https://developers.google.com/cloud-messaging/faq) (Часто задаваемые вопросы о GCM и FCM).
@@ -267,7 +267,7 @@ ms.locfileid: "72387442"
 
 ## <a name="register-for-notifications"></a>Регистрация для использования уведомлений
 
-Эти действия позволяют зарегистрироваться в центре уведомлений при запуске с использованием категорий, сохраненных в локальном хранилище.
+Эти действия позволяют зарегистрироваться в концентраторе уведомлений при запуске с использованием категорий, сохраненных в локальном хранилище.
 
 > [!NOTE]
 > Поскольку registrationId, назначенный службой Google Cloud Messaging (GCM), может в любой момент измениться, следует регулярно регистрироваться для получения уведомлений, чтобы предотвратить сбои в их передаче. В этом примере регистрация для использования уведомлений осуществляется при каждом запуске приложения. Для тех приложений, которые запускаются часто, более одного раза в день, возможно, лучше пропустить регистрацию, чтобы сэкономить трафик, если с момента прошлой регистрации прошло меньше суток.
@@ -323,12 +323,12 @@ ms.locfileid: "72387442"
 
     ![Уведомления о технологических новостях](./media/notification-hubs-aspnet-backend-android-breaking-news/technolgy-news-notification.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как рассылать широковещательные уведомления на конкретные устройства Android, зарегистрированные для получения уведомлений по категориям. Сведения о том, как отправлять push-уведомления конкретным пользователям, вы найдете в следующем руководстве:
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений конкретным адресатам](notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md).
+>[Отправка push-уведомлений определенным пользователям](notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md)
 
 <!-- Images. -->
 [A1]: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG

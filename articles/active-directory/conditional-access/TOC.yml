@@ -58,22 +58,24 @@
       href: best-practices.md
     - name: Распространенные политики условного доступа
       items:
+        - name: Блокировка устаревших методов проверки подлинности
+          href: howto-conditional-access-policy-block-legacy.md
         - name: Запрос на MFA для администраторов
           href: howto-conditional-access-policy-admin-mfa.md
         - name: Запрос на MFA для управления Azure
           href: howto-conditional-access-policy-azure-management.md
         - name: Обязательная многофакторная проверка подлинности для всех пользователей
           href: howto-conditional-access-policy-all-users-mfa.md
-        - name: Блокировка устаревших методов проверки подлинности
-          href: howto-conditional-access-policy-block-legacy.md
         - name: Условный доступ на основе рисков
           href: howto-conditional-access-policy-risk.md
-        - name: Запрос на доверенное расположение для регистрации MFA
+        - name: Безопасная регистрация сведений для защиты
           href: howto-conditional-access-policy-registration.md
         - name: Блокирование доступа по расположению
           href: howto-conditional-access-policy-location.md
         - name: Требовать соответствующие устройства
           href: howto-conditional-access-policy-compliant-device.md
+        - name: Заблокировать доступ
+          href: howto-conditional-access-policy-block-access.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
     - name: Требование доступа из утвержденных клиентских приложений
@@ -94,6 +96,8 @@
       href: policy-migration-mfa.md
     - name: Устранение неполадок
       items:
+        - name: Устранение проблем со входом
+          href: troubleshoot-conditional-access.md
         - name: Устранение неполадок с помощью средства What If
           href: troubleshoot-conditional-access-what-if.md
 - name: Ресурсы

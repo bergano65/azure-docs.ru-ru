@@ -10,22 +10,19 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 01/24/2020
+ms.date: 03/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 21725e64bb359b2f11086baceb186605f010b796
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 94b351ddb18ca596f47e8ef40cff8229c838d7bd
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561465"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239208"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Руководство по Использование скриптов развертывания для создания самозаверяющего сертификата (предварительная версия)
 
-Здесь описывается, как использовать скрипты развертывания в шаблонах Azure Resource Manager. Скрипты развертывания позволяют выполнять настраиваемые действия, которые не могут быть выполнены с помощью шаблонов Resource Manager. Например, создание самозаверяющего сертификата.  Работая с этим учебником, вы создадите шаблон для развертывания хранилища ключей Azure, а затем используете ресурс `Microsoft.Resources/deploymentScripts` в том же шаблоне для создания сертификата и добавите сертификат в хранилище ключей. Дополнительные сведения об использовании скриптов развертывания в шаблонах Azure Resource Manager см. в [этой статье](./deployment-script-template.md).
-
-> [!NOTE]
-> Сейчас скрипт развертывания находится на этапе предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/armtemplatepreviews).
+Узнайте, как использовать скрипты развертывания в шаблонах Azure Resource Manager (ARM). Скрипты развертывания позволяют выполнять настраиваемые действия, которые не могут быть выполнены с помощью шаблонов ARM. Например, создание самозаверяющего сертификата.  Работая с этим учебником, вы создадите шаблон для развертывания хранилища ключей Azure, а затем используете ресурс `Microsoft.Resources/deploymentScripts` в том же шаблоне для создания сертификата и добавите сертификат в хранилище ключей. См. сведения об [использовании скриптов развертывания в шаблонах ARM](./deployment-script-template.md).
 
 > [!IMPORTANT]
 > Два ресурса скрипта развертывания, учетная запись хранения и экземпляр контейнера, создаются в одной группе ресурсов для выполнения сценариев и устранения неполадок. Эти ресурсы обычно удаляются службой скриптов, когда выполнение скрипта достигает конечного состояния. Плата взимается за ресурсы, пока они не будут удалены. Дополнительные сведения в разделе об [очистке ресурсов скриптов развертывания](./deployment-script-template.md#clean-up-deployment-script-resources).
@@ -43,7 +40,7 @@ ms.locfileid: "77561465"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* **[Visual Studio Code](https://code.visualstudio.com/) с расширением средств диспетчера ресурсов**. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+* **[Visual Studio Code](https://code.visualstudio.com/) с расширением средств диспетчера ресурсов**. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](./use-vs-code-to-create-template.md).
 
 * **Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки**. Это удостоверение используется для выполнения скриптов развертывания. Сведения о его создании см. в [этом разделе](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#user-assigned-managed-identity). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
 
@@ -62,7 +59,7 @@ ms.locfileid: "77561465"
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов Resource Manager.
+Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов ARM.
 
 В этом кратком руководстве используется шаблон [Create an Azure Key Vault and a secret](https://azure.microsoft.com/resources/templates/101-key-vault-create/) (Создание Azure Key Vault и секрета). Шаблон создает хранилище ключей, а затем добавляет секрет в это хранилище.
 
@@ -348,7 +345,7 @@ program.\nCheck the spelling of the name, or if a path was included, verify that
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы узнали, как использовать скрипт развертывания в шаблонах Azure Resource Manager. Сведения о том, как развернуть ресурсы Azure на основе условий, см. по ссылке ниже.
+В этом руководстве описано, как использовать скрипт развертывания в шаблонах ARM. Сведения о том, как развернуть ресурсы Azure на основе условий, см. по ссылке ниже.
 
 > [!div class="nextstepaction"]
 > [Использование условий](./template-tutorial-use-conditions.md)

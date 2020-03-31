@@ -17,10 +17,10 @@ ms.date: 09/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5f9d727154adf0a2099d7a9144c109cef9c91238
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "70743969"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zoom"></a>Руководство по Интеграция единого входа Azure Active Directory с Zoom
@@ -35,9 +35,9 @@ ms.locfileid: "70743969"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Zoom с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "70743969"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 2. **[Настройка единого входа в Zoom](#configure-zoom-sso)** необходима для настройки параметров единого входа на стороне приложения.
     1. **[Создание тестового пользователя приложения Zoom](#create-zoom-test-user)** требуется для того, чтобы в Zoom существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-3. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+3. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,11 +79,11 @@ ms.locfileid: "70743969"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.zoom.us`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.zoom.us`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<companyname>.zoom.us`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "70743969"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Zoom.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Zoom**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -140,15 +140,15 @@ ms.locfileid: "70743969"
 
 2. Выберите вкладку **Единый вход** .
 
-    ![Вкладка единого входа](./media/zoom-tutorial/ic784700.png "Single sign-on")
+    ![Вкладка Single Sign-On (Единый вход)](./media/zoom-tutorial/ic784700.png "Единый вход")
 
 3. Откройте вкладку **Security Control** (Контроль безопасности) и перейдите к параметрам **единого входа**.
 
 4. В разделе "Единый вход" выполните следующие действия:
 
-    ![Раздел единого входа](./media/zoom-tutorial/ic784701.png "Single sign-on")
+    ![Раздел Single Sign-On (Единый вход)](./media/zoom-tutorial/ic784701.png "Единый вход")
 
-    a. В текстовое поле **Sign-in page URL** (URL-адрес страницы входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **Sign-in page URL** (URL-адрес страницы входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b. Чтобы получить значение **Sign-out page URL** (URL-адрес страницы выхода), необходимо перейти на портал Azure и щелкнуть **Azure Active Directory** слева, а затем перейти в раздел **Регистрация приложений**.
 
@@ -162,9 +162,9 @@ ms.locfileid: "70743969"
 
     ![Кнопка копирования конечной точки](./media/zoom-tutorial/endpoint1.png)
 
-    д. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений** .
+    д) Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений** .
 
-    Е. В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure. 
+    е) В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure. 
 
     ж. Выберите команду **Сохранить**.
 
@@ -186,9 +186,9 @@ ms.locfileid: "70743969"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

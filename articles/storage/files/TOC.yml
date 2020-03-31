@@ -39,8 +39,11 @@
       href: storage-files-scale-targets.md
     - name: Проверка подлинности и авторизация на основе удостоверений
       href: storage-files-active-directory-overview.md
-    - name: Шифрование неактивных данных
+    - name: Шифрование неактивных данных в службе хранилища Azure
       href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+      items:
+        - name: Управляемые клиентом ключи с использованием Azure Key Vault
+          href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Предложения для соответствия требованиям
       href: ../common/storage-compliance-offerings.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Разработка
@@ -93,6 +96,10 @@
           href: storage-how-to-use-files-mac.md
     - name: Сеть
       items:
+        - name: Настройка сетевых конечных точек Файлов Azure
+          href: storage-files-networking-endpoints.md
+        - name: Настройка перенаправления DNS для Файлов Azure
+          href: storage-files-networking-dns.md
         - name: Настройка VPN-подключения "сеть — сеть"
           href: storage-files-configure-s2s-vpn.md
         - name: "Настройка VPN-подключения типа \"точка\_—\_сеть\" в Windows"
@@ -117,12 +124,22 @@
           href: storage-sync-files-monitoring.md
     - name: Миграция
       items:
-        - name: Миграция в службу "Синхронизация файлов Azure"
-          href: storage-sync-offline-data-transfer.md
-        - name: "Руководством по миграции StorSimple\_8100 и\_8600"
-          href: storage-files-migration-storsimple-8000.md
-        - name: "Руководством по миграции StorSimple\_1200"
-          href: storage-files-migration-storsimple-1200.md
+        - name: Переход на общие папки Azure
+          href: storage-files-migration-overview.md
+        - name: Ориентирование на гибридное развертывание
+          items:
+            - name: Перенос пакетов данных в Синхронизацию файлов Azure с использованием Azure DataBox
+              href: storage-sync-offline-data-transfer.md
+            - name: Переход с Linux на гибридный файловый сервер с использованием Синхронизации файлов Azure
+              href: storage-files-migration-linux-hybrid.md
+            - name: Переход с локального сервера NAS на гибридный файловый сервер с использованием Синхронизации файлов Azure
+              href: storage-files-migration-nas-hybrid.md
+        - name: Из StorSimple
+          items:
+            - name: "Руководством по миграции StorSimple\_8100 и\_8600"
+              href: storage-files-migration-storsimple-8000.md
+            - name: "Руководством по миграции StorSimple\_1200"
+              href: storage-files-migration-storsimple-1200.md
     - name: Разработка
       items:
         - name: Настройка строк подключения

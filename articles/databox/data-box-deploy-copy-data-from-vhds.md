@@ -1,5 +1,5 @@
 ---
-title: Руководство. копирование с виртуальных жестких дисков на управляемые диски
+title: Руководство по Копирование с виртуальных жестких дисков на управляемые диски
 titleSuffix: Azure Data Box
 description: Узнайте, как копировать данные с виртуальных жестких дисков рабочих нагрузок локальных виртуальных машин в Azure Data Box.
 services: databox
@@ -9,36 +9,38 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 8f076deaafd938dc93800cf351bf471cead5f009
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: 965c768df9138d850c2ac9f88e3797dcc54fa3fc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380195"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79501858"
 ---
-# <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство. Использование Data Box для импорта данных в качестве управляемых дисков в Azure
+# <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство по Использование Data Box для импорта данных в качестве управляемых дисков в Azure.
 
 В этом руководстве описывается использование Azure Data Box для переноса локальных виртуальных жестких дисков на управляемые диски в Azure. Виртуальные жесткие диски из локальных виртуальных машин копируются в Data Box в качестве страничных BLOB-объектов и отправляются в Azure как управляемые диски. Затем эти управляемые диски можно подключить к виртуальным машинам Azure.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
+>
 > * Проверка предварительных требований
 > * подключение к Data Box;
 > * копирование данных в Data Box;
 
-
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед тем как начать, убедитесь в следующем.
 
-1. Вы завершили работу с [руководством по настройке Azure Data Box](data-box-deploy-set-up.md).
+1. Вы завершили работу со статьей [Руководство: присоединение кабелей и подключение к Azure Data Box](data-box-deploy-set-up.md).
 2. Вы получили Data Box. Состояние заказа на портале — **Доставлено**.
 3. Ваш компьютер подключен к высокоскоростной сети. Настоятельно рекомендуем использовать хотя бы одно соединение Ethernet со скоростью передачи данных 10 Гбит/с. Если подключение со скоростью 10 Гбит/с недоступно, можно использовать канал передачи данных 1 Гбит/с, но это повлияет на скорость копирования.
 4. Вы просмотрели:
 
     - поддерживаемые [размеры управляемых дисков в пределах размеров объектов Azure](data-box-limits.md#azure-object-size-limits);
     - статью [Общие сведения об управляемых дисках Azure](/azure/virtual-machines/windows/managed-disks-overview). 
+
+5. Вы сохраняете у себя копию исходных данных, пока не убедитесь, что служба Data Box перенесла ваши данные в службу хранилища Azure.
 
 ## <a name="connect-to-data-box"></a>подключение к Data Box;
 
@@ -93,7 +95,7 @@ ms.locfileid: "78380195"
 
     ```
     C:\>net use \\169.254.250.200\mydbmdrgl_MDisk /u:mdisk
-    Enter the password for ‘mdisk’ to connect to '169.254.250.200':
+    Enter the password for 'mdisk' to connect to '169.254.250.200':
     The command completed successfully.
     C: \>
     ```

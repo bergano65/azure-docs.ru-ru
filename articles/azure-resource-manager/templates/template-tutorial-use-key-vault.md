@@ -6,16 +6,16 @@ ms.date: 05/23/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: bae67b0177823ab4558085db67423edea062fa3c
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: a305914c5c870543e16c515880955693c2634044
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250068"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239173"
 ---
-# <a name="tutorial-integrate-azure-key-vault-in-your-resource-manager-template-deployment"></a>Руководство по интеграции Azure Key Vault в развертывание шаблона Resource Manager
+# <a name="tutorial-integrate-azure-key-vault-in-your-arm-template-deployment"></a>Руководство по Интеграция с Azure Key Vault при развертывании шаблона ARM
 
-Узнайте, как получить секреты из Azure Key Vault и передавать эти секреты в качестве параметров во время развертывания Azure Resource Manager. Значение параметра никогда не предоставляется, так как указывается только его идентификатор в хранилище ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./key-vault-parameter.md).
+Узнайте, как получить секреты из Azure Key Vault и передать эти секреты в качестве параметров во время развертывания Azure Resource Manager (ARM). Значение параметра никогда не предоставляется, так как указывается только его идентификатор в хранилище ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./key-vault-parameter.md).
 
 С помощью инструкций из [учебника по настройке порядка развертывания ресурсов](./template-tutorial-create-templates-with-dependent-resources.md) вы создадите виртуальную машину. Вам нужно предоставить имя и пароль учетной записи администратора виртуальной машины. Чтобы не предоставлять пароль, можно предварительно сохранить его в Azure Key Vault, а затем настроить шаблона для извлечения пароля из хранилища ключей во время развертывания.
 
@@ -39,7 +39,7 @@ ms.locfileid: "78250068"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
 * С целью повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console
@@ -49,7 +49,7 @@ ms.locfileid: "78250068"
 
 ## <a name="prepare-a-key-vault"></a>Подготовка хранилища ключей.
 
-Из этого раздела вы узнаете, как создать хранилище ключей и добавить в него секрет, который будет получен при развертывании шаблона. Существует много способов создания хранилища ключей. В этом руководстве описывается, как развернуть [шаблон Resource Manager](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorials-use-key-vault/CreateKeyVault.json) с помощью Azure PowerShell. Этот шаблон делает следующее:
+Из этого раздела вы узнаете, как создать хранилище ключей и добавить в него секрет, который будет получен при развертывании шаблона. Существует много способов создания хранилища ключей. В этом руководстве показано, как развернуть [шаблон ARM](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorials-use-key-vault/CreateKeyVault.json) с помощью Azure PowerShell. Этот шаблон делает следующее:
 
 * Создает хранилище ключей с включенным свойством `enabledForTemplateDeployment`. Это свойство должно получить значение *true* до того, как процесс развертывания шаблона сможет получить доступ к секретам, определенным в этом хранилище ключей.
 * Добавляет секрет в хранилище ключей. Секрет хранит пароль учетной записи администратора виртуальной машины.
@@ -97,7 +97,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Шаблоны быстрого запуска Azure — это репозиторий для шаблонов Resource Manager. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом учебнике, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows).
+Шаблоны быстрого запуска Azure — это репозиторий для шаблонов ARM. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом учебнике, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows).
 
 1. В Visual Studio Code выберите **Файл** > **Открыть файл**.
 
@@ -107,7 +107,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
     ```
 
-1. Чтобы открыть файл, выберите **Открыть**. Сценарий аналогичен тому, который используется в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./template-tutorial-create-templates-with-dependent-resources.md).
+1. Чтобы открыть файл, выберите **Открыть**. Сценарий аналогичен тому, который используется в статье [Руководство. Создание шаблонов Resource Manager с зависимыми ресурсами](./template-tutorial-create-templates-with-dependent-resources.md).
    Шаблон определяет пять ресурсов:
 
    * `Microsoft.Storage/storageAccounts`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).

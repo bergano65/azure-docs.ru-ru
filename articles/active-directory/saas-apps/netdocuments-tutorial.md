@@ -17,10 +17,10 @@ ms.date: 09/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 71e5e13485c4a10664d98363e8e99bfd3b4f4bcf
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72035703"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netdocuments"></a>Руководство по Интеграция единого входа Azure Active Directory с NetDocuments
@@ -35,9 +35,9 @@ ms.locfileid: "72035703"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка NetDocuments с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72035703"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в NetDocuments](#configure-netdocuments-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя NetDocuments](#create-netdocuments-test-user)** требуется для того, чтобы в NetDocuments существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,11 +78,11 @@ ms.locfileid: "72035703"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`.
     
@@ -91,9 +91,9 @@ ms.locfileid: "72035703"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. Идентификатор репозитория представляет собой значение, которое начинается **CA-** , затем следует 8-значный код, связанный с репозиторием NetDocuments. Вы можете получить дополнительные сведения, ознакомившись с [документом о поддержке федеративных удостоверений NetDocuments](https://support.netdocuments.com/hc/en-us/articles/205220410-Federated-Identity-Login). Также вы можете обратиться к [группе поддержки клиентов NetDocuments](https://support.netdocuments.com/hc/), чтобы получить эти значения, если столкнетесь со сложностями при настройке с помощью указанных выше сведений. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Приложение NetDocuments ожидает проверочных утверждений SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение NetDocuments ожидает сопоставления **nameidentifier**с **employeeid** или любым другим утверждением, применимым к организации в качестве **nameidentifier**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить** и изменив сопоставление атрибутов.
+1. Приложение NetDocuments ожидает проверочных утверждений SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение NetDocuments ожидает сопоставления **nameidentifier**с **employeeid** или любым другим утверждением, применимым к организации в качестве **nameidentifier**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить** и изменив сопоставление атрибутов.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -119,7 +119,7 @@ ms.locfileid: "72035703"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к NetDocuments.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **NetDocuments**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -141,7 +141,7 @@ ms.locfileid: "72035703"
 
 3. Щелкните **Добавление и удаление пользователей и групп**.
    
-    ![Репозиторий](./media/netdocuments-tutorial/ic795047.png "Репозиторий")
+    ![Репозиторий](./media/netdocuments-tutorial/ic795047.png "Хранилище")
 
 4. Щелкните **Настройка дополнительных параметров аутентификации**.
     
@@ -151,11 +151,11 @@ ms.locfileid: "72035703"
    
     ![Федеративная идентификация](./media/netdocuments-tutorial/ic795049.png "Федеративная идентификация")
    
-    a. Для параметра **Federated identity server type** (Тип сервера федеративных удостоверений) выберите **Службы федерации Active Directory**.
+    а. Для параметра **Federated identity server type** (Тип сервера федеративных удостоверений) выберите **Службы федерации Active Directory**.
    
     b. Щелкните **Выбрать файл**, чтобы отправить скачанный файл метаданных, который вы скачали с портала Azure.
    
-    c. Последовательно выберите **ОК**.
+    c. Нажмите кнопку **ОК**.
 
 ### <a name="create-netdocuments-test-user"></a>Создание тестового пользователя NetDocuments
 
@@ -168,15 +168,15 @@ ms.locfileid: "72035703"
 
 2. В верхнем меню щелкните **Администратор**.
    
-    ![Администратор](./media/netdocuments-tutorial/ic795051.png "Администратор")
+    ![Администратор](./media/netdocuments-tutorial/ic795051.png "Административный")
 
 3. Щелкните **Добавление и удаление пользователей и групп**.
    
-    ![Репозиторий](./media/netdocuments-tutorial/ic795047.png "Репозиторий")
+    ![Репозиторий](./media/netdocuments-tutorial/ic795047.png "Хранилище")
 
 4. В текстовом поле **Электронная почта** введите адрес электронной почты действующей учетной записи Azure Active Directory, которую вы хотите подготовить, а затем нажмите кнопку **Добавить пользователя**.
    
-    ![Адрес электронной почты](./media/netdocuments-tutorial/ic795053.png "Адрес электронной почты")
+    ![Электронная почта](./media/netdocuments-tutorial/ic795053.png "Электронная почта")
    
     >[!NOTE]
     >Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией. Вы можете использовать любые другие инструменты создания учетных записей пользователя NetDocuments или API, предоставляемые NetDocuments для подготовки учетных записей пользователя Azure Active Directory.
@@ -189,9 +189,9 @@ ms.locfileid: "72035703"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

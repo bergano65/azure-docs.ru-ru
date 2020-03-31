@@ -51,7 +51,7 @@
     - name: Служба приложений Azure и решение "Функции Azure"
       href: /azure/app-service/overview-managed-identity?context=azure/active-directory/managed-identities-azure-resources/context/msi-context
     - name: Центры событий Azure
-      href: /azure/event-hubs/authenticate-managed-identity.md?context=azure/active-directory/managed-identities-azure-resources/context/msi-context
+      href: /azure/event-hubs/authenticate-managed-identity?context=azure/active-directory/managed-identities-azure-resources/context/msi-context
     - name: Экземпляры контейнеров Azure
       href: /azure/container-instances/container-instances-managed-identity?context=azure/active-directory/managed-identities-azure-resources/context/msi-context
 - name: Практические руководства
@@ -86,7 +86,7 @@
       items:
         - name: Получение маркера доступа
           href: how-to-use-vm-token.md
-        - name: Вход в Powershell и CLI с помощью управляемого удостоверения
+        - name: Вход в PowerShell и CLI с помощью управляемого удостоверения
           href: how-to-use-vm-sign-in.md
         - name: Использование с пакетами Azure SDK
           href: how-to-use-vm-sdk.md

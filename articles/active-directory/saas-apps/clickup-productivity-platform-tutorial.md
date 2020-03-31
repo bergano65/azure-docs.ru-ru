@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 4647d78255f611959bb86ca00ff6920bc823d49a
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: f497955b698d7ca390b40686e94d553a7cd5c948
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73158566"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80048766"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>Руководство по Интеграция Azure Active Directory с ClickUp Productivity Platform
 
@@ -38,7 +38,7 @@ ms.locfileid: "73158566"
 
 Чтобы настроить интеграцию Azure AD с ClickUp Productivity Platform, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка ClickUp Productivity Platform с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,13 +99,13 @@ ms.locfileid: "73158566"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения ClickUp Productivity Platform](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.clickup.com/login/sso`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.clickup.com/login/sso`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://api.clickup.com/v1/team/<team_id>/microsoft`.
 
@@ -122,6 +122,8 @@ ms.locfileid: "73158566"
 
 2. Щелкните значок **профиля пользователя** и выберите пункт **Settings** (Параметры).
 
+    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure0.png)
+
     ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure1.png)
 
 3. Выберите **Microsoft** (Майкрософт) в разделе "Single Sign-On (SSO) Provider" (Поставщик единого входа).
@@ -132,7 +134,7 @@ ms.locfileid: "73158566"
 
     ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure3.png)
 
-    a. Щелкните **Copy** (Копировать), чтобы скопировать идентификатор сущности, и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Щелкните **Copy** (Копировать), чтобы скопировать идентификатор сущности, и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
     
     b. В текстовое поле **Azure Federation Metadata URL** (URL-адрес метаданных федерации приложения Azure) вставьте URL-адрес метаданных федерации приложения, скопированный на портале Azure, и щелкните **Save** (Сохранить).
 
@@ -195,7 +197,9 @@ ms.locfileid: "73158566"
 
 1. В другом окне веб-браузера войдите в свой клиент ClickUp Productivity Platform с правами администратора.
 
-2. Щелкните значок **профиля пользователя** и выберите пункт **Users** (Пользователи).
+2. Щелкните значок **профиля пользователя** и выберите пункт **People** (Пользователи).
+   
+    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure0.png)
 
     ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/user1.png)
 

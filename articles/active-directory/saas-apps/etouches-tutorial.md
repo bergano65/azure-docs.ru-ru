@@ -1,6 +1,6 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с etouches | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и etouches.
+title: Руководство по интеграции единого входа Azure Active Directory с Aventri | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и Aventri.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -11,94 +11,91 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/06/2019
+ms.date: 03/10/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0774873370d6006e0a1108c4b01c60274d69f0d
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: c088bd47b4f5a3a847fd98943614c2d167d18686
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75561196"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79454505"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-etouches"></a>Руководство. Интеграция единого входа Azure Active Directory с etouches
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aventri"></a>Руководство по интеграции единого входа Azure Active Directory с Aventri
 
-В этом учебнике описано, как интегрировать приложение etouches с Azure Active Directory (Azure AD). Интеграция etouches с Azure AD обеспечивает следующие возможности:
+В этом руководстве вы узнаете, как интегрировать Aventri с Azure Active Directory (Azure AD). Интеграция Aventri с Azure AD обеспечивает следующие возможности.
 
-* Контроль доступа к etouches с помощью Azure AD.
-* Автоматический вход пользователей в etouches с помощью учетных записей Azure AD.
+* С помощью Azure AD вы можете контролировать доступ к Aventri.
+* Включение автоматического входа пользователей в Aventri с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Подписка etouches с поддержкой единого входа.
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Aventri с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Приложение etouches поддерживает единый вход, инициированный **поставщиком услуг**.
+* Aventri поддерживает единый вход, инициируемый **поставщиком услуг**.
+* После настройки Aventri можно применять элемент управления сеансами, который защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 
+## <a name="adding-aventri-from-the-gallery"></a>Добавление Aventri из коллекции
 
-
-
-## <a name="adding-etouches-from-the-gallery"></a>Добавление etouches из коллекции.
-
-Чтобы настроить интеграцию etouches с Azure AD, необходимо добавить etouches из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию Aventri с Azure AD, необходимо добавить Aventri из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
-1. В разделе **Добавление из коллекции** в поле поиска введите **etouches**.
-1. Выберите **etouches** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Aventri**.
+1. Выберите **Aventri** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-etouches"></a>Настройка и проверка единого входа Azure AD для etouches
+## <a name="configure-and-test-azure-ad-single-sign-on-for-aventri"></a>Настройка и проверка единого входа Azure AD для Aventri
 
-Настройте и проверьте единый вход Azure AD в etouches с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в etouches.
+Настройте и проверьте единый вход Azure AD в Aventri с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Aventri.
 
-Чтобы настроить и проверить единый вход Azure AD в etouches, выполните действия из следующих стандартных блоков:
+Чтобы настроить и проверить единый вход Azure AD в Aventri, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-1. **[Настройка единого входа в etouches](#configure-etouches-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя etouches](#create-etouches-test-user)** требуется для создания в etouches пользователя B. Simon, связанного с соответствующим представлением в Azure Active Directory.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа в Aventri](#configure-aventri-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Aventri](#create-aventri-test-user)** требуется для создания в Aventri пользователя B.Simon, связанного с представлением этого же пользователя в Azure AD.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **etouches** найдите раздел **Управление** и выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Aventri** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.eiseverywhere.com/saml/accounts/?sso&accountid=<ACCOUNTID>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://na-admin.eventscloud.com/saml/accounts/acs/<ACCOUNTID>`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.eiseverywhere.com/<instance name>`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://na-admin.eventscloud.com/saml/accounts/sso/<ACCOUNTID>`.
 
     > [!NOTE] 
     > Эти значения приведены для примера. Их необходимо заменить на фактический URL-адрес входа и идентификатор, как описано далее в этом руководстве.
 
-1. Приложение etouches ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+1. Приложение Aventri ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
-1. В дополнение к описанному выше приложение etouches ожидает в ответе SAML несколько дополнительных атрибутов, которые показаны ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+1. В дополнение к описанному выше приложение Aventri ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
     | Имя | Исходный атрибут|
     | ------------------- | -------------------- |
@@ -108,7 +105,7 @@ ms.locfileid: "75561196"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-1. Требуемые URL-адреса можно скопировать из раздела **Настройка etouches**.
+1. Требуемые URL-адреса можно скопировать из раздела **Настройка Aventri**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -126,10 +123,10 @@ ms.locfileid: "75561196"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к etouches.
+В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Aventri.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
-1. В списке приложений выберите **etouches**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. В списке приложений выберите **Aventri**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
@@ -142,13 +139,13 @@ ms.locfileid: "75561196"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-## <a name="configure-etouches-sso"></a>Настройка единого входа в etouches
+## <a name="configure-aventri-sso"></a>Настройка единого входа Aventri
 
-1. Чтобы настроить единый вход для приложения, выполните следующие действия. 
+1. Чтобы настроить единый вход для приложения Aventri, выполните следующие действия. 
 
-    ![Настройка etouches](./media/etouches-tutorial/tutorial_etouches_06.png) 
+    ![Конфигурация Aventri](./media/etouches-tutorial/aventri-tutorial-06.png) 
 
-    а. Войдите в приложение **etouches** с правами администратора.
+    а. Войдите в приложение **Aventri** с правами администратора.
    
     b. Перейдите к настройке **SAML**.
 
@@ -166,23 +163,24 @@ ms.locfileid: "75561196"
 
     i. Скопируйте значение **SSO URL / ACS** (URL-адрес и ASC для единого входа) и вставьте его в текстовое поле **URL-адрес единого входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-### <a name="create-etouches-test-user"></a>Создание тестового пользователя в etouches
+### <a name="create-aventri-test-user"></a>Создание тестового пользователя Aventri
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении etouches. Обратитесь в [службу поддержки etouches](https://www.etouches.com/event-software/support/customer-support/), чтобы добавить пользователей на платформу etouches.
+В этом разделе вы узнаете, как создать пользователя B.Simon в приложении Aventri. Обратитесь к [группе поддержки клиентов Aventri](mailto:support@aventri.com), чтобы добавить пользователей на платформу Aventri.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку etouches на Панели доступа, вы автоматически войдете в приложение etouches, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Aventri на панели доступа, вы автоматически войдете в приложение Aventri, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Попробуйте использовать etouches с Azure AD](https://aad.portal.azure.com/)
+- [Пробное использование Aventri с Azure AD](https://aad.portal.azure.com/)
 
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

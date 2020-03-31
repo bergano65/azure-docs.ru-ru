@@ -5,20 +5,20 @@ author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 7069ff363cf274ba855efc9b598d8d01e64e18d1
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: ad6ea3c68ed6f48ac48bbbdafed7f8660df23937
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250111"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239230"
 ---
-# <a name="tutorial-secure-artifacts-in-azure-resource-manager-template-deployments"></a>Руководство по Защита артефактов в развертываниях шаблонов Azure Resource Manager
+# <a name="tutorial-secure-artifacts-in-arm-template-deployments"></a>Руководство по защите артефактов в развертываниях шаблона ARM
 
-Узнайте, как защитить артефакты, которые используются в шаблонах Azure Resource Manager, с помощью подписанных URL-адресов (SAS) учетной записи хранения Azure. Артефакты развертывания — это все файлы, помимо файла основного шаблона, которые необходимы для выполнения развертывания. Например, в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./template-tutorial-deploy-sql-extensions-bacpac.md) основной шаблон создает экземпляр Базы данных SQL Azure. Он также вызывает BACPAC-файл для создания таблиц и добавления данных. BACPAC-файл является артефактом и хранится в учетной записи хранения Azure. Для доступа к артефакту использовался ключ учетной записи хранения. 
+Узнайте, как защитить артефакты, которые используются в шаблонах Azure Resource Manager (ARM), с помощью подписанных URL-адресов (SAS) учетной записи хранения Azure. Артефакты развертывания — это все файлы, помимо файла основного шаблона, которые необходимы для выполнения развертывания. Например, в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов ARM](./template-tutorial-deploy-sql-extensions-bacpac.md) основной шаблон создает экземпляр Базы данных SQL Azure. Он также вызывает BACPAC-файл для создания таблиц и добавления данных. BACPAC-файл является артефактом и хранится в учетной записи хранения Azure. Для доступа к артефакту использовался ключ учетной записи хранения.
 
 В этом руководстве используется SAS для предоставления ограниченного доступа к BACPAC-файлу в учетной записи хранения Azure. Дополнительные сведения о подписанных URL-адресах см. в статье [Использование подписанных URL-адресов (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
-Чтобы узнать, как защитить связанные шаблоны, ознакомьтесь со статьей [Руководство. Создание связанных шаблонов Azure Resource Manager](./template-tutorial-create-linked-templates.md).
+Чтобы узнать, как защитить связанные шаблоны, ознакомьтесь со статьей [Руководство. Создание связанных шаблонов ARM](./template-tutorial-create-linked-templates.md).
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -35,19 +35,19 @@ ms.locfileid: "78250111"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
-* Просмотрите статью [Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./template-tutorial-deploy-sql-extensions-bacpac.md). В этом руководстве используется шаблон, созданный здесь ранее. Ссылка для скачивания завершенного шаблона предоставляется в этой статье.
+* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](./use-vs-code-to-create-template.md).
+* Просмотрите статью [Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов ARM](./template-tutorial-deploy-sql-extensions-bacpac.md). В этом руководстве используется шаблон, созданный здесь ранее. Ссылка для скачивания завершенного шаблона предоставляется в этой статье.
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора SQL Server. Ниже приведен пример создания пароля.
 
     ```console
     openssl rand -base64 32
     ```
 
-    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
+    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона ARM](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="prepare-a-bacpac-file"></a>Подготовка BACPAC-файла
 
-В этом разделе описано, как подготовить BACPAC-файл, чтобы он стал безопасным и доступным при развертывании шаблона Resource Manager. В этом разделе описаны пять процедур.
+В этом разделе описано, как подготовить BACPAC-файл, чтобы он стал безопасным и доступным при развертывании шаблона ARM. В этом разделе описаны пять процедур.
 
 * Скачивание BACPAC-файла.
 * Создание учетной записи хранения Azure.
@@ -115,7 +115,7 @@ ms.locfileid: "78250111"
 
 ## <a name="open-an-existing-template"></a>Открытие имеющегося шаблона
 
-В этом сеансе будет изменен шаблон, созданный в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./template-tutorial-deploy-sql-extensions-bacpac.md), чтобы вызвать BACPAC-файл с помощью маркера SAS. Шаблон, разработанный при выполнении инструкций из руководства по расширению SQL, доступен на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy.json).
+В этом сеансе будет изменен шаблон, созданный в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов ARM](./template-tutorial-deploy-sql-extensions-bacpac.md), чтобы вызвать BACPAC-файл с помощью маркера SAS. Шаблон, разработанный при выполнении инструкций из руководства по расширению SQL, доступен на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy.json).
 
 1. В Visual Studio Code выберите **Файл** > **Открыть файл**.
 1. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
@@ -138,7 +138,7 @@ ms.locfileid: "78250111"
 
 ## <a name="edit-the-template"></a>Изменение шаблона
 
-1. Замените определение параметра storageAccountKey следующим определением параметра: 
+1. Замените определение параметра storageAccountKey следующим определением параметра:
 
     ```json
         "_artifactsLocationSasToken": {
@@ -211,7 +211,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Работая с этим учебником, вы развернули SQL Server, Базу данных SQL и импортированный BACPAC-файл с помощью маркера SAS. Чтобы узнать, как создать конвейер Azure для непрерывной разработки и развертывания шаблонов Resource Manager, см. следующую статью.
+Работая с этим учебником, вы развернули SQL Server, Базу данных SQL и импортированный BACPAC-файл с помощью маркера SAS. Чтобы узнать, как развертывать ресурсы Azure в нескольких регионах и как использовать безопасное развертывание, ознакомьтесь со следующей статьей.
 
 > [!div class="nextstepaction"]
-> [Tutorial: Continuous integration of Azure Resource Manager templates with Azure Pipelines](./template-tutorial-use-azure-pipelines.md) (Учебник: непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines)
+> [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md)

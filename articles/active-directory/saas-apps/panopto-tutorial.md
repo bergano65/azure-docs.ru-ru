@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/17/2019
 ms.author: jeedes
 ms.openlocfilehash: 027876e3d8d669d2ab41d37e24f4171c2349adaa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67095010"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panopto"></a>Руководство по Интеграция Azure Active Directory с Panopto
@@ -38,7 +38,7 @@ ms.locfileid: "67095010"
 
 Чтобы настроить интеграцию Azure AD с Panopto, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Panopto с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,7 +101,7 @@ ms.locfileid: "67095010"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67095010"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -132,7 +132,7 @@ ms.locfileid: "67095010"
 
 2. На панели слева щелкните **System** (Система), а затем щелкните **Identity Providers** (Поставщики удостоверений).
    
-    ![Система](./media/panopto-tutorial/ic777670.png "Система")
+    ![Системные функции](./media/panopto-tutorial/ic777670.png "Система")
 
 3. Щелкните **Добавить поставщик**.
    
@@ -142,7 +142,7 @@ ms.locfileid: "67095010"
    
     ![Конфигурация SaaS](./media/panopto-tutorial/ic777672.png "Конфигурация SaaS")
     
-    a. В списке **Provider Type** (Тип поставщика) выберите пункт **SAML20**.    
+    а. В списке **Provider Type** (Тип поставщика) выберите пункт **SAML20**.    
     
     b. В текстовом поле **Имя экземпляра** введите имя экземпляра.
 
@@ -150,9 +150,9 @@ ms.locfileid: "67095010"
     
     d. В текстовое поле **Bounce Page Url** (URL-адрес страницы возврата) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    д. В текстовое поле **Issuer** (Издатель) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    д) В текстовое поле **Issuer** (Издатель) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    Е. Откройте в блокноте сертификат в кодировке Base-64, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Public Key** (Открытый ключ).
+    е) Откройте в блокноте сертификат в кодировке Base-64, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Public Key** (Открытый ключ).
 
 5. Выберите команду **Сохранить**.
 
@@ -227,5 +227,5 @@ ms.locfileid: "67095010"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

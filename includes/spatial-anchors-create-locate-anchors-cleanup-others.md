@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 6d18cce06a249958e67ca07859a7cc058e2fba45
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67185011"
 ---
-Тщательная Очистка после выпуска сеанса все ссылки.
+Чтобы правильно выполнить очистку после выхода из сеанса, удалите все ссылки.

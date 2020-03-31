@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: b7a522aaf35303bbd87e7aafe65b1302f1b98bc0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67095328"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagerduty"></a>Руководство по Интеграция Azure Active Directory с PagerDuty
@@ -38,7 +38,7 @@ ms.locfileid: "67095328"
 
 Чтобы настроить интеграцию Azure AD с приложением PagerDuty, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка PagerDuty с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,13 +99,13 @@ ms.locfileid: "67095328"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения PagerDuty](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67095328"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -132,7 +132,7 @@ ms.locfileid: "67095328"
 
 2. В меню в верхней части страницы щелкните **Параметры учетной записи**.
 
-    ![Параметры учетной записи](./media/pagerduty-tutorial/ic778535.png "параметры учетной записи")
+    ![Параметры учетной записи](./media/pagerduty-tutorial/ic778535.png "Параметры учетной записи")
 
 3. Щелкните **Single Sign-on**(Единый вход).
 
@@ -140,9 +140,9 @@ ms.locfileid: "67095328"
 
 4. На странице **Включить единый вход** выполните следующие действия.
 
-    ![Разрешить единый вход](./media/pagerduty-tutorial/ic778537.png "Разрешить единый вход")
+    ![Доступ с единым входом](./media/pagerduty-tutorial/ic778537.png "Доступ с единым входом")
 
-    a. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
+    а. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
   
     b. В текстовое поле **URL-адрес для входа** вставьте **URL-адрес входа**, скопированный на портале Azure.
   
@@ -150,9 +150,9 @@ ms.locfileid: "67095328"
 
     d. Установите флажок **Allow username/password login** (Разрешить вход по имени пользователя и паролю).
 
-    д. Установите флажок **Require EXACT authentication context comparison** (Требовать точное сравнение контекста аутентификации).
+    д) Установите флажок **Require EXACT authentication context comparison** (Требовать точное сравнение контекста аутентификации).
 
-    Е. Нажмите кнопку **Сохранить изменения**.
+    е) Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -221,13 +221,13 @@ ms.locfileid: "67095328"
 
 3. Щелкните **Добавить пользователей**.
    
-    ![Добавление пользователей](./media/pagerduty-tutorial/ic778539.png "добавление пользователей")
+    ![Добавление пользователей](./media/pagerduty-tutorial/ic778539.png "Добавление пользователей")
 
 4.  В диалоговом окне **Invite your team** (Пригласить команду) выполните следующие действия.
    
-    ![Пригласить команду](./media/pagerduty-tutorial/ic778540.png "Пригласить команду")
+    ![Приглашение команды](./media/pagerduty-tutorial/ic778540.png "Приглашение команды")
 
-    a. В текстовое поле **First and Last Name** (Имя и фамилия) введите сведения о пользователе, например **Britta Simon**. 
+    а. В текстовое поле **First and Last Name** (Имя и фамилия) введите сведения о пользователе, например **Britta Simon**. 
    
     b. Введите адрес **электронной почты** пользователя, например **brittasimon\@contoso.com**.
    
@@ -248,5 +248,5 @@ ms.locfileid: "67095328"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

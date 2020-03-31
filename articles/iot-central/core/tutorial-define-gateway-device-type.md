@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: ec84d3804c24766c6344e9909ba10089e186599c
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 7bb386d39f53331e77bee4d863c431c2e3655f5c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623458"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79298841"
 ---
 # <a name="define-a-new-iot-gateway-device-type-in-your-azure-iot-central-application"></a>Определение нового типа устройства шлюза Интернета вещей в приложении Azure IoT Central
 
@@ -203,6 +203,9 @@ ms.locfileid: "77623458"
 * определение визуализации для данных телеметрии устройства;
 * добавление связей;
 * публикация шаблона устройства.
+
+> [!NOTE]
+> Для устройств шлюзов, смоделированных в IoT Central, сейчас не поддерживается создание кода на базе VS Code.
 
 Далее вы можете выполнить такую задачу:
 

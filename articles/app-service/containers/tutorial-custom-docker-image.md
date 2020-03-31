@@ -7,13 +7,13 @@ ms.assetid: b97bd4e6-dff0-4976-ac20-d5c109a559a8
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
-ms.custom: seodec18
-ms.openlocfilehash: 965897afc8e23c123575de0c497d4071ff4ca85a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.custom: mvc, seodec18
+ms.openlocfilehash: a6c9eb354bce09a5f652895f4af34df1f6750bec
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78356150"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80045746"
 ---
 # <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 
@@ -49,7 +49,7 @@ cd docker-django-webapp-linux
 
 ## <a name="build-the-image-from-the-docker-file"></a>Создание образа на основе файла Docker
 
-В репозитории Git просмотрите файл _Dockerfile_. Этот файл описывает среду Python, необходимую для запуска приложения. Образ также настраивает сервер [SSH](https://www.ssh.com/ssh/protocol/) для обеспечения безопасного взаимодействия между контейнером и узлом.
+В репозитории Git просмотрите файл _Dockerfile_. Этот файл описывает среду Python, необходимую для запуска приложения. Образ также настраивает сервер [SSH](https://www.ssh.com/ssh/protocol/) для обеспечения безопасного взаимодействия между контейнером и узлом. В последней строке файла _Dockerfile_ (`ENTRYPOINT ["init.sh"]`) вызывается `init.sh` для запуска службы SSH и сервера Python.
 
 ```Dockerfile
 FROM python:3.4
@@ -73,6 +73,8 @@ COPY init.sh /usr/local/bin/
     
 RUN chmod u+x /usr/local/bin/init.sh
 EXPOSE 8000 2222
+
+#service SSH start
 #CMD ["python", "/code/manage.py", "runserver", "0.0.0.0:8000"]
 ENTRYPOINT ["init.sh"]
 ```

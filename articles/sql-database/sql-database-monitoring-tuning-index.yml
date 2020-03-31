@@ -3,7 +3,7 @@ title: Мониторинг и настройка производительно
 summary: В службе "База данных SQL Azure" доступны средства сбора метрик и диагностических сведений для мониторинга базы данных и повышения ее производительности.
 metadata:
   title: Документация по мониторингу и настройке Базы данных SQL Azure
-  description: В службе "База данных SQL Azure" доступны средства сбора метрик и диагностических сведений для мониторинга базы данных и повышения ее производительности.
+  description: Узнайте о средствах мониторинга и настройки производительности в Базе данных SQL Azure, которые помогают в сборе метрик, диагностике и повышении производительности баз данных.
   ms.service: sql-database
   ms.subservice: performance
   ms.topic: landing-page
@@ -11,12 +11,12 @@ metadata:
   author: CarlRabeler
   ms.author: carlrab
   ms.date: 03/10/2020
-  ms.openlocfilehash: 43f74ea126ab7e028b39a86e2eb1edad4cae41a2
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.openlocfilehash: bc2c2a64cfce8bde6f04835bf090b632b8839a6f
+  ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "79208909"
+  ms.lasthandoff: 03/27/2020
+  ms.locfileid: "80373114"
 landingContent:
 - title: Сведения о мониторинге и настройке производительности
   linkLists:

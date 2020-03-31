@@ -11,53 +11,54 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 8e3c525230c3de530a93bd61a9227e9a4d7ed10b
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: bc238f08021bb9fb16b8c7319e63acebdfec3948
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933430"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80061907"
 ---
-# <a name="use-cli-to-add-an-azure-sql-database-single-database-into-a-failover-group"></a>Узнайте, как добавить отдельную базу данных в Базе данных SQL Azure в группу отработки отказа с помощью CLI.
+# <a name="use-cli-to-add-an-azure-sql-database-into-a-failover-group"></a>Добавление базы данных в группу отработки отказа в службе "База данных SQL Azure" с помощью CLI
 
-Этот пример скрипта PowerShell позволяет создать отдельную базу данных и группу отработки отказа, добавить в нее базу данных и выполнить тестовую отработку отказа. 
-
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+Этот пример скрипта Azure CLI позволяет создать отдельную базу данных и группу отработки отказа, добавить в нее базу данных и выполнить тестовую отработку отказа.
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
 ## <a name="sample-script"></a>Пример скрипта
 
-[!code-azurecli-interactive[main](../../../cli_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-cli.sh "Add single database to failover group")]
+### <a name="sign-in-to-azure"></a>Вход в Azure
 
-## <a name="clean-up-deployment"></a>Очистка развертывания
-
-Используйте следующую команду, чтобы удалить группу ресурсов и все связанные с ней ресурсы.
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ```azurecli-interactive
-az group delete --name $resourceGroupName
+$subscription = "<subscriptionId>" # add subscription here
+
+az account set -s $subscription # ...or use 'az login'
 ```
 
-## <a name="script-explanation"></a>Описание скрипта
+### <a name="run-the-script"></a>Выполнение скрипта
+
+[!code-azurecli-interactive[main](../../../cli_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-cli.sh "Add single database to failover group")]
+
+### <a name="clean-up-deployment"></a>Очистка развертывания
+
+Используйте приведенную ниже команду, чтобы удалить группу ресурсов и все связанные с ней ресурсы.
+
+```azurecli-interactive
+az group delete --name $resource
+```
+
+## <a name="sample-reference"></a>Примеры
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| | |
 |---|---|
-| [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) | Позволяет указать подписку в качестве текущей активной подписки. | 
-| [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
-| [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule) | Создает правила брандмауэра сервера. | 
-| [az sql db create](/cli/azure/sql/db?view=azure-cli-latest) | Создает базу данных. | 
-| [az sql failover-group create](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-create) | Создает группу отработки отказа. | 
-| [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list) | Перечисляет группы отработки отказа на сервере. |
-| [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. | 
-| [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [az sql db](/cli/azure/sql/db) | Команды базы данных. |
+| [az sql failover-group](/cli/azure/sql/failover-group) | Команды группы отработки отказа. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).

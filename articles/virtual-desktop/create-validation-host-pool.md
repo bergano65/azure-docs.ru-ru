@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 08/29/2019
+ms.date: 03/13/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 58a7689263f9bc761eb0b904a9376c1ca0112c13
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: f2b51213dfc6d7e55f76e78b92d12111f84736be
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79128104"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79365395"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates"></a>Руководство по Создание пула узлов для проверки обновлений службы
 
@@ -76,7 +76,7 @@ Get-RdsHostPool -TenantName $myTenantName -Name "contosoHostPool"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы создали пул узлов проверки, вы узнаете, как развернуть средство управления ресурсами виртуального рабочего стола Майкрософт и подключиться к нему.
+Создав пул узлов проверки, вы можете узнать, как использовать решение "Работоспособность служб Azure" для мониторинга развертывания Виртуального рабочего стола Windows. 
 
 > [!div class="nextstepaction"]
-> [Tutorial: Deploy a management tool](./manage-resources-using-ui.md) (Учебник: развертывание средства управления)
+> [Настройка оповещений служб](./set-up-service-alerts.md)

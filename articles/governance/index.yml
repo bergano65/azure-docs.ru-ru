@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: DCtheGeek
   ms.author: dacoulte
-  ms.date: 09/10/2019
-  ms.openlocfilehash: 7090c0814e91b2178dea44eed4d28e6f4e80bd77
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.date: 03/24/2020
+  ms.openlocfilehash: 2df970e3aa36f69dc6f2d990ee307db6536a8ac9
+  ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "77470622"
+  ms.lasthandoff: 03/26/2020
+  ms.locfileid: "80282041"
 highlightedContent:
   items:
   - title: Обзор системы управления
@@ -113,6 +113,8 @@ additionalContent:
         url: /dotnet/api/overview/azure/managementgroups
       - text: SDK Azure для Node
         url: /javascript/api/@azure/arm-managementgroups/managementgroups
+      - text: REST
+        url: /rest/api/resources/managementgroups
     - title: Политика Azure
       links:
       - text: Azure CLI
@@ -126,12 +128,6 @@ additionalContent:
       - text: Azure PowerShell
         url: https://www.powershellgallery.com/packages/Az.GuestConfiguration
         note: (гостевая конфигурация)
-      - text: Azure SDK для .NET
-        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
-        note: (назначения)
-      - text: Azure SDK для .NET
-        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
-        note: (определения политик)
       - text: REST
         url: /rest/api/policy-insights/
         note: (анализ политик)
@@ -149,6 +145,22 @@ additionalContent:
         note: (гостевая конфигурация)
       - text: Шаблоны Resource Manager
         url: /azure/templates/microsoft.authorization/allversions
+    - title: Политика Azure (дополнительно)
+      links:
+      - text: Azure SDK для .NET
+        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
+        note: (назначения)
+      - text: Azure SDK для .NET
+        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+        note: (определения политик)
+      - text: SDK Azure для Node
+        url: /javascript/api/@azure/arm-policy
+        note: (политика)
+      - text: SDK Azure для Node
+        url: /javascript/api/@azure/arm-policyinsights
+        note: (анализ политик)
+      - text: SDK Azure для Python
+        url: /python/api/azure-mgmt-policyinsights/azure.mgmt.policyinsights
     - title: Azure Blueprints
       links:
       - text: Функции схемы

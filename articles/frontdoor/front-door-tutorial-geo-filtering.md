@@ -1,6 +1,6 @@
 ---
-title: Учебник. Настройка политики геофильтрации брандмауэра веб-приложения для Azure Front Door Service
-description: В этом руководстве вы узнаете, как создать простую политику геофильтрации и связать ее с имеющимся узлом внешнего интерфейса Front Door
+title: Руководство. Настройка политики геофильтрации брандмауэра веб-приложения для Azure Front Door
+description: Из этого руководства вы узнаете, как создать простую политику геофильтрации и связать ее с существующим узлом внешнего интерфейса Front Door.
 services: frontdoor
 documentationcenter: ''
 author: teresayao
@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: tyao
-ms.openlocfilehash: 393d7790aadc87237081aa5437f8316eda59c52e
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: e3119745e35140d0344d25f34f54b63939d2542d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184527"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79471461"
 ---
 # <a name="how-to-set-up-a-geo-filtering-waf-policy-for-your-front-door"></a>Руководство по настройке политики геофильтрации брандмауэра веб-приложения (WAF) для службы Front Door
 В этом руководстве показано, как с помощью Azure PowerShell создать простую политику геофильтрации и связать ее с имеющимся узлом внешнего интерфейса Front Door. Этот пример политики геофильтрации будет блокировать запросы от других стран или регионов, кроме США.
@@ -107,6 +107,6 @@ Set-AzFrontDoor -InputObject $geoFrontDoorObjectExample[0]
 > [!NOTE] 
 > Достаточно установить свойство WebApplicationFirewallPolicyLink один раз, чтобы связать политику WAF с узлом внешнего интерфейса Front Door. Последующие обновления политики будут автоматически применяться к узлу внешнего интерфейса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о [Брандмауэр веб-приложения Azure](waf-overview.md).
 - Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).

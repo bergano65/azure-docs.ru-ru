@@ -5,16 +5,16 @@ author: mumian
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 91a37178f8dc8ecc3c61ca16f193e2e52c309d46
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 9ed14ce1af6421accccface1b66119057d1c5a30
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77209483"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239297"
 ---
-# <a name="tutorial-create-multiple-resource-instances-with-resource-manager-templates"></a>Руководство по Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager
+# <a name="tutorial-create-multiple-resource-instances-with-arm-templates"></a>Руководство по Создание нескольких экземпляров ресурса с помощью шаблонов ARM
 
-Узнайте, как выполнить итерацию в шаблоне Azure Resource Manager для создания нескольких экземпляров ресурса Azure. В этом руководстве описано, как изменить шаблон для создания трех экземпляров учетной записи хранения.
+Узнайте, как выполнить итерацию в шаблоне Azure Resource Manager (ARM) для создания нескольких экземпляров ресурса Azure. В этом руководстве описано, как изменить шаблон для создания трех экземпляров учетной записи хранения.
 
 ![Создание нескольких экземпляров с помощью Azure Resource Manager](./media/template-tutorial-create-multiple-instances/resource-manager-template-create-multiple-instances-diagram.png)
 
@@ -31,11 +31,11 @@ ms.locfileid: "77209483"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-[Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) — это репозиторий для шаблонов Resource Manager. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной записи хранения). Шаблон определяет ресурс учетной записи службы хранилища Azure.
+[Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) — это репозиторий для шаблонов ARM. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной записи хранения). Шаблон определяет ресурс учетной записи службы хранилища Azure.
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
@@ -108,7 +108,7 @@ ms.locfileid: "77209483"
 }
 ```
 
-Дополнительные сведения о создании нескольких экземпляров см. в разделе [Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager](./copy-resources.md).
+См. сведения о создании нескольких экземпляров в руководстве по [развертыванию нескольких экземпляров ресурса или свойства в шаблонах ARM](./copy-resources.md).
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 

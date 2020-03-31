@@ -8,23 +8,23 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 0446ee4fb238d2fa8447f998536c3c14d968f630
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: 74fec059bdffb91f5a7774d430e2f1897f0e863c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78303211"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79474464"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Руководство по Подготовка Шлюза Azure Data Box к развертыванию
 
-
-Это первое руководство из серии руководств по развертыванию, необходимых для полного развертывания Шлюза Azure Data Box. В этом руководстве содержатся сведения о подготовке портала Azure для развертывания ресурсов Шлюза Azure Data Box. 
+Это первое руководство из серии руководств по развертыванию, необходимых для полного развертывания Шлюза Azure Data Box. В этом руководстве содержатся сведения о подготовке портала Azure для развертывания ресурсов Шлюза Azure Data Box.
 
 Чтобы завершить процесс установки и настройки, вам потребуются права администратора. Подготовка портала займет менее 10 минут.
 
 В этом руководстве описано следующее:
 
 > [!div class="checklist"]
+>
 > * Создать новый ресурс
 > * Скачивание образа виртуального устройства.
 > * Получение ключа активации.
@@ -50,12 +50,11 @@ ms.locfileid: "78303211"
 
 Перед тем как начать, убедитесь в следующем.
 
-- Ваша подписка Microsoft Azure должна поддерживать создание ресурсов Шлюза Data Box. Подписки с оплатой по мере использования также поддерживаются.
-- У вас должен быть доступ с правами владельца или участника к Data Box Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
-
+* Подписка Microsoft Azure включена для ресурса Azure Stack Edge. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/).
+* У вас должен быть доступ с правами владельца или участника к Data Box Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
     - Для создания ресурсов Data Box Edge или Шлюза Azure Data Box необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
     - Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
-- У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
+- У вас есть права администратора или пользователя на доступ к API Microsoft Graph. См. сведения о [разрешениях Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference).
 - Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
 
 ### <a name="for-the-data-box-gateway-device"></a>Для устройства Шлюза Data Box

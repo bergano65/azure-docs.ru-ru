@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 31826f5d4d88c977f859a009bface2fddf3a1c88
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093196"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rackspace-sso"></a>Руководство по Интеграция Azure Active Directory с Rackspace SSO
@@ -38,7 +38,7 @@ ms.locfileid: "67093196"
 
 Чтобы настроить интеграцию Azure AD с Rackspace SSO, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Rackspace SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,17 +99,17 @@ ms.locfileid: "67093196"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** отправьте **файл метаданных поставщика службы**, который можно скачать по этому [URL-адресу](https://login.rackspace.com/federate/sp.xml), и выполните следующие действия:
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
-    ![изображение](common/upload-metadata.png)
+    ![Изображение](common/upload-metadata.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    ![изображение](common/browse-upload-metadata.png)
+    ![Изображение](common/browse-upload-metadata.png)
 
     c. После успешной передачи файла метаданных соответствующее значение URL-адреса будет добавлено автоматически.
 
@@ -244,5 +244,5 @@ mapping:
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

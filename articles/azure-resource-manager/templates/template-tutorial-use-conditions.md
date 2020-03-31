@@ -5,16 +5,16 @@ author: mumian
 ms.date: 05/21/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 189d54454a1259d08400e3762b3fbf1c633474bd
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: f88f141257e8e614f62c7441c313002b5735116d
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250053"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80239197"
 ---
-# <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство по Использование условия в шаблонах Azure Resource Manager
+# <a name="tutorial-use-condition-in-arm-templates"></a>Руководство по Использование условия в шаблонах ARM
 
-Узнайте, как развернуть ресурсы Azure на основе условий.
+Узнайте о том, как развернуть ресурсы Azure на основе условий в шаблоне Azure Resource Manager (ARM)
 
 В руководстве по [настройке порядка развертывания ресурсов](./template-tutorial-create-templates-with-dependent-resources.md) описано, как создать виртуальную машину, виртуальную сеть и некоторые другие зависимые ресурсы, включая учетную запись хранения. Чтобы не создавать учетную запись хранения каждый раз, вы можете позволить пользователям выбрать, создавать ли новую учетную запись хранения или использовать существующую. Для достижения этой цели нужно определить дополнительный параметр. Если значение параметра равно "new", будет создана новая учетная запись хранения. В противном случае используется учетная запись хранения с указанным именем.
 
@@ -31,9 +31,9 @@ ms.locfileid: "78250053"
 В этом учебнике рассматривается только основной сценарий с использованием условий. Дополнительные сведения см. в разделе:
 
 * [Структура файла шаблона: условие](conditional-resource-deployment.md).
-* [Conditionally deploy a resource in an Azure Resource Manager template](/azure/architecture/building-blocks/extending-templates/conditional-deploy) (Условное развертывание ресурсов в шаблоне Azure Resource Manager).
+* [Условное развертывание ресурса в шаблоне ARM](/azure/architecture/building-blocks/extending-templates/conditional-deploy).
 * [Функция шаблона: If](./template-functions-logical.md#if).
-* [Comparison functions for Azure Resource Manager templates](./template-functions-comparison.md) (Функции сравнения для шаблонов Azure Resource Manager)
+* [Функции сравнения для шаблонов ARM](./template-functions-comparison.md)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -41,18 +41,18 @@ ms.locfileid: "78250053"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console
     openssl rand -base64 32
     ```
 
-    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
+    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона ARM](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Шаблоны быстрого запуска Azure являются репозиторием для шаблонов Resource Manager. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом руководстве, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows).
+Шаблоны быстрого запуска Azure — это репозиторий для шаблонов ARM. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом руководстве, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows).
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.

@@ -11,14 +11,14 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: labrenne
 ms.custom: mvc
-ms.openlocfilehash: 34e43789ffb29963d5013b4acc3ea710a961c838
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 9a1a0b37b0fae52677ad989d85e947e0148ac0a5
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024064"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80153222"
 ---
-# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство. Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
+# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
 
 Используйте пакетную службу Azure, чтобы эффективно выполнять пакетные задания для крупномасштабных параллельных и высокопроизводительных вычислений (HPC). В этом руководстве рассматривается пример C# для запуска параллельной рабочей нагрузки с помощью пакетной службы Azure. Вы изучите общий рабочий процесс приложения пакетной службы и узнаете, как программно взаимодействовать с ресурсами пакетной службы и службы хранилища. Вы узнаете, как выполнять следующие задачи:
 
@@ -198,7 +198,9 @@ List<ResourceFile> inputFiles = await UploadFilesToContainerAsync(
 
 Количество узлов и размер виртуальной машины настраиваются с помощью определенных констант. Пакетная служба Azure поддерживает выделенные узлы и узлы [с низким приоритетом](batch-low-pri-vms.md). Вы можете использовать их в своих пулах. Выделенные узлы зарезервированы для пула. Низкоприоритетные узлы предлагаются по сниженной цене с учетом избыточных ресурсов виртуальной машины в Azure. Эти узлы становятся недоступны, если в Azure недостаточно ресурсов. Пример по умолчанию создает пул, содержащий только 5 низкоприоритетных узлов размером *Standard_A1_v2*.
 
-Приложение ffmpeg развертывается на вычислительных узлах, добавляя [ApplicationPackageReference](/dotnet/api/microsoft.azure.batch.applicationpackagereference) к конфигурации пула.
+>[Примечание] Проверьте квоты узла. Инструкции по созданию запроса на квоту см. в описании [квот и ограничений пакетной службы](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fbatch%2Fbatch-quota-limit%23increase-a-quota&data=02%7C01%7CLaura.Brenner%40microsoft.com%7C9843bf742920414ca3e508d7cb83e288%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637201639605899246&sdata=uKY00XhSMjDkFIPGHYmDN4TOtL4UQhFus42ncst95pg%3D&reserved=0).
+
+Приложение ffmpeg развертывается на вычислительных узлах, добавляя [ApplicationPackageReference](/dotnet/api/microsoft.azure.batch.applicationpackagereference) к конфигурации пула. Для [активации приложения](https://docs.microsoft.com/cli/azure/batch/application/package?view=azure-cli-latest#az-batch-application-package-activate).
 
 Метод [CommitAsync](/dotnet/api/microsoft.azure.batch.cloudpool.commitasync) отправляет пул в пакетную службу.
 
@@ -335,3 +337,6 @@ batchClient.JobOperations.TerminateJob(jobId);
 
 > [!div class="nextstepaction"]
 > [Образцы пакетной службы C#](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp)
+
+
+Установка для переменной экземпляра значения DedicatedNodeCount=5 и LowPriorityNodeCount=0 устраняет проблему и позволяет завершить задание.
