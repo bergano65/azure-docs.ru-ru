@@ -1,5 +1,5 @@
 ---
-title: Настройка Azure Key Vault для виртуальных машин Linux
+title: Настройка Azure Key Vault для Linux VMs
 description: Как с помощью интерфейса командной строки Azure настроить Key Vault для использования с виртуальной машиной Azure Resource Manager.
 author: singhkays
 manager: gwallace
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/24/2017
 ms.author: kasing
 ms.openlocfilehash: c9659c38e349bd62f22ed0d0839d97651b1b3b66
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78944818"
 ---
 # <a name="how-to-set-up-key-vault-for-virtual-machines-with-the-azure-cli"></a>Настройка Key Vault для виртуальных машин с помощью интерфейса командной строки Azure

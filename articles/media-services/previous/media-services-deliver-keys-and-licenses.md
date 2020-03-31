@@ -15,20 +15,20 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: b1f8b158c511919a72e72629d72b0e5ff73ff7db
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78268115"
 ---
 # <a name="use-media-services-to-deliver-drm-licenses-or-aes-keys"></a>Доставка лицензий DRM или ключей AES с помощью Служб мультимедиа 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
 
 Службы мультимедиа Azure позволяют принимать и кодировать содержимое, добавлять функции защиты, а также выполнять его потоковую передачу. Дополнительные сведения см. в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md). Некоторые клиенты с помощью Служб мультимедиа только доставляют лицензии и (или) ключи, а также выполняют кодирование, шифрование и потоковую передачу содержимого на локальных серверах. В этой статье описано, как с помощью Служб мультимедиа доставлять лицензии PlayReady и (или) Widevine, а также как выполнять другие задачи на локальных серверах. 
 
-Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+Для работы с этим учебником требуется учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/)
 
 ## <a name="overview"></a>Обзор
 Службы мультимедиа обеспечивают доставку лицензий PlayReady, лицензий управления цифровыми правами (DRM) Widevine, а также ключей AES-128. Они также предоставляют API-интерфейсы для настройки прав и ограничений, которые должны применяться в среде выполнения DRM, когда пользователь воспроизводит защищенное DRM содержимое. Когда пользователь запрашивает защищенное содержимое, приложение проигрывателя, в свою очередь, запрашивает лицензию из службы лицензий Служб мультимедиа. Если лицензию авторизовано, служба лицензий Служб мультимедиа выдает ее проигрывателю. Лицензии PlayReady и Widevine содержат ключ расшифровки, который может использоваться клиентским проигрывателем для расшифровки и потоковой передачи содержимого.
@@ -39,7 +39,7 @@ ms.locfileid: "78268115"
 
 ![Защита с помощью PlayReady](./media/media-services-deliver-keys-and-licenses/media-services-diagram1.png)
 
-## <a name="download-sample"></a>Загрузить образец
+## <a name="download-sample"></a>Скачивание образца
 Описанный здесь пример кода можно просмотреть в статье [Use Azure Media Services to deliver PlayReady and/or Widevine licenses with .NET](https://github.com/Azure/media-services-dotnet-deliver-drm-licenses) (Предоставления лицензий PlayReady и (или) Widevine с помощью .NET в Службах мультимедиа Microsoft Azure).
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
@@ -355,6 +355,6 @@ namespace DeliverDRMLicenses
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 * [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](media-services-protect-with-aes128.md)

@@ -1,5 +1,5 @@
 ---
-title: Управление сроком действия хранилища BLOB-объектов Azure
+title: Управление сроком годности хранилища Azure Blob
 titleSuffix: Azure Content Delivery Network
 description: Сведения о возможностях контроля времени жизни BLOB-объектов в кэшировании Azure CDN.
 services: cdn
@@ -16,16 +16,16 @@ ms.topic: article
 ms.date: 02/1/2018
 ms.author: mazha
 ms.openlocfilehash: f28282a802e4b38fadc05c7090fa2a2af154de54
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74083157"
 ---
 # <a name="manage-expiration-of-azure-blob-storage-in-azure-cdn"></a>Управление сроком действия хранилища BLOB-объектов Azure в Azure CDN
 > [!div class="op_single_selector"]
 > * [Веб-содержимое Azure](cdn-manage-expiration-of-cloud-service-content.md)
-> * [хранилище BLOB-объектов Azure](cdn-manage-expiration-of-blob-content.md)
+> * [Хранение Azure Blob](cdn-manage-expiration-of-blob-content.md)
 > 
 > 
 
@@ -70,21 +70,21 @@ ms.locfileid: "74083157"
 
    Это глобальное правило кэширования задает значение длительности кэширования в один час и влияет на все запросы к конечной точке. Оно переопределяет все заголовки HTTP `Cache-Control` или `Expires`, отправленные с сервера-источника, указанного конечной точкой.   
 
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
  
 **Чтобы установить заголовки Cache-Control для файла большого двоичного объекта, используя настраиваемые правила кэширования, сделайте следующее:**
 
 1. В разделе **Настраиваемые правила кэширования** создайте два условия соответствия.
 
-     О. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/blobcontainer1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
+     A. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/blobcontainer1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
 
-    B. Во втором условии соответствия задайте параметру **Условие соответствия** значение **Путь** и введите значение `/blobcontainer1/blob1.txt` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 2 в поле **Часы**.
+    Б. Во втором условии соответствия задайте параметру **Условие соответствия** значение **Путь** и введите значение `/blobcontainer1/blob1.txt` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 2 в поле **Часы**.
 
     ![Пример настраиваемых правил кэширования CDN](./media/cdn-manage-expiration-of-blob-content/cdn-custom-caching-rules-example.png)
 
     Первое настраиваемое правило кэширования задает длительность кэширования четыре часа для всех файлов больших двоичных объектов в папке `/blobcontainer1` на сервере-источнике, указанном конечной точкой. Второе правило переопределяет первое правило только для файла большого двоичного объекта `blob1.txt` и задает для него длительность кэширования два часа.
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 
 ## <a name="setting-cache-control-headers-by-using-azure-powershell"></a>Определение заголовков Cache-Control с помощью Azure PowerShell
@@ -93,7 +93,7 @@ ms.locfileid: "74083157"
 
 [Azure PowerShell](/powershell/azure/overview) — это одно из самых быстрых и мощных средств администрирования служб Azure. Используйте командлет `Get-AzStorageBlob`, чтобы получить ссылку на большой двоичный объект, а затем определите свойство `.ICloudBlob.Properties.CacheControl`. 
 
-Например,
+Пример:
 
 ```powershell
 # Create a storage context
@@ -115,9 +115,9 @@ $blob.ICloudBlob.SetProperties()
 >
 
 ## <a name="setting-cache-control-headers-by-using-net"></a>Определение заголовков Cache-Control с помощью .NET
-Чтобы определить заголовок `Cache-Control` для большого двоичного объекта с помощью кода .NET, задайте свойство [CloudBlob.Properties.CacheControl](../storage/blobs/storage-dotnet-how-to-use-blobs.md) при помощи [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/microsoft.azure.storage.blob.blobproperties.cachecontrol).
+Чтобы определить заголовок `Cache-Control` для большого двоичного объекта с помощью кода .NET, задайте свойство [CloudBlob.Properties.CacheControl](/dotnet/api/microsoft.azure.storage.blob.blobproperties.cachecontrol) при помощи [клиентской библиотеки службы хранилища Azure для .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md).
 
-Например,
+Пример:
 
 ```csharp
 class Program
@@ -152,7 +152,7 @@ class Program
 
 ## <a name="setting-cache-control-headers-by-using-other-methods"></a>Определение заголовков Cache-Control с помощью других методов
 
-### <a name="azure-storage-explorer"></a>обозреватель хранилища Azure
+### <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
 С помощью [обозревателя службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) можно просматривать и изменять ресурсы хранилища BLOB-объектов, включая такие свойства, как *CacheControl*. 
 
 Чтобы обновить свойство *CacheControl* большого двоичного объекта с помощью обозревателя хранилищ Azure, сделайте следующее.
@@ -178,9 +178,9 @@ azure storage blob upload -c <connectionstring> -p cacheControl="max-age=3600" .
    - [задание свойств службы BLOB-объекта](/rest/api/storageservices/Set-Blob-Properties).
 
 ## <a name="testing-the-cache-control-header"></a>Проверка заголовка Cache-Control
-Вы легко можете проверить установленный для BLOB-объектов срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваш BLOB-объект содержит заголовок ответа `Cache-Control`. Для просмотра заголовков ответа можно использовать и другие инструменты, например [wget](https://www.gnu.org/software/wget/), [Postman](https://www.getpostman.com/) или [Fiddler](https://www.telerik.com/fiddler).
+Вы легко можете проверить установленный для BLOB-объектов срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваш BLOB-объект содержит заголовок ответа `Cache-Control`. Вы также можете использовать такой инструмент, как [Wget](https://www.gnu.org/software/wget/), [Почтальон](https://www.getpostman.com/), или [Скрипач](https://www.telerik.com/fiddler) для изучения ответ заголовки.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Узнайте, как управлять сроком действия содержимого облачных служб в сети доставки содержимого (CDN) Azure](cdn-manage-expiration-of-cloud-service-content.md)
+## <a name="next-steps"></a>Next Steps
+* [Узнайте, как управлять сроком действия содержимого облачных служб в сети доставки содержимого (CDN) Azure](cdn-manage-expiration-of-cloud-service-content.md).
 * [Дополнительные сведения о кэшировании](cdn-how-caching-works.md)
 

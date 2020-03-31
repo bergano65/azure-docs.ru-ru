@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 12/18/2019
+ms.date: 03/24/2020
 ms.author: aahi
-ms.openlocfilehash: e826d69bbf0f94d02799e9b93b26db8d4cbbba54
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 59f704377695be0f3253bdd0d7a7b82b460c86d0
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75451164"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80239006"
 ---
 # <a name="quickstart-bing-autosuggest-client-library-for-go"></a>Краткое руководство. Клиентская библиотека Автозаполнения Bing для Go
 
@@ -24,7 +24,7 @@ ms.locfileid: "75451164"
 
 [Справочная документация](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/autosuggest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.1/textanalytics) | [Пример кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/go/BingAutoSuggest/BingAutoSuggestQuickstart.go)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Последняя версия [Go](https://golang.org/dl/).
@@ -50,7 +50,7 @@ ms.locfileid: "75451164"
 
 Используйте инструкции для своей операционной системы.
 <!-- replace the below endpoint and key examples -->
-#### <a name="windowstabwindows"></a>[Windows](#tab/windows)
+#### <a name="windows"></a>[Windows](#tab/windows)
 
 ```console
 setx BING_AUTOSUGGEST_SUBSCRIPTION_KEY <replace-with-your-autosuggest-api-key>
@@ -59,7 +59,7 @@ setx BING_AUTOSUGGEST_ENDPOINT <replace-with-your-autosuggest-api-endpoint>
 
 Добавив переменную среды, перезапустите окно консоли.
 
-#### <a name="linuxtablinux"></a>[Linux](#tab/linux)
+#### <a name="linux"></a>[Linux](#tab/linux)
 
 ```bash
 export AUTOSUGGEST_SUBSCRIPTION_KEY=<replace-with-your-autosuggest-api-key>
@@ -68,7 +68,7 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 
 После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
 
-#### <a name="macostabunix"></a>[macOS](#tab/unix)
+#### <a name="macos"></a>[macOS](#tab/unix)
 
 Измените `.bash_profile` и добавьте переменную среды:
 

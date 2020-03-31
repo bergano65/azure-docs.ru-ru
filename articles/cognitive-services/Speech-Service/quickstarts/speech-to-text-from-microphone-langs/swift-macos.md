@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 12/23/2019
 ms.author: cbasoglu
 ms.openlocfilehash: 7c5611a142087cff06eefb0277b12ff786074e1a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75446835"
 ---
 # <a name="quickstart-recognize-speech-in-swift-on-macos-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Swift с использованием macOS и пакета SDK службы "Речь"
@@ -23,7 +23,7 @@ ms.locfileid: "75446835"
 
 Из этой статьи вы узнаете, как с помощью пакета SDK для службы "Речь" в Cognitive Services можно создать приложение macOS на Swift, которое будет преобразовывать микрофонную запись речи в текст.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Предварительные требования для начала работы:
 
