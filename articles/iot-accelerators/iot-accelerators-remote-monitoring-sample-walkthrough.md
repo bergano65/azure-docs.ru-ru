@@ -1,6 +1,6 @@
 ---
 title: Обзор акселератора решения для удаленного мониторинга — Azure | Документация Майкрософт
-description: В этой статье представлен обзор некоторых ключевых элементов решения для удаленного мониторинга, позволяющих понять, как это работает.
+description: В этой статье представлен обзор некоторых ключевых элементов решения удаленного мониторинга, позволяющий понять, как это работает.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
 ms.openlocfilehash: 33005bc286f7dc2c0ebed74bd9df0309e71346f5
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73824834"
 ---
 # <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решения для удаленного мониторинга
@@ -32,7 +32,7 @@ ms.locfileid: "73824834"
 
 ## <a name="logical-architecture"></a>Логическая архитектура
 
-На приведенной ниже схеме показаны логические компоненты акселератора решения для удаленного мониторинга, наложенные на [архитектуру Интернета вещей](../iot-fundamentals/iot-introduction.md):
+На следующей диаграмме изложены логические компоненты ускорителя решения удаленного мониторинга, наложенного на [архитектуру IoT:](../iot-fundamentals/iot-introduction.md)
 
 ![Логическая архитектура](./media/iot-accelerators-remote-monitoring-sample-walkthrough/remote-monitoring-architecture.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "73824834"
 С момента выпуска корпорацией Майкрософт первых акселераторов решений архитектура облака эволюционировала. [Микрослужбы](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/) — это проверенный метод, который обеспечивает масштабируемость и гибкость без снижения скорости разработки. В некоторых службах Майкрософт по умолчанию используется шаблон архитектуры, который обеспечивает высокую надежность и масштабируемость. В обновленных акселераторах решений реализованы эти наработки, чтобы вы в полной мере смогли воспользоваться их преимуществами.
 
 > [!TIP]
-> Дополнительные сведения об архитектурах микрослужб см. на странице [архитектуры приложения для .NET](https://www.microsoft.com/net/learn/architecture), а также в записи блога, посвященной [возможностям микрослужб — мощные возможности приложения, обеспечиваемые облачной средой](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/).
+> Дополнительные сведения об архитектурах микрослужб см. на странице [архитектуры приложения для .NET](https://www.microsoft.com/net/learn/architecture), а также в записи блога, посвященной [возможностям микрослужб для приложений на базе облака](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/).
 
 ## <a name="device-connectivity"></a>Взаимодействие устройств
 
@@ -170,4 +170,4 @@ ms.locfileid: "73824834"
 Подробные схемы архитектуры решения:
 * [Архитектура акселератора решения для удаленного мониторинга](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Architecture).
 
-Дополнительные сведения см. в статье о [настройке акселератора решения для удаленного мониторинга](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md).
+Для получения дополнительной концептуальной информации об [Customize the solution accelerator](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md)ускорителе решений удаленного мониторинга см.

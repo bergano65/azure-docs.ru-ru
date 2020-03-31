@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/06/2017
 ms.author: yegu
 ms.openlocfilehash: 11c854491ab030394eb61964979cb04a5a4b489b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75433379"
 ---
 # <a name="create-a-web-app-plus-azure-cache-for-redis-using-a-template"></a>Создание веб-приложения и экземпляра кэша Redis для Azure с помощью шаблона
@@ -28,7 +28,7 @@ ms.locfileid: "75433379"
 В этом шаблоне будут развернуты перечисленные ниже компоненты.
 
 * Веб-приложение Azure
-* Кэш Azure для Redis
+* Кэш Redis для Azure
 
 Чтобы выполнить развертывание автоматически, нажмите следующую кнопку.
 
@@ -52,7 +52,7 @@ ms.locfileid: "75433379"
 ## <a name="resources-to-deploy"></a>Развертываемые ресурсы
 [!INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
-### <a name="azure-cache-for-redis"></a>Кэш Azure для Redis
+### <a name="azure-cache-for-redis"></a>Кэш Redis для Azure
 Создает кэш Redis для Azure, используемый с веб-приложением. Имя кэша указывается в переменной **cacheName** .
 
 Этот шаблон создает кэш в том же месте, где находится группа ресурсов.
@@ -79,7 +79,7 @@ ms.locfileid: "75433379"
 ### <a name="web-app"></a>Веб-приложение
 Создает веб-приложение с именем, указанным в переменной **webSiteName** .
 
-Обратите внимание, что веб-приложение настроено со свойствами параметров приложения, которые позволяют ему работать с кэшем Redis для Azure. Эти параметры приложения создаются динамически на основе значений, указанных во время развертывания.
+Обратите внимание, что веб-приложение настроено со свойствами параметров приложения, которые позволяют ему работать с кэшем Redis для Azure. Эти настройки приложения динамически создаются на основе значений, предоставляемых во время развертывания.
 
     {
       "apiVersion": "2015-08-01",
@@ -120,5 +120,5 @@ ms.locfileid: "75433379"
 ### <a name="powershell"></a>PowerShell
     New-AzResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -g ExampleDeployGroup

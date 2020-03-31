@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 673a801e218d055bf482dc97972e36584cddd402
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76721342"
 ---
 # <a name="build-and-optimize-tables-for-fast-parallel-import-of-data-into-a-sql-server-on-an-azure-vm"></a>Создание и оптимизация таблиц для быстрого параллельного импорта данных в SQL Server на виртуальной машине Azure
@@ -57,7 +57,7 @@ ms.locfileid: "76721342"
 ## <a name="create-a-partitioned-table"></a>Создание секционированной таблицы
 Для создания секционированных таблиц в соответствии со схемой данных, сопоставленной с группами файлов базы данных (созданы на предыдущем шаге), необходимо сначала создать схему и функцию секционирования. При массовом импорте данных в секционированные таблицы записи распределяются между группами файлов в соответствии со схемой секционирования, как описано ниже.
 
-### <a name="1-create-a-partition-function"></a>1. Создание функции секционирования
+### <a name="1-create-a-partition-function"></a>1. Создание функции перегородки
 [Создайте функцию секционирования](https://msdn.microsoft.com/library/ms187802.aspx). Эта функция определяет диапазон значений или границ для каждой отдельной секционированной таблицы, например, чтобы ограничить секции по месяцам (поле\_datetime\_) в 2013 году:
   
         CREATE PARTITION FUNCTION <DatetimeFieldPFN>(<datetime_field>)  
@@ -66,7 +66,7 @@ ms.locfileid: "76721342"
             '20130501', '20130601', '20130701', '20130801',
             '20130901', '20131001', '20131101', '20131201' )
 
-### <a name="2-create-a-partition-scheme"></a>2. Создание схемы секционирования
+### <a name="2-create-a-partition-scheme"></a>2. Создание схемы раздела
 [Создайте схему функционирования](https://msdn.microsoft.com/library/ms179854.aspx). Эта схема сопоставляет каждый диапазон секционирования в функции секционирования с физической группой файлов, например:
   
         CREATE PARTITION SCHEME <DatetimeFieldPScheme> AS  
@@ -85,7 +85,7 @@ ms.locfileid: "76721342"
         INNER JOIN sys.partition_range_values prng ON prng.function_id=pfun.function_id
         WHERE pfun.name = <DatetimeFieldPFN>
 
-### <a name="3-create-a-partition-table"></a>3. Создание таблицы секционирования
+### <a name="3-create-a-partition-table"></a>3. Создание таблицы перегородки
 [Создайте секционированные таблицы](https://msdn.microsoft.com/library/ms174979.aspx) в соответствии со схемой данных и укажите схему секционирования и поле ограничений, используемые для секционирования таблицы, например:
   
         CREATE TABLE <table_name> ( [include schema definition here] )
@@ -99,7 +99,7 @@ ms.locfileid: "76721342"
 * [Измените базу данных](https://msdn.microsoft.com/library/bb522682.aspx), изменив схему ведения журнала транзакций на BULK_LOGGED, чтобы минимизовать нагрузку при ведении журнала, например:
   
         ALTER DATABASE <database_name> SET RECOVERY BULK_LOGGED
-* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению выполнения операций с массовым импортом больших данных в SQL Server базы данных см. [в разделе Загрузка 1 ТБ менее 1 часа](https://blogs.msdn.com/b/sqlcat/archive/2006/05/19/602142.aspx).
+* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению массового импорта больших данных в базы данных серверов S'L Server можно просмотреть [данные Load 1 TB менее чем за 1 час.](https://blogs.msdn.com/b/sqlcat/archive/2006/05/19/602142.aspx)
 
 В следующем сценарии PowerShell приведен пример параллельной загрузки данных с использованием BCP.
 

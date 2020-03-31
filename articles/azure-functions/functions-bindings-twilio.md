@@ -7,10 +7,10 @@ ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 1426d6e770cca566c4b77ca4742e2f8a0fbb5465
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76715066"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Привязка Twilio для службы "Функции Azure"
@@ -25,7 +25,7 @@ ms.locfileid: "76715066"
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
-## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
+## <a name="packages---functions-2x-and-higher"></a>Пакеты - Функции 2.x и выше
 
 Привязки Twilio доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.Twilio](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Twilio), версия 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.Twilio/).
 
@@ -33,9 +33,9 @@ ms.locfileid: "76715066"
 
 <a id="example"></a>
 
-## <a name="example---functions-2x-and-higher"></a>Example-functions 2. x и более поздние версии
+## <a name="example---functions-2x-and-higher"></a>Пример - Функции 2.x и выше
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая отправляет текстовое сообщение при активации сообщением из очереди.
 
@@ -70,7 +70,7 @@ namespace TwilioQueueOutput
 
 В этом примере используется `TwilioSms` атрибут с помощью возвращаемого значения метода. Альтернативой является использование атрибута с параметрами `out CreateMessageOptions`, `ICollector<CreateMessageOptions>` или `IAsyncCollector<CreateMessageOptions>`.
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 В следующем примере показаны выходная привязка Twilio*function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Эта функция использует параметр `out` для отправки текстового сообщения.
 
@@ -156,7 +156,7 @@ public static async Task Run(string myQueueItem, IAsyncCollector<CreateMessageOp
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В следующем примере показана выходная привязка Twilio в файле *function.json* и функции [JavaScript](functions-reference-node.md), которая использует привязку.
 
@@ -201,9 +201,9 @@ module.exports = function (context, myQueueItem) {
 };
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показано, как отправить SMS сообщения с помощью выходной привязки, как определено в следующей *функции. js*.
+В следующем примере показано, как отправить SMS-сообщение с помощью выходной привязки, как это определено в следующем *function.js.*
 
 ```json
     {
@@ -217,7 +217,7 @@ module.exports = function (context, myQueueItem) {
     }
 ```
 
-Можно передать сериализованный объект JSON в параметр `func.Out`, чтобы отправить SMS-сообщение.
+Вы можете передать сериализованный объект `func.Out` JSON параметру для отправки SMS-сообщения.
 
 ```python
 import logging
@@ -239,9 +239,9 @@ def main(req: func.HttpRequest, twilioMessage: func.Out[str]) -> func.HttpRespon
     return func.HttpResponse(f"Message sent")
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показано, как использовать заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) для отправки сообщения SMS. Значения для `to`, `from`и `body` необходимы в определении атрибута, даже если они переопределяются программным способом.
+В следующем примере показано, как использовать аннотацию [TwilioSmsOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) для отправки SMS-сообщения. Значения для `to` `from`, `body` и требуется в определении атрибута, даже если вы переопределить их программно.
 
 ```java
 package com.function;
@@ -285,9 +285,9 @@ public class TwilioOutput {
 
 ---
 
-## <a name="attributes-and-annotations"></a>Атрибуты и заметки
+## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [TwilioSms](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.Twilio/TwilioSMSAttribute.cs).
 
@@ -305,38 +305,38 @@ public static CreateMessageOptions Run(
 
 Полный пример см. в разделе [Пример C#](#example).
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+Атрибуты не поддерживаются Python.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Поместите заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) в параметр [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.outputbinding) , где `T` может быть любым собственным типом Java, таким как `int`, `String`, `byte[]`или тип POJO.
+Поместите аннотацию [TwilioSmsOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.outputbinding) `T` по параметру, где `int` `String`может `byte[]`быть любой родной тип Java, такой как , или тип POJO.
 
 ---
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TwilioSms`.
+В следующей таблице объясняется свойства связывающей конфигурации, `TwilioSms` установленные в файле *function.json* и атрибуте.
 
-| Свойство function.json версии 1 | Свойство function.json версии 2 | Свойство атрибута |Description|
+| Свойство function.json версии 1 | Свойство function.json версии 2 | Свойство атрибута |Описание|
 |---------|---------|---------|----------------------|
-|**type**|**type**| Нужно задать значение `twilioSms`.|
+|**тип**|**тип**| Нужно задать значение `twilioSms`.|
 |**direction**|**direction**| Нужно задать значение `out`.|
 |**name**|**name**| Имя переменной, используемое в коде функции для текстового SMS-сообщения Twilio. |
-|**accountSid**|**accountSidSetting**| **AccountSidSetting**| Это значение должно быть равно имени параметра приложения, в котором хранится идентификатор безопасности учетной записи Twilio (`TwilioAccountSid`). Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAccountSid. |
-|**authToken**|**authTokenSetting**|**AuthTokenSetting**| Это значение должно быть равно имени параметра приложения, который содержит токен проверки подлинности Twilio (`TwilioAccountAuthToken`). Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAuthToken. |
-|**to**| Недоступно — указать в коде | **Чтобы**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
-|**from**|**from** | **От**| Требуемое значение: номер телефона, с которого отправляется текст SMS-сообщения.|
-|**body**|**body** | **Текст**| Это значение можно использовать для жесткого кодирования текстового SMS-сообщения, если его не нужно задавать динамически в коде функции. |  
+|**accountSid**|**учетная записьSidSetting**| **AccountSidSetting**| Это значение должно быть установлено на имя настройки приложения,`TwilioAccountSid`вмещающее ваш CTo-аккаунт Twilio Sid (). Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAccountSid. |
+|**authToken**|**authTokenSetting**|**AuthTokenSetting**| Это значение должно быть установлено на имя настройки приложения, вмещающее маркер проверки подлинности Twilio ().`TwilioAccountAuthToken` Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAuthToken. |
+|**Кому**| Недоступно — указать в коде | **Кому**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
+|**От**|**От** | **От**| Требуемое значение: номер телефона, с которого отправляется текст SMS-сообщения.|
+|**Тела**|**Тела** | **Текст**| Это значение можно использовать для жесткого кодирования текстового SMS-сообщения, если его не нужно задавать динамически в коде функции. |  
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 

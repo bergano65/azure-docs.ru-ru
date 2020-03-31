@@ -1,6 +1,6 @@
 ---
-title: Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия) с помощью PowerShell
-description: Сведения о переносе конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия)
+title: Имитируйте конфигурации брандмауэра Azure в политику Azure Firewall (предварительный просмотр) с помощью PowerShell
+description: Узнайте, как перенести конфигурации брандмауэра Azure в политику Azure Firewall (предварительный просмотр)
 author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
@@ -8,25 +8,25 @@ ms.topic: conceptual
 ms.date: 02/18/2020
 ms.author: victorh
 ms.openlocfilehash: 498863c98f308a9fd9b47f80328d572187475901
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77443114"
 ---
-# <a name="migrate-azure-firewall-configurations-to-azure-firewall-policy-preview-using-powershell"></a>Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия) с помощью PowerShell
+# <a name="migrate-azure-firewall-configurations-to-azure-firewall-policy-preview-using-powershell"></a>Имитируйте конфигурации брандмауэра Azure в политику Azure Firewall (предварительный просмотр) с помощью Powershell
 
 [!INCLUDE [Preview](../../includes/firewall-manager-preview-notice.md)]
 
-Вы можете использовать скрипт Azure PowerShell для переноса существующих конфигураций брандмауэра Azure в ресурс политики брандмауэра Azure. Затем можно развернуть политику с помощью диспетчера брандмауэра Azure.
+Можно использовать скрипт Azure PowerShell для переноса существующих конфигураций брандмауэра Azure в ресурс политики Azure Firewall. Затем для развертывания политики можно использовать диспетчер апотом Изfire Firewall.
 
-Скрипт `AZFWMigrationScript.ps1` создает Фиреваллполици с тремя объектами Рулеколлектионграуп для Аппликатионрулеколлектионс, Нетворкрулеколлектионс и NatRuleCollections соответственно. 
+Скрипт `AZFWMigrationScript.ps1` создает FirewallPolicy с тремя объектами RuleCollectionGroup для ApplicationRuleCollections, NetworkRuleCollections и NatRuleCollections соответственно. 
 
-Рулеколлектионграуп — это новая группировка верхнего уровня для коллекций правил для будущего расширения. Рекомендуется использовать указанные выше значения по умолчанию и автоматически выполнять на портале.
+RuleCollectionGroup — это новая группа верхнего уровня для коллекций правил для будущей расширяемости. Использование вышеуказанных по умолчанию рекомендуется и выполняется автоматически с портала.
 
-В начале скрипта определяются имя исходного брандмауэра и группы ресурсов, а также имя и расположение целевой политики. Измените эти значения в соответствии с вашими организациями.
+Начало скрипта определяет имя исходного брандмауэра и группу ресурсов, а также имя и местоположение целевой политики. Измените эти значения в соответствии с вашими организацией.
 
-## <a name="migration-script"></a>Скрипт миграции
+## <a name="migration-script"></a>Сценарий миграции
 
 Измените следующий скрипт, чтобы перенести конфигурацию брандмауэра.
 
@@ -161,4 +161,4 @@ If ($azfw.NatRuleCollections.Count -gt 0) {
 ```
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о развертывании диспетчера брандмауэра Azure: [Обзор развертывания диспетчера брандмауэра Azure](deployment-overview.md).
+Подробнее о развертывании диспетчера брандмауэра Azure: [Обзор развертывания диспетчера брандмауэра Azure Firewall.](deployment-overview.md)

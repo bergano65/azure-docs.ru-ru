@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: параметры устройств | Документация Майкрософт'
+title: 'Azure AD Connect: параметры устройств | Документация Майкрософт'
 description: В этом документе описаны параметры устройств, доступные в Azure AD Connect
 services: active-directory
 documentationcenter: ''
@@ -17,17 +17,17 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 96ddcdb67ef079cfa23902a1dcb03b0ec61077fe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67109528"
 ---
-# <a name="azure-ad-connect-device-options"></a>Azure AD Connect выполняет следующие функции: Параметры устройств
+# <a name="azure-ad-connect-device-options"></a>Azure AD Connect: параметры устройств
 
 В этом документе содержится сведения о различных параметрах устройств, доступных в Azure AD Connect. С помощью Azure AD Connect можно настроить две следующие операции: 
-* **Гибридное присоединение к Azure AD**. Если в вашей среде действует локальная служба AD и вы хотите воспользоваться преимуществами Azure AD, можно применить гибридные устройства, присоединенные к Azure AD. Это устройства, которые присоединены и к локальной среде Active Directory, и к Azure Active Directory.
-* **Обратная запись устройств**. Обратная запись устройств используется для включения условного доступа на основе устройств для AD FS (2012 R2 или более поздней версии) защищенных устройств
+* **Гибридное присоединение устройств к Azure AD**. Если в вашей среде действует локальная служба AD и вы хотите воспользоваться преимуществами Azure AD, можно применить гибридные устройства, присоединенные к Azure AD. Это устройства, которые присоединены и к локальной среде Active Directory, и к Azure Active Directory.
+* **Списание устройств:** Списание устройств используется для включения условного доступа на основе устройств к защищенным устройствам AD FS (2012 R2 или выше)
 
 ## <a name="configure-device-options-in-azure-ad-connect"></a>Настройка параметров устройств в Azure AD Connect
 
@@ -35,7 +35,7 @@ ms.locfileid: "67109528"
     ![Настройка параметров устройств](./media/how-to-connect-device-options/deviceoptions.png) 
 
     На странице **Обзор** приводятся подробные сведения.
-    ![Обзор набора средств Visual Studio для Unity](./media/how-to-connect-device-options/deviceoverview.png)
+    ![Обзор](./media/how-to-connect-device-options/deviceoverview.png)
 
     >[!NOTE]
     > Новая функция настройки параметров устройств доступна только в версии 1.1.819.0 и более поздних.
@@ -45,6 +45,6 @@ ms.locfileid: "67109528"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка гибридных устройств, присоединенных к Azure Active Directory](../device-management-hybrid-azuread-joined-devices-setup.md)
+* [Настройка гибридного aure AD](../device-management-hybrid-azuread-joined-devices-setup.md)
 * [Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md)
 

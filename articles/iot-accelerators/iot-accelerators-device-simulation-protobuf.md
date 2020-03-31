@@ -10,10 +10,10 @@ ms.custom: mvc
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: bc08cd5183bcaac6cb77ccb0938b07893f082862
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78250211"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
@@ -32,13 +32,13 @@ ms.locfileid: "78250211"
 1. формировать классы Protobuf.
 1. Локальное тестирование
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните следующие шаги для изучения данного руководства:
 
-* Visual Studio Code. Вы можете [скачать Visual Studio Code для Mac, Linux и Windows](https://code.visualstudio.com/download).
+* Visual Studio Code. Вы можете скачать [визуальный код студии для Mac, Linux и Windows](https://code.visualstudio.com/download).
 * .NET Core. Вы можете скачать [.NET Core для Mac, Linux и Windows](https://www.microsoft.com/net/download).
-* Postman. Вы можете скачать [Postman для Mac, Windows или Linux](https://www.getpostman.com/apps).
+* Postman. Вы можете скачать [Postman для Mac, windows или Linux](https://www.getpostman.com/apps).
 * [Центр Интернета вещей для вашей подписки Azure](../iot-hub/iot-hub-create-through-portal.md). Для выполнения шагов этого руководства вам понадобится строка подключения Центра Интернета вещей. Вы можете получить строку подключения с портала Azure.
 * [База данных Cosmos DB, развернутая в подписке Azure](../cosmos-db/create-sql-api-dotnet.md#create-account), которая использует SQL API и которая настроена на [строгую согласованность](../cosmos-db/manage-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
 * [Учетная запись хранения Azure, развернутая в подписке Azure.](../storage/common/storage-account-create.md) Для выполнения шагов этого руководства вам понадобится строка подключения учетной записи хранения. Вы можете получить строку подключения с портала Azure.
@@ -63,7 +63,7 @@ ms.locfileid: "78250211"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, нажмите кнопку **Восстановить**.
 
-Откройте файл **.vscode/launch.json** и назначьте строку подключения Cosmos DB для переменной среды **PCS\_STORAGEADAPTER\_DOCUMENTDB\_CONNSTRING**.
+Откройте файл **.vscode/launch.json** и назначьте строку соединения Cosmos DB переменной среды **PCS\_STORAGEADAPTER\_DOCUMENTDB\_CONNSTRING.**
 
 > [!NOTE]
 > При запуске микрослужбы локально на компьютере ей по прежнему требуется экземпляр Cosmos DB в Azure для правильной работы.
@@ -200,7 +200,7 @@ ms.locfileid: "78250211"
 * Строка подключения учетной записи хранения для переменной среды **PCS\_AZURE\_ХРАНИЛИЩЕ\_УЧЕТНАЯ ЗАПИСЬ**.
 * Назначьте строку подключения Cosmos DB для переменной среды **PCS\_STORAGEADAPTER\_DOCUMENTDB\_CONNSTRING**.
 
-Откройте файл **WebService/appsettings.ini** и измените настройки следующим образом:
+Откройте файл **WebService-appsettings.ini** и измените настройки следующим образом:
 
 #### <a name="configure-the-solution-to-include-your-new-device-model-files"></a>Настройка решения для включения файлов новой модели устройства
 
@@ -249,11 +249,11 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 1. Выберите **Файл \> Импорт**. Затем нажмите **Выбор файлов**.
 
-1. Выберите **Решение имитации устройств Azure IoT accelerator.postman\_collection** и **Решение имитации устройств Azure IoT accelerator.postman\_environment** и нажмите **Открыть**.
+1. Выберите **azure IoT Device Simulation решения accelerator.postman\_collection** и **Azure IoT\_Device Simulation решения accelerator.postman окружающей среды** и нажмите **Открыть**.
 
 1. Разверните **Акселератор решений имитации устройств Azure loT** для просмотра запросов, которые вы можете отправить.
 
-1. Нажмите **No Environment** (Без среды) и выберите **Акселератор решений имитации устройств Azure IoT**.
+1. Нажмите **No Environment** и выберите **ускоритель решений для моделирования устройств Azure IoT.**
 
 Теперь у вас есть коллекция и среда, загруженные в рабочее пространство Postman, которые вы можете использовать для взаимодействия с микрослужбой моделирования устройств.
 

@@ -1,13 +1,13 @@
 ---
-title: Знакомство с надежными коллекциями
+title: Введение в надежные коллекции
 description: Службы с отслеживанием состояния Service Fabric предоставляют надежные коллекции, которые позволяют создавать высокодоступные и масштабируемые облачные приложения с низкой задержкой.
 ms.topic: conceptual
 ms.date: 1/3/2019
 ms.openlocfilehash: 48fa682f4c017f66911729e1f581f3aa91cdc28d
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75609729"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Введение в надежные коллекции в службах с отслеживанием состояния Azure Service Fabric
@@ -36,7 +36,7 @@ ms.locfileid: "75609729"
 API надежных коллекций являются развитием API параллельных коллекций (находятся в пространстве имен **System.Collections.Concurrent** ):
 
 * работают асинхронно (возвращают задачи, потому что, в отличие от параллельных коллекций, операции реплицируются и сохраняются);
-* Без параметров out: использует `ConditionalValue<T>`, чтобы вернуть `bool` и значение, а не выходные параметры. `ConditionalValue<T>` имеет сходство с `Nullable<T>`, но не требует, чтобы значение T было структурой.
+* Нет из параметров: `ConditionalValue<T>` Использует `bool` для возврата и значение, а не из параметров. `ConditionalValue<T>` имеет сходство с `Nullable<T>`, но не требует, чтобы значение T было структурой.
 * являются транзакционными (используется объект транзакции, благодаря чему пользователь может группировать действия с несколькими надежными коллекциями в одну транзакцию).
 
 Сейчас пространство имен **Microsoft.ServiceFabric.Data.Collections** содержит три коллекции:
@@ -47,7 +47,7 @@ API надежных коллекций являются развитием API 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Reliable Collections: руководства и рекомендации](service-fabric-reliable-services-reliable-collections-guidelines.md)
+* [Надежные рекомендации по сбору & рекомендациях](service-fabric-reliable-services-reliable-collections-guidelines.md)
 * [Работа с надежными коллекциями](service-fabric-work-with-reliable-collections.md)
 * [Транзакции и блокировки](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
 * Управление данными
@@ -57,5 +57,5 @@ API надежных коллекций являются развитием API 
   * [Влияние сериализации данных на обновление приложений](service-fabric-application-upgrade-data-serialization.md)
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
 * Прочее
-  * [Краткое руководство по надежным службам Reliable Services](service-fabric-reliable-services-quick-start.md)
+  * [Надежные услуги быстро ежекты](service-fabric-reliable-services-quick-start.md)
   * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)

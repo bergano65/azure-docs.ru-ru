@@ -1,7 +1,7 @@
 ---
 title: Создание рабочих областей с помощью Azure CLI
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать Azure CLI для создания новой Машинное обучение Azure рабочей области.
+description: Узнайте, как использовать Azure CLI для создания нового рабочего пространства для машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,76 +9,78 @@ ms.topic: conceptual
 ms.author: larryfr
 author: Blackmist
 ms.date: 03/05/2020
-ms.openlocfilehash: 5e90416b23b057ad5079a551242895802ac641c9
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.openlocfilehash: 64c2e77ffc43ec98c13ce8c0cad002cdb2053241
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78399116"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80296903"
 ---
-# <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинное обучение Azure с Azure CLI
+# <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочего пространства для машинного обучения Azure с помощью Azure CLI
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как создать Машинное обучение Azure рабочую область с помощью Azure CLI. Azure CLI предоставляет команды для управления ресурсами Azure. Расширение машинного обучения для интерфейса командной строки предоставляет команды для работы с Машинное обучение Azureными ресурсами.
+В этой статье вы узнаете, как создать рабочее пространство для машин Azure Machine Learning с помощью Azure CLI. Azure CLI предоставляет команды для управления ресурсами Azure. Расширение машинного обучения в CLI предоставляет команды для работы с ресурсами машинного обучения Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. Если у вас ее нет, попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
+* **Подписка Azure**. Если у вас его нет, попробуйте [бесплатную или платную версию Azure Machine Learning.](https://aka.ms/AMLFree)
 
-* Для использования команд интерфейса командной строки в этом документе из **локальной среды**требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* Для использования команд CLI в этом документе из **локальной среды**необходим [Azure CLI.](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 
-    Если вы используете [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/), интерфейс командной строки доступен через браузер и находится в облаке.
+    Если вы используете [облачную оболочку Azure,](https://azure.microsoft.com//features/cloud-shell/)то доступ к CLI осуществляется через браузер и живет в облаке.
 
 ## <a name="connect-the-cli-to-your-azure-subscription"></a>Подключение интерфейса командной строки к своей подписке Azure
 
 > [!IMPORTANT]
-> Если вы используете Azure Cloud Shell, этот раздел можно пропустить. Cloud Shell автоматически выполняет проверку подлинности, используя учетную запись, которую вы входите в подписку Azure.
+> Если вы используете оболочку облака Azure, вы можете пропустить этот раздел. Облачная оболочка автоматически проверяет подлинность с помощью учетной записи, вскакиваемых в подписку Azure.
 
-Существует несколько способов проверки подлинности в подписке Azure с помощью интерфейса командной строки. Самый простой — выполнить интерактивную проверку подлинности с помощью браузера. Чтобы выполнить аутентификацию в интерактивном режиме, откройте командную строку или терминал и используйте следующую команду:
+Существует несколько способов проверки подлинности подписки Azure с CLI. Наиболее основным является интерактивная аутентификативная проверка с помощью браузера. Чтобы проверить подлинность в интерактивном режиме, откройте командную строку или терминал и используйте следующую команду:
 
-```azurecli
+```azurecli-interactive
 az login
 ```
 
-Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. В противном случае необходимо открыть браузер и выполнить инструкции из командной строки. В инструкциях входит обзор [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и ввод кода авторизации.
+Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. В противном случае вам нужно открыть браузер и следовать инструкциям по командной строке. Инструкции включают просмотр [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и ввод кода авторизации.
 
-Другие методы проверки подлинности см. [в разделе Вход с помощью Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+[!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)]
+
+Для других методов проверки подлинности, [перепишитесь с Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
 ## <a name="install-the-machine-learning-extension"></a>Установка расширения машинного обучения
 
-Чтобы установить расширение машинного обучения, используйте следующую команду:
+Для установки расширения машинного обучения используйте следующую команду:
 
 ```azurecli-interactive
 az extension add -n azure-cli-ml
 ```
 
-## <a name="create-a-workspace"></a>Создать рабочую область
+## <a name="create-a-workspace"></a>Создание рабочей области
 
-Машинное обучение Azure рабочей области полагаются следующие службы или сущности Azure:
+Рабочее пространство Azure Machine Learning опирается на следующие службы или объекты Azure:
 
 > [!IMPORTANT]
-> Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочей области. Необходимо всегда указывать группу ресурсов.
+> Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочего пространства. Необходимо всегда указывать группу ресурсов.
 
-| Service | Параметр для указания существующего экземпляра |
+| Служба | Параметр для указания существующего экземпляра |
 | ---- | ---- |
 | **Группа ресурсов Azure** | `-g <resource-group-name>`
 | **Учетная запись хранения Azure** | `--storage-account <service-id>` |
 | **Azure Application Insights** | `--application-insights <service-id>` |
-| **Хранилище ключей Azure** | `--keyvault <service-id>` |
+| **Убежище ключей Azure** | `--keyvault <service-id>` |
 | **Реестр контейнеров Azure** | `--container-registry <service-id>` |
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Рабочая область Машинное обучение Azure должна быть создана внутри группы ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. Чтобы __создать новую группу ресурсов__, используйте следующую команду. Замените `<resource-group-name>` именем, которое будет использоваться для этой группы ресурсов. Замените `<location>` на регион Azure, который будет использоваться для этой группы ресурсов:
+Рабочее пространство Azure Machine Learning должно быть создано внутри группы ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. Для __создания новой группы ресурсов__используйте следующую команду. Замените `<resource-group-name>` имя для использования для этой группы ресурсов. Заменить `<location>` область Azure для использования в этой группе ресурсов:
 
 > [!TIP]
-> Необходимо выбрать регион, в котором доступна Машинное обучение Azure. Дополнительные сведения см. в разделе [продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-service).
+> Следует выбрать регион, в котором доступно машинное обучение Azure. Для получения информации [см.](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-service)
 
 ```azurecli-interactive
 az group create --name <resource-group-name> --location <location>
 ```
 
-Ответ этой команды аналогичен следующему JSON:
+Ответ от этой команды аналогичен следующему JSON:
 
 ```json
 {
@@ -94,23 +96,23 @@ az group create --name <resource-group-name> --location <location>
 }
 ```
 
-Дополнительные сведения о работе с группами ресурсов см. в разделе [AZ Group](https://docs.microsoft.com//cli/azure/group?view=azure-cli-latest).
+Для получения дополнительной информации о работе с группами ресурсов [см.](https://docs.microsoft.com//cli/azure/group?view=azure-cli-latest)
 
 ### <a name="automatically-create-required-resources"></a>Автоматически создавать необходимые ресурсы
 
-Чтобы создать новую рабочую область, в которой __службы создаются автоматически__, используйте следующую команду:
+Чтобы создать новое рабочее пространство, где __службы автоматически создаются,__ используйте следующую команду:
 
 > [!TIP]
-> Команды в этом разделе создают рабочую область Basic Edition. Чтобы создать корпоративную рабочую область, используйте параметр `--sku enterprise` с командой `az ml workspace create`. Дополнительные сведения о Машинное обучение Azure выпусках см. в разделе [что такое машинное обучение Azure](overview-what-is-azure-ml.md#sku).
+> Команды в этом разделе создают базовое рабочее пространство издания. Для создания рабочего пространства `--sku enterprise` предприятия используйте коммутатор с командой. `az ml workspace create` Для получения дополнительной информации о изданиях машинного обучения Azure [смотрите, что такое машинное обучение Azure.](overview-what-is-azure-ml.md#sku)
 
 ```azurecli-interactive
 az ml workspace create -w <workspace-name> -g <resource-group-name>
 ```
 
 > [!NOTE]
-> Имя рабочей области не учитывает регистр.
+> Имя рабочего пространства является нечувствительным.
 
-Выходные данные этой команды похожи на следующий код JSON:
+Выход этой команды аналогичен следующему JSON:
 
 ```json
 {
@@ -135,57 +137,57 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 
 ### <a name="use-existing-resources"></a>Использование существующих ресурсов
 
-Чтобы создать рабочую область, которая использует существующие ресурсы, необходимо указать идентификатор для ресурсов. Чтобы получить идентификатор для служб, используйте следующие команды:
+Для создания рабочего пространства, использующемсуществующие ресурсы, необходимо предоставить идентификатор для ресурсов. Используйте следующие команды, чтобы получить идентификатор для служб:
 
 > [!IMPORTANT]
-> Вам не нужно указывать все существующие ресурсы. Можно указать один или несколько. Например, можно указать существующую учетную запись хранения, и Рабочая область создаст другие ресурсы.
+> Не нужно указывать все существующие ресурсы. Вы можете указать один или несколько. Например, можно указать существующую учетную запись хранения, а рабочее пространство создаст другие ресурсы.
 
-+ **Учетная запись хранения Azure**: `az storage account show --name <storage-account-name> --query "id"`
++ **Учетная запись хранения azure**:`az storage account show --name <storage-account-name> --query "id"`
 
-    Ответ этой команды аналогичен следующему тексту, а — ИДЕНТИФИКАТОРу вашей учетной записи хранения:
+    Ответ от этой команды аналогичен следующему тексту и идентификатор для учетной записи хранения:
 
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage-account-name>"`
 
-+ **Azure Application Insights.**
++ **Исследования приложений Azure**:
 
-    1. Установите расширение Application Insights:
+    1. Установите расширение информации о приложениях:
 
-        ```bash
+        ```azurecli-interactive
         az extension add -n application-insights
         ```
 
-    2. Получите идентификатор службы Application Insights:
+    2. Получите идентификатор службы анализа приложений:
 
-        ```bash
+        ```azurecli-interactive
         az monitor app-insights component show --app <application-insight-name> -g <resource-group-name> --query "id"
         ```
 
-        Ответ этой команды аналогичен следующему тексту, а — ИДЕНТИФИКАТОРу службы Application Insights:
+        Ответ от этой команды аналогичен следующему тексту и идентификатор для службы анализа приложений:
 
         `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/microsoft.insights/components/<application-insight-name>"`
 
-+ **Azure Key Vault**: `az keyvault show --name <key-vault-name> --query "ID"`
++ **Убежище ключей Azure**:`az keyvault show --name <key-vault-name> --query "ID"`
 
-    Ответ этой команды аналогичен следующему тексту, а — ИДЕНТИФИКАТОРу хранилища ключей:
+    Ответ от этой команды аналогичен следующему тексту и является идентификатором для хранилища ключей:
 
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<key-vault-name>"`
 
-+ **Реестр контейнеров Azure**: `az acr show --name <acr-name> -g <resource-group-name> --query "id"`
++ **Реестр контейнеров Azure**:`az acr show --name <acr-name> -g <resource-group-name> --query "id"`
 
-    Ответ этой команды аналогичен следующему тексту, а — ИДЕНТИФИКАТОРу реестра контейнеров:
+    Ответ от этой команды аналогичен следующему тексту иидентификатор для реестра контейнеров:
 
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.ContainerRegistry/registries/<acr-name>"`
 
     > [!IMPORTANT]
-    > В реестре контейнеров должна быть включена [учетная запись администратора](/azure/container-registry/container-registry-authentication#admin-account) , прежде чем ее можно будет использовать с рабочей областью машинное обучение Azure.
+    > Реестр контейнеров должен иметь [учетную запись админ,](/azure/container-registry/container-registry-authentication#admin-account) прежде чем она может быть использована с рабочим пространством Azure Machine Learning.
 
-Получив идентификаторы ресурсов, которые вы хотите использовать с рабочей областью, используйте команду Base `az workspace create -w <workspace-name> -g <resource-group-name>` и добавьте параметры и ИДЕНТИФИКАТОРы для существующих ресурсов. Например, следующая команда создает рабочую область, которая использует существующий реестр контейнеров:
+Если у вас есть идентификаторы для ресурса (ы), которые `az workspace create -w <workspace-name> -g <resource-group-name>` вы хотите использовать в рабочей области, используйте базовую команду и добавьте параметр (ы) и id (ы) для существующих ресурсов. Например, следующая команда создает рабочее пространство, использующему существующий реестр контейнеров:
 
 ```azurecli-interactive
 az ml workspace create -w <workspace-name> -g <resource-group-name> --container-registry "/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.ContainerRegistry/registries/<acr-name>"
 ```
 
-Выходные данные этой команды похожи на следующий код JSON:
+Выход этой команды аналогичен следующему JSON:
 
 ```json
 {
@@ -210,13 +212,13 @@ az ml workspace create -w <workspace-name> -g <resource-group-name> --container-
 
 ## <a name="list-workspaces"></a>Список рабочих областей
 
-Чтобы получить список всех рабочих областей для подписки Azure, используйте следующую команду:
+Чтобы перечислить все рабочие области для подписки Azure, используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace list
 ```
 
-Выходные данные этой команды похожи на следующий код JSON:
+Выход этой команды аналогичен следующему JSON:
 
 ```json
 [
@@ -233,17 +235,17 @@ az ml workspace list
 ]
 ```
 
-Дополнительные сведения см. в документации по [списку рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-list) .
+Для получения дополнительной [az ml workspace list](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-list) информации см.
 
-## <a name="get-workspace-information"></a>Получение сведений о рабочей области
+## <a name="get-workspace-information"></a>Получить информацию о рабочем пространстве
 
-Чтобы получить сведения о рабочей области, используйте следующую команду:
+Чтобы получить информацию о рабочем пространстве, используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace show -w <workspace-name> -g <resource-group-name>
 ```
 
-Выходные данные этой команды похожи на следующий код JSON:
+Выход этой команды аналогичен следующему JSON:
 
 ```json
 {
@@ -266,17 +268,17 @@ az ml workspace show -w <workspace-name> -g <resource-group-name>
 }
 ```
 
-Дополнительные сведения см. в разделе [Рабочая область AZ ML Показать](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-show) документацию.
+Для получения дополнительной информации, см [az ml рабочее пространство показать](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-show) документацию.
 
-## <a name="update-a-workspace"></a>Обновление рабочей области
+## <a name="update-a-workspace"></a>Обновление рабочего пространства
 
-Чтобы обновить рабочую область, используйте следующую команду:
+Для обновления рабочего пространства используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace update -w <workspace-name> -g <resource-group-name>
 ```
 
-Выходные данные этой команды похожи на следующий код JSON:
+Выход этой команды аналогичен следующему JSON:
 
 ```json
 {
@@ -299,68 +301,68 @@ az ml workspace update -w <workspace-name> -g <resource-group-name>
 }
 ```
 
-Дополнительные сведения см. в документации об [обновлении рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-update) .
+Для получения дополнительной [az ml workspace update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-update) информации см.
 
-## <a name="share-a-workspace-with-another-user"></a>Предоставление общего доступа к рабочей области другому пользователю
+## <a name="share-a-workspace-with-another-user"></a>Поделитесь рабочим пространством с другим пользователем
 
-Чтобы предоставить общий доступ к рабочей области другому пользователю в вашей подписке, используйте следующую команду:
+Чтобы поделиться рабочим пространством с другим пользователем в подписке, используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace share -w <workspace-name> -g <resource-group-name> --user <user> --role <role>
 ```
 
-Дополнительные сведения об управлении доступом на основе ролей (RBAC) с Машинное обучение Azure см. в разделе [Manage Users and Roles](how-to-assign-roles.md).
+Для получения дополнительной информации о элементах управления доступом на основе ролей (RBAC) с Помощью машинного обучения Azure [см.](how-to-assign-roles.md)
 
-Дополнительные сведения см. в документации по [общей рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-share) .
+Для получения дополнительной [az ml workspace share](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-share) информации см.
 
 ## <a name="sync-keys-for-dependent-resources"></a>Ключи синхронизации для зависимых ресурсов
 
-При изменении ключей доступа для одного из ресурсов, используемых рабочей областью, выполните следующую команду, чтобы синхронизировать новые ключи с рабочей областью:
+Если вы измените клавиши доступа для одного из ресурсов, используемых рабочим пространством, используйте следующую команду для синхронизации новых ключей с рабочим пространством:
 
 ```azurecli-interactive
 az ml workspace sync-keys -w <workspace-name> -g <resource-group-name>
 ```
 
-Дополнительные сведения об изменении ключей см. в разделе [Повторное создание ключей доступа к хранилищу](how-to-change-storage-access-key.md).
+Для получения дополнительной информации [Regenerate storage access keys](how-to-change-storage-access-key.md)об изменении ключей см.
 
-Дополнительные сведения см. в документации по [ключам синхронизации в рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-sync-keys) .
+Для получения дополнительной информации ознакомьтесь с документацией [синхронизации рабочего пространства az ml.](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-sync-keys)
 
 ## <a name="delete-a-workspace"></a>Удаление рабочей области
 
-Чтобы удалить рабочую область после того, как она больше не нужна, используйте следующую команду:
+Чтобы удалить рабочее пространство после того, как оно больше не требуется, используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace delete -w <workspace-name> -g <resource-group-name>
 ```
 
 > [!IMPORTANT]
-> При удалении рабочей области не удаляется Application Insights, учетная запись хранения, хранилище ключей или реестр контейнеров, используемые рабочей областью.
+> Удаление рабочего пространства не удаляет информацию о приложении, учетную запись хранения, хранилище ключей или реестр контейнеров, используемых рабочим пространством.
 
-Вы также можете удалить группу ресурсов, которая удаляет рабочую область и все остальные ресурсы Azure в группе ресурсов. Чтобы удалить группу ресурсов, используйте следующую команду:
+Вы также можете удалить группу ресурсов, которая удаляет рабочее пространство и все другие ресурсы Azure в группе ресурсов. Чтобы удалить группу ресурсов, используйте следующую команду:
 
 ```azurecli-interactive
 az group delete -g <resource-group-name>
 ```
 
-Дополнительные сведения см. в документации об [удалении рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-delete) .
+Для получения дополнительной [az ml workspace delete](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-delete) информации см.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="resource-provider-errors"></a>Ошибки поставщика ресурсов
 
 [!INCLUDE [machine-learning-resource-provider](../../includes/machine-learning-resource-provider.md)]
 
-### <a name="moving-the-workspace"></a>Перемещение рабочей области
+### <a name="moving-the-workspace"></a>Перемещение рабочего пространства
 
 > [!WARNING]
-> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
+> Перемещение рабочего пространства Azure Machine Learning в другую подписку или перемещение подписки на новый арендатор не поддерживается. Это может привести к ошибкам.
 
-### <a name="deleting-the-azure-container-registry"></a>Удаление реестра контейнеров Azure
+### <a name="deleting-the-azure-container-registry"></a>Удаляние реестра контейнеров Azure
 
-Для некоторых операций в рабочей области Машинное обучение Azure используется реестр контейнеров Azure (запись контроля доступа). Он автоматически создает экземпляр записи контроля доступа, когда ему требуется первый.
+Рабочее пространство Azure Machine Learning использует реестр контейнеров Azure (ACR) для некоторых операций. Он автоматически создаст экземпляр ACR, когда он сначала нужен.
 
 [!INCLUDE [machine-learning-delete-acr](../../includes/machine-learning-delete-acr.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о расширении Azure CLI для машинного обучения см. в документации по [AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest) .
+Для получения дополнительной информации о расширении Azure [az ml](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest) CLI для машинного обучения см.

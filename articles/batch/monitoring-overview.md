@@ -11,10 +11,10 @@ ms.workload: na
 ms.date: 04/05/2018
 ms.author: labrenne
 ms.openlocfilehash: d251229c522bd4d6daca894513eaae14d244d8a1
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77025866"
 ---
 # <a name="monitor-batch-solutions"></a>Мониторинг решений пакетной службы
@@ -29,7 +29,7 @@ Azure и пакетная служба предоставляют широкий
 
 В частности, для учетных записей пакетной службы в журнал действий собираются данные о создании и удалении учетных записей, а также об управлении ключами.
 
-Для получения событий из журнала действий можно использовать портал Azure. На портале щелкните **Все службы** > **Журнал действий**. Также можно создать запрос сведений о событиях с помощью Azure CLI, командлетов PowerShell или REST API Azure Monitor. Есть возможность экспортировать журнал действий или настроить [оповещения журнала действий](../monitoring-and-diagnostics/monitoring-activity-log-alerts-new-experience.md).
+Для получения событий из журнала действий можно использовать портал Azure. Нажмите **на все службы** > **Журнал активности**. Также можно создать запрос сведений о событиях с помощью Azure CLI, командлетов PowerShell или REST API Azure Monitor. Есть возможность экспортировать журнал действий или настроить [оповещения журнала действий](../monitoring-and-diagnostics/monitoring-activity-log-alerts-new-experience.md).
 
 ## <a name="batch-account-level-monitoring"></a>Мониторинг на уровне учетной записи пакетной службы
 
@@ -40,10 +40,10 @@ Azure и пакетная служба предоставляют широкий
 
 ## <a name="batch-resource-monitoring"></a>Мониторинг ресурсов пакетной службы
 
-В приложениях пакетной службы вы можете применить API-интерфейсы пакетной службы для отслеживания и запроса состояний ресурсов, таких как задания, задачи, узлы и пулы. Пример.
+В приложениях пакетной службы вы можете применить API-интерфейсы пакетной службы для отслеживания и запроса состояний ресурсов, таких как задания, задачи, узлы и пулы. Пример:
 
 * [получение количества задач и вычислительных узлов с учетом состояния](batch-get-resource-counts.md);
-* [эффективное создание запросов на вывод списка ресурсов пакетной службы](batch-efficient-list-queries.md);
+* [Эффективное создание запросов на вывод списка ресурсов пакетной службы](batch-efficient-list-queries.md)
 * [создание зависимостей задач](batch-task-dependencies.md);
 * использование [задач диспетчера заданий](/rest/api/batchservice/job/add#jobmanagertask);
 * мониторинг [состояния задач](/rest/api/batchservice/task/list#taskstate);
@@ -62,7 +62,7 @@ Azure и пакетная служба предоставляют широкий
   > Использование Application Insights может повлечь дополнительные затраты. Ознакомьтесь с [информацией о тарифных планах](https://azure.microsoft.com/pricing/details/application-insights/). 
   >
 
-* [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Скачайте [пакет установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. (Необязательно.) Настройте в решении пакетной службы [отображение данных из Application Insights](https://github.com/Azure/batch-insights), таких как счетчики производительности виртуальных машин в Batch Explorer.
+* [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Загрузите [пакет для установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. (Необязательно.) Настройте в решении пакетной службы [отображение данных из Application Insights](https://github.com/Azure/batch-insights), таких как счетчики производительности виртуальных машин в Batch Explorer.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

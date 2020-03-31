@@ -1,7 +1,7 @@
 ---
-title: функция запроса moreLikeThis (Предварительная версия)
+title: moreLikeЭта (предварительная) функция запроса
 titleSuffix: Azure Cognitive Search
-description: Описание функции moreLikeThis (Предварительная версия), доступной в предварительных версиях REST API Когнитивный поиск Azure.
+description: Описывает функцию LikeThis (предварительный просмотр), которая доступна в предварительных версиях API Azure Cognitive Search REST.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -10,37 +10,37 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 95b9c76a2ff962cb2fa4bacbb1b1e9a953b7014f
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74873817"
 ---
-# <a name="morelikethis-preview-in-azure-cognitive-search"></a>moreLikeThis (Предварительная версия) в Azure Когнитивный поиск
+# <a name="morelikethis-preview-in-azure-cognitive-search"></a>moreLikeThis (предварительный просмотр) в Azure когнитивного поиска
 
 > [!IMPORTANT] 
-> Эта функция сейчас доступна в виде общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). В настоящее время нет поддержки портала или пакета SDK для .NET.
+> Эта функция сейчас доступна в виде общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). В настоящее время нет портала или поддержки .NET SDK.
 
-`moreLikeThis=[key]` является параметром запроса в [API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents) , который находит документы, аналогичные документу, указанному ключом документа. При обработке поискового запроса с параметром `moreLikeThis` создается запрос с условиями поиска, извлеченными из заданного документа, которые лучше всего описывают этот документ. Затем созданный запрос используется для создания поискового запроса. По умолчанию учитываются содержимое всех полей, доступных для поиска, за вычетом полей с ограничениями, заданных с помощью параметра `searchFields`. Параметр `moreLikeThis` нельзя использовать с параметром поиска `search=[string]`.
+`moreLikeThis=[key]`является параметром запроса в [API поисковых документов,](https://docs.microsoft.com/rest/api/searchservice/search-documents) который находит документы, аналогичные документу, указанному ключом документа. При обработке поискового запроса с параметром `moreLikeThis` создается запрос с условиями поиска, извлеченными из заданного документа, которые лучше всего описывают этот документ. Затем созданный запрос используется для создания поискового запроса. По умолчанию рассматривается содержимое всех областей поиска, за вычетом всех ограниченных полей, указанных с помощью `searchFields` параметра. Параметр `moreLikeThis` нельзя использовать с параметром поиска `search=[string]`.
 
-По умолчанию учитываются содержимое всех полей верхнего уровня, поддерживающих поиск. Если вместо этого нужно указать конкретные поля, можно использовать параметр `searchFields`. 
+По умолчанию рассматривается содержимое всех полей поиска верхнего уровня. Если вместо этого требуется указать определенные поля, можно использовать `searchFields` параметр. 
 
-Нельзя использовать `MoreLikeThis` для подполей с возможностью поиска в [сложном типе](search-howto-complex-data-types.md).
+Вы не `MoreLikeThis` можете использовать в поисковых подполях в [сложном типе.](search-howto-complex-data-types.md)
 
 ## <a name="examples"></a>Примеры
 
-В следующих примерах используется пример использования гостиниц из [краткого руководства: создание индекса поиска в портал Azure](search-get-started-portal.md).
+Все приведенные ниже примеры используютпример отели из проекта [«Быстрый старт: Создайте индекс поиска» на портале Azure.](search-get-started-portal.md)
 
 ### <a name="simple-query"></a>Простой запрос
 
-Следующий запрос находит документы, поля описания которых наиболее похожи на поля исходного документа, как указано в параметре `moreLikeThis`:
+В следующем запросе находятся документы, поле описания которых наиболее `moreLikeThis` похожи на поле исходного документа, указанное параметром:
 
 ```
 GET /indexes/hotels-sample-index/docs?moreLikeThis=29&searchFields=Description&api-version=2019-05-06-Preview
 ```
 
-В этом примере запрос выполняет поиск гостиниц, аналогичных одному, с `HotelId` 29.
-Вместо использования HTTP GET можно также вызвать `MoreLikeThis` с помощью HTTP POST:
+В этом примере запрос ищет отели, `HotelId` аналогичные 29.
+Вместо того, чтобы использовать HTTP GET, вы также можете вызвать `MoreLikeThis` с помощью HTTP POST:
 
 ```
 POST /indexes/hotels-sample-index/docs/search?api-version=2019-05-06-Preview
@@ -52,15 +52,15 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2019-05-06-Preview
 
 ### <a name="apply-filters"></a>Применение фильтров
 
-`MoreLikeThis` можно сочетать с другими распространенными параметрами запроса, такими как `$filter`. Например, запрос может быть ограничен только гостиницами, категория которых равна "бюджет" и где оценка выше 3,5:
+`MoreLikeThis`могут быть объединены с другими `$filter`общими параметрами запроса, такими как. Например, запрос может быть ограничен только отелями, категорией которых является «Бюджет» и где рейтинг выше 3,5:
 
 ```
 GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$filter=(Category eq 'Budget' and Rating gt 3.5)&api-version=2019-05-06-Preview
 ```
 
-### <a name="select-fields-and-limit-results"></a>Выбор полей и ограничение результатов
+### <a name="select-fields-and-limit-results"></a>Выберите поля и ограничьте результаты
 
-Селектор `$top` можно использовать для ограничения количества результатов, возвращаемых в запросе `MoreLikeThis`. Кроме того, поля можно выбрать с помощью `$select`. Здесь выбираются три основных Гостиницы вместе с их ИДЕНТИФИКАТОРом, именем и оценкой: 
+Селектор `$top` может использоваться для ограничения количества результатов, которые должны быть возвращены в запросе. `MoreLikeThis` Кроме того, поля могут `$select`быть выбраны с . Здесь три лучших отеля выбираются вместе с их ID, Имя, и рейтинг: 
 
 ```
 GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$filter=(Category eq 'Budget' and Rating gt 3.5)&$top=3&$select=HotelId,HotelName,Rating&api-version=2019-05-06-Preview
@@ -68,7 +68,7 @@ GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для экспериментов с этой функцией можно использовать любое средство веб-тестирования.  Мы рекомендуем использовать POST в этом упражнении.
+Вы можете использовать любой инструмент веб-тестирования для экспериментов с этой функцией.  Мы рекомендуем использовать Почтальон для этого упражнения.
 
 > [!div class="nextstepaction"]
-> [Знакомство с Azure Когнитивный поиск API-интерфейсами RESTFUL с помощью POST](search-get-started-postman.md)
+> [Исследуйте ApIs Azure Cognitive Search REST с помощью Postman](search-get-started-postman.md)

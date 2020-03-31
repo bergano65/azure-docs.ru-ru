@@ -1,22 +1,22 @@
 ---
-title: Настройка после развертывания с помощью расширений
+title: Конфигурация после развертывания с помощью расширений
 description: Узнайте, как использовать расширения шаблона Azure Resource Manager для предоставления конфигураций после развертывания.
 author: mumian
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: jgao
 ms.openlocfilehash: b3c4110c8761b3e8daf324d65ac7fa1dcbcdf61f
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77023503"
 ---
 # <a name="provide-post-deployment-configurations-by-using-extensions"></a>Предоставление конфигураций после развертывания с помощью расширений
 
 Расширения шаблона — это небольшие приложения, которые выполняют задачи конфигурации и автоматизации после развертывания ресурсов Azure. Самые популярные — расширения виртуальных машин. Ознакомьтесь со статьей [Обзор расширений и компонентов виртуальной машины под управлением Windows](../../virtual-machines/extensions/features-windows.md) или [Обзор расширений и компонентов виртуальных машин под управлением Linux](../../virtual-machines/extensions/features-linux.md).
 
-## <a name="extensions"></a>Модули
+## <a name="extensions"></a>Расширения
 
 Ниже приведены имеющиеся расширения:
 
@@ -30,8 +30,8 @@ ms.locfileid: "77023503"
 
 Подробнее об использовании этих расширений см. в следующих статьях:
 
-- [Руководство. развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](template-tutorial-deploy-vm-extensions.md).
-- [Учебник. импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](template-tutorial-deploy-sql-extensions-bacpac.md)
+- [Учебник: Развертывание виртуальных машинных расширений с помощью шаблонов Azure Resource Manager.](template-tutorial-deploy-vm-extensions.md)
+- [Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](template-tutorial-deploy-sql-extensions-bacpac.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

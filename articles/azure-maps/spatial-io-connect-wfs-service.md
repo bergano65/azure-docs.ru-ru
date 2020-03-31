@@ -1,51 +1,51 @@
 ---
-title: Подключение к службе веб-компонентов (ВФС) | Карты Microsoft Azure
-description: Узнайте, как подключиться к службе ВФС, а затем запросите службу ВФС с помощью веб-пакета SDK Azure Maps и модуля пространственного ввода/вывода.
-author: farah-alyasari
-ms.author: v-faalya
+title: Подключение к службе веб-функций (WFS) (WFS) Карты Microsoft Azure
+description: Узнайте, как подключиться к службе WFS, а затем задать запрос службы WFS с помощью веб-SDK Azure Maps и модуля Spatial IO.
+author: philmea
+ms.author: philmea
 ms.date: 03/03/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 18ac583837c7cb8b2dabbfa6f7d7210c8afe3fcb
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.openlocfilehash: 8b511395eb61e8845aaa11e5ca7a490dc461424d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402754"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80334204"
 ---
-# <a name="connect-to-a-wfs-service"></a>Подключение к службе ВФС
+# <a name="connect-to-a-wfs-service"></a>Подключение к службе WFS
 
-Служба веб-компонентов (ВФС) — это веб-служба для запроса пространственных данных с стандартизованным API, который определен Открытый геопространственный консорциум (OGC). Класс `WfsClient` в модуле пространственных операций ввода-вывода позволяет разработчикам подключаться к службе ВФС и запрашивать данные из службы.
+Веб-служба функций (WFS) — это веб-сервис для запросов пространственных данных с стандартизированным API, определяемым Открытым геопространственным консорциумом (OGC). Класс `WfsClient` в пространственном модуле IO позволяет разработчикам подключаться к службе WFS и запросу данных службы.
 
-Класс `WfsClient` поддерживает следующие функции:
+Следующие функции поддерживаются классом: `WfsClient`
 
-- Поддерживаемые версии: `1.0.0`, `1.1.0`и `2.0.0`
-- Поддерживаемые операторы фильтров: двоичные сравнения, логические, математические, значения и `bbox`.
-- Запросы выполняются только с помощью `HTTP GET`.
+- Поддерживаемые `1.0.0`версии: , `1.1.0`и`2.0.0`
+- Поддерживаемые операторы фильтров: двоичные сравнения, логика, математика, значение и `bbox`.
+- Запросы делаются только с использованием. `HTTP GET`
 - Поддерживаемые операции:
 
     | | |
     | :-- | :-- |
-    | Возможности | Создает документ метаданных с допустимыми операциями и параметрами ВФС |
-    | Функцияического | Возвращает набор компонентов из источника данных |
-    | дескрибефеатуретипе | Возвращает поддерживаемые типы компонентов |
+    | GetCapabilities | Создает документ метаданных с действительными операциями и параметрами WFS |
+    | GetFeature | Возвращает выбор функций из источника данных |
+    | ОпишитеFeatureType | Возвращает поддерживаемые типы функций |
 
-## <a name="using-the-wfs-client"></a>Использование клиента ВФС
+## <a name="using-the-wfs-client"></a>Использование клиента WFS
 
-Класс `atlas.io.ogc.WfsClient` в модуле пространственных операций ввода-вывода упрощает выполнение запросов к службе ВФС и преобразование ответов в геообъектные объекты JSON. Затем этот объект геоjson можно использовать для других целей сопоставления.
+Класс `atlas.io.ogc.WfsClient` в пространственном модуле IO позволяет легко запрашивать службу WFS и преобразовывать ответы в объекты GeoJSON. Этот объект GeoJSON может быть использован для других целей отображения.
 
-Следующий код выполняет запрос к службе ВФС и отображает возвращенные функции на карте.
+Следующий код запрашивает службу WFS и отображает возвращенные функции на карте.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Пример простого ВФС' src='//codepen.io/azuremaps/embed/MWwvVYY/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/MWwvVYY/'>Пример простой ВФС</a> с пером Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Простой пример WFS' src='//codepen.io/azuremaps/embed/MWwvVYY/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите пример Pen <a href='https://codepen.io/azuremaps/pen/MWwvVYY/'>Simple WFS</a> по<a href='https://codepen.io/azuremaps'>@azuremaps</a>картам Azure () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="supported-filters"></a>Поддерживаемые фильтры
 
-Спецификация для стандарта ВФС использует фильтры OGC. Перечисленные ниже фильтры поддерживаются клиентом ВФС, предполагая, что вызываемая служба также поддерживает эти фильтры. Строки настраиваемых фильтров можно передать в класс `CustomFilter`.
+Спецификация стандарта WFS использует фильтры OGC. Фильтры ниже поддерживаются клиентом WFS, предполагая, что служба, называемая также поддерживает эти фильтры. Пользовательские строки фильтра `CustomFilter` могут быть переданы в класс.
 
 **Логические операторы**
 
@@ -53,12 +53,12 @@ ms.locfileid: "78402754"
 - `Or`
 - `Not`
 
-**Операторы значений**
+**Операторы стоимости**
 
 - `GmlObjectId`
 - `ResourceId`
 
-**Математические операторы**
+**Операторы математики**
 
 - `Add`
 - `Sub`
@@ -78,48 +78,30 @@ ms.locfileid: "78402754"
 - `PropertyIsNil`
 - `PropertyIsBetween`
 
-В следующем коде показано использование различных фильтров с клиентом ВФС.
+Следующий код демонстрирует использование различных фильтров с клиентом WFS.
 
 <br/>
 
-<iframe height='500' scrolling='no' title= 'Примеры фильтров ВФС' src='//codepen.io/azuremaps/embed/NWqvYrV/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Дополнительные сведения см. в разделе<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps <a href='https://codepen.io/azuremaps/pen/NWqvYrV/'>Примеры фильтров ВФС</a> для <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title= 'Примеры фильтров WFS' src='//codepen.io/azuremaps/embed/NWqvYrV/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите <a href='https://codepen.io/azuremaps/pen/NWqvYrV/'>примеры фильтров</a> Pen WFS<a href='https://codepen.io/azuremaps'>@azuremaps</a>по картам Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="wfs-service-explorer"></a>ВФС Service Explorer
+## <a name="wfs-service-explorer"></a>Исследователь сервиса WFS
 
-В следующем коде для изучения служб ВФС используется клиент ВФС. Выберите слой типа свойства в службе и просмотрите связанные условные обозначения.
+Следующий код использует клиента WFS для изучения служб WFS. Выберите слой типа свойств в службе и просмотрите связанную с ней легенду.
 
 <br/>
 
-<iframe height='700' style='width: 100%;' scrolling='no' title= 'ВФС Service Explorer' src='//codepen.io/azuremaps/embed/bGdrvmG/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/bGdrvmG/'>ВФС Service Explorer</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' style='width: 100%;' scrolling='no' title= 'Исследователь сервиса WFS' src='//codepen.io/azuremaps/embed/bGdrvmG/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите <a href='https://codepen.io/azuremaps/pen/bGdrvmG/'>Pen WFS исследователь службы</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>По Azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Вы также можете использовать прокси-службу для загрузки ресурсов, размещенных в доменах, которые не включены в CORs. Сначала необходимо определить переменную для хранения URL-адреса службы прокси-сервера и задать параметр `proxyService` для клиента ВФС. Чтобы отобразить параметр прокси-службы для пользователя, добавьте пользовательский ввод в пользовательский интерфейс. Загрузка URL-адреса службы при нажатии на вход. В следующих фрагментах кода показано, как использовать прокси-службу.
+Для доступа к службам WFS, размещенным на конечных точках, не `proxyService` включенных CORS, прокси-сервис с включенным CORS может быть передан в опцию клиента WFS, как показано ниже. 
 
 ```JavaScript
-
-//A variable to hold the URL of the proxy service
-var proxyServiceUrl = window.location.origin + 'CorsEnabledProxyService.ashx?url=';
-
 //Create the WFS client to access the service and use the proxy service settings
 client = new atlas.io.ogc.WfsClient({
     url: url,
-    proxyService: (document.getElementById('useProxyService').checked) ? proxyServiceUrl : null
+    proxyService: window.location.origin + '/YourCorsEnabledProxyService.ashx?url='
 });
-
-function proxyOptionChanged() {
-    if (currentServiceUrl) {
-        loadClient(currentServiceUrl);
-    }
-}
-
-```
-
-Приведенный ниже фрагмент кода HTML соответствует приведенному выше коду JavaScript:
-
-```html
-<!-- use the proxy service -->
-<input id="useProxyService" type="checkbox" onclick="proxyOptionChanged()"/>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -127,15 +109,15 @@ function proxyOptionChanged() {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [вфсклиент](https://docs.microsoft.com/JavaScript/api/azure-maps-spatial-io/atlas.io.ogc.wfsclient)
+> [WfsClient](https://docs.microsoft.com/JavaScript/api/azure-maps-spatial-io/atlas.io.ogc.wfsclient)
 
 > [!div class="nextstepaction"]
-> [вфссервицеоптионс](https://docs.microsoft.com/JavaScript/api/azure-maps-spatial-io/atlas.wfsserviceoptions)
+> [WfsServiceOptions](https://docs.microsoft.com/JavaScript/api/azure-maps-spatial-io/atlas.wfsserviceoptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Использование основных операций](spatial-io-core-operations.md)
+> [Кредитное использование основных операций](spatial-io-core-operations.md)
 
 > [!div class="nextstepaction"]
-> [Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)
+> [Детали формата поддерживаемых данных](spatial-io-supported-data-format-details.md)

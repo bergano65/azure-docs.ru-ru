@@ -1,56 +1,56 @@
 ---
-title: Создание Azure Cosmos DB с помощью шаблонов диспетчер ресурсов и управление ими
-description: Использование шаблонов Azure Resource Manager для создания и настройки Azure Cosmos DB для API-интерфейса SQL (Core)
+title: Создание и управление DB Azure Cosmos с помощью шаблонов управления ресурсами
+description: Используйте шаблоны менеджера ресурсов Azure для создания и настройки Azure Cosmos DB для API
 author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
 ms.openlocfilehash: 72a87c3b23e0eed6cfbf1614388702443f4e99d0
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79251847"
 ---
-# <a name="manage-azure-cosmos-db-sql-core-api-resources-with-azure-resource-manager-templates"></a>Управление ресурсами API Azure Cosmos DB SQL (Core) с помощью шаблонов Azure Resource Manager
+# <a name="manage-azure-cosmos-db-sql-core-api-resources-with-azure-resource-manager-templates"></a>Управление aPI-ресурсами API Azure Cosmos DB S'L (Core) с помощью шаблонов управления ресурсами Azure
 
 Из этой статьи вы узнаете, как использовать шаблоны Azure Resource Manager для автоматизации управления учетными записями, базами данных и контейнерами Azure Cosmos DB.
 
-В этой статье показаны Azure Resource Manager примеры шаблонов для учетных записей API SQL. Вы также можете найти примеры шаблонов для API-интерфейсов [Cassandra](manage-cassandra-with-resource-manager.md), [Gremlin](manage-gremlin-with-resource-manager.md), [MongoDB](manage-mongodb-with-resource-manager.md)и [Table](manage-table-with-resource-manager.md) .
+В этой статье показаны только примеры шаблонов шаблонов ресурсов Azure Для учетных записей API. Вы также можете найти примеры шаблонов для [Cassandra,](manage-cassandra-with-resource-manager.md) [Gremlin,](manage-gremlin-with-resource-manager.md) [MongoDB](manage-mongodb-with-resource-manager.md)и [AIS таблицы.](manage-table-with-resource-manager.md)
 
 <a id="create-resource"></a>
 
 ## <a name="create-an-azure-cosmos-account-database-and-container"></a>Создание учетной записи, базы данных и контейнера Azure Cosmos
 
-Следующий шаблон Azure Resource Manager создает учетную запись Azure Cosmos с помощью:
+Следующий шаблон менеджера ресурсов Azure создает учетную запись Azure Cosmos с:
 
-* Два контейнера, которые совместно используют 400 запрошенных единиц запросов в секунду на уровне базы данных.
-* Один контейнер с выделенной пропускной способностью 400 единиц запросов в секунду.
+* На уровне базы данных два контейнера с пропускной емкостью 400 запрашиваемых единиц (RU/s).
+* Один контейнер с выделенной пропускной емкостью 400 руб./с.
 
-Чтобы создать Azure Cosmos DB ресурсы, скопируйте приведенный ниже пример шаблона и разверните его, как описано в разделе с помощью [PowerShell](#deploy-via-powershell) или [Azure CLI](#deploy-via-azure-cli).
+Чтобы создать dB-ресурсы Azure Cosmos, скопируйте следующий шаблон примера и разместите его в описанном виде, либо через [PowerShell,](#deploy-via-powershell) либо [через Azure CLI.](#deploy-via-azure-cli)
 
-* При необходимости можно посетить коллекцию быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-sql/) и развернуть шаблон из портал Azure.
-* Можно также загрузить шаблон на локальный компьютер или создать новый шаблон и указать локальный путь с помощью параметра `--template-file`.
+* Дополнительно можно посетить [галерею быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-sql/) и развернуть шаблон с портала Azure.
+* Вы также можете загрузить шаблон на локальном компьютере или создать `--template-file` новый шаблон и указать локальный путь с параметром.
 
 > [!IMPORTANT]
 >
-> * При добавлении или удалении расположений в учетной записи Azure Cosmos нельзя одновременно изменять другие свойства. Эти операции должны выполняться отдельно.
-> * Длина имен учетных записей ограничена 44 символами, строчными буквами.
-> * Чтобы изменить значения пропускной способности, повторно отправьте шаблон с обновленными единицами запросов в секунду.
+> * При добавлении или удалении местоположений в учетную запись Azure Cosmos нельзя одновременно изменять другие свойства. Эти операции должны проводиться отдельно.
+> * Имена учетных записей ограничены 44 символами, все в нижнем регистре.
+> * Чтобы изменить значения пропускной способности, повторно отправьте шаблон с обновленными RU/s.
 
 :::code language="json" source="~/quickstart-templates/101-cosmosdb-sql/azuredeploy.json":::
 
 > [!NOTE]
-> Чтобы создать контейнер с большим ключом секции, измените предыдущий шаблон, включив в него свойство `"version":2` в объекте `partitionKey`.
+> Чтобы создать контейнер с большим ключом раздела, измените предыдущий шаблон, чтобы включить `"version":2` свойство в `partitionKey` объект.
 
-### <a name="deploy-via-powershell"></a>Развертывание с помощью PowerShell
+### <a name="deploy-via-powershell"></a>Развертывание через PowerShell
 
-Чтобы использовать PowerShell для развертывания шаблона Azure Resource Manager, выполните следующие действия.
+Использовать PowerShell для развертывания шаблона управления ресурсами Azure:
 
-1. **Скопируйте** скрипт.
-2. Выберите **попробовать** , чтобы открыть Azure Cloud Shell.
-3. Щелкните правой кнопкой мыши в окне Azure Cloud Shell и выберите команду **Вставить**.
+1. **Скопируйте** сценарий.
+2. Выберите **примерить,** чтобы открыть облачную оболочку Azure.
+3. Нажмите в окне облачной оболочки Azure, а затем выберите **Paste.**
 
 ```azurepowershell-interactive
 
@@ -84,15 +84,15 @@ New-AzResourceGroupDeployment `
  (Get-AzResource --ResourceType "Microsoft.DocumentDb/databaseAccounts" --ApiVersion "2019-08-01" --ResourceGroupName $resourceGroupName).name
 ```
 
-Вы можете развернуть шаблон с помощью локально установленной версии PowerShell вместо Azure Cloud Shell. Необходимо [установить модуль Azure PowerShell](/powershell/azure/install-az-ps). Запустите `Get-Module -ListAvailable Az`, чтобы найти требуемую версию.
+Вы можете развернуть шаблон с локально установленной версией PowerShell вместо Azure Cloud Shell. Вам нужно будет [установить модуль Azure PowerShell.](/powershell/azure/install-az-ps) Выполнить, `Get-Module -ListAvailable Az` чтобы найти требуемую версию.
 
-### <a name="deploy-via-azure-cli"></a>Развертывание с помощью Azure CLI
+### <a name="deploy-via-azure-cli"></a>Развертывание через Azure CLI
 
-Чтобы использовать Azure CLI для развертывания шаблона Azure Resource Manager:
+Использовать Azure CLI для развертывания шаблона управления ресурсами Azure:
 
-1. **Скопируйте** скрипт.
-2. Выберите **попробовать** , чтобы открыть Azure Cloud Shell.
-3. Щелкните правой кнопкой мыши в окне Azure Cloud Shell и выберите команду **Вставить**.
+1. **Скопируйте** сценарий.
+2. Выберите **примерить,** чтобы открыть облачную оболочку Azure.
+3. Нажмите в окне облачной оболочки Azure, а затем выберите **Paste.**
 
 ```azurecli-interactive
 read -p 'Enter the Resource Group name: ' resourceGroupName
@@ -123,28 +123,28 @@ az group deployment create --resource-group $resourceGroupName \
 az cosmosdb show --resource-group $resourceGroupName --name accountName --output tsv
 ```
 
-Команда `az cosmosdb show` отображает созданную учетную запись Azure Cosmos после ее подготовки. Можно выбрать развертывание шаблона с локально установленной версией Azure CLI вместо этого Azure Cloud Shell. Дополнительные сведения см. в статье [интерфейс командной строки Azure (CLI)](/cli/azure/) .
+Команда `az cosmosdb show` показывает недавно созданную учетную запись Azure Cosmos после ее подготовки. Вы можете развернуть шаблон с локально установленной версией Azure CLI вместо Azure Cloud Shell. Для получения дополнительной информации смотрите статью [Azure Command-Line Interface (CLI).](/cli/azure/)
 
 <a id="create-sproc"></a>
 
-## <a name="create-an-azure-cosmos-db-container-with-server-side-functionality"></a>Создание контейнера Azure Cosmos DB с функциональностью на стороне сервера
+## <a name="create-an-azure-cosmos-db-container-with-server-side-functionality"></a>Создание dB-контейнера Azure Cosmos с функциональностью сервера
 
-Шаблон Azure Resource Manager можно использовать для создания контейнера Azure Cosmos DB с хранимой процедурой, триггером и определяемой пользователем функцией.
+Шаблон управления ресурсами Azure можно использовать для создания dB-контейнера Azure Cosmos s s с сохраненной процедурой, триггером и функцией, определяемой пользователем.
 
-Скопируйте приведенный ниже пример шаблона и разверните его, как описано в с помощью [PowerShell](#deploy-with-powershell) или [Azure CLI](#deploy-with-azure-cli).
+Скопируйте следующий пример шаблона и разместите его в описанном виде, либо с [PowerShell,](#deploy-with-powershell) либо [с Помощью Azure CLI.](#deploy-with-azure-cli)
 
-* При необходимости вы можете посетить коллекцию быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-sql-container-sprocs/) и развернуть шаблон из портал Azure.
-* Можно также загрузить шаблон на локальный компьютер или создать новый шаблон и указать локальный путь с помощью параметра `--template-file`.
+* Дополнительно можно посетить [галерею Azure quickstart](https://azure.microsoft.com/resources/templates/101-cosmosdb-sql-container-sprocs/) и развернуть шаблон с портала Azure.
+* Вы также можете загрузить шаблон на локальном компьютере или создать `--template-file` новый шаблон и указать локальный путь с параметром.
 
 :::code language="json" source="~/quickstart-templates/101-cosmosdb-sql-container-sprocs/azuredeploy.json":::
 
 ### <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 
-Чтобы использовать PowerShell для развертывания шаблона Azure Resource Manager, выполните следующие действия.
+Использовать PowerShell для развертывания шаблона управления ресурсами Azure:
 
-1. **Скопируйте** скрипт.
-1. Выберите **попробовать** , чтобы открыть Azure Cloud Shell.
-1. Щелкните правой кнопкой мыши окно Azure Cloud Shell и выберите команду **Вставить**.
+1. **Скопируйте** сценарий.
+1. Выберите **примерить,** чтобы открыть облачную оболочку Azure.
+1. Нажмите в правой кнопке «Окно облачной **оболочки»** Azure, а затем выберите Paste .
 
 ```azurepowershell-interactive
 
@@ -170,15 +170,15 @@ New-AzResourceGroupDeployment `
  (Get-AzResource --ResourceType "Microsoft.DocumentDb/databaseAccounts" --ApiVersion "2019-08-01" --ResourceGroupName $resourceGroupName).name
 ```
 
-Вы можете развернуть шаблон с помощью локально установленной версии PowerShell вместо Azure Cloud Shell. Необходимо [установить модуль Azure PowerShell](/powershell/azure/install-az-ps). Запустите `Get-Module -ListAvailable Az`, чтобы найти требуемую версию.
+Вы можете развернуть шаблон с локально установленной версией PowerShell вместо Azure Cloud Shell. Вам нужно будет [установить модуль Azure PowerShell.](/powershell/azure/install-az-ps) Выполнить, `Get-Module -ListAvailable Az` чтобы найти требуемую версию.
 
 ### <a name="deploy-with-azure-cli"></a>Развертывание с помощью интерфейса командной строки Azure
 
-Чтобы использовать Azure CLI для развертывания шаблона Azure Resource Manager:
+Использовать Azure CLI для развертывания шаблона управления ресурсами Azure:
 
-1. **Скопируйте** скрипт.
-2. Выберите **попробовать** , чтобы открыть Azure Cloud Shell.
-3. Щелкните правой кнопкой мыши в окне Azure Cloud Shell и выберите команду **Вставить**.
+1. **Скопируйте** сценарий.
+2. Выберите **примерить,** чтобы открыть облачную оболочку Azure.
+3. Нажмите в окне облачной оболочки Azure, а затем выберите **Paste.**
 
 ```azurecli-interactive
 read -p 'Enter the Resource Group name: ' resourceGroupName
@@ -204,5 +204,5 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 * [Документация по Azure Resource Manager](/azure/azure-resource-manager/)
 * [Схема поставщика ресурсов Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions)
-* [Шаблоны быстрого запуска Azure Cosmos DB](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Documentdb&pageNumber=1&sort=Popular)
-* [Устранение распространенных ошибок развертывания Azure Resource Manager](../azure-resource-manager/templates/common-deployment-errors.md)
+* [Шаблоны Azure Cosmos DB Квикстарт](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Documentdb&pageNumber=1&sort=Popular)
+* [Устранение проблем общие ошибки в развертывании ресурсов Ресурсов Azure](../azure-resource-manager/templates/common-deployment-errors.md)

@@ -1,6 +1,6 @@
 ---
-title: Добавление личного учетная запись Майкрософт в приложение Microsoft Authenticator — Azure AD
-description: Добавьте личные учетные записи Майкрософт, например для Outlook.com или Xbox LIVE, в приложение Microsoft Authenticator, чтобы проверить удостоверение при использовании двухфакторной проверки подлинности.
+title: Добавление личной учетной записи Майкрософт в приложение Microsoft Authenticator - Azure AD
+description: Добавьте личные учетные записи Майкрософт, например, для Outlook.com или Xbox LIVE, в приложение Microsoft Authenticator для проверки вашей личности при использовании двухфакторной проверки.
 services: active-directory
 author: curtand
 manager: daveba
@@ -12,10 +12,10 @@ ms.date: 01/24/2019
 ms.author: curtand
 ms.reviewer: olhaun
 ms.openlocfilehash: 289c00e28fd82b78b321732628ff85d22c64cabf
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77062308"
 ---
 # <a name="add-personal-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Добавление личных учетных записей Майкрософт в приложение Microsoft Authenticator
@@ -69,6 +69,6 @@ ms.locfileid: "77062308"
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 
-- Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) .
+- Если у вас возникли проблемы с получением кода проверки для вашей личной учетной записи Майкрософт, смотрите раздел **проблем с кодом проверки Troubleshooting** в [разделе информации о безопасности учетной записи учетной записи Майкрософт & статье кодов проверки.](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes)
 
 - Для устройств под управлением iOS вы можете также выполнить резервное копирование в облако учетных данных и связанных с ними параметров приложений (например, порядок учетных записей). Дополнительные сведения см. в статье [Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator](user-help-auth-app-backup-recovery.md).

@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/13/2019
 ms.openlocfilehash: b4601968a318388086a60ef98e4359ae01f652ed
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77662108"
 ---
 # <a name="azure-monitor-log-query-language-differences"></a>Различия в языках запросов журнала Azure Monitor
@@ -25,37 +25,37 @@ ms.locfileid: "77662108"
 ### <a name="statements-not-supported-in-azure-monitor"></a>Инструкции, которые не поддерживаются в Azure Monitor:
 
 * [Псевдоним](/azure/kusto/query/aliasstatement)
-* [параметры запроса](/azure/kusto/query/queryparametersstatement).
+* [Параметры запроса](/azure/kusto/query/queryparametersstatement)
 
 ### <a name="functions-not-supported-in-azure-monitor"></a>Функции, которые не поддерживаются в Azure Monitor:
 
-* [cluster()](/azure/kusto/query/clusterfunction);
-* [cursor_after()](/azure/kusto/query/cursorafterfunction);
+* [кластера()](/azure/kusto/query/clusterfunction)
+* [cursor_after()](/azure/kusto/query/cursorafterfunction)
 * [cursor_before_or_at()](/azure/kusto/query/cursorbeforeoratfunction);
 * [cursor_current(), current_cursor()](/azure/kusto/query/cursorcurrent);
-* [database()](/azure/kusto/query/databasefunction);
-* [current_principal()](/azure/kusto/query/current-principalfunction);
+* [база данных()](/azure/kusto/query/databasefunction)
+* [current_principal()](/azure/kusto/query/current-principalfunction)
 * [extent_id()](/azure/kusto/query/extentidfunction);
 * [extent_tags()](/azure/kusto/query/extenttagsfunction).
 
 ### <a name="operators-not-supported-in-azure-monitor"></a>Операторы, которые не поддерживаются в Azure Monitor:
 
-* [соединение между кластерами](/azure/kusto/query/joincrosscluster);
+* [Кросс-кластерНое соединение](/azure/kusto/query/joincrosscluster)
 * [оператор externaldata](/azure/kusto/query/externaldata-operator).
 
 ### <a name="plugins-not-supported-in-azure-monitor"></a>Подключаемые модули, которые не поддерживаются в Azure Monitor:
 
-* [Подключаемый модуль Python](/azure/kusto/query/pythonplugin)
+* [Плагин Python](/azure/kusto/query/pythonplugin)
 * [модуль sql_request](/azure/kusto/query/sqlrequestplugin).
 
 
 ## <a name="additional-operators-in-azure-monitor"></a>Дополнительные операторы в Azure Monitor
 Следующие операторы поддерживают конкретные функции Azure Monitor и недоступны вне Azure Monitor.
 
-* [app()](app-expression.md);
-* [workspace()](workspace-expression.md).
+* [приложение()](app-expression.md)
+* [рабочее пространство()](workspace-expression.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](query-language.md).
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).

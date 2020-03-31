@@ -12,10 +12,10 @@ ms.author: anjangsh
 ms.reviewer: sstein
 ms.date: 01/25/2019
 ms.openlocfilehash: 4577f611287a27366b1168e07565861c16fe0e38
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76987028"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Начало работы с инструментами эластичных баз данных
@@ -24,7 +24,7 @@ ms.locfileid: "76987028"
 
 ## <a name="elastic-database-tools-for-java"></a>Инструменты эластичных баз данных для Java
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * Java Developer Kit (JDK) версии 1.8 или более поздней
 * [Maven](https://maven.apache.org/download.cgi)
@@ -70,7 +70,7 @@ ms.locfileid: "76987028"
 
 ## <a name="elastic-database-tools-for-net"></a>Инструменты эластичных баз данных для .NET
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * Visual Studio 2012 или более поздней версии с C#. Загрузите бесплатную версию на странице [Загрузок Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 * NuGet 2.7 или более поздней версии. Сведения о получении последней версии см. в разделе [Установка NuGet](https://docs.nuget.org/docs/start-here/installing-nuget).
@@ -81,9 +81,9 @@ ms.locfileid: "76987028"
 
 Чтобы загрузить и запустить демонстрационное приложение, выполните следующие действия. 
 
-1. Скачайте [Пример инструментов эластичной базы данных для SQL Azure начало работы](https://github.com/Azure/elastic-db-tools). Распакуйте пример в выбранное расположение.
+1. Загрузите [инструменты Elastic DB для Azure S'L - Начало работы по выборке.](https://github.com/Azure/elastic-db-tools) Распакуйте пример в выбранное расположение.
 
-2. Чтобы создать проект, откройте решение *ElasticScaleStarterKit.sln* из каталога *C#* .
+2. Чтобы создать проект, откройте решение *ElasticScaleStarterKit.sln* из каталога *C#*.
 
 3. В решении для примера проекта откройте файл *app.config*. Следуйте приведенным там указаниям, чтобы добавить имя сервера Базы данных SQL Azure и учетные данные (имя пользователя и пароль).
 
@@ -114,13 +114,13 @@ ms.locfileid: "76987028"
 
 * **Объединение имеющихся сегментов.** Объединение сегментов также выполняется с помощью инструмента разбиения и объединения. Дополнительные сведения см. в статье [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).   
 
-## <a name="cost"></a>Затраты
+## <a name="cost"></a>Стоимость
 
 Библиотека инструментов эластичных баз данных предоставляется бесплатно. При использовании инструментов эластичных баз данных не взимаются какие-либо дополнительные платежи, помимо оплаты за работу на платформе Azure. 
 
 Например, демонстрационное приложение создает новую базу данных. Плата за эту возможность зависит от выбранной версии базы данных SQL и от использования приложением платформы Azure.
 
-Сведения о ценах см. на [странице с ценами на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
+Для получения информации о ценах [см.](https://azure.microsoft.com/pricing/details/sql-database/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

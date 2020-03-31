@@ -5,12 +5,12 @@ ms.topic: tutorial
 ms.date: 1/24/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 979b390f65363b43f33ce2f09d26844c3cc1a2e8
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: c5d2bbe920f87421550fadf30a7e7e9d23931bfd
+ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759795"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80292489"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms"></a>Настройка аварийного восстановления для виртуальных машин Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "76759795"
 
 ### <a name="outbound-connectivity-for-ip-address-ranges"></a>Исходящие подключения для диапазонов IP-адресов
 
-Если вы используете группу безопасности сети (NSG), создайте правила NSG с тегом службы для доступа к службе хранилища Azure, Azure Active Directory, службе Site Recovery и ее данным мониторинга. [Подробнее](azure-to-azure-about-networking.md#outbound-connectivity-for-ip-address-ranges).
+Если вы используете группу безопасности сети (NSG), создайте правила NSG с тегом службы для доступа к службе хранилища Azure, Azure Active Directory, службе Site Recovery и ее данным мониторинга. [Подробнее](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags).
 
 ## <a name="verify-azure-vm-certificates"></a>Проверка сертификатов виртуальной машины Azure
 

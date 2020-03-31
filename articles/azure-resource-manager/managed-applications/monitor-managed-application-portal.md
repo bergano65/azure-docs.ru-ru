@@ -1,15 +1,15 @@
 ---
-title: Использование портал Azure для мониторинга управляемого приложения
+title: Используйте портал Azure для мониторинга управляемого приложения
 description: Показано, как использовать портал Azure для мониторинга доступности и оповещений управляемого приложения.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: tomfitz
 ms.openlocfilehash: afe78dd00ecebdc54b6d73c4c8324729e117d95b
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75651752"
 ---
 # <a name="monitor-a-deployed-instance-of-a-managed-application"></a>Мониторинг развернутого экземпляра управляемого приложения
@@ -32,7 +32,7 @@ ms.locfileid: "75651752"
 
 ## <a name="view-alerts"></a>Просмотр оповещений
 
-1. Выберите **Оповещения**.
+1. Выберите **оповещения**.
 
    ![Выбор оповещений](./media/monitor-managed-application-portal/select-alerts.png)
 

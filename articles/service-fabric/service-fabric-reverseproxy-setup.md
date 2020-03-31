@@ -1,14 +1,14 @@
 ---
-title: Azure Service Fabric настроить обратный прокси-сервер
-description: Узнайте, как настроить и настроить службу обратных прокси-серверов для приложения Azure Service Fabric.
+title: Azure Service Fabric создалобратный прокси-сервер
+description: Понять, как настроить и настроить обратный прокси-сервис для приложения Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: pepogors
 ms.openlocfilehash: 131440036896d323cbf821d7a220328456e1db36
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645452"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Установка и настройка обратного прокси-сервера в Azure Service Fabric
@@ -52,7 +52,7 @@ ms.locfileid: "75645452"
         }
     },
     ```
-2. Укажите порт для каждого из объектов NodeType в [разделе Тип ресурса](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. ServiceFabric/Clusters**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) .
+2. Укажите порт для каждого из объектов узла в разделе [**ресурсов Microsoft.ServiceFabric/clusters.**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) [Resource type section](../azure-resource-manager/templates/template-syntax.md)
 
     Порт идентифицируется по имени параметра reverseProxyEndpointPort.
 
@@ -74,7 +74,7 @@ ms.locfileid: "75645452"
         ...
     }
     ```
-3. Чтобы настроить SSL-сертификаты в порте для обратных посредников, добавьте сертификат в свойство ***reverseProxyCertificate*** в [разделе Тип ресурса](../resource-group-authoring-templates.md) **Microsoft. ServiceFabric/Clusters** .
+3. Чтобы настроить SSL-сертификаты в порту для обратного прокси, добавьте сертификат в свойство ***reverseProxyCertificate*** в разделе **microsoft.ServiceFabric/clusters** [Resource.](../resource-group-authoring-templates.md)
 
     ```json
     {
@@ -98,7 +98,7 @@ ms.locfileid: "75645452"
     ```
 
 ### <a name="supporting-a-reverse-proxy-certificate-thats-different-from-the-cluster-certificate"></a>Поддержка сертификата обратного прокси-сервера, отличного от сертификата кластера
- Если сертификат обратного прокси-сервера отличается от сертификата, который защищает кластер, то указанный ранее сертификат необходимо установить на виртуальную машину и добавить в список управления доступом (ACL), чтобы предоставить Service Fabric к нему доступ. Это можно сделать в [разделе типа ресурсов](../resource-group-authoring-templates.md) [**Microsoft. COMPUTE/virtualMachineScaleSets**](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachinescalesets) . Чтобы установить сертификат, добавьте его в osProfile. Раздел extension шаблона позволяет обновить сертификат в списке управления доступом.
+ Если сертификат обратного прокси-сервера отличается от сертификата, который защищает кластер, то указанный ранее сертификат необходимо установить на виртуальную машину и добавить в список управления доступом (ACL), чтобы предоставить Service Fabric к нему доступ. Это можно сделать в [разделе ресурса](../resource-group-authoring-templates.md) [**Microsoft.Compute/virtualMachineScaleSets.**](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachinescalesets) Чтобы установить сертификат, добавьте его в osProfile. Раздел extension шаблона позволяет обновить сертификат в списке управления доступом.
 
   ```json
   {
@@ -158,7 +158,7 @@ ms.locfileid: "75645452"
 
 Следующие шаги описывают настройки, позволяющие включить обратный прокси-сервер и, если потребуется, защитить его с помощью сертификата X.509. 
 
-1. Чтобы включить обратный прокси-сервер, задайте значение **reverseProxyEndpointPort** для типа узла в разделе **свойства** в конфигурации кластера. Следующий код JSON показывает, как задать порт конечной точки обратный прокси-сервера равным 19081 для узлов с типом "NodeType0":
+1. Для включения обратного прокси-сервера установите значение **обратногоProxyEndpointPort** для типа узла под **свойствами** в кластерной конфигурации. Следующие JSON показывает установку реверсивного прокси-конечного порта до 19081 года для узлов с типом "NodeType0":
 
    ```json
        "properties": {
@@ -252,7 +252,7 @@ ms.locfileid: "75645452"
 
 ### <a name="expose-the-reverse-proxy-via-resource-manager-templates"></a>Предоставление обратного прокси-сервера через шаблоны Resource Manager
 
-Приведенный ниже код JSON использует тот же шаблон, что и в разделе [Включение обратного прокси-сервера с помощью шаблонов Azure Resource Manager](#enable-reverse-proxy-via-azure-resource-manager-templates). Изучите этот раздел, если вам нужны сведения о создании шаблона Resource Manager или экспорте шаблона для существующего кластера.  Изменения вносятся в [раздел типа ресурсов](../resource-group-authoring-templates.md) [**Microsoft. Network/loadBalancers**](https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers) .
+Приведенный ниже код JSON использует тот же шаблон, что и в разделе [Включение обратного прокси-сервера с помощью шаблонов Azure Resource Manager](#enable-reverse-proxy-via-azure-resource-manager-templates). Изучите этот раздел, если вам нужны сведения о создании шаблона Resource Manager или экспорте шаблона для существующего кластера.  Изменения вносятся в [раздел ресурса](../resource-group-authoring-templates.md) [**Microsoft.Network/loadBalancers.**](https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers)
 
     ```json
     {
@@ -324,7 +324,7 @@ ms.locfileid: "75645452"
 
 Дополнительные сведения об обновлении параметров структуры для кластеров Azure см. в руководстве по [настройке параметров кластера с помощью шаблонов Resource Manager](service-fabric-cluster-config-upgrade-azure.md). Для автономных кластеров см. руководство по [настройке параметров кластера для автономных кластеров](service-fabric-cluster-config-upgrade-windows-server.md). 
 
-Несколько параметров структуры используются для создания защищенного подключения между обратным прокси-сервером и службами. Подробные сведения об этих параметрах см. [в статье подключение к безопасной службе с помощью обратных прокси-серверов](service-fabric-reverseproxy-configure-secure-communication.md).
+Несколько параметров структуры используются для создания защищенного подключения между обратным прокси-сервером и службами. Подробную информацию об этих настройках можно узнать о настройках, [см.](service-fabric-reverseproxy-configure-secure-communication.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)

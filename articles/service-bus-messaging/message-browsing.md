@@ -1,6 +1,6 @@
 ---
-title: Служебная шина Azure — Просмотр сообщений
-description: Просмотр и просмотр сообщений служебной шины позволяет клиенту служебной шины Azure перечислять все сообщения, которые находятся в очереди или подписке.
+title: Автобус службы Azure - просмотр сообщений
+description: Просмотр и заглядывание сообщений Service Bus позволяет клиенту Azure Service Bus перечислять все сообщения, которые находятся в очереди или подписке.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 6156557d10210535b287aa516070c0b5da416512
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77539371"
 ---
 # <a name="message-browsing"></a>Просмотр сообщений
@@ -34,7 +34,7 @@ ms.locfileid: "77539371"
 
 ## <a name="peek-apis"></a>Интерфейсы API просмотра
 
-Методы [Peek/пикасинк](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync#Microsoft_Azure_ServiceBus_Core_MessageReceiver_PeekAsync) и [PeekBatch/пикбатчасинк](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatchasync#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatchAsync_System_Int64_System_Int32_) существуют во всех клиентских библиотеках .NET и Java, а также во всех объектах-получателях: **MessageReceiver**, **MessageSession**. Операция просмотра работает для всех очередей, подписок и их соответствующих очередей недоставленных сообщений.
+Методы [Peek/PeekAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync#Microsoft_Azure_ServiceBus_Core_MessageReceiver_PeekAsync) и [PeekBatch/PeekBatchAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatchasync#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatchAsync_System_Int64_System_Int32_) существуют во всех клиентских библиотеках .NET и Java и на всех объектах **приемника: MessageReceiver**, **MessageSession**. Операция просмотра работает для всех очередей, подписок и их соответствующих очередей недоставленных сообщений.
 
 При повторяющихся вызовах метод Peek перечисляет все сообщения, которые существуют в журнале очереди или подписки, по возрастанию порядкового номера. Это порядок, в котором сообщения были поставлены в очередь, но не порядок, в котором сообщения со временем могут быть получены.
 
@@ -42,7 +42,7 @@ ms.locfileid: "77539371"
 
 Можно также заполнить перегрузку метода значением [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber), с которого следует начать, а затем вызвать перегрузку метода без параметров для продолжения перечисления. **PeekBatch** работает аналогично, но получает набор сообщений за раз.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

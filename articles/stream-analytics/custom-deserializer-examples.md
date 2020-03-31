@@ -1,6 +1,6 @@
 ---
-title: Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET в Azure Stream Analytics
-description: В этой статье описывается формат сериализации и интерфейсы, определяющие пользовательские десериализаторы .NET для Azure Stream Analytics облачных и граничных заданий.
+title: Читайте ввод в любом формате с помощью пользовательских десериализаторов .NET в Azure Stream Analytics
+description: В этой статье объясняется формат сериализации и интерфейсы, определяющие пользовательские deserializers .NET для облачных и краевых заданий Azure Stream Analytics.
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
@@ -8,21 +8,21 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 1/28/2020
 ms.openlocfilehash: 270e9a31c28e7209cfe43ea8307b928ed3257a35
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76845262"
 ---
-# <a name="read-input-in-any-format-using-net-custom-deserializers"></a>Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET
+# <a name="read-input-in-any-format-using-net-custom-deserializers"></a>Читайте ввод в любом формате с помощью пользовательских десериализаторов .NET
 
-Пользовательские десериализаторы .NET позволяют задаче Azure Stream Analytics считывать данные из форматов, которые выходят за рамки трех [встроенных форматов данных](stream-analytics-parsing-json.md). В этой статье объясняется формат сериализации и интерфейсы, определяющие пользовательские десериализаторы .NET для Azure Stream Analytics облачных и граничных заданий. Также существуют примеры десериализаторов для буфера протокола и формата CSV.
+Пользовательские десериализаторы .NET позволяют вашей работе Azure Stream Analytics считывать данные из форматов за пределами трех [встроенных форматов данных.](stream-analytics-parsing-json.md) В этой статье объясняется формат сериализации и интерфейсы, определяющие пользовательские десеризаторы .NET для облачных и краевых заданий Azure Stream Analytics. Есть также примеры deserializers для протокола буфера и CSV формата.
 
-## <a name="net-custom-deserializer"></a>Пользовательский десериализатор .NET
+## <a name="net-custom-deserializer"></a>пользовательский десериализатор .NET
 
-Следующие примеры кода являются интерфейсами, определяющими пользовательский десериализатор и реализующими `StreamDeserializer<T>`.
+Ниже образцы кода являются интерфейсы, которые определяют `StreamDeserializer<T>`пользовательский десериализатор и реализации .
 
-`UserDefinedOperator` является базовым классом для всех пользовательских операторов потоковой передачи. Он инициализирует `StreamingContext`, который предоставляет контекст, который включает механизм для публикации диагностики, для которого необходимо выполнить отладку любых проблем с десериализатором.
+`UserDefinedOperator`является базовым классом для всех пользовательских операторов потоковой передачи. Он инициализирует `StreamingContext`, который обеспечивает контекст, который включает в себя механизм публикации диагностики, для которых вам нужно будет отладить любые проблемы с десериализатором.
 
 ```csharp
     public abstract class UserDefinedOperator
@@ -31,21 +31,21 @@ ms.locfileid: "76845262"
     }
 ```
 
-В следующем фрагменте кода показана десериализация для потоковой передачи данных. 
+Следующий фрагмент кода — это десериализация для потоковых данных. 
 
-Пропущенные ошибки следует выдавать с помощью `IStreamingDiagnostics`, передаваемого методом инициализации `UserDefinedOperator`. Все исключения будут рассматриваться как ошибки, и десериализатор будет создан повторно. После определенного числа ошибок задание перейдет в состояние сбоя.
+Пропущенные ошибки следует `IStreamingDiagnostics` испускать с помощью пройденный метод `UserDefinedOperator`инициализации. Все исключения будут рассматриваться как ошибки и десериализатор будет воссоздан. После определенного количества ошибок задание будет переходить в невыполненный статус.
 
-`StreamDeserializer<T>` десериализует поток в объект типа `T`. Должны быть выполнены следующие условия.
+`StreamDeserializer<T>`десериализирует поток в объект `T`типа. Должны быть выполнены следующие условия.
 
-1. T является классом или структурой.
-1. Все открытые поля в T являются либо
-    1. Один из [SByte, Byte, Short, ushort, int, uint, Long, DateTime, String, float, Double] или их эквиваленты, допускающие значение null.
-    1. Другая структура или класс, следующие за теми же правилами.
-    1. Массив типа `T2`, который следует тем же правилам.
-    1. IList`T2` где T2 соответствует тем же правилам.
+1. T - это класс или структура.
+1. Все публичные поля в T являются либо
+    1. Один из «sbyte, байт, короткий, ushort, int, uint, длинный, DateTime, строка, поплавок, двойной» или их недействительные эквиваленты.
+    1. Другой структурировать или класс, следуя тем же правилам.
+    1. Массив типа, `T2` который следует тем же правилам.
+    1. IList,`T2` где T2 следует тем же правилам.
     1. Не имеет рекурсивных типов.
 
-Параметр `stream` — это поток, содержащий сериализованный объект. `Deserialize` Возвращает коллекцию экземпляров `T`.
+Параметром `stream` является поток, содержащий сериализованный объект. `Deserialize`возвращает коллекцию `T` экземпляров.
 
 ```csharp
     public abstract class StreamDeserializer<T> : UserDefinedOperator
@@ -54,7 +54,7 @@ ms.locfileid: "76845262"
     }
 ```
 
-`StreamingContext` предоставляет контекст, который включает механизм публикации диагностики для оператора пользователя.
+`StreamingContext`предоставляет контекст, который включает механизм публикации диагностики для оператора пользователя.
 
 ```csharp
     public abstract class StreamingContext
@@ -63,13 +63,13 @@ ms.locfileid: "76845262"
     }
 ```
 
-`StreamingDiagnostics` — это диагностика для определяемых пользователем операторов, включая сериализатор, десериализатор и определяемые пользователем функции.
+`StreamingDiagnostics`является диагностикой для пользовательских операторов, включая serializer, deserializer и пользовательские функции.
 
-`WriteError` записывает сообщение об ошибке в журналы диагностики и отправляет ошибку диагностике.
+`WriteError`записывает сообщение об ошибке в диагностические журналы и отправляет ошибку в диагностику.
 
-`briefMessage` — краткое сообщение об ошибке. Это сообщение отображается в диагностике и используется группой разработки продукта для отладки. Не включайте конфиденциальную информацию и не оставляйте сообщение короче 200 символов.
+`briefMessage`— краткое сообщение об ошибке. Это сообщение отображается в диагностике и используется группой разработчиков для отладки. Не включайте конфиденциальную информацию и храните в сообщении менее 200 символов
 
-`detailedMessage` — это подробное сообщение об ошибке, которое добавляется в журналы диагностики в хранилище. Это сообщение должно содержать менее 2000 символов.
+`detailedMessage`— это подробное сообщение об ошибке, которое добавляется только в диагностические журналы в хранилище. Это сообщение должно быть менее 2000 символов.
 
 ```csharp
     public abstract class StreamingDiagnostics
@@ -80,13 +80,13 @@ ms.locfileid: "76845262"
 
 ## <a name="deserializer-examples"></a>Примеры десериализатора
 
-В этом разделе показано, как создавать пользовательские десериализаторы для protobuf и CSV. Дополнительные примеры, например формат AVRO для записи концентратора событий, см. [на Azure Stream Analytics на сайте GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers).
+В этом разделе показано, как писать пользовательские десериализаторы для Protobuf и CSV. Дополнительные примеры, такие как формат AVRO для захвата концентратора событий, посетите [аналитику Azure Stream Analytics на GitHub.](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers)
 
-### <a name="protocol-buffer-protobuf-format"></a>Формат буфера протокола (protobuf)
+### <a name="protocol-buffer-protobuf-format"></a>Протокол буфера (Protobuf) формат
 
-Это пример использования формата буфера протокола.
+Это пример с использованием формата буфера протокола.
 
-Предположим, что определено следующее определение буфера протокола.
+Предположим следующее определение буфера протокола.
 
 ```proto
 syntax = "proto3";
@@ -112,9 +112,9 @@ message MessageBodyProto {
 }
 ```
 
-Запуск `protoc.exe` из NuGet **Google. protobuf. Tools** создает CS-файл с определением. Созданный файл не показан здесь.
+Запуск `protoc.exe` из **Google.Protobuf.Tools** NuGet генерирует файл .cs с определением. Генерируемый файл здесь не отображается.
 
-Следующий фрагмент кода является реализацией десериализатора при условии, что созданный файл включен в проект. Эта реализация является просто тонкой оболочкой для созданного файла.
+Следующий фрагмент кода — это реализация deserializer при условии включения генерируемого файла в проект. Эта реализация представляет собой лишь тонкую обертку над генерируемым файлом.
 
 ```csharp
     public class MessageBodyDeserializer : StreamDeserializer<SimulatedTemperatureSensor.MessageBodyProto>
@@ -135,7 +135,7 @@ message MessageBodyProto {
 
 ### <a name="csv"></a>CSV
 
-Следующий фрагмент кода является простым десериализатором CSV, который также демонстрирует распространение ошибок.
+Следующий фрагмент кода представляет собой простой deserializer CSV, который также демонстрирует ошибки, распространяющиеся на размножение.
 
 ```csharp
 using System.Collections.Generic;
@@ -198,11 +198,11 @@ namespace ExampleCustomCode.Serialization
 
 ```
 
-## <a name="serialization-format-for-rest-apis"></a>Формат сериализации для интерфейсов API RESTFUL
+## <a name="serialization-format-for-rest-apis"></a>Формат сериализации для АПИ REST
 
-Каждый Stream Analytics вход имеет **Формат сериализации**. Дополнительные сведения о параметрах ввода см. в документации по [входным REST API](https://docs.microsoft.com/rest/api/streamanalytics/stream-analytics-input) .
+Каждый вход Stream Analytics имеет **формат сериализации.** Для получения дополнительной информации о [Input REST API](https://docs.microsoft.com/rest/api/streamanalytics/stream-analytics-input) вариантах ввода см.
 
-Следующий код JavaScript является примером формата сериализации десериализатора .NET при использовании REST API:
+Следующий код Javascript является примером формата сериализации deserializer .NET при использовании REST API:
 
 ```javascript
 {    
@@ -219,17 +219,17 @@ namespace ExampleCustomCode.Serialization
 }  
 ```
 
-`serializationClassName` должен быть классом, реализующим `StreamDeserializer<T>`. Это описано в следующем разделе.
+`serializationClassName`должен быть класс, `StreamDeserializer<T>`который реализует . Это описано в следующем разделе.
 
 ## <a name="region-support"></a>Поддержка регионов
 
 Эта функция доступна в следующих регионах:
 
-* Центрально-западная часть США
+* центрально-западная часть США
 * Северная Европа
 * Восточная часть США
-* Западная часть США
-* Восточная часть США 2
+* западная часть США
+* восточная часть США 2
 * Западная Европа
 
 Вы можете [запросить поддержку](https://aka.ms/ccodereqregion) для дополнительных регионов.
@@ -238,16 +238,16 @@ namespace ExampleCustomCode.Serialization
 
 ### <a name="when-will-this-feature-be-available-in-all-azure-regions"></a>Когда эта функция будет доступна во всех регионах Azure?
 
-Эта функция доступна в [6 регионах](https://docs.microsoft.com/azure/stream-analytics/custom-deserializer-examples#region-support). Если вы заинтересованы в использовании этой функции в другом регионе, можно [Отправить запрос](https://aka.ms/ccodereqregion). Поддержка всех регионов Azure включена в план.
+Эта функция доступна в [6 регионах.](https://docs.microsoft.com/azure/stream-analytics/custom-deserializer-examples#region-support) Если вы заинтересованы в использовании этой функциональности в другом регионе, вы можете [отправить запрос.](https://aka.ms/ccodereqregion) Поддержка всех регионов Azure находится в дорожной карте.
 
-### <a name="can-i-access-metadatapropertyvalue-from-my-inputs-similar-to-getmetadatapropertyvalue-function"></a>Можно ли получить доступ к Метадатапропертивалуе из входных данных, похожих на функцию Жетметадатапропертивалуе?
+### <a name="can-i-access-metadatapropertyvalue-from-my-inputs-similar-to-getmetadatapropertyvalue-function"></a>Могу ли я получить доступ к MetadataPropertyValue из моих входных данных, аналогичных функции GetMetadataPropertyValue?
 
 Эта функциональность не поддерживается. Если вам нужна эта возможность, вы можете проголосовать за этот запрос на [UserVoice](https://feedback.azure.com/forums/270577-stream-analytics/suggestions/38779801-accessing-input-metadata-properties-in-custom-dese).
 
-### <a name="can-i-share-my-deserializer-implementation-with-the-community-so-that-others-can-benefit"></a>Можно ли поделиться реализацией десериализатора с сообществом, чтобы другие пользователи могли воспользоваться преимуществами?
+### <a name="can-i-share-my-deserializer-implementation-with-the-community-so-that-others-can-benefit"></a>Могу ли я поделиться реализацией deserializer с сообществом, чтобы другие могли извлечь выгоду?
 
-После реализации десериализатора вы можете помочь другим пользователям, чтобы поделиться им с сообществом. Отправьте код в [репозиторий Azure Stream Analytics GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers).
+После того как вы внедрили свой десериализатор, вы можете помочь другим, поделившись им с сообществом. Отправьте свой код в [репо Analytics SitHub Azure Stream.](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
-* [Пользовательские десериализаторы .NET для Azure Stream Analytics облачных заданий](custom-deserializer.md)
+* [пользовательские десеризаторы .NET для облачных заданий Azure Stream Analytics](custom-deserializer.md)

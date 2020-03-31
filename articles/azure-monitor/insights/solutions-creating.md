@@ -8,10 +8,10 @@ ms.author: bwren
 ms.date: 03/20/2017
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: f1605597c7716ba6a896c7ecdae968f07d66027b
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77663221"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
@@ -45,7 +45,7 @@ ms.locfileid: "77663221"
 
 Определите любые запросы, которые, по вашему мнению, пригодятся пользователю, даже если эти запросы не используются представлениями или оповещениями.  Запросы будут доступны пользователю как сохраненные условия поиска на портале. Их также можно включить в [часть визуализации списка запросов](../../azure-monitor/platform/view-designer-parts.md#list-of-queries-part) в вашем представлении.
 
-### <a name="alerts"></a>Предупреждения
+### <a name="alerts"></a>видны узлы
 Для [оповещений в Log Analytics](../../azure-monitor/platform/alerts-overview.md) ошибки определяются с помощью [поиска по журналам](#log-searches) в данных репозитория.  В итоге либо пользователь получает уведомление об ошибке, либо эти ошибки обрабатываются автоматически. Вы должны определить разные условия оповещений для приложения и включить соответствующие правила оповещений в файл решения.
 
 Если проблема устранима с помощью автоматизированного процесса, создайте модуль runbook в службе автоматизации Azure. Ошибка будет исправлена автоматически.  Большинством служб Azure можно управлять с помощью [командлетов](/powershell/azure/overview), используемых модулем runbook.
@@ -68,12 +68,12 @@ ms.locfileid: "77663221"
 ## <a name="publish-your-solution"></a>Опубликуйте свое решения
 После того как решение будет создано и протестировано, вы можете предоставить клиентам доступ к нему, используя следующие источники.
 
-- **Шаблоны быстрого запуска Azure**.  [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) представляют набор шаблонов Resource Manager, предоставленные сообществом разработчиков через GitHub.  Чтобы предоставить доступ к решению, следуйте инструкциям в [руководстве по участию](https://github.com/Azure/azure-quickstart-templates/tree/master/1-CONTRIBUTION-GUIDE).
-- **Azure Marketplace**.  На [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) можно распространять решения среди других разработчиков, независимых поставщиков ПО и ИТ-специалистов, а также продавать решения.  Дополнительные сведения см. в статье [Как опубликовать предложение и управлять им в Azure Marketplace](../../marketplace/marketplace-publishers-guide.md).
+- **Шаблоны Azure кикстарта**.  [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) представляют набор шаблонов Resource Manager, предоставленные сообществом разработчиков через GitHub.  Чтобы предоставить доступ к решению, следуйте инструкциям в [руководстве по участию](https://github.com/Azure/azure-quickstart-templates/tree/master/1-CONTRIBUTION-GUIDE).
+- **Лазурный рынок**.  На [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) можно распространять решения среди других разработчиков, независимых поставщиков ПО и ИТ-специалистов, а также продавать решения.  Дополнительные сведения см. в статье [Как опубликовать предложение и управлять им в Azure Marketplace](../../marketplace/marketplace-publishers-guide.md).
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [создать файл решения]( solutions-solution-file.md) для решения по управлению.
 * Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 * Найдите в коллекции [шаблонов быстрого запуска Azure](https://azure.microsoft.com/documentation/templates) примеры разных шаблонов Resource Manager.

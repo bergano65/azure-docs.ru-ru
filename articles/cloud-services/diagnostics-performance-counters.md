@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/02/2018
 ms.author: tagore
 ms.openlocfilehash: 3b4028a09f69acd5d7a6579b4610785ed32e227d
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77469533"
 ---
 # <a name="collect-performance-counters-for-your-azure-cloud-service"></a>Сбор данных счетчиков производительности для облачной службы Azure
@@ -48,7 +48,7 @@ Authorization Manager Applications              {\Authorization Manager Appl...
 
 Свойство `CounterSetName` представляет собой набор (категорию) и указывает на то, с чем связан счетчик производительности. Свойство `Paths` представляет собой коллекцию счетчиков для набора. Дополнительные сведения о наборе счетчиков содержатся в свойстве `Description`.
 
-Все счетчики для набора можно найти в коллекции `CounterSetName` с помощью значения `Paths`. Каждый элемент пути является счетчиком. Его можно запросить. Например, чтобы получить доступные счетчики, связанные с набором `Processor`, раскройте коллекцию `Paths`.
+Все счетчики для набора можно найти в коллекции `Paths` с помощью значения `CounterSetName`. Каждый элемент пути является счетчиком. Его можно запросить. Например, чтобы получить доступные счетчики, связанные с набором `Processor`, раскройте коллекцию `Paths`.
 
 ```powershell
 Get-Counter -ListSet * | Where-Object CounterSetName -eq "Processor" | Select -ExpandProperty Paths
@@ -103,7 +103,7 @@ Azure Application Insights для облачных служб позволяет
 
 Application Insights автоматически собирает данные следующих счетчиков производительности:
 
-* \Process (?? APP_WIN32_PROC??)\% процессорного времени
+* «Процесс(?? APP_WIN32_PROC??) \% Время процессора
 * \Память\доступные байты
 * \.NET CLR Exceptions(??APP_CLR_PROC??)\# Исключений в секунду
 * \Process(??APP_WIN32_PROC??)\Байт исключительного пользования
@@ -115,11 +115,11 @@ Application Insights автоматически собирает данные с
 ### <a name="azure-diagnostics"></a>Диагностика Azure
 
 > [!IMPORTANT]
-> Все эти данные собираются в учетной записи хранения, но портал **не** содержит встроенных средств для их визуализации. Настоятельно рекомендуем интегрировать в приложение другую службу диагностики, например Application Insights.
+> Хотя все эти данные агрегируются в учетную запись хранилища, портал **не** предоставляет родной способ наметить данные. Настоятельно рекомендуем интегрировать в приложение другую службу диагностики, например Application Insights.
 
 Расширение системы диагностики Azure для облачных служб позволяет указать счетчики производительности для сбора данных. Сведения об установке диагностики Azure см. в разделе [Настройка расширения системы диагностики](cloud-services-how-to-monitor.md#setup-diagnostics-extension).
 
-Счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определен для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters**. Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Этот элемент имеет два атрибута: `counterSpecifier` и `sampleRate`. Атрибут `counterSpecifier` определяет набор счетчиков производительности системы (описанный в предыдущем разделе) для сбора данных. Значение `sampleRate` указывает, как часто выполняется опрос. В целом все счетчики производительности передаются в Azure в соответствии со значением атрибута `PerformanceCounters` родительского элемента `scheduledTransferPeriod`.
+Счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определяется по роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters.** Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Этот элемент имеет два атрибута: `counterSpecifier` и `sampleRate`. Атрибут `counterSpecifier` определяет набор счетчиков производительности системы (описанный в предыдущем разделе) для сбора данных. Значение `sampleRate` указывает, как часто выполняется опрос. В целом все счетчики производительности передаются в Azure в соответствии со значением атрибута `scheduledTransferPeriod` родительского элемента `PerformanceCounters`.
 
 Дополнительные сведения об элементе схемы `PerformanceCounters` см. в разделе [Схема Диагностики Azure](../azure-monitor/platform/diagnostics-extension-schema-windows.md#performancecounters-element).
 
@@ -259,7 +259,7 @@ counterServiceUsed.Increment();
 
 ### <a name="azure-diagnostics"></a>Диагностика Azure
 
-Как указывалось ранее, счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определен для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters**. Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Укажите для атрибута `counterSpecifier` категорию и имя созданного в коде счетчика производительности. 
+Как указывалось ранее, счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определяется по роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters.** Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Укажите для атрибута `counterSpecifier` категорию и имя созданного в коде счетчика производительности. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -1,108 +1,105 @@
 ---
-title: Использование расширения Интернета вещей Azure для Azure CLI для взаимодействия с Интернетом вещей Plug and Play предварительной версии устройства | Документация Майкрософт
-description: Установите расширение Интернета вещей Azure для Azure CLI и используйте его для взаимодействия с устройствами IoT Plug and Play, подключенными к центру Интернета вещей.
+title: Используйте расширение Azure IoT для Azure CLI для взаимодействия с устройствами IoT Plug и Play Preview Документы Майкрософт
+description: Установите расширение Azure IoT для Azure CLI и используйте его для взаимодействия с устройствами IoT Plug и Play, подключенными к моему концентратору IoT.
 author: ChrisGMsft
 ms.author: chrisgre
 ms.date: 12/26/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 8dead08017f15a7429655b4bf17b6e8c8e481114
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: b5907c0fb127947e90352e68b2726a22f5afea0d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251015"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80234685"
 ---
-# <a name="install-and-use-the-azure-iot-extension-for-the-azure-cli"></a>Установка и использование расширения Интернета вещей Azure для Azure CLI
+# <a name="install-and-use-the-azure-iot-extension-for-the-azure-cli"></a>Установка и использование расширения Azure IoT для Azure CLI
 
-[Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это программа командной строки с открытым исходным кодом для управления ресурсами Azure, такими как центр Интернета вещей. Эта Azure CLI доступна в Windows, Linux и MacOS. Azure CLI также предварительно установлен в [Azure Cloud Shell](https://shell.azure.com). Azure CLI позволяет управлять ресурсами центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными концентраторами без установки каких-либо расширений.
+[Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это кросс-платформенный командный инструмент с открытым исходным кодом для управления ресурсами Azure, такими как IoT Hub. CLI Azure доступен на Windows, Linux и MacOS. Azure CLI также предварительно установлен в [облачной оболочке Azure.](https://shell.azure.com) Azure CLI позволяет управлять ресурсами Azure IoT Hub, экземплярами службы обеспечения устройств и связанными концентраторами без установки расширений.
 
-Расширение Интернета вещей Azure для Azure CLI — это программа командной строки для взаимодействия с и тестирования центра Интернета вещей Plug and Play Preview Devices. Расширение можно использовать для:
+Расширение Azure IoT для Azure CLI является командным инструментом для взаимодействия и тестирования устройств IoT Plug и Play Preview. Расширение можно использовать для:
 
-- Подключитесь к устройству.
-- Просмотр данных телеметрии, отправляемых устройством.
-- Работа со свойствами устройства.
-- Вызов команд устройства.
+- Подключите к устройству.
+- Просмотр телеметрии, отправленной устройством.
+- Работайте со свойствами устройств.
+- Вызов команды устройства.
 
 В этой статье показано, как выполнить следующие действия:
 
-- Установите и настройте расширение Интернета вещей Azure для Azure CLI.
-- Используйте расширение, чтобы взаимодействовать с устройствами и тестировать их.
+- Установите и настройте расширение Azure IoT для Azure CLI.
+- Используйте расширение для взаимодействия с устройствами и тестирования.
 - Используйте расширение для управления интерфейсами в репозитории модели.
 
 ## <a name="install-azure-iot-extension-for-the-azure-cli"></a>Установка расширения Azure IoT для Azure CLI
 
-### <a name="step-1---install-the-azure-cli"></a>Шаг 1. Установка Azure CLI
+### <a name="step-1---install-the-azure-cli"></a>Шаг 1 - Установка Azure CLI
 
-Следуйте [инструкциям по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы настроить Azure CLI в вашей среде. Чтобы использовать все приведенные ниже команды, версия Azure CLI должна иметь версию 2.0.73 или выше. Для проверки используйте `az -–version`.
+Следуйте [инструкциям по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) для настройки ClI Azure в вашей среде. Чтобы использовать все приведенные ниже команды, версия Azure CLI должна быть версией 2.0.73 или выше. Для проверки используйте `az -–version`.
 
-### <a name="step-2---install-iot-extension"></a>Шаг 2. Установка расширения IoT
+### <a name="step-2---install-iot-extension"></a>Шаг 2 - Установка расширения IoT
 
 В [файле сведений расширения Интернета вещей](https://github.com/Azure/azure-iot-cli-extension) описывается несколько способов установки расширения. Проще всего запустить `az extension add --name azure-iot`. После установки можно использовать `az extension list`, чтобы проверить установленные расширения, или `az extension show --name azure-iot` для просмотра сведений о расширении Интернета вещей. Чтобы удалить расширение, можно использовать `az extension remove --name azure-iot`.
 
-## <a name="use-azure-iot-extension-for-the-azure-cli"></a>Использование расширения Azure IoT для Azure CLI
+## <a name="use-azure-iot-extension-for-the-azure-cli"></a>Используйте расширение Azure IoT для Azure CLI
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
-Чтобы войти в подписку Azure, выполните следующую команду:
+Чтобы войти в подписку Azure, запустите следующую команду:
 
-```cmd/sh
+```azurecli
 az login
 ```
 
 > [!NOTE]
-> Если вы используете Azure Cloud Shell, вы автоматически входите в нее и не должны выполнять предыдущую команду.
+> Если вы используете облачную оболочку Azure, вам автоматически входят в систему, и вам не нужно запускать предыдущую команду.
 
-Чтобы использовать расширение Интернета вещей Azure для Azure CLI, вам потребуется:
+Для использования расширения Azure IoT для Azure CLI необходимо:
 
-- Центр интернета вещей Azure. Существует много способов добавить центр Интернета вещей в подписку Azure, например [создать центр Интернета вещей с помощью Azure CLI](../iot-hub/iot-hub-create-using-cli.md). Для выполнения команд расширения Azure IoT требуется строка подключения центра Интернета вещей. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Центр интернета вещей Azure. Существует множество способов добавления концентратора IoT в подписку Azure, [например, создать концентратор IoT с помощью Azure CLI.](../iot-hub/iot-hub-create-using-cli.md) Для выполнения команд расширения расширения Azure IoT нужна строка соединения Концентратора IoT. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-    > [!NOTE]
-    > На этапе общедоступной предварительной версии функции IoT Plug and Play доступны только в центрах Интернета вещей, созданных в таких регионах, как **Центральная часть США**, **Северная Европа** и **Восточная Япония**.
+- Устройство, зарегистрированное в вашем концентраторе IoT. Вы можете использовать следующую команду Azure CLI для регистрации устройства, не забудьте заменить `{YourIoTHubName}` и `{YourDeviceID}` заполнителей с вашими значениями:
 
-- Устройство, зарегистрированное в центре Интернета вещей. Для регистрации устройства можно использовать следующую команду Azure CLI. не забудьте заменить заполнители `{YourIoTHubName}` и `{YourDeviceID}` своими значениями:
-
-    ```cmd/sh
+    ```azurecli
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id {YourDeviceID}
     ```
 
-- Некоторым командам требуется строка подключения для репозитория модели компании. Репозиторий модели для вашей компании создается при первом подключении [к порталу сертификации Azure для Интернета вещей](howto-onboard-portal.md). Третья сторона может совместно использовать свою строку подключения к хранилищу модели, чтобы предоставить вам доступ к их интерфейсам и моделям.
+- Некоторым командам нужна строка соединения для репозитория модели компании. Репозиторий модели для вашей компании создается при первом посадке [на портал Azure, сертифицированный для IoT портала.](howto-onboard-portal.md) Третья сторона может поделиться с вами строкой подключения репозитория модели, чтобы предоставить вам доступ к их интерфейсам и моделям.
 
 ### <a name="interact-with-a-device"></a>Взаимодействие с устройством
 
-С помощью расширения можно просматривать устройства IoT Plug and Play, подключенные к центру Интернета вещей, и взаимодействовать с ними. Расширение работает с цифровым двойника, представляющим устройство IoT Plug and Play.
+Вы можете использовать расширение для просмотра и взаимодействия с устройствами IoT Plug и Play, которые подключены к концентратору IoT. Расширение работает с цифровым близнецом, который представляет IoT Plug и Play устройства.
 
-#### <a name="list-devices-and-interfaces"></a>Вывод списка устройств и интерфейсов
+#### <a name="list-devices-and-interfaces"></a>Список устройств и интерфейсов
 
-Вывод списка всех устройств в центре Интернета вещей:
+Перечислите все устройства в концентраторе IoT:
 
-```cmd/sh
+```azurecli
 az iot hub device-identity list --hub-name {YourIoTHubName}
 ```
 
-Вывод списка всех интерфейсов, зарегистрированных на устройстве Plug and Play IoT:
+Перечислите все интерфейсы, зарегистрированные устройством IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot dt list-interfaces --hub-name {YourIoTHubName} --device-id {YourDeviceID}
 ```
 
 #### <a name="properties"></a>Свойства
 
-Перечислить все свойства и значения свойств для интерфейса на устройстве:
+Перечислите все значения свойств и свойств для интерфейса на устройстве:
 
-```cmd/sh
+```azurecli
 az iot dt list-properties --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --source private --repo-login "{YourCompanyModelRepoConnectionString}"
 ```
 
-Установите значение свойства для чтения и записи:
+Установите значение свойства чтения-записи:
 
-```cmd/sh
+```azurecli
 az iot dt update-property --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface-payload {JSONPayload or FilePath}
 ```
 
-Пример файла полезных данных для задания свойства **Name** в интерфейсе **датчика** устройства на **contoso** выглядит следующим образом:
+Пример файла полезной нагрузки для установки свойства **имени** на **сенсорном** интерфейсе устройства для **Contoso** выглядит следующим образом:
 
 ```json
 {
@@ -120,114 +117,114 @@ az iot dt update-property --hub-name {YourIoTHubName} --device-id {YourDeviceID}
 
 #### <a name="commands"></a>Команды
 
-Вывод списка всех команд для интерфейса на устройстве:
+Перечислите все команды для интерфейса на устройстве:
 
-```cmd/sh
+```azurecli
 az iot dt list-commands --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --source private --repo-login {YourCompanyModelRepoConnectionString}
 ```
 
-Без параметра `--repo-login` эта команда использует репозиторий общедоступной модели.
+Без `--repo-login` параметра эта команда использует репозиторий общедоступной модели.
 
-Вызов команды:
+Вызвать команду:
 
-```cmd/sh
+```azurecli
 az iot dt invoke-command --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --cn {CommandName} --command-payload {CommandPayload or FilePath}
 ```
 
-#### <a name="digital-twin-events"></a>События цифровых двойника
+#### <a name="digital-twin-events"></a>Цифровые события-близнецы
 
-Мониторинг всех событий Интернета вещей Plug and Play Digital двойника с определенного устройства и интерфейса, который переведет в **$Default** группу потребителей концентратора событий:
+Мониторинг всех событий IoT Plug и Play digital twin с определенного устройства и интерфейса, идущего в **$Default** группу потребителей центра событий:
 
-```cmd/sh
+```azurecli
 az iot dt monitor-events --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID}
 ```
 
-Мониторинг всех событий Интернета вещей Plug and Play Digital двойника с определенного устройства и интерфейса, поступающий в определенную группу потребителей:
+Мониторинг всех событий IoT Plug и Play digital twin с определенного устройства и интерфейса, идущего по определенной группе потребителей:
 
-```cmd/sh
+```azurecli
 az iot dt monitor-events --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --consumer-group {YourConsumerGroup}
 ```
 
-### <a name="manage-interfaces-in-a-model-repository"></a>Управление интерфейсами в репозитории модели
+### <a name="manage-interfaces-in-a-model-repository"></a>Управление интерфейсами в репозитории моделей
 
-Следующие команды используют общедоступный репозиторий модели Интернета вещей Plug and Play. Чтобы использовать репозиторий модели компании, добавьте аргумент `--login` в строку подключения к репозиторию модели.
+Следующие команды используют общедоступный репозиторий IoT Plug и Play. Чтобы использовать репозиторий модели `--login` компании, добавьте аргумент со строкой репозитория модели.
 
-Вывод списка интерфейсов в общедоступном репозитории моделей Plug and Play IoT:
+Перечислите интерфейсы в общедоступном репозитории модели IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot pnp interface list
 ```
 
-Отображение интерфейса в общедоступном репозитории модели Plug and Play IoT:
+Отображите интерфейс в общедоступном репозитории модели IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot pnp interface show --interface {YourInterfaceId}
 ```
 
-Создайте интерфейс в репозитории модели компании IoT Plug and Play.
+Создайте интерфейс в репозитории модели IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot pnp interface create --definition {JSONPayload or FilePath} --login {YourCompanyModelRepoConnectionString}
 ```
 
-Вы не можете напрямую создать интерфейс в репозитории общедоступной модели.
+Вы не можете непосредственно создать интерфейс в общедоступном репозитории моделей.
 
-Обновите интерфейс в репозитории модели компании Интернета вещей Plug and Play:
+Обновление интерфейса в репозитории модели IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot pnp interface update --definition {JSONPayload or FilePath} --login {YourCompanyModelRepoConnectionString}
 ```
 
-Невозможно напрямую обновить интерфейс в репозитории общедоступной модели.
+Вы не можете напрямую обновлять интерфейс в общедоступном репозитории моделей.
 
-Опубликуйте интерфейс из репозитория Plug and Play компании IoT в общедоступном репозитории моделей. Эта операция делает интерфейс неизменяемым:
+Опубликовать интерфейс из репозитория модели IoT Plug and Play в общедоступном репозитории моделей. Эта операция делает интерфейс неизменяемым:
 
-```cmd/sh
+```azurecli
 az iot pnp interface publish --interface {YourInterfaceID} --login {YourCompanyModelRepoConnectionString}
 ```
 
-Только партнеры Майкрософт могут публиковать интерфейсы в хранилище общедоступных моделей.
+Публиковать интерфейсы в репозитории общедоступных моделей могут только партнеры Майкрософт.
 
-### <a name="manage-device-capability-models-in-a-model-repository"></a>Управление моделями возможностей устройств в репозитории моделей
+### <a name="manage-device-capability-models-in-a-model-repository"></a>Управление моделями возможностей устройств в репозитории модели
 
-Следующие команды используют общедоступный репозиторий модели Интернета вещей Plug and Play. Чтобы использовать репозиторий модели компании, добавьте аргумент `--login` в строку подключения к репозиторию модели.
+Следующие команды используют общедоступный репозиторий IoT Plug и Play. Чтобы использовать репозиторий модели `--login` компании, добавьте аргумент со строкой репозитория модели.
 
-Список моделей возможностей устройств в репозитории общедоступных моделей Plug and Play IoT:
+Перечислите модели возможностей устройств в репозитории моделей IoT Plug и Play:
 
-```cmd/sh
+```azurecli
 az iot pnp capability-model list
 ```
 
-Отображение модели возможностей устройства в репозитории общедоступной модели Plug and Play IoT:
+Отображите модель возможностей устройства в репозитории модели IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot pnp capability-model show --model {YourModelID}
 ```
 
-Создание модели возможностей устройства в репозитории корпоративных моделей Plug and Play IoT:
+Создайте модель возможностей устройства в репозитории модели IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot pnp capability-model create --definition {JSONPayload or FilePath} --login {YourCompanyModelRepoConnectionString}
 ```
 
-Нельзя напрямую создать модель в репозитории общедоступной модели.
+Вы не можете непосредственно создать модель в репозитории общедоступной модели.
 
-Обновите модель возможностей устройства в репозитории корпоративных моделей Plug and Play IoT:
+Обновление модели возможностей устройства в репозитории модели IoT Plug and Play:
 
-```cmd/sh
+```azurecli
 az iot pnp capability-model update --definition {JSONPayload or FilePath} --login {YourCompanyModelRepoConnectionString}
 ```
 
-Вы не можете напрямую обновить модель в репозитории общедоступной модели.
+Вы не можете напрямую обновить модель в общедоступном репозитории модели.
 
-Опубликуйте модель возможностей устройства из репозитория Plug and Play компании IoT в общедоступном репозитории моделей. Эта операция делает модель неизменяемой:
+Публикация модели возможностей устройства из репозитория модели IoT Plug and Play в общедоступном репозитории моделей. Эта операция делает модель неизменной:
 
-```cmd/sh
+```azurecli
 az iot pnp capability-model publish --model {YourModelID} --login {YourCompanyModelRepoConnectionString}
 ```
 
-Только партнеры Майкрософт могут публиковать модели в общедоступном репозитории моделей.
+Публиковать модели в репозитории общедоступных моделей могут только партнеры Майкрософт.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом пошаговом руководстве вы узнали, как установить и использовать расширение Интернета вещей Azure для Azure CLI взаимодействия с устройствами Plug and Play. Рекомендуемый следующий шаг — научиться [управлять моделями](./howto-manage-models.md).
+В этой статье вы узнали, как установить и использовать расширение Azure IoT для Azure CLI для взаимодействия с устройствами Plug and Play. Следующий шаг предлагается узнать, как [управлять моделями.](./howto-manage-models.md)

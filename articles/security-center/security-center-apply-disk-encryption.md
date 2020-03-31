@@ -1,6 +1,6 @@
 ---
 title: Шифрование диска в центре безопасности Azure | Документация Майкрософт
-description: В этом документе объясняется, как выполнить рекомендацию Центра безопасности Azure по **применению шифрования дисков**.
+description: В этом документе показано, как реализовать рекомендацию Центра безопасности Azure **Приоритизируйте шифрование диска.**
 services: security-center
 documentationcenter: na
 author: memildin
@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 10/28/2018
 ms.author: memildin
 ms.openlocfilehash: d0f96fe758966a435f8fb8e448e75cbb18b85122
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77604526"
 ---
 # <a name="apply-disk-encryption-in-azure-security-center"></a>Шифрование диска в центре безопасности Azure
@@ -47,7 +47,7 @@ ms.locfileid: "77604526"
 
 Есть разные подходы, используемые при работе с виртуальными машинами Azure. Если у вас есть опыт работы с Azure PowerShell или интерфейсом командной строки Azure, вы можете использовать альтернативные подходы. См. дополнительные сведения о [дисковом шифровании Azure](../security/fundamentals/encryption-overview.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 В этом документе объясняется, как выполнить рекомендацию Центра безопасности "Применение шифрования дисков". Дополнительные сведения о шифровании дисков см. по ссылкам ниже.
 
 * [Encryption and key management with Azure Key Vault](https://azure.microsoft.com/documentation/videos/azurecon-2015-encryption-and-key-management-with-azure-key-vault/) (видео, 36 мин 39 с) — узнайте, как использовать управление шифрованием дисков для защиты данных на виртуальных машинах IaaS и в хранилище ключей Azure.
@@ -56,10 +56,10 @@ ms.locfileid: "77604526"
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Настройка политик безопасности в Центре безопасности Azure](tutorial-security-policy.md) — узнайте, как настраивать политики безопасности.
-* [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md) — узнайте, как наблюдать за работоспособностью ресурсов Azure.
-* [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
-* [Управление рекомендациями по безопасности в Центре безопасности Azure](security-center-recommendations.md) — узнайте, как рекомендации могут помочь вам защитить ресурсы Azure.
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Мониторинг работоспособности в Центре безопасности Azure](security-center-monitoring.md) — Узнайте, как контролировать работоспособность ресурсов Azure.
+* [Управление и реагирование на оповещения о безопасности в Центре безопасности Azure](security-center-managing-and-responding-alerts.md) — Узнайте, как управлять и реагировать на оповещения безопасности.
+* [Управление рекомендациями по безопасности в Центре безопасности Azure](security-center-recommendations.md) — Узнайте, как рекомендации помогают защитить ресурсы Azure.
+* [Блог безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — найдите сообщения в блоге о безопасности и соответствии требованиям Azure.
 
 <!--Image references-->
 [1]: ./media/security-center-apply-disk-encryption/apply-disk-encryption.png

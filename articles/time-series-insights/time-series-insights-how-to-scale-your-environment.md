@@ -1,6 +1,6 @@
 ---
-title: Как масштабировать среду в Azure Time Series Insights | Документация Майкрософт
-description: Узнайте, как масштабировать среду службы "аналитика временных рядов Azure" с помощью портал Azure.
+title: Масштабирование среды - Azure Time Series Insights Документы Майкрософт
+description: Узнайте, как масштабировать среду Исследования времени Azure с помощью портала Azure.
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -12,21 +12,21 @@ ms.topic: conceptual
 ms.date: 01/21/2020
 ms.custom: seodec18
 ms.openlocfilehash: 23efda2793ef5d323089ee5b72fb1ea873de6b20
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76310991"
 ---
 # <a name="how-to-scale-your-time-series-insights-environment"></a>Как масштабировать среду Azure Time Series Insights
 
-В этой статье описывается, как изменить емкость среды "аналитика временных рядов" с помощью [портал Azure](https://portal.azure.com). Емкость — множитель, применяемый к скорости входящих данных, емкости хранилища и затратам, связанным с выбранным номером SKU.
+В этой статье описывается, как изменить емкость среды Time Series Insights с помощью [портала Azure.](https://portal.azure.com) Емкость — множитель, применяемый к скорости входящих данных, емкости хранилища и затратам, связанным с выбранным номером SKU.
 
 Портал Azure можно использовать для увеличения или уменьшения емкости в пределах ценовой категории SKU.
 
 Однако изменение ценовой категории SKU запрещено. Например, среду с ценовой категорией SKU S1 нельзя преобразовать в среду S2 или наоборот.
 
-## <a name="ga-limits"></a>Ограничения в общедоступной версии
+## <a name="ga-limits"></a>Ограничения ГА
 
 [!INCLUDE [Azure Time Series Insights GA limits](../../includes/time-series-insights-ga-limits.md)]
 
@@ -34,24 +34,24 @@ ms.locfileid: "76310991"
 
 1. Найдите и выберите среду Time Series Insights на портале Azure.
 
-1. В меню среды службы "аналитика временных рядов" выберите **Конфигурация хранилища**.
+1. В меню для среды Time Series Insights выберите **конфигурацию хранения.**
 
-   [![настроить емкость аналитики временных рядов](media/scale-your-environment/scale-your-environment-configure.png)](media/scale-your-environment/scale-your-environment-configure.png#lightbox)
+   [![Настройка емкости Time Series Insights](media/scale-your-environment/scale-your-environment-configure.png)](media/scale-your-environment/scale-your-environment-configure.png#lightbox)
 
 1. Настройте ползунок **емкости** соответственно требованиям скорости приема и емкости хранилища. Обратите внимание, что **скорость приема**, **емкость хранилища** и **оценочная стоимость** обновляются динамически, чтобы показать эффект изменения.
 
-   [![настроить среду с помощью ползунка емкости](media/scale-your-environment/scale-your-environment-slider.png)](media/scale-your-environment/scale-your-environment-slider.png#lightbox)
+   [![Налажить среду с помощью ползунка емкости](media/scale-your-environment/scale-your-environment-slider.png)](media/scale-your-environment/scale-your-environment-slider.png#lightbox)
 
    Кроме того, можно ввести число множителя емкости в текстовом поле справа от ползунка.
 
 1. Выберите **Сохранить**, чтобы масштабировать среду. Индикатор хода выполнения будет отображаться, пока изменения не зафиксируются.
 
-1. Убедитесь, что Новая емкость [достаточна для предотвращения регулирования](time-series-insights-diagnose-and-solve-problems.md).
+1. Убедитесь, что новая емкость [достаточна для предотвращения регулирования.](time-series-insights-diagnose-and-solve-problems.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье, посвященной [обзору периода удержания данных в службе "Аналитика временных рядов"](time-series-insights-concepts-retention.md).
 
-- Узнайте, как [настроить хранение данных в службе "аналитика временных рядов Azure](time-series-insights-how-to-configure-retention.md)".
+- Узнайте о [настройке хранения данных в Azure Time Series Insights.](time-series-insights-how-to-configure-retention.md)
 
-- Узнайте о [планировании среды](time-series-insights-environment-planning.md).
+- Узнайте о [планировании среды.](time-series-insights-environment-planning.md)

@@ -1,18 +1,18 @@
 ---
-title: Обзор субъектов Service Fabric Reliable Actors
-description: Введение в модель программирования Reliable Actors Service Fabric, основанную на шаблоне виртуального субъекта.
+title: Сервис Ткань Надежные Актеры Обзор
+description: Введение в сервис Fabric Reliable Actors модели программирования, основанной на шаблоне Виртуального актера.
 author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.author: vturecek
 ms.openlocfilehash: 6aafa2a3372c431f8afa7fad41051c26c3fe5fcd
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645571"
 ---
-# <a name="introduction-to-service-fabric-reliable-actors"></a>Введение в Service Fabric Reliable Actors
+# <a name="introduction-to-service-fabric-reliable-actors"></a>Общие сведения о надежных субъектах Service Fabric
 Субъекты Reliable Actors — это платформа приложений Service Fabric, основанная на шаблоне [виртуальных субъектов](https://research.microsoft.com/en-us/projects/orleans/). API субъектов Reliable Actors предоставляет однопоточную модель программирования, основанную на той надежности и масштабируемости, которые гарантирует Service Fabric.
 
 ## <a name="what-are-actors"></a>Что представляют собой субъекты?
@@ -97,7 +97,7 @@ myActor.DoWorkAsync().get();
 * Доставка сообщений не гарантируется.
 * Субъекты могут получать дубликаты сообщений от одного и того же клиента.
 
-## <a name="concurrency"></a>Параллелизм
+## <a name="concurrency"></a>параллелизм
 В среде выполнения субъектов Reliable Actors для доступа к методам субъектов используется простая модель поочередности. Это означает, что в конкретный момент времени в коде объекта субъекта может быть активен только один поток. Поочередный доступ значительно упрощает параллельные системы, поскольку снимает необходимость в механизмах синхронизации для доступа к данным. Это также означает, что системы нужно проектировать с учетом однопоточного доступа для каждого экземпляра субъекта.
 
 * Экземпляр одного субъекта не может обрабатывать больше одного запроса за раз. Если экземпляр субъекта предназначен для обработки одновременных запросов, он может создавать проблемы для пропускной способности.

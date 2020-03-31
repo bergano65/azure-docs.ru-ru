@@ -16,16 +16,16 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: milanga
 ms.openlocfilehash: 2d746167f993438e5fce467365844df2078c08a6
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77919317"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
 
 > [!NOTE]
-> **Azure Media Face Detectorный** обработчик мультимедиа будет снят с учета. Дату выбытия см. в разделе [устаревшие компоненты](legacy-components.md) .
+> Медиапроцессор **Azure Media Face Detector** будет удален. Для даты выхода на [legacy components](legacy-components.md) пенсию см.
 
 ## <a name="overview"></a>Обзор
 
@@ -55,7 +55,7 @@ API обнаружения и отслеживания лиц обеспечив
 
 Обнаруженные и отслеживаемые лица возвращаются с указанием координат (слева, вверху, ширина и высота), которые обозначают расположение лиц на изображении в пикселях, а также с идентификационным номером лица, означающим отслеживание этого человека. Если лицо в анфас теряется или перекрывается в кадре, его идентификационный номер может быть сброшен, в результате чего нескольким людям назначаются несколько идентификаторов.
 
-## <a id="output_elements"></a>Элементы выходного JSON-файла
+## <a name="elements-of-the-output-json-file"></a><a id="output_elements"></a>Элементы выходного JSON-файла
 
 [!INCLUDE [media-services-analytics-output-json](../../../includes/media-services-analytics-output-json.md)]
 
@@ -167,8 +167,8 @@ API обнаружения и отслеживания лиц обеспечив
 
 || Значения по умолчанию | Максимальные | Минимальные |
 |--- | --- | --- | --- |
-| AggregateEmotionWindowMs |0.5 |2 |0,25|
-| AggregateEmotionIntervalMs |0.5 |1 |0,25|
+| AggregateEmotionWindowMs |0,5 |2 |0,25|
+| AggregateEmotionIntervalMs |0,5 |1 |0,25|
 
 ### <a name="json-output"></a>Выходные данные JSON
 Выходные данные JSON для совокупных эмоций (сокращенные).
@@ -348,7 +348,7 @@ API обнаружения и отслеживания лиц обеспечив
 
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и укажите в файле app.config сведения о подключении, как описано в статье [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл app.config информацией о подключении, как описано в [разработке Media Services с .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 

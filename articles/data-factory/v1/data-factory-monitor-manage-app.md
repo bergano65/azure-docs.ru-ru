@@ -1,5 +1,5 @@
 ---
-title: Мониторинг конвейеров данных и управление ими — Azure
+title: Мониторинг и управление конвейерами данных - Azure
 description: Узнайте, как отслеживать фабрики данных и конвейеры Azure и управлять ими с помощью приложения для мониторинга и управления.
 services: data-factory
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: de56ba1281d0f20c8be838fa1bc9ebc24905b26c
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79260375"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
@@ -159,7 +159,7 @@ ms.locfileid: "79260375"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Description</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
@@ -286,7 +286,7 @@ ms.locfileid: "79260375"
 
 ## <a name="perform-batch-actions"></a>Выполнение пакетных действий
 ### <a name="rerun-selected-activity-windows"></a>Повторное выполнение выбранных окон действий
-Выберите окно действий, нажмите кнопку со стрелкой вниз (первая кнопка на панели команд) и выберите **Выполнить снова** или  / **Rerun with upstream in pipeline** (Повторно выполнить с параметром UpstreamInPipeline). При выборе варианта **Rerun with upstream in pipeline** (Повторно выполнить с параметром UpstreamInPipeline) также будут выполнены все вышестоящие окна действий.
+Выберите окно активности, щелкните вниз стрелка для первой кнопки панели команд и выберите **Rerun** / **Rerun с вверх по течению в конвейере.** При выборе варианта **Rerun with upstream in pipeline** (Повторно выполнить с параметром UpstreamInPipeline) также будут выполнены все вышестоящие окна действий.
     ![Повторное выполнение окна действия](./media/data-factory-monitor-manage-app/ReRunSlice.png)
 
 Кроме того, в списке можно выбрать несколько окон действий и повторно выполнить сразу все эти окна. Вы можете отфильтровать окна действий на основе состояния (например, **Сбой**), а после устранения причины сбоя выполнить окна действий повторно. Дополнительные сведения о фильтрации окон действий см. в следующем разделе.  

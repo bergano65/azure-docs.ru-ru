@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 03/02/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2579748d9c68512e51fe46ec70084c30d06953bc
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79278770"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
@@ -27,7 +27,7 @@ ms.locfileid: "79278770"
 * Oracle Linux 5, 6 и 7 (x86/x64)
 * Red Hat Enterprise Linux Server 5, 6 и 7 (x86/x64)
 * Debian GNU/Linux 6, 7 и 8 (x86/x64)
-* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS и 18,04 (x86/x64)
+* Ubuntu 12.04 LTS, 14.04 LTS, 16.04 LTS, и 18.04 (x86/x64)
 * SUSE Linux Enterprise Server 11 и 12 (x86/x64)
 
 ## <a name="installing-a-linux-hybrid-runbook-worker"></a>Установка гибридной рабочей роли Runbook для Linux
@@ -47,7 +47,7 @@ ms.locfileid: "79278770"
 |Glibc |Библиотека C GNU| 2.5-12 |
 |Openssl| Библиотеки OpenSSL | 1.0 (поддерживается TLS 1.1 и TLS 1.2)|
 |Curl | Веб-клиент cURL | 7.15.5|
-|Python-ctypes | Требуется Python 2. x |
+|Python-ctypes | Python 2.x требуется |
 |PAM | Подключаемые модули аутентификации|
 | **Дополнительный пакет** | **Описание** | **Минимальная версия**|
 | PowerShell Core | Для запуска модулей runbook необходимо установить PowerShell (дополнительные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux)).  | 6.0.0 |
@@ -58,7 +58,7 @@ ms.locfileid: "79278770"
 
 1. Включите решение **Гибридная рабочая роль службы автоматизации** в Azure одним из следующих методов:
 
-   * Добавьте решение **Гибридная Рабочая роль службы автоматизации** в подписку с помощью процедуры, описанной в разделе [Добавление Azure Monitor журналов решения в рабочую область](../log-analytics/log-analytics-add-solutions.md).
+   * Добавьте в подписку решение **Automation Hybrid Worker,** используя процедуру в [системах журналов Add Azure Monitor в рабочее пространство.](../log-analytics/log-analytics-add-solutions.md)
    * Выполните следующий командлет:
 
         ```azurepowershell-interactive
@@ -82,11 +82,11 @@ ms.locfileid: "79278770"
 1. После завершения выполнения команды на странице **Группы гибридных рабочих ролей** на портале Azure отображается новая группа и количество элементов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице **Группы гибридных рабочих ролей** и щелкнуть плитку **Гибридные рабочие роли**. На странице **Гибридные рабочие роли** отображается список элементов группы.
 
 > [!NOTE]
-> Если вы используете Azure Monitor расширение виртуальной машины для Linux для виртуальной машины Azure, рекомендуется установить `autoUpgradeMinorVersion` в значение false, так как автоматическое обновление версий может вызвать проблемы гибридной рабочей роли Runbook. Сведения об обновлении расширения вручную см. в разделе [Azure CLI Deployment ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
+> Если вы используете расширение виртуальной машины Azure Monitor для Linux `autoUpgradeMinorVersion` для Azure VM, мы рекомендуем установить ложные, так как версии автоматического обновления могут вызвать проблемы у гибридного Runbook Worker. Чтобы узнать, как обновить расширение [ ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment)вручную, см.
 
 ## <a name="turning-off-signature-validation"></a>Отключение проверки подписи
 
-По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При выполнении модуля runbook для рабочей роли без подписи вы увидите сообщение об ошибке проверки подписи. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр ИДЕНТИФИКАТОРом рабочей области log Analytics.
+По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При выполнении модуля runbook для рабочей роли без подписи вы увидите сообщение об ошибке проверки подписи. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр идентификатором рабочего пространства анализа журнала.
 
  ```bash
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <LogAnalyticsworkspaceId>

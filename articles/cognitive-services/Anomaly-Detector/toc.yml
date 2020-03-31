@@ -78,6 +78,16 @@
       href: 'https://arxiv.org/abs/1906.03821'
 - name: Ресурсы
   items:
+    - name: Поддержка
+      items:
+        - name: Получение поддержки
+          href: 'https://aka.ms/adsupport'
+        - name: Stack Overflow
+          href: 'https://aka.ms/adso'
+        - name: MSDN
+          href: 'https://aka.ms/admsdn'
+        - name: UserVoice
+          href: 'https://aka.ms/aduservoice'
     - name: Цены
       href: 'https://aka.ms/adpricing'
     - name: Доступность по регионам
@@ -90,13 +100,3 @@
       href: 'https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/'
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-- name: Поддержка
-  items:
-    - name: Получение поддержки
-      href: 'https://aka.ms/adsupport'
-    - name: Stack Overflow
-      href: 'https://aka.ms/adso'
-    - name: MSDN
-      href: 'https://aka.ms/admsdn'
-    - name: UserVoice
-      href: 'https://aka.ms/aduservoice'

@@ -9,12 +9,12 @@ ms.date: 02/11/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 76e34736238273f2af3fccae0ac2b5ed0ff491f0
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: 0c619224201d6225d5e5c127b342f71f2f7fced9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79128346"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79535358"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
 
@@ -27,11 +27,11 @@ ms.locfileid: "79128346"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем можно будет выполнить отработку отказа учетной записи хранения, убедитесь, что выполнены следующие действия.
+Прежде чем вы сможете выполнить сбой учетной записи в учетной записи, убедитесь, что вы выполнили следующий шаг:
 
-- Убедитесь, что ваша учетная запись хранения настроена для использования геоизбыточного хранилища (GRS) или геоизбыточного хранилища с доступом для чтения (RA-GRS). Дополнительные сведения о геоизбыточном хранилище см. в статье [избыточность хранилища Azure](storage-redundancy.md).
+- Убедитесь, что ваша учетная запись хранения настроена для использования геоизбыточного хранилища (GRS) или геоизбыточного хранилища с доступом для чтения (RA-GRS). Для получения дополнительной информации о гео-избыточном хранилище [см.](storage-redundancy.md)
 
 ## <a name="important-implications-of-account-failover"></a>Важные последствия отработки отказа учетной записи
 
@@ -54,7 +54,7 @@ ms.locfileid: "79128346"
 
 3. Убедитесь, что ваша учетная запись хранения настроена для использования геоизбыточного хранилища (GRS) или геоизбыточного хранилища с доступом для чтения (RA-GRS). Если это не так, то выберите **Конфигурация** под разделом **Параметры**, чтобы обновить учетную запись до геоизбыточной. 
 4. Свойство **Время последней синхронизации** указывает на расстояние между дополнительным и основным регионами. **Время последней синхронизации** дает возможность оценить объем потери данных после завершения отработки отказа.
-5. Выберите **Подготовка к отработке отказа (предварительная версия)** . 
+5. Выберите **Подготовка к отработке отказа (предварительная версия)**. 
 6. Просмотрите диалоговое окно подтверждения. Когда будете готовы, введите **Да**, чтобы подтвердить и запустить отработку отказа.
 
     ![Снимок экрана, отображающий диалоговое окно подтверждения в случае отработки отказа учетной записи](media/storage-initiate-account-failover/portal-failover-confirm.png)
@@ -82,7 +82,7 @@ ms.locfileid: "79128346"
     Install-Module Az –Repository PSGallery –AllowClobber
     ```
 
-1. Установите модуль предварительной версии службы хранилища Azure, поддерживающий отработку отказа учетной записи.
+1. Установите модуль предварительного просмотра хранилища Azure, который поддерживает отказ учетной записи:
 
     ```powershell
     Install-Module Az.Storage –Repository PSGallery -RequiredVersion 1.1.1-preview –AllowPrerelease –AllowClobber –Force 
@@ -96,11 +96,11 @@ ms.locfileid: "79128346"
 Invoke-AzStorageAccountFailover -ResourceGroupName <resource-group-name> -Name <account-name> 
 ```
 
-## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+## <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
 
 Для отработки отказа с помощью интерфейса командной строки Azure выполните следующие команды.
 
-```cli
+```azurecli
 az storage account show \ --name accountName \ --expand geoReplicationStats
 az storage account failover \ --name accountName
 ```
@@ -110,5 +110,5 @@ az storage account failover \ --name accountName
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Disaster recovery and storage account failover (preview) in Azure Storage](storage-disaster-recovery-guidance.md) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure)
-- [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
-- [Руководство. Создание высокодоступного приложения с хранилищем BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md) 
+- [Разработка высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
+- [Учебник: Создайте высокодоступное приложение с помощью хранилища Blob](../blobs/storage-create-geo-redundant-storage.md) 

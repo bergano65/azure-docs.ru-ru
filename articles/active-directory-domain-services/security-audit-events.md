@@ -1,6 +1,6 @@
 ---
-title: Включение аудита безопасности для доменных служб Azure AD | Документация Майкрософт
-description: Узнайте, как включить аудит безопасности, чтобы централизовать ведение журнала событий для анализа и оповещений в доменных службах Azure AD.
+title: Включить аудит безопасности для служб доменов Azure AD (ru) Документы Майкрософт
+description: Узнайте, как обеспечить центрирование аудитов безопасности для регистрации событий для анализа и оповещения в службах домена Azure AD
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -12,115 +12,115 @@ ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: iainfou
 ms.openlocfilehash: b2138818a9092999dd54b14664f7146f087c4fed
-ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78328652"
 ---
-# <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Включение аудита безопасности для доменных служб Azure Active Directory
+# <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Включить аудит безопасности для служб домена Active Directory
 
-Аудит безопасности Azure Active Directory доменных служб (Azure AD DS) позволяет выполнять события безопасности потоков Azure для целевых ресурсов. К этим ресурсам относятся служба хранилища Azure, рабочие области Azure Log Analytics или концентратор событий Azure. После включения событий аудита безопасности Azure AD DS отправляет все события аудита для выбранной категории в целевой ресурс.
+Проверки безопасности Azure Active Directory Domain Services (Azure AD DS) позволяют событиям безопасности Azure передавать события безопасности в целевые ресурсы. Эти ресурсы включают в себя рабочие области хранения Azure, рабочие области анализа журналов Azure или концентратор событий Azure. После включения событий аудита безопасности Azure AD DS отправляет все проверенные события для выбранной категории в целевой ресурс.
 
-Вы можете архивировать события в службе хранилища Azure и потоковых событиях в программном обеспечении и службе управления событиями (SIEM), используя концентраторы событий Azure, или выполнить собственный анализ и использовать Log Analytics рабочих областей Azure из портал Azure.
+Вы можете архивировать события в хранилище Azure и передавать события в программное обеспечение для управления безопасностью и управление событиями (SIEM) с помощью концентраторов azure Event, или сделать свой собственный анализ и использовать рабочие области Azure Log Analytics с портала Azure.
 
 > [!IMPORTANT]
-> Аудит безопасности AD DS Azure доступен только для экземпляров на основе Azure Resource Manager. Сведения о том, как выполнить миграцию, см. в статье [миграция AD DS Azure из классической модели виртуальной сети в Диспетчер ресурсов][migrate-azure-adds].
+> Проверки безопасности Azure AD DS доступны только для экземпляров, основанных на ресурсах Azure Manager. Для получения информации о [Migrate Azure AD DS from the Classic virtual network model to Resource Manager][migrate-azure-adds]том, как мигрировать, см.
 
 ## <a name="audit-event-categories"></a>Категории событий аудита
 
-Аудит безопасности Azure AD DS соответствует традиционному аудиту для традиционных AD DS контроллеров домена. В гибридных средах можно повторно использовать существующие шаблоны аудита, чтобы при анализе событий можно было использовать одну и ту же логику. В зависимости от сценария, необходимого для устранения неполадок или анализа, необходимо ориентироваться на различные категории событий аудита.
+Аудит безопасности Azure AD DS согласуется с традиционным аудитом для традиционных контроллеров доменов AD DS. В гибридных средах можно повторно использовать существующие шаблоны аудита, чтобы при анализе событий можно было использовать одну и ту же логику. В зависимости от сценария, необходимого для устранения неполадок или анализа, различные категории событий аудита должны быть целевыми.
 
 Доступны следующие категории событий аудита:
 
-| Имя категории аудита | Description |
+| Имя категории аудита | Описание |
 |:---|:---|
-| Вход в учетную запись|Аудит пытается проверить подлинность данных учетной записи на контроллере домена или в локальном диспетчере учетных записей безопасности (SAM).</p>Параметры и события политики входа и выхода из системы следят за попытками доступа к определенному компьютеру. Параметры и события в этой категории сосредоточены на используемой базе данных учетных записей. Эта категория включает следующие подкатегории:<ul><li>[Проверка учетных данных аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[Аудит проверки подлинности Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Аудит операций билета службы Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[Аудит других событий входа и выхода](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
-| Управление учетными записями|Аудит изменений учетных записей и групп пользователей и компьютеров. Эта категория включает следующие подкатегории:<ul><li>[Аудит управления группами приложений](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[Аудит управления учетными записями компьютеров](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[Аудит управления группами распространения](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[Аудит управления другими учетными записями](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[Аудит управления группами безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[Аудит управления учетными записями пользователей](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|
-| Отслеживание сведений|Выполняет аудит действий отдельных приложений и пользователей на этом компьютере и позволяет понять, как используется компьютер. Эта категория включает следующие подкатегории:<ul><li>[Аудит действий DPAPI](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-dpapi-activity)</li><li>[Действие "аудит PNP"](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-pnp-activity)</li><li>[Аудит создания процесса](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-process-creation)</li><li>[Аудит завершения процесса](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-process-termination)</li><li>[Аудит событий RPC](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-rpc-events)</li></ul>|
-| Доступ к службам каталогов|Аудит пытается получить доступ к объектам в службах домен Active Directory Services (AD DS) и изменять их. Эти события аудита регистрируются только на контроллерах домена. Эта категория включает следующие подкатегории:<ul><li>[Аудит подробной репликации службы каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-detailed-directory-service-replication)</li><li>[Аудит доступа к службе каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-directory-service-access)</li><li>[Аудит изменений службы каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-directory-service-changes)</li><li>[Аудит репликации службы каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-directory-service-replication)</li></ul>|
-| Вход с выходом|Аудит пытается войти на компьютер в интерактивном режиме или по сети. Эти события полезны для отслеживания активности пользователей и выявления потенциальных атак на сетевые ресурсы. Эта категория включает следующие подкатегории:<ul><li>[Аудит блокировки учетных записей](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-account-lockout)</li><li>[Аудит утверждений для пользователей и устройств](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-user-device-claims)</li><li>[Аудит расширенного режима IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-extended-mode)</li><li>[Членство в группах аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-group-membership)</li><li>[Аудит основного режима IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-main-mode)</li><li>[Аудит быстрого режима IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-quick-mode)</li><li>[Аудит выхода из системы](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-logoff)</li><li>[Аудит входа](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-logon)</li><li>[Аудит сервера политики сети](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-network-policy-server)</li><li>[Аудит других событий входа и выхода](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li><li>[Аудит специального входа](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-special-logon)</li></ul>|
-|Доступ к объектам| Аудит пытается получить доступ к конкретным объектам или типам объектов в сети или на компьютере. Эта категория включает следующие подкатегории:<ul><li>[Созданное приложение аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-generated)</li><li>[Аудит служб сертификации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-certification-services)</li><li>[Общая папка с подробными сведениями об аудите](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-detailed-file-share)</li><li>[Файловый ресурс аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-file-share)</li><li>[Файловая система аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-file-system)</li><li>[Подключение платформы фильтра аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-connection)</li><li>[Удаление пакетов для платформы фильтрации аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-packet-drop)</li><li>[Управление маркерами аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-handle-manipulation)</li><li>[Аудит объекта ядра](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kernel-object)</li><li>[Аудит других событий доступа к объектам](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-object-access-events)</li><li>[Реестр аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-registry)</li><li>[Аудит съемных носителей](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-removable-storage)</li><li>[Аудит SAM](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-sam)</li><li>[Аудит промежуточного хранения политики централизованного доступа](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-central-access-policy-staging)</li></ul>|
-|Изменение политики|Аудит изменений важных политик безопасности в локальной системе или сети. Политики обычно устанавливаются администраторами для защиты сетевых ресурсов. Наблюдение за изменениями или попытками изменения этих политик может быть важным аспектом управления безопасностью для сети. Эта категория включает следующие подкатегории:<ul><li>[Аудит изменений политики аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-audit-policy-change)</li><li>[Аудит изменения политики проверки подлинности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-authentication-policy-change)</li><li>[Аудит изменений политики авторизации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-authorization-policy-change)</li><li>[Изменение политики платформы фильтрации аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-policy-change)</li><li>[Аудит изменения политики на уровне правил MPSSVC](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-mpssvc-rule-level-policy-change)</li><li>[Аудит других изменений политики](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-policy-change-events)</li></ul>|
-|Использование привилегий| Аудит использования определенных разрешений в одной или нескольких системах. Эта категория включает следующие подкатегории:<ul><li>[Аудит использования неконфиденциальных привилегий](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-non-sensitive-privilege-use)</li><li>[Аудит использования привилегий с учетом секрета](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-sensitive-privilege-use)</li><li>[Аудит событий использования других привилегий](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-privilege-use-events)</li></ul>|
-|Система| Выполняет аудит изменений на уровне системы на компьютере, не входящем в другие категории, и имеет потенциальные последствия для безопасности. Эта категория включает следующие подкатегории:<ul><li>[Аудит драйвера IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-driver)</li><li>[Аудит других системных событий](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-system-events)</li><li>[Аудит изменений состояния безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-state-change)</li><li>[Аудит расширения системы безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-system-extension)</li><li>[Аудит целостности системы](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-system-integrity)</li></ul>|
+| Логон учетной записи|Аудит пытается проверить подлинность данных учетной записи на контроллере домена или на локальном менеджере учетных записей безопасности (SAM).</p>Настройки и события политики Logon и Logoff отслеживают попытки доступа к определенному компьютеру. Настройки и события в этой категории фокусируются на используемой базе данных учетных записей. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит проверки учетных данных](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[Аудит службы проверки подлинности Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Аудит операций с билетами службы Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[Аудит других событий входа и выхода](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
+| Управление учетными записями|Аудит изменений в учетных записях пользователей и компьютера хиноу-аккаунтах и группах. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит управления группами приложений](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[Аудит управления учетными записями компьютеров](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[Аудит управления группами распространения](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[Аудит Другого управления счетами](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[Аудит управления группами безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[Аудит управления учетными записями пользователей](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|
+| Отслеживание деталей|Аудит деятельности отдельных приложений и пользователей на этом компьютере, а также понять, как используется компьютер. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит активности DPAPI](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-dpapi-activity)</li><li>[Аудит деятельности PNP](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-pnp-activity)</li><li>[Аудит создания процессов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-process-creation)</li><li>[Аудит завершения процессов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-process-termination)</li><li>[Аудит событий RPC](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-rpc-events)</li></ul>|
+| Доступ к справочнику|Аудит пытается получить доступ к объектам и модифицировать объекты в службах доменов Active Directory (AD DS). Эти события аудита регистрируются только на контроллерах доменов. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит подробной репликации службы каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-detailed-directory-service-replication)</li><li>[Аудит доступа к службе каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-directory-service-access)</li><li>[Аудит изменения службы каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-directory-service-changes)</li><li>[Аудит репликации службы каталогов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-directory-service-replication)</li></ul>|
+| Логон-Логофф|Аудит пытается войти на компьютер в интерактивном режиме или через сеть. Эти события полезны для отслеживания активности пользователей и выявления потенциальных атак на сетевые ресурсы. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит блокировки учетных записей](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-account-lockout)</li><li>[Аудит заявок пользователей или устройств на доступ](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-user-device-claims)</li><li>[Аудит расширенного режима IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-extended-mode)</li><li>[Аудит участия в группе](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-group-membership)</li><li>[Аудит основного режима IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-main-mode)</li><li>[Аудит быстрого режима IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-quick-mode)</li><li>[Аудит выхода из системы](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-logoff)</li><li>[Аудит входа в систему](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-logon)</li><li>[Аудит сервера политики сети](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-network-policy-server)</li><li>[Аудит других событий входа и выхода](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li><li>[Аудит специального входа](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-special-logon)</li></ul>|
+|Доступ к объектам| Аудит пытается получить доступ к определенным объектам или типам объектов в сети или на компьютере. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит событий, создаваемых приложениями](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-generated)</li><li>[Аудит служб сертификации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-certification-services)</li><li>[Аудит сведений об общем файловом ресурсе](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-detailed-file-share)</li><li>[Аудит общего файлового ресурса](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-file-share)</li><li>[Система аудита файлов](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-file-system)</li><li>[Аудит подключения платформы фильтрации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-connection)</li><li>[Аудит отбрасывания пакетов платформой фильтрации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-packet-drop)</li><li>[Манипуляция с ревизией](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-handle-manipulation)</li><li>[Объект аудита ядра](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kernel-object)</li><li>[Аудит других событий доступа к объектам](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-object-access-events)</li><li>[Реестр аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-registry)</li><li>[Аудит съемного хранилища](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-removable-storage)</li><li>[Аудит диспетчера учетных записей безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-sam)</li><li>[Аудит сверки с централизованной политикой доступа](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-central-access-policy-staging)</li></ul>|
+|Изменение политики|Аудит изменяет важные политики безопасности в локальной системе или сети. Политики обычно устанавливаются администраторами для обеспечения безопасности сетевых ресурсов. Мониторинг изменений или попыток изменить эти политики может быть важным аспектом управления безопасностью для сети. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит изменения политики аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-audit-policy-change)</li><li>[Аудит изменения политики проверки подлинности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-authentication-policy-change)</li><li>[Аудит изменения политики авторизации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-authorization-policy-change)</li><li>[Аудит изменения политики платформы фильтрации](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-policy-change)</li><li>[Аудит изменения политики на уровне правил MPSSVC](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-mpssvc-rule-level-policy-change)</li><li>[Аудит других изменений политики](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-policy-change-events)</li></ul>|
+|Использование привилегий| Аудит использования определенных разрешений на одной или нескольких системах. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит использования привилегий, не затрагивающих конфиденциальные данные](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-non-sensitive-privilege-use)</li><li>[Аудит использования привилегий, затрагивающих конфиденциальные данные](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-sensitive-privilege-use)</li><li>[Аудит других событий использования привилегий](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-privilege-use-events)</li></ul>|
+|Система| Аудит системных изменений на уровне компьютера, не включенных в другие категории и которые имеют потенциальные последствия для безопасности. Эта категория включает в себя следующие подкатегории:<ul><li>[Аудит драйвера IPsec](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-driver)</li><li>[Аудит других системных событий](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-system-events)</li><li>[Аудит изменения состояния безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-state-change)</li><li>[Аудит расширения системы безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-system-extension)</li><li>[Аудит целостности системы](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-system-integrity)</li></ul>|
 
-## <a name="event-ids-per-category"></a>Идентификаторы событий для каждой категории
+## <a name="event-ids-per-category"></a>Ит-икс событий для категории
 
- Аудит безопасности Azure AD DS записывает следующие идентификаторы событий, когда конкретное действие активирует событие, подкоторое аудиту:
+ Аудит безопасности Azure AD DS записывает следующие инаки событий, когда конкретное действие запускает проверяемое событие:
 
-| Имя категории событий | Идентификаторы событий |
+| Название категории событий | Идентификаторы событий |
 |:---|:---|
-|Безопасность входа в учетную запись|4767, 4774, 4775, 4776, 4777|
-|Безопасность управления учетными записями|4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4738, 4740, 4741, 4742, 4743, 4754, 4755, 4756, 4757, 4758, 4764, 4765, 4766, 4780, 4781|
-|Безопасность отслеживания сведений|None|
-|Безопасность доступа к DS|5136, 5137, 5138, 5139, 5141|
-|Безопасность входа в систему|4624, 4625, 4634, 4647, 4648, 4672, 4675, 4964|
-|Безопасность доступа к объектам|None|
+|Безопасность входа в журнал аккаунтов|4767, 4774, 4775, 4776, 4777|
+|Безопасность управления счетами|4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4738, 4740, 4741, 4742, 4743, 4754, 4755, 4756, 4757, 4758, 4764, 4765, 4766, 4780, 4781, 4782, 4793, 4798, 4799, 5376, 5377|
+|Безопасность отслеживания деталей|None|
+|Безопасность доступа DS|5136, 5137, 5138, 5139, 5141|
+|Безопасность Логон-Логофф|4624, 4625, 4634, 4647, 4648, 4672, 4675, 4964|
+|Безопасность доступа к объекту|None|
 |Безопасность изменения политики|4670, 4703, 4704, 4705, 4706, 4707, 4713, 4715, 4716, 4717, 4718, 4719, 4739, 4864, 4865, 4866, 4867, 4904, 4906, 4911, 4912|
-|Безопасность использование привилегий|4985|
+|Привилегия Использование безопасности|4985|
 |Безопасность системы|4612, 4621|
 
-## <a name="security-audit-destinations"></a>Назначения аудита безопасности
+## <a name="security-audit-destinations"></a>Направления аудита безопасности
 
-Вы можете использовать службу хранилища Azure, концентраторы событий Azure или рабочие области Azure Log Analytics в качестве целевого ресурса для аудита AD DS безопасности Azure. Эти назначения можно объединять. Например, вы можете использовать службу хранилища Azure для архивации событий аудита безопасности, но рабочую область Azure Log Analytics для анализа и получения сведений в краткосрочной.
+В качестве целевого ресурса для аудита dS-аудитов Azure AD можно использовать концентраторы azure Storage, Azure Event hubs или Azure Log Analytics. Эти направления можно комбинировать. Например, можно использовать Хранилище Azure для архивирования событий аудита безопасности, а также рабочее пространство Analytics журналов Azure для анализа и отчета об информации в краткосрочной перспективе.
 
-В следующей таблице описаны сценарии для каждого типа ресурса назначения.
+В следующей таблице описаны сценарии для каждого типа ресурсов назначения.
 
 > [!IMPORTANT]
-> Прежде чем включать аудит безопасности Azure AD DS, необходимо создать целевой ресурс. Эти ресурсы можно создать с помощью портал Azure, Azure PowerShell или Azure CLI.
+> Перед тем, как включить аудит безопасности Azure AD DS, необходимо создать целевой ресурс. Вы можете создать эти ресурсы с помощью портала Azure, Azure PowerShell или Azure CLI.
 
 | Целевой ресурс | Сценарий |
 |:---|:---|
-|Хранилище Azure| Этот целевой объект следует использовать, если основным необходимо хранить события аудита безопасности в целях архивирования. Другие целевые объекты можно использовать в целях архивирования, однако эти целевые объекты предоставляют возможности, которые выходят за пределы основного нужды в архивации. <br /><br />Прежде чем включать события аудита безопасности Azure AD DS, сначала [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md).|
-|Центры событий Azure| Этот целевой объект следует использовать, когда основная потребность заключается в совместном использовании событий аудита безопасности с дополнительным программным обеспечением, например программным обеспечением анализа данных или программным обеспечением для управления & событий (SIEM).<br /><br />Прежде чем включать события аудита безопасности Azure AD DS, [Создайте концентратор событий с помощью портал Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create)|
-|Рабочая область Azure Log Analytics| Этот целевой объект следует использовать, если необходимо проанализировать и проверить безопасные аудиты портал Azure напрямую.<br /><br />Прежде чем включать события аудита безопасности Azure AD DS, [Создайте рабочую область log Analytics в портал Azure.](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)|
+|Хранилище Azure| Эта цель должна использоваться, когда ваша основная потребность заключается в хранении событий аудита безопасности для архивных целей. Другие цели могут быть использованы для архивных целей, однако эти цели обеспечивают возможности, выходящие за рамки первичной потребности в архивировании. <br /><br />Перед тем, как включить события аудита безопасности Azure AD DS, сначала [создайте учетную запись хранения Azure.](../storage/common/storage-account-create.md)|
+|Центры событий Azure| Эта цель должна использоваться, когда ваша основная потребность заключается в обмене событиями аудита безопасности с дополнительным программным обеспечением, таким как программное обеспечение для анализа данных или информации о безопасности & программное обеспечение для управления событиями (SIEM).<br /><br />Перед тем, как включить события аудита безопасности Azure AD DS, [создайте концентратор событий с помощью портала Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create)|
+|Рабочее пространство аналитики журналов Azure| Эта цель должна использоваться, когда основной потребностью является анализ и обзор безопасных аудитов с портала Azure напрямую.<br /><br />Перед тем, как включить события аудита безопасности Azure AD DS, [создайте рабочее пространство для анализа журналов на портале Azure.](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)|
 
-## <a name="enable-security-audit-events-using-the-azure-portal"></a>Включение событий аудита безопасности с помощью портал Azure
+## <a name="enable-security-audit-events-using-the-azure-portal"></a>Включить события аудита безопасности с помощью портала Azure
 
-Чтобы включить AD DS событий аудита безопасности Azure с помощью портал Azure, выполните следующие действия.
+Чтобы включить события аудита безопасности Azure AD DS с помощью портала Azure, выполните следующие шаги.
 
 > [!IMPORTANT]
-> Аудиты безопасности AD DS Azure не ретроактивного. Вы не можете получить или воспроизвести события из прошлого. AD DS Azure может отсылать события, происходящие только после включения аудита безопасности.
+> Аудит безопасности Azure AD DS не имеет обратной силы. Вы не можете получить или воспроизвести события из прошлого. DD Azure AD может отправлять события, возникающие после включения аудита безопасности.
 
 1. Войдите на портал Azure по адресу https://portal.azure.com.
-1. В верхней части портал Azure найдите и выберите **доменные службы Azure AD**. Выберите управляемый домен, например *aaddscontoso.com*.
-1. В окне AD DS Azure выберите **параметры диагностики** в левой части.
-1. Диагностика не настраивается по умолчанию. Чтобы начать работу, выберите **Добавить параметр диагностики**.
+1. В верхней части портала Azure ищите **службы домена Azure AD.** Выберите управляемый домен, например *aaddscontoso.com.*
+1. В окне Azure AD DS выберите **настройки диагностики** на левой стороне.
+1. Диагностика не настраивается по умолчанию. Чтобы начать работу, выберите **Дополнительную диагностическую настройку.**
 
-    ![Добавление параметра диагностики для доменных служб Azure AD](./media/security-audit-events/add-diagnostic-settings.png)
+    ![Добавление диагностической настройки для служб доменов Azure AD](./media/security-audit-events/add-diagnostic-settings.png)
 
-1. Введите имя конфигурации диагностики, например *aadds-Audit*.
+1. Введите имя для диагностической конфигурации, например *aadds-аудит.*
 
-    Установите флажок для нужного назначения аудита безопасности. Вы можете выбрать учетную запись хранения Azure, концентратор событий Azure или рабочую область Log Analytics. Эти целевые ресурсы уже должны существовать в подписке Azure. Вы не можете создать ресурсы назначения в этом мастере.
+    Проверьте поле для назначения аудита безопасности, который вы хотите. Вы можете выбрать учетную запись хранения Azure, концентратор событий Azure или рабочее пространство для аналитики журналов. Эти ресурсы назначения уже должны существовать в подписке Azure. Вы не можете создать ресурсы назначения в этом мастере.
 
-    ![Включение отслеживания необходимого назначения и типа событий аудита](./media/security-audit-events/diagnostic-settings-page.png)
+    ![Включить требуемое назначение и тип событий аудита для фиксации](./media/security-audit-events/diagnostic-settings-page.png)
 
-    * **Служба хранилища Azure**
-        * Выберите **архивировать в учетной записи хранения**, а затем щелкните **настроить**.
-        * Выберите **подписку** и **учетную запись хранения** , которые вы хотите использовать для архивации событий аудита безопасности.
-        * Когда все будет готово, нажмите кнопку **ОК**.
-    * **Концентраторы событий Azure**
-        * Выберите **поток в концентраторе событий**, а затем щелкните **настроить**.
-        * Выберите **подписку** и **пространство имен концентратора событий**. При необходимости также выберите **имя концентратора событий** , а затем **имя политики концентратора событий**.
-        * Когда все будет готово, нажмите кнопку **ОК**.
-    * **Рабочие области аналитики журналов Azure**
-        * Выберите **отправить log Analytics**, а затем выберите **подписку** и **log Analytics рабочую область** , которую вы хотите использовать для хранения событий аудита безопасности.
+    * **Хранилище Azure**
+        * Выберите **Архив для учетной записи хранения,** а затем выберите **Настройка.**
+        * Выберите учетную **запись подписки** и **хранилища,** которые вы хотите использовать для архивирования событий аудита безопасности.
+        * Когда готовы, выберите **OK**.
+    * **Центры событий Azure**
+        * Выберите **Stream в концентратор событий,** а затем выберите **настройку.**
+        * Выберите пространство имен **концентратора** **событий.** При необходимости также выберите **имя концентратора событий,** а затем **имя политика концентратора событий.**
+        * Когда готовы, выберите **OK**.
+    * **Аналитические рабочие области Azure Log**
+        * Выберите **Send to Log Analytics,** затем выберите **рабочее пространство для** анализа **подписки** и журналов, которые вы хотите использовать для хранения событий аудита безопасности.
 
-1. Выберите категории журналов, которые требуется добавить для конкретного целевого ресурса. При отправке событий аудита в учетную запись хранения Azure можно также настроить политику хранения, определяющую количество дней хранения данных. Значение по умолчанию *0* оставляет все данные и не поворачивает события по истечении определенного периода времени.
+1. Выберите категории журналов, которые вы хотите включить для конкретного целевого ресурса. При отправке событий аудита в учетную запись Хранилища Azure можно настроить политику удержания, определяющую количество дней для хранения данных. Настройка по умолчанию *0* сохраняет все данные и не вращает события по истечении определенного периода времени.
 
-    Можно выбрать разные категории журналов для каждого целевого ресурса в пределах одной конфигурации. Эта возможность позволяет выбрать, какие категории журналов необходимо сохранить для Log Analytics и какие категории следует архивировать, например.
+    Можно выбрать различные категории журналов для каждого целевого ресурса в рамках одной конфигурации. Эта возможность позволяет выбрать, какие категории журналов вы хотите сохранить для журнала Analytics и какие журналы категорий, которые вы хотите архивировать, например.
 
-1. По завершении нажмите кнопку **сохранить** , чтобы зафиксировать изменения. Целевые ресурсы начинают принимать события аудита AD DS безопасности Azure вскоре после сохранения конфигурации.
+1. При этом выберите **Сохранить** для фиксации изменений. Целевые ресурсы начинают получать события аудита безопасности Azure AD DS вскоре после сохранения конфигурации.
 
-## <a name="enable-security-audit-events-using-azure-powershell"></a>Включение событий аудита безопасности с помощью Azure PowerShell
+## <a name="enable-security-audit-events-using-azure-powershell"></a>Включить события аудита безопасности с помощью Azure PowerShell
 
-Чтобы включить AD DS событий аудита безопасности Azure с помощью Azure PowerShell, выполните следующие действия. При необходимости сначала [установите модуль Azure PowerShell и подключитесь к подписке Azure](/powershell/azure/install-az-ps).
+Чтобы включить события аудита безопасности Azure AD DS с помощью Azure PowerShell, выполните следующие шаги. При необходимости сначала [установите модуль Azure PowerShell и подключитесь к подписке Azure.](/powershell/azure/install-az-ps)
 
 > [!IMPORTANT]
-> Аудиты безопасности AD DS Azure не ретроактивного. Вы не можете получить или воспроизвести события из прошлого. AD DS Azure может отсылать события, происходящие только после включения аудита безопасности.
+> Аудит безопасности Azure AD DS не имеет обратной силы. Вы не можете получить или воспроизвести события из прошлого. DD Azure AD может отправлять события, возникающие после включения аудита безопасности.
 
-1. Аутентификация в подписке Azure с помощью командлета [Connect-азаккаунт](/powershell/module/Az.Accounts/Connect-AzAccount) . При появлении запроса введите учетные данные.
+1. Попроверьте подлинность подписки Azure с помощью cmdlet [Connect-AzAccount.](/powershell/module/Az.Accounts/Connect-AzAccount) По запросу введите учетные данные учетной записи.
 
     ```azurepowershell
     Connect-AzAccount
@@ -128,23 +128,23 @@ ms.locfileid: "78328652"
 
 1. Создайте целевой ресурс для событий аудита безопасности.
 
-    * Служба **хранилища Azure** - [создать учетную запись хранения с помощью Azure PowerShell](../storage/common/storage-account-create.md?tabs=azure-powershell)
-    * **Концентраторы событий Azure** - [создать концентратор событий с помощью Azure PowerShell](../event-hubs/event-hubs-quickstart-powershell.md). Также может потребоваться использовать командлет [New-азевенсубаусоризатионруле](/powershell/module/az.eventhub/new-azeventhubauthorizationrule) , чтобы создать правило авторизации, которое предоставляет Azure AD DS разрешения для *пространства имен*концентратора событий. Правило авторизации должно включать права на **Управление**, **прослушивание**и **отправку** .
+    * **Хранилище Azure** - [Создайте учетную запись хранения с помощью Azure PowerShell](../storage/common/storage-account-create.md?tabs=azure-powershell)
+    * **Концентраторы событий Azure** - [создают концентратор событий с помощью Azure PowerShell.](../event-hubs/event-hubs-quickstart-powershell.md) Возможно, вам также потребуется использовать смдlet [New-AzEventHubAuthorization](/powershell/module/az.eventhub/new-azeventhubauthorizationrule) для создания правила авторизации, которое предоставляет разрешения Azure AD DS *в пространстве имен*концентратора событий. Правило авторизации должно включать права **управления,** **прослушивания**и **отправки.**
 
         > [!IMPORTANT]
-        > Убедитесь, что правило авторизации задано для пространства имен концентратора событий, а не самого концентратора событий.
+        > Убедитесь, что вы установите правило авторизации в пространстве имен концентратора событий, а не в самом концентраторе событий.
 
-    * **Рабочие области аналитики журналов Azure** - [создать log Analytics рабочую область с Azure PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
+    * **Аналитические рабочие области** - Azure Log[создают рабочее пространство для анализа журналов с помощью Azure PowerShell.](../azure-monitor/learn/quick-create-workspace-posh.md)
 
-1. Получите идентификатор ресурса для управляемого домена Azure AD DS с помощью командлета [Get-азресаурце](/powershell/module/Az.Resources/Get-AzResource) . Создайте переменную с именем *$aadds. ResourceId* для хранения значения:
+1. Получите идентификатор ресурсов для управляемого домена Azure AD DS с помощью cmdlet [Get-AzResource.](/powershell/module/Az.Resources/Get-AzResource) Создайте переменную, названную *$aadds. ResourceId* для удержания значения:
 
     ```azurepowershell
     $aadds = Get-AzResource -name aaddsDomainName
     ```
 
-1. Настройте параметры диагностики Azure с помощью командлета [Set-аздиагностиксеттинг](/powershell/module/Az.Monitor/Set-AzDiagnosticSetting) , чтобы использовать целевой ресурс для событий аудита безопасности доменных служб Azure AD. В следующих примерах переменная *$aadds. ResourceId* используется на предыдущем шаге.
+1. Настройте настройки Azure Diagnostic с помощью cmdlet [Set-AzDiagnosticSetting](/powershell/module/Az.Monitor/Set-AzDiagnosticSetting) для использования целевого ресурса для событий аудита безопасности azure AD Domain Services. В следующих примерах переменная *$aadds. ResourceId* используется с предыдущего шага.
 
-    * Служба **хранилища Azure** . Замените *сторажеаккаунтид* именем своей учетной записи хранения:
+    * **Хранилище Azure** - Заменить *хранилищеAccountId* на имя учетной записи хранилища:
 
         ```powershell
         Set-AzDiagnosticSetting `
@@ -153,7 +153,7 @@ ms.locfileid: "78328652"
             -Enabled $true
         ```
 
-    * **Концентраторы событий Azure** — замените *eventHubName* именем концентратора событий, а *евенсубрулеид* — идентификатором правила авторизации:
+    * **Концентраторы событий Azure** - Заменить *eventHubName* с именем вашего концентратора событий и *eventHubRuleId* идентификатором правил авторизации:
 
         ```powershell
         Set-AzDiagnosticSetting -ResourceId $aadds.ResourceId `
@@ -162,7 +162,7 @@ ms.locfileid: "78328652"
             -Enabled $true
         ```
 
-    * **Рабочие области аналитики журналов Azure** — замените *workspaceId* на идентификатор рабочей области log Analytics:
+    * **Аналитические рабочие области Azure Log** - Заменить *workspaceId* идентификатором рабочего пространства log Analytics:
 
         ```powershell
         Set-AzureRmDiagnosticSetting -ResourceId $aadds.ResourceId `
@@ -170,20 +170,20 @@ ms.locfileid: "78328652"
             -Enabled $true
         ```
 
-## <a name="query-and-view-security-audit-events-using-azure-monitor"></a>Запрос и Просмотр событий аудита безопасности с помощью Azure Monitor
+## <a name="query-and-view-security-audit-events-using-azure-monitor"></a>Запрос и просмотр событий аудита безопасности с помощью Azure Monitor
 
-Аналитические рабочие области журналов позволяют просматривать и анализировать события аудита безопасности с помощью Azure Monitor и языка запросов Kusto. Этот язык запросов предназначен для использования только для чтения, может похвастаться возможности Power Analytics с простым и удобочитаемым синтаксисом. Дополнительные сведения о том, как приступить к работе с языками запросов Kusto, см. в следующих статьях:
+Рабочие области входа в журналы позволяют просматривать и анализировать события аудита безопасности с помощью Azure Monitor и языка запросов Kusto. Этот язык запросов предназначен для использования только для чтения, который может похвастаться аналитическими возможностями с простым для чтения синтаксисом. Для получения дополнительной информации, чтобы начать работу с языками запроса Kusto, см.
 
 * [Документация по Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
-* [Начало работы с Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md)
+* [Начало работы со службой Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md)
 * [Начало работы с запросами к журналам Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 * Узнайте, как [создавать панели мониторинга данных Log Analytics и предоставлять к ним общий доступ](../azure-monitor/learn/tutorial-logs-dashboards.md).
 
-Чтобы начать анализ событий аудита безопасности из AD DS Azure, можно использовать следующие примеры запросов.
+Следующие выборочные запросы могут быть использованы для начала анализа событий аудита безопасности с Azure AD DS.
 
-### <a name="sample-query-1"></a>Образец запроса 1
+### <a name="sample-query-1"></a>Пример запроса 1
 
-Просмотреть все события блокировки учетной записи за последние семь дней:
+Просмотр всех событий блокировки учетной записи за последние семь дней:
 
 ```Kusto
 AADDomainServicesAccountManagement
@@ -191,9 +191,9 @@ AADDomainServicesAccountManagement
 | where OperationName has "4740"
 ```
 
-### <a name="sample-query-2"></a>Образец запроса 2
+### <a name="sample-query-2"></a>Пример запроса 2
 
-Просмотр всех событий блокировки учетной записи (*4740*) с 3 февраля 2020 в 9:00 и 10 февраля 2020 полночь, отсортированные по возрастанию на дату и время:
+Посмотреть все события блокировки учетной записи (*4740*) между 3 февраля 2020 в 9 утра и 10 февраля 2020 полночь, отсортированы восходящей по дате и времени:
 
 ```Kusto
 AADDomainServicesAccountManagement
@@ -202,9 +202,9 @@ AADDomainServicesAccountManagement
 | sort by TimeGenerated asc
 ```
 
-### <a name="sample-query-3"></a>Образец запроса 3
+### <a name="sample-query-3"></a>Пример запроса 3
 
-Просмотр событий входа в учетную запись семь дней назад (с) для учетной записи с именем "пользователь":
+Просмотр событий регистрации учетной записи семь дней назад (с этого момента) для пользователя, названного пользователем:
 
 ```Kusto
 AADDomainServicesAccountLogon
@@ -212,9 +212,9 @@ AADDomainServicesAccountLogon
 | where "user" == tolower(extract("Logon Account:\t(.+[0-9A-Za-z])",1,tostring(ResultDescription)))
 ```
 
-### <a name="sample-query-4"></a>Образец запроса 4
+### <a name="sample-query-4"></a>Пример запроса 4
 
-Просмотр событий входа в учетную запись за семь дней назад с учетной записью с именем пользователя, пытающейся выполнить вход с использованием неправильного пароля (*0xC0000006a*):
+Просмотр событий регистрации учетной записи семь дней назад с этого момента для учетной записи, названной пользователем, который пытался войти в систему с помощью плохого пароля (*0xC0000006a):*
 
 ```Kusto
 AADDomainServicesAccountLogon
@@ -223,9 +223,9 @@ AADDomainServicesAccountLogon
 | where "0xc000006a" == tolower(extract("Error Code:\t(.+[0-9A-Za-z])",1,tostring(ResultDescription)))
 ```
 
-### <a name="sample-query-5"></a>Образец запроса 5
+### <a name="sample-query-5"></a>Пример запроса 5
 
-Просмотр событий входа в учетную запись за семь дней назад с учетной записью с именем пользователя, пытающейся выполнить вход, пока учетная запись была заблокирована (*0xC0000234*):
+Просмотр событий регистрации учетной записи семь дней назад с этого момента для учетной записи, названной пользователем, который пытался войти в систему, в то время как учетная запись была заблокирована (*0xC0000234):*
 
 ```Kusto
 AADDomainServicesAccountLogon
@@ -234,9 +234,9 @@ AADDomainServicesAccountLogon
 | where "0xc0000234" == tolower(extract("Error Code:\t(.+[0-9A-Za-z])",1,tostring(ResultDescription)))
 ```
 
-### <a name="sample-query-6"></a>Образец запроса 6
+### <a name="sample-query-6"></a>Пример запроса 6
 
-Просмотр числа событий входа в учетную запись за семь дней назад после всех попыток входа, выполненных для всех заблокированных пользователей:
+Просмотр числа событий регистрации учетной записи семь дней назад для всех попыток входной связи, которые произошли для всех заблокированных пользователей:
 
 ```Kusto
 AADDomainServicesAccountLogon
@@ -247,12 +247,12 @@ AADDomainServicesAccountLogon
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Конкретные сведения о Kusto см. в следующих статьях:
+Для получения конкретной информации о Kusto, см.
 
-* [Общие сведения о](/azure/kusto/query/) языке запросов Kusto.
-* [Руководство по Kusto](/azure/kusto/query/tutorial) для ознакомления с основами запросов.
-* [Примеры запросов](/azure/kusto/query/samples) , которые помогут вам изучить новые способы просмотра данных.
-* Kusto [рекомендации](/azure/kusto/query/best-practices) по оптимизации запросов в случае успеха.
+* [Обзор](/azure/kusto/query/) языка запросов Kusto.
+* [Kusto учебник,](/azure/kusto/query/tutorial) чтобы ознакомить вас с основами запроса.
+* [Примеры запросов,](/azure/kusto/query/samples) которые помогут вам узнать новые способы просмотра данных.
+* Kusto [передовой практики](/azure/kusto/query/best-practices) для оптимизации ваших запросов на успех.
 
 <!-- LINKS - Internal -->
 [migrate-azure-adds]: migrate-from-classic-vnet.md

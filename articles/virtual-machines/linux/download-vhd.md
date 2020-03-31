@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 08/21/2019
 ms.author: cynthn
 ms.openlocfilehash: 02c3ee483e6a31960fd5123070a49f568ac4c690
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78968798"
 ---
 # <a name="download-a-linux-vhd-from-azure"></a>Скачивание виртуального жесткого диска Linux из Azure
@@ -49,17 +49,17 @@ VHD невозможно скачать из Azure, если он подключ
 Для использования VHD в качестве диска для нового экземпляра существующей виртуальной машины или диска данных выполните следующие действия:
 
 1.  Войдите на [портал Azure](https://portal.azure.com/).
-2.  В меню слева выберите **Виртуальные машины**.
+2.  В левом меню выберите **виртуальные машины.**
 3.  Выберите виртуальную машину из списка.
-4.  На странице виртуальной машины выберите пункт **прерывать**.
+4.  На странице для VM выберите **Stop**.
 
     ![Остановка виртуальной машины](./media/download-vhd/export-stop.png)
 
 ## <a name="generate-sas-url"></a>Создание URL-адреса SAS
 
-Чтобы скачать VHD-файл, необходимо создать [подписанный URL-адрес (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Когда этот URL-адрес создан, ему назначается срок действия.
+Чтобы загрузить файл VHD, необходимо создать [URL-адрес общей подписи доступа (SAS).](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) Когда этот URL-адрес создан, ему назначается срок действия.
 
-1.  В меню страницы виртуальной машины выберите **диски**.
+1.  В меню страницы для VM выберите **диски.**
 2.  Выберите диск операционной системы для виртуальной машины и щелкните **Экспорт диска**.
 3.  Щелкните **Создать URL-адрес**.
 
@@ -69,11 +69,11 @@ VHD невозможно скачать из Azure, если он подключ
 
 1.  Под созданным URL-адресом щелкните ссылку **Скачать VHD-файл**.
 **
-    ![скачать VHD](./media/download-vhd/export-download.png)
+    ![Скачать VHD](./media/download-vhd/export-download.png)
 
-2.  Чтобы начать загрузку, может потребоваться выбрать **сохранить** в браузере. По умолчанию VHD-файлу присваивается имя *abcd*.
+2.  Возможно, вам придется выбрать **Сохранить** в браузере, чтобы начать загрузку. По умолчанию VHD-файлу присваивается имя *abcd*.
 
-    ![Выберите сохранить в браузере.](./media/download-vhd/export-save.png)
+    ![Выберите Сохранить в браузере](./media/download-vhd/export-save.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

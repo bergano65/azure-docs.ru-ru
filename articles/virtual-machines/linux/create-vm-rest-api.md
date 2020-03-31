@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Linux с REST API
+title: Создание Linux VM с помощью REST API
 description: Сведения о создании виртуальной машины Linux, которая использует управляемые диски и проверку подлинности SSH с Azure REST API, в Azure.
 author: cynthn
 ms.service: virtual-machines-linux
@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: cynthn
 ms.openlocfilehash: 1594c030839cccdd48c4b032c6ad92f746f78e26
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78970269"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
@@ -45,8 +45,8 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 | Заголовок запроса   | Описание |
 |------------------|-----------------|
-| *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
-| *Authorization:* | Обязательный элемент. Задайте допустимый [маркер доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
+| *Тип контента:*  | Обязательный элемент. Задайте значение `application/json`. |
+| *Авторизации:* | Обязательный элемент. Задайте допустимый  [маркер доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |
 
 Общие сведения о работе с запросами REST API см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
@@ -54,10 +54,10 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Для создания текста запроса используются следующие общие определения.
 
-| name                       | Обязательно | Type                                                                                | Описание  |
+| name                       | Обязательно | Тип                                                                                | Описание  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
-| location                   | Да     | string                                                                              | Расположение ресурса. |
-| name                       |          | string                                                                              | Имя виртуальной машины. |
+| location                   | True     | строка                                                                              | Расположение ресурса. |
+| name                       |          | строка                                                                              | Имя виртуальной машины. |
 | properties.hardwareProfile |          | [HardwareProfile](/rest/api/compute/virtualmachines/createorupdate#hardwareprofile) | Указывает параметры оборудования виртуальной машины. |
 | properties.storageProfile  |          | [StorageProfile](/rest/api/compute/virtualmachines/createorupdate#storageprofile)   | Указывает параметры хранилища дисков виртуальной машины. |
 | properties.osProfile       |          | [OSProfile](/rest/api/compute/virtualmachines/createorupdate#osprofile)             | Указывает параметры операционной системы виртуальной машины. |
@@ -118,13 +118,13 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 }
 ```
 
-Полный список доступных определений в тексте запроса см. в разделе [виртуальные машины создание или обновление определений текста запросов](/rest/api/compute/virtualmachines/createorupdate#definitions).
+Для получения полного списка доступных определений в органе запроса [см. Виртуальные машины создают или обновляют определения тела запроса.](/rest/api/compute/virtualmachines/createorupdate#definitions)
 
 ## <a name="sending-the-request"></a>Отправка запроса
 
 Вы можете отправить HTTP-запроса с помощью предпочитаемого клиента. Кроме того, вы можете также использовать [инструмент в браузере](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate), нажав кнопку **Попробовать**.
 
-### <a name="responses"></a>Responses
+### <a name="responses"></a>Ответы
 
 Существует два успешных ответа для операции по созданию или обновлению виртуальной машины.
 
@@ -150,5 +150,5 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 - [Azure Compute](/rest/api/compute/) (Служба вычислений Azure)
 - [Начало работы с Azure REST API](/rest/api/azure/)
-- [Azure CLI](/cli/azure/)
-- [Overview of Azure PowerShell](/powershell/azure/overview) (Общие сведения об Azure PowerShell)
+- [Лазурный CLI](/cli/azure/)
+- [модуль Azure PowerShell;](/powershell/azure/overview)

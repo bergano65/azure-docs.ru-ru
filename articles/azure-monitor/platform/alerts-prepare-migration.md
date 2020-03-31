@@ -1,89 +1,89 @@
 ---
-title: Подготовка к переносу классических оповещений Azure Monitor с помощью обновления приложений логики и модулей Runbook
-description: Узнайте, как изменить веб-перехватчики, приложения логики и модули Runbook для подготовки к добровольной миграции.
+title: Подготовка к классическим оповещениям Azure Monitor о миграции путем обновления логических приложений и runbooks
+description: Узнайте, как изменять веб-крючки, логические приложения и runbooks, чтобы подготовиться к добровольной миграции.
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
 ms.openlocfilehash: 9219e105acb98424939030af76b526d475585619
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77665598"
 ---
-# <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Подготовка приложений логики и модулей Runbook для миграции классических правил генерации оповещений
+# <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Prepare your logic apps and runbooks for migration of classic alert rules (Подготовка приложений логики и модулей runbook для миграции классических правил генерации оповещений)
 
-Как [было объявлено ранее](monitoring-classic-retirement.md), классические оповещения в Azure Monitor выводятся в сентябре 2019 (первоначально Июль 2019 г.). Средство миграции доступно в портал Azure клиентам, которые используют классические правила генерации оповещений и хотят активировать миграцию.
+Как [было объявлено ранее,](monitoring-classic-retirement.md)классические оповещения в Azure Monitor удаляются в сентябре 2019 года (изначально был июль 2019 года). Инструмент миграции доступен на портале Azure для клиентов, которые используют классические правила оповещения и которые хотят сами инициировать миграцию.
 
 > [!NOTE]
-> В связи с задержкой развертывания средства миграции Дата выбытия классических предупреждений была продлена до 31 августа 2019 с первоначального объявления даты 30 июня 2019.
+> В связи с задержкой внедрения миграционного инструмента дата выхода на пенсию по классической миграции предупреждений была продлена до 31 августа 2019 года с первоначально объявленной даты 30 июня 2019 года.
 
-Если вы решили самостоятельно перенести классические правила генерации оповещений в новые правила генерации оповещений, имейте в виду, что между этими двумя системами есть некоторые различия. В этой статье объясняются эти различия и способы подготовки к изменению.
+Если вы решите добровольно перенести классические правила оповещения на новые правила оповещения, имейте в виду, что между двумя системами существуют некоторые различия. В этой статье объясняются эти различия и то, как можно подготовиться к изменениям.
 
 ## <a name="api-changes"></a>Изменения в API
 
-API-интерфейсы, которые создают классические правила генерации оповещений и управляют ими (`microsoft.insights/alertrules`), отличаются от API-интерфейсов, которые создают новые оповещения метрик (`microsoft.insights/metricalerts`) и управляют ими. Если вы программно создаете классические правила генерации оповещений и управляете ими уже сегодня, обновите сценарии развертывания для работы с новыми API.
+AA, которые создают и управляют`microsoft.insights/alertrules`классическими правилами оповещения () отличаются от`microsoft.insights/metricalerts`AA, которые создают и управляют новыми метрическими оповещениями (). Если сегодня вы программно создаете и управляете классическими правилами оповещения, обновите скрипты развертывания для работы с новыми AA.
 
-В следующей таблице приведены ссылки на программные интерфейсы для классических и новых оповещений.
+Следующая таблица является отсылкой к программным интерфейсам как для классических, так и для новых оповещений:
 
-|         |Классические оповещения  |Новые оповещения метрик |
+|         |Классические оповещения  |Новые метрические оповещения |
 |---------|---------|---------|
-|REST API     | [Microsoft. Insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [Microsoft. Insights/метрикалертс](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
-|Azure CLI     | [AZ Monitor оповещение](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
-|PowerShell      | [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
-| Шаблон Azure Resource Manager | [Для классических оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Для новых оповещений метрик](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
+|REST API     | [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [microsoft.insights/metricalerts](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
+|Azure CLI     | [az монитор оповещения](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [az монитор метрик оповещения](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
+|PowerShell      | [Справочник](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Справочник](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
+| Шаблон Azure Resource Manager | [Для классических предупреждений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Для новых метрических оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
 
-## <a name="notification-payload-changes"></a>Изменения полезных данных уведомлений
+## <a name="notification-payload-changes"></a>Изменения полезной нагрузки уведомлений
 
-Формат полезных данных уведомления немного отличается между [классическими правилами генерации оповещений](alerts-webhooks.md) и [новыми оповещениями метрик](alerts-metric-near-real-time.md#payload-schema). При наличии действий веб-перехватчика, приложения логики или Runbook, запускаемых классическими правилами генерации оповещений, необходимо обновить эти конечные точки уведомлений, чтобы они принимали формат полезных данных новых оповещений метрик.
+Формат полезной нагрузки уведомлений немного отличается между [классическими правилами оповещения](alerts-webhooks.md) и [новыми метрическими оповещениями.](alerts-metric-near-real-time.md#payload-schema) Если у вас есть какой-либо веб-крюк, приложение логики или действия runbook, которые вызваны классическими правилами оповещения, вы должны обновить эти конечные точки уведомления, чтобы принять формат полезной нагрузки новых метрических оповещений.
 
-Используйте следующую таблицу для привязки полей полезных данных веб-перехватчика из классического формата к новому формату:
+Используйте следующую таблицу для отображения полей полезной нагрузки webhook от классического формата до нового:
 
-|  |Классические оповещения  |Новые оповещения метрик |
+|  |Классические оповещения  |Новые метрические оповещения |
 |---------|---------|---------|
-|Было ли оповещение активировано или разрешено?    | **status**       | **данные. состояние** |
-|Контекстные сведения о предупреждении     | **контекста**        | **Data. Context**        |
-|Метка времени, когда оповещение было активировано или разрешено     | **контекст. timestamp**       | **Data. Context. timestamp**        |
+|Было ли предупреждение активировано или устранено?    | **состояние**       | **data.status** |
+|Контекстная информация о оповещении     | **context**        | **data.context**        |
+|Штамп времени, на котором оповещение было активировано или решено     | **context.timestamp**       | **data.context.timestamp**        |
 | Идентификатор правила оповещения | **context.id** | **data.context.id** |
 | Имя правила генерации оповещений | **context.name** | **data.context.name** |
-| Описание правила генерации оповещений | **context. Description** | **Data. Context. Description** |
-| Условие для правила генерации оповещений | **context. Condition** | **Data. Context. Condition** |
-| Имя показателя | **context. Condition. metricName** | **Data. Context. Condition. allOf [0]. metricName** |
-| Статистическая обработка времени (вычисление метрики в окне оценки)| **context. Condition. timeAggregation** | **context. Condition. timeAggregation** |
-| Период оценки | **context. Condition. windowSize** | **Data. Context. Condition. windowSize** |
-| Оператор (как агрегированное значение метрики сравнивается с пороговым значением) | **context. Condition. оператор** | **Data. Context. Condition. оператор** |
-| Порог | **context. Condition. threshold** | **Data. Context. Condition. allOf [0]. пороговое значение** |
-| Значение метрики | **context. Condition. Метриквалуе** | **Data. Context. Condition. allOf [0]. Метриквалуе** |
-| Идентификатор подписки | **context. subscriptionId** | **Data. Context. subscriptionId** |
-| Группа ресурсов затронутого ресурса | **context. resourceGroup** | **Data. Context. resourceGroup** |
-| Имя затронутого ресурса | **context. resourceName** | **Data. Context. resourceName** |
-| Тип затрагиваемого ресурса | **context. resourceType** | **Data. Context. resourceType** |
-| Идентификатор ресурса затронутого ресурса | **context. resourceId** | **Data. Context. resourceId** |
-| Прямая ссылка на страницу сводки по ресурсам портала | **context. Порталлинк** | **Data. Context. Порталлинк** |
-| Настраиваемые поля полезных данных, передаваемые веб-перехватчику или приложению логики | **properties** | **Data. Properties** |
+| Описание правила оповещения | **контекст.описание** | **data.context.description** |
+| Состояние правила оповещения | **контекст.условие** | **data.context.condition.** |
+| Имя метрики | **контекст.условие.metricName** | **data.context.condition.allOf.metricName** |
+| Агрегация времени (как агрегируется метрика по окну оценки)| **context.condition.timeАгрегация** | **context.condition.timeАгрегация** |
+| Период оценки | **context.condition.windowРазмер** | **data.context.condition.windowРазмер** |
+| Оператор (как агрегированное метриче-значение сопожат с пороговым) | **context.condition.operator** | **data.context.condition.operator** |
+| Порог | **context.condition.threshold** | **data.context.condition.allOf.threshold** |
+| Метрическое значение | **context.condition.metricValue** | **data.context.condition.allOf.metricValue** |
+| Идентификатор подписки | **context.subscriptionId** | **data.context.subscriptionId** |
+| Ресурсная группа пострадавшего ресурса | **context.resourceGroup** | **data.context.resourceGroup** |
+| Имя пострадавшего ресурса | **контекст.ресурсИмя** | **data.context.resourceName** |
+| Тип пострадавшего ресурса | **context.resourceType** | **data.context.resourceType** |
+| Идентификатор ресурса пострадавшего ресурса | **context.resourceId** | **data.context.resourceId** |
+| Прямая ссылка на страницу сводки ресурса портала | **контекст.portalLink** | **data.context.portalLink** |
+| Пользовательские поля полезной нагрузки, которые будут переданы в приложение webhook или logic | **Вариантов размещения** | **data.properties** |
 
-Полезные данные похожи, как видите. В следующем разделе предлагаются следующие возможности.
+Полезная нагрузка аналогична, как вы можете видеть. Следующий раздел предлагает:
 
-- Сведения об изменении формата приложений логики для работы с новым форматом.
-- Пример модуля Runbook, который анализирует полезные данные уведомления для новых оповещений.
+- Подробная информация об изменении логических приложений для работы с новым форматом.
+- Пример runbook, который разбирает полезную нагрузку уведомлений для новых оповещений.
 
-## <a name="modify-a-logic-app-to-receive-a-metric-alert-notification"></a>Изменение приложения логики для получения уведомлений о предупреждениях метрик
+## <a name="modify-a-logic-app-to-receive-a-metric-alert-notification"></a>Изменение приложения логики для получения уведомления о метике
 
-Если вы используете приложения логики с классическими оповещениями, необходимо изменить код логики приложения, чтобы проанализировать новые полезные данные оповещений метрик. Выполните следующие действия.
+Если вы используете логические приложения с классическими оповещениями, необходимо изменить код приложения логики, чтобы разобрать новую полезную нагрузку метрика. Выполните следующие действия.
 
 1. Создайте новое приложение логики.
 
-1. Используйте шаблон "Azure Monitor — обработчик оповещений об метриках". Этот шаблон содержит триггер **http-запроса** с соответствующей определенной схемой.
+1. Используйте шаблон "Azure Monitor - Обработчик метеоля". Этот шаблон имеет триггер **запроса HTTP** с соответствующей схемой определены.
 
-    ![Logic-App-Template](media/alerts-migration/logic-app-template.png "Шаблон оповещения метрики")
+    ![логика-приложение-шаблон](media/alerts-migration/logic-app-template.png "Шаблон метеометрического оповещения")
 
 1. Добавьте действие для размещения логики обработки.
 
-## <a name="use-an-automation-runbook-that-receives-a-metric-alert-notification"></a>Использование модуля Runbook службы автоматизации, который получает уведомление о предупреждении метрики
+## <a name="use-an-automation-runbook-that-receives-a-metric-alert-notification"></a>Используйте запуск системы автоматизации, который получает уведомление о метике
 
-В следующем примере показан код PowerShell для использования в модуле Runbook. Этот код может анализировать полезные данные для классических правил генерации оповещений метрик и новых правил генерации оповещений метрик.
+Следующий пример предоставляет код PowerShell для использования в вашем runbook. Этот код может разбирать полезные нагрузки как для классических правил предупреждения метрики, так и для новых правил предупреждения метрики.
 
 ```PowerShell
 ## Example PowerShell code to use in a runbook to handle parsing of both classic and new metric alerts.
@@ -150,19 +150,19 @@ else {
 
 ```
 
-Полный пример модуля Runbook, который останавливает виртуальную машину при активации оповещения, см. в [документации по службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-create-alert-triggered-runbook).
+Полный пример runbook, который останавливает виртуальную машину при срабатывании оповещения, [см.](https://docs.microsoft.com/azure/automation/automation-create-alert-triggered-runbook)
 
-## <a name="partner-integration-via-webhooks"></a>Интеграция партнеров через веб-перехватчики
+## <a name="partner-integration-via-webhooks"></a>Интеграция партнеров через веб-крючки
 
-Большинство [наших партнеров, которые интегрируются с классическими оповещениями,](https://docs.microsoft.com/azure/azure-monitor/platform/partners) уже поддерживают новые оповещения метрик с помощью их интеграции. Известные интеграции, уже работающие с новыми оповещениями метрик:
+Большинство [наших партнеров, которые интегрируются с классическими оповещениями,](https://docs.microsoft.com/azure/azure-monitor/platform/partners) уже поддерживают новые метрические оповещения через их интеграцию. Известные интеграции, которые уже работают с новыми метрическими оповещениями:
 
 - [PagerDuty](https://www.pagerduty.com/docs/guides/azure-integration-guide/)
 - [OpsGenie](https://docs.opsgenie.com/docs/microsoft-azure-integration)
 - [Signl4](https://www.signl4.com/blog/mobile-alert-notifications-azure-monitor/)
 
-Если вы используете интеграцию с партнером, не указанную здесь, уточните у поставщика интеграции, что интеграция работает с новыми оповещениями метрик.
+Если вы используете интеграцию партнеров, которая не указана здесь, подтвердите с поставщиком интеграции, что интеграция работает с новыми метрическими оповещениями.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

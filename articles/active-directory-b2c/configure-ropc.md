@@ -1,7 +1,7 @@
 ---
-title: Настройка потока учетных данных для пароля владельца ресурса
+title: Настройка потока учетных данных владельца ресурсов
 titleSuffix: Azure AD B2C
-description: Узнайте, как настроить поток РОПК в Azure AD B2C.
+description: Узнайте, как настроить поток ROPC в Azure AD B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,10 +12,10 @@ ms.date: 02/27/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 70cd4f2ca3a4ac37bdf1d1e465d1f1a7d06ef9e1
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78189707"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-ad-b2c"></a>Настройка последовательности проверки учетных данных пароля владельца ресурса в Azure AD B2C
@@ -31,11 +31,11 @@ ms.locfileid: "78189707"
 1. Войдите на портал Azure с правами глобального администратора клиента Azure AD B2C.
 2. Чтобы переключиться на клиент Azure AD B2C, выберите каталог B2C в правом нижнем углу портала.
 3. Щелкните **Потоки пользователей** и выберите **Новый поток пользователя**.
-4. Перейдите на вкладку **все** и выберите **Вход с помощью ропк**.
+4. Нажмите на вкладку **«Все»** и выберите **регистрацию с помощью ROPC.**
 5. Укажите имя потока пользователя, например *ROPC_Auth*.
 6. В разделе **Утверждения приложения** щелкните **Показать еще**.
 7. Выберите утверждения приложения, которые необходимы для вашего приложения, такие как "Отображаемое имя", "Адрес электронной почты" и "Поставщик удостоверений".
-8. Щелкните **ОК**, а затем выберите **Создать**.
+8. Выберите **OK,** а затем выберите **Создать**.
 9. Щелкните **Выполнить поток пользователя**.
 
    После этого вы увидите конечную точку следующего вида:
@@ -50,13 +50,13 @@ ms.locfileid: "78189707"
 ## <a name="test-the-user-flow"></a>Тестирование потока пользователя
 
 С помощью предпочитаемого приложения по разработке API создайте вызов API и просмотрите ответ, чтобы выполнить отладку потока пользователя. Используя приведенные в таблице ниже сведения в качестве текста запроса POST, создайте вызов следующего вида:
-- Замените *\<yourtenant.onmicrosoft.com>* именем своего клиента B2C.
-- Замените *\<B2C_1A_ROPC_Auth>* полным именем политики учетных данных пароля владельца ресурса.
-- Замените *\<bef2222d56-552f-4a5b-b90a-1988a7d634c3>* идентификатором приложения из регистрации.
+- Замените yourtenant.onmicrosoft.com * \<>* с именем вашего арендатора B2C.
+- Замените B2C_1A_ROPC_Auth * \<>* полное имя политики учетных данных учетных данных владельца ресурса.
+- Замените * \<bef2222d56-552f-4a5b-b90a-1988a7d634c3>* идентификатором приложения с вашей регистрации.
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Клавиши | Значение |
+| Ключ | Значение |
 | --- | ----- |
 | username | leadiocl@outlook.com |
 | password | Passxword1 |
@@ -96,7 +96,7 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Клавиши | Значение |
+| Ключ | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |
@@ -124,7 +124,7 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
 }
 ```
 > [!NOTE]
-> При создании пользователей с помощью API Graph приложение должно иметь разрешения "OpenID Connect", "offline_access" и "Profile" из Microsoft Graph.
+> При создании пользователей с помощью Graph API приложение должно иметь "открытые", "offline_access" и "профильные" разрешения от Microsoft Graph.
 
 ## <a name="implement-with-your-preferred-native-sdk-or-use-app-auth"></a>Реализация с помощью предпочтительного собственного пакета SDK или использование AppAuth
 

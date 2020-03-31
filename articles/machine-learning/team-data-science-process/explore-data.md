@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: ca993fd6a449b2655b13da337875fa3f9f27cade
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76721274"
 ---
 # <a name="explore-data-in-the-team-data-science-process"></a>Изучение данных в процессе обработки и анализа данных группы
@@ -28,4 +28,4 @@ ms.locfileid: "76721274"
 * Изучение данных [SQL Server](explore-data-sql-server.md) с помощью SQL и языка программирования, например Python.
 * Изучение данных [таблицы Hive](explore-data-hive-tables.md) с помощью запросов Hive.
 
-Кроме того, видео, [Предварительная обработка данных в машинное обучение Azure Studio](https://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/), описывает часто используемые модули для очистки и преобразования данных.
+Кроме того, видео, [Предварительная обработка данных в Azure Machine Learning Studio](https://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/), описывает широко используемые модули для очистки и преобразования данных.

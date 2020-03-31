@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/27/2019
 ms.openlocfilehash: c6bf26d8f3a73db6ee69b2aa0de73872911893bf
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75552718"
 ---
 # <a name="analyze-website-logs-using-a-custom-python-library-with-apache-spark-cluster-on-hdinsight"></a>Анализ журналов веб-сайтов с помощью пользовательской библиотеки Python и кластера Apache Spark в HDInsight
 
 Данная записная книжка показывает, как анализировать данные журналов с помощью настраиваемой библиотеки с кластером Apache Spark в HDInsight. В качестве пользовательской библиотеки используется библиотека Python с именем **iislogparser.py**.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
@@ -27,26 +27,26 @@ ms.locfileid: "75552718"
 
 В этом разделе мы используем записную книжку [Jupyter](https://jupyter.org) , связанную с кластером Apache Spark в HDInsight, для выполнения заданий, которые обрабатывают необработанные демонстрационные данные и сохраняют их как таблицу Hive. В качестве демонстрационных данных выступает CSV-файл (hvac.csv), доступный на всех кластерах по умолчанию.
 
-После сохранения данных в виде таблицы Apache Hive в следующем разделе мы будем подключаться к таблице Hive с помощью средств бизнес-аналитики, таких как Power BI и Tableau.
+Как только ваши данные будут сохранены в таблице Apache Hive, в следующем разделе мы подключимся к таблице Hive с помощью инструментов BI, таких как Power BI и Tableau.
 
-1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net/jupyter`, где `CLUSTERNAME` — имя кластера.
+1. Из веб-браузера, `https://CLUSTERNAME.azurehdinsight.net/jupyter`перейдите к , где `CLUSTERNAME` имя вашего кластера.
 
-1. Создайте новую записную книжку. Выберите **создать**, а затем **PySpark**.
+1. Создайте новую записную книжку. Выберите **новый**, а затем **PySpark**.
 
-    ![Создание новой записной книжки Apache Jupyter](./media/apache-spark-custom-library-website-log-analysis/hdinsight-create-jupyter-notebook.png "Создание новой записной книжки Jupyter")
+    ![Создайте новый блокнот Apache Jupyter](./media/apache-spark-custom-library-website-log-analysis/hdinsight-create-jupyter-notebook.png "Создание новой записной книжки Jupyter")
 
-1. Будет создана и открыта записная книжка с именем Untitled.pynb. Выберите имя записной книжки вверху и введите понятное имя.
+1. Будет создана и открыта записная книжка с именем Untitled.pynb. Выберите имя ноутбука в верхней части, и введите дружественное имя.
 
-    ![Укажите имя записной книжки](./media/apache-spark-custom-library-website-log-analysis/hdinsight-name-jupyter-notebook.png "Указание имени для записной книжки")
+    ![Указание имени для записной книжки](./media/apache-spark-custom-library-website-log-analysis/hdinsight-name-jupyter-notebook.png "Указание имени для записной книжки")
 
-1. Так как вы создали записную книжку с помощью ядра PySpark, вам не нужно явно создавать контексты. Контексты Spark и Hive будут созданы автоматически при выполнении первой ячейки кода. Можно начать с импорта различных типов, необходимых для этого сценария. Вставьте следующий фрагмент кода в пустую ячейку и нажмите клавиши **SHIFT + ВВОД**.
+1. Поскольку ноутбук был создан с помощью ядра PySpark, вам не нужно создавать какие-либо контексты явно. Контексты Spark и Hive будут созданы автоматически при выполнении первой ячейки кода. Можно начать с импорта различных типов, необходимых для этого сценария. Вставьте следующий фрагмент в пустую ячейку, а затем нажмите **Shift и Введите**.
 
     ```pyspark
     from pyspark.sql import Row
     from pyspark.sql.types import *
     ```
 
-1. Создайте RDD, используя пример данных журнала, уже доступных в кластере. Вы можете получить доступ к данным в учетной записи хранения по умолчанию, связанной с кластером, по адресу `\HdiSamples\HdiSamples\WebsiteLogSampleData\SampleLog\909f2b.log`. Выполните следующий код.
+1. Создайте RDD, используя пример данных журнала, уже доступных в кластере. Можно получить доступ к данным в учетной `\HdiSamples\HdiSamples\WebsiteLogSampleData\SampleLog\909f2b.log`записи хранилища по умолчанию, связанной с кластером в режиме . Выполните следующий код.
 
     ```pyspark
     logs = sc.textFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b.log')
@@ -58,7 +58,7 @@ ms.locfileid: "75552718"
     logs.take(5)
     ```
 
-    Вы должны увидеть результат, аналогичный приведенному ниже:
+    Вы должны увидеть выход, похожий на следующий текст:
 
     ```output
     [u'#Software: Microsoft Internet Information Services 8.0',
@@ -70,9 +70,9 @@ ms.locfileid: "75552718"
 
 ## <a name="analyze-log-data-using-a-custom-python-library"></a>Анализ данных журнала с помощью пользовательской библиотеки Python
 
-1. В приведенном выше примере выходных данных первые несколько строк содержат сведения о заголовке, а все последующие строки соответствуют схеме, описанной в этом заголовке. Анализ таких журналов может быть сложным, поэтому мы используем настраиваемую библиотеку Python (**iislogparser.py**), которая делает эту задачу намного проще. По умолчанию эта библиотека входит в кластер Spark в HDInsight на `/HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py`.
+1. В приведенном выше примере выходных данных первые несколько строк содержат сведения о заголовке, а все последующие строки соответствуют схеме, описанной в этом заголовке. Анализ таких журналов может быть сложным, поэтому мы используем настраиваемую библиотеку Python (**iislogparser.py**), которая делает эту задачу намного проще. По умолчанию эта библиотека включена в кластер `/HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py`Spark в HDInsight at .
 
-    Однако эта библиотека не находится в `PYTHONPATH`, поэтому мы не можем использовать ее с помощью оператора import, например `import iislogparser`. Чтобы использовать эту библиотеку, необходимо распространить ее на все рабочие узлы. Выполните следующий фрагмент кода.
+    Тем не менее, эта `PYTHONPATH` библиотека не в так мы не можем `import iislogparser`использовать его с помощью выписки импорта, как . Чтобы использовать эту библиотеку, необходимо распространить ее на все рабочие узлы. Выполните следующий фрагмент кода.
 
     ```pyspark
     sc.addPyFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py')
@@ -93,14 +93,14 @@ ms.locfileid: "75552718"
     logLines.take(2)
     ```
 
-   Выходные данные должны быть похожи на следующий текст:
+   Выход должен быть аналогичен следующему тексту:
 
     ```output
     [2014-01-01 02:01:09 SAMPLEWEBSITE GET /blogposts/mvc4/step2.png X-ARR-LOG-ID=2ec4b8ad-3cf0-4442-93ab-837317ece6a1 80 - 1.54.23.196 Mozilla/5.0+(Windows+NT+6.3;+WOW64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/31.0.1650.63+Safari/537.36 - http://weblogs.asp.net/sample/archive/2007/12/09/asp-net-mvc-framework-part-4-handling-form-edit-and-post-scenarios.aspx www.sample.com 200 0 0 53175 871 46,
     2014-01-01 02:01:09 SAMPLEWEBSITE GET /blogposts/mvc4/step3.png X-ARR-LOG-ID=9eace870-2f49-4efd-b204-0d170da46b4a 80 - 1.54.23.196 Mozilla/5.0+(Windows+NT+6.3;+WOW64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/31.0.1650.63+Safari/537.36 - http://weblogs.asp.net/sample/archive/2007/12/09/asp-net-mvc-framework-part-4-handling-form-edit-and-post-scenarios.aspx www.sample.com 200 0 0 51237 871 32]
     ```
 
-1. В свою очередь, класс `LogLine` включает несколько полезных методов, например метод `is_error()`, который возвращается, если запись журнала содержит код ошибки. Этот класс используется для вычислить количество ошибок в извлеченных строках журнала, а затем регистрировать все ошибки в другом файле.
+1. В свою очередь, класс `LogLine` включает несколько полезных методов, например метод `is_error()`, который возвращается, если запись журнала содержит код ошибки. Используйте этот класс, чтобы вычислить количество ошибок в извлеченных строках журнала, а затем войти все ошибки в другой файл.
 
     ```pyspark
     errors = logLines.filter(lambda p: p.is_error())
@@ -110,7 +110,7 @@ ms.locfileid: "75552718"
     errors.map(lambda p: str(p)).saveAsTextFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b-2.log')
     ```
 
-    Выходные данные должны иметь состояние `There are 30 errors and 646 log entries`.
+    Выход должен `There are 30 errors and 646 log entries`указать .
 
 1. Кроме того, для визуализации данных вы можете использовать **Matplotlib** . Например, если вы хотите установить причину длительного выполнения некоторых запросов, найдите файлы с наибольшим средним временем обработки. Код в представленном ниже фрагменте выдает первые 25 ресурсов с максимальным временем обработки запросов.
 
@@ -124,7 +124,7 @@ ms.locfileid: "75552718"
     avgTimeTakenByKey(logLines.map(lambda p: (p.cs_uri_stem, p))).top(25, lambda x: x[1])
     ```
 
-   Вы должны увидеть выходные данные, как в следующем тексте:
+   Вы должны увидеть вывод, как следующий текст:
 
     ```output
     [(u'/blogposts/mvc4/step13.png', 197.5),
@@ -174,9 +174,9 @@ ms.locfileid: "75552718"
 
    Волшебное слово `%%sql`, за которым следует `-o averagetime`, гарантирует, что вывод запроса сохраняется локально на сервере Jupyter (обычно это головной узел кластера). Выходные данные сохраняются в кадре данных [Pandas](https://pandas.pydata.org/) с именем **averagetime**.
 
-   Вы должны увидеть выходные данные, как на следующем рисунке:
+   Вы должны увидеть вывод, как следующее изображение:
 
-   ![выходные данные запроса SQL hdinsight jupyter](./media/apache-spark-custom-library-website-log-analysis/hdinsight-jupyter-sql-qyery-output.png "Результат SQL-запроса")
+   ![hdinsight jupyter sql выход запроса](./media/apache-spark-custom-library-website-log-analysis/hdinsight-jupyter-sql-qyery-output.png "Результат SQL-запроса")
 
    Дополнительные сведения о магической команде `%%sql` см. в разделе [Параметры, поддерживаемые волшебной командой %%sql](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic).
 
@@ -192,15 +192,15 @@ ms.locfileid: "75552718"
     plt.ylabel('Average time taken for request (ms)')
     ```
 
-   Вы должны увидеть выходные данные, как на следующем рисунке:
+   Вы должны увидеть вывод, как следующее изображение:
 
-   ![Диаграмма анализа веб-журнала Apache Spark](./media/apache-spark-custom-library-website-log-analysis/hdinsight-apache-spark-web-log-analysis-plot.png "Выходные данные Matplotlib")
+   ![апач искра веб-журнал анализа участка](./media/apache-spark-custom-library-website-log-analysis/hdinsight-apache-spark-web-log-analysis-plot.png "Выходные данные Matplotlib")
 
-1. Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Это действие приведет к завершению работы и закрытию записной книжки.
+1. Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Это действие выключит и закроет блокнот.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Изучите следующие статьи:
+Узнайте следующие статьи:
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
