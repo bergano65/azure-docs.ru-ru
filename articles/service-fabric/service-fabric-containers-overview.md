@@ -4,15 +4,15 @@ description: Обзор Service Fabric и использования конте�
 ms.topic: conceptual
 ms.date: 8/8/2018
 ms.openlocfilehash: 884cefa3d6a60f55269afac73c40b9f6b21518f6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75458223"
 ---
 # <a name="service-fabric-and-containers"></a>Service Fabric и контейнеры
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Вступление
 
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые надежные микрослужбы и контейнеры, но и управлять ими.
 
@@ -97,7 +97,7 @@ Service Fabric предоставляет [модель приложения](se
 В этой статье вы узнали о поддержке выполнения контейнеров в Service Fabric. Теперь можно переходить к изучению примеров использования каждой функции.
 
 [Создание первого приложения-контейнера Service Fabric в Linux](service-fabric-get-started-containers-linux.md)  
-[Создание первого приложения-контейнера Service Fabric в Windows](service-fabric-get-started-containers.md)  
+[Создание первого контейнера-приложения Service Fabric в Windows](service-fabric-get-started-containers.md)  
 [Дополнительные сведения о контейнерах Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/)
 
 [Image1]: media/service-fabric-containers/Service-Fabric-Types-of-Isolation.png

@@ -16,10 +16,10 @@ ms.date: 07/15/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 18409f93ab50f7d031ec78a55b9eaf8ad1b85a49
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70101413"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>Использование SAP Business One на виртуальных машинах Azure
@@ -37,7 +37,7 @@ Business One поддерживает две разных базы данных.
 - [Виртуальные машины Azure в Windows](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm)
 - [Виртуальные машины Azure в Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)
 - [Управление сетями Azure и виртуальными сетями с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-virtual-network)
-- [Сеть и виртуальные сети Azure с интерфейсом командной строки](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-virtual-network)
+- [Сети Azure и виртуальные сети с CLI](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-virtual-network)
 - [Управление дисками Azure с помощью интерфейса командной строки Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-disks)
 
 Даже если вы интересуетесь только Business One, документ [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) может быть полезным источником информации.
@@ -129,12 +129,12 @@ Business One — это двухуровневое приложение.
 
 Приблизительные оценки размеров для стороны СУБД для SQL Server.
 
-| Количество пользователей | Виртуальные ЦП | Память | Пример типов виртуальных машин |
+| Количество пользователей | Число виртуальных ЦП | Память | Пример типов виртуальных машин |
 | --- | --- | --- | --- |
 | до 20 | 4 | 16 ГБ | D4s_v3, и для E4s_v3 |
 | до 40 | 8 | 32 ГБ | D8s_v3, E8s_v3 |
-| до 80 | 16 | 64 ГБ | D16s_v3, E16s_v3 |
-| до 150 | 32 | 128 ГБ | D32s_v3, E32s_v3 |
+| до 80 | 16 | 64 ГБ | D16s_v3, E16s_v3 |
+| до 150 | 32 | 128 ГБ | D32s_v3, E32s_v3 |
 
 Указанные варианты размеров должны дать представление о том, с чего начать. Возможно, для более легкой адаптации в Azure понадобится меньше или больше ресурсов. Переключение между типами виртуальных машин возможно с помощью перезапуска виртуальной машины.
 
@@ -149,8 +149,8 @@ Business One — это двухуровневое приложение.
 ### <a name="business-one-client-server"></a>Клиентский сервер Business One
 Для этих компонентов рекомендации по хранению не являются основной проблемой. Тем не менее, необходимо иметь надежную платформу. Таким образом, следует использовать хранилище Azure класса Premium для этой виртуальной машины даже для базового виртуального жесткого диска. Изменение размера виртуальной машины на основе данных, указанных в [Руководстве по требованиям к оборудованию SAP Business One](https://help.sap.com/http.svc/rc/011000358700000244612011e/9.3/en-US/B1_Hardware_Requirements_Guide.pdf). Для Azure необходимо сосредоточиться и вычислить требования, перечисленные в разделе документа 2.4. При расчете требований, нужно сравнить их со следующими документами, чтобы найти идеальную виртуальную машину.
 
-- [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)
-- [Примечание к SAP №1928533](https://launchpad.support.sap.com/#/notes/1928533)
+- [Размеры для виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)
+- [SAP Примечание #1928533](https://launchpad.support.sap.com/#/notes/1928533)
 
 Сравните количество процессоров и памяти, необходимых для документирования Microsoft. Также при выборе виртуальной машины помните о пропускной способности сети.
 

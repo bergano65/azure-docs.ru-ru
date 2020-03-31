@@ -1,19 +1,19 @@
 ---
-title: Оптимизация автоочистки — база данных Azure для PostgreSQL — один сервер
-description: В этой статье описывается оптимизация автоочистки в базе данных Azure для PostgreSQL-Single Server
+title: Оптимизация автовакуума - База данных Azure для PostgreS-L - Единый сервер
+description: В этой статье описывается, как можно оптимизировать autovacuum на базе данных Azure для PostgreS-L - Единый сервер
 author: dianaputnam
 ms.author: dianas
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 1917bd6744e100db54fe959292e29486f8a1784b
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74770192"
 ---
-# <a name="optimize-autovacuum-on-an-azure-database-for-postgresql---single-server"></a>Оптимизация автоочистки в базе данных Azure для PostgreSQL — один сервер
+# <a name="optimize-autovacuum-on-an-azure-database-for-postgresql---single-server"></a>Оптимизация автовакуума на базе данных Azure для PostgreS-L - Единый сервер
 В этой статье описывается эффективная оптимизация автоматической очистки на сервере службы "База данных Azure для PostgreSQL".
 
 ## <a name="overview-of-autovacuum"></a>Обзор автоматической очистки
