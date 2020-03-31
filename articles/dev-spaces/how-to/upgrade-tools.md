@@ -3,13 +3,13 @@ title: Обновление средств Azure Dev Spaces
 services: azure-dev-spaces
 ms.date: 07/03/2018
 ms.topic: conceptual
-description: Узнайте, как обновить средства командной строки Azure Dev Spaces, расширение Visual Studio Code и расширение Visual Studio.
+description: Узнайте, как обновить инструменты командной строки Azure Dev Spaces, расширение кода Visual Studio и расширение Visual Studio
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 ms.openlocfilehash: 748ed4699591a21a5a09da924e093011b0813b46
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79265237"
 ---
 # <a name="how-to-upgrade-azure-dev-spaces-tools"></a>Обновление средств Azure Dev Spaces

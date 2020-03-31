@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: likebupt
 ms.author: keli19
 ms.date: 03/18/2020
-ms.openlocfilehash: 578e935ee742ad476aeafb53670f0a92035249e5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b68efbb64e9634ade001373e8cd9d61355bf786f
+ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064081"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80388990"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -136,8 +136,8 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 При отправке запуска конвейера и пребывания на странице авторов можно найти файлы журнала, созданные для каждого модуля.
 
 1. Выберите любой модуль в автор-холсте.
-1. В правом стеле модуля перейдите на вкладку **Outputs'ogs.**
-1. Выберите файл журнала`70_driver_log.txt`
+1. В правом стеле модуля перейдите на вкладку **«Выходы и журналы».**
+1. Выберите файл `70_driver_log.txt`журнала .
 
     ![Авторство журналов модулей страниц](./media/how-to-debug-pipelines/pipelinerun-05.png)
 
@@ -148,8 +148,8 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 1. Выберите запуск конвейера, созданный в проекте.
     ![Страница запуска трубопровода](./media/how-to-debug-pipelines/pipelinerun-04.png)
 1. Выберите любой модуль в панели предварительного просмотра.
-1. В правом стеле модуля перейдите на вкладку **Outputs'ogs.**
-1. Выберите файл журнала`70_driver_log.txt`
+1. В правом стеле модуля перейдите на вкладку **«Выходы и журналы».**
+1. Выберите файл `70_driver_log.txt`журнала .
 
 ## <a name="debug-and-troubleshoot-in-application-insights"></a>Ошибка и устранение неполадок в application Insights
 Для получения дополнительной информации об использовании библиотеки OpenCensus Python таким образом, см. [Debug and troubleshoot machine learning pipelines in Application Insights](how-to-debug-pipelines-application-insights.md)

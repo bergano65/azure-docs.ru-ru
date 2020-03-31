@@ -1,6 +1,6 @@
 ---
-title: НИЖЕ Azure Cosmos DB язык запросов
-description: Сведения о более РАННЕй системной функции SQL в Azure Cosmos DB для возврата строкового выражения после преобразования символьных данных в нижний регистр
+title: LOWER на языке запросов Запроса Azure Cosmos DB
+description: Узнайте о функции системы LOWER S'L в Azure Cosmos DB, чтобы вернуть выражение строки после преобразования данных символов верхнего регистра в нижний регистр
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,16 +8,16 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 80dba57d4fe05630eb5ae4f8fc96bd0aa214c6d4
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302276"
 ---
-# <a name="lower-azure-cosmos-db"></a>НИЖЕ (Azure Cosmos DB)
+# <a name="lower-azure-cosmos-db"></a>LOWER (Azure Cosmos DB)
  Возвращает строковое выражение после преобразования символов верхнего регистра в нижний.  
 
-Нижняя системная функция не использует индекс. Если планируется регулярное сравнение без учета регистра, то более низкая системная функция может потреблять значительное количество единиц запросов. В этом случае вместо использования нижней системной функции для нормализации данных каждый раз при сравнении можно нормализовать регистр при вставке. Затем запрос, например SELECT * FROM c, где ниже (c. Name) = ' Bob ', просто превращается в SELECT * FROM c, где c.name = ' Bob '.
+Функция системы LOWER не использует индекс. Если вы планируете делать частые нечувствительные сравнения, функция системы LOWER может потреблять значительное количество RU. Если это так, вместо того, чтобы использовать функцию системы LOWER для нормализации данных каждый раз для сравнения, можно нормализовать оболочку при вставке. Затем такой запрос, как SELECT , от c ГДЕ LOWER (c.name) - "боб" просто становится SELECT с где c.name "боб".
 
 ## <a name="syntax"></a>Синтаксис
   
@@ -28,7 +28,7 @@ LOWER(<str_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Является строковым выражением.  
+   Является выражением строки.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -36,7 +36,7 @@ LOWER(<str_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как использовать `LOWER` в запросе.  
+  В следующем примере `LOWER` показано, как использовать в запросе.  
   
 ```sql
 SELECT LOWER("Abc") AS lower
@@ -51,10 +51,10 @@ SELECT LOWER("Abc") AS lower
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Строка функции Azure Космос DB](sql-query-string-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

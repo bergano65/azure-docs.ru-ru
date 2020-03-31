@@ -1,24 +1,24 @@
 ---
-title: 'Azure ExpressRoute: Настройка Direct для ExpressRoute: CLI'
-description: Эта статья поможет вам настроить функцию ExpressRoute Direct с помощью Azure CLI
+title: 'Azure ExpressRoute: Настройка Expressroute Прямая: CLI'
+description: Эта статья поможет настроить ExpressRoute Direct с помощью Azure CLI
 services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: cherylmc
-ms.openlocfilehash: 47ee05113d46f66efd02978fed09cf72edc5ac1c
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: dcca1417aec52fb4bf99d5c480d81995154a68b0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77049940"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79481982"
 ---
-# <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
+# <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Направьте ExpressRoute Direct с помощью Azure CLI
 
 С помощью ExpressRoute Direct вы можете напрямую подключиться к глобальной сети корпорации Майкрософт в стратегически распределенных по всему миру расположениях пиринга. Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).
 
-## <a name="resources"></a>Создание ресурса
+## <a name="create-the-resource"></a><a name="resources"></a>Создание ресурса
 
 1. Войдите в Azure и выберите подписку, которая включает ExpressRoute. Ресурс ExpressRoute Direct и каналы ExpressRoute должны размещаться в одной подписке. Выполните следующие команды в Azure CLI:
 
@@ -38,7 +38,7 @@ ms.locfileid: "77049940"
    az account set --subscription "<subscription ID>"
    ```
 
-2. Повторно зарегистрируйте подписку в Microsoft. Network для доступа к API-интерфейсам експрессраутепортслокатион и експрессраутепорт.
+2. Перерегистрация подписки на Microsoft.Network для доступа к apIs expressrouteportsи и экспресс-маршруту
 
    ```azurecli
    az provider register --namespace Microsoft.Network
@@ -49,9 +49,9 @@ ms.locfileid: "77049940"
    az network express-route port location list
    ```
 
-   **Пример выходных данных**
+   **Вывод примера**
   
-   ```azurecli
+   ```output
    [
    {
     "address": "21715 Filigree Court, DC2, Building F, Ashburn, VA 20147",
@@ -116,9 +116,9 @@ ms.locfileid: "77049940"
    az network express-route port location show -l "Equinix-Ashburn-DC2"
    ```
 
-   **Пример выходных данных**
+   **Вывод примера**
 
-   ```azurecli
+   ```output
    {
    "address": "21715 Filigree Court, DC2, Building F, Ashburn, VA 20147",
    "availableBandwidths": [
@@ -154,9 +154,9 @@ ms.locfileid: "77049940"
    > Атрибуту **Encapsulation** (Инкапсуляция) также можно присвоить значение **Dot1Q**. 
    >
 
-   **Пример выходных данных**
+   **Вывод примера**
 
-   ```azurecli
+   ```output
    {
    "allocationDate": "Wednesday, October 17, 2018",
    "bandwidthInGbps": 100,
@@ -208,7 +208,7 @@ ms.locfileid: "77049940"
    }  
    ```
 
-## <a name="state"></a>Изменение AdminState для ссылок
+## <a name="change-adminstate-for-links"></a><a name="state"></a>Изменение AdminState для ссылок
 
 Этот процесс позволяет провести тестирование уровня 1. Убедитесь, что все кроссовые подключения правильно подключены к маршрутизаторам на первичных и вторичных портах.
 
@@ -222,9 +222,9 @@ ms.locfileid: "77049940"
    ```azurecli
    az network express-route port update -n Contoso-Direct -g Contoso-Direct-rg --set links[1].adminState="Enabled"
    ```
-   **Пример выходных данных**
+   **Вывод примера**
 
-   ```azurecli
+   ```output
    {
    "allocationDate": "Wednesday, October 17, 2018",
    "bandwidthInGbps": 100,
@@ -278,15 +278,15 @@ ms.locfileid: "77049940"
 
    Чтобы выключить порты, используйте эту же процедуру с параметром `AdminState = "Disabled"`.
 
-## <a name="circuit"></a>Создание канала
+## <a name="create-a-circuit"></a><a name="circuit"></a>Создание канала
 
 По умолчанию в подписке, в которой есть ресурс ExpressRoute Direct, можно создать до 10 каналов. Это ограничение можно увеличить через службу поддержки Майкрософт. Отслеживание подготовленной и используемой пропускной способности вам нужно выполнять самостоятельно. Подготовленная пропускная способность вычисляется как сумма пропускной способности всех каналов в ресурсе ExpressRoute Direct. Используемая пропускная способность описывает фактическое потребление базовых физических интерфейсов.
 
 Вы можете добавить дополнительную пропускную способность в ExpressRoute Direct только для тех сценариев, которые описаны в этой статье. Поддерживаются варианты пропускной способности 40 Гбит/с и 100 Гбит/с.
 
-**Скутиер** может быть локальным, стандартным или Premium.
+**SkuTier** может быть местным, стандартным или премиум.
 
-**Скуфамили** должен быть MeteredData только как неограниченный. в ExpressRoute Direct не поддерживается.
+**SkuFamily** должен быть MeteredData только в качестве неограниченного не поддерживается на ExpressRoute Direct.
 Создайте канал в ресурсе ExpressRoute Direct:
 
   ```azurecli
@@ -295,9 +295,9 @@ ms.locfileid: "77049940"
 
   Также поддерживаются такие значения пропускной способности: 5 Гбит/с, 10 Гбит/с и 40 Гбит/с.
 
-  **Пример выходных данных**
+  **Вывод примера**
 
-  ```azurecli
+  ```output
   {
   "allowClassicOperations": false,
   "allowGlobalReach": false,

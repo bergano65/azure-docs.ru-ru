@@ -1,31 +1,31 @@
 ---
-title: AppSource рекомендации по публикации предложения для Аппссаурце витрины | Azure Marketplace
+title: AppSource предлагают издательское руководство для AppsSource магазина (ru) Лазурный рынок
 description: Пошаговое руководство и контрольные списки по публикации приложений Office 365, Dynamics 365, Power BI и Power Apps в онлайн-магазине AppSource
 services: Marketplace, Compute, Storage, Networking, Blockchain, Security, SaaS
-author: ellacroi
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/09/2018
-ms.author: ellacroi
-ms.openlocfilehash: 831da237c06657981e402fc1f8fd09ccd67f85fb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: dsindona
+ms.openlocfilehash: 82b1d096b1641915fc2dc58e000c40c18731c28c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427213"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286648"
 ---
 # <a name="office-365-dynamics-365-power-apps-and-power-bi-offer-publishing-guide"></a>Руководство по публикации предложения, касающегося приложений Office 365, Dynamics 365, Power Apps и Power BI
 
 В онлайн-магазине AppSource доступны предложения, которые созданы на основе или расширяют возможности Dynamics 365, Office 365, Power BI и Power Apps. Каждый из этих продуктов имеет соответствующую документацию, которая поможет вам в процессе публикации. Ниже приведены ссылки на дополнительные сведения по каждому типу предложения. 
 
-У AppSource есть платные, списки и пробные предложения, а также вызов действия "получить его сейчас", "связаться со мной" и "попробовать сейчас". 
+AppSource оплатил, перечислить и пробные предложения, с призывом к действию "Получить это сейчас", "Свяжитесь со мной" и "Попробуйте сейчас". 
 
 ## <a name="product-specific-guides"></a>Руководства по конкретным продуктам
 
-### <a name="office-365"></a>Office 365
+### <a name="office-365"></a>Office 365
 
-Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).
+Обзор [процесса публикации и руководящих принципов](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)
 
 ### <a name="power-apps"></a>Power Apps
 
@@ -33,9 +33,9 @@ ms.locfileid: "75427213"
 
 ### <a name="power-bi"></a>Power BI
 
-Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/power-bi/developer/office-store).
+Просмотрите [процесс публикации и руководящие принципы.](https://docs.microsoft.com/power-bi/developer/office-store)
 
-### <a name="dynamics-365"></a>Dynamics 365
+### <a name="dynamics-365"></a>Dynamics 365
 
 #### <a name="dynamics-365-for-finance-and-operations"></a>Dynamics 365 for Finance and Operations.
 При создании для выпуска Enterprise ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lcs-solutions/lcs-solutions-app-source)

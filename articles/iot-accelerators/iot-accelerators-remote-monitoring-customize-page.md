@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: ec0b9fbdfdb96317e1e7f6fe00384ba4f8c42bcc
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 0228f317e2d3380f2387dd557a27203eb3abc4ad
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607949"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80240261"
 ---
 # <a name="add-a-custom-page-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -24,11 +24,11 @@ ms.locfileid: "68607949"
 
 Другие руководства расширяют этот сценарий и позволяют добавить дополнительные функции к новой странице.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
-- [Git](https://git-scm.com/downloads)
+- [Git](https://git-scm.com/downloads);
 - [Node.js](https://nodejs.org/download/)
 
 ## <a name="prepare-a-local-development-environment-for-the-ui"></a>Подготовка локальной среды разработки для пользовательского интерфейса
@@ -142,7 +142,7 @@ npm install
 npm start
 ```
 
-Предыдущая команда запускает пользовательский интерфейс локально по адресу [http://localhost:3000/dashboard](http://localhost:3000/dashboard).
+Предыдущая команда выполняет uI [http://localhost:3000/dashboard](http://localhost:3000/dashboard)локально на .
 
 На панели мониторинга появятся сообщения об ошибках, если локальный экземпляр веб-интерфейса не будет подключен к развернутому экземпляру акселератора решений. Эти ошибки не влияют на возможность тестирования новой страницы.
 
@@ -154,17 +154,17 @@ npm start
 
 1. Разверните **базовый** экземпляр акселератора решений с помощью CLI **PCS**. Запишите имя развертывания и учетные данные, указанные для виртуальной машины. Дополнительные сведения см. в статье [Развертывание предварительно настроенного решения для удаленного мониторинга с помощью интерфейса командной строки](iot-accelerators-remote-monitoring-deploy-cli.md).
 
-1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), включите доступ по протоколу SSH к виртуальной машине, на которой размещаются микрослужбы в вашем решении. Пример:
+1. Используйте портал Azure или [az CLI,](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) чтобы обеспечить доступ SSH к виртуальной машине, вмещающей микрослужбы в вашем решении. Пример:
 
-    ```sh
+    ```azurecli
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
     ```
 
-    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить при первой возможности](../security/fundamentals/network-best-practices.md).
+    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если вы включите SSH, [вы должны отключить его снова как можно скорее.](../security/fundamentals/network-best-practices.md)
 
 1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), найдите имя и общедоступный IP-адрес виртуальной машины. Пример:
 
-    ```sh
+    ```azurecli
     az resource list --resource-group {your solution name} -o table
     az vm list-ip-addresses --name {your vm name from previous command} --resource-group {your solution name} -o table
     ```
@@ -187,7 +187,7 @@ npm start
     REACT_APP_BASE_SERVICE_URL=https://{your solution name}.azurewebsites.net/
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решения для удаленного мониторинга.
 

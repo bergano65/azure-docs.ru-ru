@@ -1,5 +1,5 @@
 ---
-title: Руководство. Модерация содержимого Facebook с помощью Content Moderator
+title: Руководство по Модерация содержимого Facebook с помощью Content Moderator
 titleSuffix: Azure Cognitive Services
 description: Из этого руководства вы узнаете, как использовать Content Moderator на основе машинного обучения для модерации комментариев и записей на Facebook.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 01/27/2020
 ms.author: pafarley
 ms.openlocfilehash: 9f25c845302d62e3bc9e230b4a6f8f2669f4ac35
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76774269"
 ---
-# <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство. Модерация записей и команд Facebook с помощью Azure Content Moderator
+# <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство по Модерация записей и команд Facebook с помощью Azure Content Moderator
 
 Из этого руководства вы узнаете, как использовать Azure Content Moderator для модерации комментариев и записей на странице Facebook. Facebook будет отправлять содержимое, опубликованное посетителями, в службу Content Moderator. Затем рабочие процессы Content Moderator будут публиковать это содержимое или создавать проверки в инструменте проверки. Это будет зависеть от пороговых значений и оценки содержимого. Действующий пример этого сценария см. в демо-ролике [Keeping “wolves” out of your platform](https://channel9.msdn.com/Events/Build/2017/T6033) (Не подпускайте "волков" к своей платформе).
 

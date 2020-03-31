@@ -1,19 +1,18 @@
 ---
-title: Публикация предложений консультационной службы Azure и Dynamics 365 | Azure Marketplace
-description: Опубликуйте предложение службы консультационных услуг Azure или Dynamics 365 в Портал Cloud Partner для Azure Marketplace или AppSource.
-services: Azure, Marketplace, Cloud Partner Portal,
+title: Azure и Динамика 365 консалтинговые услуги предлагают публикации Лазурный рынок
+description: Опубликуйте предложение консалтинговых услуг Azure or Dynamics 365 на портале облачных партнеров для Azure Marketplace или AppSource.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: pabutler
-ms.openlocfilehash: 3d2daf68bae5e24dd8ec3501befd186a50c2cb16
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 1b00e177ed45762d10d0603b1d0a1fb2c1807416
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818107"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80278507"
 ---
 # <a name="publish-a-consulting-service-offer"></a>Публикация предложения консультационных услуг
 

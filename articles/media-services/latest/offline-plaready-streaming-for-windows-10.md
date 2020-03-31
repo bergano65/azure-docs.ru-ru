@@ -1,5 +1,5 @@
 ---
-title: Настройка автономной потоковой передачи PlayReady с помощью служб мультимедиа Azure v3
+title: Налажись в автономном режиме PlayReady потокового с Azure Media Services v3
 description: В этой статье показано, как настроить учетную запись Служб мультимедиа Azure для автономной потоковой передачи содержимого с технологией PlayReady для Windows 10.
 services: media-services
 keywords: DASH, DRM, режим автономной работы Widevine, ExoPlayer, Android
@@ -15,29 +15,29 @@ ms.topic: article
 ms.date: 01/01/2019
 ms.author: willzhan
 ms.openlocfilehash: ceb6de6556968385d88ac799c11bdb6393072864
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76513122"
 ---
-# <a name="offline-playready-streaming-for-windows-10-with-media-services-v3"></a>Автономная потоковая передача PlayReady для Windows 10 с помощью служб мультимедиа v3
+# <a name="offline-playready-streaming-for-windows-10-with-media-services-v3"></a>Оффлайн PlayReady потокового для Windows 10 с медиа-услуг v3
 
 Службы мультимедиа Azure поддерживают автономное скачивание и воспроизведение содержимого с защитой DRM. В этой статье рассматривается автономная поддержка Служб мультимедиа Azure для клиентов Windows 10 с PlayReady. Вы можете прочесть о поддержке автономного режима для устройств iOS с FairPlay и Android с Widevine в следующих статьях:
 
 - [Потоковая передача FairPlay в автономном режиме для iOS](offline-fairplay-for-ios.md)
-- [Потоковая передача Widevine для Android (автономный режим)](offline-widevine-for-android.md)
+- [Оффлайн Widevine потокового для Android](offline-widevine-for-android.md)
 
 > [!NOTE]
-> В автономной системе DRM оплачивается только один запрос на лицензию при скачивании содержимого. Плата за любые ошибки не взимается.
+> Оффлайн DRM выставляется только за то, что он делает один запрос на лицензию при загрузке содержимого. Любые ошибки не выставляются счета.
 
 ## <a name="overview"></a>Обзор
 
 В этом разделе приведены некоторые сведения о воспроизведении в автономном режиме, а именно почему:
 
-* В некоторых странах и регионах доступ к Интернету и (или) пропускная способность по-прежнему ограничены. Пользователи могут выбрать загрузку первыми для просмотра содержимого в достаточно высоком разрешении для удовлетворительной работы. В этом случае чаще всего проблема заключается не в доступности сети, а в ее ограниченной пропускной способности. Поставщики OTT/OVP запрашивают поддержку автономного режима.
+* В некоторых странах/регионах доступность Интернета и/или пропускная способность по-прежнему ограничены.Пользователи могут сначала скачать содержимое, чтобы иметь возможность смотреть его в достаточно высоком разрешении для удобного просмотра. В этом случае чаще всего проблема заключается не в доступности сети, а в ее ограниченной пропускной способности. Поставщики OTT/OVP запрашивают поддержку автономного режима.
 * На конференции акционеров Netflix в 3-м квартале 2016 года генеральный директор Netflix Рид Хэйстингс (Reed Hastings) сказал, что скачивание содержимого — это "часто запрашиваемая функция" и "мы открыты для нее".
-* Некоторые поставщики содержимого могут запретить доставку лицензий DRM за рамку страны или региона. Если пользователь хочет смотреть содержимое во время поездок за границу, необходимо автономное скачивание.
+* Некоторые поставщики контента могут запретить доставку лицензии DRM за пределы страны/региона. Если пользователь хочет смотреть содержимое во время поездок за границу, необходимо автономное скачивание.
  
 Проблема, с которой мы сталкиваемся при реализации автономного режима, заключается в следующем:
 
@@ -60,13 +60,13 @@ ms.locfileid: "76513122"
 
 Ресурс № 1:
 
-* URL-адрес для поэтапной загрузки: [https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4")
-* URL-адрес для приобретения лицензии PlayReady (AMS): [https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/](https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/)
+* Прогрессивный URL-адрес загрузки:[https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4")
+* PlayReady LA_URL (AMS):[https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/](https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/)
 
 Ресурс № 2:
 
-* URL-адрес для поэтапной загрузки: [https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4)
-* LA_URL PlayReady (в локальной среде): [https://willzhan12.cloudapp.net/playready/rightsmanager.asmx](https://willzhan12.cloudapp.net/playready/rightsmanager.asmx)
+* Прогрессивный URL-адрес загрузки:[https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4)
+* PlayReady LA_URL (на территории):[https://willzhan12.cloudapp.net/playready/rightsmanager.asmx](https://willzhan12.cloudapp.net/playready/rightsmanager.asmx)
 
 Для тестирования воспроизведения использовалось универсальное Windows-приложение на Windows 10. В [примерах приложений универсальной платформы Windows 10](https://github.com/Microsoft/Windows-universal-samples) есть пример простого проигрывателя, который называется [Adaptive Streaming Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming). Все, что нужно сделать, — это добавить код для выбора скачанного видео и использовать его в качестве источника вместо адаптивного источника потоковой передачи. Изменения в обработчике события нажатия кнопки:
 

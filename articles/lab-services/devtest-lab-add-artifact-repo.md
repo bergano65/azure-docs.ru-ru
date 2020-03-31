@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 1555eb4e48a0cf43a38aa811e20ffbbed8ee87a9
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 1e7587c60e180fb35e1a2bed735b053b6b0c388a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755815"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80294610"
 ---
 # <a name="add-a-git-repository-to-store-custom-artifacts-and-resource-manager-templates"></a>Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Resource Manager
 
@@ -30,7 +30,7 @@ ms.locfileid: "72755815"
 При создании виртуальной машины можно сохранить шаблон Resource Manager, при необходимости настроить его, а затем использовать для создания дополнительных виртуальных машин. Нужно создать собственный частный репозиторий для хранения настраиваемых шаблонов Resource Manager.  
 
 * Сведения о создании репозитория GitHub см. в [этой статье](https://help.github.com/categories/bootcamp/).
-* Чтобы узнать, как создать проект Azure DevOps Services с репозиторием Git, см. раздел [Подключение к Azure DevOps Services](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
+* Чтобы узнать, как создать проект Azure DevOps Services с репозиторием Git, [см.](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online)
 
 Вот как может выглядеть содержащий артефакты репозиторий в GitHub:  
 
@@ -54,7 +54,7 @@ ms.locfileid: "72755815"
 
 ### <a name="get-the-azure-repos-clone-url-and-personal-access-token"></a>Получение URL-адреса клона и персонального маркера доступа из Azure Repos
 
-1. Перейдите на домашнюю страницу групповой коллекции (например, https://contoso-web-team.visualstudio.com) ) и выберите свой проект.
+1. Перейдите на главную страницу коллекции `https://contoso-web-team.visualstudio.com`группы (например), а затем выберите проект.
 2. На домашней странице проекта выберите **Код**.
 3. Чтобы увидеть URL-адрес клона, на странице **Код** проекта выберите **Клон**.
 4. Сохраните URL-адрес — он потребуется позже.
@@ -65,27 +65,27 @@ ms.locfileid: "72755815"
    1. Введите **описание** маркера.
    2. В списке **Срок действия истекает через** выберите **180 дней**.
    3. В списке **Учетные записи** выберите **Все доступные учетные записи**.
-   4. Выберите параметр **только чтение** .
+   4. Выберите опцию **«Только читать».**
    5. Щелкните **Создать маркер**.
 9. Новый маркер появится в списке **Личные маркеры доступа**. Выберите **Скопировать маркер**и сохраните значение маркера, так как оно вам потребуется позднее.
 10. Перейдите к разделу [Подключение лаборатории к репозиторию](#connect-your-lab-to-the-repository).
 
 ## <a name="connect-your-lab-to-the-repository"></a>Подключение лаборатории к репозиторию
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 2. Щелкните **Больше служб**, а затем выберите в списке служб **DevTest Labs**.
 3. В списке лабораторий выберите свою лабораторию. 
-4. Выберите **Configuration and policies** (Конфигурация и политики) > **Репозитории** >  **+ Добавить**.
+4. Выберите**Репозитории** >  **конфигурации и политики** > **и добавьте**.
 
     ![Кнопка добавления репозитория](./media/devtest-lab-add-repo/devtestlab-add-repo.png)
 5. На второй странице **Репозитории** укажите следующие сведения:
    1. **Имя**. Введите имя репозитория.
    2. **URL-адрес клона Git.** Введите URL-адрес клона HTTPS Git, скопированный ранее из GitHub или Azure DevOps Services.
-   3. **Ветвь.** Укажите ветвь для получения определений.
-   4. **Личный маркер доступа.** Укажите личный маркер доступа, полученный ранее из GitHub или Azure DevOps Services.
+   3. **Филиал**. Укажите ветвь для получения определений.
+   4. **Токен индивидуального доступа**. Укажите личный маркер доступа, полученный ранее из GitHub или Azure DevOps Services.
    5. **Путь к папке.** Введите по меньшей мере один путь к папке относительно URL-адреса клона, содержащего определения артефактов или шаблонов Resource Manager. При указании подкаталога обязательно включите косую черту в путь к папке.
 
       ![Область "Репозитории"](./media/devtest-lab-add-repo/devtestlab-repo-blade.png)
-6. Щелкните **Сохранить**.
+6. Нажмите кнопку **Сохранить**.
 
 ### <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Диагностика сбоев артефактов в лаборатории](devtest-lab-troubleshoot-artifact-failure.md)

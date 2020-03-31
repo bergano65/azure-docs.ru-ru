@@ -16,10 +16,10 @@ ms.date: 03/14/2019
 ms.author: Juliako
 ms.reviewer: willzhan
 ms.openlocfilehash: 29a344c739d8d99da2e5c81d41a11c601e48022e
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74969146"
 ---
 # <a name="using-castlabs-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование castLabs для доставки лицензий Widevine для служб мультимедиа Azure 
@@ -29,7 +29,7 @@ ms.locfileid: "74969146"
 > 
 > 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В этой статье описывается использование служб мультимедиа Azure (AMS) для доставки потока, который зашифрован динамически службой AMS, с помощью лицензий DRM PlayReady и Widevine. Лицензию PlayReady выдает сервер лицензирования служб мультимедиа PlayReady, а лицензию Widevine — сервер лицензирования **castLabs** .
 
@@ -68,7 +68,7 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 
 В приведенной ниже таблице описан маркер JWT в castLabs. 
 
-| Name | Описание |
+| name | Описание |
 | --- | --- |
 | optData |Строка JSON со сведениями о вас. |
 | crt |Строка JSON со сведениями о файле, лицензии на него и правах на его воспроизведение. |
@@ -117,11 +117,11 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

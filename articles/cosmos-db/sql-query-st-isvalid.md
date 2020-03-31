@@ -1,6 +1,6 @@
 ---
-title: ST_ISVALID на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ST_ISVALID в Azure Cosmos DB.
+title: ST_ISVALID на языке запросов Запроса Azure Cosmos DB
+description: Узнайте о функции системы S'L ST_ISVALID в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 8fbddbe82ae13585b8259a66dffaeef8024baf5d
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71349365"
 ---
 # <a name="st_isvalid-azure-cosmos-db"></a>ST_ISVALID (Azure Cosmos DB)
@@ -26,9 +26,9 @@ ST_ISVALID(<spatial_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *spatial_expr*  
-   Является геообъектным выражением точки, многоугольника или LineString.  
+   Является выражением GeoJSON Point, Polygon или LineString.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает логическое выражение.  
   
@@ -50,8 +50,8 @@ SELECT ST_ISVALID({ "type": "Point", "coordinates": [31.9, -132.8] }) AS b
 [{ "b": false }]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

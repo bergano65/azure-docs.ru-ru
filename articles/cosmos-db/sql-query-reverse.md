@@ -1,6 +1,6 @@
 ---
-title: ОБРАТная Azure Cosmos DB языка запросов
-description: Дополнительные сведения о функции SQL System в ОБРАТную Azure Cosmos DB.
+title: REVERSE на языке запросов Azure Cosmos DB
+description: Узнайте о функции системы СЗЛ REVERSE в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: a22e1c8a5f4350bd2f966ee48f96368c648a4a1e
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78302174"
 ---
 # <a name="reverse-azure-cosmos-db"></a>REVERSE (Azure Cosmos DB)
@@ -26,7 +26,7 @@ REVERSE(<str_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Является строковым выражением.  
+   Является выражением строки.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -34,7 +34,7 @@ REVERSE(<str_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как использовать `REVERSE` в запросе.  
+  В следующем примере `REVERSE` показано, как использовать в запросе.  
   
 ```sql
 SELECT REVERSE("Abc") AS reverse  
@@ -48,10 +48,10 @@ SELECT REVERSE("Abc") AS reverse
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Строка функции Azure Космос DB](sql-query-string-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

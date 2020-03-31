@@ -3,18 +3,18 @@ title: Поддержка оценки Hyper-V в Azure Migrate
 description: Узнайте о поддержке оценки Hyper-V с помощью оценки Azure Migrate Server
 ms.topic: conceptual
 ms.date: 03/23/2020
-ms.openlocfilehash: 61d8e635a32024ba5afabb34fefa5bf169e2911f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e8a698b110f19dff593a93a41e9d6f20eb80cdb0
+ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80336914"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80389007"
 ---
 # <a name="support-matrix-for-hyper-v-assessment"></a>Матрица поддержки для оценки Hyper-V
 
-В этой статье кратко излагаются предпосылки и требования к поддержке для оценки Hyper-VM в рамках подготовки к миграции в Azure. Если вы хотите перенести ВМ Hyper-V в Azure, просмотрите [матрицу поддержки миграции.](migrate-support-matrix-hyper-v-migration.md)
+В этой статье кратко излагаются предпосылки и требования к поддержке при оценке Микро-технологий Hyper-V для миграции в Azure с помощью инструмента [оценки Azure Migrate:Server.](migrate-services-overview.md#azure-migrate-server-assessment-tool) Если вы хотите перенести ВМ Hyper-V в Azure, просмотрите [матрицу поддержки миграции.](migrate-support-matrix-hyper-v-migration.md)
 
-Вы оцениваете Вы с помощью инструмента [оценки Azure Migrate:Server.](migrate-services-overview.md#azure-migrate-server-assessment-tool) Вы создаете проект Azure Migrate, а затем добавляете инструмент в проект. После добавления инструмента развертывается [прибор Azure Migrate.](migrate-appliance.md) Прибор постоянно обнаруживает на месте машины и отправляет метаданные и данные о производительности машины в Azure. После обнаружения машины вы собираете обнаруженные машины в группы и проводите оценку для группы.
+Для настройки оценки Hyper-V VM необходимо создать проект Azure Migrate и добавить инструмент оценки серверов в проект. После добавления инструмента развертывается [прибор Azure Migrate.](migrate-appliance.md) Прибор постоянно обнаруживает на месте машины и отправляет метаданные и данные о производительности машины в Azure. После завершения обнаружения вы собираете обнаруженные машины в группы и проводите оценку для группы.
 
 
 ## <a name="limitations"></a>Ограничения
@@ -44,13 +44,13 @@ ms.locfileid: "80336914"
 
 | **Поддержка**                  | **Подробно**               
 | :----------------------------- | :------------------- |
-| **Операционная система** | Все операционные системы [Windows](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) и [Linux,](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) поддерживаемые Azure. |
+| **Операционная система** | Все [операционные](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) системы Windows и [Linux.](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) |
 | **Службы интеграции**       | [Службы интеграции Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services) должны работать на вс-чах, которые вы оцениваете, чтобы захватить информацию об операционной системе. |
 
 
 ## <a name="azure-migrate-appliance-requirements"></a>Требования к устройству Миграции Azure
 
-Azure Migrate использует [прибор Azure Migrate](migrate-appliance.md) для обнаружения и оценки. Развертывание прибора можно с помощью сжатого Hyper-V VHd, который вы загружаете с портала, или с помощью сценария PowerShell.
+Azure Migrate использует [прибор Azure Migrate](migrate-appliance.md) для обнаружения и оценки. Вы можете развернуть прибор с помощью сжатого Hyper-VV VHD, который вы загружаете с портала, или с помощью [скрипта PowerShell.](deploy-appliance-script.md)
 
 - Узнайте о требованиях к [приборам](migrate-appliance.md#appliance---hyper-v) для Hyper-V.
 - Узнайте о [URL-адресах,](migrate-appliance.md#url-access) к ним необходимо получить доступ к прибору.
@@ -64,29 +64,13 @@ Azure Migrate использует [прибор Azure Migrate](migrate-applianc
 **Прибор** | Входные соединения на порте TCP 3389 позволяют удаленное подключение к устройству рабочего стола.<br/><br/> Входящие соединения в порту 44368 для удаленного доступа к приложению управления приборами с помощью URL:``` https://<appliance-ip-or-name>:44368 ```<br/><br/> Исходящие соединения в портах 443 (HTTPS) для отправки метаданных обнаружения и производительности в Azure Migrate.
 **Гипер-V хост/кластер** | Входящие соединения в портах WinRM 5985 (HTTP) и 5986 (HTTPS) для получения метаданных и данных о производительности для Hyper-V VM с помощью сеанса общей информационной модели (CIM).
 
-## <a name="agentless-dependency-analysis-requirements"></a>Требования к анализу зависимостей без агента
-
-[Анализ зависимостей](concepts-dependency-visualization.md) помогает определить зависимости между прививными машинами, которые вы хотите оценить и перенести в Azure. В таблице кратко излагаются требования к настройке анализа зависимостей без агента. 
-
-**Требование** | **Подробно** 
---- | --- 
-**Перед развертыванием** | Необходимо создать проект Azure Migrate, а инструмент Azure Migrate: Server Assessment добавился в проект.<br/><br/>  Развертываете визуализацию зависимостей после настройки прибора Azure Migrate для обнаружения ваших наемных машин VMWare.<br/><br/> [Узнайте, как](create-manage-projects.md) создать проект в первый раз.<br/> [Узнайте, как](how-to-assess.md) добавить инструмент оценки в существующий проект.<br/> [Узнайте, как](how-to-set-up-appliance-vmware.md) настроить прибор Azure Migrate для оценки VMw.
-**Поддержка VM** | В настоящее время поддерживается только для VMware VMs.
-**Виртуальные машины Windows** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-разрядный).
-**Учетная запись Windows** |  Для анализа зависимостей для устройства Azure Migrate требуется локальная учетная запись администратора домена для доступа к Windows VMs.
-**Виртуальные машины Linux** | Red Hat Предприятие Linux 7, 6, 5<br/> Ubuntu Linux 14.04, 16.04<br/> Debian 7, 8.<br/> Oracle Linux 6, 7<br/> CentOS 5, 6, 7.
-**Учетная запись Linux** | Для анализа зависимостей на машинах Linux прибору Azure Migrate нужна учетная запись пользователя с привилегией Root.<br/><br/> Кроме того, учетная запись пользователя нуждается в этих разрешениях на файлах /bin/netstat и /bin/ls: CAP_DAC_READ_SEARCH и CAP_SYS_PTRACE.
-**Требуемые агенты** | Нет агента требуется на машинах, которые вы хотите проанализировать.
-**Инструменты VMware** | VMware Tools (позже, чем 10.2) должны быть установлены и работает на каждом VM вы хотите проанализировать.
-**vCenter Server** | Визуализация зависимостей требует учетной записи vCenter Server с доступом только для чтения, а также привилегиями, включенными для виртуальных машин > гостевых операций. **EsXi хостов:** На esXi хостов под управлением VMs вы хотите проанализировать, прибор Azure Migrate должен быть в состоянии подключиться к порту TCP 443.
-
 ## <a name="agent-based-dependency-analysis-requirements"></a>Требования к анализу зависимостей на основе агента
 
-[Анализ зависимостей](concepts-dependency-visualization.md) помогает определить зависимости между прививными машинами, которые вы хотите оценить и перенести в Azure. В таблице кратко излагаются требования к настройке анализа зависимостей на основе агента. 
+[Анализ зависимостей](concepts-dependency-visualization.md) помогает определить зависимости между прививными машинами, которые вы хотите оценить и перенести в Azure. В таблице кратко излагаются требования к настройке анализа зависимостей на основе агента. Hyper-V в настоящее время поддерживает только визуализацию зависимости на основе агента. 
 
 **Требование** | **Подробно** 
 --- | --- 
-**Перед развертыванием** | Необходимо создать проект Azure Migrate, а инструмент Azure Migrate: Server Assessment добавился в проект.<br/><br/>  Развертываете визуализацию зависимостей после настройки прибора Azure Migrate для обнаружения ваших наемных машин<br/><br/> [Узнайте, как](create-manage-projects.md) создать проект в первый раз.<br/> [Узнайте, как](how-to-assess.md) добавить инструмент оценки в существующий проект.<br/> Узнайте, как настроить прибор Azure Migrate для оценки [Hyper-V,](how-to-set-up-appliance-hyper-v.md) [VMware](how-to-set-up-appliance-vmware.md)или физических серверов.
+**Перед развертыванием** | Проект Azure Migrate должен быть добавлен с помощью инструмента оценки серверов.<br/><br/>  Развертываете визуализацию зависимостей после настройки прибора Azure Migrate для обнаружения ваших наемных машин<br/><br/> [Узнайте, как](create-manage-projects.md) создать проект в первый раз.<br/> [Узнайте, как](how-to-assess.md) добавить инструмент оценки в существующий проект.<br/> Узнайте, как настроить прибор Azure Migrate для оценки [визажевок Hyper-V.](how-to-set-up-appliance-hyper-v.md)
 **Azure для государственных организаций** | Визуализация зависимостей недоступна в правительстве Azure.
 **Аналитика журнала** | Azure Migrate использует решение [карты обслуживания](../operations-management-suite/operations-management-suite-service-map.md) в [журналах Azure Monitor](../log-analytics/log-analytics-overview.md) для визуализации зависимостей.<br/><br/> Новое или существующее рабочее пространство анализа журналов связывают с проектом Azure Migrate. Рабочее пространство для проекта Azure Migrate не может быть изменено после его добавления. <br/><br/> Рабочее пространство должно находиться в той же подписке, что и проект Azure Migrate.<br/><br/> Рабочее пространство должно находиться в регионах Восточной Азии, юго-восточной Азии или Западной Европы. Рабочие области в других регионах не могут быть связаны с проектом.<br/><br/> Рабочее пространство должно находиться в регионе, в котором [поддерживается карта обслуживания.](../azure-monitor/insights/vminsights-enable-overview.md#prerequisites)<br/><br/> В журнале «Аналитика» рабочее пространство, связанное с Azure Migrate, помечено ключом проекта «Миграция» и названием проекта.
 **Требуемые агенты** | На каждой машине, которую вы хотите проанализировать, установите следующие агенты:<br/><br/> [Агент мониторинга Майкрософт (MMA)](https://docs.microsoft.com/azure/log-analytics/log-analytics-agent-windows).<br/> Агент [зависимости](../azure-monitor/platform/agents-overview.md#dependency-agent).<br/><br/> Если на месте машины не подключены к Интернету, необходимо скачать и установить шлюз Log Analytics на них.<br/><br/> Подробнее об установке [агента зависимости](how-to-create-group-machine-dependencies.md#install-the-dependency-agent) и [MMA.](how-to-create-group-machine-dependencies.md#install-the-mma)

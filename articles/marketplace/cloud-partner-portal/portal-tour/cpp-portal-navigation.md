@@ -1,19 +1,18 @@
 ---
-title: Портал Cloud Partner навигации для Azure Marketplace
-description: Описание навигации в Портал Cloud Partner для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+title: Навигация по облачным партнерским порталам для Azure Marketplace
+description: Объяснение навигации в рамках облачного партнерскиго портала Azure Marketplace.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/09/2018
-ms.author: pabutler
-ms.openlocfilehash: 57ccc7fb738dc23956e56e70c68405cc995a9a99
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 2c1d0eafe96d6e1533bb980ae0e4fd3c43f0e56b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821480"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80278422"
 ---
 # <a name="cloud-partner-portal-navigation"></a>Навигация на Портале Cloud Partner
 
@@ -78,7 +77,7 @@ ms.locfileid: "73821480"
 | ![Элемент "Все издатели"](./media/left-navbar4.png) | Страница [Все издатели](./cpp-all-publishers-page.md) — список всех зарегистрированных на текущий момент облачных издателей. |
 | ![Элемент "Пользователи"](./media/left-navbar5.png) | Страница [Пользователи](./cpp-users-page.md) — список всех учетных записей пользователей, связанных на текущий момент с зарегистрированными облачными партнерами. |
 | ![Элемент "Журнал"](./media/left-navbar6.png) | Страница [Журнал](./cpp-history-page.md) — перечисление всех событий публикации и изменения предложений для всех издателей. |
-| ![Элемент "Аналитические сведения"](./media/left-navbar7.png) | Страница [Аналитические сведения](./cpp-insights-page.md) — отображение панелей мониторинга, которые относятся к компоненту портала *Seller Insights*. |
+| ![Элемент "Аналитические сведения"](./media/left-navbar7.png) | [страница информации](./cpp-insights-page.md) содержит различные панели мониторинга, которые составляют функцию *Seller Insights* этого портала. |
 | ![Элемент "Документация"](./media/left-navbar8.png) | Открывает новую вкладку с домашней страницей документации по Порталу Cloud Partner (соответствует пункту в меню **Помощь**). |
 | ![Элемент "Форум"](./media/left-navbar9.png)  | Открывает в браузере новую вкладку с домашней страницей документации по сообществу партнеров AppSource и Azure Marketplace (соответствует пункту в меню **Помощь**). |
 |  |  |

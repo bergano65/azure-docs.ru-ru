@@ -5,10 +5,10 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.openlocfilehash: e66e7d4646b650d2d811d3807db04605dfddeded
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67185801"
 ---
 1. В проекте **приложения** откройте файл `AndroidManifest.xml`. Добавьте следующий код после открывающего тега `application` :
@@ -62,7 +62,7 @@ ms.locfileid: "67185801"
         registerPush();
         ```
 
-3. Добавьте новый класс для обработки уведомлений. В обозревателе проектов откройте узлы **app** > **java** > **пространство_имен_вашего_проекта** и щелкните правой кнопкой мыши узел с именем пакета. Выберите **Создать** и **Java Class** (Класс Java). В поле "Имя" введите `ToDoMessagingService` и нажмите кнопку "ОК". Замените объявление класса следующим кодом:
+3. Добавьте новый класс для обработки уведомлений. В Project Explorer откройте узлы > **пространства-пространства** **Java-проекта** > **java**и нажмите на узло имени названия пакета. Выберите **Создать** и **Java Class** (Класс Java). В поле "Имя" введите `ToDoMessagingService` и нажмите кнопку "ОК". Замените объявление класса следующим кодом:
 
     ```java
     import android.app.Notification;

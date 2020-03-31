@@ -1,5 +1,5 @@
 ---
-title: Настройка оповещений о доступности с помощью Azure Application Insights | Документация Майкрософт
+title: Настройка оповещений о доступности с помощью Azure Application Insights Документы Майкрософт
 description: Настройка веб-тестов в Application Insights. Получение оповещений, когда веб-сайт становится недоступным или медленно реагирует на запросы.
 ms.topic: conceptual
 author: lgayhardt
@@ -7,24 +7,24 @@ ms.author: lagayhar
 ms.date: 06/19/2019
 ms.reviewer: sdash
 ms.openlocfilehash: e0c1a93ef663762bec199abc5aa7eabbc821168d
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77654959"
 ---
 # <a name="availability-alerts"></a>Оповещения о доступности
 
-[Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Он может оповещать вас о том, что приложение не отвечает, или если оно реагирует слишком медленно.
+[Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Он может предупредить вас, если приложение не отвечает, или если он реагирует слишком медленно.
 
 ## <a name="enable-alerts"></a>Включение оповещений
 
-Оповещения теперь автоматически включаются по умолчанию, но для полной настройки предупреждения сначала необходимо создать тест доступности.
+Оповещения теперь автоматически включены по умолчанию, но для того, чтобы полностью настроить оповещение, сначала необходимо сначала создать тест доступности.
 
 ![Интерфейс создания](./media/availability-alerts/create-test.png)
 
 > [!NOTE]
->  С помощью [новых Объединенных оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts)в интерфейсе оповещений **должны быть** настроены параметры серьезности и уведомления правила оповещений с [группами действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) . Без следующих действий вы будете получать уведомления только на портале.
+>  В [новых унифицированных оповещениях](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) настройки серьезности и уведомлений для правила генерации оповещений с помощью [группы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) **должны** настраиваться в интерфейсе оповещений. Без следующих действий вы будете получать уведомления только на портале.
 
 1. Сохранив тест доступности, щелкните многоточие на вкладке "Сведения" для созданного теста. Выберите "Изменить оповещение".
 
@@ -48,13 +48,13 @@ ms.locfileid: "77654959"
 
 1. Выберите ресурс Application Insights в интерфейсе метрик и укажите метрику доступности:
 
-    ![Выбор метрик доступности](./media/availability-alerts/select-metric.png)
+    ![Выбор метрики доступности](./media/availability-alerts/select-metric.png)
 
 2. Команда настройки оповещений в меню перенаправит вас на новый интерфейс, где можно выбрать определенные тесты или расположения, чтобы настроить правило генерации оповещений. Здесь можно также настроить группы действий для этого правила.
 
 ### <a name="alert-on-custom-analytics-queries"></a>Оповещение о настраиваемых аналитических запросах
 
-С помощью [новых унифицированных оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) вы можете создать оповещение [о настраиваемых запросах к журналу](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-log). С помощью настраиваемых запросов вы можете создать оповещение с любым произвольным условием, которое поможет вам получить самый надежный сигнал о проблемах с доступностью. Это также применимо, если вы отправляете пользовательские результаты доступности с помощью пакета SDK TrackAvailability.
+С помощью [новых унифицированных оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) вы можете создать оповещение [о настраиваемых запросах к журналу](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-log). С помощью настраиваемых запросов вы можете создать оповещение с любым произвольным условием, которое поможет вам получить самый надежный сигнал о проблемах с доступностью. Это также применимо, если вы отправляете пользовательские результаты доступности с помощью TrackAvailability SDK.
 
 > [!Tip]
 > К метрикам доступности данных относятся все настраиваемые результаты доступности, которые вы может отправлять путем вызова TrackAvailability SDK. Поддержку оповещений о метриках можно использовать для оповещения о доступности результатов.
@@ -62,13 +62,13 @@ ms.locfileid: "77654959"
 
 ## <a name="automate-alerts"></a>Автоматизация оповещений
 
-Чтобы автоматизировать этот процесс с помощью шаблонов Azure Resource Manager, см. документацию [Создание оповещения метрики с помощью шаблона диспетчер ресурсов](../../azure-monitor/platform/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert) .
+Чтобы автоматизировать этот процесс с помощью шаблонов Azure Resource Manager, обратитесь к [оповещению «Создать метическое оповещение» с документацией шаблона «Менеджер ресурсов».](../../azure-monitor/platform/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert)
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
-Выделенная [статья по устранению неполадок](troubleshoot-availability.md).
+Выделенная [статья для устранения неполадок](troubleshoot-availability.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Многошаговые веб-тесты](availability-multistep.md)
-* [Веб-тесты проверки связи URL](monitor-web-app-availability.md)
+* [Url пинг веб-тесты](monitor-web-app-availability.md)

@@ -1,5 +1,5 @@
 ---
-title: Общие сведения об Azure Service Fabric Networking
+title: Введение в сеть Azure Service Fabric
 description: Сведения о сетях, шлюзах и интеллектуальной маршрутизации трафика в службе "Сетка Service Fabric".
 author: dkkapur
 ms.topic: conceptual
@@ -7,10 +7,10 @@ ms.date: 11/26/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: dc793e2991783cc9b7b46d92fcc8e0267feb529b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75459141"
 ---
 # <a name="introduction-to-networking-in-service-fabric-mesh-applications"></a>Общие сведения о сетевых подключениях в приложениях службы "Сетка Service Fabric"

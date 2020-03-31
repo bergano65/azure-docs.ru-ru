@@ -1,6 +1,6 @@
 ---
 title: Запрос к подпискам службы "Сетка событий Azure"
-description: В этой статье описывается, как получить список подписок на сетку событий в подписке Azure. Вы предоставляете различные параметры в зависимости от типа подписки.
+description: В этой статье описывается, как перечислить подписку Event Grid в подписку Azure. Вы предоставляете различные параметры в зависимости от типа подписки.
 services: event-grid
 author: spelluru
 ms.service: event-grid
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: spelluru
 ms.openlocfilehash: 2da4ba5946f16092c1d0918aec8dc3109b5fd4a8
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76721549"
 ---
 # <a name="query-event-grid-subscriptions"></a>Запрос к подпискам службы "Сетка событий Azure" 

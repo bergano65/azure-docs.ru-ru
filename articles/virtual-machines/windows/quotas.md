@@ -1,5 +1,5 @@
 ---
-title: квоты виртуальных ЦП для Azure
+title: Квоты vCPU для Azure
 description: Дополнительные сведения о квотах виртуальных ЦП для Azure.
 keywords: ''
 services: virtual-machines-windows
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 05/31/2018
 ms.author: cynthn
 ms.openlocfilehash: 20017f42031e126bbdae40f66bf4c36efd12f17c
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75893467"
 ---
 # <a name="virtual-machine-vcpu-quotas"></a>Квоты виртуальных ЦП виртуальной машины

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 01/09/2019
 ms.author: alkohli
 ms.openlocfilehash: 01e3ed9f94b575aae4ce0ed12eb63e3cf40d99ce
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79259972"
 ---
 # <a name="use-azure-portal-to-administer-your-data-box-disk"></a>Администрирование Диска Data Box с помощью портала Azure
@@ -55,7 +55,7 @@ ms.locfileid: "79259972"
 
 Клон создается в течение нескольких минут, после чего портал обновляется и отображается новый заказ.
 
-[![Порядок клонирования 3](media/data-box-portal-ui-admin/clone-order3.png)](media/data-box-portal-ui-admin/clone-order3.png#lightbox) 
+[![Порядок клонов 3](media/data-box-portal-ui-admin/clone-order3.png)](media/data-box-portal-ui-admin/clone-order3.png#lightbox) 
 
 ## <a name="delete-order"></a>Удаление заказа
 
@@ -63,7 +63,7 @@ ms.locfileid: "79259972"
 
 Можно удалить только завершенные или отмененные заказы. Чтобы удалить заказ, выполните указанные ниже действия.
 
-1. Щелкните **Все ресурсы**. Найдите свой заказ.
+1. Перейти на **все ресурсы**. Найдите свой заказ.
 
     ![Поиск заказов дисков Data Box](media/data-box-portal-ui-admin/search-data-box-disk-orders.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "79259972"
 
     ![Удаление заказа диска Data Box 1](media/data-box-portal-ui-admin/delete-order1.png)
 
-3. Когда будет предложено подтвердить удаление, введите имя заказа. Щелкните **Удалить**.
+3. Когда будет предложено подтвердить удаление, введите имя заказа. Выберите команду **Удалить**.
 
      ![Удаление заказа диска Data Box 2](media/data-box-portal-ui-admin/delete-order2.png)
 
@@ -119,7 +119,7 @@ ms.locfileid: "79259972"
 
 ## <a name="view-order-status"></a>Просмотр состояния заказа
 
-|Состояние заказа |Description |
+|Состояние заказа |Описание |
 |---------|---------|
 |Заказано     | Заказ успешно размещен. <br> Если диски недоступны, вы получите уведомление. <br>Если диски доступны, корпорация Майкрософт определяет диск для посылки и подготавливает коробку с ним.        |
 |Обработано     | Обработка заказа завершена. <br> Во время обработки заказов выполняются следующие действия:<li>Диски шифруются с использованием AES-128 BitLocker. </li> <li>диск Data Box блокируется для предотвращения неавторизованного доступа;</li><li>Во время этого процесса создается ключ доступа, который разблокирует диски.</li>        |

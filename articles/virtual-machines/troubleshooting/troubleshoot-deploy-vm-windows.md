@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок при развертывании виртуальных машин Windows в Azure | Документация Майкрософт
-description: Устранение неполадок при развертывании проблем с виртуальными машинами Windows в модели развертывания Azure Resource Manager.
+description: Устранение проблем, развертывание проблем виртуальной машины Windows в модели развертывания диспетчера ресурсов Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
@@ -15,23 +15,23 @@ ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
 ms.openlocfilehash: cdbaeb5a97beba342bc471e75d1b07be0d0141ae
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77921417"
 ---
 # <a name="troubleshoot-deploying-windows-virtual-machine-issues-in-azure"></a>Устранение неполадок при развертывании виртуальных машин Windows в Azure
 
 Для устранения неполадок, связанных с развертыванием виртуальных машин в Azure, ознакомьтесь с разделом [Наиболее важные проблемы](#top-issues), где описаны распространенные ошибки и способы их разрешения.
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**
 
 ## <a name="top-issues"></a>Наиболее важные проблемы
 [!INCLUDE [virtual-machines-windows-troubleshoot-deploy-vm-top](../../../includes/virtual-machines-windows-troubleshoot-deploy-vm-top.md)]
 
 ## <a name="the-cluster-cannot-support-the-requested-vm-size"></a>Кластер не поддерживает запрошенный размер виртуальной машины
-\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
+\<свойства supportTopicIds"123456789" resourceTags""окна" productPesIds"1234, 5678" />
 - Повторите запрос с указанием меньшего размера виртуальной машины.
 - Если нельзя изменить размер запрошенной виртуальной машины,
     - остановите все виртуальные машины в группе доступности. Выберите **Группы ресурсов** > имя вашей группы ресурсов > **Ресурсы** > имя вашей группы доступности > **Виртуальные машины** > имя вашей виртуальной машины > **Остановить**.
@@ -40,7 +40,7 @@ ms.locfileid: "77921417"
 
 
 ## <a name="the-cluster-does-not-have-free-resources"></a>В кластере нет свободных ресурсов
-\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
+\<свойства supportTopicIds"123456789" resourceTags""окна" productPesIds"1234, 5678" />
 - Повторите запрос позже.
 - Если новая виртуальная машина должна быть частью другой группы доступности:
     - создайте виртуальную машину в другой группе доступности (в том же регионе);
@@ -62,13 +62,13 @@ ms.locfileid: "77921417"
 
 •   можно передать настраиваемую виртуальную машину и развернуть ее с помощью шаблона Resource Manager или Azure PowerShell.
 
-Дополнительные сведения см. в следующих источниках.
+Дополнительные сведения см. в следующих ресурсах:
 
- - [Общие сведения о преимуществах гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
+ - [Обзор преимущества использования гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
 
  - [Скачиваемый файл с часто задаваемыми вопросами](https://download.microsoft.com/download/4/2/1/4211AC94-D607-4A45-B472-4B30EDF437DE/Windows_Server_Azure_Hybrid_Use_FAQ_EN_US.pdf)
 
- - [Преимущества гибридного использования Azure для сервера Windows Server и клиента Windows](../windows/hybrid-use-benefit-licensing.md)
+ - [Azure Hybrid Use Benefit для Windows Server и Windows Client.](../windows/hybrid-use-benefit-licensing.md)
 
  - [How can I use the Hybrid Use Benefit in Azure](https://blogs.msdn.microsoft.com/azureedu/2016/04/13/how-can-i-use-the-hybrid-use-benefit-in-azure) (Как можно применить программу преимуществ гибридного использования в Azure)
 
@@ -120,7 +120,7 @@ ms.locfileid: "77921417"
 Да. Существующую классическую виртуальную машину можно добавить в новую или существующую группу доступности. Дополнительные сведения см. в разделе [Добавление существующей виртуальной машины к группе доступности](/previous-versions/azure/virtual-machines/windows/classic/configure-availability-classic#addmachine).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/).
 
-Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**

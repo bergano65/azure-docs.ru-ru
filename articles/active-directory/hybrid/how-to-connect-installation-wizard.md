@@ -18,17 +18,17 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5440c54b01f62b3ad61b355f4c622a31910a65c1
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79261337"
 ---
 # <a name="azure-ad-connect-sync-running-the-installation-wizard-a-second-time"></a>Синхронизация Azure AD Connect sync: повторный запуск мастера установки
 При первом запуске мастера установки Azure AD Connect выполняется пошаговая настройка установки. При повторном запуске мастера установки предлагается настроить параметры обслуживания.
 
 >[!IMPORTANT]
->Имейте в виду, что мастер установки нельзя запустить во время выполнения синхронизации.  Перед запуском мастера убедитесь, что синхронизация не запущена.
+>Имейте в виду, что вы не можете запустить мастер установки во время синхронизации.  Пожалуйста, убедитесь, что синхронизация не запускается перед запуском мастера.
 
 Мастер установки можно найти в меню "Пуск" с именем **Azure AD Connect**.
 
@@ -78,7 +78,7 @@ ms.locfileid: "79261337"
 ## <a name="configure-staging-mode"></a>Настройка промежуточного режима
 Этот параметр позволяет включить и отключить на сервере промежуточный режим. Дополнительные сведения о промежуточном режиме и его использовании см. [здесь](how-to-connect-sync-staging-server.md).
 
-Рядом с параметром будет показано, включен или отключен промежуточный режим в данный момент:  
+Рядом с параметром будет показано, включен или отключен промежуточный режим в данный момент:   
 ![Параметр, который также отображает текущее состояние промежуточного режима](./media/how-to-connect-installation-wizard/stagingmodecurrentstate.png)
 
 Для изменения состояния выберите этот параметр и установите или снимите флажок.  
@@ -95,4 +95,4 @@ ms.locfileid: "79261337"
 **Обзорные статьи**
 
 * [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
