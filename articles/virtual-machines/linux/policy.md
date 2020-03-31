@@ -1,5 +1,5 @@
 ---
-title: Обеспечение безопасности с помощью политик на виртуальных машинах Linux в Azure
+title: Обеспечение безопасности с помощью политик linux VMs в Azure
 description: Как применить политику к виртуальной машине Azure Resource Manager на основе Linux
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/02/2017
 ms.author: kasing
 ms.openlocfilehash: 7ab48430ae4d6585c908b53017122096175abac3
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74035319"
 ---
 # <a name="apply-policies-to-linux-vms-with-azure-resource-manager"></a>Применение политик к виртуальным машинам Linux с помощью Azure Resource Manager
@@ -208,7 +208,7 @@ ms.locfileid: "74035319"
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * После определения правила политики (как показано в приведенных выше примерах) необходимо создать определение политики и назначить ей область. Областью может быть подписка, группа ресурсов или ресурс. Чтобы узнать, как назначать политики, изучите статью о [назначении политик ресурсов и управлении ими с помощью портала Azure](../../governance/policy/assign-policy-portal.md), о [назначении политик с помощью PowerShell](../../governance/policy/assign-policy-powershell.md) или [назначении политик с помощью Azure CLI](../../governance/policy/assign-policy-azurecli.md).
 * Общие сведения о политиках ресурсов см. в статье [Что такое служба "Политика Azure"](../../governance/policy/overview.md).
-* Руководство по использованию Resource Manager для эффективного управления подписками в организациях см [Azure enterprise scaffold - prescriptive subscription governance](/azure/architecture/cloud-adoption-guide/subscription-governance) (Шаблон Azure для организаций. Рекомендуемая система управления подпиской).
+* Инструкции по использованию Resource Manager для эффективного управления подписками в организациях см. в статье [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance).

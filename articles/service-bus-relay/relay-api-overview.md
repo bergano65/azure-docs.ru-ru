@@ -1,6 +1,6 @@
 ---
 title: Обзор API ретранслятора Azure | Документация Майкрософт
-description: В этой статье представлен обзор доступных Azure Relay интерфейсов API (.NET Standard, .NET Framework, Node. js и т. д.).
+description: В этой статье представлен обзор доступных AA-аДИ azure Relay (.NET Standard, .NET Framework, Node.js и т.д.)
 services: event-hubs
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/21/2020
 ms.author: spelluru
 ms.openlocfilehash: 41d9e2026c19c959dc6fe2546b0ef699571ec7cd
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76513972"
 ---
 # <a name="available-relay-apis"></a>Доступные интерфейсы API ретранслятора
@@ -32,14 +32,14 @@ ms.locfileid: "76513972"
 | Язык или платформа | Доступная функция | Пакет клиента | Хранилище |
 | --- | --- | --- | --- |
 | .NET Standard | Гибридные подключения | [Microsoft.Azure.Relay](https://www.nuget.org/packages/Microsoft.Azure.Relay/) | [GitHub](https://github.com/azure/azure-relay-dotnet) |
-| .NET Framework | Ретранслятор WCF | [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | Н/Д |
-| Узел | Гибридные подключения | [Подключения Websocket: `hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Подключения Websocket: `hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[HTTP-запросы: `hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
+| .NET Framework | Ретранслятор WCF | [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | Недоступно |
+| Узел | Гибридные подключения | [Websockets:`hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Websockets:`hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[Запросы HTTP:`hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
 
 ### <a name="additional-information"></a>Дополнительные сведения
 
 #### <a name="net"></a>.NET
 
-В экосистеме .NET существует несколько сред выполнения, поэтому для ретранслятора используется несколько библиотек .NET. Библиотеку .NET Standard можно запустить с помощью .NET Core или .NET Framework, а библиотеку .NET Framework можно запустить только в среде .NET Framework. Дополнительные сведения о версиях платформы .NET Framework см. в разделе [Версии платформ](/dotnet/articles/standard/frameworks).
+В экосистеме .NET существует несколько сред выполнения, поэтому для ретранслятора используется несколько библиотек .NET. Библиотеку .NET Standard можно запустить с помощью .NET Core или .NET Framework, а библиотеку .NET Framework можно запустить только в среде .NET Framework. Для получения дополнительной информации о рамочных [платформах](/dotnet/articles/standard/frameworks)см.
 
 Библиотека .NET Framework поддерживает только модель программирования WCF и использует собственный двоичный протокол на основе транспорта WCF `net.tcp`. Этот протокол и библиотека предоставляются для обеспечения обратной совместимости с существующими приложениями.
 

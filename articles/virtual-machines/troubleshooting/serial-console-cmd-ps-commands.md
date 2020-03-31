@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: 493340764f507c4fa364a5000f65cc232630b243
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77167030"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
@@ -117,7 +117,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="disable-windows-firewall"></a>Отключение брандмауэра Windows
 `netsh advfirewall set allprofiles state off`
 
-Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включен при следующей перезагрузке или при включении с помощью приведенной ниже команды. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
+Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включаться при следующем перезапуске или при его использовании команды ниже. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
 ### <a name="enable-windows-firewall"></a>Включение брандмауэра Windows
 `netsh advfirewall set allprofiles state on`
 ## <a name="manage-users-and-groups"></a>Управление пользователями и группами
@@ -320,7 +320,7 @@ SAC позволяет подключаться к вашей операцион
 `test-netconnection`
 
 > [!NOTE]
-> Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно запустить `$ProgressPreference = "SilentlyContinue"` в PowerShell.
+> Cmdlet Write-Progress может не работать с этой командой. В качестве меры по смягчению последствий можно запустить `$ProgressPreference = "SilentlyContinue"` в PowerShell, чтобы отключить планку прогресса.
 
 или диспетчер конфигурации служб
 
@@ -480,4 +480,4 @@ SAC позволяет подключаться к вашей операцион
 ## <a name="next-steps"></a>Дальнейшие действия
 * Страницу основной документации по работе с последовательной консолью Windows см. [здесь](serial-console-windows.md).
 * Последовательная консоль также доступна для виртуальных машин [Linux](serial-console-linux.md).
-* См. дополнительные сведения в статье [Устранение неполадок виртуальных машин Windows в Azure с использованием диагностики загрузки](boot-diagnostics.md).
+* Подробнее о [диагностике ботинок.](boot-diagnostics.md)

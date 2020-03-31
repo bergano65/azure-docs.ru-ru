@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок c общими ресурсами службы автоматизации Azure
-description: Узнайте, как устранять неполадки и устранять проблемы с общими ресурсами службы автоматизации Azure, поддерживающими модули Runbook.
+description: Узнайте, как устранить неполадки и устранить проблемы с общими ресурсами Azure Automation, поддерживающими руны.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: automation
 manager: carmonm
 ms.openlocfilehash: 4cea558b11d7ee7bbe838cecbd061cd487b536d2
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79278328"
 ---
 # <a name="troubleshoot-errors-with-shared-resources"></a>Устранение неполадок c общими ресурсами
@@ -21,7 +21,7 @@ ms.locfileid: "79278328"
 
 ## <a name="modules"></a>Модули
 
-### <a name="module-stuck-importing"></a>Сценарий: задержка при импорте модуля
+### <a name="scenario-a-module-is-stuck-importing"></a><a name="module-stuck-importing"></a>Сценарий: задержка при импорте модуля
 
 #### <a name="issue"></a>Проблема
 
@@ -39,11 +39,11 @@ ms.locfileid: "79278328"
 Remove-AzureRmAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
 ```
 
-### <a name="update-azure-modules-importing"></a>Сценарий: модули AzureRM зависают импорт после попытки обновления
+### <a name="scenario-azurerm-modules-are-stuck-importing-after-trying-to-update-them"></a><a name="update-azure-modules-importing"></a>Сценарий: Модули AzureRM застряли в импорте после попытки их обновления
 
 #### <a name="issue"></a>Проблема
 
-После попытки обновления модулей AzureRM в вашей учетной записи остается баннер со следующим сообщением:
+Баннер со следующим сообщением остается в вашей учетной записи после попытки обновления модулей AzureRM:
 
 ```error
 Azure modules are being updated
@@ -51,13 +51,13 @@ Azure modules are being updated
 
 #### <a name="cause"></a>Причина
 
-Существует известная ошибка при обновлении модулей AzureRM в учетной записи службы автоматизации, которая находится в группе ресурсов с числовым именем, начинающимся с 0.
+Существует известная проблема с обновлением модулей AzureRM в учетной записи автоматизации, которая находится в группе ресурсов с числовым именем, который начинается с 0.
 
 #### <a name="resolution"></a>Решение
 
-Чтобы обновить модули Azure в учетной записи службы автоматизации, она должна находиться в группе ресурсов с буквенно-цифровым именем. Группы ресурсов с числовыми именами, начинающимися с 0, не могут обновить модули AzureRM в данный момент.
+Чтобы обновить модули Azure в учетной записи автоматизации, он должен быть в группе ресурсов с буквенно-цифровым именем. Группы ресурсов с числовыми именами, начинающимися с 0, в настоящее время не могут обновлять модули AzureRM.
 
-### <a name="module-fails-to-import"></a>Сценарий: не удается импортировать модуль или после импорта не выполняются командлеты
+### <a name="scenario-module-fails-to-import-or-cmdlets-cant-be-executed-after-importing"></a><a name="module-fails-to-import"></a>Сценарий: не удается импортировать модуль или после импорта не выполняются командлеты
 
 #### <a name="issue"></a>Проблема
 
@@ -76,11 +76,11 @@ Azure modules are being updated
 
 Эту проблему можно устранить одним из следующих способов.
 
-* Убедитесь, что модуль имеет следующий формат: имя_модуля.Zip **->** имя_модуля или номер_версии **->** (ModuleName.psm1, ModuleName.psd1).
+* Убедитесь, что модуль следует следующему формату: ModuleName.sip **->** ModuleName или номер **->** версии (ModuleName.psm1, ModuleName.psd1)
 * Откройте файл PSD1 и проверьте, есть ли у модуля зависимости. Если зависимости есть, отправьте эти модули в учетную запись службы автоматизации.
 * Убедитесь, что все указанные библиотеки DLL находятся в папке модуля.
 
-### <a name="all-modules-suspended"></a>Сценарий: Приостановка Упдате-азуремодуле. ps1 при обновлении модулей
+### <a name="scenario-update-azuremoduleps1-suspends-when-updating-modules"></a><a name="all-modules-suspended"></a>Сценарий: Обновление-AzureModule.ps1 приостанавливается при обновлении модулей
 
 #### <a name="issue"></a>Проблема
 
@@ -95,7 +95,7 @@ Azure modules are being updated
 Очень редко все модули AzureRM требуются в одной учетной записи службы автоматизации. Мы рекомендуем импортировать только необходимые модули AzureRM.
 
 > [!NOTE]
-> Следует избегать импортирования модуля **AzureRM**. При импорте модулей **AzureRM** импортируются все модули **AzureRM.\*** . Это не рекомендуется.
+> Следует избегать импортирования модуля **AzureRM**. При импорте модулей **AzureRM** импортируются все модули **AzureRM.\***. Это не рекомендуется.
 
 Если процесс обновления приостанавливается, необходимо добавить параметр `SimultaneousModuleImportJobCount` в сценарий `Update-AzureModules.ps1` и указать более низкое значение, чем значение по умолчанию, равное 10. Это рекомендуется, если вы реализуете эту логику, начиная со значения 3 или 5. `SimultaneousModuleImportJobCount` является параметром runbook системы `Update-AutomationAzureModulesForAccount`, который используется для обновления модулей Azure. Благодаря этому изменению процесс будет более продолжительным, но он будет имеет больше шансов на завершение. В следующем примере показан параметр и его место в runbook:
 
@@ -118,7 +118,7 @@ Azure modules are being updated
 
 ## <a name="run-as-accounts"></a>Учетная запись запуска от имени
 
-### <a name="unable-create-update"></a>Сценарий: не удается создать или обновить учетную запись запуска от имени
+### <a name="scenario-youre-unable-to-create-or-update-a-run-as-account"></a><a name="unable-create-update"></a>Сценарий: Вы не можете создать или обновить учетную запись Run As
 
 #### <a name="issue"></a>Проблема
 
@@ -138,11 +138,11 @@ You do not have permissions to create…
 
 Если проблема связана с блокировкой, убедитесь, что ее можно удалить. Затем перейдите к ресурсу, который заблокирован, щелкните блокировку правой кнопкой мыши и выберите **Удалить**, чтобы снять блокировку.
 
-### <a name="iphelper"></a>Сценарий. при выполнении Runbook появляется сообщение об ошибке "не удается найти точку входа с именем" Жетперадаптеринфо "в библиотеке DLL" иплпапи. dll "".
+### <a name="scenario-you-receive-the-error-unable-to-find-an-entry-point-named-getperadapterinfo-in-dll-iplpapidll-when-executing-a-runbook"></a><a name="iphelper"></a>Сценарий: Вы получаете ошибку "Не удается найти точку входа под названием 'GetPerAdapterInfo' в DLL 'iplpapi.dll'" при выполнения runbook.
 
 #### <a name="issue"></a>Проблема
 
-При выполнении модуля Runbook появляется следующее исключение:
+При выполнении runbook вы получаете следующее исключение:
 
 ```error
 Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
@@ -150,11 +150,11 @@ Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
 
 #### <a name="cause"></a>Причина
 
-Скорее всего, эта ошибка вызвана неправильно настроенной [учетной записью запуска от имени](../manage-runas-account.md).
+Эта ошибка, скорее всего, вызвана неправильно настроенной [учетной записью Run As.](../manage-runas-account.md)
 
 #### <a name="resolution"></a>Решение
 
-Убедитесь, что [учетная запись запуска от имени](../manage-runas-account.md) настроена правильно. После правильной настройки убедитесь, что у вас есть правильный код в модуле Runbook для проверки подлинности в Azure. В следующем примере показан фрагмент кода для проверки подлинности в Azure в модуле Runbook с помощью учетной записи запуска от имени.
+Убедитесь, что ваша [учетная запись Run As](../manage-runas-account.md) правильно настроена. После правильной настройки убедитесь, что в runbook есть соответствующий код для проверки подлинности с помощью Azure. В следующем примере показан фрагмент кода для проверки подлинности В журнале Azure с помощью учетной записи Run As.
 
 ```powershell
 $connection = Get-AutomationConnection -Name AzureRunAsConnection
@@ -167,5 +167,5 @@ Connect-AzureRmAccount -ServicePrincipal -Tenant $connection.TenantID `
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы специалистов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
-* Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+* Связь [@AzureSupport](https://twitter.com/azuresupport) с официальной учетной записью Microsoft Azure для улучшения обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответам, поддержке и экспертам.
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**

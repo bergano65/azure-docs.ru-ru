@@ -1,15 +1,15 @@
 ---
 title: Контейнеризация существующего приложения .NET для сетки Service Fabric
-description: Добавление Service Fabric поддержки оркестрации контейнера сети в проекты ASP.NET и консоли, использующие полную версию .NET Framework.
+description: Добавьте поддержку контейнерной организации Service Fabric Mesh в ASP.NET и консольных проектов, которые используют полную платформу .NET.
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/08/2018
 ms.topic: conceptual
 ms.openlocfilehash: d67ea5bb7df5910ec87e69adf3c414c303bf0182
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75462047"
 ---
 # <a name="containerize-an-existing-net-app-for-service-fabric-mesh"></a>Контейнеризация существующего приложения .NET для сетки Service Fabric
@@ -21,9 +21,9 @@ ms.locfileid: "75462047"
 > [!NOTE]
 > Проекты .NET **Core** сейчас не поддерживаются.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Если у вас еще нет Azure подписки до начала работы, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) до начала.
 
 * Убедитесь в том, что вы [настроили среду разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md). Это подразумевает также установку среды выполнения Service Fabric, пакета SDK, Docker, Visual Studio 2017 и создание локального кластера.
 

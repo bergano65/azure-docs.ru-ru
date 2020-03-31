@@ -15,6 +15,8 @@
       href: web-query-data.md
 - name: Учебники
   items:
+    - name: Написание запросов
+      href: write-queries.md
     - name: Программный прием больших двоичных объектов E2E
       items:
         - name: 'C#'
@@ -32,14 +34,22 @@
         - name: Общие сведения о приеме данных
           displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
           href: ingest-data-overview.md
+        - name: Свойства приема данных
+          href: ingestion-properties.md
+        - name: Форматы для приема данных
+          href: ingestion-supported-formats.md
     - name: Язык запросов Kusto
       items:
         - name: Краткое справочное руководство
           href: kql-quick-reference.md
     - name: Обзор визуализации данных
       href: viz-overview.md
-    - name: Общие сведения о безопасности
-      href: security.md
+    - name: Безопасность
+      items:
+        - name: Общие сведения о безопасности
+          href: security.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Создание кластера и базы данных
@@ -60,6 +70,8 @@
           href: ingest-data-one-click.md
         - name: Прием потоковой передачи
           href: ingest-data-streaming.md
+        - name: Использование LightIngest
+          href: lightingest.md
         - name: Концентратор событий
           items:
             - name: Портал Azure
@@ -106,8 +118,6 @@
           href: ingest-json-formats.md
     - name: Данные запросов
       items:
-        - name: Написание запросов
-          href: write-queries.md
         - name: Отправка запроса данных в Azure Data Lake
           href: data-lake-query-data.md
         - name: Запрашивание данных в Azure Monitor
@@ -158,12 +168,22 @@
           href: k2bridge.md
     - name: Безопасность
       items:
+        - name: Сетевая изоляция (виртуальная сеть)
+          items:
+            - name: "Создание кластера в виртуальной сети\_— портал"
+              href: vnet-create-cluster-portal.md
+            - name: Развертывание кластера в виртуальной сети
+              href: vnet-deployment.md
+            - name: 'Устранение неполадок при создании и подключении кластера виртуальной сети, а также при работе с ним'
+              href: vnet-deploy-troubleshoot.md
         - name: Управление безопасностью кластера
           href: manage-cluster-security.md
         - name: Настройка управляемых удостоверений
           href: managed-identities.md
         - name: 'Настройка ключей, управляемых клиентом'
           items:
+            - name: Портал
+              href: customer-managed-keys-portal.md
             - name: 'C#'
               href: customer-managed-keys-csharp.md
             - name: Шаблон Azure Resource Manager
@@ -214,10 +234,6 @@
               href: delete-data.md
             - name: Обработка дублированных данных
               href: dealing-with-duplicates.md
-    - name: Развертывание
-      items:
-        - name: Развертывание кластера в виртуальной сети
-          href: vnet-deployment.md
     - name: Монитор
       items:
         - name: Использование журналов диагностики для мониторинга приема
@@ -236,6 +252,12 @@
               href: data-factory-template.md
             - name: Выполнение команд управления с использованием Фабрики данных Azure
               href: data-factory-command-activity.md
+        - name: Соединитель Microsoft Flow
+          items:
+            - name: Соединитель Microsoft Flow
+              href: flow.md
+            - name: Примеры использования соединителя Microsoft Flow
+              href: flow-usage.md
         - name: Соединитель Apache Spark
           href: spark-connector.md
         - name: Подключение из Databricks с помощью Python

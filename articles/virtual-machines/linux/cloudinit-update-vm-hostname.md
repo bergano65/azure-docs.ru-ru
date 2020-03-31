@@ -1,5 +1,5 @@
 ---
-title: Использование Cloud-init для задания имени узла для виртуальной машины Linux
+title: Используйте облачное инит для установки имени хоста для Linux VM
 description: Как с помощью cloud-init и Azure CLI настроить создаваемую виртуальную машину Linux
 author: rickstercdn
 ms.service: virtual-machines-linux
@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.openlocfilehash: 631b8ef83d5fbf10ec401df7432b23238f2ae2e6
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78969169"
 ---
 # <a name="use-cloud-init-to-set-hostname-for-a-linux-vm-in-azure"></a>Задание имени узла с помощью cloud-init для виртуальной машины Linux в Azure

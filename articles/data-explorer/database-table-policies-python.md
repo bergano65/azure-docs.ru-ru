@@ -1,6 +1,6 @@
 ---
-title: 'Создание политик для кластера и базы данных Azure обозреватель данных с помощью библиотеки Azure обозреватель данных Python '
-description: Из этой статьи вы узнаете, как создавать политики с помощью Python.
+title: 'Создание политик для кластера и базы данных Azure Data Explorer с помощью библиотеки Explorer данных Azure '
+description: В этой статье вы узнаете, как создавать политики с помощью Python.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -8,26 +8,26 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.openlocfilehash: a0fe86e2dcb802b822cb08ed0922b5da9c5cfd1c
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74667282"
 ---
-# <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-python"></a>Создание политик базы данных и таблиц для обозреватель данных Azure с помощью Python
+# <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-python"></a>Создание политик базы данных и таблиц для Azure Data Explorer с помощью Python
 
 > [!div class="op_single_selector"]
-> * [C#](database-table-policies-csharp.md)
+> * [C #](database-table-policies-csharp.md)
 > * [Python](database-table-policies-python.md)
 >
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы создадите политики базы данных и таблиц для Azure обозреватель данных с помощью Python.
+Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье с помощью Python создается политики баз данных и таблиц для Azure Data Explorer.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-* [Тестовый кластер и база данных](create-cluster-database-python.md)
-* [Тестовая таблица](python-ingest-data.md#create-a-table-on-your-cluster)
+* [Кластер тестирования и база данных](create-cluster-database-python.md)
+* [Таблица тестирования](python-ingest-data.md#create-a-table-on-your-cluster)
 
 ## <a name="install-the-data-libraries"></a>Установка библиотек данных
 
@@ -37,11 +37,11 @@ pip install azure-mgmt-kusto
 pip install azure-kusto-data (Optional, for changing table's policies)
 ```
 
-## <a name="authentication"></a>Authentication
-Для выполнения примеров в этой статье нам потребуется приложение Azure AD и субъект-служба, которые могут получать доступ к ресурсам. Вы можете использовать одно и то же приложение Azure AD для проверки подлинности из [тестового кластера и базы данных](create-cluster-database-csharp.md#authentication). Если вы хотите использовать другое приложение Azure AD, см. раздел [Создание приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) для создания бесплатного приложения Azure AD и Добавление назначения роли в области подписки. В нем также показано, как получить `Directory (tenant) ID`, `Application ID`и `Client Secret`. Возможно, потребуется добавить новое приложение Azure AD в качестве участника в базу данных. см. раздел [Управление разрешениями для базы данных azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/manage-database-permissions).    
+## <a name="authentication"></a>Проверка подлинности
+Для запуска примеров в этой статье нам необходимо приложение Azure AD и директор службы, которые могут получить доступ к ресурсам. Для проверки подлинности из [тестового кластера и базы данных](create-cluster-database-csharp.md#authentication)можно использовать то же приложение Azure AD. Если вы хотите использовать другое приложение Azure AD, см. [создать приложение Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) для создания бесплатного приложения Azure AD и добавления ролевого задания в области подписки. Он также `Directory (tenant) ID`показывает, как `Application ID`получить `Client Secret`, , и . Возможно, потребуется добавить новое приложение Azure AD в качестве основного в базе данных, [см.](https://docs.microsoft.com/azure/data-explorer/manage-database-permissions)    
 
-## <a name="alter-database-retention-policy"></a>Изменение политики хранения базы данных
-Задает политику хранения с периодом обратимого удаления в 10 дней.
+## <a name="alter-database-retention-policy"></a>Изменить политику хранения баз данных
+Устанавливает политику удержания с 10-дневным периодом мягкого удаления.
 
 ```python
 from azure.mgmt.kusto import KustoManagementClient
@@ -73,8 +73,8 @@ poller = kustoManagementClient.databases.update(resource_group_name=resource_gro
                                            parameters=DatabaseUpdate(soft_delete_period=datetime.timedelta(days=10)))
 ```
 
-## <a name="alter-database-cache-policy"></a>Изменение политики кэша базы данных
-Задает политику кэширования для базы данных, в которой данные за последние пять дней будут находиться на SSD кластера.
+## <a name="alter-database-cache-policy"></a>Политика кэша кэша базы данных
+Устанавливает политику кэша для базы данных, что последние пять дней данные будут находиться в кластере SSD.
 
 ```python
 from azure.mgmt.kusto import KustoManagementClient
@@ -106,8 +106,8 @@ poller = kustoManagementClient.databases.update(resource_group_name=resource_gro
                                            parameters=DatabaseUpdate(hot_cache_period=datetime.timedelta(days=5)))
 ```
 
-## <a name="alter-table-cache-policy"></a>Политика изменения кэша таблиц
-Задает политику кэширования для таблицы, в которой данные за последние пять дней будут находиться на SSD кластера.
+## <a name="alter-table-cache-policy"></a>Изменение политики кэша таблиц
+Устанавливает политику кэша для таблицы, которая за последние пять дней данных будет находиться в кластере SSD.
 
 ```python
 from azure.kusto.data.request import KustoClient, KustoConnectionStringBuilder
@@ -131,8 +131,8 @@ command = '.alter table {} policy caching '.format(table_name) +  caching_policy
 kusto_client.execute_mgmt(database_name, command)
 ```
 
-## <a name="add-a-new-principal-for-database"></a>Добавление нового участника для базы данных
-Добавление нового приложения Azure AD в качестве участника администратора для базы данных
+## <a name="add-a-new-principal-for-database"></a>Добавление нового принципала для базы данных
+Добавьте новое приложение Azure AD в качестве основного средства для базы данных
 
 ```python
 from azure.mgmt.kusto import KustoManagementClient
@@ -168,4 +168,4 @@ kustoManagementClient.databases.add_principals(resource_group_name=resource_grou
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Дополнительные сведения о политиках баз данных и таблиц](https://docs.microsoft.com/azure/kusto/management/policies)
+* [Подробнее о политиках баз данных и таблиц](https://docs.microsoft.com/azure/kusto/management/policies)

@@ -1,6 +1,6 @@
 ---
-title: Добавление диагностической & диагностики в виртуальную машину Azure
-description: Используйте шаблон Azure Resource Manager, чтобы создать новую виртуальную машину Windows с расширением системы диагностики Azure.
+title: Добавление диагностики мониторинга & в виртуальную машину Azure
+description: Используйте шаблон Azure Resource Manager для создания новой виртуальной машины Windows с расширением диагностики Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: sbtron
@@ -16,10 +16,10 @@ ms.date: 05/31/2017
 ms.author: saurabh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 2490c3de60e0deac6a1a4ddc5abc95cb46e240b2
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74073839"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager
@@ -62,7 +62,7 @@ ms.locfileid: "74073839"
 ]
 ```
 
-Другой распространенный способ — добавить конфигурацию расширения в корневой узел ресурсов шаблона, не определяя ее в узле ресурсов виртуальной машины. При таком подходе необходимо явно указать иерархические связи между расширением и виртуальной машиной с помощью значений *name* и *type*. Например, 
+Другой распространенный способ — добавить конфигурацию расширения в корневой узел ресурсов шаблона, не определяя ее в узле ресурсов виртуальной машины. При таком подходе необходимо явно указать иерархические связи между расширением и виртуальной машиной с помощью значений *name* и *type*. Пример: 
 
 ```json
 "name": "[concat(variables('vmName'),'Microsoft.Insights.VMDiagnosticsSettings')]",
@@ -176,7 +176,7 @@ ms.locfileid: "74073839"
 * **Count** — общее количество значений, переданных для счетчика производительности.
 * **Average** — среднее значение (сумма значений, деленная на общее количество значений) счетчика производительности в течение периода сбора.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Полный пример шаблона виртуальной машины Windows с расширением системы диагностики см. в репозитории [201-vm-monitoring-diagnostics-extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension).   
+## <a name="next-steps"></a>Next Steps
+* Для полного шаблона образца виртуальной машины [201-vm-monitoring-diagnostics-extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension) Windows с расширением диагностики см.   
 * Разверните шаблон Azure Resource Manager с использованием [Azure PowerShell](../windows/ps-template.md) или [командной строки Azure](../linux/create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-* Узнайте больше о [создании шаблонов диспетчера ресурсов Azure](../../resource-group-authoring-templates.md)
+* Подробнее об [авторизации шаблонов управления ресурсами Azure](../../resource-group-authoring-templates.md)

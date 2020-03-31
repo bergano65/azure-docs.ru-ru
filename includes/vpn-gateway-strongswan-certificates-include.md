@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -9,10 +9,10 @@ ms.date: 09/12/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 1c2525b352c25f470814ce909a8d10ff821d9e32
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "70961596"
 ---
 Создайте сертификат ЦС.
@@ -22,7 +22,7 @@ ms.locfileid: "70961596"
   ipsec pki --self --in caKey.pem --dn "CN=VPN CA" --ca --outform pem > caCert.pem
   ```
 
-Выведите на экран сертификат ЦС в формате base64. Это формат, поддерживаемый Azure. Вы отправляете этот сертификат в Azure как часть [шагов настройки P2S](../articles/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md).
+Выведите на экран сертификат ЦС в формате base64. Это формат, поддерживаемый Azure. Вы загружаете этот сертификат в Azure в рамках [шагов конфигурации P2S.](../articles/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md)
 
   ```
   openssl x509 -in caCert.pem -outform der | base64 -w0 ; echo

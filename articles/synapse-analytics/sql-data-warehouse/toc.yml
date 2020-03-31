@@ -16,12 +16,12 @@
       href: sql-data-warehouse-service-capacity-limits.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: sql-data-warehouse-overview-faq.md
-- name: Заметки о выпуске
-  items:
-    - name: Последний выпуск
-      href: release-notes-10-0-10106-0.md
-    - name: График регионального обновления до 2-го поколения
-      href: gen2-migration-schedule.md
+    - name: Заметки о выпуске
+      items:
+        - name: Последний выпуск
+          href: release-notes-10-0-10106-0.md
+        - name: График регионального обновления до 2-го поколения
+          href: gen2-migration-schedule.md
 - name: Краткие руководства
   expanded: true
   items:

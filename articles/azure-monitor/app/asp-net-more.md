@@ -4,10 +4,10 @@ description: Начав работу с Application Insights, ознакомьт
 ms.topic: conceptual
 ms.date: 02/03/2017
 ms.openlocfilehash: 3c4a9a736f34d4f7dbfeb004d0837f1f2efa55dc
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77666030"
 ---
 # <a name="more-telemetry-from-application-insights"></a>Дополнительные данные телеметрии из Application Insights
@@ -15,7 +15,7 @@ ms.locfileid: "77666030"
 
 | Действие | Что вы получаете|
 |---|---|
-|(Серверы IIS) [Установите монитор состояния](https://go.microsoft.com/fwlink/?LinkId=506648) на каждом компьютере-сервере.<br/>(Веб-приложения Azure) На панели управления Azure веб-приложения откройте колонку Application Insights.| [**Счетчики производительности**](../../azure-monitor/app/performance-counters.md).<br/>[**Исключения**](asp-net-exceptions.md) — подробные трассировки стека.<br/>[**Зависимости**](../../azure-monitor/app/asp-net-dependencies.md).|
+|(Серверы IIS) [Установите монитор состояния](https://go.microsoft.com/fwlink/?LinkId=506648) на каждом компьютере-сервере.<br/>(Веб-приложения Azure) На панели управления Azure веб-приложения откройте колонку Application Insights.| [**Счетчики производительности**](../../azure-monitor/app/performance-counters.md)<br/>[**Исключения**](asp-net-exceptions.md) — подробные трассировки стека.<br/>[**Зависимости**](../../azure-monitor/app/asp-net-dependencies.md)|
 |[Добавьте фрагмент JavaScript в свои веб-страницы](../../azure-monitor/app/javascript.md)|[Производительность страниц](../../azure-monitor/app/usage-overview.md), исключения браузера, производительность вызовов AJAX. Пользовательская телеметрия на стороне клиента.|
 |[Создайте веб-тесты на доступность](../../azure-monitor/app/monitor-web-app-availability.md)|Получение оповещений, когда сайт становится недоступным|
 |Убедитесь, что MSBuild создает [файл BuildInfo.config](https://msdn.microsoft.com/library/dn449058.aspx)|[Создание заметок к диаграммам метрик](https://docs.microsoft.com/azure/azure-monitor/app/annotations)

@@ -1,5 +1,5 @@
 ---
-title: Управление Azure Data Lake Analytics с помощью Azure CLI
+title: Управление аналитикой озер данных Azure с помощью Azure CLI
 description: В этой статье описано, как с помощью Azure CLI управлять источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
 author: jasonwhowell
@@ -8,12 +8,12 @@ ms.assetid: 4e5a3a0a-6d7f-43ed-aeb5-c3b3979a1e0a
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 01/29/2018
-ms.openlocfilehash: d66926d8ba87096537800d22a9c116b7b10d23cf
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 69a48952ef273acb8cf7eb0ec5968e12b962b622
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309742"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79454369"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-command-line-interface-cli"></a>Управление Azure Data Lake Analytics с помощью интерфейса командной строки (CLI) Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "71309742"
 
 Data Lake Analytics сейчас поддерживает два источника данных:
 
-* [Azure Data Lake Storage](../data-lake-store/data-lake-store-overview.md)
+* [Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md)
 * [Хранилище Azure](../storage/common/storage-introduction.md)
 
 При создании учетной записи аналитики необходимо указать учетную запись хранения озера данных Azure в качестве учетной записи хранения по умолчанию. В учетной записи хранения Data Lake, используемой по умолчанию, хранятся метаданные задания и журналы аудита задания. После создания учетной записи аналитики можно добавить дополнительные учетные записи хранения озера данных и учетные записи хранения Azure. 
@@ -197,7 +197,7 @@ Data Lake Analytics сейчас поддерживает два источни�
 
 Используйте команды `az dla job pipeline`, чтобы получить сведения о конвейерах для ранее отправленных заданий.
 
-```
+```azurecli
 az dla job pipeline list --account "<Data Lake Analytics Account Name>"
 
 az dla job pipeline show --account "<Data Lake Analytics Account Name>" --pipeline-identity "<Pipeline ID>"
@@ -205,7 +205,7 @@ az dla job pipeline show --account "<Data Lake Analytics Account Name>" --pipeli
 
 Используйте команды `az dla job recurrence`, чтобы получить сведения о повторениях для ранее отправленных заданий.
 
-```
+```azurecli
 az dla job recurrence list --account "<Data Lake Analytics Account Name>"
 
 az dla job recurrence show --account "<Data Lake Analytics Account Name>" --recurrence-identity "<Recurrence ID>"
@@ -213,7 +213,7 @@ az dla job recurrence show --account "<Data Lake Analytics Account Name>" --recu
 
 ## <a name="see-also"></a>См. также
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
-* [Начало работы с аналитикой озера данных с помощью портала Azure](data-lake-analytics-get-started-portal.md)
-* [Управление аналитикой озера данных Azure с помощью портала Azure](data-lake-analytics-manage-use-portal.md)
-* [Устранение неполадок с заданиями аналитики озера данных Azure с помощью портала Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+* [Начало работы с Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)
+* [Управление аналитикой озер данных Azure с помощью портала Azure](data-lake-analytics-manage-use-portal.md)
+* [Мониторинг и устранение неполадок задания Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 

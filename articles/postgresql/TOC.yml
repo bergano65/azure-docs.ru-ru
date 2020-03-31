@@ -102,6 +102,8 @@
               href: concepts-data-access-and-security-private-link.md
             - name: Шифрование данных
               href: concepts-data-encryption-postgresql.md
+            - name: Базовые средства безопасности
+              href: security-baseline.md
         - name: Непрерывность бизнес-процессов
           items:
             - name: Общие сведения о непрерывности бизнес-процессов
@@ -273,6 +275,10 @@
               href: howto-restart-server-portal.md
             - name: Azure CLI
               href: howto-restart-server-cli.md
+        - name: Запрет доступа к общедоступной сети
+          items:
+            - name: Портал Azure
+              href: howto-deny-public-network-access.md
         - name: Репликация
           items:
             - name: Управление репликами чтения с помощью портала Azure

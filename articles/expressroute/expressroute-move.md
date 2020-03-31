@@ -1,5 +1,5 @@
 ---
-title: 'ExpressRoute: Перемещение цепей из классической модели в Azure Resource Manager'
+title: 'ExpressRoute: Перемещение схем от классического к менеджеру ресурсов Azure'
 description: Сведения о связывании классической модели и модели развертывания с помощью Resource Manager.
 services: expressroute
 author: ganesr
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: ganesr
 ms.openlocfilehash: c4fed30f7f4b723f04cd59b2a987b498e3d614a5
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75645911"
 ---
 # <a name="moving-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager
@@ -87,7 +87,7 @@ ms.locfileid: "75645911"
 * Управление жизненным циклом канала ExpressRoute в классической модели развертывания.
 * Управление доступом на основе ролей (RBAC) в классической модели развертывания. Элементы управления RBAC невозможно использовать для канала в классической модели развертывания. Любой администратор или соадминистратор подписки может связать виртуальную сеть с каналом или удалить связь между ними.
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Параметр Configuration
 Следуйте указаниям в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager](expressroute-howto-move-arm.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -95,7 +95,7 @@ ms.locfileid: "75645911"
 * Сведения о рабочем процессе см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
 * Чтобы создать подключение ExpressRoute, выполните действия в следующих статьях:
   
-  * [Создание канала ExpressRoute](expressroute-howto-circuit-arm.md)
+  * [Создание схемы ExpressRoute](expressroute-howto-circuit-arm.md)
   * [Настройка маршрутизации](expressroute-howto-routing-arm.md)
-  * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)
+  * [Связь виртуальной сети с схемой ExpressRoute](expressroute-howto-linkvnet-arm.md)
 

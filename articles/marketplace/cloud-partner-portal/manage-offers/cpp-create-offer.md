@@ -1,19 +1,18 @@
 ---
-title: Создание предложений Marketplace | Azure Marketplace
+title: Создание предложений по маркетплейсу (ru) Лазурный рынок
 description: Создание предложений в AppSource и Azure Marketplace с помощью Портала Cloud Partner
-services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.author: pabutler
-ms.openlocfilehash: 4aa4e154c99f20963485a98d1a21af4ae2b7a1b1
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: d14940eff569a80759e9db0bfa2d6d1541a01377
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73828098"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80286478"
 ---
 # <a name="create-azure-marketplace-and-appsource-offers"></a>Создание предложений Azure Marketplace и AppSource
 
@@ -36,7 +35,7 @@ ms.locfileid: "73828098"
 | **Сохранить**    | Сохраняет все последние изменения ввода данных.  Необходимо вручную сохранять изменения, прежде чем переходить на другую страницу, иначе ваши изменения будут утрачены. | 
 | **Отменить** | Отменяет последние изменения ввода данных (с момента последнего сохранения).             |
 | **Сравнить** | Сравнивает состояние текущего предложения с опубликованным.  Доступна только после успешной публикации предложения.  |
-| **Опубликовать** | Начинает процесс публикации предложения.                       |
+| **Публикация** | Начинает процесс публикации предложения.                       |
 | **Удалить**  | Удаляет созданное, но не опубликованное предложение. |
 |   |   |
 

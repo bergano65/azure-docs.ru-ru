@@ -1,6 +1,6 @@
 ---
-title: Лививент параметры низкой задержки в службах мультимедиа Azure | Документация Майкрософт
-description: В этом разделе приводятся общие сведения о параметрах низкой задержки Лививент и показано, как задать низкую задержку.
+title: Настройки низкой задержки LiveEvent в медиасервисах Azure Документы Майкрософт
+description: Эта тема дает обзор настроек с низкой задержкой LiveEvent и показывает, как установить низкую задержку.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,20 +14,20 @@ ms.topic: article
 ms.date: 04/22/2019
 ms.author: juliako
 ms.openlocfilehash: a82a0644fac099b568ab86ea213b98cd8e7d5c22
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78199654"
 ---
-# <a name="live-event-low-latency-settings"></a>Параметры низкой задержки в динамических событиях
+# <a name="live-event-low-latency-settings"></a>Настройки низкой задержки события в реальном времени
 
 В этой статье показано, как настроить низкую задержку [события потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents). Здесь также рассмотрены результаты настройки низкой задержки в разных проигрывателях. Результаты различаются в зависимости от задержки сети и CDN.
 
-Чтобы использовать новую функцию **LowLatency**, настройте для параметра **StreamOptionsFlag** значение **LowLatency** в **LiveEvent**. При создании [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs) для воспроизведения HLS задайте для [LiveOutput.Hls.fragmentsPerTsSegment](https://docs.microsoft.com/rest/api/media/liveoutputs/create#hls) значение 1. Когда поток запущен и работает, можно использовать демонстрационную страницу [проигрывателя мультимедиа Azure](https://ampdemo.azureedge.net/) (AMP) и установить параметры воспроизведения так, чтобы использовался профиль Low Latency Heuristics Profile (Эвристический профиль малой задержки).
+Чтобы использовать новую функцию **LowLatency**, настройте для параметра **StreamOptionsFlag** значение **LowLatency** в **LiveEvent**. При создании [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs) для воспроизведения HLS задайте для [LiveOutput.Hls.fragmentsPerTsSegment](https://docs.microsoft.com/rest/api/media/liveoutputs/create#hls) значение 1. После запуска потока можно использовать [медиаплеер Azure](https://ampdemo.azureedge.net/) (демо-страница AMP) и настроить параметры воспроизведения для использования "Профиля эвристики низкой задержки".
 
 > [!NOTE]
-> В настоящее время Ловлатенци Хеуристикпрофиле в Проигрыватель мультимедиа Azure предназначен для воспроизведения потоков в протоколе MPEG-ТИРЕ с помощью формата CSF или КМАФ (например, `format=mdp-time-csf` или `format=mdp-time-cmaf`). 
+> В настоящее время LowLatency HeuristicProfile в Azure Media Player предназначен для воспроизведения потоков в протоколе MPEG-DASH, с форматом CSF или CMAF (например, `format=mdp-time-csf` или). `format=mdp-time-cmaf` 
 
 В следующем примере .NET показано, как задать **LowLatency** в **LiveEvent**:
 

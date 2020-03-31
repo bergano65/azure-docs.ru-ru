@@ -1,6 +1,6 @@
 ---
 title: Обзор API Центров событий Azure | Документация Майкрософт
-description: В этой статье представлен обзор доступных интерфейсов API (среда выполнения и управление) для использования службы концентраторов событий Azure.
+description: В этой статье содержится обзор доступных AIS (время выполнения и управления) для использования службы Azure Event Hubs.
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/02/2018
 ms.author: shvija
 ms.openlocfilehash: 08e10996f633d35ffbf946b61937a0e9a76f7227
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77162231"
 ---
 # <a name="available-event-hubs-apis"></a>Доступные интерфейсы API Центров событий
@@ -47,7 +47,7 @@ ms.locfileid: "77162231"
 
 #### <a name="node"></a>Узел
 
-В настоящее время [Библиотека JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs) находится на этапе предварительной версии и поддерживается как побочный проект сотрудниками Майкрософт и внешними участниками. Все добавляемые материалы, включая исходный код, принимаются и проверяются.
+[Библиотека JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs) в настоящее время находится в предварительном просмотре и поддерживается в качестве сайд-проекта сотрудниками корпорации Майкрософт и внешними участниками. Все добавляемые материалы, включая исходный код, принимаются и проверяются.
 
 ## <a name="management-apis"></a>API управления
 
@@ -62,4 +62,4 @@ ms.locfileid: "77162231"
 
 * [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+* [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)

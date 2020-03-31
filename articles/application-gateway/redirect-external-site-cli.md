@@ -1,5 +1,5 @@
 ---
-title: Перенаправление внешнего трафика с помощью интерфейса командной строки (шлюз приложений Azure)
+title: Внешнее перенаправление трафика с помощью CLI - Шлюз приложений Azure
 description: Узнайте, как создать шлюз приложений, который перенаправляет внутренний веб-трафик в соответствующий пул с помощью Azure CLI.
 services: application-gateway
 author: vhorne
@@ -8,28 +8,28 @@ ms.topic: article
 ms.date: 11/13/2019
 ms.author: victorh
 ms.openlocfilehash: fc955b4959bb20628463f7699a0b66ec2b89a393
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74011597"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure CLI
 
 С помощью Azure CLI можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы настроите прослушиватель и правило, которое перенаправляет веб-трафик, поступающий на шлюз приложений, на внешний сайт.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
 > * создание прослушивателя и правила перенаправления;
 > * Создание шлюза приложений
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -88,7 +88,7 @@ az network application-gateway create \
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Добавьте конфигурацию перенаправления, которая отправляет трафик из *интернета\.consoto.org* в прослушиватель для *www\.contoso.com* к шлюзу приложений с помощью команды [AZ Network Application-шлюз Redirect-config Create](/cli/azure/network/application-gateway/redirect-config).
+Добавьте конфигурацию перенаправления, которая отправляет трафик с *www\.consoto.org* слушателю для *www\.contoso.com* к шлюзу приложения, используя [az сетевое приложение-шлюз перенаправление-конфигурацию.](/cli/azure/network/application-gateway/redirect-config)
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \
@@ -130,9 +130,9 @@ az network application-gateway rule create \
 
 В браузере должен открыться сайт *bing.com*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > * Настройка сети
 > * создание прослушивателя и правила перенаправления;

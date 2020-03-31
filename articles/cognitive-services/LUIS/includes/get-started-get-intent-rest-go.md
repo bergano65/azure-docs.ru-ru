@@ -9,13 +9,13 @@ ms.topic: include
 ms.date: 01/31/2020
 ms.author: diberry
 ms.openlocfilehash: 02cb7738e20df6aba8690c9fe2ee718144bad114
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76987809"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * язык программирования [GO](https://golang.org/);
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -30,8 +30,8 @@ ms.locfileid: "76987809"
     |Параметр|Значение|
     |--|--|
     |Имя|Требуемое имя (от 2 до 64 символов)|
-    |Подписка|Выберите соответствующую подписку|
-    |Расположение|Выберите доступное поблизости расположение|
+    |Subscription|Выберите соответствующую подписку|
+    |Location|Выберите доступное поблизости расположение|
     |Ценовая категория|`F0` — минимальная ценовая категория|
     |Группа ресурсов|Выберите доступную группу ресурсов|
 

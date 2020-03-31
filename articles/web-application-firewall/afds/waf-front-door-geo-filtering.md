@@ -1,5 +1,5 @@
 ---
-title: Географическая фильтрация в домене для службы "Передняя дверца Azure"
+title: Геофильтрация на домене для службы передних дверей Azure
 description: В этой статье вы узнаете о политике геофильтрации для Azure Front Door Service.
 services: web-application-firewall
 author: vhorne
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
-ms.openlocfilehash: 7c49892f97d9c15efcaecccb6133c67133e81c87
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.openlocfilehash: e287da94a71fccabddb90f3f5a3699f4c4cf22a5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79137566"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79472611"
 ---
 # <a name="what-is-geo-filtering-on-a-domain-for-azure-front-door"></a>Сведения о геофильтрации в домене для Azure Front Door
 
@@ -21,7 +21,7 @@ ms.locfileid: "79137566"
 
 Политика брандмауэра веб-приложения обычно содержит набор настраиваемых правил. Правило состоит из соответствующего условия, действия и приоритета. В условии соответствия определяется переменная, оператор и значение соответствия.  Для правила геофильтрации переменной соответствия является REMOTE_ADDR, оператором — GeoMatch, а значением — двухбуквенный код необходимой страны. Условие GeoMatch можно объединить с условием строки соответствия REQUEST_URI, чтобы создать правило геофильтрации на основе пути.
 
-Вы можете настроить политику географической настройки для передней дверцы, используя портал Azure, [Azure PowerShell](waf-front-door-tutorial-geo-filtering.md) или [шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-front-door-geo-filtering)быстрого запуска.
+Политику геофильтрации можно настроить для Front Door, используя [Azure PowerShell](waf-front-door-tutorial-geo-filtering.md) или [шаблон быстрого запуска](https://github.com/Azure/azure-quickstart-templates/tree/master/101-front-door-geo-filtering).
 
 ## <a name="country-code-reference"></a>Справочник с кодами стран
 
@@ -180,7 +180,7 @@ ms.locfileid: "79137566"
 | SO | Сомали|
 | SR | Суринам|
 | SS | Южный Судан|
-| SV | Сальвадор|
+| SV | Эль-Сальвадор|
 | SY | Сирия|
 | SZ | Свазиленд|
 | TC | Острова Теркс и Кайкос|

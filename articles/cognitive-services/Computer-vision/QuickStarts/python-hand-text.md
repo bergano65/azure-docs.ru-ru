@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 2f0b8cac2cc26b2fab7255a7e7587985a5425485
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: fafc5234da3e6dfecdae2c8b2e2ba80cbed20b5c
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77566205"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80244807"
 ---
 # <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-20-and-21-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения версии 2.0 и 2.1 и Python
 
@@ -65,6 +65,8 @@ ms.locfileid: "77566205"
 1. В командной строке выполните пример кода с помощью команды `python`. Например, `python get-text.py`.
 
 ```python
+import os
+import sys
 import requests
 import time
 # If you are using a Jupyter notebook, uncomment the following line.

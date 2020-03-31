@@ -1,6 +1,6 @@
 ---
-title: Создание подключения к данным концентратора событий для Azure обозреватель данных с помощью Python
-description: Из этой статьи вы узнаете, как создать подключение к данным концентратора событий для Azure обозреватель данных с помощью Python.
+title: Создание соединения концентратора событий для исследователя данных Azure с помощью Python
+description: В этой статье вы узнаете, как создать соединение данных концентратора событий для Azure Data Explorer с помощью Python.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -8,43 +8,43 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.openlocfilehash: c08271286373ab8c3e621ee6fa59782ba2d16fb4
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77444185"
 ---
-# <a name="create-an-event-hub-data-connection-for-azure-data-explorer-by-using-python"></a>Создание подключения к данным концентратора событий для Azure обозреватель данных с помощью Python
+# <a name="create-an-event-hub-data-connection-for-azure-data-explorer-by-using-python"></a>Создание соединения концентратора событий для исследователя данных Azure с помощью Python
 
 > [!div class="op_single_selector"]
 > * [Портал](ingest-data-event-hub.md)
-> * [C#](data-connection-event-hub-csharp.md)
+> * [C #](data-connection-event-hub-csharp.md)
 > * [Python](data-connection-event-hub-python.md)
-> * [Шаблон Azure Resource Manager](data-connection-event-hub-resource-manager.md)
+> * [Шаблон менеджера ресурсов Azure](data-connection-event-hub-resource-manager.md)
 
-В этой статье вы создадите подключение к данным концентратора событий для Azure обозреватель данных с помощью Python. Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных предлагает прием или загрузку данных из концентраторов событий, центров Интернета вещей и больших двоичных объектов, записанных в контейнеры больших двоичных объектов.
+В этой статье вы создаете подключение к данным Концентратора событий для Azure Data Explorer с помощью Python. Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure Data Explorer предлагает проглатывание или загрузку данных из концентраторов событий, Концентраторов IoT и капли, написанные в контейнеры с каплями.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 
 * [Python версии 3.4+](https://www.python.org/downloads/).
 
 * [Кластер и база данных](create-cluster-database-python.md).
 
-* [Сопоставление таблиц и столбцов](net-standard-ingest-data.md#create-a-table-on-your-test-cluster).
+* [Таблица и столбец отображение](net-standard-ingest-data.md#create-a-table-on-your-test-cluster).
 
-* [Политики базы данных и таблиц](database-table-policies-python.md) (необязательно).
+* [Политики баз данных и таблиц](database-table-policies-python.md) (необязательно).
 
-* [Концентратор событий с данными для приема](ingest-data-event-hub.md#create-an-event-hub).
+* [Концентратор событий с данными для приема.](ingest-data-event-hub.md#create-an-event-hub)
 
 [!INCLUDE [data-explorer-data-connection-install-package-python](../../includes/data-explorer-data-connection-install-package-python.md)]
 
 [!INCLUDE [data-explorer-authentication](../../includes/data-explorer-authentication.md)]
 
-## <a name="add-an-event-hub-data-connection"></a>Добавление подключения к данным концентратора событий
+## <a name="add-an-event-hub-data-connection"></a>Добавление подключения концентратора событий
 
-В следующем примере показано, как добавить подключение к данным концентратора событий программным способом. Дополнительные сведения о добавлении подключения к данным концентратора событий с помощью портал Azure см. в разделе [Подключение к концентратору событий](ingest-data-event-hub.md#connect-to-the-event-hub) .
+В следующем примере показано, как программно добавлять подключение к концентратору событий. [Свяжетесь с концентратором событий](ingest-data-event-hub.md#connect-to-the-event-hub) для добавления подключения к вцентром событий с помощью портала Azure.
 
 ```Python
 from azure.mgmt.kusto import KustoManagementClient
@@ -86,19 +86,19 @@ poller = kusto_management_client.data_connections.create_or_update(resource_grou
 
 |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
 |---|---|---|
-| tenant_id | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента. Также известен как идентификатор каталога.|
-| subscriptionId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор подписки, используемый для создания ресурсов.|
-| client_id | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
-| client_secret | *кскскскскскскскскскскскскскс* | Секрет клиента приложения, которое может получить доступ к ресурсам в клиенте. |
-| resource_group_name | *testrg* | Имя группы ресурсов, содержащей кластер.|
-| cluster_name | *mykustocluster* | Имя кластера.|
+| tenant_id | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента. Также известен как идентификатор каталога.|
+| subscriptionId | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор подписки, который используется для создания ресурсов.|
+| client_id | *xxxxxxxxxx-xxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx* | Идентификатор клиента приложения, который может получить доступ к ресурсам в вашем арендаторе.|
+| client_secret | *xxxxxxxxxxxxxxxxxxxx* | Секрет клиента приложения, которое может получить доступ к ресурсам в вашем арендаторе. |
+| resource_group_name | *testrg* | Название группы ресурсов, содержащей кластер.|
+| cluster_name | *mykustocluster* | Название кластера.|
 | database_name | *mykustodatabase* | Имя целевой базы данных в кластере.|
-| data_connection_name | *мевенсубконнект* | Требуемое имя подключения к данным.|
-| имя_таблицы | *стормевентс* | Имя целевой таблицы в целевой базе данных.|
-| mapping_rule_name | *StormEvents_CSV_Mapping* | Имя сопоставления столбцов, связанного с целевой таблицей.|
-| data_format | *-* | Формат данных сообщения.|
-| event_hub_resource_id | *Идентификатор ресурса* | Идентификатор ресурса концентратора событий, который содержит данные для приема. |
-| consumer_group | *$Default* | Группа потребителей концентратора событий.|
-| location | *Центральная часть США* | Расположение ресурса подключения к данным.|
+| data_connection_name | *myeventhubconnect* | Нужное название подключения к данным.|
+| имя_таблицы | *StormEvents* | Имя целевой таблицы в целевой базе данных.|
+| mapping_rule_name | *StormEvents_CSV_Mapping* | Имя отображения столбца, отображение которого относится к целевой таблице.|
+| data_format | *Csv* | Формат данных сообщения.|
+| event_hub_resource_id | *Идентификатор ресурса* | Идентификатор ресурса вашего концентратора событий, в мещающий данные для приема. |
+| consumer_group | *$Default* | Группа потребителей вашего концентратора событий.|
+| location | *Центральная часть США* | Расположение ресурса подключения данных.|
 
 [!INCLUDE [data-explorer-data-connection-clean-resources-python](../../includes/data-explorer-data-connection-clean-resources-python.md)]

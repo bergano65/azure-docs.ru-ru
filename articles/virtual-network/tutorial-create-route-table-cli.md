@@ -17,16 +17,16 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: ff5897766bb56b76a34940ecd786773fd844a336
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fa94b93e081ab6334c39b848068f50682f5f1f0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64683118"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80235057"
 ---
 # <a name="route-network-traffic-with-a-route-table-using-the-azure-cli"></a>Маршрутизация сетевого трафика с помощью таблицы маршрутов и Azure CLI
 
-По умолчанию Azure автоматически маршрутизирует трафик между всеми подсетями в виртуальной сети. Для переопределения маршрутизации Azure по умолчанию можно создать собственные маршруты. Возможность создания настраиваемых маршрутов полезна, если, к примеру, требуется маршрутизировать трафик между подсетями через виртуальный сетевой модуль. В этой статье раскрываются следующие темы:
+По умолчанию Azure автоматически маршрутизирует трафик между всеми подсетями в виртуальной сети. Для переопределения маршрутизации Azure по умолчанию можно создать собственные маршруты. Возможность создания настраиваемых маршрутов полезна, если, к примеру, требуется маршрутизировать трафик между подсетями через виртуальный сетевой модуль. Вы узнаете, как выполнять следующие задачи:
 
 * Создание таблицы маршрутов
 * Создание маршрута
@@ -36,11 +36,11 @@ ms.locfileid: "64683118"
 * развертывание виртуальных машин в разных подсетях;
 * направление трафика из одной подсети в другую через виртуальный сетевой модуль.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
+Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli) 
 
 ## <a name="create-a-route-table"></a>Создание таблицы маршрутов
 
@@ -51,11 +51,11 @@ ms.locfileid: "64683118"
 az group create \
   --name myResourceGroup \
   --location eastus
-``` 
+```
 
 Создайте таблицу маршрутов с помощью команды [az network route-table create](/cli/azure/network/route-table#az-network-route-table-create). В следующем примере создается таблица маршрутов с именем *myRouteTablePublic*. 
 
-```azurecli-interactive 
+```azurecli-interactive
 # Create a route table
 az network route-table create \
   --resource-group myResourceGroup \
@@ -74,7 +74,7 @@ az network route-table route create \
   --address-prefix 10.0.1.0/24 \
   --next-hop-type VirtualAppliance \
   --next-hop-ip-address 10.0.2.4
-``` 
+```
 
 ## <a name="associate-a-route-table-to-a-subnet"></a>Связывание таблицы маршрутов с подсетью
 
@@ -123,7 +123,7 @@ az network vnet subnet update \
 
 Создайте виртуальный сетевой модуль в подсети *DMZ* с помощью команды [az vm create](/cli/azure/vm). По умолчанию при создании виртуальной машины Azure создает и назначает ей общедоступный IP-адрес. Параметр `--public-ip-address ""` указывает Azure, что для этой виртуальной машины не нужно создавать и назначать общедоступный IP-адрес, так как ей не требуется подключение из Интернета. Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`.
 
-```azure-cli-interactive
+```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
   --name myVmNva \
@@ -155,6 +155,7 @@ az vm extension set \
   --publisher Microsoft.Azure.Extensions \
   --settings '{"commandToExecute":"sudo sysctl -w net.ipv4.ip_forward=1"}'
 ```
+
 Выполнение команды может занять до минуты.
 
 ## <a name="create-virtual-machines"></a>Создание виртуальных машин
@@ -192,7 +193,7 @@ az vm create \
 
 Создание виртуальной машины занимает несколько минут. После создания виртуальной машины в Azure CLI отображаются примерно такие данные: 
 
-```azurecli 
+```output
 {
   "fqdns": "",
   "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVmPrivate",
@@ -204,13 +205,14 @@ az vm create \
   "resourceGroup": "myResourceGroup"
 }
 ```
+
 Запишите значение **publicIpAddress**. На следующем шаге этот адрес потребуется для доступа к виртуальной машине из Интернета.
 
 ## <a name="route-traffic-through-an-nva"></a>Перенаправление трафика через виртуальный сетевой модуль
 
-Используйте следующую команду для создания сеанса SSH с виртуальной машиной *myVmPrivate*. Замените  *\<publicIpAddress >* общедоступный IP-адрес виртуальной машины. В примере выше используется IP-адрес *13.90.242.231*.
+Используйте следующую команду для создания сеанса SSH с виртуальной машиной *myVmPrivate*. Замените * \<publicIpAddress>* общедоступным IP-адресом вашего VM. В примере выше используется IP-адрес *13.90.242.231*.
 
-```bash 
+```bash
 ssh azureuser@<publicIpAddress>
 ```
 
@@ -218,7 +220,7 @@ ssh azureuser@<publicIpAddress>
 
 С помощью следующей команды установите средство трассировки маршрута на виртуальную машину *myVmPrivate*:
 
-```bash 
+```bash
 sudo apt-get install traceroute
 ```
 
@@ -230,7 +232,7 @@ traceroute myVmPublic
 
 Ответ будет выглядеть примерно так:
 
-```bash
+```output
 traceroute to myVmPublic (10.0.0.4), 30 hops max, 60 byte packets
 1  10.0.0.4 (10.0.0.4)  1.404 ms  1.403 ms  1.398 ms
 ```
@@ -239,13 +241,13 @@ traceroute to myVmPublic (10.0.0.4), 30 hops max, 60 byte packets
 
 Используя следующую команду, создайте SSH-подключение к виртуальной машине *myVmPublic* с виртуальной машины *myVmPrivate*.
 
-```bash 
+```bash
 ssh azureuser@myVmPublic
 ```
 
 С помощью следующей команды установите средство трассировки маршрута на виртуальную машину *myVmPublic*:
 
-```bash 
+```bash
 sudo apt-get install traceroute
 ```
 
@@ -257,11 +259,12 @@ traceroute myVmPrivate
 
 Ответ будет выглядеть примерно так:
 
-```bash
+```output
 traceroute to myVmPrivate (10.0.1.4), 30 hops max, 60 byte packets
 1  10.0.2.4 (10.0.2.4)  0.781 ms  0.780 ms  0.775 ms
 2  10.0.1.4 (10.0.0.4)  1.404 ms  1.403 ms  1.398 ms
 ```
+
 Можно заметить, что первым прыжком указан частный IP-адрес виртуального сетевого модуля (10.0.2.4). Второй прыжок — 10.0.1.4. Это частный IP-адрес виртуальной машины *myVmPrivate*. Из-за маршрута, добавленного в таблицу маршрутов *myRouteTablePublic* и связанного с подсетью *Public*, трафик в Azure был маршрутизирован через NVA, а не напрямую в подсеть *Private*.
 
 Закройте сеансы SSH к виртуальным машинам *myVmPublic* и *myVmPrivate*.
@@ -270,7 +273,7 @@ traceroute to myVmPrivate (10.0.1.4), 30 hops max, 60 byte packets
 
 Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполнив команду [az group delete](/cli/azure/group).
 
-```azurecli-interactive 
+```azurecli-interactive
 az group delete --name myResourceGroup --yes
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: Коды ошибок служб мультимедиа Azure | Документация Майкрософт
-description: Вы можете получить коды ошибок HTTP от службы в зависимости от таких проблем, как сроки действия маркеров проверки подлинности, которые не поддерживаются в службах мультимедиа. В этой статье приводится обзор кодов ошибок API служб мультимедиа Azure версии 2.
+description: Вы можете получать коды ошибок HTTP от службы в зависимости от таких проблем, как маркеры аутентификации, истекающие до действий, которые не поддерживаются в службах массовой информации. В этой статье приводится обзор кодов ошибок Azure Media Services v2 API.
 author: Juliako
 manager: femila
 editor: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: f5a2dd68d86a7a38fc7f2942351c42c84742d104
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74887074"
 ---
 # <a name="azure-media-services-error-codes"></a>Коды ошибок служб мультимедиа Azure
@@ -65,7 +65,7 @@ ms.locfileid: "74887074"
   * Предпринята попытка перезаписать contentKey учетной записи служб мультимедиа.
 * Не удалось создать ресурс, так как достигнута квота службы для учетной записи служб мультимедиа. Дополнительные сведения о квотах и ограничениях см. [здесь](media-services-quotas-and-limitations.md).
 
-## <a name="404-not-found"></a>Ошибка 404 — страница не найдена
+## <a name="404-not-found"></a>404 — не найдено
 Запрос запрещен в ресурсе по одной из следующих причин:
 
 * Предпринята попытка обновить несуществующую сущность.
@@ -122,6 +122,6 @@ ms.locfileid: "74887074"
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

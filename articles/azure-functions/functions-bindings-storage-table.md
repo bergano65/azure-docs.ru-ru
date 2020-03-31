@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.openlocfilehash: edeafb5730f06dac22fd9919ca42ea388d5fd0f6
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79277184"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
@@ -26,7 +26,7 @@ ms.locfileid: "79277184"
 
 [!INCLUDE [functions-storage-sdk-version](../../includes/functions-storage-sdk-version.md)]
 
-## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
+## <a name="packages---functions-2x-and-higher"></a>Пакеты - Функции 2.x и выше
 
 Привязки хранилища таблиц доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage) версии 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Tables).
 
@@ -36,11 +36,11 @@ ms.locfileid: "79277184"
 
 Используйте входную привязку хранилища таблиц Azure для чтения таблицы в учетной записи хранения Azure.
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 ### <a name="one-entity"></a>Одна сущность
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая считывает одну строку таблицы. Для каждой записи, вставленной в таблицу, будет активирована функция.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая считывает одну строку таблицы. Для каждой записи, вставленной в таблицу, функция будет срабатывать.
 
 Значение ключа строки {queueTrigger} указывает, что ключ строки получен из строки сообщения очереди.
 
@@ -67,7 +67,7 @@ public class TableStorage
 
 ### <a name="iqueryable"></a>IQueryable
 
-В следующем примере показана [ C# функция](functions-dotnet-class-library.md) , считывающая несколько строк таблицы, в которых класс `MyPoco` является производным от `TableEntity`.
+В следующем примере [показана функция C-класса,](functions-dotnet-class-library.md) которая считывает несколько строк таблицы, по которым `MyPoco` класс происходит от `TableEntity`.
 
 ```csharp
 public class TableStorage
@@ -93,7 +93,7 @@ public class TableStorage
 
 ### <a name="cloudtable"></a>CloudTable
 
-`IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является использование параметра метода `CloudTable` для чтения таблицы с помощью пакета SDK службы хранилища Azure. Ниже приведен пример функции, которая запрашивает таблицу журнала функций Azure:
+`IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является использование параметра метода `CloudTable` для чтения таблицы с помощью пакета SDK службы хранилища Azure. Вот пример функции, запрашиваемой в таблице журналов Azure Functions:
 
 ```csharp
 using Microsoft.Azure.WebJobs;
@@ -143,7 +143,7 @@ namespace FunctionAppCloudTable2
 
 Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 ### <a name="one-entity"></a>Одна сущность
 
@@ -248,7 +248,7 @@ public class Person : TableEntity
 
 ### <a name="cloudtable"></a>CloudTable
 
-`IQueryable` не поддерживается в среде выполнения функций для [версий 2. x и выше.)](functions-versions.md) Альтернативой является использование параметра метода `CloudTable` для чтения таблицы с помощью пакета SDK службы хранилища Azure. Ниже приведен пример функции, которая запрашивает таблицу журнала функций Azure:
+`IQueryable`не поддерживается в времени выполнения функций для [версий 2.x и выше)](functions-versions.md). Альтернативой является использование параметра метода `CloudTable` для чтения таблицы с помощью пакета SDK службы хранилища Azure. Вот пример функции, запрашиваемой в таблице журналов Azure Functions:
 
 ```json
 {
@@ -310,7 +310,7 @@ public class LogEntity : TableEntity
 Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В следующем примере показана входная привязка таблицы в файле *function.json* и [код JavaScript](functions-reference-node.md), который использует привязку. Функция использует триггер очереди для чтения одной строки таблицы. 
 
@@ -354,7 +354,7 @@ module.exports = function (context, myQueueItem) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Одна строка таблицы 
+Одиночный ряд таблицы 
 
 ```json
 {
@@ -403,7 +403,7 @@ def main(req: func.HttpRequest, messageJSON) -> func.HttpResponse:
 
 # <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показана функция, активируемая HTTP, которая возвращает список объектов Person, которые находятся в указанном разделе в хранилище таблиц. В этом примере ключ секции извлекается из маршрута HTTP, а tableName и Connection — из параметров функции. 
+В следующем примере показана функция http-triggered, которая возвращает список объектов,наиболее лиц, находящийся в определенной разделе в таблице хранения. В примере ключ раздела извлекается из маршрута http, а название таблицы и соединение — из настроек функции. 
 
 ```java
 public class Person {
@@ -432,7 +432,7 @@ public Person[] get(
 }
 ```
 
-Заметка Таблеинпут также может извлекать привязки из тела запроса JSON, как показано в следующем примере.
+Аннотация TableInput также может извлечь привязки из тела Json запроса, как показано в следующем примере.
 
 ```java
 @FunctionName("GetPersonsByKeysFromRequest")
@@ -454,7 +454,7 @@ public HttpResponseMessage get(
 }
 ```
 
-В следующих примерах фильтр используется для запроса лиц с указанным именем в таблице Azure и ограничивает количество возможных совпадений до 10 результатов.
+В следующих примерах фильтр используется для запроса лиц с определенным именем в таблице Azure и количество возможных совпадений ограничивается 10 результатами.
 
 ```java
 @FunctionName("getPersonsByName")
@@ -472,15 +472,15 @@ public Person[] get(
 
 ---
 
-## <a name="input---attributes-and-annotations"></a>Входные атрибуты и заметки
+## <a name="input---attributes-and-annotations"></a>Вход - атрибуты и аннотации
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
  В [библиотеках класса C#](functions-dotnet-class-library.md) используйте следующие атрибуты для настройки входной привязки таблицы:
 
 * [TableAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Tables/TableAttribute.cs)
 
-  Конструктор атрибута принимает имя таблицы, ключ раздела и строки. Атрибут можно использовать для параметра `out` или возвращаемого значения функции, как показано в следующем примере:
+  Конструктор атрибута принимает имя таблицы, ключ раздела и строки. Атрибут может быть использован `out` на параметре или на возвратном значении функции, как показано в следующем примере:
 
   ```csharp
   [FunctionName("TableInput")]
@@ -532,17 +532,17 @@ public Person[] get(
 * Атрибут `StorageAccount`, примененный к классу.
 * Учетная запись хранения по умолчанию для приложения-функции (параметр приложения AzureWebJobsStorage).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+Атрибуты не поддерживаются Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -552,61 +552,61 @@ public Person[] get(
 
 ## <a name="input---configuration"></a>Входная конфигурация
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Table`.
+В следующей таблице объясняется свойства связывающей конфигурации, `Table` установленные в файле *function.json* и атрибуте.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `table`. Это свойство задается автоматически при создании привязки на портале Azure.|
+|**тип** | Недоступно | Нужно задать значение `table`. Это свойство задается автоматически при создании привязки на портале Azure.|
 |**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании привязки на портале Azure. |
 |**name** | Недоступно | Имя переменной, представляющей таблицу или сущность в коде функции. | 
-|**tableName** | **TableName** | Имя таблицы.| 
-|**partitionKey** | **PartitionKey** |Необязательный параметр. Ключ раздела сущности таблицы, которую нужно считать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
-|**rowKey** |**RowKey** | Необязательный параметр. Ключ строки сущности таблицы, которую нужно считать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
-|**take** |**Take** | Необязательный параметр. Максимальное количество считываемых сущностей в JavaScript. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
-|**filter** |**Filter** | Необязательный параметр. Выражение фильтра OData для входных данных таблицы в JavaScript. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
-|**connection** |**Соединение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если для `connection` задано значение "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**Tablename** | **Tablename** | Имя таблицы.| 
+|**Partitionkey** | **PartitionKey** |Необязательный параметр. Ключ раздела сущности таблицы, которую нужно считать. Смотрите раздел [использования](#input---usage) для руководства о том, как использовать это свойство.| 
+|**Rowkey** |**Rowkey** | Необязательный параметр. Ключ строки сущности таблицы, которую нужно считать. Смотрите раздел [использования](#input---usage) для руководства о том, как использовать это свойство.| 
+|**Принять** |**Принять** | Необязательный параметр. Максимальное количество считываемых сущностей в JavaScript. Смотрите раздел [использования](#input---usage) для руководства о том, как использовать это свойство.| 
+|**Фильтр** |**Фильтр** | Необязательный параметр. Выражение фильтра OData для входных данных таблицы в JavaScript. Смотрите раздел [использования](#input---usage) для руководства о том, как использовать это свойство.| 
+|**Подключения** |**Подключения** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если `connection` вы установите "MyStorage", время выполнения функций ищет настройки приложения, которые называются "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="input---usage"></a>Использование входной привязки
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-* **Чтение одной строки в**
+* **Прочитайте одну строку в**
 
   Задайте значения для `partitionKey` и `rowKey`. Получите доступ к данным таблицы с помощью параметра метода `T <paramName>`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. `T` обычно представляет собой тип, реализующий `ITableEntity`, или является производным от `TableEntity`. Свойства `filter` и `take` не используются в этом сценарии.
 
-* **Чтение одной или нескольких строк**
+* **Прочитайте одну или несколько строк**
 
   Получите доступ к данным таблицы с помощью параметра метода `IQueryable<T> <paramName>`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. `T` должен представлять собой тип, реализующий `ITableEntity`, или быть производным от `TableEntity`. Для выполнения фильтрации можно использовать методы `IQueryable`. Свойства `partitionKey`, `rowKey`, `filter` и `take` не используются в этом сценарии.  
 
   > [!NOTE]
   > `IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является [использование параметра метода CloudTable paramName](https://stackoverflow.com/questions/48922485/binding-to-table-storage-in-v2-azure-functions-using-cloudtable) для чтения таблицы с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-* **Чтение одной строки в**
+* **Прочитайте одну строку в**
 
   Задайте значения для `partitionKey` и `rowKey`. Получите доступ к данным таблицы с помощью параметра метода `T <paramName>`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. `T` обычно представляет собой тип, реализующий `ITableEntity`, или является производным от `TableEntity`. Свойства `filter` и `take` не используются в этом сценарии.
 
-* **Чтение одной или нескольких строк**
+* **Прочитайте одну или несколько строк**
 
   Получите доступ к данным таблицы с помощью параметра метода `IQueryable<T> <paramName>`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. `T` должен представлять собой тип, реализующий `ITableEntity`, или быть производным от `TableEntity`. Для выполнения фильтрации можно использовать методы `IQueryable`. Свойства `partitionKey`, `rowKey`, `filter` и `take` не используются в этом сценарии.  
 
   > [!NOTE]
   > `IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является [использование параметра метода CloudTable paramName](https://stackoverflow.com/questions/48922485/binding-to-table-storage-in-v2-azure-functions-using-cloudtable) для чтения таблицы с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 Укажите свойства `filter` и `take`. Не определяйте свойства `partitionKey` и `rowKey`. Получите доступ к сущности (или сущностям) входной таблицы, используя `context.bindings.<BINDING_NAME>`. Десериализированный объект имеет свойства `RowKey` и `PartitionKey`.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Табличные данные передаются в функцию в виде строки JSON. Отмените сериализацию сообщения, вызвав `json.loads`, как показано во входном [примере](#input).
+Таблица данных передается функции в качестве строки JSON. Десеризировать сообщение, позвонив, `json.loads` как показано в [примере](#input)ввода.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Атрибут [таблеинпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableinput) предоставляет доступ к строке таблицы, которая активировала функцию.
+Атрибут [TableInput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableinput) дает вам доступ к строке таблицы, которая вызвала функцию.
 
 ---
 
@@ -617,7 +617,7 @@ public Person[] get(
 > [!NOTE]
 > Выходная привязка не поддерживает обновление существующих сущностей. Для обновления существующей сущности используйте операцию `TableOperation.Replace` из [пакета SDK для службы хранилища Azure](../cosmos-db/tutorial-develop-table-dotnet.md#delete-an-entity).
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая использует триггер HTTP для записи одной строки таблицы. 
 
@@ -641,7 +641,7 @@ public class TableStorage
 }
 ```
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 В следующем примере показана выходная привязка таблицы в файле *function.json* и коде [скрипта C#](functions-reference-csharp.md), который использует привязку. Эта функция записывает несколько сущностей в таблице.
 
@@ -696,7 +696,7 @@ public class Person
 
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
 В следующем примере показана выходная привязка таблицы в файле *function.json* и функции [JavaScript](functions-reference-node.md), которая использует привязку. Эта функция записывает несколько сущностей в таблице.
 
@@ -745,7 +745,7 @@ module.exports = function (context) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показано, как использовать выходную привязку хранилища таблиц. Привязка `table` настраивается в *Function. JSON* путем назначения значений `name`, `tableName`, `partitionKey`и `connection`:
+В следующем примере показано, как использовать привязку к выходу хранилища таблицы. Привязка `table` настроена в *function.json* путем `name`присвоения значений, `tableName` `partitionKey`и: `connection`
 
 ```json
 {
@@ -778,7 +778,7 @@ module.exports = function (context) {
 }
 ```
 
-Следующая функция создает уникальный УУИ для значения `rowKey` и сохраняет сообщение в хранилище таблиц.
+Следующая функция генерирует уникальный UUI для `rowKey` значения и сохраняет сообщение в таблице хранения.
 
 ```python
 import logging
@@ -804,7 +804,7 @@ def main(req: func.HttpRequest, message: func.Out[str]) -> func.HttpResponse:
 
 # <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показана функция Java, использующая триггер HTTP для записи одной строки таблицы.
+В следующем примере показана функция Java, используюметодная триггер HTTP для записи одного строки таблицы.
 
 ```java
 public class Person {
@@ -845,7 +845,7 @@ public class AddPerson {
 }
 ```
 
-В следующем примере показана функция Java, использующая триггер HTTP для записи нескольких строк таблицы.
+В следующем примере показана функция Java, используюметодная триггер HTTP для записи нескольких строк таблицы.
 
 ```java
 public class Person {
@@ -881,13 +881,13 @@ public class AddPersons {
 
 ---
 
-## <a name="output---attributes-and-annotations"></a>Выходные атрибуты и заметки
+## <a name="output---attributes-and-annotations"></a>Выход - атрибуты и аннотации
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [TableAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Tables/TableAttribute.cs).
 
-Конструктор атрибута использует имя таблицы. Атрибут можно использовать для параметра `out` или возвращаемого значения функции, как показано в следующем примере:
+Конструктор атрибута использует имя таблицы. Атрибут может быть использован `out` на параметре или на возвратном значении функции, как показано в следующем примере:
 
 ```csharp
 [FunctionName("TableOutput")]
@@ -913,79 +913,79 @@ public static MyPoco TableOutput(
 }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#output).
+Для полного примера [см.](#output)
 
 Чтобы указать учетную запись хранения на уровне класса, метода или параметра, можно использовать атрибут `StorageAccount`. Дополнительные сведения см. в разделе [Входные атрибуты](#input---attributes-and-annotations).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+Атрибуты не поддерживаются JavaScript.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+Атрибуты не поддерживаются Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
-В [библиотеке времени выполнения функций Java](/java/api/overview/azure/functions/runtime)используйте аннотацию [таблеаутпут](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/TableOutput.java/) в параметрах для записи значений в хранилище таблиц.
+В [библиотеке выполнения функций Java](/java/api/overview/azure/functions/runtime)используйте аннотацию [TableOutput](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/TableOutput.java/) по параметрам для записи значений в хранилище таблиц.
 
-[Дополнительные сведения](#output)см. в примере.
+Более [подробно можно ознакомиться](#output)с примером.
 
 ---
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Table`.
+В следующей таблице объясняется свойства связывающей конфигурации, `Table` установленные в файле *function.json* и атрибуте.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `table`. Это свойство задается автоматически при создании привязки на портале Azure.|
+|**тип** | Недоступно | Нужно задать значение `table`. Это свойство задается автоматически при создании привязки на портале Azure.|
 |**direction** | Недоступно | Нужно задать значение `out`. Это свойство задается автоматически при создании привязки на портале Azure. |
 |**name** | Недоступно | Имя переменной, используемое в функции кода, которая представляет таблицу или сущность. Задайте значение `$return`, ссылающееся на возвращаемое значение функции.| 
-|**tableName** |**TableName** | Имя таблицы.| 
-|**partitionKey** |**PartitionKey** | Ключ раздела сущности таблицы, которую нужно записать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#output---usage).| 
-|**rowKey** |**RowKey** | Ключ строки сущности таблицы, которую нужно записать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#output---usage).| 
-|**connection** |**Соединение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если для `connection` задано значение "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**Tablename** |**Tablename** | Имя таблицы.| 
+|**Partitionkey** |**PartitionKey** | Ключ раздела сущности таблицы, которую нужно записать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#output---usage).| 
+|**Rowkey** |**Rowkey** | Ключ строки сущности таблицы, которую нужно записать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#output---usage).| 
+|**Подключения** |**Подключения** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если `connection` вы установите "MyStorage", время выполнения функций ищет настройки приложения, которые называются "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="output---usage"></a>Использование выходной привязки
 
-# <a name="c"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C #](#tab/csharp)
 
-Получите доступ к сущности выходной таблицы с помощью параметра метода `ICollector<T> paramName` или `IAsyncCollector<T> paramName`, где `T` включает свойства `PartitionKey` и `RowKey`. Эти свойства часто сопровождаются реализацией `ITableEntity` или наследования `TableEntity`.
+Доступ к объекту таблицы `ICollector<T> paramName` вывода `IAsyncCollector<T> paramName` `T` с `PartitionKey` помощью параметра метода или там, где включает и `RowKey` свойства. Эти свойства часто сопровождаются `ITableEntity` реализацией `TableEntity`или наследованием.
 
-Кроме того, можно использовать параметр метода `CloudTable` для записи в таблицу с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+Кроме того, можно `CloudTable` использовать параметр метода для записи в таблицу с помощью SDK хранения Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Получите доступ к сущности выходной таблицы с помощью параметра метода `ICollector<T> paramName` или `IAsyncCollector<T> paramName`, где `T` включает свойства `PartitionKey` и `RowKey`. Эти свойства часто сопровождаются реализацией `ITableEntity` или наследования `TableEntity`. Значение `paramName` задается в свойстве `name` файла *Function. JSON*.
+Доступ к объекту таблицы `ICollector<T> paramName` вывода `IAsyncCollector<T> paramName` `T` с `PartitionKey` помощью параметра метода или там, где включает и `RowKey` свойства. Эти свойства часто сопровождаются `ITableEntity` реализацией `TableEntity`или наследованием. Значение `paramName` указывается в `name` свойстве *function.json*.
 
-Кроме того, можно использовать параметр метода `CloudTable` для записи в таблицу с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+Кроме того, можно `CloudTable` использовать параметр метода для записи в таблицу с помощью SDK хранения Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[Javascript](#tab/javascript)
 
-Получите доступ к выходному событию с помощью `context.bindings.<name>`, где `<name>` — это значение, указанное в свойстве `name` файла *Function. JSON*.
+Доступ к событию `context.bindings.<name>` `<name>` вывода, используя, `name` где значение, указанное в свойстве *function.json*.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Существует два варианта вывода сообщения строки табличного хранилища из функции.
+Существует два варианта выхода сообщения строки хранения таблицы из функции:
 
-- **Возвращаемое значение**: задайте `$return`для свойства `name` в *Function. JSON* . В этой конфигурации возвращаемое значение функции сохраняется как строка хранилища таблицы.
+- **Значение возврата**: `name` Установите свойство `$return`в *function.json* к . При этой конфигурации значение возврата функции сохраняется в виде строки хранения таблицы.
 
-- **Императив**: передайте значение в метод [Set](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set`, сохраняется как сообщение концентратора событий.
+- **Императив**: Передайте значение [установленного](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) методу параметра, объявленного как тип [Out.](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python) Передаваемые `set` значения сохраняются в виде сообщения концентратора событий.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Существует два варианта вывода строки хранилища таблицы из функции с помощью аннотации [таблесторажеаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableoutput?view=azure-java-stablet) :
+Существует два варианта вывода строки хранения таблицы из функции с помощью аннотации [TableStorageOutput:](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableoutput?view=azure-java-stablet)
 
-- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как строка хранилища таблицы.
+- **Значение возврата**: При применении аннотации к самой функции, значение возврата функции сохраняется в виде строки хранения таблицы.
 
-- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding), где `T` включает свойства `PartitionKey` и `RowKey`. Эти свойства часто сопровождаются реализацией `ITableEntity` или наследования `TableEntity`.
+- **Императив**: Чтобы четко установить значение сообщения, примените аннотацию к определенному параметру типа, [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding) `T` где включает и `PartitionKey` `RowKey` свойства. Эти свойства часто сопровождаются `ITableEntity` реализацией `TableEntity`или наследованием.
 
 ---
 

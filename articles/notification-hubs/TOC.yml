@@ -1,4 +1,4 @@
-- name: Документация по Центрам уведомлений
+- name: Документация по концентраторам уведомлений
   href: index.yml
 - name: Обзор
   items:
@@ -11,7 +11,9 @@
   items:
     - name: Создание центра уведомлений на портале Azure
       href: create-notification-hub-portal.md
-    - name: Настройка центра уведомлений на портале Azure
+    - name: "Создание центра уведомлений с помощью Azure\_CLI"
+      href: create-notification-hub-azure-cli.md
+    - name: Настройка центра уведомлений
       href: configure-notification-hub-portal-pns-settings.md
 - name: Учебники
   items:
@@ -140,6 +142,8 @@
       href: notification-hubs-push-notification-fixer.md
     - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu
       href: notification-hubs-baidu-china-android-notifications-get-started.md
+    - name: Использование APNS VOIP с помощью Центров уведомлений
+      href: voip-apns.md
 - name: Справочник
   items:
     - name: .NET

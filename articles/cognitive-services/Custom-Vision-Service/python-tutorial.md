@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
+title: Краткое руководство по созданию проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 titleSuffix: Azure Cognitive Services
 description: Создание проекта, добавление тегов, загрузка изображений, обучение проекта и выполнение прогнозирования с использованием пакета SDK для Python.
 services: cognitive-services
@@ -11,17 +11,17 @@ ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: areddish
 ms.openlocfilehash: ffb12af93e249b0b9bb510d3507a30e67d6cd19f
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76169128"
 ---
-# <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-python-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
+# <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-python-sdk"></a>Краткое руководство по созданию проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 
 В этой статье показано, как с помощью пакета SDK Пользовательского визуального распознавания для Python создать модель классификации изображений. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес опубликованной конечной точки прогнозирования и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Python. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](getting-started-build-a-classifier.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Python 2.7 или 3.5+](https://www.python.org/downloads/).
 - Средство [PIP](https://pip.pypa.io/en/stable/installing/).

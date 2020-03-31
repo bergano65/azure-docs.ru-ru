@@ -5,17 +5,17 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 10/10/2019
+ms.date: 03/19/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 1e18223736964b0327a4c8f6ddb73ddb4f58889a
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: e85dc8c079205484db9b7b7c43a0086f69feb3be
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78305048"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80059939"
 ---
-## <a name="rootcert"></a>Создание самозаверяющего корневого сертификата
+## <a name="create-a-self-signed-root-certificate"></a><a name="rootcert"></a>Создание самозаверяющего корневого сертификата
 
 Используйте командлет New-SelfSignedCertificate для создания самозаверяющего корневого сертификата. Дополнительные сведения о параметре см. в разделе [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
 
@@ -28,9 +28,9 @@ ms.locfileid: "78305048"
    -HashAlgorithm sha256 -KeyLength 2048 `
    -CertStoreLocation "Cert:\CurrentUser\My" -KeyUsageProperty Sign -KeyUsage CertSign
    ```
- 3. Если вы хотите создать сертификат клиента сразу после создания этого корневого сертификата, Оставьте консоль PowerShell открытой.
+ 3. Оставьте консоль PowerShell открытой, если вы хотите создать сертификат клиента сразу после создания этого корневого сертификата.
 
-## <a name="clientcert"></a>Создание сертификата клиента
+## <a name="generate-a-client-certificate"></a><a name="clientcert"></a>Создание сертификата клиента
 
 На каждом клиентском компьютере, который подключается к виртуальной сети с помощью подключения типа "точка —сеть", должен быть установлен сертификат клиента. Вы можете создать сертификат клиента из самозаверяющего корневого сертификата, а затем экспортировать и установить его. Если сертификат клиента не установлен, произойдет сбой аутентификации. 
 
@@ -38,9 +38,9 @@ ms.locfileid: "78305048"
 
 В примерах используется командлет New-SelfSignedCertificate для создания сертификата клиента, срок действия которого истекает через год. Дополнительные сведения о параметре, например о задании другого значения срока действия сертификата клиента, см. в разделе [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
 
-### <a name="example-1---powershell-console-session-still-open"></a>Пример 1. сеанс консоли PowerShell по-прежнему открыт
+### <a name="example-1---powershell-console-session-still-open"></a>Пример 1 - Консольная сессия PowerShell все еще открыта
 
-Если вы не закрыли консоль PowerShell после создания самозаверяющего корневого сертификата, воспользуйтесь этим примером. Этот пример является продолжением предыдущего раздела и в нем используется переменная $cert. Если вы закрыли консоль PowerShell после создания самозаверяющего корневого сертификата или создаете дополнительные сертификаты клиента в новом сеансе консоли PowerShell, выполните инструкции, описанные в [примере 2](#ex2).
+Если вы не закрыли консоль PowerShell после создания самозаверяющего корневого сертификата, воспользуйтесь этим примером. Этот пример является продолжением предыдущего раздела и в нем используется переменная $cert. Если вы закрыли консоль PowerShell после создания самоподписанного корневого сертификата или создаете дополнительные сертификаты клиента в новой консоли PowerShell, используйте шаги в [Примере 2.](#ex2)
 
 Измените и запустите пример, чтобы создать сертификат клиента. Если выполнить этот пример, не изменив его, то будет создан сертификат клиента P2SChildCert.  Если требуется указать другое имя дочернего сертификата, измените значение CN. Не изменяйте TextExtension при выполнении данного примера. Сертификат клиента, который создается, автоматически устанавливается в папку Certificates - Current User\Personal\Certificates на компьютере.
 
@@ -52,7 +52,7 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
 -Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
 ```
 
-### <a name="ex2"></a>Пример 2. новый сеанс консоли PowerShell
+### <a name="example-2---new-powershell-console-session"></a><a name="ex2"></a>Пример 2 - Новая консольная сессия PowerShell
 
 Если вы создаете дополнительные сертификаты клиента или не используете тот же сеанс PowerShell, в котором был создан самозаверяющий корневой сертификат, выполните следующее.
 
@@ -90,7 +90,7 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
    -Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
    ```
 
-## <a name="cer"></a>Экспорт открытого ключа корневого сертификата (CER)
+## <a name="export-the-root-certificate-public-key-cer"></a><a name="cer"></a>Экспорт открытого ключа корневого сертификата (.cer)
 
 [!INCLUDE [Export public key](vpn-gateway-certificates-export-public-key-include.md)]
 
@@ -98,6 +98,6 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
 
 Может возникнуть необходимость экспортировать самозаверяющий корневой сертификат и сохранить его как резервную копию в надежном месте. При необходимости позже можно будет установить его на другом компьютере и создать дополнительные сертификаты клиента. Чтобы экспортировать самозаверяющий корневой сертификат в формате PFX, выберите корневой сертификат и выполните те же действия, что описаны в разделе [Экспорт сертификата клиента](#clientexport).
 
-## <a name="clientexport"></a>Экспорт сертификата клиента
+## <a name="export-the-client-certificate"></a><a name="clientexport"></a>Экспорт сертификата клиента
 
 [!INCLUDE [Export client certificate](vpn-gateway-certificates-export-client-cert-include.md)]

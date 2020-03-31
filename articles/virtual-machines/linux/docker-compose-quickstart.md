@@ -1,27 +1,27 @@
 ---
 title: Использование Docker Compose
-description: Установка и использование DOCKER и создание на виртуальных машинах Linux с помощью Azure CLI.
+description: Как установить и использовать Docker и Составить на Linux виртуальных машин с Azure CLI.
 author: cynthn
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 02/14/2019
 ms.author: cynthn
 ms.openlocfilehash: 434a3ef8c9bc1738252d59a5dca5bec16d85e45e
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78970304"
 ---
 # <a name="get-started-with-docker-and-compose-to-define-and-run-a-multi-container-application-in-azure"></a>Приступая к работе с Docker и Compose для определения и запуска многоконтейнерного приложения в Azure
-Решение [Compose](https://github.com/docker/compose) позволяет определить приложение, состоящее из нескольких контейнеров Docker, с помощью простого текстового файла. После этого приложение будет развернуто с помощью одной команды, которая выполняет все действия, необходимые для развертывания определенной среды. В этой статье показано, как быстро настроить блог WordPress с серверной базой данных SQL MariaDB на виртуальной машине Ubuntu. Решение Compose можно использовать для настройки и более сложных приложений.
+С [Compose](https://github.com/docker/compose)вы используете простой текстовый файл для определения приложения, состоящего из нескольких контейнеров Docker. После этого приложение будет развернуто с помощью одной команды, которая выполняет все действия, необходимые для развертывания определенной среды. В этой статье показано, как быстро настроить блог WordPress с серверной базой данных SQL MariaDB на виртуальной машине Ubuntu. Решение Compose можно использовать для настройки и более сложных приложений.
 
 Последнее тестирование этой статьи выполнялось 14.02.2019 г. с помощью [Azure Cloud Shell](https://shell.azure.com/bash) и [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) версии 2.0.58.
 
 ## <a name="create-docker-host-with-azure-cli"></a>Создание узлов Docker с помощью Azure CLI
 Установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index).
 
-Сначала создайте группу ресурсов для среды Docker командой [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Сначала создайте группу ресурсов для среды Docker командой [az group create](/cli/azure/group). Следующий пример создает группу ресурсов под названием *myResourceGroup* в *восточном* месте:
 
 ```azurecli-interactive
 az group create --name myDockerGroup --location eastus

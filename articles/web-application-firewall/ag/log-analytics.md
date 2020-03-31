@@ -1,6 +1,6 @@
 ---
-title: Использование Log Analytics Azure для проверки журналов брандмауэра веб-приложения шлюза приложений
-description: В этой статье показано, как можно использовать Log Analytics Azure для проверки журналов брандмауэра веб-приложения шлюза приложений.
+title: Используйте аналитику журналов Azure для изучения журналов брандмауэра Web Application Firewall
+description: В этой статье показано, как можно использовать аналитику журналов Azure Log Analytics для изучения журналов брандмауэра Web Application
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
@@ -8,36 +8,36 @@ ms.topic: article
 ms.date: 09/06/2019
 ms.author: victorh
 ms.openlocfilehash: e1bc3b58f425b374e4cae1da6e9800579e503f0d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73516595"
 ---
-# <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения шлюза приложений
+# <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения Шлюза приложений
 
-После работоспособности WAF шлюза приложений можно включить журналы, чтобы проверить, что происходит с каждым запросом. Журналы брандмауэра дают представление об оценке, сопоставлении и блокировке WAF. С помощью Log Analytics можно просмотреть данные в журналах брандмауэра, чтобы получить еще больше ценных сведений. Дополнительные сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../../azure-monitor/learn/quick-create-workspace.md). Дополнительные сведения о запросах журналов см. [в разделе Общие сведения о запросах журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
+После ввода в действие портала приложений WAF можно включить журналы для проверки того, что происходит с каждым запросом. Брандмауэр журналы дают представление о том, что WAF оценивает, сопоставляет и блокирует. С помощью журнала Analytics вы можете изучить данные внутри журналов брандмауэра, чтобы дать еще больше информации. Для получения дополнительной информации о создании рабочего пространства analytics журнала [см.](../../azure-monitor/learn/quick-create-workspace.md) Для получения дополнительной информации о запросах журналов смотрите [Обзор запросов журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="import-waf-logs"></a>Импорт журналов WAF
+## <a name="import-waf-logs"></a>Импортные журналы WAF
 
-Чтобы импортировать журналы брандмауэра в Log Analytics, см. раздел [работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging). При наличии журналов брандмауэра в рабочей области Log Analytics можно просматривать данные, записывать запросы, создавать визуализации и добавлять их на панель мониторинга портала.
+Чтобы импортировать журналы брандмауэра [Back-end health, diagnostic logs, and metrics for Application Gateway](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging)в журналную аналитику, см. Если журналы брандмауэра есть в рабочем пространстве Log Analytics, вы можете просматривать данные, писать запросы, создавать визуализации и добавлять их в панель мониторинга портала.
 
-## <a name="explore-data-with-examples"></a>Просмотр данных с помощью примеров
+## <a name="explore-data-with-examples"></a>Исследуйте данные с примерами
 
-Для просмотра необработанных данных в журнале брандмауэра можно выполнить следующий запрос:
+Для просмотра исходных данных в журнале брандмауэра можно запустить следующий запрос:
 
 ```
 AzureDiagnostics 
 | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayFirewallLog"
 ```
 
-Он будет выглядеть следующим образом:
+Это будет выглядеть как следующий запрос:
 
-![Запрос Log Analytics](../media/log-analytics/log-query.png)
+![Запрос аналитики журнала](../media/log-analytics/log-query.png)
 
-Вы можете детализировать данные, построить графики или создать визуализации. В качестве отправной точки см. следующие запросы:
+Вы можете просверлить данные, а графики или создать визуализации отсюда. Смотрите следующие запросы в качестве отправной точки:
 
-### <a name="matchedblocked-requests-by-ip"></a>Совпадающие или заблокированные запросы по IP-адресу
+### <a name="matchedblocked-requests-by-ip"></a>Совмещенные/заблокированные запросы по IP
 
 ```
 AzureDiagnostics
@@ -46,7 +46,7 @@ AzureDiagnostics
 | render timechart
 ```
 
-### <a name="matchedblocked-requests-by-uri"></a>Совпадающие или заблокированные запросы по URI
+### <a name="matchedblocked-requests-by-uri"></a>Совпадающие/заблокированные запросы URI
 
 ```
 AzureDiagnostics
@@ -55,7 +55,7 @@ AzureDiagnostics
 | render timechart
 ```
 
-### <a name="top-matched-rules"></a>Правила с наибольшим соответствием
+### <a name="top-matched-rules"></a>Лучшие соответствующие правила
 
 ```
 AzureDiagnostics
@@ -65,7 +65,7 @@ AzureDiagnostics
 | render timechart
 ```
 
-### <a name="top-five-matched-rule-groups"></a>Пять основных сопоставленных групп правил
+### <a name="top-five-matched-rule-groups"></a>Топ-5 по добранных групп правил
 
 ```
 AzureDiagnostics
@@ -75,12 +75,12 @@ AzureDiagnostics
 | render piechart
 ```
 
-## <a name="add-to-your-dashboard"></a>Добавить на панель мониторинга
+## <a name="add-to-your-dashboard"></a>Добавление на панель мониторинга
 
-После создания запроса его можно добавить на панель мониторинга.  Выберите **закрепить на панели мониторинга** в правом верхнем углу рабочей области log Analytics. С помощью предыдущих четырех запросов, закрепленных на примере панели мониторинга, можно быстро увидеть данные:
+После создания запроса его можно добавить в панель мониторинга.  Выберите **панель мониторинга** в правом верхнем правом верхнем ряде рабочего пространства аналитики журналов. С предыдущими четырьмя запросами, прикрепленными к примеру панели мониторинга, это данные, которые вы можете увидеть с первого взгляда:
 
 ![Панель мониторинга](../media/log-analytics/dashboard.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md)
+[Работоспособность бэк-энда, диагностические журналы и метрики для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md)

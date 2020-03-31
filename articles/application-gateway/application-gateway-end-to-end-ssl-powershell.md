@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 4/8/2019
 ms.author: victorh
 ms.openlocfilehash: 7ba273cddb6cf41872c4db1c34560c104b992787
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72286466"
 ---
 # <a name="configure-end-to-end-ssl-by-using-application-gateway-with-powershell"></a>Настройка сквозного режима связи SSL для Шлюза приложений с помощью PowerShell
@@ -20,7 +20,7 @@ ms.locfileid: "72286466"
 
 Шлюз приложений Azure поддерживает сквозное шифрование трафика. Для этого он завершает SSL-соединение. Затем шлюз применяет правила маршрутизации к трафику, повторно шифрует пакет и пересылает его в соответствующую серверную часть согласно определенным правилам маршрутизации. Любой ответ веб-сервера проходит через тот же процесс на пути к пользователю.
 
-Шлюз приложений поддерживает определение пользовательских вариантов SSL и Он также поддерживает отключение следующих версий протокола: **TLSv1.0**, **TLSv1.1** и **TLSv1.2**. Кроме того, шлюз поддерживает определение комплектов шифров для использования и их приоритет. Дополнительные сведения о настраиваемых параметрах SSL см. в статье [Общие сведения о политике SSL шлюза приложений](application-gateway-SSL-policy-overview.md).
+Шлюз приложений поддерживает определение пользовательских вариантов SSL и отключение следующих версий протокола: **TLSv1.0**, **TLSv1.1** и **TLSv1.2**. Также шлюз поддерживает определение комплектов шифров для использования и их приоритет. Дополнительные сведения о настраиваемых параметрах SSL см. в статье [Общие сведения о политике SSL шлюза приложений](application-gateway-SSL-policy-overview.md).
 
 > [!NOTE]
 > Протоколы SSL 2.0 и SSL 3.0 отключены по умолчанию, и их нельзя включать. Они считаются небезопасными и не могут использоваться со шлюзом приложений.
@@ -33,18 +33,18 @@ ms.locfileid: "72286466"
 
 Вы узнаете:
 
-* как создать группу ресурсов с именем **appgw-rg**;
-* как создать виртуальную сеть **appgwvnet** с адресным пространством **10.0.0.0/16**;
+* Создайте группу ресурсов под названием **appgw-rg**.
+* Создайте виртуальную сеть под названием **appgwvnet** с адресным пространством **10.0.0.0/16**.
 * как создать две подсети, **appgwsubnet** и **appsubnet**;
 * как создать небольшой шлюз приложений, поддерживающий сквозное шифрование SSL и ограничивающий определенные версии протокола SSL и комплекты шифров.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Чтобы настроить сквозной режим связи SSL для шлюза приложений, требуются сертификат для шлюза и сертификаты для внутренних серверов. Сертификат шлюза используется для получения симметричного ключа согласно спецификации протокола SSL. Затем используется симметричный ключ шифрования и расшифровки трафика, отправляемого на шлюз. Сертификат шлюза должен быть представлен в формате PFX (файл обмена личной информацией). Этот формат файла позволяет экспортировать закрытый ключ, необходимый шлюзу приложений для шифрования и расшифровки трафика.
 
-Для сквозного шифрования SSL серверная части должна быть явно разрешена шлюзом приложений. Передайте общий сертификат серверных частей в шлюз приложения. Это гарантирует, что шлюз приложений взаимодействует только с известными экземплярами серверной части, тем самым защищая сквозной обмен данными.
+Для сквозного SSL-шифрования задний конец должен быть явно разрешен шлюзом приложения. Передайте общий сертификат серверных частей в шлюз приложения. Это гарантирует, что шлюз приложений взаимодействует только с известными экземплярами серверной части, тем самым защищая сквозной обмен данными.
 
 Процесс настройки описан в следующих разделах.
 
@@ -174,7 +174,7 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
    ```
 
    > [!NOTE]
-   > Сертификат, указанный на предыдущем шаге, должен быть открытым ключом PFX-сертификата, присутствующего в серверной части. Экспортируйте сертификат (не корневой) в формате CER, установленный на внутреннем сервере, и используйте его на этом шаге. Это действие добавляет серверную часть в список разрешений шлюза приложений.
+   > Сертификат, представленный на предыдущем этапе, должен быть общедоступным ключом сертификата .pfx, присутствуют на задней части. Экспортируйте сертификат (не корневой) в формате CER, установленный на внутреннем сервере, и используйте его на этом шаге. Это действие добавляет серверную часть в список разрешений шлюза приложений.
 
    Если вы используете номер SKU Шлюза приложений версии 2, создайте доверенный корневой сертификат, а не сертификат проверки подлинности. Дополнительные сведения см. в статье [Обзор сквозного режима связи SSL в шлюзе приложений](ssl-overview.md#end-to-end-ssl-with-the-v2-sku):
 
@@ -200,7 +200,7 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
    $rule = New-AzApplicationGatewayRequestRoutingRule -Name 'rule01' -RuleType basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
    ```
 
-10. Настройте размер экземпляра шлюза приложений. Доступные размеры: **Standard\_Small**, **Standard\_Medium** и **Standard\_Large**.  Доступны значения емкости: от **1** до **10**.
+10. Настройте размер экземпляра шлюза приложений. Доступные размеры: **Standard\_Small**, **Standard\_Medium** и **Standard\_Large**.  Для емкости доступные значения от **1** до **10**.
 
     ```powershell
     $sku = New-AzApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
@@ -213,9 +213,9 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
 
     Ниже приведен список значений для версий протокола, которые можно определить:
 
-    - **TLSv1_0**;
-    - **TLSv1_1**;
-    - **TLSv1_2**.
+    - **TLSV1_0**
+    - **TLSV1_1**
+    - **TLSV1_2**
     
     В следующем примере показано, как задать **TLSv1_2** в качестве минимальной версии протокола и разрешить только шифры **TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256**, **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384** и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256**.
 
@@ -227,19 +227,19 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
 
 Создайте шлюз приложений в соответствии с действиями, выполненными на предыдущих шагах. Выполнение этого процесса занимает много времени.
 
-Для номера SKU v1 используйте приведенную ниже команду.
+Для V1 SKU используйте ниже команды
 ```powershell
 $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -ResourceGroupName "appgw-rg" -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SSLPolicy $SSLPolicy -AuthenticationCertificates $authcert -Verbose
 ```
 
-Для SKU v2 используйте приведенную ниже команду.
+Для V2 SKU используйте ниже команды
 ```powershell
 $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -ResourceGroupName "appgw-rg" -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting01 -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SSLPolicy $SSLPolicy -TrustedRootCertificate $trustedRootCert01 -Verbose
 ```
 
-## <a name="apply-a-new-certificate-if-the-back-end-certificate-is-expired"></a>Применить новый сертификат, если истек срок действия серверного сертификата
+## <a name="apply-a-new-certificate-if-the-back-end-certificate-is-expired"></a>Приложить новый сертификат, если срок действия сертификата бэк-энда истек
 
-Используйте эту процедуру, чтобы применить новый сертификат, если истек срок действия сертификата внутренней части.
+Используйте эту процедуру, чтобы применить новый сертификат, если срок действия сертификата бэк-энда истек.
 
 1. Получите шлюз приложений, который требуется обновить.
 
@@ -247,33 +247,33 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
    $gw = Get-AzApplicationGateway -Name AdatumAppGateway -ResourceGroupName AdatumAppGatewayRG
    ```
    
-2. Добавьте новый ресурс сертификата из CER-файла, который содержит открытый ключ сертификата, и также может быть тем же сертификатом, добавленным в прослушиватель для завершения SSL в шлюзе приложений.
+2. Добавьте новый ресурс сертификата из файла .cer, который содержит общедоступный ключ сертификата, а также может быть тот же сертификат, добавленный слушателю для прекращения SSL на шлюзе приложения.
 
    ```powershell
    Add-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $gw -Name 'NewCert' -CertificateFile "appgw_NewCert.cer" 
    ```
     
-3. Получите новый объект сертификата проверки подлинности в переменной (TypeName: Microsoft. Azure. Commands. Network. Models. Псаппликатионгатевайаусентикатионцертификате).
+3. Получите новый объект сертификата аутентификации в переменную (TypeName: Microsoft.Azure.Commands.Network.Models.PsApplicationGatewayAuthenticationCertificate).
 
    ```powershell
    $AuthCert = Get-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $gw -Name NewCert
    ```
  
- 4. Назначьте новый сертификат параметру **баккендхттп** и используйте переменную $AuthCert. (Укажите имя параметра HTTP, которое требуется изменить.)
+ 4. Назначай новый сертификат в настройку **BackendHttp** и направь его с $AuthCert переменной. (Укажите имя настройки HTTP, которое вы хотите изменить.)
  
    ```powershell
    $out= Set-AzApplicationGatewayBackendHttpSetting -ApplicationGateway $gw -Name "HTTP1" -Port 443 -Protocol "Https" -CookieBasedAffinity Disabled -AuthenticationCertificates $Authcert
    ```
     
- 5. Зафиксируйте изменения в шлюзе приложений и передайте новую конфигурацию, содержащуюся в переменной $out.
+ 5. Совершите изменение в шлюз приложения и передайте новую конфигурацию, содержащуюся в $out переменной.
  
    ```powershell
    Set-AzApplicationGateway -ApplicationGateway $gw  
    ```
 
-## <a name="remove-an-unused-expired-certificate-from-http-settings"></a>Удаление неиспользуемого сертификата с истекшим сроком действия из параметров HTTP
+## <a name="remove-an-unused-expired-certificate-from-http-settings"></a>Удалить неиспользованный сертификат с истекшим сроком действия из настроек HTTP
 
-Используйте эту процедуру для удаления неиспользуемого сертификата с истекшим сроком действия из параметров HTTP.
+Используйте эту процедуру, чтобы удалить неиспользованный сертификат с истекшим сроком действия из настроек HTTP.
 
 1. Получите шлюз приложений, который требуется обновить.
 
@@ -281,19 +281,19 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
    $gw = Get-AzApplicationGateway -Name AdatumAppGateway -ResourceGroupName AdatumAppGatewayRG
    ```
    
-2. Перечислите имя сертификата проверки подлинности, который требуется удалить.
+2. Перечислите имя сертификата аутентификации, которое вы хотите удалить.
 
    ```powershell
    Get-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $gw | select name
    ```
     
-3. Удалите сертификат проверки подлинности из шлюза приложений.
+3. Удалить сертификат аутентификации из шлюза приложения.
 
    ```powershell
    $gw=Remove-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $gw -Name ExpiredCert
    ```
  
- 4. Зафиксируйте изменение.
+ 4. Совершите изменение.
  
    ```powershell
    Set-AzApplicationGateway -ApplicationGateway $gw
@@ -310,7 +310,7 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
    $gw = Get-AzApplicationGateway -Name AdatumAppGateway -ResourceGroupName AdatumAppGatewayRG
    ```
 
-2. Определите политику SSL. Ниже представлен пример отключения версий **TLSv1.0** и **TLSv1.1** и разрешения только комплектов шифров **TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256**, **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384**, и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256**.
+2. Определите политику SSL. В следующем примере **отключены TLSv1.0** и **TLSv1.1,** а шифровальные пакеты **TLS\_\_ECDHE ECDSA\_WITH\_AES\_128\_GCM\_SHA256,** **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384**и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256.**
 
    ```powershell
    Set-AzApplicationGatewaySSLPolicy -MinProtocolVersion TLSv1_2 -PolicyType Custom -CipherSuite "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256", "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_RSA_WITH_AES_128_GCM_SHA256" -ApplicationGateway $gw
@@ -327,7 +327,7 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
 
 После создания шлюза следует настроить внешний интерфейс для обмена данными. Если вы используете общедоступный IP-адрес, шлюзу приложений требуется динамически назначаемое непонятное имя DNS. Чтобы пользователи гарантированно попали на шлюз приложений, можно использовать запись CNAME для указания общедоступной конечной точки шлюза приложений. Дополнительные сведения см. в статье [Настройка пользовательского доменного имени для облачной службы Azure](../cloud-services/cloud-services-custom-domain-name-portal.md). 
 
-Чтобы настроить псевдоним, извлеките подробные сведения о шлюзе приложений и соответствующий IP-адрес или DNS-имя с помощью элемента **PublicIPAddress**, связанного со шлюзом приложений. Используйте DNS-имя шлюза приложений для создания записи CNAME, указывающей двум веб-приложениям на это DNS-имя. Мы не рекомендуем использовать записи типа A, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложения.
+Чтобы настроить псевдоним, извлекать сведения о шлюзе приложения и связанном с ним названии IP/DNS с помощью элемента **PublicIPAddress,** прикрепленного к шлюзу приложения. Используйте DNS-имя шлюза приложений для создания записи CNAME, указывающей двум веб-приложениям на это DNS-имя. Мы не рекомендуем использовать записи типа A, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложения.
 
 ```powershell
 Get-AzPublicIpAddress -ResourceGroupName appgw-RG -Name publicIP01
@@ -355,7 +355,7 @@ DnsSettings              : {
                             }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об усилении безопасности веб-приложений с помощью брандмауэра веб-приложения в шлюзе приложений см. в статье [Брандмауэр веб-приложения (WAF)](application-gateway-webapplicationfirewall-overview.md).
 

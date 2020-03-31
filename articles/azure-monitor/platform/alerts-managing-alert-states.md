@@ -6,10 +6,10 @@ ms.topic: conceptual
 author: anantr
 ms.date: 09/24/2018
 ms.openlocfilehash: a22d7b7b962b36f93ee804c64b3bc6b08ecceb0f
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77667522"
 ---
 # <a name="manage-alert-and-smart-group-states"></a>Управление состоянием оповещений и смарт-групп
@@ -20,30 +20,30 @@ ms.locfileid: "77667522"
 
 1. Состояние оповещения можно изменить различными способами. 
     * На странице "Все оповещения" установите флажки напротив оповещений, для которых вы хотите изменить состояние, и щелкните "Изменить состояние".   
-    ![Мониторинг](./media/alerts-managing-alert-states/state-all-alerts.jpg)
+    ![Наблюдение](./media/alerts-managing-alert-states/state-all-alerts.jpg)
     * На странице "Сведения об оповещениях" конкретного экземпляра оповещения можно щелкнуть "Изменить состояние".   
-    ![Мониторинг](./media/alerts-managing-alert-states/state-alert-details.jpg)
+    ![Наблюдение](./media/alerts-managing-alert-states/state-alert-details.jpg)
     * На странице "Сведения об оповещениях" конкретного экземпляра оповещения в области смарт-групп можно установить флажок напротив нужных оповещений.    
-    ![Мониторинг](./media/alerts-managing-alert-states/state-alert-details-sg.jpg)
+    ![Наблюдение](./media/alerts-managing-alert-states/state-alert-details-sg.jpg)
 
     * На странице "Сведения о смарт-группах" в списке оповещений участников можно установить флажки напротив оповещений, для которых вы хотите изменить состояние, и щелкнуть "Изменить состояние".   
-    ![Мониторинг](./media/alerts-managing-alert-states/state-sg-details-alerts.jpg)
+    ![Наблюдение](./media/alerts-managing-alert-states/state-sg-details-alerts.jpg)
 1. Щелкнув "Изменить состояние", вы увидите контекстное меню, в котором можно выбрать состояние (Новое/Подтверждено/Закрытое) и при необходимости ввести комментарий.   
-![Мониторинг](./media/alerts-managing-alert-states/state-alert-change.jpg)
+![Наблюдение](./media/alerts-managing-alert-states/state-alert-change.jpg)
 1. После этого изменение состояния записывается в журнал соответствующего оповещения. Его можно просмотреть, открыв соответствующую страницу сведений и проверив раздел журнала.    
-![Мониторинг](./media/alerts-managing-alert-states/state-alert-history.jpg)
+![Наблюдение](./media/alerts-managing-alert-states/state-alert-history.jpg)
 
 ## <a name="change-the-state-of-a-smart-group"></a>Изменение состояния смарт-группы
 1. Состояние смарт-группы можно изменить различными способами.
     1. На странице списка смарт-группы установите флажки напротив смарт-групп, для которых вы хотите изменить состояние, и щелкните "Изменить состояние".  
-    ![Мониторинг](./media/alerts-managing-alert-states/state-sg-list.jpg)
+    ![Наблюдение](./media/alerts-managing-alert-states/state-sg-list.jpg)
     1. Можно щелкнуть "Изменить состояние" на странице сведений о смарт-группах        
-    ![Мониторинг](./media/alerts-managing-alert-states/state-sg-details.jpg)
+    ![Наблюдение](./media/alerts-managing-alert-states/state-sg-details.jpg)
 1. Щелкнув "Изменить состояние", вы увидите контекстное меню, в котором можно выбрать состояние (Новое/Подтверждено/Закрытое) и при необходимости ввести комментарий. 
 ![Мониторинг](./media/alerts-managing-alert-states/state-sg-change.jpg)
    > [!NOTE]
    >  Изменение состояния смарт-группы не меняет состояние оповещений отдельных участников.
 
 1. После этого изменение состояния записывается в журнал соответствующей смарт-группы. Его можно просмотреть, открыв соответствующую страницу сведений и проверив раздел журнала.     
-![Мониторинг](./media/alerts-managing-alert-states/state-sg-history.jpg)
+![Наблюдение](./media/alerts-managing-alert-states/state-sg-history.jpg)
 

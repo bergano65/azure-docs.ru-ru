@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 01/29/2020
 ms.author: shvija
 ms.openlocfilehash: 808e813ad90626acec893a021634566f091c895f
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
-ms.translationtype: MT
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76904479"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Доступность и согласованность в Центрах событий
@@ -47,7 +47,7 @@ ms.locfileid: "76904479"
 
 Одно из возможных решений для обеспечения упорядочения с максимальным увеличением времени бесперебойной работы — объединение событий в рамках приложения обработки событий. Самый простой способ это сделать — пометить событие пользовательским свойством SequenceNumber (Порядковый номер). Пример кода приведен ниже.
 
-#### <a name="azuremessagingeventhubs-500-or-latertablatest"></a>[Azure. Messaging. EventHubs (5.0.0 или более поздней версии)](#tab/latest)
+#### <a name="azuremessagingeventhubs-500-or-later"></a>[Azure.Messaging.EventHubs (5.0.0 или более поздней)](#tab/latest)
 
 ```csharp
 // create a producer client that you can use to send events to an event hub
@@ -73,7 +73,7 @@ await using (var producerClient = new EventHubProducerClient(connectionString, e
 }
 ```
 
-#### <a name="microsoftazureeventhubs-410-or-earliertabold"></a>[Microsoft. Azure. EventHubs (4.1.0 или более ранняя версия)](#tab/old)
+#### <a name="microsoftazureeventhubs-410-or-earlier"></a>[Microsoft.Azure.EventHubs (4.1.0 или ранее)](#tab/old)
 ```csharp
 // Create an Event Hubs client
 var client = new EventHubClient(connectionString, eventHubName);

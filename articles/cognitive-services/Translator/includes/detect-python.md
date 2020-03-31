@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
 ms.openlocfilehash: 6591fd6eb232bf5fb242c9e08830324f864dac2f
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71837510"
 ---
 [!INCLUDE [Prerequisites](prerequisites-python.md)]
@@ -50,7 +50,7 @@ endpoint = os.environ[endpoint_var_name]
 Конечная точка для перевода текстов задается как `endpoint`. Параметр `path` задает маршрут `detect` и определяет, что нужно использовать версию 3 API.
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [определениям в API перевода текстов 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect).
 
 ```python
 path = '/detect?api-version=3.0'
@@ -146,7 +146,7 @@ python detect.py
 
 Если вы закодировали свой ключ подписки в программе, обязательно удалите его после завершения работы с этим кратким руководством.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 

@@ -1,15 +1,15 @@
 ---
-title: Примеры манифеста приложения контейнера Service Fabric Azure
+title: Примеры приложений для контейнеров Azure Service Fabric
 description: Узнайте, как настроить параметры манифестов приложений и служб для многоконтейнерного приложения Service Fabric.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: pepogors
 ms.openlocfilehash: 5efdbd17db20e69ace33b379ddbb99b2c4a20e69
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79258399"
 ---
 # <a name="multi-container-application-and-service-manifest-examples"></a>Примеры манифестов многоконтейнерных приложений и служб
@@ -17,9 +17,9 @@ ms.locfileid: "79258399"
 
 Показаны следующие функции:
 
-|Manifest|Компоненты|
+|манифеста|Компоненты|
 |---|---|
-|[Манифест приложения](#application-manifest)| [Переопределение переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка сопоставления порта контейнера с узлом](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery), [настройка проверки подлинности в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-repository-authentication), [управление ресурсами](service-fabric-resource-governance.md), [установка режима изоляции](service-fabric-get-started-containers.md#configure-isolation-mode), [указание образов контейнеров конкретной сборки ОС](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)| 
+|[Манифест заявления](#application-manifest)| [Переопределение переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка сопоставления порта контейнера с узлом](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery), [настройка проверки подлинности в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-repository-authentication), [управление ресурсами](service-fabric-resource-governance.md), [установка режима изоляции](service-fabric-get-started-containers.md#configure-isolation-mode), [указание образов контейнеров конкретной сборки ОС](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)| 
 |[Манифест службы FrontEndService](#frontendservice-service-manifest)| [Настройка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка конечной точки](service-fabric-get-started-containers.md#configure-communication), передача команд в контейнер, [импорт сертификата в контейнер](service-fabric-securing-containers.md)| 
 |[Манифест службы BackEndService](#backendservice-service-manifest)|[Настройка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка конечной точки](service-fabric-get-started-containers.md#configure-communication), [настройка драйвера тома](service-fabric-containers-volume-logging-drivers.md)| 
 
@@ -342,7 +342,7 @@ ms.locfileid: "79258399"
  Дополнительные сведения см. в разделе [Элемент ContainerHost](service-fabric-service-model-schema-elements.md#ContainerHostElementContainerHostEntryPointTypeComplexTypeDefinedInEntryPointDescriptionTypecomplexType).
 
 ### <a name="imagename-element"></a>Элемент ImageName
-Репозиторий и образ на [https://hub.docker.com](https://hub.docker.com) или реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
+Репо и изображение [https://hub.docker.com](https://hub.docker.com) в реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
 
 ### <a name="environmentvariables-element"></a>Элемент EnvironmentVariables
 Передает переменные среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
@@ -386,7 +386,7 @@ ms.locfileid: "79258399"
 Дополнительные сведения см. в разделе [Элемент ContainerHost](service-fabric-service-model-schema-elements.md#ContainerHostElementContainerHostEntryPointTypeComplexTypeDefinedInEntryPointDescriptionTypecomplexType).
 
 ### <a name="imagename-element"></a>Элемент ImageName
-Репозиторий и образ на [https://hub.docker.com](https://hub.docker.com) или реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
+Репо и изображение [https://hub.docker.com](https://hub.docker.com) в реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
 
 ### <a name="commands-element"></a>Элемент Commands
 Передает разделенный запятыми список команд контейнеру. Дополнительные сведения см. в разделе [Элемент Commands](service-fabric-service-model-schema-elements.md#CommandsElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).

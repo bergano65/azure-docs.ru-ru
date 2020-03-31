@@ -11,10 +11,10 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 431fe04461f422274697d1e91c4b56e914ce2d4e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "60746664"
 ---
 # <a name="event-hubs-management-libraries"></a>Библиотеки управления Центров событий
@@ -27,11 +27,11 @@ ms.locfileid: "60746664"
 * Создание, обновление, удаление концентраторов событий в службе "Центры событий".
 * Создание, обновление, удаление группы потребителей.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы приступить к работе с библиотеками управления Центров событий, нужно пройти аутентификацию в Azure Active Directory (AAD). AAD требует аутентификации в качестве субъекта-службы, предоставляющего доступ к вашим ресурсам Azure. Сведения о создании субъекта-службы см. в одной из приведенных ниже статей:  
 
-* [Создание приложения Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)
+* [Используйте портал Azure для создания приложения Active Directory и основного обслуживания, которые могут получить доступ к ресурсам](../active-directory/develop/howto-create-service-principal-portal.md)
 * [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 * [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](../azure-resource-manager/resource-group-authenticate-service-principal-cli.md)
 
@@ -74,5 +74,5 @@ ms.locfileid: "60746664"
     ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Пример управления для .NET](https://github.com/Azure-Samples/event-hubs-dotnet-management/)
+* [Выборка управления .NET](https://github.com/Azure-Samples/event-hubs-dotnet-management/)
 * [Справочник по Microsoft.Azure.Management.EventHub](/dotnet/api/Microsoft.Azure.Management.EventHub) 

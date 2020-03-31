@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: e8a91647d7532a9904901c247bb0b4096ffa0a1c
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 9b3af6a6cee4375a110c894b6b72655605ad077d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77161704"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80372238"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Центры событий Azure — платформа потоковой передачи больших данных и служба приема событий
 Центры событий Azure представляют собой платформу потоковой передачи больших данных и службу приема событий. Она может получать и обрабатывать миллионы событий в секунду. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения.
@@ -84,7 +84,7 @@ ms.locfileid: "77161704"
 - [.NET Core](get-started-dotnet-standard-send-v2.md)
 - [Java](get-started-java-send-v2.md)
 - [Python](get-started-python-send-v2.md)
-- [JavaScript](get-started-java-send-v2.md)
+- [JavaScript](get-started-node-send-v2.md)
 - [GO](event-hubs-go-get-started-send.md)
 - [C (только отправка)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (только получение)](event-hubs-storm-getstarted-receive.md)

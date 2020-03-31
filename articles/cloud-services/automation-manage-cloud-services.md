@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 06/20/2016
 ms.author: timlt
 ms.openlocfilehash: 482fcf7d100a90d9527f510382c5dafb4f67adfa
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72439074"
 ---
 # <a name="managing-azure-cloud-services-using-azure-automation"></a>Управление облачными службами Azure с помощью службы автоматизации Azure
 В этом руководстве будет представлена служба автоматизации Azure и способы ее использования для упрощения управления облачными службами Azure.
 
-## <a name="what-is-azure-automation"></a>Что собой представляет служба автоматизации Azure?
+## <a name="what-is-azure-automation"></a>Что такое служба автоматизации Azure
 [Служба автоматизации Azure](https://azure.microsoft.com/services/automation/) — это служба Azure для упрощения управления облаком путем автоматизации процессов. С помощью службы автоматизации Azure можно автоматизировать длительные, выполняемые вручную, ненадежные и часто повторяющиеся задачи для повышения надежности, эффективности и ускорения вывода продукта на рынок.
 
 Служба автоматизации Azure предоставляет высоконадежную и высокодоступную подсистему выполнения рабочих процессов с масштабированием в соответствии с требованиями организации по мере ее роста. В службе автоматизации Azure процессы можно запустить вручную, в сторонних системах или по расписанию, чтобы все задачи выполнялись в нужное время.
@@ -35,7 +35,7 @@ ms.locfileid: "72439074"
 * [непрерывное развертывание облачной службы всякий раз, когда в хранилище BLOB-объектов Azure обновляется CSCFG- или CSPKG-файл;](https://gallery.technet.microsoft.com/scriptcenter/Continuous-Deployment-of-A-eeebf3a6)
 * [параллельная перезагрузка экземпляров облачной службы, по одному домену обновления за раз.](https://gallery.technet.microsoft.com/scriptcenter/Reboot-Cloud-Service-PaaS-b337a06d)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Теперь, когда вы познакомились с основами службы автоматизации Azure и способах ее использования для управления облачными службами Azure, пройдите по ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 
 * [Обзор службы автоматизации Azure](../automation/automation-intro.md)

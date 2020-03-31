@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/26/2019
 ms.openlocfilehash: 4fd71a7f322cb2672eb485f17e4de2619a7c2d2c
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78270027"
 ---
 # <a name="connect-a-knowledge-store-with-power-bi"></a>Подключение хранилища знаний с помощью Power BI
@@ -24,7 +24,7 @@ ms.locfileid: "78270027"
 
 + Выполните инструкции по [созданию хранилища знаний на портале Azure](knowledge-store-create-portal.md) или [созданию хранилища знаний службы "Когнитивный поиск Azure" с помощью REST](knowledge-store-create-rest.md), чтобы создать пример хранилища знаний для работы с этим пошаговым руководством. Кроме того, вам потребуется имя учетной записи хранения Azure, которая использовалась для создания хранилища знаний, а также ключ доступа к нему с портала Azure.
 
-+ [Установка Power BI Desktop](https://powerbi.microsoft.com/downloads/)
++ [Установка рабочего стола Power BI](https://powerbi.microsoft.com/downloads/)
 
 ## <a name="sample-power-bi-template---azure-portal-only"></a>Пример шаблона Power BI — только портал Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "78270027"
 
 1. В окне **Получение данных** выберите **Azure**, а затем выберите **Хранилище таблиц Azure**.
 
-1. Нажмите кнопку **Соединить**.
+1. Нажмите кнопку **Подключить**.
 
 1. В поле **Имя или URL-адрес учетной записи** введите имя своей учетной записи хранилища Azure (для вас будет создан полный URL-адрес).
 
@@ -114,7 +114,7 @@ In the enrichment step of the wizard, attach a billable [Cognitive Services](htt
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о том, как исследовать это хранилище знаний с помощью Обозревателя службы хранилища, см. в следующей статье.
 

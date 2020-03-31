@@ -9,10 +9,10 @@ ms.date: 08/12/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 58997b20c01f33037a5e5e149caa59e1630373ff
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79255318"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
@@ -41,7 +41,7 @@ ms.locfileid: "79255318"
 
 Служба импорта и экспорта Azure поддерживает следующие типы учетных записей хранения:
 
-- Стандартные учетные записи хранения общего назначения v2 (рекомендуется для большинства сценариев)
+- Учетные записи хранения данных Standard General Purpose v2 (рекомендуется для большинства сценариев)
 - Учетные записи хранилища BLOB-объектов
 - Учетные записи хранения общего назначения версии 1 (как классическое развертывание, так и развертывание с помощью Azure Resource Manager)
 
@@ -50,7 +50,7 @@ ms.locfileid: "79255318"
 Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-account-create.md).
 
 > [!IMPORTANT]
-> Служба импорта и экспорта Azure не поддерживает учетные записи хранения с включенной функцией [конечных точек служб для виртуальных сетей](../../virtual-network/virtual-network-service-endpoints-overview.md) . 
+> Служба экспорта импорта Azure не поддерживает учетные записи хранения данных, в которых включена функция  [«Конечные точки виртуальной сети».](../../virtual-network/virtual-network-service-endpoints-overview.md) 
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилища
 
@@ -74,13 +74,13 @@ ms.locfileid: "79255318"
 
 |Тип диска  |Размер  |Поддерживается |
 |---------|---------|---------|
-|SSD    |   2,5"      |SATA III          |
+|SSD    |   2,5"      |САТА III          |
 |HDD     |  2,5"<br>3,5"       |SATA II, SATA III         |
 
-Не поддерживаются следующие типы дисков:
-- Усбс.
-- Внешний жесткий диск с встроенным USB-адаптером.
-- Диски, находящиеся в регистре внешнего жесткого диска.
+Следующие типы дисков не поддерживаются:
+- USBs.
+- Внешний HDD со встроенным USB-адаптером.
+- Диски, которые находятся внутри корпуса внешнего HDD.
 
 Одна операция импорта и экспорта может иметь:
 - Не более 10 HDD/SSD.
@@ -94,5 +94,5 @@ ms.locfileid: "79255318"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка инструмента WAImportExport](storage-import-export-tool-how-to.md)
-* [Приступая к работе со служебной программой командной строки AzCopy](storage-use-azcopy.md)
-* [Пример REST API службы импорта и экспорта Azure](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/)
+* [Передача данных с помощью утилиты командной строки AzCopy](storage-use-azcopy.md)
+* [Пример API Экспорта импорта Azure](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/)
