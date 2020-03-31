@@ -1,7 +1,7 @@
 ---
 title: Извлечение метрик через REST API
 titleSuffix: Azure Load Balancer
-description: В этой статье приступите к работе с API-интерфейсами Azure для сбора метрик работоспособности и использования для Azure Load Balancer.
+description: В этой статье начинайте использовать AIS Azure REST для сбора метрик работоспособности и использования для баланса грузоподъемности Azure.
 services: sql-database
 author: asudbring
 manager: KumudD
@@ -11,15 +11,15 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: allensu
 ms.openlocfilehash: 760ec8a945ab88b63dde2de75f5354818facf4f2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74225260"
 ---
-# <a name="get-load-balancer-usage-metrics-using-the-rest-api"></a>Получение метрик использования Load Balancer с помощью REST API
+# <a name="get-load-balancer-usage-metrics-using-the-rest-api"></a>Получите метрики использования баланса нагрузки с помощью API REST
 
-Собирайте количество байтов, обработанных [Load Balancer (цен. Категория "Стандартный")](/azure/load-balancer/load-balancer-standard-overview) , в течение интервала времени с помощью [REST API Azure](/rest/api/azure/).
+Соберите количество байтов, обработанных [балансом стандартной нагрузки,](/azure/load-balancer/load-balancer-standard-overview) в течение промежутка времени с помощью [API Azure REST.](/rest/api/azure/)
 
 Полная справочная документация и дополнительные образцы для REST API можно найти в [Azure Monitor REST API reference](/rest/api/monitor) (Справочник по REST API Azure Monitor). 
 
@@ -35,24 +35,24 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Ниже приведены обязательные заголовки. 
 
-|Заголовок запроса|ОПИСАНИЕ|  
+|Заголовок запроса|Описание|  
 |--------------------|-----------------|  
-|*Content-Type:*|обязательный параметр. Задайте значение `application/json`.|  
-|*Authorization:*|обязательный параметр. Задайте в качестве значения `Bearer`допустимый токен доступа[ ](/rest/api/azure/#authorization-code-grant-interactive-clients). |  
+|*Тип контента:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Авторизации:*|Обязательный элемент. Задайте допустимый  [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |  
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-| имя | ОПИСАНИЕ |
+| name | Описание |
 | :--- | :---------- |
-| subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
+| subscriptionId | Идентификатор подписки Azure. Если у вас есть несколько подписок, см [Работа с несколькими подписками](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | имя_группы_ресурсов | Имя группы ресурсов, к которой относится ресурс. Это значение можно получить с помощью API-интерфейса Azure Resource Manager, CLI или портала. |
 | loadBalancerName | Имя Azure Load Balancer. |
-| имена метрик | Разделенный запятыми список допустимых [метрик Load Balancer](/azure/load-balancer/load-balancer-standard-diagnostics). |
+| метрические имена | Разделенный запятыми список допустимых [метрик Load Balancer](/azure/load-balancer/load-balancer-standard-diagnostics). |
 | api-version | Версия API для использования в запросе.<br /><br /> В этом документе рассматривается API версии `2018-01-01`, которая включена в приведенный выше URL-адрес.  |
-| интервал времени | Временной диапазон запроса. Это строка со следующим форматом `startDateTime_ISO/endDateTime_ISO`. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
+| Интервал времени | Временной диапазон запроса. Это строка со следующим `startDateTime_ISO/endDateTime_ISO`форматом. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
 | &nbsp; | &nbsp; |
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Для этой операции текст запроса не требуется.
 

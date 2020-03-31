@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
 ms.openlocfilehash: 8e7e01dac29cb9ba91c83270dac4e46c73b2089e
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75610133"
 ---
 # <a name="upgrade-the-configuration-of-a-standalone-cluster"></a>Обновление конфигурации изолированного кластера 
@@ -17,9 +17,9 @@ ms.locfileid: "75610133"
 Для любой современной системы возможность обновления является ключом к успеху вашего продукта в долгосрочной перспективе. Кластер Azure Service Fabric — это ресурс, владельцем которого вы являетесь. Из этой статьи вы узнаете, как обновить параметры конфигурации для изолированного кластера Service Fabric.
 
 ## <a name="customize-cluster-settings-in-the-clusterconfigjson-file"></a>Настройка параметров кластера в файле ClusterConfig.json
-Изолированные кластеры настраиваются с помощью файла *ClusterConfig.json*. Дополнительные сведения о различных параметрах см. в статье [Параметры конфигурации для изолированного кластера Windows](service-fabric-cluster-manifest.md).
+Автономные кластеры настраиваются через файл *ClusterConfig.json.* Дополнительные сведения о различных параметрах см. в статье [Параметры конфигурации для изолированного кластера Windows](service-fabric-cluster-manifest.md).
 
-В файле *ClusterConfig.json* в разделе `fabricSettings`[свойств кластера](./service-fabric-cluster-manifest.md#cluster-properties) можно добавлять, изменять и удалять параметры. 
+Можно добавить, обновить или удалить `fabricSettings` настройки в разделе под разделом [свойств кластера](./service-fabric-cluster-manifest.md#cluster-properties) в *ClusterConfig.json.* 
 
 Например, следующий JSON добавляет новый параметр *MaxDiskQuotaInMB* в разделе *Diagnostics* в строке `fabricSettings`:
 
@@ -50,10 +50,10 @@ TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File
 TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File> -OldClusterConfigFilePath <Path to the old Configuration File> -FabricRuntimePackagePath <Path to the .cab file which you want to test the configuration against>
 ```
 
-Невозможно обновить некоторые конфигурации, например конечные точки, имя кластера, IP-адрес узла и т. д. Новый JSON конфигурации кластера проверяется по старому и выдает ошибки в окне PowerShell при возникновении проблемы.
+Некоторые конфигурации не могут быть обновлены, такие как конечные точки, название кластера, IP-адрес и т.д. Новая конфигурация кластера JSON тестируется против старой и выбрасывает ошибки в окне PowerShell, если есть проблема.
 
 ## <a name="upgrade-the-cluster-configuration"></a>Обновление конфигурации кластера
-Чтобы обновить конфигурацию кластера, выполните команду [Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обновление конфигурации обрабатывает домен обновления.
+Для обновления обновления конфигурации кластера запустите [Start-ServiceFabricClusterConfigurationUpgrade.](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade) Обновление конфигурации обрабатывает домен обновления.
 
 ```powershell
 Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Configuration File>

@@ -9,17 +9,17 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: e1cb1bec6273fa79315b9439bec1412622ebfe28
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75774306"
 ---
-В следующем примере показано, как создать прямой пиринг 10 Гбит/в Сиэтле.
+Ниже приводится следующий пример, как создать 10Gbps Прямая пиринг в Сиэтле.
 
-Используйте командлет PowerShell **New-азпирингдиректконнектионобжект** , чтобы создать директконнектионс, которые будут использоваться в новом запросе пиринга.
+Используйте PowerShell cmdlet **New-AzPeeringDirectConnectionObject** для создания DirectConnections, которые должны быть использованы в новом запросе для пиринга.
 
-Ниже приведен пример создания Директконнектион:
+Ниже приведен пример для создания DirectConnection:
 
 ```powershell
 $connection1 = New-AzPeeringDirectConnectionObject `
@@ -32,9 +32,9 @@ $connection1 = New-AzPeeringDirectConnectionObject `
 ```
 
 > [!NOTE]
-> <index> для $peeringLocation [<index>] в приведенном выше примере должен соответствовать выбранному расположению пиринга.
+> Для <index> $peeringLocation<index>в приведенном выше примере должны соответствовать местоположению вашего выбора
 
-Создайте другое подключение в случае, если требуется избыточность в указанном расположении пиринга:
+Создайте другое соединение в случае необходимости избыточности в данном месте пиринга:
 
 ```powershell
 $connection2 = New-AzPeeringDirectConnectionObject `
@@ -46,7 +46,7 @@ $connection2 = New-AzPeeringDirectConnectionObject `
     -BandwidthInMbps 10000
 ```
 
-Используйте командлет PowerShell **New-азпиринг** , чтобы создать новый прямой пиринг. Для этой команды требуется идентификатор ресурса ASN, который можно получить, как показано ниже.
+Используйте PowerShell cmdlet **New-AzPeering** для создания нового прямого пиринга. Эта команда требует идентификатора ресурсов ASN, который может быть извлечен, как показано ниже.
 
 
 ```powershell
@@ -78,4 +78,4 @@ New-AzPeering `
     Tags                 : {}
 
 ```
-Обратите внимание, что вместо **{SubscriptionId}** в приведенных выше выходных данных будет отображен фактический идентификатор подписки.
+Обратите внимание, что вместо **«subscriptionId»** в вышеуказанном выводе будет отображаться фактический идентификатор подписки.

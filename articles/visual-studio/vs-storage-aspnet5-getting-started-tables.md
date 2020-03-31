@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с хранилищем таблиц с помощью Visual Studio (ASP.NET Core)
+title: Начало работы с хранением таблиц с помощью Visual Studio (ASP.NET Core)
 description: Начало работы с хранилищем таблиц Azure в проекте ASP.NET Core в Visual Studio после подключения к учетной записи хранения с использованием подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -14,10 +14,10 @@ ms.date: 11/14/2017
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: d209f8117b1e061877daf2f8d316bd01ed4f84cd
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72298812"
 ---
 # <a name="how-to-get-started-with-azure-table-storage-and-visual-studio-connected-services"></a>Начало работы с табличным хранилищем Azure и подключенными службами Visual Studio
@@ -26,7 +26,7 @@ ms.locfileid: "72298812"
 
 В этой статье описывается, как приступить к использованию хранилища таблиц Azure в Visual Studio после создания учетной записи хранения Azure или указания ссылки на нее в проекте ASP.NET Core с помощью функции **подключенных служб** в Visual Studio. Операция **подключенных служб** устанавливает соответствующие пакеты NuGet для доступа к службе хранилища Azure в вашем проекте и добавляет строку подключения для учетной записи хранения в файлы конфигурации проекта. Общие сведения о службе хранилища Azure см. в [документации по службе хранилища](https://azure.microsoft.com/documentation/services/storage/).
 
-В службе хранилища таблиц Azure можно хранить большие объемы структурированных данных. Эта служба — хранилище данных NoSQL, которое принимает вызовы внутри и снаружи облака Azure с проверкой подлинности. Таблицы Azure идеально подходят для хранения нереляционных структурированных данных. Более общие сведения об использовании хранилища таблиц Azure см. в разделе [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../storage/storage-dotnet-how-to-use-tables.md).
+В службе хранилища таблиц Azure можно хранить большие объемы структурированных данных. Эта служба — хранилище данных NoSQL, которое принимает вызовы внутри и снаружи облака Azure с проверкой подлинности. Таблицы Azure идеально подходят для хранения нереляционных структурированных данных. Для получения более подробной информации об использовании хранилища таблицы Azure [см.](../storage/storage-dotnet-how-to-use-tables.md)
 
 Чтобы приступить к работе, сначала необходимо создать таблицу в учетной записи хранения. Затем в этой статье объясняется, как создать таблицу с помощью языка C# и как выполнять базовые операции с таблицами, например добавлять, изменять, считывать и удалять записи в таблицах.  В коде используется клиентская библиотека службы хранилища Microsoft Azure для .NET. Дополнительные сведения см. на сайте [ASP.NET](https://www.asp.net).
 
@@ -210,5 +210,5 @@ else
    Console.WriteLine("Couldn't delete the entity.");
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]

@@ -1,18 +1,18 @@
 ---
-title: Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
-description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
+title: Резервное копирование и восстановление VMs Azure с помощью PowerShell
+description: Описывает, как резервное копирование и восстановление VMs Azure с помощью резервного копирования Azure с помощью PowerShell
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.openlocfilehash: 733a06a84aa170f1361ea74d126ec9752586fce2
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79247986"
 ---
-# <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
+# <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление VMs Azure с помощью PowerShell
 
-В этой статье объясняется, как создать резервную копию и восстановить виртуальную машину Azure в хранилище служб [Azure Backup](backup-overview.md) восстановления с помощью командлетов PowerShell.
+В этой статье объясняется, как создать резервную связь и восстановить VM Azure в хранилище служб восстановления [резервного копирования Azure](backup-overview.md) с помощью cmdlets PowerShell.
 
 В этой статье раскрываются следующие темы:
 
@@ -23,19 +23,19 @@ ms.locfileid: "79247986"
 > * Применение политики архивации для защиты нескольких виртуальных машин.
 > * Запустите задание резервного копирования по запросу для защищенных виртуальных машин. Прежде чем можно будет переходить к резервному копированию (или защите) виртуальной машины, вам потребуется выполнить [необходимые условия](backup-azure-arm-vms-prepare.md), чтобы подготовить среду для защиты виртуальных машин.
 
-## <a name="before-you-start"></a>Прежде чем начать
+## <a name="before-you-start"></a>Перед началом работы
 
-* Дополнительные [сведения](backup-azure-recovery-services-vault-overview.md) о хранилищах служб восстановления.
-* [Изучите](backup-architecture.md#architecture-built-in-azure-vm-backup) архитектуру для резервного копирования виртуальных машин Azure, [Узнайте о](backup-azure-vms-introduction.md) процессе резервного копирования и [Ознакомьтесь](backup-support-matrix-iaas.md) со сведениями о поддержке, ограничениях и предварительных требованиях.
-* Проверьте иерархию объектов PowerShell для служб восстановления.
+* [Узнайте больше](backup-azure-recovery-services-vault-overview.md) о хранилищах служб восстановления.
+* [Просмотрите](backup-architecture.md#architecture-built-in-azure-vm-backup) архитектуру резервного копирования Azure VM, [узнайте о](backup-azure-vms-introduction.md) процессе резервного копирования и [просмотрите](backup-support-matrix-iaas.md) поддержку, ограничения и предпосылки.
+* Просмотрите иерархию объектов PowerShell для служб восстановления.
 
 ## <a name="recovery-services-object-hierarchy"></a>Иерархия объектов служб восстановления
 
-Иерархия объектов представлена на следующей схеме.
+Иерархия объектов обобщена в следующей диаграмме.
 
 ![Иерархия объектов служб восстановления](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-Ознакомьтесь со справочником по [командлету](https://docs.microsoft.com/powershell/module/Az.RecoveryServices/?view=azps-1.4.0) **AZ. RecoveryServices** в библиотеке Azure.
+Просмотрите ссылку **на ссылку Az.RecoveryServices** [cmdlet](https://docs.microsoft.com/powershell/module/Az.RecoveryServices/?view=azps-1.4.0) в библиотеке Azure.
 
 ## <a name="set-up-and-register"></a>Настройка и регистрация
 
@@ -43,7 +43,7 @@ ms.locfileid: "79247986"
 
 Чтобы начать работу, сделайте следующее:
 
-1. [Скачайте последнюю версию PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps)
+1. [Скачать последнюю версию PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps)
 
 2. Чтобы получить список доступных командлетов PowerShell для службы архивации Azure, введите следующую команду:
 
@@ -58,7 +58,7 @@ ms.locfileid: "79247986"
 3. Чтобы войти в учетную запись Azure, используйте командлет **Connect-AzAccount**. Откроется веб-станица, на которой пользователю предлагается ввести данные для входа в учетную запись:
 
     * Кроме того, учетные данные можно добавить в качестве параметра в командлет **Connect-AzAccount**, используя параметр **-Credential**.
-    * Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Например: **Connect-азаккаунт-клиент "fabrikam.com"**
+    * Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Например: **Connect-AzAccount -Арендатор "fabrikam.com"**
 
 4. Свяжите подписку, которую собираетесь использовать, с учетной записью, так как последняя может иметь несколько подписок:
 
@@ -66,7 +66,7 @@ ms.locfileid: "79247986"
     Select-AzSubscription -SubscriptionName $SubscriptionName
     ```
 
-5. Если вы используете Azure Backup в первый раз, необходимо использовать командлет **[Register-азресаурцепровидер](https://docs.microsoft.com/powershell/module/az.resources/register-azresourceprovider)** для регистрации поставщика службы восстановления Azure в подписке.
+5. Если вы используете резервное копирование Azure впервые, необходимо использовать cmdlet **[Register-AzResourceProvider](https://docs.microsoft.com/powershell/module/az.resources/register-azresourceprovider)** для регистрации поставщика услуг восстановления Azure с подпиской.
 
     ```powershell
     Register-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
@@ -78,13 +78,13 @@ ms.locfileid: "79247986"
     Get-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     ```
 
-    В выходных данных команды для **RegistrationState** должно быть установлено значение **Registered**. Если нет, просто выполните командлет **[Register-азресаурцепровидер](https://docs.microsoft.com/powershell/module/az.resources/register-azresourceprovider)** еще раз.
+    В выходных данных команды для **RegistrationState** должно быть установлено значение **Registered**. Если нет, просто запустите **[Регистр-AzResourceProvider](https://docs.microsoft.com/powershell/module/az.resources/register-azresourceprovider)** cmdlet снова.
 
-## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
+## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
 
 Чтобы создать хранилище служб восстановления, выполните описанные ниже действия. Хранилище служб восстановления отличается от хранилища службы архивации.
 
-1. Хранилище служб восстановления представляет собой ресурс Resource Manager, поэтому вам потребуется разместить его в группе ресурсов. Можно использовать существующую группу ресурсов или создать группу ресурсов с помощью командлета **[New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup)** . При создании группы ресурсов укажите ее имя и расположение.  
+1. Хранилище служб восстановления представляет собой ресурс Resource Manager, поэтому вам потребуется разместить его в группе ресурсов. Можно использовать существующую группу ресурсов или создать группу ресурсов с помощью cmdlet **[New-AzResourceGroup.](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup)** При создании группы ресурсов укажите ее имя и расположение.  
 
     ```powershell
     New-AzResourceGroup -Name "test-rg" -Location "West US"
@@ -110,7 +110,7 @@ ms.locfileid: "79247986"
 
 ## <a name="view-the-vaults-in-a-subscription"></a>Просмотр хранилищ в подписке
 
-Выполнив командлет [Get-AzRecoveryServicesVault](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesvault?view=azps-1.4.0), вы получите список всех хранилищ в подписке.
+Для просмотра всех хранилищ в подписке используйте [Get-AzRecoveryRecoveryServicesVault:](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesvault?view=azps-1.4.0)
 
 ```powershell
 Get-AzRecoveryServicesVault
@@ -134,15 +134,15 @@ Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 
 ### <a name="set-vault-context"></a>Задание контекста хранилища
 
-Перед включением защиты на виртуальной машине используйте [Set-азрековерисервицесваултконтекст](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultcontext?view=azps-1.4.0) , чтобы задать контекст хранилища. Заданный контекст хранилища применяется ко всем последующим командлетам. В следующем примере задается контекст для хранилища *testvault*.
+Прежде чем включить защиту на VM, используйте [Set-AzRecoveryServicesVaultContext](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultcontext?view=azps-1.4.0) для настройки контекста хранилища. Заданный контекст хранилища применяется ко всем последующим командлетам. В следующем примере задается контекст для хранилища *testvault*.
 
 ```powershell
 Get-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName "Contoso-docs-rg" | Set-AzRecoveryServicesVaultContext
 ```
 
-### <a name="fetch-the-vault-id"></a>Получение идентификатора хранилища
+### <a name="fetch-the-vault-id"></a>Получить идентификатор хранилища
 
-Мы планируем использовать параметр контекста хранилища в соответствии с рекомендациями Azure PowerShell. Вместо этого можно сохранить или извлечь идентификатор хранилища и передать его в соответствующие команды. Поэтому, если вы не указали контекст хранилища или хотите указать команду для выполнения в определенном хранилище, передайте идентификатор хранилища как "-Ваултид" во всю соответствующую команду, как показано ниже:
+Мы планируем устареть настройки контекста хранилища в соответствии с руководящими принципами Azure PowerShell. Вместо этого вы можете хранить или получать идентификатор хранилища и передавать его соответствующим командам. Итак, если вы еще не установили контекст хранилища или хотите указать команду для выполнения определенного хранилища, передайте идентификатор хранилища как "-vaultID" всем соответствующим командам:
 
 ```powershell
 $targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" -Name "testvault"
@@ -157,7 +157,7 @@ $targetVaultID = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg
 
 ### <a name="modifying-storage-replication-settings"></a>Изменение параметров репликации хранилища
 
-Используйте команду [Set-азрековерисервицесбаккуппроперти](https://docs.microsoft.com/powershell/module/az.recoveryservices/Set-AzRecoveryServicesBackupProperty) , чтобы задать для хранилища конфигурацию репликации хранилища LRS/GRS
+Используйте команду [Set-AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/Set-AzRecoveryServicesBackupProperty) для установки конфигурации репликации хранилища в LRS/GRS
 
 ```powershell
 Set-AzRecoveryServicesBackupProperty -Vault $targetVault -BackupStorageRedundancy GeoRedundant/LocallyRedundant
@@ -170,7 +170,7 @@ Set-AzRecoveryServicesBackupProperty -Vault $targetVault -BackupStorageRedundanc
 
 Создаваемое хранилище служб восстановления поставляется с политиками защиты и хранения по умолчанию. Политика защиты по умолчанию запускает задание резервного копирования каждый день в указанное время. Политика хранения по умолчанию хранит ежедневную точку восстановления в течение 30 дней. С помощью политики по умолчанию можно быстро защитить виртуальную машину. Кроме того, политику можно изменить позже, задав другие сведения.
 
-Используйте **[Get-азрековерисервицесбаккуппротектионполици](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectionpolicy)** для просмотра политик защиты, доступных в хранилище. С его помощью можно получить конкретную политику или просмотреть политики, связанные с типом рабочей нагрузки. В следующем примере возвращаются политики для типа рабочей нагрузки AzureVM.
+Используйте **[Get-AzRecoveryServicesBackUpProtectionPolicy](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectionpolicy)** для просмотра политик защиты, доступных в хранилище. С его помощью можно получить конкретную политику или просмотреть политики, связанные с типом рабочей нагрузки. В следующем примере возвращаются политики для типа рабочей нагрузки AzureVM.
 
 ```powershell
 Get-AzRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM" -VaultId $targetVault.ID
@@ -189,14 +189,14 @@ DefaultPolicy        AzureVM            AzureVM              4/14/2016 5:00:00 P
 >
 >
 
-Политика защиты архивации связана по крайней мере с одной политикой хранения. Политика хранения определяет продолжительность хранения точки восстановления перед ее удалением.
+Политика защиты архивации связана по крайней мере с одной политикой хранения. Политика удержания определяет, как долго сохраняется точка восстановления, прежде чем она будет удалена.
 
 * Для просмотра политики хранения по умолчанию используется командлет [Get-AzRecoveryServicesBackupRetentionPolicyObject](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupretentionpolicyobject).
-* Аналогичным образом для получения политики расписания по умолчанию используется командлет [Get-AzRecoveryServicesBackupSchedulePolicyObject](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupschedulepolicyobject).
+* Аналогичным образом вы можете использовать [Get-AzRecoveryServicesBackUpПлантНаяПланТТекЛПланИПланИПлант](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupschedulepolicyobject) для получения политики графика по умолчанию.
 * Командлет [New-AzRecoveryServicesBackupProtectionPolicy](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectionpolicy) создает объект PowerShell, который содержит сведения о политике архивации.
-* Объекты политики расписания и хранения используются в качестве входных данных для командлета New-Азрековерисервицесбаккуппротектионполици.
+* Объекты политик расписания и хранения используются в качестве входных данных в командлете New-AzRecoveryServicesBackupProtectionPolicy.
 
-По умолчанию время начала определяется в объекте политики Schedule. Используйте следующий пример, чтобы изменить время начала на нужное время начала. Требуемое время начала должно быть также в формате UTC. В приведенном ниже примере предполагается, что нужное время начала для ежедневного резервного копирования составляет 01:00 часов по ГРИНВИЧу.
+По умолчанию время начала определяется в объекте политики расписания. Используйте следующий пример, чтобы изменить время начала на нужное время начала. Нужное время начала должно быть в UTC также. Ниже приведен пример предполагает, что желаемое время начала 01:00 UTC для ежедневных резервных копирований.
 
 ```powershell
 $schPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "AzureVM" -VaultId $targetVault.ID
@@ -206,7 +206,7 @@ $schpol.ScheduleRunTimes[0] = $UtcTime
 ```
 
 > [!IMPORTANT]
-> Необходимо указать время начала в 30 минут, кратное. В приведенном выше примере это может быть только "01:00:00" или "02:30:00". Время начала не может быть "01:15:00"
+> Вы должны обеспечить время начала в 30 минуткратные кратные только. В приведенном выше примере это может быть только "01:00:00" или "02:30:00". Время начала не может быть "01:15:00"
 
 В следующем примере показано сохранение политик расписания и хранения в переменных. В примере эти переменные используются для определения параметров при создании политики защиты *NewPolicy*.
 
@@ -225,10 +225,10 @@ NewPolicy           AzureVM            AzureVM              4/24/2016 1:30:00 AM
 
 ### <a name="enable-protection"></a>Включить защиту
 
-После определения политики защиты по-прежнему необходимо включить политику для элемента. Используйте [Enable-азрековерисервицесбаккуппротектион](https://docs.microsoft.com/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) , чтобы включить защиту. Защита включается для двух объектов: элемента и политики. После того как политика сопоставится с хранилищем, рабочий процесс архивации будет активироваться по времени, определенному в политике расписания.
+После определения политики защиты по-прежнему необходимо включить политику для элемента. Для обеспечения защиты используйте [Enable-AzRecoveryServicesBackUpProtection.](https://docs.microsoft.com/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) Защита включается для двух объектов: элемента и политики. После того как политика сопоставится с хранилищем, рабочий процесс архивации будет активироваться по времени, определенному в политике расписания.
 
 > [!IMPORTANT]
-> При использовании PS для одновременного включения резервного копирования нескольких виртуальных машин убедитесь, что с одной политикой не связано более 100 виртуальных машин. Это [рекомендуемый метод](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy). В настоящее время клиент PS не выполняет явную блокировку при наличии более 100 виртуальных машин, но в будущем планируется добавить проверку.
+> При использовании PS для включения резервного копирования для нескольких ВМ одновременно убедитесь, что одна политика не имеет более 100 VMs, связанных с ним. Это [рекомендуемый метод](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy). В настоящее время клиент PS не выполняет явную блокировку при наличии более 100 виртуальных машин, но в будущем планируется добавить проверку.
 
 В следующих примерах включается защита для элемента V2VM с помощью политики NewPolicy. Примеры отличаются в зависимости от того, зашифрована ли виртуальная машина и какой у нее тип шифрования.
 
@@ -239,7 +239,7 @@ $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy" -VaultId $
 Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1" -VaultId $targetVault.ID
 ```
 
-Чтобы включить защиту на зашифрованных виртуальных машинах (зашифрованных с помощью BEK и KEK), необходимо предоставить службе Azure Backup разрешение на чтение ключей и секретов из хранилища ключей.
+Чтобы включить защиту на зашифрованных виртуальных машинах (зашифрованных с помощью BEK и KEK), необходимо предоставить службе архивации Azure разрешения на доступ для чтения ключей и секретов из хранилища ключей.
 
 ```powershell
 Set-AzKeyVaultAccessPolicy -VaultName "KeyVaultName" -ResourceGroupName "RGNameOfKeyVault" -PermissionsToKeys backup,get,list -PermissionsToSecrets get,list -ServicePrincipalName 262044b1-e2ce-469f-a196-69ab7ada62d3
@@ -247,7 +247,7 @@ $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy" -VaultId $
 Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1" -VaultId $targetVault.ID
 ```
 
-Чтобы включить защиту на **зашифрованных виртуальных машинах (зашифрованных только с помощью BEK)** , необходимо предоставить службе архивации Azure разрешения на доступ для чтения секретов из хранилища ключей.
+Чтобы включить защиту на **зашифрованных виртуальных машинах (зашифрованных только с помощью BEK)**, необходимо предоставить службе архивации Azure разрешения на доступ для чтения секретов из хранилища ключей.
 
 ```powershell
 Set-AzKeyVaultAccessPolicy -VaultName "KeyVaultName" -ResourceGroupName "RGNameOfKeyVault" -PermissionsToSecrets backup,get,list -ServicePrincipalName 262044b1-e2ce-469f-a196-69ab7ada62d3
@@ -256,12 +256,12 @@ Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGro
 ```
 
 > [!NOTE]
-> Если вы используете облако Azure для государственных организаций, используйте значение ff281ffe-705c-4f53-9f37-a40e6f2c68f3 в командлете [Set-азкэйваултакцессполици](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) .
+> Если вы используете облако Azure Government, используйте значение ff281ffe-705c-4f53-9f37-a40e6f2c68f3 для параметра ServicePrincipalName в [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) cmdlet.
 >
 
 ## <a name="monitoring-a-backup-job"></a>Наблюдение за выполнением задания резервного копирования
 
-Вы можете отслеживать длительные операции, например задания резервного копирования, без использования портала Azure. Чтобы получить состояние выполняемого задания, используйте командлет [Get-азрековерисервицесбаккупжоб](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) . Этот командлет возвращает задания резервного копирования для конкретного хранилища, и это хранилище указывается в контексте хранилища. Следующий пример возвращает состояние выполняющегося задания в виде массива и сохраняет состояние в переменной $joblist.
+Вы можете отслеживать длительные операции, например задания резервного копирования, без использования портала Azure. Чтобы получить статус незавершенного задания, используйте [cmdlet Get-AzRecoveryservicesBackupJob.](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) Этот командлет возвращает задания резервного копирования для конкретного хранилища, и это хранилище указывается в контексте хранилища. Следующий пример возвращает состояние выполняющегося задания в виде массива и сохраняет состояние в переменной $joblist.
 
 ```powershell
 $joblist = Get-AzRecoveryservicesBackupJob –Status "InProgress" -VaultId $targetVault.ID
@@ -276,7 +276,7 @@ WorkloadName     Operation            Status               StartTime            
 V2VM             Backup               InProgress            4/23/2016                5:00:30 PM                cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
 ```
 
-Вместо опроса этих заданий на завершение — это необязательный дополнительный код — используйте командлет [Wait-азрековерисервицесбаккупжоб](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) . Он приостанавливает выполнение сценария до завершения задания или до достижения конкретного значения времени ожидания.
+Вместо того, чтобы опросить эти задания для завершения - что является ненужным дополнительным кодом - используйте [Wait-AzRecoveryServicesBackUpJob](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) cmdlet. Он приостанавливает выполнение сценария до завершения задания или до достижения конкретного значения времени ожидания.
 
 ```powershell
 Wait-AzRecoveryServicesBackupJob -Job $joblist[0] -Timeout 43200 -VaultId $targetVault.ID
@@ -286,11 +286,11 @@ Wait-AzRecoveryServicesBackupJob -Job $joblist[0] -Timeout 43200 -VaultId $targe
 
 ### <a name="modify-a-protection-policy"></a>Изменение политики защиты
 
-Чтобы изменить политику защиты, используйте [Set-азрековерисервицесбаккуппротектионполици](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupprotectionpolicy) , чтобы изменить объекты Счедулеполици или RetentionPolicy.
+Чтобы изменить политику защиты, используйте [Set-AzRecoveryServicesBackUpProtectionPolicy](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupprotectionpolicy) для изменения объектов SchedulePolicy или RetentionPolicy.
 
 #### <a name="modifying-scheduled-time"></a>Изменение запланированного времени
 
-При создании политики защиты ей по умолчанию назначается время запуска. В следующих примерах показано, как изменить время начала политики защиты.
+При создании политики защиты по умолчанию назначается время начала. Ниже приведены следующие примеры, как изменить время начала политики защиты.
 
 ````powershell
 $SchPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "AzureVM"
@@ -301,7 +301,7 @@ $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy" -VaultId $
 Set-AzRecoveryServicesBackupProtectionPolicy -Policy $pol  -SchedulePolicy $SchPol -VaultId $targetVault.ID
 ````
 
-#### <a name="modifying-retention"></a>Изменение срока хранения
+#### <a name="modifying-retention"></a>Изменение удержания
 
 В следующем примере количество дней хранения точки восстановления изменяется на 365.
 
@@ -312,10 +312,10 @@ $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy" -VaultId $
 Set-AzRecoveryServicesBackupProtectionPolicy -Policy $pol  -RetentionPolicy $RetPol -VaultId $targetVault.ID
 ```
 
-#### <a name="configuring-instant-restore-snapshot-retention"></a>Настройка хранения моментальных снимков мгновенного восстановления
+#### <a name="configuring-instant-restore-snapshot-retention"></a>Настройка мгновенного восстановления удержания моментального снимка
 
 > [!NOTE]
-> Начиная с AZ PS версии 1.6.0, можно обновить период хранения моментальных снимков мгновенного восстановления в политике с помощью PowerShell.
+> Из версии Az PS 1.6.0 можно обновить период мгновенного восстановления моментального хранения снимков в политике с помощью Powershell
 
 ````powershell
 $bkpPol = Get-AzRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM" -VaultId $targetVault.ID
@@ -323,11 +323,11 @@ $bkpPol.SnapshotRetentionInDays=7
 Set-AzRecoveryServicesBackupProtectionPolicy -policy $bkpPol -VaultId $targetVault.ID
 ````
 
-Значение по умолчанию равно 2, пользователь может задать значение min, равное 1, и максимум 5. Для политик еженедельного резервного копирования точка имеет значение 5 и не может быть изменена.
+Значение по умолчанию будет 2, пользователь может установить значение с минутой 1 и максимум 5. Для еженедельных политик резервного копирования период установлен до 5 и не может быть изменен.
 
 ### <a name="trigger-a-backup"></a>Активация архивации
 
-Используйте [BACKUP-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem) для запуска задания резервного копирования. Если это начальная архивация, она будет полной. При последующем выполнении архивации резервная копия будет добавочной. В следующем примере резервная копия виртуальной машины будет храниться в течение 60 дней.
+Используйте [резервное копирование-AzRecoveryServicesBackupUpItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem) для запуска задания резервного копирования. Если это начальная архивация, она будет полной. При последующем выполнении архивации резервная копия будет добавочной. В следующем примере резервное копирование VM должно быть сохранено в течение 60 дней.
 
 ```powershell
 $namedContainer = Get-AzRecoveryServicesBackupContainer -ContainerType "AzureVM" -Status "Registered" -FriendlyName "V2VM" -VaultId $targetVault.ID
@@ -349,9 +349,9 @@ V2VM              Backup              InProgress          4/23/2016             
 >
 >
 
-### <a name="change-policy-for-backup-items"></a>Изменение политики для элементов архивации
+### <a name="change-policy-for-backup-items"></a>Изменение политики для элементов резервного копирования
 
-Пользователь может изменить существующую политику или изменить политику резервного элемента с Policy1 на Policy2. Чтобы переключить политики для архивированного элемента, извлеките соответствующую политику и элемент резервного копирования и используйте команду [Enable-азрековерисервицес](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) с элементом Backup в качестве параметра.
+Пользователь может либо изменить существующую политику, либо изменить политику резервного элемента с Policy1 на Policy2. Для переключения политик для резервного элемента, извлечения соответствующей политики и резервного копирования элемента и использовать команду [Enable-AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) с элементом резервного копирования в качестве параметра.
 
 ````powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName> -VaultId $targetVault.ID
@@ -359,7 +359,7 @@ $anotherBkpItem = Get-AzRecoveryServicesBackupItem -WorkloadType AzureVM -Backup
 Enable-AzRecoveryServicesBackupProtection -Item $anotherBkpItem -Policy $TargetPol1 -VaultId $targetVault.ID
 ````
 
-Команда ожидает, пока не завершится Настройка резервного копирования и вернет следующие выходные данные.
+Команда ждет завершения резервного копирования и возвращает следующий вывод.
 
 ```powershell
 WorkloadName     Operation            Status               StartTime                 EndTime                   JobID
@@ -369,9 +369,9 @@ TestVM           ConfigureBackup      Completed            3/18/2019 8:00:21 PM 
 
 ### <a name="stop-protection"></a>Остановить защиту
 
-#### <a name="retain-data"></a>Хранить данные
+#### <a name="retain-data"></a>Сохранение данных
 
-Если пользователь желает отключить защиту, он может использовать командлет [Disable-азрековерисервицесбаккуппротектион](https://docs.microsoft.com/powershell/module/az.recoveryservices/Disable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) PS. Это приведет к отмене запланированных резервных копий, но данные будут сохранены до тех пор, пока не будет храниться неограниченное время.
+Если пользователь хочет прекратить защиту, он может использовать [Disable-AzRecoveryServicesBackProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/Disable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) PS cmdlet. Это остановит запланированное резервное копирование, но данные, резервные копии до сих пор сохраняется навсегда.
 
 ````powershell
 $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureVM -WorkloadType AzureVM -Name "<backup item name>" -VaultId $targetVault.ID
@@ -380,7 +380,7 @@ Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.
 
 #### <a name="delete-backup-data"></a>удаление резервных копий;
 
-Чтобы полностью удалить сохраненные резервные копии данных в хранилище, просто добавьте флаг "-Ремоверековерипоинтс" или переключитесь в [команду "Disable"](#retain-data).
+Для того, чтобы полностью удалить сохраненные данные резервного копирования в хранилище, просто добавьте флаг '-RemoveRecoveryPoints' флаг/переключатель в [команду защиты 'отключаемых'.](#retain-data)
 
 ````powershell
 Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.ID -RemoveRecoveryPoints
@@ -399,7 +399,7 @@ Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.
 
 ![Иерархия объектов служб восстановления с BackupContainer](./media/backup-azure-vms-arm-automation/backuprecoverypoint-only.png)
 
-Чтобы восстановить данные резервной копии, определите архивный элемент и точку восстановления, которая содержит данные на определенный момент времени. Используйте [RESTORE-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) для восстановления данных из хранилища в учетную запись.
+Чтобы восстановить данные резервной копии, определите архивный элемент и точку восстановления, которая содержит данные на определенный момент времени. Используйте [Restore-AzRecoveryServicesBackupUpItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) для восстановления данных из хранилища в учетную запись.
 
 Ниже перечислены основные шаги для восстановления виртуальной машины Azure.
 
@@ -410,7 +410,7 @@ Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.
 
 ### <a name="select-the-vm"></a>Выбор виртуальной машины.
 
-Чтобы получить объект PowerShell, определяющий правильный архивный элемент, начните с контейнера в хранилище и пройдите постепенно вниз по иерархии объектов. Чтобы выбрать контейнер, представляющий виртуальную машину, используйте командлет [Get-азрековерисервицесбаккупконтаинер](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupcontainer) и конвейер, который будет использоваться в командлете [Get-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem) .
+Чтобы получить объект PowerShell, определяющий правильный архивный элемент, начните с контейнера в хранилище и пройдите постепенно вниз по иерархии объектов. Чтобы выбрать контейнер, представляющий VM, используйте [cmdlet Get-AzRecoveryServicesBackUpContainer](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupcontainer) и трубу, которая будет использоваться в смлете [Get-AzRecoveryServicesUpUpItem.](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem)
 
 ```powershell
 $namedContainer = Get-AzRecoveryServicesBackupContainer  -ContainerType "AzureVM" -Status "Registered" -FriendlyName "V2VM" -VaultId $targetVault.ID
@@ -448,7 +448,7 @@ BackupManagementType        : AzureVM
 
 ### <a name="restore-the-disks"></a>Восстановление дисков
 
-Используйте командлет [RESTORE-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) , чтобы восстановить данные и конфигурацию элемента резервного копирования в точку восстановления. Используйте выбранную точку восстановления как значение для параметра **-RecoveryPoint**. В предыдущем примере была выбрана точка восстановления **$rp[0]** . В следующем примере кода **$rp[0]** является точкой восстановления, которая используется для восстановления диска.
+Используйте смдlet [Restore-AzRecoveryServicesUpUpItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) для восстановления данных и конфигурации элемента резервного копирования до точки восстановления. Используйте выбранную точку восстановления как значение для параметра **-RecoveryPoint**. В предыдущем примере была выбрана точка восстановления **$rp[0]**. В следующем примере кода **$rp[0]** является точкой восстановления, которая используется для восстановления диска.
 
 Восстановление дисков и сведений о конфигурации
 
@@ -485,13 +485,13 @@ WorkloadName     Operation          Status               StartTime              
 V2VM              Restore           InProgress           4/23/2016 5:00:30 PM                        cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
 ```
 
-Чтобы дождаться завершения задания восстановления, используйте командлет [Wait-азрековерисервицесбаккупжоб](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) .
+Используйте cmdlet [Wait-AzRecoveryServicesBackupJob,](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) чтобы дождаться завершения работы по восстановлению.
 
 ```powershell
 Wait-AzRecoveryServicesBackupJob -Job $restorejob -Timeout 43200
 ```
 
-После завершения задания восстановления используйте командлет [Get-азрековерисервицесбаккупжобдетаилс](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) , чтобы получить сведения об операции восстановления. Свойство JobDetails содержит сведения, необходимые для повторного создания виртуальной машины.
+После завершения работы по восстановлению используйте [cmdlet Get-AzRecoveryServicesBackupJobJobJobJob,](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) чтобы получить подробную информацию о работе восстановления. Свойство JobDetails содержит сведения, необходимые для повторного создания виртуальной машины.
 
 ```powershell
 $restorejob = Get-AzRecoveryServicesBackupJob -Job $restorejob -VaultId $targetVault.ID
@@ -500,13 +500,13 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 
 Восстановив диски, перейдите к следующему разделу по созданию виртуальной машины.
 
-## <a name="replace-disks-in-azure-vm"></a>Замена дисков в виртуальной машине Azure
+## <a name="replace-disks-in-azure-vm"></a>Замена дисков в Azure VM
 
-Чтобы заменить диски и сведения о конфигурации, выполните следующие действия.
+Чтобы заменить диски и информацию о конфигурации, выполните ниже шаги:
 
-* Шаг 1. [Восстановление дисков](backup-azure-vms-automation.md#restore-the-disks)
-* Шаг 2. [Отключение диска данных с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk#detach-a-data-disk-using-powershell)
-* Шаг 3. [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/attach-disk-ps)
+* Шаг 1: [Восстановление дисков](backup-azure-vms-automation.md#restore-the-disks)
+* Шаг 2: [Отсоединить диск данных с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk#detach-a-data-disk-using-powershell)
+* Шаг 3: [Прикрепите диск данных к Windows VM с PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/attach-disk-ps)
 
 ## <a name="create-a-vm-from-restored-disks"></a>Создание виртуальной машины с восстановленного диска
 
@@ -514,12 +514,12 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 
 > [!NOTE]
 >
-> 1. Требуется модуль Азуреаз 3.0.0 или более поздней версии. <br>
+> 1. Требуется модуль AzureAz 3.0.0 или выше. <br>
 > 2. При создании зашифрованных виртуальных машин с помощью восстановленных дисков у роли Azure должно быть разрешение на выполнение действия **Microsoft.KeyVault/vaults/deploy/action**. Если у роли нет этого разрешения, создайте пользовательскую роль с этим действием. Дополнительные сведения см. в разделе [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md). <br>
 > 3. После восстановления дисков можно получить шаблон развертывания, который можно использовать непосредственно для создания виртуальной машины. Для создания управляемых или неуправляемых и зашифрованных или незашифрованных виртуальных машин больше не используются разные командлеты PS.<br>
 > <br>
 
-### <a name="create-a-vm-using-the-deployment-template"></a>Создание виртуальной машины с помощью шаблона развертывания
+### <a name="create-a-vm-using-the-deployment-template"></a>Создание VM с помощью шаблона развертывания
 
 В подробных сведениях о результирующем задании указан URI шаблона, который можно получить и развернуть.
 
@@ -532,26 +532,26 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 
 Этот шаблон недоступен напрямую, так как он находится в учетной записи хранения клиента, в указанном контейнере. Для доступа к этому шаблону требуется полный URL-адрес (вместе с временным маркером SAS).
 
-1. Сначала извлеките имя шаблона из Темплатеблобури. Этот формат упоминается ниже. Для извлечения окончательного имени шаблона из этого URL-адреса можно использовать операцию разбиения в PowerShell.
+1. Сначала извлеките название шаблона из шаблонаBlobURI. Формат упоминается ниже. Вы можете использовать сплит-операцию в Powershell, чтобы извлечь окончательное имя шаблона из этого URL.
 
 ```http
 https://<storageAccountName.blob.core.windows.net>/<containerName>/<templateName>
 ```
 
-2. Затем можно создать полный URL-адрес, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/templates/secure-template-with-sas-token?tabs=azure-powershell#provide-sas-token-during-deployment).
+2. Затем полный URL может быть сгенерирован, как объясняется [здесь](https://docs.microsoft.com/azure/azure-resource-manager/templates/secure-template-with-sas-token?tabs=azure-powershell#provide-sas-token-during-deployment).
 
 ```powershell
 Set-AzCurrentStorageAccount -Name $storageAccountName -ResourceGroupName <StorageAccount RG name>
 $templateBlobFullURI = New-AzStorageBlobSASToken -Container $containerName -Blob <templateName> -Permission r -FullUri
 ```
 
-3. Разверните шаблон, чтобы создать новую виртуальную машину, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy).
+3. Развернуть шаблон для создания нового VM, как объясняется [здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy).
 
 ```powershell
 New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobFullURI -storageAccountType Standard_GRS
 ```
 
-### <a name="create-a-vm-using-the-config-file"></a>Создание виртуальной машины с помощью файла конфигурации
+### <a name="create-a-vm-using-the-config-file"></a>Создание VM с помощью файла конфигурации
 
 В следующем разделе перечислены шаги, необходимые для создания виртуальной машины с помощью файла VMConfig.
 
@@ -622,7 +622,7 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
      }
 ```
 
-* **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных только с помощью BEK)** , если в исходном **хранилище ключей недоступны секреты**, восстановите секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl можно извлечь из восстановленного хранилища ключей.
+* **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных только с помощью BEK)**, если в исходном **хранилище ключей недоступны секреты**, восстановите секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl можно извлечь из восстановленного хранилища ключей.
 
 Приведенный ниже скрипт нужно выполнять только в том случае, если секреты недоступны в исходном хранилище ключей.
 
@@ -649,7 +649,7 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
       }
 ```
 
-* **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных с помощью BEK и KEK)** , если в исходном **хранилище ключей недоступны ключи и секреты**, восстановите ключи и секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
+* **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных с помощью BEK и KEK)**, если в исходном **хранилище ключей недоступны ключи и секреты**, восстановите ключи и секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
 
 Приведенный ниже скрипт нужно выполнять только в том случае, если в исходном хранилище ключей недоступны ключ и секрет.
 
@@ -683,7 +683,7 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
 
 * **Для управляемых зашифрованных виртуальных машин с Azure AD (зашифрованных с помощью BEK и KEK)** подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-* **Управляемые и зашифрованные виртуальные машины без Azure AD (только для BEK)** . для управляемых зашифрованных виртуальных машин без Azure AD (с шифрованием только с помощью BEK), если исходный **keyVault/секрет недоступен** , восстановите секреты в хранилище ключей, используя процедуру, описанную в разделе [Восстановление незашифрованной виртуальной машины из Azure Backup точки восстановления](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для восстановленного диска операционной системы (этот шаг не является обязательным для диска данных). $dekurl можно извлечь из восстановленного хранилища ключей.
+* **Управляемые и зашифрованные VMs без Azure AD (только BEK)** -Для управляемых, зашифрованных VMs без Azure AD (зашифрованы только с помощью BEK), если source **keyVault/secret недоступны,** восстанавливайте секреты хранилища ключей с помощью процедуры в [Восстановлении незашифрованной виртуальной машины из точки восстановления резервного копирования Azure.](backup-azure-restore-key-secret.md) Затем выполните следующие скрипты, чтобы задать сведения о шифровании для восстановленного диска операционной системы (этот шаг не является обязательным для диска данных). $dekurl можно извлечь из восстановленного хранилища ключей.
 
 Приведенный ниже скрипт нужно выполнять только в том случае, если секреты недоступны в исходном хранилище ключей.  
 
@@ -704,7 +704,7 @@ Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageP
 
 После того как секреты станут доступны и на диске ОС будут установлены сведения о шифровании, выполните действия для подключения восстановленных управляемых дисков, приведенные в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-* **Управляемые и зашифрованные виртуальные машины без Azure AD (BEK и KEK)** — для управляемых зашифрованных виртуальных машин без Azure AD (зашифрованных с помощью BEK & KEK). Если источник **keyVault/ключ/секрет недоступен** , восстановите ключ и секреты в хранилище ключей, используя процедуру, описанную в разделе [Восстановление незашифрованной виртуальной машины из Azure Backup точки восстановления](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании восстановленного диска ОС (этот шаг не требуется для дисков данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
+* **Управляемые и зашифрованные Виртуальные без Azure AD (BEK и KEK)** - Для управляемых, зашифрованных Виртуальных ММ без Azure AD (зашифрованы с помощью BEK & KEK), если доступ к ключу **KEYVault/key/secret недоступен,** восстановить ключ и секреты хранилища ключей с помощью процедуры в [Восстановлении незашифрованной виртуальной машины из точки восстановления резервного копирования Azure.](backup-azure-restore-key-secret.md) Затем выполните следующие скрипты для установки деталей шифрования на восстановленном диске ОС (этот шаг не требуется для дисков данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
 
 Приведенный ниже скрипт нужно выполнять только в том случае, если в исходном хранилище ключей недоступны ключ и секрет.
 
@@ -750,7 +750,7 @@ Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageP
     ```
 
 7. Отправьте расширение ADE.
-   Если расширения ADE не отправляются, диски данных будут помечены как незашифрованные, поэтому они должны быть обязательными для выполнения следующих действий:
+   Если расширения ADE не будут сдвинуты, то диски данных будут помечены как незашифрованные, поэтому для выполнения нижеприведенных шагов обязательно:
 
    * **Для виртуальных машин с Azure AD** используйте следующую команду, чтобы вручную включить шифрование для дисков данных.  
 
@@ -768,7 +768,7 @@ Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageP
 
    * **Для виртуальных машин без Azure AD** используйте следующую команду, чтобы вручную включить шифрование для дисков данных.
 
-     Если во время выполнения команды запрашивается Аадклиентид, необходимо обновить Azure PowerShell.
+     Если во время выполнения команды он запрашивает AADClientID, то вам нужно обновить Azure PowerShell.
 
      **Виртуальные машины, использующие только BEK**
 
@@ -783,7 +783,7 @@ Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageP
       ```
 
 > [!NOTE]
-> Обязательно вручную удалите файлы Джейсон, созданные в процессе восстановления диска с зашифрованной виртуальной машиной.
+> Убедитесь в ручном удалении файлов JASON, созданных в рамках зашифрованного процесса восстановления диска VM.
 
 ## <a name="restore-files-from-an-azure-vm-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -799,7 +799,7 @@ Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageP
 
 ### <a name="select-the-vm"></a>Выбор виртуальной машины.
 
-Чтобы получить объект PowerShell, определяющий правильный архивный элемент, начните с контейнера в хранилище и пройдите постепенно вниз по иерархии объектов. Чтобы выбрать контейнер, представляющий виртуальную машину, используйте командлет [Get-азрековерисервицесбаккупконтаинер](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupcontainer) и конвейер, который будет использоваться в командлете [Get-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem) .
+Чтобы получить объект PowerShell, определяющий правильный архивный элемент, начните с контейнера в хранилище и пройдите постепенно вниз по иерархии объектов. Чтобы выбрать контейнер, представляющий VM, используйте [cmdlet Get-AzRecoveryServicesBackUpContainer](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupcontainer) и трубу, которая будет использоваться в смлете [Get-AzRecoveryServicesUpUpItem.](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem)
 
 ```powershell
 $namedContainer = Get-AzRecoveryServicesBackupContainer  -ContainerType "AzureVM" -Status "Registered" -FriendlyName "V2VM" -VaultId $targetVault.ID
@@ -837,7 +837,7 @@ BackupManagementType        : AzureVM
 
 ### <a name="mount-the-disks-of-recovery-point"></a>Подключение дисков точки восстановления
 
-Используйте командлет [Get-азрековерисервицесбаккупрпмаунтскрипт](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprpmountscript) , чтобы получить скрипт для подключения всех дисков точки восстановления.
+Используйте [cmdlet Get-AzRecoveryServicesBackUPMOUNTMountScript,](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprpmountscript) чтобы получить скрипт для установки всех дисков точки восстановления.
 
 > [!NOTE]
 > Диски подключаются к виртуальной машине, на которой выполняется скрипт, в качестве присоединенных дисков iSCSI. Подключение выполняется немедленно, плата не взимается.
@@ -856,11 +856,11 @@ OsType  Password        Filename
 Windows e3632984e51f496 V2VM_wus2_8287309959960546283_451516692429_cbd6061f7fc543c489f1974d33659fed07a6e0c2e08740.exe
 ```
 
-Запустите скрипт на виртуальной машине, на которой нужно восстановить файлы. Чтобы выполнить сценарий, необходимо ввести предоставленный пароль. Присоединив диски, используйте проводник Windows для просмотра новых томов и файлов. Дополнительные сведения см. в статье резервное копирование, [Восстановление файлов из резервной копии виртуальной машины Azure](backup-azure-restore-files-from-vm.md).
+Запустите скрипт на виртуальной машине, на которой нужно восстановить файлы. Чтобы выполнить сценарий, необходимо ввести предоставленный пароль. Присоединив диски, используйте проводник Windows для просмотра новых томов и файлов. Для получения дополнительной информации смотрите статью резервного копирования, [Восстановление файлов из резервного копирования виртуальной машины Azure.](backup-azure-restore-files-from-vm.md)
 
 ### <a name="unmount-the-disks"></a>Отключение дисков
 
-После копирования необходимых файлов используйте [Disable-азрековерисервицесбаккупрпмаунтскрипт](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackuprpmountscript) , чтобы отключить диски. Убедитесь, что диски отключены, чтобы удалить доступ к файлам точки восстановления.
+После копирования необходимых файлов используйте для демонтажа дисков [Disable-AzRecoveryServicesUpUPMOUNTMountScript.](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackuprpmountscript) Убедитесь, что диски отключены, чтобы удалить доступ к файлам точки восстановления.
 
 ```powershell
 Disable-AzRecoveryServicesBackupRPMountScript -RecoveryPoint $rp[0] -VaultId $targetVault.ID

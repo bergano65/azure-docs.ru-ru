@@ -12,14 +12,14 @@ ms.date: 02/14/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 02/14/2019
-ms.openlocfilehash: 53abc28a6923c2d55b3bb39defb08778485a9744
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 3aeeb989d15dc74849c85fa58cbefa891809f3c5
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "71212443"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80347091"
 ---
-# <a name="create-an-azure-notification-hub-in-the-azure-portal"></a>Создание центра уведомлений Azure с помощью портала Azure 
+# <a name="quickstart-create-an-azure-notification-hub-in-the-azure-portal"></a>Краткое руководство. Создание центра уведомлений Azure с помощью портала Azure 
 Центры уведомлений Azure обеспечивают простой в использовании и масштабируемый механизм отправки push-уведомлений, который позволяет отправлять уведомления на любую платформу (iOS, Android, Windows, Kindle, Baidu и т. д.) из любой серверной части (облачной или локальной). Дополнительные сведения о службе см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
 В этом кратком руководстве вы создадите центр уведомлений на портале Azure. В первом разделе приведены шаги по созданию Центров уведомлений и концентратора в этом пространстве имен. Во втором разделе приведены пошаговые инструкции по созданию центра уведомлений в имеющемся пространстве имен Центров уведомлений. 

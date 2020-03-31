@@ -1,5 +1,5 @@
 ---
-title: Использование MSAL с Azure Active Directory B2CLearn | Службы
+title: Используйте MSAL с Azure Active Directory B2CLearn (ru) Azure
 titleSuffix: Microsoft identity platform
 description: Библиотека аутентификации Майкрософт (MSAL) позволяет приложениям взаимодействовать с Azure AD B2C и получать маркеры для вызова защищенных веб-API. Этими веб-API могут быть Microsoft Graph, другие интерфейсы Microsoft API, веб-API других пользователей или ваш собственный веб-API.
 services: active-directory
@@ -14,10 +14,10 @@ ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.openlocfilehash: e25564e64410701754390024a5bcfd39321343e2
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76696458"
 ---
 # <a name="use-microsoft-authentication-library-to-interoperate-with-azure-active-directory-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для взаимодействия с Azure Active Directory B2C
@@ -28,7 +28,7 @@ Azure AD B2C также поддерживает настройку польз
 
 В этом руководстве показано, как использовать MSAL для взаимодействия с Azure AD B2C.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы еще не создали собственный [Арендатор Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant), создайте его сейчас. Вы также можете использовать имеющийся арендатор Azure AD B2C.
 
@@ -40,7 +40,7 @@ Azure AD B2C также поддерживает настройку польз
 
 Чтобы выполнить аутентификацию, сначала необходимо зарегистрировать приложение. Подробные шаги описаны в статье [Register your application](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp#step-4-register-your-own-web-application-with-azure-ad-b2c) (Регистрация вашего приложения).
 
-### <a name="step-2-download-the-sample-application"></a>Шаг 2. скачивание примера приложения
+### <a name="step-2-download-the-sample-application"></a>Шаг 2: Скачать пример приложения
 
 Скачайте пример в виде ZIP-файла или скопируйте его из GitHub:
 
@@ -48,11 +48,11 @@ Azure AD B2C также поддерживает настройку польз
 git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
 ```
 
-### <a name="step-3-configure-authentication"></a>Шаг 3. Настройка проверки подлинности
+### <a name="step-3-configure-authentication"></a>Шаг 3: Настройка аутентификации
 
-1. Откройте файл **index.html** в примере.
+1. Откройте файл **index.html** в образце.
 
-1. Настройте пример с помощью идентификатора клиента и ключа, записанного ранее при регистрации приложения. Измените следующие строки кода, заменив значения именами используемого каталога и API:
+1. Налажить образец с идентификатором клиента и ключом, который вы записали ранее при регистрации приложения. Измените следующие строки кода, заменив значения именами используемого каталога и API:
 
    ```javascript
    // The current application coordinates were pre-registered in a B2C tenant.
@@ -80,7 +80,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
 Название [потока пользователя](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies), используемое в этом руководстве, — **B2C_1_signupsignin1**. Если вы используете другое название потока пользователей, установите для параметра **Центр** значение с таким названием.
 
-### <a name="step-4-configure-your-application-to-use-b2clogincom"></a>Шаг 4. Настройка приложения для использования `b2clogin.com`
+### <a name="step-4-configure-your-application-to-use-b2clogincom"></a>Шаг 4: Настройка приложения для использования`b2clogin.com`
 
 Вы можете использовать `b2clogin.com` вместо `login.microsoftonline.com` в качестве URL-адреса перенаправления. Это можно сделать в приложении Azure AD B2C, когда вы настраиваете поставщик удостоверений для регистрации и входа.
 

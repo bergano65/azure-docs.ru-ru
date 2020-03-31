@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 12/07/2018
 ms.openlocfilehash: 627eeffd18a479486e5a682da06bf89cd5f8f0e1
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77596323"
 ---
 # <a name="cluster-operator-and-developer-best-practices-to-build-and-manage-applications-on-azure-kubernetes-service-aks"></a>Лучшие методики по созданию приложений и управлению ими в Службе Azure Kubernetes (AKS) для оператора и разработчика кластера
@@ -37,7 +37,7 @@ ms.locfileid: "77596323"
 * [Best practices for cluster security and upgrades in Azure Kubernetes Service (AKS)](operator-best-practices-cluster-security.md) (Рекомендации по безопасности кластера и обновлениях в Службе Azure Kubernetes (AKS))
     * Содержит сведения о защите доступа к серверу API, ограничении доступа к контейнеру и управлении обновлениями и перезагрузками узла.
 * [Best practices for container image management and security in Azure Kubernetes Service (AKS)](operator-best-practices-container-image-management.md) (Рекомендации по управлению образами контейнеров и обеспечении их безопасности в Службе Azure Kubernetes (AKS))
-    * Включает в себя защиту образа и сред выполнения и автоматизированных сборок на обновлениях базовых образов.
+    * Включает в себя обеспечение безопасности изображения и выполнения и автоматизированные сборки на базовых обновлениях изображений.
 * [Best practices for pod security in Azure Kubernetes Service (AKS)](developer-best-practices-pod-security.md) (Рекомендации по обеспечению безопасности pod в Службе Azure Kubernetes (AKS))
     * Содержит сведения о защите доступа к ресурсам, ограничении доступности учетных данных и использовании удостоверений pod и цифровых хранилищ ключей.
 
@@ -68,11 +68,11 @@ ms.locfileid: "77596323"
 
 * [Ключевые концепции Kubernetes для Службы Azure Kubernetes (AKS)](concepts-clusters-workloads.md)
 * [Возможности контроля доступа и идентификации в Службе Azure Kubernetes (AKS)](concepts-identity.md)
-* [Основные понятия безопасности приложений и кластеров в Службе Azure Kubernetes (AKS)](concepts-security.md)
+* [Концепции безопасности](concepts-security.md)
 * [Основные понятия сети в Службе Azure Kubernetes (AKS)](concepts-network.md)
 * [Варианты хранилищ](concepts-storage.md)
 * [Возможности масштабирования приложений в Службе Azure Kubernetes (AKS)](concepts-scale.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам необходимо приступить к работе с AKS, ознакомьтесь с одним из кратких руководств по развертыванию кластера Службы Azure Kubernetes (AKS) с помощью [Azure CLI](kubernetes-walkthrough.md) или [портала Azure](kubernetes-walkthrough-portal.md).

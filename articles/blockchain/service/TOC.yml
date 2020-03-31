@@ -19,8 +19,6 @@
           href: connect-metamask.md
         - name: Использование Geth
           href: connect-geth.md
-        - name: Использование Truffle
-          href: connect-truffle.md
 - name: Учебники
   items:
     - name: Создание смарт-контрактов

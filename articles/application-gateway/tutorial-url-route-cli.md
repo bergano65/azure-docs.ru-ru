@@ -9,10 +9,10 @@ ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
 ms.openlocfilehash: b6bc0b00579bdef0a358f756b8cf2b6034aca017
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "68688179"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
@@ -21,7 +21,7 @@ ms.locfileid: "68688179"
 
 ![Пример маршрутизации для URL-адресов](./media/tutorial-url-route-cli/scenario.png)
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание группы ресурсов для необходимых сетевых ресурсов.
@@ -33,13 +33,13 @@ ms.locfileid: "68688179"
 
 Вы также можете выполнить инструкции из этой процедуры, используя [Azure PowerShell](tutorial-url-route-powershell.md) или [портал Azure](create-url-route-portal.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов — это логический контейнер, в котором выполняется развертывание ресурсов Azure и управление ими. Создайте группу ресурсов с помощью команды `az group create`.
 
@@ -77,7 +77,7 @@ az network public-ip create \
 
 ## <a name="create-the-app-gateway-with-a-url-map"></a>Создание шлюза приложений путем сопоставления URL-адресов
 
-Используйте команду `az network application-gateway create` для создания шлюза приложений с именем *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается *myAGSubnet* и *myAGPublicIPAddress*.
+Используйте команду `az network application-gateway create` для создания шлюза приложений с именем *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначен на адреса *myAGSubnet* и *myAGPublicIPAddress*.
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -248,11 +248,11 @@ az network public-ip show \
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx.png)
 
-Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Images/Test.HTML, &lt;Замените IP-&gt;адрес на IP, и вы увидите нечто вроде следующего:
+Измените URL-адрес на http://&lt;ip-address&gt;:8080/images/test.html, указав вместо заполнителя &lt;ip-address&gt; фактический IP-адрес. Результат должен быть примерно таким:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-images.png)
 
-Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Video/Test.HTML, &lt;Замените IP-&gt;адрес на IP, и вы увидите нечто вроде приведенного в следующем примере.
+Измените URL-адрес&lt;http://&gt;IP-адрес:8080/video/test.html, заменив IP-адрес на &lt;IP-адрес,&gt;и вы должны увидеть что-то вроде следующего примера.
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-video.png)
 
@@ -264,6 +264,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание шлюза приложений с перенаправлением на основе URL-пути](./tutorial-url-redirect-cli.md)

@@ -4,10 +4,10 @@ description: Узнайте, какие языки поддерживаются 
 ms.topic: conceptual
 ms.date: 11/27/2019
 ms.openlocfilehash: 029ea753439dca3093bf214a5adfb6d58a1fe567
-ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74942262"
 ---
 # <a name="supported-languages-in-azure-functions"></a>Поддерживаемые языки в решении "Функции Azure"
@@ -22,9 +22,9 @@ ms.locfileid: "74942262"
 * **Предварительная версия** — языки, которые еще не поддерживаются, но в будущем станут общедоступными.
 * **Экспериментальные** — языки, которые не поддерживаются и могут быть удалены в будущем. Нет гарантии, что они будут поддерживаться в качестве общедоступных.
 
-## <a name="languages-by-runtime-version"></a>Языки по версии среды выполнения 
+## <a name="languages-by-runtime-version"></a>Языки по версии запуска 
 
-Доступны [три версии среды выполнения функций Azure](functions-versions.md) . В следующей таблице показаны поддерживаемые языки для каждой версии среды выполнения.
+[Доступны три версии времени выполнения функций Azure.](functions-versions.md) В следующей таблице показаны поддерживаемые языки для каждой версии среды выполнения.
 
 [!INCLUDE [functions-supported-languages](../../includes/functions-supported-languages.md)]
 
@@ -34,20 +34,20 @@ ms.locfileid: "74942262"
 
 Но не используйте экспериментальные функции для важных задач, так как эти функции не поддерживаются официально. Случаи поддержки не следует открывать для проблем, если применяются языки, используемые в качестве экспериментальных. 
 
-Более поздние версии среды выполнения не поддерживают экспериментальные языки. Поддержка новых языков добавляется только в том случае, если язык может поддерживаться в рабочей среде. 
+Более поздние версии времени выполнения не поддерживают экспериментальные языки. Поддержка новых языков добавляется только в том случае, если язык может поддерживаться в рабочей среде. 
 
 ### <a name="language-extensibility"></a>Расширяемость языка
 
-Начиная с версии 2. x среда выполнения разработана таким образом, чтобы обеспечить [расширяемость языка](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility). Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
+Начиная с версии 2.x, время выполнения предназначено для того, чтобы предложить [расширяемость языка.](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility) Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о разработке функций на поддерживаемых языках см. в следующих ресурсах:
+Чтобы узнать больше о том, как разрабатывать функции на поддерживаемых языках, см.
 
-+ [C#Справочник разработчика библиотеки классов](functions-dotnet-class-library.md)
-+ [C#Справочник разработчика скриптов](functions-reference-csharp.md)
-+ [Справочник разработчика Java](functions-reference-java.md)
-+ [Справочник разработчика JavaScript](functions-reference-node.md)
-+ [Справочник разработчика по PowerShell](functions-reference-powershell.md)
-+ [Справочник разработчика Python](functions-reference-python.md)
-+ [Справочник разработчика TypeScript](functions-reference-node.md#typescript)
++ [Ссылка разработчика библиотеки класса СЗ](functions-dotnet-class-library.md)
++ [Ссылка разработчика скриптов на СИ](functions-reference-csharp.md)
++ [Ссылка Java-разработчика](functions-reference-java.md)
++ [Ссылка разработчика JavaScript](functions-reference-node.md)
++ [Ссылка на разработчиков PowerShell](functions-reference-powershell.md)
++ [Ссылка разработчика Python](functions-reference-python.md)
++ [Ссылка разработчика TypeScript](functions-reference-node.md#typescript)

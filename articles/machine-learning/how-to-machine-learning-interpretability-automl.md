@@ -1,7 +1,7 @@
 ---
-title: Интерпретируемость модели в автоматизированном машинном обучении
+title: Интерпретируемость моделей в автоматизированном машинном обучении
 titleSuffix: Azure Machine Learning
-description: Узнайте, как получить объяснения о том, как автоматизированная модель ML определяет важность функций и делает прогнозы при использовании пакета SDK для Машинное обучение Azure.
+description: Узнайте, как получить объяснения того, как автоматизированная модель ML определяет важность функции и делает прогнозы при использовании SDK Azure Machine Learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,39 +10,39 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: trbye
 ms.date: 10/25/2019
-ms.openlocfilehash: b2c7825b10feab45df9cb89dbe2b82da1c143866
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: e6fa3b9705fcd718f802b73560e7703b008af2b5
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79129752"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80064010"
 ---
-# <a name="model-interpretability-in-automated-machine-learning"></a>Интерпретируемость модели в автоматизированном машинном обучении
+# <a name="model-interpretability-in-automated-machine-learning"></a>Интерпретируемость моделей в автоматизированном машинном обучении
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как включить функции интерпретации для автоматизированного машинного обучения (ML) в Машинное обучение Azure. Автоматизированное средство ML помогает понять важность созданной функции. 
+В этой статье вы узнаете, как включить функции интерпретации для автоматизированного машинного обучения (ML) в Azure Machine Learning. Автоматизированный ML поможет вам понять важность инженерных функций. 
 
-Все версии пакета SDK после 1.0.85 устанавливаются `model_explainability=True` по умолчанию. В пакете SDK версии 1.0.85 и более ранних версий пользователям необходимо задать `model_explainability=True` в объекте `AutoMLConfig`, чтобы использовать интерпретируемость модели. 
+Все версии SDK после 1.0.85 установлены `model_explainability=True` по умолчанию. В версии SDK 1.0.85 и `model_explainability=True` более `AutoMLConfig` ранних версиях пользователи должны установить в объекте для того, чтобы использовать интерпретацию модели. 
 
 Вы узнаете, как выполнять следующие задачи:
 
 - Выполняйте интерпретацию во время обучения для лучшей модели или любой модели.
-- Включите визуализации, чтобы видеть закономерности в данных и объяснениях.
-- Реализуйте интерпретируемость во время вывода или оценки.
+- Включить визуализацию, чтобы помочь вам увидеть закономерности в данных и объяснениях.
+- Реализация интерпретации во время выводов или забил.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-- Функции интерпретации. Запустите `pip install azureml-interpret azureml-contrib-interpret`, чтобы получить необходимые пакеты.
-- Знание создания автоматических экспериментов ML. Дополнительные сведения об использовании пакета SDK для Машинное обучение Azure см. в руководстве по [модели регрессии](tutorial-auto-train-models.md) или о [настройке автоматизированных экспериментов ML](how-to-configure-auto-train.md).
+- Особенности интерпретации. Бегите, `pip install azureml-interpret azureml-contrib-interpret` чтобы получить необходимые пакеты.
+- Знание построения автоматизированных экспериментов ML. Для получения дополнительной информации о том, как использовать Azure Machine Learning SDK, заполните учебник модели [регрессии](tutorial-auto-train-models.md) или посмотрите, как [настроить автоматизированные эксперименты ML.](how-to-configure-auto-train.md)
 
-## <a name="interpretability-during-training-for-the-best-model"></a>Возможности интерпретации во время обучения для наилучшей модели
+## <a name="interpretability-during-training-for-the-best-model"></a>Интерпретация во время обучения для лучшей модели
 
-Извлеките пояснения из `best_run`, которое содержит объяснения для сконструированных функций.
+Получить объяснение от `best_run`, который включает в себя объяснения для инженерных функций.
 
-### <a name="download-engineered-feature-importance-from-artifact-store"></a>Скачивание характеристик сконструированной функции из хранилища артефактов
+### <a name="download-engineered-feature-importance-from-artifact-store"></a>Скачать инженерию важности функции из магазина артефактов
 
-Вы можете использовать `ExplanationClient` для скачивания объяснений инженерных функций из хранилища артефактов `best_run`. 
+Вы можете `ExplanationClient` использовать для загрузки инженерных объяснений `best_run`функции из магазина артефактов . 
 
 ```python
 from azureml.explain.model._internal.explanation_client import ExplanationClient
@@ -52,11 +52,11 @@ engineered_explanations = client.download_model_explanation(raw=False)
 print(engineered_explanations.get_feature_importance_dict())
 ```
 
-## <a name="interpretability-during-training-for-any-model"></a>Возможности интерпретации во время обучения для любой модели 
+## <a name="interpretability-during-training-for-any-model"></a>Интерпретация во время обучения для любой модели 
 
-При вычислении объяснений модели и визуализации их можно не ограничиваться описанием существующей модели для автоматизированной модели ML. Вы также можете получить описание модели с различными тестовыми данными. Действия, описанные в этом разделе, показывают, как вычислять и визуализировать уровень важности функций, основанных на тестовых данных.
+При вычислении объяснений модели и визуализации их вы не ограничиваете существующим объяснением модели для автоматизированной модели ML. Вы также можете получить объяснение для вашей модели с различными тестовыми данными. Шаги в этом разделе показывают, как вычислить и визуализировать инженерию важности функции на основе тестовых данных.
 
-### <a name="retrieve-any-other-automl-model-from-training"></a>Получение любой другой модели Аутомл из обучения
+### <a name="retrieve-any-other-automl-model-from-training"></a>Извлекайте любую другую модель AutoML из обучения
 
 ```python
 automl_run, fitted_model = local_run.get_output(metric='accuracy')
@@ -64,13 +64,13 @@ automl_run, fitted_model = local_run.get_output(metric='accuracy')
 
 ### <a name="set-up-the-model-explanations"></a>Настройка объяснений модели
 
-Используйте `automl_setup_model_explanations` для получения инженерных объяснений. `fitted_model` может создавать следующие элементы:
+Используйте `automl_setup_model_explanations` для получения инженерных объяснений. Может `fitted_model` генерировать следующие элементы:
 
-- Рекомендуемые данные из обученных или тестовых примеров
-- Списки имен сконструированных функций
-- Искомые классы в столбце с меткой в сценариях классификации
+- Рекомендуемые данные из подготовленных или тестовых образцов
+- Составленные списки имен функций
+- Намечаемые классы в помеченной колонке в сценариях классификации
 
-`automl_explainer_setup_obj` содержит все структуры из списка выше.
+Содержит `automl_explainer_setup_obj` все структуры из списка выше.
 
 ```python
 from azureml.train.automl.runtime.automl_explain_utilities import automl_setup_model_explanations
@@ -80,15 +80,15 @@ automl_explainer_setup_obj = automl_setup_model_explanations(fitted_model, X=X_t
                                                              task='classification')
 ```
 
-### <a name="initialize-the-mimic-explainer-for-feature-importance"></a>Инициализация объяснения "имитировать" для важности функции
+### <a name="initialize-the-mimic-explainer-for-feature-importance"></a>Инициализация Мимитического Объяснения для важности функции
 
-Чтобы создать пояснения для моделей Аутомл, используйте класс `MimicWrapper`. Мимиквраппер можно инициализировать с помощью следующих параметров:
+Для создания объяснения для моделей `MimicWrapper` AutoML используйте класс. Вы можете инициализировать MimicWrapper с этими параметрами:
 
-- Объект настройки пояснения
-- Рабочая область
-- Модель LightGBM, которая выступает в качестве суррогата для `fitted_model` автоматизированной модели ML
+- Объект установки объяснений
+- Ваше рабочее пространство
+- Модель LightGBM, которая выступает в `fitted_model` качестве суррогата для автоматизированной модели ML
 
-Мимиквраппер также принимает объект `automl_run`, в который будут отправлены инженерные объяснения.
+MimicWrapper также принимает `automl_run` объект, где инженерии объяснения будут загружены.
 
 ```python
 from azureml.explain.model.mimic.models.lightgbm_model import LGBMExplainableModel
@@ -102,24 +102,24 @@ explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator, LGBMEx
                          classes=automl_explainer_setup_obj.classes)
 ```
 
-### <a name="use-mimicexplainer-for-computing-and-visualizing-engineered-feature-importance"></a>Использование Мимицексплаинер для вычисления и визуализации важности сконструированных функций
+### <a name="use-mimicexplainer-for-computing-and-visualizing-engineered-feature-importance"></a>Используйте MimicExplainer для вычислений и визуализации инженерных значений функций
 
-Вы можете вызвать метод `explain()` в Мимиквраппер с преобразованными примерами тестов, чтобы получить важность признаков для созданных сконструированных функций. Можно также использовать `ExplanationDashboard`, чтобы просмотреть панель мониторинга значения важности функций созданных сконструированных функций, автоматически феатуризерс ML.
+Вы можете `explain()` вызвать метод в MimicWrapper с преобразованными образцами теста, чтобы получить значение функции для сгенерированных инженерных функций. Вы также `ExplanationDashboard` можете использовать для просмотра визуализации панели мониторинга значений значения значений значений значений значений значений сгенерированных инженерных функций с помощью автоматизированных ML featurizers.
 
 ```python
 engineered_explanations = explainer.explain(['local', 'global'], eval_dataset=automl_explainer_setup_obj.X_test_transform)
 print(engineered_explanations.get_feature_importance_dict())
 ```
 
-### <a name="interpretability-during-inference"></a>Интерпретируемость во время вывода
+### <a name="interpretability-during-inference"></a>Интерпретация во время выводов
 
-В этом разделе вы узнаете, как эксплуатацию автоматизированную Модель ML с помощью объяснения, которое использовалось для расчета объяснений в предыдущем разделе.
+В этом разделе вы узнаете, как операционную автоматизированную модель ML с помощью объяснителя, который использовался для вычисления объяснений в предыдущем разделе.
 
-### <a name="register-the-model-and-the-scoring-explainer"></a>Регистрация модели и пояснения к оценкам
+### <a name="register-the-model-and-the-scoring-explainer"></a>Регистрация модели и скоринга объяснить
 
-Используйте `TreeScoringExplainer`, чтобы создать пояснение к оценке, которое будет вычислять значения важности функций во время вывода. Вы инициализируйте пояснение к оценке с помощью `feature_map`, который был вычислен ранее. 
+Используйте `TreeScoringExplainer` для создания пояснения скоринга, который будет вычислять инженерные значения значения значения функциональности во время выводов. Вы инициализируете `feature_map` скоринг объяснение с тем, что было вычислено ранее. 
 
-Сохраните описание оценки, а затем зарегистрируйте модель и описание оценки в службе Управление моделями. Выполните следующий код:
+Сохранить скоринг объяснить, а затем зарегистрировать модель и скоринга объяснить с моделью управления службой управления. Выполните следующий код:
 
 ```python
 from azureml.interpret.scoring.scoring_explainer import TreeScoringExplainer, save
@@ -141,7 +141,7 @@ scoring_explainer_model = automl_run.register_model(model_name='scoring_explaine
 
 ### <a name="create-the-conda-dependencies-for-setting-up-the-service"></a>Создание зависимостей conda для настройки службы
 
-Затем создайте необходимые зависимости среды в контейнере для развернутой модели. Обратите внимание, что azureml — значения по умолчанию с версией > = 1.0.45 должны быть перечислены как зависимость PIP, так как она содержит функции, необходимые для размещения модели в качестве веб-службы.
+Затем создайте необходимые зависимости среды в контейнере для развернутой модели. Обратите внимание, что по умолчанию azureml с версией >1.0.45 должны быть указаны как зависимость от пипсов, поскольку она содержит функциональность, необходимую для размещения модели в качестве веб-сервиса.
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies
@@ -164,7 +164,7 @@ with open("myenv.yml","r") as f:
 
 ### <a name="deploy-the-service"></a>Развертывание службы
 
-Разверните службу с помощью файла conda и файла оценки из предыдущих шагов.
+Развертывайте службу с помощью файла conda и скорингового файла из предыдущих шагов.
 
 ```python
 from azureml.core.webservice import Webservice
@@ -191,7 +191,7 @@ service.wait_for_deployment(show_output=True)
 
 ### <a name="inference-with-test-data"></a>Вывод с тестовыми данными
 
-Вывод с некоторыми тестовыми данными для просмотра прогнозируемого значения из автоматизированной модели ML. Просмотр важности функциональной функции для прогнозируемого значения.
+Вывод с некоторыми тестовыми данными, чтобы увидеть прогнозируемое значение от автоматизированной модели ML. Просмотр инженерного значения объекта для прогнозируемого значения.
 
 ```python
 if service.state == 'Healthy':
@@ -208,10 +208,10 @@ if service.state == 'Healthy':
 
 ### <a name="visualize-to-discover-patterns-in-data-and-explanations-at-training-time"></a>Визуализация для обнаружения закономерностей в данных и объяснениях во время обучения
 
-Диаграмму важности функций можно визуализировать в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com). После завершения автоматического запуска ML выберите **Просмотреть сведения о модели** , чтобы просмотреть конкретный запуск. Перейдите на вкладку **пояснения** , чтобы увидеть панель мониторинга визуализации пояснения.
+Врабочеой [студии Azure Machine Learning](https://ml.azure.com)можно визуализировать диаграмму важности функций в рабочей области. После завершения автоматического выполнения ML выберите **сведения о модели View** для просмотра определенного запуска. Выберите вкладку **«Объяснения»,** чтобы увидеть панель визуализации объяснений.
 
-[Архитектура интерпретации Машинное обучение ![](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
+[![Архитектура интерпретации машинного обучения](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о том, как включить пояснения к модели и важность признаков в областях пакета SDK Машинное обучение Azure, отличного от автоматизированного машинного обучения, см. в [статье о концепции, посвященной возможностям интерпретации](how-to-machine-learning-interpretability.md).
+Для получения дополнительной информации о том, как можно включить объяснения моделей и важность функций в [concept article on interpretability](how-to-machine-learning-interpretability.md)областях SDK машинного обучения Azure, помимо автоматизированного машинного обучения, см.

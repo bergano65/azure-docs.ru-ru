@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание приложения для перевода текста с помощью WPF и C# — API "Перевод текстов"
+title: Руководство по Создание приложения для перевода текста с помощью WPF и C# — API "Перевод текстов"
 titleSuffix: Azure Cognitive Services
 description: В рамках этого руководства вы создадите приложение WPF для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: swmachan
 ms.openlocfilehash: ecb42d200eb8808f6bfa4cfb91e98909e350038b
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77118606"
 ---
-# <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство. Создание приложения для перевода текста с помощью WPF
+# <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
 В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](https://docs.microsoft.com/visualstudio/designers/getting-started-with-wpf?view=vs-2019), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы "Перевод текстов" и ["Проверка орфографии Bing"](https://azure.microsoft.com/services/cognitive-services/spell-check/).
 

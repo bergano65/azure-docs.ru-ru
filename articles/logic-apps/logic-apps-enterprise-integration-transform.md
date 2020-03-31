@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 07/08/2016
 ms.openlocfilehash: 500769a39ba7658b35c1abb80101f6234170c941
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74792378"
 ---
 # <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise
@@ -30,13 +30,13 @@ ms.locfileid: "74792378"
 
 **Ниже приведены указания по использованию преобразования**.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * Создание учетной записи интеграции и добавление карты в нее  
 
 Теперь, когда предварительные требования выполнены, пора создать приложение логики.  
 
-1. Создайте приложение логики и [свяжите его с учетной записью интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md "Сведения о связывании учетной записи интеграции с приложением логики") , содержащей карту.
+1. Создайте приложение Logic и [свяжите его с учетной записью интеграции,](../logic-apps/logic-apps-enterprise-integration-accounts.md "Научитесь связывать учетную запись интеграции с приложением Logic") содержащей карту.
 2. Добавление триггера **запроса** в приложение логики  
    ![](./media/logic-apps-enterprise-integration-transforms/transform-1.png)    
 3. Добавьте действие **Преобразовать XML**, щелкнув **Добавить действие** .  
@@ -134,6 +134,6 @@ ms.locfileid: "74792378"
 
 
 ## <a name="learn-more"></a>Дополнительные сведения
-* [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise")  
-* [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Сведения о картах интеграции Enterprise")  
+* [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Узнайте больше о пакете корпоративной интеграции")  
+* [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Узнайте о картах интеграции предприятий")  
 

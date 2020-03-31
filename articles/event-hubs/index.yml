@@ -12,12 +12,12 @@ metadata:
   author: spelluru
   ms.author: spelluru
   ms.date: 01/29/2020
-  ms.openlocfilehash: 28cfe37f6058dbedb11fb6fe01d932cbb10cbd18
-  ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+  ms.openlocfilehash: 957a942efd618003dd3ff3f9f76be72799770859
+  ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/12/2020
-  ms.locfileid: "77162962"
+  ms.lasthandoff: 03/26/2020
+  ms.locfileid: "80288297"
 landingContent:
 - title: Сведения о Центрах событий
   linkLists:
@@ -70,7 +70,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Создание концентратора событий с поддержкой Apache Kafka
-      url: event-hubs-create-kafka-enabled.md
+      url: event-hubs-create.md
     - text: Зеркальное отображение брокера Kafka в концентраторе событий
       url: event-hubs-kafka-mirror-maker-tutorial.md
     - text: Подключение Apache Spark к концентратору событий
@@ -143,7 +143,7 @@ landingContent:
       url: event-hubs-ip-filtering.md
     - text: Использование конечных точек служб для виртуальной сети
       url: event-hubs-service-endpoints.md
+    - text: Использование частных конечных точек
+      url: private-link-service.md
     - text: Настройка управляемых пользователем ключей для шифрования неактивных данных
       url: configure-customer-managed-key.md
-    - text: Обеспечение интеграции виртуальных сетей и брандмауэров
-      url: event-hubs-tutorial-virtual-networks-firewalls.md

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: ad81ca75638b9510064b7f2c319d9429881c60d1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: c94b670a33f7640d2d6f428287b3ba0fab766bc5
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79475932"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80384880"
 ---
 # <a name="quickstart-create-a-service-bus-namespace-with-topic-and-subscription-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание пространства имен служебной шины с разделом и подпиской с помощью шаблона Azure Resource Manager
 
@@ -38,8 +38,6 @@ ms.locfileid: "79475932"
 > * [Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)
 > 
 > Чтобы узнать о новых шаблонах, в коллекции [шаблонов быстрого запуска Azure][Azure Quickstart Templates] выполните поиск по фразе **служебная шина**.
-> 
-> 
 
 ## <a name="what-do-you-deploy"></a>Какой объект развертывается?
 
@@ -58,6 +56,7 @@ ms.locfileid: "79475932"
 Ниже описаны параметры, которые определяет шаблон.
 
 ### <a name="servicebusnamespacename"></a>serviceBusNamespaceName
+
 Имя создаваемого пространства имен служебной шины.
 
 ```json
@@ -67,6 +66,7 @@ ms.locfileid: "79475932"
 ```
 
 ### <a name="servicebustopicname"></a>serviceBusTopicName
+
 Имя раздела, создаваемого в пространстве имен служебной шины.
 
 ```json
@@ -76,6 +76,7 @@ ms.locfileid: "79475932"
 ```
 
 ### <a name="servicebussubscriptionname"></a>serviceBusSubscriptionName
+
 Имя подписки, создаваемой в пространстве имен служебной шины.
 
 ```json
@@ -85,6 +86,7 @@ ms.locfileid: "79475932"
 ```
 
 ### <a name="servicebusapiversion"></a>serviceBusApiVersion
+
 Версия API служебной шины для шаблона.
 
 ```json
@@ -95,7 +97,9 @@ ms.locfileid: "79475932"
            "description": "Service Bus ApiVersion used by the template" 
        }
 ```
+
 ## <a name="resources-to-deploy"></a>Развертываемые ресурсы
+
 Создает стандартное пространство имен служебной шины типа **Messaging**с разделом и подпиской.
 
 ```json
@@ -134,19 +138,23 @@ ms.locfileid: "79475932"
 Сведения о синтаксисе и свойствах JSON см. в статьях о [пространствах имен](/azure/templates/microsoft.servicebus/namespaces), [разделах](/azure/templates/microsoft.servicebus/namespaces/topics) и [подписках](/azure/templates/microsoft.servicebus/namespaces/topics/subscriptions).
 
 ## <a name="commands-to-run-deployment"></a>Команды для выполнения развертывания
+
 [!INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ## <a name="powershell"></a>PowerShell
-```powershell
+
+```powershell-interactive
 New-AzureResourceGroupDeployment -Name \<deployment-name\> -ResourceGroupName \<resource-group-name\> -TemplateUri <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-topic-and-subscription/azuredeploy.json>
 ```
 
 ## <a name="azure-cli"></a>Azure CLI
-```azurecli
+
+```azurecli-interactive
 az group deployment create \<my-resource-group\> --name \<my-deployment-name\> --template-uri <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-topic-and-subscription/azuredeploy.json>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 Теперь, когда вы создали и развернули ресурсы с помощью диспетчера ресурсов Azure, узнайте, как управлять этими ресурсами, изучив следующие статьи:
 
 * [Управление служебной шиной с помощью PowerShell](service-bus-manage-with-ps.md)

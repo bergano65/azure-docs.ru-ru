@@ -1,6 +1,6 @@
 ---
-title: Миграция из кодировщика мультимедиа Windows Azure в Media Encoder Standard | Документация Майкрософт
-description: В этом разделе описано, как выполнить миграцию из кодировщика мультимедиа Azure в обработчик Media Encoder Standard мультимедиа.
+title: Переход от Windows Azure Media Encoder к стандарту медиа-кодаре (ru) Документы Майкрософт
+description: В этой теме обсуждается, как перейти от мультимедиа-кодареaz Azure media Encoder к медиапроцессору Media Encoder Standard.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -14,21 +14,21 @@ ms.topic: article
 ms.date: 10/17/2019
 ms.author: juliako
 ms.openlocfilehash: e75e3f3eecf6c34050aeaa7fe387fffb0de58a74
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76513207"
 ---
-# <a name="migrate-from-windows-azure-media-encoder-to-media-encoder-standard"></a>Миграция из кодировщика мультимедиа Windows Azure в Media Encoder Standard
+# <a name="migrate-from-windows-azure-media-encoder-to-media-encoder-standard"></a>Переход от Windows Azure Media Encoder к стандарту медиа-кодаре
 
-В этой статье рассматриваются действия по переходу с устаревшего обработчика мультимедиа Windows Azure Media Encoder (ВАМЕ) (который будет снят с учета) на процессор Media Encoder Standard Media. Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) .
+В этой статье рассматриваются шаги для перехода от устаревшего медиапроцессора Windows Azure Media Encoder (WAME) (который в настоящее время отменяется) к медиапроцессору Media Encoder Standard. Для даты выхода на [legacy components](legacy-components.md) пенсию см.
 
-При кодировании файлов с помощью ВАМЕ клиенты обычно используют именованную строку предустановки, например `H264 Adaptive Bitrate MP4 Set 1080p`. Чтобы выполнить миграцию, необходимо обновить код для использования **Media Encoder Standardного** обработчика мультимедиа вместо Ваме и одной из эквивалентных [системных предустановок](media-services-mes-presets-overview.md) , таких как `H264 Multiple Bitrate 1080p`. 
+При кодировании файлов с WAME клиенты обычно использовали `H264 Adaptive Bitrate MP4 Set 1080p`именованную предустановленную строку, такую как. Для того, чтобы мигрировать, ваш код должен быть обновлен, чтобы использовать **медиа-процессор Encoder** `H264 Multiple Bitrate 1080p`Standard вместо WAME, и один из эквивалентных [пресетов системы,](media-services-mes-presets-overview.md) как. 
 
-## <a name="migrating-to-media-encoder-standard"></a>Переход на Media Encoder Standard
+## <a name="migrating-to-media-encoder-standard"></a>Миграция к медиа-стандарту
 
-Ниже приведен типичный C# пример кода, использующий устаревший компонент. 
+Вот типичный образец кода СЗ, в который используется устаревший компонент. 
 
 ```csharp
 // Declare a new job. 
@@ -45,7 +45,7 @@ ITask task = job.Tasks.AddNew("My encoding task",
     TaskOptions.None); 
 ```
 
-Ниже приведена обновленная версия, использующая Media Encoder Standard.
+Вот обновленная версия, которая использует Media Encoder Standard.
 
 ```csharp
 // Declare a new job. 
@@ -64,19 +64,19 @@ ITask task = job.Tasks.AddNew("My encoding task",
 
 ### <a name="advanced-scenarios"></a>Сложные сценарии 
 
-Если вы создали собственную предустановку кодирования для ВАМЕ, используя схему, то [для Media Encoder Standard существует эквивалентная схема](media-services-mes-schema.md).
+Если вы создали свой собственный предустановленный кодирование для WAME, используя его схему, есть [эквивалентная схема для Media Encoder Standard.](media-services-mes-schema.md)
 
 ## <a name="known-differences"></a>Известные различия 
 
-Media Encoder Standard является более надежным, надежным, имеет лучшую производительность и обеспечивает лучшую качество вывода, чем устаревший кодировщик ВАМЕ. В дополнение: 
+Media Encoder Standard является более надежным, надежным, имеет более высокую производительность и обеспечивает более высокое качество продукции, чем устаревший кодеер WAME. В дополнение: 
 
-* Media Encoder Standard создает выходные файлы с другим соглашением об именовании, чем ВАМЕ.
-* Media Encoder Standard создает такие артефакты, как файлы, содержащие [метаданные входного файла](media-services-input-metadata-schema.md) и [метаданные выходных файлов](media-services-output-metadata-schema.md).
-* Как описано на [странице цен](https://azure.microsoft.com/pricing/details/media-services/#encoding) (особенно в разделе часто задаваемых вопросов), при кодировании видео с помощью Media Encoder Standard вы получаете счет на основе продолжительности файлов, создаваемых в качестве выходных данных. При использовании ВАМЕ плата будет взиматься в зависимости от размеров входных видеофайлов и выходных видеофайлов.
+* Media Encoder Standard производит выходные файлы с другой конвенцией именования, чем WAME.
+* Media Encoder Standard производит артефакты, такие как файлы, содержащие [метаданные ввода и](media-services-input-metadata-schema.md) [метаданные вывода (s)](media-services-output-metadata-schema.md).
+* Как описано на [странице ценообразования](https://azure.microsoft.com/pricing/details/media-services/#encoding) (особенно в разделе часто задаваемые вопросы), при кодировании видео с помощью Media Encoder Standard вы получаете счет в зависимости от продолжительности файлов, производимых в виде вывода. С WAME выставляется счет в зависимости от размеров вхотворного видеофайла (ы) и вывода видеофайла (ы).
 
-## <a name="need-help"></a>Нужна помощь?
+## <a name="need-help"></a>Требуется помощь?
 
-Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
+Вы можете открыть билет поддержки, перенаправившись в [Новый запрос поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

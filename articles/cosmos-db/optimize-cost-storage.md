@@ -7,15 +7,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.openlocfilehash: 1508adda761fcba7ba70df3bb212d3eb4e32f242
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72754942"
 ---
 # <a name="optimize-storage-cost-in-azure-cosmos-db"></a>Оптимизация затрат на хранение в Azure Cosmos DB
 
-В Azure Cosmos DB нет ограничений на объем хранилища и пропускную способность. В отличие от пропускной способности, которую нужно подготавливать и настраивать для каждого контейнера или базы данных Azure Cosmos, оплата за хранилище начисляется в зависимости от фактического потребления. Счета выставляются только за используемое логическое хранилище, и вам не нужно заранее резервировать объем. Хранилище автоматически масштабируется и уменьшается в зависимости от данных, добавляемых или удаляемых в контейнере Azure Cosmos.
+В Azure Cosmos DB нет ограничений на объем хранилища и пропускную способность. В отличие от пропускной способности, которую нужно подготавливать и настраивать для каждого контейнера или базы данных Azure Cosmos, оплата за хранилище начисляется в зависимости от фактического потребления. Счета выставляются только за используемое логическое хранилище, и вам не нужно заранее резервировать объем. Хранение автоматически масштабируется вверх и вниз на основе данных, которые вы добавляете или удаляете в контейнер Azure Cosmos.
 
 ## <a name="storage-cost"></a>Стоимость хранения
 
@@ -39,7 +39,7 @@ ms.locfileid: "72754942"
 
 ## <a name="check-storage-consumed"></a>Проверка используемого объема хранилища
 
-Чтобы проверить использование хранилища в контейнере Azure Cosmos, вы можете выполнить в нем запрос HEAD или GET и проверить заголовки `x-ms-request-quota` и `x-ms-request-usage` в ответе. Кроме того, при работе с пакетом SDK для .NET можно использовать свойства [документсизекуота](https://docs.microsoft.com/previous-versions/azure/dn850325(v%3Dazure.100))и [документсизеусаже](https://msdn.microsoft.com/library/azure/dn850324.aspx) , чтобы получить использованное хранилище.
+Чтобы проверить использование хранилища в контейнере Azure Cosmos, вы можете выполнить в нем запрос HEAD или GET и проверить заголовки `x-ms-request-quota` и `x-ms-request-usage` в ответе. Кроме того, при работе с .NET SDK можно использовать свойства [DocumentSize-квота](https://docs.microsoft.com/previous-versions/azure/dn850325(v%3Dazure.100))и [DocumentSizeUsage](https://msdn.microsoft.com/library/azure/dn850324.aspx) для получения потреблена хранилища.
 
 ## <a name="using-sdk"></a>Использование пакета SDK
 
@@ -54,10 +54,10 @@ Console.WriteLine("Item size quota: {0}, usage: {1}", collectionInfo.DocumentQuo
 
 Теперь вы можете перейти к изучению оптимизации затрат в Azure Cosmos DB в следующих статьях:
 
-* [Оптимизация для разработки и тестирования в Azure Cosmos DB](optimize-dev-test.md)
-* Дополнительные сведения о [расшифровке счета за использование Azure Cosmos DB](understand-your-bill.md).
-* [Optimizing throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация затрат на пропускную способность в Azure Cosmos DB)
+* Дополнительные сведения об [оптимизации для разработки и тестирования](optimize-dev-test.md)
+* Дополнительные сведения о [расшифровке счета Azure Cosmos DB](understand-your-bill.md)
+* Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md)
 * Дополнительные сведения об [оптимизации расходов на операции чтения и записи](optimize-cost-reads-writes.md)
 * Дополнительные сведения об [оптимизации затрат на запросы](optimize-cost-queries.md).
-* Дополнительные сведения об [оптимизации затрат на учетные записи Azure Cosmos с поддержкой нескольких регионов](optimize-cost-regions.md).
+* Дополнительные сведения об [оптимизации расходов на учетные записи Cosmos Azure с поддержкой нескольких регионов](optimize-cost-regions.md)
 

@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/02/2019
 ms.openlocfilehash: eba7d7ad009b2ef0442a916983489489eb5cceb8
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74806666"
 ---
-# <a name="use-the-net-sdk-for-apache-hbase"></a>Использование пакета SDK для .NET для Apache HBase
+# <a name="use-the-net-sdk-for-apache-hbase"></a>Используйте .NET SDK для Apache HBase
 
 [Apache HBase](apache-hbase-overview.md) предоставляет два основных способа работы с данными: [запросы Apache Hive и вызовы REST API HBase](apache-hbase-tutorial-get-started-linux.md). Можно работать непосредственно с REST API, используя команду `curl` или подобную программу.
 
@@ -58,7 +58,7 @@ if (!client.ListTablesAsync().Result.name.Contains("RestSDKTable"))
 }
 ```
 
-Эта новая таблица имеет два семейства столбцов: T1 и T2. Так как семейства столбцов хранятся отдельно в разных файлах HFile, есть смысл создать отдельное семейство столбцов для часто запрашиваемых данных. В следующем примере [вставки данных](#insert-data) столбцы добавляются в семейство столбцов t1.
+Эта новая таблица имеет двухстолбы семейства, t1 и t2. Так как семейства столбцов хранятся отдельно в разных файлах HFile, есть смысл создать отдельное семейство столбцов для часто запрашиваемых данных. В следующем примере [вставки данных](#insert-data) столбцы добавляются в семейство столбцов t1.
 
 ## <a name="delete-a-table"></a>Удаление таблицы
 
@@ -112,9 +112,9 @@ set.rows.Add(row);
 await client.StoreCellsAsync("RestSDKTable", set);
 ```
 
-HBase реализует [Cloud Bigtable](https://cloud.google.com/bigtable/), поэтому формат данных выглядит как на следующем рисунке:
+HBase реализует [Cloud BigTable,](https://cloud.google.com/bigtable/)поэтому формат данных выглядит следующим изображением:
 
-![Выходные данные образца Apache HBase](./media/apache-hbase-rest-sdk/hdinsight-table-roles.png)
+![Выход выборочных данных Apache HBase](./media/apache-hbase-rest-sdk/hdinsight-table-roles.png)
 
 ## <a name="select-data"></a>Выбор данных
 

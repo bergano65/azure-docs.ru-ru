@@ -1,5 +1,5 @@
 ---
-title: Мониторинг заданий Azure Stream Analytics и управление ими с помощью PowerShell
+title: Мониторинг и управление заданиями Azure Stream Analytics с помощью PowerShell
 description: В этом статье объясняется, как с помощью Azure PowerShell и командлетов отслеживать задания Azure Stream Analytics и управлять ими.
 author: jseb225
 ms.author: jeanb
@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/28/2017
 ms.openlocfilehash: 7781f35fe7c17e4a0f307f559945caf648b23f6a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75431700"
 ---
 # <a name="monitor-and-manage-stream-analytics-jobs-with-azure-powershell-cmdlets"></a>Отслеживание заданий Stream Analytics и управление ими с помощью командлетов Azure PowerShell
@@ -50,15 +50,15 @@ New-AzResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
 
 
 > [!NOTE]
-> Отслеживание заданий Stream Analytics, созданных программным путем, по умолчанию отключено.  Вы можете вручную включить наблюдение на портале Azure, перейдя на страницу мониторинга "задания" и нажав кнопку "включить". Кроме того, вы можете сделать это программно, выполнив действия, описанные в разделе [Azure Stream Analytics-Monitor Stream Analytics задания программным способом](stream-analytics-monitor-jobs.md).
+> Отслеживание заданий Stream Analytics, созданных программным путем, по умолчанию отключено.  Вы можете вручную включить мониторинг в Azure Portal, перемещаясь на страницу монитора задания и нажав кнопку Enable, или вы можете сделать это программно, следуя шагам, расположенным в [Azure Stream Analytics - Monitor Stream Analytics Jobs Programmatically.](stream-analytics-monitor-jobs.md)
 > 
 > 
 
 ## <a name="azure-powershell-cmdlets-for-stream-analytics"></a>Командлеты Azure PowerShell для службы Stream Analytics
 Следующие командлеты Azure PowerShell можно использовать для отслеживания заданий Azure Stream Analytics и управления ими. Обратите внимание, что Azure PowerShell имеет различные версии. 
-**В приведенных примерах первая команда приведена для Azure PowerShell 0.9.8, вторая — для Azure PowerShell 1.0.** Команды Azure PowerShell 1,0 всегда будут иметь значение "AZ" в команде.
+**В приведенных примерах первая команда приведена для Azure PowerShell 0.9.8, вторая — для Azure PowerShell 1.0.** Команды Azure PowerShell 1.0 всегда будут иметь "Аз" в команде.
 
-### <a name="get-azurestreamanalyticsjob--get-azstreamanalyticsjob"></a>Get-AzureStreamAnalyticsJob | Get-AzStreamAnalyticsJob
+### <a name="get-azurestreamanalyticsjob--get-azstreamanalyticsjob"></a>Get-AzureStreamAnalyticsJob Get-AzStreamAnalyticsJob
 Выводит список всех заданий Stream Analytics, определенных в подписке Azure или указанной группе ресурсов, или показывает сведения о конкретном задании в группе ресурсов.
 
 **Пример 1**
@@ -109,7 +109,7 @@ Get-AzStreamAnalyticsJob -ResourceGroupName StreamAnalytics-Default-Central-US -
 
 Эта команда PowerShell возвращает сведения о задании Stream Analytics StreamingJob в группе ресурсов StreamAnalytics-Default-Central-US.
 
-### <a name="get-azurestreamanalyticsinput--get-azstreamanalyticsinput"></a>Get-Азурестреаманалитиксинпут | Get-Азстреаманалитиксинпут
+### <a name="get-azurestreamanalyticsinput--get-azstreamanalyticsinput"></a>Get-AzureStreamAnalyticsInput (англ.) Get-AzStreamAnalyticsInput
 Выводит список всех входных данных, определенных в указанном задании Stream Analytics, или показывает сведения о конкретных данных.
 
 **Пример 1**
@@ -144,7 +144,7 @@ Get-AzStreamAnalyticsInput -ResourceGroupName StreamAnalytics-Default-Central-US
 
 Эта команда PowerShell возвращает сведения о входных данных EntryStream, определенных в задании StreamingJob.
 
-### <a name="get-azurestreamanalyticsoutput--get-azstreamanalyticsoutput"></a>Get-Азурестреаманалитиксаутпут | Get-Азстреаманалитиксаутпут
+### <a name="get-azurestreamanalyticsoutput--get-azstreamanalyticsoutput"></a>Get-AzureStreamAnalyticsOutput (ru) Get-AzStreamAnalyticsOutput
 Выводит список всех выходных данных, определенных в указанном задании Stream Analytics, или показывает сведения о конкретных данных.
 
 **Пример 1**
@@ -179,7 +179,7 @@ Get-AzStreamAnalyticsOutput -ResourceGroupName StreamAnalytics-Default-Central-U
 
 Эта команда PowerShell возвращает сведения о выходных данных Output, определенных в задании StreamingJob.
 
-### <a name="get-azurestreamanalyticsquota--get-azstreamanalyticsquota"></a>Get-AzureStreamAnalyticsQuota | Get-AzStreamAnalyticsQuota
+### <a name="get-azurestreamanalyticsquota--get-azstreamanalyticsquota"></a>Получить-AzureStreamАналитика Квота (ru) Получить-AzStreamАналитика Квота
 Возвращает сведения о квоте единиц потоковой передачи в указанном регионе.
 
 **Пример 1**
@@ -198,7 +198,7 @@ Get-AzStreamAnalyticsQuota �Location "Central US"
 
 Эта команда PowerShell возвращает сведения о квоте и использовании единиц потоковой передачи в центральной части США.
 
-### <a name="get-azurestreamanalyticstransformation--get-azstreamanalyticstransformation"></a>Get-Азурестреаманалитикстрансформатион | Get-Азстреаманалитикстрансформатион
+### <a name="get-azurestreamanalyticstransformation--get-azstreamanalyticstransformation"></a>Get-AzureStreamAnalyticsТрансформация (англ.) Get-AzStreamAnalyticsTransformation
 Возвращает сведения о конкретном преобразовании, определенном в задании Stream Analytics.
 
 **Пример 1**
@@ -217,16 +217,16 @@ Get-AzStreamAnalyticsTransformation -ResourceGroupName StreamAnalytics-Default-C
 
 Эта команда PowerShell возвращает сведения о преобразовании StreamingJob в задании StreamingJob.
 
-### <a name="new-azurestreamanalyticsinput--new-azstreamanalyticsinput"></a>New-Азурестреаманалитиксинпут | New-Азстреаманалитиксинпут
+### <a name="new-azurestreamanalyticsinput--new-azstreamanalyticsinput"></a>Новый AzureStreamAnalyticsInput (ru) Новый AzStreamAnalyticsInput
 Создает новые или обновляет существующие входные данные в задании Stream Analytics.
 
 Имя входных данных можно указать в JSON-файле или в командной строке. Если указаны оба, имя в командной строке должно совпадать с именем в файле.
 
-Если указать уже существующий вход и не указать параметр Force, командлет предложит заменить существующие входные данные.
+Если вы укажете ввод, который уже существует, и не укажете параметр Силы, cmdlet спросит, следует ли заменить существующий вход.
 
-Если указать параметр Force и указать существующее имя входа, входные данные будут заменены без подтверждения.
+Если вы укажете параметр Силы и укажете существующее имя ввода, ввод будет заменен без подтверждения.
 
-Подробные сведения о структуре и содержимом JSON-файла см. в разделе [CREATE input (Azure Stream Analytics) (создание входных данных)][msdn-rest-api-create-stream-analytics-input] в [справочной библиотеке REST API управления Stream Analytics][stream.analytics.rest.api.reference].
+Подробные сведения о структуре и содержимом JSON-файла см. в разделе о [создании входных данных][msdn-rest-api-create-stream-analytics-input][справочника по интерфейсу REST API управления Stream Analytics][stream.analytics.rest.api.reference].
 
 **Пример 1**
 
@@ -276,16 +276,16 @@ New-AzStreamAnalyticsInput -ResourceGroupName StreamAnalytics-Default-Central-US
 
 Эта команда PowerShell заменяет определение существующего источника входных данных EntryStream на определение из файла.
 
-### <a name="new-azurestreamanalyticsjob--new-azstreamanalyticsjob"></a>New-Азурестреаманалитиксжоб | New-Азстреаманалитиксжоб
+### <a name="new-azurestreamanalyticsjob--new-azstreamanalyticsjob"></a>Новый AzureStreamAnalyticsJob (англ.) Новый-AzStreamAnalyticsJob
 Создает задание Stream Analytics в Microsoft Azure или обновляет определение существующего задания.
 
 Имя задания можно указать в JSON-файле или в командной строке. Если указаны оба, имя в командной строке должно совпадать с именем в файле.
 
-Если указать уже существующее имя задания и не указать параметр Force, командлет предложит заменить существующее задание.
+Если вы укажете имя задания, которое уже существует, и не укажете параметр Силы, cmdlet спросит, следует ли заменить существующее задание.
 
-Если указать параметр Force и указать существующее имя задания, определение задания будет заменено без подтверждения.
+Если вы укажете параметр Силы и укажете существующее имя задания, определение задания будет заменено без подтверждения.
 
-Подробные сведения о структуре и содержимом JSON см. в разделе [создание Stream Analytics задания][msdn-rest-api-create-stream-analytics-job] в [справочной библиотеке REST API управления Stream Analytics][stream.analytics.rest.api.reference].
+Подробные сведения о структуре и содержимом JSON-файла см. в разделе о [создании задания Stream Analytics][msdn-rest-api-create-stream-analytics-job][справочника по интерфейсу REST API управления Stream Analytics][stream.analytics.rest.api.reference].
 
 **Пример 1**
 
@@ -319,16 +319,16 @@ New-AzStreamAnalyticsJob -ResourceGroupName StreamAnalytics-Default-Central-US �
 
 Эта команда PowerShell заменяет определение задания StreamingJob.
 
-### <a name="new-azurestreamanalyticsoutput--new-azstreamanalyticsoutput"></a>New-Азурестреаманалитиксаутпут | New-Азстреаманалитиксаутпут
+### <a name="new-azurestreamanalyticsoutput--new-azstreamanalyticsoutput"></a>Новый AzureStreamAnalyticsOutput (ru) Новый AzStreamAnalyticsOutput
 Создает новые или обновляет существующие выходные данные в задании Stream Analytics.  
 
 Имя выходных данных можно указать в JSON-файле или в командной строке. Если указаны оба, имя в командной строке должно совпадать с именем в файле.
 
-Если заданы выходные данные, которые уже существуют, и не задан параметр Force, командлет предложит заменить существующие выходные данные.
+Если вы указываете уже существующий выход и не указываете параметр Силы, cmdlet спросит, следует ли заменить существующий вывод.
 
-Если указать параметр Force и указать существующее имя выхода, выходные данные будут заменены без подтверждения.
+Если вы укажете параметр Силы и укажете существующее имя вывода, выход будет заменен без подтверждения.
 
-Подробные сведения о структуре и содержимом JSON-файла см. в разделе [Создание выходных данных (Azure Stream Analytics)][msdn-rest-api-create-stream-analytics-output] статьи [Справочник по REST API управления Stream Analytics][stream.analytics.rest.api.reference].
+Подробные сведения о структуре и содержимом JSON-файла см. в разделе о [создании выходных данных][msdn-rest-api-create-stream-analytics-output][справочника по интерфейсу REST API управления Stream Analytics][stream.analytics.rest.api.reference].
 
 **Пример 1**
 
@@ -362,16 +362,16 @@ New-AzStreamAnalyticsOutput -ResourceGroupName StreamAnalytics-Default-Central-U
 
 Эта команда PowerShell заменяет определение для output в задании StreamingJob.
 
-### <a name="new-azurestreamanalyticstransformation--new-azstreamanalyticstransformation"></a>New-Азурестреаманалитикстрансформатион | New-Азстреаманалитикстрансформатион
+### <a name="new-azurestreamanalyticstransformation--new-azstreamanalyticstransformation"></a>Новый AzureStreamAnalyticsТрансформация (ru) Новый АзСТримАналитическИЯТрансформация
 Создает новое или обновляет существующее преобразование в задании Stream Analytics.
 
 Имя преобразования можно указано в JSON-файле или в командной строке. Если указаны оба, имя в командной строке должно совпадать с именем в файле.
 
-Если указать уже существующее преобразование и не указать параметр Force, командлет предложит заменить существующее преобразование.
+Если вы укажете преобразование, которое уже существует, и не укажете параметр Силы, cmdlet спросит, следует ли заменить существующее преобразование.
 
-Если указать параметр Force и указать существующее имя преобразования, преобразование будет заменено без подтверждения.
+Если вы укажете параметр Силы и укажете существующее имя преобразования, преобразование будет заменено без подтверждения.
 
-Подробные сведения о структуре и содержимом JSON-файла см. в разделе [CREATE преобразование (Azure Stream Analytics)][msdn-rest-api-create-stream-analytics-transformation] статьи справочник по [REST APIу управления Stream Analytics][stream.analytics.rest.api.reference].
+Подробные сведения о структуре и содержимом JSON-файла см. в разделе о [создании преобразования][msdn-rest-api-create-stream-analytics-transformation][справочника по интерфейсу REST API управления Stream Analytics][stream.analytics.rest.api.reference].
 
 **Пример 1**
 
@@ -405,9 +405,9 @@ New-AzStreamAnalyticsTransformation -ResourceGroupName StreamAnalytics-Default-C
 
  Эта команда PowerShell заменяет определение StreamingJobTransform в задании StreamingJob.
 
-### <a name="remove-azurestreamanalyticsinput--remove-azstreamanalyticsinput"></a>Remove-Азурестреаманалитиксинпут | Remove-Азстреаманалитиксинпут
+### <a name="remove-azurestreamanalyticsinput--remove-azstreamanalyticsinput"></a>Удалить-AzureStreamAnalyticsInput (ru) Удалить-AzStreamAnalyticsInput
 Асинхронно удаляет указанные входные данные из задания Stream Analytics в Microsoft Azure.  
-При указании параметра Force входные данные будут удалены без подтверждения.
+Если вы укажете параметр Силы, ввод будет удален без подтверждения.
 
 **Пример 1**
 
@@ -425,9 +425,9 @@ Remove-AzStreamAnalyticsInput -ResourceGroupName StreamAnalytics-Default-Central
 
 Эта команда PowerShell удаляет входные данные EventStream в задании StreamingJob.  
 
-### <a name="remove-azurestreamanalyticsjob--remove-azstreamanalyticsjob"></a>Remove-Азурестреаманалитиксжоб | Remove-Азстреаманалитиксжоб
+### <a name="remove-azurestreamanalyticsjob--remove-azstreamanalyticsjob"></a>Удалить-AzureStreamAnalyticsJob (ru) Удалить-AzStreamAnalyticsJob
 Асинхронно удаляет указанное задание Stream Analytics в Microsoft Azure.  
-Если указать параметр Force, задание будет удалено без подтверждения.
+Если вы укажете параметр Силы, задание будет удалено без подтверждения.
 
 **Пример 1**
 
@@ -445,9 +445,9 @@ Remove-AzStreamAnalyticsJob -ResourceGroupName StreamAnalytics-Default-Central-U
 
 Эта команда PowerShell удаляет задание StreamingJob.  
 
-### <a name="remove-azurestreamanalyticsoutput--remove-azstreamanalyticsoutput"></a>Remove-Азурестреаманалитиксаутпут | Remove-Азстреаманалитиксаутпут
+### <a name="remove-azurestreamanalyticsoutput--remove-azstreamanalyticsoutput"></a>Удалить-AzureStreamAnalyticsOutput (ru) Удалить-AzStreamAnalyticsOutput
 Асинхронно удаляет указанные выходные данные из задания Stream Analytics в Microsoft Azure.  
-Если указать параметр Force, выходные данные будут удалены без подтверждения.
+Если вы укажете параметр Силы, выход будет удален без подтверждения.
 
 **Пример 1**
 
@@ -465,7 +465,7 @@ Remove-AzStreamAnalyticsOutput -ResourceGroupName StreamAnalytics-Default-Centra
 
 Эта команда PowerShell удаляет выходные данные Output в задании StreamingJob.  
 
-### <a name="start-azurestreamanalyticsjob--start-azstreamanalyticsjob"></a>Start-AzureStreamAnalyticsJob | Start-AzStreamAnalyticsJob
+### <a name="start-azurestreamanalyticsjob--start-azstreamanalyticsjob"></a>Старт-AzureStreamAnalyticsJob Старт-AzStreamAnalyticsJob
 Асинхронно развертывает и запускает задание Stream Analytics в Microsoft Azure.
 
 **Пример 1**
@@ -484,7 +484,7 @@ Start-AzStreamAnalyticsJob -ResourceGroupName StreamAnalytics-Default-Central-US
 
 Это команда PowerShell запускает задание StreamingJob с пользовательским временем запуска выходных данных «12 декабря 2012 г., 12:12:12 UTC».
 
-### <a name="stop-azurestreamanalyticsjob--stop-azstreamanalyticsjob"></a>Stop-AzureStreamAnalyticsJob | Stop-AzStreamAnalyticsJob
+### <a name="stop-azurestreamanalyticsjob--stop-azstreamanalyticsjob"></a>Стоп-AzureStreamAnalyticsJob (англ.) Стоп-AzStreamAnalyticsJob
 Асинхронно останавливает задание Stream Analytics в Microsoft Azure и освобождает используемые ресурсы. Определение задания и метаданные остаются доступны в подписке через портал Azure и интерфейсы API управления, поэтому задание всегда можно изменить и перезапустить. Вы не платите за задание в состоянии "Остановлено".
 
 **Пример 1**
@@ -503,7 +503,7 @@ Stop-AzStreamAnalyticsJob -ResourceGroupName StreamAnalytics-Default-Central-US 
 
 Эта команда PowerShell останавливает задание StreamingJob.  
 
-### <a name="test-azurestreamanalyticsinput--test-azstreamanalyticsinput"></a>Test-Азурестреаманалитиксинпут | Test-Азстреаманалитиксинпут
+### <a name="test-azurestreamanalyticsinput--test-azstreamanalyticsinput"></a>Тест-AzureStreamAnalyticsInput (англ.) Тест-AzStreamAnalyticsInput
 Проверяет возможность подключения Stream Analytics к указанным входным данным.
 
 **Пример 1**
@@ -522,7 +522,7 @@ Test-AzStreamAnalyticsInput -ResourceGroupName StreamAnalytics-Default-Central-U
 
 Эта команда PowerShell проверяет состояние подключения входных данных EntryStream в StreamingJob.  
 
-### <a name="test-azurestreamanalyticsoutput--test-azstreamanalyticsoutput"></a>Test-Азурестреаманалитиксаутпут | Test-Азстреаманалитиксаутпут
+### <a name="test-azurestreamanalyticsoutput--test-azstreamanalyticsoutput"></a>Тест-AzureStreamAnalyticsOutput (англ.) Тест-AzStreamAnalyticsOutput
 Проверяет возможность подключения Stream Analytics к указанным выходным данным.
 
 **Пример 1**
@@ -541,12 +541,12 @@ Test-AzStreamAnalyticsOutput -ResourceGroupName StreamAnalytics-Default-Central-
 
 Эта команда PowerShell проверяет состояние подключения выходных данных Output в StreamingJob.  
 
-## <a name="get-support"></a>Получить поддержку
-За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics). 
+## <a name="get-support"></a>Получение поддержки
+Для получения дополнительной помощи попробуйте наш [форум Azure Stream Analytics.](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

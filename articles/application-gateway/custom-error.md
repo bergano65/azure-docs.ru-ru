@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/16/2019
 ms.author: victorh
 ms.openlocfilehash: ff11f686287498fe12b31d15a630178bb12035ad
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74129860"
 ---
 # <a name="create-application-gateway-custom-error-pages"></a>Создание пользовательских страниц ошибок с помощью службы "Шлюз приложений"
@@ -61,7 +61,7 @@ ms.locfileid: "74129860"
 
    ![Коды ошибок службы "Шлюз приложений"](media/custom-error/ag-error-codes.png)
 
-## <a name="azure-powershell-configuration"></a>Настройка Azure PowerShell
+## <a name="azure-powershell-configuration"></a>Конфигурация Azure PowerShell
 
 Вы можете использовать Azure PowerShell для настройки страницы ошибки. Например, глобальная настраиваемая страница ошибки:
 
@@ -73,6 +73,6 @@ ms.locfileid: "74129860"
 
 Дополнительные сведения см. в статьях о командлетах [Add-AzApplicationGatewayCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewaycustomerror?view=azps-1.2.0) и [Add-AzApplicationGatewayHttpListenerCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewayhttplistenercustomerror?view=azps-1.3.0).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о диагностике службы "Шлюз приложений" см. в статье [Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).

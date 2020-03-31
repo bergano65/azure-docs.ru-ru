@@ -1,5 +1,5 @@
 ---
-title: Планирование перехода с классической модели на Azure Resource Manager
+title: Планирование миграции с классического менеджера ресурсов Azure
 description: Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 services: virtual-machines-linux
 author: tanmaygore
@@ -9,17 +9,17 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 0b9c5b17b993afdd64cd2cbd8a15cbd6dd53f5ca
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: ff829e9ffbd6d6ae0766998e62634ac873afc748
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78944671"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80066661"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 
 > [!IMPORTANT]
-> Сегодня около 90% виртуальных машин IaaS используют [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). По состоянию на 28 февраля 2020, классические виртуальные машины являются устаревшими и будут полностью сняты с 1 марта 2023. [Узнайте больше]( https://aka.ms/classicvmretirement) об этой нерекомендуемости и [о том, как она влияет на вас](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation#how-does-this-affect-me).
+> Сегодня около 90% IaaS VMs используют [azure Resource Manager.](https://azure.microsoft.com/features/resource-manager/) По состоянию на 28 февраля 2020 года классические ВМ были обесточены и будут полностью выведены из эксплуатации 1 марта 2023 года. [Узнайте больше]( https://aka.ms/classicvmretirement) об этом амортизме и [как он влияет на вас.](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation#how-does-this-affect-me)
 
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
 
@@ -54,7 +54,7 @@ ms.locfileid: "78944671"
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)
+* [Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](../windows/migration-classic-resource-manager-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью интерфейса командной строки Azure](migration-classic-resource-manager-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Community tools to migrate IaaS resources from classic to Azure Resource Manager](../windows/migration-classic-resource-manager-community-tools.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Инструменты сообщества для перемещения ресурсов IaaS из классической модели в модель Azure Resource Manager)
@@ -122,27 +122,27 @@ ms.locfileid: "78944671"
 
     Используйте команды, приведенные ниже, в последней версии Azure CLI, чтобы проверить текущие квоты Azure Resource Manager.
 
-    **Вычисление** *(ядра, наборы доступности)*
+    **Вычисления** *(ядра, группы доступности)*
 
-    ```bash
+    ```azurecli
     az vm list-usage -l <azure-region> -o jsonc
     ```
 
-    **Сеть** *(виртуальные сети, статические общедоступные IP-адреса, общедоступные адреса, группы безопасности сети, сетевые интерфейсы, подсистемы балансировки нагрузки, таблицы маршрутов)*
+    **Сети** *(виртуальные сети, статические общедоступные IP-адреса, общедоступные IP-адреса, группы безопасности сети, сетевые интерфейсы, подсистемы балансировки нагрузки, таблицы маршрутов)*
 
-    ```bash
+    ```azurecli
     az network list-usages -l <azure-region> -o jsonc
     ```
 
     **Хранилище** *(учетная запись хранения)*
 
-    ```bash
+    ```azurecli
     az storage account show-usage
     ```
 
 - **Ограничения регулирования API Azure Resource Manager**. Если среда достаточно большая (например, более 400 виртуальных машин в виртуальной сети), вы можете достигнуть ограничения регулирования по умолчанию API для операций записи (сейчас это **1200 операций записи в час**) в Azure Resource Manager. Перед началом переноса создайте запрос в службу поддержки, чтобы увеличить это ограничение для подписки.
 
-- **Состояние виртуальной машины "Превышено время ожидания подготовки"** . Если любая виртуальная машина находится в состоянии **превышения времени подготовки**, это необходимо исправить до начала переноса. Единственный способ — это использовать режим простоя. Необходимо отозвать процесс подготовки виртуальной машины или повторно запустить его (удалить виртуальную машину, сохранить диск и снова создать виртуальную машину).
+- **Состояние виртуальной машины "Превышено время ожидания подготовки"**. Если любая виртуальная машина находится в состоянии **превышения времени подготовки**, это необходимо исправить до начала переноса. Единственный способ — это использовать режим простоя. Необходимо отозвать процесс подготовки виртуальной машины или повторно запустить его (удалить виртуальную машину, сохранить диск и снова создать виртуальную машину).
 
 - **Состояние виртуальной машины RoleStateUnknown**. Если миграция прерывается из-за ошибки **Неизвестное состояние роли**, выполните анализ виртуальной машины с помощью портала и убедитесь, что она исправна. Обычно через несколько минут такая ошибка самоустраняется (не нужны никакие дополнительные действия). Это ошибка временного типа, которая происходит во время таких операций виртуальной машины, как **запуск**, **останов**, **перезапуск**. **Рекомендация.** Повторите попытку миграции через несколько минут.
 
@@ -190,7 +190,7 @@ ms.locfileid: "78944671"
 
 Включайте только необходимые службы в Azure Resource Manager.  Ниже приведены службы, которыми ограничивается большинство клиентов, использующих среды Azure.
 
-- [Управление доступом на основе ролей](../../role-based-access-control/overview.md).
+- [Контроль доступа на основе роли](../../role-based-access-control/overview.md).
 - [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/templates/overview.md).
 - [Теги](../../azure-resource-manager/management/tag-resources.md).
 - [Управление действиями](../../azure-resource-manager/management/view-activity-logs.md).
@@ -205,7 +205,7 @@ ms.locfileid: "78944671"
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)
+* [Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](../windows/migration-classic-resource-manager-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Community tools to migrate IaaS resources from classic to Azure Resource Manager](../windows/migration-classic-resource-manager-community-tools.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Инструменты сообщества для перемещения ресурсов IaaS из классической модели в модель Azure Resource Manager)
 * [Распространенные ошибки миграции](migration-classic-resource-manager-errors.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

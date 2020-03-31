@@ -1,41 +1,40 @@
 ---
-title: Политики и условия коммерческого рынка | Службы
-description: Политики и условия коммерческого рынка Майкрософт применяются ко всем издателям и предложениям в Microsoft Azure Marketplace.
-services: Azure, Marketplace, AppSource, commercial marketplace, Partner Center
-author: MaggiePucciEvans
+title: Политика и условия коммерческого рынка Azure
+description: Политики и условия коммерческих рынков Майкрософт применяются ко всем издателям и предложениям в Microsoft Azure Marketplace.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 03/07/2020
-ms.author: evansma
-ms.openlocfilehash: 51d6a50631d94086318a9e37a9cecf89eb489ed1
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.topic: conceptual
+ms.date: 03/27/2020
+ms.author: dsindona
+ms.openlocfilehash: a370b7b21d25f117e44d613d060dd8cdd060c062
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78673423"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80336268"
 ---
-# <a name="commercial-marketplace-policies-and-terms"></a>Политики и условия коммерческой Marketplace
+# <a name="commercial-marketplace-policies-and-terms"></a>Политика и условия коммерческого рынка
 
 >[!Note]
->"Коммерческий магазин корпорации Майкрософт" — это платформа, принадлежащая корпорации Майкрософт, но с именем, через которую предложения могут быть предоставлены или приобретены клиентами. Если не указано иное, коммерческое Marketplace включает в себя Microsoft Azure Marketplace и Microsoft AppSource.
+>"Microsoft коммерческий рынок" означает Microsoft принадлежащих или управляемых платформы, однако назвал, с помощью которого предложения могут быть представлены или приобретены клиентами. Если не указано иное, на коммерческом рынке представлены Microsoft Azure Marketplace и Microsoft AppSource.
 
-Благодарим вас за интерес к публикации предложений на коммерческом рынке. Мы стремимся сотрудничать с вами для создания широкого источника облачных решений и бизнес-предложений, которые удовлетворения запросов клиентам по всему миру и помогут вам создать свой бизнес.
+Благодарим Вас за интерес к публикации предложений на коммерческом рынке. Мы стремимся к партнерству с вами, чтобы создать богатый источник облачных решений и линейки бизнес-предложений, которые радуют клиентов по всему миру и помогают вам строить свой бизнес.
 
-Предложения в Marketplace должны соответствовать нашим политикам и терминам. Мы обновляем эти политики и условия со временем, чтобы обеспечить хорошую работу клиентов и предоставить партнерам возможность успешной работы. Если у вас есть отзывы о наших политиках или терминах, сообщите нам об этом с помощью комментариев в [Azure Marketplace и на форуме AppSource](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222).
+Предложения на рынке должны соответствовать нашим правилам и условиям. Время от времени мы обновляем эти политики и термины, чтобы обеспечить хороший опыт работы с клиентами и предоставить партнерам возможность добиться успеха. Если у вас есть отзывы о наших политиках или терминах, пожалуйста, сообщите нам об этом, комментируя ситуацию на [форуме Azure Marketplace и AppSource.](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222)
 
-## <a name="policies-and-terms"></a>Политики и условия
+## <a name="policies-and-terms"></a>Политика и условия
 
 * [Commercial marketplace certification policies](https://docs.microsoft.com/legal/marketplace/certification-policies) (Политики сертификации коммерческой платформы Marketplace)
 
-* [Политики участия](https://docs.microsoft.com/legal/marketplace/participation-policy)
+* [Политика участия](https://docs.microsoft.com/legal/marketplace/participation-policy)
 
 * [Политики оценки и проверки](https://docs.microsoft.com/legal/marketplace/rating-review-policies)
 
 * [Условия использования Azure Marketplace](https://docs.microsoft.com/legal/marketplace/terms)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Посетите страницу с [руководством по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md) .
+Посетите страницу [руководства Azure Marketplace и AppSource.](./marketplace-publishers-guide.md)
 
 ---

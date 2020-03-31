@@ -11,10 +11,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: e3e2ef3340ca836f56176c21cf3d221f0bf172b9
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76722243"
 ---
 # <a name="deploy-models-to-production-to-play-an-active-role-in-making-business-decisions"></a>Развертывание моделей в рабочей среде должно играть активную роль в принятии бизнес-решений
@@ -25,9 +25,9 @@ ms.locfileid: "76722243"
 
 Поместить модели в рабочую среду можно с использованием разных подходов и платформ. Вот некоторые из них:
 
-- [Где развертываются модели с Машинное обучение Azure](../how-to-deploy-and-where.md)
+- [Где развертывать модели с помощью машинного обучения Azure](../how-to-deploy-and-where.md)
 - [Развертывание модели на сервере SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-py6-operationalize-the-model)
-- [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+- [Сервер машинного обучения Майкрософт](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
 
 >[!NOTE]
 >Перед развертыванием необходимо убедиться, что показатели задержки модели достаточно малы для использования в рабочей среде.
@@ -39,7 +39,7 @@ ms.locfileid: "76722243"
 
 ## <a name="ab-testing"></a>Тестирование А/Б
 
-При работе с несколькими моделями в рабочей среде для сравнения производительности модели можно использовать [тестирование A/B](https://en.wikipedia.org/wiki/A/B_testing) . 
+Когда несколько моделей находятся в производстве, [тестирование A/B](https://en.wikipedia.org/wiki/A/B_testing) может быть использовано для сравнения производительности модели. 
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

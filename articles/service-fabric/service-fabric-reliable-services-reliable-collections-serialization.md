@@ -1,13 +1,13 @@
 ---
-title: Сериализация объектов надежной коллекции
-description: Сведения о сериализации объектов надежных коллекций Azure Service Fabric, включая стратегию по умолчанию и определение пользовательской сериализации.
+title: Надежная сериализация объектов коллекции
+description: Узнайте о сериализации объектов объектов Azure Service Fabric Reliable Collections, включая стратегию по умолчанию и как определить пользовательскую сериализацию.
 ms.topic: conceptual
 ms.date: 5/8/2017
 ms.openlocfilehash: 666e1bb45a9c75ee143f15a0d871d6ae1408eca9
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75639553"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Сериализация объектов надежной коллекции в Azure Service Fabric
@@ -23,28 +23,28 @@ ms.locfileid: "75639553"
 Встроенные сериализаторы эффективнее, так как их типы не могут измениться и им не нужно включать сведения о типе, например его имя.
 
 Диспетчер надежных состояний имеет встроенный сериализатор для следующих типов: 
-- GUID
+- Guid
 - bool
 - byte
 - sbyte
 - byte[]
 - char
-- string
+- строка
 - Decimal
 - double
 - FLOAT
-- int
+- INT
 - uint
 - long
 - ulong
 - short
 - ushort
 
-## <a name="custom-serialization"></a>Настраиваемая сериализация
+## <a name="custom-serialization"></a>Пользовательская сериализация
 
 Настраиваемые сериализаторы обычно используются для повышения производительности или шифрования данных при передаче по сети и хранении на диске. Помимо прочего, настраиваемые сериализаторы часто являются более эффективными, чем универсальные сериализаторы, так как вам не нужно сериализовать информацию о типе. 
 
-[IReliableStateManager. TryAddStateSerializer\<t >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer) используется для регистрации пользовательского сериализатора для заданного типа t. Эта регистрация должна произойти при создании StatefulServiceBase, чтобы гарантировать, что до начала восстановления все надежные коллекции будут иметь доступ к соответствующему сериализатору для считывания их сохраненных данных.
+[IReliableStateManager.TryAddStateSerializer\<T>](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer) используется для регистрации пользовательского сериализатора для данного типа T. Эта регистрация должна произойти при строительстве StatefulServiceBase, чтобы убедиться, что до начала восстановления все надежные коллекции имеют доступ к соответствующему сериализатору для чтения их упорных данных.
 
 ```csharp
 public StatefulBackendService(StatefulServiceContext context)
@@ -62,10 +62,10 @@ public StatefulBackendService(StatefulServiceContext context)
 
 ### <a name="how-to-implement-a-custom-serializer"></a>Реализация настраиваемого сериализатора
 
-Пользовательский сериализатор должен реализовывать интерфейс [IStateSerializer\<t >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.istateserializer-1) .
+Пользовательский сериализатор должен реализовать интерфейс [IStateSerializer\<T>.](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.istateserializer-1)
 
 > [!NOTE]
-> IStateSerializer\<T > содержит перегрузку для записи и чтения, которая принимает дополнительный T вызываемое базовое значение. Этот API предназначен для разностной сериализации. Сейчас функция разностной сериализации не предоставляется. Следовательно эти две перегрузки не вызываются, пока не будет предоставлена и разрешена разностная сериализация.
+> IStateSerializer\<T> включает в себя перегрузку для записи и чтения, которая принимает в дополнительном T называется базовое значение. Этот API предназначен для разностной сериализации. Сейчас функция разностной сериализации не предоставляется. Следовательно эти две перегрузки не вызываются, пока не будет предоставлена и разрешена разностная сериализация.
 
 Ниже приведен пример настраиваемого типа под названием OrderKey, который содержит четыре свойства.
 
@@ -85,7 +85,7 @@ public class OrderKey : IComparable<OrderKey>, IEquatable<OrderKey>
 }
 ```
 
-Ниже приведен пример реализации IStateSerializer\<OrderKey >.
+Ниже приводится пример реализации\<IStateSerializer OrderKey>.
 Обратите внимание, что перегрузки Read и Write, которые принимают базовое значение, вызывают соответствующую перегрузку для прямой совместимости.
 
 ```csharp
@@ -138,10 +138,10 @@ public class OrderKeySerializer : IStateSerializer<OrderKey>
 Таким образом, каждая версия считает только то, что сможет, и перепрыгнет через оставшуюся часть потока.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-  * [Влияние сериализации данных на обновление приложений](service-fabric-application-upgrade-data-serialization.md)
+  * [Сериализация и обновление](service-fabric-application-upgrade-data-serialization.md)
   * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
   * [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
-  * [Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
+  * [Обновление приложения с помощью Powershell](service-fabric-application-upgrade-tutorial-powershell.md) проведке приложения с помощью PowerShell.
   * Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).
-  * [Дополнительные разделы](service-fabric-application-upgrade-advanced.md)содержат сведения о работе с расширенными функциями при обновлении приложения.
-  * Сведения об устранении распространенных проблем при обновлении приложений см. в статье [Устранение неполадок при обновлениях приложений](service-fabric-application-upgrade-troubleshooting.md).
+  * Узнайте, как использовать расширенные функциональные возможности при обновлении приложения, ссылаясь на [Расширенные темы.](service-fabric-application-upgrade-advanced.md)
+  * Исправить общие проблемы в обновлениях приложений, ссылаясь на шаги в [обновление приложений для устранения проблем.](service-fabric-application-upgrade-troubleshooting.md)

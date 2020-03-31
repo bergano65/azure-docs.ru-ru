@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: juliako
-ms.openlocfilehash: 4d92bd3709c5f56db0095ca1be2caa0e9c78b42f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: MT
+ms.openlocfilehash: e475c1bc1878c6b5a0efbbe41f2a3a0fe86bcff2
+ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80336816"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80389381"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Встраивайте виджеты видеоиндекса в ваши приложения
 
@@ -33,7 +33,7 @@ ms.locfileid: "80336816"
 |---|---|---|
 |`widgets` | Строки, разделенные запятыми. | Позволяет управлять информацией, которую вы хотите сделать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords` отображает только пользователи и ключевые слова uI идеи.<br/>Доступные варианты: люди, анимированныеПерсонажи, ключевые слова, этикетки, настроения, эмоции, темы, ключевые кадры, транскрипт, ocr, динамики, сцены и namedEntities.|
 |`controls`|Строки, разделенные запятыми.|Позволяет управлять элементами управления, которые вы хотите сделать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?controls=search,download` отображает только опцию поиска и кнопку загрузки.<br/>Доступные варианты: поиск, загрузка, пресеты, язык.|
-|`language`|Код короткого языка (имя языка)|Контролирует язык проницательности.<br/>Например, `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es`. <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
+|`language`|Код короткого языка (имя языка)|Контролирует язык проницательности.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es` <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
 |`locale` | Короткий языковой код | Контролирует язык uI. Значение по умолчанию — `en`. <br/>Например, `locale=de`.|
 |`tab` | Выбранная вкладка по умолчанию | Контролирует вкладку **Insights,** отображаемую по умолчанию. <br/>Пример: `tab=timeline` отображаются идеи с выбранной вкладкой **Хронология.**|
 
@@ -48,7 +48,7 @@ ms.locfileid: "80336816"
 |`showCaptions` | Значение булеана | Позволяет проигрывателю загружаться с уже включенными субтитрами.<br/> Например, `showCaptions=true`. |
 |`type`| | Активирует кожу аудиоплеера (видео часть удаляется).<br/> Например, `type=audio`. |
 |`autoplay` | Значение булеана | Указывает, должен ли игрок начать воспроизведение видео при загрузке. Значение по умолчанию — `true`.<br/> Например, `autoplay=false`. |
-|`language` | Языковой код | Контролирует язык игрока. Значение по умолчанию — `en-US`.<br/>Например, `language=de-DE`.|
+|`language`/`locale` | Языковой код | Контролирует язык игрока. Значение по умолчанию — `en-US`.<br/>Например, `language=de-DE`.|
 
 ### <a name="editor-widget"></a>Виджет редактора
 
@@ -233,14 +233,14 @@ ms.locfileid: "80336816"
 
 Вы можете выбрать типы идей, которые вы хотите. Для этого укажите их в качестве значения для следующего параметра URL, который добавляется к встраиваемому коду, который вы получаете (из API или из веб-приложения): `&widgets=<list of wanted widgets>`
 
-Возможные значения: **люди**, **ключевые слова**, **чувства**, **стенограмма**, и **поиск**.
+Возможные `people`значения: , `animatedCharacters` `keywords`, `labels` `sentiments`, `emotions` `topics`, `keyframes` `transcript`, `ocr` `speakers`, `scenes`, `namedEntities`, , , и .
 
-Например, если вы хотите вставить виджет, содержащий только людей и сведения о поиске, URL-адрес iframe будет выглядеть следующим образом:
+Например, если вы хотите вставить виджет, содержащий только сведения о людях и ключевых словах, URL-адрес iframe будет выглядеть следующим образом:
 
-`https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search`
+`https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords`
 
-Заголовок окна iframe можно настроить, указав `&title=<YourTitle>` в URL-адресе для iframe. (Он настраивает \<название HTML> значение).
-
+Заголовок окна iframe можно настроить, указав `&title=<YourTitle>` в URL-адресе для iframe. (Он настраивает <title> значение HTML).
+   
 Например, если для окна iframe нужно указать заголовок MyInsights, URL-адрес будет выглядеть так:
 
 `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?title=MyInsights`
@@ -257,15 +257,14 @@ ms.locfileid: "80336816"
 
 По умолчанию проигрыватель Video Indexer имеет автоматически генерируемые закрытые подписи, основанные на стенограмме видео. Стенограмма извлекается из видео с исходным языком, который был выбран при загрузке видео.
 
-Если вы хотите вставить другой язык, `&captions=< Language | "all" | "false" >` вы можете добавить в встраиваемый URL-адрес игрока. Если вам нужны подписи на всех `all`доступных языках, используйте значение. Чтобы субтитры отображались по умолчанию, передайте `&showCaptions=true`.
+Если вы хотите вставить другой язык, вы можете добавить &подписи< языкового кода > в встраиваемый URL-адрес игрока. Если вы хотите, чтобы подписи отображались по умолчанию, вы можете пройти &showCaptions'true.
 
 URL-адрес внедрения будет выглядеть так:
 
-`https://www.videoindexer.ai/embed/player/<accountId>/<videoId>/?captions=italian`
-
-Если вы хотите отключить подписи, вы `captions` можете передать `false`значение параметра как.
+`https://www.videoindexer.ai/embed/player/<accountId>/<videoId>/?captions=en-us`
 
 #### <a name="autoplay"></a>Автозапуск
+
 По умолчанию игрок начнет воспроизведение видео. Вы можете отказаться `&autoplay=false` от переадресаний в предыдущий встраиваемый URL- адрес.
 
 ## <a name="code-samples"></a>Примеры кода

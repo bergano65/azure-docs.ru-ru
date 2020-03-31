@@ -270,9 +270,6 @@
     - name: Кэш
       tocHref: /azure/cache/
       topicHref: /azure/cache/
-    - name: CDN
-      tocHref: /azure/cdn/
-      topicHref: /azure/cdn/
     - name: Облачные службы
       tocHref: /azure/cloud-services/
       topicHref: /azure/cloud-services/
@@ -426,9 +423,6 @@
         - name: Kubernetes
           tocHref: /azure/container-service/kubernetes/
           topicHref: /azure/container-service/kubernetes/
-    - name: Бастион
-      tocHref: /azure/bastion/
-      topicHref: /azure/bastion/
     - name: Cosmos DB
       tocHref: /azure/cosmos-db/
       topicHref: /azure/cosmos-db/
@@ -460,27 +454,6 @@
     - name: DevTest Labs
       tocHref: /azure/devtest-lab/
       topicHref: /azure/devtest-lab/
-    - name: DNS
-      tocHref: /azure/dns/
-      topicHref: /azure/dns/
-    - name: Сетка событий Azure
-      tocHref: /azure/event-grid/
-      topicHref: /azure/event-grid
-    - name: Центры событий
-      tocHref: /azure/event-hubs/
-      topicHref: /azure/event-hubs/
-    - name: ExpressRoute
-      tocHref: /azure/expressroute/
-      topicHref: /azure/expressroute/
-    - name: Брандмауэр
-      tocHref: /azure/firewall/
-      topicHref: /azure/firewall/
-    - name: Диспетчер брандмауэра
-      tocHref: /azure/firewall-manager
-      topicHref: /azure/firewall-manager
-    - name: Front Door Service
-      tocHref: /azure/frontdoor/
-      topicHref: /azure/frontdoor/
     - name: FXT Edge Filer
       tocHref: /azure/fxt-edge-filer/
       topicHref: /azure/fxt-edge-filer/
@@ -556,9 +529,6 @@
     - name: Службы лабораторий
       tocHref: /azure/lab-services/
       topicHref: /azure/lab-services/
-    - name: Load Balancer
-      tocHref: /azure/load-balancer/
-      topicHref: /azure/load-balancer/
     - name: Logic Apps
       tocHref: /azure/logic-apps/
       topicHref: /azure/logic-apps/
@@ -597,6 +567,22 @@
         - name: Индексатор видео
           tocHref: /azure/media-services/video-indexer/
           topicHref: /azure/media-services/video-indexer/
+    - name: Службы обмена сообщениями
+      tocHref: /azure/messaging-services/
+      topicHref: /azure/messaging-services/
+      items:
+        - name: Сетка событий Azure
+          tocHref: /azure/event-grid/
+          topicHref: /azure/event-grid
+        - name: Центры событий
+          tocHref: /azure/event-hubs/
+          topicHref: /azure/event-hubs/
+        - name: Обмен сообщениями через Служебную шину
+          tocHref: /azure/service-bus-messaging/
+          topicHref: /azure/service-bus-messaging/
+        - name: Ретрансляция Служебной шины
+          tocHref: /azure/service-bus-relay/
+          topicHref: /azure/service-bus-relay/
     - name: Миграция
       tocHref: /azure/migrate/
       topicHref: /azure/migrate/
@@ -616,12 +602,67 @@
     - name: MySQL
       tocHref: /azure/mysql/
       topicHref: /azure/mysql/
-    - name: Наблюдатель за сетями
-      tocHref: /azure/network-watcher/
-      topicHref: /azure/network-watcher/
     - name: Сеть
       tocHref: /azure/networking/
-      topicHref: /azure/networking/networking-overview
+      topicHref: /azure/networking/
+      items:
+        - name: Шлюз приложений
+          tocHref: /azure/application-gateway/
+          topicHref: /azure/application-gateway/
+        - name: Бастион
+          tocHref: /azure/bastion/
+          topicHref: /azure/bastion/
+        - name: CDN
+          tocHref: /azure/cdn/
+          topicHref: /azure/cdn/
+        - name: DNS
+          tocHref: /azure/dns/
+          topicHref: /azure/dns/
+        - name: ExpressRoute
+          tocHref: /azure/expressroute/
+          topicHref: /azure/expressroute/
+        - name: Брандмауэр
+          tocHref: /azure/firewall/
+          topicHref: /azure/firewall/
+        - name: Диспетчер брандмауэра
+          tocHref: /azure/firewall-manager/
+          topicHref: /azure/firewall-manager/
+        - name: Front Door Service
+          tocHref: /azure/frontdoor/
+          topicHref: /azure/frontdoor/
+        - name: Анализатор Интернета
+          tocHref: /azure/internet-analyzer/
+          topicHref: /azure/internet-analyzer/
+        - name: Интернет-пиринг
+          tocHref: /azure/internet-peering/
+          topicHref: /azure/internet-peering/
+        - name: Load Balancer
+          tocHref: /azure/load-balancer/
+          topicHref: /azure/load-balancer/
+        - name: Наблюдатель за сетями
+          tocHref: /azure/network-watcher/
+          topicHref: /azure/network-watcher/
+        - name: Приватный канал
+          tocHref: /azure/private-link/
+          topicHref: /azure/private-link/
+        - name: Служба пиринга
+          tocHref: /azure/peering-service/
+          topicHref: /azure/peering-service/
+        - name: Диспетчер трафика
+          tocHref: /azure/traffic-manager/
+          topicHref: /azure/traffic-manager/
+        - name: Виртуальная сеть
+          tocHref: /azure/virtual-network/
+          topicHref: /azure/virtual-network/
+        - name: Виртуальная глобальная сеть
+          tocHref: /azure/virtual-wan/
+          topicHref: /azure/virtual-wan/
+        - name: VPN-шлюз
+          tocHref: /azure/vpn-gateway/
+          topicHref: /azure/vpn-gateway/
+        - name: Брандмауэр веб-приложения
+          tocHref: /azure/web-application-firewall/
+          topicHref: /azure/web-application-firewall/
     - name: Записные книжки
       tocHref: /azure/notebooks/
       topicHref: /azure/notebooks/azure-notebooks-overview
@@ -683,15 +724,6 @@
     - name: Azure Sentinel
       tocHref: /azure/sentinel/
       topicHref: /azure/sentinel/
-    - name: Служебная шина
-      tocHref: /azure/service-bus/
-      topicHref: /azure/service-bus/
-    - name: Обмен сообщениями через Служебную шину
-      tocHref: /azure/service-bus-messaging/
-      topicHref: /azure/service-bus-messaging/
-    - name: Ретрансляция Служебной шины
-      tocHref: /azure/service-bus-relay/
-      topicHref: /azure/service-bus-relay/
     - name: Service Fabric
       tocHref: /azure/service-fabric/
       topicHref: /azure/service-fabric/
@@ -705,8 +737,8 @@
       tocHref: /azure/site-reliability-engineering/
       topicHref: /azure/site-reliability-engineering/
     - name: Synapse Analytics
-      tocHref: /azure/sql-data-warehouse/
-      topicHref: /azure/sql-data-warehouse/
+      tocHref: /azure/synapse-analytics/
+      topicHref: /azure/synapse-analytics/
     - name: База данных SQL
       tocHref: /azure/sql-database/
       topicHref: /azure/sql-database/
@@ -741,12 +773,6 @@
     - name: Stream Analytics
       tocHref: /azure/stream-analytics/
       topicHref: /azure/stream-analytics/
-    - name: Анализатор Интернета
-      tocHref: /azure/internet-analyzer/
-      topicHref: /azure/internet-analyzer/
-    - name: Диспетчер трафика
-      tocHref: /azure/traffic-manager/
-      topicHref: /azure/traffic-manager/
     - name: Масштабируемые наборы виртуальных машин Microsoft Azure
       tocHref: /azure/virtual-machine-scale-sets/
       topicHref: /azure/virtual-machine-scale-sets/
@@ -787,18 +813,6 @@
             - name: Виртуальная машина SQL
               tocHref: /azure/virtual-machines/windows/sql
               topicHref: /azure/virtual-machines/windows/sql
-    - name: Виртуальная сеть
-      tocHref: /azure/virtual-network/
-      topicHref: /azure/virtual-network/
-    - name: Служба пиринга
-      tocHref: /azure/peering-service/
-      topicHref: /azure/peering-service/
-    - name: VPN-шлюз
-      tocHref: /azure/vpn-gateway/
-      topicHref: /azure/vpn-gateway/
-    - name: Брандмауэр веб-приложения
-      tocHref: /azure/web-application-firewall/
-      topicHref: /azure/web-application-firewall/
     - name: Виртуальный рабочий стол Windows
       tocHref: /azure/virtual-desktop/
       topicHref: /azure/virtual-desktop/

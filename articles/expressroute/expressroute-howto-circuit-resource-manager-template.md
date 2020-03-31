@@ -1,6 +1,6 @@
 ---
-title: Шаблон Azure ExpressRoute. Создание канала ExpressRoute
-description: Создание, инициализация, удаление и Реинициализация канала ExpressRoute.
+title: 'Шаблон Azure ExpressRoute: Создание схемы ExpressRoute'
+description: Создание, предоставление, удаление и дезавуианите схему ExpressRoute.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -9,40 +9,40 @@ ms.date: 11/13/2019
 ms.author: cherylmc
 ms.reviewer: ganesr
 ms.openlocfilehash: 78da84a462566cca1a2800174849159ace8dd6dc
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75981134"
 ---
-# <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
+# <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создайте схему ExpressRoute с помощью шаблона менеджера ресурсов Azure
 
 > [!div class="op_single_selector"]
 > * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Azure CLI](howto-circuit-cli.md)
-> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
-> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
-> * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
+> * [Лазурный CLI](howto-circuit-cli.md)
+> * [Шаблон менеджера ресурсов Azure](expressroute-howto-circuit-resource-manager-template.md)
+> * [Видео - Портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
+> * [PowerShell (классический)](expressroute-howto-circuit-classic.md)
 >
 
-Узнайте, как создать канал ExpressRoute путем развертывания шаблона Azure Resource Manager с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
+Узнайте, как создать схему ExpressRoute, развернув шаблон менеджера ресурсов Azure с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
 * Убедитесь в том, что у вас есть разрешения на создание сетевых ресурсов. Если у вас нет нужных разрешений, обратитесь к администратору учетной записи.
 * Вы можете [просмотреть видео](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit), прежде чем начать, чтобы лучше понять выполняемые действия.
 
-## <a name="create"></a>Создание и подготовка канала ExpressRoute
+## <a name="create-and-provision-an-expressroute-circuit"></a><a name="create"></a>Создание и предоставление канала ExpressRoute
 
-[Шаблоны](https://azure.microsoft.com/resources/templates/) быстрого запуска Azure имеют хорошую коллекцию шаблонов диспетчер ресурсов. Для создания канала ExpressRoute используется один из [существующих шаблонов](https://azure.microsoft.com/resources/templates/101-expressroute-circuit-create/) .
+[Шаблоны Azure quickstart](https://azure.microsoft.com/resources/templates/) имеет хорошую коллекцию шаблонов Resource Manager. Для создания схемы ExpressRoute используется один из [существующих шаблонов.](https://azure.microsoft.com/resources/templates/101-expressroute-circuit-create/)
 
 [!code-json[create-azure-expressroute-circuit](~/quickstart-templates/101-expressroute-circuit-create/azuredeploy.json)]
 
-Чтобы просмотреть дополнительные связанные шаблоны, выберите [здесь](https://azure.microsoft.com/resources/templates/?term=expressroute).
+Чтобы увидеть больше связанных шаблонов, выберите [здесь](https://azure.microsoft.com/resources/templates/?term=expressroute).
 
-Чтобы создать канал ExpressRoute путем развертывания шаблона, выполните следующие действия.
+Для создания схемы ExpressRoute путем развертывания шаблона:
 
 1. Выберите **Попробовать** в следующем блоке кода и следуйте инструкциям, чтобы войти в Azure Cloud Shell.
 
@@ -64,35 +64,35 @@ ms.locfileid: "75981134"
     Write-Host "Press [ENTER] to continue ..."
     ```
 
-   * **Уровень SKU** определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, *Standard* или *Premium*.
-   * **Семейство SKU** определяет тип выставления счетов. Выберите *Metereddata* для тарифного плана с оплатой за трафик или *Unlimiteddata* для безлимитного тарифного плана. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
+   * **Уровень SKU** определяет, является ли схема ExpressRoute [локальной,](expressroute-faqs.md#expressroute-local)стандартной или [премиум-](expressroute-faqs.md#expressroute-premium) Вы можете указать *местные,* *стандартные* или *премиум*.
+   * **Семья SKU** определяет тип выставления счетов. Можно указать *Metereddata* для дозированного плана данных и *Unlimiteddata* для неограниченного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальная* схема только *неограниченная.*
    * **Расположение пиринга** — физическое расположение пиринга с корпорацией Майкрософт.
 
      > [!IMPORTANT]
      > Параметр "Расположение пиринга" определяет [физическое расположение](expressroute-locations.md) пиринга с корпорацией Майкрософт. Оно **не** связано со свойством Location, которое ссылается на географический регион, в котором находится поставщик сетевых ресурсов Azure. Хотя они не связаны, рекомендуется выбрать поставщик сетевых ресурсов, находящийся недалеко от расположения пиринга канала.
 
-    Имя группы ресурсов — это имя пространства имен служебной шины с добавленным **RG** .
+    Имя группы ресурсов — это имя пространства имен службы с придативаемым **rg.**
 
 2. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
 3. Щелкните правой кнопкой в консоли оболочки и выберите **Вставить**.
 
 Создание концентратора событий занимает несколько секунд.
 
-Azure PowerShell используется для развертывания шаблона в этом руководстве. Другие методы развертывания шаблонов см. в следующих статьях:
+Azure PowerShell используется для развертывания шаблона в этом учебнике. Для других методов развертывания шаблонов см.:
 
-* С [помощью портал Azure](../azure-resource-manager/templates/deploy-portal.md).
-* С [помощью Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
-* С [помощью REST API](../azure-resource-manager/templates/deploy-rest.md).
+* [С помощью портала Azure](../azure-resource-manager/templates/deploy-portal.md).
+* [С помощью Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
+* [С помощью REST API](../azure-resource-manager/templates/deploy-rest.md).
 
-## <a name="delete"></a>Отзыв и удаление канала ExpressRoute
+## <a name="deprovisioning-and-deleting-an-expressroute-circuit"></a><a name="delete"></a>отзыве и удалении канала ExpressRoute
 
-Канал ExpressRoute можно удалить, щелкнув значок **Удалить** . Обратите внимание на следующие сведения:
+Вы можете удалить схему ExpressRoute, выбрав значок **удаления.** Обратите внимание на следующие сведения:
 
 * Связь между ExpressRoute и всеми виртуальными сетями необходимо разорвать. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
-* Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
-* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
+* Если поставщик услуг по предоставлению услуг по кольцевым услугам ExpressRoute **предоставляет** или **предоставляет,** вы должны работать с поставщиком услуг, чтобы дезавуировать схему на их стороне. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
+* Если поставщик услуг дезавуировал схему (состояние подготовки поставщика услуг **установлено не предусмотрено),** вы можете удалить схему. Это приостанавливает выставление счетов для канала.
 
-Вы можете удалить канал ExpressRoute, выполнив следующую команду PowerShell:
+Вы можете удалить схему ExpressRoute, запустив следующую команду PowerShell:
 
 ```azurepowershell-interactive
 $circuitName = Read-Host -Prompt "Enter the same circuit name that you used earlier"

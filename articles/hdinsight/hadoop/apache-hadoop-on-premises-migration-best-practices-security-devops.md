@@ -1,5 +1,5 @@
 ---
-title: 'Безопасность: Миграция локальных Apache Hadoop в Azure HDInsight'
+title: 'Безопасность: Мигрируйте на месте Apache Hadoop в Azure HDInsight'
 description: Рекомендации по обеспечению безопасности и операциям DevOps в контексте миграции локальных кластеров Hadoop в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
 ms.openlocfilehash: 4ceefcbbbb53e3ae13f8ced930ae8417fb00965f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75974405"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
@@ -42,23 +42,23 @@ ms.locfileid: "75974405"
 
 - Разверните кластер HDInsight ESP, настроив следующие параметры:
 
-    |Параметр |Description |
+    |Параметр |Описание |
     |---|---|
     |Доменное имя|доменное имя, связанное с Azure AD DS.|
-    |Имя пользователя домена|Учетная запись службы в домене Azure AD DS, управляемом контроллером домена, созданном в предыдущем разделе, например: `hdiadmin@contoso.onmicrosoft.com`. Этот пользователь домена станет администратором этого кластера HDInsight.|
-    |Пароль домена|пароль учетной записи службы.|
-    |Подразделение|Различающееся имя подразделения, которое будет использоваться в кластере HDInsight, например: `OU=HDInsightOU,DC=contoso,DC=onmicrosoft,DC=com`. Если это подразделение не существует, кластер HDInsight пытается создать подразделение с использованием привилегий учетной записи службы.|
-    |URL-АДРЕС LDAPS|Например, `ldaps://contoso.onmicrosoft.com:636`.|
-    |Доступ к группе пользователей|Группы безопасности, чьи пользователи вы хотите синхронизировать с кластером, например: `HiveUsers`. Чтобы указать несколько групп пользователей, разделяйте их точкой с запятой (;). Группы должны существовать в каталоге перед созданием кластера ESP.|
+    |Имя пользователя домена|учетная запись службы в управляемом домене Azure AD DS в контроллере домена, созданная в предыдущем разделе, например `hdiadmin@contoso.onmicrosoft.com`. Этот пользователь домена станет администратором этого кластера HDInsight.|
+    |Домен пароль|пароль учетной записи службы.|
+    |Подразделение|уникальное имя подразделения, которое необходимо использовать с кластером HDInsight, например `OU=HDInsightOU,DC=contoso,DC=onmicrosoft,DC=com`. Если этого OU не существует, кластер HDInsight пытается создать OU, используя привилегии учетной записи службы.|
+    |URL-адрес LDAPS|например, `ldaps://contoso.onmicrosoft.com:636`.|
+    |Доступ к группе пользователей|группы безопасности, пользователей которых нужно синхронизировать с кластером, например `HiveUsers`. Чтобы указать несколько групп пользователей, разделяйте их точкой с запятой (;). Группа должна существовать в каталоге перед созданием кластера ESP.|
 
 Дополнительные сведения см. в следующих статьях:
 
 - [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](../domain-joined/hdinsight-security-overview.md)
 - [Корпоративный пакет безопасности для HDInsight](../domain-joined/apache-domain-joined-architecture.md)
-- [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](../domain-joined/apache-domain-joined-configure-using-azure-adds.md)
+- [Настройка присоединенных к домену кластеров HDInsight с помощью доменных служб Azure Active Directory](../domain-joined/apache-domain-joined-configure-using-azure-adds.md)
 - [Синхронизация пользователей Azure Active Directory с кластером HDInsight](../hdinsight-sync-aad-users-to-cluster.md)
 - [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](../domain-joined/apache-domain-joined-run-hive.md)
-- [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](../domain-joined/hdinsight-use-oozie-domain-joined-clusters.md)
+- [Запуск Apache Oozie в присоединенных к домену кластерах HDInsight Hadoop](../domain-joined/hdinsight-use-oozie-domain-joined-clusters.md)
 
 ## <a name="implement-end-to-end-enterprise-security"></a>Реализация комплексной безопасности предприятия
 
@@ -79,14 +79,14 @@ ms.locfileid: "75974405"
 
 **Шифрование**
     - Прозрачное шифрование на стороне сервера с использованием ключей, управляемых корпорацией Майкрософт, или ключей, управляемых клиентом.
-    - При транзитном шифровании с помощью шифрования на стороне клиента, HTTPS и TLS.
+    - В шифровании Transit с использованием шифрования Client-Side, https и TLS.
 
 Дополнительные сведения см. в следующих статьях:
 
 - [Что такое виртуальная сеть Azure?](../../virtual-network/virtual-networks-overview.md)
 - [Группы безопасности](../../virtual-network/security-overview.md)
-- [Пиринговая связь между виртуальными сетями Azure](../../virtual-network/virtual-network-peering-overview.md).
-- [Руководство по безопасности службы хранилища Azure](../../storage/blobs/security-recommendations.md)
+- [Пиринговая связь между виртуальными сетями Azure](../../virtual-network/virtual-network-peering-overview.md)
+- [Руководство по безопасности хранения данных Azure](../../storage/blobs/security-recommendations.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../../storage/common/storage-service-encryption.md)
 
 ## <a name="use-monitoring--alerting"></a>Использование мониторинга и оповещений
@@ -104,17 +104,17 @@ ms.locfileid: "75974405"
 1. Измените задания, приложения или рабочие нагрузки соответствующим образом.
 1. Создайте резервную копию всех временных данных, хранящихся локально на узлах кластера.
 1. Удалите существующий кластер.
-1. Создайте кластер последней версии HDInsight в той же подсети виртуальной сети, используя те же данные и хранилище метаданных по умолчанию, что и в предыдущем кластере.
+1. Создайте кластер последней версии HDInsight в той же виртуальной сетевой подсети, используя те же данные по умолчанию и мета-магазин, что и предыдущий кластер.
 1. Импортируйте все временные данные из резервной копии.
 1. Запустите задания и продолжите обработку с помощью нового кластера.
 
-Дополнительные сведения см. в статье [Обновление кластера HDInsight до новой версии](../hdinsight-upgrade-cluster.md).
+Для получения дополнительной информации смотрите статью: [Обновление кластера HDInsight к новой версии](../hdinsight-upgrade-cluster.md).
 
 ## <a name="patch-cluster-operating-systems"></a>Исправление операционных систем кластера
 
 Являясь управляемой службой Hadoop, HDInsight отвечает за обновление путем частичной замены ОС виртуальных машин, используемых в кластерах HDInsight.
 
-Дополнительные сведения см. в статье [исправление ОС для HDInsight](../hdinsight-os-patching.md).
+Для получения дополнительной информации, [см.](../hdinsight-os-patching.md)
 
 ## <a name="post-migration"></a>Действия после миграции
 

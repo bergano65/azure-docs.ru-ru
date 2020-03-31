@@ -7,7 +7,7 @@
     - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
-- name: Краткие руководства по REST API
+- name: Краткие руководства
   expanded: true
   items:
     - name: REST API

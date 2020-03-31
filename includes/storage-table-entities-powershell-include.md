@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/27/2019
 ms.author: tamram
 ms.openlocfilehash: 9a60c624b181a1efd2f6deebd349daa82214a8a4
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67184962"
 ---
 <!--created by Robin Shahan to go in the articles for table storage w/powershell.
@@ -18,16 +18,16 @@ ms.locfileid: "67184962"
 
 Теперь, когда имеется таблица, рассмотрим управление сущностями или строками в таблице. 
 
-Сущности могут иметь до 255 свойств, включая три системных свойства: **PartitionKey**, **RowKey**, и **Timestamp**. Вы отвечаете за вставку и обновление значений **PartitionKey** и **RowKey**. Сервер управляет значением **Timestamp**, которое не может быть изменено. Вместе **PartitionKey** и **RowKey** однозначно идентифицируют каждую сущность в пределах таблицы.
+Сущности могут иметь до 255 свойств, включая три системных свойства: **PartitionKey,** **RowKey**и **Timestamp.** Вы отвечаете за вставку и обновление значений **PartitionKey** и **RowKey.** Сервер управляет значением **Timestamp,** которое не может быть изменено. Вместе **PartitionKey** и **RowKey** однозначно идентифицируют каждую сущность в пределах таблицы.
 
-* **PartitionKey.** Определяет раздел, в которой хранится сущность.
-* **RowKey**: Уникально определяет сущность в секции.
+* **PartitionKey**— определяет раздел, в котором хранится сущность.
+* **RowKey**— уникально определяет сущность в разделе.
 
 Можно определить до 252 свойств для сущности. 
 
 ### <a name="add-table-entities"></a>Добавление сущностей таблицы
 
-Добавление сущностей в таблицу, используя **AzTableRow добавить**. В этих примерах используются ключи секций со значениями `partition1` и `partition2`, и ключей строк, равным штатов. Свойства в каждой сущности, `username` и `userid`. 
+Добавление сущностей в таблицу с помощью **Add-AzTableRow**. В этих примерах используются `partition1` клавиши раздела с значениями и `partition2`ключами строки, равными аббревиациям состояния. Свойства в каждой `username` `userid`сущности есть и . 
 
 ```powershell
 $partitionKey1 = "partition1"
@@ -57,10 +57,10 @@ Add-AzTableRow `
 
 ### <a name="query-the-table-entities"></a>Запрос сущностей таблицы
 
-Можно запрашивать сущности в таблицу с помощью **Get AzTableRow** команды.
+Вы можете заставить объекты в таблице с помощью команды **Get-AzTableRow.**
 
 > [!NOTE]
-> Командлеты **Get-AzureStorageTableRowAll**, **Get-AzureStorageTableRowByPartitionKey**, **Get-AzureStorageTableRowByColumnName**, и  **Get-AzureStorageTableRowByCustomFilter** устарели и будут удалены в будущей версии обновления.
+> Cmdlets **Get-AzureStorageTableRowAll**, **Get-AzureStorageTableTableByByBy, Get-AzureStoragePartitionKey,** **Get-AzureStorageTableByColumnName**и **Get-AzureStorageTableRowByCustomFilter** удаляются и будут удалены в будущем обновлении версии.
 
 #### <a name="retrieve-all-entities"></a>Получение всех сущностей
 
@@ -75,7 +75,7 @@ Get-AzTableRow -table $cloudTable | ft
 | 1 | Chris | partition1 | CA |
 | 3 | Christine | partition1 | WA |
 | 2 | Jessie | partition2 | NM |
-| 4\. | Steven | partition2 | TX |
+| 4 | Steven | partition2 | TX |
 
 #### <a name="retrieve-entities-for-a-specific-partition"></a>Получение сущностей для определенного раздела
 
@@ -101,7 +101,7 @@ Get-AzTableRow -table $cloudTable `
 
 Этот запрос получает одну запись.
 
-|поле|value|
+|поле|значение|
 |----|----|
 | userid | 1 |
 | username | Chris |
@@ -118,7 +118,7 @@ Get-AzTableRow `
 
 Этот запрос получает одну запись.
 
-|поле|value|
+|поле|значение|
 |----|----|
 | userid | 1 |
 | username | Chris |
@@ -127,7 +127,7 @@ Get-AzTableRow `
 
 ### <a name="updating-entities"></a>Обновление сущностей 
 
-Для обновления сущностей нужно выполнить три шага. Сначала получите сущность, которую необходимо изменить. Затем внесите изменения В-третьих, зафиксируйте изменения с помощью **AzTableRow обновления**.
+Для обновления сущностей нужно выполнить три шага. Сначала получите сущность, которую необходимо изменить. Затем внесите изменения В-третьих, совершить изменение с помощью **Update-AzTableRow**.
 
 Измените сущность с именем пользователя = "Jessie" на = "Jessie2". В этом примере также показан другой способ создания пользовательского фильтра с помощью типов .NET.
 
@@ -153,7 +153,7 @@ Get-AzTableRow -table $cloudTable `
 
 В результатах показана запись Jessie2.
 
-|поле|value|
+|поле|значение|
 |----|----|
 | userid | 2 |
 | username | Jessie2 |
@@ -166,7 +166,7 @@ Get-AzTableRow -table $cloudTable `
 
 #### <a name="deleting-one-entity"></a>Удаление одной сущности
 
-Для удаления одной сущности, получите ссылку на сущность и передайте ее в **Remove-AzTableRow**.
+Чтобы удалить одну сущность, получите ссылку на эту сущность и смаять его в **Remove-AzTableRow**.
 
 ```powershell
 # Set filter.

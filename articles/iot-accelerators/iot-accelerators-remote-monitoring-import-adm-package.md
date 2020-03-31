@@ -1,5 +1,5 @@
 ---
-title: Решение для удаленного мониторинга импортировать пакет — Azure | Документация Майкрософт
+title: Пакет импорта решений дистанционного мониторинга - Azure Документы Майкрософт
 description: В этой статье описывается, как импортировать пакет автоматического управления устройствами в акселератор решения для удаленного мониторинга
 author: dominicbetts
 manager: philmea
@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 11/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: 8100914e9a1d1489cb80de55a689e17f6d28a941
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61443451"
 ---
 # <a name="import-an-automatic-device-management-package-into-your-remote-monitoring-solution-accelerator"></a>Импорт пакета автоматического управления устройствами в акселератор решения для удаленного мониторинга
@@ -30,14 +30,14 @@ ms.locfileid: "61443451"
 
 1. На портале Azure перейдите в центр Интернета вещей, используемый для разработки и тестирования устройств Интернета вещей. Щелкните **Конфигурация устройства Интернета вещей**.
 
-    [![Конфигурация устройства Интернета вещей](./media/iot-accelerators-remote-monitoring-import-adm-package/deviceconfiguration-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/deviceconfiguration-expanded.png#lightbox)
+    [![Конфигурация устройства IoT](./media/iot-accelerators-remote-monitoring-import-adm-package/deviceconfiguration-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/deviceconfiguration-expanded.png#lightbox)
 
 1. Щелкните конфигурацию, которую вы хотите использовать. Отобразится страница **Сведения о конфигурации устройства**:
 
-    [![Сведения о конфигурации устройства Интернета вещей](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-expanded.png#lightbox)
+    [![Деталь конфигурации устройства IoT](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-expanded.png#lightbox)
 1. Щелкните **Download configuration file** (Скачать файл конфигурации):
 
-    [![Кнопка скачивания файла конфигурации](./media/iot-accelerators-remote-monitoring-import-adm-package/download-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/download-expanded.png#lightbox)
+    [![Скачать файл конфигурации](./media/iot-accelerators-remote-monitoring-import-adm-package/download-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/download-expanded.png#lightbox)
 
 1. Сохраните JSON-файл как локальный файл с именем **configuration.json**.
 
@@ -47,7 +47,7 @@ ms.locfileid: "61443451"
 
 Выполните следующие действия, чтобы импортировать в решение конфигурацию автоматического управления устройствами в виде пакета.
 
-1. В веб-интерфейсе решения для удаленного мониторинга перейдите на страницу **Пакеты**:  ![Страница пакетов](media/iot-accelerators-remote-monitoring-import-adm-package/packagepage.png)
+1. В веб-интерфейсе решения для удаленного мониторинга перейдите на страницу **Пакеты**: ![Страница пакетов](media/iot-accelerators-remote-monitoring-import-adm-package/packagepage.png)
 
 1. Щелкните **+ New Package** (+ Новый пакет), выберите тип пакета **Конфигурация** и нажмите кнопку **Обзор**, чтобы выбрать файл **configuration.json**, сохраненный в предыдущем разделе:
 

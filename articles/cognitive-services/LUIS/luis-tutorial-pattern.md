@@ -1,5 +1,5 @@
 ---
-title: Руководство. Шаблоны — LUIS
+title: Руководство по Шаблоны — LUIS
 titleSuffix: Azure Cognitive Services
 description: В этом учебнике вы примените шаблоны для улучшения прогнозирования намерений и сущностей, одновременно сокращая число примеров речевых фрагментов. Шаблон предоставляется в виде примера речевого фрагмента, который содержит синтаксис для идентификации сущностей и игнорируемый текст.
 services: cognitive-services
@@ -12,13 +12,13 @@ ms.topic: tutorial
 ms.date: 12/17/2019
 ms.author: diberry
 ms.openlocfilehash: 69894dfc6bcbe9eb56451524c78e82da2745aa52
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75979765"
 ---
-# <a name="tutorial-add-common-pattern-template-utterance-formats-to-improve-predictions"></a>Руководство. Добавление шаблонов высказываний в стандартных форматах для улучшения прогнозирования
+# <a name="tutorial-add-common-pattern-template-utterance-formats-to-improve-predictions"></a>Руководство по Добавление шаблонов высказываний в стандартных форматах для улучшения прогнозирования
 
 В этом учебнике вы примените шаблоны для улучшения прогнозирования намерений и сущностей, что позволяет снизить число примеров речевых фрагментов. Шаблон представляет собой речевой фрагмент, сопоставленный с намерением, который содержит синтаксис для идентификации сущностей и игнорируемый текст.
 
@@ -530,7 +530,7 @@ ms.locfileid: "75979765"
 
 1. Выберите **Сущности** в меню навигации слева.
 
-1. Щелкните **+ Создать**, введите имя `FormName` и выберите тип **Pattern.any**. Нажмите кнопку **Создать**.
+1. Щелкните **+ Создать**, введите имя `FormName` и выберите тип **Pattern.any**. Нажмите кнопку **создания**.
 
 ### <a name="add-a-pattern-that-uses-the-patternany"></a>Добавление шаблона, который использует сущность Pattern.any
 

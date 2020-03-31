@@ -12,15 +12,15 @@ ms.subservice: msi
 ms.devlang: ''
 ms.topic: overview
 ms.custom: mvc
-ms.date: 09/26/2019
+ms.date: 03/25/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47bd3b5da79bdb9c7dca75d521aa39d3652ab1ab
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: 707b03d46615f3acfa0797d1dc0865d53ef75dc0
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78946034"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80282126"
 ---
 # <a name="what-are-managed-identities-for-azure-resources"></a>Что такое управляемые удостоверения для ресурсов Azure?
 
@@ -143,7 +143,7 @@ ms.locfileid: "78946034"
 * [Фабрика данных Azure](../../data-factory/data-factory-service-identity.md).
 
 
-## Службы Azure, в которых поддерживается данная функция.<a name="which-azure-services-support-managed-identity"></a>
+## <a name="what-azure-services-support-the-feature"></a>Службы Azure, в которых поддерживается данная функция.<a name="which-azure-services-support-managed-identity"></a>
 
 Управляемые удостоверения для ресурсов Azure можно использовать для аутентификации служб с поддержкой аутентификации Azure AD. См. дополнительные сведения о [службах, которые поддерживают управляемые удостоверения для ресурсов Azure](services-support-msi.md).
 

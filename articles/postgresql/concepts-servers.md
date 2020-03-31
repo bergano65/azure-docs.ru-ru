@@ -1,23 +1,23 @@
 ---
-title: Серверы — база данных Azure для PostgreSQL — один сервер
-description: В этой статье приводятся рекомендации и рекомендации по настройке базы данных Azure для PostgreSQL-Single Server и управлению ею.
+title: Серверы - База данных Azure для PostgreS-L - Единый сервер
+description: В этой статье приведены соображения и рекомендации по настройке и управлению базой данных Azure для PostgreS-L - Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: d86170a53b4bfbe712bbca12db4d6063214aba21
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74768169"
 ---
 # <a name="azure-database-for-postgresql---single-server"></a>База данных Azure для PostgreSQL — отдельный сервер
-В этой статье приводятся рекомендации и рекомендации по работе с базой данных Azure для PostgreSQL-Single Server.
+В этой статье содержатся соображения и рекомендации по работе с базой данных Azure для PostgreS-L - Single Server.
 
 ## <a name="what-is-an-azure-database-for-postgresql-server"></a>Что такое сервер базы данных Azure для PostgreSQL?
-Сервер в базе данных Azure для PostgreSQL — вариант развертывания с одним сервером — это центральная точка администрирования для нескольких баз данных. Подобная серверная конструкция PostgreSQL может быть вам знакома по работе в локальной среде. В частности, служба PostgreSQL является управляемой, предоставляет гарантии производительности, обеспечивает доступ и функциональность на уровне сервера.
+Сервер в базе данных Azure для опции развертывания PostgreS-L - Single Server является центральным административным пунктом для нескольких баз данных. Подобная серверная конструкция PostgreSQL может быть вам знакома по работе в локальной среде. В частности, служба PostgreSQL является управляемой, предоставляет гарантии производительности, обеспечивает доступ и функциональность на уровне сервера.
 
 Сервер базы данных Azure для PostgreSQL:
 
@@ -44,7 +44,7 @@ ms.locfileid: "74768169"
 | **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу и базам данных, пока не будут указаны компьютеры, которые имеют разрешение. См. статью  [Правила брандмауэра сервера Базы данных Azure для PostgreSQL](concepts-firewall-rules.md). |
 
 ## <a name="managing-your-server"></a>Управление сервером
-Серверами Базы данных Azure для PostgreSQL можно управлять с помощью [портала Azure](https://portal.azure.com) и [Azure CLI](/cli/azure/postgres).
+Вы можете управлять базой данных Azure для серверов PostgreS'L с помощью [портала Azure](https://portal.azure.com) или [Azure CLI.](/cli/azure/postgres)
 
 При создании сервера вы настраиваете учетные данные для вашего администратора. Администратор — это пользователь с самым высоким уровнем привилегий на сервере. Эти привилегии относятся к роли azure_pg_admin. Эта роль не имеет полных прав суперпользователя. 
 
@@ -63,7 +63,7 @@ ms.locfileid: "74768169"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Общие сведения о службе приведены в статье  [Что такое База данных Azure для PostgreSQL](overview.md).
-- Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](concepts-pricing-tiers.md).
+- Для получения обзора службы [см.](overview.md)
+- Для получения информации о конкретных квотах и ограничениях ресурсов на основе **уровня обслуживания** [см.](concepts-pricing-tiers.md)
 - Сведения о подключении к службе см. в статье  [Библиотеки подключений для Базы данных Azure для PostgreSQL](concepts-connection-libraries.md).
 - Просмотр и изменение параметров сервера с помощью [портала Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
