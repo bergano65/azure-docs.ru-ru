@@ -1,6 +1,6 @@
 ---
 title: Скрытие лиц с помощью аналитики мультимедиа Azure | Документация Майкрософт
-description: Azure Media Redactor — это Аналитика мультимедиа Azureный обработчик мультимедиа, который обеспечивает масштабируемую оттенок в облаке. В этой статье показано, как исправить лица с помощью Azure Media Analytics.
+description: Azure Media Redactor — это медиапроцессор Azure Media Analytics, который предлагает масштабируемую редакцию лица в облаке. В этой статье показано, как отредактировать лица с помощью медиааналитики Azure.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -14,15 +14,15 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 6a1b7a76ef1efda51f09ac733b3d434235ff40ef
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74900295"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure 
-## <a name="overview"></a>Краткое описание
-**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](media-services-analytics-overview.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-redactor/).
+## <a name="overview"></a>Обзор
+**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](media-services-analytics-overview.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Для получения дополнительной информации, смотрите [этот](https://azure.microsoft.com/blog/azure-media-redactor/) блог.
 
 Эта статья посвящена **Azure Media Redactor** и способам его использования с пакетом SDK служб мультимедиа для .NET.
 
@@ -34,7 +34,7 @@ ms.locfileid: "74900295"
 ### <a name="combined-mode"></a>Объединенный режим
 В результате вы получаете MP4-файл с автоматическим скрытием, который не нужно править вручную.
 
-| Stage | Имя файла | Заметки |
+| Этап | Имя файла | Примечания |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MOV или MP4 |
 | Входная конфигурация |Конфигурация задания (предустановка) |{'version':'1.0', 'options': {'mode':'combined'}} |
@@ -49,7 +49,7 @@ ms.locfileid: "74900295"
 ### <a name="analyze-mode"></a>Режим анализа
 В режиме **анализа** двухэтапный рабочий процесс принимает входное видео и создает JSON-файл с регистрацией расположения лиц, а также изображения всех обнаруженных лиц в формате JPG.
 
-| Stage | Имя файла | Заметки |
+| Этап | Имя файла | Примечания |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MPV или MP4 |
 | Входная конфигурация |Конфигурация задания (предустановка) |{'version':'1.0', 'options': {'mode':'analyze'}} |
@@ -114,7 +114,7 @@ ms.locfileid: "74900295"
 
 Выходные данные этапа анализа не включают исходное видео. Видео необходимо передать во входной ресурс-контейнер, чтобы задача режима скрытия обработала его, а затем выбрать в качестве первичного файла.
 
-| Stage | Имя файла | Заметки |
+| Этап | Имя файла | Примечания |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MPV или MP4. То же видео, что и на этапе 1. |
 | Входной ресурс-контейнер |foo_annotations.json |Файл аннотации с метаданными, полученными на этапе 1, с необязательными изменениями. |
@@ -145,17 +145,17 @@ ms.locfileid: "74900295"
     {'version':'1.0', 'options': {'Mode': 'Combined', 'BlurType': 'High'}}
 ```
 
-#### <a name="low"></a>Низкая
+#### <a name="low"></a>Низкий
 
-![Низкая](./media/media-services-face-redaction/blur1.png)
+![Низкий](./media/media-services-face-redaction/blur1.png)
  
 #### <a name="med"></a>Средний
 
 ![Средний](./media/media-services-face-redaction/blur2.png)
 
-#### <a name="high"></a>Высокая
+#### <a name="high"></a>Высокий
 
-![Высокая](./media/media-services-face-redaction/blur3.png)
+![Высокий](./media/media-services-face-redaction/blur3.png)
 
 #### <a name="box"></a>Box
 
@@ -191,7 +191,7 @@ ms.locfileid: "74900295"
 
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и укажите в файле app.config сведения о подключении, как описано в статье [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл app.config информацией о подключении, как описано в [разработке Media Services с .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 
@@ -367,7 +367,7 @@ namespace FaceRedaction
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

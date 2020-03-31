@@ -26,6 +26,8 @@
   items:
     - name: Выбор архитектуры развертывания
       href: deployment-architecture.md
+    - name: Устранение неполадок
+      href: troubleshoot.md
 - name: Ресурсы
   items:
     - name: Часто задаваемые вопросы

@@ -9,10 +9,10 @@ ms.date: 01/15/2017
 ms.author: twooley
 ms.subservice: common
 ms.openlocfilehash: 833b8c79fba57b7129092e084381c0671c396496
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74978872"
 ---
 # <a name="using-the-azure-importexport-service-rest-api"></a>Использование REST API службы импорта и экспорта Azure
@@ -21,7 +21,7 @@ ms.locfileid: "74978872"
 
 Общие сведения о службе импорта и экспорта, а также руководство по использованию портала Azure создания заданий импорта и экспорта и управления ими см. в статье об [использовании службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage-import-export-service.md).
 
-## <a name="service-endpoints"></a>Конечные точки службы
+## <a name="service-endpoints"></a>Конечные точки служб
 
 Служба импорта и экспорта Azure представляет собой поставщик ресурсов для Azure Resource Manager. Она предоставляет набор интерфейсов REST API для управления заданиями импорта и экспорта в следующей конечной точке HTTPS:
 
@@ -45,9 +45,9 @@ https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<res
 
 [Отмена и удаление заданий](storage-import-export-cancelling-and-deleting-jobs.md)
 
-[Архивация манифестов дисков](../storage-import-export-backing-up-drive-manifests.md)
+[Резервное копирование привода манифестов](../storage-import-export-backing-up-drive-manifests.md)
 
-[Диагностика и восстановление после ошибок для заданий импорта и экспорта](../storage-import-export-diagnostics-and-error-recovery.md)
+[Диагностика и восстановление ошибок для рабочих мест импорта/экспорта](../storage-import-export-diagnostics-and-error-recovery.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 3fec04a1a45f8b154e27a1e5303e44111f4cb421
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "71211870"
 ---
 # <a name="register-the-current-user-for-push-notifications-by-using-aspnet"></a>Регистрация текущего пользователя для push-уведомлений с помощью ASP.NET
@@ -36,13 +36,13 @@ ms.locfileid: "71211870"
 
 1. В вашем MainStoryboard_iPhone.storyboard добавьте следующие компоненты из библиотеки объектов:
 
-   * **Метка** — "Принудительно отправлять пользователю уведомления из Центров уведомлений".
-   * **Метка** — "InstallationId".
-   * **Метка** — "Пользователь".
-   * **Текстовое поле** — "Пользователь".
-   * **Метка** — "Пароль".
-   * **Текстовое поле** — "Пароль".
-   * **Кнопка** — "Вход".
+   * **Метка**: «Принудительно отправлять пользователю уведомления из центров уведомлений»
+   * **Метка**: «InstallationId»
+   * **Метка**: «Пользователь»
+   * **Текстовое поле**: «Пользователь»
+   * **Метка**: «Пароль»
+   * **Текстовое поле**: «Пароль»
+   * **Кнопка**: «Вход»
 
      На этом этапе раскадровка выглядит следующим образом:
 
@@ -258,4 +258,4 @@ ms.locfileid: "71211870"
 
 <!-- URLs. -->
 [Уведомление пользователей с помощью концентраторов уведомлений]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
-[Приступая к работе с концентраторами уведомлений]: notification-hubs-ios-apple-push-notification-apns-get-started.md
+[Приступая к работе с центрами уведомлений]: notification-hubs-ios-apple-push-notification-apns-get-started.md

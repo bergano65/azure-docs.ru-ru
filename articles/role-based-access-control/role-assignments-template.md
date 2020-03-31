@@ -1,6 +1,6 @@
 ---
-title: Добавление назначений ролей с помощью шаблонов RBAC и Azure Resource Manager
-description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и шаблонов Azure Resource Manager.
+title: Добавление ролевых заданий с шаблонами RBAC и Azure Resource Manager
+description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, основ служб или управляемых идентификаторов с помощью шаблонов управления доступом на основе ролей Azure (RBAC) и Azure Resource Manager.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,23 +14,23 @@ ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 9f817880f938f5d03024e3aacd9b84817a5ac721
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77138299"
 ---
-# <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
+# <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Добавление ролевых заданий с помощью шаблонов Azure RBAC и менеджера ресурсов Azure
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] в дополнение к использованию Azure PowerShell или Azure CLI можно назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается назначение ролей с помощью шаблонов.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]Помимо использования Azure PowerShell или ClI Azure, можно назначить роли с помощью [шаблонов управления ресурсами Azure.](../azure-resource-manager/templates/template-syntax.md) Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается, как назначить роли с помощью шаблонов.
 
-## <a name="get-object-ids"></a>Получение идентификаторов объектов
+## <a name="get-object-ids"></a>Получить идоты объектов
 
-Чтобы назначить роль, необходимо указать идентификатор пользователя, группы или приложения, которым будет назначена роль. Идентификатор имеет формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure, Azure PowerShell или Azure CLI.
+Чтобы назначить роль, необходимо указать идентификатор пользователя, группу или приложение, которое вы хотите назначить. Идентификатор `11111111-1111-1111-1111-111111111111`имеет формат: . Идентификатор можно получить с помощью портала Azure, Azure PowerShell или Azure CLI.
 
 ### <a name="user"></a>Пользователь
 
-Чтобы получить идентификатор пользователя, можно использовать команды [Get-азадусер](/powershell/module/az.resources/get-azaduser) или [AZ AD user показа](/cli/azure/ad/user#az-ad-user-show) .
+Чтобы получить идентификатор пользователя, вы можете использовать команды [Get-AzADUser](/powershell/module/az.resources/get-azaduser) или [az ad-пользователя.](/cli/azure/ad/user#az-ad-user-show)
 
 ```azurepowershell
 $objectid = (Get-AzADUser -DisplayName "{name}").id
@@ -42,7 +42,7 @@ objectid=$(az ad user show --id "{email}" --query objectId --output tsv)
 
 ### <a name="group"></a>Группа
 
-Чтобы получить идентификатор группы, можно воспользоваться командами [Get-азадграуп](/powershell/module/az.resources/get-azadgroup) или [AZ AD Group показывать](/cli/azure/ad/group#az-ad-group-show) команды.
+Чтобы получить идентификатор группы, вы можете использовать команды [Get-AzADGroup](/powershell/module/az.resources/get-azadgroup) или [группы ad.](/cli/azure/ad/group#az-ad-group-show)
 
 ```azurepowershell
 $objectid = (Get-AzADGroup -DisplayName "{name}").id
@@ -54,7 +54,7 @@ objectid=$(az ad group show --group "{name}" --query objectId --output tsv)
 
 ### <a name="application"></a>Приложение
 
-Чтобы получить идентификатор субъекта-службы (удостоверения, используемого приложением), можно использовать команды [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal) или [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list) . Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
+Чтобы получить идентификатор основного обслуживания (идентификация, используемая приложением), можно использовать команды [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) или [az ad sp list.](/cli/azure/ad/sp#az-ad-sp-list) Для основного обслуживания используйте идентификатор объекта, а **не** идентификатор приложения.
 
 ```azurepowershell
 $objectid = (Get-AzADServicePrincipal -DisplayName "{name}").id
@@ -66,18 +66,18 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 
 ## <a name="add-a-role-assignment"></a>Добавление назначения роли
 
-В RBAC для предоставления доступа необходимо добавить назначение роли.
+В RBAC, чтобы предоставить доступ, вы добавляете назначение ролей.
 
 ### <a name="resource-group-without-parameters"></a>Группа ресурсов (без параметров)
 
-В следующем шаблоне показан базовый способ добавления назначения роли. Некоторые значения указываются в шаблоне. Приведенный ниже шаблон демонстрирует:
+Следующий шаблон показывает основной способ добавления назначения ролей. Некоторые значения указаны в шаблоне. Приведенный ниже шаблон демонстрирует:
 
--  Назначение роли [читателя](built-in-roles.md#reader) пользователю, группе или приложению в области группы ресурсов
+-  Как назначить роль [Читателя](built-in-roles.md#reader) пользователю, группе или приложению в области группы ресурсов
 
-Чтобы использовать шаблон, необходимо выполнить следующие действия.
+Чтобы использовать шаблон, необходимо сделать следующее:
 
-- Создание нового JSON-файла и копирование шаблона
-- Замените `<your-principal-id>` ИДЕНТИФИКАТОРом пользователя, группы или приложения, которому назначается роль.
+- Создайте новый файл JSON и скопируйте шаблон
+- Заменить `<your-principal-id>` идентификатор пользователя, группу или приложение для присвоения роли
 
 ```json
 {
@@ -97,7 +97,7 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 }
 ```
 
-Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create) для запуска развертывания в группе ресурсов с именем ексамплеграуп.
+Вот [пример, New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [развертывание группы аз создают](/cli/azure/group/deployment#az-group-deployment-create) команды для начала развертывания в группе ресурсов под названием ExampleGroup.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json
@@ -107,21 +107,21 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac
 az group deployment create --resource-group ExampleGroup --template-file rbac-test.json
 ```
 
-Ниже приведен пример назначения роли читателя пользователю для группы ресурсов после развертывания шаблона.
+Ниже приводится пример назначения роли Reader пользователю для группы ресурсов после развертывания шаблона.
 
 ![Назначение ролей в области группы ресурсов](./media/role-assignments-template/role-assignment-template.png)
 
 ### <a name="resource-group-or-subscription"></a>Группа ресурсов или подписка
 
-Предыдущий шаблон не очень гибок. В следующем шаблоне используются параметры, и их можно использовать в разных областях. Приведенный ниже шаблон демонстрирует:
+Предыдущий шаблон не очень гибок. Следующий шаблон использует параметры и может использоваться в различных областях. Приведенный ниже шаблон демонстрирует:
 
-- Назначение роли пользователю, группе или приложению в области группы ресурсов или подписки
+- Как назначить роль пользователю, группе или приложению в группе ресурсов или области подписки
 - как задать роли владельца, участника или читателя в качестве параметра.
 
 Чтобы использовать шаблон, необходимо указать следующие входные данные:
 
-- Идентификатор пользователя, группы или приложения, которым назначается роль
-- Уникальный идентификатор, который будет использоваться для назначения роли, или можно использовать идентификатор по умолчанию
+- Идентификатор пользователя, группы или приложения для присвоения роли
+- Уникальный идентификатор, который будет использоваться для назначения ролей, или вы можете использовать идентификатор по умолчанию
 
 ```json
 {
@@ -173,9 +173,9 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 ```
 
 > [!NOTE]
-> Этот шаблон не идемпотентными, если в качестве параметра для каждого развертывания шаблона не указано одно и то же `roleNameGuid` значение. Если `roleNameGuid` не указано, по умолчанию создается новый идентификатор GUID для каждого развертывания, и последующие развертывания завершатся ошибкой `Conflict: RoleAssignmentExists`.
+> Этот шаблон не является идемпотентным, если одно и то же `roleNameGuid` значение не предусмотрено в качестве параметра для каждого развертывания шаблона. Если `roleNameGuid` нет, по умолчанию новый GUID генерируется на каждом развертывании и последующие развертывания сбой с ошибкой. `Conflict: RoleAssignmentExists`
 
-Область назначения роли определяется на основе уровня развертывания. Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create) для запуска развертывания в области группы ресурсов.
+Сфера назначения ролей определяется с уровня развертывания. Вот пример, [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [развертывание группы аз создают](/cli/azure/group/deployment#az-group-deployment-create) команды для начала развертывания в области группы ресурсов.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
@@ -185,7 +185,7 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac
 az group deployment create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
-Ниже приведены примеры команд [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment) и [AZ Deployment Create](/cli/azure/deployment#az-deployment-create) , чтобы запустить развертывание в области действия подписки и указать расположение.
+Вот [пример: New-AzDeployment](/powershell/module/az.resources/new-azdeployment) и [развертывание az создают](/cli/azure/deployment#az-deployment-create) команды для начала развертывания в области подписки и указано местоположение.
 
 ```azurepowershell
 New-AzDeployment -Location centralus -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
@@ -197,7 +197,7 @@ az deployment create --location centralus --template-file rbac-test.json --param
 
 ### <a name="resource"></a>Ресурс
 
-Если необходимо добавить назначение роли на уровне ресурса, то формат назначения роли отличается. Укажите пространство имен поставщика ресурсов и тип ресурса для назначения роли. Вы также включаете имя ресурса в имя назначения роли.
+Если вам нужно добавить назначение ролей на уровне ресурса, формат назначения роли отличается. Вы предоставляете пространство имен поставщика ресурсов и тип ресурса ресурса для присвоения роли. Вы также включаете имя ресурса в имя назначения роли.
 
 Для типа и имени назначения роли используйте следующий формат:
 
@@ -209,12 +209,12 @@ az deployment create --location centralus --template-file rbac-test.json --param
 Приведенный ниже шаблон демонстрирует:
 
 - Как создать учетную запись хранения
-- Назначение роли пользователю, группе или приложению в области учетной записи хранения
+- Как назначить роль пользователю, группе или приложению в области учетной записи хранилища
 - как задать роли владельца, участника или читателя в качестве параметра.
 
 Чтобы использовать шаблон, необходимо указать следующие входные данные:
 
-- Идентификатор пользователя, группы или приложения, которым назначается роль
+- Идентификатор пользователя, группы или приложения для присвоения роли
 
 ```json
 {
@@ -277,7 +277,7 @@ az deployment create --location centralus --template-file rbac-test.json --param
 }
 ```
 
-Чтобы развернуть предыдущий шаблон, используйте команды группы ресурсов. Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create) для запуска развертывания в области действия ресурса.
+Для развертывания предыдущего шаблона используются команды группы ресурсов. Вот [пример, New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [развертывание группы аз создают](/cli/azure/group/deployment#az-group-deployment-create) команды для запуска развертывания в области ресурсов.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Contributor
@@ -287,23 +287,23 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac
 az group deployment create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Contributor
 ```
 
-Ниже приведен пример назначения роли участника пользователю для учетной записи хранения после развертывания шаблона.
+Ниже приводится пример назначения роли contributor пользователю для учетной записи хранилища после развертывания шаблона.
 
-![Назначение ролей в области действия ресурса](./media/role-assignments-template/role-assignment-template-resource.png)
+![Назначение ролей в области ресурсов](./media/role-assignments-template/role-assignment-template-resource.png)
 
-### <a name="new-service-principal"></a>Новый субъект-служба
+### <a name="new-service-principal"></a>Новый директор службы
 
-Если создать новый субъект-службу и сразу же попытаться назначить роль этому субъекту-службе, в некоторых случаях такое назначение роли может завершиться ошибкой. Например, если создать новое управляемое удостоверение и затем попытаться назначить роль этому субъекту-службе в том же шаблоне Azure Resource Manager, то назначение роли может завершиться ошибкой. Причиной этого сбоя может быть задержка репликации. Субъект-служба создается в одном регионе; Однако назначение роли может происходить в другом регионе, который еще не реплицирует субъект-службу. Для решения этой ситуации следует задать для свойства `principalType` значение `ServicePrincipal` при создании назначения роли.
+Если вы создаете новый директор службы и сразу же попытаетесь назначить роль директору службы, в некоторых случаях это назначение роли может выйти из строя. Например, если вы создаете новое управляемое удостоверение и затем пытаетесь назначить роль директору службы в том же шаблоне управления ресурсами Azure, назначение роли может выйти из строя. Причиной сбоя, скорее всего, является задержка репликации. Директор службы создается в одном регионе; однако назначение ролей может произойти в другом регионе, который еще не реплицировал основной службы. Чтобы устранить этот сценарий, необходимо настроить свойство `principalType` `ServicePrincipal` при создании назначения ролей.
 
 Приведенный ниже шаблон демонстрирует:
 
-- Создание нового субъекта-службы управляемого удостоверения
-- Как указать `principalType`
-- Назначение роли участника этому субъекту-службе в области группы ресурсов
+- Как создать новый директор службы управляемого удостоверения данных
+- Как указать`principalType`
+- Как назначить роль вкладчика руководителю службы в области ресурсной группы
 
 Чтобы использовать шаблон, необходимо указать следующие входные данные:
 
-- Базовое имя управляемого удостоверения или можно использовать строку по умолчанию
+- Базовое имя управляемого иждивества или можно использовать строку по умолчанию
 
 ```json
 {
@@ -345,7 +345,7 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 }
 ```
 
-Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create) для запуска развертывания в области группы ресурсов.
+Вот пример, [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [развертывание группы аз создают](/cli/azure/group/deployment#az-group-deployment-create) команды для начала развертывания в области группы ресурсов.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup2 -TemplateFile rbac-test.json
@@ -355,13 +355,13 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup2 -TemplateFile rba
 az group deployment create --resource-group ExampleGroup2 --template-file rbac-test.json
 ```
 
-Ниже приведен пример назначения роли участника новому управляемому субъекту-службе удостоверений после развертывания шаблона.
+Ниже приводится пример назначения ролей contributor новому руководителю службы управляемой идентификации после развертывания шаблона.
 
-![Назначение ролей для нового субъекта-службы управляемого удостоверения](./media/role-assignments-template/role-assignment-template-msi.png)
+![Назначение ролей для нового директора службы управляемого удостоверения](./media/role-assignments-template/role-assignment-template-msi.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
-- [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
+- [Понимание структуры и синтаксиса шаблонов менеджера ресурсов Azure](../azure-resource-manager/templates/template-syntax.md)
 - [Создание групп ресурсов и ресурсов на уровне подписки](../azure-resource-manager/templates/deploy-to-subscription.md)
-- [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)
+- [Шаблоны Azure кикстарта](https://azure.microsoft.com/resources/templates/?term=rbac)

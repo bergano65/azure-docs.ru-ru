@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
 ms.openlocfilehash: 0827311218202de447e5cf27356e00c4da020e94
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61472997"
 ---
 # <a name="debug-azure-data-lake-analytics-code-locally"></a>Локальная отладка кода Azure Data Lake Analytics
 
 Вы можете использовать Средства Azure Data Lake для Visual Studio для выполнения и отладки кода Azure Data Lake Analytics не только в службе Azure Data Lake Analytics, но и на локальной рабочей станции.
 
-Узнайте, [как выполнить скрипт U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).
+Узнайте, как [запустить скрипт U-S'L на локальной машине.](data-lake-analytics-data-lake-tools-local-run.md)
 
 ## <a name="debug-scripts-and-c-assemblies-locally"></a>Локальная отладка скриптов и сборок C#
 
@@ -51,5 +51,5 @@ ms.locfileid: "61472997"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Пример более сложного запроса см. в статье [Анализ журналов веб-сайта с помощью Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md).
-- Для просмотра сведений о заданиях см. статью [Использование браузера и представления для заданий Azure Data Lake Analytics](data-lake-analytics-data-lake-tools-view-jobs.md).
-- Дополнительные сведения см. в статье [Использование представления выполнения вершин в инструментах Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md).
+- Для просмотра сведений о вакансиях просмотрите [браузер вакансий и просмотр вакансий для заданий Azure Data Lake Analytics.](data-lake-analytics-data-lake-tools-view-jobs.md)
+- Чтобы использовать представление о выполнении вершины, [см.](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md)

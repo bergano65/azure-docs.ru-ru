@@ -1,6 +1,6 @@
 ---
-title: Примеры PowerShell и Graph для группового лицензирования — Azure AD | Документация Майкрософт
-description: Примеры PowerShell и Graph и сценарии для лицензирования на основе групп Azure Active Directory
+title: Примеры PowerShell и Graph для группового лицензирования - Azure AD Документы Майкрософт
+description: PowerShell - Примеры графиков и сценарии лицензирования группы Azure Active Directory
 services: active-directory
 keywords: Лицензирование Azure AD
 documentationcenter: ''
@@ -15,18 +15,18 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5387daffcd3dd231aef5eade1c896db50947b386
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77484865"
 ---
 # <a name="powershell-and-graph-examples-for-group-based-licensing-in-azure-ad"></a>Примеры PowerShell и Graph для группового лицензирования в Azure AD
 
-Все функции лицензирования на основе групп доступны в [портал Azure](https://portal.azure.com), и в настоящее время PowerShell и Microsoft Graph поддерживают только операции чтения. Но некоторые полезные задачи можно выполнить с помощью существующих [командлетов MSOnline PowerShell](https://docs.microsoft.com/powershell/msonline/v1/azureactivedirectory) и Microsoft Graph. В этом документе приведены примеры того, что можно сделать.
+Полная функциональность группового лицензирования доступна через [портал Azure,](https://portal.azure.com)и в настоящее время поддержка PowerShell и Microsoft Graph ограничена только для чтения операций. Но некоторые полезные задачи можно выполнить с помощью существующих [командлетов MSOnline PowerShell](https://docs.microsoft.com/powershell/msonline/v1/azureactivedirectory) и Microsoft Graph. В этом документе приведены примеры того, что можно сделать.
 
 > [!NOTE]
-> Прежде чем приступить к выполнению командлетов, убедитесь, что вы сначала подключаются к своей организации, запустив командлет `Connect-MsolService` .
+> Перед тем, как начать работать cmdlets, убедитесь, `Connect-MsolService`  что вы подключитесь к вашей организации во-первых, запустив cmdlet.
 
 > [!WARNING]
 > Данный код предоставляется в качестве примера для демонстрации. Если вы планируете использовать его в своей среде, вам следует протестировать его с небольшим пакетом пользователей или на отдельном тестовом клиенте. Может потребоваться изменить этот код в соответствии с потребностями вашей среды.
@@ -39,7 +39,7 @@ ms.locfileid: "77484865"
 (Get-MsolGroup -ObjectId 99c4216a-56de-42c4-a4ac-e411cd8c7c41).Licenses
 | Select SkuPartNumber
 ```
-Выходные данные.
+Выходные данные:
 ```
 SkuPartNumber
 -------------
@@ -55,7 +55,7 @@ EMSPREMIUM
 ```
 GET https://graph.microsoft.com/v1.0/groups/99c4216a-56de-42c4-a4ac-e411cd8c7c41?$select=assignedLicenses
 ```
-Выходные данные.
+Выходные данные:
 ```
 HTTP/1.1 200 OK
 {
@@ -92,7 +92,7 @@ Get-MsolGroup -All | Where {$_.Licenses} | Select `
     @{Name="Licenses";Expression={$_.Licenses | Select -ExpandProperty SkuPartNumber}}
 ```
 
-Выходные данные.
+Выходные данные:
 ```
 ObjectId                             DisplayName              Licenses
 --------                             -----------              --------
@@ -146,7 +146,7 @@ Get-MsolGroup -All | Where {$_.Licenses}  | Foreach {
 ```
 
 
-Выходные данные.
+Выходные данные:
 ```
 GroupName         GroupId                              GroupLicenses       TotalUserCount LicensedUserCount LicenseErrorCount
 ---------         -------                              -------------       -------------- ----------------- -----------------
@@ -165,7 +165,7 @@ Access to Offi... 11151866-5419-4d93-9141-0603bbf78b42 STANDARDPACK             
 ```powershell
 Get-MsolGroup -All -HasLicenseErrorsOnly $true
 ```
-Выходные данные.
+Выходные данные:
 ```
 ObjectId                             DisplayName             GroupType Description
 --------                             -----------             --------- -----------
@@ -175,7 +175,7 @@ ObjectId                             DisplayName             GroupType Descripti
 ```
 GET https://graph.microsoft.com/v1.0/groups?$filter=hasMembersWithLicenseErrors+eq+true
 ```
-Выходные данные.
+Выходные данные:
 ```
 HTTP/1.1 200 OK
 {
@@ -219,7 +219,7 @@ Get-MsolGroupMember -All -GroupObjectId $groupId |
            @{Name="LicenseError";Expression={$_.IndirectLicenseErrors | Where {$_.ReferencedObjectId -eq $groupId} | Select -ExpandProperty Error}}
 ```
 
-Выходные данные.
+Выходные данные:
 
 ```powershell
 ObjectId                             DisplayName      License Error
@@ -227,13 +227,13 @@ ObjectId                             DisplayName      License Error
 6d325baf-22b7-46fa-a2fc-a2500613ca15 Catherine Gibson MutuallyExclusiveViolation
 ```
 
-Используйте следующую команду, чтобы получить те же данные из Microsoft Graph:
+Используйте следующие, чтобы получить те же данные из Microsoft Graph:
 
 ```powershell
 GET https://graph.microsoft.com/v1.0/groups/11151866-5419-4d93-9141-0603bbf78b42/membersWithLicenseErrors
 ```
 
-Выходные данные.
+Выходные данные:
 ```powershell
 HTTP/1.1 200 OK
 {
@@ -271,7 +271,7 @@ Get-MsolUser -All | Where {$_.IndirectLicenseErrors } | % {
     }  
 ```
 
-Выходные данные.
+Выходные данные:
 
 ```powershell
 UserName         UserId                               GroupId                              LicenseError
@@ -378,7 +378,7 @@ Get-MsolUser -All | where {$_.isLicensed -eq $true -and $_.Licenses.AccountSKUID
     @{Name="AssignedFromGroup";Expression={(UserHasLicenseAssignedFromGroup $_ $skuId)}}
 ```
 
-Выходные данные.
+Выходные данные:
 
 ```powershell
 ObjectId                             SkuId       AssignedDirectly AssignedFromGroup
@@ -388,13 +388,13 @@ ObjectId                             SkuId       AssignedDirectly AssignedFromGr
 240622ac-b9b8-4d50-94e2-dad19a3bf4b5 contoso:EMS             True              True
 ```
 
-Граф не имеет удобного способа отображения результата, но его можно увидеть из этого API:
+График не имеет простой способ показать результат, но это можно увидеть из этого API:
 
 ```powershell
 GET https://graph.microsoft.com/v1.0/users/e61ff361-5baf-41f0-b2fd-380a6a5e406a?$select=licenseAssignmentStates
 ```
 
-Выходные данные.
+Выходные данные:
 
 ```powershell
 HTTP/1.1 200 OK
@@ -607,7 +607,7 @@ Get-MsolGroupMember -All -GroupObjectId $groupId | Get-MsolUser -ObjectId {$_.Ob
 #END: executing the script
 ```
 
-Выходные данные.
+Выходные данные:
 
 ```powershell
 UserId                               OperationResult
@@ -617,9 +617,9 @@ UserId                               OperationResult
 aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipping.
 ```
 > [!NOTE]
-> Обновите значения переменных `$skuId` и `$groupId` которые предназначены для удаления прямых лицензий в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
+> Пожалуйста, обновите `$skuId` значения `$groupId`  для переменных, которые предназначены для удаления прямых лицензий в рамках тестовой среды перед запуском вышеуказанного скрипта. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. в следующих статьях:
 

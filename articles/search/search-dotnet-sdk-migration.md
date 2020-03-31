@@ -1,5 +1,5 @@
 ---
-title: Обновление до пакета SDK .NET для поиска Azure версии 3
+title: Обновление до Azure Search .NET SDK версия 3
 titleSuffix: Azure Cognitive Search
 description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 3 с предыдущих версий. Узнайте о новых возможностях и необходимых изменениях кода.
 manager: nitinme
@@ -10,13 +10,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: fcad05749892e3a652e110a7e351450bffaca6f2
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72792983"
 ---
-# <a name="upgrade-to-azure-search-net-sdk-version-3"></a>Обновление до пакета SDK .NET для поиска Azure версии 3
+# <a name="upgrade-to-azure-search-net-sdk-version-3"></a>Обновление до Azure Search .NET SDK версия 3
 
 <!--- DETAILS in the word doc
 cosmosdb
@@ -41,7 +41,7 @@ the data source API will no longer return in the response of any REST operation,
 ## <a name="whats-new-in-version-3"></a>Новые возможности в версии 3
 Версия 3 пакета SDK службы поиска Azure для .NET предназначена для последней общедоступной версии интерфейса REST API службы поиска Azure, в частности версии 2016-09-01. Это дает возможность использовать различные новые функции службы поиска Azure из приложений для .NET, включая следующие:
 
-* [Пользовательские анализаторы](https://aka.ms/customanalyzers)
+* [пользовательские анализаторы;](https://aka.ms/customanalyzers)
 * поддержка индексатора [хранилища BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md) и [хранилища таблиц Azure](search-howto-indexing-azure-tables.md);
 * настройка индексатора посредством [сопоставления полей](search-indexer-field-mappings.md)
 * поддержка тегов eTag, обеспечивающих безопасное одновременное обновление определений индекса, индексаторов и источников данных;
@@ -147,6 +147,6 @@ index.Analyzers = new Analyzer[]
 ## <a name="conclusion"></a>Заключение
 Если вам нужны дополнительные сведения об использовании пакета SDK .NET для службы поиска Azure, то ознакомьтесь с [практическим руководством по .NET](search-howto-dotnet-sdk.md).
 
-Будем рады вашим отзывам о пакете SDK. При возникновении проблем вы можете попросить нас получить помощь по [Stack overflow](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
+Будем рады вашим отзывам о пакете SDK. Если вы столкнулись с проблемами, не стесняйтесь обратиться к нам за помощью на [стек переполнения](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
 
 Благодарим вас за использование поиска Azure!

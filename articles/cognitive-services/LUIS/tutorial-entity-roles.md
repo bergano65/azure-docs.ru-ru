@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование контекстно-зависимых данных с ролями — LUIS
+title: Руководство по Использование контекстно-зависимых данных с ролями — LUIS
 titleSuffix: Azure Cognitive Services
 description: Поиск связанных данных на основе контекста. Например, места исходного расположения и назначения при перемещении из одного здания и офиса в другое связаны между собой.
 services: cognitive-services
@@ -12,13 +12,13 @@ ms.topic: tutorial
 ms.date: 12/17/2019
 ms.author: diberry
 ms.openlocfilehash: cd646ef061a0be06a9b1a56b72a4f35d9796aa63
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75447866"
 ---
-# <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство. Извлечение из речевого фрагмента данных, связанных с контекстом
+# <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство по Извлечение из речевого фрагмента данных, связанных с контекстом
 
 Из данного руководства можно узнать, как выполнять поиск связанных частей данных на основе контекста. Например, исходное и конечное расположения для перемещения из одного города в другой. Могут потребоваться фрагменты данных, которые связаны друг с другом.
 

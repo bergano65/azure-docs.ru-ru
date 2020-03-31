@@ -1,6 +1,6 @@
 ---
 title: Изменение размера виртуальной машины в лаборатории Azure DevTest Labs
-description: Узнайте, как изменить размер виртуальной машины в Azure DevTest Labs в зависимости от потребностей ЦП, сети или производительности диска.
+description: Узнайте, как изменить размер виртуальной машины (VM) в Azure DevTest Labs в зависимости от ваших потребностей в производительности процессора, сети или диска.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: bf7c425766a97aaa1d143133f04502a0aa3c36cb
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76756183"
 ---
 # <a name="resize-a-vm-in-a-lab-in-azure-devtest-labs"></a>Изменение размера виртуальной машины в лаборатории Azure DevTest Labs

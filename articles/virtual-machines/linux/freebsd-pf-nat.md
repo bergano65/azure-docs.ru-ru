@@ -1,5 +1,5 @@
 ---
-title: Использование фильтра пакетов FreeBSD для создания брандмауэра в Azure
+title: Используйте фильтр пакета FreeBSD для создания брандмауэра в Azure
 description: Узнайте о том, как развернуть брандмауэр NAT с использованием PF FreeBSD в Azure.
 author: KylieLiang
 ms.service: virtual-machines-linux
@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 02/20/2017
 ms.author: kyliel
 ms.openlocfilehash: 9b78c0d93b57a3e3f4963088d0b93f121f57483c
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78945111"
 ---
 # <a name="how-to-use-freebsds-packet-filter-to-create-a-secure-firewall-in-azure"></a>Создание защищенного брандмауэра в Azure с использованием PF FreeBSD
@@ -34,7 +34,7 @@ PF — это лицензированный (по лицензии BSD) фил�
 az group create --name myResourceGroup --location westus
 ```
 
-Далее разверните шаблон [pf-freebsd-setup](https://github.com/Azure/azure-quickstart-templates/tree/master/pf-freebsd-setup), используя команду [az group deployment create](/cli/azure/group/deployment). Скачайте файл [azuredeploy.parameters.json](https://github.com/Azure/azure-quickstart-templates/blob/master/pf-freebsd-setup/azuredeploy.parameters.json), путь к которому тот же, и определите значения ресурсов, например `adminPassword`, `networkPrefix` и `domainNamePrefix`. 
+Далее разверните шаблон [pf-freebsd-setup](https://github.com/Azure/azure-quickstart-templates/tree/master/pf-freebsd-setup), используя команду [az group deployment create](/cli/azure/group/deployment). Скачать [azuredeploy.parameters.json](https://github.com/Azure/azure-quickstart-templates/blob/master/pf-freebsd-setup/azuredeploy.parameters.json) под тем же путем и `adminPassword`определить `networkPrefix`свои `domainNamePrefix`собственные значения ресурсов, такие как , и . 
 
 ```azurecli
 az group deployment create --resource-group myResourceGroup --name myDeploymentName \

@@ -12,25 +12,25 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.openlocfilehash: ac38adba4ca0d978dd48a546bed1b1faf4fe40fe
-ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79036956"
 ---
 # <a name="what-happened-to-my-mvc-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом MVC в подключенной службе Visual Studio Azure Active Directory?
 
 > [!div class="op_single_selector"]
 > - [Начало работы](vs-active-directory-dotnet-getting-started.md)
-> - [Что произошло?](vs-active-directory-dotnet-what-happened.md)
+> - [Что случилось](vs-active-directory-dotnet-what-happened.md)
 
-В этой статье указаны точные изменения, внесенные в проект ASP.NET MVC при добавлении [подключенной службы Azure Active Directory с помощью Visual Studio](vs-active-directory-add-connected-service.md).
+В этой статье определяются точные изменения, внесенные в проект ASP.NET MVC при добавлении службы подключения [Active Directory Azure с помощью Visual Studio.](vs-active-directory-add-connected-service.md)
 
 Сведения о работе с подключенной службой см. в статье [Начало работы с Azure Active Directory и подключенными службами Visual Studio (проекты WebApi)](vs-active-directory-dotnet-getting-started.md).
 
 ## <a name="added-references"></a>Добавленные ссылки
 
-Влияет на файл проекта (*. NET References) и `packages.config` (ссылки NuGet).
+Влияет на файл проекта (ссылки на `packages.config` проект) и (ссылки NuGet).
 
 | Тип | Справочник |
 | --- | --- |
@@ -143,7 +143,7 @@ ms.locfileid: "79036956"
 
 ### <a name="file-backup-visual-studio-2015"></a>Резервные копии файлов (для Visual Studio 2015)
 
-При добавлении подключенной службы Visual Studio 2015 создает резервные копии всех измененных и удаленных файлов. Все эти файлы сохраняются в папке `Backup/AzureAD`. Visual Studio 2017 и более поздние версии не создают резервные копии.
+При добавлении подключенной службы Visual Studio 2015 создает резервные копии всех измененных и удаленных файлов. Все эти файлы сохраняются в папке `Backup/AzureAD`. Visual Studio 2017 и позже не создает резервных копирования.
 
 - `Startup.cs`
 - `App_Start\IdentityConfig.cs`
@@ -159,9 +159,9 @@ ms.locfileid: "79036956"
 - Создано приложение Azure AD в домене, который вы выбрали при добавлении подключенной службы.
 - В приложение добавлены разрешения на **чтение данных каталога**, если вы выбрали соответствующий параметр.
 
-[Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
+[Узнайте больше об активном каталоге Azure](https://azure.microsoft.com/services/active-directory/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
+- [Сценарии аутентификации для активного каталога Azure](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

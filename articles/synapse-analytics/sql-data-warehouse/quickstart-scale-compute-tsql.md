@@ -1,22 +1,22 @@
 ---
 title: Масштабирование вычислительных ресурсов в Azure Synapse Analytics с использованием T-SQL
 description: Масштабируйте вычислительные ресурсы в Azure Synapse Analytics с использованием T-SQL и SQL Server Management Studio. Горизонтально увеличивайте масштаб вычислительных ресурсов, чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить расходы.
-services: sql-data-warehouse
+services: synapse-analytics
 author: Antvgski
 manager: craigg
-ms.service: sql-data-warehouse
+ms.service: synapse-analytics
 ms.topic: quickstart
-ms.subservice: implement
+ms.subservice: ''
 ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 8e8bd7c7638ca220d7a7d4264fe9edbfd486efd1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ba0bcc61cbfbb16652021045a3b25bbcee72df2c
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79539240"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80350780"
 ---
 # <a name="quickstart-scale-compute-in-azure-synapse-analytics-using-t-sql"></a>Краткое руководство. Масштабирование вычислительных ресурсов в Azure Synapse Analytics с использованием T-SQL
 

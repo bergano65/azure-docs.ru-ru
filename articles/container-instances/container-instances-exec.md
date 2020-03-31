@@ -1,13 +1,13 @@
 ---
-title: Выполнение команд в работающем экземпляре контейнера
+title: Выполнение команд в экземпляре запущенного контейнера
 description: Узнайте, как выполнить команду в контейнере, который выполняется в данный момент в службе "Экземпляры контейнеров"
 ms.topic: article
 ms.date: 03/30/2018
 ms.openlocfilehash: de48e6ac246e2b0751561b4c60bb63d88b599bdf
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79247206"
 ---
 # <a name="execute-a-command-in-a-running-azure-container-instance"></a>Выполнение команды в экземпляре контейнера Azure
@@ -16,7 +16,7 @@ ms.locfileid: "79247206"
 
 ## <a name="run-a-command-with-azure-cli"></a>Выполнение команды с помощью Azure CLI
 
-Выполните команду в работающем контейнере с помощью команды [AZ Container Exec][az-container-exec] в [Azure CLI][azure-cli]:
+Чтобы выполнить команду в запущенном контейнере, введите [az container exec][az-container-exec] в [Azure CLI][azure-cli]:
 
 ```azurecli
 az container exec --resource-group <group-name> --name <container-group-name> --exec-command "<command>"
@@ -82,7 +82,7 @@ az container exec --resource-group myResourceGroup --name mynginx --container-na
 
 ## <a name="restrictions"></a>Ограничения
 
-Сейчас служба "экземпляры контейнеров Azure" поддерживает запуск одного процесса с помощью команды [AZ Container Exec][az-container-exec], и вы не можете передавать аргументы команды. Например, нельзя добавить команды, как в случае с `sh -c "echo FOO && echo BAR"`, или выполнить `echo FOO`.
+Служба "Экземпляры контейнеров Azure" в настоящее время поддерживает запуск одного процесса с помощью команды [az container exec][az-container-exec]. При этом передать аргументы команды невозможно. Например, нельзя добавить команды, как в случае с `sh -c "echo FOO && echo BAR"`, или выполнить `echo FOO`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

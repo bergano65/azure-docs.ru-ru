@@ -1,19 +1,19 @@
 ---
-title: Высокая доступность — база данных Azure для PostgreSQL — один сервер
-description: Эта статья содержит сведения о высокой доступности в базе данных Azure для PostgreSQL-Single Server.
+title: Высокая доступность - База данных Azure для PostgreS-L - Единый сервер
+description: В этой статье содержится информация о высокой доступности в базе данных Azure для PostgreS-L - Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 80229ff78c4570db583f1218d5d2f72da2dec388
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74768577"
 ---
-# <a name="high-availability-concepts-in-azure-database-for-postgresql---single-server"></a>Основные понятия высокого уровня доступности в базе данных Azure для PostgreSQL — один сервер
+# <a name="high-availability-concepts-in-azure-database-for-postgresql---single-server"></a>Концепции высокой доступности в базе данных Azure для PostgreS'L - Единый сервер
 Служба "База данных Azure для службы PostgreSQL" обеспечивает гарантированный высокий уровень доступности. Платные соглашения об уровне обслуживания обеспечивают доступность 99,99% в общедоступной версии. При использовании этой службы время простоя приложений практически отсутствует.
 
 ## <a name="high-availability"></a>Высокий уровень доступности

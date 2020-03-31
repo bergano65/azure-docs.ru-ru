@@ -1,5 +1,5 @@
 ---
-title: Добавить элемент управления в решением для удаленного мониторинга пользовательского интерфейса — Azure | Документация Майкрософт
+title: Добавление панели в пользовательский интерфейс решения для удаленного мониторинга в Azure | Документация Майкрософт
 description: В этой статье показано, как добавить новую панель на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/05/2018
 ms.topic: conceptual
 ms.openlocfilehash: 3b855c3bed75945f44b55463bdacd049b7930aa7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61447069"
 ---
 # <a name="add-a-custom-panel-to-the-dashboard-in-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга
@@ -24,11 +24,11 @@ ms.locfileid: "61447069"
 
 Пример панели в этой статье отображается на имеющейся странице панели мониторинга.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
-- [Git](https://git-scm.com/downloads)
+- [Git](https://git-scm.com/downloads);
 - [Node.js](https://nodejs.org/download/)
 
 ## <a name="before-you-start"></a>Перед началом работы
@@ -90,7 +90,7 @@ import {
 npm start
 ```
 
-Предыдущая команда запускает пользовательский интерфейс локально по адресу [http://localhost:3000/dashboard](http://localhost:3000/dashboard). Чтобы просмотреть новую панель, перейдите на страницу **панели мониторинга**.
+Предыдущая команда выполняет uI [http://localhost:3000/dashboard](http://localhost:3000/dashboard)локально на . Чтобы просмотреть новую панель, перейдите на страницу **панели мониторинга**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

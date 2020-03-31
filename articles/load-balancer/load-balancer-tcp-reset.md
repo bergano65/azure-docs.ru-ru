@@ -1,7 +1,7 @@
 ---
 title: Сброс TCP-подключений Load Balancer при простое в Azure
 titleSuffix: Azure Load Balancer
-description: В этой статье содержатся сведения о Azure Load Balancer с двунаправленными пакетами TCP RST при ожидании простоя.
+description: В этой статье узнайте о балансела Azure Load Balancer с двунаправленными пакетами TCP RST на простое тайм-аут.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2019
 ms.author: allensu
-ms.openlocfilehash: eac7dc3b7188131685ef630c0dc01d248e1d6a6a
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: d3d836ddea8d07a25ad09e6f19d9f17a680decd6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77134787"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80294408"
 ---
-# <a name="load-balancer-with-tcp-reset-on-idle"></a>Load Balancer с сбросом TCP в режиме простоя
+# <a name="load-balancer-with-tcp-reset-on-idle"></a>Балансизатор нагрузки с tCP сбросить на простое
 
 Чтобы создать более предсказуемое поведение приложения для ваших сценариев, вы можете использовать [Load Balancer (цен. категория "Стандартный")](load-balancer-standard-overview.md), включив сброс протокола TCP в неактивный режим для данного правила. По умолчанию, когда истекает время ожидания простоя потока, Load Balancer автоматически прерывает его.  Включение этой функции приведет к тому, что Load Balancer будет отправлять двунаправленные сбросы TCP (пакет RST TCP) по истечении времени простоя.  Это сообщит конечным точкам вашего приложения о том, что время соединения истекло и оно больше не используется.  При необходимости конечные точки могут немедленно установить новое соединение.
 
@@ -64,15 +64,16 @@ ms.locfileid: "77134787"
       ]
 ```
 
-## <a name="regions"></a> Доступность по регионам
+## <a name="region-availability"></a><a name="regions"></a>Доступность региона
 
 Доступно во всех регионах.
 
 ## <a name="limitations"></a>Ограничения
 
-- TCP RST отправлен только во время TCP-соединения в УСТАНОВЛЕНном состоянии.
+- TCP RST отправляется только во время подключения TCP в состоянии ESTABLISHED.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [Load Balancer ценовой категории "Стандартный"](load-balancer-standard-overview.md).
 - Сведения о [правилах для исходящих подключений](load-balancer-outbound-rules-overview.md).
+- [Настройка TCP RST на тайм-аут еод](load-balancer-tcp-idle-timeout.md)

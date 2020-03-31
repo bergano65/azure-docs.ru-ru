@@ -15,10 +15,10 @@ ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: deb337d989a3658e909cefa7a9ab028e37792562
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79243176"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
@@ -39,11 +39,11 @@ ms.locfileid: "79243176"
 
 Варианты подключения:
 
-| Параметр | Description |
+| Параметр | Описание |
 |---|---|
-| **Открытый** | Подключение к SQL Server через Интернет |
-| **Частное** | Подключение к SQL Server в пределах одной виртуальной сети |
-| **Локальное** | Локальное подключение к SQL Server на одной и той же виртуальной машине | 
+| **Общественного** | Подключение к SQL Server через Интернет |
+| **Частная** | Подключение к SQL Server в пределах одной виртуальной сети |
+| **Локальная** | Локальное подключение к SQL Server на одной и той же виртуальной машине | 
 
 В следующих разделах более подробно описаны типы подключения **Общедоступное** и **Частное**.
 
@@ -91,17 +91,17 @@ Server=sqlvmlabel.eastus.cloudapp.azure.com,1500;Integrated Security=false;User 
 Server=mysqlvm;Integrated Security=true
 ```
 
-## <a id="change"></a> Изменение параметров подключения к SQL
+## <a name="change-sql-connectivity-settings"></a><a id="change"></a> Изменение параметров подключения к SQL
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
 Можно изменить параметры подключения для вашей виртуальной машины SQL Server на портале Azure.
 
-1. В портал Azure выберите **виртуальные машины SQL**.
+1. На портале Azure выберите **виртуальные машины s'L.**
 
 2. Выберите виртуальную машину SQL Server.
 
-3. В разделе **Параметры**выберите **Безопасность**.
+3. Под **настройками**выберите **безопасность.**
 
 4. Измените **уровень подключения SQL**, выбрав необходимый параметр. Эту область можно при необходимости использовать, чтобы изменить порт SQL Server или параметры аутентификации SQL.
 
@@ -111,7 +111,7 @@ Server=mysqlvm;Integrated Security=true
 
    ![Уведомление об обновлении виртуальной машины SQL](./media/virtual-machines-windows-sql-connect/sql-vm-updating-notification.png)
 
-## <a id="manualtcp"></a> Включение TCP/IP для выпусков Developer и Express
+## <a name="enable-tcpip-for-developer-and-express-editions"></a><a id="manualtcp"></a>Включить TCP/IP для разработчиков и экспресс-изданий
 
 При изменении параметров подключения к SQL Server Azure не включает протокол TCP/IP для выпусков SQL Server Developer и Express автоматически. Ниже описано, как вручную включить TCP/IP для удаленного подключения по IP-адресу.
 
@@ -129,16 +129,16 @@ Server=mysqlvm;Integrated Security=true
 
 [!INCLUDE [Connect to SQL Server in a VM Resource Manager](../../../../includes/virtual-machines-sql-server-connection-steps-resource-manager.md)]
 
-## <a id="manual"></a> Настройка вручную и устранение неполадок
+## <a name="manual-configuration-and-troubleshooting"></a><a id="manual"></a> Настройка вручную и устранение неполадок
 
 Хотя портал предоставляет возможности для автоматической настройки подключения, полезно знать, как настроить подключение вручную. Знакомство с требованиями также будет полезным при устранении неполадок.
 
 В следующей таблице перечислены требования для подключения к серверу SQL Server, запущенному на виртуальной машине Azure.
 
-| Требование | Description |
+| Требование | Описание |
 |---|---|
-| [Включите режим аутентификации SQL Server](/sql/database-engine/configure-windows/change-server-authentication-mode#use-ssms) | Для удаленного подключения к виртуальной машине требуется аутентификация SQL Server, если только не настроена служба Active Directory в виртуальной сети. |
-| [Создайте имя входа SQL](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) | При использовании аутентификации SQL требуется имя входа SQL с именем пользователя и паролем, у которого также имеются разрешения для целевой базы данных. |
+| [Включить режим аутентификации сервера S'L](/sql/database-engine/configure-windows/change-server-authentication-mode#use-ssms) | Для удаленного подключения к виртуальной машине требуется аутентификация SQL Server, если только не настроена служба Active Directory в виртуальной сети. |
+| [Создание имени для входа SQL](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) | При использовании аутентификации SQL требуется имя входа SQL с именем пользователя и паролем, у которого также имеются разрешения для целевой базы данных. |
 | [Включите протокол TCP/IP](#manualtcp) | SQL Server должен разрешать подключения по протоколу TCP. |
 | [Включите правило брандмауэра для порта SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) | Брандмауэр на виртуальной машине должен разрешать входящий трафик на порту SQL Server (по умолчанию 1433). |
 | [Создайте правило группы безопасности сети для TCP 1433](../../../virtual-network/manage-network-security-group.md#create-a-security-rule) | Необходимо разрешить виртуальной машине получать трафик через порт SQL Server (по умолчанию 1433), если нужно выполнить подключение через Интернет. Для локальных подключений и подключений к виртуальным сетям это не требуется. Это единственный шаг, выполняемый на портале Azure. |

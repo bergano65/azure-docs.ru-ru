@@ -1,6 +1,6 @@
 ---
-title: Добавление идентификаторов корреляции в сообщения Интернета вещей w/Распределенная трассировка (пред.)
-description: Узнайте, как использовать распределенную трассировку для отслеживания сообщений Интернета вещей в службах Azure, используемых решением.
+title: Добавление идопредов корреляции в IoT-сообщения w/distributed tracing (предварительно)
+description: Узнайте, как использовать возможность распределенного отслеживания для отслеживания ioT-сообщений в службах Azure, используемых вашим решением.
 author: jlian
 manager: briz
 ms.service: iot-hub
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
 ms.openlocfilehash: efee34ddfb2b2f6090d5dc8c43647c7ee1c53ce2
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77562434"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
@@ -36,7 +36,7 @@ ms.locfileid: "77562434"
 
   - **Северная Европа**
   - **Юго-Восточная Азия**
-  - **Западная часть США 2**
+  - **западная часть США 2**
 
 - В этой статье предполагается, что вы знаете, как отправлять сообщения телеметрии в Центр Интернета вещей. Убедитесь, что вы завершили все задачи краткого руководства [Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (C)](quickstart-send-telemetry-c.md).
 
@@ -48,7 +48,7 @@ ms.locfileid: "77562434"
 
 В этом разделе вы настроите регистрацию распределенных атрибутов трассировки (идентификаторы корреляции и метки времени) в Центре Интернета вещей.
 
-1. Перейдите в Центр Интернета вещей на [портале Azure](https://portal.azure.com/).
+1. Перейдите к концентратору IoT на [портале Azure.](https://portal.azure.com/)
 
 1. В левой области Центра Интернета вещей прокрутите вниз до раздела **Мониторинг** и нажмите кнопку **Параметры диагностики**.
 
@@ -58,9 +58,9 @@ ms.locfileid: "77562434"
 
 1. Выберите один или несколько из следующих параметров, которые определяют, куда будут отправляться данные ведения журнала:
 
-    - **Архивировать в учетную запись хранения**. Настройте учетную запись хранения, которая будет содержать данные журнала.
-    - **Поток в концентратор событий**: Настройка концентратора событий для хранения данных журнала.
-    - **Отправить в log Analytics**: Настройте рабочую область log Analytics, чтобы она содержала данные журнала.
+    - **Архив учетной записи хранилища:** Настройка учетной записи хранилища для хранения информации о ходе регистрации.
+    - **Поток к концентратору событий**: Нанастройка концентратора событий для хранения информации о регистрации.
+    - **Отправить в журнал Analytics**: Нанастройка рабочего пространства аналитики журнала для хранения информации о журнале.
 
 1. В разделе **Журнал** выберите операции, сведения о которых необходимо регистрировать.
 
@@ -88,11 +88,11 @@ ms.locfileid: "77562434"
 
 ### <a name="clone-the-source-code-and-initialize"></a>Клонирование исходного кода и инициализация
 
-1. Установите [рабочую нагрузку "Разработка C++классических приложений с помощью"](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019) для Visual Studio 2019. Также поддерживаются Visual Studio 2017 и 2015.
+1. Установите ["Разработка рабочего стола с рабочей нагрузкой с СЗ"](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019) для Visual Studio 2019. Также поддерживается Visual Studio 2017 и 2015.
 
 1. Установка [CMake](https://cmake.org/). Убедитесь, что это средство расположено в каталоге по вашему пути (`PATH`). Для этого в окне командной строки введите `cmake -version`.
 
-1. Откройте командную строку или оболочку Git Bash. Выполните следующие команды, чтобы клонировать последний выпуск репозитория GitHub [SDK для Azure IOT C](https://github.com/Azure/azure-iot-sdk-c) :
+1. Откройте командную строку или оболочку Git Bash. Запустите следующие команды, чтобы клонировать последний выпуск репозитория [Azure IoT C SDK](https://github.com/Azure/azure-iot-sdk-c) GitHub:
 
     ```cmd
     git clone -b public-preview https://github.com/Azure/azure-iot-sdk-c.git
@@ -131,7 +131,7 @@ ms.locfileid: "77562434"
 ### <a name="edit-the-send-telemetry-sample-to-enable-distributed-tracing"></a>Изменение примера отправки данных телеметрии для включения распределенной трассировки
 
 > [!div class="button"]
-> <a href="https://github.com/Azure-Samples/azure-iot-distributed-tracing-sample/blob/master/iothub_ll_telemetry_sample-c/iothub_ll_telemetry_sample.c" target="_blank">Получение примера на GitHub</a>
+> <a href="https://github.com/Azure-Samples/azure-iot-distributed-tracing-sample/blob/master/iothub_ll_telemetry_sample-c/iothub_ll_telemetry_sample.c" target="_blank">Получить образец на GitHub</a>
 
 1. Используйте редактор, чтобы открыть исходный файл `azure-iot-sdk-c/iothub_client/samples/iothub_ll_telemetry_sample/iothub_ll_telemetry_sample.c`.
 
@@ -174,14 +174,14 @@ ms.locfileid: "77562434"
 
 <!-- For a client app that can receive sampling decisions from the cloud, check out [this sample](https://aka.ms/iottracingCsample).  -->
 
-### <a name="workaround-for-third-party-clients"></a>Обходное решение для сторонних клиентов
+### <a name="workaround-for-third-party-clients"></a>Обход для сторонних клиентов
 
-Предварительный просмотр функции распределенной трассировки без использования пакета SDK для C **не является тривиальным** . Таким образом, этот подход не рекомендуется.
+**Нетривиально** просматривать функцию распределенного отслеживания без использования C SDK. Таким образом, такой подход не рекомендуется.
 
-Во-первых, необходимо реализовать все примитивы протокола центра Интернета вещей в сообщениях, следуя руководству по разработке [Создание и чтение сообщений центра Интернета вещей](iot-hub-devguide-messages-construct.md). Затем измените свойства протокола в сообщениях MQTT/AMQP, чтобы добавить `tracestate` как **системное свойство**. В частности:
+Во-первых, необходимо реализовать все примитивы протокола IoT Hub в своих сообщениях, следуя руководству Dev [Create и прочитав сообщения IoT Hub.](iot-hub-devguide-messages-construct.md) Затем отодевайте свойства протокола в сообщениях МЗТТ/АМЗП, чтобы добавить `tracestate` их в качестве свойства **системы.**  В частности:
 
-* Для MQTT добавьте `%24.tracestate=timestamp%3d1539243209` в раздел сообщения, где `1539243209` следует заменить на время создания сообщения в формате метки времени Unix. В качестве примера см. реализацию [в пакете SDK для C](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/iothubtransport_mqtt_common.c#L761) .
-* Для AMQP добавьте `key("tracestate")` и `value("timestamp=1539243209")` в качестве заметки сообщения. Справочную реализацию см. [здесь](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/uamqp_messaging.c#L527).
+* Для МЗТТ добавьте `%24.tracestate=timestamp%3d1539243209` к теме `1539243209` сообщения, где следует заменить время создания сообщения в формате unix timestamp. В качестве примера можно упомянуть о [реализации в C SDK](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/iothubtransport_mqtt_common.c#L761)
+* Для АМЗП `key("tracestate")` `value("timestamp=1539243209")` добавьте и в качестве аннотации сообщений. Для реализации справочной информации смотрите [здесь](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/uamqp_messaging.c#L527).
 
 Чтобы контролировать процентную долю сообщений, содержащих это свойство, внедрите логику прослушивания инициированных облаком событий, таких как обновления двойника.
 
@@ -201,7 +201,7 @@ ms.locfileid: "77562434"
 
 1. Укажите **частоту выборки** в диапазоне от 0 до 100 %.
 
-1. Нажмите кнопку **Сохранить**.
+1. Нажмите **Сохранить**.
 
 1. Подождите несколько секунд и нажмите кнопку **Обновить**. Если устройство подтвердит эту операцию, появится значок синхронизации с флажком.
 
@@ -211,15 +211,15 @@ ms.locfileid: "77562434"
 
 1. (Необязательно) Измените частоту выборки и понаблюдайте за изменением частоты, с которой сообщения включают параметр `tracestate` в свойства приложения.
 
-### <a name="update-using-azure-iot-hub-for-vs-code"></a>Обновление с помощью центра Интернета вещей Azure для VS Code
+### <a name="update-using-azure-iot-hub-for-vs-code"></a>Обновление с помощью концентратора Azure IoT для VS Кода
 
-1. Установите VS Code, а затем установите последнюю версию центра Интернета вещей Azure для VS Code [отсюда](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
+1. Установите VS Code, а затем установите последнюю версию Azure IoT Hub для VS Code [отсюда.](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
 
 1. Откройте VS Code и [настройте строку подключения к Центру Интернета вещей](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit#user-content-prerequisites).
 
 1. Разверните устройство и найдите узел **Distributed Tracing Setting (Preview)** (Параметр распределенной трассировки (предварительная версия)). Ниже щелкните подузел **Update Distributed Tracing Setting (Preview)** (Обновление параметра распределенной трассировки (предварительная версия)).
 
-    ![Включение распределенной трассировки в расширении центра Интернета вещей Azure](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-1.png)
+    ![Включить распределенную трассировку в расширении концентратора Azure IoT](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-1.png)
 
 1. Во всплывающем окне выберите **Включить**, а затем нажмите клавишу ВВОД, чтобы подтвердить выборку с частотой 100.
 
@@ -267,11 +267,11 @@ AzureDiagnostics
 
 Примеры журналов, как показано службой Log Analytics:
 
-| Время создания | OperationName | Категория | Level | CorrelationId | DurationMs | Свойства |
+| TimeGenerated | OperationName | Категория | Level | CorrelationId | DurationMs | Свойства |
 |--------------------------|---------------|--------------------|---------------|---------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 2018-02-22T03:28:28.633Z | DiagnosticIoTHubD2C | DistributedTracing | Информационное | 00-8cd869a412459a25f5b4f31311223344-0144d2590aacd909-01 |  | {"deviceId":"AZ3166","messageSize":"96","callerLocalTimeUtc":"2018-02-22T03:27:28.633Z","calleeLocalTimeUtc":"2018-02-22T03:27:28.687Z"} |
-| 2018-02-22T03:28:38.633Z | DiagnosticIoTHubIngress | DistributedTracing | Информационное | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 20 | {"isRoutingEnabled":"false","parentSpanId":"0144d2590aacd909"} |
-| 2018-02-22T03:28:48.633Z | DiagnosticIoTHubEgress | DistributedTracing | Информационное | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 23 | {"endpointType":"EventHub","endpointName":"myEventHub", "parentSpanId":"0144d2590aacd909"} |
+| 2018-02-22T03:28:28.633Z | DiagnosticIoTHubD2C | DistributedTracing | Informational | 00-8cd869a412459a25f5b4f31311223344-0144d2590aacd909-01 |  | {"deviceId":"AZ3166","messageSize":"96","callerLocalTimeUtc":"2018-02-22T03:27:28.633Z","calleeLocalTimeUtc":"2018-02-22T03:27:28.687Z"} |
+| 2018-02-22T03:28:38.633Z | DiagnosticIoTHubIngress | DistributedTracing | Informational | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 20 | {"isRoutingEnabled":"false","parentSpanId":"0144d2590aacd909"} |
+| 2018-02-22T03:28:48.633Z | DiagnosticIoTHubEgress | DistributedTracing | Informational | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 23 | {"endpointType":"EventHub","endpointName":"myEventHub", "parentSpanId":"0144d2590aacd909"} |
 
 Сведения о различных типах журналов см. в разделе [о журналах диагностики Центра Интернета вещей Azure](iot-hub-monitor-resource-health.md#distributed-tracing-preview).
 
@@ -280,7 +280,7 @@ AzureDiagnostics
 Чтобы визуализировать поток сообщений Интернета вещей, настройте пример приложения схемы приложений. Пример приложения отправляет журналы распределенной трассировки в [схему приложений](../application-insights/app-insights-app-map.md) с помощью функции Azure и концентратора событий.
 
 > [!div class="button"]
-> <a href="https://github.com/Azure-Samples/e2e-diagnostic-provision-cli" target="_blank">Получение примера на GitHub</a>
+> <a href="https://github.com/Azure-Samples/e2e-diagnostic-provision-cli" target="_blank">Получить образец на GitHub</a>
 
 На изображении ниже показана распределенная трассировка в схеме приложений с тремя конечными точками маршрутизации:
 
@@ -308,8 +308,8 @@ AzureDiagnostics
 1. Устройство Интернета вещей отправляет сообщение в Центр Интернета вещей.
 1. Сообщение поступает в шлюз Центра Интернета вещей.
 1. Центр Интернета вещей выполняет поиск `tracestate` в свойствах приложения сообщения и проверяет, находится ли оно в правильном формате.
-1. Если это так, центр Интернета вещей создает глобально уникальный `trace-id` для сообщения, `span-id` для "прыжка" и записывает их в журнал Azure Monitor журналов диагностики в `DiagnosticIoTHubD2C`операции.
-1. После завершения обработки сообщения центр Интернета вещей создает еще один `span-id` и регистрирует его вместе с существующим `trace-id` в операции `DiagnosticIoTHubIngress`.
+1. Если это так, то IoT `trace-id` Hub генерирует глобально `span-id` уникальный для сообщения, для "хопа" и регистрирует `DiagnosticIoTHubD2C`их в диагностических журналах Azure Monitor под операцией.
+1. После завершения обработки сообщений Концентратор IoT генерирует `span-id` другой `trace-id` и `DiagnosticIoTHubIngress`регистрирует его вместе с существующим ими в рамках операции.
 1. Если для сообщения включена маршрутизация, Центр Интернета вещей записывает его в пользовательскую конечную точку и записывает в журнал другой `span-id` с тем же `trace-id` в категории `DiagnosticIoTHubEgress`.
 1. Описанные выше действия повторяются для каждого созданного сообщения.
 
@@ -320,7 +320,7 @@ AzureDiagnostics
 - Возможность переноса из облака на двойник устройства недоступна на [уровне "Базовый" Центра Интернета вещей](iot-hub-scaling.md#basic-and-standard-tiers). Тем не менее, Центр Интернета вещей все равно будет регистрироваться в Azure Monitor, если видит правильно составленный заголовок контекста трассировки.
 - Чтобы обеспечить эффективность операции, Центр Интернета вещей применит регулирование на основе частоты регистрации, которая может возникнуть как часть распределенной трассировки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об общем шаблоне распределенной трассировки в микрослужбах см. в [этой статье](https://microservices.io/patterns/observability/distributed-tracing.html).
 - Чтобы настроить конфигурацию для применения параметров распределенной трассировки на большое количество устройств, ознакомьтесь со статьей [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](iot-hub-auto-device-config.md).

@@ -10,14 +10,16 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 01/21/2020
 ms.author: diberry
-ms.openlocfilehash: bf0710ebef21226d8d8582a920d64027bb015d34
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 850ab0ee89ee167886d8747a0c721bb643529e14
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77622720"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80052066"
 ---
 # <a name="what-is-personalizer"></a>Что такое служба "Персонализатор"?
+
+[!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
 Персонализатор Azure — это облачная служба API, которая помогает клиентскому приложению выбрать один лучший элемент _содержимого_ для отображения конкретному пользователю. Служба выбирает оптимальный из доступных элементов содержимого, основываясь на общей информации, которую вы предоставляете о содержимом и контексте в реальном времени.
 

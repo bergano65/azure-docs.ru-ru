@@ -10,10 +10,10 @@ ms.custom: mvc
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: c1f321f452b65016c11cb66d08ebab108509cc62
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61448415"
 ---
 # <a name="deploy-a-custom-device-simulation-docker-image"></a>Развертывание пользовательского образа Docker для симулятора устройств
@@ -27,7 +27,7 @@ ms.locfileid: "61448415"
 1. Настройка симулятора устройства для использования нового образа Docker.
 1. Запуск симуляции с помощью нового образа.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения шагов из этого руководства вам понадобится следующее:
 
