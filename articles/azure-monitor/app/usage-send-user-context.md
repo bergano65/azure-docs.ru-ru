@@ -1,5 +1,5 @@
 ---
-title: Идентификаторы контекста пользователя для мониторинга активности — Azure Application Insights
+title: Иносы контекста пользователя для отслеживания действий - Azure Application Insights
 description: Отслеживайте, как пользователи перемещаются по службе, назначив каждому из них строку уникального постоянного идентификатора в Application Insights.
 ms.topic: conceptual
 author: NumberByColors
@@ -7,10 +7,10 @@ ms.author: daviste
 ms.date: 01/03/2019
 ms.reviewer: abgreg;mbullwin
 ms.openlocfilehash: beb5a0f7ad3733aaf12b0880af4fba23a705a7e8
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77670939"
 ---
 # <a name="send-user-context-ids-to-enable-usage-experiences-in-azure-application-insights"></a>Отправка идентификаторов контекста пользователей для обеспечения оптимальной работы в Azure Application Insights
@@ -126,12 +126,12 @@ namespace MvcWebRole.Telemetry
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Общие сведения об использовании](usage-overview.md)
-    - [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)
+    - [Пользователи, сессии и события](usage-segmentation.md)
     - [Воронки](usage-funnels.md)
-    - [Сохранение](usage-retention.md)
+    - [Хранения](usage-retention.md)
     - [книги](../../azure-monitor/app/usage-workbooks.md)

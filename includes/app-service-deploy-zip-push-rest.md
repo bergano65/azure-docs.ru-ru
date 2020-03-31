@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 08/12/2019
 ms.author: cephalin
 ms.openlocfilehash: 92e39f128e90ba83a919388e217f0edc86f81770
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75769678"
 ---
-## <a name="rest"></a>Развертывание ZIP-файла с помощью с REST API 
+## <a name="deploy-zip-file-with-rest-apis"></a><a name="rest"></a>Развертывание ZIP-файла с помощью с REST API 
 
 Вы можете использовать [REST API службы развертывания](https://github.com/projectkudu/kudu/wiki/REST-API), чтобы развернуть ZIP-файл в приложении в Azure. Для развертывания отправьте запрос POST по адресу https://<имя_приложения>.scm.azurewebsites.net/api/zipdeploy. В тексте сообщения запроса POST должен содержаться ZIP-файл. Учетные данные развертывания для приложения указываются в запросе с использованием обычной проверки подлинности HTTP. Дополнительные сведения см. в [справочнике по принудительному развертыванию из ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file). 
 
@@ -33,7 +33,7 @@ curl -u <deployment_user> https://<app_name>.scm.azurewebsites.net/api/deploymen
 
 ### <a name="with-powershell"></a>С помощью PowerShell
 
-В следующем примере используется [Публикация-азвебапп](/powershell/module/az.websites/publish-azwebapp) . Замените заполнители `<group-name>`, `<app-name>` и `<zip-file-path>`.
+Следующий пример использует [Publish-AzWebapp](/powershell/module/az.websites/publish-azwebapp) загрузить файл .zip. Замените заполнители `<group-name>`, `<app-name>` и `<zip-file-path>`.
 
 ```powershell
 Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <zip-file-path>
@@ -41,7 +41,7 @@ Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <
 
 Этот запрос позволяет активировать принудительное развертывание из отправленного ZIP-файла. 
 
-Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Опять же, замените заполнители `<deployment-user>`, `<deployment-password>`и `<app-name>`.
+Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Опять же, `<deployment-password>`заменить , и `<app-name>` заполнителей. `<deployment-user>`
 
 ```bash
 $username = "<deployment-user>"

@@ -1,29 +1,26 @@
 ---
-title: Обзор Azure Active Directory для разработчиков (версия 1.0)
+title: Общие сведения об Azure Active Directory (версии 1.0) для разработчиков
 description: В этой статье представлены общие сведения о входе в рабочие и учебные учетные записи Майкрософт с использованием платформы и конечной точки Azure Active Directory версии 1.0.
 services: active-directory
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: 5c872c89-ef04-4f4c-98de-bc0c7460c7c2
 ms.service: active-directory
 ms.subservice: azuread-dev
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/24/2018
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 638c265fda3c8b331415d54047180b3c0ee2174a
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ROBOTS: NOINDEX
+ms.openlocfilehash: ade350c91ebd2f3a68b52011e598f739a14c220f
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79263534"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80154497"
 ---
-# <a name="azure-active-directory-for-developers-v10-overview"></a>Обзор Azure Active Directory для разработчиков (версия 1.0)
+# <a name="azure-active-directory-for-developers-v10-overview"></a>Общие сведения об Azure Active Directory (версии 1.0) для разработчиков
 
 [!INCLUDE [active-directory-azuread-dev](../../../includes/active-directory-azuread-dev.md)]
 
@@ -59,6 +56,6 @@ Azure Active Directory (Azure AD) — это облачная служба ид�
 
 ## <a name="videos"></a>Видео
 
-Дополнительные сведения о переходе на новую платформу Microsoft Identity см. в разделе [Azure Active Directory видео о платформе разработчиков](videos.md) .
+Смотрите [видео платформы разработчиков Azure Active Directory](videos.md) для помощи в переходе на новую платформу майкина.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

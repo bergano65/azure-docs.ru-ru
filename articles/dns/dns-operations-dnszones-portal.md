@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 05/18/2017
 ms.author: rohink
 ms.openlocfilehash: 002f210048c18c6dd99dfb5981bacce8666ee563
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76936788"
 ---
 # <a name="how-to-manage-dns-zones-in-the-azure-portal"></a>Как управлять зонами DNS с помощью портала Azure
@@ -24,8 +24,8 @@ ms.locfileid: "76936788"
 > [!div class="op_single_selector"]
 > * [Портал](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
-> * [Классический Azure CLI](dns-operations-dnszones-cli-nodejs.md)
-> * [Azure CLI](dns-operations-dnszones-cli.md)
+> * [Лазурный классический CLI](dns-operations-dnszones-cli-nodejs.md)
+> * [Лазурный CLI](dns-operations-dnszones-cli.md)
 
 В этой статье объясняется, как управлять зонами DNS с помощью портала Azure. Зонами DNS также можно управлять с помощью кроссплатформенного [Azure CLI](dns-operations-dnszones-cli.md) или Azure [PowerShell](dns-operations-dnszones.md).
 
@@ -39,19 +39,19 @@ ms.locfileid: "76936788"
 4. В колонке **Создание зоны DNS** введите следующие значения, а затем щелкните **Создать**.
 
 
-   | **Параметр** | **Значение** | **Сведения** |
+   | **Параметр** | **Значение** | **Подробно** |
    |---|---|---|
-   |**имя**;|contoso.com|Имя зоны DNS.|
+   |**Название**|contoso.com|Имя зоны DNS.|
    |**Подписка**|[Ваша подписка]|Выберите подписку для создания зоны DNS.|
-   |**Группа ресурсов**|**Создать:** contosoDNSRG|Создайте группу ресурсов. Имя группы ресурсов должно быть уникальным в пределах выбранной подписки. Дополнительные сведения о группах ресурсов см. в разделе [Группы ресурсов](../azure-resource-manager/management/overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) статьи "Общие сведения об Azure Resource Manager".|
-   |**Расположение**|Западная часть США||
+   |**Группа ресурсов**|**Создать:** contosoDNSRG|Создайте группу ресурсов. Имя группы ресурсов должно быть уникальным в пределах выбранной подписки. Чтобы узнать больше о группах ресурсов, прочитайте обзорную статью [менеджера ресурсов.](../azure-resource-manager/management/overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups)|
+   |**Расположение**|западная часть США||
 
 > [!NOTE]
 > Этот параметр относится к расположению группы ресурсов и никак не влияет на расположение зоны DNS. Расположение зоны DNS всегда является "глобальным" и не отображается.
 
 ## <a name="list-dns-zones"></a>Перечисление зон DNS
 
-На портале Azure последовательно выберите **Больше служб** > **Сети** > **Зоны DNS**. Каждая зона DNS является отдельным ресурсом. В этом представлении отображаются такие сведения, как число наборов записей и серверы имен. Столбец **ИМЕНА СЕРВЕРОВ** не отображается в представлении по умолчанию. Чтобы добавить его, щелкните **Столбцы**, выберите **Имена серверов**, а затем нажмите **Готово**.
+На портале Azure перейдите к **большему** > количестве**сервисов Networking** > **DNS зон**. Каждая зона DNS является отдельным ресурсом. В этом представлении отображаются такие сведения, как число наборов записей и серверы имен. Столбец **ИМЕНА СЕРВЕРОВ** не отображается в представлении по умолчанию. Чтобы добавить его, щелкните **Столбцы**, выберите **Имена серверов**, а затем нажмите **Готово**.
 
 ![Перечисление зон DNS](./media/dns-operations-dnszones-portal/listzones.png)
 

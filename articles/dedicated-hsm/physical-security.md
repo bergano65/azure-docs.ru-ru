@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: mbaldwin
 ms.openlocfilehash: ede1af4625d06af4e280eda86d09ae1db3dfdfd1
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70881024"
 ---
 # <a name="azure-dedicated-hsm-physical-security"></a>Физическая безопасность выделенного устройства Azure HSM
@@ -51,12 +51,12 @@ ms.locfileid: "70881024"
 
 Устройства HSM подготавливаются в созданной клиентом виртуальной сети. Это пространство частных IP-адресов клиента.  Такая конфигурация обеспечивает изоляцию на уровне логических сетей и возможность доступа только для клиента. Это также подразумевает, что за управление безопасностью на логическом уровне отвечает только клиент.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Мы рекомендуем внимательно ознакомиться с основными концепциями службы (высокий уровень доступности, безопасность и удобство поддержки), прежде чем переходить к подготовке устройств, а также разработке и развертыванию приложений.
 
 * [Высокая доступность](high-availability.md)
 * [Сеть](networking.md)
 * [Возможности поддержки](supportability.md)
-* [Мониторинг](monitoring.md)
+* [Мониторинга](monitoring.md)
 * [Архитектура развертывания](deployment-architecture.md)

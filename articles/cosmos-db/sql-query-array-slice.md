@@ -1,6 +1,6 @@
 ---
-title: ARRAY_SLICE языка запросов Azure Cosmos DB
-description: Узнайте, как системная функция среза массива SQL в Azure Cosmos DB возвращает часть выражения массива.
+title: ARRAY_SLICE на языке запросов Запроса Azure Cosmos DB
+description: Узнайте о том, как функция системы СЗЛ array в Azure Cosmos DB возвращает часть выражения массива
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: a98cb17d22f41776ff788d12ced6aa988ad0b10e
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "78303330"
 ---
 # <a name="array_slice-azure-cosmos-db"></a>ARRAY_SLICE (Azure Cosmos DB)
@@ -26,12 +26,12 @@ ARRAY_SLICE (<arr_expr>, <num_expr> [, <num_expr>])
 ## <a name="arguments"></a>Аргументы
   
 *arr_expr*  
-   Выражение любого массива.  
+   Является ли любое выражение массива.  
   
 *num_expr*  
    Отсчитываемый от нуля числовой индекс, с которого начинается массив. Отрицательные значения могут использоваться для указания начального значения индекса относительно последнего элемента массива. Например, значение –1 представляет собой последний элемент в массиве.  
 
-*num_expr* Необязательное числовое выражение, устанавливающее максимальное число элементов в результирующем массиве.    
+*num_expr* Дополнительное числовое выражение, которое устанавливает максимальное количество элементов в результирующем массиве.    
 
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -39,7 +39,7 @@ ARRAY_SLICE (<arr_expr>, <num_expr> [, <num_expr>])
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как получить различные срезы массива с помощью `ARRAY_SLICE`.  
+  Ниже приводится следующий пример, как получить `ARRAY_SLICE`различные фрагменты массива с помощью.  
   
 ```sql
 SELECT
@@ -69,10 +69,10 @@ SELECT
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция не будет использовать индекс.
+Эта система функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
-- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Array функции Azure Космос DB](sql-query-array-functions.md)
+- [Система работает Azure Космос DB](sql-query-system-functions.md)
+- [Введение в Azure Космос DB](introduction.md)

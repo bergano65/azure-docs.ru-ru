@@ -1,20 +1,18 @@
 ---
-title: Управление пользователями на облачном портале для партнеров | Azure Marketplace
+title: Управление пользователями на облачном портале-партнере Лазурный рынок
 description: Управление пользователями на облачном портале для партнеров
-services: Azure, Marketplace, Cloud Partner Portal,
 author: qianw211
-manager: pbutlerm
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: b14d40e9b3a2aa1ca71335b60e97f15b3782698f
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 441f466fcbeb05d06d565dbe1af237d01554d844
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823262"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80280224"
 ---
 <a name="managing-users-on-cloud-partner-portal"></a>Управление пользователями на облачном портале для партнеров
 ======================================
@@ -55,7 +53,7 @@ o Убедитесь, что идентификаторы электронной
 ----------------------------------------------------------------------------------------------------------------------------
 
 > [!NOTE]
-> Имена издателей, для которых ваш адрес электронной почты добавляется в качестве владельца или участника, будут отображаться в раскрывающемся списке Publisher для выбора.
+> "Имена издателей", для которых ваша электронная почта добавляется в качестве владельца или вкладчика, будут отображаться в списке издателя для выбора.
 
 ![Назначение роли — выбор издателя](./media/cloud-partner-portal-how-to-manage-users/assignselectpublisher.png)
 

@@ -1,13 +1,13 @@
 ---
-title: Служба Azure Service Fabric DNS
+title: Служба обслуживания Azure Fabric DNS
 description: Используйте службу DNS Service Fabric для обнаружения микрослужб в кластере.
 ms.topic: conceptual
 ms.date: 7/20/2018
 ms.openlocfilehash: 317aa81238ec7a0dc24b69b1d00568901b9bc34f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75458030"
 ---
 # <a name="dns-service-in-azure-service-fabric"></a>Служба DNS в Azure Service Fabric
@@ -103,10 +103,10 @@ ms.locfileid: "75458030"
 3. После обновления шаблона кластера примените изменения и дождитесь завершения обновления. По завершении обновления в кластере запустится системная служба DNS. Имя этой службы — `fabric:/System/DnsService`, и ее можно найти в разделе служб **Система** в обозревателе Service Fabric. 
 
 > [!NOTE]
-> При обновлении DNS с отключенного на включено Service Fabric Explorer может не отражать новое состояние. Чтобы устранить эту проблему, перезапустите узлы, изменив UpgradePolicy в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблону Service Fabric](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2019-03-01/clusters/applications) .
+> При обновлении DNS от отключенного к включенной, Service Fabric Explorer может не отражать новое состояние. Чтобы решить проблему, перезапустите узлы, изменив UpgradePolicy в шаблоне Управления ресурсами Azure. Подробнее о рекомендации по [шаблону свиной тканью службы.](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2019-03-01/clusters/applications)
 
 > [!NOTE]
-> Включение службы DNS при разработке на локальном компьютере приведет к переопределению некоторых параметров DNS. Если возникают проблемы с подключением к Интернету, проверьте параметры DNS.
+> Включение службы DNS при разработке локальной машины переопрокидирует некоторые настройки DNS. Если возникли проблемы с подключением к Интернету, проверьте настройки DNS.
 
 ## <a name="setting-the-dns-name-for-your-service"></a>Настройка DNS-имени для службы
 DNS-имена для служб можно задать декларативно для служб по умолчанию в файле ApplicationManifest.xml или с помощью команд PowerShell.
@@ -173,7 +173,7 @@ DNS-имя службы можно задать при ее создании с 
 Где:
 
 - *First-Label-Of-Partitioned-Service-DNSName* — это первая часть DNS-имени службы.
-- *PartitionPrefix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. Значение по умолчанию — "--". Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
+- *PartitionPrefix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. Значение по умолчанию "--". Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
 - *Target-Partition-Name* — это имя секции. 
 - *PartitionSuffix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. Значение по умолчанию — пустая строка. Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
 - *Remaining-Partitioned-Service-DNSName* — это оставшаяся часть DNS-имени службы.

@@ -8,10 +8,10 @@ ms.date: 02/21/2017
 ms.author: bburns
 ms.custom: mvc
 ms.openlocfilehash: 01abcc961d1c2ad9d3e2cf35f82e62929bc2fb89
-ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "79371143"
 ---
 # <a name="deprecated-using-the-kubernetes-web-ui-with-azure-container-service"></a>(УСТАРЕЛО) Использование веб-интерфейса Kubernetes со Службой контейнеров Azure
@@ -65,7 +65,7 @@ az acs kubernetes browse -g [Resource Group] -n [Container service instance name
 
     При этом откроется диалоговое окно, в котором можно приступить к созданию приложения.
 
-2. Присвойте ему имя `hello-nginx`. Используйте [контейнер `nginx` из Docker](https://hub.docker.com/_/nginx/) и разверните три реплики этой веб-службы.
+2. Присвойте ему имя `hello-nginx`. Используйте [ `nginx` контейнер от Docker](https://hub.docker.com/_/nginx/) и развернуть три реплики этого веб-сервиса.
 
     ![Диалоговое окно создания модуля Kubernetes](./media/container-service-kubernetes-ui/nginx.png)
 

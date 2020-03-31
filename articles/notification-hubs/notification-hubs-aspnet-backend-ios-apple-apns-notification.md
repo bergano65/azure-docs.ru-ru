@@ -1,5 +1,5 @@
 ---
-title: Отправка push-уведомлений конкретным пользователям с помощью концентраторов уведомлений Azure | Документация Майкрософт
+title: Отправка push-уведомлений определенным пользователям с помощью концентраторов уведомлений Azure Документы Майкрософт
 description: Узнайте, как использовать службу "Центры уведомлений Azure" для отправки push-уведомлений определенным пользователям.
 documentationcenter: ios
 author: sethm
@@ -17,19 +17,19 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 48135ea614bbab4ca6649a83895ae5f632918c61
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "72387476"
 ---
-# <a name="tutorial-send-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений конкретным пользователям с помощью центров уведомлений Azure
+# <a name="tutorial-send-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Учебник: Отправка push-уведомлений определенным пользователям с помощью концентраторов уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
-Этот учебник демонстрирует, как использовать концентраторы уведомлений для отправки push-уведомлений конкретному пользователю приложения или на конкретное устройство. Серверная часть ASP.NET WebAPI используется для проверки подлинности клиентов и создания уведомлений, как показано в разделе руководства [Управление регистрацией из серверной части](notification-hubs-push-notification-registration-management.md#registration-management-from-a-backend).
+В этом учебнике показано, как использовать концентраторы уведомлений Azure для отправки push-уведомлений пользователю определенного приложения на конкретном устройстве. Серверная часть ASP.NET WebAPI используется для проверки подлинности клиентов и создания уведомлений, как показано в разделе руководства [Управление регистрацией из серверной части](notification-hubs-push-notification-registration-management.md#registration-management-from-a-backend).
 
-В этом руководстве вы выполните следующие задачи;
+При работе с этим руководством вы выполните следующие задачи:
 
 > [!div class="checklist"]
 > * Создание проекта веб-API
@@ -40,7 +40,7 @@ ms.locfileid: "72387476"
 > * Изменение приложения iOS
 > * Тестирование приложения
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом учебнике подразумевается, что вы создали и настроили центр уведомлений, как описано в руководстве [Приступая к работе с центрами уведомлений (iOS)](notification-hubs-ios-apple-push-notification-apns-get-started.md). Это руководство также необходимо изучить перед переходом к руководству [Безопасные push-уведомления для концентраторов уведомлений Azure](notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification.md).
 Если вы хотите использовать мобильные приложения в качестве внутренней службы, см. статью [Добавление push-уведомлений в приложение iOS](../app-service-mobile/app-service-mobile-ios-get-started-push.md).
@@ -56,7 +56,7 @@ ms.locfileid: "72387476"
 
 2. В файл `Main.storyboard` добавьте компоненты из библиотеки объектов, показанные на снимке экрана.
 
-    ![Изменение раскадровки в конструкторе интерфейса Xcode][1]
+    ![Отодвинить раскадровку в xcode интерфейс строитель][1]
 
    * **Имя пользователя**: текстовое поле UITextField с замещающим текстом *Enter Username*, расположенное под меткой отправки результатов, справа, слева и сверху ограниченное полями.
    * **Пароль**: текстовое поле UITextField с замещающим текстом *Enter Password*, расположенное под текстовым полем имени пользователя, справа, слева и сверху ограниченное полями. Отметьте параметр **Защищенный ввод текста** в инспекторе атрибутов в разделе *Символ вывода*.
@@ -88,7 +88,7 @@ ms.locfileid: "72387476"
     - (IBAction)LogInAction:(id)sender;
     ```
 
-4. В файл `ViewController.h` добавьте следующее `#define` после импорта операторов. Замените заполнитель `<Enter Your Backend Endpoint>` URL-адресом назначения, который использовался для развертывания серверной части приложения в предыдущем разделе. Пример: `http://your_backend.azurewebsites.net`.
+4. В файл `ViewController.h` добавьте следующее `#define` после импорта операторов. Замените заполнитель `<Enter Your Backend Endpoint>` URL-адресом назначения, который использовался для развертывания серверной части приложения в предыдущем разделе. Например, `http://your_backend.azurewebsites.net`.
 
     ```objc
     #define BACKEND_ENDPOINT @"<Enter Your Backend Endpoint>"
@@ -485,7 +485,7 @@ ms.locfileid: "72387476"
 
     ![Тестирование приложения iOS][2]
 
-3. Должно отобразиться всплывающее окно с сообщением об успешной регистрации. Последовательно выберите **ОК**.
+3. Должно отобразиться всплывающее окно с сообщением об успешной регистрации. Нажмите кнопку **ОК**.
 
     ![Отображение уведомления о тестировании iOS][3]
 

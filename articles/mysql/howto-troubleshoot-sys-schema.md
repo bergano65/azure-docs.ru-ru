@@ -1,21 +1,21 @@
 ---
-title: Использование sys_schema — база данных Azure для MySQL
-description: Узнайте, как использовать sys_schema для поиска проблем с производительностью и обслуживания базы данных в базе данных Azure для MySQL.
+title: Используйте sys_schema - База данных Azure для MyS'L
+description: Узнайте, как использовать sys_schema для поиска проблем с производительностью и ведения базы данных в базе данных Azure для MyS'L.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: troubleshooting
-ms.date: 12/02/2019
-ms.openlocfilehash: 50552b87fad9d8f58ff8c48dc03463d4c901bf99
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
-ms.translationtype: MT
+ms.date: 3/18/2020
+ms.openlocfilehash: a35a586a519ff78e8b32d986b92bd008b2c6b858
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74775951"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80067866"
 ---
 # <a name="how-to-use-sys_schema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
 
-Performance_schema MySQL, впервые доступная в MySQL 5,5, предоставляет инструментирование для многих важных серверных ресурсов, таких как выделение памяти, хранимые программы, блокировка метаданных и т. д. Однако performance_schema содержит более 80 таблиц, и для получения необходимой информации часто требуется соединение таблиц в performance_schema, а также таблицы из information_schema. Созданная на основе performance_schema и information_schema схема sys_schema предоставляет большую коллекцию [понятных представлений](https://dev.mysql.com/doc/refman/5.7/en/sys-schema-views.html) в базе данных только для чтения и полностью поддерживается в службе "База данных Azure для MySQL" версии 5.7.
+performance_schema MyS'L, впервые доступная в MyS'L 5.5, обеспечивает приборы для многих жизненно важных серверных ресурсов, таких как распределение памяти, сохраненные программы, блокировка метаданных и т.д. Однако performance_schema содержит более 80 таблиц, и для получения необходимой информации часто требуется присоединение к таблицам в performance_schema, а также таблицы из information_schema. Созданная на основе performance_schema и information_schema схема sys_schema предоставляет большую коллекцию [понятных представлений](https://dev.mysql.com/doc/refman/5.7/en/sys-schema-views.html) в базе данных только для чтения и полностью поддерживается в службе "База данных Azure для MySQL" версии 5.7.
 
 ![Представления sys_schema](./media/howto-troubleshoot-sys-schema/sys-schema-views.png)
 
@@ -29,9 +29,9 @@ Performance_schema MySQL, впервые доступная в MySQL 5,5, пре
 - User. Потребляемые ресурсы, сгруппированные по пользователям. Примерами являются операции ввода-вывода файлов, подключения и память.
 - Wait. События ожидания, сгруппированные по узлу или пользователю.
 
-Теперь давайте рассмотрим некоторые общие шаблоны использования sys_schema. Сначала мы сгруппируем шаблоны использования в две категории: **Настройка производительности** и **Обслуживание баз данных**.
+Теперь давайте посмотрим на некоторые общие модели использования sys_schema. Начнем с того, что мы сгруппировать шаблоны использования на две категории: **настройка производительности** и **обслуживание базы данных.**
 
-## <a name="performance-tuning"></a>Улучшение производительности
+## <a name="performance-tuning"></a>Настройка производительности
 
 ### <a name="sysuser_summary_by_file_io"></a>*sys.user_summary_by_file_io*
 
@@ -55,7 +55,7 @@ Performance_schema MySQL, впервые доступная в MySQL 5,5, пре
 
 ![Сводка по инструкциям](./media/howto-troubleshoot-sys-schema/summary-by-statement.png)
 
-В этом примере База данных Azure для MySQL потратила 53 минуты на сканирование журнала подробных поисковых запросов 44 579 раз. Это занимает много времени и требует множества операций ввода-вывода. Вы можете уменьшить эту активность, отключив журнал медленных запросов либо уменьшив частоту внесения в него записей на портале Azure.
+В этом примере База данных Azure для MySQL потратила 53 минуты на сканирование журнала подробных поисковых запросов 44 579 раз. Это долгое время, и многие IOs. Вы можете уменьшить эту активность, отключив журнал медленных запросов либо уменьшив частоту внесения в него записей на портале Azure.
 
 ## <a name="database-maintenance"></a>Обслуживание базы данных
 

@@ -1,6 +1,6 @@
 ---
-title: Отменить подготовку устройств, подготовленных с помощью службы подготовки устройств для центра Интернета вещей Azure
-description: Как отменить подготовку устройств, которые были подготовлены с помощью службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS)
+title: Устройства дезавуирования, которые были подготовлены с помощью службы обеспечения устройств Концентратора Azure
+description: Как дезавуировать устройства, которые были подготовлены с Azure IoT Концентрированный сервис обеспечения устройств (DPS)
 author: wesmc7777
 ms.author: wesmc
 ms.date: 05/11/2018
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: 8a3677ba285f5b02407ca3d176979bf6c016ef9b
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74974842"
 ---
 # <a name="how-to-deprovision-devices-that-were-previously-auto-provisioned"></a>Как отменить подготовку устройств, которые были автоматически подготовлены 

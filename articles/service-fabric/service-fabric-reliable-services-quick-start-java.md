@@ -1,20 +1,20 @@
 ---
-title: Создание первой надежной службы на Java
+title: Создайте свой первый надежный сервис на Java
 description: Вводные сведения о создании приложения Service Fabric Microsoft Azure со службами с отслеживанием состояния и без него.
 author: suhuruli
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: suhuruli
 ms.openlocfilehash: c3b301a7a9039f1fe8095950f0a5a4e23eb52a9b
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75614219"
 ---
-# <a name="get-started-with-reliable-services-in-java"></a>Приступая к работе с Reliable Services в Java
+# <a name="get-started-with-reliable-services-in-java"></a>Начало работы с надежными службами на Java
 > [!div class="op_single_selector"]
-> * [C# в Windows](service-fabric-reliable-services-quick-start.md)
+> * [C на Windows](service-fabric-reliable-services-quick-start.md)
 > * [Java в Linux](service-fabric-reliable-services-quick-start-java.md)
 >
 >

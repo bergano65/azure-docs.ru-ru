@@ -1,5 +1,5 @@
 ---
-title: 'Создание VPN-шлюза Azure на основе маршрутов: CLI'
+title: 'Создание маршрутного VPN шлюза Azure: CLI'
 description: Краткое руководство по созданию VPN-шлюза с использованием интерфейса CLI
 services: vpn-gateway
 author: cherylmc
@@ -7,18 +7,18 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 10/04/2018
 ms.author: cherylmc
-ms.openlocfilehash: 1f0cc1d63f8560399d1d71c8d010c37bd2c5e387
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 121790fce220874babedf67cd72471caa7e92ae6
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75778759"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80241102"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-cli"></a>Создание VPN-шлюза на основе маршрута с помощью CLI
 
 В статье кратко описано создание VPN-шлюза в Azure с использованием CLI в Azure. VPN-шлюз используется при создании VPN-подключения к локальной сети. Также вы можете использовать VPN-шлюз для подключения виртуальных сетей.
 
-Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создание шлюза в виртуальной сети может занять 45 минут или более. Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создание шлюза в виртуальной сети может занять 45 минут или более. Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -29,15 +29,15 @@ ms.locfileid: "75778759"
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. 
 
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name TestRG1 --location eastus
 ```
 
-## <a name="vnet"></a>Создание виртуальной сети
+## <a name="create-a-virtual-network"></a><a name="vnet"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создается виртуальная сеть с именем **VNet1** в расположении **EastUS**.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network vnet create \
   -n VNet1 \
   -g TestRG1 \
@@ -47,11 +47,11 @@ az network vnet create \
   --subnet-prefix 10.1.0.0/24
 ```
 
-## <a name="gwsubnet"></a>Добавление подсети шлюза
+## <a name="add-a-gateway-subnet"></a><a name="gwsubnet"></a>Добавление подсети шлюза
 
 Подсеть шлюза содержит зарезервированные IP-адреса, используемые службами шлюза виртуальной сети. Используйте следующие примеры для добавления подсети шлюза:
 
-```azurepowershell-interactive
+```azurecli-interactive
 az network vnet subnet create \
   --vnet-name VNet1 \
   -n GatewaySubnet \
@@ -59,7 +59,7 @@ az network vnet subnet create \
   --address-prefix 10.1.255.0/27 
 ```
 
-## <a name="PublicIP"></a>Запрос общедоступного IP-адреса
+## <a name="request-a-public-ip-address"></a><a name="PublicIP"></a>Запрос публичного IP-адреса
 
 VPN-шлюз должен иметь динамически выделяемый общедоступный IP-адрес. VPN-шлюзу, созданному для виртуальной сети, выделяется общедоступный IP-адрес. Воспользуйтесь следующим примером для запроса общедоступного IP-адреса:
 
@@ -70,7 +70,7 @@ az network public-ip create \
   --allocation-method Dynamic 
 ```
 
-## <a name="CreateGateway"></a>Создание VPN-шлюза
+## <a name="create-the-vpn-gateway"></a><a name="CreateGateway"></a>Создание VPN шлюза
 
 Чтобы создать VPN-шлюз, используйте команду [az network vnet-gateway create](/cli/azure/group).
 
@@ -91,7 +91,7 @@ az network vnet-gateway create \
 
 Для создания VPN-шлюза требуется не менее 45 минут.
 
-## <a name="viewgw"></a>Просмотр VPN-шлюза
+## <a name="view-the-vpn-gateway"></a><a name="viewgw"></a>Просмотр VPN-шлюза
 
 ```azurecli-interactive
 az network vnet-gateway show \
@@ -101,7 +101,7 @@ az network vnet-gateway show \
 
 Результат выглядит примерно так.
 
-```
+```output
 {
   "activeActive": false,
   "bgpSettings": null,
@@ -159,7 +159,7 @@ az network public-ip show \
 
 Пример ответа:
 
-```
+```output
 {
   "dnsSettings": null,
   "etag": "W/\"a12d4d03-b27a-46cc-b222-8d9364b8166a\"",
@@ -170,6 +170,7 @@ az network public-ip show \
     "etag": null,
     "id": "/subscriptions/<subscription ID>/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW/ipConfigurations/vnetGatewayConfig0",
 ```
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 При отсутствии необходимости дальнейшего использования созданных ресурсов группу ресурсов можно удалить командой [az group delete](/cli/azure/group). При этом будет удалена группа ресурсов и все содержащиеся в ней ресурсы.

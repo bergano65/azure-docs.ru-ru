@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью действия Hadoop MapReduce
+title: Преобразование данных с помощью активности Hadoop MapReduce
 description: Узнайте, как обрабатывать данные путем выполнения программ Hadoop MapReduce в кластере Azure HDInsight из фабрики данных Azure.
 services: data-factory
 ms.service: data-factory
@@ -11,10 +11,10 @@ manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 01/16/2018
 ms.openlocfilehash: 5d38e3126442bcf34c96cead2b2ea59507b50b8c
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74912867"
 ---
 # <a name="transform-data-using-hadoop-mapreduce-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop MapReduce в фабрике данных Azure
@@ -60,19 +60,19 @@ ms.locfileid: "74912867"
 
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство          | Описание                              | Обязательно для заполнения |
+| Свойство          | Описание                              | Обязательно |
 | ----------------- | ---------------------------------------- | -------- |
-| name              | Имя действия.                     | ДА      |
-| Description (Описание)       | Текст, описывающий, для чего используется действие | Нет       |
-| Тип              | Для действия MapReduce Activity используется тип действия HDinsightMapReduce. | ДА      |
-| linkedServiceName | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | ДА      |
-| className         | Имя класса для выполнения.         | ДА      |
-| jarLinkedService  | Ссылки на связанные службы хранилища Azure, используемые для хранения файлов Jar. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
-| jarFilePath       | Укажите путь к файлам Jar, которые хранятся в службе хранилища Azure, на который ссылается jarLinkedService. В имени файла учитывается регистр знаков. | ДА      |
-| jarlibs           | Массив строк пути к файлам библиотеки Jar, на которые ссылается задание, хранящееся в службе хранилища Azure, которая, в свою очередь, определена в свойстве jarLinkedService. В имени файла учитывается регистр знаков. | Нет       |
-| getDebugInfo      | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную jarLinkedService. Допустимые значения: None, Always или Failure. Значение по умолчанию: None. | Нет       |
-| arguments         | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет       |
-| defines           | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Hive. | Нет       |
+| name              | Имя действия.                     | Да      |
+| description       | Текст, описывающий, для чего используется действие | нет       |
+| type              | Для действия MapReduce Activity используется тип действия HDinsightMapReduce. | Да      |
+| linkedServiceName | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
+| className         | Имя класса для выполнения.         | Да      |
+| jarLinkedService  | Ссылки на связанные службы хранилища Azure, используемые для хранения файлов Jar. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | нет       |
+| jarFilePath       | Укажите путь к файлам Jar, которые хранятся в службе хранилища Azure, на который ссылается jarLinkedService. В имени файла учитывается регистр знаков. | Да      |
+| jarlibs           | Массив строк пути к файлам библиотеки Jar, на которые ссылается задание, хранящееся в службе хранилища Azure, которая, в свою очередь, определена в свойстве jarLinkedService. В имени файла учитывается регистр знаков. | нет       |
+| getDebugInfo      | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную jarLinkedService. Допустимые значения: None, Always или Failure. Значение по умолчанию: None. | нет       |
+| аргументы         | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | нет       |
+| defines           | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Hive. | нет       |
 
 
 
@@ -117,9 +117,9 @@ ms.locfileid: "74912867"
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)
 * [Действие Hive](transform-data-using-hadoop-hive.md)
-* [Действие Pig](transform-data-using-hadoop-pig.md)
+* [Свинья деятельность](transform-data-using-hadoop-pig.md)
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
-* [Действие Spark](transform-data-using-spark.md)
-* [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
-* [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md)
-* [Действие хранимой процедуры](transform-data-using-stored-procedure.md)
+* [Активность искры](transform-data-using-spark.md)
+* [пользовательская деятельность .NET](transform-data-using-dotnet-custom-activity.md)
+* [Деятельность по выполнению пакета машинного обучения](transform-data-using-machine-learning.md)
+* [Сохраненная процедура деятельности](transform-data-using-stored-procedure.md)

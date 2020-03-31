@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: c71136ecb57fac460514b5f4815ba19cc22d86cb
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76290620"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием Python
@@ -27,15 +27,15 @@ ms.locfileid: "76290620"
 >
 >
 
-Узнайте, как использовать пакет SDK для Python для Azure Data Lake Storage 1-го поколения для выполнения основных операций по управлению учетными записями, таких как создание учетной записи Data Lake Storage 1-го поколения, получение списка учетных записей Data Lake Storage 1-го поколения и т. д. Инструкции по выполнению операций файловой системы в Data Lake Storage 1-го поколения с помощью Python см. [в разделе операции файловой системы на Data Lake Storage 1-го поколения с помощью Python](data-lake-store-data-operations-python.md).
+Узнайте, как использовать Python SDK для хранения azure Data Lake Storage Gen1 для выполнения основных операций по управлению учетными записями, таких как создание учетной записи Data Lake Storage Gen1, список учетных записей Data Lake Storage Gen1 и т.д. Для получения инструкций о том, как выполнять операции файловой [Filesystem operations on Data Lake Storage Gen1 using Python](data-lake-store-data-operations-python.md)системы на Data Lake Storage Gen1 с помощью Python, см.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Группа ресурсов Azure.** Инструкции см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/management/manage-resource-groups-portal.md).
+* **Группа ресурсов Azure**. Инструкции см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/management/manage-resource-groups-portal.md).
 
 ## <a name="install-the-modules"></a>Установка модулей
 

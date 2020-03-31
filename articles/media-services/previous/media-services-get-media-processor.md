@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: af6badda426f1bb81d8528cfda9b8c02d55712b3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "61463856"
 ---
-# <a name="how-to-get-a-media-processor-instance"></a>Практическое руководство: как получить экземпляр обработчика мультимедиа
+# <a name="how-to-get-a-media-processor-instance"></a>Как получить экземпляр медиапроцессора
 > [!div class="op_single_selector"]
 > * [.NET](media-services-get-media-processor.md)
-> * [REST](media-services-rest-get-media-processor.md)
+> * [Остальные](media-services-rest-get-media-processor.md)
 > 
 > 
 
@@ -40,7 +40,7 @@ ms.locfileid: "61463856"
 
 ## <a name="get-media-processor"></a>Получение обработчика мультимедиа
 
-Приведенные ниже методы показывают, как получить экземпляр обработчика мультимедиа. В примере кода предполагается использование переменной уровня модуля с именем **_context** для ссылки на контекст сервера, как описано в статье [ Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
+Приведенные ниже методы показывают, как получить экземпляр обработчика мультимедиа. В примере кода предполагается использование переменной уровня модуля с именем **_context** для ссылки на контекст сервера (см. статью [Подключение к учетной записи служб мультимедиа с помощью пакета SDK служб мультимедиа для .NET](media-services-use-aad-auth-to-access-ams-api.md)).
 
     private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
     {
@@ -60,6 +60,6 @@ ms.locfileid: "61463856"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Теперь, когда вы знаете, как получить экземпляр обработчика мультимедиа, перейдите в раздел [Кодировка актива](media-services-dotnet-encode-with-media-encoder-standard.md) , в котором будет показано, как использовать Media Encoder Standard для кодирования ресурса-контейнера.
 

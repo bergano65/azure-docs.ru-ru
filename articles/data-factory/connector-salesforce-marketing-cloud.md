@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из маркетингового облака Salesforce
+title: Копирование данных из отдела маркетинга Salesforce Cloud
 description: Узнайте, как копировать данные из Salesforce Marketing Cloud на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/25/2019
 ms.openlocfilehash: aa996ae14276ecf246104d8778fbb6b723448e04
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74931716"
 ---
 # <a name="copy-data-from-salesforce-marketing-cloud-using-azure-data-factory"></a>Копирование данных из Salesforce Marketing Cloud с помощью Фабрики данных Azure
@@ -25,21 +25,21 @@ ms.locfileid: "74931716"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Этот соединитель Cloud Marketing для Salesforce поддерживается для следующих действий:
+Этот облачный разъем Отдела Маркетинга Salesforce поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
-- [Действие поиска](control-flow-lookup-activity.md)
+- [Копирование активности](copy-activity-overview.md) с [помощью поддерживаемой матрицы источника/раковины](copy-activity-overview.md)
+- [Активность поиска](control-flow-lookup-activity.md)
 
 Данные из Salesforce Marketing Cloud можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-Соединитель Cloud Marketing в Salesforce поддерживает аутентификацию OAuth 2. Она построена на основе [REST API маркетинга в облаке Salesforce](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/index-api.htm).
+Облачный разъем Отдела Маркетинга Salesforce поддерживает аутентификацию OAuth 2. Он построен на вершине [Облачного облака Salesforce.](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/index-api.htm)
 
 >[!NOTE]
 >Этот соединитель не поддерживает извлечение пользовательских объектов или пользовательские модули обработки данных.
 
 ## <a name="getting-started"></a>Начало работы
 
-Вы можете создать конвейер с помощью операции копирования, используя пакет SDK для .NET, пакет SDK для Python, Azure PowerShell, API REST или шаблон Azure Resource Manager. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](quickstart-create-data-factory-dot-net.md).
+Вы можете создать конвейер с помощью операции копирования, используя пакет SDK для .NET, пакет SDK для Python, Azure PowerShell, API REST или шаблон Azure Resource Manager. См, обучаемый [по деятельности Copy,](quickstart-create-data-factory-dot-net.md) для пошаговых инструкций по созданию конвейера с копированием.
 
 Следующие разделы содержат сведения о свойствах, которые используются для определения сущностей фабрики данных, относящихся к соединителю Salesforce Marketing Cloud.
 
@@ -47,16 +47,16 @@ ms.locfileid: "74931716"
 
 Для связанной службы Salesforce Marketing Cloud поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **Salesforce Marketing Cloud**. | ДА |
-| clientid | Идентификатор клиента, связанного с приложением Salesforce Marketing Cloud.  | ДА |
-| clientSecret | Секрет клиента, связанного с приложением Salesforce Marketing Cloud. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и разрешить действию копирования ADF передавать его оттуда при копировании данных. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
-| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
-| useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
+| type | Для свойства type нужно задать значение **Salesforce Marketing Cloud**. | Да |
+| clientid | Идентификатор клиента, связанного с приложением Salesforce Marketing Cloud.  | Да |
+| clientSecret | Секрет клиента, связанного с приложением Salesforce Marketing Cloud. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и разрешить действию копирования ADF передавать его оттуда при копировании данных. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
+| useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
+| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
 
-**Пример.**
+**Примере:**
 
 ```json
 {
@@ -80,13 +80,13 @@ ms.locfileid: "74931716"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных Salesforce Marketing Cloud.
+Полный список разделов и свойств, доступных [datasets](concepts-datasets-linked-services.md) для определения наборов данных, см. Этот раздел содержит список свойств, поддерживаемых набором данных Salesforce Marketing Cloud.
 
 Чтобы скопировать данные из Salesforce Marketing Cloud, для свойства type набора данных установите значение **SalesforceMarketingCloudObject**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство Type набора данных должно иметь значение **салесфорцемаркетингклаудобжект** . | ДА |
+| type | Свойство типа набора данных должно быть установлено: **SalesforceMarketingCloudObject** | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -112,14 +112,14 @@ ms.locfileid: "74931716"
 
 ### <a name="salesforce-marketing-cloud-as-source"></a>Salesforce Marketing Cloud в качестве источника
 
-Чтобы скопировать данные из Salesforce Marketing Cloud, установите тип источника **SalesforceMarketingCloudSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные из Salesforce Marketing Cloud, установите тип источника **SalesforceMarketingCloudSource** в действии копирования. Следующие свойства поддерживаются в разделе **источника активности** копирования:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **SalesforceMarketingCloudSource**. | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство type источника действия копирования должно иметь значение **SalesforceMarketingCloudSource**. | Да |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Примере:**
 
 ```json
 "activities":[
@@ -151,9 +151,9 @@ ms.locfileid: "74931716"
 ]
 ```
 
-## <a name="lookup-activity-properties"></a>Свойства действия поиска
+## <a name="lookup-activity-properties"></a>Свойства активности поиска
 
-Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+Чтобы узнать подробности о свойствах, проверьте [активность поиска.](control-flow-lookup-activity.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

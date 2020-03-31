@@ -1,6 +1,6 @@
 ---
-title: Пакет Azure HDInsight SDK для Go
-description: Справочные материалы по использованию пакета SDK Azure HDInsight для Go и Apache Hadoop кластеров
+title: Azure HDInsight SDK для Go
+description: Справочный материал для использования кластеров Azure HDInsight SDK для кластеров Go и Apache Hadoop
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,26 +8,26 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 01/03/2020
-ms.openlocfilehash: 065165ddb629f0629e9b895dbad5ee33605f8bc1
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 292496c4d458621213fe62105149ac845d78891e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75658888"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "79479592"
 ---
-# <a name="hdinsight-sdk-for-go-preview"></a>Пакет SDK для HDInsight для Go (Предварительная версия)
+# <a name="hdinsight-sdk-for-go-preview"></a>HDInsight SDK для Go (Предварительный просмотр)
 
 ## <a name="overview"></a>Обзор
-Пакет SDK для HDInsight для Go предоставляет классы и функции, позволяющие управлять кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
+HDInsight SDK для Go предоставляет классы и функции, которые позволяют управлять кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
 
 > [!NOTE]  
 >Справочные материалы GoDoc для этого пакета SDK также можно найти [здесь](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Средство`go get`](https://github.com/golang/go/wiki/GoGetTools).
+* [ `go get` Инструмент](https://github.com/golang/go/wiki/GoGetTools).
 * [Перейти](https://golang.org/dl/).
 
 ## <a name="sdk-installation"></a>Установка пакета SDK
@@ -36,14 +36,14 @@ ms.locfileid: "75658888"
 
 ## <a name="authentication"></a>Проверка подлинности
 
-Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого у вас будет экземпляр `ClustersClient`, содержащий множество функций (описанных в разделах ниже), которые можно использовать для выполнения операций управления.
+Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого, вы будете иметь экземпляр `ClustersClient`, который содержит много функций (изложенные в ниже разделах), которые могут быть использованы для выполнения операций управления.
 
 > [!NOTE]  
 > Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](https://docs.microsoft.com/azure/go/azure-sdk-go-authorization)
 
 ### <a name="authentication-example-using-a-service-principal"></a>Пример аутентификации с помощью субъекта-службы
 
-Сначала войдите в [Azure Cloud Shell](https://shell.azure.com/bash). Убедитесь, что вы используете подписку, в которой вы хотите создать субъект-службу.
+Сначала войдите в [Azure Cloud Shell](https://shell.azure.com/bash). Убедитесь, что в настоящее время вы используете подписку, в которой вы хотите создать основной службы.
 
 ```azurecli-interactive
 az account show
@@ -73,7 +73,7 @@ az account set -s <name or ID of subscription>
 ```
 
 > [!IMPORTANT]  
-> Если вы еще не зарегистрировали поставщик ресурсов HDInsight с помощью другой функции (например, создав кластер HDInsight с помощью портал Azure), это необходимо сделать, прежде чем можно будет пройти проверку подлинности. Это можно сделать с помощью [Azure Cloud Shell](https://shell.azure.com/bash), выполнив такую команду:
+> Если вы еще не зарегистрировали поставщика ресурсов HDInsight другой функцией (например, путем создания кластера HDInsight через портал Azure), вам необходимо сделать это один раз, прежде чем вы сможете проверить подлинность. Это можно сделать с помощью [Azure Cloud Shell](https://shell.azure.com/bash), выполнив такую команду:
 >```azurecli-interactive
 >az provider register --namespace Microsoft.HDInsight
 >```
@@ -94,7 +94,6 @@ az ad sp create-for-rbac --name <Service Principal Name> --sdk-auth
   "tenantId": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
   "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
   "resourceManagerEndpointUrl": "https://management.azure.com/",
-  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
   "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
   "galleryEndpointUrl": "https://gallery.azure.com/",
   "managementEndpointUrl": "https://management.core.windows.net/"
@@ -145,7 +144,7 @@ func main() {
 
 #### <a name="example"></a>Пример
 
-В этом примере показано, как создать кластер [Apache Spark](https://spark.apache.org/) с двумя головными узлами и одним рабочим узлом.
+В этом примере показано, как создать кластер [Apache Spark](https://spark.apache.org/) с двумя головными узлами и одним рабочим узлам.
 
 > [!NOTE]  
 > Сначала необходимо создать группу ресурсов и учетную запись хранения, как описано далее. Если они уже созданы, следующие шаги можно пропустить.
@@ -166,14 +165,14 @@ az group create -l <Region Name (i.e. eastus)> --n <Resource Group Name>
 az storage account create -n <Storage Account Name> -g <Existing Resource Group Name> -l <Region Name (i.e. eastus)> --sku <SKU i.e. Standard_LRS>
 ```
 
-Теперь выполните следующую команду, чтобы получить ключ для учетной записи хранения (он понадобится для создания кластера):
+Теперь запустите следующую команду, чтобы получить ключ для учетной записи хранилища (для создания кластера необходимо создать кластер):
 
 ```azurecli-interactive
 az storage account keys list -n <Storage Account Name>
 ```
 
 ---
-Приведенный ниже фрагмент Go создает кластер Spark с двумя головными узлами и одним рабочим узлом. Задайте переменные, как описано в комментариях, и при необходимости измените другие параметры.
+Ниже фрагмент Go создает кластер Spark с двумя головными узлами и одним рабочим узлам. Задайте переменные, как описано в комментариях, и при необходимости измените другие параметры.
 
 ```golang
 // The name for the cluster you are creating
@@ -264,7 +263,7 @@ client.Get(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 
 #### <a name="example"></a>Пример
 
-Чтобы убедиться, что кластер успешно создан, можно использовать `get`.
+Можно использовать `get` для подтверждения того, что вы успешно создали кластер.
 
 ```golang
 cluster, err := client.Get(context.Background(), resourceGroupName, clusterName)
@@ -353,7 +352,7 @@ client.Resize(context.Background(), "<Resource Group Name>", "<Cluster Name>", h
 
 Пакет Azure Management SDK для HDInsight также позволяет управлять мониторингом кластеров с помощью Operations Management Suite (OMS).
 
-Создайте экземпляр `ExtensionClient`, используемый в операциях мониторинга, используя такую же процедуру, как и при создании экземпляра `ClusterClient`, применяемого в операциях управления. После завершения предыдущего раздела проверки подлинности можно создать `ExtensionClient` следующим образом:
+Создайте экземпляр `ExtensionClient`, используемый в операциях мониторинга, используя такую же процедуру, как и при создании экземпляра `ClusterClient`, применяемого в операциях управления. После завершения раздела аутентификации выше, `ExtensionClient` вы можете создать так:
 
 ```golang
 extClient := hdi.NewExtensionsClient(SUBSCRIPTION_ID)
@@ -406,7 +405,7 @@ var scriptAction1 = hdi.RuntimeScriptAction{Name: to.StringPtr("<Script Name>"),
 client.ExecuteScriptActions(context.Background(), "<Resource Group Name>", "<Cluster Name>", hdi.ExecuteScriptActionParameters{PersistOnSuccess: to.BoolPtr(true), ScriptActions: &[]hdi.RuntimeScriptAction{scriptAction1}}) //add more RuntimeScriptActions to the list to execute multiple scripts
 ```
 
-Для операций "Удаление действий сценариев" и "Получение списка сохраненных действий сценариев" необходимо создать экземпляр `ScriptActionsClient` точно так же, как вы создавали экземпляр `ClusterClient`, применяемый в операциях управления. После завершения предыдущего раздела проверки подлинности можно создать `ScriptActionsClient` следующим образом:
+Для операций "Удаление действий сценариев" и "Получение списка сохраненных действий сценариев" необходимо создать экземпляр `ScriptActionsClient` точно так же, как вы создавали экземпляр `ClusterClient`, применяемый в операциях управления. После завершения раздела аутентификации выше, `ScriptActionsClient` вы можете создать так:
 
 ```golang
 scriptActionsClient := hdi.NewScriptActionsClient(SUBSCRIPTION_ID)
@@ -454,7 +453,7 @@ for (page.NotDone()) {
 
 ### <a name="list-all-scripts-execution-history"></a>Просмотр журнала выполнения всех сценариев
 
-Для этой операции необходимо создать экземпляр `ScriptExecutionHistoryClient`, используя ту же процедуру, с помощью которой вы создали экземпляр `ClusterClient`, применяемый в операциях управления. После завершения предыдущего раздела проверки подлинности можно создать `ScriptActionsClient` следующим образом:
+Для этой операции необходимо создать экземпляр `ScriptExecutionHistoryClient`, используя ту же процедуру, с помощью которой вы создали экземпляр `ClusterClient`, применяемый в операциях управления. После завершения раздела аутентификации выше, `ScriptActionsClient` вы можете создать так:
 
 ```golang
 scriptExecutionHistoryClient := hdi.NewScriptExecutionHistoryClient(SUBSCRIPTION_ID)

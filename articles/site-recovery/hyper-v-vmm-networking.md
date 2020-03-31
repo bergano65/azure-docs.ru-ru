@@ -1,5 +1,5 @@
 ---
-title: Настройка IP-адресов после отработки отказа на дополнительный сайт с Azure Site Recovery
+title: Настройка IP-адреса после сбоя на вторичном сайте с восстановлением сайта Azure
 description: Сведения о том, как настроить IP-адреса для подключения к виртуальным машинам на второй локальной площадке после аварийного восстановления и отработки отказа с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: a61f7ff69e648262eb721eb61a98b09dbbee924c
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "73961431"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-a-secondary-on-premises-site-after-failover"></a>Настройка назначения IP-адресов для подключения к локальному веб-сайту после отработки отказа
@@ -61,13 +61,13 @@ ms.locfileid: "73961431"
 На следующем рисунке показаны подсети до и после отработки отказа:
 
 
-**Перед выполнением отработки отказа**
+**Перед неудачей**
 
-![Перед выполнением отработки отказа](./media/hyper-v-vmm-networking/network-design2.png)
+![До отработки отказа](./media/hyper-v-vmm-networking/network-design2.png)
 
-**После выполнения отработки отказа**
+**После неудачи**
 
-![После выполнения отработки отказа](./media/hyper-v-vmm-networking/network-design3.png)
+![После отработки отказа](./media/hyper-v-vmm-networking/network-design3.png)
 
 После отработки отказа Site Recovery выделяет IP-адреса для каждого сетевого интерфейса виртуальной машины. Адрес назначается из пула статических IP-адресов в соответствующей сети для каждого экземпляра виртуальной машины.
 
@@ -116,16 +116,16 @@ ms.locfileid: "73961431"
 - В этом сценарии не нужно выполнять отработку отказа всей подсети, а также вносить изменения для перенастройки VPN или сетевых маршрутов. Отработка отказа и некоторые обновления DNS обеспечивают доступность приложений.
 - Если DNS настроен для разрешения динамических обновлений, после запуска по завершении отработки отказа виртуальные машины зарегистрируются, используя новый IP-адрес.
 
-**Перед выполнением отработки отказа**
+**Перед неудачей**
 
 ![Другой IP-адрес — до отработки отказа](./media/hyper-v-vmm-networking/network-design10.png)
 
-**После выполнения отработки отказа**
+**После неудачи**
 
 ![Другой IP-адрес — после отработки отказа](./media/hyper-v-vmm-networking/network-design11.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Запуск отработки отказа](hyper-v-vmm-failover-failback.md)
+[Выполнить сбой](hyper-v-vmm-failover-failback.md)
 

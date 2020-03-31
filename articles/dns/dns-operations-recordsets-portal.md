@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/6/2018
 ms.author: rohink
 ms.openlocfilehash: 4012b32eb2684126b8dc64b9e86bf35a016e9fba
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76936844"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
@@ -70,14 +70,14 @@ ms.locfileid: "76936844"
 Для удаления записей из набора можно использовать портал Azure. При удалении последней записи из набора сам набор не удаляется.
 
 1. Выполните поиск записи в колонке **Свойства набора записей** для своего набора записей.
-2. Щелкните удаляемую запись. Затем щелкните **Удалить**.
+2. Щелкните удаляемую запись. Затем выберите **Удалить**.
 
     ![Удаление набора записей](./media/dns-operations-recordsets-portal/removerecord500.png)
 
 3. Щелкните **Сохранить** в верхней части колонки, чтобы сохранить параметры.
 4. Удаление записи соответствующим образом отразится на ее значениях в колонке **Зона DNS** .
 
-## <a name="delete"></a>Удаление набора записей
+## <a name="delete-a-record-set"></a><a name="delete"></a>Удаление набора записей
 
 1. Щелкните **Удалить** в колонке **Record set properties** (Свойства набора записей) для набора записей.
 

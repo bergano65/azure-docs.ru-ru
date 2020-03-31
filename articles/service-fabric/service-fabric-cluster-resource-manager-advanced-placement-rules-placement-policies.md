@@ -1,15 +1,15 @@
 ---
-title: Политики размещения диспетчер ресурсов кластера Service Fabric
+title: Менеджер кластерных ресурсов сервисной ткани - Политика размещения
 description: Общие сведения о дополнительных политиках размещения и правилах для служб Service Fabric
 author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 9aea157d03f344e07a81f0588d3e0127f17ca75d
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75834396"
 ---
 # <a name="placement-policies-for-service-fabric-services"></a>Политики размещения для служб Service Fabric
@@ -36,8 +36,8 @@ ms.locfileid: "75834396"
 
 <center>
 
-![недопустимый пример][Image1]
-домена </center>
+![Пример недопустимого домена][Image1]
+</center>
 
 Код:
 
@@ -57,8 +57,8 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 
 <center>
 
-Пример][Image2]
-требуемого домена ![</center>
+![Пример обязательного домена][Image2]
+</center>
 
 Код:
 
@@ -79,8 +79,8 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 
 <center>
 
-![Предпочитаемые основные домены и][Image3]
-отработки отказа </center>
+![Предпочтительные домены для первичных реплик и отработка отказа][Image3]
+</center>
 
 ```csharp
 ServicePlacementPreferPrimaryDomainPolicyDescription primaryDomain = new ServicePlacementPreferPrimaryDomainPolicyDescription();
