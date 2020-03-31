@@ -4,24 +4,24 @@ description: Используйте управление доступом Azure 
 ms.topic: article
 ms.date: 12/02/2019
 ms.openlocfilehash: 3fb103ac4c4dac736b3c0fc99b2cf49f01e9e005
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74893490"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
-Служба реестра контейнеров Azure поддерживает набор [встроенных ролей Azure](../role-based-access-control/built-in-roles.md) , которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [Управление доступом на основе ролей](../role-based-access-control/index.yml) Azure (RBAC), чтобы назначить определенные разрешения пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
+Служба регистрации контейнеров Azure поддерживает набор [встроенных ролей Azure,](../role-based-access-control/built-in-roles.md) которые обеспечивают различные уровни разрешений в реестр контейнеров Azure. Используйте [элемент управления доступом](../role-based-access-control/index.yml) на основе ролей Azure (RBAC) для присвоения определенных разрешений пользователям, директорам служб или другим идентификаторам, которым необходимо взаимодействовать с реестром. 
 
-| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных изображения](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
+| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных образа](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| Владелец. | X | X | X | X | X | X |  |  
-| участник; | X | X | X |  X | X | X |  |  
+| Владелец | X | X | X | X | X | X |  |  
+| Участник | X | X | X |  X | X | X |  |  
 | Читатель | X |  |  | X |  |  |  |
 | AcrPush |  |  | X | X | |  |  |  
 | AcrPull |  |  |  | X |  |  |  |  
-| акрделете |  |  |  |  | X |  |  |
+| AcrDelete |  |  |  |  | X |  |  |
 | AcrImageSigner |  |  |  |  |  |  | X |
 
 ## <a name="differentiate-users-and-services"></a>Различие пользователей и служб
@@ -58,7 +58,7 @@ ms.locfileid: "74893490"
 
 ## <a name="delete-image-data"></a>Удаление данных образа
 
-Возможность [удалять образы контейнеров](container-registry-delete.md)или удалять другие [Поддерживаемые артефакты](container-registry-image-formats.md) , например диаграммы Helm, из реестра.
+Возможность [удалять изображения контейнеров](container-registry-delete.md)или удалять другие [поддерживаемые артефакты,](container-registry-image-formats.md) такие как диаграммы helm, из реестра.
 
 ## <a name="change-policies"></a>Изменение политик
 
@@ -70,18 +70,18 @@ ms.locfileid: "74893490"
 
 ## <a name="custom-roles"></a>Пользовательские роли
 
-Как и в случае с другими ресурсами Azure, вы можете создавать собственные [пользовательские роли](../role-based-access-control/custom-roles.md) с детализированными разрешениями для реестра контейнеров Azure. Затем назначьте пользовательские роли пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
+Как и в других ресурсах Azure, вы можете создавать свои собственные [пользовательские роли](../role-based-access-control/custom-roles.md) с мелкозернистыми разрешениями в реестр контейнеров Azure. Затем назначайте пользовательские роли пользователям, директорам служб или другим идентификаторам, которым необходимо взаимодействовать с реестром. 
 
-Чтобы определить, какие разрешения следует применить к пользовательской роли, ознакомьтесь со списком [действий](../role-based-access-control/resource-provider-operations.md#microsoftcontainerregistry)Microsoft. ContainerRegistry, просмотрите список разрешенных действий [встроенных ролей записи контроля](../role-based-access-control/built-in-roles.md)доступа или выполните следующую команду:
+Чтобы определить, какие разрешения следует применить к пользовательской роли, смотрите список [действий](../role-based-access-control/resource-provider-operations.md#microsoftcontainerregistry)Microsoft.ContainerRegistry, просмотрите разрешенные действия [встроенных ролей ACR](../role-based-access-control/built-in-roles.md)или запустите следующую команду:
 
 ```azurecli
 az provider operation show --namespace Microsoft.ContainerRegistry
 ```
 
-Чтобы определить пользовательскую роль, см. раздел [шаги по созданию настраиваемой роли](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role).
+Чтобы определить пользовательскую роль, [см. Шаги для создания пользовательской роли.](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role)
 
 > [!IMPORTANT]
-> В пользовательской роли реестр контейнеров Azure в настоящее время не поддерживает подстановочные знаки, такие как `Microsoft.ContainerRegistry/*` или `Microsoft.ContainerRegistry/registries/*`, которые предоставляют доступ ко всем соответствующим действиям. Укажите в роли все необходимые действия по отдельности.
+> В пользовательской роли реестр контейнеров Azure в настоящее время не поддерживает подстановочные знаки, такие как `Microsoft.ContainerRegistry/*` или `Microsoft.ContainerRegistry/registries/*` которые предоставляют доступ ко всем соответствующим действиям. Укажите любые необходимые действия индивидуально в роли.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -89,4 +89,4 @@ az provider operation show --namespace Microsoft.ContainerRegistry
 
 * Ознакомьтесь с дополнительными сведениями о [вариантах проверки подлинности](container-registry-authentication.md) для Реестра контейнеров Azure.
 
-* Сведения о включении [разрешений в области репозитория](container-registry-repository-scoped-permissions.md) (Предварительная версия) в реестре контейнеров.
+* Узнайте о [включении разрешений с разбивкой репозиторий](container-registry-repository-scoped-permissions.md) (предварительный просмотр) в реестре контейнеров.

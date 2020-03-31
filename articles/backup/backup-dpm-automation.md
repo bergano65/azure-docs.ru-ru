@@ -1,13 +1,13 @@
 ---
-title: Использование PowerShell для резервного копирования рабочих нагрузок DPM
+title: Используйте PowerShell для резервного копирования рабочих нагрузок DPM
 description: Узнайте о том, как развернуть службу архивации Azure для Data Protection Manager (DPM) и управлять ей с помощью PowerShell
 ms.topic: conceptual
 ms.date: 01/23/2017
 ms.openlocfilehash: 06c138a4015a0b730369e091fc57a34d2190051d
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/28/2020
 ms.locfileid: "77616736"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-data-protection-manager-dpm-servers-using-powershell"></a>Развертывание резервного копирования в Azure для серверов Data Protection Manager (DPM) и управление им с помощью PowerShell
@@ -37,15 +37,15 @@ Sample DPM scripts: Get-DPMSampleScript
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Чтобы начать, [скачайте последнюю Azure PowerShell](/powershell/azure/install-az-ps).
+Для начала [загрузите последнюю Azure PowerShell.](/powershell/azure/install-az-ps)
 
 С помощью PowerShell можно автоматизировать указанные ниже задачи по настройке и регистрации.
 
-* Создание хранилища служб восстановления
+* Создание хранилища Служб восстановления
 * Установка агента службы архивации Azure.
 * Регистрация в службе архивации Azure
 * Параметры сети
-* Параметры шифрования
+* Параметры шифрования.
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
@@ -63,7 +63,7 @@ Sample DPM scripts: Get-DPMSampleScript
     New-AzResourceGroup –Name "test-rg" –Location "West US"
     ```
 
-3. Используйте командлет **New-азрековерисервицесваулт** , чтобы создать новое хранилище. Разместите хранилище там же, где находится группа ресурсов.
+3. Для создания нового хранилища используйте смдlet **New-AzRecoveryServicesVault.** Разместите хранилище там же, где находится группа ресурсов.
 
     ```powershell
     New-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
@@ -83,9 +83,9 @@ Sample DPM scripts: Get-DPMSampleScript
 
 ## <a name="view-the-vaults-in-a-subscription"></a>Просмотр хранилищ в подписке
 
-Используйте **Get-азрековерисервицесваулт** для просмотра списка всех хранилищ в текущей подписке. Он позволяет убедиться в том, что хранилище создано, и увидеть, какие хранилища доступны в подписке.
+Используйте **Get-AzRecoveryRecoveryServicesVault** для просмотра списка всех хранилищ в текущей подписке. Он позволяет убедиться в том, что хранилище создано, и увидеть, какие хранилища доступны в подписке.
 
-Выполните команду Get-Азрековерисервицесваулт и в списке всех хранилищ в подписке отобразится список.
+Выполнить команду, Get-AzRecoveryServicesVault, и все хранилища в подписке перечислены.
 
 ```powershell
 Get-AzRecoveryServicesVault
@@ -113,13 +113,13 @@ MARSAgentInstaller.exe /q
 
 Агент будет установлен с параметрами по умолчанию. Установка займет всего несколько минут и пройдет в фоновом режиме. Если параметр */nu* не будет указан, в конце установки откроется окно **Обновления Windows** для проверки наличия обновлений.
 
-Агент появится в списке установленных программ. Чтобы просмотреть список установленных программ, выберите **Панель управления** > **Программы** > **Программы и компоненты**.
+Агент появится в списке установленных программ. Чтобы увидеть список установленных программ, перейдите на программы и**Programs** > функции программ управления**панелями.** **Control Panel** > 
 
 ![Агент установлен](./media/backup-dpm-automation/installed-agent-listing.png)
 
 ### <a name="installation-options"></a>Варианты установки
 
-Чтобы просмотреть все параметры, доступные через командную строку, используйте следующую команду:
+Чтобы увидеть все доступные параметры через командную строку, используйте следующую команду:
 
 ```powershell
 MARSAgentInstaller.exe /?
@@ -127,7 +127,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Параметр | Подробности | По умолчанию |
+| Параметр | Сведения | Значение по умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -138,7 +138,7 @@ MARSAgentInstaller.exe /?
 | /ph |Адрес узла прокси-сервера. |- |
 | /po |Номер порта узла прокси-сервера. |- |
 | /pu |Имя пользователя узла прокси-сервера. |- |
-| /pw |Пароль прокси |- |
+| /pw |Пароль прокси-сервера. |- |
 
 ## <a name="registering-dpm-to-a-recovery-services-vault"></a>Регистрация DPM в хранилище служб восстановления
 
@@ -183,7 +183,7 @@ $setting = Get-DPMCloudSubscriptionSetting -DPMServerName "TestingServer"
 Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -Commit
 ```
 
-## <a name="networking"></a>Сеть
+## <a name="networking"></a>Сети
 
 Если компьютер DPM подключен к службе архивации Azure в Интернете через прокси-сервер, для успешного резервного копирования следует указать параметры прокси-сервера. Для этого используются параметры ```-ProxyServer```, ```-ProxyPort```, ```-ProxyUsername``` и ```ProxyPassword``` для командлета [Set-DPMCloudSubscriptionSetting](https://docs.microsoft.com/powershell/module/dataprotectionmanager/set-dpmcloudsubscriptionsetting?view=systemcenter-ps-2019). В нашем случае прокси-сервер не используется, поэтому мы явным образом удаляем все данные прокси-сервера.
 
@@ -207,7 +207,7 @@ Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSett
 
 В примере выше задается промежуточная область *C:\StagingArea* в объекте PowerShell ```$setting```. Убедитесь, что указанная папка уже существует, иначе финальная фиксация параметров подписки завершится ошибкой.
 
-### <a name="encryption-settings"></a>Параметры шифрования
+### <a name="encryption-settings"></a>Параметры шифрования.
 
 Для защиты конфиденциальности данных резервные копии данных, отправляемые в службу архивации Azure, зашифровываются. Используемая для шифрования парольная фраза является "паролем" для расшифровки данных во время их восстановления. После создания фразы надежно сохраните ее и никому не сообщайте о ней.
 
@@ -268,7 +268,7 @@ $MPG = Get-ModifiableProtectionGroup $PG
 $server = Get-ProductionServer -DPMServerName "TestingServer" | Where-Object {($_.servername) –contains "productionserver01"}
 ```
 
-Теперь получим список источников данных на ```$server``` с помощью командлета [Get-DPMDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/get-dpmdatasource?view=systemcenter-ps-2019). В этом примере мы фильтруем для тома *D:\\* , который мы хотим настроить для резервного копирования. Затем этот источник данных добавляется в группу защиты с помощью командлета [Add-DPMChildDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/add-dpmchilddatasource?view=systemcenter-ps-2019). Не забывайте использовать *изменяемый* объект группы защиты ```$MPG```, чтобы вносить дополнения.
+Теперь получим список источников данных на ```$server``` с помощью командлета [Get-DPMDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/get-dpmdatasource?view=systemcenter-ps-2019). В этом примере мы фильтруем том *D:\\ * который мы хотим настроить для резервного копирования. Затем этот источник данных добавляется в группу защиты с помощью командлета [Add-DPMChildDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/add-dpmchilddatasource?view=systemcenter-ps-2019). Не забывайте использовать *изменяемый* объект группы защиты ```$MPG```, чтобы вносить дополнения.
 
 ```powershell
 $DS = Get-Datasource -ProductionServer $server -Inquire | Where-Object { $_.Name -contains "D:\" }
@@ -386,6 +386,6 @@ Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $
 
 Команды можно с легкостью расширить для любого типа источника данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о службе архивации Azure для DPM см. в статье [Подготовка к архивированию рабочих нагрузок в Azure с помощью DPM](backup-azure-dpm-introduction.md).

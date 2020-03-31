@@ -1,5 +1,5 @@
 ---
-title: Пример приложения с несколькими клиентами — SaaS Wingtip
+title: Пример приложения multi-tenant - Wingtip SaaS
 description: В этой статье приводятся шаги и рекомендации по установке и запуску примера мультитенантного приложения SaaS, использующего Базу данных SQL Azure — Wingtip Tickets.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: genemi
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: 162d1f269c65ad98afa30e8e96370bbdceca99bd
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74132293"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
@@ -24,7 +24,7 @@ ms.locfileid: "74132293"
 
 ## <a name="download-and-unblock-the-wingtip-tickets-saas-scripts"></a>Скачивание и разблокирование сценариев SaaS Wingtip Tickets
 
-Исполняемое содержимое (скрипты, библиотеки DLL) может быть заблокировано Windows, в то время как ZIP-файлы можно загрузить с внешнего источника, а затем извлечь их содержимое. При извлечении скриптов из ZIP-файла **выполните указанные ниже действия, чтобы разблокировать ZIP-файл перед извлечением**. После этого скрипты можно выполнять.
+Исполняемое содержимое (скрипты, библиотеки DLL) может быть заблокировано Windows, в то время как ZIP-файлы можно загрузить с внешнего источника, а затем извлечь их содержимое. При извлечении скриптов из почтового файла выполните **ниже шаги, чтобы разблокировать файл .zip перед извлечением.** После этого скрипты можно выполнять.
 
 1. Перейдите в репозиторий SaaS Wingtip Tickets на сайте GitHub, в котором хранится шаблон аренды базы данных, который вы хотите просмотреть.
     - [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp)
@@ -37,7 +37,7 @@ ms.locfileid: "74132293"
 6. Нажмите кнопку **ОК**.
 7. Извлеките файлы.
 
-Файлы скриптов находятся в папке *..\\Learning Modules*.
+Сценарии расположены в *.. \\Папка для обучения модулей.*
 
 
 ## <a name="working-with-the-wingtip-tickets-powershell-scripts"></a>Работа со сценариями PowerShell для приложения Wingtip Tickets
@@ -48,7 +48,7 @@ ms.locfileid: "74132293"
 
 Измените файл **UserConfig.psm1**, используя имя группы ресурсов и значение пользователя, заданные во время развертывания:
 
-1. Откройте *интегрированную среду сценариев PowerShell* и загрузите файл \\Learning Modules\\*UserConfig.psm1*.
+1. Откройте *интегрированную среду сценариев PowerShell* и загрузите файл *Learning Modules*\\UserConfig.psm1\\.
 2. В полях *ResourceGroupName* и *Name* введите специфические для развертывания значения (только в строках 10 и 11).
 3. Сохраните изменения.
 
@@ -56,7 +56,7 @@ ms.locfileid: "74132293"
 
 ### <a name="execute-the-scripts-by-pressing-f5"></a>Выполнение сценариев нажатием клавиши F5
 
-Некоторые скрипты используют *$PSScriptRoot*, чтобы разрешить перемещение по папкам. Переменная *$PSScriptRoot* обрабатывается только при выполнении скрипта по нажатию клавиши **F5**.  Выделение и запуск выделенного фрагмента (**F8**) может привести к ошибкам, поэтому при выполнении скриптов нажмите клавишу **F5** .
+Некоторые скрипты используют *$PSScriptRoot*, чтобы разрешить перемещение по папкам. Переменная *$PSScriptRoot* обрабатывается только при выполнении скрипта по нажатию клавиши **F5**.Если выделить несколько скриптов и запустить их (**F8**), может произойти ошибка, поэтому нажмите клавишу **F5** при выполнении скриптов.
 
 ### <a name="step-through-the-scripts-to-examine-the-implementation"></a>Пошаговое выполнение скриптов и изучение их реализации
 
@@ -78,9 +78,9 @@ ms.locfileid: "74132293"
 
 В развертывании изначально указаны клиенты и серверы Базы данных SQL каталога для подключения. Схема именования серверов зависит от шаблона аренды базы данных (ниже приведены точные сведения).
 
-   - **Изолированное приложение:** серверы для каждого клиента (например, сервер *contosoconcerthall-&lt;Пользователь&gt;* ) и *catalog-sa-&lt;Пользователь&gt;* .
-   - **Однотенантная база данных:** серверы *tenants1-dpt-&lt;Пользователь&gt;*  и *catalog-dpt-&lt;Пользователь&gt;* .
-   - **Мультитенантная база данных:** серверы *tenants1-mt-&lt;Пользователь&gt;*  и *catalog-mt-&lt;Пользователь&gt;* .
+   - **Изолированное приложение:** серверы для каждого клиента (например, сервер *contosoconcerthall-&lt;Пользователь&gt;*) и *catalog-sa-&lt;Пользователь&gt;*.
+   - **Однотенантная база данных: серверы ** *tenants1-dpt-&lt;Пользователь&gt;* и *catalog-dpt-&lt;Пользователь&gt;*.
+   - **Мультитенантная база данных: серверы ** *tenants1-mt-&lt;Пользователь&gt;* и *catalog-mt-&lt;Пользователь&gt;*.
 
 Для успешного выполнения демонстрационного подключения на обоих серверах есть [правило брандмауэра](sql-database-firewall-configure.md), которое разрешает трафик со всех IP-адресов.
 
@@ -89,14 +89,14 @@ ms.locfileid: "74132293"
     - **Изолированное приложение:** серверы отдельных клиентов (например, *contosoconcerthall-&lt;Пользователь&gt;.database.windows.net*).
     - **Однотенантная база данных:** *tenants1-dpt-&lt;Пользователь&gt;.database.windows.net*.
     - **Мультитенантная база данных:** *tenants1-mt-&lt;Пользователь&gt;.database.windows.net*.
-2. Щелкните **Подключить** > **Компонент ядра СУБД…** :
+2. Нажмите **Подключить** > **движок базы данных...**:
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
-3. Демонстрационные учетные данные: имя входа = *разработчик*, пароль = *P\@ssword1*
+3. Демо-учетные данные: Логин и *разработчик,* Пароль и *P\@sssword1*
 
     На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*.
-    ![подключение](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)
+    ![connection](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)
 
 
 
@@ -114,8 +114,8 @@ ms.locfileid: "74132293"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Развертывание изолированного приложения SaaS Wingtip Tickets](saas-standaloneapp-get-started-deploy.md)
-- [Развертывание SaaS-приложения Wingtip Tickets c однотенантной базой данных](saas-dbpertenant-get-started-deploy.md)
+- [Развертывание приложения SaaS Wingtip Tickets для однотенантной базы данных](saas-dbpertenant-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для мультитенантной базы данных](saas-multitenantdb-get-started-deploy.md)
 

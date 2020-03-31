@@ -9,21 +9,21 @@ ms.date: 07/12/2019
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: ceda7bd6bd165df1eece555c6ce8a9a6c863b2c1
-ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77112353"
 ---
 ### <a name="create-a-user-assigned-identity"></a>Создание назначаемого пользователем удостоверения
 
-Создайте удостоверение с именем *мякртасксид* в подписке с помощью команды [AZ Identity Create][az-identity-create] . Вы можете использовать ту же группу ресурсов, которая использовалась ранее для создания реестра контейнеров или другого.
+Создайте идентификацию под названием *myACRTasksId* в подписке с помощью команды [создания идентификатора az.][az-identity-create] Можно использовать ту же группу ресурсов, что и ранее для создания реестра контейнеров, или другую.
 
 ```azurecli-interactive
 az identity create --resource-group myResourceGroup --name myACRTasksId
 ```
 
-Чтобы настроить назначенное пользователем удостоверение в следующих шагах, используйте команду [AZ Identity][az-identity-show] , чтобы сохранить идентификатор ресурса, идентификатор субъекта и идентификатор клиента в переменных.
+Чтобы настроить удостоверение, назначенное пользователем в следующих шагах, используйте команду [шоу-идентификации аз][az-identity-show] для хранения идентификатора ресурсов, основного идентификатора и идентификатора клиента в переменных.
 
 ```azurecli
 # Get resource ID of the user-assigned identity

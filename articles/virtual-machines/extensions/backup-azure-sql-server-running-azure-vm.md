@@ -1,6 +1,6 @@
 ---
-title: Azure Backup для SQL Server, работающих на виртуальной машине Azure
-description: В этой статье вы узнаете, как зарегистрировать Azure Backup в SQL Server, работающем на виртуальной машине Azure.
+title: Резервное копирование Azure для сервера S'L, работающего в Azure VM
+description: В этой статье узнайте, как зарегистрировать резервное копирование Azure в сервере S'L, работая в виртуальной машине Azure.
 services: backup
 author: dcurwin
 manager: carmonm
@@ -8,29 +8,29 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: dacurwin
-ms.openlocfilehash: 77492454e2519c98cadfb6819c850c4830015b59
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: b17e4031edaedc6b0a63d305d20a77e5b58f91ba
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748958"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80247390"
 ---
-# <a name="azure-backup-for-sql-server-running-in-azure-vm"></a>Azure Backup для SQL Server, работающих на виртуальной машине Azure
+# <a name="azure-backup-for-sql-server-running-in-azure-vm"></a>Резервное копирование Azure для сервера S'L, работающего в Azure VM
 
-Azure Backup, среди прочих предложений, обеспечивает поддержку резервного копирования рабочих нагрузок, таких как SQL Server, выполняемых на виртуальных машинах Azure. Так как приложение SQL выполняется на виртуальной машине Azure, службе архивации требуется разрешение на доступ к приложению и получение необходимых сведений.
-Для этого Azure Backup устанавливает расширение **азуребаккупвиндовсворклоад** на виртуальной машине, в которой выполняется SQL Server, во время процесса регистрации, инициированного пользователем.
+Резервное копирование Azure, среди других предложений, обеспечивает поддержку резервного копирования рабочих нагрузок, таких как сервер S'L, работающий в Azure VMs. Так как приложение S'L работает в azure VM, служба резервного копирования нуждается в разрешении на доступ к приложению и получение необходимых деталей.
+Для этого Azure Backup устанавливает расширение **AzureBackupWindowsWorkload** на VM, в котором работает сервер S'L, во время процесса регистрации, инициированного пользователем.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Список поддерживаемых сценариев см. в [матрице поддержки](https://docs.microsoft.com/azure/backup/backup-azure-sql-database#scenario-support) , поддерживаемой Azure Backup.
+Для списка поддерживаемых сценариев обратитесь к [матрице поддержки,](../../backup/sql-support-matrix.md#scenario-support) поддерживаемой резервным копированием Azure.
 
 ## <a name="network-connectivity"></a>Сетевое подключение
 
-Azure Backup поддерживает теги NSG, развертывая прокси-сервер или указанные диапазоны IP-адресов; Дополнительные сведения о каждом из методов см. в этой [статье](https://docs.microsoft.com/azure/backup/backup-sql-server-database-azure-vms#establish-network-connectivity).
+Резервное копирование Azure поддерживает теги NSG, развертывание прокси-сервера или перечисленных диапазонов IP; для получения подробной информации о каждом из методов, обратитесь в эту [статью](https://docs.microsoft.com/azure/backup/backup-sql-server-database-azure-vms#establish-network-connectivity).
 
 ## <a name="extension-schema"></a>Схема расширения
 
-Схема расширения и значения свойств — это значения конфигурации (параметры среды выполнения), которые служба передает в API CRP. Эти значения конфигурации используются во время регистрации и обновления. Расширение **азуребаккупвиндовсворклоад** также использует эту схему. Схема предварительно установлена; в поле Обжектстр можно добавить новый параметр.
+Схема расширения и значения свойств — это значения конфигурации (настройки времени выполнения), которые служба передает aPI CRP. Эти значения конфигурации используются во время регистрации и обновления. **Расширение AzureBackupWindowsWorkload** также использует эту схему. Схема предварительно установлена; новый параметр может быть добавлен в поле objectStr
 
   ```json
       "runtimeSettings": [{
@@ -53,7 +53,7 @@ Azure Backup поддерживает теги NSG, развертывая пр�
       }
   ```
 
-В следующем JSON показана схема для расширения Ворклоадбаккуп.  
+Следующие JSON показывает схему для расширения WorkloadBackup.  
 
   ```json
   {
@@ -85,33 +85,33 @@ Azure Backup поддерживает теги NSG, развертывая пр�
 
 ### <a name="property-values"></a>Значения свойств
 
-Имя | Значение/пример | Тип данных
+name | Значение/пример | Тип данных
  --- | --- | ---
-языковой стандарт | en-us  |  строка
+локаль | ru-ru  |  строка
 taskId | "1c0ae461-9d3b-418c-a505-bb31dfe2095d"  | строка
-objectStr <br/> Значение publicsettings  | "eyJjb250YWluZXJQcm9wZXJ0aWVzIjp7IkNvbnRhaW5lcklEIjoiMzVjMjQxYTItOGRjNy00ZGE5LWI4NTMtMjdjYTJhNDZlM2ZkIiwiSWRNZ210Q29udGFpbmVySWQiOjM0NTY3ODg5LCJSZXNvdXJjZUlkIjoiMDU5NWIwOGEtYzI4Zi00ZmFlLWE5ODItOTkwOWMyMGVjNjVhIiwiU3Vic2NyaXB0aW9uSWQiOiJkNGEzOTliNy1iYjAyLTQ2MWMtODdmYS1jNTM5O DI3ZTgzNTQiLCJVbmlxdWVDb250YWluZXJOYW1lIjoiODM4MDZjODUtNTQ4OS00NmNhLWEyZTctNWMzNzNhYjg3OTcyIn0sInN0YW1wTGlzdCI6W3siU2VydmljZU5hbWUiOjUsIlNlcnZpY2VTdGFtcFVybCI6Imh0dHA6XC9cL015V0xGYWJTdmMuY29tIn1dfQ = = " | строка
+objectStr <br/> (публичныеПостановки)  | "eyJjb250YWlu-XJ-cm9w-XJ0aWzIjp7IkNbRhaW5lcklEjoiMzVjMj'xYTItItIRjNy00-GE5LWI4NTMtMjyTJHND-LM2ФПБСВСВЗИОйМ0НТИ3ОДГ5ЛКС-XNdXJ-UlkIjoiMDU5NWIwOGEtYzI4зи00-mFlLWE5ODItOTkwOWMyMGVJNjVhIiwiW3Vic2NyAXB0aW9KNGNGEzOTliNy1iYJAyLT-2MWMtODdmYS1jNTM5ODI3-TgzNT-iLCJVbmlxdWDb250YW-XJOYW1lIjoODM4MD-jODUtNT-4OS00NMjg3OTcyIn0sInN0YW1wTGlzdCI6W3siU2Видмлж-ЗУ5хбВУиОйОйИзИлНcn-ПЖи2ВТДГФКФВИБCI6Imh0dHA6XC9cL015V00xGYWJTdmM29tIndf ==" | строка
 commandStartTimeUTCTicks | "636967192566036845"  | строка
-вмтипе  | "Microsoft. COMPUTE/virtualmachines"  | строка
-objectStr <br/> ProtectedSettings | "eyJjb250YWluZXJQcm9wZXJ0aWVzIjp7IkNvbnRhaW5lcklEIjoiMzVjMjQxYTItOGRjNy00ZGE5LWI4NTMtMjdjYTJhNDZlM2ZkIiwiSWRNZ210Q29udGFpbmVySWQiOjM0NTY3ODg5LCJSZXNvdXJjZUlkIjoiMDU5NWIwOGEtYzI4Zi00ZmFlLWE5ODItOTkwOWMyMGVjNjVhIiwiU3Vic2NyaXB0aW9uSWQiOiJkNGEzOTliNy1iYjAyLTQ2MWMtODdmYS1jNTM5O DI3ZTgzNTQiLCJVbmlxdWVDb250YWluZXJOYW1lIjoiODM4MDZjODUtNTQ4OS00NmNhLWEyZTctNWMzNzNhYjg3OTcyIn0sInN0YW1wTGlzdCI6W3siU2VydmljZU5hbWUiOjUsIlNlcnZpY2VTdGFtcFVybCI6Imh0dHA6XC9cL015V0xGYWJTdmMuY29tIn1dfQ = = " | строка
+vmType  | "Microsoft.compute/virtualmachines"  | строка
+objectStr <br/> (защищенныеНастройки) | "eyJjb250YWlu-XJ-cm9w-XJ0aWzIjp7IkNbRhaW5lcklEjoiMzVjMj'xYTItItIRjNy00-GE5LWI4NTMtMjyTJHND-LM2ФПБСВСВЗИОйМ0НТИ3ОДГ5ЛКС-XNdXJ-UlkIjoiMDU5NWIwOGEtYzI4зи00-mFlLWE5ODItOTkwOWMyMGVJNjVhIiwiW3Vic2NyAXB0aW9KNGNGEzOTliNy1iYJAyLT-2MWMtODdmYS1jNTM5ODI3-TgzNT-iLCJVbmlxdWDb250YW-XJOYW1lIjoODM4MD-jODUtNT-4OS00NMjg3OTcyIn0sInN0YW1wTGlzdCI6W3siU2Видмлж-ЗУ5хбВУиОйОйИзИлНcn-ПЖи2ВТДГФКФВИБCI6Imh0dHA6XC9cL015V00xGYWJTdmM29tIndf ==" | строка
 logsBlobUri | <https://seapod01coord1exsapk732.blob.core.windows.net/bcdrextensionlogs-d45d8a1c-281e-4bc8-9d30-3b25176f68ea/sopattna-vmubuntu1404ltsc.v2.Logs.txt?sv=2014-02-14&sr=b&sig=DbwYhwfeAC5YJzISgxoKk%2FEWQq2AO1vS1E0rDW%2FlsBw%3D&st=2017-11-09T14%3A33%3A29Z&se=2017-11-09T17%3A38%3A29Z&sp=rw> | строка
 statusBlobUri | <https://seapod01coord1exsapk732.blob.core.windows.net/bcdrextensionlogs-d45d8a1c-281e-4bc8-9d30-3b25176f68ea/sopattna-vmubuntu1404ltsc.v2.Status.txt?sv=2014-02-14&sr=b&sig=96RZBpTKCjmV7QFeXm5IduB%2FILktwGbLwbWg6Ih96Ao%3D&st=2017-11-09T14%3A33%3A29Z&se=2017-11-09T17%3A38%3A29Z&sp=rw> | строка
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Мы рекомендуем добавить расширение Азуребаккупвиндовсворклоад в виртуальную машину, включив SQL Server резервное копирование на виртуальной машине. Это можно сделать с помощью [шаблона диспетчер ресурсов](https://github.com/Azure/azure-quickstart-templates/tree/master/101-recovery-services-vm-workload-backup) , предназначенного для автоматизации резервного копирования на виртуальной машине SQL Server.
+Мы рекомендовали добавить расширение AzureBackupWindowsWorkLoad в виртуальную машину, включив резервное копирование сервера s'L на виртуальной машине. Это может быть достигнуто с помощью [шаблона Resource Manager,](https://github.com/Azure/azure-quickstart-templates/tree/master/101-recovery-services-vm-workload-backup) предназначенного для автоматизации резервного копирования на VM сервера S'L.
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
 
-Необходимо зарегистрировать виртуальную машину Azure, содержащую приложение SQL, с хранилищем служб восстановления. Во время регистрации расширение Азуребаккупвиндовсворклоад устанавливается на виртуальной машине. Для регистрации виртуальной машины используйте командлет [Register-азрековерисервицесбаккупконтаинерпс](https://docs.microsoft.com/powershell/module/az.recoveryservices/Register-AzRecoveryServicesBackupContainer?view=azps-1.5.0) .
+Необходимо «зарегистрировать» VM Azure, содержащее приложение S'L с хранилищем служб восстановления. Во время регистрации на VM устанавливается расширение AzureBackupWindowsWorkload. Для регистрации VM используйте [Регистр-AzRecoveryServicesBackupContainerPS](https://docs.microsoft.com/powershell/module/az.recoveryservices/Register-AzRecoveryServicesBackupContainer?view=azps-1.5.0) cmdlet.
 
 ```powershell
 $myVM = Get-AzVM -ResourceGroupName <VMRG Name> -Name <VMName>
 Register-AzRecoveryServicesBackupContainer -ResourceId $myVM.ID -BackupManagementType AzureWorkload -WorkloadType MSSQL -VaultId $targetVault.ID -Force
 ```
 
-Команда вернет **контейнер резервного копирования** этого ресурса, и состояние будет **зарегистрировано**.
+Команда вернет **резервный контейнер** этого ресурса и статус будет **зарегистрирован.**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Подробнее](https://docs.microsoft.com/azure/backup/backup-sql-server-azure-troubleshoot) о рекомендациях по устранению неполадок при резервном копировании виртуальных машин Azure SQL Server
-- [Распространенные вопросы](https://docs.microsoft.com/azure/backup/faq-backup-sql-server) о резервном копировании SQL Server баз данных, работающих на виртуальных машинах Azure и использующих службу Azure Backup.
+- [Узнайте больше](https://docs.microsoft.com/azure/backup/backup-sql-server-azure-troubleshoot) о рекомендациях по устранению неполадок резервного копирования в Azure S'L Server VM
+- [Общие вопросы](https://docs.microsoft.com/azure/backup/faq-backup-sql-server) о резервном копировании баз данных сервера S'L Server, которые работают на виртуальных машинах Azure (VM) и которые используют службу резервного копирования Azure.

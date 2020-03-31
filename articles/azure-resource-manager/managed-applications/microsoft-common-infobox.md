@@ -1,15 +1,15 @@
 ---
-title: Элемент пользовательского интерфейса Инфобокс
-description: Описывает элемент пользовательского интерфейса Microsoft. Common. Инфобокс для портал Azure. Используйте для добавления текста или предупреждений при развертывании управляемого приложения.
+title: Элемент uI InfoBox
+description: Описывает элемент ui Microsoft.CommonBox для портала Azure. Используйте для добавления текста или предупреждений при развертывании управляемого приложения.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: tomfitz
 ms.openlocfilehash: 6d1e4a84904ef7022d9ce85803bf10285bf0b8ac
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75652480"
 ---
 # <a name="microsoftcommoninfobox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.InfoBox
