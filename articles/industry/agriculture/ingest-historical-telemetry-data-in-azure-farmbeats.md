@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: b0b9d62e8761cfb67d0642d8e5a97e7d1f05af12
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e0a5e89f256b562ce5f702e9ff1388cb4d021bf5
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064456"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437693"
 ---
 # <a name="ingest-historical-telemetry-data"></a>Прием архивных данных телеметрии
 
@@ -18,7 +18,7 @@ ms.locfileid: "80064456"
 
 Использование исторических данных из ресурсов Интернета вещей (IoT), таких как устройства и датчики, является распространенным сценарием в FarmBeats. Вы создаете метаданные для устройств и датчиков, а затем глотаете исторические данные в FarmBeats в каноническом формате.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Прежде чем приступить к этой статье, убедитесь, что вы установили FarmBeats и собрали исторические данные с устройств IoT. Вы также должны включить доступ к партнеру, как указано в следующих шагах.
 
@@ -37,37 +37,48 @@ ms.locfileid: "80064456"
 > [!NOTE]
 > Вы должны быть администратором, чтобы сделать следующие шаги.
 
-1. Скачать [почтовый файл,](https://aka.ms/farmbeatspartnerscriptv2)и извлечь его на локальном диске. Там будет один файл внутри почтового файла.
+1. Выполните вход в https://portal.azure.com/.
 
-2. Войдите https://portal.azure.com/ в систему и перейдите на**регистрацию приложений** **Azure Active Directory.** > 
+2. **Если вы находитесь на FarmBeats версии 1.2.7 или позже, пропустить шаги a, b и c, и перейти к шагу 3.** Вы можете проверить версию FarmBeats, выбрав значок **настроек** в правом верхнем углу uI FarmBeats.
 
-3. Выберите **регистрацию приложений,** которая была создана в рамках развертывания FarmBeats. Он будет иметь то же имя, что и ваш FarmBeats Datahub.
+      а.  Перейти к > **регистрации приложений** Active **Directory Azure**
 
-4. Выберите **Expose API** > Выберите **Добавить клиентское приложение** и введите **04b07795-8ddb-461a-bbee-02f9e1bf7b46** и проверьте **Возможности Scope**. Это даст доступ к Azure CLI (Cloud Shell) для выполнения следующих шагов:
+      b. Выберите **регистрацию приложений,** которая была создана в рамках развертывания FarmBeats. Он будет иметь то же имя, что и ваш Datahub FarmBeats.
 
-5. Откройте Cloud Shell. Эта опция доступна на панели инструментов в правом верхнем углу портала Azure.
+      c. Выберите **Expose API** > выберите **Добавить клиентское приложение** и введите **04b07795-8ddb-461a-bbee-02f9e1bf7b46** и проверьте **Возможности Scope**. Это даст доступ к Azure CLI (Cloud Shell) для выполнения нижеприведенных шагов:
+
+3. Откройте Cloud Shell. Эта опция доступна на панели инструментов в правом верхнем углу портала Azure.
 
     ![Панель инструментов портала Azure](./media/get-drone-imagery-from-drone-partner/navigation-bar-1.png)
 
-6. Убедитесь, что среда настроена на **PowerShell.** По умолчанию, он установлен на Bash.
+4. Убедитесь, что среда настроена на **PowerShell.** По умолчанию, он установлен на Bash.
 
     ![Настройка панели инструментов PowerShell](./media/get-sensor-data-from-sensor-partner/power-shell-new-1.png)
 
-7. Загрузите файл со ступени 1 в экземпляре Облачной оболочки.
+5. Иди в свой домашний каталог.
 
-    ![Кнопка загрузки панели инструментов](./media/get-sensor-data-from-sensor-partner/power-shell-two-1.png)
+    ```azurepowershell-interactive 
+    cd  
+    ```
 
-8. Перейдите в каталог, где файл был загружен. По умолчанию файлы загружаются в домашний каталог под именем пользователя.
+6. Выполните следующую команду. Это позволит загрузить сценарий в ваш домашний каталог.
 
-9. Выполните следующий сценарий. Скрипт запрашивает идентификатор арендатора, который можно получить на**странице Обзора** **active Directory** > Azure.
+    ```azurepowershell-interactive 
 
-    ```azurepowershell-interactive
+    wget –q https://aka.ms/farmbeatspartnerscriptv3 -O ./generatePartnerCredentials.ps1
+
+    ```
+
+7. Выполните следующий сценарий. Скрипт запрашивает идентификатор арендатора, который можно получить на странице Active Directory > **Overview** **Azure.**
+
+    ```azurepowershell-interactive 
 
     ./generatePartnerCredentials.ps1   
 
     ```
 
-10. Следуйте инструкциям на экране, чтобы захватить значения для **API Endpoint**, **Идентификатор клиента**, **Клиент ID**, **Секрет клиента**, и **EventHub подключения строки**.
+8. Следуйте инструкциям на экране, чтобы захватить значения для **API Endpoint**, **Идентификатор клиента**, **Клиент ID**, **Секрет клиента**, и **EventHub подключения строки**.
+
 
 ## <a name="create-device-or-sensor-metadata"></a>Создание метаданных устройства или датчика
 
@@ -90,7 +101,7 @@ ms.locfileid: "80064456"
 |          Производитель            |         Наименование производителя    |
 |  Код продукта                    |  Код продукта устройства или название модели или номер. Например, EnviroMonitor-6800.  |
 |            порты;          |     Название порта и тип, который является цифровым или аналоговым.
-|     name                 |  Имя для идентификации ресурса. Например, название модели или название продукта.
+|     Имя                 |  Имя для идентификации ресурса. Например, название модели или название продукта.
       Описание     | Предоставьте осмысленное описание модели.
 |    Свойства          |    Дополнительные свойства от производителя.   |
 |    **Устройство**             |                      |
@@ -99,7 +110,7 @@ ms.locfileid: "80064456"
 |  ReportingInterval        |   Интервал отчетности в секундах.
 |  Расположение            |  Широта устройства (от 90 до 90 евро), долгота (-180 до 180) и высота (в метрах).   
 |ParentDeviceId       |    Идентификатор родительского устройства, к которому подключено это устройство. Например, узла, подключенного к шлюзу. Узла имеет parentDeviceId в качестве шлюза.  |
-|    name            | Имя для идентификации ресурса. Партнеры устройства должны отправить имя, которое соответствует названию устройства на стороне партнера. Если имя устройства партнера определено пользователем, то одно и то же имя, определенное пользователем, должно распространяться на FarmBeats.|
+|    Имя            | Имя для идентификации ресурса. Партнеры устройства должны отправить имя, которое соответствует названию устройства на стороне партнера. Если имя устройства партнера определено пользователем, то одно и то же имя, определенное пользователем, должно распространяться на FarmBeats.|
 |     Описание       |      Предоставьте содержательное описание. |
 |     Свойства    |  Дополнительные свойства от производителя.
 |     **SensorModel**        |          |
@@ -108,10 +119,10 @@ ms.locfileid: "80064456"
 |     Код продукта| Код продукта или название модели или номер. Например, RS-CO2-N01. |
 |       SensorMeasures > имя       | Название датчика измерения. Поддерживается только нижний регистр. Для измерений из разных глубин укажите глубину. Например, soil_moisture_15cm. Это имя должно соответствовать данным телеметрии.  |
 |          SensorMeasures > DataType       |Тип данных телеметрии. В настоящее время двойника поддерживается.|
-|    ДатчикМеры > типа    |Измерение типа данных телеметрии датчика. Системно-определяемые типы: AmbientTemperature, CO2, Глубина, Электрическая проводимость, LeafWetness, Длина, LiquidLevel, Нитрат, O2, PH, Фосфат, PointInTime, Калий, Давление, RainGauge, Относительнаявлажность, Полиность, Почва, SoilTemperature, SolarRadiation, Государство, TimeDuration, UVRadiation, UVIndex, Объем, WindDirection, WindRun, WindSpeed, Evapotranspiration, PAR. Чтобы добавить больше, обратитесь к /ExtendedType API.|
-|        SensorMeasures > Unit              | Единица данных сенсорной телеметрии. Системные блоки: NoUnit, Celsius, Fahrenheit, Кельвин, Ранкин, Паскаль, Меркурий, PSI, MilliMeter, CentiMeter, Метр, Инч, Ноги, Миля, Километры, MilesPerHour, MilesPerSecond, KMPerHour, KMPerSecond, Метры, Метры, ИзмерениеВВВВ, Степень, ВаттсПерКВарМе, КиловаттсПерКМетр, МиллиВаттсPerSquareCentiMeter, MilliJolesPerCentiMeter, MilliJolesPerSquare MilliSiemensPerCentiMeter, Centibar, DeciSiemensPerMeter, KiloPascal, VolumetricIonContent, Liter, MilliLiter, Seconds, UnixTimestamp, MicroMolPerMeterSquaredPerSecond, InchesPerHour Чтобы добавить больше, обратитесь к /ExtendedType API.|
+|    ДатчикМеры > типа    |Измерение типа данных телеметрии датчика. Системно-определяемые типы: AmbientTemperature, CO2, Depth, ElectricalConductivity, LeafWetness, Length, LiquidLevel, Nitrate, O2, PH, Phosphate, PointInTime, Калий, Давление, RainGauge, RelativeHumidity, Salinity, SoilMoisture, SoilTemperature, SolarRadiation, State, TimeDuration, UVRadiation, UVIndex, Volume, WindDirection, Wind. Чтобы добавить больше, обратитесь к /ExtendedType API.|
+|        SensorMeasures > Unit              | Единица данных сенсорной телеметрии. Системно-определяемые единицы: NoUnit, Celsius, Fahrenheit, Кельвин, Ранкин, Паскаль, Меркурий, PSI, MilliMeter, CentiMeter, Метр, Инч, Ноги, Миля, Километр, MilesPerHour, MilesPerSecond, KMPerHour, Метры, Метры, MilliJoulesPerSquareCentiMeter, VolumetricWaterContent, Процент, PartsPerMillion, MicroMol, MicroMolesPerLiter, SiemensPerSquareMeterPerMole, Centibar, DeciSiemensPerMeter, KiloPascal, VolumetricIonContent, Liter, MilliLiter, Seconds, UnixTimestamp, MicroMolPer|
 |    SensorMeasures > агрегацииТип    |  Значения могут быть не средними, максимальными, минимальными или StandardDeviation.  |
-|          name            | Имя для идентификации ресурса. Например, название модели или название продукта.  |
+|          Имя            | Имя для идентификации ресурса. Например, название модели или название продукта.  |
 |    Описание        | Предоставьте осмысленное описание модели.|
 |   Свойства       |  Дополнительные свойства от производителя.|
 |    **Датчик**      |          |
@@ -120,7 +131,7 @@ ms.locfileid: "80064456"
 | Расположение          |  Датчик широты (от 90 до 90 евро), долгота (-180 до 180), и высота (в метрах).|
 |   Название порт >        |  Наименование и тип порта, к которому подключен датчик на устройстве. Это должно быть то же имя, что и в модели устройства.|
 |    DeviceID  |    Идентификатор устройства, к которому подключен датчик. |
-| name            |   Имя для идентификации ресурса. Например, имя датчика или название продукта, номер модели или код продукта.|
+| Имя            |   Имя для идентификации ресурса. Например, имя датчика или название продукта, номер модели или код продукта.|
 |    Описание      | Предоставьте содержательное описание.|
 |    Свойства        |Дополнительные свойства от производителя.|
 
@@ -130,7 +141,7 @@ ms.locfileid: "80064456"
 
 Чтобы сделать запрос API, вы объедините метод HTTP (POST), URL-адрес службы API и URI с ресурсом для запроса, отправки данных, создания или удаления запроса. Затем вы добавляете один или несколько заголовков запросов HTTP. URL-адрес службы API является конечным пунктом API, т.е. URL Datahub (https://\<yourdatahub>.azurewebsites.net).  
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 FarmBeats Datahub использует проверку подлинности носителя, которая требует следующих учетных данных, которые были созданы в предыдущем разделе:
 
@@ -351,11 +362,11 @@ write_client.stop()
       "sensordata": [
         {
           "timestamp": "< timestamp in ISO 8601 format >",
-          "<sensor measure name (as defined in the Sensor Model)>": "<value>"
+          "<sensor measure name (as defined in the Sensor Model)>": <value>
         },
         {
           "timestamp": "<timestamp in ISO 8601 format>",
-          "<sensor measure name (as defined in the Sensor Model)>": "<values>"
+          "<sensor measure name (as defined in the Sensor Model)>": <value>
         }
       ]
     }
@@ -429,11 +440,11 @@ write_client.stop()
       "sensordata": [
         {
           "timestamp": "< timestamp in ISO 8601 format >",
-          "<sensor measure name (as defined in the Sensor Model)>": "<value>"
+          "<sensor measure name (as defined in the Sensor Model)>": <value>
         },
         {
           "timestamp": "<timestamp in ISO 8601 format>",
-          "<sensor measure name (as defined in the Sensor Model)>": "<value>"
+          "<sensor measure name (as defined in the Sensor Model)>": <value>
         }
       ]
     }
@@ -441,6 +452,6 @@ write_client.stop()
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации о деталях [REST API](rest-api-in-azure-farmbeats.md)интеграции на основе REST API см.

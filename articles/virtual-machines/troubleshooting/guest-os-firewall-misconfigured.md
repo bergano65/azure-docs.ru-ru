@@ -1,6 +1,6 @@
 ---
 title: Брандмауэр гостевой ОС виртуальной машины Azure настроен неправильно | Документация Майкрософт
-description: ''
+description: Узнайте, как использовать метод Serial Console или оффлайн для диагностики и исправления неправильно настроенного брандмауэра гостевой операционной системы на удаленном VM Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 8f04d943e1db49beed13c183fbd06e401546fc03
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e6f42bdf462ac5261f77bc05c62e50500345fe37
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71153899"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80422535"
 ---
 # <a name="azure-vm-guest-os-firewall-is-misconfigured"></a>Брандмауэр гостевой ОС виртуальной машины Azure настроен неправильно
 

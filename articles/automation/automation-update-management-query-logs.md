@@ -3,14 +3,14 @@ title: Журналы управления обновлением Запроса
 description: В этой статье описывается, как запросить журналы для управления обновлениями в рабочем пространстве Журнала Analytics.
 services: automation
 ms.subservice: update-management
-ms.date: 03/11/2020
+ms.date: 03/31/2020
 ms.topic: conceptual
-ms.openlocfilehash: f31168d47f31d8e740c95cb3d9e449f473cc78dc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 863016bbeda9b4aec3bf2b4e12830bd30098150f
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79216848"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437841"
 ---
 # <a name="query-update-records-for-update-management-in-azure-monitor-logs"></a>Записи обновления запросов для управления обновлениями в журналах Azure Monitor
 
@@ -144,7 +144,7 @@ ms.locfileid: "79216848"
 | CriticalUpdatesMissing | Количество критических обновлений, не достающихся, которые применимы. | 
 | ManagementGroupName | Название группы управления менеджером операций или рабочего пространства Log Analytics. |
 | NETRuntimeVersion | Версия рамочного соглашения .NET, установленная на компьютере Windows. |
-| OldestMissingSecurityUpdateBucket | Возможны следующие значения.<br> *Последние*<br> *30 дней назад*<br> *60 дней назад*<br> *Более старая* | 
+| OldestMissingSecurityUpdateBucket | Возможны следующие значения.<br> *Последние,* если значение составляет менее 30 дней<br> *30 дней назад*<br> *60 дней назад*<br> *90 дней назад*<br> *120 дней назад*<br> *150 дней назад*<br> *180 дней назад*<br> *Старше,* когда значение превышает 180 дней | 
 | OldestMissingSecurityUpdateInDays | Общее количество дней для старейшего обновления, обнаруженного как применимое, которое не было установлено. |
 | OsVersion | Версия операционной системы. |
 | OtherUpdatesMissing | Количество обнаруженных обновлений отсутствует. |
@@ -409,7 +409,7 @@ Update
 | project-away ClassificationWeight, InformationId, InformationUrl
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Используйте поиск журналов в [журналах Azure Monitor](../log-analytics/log-analytics-log-searches.md) для просмотра подробных данных обновления.
 * [Создавайте оповещения](automation-tutorial-update-management.md#configure-alerts) о состоянии развертывания обновлений.

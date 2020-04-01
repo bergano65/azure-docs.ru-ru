@@ -4,12 +4,12 @@ description: Узнайте, как выполнить резервное коп
 ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 03/24/2017
-ms.openlocfilehash: 9e623b1bdce93c340ccd0e61f9f5145e7154beff
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1d7d28d813df82a5e1ea0fe424bba2ef5a9a2684
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78295850"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80421348"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в Azure с помощью Azure Backup Server
 
@@ -34,7 +34,7 @@ ms.locfileid: "78295850"
 4. Выберите на сервере Exchange Server базу данных, которую требуется защитить, и нажмите кнопку **Далее**.
 
    > [!NOTE]
-   > Если вы хотите защитить базу данных Exchange 2013, изучите [предварительные требования для Exchange 2013](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/dn751029(v=sc.12)).
+   > Если вы хотите защитить базу данных Exchange 2013, изучите [предварительные требования для Exchange 2013](https://docs.microsoft.com/system-center/dpm/back-up-exchange?view=sc-dpm-2016).
    >
    >
 
@@ -53,7 +53,7 @@ ms.locfileid: "78295850"
     После выбора этой опции проверка согласованности резервного копирования будет проводиться на MABS, чтобы избежать трафика ввоза/от, генерируемого при запуске команды **eseutil** на сервере Exchange.
 
    > [!NOTE]
-   > Чтобы использовать этот параметр, скопируйте файлы Ese.dll и Eseutil.exe в каталог C:\Program Files\Microsoft Azure Backup\DPM\DPM\bin на сервере MABS. В противном случае возникнет следующая ошибка:   
+   > Чтобы использовать эту опцию, необходимо скопировать файлы Ese.dll и Eseutil.exe в c:'Program Files-Microsoft Azure Backup-DPM-DPM-bin на сервере MABS. В противном случае возникнет следующая ошибка:   
    > ![ошибка Eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
@@ -66,7 +66,7 @@ ms.locfileid: "78295850"
    >
 10. Настройте цели **краткосрочного резервного копирования** и нажмите кнопку **Далее**.
 11. Проверьте, есть ли на диске свободное место, и нажмите кнопку **Далее**.
-12. Выберите время создания сервером MABS начальной репликации и нажмите кнопку **Далее**.
+12. Выберите время, в которое MABS Server создаст начальную репликацию, а затем нажмите **Далее.**
 13. Выберите параметры проверки согласованности и нажмите кнопку **Далее**.
 14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример:
 
@@ -105,6 +105,6 @@ ms.locfileid: "78295850"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

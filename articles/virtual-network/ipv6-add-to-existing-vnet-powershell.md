@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/21/2019
+ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: d08ce1c382d173ac98a0e61e6117ed50b958ba44
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c733538a4e730a95008a8ec1e4d50c20d6ce24ec
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76119845"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80420764"
 ---
-# <a name="upgrade-an-ipv4-application-to-ipv6-in-azure-virtual-network---powershell-preview"></a>Обновление приложения IPv4 до IPv6 в виртуальной сети Azure - PowerShell (Предварительный просмотр)
+# <a name="upgrade-an-ipv4-application-to-ipv6-in-azure-virtual-network---powershell"></a>Обновление приложения IPv4 до IPv6 в виртуальной сети Azure - PowerShell
 
 В этой статье показано, как добавить подключение IPv6 к существующему приложению IPv4 в виртуальной сети Azure со балансом стандартной нагрузки и общественным IP. Обновление на месте включает в себя:
 - Адресное пространство IPv6 для виртуальной сети и подсети
@@ -28,8 +28,7 @@ ms.locfileid: "76119845"
 - ВМ с NICs, которые имеют конфигурацию IPv4 и IPv6
 - IPv6 Public IP, чтобы балансомер нагрузки имеет подключение IPv6 к Интернету
 
-> [!Important]
-> Поддержка IPv6 для виртуальной сети Azure в настоящее время находится в открытом доступе. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -37,27 +36,6 @@ ms.locfileid: "76119845"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="register-the-service"></a>Регистрация услуги
-
-Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку на эту функцию предварительного просмотра с помощью следующего приложения Azure PowerShell:
-
-Зарегистрируйтесь следующим образом:
-```azurepowershell
-Register-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
-Register-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
-```
-Регистрация функции занимает до 30 минут. Вы можете проверить свой регистрационный статус, запустив следующую команду Azure PowerShell: Проверьте регистрацию следующим образом:
-```azurepowershell
-Get-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
-Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
-```
-После регистрации выполните следующую команду:
-
-```azurepowershell
-Register-AzResourceProvider -ProviderNamespace Microsoft.Network
-```
-
-### <a name="create-a-standard-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Стандартный"
 В этой статье предполагается, что вы развернули балансовик стандартной нагрузки, как описано в [квикстарте: Создайте баланс- стандартный баланс - Azure PowerShell.](../load-balancer/quickstart-create-standard-load-balancer-powershell.md)
 
 ## <a name="retrieve-the-resource-group"></a>Извлечение группы ресурсов
@@ -176,8 +154,7 @@ $NIC_3 | Set-AzNetworkInterface
 
   ![Виртуальная сеть IPv6 с двойным стеком в Azure](./media/ipv6-add-to-existing-vnet-powershell/ipv6-dual-stack-vnet.png)
 
-> [!NOTE]
-> Виртуальная сеть IPv6 для Azure доступна на портале Azure только для этого предварительного просмотра.
+
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -187,6 +164,6 @@ $NIC_3 | Set-AzNetworkInterface
 Remove-AzResourceGroup -Name MyAzureResourceGroupSLB
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы обновили существующий балансироворовую стандартную нагрузку с конфигурацией IP-адреса IPv4 до двойной стек (IPv4 и IPv6). Вы также добавили конфигурации IPv6 в NICs виртуальных технологий в пул бэкэнда и в Виртуальную сеть, которая их размещает. Подробнее о поддержке IPv6 в виртуальных сетях Azure читайте в пример [IPv6 для виртуальной сети Azure?](ipv6-overview.md)

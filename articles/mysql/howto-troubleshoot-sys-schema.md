@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: troubleshooting
-ms.date: 3/18/2020
-ms.openlocfilehash: a35a586a519ff78e8b32d986b92bd008b2c6b858
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: HT
+ms.date: 3/30/2020
+ms.openlocfilehash: 59b8753007c3b9130c397dda30c571580cbb5326
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80067866"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411090"
 ---
 # <a name="how-to-use-sys_schema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
 
@@ -61,6 +61,9 @@ performance_schema MyS'L, впервые доступная в MyS'L 5.5, обе
 
 ### <a name="sysinnodb_buffer_stats_by_table"></a>*sys.innodb_buffer_stats_by_table*
 
+[!IMPORTANT]
+> Запрос этого представления может повлиять на производительность. Рекомендуется выполнять эту неполадку в непиковое рабочее время.
+
 Буферный пул InnoDB находится в памяти и является основным механизмом кэширования между СУБД и хранилищем. Размер буферного пула привязан к уровню производительности. Его можно изменить, только выбрав другой номер SKU продукта. Как и с памятью в операционной системе, старые страницы выгружаются, чтобы освободить место для новых данных. Чтобы узнать, какие таблицы используют больше всего памяти буферного пула InnoDB, можно запросить представление *sys.innodb_buffer_stats_by_table*.
 
 ![Состояние буфера InnoDB](./media/howto-troubleshoot-sys-schema/innodb-buffer-status.png)
@@ -79,5 +82,5 @@ performance_schema MyS'L, впервые доступная в MyS'L 5.5, обе
 
 Таким образом, sys_schema является мощным инструментом, который подходит и для настройки производительности, и для обслуживания базы данных. Обязательно воспользуйтесь этой функцией в Базе данных Azure для MySQL. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).

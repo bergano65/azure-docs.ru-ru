@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
-ms.date: 12/13/2019
+ms.date: 03/31/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e3a240901ffca2c126e2b61eaee0cf287cc31d6e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 595762e6e8f22dddff30f1cff8c4bb79e89624b1
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79127505"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80473852"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Устранение проблем с клиентом удаленного рабочего стола
 
@@ -21,21 +21,15 @@ ms.locfileid: "79127505"
 
 ## <a name="remote-desktop-client-for-windows-7-or-windows-10-stops-responding-or-cannot-be-opened"></a>Удаленный настольный клиент для Windows 7 или Windows 10 перестает отвечать или не может быть открыт
 
-Используйте следующие смдлеты PowerShell для очистки внеполосных (OOB) клиентских реестров.
+Начиная с версии 1.2.790, вы можете сбросить данные пользователей со страницы About или с помощью команды.
 
-```PowerShell
-Remove-ItemProperty 'HKCU:\Software\Microsoft\Terminal Server Client\Default' - Name FeedURLs
+Используйте следующую команду для удаления данных пользователей, восстановления настроек по умолчанию и отсоединения от всех рабочих пространств.
 
-#Remove RdClientRadc registry key
-Remove-Item 'HKCU:\Software\Microsoft\RdClientRadc' -Recurse
-
-#Remove all files under %appdata%\RdClientRadc
-Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
+```cmd
+msrdcw.exe /reset [/f]
 ```
 
-Перейдите на **:AppData%-RdClientRadc** и удалите весь контент.
-
-Удалить и переустановить клиент Remote Desktop для Windows 7 и Windows 10.
+Если вы используете более раннюю версию клиента Remote Desktop, мы рекомендуем вам удалить и переустановить клиента.
 
 ## <a name="web-client-wont-open"></a>Веб-клиент не откроется
 
@@ -84,7 +78,7 @@ nslookup rdweb.wvd.microsoft.com
 4. Очистите кэш браузера. Для получения более подробной информации [см.](https://binged.it/2RKyfdU)
 5. Откройте браузер в режиме Private.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Для обзора устранения неполадок Windows Virtual Desktop и треков эскалации [см.](troubleshoot-set-up-overview.md)
 - Для устранения неполадок при создании пула арендатора и хоста в среде Windows Virtual Desktop [см.](troubleshoot-set-up-issues.md)

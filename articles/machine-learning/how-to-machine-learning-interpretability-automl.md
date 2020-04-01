@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: mesameki
 author: mesameki
 ms.reviewer: trbye
-ms.date: 10/25/2019
-ms.openlocfilehash: e6fa3b9705fcd718f802b73560e7703b008af2b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/11/2020
+ms.openlocfilehash: e2465a2df3fab736c8f118911da14ef23c8aec86
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064010"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437277"
 ---
 # <a name="model-interpretability-in-automated-machine-learning"></a>Интерпретируемость моделей в автоматизированном машинном обучении
 
@@ -212,6 +212,6 @@ if service.state == 'Healthy':
 
 [![Архитектура интерпретации машинного обучения](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации о том, как можно включить объяснения моделей и важность функций в [concept article on interpretability](how-to-machine-learning-interpretability.md)областях SDK машинного обучения Azure, помимо автоматизированного машинного обучения, см.
