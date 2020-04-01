@@ -5,14 +5,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/20/2019
 ms.openlocfilehash: 41ac1478b1028a847fc0d5e7e70802375e910837
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "67185621"
 ---
 > [!NOTE]
-> Для [лучшие результаты](../articles/cognitive-services/anomaly-detector/concepts/anomaly-detection-best-practices.md) при использовании API обнаружения аномалий, должен включать данные формата JSON временных рядов:
-> * точки данных, разделенных то т же интервал, с не более 10% ожидаемое число точек отсутствует.
-> * точки данных по крайней мере 12, если в данных нет снимите сезоне.
-> * по меньшей мере 4 вхождений шаблона у данных снимите сезоне. 
+> Для [лучших результатов](../articles/cognitive-services/anomaly-detector/concepts/anomaly-detection-best-practices.md) при использовании API "Детектор аномалий", данные временных рядов в формате JSON должны включать:
+> * точки данных, разделенные одним и тем же интервалом, при этом не более 10 % ожидаемого числа отсутствующих точек;
+> * по крайней мере 12 точек данных, если данные не имеют четкого шаблона;
+> * по крайней мере 4 экземпляра шаблона, если данные имеют четкий шаблон. 

@@ -10,24 +10,25 @@ ms.date: 02/14/2020
 ms.subservice: language-understanding
 ms.topic: include
 ms.author: diberry
-ms.openlocfilehash: c10065707aa3bdf27cb20ab9c03d1cd22e6db050
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 3b18e185480cc5275b97bba474f1c054c7bd1276
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77279523"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80286716"
 ---
 Чтобы получить результат прогнозирования LUIS в чат-боте или другом приложении, необходимо опубликовать приложение в конечной точке.
 
-1. Выберите **Publish** (Публикация) на правой верхней панели навигации.
+1. Выберите **Опубликовать** на правой верхней панели навигации.
 
     ![Кнопка для публикации в конечной точке в правом верхнем меню LUIS](../media/howto-publish/publish-button.png)
 
-2. Выберите слот **Production** (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
+2. Выберите слот **Рабочий** и нажмите кнопку **Готово**.
 
-    ![Публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-app-popup.png)
+    > [!div class="mx-imgBorder"]
+    > ![Публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-app-popup.png)
 
-3. Когда публикация будет завершена, в верхней части страницы появится панель состояния, свидетельствующая об успешном результате.
+3. Публикация считается завершенной, когда отобразится уведомление с подтверждением успеха.
 
     ![Публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-endpoint-success.png)
 

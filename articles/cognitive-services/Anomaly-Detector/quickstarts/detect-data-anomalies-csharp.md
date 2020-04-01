@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и C#
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как использовать детектор аномалий используется для обнаружения отклонений в ряде как в пакетном режиме, так и при потоковой передаче.
+description: Узнайте, как использовать API "Детектор аномалий" для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 11/19/2019
+ms.date: 03/24/2020
 ms.author: aahi
-ms.openlocfilehash: b5fb8bb424af47eb7793d38f24b6334677c6a5ea
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b53fecad3655048a7b9d799134926b2730b16dae
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75385315"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80239111"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и C# 
 
@@ -28,7 +28,7 @@ ms.locfileid: "75385315"
 
  Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/csharp-detect-anomalies.cs).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Любой выпуск [Visual Studio 2017 или более поздней версии](https://visualstudio.microsoft.com/downloads/),
 - Конечная точка и ключ Детектора аномалий

@@ -6,15 +6,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 03/12/2020
+ms.date: 03/17/2020
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: 6adce0ed6b5b5768bd9a489fced25ce439a33e0a
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: 64eb19e43223c1953a7244f8fd29c48d085f1e96
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79203434"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80117015"
 ---
 <a name="HOLTop"></a>
 
@@ -32,9 +32,9 @@ ms.locfileid: "79203434"
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Интегрированная среда разработки Visual Studio](https://visualstudio.microsoft.com/vs/).
-* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. 
-    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Вы сделаете это позже в этом кратком руководстве.
-    * Используйте бесплатную ценовую категорию, чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку.  После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -44,7 +44,7 @@ ms.locfileid: "79203434"
 
 #### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
-Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Выберите версию `1.0.0-preview.2`, а затем **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Выберите версию `1.0.0-preview.3`, а затем **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
 
 > [!TIP]
 > Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/TextAnalytics/program.cs), где размещены примеры кода для этого краткого руководства. 

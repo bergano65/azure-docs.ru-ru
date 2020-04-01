@@ -6,33 +6,33 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 03/12/2020
+ms.date: 03/17/2020
 ms.author: aahi
 ms.reviewer: tasharm, assafi, sumeh
-ms.openlocfilehash: 6dd2ac9c17c8e82affb647846c7650a26d784e32
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: a0e6b5b7d5cedc821ee34bdd219ae07bb9d43199
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79203436"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "79481914"
 ---
 <a name="HOLTop"></a>
 
-[Справочная документация](https://aka.ms/azsdk-java-textanalytics-ref-docs) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/textanalytics/azure-ai-textanalytics) | [Пакет](https://search.maven.org/artifact/com.azure/azure-ai-textanalytics/1.0.0-beta.3/jar) | [Примеры](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics)
+[Справочная документация](https://aka.ms/azsdk-java-textanalytics-ref-docs) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/textanalytics/azure-ai-textanalytics) | [Пакет](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/1.0.0-beta.3) | [Примеры](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Пакет разработчиков Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html) (JDK) версии 8 или более поздней.
-* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. 
-    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Вы сделаете это позже в этом кратком руководстве.
-    * Используйте бесплатную ценовую категорию, чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку.  После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
 ## <a name="setting-up"></a>Настройка
 
-### <a name="create-a-new-maven-project"></a>Создание нового проекта Maven
+### <a name="add-the-client-library"></a>Добавление клиентской библиотеки
 
-Добавьте в проект следующую зависимость текстовой аналитики. Эта версия зависимости использует версию `3.0-preview` API Анализа текста. 
+Создайте проект Maven в предпочтительной среде разработки или IDE. Потом добавьте следующую зависимость в файл *pom.xml* проекта. Синтаксис реализации [для других средств сборки](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/1.0.0-beta.3) можно найти в Интернете.
 
 ```xml
 <dependencies>
@@ -44,12 +44,10 @@ ms.locfileid: "79203436"
 </dependencies>
 ```
 
-Создайте файл Java в следующем каталоге: `\src\main\java`.
-
 > [!TIP]
 > Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/TextAnalytics/TextAnalyticsSamples.java), где размещены примеры кода для этого краткого руководства. 
 
-Откройте файл Java и добавьте следующие операторы `import`:
+Создайте файл Java с именем `TextAnalyticsSamples.java`. Откройте файл и добавьте следующие операторы `import`:
 
 ```java
 import com.azure.ai.textanalytics.models.*;
@@ -72,7 +70,7 @@ public class TextAnalyticsSamples {
 
 ```java
 public static void main(String[] args) {
-
+    //You will create these methods later in the quickstart.
     TextAnalyticsClient client = authenticateClient(KEY, ENDPOINT);
 
     sentimentAnalysisExample(client);
@@ -99,7 +97,7 @@ public static void main(String[] args) {
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Создайте метод для генерирования экземпляра объекта `TextAnalyticsClient` с использованием указанных ранее значений `KEY` и `ENDPOINT`.
+Создайте метод для создания экземпляра объекта `TextAnalyticsClient` с ключом и конечной точкой для ресурса "Анализ текста".
 
 ```java
 static TextAnalyticsClient authenticateClient(String key, String endpoint) {

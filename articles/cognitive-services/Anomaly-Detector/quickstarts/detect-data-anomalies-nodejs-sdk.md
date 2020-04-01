@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Обнаружение аномалий данных с помощью клиентской библиотеки Детектора аномалий для Python
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как использовать API "Детектор аномалий" для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
+description: Узнайте, как использовать API "Детектор аномалий" для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 11/19/2019
+ms.date: 03/24/2020
 ms.author: aahi
-ms.openlocfilehash: 17ca1a7671718b5b96df0add7775fb82d4d97303
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: c13657b8f2dae3868c1b9820236585aa930c6be4
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75770447"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80239083"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для Node.js
 
@@ -28,7 +28,7 @@ ms.locfileid: "75770447"
 
 [Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-anomalydetector) | [Поиск кода на GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/javascript/AnomalyDetector)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [Node.js](https://nodejs.org/)

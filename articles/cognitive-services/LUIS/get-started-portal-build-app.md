@@ -1,35 +1,27 @@
 ---
 title: Краткое руководство. Создание приложения на портале LUIS
-titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описывается создание основных компонентов приложения, намерений и сущностей, а также тестирование с примером речевого фрагмента на портале LUIS.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 12/17/2019
-ms.author: diberry
-ms.openlocfilehash: 55ba025b9174f727a54ce0cd63da11c8661af91c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.openlocfilehash: f0c8f0c77f832e049dfc494f82e90edb61a8cb2a
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75381993"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80244620"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Краткое руководство. Создание приложения на портале LUIS
 
-В этом кратком руководстве описывается, как создать приложение на портале LUIS. Сначала вы создадите основные части приложения, **намерения** и **сущности**. Затем вы протестируете приложение, предоставив образец пользовательского речевого фрагмента на интерактивной тестовой панели, чтобы получить прогнозируемое намерение.
-
-Создание приложения выполняется бесплатно и не требует подписки Azure. Когда вы будете готовы развернуть приложение, ознакомьтесь с [кратким руководством](get-started-portal-deploy-app.md). В нем показано, как создать ресурс службы Azure Cognitive и назначить его приложению.
+В этом кратком руководстве описывается, как создать приложение на портале LUIS. Сначала создайте основные части приложения, **намерения** и **сущности**. Потом протестируйте приложение, предоставив образец пользовательского речевого фрагмента на интерактивной тестовой панели, чтобы получить прогнозируемое намерение.
 
 [!INCLUDE [Sign in to LUIS](./includes/sign-in-process.md)]
 
 ## <a name="create-an-app"></a>Создание приложения
 
-1. Выберите **+ Создать** на контекстной панели инструментов.
+1. Выберите **+ New app for conversation** (+ Создать приложение для общения) на панели инструментов контекста, а затем выберите пункт **New app for conversation** (Новое приложение для общения).
 
-   [![Создание приложения в LUIS](./media/create-app-in-portal.png)](./media/create-app-in-portal.png#lightbox)
+    > [!div class="mx-imgBorder"]
+    > [![Создание приложения в LUIS](./media/create-app-in-portal.png)](./media/create-app-in-portal.png#lightbox)
 
 1. Во всплывающем окне настройте приложение со следующими параметрами, а затем выберите **Готово**.
 
@@ -58,7 +50,7 @@ ms.locfileid: "75381993"
 
 Чтобы создать намерения, сделайте следующее:
 
-1. После создания приложения вы находитесь на странице **Намерения** раздела **Сборка**. Нажмите кнопку **Создать**.
+1. После создания приложения вы находитесь на странице **Намерения** раздела **Сборка**. Нажмите кнопку **создания**.
 
    [![Нажмите кнопку "Создать", чтобы добавить новое намерение](./media/get-started-portal-build-app/create-new-intent-button.png)](./media/get-started-portal-build-app/create-new-intent-button.png#lightbox)
 
@@ -70,7 +62,8 @@ ms.locfileid: "75381993"
 
 Для этого намерения `FindForm` примера приложения речевые фрагменты будут содержать номер формы. Клиентскому приложению требуется номер формы для выполнения запроса пользователя, поэтому очень важно включить его в речевой фрагмент.
 
-[![Введите примеры речевых фрагментов для намерения FindForm](./media/get-started-portal-build-app/add-example-utterance.png)](./media/get-started-portal-build-app/add-example-utterance.png#lightbox)
+> [!div class="mx-imgBorder"]
+> [![Введите примеры речевых фрагментов для намерения FindForm](./media/get-started-portal-build-app/add-example-utterance.png)](./media/get-started-portal-build-app/add-example-utterance.png#lightbox)
 
 Добавьте следующие 15 примеров речевых фрагментов в намерение `FindForm`.
 
@@ -147,7 +140,8 @@ ms.locfileid: "75381993"
 
    Сущность помечается там, где она появляется в примерах речевых фрагментов. Если вы хотите просмотреть исходный текст, а не имя сущности, щелкните переключатель **Entities View** (Представление сущностей) на панели инструментов.
 
-   [![Все примеры речевых фрагментов, отмеченные сущностями](./media/get-started-portal-build-app/all-example-utterances-marked-with-entities.png)](./media/get-started-portal-build-app/all-example-utterances-marked-with-entities.png#lightbox)
+   > [!div class="mx-imgBorder"]
+   > [![Все примеры речевых фрагментов, отмеченные сущностями](./media/get-started-portal-build-app/all-example-utterances-marked-with-entities.png)](./media/get-started-portal-build-app/all-example-utterances-marked-with-entities.png#lightbox)
 
 ## <a name="test-your-new-app-with-the-interactive-test-pane"></a>Протестируйте свое новое приложение с помощью интерактивной тестовой панели
 
@@ -159,7 +153,10 @@ ms.locfileid: "75381993"
 
    ```Is there a form named hrf-234098```
 
-   ![Тестирование нового речевого фрагмента на тестовой панели](./media/get-started-portal-build-app/test-new-utterance.png)
+    Щелкните **Проверить**, чтобы увидеть прогнозы сущности.
+
+   > [!div class="mx-imgBorder"]
+   > ![Тестирование нового речевого фрагмента на тестовой панели](./media/get-started-portal-build-app/test-new-utterance.png)
 
    Наиболее вероятным намерением является правильное намерение **FindForm** с надежностью свыше 90 % (0,977). Сущность **Number of Human Resources Form** извлекается со значением hrf-234098.
 

@@ -8,18 +8,18 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: bc6e43faca47e360daa8214e6b9f6e9df4a2f130
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 23e7f88b23ac7af7470183877eeb1be89e79779c
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495269"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80287753"
 ---
-1. На портале LUIS в разделе "Управление" (меню справа вверху) на странице Keys and endpoint (Ключи и конечные точки) (меню слева) выберите URL-адрес конечной точки в нижней части страницы.
+1. На портале LUIS в разделе **Управление** (в верхнем правом меню) на странице **Ресурсы Azure** (меню слева) на вкладке **Prediction Resources** (Ресурсы прогнозирования) скопируйте **пример запроса** в нижней части страницы.
 
-    В результате откроется вкладка браузера с URL-адресом конечной точки в адресной строке.
+    Вставьте URL-адрес в новую вкладку браузера.
 
     URL-адрес содержит идентификатор приложения, ключ и имя слота. URL-адрес конечной точки прогнозирования V3 выглядит следующим образом:
 
-    `https://REGION.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/APP-ID/slots/SLOT-NAME/predict?subscription-key=YOUR-KEY&<optional-name-value-pairs>&query=UTTERANCE-TEXT.`
+    `https://REGION.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/APP-ID/slots/SLOT-NAME/predict?subscription-key=YOUR-KEY&<optional-name-value-pairs>&query=YOUR_QUERY_HERE`
 

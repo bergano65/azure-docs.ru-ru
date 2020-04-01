@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: aahi
 ms.reviewer: sumeh, assafi
-ms.openlocfilehash: ee1e3cbade33f1786e8b93a549d19b87eba189e7
-ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.openlocfilehash: a0616a8a2cc401b6b4c42c9882c14da2f123c6df
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79203435"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "79481880"
 ---
 <a name="HOLTop"></a>
 
@@ -33,9 +33,9 @@ ms.locfileid: "79203435"
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [Node.js](https://nodejs.org/).
-* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. 
-    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Вы сделаете это позже в этом кратком руководстве.
-    * Используйте бесплатную ценовую категорию, чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -44,7 +44,9 @@ ms.locfileid: "79203435"
 В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него. 
 
 ```console
-mkdir myapp && cd myapp
+mkdir myapp 
+
+cd myapp
 ```
 
 Выполните команду `npm init`, чтобы создать приложение узла с помощью файла `package.json`. 

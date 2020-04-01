@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием клиентской библиотеки Детектора аномалий для .NET
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как использовать API "Детектор аномалий" для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
+description: Узнайте, как использовать API "Детектор аномалий" для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 11/19/2019
+ms.date: 03/24/2020
 ms.author: aahi
-ms.openlocfilehash: fdb35edc35e07ed4ee718281942565a8f1d061d4
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.openlocfilehash: 268ceee5504e6e48b9eb8fdae18564482480e250
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402695"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80239118"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для .NET
 
