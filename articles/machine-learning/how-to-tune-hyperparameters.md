@@ -9,14 +9,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 03/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4ca9cac00b9d00dcdbbd27f2fe769de2983c13ae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 74fa6949716119d85eac5b142ac9e3c651a0a5d0
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75536646"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398267"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка гиперпараметров для модели с помощью машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -400,6 +400,6 @@ print('\n batch size:',parameter_values[7])
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Руководство по отслеживанию эксперимента](how-to-track-experiments.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)

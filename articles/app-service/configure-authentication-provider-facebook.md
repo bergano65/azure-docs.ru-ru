@@ -1,22 +1,22 @@
 ---
 title: Как настроить приложение службы приложений для использования имени для входа Facebook
-description: Узнайте, как настроить аутентификацию Facebook в качестве поставщика идентификационных данных для приложения App Service.
+description: Узнайте, как настроить аутентификацию Facebook в качестве поставщика идентификационных данных для службы приложений или приложения Azure Functions.
 ms.assetid: b6b4f062-fcb4-47b3-b75a-ec4cb51a62fd
 ms.topic: article
 ms.date: 06/06/2019
-ms.custom: seodec18
-ms.openlocfilehash: cd9c8a1bab3616b9b4eb1fe97ee3a9b2307ba77b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 9a2d390a5647ed90284730e9186e981b8e699d10
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74671941"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438019"
 ---
-# <a name="configure-your-app-service-app-to-use-facebook-login"></a>Настройте приложение Службы app для использования входа в Facebook
+# <a name="configure-your-app-service-or-azure-functions-app-to-use-facebook-login"></a>Настройте приложение App Service или Azure Functions для использования входа в Facebook
 
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 
-В этой статье показано, как настроить службу приложений Azure для использования Facebook в качестве поставщика аутентификации.
+В этой статье показано, как настроить службу приложений Azure или функции Azure для использования Facebook в качестве поставщика аутентификации.
 
 Для завершения процедуры в этой статье вам нужен аккаунт Facebook с проверенным адресом электронной почты и номером мобильного телефона. Чтобы создать новую учетную запись Facebook, перейдите по ссылке [facebook.com].
 
@@ -53,7 +53,7 @@ ms.locfileid: "74671941"
 1. Войдите на [портал Azure] и перейдите в приложение Службы приложений.
 1. Выберите **Настройки** > **Аутентификации / Авторизации**, и убедитесь, что проверка **подлинности службы приложений** находится **на**.
 1. Выберите **Facebook**, а затем вставить в App ID и App Secret значения, которые вы получили ранее. Включите все области, необходимые вашему приложению.
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
    ![Скриншот настройки мобильного приложения Facebook][0]
 
@@ -63,11 +63,11 @@ ms.locfileid: "74671941"
    > [!CAUTION]
    > Ограничение доступа таким образом распространяется на все вызовы в ваше приложение, что может оказаться нежелательным для приложений, имеющих общедоступную домашнюю страницу, как во многих одностраничных приложениях. Для таких приложений может быть предпочтительнее **разрешить анонимные запросы (без действия),** чтобы приложение вручную начало аутентификацию. Для получения дополнительной информации [см.](overview-authentication-authorization.md#authentication-flow)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Теперь вы готовы использовать Facebook для проверки подлинности в приложении.
 
-## <a name="next-steps"></a><a name="related-content"> </a>Дальнейшие действия
+## <a name="next-steps"></a><a name="related-content"> </a>Следующие шаги
 
 [!INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
 

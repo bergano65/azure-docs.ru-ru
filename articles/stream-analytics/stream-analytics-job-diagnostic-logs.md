@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/19/2019
-ms.openlocfilehash: f318b373f6a6f46ee3a85703c6099c76568580ba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/27/2020
+ms.openlocfilehash: cdb6629441becd0a8356debe3360830ff11a7a9d
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75426152"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398426"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Устранение неполадок Azure Stream Analytics с помощью журналов диагностики
 
@@ -94,7 +94,7 @@ Azure Stream Analytics фиксирует две категории журнал
 
 Все журналы хранятся в формате JSON. Каждая запись содержит следующие общие строковые поля.
 
-name | Описание
+Имя | Описание
 ------- | -------
 time | Метка времени журнала (в формате UTC).
 resourceId | Идентификатор ресурса (прописными буквами), с которым была выполнена операция. Содержит идентификатор подписки, группу ресурсов и имя задания. Например, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
@@ -112,7 +112,7 @@ properties | Сведения о записи журнала, сериализо
 
 Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Вы можете узнать больше о причинах различных [ошибок ввода и вывода данных.](https://docs.microsoft.com/azure/stream-analytics/data-errors)
 
-name | Описание
+Имя | Описание
 ------- | -------
 Источник | Имя входных или выходных данных задания, в которых произошла ошибка.
 Сообщение | Сообщение, связанное с ошибкой.
@@ -133,14 +133,14 @@ name | Описание
 
 Остальные типы ошибок считаются универсальными событиями.
 
-name | Описание
+Имя | Описание
 -------- | --------
 Error | (Необязательно.) Сведения об ошибке. Как правило, это сведения об исключении (если они доступны).
 Сообщение| Сообщение журнала.
 Тип | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
 Идентификатор корреляции | Идентификатор [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Начало работы со Stream Analytics](stream-analytics-real-time-fraud-detection.md)

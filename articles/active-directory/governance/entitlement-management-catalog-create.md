@@ -1,5 +1,5 @@
 ---
-title: Создание & управлять ресурсами при управлении правами - Azure AD
+title: Создайте & управлять каталогом ресурсов в области управления правами - Azure AD
 description: Узнайте, как создать новый контейнер ресурсов и пакетов доступа в управлении правами Azure Active Directory.
 services: active-directory
 documentationCenter: ''
@@ -16,12 +16,12 @@ ms.date: 03/22/2020
 ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbafb0c506fd34e975efbe08c75c15c8c0b3888e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ffa6f2fbdcde41d81e268779c3a0586bd8310792
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80128940"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437553"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание и управление каталогом ресурсов в управлении правами Azure AD
 
@@ -157,6 +157,6 @@ ms.locfileid: "80128940"
 
 Вы также можете удалить каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением, `EntitlementManagement.ReadWrite.All` которое имеет делегированное разрешение, может позвонить в API для [удаления accessPackageCatalog.](https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-beta)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Делегировать управление доступом для менеджеров пакетов](entitlement-management-delegate-managers.md)

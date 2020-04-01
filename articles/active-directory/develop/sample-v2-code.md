@@ -17,12 +17,12 @@ ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 2420c98a95eb9e5cdfee36bbd9bec20d22ad24ab
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d8f69096544b0c3b51513d0cb5c4330fcbb1c18c
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79460608"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80419827"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Образцы кода идентификационной платформы Майкрософт (конечная точка v2.0)
 
@@ -48,9 +48,9 @@ ms.locfileid: "79460608"
 | -------- | --------------------- | -------- |
 | ![На этом изображении](media/sample-v2-code/logo_js.png) показан логотип JavaScript [JavaScript (msal.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызывает Microsoft Graph |[javascript-graphapi-v2](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) |
 | ![На этом изображении](media/sample-v2-code/logo_js.png) показан логотип JavaScript [JavaScript (msal.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызовы B2C |[b2c-javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) |
-| ![На этом изображении показан](media/sample-v2-code/logo_angular.png) логотип Angular JS [JavaScript (MSAL AngularJS)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs)| Вызывает Microsoft Graph  | [MsalAngularjsDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/MsalAngularjsDemoApp)
-| ![На этом изображении](media/sample-v2-code/logo_angular.png) изображен логотип Angular [JavaScript (MSAL Angular)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)| Вызывает Microsoft Graph  | [javascript-singlepageapp-угловой](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) |
-| ![На этом изображении](media/sample-v2-code/logo_angular.png) изображен логотип Angular [JavaScript (MSAL Angular)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызовы B2C |[активный каталог-b2c-javascript-угловой-спа](https://github.com/Azure-Samples/active-directory-b2c-javascript-angular-spa) |
+| ![На этом изображении](media/sample-v2-code/logo_js.png) показан логотип JavaScript [JavaScript (msal.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызовы собственного веб-API |[javascript-singlepageapp-dotnet-webapi-v2](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) |
+| ![На этом изображении](media/sample-v2-code/logo_angular.png) изображен логотип Angular [JavaScript (MSAL Angular)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)| Вызывает Microsoft Graph  | [активный-каталог-javascript-singlepageapp-угловой](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) |
+| ![На этом изображении](media/sample-v2-code/logo_angular.png) изображен логотип Angular [JavaScript (MSAL Angular)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular) | Вызовы B2C |[активный каталог-b2c-javascript-угловой-спа](https://github.com/Azure-Samples/active-directory-b2c-javascript-angular-spa) |
 
 ## <a name="web-applications"></a>Веб-приложения
 

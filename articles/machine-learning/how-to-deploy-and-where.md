@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 02/27/2020
 ms.custom: seoapril2019
-ms.openlocfilehash: 96d9a0722ae04dc150b639dced34fa290da93630
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0deace98c5be0b2ce2f29abce4c8a804145afdb1
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80159424"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475625"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -537,7 +537,7 @@ az ml model profile -g <resource-group-name> -w <workspace-name> --inference-con
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
 ```
 
-### <a name="securing-deployments-with-ssl"></a>Обеспечение развертывания с помощью SSL
+### <a name="securing-deployments-with-tls"></a>Обеспечение развертывания с помощью TLS
 
 Для получения дополнительной информации о том, как обеспечить развертывание веб-службы, [см.](how-to-secure-web-service.md#enable)
 
@@ -578,9 +578,9 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 | Состояние Веб-сервиса | Описание | Окончательное состояние?
 | ----- | ----- | ----- |
-| Переход | Служба находится в процессе развертывания. | нет |
-| Unhealthy; | Служба развернута, но в настоящее время недостижима.  | нет |
-| Незасеченные | Служба не может быть развернута в настоящее время из-за нехватки ресурсов. | нет |
+| Переход | Служба находится в процессе развертывания. | Нет |
+| Unhealthy; | Служба развернута, но в настоящее время недостижима.  | Нет |
+| Незасеченные | Служба не может быть развернута в настоящее время из-за нехватки ресурсов. | Нет |
 | Ошибка | Служба не удалось развернуть из-за ошибки или сбоя. | Да |
 | Healthy | Услуга является работоспособной и конечная точка доступна. | Да |
 
@@ -907,6 +907,24 @@ service_name = 'my-sklearn-service'
 service = Model.deploy(ws, service_name, [model])
 ```
 
+ПРИМЕЧАНИЕ: Модели, поддерживающие predict_proba будут использовать этот метод по умолчанию. Чтобы переопределить это для использования предсказать вы можете изменить тело POST, как ниже:
+```python
+import json
+
+
+input_payload = json.dumps({
+    'data': [
+        [ 0.03807591,  0.05068012,  0.06169621, 0.02187235, -0.0442235,
+         -0.03482076, -0.04340085, -0.00259226, 0.01990842, -0.01764613]
+    ],
+    'method': 'predict'  # If you have a classification model, the default behavior is to run 'predict_proba'.
+})
+
+output = service.run(input_payload)
+
+print(output)
+```
+
 ПРИМЕЧАНИЕ: Эти зависимости включены в заранее построенный контейнер выводов sklearn:
 
 ```yaml
@@ -1150,11 +1168,11 @@ def run(request):
 > pip install azureml-contrib-services
 > ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Как развернуть модель с помощью пользовательского изображения Docker](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
-* [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
+* [Используйте TLS для обеспечения безопасности веб-службы через Машинное обучение Azure](how-to-secure-web-service.md)
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей машинного обучения Azure с помощью приложений Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)

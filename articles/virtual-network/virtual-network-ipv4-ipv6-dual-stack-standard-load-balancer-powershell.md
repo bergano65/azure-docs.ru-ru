@@ -11,44 +11,22 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/17/2019
+ms.date: 04/01/2020
 ms.author: kumud
-ms.openlocfilehash: 96ede56e7b21d2447d238306e00f2c4fbca56f04
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d6b61e27324220fc78ace3e964aed98f9ba114d3
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76122259"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80420929"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Развертывание приложения с двойным стеком IPv6 в Azure - PowerShell (Предварительный просмотр)
+# <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell"></a>Развертывание приложения с двойным стеком IPv6 в Azure - PowerShell
 
-В этой статье показано, как развернуть двойной стек (IPv4 - IPv6) приложение с помощью Standard Load Balancer в Azure, который включает в себя двойной стек виртуальной сети и подсети, балансер стандартной нагрузки с двойной (IPv4 iPv6) передние конфигурации, VMs с NICs, которые имеют двойная конфигурация IP, группа сетевой безопасности и общедоступные IP-адреса.
-
-> [!Important]
-> Поддержка IPv6 для виртуальной сети Azure в настоящее время находится в открытом доступе. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+В этой статье показано, как развернуть двойной стек (IPv4 - IPv6) приложение с помощью Standard Load Balancer в Azure, который включает в себя двойной стек виртуальной сети и подсети, балансер стандартной нагрузки с двойной (IPv4 iPv6) передние конфигурации, VMs с NICs, которые имеют двойную конфигурацию IP, группы сетевой безопасности, и общественных IP-адресов.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решите установить и использовать PowerShell локально, эта статья требует версии модуля Azure PowerShell 6.9.0 или позже. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
-
-## <a name="prerequisites"></a>Предварительные требования
-Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку на эту функцию предварительного просмотра с помощью следующего приложения Azure PowerShell:
-
-Зарегистрируйтесь следующим образом:
-```azurepowershell
-Register-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
-Register-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
-```
-Регистрация функции занимает до 30 минут. Вы можете проверить свой регистрационный статус, запустив следующую команду Azure PowerShell: Проверьте регистрацию следующим образом:
-```azurepowershell
-Get-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
-Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
-```
-После регистрации выполните следующую команду:
-
-```azurepowershell
-Register-AzResourceProvider -ProviderNamespace Microsoft.Network
-```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -273,7 +251,7 @@ $vnet = New-AzVirtualNetwork `
     -PrivateIpAddressVersion IPv4 `
     -LoadBalancerBackendAddressPool $backendPoolv4 `
     -PublicIpAddress  $RdpPublicIP_1
-    
+      
   $Ip6Config=New-AzNetworkInterfaceIpConfig `
     -Name dsIp6Config `
     -Subnet $vnet.subnets[0] `
@@ -374,8 +352,6 @@ foreach ($NIC in $NICsInRG) {
 
   ![Виртуальная сеть IPv6 с двойным стеком в Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-vnet.png)
 
-> [!NOTE]
-> Виртуальная сеть IPv6 для Azure доступна на портале Azure только для этого предварительного просмотра.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -385,6 +361,6 @@ foreach ($NIC in $NICsInRG) {
 Remove-AzResourceGroup -Name dsRG1
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы создали standard Load Balancer с двойной конфигурацией IP-адреса (IPv4 и IPv6). Вы также создали два виртуальных машины, которые включали NICs с двойными конфигурациями IP (IPV4 и IPv6), которые были добавлены в пул задней части баланса нагрузки. Подробнее о поддержке IPv6 в виртуальных сетях Azure читайте в пример [IPv6 для виртуальной сети Azure?](ipv6-overview.md)

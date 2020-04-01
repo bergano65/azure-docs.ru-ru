@@ -1,6 +1,6 @@
 ---
 title: Отключение брандмауэра гостевой ОС на виртуальной машине Azure | Документация Майкрософт
-description: ''
+description: Изучите метод обхода для устранения неполадок, когда брандмауэр гостевой операционной системы фильтрует частичный или полный трафик на VM.
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: dbb9b0f865c7ec5d9d29e2310ae41abbec287bd6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e4cd1595d963330bd5decb366310bf5e97f59bc8
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79464968"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80422360"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Отключение брандмауэра гостевой ОС на виртуальной машине Azure
 

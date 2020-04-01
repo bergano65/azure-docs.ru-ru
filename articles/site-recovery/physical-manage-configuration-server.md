@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/28/2019
 ms.author: mayg
-ms.openlocfilehash: 25be48e9caed446be3a86a11143ce3040808065a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eb7e891c031be5ac01295905d5c3304dc6818737
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294297"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478961"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
@@ -290,8 +290,8 @@ ProxyPassword="Password"
 > [!NOTE]
 > Опция **-Force** в Remove-AzSiteRecoveryFabric может быть использована для принудительного удаления/удаления сервера Configuration.
 
-## <a name="renew-ssl-certificates"></a>Обновление SSL-сертификатов
-На сервере конфигурации есть встроенный веб-сервер, который координирует действия службы Mobility Service, серверов обработки и главных целевых серверов, подключенных к этому серверу конфигурации. Веб-сервер использует SSL-сертификат для аутентификации клиентов. Срок действия этого сертификата составляет три года, его можно обновить в любое время.
+## <a name="renew-tlsssl-certificates"></a>Обновление сертификатов TLS/SSL
+На сервере конфигурации есть встроенный веб-сервер, который координирует действия службы Mobility Service, серверов обработки и главных целевых серверов, подключенных к этому серверу конфигурации. Веб-сервер использует сертификат TLS/SSL для проверки подлинности клиентов. Срок действия этого сертификата составляет три года, его можно обновить в любое время.
 
 ### <a name="check-expiry"></a>Проверка срока действия
 
@@ -313,7 +313,7 @@ ProxyPassword="Password"
 ## <a name="common-issues"></a>Распространенные проблемы
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с руководствами по настройке аварийного восстановления [физических серверов](tutorial-physical-to-azure.md) в Azure.
 

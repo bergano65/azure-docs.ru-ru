@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/10/2019
-ms.openlocfilehash: b68e438a01f9f771c16fc712597308089f628f62
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f19d4adad675cdf95f59aca0f752f46211b75e8f
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79409479"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80436914"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight"></a>Мигрируйте на приложенные кластеры Apache Hadoop в Azure HDInsight
 
@@ -52,7 +52,7 @@ Azure Storage предлагает [мягкое удаление для объ�
 
 Для импорта сертификатов в доверенное хранилище Java могут использоваться следующие методы.
 
-Скачать сертификат Azure Blob SSL в файл
+Скачать сертификат Azure Blob TLS/SSL в файл
 
 ```bash
 echo -n | openssl s_client -connect <storage-account>.blob.core.windows.net:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > Azure_Storage.cer
@@ -220,6 +220,6 @@ Azure Data Lake Storage предоставляет локально избыто
 
 Дополнительные сведения см. в статье [Добавление дополнительных учетных записей хранения в HDInsight](../hdinsight-hadoop-add-storage.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Прочитайте следующую статью в этой серии: Рекомендации по [миграции данных для находной для миграции Azure HDInsight Hadoop](apache-hadoop-on-premises-migration-best-practices-data-migration.md).

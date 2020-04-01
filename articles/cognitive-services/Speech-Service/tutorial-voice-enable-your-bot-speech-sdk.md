@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: dapine
-ms.openlocfilehash: 96d2c2e5e3772575e681d2db079ab0122b7014e1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3c2d74eb7e46d9909d87a7ccadadd6129a3d48d8
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80348552"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397895"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Учебник: Голосовой включить бота с помощью речи SDK
 
@@ -104,7 +104,7 @@ ms.locfileid: "80348552"
 
 На этом этапе убедитесь, что ваша группа ресурсов **(SpeechEchoBotTutorial-ResourceGroup)** имеет ресурс speech:
 
-| name | Тип  | Расположение |
+| Имя | Тип  | Расположение |
 |------|-------|----------|
 | SpeechEchoBotTutorial-Речь | Cognitive Services | западная часть США |
 
@@ -125,7 +125,7 @@ ms.locfileid: "80348552"
 
 На этом этапе убедитесь, что ваша группа ресурсов **(SpeechEchoBotTutorial-ResourceGroup**) имеет два ресурса:
 
-| name | Тип  | Расположение |
+| Имя | Тип  | Расположение |
 |------|-------|----------|
 | SpeechEchoBotTutorial-AppServicePlan | План обслуживания приложения | западная часть США |
 | SpeechEchoBotTutorial-Речь | Cognitive Services | западная часть США |
@@ -207,7 +207,7 @@ ms.locfileid: "80348552"
 1. Ваш браузер по умолчанию должен открыться и отобразить страницу с надписью: "Ваш бот готов!".
 1. На этом этапе проверьте свою группу ресурсов **SpeechEchoBotTutorial-ResourceGroup** на портале Azure и подтвердите наличие трех ресурсов:
 
-| name | Тип  | Расположение |
+| Имя | Тип  | Расположение |
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
@@ -248,7 +248,7 @@ ms.locfileid: "80348552"
 
 На этом этапе проверьте свою группу ресурсов **SpeechEchoBotTutorial-ResourceGroup** на портале Azure. Теперь он должен показать четыре ресурса:
 
-| name | Тип  | Расположение |
+| Имя | Тип  | Расположение |
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
@@ -336,7 +336,7 @@ ms.locfileid: "80348552"
     },
     "replyToId":"67c823b4-4c7a-4828-9d6e-0b84fd052869",
     "serviceUrl":"urn:botframework:websocket:directlinespeech",
-    "speak":"<speak version='1.0' xmlns='https://www.w3.org/2001/10/synthesis' xml:lang='en-US'><voice name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>Echo: Hello and welcome.</voice></speak>",
+    "speak":"<speak version='1.0' xmlns='https://www.w3.org/2001/10/synthesis' xml:lang='en-US'><voice name='Microsoft Server Speech Text to Speech Voice (en-US, AriaRUS)'>Echo: Hello and welcome.</voice></speak>",
     "text":"Echo: Hello and welcome.",
     "timestamp":"2019-07-19T20:03:51.1939097Z",
     "type":"message"
@@ -435,7 +435,7 @@ Speech SDK поддерживает активацию пользователь�
 2. Найти группу ресурсов под названием: **SpeechEchoBotTutorial-ResourceGroup**. Нажмите на три точки (...).
 3. Выберите **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Создайте собственное клиентское приложение с помощью Речевого SDK](quickstart-voice-assistant-csharp-uwp.md)

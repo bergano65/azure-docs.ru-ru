@@ -8,19 +8,19 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 10e6ed556abe8f8c438e5436fbb93c1b70b85d2b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 579767a0d535605a2316c35bd413a75474b5a3de
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75445157"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80410002"
 ---
 # <a name="how-to-globally-distribute-reads-using-azure-cosmos-dbs-api-for-mongodb"></a>Глобальное распространение операций чтения с помощью API Azure Cosmos DB для MongoDB
 
 В этой статье описывается, как глобально распространить операции чтения с применением [параметров чтения MongoDB](https://docs.mongodb.com/manual/core/read-preference/) с помощью API Azure Cosmos DB для MongoDB.
 
 ## <a name="prerequisites"></a>Предварительные требования 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом. 
 [!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
 
 Перейдите к этому [краткому руководству](tutorial-global-distribution-mongodb.md), чтобы ознакомиться с инструкциями по настройке учетной записи Cosmos с глобальным распределением на портале Azure и последующему подключению.
@@ -86,7 +86,7 @@ readFromSecondaryfunc query completed!
 На основе общих сценариев мы рекомендуем использовать следующие параметры:
 
 1. Если требуются **операции чтения с низкой задержкой**, используйте режим параметров чтения **NEAREST**. Этот параметр направляет операции чтения в ближайший доступный регион. Обратите внимание, что если ближайшим регионом является регион записи, то эти операции будут направлены в этот регион.
-2. Если требуются **высокая доступность и геораспределение операций чтения** (задержка не является ограничением), используйте режим параметров чтения **SECONDARY_PREFERRED**. Этот параметр направляет операции чтения в доступный регион чтения. Если нет доступных регионов чтения, запросы будут направлены в регион записи.
+2. Если требуется **высокая доступность и геораспределение считывателей** (задержка не является ограничением), используйте **режим предпочтений PRIMARY PREFERRED** или SECONDARY **PREFERRED.** Этот параметр направляет операции чтения в доступный регион WRITE или READ соответственно. Если область недоступна, запросы направляются в следующий доступный регион в рамках поведения предпочтений чтения.
 
 В следующем фрагменте кода, взятого из примера приложения, показано, как настроить режим параметров чтения "NEAREST" в NodeJS:
 
@@ -168,7 +168,7 @@ MongoClient.connect(url, function(err, client) {
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите имя созданного ресурса. 
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите имя ресурса для удаления и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Перенос данных MongoDB в Azure Cosmos DB](mongodb-migrate.md)
 * [Настройка глобальной распределенной базы данных с помощью API Azure Cosmos DB для MongoDB](tutorial-global-distribution-mongodb.md)

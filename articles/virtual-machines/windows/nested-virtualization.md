@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.service: virtual-machines-windows
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.openlocfilehash: 16f5bed5a2342bb1d120d0d3dc853e0bc44376dc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d127d3f9e66b7d2d40aa420e2116fee17d996514
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74033123"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437293"
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Как включить вложенную виртуализацию в виртуальных машинах Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "74033123"
 
 ## <a name="create-a-nesting-capable-azure-vm"></a>Создание вложенной виртуальной машины Azure
 
-Создайте новую виртуальную машину Azure Windows Server 2016.  Для быстрой справки все виртуальные машины v3 поддерживают вложенную виртуализацию. Полный список размеров виртуальных машин, поддерживающих вложенность, можно найти в статье [Единицы вычислений Azure (ACU)](acu.md).
+Создайте новую виртуальную машину Azure Windows Server 2016. Полный список размеров виртуальных машин, поддерживающих вложенность, можно найти в статье [Единицы вычислений Azure (ACU)](acu.md).
 
 Не забудьте выбрать достаточно большой размер виртуальной машины для поддержки требований гостевой виртуальной машины. В этом примере используется виртуальная машина Azure размера D3_v3. 
 

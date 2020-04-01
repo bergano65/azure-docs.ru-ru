@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 12/10/2019
-ms.openlocfilehash: 4edafc0c07e967acfabf7fdc5b58c481b2cfccc3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fb3484d013314897ea2e9157b642d8f2b85dcd60
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75436029"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437635"
 ---
 # <a name="create-and-configure-enterprise-security-package-clusters-in-azure-hdinsight"></a>Создание и настройка кластеров пакетов корпоративной безопасности в Azure HDInsight
 
@@ -70,7 +70,7 @@ ms.locfileid: "75436029"
     1. Выберите **Скачать RDP файл,** а затем открыть файл.
     1. Используйте `HDIFabrikam\HDIFabrikamAdmin` в качестве имени пользователя.
     1. Введите пароль, который вы выбрали для учетной записи админ.
-    1. Нажмите кнопку **ОК**.
+    1. Щелкните **ОК**.
 
 1. С панели мониторинга контроллера домена **Server Manager** переходите к пользователям **и** > **компьютерам Tools Active Directory.**
 
@@ -98,7 +98,7 @@ ms.locfileid: "75436029"
 
     1. Введите `HDIUserGroup` текстовый ящик **названия группы.**
 
-    1. Нажмите кнопку **ОК**.
+    1. Щелкните **ОК**.
 
     ![Создание новой группы Active Directory](./media/apache-domain-joined-create-configure-enterprise-security-cluster/create-active-directory-group.png)
 
@@ -122,7 +122,7 @@ ms.locfileid: "75436029"
 1. Выберите **Создать** ресурс `directory`и введите . Выберите > **создание** **активного каталога Azure.**
 1. Под **названием Организации,** введите `HDIFabrikam`.
 1. Под **первоначальным доменным именем**введите `HDIFabrikamoutlook`.
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
     ![Создание каталога Azure AD](./media/apache-domain-joined-create-configure-enterprise-security-cluster/create-new-directory.png)
 
@@ -140,7 +140,7 @@ ms.locfileid: "75436029"
 1. Из нового **каталога Azure Active Directory**под **управлением**выберите **группы.**
 1. Выберите **новую группу**.
 1. В текстовом поле `AAD DC Administrators` **названия группы** введите .
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ## <a name="configure-your-azure-ad-tenant"></a>Настройка арендатора Azure AD
 
@@ -154,12 +154,12 @@ ms.locfileid: "75436029"
 
 1. Введите следующие сведения для нового пользователя:
 
-    **идентификации**
+    **Идентификация**
 
     |Свойство |Описание |
     |---|---|
     |Имя пользователя|Введите `fabrikamazureadmin` в текстовое поле. Из списка выпадающих доменных имен выберите`hdifabrikam.com`|
-    |name| Введите `fabrikamazureadmin`.|
+    |Имя| Введите `fabrikamazureadmin`.|
 
     **Пароль**
     1. Выберите **Позвольте мне создать пароль**.
@@ -176,7 +176,7 @@ ms.locfileid: "75436029"
 
     ![Диалогроль роли Ad Azure](./media/apache-domain-joined-create-configure-enterprise-security-cluster/azure-ad-add-role-member.png)
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. Затем перейдите нового пользователя на портал Azure, где ему будет предложено изменить пароль. Это необходимо сделать перед настройкой Microsoft Azure Active Directory Connect.
 
@@ -221,7 +221,7 @@ ms.locfileid: "75436029"
 1. Выберите свою подписку.
 1. Под **группой ресурсов**выберите `HDIFabrikam-CentralUS`Создать **новый** и ввести .
 1. В **соответствии**с местоположением, выберите **Центральный США**.
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ![Создание нового управляемого итогового удостоверения, назначенного пользователем](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0082.png)
 
@@ -261,7 +261,7 @@ ms.locfileid: "75436029"
 
     ![Шаг «Создание виртуальной сети»](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0086.png)
 
-1. На странице **группы администраторов** следует увидеть уведомление о том, что для администрирования этой группы уже создана группа под названием **AAD DC Administrators.** Вы можете изменить членство в этой группе, если хотите, но в этом случае вам не нужно менять ее. Нажмите кнопку **ОК**.
+1. На странице **группы администраторов** следует увидеть уведомление о том, что для администрирования этой группы уже создана группа под названием **AAD DC Administrators.** Вы можете изменить членство в этой группе, если хотите, но в этом случае вам не нужно менять ее. Щелкните **ОК**.
 
     ![Просмотр группы администраторов Azure AD](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0088.png)
 
@@ -291,7 +291,7 @@ ms.locfileid: "75436029"
     1. В **настройках**выберите **DNS-серверы.**
     1. Выберите **пользовательский**.
     1. В текстовом окне введите первый IP-адрес *(10.0.0.4*).
-    1. Нажмите кнопку **Сохранить**.
+    1. Щелкните **Сохранить**.
     1. Повторите шаги, чтобы добавить другой IP-адрес *(10.0.0.5*).
 
 В нашем сценарии мы настроили Azure AD DS для использования IP-адресов 10.0.0.4 и 10.0.0.5, установив тот же IP-адрес в виртуальной сети Azure AD DS:
@@ -316,7 +316,7 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
 ```
 
 > [!NOTE]  
-> Любая утилита или приложение, создающее действительный запрос \#на криптографию открытых ключей (PKCS) 10, могут быть использованы для формирования запроса сертификата SSL.
+> Любая утилита или приложение, создающее действительный запрос \#на криптографию открытых ключей (PKCS) 10, могут быть использованы для формирования запроса сертификата TLS/SSL.
 
 Убедитесь, что сертификат установлен в **личном** магазине компьютера:
 
@@ -357,8 +357,8 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
         | Диапазон портов назначения | 636 |
         | Протокол | Любой |
         | Действие | Allow |
-        | Приоритет | \<Пожеланное число> |
-        | name | Port_LDAP_636 |
+        | Priority | \<Пожеланное число> |
+        | Имя | Port_LDAP_636 |
 
     ![Диалог-поле "Добавить входявное правило безопасности"](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 
@@ -392,7 +392,7 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
 1. Настройка пользовательских DNS в виртуальной сети **HDIFabrikam-AADDSVNET.**
     1. Перейдите на портал Azure > **ресурсные группы** > **OnPremADVRG** > **HDIFabrikam-AADDSVNET** > **DNS серверов**.
     1. Выберите **пользовательские** и введите *10.0.0.4* и *10.0.0.5*.
-    1. Нажмите кнопку **Сохранить**.
+    1. Щелкните **Сохранить**.
 
         ![Сохранение пользовательских настроек DNS для виртуальной сети](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0123.png)
 
@@ -407,7 +407,7 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
 
             ![Выберите группу кластерного доступа HDIUserGroup](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0129.jpg)
 
-    1. Выполните другие этапы конфигурации кластера и проверьте детали **резюме кластера.** Выберите **Создать**.
+    1. Выполните другие этапы конфигурации кластера и проверьте детали **резюме кластера.** Нажмите кнопку **создания**.
 
 1. Восвай в UI Ambari `https://CLUSTERNAME.azurehdinsight.net`для вновь созданного кластера на . Используйте имя `hdiadmin@hdifabrikam.com` пользователя от аминина и его пароль.
 
@@ -424,6 +424,6 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
 
 Если вы можете войти в эту учетную запись, вы правильно настроили кластер ESP для синхронизации с экземпляром Active Directory.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Читайте [введение в Apache Hadoop безопасности с ESP](hdinsight-security-overview.md).

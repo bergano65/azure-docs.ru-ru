@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
-ms.openlocfilehash: b75b232c048a1ea49256b12ce1b65c4bd87a1cf0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 75970783a9408df0a8c128fb9540606e4e4a62f3
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79535448"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478175"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -110,7 +110,7 @@ ms.locfileid: "79535448"
 
 ### <a name="property-values"></a>Значения свойств
 
-| name | Значение и пример | Тип данных | 
+| Имя | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
 | версия_API | 2019-03-01 | Дата |
 | publisher | Microsoft.Compute.Extensions | строка |
@@ -209,6 +209,8 @@ cat script | gzip -9 | base64 -w 0
  1. Выполните скрипт, используя _/bin/sh -c /var/lib/waagent/custom-script/#/script.sh.
 
 ####  <a name="property-managedidentity"></a>Недвижимость: управляемоеИдентичность
+> [!NOTE]
+> Это свойство **должно** быть указано только в защищенных настройках.
 
 CustomScript (версия 2.1 далее) поддерживает [управляемый итог](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файла (ы) из URL-адресов, представленных в настройках "fileUris". Это позволяет CustomScript получить доступ к частным каплям или контейнерам Azure Storage без необходимости передавать секреты, такие как токены SAS или ключи учетной записи хранилища.
 
@@ -464,6 +466,5 @@ data:    Microsoft.OSTCExtensions    Microsoft.Insights.VMDiagnosticsSettings  2
 info:    vm extension get command OK
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/custom-script-extension-linux).
-

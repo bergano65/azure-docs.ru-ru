@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: e3297319c67ad2b7c94371356cde49113c7ef737
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d26dc55cfd0f2ef0bb78e4153fffe3f1cb910b73
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79251613"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474872"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Платформы и средства для проектов обработки и анализа данных
 
@@ -49,7 +49,7 @@ ms.locfileid: "79251613"
 
 Сейчас виртуальная машина для обработки и анализа данных доступна для операционных систем **Windows** и **Linux CentOS**. Выберите нужный размер виртуальной машины для обработки и анализа данных (число ядер и размер памяти), исходя из потребностей проектов обработки и анализа данных, которые вы будете на ней выполнять. 
 
-Для получения дополнительной информации о Windows издание DSVM, см [Microsoft Data Science Виртуальная машина](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) на Azure Marketplace. Выпуск виртуальной машины для обработки и анализа данных для Linux [описан здесь](https://azure.microsoft.com/marketplace/partners/microsoft-ads/linux-data-science-vm/).
+Для получения дополнительной информации о Windows издание DSVM, см [Microsoft Data Science Виртуальная машина](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-win-2019) на Azure Marketplace. Выпуск виртуальной машины для обработки и анализа данных для Linux [описан здесь](https://azure.microsoft.com/marketplace/apps/microsoft-dsvm.linux-data-science-vm-ubuntu).
 
 Чтобы узнать, как выполнить некоторые из общих задач науки о данных на DSVM эффективно, увидеть [10 вещей, которые вы можете сделать на данные науки Виртуальная машина](../data-science-virtual-machine/vm-do-ten-things.md)
 
@@ -147,7 +147,7 @@ R Services (In-database) поддерживает язык R с открытым
 1. Вставьте ключ ssh скопированный в текстовое поле и сохраните.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Также предоставляются полные пошаговые руководства, которые демонстрируют все этапы процесса для **конкретных сценариев** . Эти этапы с иллюстрациями и краткими описаниями перечислены в [примерах пошаговых руководств](walkthroughs.md). В них показано, как объединить облачные и локальные средства и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение. 
 

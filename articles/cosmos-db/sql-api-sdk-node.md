@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 09/24/2018
 ms.author: dech
-ms.openlocfilehash: de1c1b93b813f71b321da0625bc60e0762a859c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 181f43e060e3b4b41babeee375365a97e1d224aa
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "70207959"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411270"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для Node.js для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "70207959"
 > * [Async Java](sql-api-sdk-async-java.md)
 > * [Java](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [Остальные](https://docs.microsoft.com/rest/api/cosmos-db/)
+> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
 > * [Массовый исполнитель - .NET](sql-api-sdk-bulk-executor-dot-net.md)
@@ -318,7 +318,7 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 ### <a name=""></a><a name="1.11.0"/>1.11.0</a>
 * Добавлена поддержка статистических запросов (COUNT, MIN, MAX, SUM и AVG).
 * Добавлена возможность контролировать степень параллелизма для запросов между секциями.
-* Добавлена возможность отключения проверки SSL при работе с эмулятором Azure Cosmos DB.
+* Добавлена опция для отключения проверки TLS при запуске против эмулятора Azure Cosmos DB.
 * Минимальная пропускная способность секционированных коллекций снижена с 10 100 ЕЗ/с до 2500 ЕЗ/с.
 * Исправлена ошибка маркера продолжения для односекционной коллекции. Проблема GitHub 107.
 * Исправлена ошибка выполнения хранимой процедуры (executeStoredProcedure) при обработке 0 как одного параметра. Проблема GitHub 155.
@@ -328,7 +328,7 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 * Дополнительная очистка кода.
 
 ### <a name=""></a><a name="1.10.1"/>1.10.1</a>
-* Отключение проверки SSL при использовании пакета SDK для emulator(hostname=localhost).
+* Отключение tLS-проверки при использовании SDK для таргетирования эмулятора (hostname-localhost).
 * Добавлена поддержка включения ведения журнала сценариев во время выполнения хранимой процедуры.
 
 ### <a name=""></a><a name="1.10.0"/>1.10.0</a>
@@ -474,7 +474,7 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 | [1.0.1](#1.0.1) |15 мая 2015 г. |30 августа 2020 года |
 | [1.0.0](#1.0.0) |8 апреля 2015 г. |30 августа 2020 года |
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>См. также

@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/24/2020
-ms.openlocfilehash: 1830a16108e6d8bb251d7ca45ae471e2f606874b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e4b076d96cad280c4da6c2424f056c2216c47602
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80240579"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80408850"
 ---
 # <a name="aggregate-transformation-in-mapping-data-flow"></a>Совокупная трансформация в потоке данных отображения 
 
@@ -96,6 +96,15 @@ MoviesYear aggregate(
             ) ~> AvgComedyRatingByYear
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+![Агрегированный сценарий потока данных](media/data-flow/aggdfs1.png "Агрегированный сценарий потока данных")
+
+```MoviesYear```: Производные колонки, ```AvgComedyRatingByYear```определяющие год и заголовки столбцов : Агрегированная трансформация для среднего рейтинга комедий, сгруппированных по годам ```avgrating```: Название новой колонки создается для удержания агрегированного значения
+
+```
+MoviesYear aggregate(groupBy(year),
+    avgrating = avg(toInteger(Rating))) ~> AvgComedyRatingByYear
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 * Определение агрегации на основе окон с помощью [преобразования окна](data-flow-window.md)

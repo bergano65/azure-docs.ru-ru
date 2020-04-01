@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы об приборах Azur
 description: Получите ответы на распространенные вопросы об приборе Azure Migrate.
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: 2ef7de3b31cb11a71ec9379232fc5ff1022cf666
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a08423637f255b973f52616f53172ef6e48d0804
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80336971"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437609"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Прибор Azure Migrate: Общие вопросы
 
@@ -95,6 +95,9 @@ ms.locfileid: "80336971"
 ## <a name="can-an-azure-migrate-project-have-multiple-appliances"></a>Может ли проект Azure Migrate иметь несколько приборов?
 Проект может иметь несколько приборов прилагается к нему. Однако прибор может быть связан только с одним проектом. 
 
+## <a name="can-the-azure-migrate-appliancereplication-appliance-connect-to-the-same-vcenter"></a>Может ли прибор Azure Migrate подключиться к тому же vCenter?
+Да. Можно добавить к тому же серверу vCenter как прибор Azure Migrate (используется для оценки и безагента vMware), так и прибор репликации (используется для переноса VMw VMw на основе агента).
+
 
 ## <a name="how-many-vms-or-servers-can-i-discover-with-an-appliance"></a>Сколько вс-а-а-а-а,- я могу обнаружить с помощью прибора?
 
@@ -130,6 +133,6 @@ ms.locfileid: "80336971"
 
 Да. На портале перейдите на страницу **работы агента** для Azure Migrate: Оценка серверов или Azure Migrate: Инструмент миграции серверов. Там можно проверить состояние соединения между Azure и агентами обнаружения и оценки на приборе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Читайте [обзор Azure Migrate](migrate-services-overview.md).

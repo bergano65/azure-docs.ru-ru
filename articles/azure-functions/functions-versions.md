@@ -3,12 +3,12 @@ title: Обзор версий среды выполнения для решен
 description: Решение "Функции Azure" поддерживает разные версии среды выполнения. В этой статье приводятся различия между ними и рекомендации по выбору подходящей для вас версии.
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.openlocfilehash: 21a7b25087efd5d4adf2154c935636c263df9afd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e90752e89be7e381b06f8a87f76f123f0e4a8e3a
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79276560"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80422479"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
@@ -18,7 +18,7 @@ ms.locfileid: "79276560"
 | --------------- | ------------- | ------------ |
 | 3.x | GA | .NET Core 3.1 | 
 | 2.x | GA | .NET Core 2.2 |
-| 1.x | GA<sup>2</sup> | Рамочный униза 4.NET 4.6<sup>3</sup> |
+| 1.x | GA<sup>2</sup> | .NET Рамочная 4.7.2<sup>3</sup> |
 
 <sup>1</sup> релизы GA поддерживаются для сценариев производства.   
 <sup>2</sup> Версия 1.x находится в режиме технического обслуживания. Улучшения предоставляются только в более поздних версиях.   
@@ -200,7 +200,7 @@ ms.locfileid: "79276560"
 
 [!INCLUDE [Timeout Duration section](../../includes/functions-timeout-duration.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих ресурсах:
 

@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: bb9357ca4388bd1fb7ae3e3704cf4112d07c1105
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bce92eeed669628fa1b6318abd6b0c13f7e84848
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77188187"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411206"
 ---
 # <a name="ingest-data-from-event-hub-into-azure-data-explorer"></a>Прием данных из концентратора событий в Azure Data Explorer
 
@@ -92,7 +92,7 @@ ms.locfileid: "77188187"
 1. Скопируйте следующую команду в окно и выберите **Выполнить** для сопоставления входящих данных JSON с именами столбцов и типами данных таблицы (TestTable).
 
     ```Kusto
-    .create table TestTable ingestion json mapping 'TestMapping' '[{"column":"TimeStamp","path":"$.timeStamp","datatype":"datetime"},{"column":"Name","path":"$.name","datatype":"string"},{"column":"Metric","path":"$.metric","datatype":"int"},{"column":"Source","path":"$.source","datatype":"string"}]'
+    .create table TestTable ingestion json mapping 'TestMapping' '[{"column":"TimeStamp", "Properties": {"Path": "$.timeStamp"}},{"column":"Name", "Properties": {"Path":"$.name"}} ,{"column":"Metric", "Properties": {"Path":"$.metric"}}, {"column":"Source", "Properties": {"Path":"$.source"}}]'
     ```
 
 ## <a name="connect-to-the-event-hub"></a>Подключение к концентратору событий
@@ -129,7 +129,7 @@ ms.locfileid: "77188187"
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
     | Таблица | *TestTable* | Таблица, созданная в базе данных **TestDatabase**. |
-    | Формат данных | *Json* | Поддерживаемые форматы: Avro, CSV, JSON, MULTILINE JSON, PSV, SOHSV, SCSV, TSV, TSVE, TXT, ORC и PARQUET. |
+    | Формат данных | *JSON* | Поддерживаемые форматы: Avro, CSV, JSON, MULTILINE JSON, PSV, SOHSV, SCSV, TSV, TSVE, TXT, ORC и PARQUET. |
     | Сопоставление столбцов | *TestMapping* | [Карта,](/azure/kusto/management/mappings) созданная в **TestDatabase,** которая отображает поступающие данные JSON к именам столбцов и типам данных **TestTable.** Требуется для JSON или MULTILINE JSON, и необязательно для других форматов.|
     | | |
 
@@ -215,6 +215,6 @@ ms.locfileid: "77188187"
 
 1. В новом окне введите имя удаляемой группы ресурсов (*test-hub-rg*) и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Данные запросов в Azure Data Explorer](web-query-data.md)

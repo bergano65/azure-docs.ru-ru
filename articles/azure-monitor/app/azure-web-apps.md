@@ -3,12 +3,12 @@ title: Мониторинг производительности служб пр
 description: Мониторинг производительности приложений для служб приложений Azure. Диаграмма нагрузки и времени отклика, информация о зависимости и набор оповещений о производительности.
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 2ec503829d3e6edd7b2b6f6b36314db8a205a8cc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d2134e059a446c18108e8dd16bcc74504b42b15a
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80297604"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437206"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "80297604"
 
     * Этот подход гораздо более настраиваемый, но он требует [добавления зависимости от пакетов Application Insights SDK NuGet.](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) Этот метод также означает, что вы должны управлять обновлениями последней версии пакетов самостоятельно.
 
-    * Если вам нужно сделать пользовательские вызовы API для отслеживания событий/зависимостей, не захваченных по умолчанию, с помощью мониторинга на основе агента, необходимо использовать этот метод. Ознакомьтесь с [API для пользовательских событий и метрик статьи,](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) чтобы узнать больше.
+    * Если вам нужно сделать пользовательские вызовы API для отслеживания событий/зависимостей, не захваченных по умолчанию, с помощью мониторинга на основе агента, необходимо использовать этот метод. Ознакомьтесь с [API для пользовательских событий и метрик статьи,](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) чтобы узнать больше. Это также в настоящее время является единственным поддерживаемым вариантом для рабочих нагрузок на основе Linux.
 
 > [!NOTE]
 > При обнаружении как агента на основе мониторинга, так и ручного приборного аппарата на основе SDK будут выполнены только настройки ручного прибора. Это необходимо для предотвращения отправки дубликатов данных. Чтобы узнать больше об этом, ознакомьтесь с [разделом устранения неполадок](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#troubleshooting) ниже.
@@ -399,7 +399,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 Сайты PHP и WordPress не поддерживаются. В настоящее время официально не поддерживается SDK/агент для мониторинга этих рабочих нагрузок на серверной стороне. Тем не менее, вручную инструментирование клиент-стороны сделок на сайте PHP или WordPress, добавив клиента стороне JavaScript на веб-страницы могут быть выполнены с помощью [JavaScript SDK](https://docs.microsoft.com/azure/azure-monitor/app/javascript). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Запуск профилировщика в живом приложении](../app/profiler.md).
 * [Функции Azure.](https://github.com/christopheranderson/azure-functions-app-insights-sample) Отслеживайте функции Azure с помощью Application Insights.
 * [Включите отправку данных диагностики Azure](../platform/diagnostics-extension-to-application-insights.md) в Application Insights.

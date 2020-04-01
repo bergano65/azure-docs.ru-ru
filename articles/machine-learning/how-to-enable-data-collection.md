@@ -11,12 +11,12 @@ ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3c481a2e12d83e865025cd90e59e0eba572ad9a5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 44acc81df9eb6dc6a6af28b5b0f4730aa93adffc
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75771399"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475430"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
@@ -60,7 +60,7 @@ ms.locfileid: "75771399"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://aka.ms/AMLFree), прежде чем начинать работу.
+- Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://aka.ms/AMLFree) перед началом.
 
 - Необходимо установить рабочее пространство AzureMachine Learning, локальный каталог, содержащий скрипты, и SDK для Python. Чтобы узнать, как установить их, см. [Как настроить среду разработки.](how-to-configure-environment.md)
 
@@ -129,11 +129,7 @@ ms.locfileid: "75771399"
 
    ![Оторитете службу](././media/how-to-enable-data-collection/EditService.PNG)
 
-1. В **расширенных настройках**выберите **сбор данных Enable Model.**
-
-    [![Выберите сбор данных](./media/how-to-enable-data-collection/CheckDataCollection.png)](././media/how-to-enable-data-collection/CheckDataCollection.png#lightbox)
-
-   Вы также можете выбрать **диагностику Enable AppInsights** для отслеживания работоспособности службы.
+1. В **расширенных настройках**выберите **диагностику и сбор данных Enable Application Insights.**
 
 1. Выберите **обновление,** чтобы применить изменения.
 
@@ -151,9 +147,7 @@ ms.locfileid: "75771399"
 
    [![Выберите опцию «Отобрагивать»](././media/how-to-enable-data-collection/EditService.PNG)](./././media/how-to-enable-data-collection/EditService.PNG#lightbox)
 
-1. В **расширенных настройках**очистите **сбор данных Enable Model.**
-
-    [![Очистить флажок для сбора данных](./media/how-to-enable-data-collection/UncheckDataCollection.png)](././media/how-to-enable-data-collection/UncheckDataCollection.png#lightbox)
+1. В **расширенных настройках,** четко **Включить приложение Исследования диагностики и сбора данных.**
 
 1. Чтобы применить изменение, нажмите кнопку **Обновить**.
 
@@ -213,7 +207,7 @@ ms.locfileid: "75771399"
 
     [![Мощность BI Содержание](./media/how-to-enable-data-collection/pbiContent.png)](././media/how-to-enable-data-collection/pbiContent.png#lightbox)
 
-1. Нажмите кнопку **ОК**. Предзагрузок данных.
+1. Щелкните **ОК**. Предзагрузок данных.
 
     [![Файлы комбайна Power BI](./media/how-to-enable-data-collection/pbiCombine.png)](././media/how-to-enable-data-collection/pbiCombine.png#lightbox)
 
