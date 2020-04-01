@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 8a1f774aae071a561bdda2d8c349861d640cb287
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 68994f9b79af55b32527eed52bbc4e5866c89538
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73572476"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79205154"
 ---
 # <a name="quickstart-configure-server-firewall---portal"></a>Краткое руководство. Настройка брандмауэра сервера с помощью портала
 
@@ -22,7 +22,8 @@ ms.locfileid: "73572476"
 
 - Подписка на сервер служб Analysis Services. Дополнительные сведения см. в статье [ Краткое руководство по созданию сервера с помощью портала](analysis-services-create-server.md) или [ Краткое руководство по созданию сервера с помощью PowerShell](analysis-services-create-powershell.md).
 - Один или несколько диапазонов IP-адресов для клиентских компьютеров (при необходимости).
-- Обратите внимание, что сценарий импорта из Power BI Premium сейчас не поддерживается.
+- Некоторые сценарии с подключением Power BI Premium к Azure Analysis Services, включая импорт данных (обновление) и отчеты с разбивкой на страницы, сейчас не поддерживаются, даже если параметр "Разрешить доступ из Power BI" установлен. Поддерживается более распространенный сценарий использования Live Connect в Power BI Premium. Все сценарии Power BI Pro поддерживаются.
+
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure 
 
@@ -42,7 +43,7 @@ ms.locfileid: "73572476"
 
 Удалите диапазоны IP-адресов или отключите брандмауэр, когда они больше не нужны.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого краткого руководства вы узнали, как настроить брандмауэр для сервера. Теперь, когда сервер защищен брандмауэром, можно добавить к нему базовый образец модели данных с портала. Наличие образца модели полезно, чтобы изучить настройку ролей шаблонов базы данных и тестирование клиентских подключений. Для получения дополнительных сведений перейдите к руководству по добавлению образца модели.
 
 > [!div class="nextstepaction"]

@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 1/9/2019
 ms.author: lcozzens
-ms.openlocfilehash: f27ad43fabbba92f97a4035b00f72a8a4af4cc5c
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.openlocfilehash: 420d9b48013f5f6debe588667fe1cc0390517e66
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77500216"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80245384"
 ---
 # <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений"
 
@@ -27,13 +27,15 @@ ms.locfileid: "77500216"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Обозреватель конфигураций** > **Создать**, чтобы добавить указанные ниже пары "ключ — значение":
+6. Выберите **Обозреватель конфигураций** > **Создать** > **Ключ-значение**, чтобы добавить следующие пары "ключ-значение":
 
     | Клавиши | Значение |
     |---|---|
     | TestApp:Settings:FontSize | Данные из конфигурации приложения Azure |
 
     Поля **Метка** и **Тип контента** пока заполнять не нужно.
+
+7. Нажмите кнопку **Применить**.
 
 ## <a name="create-a-net-core-console-app"></a>Создание консольного приложения .NET Core
 
@@ -43,22 +45,22 @@ ms.locfileid: "77500216"
 
 2. В новой папке выполните следующую команду, чтобы создать проект консольного приложения для ASP.NET Core:
 
-    ```CLI
-        dotnet new console
+    ```dotnetcli
+    dotnet new console
     ```
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`, выполнив следующую команду:
 
-    ```CLI
-        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration
+    ```dotnetcli
+    dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration
     ```
 
 2. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
-    ```CLI
-        dotnet restore
+    ```dotnetcli
+    dotnet restore
     ```
 
 3. Откройте файл *Program.cs* и добавьте ссылку на поставщик конфигурации приложений .NET Core.
@@ -83,32 +85,34 @@ ms.locfileid: "77500216"
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально
 
-1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу службы "Конфигурация приложений". В командной строке выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
+1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу службы "Конфигурация приложений". В командной строке выполните следующую команду:
 
-    ```CLI
-        setx ConnectionString "connection-string-of-your-app-configuration-store"
+    ```cmd
+    setx ConnectionString "connection-string-of-your-app-configuration-store"
     ```
 
     Если вы используете Windows PowerShell, выполните следующую команду:
 
     ```azurepowershell
-        $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
+    $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
     ```
 
     Если вы используете macOS или Linux, выполните следующую команду:
 
         export ConnectionString='connection-string-of-your-app-configuration-store'
 
+    Перезапустите командную строку, чтобы изменение вступило в силу. Выведите значение переменной среды, чтобы проверить правильность ее настройки.
+
 2. Чтобы создать консольное приложение, выполните следующую команду:
 
-    ```CLI
-        dotnet build
+    ```dotnetcli
+    dotnet build
     ```
 
 3. Когда создание завершится, запустите приложение локально с помощью следующей команды:
 
-    ```CLI
-        dotnet run
+    ```dotnetcli
+    dotnet run
     ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

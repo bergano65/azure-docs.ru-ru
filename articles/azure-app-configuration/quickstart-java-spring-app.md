@@ -10,12 +10,12 @@ ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 12/17/2019
 ms.author: lcozzens
-ms.openlocfilehash: 2521adfda731c06c879f5cfeb6283567228bf664
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: c156d5f1242674adc53a2a813e9b2c140221ecfb
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77919368"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80245316"
 ---
 # <a name="quickstart-create-a-java-spring-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Java Spring с помощью службы "Конфигурация приложений Azure"
 
@@ -31,13 +31,15 @@ ms.locfileid: "77919368"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-1. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+6. Выберите **Обозреватель конфигураций** >  **+ Создать** > **Ключ-значение**, чтобы добавить следующие пары "ключ-значение":
 
     | Клавиши | Значение |
     |---|---|
     | /application/config.message | Привет |
 
     Поля **Метка** и **Тип контента** пока заполнять не нужно.
+
+7. Нажмите кнопку **Применить**.
 
 ## <a name="create-a-spring-boot-app"></a>Создание приложения Spring Boot
 
@@ -146,7 +148,7 @@ ms.locfileid: "77919368"
 
 1. Задайте переменную среды с именем **APP_CONFIGURATION_CONNECTION_STRING** и присвойте ей значение ключа доступа к хранилищу службы "Конфигурация приложений". В командной строке выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
 
-    ```CLI
+    ```cmd
         setx APP_CONFIGURATION_CONNECTION_STRING "connection-string-of-your-app-configuration-store"
     ```
 
@@ -158,7 +160,7 @@ ms.locfileid: "77919368"
 
     Если вы используете macOS или Linux, выполните следующую команду:
 
-    ```console
+    ```cmd
         export APP_CONFIGURATION_CONNECTION_STRING='connection-string-of-your-app-configuration-store'
     ```
 
@@ -166,14 +168,14 @@ ms.locfileid: "77919368"
 
 1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:
 
-    ```CLI
+    ```cmd
     mvn clean package
     mvn spring-boot:run
     ```
 
 2. После запуска приложение можно протестировать с помощью средства *curl*, например:
 
-      ```CLI
+      ```cmd
       curl -X GET http://localhost:8080/
       ```
 
@@ -185,7 +187,7 @@ ms.locfileid: "77919368"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве описано, как создать хранилище конфигураций приложений и использовать его с приложением Java Spring. Дополнительные сведения см. в статье [Spring в Azure](https://docs.microsoft.com/java/azure/spring-framework/). Чтобы узнать, как с помощью удостоверения, управляемого Azure, упростить доступ к службе "Конфигурация приложения Azure", перейдите к следующему учебнику.
+В этом кратком руководстве описано, как создать хранилище конфигураций приложений и использовать его с приложением Java Spring. Дополнительные сведения см. в статье [Spring в Azure](https://docs.microsoft.com/java/azure/spring-framework/). Чтобы узнать, как включить в приложении Java Spring динамическое обновление параметров конфигурации, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Руководство по интеграции с управляемыми удостоверениями Azure](./howto-integrate-azure-managed-service-identity.md)
+> [Включение динамической конфигурации](./enable-dynamic-configuration-java-spring-app.md)

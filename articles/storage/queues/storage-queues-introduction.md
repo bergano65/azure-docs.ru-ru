@@ -3,17 +3,17 @@ title: Общие сведения о службе "Очереди Azure" — �
 description: Общие сведения о службе "Очереди Azure"
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 06/07/2019
+ms.date: 03/18/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: overview
 ms.reviewer: cbrooks
-ms.openlocfilehash: 0e8bac8344bec06b58a22b8c9162cd8bd22ee700
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 4a2bea77578282d68d86bc1a8cea765aa2cbd555
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750434"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80060844"
 ---
 # <a name="what-are-azure-queues"></a>Что такое очереди Azure?
 
@@ -23,7 +23,7 @@ ms.locfileid: "75750434"
 
 Служба очереди содержит следующие компоненты:
 
-![Понятия очереди](./media/storage-queues-introduction/queue1.png)
+![Схема, на которой показана связь между учетной записью хранения, очередями и сообщениями](./media/storage-queues-introduction/queue1.png)
 
 * **Формат URL-адреса**. К очереди можно обратиться, используя следующий формат URL-адреса:
 

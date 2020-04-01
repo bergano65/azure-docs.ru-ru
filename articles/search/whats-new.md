@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 03/03/2020
-ms.openlocfilehash: 27dae07328af125c25512ab9f1eb81d0f4eda99b
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.date: 03/24/2020
+ms.openlocfilehash: 475f89fc5b33948864fd83c39ee8058ab6908cad
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78271325"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80247203"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
@@ -26,6 +26,12 @@ ms.locfileid: "78271325"
 Теперь Поиск Azure будет называться **Когнитивный поиск Azure**, чтобы правильно отражать расширенную (но не обязательную!) возможность использовать когнитивные навыки и искусственный интеллект для базовых операций. Все версии API, пакеты NuGet, пространства имен и конечные точки остаются прежними. Изменение имени службы никак не затронет существующие и новые решения поиска.
 
 ## <a name="feature-announcements"></a>Объявления о новых возможностях
+
+### <a name="march-2020"></a>Март 2020 г.
+
++ [Нативная функция обратимого удаления BLOB-объектов (предварительная версия)](search-howto-indexing-azure-blob-storage.md#incremental-indexing-and-deletion-detection) означает, что индексатор хранилища BLOB-объектов Azure в службе "Когнитивный поиск Azure" распознает BLOB-объекты в состоянии обратимого удаления и удаляет соответствующий документ поиска при индексировании.
+
++ Доступна новая стабильная версия [REST API управления (2020-03-13)](https://docs.microsoft.com/rest/api/searchmanagement/management-api-versions). 
 
 ### <a name="february-2020"></a>Февраль 2020 г.
 

@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 1/9/2019
 ms.author: lcozzens
-ms.openlocfilehash: 71a330523f1d3393a365fec29fb66f5c9773b6cc
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: 2f6efdad7ab0685e58d2edd73bc36b758e8dbae2
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78207070"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80245503"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Функций Azure с использованием службы "Конфигурация приложений Azure"
 
@@ -28,13 +28,15 @@ ms.locfileid: "78207070"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+6. Выберите **Обозреватель конфигураций** >  **+ Создать** > **Ключ-значение**, чтобы добавить следующие пары "ключ-значение":
 
     | Клавиши | Значение |
     |---|---|
     | TestApp:Settings:FontSize | Данные из конфигурации приложения Azure |
 
     Поля **Метка** и **Тип контента** пока заполнять не нужно.
+
+7. Нажмите кнопку **Применить**.
 
 ## <a name="create-a-functions-app"></a>Создание приложения-функции
 
@@ -85,7 +87,7 @@ ms.locfileid: "78207070"
 
 1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу службы "Конфигурация приложений". Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
 
-    ```CLI
+    ```cmd
         setx ConnectionString "connection-string-of-your-app-configuration-store"
     ```
 

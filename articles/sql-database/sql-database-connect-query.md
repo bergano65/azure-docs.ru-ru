@@ -12,11 +12,11 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/18/2018
 ms.openlocfilehash: 647bdcf5c8c49b5c942419c78155ed4f61c848bb
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826874"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79215492"
 ---
 # <a name="quickstarts-azure-sql-database-connect-and-query"></a>Краткие руководства: Подключение и создание запросов к Базе данных SQL Azure
 
@@ -26,9 +26,9 @@ ms.locfileid: "73826874"
 
 | |  |
 |---|---|
-|[SQL Server Management Studio](sql-database-connect-query-ssms.md)|В этом кратком руководстве показано, как использовать SSMS для подключения к базе данных Azure SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
+|[Среда SQL Server Management Studio](sql-database-connect-query-ssms.md)|В этом кратком руководстве показано, как использовать SSMS для подключения к базе данных Azure SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-database?toc=/azure/sql-database/toc.json)|В этом кратком руководстве показано, как использовать Azure Data Studio для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL (T-SQL) создать базу данных TutorialDB, которая используется в руководствах по Azure Data Studio.|
-|[портал Azure](sql-database-connect-query-portal.md)|В этом кратком руководстве показано, как использовать редактор запросов для подключения к базе данных SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
+|[Портал Azure](sql-database-connect-query-portal.md)|В этом кратком руководстве показано, как использовать редактор запросов для подключения к базе данных SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[Visual Studio Code](sql-database-connect-query-vscode.md)|В этом кратком руководстве показано, как, используя Visual Studio Code, подключиться к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[.NET с Visual Studio](sql-database-connect-query-dotnet-visual-studio.md)|В этом кратком руководстве показано, как использовать платформу .NET Framework для создания программы C# с помощью Visual Studio, которая подключается к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[.NET Core](sql-database-connect-query-dotnet-core.md)|В этом кратком руководстве показано, как использовать .NET Core в Windows, Linux и Mac OS для создания программы C#, которая подключается к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
@@ -59,7 +59,7 @@ ms.locfileid: "73826874"
 
 В следующей таблице перечислены библиотеки подключений или *драйверы*, которые клиентские приложения могут применять с помощью различных языков для подключения и использования сервера SQL Server, работающего локально или в облаке. Эти библиотеки и драйверы можно использовать в среде Linux, Windows или Docker, а также при подключении к базе данных SQL Azure и хранилищу данных SQL Azure. 
 
-| Язык | платформа | Дополнительные ресурсы | Скачивание | Начало работы |
+| Язык | Платформа | Дополнительные ресурсы | Скачивание | Начало работы |
 | :-- | :-- | :-- | :-- | :-- |
 | C# | Windows, Linux, macOS | [Microsoft ADO.NET для SQL Server](https://docs.microsoft.com/sql/connect/ado-net/microsoft-ado-net-sql-server) | [Загрузить](https://www.microsoft.com/net/download/) | [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/csharp/ubuntu)
 | Java | Windows, Linux, macOS | [Microsoft JDBC Driver для SQL Server](https://msdn.microsoft.com/library/mt484311.aspx) | [Загрузить](https://go.microsoft.com/fwlink/?linkid=852460) |  [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/java/ubuntu)
@@ -71,7 +71,7 @@ ms.locfileid: "73826874"
 
 В следующей таблице перечислены примеры платформ объектно-реляционного сопоставления и веб-платформ, которые клиентские приложения могут использовать с сервером SQL Server, работающим локально или в облаке. Эти платформы можно использовать в Linux, Windows или Docker, а также при подключении к базе данных SQL и хранилищу данных SQL. 
 
-| Язык | платформа | Платформы ORM |
+| Язык | Платформа | ORM |
 | :-- | :-- | :-- |
 | C# | Windows, Linux, macOS | [Entity Framework](https://docs.microsoft.com/ef)<br>[Entity Framework Core](https://docs.microsoft.com/ef/core/index) |
 | Java | Windows, Linux, macOS |[Hibernate ORM](https://hibernate.org/orm)|
@@ -81,7 +81,7 @@ ms.locfileid: "73826874"
 | Ruby | Windows, Linux, macOS | [Ruby on Rails](https://rubyonrails.org/) |
 ||||
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об архитектуре подключения см. в статье [Архитектура подключений к базе данных SQL Azure](sql-database-connectivity-architecture.md).
 - Получите [драйверы SQL Server](https://msdn.microsoft.com/library/mt654049.aspx), которые используются для подключения из клиентских приложений.
@@ -93,8 +93,8 @@ ms.locfileid: "73826874"
   - [Подключение к базе данных SQL с помощью Python](sql-database-connect-query-python.md)
   - [Подключение к базе данных SQL с помощью Ruby](sql-database-connect-query-ruby.md)
 - Примеры кода логики повторов:
-  - [Отказоустойчивое подключение к SQL с помощью ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
-  - [Отказоустойчивое подключение к SQL с помощью PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
+  - [Выполнение устойчивого подключения к SQL с помощью ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
+  - [Выполнение устойчивого подключения к SQL с помощью PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
 
 <!-- Link references. -->
 

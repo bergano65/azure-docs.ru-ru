@@ -6,12 +6,12 @@ ms.author: sudbalas
 ms.date: 03/08/2020
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: 6a5cc5bbdb56e308d79b8eb2c8db546184cedb39
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.openlocfilehash: 53036a43cbb0fe3c3a1e61f7124fe7dcbef228f3
+ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79080349"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80388939"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Интеграция Key Vault со службой "Приватный канал Azure"
 
@@ -19,11 +19,11 @@ ms.locfileid: "79080349"
 
 Частная конечная точка Azure — это сетевой интерфейс, который защищенно и надежно подключается к службе через Приватный канал Azure. Частная конечная точка использует частный IP-адрес из виртуальной сети, по сути перемещая службу в виртуальную сеть. Весь трафик к службе может маршрутизироваться через частную конечную точку, поэтому шлюзы, устройства преобразования сетевых адресов (NAT), подключения ExpressRoute и VPN, а также общедоступные IP-адреса не требуются. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Вы можете подключиться к экземпляру ресурса Azure, обеспечивая наивысшую степень детализации в управлении доступом.
 
-Дополнительные сведения см. в статье [What is Azure Private Link? (Preview)](../private-link/private-link-overview.md) (Что такое Приватный канал Azure (предварительная версия)?)
+Дополнительные сведения см. в статье [Что такое Приватный канал Azure](../private-link/private-link-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы интегрировать хранилище ключей с Приватным каналом Azure (предварительная версия), вам потребуется следующее:
+Чтобы интегрировать хранилище ключей с Приватным каналом Azure, вам потребуется следующее:
 
 - Хранилище ключей.
 - Виртуальная сеть Azure.
@@ -46,7 +46,7 @@ ms.locfileid: "79080349"
 
 После настройки основных компонентов хранилища ключей перейдите на вкладку "Сеть" и выполните следующие шаги:
 
-1. Выберите переключатель "Частная конечная точка (предварительная версия)" на вкладке "Сеть".
+1. Выберите переключатель "Частная конечная точка" на вкладке "Сеть".
 1. Нажмите кнопку "+ Добавить", чтобы добавить частную конечную точку.
 
     ![Образ —](./media/private-link-service-1.png)
@@ -57,7 +57,7 @@ ms.locfileid: "79080349"
 1. Оставьте без изменений переключатель Integrate with the private zone DNS (Интегрировать с частной зоной DNS).  
 1. Нажмите «ОК».
 
-    ![Образ —](./media/private-link-service-2.png)
+    ![Образ —](./media/private-link-service-8.png)
  
 После этого вы сможете увидеть настроенную частную конечную точку. Теперь у вас есть возможность удалить и изменить эту частную конечную точку. Нажмите кнопку "Просмотр и создание" и создайте хранилище ключей. Развертывание может занять 5–10 минут. 
 
@@ -69,7 +69,7 @@ ms.locfileid: "79080349"
 1. В строке поиска введите "хранилища ключей".
 1. Выберите в списке хранилище ключей, для которого необходимо добавить частную конечную точку.
 1. Выберите вкладку "Сеть" в разделе "Параметры".
-1. Выберите вкладку "Подключения к частным конечным точкам" (предварительная версия) в верхней части страницы.
+1. Выберите вкладку "Подключения к частным конечным точкам" в верхней части страницы.
 1. Нажмите кнопку "+ Private Endpoint" (+ Частная конечная точка) в верхней части страницы.
 
     ![Изображение](./media/private-link-service-3.png) ![Изображение](./media/private-link-service-4.png)
@@ -100,6 +100,10 @@ az provider register -n Microsoft.KeyVault
 ### <a name="create-a-new-key-vault"></a>Создание Key Vault
 ```console
 az keyvault create --name {KEY VAULT NAME} --resource-group {RG} --location {AZURE REGION}
+```
+### <a name="turn-on-key-vault-firewall"></a>Включение брандмауэра Key Vault
+```console
+az keyvault update --name {KEY VAULT NAME} --resource-group {RG} --location {AZURE REGION} --default-action deny
 ```
 ### <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 ```console
@@ -220,9 +224,9 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 ## <a name="limitations-and-design-considerations"></a>Проблемы и ограничения разработки
 
-**Цены**. Сведения о ценах для Приватного канала Azure (предварительная версия) см. [здесь](https://azure.microsoft.com/pricing/details/private-link/).
+**Цены**. Сведения о ценах на службу "Приватный канал Azure" см. [здесь](https://azure.microsoft.com/pricing/details/private-link/).
 
-**Ограничения**.  Частная конечная точка для Azure Key Vault есть в общедоступной предварительной версии. Эта возможность есть во всех общедоступных регионах Azure.
+**Ограничения**.  Частная конечная точка для Azure Key Vault поддерживается только в общедоступных регионах Azure.
 
 **Максимальное число частных конечных точек на Key Vault**: 64
 
@@ -232,5 +236,5 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 ## <a name="next-steps"></a>Next Steps
 
-- См. дополнительные сведения о службе [Приватный канал Azure (предварительная версия)](../private-link/private-link-service-overview.md).
+- Дополнительные сведения о службе [Приватный канал Azure](../private-link/private-link-service-overview.md)
 - См. дополнительные сведения об [Azure Key Vault](key-vault-overview.md).

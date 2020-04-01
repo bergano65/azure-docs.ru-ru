@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: overview
 ms.date: 07/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: 4508b69261cd7b1fb5e400eaf7ffaae67d5cb476
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: b4aa5dfd288819930da2f7af36b7d70df709e638
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647965"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79473036"
 ---
 # <a name="azure-managed-applications-overview"></a>Обзор управляемых приложений Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "75647965"
 Управляемое приложение похоже на шаблон решения Marketplace, за исключением одного существенного отличия. В управляемом приложении ресурсы развертываются в группе ресурсов, управляемой поставщиком приложения. Группа ресурсов расположена в подписке пользователя, но идентификатор в клиенте издателя имеет доступ к группе ресурсов. Как издатель, вы указываете стоимость текущей поддержки решения.
 
 > [!NOTE]
-> Ранее документация для поставщиков клиентов Azure была включена в документацию по управляемым приложениям. Эта документация была перемещена. См. [Настраиваемые поставщики Azure](../custom-providers/overview.md).
+> Ранее документация по настраиваемым поставщикам Azure была включена в документацию по управляемым приложениям. Эта документация была перемещена. См. [Настраиваемые поставщики Azure](../custom-providers/overview.md).
 
 ## <a name="advantages-of-managed-applications"></a>Преимущества управляемых приложений
 

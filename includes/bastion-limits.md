@@ -1,24 +1,24 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 10/16/2019
+ms.date: 03/25/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: b667745094ccb6952a6b17f5b7ef0cabae4220c5
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: MT
+ms.openlocfilehash: 40f8f5b234a6aecb1b44e4c565873b3badbd139a
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476901"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80334823"
 ---
-| Ресурс | Ограничение по умолчанию |
+| Ресурс | Ограничение |
 | --- | --- |
-| Параллельные RDP-подключения |размером |
-| Параллельные SSH-подключения |Более 50 * * |
+| Параллельные RDP-подключения |25* |
+| Параллельные SSH-подключения |50** |
 
-\* Может отличаться в зависимости от других активных сеансов удаленного рабочего стола или других входных сеансов SSH.<br>
-\* * Может отличаться при наличии удаленных подключений по протоколу RDP или при использовании других подключенных сеансов SSH.
+\* Может отличаться в зависимости от других активных сеансов RDP или SSH.<br>
+\* * Может отличаться при наличии RDP-подключений или использования из других подключенных сеансов SSH.

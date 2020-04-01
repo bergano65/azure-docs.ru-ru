@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: b988435fc6928d52321cb427e2412e7ca81680d2
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: cfff05ed52258ee448d83a521b99dca7d356a0f9
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126470"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80061048"
 ---
 # <a name="configure-a-point-to-site-p2s-vpn-on-linux-for-use-with-azure-files"></a>Настройка VPN-подключения "точка — сеть" (P2S) в Linux для использования с Файлами Azure
 Вы можете использовать VPN-подключение "точка — сеть" (P2S) для подключения файловых ресурсов Azure по протоколу SMB вне Azure, не открывая порт 445. VPN-подключение "точка — сеть" — это VPN-подключение между Azure и отдельным клиентом. Чтобы использовать VPN-подключение P2S к службе "Файлы Azure", необходимо настроить это подключение для каждого клиента, которому требуется подключиться. Если у вас много клиентов, которым требуется подключение к общим файловым ресурсам Azure из локальной сети, вместо подключения "точка — сеть" для каждого клиента можно использовать VPN-подключение "сеть — сеть" (S2S). Дополнительные сведения см. в статье [Настройка VPN-подключения "сеть — сеть" для использования с Файлами Azure](storage-files-configure-s2s-vpn.md).
@@ -24,7 +24,9 @@ ms.locfileid: "73126470"
 ## <a name="prerequisites"></a>Предварительные требования
 - Последняя версия Azure CLI. Дополнительные сведения об установке Azure CLI см. в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и выберите операционную систему. Если вы предпочитаете использовать Azure PowerShell в Linux, обратите внимание, что приведенные ниже инструкции представлены для Azure CLI.
 
-- Общая папка Azure, которую вы хотите подключить локально. Вы можете использовать общую папку категории [Стандартный](storage-how-to-create-file-share.md) или [Премиум](storage-how-to-create-premium-fileshare.md) с VPN-подключением "точка — сеть".
+- Общая папка Azure, которую вы хотите подключить локально. Общие папки Azure развертываются в учетных записях хранения. Эти учетные записи являются компонентами управления, представляющие собой общий пул носителей, который можно использовать для развертывания нескольких общих папок и других ресурсов хранения, например контейнеров больших двоичных объектов или очередей. Дополнительные сведения о развертывании общих папок Azure и учетных записей хранения см. в статье [Создание общей папки Azure](storage-how-to-create-file-share.md).
+
+- Частная конечная точка учетной записи хранения, содержащей общую папку Azure, которую вы хотите подключить локально. Дополнительные сведения о создании частной конечной точки см. в статье [Настройка конечных точек сети в службе "Файлы Azure"](storage-files-networking-endpoints.md?tabs=azure-cli). 
 
 ## <a name="install-required-software"></a>Установка необходимого программного обеспечения
 Шлюз виртуальной сети Azure может предоставлять VPN-подключения с помощью нескольких протоколов VPN, включая IPsec и OpenVPN. В этом руководстве показано, как использовать IPsec и пакет strongSwan для обеспечения поддержки в Linux. 
@@ -77,85 +79,6 @@ gatewaySubnet=$(az network vnet subnet create \
     --name "GatewaySubnet" \
     --address-prefixes "192.168.2.0/24" \
     --query "id" | tr -d '"')
-```
-
-## <a name="restrict-the-storage-account-to-the-virtual-network"></a>Ограничение учетной записи хранения виртуальной сетью
-По умолчанию при создании учетной записи хранения доступ к ней можно получить из любой точки мира при наличии средств проверки подлинности запроса (например, с помощью идентификатора Active Directory или ключа учетной записи хранения). Чтобы ограничить доступ к этой учетной записи хранения только что созданной виртуальной сети, необходимо создать набор сетевых правил, который разрешает доступ в виртуальной сети и запрещает все остальные права доступа.
-
-Для ограничения доступа к учетной записи хранения для виртуальной сети требуется использовать конечную точку службы. Конечная точка службы — это сетевая конструкция, с помощью которой можно настроить доступ к общедоступному DNS- или IP-адресу для работы только в пределах виртуальной сети. Так как не гарантировано, что общедоступный IP-адрес останется прежним, мы в конечном счете хотим использовать для учетной записи хранилища частную конечную точку, а не конечную точку службы, однако ограничить учетную запись хранилища можно только в том случае, если доступ к конечной точке службы также будет предоставлен.
-
-Не забудьте заменить `<storage-account-name>` учетной записью хранения, к которой требуется получить доступ.
-
-```bash
-storageAccountName="<storage-account-name>"
-
-az storage account network-rule add \
-    --resource-group $resourceGroupName \
-    --account-name $storageAccountName \
-    --subnet $serviceEndpointSubnet > /dev/null
-
-az storage account update \
-    --resource-group $resourceGroupName \
-    --name $storageAccountName \
-    --bypass "AzureServices" \
-    --default-action "Deny" > /dev/null
-```
-
-## <a name="create-a-private-endpoint-preview"></a>Создание частной конечной точки (предварительная версия)
-При создании частной конечной точки для учетной записи хранения она получает IP-адрес в пространстве IP-адресов виртуальной сети. При подключении общей папки Azure из локальной среды с помощью этого частного IP-адреса правила маршрутизации, автоматически определяемые установкой VPN, будут маршрутизировать запрос на подключение к учетной записи хранения через VPN. 
-
-```bash
-zoneName="privatelink.file.core.windows.net"
-
-storageAccount=$(az storage account show \
-    --resource-group $resourceGroupName \
-    --name $storageAccountName \
-    --query "id" | tr -d '"')
-
-az resource update \
-    --ids $privateEndpointSubnet \
-    --set properties.privateEndpointNetworkPolicies=Disabled > /dev/null
-
-az network private-endpoint create \
-    --resource-group $resourceGroupName \
-    --name "$storageAccountName-PrivateEndpoint" \
-    --location $region \
-    --subnet $privateEndpointSubnet \
-    --private-connection-resource-id $storageAccount \
-    --group-ids "file" \
-    --connection-name "privateEndpointConnection" > /dev/null
-
-az network private-dns zone create \
-    --resource-group $resourceGroupName \
-    --name $zoneName > /dev/null
-
-az network private-dns link vnet create \
-    --resource-group $resourceGroupName \
-    --zone-name $zoneName \
-    --name "$virtualNetworkName-link" \
-    --virtual-network $virtualNetworkName \
-    --registration-enabled false > /dev/null
-
-networkInterfaceId=$(az network private-endpoint show \
-    --name "$storageAccountName-PrivateEndpoint" \
-    --resource-group $resourceGroupName \
-    --query 'networkInterfaces[0].id' | tr -d '"')
- 
-storageAccountPrivateIP=$(az resource show \
-    --ids $networkInterfaceId \
-    --api-version 2019-04-01 \
-    --query "properties.ipConfigurations[0].properties.privateIPAddress" | tr -d '"')
-
-fqdnQuery="properties.ipConfigurations[0].properties.privateLinkConnectionProperties.fqdns[0]"
-fqdn=$(az resource show \
-    --ids $networkInterfaceId \
-    --api-version 2019-04-01 \
-    --query $fqdnQuery | tr -d '"')
-
-az network private-dns record-set a create \
-    --name $storageAccountName \
-    --zone-name $zoneName \
-    --resource-group $resourceGroupName > /dev/null
 ```
 
 ## <a name="create-certificates-for-vpn-authentication"></a>Создание сертификата для проверки подлинности VPN
@@ -285,7 +208,7 @@ smbPath="//$storageAccountPrivateIP/$fileShareName"
 sudo mount -t cifs $smbPath $mntPath -o vers=3.0,username=$storageAccountName,password=$storageAccountKey,serverino
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 - [Рекомендации по работе с сетями службы "Файлы Azure"](storage-files-networking-overview.md)
 - [Настройка VPN-подключения "точка — сеть" (P2S) в Windows для использования с Файлами Azure](storage-files-configure-p2s-vpn-windows.md)
 - [Настройка VPN-подключения "сеть — сеть" (S2S) для использования с Файлами Azure](storage-files-configure-s2s-vpn.md)

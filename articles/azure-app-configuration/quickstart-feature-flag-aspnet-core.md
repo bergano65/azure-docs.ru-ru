@@ -6,12 +6,12 @@ ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 01/14/2020
 ms.author: lcozzens
-ms.openlocfilehash: a4fbba65af5afbd27a3fd2c7d41858e33b4d812c
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.openlocfilehash: d8582dfc796fe3e87b8bdc5be763dddfb5d0176b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78163885"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80245418"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
@@ -33,7 +33,7 @@ ms.locfileid: "78163885"
     > [!div class="mx-imgBorder"]
     > ![Включение флага функции с именем Beta](media/add-beta-feature-flag.png)
 
-    Не определяйте `label` сейчас.
+    Не определяйте `label` сейчас. Чтобы сохранить новый флаг функции, выберите **Применить**.
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
@@ -49,41 +49,53 @@ ms.locfileid: "78163885"
 
 ## <a name="add-secret-manager"></a>Добавление диспетчера секретов
 
-Добавьте в проект [инструмент "Диспетчер секретов"](https://docs.microsoft.com/aspnet/core/security/app-secrets). Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
-
-> [!IMPORTANT]
-> Между .NET Core 2. x и 3. x существуют значительные различия.  Выберите правильный синтаксис в зависимости от среды.
+Чтобы использовать диспетчер секретов, добавьте элемент `UserSecretsId` в файл *.csproj*.
 
 1. Откройте *CSPROJ*-файл.
-1. Добавьте элемент `UserSecretsId`, как показано в примере ниже, и замените его значение своим значением, которое обычно является идентификатором GUID.
+
+1.  Добавьте элемент `UserSecretsId`, как показано здесь. Вы можете использовать тот же GUID или заменить это значение собственным.
+
+    > [!IMPORTANT]
+    > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
     #### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
+
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
-        <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
-    </PropertyGroup>
+        <PropertyGroup>
+            <TargetFramework>netcoreapp2.1</TargetFramework>
+            <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
+        </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    </ItemGroup>
+        <ItemGroup>
+            <PackageReference Include="Microsoft.AspNetCore.App" />
+            <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+        </ItemGroup>
 
     </Project>
     ```
+
     #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
+
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
-    
+
         <PropertyGroup>
             <TargetFramework>netcoreapp3.1</TargetFramework>
             <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
         </PropertyGroup>
+
     </Project>
     ```
     ---
+
+1. Сохраните *CSPROJ*-файл.
+
+Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
+
+> [!TIP]
+> Дополнительные сведения о диспетчере секретов см. в руководстве по [безопасному хранению секретов приложений при разработке с помощью ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/app-secrets).
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
@@ -102,7 +114,7 @@ ms.locfileid: "78163885"
 
 1. Добавьте секрет с именем **ConnectionStrings:AppConfig** в диспетчер секретов.
 
-    Этот секрет содержит строку подключения для получения доступа к хранилищу Конфигурации приложений. Замените значение `<your_connection_string>` в следующей команде строкой подключения к своему хранилищу Конфигурации приложений.
+    Этот секрет содержит строку подключения для получения доступа к хранилищу Конфигурации приложений. Замените значение `<your_connection_string>` в следующей команде строкой подключения к своему хранилищу Конфигурации приложений. Строку подключения можно найти в разделе **Ключи доступа** на портале Azure.
 
     Эта команда должна выполняться в том же каталоге, что и файл *CSPROJ*.
 

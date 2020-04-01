@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: overview
 ms.date: 12/17/2019
 ms.author: azfuncdf
-ms.openlocfilehash: d469d52a6db6c3640d07b46422ffe669a898dde8
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 6ecf3bb5999296b2f5f8f5c25616fac8e0278cda
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76263002"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80132520"
 ---
 # <a name="entity-functions"></a>Функции сущностей
 
@@ -41,7 +41,7 @@ ms.locfileid: "76263002"
 * **Идентификатор целевой сущности**.
 * **Имя выполняемой операции** в строковом формате. Например, сущность `Counter` может поддерживать операции `add`, `get` или `reset`.
 * **Входные данные для операции** (необязательно), которые передаются в вызываемую операцию. Например, операция add может принимать в качестве входных данных целое число.
-* **Запланированное время* — необязательный параметр, позволяющий указать время доставки операции. Например, для операции можно надежно запланировать выполнение на протяжении нескольких дней в будущем.
+* **Запланированное время** — необязательный параметр, позволяющий указать время доставки для операции. Например, для операции можно надежно запланировать выполнение на протяжении нескольких дней в будущем.
 
 Операции могут возвращать результирующее значение или ошибку (например, ошибку JavaScript или исключение .NET). Этот результат или ошибку можно наблюдать из средств оркестрации, которые вызвали эту операцию.
 
@@ -55,7 +55,7 @@ ms.locfileid: "76263002"
 
 **Синтаксис на основе классов (только для .NET)** , в котором сущности и операции представлены классами и методами, соответственно. Этот синтаксис позволяет получить более удобочитаемый код и вызывать операции типобезопасным способом. Синтаксис на основе классов представляет собой тонкий слой, реализованный на базе синтаксиса на основе функций, и вы можете применять оба варианта одновременно в одном приложении.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ### <a name="example-function-based-syntax---c"></a>Пример Синтаксис на основе функций: C#
 
@@ -109,7 +109,7 @@ public class Counter
 
 Дополнительные сведения о синтаксисе на основе классов и его использовании см. в [этой статье](durable-functions-dotnet-entities.md#defining-entity-classes).
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ### <a name="example-javascript-entity"></a>Пример Сущность JavaScript
 
@@ -171,7 +171,7 @@ module.exports = df.entity(function(context) {
 
 Для доступа к сущностям из обычной функции Azure, также известной как клиентская функция, используйте [привязку клиента сущности](durable-functions-bindings.md#entity-client). В следующем примере показана функция, активируемая очередью, которая сигнализирует сущностям, использующим эту привязку.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 > [!NOTE]
 > Для простоты в этих примерах используется слабо типизированный синтаксис для обращений к сущностям. Как правило, мы рекомендуем [обращаться к сущностям через интерфейсы](durable-functions-dotnet-entities.md#accessing-entities-through-interfaces), так как они обеспечивают дополнительную проверку типов.
@@ -189,7 +189,7 @@ public static Task Run(
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -209,7 +209,7 @@ module.exports = async function (context) {
 
 Клиентские функции могут также запрашивать состояние сущности, как показано в примере ниже:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("QueryCounter")]
@@ -223,7 +223,7 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -244,7 +244,7 @@ module.exports = async function (context) {
 
 Функции оркестрации могут обращаться к сущностям с помощью API-интерфейсов в [привязке триггера оркестрации](durable-functions-bindings.md#orchestration-trigger). В следующем примере кода показан вызов функции оркестрации и сигнализация сущности `Counter`.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("CounterOrchestration")]
@@ -263,7 +263,7 @@ public static async Task Run(
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -291,7 +291,7 @@ module.exports = df.orchestrator(function*(context){
 Функция сущности может отправлять сигналы сущностям (в том числе сама себе) при выполнении любой операции.
 Например, мы можем изменить представленный выше пример сущности `Counter` так, чтобы она отправляла некоторой сущности-наблюдателю сигнал о достижении заданной отметки, когда значение счетчика будет равно 100.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
    case "add":
@@ -306,7 +306,7 @@ module.exports = df.orchestrator(function*(context){
         break;
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
     case "add":
@@ -321,7 +321,7 @@ module.exports = df.orchestrator(function*(context){
 
 ---
 
-## <a name="entity-coordination"></a>Координация сущностей (сейчас только для .NET)
+## <a name="entity-coordination-currently-net-only"></a><a name="entity-coordination"></a>Координация сущностей (сейчас только для .NET)
 
 Иногда приходится координировать операции между несколькими сущностями. Например, в приложении для банковских операций могут быть сущности, представляющие отдельные банковские счета. При передаче средств из одной учетной записи в другую необходимо убедиться, что на исходном счете имеется достаточно средств, а также что как исходный счет, так и целевой обновляются в транзакционно согласованном виде.
 

@@ -8,12 +8,12 @@ keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, 
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: 5deebf7a51917a2b199ad525ab087fd5b0268c18
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 5d0d1541600f4c10b021d5d7f7f435f1aa5ae589
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78245031"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80239718"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio--net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -94,7 +94,9 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:62266
 Completed warmup for project 'webfrontend' in 125 seconds.
 ```
 
-В нашем примере используется такой общедоступный URL-адрес: http://default.webfrontend.1234567890abcdef1234.eus.azds.io/. Перейдите по общедоступному URL-адресу службы, запущенной в вашем пространстве разработки, и проверьте ее работу.
+В нашем примере используется такой общедоступный URL-адрес: http://default.webfrontend.1234567890abcdef1234.eus.azds.io/. 
+
+Выберите **Отладка** затем **Начать отладку**. Через несколько секунд служба запустится, и Visual Studio откроет браузер с общедоступным URL-адресом службы. Если браузер не открывается автоматически, перейдите в браузер по общедоступному URL-адресу службы, запущенной в вашем пространстве разработки, и проверьте ее работу.
 
 Возможно, из-за этого процесса отключился общий доступ к вашей службе. Чтобы включить общий доступ, обновите [значение входящего трафика в *values.yaml*][ingress-update].
 
@@ -106,7 +108,7 @@ Completed warmup for project 'webfrontend' in 125 seconds.
 ViewData["Message"] = "Your application description page in Azure.";
 ```
 
-Сохраните изменения и запустите службу, выбрав **Azure Dev Spaces** в раскрывающемся списке параметров запуска. Перейдите в браузере по общедоступному URL-адресу службы и щелкните *About* (О службе). При этом отобразится обновленное сообщение.
+Сохраните изменения и выберите **Отладка** затем **Начать отладку**. Через несколько секунд служба запустится, и Visual Studio откроет браузер с общедоступным URL-адресом службы. Если браузер не открывается автоматически, перейдите в браузер по общедоступному URL-адресу службы и щелкните *О программе*. При этом отобразится обновленное сообщение.
 
 Вместо того, чтобы повторно выполнять сборку и развертывание нового образа контейнера при каждой правке кода, Azure Dev Spaces пошагово перекомпилирует код в существующем контейнере для ускорения цикла редактирования и отладки.
 
@@ -133,5 +135,5 @@ az group delete --name MyResourceGroup --yes --no-wait
 > [!div class="nextstepaction"]
 > [Работа с несколькими контейнерами и командной разработкой](multi-service-netcore-visualstudio.md)
 
-[ingress-update]: how-dev-spaces-works.md#how-running-your-code-is-configured
+[ingress-update]: how-dev-spaces-works-up.md#how-running-your-code-is-configured
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service

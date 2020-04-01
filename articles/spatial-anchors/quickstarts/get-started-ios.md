@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 277a669484201a060a2bb5455d6154165bbb8e84
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6304077a26f5c0ecb91e1ec4936bd79b3d839d95
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75465170"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79471223"
 ---
 # <a name="quickstart-create-an-ios-app-with-azure-spatial-anchors-in-either-swift-or-objective-c"></a>Краткое руководство. Создание приложения iOS на языке Swift или Objective-C с помощью службы "Пространственные привязки Azure"
 
@@ -28,12 +28,15 @@ ms.locfileid: "75465170"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
 
 - Компьютер для разработки под управлением macOS с установленной последней версией <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> и <a href="https://cocoapods.org" target="_blank">CocoaPods</a>.
-- Система Git, установленная с помощью HomeBrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git` и `brew install git-lfs`.
+- Система Git, установленная с помощью HomeBrew:
+  1. Введите следующую команду в виде одной строки в окне терминала: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. 
+  1. Выполните команды `brew install git` и `brew install git-lfs`.
+  1. Обновите конфигурацию git с помощью `git lfs install` (для текущего пользователя) или `git lfs install --system` (для всей системы).
 - Устройство для разработки на iOS, <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">совместимое с ARKit</a>.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
@@ -46,7 +49,7 @@ ms.locfileid: "75465170"
 
 Установите необходимые pod с помощью CocoaPods.
 
-# <a name="swifttabopenproject-swift"></a>[Swift](#tab/openproject-swift)
+# <a name="swift"></a>[Swift](#tab/openproject-swift)
 
 Перейдите на страницу `iOS/Swift/`.
 
@@ -54,7 +57,7 @@ ms.locfileid: "75465170"
 cd ./iOS/Swift/
 ```
 
-# <a name="objective-ctabopenproject-objc"></a>[Objective-C](#tab/openproject-objc)
+# <a name="objective-c"></a>[Objective-C](#tab/openproject-objc)
 
 Перейдите на страницу `iOS/Objective-C/`.
 
@@ -71,13 +74,13 @@ cd ./iOS/Objective-C/
 > [!NOTE]
 > См. [руководство по устранению неполадок с CocoaPod после обновления до macOS Catalina (10.15)](#cocoapods-issues-on-macos-catalina-1015).
 
-# <a name="swifttabopenproject-swift"></a>[Swift](#tab/openproject-swift)
+# <a name="swift"></a>[Swift](#tab/openproject-swift)
 
 ```bash
 open ./SampleSwift.xcworkspace
 ```
 
-# <a name="objective-ctabopenproject-objc"></a>[Objective-C](#tab/openproject-objc)
+# <a name="objective-c"></a>[Objective-C](#tab/openproject-objc)
 
 ```bash
 open ./SampleObjC.xcworkspace
@@ -89,7 +92,7 @@ open ./SampleObjC.xcworkspace
 
 Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов пространственных привязок](#create-a-spatial-anchors-resource).
 
-# <a name="swifttabopenproject-swift"></a>[Swift](#tab/openproject-swift)
+# <a name="swift"></a>[Swift](#tab/openproject-swift)
 
 Откройте среду `iOS/Swift/SampleSwift/ViewControllers/BaseViewController.swift`.
 
@@ -97,7 +100,7 @@ open ./SampleObjC.xcworkspace
 
 Найдите поле `spatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
 
-# <a name="objective-ctabopenproject-objc"></a>[Objective-C](#tab/openproject-objc)
+# <a name="objective-c"></a>[Objective-C](#tab/openproject-objc)
 
 Откройте среду `iOS/Objective-C/SampleObjC/BaseViewController.m`.
 
@@ -133,6 +136,17 @@ brew update
 brew install cocoapods --build-from-source
 brew link --overwrite cocoapods
 ```
+
+### <a name="app-crashes-when-deploying-to-ios-1031-from-a-personal-provisioning-profiledeveloper-account"></a>Сбой приложения при развертывании в iOS 10.3.1 из личной учетной записи профиля подготовки или разработчика 
+
+При развертывании приложения iOS в iOS 10.3.1 из личной учетной записи профиля обеспечения или разработчика может появиться следующее сообщение об ошибке: `Library not loaded: @rpath/ADAL...`. 
+
+Чтобы устранить проблему:
+
+- Используйте профиль обеспечения, который не является профилем личной группы (платная учетная запись разработчика).
+- Разверните приложение на устройстве iOS под управлением iOS 13.3 или более ранней версии или на компьютере с версией выпуска iOS 13.4 или Beta.
+- Дополнительные сведения об этой проблеме см. на сайте [Stack Overflow](https://stackoverflow.com/questions/60015309/running-ios-apps-causes-runtime-error-for-frameworks-code-signature-invalid).
+
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 

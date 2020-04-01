@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5ccfb4719d14d0ce73caf093c5fe63631eda2a7
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 167c7f7aa3dbf967575c0ee8905821fb9d3f77ce
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77195221"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80050738"
 ---
 # <a name="what-is-guest-user-access-in-azure-active-directory-b2b"></a>Что представляет собой гостевой доступ в службе совместной работы Azure Active Directory B2B?
 
@@ -28,6 +28,9 @@ ms.locfileid: "77195221"
 Следующие видеоматериалы содержат полезные сведения.
 
 >[!VIDEO https://www.youtube.com/embed/AhwrweCBdsc]
+
+   > [!IMPORTANT]
+   > **Начиная с 31 марта 2021 г.** корпорация Майкрософт не будет поддерживать активацию через приглашение при создании неуправляемых учетных записей и арендаторов Azure AD для сценариев совместной работы B2B. В ходе подготовки мы советуем клиентам перейти на [проверку подлинности с использованием одноразового секретного кода](one-time-passcode.md). Мы будем рады вашим отзывам об этой функции, предоставляемой в общедоступной предварительной версии, и с радостью создадим другие способы для совместной работы.
 
 ## <a name="collaborate-with-any-partner-using-their-identities"></a>Совместная работа с любым партнером с помощью его удостоверений
 

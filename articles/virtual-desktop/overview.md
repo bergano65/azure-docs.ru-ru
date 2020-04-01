@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: overview
-ms.date: 01/27/2020
+ms.date: 03/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0a32ee682490c5930b8c48d069087020c4763dcb
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: e62b3c551f41bca0055f35cf6bf62c59d921c73b
+ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79127756"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80294832"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows 
 
@@ -123,11 +123,32 @@ ms.locfileid: "79127756"
 
 Виртуальный рабочий стол Windows поддерживают следующие клиенты удаленного рабочего стола:
 
-* [Windows](connect-windows-7-and-10.md)
+* [Классические приложения Windows](connect-windows-7-and-10.md)
 * [Web](connect-web.md)
-* [Mac](connect-macos.md)
+* [macOS](connect-macos.md)
 * [iOS](connect-ios.md)
 * [Android (предварительная версия)](connect-android.md)
+
+> [!IMPORTANT]
+> Виртуальный рабочий стол Windows не поддерживает клиент Подключения к удаленным рабочим столам и приложениям RemoteApp (RADC) или клиент Подключения к удаленному рабочему столу (MSTSC).
+
+> [!IMPORTANT]
+> Виртуальный рабочий стол Windows в настоящее время не поддерживает клиент Удаленного рабочего стола из Магазина Windows. Поддержка этого клиента будет добавлена в следующем выпуске.
+
+Клиенты Удаленного рабочего стола должны иметь доступ к следующим URL-адресам:
+
+|Адрес|Исходящий порт|Назначение|Клиент(ы)|
+|---|---|---|---|
+|*.wvd.microsoft.com|TCP-порт 443|Служба трафика|All|
+|*.servicebus.windows.net|TCP-порт 443|Данные диагностики|All|
+|сайт go.microsoft.com;|TCP-порт 443|Microsoft FWLinks|All|
+|aka.ms|TCP-порт 443|Средство сокращения URL-адресов Майкрософт|All|
+|docs.microsoft.com|TCP-порт 443|Документация|All|
+|privacy.microsoft.com|TCP-порт 443|Заявление о конфиденциальности|All|
+|query.prod.cms.rt.microsoft.com|TCP-порт 443|Клиентские обновления|Классические приложения|
+
+>[!IMPORTANT]
+>Открытие этих URL-адресов является обязательным для надежной работы клиента. Блокировка доступа к этим URL-адресам не поддерживается и повлияет на функциональность службы. Эти URL-адреса соответствуют только сайтам и ресурсам и не включают URL-адреса для других служб, таких как Azure AD.
 
 ## <a name="supported-virtual-machine-os-images"></a>Поддерживаемые образы ОС виртуальной машины
 

@@ -1,19 +1,17 @@
 ---
-title: включение файла
-description: включение файла
-services: azure-policy
+title: включить файл
+description: включить файл
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 06/05/2019
+ms.date: 03/25/2020
 ms.author: dacoulte
-ms.custom: include file
-ms.openlocfilehash: ea87e51e66985f860cd6d10595a32facde1dc639
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 19b43c857058b3af50db3bc1b42ec1ae558ee884
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "67133510"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80272782"
 ---
 Ниже приведено максимальное количество для каждого типа объекта для службы "Политика Azure". Запись _Область_ означает либо подписку, либо [группу управления](../articles/governance/management-groups/overview.md).
 
@@ -28,3 +26,4 @@ ms.locfileid: "67133510"
 | Определение инициативы | Параметры | 100 |
 | Назначение политик или инициатив | Исключения (не области) | 400 |
 | Правило политики | Вложенные условные выражения | 512 |
+| Задача исправления | Ресурсы | 1000 |

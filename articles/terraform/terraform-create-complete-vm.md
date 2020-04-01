@@ -3,13 +3,13 @@ title: Краткое руководство. Использование Terrafo
 description: Из этого краткого руководства вы узнаете, как использовать Terraform для создания готовой среды виртуальных машин Linux в Azure и управления ею.
 keywords: Azure DevOps, Terraform, виртуальная машина Linux, виртуальная машина
 ms.topic: quickstart
-ms.date: 03/09/2020
-ms.openlocfilehash: 03974d68477855d4ff55b7179312c91ba7d0d055
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.date: 03/15/2020
+ms.openlocfilehash: f262734cc16d97e4d73af371410403a4cbb8815e
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78943520"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79415467"
 ---
 # <a name="quickstart-create-a-complete-linux-virtual-machine-infrastructure-in-azure-with-terraform"></a>Краткое руководство. Создание готовой инфраструктуры виртуальных машин Linux в Azure с помощью Terraform
 
@@ -27,7 +27,7 @@ Terraform позволяет определить и создать развер
 
 Мы разберем каждый раздел шаблона Terraform. Здесь также приведена полная версия [шаблона Terraform](#complete-terraform-script), который можно скопировать и вставить.
 
-В разделе `provider` указывается, что Terraform нужно использовать поставщик Azure. Чтобы получить значения для *subscription_id*, *client_id*, *client_secret* и *tenant_id*, см. сведения в статье [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](terraform-install-configure.md). 
+В разделе `provider` указывается, что Terraform нужно использовать поставщик Azure. Значения для `subscription_id`, `client_id`, `client_secret` и `tenant_id` см. в статье об [установке и настройке Terraform](terraform-install-configure.md). 
 
 > [!TIP]
 > При создании переменных среды для значений или использовании [Azure Cloud Shell Bash](/azure/cloud-shell/overview) не нужно включать объявления переменных в этом разделе.
@@ -35,7 +35,7 @@ Terraform позволяет определить и создать развер
 ```hcl
 provider "azurerm" {
     # The "feature" block is required for AzureRM provider 2.x. 
-    # If you are using version 1.x, the "features" block is not allowed.
+    # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
     
@@ -59,10 +59,10 @@ resource "azurerm_resource_group" "myterraformgroup" {
 }
 ```
 
-В дополнительных разделах нужно ссылаться на группу ресурсов, используя шаблон *${azurerm_resource_group.myterraformgroup.name}* .
+В дополнительных разделах нужно ссылаться на группу ресурсов, используя `${azurerm_resource_group.myterraformgroup.name}`.
 
 ## <a name="create-virtual-network"></a>Создание виртуальной сети
-В следующем разделе создается виртуальная сеть с именем *myVnet* в адресном пространстве *10.0.0.0/16*.
+В рамках следующего раздела создается виртуальная сеть с именем `myVnet` в адресном пространстве `10.0.0.0/16`.
 
 ```hcl
 resource "azurerm_virtual_network" "myterraformnetwork" {
@@ -77,7 +77,7 @@ resource "azurerm_virtual_network" "myterraformnetwork" {
 }
 ```
 
-В следующем разделе создается подсеть с именем *mySubnet* в виртуальной сети *myVnet*.
+В рамках следующего раздела создается подсеть с именем `mySubnet` в виртуальной сети `myVnet`.
 
 ```hcl
 resource "azurerm_subnet" "myterraformsubnet" {
@@ -90,7 +90,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
 
 
 ## <a name="create-public-ip-address"></a>Создание общедоступного IP-адреса
-Для доступа к ресурсам через Интернет создайте общедоступный IP-адрес и назначьте его виртуальной машине. В следующем разделе создается общедоступный IP-адрес с именем *myPublicIP*:
+Для доступа к ресурсам через Интернет создайте общедоступный IP-адрес и назначьте его виртуальной машине. В рамках следующего раздела создается общедоступный IP-адрес с именем `myPublicIP`.
 
 ```hcl
 resource "azurerm_public_ip" "myterraformpublicip" {
@@ -107,7 +107,7 @@ resource "azurerm_public_ip" "myterraformpublicip" {
 
 
 ## <a name="create-network-security-group"></a>Создание группы безопасности сети
-Группы безопасности сети контролируют передачу исходящего и входящего сетевого трафика виртуальной машины. В следующем разделе создается группа безопасности сети с именем *myNetworkSecurityGroup* и определяется правило, разрешающее передачу трафика SSH через TCP-порт 22:
+Группы безопасности сети контролируют передачу исходящего и входящего сетевого трафика виртуальной машины. В рамках следующего раздела создается группа безопасности сети с именем `myNetworkSecurityGroup` и определяется правило, разрешающее передачу трафика SSH через TCP-порт 22.
 
 ```hcl
 resource "azurerm_network_security_group" "myterraformnsg" {
@@ -135,7 +135,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
 
 
 ## <a name="create-virtual-network-interface-card"></a>Создание виртуальных сетевых адаптеров
-Виртуальный сетевой адаптер позволяет виртуальной машине подключаться к определенной виртуальной сети, общедоступному IP-адресу и группе безопасности сети. В следующем разделе шаблона Terraform создается виртуальный сетевой адаптер с именем *myNIC*, подключенный к созданным ресурсам виртуальной сети:
+Виртуальный сетевой адаптер позволяет виртуальной машине подключаться к определенной виртуальной сети, общедоступному IP-адресу и группе безопасности сети. В рамках следующего раздела шаблона Terraform создается виртуальный сетевой адаптер с именем `myNIC`, подключенный к созданным ресурсам виртуальной сети:
 
 ```hcl
 resource "azurerm_network_interface" "myterraformnic" {
@@ -196,9 +196,9 @@ resource "azurerm_storage_account" "mystorageaccount" {
 
 ## <a name="create-virtual-machine"></a>Создание виртуальной машины
 
-Последним шагом является создание виртуальной машины и использование всех созданных ресурсов. В следующем разделе создается виртуальная машина с именем *myVM* и подключается виртуальный сетевой адаптер с именем *myNIC*. Используется образ последней версии *Ubuntu 16.04-LTS*, а пользователь с именем *azureuser* создается с отключенной проверкой подлинности по паролю.
+Последним шагом является создание виртуальной машины и использование всех созданных ресурсов. В рамках следующего раздела создается виртуальная машина с именем `myVM` и подключается виртуальный сетевой адаптер с именем `myNIC`. Используется образ последней версии `Ubuntu 16.04-LTS`, а пользователь с именем `azureuser` создается с отключенной проверкой подлинности по паролю.
 
- Данные ключа SSH предоставлены в разделе *ssh_keys*. Укажите допустимый открытый ключ SSH в поле *key_data*.
+ Данные ключа SSH предоставлены в разделе `ssh_keys`. Укажите открытый ключ SSH в поле `key_data`.
 
 ```hcl
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
@@ -214,7 +214,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         storage_account_type = "Premium_LRS"
     }
 
-    storage_image_reference {
+    source_image_reference {
         publisher = "Canonical"
         offer     = "UbuntuServer"
         sku       = "16.04.0-LTS"
@@ -242,13 +242,13 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 
 ## <a name="complete-terraform-script"></a>Полный скрипт Terraform
 
-Чтобы объединить все эти разделы и увидеть Terraform в действии, создайте файл с именем *terraform_azure.tf* и вставьте следующее содержимое:
+Чтобы объединить все эти разделы и увидеть Terraform в действии, создайте файл с именем `terraform_azure.tf` и вставьте следующее содержимое:
 
 ```hcl
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
     # The "feature" block is required for AzureRM provider 2.x. 
-    # If you are using version 1.x, the "features" block is not allowed.
+    # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
 
@@ -418,7 +418,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 terraform init
 ```
 
-Далее необходима проверка шаблона в Terraform. Этот шаг сравнивает запрашиваемые ресурсы со сведениями о состоянии, сохраненными Terraform, а затем выводит запланированное выполнение. Ресурсы *не* создаются в Azure.
+Далее необходима проверка шаблона в Terraform. Этот шаг сравнивает запрашиваемые ресурсы со сведениями о состоянии, сохраненными Terraform, а затем выводит запланированное выполнение. На этом этапе ресурсы Azure не создаются.
 
 ```bash
 terraform plan

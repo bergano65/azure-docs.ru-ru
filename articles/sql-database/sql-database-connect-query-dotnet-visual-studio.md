@@ -11,18 +11,18 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/31/2019
-ms.openlocfilehash: b37430ed7f23088c9bcacd555d68e484310de700
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 75f84f87fc59a870a0c88fd24cb1b1b8894b3e2a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75562159"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79209572"
 ---
 # <a name="quickstart-use-net-and-c-in-visual-studio-to-connect-to-and-query-an-azure-sql-database"></a>Краткое руководство. Использование .NET и C# в Visual Studio для подключения и создания запросов к базе данных SQL Azure
 
-В этом кратком руководстве показано, как использовать [платформу .NET](https://www.microsoft.com/net/) и код C# в Visual Studio для отправки запросов к базе данных SQL Azure с помощью инструкций Transact-SQL.
+В этом кратком руководстве показано, как использовать [платформу .NET](https://www.microsoft.com/net/) и код C# в Visual Studio для отправки запросов к Базе данных SQL Azure с помощью инструкций Transact-SQL.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 

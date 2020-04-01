@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 02/05/2019
+ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: ffd47d886a9d74c637f4f7ff634b3fd4c4a77574
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: 1d2140ca0064e2eb6b12726bcee7bf5362de8fbe
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78390748"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79408289"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -57,7 +57,7 @@ ms.locfileid: "78390748"
 
 ### <a name="create-a-new-azure-ad-tenant"></a>Создание нового клиента Azure AD
 
-Если у вас нет клиента Azure AD или вы хотите создать клиент для разработки, см. [это краткое руководство](../fundamentals/active-directory-access-create-new-tenant.md) или используйте [процедуру создания каталога](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
+Если у вас нет клиента Azure AD или вы хотите создать клиент для разработки, см. [это краткое руководство](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory) или используйте [процедуру создания каталога](../fundamentals/active-directory-access-create-new-tenant.md). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
 
 - **Название организации**
 - **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.
@@ -72,6 +72,6 @@ ms.locfileid: "78390748"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Изучите краткое руководство по кодированию и начните выполнять проверку подлинности пользователей. 
-* Чтобы просмотреть более подробные примеры кода, ознакомьтесь с разделом документации **Руководства**.
-* Хотите развернуть приложение в облако? Ознакомьтесь с [развертыванием контейнеров в Azure](https://docs.microsoft.com/azure/index?pivot=products&panel=containers).
+* [Зарегистрируйте приложение](quickstart-register-app.md) и выполните интеграцию с платформой идентификации Майкрософт. 
+* Ознакомьтесь с [основами аутентификации](authentication-scenarios.md).
+* См. сведения о том, как [подписки Azure связаны с арендатором Azure AD](../fundamentals/active-directory-how-subscriptions-associated-directory.md).

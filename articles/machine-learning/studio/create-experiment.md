@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/06/2019
-ms.openlocfilehash: ebde02d222502c58536269243343b21271f19269
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: c4c50ba53bc40ad6ae6fc60b3992f9ab992eb268
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168871"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79204568"
 ---
 # <a name="quickstart-create-your-first-data-science-experiment-in-azure-machine-learning-studio-classic"></a>Краткое руководство. Создание первого эксперимента по обработке и анализу данных в Студии машинного обучения Azure (классической)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 [!INCLUDE [Designer notice](../../../includes/designer-notice.md)]
 
@@ -130,7 +132,7 @@ ms.locfileid: "77168871"
 
 ## <a name="define-features"></a>Определение признаков
 
-В машинном обучении *признаки* — это отдельные измеримые свойства интересующих объектов. В нашем наборе данных каждая строка представляет собой один автомобиль, а каждый столбец — его признак.
+В машинном обучении *признаки* — это отдельные измеримые свойства интересующих вас объектов. В нашем наборе данных каждая строка представляет собой один автомобиль, а каждый столбец — его признак.
 
 Чтобы подобрать подходящий набор признаков для создания прогнозной модели, нужно разбираться в проблеме, которую необходимо решить, и провести ряд экспериментов. Некоторые свойства лучше подходят для прогнозирования цели, чем другие. Некоторые признаки совпадают с другими, и часть из них можно удалить. Например, свойства city-mpg и highway-mpg действуют почти одинаково, и мы можем удалить любое из них без существенного ухудшения прогноза.
 

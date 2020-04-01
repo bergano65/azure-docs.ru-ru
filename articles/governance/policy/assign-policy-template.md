@@ -1,23 +1,24 @@
 ---
 title: Краткое руководство. Создание назначения политики с помощью шаблонов
 description: В этом кратком руководстве с помощью шаблона диспетчера ресурсов создается назначение политики для обнаружения ресурсов, не соответствующих требованиям.
-ms.date: 11/25/2019
+ms.date: 03/16/2020
 ms.topic: quickstart
-ms.openlocfilehash: 8b9b0024e5c15c78c6777b8657839791484d66b5
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.custom: subject-armqs
+ms.openlocfilehash: 9f9998c407c39d11615a5997549a363a276b9e10
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980509"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79471410"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-by-using-a-resource-manager-template"></a>Краткое руководство. Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона Resource Manager
 
 Чтобы понять, соответствуют ли ресурсы требованиям в Azure, прежде всего нужно определить их состояние.
-В этом кратком руководстве описано, как создать назначение политики для определения виртуальных машин, которые не используют управляемые диски.
+В этом кратком руководстве описано, как создать назначение политики для определения виртуальных машин, которые не используют управляемые диски. Завершив работу, вы узнаете, какие виртуальные машины не используют управляемые диски, так как _не соответствуют_ назначению политики.
 
-Завершив работу, вы узнаете, какие виртуальные машины не используют управляемые диски, так как _не соответствуют_ назначению политики.
+[!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -25,10 +26,17 @@ ms.locfileid: "75980509"
 
 С помощью этого краткого руководства вы создадите назначение политики и назначите встроенное определение политики _Аудит виртуальных машин, которые не используют управляемые диски_. См. [полный список всех доступных встроенных политик Azure](./samples/index.md).
 
-Существует несколько способов создания назначений политики. В этом кратком руководстве используется [шаблон быстрого запуска](https://azure.microsoft.com/resources/templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/).
-Ниже приведена копия шаблона:
+### <a name="review-the-template"></a>Изучение шаблона
 
-[!code-json[policy-assignment](~/quickstart-templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/azuredeploy.json)]
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/).
+
+:::code language="json" source="~/quickstart-templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/azuredeploy.json" range="1-36" highlight="26-34":::
+
+В шаблоне определен следующий ресурс:
+
+- [Microsoft.Authorization/policyAssignments](/azure/templates/microsoft.authorization/policyassignments)
+
+### <a name="deploy-the-template"></a>Развертывание шаблона
 
 > [!NOTE]
 > Служба "Политика Azure" предоставляется бесплатно. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](./overview.md).
@@ -41,9 +49,9 @@ ms.locfileid: "75980509"
 
    | Имя | Значение |
    |------|-------|
-   | Subscription | Выберите подписку Azure. |
-   | группа ресурсов. | Выберите **Создать**, укажите имя, а затем выберите **OK**. На снимке экрана ниже группа ресурсов называется _mypolicyquickstart\<дата в формате ММДД\>rg_. |
-   | Location | Выберите регион. Например, **центральная часть США**. |
+   | Подписка | Выберите подписку Azure. |
+   | Группа ресурсов | Выберите **Создать**, укажите имя, а затем выберите **OK**. На снимке экрана ниже группа ресурсов называется _mypolicyquickstart\<дата в формате ММДД\>rg_. |
+   | Расположение | Выберите регион. Например, **центральная часть США**. |
    | Имя назначения политики | Укажите имя назначения политики. При необходимости можно использовать отображаемое имя определения политики. Например, **Аудит виртуальных машин, которые не используют управляемые диски**. |
    | Имя группы ресурсов | Укажите имя группы ресурсов, для которой вы хотите назначить политику. В этом кратком руководстве используйте значение по умолчанию **[resourceGroup().name]** . **[resourceGroup()](../../azure-resource-manager/templates/template-functions-resource.md#resourcegroup)**  — это функция шаблона, которая извлекает группу ресурсов. |
    | Идентификатор определения политики | Укажите **/providers/Microsoft.Authorization/policyDefinitions/0a914e76-4921-4c19-b460-a2d36003525a**. |
@@ -58,7 +66,7 @@ ms.locfileid: "75980509"
 - Чтобы узнать, как создавать шаблоны Resource Manager, ознакомьтесь с [документацией по Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 - Чтобы узнать о развертывании на уровне подписки, ознакомьтесь со статьей [Создание групп ресурсов и ресурсов на уровне подписки](../../azure-resource-manager/templates/deploy-to-subscription.md).
 
-## <a name="identify-non-compliant-resources"></a>Выявление несоответствующих ресурсов
+## <a name="validate-the-deployment"></a>Проверка развертывания
 
 Выберите **Соответствие** в левой части страницы и найдите ранее созданное назначение политики **Аудит виртуальных машин, которые не используют управляемые диски**.
 

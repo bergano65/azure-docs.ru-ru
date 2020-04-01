@@ -5,16 +5,16 @@ author: mumian
 ms.date: 03/04/2019
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: 9a829b0c84c397f297539cdb04b3ad027a18c834
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: c9447d356cff792d9a70e33cc2a5e35898d8982b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78383595"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80131897"
 ---
-# <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
+# <a name="quickstart-create-arm-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code
 
-См. дополнительные сведения об использовании Visual Studio Code и расширения средств Azure Resource Manager для создания и изменения шаблонов Azure Resource Manager. Шаблоны Resource Manager в Visual Studio Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Основные понятия, связанные с развертыванием и администрированием решений Azure, см. в статье с [общими сведениями о развертывании шаблонов](overview.md).
+Узнайте, как с помощью Visual Studio Code и расширения "Средства Azure Resource Manager" создавать и изменять шаблоны Azure Resource Manager (ARM). Шаблоны ARM в Visual Studio Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Основные понятия, связанные с развертыванием и администрированием решений Azure, см. в статье с [общими сведениями о развертывании шаблонов](overview.md).
 
 В этом кратком руководстве вы развернете учетную запись хранения.
 
@@ -36,7 +36,7 @@ ms.locfileid: "78383595"
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов Resource Manager.
+Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов ARM.
 
 Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной записи хранения). Шаблон определяет ресурс учетной записи службы хранилища Azure.
 
@@ -138,7 +138,7 @@ ms.locfileid: "78383595"
     echo "Enter the location (i.e. centralus):" &&
     read location &&
     az group create --name $resourceGroupName --location "$location" &&
-    az group deployment create --resource-group $resourceGroupName --template-file "$HOME/azuredeploy.json"
+    az deployment group create --resource-group $resourceGroupName --template-file "$HOME/azuredeploy.json"
     ```
 
     # <a name="powershell"></a>[PowerShell](#tab/PowerShell)

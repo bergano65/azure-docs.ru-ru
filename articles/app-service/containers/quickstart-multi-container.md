@@ -6,13 +6,13 @@ author: msangapu-msft
 ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: msangapu
-ms.custom: seodec18
-ms.openlocfilehash: 19544d9ea9a86b6c0ad98debc7361f4579cbc998
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.custom: mvc, seodec18
+ms.openlocfilehash: 62e34859775cb8c574d8d463f636ed81dce8ece3
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78247015"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80045871"
 ---
 # <a name="create-a-multi-container-preview-app-using-a-docker-compose-configuration"></a>Создание многоконтейнерного приложения (предварительная версия) с использованием конфигурации Docker Compose
 
@@ -96,6 +96,9 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 ```
 
 ## <a name="create-a-docker-compose-app"></a>Создание приложения Docker Compose
+
+> [!NOTE]
+> Для Docker Compose в Службах приложений Azure сейчас настроено ограничение в 4000 символов.
 
 В терминале Cloud Shell создайте многоконтейнерное [веб-приложение](app-service-linux-intro.md) в рамках плана службы приложений `myAppServicePlan` с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Замените _\<app_name>_ уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`).
 

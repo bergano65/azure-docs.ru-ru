@@ -7,10 +7,10 @@ ms.topic: quickstart
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: 17371e3bd426ea81b5e7e07610aac0073ea972c9
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74157681"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
@@ -111,7 +111,7 @@ broadcast
 
 Можно запустить несколько клиентов с разными именами.
 
-## <a name="usage"> </a> Интеграция со сторонними службами
+## <a name="integration-with-third-party-services"></a><a name="usage"> </a> Интеграция со сторонними службами
 
 Служба Azure SignalR позволяет интегрировать сторонние службы с системой.
 
@@ -119,10 +119,10 @@ broadcast
 
 В следующей таблице показаны все версии поддерживаемых REST API. Также можно найти файл с определением для каждой версии.
 
-Version (версия) | Состояние API | Порт | Стандартный
+Версия | Состояние API | Порт | Specific
 --- | --- | --- | ---
-`1.0-preview` | Доступна | 5002 | [Swagger](https://github.com/Azure/azure-signalr/tree/dev/docs/swagger/v1-preview.json)
-`1.0` | Доступна | Стандартная | [Swagger](https://github.com/Azure/azure-signalr/tree/dev/docs/swagger/v1.json)
+`1.0-preview` | Доступно | 5002 | [Swagger](https://github.com/Azure/azure-signalr/tree/dev/docs/swagger/v1-preview.json)
+`1.0` | Доступно | Standard | [Swagger](https://github.com/Azure/azure-signalr/tree/dev/docs/swagger/v1.json)
 
 В следующе таблице показан список доступных API для каждой версии.
 
@@ -139,7 +139,7 @@ API | `1.0-preview` | `1.0`
 <a name="broadcast"> </a>
 ### <a name="broadcast-to-everyone"></a>Широковещательная передача для всех
 
-Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
+Версия | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
 --- | --- | --- | ---
 `1.0-preview` | `POST` | `https://<instance-name>.service.signalr.net:5002/api/v1-preview/hub/<hub-name>` | `{"target": "<method-name>", "arguments": [...]}`
 `1.0` | `POST` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>` | То же, что и выше
@@ -147,7 +147,7 @@ Version (версия) | Метод HTTP для API | Request URL (URL-адре�
 <a name="broadcast-group"> </a>
 ### <a name="broadcast-to-a-group"></a>Широковещательная передача для группы
 
-Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
+Версия | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
 --- | --- | --- | ---
 `1.0-preview` | `POST` | `https://<instance-name>.service.signalr.net:5002/api/v1-preview/hub/<hub-name>/group/<group-name>` | `{"target": "<method-name>", "arguments": [...]}`
 `1.0` | `POST` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>` | То же, что и выше
@@ -155,7 +155,7 @@ Version (версия) | Метод HTTP для API | Request URL (URL-адре�
 <a name="send-user"> </a>
 ### <a name="sending-to-specific-users"></a>Отправка для определенных пользователей
 
-Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
+Версия | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
 --- | --- | --- | ---
 `1.0-preview` | `POST` | `https://<instance-name>.service.signalr.net:5002/api/v1-preview/hub/<hub-name>/user/<user-id>` | `{"target": "<method-name>", "arguments": [...]}`
 `1.0` | `POST` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/users/<user-id>` | То же, что и выше
@@ -163,20 +163,20 @@ Version (версия) | Метод HTTP для API | Request URL (URL-адре�
 <a name="add-user-to-group"> </a>
 ### <a name="adding-a-user-to-a-group"></a>Добавление пользователя в группу
 
-Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса)
+Версия | Метод HTTP для API | Request URL (URL-адрес запроса)
 --- | --- | ---
 `1.0` | `PUT` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<userid>`
 
 <a name="remove-user-from-group"> </a>
 ### <a name="removing-a-user-from-a-group"></a>Удаление пользователя из группы
 
-Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса)
+Версия | Метод HTTP для API | Request URL (URL-адрес запроса)
 --- | --- | ---
 `1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<userid>`
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как использовать REST API для трансляции сообщений от Службы SignalR к клиентам в режиме реального времени. Дополнительные сведения о том, как разработать и развернуть Функции Azure с помощью привязки Службы SignalR, которая построена на основе REST API.
 
