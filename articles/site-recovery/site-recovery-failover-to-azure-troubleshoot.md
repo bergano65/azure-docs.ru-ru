@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
-ms.openlocfilehash: 6de37daa0b9e0ebc711a5dacbdce352e3675a3db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 54e44a12f593d2074eefe5b2ff890863db3199f7
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79257749"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478954"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины VMware или физического компьютера в Azure
 
@@ -128,7 +128,7 @@ ms.locfileid: "79257749"
 
 Эта проблема указывается, когда вы не можете видеть хранилище данных в Azure портала при попытке reprotect виртуальной машины, которая пережила сбой. Это связано с тем, что цель Master не признается как виртуальная машина под vCenters, добавленная в Azure Site Recovery.
 
-Для получения дополнительной информации о повторной защите vitual машины, см [Reprotect и отказ назад машины на месте после failover к Azure](vmware-azure-reprotect.md).
+Для получения дополнительной информации о повторной защите виртуальной машины, см [Reprotect и отказ назад машины на месте после неудачи в Azure](vmware-azure-reprotect.md).
 
 Чтобы устранить проблему:
 
@@ -138,7 +138,7 @@ ms.locfileid: "79257749"
 > 
 > Открытие и обновление ткани операций может занять до 30 минут. 
 
-## <a name="linux-master-target-registration-with-cs-fails-with-an-ssl-error-35"></a>Linux Master Target регистрации с CS не с ошибкой SSL 35 
+## <a name="linux-master-target-registration-with-cs-fails-with-a-tls-error-35"></a>Linux Master Target регистрация с CS не справляется с ошибкой TLS 35 
 
 Регистрация Master Target восстановления сайта Azure с сервером конфигурации завершается неудачей из-за включения аутентифицированного прокси в основной цели. 
  
@@ -169,7 +169,7 @@ RegisterHostStaticInfo encountered exception config/talwrapper.cpp(107)[post] Cu
      - Отогивайте прокси на сервере Master Target. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Устранение неполадок [с подключением к виртуальной машине Windows через удаленный рабочий стол](../virtual-machines/windows/troubleshoot-rdp-connection.md)
 - Устранение неполадок [с SSH-подключением к виртуальной машине Linux](../virtual-machines/linux/detailed-troubleshoot-ssh-connection.md)
 

@@ -3,12 +3,12 @@ title: Поддерживаемые типы ресурсов в службе р
 description: Поддерживаемые типы ресурсов в службе работоспособности ресурсов Azure
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 3ba7b308c0c7671df8a652194830cb910cb89acc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5cc80147730fdc97b1181690f6e70fc538d4afcc
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79258308"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478908"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.
@@ -47,6 +47,11 @@ ms.locfileid: "79258308"
 |Выполняемые проверки|
 |---|
 |<ul><li>Доступна ли учетная запись из центра обработки данных?</li><li>Доступен ли поставщик ресурсов Cognitive Services?</li><li>Доступна ли служба Cognitive Services из соответствующего региона?</li><li>Успешно ли выполняются операции чтения для учетной записи хранения, в которой хранятся метаданные ресурсов?</li><li>Достигнута ли квота на вызовы API?</li><li>Достигнут ли лимит чтения на вызовы API?</li></ul>|
+
+## <a name="microsoftcomputehostgroupshosts"></a>Microsoft.compute/hostgroups/hosts
+|Выполняемые проверки|
+|---|
+|<ul><li>Является ли хост запущен и работает</li><li>Является ли оборудование хоста деградированным?</li><li>Сделка с хозяином размещена?</li><li>Имеет хост аппаратного обслуживания исцелил к различным аппаратным средствам?</li></ul>|
 
 ## <a name="microsoftcomputevirtualmachines"></a>Microsoft.compute/virtualmachines
 |Выполняемые проверки|

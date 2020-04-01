@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: article
-ms.date: 11/26/2019
+ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 5507579338ad0d87bc6223b56283fe7ed46af7d8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ff5b0b430de53a67f4de0dacbd76a38a7de6e284
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77613301"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475811"
 ---
 # <a name="configure-email-notifications-for-issues-in-azure-active-directory-domain-services"></a>Настройка уведомлений по электронной почте для проблем в службах домена Active Directory
 
@@ -66,7 +66,7 @@ Azure AD DS не отправляет электронные письма для
 > [!WARNING]
 > При изменении настроек уведомлений обновляются параметры уведомлений для всего домена Azure AD DS, а не только самостоятельно.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="i-received-an-email-notification-for-an-alert-but-when-i-logged-on-to-the-azure-portal-there-was-no-alert-what-happened"></a>По электронной почте мне пришло уведомление о предупреждении, но у меня не получилось найти это предупреждение на портале Azure. Что произошло?
 
@@ -80,7 +80,7 @@ Azure AD DS не отправляет электронные письма для
 
 Проверьте свой спам или нежелательной папки в вашей `azure-noreply@microsoft.com`электронной почте для уведомления и убедитесь, что для отправителя .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации об устранении неполадок некоторые проблемы, которые могут быть сообщены, [см. Resolve оповещения на Azure AD DS управляемых домена.][troubleshoot-alerts]
 

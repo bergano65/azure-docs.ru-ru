@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 4b2b388fb736997010a6cbbdf93b23b77c7ef3a3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 51985c5fa4b2296e43c0a062d0af84a1bb51e89c
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77603973"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397759"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Защищайте порты управления с помощью своевременного доступа
 
@@ -202,55 +202,39 @@ ms.locfileid: "77603973"
 
 В следующем примере задается политика JIT-доступа для конкретной виртуальной машины со следующими параметрами.
 
-1.  Закрытие портов 22 и 3389.
+1.    Закрытие портов 22 и 3389.
 
-2.  Задание максимального временного окна в 3 часа для каждого порта, чтобы они были открыты для каждого утвержденного запроса.
-3.  Предоставление пользователю, который запрашивает доступ, разрешения на управление исходными IP-адресами, и предоставление пользователю возможности установить сеанс после утвержденного запроса на JIT-доступ.
+2.    Задание максимального временного окна в 3 часа для каждого порта, чтобы они были открыты для каждого утвержденного запроса.
+3.    Предоставление пользователю, который запрашивает доступ, разрешения на управление исходными IP-адресами, и предоставление пользователю возможности установить сеанс после утвержденного запроса на JIT-доступ.
 
 В PowerShell выполните следующее.
 
-1.  Присвойте виртуальной машине переменную, которая содержит политику JIT-доступа к этой виртуальной машине:
+1.    Присвойте виртуальной машине переменную, которая содержит политику JIT-доступа к этой виртуальной машине:
 
-        $JitPolicy = (@{
-         id="/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VMNAME"
-        ports=(@{
-             number=22;
-             protocol="*";
-             allowedSourceAddressPrefix=@("*");
-             maxRequestAccessDuration="PT3H"},
-             @{
-             number=3389;
-             protocol="*";
-             allowedSourceAddressPrefix=@("*");
-             maxRequestAccessDuration="PT3H"})})
+        $JitPolicy порты (я ид'/подписка/ПОДПИСКа/ПОДПИСКа/ресурсгруппы/RESOURCEGROUP/провайдеры/Microsoft.Compute/virtualMachines/VMNAME" порты »(я номер No22;        протокола "*";        allowedSourceAddressPrefix ("");*        maxRequestAccessDuration»PT3H", no 3389;        протокола "*";        allowedSourceAddressPrefix ("");*        maxRequestAccessDuration"PT3H")
 
-2.  Поместите политику JIT-доступа к виртуальной машине в массив:
+2.    Поместите политику JIT-доступа к виртуальной машине в массив:
     
-        $JitPolicyArr=@($JitPolicy)
+        $JitPolicyArr( $JitPolicy)
 
-3.  Настройте на выбранной виртуальной машине политику JIT-доступа:
+3.    Настройте на выбранной виртуальной машине политику JIT-доступа:
     
-        Set-AzJitNetworkAccessPolicy -Kind "Basic" -Location "LOCATION" -Name "default" -ResourceGroupName "RESOURCEGROUP" -VirtualMachine $JitPolicyArr 
+        Set-AzJitNetworkAccessPolicy -Kind "Основной" -Место "LOCATION" -Имя "по умолчанию" -ResourceGroupName "RESOURCEGROUP" -VirtualMachine $JitPolicyArr 
 
 ### <a name="request-access-to-a-vm-via-powershell"></a>Запрос доступа к VM через PowerShell
 
 В следующем примере приведен запрос на JIT-доступ к выбранной виртуальной машине, где запрашивается открытие порта 22 для определенного IP-адреса и на определенное время.
 
 В PowerShell выполните следующее.
-1.  Настройка свойств запроса доступа к виртуальной машине.
+1.    Настройка свойств запроса доступа к виртуальной машине.
 
-        $JitPolicyVm1 = (@{
-          id="/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VMNAME"
-        ports=(@{
-           number=22;
-           endTimeUtc="2018-09-17T17:00:00.3658798Z";
-           allowedSourceAddressPrefix=@("IPV4ADDRESS")})})
-2.  Вставка параметров запроса доступа к виртуальной машине в массив.
+        $JitPolicyVm1 - (я ид)/ГУПОНЕЗИД/ресурсгруппы/РЕСУРСгег/провайдеры/Microsoft.Compute/virtualMachines/VMNAME» порты »(я номер No22;      endTimeUtc"2018-09-17T17:00:00.3658798";      allowedSourceAddressPrefix ("IPV4ADDRESS"))
+2.    Вставка параметров запроса доступа к виртуальной машине в массив.
 
-        $JitPolicyArr=@($JitPolicyVm1)
-3.  Отправка запроса на доступ (с использованием идентификатора ресурса, полученного на шаге 1).
+        $JitPolicyArr ( $JitPolicyVm1)
+3.    Отправка запроса на доступ (с использованием идентификатора ресурса, полученного на шаге 1).
 
-        Start-AzJitNetworkAccessPolicy -ResourceId "/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Security/locations/LOCATION/jitNetworkAccessPolicies/default" -VirtualMachine $JitPolicyArr
+        Start-AzJitNetworkAccessPolicy -ResourceId "/подписка/ПОДПИСКа/resourceGroups/RESOURCEGROUP/providers/Microsoft.Security/locations/LOCATION/jitNetworkPolicys/default" -VirtualMachine $JitPolicyArr
 
 Для получения дополнительной информации [см.](https://docs.microsoft.com/powershell/scripting/developer/cmdlet/cmdlet-overview)
 
@@ -265,12 +249,13 @@ ms.locfileid: "77603973"
 - Когда описание правила включает имя VM, которое не соответствует IP назначения в правиле 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как управлять доступом к виртуальным машинам Azure с помощью JIT-доступа в Центре безопасности.
 
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
+- Модуль Microsoft Learn [Защитите ваши серверы и вС от атак грубой силы и вредоносных программ с помощью Центра безопасности Azure](https://docs.microsoft.com/learn/modules/secure-vms-with-azure-security-center/)
 - [Настройка политик безопасности](tutorial-security-policy.md) — Узнайте, как настроить политики безопасности для подписок Azure и групп ресурсов.
 - [Управление рекомендациями по безопасности](security-center-recommendations.md) — Узнайте, как рекомендации помогают защитить ресурсы Azure.
 - [Наблюдение за работоспособностью системы безопасности](security-center-monitoring.md) — сведения об отслеживании работоспособности ресурсов Azure.

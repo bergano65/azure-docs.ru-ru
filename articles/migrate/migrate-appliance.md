@@ -3,12 +3,12 @@ title: Устройство службы "Миграция Azure"
 description: Предоставляет обзор прибора Azure Migrate, используемого для оценки серверов и миграции.
 ms.topic: conceptual
 ms.date: 03/23/2020
-ms.openlocfilehash: 1bb3372467919f1471fa9577cd60e9cecaf1750d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bccf4738d46b65f2d149eafc8e69591141d7d073
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80336943"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437595"
 ---
 # <a name="azure-migrate-appliance"></a>Устройство службы "Миграция Azure"
 
@@ -70,7 +70,7 @@ ms.locfileid: "80336943"
 **Поддерживаемое развертывание** | Развертывание в качестве специальной физической машины, или VM, с помощью сценария установки PowerShell.
 **Поддержка проекта** |  Прибор может быть связан с одним проектом. <br/> Любое количество приборов может быть связано с одним проектом.<br/> 
 **Ограничения на открытие** | Прибор может обнаружить до 250 физических серверов.
-**Скрипт PowerShell** | Загрузите скрипт (AzureMigrateInstaller.ps1) в папке с застежкой-молнией с портала. Ознакомьтесь с [дополнительными сведениями](tutorial-assess-physical.md#set-up-the-appliance). Кроме того, [скачать непосредственно](https://go.microsoft.com/fwlink/?linkid=2105112).<br/><br/> Размер загрузки 59,7 МБ.
+**Скрипт PowerShell** | Загрузите скрипт (AzureMigrateInstaller.ps1) в папке с застежкой-молнией с портала. [Подробнее](tutorial-assess-physical.md#set-up-the-appliance). Кроме того, [скачать непосредственно](https://go.microsoft.com/fwlink/?linkid=2105112).<br/><br/> Размер загрузки 59,7 МБ.
 **Программное обеспечение/аппаратное обеспечение** |  Прибор должен работать на машине с Windows Server 2016, 32-ГБ оперативной памяти, 8 vCPUs, около 80 ГБ диска хранения, и внешний виртуальный переключатель.<br/> Прибор нуждается в статичном или динамическом IP-адресе и требует доступа в Интернет, как напрямую, так и через прокси.<br/><br/> Если вы запустите прибор на физическом компьютере, убедитесь, что он работает под управлением Windows Server 2016 и отвечает требованиям оборудования. 
 **Значение хэша** | [Проверить](deploy-appliance-script.md#verify-file-security) значения хэша скрипта powerShell.
 
@@ -79,14 +79,14 @@ ms.locfileid: "80336943"
 Прибор Azure Migrate нуждается в подключении к Интернету.
 
 - При развертывании прибора Azure Migrate проверяет подключение к URL-адресам, обобщенным в таблице ниже.
-- Если вы используете прокси на основе URL для подключения к Интернету, разрешить доступ к этим URL-адресам, убедившись, что прокси решает любые записи CNAME, полученные при поиске URL-адресов.
+- Если вы используете прокси на основе URL для подключения к Интернету, необходимо разрешить доступ к этим URL-адресам, убедившись, что прокси разрешает любые записи CNAME, полученные при поиске URL-адресов.
 
-**URL-адрес** | **Подробно**  
+**URL-адрес** | **Сведения**  
 --- | --- |
 *.portal.azure.com  | Перейдите на портал Azure.
 *.windows.net <br/> *.msftauth.net <br/> *.msauth.net <br/> *.microsoft.com <br/> *.live.com | Войдите в свою подписку Azure.
-*.microsoftonline.com <br/> *.microsoftonline-p.com | Создавайте приложения Active Directory для связи прибора с Azure Migrate.
-management.azure.com | Создавайте приложения Active Directory для связи прибора с службой Azure Migrate.
+*.microsoftonline.com <br/> *.microsoftonline-p.com | Создавайте приложения Active Directory (AD) для связи с приложением С Azure Migrate.
+management.azure.com | Создавайте приложения Azure AD для связи прибора с службой Azure Migrate.
 dc.services.visualstudio.com | Загружать журналы приложений, используемые для внутреннего мониторинга.
 *.vault.azure.net | Управление секретами в Убежище ключей Azure.
 aka.ms/ | Разрешить доступ к акам ссылки. Используется для обновлений приборов Azure Migrate.
@@ -144,7 +144,7 @@ IPv6-адреса | vm.Guest.Net
 Пропускная часть (Mb в секунду) | net.received.average
 Пропускная часть записи (МБ в секунду) | net.transmitted.average
 **Детали траектории инвентаризации** | 
-name | container.GetType().Name
+Имя | container.GetType().Name
 Тип дочернего объекта | container.ChildType
 Справочные сведения | container.MoRef
 Сведения о родительском объекте | Container.Parent
@@ -276,7 +276,7 @@ Hyper-V Динамическая память VM | Текущее давлени
 
 ![Автоматическое обновление прибора](./media/migrate-appliance/autoupdate.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Узнайте, как](how-to-set-up-appliance-vmware.md) настроить прибор для VMware.
 - [Узнайте, как](how-to-set-up-appliance-hyper-v.md) настроить прибор для Hyper-V.

@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 2/24/2020
 ms.subservice: alerts
-ms.openlocfilehash: 2f6e9cd4e7a035e6555b2241613cb9c46c3be550
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fe1f1d2700619bfcac4512bb0e631262edf8401c
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79274987"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398099"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
@@ -1518,6 +1518,10 @@ az group deployment create \
 - Мониторинг всех виртуальных машин (в одном регионе Azure) в одной или нескольких группах ресурсов.
 - Мониторинг всех виртуальных машин (в одном регионе Azure) в подписке.
 - Мониторинг списка виртуальных машин (в одном регионе Azure) в подписке.
+
+> [!NOTE]
+>
+> В правиле предупреждения метрики, которое отслеживает несколько ресурсов, допускается только одно условие.
 
 ### <a name="static-threshold-alert-on-all-virtual-machines-in-one-or-more-resource-groups"></a>Оповещение со статическим пороговым значением на всех виртуальных машинах в одной или нескольких группах ресурсов
 
@@ -3618,7 +3622,7 @@ az group deployment create \
     --parameters @availabilityalert.parameters.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об [оповещениях в Azure](alerts-overview.md)
 - Сведения о [создании группы действий с помощью шаблона Resource Manager](action-groups-create-resource-manager-template.md)

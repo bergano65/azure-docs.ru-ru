@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/26/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 7e1ea234bde96ce84259841bbc592bf6373bc639
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c01f5f41e61cd65855789bb753a7a297fe475885
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "71802795"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80396348"
 ---
 # <a name="use-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Использование бота с QnA Maker и LUIS для распределения базы знаний
 По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор, поэтому базу знаний необходимо разделить на маленькие логические блоки.
@@ -37,13 +37,13 @@ ms.locfileid: "71802795"
 1. [Создайте приложение](https://docs.microsoft.com/azure/cognitive-services/luis/create-new-app).
 1. [Добавьте намерение](https://docs.microsoft.com/azure/cognitive-services/luis/add-intents) к каждой базе знаний QnA Maker. Примеры высказываний должны соответствовать вопросам в базе знаний QnA Maker.
 1. В своем приложении LUIS выполните [обучение приложения LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [публикацию приложения LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/publishapp).
-1. В разделе **Управление** обратите внимание на идентификатор приложения LUIS, клавишу конечной точки LUIS и [пользовательское доменное имя.](../../cognitive-services-custom-subdomains.md) Эти значения потребуются позже. 
+1. В разделе **Управление** обратите внимание на идентификатор приложения LUIS, клавишу конечной точки LUIS и [пользовательское доменное имя.](../../cognitive-services-custom-subdomains.md) Эти значения потребуются позже.
 
 ## <a name="create-qna-maker-knowledge-bases"></a>Создание баз знаний QnA Maker
 
 1. Вопием в [компании «NA Maker».](https://qnamaker.ai)
 1. [Создайте](https://www.qnamaker.ai/Create) базу знаний для каждого намерения в приложении LUIS.
-1. Проверьте и опубликуйте базы знаний. При публикации каждого КБ обратите внимание на идентификатор KB, имя ресурса (пользовательский поддомен до _.azurewebsites.net/qnamaker),_ и ключ конечной точки авторизации. Эти значения потребуются позже. 
+1. Проверьте и опубликуйте базы знаний. При публикации каждого КБ обратите внимание на идентификатор KB, имя ресурса (пользовательский поддомен до _.azurewebsites.net/qnamaker),_ и ключ конечной точки авторизации. Эти значения потребуются позже.
 
     В этой статье предполагается, что все базы знаний созданы в одной подписке Azure QnA Maker.
 
@@ -60,7 +60,7 @@ ms.locfileid: "71802795"
 
 ## <a name="change-code-in-basicluisdialogcs"></a>Изменение код в файле BasicLuisDialog.cs
 1. В разделе **Управление ботом** на странице навигации бота веб-приложения портала Azure выберите **Сборка**.
-2. Выберите **Открыть сетевой редактор кода**. Откроется новая вкладка браузера со средой для редактирования в сети. 
+2. Выберите **Открыть сетевой редактор кода**. Откроется новая вкладка браузера со средой для редактирования в сети.
 3. В разделе **WWWROOT** выберите каталог **Диалоговые окна**, а затем откройте файл **BasicLuisDialog.cs**.
 4. Добавьте зависимости в верхнюю часть файла **BasicLuisDialog.cs**.
 
@@ -155,7 +155,7 @@ ms.locfileid: "71802795"
     ```
 
 
-7. Изменение класса BasicLuisDialog. Каждое намерение LUIS должно содержать метод, снабженный префиксом **LuisIntent**. Оформленный параметр является актуальным именем намерения LUIS. Имя оформленного метода _должно_ содержать имя намерения LUIS, предназначенного для улучшения читаемости и удобства поддержки, и в то же время должно отличаться на этапах создания и выполнения.  
+7. Изменение класса BasicLuisDialog. Каждое намерение LUIS должно содержать метод, снабженный префиксом **LuisIntent**. Оформленный параметр является актуальным именем намерения LUIS. Имя оформленного метода _должно_ содержать имя намерения LUIS, предназначенного для улучшения читаемости и удобства поддержки, и в то же время должно отличаться на этапах создания и выполнения.
 
     ```csharp
     [Serializable]
@@ -170,7 +170,7 @@ ms.locfileid: "71802795"
         // assumes all KBs are created with same Azure service
         static string qnamaker_endpointKey = "<QnA Maker endpoint KEY>";
         static string qnamaker_resourceName = "my-qnamaker-s0-s";
-        
+
         // QnA Maker Human Resources Knowledge base
         static string HR_kbID = "<QnA Maker KNOWLEDGE BASE ID>";
 
@@ -237,7 +237,7 @@ ms.locfileid: "71802795"
 
 ![тест веб-чата](../media/qnamaker-tutorials-qna-luis/qnamaker-web-chat.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Create a business continuity plan for your QnA Maker service](../How-To/business-continuity-plan.md) (Создание плана по обеспечению непрерывности бизнеса для службы QnA Maker)
+> [Интегрируйте свою базу знаний с помощью виртуального агента Power](integrate-with-power-virtual-assistant-fallback-topic.md)

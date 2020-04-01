@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 781f3788c9001276315a2baed7060450fa00d77a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1bd823d94552d1e920b367b6576b0e3bb74aefb2
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76845029"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474930"
 ---
 # <a name="perform-network-intrusion-detection-with-network-watcher-and-open-source-tools"></a>Обнаружение сетевого вторжения с помощью Наблюдателя за сетями Azure и средств с открытым исходным кодом
 
@@ -38,7 +38,7 @@ ms.locfileid: "76845029"
 
 ### <a name="install-suricata"></a>Установка Suricata
 
-Другие методы установки описаны на странице https://suricata.readthedocs.io/en/latest/install.html.
+Другие методы установки описаны на странице https://suricata.readthedocs.io/en/suricata-5.0.2/quickstart.html#installation.
 
 1. В окне командной строки на виртуальной машине выполните следующие команды:
 
@@ -76,7 +76,7 @@ tail -f /var/log/suricata/fast.log
 
 ### <a name="set-up-the-elastic-stack"></a>Настройка Elastic Stack
 
-Хотя журналы, созданные Suricata, содержат полезную информацию о ситуации в сети, эти файлы журналов не очень легко изучать. Подключив Suricata к Elastic Stack, мы сможем создать панель мониторинга Kibana, которая позволяет выполнять поиск, строить диаграммы и анализировать созданные журналы.
+В то время как журналы, которые производит Suricata, содержат ценную информацию о том, что происходит в нашей сети, эти файлы журналов не являются простыми для чтения и понимания. Подключив Suricata к Elastic Stack, мы сможем создать панель мониторинга Kibana, которая позволяет выполнять поиск, строить диаграммы и анализировать созданные журналы.
 
 #### <a name="install-elasticsearch"></a>Установка Elasticsearch
 
@@ -274,13 +274,13 @@ tail -f /var/log/suricata/fast.log
 
     ![Рис. 7][7]
 
-Дополнительную документацию по созданию пользовательских визуализаций и панелей мониторинга см. в [официальной документации по Kibana](https://www.elastic.co/guide/en/kibana/current/introduction.html).
+Для получения дополнительной документации по созданию пользовательских визуализаций и панелей [мониторинга, см.](https://www.elastic.co/guide/en/kibana/current/introduction.html)
 
 ## <a name="conclusion"></a>Заключение
 
 Сочетая возможность записи пакетов, реализованную в Наблюдателе за сетями, и функции таких средств с открытым исходным кодом, как Suricata, вы можете определять сетевые вторжения самого разного толка. Такие панели мониторинга позволяют быстро выявлять тенденции и аномалии в сети, а также подробно изучать данные для анализа основных причин оповещений, включая активность злоумышленников или уязвимость портов. На основе полученных данных вы сможете принять взвешенные решения о методах реагирования и защиты сети от вредоносных попыток вторжения, а также создать новые правила для предотвращения будущих сетевых вторжений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о функции записи пакетов на основе оповещений см. в статье [Use packet capture to do proactive network monitoring with Azure Functions](network-watcher-alert-triggered-packet-capture.md) (Использование записи пакетов для упреждающего мониторинга сети с помощью функций Azure).
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 03/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: bc3d35830d833c0223a400140c53e583d2f6ed37
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 79f85261115dbddcb0b04cd2863a90912de2ab87
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79475431"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474910"
 ---
 # <a name="app-service-networking-features"></a>Функции сети Службы Приложений
 
@@ -81,7 +81,7 @@ ms.locfileid: "79475431"
 * Поддержка потребностей SSL на основе IP для вашего приложения
 * Установите специальный адрес для вашего приложения, который не является общим ни с чем другим
 
-Вы можете узнать, как установить адрес в вашем приложении с учебником по [настройке SSL на основе IP.][appassignedaddress] 
+Вы можете узнать, как установить адрес в приложении с помощью учебника по [добавлению сертификата TLS/SSL в службе приложений Azure.][appassignedaddress] 
 
 ### <a name="access-restrictions"></a>Ограничения доступа 
 

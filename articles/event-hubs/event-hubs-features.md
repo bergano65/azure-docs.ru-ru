@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 568a21cee5b50a8914c603976f5951d0235dbff7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 76ab92285cace284c187109ca48c6634777ebbc0
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79281487"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398319"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Функции и терминология в Центрах событий Azure
 
@@ -109,6 +109,13 @@ ms.locfileid: "79281487"
 
 Если модуль чтения отключается от секции, при повторном подключении он приступает к чтению данных с контрольной точки, которая ранее была отправлена последним модулем чтения этой секции в этой группе потребителей. При подключении модуль чтения передает это смещение в концентратор событий, чтобы указать место, с которого следует начинать чтение. Таким образом, можно использовать контрольные точки как для маркировки событий как "завершенных" подчиненными приложениями, так и для обеспечения устойчивости в случае отработки отказа между модулями чтения, работающими на разных компьютерах. Вы можете вернуться к предыдущим данным, указав более низкое значение смещения по отношению к этому процессу создания контрольных точек. В рамках такого подхода при создании контрольных точек вы обеспечиваете отказоустойчивость и воспроизведение потока событий.
 
+> [!NOTE]
+> Если вы используете Хранилище Azure Blob storage в качестве хранилища в среде, поддерживающей другую версию Storage Blob SDK, чем те, которые обычно доступны в Azure, вам нужно будет использовать код для изменения версии API службы хранения на конкретную версию, поддерживаемую этой средой. Например, если вы работаете с [концентраторами событий в версии Azure Stack Hub 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview)года, наиболее доступной версией для службы хранения является версия 2017-11-09. В этом случае необходимо использовать код для таргетинга на версию API службы хранения данных на 2017-11-09 годы. Для примера таргетинга на конкретную версию API хранилища см. 
+> - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). 
+> - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorWithOlderStorageVersion.java)
+> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsWithDownleveledStorage.js) или [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsWithDownleveledStorage.ts)
+> - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/event_processor_blob_storage_example_with_storage_api_version.py)
+
 ### <a name="common-consumer-tasks"></a>Стандартные задачи потребителя
 
 Все потребители Центров событий подключаются через двунаправленный канал связи с поддержкой состояния и сеанса AMQP 1.0. Каждая секция связана с сеансом связи AMQP 1.0, что упрощает транспортировку событий, разделенных по секциям.
@@ -130,7 +137,7 @@ ms.locfileid: "79281487"
 
 Пользователь управляет смещением самостоятельно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 
@@ -138,7 +145,7 @@ ms.locfileid: "79281487"
     - [.NET Core](get-started-dotnet-standard-send-v2.md)
     - [Java](get-started-java-send-v2.md)
     - [Python](get-started-python-send-v2.md)
-    - [Javascript](get-started-java-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)
 * [Руководство по программированию Центров событий](event-hubs-programming-guide.md)
 * [Доступность и согласованность в Центрах событий](event-hubs-availability-and-consistency.md)
 * [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)

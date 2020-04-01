@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: b1d0c070a9196eaa9a2706a607baa9a2926e2db4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 615a6afb0f7a3e133603db10e7c79add3322070c
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67051747"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80476709"
 ---
 # <a name="publish-media-services-content-using-net"></a>Публикация содержимого Служб мультимедиа с помощью .NET  
 > [!div class="op_single_selector"]
-> * [Остальные](media-services-rest-deliver-streaming-content.md)
+> * [REST](media-services-rest-deliver-streaming-content.md)
 > * [.NET](media-services-deliver-streaming-content.md)
 > * [Портал](media-services-portal-publish.md)
 > 
@@ -108,7 +108,7 @@ ms.locfileid: "67051747"
 
 
 > [!NOTE]
-> Также по SSL-подключению можно выполнять потоковую передачу содержимого. Для этого убедитесь, что URL-адреса потоковой передачи начинаются с HTTPS. Сейчас AMS не поддерживает SSL для личных доменов.
+> Вы также можете передавать содержимое через соединение TLS. Для этого убедитесь, что URL-адреса потоковой передачи начинаются с HTTPS. В настоящее время AMS не поддерживает TLS с пользовательскими доменами.
 > 
 > 
 
@@ -178,7 +178,7 @@ ms.locfileid: "67051747"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Скачивание файлов](media-services-deliver-asset-download.md)
 * [Настройка политики доставки активов](media-services-dotnet-configure-asset-delivery-policy.md)
 

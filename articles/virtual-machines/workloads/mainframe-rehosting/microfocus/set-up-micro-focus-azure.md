@@ -8,22 +8,25 @@ ms.author: edprice
 manager: edprice
 editor: edprice
 ms.topic: conceptual
-ms.date: 05/29/2019
+ms.date: 03/30/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: a5426c3cd7552b24739f9a20e01d5a4b42bd383c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5b3fa5faccf17df17bc4f7cc2d8b023b868fdbe1
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "68834570"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411193"
 ---
 # <a name="install-micro-focus-enterprise-server-40-and-enterprise-developer-40-on-azure"></a>Установка Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 на Azure
 
 В этой статье показано, как настроить [Micro Focus Enterprise Server 4.0](https://www.microfocus.com/documentation/enterprise-developer/es30/) и Micro Focus Enterprise Developer [4.0](https://www.microfocus.com/documentation/enterprise-developer/ed_30/) на Azure.
 
 Общей рабочей нагрузкой на Azure является среда разработки и тестирования. Этот сценарий является общим, потому что это так экономически эффективным и легко развернуть и снести. С помощью Enterprise Server Micro Focus создала одну из крупнейших доступных платформ для рехостинга мэйнфреймов. Вы можете запускать рабочие нагрузки z/OS на менее дорогой платформе x86 на Azure, используя виртуальные машины Windows или Linux (VM).
+
+> [!NOTE]
+> Скоро: Инструкции по настройке [Micro Focus Enterprise Server 5.0](https://techcommunity.microsoft.com/t5/azurecat/micro-focus-enterprise-server-5-0-quick-start-template-on-azure/ba-p/1160110) на VMs Azure.
 
 В этой настройке используются VMs-м устройствами Azure под управлением Windows Server 2016 с уже установленным изображением Azure Marketplace с microsoft S'L Server 2017. Эта настройка также применяется к Azure Stack.
 
@@ -120,7 +123,7 @@ ms.locfileid: "68834570"
 
 При загрузке корпоративного разработчика развертывание среды разработки и тестирования Micro Focus в Azure завершено!
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка демо-приложения Банка](./demo.md)
 - [Запуск корпоративного сервера в контейнерах Docker](./run-enterprise-server-container.md)

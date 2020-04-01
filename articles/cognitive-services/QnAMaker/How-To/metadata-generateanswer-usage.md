@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 11/22/2019
+ms.date: 03/31/2020
 ms.author: diberry
-ms.openlocfilehash: 6a8cbabfd4e47c50d2c2e6f4a23c50a931e645a0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9beb6dbbba1c5855b8bfa97fc02f50aa59225d78
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79220647"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474858"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получить ответ с помощью API Иана и метаданных GenerateAnswer
 
@@ -46,7 +46,7 @@ ms.locfileid: "79220647"
 После публикации базы знаний, либо с [портала NA Maker,](https://www.qnamaker.ai)либо с помощью [API,](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)вы можете получить подробную информацию о вашей конечной точке GenerateAnswer.
 
 Вот как это можно сделать.
-1. Войти [https://www.qnamaker.ai](https://www.qnamaker.ai)на ввесенку .
+1. Выполните вход на странице [https://www.qnamaker.ai](https://www.qnamaker.ai).
 1. В **моих базах знаний**, выберите **View Code** для вашей базы знаний.
     ![Скриншот моих баз знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. Получите сведения о конечной точке GenerateAnswer.
@@ -146,8 +146,6 @@ var response = await _services.QnAServices[QnAMakerKey].GetAnswersAsync(turnCont
 
 Предыдущий JSON запрашивал только ответы, которые находятся на 30% или выше порогового балла.
 
-У бота поддержки есть пример с этим [кодом.](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-support/csharp_dotnetcore/Service/SupportBotService.cs#L418)
-
 ## <a name="use-qna-maker-with-a-bot-in-nodejs"></a>Используйте nA Maker с ботом в Node.js
 
 Платформа бота обеспечивает доступ к свойствам создателя nA с [помощью API getAnswer:](https://docs.microsoft.com/javascript/api/botbuilder-ai/qnamaker?view=botbuilder-ts-latest#generateanswer-string---undefined--number--number-)
@@ -165,8 +163,6 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 ```
 
 Предыдущий JSON запрашивал только ответы, которые находятся на 30% или выше порогового балла.
-
-У бота поддержки есть пример с этим [кодом.](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-activelearning/javascript_nodejs/Helpers/dialogHelper.js#L36)
 
 <a name="metadata-example"></a>
 
@@ -255,7 +251,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 |404|База знаний не существует|
 |410|Этот API устарел и больше недоступен|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 **Страница Publish** также предоставляет информацию для получения ответа с почтальоном или CURL. [generate an answer](../Quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
 

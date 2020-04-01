@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 264dbbaedca5a28c8741d699a683b3e2b2385383
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 590f129d0ce41c3a8afc80340f26bc31c2fc789a
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80061161"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478181"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-powershell"></a>Налаживание ключей, управляемых клиентами, с помощью Хранилища ключей Azure с помощью PowerShell
 
@@ -74,6 +74,8 @@ Set-AzKeyVaultAccessPolicy `
 $key = Add-AzKeyVaultKey -VaultName $keyVault.VaultName -Name <key> -Destination 'Software'
 ```
 
+Только 2048-разрядные клавиши RSA и RSA-HSM поддерживаются шифрованием Azure Storage. Для получения дополнительной информации о ключах смотрите **ключи Убежища ключей** в [о клавишах, секретах и сертификатах Azure Key Vault.](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys)
+
 ## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью ключей, управляемых клиентом
 
 По умолчанию шифрование Azure Storage использует ключи, управляемые корпорацией Майкрософт. На этом этапе наймите учетную запись Azure Storage, чтобы использовать управляемые клиентом ключи и укажите ключ, который можно связать с учетной записью хранилища.
@@ -116,7 +118,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
     -StorageEncryption  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Шифрование хранилища Azure для данных в состоянии покоя](storage-service-encryption.md)
 - [Что такое Убежище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-overview)

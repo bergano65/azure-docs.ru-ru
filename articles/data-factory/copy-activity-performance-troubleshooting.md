@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/11/2020
-ms.openlocfilehash: 963b86852a7df557ad7179e444e7c3a2692f57d9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a14f4d548053fb7aaf6f450176fdc49bc7b119bf
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79531458"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80421035"
 ---
 # <a name="troubleshoot-copy-activity-performance"></a>Производительность действия копирования troubleshoot
 
@@ -88,7 +88,7 @@ ms.locfileid: "79531458"
 
   - Проверьте свой источник копии и шаблон раковины: 
 
-    - Если шаблон копирования поддерживает более 4 единиц интеграции данных (DIUs) - обратитесь к [этому разделу](copy-activity-performance.md#data-integration-units) о деталях, как правило, вы можете попробовать увеличить DIUs, чтобы получить более высокую производительность. 
+    - Если шаблон копирования поддерживает более 4 единиц интеграции данных (DIUs) - обратитесь к [этому разделу](copy-activity-performance-features.md#data-integration-units) о деталях, как правило, вы можете попробовать увеличить DIUs, чтобы получить более высокую производительность. 
 
     - В противном случае, рассмотреть вопрос о разделении одного большого набора данных на несколько небольших наборов данных, и пусть эти задания копировать одновременно каждый решает часть данных. Вы можете сделать это с помощью Lookup/GetMetadata и ForEach . Обратитесь к [файлам копирования из нескольких контейнеров,](solution-template-copy-files-multiple-containers.md) [переносу данных из Amazon S3 в ADLS Gen2](solution-template-migration-s3-azure.md)или [массовой копии с](solution-template-bulk-copy-with-control-table.md) шаблонами решений диспетчерских таблиц в качестве общего примера.
 
@@ -102,7 +102,7 @@ ms.locfileid: "79531458"
 
   - Проверьте свой источник копии и шаблон раковины: 
 
-    - Если шаблон копирования поддерживает более 4 единиц интеграции данных (DIUs) - обратитесь к [этому разделу](copy-activity-performance.md#data-integration-units) о деталях, как правило, вы можете попробовать увеличить DIUs, чтобы получить более высокую производительность. 
+    - Если шаблон копирования поддерживает более 4 единиц интеграции данных (DIUs) - обратитесь к [этому разделу](copy-activity-performance-features.md#data-integration-units) о деталях, как правило, вы можете попробовать увеличить DIUs, чтобы получить более высокую производительность. 
 
     - В противном случае, постепенно настроить [параллельные копии](copy-activity-performance-features.md), обратите внимание, что слишком много параллельных копий может даже повредить производительности.
 
@@ -182,7 +182,7 @@ ms.locfileid: "79531458"
 * На территории S'L Server: [монитор и настройка для производительности.](https://msdn.microsoft.com/library/ms189081.aspx)
 * Внутренний файловый сервер: [настройка производительности для файловых серверов.](https://msdn.microsoft.com/library/dn567661.aspx)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Смотрите другие статьи деятельности копирования:
 
 - [Общие сведения о действии копирования](copy-activity-overview.md)

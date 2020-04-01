@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: article
-ms.date: 12/06/2018
-ms.author: cherylmc
-ms.openlocfilehash: 2c37dadeb669fb88f858b5487379828a8dddec6c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/26/2020
+ms.author: osamaz
+ms.openlocfilehash: 5304aefaf3ad70bb552b4b0d1b26fcce9867c9c0
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74076665"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397735"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-routing"></a>Примеры конфигурации маршрутизатора для настройки и управления маршрутизацией
 Эта страница содержит примеры конфигурации интерфейса и маршрутизации для маршрутизаторов серий Cisco IOS-XE и Juniper MX при работе с ExpressRoute. Эти примеры имеют только справочный характер и не должны использоваться как есть. Подходящие конфигурации для своей сети можно выработать совместно с поставщиком. 
@@ -91,6 +91,25 @@ ms.locfileid: "74076665"
     !
     route-map <MS_Prefixes_Inbound> permit 10
      match ip address prefix-list <MS_Prefixes>
+    !
+
+### <a name="5-configuring-bfd"></a>5. Настройка BFD
+
+Вы будете настраивать BFD в двух местах. Один на уровне интерфейса, а другой на уровне BGP. Приведенприведенный ниже пример для интерфейса «Зин». 
+
+    interface GigabitEthernet<Interface_Number>.<Number>
+     bfd interval 300 min_rx 300 multiplier 3
+     encapsulation dot1Q <s-tag> seconddot1Q <c-tag>
+     ip address <IPv4_Address><Subnet_Mask>
+    
+    router bgp <Customer_ASN>
+     bgp log-neighbor-changes
+     neighbor <IP#2_used_by_Azure> remote-as 12076
+     !        
+     address-family ipv4
+      neighbor <IP#2_used_by_Azure> activate
+      neighbor <IP#2_used_by_Azure> fall-over bfd
+     exit-address-family
     !
 
 
@@ -173,7 +192,7 @@ ms.locfileid: "74076665"
     }
 
 
-### <a name="4-route-maps"></a>4. Карты маршрутов
+### <a name="4-route-policies"></a>4. Политика в отношении маршрутов
 Для фильтрации префиксов, распространяемых в сети, можно использовать карты маршрутизации и списки префиксов. Для выполнения этой задачи можно использовать следующий пример. Убедитесь, что вы задали соответствующие настройки списков префиксов.
 
     policy-options {
@@ -203,6 +222,24 @@ ms.locfileid: "74076665"
         }                                   
     }
 
+### <a name="4-configuring-bfd"></a>4. Настройка BFD
+Вы будете настраивать BFD только по разделу протокола BGP.
+
+    protocols {
+        bgp { 
+            group <Group_Name> { 
+                peer-as 12076;              
+                neighbor <IP#2_used_by_Azure>;
+                bfd-liveness-detection {
+                       minimum-interval 3000;
+                       multiplier 3;
+                }
+            }                               
+        }                                   
+    }
+
 ## <a name="next-steps"></a>Next Steps
 Дополнительные сведения см. в разделе [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
+
+
 

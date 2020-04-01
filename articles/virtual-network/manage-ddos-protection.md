@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: 786b21e7571ed173d2da90f587a5b76d8c92a13d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 95a70a1d0c4367adb1dd276bff1b1eb20caafc59
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79279732"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80473376"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "79279732"
 
 Прежде чем выполнять указания в этом руководстве, войдите на портал Azure (https://portal.azure.com) с учетной записью, которой назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), которой назначены соответствующие действия, перечисленные в таблице [Разрешения](#permissions).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
 
 ## <a name="create-a-ddos-protection-plan"></a>Создание плана защиты от атак DDoS
 
@@ -39,12 +39,12 @@ ms.locfileid: "79279732"
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 2. Выполните поиск *DDoS*. Когда в результатах поиска появится элемент **Планы защиты от атак DDoS**, щелкните его.
-3. Выберите **Создать**.
+3. Нажмите кнопку **создания**.
 4. Введите или выберите собственные значения либо введите или выберите значения из примера, а затем щелкните **Создать**.
 
     |Параметр        |Значение                                              |
     |---------      |---------                                          |
-    |name           | myDdosProtectionPlan                              |
+    |Имя           | myDdosProtectionPlan                              |
     |Подписка   | Выберите свою подписку.                         |
     |Группа ресурсов | Выберите **Создать новую**, а затем введите *myResourceGroup*. |
     |Расположение       | Восточная часть США                                           |
@@ -57,7 +57,7 @@ ms.locfileid: "79279732"
 
     | Параметр         | Значение                                                        |
     | ---------       | ---------                                                    |
-    | name            | myVirtualNetwork                                             |
+    | Имя            | myVirtualNetwork                                             |
     | Подписка    | Выберите свою подписку.                                    |
     | Группа ресурсов  | Выберите **Использовать существующие,** а затем выберите **myResourceGroup** |
     | Расположение        | Восточная часть США                                                      |
@@ -107,7 +107,7 @@ ms.locfileid: "79279732"
 
     |Параметр                  |Значение                                                                                               |
     |---------                |---------                                                                                           |
-    |name                     | myDdosAlert                                                                                        |
+    |Имя                     | myDdosAlert                                                                                        |
     |Подписка             | Выберите подписку, содержащую общедоступный IP-адрес, для которого требуется получать оповещения.        |
     |Группа ресурсов           | Выберите группу ресурсов, содержащую общедоступный IP-адрес, для которого требуется получать оповещения.      |
     |Ресурс                 | Выберите ресурс, содержащий общедоступный IP-адрес, для которого требуется получать оповещения. Служба защиты от атак DDoS отслеживает общедоступные IP-адреса, которые назначаются ресурсам в виртуальной сети. При отсутствии в виртуальной сети ресурсов с общедоступными IP-адресами необходимо сначала создать ресурс с общедоступным IP-адресом. Вы можете отслеживать общедоступные IP-адреса всех ресурсов, развернутых с помощью Resource Manager (а не классической модели), которые указаны в разделе [Интеграция виртуальной сети для служб Azure](virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network), за исключением сред службы приложений Azure и VPN-шлюза Azure. Чтобы продолжить работу с этим руководством, можно быстро создать виртуальную машину [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).                   |
@@ -202,7 +202,7 @@ ms.locfileid: "79279732"
 - "Protocol type" (Тип протокола). 
 - "Action taken during mitigation" (Действие, выполненное при снижении рисков)
 
-
+Аналитика атак будет работать только в том случае, если dDoS Protection Standard включен в виртуальную сеть общедоступного IP-адреса. 
 
 ## <a name="validate-ddos-detection"></a>Проверка обнаружения атак DDoS
 
@@ -230,7 +230,7 @@ ms.locfileid: "79279732"
 
 Для работы с планами защиты от атак DDoS учетной записи должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие разрешения, перечисленные в таблице ниже.
 
-| Действие                                            | name                                     |
+| Действие                                            | Имя                                     |
 | ---------                                         | -------------                            |
 | Microsoft.Network/ddosProtectionPlans/read        | Чтение плана защиты от атак DDoS.              |
 | Microsoft.Network/ddosProtectionPlans/write       | Создание или обновление плана защиты от атак DDoS.  |
@@ -239,6 +239,6 @@ ms.locfileid: "79279732"
 
 Чтобы включить защиту от атак DDoS для виртуальной сети, учетной записи также должны быть назначены соответствующие [действия для виртуальных сетей](manage-virtual-network.md#permissions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Создайте и примените [политику Azure](policy-samples.md) для виртуальных сетей.

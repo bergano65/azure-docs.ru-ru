@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 71258b04bad9a7aec4e86564d51d1d6f3f8cac76
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: HT
+ms.openlocfilehash: 61a71539dc034a216689eafd8991df60db96d2a4
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80283809"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80396923"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Как запрашивать журналы из Azure Monitor для виртуальных машин
 
@@ -265,7 +265,7 @@ let Today = now(); VMComputer | extend DaysSinceBoot = Today - BootTime | summar
 ### <a name="summary-of-azure-vms-by-image-location-and-sku"></a>Сводка по виртуальным машинам Azure с информацией об образе, расположении и номере SKU
 
 ```kusto
-VMComputer | where AzureLocation != "" | summarize by ComputerName, AzureImageOffering, AzureLocation, AzureImageSku
+VMComputer | where AzureLocation != "" | summarize by Computer, AzureImageOffering, AzureLocation, AzureImageSku
 ```
 
 ### <a name="list-the-physical-memory-capacity-of-all-managed-computers"></a>Перечислите физическую емкость памяти всех управляемых компьютеров
@@ -283,7 +283,7 @@ VMComputer | summarize arg_max(TimeGenerated, *) by _ResourceId | project Comput
 ### <a name="find-all-processes-with-sql-in-the-command-line"></a>Поиск всех процессов с "sql" в командной строке
 
 ```kusto
-VMComputer | where CommandLine contains_cs "sql" | summarize arg_max(TimeGenerated, *) by _ResourceId
+VMProcess | where CommandLine contains_cs "sql" | summarize arg_max(TimeGenerated, *) by _ResourceId
 ```
 
 ### <a name="find-a-machine-most-recent-record-by-resource-name"></a>Поиск компьютера (самой последней записи) по имени ресурса
@@ -307,7 +307,7 @@ VMProcess | where Machine == "m-559dbcd8-3130-454d-8d1d-f624e57961bc" | summariz
 ### <a name="list-all-computers-running-sql-server"></a>Вывод списка всех компьютеров, на которых выполняется SQL Server
 
 ```kusto
-VMComputer | where AzureResourceName in ((search in (VMProcess) "\*sql\*" | distinct Machine)) | distinct Computer
+VMComputer | where AzureResourceName in ((search in (VMProcess) "*sql*" | distinct Machine)) | distinct Computer
 ```
 
 ### <a name="list-all-unique-product-versions-of-curl-in-my-datacenter"></a>Вывод списка всех уникальных версий продукта cURL в центре обработки данных
@@ -319,7 +319,7 @@ VMProcess | where ExecutableName == "curl" | distinct ProductVersion
 ### <a name="create-a-computer-group-of-all-computers-running-centos"></a>Создание группы, объединяющей все компьютеры, на которых выполняется CentOS
 
 ```kusto
-VMComputer | where OperatingSystemFullName contains_cs "CentOS" | distinct ComputerName
+VMComputer | where OperatingSystemFullName contains_cs "CentOS" | distinct Computer
 ```
 
 ### <a name="bytes-sent-and-received-trends"></a>Тренды объема отправленных и полученных данных в байтах
@@ -442,7 +442,7 @@ let remoteMachines = remote | summarize by RemoteMachine;
 |Компьютер | Полное доменное имя компьютера | 
 |Исходный домен | *vm.azm.ms* |
 |Пространство имен | Категория счетчика производительности | 
-|name | Имя счетчика производительности. |
+|Имя | Имя счетчика производительности. |
 |Val | Собранная стоимость | 
 |Теги | Похожие подробности о записи. Смотрите таблицу ниже для тегов, используемых с различными типами записей.  |
 |AgentId | Уникальный идентификатор для агента каждого компьютера |
@@ -451,7 +451,7 @@ let remoteMachines = remote | summarize by RemoteMachine;
 
 Счетчики производительности, собранные в настоящее время в таблице *InsightsMetrics,* перечислены в следующей таблице:
 
-| Пространство имен | name | Описание | Единицы | Теги |
+| Пространство имен | Имя | Описание | Единицы | Теги |
 |:---|:---|:---|:---|:---|
 | Компьютер    | Пульс             | Компьютерное сердцебиение                        | | |
 | Память      | Доступноmb           | Память доступна байтов                    | Байты          | memorySizeMB - Общий размер памяти|
@@ -471,7 +471,7 @@ let remoteMachines = remote | summarize by RemoteMachine;
 | Логический диск | Байт/с        | Логический диск Байты в секунду             | Байт/с | mountId - Идентификатор горы устройства |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Если вы новичок в написании журналов в Azure Monitor, просмотрите, [как использовать аналитику журнала](../../azure-monitor/log-query/get-started-portal.md) на портале Azure для записи запросов журналов.
 

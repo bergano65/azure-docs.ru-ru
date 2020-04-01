@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/26/2019
+ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 216fdeca9893f4e290474512617f13382d22890f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0d7c9319097d81f4db2e2c5ecfc692269d27a4db
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77614014"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80476100"
 ---
 # <a name="configure-kerberos-constrained-delegation-kcd-in-azure-active-directory-domain-services"></a>Настройка ограниченной делегации Kerberos (KCD) в службах активных доменов каталогов Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "77614014"
 Для завершения этой статьи необходимы следующие ресурсы:
 
 * Активная подписка Azure.
-    * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
@@ -89,7 +89,7 @@ Windows Server 2012 и позже предоставляет администр�
     Set-ADUser backendsvc -PrincipalsAllowedToDelegateToAccount $ImpersonatingAccount
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Подробнее о работе делегации в службах доменов Active Directory можно узнать в службах доменов [Active][kcd-technet]Directory, см.
 

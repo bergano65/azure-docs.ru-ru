@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: dorcohen
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 03/15/2020
-ms.openlocfilehash: 7745888dcaa1324d4a9d956e93d0504c8da8c026
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/25/2020
+ms.openlocfilehash: 198b78d5bab15057fdb6c7f6d4e8fff9f77d496e
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79501766"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397089"
 ---
 # <a name="microsoft-flow-connector-preview"></a>Разъем потока Microsoft (Предварительный просмотр)
 
@@ -37,7 +37,7 @@ ms.locfileid: "79501766"
 
 ![Диалоговое окно входа](./media/flow/flow-signin.png)
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Вы можете проверить подлинность с помощью учетных данных пользователей или приложения AAD.
 
@@ -77,7 +77,7 @@ ms.locfileid: "79501766"
 
 1. Введите требуемую информацию на страницу запланированного потока сборки.
     ![Создание запланированного потока](./media/flow/flow-build-scheduled-flow.png)
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 1. Выберите **новый шаг**.
 1. В поле поиска введите "Кусто".
 
@@ -116,7 +116,7 @@ ms.locfileid: "79501766"
 ### <a name="run-query-and-list-results"></a>Запуск запроса и список результатов
 
 > [!Note]
-> Если ваш запрос начинается с точки (имеется в виду, что это [команда управления),](https://docs.microsoft.com/azure/kusto/management/index)используйте [команду управления Run и визуализировать результаты](#run-control-command-and-visualize-results)
+> Если ваш запрос начинается с точки (имеется в виду, что это [команда управления),](https://docs.microsoft.com/azure/kusto/management/index)используйте [команду управления Run и визуализировать результаты.](#run-control-command-and-visualize-results)
 
 Это действие отправляет запрос в кластер Kusto. Действия, которые добавляются после этого итерации по каждой строке результатов запроса.
 
@@ -130,7 +130,7 @@ ms.locfileid: "79501766"
 ### <a name="run-query-and-visualize-results"></a>Запуск запроса и визуализации результатов
         
 > [!Note]
-> Если ваш запрос начинается с точки (имеется в виду, что это [команда управления),](https://docs.microsoft.com/azure/kusto/management/index)используйте [команду управления Run и визуализировать результаты](#run-control-command-and-visualize-results)
+> Если ваш запрос начинается с точки (имеется в виду, что это [команда управления),](https://docs.microsoft.com/azure/kusto/management/index)используйте [команду управления Run и визуализировать результаты.](#run-control-command-and-visualize-results)
         
 Используйте запрос Run и визуализировать действия результатов, чтобы визуализировать результат запроса Kusto как таблицу или диаграмму. Например, используйте этот поток для получения ежедневных отчетов ICM по электронной почте. 
     
@@ -147,17 +147,21 @@ ms.locfileid: "79501766"
 
 1. Выберите **новый шаг,** чтобы добавить новый шаг к вашему потоку.
 1. В поле поиска введите Office 365 и выберите **Office 365 Outlook**.
-1. Выберите **Отправить электронное письмо**.
+1. Выберите **Отправить электронное письмо (V2).**
 1. Введите адрес электронной почты, где вы хотите отправить отчет по электронной почте.
 1. Введите тему электронной почты.
-1. В поле *тела,* из поля динамического содержимого, выберите **Тело.**
+1. Выберите **представление кода**.
+1. Поместите курсор в поле *тела* и выберите **Добавить динамическое содержимое.**
+1. Выберите **BodyHtml**.
+    ![Отправка электронной почты](./media/flow/flow-send-email.png)
 1. Выберите **Показать расширенные параметры**.
 1. В поле *Приложения Name -1* выберите **Имя присоединения.**
 1. В поле *приложения Содержимое* выберите **Содержимое присоединения**.
+1. При необходимости добавьте больше вложений. 
 1. При необходимости установите уровень важности.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
-![Отправка электронной почты](./media/flow/flow-sendemail.png)
+![Отправка электронной почты](./media/flow/flow-add-attachments.png)
 
 ## <a name="check-if-your-flow-succeeded"></a>Проверьте, удалось ли вашему потоку
 
@@ -202,6 +206,6 @@ ms.locfileid: "79501766"
 * Разъем не поддерживает [операторы вилки](https://docs.microsoft.com/azure/kusto/query/forkoperator) и [граней.](https://docs.microsoft.com/azure/kusto/query/facetoperator)
 * Поток лучше всего работает на Microsoft Edge и Chrome.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о [разъеме Microsoft Azure Explorer Logic App,](https://docs.microsoft.com/azure/kusto/tools/logicapps) который является еще одним способом автоматического выполнения запросов и команд Kusto в рамках запланированной или срабатывающей задачи.

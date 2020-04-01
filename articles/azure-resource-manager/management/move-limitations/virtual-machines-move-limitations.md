@@ -2,13 +2,13 @@
 title: Перемещение VMs Azure в новую группу подписчиков или ресурсов
 description: Используйте менеджер ресурсов Azure для перемещения виртуальных машин в новую группу ресурсов или подписку.
 ms.topic: conceptual
-ms.date: 10/10/2019
-ms.openlocfilehash: 97c49f90dab2aafd89de322e57ad44ff1fc9d367
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/31/2020
+ms.openlocfilehash: df34268b7741f76621c290e9979cf24d828ddc09
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75479765"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478663"
 ---
 # <a name="move-guidance-for-virtual-machines"></a>Перемещение руководства для виртуальных машин
 
@@ -27,18 +27,40 @@ ms.locfileid: "75479765"
 
 ## <a name="virtual-machines-with-azure-backup"></a>Виртуальные машины с резервным копированием Azure
 
-Чтобы переместить виртуальные машины, настроенные с помощью Azure Backup, используйте следующее обходное решение.
+Для перемещения виртуальных машин, настроенных с помощью резервного копирования Azure, необходимо удалить точки восстановления из хранилища.
+
+Если для виртуальной машины включено [мягкое удаление,](../../../backup/backup-azure-security-feature-cloud.md) вы не можете перемещать виртуальную машину, пока сохраняются эти точки восстановления. Либо [отключить мягкое удаление,](../../../backup/backup-azure-security-feature-cloud.md#disabling-soft-delete) либо подождать 14 дней после удаления точек восстановления.
+
+### <a name="portal"></a>Портал
+
+1. Выберите виртуальную машину, настроенную для резервного копирования.
+
+1. В левой панели выберите **резервное копирование.**
+
+1. Выберите **остановить резервное копирование.**
+
+1. **Выберите данные «Удалить обратно».**
+
+1. После завершения удаления можно переместить хранилище и виртуальную машину в целевую подписку. После перемещения можно продолжить резервное копирование.
+
+### <a name="powershell"></a>PowerShell
 
 * Найдите расположение виртуальной машины.
 * Найдите группу ресурсов со схемой именования `AzureBackupRG_<location of your VM>_1`, например AzureBackupRG_westus2_1.
-* Затем на портале Azure щелкните "Показать скрытые типы".
 * В PowerShell используйте командлет `Get-AzResource -ResourceGroupName AzureBackupRG_<location of your VM>_1`
+* Найдите ресурс с типом `Microsoft.Compute/restorePointCollections` и шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`.
+* Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
+
+### <a name="azure-cli"></a>Azure CLI
+
+* Найдите расположение виртуальной машины.
+* Найдите группу ресурсов со схемой именования `AzureBackupRG_<location of your VM>_1`, например AzureBackupRG_westus2_1.
 * В CLI используйте команду `az resource list -g AzureBackupRG_<location of your VM>_1`.
 * Найдите ресурс с типом `Microsoft.Compute/restorePointCollections` и шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`.
 * Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
-* После завершения удаления можно переместить хранилище и виртуальную машину в целевую подписку. После перемещения можно продолжить резервное копирование без потери данных.
+
+## <a name="next-steps"></a>Следующие шаги
+
+* Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../move-resource-group-and-subscription.md).
+
 * Сведения о перемещении хранилищ служб восстановления для резервного копирования см. в разделе [Ограничения служб восстановления](../../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../move-resource-group-and-subscription.md).

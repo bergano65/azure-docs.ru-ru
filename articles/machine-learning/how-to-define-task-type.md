@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
 ms.date: 11/04/2019
-ms.openlocfilehash: a58959904559cd3b2cec27762f2df93cfea72abd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fef3f0347d963b8a7d5fe2f1ca771293e9c3d2a9
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75540533"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475501"
 ---
 # <a name="how-to-define-a-machine-learning-task"></a>Как определить задачу машинного обучения 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -72,10 +72,10 @@ automl_config = AutoMLConfig(task="classification")
 ![Выбор типа задачи](./media/how-to-define-task-type/task-type.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 + Узнайте больше об [автоматизированном мл](concept-automated-ml.md) в Azure Machine Learning.
 + Подробнее об [автоматическом обучении модели прогнозирования временных рядов](how-to-auto-train-forecast.md) читайте в разделе Azure Machine Learning
-+ Попробуйте учебник по [классификации автоматизированных машин.](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation)
-+ Попробуйте [автоматизированный машинное обучение Регрессии](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation) образец ноутбука.
++ Попробуйте учебник по [классификации автоматизированных машин.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb)
++ Попробуйте [автоматизированный машинное обучение Регрессии](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-hardware-performance-explanation-and-featurization/auto-ml-regression-hardware-performance-explanation-and-featurization.ipynb) образец ноутбука.
 

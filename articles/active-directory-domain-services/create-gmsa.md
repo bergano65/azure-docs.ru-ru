@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/26/2019
+ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 58749e4518f6fa73c8641ce38483c101576047aa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 95269fbe38ae21d0b9761f67adee681ae896a8ab
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77614080"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80476339"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-in-azure-ad-domain-services"></a>Создание учетной записи службы управляемой группой (gMSA) в службах домена Azure AD
 
@@ -26,12 +26,12 @@ ms.locfileid: "77614080"
 
 В этой статье показано, как создать gMSA в домене Azure AD DS, управляемом с помощью Azure PowerShell.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для завершения этой статьи необходимы следующие ресурсы и привилегии:
 
 * Активная подписка Azure.
-    * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
@@ -95,7 +95,7 @@ New-ADServiceAccount -Name WebFarmSvc `
 
 Приложения и службы теперь могут быть настроены для использования gMSA по мере необходимости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации [Getting started with group managed service accounts][gmsa-start]о gMSA см.
 

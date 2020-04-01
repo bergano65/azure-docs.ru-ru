@@ -4,12 +4,12 @@ description: Куратор список наиболее часто задав�
 ms.topic: troubleshooting
 ms.date: 03/25/2020
 ms.author: diberry
-ms.openlocfilehash: e002efe74bf7bcd3d944b01b0a25a731a2db3f66
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 310cfe0cc8c1f647c09b8e0efb435a1ab326ff62
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80284268"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474960"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Устранение неполадок для создателя NA
 
@@ -30,7 +30,7 @@ ms.locfileid: "80284268"
 <details>
 <summary><b>Как получить конечную точку обслуживания NAMaker</b></summary>
 
-**Ответ:** конечная точка обслуживания nAMaker полезна для отладки при обращении в службу поддержки nAMaker или UserVoice. Конечная точка — URL-адрес https://your-resource-name.azurewebsites.netв этой форме: .
+**Ответ:** конечная точка обслуживания nAMaker полезна для отладки при обращении в службу поддержки nAMaker или UserVoice. Конечная точка — URL-адрес `https://your-resource-name.azurewebsites.net`в этой форме: .
 
 1. Перейдите к службе QnA Maker (группе ресурсов) на [портале Azure](https://portal.azure.com).
 

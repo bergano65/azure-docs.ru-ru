@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 07a96fdd6350d8db38a92c23e510afb05f7416fb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1837d342c4476633ee33a8579abe7389ac9bbddf
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79277756"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80476828"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Управление экземплярами в Устойчивых функциях в Azure
 
@@ -42,9 +42,9 @@ ms.locfileid: "79277756"
 # <a name="c"></a>[C #](#tab/csharp)
 
 ```csharp
-[FunctionName("HelloWorldManualStart")]
+[FunctionName("HelloWorldQueueTrigger")]
 public static async Task Run(
-    [ManualTrigger] string input,
+    [QueueTrigger("start-queue")] string input,
     [DurableClient] IDurableOrchestrationClient starter,
     ILogger log)
 {
@@ -56,7 +56,7 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 <a name="javascript-function-json"></a>Если не указано иное, примеры на этой странице используют триггер HTTP со следующим function.json.
 
@@ -161,7 +161,7 @@ func durable start-new --function-name HelloWorld --input @counter-data.json --t
 [FunctionName("GetStatus")]
 public static async Task Run(
     [DurableClient] IDurableOrchestrationClient client,
-    [ManualTrigger] string instanceId)
+    [QueueTrigger("check-status-queue")] string instanceId)
 {
     DurableOrchestrationStatus status = await client.GetStatusAsync(instanceId);
     // do something based on the current status.
@@ -171,7 +171,7 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -240,7 +240,7 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -306,7 +306,7 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -363,7 +363,7 @@ func durable get-instances --created-after 2018-03-10T13:57:31Z --created-before
 [FunctionName("TerminateInstance")]
 public static Task Run(
     [DurableClient] IDurableOrchestrationClient client,
-    [ManualTrigger] string instanceId)
+    [QueueTrigger("terminate-queue")] string instanceId)
 {
     string reason = "It was time to be done.";
     return client.TerminateAsync(instanceId, reason);
@@ -373,7 +373,7 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -428,7 +428,7 @@ func durable terminate --id 0ab8c55a66644d68a3a8b220b12d209c --reason "It was ti
 [FunctionName("RaiseEvent")]
 public static Task Run(
     [DurableClient] IDurableOrchestrationClient client,
-    [ManualTrigger] string instanceId)
+    [QueueTrigger("event-queue")] string instanceId)
 {
     int[] eventData = new int[] { 1, 2, 3 };
     return client.RaiseEventAsync(instanceId, "MyEvent", eventData);
@@ -438,7 +438,7 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -488,7 +488,7 @@ func durable raise-event --id 1234567 --event-name MyOtherEvent --event-data 3
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpSyncStart.cs)]
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpSyncStart/index.js)]
 
@@ -580,7 +580,7 @@ public static void SendInstanceInfo(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `DurableActivityContext` необходимо `IDurableActivityContext`использовать вместо `OrchestrationClient` этого атрибут `DurableClient` вместо атрибута, а `DurableOrchestrationClient` тип параметра — `IDurableOrchestrationClient`— это не сделать. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -622,7 +622,7 @@ modules.exports = async function(context, ctx) {
 [FunctionName("RewindInstance")]
 public static Task Run(
     [DurableClient] IDurableOrchestrationClient client,
-    [ManualTrigger] string instanceId)
+    [QueueTrigger("rewind-queue")] string instanceId)
 {
     string reason = "Orchestrator failed and needs to be revived.";
     return client.RewindAsync(instanceId, reason);
@@ -632,7 +632,7 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -674,13 +674,13 @@ func durable rewind --id 0ab8c55a66644d68a3a8b220b12d209c --reason "Orchestrator
 [FunctionName("PurgeInstanceHistory")]
 public static Task Run(
     [DurableClient] IDurableOrchestrationClient client,
-    [ManualTrigger] string instanceId)
+    [QueueTrigger("purge-queue")] string instanceId)
 {
     return client.PurgeInstanceHistoryAsync(instanceId);
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -718,7 +718,7 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий код C-кода предназначен для функций длительного пользования 2.x. Для функций Durable 1.x `OrchestrationClient` необходимо использовать `DurableClient` атрибут вместо атрибута, а `IDurableOrchestrationClient`вместо этого — тип `DurableOrchestrationClient` параметра. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Метод `purgeInstanceHistoryBy` может быть использован для условной очистки истории экземпляров для нескольких экземпляров.
 
@@ -794,7 +794,7 @@ func durable purge-history --created-before 2018-11-14T19:35:00.0000000Z --runti
 func durable delete-task-hub --task-hub-name UserTest
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения об обработке управления версиями](durable-functions-versioning.md)

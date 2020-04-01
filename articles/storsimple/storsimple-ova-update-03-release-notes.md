@@ -1,5 +1,5 @@
 ---
-title: Заметки о выпуске обновлений для виртуального массива StorSimple | Документация Майкрософт
+title: Заметки о выпуске обновления 0.3 для виртуального массива StorSimple
 description: В этой статье описаны критические открытые проблемы виртуального массива StorSimple с обновлением 0.3 и способы их устранения.
 services: storsimple
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/15/2016
 ms.author: alkohli
-ms.openlocfilehash: 635b5f4edf5d403c569b4957540fc105997b3e8e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f56c36f18379449409f4989eab9510da1f686d0d
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60629277"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397810"
 ---
 # <a name="storsimple-virtual-array-update-03-release-notes"></a>Заметки о выпуске обновления 0.3 для виртуального массива StorSimple
 ## <a name="overview"></a>Обзор

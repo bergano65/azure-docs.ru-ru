@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 12/27/2019
-ms.openlocfilehash: cb5603c12f06e4f5d5675ca27e171321ecc8827a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d460112394d7c7b7d2da4e8af41c0085b67226ec
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79536451"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475472"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Развертывание веб-служб в Экземплярах контейнеров Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -90,11 +90,11 @@ az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploy
 
 [!INCLUDE [aml-update-web-service](../../includes/machine-learning-update-web-service.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Как развернуть модель с помощью пользовательского изображения Docker](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
-* [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
+* [Используйте TLS для обеспечения безопасности веб-службы через Машинное обучение Azure](how-to-secure-web-service.md)
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей машинного обучения Azure с помощью приложений Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)

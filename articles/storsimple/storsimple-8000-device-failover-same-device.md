@@ -1,5 +1,5 @@
 ---
-title: Failover и аварийного восстановления на том же устройстве StorSimple 8000
+title: Учебник - Fail над StorSimple физическое устройство на том же устройстве
 description: Узнайте, как выполнять отработку отказа устройства StorSimple на то же устройство.
 services: storsimple
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/23/2017
 ms.author: alkohli
-ms.openlocfilehash: c8fe2d7ec7649f47f6cb9c8ae2c83f19c15691b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dde01f9b91ff5a04ddb3fcc8d5f0c535278b0539
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77471811"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398080"
 ---
 # <a name="fail-over-your-storsimple-physical-device-to-same-device"></a>Отработка отказа физического устройства StorSimple на то же устройство
 
@@ -79,7 +79,7 @@ ms.locfileid: "77471811"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * После отработки отказа, возможно, нужно будет [отключить или удалить устройство StorSimple](storsimple-8000-deactivate-and-delete-device.md).
 * Сведения об использовании службы диспетчера устройств StorSimple см. в статье [Use the StorSimple Device Manager service to administer your StorSimple device](storsimple-8000-manager-service-administration.md) (Администрирование устройства StorSimple с помощью службы диспетчера устройств StorSimple).

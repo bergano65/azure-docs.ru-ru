@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: e05a2b97a25ce4cab7d619f4b62d405765cb08db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ab45298dbcb8988da7d0211fcbde3087d0099038
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78164395"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437081"
 ---
 # <a name="eav4-and-easv4-series"></a>Серии Eav4 и Easv4
 
@@ -40,11 +40,9 @@ ACU: 230 - 260
 | Стандартный\_E16a\_v4|16|128|400|32|24000 / 375 / 187|8/8000 |
 | Стандартный\_E20a\_v4|20|160|500|32|30000 / 468 / 234|8/10000 |
 | Стандартный\_E32a\_v4|32|256|800|32|48000 / 750 / 375|8 / 16 000 |
-| Стандартный\_E48a\_v4<sup>**</sup> |48|384|1200|32| | |
-| Стандартный\_E64a\_v4<sup>**</sup> |64|512|1600|32| | |
-| Стандартный\_E96a\_v4<sup>**</sup> |96|672|2400|32| | |
-
-<sup>**</sup>Эти размеры находятся в Предварительном просмотре. Если вы заинтересованы в опробовать эти [https://aka.ms/AzureAMDLargeVMPreview](https://aka.ms/AzureAMDLargeVMPreview)большие размеры, зарегистрируйтесь на .
+| Стандартный\_E48a\_v4|48|384|1200|32|96000 / 1000 (500)|8 / 24000 |
+| Стандартный\_E64a\_v4|64|512|1600|32|96000 / 1000 (500)|8/30 000 |
+| Стандартный\_E96a\_v4|96|672|2400|32|96000 / 1000 (500)|8/30 000 |
 
 ## <a name="easv4-series"></a>Easv4-серия
 
@@ -68,11 +66,9 @@ ACU: 230 - 260
 | Standard_E16as_v4|16|128|256|32|32000 / 255 (400)|25600 / 384|8/8000 |
 | Standard_E20as_v4|20|160|320|32|40000 / 320 (500)|32000 / 480|8/10000 |
 | Standard_E32as_v4|32|256|512|32|64000 / 510 (800)|51200 / 768|8 / 16 000 |
-| Standard_E48as_v4<sup>**</sup> |48|384|768|32|  | |
-| Standard_E64as_v4<sup>**</sup> |64|512|1024|32| | |
-| Standard_E96as_v4<sup>**</sup> |96|672|1344|32| | |  
-
-<sup>**</sup>Эти размеры находятся в Предварительном просмотре. Если вы заинтересованы в опробовать эти [https://aka.ms/AzureAMDLargeVMPreview](https://aka.ms/AzureAMDLargeVMPreview)большие размеры, зарегистрируйтесь на .
+| Standard_E48as_v4|48|384|768|32|96000 / 1020 (1200)|76800 / 1148|8 / 24000 |
+| Standard_E64as_v4|64|512|1024|32|128000 / 1020 (1600)|80000 / 1200|8/30 000 |
+| Standard_E96as_v4|96|672|1344|32|192000 / 1020 (2400)|80000 / 1200|8/30 000 |
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 
@@ -85,6 +81,6 @@ ACU: 230 - 260
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

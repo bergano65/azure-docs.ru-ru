@@ -9,12 +9,12 @@ ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2b21061e8a939b91c637ef05bbe6375c0b3f82e8
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: 2b09a7765cff20fb49ce6ab3d1e7bce2e15f0e9e
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80383979"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475211"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройте приложение Windows Java для службы приложений Azure
 
@@ -74,7 +74,7 @@ jcmd <pid> JFR.start name=TimedRecording settings=profile duration=30s filename=
 
 - [Настройка параметров приложения](configure-common.md#configure-app-settings)
 - [Настройка личного домена](app-service-web-tutorial-custom-domain.md)
-- [Настройка SSL-привязок](configure-ssl-bindings.md)
+- [Настройка привязок TLS](configure-ssl-bindings.md)
 - [Добавление CDN](../cdn/cdn-add-to-web-app.md)
 - [Настройка сайта Kudu](https://github.com/projectkudu/kudu/wiki/Configurable-settings)
 
@@ -183,7 +183,7 @@ public int getServerPort()
 
 ### <a name="configure-tlsssl"></a>Настройка TLS/SSL
 
-Следуйте инструкциям в [Secure пользовательское имя DNS с привязкой SSL в Azure App Service,](configure-ssl-bindings.md) чтобы загрузить существующий сертификат SSL и привязать его к доменному имени вашего приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
+Следуйте инструкциям в [Secure пользовательское имя DNS с привязкой TLS в Azure App Service,](configure-ssl-bindings.md) чтобы загрузить существующий сертификат TLS/SSL и привязать его к доменному имени вашего приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
 
 ### <a name="use-keyvault-references"></a>Использование ссылок KeyVault
 
@@ -342,7 +342,7 @@ Tomcat 8.0 достиг [конца жизни (EOL) по состоянию н�
 
 Разработчики могут [сообщить о проблеме](/azure/azure-portal/supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Эта тема содержит заявление Java Runtime о поддержке службы приложений Azure в Windows.
 

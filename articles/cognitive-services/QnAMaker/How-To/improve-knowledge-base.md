@@ -2,13 +2,13 @@
 title: Расширение базы знаний в QnA Maker
 description: Улучшить качество вашей базы знаний с активным обучением. Просмотрите, примите или отклоняйте, добавляйте, не удаляя и не изменяя существующие вопросы.
 ms.topic: conceptual
-ms.date: 03/16/2020
-ms.openlocfilehash: 8b2176731ce456b70521cc9208435d0b19943ab8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/31/2020
+ms.openlocfilehash: 1eb0ed42f700c14350a5e4f1eff9b7592cbf8ef6
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80053086"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474884"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять активное обучение предлагаемые вопросы в базе знаний
 
@@ -127,7 +127,7 @@ Content-Type: application/json
 {"feedbackRecords": [{"userId": "1","userQuestion": "<question-text>","qnaId": 1}]}
 ```
 
-|Свойство запроса HTTP|name|Тип|Назначение|
+|Свойство запроса HTTP|Имя|Тип|Назначение|
 |--|--|--|--|
 |Параметр маршрута URL|Идентификатор базы знаний|строка|Идентификатор GUID для базы знаний.|
 |Пользовательский поддомен|Имя ресурса NAMaker|строка|Название ресурса используется в качестве пользовательского поддона для вашего создателя. Это доступно на странице «Настройки» после публикации базы знаний. Он указан как `host`.|
@@ -203,7 +203,7 @@ Content-Type: application/json
 
 ### <a name="example-c-code-for-train-api-with-bot-framework-4x"></a>Пример кода C для Train API с Bot Framework 4.x
 
-Следующий код иллюстрирует, как отправить информацию обратно в NA Maker с помощью API Train API. Этот [полный образец кода](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/qnamaker-activelearning/csharp_dotnetcore) доступен на GitHub.
+Следующий код иллюстрирует, как отправить информацию обратно в NA Maker с помощью API Train API.
 
 ```csharp
 public class FeedbackRecords
@@ -266,7 +266,7 @@ public async static void CallTrain(string endpoint, FeedbackRecords feedbackReco
 
 ### <a name="example-nodejs-code-for-train-api-with-bot-framework-4x"></a>Пример кода Node.js для Train API с Bot Framework 4.x
 
-Следующий код иллюстрирует, как отправить информацию обратно в NA Maker с помощью API Train API. Этот [полный образец кода](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-activelearning/javascript_nodejs) доступен на GitHub.
+Следующий код иллюстрирует, как отправить информацию обратно в NA Maker с помощью API Train API.
 
 ```javascript
 async callTrain(stepContext){
@@ -343,7 +343,7 @@ async callTrain(stepContext){
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)

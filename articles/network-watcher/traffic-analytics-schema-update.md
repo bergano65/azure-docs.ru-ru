@@ -1,5 +1,5 @@
 ---
-title: Обновление схемы анализа трафика Azure - март 2020 г. Документы Майкрософт
+title: Обновление схемы анализа Azure Traffic Analytics - март 2020 г. Документы Майкрософт
 description: Примеры запросов с новыми полями в схеме анализа трафика.
 services: network-watcher
 documentationcenter: na
@@ -13,23 +13,24 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/06/2020
 ms.author: vinigam
-ms.openlocfilehash: 0e9d37e3a89473e59b94168f8f8c80e7a6621107
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4fe981576e3f6e58b0886d9c0d2eb2915d8b7720
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78969060"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80396613"
 ---
-# <a name="sample-queries-with-new-fields-in-traffic-analytics-schema-august-2019-schema-update"></a>Примеры запросов с новыми полями в схеме Traffic Analytics (обновление схемы схемы августа 2019 г.)
+# <a name="sample-queries-with-new-fields-in-the-traffic-analytics-schema-august-2019-schema-update"></a>Примеры запросов с новыми полями в схеме traffic Analytics (обновление схемы схемы августа 2019 г.)
 
-Схема [журнала «Лог аналитики трафика»](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema) была обновлена, чтобы включить следующие новые поля: **SrcPublicIPs_s,** **DestPublicIPs_s,** **NSGRule_s.** В ближайшие месяцы будут обезвлечены следующие старые поля: **VMIP_s,** **Subscription_g,** **Region_s,** **NSGRules_s,** **Subnet_s,** **VM_s,** **NIC_s PublicIPs_s,** **FlowCount_d.** **PublicIPs_s**
-Новые поля предоставляют информацию об испытом и назначения и упрощают запросы.
+[Схема журнала Traffic Analytics](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema) включает в себя следующие новые поля: **SrcPublicIPs_s,** **DestPublicIPs_s,** **NSGRule_s**. Новые поля предоставляют информацию об испытом и назначениях и упрощают запросы.
 
-Ниже приведены три примера, показывающие, как заменить старые поля новыми.
+В ближайшие месяцы будут обезвлечены следующие старые поля: **VMIP_s,** **Subscription_g,** **Region_s,** **NSGRules_s,** **Subnet_s,** **VM_s,** **NIC_s PublicIPs_s,** **FlowCount_d.** **PublicIPs_s**
 
-## <a name="example-1---vmip_s-subscription_g-region_s-subnet_s-vm_s-nic_s-publicips_s"></a>Пример 1 - VMIP_s, Subscription_g, Region_s, Subnet_s, VM_s, NIC_s, PublicIPs_s
+Следующие три примера показывают, как заменить старые поля новыми.
 
-Нам не нужно делать выводобки об исходных и назначенияных случаях для Azure и внешних общедоступных потоков из FlowDirection_s поле для потоков AzurePublic и ExternalPublic. В случае NVA (сетевого виртуального прибора) FlowDirection_s поле может быть неуместным для использования.
+## <a name="example-1-vmip_s-subscription_g-region_s-subnet_s-vm_s-nic_s-and-publicips_s-fields"></a>Пример 1: VMIP_s, Subscription_g, Region_s, Subnet_s, VM_s, NIC_s и PublicIPs_s
+
+Нам не нужно делать выводобки об источниках и случаях назначения из поля **FlowDirection_s** для потоков AzurePublic и ExternalPublic. Также может быть нецелесообразно использовать **поле FlowDirection_s** для сетевого виртуального устройства.
 
 ```Old Kusto query
 AzureNetworkAnalytics_CL
@@ -71,12 +72,13 @@ SourcePublicIPsAggregated = iif(isnotempty(SrcPublicIPs_s), SrcPublicIPs_s, "N/A
 DestPublicIPsAggregated = iif(isnotempty(DestPublicIPs_s), DestPublicIPs_s, "N/A")
 ```
 
+## <a name="example-2-nsgrules_s-field"></a>Пример 2: поле NSGRules_s
 
-## <a name="example-2---nsgrules_s"></a>Пример 2 - NSGRules_s
+Старое поле использовало формат:
 
-Ранее поле было формата: <индекс значение 0)><NSG_RULENAME><Flow Direction>|<Flow Status>|<FlowCount ProcessedByRule>
+значение индекса <0)><NSG_ правилоНаи><Flow Direction>|<Flow Status>|<FlowCount ProcessedByRule>
 
-Ранее мы использовали для агрегирования данных по NSG и NSGRules. Теперь мы не агрегируем. Таким образом, NSGList_s содержит только один NSG и NSGRules_s также используется для содержат только одно правило. Таким образом, мы удалили сложный форматирование здесь и то же самое можно найти в других областях, как упоминалось ниже:
+Мы больше не агрегируем данные в группе сетевой безопасности (NSG). В обновленной схеме **NSGList_s** содержит только один NSG. Также **NSGRules** содержит только одно правило. Мы удалили сложное форматирование здесь и в других областях, как показано на примере.
 
 ```Old Kusto query
 AzureNetworkAnalytics_CL
@@ -101,16 +103,24 @@ FlowStatus = FlowStatus_s,
 FlowCountProcessedByRule = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_d + DeniedOutFlows_d
 ```
 
-## <a name="example-3---flowcount_d"></a>Пример 3 - FlowCount_d
+## <a name="example-3-flowcount_d-field"></a>Пример 3: поле FlowCount_d
 
-Поскольку мы не перемещаем данные по NSG, FlowCount_d просто AllowedInFlows_d и DeniedInFlows_d AllowedOutFlows_d DeniedOutFlows_d.
-Только 1 из вышеперечисленных 4 будет ненулевым, а остальные три будут 0. И это будет означать статус и рассчитывать в NIC, где поток был захвачен.
+Поскольку мы не перемещаем данные по NSG, **FlowCount_d** просто:
 
-Если поток был разрешен, одно из полей, закрепленных на "Разрешено", будет заселено. В противных отношениях будут заселены одно поле, закрепленное на "Отказе".
-Если поток был входящим, одно из полей, суффиксированных с "d",\_как "InFlows_d" суффиксное поле будет заселено. Еще "OutFlows_d" будет заселен.
+**AllowedInFlows_d** + AllowedOutFlows_d**DeniedOutFlows_d** + **DeniedOutFlows_d** **DeniedInFlows_d DeniedInFlows_d** + 
 
-В зависимости от более чем 2 условий, мы знаем, какой из 4 будет заселен.
+Только одно из четырех месторождений будет ненулевым. Остальные три поля будут равны нулю. Поля населяют, чтобы указать статус и считать в NIC, где поток был захвачен.
 
+Чтобы проиллюстрировать эти условия:
 
-## <a name="next-steps"></a>Next Steps
-Чтобы получить ответы на часто задаваемые вопросы, [Traffic analytics documentation](traffic-analytics.md) см. [Traffic analytics FAQ](traffic-analytics-faq.md)
+- Если поток был разрешен, одно из "Разрешенных" прификсированных полей будет заселено.
+- Если поток был отклонен, одно из "Отказано" прификсированных полей будет заселено.
+- Если поток был входящим, одно из "InFlows_d" суффиксных полей будет заселено.
+- Если поток был исходящим, одно из "OutFlows_d" суффиксных полей будет заселено.
+
+В зависимости от условий, мы знаем, какое из четырех полей будет заселено.
+
+## <a name="next-steps"></a>Следующие шаги
+
+- Чтобы получить ответы на часто задаваемые вопросы о решении "Аналитика трафика", ознакомьтесь с [этой](traffic-analytics-faq.md) статьей.
+- Чтобы узнать подробную информацию о функциональности, [см.](traffic-analytics.md)

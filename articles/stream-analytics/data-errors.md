@@ -5,13 +5,13 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 06/21/2019
-ms.openlocfilehash: 0546464b4d1bcc9eaa4fbffe265486985d9c58f3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: HT
+ms.date: 03/27/2020
+ms.openlocfilehash: 5457308d577b95201fa31bfad0a6634a7a79eda3
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75465028"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398130"
 ---
 # <a name="azure-stream-analytics-data-errors"></a>Ошибки данных Azure Stream Analytics
 
@@ -287,7 +287,7 @@ ms.locfileid: "75465028"
 "BriefMessage": "Column 'devicePartitionKey' is being mapped to multiple columns."
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Устранение неполадок Azure Stream Analytics с помощью журналов диагностики](stream-analytics-job-diagnostic-logs.md)
 

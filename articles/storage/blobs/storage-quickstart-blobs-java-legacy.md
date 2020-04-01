@@ -7,12 +7,12 @@ ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.openlocfilehash: 373875aee836485bb994d81e0945cec3a9b088eb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e7986add466bc42b092763acfeceebc8a6523bbe
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76906485"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80473987"
 ---
 # <a name="quickstart-manage-blobs-with-java-v8-sdk"></a>Быстрый запуск: Управление капли с Java v8 SDK
 
@@ -91,13 +91,13 @@ Deleting the source, and downloaded files
 
     Объект **CloudStorageAccount** представляет вашу учетную запись хранения и позволяет настраивать и использовать ее свойства программным способом. С помощью **CloudStorageAccount** можно создать экземпляр объекта **CloudBlobClient**, который необходим для доступа к службе BLOB-объектов.
 
-* Создайте экземпляр объекта **CloudBlobClient,** который указывает на [службу Blob](/java/api/com.microsoft.azure.storage.blob._cloud_blob_client) в вашей учетной записи хранения.
+* Создайте экземпляр объекта **CloudBlobClient,** который указывает на [службу Blob](/java/api/com.microsoft.azure.storage.blob.cloudblobclient) в вашей учетной записи хранения.
 
     **CloudBlobClient** предоставляет вам точку доступа к службе blob, что позволяет установить и получить доступ к свойствам хранения Blob программно. С помощью **CloudBlobClient** можно создать экземпляр объекта **CloudBlobContainer**, который необходим для создания контейнеров.
 
-* Создайте экземпляр объекта [CloudBlobContainer](/java/api/com.microsoft.azure.storage.blob._cloud_blob_container), представляющий контейнер, к которому осуществляется доступ. Используйте контейнеры для организации больших двоичных объектов аналогично папкам для упорядочения файлов на компьютере.
+* Создайте экземпляр объекта [CloudBlobContainer](/java/api/com.microsoft.azure.storage.blob.cloudblobcontainer), представляющий контейнер, к которому осуществляется доступ. Используйте контейнеры для организации больших двоичных объектов аналогично папкам для упорядочения файлов на компьютере.
 
-    После получения объекта **CloudBlobContainer** можно создать экземпляр объекта [CloudBlockBlob](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob), который указывает на конкретный нужный вам большой двоичный объект, и выполнить операцию передачи, скачивания, копирования или другую операцию.
+    После того, как у вас есть **CloudBlobContainer,** вы можете создать экземпляр объекта [CloudBlockBlob,](/java/api/com.microsoft.azure.storage.blob.cloudblockblob) который указывает на конкретный капля вы заинтересованы в, и выполнить загрузку, загрузку, копирование или другую операцию.
 
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения о контейнерах см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
@@ -106,7 +106,7 @@ Deleting the source, and downloaded files
 
 В этом разделе описано создание экземпляров объектов, создание контейнера и последующее задание разрешений для контейнера, что позволяет предоставить общий доступ к большим двоичным объектам по URL-адресу. Контейнер называется **quickstartcontainer**.
 
-Этот пример использует [CreateIfNotExists,](/java/api/com.microsoft.azure.storage.blob._cloud_blob_container.createifnotexists) потому что мы хотим создать новый контейнер каждый раз, когда образец запущен. В производственной среде, где вы используете один и тот же контейнер в приложении, лучше подать вызов **CreateIfNotExists** только один раз. Вы можете также создать контейнер заранее, чтобы не создавать его в коде.
+Этот пример использует [CreateIfNotExists,](/java/api/com.microsoft.azure.storage.blob.cloudblobcontainer.createifnotexists) потому что мы хотим создать новый контейнер каждый раз, когда образец запущен. В производственной среде, где вы используете один и тот же контейнер в приложении, лучше подать вызов **CreateIfNotExists** только один раз. Вы можете также создать контейнер заранее, чтобы не создавать его в коде.
 
 ```java
 // Parse the connection string and create a blob client to interact with Blob storage
@@ -121,7 +121,7 @@ container.createIfNotExists(BlobContainerPublicAccessType.CONTAINER, new BlobReq
 
 ### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
-Чтобы отправить файл в блочный BLOB-объект, получите ссылку на этот объект в целевом контейнере. При наличии ссылки на BLOB-объект вы можете передать в него данные с помощью [CloudBlockBlob.Upload](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.upload). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет его, если существует.
+Чтобы отправить файл в блочный BLOB-объект, получите ссылку на этот объект в целевом контейнере. При наличии ссылки на BLOB-объект вы можете передать в него данные с помощью [CloudBlockBlob.Upload](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob.cloudblockblob.upload). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет его, если существует.
 
 В примере кода создается локальный файл, который будет использоваться для передачи и скачивания. Передаваемый файл сохраняется как **source**, и большому двоичному объекту присваивается имя в **blob**. В приведенном ниже примере файл отправляется в контейнер с именем **quickstart**.
 
@@ -141,13 +141,13 @@ System.out.println("Uploading the sample file ");
 blob.uploadFromFile(sourceFile.getAbsolutePath());
 ```
 
-Есть несколько методов `upload`, которые можно использовать с хранилищем BLOB-объектов, включая [upload](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.upload), [uploadBlock](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.uploadblock), [uploadFullBlob](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.uploadfullblob), [uploadStandardBlobTier](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.uploadstandardblobtier) и [uploadText](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.uploadtext). Для строки, например, лучше использовать метод `UploadText`, а не `Upload`.
+Есть несколько методов `upload`, которые можно использовать с хранилищем BLOB-объектов, включая [upload](/java/api/com.microsoft.azure.storage.blob.cloudblockblob.upload), [uploadBlock](/java/api/com.microsoft.azure.storage.blob.cloudblockblob.uploadblock), [uploadFullBlob](/java/api/com.microsoft.azure.storage.blob.cloudblockblob.uploadfullblob), [uploadStandardBlobTier](/java/api/com.microsoft.azure.storage.blob.cloudblockblob.uploadstandardblobtier) и [uploadText](/java/api/com.microsoft.azure.storage.blob.cloudblockblob.uploadtext). Для строки, например, лучше использовать метод `UploadText`, а не `Upload`.
 
 Блочный BLOB-объект может представлять собой текстовый или двоичный файл любого типа. Страничные BLOB-объекты в основном используются для файлов VHD, применяемых для поддержки виртуальных машин IaaS. Используйте добавочные большие двоичные объекты для ведения журнала, например, если требуется выполнять запись в файл и добавлять дополнительные сведения. Большинство объектов, находящихся в хранилище BLOB-объектов, представляют собой блочные BLOB-объекты.
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Получить список файлов в контейнере можно с помощью метода [CloudBlobContainer.ListBlobs](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_blob_container.listblobs). Следующий код извлекает список BLOB-объектов, затем переходит по ним, отображая найденные URI. Можно скопировать URI из окна командной строки и вставить его в адресную строку браузера для просмотра файла.
+Получить список файлов в контейнере можно с помощью метода [CloudBlobContainer.ListBlobs](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob.cloudblobcontainer.listblobs). Следующий код извлекает список BLOB-объектов, затем переходит по ним, отображая найденные URI. Можно скопировать URI из окна командной строки и вставить его в адресную строку браузера для просмотра файла.
 
 ```java
 //Listing contents of container
@@ -158,7 +158,7 @@ for (ListBlobItem blobItem : container.listBlobs()) {
 
 ### <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
-Скачайте большие двоичные объекты на локальный диск с помощью метода [CloudBlob.DownloadToFile](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_blob.downloadtofile).
+Скачайте большие двоичные объекты на локальный диск с помощью метода [CloudBlob.DownloadToFile](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob.cloudblob.downloadtofile).
 
 Следующий код скачивает BLOB-объект, отправленный в предыдущем разделе, добавляя к имени BLOB-объекта суффикс "_DOWNLOADED", чтобы вы увидели оба файла на локальном диске.
 
@@ -173,7 +173,7 @@ blob.downloadToFile(downloadedFile.getAbsolutePath());
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны отправленные большие двоичные объекты, удалите весь контейнер с помощью метода [CloudBlobContainer.DeleteIfExists](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_blob_container.deleteifexists). Он также удаляет файлы в контейнере.
+Если вам больше не нужны отправленные большие двоичные объекты, удалите весь контейнер с помощью метода [CloudBlobContainer.DeleteIfExists](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob.cloudblobcontainer.deleteifexists). Он также удаляет файлы в контейнере.
 
 ```java
 try {
@@ -192,7 +192,7 @@ if(sourceFile != null)
 sourceFile.deleteOnExit();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом кратком руководстве описано, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Java. Чтобы узнать подробнее о работе с Java, перейдите в репозиторий исходного кода на GitHub.
 

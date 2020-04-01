@@ -7,12 +7,12 @@ ms.reviewer: dorcohen
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 03/15/2020
-ms.openlocfilehash: 759ea9800a0ed051fed887adfb10b06f7a53b72f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 796b37f98fed7e389fa71a15b5e6697a14db1a16
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79529209"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397213"
 ---
 # <a name="microsoft-flow-connector-preview-usage-examples"></a>Примеры использования разъема потока Microsoft Flow (Preview)
 
@@ -119,7 +119,9 @@ ms.locfileid: "79529209"
     * В поле *тела* вставьте требуемое тело так, чтобы визуализированный результат запроса был включен в тело электронной почты.
     * Чтобы добавить вложение в электронную почту, добавьте имя приложения и содержимое приложения.
     
-    ![Отправить несколько вложений по электронной почте](./media/flow-usage/flow-emailmultipleattachments.png)
+    ![Отправить несколько вложений по электронной почте](./media/flow-usage/flow-email-multiple-attachments.png)
+
+    Полные инструкции по созданию действия по электронной почте можно узнать в [результатах запроса Email Kusto.](flow.md#email-kusto-query-results) 
 
 Результат:
 
@@ -189,6 +191,6 @@ ms.locfileid: "79529209"
 
 ![Пользовательский результат электронной почты таблицы HTML](./media/flow-usage/flow-customhtmltableresult.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о [разъеме Microsoft Azure Explorer Logic App,](https://docs.microsoft.com/azure/kusto/tools/logicapps) который является еще одним способом автоматического выполнения запросов и команд Kusto в рамках запланированной или срабатывающей задачи.

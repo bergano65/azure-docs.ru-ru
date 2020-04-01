@@ -6,18 +6,18 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.openlocfilehash: 2c6e35b1e7d160064998004f87c5b14d0eaeac5e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0670331d2338b4b6419ffbff1452b5fbac91029f
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79127656"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478829"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Создание среды интеграционных служб (ISE) с помощью Logic Apps REST API
 
 В этой статье показано, как создать [ *среду интеграционных служб* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) через Logic Apps REST API для сценариев, где ваши логические приложения и учетные записи интеграции нуждаются в доступе к [виртуальной сети Azure.](../virtual-network/virtual-networks-overview.md) ISE — это изолированная среда, использующая специализированное хранилище и другие ресурсы, которые хранятся отдельно от «глобального» мультитенантного сервиса Logic Apps. Такое разделение помогает уменьшить любое влияние других клиентов Azure на производительность вашего приложения. ISE также предоставляет вам свои собственные статические IP-адреса. Эти IP-адреса отделены от статических IP-адресов, которые используются логическими приложениями в общедоступной мультитенантной службе.
 
-Вместо этого с помощью портала Azure можно [прослушать виртуальные сети Connect to Azure из приложений Azure Logic Apps.](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
+Вы также можете создать ISE, используя [шаблон быстрого запуска ресурсов Azure Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-integration-service-environment) или используя портал [Azure.](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
 
 > [!IMPORTANT]
 > Логические приложения, встроенные триггеры, встроенные действия и разъемы, которые работают в ISE, используют план ценообразования, отличный от плана ценообразования на основе потребления. Чтобы узнать, как ценообразование и выставление счетов для ISEs, [см.](../logic-apps/logic-apps-pricing.md#fixed-pricing) Для ценообразования цены, см [Логика Apps ценообразования](../logic-apps/logic-apps-pricing.md).
@@ -132,7 +132,7 @@ ms.locfileid: "79127656"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Добавление ресурсов в среды служб интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)
 * [Управление средами службы интеграции](../logic-apps/ise-manage-integration-service-environment.md#check-network-health)

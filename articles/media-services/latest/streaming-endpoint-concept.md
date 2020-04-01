@@ -12,12 +12,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 02/13/2020
 ms.author: juliako
-ms.openlocfilehash: 1a2a370ac92ea3edf925d97af6f5e721c79d0d2d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a8674714451f3cc686acb74d6c66ac6800b75936
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79529702"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478084"
 ---
 # <a name="streaming-endpoints-origin-in-azure-media-services"></a>Потоковые конечные точки (Origin) в медиаслужбах Azure
 
@@ -118,7 +118,7 @@ CDN|Azure CDN, сторонний CDN или нет CDN.|Azure CDN, сторон
     > [!NOTE]
     > Потоковые конечные точки, расположенные в одном центре обработки данных, не могут быть одинаковыми именами хоста.
 
-    Сейчас службы мультимедиа не поддерживают SSL для личных доменов.
+    В настоящее время Media Services не поддерживает TLS пользовательскими доменами.
 
 - `maxCacheAge`- Переопределения заголовка управления кэшем MAX-age по умолчанию, установленного конечная точка потоковой передачи на фрагментах мультимедиа и манифестах по требованию. Это значение задается в секундах.
 - `resourceState` -
@@ -167,6 +167,6 @@ CDN|Azure CDN, сторонний CDN или нет CDN.|Azure CDN, сторон
 
 [Динамическая упаковка](dynamic-packaging-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Управление конечными точками потоковой передачи](manage-streaming-endpoints-howto.md)

@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 01/16/2020
-ms.openlocfilehash: db2e80ebb6cbe5f31f2d99a1403a15daf38fd877
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 792964f28ddb3fcb10932b8de9499a9c7027960f
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76722413"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475382"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -131,7 +131,7 @@ az ml computetarget create aks -n myaks
 > [!WARNING]
 > Не создавайте несколько одновременных вложений в один и тот же кластер AKS из рабочего пространства. Например, присоединение одного кластера AKS к рабочему пространству с использованием двух разных имен. Каждое новое вложение нарушит предыдущее существующее вложение (ы).
 >
-> Если требуется повторно прикрепить кластер AKS, например, для изменения SSL или другой настройки конфигурации кластера, необходимо сначала удалить существующее вложение с помощью [AksCompute.detach()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#detach--)
+> Если требуется повторно прикрепить кластер AKS, например, для изменения TLS или другой настройки конфигурации кластера, необходимо сначала удалить существующее вложение с помощью [AksCompute.detach()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#detach--)
 
 Для получения дополнительной информации о создании кластера AKS с помощью Azure CLI или портала смотрите следующие статьи:
 
@@ -343,12 +343,12 @@ print(token)
 
 [!INCLUDE [aml-update-web-service](../../includes/machine-learning-update-web-service.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Безопасные эксперименты и выводы в виртуальной сети](how-to-enable-virtual-network.md)
 * [Как развернуть модель с помощью пользовательского изображения Docker](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
-* [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
+* [Используйте TLS для обеспечения безопасности веб-службы через Машинное обучение Azure](how-to-secure-web-service.md)
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей машинного обучения Azure с помощью приложений Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)

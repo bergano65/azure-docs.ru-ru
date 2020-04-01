@@ -1,5 +1,5 @@
 ---
-title: Использование сводки по устройствам StorSimple серии 8000 | Документация Майкрософт
+title: Используйте резюме устройства в службе storSimple Device Manager
 description: Описание сводки по устройству службы диспетчера устройств StorSimple и ее использования для просмотра метрик хранилища и подключенных инициаторов, а также поиска серийного номера и IQN.
 services: storsimple
 documentationcenter: NA
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 1d88af2c0739c30b2562bad7660015b890e8159c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7801cdc6573799330e5173db82dead8d4f2cd83f
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60578323"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398249"
 ---
 # <a name="use-the-device-summary-in-storsimple-device-manager-service"></a>Использование сводки по устройству в службе диспетчера устройств StorSimple
 
@@ -93,7 +93,7 @@ ms.locfileid: "60578323"
     ![Щелкните диаграмму использования](./media/storsimple-8000-device-dashboard/device-summary13.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше об [использовании колонки сводки службы StorSimple](storsimple-8000-service-dashboard.md)
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

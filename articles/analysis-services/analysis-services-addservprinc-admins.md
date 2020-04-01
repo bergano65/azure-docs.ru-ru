@@ -4,22 +4,22 @@ description: Узнайте, как добавить главное службы
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/29/2019
+ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 1370f65405963ebf825e986e6801607a0d96156e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 925fbbb51ac240b96486a2c0aa09c850a8d164bc
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78298094"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80408646"
 ---
 # <a name="add-a-service-principal-to-the-server-administrator-role"></a>Добавление субъекта-службы к роли администратора сервера 
 
  Чтобы автоматизировать задачи PowerShell, выполняемые без участия пользователя, субъекту-службе должны быть предоставлены разрешения **администратора сервера** на управляемом сервере Analysis Services. В этой статье описывается, как добавить субъект-службу к роли администратора сервера на сервере Azure AS. Это можно сделать с помощью студии управления серверами S'L или шаблона менеджера ресурсов.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 Прежде чем приступить к этой задаче, нужно зарегистрировать субъект-службу в Azure Active Directory.
 
 [Создание принципала сервиса - портал Azure](../active-directory/develop/howto-create-service-principal-portal.md)   
@@ -39,7 +39,7 @@ ms.locfileid: "78298094"
     
     ![Поиск учетной записи субъекта-службы](./media/analysis-services-addservprinc-admins/aas-add-sp-ssms-add.png)
 
-## <a name="using-a-resource-manager-template"></a>Использование шаблона менеджера ресурсов
+## <a name="using-a-resource-manager-template"></a>Использование шаблона Resource Manager
 
 Вы также можете настроить администраторов серверов, развернув сервер аналитических служб с помощью шаблона Azure Resource Manager. Ит.кификатор, работающий при развертывании, должен принадлежать роли **contributor** для ресурса в [Azure Role-Based Control (RBAC).](../role-based-access-control/overview.md)
 

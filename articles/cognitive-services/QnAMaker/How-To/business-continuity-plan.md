@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: diberry
-ms.openlocfilehash: f920a789f1ec631c5d70863b10d8364b3eb81b6c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2100426923418104c31933bf9d1406a6441d3841
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77650475"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80410913"
 ---
 # <a name="create-a-business-continuity-plan-for-your-qna-maker-service"></a>Создание плана по обеспечению непрерывности бизнес-процессов для службы QnA Maker
 
@@ -33,11 +33,11 @@ ms.locfileid: "77650475"
 
 4. После настройки первичного и вторичного стеков воспользуйтесь [диспетчером трафика](https://docs.microsoft.com/azure/traffic-manager/) для настройки двух конечных точек и метода маршрутизации.
 
-5. Для конечных точек менеджера трафика необходимо создать сертификат Безопасный слой розеток (SSL). [Привяжите SSL-сертификат](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings) к службам приложений.
+5. Необходимо создать сертификат Transport Layer Security (TLS), ранее известный как Безопасный слой розеток (SSL), сертификат для конечных точек диспетчера трафика. [Свяжите сертификат TLS/SSL](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings) в службах приложения.
 
 6. Наконец, используйте конечную точку диспетчера трафика в боте или приложении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Выберите capactiy](./improve-knowledge-base.md)

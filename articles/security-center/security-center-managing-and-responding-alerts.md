@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/15/2020
 ms.author: memildin
-ms.openlocfilehash: 6ea951b542d893b8fef3cdf19a964ce2ef8a034d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: HT
+ms.openlocfilehash: 8e44ce594375deeac47f037515d96c57d15c8359
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79415708"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398405"
 ---
 # <a name="manage-and-respond-to-security-alerts-in-azure-security-center"></a>Управление оповещениями безопасности в центре безопасности Azure и реагирование на них
 
@@ -73,5 +73,6 @@ ms.locfileid: "79415708"
 
 В этом документе вы ознакомились с подробными сведениями о настройке политик безопасности в Центре безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
+- [Модуль Microsoft Learn о том, как использовать возможности оповещения Центра безопасности Azure для наблюдения за угрозами и реагирования на них](https://docs.microsoft.com/learn/modules/resolve-threats-with-azure-security-center/)
 * [Оповещения о безопасности в Центре безопасности Azure](security-center-alerts-overview.md).
 * [Обработка инцидентов безопасности](security-center-incident.md)

@@ -5,12 +5,12 @@ author: sunasing
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: sunasing
-ms.openlocfilehash: 318b3e3f774a4381434fd56154f4c0d95c28c7a2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 717a09d8377a7b95fe24300cc65222f307e7419f
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79479521"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437526"
 ---
 # <a name="references"></a>Ссылки
 
@@ -162,7 +162,7 @@ ApIs Azure FarmBeats можно получить пользователю или
     - Вернитесь к **Обзору**и выберите ссылку рядом с **приложением Manage в локальном каталоге.**
     - Перейдите к **свойствам,** чтобы захватить **идентификатор объекта.**
 
-4. Перейти к [Datahub Swagger](https://<yourdatahub>.azurewebsites.net/swagger/index.html) и сделать следующее:
+4. Перейти к Datahub Swagger (https://<yourdatahub>.azurewebsites.net/swagger/index.html) и сделать следующее:
     - Перейдите на **API ролевой назначения**.
     - Выполните POST для создания объекта **назначения ролей** для только что созданного **объекта.**
 

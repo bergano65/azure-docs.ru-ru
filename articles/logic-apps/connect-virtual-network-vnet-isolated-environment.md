@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/12/2020
-ms.openlocfilehash: fedc1f6ce8fbaeaf0d2cae3a1b04169192868e61
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6683c1b78b0e7ecba162026708c83843e2c08180
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79270697"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478884"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -32,7 +32,7 @@ ISE увеличил адеки по продолжительности выпо
 * Создайте свой ISE.
 * Добавьте дополнительную емкость к вашему ISE.
 
-Вы также можете создать ISE с помощью Logic Apps REST API, включая настройку ключей, управляемых клиентами:
+Вы также можете создать ISE, используя [шаблон быстрого запуска ресурсов Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-integration-service-environment) или используя API Logic Apps REST, включая настройку ключей, управляемых клиентами:
 
 * [Создание среды интеграционных служб (ISE) с помощью Logic Apps REST API](../logic-apps/create-integration-service-environment-rest-api.md)
 * [Настройка ключей, управляемых клиентами, для шифрования данных в состоянии покоя для ИС-едоков](../logic-apps/customer-managed-keys-integration-service-environment.md)
@@ -110,7 +110,7 @@ ISE увеличил адеки по продолжительности выпо
 | Azure Active Directory | Исходящие | 80, 443 | Виртуальная сеть | AzureActiveDirectory | |
 | Управление соединениями | Исходящие | 443 | Виртуальная сеть  | AppService | |
 | Публикация журналов диагностики и метрик | Исходящие | 443 | Виртуальная сеть  | AzureMonitor | |
-| Зависимость от службы хранилища Azure | Исходящие | 80, 443, 445 | Виртуальная сеть | Хранилище | |
+| Зависимость от службы хранилища Azure | Исходящие | 80, 443, 445 | Виртуальная сеть | Память | |
 | Зависимость лазурного сИ-L | Исходящие | 1433 | Виртуальная сеть | SQL | |
 | Служба работоспособности ресурса Azure | Исходящие | 1886 | Виртуальная сеть | AzureMonitor | Требуется для публикации состояния здоровья ресурса |
 | Зависимость от политики передачи журнала в концентратор событий и от агента мониторинга | Исходящие | 5672 | Виртуальная сеть | концентратор событий. | |
@@ -226,7 +226,7 @@ ISE увеличил адеки по продолжительности выпо
    > [!IMPORTANT]
    > Управляемые разъемы ISE, которые становятся доступными после создания ISE, автоматически не отображаются в сборщике разъемов на Logic App Designer. Прежде чем вы сможете использовать эти разъемы ISE, вы должны вручную [добавить эти разъемы к вашему ISE](../logic-apps/add-artifacts-integration-service-environment-ise.md#add-ise-connectors-environment) так, чтобы они появляются в Logic App Designer.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Добавление ресурсов в среды служб интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)
 * [Управление средами службы интеграции](../logic-apps/ise-manage-integration-service-environment.md#check-network-health)
