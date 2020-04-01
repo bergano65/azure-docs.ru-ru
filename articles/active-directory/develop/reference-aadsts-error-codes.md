@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 02/19/2020
+ms.date: 03/31/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 89240102837b65ed2a09d9f4865ad47ee5d5afa2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 91d285e2a839a7d6266c5d58f52901a48a7a8c84
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80154565"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80473173"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Коды аутентификации и авторизации Azure AD
 
@@ -271,11 +271,13 @@ ms.locfileid: "80154565"
 | AADSTS700020 | InteractionRequired: для предоставления доступа требуется действие. |
 | AADSTS700022 | InvalidMultipleResourcesScope: указано недопустимое значение области входных параметров, так как оно содержит более одного ресурса. |
 | AADSTS700023 | InvalidResourcelessScope: указано недопустимое значение области входных параметров при запрашивании маркера доступа. |
+| AADSTS7000222| InvalidClientSecretExpiredKeysProvided - Предоставленные ключей клиента истекли. Посетите портал Azure для создания новых ключей для приложения или рассмотрите возможность использования учетных данных сертификатов для дополнительной безопасности:https://aka.ms/certCreds |
+| AADSTS700005 | InvalidGrantRedeemWrongTenant - Предоставленный код авторизации предназначен для использования против другого арендатора, таким образом, отклонен. Код авторизации OAuth2 должен быть выкуплен против того же арендатора, для него был приобретен (/общий или (при необходимости /«тенант-ID») |
 | AADSTS1000000 | UserNotBoundError: API привязки требует аутентификации пользователя Azure AD с использованием внешнего поставщика удостоверений, чего еще не произошло. |
 | AADSTS1000002 | BindCompleteInterruptError: привязка успешно выполнена, но об этом необходимо сообщить пользователю. |
 | AADSTS7000112 | НесанкционированноЕПриложениеКлиенты - Приложение отключено. |
 | AADSTS7500529 | Значение 'SAMLId-Guid' не является действительным SAML ID - Azure AD использует этот атрибут для заполнения атрибута InResponseTo возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * У вас есть вопрос или не можете найти нужную информацию? Создайте запрос в GitHub или изучите статью [Возможности получения поддержки и справки для разработчиков](active-directory-develop-help-support.md), чтобы узнать о других способах получения поддержки и справки.

@@ -10,12 +10,12 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/03/2017
-ms.openlocfilehash: cbe01ee9b8edeab349db484cea6c25dca32bf213
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7064101c21c11b48d8616dbeaa2fd9075660fd3b
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79218024"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80473465"
 ---
 # <a name="manage-azure-machine-learning-studio-classic-web-services-using-api-management"></a>Управление веб-сервисами Azure Machine Learning Studio (классические) с помощью управления API
 
@@ -217,7 +217,7 @@ ms.locfileid: "79218024"
 ![yes-to-publish](./media/manage-web-service-endpoints-using-api-management/yes-to-publish.png)
 
 ### <a name="test-the-web-service"></a>Тестирование веб-службы
-Веб-служба AzureML состоит из конечных точек RSS (служба запросов и ответов) и BES (служба выполнения пакетов). Конечные точки RSS предназначены для синхронного выполнения задач. Конечные точки BES — для асинхронного. Чтобы протестировать веб-службу с помощью приведенного ниже примера кода на языке Python, вам может понадобиться скачать и установить пакет Azure SDK для Python (см. статью [Способы установки Python](/azure/python/python-sdk-azure-install)).
+Веб-служба AzureML состоит из конечных точек RSS (служба запросов и ответов) и BES (служба выполнения пакетов). Конечные точки RSS предназначены для синхронного выполнения задач. Конечные точки BES — для асинхронного. Чтобы протестировать веб-службу с помощью приведенного ниже примера кода на языке Python, вам может понадобиться скачать и установить пакет Azure SDK для Python (см. статью [Способы установки Python](/azure/developer/python/azure-sdk-install)).
 
 Для примера кода ниже потребуется указать также **рабочую область**, **службу** и **ключ API** вашего эксперимента. Вы можете узнать название рабочей области и службы, щелкнув **Запрос-ответ** или **Выполнение пакета** для своего эксперимента на панели мониторинга веб-службы.
 
