@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2dc78c25c2cf63a510b9451c8d694795cd8a91eb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 72264755d5f0379f0ffb07852f48885126a36898
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80060946"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411604"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -194,29 +194,76 @@ uname -r
     > [!Note]  
     > Вышеупомянутая команда крепления крепления с SMB 3.0. Если дистрибутив Linux не поддерживает SMB 3.0 с помощью шифрования или поддерживает только SMB 2.1, вы можете смонтировать только из Azure VM в том же регионе, что и учетная запись хранилища. Чтобы установить свою долю файла Azure в дистрибутиве Linux, который не поддерживает SMB 3.0 с помощью шифрования, необходимо [отключить шифрование при переходе к учетной записи хранилища.](../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
 
+### <a name="using-autofs-to-automatically-mount-the-azure-file-shares"></a>Использование автофов для автоматического монтажа доли файла Azure(ы)
+
+1. **Убедитесь, что пакет autofs установлен.**  
+
+    Пакет autofs может быть установлен с помощью менеджера пакетов на дистрибутиве Linux по вашему выбору. 
+
+    В дистрибутивах **Ubuntu** и **на основе Debian** используйте диспетчер пакетов `apt`:
+    ```bash
+    sudo apt update
+    sudo apt install autofs
+    ```
+    На **Fedora**, **Red Hat Enterprise Linux 8 "** и **CentOS 8**, используйте менеджер пакетов: `dnf`
+    ```bash
+    sudo dnf install autofs
+    ```
+    На старых версиях **Red Hat Enterprise** `yum` Linux и **CentOS**используйте менеджер пакетов:
+    ```bash
+    sudo yum install autofs 
+    ```
+    В **openSUSE** используйте диспетчер пакетов `zypper`:
+    ```bash
+    sudo zypper install autofs
+    ```
+2. **Создайте точку крепления для доли (ы)**:
+   ```bash
+    sudo mkdir /fileshares
+    ```
+3. **Крит новый пользовательский файл конфигурации автофсов**
+    ```bash
+    sudo vi /etc/auto.fileshares
+    ```
+4. **Добавьте следующие записи в /etc/auto.fileshares**
+   ```bash
+   echo "$fileShareName -fstype=cifs,credentials=$smbCredentialFile :$smbPath"" > /etc/auto.fileshares
+   ```
+5. **Добавить следующую запись в /etc/auto.master**
+   ```bash
+   /fileshares /etc/auto.fileshares --timeout=60
+   ```
+6. **Перезагрузка автофсов**
+    ```bash
+    sudo systemctl restart autofs
+    ```
+7.  **Доступ к папке, предназначенной для акции**
+    ```bash
+    cd /fileshares/$filesharename
+    ```
 ## <a name="securing-linux"></a>Обеспечение безопасности Linux.
 Для установки доли файлов Azure в Linux должен быть доступен порт 445. Многие организации блокируют порт 445 из-за угроз безопасности, присущих SMB 1. SMB 1, также известный как CIFS (Общая система файлов Интернета), является устаревшим протоколом файловой системы, включенным во многие дистрибутивы Linux. SMB 1 — это устаревший, неэффективный и, самое главное, небезопасный протокол. Хорошей новостью является то, что Azure Files не поддерживает SMB 1, и, начиная с версии ядра Linux 4.18, Linux позволяет отключить SMB 1. Мы всегда [настоятельно рекомендуем](https://aka.ms/stopusingsmb1) отключить SMB 1 на ваших клиентов Linux перед использованием SMB файловых акций в производстве.
 
-Начиная с ядра Linux 4.18, модуль ядра SMB, называемый `cifs` по устаревшим причинам, предоставляет новый параметр модуля (часто именуемый *пармом* по различным внешним документам), называемый `disable_legacy_dialects`. Несмотря на то, что ядра Linux были введены в Linux 4.18, некоторые поставщики вернули это изменение на старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля на общих дистрибутивах Linux.
+Начиная с ядра Linux 4.18, модуль ядра SMB, называемый `cifs` по устаревшим причинам, предоставляет новый параметр модуля (часто именуемый *пармом* различными внешними документами), называемый `disable_legacy_dialects`. Несмотря на то, что ядра Linux были введены в Linux 4.18, некоторые поставщики вернули это изменение на старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля на общих дистрибутивах Linux.
 
 | Distribution | Может отключить SMB 1 |
 |--------------|-------------------|
-| Ubuntu 14.04-16.04 | нет |
+| Ubuntu 14.04-16.04 | Нет |
 | Ubuntu 18.04 | Да |
 | Увунту 19,04" | Да |
-| Дебиан 8-9 | нет |
+| Дебиан 8-9 | Нет |
 | Дебиан 10 | Да |
 | Федора 29 " | Да |
-| CentOS 7 | нет | 
+| CentOS 7 | Нет | 
 | CentOS 8 " | Да |
-| Red Hat Enterprise Linux 6.x-7.x | нет |
+| Red Hat Enterprise Linux 6.x-7.x | Нет |
 | Red Hat Предприятие Linux 8 " | Да |
-| openSUSE Прыжок 15.0 | нет |
+| openSUSE Прыжок 15.0 | Нет |
 | openSUSE Прыжок 15,1 " | Да |
 | openSUSE Поле для мыли | Да |
-| SUSE Linux Enterprise 11.x-12.x | нет |
-| SUSE Linux Предприятие 15 | нет |
-| SUSE Linux Предприятие 15.1 | нет |
+| SUSE Linux Enterprise 11.x-12.x | Нет |
+| SUSE Linux Предприятие 15 | Нет |
+| SUSE Linux Предприятие 15.1 | Нет |
 
 Вы можете проверить, поддерживает ли `disable_legacy_dialects` дистрибутив Linux параметр модуля с помощью следующей команды.
 
@@ -278,7 +325,7 @@ cat /sys/module/cifs/parameters/disable_legacy_dialects
 
 Файлы Azure для группы пользователей Linux включают форум, на котором можно поделиться своим мнением и опытом адаптации хранилища файлов в Linux. Чтобы вступить в группу пользователей, отправьте электронное письмо в группу [Пользователи файлов Azure в Linux](mailto:azurefiles@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)

@@ -11,21 +11,21 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/29/2019
+ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: b90910614bcd86a54198b1a0961a3378427ea87e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6a751fa193c8dd530707f790af0292d536a6f47d
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73164995"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80420458"
 ---
-# <a name="deploy-virtual-machine-scale-sets-with-ipv6-in-azure-preview"></a>Развертывание виртуальных наборов масштабов машин с IPv6 в Azure (Предварительный просмотр)
+# <a name="deploy-virtual-machine-scale-sets-with-ipv6-in-azure"></a>Развертывание виртуальных наборов масштабов машин с IPv6 в Azure
 
 В этой статье показано, как развернуть двойной стек (IPv4 - IPv6) Виртуальный набор шкалы машин с двойным балансом внешней нагрузки в виртуальной сети Azure. Процесс создания набора виртуальных машин IPv6, способных к созданию виртуальной машины, практически идентичен процессу создания отдельных виртуальных машин, описанных [здесь.](ipv6-configure-standard-load-balancer-template-json.md) Вы начнете с шагов, похожих на те, которые описаны для отдельных VMs:
-1.  Создание публичных ИП IPv4 и IPv6.
-2.  Создайте двойной балансисатор нагрузки стека.  
-3.  Создание правил группы сетевой безопасности (NSG).  
+1.    Создание публичных ИП IPv4 и IPv6.
+2.    Создайте двойной балансисатор нагрузки стека.  
+3.    Создание правил группы сетевой безопасности (NSG).  
 
 Единственным шагом, который отличается от отдельных Виртуальных мв., является создание конфигурации сетевого интерфейса (NIC), которая использует ресурс набора виртуальной шкалы машин: networkProfile/networkInterfaceConfigurations. Структура JSON аналогична структуре объекта Microsoft.Network/networkInterfaces, используемого для отдельных VMs с добавлением установки NIC и IPv4 IpConfiguration в качестве основного интерфейса с использованием **"первичного": истинный** атрибут, как видно в следующем примере:
 
@@ -92,6 +92,6 @@ ms.locfileid: "73164995"
 ## <a name="sample-virtual-machine-scale-set-template-json"></a>Пример виртуального шаблона набора масштабов машины JSON
 
 Для развертывания двойного стека (IPv4 - IPv6) Виртуальный набор шкалы машин с двойным стеком внешнего баланса нагрузки и виртуальным шаблоном образца просмотра сети [здесь](https://azure.microsoft.com/resources/templates/ipv6-in-vnet-vmss/).
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Подробнее о поддержке IPv6 в виртуальных сетях Azure читайте в пример [IPv6 для виртуальной сети Azure?.](ipv6-overview.md)
