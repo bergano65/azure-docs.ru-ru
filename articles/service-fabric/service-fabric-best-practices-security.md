@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: dcdc338bdcdb2c04f6b8894ccb358bc773b95c07
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fa8bb41684271c7d4ebe90e31ce8019994fc1f41
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79258932"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478741"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
@@ -208,7 +208,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 [Мы рекомендуем вам внедрить стандартную в отрасли конфигурацию, которая широко известна и хорошо протестирована, например, базовые уровни безопасности Майкрософт, в отличие от создания базовой системы самостоятельно;](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) вариант для подготовки этих на ваших виртуальных наборов шкалы машин заключается в использовании Azure Желаемое состояние конфигурации (DSC) обработчик расширения, чтобы настроить Виртуальные, как они приходят в Интернете, так что они работают производства программного обеспечения.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
-[Azure Firewall — это управляемая облачная служба безопасности сети, которая защищает ресурсы виртуальной сети Azure. Это полностью задефальный брандмауэр как сервис со встроенной высокой доступностью и неограниченной масштабируемостью облаков.](https://docs.microsoft.com/azure/firewall/overview); это позволяет ограничить исходящий трафик HTTP/S определенным списком полностью квалифицированных доменных имен (ФЗДН), включая дикие карты. Эта функция не требует завершения SSL-запросов. Рекомендуется использовать [теги Azure Firewall F'DN](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также включить сетевой трафик в конечные точки microsoft Windows Update через брандмауэр. [Развертывание Azure Firewall с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) предоставляет образец для определения шаблона ресурсов Microsoft.Network/AzureFirewalls. Правила брандмауэра, общие для приложений Service Fabric, позволяют создать для виртуальной сети кластеров следующие правила:
+[Azure Firewall — это управляемая облачная служба безопасности сети, которая защищает ресурсы виртуальной сети Azure. Это полностью задефальный брандмауэр как сервис со встроенной высокой доступностью и неограниченной масштабируемостью облаков.](https://docs.microsoft.com/azure/firewall/overview); это позволяет ограничить исходящий трафик HTTP/S определенным списком полностью квалифицированных доменных имен (ФЗДН), включая дикие карты. Эта функция не требует прекращения TLS/SSL. Рекомендуется использовать [теги Azure Firewall F'DN](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также включить сетевой трафик в конечные точки microsoft Windows Update через брандмауэр. [Развертывание Azure Firewall с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) предоставляет образец для определения шаблона ресурсов Microsoft.Network/AzureFirewalls. Правила брандмауэра, общие для приложений Service Fabric, позволяют создать для виртуальной сети кластеров следующие правила:
 
 - (download.microsoft.com
 - «servicefabric.azure.com
@@ -265,7 +265,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Создание кластера на вс-минах или компьютерах под управлением Windows Server: [создание кластера Service Fabric для Windows Server.](service-fabric-cluster-creation-for-windows-server.md)
 * Создайте кластер на vMs или компьютерах под управлением Linux: [Создание кластера Linux.](service-fabric-cluster-creation-via-portal.md)

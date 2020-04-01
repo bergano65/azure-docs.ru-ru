@@ -7,15 +7,15 @@ author: tamram
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
-ms.date: 02/04/2020
+ms.date: 03/31/2020
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 27860b8761c565c45a604253efdff5f77606606e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 195f4b5057c0e2d644ab44cc4c32e97c8662d36d
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80061303"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80422799"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-storage"></a>Настройка расширенной защиты от угроз для хранения azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "80061303"
 Оповещения безопасности срабатывают при возникновении аномалий в активности. Эти оповещения о безопасности интегрированы с [Azure Security Center,](https://azure.microsoft.com/services/security-center/)а также отправляются по электронной почте администраторам подписки с подробной информацией о подозрительной деятельности и рекомендациями о том, как расследовать и исправлять угрозы.
 
 > [!NOTE]
-> Расширенная защита от угроз для хранилища Azure в настоящее время доступна только для хранения Blob. Он недоступен в правительственных и суверенных облачных регионах Azure. Подробная информация о ценах, включая бесплатную 30-дневную пробную версию, смотрите [страницу ценообразования Azure Security Center.]( https://azure.microsoft.com/pricing/details/security-center/)
+> Расширенная защита от угроз для хранилища Azure в настоящее время доступна только для хранения Blob. Эта услуга доступна в правительственных облаках США, но нет других суверенных или областей облака правительства Azure. Подробная информация о ценах, включая бесплатную 30-дневную пробную версию, смотрите [страницу ценообразования Azure Security Center.](https://azure.microsoft.com/pricing/details/security-center/)
 
 Расширенная защита от угроз для Azure Storage глотает диагностические журналы чтения, записи и удаления запросов на хранение Blob для обнаружения угроз. Для изучения оповещений из расширенной защиты от угроз можно просмотреть связанные действия по хранению с помощью журналов analytics Storage. Для получения дополнительной информации на портале **«Настройка» —см.** [Monitor a storage account in the Azure portal](storage-monitor-storage-account.md#configure-logging)
 
@@ -121,7 +121,7 @@ ms.locfileid: "80061303"
 
 Оповещения создаются при нестандартных и потенциально вредоносных попытках получить доступ к учетным записям хранения или использовать их. Список оповещений для хранилища Azure можно узнать в разделе **"Хранение"** в [разделе "Защита данных" в Центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurestorage)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Подробнее о [журналах в учетных записях хранилища Azure](/rest/api/storageservices/About-Storage-Analytics-Logging)
 * Узнайте больше о [Центре безопасности Azure](../../security-center/security-center-intro.md)

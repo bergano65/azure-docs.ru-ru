@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 972b5415b85e82a5afdaf7d85d3a3bcb9e144d4d
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: 5d947cf41e13abdea9a2fd29f8a740d0c101dc6f
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80384948"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397913"
 ---
 # <a name="workflow-automation"></a>Автоматизация рабочих процессов
 
@@ -94,12 +94,13 @@ ms.locfileid: "80384948"
 
 Чтобы просмотреть необработанные схемы событий событий событий, передаваемые в экземпляр Logic App, посетите [схемы автоматизации типов данных Workflow.](https://aka.ms/ASCAutomationSchemas) Это может быть полезно в тех случаях, когда вы не используете встроенные разъемы Logic App, упомянутые выше, но вместо этого используете общий разъем HTTP logic App - вы можете использовать схему JSON, чтобы вручную разобрать его по мере того, как вы считаете нужным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы узнали о создании логических приложений, их ручном запуске в Центре безопасности и автоматизации их выполнения. 
+В этой статье вы узнали о создании логических приложений, автоматизации их выполнения в Центре безопасности и управлении ими вручную. 
 
-Для других связанных с ними материалов см. 
+Для других связанных материалов см.: 
 
+- [Модуль Microsoft Learn о том, как использовать автоматизацию рабочего процесса для автоматизации реагирования на безопасность](https://docs.microsoft.com/learn/modules/resolve-threats-with-azure-security-center/)
 - [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md)
 - [Оповещения безопасности в Центре безопасности Azure](security-center-alerts-overview.md)
 - [Общие сведения об Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview)

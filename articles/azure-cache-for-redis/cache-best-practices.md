@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: joncole
-ms.openlocfilehash: 71056fd04069b861b37a595b1a4f2a8bba4a01ef
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 105a3996753a1d1c2d71846cc8bad574e4498acf
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75689977"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478608"
 ---
 # <a name="best-practices-for-azure-cache-for-redis"></a>Рекомендации по использованию Кэша Azure для Redis 
 Следуя этим рекомендациям, вы можете обеспечить максимальную производительность и экономичное использование кэша Azure для экземпляра Redis.
@@ -52,7 +52,7 @@ ms.locfileid: "75689977"
  * [Салат (Ява)](https://gist.github.com/warrenzhu25/181ccac7fa70411f7eb72aff23aa8a6a#file-azure-redis-lettuce-best-practices-md)
  * [Джедаи (Ява)](https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f#file-redis-bestpractices-java-jedis-md)
  * [Node.js](https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f#file-redis-bestpractices-node-js-md)
- * [Php](https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f#file-redis-bestpractices-php-md)
+ * [PHP](https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f#file-redis-bestpractices-php-md)
  * [Asp.Net сессии государственный поставщик](https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f#file-redis-bestpractices-session-state-provider-md)
 
 
@@ -67,7 +67,7 @@ ms.locfileid: "75689977"
 Если вы хотите проверить, как ваш код работает в условиях ошибки, рассмотрите возможность использования [функции Перезагрузки.](cache-administration.md#reboot) Перезагрузка позволяет увидеть, как всплески соединения влияют на ваше приложение.
 
 ## <a name="performance-testing"></a>Тестирование производительности
- * **Начните `redis-benchmark.exe` с использования,** чтобы почувствовать возможную пропускную/ задержку перед написанием собственных тестов perf.  Redis-бенчмарк документации можно [найти здесь](https://redis.io/topics/benchmarks).  Обратите внимание, что redis-benchmark не поддерживает SSL, поэтому перед запуском теста вам придется [включить порт Non-SSL через портал.](cache-configure.md#access-ports)  [Окна совместимая версия redis-benchmark.exe можно найти здесь](https://github.com/MSOpenTech/redis/releases)
+ * **Начните `redis-benchmark.exe` с использования,** чтобы почувствовать возможную пропускную/ задержку перед написанием собственных тестов perf.  Redis-бенчмарк документации можно [найти здесь](https://redis.io/topics/benchmarks).  Обратите внимание, что Redis-benchmark не поддерживает TLS, поэтому перед запуском теста вам придется [включить порт Non-TLS через портал.](cache-configure.md#access-ports)  [Окна совместимая версия redis-benchmark.exe можно найти здесь](https://github.com/MSOpenTech/redis/releases)
  * Клиент VM, используемый для тестирования, должен находиться **в том же регионе,** что и экземпляр кэша Redis.
  * **Мы рекомендуем использовать Dv2 VM серии** для вашего клиента, поскольку они имеют лучшее оборудование и даст лучшие результаты.
  * Убедитесь, что клиент VM, который вы используете, имеет*по крайней мере столько вычислений и пропускной способности,* как кэш тестируется. 

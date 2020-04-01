@@ -3,21 +3,24 @@ title: Настройка Micro Focus CICS BankDemo для Micro Focus Enterpris
 description: Запустите приложение Micro Focus BankDemo на виртуальных машинах Azure (VM), чтобы научиться использовать Micro Focus Enterprise Server и enterprise Developer.
 author: sread
 ms.author: sread
-ms.date: 04/02/2019
+ms.date: 03/30/2020
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: 4491fc137c2c85e2be605f5e58fde6fd422efbbe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: db9d6bab2f383102434512aa63d7566cff1f579b
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67621336"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411077"
 ---
 # <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Настройка Micro Focus CICS BankDemo для micro Focus Enterprise Developer 4.0 на Azure
 
 При настройке Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 в Azure можно протестировать развертывание рабочих нагрузок IBM z/OS. В этой статье показано, как настроить CICS BankDemo, образец приложения, которое поставляется с корпоративным разработчиком.
 
 CICs означает систему контроля информации о клиентах, платформу транзакций, используемую многими онлайн-приложениями мейнфрейма. Приложение BankDemo отлично подходит для изучения того, как работают Enterprise Server и Enterprise Developer и как управлять и развертывать реальное приложение в комплекте с зелеными экранными терминалами.
+
+> [!NOTE]
+> Скоро: Инструкции по настройке [Micro Focus Enterprise Server 5.0](https://techcommunity.microsoft.com/t5/azurecat/micro-focus-enterprise-server-5-0-quick-start-template-on-azure/ba-p/1160110) на VMs Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -267,7 +270,7 @@ CICs означает систему контроля информации о к
 
 Поздравляем! Теперь вы используете приложение CICS в Azure с помощью Micro Focus Enterprise Server.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Запуск корпоративного сервера в контейнерах Docker на Azure](run-enterprise-server-container.md)
 - [Миграция мейнфреймов - Портал](https://blogs.msdn.microsoft.com/azurecat/2018/11/16/mainframe-migration-to-azure-portal/)

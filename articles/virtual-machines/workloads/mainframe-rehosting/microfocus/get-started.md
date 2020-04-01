@@ -3,15 +3,15 @@ title: Микро Фокус dev/test среды на Azure (ru) Докумен�
 description: Перехвачивайте рабочие нагрузки IBM z/OS с помощью решений Micro Focus на виртуальных машинах Azure (VM).
 author: njray
 ms.author: sread
-ms.date: 04/02/2019
+ms.date: 03/30/2020
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: d83b4c89d0f37e2217974d6d1ed32ac73d8fa4df
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 62d3f7cc75a887605cdd3c19ac2e45990e541d5e
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60498905"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80410983"
 ---
 # <a name="micro-focus-devtest-environments-on-azure"></a>Среда Micro Focus dev/test на Azure
 
@@ -20,6 +20,9 @@ ms.locfileid: "60498905"
 Micro Focus сотрудничает с корпорацией Майкрософт, предлагая убедительные инструменты миграции мэйнфреймов и повторного хостинга. Вы можете запускать мейнфреймы приложений в сценариях разработки, тестирования и производства на Azure и платформе Microsoft Windows.
 
 Micro Focus предлагает решения для реhosting-хостинга разработки и тестирования, которые расширяют существующие бизнес-приложения COBOL и PL/I в Azure.
+
+> [!NOTE]
+> Скоро: Инструкции по настройке [Micro Focus Enterprise Server 5.0](https://techcommunity.microsoft.com/t5/azurecat/micro-focus-enterprise-server-5-0-quick-start-template-on-azure/ba-p/1160110) на VMs Azure.
 
 **Дальнейшие действия**
 

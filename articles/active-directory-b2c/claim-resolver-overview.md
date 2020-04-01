@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/20/2020
+ms.date: 03/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cba97b84f77bd4e2d4cfd97601fa4f8637105eb4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1c4bbd98682d964cfdf72031c7d6cb77cf42a809
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80051409"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80396067"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -66,17 +66,17 @@ ms.locfileid: "80051409"
 
 | Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
-| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Недоступно |
+| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
 | {OIDC:DomainHint} |Параметр `domain_hint` строки запроса. | facebook.com |
 | {OIDC:LoginHint} |  Параметр `login_hint` строки запроса. | someone@contoso.com |
-| {OIDC:MaxAge} | `max_age`. | Недоступно |
+| {OIDC:MaxAge} | `max_age`. | Н/Д |
 | {OIDC:Nonce} |Параметр `Nonce` строки запроса. | defaultNonce |
 | «OIDC:Пароль»| [Владелец паролей ресурса пароли потока](ropc-custom.md) пароль пользователя.| пароль1| 
 | {OIDC:Prompt} | Параметр `prompt` строки запроса. | login |
 | «OIDC:RedirectUri» |Параметр `redirect_uri` строки запроса. | https://jwt.ms |
-| {OIDC:Resource} |Параметр `resource` строки запроса. | Недоступно |
-| {OIDC:scope} |Параметр `scope` строки запроса. | OpenId |
+| {OIDC:Resource} |Параметр `resource` строки запроса. | Н/Д |
+| «OIDC:Область» |Параметр `scope` строки запроса. | OpenId |
 | «OIDC:Имя пользователя»| [Владелец паролей ресурса, учетные данные потока](ropc-custom.md) пользователя имя пользователя.| emily@contoso.com| 
 
 ### <a name="context"></a>Контекст
@@ -99,13 +99,13 @@ ms.locfileid: "80051409"
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
 | {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1 234 |
-| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Недоступно |
+| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Н/Д |
 
 ### <a name="oauth2"></a>OAuth2
 
 | Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
-| {oauth2:access_token} | Маркер доступа. | Недоступно |
+| {oauth2:access_token} | Маркер доступа. | Н/Д |
 
 
 ### <a name="saml"></a>SAML
@@ -162,7 +162,7 @@ ms.locfileid: "80051409"
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="userLanguage" DefaultValue="{Culture:LCID}" AlwaysUseDefaultValue="true" />
     <InputClaim ClaimTypeReferenceId="policyName" DefaultValue="{Policy:PolicyId}" AlwaysUseDefaultValue="true" />
-    <InputClaim ClaimTypeReferenceId="scope" DefaultValue="{OIDC:scope}" AlwaysUseDefaultValue="true" />
+    <InputClaim ClaimTypeReferenceId="scope" DefaultValue="{OIDC:Scope}" AlwaysUseDefaultValue="true" />
     <InputClaim ClaimTypeReferenceId="clientId" DefaultValue="{OIDC:ClientId}" AlwaysUseDefaultValue="true" />
   </InputClaims>
   <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
@@ -175,7 +175,7 @@ ms.locfileid: "80051409"
 
 ### <a name="dynamic-ui-customization"></a>Настройка динамического пользовательского интерфейса
 
-Azure AD B2C позволяет передавать параметры строки запроса в конечные точки определения HTML для динамического рендерирования содержимого страницы. Например, это позволяет изменять фоновое изображение на странице регистрации Azure AD B2C или входить в систему на основе пользовательского параметра, который вы передаете из веб-приложения или мобильного приложения. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization.md). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
+Azure AD B2C позволяет передавать параметры строки запроса в конечные точки определения HTML для динамического рендерирования содержимого страницы. Например, эта функция позволяет изменять фоновое изображение на странице регистрации Azure AD B2C или входить в систему на основе пользовательского параметра, который вы передаете из веб-приложения или мобильного приложения. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization.md#configure-dynamic-custom-page-content-uri). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
 
 Следующий пример проходит в параметре строки запроса, названной `en-US` **campaignId** со `Hawaii`значением, **языковым** кодом и **приложением,** представляющим идентификатор клиента:
 

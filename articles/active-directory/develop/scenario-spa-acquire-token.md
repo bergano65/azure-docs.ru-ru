@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 08/20/2019
 ms.author: negoe
 ms.custom: aaddev
-ms.openlocfilehash: d5d48a2fc7aca184cf8b6e7761584a8800ca5151
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 393c3a06a2366a7d6947faf8bbfe038d6c5982fc
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77160072"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80419663"
 ---
 # <a name="single-page-application-acquire-a-token-to-call-an-api"></a>Одностраничное приложение: Приобрести токен для вызова API
 
@@ -42,7 +42,7 @@ ms.locfileid: "77160072"
 
 ## <a name="acquire-a-token-with-a-pop-up-window"></a>Приобретите токен с всплывающее окно
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Следующий код сочетает в себе ранее описанный шаблон с методами всплывающих интерфейсов:
 
@@ -76,20 +76,40 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 Можно указать области для AIS `protectedResourceMap` в опции конфигурации. `MsalInterceptor`будет запрашивать эти области при автоматическом приобретении токенов.
 
 ```javascript
-//In app.module.ts
+// app.module.ts
 @NgModule({
-  imports: [ MsalModule.forRoot({
-                clientID: 'your_app_id',
-                protectedResourceMap: {"https://graph.microsoft.com/v1.0/me", ["user.read", "mail.send"]}
-            })]
-         })
-
-providers: [ ProductService, {
-        provide: HTTP_INTERCEPTORS,
-        useClass: MsalInterceptor,
-        multi: true
+  declarations: [
+    // ...
+  ],
+  imports: [
+    // ...
+    MsalModule.forRoot({
+      auth: {
+        clientId: 'Enter_the_Application_Id_Here',
+      }
+    },
+    {
+      popUp: !isIE,
+      consentScopes: [
+        'user.read',
+        'openid',
+        'profile',
+      ],
+      protectedResourceMap: [
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
+      ]
+    })
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MsalInterceptor,
+      multi: true
     }
-   ],
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
 Для успеха и неудачи приобретения бесшумного токена, MSAL Angular предоставляет обратные вызовы, на которые вы можете подписаться. Также важно помнить, чтобы отписаться.
@@ -103,7 +123,7 @@ providers: [ ProductService, {
 
 ngOnDestroy() {
    this.broadcastService.getMSALSubject().next(1);
-   if(this.subscription) {
+   if (this.subscription) {
      this.subscription.unsubscribe();
    }
  }
@@ -115,7 +135,7 @@ ngOnDestroy() {
 
 ## <a name="acquire-a-token-with-a-redirect"></a>Приобретение токена с перенаправлением
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Следующий шаблон описан ранее, но показан с помощью метода перенаправления для приобретения токенов в интерактивном режиме. Вам нужно будет зарегистрировать перенаправление обратного вызова, как упоминалось ранее.
 
@@ -149,16 +169,16 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 
 - Включите дополнительные требования в токены для приложения.
 - изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
-- добавлять пользовательские утверждения для приложения и обращаться к ним. 
+- добавлять пользовательские утверждения для приложения и обращаться к ним.
 
 Чтобы запросить `IdToken`дополнительные претензии в, вы `claimsRequest` можете отправить `AuthenticationParameters.ts` строку претензий объекта в поле класса.
 
 ```javascript
-"optionalClaims":  
+"optionalClaims":
    {
       "idToken": [
             {
-                  "name": "auth_time", 
+                  "name": "auth_time",
                   "essential": true
              }
       ],
@@ -179,7 +199,7 @@ myMSALObj.acquireTokenPopup(request);
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-spa-call-api.md)

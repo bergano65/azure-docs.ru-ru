@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
-ms.openlocfilehash: 357075caaf91769026deb839e038e5d42fb63a38
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 60f85a30815bc1bace409b50af6332bb6622d7ca
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80054685"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80477986"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочим пространством аналитики журналов с помощью шаблонов управления ресурсами Azure
 
@@ -48,6 +48,9 @@ ms.locfileid: "80054685"
 
 Следующий пример создает рабочее пространство с помощью шаблона из локальной машины. Шаблон JSON настроен только для того, чтобы требовать только имя и местоположение нового рабочего пространства. Он использует значения, указанные для других параметров рабочей области, таких как [режим управления доступом,](design-logs-deployment.md#access-control-mode)уровень ценообразования, сохранение и уровень резервирования емкости.
 
+> [!WARNING]
+> Следующий шаблон создает рабочее пространство Log Analytics и настраивает сбор данных. Это может изменить настройки выставления счетов. Просмотрите [управление использованием и затратами с помощью журналов Azure Monitor,](manage-cost-storage.md) чтобы понять выставление счетов за данные, собранные в рабочей области Log Analytics, прежде чем применять их в среде Azure.
+
 Для резервирования емкости вы определяете выбранное резервирование емкости `CapacityReservation` для проема данных, указав SKU и значение ГБ для свойства. `capacityReservationLevel` В следующем списке подробно описаны поддерживаемые значения и поведение при его настройке.
 
 - После установки лимита бронирования вы не можете перейти на другой SKU в течение 31 дня.
@@ -75,7 +78,7 @@ ms.locfileid: "80054685"
               "description": "Specifies the name of the workspace."
             }
         },
-      "pricingTier": {
+      "sku": {
         "type": "string",
         "allowedValues": [
           "pergb2018",
@@ -131,7 +134,7 @@ ms.locfileid: "80054685"
             "location": "[parameters('location')]",
             "properties": {
                 "sku": {
-          "name": "[parameters('pricingTier')]"
+                    "name": "[parameters('sku')]"
                 },
                 "retentionInDays": 120,
                 "features": {
@@ -145,15 +148,15 @@ ms.locfileid: "80054685"
     }
     ```
 
-> (Информация) для настроек резервирования емкости, используйте эти свойства под "sku":
+   >[!NOTE]
+   >Для настроек резервирования емкости используйте эти свойства под "sku":
+   >* "имя": "Резервирование потенциала",
+   >* "Уровень резервирования": 100
 
->   "имя": "Резервирование потенциала",
+2. Отредактируйте шаблон с учетом ваших требований. Рассмотрите возможность создания [файла параметров ресурсного менеджера](../../azure-resource-manager/templates/parameter-files.md) вместо передачи параметров в качестве входиных значений. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 
->   "Уровень резервирования": 100
-
-
-2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
+
 4. Теперь вы можете развернуть этот шаблон. Для создания рабочего пространства используется либо PowerShell, либо командная строка, указывая имя и местоположение рабочего пространства как часть команды. Имя рабочего пространства должно быть глобально уникальным во всех подписках Azure.
 
    * Для PowerShell используйте следующие команды из папки с шаблоном.
@@ -176,7 +179,7 @@ ms.locfileid: "80054685"
 Этот пример шаблона иллюстрирует следующие задачи.
 
 1. Добавление решений в рабочую область
-2. Создание сохраненных поисков. Чтобы обеспечить случайное переопределение сохраненных поисков, свойство eTag должно быть добавлено в ресурс "сохраненные поиски" для переопределения и поддержания идемокии сохраненных поисков.
+2. Создание сохраненных поисков. Чтобы развертывание не переопределить сохраненные поиски случайно, свойство eTag должно быть добавлено в ресурс "Сохраненные поиски" для переопределения и поддержания идемокии сохраненных поисков.
 3. Создание группы компьютеров
 4. Включение сбора журналов IIS с компьютеров, на которых установлен агент Windows
 5. Сбор счетчиков производительности логического диска с компьютеров под управлением Linux ("Процент использования индексных дескрипторов"; "Свободно мегабайт"; "Процент используемого места"; "Количество обращений к диску (в секунду)"; "Количество обращений чтения или записи (в секунду))"
@@ -197,7 +200,7 @@ ms.locfileid: "80054685"
         "description": "Workspace name"
       }
     },
-    "pricingTier": {
+    "sku": {
       "type": "string",
       "allowedValues": [
         "PerGB2018",
@@ -306,7 +309,7 @@ ms.locfileid: "80054685"
           "immediatePurgeDataOn30Days": "[parameters('immediatePurgeDataOn30Days')]"
         },
         "sku": {
-          "name": "[parameters('pricingTier')]"
+          "name": "[parameters('sku')]"
         }
       },
       "resources": [
@@ -605,7 +608,7 @@ ms.locfileid: "80054685"
       "type": "string",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').customerId]"
     },
-    "pricingTier": {
+    "sku": {
       "type": "string",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').sku.name]"
     },
@@ -656,7 +659,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
 

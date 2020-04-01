@@ -11,49 +11,27 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/17/2019
+ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: b9021784216f02fb117f6e63e150b37b07755912
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 396c37d4c8de6a890102e435c5ec6cc70b598638
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80239848"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80421019"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-using-basic-load-balancer---cli-preview"></a>Развертывание приложения с двойным стеком IPv6 с помощью Basic Load Balancer - CLI (Preview)
+# <a name="deploy-an-ipv6-dual-stack-application-using-basic-load-balancer---cli"></a>Развертывание приложения с двойным стеком IPv6 с помощью Basic Load Balancer - CLI
 
-В этой статье показано, как развернуть двойной стек (IPv4 - IPv6) приложение с Basic Load Balancer с помощью Azure CLI, который включает в себя двойной стек виртуальной сети с двойным стеком подсети, балансом basic Load balancer с двойной (IPv4 - IPv6) передними конфигурациями, VMs с NICs которые имеют двойную конфигурацию IP, правила двойной группы безопасности сети и двойные общедоступные IP-адреса.
+В этой статье показано, как развернуть двойной стек (IPv4 - IPv6) приложение с Basic Load Balancer с помощью Azure CLI, который включает в себя двойной стек виртуальной сети с двойным стеком подсети, балансер basic Load balancer с двойной (IPv4 - IPv6) передними конфигурациями, VMs с NICs, которые имеют двойную конфигурацию IP-адреса, двойные правила группы безопасности сети.
 
 Чтобы развернуть двойное приложение стек (IPV4 - IPv6) с помощью Standard Load Balancer, [см. Развертывание приложения iPv6 с двойным балансом с помощью Стандартного баланса нагрузки с помощью Azure CLI.](virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli.md)
 
-> [!Important]
-> Двойной стек IPv6 для виртуальной сети Azure в настоящее время находится в открытом доступе. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вместо этого вы решили установить и использовать Azure CLI локально, этот быстрый запуск требует от вас использования версии Azure CLI 2.0.49 или позже. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
-
-## <a name="prerequisites"></a>Предварительные требования
-Чтобы использовать функцию виртуальной сети Azv6 для Azure, необходимо настроить подписку с помощью Azure CLI следующим образом:
-
-```azurecli
-az feature register --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
-az feature register --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
-```
-Регистрация функции занимает до 30 минут. Проверить свой регистрационный статус можно, запустив следующую команду Azure CLI:
-
-```azurecli
-az feature show --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
-az feature show --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
-```
-
-После регистрации выполните следующую команду:
-
-```azurecli
-az provider register --namespace Microsoft.Network
-```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -387,8 +365,6 @@ az vm create \
 
   ![Виртуальная сеть IPv6 с двойным стеком в Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-vnet.png)
 
-> [!NOTE]
-> Виртуальная сеть IPv6 для Azure доступна на портале Azure только для этого предварительного просмотра.
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -399,6 +375,6 @@ az vm create \
  az group delete --name DsResourceGroup01
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы создали балансер Basic Load balancer с двойной конфигурацией IP-адреса (IPv4 и IPv6). Вы также создали два виртуальных машины, которые включали NICs с двойными конфигурациями IP (IPV4 и IPv6), которые были добавлены в пул задней части баланса нагрузки. Подробнее о поддержке IPv6 в виртуальных сетях Azure читайте в пример [IPv6 для виртуальной сети Azure?](ipv6-overview.md)

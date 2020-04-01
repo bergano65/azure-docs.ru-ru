@@ -10,20 +10,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/15/2019
+ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 76d1ba2717ac3c8ac8e86687ef1754a8790f3e4d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9a0dd56842174d89688c862397c373326ef50d1f
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72595088"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80420542"
 ---
 # <a name="reserve-public-ipv6-address-prefix"></a>Резервная публичная приставка адреса IPv6
 IPv6 для виртуальной сети Azure (VNet) позволяет размещать приложения в Azure с подключением IPv6 и IPv4 как в виртуальной сети, так и в Интернете. В дополнение к резервированию отдельных адресов IPv6 можно зарезервировать смежные диапазоны адресов Azure IPv6 (известных как IP Prefix) для использования. В этой статье описывается, как создавать общедоступные IP-адреса и адреса IPv6 с помощью Azure PowerShell и CLI.
 
-> [!Important]
-> IPv6 для виртуальной сети Azure в настоящее время находится в открытом доступе. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="create-a-single-reserved-ipv6-public-ip"></a>Создание единого зарезервированного IP-адреса IPv6
 
@@ -117,6 +115,6 @@ az network public-ip create \
 --public-ip-prefix  IPv6PrefixWestUS
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте больше о [приставке адреса IPv6.](ipv6-public-ip-address-prefix.md)
 - Узнайте больше об [адресах IPv6](ipv6-overview.md).

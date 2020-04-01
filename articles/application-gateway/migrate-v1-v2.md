@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 11/14/2019
+ms.date: 03/31/2020
 ms.author: victorh
-ms.openlocfilehash: 9909c46015fffb3bea3eef094599312e28b935c5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 96f3825288846e86771ef3907eb4da4e58630df3
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77046192"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475170"
 ---
 # <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Перенести Azure Приложение шлюз и веб-приложений брандмауэра от v1 до v2
 
@@ -40,6 +40,7 @@ ms.locfileid: "77046192"
 * Если для шлюза V1 включен режим FIPS, он не будет перенесен на новый шлюз v2. Режим FIPS не поддерживается в v2.
 * v2 не поддерживает IPv6, поэтому шлюзы v1 с включенными IPv6 не мигрируют. Если вы запустите сценарий, он может не завершить.
 * Если шлюз v1 имеет только частный IP-адрес, скрипт создает общедоступный IP-адрес и частный IP-адрес для нового шлюза v2. v2 шлюзы в настоящее время не поддерживают только частные IP-адреса.
+* Заголовки с именами, содержащими что-либо, кроме букв, цифр, дефисов и подчеркнуто, не передаются в ваше приложение. Это относится только к заголовку имен, а не значения заголовка. Это нарушение изменения от v1.
 
 ## <a name="download-the-script"></a>Скачать сценарий
 
@@ -197,6 +198,6 @@ ms.locfileid: "77046192"
   
 Вы можете отправить appgwmigrationsup@microsoft.comэлектронное письмо, открыть кейс поддержки с помощью поддержки Azure или сделать и то, и другое.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Узнайте больше о приложении шлюз v2](application-gateway-autoscaling-zone-redundant.md)

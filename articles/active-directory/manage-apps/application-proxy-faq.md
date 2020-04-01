@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: mimart
 ms.reviewer: japere
-ms.openlocfilehash: 8bb77a217546f1abe2c28925e32464b8d61702b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: HT
+ms.openlocfilehash: 31587777ba22dd8b4cebf81f0ff98979bb30fade
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79481285"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80410715"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Прокси-сервер приложения Active Directory (Azure AD) часто задавал вопросы
 
@@ -113,7 +113,7 @@ ms.locfileid: "79481285"
 
 Обратитесь к [публикации удаленного рабочего стола с прокси-приложением Azure AD.](application-proxy-integrate-with-remote-desktop-services.md)
 
-### <a name="can-i-use-kerberos-constrained-delegation-in-the-remote-desktop-gateway-publishing-scenario"></a>Могу ли я использовать ограниченную делегацию Kerberos в сценарии публикации удаленного рабочего стола?
+### <a name="can-i-use-kerberos-constrained-delegation-single-sign-on---windows-integrated-authentication-in-the-remote-desktop-gateway-publishing-scenario"></a>Могу ли я использовать ограниченную делегацию Kerberos (Single Sign-On - Интегрированная аутентификация Windows) в сценарии публикации удаленного рабочего стола?
 
 Нет, этот сценарий не поддерживается.  
 
@@ -121,7 +121,7 @@ ms.locfileid: "79481285"
 
 Да, это ожидаемо. Сценарий предварительной проверки требует управления ActiveX, который не поддерживается в сторонних браузерах.
 
-### <a name="is-the-remote-desktop-web-client-supported"></a>Поддерживается ли веб-клиент удаленного рабочего стола?
+### <a name="is-the-remote-desktop-web-client-html5-supported"></a>Поддерживается ли веб-клиент удаленного рабочего стола (HTML5)?
 
 Нет, этот сценарий в настоящее время не поддерживается. Следите за обновлениями на этом форуме [UserVoice.](https://aka.ms/aadapuservoice)
 
@@ -135,6 +135,10 @@ ms.locfileid: "79481285"
 
 Обратитесь к [включить удаленный доступ к SharePoint с Azure AD приложение прокси](application-proxy-integrate-with-sharepoint-server.md).
 
+### <a name="can-i-use-the-sharepoint-mobile-app-ios-android-to-access-a-published-sharepoint-server"></a>Могу ли я использовать мобильное приложение SharePoint (iOS/ Android) для доступа к опубликованному серверу SharePoint?
+
+[Мобильное приложение SharePoint](https://docs.microsoft.com/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) не поддерживает предпроверку подлинности Active Directory Azure.
+
 ## <a name="active-directory-federation-services-ad-fs-publishing"></a>Публикация Active Directory Federation Services (AD FS) 
 
 ### <a name="can-i-use-azure-ad-application-proxy-as-ad-fs-proxy-like-web-application-proxy"></a>Могу ли я использовать прокси-сервер Azure AD Application в качестве прокси-сервера AD FS (например, веб-прокси-сервера)?
@@ -147,7 +151,7 @@ ms.locfileid: "79481285"
 
 В настоящее время поддержка протокола WebSocket все еще находится в открытом доступе и может не работать для других приложений. Некоторые клиенты имели смешанный успех, используя протокол WebSocket с другими приложениями. Если вы тестируете такие сценарии, мы хотели бы услышать ваши результаты. Пожалуйста, пришлите aadapfeedback@microsoft.comнам свои отзывы по адресу .
 
-Функции (Eventlogs, PowerShell и удаленные настольные службы) в Центре управления Windows (WAC) или удаленном веб-клиенте рабочего стола не работают через Azure AD Application Proxy в настоящее время.
+Функции (Eventlogs, PowerShell и Remote Desktop Services) в Центре управления Windows (WAC) или удаленном веб-клиенте рабочего стола (HTML5) в настоящее время не работают через прокси-сервер Azure AD Application.
 
 ## <a name="link-translation"></a>Перевод ссылки
 

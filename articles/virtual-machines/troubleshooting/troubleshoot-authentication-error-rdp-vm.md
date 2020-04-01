@@ -1,6 +1,6 @@
 ---
 title: Устранение ошибок аутентификации при подключении к виртуальной машине Azure по протоколу RDP | Документация Майкрософт
-description: ''
+description: Узнайте, как устранить ошибки проверки подлинности, возникающие при использовании протокола удаленного рабочего стола (RDP) для подключения к виртуальному компьютеру Azure (VM).
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
-ms.openlocfilehash: b7a561907e3f1968eb9adead3606822d7a1321c8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 03356c0b4a93f4befdbc529523e58642137a8887
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79266979"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80420816"
 ---
 # <a name="troubleshoot-authentication-errors-when-you-use-rdp-to-connect-to-azure-vm"></a>Устранение ошибок аутентификации при подключении к виртуальной машине Azure по протоколу RDP
 
@@ -274,7 +274,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP
 
 Чтобы изменения реестра вступили в силу, перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Метод SetEncryptionLevel класса Win32_TSGeneralSetting](https://docs.microsoft.com/windows/desktop/TermServ/win32-tsgeneralsetting-setencryptionlevel)
 

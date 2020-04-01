@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/27/2020
+ms.date: 03/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: aa2e2fb4eb6e269f45494db6d87eef40182971a2
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 37d1c181c18f69c040040da2be138eaad3a61693
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80346925"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80396853"
 ---
 # <a name="secure-your-restful-services"></a>Обезоверьтейте свои услуги RESTful 
 
@@ -53,15 +53,15 @@ ms.locfileid: "80346925"
     Префикс *B2C_1A_* может быть добавлен автоматически.
 1. В **secret** box введите имя пользователя REST API.
 1. Для параметра **Использование ключа** задайте значение **Шифрование**.
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 1. Выберите **ключи политики** еще раз.
-1. Нажмите кнопку **Добавить**.
+1. Выберите **Добавить**.
 1. В пункте **Параметры** выберите **Manual** (Вручную).
 1. Для **имени**, типа **RestApiPassword**.
     Префикс *B2C_1A_* может быть добавлен автоматически.
 1. В **secret** box введите пароль REST API.
 1. Для параметра **Использование ключа** задайте значение **Шифрование**.
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ### <a name="configure-your-rest-api-technical-profile-to-use-http-basic-authentication"></a>Нанастройка технического профиля REST API для использования базовой аутентификации HTTP
 
@@ -142,7 +142,7 @@ ms.locfileid: "80346925"
     Префикс *B2C_1A_* добавляется автоматически.
 1. В поле **Отправка файлов** выберите PFX-файл сертификата с закрытым ключом.
 1. В поле **Пароль** введите пароль сертификата.
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ### <a name="configure-your-rest-api-technical-profile-to-use-client-certificate-authentication"></a>Нанастройка технического профиля REST API для использования аутентификации сертификата клиента
 
@@ -186,6 +186,8 @@ ms.locfileid: "80346925"
 
 ## <a name="oauth2-bearer-authentication"></a>Аутентификация предъявителя OAuth2 
 
+[!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
+
 Проверка подлинности маркеров предъявителя определена в [рамочной системе авторизации OAuth2.0: Использование токенов для предъявителя (RFC 6750).](https://www.rfc-editor.org/rfc/rfc6750.txt) В аутенке маркера предъявителя Azure AD B2C отправляет запрос HTTP с токеном в заголовке авторизации.
 
 ```http
@@ -196,6 +198,7 @@ Authorization: Bearer <token>
 
 - **Токен носителя**. Чтобы иметь возможность отправить токен предъявителя в техническом профиле Restful, ваша политика должна сначала приобрести токен носителя, а затем использовать его в техническом профиле RESTful.  
 - **Статический маркер носителя**. Используйте этот подход, когда ваш REST API выдает токен долгосрочного доступа. Чтобы использовать маркер статического носителя, создайте ключ политики и сделайте ссылку из технического профиля RESTful на ваш ключ политики. 
+
 
 ## <a name="using-oauth2-bearer"></a>Использование OAuth2 Носителя  
 
@@ -312,7 +315,7 @@ Authorization: Bearer <token>
 1. Введите **имя** ключа политики. Например, `RestApiBearerToken`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
 1. В поле **Секрет** введите ранее записанный секрет клиента.
 1. Для параметра **Использование ключа** выберите `Encryption`.
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ### <a name="configure-your-rest-api-technical-profile-to-use-the-bearer-token-policy-key"></a>Налаживайте технический профиль REST API, чтобы использовать ключ политики маркера предъявителя
 
@@ -354,6 +357,6 @@ Authorization: Bearer <token>
 </ClaimsProvider>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Подробнее о элементе [технического профиля Restful](restful-technical-profile.md) читайте в справке IEF. 

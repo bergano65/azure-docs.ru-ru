@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: 7d1a77800093ae01bc4eb1e1269d1e9a60f9ce26
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8129239f152f6b359b930e56466052da12ef4d42
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77616656"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437033"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
 
@@ -31,7 +31,7 @@ ms.locfileid: "77616656"
 
 ## <a name="jdbc-connection-string"></a>Строка подключения JDBC
 
-Соединения JDBC с кластером HDInsight на Azure производятся через порт 443, и трафик обеспечивается с помощью SSL. Открытый шлюз, за которым находятся кластеры, перенаправляет трафик к порту, который фактически прослушивается HiveServer2. В следующей строке подключения показан формат для HDInsight:
+Соединения JDBC с кластером HDInsight на Azure производятся через порт 443, и трафик обеспечивается с помощью TLS/SSL. Открытый шлюз, за которым находятся кластеры, перенаправляет трафик к порту, который фактически прослушивается HiveServer2. В следующей строке подключения показан формат для HDInsight:
 
     jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode=http;ssl=true;httpPath=/hive2
 
@@ -49,7 +49,7 @@ ms.locfileid: "77616656"
 
 Для подключения к кластеру из некоторых мест за пределами виртуальной сети Azure можно использовать **только порт 443.** HDInsight — это управляемая служба, что означает, что все соединения с кластером управляются через безопасный шлюз. Вы не можете подключиться к HiveServer 2 непосредственно в портах 10001 или 10000, потому что эти порты не подвержены воздействию снаружи. 
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 При установке подключения необходимо указать имя администратора кластера HDInsight и пароль для проверки подлинности в шлюзе кластера. При подключении клиентов JDBC, например SQuirreL SQL, необходимо ввести имя и пароль администратора в параметрах клиента.
 
@@ -85,7 +85,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
     |Свойство | Значение |
     |---|---|
-    |name|Hive|
+    |Имя|Hive|
     |Пример URL-адреса|jdbc:hive2://localhost:443/default;transportMode-http;ssl'true;httpPath/hive2|
     |Дополнительный путь класса|Используйте кнопку **Добавить,** чтобы добавить все файлы банки загружены ранее.|
     |Имя класса|org.apache.hive.jdbc.HiveDriver|
@@ -102,7 +102,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
     |Свойство |Значение |
     |---|---|
-    |name|Hive в HDInsight|
+    |Имя|Hive в HDInsight|
     |Драйвер|Используйте падение вниз, чтобы выбрать драйвер **Hive.**|
     |URL-адрес|jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode-http;ssl'true;httpPath/hive2. Замените **CLUSTERNAME** именем кластера HDInsight.|
     |Имя пользователя|Имя пользователя для учетной записи входа кластера HDInsight. По умолчанию является **админ.**|
@@ -160,7 +160,7 @@ at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 **Разрешение**: Избегайте использования драйвера JDBC/ODBC для загрузки огромных объемов данных. Копирование данных непосредственно из хранилища капли вместо.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как использовать JDBC для работы с Hive, используйте следующие ссылки для изучения других способов работы с Azure HDInsight.
 

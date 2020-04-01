@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 03/25/2020
+ms.date: 03/31/2020
 ms.author: victorh
-ms.openlocfilehash: 60beccc2f2679a18903b74b84f48afebfb3b69da
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 45276884d59ac8d1d876e2225ac02bb51c3f74fc
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80257757"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437728"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -209,3 +209,7 @@ $fw.ThreatIntelWhitelist.IpAddress = @("ip1", "ip2", …)
 
 Set-AzFirewall -AzureFirewall $fw
 ```
+
+## <a name="why-can-a-tcp-ping-and-similar-tools-successfully-connect-to-a-target-fqdn-even-when-no-rule-on-azure-firewall-allows-that-traffic"></a>Почему TCP ping и подобные инструменты могут успешно подключиться к целевому F-DN даже в том случае, если ни одно правило о Azure Firewall не позволяет этот трафик?
+
+TCP пинг на самом деле не подключение к целевой F'DN. Это происходит потому, что прозрачный прокси-сервер Azure Firewall слушается в порту 80/443 для исходящего трафика. TCP ping устанавливает соединение с брандмауэром, который затем отбрасывает пакет и регистрирует соединение. Такое поведение не оказывает никакого влияния на безопасность. Однако, чтобы избежать путаницы, мы исследуем потенциальные изменения в этом поведении. 

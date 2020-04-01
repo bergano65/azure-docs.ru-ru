@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: kumud
-ms.openlocfilehash: 176cd9b0bf72a123bc644ebc27ee0e091aa54e97
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9de94dab7000cee90f4448aa6d81196d3865e021
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79245191"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474410"
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Типы IP-адресов и методы распределения в Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "79245191"
 * Если необходимо обновить правила брандмауэра для обмена данными с ресурсами Azure.
 * разрешение DNS-имени, в рамках которого изменение IP-адреса влечет за собой необходимость обновить записи A;
 * ваши ресурсы Azure взаимодействуют с другими веб-приложениями или службами, которые используют модель безопасности, основанную на IP-адресах;
-* вы используете SSL-сертификаты, связанные с IP-адресом.
+* Вы используете сертификаты TLS/SSL, связанные с IP-адресом.
 
 > [!NOTE]
 > Azure выделяет общедоступные IP-адреса из диапазона, уникального для каждого региона в каждом облаке Azure. Вы можете загрузить список диапазонов (префиксов) для облаков Azure: [общедоступное](https://www.microsoft.com/download/details.aspx?id=56519), облако [правительства США](https://www.microsoft.com/download/details.aspx?id=57063), облако для [Китая](https://www.microsoft.com/download/details.aspx?id=57062) и [Германии](https://www.microsoft.com/download/details.aspx?id=57064).
@@ -121,7 +121,7 @@ ms.locfileid: "79245191"
 
 ### <a name="internet-facing-load-balancers"></a>Балансировщики нагрузки, доступные в Интернете
 
-Чтобы связать общедоступный IP-адрес, созданный с любым [номером SKU](#sku), с [Azure Load Balancer](../load-balancer/load-balancer-overview.md), назначьте этот адрес для **интерфейсной** конфигурации подсистемы балансировки нагрузки. Общедоступный IP-адрес будет выполнять функцию виртуального IP-адреса с балансировкой нагрузки. Конфигурации внешнего интерфейса балансировщика можно назначить динамический или статический общедоступный IP-адрес. Кроме того, подобной конфигурации можно назначить несколько общедоступных IP-адресов. Это позволит вам создавать сценарии с [несколькими виртуальными IP-адресами](../load-balancer/load-balancer-multivip-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (например, среду с несколькими клиентами и веб-сайтами на основе SSL). См. дополнительные сведения см. о [подсистеме балансировки нагрузки Azure с номером SKU "Стандартный"](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Чтобы связать общедоступный IP-адрес, созданный с любым [номером SKU](#sku), с [Azure Load Balancer](../load-balancer/load-balancer-overview.md), назначьте этот адрес для **интерфейсной** конфигурации подсистемы балансировки нагрузки. Общедоступный IP-адрес будет выполнять функцию виртуального IP-адреса с балансировкой нагрузки. Конфигурации внешнего интерфейса балансировщика можно назначить динамический или статический общедоступный IP-адрес. Вы также можете назначить несколько общедоступных IP-адресов фронт-энду балансиватель нагрузки, который позволяет [многофункциональные](../load-balancer/load-balancer-multivip-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) сценарии, такие как мультитенантная среда с веб-сайтами на основе TLS. См. дополнительные сведения см. о [подсистеме балансировки нагрузки Azure с номером SKU "Стандартный"](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ### <a name="vpn-gateways"></a>VPN-шлюзы
 
@@ -138,7 +138,7 @@ ms.locfileid: "79245191"
 | --- | --- | --- | --- |
 | Виртуальная машина |сетевому интерфейсу |Да |Да |
 | Подсистема балансировки нагрузки, доступная в Интернете |Интерфейсная конфигурация |Да |Да |
-| VPN-шлюз |Конфигурация IP шлюза |Да |нет |
+| VPN-шлюз |Конфигурация IP шлюза |Да |Нет |
 | Шлюз приложений |Интерфейсная конфигурация |Да (только конфигурация V1) |Да (только конфигурация V2) |
 
 ## <a name="private-ip-addresses"></a>Частные IP-адреса
@@ -190,6 +190,6 @@ ms.locfileid: "79245191"
 ## <a name="pricing"></a>Цены
 За общедоступные IP-адреса взимается номинальная плата. Дополнительные сведения о ценах на IP-адреса в Azure см. на [соответствующей](https://azure.microsoft.com/pricing/details/ip-addresses) странице.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Развертывание виртуальной машины со статическим общедоступным IP-адресом с использованием портала Azure](virtual-network-deploy-static-pip-arm-portal.md)
 * [Развертывание виртуальной машины со статическим частным IP-адресом с помощью портала Azure](virtual-networks-static-private-ip-arm-pportal.md)

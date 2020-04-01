@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 02/10/2020
-ms.openlocfilehash: c78c1d3ce6dae874ace2abfa8b2bbec6d489538a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4025c620aea49dfb26ab203630c121d29d88d9d7
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79536485"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80474531"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов машинного обучения Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "79536485"
  
 Если вы используете панды, нет никаких причин, чтобы иметь более 1 vCPU, поскольку это все, что он будет использовать. Вы можете легко параллелизировать с многими vCPUs на одном Экземпляре машинного обучения Azure compute/node через Modin и Dask/Ray, и масштабировать сяврань к большому кластеру, если это необходимо, просто изменяя `import pandas as pd` к `import modin.pandas as pd`. 
  
-Если вы не можете получить достаточно большой виртуальный для данных, у вас есть два варианта: использовать фреймворк, как Spark или Dask для выполнения обработки данных "из памяти", т.е. dataframe загружается в перевалоперативной части по разделу и обрабатывается, с конечным результатом собрались в конце. Если это слишком медленно, Spark или Dask позволяют масштабироваться в кластер, который все еще может быть использован в интерактивном режиме. 
+Если вы не можете получить достаточно большой виртуальный для данных, у вас есть два варианта: использовать фреймворк, как Spark или Dask для выполнения обработки данных "из памяти", т.е. dataframe загружается в перевалу раздела по разделу и обрабатывается, с конечным результатом собираются в конце. Если это слишком медленно, Spark или Dask позволяют масштабироваться в кластер, который все еще может быть использован в интерактивном режиме. 
 
 ## <a name="dataset-types"></a>Типы наборов данных
 
@@ -108,6 +108,7 @@ weather_ds = Dataset.Tabular.from_delimited_files(path=datastore_paths)
 > Если ваше хранилище находится за виртуальной сетью или брандмауэром, поддерживается только создание набора данных через SDK. Чтобы создать набор данных, обязательно включите параметры `validate=False` и `infer_column_types=False` в свой `from_delimited_files()` метод. Это обходит начальную проверку проверки и гарантирует, что вы можете создать набор данных из этих безопасных файлов. 
 
 ```Python
+from azureml.core import Dataset
 from azureml.data.dataset_factory import DataType
 
 # create a TabularDataset from a delimited file behind a public web url and convert column "Survived" to boolean
@@ -118,7 +119,7 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path, set_column_type
 titanic_ds.take(3).to_pandas_dataframe()
 ```
 
-| |ПассажирИд|Survived|Pclass|name|Секс|Возраст|СибСп|Парч|Билет|Плата|Кабина|Начал
+| |ПассажирИд|Survived|Pclass|Имя|Секс|Возраст|СибСп|Парч|Билет|Плата|Кабина|Начал
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|False|3|Браунд, мистер Оуэн Харрис|Мужской|22.0|1|0|A/5 21171|7.2500||S
 1|2|True|1|Cumings, миссис Джон Брэдли (Флоренция Бриггс Th...|Женский|38.0|1|0|PC 17599|71.2833|C85|C
@@ -260,7 +261,7 @@ diabetes_tabular = Diabetes.get_tabular_dataset()
 
 ![Выберите набор данных](./media/how-to-create-register-datasets/open-datasets-2.png)
 
-Выберите имя, под которым можно зарегистрировать набор данных, и дополнительно отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных о праздничных днях вы фильтруете период времени до одного года и код страны только в США. Выберите **Создать**.
+Выберите имя, под которым можно зарегистрировать набор данных, и дополнительно отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных о праздничных днях вы фильтруете период времени до одного года и код страны только в США. Нажмите кнопку **создания**.
 
 ![Установите парамы набора данных и создайте набор данных](./media/how-to-create-register-datasets/open-datasets-3.png)
 
@@ -303,7 +304,7 @@ titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
 df = titanic_ds.to_pandas_dataframe()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте, как тренироваться с наборами данных.](how-to-train-with-datasets.md)
 * Используйте автоматизированное машинное обучение для [обучения с TabularDatasets.](https://aka.ms/automl-dataset)

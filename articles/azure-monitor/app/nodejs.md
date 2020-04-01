@@ -3,12 +3,12 @@ title: Мониторинг служб Node.js с помощью Azure Applicati
 description: Используйте Application Insights для мониторинга производительности и диагностики проблем в службах Node.js.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 320ec62e642155002e42c59d4656f51673249eb1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: HT
+ms.openlocfilehash: 38336e3faf3764233dd94bffbfb24421e054496a
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77670021"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411586"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -16,7 +16,7 @@ ms.locfileid: "77670021"
 
 Для получения, хранения и анализа данных мониторинга включите пакет SDK в ваш код, а затем настройте соответствующий ресурс Application Insights в Azure. Пакет SDK отправляет данные в этот ресурс для дальнейшего анализа и исследования.
 
-Пакет SDK для Node.js может автоматически отслеживать входящие и исходящие HTTP-запросы, исключения и некоторые системные метрики. Начиная с версии 0.20, пакет SDK также может отслеживать некоторые распространенные пакеты сторонних поставщиков, например MongoDB, MySQL и Redis. Все события, связанные с входящим HTTP-запросом, коррелируют для быстрого устранения неполадок.
+Пакет SDK для Node.js может автоматически отслеживать входящие и исходящие HTTP-запросы, исключения и некоторые системные метрики. Начиная с версии 0.20, SDK также может контролировать некоторые распространенные [сторонние пакеты,](https://github.com/microsoft/node-diagnostic-channel/tree/master/src/diagnostic-channel-publishers#currently-supported-modules)такие как MongoDB, MyS'L и Redis. Все события, связанные с входящим HTTP-запросом, коррелируют для быстрого устранения неполадок.
 
 Вы можете инструментировать вручную и отслеживать дополнительные аспекты приложения и системы с помощью API TelemetryClient. С дополнительными сведениями о API TelemetryClient можно ознакомиться далее в этой статье.
 
@@ -191,7 +191,7 @@ server.on("listening", () => {
 });
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Навигация и панели мониторинга на портале Application Insights](../../azure-monitor/app/overview-dashboard.md)
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)

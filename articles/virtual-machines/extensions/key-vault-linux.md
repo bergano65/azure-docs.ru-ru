@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: a4fb3ad2ce6225528910bbda9d98a38001242710
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: add2d515e4f8e8c56a98a7292e137e601332d10c
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79298994"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80410864"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -31,6 +31,7 @@ ms.locfileid: "79298994"
 ### <a name="supported-certificate-content-types"></a>Поддерживаемые типы содержимого сертификата
 
 - PKCS #12
+- Pem
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -71,7 +72,7 @@ ms.locfileid: "79298994"
 
 ### <a name="property-values"></a>Значения свойств
 
-| name | Значение и пример | Тип данных |
+| Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2019-07-01 | Дата |
 | publisher | Microsoft.Azure.KeyVault | строка |
@@ -198,7 +199,7 @@ CLI Azure можно использовать для развертывания 
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертываний расширения можно получить на портале Azure, а также с помощью Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure PowerShell.
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: enewman
-ms.openlocfilehash: dfb133f9aa3dd9b76f8b4ea4c6188cfaf9a67b75
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 371c2186d44469a22b138255fb513761a9be4437
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77444117"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478218"
 ---
 # <a name="set-up-a-lab-to-teach-data-science-with-python-and-jupyter-notebooks"></a>Настройка лаборатории для обучения науке данных с Python и Jupyter ноутбуков
 
@@ -26,7 +26,7 @@ ms.locfileid: "77444117"
 
 ## <a name="lab-configuration"></a>Настройка лаборатории
 
-Чтобы настроить эту лабораторию, вам нужна подписка Azure и лабораторный учет, чтобы начать работу. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. Получив подписку Azure, можно создать новую учетную запись лаборатории в лабораторных службах Azure. Для получения дополнительной информации о [tutorial to setup a lab account](tutorial-setup-lab-account.md)создании новой учетной записи лаборатории, см.  Вы также можете использовать существующую учетную запись лаборатории.
+Чтобы настроить эту лабораторию, вам нужна подписка Azure и лабораторный учет, чтобы начать работу. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом. Получив подписку Azure, можно создать новую учетную запись лаборатории в лабораторных службах Azure. Для получения дополнительной информации о [tutorial to setup a lab account](tutorial-setup-lab-account.md)создании новой учетной записи лаборатории, см.  Вы также можете использовать существующую учетную запись лаборатории.
 
 ### <a name="lab-account-settings"></a>Настройки учетной записи лаборатории
 
@@ -34,10 +34,10 @@ ms.locfileid: "77444117"
 
 | Настройка учетной записи лаборатории | Instructions |
 | ------------------- | ------------ |
-| Изображение рынка | Включите [виртуальную машину Data Science - Изображение Windows 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) для использования в вашей лабораторной учетной записи. |
+| Изображение рынка | Включите [виртуальную машину Data Science - Изображение Windows 2019](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-win-2019) для использования в вашей лабораторной учетной записи. |
 
 >[!TIP]
->В этой статье основное внимание будет уделено настройке шаблонной машины, использующей операционную систему Windows Server.  Также можно настроить класс науки о данных с помощью ноутбуков Python и Jupyter с помощью [виртуальной машины Data Science для Linux (CentOS)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.linux-data-science-vm) или [виртуальной машины Data Science для Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.linux-data-science-vm-ubuntu) с azure Marketplace.
+>В этой статье основное внимание будет уделено настройке шаблонной машины, использующей операционную систему Windows Server.  Также можно настроить класс науки о данных с помощью ноутбуков Python и Jupyter с помощью изображений Data [Science Virtual Machine for Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.linux-data-science-vm-ubuntu) из Azure Marketplace.
 
 ### <a name="lab-settings"></a>Настройки лаборатории
 
@@ -50,7 +50,7 @@ ms.locfileid: "77444117"
 
 ## <a name="template-machine"></a>Шаблон наяпривная машина
 
-Виртуальная [машина Data Science - Windows 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) предоставляет необходимые рамки глубокого обучения и инструменты, необходимые для этого типа класса.  Изображение включает в себя ноутбуки Jupyter и визуальный код студии.  [Jupyter Notebooks](http://jupyter-notebook.readthedocs.io) — это веб-приложение, которое позволяет ученым по обработке данных принимать необработанные данные, запускать вычисления и видеть результаты в одной среде.  Для нашей машины шаблонов веб-приложение будет работать локально.  [Visual Studio Code](https://code.visualstudio.com/) — это IDE, который обеспечивает богатый интерактивный опыт при написании и тестировании ноутбука.  Для получения дополнительной информации, смотрите [Работа с Jupyter ноутбуки в визуальный код студии](https://code.visualstudio.com/docs/python/jupyter-support).
+Виртуальная [машина Data Science - Windows 2019](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-win-2019) предоставляет необходимые рамки глубокого обучения и инструменты, необходимые для этого типа класса.  Изображение включает в себя ноутбуки Jupyter и визуальный код студии.  [Jupyter Notebooks](http://jupyter-notebook.readthedocs.io) — это веб-приложение, которое позволяет ученым по обработке данных принимать необработанные данные, запускать вычисления и видеть результаты в одной среде.  Для нашей машины шаблонов веб-приложение будет работать локально.  [Visual Studio Code](https://code.visualstudio.com/) — это IDE, который обеспечивает богатый интерактивный опыт при написании и тестировании ноутбука.  Для получения дополнительной информации, смотрите [Работа с Jupyter ноутбуки в визуальный код студии](https://code.visualstudio.com/docs/python/jupyter-support).
 
 Оставшаяся задача настройки класса заключается в предоставлении локальных тетрадей.  Для инструкций по использованию образцов машинного обучения Azure узнайте, [как настроить среду с помощью ноутбуков Jupyter.](../../machine-learning/how-to-configure-environment.md#jupyter)  Вы также можете предоставить свои собственные ноутбуки на шаблоне машины.  Ноутбуки будут скопированы на все студенческие машины, когда шаблон будет опубликован.
 
@@ -68,7 +68,7 @@ ms.locfileid: "77444117"
 
 В этой статье мы прошли сью-то по шагам по созданию лаборатории для класса Jupyter Notebooks. Аналогичную настройку можно использовать для других классов машинного обучения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Следующие шаги являются общими для создания любой лаборатории.
 

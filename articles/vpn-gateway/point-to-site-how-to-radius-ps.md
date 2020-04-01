@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 25bc25d9ec12804cc20baa558dce67fb3f8269a1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cb9a02532c3651aca544ed946f40bdcff9e9be83
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77149212"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411770"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell
 
@@ -31,9 +31,9 @@ VPN-подключение "точка — сеть" устанавливает
 
 Для подключения типа "точка — сеть" не требуется VPN-устройство или общедоступный IP-адрес. P2S создает VPN соединение по сравнению с SSTP (Протокол безопасного туннелирования розетки), OpenVPN или IKEv2.
 
-* SSTP представляет собой VPN-туннель на основе SSL, который поддерживается только на клиентских платформах Windows. Этот туннель проходит через брандмауэры и является отличным вариантом для подключения к Azure из любого расположения. На стороне сервера поддерживается SSTP версии 1.0, 1.1 и 1.2. Какую версию использовать, решает клиент. Для Windows 8.1 и более поздних версий по умолчанию используется SSTP версии 1.2.
+* SSTP — это VPN-туннель на основе TLS, который поддерживается только на клиентских платформах Windows. Этот туннель проходит через брандмауэры и является отличным вариантом для подключения к Azure из любого расположения. На стороне сервера поддерживается SSTP версии 1.0, 1.1 и 1.2. Какую версию использовать, решает клиент. Для Windows 8.1 и более поздних версий по умолчанию используется SSTP версии 1.2.
 
-* OpenVPN® протокол, VPN протокол на основе SSL/TLS. Решение SSL VPN может проникать в брандмауэры, так как большинство брандмауэров открывают порт TCP 443, который использует SSL. OpenVPN можно использовать для подключения с Android, iOS (версии 11.0 и выше), Windows, Linux и Mac (версии OSX 10.13 и выше).
+* OpenVPN® протокол, VPN протокол на основе SSL/TLS. Решение TLS VPN может проникать в брандмауэры, так как большинство брандмауэров открывают порт TCP 443, который использует TLS. OpenVPN можно использовать для подключения с Android, iOS (версии 11.0 и выше), Windows, Linux и Mac (версии OSX 10.13 и выше).
 
 * IKEv2 VPN — решение VPN на основе стандартов IPsec. IKEv2 VPN можно использовать для подключения с устройств Mac (OSX версии 10.11 и выше).
 
@@ -268,12 +268,12 @@ New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 
 [!INCLUDE [Connect to a VM](../../includes/vpn-gateway-connect-vm-p2s-include.md)]
 
-## <a name="faq"></a><a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a><a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 Вопросы и ответы о подключении "точка — сеть", при котором выполняется аутентификация RADIUS
 
 [!INCLUDE [Point-to-Site RADIUS FAQ](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/). Дополнительные сведения о сетях и виртуальных машинах см. в статье [Azure и Linux: обзор сетей виртуальных машин](../virtual-machines/linux/azure-vm-network-overview.md).

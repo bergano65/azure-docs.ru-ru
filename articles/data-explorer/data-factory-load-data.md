@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: 860b1a579d9c8cee6c6e80ae4c4e7fdd7949d5c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8e17a004ff866f3915000fb72b6770757062cf83
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71300603"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80422917"
 ---
 # <a name="copy-data-to-azure-data-explorer-by-using-azure-data-factory"></a>Копирование данных в Explorer данных Azure с помощью Azure Data Factory 
 
@@ -29,11 +29,11 @@ Azure Data Factory — это полностью управляемая обла
 * **Высокая производительность:** Скорость загрузки данных составляет до 1 гигабайта в секунду (GBps) в Azure Data Explorer. Для получения дополнительной информации [см.](/azure/data-factory/copy-activity-performance)
 
 В этой статье используется инструмент копирования данных Data Factory для загрузки данных из службы простого хранения данных Amazon (S3) в Azure Data Explorer. Можно следить за аналогичным процессом копирования данных из других хранилики данных, таких как:
-* [Хранение Azure Blob](/azure/data-factory/connector-azure-blob-storage)
+* [Хранилище BLOB-объектов Azure](/azure/data-factory/connector-azure-blob-storage)
 * [База данных SQL Azure](/azure/data-factory/connector-azure-sql-database)
 * [Хранилище данных SQL Azure](/azure/data-factory/connector-azure-sql-data-warehouse)
 * [Google BigQuery](/azure/data-factory/connector-google-bigquery)
-* [Oracle](/azure/data-factory/connector-oracle)
+* [Oracle;](/azure/data-factory/connector-oracle)
 * [Файловая система](/azure/data-factory/connector-file-system)
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -59,10 +59,10 @@ Azure Data Factory — это полностью управляемая обла
    | **Название** | В коробке введите глобально уникальное имя для вашей фабрики данных. Если вы получили ошибку, *имя \"фабрики\" данных LoadADXDemo недоступно,* введите другое имя для фабрики данных. Для правил именования артефактов [Data Factory naming rules](/azure/data-factory/naming-rules)Data Factory см.|
    | **Подписка** | В списке выпадающих списков выберите подписку Azure, в которой можно создать фабрику данных. |
    | **Ресурсная группа** | Выберите **Создать новый,** а затем введите имя новой группы ресурсов. Если у вас уже есть группа ресурсов, выберите **Используйте существующий**. |
-   | **Версия** | В списке выпадающих вниз, выберите **V2**. |  
+   | **Версия** | В списке выпадающих вниз, выберите **V2**. |    
    | **Расположение** | В списке выпадающих данных выберите место для фабрики данных. В списке отображаются только поддерживаемые локации. Хранилища данных, используемые фабрикой данных, могут существовать в других местах или регионах. |
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. Чтобы контролировать процесс создания, выберите **Уведомления** на панели инструментов. После создания фабрики данных выберите ее.
    
@@ -78,7 +78,7 @@ Azure Data Factory — это полностью управляемая обла
 
 Вы можете загрузить данные в любом из следующих способов:
 
-* В пользовательском интерфейсе Azure Data Factory в левом стеле выберите значок **автора,** как показано в разделе «Создание фабрики [данных» «Создание фабрики данных с помощью пользовательского интерфейса Azure Data Factory.](/azure/data-factory/quickstart-create-data-factory-portal#create-a-data-factory)
+* В пользовательском интерфейсе Azure Data Factory в левом стеле выберите значок **автора.** Это показано в разделе "Создание фабрики данных" в разделе [Создание фабрики данных с помощью uI Azure Data Factory.](/azure/data-factory/quickstart-create-data-factory-portal#create-a-data-factory)
 * В инструменте копирования данных Azure Data Factory, как показано в [инструменте «Использование данных копирования» для копирования данных.](/azure/data-factory/quickstart-create-data-factory-copy-data-tool)
 
 ### <a name="copy-data-from-amazon-s3-source"></a>Копия данных с Amazon S3 (источник)
@@ -124,7 +124,7 @@ Azure Data Factory — это полностью управляемая обла
 
    ![Хранилище исходных данных создано соединением](media/data-factory-load-data/source-data-store-created-connection.png)
 
-1. В **панели ввода выберите файл или папку:**
+1. В **панели ввода выберите файл или папку** — сделайте следующие действия:
 
     а. Просмотрите файл или папку, которую вы хотите скопировать, а затем выберите его.
 
@@ -142,9 +142,12 @@ Azure Data Factory — это полностью управляемая обла
 
 Новая служба связанного с Azure Data Explorer создана для копирования данных в таблицу назначения Azure Data Explorer (sink), указанную в этом разделе.
 
+> [!NOTE]
+> Используйте [командную деятельность Azure Data Factory для выполнения команд управления Azure Data Explorer](data-factory-command-activity.md) и использования любых [глотней из команд запросов,](/azure/kusto/management/data-ingestion/ingest-from-query)таких как `.set-or-replace`
+
 #### <a name="create-the-azure-data-explorer-linked-service"></a>Создание службы, связанной с системой azure Data Explorer
 
-Для создания службы, связанной с azure Data Explorer, сделайте следующее;
+Для создания службы, связанной с Azure Data Explorer, сделайте следующие действия:
 
 1. Чтобы использовать существующее соединение хранилища данных или указать новый магазин данных в панели **хранения данных Destination,** выберите **Создать новое соединение.**
 
@@ -154,13 +157,13 @@ Azure Data Factory — это полностью управляемая обла
 
     ![Новая связанная панель обслуживания](media/data-factory-load-data/adx-select-new-linked-service.png)
 
-1. В **панели New Linked Service (Azure Data Explorer)** сделать следующее:
+1. В **панели New Linked Service (Azure Data Explorer)** сделайте следующие действия:
 
     ![Новая панель службы связи Azure Data Explorer](media/data-factory-load-data/adx-new-linked-service.png)
 
    а. В поле **«Имя»** введите имя службы, связанной с azure Data Explorer.
 
-   b. В **методе выбора счета**сделайте одно из следующих: 
+   b. В **методе выбора счета**выберите один из следующих вариантов: 
 
     * Выберите **подписку Azure,** а затем в списках выпадающих списков выберите **подписку Azure** и **кластер.** 
 
@@ -186,7 +189,7 @@ Azure Data Factory — это полностью управляемая обла
 
 #### <a name="configure-the-azure-data-explorer-data-connection"></a>Настройка соединения данных Azure Data Explorer
 
-После создания связанного соединения службы панель **хранилища данных Destination** открывается, и созданное соединение доступно для использования. Для настройки соединения сделайте следующее;
+После создания связанного соединения службы панель **хранилища данных Destination** открывается, и созданное соединение доступно для использования. Для настройки соединения сделайте следующие действия:
 
 1. Нажмите кнопку **Далее**.
 
@@ -214,7 +217,7 @@ Azure Data Factory — это полностью управляемая обла
 
     ![Набор данных назначения "Колонка отображение" панели](media/data-factory-load-data/destination-dataset-column-mapping.png)
 
-1. В панели **настроек** сделайте следующее:
+1. В панели **настроек** сделайте следующие шаги:
 
     а. В **настройках допуска неисправностей**введите соответствующие настройки.
 
@@ -238,7 +241,7 @@ Azure Data Factory — это полностью управляемая обла
 
     ![Панель "Развертывание завершена"](media/data-factory-load-data/deployment.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте о [разъеме Azure Data Explorer](/azure/data-factory/connector-azure-data-explorer) на фабрике данных Azure.
 * Подробнее о редактировании связанных служб, наборов данных и конвейеров в [uI Data Factory.](/azure/data-factory/quickstart-create-data-factory-portal)

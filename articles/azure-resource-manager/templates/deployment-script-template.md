@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 03/23/2020
+ms.date: 03/30/2020
 ms.author: jgao
-ms.openlocfilehash: 7ff91545b1b7ab1920f437e0c3a5410270efaac5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3ef1c3d3fe0fd1ecad95e027b06ce14fd70d4d3f
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80153256"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437877"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Используйте сценарии развертывания в шаблонах (Предварительный просмотр)
 
@@ -42,7 +42,7 @@ ms.locfileid: "80153256"
 - **Назначенное пользователем управляемое удостоверение с ролью участника в целевой группе ресурсов.** Это удостоверение используется для выполнения скриптов развертывания. Для выполнения операций за пределами группы ресурсов необходимо предоставить дополнительные разрешения. Например, присвоить идентификационный уровень на уровне подписки, если требуется создать новую группу ресурсов.
 
   > [!NOTE]
-  > Движок сценария развертывания создает учетную запись хранения и экземпляр контейнера в фоновом режиме.  Для того чтобы подписка не зарегистрировала учетную запись хранения Azure (Microsoft.Storage) и экземпляр контейнеров Azure (Microsoft.ContainerInstance) (Microsoft.ContainerInstance) (Microsoft.ContainerInstance) требуется, если подписка не зарегистрировала учетную запись хранения Azure (Microsoft.Storage) и экземпляр контейнеров Azure (Microsoft.ContainerInstance) Поставщиков.
+  > Движок сценария развертывания создает учетную запись хранения и экземпляр контейнера в фоновом режиме.  Для того чтобы подписка не зарегистрировала учетную запись хранения данных Azure (Microsoft.Storage) и экземпляр контейнеров Azure (Microsoft.ContainerInstance) (Microsoft.ContainerInstance) требуется для того, чтобы автор ская была установлена, если подписка не зарегистрировала учетную запись хранения данных Azure (Microsoft.Storage) и экземпляр контейнеров Azure (Microsoft.ContainerInstance).
 
   Чтобы создать идентификацию, [см. Создайте управляемую изначадляемую информацию, назначенную пользователем, используя портал Azure,](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)или [с помощью Azure CLI](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)или [с помощью Azure PowerShell.](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md) Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
 
@@ -52,7 +52,7 @@ ms.locfileid: "80153256"
 
   Используйте следующий скрипт CLI или PowerShell, чтобы получить идентификатор, предоставив имя группы ресурсов и имя личности.
 
-  # <a name="cli"></a>[Cli](#tab/CLI)
+  # <a name="cli"></a>[CLI](#tab/CLI)
 
   ```azurecli-interactive
   echo "Enter the Resource Group name:" &&
@@ -101,6 +101,12 @@ ms.locfileid: "80153256"
     "forceUpdateTag": 1,
     "azPowerShellVersion": "3.0",  // or "azCliVersion": "2.0.80"
     "arguments": "[concat('-name ', parameters('name'))]",
+    "environmentVariables": [
+      {
+        "name": "someSecret",
+        "secureValue": "if this is really a secret, don't put it here... in plain text..."
+      }
+    ],
     "scriptContent": "
       param([string] $name)
       $output = 'Hello {0}' -f $name
@@ -126,6 +132,7 @@ ms.locfileid: "80153256"
 - **forceUpdateTag**: Изменение этого значения между развертываниями шаблонов заставляет сценарий развертывания повторно выполняться. Используйте функцию newGuid() или utcNow(), которая должна быть установлена как значение значения параметра по умолчанию. Дополнительные сведения о выполнении скрипта несколько раз см. [здесь](#run-script-more-than-once).
 - **azPowerShellVersion**/**azCliVersion**: Укажите версию модуля, которая будет использоваться. Список поддерживаемых версий PowerShell и CLI можно узнать на [примере Prerequisites.](#prerequisites)
 - **аргументы**: Укажите значения параметра. Значения разделяются пробелами.
+- **environmentVariables**: Укажите переменные среды, чтобы перейти к скрипту. Для получения дополнительной [информации см.](#develop-deployment-scripts)
 - **scriptContent**: Укажите содержимое скрипта. Для запуска внешнего скрипта используйте `primaryScriptUri` вместо этого. Например, [см.](#use-inline-scripts) [Use external script](#use-external-scripts)
 - **primaryScriptUri**: Укажите общедоступный Url для основного сценария развертывания с поддерживаемыми расширениями файлов.
 - **поддержкаScriptUris**: Указать массив общедоступных Urls для поддержки `ScriptContent` `PrimaryScriptUri`файлов, которые называются в любом или .
@@ -234,7 +241,7 @@ reference('<ResourceName>').output.text
 
 ### <a name="pass-secured-strings-to-deployment-script"></a>Передайте защищенные строки в сценарий развертывания
 
-Используя переменные среды в экземплярах контейнеров, вы можете динамически изменять конфигурацию приложения или скрипта, запущенных в контейнере. Скрипт развертывания обрабатывает незащищенные и защищенные переменные среды так же, как Azure Container Instance. Для получения дополнительной информации см. [Переменные среды Set в экземплярах контейнеров.](../../container-instances/container-instances-environment-variables.md#secure-values)
+Настройка переменных среды (EnvironmentVariable) в экземплярах контейнера позволяет обеспечить динамическую конфигурацию приложения или скрипта, запущенного контейнером. Скрипт развертывания обрабатывает незащищенные и защищенные переменные среды так же, как Azure Container Instance. Для получения дополнительной информации см. [Переменные среды Set в экземплярах контейнеров.](../../container-instances/container-instances-environment-variables.md#secure-values)
 
 ## <a name="debug-deployment-scripts"></a>Сценарии развертывания отогина
 
@@ -368,7 +375,7 @@ armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups
 
 После успешного тестирования скрипта его можно использовать в качестве сценария развертывания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как использовать сценарии развертывания. Чтобы пройти через учебник по сценарию развертывания:
 

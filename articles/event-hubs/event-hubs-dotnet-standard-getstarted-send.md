@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2020
 ms.author: spelluru
-ms.openlocfilehash: 1d399ffec2cd702dcfa39310803bc780b85bfde1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a8124e9860ba5703e96f96c90bc0cf37e42baf9c
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77187461"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398355"
 ---
 # <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий в центры событий Azure или получать их с помощью .NET Core (Microsoft.Azure.EventHubs)
 Этот быстрый запуск показывает, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft.Azure.EventHubs** .NET Core.
 
 > [!WARNING]
-> Этот быстрый запуск использует старый пакет **Microsoft.Azure.EventHubs.** Для быстрого запуска, использующего последнюю библиотеку **Azure.Messaging.EventHubs,** [см.](get-started-dotnet-standard-send-v2.md) Для перемещения приложения из старой библиотеки в новую можно [просмотреть Руководство по переходу с Microsoft.Azure.EventHubs на Azure.Messaging.EventHubs.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md)
+> Этот быстрый запуск использует старый пакет **Microsoft.Azure.EventHubs.** Для быстрого запуска, использующего последнюю библиотеку **Azure.Messaging.EventHubs,** [см.](get-started-dotnet-standard-send-v2.md) Для перемещения приложения из старой библиотеки в новую можно [просмотреть Руководство по переходу с Microsoft.Azure.EventHubs на Azure.Messaging.EventHubs.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 Если вы впервые используете Центры событий Azure, ознакомьтесь с общими сведениями в [этой статье](event-hubs-about.md), прежде чем приступить к работе с этим руководством. 
@@ -368,7 +368,7 @@ ms.locfileid: "77187461"
 4. Запустите программу и убедитесь в отсутствии ошибок.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими статьями:
 
 - [Образцы управления доступом на основе ролей (RBAC).](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac) 

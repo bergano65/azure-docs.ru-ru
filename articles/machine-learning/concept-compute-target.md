@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
-ms.date: 11/04/2019
-ms.openlocfilehash: ec2d9152bf8d3d7c60f00e902f155212ee1b81cc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/30/2020
+ms.openlocfilehash: f9ca75943eaec2ae018b54145d872fc09294035e
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79270424"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80398187"
 ---
 #  <a name="what-are-compute-targets-in-azure-machine-learning"></a>Каковы цели вычислений в машинном обучении Azure? 
 
@@ -48,12 +48,14 @@ ms.locfileid: "79270424"
 
 Управляемый вычислительный ресурс создается и управляется Azure Machine Learning. Этот компьютер оптимизирован для рабочих нагрузок машинного обучения. Вычислительные кластеры и [вычислительные экземпляры](concept-compute-instance.md) Azure Machine Learning являются единственными управляемыми вычислениями. В будущем могут быть добавлены дополнительные управляемые вычислительные ресурсы.
 
-Можно создать экземпляры вычислений машин Azure Machine Learning (предварительный просмотр) или вычислить кластеры в:
+Можно создавать экземпляры вычислений машин Azure Machine Learning (предварительный просмотр) или вычислять кластеры из:
+* Студия машинного обучения Azure.
+* Портал Azure
+* Классы Python SDK [ComputeInstance](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computeinstance(class)?view=azure-ml-py) и [AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute(class)?view=azure-ml-py)
+* [Пакет SDK для R](https://azure.github.io/azureml-sdk-for-r/reference/index.html#section-compute-targets)
+* Шаблон Resource Manager
 
-| | Студия машинного обучения Azure. | Портал Azure | SDK | Шаблон Resource Manager | CLI |
-|---| ----- | ----- | ----- | ----- | ----- |
-| Вычислительная операция | да | да | да | да |  |
-| Вычислительный кластер | да | да | да | да | да |
+Можно также создавать вычислительные кластеры с помощью [расширения машинного обучения для Azure CLI.](tutorial-train-deploy-model-cli.md#create-the-compute-target-for-training)
 
 При создании эти вычислительные ресурсы автоматически являются частью рабочего пространства в отличие от других видов вычислительных целей.
 
@@ -72,7 +74,7 @@ ms.locfileid: "79270424"
 
 Неуправляемая вычислительная цель *не* управляется программным управлением Azure Machine Learning. Вы создаете этот тип вычислительной цели за пределами машинного обучения Azure, а затем прикрепляете ее к рабочему пространству. Неуправляемые вычислительные ресурсы могут потребовать дополнительных шагов для поддержания или повышения производительности рабочих нагрузок машинного обучения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнаете, как выполнять следующие задачи:
 * [Настройка вычислительной цели для обучения модели](how-to-set-up-training-targets.md)

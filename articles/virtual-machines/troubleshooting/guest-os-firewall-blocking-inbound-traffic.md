@@ -1,6 +1,6 @@
 ---
 title: Входящий трафик блокируется брандмауэром гостевой ОС виртуальной машины Azure | Документация Майкрософт
-description: ''
+description: Узнайте, как устранить проблему подключения удаленного настольного портала (RDP), которую брандмауэр гостевой операционной системы блокирует входящий трафик.
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 0cbd1a24f5c460e248d55777735da6809befba63
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1b80fc997a4b3d2b472717b1ec2f379a4e958d8c
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72028796"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80422557"
 ---
 # <a name="azure-vm-guest-os-firewall-is-blocking-inbound-traffic"></a>Входящий трафик блокируется брандмауэром гостевой ОС виртуальной машины Azure
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/20/2019
 ms.author: memildin
-ms.openlocfilehash: 23a00c766dbb38853c57c91e7f59ec364390c44b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f7a1eccd76313c5b3bc74a5b5ebdbcd202ca6841
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79245386"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80435751"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
@@ -36,7 +36,7 @@ ms.locfileid: "79245386"
 В настоящее время интегрированные решения безопасности включают оценку уязвимости, разработанную [квалисом](https://www.qualys.com/public-cloud/#azure) и [Брандмауэром](https://www.rapid7.com/products/insightvm/) web-приложений при application-
 
 > [!NOTE]
-> Центр безопасности не устанавливает агент мониторинга Майкрософт на виртуальные устройства партнеров, поскольку большинство поставщиков безопасности запрещают внешним агентам работать на их приборах.
+> Центр безопасности не устанавливает агент Log Analytics на виртуальные приборы партнера, потому что большинство поставщиков безопасности запрещают внешним агентам работать на их приборах.
 >
 >
 
@@ -141,14 +141,14 @@ ms.locfileid: "79245386"
 
 Вот некоторые запросы Splunk, которые можно использовать для обработки данных оповещения:
 
-| **Описание запроса** | **Запроса** |
+| **Описание запроса** | **Запрос** |
 |----|----|
 | Все оповещения.| index=main Microsoft.Security/locations/alerts|
 | Суммирование количества операций по имени.| index=main sourcetype="amal:security" \| table operationName \| stats count by operationName|
 | Получение сведений об оповещении: время, имя, состояние, идентификатор и подписка. | index=main Microsoft.Security/locations/alerts \| table \_time, properties.eventName, State, properties.operationId, am_subscriptionId |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как интегрировать партнерские решения в центре безопасности. Дополнительные сведения о центре безопасности см. в следующих статьях:
 

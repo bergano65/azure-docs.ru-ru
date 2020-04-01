@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: d84085115816a8fe1cba65e191ea391dd91a4aed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0b7817539a26b7ebfa24efd086edf8b0ef82eae3
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77599370"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80436009"
 ---
 # <a name="faq---questions-about-virtual-machines"></a>Часто задаваемые вопросы - Вопросы о виртуальных машинах
 
@@ -51,7 +51,7 @@ ms.locfileid: "77599370"
 Обычно центр безопасности проверяет наличие новых данных каждый час и обновляет рекомендации соответствующим образом. 
 
 > [!NOTE]
-> Центр безопасности использует агента мониторинга Майкрософт для сбора и хранения данных. Дополнительные сведения см. в статье [Миграция платформы центра безопасности Azure](security-center-platform-migration.md).
+> Центр безопасности использует агент Log Analytics для сбора и хранения данных. Дополнительные сведения см. в статье [Миграция платформы центра безопасности Azure](security-center-platform-migration.md).
 
 
 ## <a name="why-do-i-get-the-message-vm-agent-is-missing"></a>Почему я получаю сообщение "Агент виртуальной машины отсутствует"?

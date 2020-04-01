@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 03/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 2fce8a7a6f6d345b83c639bd69ecd70271621e9b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b344886e89a10a027cba169e92056a6dda443d8d
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80283163"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80421941"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -687,7 +687,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Authorization/operations/read | Получает список операций. |
 > |  | **Разрешения** |  |
 > | Действие | Microsoft.Authorization/permissions/read | Выводит список всех разрешений, которые есть у вызывающего в заданной области. |
-> |  | **политики** |  |
+> |  | **Политики** |  |
 > | Действие | Microsoft.Авторизация/политики/аудит/действия | Действия, принятые в результате оценки политики Azure с эффектом «аудита» |
 > | Действие | Microsoft.Авторизация/политики/аудитIfNotExists/action | Действия, предпринятые в результате оценки политики Azure с эффектом «аудитIfNotExists» |
 > | Действие | Microsoft.Авторизация/политики/отрицание/действие | Действия, принятые в результате оценки политики Azure с эффектом «отрицания» |
@@ -2680,7 +2680,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.CostManagement/reports/read | Планирование создания отчетов о данных об использовании в области. |
 > |  | **Арендаторов** |  |
 > | Действие | Microsoft.CostManagement/арендаторы/регистр/действие | Зарегистрируйте действие для сферы действия Microsoft.CostManagement со стороны арендатора. |
-> |  | **представления;** |  |
+> |  | **Представления** |  |
 > | Действие | Microsoft.CostManagement/views/read | Перечислите все сохраненные представления. |
 > | Действие | Microsoft.CostManagement/views/delete | Удаление сохраненных представлений. |
 > | Действие | Microsoft.CostManagement/views/write | Обновление представления. |
@@ -5188,7 +5188,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Kusto/регистрация/действие | Действия по регистрации подписки |
 > | Действие | Microsoft.Kusto/Регистрация/действие | Регистрирует подписку на поставщика ресурсов Kusto. |
 > | Действие | Microsoft.Kusto/Unregister/action | Не регистрирует подписку на поставщика ресурсов Kusto. |
-> |  | **Кластеров** |  |
+> |  | **Кластеры** |  |
 > | Действие | Microsoft.Kusto/Clusters/read | Читает кластерный ресурс. |
 > | Действие | Microsoft.Kusto/Clusters/write | Записывает кластерный ресурс. |
 > | Действие | Microsoft.Kusto/Clusters/delete | Удаляет кластерный ресурс. |
@@ -5239,7 +5239,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Kusto/Кластеры/Основныеназначения/удаление | Удаляет основной ресурс кластерных назначений. |
 > |  | **Кластеры/СКУ** |  |
 > | Действие | Microsoft.Kusto/Кластеры/SKUs/read | Читает кластерный ресурс SKU. |
-> |  | **Местах** |  |
+> |  | **Расположения** |  |
 > | Действие | Microsoft.Kusto/Локации/CheckNameДоступность/действие | Проверка доступности имен ресурса. |
 > | Действие | Microsoft.Kusto/Locations/GetNetworkПолитика/акция | Получает политики намерения сети |
 > |  | **локации/результаты работы** |  |
@@ -7845,7 +7845,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.RecoveryServices/register/action | Регистрация подписки для заданного поставщика ресурсов. |
-> |  | **Местах** |  |
+> |  | **Расположения** |  |
 > | Действие | Microsoft.RecoveryServices/Locations/backupPreValidateProtection/action |  |
 > | Действие | Microsoft.RecoveryServices/Locations/backupStatus/action | Проверка состояния архивации хранилищ служб восстановления. |
 > | Действие | Microsoft.RecoveryServices/Locations/backupValidateFeatures/action | Проверка компонентов. |
@@ -8285,7 +8285,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Resources/links/read | Возвращает ссылки на ресурсы или выводит их список. |
 > | Действие | Microsoft.Resources/links/write | Создает или обновляет ссылку на ресурс. |
 > | Действие | Microsoft.Resources/links/delete | Удаляет ссылку на ресурс. |
-> |  | **marketplace** |  |
+> |  | **Рынке** |  |
 > | Действие | Microsoft.Resources/marketplace/purchase/action | Покупка ресурса на Marketplace. |
 > |  | **providers** |  |
 > | Действие | Microsoft.Resources/providers/read | Возвращает список поставщиков. |
@@ -8333,7 +8333,7 @@ Microsoft Мониторинг Исследования
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 
-Служба Azure: [Планировщик](../scheduler/index.md)
+Служба Azure: [Планировщик](../scheduler/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | Описание |
@@ -8433,7 +8433,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Security/locations/tasks/resolve/action | Разрешение рекомендации по безопасности. |
 > | Действие | Microsoft.Security/locations/tasks/activate/action | Активирует рекомендацию по безопасности. |
 > | Действие | Microsoft.Security/locations/tasks/dismiss/action | Закрывает рекомендацию по безопасности. |
-> |  | **политики** |  |
+> |  | **Политики** |  |
 > | Действие | Microsoft.Security/policies/read | Возвращает политику безопасности. |
 > | Действие | Microsoft.Security/policies/write | Обновляет политику безопасности. |
 > |  | **pricings** |  |
@@ -10004,7 +10004,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.TimeSeriesInsights/register/action | Регистрация подписки для поставщика ресурсов службы "Аналитика временных рядов" с возможностью создания сред данной службы. |
-> |  | **environments** |  |
+> |  | **Средах** |  |
 > | Действие | Microsoft.TimeSeriesInsights/environments/read | Получение свойств среды. |
 > | Действие | Microsoft.TimeSeriesInsights/environments/write | Создание новой среды или обновление существующей. |
 > | Действие | Microsoft.TimeSeriesInsights/environments/delete | Удаление среды. |
@@ -10732,7 +10732,7 @@ Microsoft Мониторинг Исследования
 > |  | **Операций** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Соответствие поставщику ресурсов для обслуживания](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли Azure](custom-roles.md)

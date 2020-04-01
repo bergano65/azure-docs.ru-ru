@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: memildin
-ms.openlocfilehash: 13852acb39a420e2f0da84e18bef4df823c1fa78
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5136a00421aebaa72998b1dfcdf75feb935851c6
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78206271"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80435444"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-with-azure-security-center"></a>Microsoft Defender Расширенная защита от угроз с Azure центр безопасности
 
@@ -62,7 +62,7 @@ Microsoft Defender ATP в Центре безопасности поддержи
 1. В области **посадки** выберите или создайте рабочее пространство для хранения данных. <br>
 2. Если отображаются не все рабочие области, это может быть вызвано отсутствием разрешений. Убедитесь, что для вашей рабочей области выбран уровень "Стандартный" Центра безопасности Azure. Для получения дополнительной информации смотрите [обновление до стандартного уровня Центра безопасности для повышения безопасности.](security-center-pricing.md)
     
-3. Выберите **серверы добавления** для просмотра инструкций по установке агента мониторинга Майкрософт. 
+3. Выберите **серверы добавления** для просмотра инструкций по установке агента Log Analytics. 
 
 4. После посадки, вы можете контролировать машины под **compute и приложений.**
 
@@ -113,7 +113,7 @@ Microsoft Defender ATP в Центре безопасности поддержи
 
 5. Из окна расследования выберите ссылку для перейдна на портал Microsoft Defender ATP.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Поддерживаемые платформы и возможности в Центре безопасности Azure](security-center-os-coverage.md)
 - [Настройка политик безопасности в центре безопасности Azure](tutorial-security-policy.md) — сведения о настройке политик безопасности для подписок и групп ресурсов Azure.

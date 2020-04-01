@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: article
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 456f379e2b3c2ff411b196d45aef4663fddb0fe6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fda49ae31d7598497a3128a846a3f4e12e84ffe1
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79245412"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80435911"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Выход на пенсию функций Центра безопасности (июль 2019)
 
@@ -43,7 +43,7 @@ ms.locfileid: "79245412"
 
 ## <a name="events-dashboard"></a>Панель мониторинга событий<a name="menu_events"></a>
 
-Центр безопасности использует агента мониторинга Майкрософт для сбора различных конфигураций и событий, связанных с безопасностью, с ваших компьютеров. Он хранит эти события в рабочих пространствах. Панель [мониторинга событий](https://docs.microsoft.com/azure/security-center/security-center-events-dashboard) позволяет просматривать эти данные и дает точку входа в Log Analytics.
+Центр безопасности использует агент Log Analytics для сбора различных конфигураций и событий, связанных с безопасностью, с ваших компьютеров. Он хранит эти события в рабочих пространствах. Панель [мониторинга событий](https://docs.microsoft.com/azure/security-center/security-center-events-dashboard) позволяет просматривать эти данные и дает точку входа в Log Analytics.
 
 Мы удалили панель мониторинга событий, которая появилась при выборе рабочего пространства:
 
@@ -189,7 +189,7 @@ ms.locfileid: "79245412"
 
 В [репозитории GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Legacy%20Log%20Analytics%20dashboards) для Центра безопасности можно получить исходные запросы Log Analytics, заполняющие панель мониторинга и аудита.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/).
 - Узнайте больше о [Azure Sentinel](https://docs.microsoft.com/azure/sentinel).

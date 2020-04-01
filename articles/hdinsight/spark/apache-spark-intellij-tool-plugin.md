@@ -1,23 +1,23 @@
 ---
-title: 'Учебник по Azure Toolkit for IntelliJ: приложение Spark в HDInsight'
-description: Учебник. Разработка приложений Spark на языке Scala и их отправка в кластер HDInsight Spark с помощью Azure Toolkit for IntelliJ.
+title: 'Azure Toolkit для IntelliJ: Приложение Spark - HDInsight'
+description: Сведения о разработке приложений Spark на языке Scala и их отправке в кластер HDInsight Spark с помощью набора средств Azure для IntelliJ.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.topic: tutorial
+ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 2631a0906a0f0886bdc106f1afef99860a6fe00b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
-ms.translationtype: HT
+ms.openlocfilehash: d80f4cb12c79519818f6eccb2bb565bac472b471
+ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79223591"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80397692"
 ---
-# <a name="tutorial-use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-hdinsight-cluster"></a>Руководство по Использование Azure Toolkit for IntelliJ для создания приложений Apache Spark для кластера HDInsight
+# <a name="use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-hdinsight-cluster"></a>Использование Azure Toolkit for IntelliJ для создания приложений Apache Spark для кластера HDInsight
 
-В этом руководстве показано, как разрабатывать приложения Apache Spark в Azure HDInsight с помощью подключаемого модуля **Azure Toolkit** для интегрированной среды разработки IntelliJ. [Azure HDInsight](../hdinsight-overview.md) — это управляемая облачная служба аналитики с открытым кодом, которая позволяет использовать платформы с открытым кодом, такие как Hadoop, Apache Spark, Apache Hive и Apache Kafka.
+В этой статье показано, как разрабатывать приложения Apache Spark на Azure HDInsight с помощью плагина **Azure Toolkit** для IntelliJ IDE. [Azure HDInsight](../hdinsight-overview.md) — это управляемая облачная служба аналитики с открытым кодом, которая позволяет использовать платформы с открытым кодом, такие как Hadoop, Apache Spark, Apache Hive и Apache Kafka.
 
 С помощью подключаемого модуля **Azure Toolkit** можно выполнять следующие задачи:
 
@@ -25,7 +25,7 @@ ms.locfileid: "79223591"
 * получать доступ к ресурсам кластера Azure HDInsight Spark;
 * разрабатывать и запускать приложения Scala Spark в локальной среде.
 
-В этом руководстве описано следующее:
+Вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * Использование подключаемого модуля Azure Toolkit for IntelliJ
 > * Разработка приложений Apache Spark
@@ -35,7 +35,7 @@ ms.locfileid: "79223591"
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
-* [Комплект разработчика Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).  В этом руководстве используется Java версии 8.0.202.
+* [Комплект разработчика Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).  В этой статье используется Java-версия 8.0.202.
 
 * Среда IntelliJ IDEA. В этой статье используется среда [IntelliJ IDEA версии  2018.3.4](https://www.jetbrains.com/idea/download/).
 
@@ -77,7 +77,7 @@ ms.locfileid: "79223591"
 
     |  Свойство   | Описание   |  
     | ----- | ----- |  
-    |Имя проекта| Введите имя.  В этом учебнике используется `myApp`.|  
+    |Имя проекта| Введите имя.  Для этой статьи используется `myApp`.|  
     |Project&nbsp;location (Расположение проекта)| Введите необходимое расположение для сохранения проекта.|
     |Project SDK (Пакет SDK проекта)| Это поле может быть пустым при первом использовании IDEA.  Выберите **New...** (Создать...) и перейдите к JDK.|
     |Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Если используется версия кластера Spark более ранняя, чем 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется **Spark 2.3.0 (Scala 2.11.8)** .|
@@ -472,7 +472,7 @@ ms.locfileid: "79223591"
 
 1. Выберите **Кластеры HDInsight** в разделе **Службы**.
 
-1. В списке кластеров HDInsight, который отобразится, выберите **...** рядом с кластером, созданным при работе с этим учебником.
+1. В списке кластеров HDInsight, которые отображались, выберите **...**
 
 1. Выберите команду **Удалить**. Выберите **Да**.
 
@@ -480,7 +480,7 @@ ms.locfileid: "79223591"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого учебника вы узнали, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в кластер HDInsight Spark непосредственно из интегрированной среды разработки (IDE) IntelliJ. Теперь переходите к следующей статье, в которой объясняется, как перенести зарегистрированные в Apache Spark данные в средство бизнес-аналитики, например в Power BI.
+В этой статье вы узнали, как использовать Azure Toolkit для плагина IntelliJ для разработки приложений Apache Spark, написанных в [Scala,](https://www.scala-lang.org/)а затем представили их в кластер HDInsight Spark непосредственно из интегрированной среды разработки IntelliJ (IDE). Теперь переходите к следующей статье, в которой объясняется, как перенести зарегистрированные в Apache Spark данные в средство бизнес-аналитики, например в Power BI.
 
 > [!div class="nextstepaction"]
 > [Анализ данных Apache Spark с помощью Power BI](apache-spark-use-bi-tools.md)

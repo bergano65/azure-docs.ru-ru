@@ -1,14 +1,14 @@
 ---
 title: Мониторинг изменений делегирования в управляющем арендаторе
 description: Узнайте, как контролировать активность делегирования от клиентов до управляющего арендатора.
-ms.date: 03/16/2020
+ms.date: 03/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 99aa05cb73326e441c0473855c27dc71212cf415
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 82c41c392210e088c85af510b9698e0140f660e5
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79478231"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80421907"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Мониторинг изменений делегирования в управляющем арендаторе
 
@@ -73,7 +73,7 @@ az role assignment create --assignee 00000000-0000-0000-0000-000000000000 --role
 
 После создания новой основной учетной записи службы с доступом Reader к корневой области управляющего клиента можно использовать ее для запроса и отчета о деятельности делегации в арендаторе. 
 
-Приведенная ниже проба использует Azure PowerShell для запроса за последний 1 день действия и отчетов о любых добавленных или удаленных делегациях (или попытках, которые не увенчались успехом). Он запрашивает данные [журнала активности арендатора,](https://docs.microsoft.com/rest/api/monitor/TenantActivityLogs/List) а затем строит следующие значения, чтобы сообщить о добавляемых или удаленных делегациях:
+[Этот скрипт Azure PowerShell](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/tools/monitor-delegation-changes) можно использовать для запроса за последний 1 день действия и отчетов о любых добавленных или удаленных делегациях (или попытках, которые не увенчались успехом). Он запрашивает данные [журнала активности арендатора,](https://docs.microsoft.com/rest/api/monitor/TenantActivityLogs/List) а затем строит следующие значения, чтобы сообщить о добавляемых или удаленных делегациях:
 
 - **DelegatedResourceId**: Идентификатор делегированной подписки или группы ресурсов
 - **CustomerTenantId**: Идентификатор клиента
@@ -156,7 +156,7 @@ else
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как на борт клиентов [делегировать ресурсы Azure.](../concepts/azure-delegated-resource-management.md)
 - Узнайте больше о [Azure Monitor](../../azure-monitor/index.yml) и [журнале активности Azure.](../../azure-monitor/platform/platform-logs-overview.md)

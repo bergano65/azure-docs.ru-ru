@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: 77a451cb9f6598bbe7013f4215cfa7cab40186bd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4f2b192765aab4c7cf18c62988ae2f6080b4b17c
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79037548"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80436931"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
 
@@ -65,7 +65,7 @@ beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/default;principal=hive/_HOST@<AAD
 
 ### <a name="over-public-or-private-endpoints"></a>Над государственными или частными конечными точками
 
-При подключении к кластеру с помощью общедоступных или частных `admin`конечных точек необходимо укажите имя учетной записи кластера (по умолчанию) и пароль. Например, при использовании Beeline из системы клиента для подключения к адресу `clustername.azurehdinsight.net`. Это соединение производится `443`через порт и шифруется с помощью SSL.
+При подключении к кластеру с помощью общедоступных или частных `admin`конечных точек необходимо укажите имя учетной записи кластера (по умолчанию) и пароль. Например, при использовании Beeline из системы клиента для подключения к адресу `clustername.azurehdinsight.net`. Это соединение производится `443`через порт и шифруется с помощью TLS/SSL.
 
 Замените `clustername` на имя вашего кластера HDInsight. Замените `admin` учетной записью для входа в кластер. Для кластеров ESP используйте полный UPN (например, user@domain.com). Замените `password` паролем этой учетной записи.
 
@@ -359,7 +359,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 1. Проверьте соединение. Используйте формат соединения из [более государственных или частных конечных точек,](#over-public-or-private-endpoints)выше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для получения более подробной информации о Hive в HDInsight, [см.](hdinsight-use-hive.md)
 

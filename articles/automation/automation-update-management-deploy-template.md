@@ -6,13 +6,13 @@ ms.subservice: update-management
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
-ms.date: 02/27/2020
-ms.openlocfilehash: a8b382663b56d7481da876979e33194fb0ac533d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/30/2020
+ms.openlocfilehash: e69f3d7350d0da9f364983eae0935532b576bd76
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77925804"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411458"
 ---
 # <a name="onboard-update-management-solution-using-azure-resource-manager-template"></a>Решение «Управление бортом обновления» с использованием шаблона управления ресурсами Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "77925804"
 
 Шаблон не автоматизировать посадку одного или нескольких VMs Azure или не-Azure.
 
-Если в подписке уже развернута рабочая область и учетная запись Автоматизации Log Analytics и Автоматизация в поддерживаемом регионе, они не связаны между собой, а рабочее пространство уже не развертывается с решением управления обновлением, используя этот шаблон, который успешно создает этот шаблон связь и развертывает решение управления обновлением. 
+Если в подписке уже есть рабочая область и учетная запись Автоматизации Log Analytics, развернутая в поддерживаемом регионе, они не связаны между собой, а рабочее пространство уже не развертывается с решением управления обновлением, используя этот шаблон, успешно создает ссылку и развертывает решение управления обновлением. 
 
 ## <a name="api-versions"></a>Версии API
 
@@ -56,6 +56,7 @@ ms.locfileid: "77925804"
 
 * sku — по умолчанию используется новый тарифный план с платой за гигабайт, выпущенный в апреле 2018 года.
 * хранение данных - по умолчанию до тридцати дней
+* резервирование емкости - по умолчанию до 100 ГБ
 
 >[!WARNING]
 >При создании или настройке рабочей области Log Analytics в подписке, использующей модель ценообразования от апреля 2018 года, доступна только ценовая категория **PerGB2018**.
@@ -79,7 +80,7 @@ ms.locfileid: "77925804"
                 "description": "Workspace name"
             }
         },
-        "pricingTier": {
+        "sku": {
             "type": "string",
             "allowedValues": [
                 "pergb2018",
@@ -168,7 +169,8 @@ ms.locfileid: "77925804"
             "apiVersion": "2017-03-15-preview",
             "location": "[parameters('location')]",
             "properties": {
-                "sku": { 
+                "sku": {
+                    "Name": "[parameters('sku')]",
                     "name": "CapacityReservation",
                     "capacityReservationLevel": 100
                 },
@@ -231,7 +233,7 @@ ms.locfileid: "77925804"
     }
     ```
 
-2. Отредактируйте шаблон с учетом ваших требований.
+2. Отредактируйте шаблон с учетом ваших требований. Рассмотрите возможность создания [файла параметров ресурсного менеджера](../azure-resource-manager/templates/parameter-files.md) вместо передачи параметров в качестве входиных значений.
 
 3. Сохранить этот файл как deployUMSolutiontemplate.json в локальной папке.
 
@@ -243,7 +245,7 @@ ms.locfileid: "77925804"
     New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile deployUMSolutiontemplate.json
     ```
 
-    **Лазурный CLI**
+    **Azure CLI**
 
     ```cli
     az group deployment create --resource-group <my-resource-group> --name <my-deployment-name> --template-file deployUMSolutiontemplate.json
@@ -253,7 +255,7 @@ ms.locfileid: "77925804"
 
     ![Пример результатов по завершении развертывания](media/automation-update-management-deploy-template/template-output.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда у вас развернуто решение управления обновлением, можно включить ввм-мы для управления, просмотреть оценки обновлений и развернуть обновления, чтобы привести их в соответствие.
 

@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: f9043ae1414b63f25583d52100774f3e87754a74
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 54263a8be900ed381d8450b460e5cf9e6117ac54
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77661845"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80436123"
 ---
 # <a name="faq---general-questions-about-azure-security-center"></a>Часто задаваемые вопросы - Общие вопросы о Центре безопасности Azure
 
 ## <a name="what-is-azure-security-center"></a>Что такое Центр безопасности Azure?
 Центр безопасности Azure помогает предотвращать, обнаруживать и реагировать на угрозы с повышенной видимостью и контролем над безопасностью ваших ресурсов. Он включает встроенные функции мониторинга безопасности и управления политиками для подписок, помогает выявлять угрозы, которые в противном случае могли бы оказаться незамеченными, и взаимодействует с широким комплексом решений по обеспечению безопасности.
 
-Центр безопасности использует агента мониторинга Майкрософт для сбора и хранения данных. Для получения подробных сведений смотрите [сбор данных в Центре безопасности Azure.](security-center-enable-data-collection.md)
+Центр безопасности использует агент Log Analytics для сбора и хранения данных. Для получения подробных сведений смотрите [сбор данных в Центре безопасности Azure.](security-center-enable-data-collection.md)
 
 
 ## <a name="how-do-i-get-azure-security-center"></a>Как включить Центр безопасности Azure?

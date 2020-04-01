@@ -1,6 +1,6 @@
 ---
-title: Шифрование Apache Kafka SSL & аутентификацию - Azure HDInsight
-description: Настройка SSL-шифрования для связи между клиентами Kafka и брокерами Kafka, а также между брокерами Kafka. Настройка SSL аутентификации клиентов.
+title: Шифрование Apache Kafka TLS & аутентификацию - Azure HDInsight
+description: Настройка шифрования TLS для связи между клиентами Kafka и брокерами Kafka, а также между брокерами Kafka. Настройка SSL аутентификации клиентов.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,25 +8,25 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2019
 ms.author: hrasheed
-ms.openlocfilehash: 4a363caf61046cf39c31ae2d5f35622b7b9109f4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 027a66f4b83225f3c776e1bff1d706f6f4dba976
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80130007"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80436995"
 ---
-# <a name="set-up-secure-sockets-layer-ssl-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования и аутентификации Безопасных розеток (SSL) для Apache Kafka в Azure HDInsight
+# <a name="set-up-tls-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования TLS и аутентификации для Apache Kafka в Azure HDInsight
 
-В этой статье показано, как настроить sSL-шифрование между клиентами Apache Kafka и брокерами Apache Kafka. Он также показывает, как настроить аутентификацию клиентов (иногда называют двусторонним SSL).
+В этой статье показано, как настроить шифрование Transport Layer Security (TLS), ранее известное как шифрование Secure Sockets Layer (SSL), между клиентами Apache Kafka и брокерами Apache Kafka. Он также показывает, как настроить аутентификацию клиентов (иногда называют двусторонним TLS).
 
 > [!Important]
-> Есть два клиента, которые можно использовать для приложений Kafka: клиент Java и консольный клиент. Только клиент `ProducerConsumer.java` Java может использовать SSL как для производства, так и для потребления. Клиент `console-producer.sh` производителя консолей не работает с SSL.
+> Есть два клиента, которые можно использовать для приложений Kafka: клиент Java и консольный клиент. Только клиент `ProducerConsumer.java` Java может использовать TLS как для производства, так и для потребления. Клиент `console-producer.sh` производителя консолей не работает с TLS.
 
 > [!Note] 
 > Производитель консолей HDInsight Kafka с версией 1.1 не поддерживает SSL.
 ## <a name="apache-kafka-broker-setup"></a>Настройка брокера Apache Kafka
 
-Установка брокера Kafka SSL будет использовать четыре vMs-кластера HDInsight следующим образом:
+Установка брокера Kafka TLS будет использовать четыре vMs-кластера HDInsight следующим образом:
 
 * headnode 0 - Сертификат органа (CA)
 * рабочий узла 0, 1 и 2 - брокеры
@@ -119,7 +119,7 @@ ms.locfileid: "80130007"
 
     ```
 
-## <a name="update-kafka-configuration-to-use-ssl-and-restart-brokers"></a>Обновите конфигурацию Kafka для использования SSL и перезапуска брокеров
+## <a name="update-kafka-configuration-to-use-tls-and-restart-brokers"></a>Обновление конфигурации Kafka для использования TLS и перезапуска брокеров
 
 Теперь вы создали каждый брокер Kafka с keystore и truststore, и импортировали правильные сертификаты. Далее измените связанные свойства конфигурации Kafka с помощью Ambari, а затем перезапустите брокеры Kafka.
 
@@ -166,7 +166,7 @@ ms.locfileid: "80130007"
 
 ## <a name="client-setup-without-authentication"></a>Установка клиента (без проверки подлинности)
 
-Если вам не нужна аутентификация, резюме шагов для настройки только SSL-шифрования:
+Если вам не нужна аутентификация, резюме шагов для настройки только шифрования TLS:
 
 1. Войти в ЦС (активный головной узлы).
 1. Копирование сертификата CA для клиентской машины с машины CA (wn0).
@@ -219,7 +219,7 @@ ms.locfileid: "80130007"
 ## <a name="client-setup-with-authentication"></a>Установка клиента (с проверкой подлинности)
 
 > [!Note]
-> Следующие шаги требуются только в том случае, если вы настраиваете проверку подлинности **и** шифрование SSL. Если вы только настраиваете шифрование, смотрите [настройку клиента без проверки подлинности.](apache-kafka-ssl-encryption-authentication.md#client-setup-without-authentication)
+> Следующие шаги необходимы только при настройке шифрования TLS **и** аутентификации. Если вы только настраиваете шифрование, смотрите [настройку клиента без проверки подлинности.](apache-kafka-ssl-encryption-authentication.md#client-setup-without-authentication)
 
 Следующие четыре шага обобщают задачи, необходимые для завершения настройки клиента:
 
@@ -302,7 +302,7 @@ ms.locfileid: "80130007"
 ## <a name="verification"></a>Проверка
 
 > [!Note]
-> Если HDInsight 4.0 и Kafka 2.1 установлены, вы можете использовать производителя консоли / потребителей для проверки вашей настройки. Если нет, запустите производителя Kafka на порту 9092 и отправить сообщения на эту тему, а затем использовать потребителя Кафки на порт 9093, который использует SSL.
+> Если HDInsight 4.0 и Kafka 2.1 установлены, вы можете использовать производителя консоли / потребителей для проверки вашей настройки. Если нет, запустите производителя Kafka на порту 9092 и отправить сообщения на эту тему, а затем использовать потребителя Кафки на порт 9093, который использует TLS.
 
 ### <a name="kafka-21-or-above"></a>Кафка 2.1 или выше
 
@@ -344,6 +344,6 @@ ms.locfileid: "80130007"
     $ /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server <FQDN_WORKER_NODE>:9093 --topic topic1 --consumer.config ~/ssl/client-ssl-auth.properties --from-beginning
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Apache Kafka в HDInsight?](apache-kafka-introduction.md)

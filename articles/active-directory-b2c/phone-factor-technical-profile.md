@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/26/2020
+ms.date: 03/31/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3a0511a19477f3d76baf9c453316c5348cc31397
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e2b30e8f6bcbe7c0e739455f4942712f68ff8404
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80332654"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437449"
 ---
 # <a name="define-a-phone-factor-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определите технический профиль фактора телефона в пользовательской политике Azure Active Directory B2C
 
@@ -24,12 +24,11 @@ ms.locfileid: "80332654"
 
 Активный каталог Azure B2C (Azure AD B2C) обеспечивает поддержку регистрации и проверки телефонных номеров. Этот технический профиль:
 
-- Предоставляет пользовательский интерфейс для взаимодействия с пользователем.
-- Использует определение содержимого для управления внешний вид.
-- Поддерживает как телефонные звонки, так и текстовые сообщения для проверки номера телефона.
+- Предоставляет пользовательский интерфейс для взаимодействия с пользователем для проверки или регистрации номера телефона.
+- Поддерживает телефонные звонки и текстовые сообщения для проверки номера телефона.
 - Поддерживает несколько телефонных номеров. Пользователь может выбрать один из телефонных номеров для проверки.  
-- Если удается номер телефона, пользовательский интерфейс фактора телефона просит пользователя проверить номер телефона. Если он не предоставляется, он просит пользователя зарегистрировать новый номер телефона.
-- Возвращает претензию с указанием того, предоставил ли пользователь новый номер телефона. Это утверждение можно использовать для решения о том, следует ли сохранять номер телефона в профиле пользователя Azure AD.  
+- Возвращает претензию с указанием того, предоставил ли пользователь новый номер телефона. Вы можете использовать это утверждение, чтобы решить, следует ли сохранять номер телефона в профиле пользователя Azure AD B2C.  
+- Использует [определение содержимого](contentdefinitions.md) для управления внешний вид.
 
 ## <a name="protocol"></a>Протокол
 
@@ -44,18 +43,24 @@ ms.locfileid: "80332654"
 </TechnicalProfile>
 ```
 
+## <a name="input-claims-transformations"></a>Преобразования входных требований
+
+Элемент InputClaimsTransformations может содержать набор преобразований входных требований, которые используются для изменения требований ввода или создания новых. Следующая трансформация входных `UserId` требований генерирует претензию, которая используется позже в коллекции вхотливых требований.
+
+```xml
+<InputClaimsTransformations>
+  <InputClaimsTransformation ReferenceId="CreateUserIdForMFA" />
+</InputClaimsTransformations>
+```
+
 ## <a name="input-claims"></a>Входящие утверждения
 
-Элемент Вхотисты должен содержать следующие требования. Вы также можете сопоставить имя вашей претензии к имени, определенному в техническом профиле фактора телефона. 
+Элемент InputClaims должен содержать следующие претензии. Вы также можете сопоставить имя вашей претензии к имени, определенному в техническом профиле фактора телефона. 
 
-```XML
-<InputClaims>
-  <!--A unique identifier of the user. The partner claim type must be set to `UserId`. -->
-  <InputClaim ClaimTypeReferenceId="userIdForMFA" PartnerClaimType="UserId" />
-  <!--A claim that contains the phone number. If the claim is empty, Azure AD B2C asks the user to enroll a new phone number. Otherwise, it asks the user to verify the phone number. -->
-  <InputClaim ClaimTypeReferenceId="strongAuthenticationPhoneNumber" />
-</InputClaims>
-```
+|  Тип данных| Обязательно | Описание |
+| --------- | -------- | ----------- | 
+| строка| Да | Уникальный идентификатор пользователя. Имя претензии, или PartnerClaimType `UserId`должны быть установлены на . Это утверждение не должно содержать личную идентифицируемую информацию.|
+| строка| Да | Список типов претензий. Каждая претензия содержит один номер телефона. Если какой-либо из требований о входе не содержит номера телефона, пользователю будет предложено зарегистрироваться и проверить новый номер телефона. Проверенный номер телефона возвращается как выходная претензия. Если одна из претензий ввода содержит номер телефона, пользователю предлагается проверить его. Если несколько утверждений о входе содержат номер телефона, пользователю предлагается выбрать и проверить один из номеров телефона. |
 
 Следующий пример демонстрирует использование нескольких телефонных номеров. Для получения дополнительной [sample policy](https://github.com/azure-ad-b2c/samples/tree/master/policies/mfa-add-secondarymfa)информации см.
 
@@ -67,22 +72,16 @@ ms.locfileid: "80332654"
 </InputClaims>
 ```
 
-Элемент InputClaimsTransformations может содержать коллекцию элементов InputClaimsTransformation, которые используются для изменения утверждений ввода или создания новых, прежде чем представить их на страницу фактора телефона.
-
 ## <a name="output-claims"></a>Исходящие утверждения
 
 Элемент OutputClaims содержит список претензий, возвращенных техническим профилем фактора телефона.
 
-```xml
-<OutputClaims>
-  <!-- The verified phone number. The partner claim type must be set to `Verified.OfficePhone`. -->
-  <OutputClaim ClaimTypeReferenceId="Verified.strongAuthenticationPhoneNumber" PartnerClaimType="Verified.OfficePhone" />
-  <!-- Indicates whether the new phone number has been entered by the user. The partner claim type must be set to `newPhoneNumberEntered`. -->
-  <OutputClaim ClaimTypeReferenceId="newPhoneNumberEntered" PartnerClaimType="newPhoneNumberEntered" />
-</OutputClaims>
-```
+|  Тип данных| Обязательно | Описание |
+|  -------- | ----------- |----------- |
+| Логическое | Да | Указывает, был ли введен пользователем новый номер телефона. Имя претензии или PartnerClaimType должны быть установлены на`newPhoneNumberEntered`|
+| строка| Да | Проверенный номер телефона. Имя претензии, или PartnerClaimType `Verified.OfficePhone`должны быть установлены на .|
 
-Элемент OutputClaimsTransformations может содержать коллекцию элементов OutputClaimsTransformation, которые используются для изменения исходящих утверждений или создания новых.
+Элемент OutputClaimsTransformations может содержать коллекцию элементов OutputClaimsTransformation, которые используются для изменения требований вывода или создания новых.
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
@@ -94,13 +93,14 @@ ms.locfileid: "80332654"
 | Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | ContentDefinitionReferenceId | Да | Идентификатор [определения содержимого](contentdefinitions.md), связанного с этим техническим профилем. |
-| ManualPhoneNumberEntryРазрешено| нет | Укажите, разрешено ли пользователю вручную вводить номер телефона. Возможные `true` значения: `false` или (по умолчанию).|
+| ManualPhoneNumberEntryРазрешено| Нет | Укажите, разрешено ли пользователю вручную вводить номер телефона. Возможные значения: `true` `false` или (по умолчанию).|
+| setting.authenticationMode | Нет | Метод проверки номера телефона. Возможные `sms`значения: `phone`, `mixed` или (по умолчанию).|
+| setting.autodial| Нет| Укажите, должен ли технический профиль автоматически набирать или автоматически отправлять SMS. Возможные значения: `true` `false` или (по умолчанию). Автоциферный `setting.authenticationMode` набор требует метаданных быть `sms`установлены, или `phone`. Сбор входной связи должен иметь единый номер телефона. |
 
 ### <a name="ui-elements"></a>Элементы пользовательского интерфейса
 
 Элементы пользовательского интерфейса страницы пользователя фактора телефона могут быть [локализованы.](localization-string-ids.md#azure-mfa-error-messages)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Проверьте [социальные и местные счета с](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/SocialAndLocalAccountsWithMfa) МИД стартовый пакет.
-

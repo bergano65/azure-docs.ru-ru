@@ -1,27 +1,23 @@
 ---
-title: Загрузите vhd в Azure с помощью Azure PowerShell
-description: Узнайте, как загрузить vhd на управляемый диск Azure и скопировать управляемый диск в разных регионах с помощью Azure PowerShell с помощью прямой загрузки.
+title: Загрузите VHD в Azure или скопируйте диск в разных регионах - Azure PowerShell
+description: Узнайте, как загрузить VHD на управляемый диск Azure и скопировать управляемый диск в разных регионах с помощью Azure PowerShell с помощью прямой загрузки.
 author: roygara
 ms.author: rogarana
-ms.date: 03/13/2020
+ms.date: 03/27/2020
 ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 883fea1e25ded26c35e96d11edd8f417e96db30e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 55606aeeb9f6445027f5da49821dbc4970764ade
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79369562"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80421046"
 ---
-# <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Загрузите vhd в Azure с помощью Azure PowerShell
+# <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Загрузите VHD в Azure или скопируйте управляемый диск в другой регион - Azure PowerShell
 
-В этой статье объясняется, как загрузить vhd с локальной машины на управляемый диск Azure. Ранее вы должны были следовать более вовлеченный процесс, который включал постановку данных в учетную запись хранения и управление этой учетной записью хранения. Теперь вам больше не нужно управлять учетной записью хранения или этапом данных в нем, чтобы загрузить vhd. Вместо этого вы создаете пустой управляемый диск и загружаете vhd непосредственно на него. Это упрощает загрузку наемных ВМ в Azure и позволяет загружать vhd до 32 TiB непосредственно в большой управляемый диск.
-
-Если вы предоставляете решение для резервного копирования IaaS VMs в Azure, мы рекомендуем вам использовать прямую загрузку для восстановления резервных копирования клиентов на управляемых дисках. Если вы загружаете VHD из внешней машины в Azure, скорость зависит от локальной пропускной способности. Если вы используете Azure VM, то пропускная способность будет такой же, как стандартные HDD.
-
-В настоящее время прямая загрузка поддерживается для стандартных ДИСКов, стандартных SSD и премиальных дисков SSD. Он еще не поддерживается для ультра SSD.
+[!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,42 +26,49 @@ ms.locfileid: "79369562"
 - Если вы собираетесь загрузить VHD из локальных: VHD фиксированного размера, который [был подготовлен для Azure,](prepare-for-upload-vhd-image.md)хранится локально.
 - Или управляемый диск в Azure, если вы собираетесь выполнить действие копирования.
 
-## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
+## <a name="getting-started"></a>Начало работы
 
-Чтобы загрузить vhd в Azure, необходимо создать пустой управляемый диск, настроенный для этого процесса загрузки. Перед созданием, есть некоторые дополнительные сведения, которые вы должны знать об этих дисках.
+Если вы предпочитаете загружать диски через графический интерфейс, вы можете сделать это с помощью Azure Storage Explorer. Для получения подробной информации успомещено: [Используйте Azure Storage Explorer для управления дисками, управляемыми Azure](disks-use-storage-explorer-managed-disks.md)
+
+Чтобы загрузить VHD в Azure, необходимо создать пустой управляемый диск, настроенный для этого процесса загрузки. Перед созданием, есть некоторые дополнительные сведения, которые вы должны знать об этих дисках.
 
 Этот вид управляемого диска имеет два уникальных состояния:
 
 - ReadToUpload, что означает, что диск готов к загрузке, но, не [защищенная подпись доступа](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS) не была создана.
 - ActiveUpload, что означает, что диск готов к загрузке и SAS был создан.
 
-В то время как в любом из этих состояний, управляемый диск будет выставлен счет по [стандартной цене HDD,](https://azure.microsoft.com/pricing/details/managed-disks/)независимо от фактического типа диска. Например, P10 будет выставлен счет как S10. Это будет верно `revoke-access` до тех пор, пока не будет вызван управляемый диск, который необходим для того, чтобы прикрепить диск к VM.
+> [!NOTE]
+> В то время как в любом из этих состояний, управляемый диск будет выставлен счет по [стандартной цене HDD,](https://azure.microsoft.com/pricing/details/managed-disks/)независимо от фактического типа диска. Например, P10 будет выставлен счет как S10. Это будет верно `revoke-access` до тех пор, пока не будет вызван управляемый диск, который необходим для того, чтобы прикрепить диск к VM.
 
-Перед созданием пустого стандартного HDD для загрузки вам понадобится размер файла в байтах vhd, который вы хотите загрузить. Пример кода получит это для вас, но, чтобы `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`сделать это самостоятельно вы можете использовать: . Это значение используется при указании параметра **-UploadSizeInBytes.**
+## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
-Теперь, на локальной оболочке, создайте пустой стандартный HDD для загрузки, указав настройки **загрузки** в **параметре -CreateOption,** а также **параметр -UploadSizeInBytes** в смдлете [New-AzDiskConfig.](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) Затем позвоните [в New-AzDisk,](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) чтобы создать диск:
+Прежде чем вы сможете создать пустой стандартный HDD для загрузки, вам понадобится размер файла VHD, который вы хотите загрузить, в байтах. Пример кода получит это для вас, но, чтобы `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`сделать это самостоятельно вы можете использовать: . Это значение используется при указании параметра **-UploadSizeInBytes.**
+
+Теперь, на локальной оболочке, создайте пустой стандартный HDD для загрузки, указав настройки **загрузки** в **параметре -CreateOption,** а также **параметр -UploadSizeInBytes** в смдлете [New-AzDiskConfig.](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) Затем позвоните [в New-AzDisk,](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) чтобы создать диск.
+
+`<yourdiskname>`Заменить `<yourresourcegroupname>`, `<yourregion>` а затем запустить следующие команды:
 
 ```powershell
 $vhdSizeBytes = (Get-Item "<fullFilePathHere>").length
 
-$diskconfig = New-AzDiskConfig -SkuName 'Standard_LRS' -OsType 'Windows' -UploadSizeInBytes $vhdSizeBytes -Location 'West US' -CreateOption 'Upload'
+$diskconfig = New-AzDiskConfig -SkuName 'Standard_LRS' -OsType 'Windows' -UploadSizeInBytes $vhdSizeBytes -Location '<yourregion>' -CreateOption 'Upload'
 
-New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName' -Disk $diskconfig
+New-AzDisk -ResourceGroupName '<yourresourcegroupname' -DiskName '<yourdiskname>' -Disk $diskconfig
 ```
 
-Если вы хотите загрузить либо премиум SSD или стандартный SSD, замените **Standard_LRS** либо **Premium_LRS,** либо **StandardSSD_LRS.** Ultra SSD пока не поддерживается.
+Если вы хотите загрузить либо премиум SSD или стандартный SSD, замените **Standard_LRS** либо **Premium_LRS,** либо **StandardSSD_LRS.** Ультрадиски еще не поддерживаются.
 
-Теперь вы создали пустой управляемый диск, настроенный для процесса загрузки. Чтобы загрузить vhd на диск, вам понадобится пишущее SAS, так что вы можете ссылаться на него в качестве места назначения для загрузки.
+Теперь, когда вы создали пустой управляемый диск, настроенный для процесса загрузки, вы можете загрузить на него VHD. Чтобы загрузить VHD на диск, вам понадобится пишущее SAS, чтобы вы могли ссылаться на него в качестве места назначения для загрузки.
 
-Для создания вывешивого SAS вашего пустого управляемого диска используйте следующую команду:
+Для создания вывешивого SAS вашего пустого управляемого диска, замените `<yourdiskname>`и `<yourresourcegroupname>`, затем используйте следующие команды:
 
 ```powershell
-$diskSas = Grant-AzDiskAccess -ResourceGroupName 'myResouceGroup' -DiskName 'myDiskName' -DurationInSecond 86400 -Access 'Write'
+$diskSas = Grant-AzDiskAccess -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>' -DurationInSecond 86400 -Access 'Write'
 
-$disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
+$disk = Get-AzDisk -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>'
 ```
 
-## <a name="upload-vhd"></a>Загрузить vhd
+## <a name="upload-a-vhd"></a>Отправка VHD
 
 Теперь, когда у вас есть SAS для пустого управляемого диска, вы можете использовать его для установки управляемого диска в качестве пункта назначения для вашей команды загрузки.
 
@@ -79,13 +82,15 @@ AzCopy.exe copy "c:\somewhere\mydisk.vhd" $diskSas.AccessSAS --blob-type PageB
 
 После того, как загрузка завершена, и вам больше не нужно писать больше данных на диск, отозвать SAS. Отмена SAS изменит состояние управляемого диска и позволит прикрепить диск к VM.
 
+`<yourdiskname>`Заменить `<yourresourcegroupname>`и, затем запустить следующую команду:
+
 ```powershell
-Revoke-AzDiskAccess -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
+Revoke-AzDiskAccess -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>'
 ```
 
 ## <a name="copy-a-managed-disk"></a>Копирование управляемого диска
 
-Прямая загрузка также упрощает процесс копирования управляемого диска. Вы можете скопировать в пределах одного региона или кросс-региона (в другой регион).
+Прямая загрузка также упрощает процесс копирования управляемого диска. Вы можете скопировать в пределах той же области или скопировать управляемый диск в другой регион.
 
 Последующий сценарий сделает это за вас, процесс аналогичен описанным ранее шагам, с некоторыми отличиями, так как вы работаете с существующим диском.
 
@@ -122,8 +127,8 @@ Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
 Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Теперь, когда вы успешно загрузили vhd на управляемый диск, вы можете прикрепить диск к VM и начать использовать его.
+Теперь, когда вы успешно загрузили VHD на управляемый диск, вы можете прикрепить диск к VM и начать использовать его.
 
 Чтобы узнать, как прикрепить диск данных к VM, смотрите нашу статью по этому вопросу: [Прикрепите диск данных к Windows VM с PowerShell](attach-disk-ps.md). Чтобы использовать диск в качестве диска ОС, [см.](create-vm-specialized.md#create-the-new-vm)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/23/2019
 ms.author: haroldw
-ms.openlocfilehash: b2b34a6fdf96613c5bc372e585598fabbe43d53d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8767a6ee6218223280ea6219e22540c53d1e89be
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80066613"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80409116"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Общие предпосылки для развертывания контейнерной платформы OpenShift 3.11 в Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "80066613"
 > * Создайте хранилище ключей, чтобы управлять ключами SSH для кластера OpenShift.
 > * Создайте субъект-службу, которую будет использовать поставщик облачных служб Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure 
 Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index) и следуйте инструкциям на экране или щелкните **Попробовать**, чтобы использовать Cloud Shell.
@@ -143,15 +143,15 @@ az ad sp create-for-rbac --name openshiftsp \
 
 ## <a name="prerequisites-applicable-only-to-resource-manager-template"></a>Предпосылки, применимые только к шаблону менеджера ресурсов
 
-Секреты должны быть созданы для SSH частный ключ **(sshPrivateKey**), Azure AD клиента секрет (**aadClientSecret**), OpenShift админ пароль **(openshiftPassword**), и Red Hat Подписка менеджер пароль или активации ключа (**rhsmPasswordOrActivationKey**).  Кроме того, если пользовательские сертификаты SSL используются, то шесть дополнительных секретов должны быть созданы - **routingcafile**, **routingcertfile**, **routingkeyfile**, **mastercafile**, **mastercertfile**, и **masterkeyfile**.  Эти параметры будут объяснены более подробно.
+Секреты должны быть созданы для SSH частный ключ **(sshPrivateKey**), Azure AD клиента секрет (**aadClientSecret**), OpenShift админ пароль **(openshiftPassword**), и Red Hat Подписка менеджер пароль или активации ключа (**rhsmPasswordOrActivationKey**).  Кроме того, если пользовательские сертификаты TLS/SSL используются, то необходимо создать шесть дополнительных секретов - **routingcafile,** **routingcertfile,** **routingkeyfile,** **mastercafile,** **mastercertfile , mastercertfile**, и **masterkeyfile**.  Эти параметры будут объяснены более подробно.
 
 Шаблон ссылается на конкретные секретные имена, поэтому вы **должны** использовать жирные имена, перечисленные выше (дело чувствительное).
 
 ### <a name="custom-certificates"></a>Пользовательские сертификаты
 
-По умолчанию шаблон развернет кластер OpenShift с использованием самоподписанных сертификатов для веб-консоли OpenShift и домена для разгрома. Если вы хотите использовать пользовательские SSL-сертификаты, установите 'routingCertType' на 'custom' и 'masterCertType' на 'таможню'.  Для сертификатов вам понадобятся файлы CA, Cert и Key в формате .pem.  Пользовательские сертификаты можно использовать для одного, но не для другого.
+По умолчанию шаблон развернет кластер OpenShift с использованием самоподписанных сертификатов для веб-консоли OpenShift и домена для разгрома. Если вы хотите использовать пользовательские сертификаты TLS/SSL, установите 'routingCertType' на 'custom' и 'masterCertType' на 'custom'.  Для сертификатов вам понадобятся файлы CA, Cert и Key в формате .pem.  Пользовательские сертификаты можно использовать для одного, но не для другого.
 
-Вам нужно будет хранить эти файлы в секретах Key Vault.  Используйте тот же Key Vault, что и для частного ключа.  Вместо того, чтобы требовать 6 дополнительных входов для секретных имен, шаблон жестко закодирован для использования конкретных секретных имен для каждого из файлов сертификатов SSL.  Храните данные сертификата, используя информацию из следующей таблицы.
+Вам нужно будет хранить эти файлы в секретах Key Vault.  Используйте тот же Key Vault, что и для частного ключа.  Вместо того, чтобы требовать 6 дополнительных входов для секретных имен, шаблон жестко закодирован для использования конкретных секретных имен для каждого из файлов сертификатов TLS/SSL.  Храните данные сертификата, используя информацию из следующей таблицы.
 
 | Секретное имя      | Файл сертификата   |
 |------------------|--------------------|
@@ -168,7 +168,7 @@ az ad sp create-for-rbac --name openshiftsp \
 az keyvault secret set --vault-name KeyVaultName -n mastercafile --file ~/certificates/masterca.pem
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье рассматриваются следующие темы:
 > [!div class="checklist"]

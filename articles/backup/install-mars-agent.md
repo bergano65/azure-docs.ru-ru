@@ -3,12 +3,12 @@ title: Установка агента служб восстановления M
 description: Узнайте, как установить агент Microsoft Azure Recovery Services (MARS) для резервного копирования компьютеров Windows.
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: b9a6791709d5aff82d11bbf10e5f084fd8c1a000
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d3932b66dbc41ff2631e2cccbe716c0877a509d3
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79247765"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80422936"
 ---
 # <a name="install-the-azure-backup-mars-agent"></a>Установка агента резервного копирования Azure MARS
 
@@ -36,6 +36,7 @@ ms.locfileid: "79247765"
 * [Просмотрите, что поддерживается и что вы можете создать резервную поддержку](backup-support-matrix-mars-agent.md) агентом MARS.
 * Убедитесь, что у вас есть учетная запись Azure, если вам необходимо создать резервную связь с сервером или клиентом в Azure. Если у вас нет учетной записи, вы можете создать [бесплатную](https://azure.microsoft.com/free/) за несколько минут.
 * Проверьте доступ в Интернет на машинах, которые вы хотите создать резервную.
+* Убедитесь, что пользователь, выполняющий установку и конфигурацию агента MARS, имеет локальные привилегии администратора на сервере, который должен быть защищен.
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
@@ -128,7 +129,7 @@ ms.locfileid: "79247765"
 
     ![Скачивание учетных данных хранилища](./media/backup-try-azure-backup-in-10-mins/download-vault-credentials.png)
 
-1. Нажмите кнопку **Сохранить**. Файл загружается в папку Загрузки. Вы не можете открыть файл учетных данных хранилища.
+1. Щелкните **Сохранить**. Файл загружается в папку Загрузки. Вы не можете открыть файл учетных данных хранилища.
 
 ## <a name="install-and-register-the-agent"></a>Установка и регистрация агента
 
@@ -159,6 +160,6 @@ ms.locfileid: "79247765"
 
 1. Нажмите кнопку **Готово**. Агент теперь установлен, и ваша машина зарегистрирована в хранилище. вы можете настроить параметры резервного копирования, в том числе расписание.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как создать резервную связь с [windows-машин амиана с помощью агента Azure Backup MARS](backup-windows-with-mars-agent.md)

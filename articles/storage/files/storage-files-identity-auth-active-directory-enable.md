@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 03/24/2020
 ms.author: rogarana
-ms.openlocfilehash: deead728812a34c6f432f59666cd22ba79f5409e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: HT
+ms.openlocfilehash: b7820bc3d1b14e87064e4120edcffb6762041db9
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281295"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411481"
 ---
 # <a name="enable-active-directory-authentication-over-smb-for-azure-file-shares"></a>Включить активную проверку подлинности каталога по сравнению с SMB для файлов Azure
 
@@ -67,11 +67,7 @@ ms.locfileid: "80281295"
 
 Аутентификация AD файлов Azure недоступна в:
 - западная часть США
-- западная часть США 2
-- Восточная часть США
-- восточная часть США 2
-- Западная Европа
-- Северная Европа
+
 
 ## <a name="workflow-overview"></a>Обзор рабочего процесса
 
@@ -214,7 +210,7 @@ Update-AzStorageAccountADObjectPassword `
         -StorageAccountName "<your-storage-account-name-here>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации о Файлах Azure и о том, как использовать AD над SMB, см.
 
