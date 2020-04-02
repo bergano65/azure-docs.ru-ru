@@ -5,20 +5,20 @@ services: virtual-machines
 author: ayshakeen
 ms.service: virtual-machines
 ms.topic: article
-ms.date: 02/05/2019
-ms.author: lahugh
-ms.openlocfilehash: e8952218675493710cbdd1f92661e9a9c077f34c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/31/2020
+ms.author: jushiman
+ms.openlocfilehash: 3e0552570d5bdb7f812852cd058710b833b7fdd4
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78164055"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521342"
 ---
 # <a name="m-series"></a>Серия M
 
-M-серия предлагает высокий кол VCPU (до 128 vCPUs) и большое количество памяти (до 3,8 TiB). Он также идеально подходит для очень больших баз данных или других приложений, которые извлекают выгоду из высоких количеств VCPU и большого количества памяти. Размеры M-серии основаны на Intel® Xeon® процессоре E7-8890 v3 2.50GHz
+M-серия предлагает высокий кол VCPU (до 128 vCPUs) и большое количество памяти (до 3,8 TiB). Он также идеально подходит для очень больших баз данных или других приложений, которые извлекают выгоду из высоких количеств VCPU и большого количества памяти. Размеры M-серии поддерживаются&reg; как на&reg; процессоре Intel Xeon E7-8890 v3 и&reg; 2,50 ГГц, так и на Intel Xeon&reg; Platinum 8280М 2,7 ГГц (Каскадное озеро).
 
-M-серии VM функция Intel® Hyper-Threading технологии
+M-серии VM функция&reg; Intel Hyper-Threading технологии.
 
 ACU: 160–180
 

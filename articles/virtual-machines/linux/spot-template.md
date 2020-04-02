@@ -1,25 +1,18 @@
 ---
-title: Используйте шаблон для развертывания VMs Azure Spot (Предварительный просмотр)
+title: Используйте шаблон для развертывания VMs Azure Spot
 description: Узнайте, как использовать шаблон для развертывания Спотных ВМ для экономии затрат.
-services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 02/11/2020
+ms.date: 03/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 0e635fe7ce9b442a9cc8f0fdf614feef5a3a756a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1352761e308aa2e26864654dae65c290df47102b
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79082801"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548259"
 ---
 # <a name="deploy-spot-vms-using-a-resource-manager-template"></a>Развертывание VMs-ресурсов с помощью шаблона «Менеджер ресурсов»
 
@@ -29,11 +22,6 @@ ms.locfileid: "79082801"
 
 У вас есть возможность установить максимальную цену, которую вы готовы платить, в час, для VM. Максимальная цена на Spot VM может быть установлена в долларах США (USD), используя до 5 десятичных мест. Например, значение `0.98765`будет максимальной ценой $0.98765 USD в час. Если вы установите максимальную цену, чтобы быть, `-1`VM не будет выселен в зависимости от цены. Цена для VM будет текущая цена для Spot или цена для стандартного VM, который всегда меньше, до тех пор, пока есть емкость и квота доступна. Для получения дополнительной информации об установлении максимальной цены, см [Spot VMs - Цены](spot-vms.md#pricing).
 
-> [!IMPORTANT]
-> Точечные экземпляры в настоящее время находятся в общедоступном предварительном просмотре.
-> Эта предварительная версия не рекомендуется для производственных нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
->
 
 ## <a name="use-a-template"></a>Использование шаблона
 

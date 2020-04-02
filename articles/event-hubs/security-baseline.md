@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f16f6ef38b221e525340858fc7ba131f8a1bdf5a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 10fc822f9f36512405dd4e3b5aba6270b53e163f
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80289580"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549027"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый унизел безопасности Azure для концентраторов событий
 
@@ -72,7 +72,7 @@ ms.locfileid: "80289580"
 
 **Руководство**: Включите стандарт Защиты DDoS в виртуальных сетях, связанных с концентраторами событий, для защиты от распределенных атак типа «отказ в обслуживании» (DDoS). Используйте Azure Security Center Integrated Threat Intelligence, чтобы отказать в сообщении с известными вредоносными или неиспользованными IP-адресами в Интернете.
 
-Как настроить DDoS-защиту:https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
+Как настроить DDoS-защиту:[https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection](/azure/virtual-network/manage-ddos-protection)
 
 Для получения дополнительной информации о Центре безопасности Azure Integrated Threat Intelligence:https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
@@ -106,7 +106,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Как добавить правило брандмауэра в концентраторах событий для указанного IP-адреса:
 
- https://docs.microsoft.com/azure/event-hubs/event-hubs-tutorial-virtual-networks-firewalls#add-firewall-for-specified-ip
+ https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
 
 **Мониторинг Центра безопасности Azure**: Пока не доступен
 
@@ -140,7 +140,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 
 
-Образцы политики Azure для сетей:https://docs.microsoft.com/azure/governance/policy/samples/#network
+Образцы политики Azure для сетей:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network
 
 
 
@@ -373,10 +373,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Руководство**: Используйте Azure Active Directory (AD) Privileged Identity Management (PIM) для генерации журналов и оповещений, когда в среде происходит подозрительная или небезопасная активность. Используйте обнаружение рисков Azure AD для просмотра предупреждений и отчетов о рискованном поведении пользователей. Для дополнительных журналов отправьте оповещения о обнаружении рисков Центра безопасности Azure в Azure Monitor и настройте пользовательские оповещения/уведомления с помощью групп действий.
 
-
-
 Как развернуть Privileged Identity Management (PIM):https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
-
 
 Поймите обнаружения рисков Azure AD:https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
@@ -780,7 +777,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 - Концентратор событий должен использовать конечную точку службы виртуальной сети
 
-Встроенная политика Azure для пространства https://docs.microsoft.com/en-\ имен событий: нас/лазурный/узел/политика/образцы/встроенные политики
+Встроенная политика Azure для пространства имен событий:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
 
 Как просмотреть доступные Aliases Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
@@ -961,7 +958,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Руководство**: Настройка геоаварийного восстановления для концентраторов событий Azure. При простое целых регионов Azure или центров обработки данных (если не используются зоны доступности) крайне важно, чтобы обработка данных продолжала работать в другом регионе или центре обработки данных. Таким образом, восстановление гео-катастрофы и георепликация являются важными функциями для любого предприятия. Центры событий Azure поддерживают географическое аварийное восстановления и георепликацию на уровне пространства имен. 
 
-Понять гео-аварийное восстановление для концентраторов событий Azure:https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones-preview
+Понять гео-аварийное восстановление для концентраторов событий Azure:https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 

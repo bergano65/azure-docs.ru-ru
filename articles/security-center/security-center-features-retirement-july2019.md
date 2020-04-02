@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: article
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: fda49ae31d7598497a3128a846a3f4e12e84ffe1
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 1f923db5c730f6dec15f4fc211ab7acbd009ac7f
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80435911"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521419"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Выход на пенсию функций Центра безопасности (июль 2019)
 
@@ -169,7 +169,7 @@ ms.locfileid: "80435911"
 
 Центр безопасности Azure отслеживает конфигурации безопасности на основе [более 150 рекомендуемых правил](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) усиления защиты операционной системы. Эти правила относятся к брандмауэрам, аудиту, политикам паролей и многое другое. Если конфигурация компьютера уязвима к атакам, центр безопасности формирует рекомендации по безопасности. [Экран конфигурации настройки элемента безопасности](https://docs.microsoft.com/azure/security-center/security-center-customize-os-security-config) позволяет клиентам настроить конфигурацию безопасности ОС по умолчанию в Центре безопасности.
 
-Мы удалили эту функцию предварительного просмотра. Чтобы сбросить конфигурации безопасности обратно к значениям по умолчанию после даты выхода на пенсию, сделайте это через API или Powershell, используя [следующие инструкции.](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20samples/Reset%20security%20configurations%20customization)
+Мы удалили эту функцию предварительного просмотра. Чтобы сбросить конфигурации безопасности обратно к значениям по умолчанию после даты выхода на пенсию, сделайте это через API или Powershell, используя [следующие инструкции.](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/Reset%20security%20configurations%20customization)
 
 ![Оторитнастройка конфигураций безопасности][17]
 
@@ -189,7 +189,7 @@ ms.locfileid: "80435911"
 
 В [репозитории GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Legacy%20Log%20Analytics%20dashboards) для Центра безопасности можно получить исходные запросы Log Analytics, заполняющие панель мониторинга и аудита.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/).
 - Узнайте больше о [Azure Sentinel](https://docs.microsoft.com/azure/sentinel).

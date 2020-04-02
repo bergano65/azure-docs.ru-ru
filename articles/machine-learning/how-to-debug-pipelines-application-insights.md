@@ -4,19 +4,19 @@ titleSuffix: Azure Machine Learning
 description: Добавьте журналирование в конвейеры обучения и пакетного скоринга и просмотреданных результатов в Application Insights.
 services: machine-learning
 author: aburek
-ms.author: anrode
+ms.author: cgronlun
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: 85dcd9ef98deb2ea0117f2db280e49c4a57bf00f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 217a89f6ede4e4b1d2182eed79b088808432044f
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76776304"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529363"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines-in-application-insights"></a>Отладить и устранить неполадки конвейеров машинного обучения в Application Insights
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "76776304"
   ```
 * Создайте [экземпляр Application Insights](../azure-monitor/app/opencensus-python.md) (этот документ также содержит информацию о получении строки соединения для ресурса)
 
-## <a name="getting-started"></a>Начало работы
+## <a name="getting-started"></a>Приступая к работе
 
 Данный раздел представляет собой введение, специфичное для использования OpenCensus из конвейера машинного обучения Azure. Подробную информацию о [экспортерах OpenCensus Azure Monitor можно](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) узнать на примере OpenCensus
 

@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3d71301534d56ef8eca68951c8c9f9a1570b3a6d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7d3bcc32dc8f1412a5adbc175a5f8618628bce83
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80282262"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80547892"
 ---
 # <a name="common-questions-azure-to-azure-disaster-recovery"></a>Общие вопросы: аварийное восстановление Azure-to-Azure
 
@@ -93,7 +93,7 @@ ms.locfileid: "80282262"
 
 ### <a name="does-site-recovery-require-internet-connectivity"></a>Требуется ли подключение к Интернету для Site Recovery?
 
-Нет, восстановление сайта не требует подключения к Интернету. Но это требует доступа к URL-адресам восстановления сайта и диапазонам IP, о чем говорится в [сети в аварийном восстановлении Azure VM.](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-ip-address-ranges)
+Нет, восстановление сайта не требует подключения к Интернету. Но это требует доступа к URL-адресам восстановления сайта и диапазонам IP, о чем говорится в [сети в аварийном восстановлении Azure VM.](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-urls)
 
 ### <a name="can-i-replicate-an-application-that-has-a-separate-resource-group-for-separate-tiers"></a>Могу ли я воспроизвести приложение, которое имеет отдельную группу ресурсов для отдельных уровней?
 

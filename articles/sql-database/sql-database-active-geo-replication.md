@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 02/17/2020
-ms.openlocfilehash: fe006cebe9aab30a6aaa0bdf2bf3362a494f64d7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b80b58d64ea27df95c2704243d8a89fa6ca12e2a
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77426281"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548504"
 ---
 # <a name="creating-and-using-active-geo-replication"></a>Создание и использование активной георепликации
 
@@ -146,7 +146,7 @@ ms.locfileid: "77426281"
 
    ```sql
    create user geodrsetup for login geodrsetup
-   alter role geodrsetup dbmanager add member geodrsetup
+   alter role dbmanager add member geodrsetup
    ```
 
 1. Обратите внимание на SID нового входа с помощью этого запроса: 
@@ -242,9 +242,9 @@ ms.locfileid: "77426281"
 
 | Команда | Описание |
 | --- | --- |
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент ADD SECONDARY ON SERVER, чтобы создать базу данных-получатель для существующей базы данных и начать репликацию данных. |
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент FAILOVER или FORCE_FAILOVER_ALLOW_DATA_LOSS, чтобы задать базу данных-получатель в качестве базы данных-источника для запуска отработки отказа. |
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент REMOVE SECONDARY ON SERVER, чтобы завершить репликацию данных между базой данных SQL и указанной базой данных-получателем. |
+| [ИЗМЕНИТЬ БАЗУ ДАННЫХ](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент ADD SECONDARY ON SERVER, чтобы создать базу данных-получатель для существующей базы данных и начать репликацию данных. |
+| [ИЗМЕНИТЬ БАЗУ ДАННЫХ](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент FAILOVER или FORCE_FAILOVER_ALLOW_DATA_LOSS, чтобы задать базу данных-получатель в качестве базы данных-источника для запуска отработки отказа. |
+| [ИЗМЕНИТЬ БАЗУ ДАННЫХ](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент REMOVE SECONDARY ON SERVER, чтобы завершить репликацию данных между базой данных SQL и указанной базой данных-получателем. |
 | [sys.geo_replication_links](/sql/relational-databases/system-dynamic-management-views/sys-geo-replication-links-azure-sql-database) |Возвращает сведения о всех существующих связях репликации для каждой базы данных на сервере Базы данных SQL Azure. |
 | [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) |Получает время последней репликации, задержку при последней репликации и другие сведения о связи репликации для заданной базы данных SQL. |
 | [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) |Показывает состояние всех операций с базой данных, включая состояние связей репликации. |

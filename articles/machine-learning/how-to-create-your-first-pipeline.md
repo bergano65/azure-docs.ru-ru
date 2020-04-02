@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 12/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2f62be94c901b383e34608508baa87ea37c893af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fa0a5bfe921687ad964e9321e3874de37ccf9b98
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79283606"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549314"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью SDK машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "79283606"
 
 Провода ML используют удаленные вычислительные цели для вычислений и хранения промежуточных и конечных данных, связанных с этим конвейером. Они могут читать и записывать данные в и из поддерживаемых мест [хранения Azure.](https://docs.microsoft.com/azure/storage/)
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинного обучения Azure.](https://aka.ms/AMLFree)
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинного обучения Azure.](https://aka.ms/AMLFree)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -86,7 +86,7 @@ def_blob_store.upload_files(
     overwrite=True)
 ```
 
-Конвейер состоит из одного или нескольких шагов. Шаг — это единица вычислений, выполняемая на целевом объекте вычислений. Шаги могут использовать источники данных и создавать "промежуточные" данные. Шаг может создать данные, такие как модель, каталог с моделью и зависимыми файлами или временные данные. Эти данные становятся доступными для последующих шагов в конвейере.
+Конвейер состоит из одного или нескольких шагов. Шаг — это единица вычислений, выполняемая на целевом объекте вычислений. Шаги могут потреблять источники данных и создавать "промежуточные" данные. Шаг может создать данные, такие как модель, каталог с моделью и зависимыми файлами или временные данные. Эти данные становятся доступными для последующих шагов в конвейере.
 
 Чтобы узнать больше о подключении конвейера к данным, смотрите статьи [Как получить доступ к данным](how-to-access-data.md) и как зарегистрировать [наборы данных.](how-to-create-register-datasets.md) 
 
@@ -118,7 +118,7 @@ output_data1 = PipelineData(
 
 Если у вас есть табулярные данные, хранящиеся в файле или наборе файлов, [TabularDataset](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) является эффективной `DataReference`альтернативой . `TabularDataset`объекты поддерживают версии, диффы и сводные статистические данные. `TabularDataset`s лениво оцениваются (например, генераторы Python), и это эффективно подмножество их путем расщепления или фильтрации. Класс `FileDataset` предоставляет аналогичные лениво-оцененные данные, представляющие один или несколько файлов. 
 
-Вы создаете `TabularDataset` такие методы, как [from_delimited_files.](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header-true--partition-format-none-)
+Вы создаете `TabularDataset` такие методы, как [from_delimited_files.](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header-true--partition-format-none--support-multi-line-false-)
 
 ```python
 from azureml.data import TabularDataset
@@ -174,7 +174,7 @@ else:
     print(compute_target.status.serialize())
 ```
 
-### <a name="azure-databricks"></a><a id="databricks"></a>Лазурные databricks
+### <a name="azure-databricks"></a><a id="databricks"></a>Azure Databricks
 
 Azure Databricks — это среда, которая лежит в основе Apache Spark в облаке Azure. Ее можно использовать как целевой объект вычислений с помощью конвейера Машинного обучения Azure.
 
@@ -389,7 +389,7 @@ pipeline_run1.wait_for_completion()
 * Загружает изображение Docker для каждого шага в цель вычислений из реестра контейнеров.
 * Устанавливает хранилище данных, `DataReference` если объект указан в шаге. Если подключение не поддерживается, то данные копируются на целевой объект вычислений.
 * Выполняет шаг на целевом объекте вычислений, указанном в определении этого шага. 
-* Создает артефакты (журналы, stdout и stderr, метрики и выходные данные), указанные в шаге. Затем эти артефакты передаются в хранилище данных пользователя по умолчанию для хранения.
+* Создает артефакты (журналы, stdout и stderr, метрики и выходные данные), указанные в шаге. Затем эти артефакты загружаются и хранятся в хранилище данных пользователя по умолчанию.
 
 ![Схема запуска эксперимента в виде конвейера](./media/how-to-create-your-first-pipeline/run_an_experiment_as_a_pipeline.png)
 

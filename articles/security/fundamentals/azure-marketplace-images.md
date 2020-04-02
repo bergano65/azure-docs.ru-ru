@@ -3,7 +3,7 @@ title: Рекомендации по обеспечению безопаснос
 description: В этой статье содержатся рекомендации для образов, включенных в Marketplace.
 services: security
 documentationcenter: na
-author: barclayn
+author: terrylanfear
 manager: barbkess
 ms.assetid: ''
 ms.service: security
@@ -11,13 +11,13 @@ ms.subservice: security-fundamentals
 ms.devlang: na
 ms.topic: article
 ms.date: 01/11/2019
-ms.author: barclayn
-ms.openlocfilehash: b82cf957f4bd74cb2c63bfd5a7fe73899b395df6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: terrylan
+ms.openlocfilehash: 3925e39824d1702ff43a6b981ac997ddab658b96
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73795811"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548654"
 ---
 # <a name="security-recommendations-for-azure-marketplace-images"></a>Рекомендации по обеспечению безопасности для образов Azure Marketplace
 
@@ -40,8 +40,8 @@ ms.locfileid: "73795811"
 | Безопасность                                                     | Избегайте использования LVM.                                                                                                                                                                                                                                            |
 | Безопасность                                                     | Включите последние версии требуемых библиотек: </br> — OpenSSL версии 1.0 или более поздней; </br> — Python версии 2.5 или более поздней (рекомендуется использовать Python 2.6 и выше); </br> — пакет Python pyasn1, если он еще не установлен; </br> — d.OpenSSL версии 1.0 или более поздней.                                                                |
 | Безопасность                                                     | Очистить Bash / Shell истории записей.                                                                                                                                                                                                                                             |
-| Сети                                                   | Включите сервер SSH по умолчанию. Установите SSH сохранить в живых, чтобы sshd конфигурации со следующей опцией: ClientAliveInterval 180.                                                                                                                                                        |
-| Сети                                                   | Удалите из изображения любую пользовательскую конфигурацию сети. Удалить resolv.conf: `rm /etc/resolv.conf`.                                                                                                                                                                                |
+| Сеть                                                   | Включите сервер SSH по умолчанию. Установите SSH сохранить в живых, чтобы sshd конфигурации со следующей опцией: ClientAliveInterval 180.                                                                                                                                                        |
+| Сеть                                                   | Удалите из изображения любую пользовательскую конфигурацию сети. Удалить resolv.conf: `rm /etc/resolv.conf`.                                                                                                                                                                                |
 | Развертывание                                                   | Установите новейший Azure Linux Agent.</br> - Установите с помощью пакета RPM или Deb.  </br> — Можно использовать процесс установки вручную, но рекомендуется применять пакеты установщика. </br> — При установке агента вручную из репозитория GitHub сначала скопируйте файл `waagent` в `/usr/sbin` и запустите его (в качестве привилегированного пользователя): </br>`# chmod 755 /usr/sbin/waagent` </br>`# /usr/sbin/waagent -install` </br>Файл конфигурации агента помещается в каталог `/etc/waagent.conf`. |
 | Развертывание                                                   | Убедитесь, что поддержка Azure может предоставить нашим партнерам серийный выход консоли при необходимости и обеспечить адекватный тайм-аут для монтажа диска ОС из облачного хранилища. Добавьте следующие параметры к линии `console=ttyS0 earlyprintk=ttyS0 rootdelay=300`загрузки ядра изображения: . |
 | Развертывание                                                   | На диске операционной системы отсутствует раздел подкачки. Можно запросить подкачку для создания локального диска ресурсов с помощью агента Linux.         |

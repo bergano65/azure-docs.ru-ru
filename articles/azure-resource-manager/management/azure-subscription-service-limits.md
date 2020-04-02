@@ -3,12 +3,12 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит информацию о том, как увеличить лимиты вместе с максимальными значениями.
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: 325f7b3d03435945779c1f42e13681dcfd9604b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 397d6a719f64a49208e651469fab9cf841ccd4ad
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80334873"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521354"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -244,7 +244,11 @@ ms.locfileid: "80334873"
 
 ## <a name="media-services-limits"></a>Ограничения служб мультимедиа
 
-[!INCLUDE [azure-mediaservices-limits](../../../includes/azure-mediaservices-limits.md)]
+[!INCLUDE [azure-mediaservices-limits](../../../includes/media-servieces-limits-quotas-constraints.md)]
+
+### <a name="media-services-v2-legacy"></a>Службы мультимедиа версии 2 (прежняя версия)
+
+Для ограничений, характерных для Медиа Услуги v2 (наследие), см [Media Services v2 (наследие)](https://docs.microsoft.com/azure/media-services/previous/media-services-quotas-and-limitations)
 
 ## <a name="mobile-services-limits"></a>Ограничения мобильных служб
 

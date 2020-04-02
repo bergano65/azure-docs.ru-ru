@@ -13,16 +13,16 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
-ms.openlocfilehash: ef781653332984a7fb6d71ef91d53cbf77e6c91c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 89bae60c30cfe82d38c61f385dbaef574b4152d8
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72437952"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80547782"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager
 
-В этой статье описывается шаблон Azure Resource Manager для [обработчика расширения Desired State Configuration (DSC)](dsc-overview.md). Во многих примерах используется **RegistrationURL** (предоставляется в виде строки) и **RegistrationKey** (предоставляется в виде [PSCredential](/dotnet/api/system.management.automation.pscredential)) для подключения к службе автоматизации Azure. Подробнее о получении этих значений см. в разделе [Подключение компьютеров для управления с помощью настройки состояния службы автоматизации Azure (Безопасная регистрация)](/azure/automation/automation-dsc-onboarding#secure-registration).
+В этой статье описывается шаблон Azure Resource Manager для [обработчика расширения Desired State Configuration (DSC)](dsc-overview.md). Во многих примерах используется **RegistrationURL** (предоставляется в виде строки) и **RegistrationKey** (предоставляется в виде [PSCredential](/dotnet/api/system.management.automation.pscredential)) для подключения к службе автоматизации Azure. Подробнее о получении этих значений см. в разделе [Подключение компьютеров для управления с помощью настройки состояния службы автоматизации Azure (Безопасная регистрация)](/azure/automation/automation-dsc-onboarding#onboarding-securely-using-registration).
 
 > [!NOTE]
 > Вы можете встретить немного отличающиеся примеры схемы. Изменение в схеме произошло в выпуске за октябрь 2016 года. Дополнительные сведения см. в разделе об [обновлении предыдущего формата](#update-from-a-previous-format).

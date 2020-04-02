@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/25/2020
+ms.date: 04/01/2020
 ms.author: b-juche
-ms.openlocfilehash: 79c23c49cbf3c869b41e5a2dbfc6ec0aaa93e4ae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 59453dbb9617f5a2ddbdca08709747b11a688560
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80258181"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80547088"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Задаваемые вопросы о файлах NetApp Azure
 
@@ -144,6 +144,11 @@ Azure NetApp Files поддерживает Windows Server 2008r2SP1-2019 вер
 ### <a name="why-does-the-available-space-on-my-smb-client-not-show-the-provisioned-size"></a>Почему доступное пространство в клиенте SMB не показывает приготовивого размера?
 
 Размер объема, о которых сообщает клиент SMB, — это максимальный размер, до которым может вырасти объем файлов NetApp Azure. Размер объема файлов Azure NetApp, показанный на клиенте SMB, не отражает квоту или размер объема. Вы можете получить объем или квоту файлов Azure NetApp через портал Azure или API.
+
+### <a name="does-azure-netapp-files-support-kerberos-encryption"></a>Поддерживают ли файлы Сети Приложения Azure шифрование Kerberos?
+
+Да, по умолчанию, Azure NetApp Files поддерживает шифрование AES-128 и AES-256 для трафика между службой и целевыми контроллерами доменов Active Directory. Смотрите [Создать объем SMB для файлов Сети Azure](azure-netapp-files-create-volumes-smb.md) для требований. 
+
 <!--
 ### Does Azure NetApp Files support LDAP signing? 
 

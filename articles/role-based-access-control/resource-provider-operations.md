@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 03/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b344886e89a10a027cba169e92056a6dda443d8d
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: c56e6729307a1cad998a060202f51cb8f29bf94a
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80421941"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548320"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -332,7 +332,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.ApiManagement/service/read | Чтение метаданных для экземпляра службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/delete | Удаляет экземпляр службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/updatehostname/action | Позволяет настроить, обновить или удалить имена личных доменов для службы управления API. |
-> | Действие | Microsoft.ApiManagement/service/updatecertificate/action | Передает SSL-сертификата для службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/updatecertificate/action | Загрузить сертификат TLS/SSL для службы управления API |
 > | Действие | Microsoft.ApiManagement/service/backup/action | Архивирует службу управления API в указанный контейнер в предоставленной пользователем учетной записи хранения. |
 > | Действие | Microsoft.ApiManagement/service/restore/action | Восстановление службы управления API из указанного контейнера в предоставленной пользователем учетной записи хранения. |
 > | Действие | Microsoft.ApiManagement/service/managedeployments/action | Позволяет изменить номер SKU или единицы, а также добавить или удалить региональные развертывания службы управления API. |
@@ -10732,7 +10732,7 @@ Microsoft Мониторинг Исследования
 > |  | **Операций** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Соответствие поставщику ресурсов для обслуживания](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли Azure](custom-roles.md)

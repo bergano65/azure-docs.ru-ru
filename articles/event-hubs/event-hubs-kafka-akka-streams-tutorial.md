@@ -1,6 +1,6 @@
 ---
 title: Использование Akka Streams для Apache Kafka с Центрами событий Azure | Документация Майкрософт
-description: Эта статья содержит сведения о том, как подключить Akka Streams к Центрам событий Azure с поддержкой Apache Kafka.
+description: В этой статье приводится информация о том, как подключить Потоки Akka к центру событий Azure.
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -13,17 +13,17 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 729e78959f93b1aa1563a049a64c553929c4f97e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c53fcc7b4b99e77237ba7ea9219aef4182f2af61
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80283639"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521824"
 ---
 # <a name="using-akka-streams-with-event-hubs-for-apache-kafka"></a>Использование Akka Streams с Центрами событий для Apache Kafka
 В этом учебнике показано, как подключить Akka Streams к центру событий без изменения клиентских протоколов или запуска собственных кластеров. Центры событий Azure для Kafka поддерживают [версию Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 > * Создание пространства имен в Центрах событий
 > * Клонирование примера проекта
@@ -49,7 +49,7 @@ ms.locfileid: "80283639"
 
 ## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 
-Для отправки и получения данных из любой службы концентраторов событий требуется пространство имен концентраторов событий. Инструкции по получению конечной точки Kafka Центров событий см. в статье [Создание Центров событий с поддержкой Kafka](event-hubs-create.md). Скопируйте строку подключения к Центрам событий для дальнейшего использования.
+Для отправки и получения данных из любой службы концентраторов событий требуется пространство имен концентраторов событий. Для получения подробной информации смотрите [возможность создания концентратора событий.](event-hubs-create.md) Скопируйте строку подключения к Центрам событий для дальнейшего использования.
 
 ## <a name="clone-the-example-project"></a>Клонирование примера проекта
 

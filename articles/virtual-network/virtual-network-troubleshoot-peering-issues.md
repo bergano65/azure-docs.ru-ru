@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: 1fddbe908ccebc1384dcccde0810366f1a6d5da7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 662619e101b45d1dd8b34ea97e31f214b254124a
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73796237"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521884"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Устранение неполадок с пирингом виртуальной сети
 
@@ -234,6 +234,15 @@ ms.locfileid: "73796237"
 ### <a name="failed-to-peer-a-databricks-virtual-network"></a>Не удалось заглянуть в виртуальную сеть Databricks
 
 Чтобы решить эту проблему, назначайте виртуальную сеть, вглядывающуюся под **Azure Databricks,** а затем укажите целевую виртуальную сеть с помощью **Идентификатора ресурсов.** Для получения дополнительной информации [см.](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-peering.html#id2)
+
+### <a name="the-remote-virtual-network-lacks-a-gateway"></a>Удаленной виртуальной сети не хватает шлюза
+
+Эта проблема возникает, когда вы загоняете `Use Remote Gateways`виртуальные сети от разных арендаторов, а затем хотите настроить. Ограничение портала Azure состоит в том, что он не может проверить наличие виртуального сетевого шлюза в виртуальной сети другого клиента.
+
+Существует два способа решения проблемы:
+
+ * Удалите пиринги `Use Remote Gateways` и активируйте опцию при создании нового пиринга.
+ * Вместо портала Azure используйте PowerShell или `Use Remote Gateways`CLI, чтобы включить.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

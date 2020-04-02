@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 02/10/2020
-ms.openlocfilehash: 4025c620aea49dfb26ab203630c121d29d88d9d7
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: f02046d1e2ee558ca4ea4472a03fddb5d0a6a16f
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80474531"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549323"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов машинного обучения Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "80474531"
 
 #### <a name="create-a-tabulardataset"></a>Создание TabularDataset
 
-Используйте [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header-true--partition-format-none-) метод `TabularDatasetFactory` в классе для чтения файлов в формате .csv или .tsv, а также для создания незарегистрированного TabularDataset. Если вы читаете из нескольких файлов, результаты будут агрегированы в одно табликовое представление. 
+Используйте [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header-true--partition-format-none--support-multi-line-false-) метод `TabularDatasetFactory` в классе для чтения файлов в формате .csv или .tsv, а также для создания незарегистрированного TabularDataset. Если вы читаете из нескольких файлов, результаты будут агрегированы в одно табликовое представление. 
 
 ```Python
 from azureml.core import Workspace, Datastore, Dataset
@@ -164,7 +164,7 @@ sql_ds = Dataset.Tabular.from_sql_query((sql_datastore, 'SELECT * FROM my_table'
 
 В TabularDatasets можно указать отметку времени из столбца в данных или от того, где хранятся данные шаблона пути, чтобы включить черту временных рядов. Эта спецификация позволяет легко и эффективно фильтровать по времени.
 
-Используйте [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) метод`TabularDataset` в классе, чтобы указать столбец отметки времени и включить фильтрацию по времени. Для получения дополнительной [Tabular time series-related API demo with NOAA weather data](https://aka.ms/azureml-tsd-notebook)информации см.
+Используйте [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) метод`TabularDataset` в классе, чтобы указать столбец отметки времени и включить фильтрацию по времени. Для получения дополнительной [Tabular time series-related API demo with NOAA weather data](https://aka.ms/azureml-tsd-notebook)информации см.
 
 ```Python
 # create a TabularDataset with time series trait
@@ -304,7 +304,7 @@ titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
 df = titanic_ds.to_pandas_dataframe()
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте, как тренироваться с наборами данных.](how-to-train-with-datasets.md)
 * Используйте автоматизированное машинное обучение для [обучения с TabularDatasets.](https://aka.ms/automl-dataset)

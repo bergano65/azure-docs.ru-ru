@@ -7,19 +7,19 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 03/12/2020
-ms.openlocfilehash: f9592f5d2666684e0cf5eef687b1e69cfb55066c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 900bf815917a4b7c9841860d663a2183b1ab71b3
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80065568"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529674"
 ---
 # <a name="configure-managed-identities-for-your-azure-data-explorer-cluster"></a>Настройка управляемых идентификаторов для кластера Azure Data Explorer
 
 [Управляемый итог из каталога Azure Active](/azure/active-directory/managed-identities-azure-resources/overview) позволяет кластеру легко получить доступ к другим защищенным AAD ресурсам, таким как Azure Key Vault. Идентификация управляется платформой Azure и не требует предоставления или ротации каких-либо секретов. В этой статье показано, как создать управляемый имитатор для кластеров Azure Data Explorer. Управляемая конфигурация идентификации в настоящее время поддерживается только для [включения ключей, управляемых клиентом для вашего кластера.](/azure/data-explorer/security#customer-managed-keys-with-azure-key-vault)
 
 > [!Note]
-> Управляемые идентификаторы для Azure Data Explorer не будут вести себя так, как ожидалось, если ваше приложение будет перенесено через подписки или арендаторов. Приложение должно будет получить новую личность, что может быть сделано путем [отключения](#remove-a-system-assigned-identity) и [повторного включения](#add-a-system-assigned-identity) функции. Политики доступа к ресурсам ниже по течению также необходимо будет обновить для использования новой идентификации.
+> Управляемые идентификаторы для Azure Data Explorer не будут вести себя так, как ожидалось, если кластер Azure Data Explorer будет перенесен через подписки или арендаторов. Приложение должно будет получить новую личность, что может быть сделано путем [отключения](#disable-a-system-assigned-identity) и [повторного включения](#add-a-system-assigned-identity) функции. Политики доступа к ресурсам ниже по течению также необходимо будет обновить для использования новой идентификации.
 
 ## <a name="add-a-system-assigned-identity"></a>Добавление установленного системой удостоверения
                                                                                                     
@@ -164,13 +164,13 @@ ms.locfileid: "80065568"
 
 ---
 
-## <a name="remove-a-system-assigned-identity"></a>Удаление установленного системой удостоверения
+## <a name="disable-a-system-assigned-identity"></a>Отключить установленное системой удостоверение личности
 
 Удаление установленного системой удостоверения также удалит его из AAD. Системные идентификаторы также автоматически удаляются из AAD при удалении ресурса кластера. Удостоверение, назначенное системой, может быть удалено путем отключения функции.  Удостоверение, назначенное системой, удаляется с помощью шаблонов C', ARM или портала Azure, как описано ниже.
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-### <a name="remove-a-system-assigned-identity-using-the-azure-portal"></a>Удаление установленного системой удостоверения с помощью портала Azure
+### <a name="disable-a-system-assigned-identity-using-the-azure-portal"></a>Отогнаните системное удостоверение с помощью портала Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Выберите**идентификацию** **настроек** > в левом стеле портала.

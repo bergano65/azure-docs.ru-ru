@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 2970ebf42acb87e93f8b827b3687b219da5867c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9225cfd9793a84f371387d6450a3dfa80ba74de3
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80244296"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80547540"
 ---
 # <a name="azure-security-baseline-for-azure-container-registry"></a>Базовый базовый униза безопасности Azure для реестра контейнеров Azure
 
@@ -68,7 +68,6 @@ ms.locfileid: "80244296"
 Вы можете использовать Azure Security Center Just In Time Network для настройки НСГ, чтобы ограничить экспозицию конечных точек для утвержденных IP-адресов в течение ограниченного периода времени. Кроме того, используйте azure Security Center Adaptive Network Hardening, чтобы рекомендовать конфигурации NSG, ограничивающие порты и имп-интерфейсы на основе фактического анализа трафика и угроз.
 
 Как настроить DDoS-защиту:https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
-
 
 Как развернуть брандмауэр Azure:https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal
 

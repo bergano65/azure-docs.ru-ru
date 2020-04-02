@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: 33005bc286f7dc2c0ebed74bd9df0309e71346f5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f501eb55f72811063ddf1d8e02a0ce2137d598f3
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73824834"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546310"
 ---
 # <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решения для удаленного мониторинга
 
@@ -125,9 +125,6 @@ ms.locfileid: "73824834"
 ### <a name="azure-time-series-insights"></a>Azure Time Series Insights
 
 [Аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/) хранит данные телеметрии с устройств, подключенных к акселератору решения. Кроме того, эта служба обеспечивает визуализацию и запрашивание данных телеметрии устройства в веб-интерфейсе пользователя решения.
-
-> [!NOTE]
-> Аналитика временных рядов в настоящее время недоступна в облаке Azure для Китая. Развертывания акселератора решения для удаленного мониторинга в облаке Azure для Китая используют Cosmos DB для хранения всех данных.
 
 ### <a name="configuration-microservice"></a>Микрослужба конфигурации
 
