@@ -2,18 +2,18 @@
 title: включить файл
 description: включить файл
 services: virtual-machines
-author: barclayn
+author: msmbaldwin
 ms.service: virtual-machines
 ms.topic: include
 ms.date: 11/13/2019
-ms.author: barclayn
+ms.author: mbaldwin
 ms.custom: include file
-ms.openlocfilehash: d0ede337f2ae17f28cd02df7ed35919bd9955e7a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: df577ab2b5e9658fd55324c8fd6fd008621b4d46
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74048565"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80545901"
 ---
 Эта статья содержит рекомендации по безопасности для виртуальных машин Azure. Следуйте этим рекомендациям, чтобы помочь выполнить обязательства по обеспечению безопасности, описанные в нашей модели совместной ответственности. Рекомендации также помогут вам повысить общую безопасность решений для веб-приложений. Для получения дополнительной информации о том, что корпорация Майкрософт делает для выполнения обязанностей поставщика услуг, [см.](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91)
 
@@ -53,7 +53,7 @@ ms.locfileid: "74048565"
 |-|----|--|
 | Мониторинг ввоза. | Для мониторинга состояния виртуальных вывизнов Azure и виртуальных наборов машин можно использовать [Azure Monitor для виртуальных ввоза.](../articles/azure-monitor/insights/vminsights-overview.md) Снижение производительности виртуальной машины может привести к прерыванию работы служб, что в свою очередь нарушает доступность, являющуюся одним из основных принципов безопасности. | - |
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 | Рекомендация | Комментарии | Центр безопасности |
 |-|----|--|

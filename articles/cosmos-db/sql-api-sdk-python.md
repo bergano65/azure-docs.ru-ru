@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: reference
 ms.date: 11/29/2018
 ms.author: sngun
-ms.openlocfilehash: 6bc636b751d12bdb576e54f26536ac0045839229
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 090446d286b38a0bfcbde4ed9e77235050b36417
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "70137342"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80547697"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Python для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "70137342"
 > * [Async Java](sql-api-sdk-async-java.md)
 > * [Java](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [Остальные](https://docs.microsoft.com/rest/api/cosmos-db/)
+> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
 > * [Массовый исполнитель - .NET](sql-api-sdk-bulk-executor-dot-net.md)
@@ -84,7 +84,7 @@ ms.locfileid: "70137342"
 
 ### <a name="210"></a><a name="2.1.0"/>2.1.0
 * Добавлена поддержка статистических запросов (COUNT, MIN, MAX, SUM и AVG).
-* Добавлена возможность отключения проверки SSL при работе с эмулятором Cosmos DB.
+* Добавлена опция для отключения проверки TLS при запуске против эмулятора Cosmos DB.
 * Удалено ограничение, согласно которому нужно использовать модуль зависимых запросов только версии 2.10.0.
 * Минимальная пропускная способность секционированных коллекций снижена с 10 100 ЕЗ/с до 2500 ЕЗ/с.
 * Добавлена поддержка включения ведения журнала сценариев во время выполнения хранимой процедуры.
@@ -187,7 +187,7 @@ ms.locfileid: "70137342"
 | 0.9.1-prelease |23 сентября 2014 г. |29 февраля 2016 г. |
 | 0.9.0-prelease |21 августа 2014 г. |29 февраля 2016 г. |
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>См. также

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/22/2019
 ms.author: yelevin
-ms.openlocfilehash: 5c79642d287224cd15531701d7cc87ebfd72eb69
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eec07a01edc6b126bb7cd3a814912ea5c5b14195
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77588048"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529095"
 ---
 # <a name="connect-data-from-threat-intelligence-providers"></a>Подключение данных от поставщиков информации об угрозах
 
@@ -42,6 +42,10 @@ Azure Sentinel позволяет импортировать индикатор�
 - [MISP Open Source Threat Intelligence Platform](https://www.misp-project.org/)
     
     Для примера скрипта, который предоставляет клиентам экземпляры MISP для переноса [MISP to Microsoft Graph Security Script](https://github.com/microsoftgraph/security-api-solutions/tree/master/Samples/MISP)индикаторов угроз в API безопасности Microsoft Graph, см.
+
+- [Аномали ThreatStream](https://www.anomali.com/products/threatstream)
+
+    Чтобы загрузить ThreatStream Integrator and Extensions, а также инструкции по подключению разведки ThreatStream к API безопасности Microsoft Graph, смотрите страницу [загрузок ThreatStream.](https://ui.threatstream.com/downloads)
 
 - [Пало-Альто Сети MineMeld](https://www.paloaltonetworks.com/products/secure-the-network/subscriptions/minemeld)
     

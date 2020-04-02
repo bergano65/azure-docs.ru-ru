@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/04/2019
-ms.openlocfilehash: 401019c537cb0eb51fa6002637e170a79210f7d2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0a7a89b4ff1f6deb94c545e64b4584d7959d573a
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77617635"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546382"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение дрейфа данных (предварительный просмотр) в наборах данных
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "77617635"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для создания и работы с мониторами наборов данных необходимо:
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 * [Рабочее пространство машинного обучения Azure](how-to-manage-workspace.md).
 * [Установлен SDK Для Python,](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)который включает пакет наборов лазурных данных.
 * Структурированные (табулярные) данные с меткой времени, указанной в пути файла, имени файла или столбце в данных.
@@ -77,7 +77,7 @@ ms.locfileid: "77617635"
 
 #### <a name="python-sdk"></a>Пакет SDK для Python
 
-[`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) Метод [`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) класса определяет столбец временной отметки для набора данных. 
+[`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) Метод [`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) класса определяет столбец временной отметки для набора данных. 
 
 ```python 
 from azureml.core import Workspace, Dataset, Datastore
@@ -104,7 +104,7 @@ dset = dset.with_timestamp_columns('date')
 dset = dset.register(ws, 'target')
 ```
 
-Полный пример использования `timeseries` черты наборов данных [example notebook](https://aka.ms/azureml-tsd-notebook) см. [datasets SDK documentation](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-)
+Полный пример использования `timeseries` черты наборов данных [example notebook](https://aka.ms/azureml-tsd-notebook) см. [datasets SDK documentation](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)
 
 #### <a name="azure-machine-learning-studio"></a>Студия машинного обучения Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku-inline.md)]
@@ -131,7 +131,7 @@ dset = dset.register(ws, 'target')
 
 | Параметр | Описание | Советы | Изменяемый | 
 | ------- | ----------- | ---- | ------- | 
-| name | Название монитора набора данных. | | нет |
+| Имя | Название монитора набора данных. | | нет |
 | Базовый набор данных | Табулярный набор данных, который будет использоваться в качестве базового уровня для сравнения целевого набора данных с течением времени. | Базовый набор данных должен иметь общие черты с целевым набором данных. Как правило, базовый условитель должен устанавливаться в наборе обучаемых данных модели или на фрагмент целевого набора данных. | нет |
 | Целевой набор данных | Табулярный набор данных с указанным столбцом метки времени, который будет проанализирован для дрейфа данных. | Целевой набор данных должен иметь общие черты с базовым набором данных и должен быть набором `timeseries` данных, к которому прилагается новый набор данных. Исторические данные в целевом наборе данных могут быть проанализированы или новые данные могут быть проверены. | нет | 
 | Частота | Частота, которая будет использоваться для планирования задания конвейера и анализа исторических данных при запуске засылки. Варианты включают ежедневные, еженедельные или ежемесячные. | Отрегулируйте эту настройку, чтобы включить сопоставимый размер данных в базовый упор. | нет | 

@@ -4,12 +4,12 @@ description: Узнайте, как использовать Azure AD в Azure A
 services: automation
 ms.date: 03/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 77476c67761a950430b39d5baddf2c6efd77f1a2
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 90338a1ffa79e6c2347832cb2e74633db02ec72d
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80479452"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548342"
 ---
 # <a name="use-azure-ad-in-azure-automation-to-authenticate-to-azure"></a>Используйте Azure AD в автоматизации Azure для аутентификации в Azure
 
@@ -95,7 +95,7 @@ Azure Automation использует класс [PSCredential](https://docs.mic
 
 ### <a name="create-the-credential-asset-with-windows-powershell"></a>Создание актива учетных данных с помощью Windows PowerShell
 
-Чтобы подготовить новый актив учетных данных в `PSCredential` Windows PowerShell, скрипт сначала создает объект, используя назначенное имя пользователя и пароль. Затем скрипт использует этот объект для создания актива через вызов в смдлет [New-AzureAutomationCredential.](https://docs.microsoft.com/powershell/module/servicemanagement/azure/new-azureautomationcredential?view=azuresmps-4.0.0) Кроме того, скрипт может вызвать cmdlet [Get-Credential,](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7) чтобы побудить пользователя ввести имя и пароль. Смотрите [учетные данные в Azure Automation](shared-resources/credentials.md). 
+Чтобы подготовить новый актив учетных данных в `PSCredential` Windows PowerShell, скрипт сначала создает объект, используя присвоенное имя пользователя и пароль. Затем скрипт использует этот объект для создания актива через вызов в смдлет [New-AzureAutomationCredential.](https://docs.microsoft.com/powershell/module/servicemanagement/azure/new-azureautomationcredential?view=azuresmps-4.0.0) Кроме того, скрипт может вызвать cmdlet [Get-Credential,](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7) чтобы побудить пользователя ввести имя и пароль. Смотрите [учетные данные в Azure Automation](shared-resources/credentials.md). 
 
 ## <a name="managing-azure-resources-from-an-azure-automation-runbook"></a>Управление ресурсами Azure из рунисток Автоматизации Azure
 
@@ -160,7 +160,7 @@ Workflow Stop-Start-AzureVM
 }
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Вы можете найти информацию об учетных ресурсах Automation в [учетных данных в Azure Automation.](shared-resources/credentials.md)
 * Ознакомиться с [модулями Управления в Azure Automation](shared-resources/modules.md) можно узнать, как работать с модулями автоматизации.

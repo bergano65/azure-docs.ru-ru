@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: fe4c69787b606c601d2dc8b31cadc6dcf57458da
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 847e3c612a200743fa08cf939c9995ebb6f3dbfc
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79297073"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80520329"
 ---
 # <a name="data-encryption-for-azure-database-for-postgresql-single-server-by-using-the-azure-portal"></a>Шифрование данных для базы данных Azure для единого сервера PostgreS'L с помощью портала Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "79297073"
 
    ![Обзор политики доступа](media/concepts-data-access-and-security-data-encryption/access-policy-wrap-unwrap.png)
 
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 ## <a name="set-data-encryption-for-azure-database-for-postgresql-single-server"></a>Установка шифрования данных для базы данных Azure для одного сервера PostgreS'L
 
@@ -61,11 +61,11 @@ ms.locfileid: "79297073"
 
    ![Скриншот базы данных Azure для PostgreS'L с выделенными вариантами шифрования данных](media/concepts-data-access-and-security-data-encryption/setting-data-encryption.png)
 
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 4. Чтобы обеспечить полную шифрование всех файлов (включая временные файлы), перезаключите сервер.
 
-## <a name="restore-or-create-a-replica-of-the-server"></a>Восстановление или создание реплики сервера
+## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для восстановления или реплики серверов
 
 После того, как база данных Azure для одного сервера PostgreS'L зашифрована с помощью управляемого ключа клиента, хранящегося в Key Vault, любая вновь созданная копия сервера также шифруется. Эту новую копию можно сделать либо через локальную или геовосстановительную операцию, либо через операцию реплики (локальный/кросс-регион). Таким образом, для зашифрованного сервера PostgreS'L можно использовать следующие шаги для создания зашифрованного восстановленного сервера.
 
@@ -93,130 +93,6 @@ ms.locfileid: "79297073"
 4. После регистрации основного сервиса повторно переоформить ключ, и сервер возобновляет свою нормальную функциональность.
 
    ![Скриншот базы данных Azure для PostgreS'L, показывающий восстановленную функциональность](media/concepts-data-access-and-security-data-encryption/restore-successful.png)
-
-## <a name="using-an-azure-resource-manager-template-to-enable-data-encryption"></a>Использование шаблона управления ресурсами Azure для обеспечения шифрования данных
-
-Помимо портала Azure, вы также можете включить шифрование данных на базе данных Azure для одного сервера PostgreS'L, используя шаблоны Azure Resource Manager для нового и существующего сервера.
-
-### <a name="for-a-new-server"></a>Для нового сервера
-
-Используйте один из заранее созданных шаблонов Управления ресурсами Azure, чтобы предоставить серверу с включенным шифрованием данных: [Пример с шифрованием данных](https://github.com/Azure/azure-postgresql/tree/master/arm-templates/ExampleWithDataEncryption)
-
-Этот шаблон менеджера ресурсов Azure создает базу данных Azure для одного сервера PostgreS'L и использует **KeyVault** и **Key,** пройденные в качестве параметров, чтобы обеспечить шифрование данных на сервере.
-
-### <a name="for-an-existing-server"></a>Для существующего сервера
-Кроме того, можно использовать шаблоны Azure Resource Manager для включения шифрования данных в существующую базу данных Azure для одиночных серверов PostgreS'L.
-
-* Передайте URI ключа ключа Azure Key Vault, `keyVaultKeyUri` который вы скопировали ранее под свойством в объекте свойств.
-
-* Используйте *2020-01-01-предварительный просмотр* в качестве версии API.
-
-```json
-{
-  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "location": {
-      "type": "string"
-    },
-    "serverName": {
-      "type": "string"
-    },
-    "keyVaultName": {
-      "type": "string",
-      "metadata": {
-        "description": "Key vault name where the key to use is stored"
-      }
-    },
-    "keyVaultResourceGroupName": {
-      "type": "string",
-      "metadata": {
-        "description": "Key vault resource group name where it is stored"
-      }
-    },
-    "keyName": {
-      "type": "string",
-      "metadata": {
-        "description": "Key name in the key vault to use as encryption protector"
-      }
-    },
-    "keyVersion": {
-      "type": "string",
-      "metadata": {
-        "description": "Version of the key in the key vault to use as encryption protector"
-      }
-    }
-  },
-  "variables": {
-    "serverKeyName": "[concat(parameters('keyVaultName'), '_', parameters('keyName'), '_', parameters('keyVersion'))]"
-  },
-  "resources": [
-    {
-      "type": "Microsoft.DBforPostgreSQL/servers",
-      "apiVersion": "2017-12-01",
-      "kind": "",
-      "location": "[parameters('location')]",
-      "identity": {
-        "type": "SystemAssigned"
-      },
-      "name": "[parameters('serverName')]",
-      "properties": {
-      }
-    },
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-05-01",
-      "name": "addAccessPolicy",
-      "resourceGroup": "[parameters('keyVaultResourceGroupName')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.DBforPostgreSQL/servers', parameters('serverName'))]"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "template": {
-          "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "resources": [
-            {
-              "type": "Microsoft.KeyVault/vaults/accessPolicies",
-              "name": "[concat(parameters('keyVaultName'), '/add')]",
-              "apiVersion": "2018-02-14-preview",
-              "properties": {
-                "accessPolicies": [
-                  {
-                    "tenantId": "[subscription().tenantId]",
-                    "objectId": "[reference(resourceId('Microsoft.DBforPostgreSQL/servers/', parameters('serverName')), '2017-12-01', 'Full').identity.principalId]",
-                    "permissions": {
-                      "keys": [
-                        "get",
-                        "wrapKey",
-                        "unwrapKey"
-                      ]
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "name": "[concat(parameters('serverName'), '/', variables('serverKeyName'))]",
-      "type": "Microsoft.DBforPostgreSQL/servers/keys",
-      "apiVersion": "2020-01-01-preview",
-      "dependsOn": [
-        "addAccessPolicy",
-        "[resourceId('Microsoft.DBforPostgreSQL/servers', parameters('serverName'))]"
-      ],
-      "properties": {
-        "serverKeyType": "AzureKeyVault",
-        "uri": "[concat(reference(resourceId(parameters('keyVaultResourceGroupName'), 'Microsoft.KeyVault/vaults/', parameters('keyVaultName')), '2018-02-14-preview', 'Full').properties.vaultUri, 'keys/', parameters('keyName'), '/', parameters('keyVersion'))]"
-      }
-    }
-  ]
-}
-```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

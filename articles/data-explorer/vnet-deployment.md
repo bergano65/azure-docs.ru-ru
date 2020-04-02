@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/31/2019
-ms.openlocfilehash: dbc17620cda836ec0ac5c4ebc5a709fb0605c958
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c1ad8390bc5db72636c637c2ffb817e34674d0fa
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80240040"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548845"
 ---
 # <a name="deploy-azure-data-explorer-cluster-into-your-virtual-network"></a>Развертывание кластера Azure Data Explorer в виртуальную сеть
 
@@ -45,7 +45,7 @@ Azure Data Explorer поддерживает развертывание клас
 
 Общее количество IP-адресов:
 
-| Использование | Число адресов |
+| Использовать | Число адресов |
 | --- | --- |
 | Обслуживание двигателя | 1 на экземпляр |
 | Служба управления данными | 2 |
@@ -171,7 +171,7 @@ Azure Data Explorer поддерживает развертывание клас
 | Западная Европа | 23.97.212.5 |
 | Западная Индия | 23.99.5.162 |
 | западная часть США | 23.99.5.162 |
-| западная часть США 2 | 23.99.5.162 |    
+| западная часть США 2 | 23.99.5.162, 104.210.32.14 |    
 
 #### <a name="azure-monitor-configuration-endpoint-addresses"></a>Адреса конечных точек конфигурации Azure Monitor
 
@@ -250,7 +250,7 @@ crl3.digicert.com:80
 
 Например, для **региона Западного США** необходимо определить следующие UdRs:
 
-| name | Префикс адреса | Следующий хоп |
+| Имя | Префикс адреса | Следующий хоп |
 | --- | --- | --- |
 | ADX_Management | 13.64.38.225/32 | Интернет |
 | ADX_Monitoring | 23.99.5.162/32 | Интернет |

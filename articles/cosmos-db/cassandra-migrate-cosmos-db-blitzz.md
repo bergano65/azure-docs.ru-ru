@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 746232a85e326f08d44cf2dbe0a4ae718c7cc312
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b2e7f371e587c1c7f0debfa018ea8f25a30718a8
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "69984372"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548098"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-blitzz"></a>Перенос данных из Cassandra в учетную запись Azure Cosmos DB Cassandra API с помощью Blitzz
 
@@ -36,13 +36,13 @@ Cassandra API в Azure Cosmos DB стал отличным выбором для
 
 * Это отказоустойчивый и гарантирует точно один раз доставки данных даже во время аппаратного или программного сбоя в системе.
 
-* Он защищает данные во время транзита, используя различные методологии безопасности, такие как SSL, шифрование.
+* Он защищает данные во время транзита, используя различные методологии безопасности, такие как TLS, шифрование.
 
 ## <a name="steps-to-migrate-data"></a>Шаги для переноса данных
 
 В этом разделе описаны шаги, необходимые для настройки Blitzz и перенос данных из базы данных Apache Cassandra в Azure Cosmos DB.
 
-1. С компьютера, где вы планируете установить репликант Blitzz, добавьте сертификат безопасности. Этот сертификат требуется репликантом Blitzz для установления SSL-соединения с указанной учетной записью Azure Cosmos DB. Сертификат можно добавить следующими шагами:
+1. С компьютера, где вы планируете установить репликант Blitzz, добавьте сертификат безопасности. Этот сертификат требуется репликантом Blitzz для установления соединения TLS с указанной учетной записью Azure Cosmos DB. Сертификат можно добавить следующими шагами:
 
    ```bash
    wget https://cacert.omniroot.com/bc2025.crt

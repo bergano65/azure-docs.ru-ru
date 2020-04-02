@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 3/18/2020
 ms.author: spelluru
-ms.openlocfilehash: 7b9ef32f16369bbb6c5bb69ef500ec8bb90fde20
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 88b37ea4ff717689f05afbb41d33a56a8cbb2c22
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80370873"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80547619"
 ---
 # <a name="lab-account-setup-guide"></a>Руководство по настройке учетной записи лаборатории
 
@@ -87,10 +87,10 @@ Azure Marketplace предоставляет сотни изображений, 
    При создании лабораторной учетной записи может оказаться полезным ознакомиться с задействованными ресурсами Azure; сослаться на следующий список для получения дополнительной информации и рекомендаций по созданию этих ресурсов:
 
    - [Подписка](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#subscription)
-   - [Ресурсная группа](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#resource-group)
+   - [Группа ресурсов](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#resource-group)
    - [Лабораторный счет](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#lab-account)
    - [Классная лаборатория](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#classroom-lab)
-   - [Выбор региона](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#regions-or-locations)
+   - [Выбор региона](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#regionslocations)
    - [Руководство по наименованию ресурсов](https://docs.microsoft.com/azure/lab-services/classroom-labs/administrator-guide#naming)
 
 2. **Добавление пользователей к роли создателя лаборатории**

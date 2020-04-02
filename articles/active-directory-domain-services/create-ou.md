@@ -9,33 +9,36 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 03/31/2020
 ms.author: iainfou
-ms.openlocfilehash: 7abbdf03e85f425f65a45e6640b82529c2b9c84f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4b95a3e32bc2b8df3d02453e42fa9bbc3719134b
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77614070"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80519162"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-ad-domain-services-managed-domain"></a>Создание организационной группы (OU) в домене домена Azure AD, управляемом
 
 Организационные подразделения (OUs) в службах доменов Active Directory Domain Services (AD DS) позволяют логически группировать такие объекты, как учетные записи пользователей, учетные записи служб или учетные записи компьютеров. Затем можно назначить администраторов определенным ОУ и применить групповую политику для обеспечения целевых параметров конфигурации.
 
-Управляемые домены Azure AD DS включают в себя два встроенных OUS - *AADDC Computers* и *AADDC Users.* *AADDC Computers* OU содержит компьютерные объекты для всех компьютеров, которые соединены с управляемым доменом. *AADDC Users* OU включает пользователей и группы, синхронизированные с арендатором Azure AD. При создании и запуске рабочих нагрузок, которые используют AD Azure, может потребоваться создать учетные записи служб для приложений для проверки подлинности. Чтобы организовать эти учетные записи службы, вы часто создаете пользовательский OU в домене Azure AD DS, а затем создаете учетные записи служб в этом OU.
+Управляемые домены Azure AD DS включают в себя следующие два встроенных OUs:
+
+* *AADDC Computers* - содержит компьютерные объекты для всех компьютеров, которые соединены с управляемым доменом.
+* *AADDC Users* - включает пользователей и группы, синхронизированные с арендатором Azure AD.
+
+При создании и запуске рабочих нагрузок, которые используют AD Azure, может потребоваться создать учетные записи служб для приложений для проверки подлинности. Чтобы организовать эти учетные записи службы, вы часто создаете пользовательский OU в домене Azure AD DS, а затем создаете учетные записи служб в этом OU.
 
 В гибридной среде OUS, созданные в предварительной среде AD DS, не синхронизированы с Azure AD DS. Управляемые домены Azure AD DS используют плоскую структуру OU. Все учетные записи и группы пользователей хранятся в контейнере *AADDC Users,* несмотря на синхронизацию с разных локальной области или лесов, даже если вы настроили там иерархическую структуру OU.
 
 В этой статье показано, как создать OU в домене Azure AD DS.
-
-[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом
 
 Для завершения этой статьи необходимы следующие ресурсы и привилегии:
 
 * Активная подписка Azure.
-    * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
@@ -68,19 +71,19 @@ ms.locfileid: "77614070"
 1. Для создания и управления ОУ выберите **Active Directory Administrative Center** из списка административных инструментов.
 1. В левой панели выберите идомет Azure AD DS, например *aaddscontoso.com.* Отображается список существующих ОУ и ресурсов:
 
-    ![Выберите идомет Azure AD DS, управляемый в Административном центре Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-overview.png)
+    ![Выберите идомет Azure AD DS, управляемый в Административном центре Active Directory](./media/create-ou/create-ou-adac-overview.png)
 
 1. Панель **задач** отображается на правой стороне Административного центра Active Directory. Под доменом, например *aaddscontoso.com,* выберите **Новую > организационную единицу.**
 
-    ![Выберите опцию создания нового OU в Административном центре active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-new-ou.png)
+    ![Выберите опцию создания нового OU в Административном центре active Directory](./media/create-ou/create-ou-adac-new-ou.png)
 
 1. В диалоге **создать организационное подразделение** укажите **имя** для нового OU, например *MyCustomOu*. Предоставьте краткое описание для OU, например *Custom OU для учетных записей служб.* При желании можно также установить **управляемое** полем для OU. Чтобы создать пользовательский OU, выберите **OK**.
 
-    ![Создание пользовательского OU из Административного центра Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-dialog.png)
+    ![Создание пользовательского OU из Административного центра Active Directory](./media/create-ou/create-ou-dialog.png)
 
 1. Вернувшись в Административный центр Active Directory, пользовательский OU теперь указан и доступен для использования:
 
-    ![Пользовательские OU доступны для использования в Active Directory Административный центр](./media/active-directory-domain-services-admin-guide/create-ou-done.png)
+    ![Пользовательские OU доступны для использования в Active Directory Административный центр](./media/create-ou/create-ou-done.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -5,21 +5,21 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: include
-ms.date: 01/22/2020
+ms.date: 04/01/2020
 ms.author: victorh
 ms.custom: include file
-ms.openlocfilehash: 0df38533afe97f010d1050c3ee2a4a69a54d4cc7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0e8a5960da394b1eac1578d7f757b25995ff8faa
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80335102"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80573282"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
 | Пропускная способность данных |30 Гбит/с<sup>1</sup> |
 |Правила|10,000. Все типы правил объединены.|
-|Максимальные правила DNAT|299|
+|Максимальные правила DNAT|298<br>Если протокол правила настроен как для TCP, так и для UDP, он считается двумя правилами.|
 |Минимальный размер AzureFirewallSubnet |/26|
 |Диапазон портов в правилах сети и приложений|0–64 000. Ведутся работы по расширению этого диапазона.|
 |Общедоступные IP-адреса|100 максимум (в настоящее время порты SNAT добавляются только для первых пяти публичных IP-адресов).|

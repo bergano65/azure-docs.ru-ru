@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6dff3be9a9bc7fd897f340e5fe6a4775a4914810
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ea14e02920cf7ba6c5e0a7b415cb92137c915576
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "65824942"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80519702"
 ---
 # <a name="unexpected-error-when-performing-consent-to-an-application"></a>Непредвиденная ошибка при предоставлении согласия для приложения
 
@@ -33,8 +33,11 @@ ms.locfileid: "65824942"
 
 ## <a name="requesting-not-authorized-permissions-error"></a>Ошибка при запросе неавторизованных разрешений
 * **AADSTS90093:** &lt;clientAppDisplayName&gt; is requesting one or more permissions that you are not authorized to grant. Contact an administrator, who can consent to this application on your behalf. ("clientAppDisplayName" запрашивает одно или несколько разрешений, которые вы не имеете права предоставлять. Обратитесь к администратору, который может дать согласие для этого приложения от вашего имени.)
+* **AADSTS90094:** &lt;clientAppDisplayName&gt; необходимо разрешение на доступ к ресурсам в вашей организации, которые может предоставить только админ. Попросите администратора предоставить разрешение этому приложению, прежде чем его использовать.
 
 Эта ошибка возникает, когда пользователь, не являющийся администратором организации, пытается использовать приложение, которому нужны разрешения, предоставляемые лишь администратором. Администратор может устранить эту ошибку, предоставив доступ к приложению от имени своей организации.
+
+Эта ошибка может также произойти, когда пользователь не может дать согласие на приложение из-за того, что корпорация Майкрософт обнаружила, что запрос разрешений является рискованным. В этом случае аудиторское событие также будет зарегистрировано с категорией "ApplicationManagement", Тип действия "Согласие на применение" и причина статуса "Обнаружено приложение".
 
 ## <a name="policy-prevents-granting-permissions-error"></a>Ошибка при блокировке назначения разрешений политикой
 * **AADSTS90093:** An administrator of &lt;tenantDisplayName&gt; has set a policy that prevents you from granting &lt;name of app&gt; the permissions it is requesting. Contact an administrator of &lt;tenantDisplayName&gt;, who can grant permissions to this app on your behalf. (Администратор "tenantDisplayName" задал политику, которая запрещает предоставление разрешений, запрошенных "имя приложения". Обратитесь к администратору "tenantDisplayName", который может предоставить разрешения для этого приложения от вашего имени.)

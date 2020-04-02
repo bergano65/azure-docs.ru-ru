@@ -1,22 +1,20 @@
 ---
 title: Используйте VMs-м использованным spot
 description: Узнайте, как использовать Spot VMs, чтобы сэкономить на затратах.
-services: virtual-machines-windows
 author: cynthn
-manager: gwallace
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 11/20/2019
+ms.date: 03/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 4acbab324c63cf0184f5384e6af5e9418ca06677
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dd59ccba74b2813b2d38073cac35ba80d97cf4d1
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74782103"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548147"
 ---
-# <a name="preview-use-spot-vms-in-azure"></a>Предварительный просмотр: Использование Spot VMs в Azure
+# <a name="use-spot-vms-in-azure"></a>Используйте Spot VMs в Azure
 
 [!INCLUDE [common-spot-vms](../../../includes/virtual-machines-common-spot-vms.md)]  
 

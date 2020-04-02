@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/21/2020
 ms.author: spelluru
-ms.openlocfilehash: 55bb6b620c7ba9ee13068213cbc867b165acc185
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 532e3c297c42ea16b1f462a01699fc2fd71c6cce
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76514890"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529114"
 ---
 # <a name="azure-relay-port-settings"></a>Параметры порта ретрансляции Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "76514890"
 
 ## <a name="hybrid-connections"></a>Гибридные подключения
 
-Гибридные подключения используют протокол WebSockets на порту 443 с SSL в качестве базового транспортного механизма, который использует только протокол **HTTPS**. 
+Гибридные соединения используют WebSockets на порту 443 с TLS в качестве основного транспортного механизма, который использует только **HTTPS.** 
 
 ## <a name="wcf-relays"></a>Ретрансляторы WCF
   

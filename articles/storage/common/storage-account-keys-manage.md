@@ -6,14 +6,14 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/18/2019
+ms.date: 03/31/2020
 ms.author: tamram
-ms.openlocfilehash: 13adf6de420b54299d04a226dab81e75cbb9fef2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b4e91aa59168deb18375bf86ae77f655ca3dab47
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75975789"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521260"
 ---
 # <a name="manage-storage-account-access-keys"></a>Управление ключами доступа к учетной записи хранилища
 
@@ -52,6 +52,8 @@ ms.locfileid: "75975789"
 
 > [!NOTE]
 > Во всех приложениях рекомендуется использовать одновременно только один из ключей. Если в одних приложениях используется ключ 1, а в других — ключ 2, вы не сможете произвести смену ключей без того, чтобы некоторые приложения утратили доступ.
+
+Чтобы повернуть ключи доступа учетной записи, пользователь должен быть администратором службы, либо должен быть назначен роль RBAC, которая включает в себя **Microsoft.Storage/storageAccounts/regeneratekey/action.** Некоторые встроенные роли RBAC, которые включают **Contributor**это действие, являются ролями **роли функции функции функции функции ключевой службы оператора учетной** **записи**хранилища. Для получения дополнительной информации о роли администратора службы смотрите [роли администратора подписки Classic, роли Azure RBAC и функции Azure AD.](../../role-based-access-control/rbac-and-directory-admin-roles.md) Подробную информацию о встроенных ролях RBAC для Хранения Azure можно узнать в разделе **«Хранение»** в [встроенных ролях Azure rBAC.](../../role-based-access-control/built-in-roles.md#storage)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

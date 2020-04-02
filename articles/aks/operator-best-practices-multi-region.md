@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 894ec4e543f0c68cc652141d2c1578cda61d7f42
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3c1f0bb715b3c3bf9b3a3350ab11e26834aa84c8
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77594759"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80528661"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -59,7 +59,7 @@ ms.locfileid: "77594759"
 
 ### <a name="layer-7-application-routing-with-azure-front-door-service"></a>Routing приложений уровня 7 с помощью службы передних дверей Azure
 
-Диспетчер трафика использует DNS (слой 3) для формирования трафика. [Служба передних дверей Azure](https://docs.microsoft.com/azure/frontdoor/front-door-overview) предоставляет опцию ruouting HTTP/HTTPS (слой 7). Дополнительные функции службы Передних дверей Azure включают sSL-прекращение, пользовательский домен, брандмауэр веб-приложений, переписывание URL и сродство сеансов. Оцените требования к трафику для приложения, чтобы выбрать оптимальное решение.
+Диспетчер трафика использует DNS (слой 3) для формирования трафика. [Служба передних дверей Azure](https://docs.microsoft.com/azure/frontdoor/front-door-overview) предоставляет опцию ruouting HTTP/HTTPS (слой 7). Дополнительные функции службы Передних дверей Azure включают прекращение TLS, пользовательский домен, брандмауэр веб-приложений, переписывание URL и сродство сеансов. Оцените требования к трафику для приложения, чтобы выбрать оптимальное решение.
 
 ### <a name="interconnect-regions-with-global-virtual-network-peering"></a>Взаимосвязь регионов с глобальной виртуальной сети пиринга
 
@@ -122,7 +122,7 @@ ms.locfileid: "77594759"
 При использовании управляемых дисков Azure можно выбрать решения репликации и DR:
 
 * [Велеро на Лазурном берегу](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/master/README.md)
-* [Восстановление сайта Azure](https://azure.microsoft.com/blog/asr-managed-disks-between-azure-regions/)
+* [Azure Site Recovery](https://azure.microsoft.com/blog/asr-managed-disks-between-azure-regions/)
 
 ### <a name="application-based-asynchronous-replication"></a>асинхронная репликация на основе приложений;
 

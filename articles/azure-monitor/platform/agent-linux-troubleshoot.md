@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 24aa3462aef4f719e93d17389ff342084f6c7864
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2343de97d06abdefed2c2977a7341aa411429319
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77668763"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80520740"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -76,7 +76,7 @@ ms.locfileid: "77668763"
 | --- | --- |
 | 2 | Скрипту omsadmin предоставлен недопустимый параметр. Выполните `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h`, чтобы получить сведения об использовании. |
 | 3 | Скрипту omsadmin предоставлена недопустимая конфигурация. Выполните `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h`, чтобы получить сведения об использовании. |
-| 4 | Скрипту omsadmin предоставлена недопустимый прокси-сервер. Проверьте прокси-сервер и изучите [документацию по использованию прокси-сервера HTTP](log-analytics-agent.md#network-firewall-requirements). |
+| 4 | Скрипту omsadmin предоставлена недопустимый прокси-сервер. Проверьте прокси-сервер и изучите [документацию по использованию прокси-сервера HTTP](log-analytics-agent.md#firewall-requirements). |
 | 5 | 403 Ошибка HTTP, полученная от Azure Monitor. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
 | 6 | Ошибка Non-200 HTTP, полученная от Azure Monitor. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
 | 7 | Невозможно подключиться к Azure Monitor. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
@@ -157,15 +157,8 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 `/opt/microsoft/omsagent/bin/omsadmin.sh -w <Workspace ID> -s <Workspace Key> -p <Proxy Conf> -v`
 
 2. Просмотрите раздел [Обновление параметров прокси-сервера](agent-manage.md#update-proxy-settings), чтобы убедиться в правильности настройки агента для обмена данными через прокси-сервер.    
-* Двойная проверка того, что следующие конечные точки Azure Monitor в белом списке:
 
-    |Ресурс агента| порты; | Направление |
-    |------|---------|----------|  
-    |*.ods.opinsights.azure.com | Порт 443| Исходящий и входящий |  
-    |*.oms.opinsights.azure.com | Порт 443| Исходящий и входящий |  
-    |*.blob.core.windows.net | Порт 443| Исходящий и входящий |  
-
-    Если вы планируете использовать Azure Automation Hybrid Runbook Worker для подключения и регистрации в службе автоматизации для использования runbooks или решений управления в вашей среде, он должен иметь доступ к номеру порта и URL-адресам, описанным в [настройке вашей сети для Hybrid Runbook Worker.](../../automation/automation-hybrid-runbook-worker.md#network-planning) 
+3. Дважды проверьте, что конечные точки, изложенные в списке [требований к брандмауэру сети](log-analytics-agent.md#firewall-requirements) Azure Monitor, будут добавлены в список разрешений. Если вы используете Azure Automation, необходимые шаги конфигурации сети также связаны выше.
 
 ## <a name="issue-you-receive-a-403-error-when-trying-to-onboard"></a>Проблема. При попытке подключения возникает ошибка 403.
 

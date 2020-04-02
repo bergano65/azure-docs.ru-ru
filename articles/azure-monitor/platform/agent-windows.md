@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2019
-ms.openlocfilehash: 21efb16cf519d4bcad520af1c7d8818f36a77218
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 65a6f51d0eef28ea33adcc755d3d51f1e06a5341
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79275039"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80528337"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к мониторингу Azure
 
-Для мониторинга и управления виртуальными машинами или физическими компьютерами в локальном центре обработки данных или другой облачной среде с помощью Azure Monitor необходимо развернуть агент Log Analytics (также называемый агентом мониторинга Майкрософт (MMA)) и настроить его на отчитываться перед одним или несколько рабочими областями анализа журналов. Агент также поддерживает гибридную рабочую роль Runbook для службы автоматизации Azure.  
+Для мониторинга и управления виртуальными машинами или физическими компьютерами в локальном центре обработки данных или другой облачной среде с помощью Azure Monitor необходимо развернуть агент Log Analytics (также называемый агентом мониторинга Майкрософт (MMA)) и настроить его для отчета в одном или нескольких рабочих областях Log Analytics. Агент также поддерживает гибридную рабочую роль Runbook для службы автоматизации Azure.  
 
 На отслеживаемом компьютере Windows агент отображается как служба Microsoft Monitoring Agent. Служба Microsoft Monitoring Agent собирает события из файлов журнала, журнала событий Windows, данных о производительности и других данных телеметрии. Даже если агент не может связаться с Azure Monitor, который он сообщает, агент продолжает работать и выстраивает в очередь собранные данные на диске контролируемого компьютера. При восстановлении подключения служба Microsoft Monitoring Agent отправляет собранные данные в службу.
 
@@ -32,7 +32,7 @@ ms.locfileid: "79275039"
 
 Если вам нужно настроить агента для отчета в более чем одно рабочее пространство, это не может быть выполнено во время первоначальной настройки, только после обновления настроек из панели управления или PowerShell, как описано в [Добавлении или удалении рабочего пространства.](agent-manage.md#adding-or-removing-a-workspace)  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#network-firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#firewall-requirements).
 
 ## <a name="obtain-workspace-id-and-key"></a>Получение идентификатора и ключа рабочей области
 Перед установкой агента Log Analytics для Windows требуется получить идентификатор и ключ для рабочей области Log Analytics.  Эта информация необходима во время настройки с каждого метода установки, чтобы правильно настроить агента и гарантировать, что он может успешно общаться с Azure Monitor в коммерческом и правительственном облаке Правительства США. 
@@ -136,44 +136,44 @@ ms.locfileid: "79275039"
 Чтобы извлечь код продукта из пакета установщика агента напрямую, вы можете воспользоваться Orca.exe (компонент пакета разработки программного обеспечения для Windows), который можно найти на странице [компонентов Windows SDK для разработчиков установщика Windows](https://msdn.microsoft.com/library/windows/desktop/aa370834%28v=vs.85%29.aspx). Кроме того, вы можете использовать PowerShell с [примером сценария](https://www.scconfigmgr.com/2014/08/22/how-to-get-msi-file-information-with-powershell/), написанного специалистом с рангом Microsoft Valuable Professional (MVP).  В обоих случаях сначала нужно извлечь файл**MOMagent.msi** из пакета установки MMASetup.  Эта процедура рассматривается выше в разделе [Установка агента с помощью командной строки](#install-the-agent-using-the-command-line).  
 
 1. Импортируйте модуль xPSDesiredStateConfiguration [https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration) DSC из системы автоматизации Azure.  
-2.  Создайте в службе автоматизации Azure ресурсы-контейнеры для переменных *OPSINSIGHTS_WS_ID* и *OPSINSIGHTS_WS_KEY*. В качестве значения параметра *OPSINSIGHTS_WS_ID* укажите идентификатор рабочей области Log Analytics, а для параметра *OPSINSIGHTS_WS_KEY* — первичный ключ рабочей области.
-3.  Скопируйте скрипт и сохраните его как файл MMAgent.ps1.
+1. Создайте в службе автоматизации Azure ресурсы-контейнеры для переменных *OPSINSIGHTS_WS_ID* и *OPSINSIGHTS_WS_KEY*. В качестве значения параметра *OPSINSIGHTS_WS_ID* укажите идентификатор рабочей области Log Analytics, а для параметра *OPSINSIGHTS_WS_KEY* — первичный ключ рабочей области.
+1. Скопируйте скрипт и сохраните его как файл MMAgent.ps1.
 
-    ```powershell
-    Configuration MMAgent
-    {
-        $OIPackageLocalPath = "C:\Deploy\MMASetup-AMD64.exe"
-        $OPSINSIGHTS_WS_ID = Get-AutomationVariable -Name "OPSINSIGHTS_WS_ID"
-        $OPSINSIGHTS_WS_KEY = Get-AutomationVariable -Name "OPSINSIGHTS_WS_KEY"
+   ```powershell
+   Configuration MMAgent
+   {
+       $OIPackageLocalPath = "C:\Deploy\MMASetup-AMD64.exe"
+       $OPSINSIGHTS_WS_ID = Get-AutomationVariable -Name "OPSINSIGHTS_WS_ID"
+       $OPSINSIGHTS_WS_KEY = Get-AutomationVariable -Name "OPSINSIGHTS_WS_KEY"
 
-        Import-DscResource -ModuleName xPSDesiredStateConfiguration
-        Import-DscResource -ModuleName PSDesiredStateConfiguration
+       Import-DscResource -ModuleName xPSDesiredStateConfiguration
+       Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-        Node OMSnode {
-            Service OIService
-            {
-                Name = "HealthService"
-                State = "Running"
-                DependsOn = "[Package]OI"
-            }
+       Node OMSnode {
+           Service OIService
+           {
+               Name = "HealthService"
+               State = "Running"
+               DependsOn = "[Package]OI"
+           }
 
-            xRemoteFile OIPackage {
-                Uri = "https://go.microsoft.com/fwlink/?LinkId=828603"
-                DestinationPath = $OIPackageLocalPath
-            }
+           xRemoteFile OIPackage {
+               Uri = "https://go.microsoft.com/fwlink/?LinkId=828603"
+               DestinationPath = $OIPackageLocalPath
+           }
 
-            Package OI {
-                Ensure = "Present"
-                Path  = $OIPackageLocalPath
-                Name = "Microsoft Monitoring Agent"
-                ProductId = "8A7F2C51-4C7D-4BFD-9014-91D11F24AAE2"
-                Arguments = '/C:"setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=' + $OPSINSIGHTS_WS_ID + ' OPINSIGHTS_WORKSPACE_KEY=' + $OPSINSIGHTS_WS_KEY + ' AcceptEndUserLicenseAgreement=1"'
-                DependsOn = "[xRemoteFile]OIPackage"
-            }
-        }
-    }
+           Package OI {
+               Ensure = "Present"
+               Path  = $OIPackageLocalPath
+               Name = "Microsoft Monitoring Agent"
+               ProductId = "8A7F2C51-4C7D-4BFD-9014-91D11F24AAE2"
+               Arguments = '/C:"setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=' + $OPSINSIGHTS_WS_ID + '      OPINSIGHTS_WORKSPACE_KEY=' + $OPSINSIGHTS_WS_KEY + ' AcceptEndUserLicenseAgreement=1"'
+               DependsOn = "[xRemoteFile]OIPackage"
+           }
+       }
+   }
 
-    ```
+   ```
 
 4. Обновите значение `ProductId` в скрипте с кодом продукта, извлеченном из последней версии установленного пакета агента, используя рекомендованные выше методы. 
 5. [Переместите сценарий настройки MMAgent.ps1](../../automation/automation-dsc-getting-started.md#importing-a-configuration-into-azure-automation) в учетную запись автоматизации. 

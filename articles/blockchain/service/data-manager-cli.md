@@ -1,15 +1,15 @@
 ---
 title: Настройте менеджер блокчейн-данных с помощью Azure CLI - Сервис Azure Blockchain
 description: Создание и управление менеджером блокчейн-данных для службы блокчейн Azure с помощью Azure CLI
-ms.date: 11/04/2019
+ms.date: 03/30/2020
 ms.topic: article
-ms.reviewer: chroyal
-ms.openlocfilehash: a8061aad6d6a1513de70e7c2bc57aa109c666611
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.reviewer: ravastra
+ms.openlocfilehash: 5ceca96f760ab62ca7f3df9ad26139b9b4a3e5be
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74455937"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529591"
 ---
 # <a name="configure-blockchain-data-manager-using-azure-cli"></a>Настройка диспетчера данных блокчейна с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "74455937"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Установите новейший [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и восподписаны в использовании `az login`.
-* Полный [быстрый запуск: Используйте визуальный код студии для подключения к сети консорциума Azure Blockchain Service](connect-vscode.md)
+* Полный [быстрый запуск: Используйте визуальный код студии для подключения к сети консорциума Azure Blockchain Service.](connect-vscode.md) *Стандартный* уровень Azure Blockchain Service Standard рекомендуется при использовании Blockchain Data Manager.
 * Создание [темы сетки событий](../../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic)
 * Подробные сведения см. в статье об [обработчиках событий в службе "Сетка событий Azure"](../../event-grid/event-handlers.md).
 

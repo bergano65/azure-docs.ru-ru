@@ -1,19 +1,19 @@
 ---
 title: Настройка конфигураций кластеров Azure HDInsight с помощью загрузки
-description: Узнайте, как настроить конфигурацию кластера HDInsight программно с помощью шаблонов .Net, PowerShell и Resource Manager.
+description: Узнайте, как настроить конфигурацию кластера HDInsight программно, используя шаблоны .NET, PowerShell и Resource Manager.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 11/21/2019
-ms.openlocfilehash: e641340ac04415ee4a20cda2bc09bbdbef9802a6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.openlocfilehash: 796dbc53d1adf310028e06dea319b9a60d5cf54b
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79272530"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529350"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -125,6 +125,18 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 ```
 
 ![Hadoop настраивает шаблон кластерного загрузок Azure Resource Manager](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)
+
+Пример фрагмента шаблона управления ресурсами для переключения конфигурации в spark2-defaults для периодической очистки журналов событий из хранилища.  
+
+```json
+"configurations": {
+    "spark2-defaults": {
+        "spark.history.fs.cleaner.enabled": "true",
+        "spark.history.fs.cleaner.interval": "7d",
+        "spark.history.fs.cleaner.maxAge": "90d"
+    }
+}
+```
 
 ## <a name="see-also"></a>См. также
 

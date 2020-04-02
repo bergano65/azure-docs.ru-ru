@@ -7,12 +7,12 @@ ms.reviewer: itsagui
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: c014ed2c25711677617d3bf8ff5d2f0f968a3b14
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 180196f2c368207b76811700fd845406098600df
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80301048"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529433"
 ---
 # <a name="configure-customer-managed-keys-using-the-azure-portal"></a>Настройка ключей, управляемых клиентами, с помощью портала Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "80301048"
 
     ![Сохранить ключ, управляемый клиентами](media/customer-managed-keys-portal/cmk-encryption-setting.png)
 
-Включив ключевые ключи, управляемые клиентами для кластера Azure Data Explorer, вы создасте систему, назначенную для кластера, если она не существует. Кроме того, вы предоставите необходимые разрешения на представление кластеру Azure Data Explorer в выбранном Хранилище ключей и получите свойства Key Vault. 
+Включив ключевые ключи, управляемые клиентами для кластера Azure Data Explorer, вы создасте систему, назначенную для кластера, если она не существует. Кроме того, вы предоставите необходимые разрешения получить, обернуть Key и unwarpKey в кластер Azure Data Explorer в выбранном Хранилище ключей и получите свойства Key Vault. 
 
 > [!NOTE]
 > **Выберите Off,** чтобы удалить ключ, управляемый клиентом, после его создания.

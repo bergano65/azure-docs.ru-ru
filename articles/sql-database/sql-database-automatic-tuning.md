@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
-ms.date: 03/10/2020
-ms.openlocfilehash: d4762c86268353ff0464ff3919250cd86f0038d4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 03/30/2020
+ms.openlocfilehash: 7488fd5f8a572788933856f03bb0ad4351885704
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79214101"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80518230"
 ---
 # <a name="automatic-tuning-in-azure-sql-database"></a>Автоматическая настройка в Базе данных SQL Azure
 
@@ -93,3 +93,4 @@ ms.locfileid: "79214101"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать о встроенном интеллекте, используемом в автоматической настройке, [см.](https://azure.microsoft.com/blog/artificial-intelligence-tunes-azure-sql-databases/)
+- Чтобы узнать, как работает автоматическая настройка под капотом, [см. Автоматическая индексация миллионов баз данных в базе данных Microsoft Azure S'L.](https://www.microsoft.com/en-us/research/uploads/prod/2019/02/autoindexing_azuredb.pdf)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 01/21/2020
-ms.openlocfilehash: 40c279a4beee9fbebe2de7f272fe51d9039f071c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: aa2356901403c7a63aa4aa96dcb38f9c0c971e58
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77668712"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80528351"
 ---
 # <a name="connect-linux-computers-to-azure-monitor"></a>Подключение компьютеров Linux к Azure Monitor
 
@@ -22,7 +22,7 @@ ms.locfileid: "77668712"
 * [Вручную загрузите и установите](#install-the-agent-manually) агент. Это необходимо, если компьютер Linux не имеет доступа к Интернету и будет общаться с Azure Monitor или Azure Automation через [шлюз Log Analytics.](gateway.md) 
 * [Установите агент для Linux с помощью обертки-скрипта,](#install-the-agent-using-wrapper-script) размещенного на GitHub. Это рекомендуемый метод для установки и обновления агента, когда компьютер имеет подключение к Интернету, непосредственно или через прокси-сервер.
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Linux](log-analytics-agent.md#supported-linux-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#network-firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Linux](log-analytics-agent.md#supported-linux-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#firewall-requirements).
 
 >[!NOTE]
 >Агент Log Analytics для Linux невозможно настроить для отправки отчетов в несколько рабочих областей Log Analytics. Он может быть настроен только для отчета как в группе управления менеджером по управлению операциями System Center, так и в рабочее пространство Log Analytics, или либо по отдельности.

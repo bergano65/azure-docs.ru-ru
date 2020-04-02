@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: d9cff47c61fc08305427b25f949884b1ef089fd0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ca3a79b0d31cc18b8ff77f02ce4ce3d517d7a638
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80289671"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548698"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mariadb"></a>Базовый унизел безопасности Azure для базы данных Azure для MariaDB
 
@@ -894,9 +894,9 @@ ms.locfileid: "80289671"
 
 **Руководство**: База данных Azure для сервера MariaDB в настоящее время не поддерживает аутентификацию Active Directory Azure для доступа к базам данных.  При создании базы данных Azure для сервера MariaDB вы предоставляете учетные данные для пользователя администратора. Этот администратор может быть использован для создания дополнительных пользователей MariaDB.  
 
-Для виртуальных машин Azure или веб-приложений, работающих в службе приложений Azure, используемых для доступа к базе данных Azure для сервера MariaDB, используйте идентификатор управляемой службы совместно с Azure Key Vault для хранения и получения учетных данных для базы данных Azure для MariaDB Сервера.  Убедитесь, что Key Vault Soft Delete включен.
+Для виртуальных машин Azure или веб-приложений, работающих в службе приложений Azure, используемых для доступа к базе данных Azure для сервера MariaDB, используйте идентификатор управляемой службы совместно с Azure Key Vault для хранения и получения учетных данных для базы данных Azure для сервера MariaDB.  Убедитесь, что Key Vault Soft Delete включен.
 
-Используйте управляемые идентификаторы для предоставления службам Azure автоматического управляемого идентификатора в Active Directory (AD). Управляемые идентификаторы позволяют аутентифицировать проверку любой службы, которая поддерживает аутентификацию Azure AD, включая Key Vault, без каких-либо учетных данных в коде. Как настроить управляемые идентификаторы: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vmHow интегрировать с управляемыми идентификаторами Azure:https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
+Используйте управляемые идентификаторы для предоставления службам Azure автоматического управляемого идентификатора в Active Directory (AD). Управляемые идентификаторы позволяют аутентифицировать проверку любой службы, которая поддерживает аутентификацию Azure AD, включая Key Vault, без каких-либо учетных данных в коде. Как настроить управляемые идентификаторы: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm. Как интегрироваться с управляемыми https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identityидентификаторами Azure: .
 
 
 

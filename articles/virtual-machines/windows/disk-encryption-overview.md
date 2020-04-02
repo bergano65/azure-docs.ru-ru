@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 10/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 05db717f5d3adc2429431503f588f2cc7f79aef6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e00fee8841a2d5a817a00b942bfe0733a80b2cfc
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79266784"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546325"
 ---
 # <a name="azure-disk-encryption-for-windows-vms"></a>Лазурное шифрование дисков для Windows VMs 
 
@@ -30,11 +30,13 @@ ms.locfileid: "79266784"
 
 ## <a name="supported-vms-and-operating-systems"></a>Поддерживаемые ВМ и операционные системы
 
-### <a name="supported-vm-sizes"></a>Поддерживаемые размеры виртуальных машин
+### <a name="supported-vms"></a>Поддерживаемые виртуальные машины
 
 Windows VMs доступны в [диапазоне размеров.](sizes-general.md) Шифрование azure Disk недоступно на [виртуальных взламных](https://azure.microsoft.com/pricing/details/virtual-machines/series/)устройствах серии A или на виртуальных машинах с памятью менее 2 ГБ.
 
 Шифрование Azure Disk также доступно для vMs с премиум-хранилищем.
+
+Лазурный диск шифрование не доступно на [поколение 2 VMs](generation-2.md#generation-1-vs-generation-2-capabilities)) и [Lsv2-серии VMs](../lsv2-series.md)). Для получения дополнительных [Azure Disk Encryption: Unsupported scenarios](disk-encryption-windows.md#unsupported-scenarios)исключений см.
 
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -57,7 +59,7 @@ Windows VMs доступны в [диапазоне размеров.](sizes-gen
 
 ## <a name="group-policy-requirements"></a>Требования к групповой политике
 
-Лазурное шифрование диска использует внешний протектор ключов BitLocker для Windows VMs. Если виртуальные машины присоединены к домену, не применяйте групповые политики, требующие использования предохранителей TPM. Сведения о групповой политике "Разрешить использование BitLocker без совместимого TPM" см. в [справке по групповым политикам BitLocker](/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings#bkmk-unlockpol1).
+Лазурное шифрование диска использует внешний протектор ключов BitLocker для Windows VMs. Если виртуальные машины присоединены к домену, не применяйте групповые политики, требующие использования предохранителей TPM. Для получения информации о групповой политике для "Разрешить BitLocker без совместимого TPM", см [BitLocker группы политики Справка](/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings#bkmk-unlockpol1).
 
 Политика BitLocker в отношении домена, объединяемого виртуальными машинами с пользовательской групповой политикой, должна включать в себя следующие настройки: [Настройка пользовательского хранилища информации о восстановлении BitLocker -> Разрешить 256-битный ключ восстановления.](/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings) Шифрование дисков Azure завершится ошибкой, если параметры настраиваемой групповой политики для BitLocker несовместимы. На компьютерах без соответствующего параметра политики может потребоваться применить новую политику, принудительно обновить ее (gpupdate.exe /force) и перезагрузить компьютер.
 

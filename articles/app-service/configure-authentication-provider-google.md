@@ -4,13 +4,15 @@ description: Узнайте, как настроить аутентификац�
 ms.assetid: 2b2f9abf-9120-4aac-ac5b-4a268d9b6e2b
 ms.topic: article
 ms.date: 09/02/2019
-ms.custom: fasttrack-edit
-ms.openlocfilehash: bb6b8eebef3247cf2c39ed4b111296e1e0521a74
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.custom:
+- seodec18
+- fasttrack-edit
+ms.openlocfilehash: e8a9fbe6072f3628d755ad3ad5aa5a623fc3ab23
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437974"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80519947"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-google-login"></a>Настройте приложение App Service или Azure Functions для использования входа в Google
 
@@ -48,7 +50,7 @@ ms.locfileid: "80437974"
 
 Теперь вы готовы использовать Google для проверки подлинности в приложении.
 
-## <a name="next-steps"></a><a name="related-content"> </a>Следующие шаги
+## <a name="next-steps"></a><a name="related-content"> </a>Дальнейшие действия
 
 [!INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
 

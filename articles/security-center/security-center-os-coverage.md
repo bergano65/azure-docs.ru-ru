@@ -11,20 +11,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/29/2019
+ms.date: 03/31/2020
 ms.author: memildin
-ms.openlocfilehash: f9b948714f72ba02a100d9941721f073953bf22a
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 3c8bf69b745f5dba8c08556908df4d4ae5b5769f
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/01/2020
-ms.locfileid: "80473238"
+ms.locfileid: "80521917"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
-## <a name="virtual-machines--servers"></a>Виртуальные машины / серверы<a name="vm-server"></a>
+На этой странице показаны платформы и среды, поддерживаемые Центром безопасности Azure.
 
-Центр безопасности поддерживает виртуальные машины / серверы на различных типах гибридных сред:
+## <a name="combinations-of-environments"></a>Комбинации сред<a name="vm-server"></a>
+
+Центр безопасности Azure поддерживает виртуальные машины и серверы на различных типах гибридных сред:
 
 * Только Лазурный
 * Лазурный и натерритории
@@ -33,64 +35,30 @@ ms.locfileid: "80473238"
 
 Для среды Azure, активированной в подписке Azure, Центр безопасности Azure автоматически обнаружит ресурсы IaaS, развернутые в подписи.
 
-> [!NOTE]
-> Чтобы получить полный набор функций безопасности, необходимо иметь [агент аналитики журнала,](../azure-monitor/platform/agents-overview.md#log-analytics-agent)который используется Центром безопасности Azure, установленный и [правильно настроенный для отправки данных в Центр безопасности Azure.](security-center-enable-data-collection.md#manual-agent)
+## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-В следующих разделах перечисляются поддерживаемые серверные операционные системы, на которых может работать [агент аналитики журналов,](../azure-monitor/platform/agents-overview.md#log-analytics-agent)который используется Центром безопасности Azure.
+Центр безопасности зависит от [агента по аналитике журналов.](../azure-monitor/platform/agents-overview.md#log-analytics-agent) Убедитесь, что ваши машины работают с одной из поддерживаемых операционных систем для этого агента, как описано на следующих страницах:
 
-### <a name="windows-server-operating-systems"></a>Операционные системы сервера Windows<a name="os-windows"></a>
+* [Агент журналной аналитики для Windows поддерживает операционные системы](../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems)
+* [Агент журналной аналитики для Linux поддерживает операционные системы](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems)
 
-|OS|Поддерживается Центром безопасности Azure|Поддержка интеграции с АТС Microsoft Defender|
-|:---|:-:|:-:|
-|Windows Server 2019|✔|X|
-|Windows Server 2016|✔|✔|
-|Windows Server 2012 R2|✔|✔|
-|Windows Server 2008 R2|✔|✔|
+Кроме того, убедитесь, что ваш агент Log Analytics [настроен должным образом для отправки данных в Центр безопасности](security-center-enable-data-collection.md#manual-agent)
 
-Чтобы узнать больше о поддерживаемых функциях для операционных систем Windows, перечисленных выше, [см.](security-center-services.md#vm-server-features)
+> [!TIP]
+> Чтобы узнать больше о конкретных функциях Центра [Feature coverage for machines](security-center-services.md)безопасности, доступных на Windows и Linux, см.
 
-### <a name="windows-operating-systems"></a>Операционные системы Windows<a name="os-windows (non-server)"></a>
+## <a name="managed-virtual-machine-services"></a>Управляемые услуги виртуальных машин<a name="virtual-machine"></a>
 
-Центр безопасности Azure интегрируется с службами Azure для мониторинга и защиты виртуальных машин на базе Windows.
+Виртуальные машины также создаются в подписке клиентов как часть некоторых сервисов, управляемых Azure, таких как Azure Kubernetes (AKS), Azure Databricks и многое другое. Центр безопасности обнаруживает эти виртуальные машины тоже, и агент Log Analytics может быть установлен и настроен, если поддерживается ОС доступна.
 
-### <a name="linux-operating-systems"></a>Операционные системы Linux<a name="os-linux"></a>
-
-64-разрядная
-
-* CentOS 6 и 7
-* Amazon Linux 2017.09
-* Oracle Linux 6 и Oracle Linux 7
-* Red Hat Enterprise Linux Server 6 и 7
-* Debian GNU/Linux 8 и 9
-* Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
-* SUSE Linux Enterprise Server 12
-
-32-битная
-* CentOS 6
-* Oracle Linux 6
-* Red Hat Enterprise Linux Server 6
-* Debian GNU/Linux 8 и 9
-* Ubuntu Linux 14.04 LTS, и 16.04 LTS
-
-> [!NOTE]
-> Поскольку список поддерживаемых операционных систем Linux постоянно меняется, если вы предпочитаете, нажмите [здесь,](https://github.com/microsoft/OMS-Agent-for-Linux#supported-linux-operating-systems) чтобы просмотреть самый современный список поддерживаемых версий, в случае, если произошли изменения с момента последнего опубликования этой темы.
-
-Чтобы узнать больше о поддерживаемых функциях для операционных систем Linux, перечисленных выше, [см.](security-center-services.md#vm-server-features)
-
-### <a name="managed-virtual-machine-services"></a>Управляемые услуги виртуальных машин<a name="virtual-machine"></a>
-
-Виртуальные машины также создаются в подписке клиентов как часть некоторых управляемых сервисов Azure, таких как Azure Kubernetes (AKS), Azure Databricks и многое другое. Эти виртуальные машины также обнаружены Центром безопасности Azure, и агент по аналитике журнала может быть установлен и настроен в соответствии с поддерживаемыми [операционными системами Windows/Linux,](#os-windows)перечисленными выше.
-
-### <a name="cloud-services"></a>Облачные службы<a name="cloud-services"></a>
+## <a name="cloud-services"></a>Облачные службы<a name="cloud-services"></a>
 
 Поддерживаемы также виртуальные машины, запускаемые в облачном сервисе. Мониторинг выполняется только для облачных служб и рабочих ролей, запущенных в слотах рабочей среды. Дополнительные сведения см. в статье [Общие сведения об облачных службах Azure](../cloud-services/cloud-services-choose-me.md).
 
-Защита виртуальных машин, проживающих в Azure Stack, также поддерживается. Для получения дополнительной информации об интеграции Центра безопасности с Azure Stack см. [На борту виртуальных машин Azure Stack в Центре безопасности.](https://docs.microsoft.com/azure/security-center/quick-onboard-azure-stack)
+Защита для вм, проживающих в Azure Stack, также поддерживается. Для получения дополнительной информации об интеграции Центра безопасности с Azure Stack см. [На борту виртуальных машин Azure Stack в Центре безопасности.](https://docs.microsoft.com/azure/security-center/quick-onboard-azure-stack)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [Центр безопасности собирает данные и агент по аналитике журналов.](security-center-enable-data-collection.md)
+- Узнайте, как [Центр безопасности собирает данные с помощью агента аналитики журналов.](security-center-enable-data-collection.md)
 - Узнайте, как [Центр безопасности управляет и защищает данные.](security-center-data-security.md)
 - Узнайте, как [спланировать и понять соображения проектирования, чтобы принять Центр безопасности Azure.](security-center-planning-and-operations-guide.md)
-- Узнайте о [функциях, доступных для различных облачных сред.](security-center-services.md)
-- Узнайте больше о [защите угроз для windows и Linux-машин в Центре безопасности Azure.](threat-protection.md#windows-machines)

@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 12/17/2019
-ms.openlocfilehash: d99a3b803b80dc41990a63e647d3ba928deb31af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.openlocfilehash: 8997b385960c58b17747dfcfced74010af80550b
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77198911"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548217"
 ---
 # <a name="interact-with-apache-kafka-clusters-in-azure-hdinsight-using-a-rest-proxy"></a>Взаимодействие с кластерами Apache Kafka в Azure HDInsight с помощью прокси REST
 
@@ -20,7 +20,7 @@ ms.locfileid: "77198911"
 
 ## <a name="rest-api-reference"></a>Справочник по REST API
 
-Для получения полной спецификации операций, поддерживаемых API Kafka REST, пожалуйста, [см.](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy)
+Для полной спецификации операций, поддерживаемых API [HDInsight Kafka REST Proxy API Reference](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy)Kafka REST, см.
 
 ## <a name="background"></a>Историческая справка
 
@@ -34,9 +34,9 @@ ms.locfileid: "77198911"
 
 ### <a name="security"></a>Безопасность
 
-Доступ к прокси-серверу Kafka REST управляется с помощью групп безопасности Azure Active Directory. При создании кластера Kafka с включенным прокси-сервером REST вы предоставите группу безопасности Active Directory Azure, которая должна иметь доступ к конечной точке REST. Клиенты Kafka (приложения), которым необходим доступ к прокси-серверу REST, должны быть зарегистрированы в этой группе владельцем группы. Владелец группы может сделать это через портал или через Powershell.
+Доступ к прокси-серверу Kafka REST управляется с помощью групп безопасности Azure Active Directory. При создании кластера Kafka с включенным прокси-сервером REST вы предоставите группу безопасности Active Directory Azure, которая должна иметь доступ к конечной точке REST. Клиенты Kafka (приложения), которым необходим доступ к прокси-серверу REST, должны быть зарегистрированы в этой группе владельцем группы. Владелец группы может сделать это через портал или через PowerShell.
 
-Прежде чем делать запросы в конечную точку прокси REST, клиентское приложение должно получить токен OAuth для проверки членства в правильной группе безопасности. Пожалуйста, найдите [образец приложения Клиента](#client-application-sample) ниже, который показывает, как получить токен OAuth. После того, как клиентское приложение имеет токен OAuth, они должны передать этот токен в запросе HTTP, сделанном прокси REST.
+Прежде чем делать запросы в конечную точку прокси REST, клиентское приложение должно получить токен OAuth для проверки членства в правильной группе безопасности. Найдите [нижепример приложения Клиента,](#client-application-sample) который показывает, как получить токен OAuth. После того, как клиентское приложение имеет токен OAuth, они должны передать этот токен в запросе HTTP, сделанном прокси REST.
 
 > [!NOTE]  
 > [См. Управление приложением и доступом к ресурсам с помощью групп Active Directory Azure,](../../active-directory/fundamentals/active-directory-manage-groups.md)чтобы узнать больше о группах безопасности AAD. Для получения дополнительной информации о том, [Authorize access to Azure Active Directory web applications using the OAuth 2.0 code grant flow](../../active-directory/develop/v1-protocols-oauth-code.md)как работают токены OAuth, см.
@@ -44,7 +44,12 @@ ms.locfileid: "77198911"
 ## <a name="prerequisites"></a>Предварительные требования
 
 1. зарегистрировать приложение в Azure AD; Клиентские приложения, которые вы пишете для взаимодействия с прокси-сервером Kafka REST, будут использовать идентификатор этого приложения и секрет проверки подлинности в Azure.
-1. Создайте группу безопасности Azure AD и добавьте приложение, зарегистрированное в Azure AD, в группу безопасности. Эта группа безопасности будет использоваться для контроля, какие приложения могут взаимодействовать с прокси REST. Для получения дополнительной информации о создании групп Azure AD [см. Создать базовую группу и добавить участников с помощью Active Directory Azure.](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)
+
+1. Создайте группу безопасности Azure AD и добавьте приложение, зарегистрированное в Azure AD, в группу безопасности в качестве «члена» группы. Эта группа безопасности будет использоваться для контроля, какие приложения могут взаимодействовать с прокси REST. Для получения дополнительной информации о создании групп Azure AD [см. Создать базовую группу и добавить участников с помощью Active Directory Azure.](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)
+
+    Проверка группы типа "Безопасность" ![Security Group](./media/rest-proxy/rest-proxy-group.png)
+
+    Проверка того, что ![приложение является участником членства в Group Validate](./media/rest-proxy/rest-proxy-membergroup.png)
 
 ## <a name="create-a-kafka-cluster-with-rest-proxy-enabled"></a>Создание кластера Kafka с включенным прокси-сервером REST
 
@@ -69,18 +74,18 @@ ms.locfileid: "77198911"
 1. Сохраните пример кода на машине с установленным Python.
 1. Установите требуемые зависимые `pip3 install adal` `pip install msrestazure`питоны путем выполнения и .
 1. Измените раздел кода *Нанастройка этих свойств* и обновите следующие свойства для среды:
-    1.  *Идентификатор арендатора* — арендатор Azure, где находится ваша подписка.
-    1.  *Идентификатор клиента* — идентификатор приложения, зарегистрированного в группе безопасности.
-    1.  *Секрет клиента* - Секрет приложения, которое вы зарегистрировали в группе безопасности
-    1.  *Kafkarest_endpoint* - получить это значение из вкладки "свойства" в обзоре кластера, описанном в [разделе развертывания.](#create-a-kafka-cluster-with-rest-proxy-enabled) Она должна быть в следующем формате –`https://<clustername>-kafkarest.azurehdinsight.net`
-3. Из командной строки выполните файл python путем выполнения`python <filename.py>`
+    1.    *Идентификатор арендатора* — арендатор Azure, где находится ваша подписка.
+    1.    *Идентификатор клиента* — идентификатор приложения, зарегистрированного в группе безопасности.
+    1.    *Секрет клиента* - Секрет приложения, которое вы зарегистрировали в группе безопасности
+    1.    *Kafkarest_endpoint* - получить это значение из вкладки "свойства" в обзоре кластера, описанном в [разделе развертывания.](#create-a-kafka-cluster-with-rest-proxy-enabled) Она должна быть в следующем формате –`https://<clustername>-kafkarest.azurehdinsight.net`
+1. Из командной строки выполните файл python путем выполнения`python <filename.py>`
 
 Этот код делает следующее:
 
 1. Получает токен OAuth из Azure AD
 1. Показывает, как сделать запрос на прокси Кафка REST
 
-Для получения дополнительной информации о получении токенов OAuth в python [см.](https://docs.microsoft.com/python/api/adal/adal.authentication_context.authenticationcontext?view=azure-python) Вы можете увидеть задержку, в то время как темы, которые не создаются или не удаляются через прокси Kafka REST, отражаются там. Эта задержка связана с обновлением кэша.
+Для получения дополнительной информации о получении токенов OAuth в python [см.](https://docs.microsoft.com/python/api/adal/adal.authentication_context.authenticationcontext?view=azure-python) Вы можете увидеть задержку, в то время как темы, которые не созданы или удалены через прокси Kafka REST, отражаются там. Эта задержка связана с обновлением кэша.
 
 ```python
 #Required python packages
@@ -124,6 +129,12 @@ request_url = kafkarest_endpoint + getstatus
 # sending get request and saving the response as response object
 response = requests.get(request_url, headers={'Authorization': accessToken})
 print(response.content)
+```
+
+Ниже приведен другой пример того, как получить токен из Azure для прокси REST с помощью команды curl. Обратите внимание, `resource=https://hib.azurehdinsight.net` что нам нужно указанное при получении токена.
+
+```cmd
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=<clientid>&client_secret=<clientsecret>&grant_type=client_credentials&resource=https://hib.azurehdinsight.net' 'https://login.microsoftonline.com/<tenantid>/oauth2/token'
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

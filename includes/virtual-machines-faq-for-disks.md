@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 05/13/2019
+ms.date: 03/31/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 53bbee6dd75e045c2a7e95c88a0138c9859d12db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ad36547b0cf9457d7ff4fdd919a0bb1362539eb5
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80374064"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80522709"
 ---
 В этой статье представлены ответы на некоторые часто задаваемые вопросы о службе "Управляемые диски Azure" и дисках SSD уровня "Премиум" Azure.
 
@@ -409,11 +409,11 @@ ms.locfileid: "80374064"
 
 **Какие регионы поддерживают возможность разрыва для применимого премиум размера диска SSD?**
 
-В настоящее время возможность разрыва поддерживается в Azure West Central US.
+Возможность разрыва в настоящее время поддерживается во всех регионах в Общедоступном Облаке Azure, и в скором времени будет оказана поддержка суверенных облаков. 
 
 **В каких регионах поддерживаются размеры управляемых дисков GiB (P1/P2/P3, E1/E2/E3)?**
 
-Эти новые размеры дисков в настоящее время поддерживаются в Azure West Central US.
+Эти новые размеры дисков в настоящее время поддерживаются во всех регионах в общедоступном облаке Azure, и в скором времени будет оказана поддержка суверенных облаков. 
 
 **Поддерживаются ли размеры дисков P1/P2/P3 для неуправляемых дисков или страниц?**
 

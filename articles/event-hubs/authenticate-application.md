@@ -8,12 +8,12 @@ author: spelluru
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: spelluru
-ms.openlocfilehash: a242da8cc98a21248c48a1b3981fa713706028ec
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4cef49f138b96848b8e59cb5b2d0b185d4568aa9
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064940"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80520995"
 ---
 # <a name="authenticate-an-application-with-azure-active-directory-to-access-event-hubs-resources"></a>Authenticate приложение с помощью Active Directory Azure для доступа к ресурсам концентраторов событий
 Microsoft Azure предоставляет интегрированную систему управления доступом к ресурсам и приложениям на основе Azure Active Directory (Azure AD). Ключевым преимуществом использования Azure AD с концентраторами azure Event является то, что вам больше не нужно хранить учетные данные в коде. Вместо этого вы можете запросить токен доступа OAuth 2.0 от платформы Microsoft Identity. Имя ресурса для запроса `https://eventhubs.azure.net/` токена (Для клиентов Kafka `https://<namespace>.servicebus.windows.net`ресурс для запроса токена). Azure AD проверяет подлинность принципаслужбы безопасности (пользователя, группы или основного обслуживания), работая с приложением. Если проверка подлинности удалась, Azure AD возвращает в приложение маркер доступа, и приложение может использовать контокен доступа для авторизации запроса на ресурсы Azure Event Hubs.
@@ -106,7 +106,7 @@ Azure предоставляет следующие встроенные рол�
 ## <a name="samples"></a>Примеры
 - [Образцы microsoft.Azure.EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
     
-    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно [см.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md)
+    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно [см.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
 - [Образцы образцов Azure.Messaging.EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)
 
     Этот пример был обновлен для использования последней библиотеки **Azure.Messaging.EventHubs.**

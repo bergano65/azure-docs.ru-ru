@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: article
-ms.date: 11/26/2019
+ms.date: 03/31/2020
 ms.author: iainfou
-ms.openlocfilehash: cc126af67a0d8627d61e595cee56f3df8973340d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 160873fe889d7eccc7efd08b4767854a5b24c484
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77613042"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80518969"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services"></a>Настройка синхронизации с Azure AD на службы активных каталогов Azure
 
@@ -47,13 +47,15 @@ ms.locfileid: "77613042"
 | Отключить синхронизацию | [Портал Azure](#disable-scoped-synchronization-using-the-azure-portal) | [PowerShell](#disable-scoped-synchronization-using-powershell) |
 
 > [!WARNING]
-> Изменение сферы синхронизации приводит к тому, что управляемый домен Azure AD DS пересинхронизирует все данные.
+> Изменение сферы синхронизации приводит к тому, что управляемый домен Azure AD DS пересинхронизирует все данные. Действительны следующие условия.
 > 
 >  * При изменении области синхронизации для домена Azure AD DS происходит полная ресинхронизация.
 >  * Объекты, которые больше не требуются в домене Azure AD DS, удаляются. В управляемом домене создаются новые объекты.
 >  * Ресинхронизация может занять много времени. Время синхронизации зависит от количества объектов, таких как пользователи, группы и членство в группе в домене Azure AD DS и каталоге Azure AD. В больших каталогах с сотнями тысяч объектов повторная синхронизация может занять несколько дней.
 
 ## <a name="enable-scoped-synchronization-using-the-azure-portal"></a>Включить синхронизацию с помощью портала Azure
+
+Для обеспечения синхронизации в портале Azure выполните следующие действия:
 
 1. Следуйте [учебнику, чтобы создать и настроить экземпляр Azure AD DS.](tutorial-create-instance-advanced.md) Выполните все предпосылки и шаги развертывания, кроме области синхронизации.
 1. Выберите **Scoped** на этапе синхронизации, а затем выберите группы Azure AD для синхронизации с экземпляром Azure AD DS.
@@ -173,7 +175,7 @@ Write-Output "******************************************************************
 
 ## <a name="enable-scoped-synchronization-using-powershell"></a>Включить синхронизацию с помощью PowerShell
 
-Выполните эти шаги с помощью PowerShell. Чтобы включить доменные службы Azure Active Directory с помощью PowerShell, [обратитесь к инструкциям](powershell-create-instance.md). Несколько шагов в этой статье немного изменены для настройки синхронизации определенных учетных записей.
+Используйте PowerShell для выполнения следующего набора шагов. Чтобы включить доменные службы Azure Active Directory с помощью PowerShell, [обратитесь к инструкциям](powershell-create-instance.md). Несколько шагов в этой статье немного изменены для настройки синхронизации определенных учетных записей.
 
 1. Выполните следующие задачи из статьи, чтобы включить Azure AD DS с помощью PowerShell. Остановитесь на шаг, чтобы фактически создать управляемый домен. Настраиваете синхронизацию с охватом, создавая домена Azure AD DS.
 

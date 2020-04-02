@@ -2,13 +2,13 @@
 title: Теговые ресурсы, ресурсные группы и подписки для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
 ms.topic: conceptual
-ms.date: 03/20/2020
-ms.openlocfilehash: ffc97df0923e26c3abf0eed8e7810f3b1dc61ed2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.openlocfilehash: 76f9f61b3fe7002508bbd884f427efcfee698579
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80132202"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548492"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Используйте теги для организации ресурсов Azure и иерархии управления
 
@@ -20,7 +20,7 @@ ms.locfileid: "80132202"
 
 ## <a name="required-access"></a>Необходимый доступ
 
-Чтобы применить теги к ресурсу, необходимо иметь доступ к типу ресурсов **Microsoft.Resources/tags.** Роль **тега Позволяет** применять теги к объекту, не имея доступа к самой сущности.
+Чтобы применить теги к ресурсу, необходимо иметь доступ к типу ресурсов **Microsoft.Resources/tags.** Роль [тега Позволяет](../../role-based-access-control/built-in-roles.md#tag-contributor) применять теги к объекту, не имея доступа к самой сущности. В настоящее время роль участника тегов не может применять теги к ресурсам или группам ресурсов через портал. Он может применять теги к подпискам через портал. Он поддерживает все операции тегов через PowerShell и REST API.  
 
 Роль [вкладчика](../../role-based-access-control/built-in-roles.md#contributor) также предоставляет необходимый доступ для применения тегов к любому объекту. Чтобы применить теги только к одному типу ресурсов, используйте роль участника для этого ресурса. Например, чтобы применить теги к виртуальным машинам, используйте [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor).
 
@@ -28,7 +28,7 @@ ms.locfileid: "80132202"
 
 ### <a name="apply-tags"></a>Применить теги
 
-Azure PowerShell предлагает две команды для применения тегов - [New-AzTag](/powershell/module/az.resources/new-aztag) и [Update-AzTag](/powershell/module/az.resources/update-aztag). Для использования этих команд необходимо иметь Azure PowerShell 3.6.1 или позже.
+Azure PowerShell предлагает две команды для применения тегов - [New-AzTag](/powershell/module/az.resources/new-aztag) и [Update-AzTag](/powershell/module/az.resources/update-aztag). Вы должны иметь модуль Az.Resources 1.12.0 или позже. Вы можете проверить `Get-Module Az.Resources`свою версию с . Вы можете установить этот модуль или [установить Azure PowerShell](/powershell/azure/install-az-ps) 3.6.1 или позже.
 
 **New-AzTag** заменяет все теги на ресурсе, группе ресурсов или подписке. При вызове команды передайте идентификатор ресурса объекту, который вы хотите отметить.
 

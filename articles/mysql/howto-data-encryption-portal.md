@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 78a290b1e2984719645fb4d4ff253ab021a0826e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: acf3e6273f98d98d5da55cfb5b044677116c44dc
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79299045"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80520813"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-portal"></a>Шифрование данных для базы данных Azure для MyS'L с помощью портала Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "79299045"
 
    ![Обзор политики доступа](media/concepts-data-access-and-security-data-encryption/access-policy-wrap-unwrap.png)
 
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 ## <a name="set-data-encryption-for-azure-database-for-mysql"></a>Установка шифрования данных для базы данных Azure для MyS'L
 
@@ -61,11 +61,11 @@ ms.locfileid: "79299045"
 
    ![Скриншот базы данных Azure для MyS'L с выделенными вариантами шифрования данных](media/concepts-data-access-and-security-data-encryption/setting-data-encryption.png)
 
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 4. Чтобы обеспечить полную шифрование всех файлов (включая временные файлы), перезаключите сервер.
 
-## <a name="restore-or-create-a-replica-of-the-server"></a>Восстановление или создание реплики сервера
+## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для восстановления или реплики серверов
 
 После того, как база данных Azure для MyS'L зашифрована с помощью управляемого ключа клиента, хранящегося в Key Vault, любая вновь созданная копия сервера также шифруется. Эту новую копию можно сделать либо через локальную или геовосстановительную операцию, либо через операцию реплики (локальный/кросс-регион). Таким образом, для зашифрованного сервера MyS'L вы можете использовать следующие шаги для создания зашифрованного восстановленного сервера.
 
@@ -93,132 +93,6 @@ ms.locfileid: "79299045"
 4. После регистрации основного сервиса повторно переоформить ключ, и сервер возобновляет свою нормальную функциональность.
 
    ![Скриншот базы данных Azure для MyS'L, показывающий восстановленную функциональность](media/concepts-data-access-and-security-data-encryption/restore-successful.png)
-
-
-## <a name="using-an-azure-resource-manager-template-to-enable-data-encryption"></a>Использование шаблона управления ресурсами Azure для обеспечения шифрования данных
-
-Помимо портала Azure, вы также можете включить шифрование данных на вашем сервере Azure для сервера MyS'L, используя шаблоны Azure Resource Manager для новых и существующих серверов.
-
-### <a name="for-a-new-server"></a>Для нового сервера
-
-Используйте один из заранее созданных шаблонов Управления ресурсами Azure, чтобы предоставить серверу с включенным шифрованием данных: [Пример с шифрованием данных](https://github.com/Azure/azure-mysql/tree/master/arm-templates/ExampleWithDataEncryption)
-
-Этот шаблон менеджера ресурсов Azure создает базу данных Azure для сервера MyS'L и использует **KeyVault** и **key,** пройденные в качестве параметров, чтобы включить шифрование данных на сервере.
-
-### <a name="for-an-existing-server"></a>Для существующего сервера
-Кроме того, можно использовать шаблоны Azure Resource Manager для включения шифрования данных в существующую базу данных Azure для серверов MyS'L.
-
-* Передайте URI ключа ключа Azure Key Vault, `keyVaultKeyUri` который вы скопировали ранее под свойством в объекте свойств.
-
-* Используйте *2020-01-01-предварительный просмотр* в качестве версии API.
-
-```json
-{
-  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "location": {
-      "type": "string"
-    },
-    "serverName": {
-      "type": "string"
-    },
-    "keyVaultName": {
-      "type": "string",
-      "metadata": {
-        "description": "Key vault name where the key to use is stored"
-      }
-    },
-    "keyVaultResourceGroupName": {
-      "type": "string",
-      "metadata": {
-        "description": "Key vault resource group name where it is stored"
-      }
-    },
-    "keyName": {
-      "type": "string",
-      "metadata": {
-        "description": "Key name in the key vault to use as encryption protector"
-      }
-    },
-    "keyVersion": {
-      "type": "string",
-      "metadata": {
-        "description": "Version of the key in the key vault to use as encryption protector"
-      }
-    }
-  },
-  "variables": {
-    "serverKeyName": "[concat(parameters('keyVaultName'), '_', parameters('keyName'), '_', parameters('keyVersion'))]"
-  },
-  "resources": [
-    {
-      "type": "Microsoft.DBforMySQL/servers",
-      "apiVersion": "2017-12-01",
-      "kind": "",
-      "location": "[parameters('location')]",
-      "identity": {
-        "type": "SystemAssigned"
-      },
-      "name": "[parameters('serverName')]",
-      "properties": {
-      }
-    },
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-05-01",
-      "name": "addAccessPolicy",
-      "resourceGroup": "[parameters('keyVaultResourceGroupName')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.DBforMySQL/servers', parameters('serverName'))]"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "template": {
-          "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "resources": [
-            {
-              "type": "Microsoft.KeyVault/vaults/accessPolicies",
-              "name": "[concat(parameters('keyVaultName'), '/add')]",
-              "apiVersion": "2018-02-14-preview",
-              "properties": {
-                "accessPolicies": [
-                  {
-                    "tenantId": "[subscription().tenantId]",
-                    "objectId": "[reference(resourceId('Microsoft.DBforMySQL/servers/', parameters('serverName')), '2017-12-01', 'Full').identity.principalId]",
-                    "permissions": {
-                      "keys": [
-                        "get",
-                        "wrapKey",
-                        "unwrapKey"
-                      ]
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "name": "[concat(parameters('serverName'), '/', variables('serverKeyName'))]",
-      "type": "Microsoft.DBforMySQL/servers/keys",
-      "apiVersion": "2020-01-01-preview",
-      "dependsOn": [
-        "addAccessPolicy",
-        "[resourceId('Microsoft.DBforMySQL/servers', parameters('serverName'))]"
-      ],
-      "properties": {
-        "serverKeyType": "AzureKeyVault",
-        "uri": "[concat(reference(resourceId(parameters('keyVaultResourceGroupName'), 'Microsoft.KeyVault/vaults/', parameters('keyVaultName')), '2018-02-14-preview', 'Full').properties.vaultUri, 'keys/', parameters('keyName'), '/', parameters('keyVersion'))]"
-      }
-    }
-  ]
-}
-
-```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

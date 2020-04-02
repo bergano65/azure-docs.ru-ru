@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
-ms.openlocfilehash: b2af392dc4dc848a099b8297bb58e7d4a7104fa6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3aee30e8ad82f9657c3bc9e97a7657a1e8c7989d
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76964045"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548907"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
 
@@ -96,7 +96,7 @@ ms.locfileid: "76964045"
 1. На вкладке **Параметры Модуля-Близнецы** добавьте следующую конфигурацию:
       
     ``` json
-      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration":{}
+      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
     ```
 
 1. Выберите **обновление**.
@@ -131,7 +131,7 @@ ms.locfileid: "76964045"
     }
     ```
     
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
    
 1. Нажмите кнопку **Далее**.
 
@@ -167,7 +167,7 @@ ms.locfileid: "76964045"
    
 1. Убедитесь, что следующие контейнеры работают:
    
-   | name | IMAGE |
+   | Имя | IMAGE |
    | --- | --- |
    | лазуриотбезопасности | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.2 |
    | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |

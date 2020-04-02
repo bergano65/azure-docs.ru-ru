@@ -6,18 +6,17 @@ services: virtual-network
 documentationcenter: na
 author: KumudD
 ms.service: virtual-network
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: a22adef5510e24c2dc07ffb39c9687d500644f8a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9ed4ce6befda76069e965501a320dc110129a024
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80066433"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521030"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Создание, изменение и удаление группы безопасности сети
 
@@ -58,9 +57,9 @@ ms.locfileid: "80066433"
     | **Подписка** | Выберите свою подписку. |
     | **Группа ресурсов** | Выберите существующую группу ресурсов или **создайте новую** для создания новой группы ресурсов. |
     | **Название** | Введите уникальную строку текста в группе ресурсов. |
-    | **Регионе** | Выберите нужное место. |
+    | **Регион** | Выберите нужное место. |
 
-4. Выберите **Review + create** (Просмотреть и создать).
+4. Выберите **Обзор и создайте**.
 
 5. После просмотра **пройденого сообщения «Проверка»** выберите **«Создать».**
 
@@ -276,9 +275,9 @@ ms.locfileid: "80066433"
     | **Подписка** | Выберите свою подписку. |
     | **Группа ресурсов** | Выберите существующую группу ресурсов или **создайте новую** для создания новой группы ресурсов. |
     | **Название** | Введите уникальную строку текста в группе ресурсов. |
-    | **Регионе** | Выберите нужное место. |
+    | **Регион** | Выберите нужное место. |
 
-5. Выберите **Review + create** (Просмотреть и создать).
+5. Выберите **Обзор и создайте**.
 
 6. Под вкладкой **«Обзор» — создайте** вкладку, после того как вы увидите **пройденое сообщение «Проверка»,** выберите **«Создать».**
 
@@ -356,7 +355,7 @@ ms.locfileid: "80066433"
 
 ### <a name="network-security-group"></a>Группа безопасности сети
 
-| Действие                                                        |   name                                                                |
+| Действие                                                        |   Имя                                                                |
 |-------------------------------------------------------------- |   -------------------------------------------                         |
 | Microsoft.Network/networkSecurityGroups/read                  |   Получение группы безопасности сети.                                          |
 | Microsoft.Network/networkSecurityGroups/write                 |   Создание или обновление группы безопасности сети.                             |
@@ -365,7 +364,7 @@ ms.locfileid: "80066433"
 
 ### <a name="network-security-group-rule"></a>Правило группы безопасности сети
 
-| Действие                                                        |   name                                                                |
+| Действие                                                        |   Имя                                                                |
 |-------------------------------------------------------------- |   -------------------------------------------                         |
 | Microsoft.Network/networkSecurityGroups/rules/read            |   Получение правила.                                                            |
 | Microsoft.Network/networkSecurityGroups/rules/write           |   Создание или обновление правила.                                               |
@@ -373,7 +372,7 @@ ms.locfileid: "80066433"
 
 ### <a name="application-security-group"></a>Группа безопасности приложений
 
-| Действие                                                                     | name                                                     |
+| Действие                                                                     | Имя                                                     |
 | --------------------------------------------------------------             | -------------------------------------------              |
 | Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action     | Присоединение конфигурации IP к группе безопасности приложений.|
 | Microsoft.Network/applicationSecurityGroups/joinNetworkSecurityRule/action | Присоединение правила безопасности к группе безопасности приложений.    |

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/22/2019
-ms.openlocfilehash: f1fdb9dffbe06430ea7e3eb9339e23f5239e4e36
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bb78d84aa0f9a2832b6599edeac9d50e0e226437
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76310838"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546339"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -29,7 +29,7 @@ ms.locfileid: "76310838"
 | Роль                                  | Раньше назывался .                                                                                       | Идти вперед       |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|-----------|
 | Читатель                                | - Читать доступ, в том числе секреты                                                                   | - Читать доступ, **за исключением** секретов |           |   |   |
-| Оператор кластера HDInsight<br>(Новая роль) | Недоступно                                                                                              | - Читать / писать доступ, в том числе секреты         |   |   |
+| Оператор кластера HDInsight<br>(Новая роль) | Н/Д                                                                                              | - Читать / писать доступ, в том числе секреты         |   |   |
 | Участник                           | - Читать / писать доступ, в том числе секреты<br>- Создавайте и управляйте всеми типами ресурсов Azure.     | Без изменения. |
 | Владелец                                 | - Читать / писать доступ, включая секреты<br>- Полный доступ ко всем ресурсам<br>- Доступ делегатов к другим | Без изменения. |
 
@@ -131,8 +131,8 @@ ms.locfileid: "76310838"
 
 Обновление до [версии 1.0.0](https://search.maven.org/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight/1.0.0/jar) или позже HDInsight SDK для Java. Минимальные изменения кода могут потребоваться, если вы используете метод, затронутый этими изменениями:
 
-- [`ConfigurationsInner.get`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018__06__01__preview.implementation._configurations_inner.get)больше не будет **возвращать чувствительные параметры,** такие как ключи хранения (основной сайт) или учетные данные HTTP (шлюз).
-- [`ConfigurationsInner.update`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018__06__01__preview.implementation._configurations_inner.update)в настоящее время обесценился.
+- `ConfigurationsInner.get`больше не будет **возвращать чувствительные параметры,** такие как ключи хранения (основной сайт) или учетные данные HTTP (шлюз).
+- `ConfigurationsInner.update`в настоящее время обесценился.
 
 ### <a name="sdk-for-go"></a>SDK для идти
 
@@ -185,7 +185,7 @@ az role assignment create --role "HDInsight Cluster Operator" --assignee user@do
 
 Вы можете использовать портал Azure для добавления назначения роли оператора кластера HDInsight для пользователя. Просмотрите документацию, [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure - Добавить назначение ролей.](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment)
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="why-am-i-seeing-a-403-forbidden-response-after-updating-my-api-requests-andor-tool"></a>Почему после обновления запросов API и (или) средства отображается ответ 403 Forbidden (запрещено)?
 
@@ -193,9 +193,9 @@ az role assignment create --role "HDInsight Cluster Operator" --assignee user@do
 
 ### <a name="why-do-i-see-insufficient-privileges-to-complete-the-operation-when-running-the-azure-cli-command-to-assign-the-hdinsight-cluster-operator-role-to-another-user-or-service-principal"></a>Почему при запуске команды Azure CLI при запуске команды Azure CLI присваивают роль оператора кластера HDInsight другому пользователю или главному обслуживанию?
 
-Помимо роли владельца, пользователь или главный поставщик службы, исполняющий команду, должен иметь достаточное количество разрешений AAD для поиска идентиверев объектов назначенного. Это сообщение указывает на недостаточное количество разрешений AAD. Попробуйте заменить `-–assignee` `–assignee-object-id` аргумент и увядите идентификатор объекта назначенного в качестве параметра вместо имени (или основного идентификатора в случае управляемого удостоверения). Для получения дополнительной информации ознакомьтесь с разделом дополнительных параметров [назначения роли az, чтобы получить дополнительную](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) информацию.
+Помимо роли владельца, пользователь или главный поставщик службы, исполняющий команду, должен иметь достаточное количество разрешений Azure AD для поиска идентивереобъектов объекта назначенного. Это сообщение указывает на недостаточное количество разрешений Azure AD. Попробуйте заменить `-–assignee` `–assignee-object-id` аргумент и увядите идентификатор объекта назначенного в качестве параметра вместо имени (или основного идентификатора в случае управляемого удостоверения). Для получения дополнительной информации ознакомьтесь с разделом дополнительных параметров [назначения роли az, чтобы получить дополнительную](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) информацию.
 
-Если это все еще не работает, обратитесь к вашему aAD-адуну, чтобы получить правильные разрешения.
+Если это все еще не работает, обратитесь к админу Azure AD, чтобы получить правильные разрешения.
 
 ### <a name="what-will-happen-if-i-take-no-action"></a>Что произойдет, если я не предприму никаких действий?
 

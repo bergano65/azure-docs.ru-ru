@@ -15,12 +15,12 @@ ms.date: 03/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: ba07a0b0d3be0366179bba14c786fafad8753dd7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2fe3b94463da07304f2c853910ac5d2a6771d070
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280700"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80545637"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "80280700"
 > | [Обработка сообщений о очередях хранения данных](#storage-queue-data-message-processor) | Изгоняй, извлечение и удаление сообщения из очереди хранения Azure. Чтобы узнать, какие действия необходимы для данной операции данных, [см.](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations) | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
 > | [Отправитель сообщений о очередях хранилища](#storage-queue-data-message-sender) | Добавление сообщений в очередь хранения Azure. Чтобы узнать, какие действия необходимы для данной операции данных, [см.](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations) | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
 > | [Читатель очередей хранения данных](#storage-queue-data-reader) | Прочитайте и перечислите очереди и сообщения азового хранения. Чтобы узнать, какие действия необходимы для данной операции данных, [см.](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations) | 19e7f393-937e-4f77-808e-94535e297925 |
-> | **Интернет** |  |  |
+> | **Web** |  |  |
 > | [Читатель данных Azure Maps (предварительная версия)](#azure-maps-data-reader-preview) | Предоставляет доступ к данным, связанным с чтением карты, из учетной записи карт Azure. | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
 > | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
 > | [Участник веб-плана](#web-plan-contributor) | Позволяет управлять веб-планами для веб-сайтов, но не доступом к ним. | 2cc479cb-7b4d-49a8-b449-8c00fd0f0a4b |
@@ -124,7 +124,7 @@ ms.locfileid: "80280700"
 > | [Вкладчик счета пространственных якорей](#spatial-anchors-account-contributor) | Позволяет управлять пространственными якорями в учетной записи, но не удалять их | 8bbe83f1-e2a6-4df7-8cb4-4e04d4e5c827 |
 > | [Владелец счета пространственных якорей](#spatial-anchors-account-owner) | Позволяет управлять пространственными якорями в вашем аккаунте, включая их удалять | 70bbe301-9835-447d-afdd-19eb3167307c |
 > | [Читатель учетной записи пространственных якорей](#spatial-anchors-account-reader) | Позволяет найти и прочитать свойства пространственных якорей в вашем аккаунте | 5d51204f-eb77-4b1c-b86a-2ec626c49413 |
-> | **Интеграции** |  |  |
+> | **Интеграция** |  |  |
 > | [Участник службы управления API](#api-management-service-contributor) | Может управлять службой и интерфейсами API. | 312a565d-c81f-4fd8-895a-4e21e48d571c |
 > | [Роль оператора службы управления API](#api-management-service-operator-role) | Может управлять службой, но не интерфейсами API. | e022efe7-f5ba-4159-bbe4-b44f577e9b61 |
 > | [Роль читателя данных службы управления API](#api-management-service-reader-role) | Доступ к службе и интерфейсам API в режиме "только для чтения". | 71522526-b88f-4d52-b57f-d31fc3546d0d |
@@ -139,7 +139,7 @@ ms.locfileid: "80280700"
 > | [Участник учетной записи интеллектуальных систем](#intelligent-systems-account-contributor) | Позволяет управлять учетными записями интеллектуальных систем, но не доступом к ним. | 03a6d094-3444-4b3d-88af-7477090a9e5e |
 > | [Создатель приложений логики](#logic-app-contributor) | Позволяет управлять логическими приложениями, но не изменять доступ к ним. | 87a39d53-fc1b-424a-814c-f7e04687dc9e |
 > | [Оператор приложений логики](#logic-app-operator) | Позволяет читать, включать и отключать логические приложения, но не редактируть и не обновлять их. | 515c2055-d9d4-4321-b1b9-bd0c9a0f79fe |
-> | **идентификации** |  |  |
+> | **Идентификация** |  |  |
 > | [Участник управляемого удостоверения](#managed-identity-contributor) | Создание, чтение, обновление и удаление пользовательских удостоверений. | e40ec5ca-96e0-45a2-b4ff-59039f2c2b59 |
 > | [Оператор управляемого удостоверения](#managed-identity-operator) | Чтение и назначение пользовательских удостоверений. | f1a07417-d97a-45cb-824c-7a7467783830 |
 > | **Безопасность** |  |  |
@@ -151,7 +151,7 @@ ms.locfileid: "80280700"
 > | [Вкладчик по оценке безопасности](#security-assessment-contributor) | Позволяет продвигать оценки в Центр безопасности | 612c2aa1-cb24-443b-ac28-3ab7722de6f5 |
 > | [Диспетчер безопасности (устаревший)](#security-manager-legacy) | Это устаревшая роль. Пожалуйста, используйте вместо этого админ безопасности. | e3d13bf0-dd5a-482e-ba6b-9b8433878d10 |
 > | [Читатель безопасности](#security-reader) | Можно просматривать рекомендации и оповещения, просматривать политики безопасности, просматривать состояния безопасности, но не может вносить изменения. | 39bc4728-0917-49c7-9d2c-d95423bc2eb4 |
-> | **Devops** |  |  |
+> | **DevOps** |  |  |
 > | [DevTest Labs Пользователь](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. | 76283e04-6283-4c54-8f91-bcf1374a3c64 |
 > | [Создатель лаборатории](#lab-creator) | Позволяет создавать, администрировать и удалять управляемые лаборатории в учетных записях Служб лабораторий Azure. | b97fb8bc-a8b2-4522-a38b-dd33c7e65ead |
 > | **Монитор** |  |  |
@@ -666,7 +666,7 @@ ms.locfileid: "80280700"
 }
 ```
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 
 ### <a name="cdn-endpoint-contributor"></a>Участник конечных точек CDN
@@ -1093,7 +1093,7 @@ ms.locfileid: "80280700"
 }
 ```
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 
 ### <a name="avere-contributor"></a>Авере Вкладчик
@@ -4644,7 +4644,7 @@ acr удалить
 > | Microsoft.ApiManagement/service/managedeployments/action | Позволяет изменить номер SKU или единицы, а также добавить или удалить региональные развертывания службы управления API. |
 > | Microsoft.ApiManagement/service/read | Чтение метаданных для экземпляра службы управления API. |
 > | Microsoft.ApiManagement/service/restore/action | Восстановление службы управления API из указанного контейнера в предоставленной пользователем учетной записи хранения. |
-> | Microsoft.ApiManagement/service/updatecertificate/action | Передает SSL-сертификата для службы управления API. |
+> | Microsoft.ApiManagement/service/updatecertificate/action | Загрузить сертификат TLS/SSL для службы управления API |
 > | Microsoft.ApiManagement/service/updatehostname/action | Позволяет настроить, обновить или удалить имена личных доменов для службы управления API. |
 > | Microsoft.ApiManagement/service/write | Создание или обновление экземпляра службы управления API |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -5328,7 +5328,7 @@ acr удалить
 }
 ```
 
-## <a name="identity"></a>идентификации
+## <a name="identity"></a>Идентификация
 
 
 ### <a name="managed-identity-contributor"></a>Участник управляемого удостоверения

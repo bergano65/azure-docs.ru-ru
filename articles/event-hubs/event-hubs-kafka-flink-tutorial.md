@@ -1,6 +1,6 @@
 ---
 title: Использование Apache Flink для Apache Kafka с Центрами событий Azure | Документация Майкрософт
-description: Эта статья содержит сведения о том, как подключить Apache Flink к Центрам событий Azure с поддержкой Apache Kafka
+description: В этой статье приводится информация о том, как подключить Apache Flink к центру событий Azure
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -10,19 +10,19 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: db877279bcfa7e132841e342cfc25b66bb3ec384
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6ab542e1328bb986f53d31e2eca75007cf1e0c75
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80283605"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521799"
 ---
 # <a name="use-apache-flink-with-azure-event-hubs-for-apache-kafka"></a>Использование Apache Flink с Центрами событий Azure для Apache Kafka
 В этом учебнике показано, как подключить Apache Flink к центру событий без изменения клиентских протоколов или запуска собственных кластеров. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
 
 Одним из ключевых преимуществ использования платформы Apache Kafka является экосистема платформ, к которым она может подключиться. Центры событий сочетают гибкость Kafka с масштабируемостью, согласованностью и поддержкой экосистемы Azure.
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 > * Создание пространства имен в Центрах событий
 > * Клонирование примера проекта
@@ -48,7 +48,7 @@ ms.locfileid: "80283605"
 
 ## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 
-Для отправки и получения данных из любой службы концентраторов событий требуется пространство имен концентраторов событий. Инструкции по получению конечной точки Kafka Центров событий см. в статье [Создание Центров событий с поддержкой Kafka](event-hubs-create.md). Скопируйте строку подключения к Центрам событий для дальнейшего использования.
+Для отправки и получения данных из любой службы концентраторов событий требуется пространство имен концентраторов событий. Смотрите [Создание концентратора событий](event-hubs-create.md) для инструкций по созданию пространства имен и концентратора событий. Скопируйте строку подключения к Центрам событий для дальнейшего использования.
 
 ## <a name="clone-the-example-project"></a>Клонирование примера проекта
 
@@ -88,11 +88,11 @@ mvn clean package
 mvn exec:java -Dexec.mainClass="FlinkTestProducer"
 ```
 
-Производитель начнет отправлять события в концентратор событий с поддержкой Kafka в раздел `test` и выводить события в STDOUT.
+Теперь производитель начнет отправлять события в `test` центр событий по теме и печатать события для уступки.
 
 ## <a name="run-flink-consumer"></a>Запуск потребителя Flink
 
-Используя предоставленный пример потребителя, получите сообщения от Центров событий с поддержкой Kafka.
+Используя предоставленный пример потребителя, получайте сообщения из концентратора событий. 
 
 ### <a name="provide-an-event-hubs-kafka-endpoint"></a>Предоставление конечной точки Kafka в Центрах событий
 
@@ -136,7 +136,7 @@ mvn exec:java -Dexec.mainClass="FlinkTestConsumer"
 
 - [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 - [Центры событий Azure для Apache Kafka (предварительная версия)](event-hubs-for-kafka-ecosystem-overview.md)
-- [Создание концентраторов событий с поддержкой Kafka](event-hubs-create.md)
+- [Создание концентратора событий](event-hubs-create.md)
 - [Потоковая передача данных в Центры событий из приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
 - [Зеркальное отображение брокера Kafka в концентраторе событий](event-hubs-kafka-mirror-maker-tutorial.md)
 - [Подключение Apache Spark к концентратору событий](event-hubs-kafka-spark-tutorial.md)

@@ -10,12 +10,12 @@ ms.service: lab-services
 ms.topic: article
 ms.date: 11/21/2019
 ms.author: enewman
-ms.openlocfilehash: c52a1212d160adce3a0a0638164833bc2907a856
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c1aaf588f61b329fa3b838b8a92f3e287897315b
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76515009"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521188"
 ---
 # <a name="guide-to-setting-up-a-windows-template-machine-in-azure-lab-services"></a>Руководство по настройке шаблона Windows в лабораторных службах Azure
 
@@ -185,7 +185,7 @@ Set-ExecutionPolicy default -Force
 3. Выберите **Скачать** и обновления из выпадающего меню.
 4. Нажмите **Кнопка обновления.**
 
-Вы также можете использовать Powershell для обновления уже установленных приложений Microsoft Store.
+Вы также можете использовать PowerShell для обновления уже установленных приложений Microsoft Store.
 
 ```powershell
 (Get-WmiObject -Namespace "root\cimv2\mdm\dmmap" -Class "MDM_EnterpriseModernAppManagement_AppManagement01").UpdateScanMethod()
@@ -234,3 +234,6 @@ Get-AppxPackage -Name *xbox* | foreach { if (-not $_.NonRemovable) { Remove-Appx
 ## <a name="conclusion"></a>Заключение
 
 Эта статья показала вам дополнительные шаги для подготовки шаблона Windows VM для эффективного класса.  Шаги включают установку OneDrive и установку Office 365, установку обновлений для Windows и установку обновлений для приложений Microsoft Store.  Мы также обсудили, как настроить обновления в расписании, которое лучше всего подходит для вашего класса.  
+
+## <a name="next-steps"></a>Дальнейшие действия
+Ознакомьтесь со статьей о том, как контролировать поведение отключения Windows, чтобы помочь с управлением затратами: [Руководство по управлению поведением отключения Windows](how-to-windows-shutdown.md)

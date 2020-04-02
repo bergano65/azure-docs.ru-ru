@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/26/2020
-ms.openlocfilehash: 777e4e1f8fdd05345d949fe8c78b4a5b1953b8b7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 306d847c2bc5af72d37dbf8bf472a5bae63e9fd5
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80298247"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80528499"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor часто задаваемые вопросы
 
@@ -177,7 +177,7 @@ WireData
 
 
 ### <a name="what-are-the-firewall-requirements-for-azure-monitor-agents"></a>Каковы требования к брандмауэру для агентов Azure Monitor?
-Просмотрите [требования сетевого брандмауэра](platform/log-analytics-agent.md#network-firewall-requirements)к деталям требований к брандмауэру.
+Просмотрите [требования сетевого брандмауэра](platform/log-analytics-agent.md#firewall-requirements)к деталям требований к брандмауэру.
 
 
 ## <a name="visualizations"></a>Визуализации
@@ -259,7 +259,7 @@ WireData
 
 Это классическое приложение, которое можно использовать на веб-сервере IIS для настройки Application Insights в веб-приложениях. Оно не собирает телеметрию: его можно остановить, когда вы не настраиваете приложение. 
 
-Ознакомьтесь с [дополнительными сведениями](app/monitor-performance-live-website-now.md#questions).
+[Подробнее](app/monitor-performance-live-website-now.md#questions).
 
 ### <a name="what-telemetry-is-collected-by-application-insights"></a>Какую телеметрию собирает Application Insights?
 
@@ -305,7 +305,7 @@ WireData
 * Чтобы узнать больше о том, как данные IP-адреса и геолокации собираются в Application Insights, обратитесь к этой [статье](https://docs.microsoft.com/azure/azure-monitor/app/ip-collection).
 
 
-Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. Ознакомьтесь с [дополнительными сведениями](https://apmtips.com/blog/2016/07/05/client-ip-address/).
+Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Подробнее](https://apmtips.com/blog/2016/07/05/client-ip-address/).
 
 Вы можете [использовать Power BI](app/export-power-bi.md ) для отображения данных телеметрии по запросам на карте.
 

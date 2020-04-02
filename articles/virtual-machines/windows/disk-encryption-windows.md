@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: ed64ee3d0e024c32be08ed4e010a6933033c3f87
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7e96f9484c103ebe75e21705b94cf35b9e16c54f
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79476524"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529331"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Windows
 
@@ -251,6 +251,8 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Эфемерные оС диски.
 - Шифрование общих/распределенных файловых систем, таких как DFS, GFS, DRDB и CephFS.
 - Перемещение зашифрованных вм-сообщений на другую подписку.
+- VMs Gen2 (см.: [Поддержка поколения 2 VMs на Azure](generation-2.md#generation-1-vs-generation-2-capabilities))
+- VMs серии Lsv2 (см.: [Lsv2-серия](../lsv2-series.md))
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

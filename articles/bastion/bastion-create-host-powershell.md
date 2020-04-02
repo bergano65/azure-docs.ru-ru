@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: c3e4c2f2bac45f2e366764473a34b0536bb4cc44
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 43d834f0c834696cd4a836466c9663fe7c31a392
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76990459"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80520504"
 ---
 # <a name="create-an-azure-bastion-host-using-azure-powershell"></a>Создание хоста Azure Bastion с помощью Azure PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "76990459"
 
 [!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
-## <a name="create-a-bastion-host"></a><a name="createhost"></a>Создание бастиона
+## <a name="create-a-bastion-host"></a><a name="createhost"></a>Создание узла-бастиона
 
 Этот раздел поможет создать новый ресурс Azure Bastion с помощью Azure PowerShell.
 
@@ -35,7 +35,7 @@ ms.locfileid: "76990459"
    ```azurepowershell-interactive
    $subnetName = "AzureBastionSubnet"
    $subnet = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix 10.0.0.0/24
-   $vnet = New-AzVirtualNetwork -Name "myVnet" -ResourceGroupName " myBastionRG " -Location "westeurope" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
+   $vnet = New-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myBastionRG" -Location "westeurope" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
    ```
 
 2. Создайте общедоступный IP-адрес для Azure Bastion. Публичным IP является публичный IP-адрес ресурса «Бастион», на котором будет доступна rdP/SSH (над портом 443). Общественный IP-адрес должен находиться в том же регионе, что и создаваемый ресурсом Bastion.
@@ -47,7 +47,7 @@ ms.locfileid: "76990459"
 3. Создайте новый ресурс Azure Bastion в AzureBastionSubnet вашей виртуальной сети. Создание и развертывание ресурса «Бастион» занимает около 5 минут.
 
    ```azurepowershell-interactive
-   $bastion = New-AzBastion -ResourceGroupName " myBastionRG " -Name "myBastion" -PublicIpAddress $publicip -VirtualNetwork $vnet
+   $bastion = New-AzBastion -ResourceGroupName "myBastionRG" -Name "myBastion" -PublicIpAddress $publicip -VirtualNetwork $vnet
    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

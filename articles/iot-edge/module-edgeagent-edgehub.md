@@ -8,12 +8,12 @@ ms.date: 06/17/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 4684daf2a1095a40c478170be37edcae788868ef
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f2d6603c264c9da3f2700f460a8c61b24681fac6
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79284841"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546191"
 ---
 # <a name="properties-of-the-iot-edge-agent-and-iot-edge-hub-module-twins"></a>Свойства двойников модулей агента IoT Edge и центра IoT Edge
 
@@ -55,6 +55,7 @@ ms.locfileid: "79284841"
 | modules.{Ид_модуля}.status | {"running" \| "stopped"} | Да |
 | modules.{ИД_модуля}.restartPolicy | "никогда" \| "на провал", \| "на \| нездоровый" "всегда" | Да |
 | Модули. «moduleId».ImagePullPolicy | "на-создать" \| "никогда"" | нет |
+| Модули. «moduleId».env | Список переменных среды для передачи в модуль. Принимает формат`"<name>": {"value": "<value>"}` | нет |
 | modules.{ИД_модуля}.settings.image | Универсальный код ресурса (URI) для образа модуля. | Да |
 | modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | нет |
 | modules.{ИД_модуля}.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |

@@ -2,20 +2,20 @@
 title: Рекомендации по безопасности для Хранилища ключей Azure
 description: Рекомендации по безопасности для Azure Key Vault. Реализация этого руководства поможет вам выполнить свои обязательства по обеспечению безопасности, как описано в нашей модели общей ответственности
 services: key-vault
-author: barclayn
+author: msmbaldwin
 manager: rkarlin
 ms.service: key-vault
 ms.subservice: general
 ms.topic: article
 ms.date: 09/30/2019
-ms.author: barclayn
+ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 9fd41ae9b61a9c74fd5d99dd71199cfde06f5cb2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d18dca2d7c44ac9db5ebabc5cc10f2f0b3f2c069
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78192376"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546358"
 ---
 # <a name="security-recommendations-for-azure-key-vault"></a>Рекомендации по безопасности для Хранилища ключей Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "78192376"
  Журналы диагностики в Key Vault должны быть включены. | Включите журналы и сохраняйте их на год. Это позволит воссоздать следы действий для анализа инцидентов безопасности или при компрометации сети. | [Да](../security-center/security-center-identity-access.md) |
 | Ограничьте доступ к журналам хранилища ключей Azure | [Ключевые журналы Vault](key-vault-logging.md) сохраняют информацию о действиях, выполняемых в хранилище, таких как создание или удаление хранилищ, ключей, секретов и могут быть использованы во время расследования |  - |
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 | Рекомендация | Комментарии | Центр безопасности |
 |-|----|--|

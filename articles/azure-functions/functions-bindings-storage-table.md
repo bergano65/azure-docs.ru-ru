@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
-ms.openlocfilehash: edeafb5730f06dac22fd9919ca42ea388d5fd0f6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1aa3537679ee37cbc6085344d2f31ae4043d32bb
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79277184"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80520674"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
 
@@ -310,7 +310,7 @@ public class LogEntity : TableEntity
 Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана входная привязка таблицы в файле *function.json* и [код JavaScript](functions-reference-node.md), который использует привязку. Функция использует триггер очереди для чтения одной строки таблицы. 
 
@@ -536,7 +536,7 @@ public Person[] get(
 
 Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются JavaScript.
 
@@ -564,7 +564,7 @@ public Person[] get(
 |**Rowkey** |**Rowkey** | Необязательный параметр. Ключ строки сущности таблицы, которую нужно считать. Смотрите раздел [использования](#input---usage) для руководства о том, как использовать это свойство.| 
 |**Принять** |**Принять** | Необязательный параметр. Максимальное количество считываемых сущностей в JavaScript. Смотрите раздел [использования](#input---usage) для руководства о том, как использовать это свойство.| 
 |**Фильтр** |**Фильтр** | Необязательный параметр. Выражение фильтра OData для входных данных таблицы в JavaScript. Смотрите раздел [использования](#input---usage) для руководства о том, как использовать это свойство.| 
-|**Подключения** |**Подключения** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если `connection` вы установите "MyStorage", время выполнения функций ищет настройки приложения, которые называются "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**Подключения** |**Подключения** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Настройка может быть именем настройки приложения "AzureWebJobs" или имя строки соединения. Например, если имя настройки — AzureWebWebJobsMyStorage, вы можете указать «MyStorage» здесь. Время выполнения функций будет автоматически искать настройки приложения, которое назвало "AzureWebWebJobsMyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -596,7 +596,7 @@ public Person[] get(
   > [!NOTE]
   > `IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является [использование параметра метода CloudTable paramName](https://stackoverflow.com/questions/48922485/binding-to-table-storage-in-v2-azure-functions-using-cloudtable) для чтения таблицы с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Укажите свойства `filter` и `take`. Не определяйте свойства `partitionKey` и `rowKey`. Получите доступ к сущности (или сущностям) входной таблицы, используя `context.bindings.<BINDING_NAME>`. Десериализированный объект имеет свойства `RowKey` и `PartitionKey`.
 
@@ -696,7 +696,7 @@ public class Person
 
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана выходная привязка таблицы в файле *function.json* и функции [JavaScript](functions-reference-node.md), которая использует привязку. Эта функция записывает несколько сущностей в таблице.
 
@@ -921,7 +921,7 @@ public static MyPoco TableOutput(
 
 Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются JavaScript.
 
@@ -967,7 +967,7 @@ public static MyPoco TableOutput(
 
 Кроме того, можно `CloudTable` использовать параметр метода для записи в таблицу с помощью SDK хранения Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к событию `context.bindings.<name>` `<name>` вывода, используя, `name` где значение, указанное в свойстве *function.json*.
 

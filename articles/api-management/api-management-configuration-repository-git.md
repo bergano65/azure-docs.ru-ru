@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: 9bbd62bc05e03641c2abe9308d9238bef23877c2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b9184808b71cce03882022fd37967fe421e64062
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71104969"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548985"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -223,7 +223,7 @@ git push
 Папка `apis` содержит папку для каждого API в экземпляре службы, в котором находятся указанные далее элементы.
 
 * `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/apis/get) с `export=true` в формате `application/json`.
-* `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description`[сущности API](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.table._entity_property).
+* `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description`[сущности API](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.table.entityproperty).
 * `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая сопоставляется со свойством `description`[сущности operation](https://docs.microsoft.com/rest/api/visualstudio/operations/list#operationproperties) в REST API.
 
 ### <a name="groups-folder"></a>Папка groups

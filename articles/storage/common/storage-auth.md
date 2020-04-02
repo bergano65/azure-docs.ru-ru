@@ -10,12 +10,12 @@ ms.date: 02/24/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: b0f2ad7566d0204871a9c6441315d6201662d92b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 53eca8a0b9e7cc9abb8f89cd56fca5df28f2de0f
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77616291"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521928"
 ---
 # <a name="authorizing-access-to-data-in-azure-storage"></a>Разрешение доступа к данным в хранилище Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "77616291"
 
 Каждый вариант авторизации кратко описан ниже:
 
-- **Интеграция Active Directory Azure (Azure AD)** для капли и очередей. Azure AD обеспечивает управление доступом на основе ролей (RBAC) для точной настройки управления доступом клиента к ресурсам в учетной записи хранения. Для получения дополнительной информации об интеграции Azure [Authorize access to Azure blobs and queues using Azure Active Directory](storage-auth-aad.md)AD для капли и очередей см.
+- **Интеграция Active Directory Azure (Azure AD)** для капли и очередей. Azure AD обеспечивает элементанный контроль доступа (RBAC) для контроля за доступом клиента к ресурсам в учетной записи хранилища. Для получения дополнительной информации об интеграции Azure [Authorize access to Azure blobs and queues using Azure Active Directory](storage-auth-aad.md)AD для капли и очередей см.
 
 - **Служба активных доменов Azure Active Directory (Azure AD DS) аутентификация** для файлов Azure. Azure Files поддерживает авторизацию на основе идентификационных данных через блок сообщений сервера (SMB) через Azure AD DS. RBAC можно использовать для тонкого контроля над доступом клиента к ресурсам Azure Files в учетной записи хранилища. Для получения дополнительной информации о проверке подлинности файлов Azure с использованием доменных служб обратитесь к нашему [обзору](../files/storage-files-active-directory-overview.md).
 

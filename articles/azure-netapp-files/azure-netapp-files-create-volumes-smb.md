@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/13/2020
+ms.date: 03/31/2020
 ms.author: b-juche
-ms.openlocfilehash: b2000c3fd3d64793f797e997d8f3c10eaed5d7aa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9ad9e13667791c38a8bf8be01919bcdbd0032102
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79409607"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80519582"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
@@ -45,7 +45,7 @@ Azure NetApp Files поддерживает объемы NFS и SMBv3. Потр�
     |    AD веб-службы    |    9389      |    TCP           |
     |    DNS                |    53        |    TCP           |
     |    DNS                |    53        |    UDP           |
-    |    ICMPv4             |    Недоступно       |    Эхо Ответ    |
+    |    ICMPv4             |    Н/Д       |    Эхо Ответ    |
     |    Kerberos           |    464       |    TCP           |
     |    Kerberos           |    464       |    UDP           |
     |    Kerberos           |    88        |    TCP           |
@@ -74,6 +74,14 @@ Azure NetApp Files поддерживает объемы NFS и SMBv3. Потр�
 
     Смотрите [Проектирование топологии сайта](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology) о сайтах и услугах AD. 
     
+* Azure NetApp Files поддерживает DES, Kerberos AES 128 и Kerberos AES 256 (от наименее безопасных до наиболее безопасных). Учетные данные пользователей, используемые для присоединения к Active Directory, должны иметь наивысший соответствующий вариант учетной записи, который соответствует возможностям, включенным для вашего Active Directory.   
+
+    Например, если в Active Directory есть только возможность AES-128, необходимо включить опцию учетной записи AES-128 для учетных данных пользователей. Если ваш Active Directory имеет возможность AES-256, необходимо включить опцию учетной записи AES-256 (которая также поддерживает AES-128). Если в вашем Active Directory нет возможности шифрования Kerberos, Azure NetApp Files использует DES по умолчанию.  
+
+    Вы можете включить параметры учетной записи в свойствах консоли Active Directory и Computers MMC:   
+
+    ![Активные пользователи каталога и компьютеры MMC](../media/azure-netapp-files/ad-users-computers-mmc.png)
+
 О дополнительной информации о Файлах SMB Azure NetApp [Файлы SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs) о дополнительной информации aD. 
 
 ## <a name="decide-which-domain-services-to-use"></a>Решите, какие службы домена использовать 

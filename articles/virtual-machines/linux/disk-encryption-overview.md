@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: ff1b37c3053ffa91dcb432cd97a7dd6fd71dad1c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d058ff5f9863642f73725db3472c942161447f25
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79250430"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548433"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Лазурное шифрование дисков для Linux VMs 
 
@@ -32,7 +32,7 @@ ms.locfileid: "79250430"
 
 ## <a name="supported-vms-and-operating-systems"></a>Поддерживаемые ВМ и операционные системы
 
-### <a name="supported-vm-sizes"></a>Поддерживаемые размеры виртуальных машин
+### <a name="supported-vms"></a>Поддерживаемые виртуальные машины
 
 Linux VMs доступны в [диапазоне размеров.](sizes.md) Шифрование Azure Disk недоступно на [виртуальных визах Basic, A-series](https://azure.microsoft.com/pricing/details/virtual-machines/series/)или на виртуальных машинах, которые не отвечают этим минимальным требованиям к памяти:
 
@@ -44,7 +44,9 @@ Linux VMs доступны в [диапазоне размеров.](sizes.md) �
 
 После завершения процесса шифрования диска ОС на виртуальных машинах Linux VM можно настроить сясполнив для запуска с меньшим количеством памяти. 
 
-Шифрование Azure Disk также доступно для vMs с премиум-хранилищем. 
+Шифрование Azure Disk также доступно для vMs с премиум-хранилищем.
+
+Лазурный диск шифрование не доступно на [поколение 2 VMs](generation-2.md#generation-1-vs-generation-2-capabilities)) и [Lsv2-серии VMs](../lsv2-series.md)). Для получения дополнительных [Azure Disk Encryption: Unsupported scenarios](disk-encryption-linux.md#unsupported-scenarios)исключений см.
 
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 

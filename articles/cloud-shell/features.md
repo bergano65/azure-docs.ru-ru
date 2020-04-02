@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: damaerte
-ms.openlocfilehash: 0aa71e4b78df8087093f183b146c525d2a8a0f99
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 78275211b77cb34cf9aa92e44778e5d4d81fffed
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79366246"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521018"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
 
@@ -44,7 +44,7 @@ Cloud Shell безопасно и автоматически выполняет 
 
 ### <a name="azure-drive-azure"></a>Диск Azure (Azure:)
 
-PowerShell в Cloud Shell запускается на диске Azure (`Azure:`).
+PowerShell в облачной оболочке`Azure:`предоставляет диск Azure (). Вы можете переключиться на `cd Azure:` диск Azure с помощью и обратно в свой домашний каталог с `cd  ~`помощью .
 Диск Azure упрощает обнаружение ресурсов Azure и перемещение по ним, включая вычислительные ресурсы, сетевые ресурсы, ресурсы хранилища и т. д., предоставляя возможности навигации как у файловой системы.
 Для управления этими ресурсами можно воспользоваться привычными [командлетами Azure PowerShell](https://docs.microsoft.com/powershell/azure), независимо от используемого диска.
 Любые изменения, внесенные в ресурсы Azure непосредственно на портале Azure или с помощью командлетов Azure PowerShell, отражаются на диске Azure.  Для обновления ресурсов можно запустить `dir -Force`.
@@ -69,7 +69,7 @@ PowerShell в облачной оболочке содержит частную 
 
 ## <a name="tools"></a>Инструменты
 
-|Категория   |name   |
+|Категория   |Имя   |
 |---|---|
 |Средства Linux            |bash<br> zsh<br> sh<br> tmux<br> dig<br>               |
 |Инструменты Azure            |[Azure CLI](https://github.com/Azure/azure-cli) и [классический интерфейс командной строки Azure](https://github.com/Azure/azure-xplat-cli)<br> [Azcopy](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy#writing-your-first-azcopy-command)<br> [CLI службы "Функции Azure"](https://github.com/Azure/azure-functions-core-tools)<br> [Интерфейс командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli)<br> [Batch Shipyard](https://github.com/Azure/batch-shipyard)<br> [blobxfer](https://github.com/Azure/blobxfer)|
@@ -78,7 +78,7 @@ PowerShell в облачной оболочке содержит частную 
 |Инструменты сборки            |make<br> maven<br> npm<br> pip         |
 |Контейнеры             |[Виртуальная машина Docker](https://github.com/docker/machine)<br> [Кубектль](https://kubernetes.io/docs/user-guide/kubectl-overview/)<br> [Шлем](https://github.com/kubernetes/helm)<br> [Интерфейс командной строки DC/OS](https://github.com/dcos/dcos-cli)         |
 |Базы данных              |Клиент MySQL<br> Клиент PostgreSQL<br> [квл.л. Утилита](https://docs.microsoft.com/sql/tools/sqlcmd-utility)<br> [mssql-scripter](https://github.com/Microsoft/sql-xplat-cli) |
-|Другие                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Терраформ](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)<br> [Кукольный Болт](https://puppet.com/docs/bolt/latest/bolt.html)<br> [ХашиКорп Пэкер](https://www.packer.io/)|
+|Другие                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)<br> [Кукольный Болт](https://puppet.com/docs/bolt/latest/bolt.html)<br> [ХашиКорп Пэкер](https://www.packer.io/)|
 
 ## <a name="language-support"></a>Поддержка языков
 

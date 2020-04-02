@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/06/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 9333bb36971fc28a23a443e50d191abeef05b758
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 57368331e83111836e13b6c3796cacad9816e318
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78208180"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521292"
 ---
 Чтобы просмотреть и скопировать ключи доступа учетной записи хранилища или строку подключения с портала Azure:
 
@@ -26,3 +26,5 @@ ms.locfileid: "78208180"
     ![Скриншот, показывающий, как просматривать ключи доступа на портале Azure](media/storage-view-keys-include/portal-connection-string.png)
 
 Вы можете использовать любой ключ для доступа к хранилищем Azure, но в целом это хорошая практика, чтобы использовать первый ключ, и зарезервировать использование второго ключа, когда вы вращаете клавиши.
+
+Для просмотра или чтения ключей доступа учетной записи пользователь должен быть администратором службы, либо должен быть назначен амебом RBAC, включающий **роль Microsoft.Storage/storageAccounts/listkeys/action.** Некоторые встроенные роли RBAC, которые включают **Contributor**это действие, являются ролями **роли функции функции функции функции ключевой службы оператора учетной** **записи**хранилища. Для получения дополнительной информации о роли администратора службы смотрите [роли администратора подписки Classic, роли Azure RBAC и функции Azure AD.](../articles/role-based-access-control/rbac-and-directory-admin-roles.md) Подробную информацию о встроенных ролях для хранения Azure можно узнать в разделе **«Хранение»** в [встроенных ролях Azure для Azure RBAC.](../articles/role-based-access-control/built-in-roles.md#storage)

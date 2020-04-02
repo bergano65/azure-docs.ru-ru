@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6a1ea5e09dc70b2c523bf23b28f726cbe2c0818d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b7df3c07518a9211bd1abf785e3f4954c41ebffc
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80062691"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80529449"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Azure Disk Encryption scenarios on Linux VMs (Сценарии шифрования дисков Azure для виртуальных машин Linux)
 
@@ -407,6 +407,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Шифрование общих/распределенных файловых систем, таких как (но не ограничиваемый): DFS, GFS, DRDB и CephFS.
 - Перемещение зашифрованного VM на другую подписку.
 - Краш-дамт ядра (kdump).
+- VMs серии Lsv2 (см.: [Lsv2-серия](../lsv2-series.md))
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

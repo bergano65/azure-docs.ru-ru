@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/11/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 3ba5d74aa245fbcd9d43f2b4398387d7f59e202c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6077db0a09b09f7e4bfb859902da53b173845e55
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79299528"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80520767"
 ---
 ### <a name="portal"></a>Портал
 
@@ -42,7 +42,7 @@ ms.locfileid: "79299528"
 
     ![Скриншот панели настроек параметров ресурсов Key Vault. Отображает кнопку генерации/импорта внутри настроек.](media/virtual-machines-disk-encryption-portal/sse-key-vault-generate-settings.png)
 
-1. Оставьте набор обоих **ключевых типов** для **RSA** и **RSA Key Size** до **2080**года.
+1. Оставьте набор обоих **типов ключа** в **RSA** и **RSA Key Size** до **2048.**
 1. Заполните оставшиеся выделения по своему выбору, а затем выберите **Создать.**
 
     ![Скриншот создания ключевого лезвия, который появляется после того, как кнопка генерации/импорта выбрана](media/virtual-machines-disk-encryption-portal/sse-create-a-key-generate.png)
@@ -123,7 +123,7 @@ ms.locfileid: "79299528"
     ![Скриншот вашего примера VM, с открытым лезвием дисков. Диск ОС выделен, как пример диска для выбора.](media/virtual-machines-disk-encryption-portal/sse-existing-disk-select.png)
 
 1. Выберите **шифрование** и выберите **шифрование в состоянии покоя с ключом, управляемым клиентом,** а затем выберите свой набор шифрования диска в списке выпадающих.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
     ![Скриншот вашего примерного диска ОС. Лезвие шифрования открыто, шифрование в состоянии покоя с ключом, управляемым клиентом, выбрано, а также ваш пример Azure Key Vault. После выделения этих вариантов выбрана кнопка сохранения.](media/virtual-machines-disk-encryption-portal/sse-encrypt-existing-disk-customer-managed-key.png)
 

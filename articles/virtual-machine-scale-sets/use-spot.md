@@ -1,30 +1,25 @@
 ---
-title: Создайте набор масштабов, который использует VMs Azure Spot (Предварительный просмотр)
+title: Создание набора масштабов, использующем vMs Azure Spot
 description: Узнайте, как создать наборы виртуальных машин Azure, которые используют Spot VMs для экономии затрат.
 author: cynthn
-tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
-ms.topic: conceptual
-ms.date: 02/11/2020
+ms.topic: article
+ms.date: 03/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 37e914fe6bafe9587be525faf3e01c897cdd8230
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a7bd22032a554c83a2ea2323ffdb3ae52dfe4faf
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77162690"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80545939"
 ---
-# <a name="preview-azure-spot-vms-for-virtual-machine-scale-sets"></a>Предварительный просмотр: Azure Spot VMs для виртуальных наборов масштабов машин 
+# <a name="azure-spot-vms-for-virtual-machine-scale-sets"></a>Виртуальные наборы смазанопок azure Spot для виртуальных машинных мац 
 
 Использование Azure Spot в наборах масштабов позволяет использовать наши неиспользованные мощности при значительной экономии средств. В любой момент времени, когда Azure требуется обратное емкость, инфраструктура Azure выселяет экземпляры Spot. Таким образом, экземпляры Spot отлично подходят для рабочих нагрузок, которые могут обрабатывать перерывы, такие как задания по обработке пакетов, среды для разработки разработчиков/тестов, большие вычислительные нагрузки и многое другое.
 
 Количество доступных мощностей может варьироваться в зависимости от размера, региона, времени суток и более. При развертывании экземпляров Spot в наборах масштабов Azure распределяет экземпляр только при наличии емкости, но для этих экземпляров нет SLA. Набор спотового масштаба развертывается в одном домене неисправности и не гарантирует высокую доступность.
 
-> [!IMPORTANT]
-> Точечные экземпляры в настоящее время находятся в общедоступном предварительном просмотре.
-> Эта предварительная версия не рекомендуется для производственных нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
->
 
 ## <a name="pricing"></a>Цены
 
@@ -48,9 +43,9 @@ ms.locfileid: "77162690"
 
 Для развертывания Spot VMs в наборах масштабов можно настроить новый флаг *Priority* для *spot.* Все вмвм в наборе масштабов будут установлены на Spot. Чтобы создать набор масштабов с помощью Spot VMs, используйте один из следующих методов:
 - [Портал Azure](#portal)
-- [Лазурный CLI](#azure-cli)
-- [Лазурная силаШелл](#powershell)
-- [Шаблоны диспетчера ресурсов Azure](#resource-manager-templates)
+- [Azure CLI](#azure-cli)
+- [Azure PowerShell](#powershell)
+- [Шаблоны Azure Resource Manager](#resource-manager-templates)
 
 ## <a name="portal"></a>Портал
 
@@ -104,7 +99,7 @@ $vmssConfig = New-AzVmssConfig `
 
 Чтобы удалить экземпляр после его выселения, `evictionPolicy` `Delete`измените параметр на .
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **В.** После создания экземпляр Spot совпадает со стандартным экземпляром?
 
@@ -172,6 +167,5 @@ $vmssConfig = New-AzVmssConfig `
 **A:** Вы можете разместить и `azure-spot` пометить свой вопрос на [&А](https://docs.microsoft.com/answers/topics/azure-spot.html). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь, когда вы создали набор масштабов с Spot VMs, попробуйте развернуть наш [шаблон автоматического масштаба с помощью Spot.](https://github.com/Azure/vm-scale-sets/tree/master/preview/lowpri)
 
 Ознакомьтесь со сведениями о ценах на [странице для определения тарифа масштабируемых наборов виртуальных машин](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/).

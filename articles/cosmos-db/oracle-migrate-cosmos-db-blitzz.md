@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: fe132ee6ab90fdae99463f11ecf46f352690b810
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 43d15a7252819a3e4f7635e37458b75e9b7ecca7
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "69984359"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546271"
 ---
 # <a name="migrate-data-from-oracle-to-azure-cosmos-db-cassandra-api-account-using-blitzz"></a>Перенос данных из Oracle в учетную запись Azure Cosmos DB Cassandra API с помощью Blitzz
 
@@ -36,7 +36,7 @@ Cassandra API в Azure Cosmos DB стал отличным выбором для
 
 * Это отказоустойчивый и гарантирует точно один раз доставки данных даже во время аппаратного или программного сбоя в системе.
 
-* Он защищает данные во время транзита, используя различные методологии безопасности, такие как SSL, шифрование.
+* Он обеспечивает безопасность данных во время транзита, используя различные методологии безопасности, такие как TLS/SSL, шифрование.
 
 * Он предлагает услуги по преобразованию сложной бизнес-логики, написанной в PL/S'L, в эквивалентную бизнес-логику в Azure Cosmos DB.
 
@@ -44,7 +44,7 @@ Cassandra API в Azure Cosmos DB стал отличным выбором для
 
 В этом разделе описаны шаги, необходимые для настройки Blitzz и перенос данных из базы данных Oracle в Azure Cosmos DB.
 
-1. С компьютера, где вы планируете установить репликант Blitzz, добавьте сертификат безопасности. Этот сертификат требуется репликантом Blitzz для установления SSL-соединения с указанной учетной записью Azure Cosmos DB. Сертификат можно добавить следующими шагами:
+1. С компьютера, где вы планируете установить репликант Blitzz, добавьте сертификат безопасности. Этот сертификат требуется репликантом Blitzz для установления соединения TLS с указанной учетной записью Azure Cosmos DB. Сертификат можно добавить следующими шагами:
 
    ```bash
    wget https://cacert.omniroot.com/bc2025.crt

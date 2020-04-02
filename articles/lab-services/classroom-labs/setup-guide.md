@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 3/18/2020
 ms.author: spelluru
-ms.openlocfilehash: d58e11551c2857c269e8985e81f84138f6d389ca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b87107545761e10c6fb648e54064fbafbdbacd52
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80370810"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80546004"
 ---
 # <a name="classroom-lab-setup-guide"></a>Руководство по настройке лаборатории в классе
 
@@ -79,7 +79,7 @@ Lab Services использует модель ценообразования с
 Каждому учащимся присваивается свой собственный VM, который назначается им на всю жизнь в лаборатории.  Они могут выбрать:
 
 - Сохранить непосредственно на VM.
-- Сохранить во внешнем репозитории, таких как OneDrive, GitHub и т.д.
+- Сохранить на внешнем месте, например OneDrive, GitHub и т.д.
 
 Чтобы использовать OneDrive, вы можете настроить это автоматически для студентов на их лаборатории VMs.  Дополнительная информация об этом приведена ниже.
 
@@ -133,7 +133,7 @@ Lab Services использует модель ценообразования с
         > [!NOTE]
         > В зависимости от типа Установленной ОС, запуск VM может занять несколько минут.  Чтобы убедиться, что лаборатория VM готова к использованию в запланированные часы, мы рекомендуем вам запустить VMs за 30 минут, чтобы убедиться, что VMs работают и готовы к использованию.
 
-   - [Установите квоты для пользователей](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-configure-student-usage#set-quotas-for-users) и [установите дополнительную квоту для конкретного пользователя](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-configure-student-usage#set-additional-quota-for-a-specific-user)
+   - [Установите квоты для пользователей](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-configure-student-usage#set-quotas-for-users) и [установите дополнительную квоту для конкретного пользователя](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-configure-student-usage#set-additional-quotas-for-specific-users)
   
    - [Включение автоматического завершения работы при отключении](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-enable-shutdown-disconnect)
 

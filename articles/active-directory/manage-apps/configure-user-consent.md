@@ -12,12 +12,12 @@ ms.date: 10/22/2018
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5bd305d2943d1b12756171748f28d32300081d71
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 42337fe958a881ee263d16c866dda69f13fe09c1
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75443393"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80519622"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Настройка того, как конечные пользователи соглашаются на приложения
 
@@ -143,9 +143,53 @@ ms.locfileid: "75443393"
     }
     ```
 
+## <a name="configure-risk-based-step-up-consent"></a>Настройка согласия на поэтапное наращивание риска
+
+Риск-согласие на поэтапное использование помогает уменьшить подверженность пользователей вредоносным приложениям, делающие [незаконные запросы на согласие.](https://docs.microsoft.com/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants) Если корпорация Майкрософт обнаружит рискованный запрос на согласие конечных пользователей, запрос потребует "шаг-вверх" для согласия админа вместо. Эта возможность включена по умолчанию, но она приведет к изменению поведения только при включении согласия конечных пользователей.
+
+При обнаружении запроса на согласие при обнаружении рискованного запроса согласия будет отображаться сообщение о необходимости утверждения админа. Если [рабочий процесс запроса запроса на согласие админа](configure-admin-consent-workflow.md) включен, пользователь может отправить запрос админу для дальнейшего рассмотрения непосредственно из запроса согласия. Если оно не включено, будет отображаться следующее сообщение:
+
+* **AADSTS90094:** &lt;clientAppDisplayName&gt; необходимо разрешение на доступ к ресурсам в вашей организации, которые может предоставить только админ. Попросите администратора предоставить разрешение этому приложению, прежде чем его использовать.
+
+В этом случае аудиторское событие также будет зарегистрировано с категорией "ApplicationManagement", Тип действия "Согласие на применение" и причина статуса "Обнаружено приложение".
+
+> [!IMPORTANT]
+> Перед утверждением админы должны тщательно [оценить все запросы на согласие,](manage-consent-requests.md#evaluating-a-request-for-tenant-wide-admin-consent) особенно когда корпорация Майкрософт обнаружила риск.
+
+### <a name="disable-or-re-enable-risk-based-step-up-consent-using-powershell"></a>Отключение или повторное включение согласия на усиление на основе риска с помощью PowerShell
+
+Вы можете использовать модуль Preview Azure AD PowerShell Preview[(AzureADPreview),](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview)чтобы отключить шаг до согласия админа, необходимого в тех случаях, когда Microsoft обнаруживает риск, или повторно включить его, если он был ранее отключен.
+
+Это может быть сделано с помощью тех же шагов, как показано выше, для [настройки согласия владельца группы с помощью PowerShell,](#configure-group-owner-consent-using-powershell)но заменяя другое значение параметров. Есть три различия в шагах: 
+
+1. Понимание значений настройки для согласия на усиление риска:
+
+    | Параметр       | Тип         | Описание  |
+    | ------------- | ------------ | ------------ |
+    | _БлокузерСогласиеФоррискиПриложения_   | Логическое |  Пометить, если согласие пользователя будет заблокировано при обнаружении рискованного запроса. |
+
+2. Заменить следующее значение в шаге 3:
+
+    ```powershell
+    $riskBasedConsentEnabledValue = $settings.Values | ? { $_.Name -eq "BlockUserConsentForRiskyApps" }
+    ```
+3. Заменить один из следующих в шаге 5:
+
+    ```powershell
+    # Disable risk-based step-up consent entirely
+    $riskBasedConsentEnabledValue.Value = "False"
+    ```
+
+    ```powershell
+    # Re-enable risk-based step-up consent, if disabled previously
+    $riskBasedConsentEnabledValue.Value = "True"
+    ```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка рабочего процесса согласия админа](configure-admin-consent-workflow.md)
+
+[Узнайте, как управлять согласием на приложения и оценивать запросы на согласие](manage-consent-requests.md)
 
 [Грант ан-нанимателю согласия на заявку](grant-admin-consent.md)
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: ad8c05b3347ed4741d574a5e6bcc1d928db08411
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ad2a34691a00f217db6cf6835eefed18c8862d32
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79366842"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80547922"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -128,6 +128,19 @@ $RGName = "ResourceGroup"
 Publish-AzAutomationRunbook -AutomationAccountName $automationAccountName `
 -Name $runbookName -ResourceGroupName $RGName
 ```
+
+### <a name="schedule-a-runbook-in-the-azure-portal"></a>Расписание книги на портале Azure
+
+Когда ваша книга была опубликована, вы можете запланировать его для работы.
+
+1. Откройте модуль Runbook на портале Azure.
+2. Выберите **Расписание** под **ресурсами**.
+3. Выберите **Добавить расписание**.
+4. В панели Runbook расписания выберите **ссылку на расписание для выполнения.**
+5. Выберите **Создать новое расписание** в панели расписания.
+6. Введите имя, описание и другие параметры в новое расписание панели. 
+7. Как только расписание создано, выделите его и нажмите **OK**. Теперь она должна быть связана с вашей книги.
+8. Ищите электронную почту в почтовом ящике, чтобы уведомить вас о статусе runbook.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 8752585e731f905636f57d31741e2be67f7140b3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 95cb29e871cce2ba600ab654d48c685b90ed027e
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80335039"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80573176"
 ---
 ### <a name="networking-limits---azure-resource-manager"></a><a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сетей - Менеджер ресурсов Azure
 Следующие ограничения применяются только для сетевых ресурсов, управляемых через **Azure Resource Manager** в регионе в несколько подписок. Узнайте, как [просматривать текущее использование ресурсов в пределах подписки.](../articles/networking/check-usage-against-limits.md)
@@ -72,10 +72,12 @@ ms.locfileid: "80335039"
 | Правила на NIC (во всех ИП на NIC) | 300                           |
 | Конфигурации IP-адреса Frontend              | 600                           |
 | Размер серверного пула                       | 1000 конфигураций IP, единая виртуальная сеть |
+| Резервные ресурсы на <sup>балансер нагрузки 1<sup> | 150                   |
 | Порты повышенной доступности                 | 1 на внутренний интерфейс       |
 | Исходящие правила на балансер нагрузки        | 20                            |
 | [Тайм-аут TCP простоя](https://docs.microsoft.com/azure/load-balancer/load-balancer-tcp-idle-timeout#tcp-idle-timeout) | 4 минуты/30 минут          |
 
+<sup>1</sup> Лимит составляет до 150 ресурсов, в любом сочетании автономных виртуальных машинных ресурсов, ресурсов набора доступности и ресурсов, установленных виртуальными машинными масштабами.
 
 **Балансер базовой нагрузки**
 

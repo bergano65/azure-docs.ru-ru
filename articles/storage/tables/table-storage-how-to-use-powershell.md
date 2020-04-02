@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/05/2019
 ms.author: rogarana
 ms.subservice: tables
-ms.openlocfilehash: f1846fae4cbf473df688a2b184c307d72ab2f8d0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 746044aa835df52e61c234c8b5ca61164fffbbc5
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76721478"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80545956"
 ---
 # <a name="perform-azure-table-storage-operations-with-azure-powershell"></a>Выполнение операций в хранилище таблиц Azure с помощью Azure PowerShell 
 [!INCLUDE [storage-table-cosmos-db-tip-include](../../../includes/storage-table-cosmos-db-langsoon-tip-include.md)]
@@ -117,7 +117,7 @@ $storageTable = Get-AzStorageTable –Name $tableName –Context $ctx
 ## <a name="reference-cloudtable-property-of-a-specific-table"></a>Свойство справочного облачного таблицы определенной таблицы
 
 > [!IMPORTANT]
-> Использование CloudTable является обязательным при работе с модулем **AzTable** PowerShell. Позвоните в команду **Get-AzTableTable,** чтобы получить ссылку на этот объект. Эта команда также создает таблицу, если она еще не существует.
+> Использование CloudTable является обязательным при работе с модулем **AzTable** PowerShell. Позвоните в команду **Get-AzStorageTable,** чтобы получить ссылку на этот объект. Эта команда также создает таблицу, если она еще не существует.
 
 Для выполнения операций на столе с помощью **AzTable**необходима ссылка на свойство CloudTable определенной таблицы.
 

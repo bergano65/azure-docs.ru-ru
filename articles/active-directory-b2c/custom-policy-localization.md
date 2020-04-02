@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 03/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1401cbe1920c7c6df804aadbba1751612ba9cf06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: be12bce8fa29076621bec35228838a4ebdd97433
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79126795"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80545870"
 ---
 # <a name="localize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Локализовать пользовательский интерфейс приложения с помощью пользовательской политики в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Настройка языка в Azure Active Directory B2C (Azure AD B2C) позволяет вместить различные языки в соответствии с потребностями клиентов. Корпорация Майкрософт предоставляет переводы на 36 языков. Кроме того, вы можете предоставить собственный перевод на любой язык. Даже если вам требуется только один язык, на странице можно настроить любой текст. 
+Настройка языка в Azure Active Directory B2C (Azure AD B2C) позволяет вместить различные языки в соответствии с потребностями клиентов. Корпорация Майкрософт предоставляет переводы на [36 языков,](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-language-customization#supported-languages)но вы также можете предоставить свои собственные переводы для любого языка. Даже если вам требуется только один язык, на странице можно настроить любой текст. 
 
 В этой статье описано, как включить поддержку нескольких языковых стандартов или языков в политике для путей взаимодействия пользователя. Локализация требует трех этапов: настройка явного списка поддерживаемых языков, предоставление строк и коллекций, относящих конкретные языки, и [отредативание определения содержимого](contentdefinitions.md) страницы. 
 

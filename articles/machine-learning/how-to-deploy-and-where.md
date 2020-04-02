@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 02/27/2020
 ms.custom: seoapril2019
-ms.openlocfilehash: 0deace98c5be0b2ce2f29abce4c8a804145afdb1
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: f6bab532b872a0974993f708edcb252d8bb54432
+ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/01/2020
-ms.locfileid: "80475625"
+ms.locfileid: "80529715"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -578,9 +578,9 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 | Состояние Веб-сервиса | Описание | Окончательное состояние?
 | ----- | ----- | ----- |
-| Переход | Служба находится в процессе развертывания. | Нет |
-| Unhealthy; | Служба развернута, но в настоящее время недостижима.  | Нет |
-| Незасеченные | Служба не может быть развернута в настоящее время из-за нехватки ресурсов. | Нет |
+| Переход | Служба находится в процессе развертывания. | нет |
+| Unhealthy; | Служба развернута, но в настоящее время недостижима.  | нет |
+| Незасеченные | Служба не может быть развернута в настоящее время из-за нехватки ресурсов. | нет |
 | Ошибка | Служба не удалось развернуть из-за ошибки или сбоя. | Да |
 | Healthy | Услуга является работоспособной и конечная точка доступна. | Да |
 
@@ -1168,7 +1168,12 @@ def run(request):
 > pip install azureml-contrib-services
 > ```
 
-## <a name="next-steps"></a>Следующие шаги
+
+> [!WARNING]
+> Azure Machine Learning будет направлять только запросы POST и GET в контейнеры, работающие с службой скоринга. Это может привести к ошибкам из-за браузеров, использующих запросы OPTIONS для предполетных запросов CORS.
+> 
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как развернуть модель с помощью пользовательского изображения Docker](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
