@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa14b45235f2a62f05e84efafc41b899dc531d49
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: aa612ad30ae0faa42071613be15c1d91fb96b8f6
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74868683"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80332270"
 ---
 # <a name="integrate-an-existing-forest-and-a-new-forest-with-a-single-azure-ad-tenant"></a>Интеграция существующего и нового лесов с одним клиентом Azure AD
 
@@ -43,7 +43,7 @@ ms.locfileid: "74868683"
 
      | Номер порта | Как он используется |
      | --- | --- |
-     | **80** | Скачивание списков отзыва сертификатов при проверке SSL-сертификата. |
+     | **80** | Скачивание списков отзыва сертификатов при проверке TLS/SSL-сертификата. |
      | **443** | Обработка всего исходящего трафика для службы. |
      | **8080** (необязательно) | Агенты передают данные о своем состоянии каждые 10 минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. |
      
