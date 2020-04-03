@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: cef3176c99cd57ae229b602feb3c825081fcfe3e
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 906c7728365cc902549bd46c57972e1c90af979c
+ms.sourcegitcommit: 515482c6348d5bef78bb5def9b71c01bb469ed80
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548374"
+ms.locfileid: "80607482"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
 
@@ -114,9 +114,9 @@ ms.locfileid: "80548374"
 |AutoStop_Disable | none | Отключает оповещения AutoStop и расписание по умолчанию.|
 |AutoStop_VM_Child | WebHookData | Вызывается из родительского runbook. Правила оповещения называют эту книгу, чтобы остановить классический VM.|
 |AutoStop_VM_Child_ARM | WebHookData |Вызывается из родительского runbook. Правила генерации оповещений вызывают этот runbook, чтобы остановить виртуальную машину.  |
-|ScheduledStartStop_Base_Classic; | CloudServiceName<br> Действие: Start или Stop<br> VMList  | Этот runbook используется для выполнения действий запуска или остановки в классической группе VM облачных служб.<br> VMList: разделенный запятыми список виртуальных машин. Например, _vm1, vm2, vm3_. |
+|ScheduledStartStop_Base_Classic; | CloudServiceName<br> Действие: Start или Stop<br> VMList  | Этот runbook используется для выполнения действий запуска или остановки в классической группе VM облачными службами.<br> VMList: разделенный запятыми список виртуальных машин. Например, _vm1, vm2, vm3_. |
 |ScheduledStartStop_Child | VMName <br> Действие: Start или Stop <br> ResourceGroupName | Вызывается из родительского runbook. Выполняет действие Start или Stop для запланированной остановки.|
-|ScheduledStartStop_Child_Classic; | VMName<br> Действие: Start или Stop<br> ResourceGroupName | Вызывается из родительского runbook. Выполняет действие старта или остановки для запланированной остановки для классических VMs. |
+|ScheduledStartStop_Child_Classic; | VMName<br> Действие: Start или Stop<br> ResourceGroupName | Вызывается из родительского runbook. Выполняет действие старта или остановки для запланированной остановки для Classic VMs. |
 |ScheduledStartStop_Parent | Действие: Start или Stop <br>VMList <br> WhatIf: true или false. | Этот параметр влияет на все виртуальные машины в подписке. Измените **External_Start_ResourceGroupNames** и **External_Stop_ResourceGroupNames**, ограничив выполнение только этими целевыми группами ресурсов. Можно также исключить определенные виртуальные машины, обновив переменную **External_ExcludeVMNames**.<br> VMList: разделенный запятыми список виртуальных машин. Например, _vm1, vm2, vm3_.<br> _WhatIf_ проверяет логику runbook без выполнения.|
 |SequencedStartStop_Parent | Действие: Start или Stop <br> WhatIf: true или false.<br>VMList| Создавайте теги с именем **sequencestart** и **sequencestop** на каждом VM, для которого вы хотите последовательности начала / остановки деятельности. В именах этих тегов учитывается регистр. Значением тега должно быть положительное целое число (1, 2, 3 и т. д.), которое соответствует очередности запуска или остановки. <br> VMList: разделенный запятыми список виртуальных машин. Например, _vm1, vm2, vm3_. <br> _WhatIf_ проверяет логику runbook без выполнения. <br> **Примечание**. Виртуальные машины должны находиться в группах ресурсов, определенных в переменных службы автоматизации Azure External_Start_ResourceGroupNames, External_Stop_ResourceGroupNames и External_ExcludeVMNames. Чтобы эти действия выполнялись, они должны иметь соответствующие теги.|
 
@@ -140,8 +140,8 @@ ms.locfileid: "80548374"
 |External_Stop_ResourceGroupNames | Позволяет указать одну или несколько групп ресурсов через запятую для действий остановки.|
 |External_WaitTimeForVMRetrySeconds |Время ожидания в секундах для действий, которые будут выполнены на VMs для последовательного запуска / остановки runbook.<br> Значение по умолчанию составляет 2100 секунд и поддерживает настройку до максимального значения 10800 или три часа.|
 |Internal_AutomationAccountName | Задает имя учетной записи службы автоматизации Azure.|
-|Internal_AutoSnooze_ARM_WebhookURI | Специфика Webhook URI призвал к сценарию AutoStop для классических VMs.|
-|Internal_AutoSnooze_WebhookUri | Указывает универсальный код ресурса (URI) веб-перехватчика, вызываемого в сценарии AutoStop.|
+|Internal_AutoSnooze_ARM_WebhookURI | Специфика Webhook URI призвал к сценарию AutoStop для VMs.|
+|Internal_AutoSnooze_WebhookUri | Специфика Webhook URI призвал к сценарию AutoStop для классических VMs.|
 |Internal_AzureSubscriptionId | Указывает идентификатор подписки Azure.|
 |Internal_ResourceGroupName | Указывает имя группы ресурсов учетной записи службы автоматизации.|
 
@@ -215,6 +215,6 @@ ms.locfileid: "80548374"
 
 Если вы не хотите сохранять компоненты учетной записи службы автоматизации Azure, удалите вручную каждый. Список модулей runbook, переменных и расписаний, созданных в решении, см. в разделе [Компоненты решения](#solution-components).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Включите](automation-solution-vm-management-enable.md) решение Start/Stop в нерабочее время для ваших VMs-м вне умов.

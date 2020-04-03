@@ -1,6 +1,6 @@
 ---
 title: Элементы языка T-SQL
-description: Ссылки на документацию для заявлений T-S'L, поддерживаемые в S'L Analytics.
+description: Ссылки на документацию для заявлений T-S'L, поддерживаемые в пуле Synapse S'L.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,17 +11,19 @@ ms.date: 06/13/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 040a6d519896d71227777168ea9de9612f97ca6e
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: f27a0a351e4a446dc950ac13f850bd14b2b3c65a
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351414"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586397"
 ---
-# <a name="t-sql-language-elements-supported-in-sql-analytics"></a>Языковые элементы Т-СЗЛ, поддерживаемые в аналитике S'L
-Ссылки на документацию для элементов языка T-S'L, поддерживаемые в S'L Analytics.
+# <a name="t-sql-language-elements-supported-in-synapse-sql-pool"></a>Языковые элементы Т-СЗЛ, поддерживаемые в пуле Synapse S'L
+
+Ссылки на документацию для элементов языка T-S'L, поддерживаемые в пуле Synapse S'L.
 
 ## <a name="core-elements"></a>Основные элементы
+
 * [конвенций синтаксиса](/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)
 * [правила именования объектов](https://msdn.microsoft.com/library/ms175874.aspx)
 * [зарезервированные ключевые слова](https://msdn.microsoft.com/library/ms189822.aspx)
@@ -37,6 +39,7 @@ ms.locfileid: "80351414"
 * [Использовать](https://msdn.microsoft.com/library/ms188366.aspx)
 
 ## <a name="batches-control-of-flow-and-variables"></a>Пакеты, управление потоком и переменные
+
 * [BEGIN...END](https://msdn.microsoft.com/library/ms190487.aspx)
 * [Перерыв](https://msdn.microsoft.com/library/ms181271.aspx)
 * [Объявить@local_variable](https://msdn.microsoft.com/library/ms188927.aspx)
@@ -48,6 +51,7 @@ ms.locfileid: "80351414"
 * [А](https://msdn.microsoft.com/library/ms178642.aspx)
 
 ## <a name="operators"></a>Операторы
+
 * [+ (сложение)](https://msdn.microsoft.com/library/ms178565.aspx)
 * [- (Стринговая конкатация)](https://msdn.microsoft.com/library/ms177561.aspx)
 * [- (Отрицательный)](https://msdn.microsoft.com/library/ms189480.aspx)
@@ -57,6 +61,7 @@ ms.locfileid: "80351414"
 * [Модуло](https://msdn.microsoft.com/library/ms190279.aspx)
 
 ## <a name="wildcard-characters-to-match"></a>Подстановочные знаки для сопоставления
+
 * [= (Равно)](https://msdn.microsoft.com/library/ms175118.aspx)
 * [> (больше)](https://msdn.microsoft.com/library/ms178590.aspx)
 * [< (меньше)](https://msdn.microsoft.com/library/ms179873.aspx)
@@ -66,14 +71,15 @@ ms.locfileid: "80351414"
 * [!» (не равно)](https://msdn.microsoft.com/library/ms190296.aspx)
 * [И](https://msdn.microsoft.com/library/ms188372.aspx)
 * [BETWEEN](https://msdn.microsoft.com/library/ms187922.aspx)
-* [EXISTS](https://msdn.microsoft.com/library/ms188336.aspx)
+* [Существует](https://msdn.microsoft.com/library/ms188336.aspx)
 * [В](https://msdn.microsoft.com/library/ms177682.aspx)
 * [ЯВЛЯЕТСЯ НЕДЕЙСТВИТЕЛЬНЫМ](https://msdn.microsoft.com/library/ms188795.aspx)
 * [LIKE](https://msdn.microsoft.com/library/ms179859.aspx)
-* [Не](https://msdn.microsoft.com/library/ms189455.aspx)
+* [NOT](https://msdn.microsoft.com/library/ms189455.aspx)
 * [Или](https://msdn.microsoft.com/library/ms188361.aspx)
 
 ### <a name="bitwise-operators"></a>Побитовые операторы
+
 * [& (побитовое И)](https://msdn.microsoft.com/library/ms174965.aspx)
 * [| (Bitwise OR)](https://msdn.microsoft.com/library/ms186714.aspx)
 * [^ (битовый исключающий OR)](https://msdn.microsoft.com/library/ms190277.aspx)
@@ -83,6 +89,7 @@ ms.locfileid: "80351414"
 * [&= (побитовое И РАВНО)](https://msdn.microsoft.com/library/cc627427.aspx)
 
 ## <a name="functions"></a>Функции
+
 * [@@DATEFIRST](https://msdn.microsoft.com/library/ms187766.aspx)
 * [@@ERROR](https://msdn.microsoft.com/library/ms188790.aspx)
 * [@@LANGUAGE](https://msdn.microsoft.com/library/ms177557.aspx)
@@ -91,7 +98,7 @@ ms.locfileid: "80351414"
 * [@@VERSION](https://msdn.microsoft.com/library/ms177512.aspx)
 * [Abs](https://msdn.microsoft.com/library/ms189800.aspx)
 * [АКОС](https://msdn.microsoft.com/library/ms178627.aspx)
-* [Ascii](https://msdn.microsoft.com/library/ms177545.aspx)
+* [ASCII](https://msdn.microsoft.com/library/ms177545.aspx)
 * [Asin](https://msdn.microsoft.com/library/ms181581.aspx)
 * [Atan](https://msdn.microsoft.com/library/ms181746.aspx)
 * [ATN2](https://msdn.microsoft.com/library/ms173854.aspx)
@@ -226,13 +233,16 @@ ms.locfileid: "80351414"
 * [Год](https://msdn.microsoft.com/library/ms186313.aspx)
 * [XACT_STATE](https://msdn.microsoft.com/library/ms189797.aspx)
 
-## <a name="transactions"></a>Транзакции
+## <a name="transactions"></a>Transactions
+
 * [Операций](https://msdn.microsoft.com/library/mt204031.aspx)
 
 ## <a name="diagnostic-sessions"></a>Сеансы диагностики
+
 * [Создание сеанса диагностики](https://msdn.microsoft.com/library/mt204029.aspx)
 
 ## <a name="procedures"></a>Процедуры
+
 * [sp_addrolemember](https://msdn.microsoft.com/library/ms187750.aspx)
 * [sp_columns](https://msdn.microsoft.com/library/ms176077.aspx)
 * [sp_configure](https://msdn.microsoft.com/library/ms188787.aspx)
@@ -256,6 +266,7 @@ ms.locfileid: "80351414"
 * [sp_unprepare](https://msdn.microsoft.com/library/ff848735.aspx)
 
 ## <a name="set-statements"></a>SET, инструкции
+
 * [SET ANSI_DEFAULTS](https://msdn.microsoft.com/library/ms188340.aspx)
 * [SET ANSI_NULL_DFLT_OFF](https://msdn.microsoft.com/library/ms187356.aspx)
 * [SET ANSI_NULL_DFLT_ON](https://msdn.microsoft.com/library/ms187375.aspx)
@@ -277,6 +288,7 @@ ms.locfileid: "80351414"
 * [SET TRANSACTION ISOLATION LEVEL](https://msdn.microsoft.com/library/ms173763.aspx)
 * [SET XACT_ABORT](https://msdn.microsoft.com/library/ms188792.aspx)
 
-## <a name="next-steps"></a>Дальнейшие действия
-Для получения дополнительной справочной информации, [System views in SQL Analytics](sql-data-warehouse-reference-tsql-system-views.md)см. [T-SQL statements in SQL Analytics](sql-data-warehouse-reference-tsql-statements.md)
+## <a name="next-steps"></a>Следующие шаги
+
+Для получения дополнительной справочной информации, [System views in Synapse SQL pool](sql-data-warehouse-reference-tsql-system-views.md)см. [T-SQL statements in Synapse SQL pool](sql-data-warehouse-reference-tsql-statements.md)
 

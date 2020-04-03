@@ -2,24 +2,24 @@
 title: 'ExpressRoute: Маршрутные фильтры - Microsoft пиринг:Azure PowerShell'
 description: В этой статье описывается, как настраивать фильтры маршрутов для пиринга Майкрософт с помощью PowerShell.
 services: expressroute
-author: ganesr
+author: charwen
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/25/2019
-ms.author: ganesr
+ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: cade33e77eb0d3ddd818a6ce3dbd7c6cf72811d4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3fa53258321b22e1683122edca1816f6d4c291b5
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74037406"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618615"
 ---
 # <a name="configure-route-filters-for-microsoft-peering-powershell"></a>Настройка фильтров маршрутов для пиринга Майкрософт с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [Портал Azure](how-to-routefilter-portal.md)
-> * [Лазурная силаШелл](how-to-routefilter-powershell.md)
-> * [Лазурный CLI](how-to-routefilter-cli.md)
+> * [Azure PowerShell](how-to-routefilter-powershell.md)
+> * [Azure CLI](how-to-routefilter-cli.md)
 > 
 
 Фильтры маршрутов — это способ использовать подмножество поддерживаемых служб через пиринг Майкрософт. Действия, описанные в этой статье, помогут настроить фильтры маршрутов для каналов ExpressRoute и управлять ими.
@@ -199,6 +199,6 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 Remove-AzRouteFilter -Name "MyRouteFilter" -ResourceGroupName "MyResourceGroup"
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)

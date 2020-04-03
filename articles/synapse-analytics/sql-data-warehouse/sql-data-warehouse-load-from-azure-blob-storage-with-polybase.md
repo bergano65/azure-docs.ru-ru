@@ -1,6 +1,6 @@
 ---
-title: Загрузка розничных данных Contoso на хранилище данных S'L Analytics
-description: Используйте команды PolyBase и T-S'L для загрузки двух таблиц из розничных данных Contoso в аналитику Azure S'L.
+title: Загрузка розничных данных Contoso на хранилище данных Synapse S'L
+description: Используйте команды PolyBase и T-S'L для загрузки двух таблиц из розничных данных Contoso в Synapse S'L.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 62105b783577d70ae975cf514304d2c564357641
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 7460a59dd2a7a5906a483195929136391657fa50
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351467"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80584008"
 ---
-# <a name="load-contoso-retail-data-to-a-sql-analytics-data-warehouse"></a>Загрузка розничных данных Contoso на хранилище данных S'L Analytics
+# <a name="load-contoso-retail-data-to-a-synapse-sql-data-warehouse"></a>Загрузка розничных данных Contoso на хранилище данных Synapse S'L
 
-В этом уроке вы научитесь использовать команды PolyBase и T-S'L для загрузки двух таблиц из розничных данных Contoso в хранилище данных S'L Analytics. 
+В этом уроке вы научитесь использовать команды PolyBase и T-S'L для загрузки двух таблиц из розничных данных Contoso в хранилище данных Synapse S'L.
 
 Изучив данный учебник, вы научитесь:
 
@@ -30,11 +30,11 @@ ms.locfileid: "80351467"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Для запуска этого учебника требуется учетная запись Azure, которая уже имеет хранилище данных S'L Analytics. Если у вас нет подготовленного хранилища данных, [см.](create-data-warehouse-portal.md)
+Для запуска этого учебника требуется учетная запись Azure, которая уже имеет хранилище данных Synapse s'L. Если у вас нет подготовленного хранилища данных, [см.](create-data-warehouse-portal.md)
 
 ## <a name="configure-the-data-source"></a>Настройка источника данных
 
-PolyBase использует внешние объекты T-SQL для определения расположения и атрибутов внешних данных. Внешние определения объектов хранятся в хранилище данных S'L Analytics. Данные хранятся извне.
+PolyBase использует внешние объекты T-SQL для определения расположения и атрибутов внешних данных. Внешние определения объектов хранятся в хранилище данных Synapse s-L. Данные хранятся извне.
 
 ## <a name="create-a-credential"></a>Создание учетных данных
 
@@ -121,7 +121,7 @@ GO
 
 ## <a name="create-the-external-tables"></a>Создание внешних таблиц
 
-Выполнить следующий сценарий для создания внешних таблиц DimProduct и FactOnlineSales. Все, что вы здесь делаете, это определяете имена столбцов и типы данных и привязываете их к местоположению и формату файлов хранения blob Azure. Определение хранится в хранилище данных S'L Analytics, и данные все еще находятся в Azure Storage Blob.
+Выполнить следующий сценарий для создания внешних таблиц DimProduct и FactOnlineSales. Все, что вы здесь делаете, это определяете имена столбцов и типы данных и привязываете их к местоположению и формату файлов хранения blob Azure. Определение хранится в хранилище данных, а данные все еще находятся в Azure Storage Blob.
 
 Параметр **LOCATION** — это папка под корневой папкой в Blob хранилища Azure. Все таблицы находятся в разных папках.
 
@@ -274,7 +274,7 @@ ORDER BY
 
 ## <a name="optimize-columnstore-compression"></a>Оптимизация сжатия columnstore
 
-По умолчанию хранилище данных S'L Analytics хранит таблицу как кластерный индекс магазина столбцов. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Есть разные причины, почему это может произойти. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
+По умолчанию хранилище данных Synapse S'L хранит таблицу как кластерный индекс столбцов. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Есть разные причины, почему это может произойти. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
 
 Чтобы оптимизировать производительность запросов и сжатие columnstore после загрузки, перестройте таблицу, чтобы настроить принудительное сжатие всех строк таблиц индексом columnstore. 
 
@@ -351,6 +351,6 @@ JOIN    [cso].[DimProduct]      AS p ON f.[ProductKey] = p.[ProductKey]
 GROUP BY p.[BrandName]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Чтобы загрузить полный набор данных, запустите пример [загрузки полного хранилища розничных данных Contoso](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md) из репозитория образцов Microsoft S'L Server.
 Дополнительные советы [Design decisions and coding techniques for data warehouses](sql-data-warehouse-overview-develop.md)по разработке см.

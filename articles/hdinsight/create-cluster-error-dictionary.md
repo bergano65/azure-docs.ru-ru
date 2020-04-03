@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/19/2019
-ms.openlocfilehash: b0dc974185ad616d57327e9cc3743db9ecb20e54
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 803783eddfbffd5c3dbab7353ee00dd7f11a09e5
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78302735"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618901"
 ---
 # <a name="azure-hdinsight-cluster-creation-errors"></a>Azure HDInsight: ошибки создания кластеров
 
@@ -157,7 +157,7 @@ ms.locfileid: "78302735"
 
 ---
 
-## <a name="error-code-storagepermissionsblockedformsi"></a>Код ошибки: ХранениеПозволеныЗаблокированныеДляМси  
+## <a name="error-code-storagepermissionsblockedformsi"></a>Код ошибки: ХранениеПозволеныЗаблокированныеДляМси
 
 ### <a name="error"></a>Error
 
@@ -178,11 +178,11 @@ ms.locfileid: "78302735"
 
 ---
 
-## <a name="error-code-invalidnetworksecuritygroupsecurityrules"></a>Код ошибки: НедействительныеСетевойГруппохраняПравила  
+## <a name="error-code-invalidnetworksecuritygroupsecurityrules"></a>Код ошибки: НедействительныеСетевойГруппохраняПравила
 
 ### <a name="error"></a>Error
 
-"Правила безопасности в группе сетевой\<безопасности /подписка /\>Подписка /resourceGroups/<\> Resource Group\<имя по\> умолчанию / провайдеров /\<Microsoft.Network/NetworkSecurityGroups / Название группы сетевой безопасности настроены с подсетью / подписки / Подписка\>/resourceGroups\</ Название группы ресурсов\> RG-westeurope-vnet-tomtom-default/providers/Microsoft.Network/virtualNetworks/\<Virtual Название\>сети /подсети/\<\> Название Subnet не позволяет входящие и/или исходящие подключения. Для получения дополнительной информации, пожалуйста, посетите [веб-сайт Plan виртуальной сети для Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment)или обратитесь в службу поддержки».
+"Правила безопасности в группе сетевой\<безопасности /подписка /\>Подписка /resourceGroups/<Ресурсная группа имя\> по умолчанию / провайдеры / Microsoft.Network/networkSecurityGroups /\<Название группы сетевой безопасности\> настроены с подсетью / подписки /\<Подписка /resourceGroups\>/\<Ресурсная группа имя\> RG-westeurope-vnet-tomtom-default/providers/Microsoft.Network/virtualNetworks/\<\>\<\> Для получения дополнительной информации, пожалуйста, посетите [веб-сайт Plan виртуальной сети для Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment)или обратитесь в службу поддержки».
 
 ### <a name="cause"></a>Причина
 
@@ -195,12 +195,12 @@ ms.locfileid: "78302735"
 - Определите область Azure, которую планируется использовать для HDInsight, и создайте безопасный список IP-адресов для вашего региона. Для получения дополнительной [Health and management services: Specific regions](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses#health-and-management-services-specific-regions)информации см.
 - Определите IP-адреса, которые требуется HDInsight. Для получения дополнительной информации смотрите [IP-адреса управления HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses).
 - Создавайте или изменяйте группы сетевой безопасности для подсети, в которую вы планируете установить HDInsight. Для групп сетевой безопасности разрешить входящий трафик в порту 443 с IP-адресов. Эта конфигурация гарантирует, что службы управления HDInsight могут достичь кластера из-за пределов виртуальной сети.
-  
+
 ---
 
 ## <a name="error-code-cluster-setup-failed-to-install-components-on-one-or-more-hosts"></a>Код ошибки: Настройка кластера не установить компоненты на одном или нескольких узлах
 
-###  <a name="error"></a>Error
+### <a name="error"></a>Error
 
 "Кластерная настройка не смогла установить компоненты на один или несколько узлов. Пожалуйста, повторите свой запрос".
 
@@ -212,6 +212,42 @@ ms.locfileid: "78302735"
 
 Проверьте страницу [состояния Azure](https://status.azure.com) на наличие сбоев Azure, которые могут повлиять на развертывание кластеров. Если нет сбоев, повторите развертывание кластера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+---
+
+## <a name="error-code-failedtoconnectwithclustererrorcode"></a>Код ошибки: не удалосьподключитьСкластерошибкакода
+
+### <a name="error"></a>Error
+
+Невозможно подключиться к конечной точке управления кластерами. Повторите попытку позже.
+
+### <a name="cause"></a>Причина
+
+Служба HDInsight не может подключиться к кластеру при попытке создать кластер
+
+### <a name="resolution"></a>Решение
+
+Если вы используете пользовательские группы сетевой безопасности VNet (NSGs) и маршруты, определяемые пользователями (UDR), убедитесь, что ваш кластер может общаться с службами управления HDInsight. Для получения дополнительной информации [см.](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses)
+
+---
+
+## <a name="error-code-deployments-failed-due-to-policy-violation-resource-resource-uri-was-disallowed-by-policy-policy-identifiers-policyassignmentnamepolicy-name-idprovidersmicrosoftmanagementmanagementgroupsmanagement-group-name-providersmicrosoftauthorizationpolicyassignmentspolicy-namepolicydefinition-policy-definition"></a>Код ошибки: Развертывание не удалось из-за нарушения политики: 'Ресурс'<Resource URI>был запрещен политикой. Идентификаторы политики: «Назначение политики»: «имя»<Policy Name> «,id»: «id»: провайдеры/Microsoft.Management/managementGroups/providers/Microsoft.Authorization/policyAssignments/«»»«Определение<Management Group Name> <Policy Name>политики»:<Policy Definition>
+
+### <a name="cause"></a>Причина
+
+Политики Azure, основанные на подписке, могут отказать в создании общедоступных IP-адресов. Для создания кластера HDInsight требуется два общедоступных IP-адреса.
+
+Следующие политики, как правило, влияют на создание кластеров:
+
+* Политики, которые препятствуют созданию IP-адресов или балансеров нагрузки в подписке.
+* Политика, препятствующая созданию учетных записей хранилища.
+* Политика, предотвращающая удалять сетевые ресурсы, такие как IP-адреса или балансеры нагрузки.
+
+### <a name="resolution"></a>Решение
+
+Удалите или отключать политику Azure, основанную на подписке, при создании кластера HDInsight.
+
+---
+
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации об ошибках устранения неполадок при создании кластеров [см.](https://docs.microsoft.com/azure/hdinsight/hadoop/hdinsight-troubleshoot-cluster-creation-fails)

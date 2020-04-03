@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
-ms.openlocfilehash: f075362f976e6abb26c9781c4b0cdeb7912c0862
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 75363212684bb09e84a4bc4881af26e6d2a8e7e3
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76514040"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585277"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-via-azure-monitor"></a>Мониторинг метрик медиа-служб и диагностических журналов через Azure Monitor
 
@@ -54,7 +54,7 @@ ms.locfileid: "76514040"
 |Потоковая политика|Квота политики потоковой передачи|Квота политик потоковой передачи в вашей учетной записи.|
 |StreamingPolicy's|Квота политики потоковой передачи используется в процентах|Процент квоты политики потоковой передачи уже используется.|
 
-Вы также должны пересмотреть [квоты и ограничения счета.](limits-quotas-constraints.md)
+Вы также должны пересмотреть [квоты и лимиты счета.](limits-quotas-constraints.md)
 
 ### <a name="streaming-endpoint"></a>Конечная точка потоковой передачи
 
@@ -109,7 +109,7 @@ ms.locfileid: "76514040"
 
 Смотрите [Как контролировать медиа-сервис диагностических журналов](media-services-diagnostic-logs-howto.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Как собирать и потреблять данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
 * [Создание, представление и управление метрическими оповещениями с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md)

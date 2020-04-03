@@ -9,12 +9,12 @@ ms.author: migreene
 ms.topic: conceptual
 ms.date: 07/17/2019
 manager: nirb
-ms.openlocfilehash: a6c7639cb4988eb13dfaa1c151085cda6e53b5d3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f4ca76f4be9d00e185f8774fc33296d1af1aeece
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "68614502"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585502"
 ---
 # <a name="remediate-non-compliant-dsc-servers"></a>Исправление несоответствующих серверов DSC
 
@@ -40,11 +40,11 @@ Update-DscConfiguration -Wait -Verbose
 Аналогичная функциональность в настоящее время не доступна для серверов Linux.
 Единственным вариантом является повторение процесса регистрации.
 Для узлов Azure корректировка дрейфа может быть сделана с портала или с помощью cmdlets Az Automation.
-Подробная информация об этом процессе задокументирована на странице [Бортовых машин для управления Azure Automation State Configuration.](/azure/automation/automation-dsc-onboarding#azure-portal)
+Подробная информация об этом процессе задокументирована на странице [Бортовых машин для управления Azure Automation State Configuration.](/azure/automation/automation-dsc-onboarding#onboard-a-vm-using-azure-portal)
 Для гибридных узлов корректировка дрейфа может быть осуществлена с помощью включенных скриптов Python.
 Смотрите документацию в [PowerShell DSC для репо Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Справочник по командлетам PowerShell для службы "Настройка состояния службы автоматизации Azure" см. в [этой статье](/powershell/module/azurerm.automation/#automation).
 - Пример использования службы "Настройка состояния службы автоматизации Azure" и Chocolatey в конвейере непрерывного развертывания см. в [этой статье](automation-dsc-cd-chocolatey.md).

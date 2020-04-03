@@ -2,17 +2,17 @@
 title: Создайте узел Bastion с помощью Azure CLI Лазурный бастион
 description: В этой статье узнайте, как создать и удалить хост Bastion
 services: bastion
-author: cherylmc
+author: mialdrid
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.author: cherylmc
-ms.openlocfilehash: 9e216bf2bb8e2e605723256f0511b9bdb63083b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: mialdrid
+ms.openlocfilehash: f98c965ad3b776f3688a716ba28b5367a00c9119
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80337575"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619225"
 ---
 # <a name="create-an-azure-bastion-host-using-azure-cli"></a>Создание хоста Azure Bastion с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "80337575"
 
 [!INCLUDE [cloudshell cli](../../includes/vpn-gateway-cloud-shell-cli.md)]
 
-## <a name="create-a-bastion-host"></a><a name="createhost"></a>Создание бастиона
+## <a name="create-a-bastion-host"></a><a name="createhost"></a>Создание узла-бастиона
 
 Этот раздел поможет создать новый ресурс Azure Bastion с помощью Azure CLI.
 
@@ -49,7 +49,7 @@ ms.locfileid: "80337575"
                            
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьте [часто задаваемые вопросы «Бастион»](bastion-faq.md) для получения дополнительной информации.
 

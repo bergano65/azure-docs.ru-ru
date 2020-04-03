@@ -3,12 +3,12 @@ title: Разрешения на репозитории в реестре кон
 description: Создание маркера с разрешениями, прикрытыми для определенных репозиториев в реестре, для вытягивания или нажатия изображений или выполнения других действий
 ms.topic: article
 ms.date: 02/13/2020
-ms.openlocfilehash: 7d390bf4d97561e374c70f184534ac4f98a40611
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9004c45401833d3070266055dd7eb99a2bb43bde
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77444325"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618830"
 ---
 # <a name="create-a-token-with-repository-scoped-permissions"></a>Создание маркера с разрешениями, разбившимися с репозиторием
 
@@ -27,6 +27,7 @@ ms.locfileid: "77444325"
 
 * Эта функция доступна только в реестре **контейнеров Premium.** Для получения информации о уровнях [Azure Container Registry SKUs](container-registry-skus.md)и ограничениях службы реестра см.
 * В настоящее время нельзя присваивать разрешения с размахом репозитория идентификатору Active Directory, например основной службы или управляемые удостоверения.
+* Нельзя создать карту области в реестре, включенном для [анонимного доступа к вытягиванию.](container-registry-faq.md#how-do-i-enable-anonymous-pull-access)
 
 ## <a name="concepts"></a>Основные понятия
 
@@ -412,7 +413,7 @@ az acr token delete --name MyToken --registry myregistry
 
 На портале выберите токен на экране **токенов (Preview)** и выберите **Discard**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для управления картами и токенами области используйте дополнительные команды в группах командных групп [az acr scope-map][az-acr-scope-map] и [acr acr.][az-acr-token]
 * Ознакомьтесь с [обзором подлинности](container-registry-authentication.md) для других вариантов проверки подлинности с помощью реестра контейнеров Azure, включая использование интактификации Active Directory Azure, директора службы или учетной записи админ.

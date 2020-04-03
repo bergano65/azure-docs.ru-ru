@@ -2,25 +2,24 @@
 title: 'Шаблон Azure ExpressRoute: Создание схемы ExpressRoute'
 description: Создание, предоставление, удаление и дезавуианите схему ExpressRoute.
 services: expressroute
-author: cherylmc
+author: charwen
 ms.service: expressroute
 ms.topic: article
 ms.date: 11/13/2019
-ms.author: cherylmc
-ms.reviewer: ganesr
-ms.openlocfilehash: 78da84a462566cca1a2800174849159ace8dd6dc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: charwen
+ms.openlocfilehash: ac2fb2f884feb0fbe6fbb1731ebe7c8bdad5114b
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75981134"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80616501"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создайте схему ExpressRoute с помощью шаблона менеджера ресурсов Azure
 
 > [!div class="op_single_selector"]
 > * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Лазурный CLI](howto-circuit-cli.md)
+> * [Azure CLI](howto-circuit-cli.md)
 > * [Шаблон менеджера ресурсов Azure](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео - Портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классический)](expressroute-howto-circuit-classic.md)
@@ -64,7 +63,7 @@ ms.locfileid: "75981134"
     Write-Host "Press [ENTER] to continue ..."
     ```
 
-   * **Уровень SKU** определяет, является ли схема ExpressRoute [локальной,](expressroute-faqs.md#expressroute-local)стандартной или [премиум-](expressroute-faqs.md#expressroute-premium) Вы можете указать *местные,* *стандартные* или *премиум*.
+   * **Уровень SKU** определяет, является ли схема ExpressRoute [локальной,](expressroute-faqs.md#expressroute-local)стандартной или [премиум-](expressroute-faqs.md#expressroute-premium) Вы можете указать *местные*, стандартные или *премиум*.
    * **Семья SKU** определяет тип выставления счетов. Можно указать *Metereddata* для дозированного плана данных и *Unlimiteddata* для неограниченного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальная* схема только *неограниченная.*
    * **Расположение пиринга** — физическое расположение пиринга с корпорацией Майкрософт.
 
@@ -101,7 +100,7 @@ $resourceGroupName = "${circuitName}rg"
 Remove-AzExpressRouteCircuit -ResourceGroupName $resourceGroupName -Name $circuitName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Создав канал, выполните задачи, описанные в следующих статьях:
 

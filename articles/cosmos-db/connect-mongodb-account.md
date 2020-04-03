@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
 ms.date: 03/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: e3ab6282a3c61e12dce5dd17bc0859c0d73a7724
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cba16d79b6506f9809a76f0128938a68afd15c92
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80051714"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80617052"
 ---
 # <a name="connect-a-mongodb-application-to-azure-cosmos-db"></a>Подключение приложения MongoDB к Azure Cosmos DB
 
@@ -51,11 +51,11 @@ ms.locfileid: "80051714"
 ## <a name="connection-string-requirements"></a>Требования к строке подключения
 
 > [!Important]
-> В Azure Cosmos DB строгие требования к безопасности и стандарты. Учетные записи Azure Cosmos DB требуют аутентификации и безопасной связи через *SSL.* 
+> В Azure Cosmos DB строгие требования к безопасности и стандарты. Учетные записи Azure Cosmos DB требуют аутентификации и безопасной связи через *TLS.* 
 >
 >
 
-Azure Cosmos DB поддерживает стандартный формат универсального кода ресурса для строки подключения MongoDB, налагая пару дополнительных условий. Для учетных записей Azure Cosmos DB требуется использовать проверку подлинности и безопасный обмен данными через SSL. В этом случае строка подключения имеет следующий вид:
+Azure Cosmos DB поддерживает стандартный формат URI строки соединения MongoDB с несколькими конкретными требованиями: учетные записи Azure Cosmos DB требуют аутентификации и безопасной связи через TLS. В этом случае строка подключения имеет следующий вид:
 
     mongodb://username:password@host:port/[database]?ssl=true
 
@@ -72,7 +72,7 @@ Azure Cosmos DB поддерживает стандартный формат у�
 
     mongodb://contoso123:0Fc3IolnL12312asdfawejunASDF@asdfYXX2t8a97kghVcUzcDv98hawelufhawefafnoQRGwNj2nMPL1Y9qsIr9Srdw==@contoso123.documents.azure.com:10255/mydatabase?ssl=true
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [использовать Studio 3T](mongodb-mongochef.md) с API Azure Cosmos DB для MongoDB.
 - Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.

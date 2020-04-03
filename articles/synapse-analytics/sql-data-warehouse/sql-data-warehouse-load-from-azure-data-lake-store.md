@@ -1,6 +1,6 @@
 ---
 title: Учебные данные о загрузке из хранилища озер данных Azure
-description: Используйте внешние таблицы PolyBase для загрузки данных из хранилища озер данных Azure для аналитики S'L.
+description: Используйте внешние таблицы PolyBase для загрузки данных из хранилища озер данных Azure для Synapse S'L.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,14 +11,15 @@ ms.date: 03/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: b9e28f41b251ea526044bf88dc3e79c0374fe369
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 7d599ce121b4c53662b91e5aab94130b0f3f4458
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350365"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80583937"
 ---
-# <a name="load-data-from-azure-data-lake-storage-for-sql-analytics"></a>Загрузка данных из хранилища озер данных Azure для аналитики S'L
+# <a name="load-data-from-azure-data-lake-storage-for-synapse-sql"></a>Данные о загрузке из хранилища озер лазурных данных для Synapse S'L
+
 В этом руководстве излагается, как использовать внешние таблицы PolyBase для загрузки данных из хранилища озер данных Azure Data. Несмотря на то, что можно запускать запросы на данные, хранящиеся в Data Lake Storage, мы рекомендуем импортировать данные для наилучшей производительности. 
 
 > [!NOTE]  
@@ -30,7 +31,7 @@ ms.locfileid: "80350365"
 > * Подключение к каталогу хранения данных озера.
 > * Загрузите данные в хранилище данных.
 
-Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="before-you-begin"></a>Перед началом
 Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
@@ -216,7 +217,7 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 ## <a name="achievement-unlocked"></a>Победа!
 Вы успешно загрузили данные в свой хранилище данных. Отличная работа!
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 В этом руководстве вы создали внешние таблицы для определения структуры данных, хранящихся в Data Lake Storage 1-го поколения, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
 
 Вы выполнили такие действия:

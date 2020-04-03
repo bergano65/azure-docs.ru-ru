@@ -12,19 +12,19 @@ ms.workload: data-services
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: d061a132699e733e78a7d717ee32222b158d73b4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f265cdc955becd53ae7ba61ad827b2be69b92907
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74927521"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618263"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
 
 Для удаления файлов или папок из наемных хранилищ или облачных хранилищ можно использовать действие Delete Activity in Azure Data Factory. Это действие используется для очистки или архивации ненужных файлов.
 
 > [!WARNING]
-> Удаленные файлы и папки нельзя восстановить. Учитывайте это при использовании действия Delete для удаления файлов или папок.
+> Удаленные файлы или папки не могут быть восстановлены (если в хранилище включено мягкое удаление). Учитывайте это при использовании действия Delete для удаления файлов или папок.
 
 ## <a name="best-practices"></a>Рекомендации
 
@@ -40,9 +40,9 @@ ms.locfileid: "74927521"
 
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
--   [Хранение Azure Blob](connector-azure-blob-storage.md)
+-   [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md)
 -   [Хранилище Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md)
--   [Лазурное хранилище озер данных Gen2](connector-azure-data-lake-storage.md)
+-   [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)
 -   [Хранение файлов Azure](connector-azure-file-storage.md)
 
 ### <a name="file-system-data-stores"></a>Хранилища данных файловых систем
@@ -80,7 +80,7 @@ ms.locfileid: "74927521"
 
 ## <a name="type-properties"></a>Свойства типа
 
-| Свойство | Описание | Обязательно |
+| Свойство. | Описание | Обязательно |
 | --- | --- | --- |
 | набор данных | Предоставляет ссылку на набор данных, чтобы определить, какие файлы или папки должны быть удалены. | Да |
 | recursive | Указывает, откуда файлы удаляются рекурсивно: из вложенных папок или только из указанной папки.  | Нет. Значение по умолчанию — `false`. |
@@ -573,7 +573,7 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 -   При использовании фильтра атрибутов файлов: модифицированныйDatetimeStart и модифицированныйDatetimeEnd для выбора файлов, которые будут удалены, убедитесь, что установить "fileName": "Я" в наборе данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Подробнее о перемещении файлов на фабрике данных Azure.
 

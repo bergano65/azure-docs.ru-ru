@@ -1,16 +1,16 @@
 ---
-title: Часто задаваемые вопросы
+title: Вопросы и ответы
 description: Ответы на часто задаваемые вопросы, связанные со службой регистрации контейнеров Azure
 author: sajayantony
 ms.topic: article
-ms.date: 07/02/2019
+ms.date: 03/18/2020
 ms.author: sajaya
-ms.openlocfilehash: c0d51c9c31e4e6859eaedce371efeafaa5fd4f46
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7452b5dd3c952a13a28566914d2fe513689d4751
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78403217"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618794"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
 
@@ -104,11 +104,12 @@ az role assignment create --role "Reader" --assignee user@contoso.com --scope /s
 - [Как включить TLS 1.2?](#how-to-enable-tls-12)
 - [Поддерживает ли реестр контейнеров Azure Доверие контента?](#does-azure-container-registry-support-content-trust)
 - [Как предоставить доступ к изображениям без разрешения на управление ресурсом реестра?](#how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource)
-- [Как включить автоматический карантин изображения для реестра](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
+- [Как включить автоматический карантин изображения для реестра?](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
+- [Как включить анонимный доступ к вытягиванию?](#how-do-i-enable-anonymous-pull-access)
 
 ### <a name="how-do-i-access-docker-registry-http-api-v2"></a>Как получить доступ к реестру докеров HTTP API V2?
 
-ACR поддерживает Docker Registry HTTP API V2. AA можно получить по `https://<your registry login server>/v2/`адресу . Например, `https://mycontainerregistry.azurecr.io/v2/`.
+ACR поддерживает Docker Registry HTTP API V2. AA можно получить по `https://<your registry login server>/v2/`адресу . Пример: `https://mycontainerregistry.azurecr.io/v2/`
 
 ### <a name="how-do-i-delete-all-manifests-that-are-not-referenced-by-any-tag-in-a-repository"></a>Как удалить все манифесты, на которые не ссылается ни один тег в репозитории?
 
@@ -251,13 +252,18 @@ ACR поддерживает [пользовательские роли,](contai
 
 Карантин изображения в настоящее время является функцией предварительного просмотра ACR. Можно включить карантинный режим реестра, чтобы обычные пользователи были видны только тем изображениям, которые успешно прошли сканирование безопасности. Для получения [подробной](https://github.com/Azure/acr/tree/master/docs/preview/quarantine)информации см.
 
+### <a name="how-do-i-enable-anonymous-pull-access"></a>Как включить анонимный доступ к вытягиванию?
+
+Настройка реестра контейнеров Azure для анонимного (публичного) доступа к вытягиванию в настоящее время является функцией предварительного просмотра. Для обеспечения публичного доступа, https://aka.ms/acr/support/create-ticketпожалуйста, откройте билет поддержки по адресу . Для получения [подробной](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries)информации см.
+
+
 ## <a name="diagnostics-and-health-checks"></a>Диагностика и проверка здоровья
 
 - [Проверьте здоровье с`az acr check-health`](#check-health-with-az-acr-check-health)
 - [докер тянуть не удается с ошибкой: нетто / http: запрос отменен во время ожидания соединения (Client.Timeout превысил в ожидании заголовки)](#docker-pull-fails-with-error-nethttp-request-canceled-while-waiting-for-connection-clienttimeout-exceeded-while-awaiting-headers)
 - [докер нажмите успешно, но докер тянуть не удается с ошибкой: несанкционированный: аутентификация требуется](#docker-push-succeeds-but-docker-pull-fails-with-error-unauthorized-authentication-required)
 - [`az acr login`преуспевает, но команды докера не удается с ошибкой: несанкционированно: требуется аутентификация](#az-acr-login-succeeds-but-docker-fails-with-error-unauthorized-authentication-required)
-- [Включить и получить отладка журналы докер daemon](#enable-and-get-the-debug-logs-of-the-docker-daemon) 
+- [Включить и получить отладка журналы докер daemon](#enable-and-get-the-debug-logs-of-the-docker-daemon)    
 - [Новые пользовательские разрешения могут не всменяться сразу после обновления](#new-user-permissions-may-not-be-effective-immediately-after-updating)
 - [Информация о подлинности не приводится в правильном формате при прямых вызовах REST API](#authentication-information-is-not-given-in-the-correct-format-on-direct-rest-api-calls)
 - [Почему портал Azure не перечисляет все мои репозитории или теги?](#why-does-the-azure-portal-not-list-all-my-repositories-or-tags)
@@ -323,13 +329,13 @@ unauthorized: authentication required
 
 Например, `docker push myregistry.azurecr.io/myimage:latest`убедитесь, что вы используете URL-адрес сервера с нижним регистром, даже если название ресурса реестра является верхним или смешанным `myRegistry`случаем.
 
-### <a name="enable-and-get-the-debug-logs-of-the-docker-daemon"></a>Включить и получить отладки журналы Докер daemon  
+### <a name="enable-and-get-the-debug-logs-of-the-docker-daemon"></a>Включить и получить отладки журналы Докер daemon    
 
 Начните `dockerd` `debug` с опции. Во-первых, создайте файл конфигурации`/etc/docker/daemon.json`Docker daemon (), `debug` если он не существует, и добавьте опцию:
 
 ```json
-{   
-    "debug": true   
+{    
+    "debug": true    
 }
 ```
 
@@ -339,12 +345,12 @@ unauthorized: authentication required
 sudo service docker restart
 ```
 
-Подробности можно найти в [документации Docker](https://docs.docker.com/engine/admin/#enable-debugging). 
+Подробности можно найти в [документации Docker](https://docs.docker.com/engine/admin/#enable-debugging).    
 
- * В зависимости от системы журналы могут создаваться в разных местах. Например, для Ubuntu 14.04, `/var/log/upstart/docker.log`это .   
+ * В зависимости от системы журналы могут создаваться в разных местах. Например, для Ubuntu 14.04, `/var/log/upstart/docker.log`это .    
 Подробную информацию можно узнать [из документации Docker.](https://docs.docker.com/engine/admin/#read-the-logs)    
 
- * Для Docker для Windows журналы генерируются под %LOCALAPPDATA%/docker/. Однако он не может содержать всю информацию об отладке еще.   
+ * Для Docker для Windows журналы генерируются под %LOCALAPPDATA%/docker/. Однако он не может содержать всю информацию об отладке еще.    
 
    Для того, чтобы получить доступ к полному журналу daemon, вам может понадобиться несколько дополнительных шагов:
 
@@ -455,7 +461,7 @@ curl $redirect_url
 
 Налажить прокси Docker на вывод предыдущей команды и порт 8888 (например, 10.0.75.1:8888)
 
-## <a name="tasks"></a>Задания
+## <a name="tasks"></a>Задачи
 
 - [Как отменить пакетные забеги?](#how-do-i-batch-cancel-runs)
 - [Как включить папку .git в команду сборки az acr?](#how-do-i-include-the-git-folder-in-az-acr-build-command)
@@ -503,6 +509,6 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 - [CircleCI](https://github.com/Azure/acr/blob/master/docs/integration/CircleCI.md)
 - [Действия GitHub](https://github.com/Azure/acr/blob/master/docs/integration/github-actions/github-actions.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Подробнее](container-registry-intro.md) о реестре контейнеров Azure.

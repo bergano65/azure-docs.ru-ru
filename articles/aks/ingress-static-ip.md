@@ -4,12 +4,12 @@ description: Сведения об установке и настройке ко
 services: container-service
 ms.topic: article
 ms.date: 05/24/2019
-ms.openlocfilehash: 10422595b85c71020225df694778e6b8ae7e0185
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3e79bbe76a751097acd5c9d3c42dbd4020b6866b
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78191356"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80617287"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
 
@@ -48,7 +48,12 @@ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeRes
 az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eastus --name myAKSPublicIP --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv
 ```
 
-Разверните диаграмму *nginx ingress* с помощью Helm. Добавьте параметр `--set controller.service.loadBalancerIP` и укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
+Разверните диаграмму *nginx ingress* с помощью Helm. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
+
+Вы должны передать два дополнительных параметра в релиз Helm, чтобы контроллер входа был проинформирован как о статичном IP-адресе балансировщика нагрузки, который должен быть выделен службе контроллера входа, так и о метке dNS, применяемой к общедоступному ресурсу IP-адреса. Для правильной работы сертификатов HTTPS для настройки IP-адреса контроллера Вс-Данс используется метка имени DNS.
+
+1. Добавьте `--set controller.service.loadBalancerIP` параметр. Укажите свой собственный общедоступный IP-адрес, созданный на предыдущем этапе.
+1. Добавьте `--set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"` параметр. Укажите метку имени DNS, которая будет применена к общедоступному IP-адресу, созданному на предыдущем этапе.
 
 Контроллер Ingress также необходимо запланировать на узле Linux. Узлы Windows Server (в настоящее время в предварительном просмотре в AKS) не должны запускать контроллер входа. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера NGINX Ingress на узле под управлением Linux.
 
@@ -57,6 +62,8 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 
 > [!TIP]
 > Если вы хотите включить [сохранение исходного кода клиента][client-source-ip] для запросов в контейнеры в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду установки Helm. IP-адрес клиента хранится в заголовке запроса под *X-Forwarded-For.* При использовании контроллера входа с включенным сохранением ip-кода клиента проход SSL не будет работать.
+
+Обновите следующий скрипт с **IP-адресом вашего** контроллера входа и **уникальным именем,** которое вы хотели бы использовать для префикса F'DN:
 
 ```console
 # Create a namespace for your ingress resources
@@ -69,6 +76,7 @@ helm install nginx-ingress stable/nginx-ingress \
     --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
     --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux \
     --set controller.service.loadBalancerIP="40.121.63.72"
+    --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="demo-aks-ingress"
 ```
 
 При создании службы распределения нагрузки Kubernetes входящего контроллера NGINX назначается статический IP-адрес, как показано в следующем примере выходных данных.
@@ -83,27 +91,14 @@ nginx-ingress-default-backend               ClusterIP      10.0.95.248   <none> 
 
 Так как правила входящего трафика не созданы, при переходе к общедоступному IP-адресу по умолчанию будет отображаться страница контроллеров входящего трафика NGINX с ошибкой "404 — страница не найдена". В следующих шагах настраиваются правила входящего трафика.
 
-## <a name="configure-a-dns-name"></a>Настройка DNS-имени
-
-Чтобы сертификаты HTTPS работали правильно, настройте для IP-адреса контроллера входящего трафика полное доменное имя. Укажите в этом скрипте IP-адрес контроллера входящего трафика и уникальное имя, которое вы хотите использовать в качестве полного доменного имени.
+Вы можете проверить, что метка имени DNS была применена, задав запрос на общедоступный IP-адрес следующим образом:
 
 ```azurecli-interactive
 #!/bin/bash
-
-# Public IP address of your ingress controller
-IP="40.121.63.72"
-
-# Name to associate with public IP address
-DNSNAME="demo-aks-ingress"
-
-# Get the resource-id of the public ip
-PUBLICIPID=$(az network public-ip list --query "[?ipAddress!=null]|[?contains(ipAddress, '$IP')].[id]" --output tsv)
-
-# Update public ip address with DNS name
-az network public-ip update --ids $PUBLICIPID --dns-name $DNSNAME
+az network public-ip list --resource-group MC_myResourceGroup_myAKSCluster_eastus --query $("[?name=='myAKSPublicIP'].[dnsSettings.fqdn]") -o tsv
 ```
 
-Теперь к контроллеру входящего трафика можно получить доступ по полному доменному имени.
+Контроллер входа теперь доступен через IP-адрес или F-DN.
 
 ## <a name="install-cert-manager"></a>Установка cert-manager
 
@@ -375,7 +370,7 @@ kubectl delete namespace ingress-basic
 az network public-ip delete --resource-group MC_myResourceGroup_myAKSCluster_eastus --name myAKSPublicIP
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
 

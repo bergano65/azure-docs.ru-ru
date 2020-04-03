@@ -1,6 +1,6 @@
 ---
 title: Установка Visual Studio 2019.
-description: Установка визуальных студийных студий и инструментов разработки серверов (SSDT) для аналитики S'L
+description: Установка визуальных студийных студий и инструментов разработки серверов (SSDT) для Synapse S'L
 services: synapse-analytics
 ms.custom: vs-azure, azure-synapse
 ms.workload: azure-vs
@@ -12,12 +12,12 @@ ms.subservice: ''
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: d0a1772706fa838f51322d5f5d5bd1b46eb9144a
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: aa2f903611f52f8f7a8ede0040b592a7dddd0e89
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351626"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80584470"
 ---
 # <a name="getting-started-with-visual-studio-2019"></a>Начало работы с Visual Studio 2019
 Visual Studio **2019** S'L Server Data Tools (SSDT) представляет собой единый инструмент, позволяющий делать следующее:
@@ -34,7 +34,7 @@ Visual Studio **2019** S'L Server Data Tools (SSDT) представляет с�
 
 ## <a name="unsupported-features-in-ssdt"></a>Неподдерживаемые функции в SSDT
 
-Иногда релизы функций для S'L Analytics могут не включать поддержку SSDT. Следующие функции в настоящее время не поддерживаются:
+Бывают случаи, когда релизы функций для Synapse S'L могут не включать поддержку SSDT. Следующие функции в настоящее время не поддерживаются:
 
 - [Материализованные представления](https://docs.microsoft.com/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest) (в процессе)
 - [Заказанные кластерные индексы columnstore](https://docs.microsoft.com/sql/t-sql/statements/create-columnstore-index-transact-sql?view=azure-sqldw-latest#examples--and-) (в процессе)
@@ -47,7 +47,7 @@ Visual Studio **2019** S'L Server Data Tools (SSDT) представляет с�
 - Функция [PREDICT](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=sql-server-ver15&viewFallbackFrom=azure-sqldw-latest) 
 - [Таблицы с ограничениями](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-table-constraints#table-constraints) не поддерживаются. Для этих объектов таблицы установите действие сборки на "Нет".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда у вас есть последняя версия SSDT, вы готовы [подключиться](sql-data-warehouse-query-visual-studio.md) к вашему пулу S'L.
 

@@ -4,12 +4,12 @@ description: Как создать кластеры службы Azure Active Di
 services: container-service
 ms.topic: article
 ms.date: 02/02/2019
-ms.openlocfilehash: 0476acadf5af3a3e2c470fe6c08ebbd355653e22
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: de57a46f92fab2486aa7722daf8745a01be1f4f6
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77596595"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80617596"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
@@ -116,9 +116,9 @@ ms.locfileid: "77596595"
     c. Выберите **Web** для типа Redirect URI, а затем введите любое значение URI-формата, такое как. *https://aksazureadclient*
 
     >[!NOTE]
-    >Если вы создаете новый кластер с поддержкой RBAC для поддержки Azure Monitor для контейнеров, добавьте следующие два дополнительных URL-адреса перенаправления в этот список в виде типов **web-приложений.** Первое базовое значение `https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` URL должно быть, `https://monitoring.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`а второе базовое значение URL должно быть .
+    >Если вы создаете новый кластер с поддержкой RBAC для поддержки Azure Monitor для контейнеров, добавьте следующие два дополнительных URL-адреса перенаправления в этот список в виде типов **web-приложений.** Первое базовое значение `https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` URL должно быть, а второе базовое значение URL должно быть`https://monitoring.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`
     >
-    >Если вы используете эту функцию в Azure China, `https://afd.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` первое базовое значение `https://monitoring.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`URL должно быть, а второе базовое значение URL должно быть .
+    >Если вы используете эту функцию в Azure China, `https://afd.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` первое базовое значение URL должно быть, а второе базовое значение URL должно быть`https://monitoring.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`
     >
     >Для получения дополнительной информации смотрите [как настроить функцию Live Data (предварительный просмотр)](../azure-monitor/insights/container-insights-livedata-setup.md) для контейнеров Azure Monitor и шаги по настройке аутентификации в разделе [интегрированной аутентификации Для настройки AD.](../azure-monitor/insights/container-insights-livedata-setup.md#configure-ad-integrated-authentication)
 
@@ -284,7 +284,7 @@ error: You must be logged in to the server (Unauthorized)
 - Пользователь не является членом более чем 200 групп.
 - Секрет, определенный в регистрации приложения для сервера, соответствует значению, настроенному с помощью `--aad-server-app-secret`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы использовать пользователей и группы Azure AD для управления доступом к кластерным ресурсам, см. [Контроль доступа к кластерным ресурсам с помощью элемента управления доступом на основе ролей и идентификационных данных Azure AD в AKS.][azure-ad-rbac]
 

@@ -9,18 +9,18 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 11/17/2019
 ms.author: yelevin
-ms.openlocfilehash: 7d42ff28ddd2d883feb25139096d781efe64d50f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b82ddfef57efaaca0ae43750cd306a63a772b911
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77588575"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80616827"
 ---
 # <a name="connect-data-from-azure-ad-identity-protection"></a>Подключение данных из системы защиты идентификации AD Azure
 
 
 
-Вы можете передавать журналы из [Azure AD Identity Protection](https://docs.microsoft.com/azure/information-protection/reports-aip) в Azure Sentinel для потоковой передачи оповещений в Azure Sentinel для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения исследования. Azure Active Directory Identity Protection обеспечивает консолидированное представление пользователей рисков, обнаружений рисков и уязвимостей, возможность немедленного устранения рисков и настройку политик для автоматического устранения будущих событий. Сервис построен на опыте Корпорации Майкрософт по защите идентификационных данных потребителей и получает огромную точность от сигнала от более чем 13 миллиардов входов в день. 
+Вы можете передавать журналы из [Azure AD Identity Protection](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection) в Azure Sentinel для потоковой передачи оповещений в Azure Sentinel для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения исследования. Azure Active Directory Identity Protection обеспечивает консолидированное представление пользователей рисков, обнаружений рисков и уязвимостей, возможность немедленного устранения рисков и настройку политик для автоматического устранения будущих событий. Сервис построен на опыте Корпорации Майкрософт по защите идентификационных данных потребителей и получает огромную точность от сигнала от более чем 13 миллиардов входов в день. 
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -42,7 +42,7 @@ ms.locfileid: "77588575"
 
 6. Чтобы использовать соответствующую схему в журнале Analytics для предупреждений о защите идентификации Azure AD, ищите **SecurityAlert.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить защиту идентификации Azure AD к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

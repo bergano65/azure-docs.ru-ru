@@ -4,12 +4,12 @@ description: Узнайте, как динамически создавать п
 services: container-service
 ms.topic: article
 ms.date: 03/01/2019
-ms.openlocfilehash: 37fea36567866af69e832a1f7e3caff2a68477a9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f16a6134b1d2065668952ea11c0cab7398a3559a
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77596969"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80617469"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с дисками Azure в службе Azure Kubernetes (AKS)
 
@@ -33,7 +33,7 @@ ms.locfileid: "77596969"
 Каждый кластер AKS содержит два предварительно созданных класса хранения, настроенных для работы с дисками Azure.
 
 * Класс хранения *default* подготавливает диск Azure ценовой категории "Стандартный".
-    * Хранилище класса Standard использует жесткие диски и обеспечивает экономичное хранение при достаточной производительности. Эти диски идеально подходят для экономных рабочих нагрузок разработки и тестирования.
+    * Стандартное хранилище поддерживается HDD и обеспечивает экономичное хранилище, в то же время выполняя. Стандартные диски идеально подходят для экономичности разработчика и тестовой рабочей нагрузки.
 * Класс хранения *managed-premium* подготавливает диск Azure ценовой категории "Премиум".
     * Диски уровня "Премиум" используют высокопроизводительные твердотельные накопители с низкой задержкой. Они идеально подходят для виртуальных машин, выполняющих производственную рабочую нагрузку. Если узлы AKS в кластере используют хранилище класса Premium, выберите класс *managed-premium*.
     
@@ -248,7 +248,7 @@ Volumes:
 [...]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для связанных с [Best practices for storage and backups in AKS][operator-best-practices-storage]этим рекомендаций см.
 

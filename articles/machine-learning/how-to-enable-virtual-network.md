@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 03/13/2020
-ms.openlocfilehash: 6e300bbec097201b33f0c576db91c2ca720fb921
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 4d845514965a8d60c636902660ce838926cbf3c9
+ms.sourcegitcommit: 515482c6348d5bef78bb5def9b71c01bb469ed80
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437324"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80607615"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Безопасные задания по экспериментам и выводу Azure ML в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "80437324"
 > Если конкретно не выкрикиваемый, использование ресурсов, таких как учетные записи хранения данных или вычислительные цели внутри виртуальной сети, будет работать как с конвейерами машинного обучения, так и с рабочими процессами без конвейеров, такими как запуски скриптов.
 
 > [!WARNING]
-> Корпорация Майкрософт не поддерживает использование разработчика машинного обучения Azure или автоматизированного машинного обучения (из студии) ресурсами внутри виртуальной сети.
+> Корпорация Майкрософт не поддерживает использование функций Студии машинного обучения Azure, таких как Automated ML, Datasets, Datalabeling, Designer и Ноутбуки, если базовое хранилище включено в виртуальную сеть.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

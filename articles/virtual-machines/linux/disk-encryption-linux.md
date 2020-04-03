@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: b7df3c07518a9211bd1abf785e3f4954c41ebffc
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: cf6f53639cff23a9e709b44a1ddf1332df2164b7
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80529449"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586044"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Azure Disk Encryption scenarios on Linux VMs (Сценарии шифрования дисков Azure для виртуальных машин Linux)
 
@@ -407,9 +407,11 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Шифрование общих/распределенных файловых систем, таких как (но не ограничиваемый): DFS, GFS, DRDB и CephFS.
 - Перемещение зашифрованного VM на другую подписку.
 - Краш-дамт ядра (kdump).
+- Oracle ACFS (система файлов кластера ASM)
+- VMs Gen2 (см.: [Поддержка поколения 2 VMs на Azure](generation-2.md#generation-1-vs-generation-2-capabilities))
 - VMs серии Lsv2 (см.: [Lsv2-серия](../lsv2-series.md))
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
 - [Примеры скриптов шифрования дисков Azure](disk-encryption-sample-scripts.md)

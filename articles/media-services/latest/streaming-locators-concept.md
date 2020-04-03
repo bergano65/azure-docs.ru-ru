@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
-ms.openlocfilehash: 3a9568e1a0307cd1713c511ef42c065424306548
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 41b2d0ad1e072fb2bf5860ae80f8f25f886b37f7
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78302888"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582672"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -36,7 +36,7 @@ ms.locfileid: "78302888"
 
 * **Потоковые локаторы** не являются updatable. 
 * Свойства **указателей потоковой передачи** типа Datetime всегда задаются в формате UTC.
-* Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. Дополнительные сведения см. в статье [Квоты и ограничения](limits-quotas-constraints.md).
+* Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. Для получения дополнительной [информации см.](limits-quotas-constraints.md)
 
 ## <a name="create-streaming-locators"></a>Создание потоковых локаторов  
 
@@ -105,6 +105,6 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 * [Политики ключа содержимого](content-key-policy-concept.md)
 * [Учебник: Загружать, кодировать и передавать видео с помощью .NET](stream-files-tutorial-with-api.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Как создать потоковое локатор и создать URL-адреса](create-streaming-locator-build-url.md)

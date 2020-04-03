@@ -3,12 +3,12 @@ title: API Application Insights для пользовательских собы
 description: Вставьте несколько строк кода в свое устройство или классическое приложение, на веб-страницу или в службу, чтобы отслеживать использование приложения и диагностировать неполадки.
 ms.topic: conceptual
 ms.date: 03/27/2019
-ms.openlocfilehash: 4275d3ea3a340f0a4083ab929eb7f7872f3311e6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 06bd8bd0958afd26e1256a010b08c908c59aaf7d
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80295034"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585877"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -58,9 +58,9 @@ ms.locfileid: "80295034"
 
 Для [ASP.NET основных](asp-net-core.md#how-can-i-track-telemetry-thats-not-automatically-collected) приложений и [не http/Worker для приложений .NET/.NET Core](worker-service.md#how-can-i-track-telemetry-thats-not-automatically-collected) рекомендуется получить экземпляр `TelemetryClient` из контейнера для впрыска зависимости, как это объясняется в их соответствующей документации.
 
-Если вы используете AzureFunctions v2 или Azure WebJobs v3 - следуйте этому документу:https://docs.microsoft.com/azure/azure-functions/functions-monitoring#version-2x-3
+Если вы используете AzureFunctions v2 или Azure WebJobs v3 - следуйте этому документу:https://docs.microsoft.com/azure/azure-functions/functions-monitoring#version-2x-and-higher
 
-*C #*
+*C#*
 
 ```csharp
 private TelemetryClient telemetry = new TelemetryClient();
@@ -89,7 +89,7 @@ var telemetry = applicationInsights.defaultClient;
 
 Для проектов ASP.NET и Java автоматически фиксируются входящие HTTP-запросы. Возможно, потребуется создать дополнительные экземпляры TelemetryClient для другого модуля вашего приложения. Например, у вас может быть один экземпляр TelemetryClient в классе промежуточного ПО для отчетов о событиях бизнес-логики. Можно задать свойства, такие как идентификатор пользователя (UserId) и идентификатор устройства (DeviceId), для идентификации компьютера. Эти данные прикрепляются ко всем событиям, отправляемым экземпляром.
 
-*C #*
+*C#*
 
 ```csharp
 TelemetryClient.Context.User.Id = "...";
@@ -113,13 +113,13 @@ telemetry.getContext().getDevice().setId("...");
 
 Например, отправляйте событие в игровом приложении при каждом выигрыше пользователя:
 
-*Javascript*
+*JavaScript*
 
 ```javascript
 appInsights.trackEvent({name:"WinGame"});
 ```
 
-*C #*
+*C#*
 
 ```csharp
 telemetry.TrackEvent("WinGame");
@@ -153,7 +153,7 @@ telemetry.trackEvent({name: "WinGame"});
 
 ### <a name="examples"></a>Примеры
 
-*C #*
+*C#*
 
 ```csharp
 namespace User.Namespace.Example01
@@ -257,13 +257,13 @@ Application Insights может создать диаграмму метрик, 
 
 Отправка значения одной метрики
 
-*Javascript*
+*JavaScript*
 
  ```javascript
 appInsights.trackMetric("queueLength", 42.0);
  ```
 
-*C #*
+*C#*
 
 ```csharp
 var sample = new MetricTelemetry();
@@ -299,13 +299,13 @@ telemetry.trackMetric({name: "queueLength", value: 42.0});
 
 ### <a name="custom-page-views"></a>Пользовательские данные о просмотре страницы
 
-*Javascript*
+*JavaScript*
 
 ```javascript
 appInsights.trackPageView("tab1");
 ```
 
-*C #*
+*C#*
 
 ```csharp
 telemetry.TrackPageView("GameReviewPage");
@@ -338,7 +338,7 @@ appInsights.trackPageView("tab1", "http://fabrikam.com/page1.htm");
 * Задайте явную длительность вызова [trackPageView](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/legacy/API.md#trackpageview): `appInsights.trackPageView("tab1", null, null, null, durationInMilliseconds);`.
 * Используйте вызовы времени просмотра страницы `startTrackPage` и `stopTrackPage`.
 
-*Javascript*
+*JavaScript*
 
 ```javascript
 // To start timing a page:
@@ -398,7 +398,7 @@ TrackRequest используется в серверном пакете SDK, ч
 
 Если вы отслеживаете телеметрию вручную, проще всего выполнить ее корреляцию с помощью этого шаблона:
 
-*C #*
+*C#*
 
 ```csharp
 // Establish an operation context and associated telemetry item:
@@ -448,7 +448,7 @@ requests
 
 Отчеты содержат данные по трассировкам стеков.
 
-*C #*
+*C#*
 
 ```csharp
 try
@@ -471,7 +471,7 @@ try {
 }
 ```
 
-*Javascript*
+*JavaScript*
 
 ```javascript
 try
@@ -543,7 +543,7 @@ exceptions
 
 В Java для [стандартных средств ведения журнала, например Log4J и Logback,](../../azure-monitor/app/java-trace-logs.md) используются аппендеры Application Insights Log4J или Logback, позволяющие отправлять журналы сторонних производителей на портал.
 
-*C #*
+*C#*
 
 ```csharp
 telemetry.TrackTrace(message, SeverityLevel.Warning, properties);
@@ -586,7 +586,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 
 Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример:
 
-*C #*
+*C#*
 
 ```csharp
 var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
@@ -615,7 +615,7 @@ telemetry.trackTrace("Slow Database response", SeverityLevel.Warning, properties
 
 Используйте вызов TrackDependency для отслеживания времени отклика и процента успешных попыток вызовов во внешнюю часть кода. Результаты отображаются в диаграммах зависимостей на портале. Фрагмент кода, приведенный ниже, должен быть добавлен везде, где делается вызов зависимости.
 
-*C #*
+*C#*
 
 ```csharp
 var success = false;
@@ -706,7 +706,7 @@ dependencies
 
 Обычно SDK отправляет данные через фиксированные промежутки времени (обычно 30 сек) или всякий раз, когда буфер полон (обычно 500 элементов). Однако в некоторых случаях может потребоваться очистить буфер, например, при использовании пакета SDK в приложении, которое завершает работу.
 
-*C #*
+*C#*
 
  ```csharp
 telemetry.Flush();
@@ -738,7 +738,7 @@ telemetry.flush();
 
 Если пользователи входят в ваше приложение, более точное их количество можно узнать, указав идентификатор пользователя, прошедшего аутентификацию, в коде браузера.
 
-*Javascript*
+*JavaScript*
 
 ```javascript
 // Called when my app has identified the user.
@@ -792,7 +792,7 @@ appInsights.setAuthenticatedUserContext(validatedId, accountId);
 
 Количество используемых [свойств, значений свойств и метрик ограничено](#limits) .
 
-*Javascript*
+*JavaScript*
 
 ```javascript
 appInsights.trackEvent
@@ -812,7 +812,7 @@ appInsights.trackPageView
         );
 ```
 
-*C #*
+*C#*
 
 ```csharp
 // Set up some properties and metrics:
@@ -913,7 +913,7 @@ requests
 
 Иногда требуется отобразить на диаграмме продолжительность выполнения действия. Например, может потребоваться определить, сколько времени нужно пользователям для выбора решений в игре. Для этого можно использовать параметр измерения.
 
-*C #*
+*C#*
 
 ```csharp
 var stopwatch = System.Diagnostics.Stopwatch.StartNew();
@@ -956,7 +956,7 @@ telemetry.trackEvent("SignalProcessed", properties, metrics);
 
 Если для некоторых создаваемых пользовательских событий требуется задать значения свойств по умолчанию, можно сделать это в экземпляре TelemetryClient. Они прикреплены к каждому элементу телеметрии, отправляемой из этого клиента.
 
-*C #*
+*C#*
 
 ```csharp
 using Microsoft.ApplicationInsights.DataContracts;
@@ -1016,13 +1016,13 @@ gameTelemetry.TrackEvent({name: "WinGame"});
 
 [Выборка](../../azure-monitor/app/api-filtering-sampling.md) представляет собой упакованное решение для сокращения объема данных, отправляемых из приложения на портал. На отображаемые метрики выборка не влияет. Возможность диагностировать проблемы путем перехода между связанными элементами, такими как исключения, запросы и просмотры страниц, также не затрагивается.
 
-Ознакомьтесь с [дополнительными сведениями](../../azure-monitor/app/api-filtering-sampling.md).
+[Подробнее](../../azure-monitor/app/api-filtering-sampling.md).
 
 ## <a name="disabling-telemetry"></a>Отключение телеметрии
 
 Чтобы *динамически остановить и запустить* сбор и передачу данных телеметрии:
 
-*C #*
+*C#*
 
 ```csharp
 using  Microsoft.ApplicationInsights.Extensibility;
@@ -1062,7 +1062,7 @@ applicationInsights.setup()
 
 Во время отладки полезно передавать телеметрию через конвейер, чтобы результаты можно было увидеть немедленно. Кроме того, вы можете получать дополнительные сообщения, которые помогают трассировать любые проблемы с телеметрией. Отключите этот режим в рабочей среде, так как он может замедлить работу приложения.
 
-*C #*
+*C#*
 
 ```csharp
 TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = true;
@@ -1087,7 +1087,7 @@ applicationInsights.defaultClient.config.maxBatchSize = 0;
 
 ## <a name="setting-the-instrumentation-key-for-selected-custom-telemetry"></a><a name="ikey"></a> Установка ключа инструментирования для выбранной пользовательской телеметрии
 
-*C #*
+*C#*
 
 ```csharp
 var telemetry = new TelemetryClient();
@@ -1101,7 +1101,7 @@ telemetry.InstrumentationKey = "---my key---";
 
 Вместо получения ключа инструментирования из файла конфигурации можно задать его в коде. Задайте ключ в методе инициализации, таком как global.aspx.cs, в службе ASP.NET:
 
-*C #*
+*C#*
 
 ```csharp
 protected void Application_Start()
@@ -1114,7 +1114,7 @@ protected void Application_Start()
 }
 ```
 
-*Javascript*
+*JavaScript*
 
 ```javascript
 appInsights.config.instrumentationKey = myKey;
@@ -1187,7 +1187,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 * [Базовый пакет SDK для ASP.NET](https://github.com/Microsoft/ApplicationInsights-aspnetcore)
 * [ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [Пакеты Windows Server](https://github.com/Microsoft/applicationInsights-dotnet-server)
-* [пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
+* [Пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
 * [Пакет SDK для Node.js](https://github.com/Microsoft/ApplicationInsights-Node.js)
 * [Пакет SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
 
@@ -1201,7 +1201,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](../../azure-monitor/app/export-power-bi.md ) и [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).
 
-## <a name="next-steps"></a><a name="next"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
 * [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)

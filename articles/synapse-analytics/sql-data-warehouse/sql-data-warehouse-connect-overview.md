@@ -1,6 +1,6 @@
 ---
-title: Подключение к хранилищу данных SQL Azure
-description: Подключитесь к хранилищу данных SQL Azure.
+title: Подключение к бассейну Synapse S'L
+description: Подключайтесь к пулу S'L.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,28 +11,30 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 72825f588ff92383858020cdbcd92c7de3078ed5
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 70dd1ae883ee1f44672dccb802c0e770d7676440
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350655"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619094"
 ---
-# <a name="connect-to-azure-sql-data-warehouse"></a>Подключение к хранилищу данных SQL Azure
-Подключитесь к хранилищу данных SQL Azure.
+# <a name="connect-to-synapse-sql-pool"></a>Подключение к бассейну Synapse S'L
+Подключайтесь к пулу S'L.
 
 ## <a name="find-your-server-name"></a>Поиск имени сервера
-Имя сервера в следующем примере — samplesvr.database.windows.net. Чтобы найти полное имя сервера, сделайте следующее.
+Имя сервера в следующем примере sqlpoolservername.database.windows.net. Чтобы найти полное имя сервера, сделайте следующее.
 
-1. Перейдите на [портал Azure][Azure portal].
-2. Щелкните **Хранилища данных SQL**.
-3. Щелкните хранилище данных, к которому вы хотите подключиться.
+1. Перейдите на [портал Azure](https://portal.azure.com).
+2. Нажмите на **аналитику Azure Synapse**.
+3. Нажмите на пул, к который вы хотите подключиться.
 4. Найдите полное имя сервера.
    
     ![Полное имя сервера](media/sql-data-warehouse-connect-overview/server-connect.PNG)
 
 ## <a name="supported-drivers-and-connection-strings"></a>Поддерживаемые драйверы и строки подключения
-Хранилище данных SQL Azure поддерживает драйверы [ADO.NET][ADO.NET], [ODBC][ODBC], [PHP][PHP] и [JDBC][JDBC]. Щелкните один из указанных типов драйверов для получения информации об обновлениях и документации. Чтобы автоматически создать строку подключения используемого драйвера на портале Azure, щелкните **Показать строки подключения к базам данных** на странице из предыдущего примера. Ниже приведены примеры синтаксиса строк подключения для каждого драйвера.
+Бассейн S'L поддерживает [ADO.NET,](https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx) [ODBC](https://msdn.microsoft.com/library/jj730314.aspx), [PHP](https://msdn.microsoft.com/library/cc296172.aspx?f=255&MSPPError=-2147217396)и [JDBC.](https://msdn.microsoft.com/library/mt484311(v=sql.110).aspx) Щелкните один из указанных типов драйверов для получения информации об обновлениях и документации. 
+
+Чтобы автоматически создать строку подключения используемого драйвера на портале Azure, щелкните **Показать строки подключения к базам данных** на странице из предыдущего примера. Ниже приведены примеры синтаксиса строк подключения для каждого драйвера.
 
 > [!NOTE]
 > Рекомендуем задать время ожидания подключения, равное 300 секундам, чтобы подключение могло выдерживать короткие периоды недоступности.
@@ -60,36 +62,15 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 ```
 
 ## <a name="connection-settings"></a>Параметры подключения
-Хранилище данных SQL стандартизирует некоторые параметры при установке подключения и создании объектов. Такие параметры нельзя переопределить. К ним относятся следующие:
+Пул сsL стандартизирует некоторые настройки во время соединения и создания объектов. Такие параметры нельзя переопределить. К ним относятся следующие:
 
 | Параметр базы данных | Значение |
 |:--- |:--- |
-| [ANSI_NULLS][ANSI_NULLS] |ON |
-| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ON |
-| [DATEFORMAT][DATEFORMAT] |mdy |
-| [DATEFIRST][DATEFIRST] |7 |
+| [ANSI_NULLS](https://msdn.microsoft.com/library/ms188048.aspx) |ON |
+| [QUOTED_IDENTIFIERS](https://msdn.microsoft.com/library/ms174393.aspx) |ON |
+| [DATEFORMAT](https://msdn.microsoft.com/library/ms189491.aspx) |mdy |
+| [DATEFIRST](https://msdn.microsoft.com/library/ms181598.aspx) |7 |
 
-## <a name="next-steps"></a>Дальнейшие действия
-Чтобы подключиться и отправить запрос с помощью Visual Studio, см. инструкции в статье [Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT][Query with Visual Studio]. Подробные сведения о способах проверки подлинности см. в статье [Проверка подлинности в хранилище данных SQL Azure][Authentication to Azure SQL Data Warehouse].
-
-<!--Articles-->
-[Query with Visual Studio]:sql-data-warehouse-query-visual-studio.md
-[Authentication to Azure SQL Data Warehouse]:sql-data-warehouse-authentication.md
-
-<!--MSDN references-->
-[ADO.NET]: https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx
-[ODBC]: https://msdn.microsoft.com/library/jj730314.aspx
-[PHP]: https://msdn.microsoft.com/library/cc296172.aspx?f=255&MSPPError=-2147217396
-[JDBC]: https://msdn.microsoft.com/library/mt484311(v=sql.110).aspx
-[ANSI_NULLS]: https://msdn.microsoft.com/library/ms188048.aspx
-[QUOTED_IDENTIFIERS]: https://msdn.microsoft.com/library/ms174393.aspx
-[DATEFORMAT]: https://msdn.microsoft.com/library/ms189491.aspx
-[DATEFIRST]: https://msdn.microsoft.com/library/ms181598.aspx
-
-<!--Other-->
-[Azure portal]: https://portal.azure.com
-
-<!--Image references-->
-[1]: media/sql-data-warehouse-connect-overview/server-connect.PNG
-
+## <a name="next-steps"></a>Следующие шаги
+Чтобы подключиться и отправить запрос с помощью Visual Studio, см. инструкции в статье [Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT](sql-data-warehouse-query-visual-studio.md). Чтобы узнать больше о вариантах аутентификации, смотрите [в azure Synapse Analytics.](sql-data-warehouse-authentication.md)
 

@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по аналитике S'L
-description: Узнайте о рекомендациях по аналитике s'L и о том, как они генерируются
+title: Рекомендации Synapse S'L
+description: Узнайте о рекомендациях Synapse S'L и о том, как они создаются
 services: synapse-analytics
 author: kevinvngo
 manager: craigg-msft
@@ -11,18 +11,18 @@ ms.date: 02/05/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 6d57fdb035e076c75363d23fbf36d39eeb72bb3f
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: c4bbd98cc28b242be5310fab76521a80de8fcb7c
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350688"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80584120"
 ---
-# <a name="sql-analytics-recommendations"></a>Рекомендации по аналитике S'L
+# <a name="synapse-sql-recommendations"></a>Рекомендации Synapse S'L
 
-В этой статье описываются рекомендации по аналитике S'L, которые подаются через Azure Advisor.  
+В этой статье описаны рекомендации Synapse S'L, подаваемые через Azure Advisor.  
 
-В аналитической компании «S'L Analytics» содержатся рекомендации по обеспечению последовательной оптимизации рабочей нагрузки хранилища данных для производительности. Рекомендации тесно интегрированы с [Azure Advisor,](https://docs.microsoft.com/azure/advisor/advisor-performance-recommendations) чтобы предоставить вам лучшие практики непосредственно на [портале Azure.](https://aka.ms/Azureadvisor) Аналитика s'L собирает телеметрию и всплывает рекомендации для вашей активной рабочей нагрузки на ежедневной каденции. Ниже описаны сценарии рекомендаций с поддержкой, а также как применять рекомендуемые действия.
+Synapse S'L предоставляет рекомендации для обеспечения того, чтобы рабочая нагрузка хранилища данных последовательно оптимизировалась для производительности. Рекомендации тесно интегрированы с [Azure Advisor,](https://docs.microsoft.com/azure/advisor/advisor-performance-recommendations) чтобы предоставить вам лучшие практики непосредственно на [портале Azure.](https://aka.ms/Azureadvisor) Synapse S'L собирает телеметрию и всплывает рекомендации для вашей активной рабочей нагрузки на ежедневную каденцию. Ниже описаны сценарии рекомендаций с поддержкой, а также как применять рекомендуемые действия.
 
 Вы можете [проверить свои рекомендации](https://aka.ms/Azureadvisor) сегодня! Сейчас эта функция применяется только к хранилищам данных 2-го поколения. 
 

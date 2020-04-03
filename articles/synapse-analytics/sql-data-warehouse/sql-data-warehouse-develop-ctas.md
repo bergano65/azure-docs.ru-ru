@@ -1,6 +1,6 @@
 ---
 title: CREATE TABLE AS SELECT (CTAS)
-description: Объяснение и примеры заявления CREATE TABLE AS SELECT (CTAS) в s'L Analytics для разработки решений.
+description: Объяснение и примеры заявления CREATE TABLE AS SELECT (CTAS) в Synapse S'L для разработки решений.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,24 +11,24 @@ ms.date: 03/26/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seoapril2019, azure-synapse
-ms.openlocfilehash: bb9ff52bd7d2e4cfd1a1df4d780a4c369380284f
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: e5dc8835a6d5f235cf269edd4e9f069c904e1b7e
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350607"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582148"
 ---
-# <a name="create-table-as-select-ctas-in-sql-analytics"></a>CREATE TABLE AS SELECT (CTAS) в аналитике S'L
+# <a name="create-table-as-select-ctas"></a>CREATE TABLE AS SELECT (CTAS)
 
-В этой статье поясняется заявление CREATE TABLE AS SELECT (CTAS) T-S'L в s'L Analytics для разработки решений. Здесь также приведены примеры кодов.
+В этой статье поясняется заявление CREATE TABLE AS SELECT (CTAS) T-S'L в Synapse S'L для разработки решений. Здесь также приведены примеры кодов.
 
 ## <a name="create-table-as-select"></a>CREATE TABLE AS SELECT
 
-Заявление [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) (CTAS) является одной из наиболее важных доступных функций T-S'L. CTAS — это параллельная операция, которая создает новую таблицу на основе вывода оператора SELECT. CTAS — это самый простой и быстрый способ создания и вставки данных в таблицу с одной командой.
+Заявление [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (CTAS) является одной из наиболее важных доступных функций T-S'L. CTAS — это параллельная операция, которая создает новую таблицу на основе вывода оператора SELECT. CTAS — это самый простой и быстрый способ создания и вставки данных в таблицу с одной командой.
 
 ## <a name="selectinto-vs-ctas"></a>Выберите... ИНТО vs. CTAS
 
-CTAS является более настраиваемой версией [SELECT... Заявление INTO.](/sql/t-sql/queries/select-into-clause-transact-sql)
+CTAS является более настраиваемой версией [SELECT... Заявление INTO.](/sql/t-sql/queries/select-into-clause-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 Ниже приводится пример простого SELECT ... В:
 
@@ -123,7 +123,7 @@ DROP TABLE FactInternetSales_old;
 
 ## <a name="use-ctas-to-work-around-unsupported-features"></a>Используйте CTAS для работы с неподдерживаемыми функциями
 
-Вы также можете использовать CTAS для работы над рядом неподдерживаемых функций, перечисленных ниже. Этот метод часто может оказаться полезным, потому что ваш код не только будет соответствовать требованиям, но и часто будет работать быстрее на S'L Analytics. Эта производительность является результатом его полностью параллельного дизайна. Сценарии включают в себя:
+Вы также можете использовать CTAS для работы над рядом неподдерживаемых функций, перечисленных ниже. Этот метод часто может оказаться полезным, потому что ваш код не только будет соответствовать, но он часто будет работать быстрее на Synapse S'L. Эта производительность является результатом его полностью параллельного дизайна. Сценарии включают в себя:
 
 * Синтаксис соединения ANSI с операторами обновления
 * Синтаксис соединения ANSI с операторами удаления
@@ -174,7 +174,7 @@ ON    [acs].[EnglishProductCategoryName]    = [fis].[EnglishProductCategoryName]
 AND    [acs].[CalendarYear]                = [fis].[CalendarYear];
 ```
 
-Аналитика s'L не поддерживает присоединение `FROM` ANSI `UPDATE` в пункте оператора, поэтому вы не можете использовать предыдущий пример, не изменяя его.
+Синапсе S'L не поддерживает присоединение ANSI в `FROM` пункте оператора, поэтому вы не можете использовать предыдущий `UPDATE` пример, не изменяя его.
 
 Вы можете использовать комбинацию CTAS и неявного соединения, чтобы заменить предыдущий пример:
 
@@ -208,7 +208,7 @@ DROP TABLE CTAS_acs;
 
 ## <a name="ansi-join-replacement-for-delete-statements"></a>Замена синтаксиса соединения ANSI для операторов удаления
 
-Иногда лучшим подходом для удаляния данных `DELETE` является использование CTAS, особенно для инструкций, которые используют синтаксис ANSI. Это связано с тем, что аналитика не `FROM` поддерживает присоединение ANSI к пункту `DELETE` заявления. Вместо того, чтобы удалять данные, выберите данные, которые вы хотите сохранить.
+Иногда лучшим подходом для удаляния данных `DELETE` является использование CTAS, особенно для инструкций, которые используют синтаксис ANSI. Это происходит потому, что Synapse S'L не `FROM` поддерживает `DELETE` присоединение ANSI к пункту заявления. Вместо того, чтобы удалять данные, выберите данные, которые вы хотите сохранить.
 
 Ниже приводится пример преобразованной `DELETE` оператора:
 
@@ -412,9 +412,9 @@ OPTION (LABEL = 'CTAS : Partition IN table : Create');
 
 Вы можете видеть, что согласованность типа и поддержание свойств недействительности на CTAS является передовой инженерной практикой. Это помогает поддерживать целостность в расчетах, а также гарантирует, что переключение разделов возможно.
 
-CTAS является одним из наиболее важных заявлений в S'L Analytics. Научитесь его применять. Смотрите [документацию CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse).
+CTAS является одним из наиболее важных утверждений в Synapse S'L. Научитесь его применять. Смотрите [документацию CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
 

@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: dapine
-ms.openlocfilehash: 692f70e4666416f34a6e3f32fd5804d4aeb63a5b
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: d7ce77404359b32effcc7a5da3f9429e9fdf7005
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80477830"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618580"
 ---
 # <a name="azure-cognitive-services-support-and-feedback-options"></a>Поддержка когнитивных служб Azure и варианты обратной связи
 
-Вы только начинаете изучать функциональность когнитивных служб Azure? Возможно, вы внедряете новую функцию в приложение. Или после использования службы, есть ли у вас предложения о том, как ее улучшить? Вот варианты, где вы можете получить поддержку, оставаться в курсе, и дать обратную связь для когнитивных услуг.
+Вы только начинаете изучать функциональность когнитивных служб Azure? Возможно, вы внедряете новую функцию в приложение. Или после использования службы, есть ли у вас предложения о том, как ее улучшить? Ниже приведены варианты, где вы можете получить поддержку, оставаться в курсе событий, давать обратную связь и сообщать об ошибках для Cognitive Services.
 
 ## <a name="get-support"></a>Получение поддержки
 
@@ -83,7 +83,7 @@ ms.locfileid: "80477830"
 
  - [Custom Vision](custom-vision-service/release-notes.md)
  - [Распознавание лиц](face/releasenotes.md)
- - [Распознавание речи (LUIS)](luis/whats-new.md)
+ - [Распознавание речи (LUIS)](LUIS/whats-new.md)
  - [Службы "Речь"](speech-service/releasenotes.md)
  - [Речевые услуги SDK](speech-service/devices-sdk-release-notes.md)
  - [Анализ текста](text-analytics/whats-new.md)

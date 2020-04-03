@@ -11,15 +11,16 @@ ms.date: 04/17/2018
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 05d5e4f7334c6a9ef7a4f9e8ce7acbdf007a6a44
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: f3d5076b8ca4e1c79451bfe3bcd1dbe554b17a88
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351439"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586471"
 ---
 # <a name="azure-synapse-analytics-data-management-partners"></a>Партнеры По управлению данными Azure Synapse Analytics
-Для создания решения для склада данных с использованием функции «Аналитика» Azure Synapse у вас есть широкий спектр ведущих в отрасли инструментов на выбор. В этой статье освещаются компании-партнеры Майкрософт с инструментами управления данными и решениями, поддерживающими Azure Synapse.
+
+Для создания решения для склада данных, используя функцию пула Synapse S'L Azure Synapse, у вас есть широкий спектр ведущих в отрасли инструментов на выбор. В этой статье освещаются компании-партнеры Майкрософт с инструментами управления данными и решениями, поддерживающими Azure Synapse.
 
 ## <a name="data-management-partners"></a>Партнеры по управлению данными
 | Партнер | Описание | Ссылка на веб-сайт/продукт |
@@ -31,7 +32,7 @@ ms.locfileid: "80351439"
 | ![Redpoint Global](./media/sql-data-warehouse-partner-data-management/redpoint-global-logo.png) |**RedPoint Data Management**<br>RedPoint Data Management позволяет маркетологам применять все свои данные для привлечения клиентов через канал при выполнении структурированного и неструктурированного управления данными. Воспользовавшись преимуществами Azure Synapse и RedPoint, вы можете максимизировать ценность структурированных и неструктурированных данных для передачи гиперперсонализированных контекстуальных взаимодействий, необходимых для привлечения сегодняшнего клиента omni-channel. Интерфейс обеспечивает перетаскивание данных и упрощает процесс управления данными. |[Страница продукта](http://www.redpoint.net/products/data-management-solutions/)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/redpoint-global/redpoint-rpdm/)<br> |
 | ![Sentry One](./media/sql-data-warehouse-partner-data-management/sql-sentry-logo.png) |**SentryOne (DW Sentry)**<br>Благодаря интеллектуальной панели мониторинга перемещения данных и календарю событий вы всегда будете знать, что влияет на вашу рабочую нагрузку. Это решение представляет подробные сведения о запросах и заданиях, выполняемых для загрузки, резервного копирования или восстановления данных. Таким образом, вы больше не будете беспокоиться о том, эффективно ли вы используете ресурсы Azure. |[Страница продукта](https://sentryone.com/platform/azure-sql-dw-performance-monitoring/)<br>[Azure Marketplace](https://sentryone.com/platform/azure-sql-dw-performance-monitoring/)<br> |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о других партнерах приведены в статьях [Партнеры по бизнес-аналитике хранилища данных SQL](sql-data-warehouse-partner-business-intelligence.md) и [Партнеры по управлению данными хранилища данных SQL](sql-data-warehouse-partner-data-integration.md).
 
 

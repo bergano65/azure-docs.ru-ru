@@ -11,12 +11,12 @@ author: jpe316
 ms.author: jordane
 ms.date: 03/17/2020
 ms.custom: seodec18
-ms.openlocfilehash: 40e335ee0377c560b15a588269cbdb39cdebca82
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f5aaf8adf33d27f8ebb99c8ca3a873d958632a4f
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79477363"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80616846"
 ---
 # <a name="mlops-model-management-deployment-and-monitoring-with-azure-machine-learning"></a>MLOps: Управление моделью, развертывание и мониторинг с помощью машинного обучения Azure
 
@@ -185,7 +185,7 @@ Azure ML публикует ключевые события для Azure EventGr
 
 Можно также использовать фабрику данных Azure для создания конвейера приема данных, который готовит данные для использования с обучением. Для получения дополнительной [Data ingestion pipeline](how-to-cicd-data-ingestion.md)информации см.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше, прочитав и исследуя следующие ресурсы:
 

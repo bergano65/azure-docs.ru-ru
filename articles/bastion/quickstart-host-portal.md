@@ -2,17 +2,17 @@
 title: 'Быстрый запуск: Подключение к виртуальной машине с помощью частного IP-адреса: Azure Bastion'
 description: В этой статье узнайте, как создать хост Azure Bastion из виртуальной машины и безопасно подключиться с помощью частного IP-адреса.
 services: bastion
-author: cherylmc
+author: charwen
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.author: cherylmc
-ms.openlocfilehash: 0b4f0a1fa4f9cce05aa544bb24e045209a6d24ef
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: charwen
+ms.openlocfilehash: a420a3253040fff8b767a81f298ede283c1d214b
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79137464"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619257"
 ---
 # <a name="quickstart-connect-to-a-virtual-machine-using-a-private-ip-address-and-azure-bastion"></a>Быстрый запуск: Подключение к виртуальной машине с помощью частного IP-адреса и Azure Bastion
 
@@ -25,7 +25,7 @@ ms.locfileid: "79137464"
 
 ### <a name="example-values"></a>Примеры значений
 
-|**Название** | **Значение** |
+|**имя**; | **Значение** |
 | --- | --- |
 | name |  VNet1Басция |
 | Регион | eastus |
@@ -34,10 +34,10 @@ ms.locfileid: "79137464"
 | Адреса AzureureBastionSubnet |  10.1.254.0/27 |
 | Общедоступный IP-адрес |  Создание |
 | Имя общедоступного IP-адреса | VNet1БаситионPIP  |
-| Общественный IP-адрес SKU |  Standard  |
+| Общественный IP-адрес SKU |  Стандартный  |
 | Назначение  | Статические |
 
-## <a name="create-a-bastion-host"></a><a name="createvmset"></a>Создание бастиона
+## <a name="create-a-bastion-host"></a><a name="createvmset"></a>Создание узла-бастиона
 
 При создании узла бастиона на портале с помощью существующей виртуальной машины различные настройки автоматически по умолчанию соответствуют вашей виртуальной машине и/или виртуальной сети.
 
@@ -87,7 +87,7 @@ ms.locfileid: "79137464"
 
 3. Введите *TestRG1* для **TYPE THE RESOURCE GROUP NAME** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом quickstart вы создали хост Bastion для вашей виртуальной сети, а затем подключились к виртуальной машине надежно через хост Bastion.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 9e254e2a06ea5a0d886072f4e9e3b7d275e4860e
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: 9be3b2c9b2624d4cd758081703373a433861e4a7
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80422841"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585315"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Используйте PowerShell для управления каталогами, файлами и ACL в Azure Data Lake Storage 2 (предварительный просмотр)
 
@@ -46,7 +46,7 @@ ms.locfileid: "80422841"
 2. Установите новейший модуль **PowershellGet.** Затем закройте и вновь откройте консоль PowerShell.
 
    ```powershell
-   install-Module PowerShellGet –Repository PSGallery –Force 
+   Install-Module PowerShellGet –Repository PSGallery –Force 
    ```
 
 3. Установка модуля предварительного просмотра **Az.Storage.**

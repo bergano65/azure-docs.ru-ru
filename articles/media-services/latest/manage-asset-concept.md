@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/26/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: fcdb8af770fa0068e8413d4609a56223a9a20ce2
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 9136fd702fad5c12a8ec97a68ff8a592a203d7d2
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345900"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582198"
 ---
 # <a name="manage-assets"></a>Управление активами
 
@@ -60,7 +60,7 @@ ms.locfileid: "80345900"
 
     **AssetContainerSas.listContainerSas** принимает параметр [ListContainerSasInput,](https://docs.microsoft.com/rest/api/media/assets/listcontainersas#listcontainersasinput) на который вы устанавливаете. `expiryTime` Время должно быть установлено до < 24 часов.
 
-    [ListContainerSasInput](https://docs.microsoft.com/rest/api/media/assets/listcontainersas#listcontainersasinput) возвращает несколько URL-адресов SAS, так как для каждой учетной записи хранилища имеются два ключа учетной записи хранения. Учетная запись хранилища имеет два ключа, поскольку она позволяет беспрепятственно врать ключи учетной записи хранилища (например, изменить один при использовании другого, а затем начать использовать новый ключ и повернуть другой ключ). Первый URL SAS представляет ключ хранения1 и второй ключ хранения2.
+    [ListContainerSasInput](https://docs.microsoft.com/rest/api/media/assets/listcontainersas#listcontainersasinput) возвращает несколько URL-адресов SAS, так как для каждой учетной записи хранилища имеются два ключа учетной записи хранения. Учетная запись хранилища имеет два ключа, поскольку она помогает при сбой и бесшовное вращение ключей учетной записи хранилища. Первый URL SAS представляет первый ключ учетной записи хранилища, а второй URL SAS — второй ключ.
 3. Для загрузки файлов в контейнер активов используйте apIs-данные хранения Azure или SDK (например, [API REST хранилища или](../../storage/common/storage-rest-api-auth.md) [.NET SDK).](../../storage/blobs/storage-quickstart-blobs-dotnet.md)
 4. Используйте API Служб мультимедиа версии 3, чтобы создать преобразование и задание для обработки входного ресурса. Для получения дополнительной [информации см.](transform-concept.md)
 5. Потоковая передача содержимого из выходного ресурса.
@@ -109,7 +109,7 @@ curl -X PUT \
 
 В Media Services объект [Live Output](https://docs.microsoft.com/rest/api/media/liveoutputs) подосевается цифровым видеорегистратором, который будет ловить и записывать ваш живой поток в актив в вашей учетной записи Media Services. Записанное содержимое сохраняется в контейнере, определенном ресурсом [актива.](https://docs.microsoft.com/rest/api/media/assets)
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 * [Использование DVR в облаке](live-event-cloud-dvr.md)
 * [Потоковое живое обучение](stream-live-tutorial-with-api.md)
@@ -118,7 +118,7 @@ curl -X PUT \
 
 В Службах медиа при обработке видео (например, кодировании или анализе) необходимо создать выходный [актив](assets-concept.md) для хранения результата [вашей работы.](transforms-jobs-concept.md)
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 * [Кодирование видео](encoding-concept.md)
 * [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md)
@@ -127,7 +127,7 @@ curl -X PUT \
 
 Чтобы опубликовать актив для потоковой передачи, необходимо создать [потоковое Locator.](streaming-locators-concept.md) Потоковое локатор анавидное может знать имя актива, которое вы хотите опубликовать. 
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 [Учебник: Загрузка, кодирование и потоковое видео с медиа-сервисами v3](stream-files-tutorial-with-api.md)
 
@@ -141,7 +141,7 @@ curl -X PUT \
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Смотрите полный пример кода, которые демонстрируют, как загружать, кодировать, анализировать, транслировать в прямом эфире и по требованию: 
 

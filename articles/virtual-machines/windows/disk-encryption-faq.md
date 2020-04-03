@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 11/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: ea2a66a6b012664a9596a02ea32c1a0b677ee3ea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5cc6a3d8d736209f762959bca6f8ad379c14203f
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74384264"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582710"
 ---
 # <a name="azure-disk-encryption-for-windows-vms-faq"></a>Лазурный диск шифрование для Windows VMs часто задаваемые вопросы
 
@@ -36,7 +36,7 @@ ms.locfileid: "74384264"
 
 ## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Какие размеры VM и операционные системы поддерживают шифрование Azure Disk?
 
-В статье, опубликованной в обзоре [шифрования azure Disk,](disk-encryption-overview.md) [перечислены размеры VM](disk-encryption-overview.md#supported-vm-sizes) и [операционные системы VM,](disk-encryption-overview.md#supported-operating-systems) поддерживающие шифрование Azure Disk.
+В статье, опубликованной в обзоре [шифрования azure Disk,](disk-encryption-overview.md) [перечислены размеры VM](disk-encryption-overview.md#supported-vms) и [операционные системы VM,](disk-encryption-overview.md#supported-operating-systems) поддерживающие шифрование Azure Disk.
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
@@ -53,7 +53,7 @@ ms.locfileid: "74384264"
 Чтобы повернуть секреты, просто позвоните по той же команде, что и первоначально для включения шифрования диска, указывая другой Key Vault. Чтобы повернуть ключ шифрования, позвоните той же команде, что и первоначально для включения шифрования диска, с указанием нового шифрования ключа. 
 
 >[!WARNING]
-> - Если ранее вы использовали [шифрование Azure Disk с приложением Azure AD,](disk-encryption-windows-aad.md) указав учетные данные Azure AD для шифрования этого VM, вам придется продолжать использовать эту опцию для шифрования VM. На этой зашифрованной виртуальной машине нельзя использовать шифрование дисков Azure, так как этот сценарий не работает — переключение из приложения AAD для данной зашифрованной виртуальной машины сейчас не поддерживается.
+> - Если ранее вы использовали [шифрование Azure Disk с приложением Azure AD,](disk-encryption-windows-aad.md) указав учетные данные Azure AD для шифрования этого VM, вам придется продолжать использовать эту опцию для шифрования VM. Вы не можете использовать шифрование Azure Disk на этом зашифрованном VM, так как это не поддерживается сценарий, то есть отключение от приложения AAD для этого зашифрованного VM еще не поддерживается.
 
 ## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Как добавить или удалить ключ шифрования, если я изначально его не использовал?
 
@@ -100,7 +100,7 @@ ms.locfileid: "74384264"
 
 Лазурное шифрование выбирает метод шифрования в BitLocker на основе версии Windows следующим образом:
 
-| Версии для Windows                 | Версия | Метод шифрования        |
+| Версии для Windows                 | Version | Метод шифрования        |
 |----------------------------------|--------|--------------------------|
 | Windows Server 2012, Windows 10 или больше  | >No1511 |XTS-AES 256 бит           |
 | Windows Server 2012, Windows 8, 8.1, 10 | < 1511 г. |AES 256 бит              |
@@ -121,7 +121,7 @@ ms.locfileid: "74384264"
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Обзор шифрования дисков Azure](disk-encryption-overview.md)

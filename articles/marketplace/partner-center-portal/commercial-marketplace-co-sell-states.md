@@ -1,26 +1,26 @@
 ---
-title: Коды со-продажи государственных кодов Лазурный рынок
-description: Используйте эти коды состояния/провинции при предоставлении контактной информации на странице со-продажи вашего предложения.
+title: Коды со-продажи государственных и провинциальных кодов Лазурный рынок
+description: Используйте эти коды состояния и провинции при предоставлении контактной информации на странице совместной продажи вашего предложения.
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 08/27/2019
-ms.openlocfilehash: f87014a599afd6d1c56d175b92d4da1ea49d9470
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.openlocfilehash: 782f2d6facb28630989f086a68c551314e02e48e
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80277045"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619362"
 ---
-# <a name="co-sell-state-codes"></a>Совместнопродавать государственные коды
+# <a name="co-sell-state-and-province-codes"></a>Коды со-продажи государственных и провинциальных кодов
 
 Если это применимо, используйте эти коды для предоставления информации о состоянии/провинции при [предоставлении контактной информации на странице со-продажи вашего предложения.](commercial-marketplace-co-sell.md#contacts)
 
-## <a name="stateprovince-table"></a>Таблица штатов/провинций
+## <a name="us-states-and-territories"></a>Американские штаты и территории
 
-|   Имя государства/провинции               |   Код    |
+|   Название государства и территории          |   Код    |
 |-------------------------------------|-----------|
 | Алабама                             | США-АЛ     |
 | Alaska                              | US-AK     |
@@ -78,8 +78,41 @@ ms.locfileid: "80277045"
 | Северные Марианские острова            | US-MP     |
 | Пуэрто-Рико                         | US-PR     |
 | Внешние малые острова США | США-УМ    |
-|Виргинские острова, США                 | US-VI     |
+| Виргинские острова, США                 | US-VI    |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="canadian-provinces-and-territories"></a>Канадские провинции и территории
+
+|   Название провинции и территории       |   Код    |
+|-------------------------------------|-----------|
+| Alberta                             |  CA-AB    |
+| British Columbia                    |  CA-BC    |
+| Manitoba                            |  CA-MB    |
+| New Brunswick                       |  CA-NB    |
+| Newfoundland and Labrador           |  CA-NL    |
+| Nova Scotia                         |  CA-NS    |
+| Ontario                             |  CA-ON    |
+| Prince Edward Island                |  CA-PE    |
+| Quebec                              |  CA-QC    |
+| Saskatchewan                        |  CA-SK    |
+| Northwest Territories               |  CA-NT    |
+| Nunavut                             |  CA-NU    |
+| Yukon                               |  CA-YT    |
+
+
+## <a name="australian-states-and-territories"></a>Австралийские штаты и территории
+
+|   Название государства и территории          |   Код    |
+|-------------------------------------|-----------|
+| Новый Южный Уэльс                     |  AU-NSW   |
+| Queensland                          |  AU-QLD   |
+| South Australia                     |  AU-SA    |
+| Tasmania                            |  AU-TAS   |
+| Виктория                            |  AU-VIC   |
+| Western Australia                   |  AU-WA    |
+| Australian Capital Territory        |  AU-ACT   |
+| Northern Territory                  |  AU-NT    |
+
+
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о [опционе на совместное продажу в Partner Center.](./commercial-marketplace-co-sell.md)

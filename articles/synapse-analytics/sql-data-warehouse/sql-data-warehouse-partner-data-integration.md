@@ -11,17 +11,19 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 08df8266cc3ef8ba1b20efcf135e502a9df69e80
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 587b2aa23aa822f44d7763cbfec21eb36055b091
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351485"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80583709"
 ---
 # <a name="azure-synapse-analytics-data-integration-partners"></a>Партнеры по интеграции данных Azure Synapse Analytics
-Для создания решения для склада данных с использованием функции «Аналитика» Azure Synapse можно выбрать из широкого спектра ведущих в отрасли инструментов. В этой статье представлены компании-партнеры Майкрософт с официальными решениями по интеграции данных, поддерживающими Azure Synapse.
+
+Для создания решения для склада данных с использованием функции пула Synapse S'L Azure Synapse можно выбрать из широкого спектра ведущих в отрасли инструментов. В этой статье представлены компании-партнеры Майкрософт с официальными решениями по интеграции данных, поддерживающими Azure Synapse.
 
 ## <a name="data-integration-partners"></a>Партнеры по интеграции данных
+
 | Партнер | Описание | Ссылка на веб-сайт/продукт |
 | ------- | ----------- | -------------------- |
 | ![Alooma](./media/sql-data-warehouse-partner-data-integration/alooma_logo.png) |**Alooma**<br> Alooma — это решение Extract, Transform и Load (ETL), которое позволяет группам данных интегрировать, обогащать и передавать данные из различных силосов данных в хранилище данных Azure Synapse в режиме реального времени. |[Страница продукта](https://www.alooma.com/) |
@@ -42,5 +44,5 @@ ms.locfileid: "80351485"
 | ![ГдеПейзаж](./media/sql-data-warehouse-partner-data-integration/wherescape_logo.png) |**Wherescape RED**<br> WhereScape RED — это IDE, предоставляющий командам инструменты автоматизации для оптимизации рабочих процессов ETL. IDE обеспечивает наилучшую практику, оптимизированный родной код для популярных целей данных. Используйте WhereScape RED, чтобы сократить время разработки, развертывания и эксплуатации инфраструктуры данных.|[Страница продукта](https://www.wherescape.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/wherescapesoftware.wherescape-red?source=datamarket&tab=Overview) |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о других партнерах см. в статьях [Партнеры по бизнес-аналитике хранилища данных SQL](sql-data-warehouse-partner-business-intelligence.md) и [Партнеры по управлению данными хранилища данных SQL](sql-data-warehouse-partner-data-management.md).

@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 01/30/2019
 ms.author: maquaran
-ms.openlocfilehash: 9252e3e41d0c639231a2abe20202499c6b3ee32a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5820778d46f5701b82bb289192350a9e13739d37
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75444858"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619442"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
 
@@ -26,7 +26,7 @@ ms.locfileid: "75444858"
 > * [Async Java](sql-api-sdk-async-java.md)
 > * [Java](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [Остальные](https://docs.microsoft.com/rest/api/cosmos-db/)
+> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
 > * [Массовый исполнитель - .NET](sql-api-sdk-bulk-executor-dot-net.md)
@@ -34,7 +34,7 @@ ms.locfileid: "75444858"
 
 |   |   |
 |---|---|
-|**Загрузка SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/)|
+|**Загрузка SDK**|[Nuget](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/)|
 |**Документация API**|[Справочная документация по изменению API библиотеки обработчика веб-каналов](/dotnet/api/microsoft.azure.documents.changefeedprocessor?view=azure-dotnet)|
 |**Начало работы**|[Начало работы с пакетом SDK для обработчика канала изменений в .NET](change-feed.md)|
 |**Текущая поддерживаемая платформа**| [Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)</br> [Microsoft .NET Core](https://www.microsoft.com/net/download/core) |
@@ -45,6 +45,10 @@ ms.locfileid: "75444858"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="v2-builds"></a>Сборки версии 2
+
+### <a name="230"></a><a name="2.3.0"/>2.3.0
+* Добавлен новый `ChangeFeedProcessorBuilder.WithCheckpointPartitionProcessorFactory` метод и `ICheckpointPartitionProcessorFactory`соответствующий публичный интерфейс. Это позволяет реализации `IPartitionProcessor` интерфейса использовать встроенный механизм контрольной точки. Новая фабрика похожа на `IPartitionProcessorFactory`существующую, `Create` за исключением того, что ее метод также принимает `ILeaseCheckpointer` параметр.
+* Только один из двух методов, либо, `ChangeFeedProcessorBuilder.WithPartitionProcessorFactory` или `ChangeFeedProcessorBuilder.WithCheckpointPartitionProcessorFactory` `ChangeFeedProcessorBuilder` , могут быть использованы для одного и того же экземпляра.
 
 ### <a name="228"></a><a name="2.2.8"/>2.2.8
 * Улучшения стабильности и диагностизируемости:
@@ -88,7 +92,7 @@ ms.locfileid: "75444858"
 
 ### <a name="220"></a><a name="2.2.0"/>2.2.0
 * Добавлена поддержка для секционированных коллекций аренд. Ключ секции должен быть определен как /id.
-* Небольшое критическое изменение: методы интерфейса IChangeFeedDocumentClient и класса ChangeFeedDocumentClient были изменены для включения параметров RequestOptions и CancellationToken. IChangeFeedDocumentClient является передовой точкой расширяемости, которая позволяет обеспечить пользовательскую реализацию клиента документа для использования с процессором Change Feed, например, украсить DocumentClient и перехватить все звонки на него, чтобы сделать дополнительную трассировку, обработку ошибок Др. С этим обновлением код, реализуемый IChangeFeedDocumentClient, должен быть изменен, чтобы включить новые параметры в реализацию.
+* Небольшое критическое изменение: методы интерфейса IChangeFeedDocumentClient и класса ChangeFeedDocumentClient были изменены для включения параметров RequestOptions и CancellationToken. IChangeFeedDocumentClient является передовой точкой расширяемости, которая позволяет обеспечить пользовательскую реализацию документа Клиента для использования с процессором Change Feed, например, украсить DocumentClient и перехватить все звонки на него, чтобы сделать дополнительную трассировку, обработку ошибок и т.д. С этим обновлением код, реализуемый IChangeFeedDocumentClient, должен быть изменен, чтобы включить новые параметры в реализацию.
 * Незначительные улучшения системы диагностики.
 
 ### <a name="210"></a><a name="2.1.0"/>2.1.0
@@ -180,19 +184,20 @@ ms.locfileid: "75444858"
 
 <br/>
 
-| Версия | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.3.0](#2.3.0) |2 апреля 2020 г. |--- |
 | [2.2.8](#2.2.8) |28 октября 2019 года |--- |
 | [2.2.7](#2.2.7) |14 мая 2019 г. |--- |
 | [2.2.6](#2.2.6) |29 января 2019 г. |--- |
 | [2.2.5](#2.2.5) |13 декабря 2018 г. |--- |
 | [2.2.4](#2.2.4) |29 ноября 2018 г. |--- |
-| [2.2.3](#2.2.3) |19 ноября 2018 г. |--- |
+| [2.2.3](#2.2.3) |19 ноября 2018 г. |--- |
 | [2.2.2](#2.2.2) |31 октября 2018 г. |--- |
-| [2.2.1](#2.2.1) |24 октября 2018 г. |--- |
+| [2.2.1](#2.2.1) |24 октября 2018 г. |--- |
 | [1.3.3](#1.3.3) |8 мая 2018 г. |--- |
-| [1.3.2](#1.3.2) |18 апреля 2018 г. |--- |
-| [1.3.1](#1.3.1) |13 марта 2018 г. |--- |
+| [1.3.2](#1.3.2) |18 апреля 2018 г. |--- |
+| [1.3.1](#1.3.1) |13 марта 2018 г. |--- |
 | [1.2.0](#1.2.0) |31 октября 2017 г. |--- |
 | [1.1.1](#1.1.1) |29 августа 2017 г. |--- |
 | [1.1.0](#1.1.0) |13 августа 2017 г. |--- |

@@ -2,17 +2,17 @@
 title: 'Копировать и вставить в и из виртуальной машины: Azure Бастион'
 description: В этой статье узнайте, как копировать и вставить в и из Azure VM с помощью Bastion.
 services: bastion
-author: cherylmc
+author: charwen
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 02/03/2020
-ms.author: cherylmc
-ms.openlocfilehash: 0aaf816cdfe7d42fd345eb4f010cf47b1615f462
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: charwen
+ms.openlocfilehash: 0af0fdfa1b0bcbb06d9424390e7ca8c8f406bcb3
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76989541"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619306"
 ---
 # <a name="copy-and-paste-to-a-virtual-machine-azure-bastion"></a>Копировать и вставить в виртуальную машину: Azure Bastion
 
@@ -54,6 +54,6 @@ ms.locfileid: "76989541"
 
    ![вставка](./media/bastion-vm-manage/local2.png)
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Читайте [Бастион часто задаваемые вопросы](bastion-faq.md).

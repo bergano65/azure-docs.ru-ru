@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/13/2019
-ms.openlocfilehash: b4601968a318388086a60ef98e4359ae01f652ed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.openlocfilehash: 265179909c8ae4a6fa630b835bc9993f042d6460
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77662108"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585698"
 ---
 # <a name="azure-monitor-log-query-language-differences"></a>Различия в языках запросов журнала Azure Monitor
 
@@ -41,7 +41,6 @@ ms.locfileid: "77662108"
 ### <a name="operators-not-supported-in-azure-monitor"></a>Операторы, которые не поддерживаются в Azure Monitor:
 
 * [Кросс-кластерНое соединение](/azure/kusto/query/joincrosscluster)
-* [оператор externaldata](/azure/kusto/query/externaldata-operator).
 
 ### <a name="plugins-not-supported-in-azure-monitor"></a>Подключаемые модули, которые не поддерживаются в Azure Monitor:
 
@@ -55,7 +54,7 @@ ms.locfileid: "77662108"
 * [приложение()](app-expression.md)
 * [рабочее пространство()](workspace-expression.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](query-language.md).
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).
