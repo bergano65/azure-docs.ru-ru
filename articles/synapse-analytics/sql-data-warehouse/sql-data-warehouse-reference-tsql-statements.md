@@ -1,6 +1,6 @@
 ---
 title: Инструкции Т-SQL
-description: Ссылки на документацию для заявлений T-S'L, поддерживаемые в S'L Analytics.
+description: Ссылки на документацию для заявлений T-S'L, поддерживаемые в пуле Synapse S'L.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,25 +11,27 @@ ms.date: 05/01/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 53609049f69f0a3d50430ef512a5bf4a8ffd6d82
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 011a850a44948bf5eee28a40d59dcf7672d866e8
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351353"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586368"
 ---
-# <a name="t-sql-statements-supported-in-sql-analytics"></a>Заявления, поддерживаемые Т-СЗЛ, в аналитике S'L
-Ссылки на документацию для заявлений T-S'L, поддерживаемые в S'L Analytics.
+# <a name="t-sql-statements-supported-in-synapse-sql-pool"></a>Заявления т-СЗЛ, поддерживаемые в пуле Synapse S'L
+
+Ссылки на документацию для заявлений T-S'L, поддерживаемые в пуле Synapse S'L.
 
 ## <a name="data-definition-language-ddl-statements"></a>Инструкции языка описания данных DDL
-* [ALTER DATABASE](https://msdn.microsoft.com/library/mt204042.aspx)
+
+* [ИЗМЕНИТЬ БАЗУ ДАННЫХ](https://msdn.microsoft.com/library/mt204042.aspx)
 * [ALTER INDEX](https://msdn.microsoft.com/library/ms188388.aspx)
 * [ALTER MATERIALIZED VIEW](/sql/t-sql/statements/alter-materialized-view-transact-sql?view=azure-sqldw-latest) (Предварительный просмотр) 
 * [ALTER PROCEDURE](https://msdn.microsoft.com/library/ms189762.aspx)
 * [ALTER SCHEMA](https://msdn.microsoft.com/library/ms173423.aspx)
 * [ИЗМЕНИТЬ ТАБЛИЦУ](https://msdn.microsoft.com/library/ms190273.aspx)
 * [CREATE COLUMNSTORE INDEX](https://msdn.microsoft.com/library/gg492153.aspx)
-* [CREATE DATABASE](https://msdn.microsoft.com/library/mt204021.aspx)
+* [СОЗДАНИЕ БАЗЫ ДАННЫХ](https://msdn.microsoft.com/library/mt204021.aspx)
 * [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
 * [CREATE EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
 * [СОЗДАНИЕ ВНЕШНЕГО ФОРМАТА ФАЙЛА](https://msdn.microsoft.com/library/dn935026.aspx)
@@ -39,10 +41,10 @@ ms.locfileid: "80351353"
 * [Создание МАТЕРИАЛИЗОВАННОГО VIEW по выбору](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest) (Предварительный просмотр) 
 * [CREATE PROCEDURE](https://msdn.microsoft.com/library/ms187926.aspx)
 * [CREATE SCHEMA](https://msdn.microsoft.com/library/ms189462.aspx)
-* [CREATE STATISTICS](https://msdn.microsoft.com/library/ms188038.aspx)
+* [СОЗДАНИЕ СТАТИСТИКИ](https://msdn.microsoft.com/library/ms188038.aspx)
 * [СОЗДАТЬ ТАБЛИЦУ](https://msdn.microsoft.com/library/mt203953.aspx)
 * [CREATE TABLE AS SELECT](https://msdn.microsoft.com/library/mt204041.aspx)
-* [CREATE VIEW](https://msdn.microsoft.com/library/ms187956.aspx)
+* [СОЗДАНИЕ ПРЕДСТАВЛЕНИЯ](https://msdn.microsoft.com/library/ms187956.aspx)
 * [СОЗДАНИЕ КЛАССИФИКАТОРА РАБОЧЕЙ НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql)
 * [DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/mt146367.aspx)
 * [DROP EXTERNAL FILE FORMAT](https://msdn.microsoft.com/library/mt146379.aspx)
@@ -50,21 +52,23 @@ ms.locfileid: "80351353"
 * [DROP INDEX](https://msdn.microsoft.com/library/ms176118.aspx)
 * [DROP PROCEDURE](https://msdn.microsoft.com/library/ms174969.aspx)
 * [DROP STATISTICS](https://msdn.microsoft.com/library/ms175075.aspx)
-* [DROP TABLE](https://msdn.microsoft.com/library/ms173790.aspx)
+* [ТАБЛИЦА СБРОСА](https://msdn.microsoft.com/library/ms173790.aspx)
 * [DROP SCHEMA](https://msdn.microsoft.com/library/ms186751.aspx)
-* [DROP VIEW](https://msdn.microsoft.com/library/ms173492.aspx)
+* [ПРЕДСТАВЛЕНИЕ КАПЛИ](https://msdn.microsoft.com/library/ms173492.aspx)
 * [СБРОСИТЬ КЛАССИФИКАТОР РАБОЧЕЙ НАГРУЗКИ](/sql/t-sql/statements/drop-workload-classifier-transact-sql)
-* [RENAME](https://msdn.microsoft.com/library/mt631611.aspx)
+* [Переименовать](https://msdn.microsoft.com/library/mt631611.aspx)
 * [SET RESULT_SET_CACHING](/sql/t-sql/statements/set-result-set-caching-transact-sql) 
 * [ТРУНКАТЕ ТАБИ](https://msdn.microsoft.com/library/ms177570.aspx)
 * [СТАТИСТИКА ОБНОВЛЕНИЯ](https://msdn.microsoft.com/library/ms187348.aspx)
 
 ## <a name="data-manipulation-language-dml-statements"></a>Инструкции языка обработки данных DML
+
 * [Удалить](https://msdn.microsoft.com/library/ms189835.aspx)
 * [Вставить](https://msdn.microsoft.com/library/ms174335.aspx)
 * [Обновление](https://msdn.microsoft.com/library/ms177523.aspx)
 
 ## <a name="database-console-commands"></a>Команды консоли базы данных
+
 * [DBCC DROPCLEANBUFFERS](https://msdn.microsoft.com/library/ms187762.aspx)
 * [DBCC DROPRESULTSETCACHE](/sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?view=azure-sqldw-latest) (Предварительный просмотр)
 * [DBCC FREEPROCCACHE](https://msdn.microsoft.com/library/mt204018.aspx)
@@ -77,7 +81,8 @@ ms.locfileid: "80351353"
 * [DBCC SHOW_STATISTICS](https://msdn.microsoft.com/library/mt204043.aspx)
 
 ## <a name="query-statements"></a>Инструкции запросов
-* [SELECT](https://msdn.microsoft.com/library/ms189499.aspx)
+
+* [Выберите](https://msdn.microsoft.com/library/ms189499.aspx)
 * [WITH обобщенное_табличное_выражение](https://msdn.microsoft.com/library/ms175972.aspx)
 * [EXCEPT и INTERSECT](https://msdn.microsoft.com/library/ms188055.aspx)
 * [Объяснить](https://msdn.microsoft.com/library/mt631615.aspx)
@@ -87,7 +92,7 @@ ms.locfileid: "80351353"
 * [HAVING](https://msdn.microsoft.com/library/ms180199.aspx)
 * [ORDER BY](https://msdn.microsoft.com/library/ms188385.aspx)
 * [Параметр](https://msdn.microsoft.com/library/ms190322.aspx)
-* [UNION](https://msdn.microsoft.com/library/ms180026.aspx)
+* [Союза](https://msdn.microsoft.com/library/ms180026.aspx)
 * [Где](https://msdn.microsoft.com/library/ms188047.aspx)
 * [TOP](https://msdn.microsoft.com/library/ms189463.aspx)
 * [Псевдонимы](https://msdn.microsoft.com/library/mt631614.aspx)
@@ -95,6 +100,7 @@ ms.locfileid: "80351353"
 * [Вложенные запросы](https://msdn.microsoft.com/library/mt631613.aspx)
 
 ## <a name="security-statements"></a>Инструкции по безопасности
+
 * Разрешения: [GRANT](https://msdn.microsoft.com/library/ms187965.aspx), [DENY](https://msdn.microsoft.com/library/ms188338.aspx), [REVOKE](https://msdn.microsoft.com/library/ms187728.aspx)
 * [ALTER AUTHORIZATION](https://msdn.microsoft.com/library/ms187359.aspx)
 * [ALTER CERTIFICATE](https://msdn.microsoft.com/library/ms189511.aspx)
@@ -119,5 +125,6 @@ ms.locfileid: "80351353"
 * [DROP USER](https://msdn.microsoft.com/library/ms189438.aspx)
 * [OPEN MASTER KEY](https://msdn.microsoft.com/library/ms174433.aspx)
 
-## <a name="next-steps"></a>Дальнейшие действия
-Для получения дополнительной справочной информации, [System views in SQL Analytics](sql-data-warehouse-reference-tsql-system-views.md)см. [T-SQL language elements in SQL Analytics](sql-data-warehouse-reference-tsql-language-elements.md)
+## <a name="next-steps"></a>Следующие шаги
+
+Для получения дополнительной справочной информации [см.](sql-data-warehouse-reference-tsql-language-elements.md) [System views in Synapse SQL pool](sql-data-warehouse-reference-tsql-system-views.md)

@@ -1,6 +1,6 @@
 ---
 title: Системные представления
-description: Ссылки на документацию для представлений систем, поддерживаемые в S'L Analytics.
+description: Ссылки на документацию для представлений систем, поддерживаемые в пуле Synapse S'L.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,17 +11,18 @@ ms.date: 01/06/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: b3089cfbd0abb4bafe160b07fd75df877d61741b
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 1cc6627599a533238aae742b0358c13e1a7eab8a
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350263"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586347"
 ---
-# <a name="system-views-supported-in-sql-analytics"></a>Системные представления, поддерживаемые в аналитике S'L
-Ссылки на документацию для заявлений T-S'L, поддерживаемые в S'L Analytics.
+# <a name="system-views-supported-in-synapse-sql-pool"></a>Системные представления, поддерживаемые в пуле Synapse S'L
 
-## <a name="sql-analytics-catalog-views"></a>Просмотры каталогов каталога S'L
+Ссылки на документацию для заявлений T-S'L, поддерживаемые в пуле Synapse S'L.
+
+## <a name="synapse-sql-pool-catalog-views"></a>Представления каталога пулов Synapse S'L
 * [sys.pdw_column_distribution_properties](https://msdn.microsoft.com/library/mt204022.aspx)
 * [sys.pdw_distributions](https://msdn.microsoft.com/library/mt203892.aspx)
 * [sys.pdw_index_mappings](https://msdn.microsoft.com/library/mt203912.aspx)
@@ -45,6 +46,7 @@ ms.locfileid: "80350263"
 * [sys.workload_management_workload_classifiers](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifiers-transact-sql)
 
 ## <a name="sql-data-warehouse-dynamic-management-views-dmvs"></a>Динамические административные представления (DMV) хранилища данных SQL
+
 * [sys.dm_pdw_dms_cores](https://msdn.microsoft.com/library/mt203911.aspx)
 * [sys.dm_pdw_dms_external_work](https://msdn.microsoft.com/library/mt204024.aspx)
 * [sys.dm_pdw_dms_workers](https://msdn.microsoft.com/library/mt203878.aspx)
@@ -65,14 +67,16 @@ ms.locfileid: "80350263"
 * [sys.dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql)
 * [sys.dm_workload_management_workload_groups_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-workload-management-workload-group-stats-transact-sql) (Предварительный просмотр)
 
-## <a name="sql-server-dmvs-applicable-to-sql-analytics"></a>DMV сервера S'L применимы к аналитике S'L
-Следующие DMV применимы к S'L Analytics, но должны быть выполнены путем подключения к **основной** базе данных.
+## <a name="sql-server-dmvs-applicable-to-synapse-sql-pool"></a>DMV сервера S'L, применимые к пулу Synapse S'L
+
+Следующие DM-ви применимы к пулу Synapse S'L, но должны быть выполнены путем подключения к **основной** базе данных.
 
 * [sys.database_service_objectives](https://msdn.microsoft.com/library/mt712619.aspx)
 * [sys.dm_operation_status](https://msdn.microsoft.com/library/dn270022.aspx)
 * [sys.fn_helpcollations()](https://msdn.microsoft.com/library/ms187963.aspx)
 
 ## <a name="sql-server-catalog-views"></a>Представления каталога SQL Server
+
 * [sys.all_columns](https://msdn.microsoft.com/library/ms177522.aspx)
 * [sys.all_objects](https://msdn.microsoft.com/library/ms178618.aspx)
 * [sys.all_parameters](https://msdn.microsoft.com/library/ms190340.aspx)
@@ -145,17 +149,18 @@ ms.locfileid: "80350263"
 * [sys.types](https://msdn.microsoft.com/library/ms188021.aspx)
 * [sys.views](https://msdn.microsoft.com/library/ms190334.aspx)
 
-## <a name="sql-server-dmvs-available-in-sql-analytics"></a>DMV сервера S'L, доступные в аналитике S'L
-Аналитика S'L предоставляет многие динамические представления управления сервера s'L Server (DMV). Эти представления, запрашиваемые в S'L Analytics, сообщают о состоянии баз данных S'L, работающих на дистрибутивах.
+## <a name="sql-server-dmvs-available-in-synapse-sql-pool"></a>DMV сервера S'L, доступные в бассейне Synapse S'L
 
-Аналитика и параллельный хранилище данных (PDW) используют одни и те же представления системы. Каждое динамическое административное представление содержит столбец с именем pdw_node_id, который является идентификатором для вычислительных узлов. 
+В пуле Synapse S'L представлены многие динамические представления управления S'L Server (DMV). Эти представления, запрашиваемые в пуле Synapse S'L, сообщают о состоянии баз данных S'L, работающих на дистрибутивах.
+
+В одном и том же общении синапсового пула S-L и параллельного хранилища данных (PDW) используются одни и те же представления системы. Каждое динамическое административное представление содержит столбец с именем pdw_node_id, который является идентификатором для вычислительных узлов. 
 
 > [!NOTE]
 > Чтобы использовать эти представления, вставьте "pdw_nodes_" в имя, как показано в следующей таблице:
 > 
 > 
 
-| Название DMV в аналитике S'L | Статья о Transact-SQL для SQL Server|
+| Название DMV в бассейне Synapse S'L | Статья о Transact-SQL для SQL Server|
 |:--- |:--- |
 | sys.dm_pdw_nodes_db_column_store_row_group_physical_stats | [sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql)| 
 | sys.dm_pdw_nodes_db_column_store_row_group_operational_stats | [sys.dm_db_column_store_row_group_operational_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-operational-stats-transact-sql)| 
@@ -217,8 +222,9 @@ ms.locfileid: "80350263"
 | sys.dm_pdw_nodes_tran_session_transactions |[sys.dm_tran_session_transactions](https://msdn.microsoft.com/library/ms188739.aspx) |
 | sys.dm_pdw_nodes_tran_top_version_generators |[sys.dm_tran_top_version_generators](https://msdn.microsoft.com/library/ms188778.aspx) |
 
-## <a name="sql-server-2016-polybase-dmvs-available-in-sql-analytics"></a>S'L Server 2016 Полибаза DMV доступны в S'L Analytics
-Следующие DMV применимы к S'L Analytics, но должны быть выполнены путем подключения к **основной** базе данных.
+## <a name="sql-server-2016-polybase-dmvs-available-in-synapse-sql-pool"></a>S'L Server 2016 DMV PolyBase, доступные в бассейне Synapse S'L
+
+Следующие DM-ви применимы к пулу Synapse S'L, но должны быть выполнены путем подключения к **основной** базе данных.
 
 * [sys.dm_exec_compute_node_errors](https://msdn.microsoft.com/library/mt146380.aspx)
 * [sys.dm_exec_compute_node_status](https://msdn.microsoft.com/library/mt146382.aspx)
@@ -232,6 +238,7 @@ ms.locfileid: "80350263"
 * [sys.dm_exec_external_work](https://msdn.microsoft.com/library/mt146375.aspx)
 
 ## <a name="sql-server-information_schema-views"></a>Представления INFORMATION_SCHEMA SQL Server
+
 * [CHECK_CONSTRAINTS](https://msdn.microsoft.com/library/ms189772.aspx)
 * [Столбцы](https://msdn.microsoft.com/library/ms188348.aspx)
 * [ПАРАМЕТРЫ](https://msdn.microsoft.com/library/ms173796.aspx)
@@ -242,5 +249,6 @@ ms.locfileid: "80350263"
 * [VIEW_TABLE_USAGE](https://msdn.microsoft.com/library/ms173869.aspx)
 * [Представления](https://msdn.microsoft.com/library/ms181381.aspx)
 
-## <a name="next-steps"></a>Дальнейшие действия
-Для получения дополнительной справочной информации, [T-SQL language elements in SQL Analytics](sql-data-warehouse-reference-tsql-language-elements.md)см. [T-SQL statements in SQL Analytics](sql-data-warehouse-reference-tsql-statements.md)
+## <a name="next-steps"></a>Следующие шаги
+
+Для получения дополнительной справочной информации, [T-SQL language elements in Synapse SQL pool](sql-data-warehouse-reference-tsql-language-elements.md)см. [T-SQL statements in Synapse SQL pool](sql-data-warehouse-reference-tsql-statements.md)

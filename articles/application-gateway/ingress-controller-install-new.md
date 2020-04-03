@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: a0bc6aef1becd53217be0eeb8c865b5c78a5d69f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b46c9f8b0cad74f3a4e9be8903270a60993c01f4
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80239461"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585888"
 ---
 # <a name="how-to-install-an-application-gateway-ingress-controller-agic-using-a-new-application-gateway"></a>Как установить контроллер входа в приложение (AGIC) с помощью нового шлюза приложений
 
@@ -71,7 +71,7 @@ ms.locfileid: "80239461"
 ## <a name="deploy-components"></a>Развертывание компонентов
 Этот шаг добавит в подписку следующие компоненты:
 
-- [Служба Azure Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)
+- [Служба Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/intro-kubernetes)
 - [Приложение Шлюз](https://docs.microsoft.com/azure/application-gateway/overview) v2
 - [Виртуальная сеть](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) с 2 [подсетями](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
 - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address)
@@ -251,9 +251,9 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
 
    Значения:
      - `verbosityLevel`: Устанавливает многословный уровень лесозаготовительной инфраструктуры AGIC. Возможные значения можно найти в разделе [Уровни ведения журнала](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/463a87213bbc3106af6fce0f4023477216d2ad78/docs/troubleshooting.md#logging-levels).
-     - `appgw.subscriptionId`: Идентификатор подписки Azure, в котором находится шлюз приложений. Например, `a123b234-a3b4-557d-b2df-a0bc12de1234`.
-     - `appgw.resourceGroup`: Название группы ресурсов Azure, в которой был создан шлюз приложений. Например, `app-gw-resource-group`.
-     - `appgw.name`: Название шлюза приложения. Например, `applicationgatewayd0f0`.
+     - `appgw.subscriptionId`: Идентификатор подписки Azure, в котором находится шлюз приложений. Пример: `a123b234-a3b4-557d-b2df-a0bc12de1234`
+     - `appgw.resourceGroup`: Название группы ресурсов Azure, в которой был создан шлюз приложений. Пример: `app-gw-resource-group`
+     - `appgw.name`: Название шлюза приложения. Пример: `applicationgatewayd0f0`
      - `appgw.shared`: Этот флаг boolean должен `false`быть дефолт . Установите, если `true` вам нужен [общий шлюз приложения.](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/072626cb4e37f7b7a1b0c4578c38d1eadc3e8701/docs/setup/install-existing.md#multi-cluster--shared-app-gateway)
      - `kubernetes.watchNamespace`: Укажите пространство имени, которое AGIC должен смотреть. Это может быть одно значение строки или список разделенных запятой имен.
     - `armAuth.type`: может `aadPodIdentity` быть или`servicePrincipal`
@@ -263,7 +263,7 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
 
 
    > [!NOTE]
-   > Значения `identityResourceID` `identityClientID` и значения, созданные во время шагов [«Создать идентификацию»,](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/072626cb4e37f7b7a1b0c4578c38d1eadc3e8701/docs/setup/install-new.md#create-an-identity) и могут быть получены снова с помощью следующей команды:
+   > Значения `identityResourceID` `identityClientID` и значения, созданные во время шагов [компонентов развертывания,](ingress-controller-install-new.md#deploy-components) и могут быть получены снова с помощью следующей команды:
    > ```azurecli
    > az identity show -g <resource-group> -n <identity-name>
    > ```

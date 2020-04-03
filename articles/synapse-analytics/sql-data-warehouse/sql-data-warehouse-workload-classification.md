@@ -11,16 +11,16 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 7661981f07799592f9fdfcab3fb402336d48b4d4
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 67f863826a2e9eb1bffcb316754ad5c40a2f2bb1
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80349978"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80583136"
 ---
 # <a name="azure-synapse-analytics-workload-classification"></a>Классификация рабочей нагрузки Azure Synapse Analytics
 
-В этой статье объясняется процесс классификации рабочей нагрузки при назначении группы рабочей нагрузки и важность входящих запросов с помощью S'L Analytics в Azure Synapse.
+В этой статье объясняется процесс классификации рабочей нагрузки при назначении группы рабочей нагрузки и важность входящих запросов с пулами Synapse S'L в Azure Synapse.
 
 ## <a name="classification"></a>Классификация
 
@@ -36,7 +36,7 @@ ms.locfileid: "80349978"
 
 ## <a name="classification-process"></a>Процесс классификации
 
-Классификация для аналитики S'L в Azure Synapse достигается сегодня путем присвоения пользователям роли, которая имеет соответствующий класс ресурсов, присвоенный ему с помощью [sp_addrolemember.](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) Возможность характеристики запросов, выходящих за рамки входа в класс ресурсов, ограничена этой возможностью. Более богатый метод классификации теперь доступен с синтаксисом [CREATE WORKLOAD CLASSIFIER.](/sql/t-sql/statements/create-workload-classifier-transact-sql)  С помощью этого синтаксиса пользователи S'L Analytics могут присвоить `workload_group` значение и то, сколько системных ресурсов присваивается запросу по параметру. 
+Классификация для пула Synapse S'L в Azure Synapse достигается сегодня путем присвоения пользователям роли, которая имеет соответствующий класс ресурсов, присвоенный ему с помощью [sp_addrolemember.](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) Возможность характеристики запросов, выходящих за рамки входа в класс ресурсов, ограничена этой возможностью. Более богатый метод классификации теперь доступен с синтаксисом [CREATE WORKLOAD CLASSIFIER.](/sql/t-sql/statements/create-workload-classifier-transact-sql)  С помощью этого синтаксиса пользователи пула Synapse S'L могут присвоить значение и размер системных ресурсов, назначенных запросу по параметру. `workload_group` 
 
 > [!NOTE]
 > Классификация оценивается на основе запроса. Несколько запросов за один сеанс можно классифицировать по-разному.
@@ -87,10 +87,10 @@ JOIN    sys.database_principals AS m ON rm.member_principal_id = m.principal_id
 WHERE   r.name IN ('mediumrc','largerc','xlargerc','staticrc10','staticrc20','staticrc30','staticrc40','staticrc50','staticrc60','staticrc70','staticrc80');
 
 --for each row returned run
-sp_droprolemember ‘[Resource Class]’, membername
+sp_droprolemember '[Resource Class]', membername
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Для получения дополнительной информации о создании классификатора, [см.](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql)  
 - Ознакомьтесь с тем, как создать классификатор рабочей [нагрузки, создайте классификатор рабочей нагрузки.](quickstart-create-a-workload-classifier-tsql.md)

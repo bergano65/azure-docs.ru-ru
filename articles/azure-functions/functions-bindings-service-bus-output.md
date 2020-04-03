@@ -6,12 +6,12 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.openlocfilehash: 7e00d03a8b3ec7ef56935ff7714fd932bc343cd3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 02d9ce87d45c5f1c9a123aae18f7d710b268f03e
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79277444"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582255"
 ---
 # <a name="azure-service-bus-output-binding-for-azure-functions"></a>Привязка выходного сообщения шины Azure для функций Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "79277444"
 
 ## <a name="example"></a>Пример
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая отправляет сообщение из очереди службы "Служебная шина":
 
@@ -86,7 +86,7 @@ public static async Task Run(TimerInfo myTimer, ILogger log, IAsyncCollector<str
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны выходная привязка служебной шины в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция использует триггер таймера для отправки сообщения очереди каждые 15 секунд.
 
@@ -227,7 +227,7 @@ public String pushToQueue(
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [ServiceBusAttribute](https://github.com/Azure/azure-functions-servicebus-extension/blob/master/src/Microsoft.Azure.WebJobs.Extensions.ServiceBus/ServiceBusAttribute.cs).
 
@@ -261,7 +261,7 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются JavaScript.
 
@@ -295,7 +295,7 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 В Функциях Azure версии 1.x среда выполнения создает очередь, если ее не существует, и для параметра `accessRights` необходимо установить значение `manage`. В версии Функции 2.x и выше очередь или тема должна уже существовать; если вы укажете очередь или тему, которая не существует, функция выйдет из строя. 
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Используйте следующие типы параметров для выходного связывания:
 
@@ -329,7 +329,7 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 * Чтобы получить доступ к идентификатору сеанса, свяжитесь с типом [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) и используйте свойство. `sessionId`
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к очереди `context.bindings.<name from function.json>`или теме с помощью . Можно назначить строку, массив байт или объект JavaScript (десериализованный `context.binding.<name>`в JSON) для .
 
@@ -381,12 +381,13 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 }
 ```
 
-|Свойство  |Значение по умолчанию | Описание |
+|Свойство.  |По умолчанию | Описание |
 |---------|---------|---------|
+|prefetchCount|0|Получает или устанавливает количество сообщений, которые получатель сообщения может одновременно запросить.|
 |maxAutoRenewDuration|00:05:00|Максимальный период времени, в течение которого блокировка сообщения будет продлеваться автоматически.|
 |autoComplete|Да|Должен ли триггер немедленно пометить сообщение как полное (автозаполненное) или ждать успешного выхода функции для завершения.|
 |maxConcurrentCalls|16|Максимальное число параллельных вызовов к обратному вызову, которое должен инициировать процесс обработки сообщений. По умолчанию в среде выполнения службы "Функции" одновременно обрабатывается несколько сообщений очереди. Чтобы среда выполнения обрабатывала в любой момент времени только одно сообщение очереди или раздела, для свойства `maxConcurrentCalls` нужно задать значение 1. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Выполнить функцию при создании очереди в автобусе службы или сообщении темы (Trigger)](./functions-bindings-service-bus-trigger.md)

@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: b5a85f8ae1564d724b826c809261e56577f4783a
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 47502e693b897a57517d267924cc6c2752c10440
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80435525"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585324"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Руководство по устранению неполадок в центре безопасности Azure
 
@@ -148,7 +148,6 @@ ms.locfileid: "80435525"
 * [Проверка оповещений в центре безопасности Azure](security-center-alert-validation.md)
 * [Уведомления по электронной почте в Центре безопасности Azure](security-center-provide-security-contact-details.md)
 * [Обработка инцидентов в Центре безопасности Azure](security-center-incident.md)
-* [Investigate Incidents and Alerts in Azure Security Center](security-center-investigation.md) (Изучение инцидентов и оповещений в Центре безопасности Azure)
 * [Возможности обнаружения центра безопасности Azure](security-center-detection-capabilities.md)
 * [Мониторинг партнерских решений с Azure Security Center](security-center-partner-solutions.md) — Узнайте, как следить за состоянием работоспособности партнерских решений.
 * [Часто задаваемые вопросы Центра безопасности Azure](faq-general.md) — Найдите часто задаваемые вопросы об использовании службы

@@ -43,7 +43,7 @@
       href: cli-samples.md
 - name: Основные понятия
   items:
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md
@@ -69,6 +69,8 @@
   items:
     - name: Управление учетными записями пакетной службы
       items:
+        - name: Управление учетной записью
+          href: batch-manage-account-basics.md
         - name: Управление учетными записями пакетной службы с помощью портала
           href: batch-account-create-portal.md
         - name: Управление учетными записями пакетной службы с помощью библиотеки .NET для управления пакетной службой
@@ -83,8 +85,12 @@
           href: batch-aad-auth-management.md
         - name: Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
           href: credential-access-key-vault.md
+    - name: Использование пакетов приложений
+      href: batch-application-packages.md
     - name: Копирование файлов и приложений на узлы пула
       items:
+        - name: Копирование приложений и данных в узлы пула
+          href: batch-applications-to-pool-nodes.md
         - name: Использование пакетов приложений
           href: batch-application-packages.md
         - name: Создание файлов ресурсов

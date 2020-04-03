@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/20/2018
 ms.author: memildin
-ms.openlocfilehash: 9e4c6577f0b8b18aff343ac54b31ff292632f5d0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: aa262b0be3902f6e143a53f8f1302156fc5aede6
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75979239"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582980"
 ---
 # <a name="manage-user-data-found-in-an-azure-security-center-investigation"></a>Управление данными пользователя, находящимися в анализе центра безопасности Azure
 В этой статье содержатся сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. Данные исследования хранятся в [журналах Azure Monitor](../log-analytics/log-analytics-overview.md) и разоблачается в Центре безопасности. Управление данными пользователя включает в себя возможность удаления и экспорта данных.
@@ -26,7 +26,7 @@ ms.locfileid: "75979239"
 [!INCLUDE [gdpr-intro-sentence.md](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="searching-for-and-identifying-personal-data"></a>Поиск персональных данных и их идентификация
-На портале Azure можно использовать [функцию анализа](../security-center/security-center-investigation.md) центра безопасности, чтобы осуществлять поиск персональных данных. Функция анализа доступна в разделе **Оповещения системы безопасности**.
+На портале Azure можно использовать функцию анализа центра безопасности, чтобы осуществлять поиск персональных данных. Функция анализа доступна в разделе **Оповещения системы безопасности**.
 
 Все сущности, сведения о пользователе и данные отображаются на вкладке **Сущности**.
 
@@ -55,6 +55,6 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 ## <a name="exporting-personal-data"></a>Экспорт персональных данных
 Пользователи центра безопасности, которым назначены роли читателя, владельца, участника или администратора учетной записи, могут экспортировать сведения об анализе. Чтобы экспортировать сведения об анализе, перейдите на вкладку **Сущности**, где можно скопировать и вставить соответствующие сведения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об управлении данными пользователя в центре безопасности Azure см. в [этой статье](security-center-privacy.md).
 Чтобы узнать больше об удалении личных данных [How to export and delete private data](../azure-monitor/platform/personal-data-mgmt.md#how-to-export-and-delete-private-data)в журналах Azure Monitor, см.

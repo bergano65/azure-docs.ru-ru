@@ -91,7 +91,7 @@
   items:
     - name: Обзор рекомендаций по работе с Service Fabric
       href: service-fabric-best-practices-overview.md
-    - name: безопасность
+    - name: Безопасность
       href: service-fabric-best-practices-security.md
     - name: Сеть
       href: service-fabric-best-practices-networking.md
@@ -123,7 +123,7 @@
       href: service-fabric-application-scenarios.md
     - name: Architecture
       href: service-fabric-architecture.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Безопасность Service Fabric
           href: service-fabric-best-practices-security.md
@@ -404,8 +404,6 @@
           items:
             - name: Развертывание гостевого исполняемого файла
               href: service-fabric-deploy-existing-app.md
-            - name: Развертывание нескольких пользовательских приложений
-              href: service-fabric-deploy-multiple-apps.md
         - name: Создание службы контейнеров
           items:
             - name: Docker Compose (предварительная версия)

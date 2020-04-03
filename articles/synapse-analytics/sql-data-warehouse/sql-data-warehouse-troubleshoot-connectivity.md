@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок с подключением
-description: Подключение к устранению неполадок в аналитике S'L.
+description: Подключение для устранения неполадок в бассейне Synapse S'L.
 services: synapse-analytics
 author: anumjs
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 03/27/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 689a2e549c2627c607b6549f164e55a73318f63e
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 2b0e144220e36de6157101190adb838ae651d7c4
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350046"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80583327"
 ---
 # <a name="troubleshooting-connectivity-issues"></a>Устранение неполадок с подключением
 
-В этой статье перечислены общие методы устранения неполадок при подключении к базе данных S'L Analytics.
+В этой статье перечислены общие методы устранения неполадок при подключении к пулу Synapse S'L.
 - [Проверка доступности услуг](sql-data-warehouse-troubleshoot-connectivity.md#check-service-availability)
 - [Проверка на наличие приостановленных или масштабируемых операций](sql-data-warehouse-troubleshoot-connectivity.md#check-for-paused-or-scaling-operation)
 - [Проверка параметров брандмауэра](sql-data-warehouse-troubleshoot-connectivity.md#check-your-firewall-settings)
@@ -32,33 +32,33 @@ ms.locfileid: "80350046"
 
 ## <a name="check-service-availability"></a>Проверка доступности услуг
 
-Проверьте, доступна ли услуга. На портале Azure перейдите к базе данных S'L Analytics, к ней вы пытаетесь подключиться. В левой панели TOC, нажмите на **диагностику и решить проблемы**.
+Проверьте, доступна ли услуга. На портале Azure перейдите в пул Synapse S'L, к который вы пытаетесь подключиться. В левой панели TOC, нажмите на **диагностику и решить проблемы**.
 
 ![Выберите здоровье ресурсов](./media/sql-data-warehouse-troubleshoot-connectivity/diagnostics-link.png)
 
-Статус вашей аналитики S'L будет показан здесь. Если служба не отображается как **доступная,** проверьте дальнейшие шаги.
+Статус вашего пула Synapse S'L будет показан здесь. Если служба не отображается как **доступная,** проверьте дальнейшие шаги.
 
 ![Доступно ею](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health.png)
 
-Если ваше здоровье ресурсов показывает, что ваш экземпляр S'L Analytics приостановлен или масштабируется, следуйте инструкциям, чтобы возобновить экземпляр.
+Если ваше здоровье ресурсов показывает, что экземпляр пула Synapse S'L приостановлен или масштабируется, следуйте инструкциям, чтобы возобновить экземпляр.
 
 ![Сервис Приостановил](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health-pausing.png) дополнительную информацию о здоровье ресурсов можно найти здесь.
 
 ## <a name="check-for-paused-or-scaling-operation"></a>Проверка на наличие приостановленных или масштабируемых операций
 
-Проверьте портал, чтобы узнать, приостанавливается или масштабируется ваш экземпляр S'L Analytics.
+Проверьте портал, чтобы узнать, приостанавливается или масштабируется ваш экземпляр пула Synapse s'L.
 
 ![Сервис Пауза](./media/sql-data-warehouse-troubleshoot-connectivity/overview-paused.png)
 
-Если вы видите, что ваша служба приостановлена или масштабируется, проверьте, что это не во время вашего графика обслуживания. На портале для вашего *обзора*аналитики S'L вы увидите выбранный график обслуживания.
+Если вы видите, что ваша служба приостановлена или масштабируется, проверьте, что это не во время вашего графика обслуживания. На портале для вашего *обзора*пула Synapse S'L вы увидите выбранный график обслуживания.
 
 ![Расписание обслуживания обзоров](./media/sql-data-warehouse-troubleshoot-connectivity/overview-maintance-schedule.png)
 
-В противном случае обратитесь к ИТ-администратору, чтобы убедиться, что это обслуживание не является запланированным событием. Чтобы возобновить экземпляр S'L Analytics, выполните последующие шаги, изложенные [здесь](https://docs.microsoft.com/azure/sql-data-warehouse/pause-and-resume-compute-portal#resume-compute).
+В противном случае обратитесь к ИТ-администратору, чтобы убедиться, что это обслуживание не является запланированным событием. Чтобы возобновить экземпляр пула Synapse S'L, выполните последующие шаги, изложенные [здесь](https://docs.microsoft.com/azure/sql-data-warehouse/pause-and-resume-compute-portal#resume-compute).
 
 ## <a name="check-your-firewall-settings"></a>Проверка параметров брандмауэра
 
-База данных S'L Analytics общается по порту 1433.Если вы пытаетесь подключиться из корпоративной сети, то сетевой брандмауэр может запретить исходящий трафик через порт 1433. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433. Дополнительную информацию о конфигурациях брандмауэра можно найти [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules).
+Бассейн Synapse S'L общается по порту 1433.Если вы пытаетесь подключиться из корпоративной сети, то сетевой брандмауэр может запретить исходящий трафик через порт 1433. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433. Дополнительную информацию о конфигурациях брандмауэра можно найти [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules).
 
 ## <a name="check-your-vnetservice-endpoint-settings"></a>Проверка параметров конечной точки виртуальной сети или службы
 
@@ -68,7 +68,7 @@ ms.locfileid: "80350046"
 
 ### <a name="software"></a>Программное обеспечение
 
-Проверьте, чтобы убедиться, что вы используете новейшие инструменты для подключения к вашей базе данных S'L Analytics:
+Проверьте, чтобы убедиться, что вы используете новейшие инструменты для подключения к вашему пулу Synapse S'L:
 
 * SSMS
 * Azure Data Studio
@@ -81,7 +81,7 @@ ms.locfileid: "80350046"
 * [Odbc](https://docs.microsoft.com/sql/connect/odbc/download-odbc-driver-for-sql-server)
 * [JDBC](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server)
 * [OLE DB](https://docs.microsoft.com/sql/connect/oledb/download-oledb-driver-for-sql-server)
-* [Php](https://docs.microsoft.com/sql/connect/php/download-drivers-php-sql-server)
+* [PHP](https://docs.microsoft.com/sql/connect/php/download-drivers-php-sql-server)
 
 ## <a name="check-your-connection-string"></a>Проверка строки подключения
 
@@ -113,7 +113,7 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 ## <a name="intermittent-connection-issues"></a>Нерегулярные ошибки подключения
 
-Проверьте, не находится ли сервер под большой нагрузкой из-за высокого числа запросов в очереди. Возможно, потребуется расширить свой экземпляр S'L Analytics для получения дополнительных ресурсов.
+Проверьте, не находится ли сервер под большой нагрузкой из-за высокого числа запросов в очереди. Возможно, потребуется расширить свой пул Synapse S'L для получения дополнительных ресурсов.
 
 ## <a name="common-error-messages"></a>Распространенные сообщения об ошибках
 

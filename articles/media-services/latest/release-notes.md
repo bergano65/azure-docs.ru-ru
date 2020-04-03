@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: juliako
-ms.openlocfilehash: 1db7009096635fc1279ce8a8358e0d8131209722
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 76ef9f92b6b6633982242ccafab1950e0ef5f410
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80372581"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582802"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -177,7 +177,7 @@ Media Services v3 объявляет предварительный просмо
 
 Добавлены обновления, которые включают в себя повышение производительности медиа-служб.
 
-* Максимальный размер файла, поддерживаемый для обработки, был обновлен. Смотрите, [Квоты и ограничения](limits-quotas-constraints.md).
+* Максимальный размер файла, поддерживаемый для обработки, был обновлен. Смотрите, [квоты и ограничения](limits-quotas-constraints.md).
 * [Улучшение скорости кодирования.](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types)
 
 ## <a name="april-2019"></a>Апрель 2019 г.
@@ -358,7 +358,7 @@ Media Services v3 объявляет предварительный просмо
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Обзор](media-services-overview.md)
 - [Media Services v2 релиз отмечает](../previous/media-services-release-notes.md)

@@ -1,6 +1,6 @@
 ---
-title: Проверка подлинности
-description: Узнайте, как проверить подлинность в Azure Synapse Analytics с помощью azure Active Directory (AAD) или проверки подлинности сервера S'L.
+title: Аутентификация
+description: Узнайте, как проверить подлинность в Azure Synapse Analytics, используя active Directory (Azure AD) или аутентификацию сервера S'L.
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -12,21 +12,23 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tag: azure-synapse
-ms.openlocfilehash: c998e3789a29d3cfeaf18a583913871f7edc5af1
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: ccc5db828a03c37d3fc4f49b13883ac3eeda2368
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350724"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80584228"
 ---
 # <a name="authenticate-to-azure-synapse-analytics"></a>Проверка подлинности аналитики Azure Synapse
-Узнайте, как проверить подлинность для s'L Analytics в Azure Synapse с помощью Azure Active Directory (AAD) или проверки подлинности сервера S'L.
+
+Узнайте, как проверить подлинность в Synapse s'L poooo в Azure Synapse с помощью Azure Active Directory (Azure AD) или проверки подлинности сервера S'L.
 
 Для подключения к пулу S'L необходимо передать учетные данные безопасности для целей проверки подлинности. После установки подключения некоторые его параметры настраиваются при установке сеанса запроса.  
 
 Для получения дополнительной информации о безопасности и о том, как включить подключение к вашему складу данных, [см.](sql-data-warehouse-overview-manage-security.md)
 
 ## <a name="sql-authentication"></a>Проверка подлинности SQL
+
 Для подключения к пулу S'L необходимо предоставить следующую информацию:
 
 * Полное имя сервера
@@ -45,16 +47,18 @@ ms.locfileid: "80350724"
 > 
 > 
 
-## <a name="azure-active-directory-aad-authentication"></a>Аутентификация Azure Active Directory (AAD)
+## <a name="azure-active-directory-azure-ad-authentication"></a>Активная каталог Azure (Azure AD) аутентификация
+
 Активная аутентификация [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md) — это механизм подключения к пулу S'L с помощью идентификаторов в Active Directory Azure (Azure AD). С помощью аутентификации Azure Active Directory можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Управление центральным идентификатором предоставляет единое место для управления пользователями Azure Synapse и упрощает управление разрешениями. 
 
 ### <a name="benefits"></a>Преимущества
+
 Преимущества Azure Active Directory:
 
 * наличие альтернативы аутентификации SQL Server;
 * возможность остановить увеличение количества пользователей на серверах баз данных;
 * изменение паролей в одном расположении;
-* управление разрешениями базы данных с помощью внешних групп (AAD);
+* Управление разрешениями базы данных с помощью внешних (Azure AD) групп.
 * возможность исключить хранение паролей с помощью встроенной проверки подлинности Windows и других видов аутентификации, поддерживаемых Azure Active Directory;
 * для проверки подлинности удостоверений на уровне базы данных используются данные пользователей автономной базы данных;
 * Поддерживает проверку подлинности токенов для приложений, подключающихся к пулу S'L.
@@ -66,6 +70,7 @@ ms.locfileid: "80350724"
 > 
 
 ### <a name="configuration-steps"></a>Этапы настройки
+
 Следуйте приведенным ниже инструкциям, чтобы настроить аутентификацию Azure Active Directory.
 
 1. Создание и заполнение каталога Azure Active Directory
@@ -78,8 +83,10 @@ ms.locfileid: "80350724"
 Сейчас пользователи Azure Active Directory не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](https://msdn.microsoft.com/library/ms187328.aspx).
 
 ### <a name="find-the-details"></a>Поиск подробных сведений
-* Шаги по настройке и использованию аутентификации active Directory Azure практически идентичны для базы данных Azure S'L и аналитики S'L в Azure Synapse. Следуйте подробным шагам в теме [Подключение к базе данных S'L или пулу S'L, используя активную проверку подлинности каталогов Azure.](../../sql-database/sql-database-aad-authentication.md)
+
+* Шаги по настройке и использованию аутентификации active Directory Azure практически идентичны для базы данных Azure S'L и пула Synapse S'L в Azure Synapse. Следуйте подробным шагам в теме [Подключение к базе данных S'L или пулу S'L, используя активную проверку подлинности каталогов Azure.](../../sql-database/sql-database-aad-authentication.md)
 * Создайте пользовательские роли базы данных и назначьте их пользователям. Затем предоставьте ролям управляемые разрешения. Дополнительные сведения см. в разделе [Приступая к работе с разрешениями Database Engine](https://msdn.microsoft.com/library/mt667986.aspx).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
+
 Чтобы начать запрос с Visual Studio и другими приложениями, [см.](sql-data-warehouse-query-visual-studio.md)

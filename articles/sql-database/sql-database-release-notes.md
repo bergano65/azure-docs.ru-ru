@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: sstein
-ms.openlocfilehash: 2df83e3b62994381895315b2ef100299e40b745e
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 9fa93af72c2869efd7b6d2f1e8b96b0e667f8b16
+ms.sourcegitcommit: 515482c6348d5bef78bb5def9b71c01bb469ed80
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366506"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80607548"
 ---
 # <a name="sql-database-release-notes"></a>Примечания к выпуску базы данных S'L
 
@@ -78,6 +78,7 @@ ms.locfileid: "80366506"
 
 |Проблема  |Дата обнаружена  |Состояние  |Дата решена  |
 |---------|---------|---------|---------|
+|[Разрешения на группу ресурсов, не применяемые к Управляемой инстанции](#permissions-on-resource-group-not-applied-to-managed-instance)|Февраль 2020 г.|Имеет обходной путь||
 |[Ограничение ручного сбоя через портал для групп неудач](#limitation-of-manual-failover-via-portal-for-failover-groups)|Январь 2020 г.|Имеет обходной путь||
 |[Роли агента S'L нуждаются в явных разрешениях EXECUTE для входа в систему, не относясь к sysadmin](#in-memory-oltp-memory-limits-are-not-applied)|Декабрь 2019 г.|Имеет обходной путь||
 |[Рабочие места агента Пос-L могут быть прерваны перезагрузкой процесса агента](#sql-agent-jobs-can-be-interrupted-by-agent-process-restart)|Декабрь 2019 г.|Без обхода|Март 2020 г.|
@@ -101,6 +102,12 @@ ms.locfileid: "80366506"
 |Восстановление базы данных Point-in-time от уровня Бизнес критического до общего назначения не будет успешным, если исходная база данных содержит объекты OLTP-памяти в памяти.||"Разрешено"|Октябрь 2019 г.|
 |Функция "Почта базы данных" с внешними (не-Azure) почтовыми серверами с использованием безопасного соединения||"Разрешено"|Октябрь 2019 г.|
 |Содержащиеся базы данных, не поддерживаемые в управляемом экземпляре||"Разрешено"|Авг 2019|
+
+### <a name="permissions-on-resource-group-not-applied-to-managed-instance"></a>Разрешения на группу ресурсов, не применяемые к управляемому экземпляру
+
+Роль управляемого вкладчика RBAC при применении к группе ресурсов (RG) не применяется к Управляемой инстанции и не имеет эффекта.
+
+**Обходной путь**: Настройка Управляемой роли вкладчика инстанций для пользователей на уровне подписки.
 
 ### <a name="limitation-of-manual-failover-via-portal-for-failover-groups"></a>Ограничение ручного сбоя через портал для групп неудач
 

@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 97ea98fc38fc8d06dc1bc65ee057241da6f15488
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 73a9680cc570179c47b527a4844488da69193cb3
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78851379"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586098"
 ---
 # <a name="troubleshoot-the-startstop-vms-during-off-hours-solution"></a>Устранение неполадок с решением запуска и остановки виртуальных машин в нерабочее время
 
@@ -137,7 +137,7 @@ Start-AzureRmVm : Run Login-AzureRmAccount to login
 
 Ниже приведен список возможных решений для вашей проблемы и указано, где следует искать источник неполадки.
 
-* При использовании [сценария с поочередной обработкой](../automation-solution-vm-management.md#scenario-2-startstop-vms-in-sequence-by-using-tags) решения для запуска и остановки виртуальных машин в нерабочее время необходимо убедиться, что каждой виртуальной машине, которую нужно запустить или остановить, присвоен правильный тег. Виртуальным машинам, которые нужно запустить, должен быть присвоен тег `sequencestart`, а виртуальным машинам, которые нужно остановить, — тег `sequencestop`. Для обоих тегов требуется положительное целое значение. Для поиска всех виртуальных машин с тегами и значений тегов можно использовать запрос, аналогичный приведенному ниже.
+* При использовании [сценария с поочередной обработкой](../automation-solution-vm-management.md) решения для запуска и остановки виртуальных машин в нерабочее время необходимо убедиться, что каждой виртуальной машине, которую нужно запустить или остановить, присвоен правильный тег. Виртуальным машинам, которые нужно запустить, должен быть присвоен тег `sequencestart`, а виртуальным машинам, которые нужно остановить, — тег `sequencestop`. Для обоих тегов требуется положительное целое значение. Для поиска всех виртуальных машин с тегами и значений тегов можно использовать запрос, аналогичный приведенному ниже.
 
   ```powershell-interactive
   Get-AzureRmResource | ? {$_.Tags.Keys -contains "SequenceStart" -or $_.Tags.Keys -contains "SequenceStop"} | ft Name,Tags
@@ -187,7 +187,7 @@ Start-AzureRmVm : Run Login-AzureRmAccount to login
 2. Убедитесь, что группы ресурсов для виртуальных машин, которые нужно запустить, указаны в переменной `External_Start_ResourceGroupNames`, а для тех виртуальных машин, которые нужно остановить, — в переменной `External_Stop_ResourceGroupNames`.
 3. Протестируйте изменения, запустив модуль runbook `SequencedStartStop_Parent` с параметром WHATIF, которому присвоено значение True. Так вы сможете предварительно просмотреть изменения.
 
-Дополнительные сведения и рекомендации по использованию решения для запуска и остановки виртуальных машин по очереди см. в [этой статье](../automation-solution-vm-management.md#scenario-2-startstop-vms-in-sequence-by-using-tags).
+Дополнительные сведения и рекомендации по использованию решения для запуска и остановки виртуальных машин по очереди см. в [этой статье](../automation-solution-vm-management.md).
 
 ## <a name="scenario-startstop-vm-job-fails-with-403-forbidden-status"></a><a name="403"></a>Сценарий: Работа Start/Stop VM не справляется с 403 запрещенным статусом
 
@@ -226,7 +226,7 @@ Start-AzureRmVm : Run Login-AzureRmAccount to login
 
 Чтобы устранить многие ошибки, рекомендуется удалить старую версию и обновить решение. Чтобы узнать, как обновить решение, ознакомьтесь с разделом [Обновление решения](../automation-solution-vm-management.md#update-the-solution). Кроме того, вы можете проверить [потоки задания,](../automation-runbook-execution.md#viewing-job-status-from-the-azure-portal) чтобы найти любые ошибки. На портале перейдите к учетной записи службы автоматизации и в разделе **Автоматизация процессов** выберите **Задания**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

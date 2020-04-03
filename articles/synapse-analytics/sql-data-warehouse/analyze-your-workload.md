@@ -11,20 +11,20 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: a382ef2d93f10e69569ecbbed1399f256a7afbb3
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: d10a642f9309e4bb93368564488fc75be15fa27c
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351221"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586083"
 ---
 # <a name="analyze-your-workload-in-azure-synapse-analytics"></a>Проанализируйте рабочую нагрузку в Azure Synapse Analytics
 
-Методы анализа рабочей нагрузки s'L Analytics в Azure Synapse Analytics.
+Методы анализа рабочей нагрузки Synapse S'L в Azure Synapse Analytics.
 
 ## <a name="resource-classes"></a>Классы ресурсов
 
-«СЗЛ Аналитика» предоставляет классы ресурсов для присвоения системных ресурсов запросам.  Для получения дополнительной информации о классах ресурсов с [&м.](resource-classes-for-workload-management.md)  Запросы будут ждать, если класс ресурсов, назначенный запросу, нуждается в большем количестве ресурсов, чем имеется в настоящее время.
+Синапсе S'L предоставляет классы ресурсов для присвоения системных ресурсов запросам.  Для получения дополнительной информации о классах ресурсов с [&м.](resource-classes-for-workload-management.md)  Запросы будут ждать, если класс ресурсов, назначенный запросу, нуждается в большем количестве ресурсов, чем имеется в настоящее время.
 
 ## <a name="queued-query-detection-and-other-dmvs"></a>Представление, используемое для определения запросов, поставленных в очередь, и другие динамические административные представления
 
@@ -63,7 +63,7 @@ WHERE   r.name IN ('mediumrc','largerc','xlargerc')
 ;
 ```
 
-Аналитика S'L имеет следующие типы ожидания:
+Синапсе S'L имеет следующие типы ожидания:
 
 * **LocalQueriesConcurrencyResourceType**относится к запросам, которые не входят в платформу слотов выдачи. В качестве примеров таких запросов можно привести запросы и системные функции динамических административных представлений, такие как `SELECT @@VERSION` .
 * **UserConcurrencyResourceType**относится к запросам, которые входят в платформу слотов выдачи. В качестве примеров использования этого типа ресурсов можно привести запросы к таблицам пользователя.
@@ -151,6 +151,6 @@ FROM    sys.dm_pdw_wait_stats w
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации об управлении пользователями баз данных и безопасности, [см.](sql-data-warehouse-overview-manage-security.md) Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в разделе [Повышение качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).

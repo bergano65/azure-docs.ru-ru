@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: article
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 1f923db5c730f6dec15f4fc211ab7acbd009ac7f
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 4a760fe1e5df7cf614a68f8fa8a05926326d3edf
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80521419"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80583219"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Выход на пенсию функций Центра безопасности (июль 2019)
 
@@ -97,7 +97,7 @@ ms.locfileid: "80521419"
 
 ## <a name="security-events-map"></a>Карта событий безопасности<a name="menu_securityeventsmap"></a>
 
-Центр безопасности предоставляет [карту предупреждений безопасности,](https://docs.microsoft.com/azure/security-center/security-center-threat-intel) чтобы помочь определить угрозы безопасности. Кнопка **«Перейти к событиям безопасности»** на этой карте открывает панель мониторинга, которая позволяет просматривать необработанные события безопасности на выбранном рабочем пространстве.
+Центр безопасности предоставляет карту предупреждений безопасности, чтобы помочь определить угрозы безопасности. Кнопка **«Перейти к событиям безопасности»** на этой карте открывает панель мониторинга, которая позволяет просматривать необработанные события безопасности на выбранном рабочем пространстве.
 
 Мы удалили кнопку **карты событий безопасности** и панель мониторинга для рабочего пространства.
 
@@ -136,7 +136,7 @@ ms.locfileid: "80521419"
 
 ## <a name="security-alerts-investigation"></a>Расследование предупреждений о безопасности<a name="menu_investigate"></a>
 
-[Функция «Расследование»](https://docs.microsoft.com/azure/security-center/security-center-investigation) в Центре безопасности помогает сортировке потенциального инцидента с безопасностью. Функция позволяет понять масштаб инцидента и отследить его первопричину. Мы удалили эту функцию из Центра безопасности, потому что она была заменена улучшенным опытом работы в [Azure Sentinel.](https://azure.microsoft.com/services/azure-sentinel/)
+Функция «Расследование» в Центре безопасности помогает сортировке потенциального инцидента с безопасностью. Функция позволяет понять масштаб инцидента и отследить его первопричину. Мы удалили эту функцию из Центра безопасности, потому что она была заменена улучшенным опытом работы в [Azure Sentinel.](https://azure.microsoft.com/services/azure-sentinel/)
 
 ![Инцидент][14]
 
@@ -189,7 +189,7 @@ ms.locfileid: "80521419"
 
 В [репозитории GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Legacy%20Log%20Analytics%20dashboards) для Центра безопасности можно получить исходные запросы Log Analytics, заполняющие панель мониторинга и аудита.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/).
 - Узнайте больше о [Azure Sentinel](https://docs.microsoft.com/azure/sentinel).

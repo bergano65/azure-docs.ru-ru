@@ -10,12 +10,12 @@ ms.author: migreene
 ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d888c8fd3bf7cd44c37e7225618bd197f419d275
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dff9b8f52207a38cf7eaddefa178aff262ddc546
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76030124"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585545"
 ---
 # <a name="create-configurations-from-existing-servers"></a>Создание конфигураций с существующих серверов
 
@@ -39,11 +39,11 @@ ms.locfileid: "76030124"
 Результатом использования решения является генерация [конфигурационных данных,](https://github.com/Microsoft/sharepointDSC.reverse#configuration-data) которые будут использоваться со скриптами конфигурации SharePointDSC.
 
 После того, как файлы данных были созданы, их можно использовать со [скриптами Конфигурации DSC](/powershell/scripting/dsc/overview/overview) для генерации файлов MOF и [загрузки файлов MOF в Azure Automation.](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation)
-Затем зарегистрируйте серверы либо в [помещении,](/azure/automation/automation-dsc-onboarding#physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) либо [в Azure,](/azure/automation/automation-dsc-onboarding#azure-virtual-machines) чтобы вытащить конфигурации.
+Затем зарегистрируйте серверы либо в [помещении,](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) либо [в Azure,](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) чтобы вытащить конфигурации.
 
 Чтобы опробовать ReverseDSC, посетите [галерею PowerShell](https://www.powershellgallery.com/packages/ReverseDSC/) и загрузите решение или нажмите "Сайт проекта", чтобы просмотреть [документацию.](https://github.com/Microsoft/sharepointDSC.reverse)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview)
 - [Ресурсы DSC](/powershell/scripting/dsc/resources/resources)
