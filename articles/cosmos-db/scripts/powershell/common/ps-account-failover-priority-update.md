@@ -1,19 +1,19 @@
 ---
-title: Скрипт PowerShell для изменения приоритета при отработке отказа для учетной записи Azure Cosmos
-description: Пример скрипта Azure PowerShell — изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos
+title: Скрипт PowerShell для изменения приоритета при отработке отказа для учетной записи Azure Cosmos с одним источником
+description: Пример скрипта Azure PowerShell — изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos DB с одним источником
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 09/20/2019
+ms.date: 03/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: 6a742486918e5134a73256ef6c7490a823f14335
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a81938675e72d9ec3a18c920121951e38580b91e
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75441505"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80366112"
 ---
-# <a name="change-failover-priority-or-trigger-failover-for-an-azure-cosmos-account-using-powershell"></a>Изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos с помощью PowerShell
+# <a name="change-failover-priority-or-trigger-failover-for-an-azure-cosmos-db-single-master-account-using-powershell"></a>Изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos DB с одним источником с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -42,8 +42,9 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 
 | Get-Help | Примечания |
 |---|---|
-|**Ресурсы Azure**| |
-| [Invoke-AzResourceAction](https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction) | Вызывает действие для ресурса. |
+|**Azure Cosmos DB**| |
+| [Get-AzCosmosDBAccount](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbaccount) | Выводит список учетных записей Cosmos DB или указанную учетную запись Cosmos DB. |
+| [Update-AzCosmosDBAccountFailoverPriority](https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbaccountfailoverpriority) | Обновите порядок приоритета отработки отказа для регионов учетной записи Cosmos DB. |
 |**Группы ресурсов Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||

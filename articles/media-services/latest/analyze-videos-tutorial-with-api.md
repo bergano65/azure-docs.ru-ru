@@ -10,15 +10,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
-ms.date: 02/02/2020
+ms.date: 03/26/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: abd4a3a3a3e8494ea325e65a78eea7fb56b78f94
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b7864d89cc14a1473fd43e94bfe74c368bcb391d
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76988368"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80349482"
 ---
 # <a name="tutorial-analyze-videos-with-media-services-v3"></a>Руководство по Анализ видео с помощью Служб мультимедиа версии 3
 
@@ -92,6 +92,8 @@ ms.locfileid: "76988368"
 
 * создает ресурс;
 * получает записываемый [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) в [контейнере в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#upload-blobs-to-a-container) ресурса;
+
+    При использовании функции [ListContainerSas](https://docs.microsoft.com/rest/api/media/assets/listcontainersas) ресурса для получения URL-адресов SAS обратите внимание, что функция возвращает несколько URL-адресов SAS, так как для каждой учетной записи хранения существует два ключа. Учетная запись хранения имеет два ключа, чтобы обеспечить легкую смену ключей (например, можно использовать первый ключ и в это время заменить второй ключ, а затем начать использовать новый ключ, а в это время заменить первый ключ). Первый URL-адресом SAS представляет собой ключ к хранилищу данных 1, а второй — ключ к хранилищу данных 2.
 * отправляет файл в контейнер в хранилище через URL-адрес SAS.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#CreateInputAsset)]

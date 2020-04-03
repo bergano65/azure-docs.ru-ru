@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: aeccd604a4dae3b2ca83f5b599d9a6857acee34a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c3ca37fd47b6551a95f9a491053ec7863acd1eeb
+ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79037196"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80389398"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer-preview"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -57,6 +57,8 @@ ms.locfileid: "79037196"
     >
 
 1. Выберите **Отправить** и используйте тот же целевой объект вычислений и эксперимент, который использовался в первой части.
+
+    При первом запуске для завершения работы конвейера может потребоваться 20 минут. В параметрах вычислений по умолчанию минимальный размер узла равен 0. Это означает, что конструктор должен выделить ресурсы после простоя. Последующие выполнения конвейера займут меньше времени, так как ресурсы вычислений уже будут выделены. Кроме того, конструктор использует кэшированные результаты для каждого модуля, чтобы повысить эффективность.
 
 1. Выберите **Развернуть**.
 

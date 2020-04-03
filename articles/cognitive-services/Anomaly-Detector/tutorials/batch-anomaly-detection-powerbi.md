@@ -1,7 +1,7 @@
 ---
 title: Руководство по визуализации аномалий c помощью пакетного обнаружения и Power BI
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать API "Детектор аномалий" и Power BI для визуализации аномалий в данных временных рядов.
+description: Узнайте, как использовать API Детектор аномалий и Power BI для визуализации аномалий в данных временных рядов.
 services: cognitive-services
 author: aahill
 manager: nitinme

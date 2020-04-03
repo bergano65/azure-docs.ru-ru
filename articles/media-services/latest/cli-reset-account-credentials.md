@@ -14,18 +14,18 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 08/20/2019
 ms.author: juliako
-ms.openlocfilehash: 09c93e2d851bea22e9d54dde35398f36335eb896
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 63f2abe7a3890efbaf4c79186467a3eb20d8afda
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70967575"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80382993"
 ---
-# <a name="cli-example-reset-the-account-credentials"></a>Пример CLI: сброс учетных данных учетной записи
+# <a name="azure-cli-example-reset-the-account-credentials"></a>Пример для Azure CLI: Сбросьте данные учетной записи
 
 В сценарии Azure CLI в этой статье показано, как сбросить учетные данные учетной записи и вернуть параметры app.config.
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования
 
 [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 
@@ -33,17 +33,17 @@ ms.locfileid: "70967575"
 
 ## <a name="example-script"></a>Пример сценария
 
-```
+```azurecli-interactive
 # Update the following variables for your own settings:
 resourceGroup=amsResourceGroup
 amsAccountName=amsmediaaccountname
 
 az ams account sp reset-credentials \
   --account-name $amsAccountName \
-  --resource-group $resourceGroup 
+  --resource-group $resourceGroup
  ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [az ams](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
-* [Сброс учетных данных](https://docs.microsoft.com/cli/azure/ams/account/sp?view=azure-cli-latest#az-ams-account-sp-reset-credentials)
+* [az ams](/cli/azure/ams)
+* [Сброс учетных данных](/cli/azure/ams/account/sp#az-ams-account-sp-reset-credentials)

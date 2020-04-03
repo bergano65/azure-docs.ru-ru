@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 4a127c8c77f97708729cf91d6ced214e98924fb6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 478d9c0485125870f8d5ffb4132f46476b4bb4ef
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78943008"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80384370"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge для устройств Linux
 
@@ -90,6 +90,7 @@ ms.locfileid: "78943008"
 * [Установка Docker Desktop для Mac](https://docs.docker.com/docker-for-mac/install/)
 
 * Дополнительные сведения об установке на нескольких платформах Linux см. в статье [о Docker CE](https://docs.docker.com/install/).
+  * В подсистеме Windows для Linux (WSL) установите Docker Desktop для Windows.
 
 ## <a name="set-up-vs-code-and-tools"></a>Настройка VS Code и средств
 

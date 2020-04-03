@@ -1,6 +1,6 @@
 ---
 title: Пример шаблона. Создание управляемого экземпляра в Базе данных SQL Azure
-description: Пример сценария Azure PowerShell для создания управляемого экземпляра в Базе данных SQL Azure
+description: Используйте этот пример сценария Azure PowerShell для создания управляемого экземпляра в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: managed-instance
@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 03/12/2019
-ms.openlocfilehash: be6aa73fe72568e9762e5b7249bedc2e8c7d3bf7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a349be9ada756742f5fd5ba4819caa1d2a2d3268
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73691434"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80373167"
 ---
 # <a name="use-powershell-with-azure-resource-manager-template-to-create-a-managed-instance-in-azure-sql-database"></a>Создание управляемого экземпляра в Базе данных SQL Azure с помощью PowerShell с шаблоном Azure Resource Manager
 
@@ -38,7 +38,7 @@ ms.locfileid: "73691434"
 
 Позже нельзя изменить имя экземпляра, имя пользователя администратора SQL, виртуальной сети или подсети и параметры сортировки. Другие свойства экземпляра можно изменить.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом примере предполагается, что вы [создали допустимую сетевую среду](../sql-database-managed-instance-create-vnet-subnet.md) или [изменили существующую виртуальную сеть](../sql-database-managed-instance-configure-vnet-subnet.md) для Управляемого экземпляра. В этом примере используются командлеты [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment) и [Get-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork), поэтому установите перечисленные ниже модули PowerShell.
 

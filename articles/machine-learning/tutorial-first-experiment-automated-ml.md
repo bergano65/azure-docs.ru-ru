@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.author: tzvikei
-author: tsikiksr
+author: cartacioS
+ms.author: sacartac
 ms.reviewer: nibaccam
-ms.date: 02/04/2020
-ms.openlocfilehash: 96af942ab68d4ae738df56bf94d8410ee5d8cc34
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 03/04/2020
+ms.openlocfilehash: b5a335a3f215ad5883b1b223245ca9d3f9967c3b
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79129666"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80366530"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Руководство по Создание модели классификации с использованием автоматизированного машинного обучения в службе "Машинное обучение Azure".
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -53,7 +53,7 @@ ms.locfileid: "79129666"
 
 Выполните следующие действия по настройке и выполнению эксперимента с помощью Машинного обучения Azure в объединенном веб-интерфейсе https://ml.azure.com, включающем в себя средства машинного обучения для выполнения сценариев обработки и анализа данных и предназначенном для специалистов в этой области с любым уровнем навыков. Этот интерфейс не поддерживается в браузерах Internet Explorer.
 
-1. Войдите в Машинное обучение Azure по адресу https://ml.azure.com.
+1. Войдите в [Машинное обучение Azure](https://ml.azure.com).
 
 1. Выберите свою подписку и рабочую область, которую создали.
 
@@ -201,9 +201,9 @@ ms.locfileid: "79129666"
 
 ### <a name="delete-the-deployment-instance"></a>Удаление промежуточного развертывания
 
-Чтобы сохранить группу ресурсов и рабочую область для изучения других руководств и собственных исследований, удалите из службы "Машинное обучение Azure" по адресу https://ml.azure.com/ только экземпляр развертывания. 
+Чтобы сохранить группу ресурсов и рабочую область для изучения других руководств и собственных исследований, удалите из службы "Машинное обучение Azure" по адресу https:\//ml.azure.com/ только экземпляр развертывания. 
 
-1. Перейдите в Машинное обучение Microsoft Azure по адресу https://ml.azure.com/. Перейдите в свою рабочую область и слева под областью **Ресурсы** выберите **Конечные точки**. 
+1. Перейдите в [Машинное обучение Azure](https://ml.azure.com/). Перейдите в свою рабочую область и слева под областью **Ресурсы** выберите **Конечные точки**. 
 
 1. Выберите развертывание для удаления и щелкните **Удалить**. 
 

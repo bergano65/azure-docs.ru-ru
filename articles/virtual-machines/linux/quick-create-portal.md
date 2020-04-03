@@ -14,18 +14,18 @@ ms.workload: infrastructure
 ms.date: 11/05/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 894fa2f3cda798a409db3ee8e9761c1702baf955
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: bc1dd56cd024ee65e29f227f4ec11cde436e388d
+ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/26/2020
-ms.locfileid: "79216132"
+ms.locfileid: "80294778"
 ---
-# <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины под управлением Linux на портале Azure
+# <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Linux на портале Azure
 
 Виртуальные машины Azure можно создать на портале Azure. Портал Azure — это браузерный пользовательский интерфейс, который позволяет создавать ресурсы Azure. В этом кратком руководстве показано, как использовать портал Azure для создания виртуальной машины Linux под управлением Ubuntu 18.04 LTS. Чтобы проверить работу виртуальной машины, вы также подключитесь к ней по протоколу SSH и установите веб-сервер NGINX.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-ssh-key-pair"></a>Создание пары ключей SSH
 
@@ -89,7 +89,7 @@ ms.locfileid: "79216132"
     ssh azureuser@10.111.12.123
     ```
 
-3. В той же оболочке Bash, в которой вы создали пару ключей SSH (вы можете повторно открыть Cloud Shell, снова выбрав `>_` или перейдя по ссылке https://shell.azure.com/bash) ), вставьте команду подключения в оболочку, чтобы создать сеанс SSH.
+3. В той же оболочке Bash, в которой вы создали пару ключей SSH (вы можете повторно открыть Cloud Shell, снова выбрав `>_` или перейдя по ссылке `https://shell.azure.com/bash`), вставьте команду подключения в оболочку, чтобы создать сеанс SSH.
 
 ## <a name="install-web-server"></a>Установка веб-сервера
 

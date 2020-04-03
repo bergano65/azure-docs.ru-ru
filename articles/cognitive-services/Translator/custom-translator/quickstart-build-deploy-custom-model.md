@@ -9,24 +9,38 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: swmachan
 ms.topic: quickstart
-ms.openlocfilehash: 82f2acb811bcb239f6329ab8d8b4008e13ac6490
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a22ae3b4b11a4eac7da147cf3ad896bbad435448
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446746"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80370153"
 ---
 # <a name="quickstart-build-deploy-and-use-a-custom-model-for-translation"></a>Краткое руководство. Создание, развертывание и использование пользовательской модели для перевода
 
 В этой статье приведена пошаговая инструкция по созданию системы перевода с помощью Custom Translator.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Чтобы войти на портал [Custom Translator](https://portal.customtranslator.azure.ai) и использовать его, вам потребуется [учетная запись Майкрософт](https://signup.live.com) или [Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) (размещенная в Azure учетная запись организации).
 
 2. Подписка на API перевода текстов, которую можно получить на портале Azure. Вам потребуется связать ключ подписки API перевода текстов с рабочей областью в Custom Translator. [Сведения о регистрации для использования API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup).
 
-3. Если у вас есть все указанные выше компоненты, войдите на портал [Custom Translator](https://portal.customtranslator.azure.ai). На портале Custom Translator перейдите на страницу параметров, где вы можете связать ключ подписки API перевода текстов Майкрософт с рабочей областью.
+3. Если у вас есть все указанные выше компоненты, войдите на портал [Пользовательского переводчика](https://portal.customtranslator.azure.ai), чтобы создавать рабочие области и проекты, загружать файлы, а также создавать и развертывать модели.
+
+## <a name="create-a-workspace"></a>Создание рабочей области
+
+Если раньше вы не работали с этим продуктом, вам будет предложено принять условия предоставления услуг, создать рабочую область и связать рабочую область с подпиской API Перевода текстов (Майкрософт).
+
+![Создание рабочей области](media/quickstart/terms-of-service.png)
+![Создание рабочей области](media/quickstart/create-workspace-1.png)
+![Создание рабочей области](media/quickstart/create-workspace-2.png)
+![Создание рабочей области](media/quickstart/create-workspace-3.png)
+![Создание рабочей области](media/quickstart/create-workspace-4.png)
+![Создание рабочей области](media/quickstart/create-workspace-5.png)
+![Создание рабочей области](media/quickstart/create-workspace-6.png)
+
+В один из последующих визитов на портал Пользовательского переводчика перейдите на страницу параметров, где вы можете администрировать рабочую область, создать дополнительные рабочие области, связать ключ подписки API Перевода текстов (Майкрософт) с рабочими областями, добавить совладельцев, а также изменить ключ подписки.
 
 ## <a name="create-a-project"></a>Создание проекта
 

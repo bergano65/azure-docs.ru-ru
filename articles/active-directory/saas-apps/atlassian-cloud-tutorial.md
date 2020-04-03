@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/24/2019
+ms.date: 03/27/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3a54b096019e9e38bc800ae313016a430062dab
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 46c48d6f7d751e6d767921fad21e6213c6b1203b
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74964333"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80384030"
 ---
 # <a name="tutorial-integrate-atlassian-cloud-with-azure-active-directory"></a>Руководство по Интеграция Atlassian Cloud с Azure Active Directory
 
@@ -31,7 +30,7 @@ ms.locfileid: "74964333"
 * Вы можете включить автоматический вход пользователей в Atlassian Cloud с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -47,7 +46,7 @@ ms.locfileid: "74964333"
 
 * Atlassian Cloud поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
 * Atlassian Cloud поддерживает [автоматическую подготовку пользователей и ее отмену](atlassian-cloud-provisioning-tutorial.md).
-
+* После настройки Atlassian Cloud можно применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 ## <a name="adding-atlassian-cloud-from-the-gallery"></a>Добавление Atlassian Cloud из коллекции
 
 Чтобы настроить интеграцию Atlassian Cloud с Azure AD, необходимо добавить Atlassian Cloud из коллекции в список управляемых приложений SaaS.
@@ -93,7 +92,7 @@ ms.locfileid: "74964333"
     d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<instancename>.atlassian.net`.
 
     > [!NOTE]
-    > Приведенные выше значения используются только для примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Вы получите эти значения на экране **настройки SAML для Atlassian Cloud**, который описан в руководстве по **настройке единого входа в Atlassian Cloud**.
+    > Приведенные выше значения используются только для примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Вы получите эти значения при **настройке SAML для Atlassian Cloud**, которая описана далее в разделе **Настройка единого входа в Atlassian Cloud**.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -222,8 +221,12 @@ ms.locfileid: "74964333"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте Atlassian Cloud с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Как защитить Atlassian Cloud с помощью функции управления настройками условного доступа](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

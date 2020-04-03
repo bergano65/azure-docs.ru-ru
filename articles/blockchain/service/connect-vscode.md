@@ -1,15 +1,15 @@
 ---
 title: Подключение к службе "Блокчейн Azure" с помощью Visual Studio Code
 description: Подключение к сети консорциума службы "Блокчейн Azure" с помощью комплекта SDK службы "Azure Блокчейн" для Ethereum в Visual Studio Code
-ms.date: 12/05/2019
+ms.date: 03/26/2020
 ms.topic: quickstart
-ms.reviewer: chrisseg
-ms.openlocfilehash: 1bcdfdafa9253fc4dc20ccb7cc237cb794b0af53
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.reviewer: caleteet
+ms.openlocfilehash: 269a3e419186daddf1e6a41a54e52e688f4bc7e3
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74977093"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80348584"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-to-an-azure-blockchain-service-consortium-network"></a>Краткое руководство. Подключение к сети консорциума службы "Блокчейн Azure" с помощью Visual Studio Code
 
@@ -22,7 +22,7 @@ ms.locfileid: "74977093"
 * См. подробнее об [использовании созданию участника блокчейна на портале Azure](create-member.md) и [руководство по созданию участника блокчейна службы "Блокчейн Azure" с помощью Azure CLI](create-member-cli.md);
 * [Visual Studio Code](https://code.visualstudio.com/Download)
 * [расширение "Комплект SDK Блокчейна Azure для Ethereum"](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain);
-* [Node.js 10.15.x или более поздней версии](https://nodejs.org/download).
+* [Node.js 10.15.x или более поздней версии](https://nodejs.org).
 * [Git 2.10.x или более поздней версии](https://git-scm.com).
 * [Python 2.7.15](https://www.python.org/downloads/release/python-2715/). Добавьте в путь файл python.exe. Python версии 2.7.15 необходим для комплекта SDK службы "Блокчейн Azure".
 * [Truffle 5.0.0](https://www.trufflesuite.com/docs/truffle/getting-started/installation).

@@ -1,0 +1,169 @@
+---
+title: Руководство по интеграции единого входа Azure Active Directory с Logz.io — Cloud Observability for Engineers | Документация Майкрософт
+description: Узнайте, как настроить единый вход Azure Active Directory в Logz.io — Cloud Observability for Engineers.
+services: active-directory
+documentationCenter: na
+author: jeevansd
+manager: mtillman
+ms.reviewer: barbkess
+ms.assetid: b0984471-d12f-4f58-896e-194ea45b01fd
+ms.service: active-directory
+ms.subservice: saas-app-tutorial
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.topic: tutorial
+ms.date: 03/26/2020
+ms.author: jeedes
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: de1c929ffa790d2abe3a1922cecc2175cd7a8e12
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80385276"
+---
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-logzio---cloud-observability-for-engineers"></a>Руководство по интеграции единого входа Azure Active Directory с Logz.io — Cloud Observability for Engineers
+
+В этом учебнике описано, как интегрировать Logz.io — Cloud Observability for Engineers с Azure Active Directory (Azure AD). Интеграция Logz.io — Cloud Observability for Engineers с Azure AD позволяет решить следующие задачи.
+
+* Управление через Azure AD доступом к Logz.io — Cloud Observability for Engineers.
+* Автоматический вход пользователей в Logz.io — Cloud Observability for Engineers с учетными записями Azure AD.
+* Централизованное управление учетными записями через портал Azure.
+
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Чтобы приступить к работе, потребуется следующее.
+
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Logz.io — Cloud Observability for Engineers с поддержкой единого входа.
+
+## <a name="scenario-description"></a>Описание сценария
+
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Logz.io — Cloud Observability for Engineers поддерживает единый вход, инициированный **поставщиком удостоверений**.
+* После настройки Logz.io — Cloud Observability for Engineers вы сможете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+## <a name="adding-logzio---cloud-observability-for-engineers-from-the-gallery"></a>Добавление Logz.io — Cloud Observability for Engineers из коллекции
+
+Чтобы настроить интеграцию Logz.io — Cloud Observability for Engineers с Azure AD, необходимо добавить Logz.io — Cloud Observability for Engineers из коллекции в список управляемых приложений SaaS.
+
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Logz.io — Cloud Observability for Engineers**.
+1. Выберите **Logz.io — Cloud Observability for Engineers** на панели результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+
+## <a name="configure-and-test-azure-ad-single-sign-on-for-logzio---cloud-observability-for-engineers"></a>Настройка и тестирование единого входа Azure AD в Logz.io — Cloud Observability for Engineers
+
+Настройте и проверьте единый вход Azure AD в Logz.io — Cloud Observability for Engineers с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Logz.io — Cloud Observability for Engineers.
+
+Чтобы настроить и проверить единый вход Azure AD в Logz.io — Cloud Observability for Engineers, выполните действия в следующих стандартных блоках:
+
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в Logz.io — Cloud Observability for Engineers](#configure-logzio-cloud-observability-for-engineers-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Logz.io — Cloud Observability for Engineers](#create-logzio-cloud-observability-for-engineers-test-user)** требуется для того, чтобы в этом приложении существовал пользователь B.Simon, связанный с одноименным представлением в Azure AD.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
+
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
+
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
+
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Logz.io — Cloud Observability for Engineers** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+
+1. На странице **Настройка единого входа с помощью SAML** введите значения для следующих полей:
+
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `urn:auth0:logzio:CONNECTION-NAME`.
+
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://logzio.auth0.com/login/callback?connection=CONNECTION-NAME`.
+
+    > [!NOTE]
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить их, обратитесь в [службу поддержки клиентов Logz.io — Cloud Observability for Engineers](mailto:help@logz.io). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+
+1. Приложение Logz.io — Cloud Observability for Engineers ожидает проверочные утверждения SAML в определенном формате, и для этого нужно добавить сопоставления настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![Изображение](common/default-attributes.png)
+
+1. В дополнение к описанному выше приложение Logz.io — Cloud Observability for Engineers ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+    
+    | Имя |  Исходный атрибут|
+    | ---------------| --------- |
+    | session-expiration | user.session-expiration |
+    | email | user.mail |
+    | Группа | user.groups |
+
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
+
+1. Скопируйте требуемые URL-адреса в разделе **Настройка Logz.io — Cloud Observability for Engineers**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
+
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Logz.io — Cloud Observability for Engineers.
+
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. Выберите **Logz.io — Cloud Observability for Engineers** в списке приложений.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
+
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
+
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+## <a name="configure-logzio-cloud-observability-for-engineers-sso"></a>Настройка единого входа в Logz.io — Cloud Observability for Engineers
+
+Чтобы настроить единый вход на стороне **Logz.io — Cloud Observability for Engineers**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Logz.io — Cloud Observability for Engineers](mailto:help@logz.io). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-logzio-cloud-observability-for-engineers-test-user"></a>Создание тестового пользователя Logz.io — Cloud Observability for Engineers
+
+В этом разделе описано, как создать пользователя B.Simon в приложении Logz.io — Cloud Observability for Engineers. Обратитесь в  [службу поддержки Logz.io — Cloud Observability for Engineers](mailto:help@logz.io), чтобы добавить пользователей на платформу Logz.io — Cloud Observability for Engineers. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+## <a name="test-sso"></a>Проверка единого входа 
+
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+
+Щелкнув плитку Logz.io — Cloud Observability for Engineers на Панели доступа, вы автоматически войдете в приложение Logz.io — Cloud Observability for Engineers, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
+## <a name="additional-resources"></a>Дополнительные ресурсы
+
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Пробное использование Logz.io — Cloud Observability for Engineers с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+

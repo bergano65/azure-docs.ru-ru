@@ -6,16 +6,19 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 12/02/2019
 ms.author: mjbrown
-ms.openlocfilehash: 56d8eaa0c89f5ad8edf1a44ebae682c99c94f194
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ab8f9f1428ecab09623060519e76052fc56d0ceb
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74873562"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80366143"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db---table-api"></a>Примеры Azure PowerShell для Azure Cosmos DB. API таблиц
 
 В приведенной ниже таблице содержатся ссылки на примеры скриптов Azure PowerShell для Azure Cosmos DB для API таблиц.
+
+> [!NOTE]
+> В примерах используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Обратите внимание, что командлеты `Az.CosmosDB` пока доступны в предварительной версии и могут быть изменены до выхода общедоступной версии. Регулярно проверяйте наличие обновлений для `Az.CosmosDB`.
 
 | | |
 |---|---|

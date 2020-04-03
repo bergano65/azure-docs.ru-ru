@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.custom: ''
 ms.date: 08/19/2019
 ms.author: juliako
-ms.openlocfilehash: a51b30ad2af29871ed6998e60bb64adf91dfdbbd
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 91259e10966173cb701b867f5b3ed362112beef3
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76514380"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80382789"
 ---
-# <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---cli"></a>Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью CLI
+# <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---azure-cli"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью Azure CLI
 
 В этом кратком руководстве описано, как легко выполнять кодирование и потоковую передачу видео в разных браузерах и на разных устройствах с помощью Служб мультимедиа Azure и Azure CLI. Входное содержимое можно определить с помощью протокола HTTPS, URL-адреса SAS или путей к файлам в хранилище BLOB-объектов Azure.
 
@@ -40,7 +40,7 @@ ms.locfileid: "76514380"
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-```azurecli
+```azurecli-interactive
 az group create -n amsResourceGroup -l westus2
 ```
 
@@ -48,15 +48,15 @@ az group create -n amsResourceGroup -l westus2
 
 В этом примере мы создадим учетную запись LRS категории "Стандартный"версии 2 для общего назначения.
 
-Если вы хотите поэкспериментировать с учетными записями хранения, используйте `--sku Standard_LRS`. При выборе номера SKU для рабочей среды следует рассмотреть вариант применения `--sku Standard_RAGRS`, который предоставляет географическую репликацию для обеспечения непрерывности бизнес-процессов. Дополнительные сведения см. в статье об [учетных записях хранения](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest).
- 
-```azurecli
+Если вы хотите поэкспериментировать с учетными записями хранения, используйте `--sku Standard_LRS`. При выборе номера SKU для рабочей среды следует рассмотреть вариант применения `--sku Standard_RAGRS`, который предоставляет географическую репликацию для обеспечения непрерывности бизнес-процессов. Дополнительные сведения см. в статье об [учетных записях хранения](/cli/azure/storage/account).
+
+```azurecli-interactive
 az storage account create -n amsstorageaccount --kind StorageV2 --sku Standard_LRS -l westus2 -g amsResourceGroup
 ```
 
 ### <a name="create-an-azure-media-services-account"></a>Создание учетной записи служб мультимедиа Azure
 
-```azurecli
+```azurecli-interactive
 az ams account create --n amsaccount -g amsResourceGroup --storage-account amsstorageaccount -l westus2
 ```
 
@@ -85,14 +85,13 @@ az ams account create --n amsaccount -g amsResourceGroup --storage-account amsst
 
 Следующая команда Azure CLI запускает установленную по умолчанию **конечную точку потоковой передачи**.
 
-```azurecli
+```azurecli-interactive
 az ams streaming-endpoint start  -n default -a amsaccount -g amsResourceGroup
 ```
 
 Вы получите примерно следующий ответ:
 
 ```
-az ams streaming-endpoint start  -n default -a amsaccount -g amsResourceGroup
 {
   "accessControl": null,
   "availabilitySetName": null,
@@ -129,7 +128,7 @@ az ams streaming-endpoint start  -n default -a amsaccount -g amsResourceGroup
 
 Создайте **преобразование** для настройки общих задач кодирования или анализа видеоматериалов. В этом примере мы выполним кодирование с адаптивной скоростью. Затем мы отправим задание для преобразования, которое мы создали. Задание содержит запрос к Службам мультимедиа на применение преобразования к указанному входному содержимому видео или аудио.
 
-```azurecli
+```azurecli-interactive
 az ams transform create --name testEncodingTransform --preset AdaptiveStreaming --description 'a simple Transform for Adaptive Bitrate Encoding' -g amsResourceGroup -a amsaccount
 ```
 
@@ -161,7 +160,7 @@ az ams transform create --name testEncodingTransform --preset AdaptiveStreaming 
 
 Создайте выходной **ресурс** для использования в качестве выходных данных задания кодирования.
 
-```azurecli
+```azurecli-interactive
 az ams asset create -n testOutputAssetName -a amsaccount -g amsResourceGroup
 ```
 
@@ -190,13 +189,13 @@ az ams asset create -n testOutputAssetName -a amsaccount -g amsResourceGroup
 
 При запуске `az ams job start` можно задать метку для выходных данных задания. Затем можно использовать метку для определения предназначения выходного ресурса.
 
-- Если вы присваиваете значение метке, задайте для "--output-assets" значение "assetname=label".
-- Если вы не присваиваете значение метке, задайте для "--output-assets" значение "assetname=".
+- Если вы присваиваете значение метке, задайте для --output-assets значение assetname=label.
+- Если вы не присваиваете значение метке, задайте для --output-assets значение assetname=.
 
   Обратите внимание, что мы добавляем знак "=" к `output-assets`.
 
-```azurecli
-az ams job start --name testJob001 --transform-name testEncodingTransform --base-uri 'https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/' --files 'Ignite-short.mp4' --output-assets testOutputAssetName= -a amsaccount -g amsResourceGroup 
+```azurecli-interactive
+az ams job start --name testJob001 --transform-name testEncodingTransform --base-uri 'https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/' --files 'Ignite-short.mp4' --output-assets testOutputAssetName= -a amsaccount -g amsResourceGroup
 ```
 
 Вы получите примерно следующий ответ:
@@ -238,7 +237,7 @@ az ams job start --name testJob001 --transform-name testEncodingTransform --base
 
 Проверьте состояние задания через пять минут. Должно появиться состояние "Завершено". Если оно не завершено, проверьте еще раз через несколько минут. После того как появится состояние "Завершено", перейдите к следующему шагу и создайте **указатель потоковой передачи**.
 
-```azurecli
+```azurecli-interactive
 az ams job show -a amsaccount -g amsResourceGroup -t testEncodingTransform -n testJob001
 ```
 
@@ -248,7 +247,7 @@ az ams job show -a amsaccount -g amsResourceGroup -t testEncodingTransform -n te
 
 ### <a name="create-a-streaming-locator"></a>Создание указателя потоковой передачи
 
-```azurecli
+```azurecli-interactive
 az ams streaming-locator create -n testStreamingLocator --asset-name testOutputAssetName --streaming-policy-name Predefined_ClearStreamingOnly  -g amsResourceGroup -a amsaccount 
 ```
 
@@ -274,7 +273,7 @@ az ams streaming-locator create -n testStreamingLocator --asset-name testOutputA
 
 ### <a name="get-streaming-locator-paths"></a>Получение путей указателя потоковой передачи
 
-```azurecli
+```azurecli-interactive
 az ams streaming-locator get-paths -a amsaccount -g amsResourceGroup -n testStreamingLocator
 ```
 
@@ -311,13 +310,14 @@ az ams streaming-locator get-paths -a amsaccount -g amsResourceGroup -n testStre
 
 Скопируйте путь HTTP Live Streaming (HLS). В этом случае он выглядит так: `/e01b2be1-5ea4-42ca-ae5d-7fe704a5962f/ignite.ism/manifest(format=m3u8-aapl)`.
 
-## <a name="build-the-url"></a>Создание URL-адреса 
+## <a name="build-the-url"></a>Создание URL-адреса
 
 ### <a name="get-the-streaming-endpoint-host-name"></a>Получения имени узла конечной точки потоковой передачи
 
-```azurecli
+```azurecli-interactive
 az ams streaming-endpoint list -a amsaccount -g amsResourceGroup -n default
 ```
+
 Скопируйте значение `hostName`. В этом случае он выглядит так: `amsaccount-usw22.streaming.media.azure.net`.
 
 ### <a name="assemble-the-url"></a>Создание URL-адреса
@@ -344,13 +344,12 @@ az ams streaming-endpoint list -a amsaccount -g amsResourceGroup -n default
 
 Если вам больше не нужны ресурсы в группе ресурсов, включая Службы мультимедиа и учетные записи хранения, созданные в рамках этого руководства, удалите группу ресурсов.
 
-Выполните следующую команду интерфейса командной строки:
+Выполните следующую команду Azure CLI.
 
-```azurecli
+```azurecli-interactive
 az group delete --name amsResourceGroup
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)
-

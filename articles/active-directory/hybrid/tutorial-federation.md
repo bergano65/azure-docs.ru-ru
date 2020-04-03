@@ -1,5 +1,5 @@
 ---
-title: Учебник. Федерация среды одного леса AD с Azure | Документы Майкрософт
+title: Руководство по Создание федерации среды одного AD с Azure | Документация Майкрософт
 description: Демонстрируется настройка гибридной среды идентификации с помощью федерации.
 services: active-directory
 documentationcenter: ''
@@ -14,20 +14,20 @@ ms.date: 08/16/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a51175d192a5afb1f84f8d0ed2de9796f198f82d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7a123a85d653415f7b067e0c144c90ed79f2d081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "60296744"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80330992"
 ---
-# <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Учебник. Федерация среды одного леса AD с облаком
+# <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Руководство по Создание федерации среды одного леса AD в облаке с использованием PHS
 
 ![Создание](media/tutorial-federation/diagram.png)
 
 В этом руководстве последовательно рассматривается создание гибридной среды идентификации с помощью синхронизации.  Затем эту среду можно использовать для тестирования или дальнейшего знакомства с принципами работы гибридной идентификации.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником требуется следующее:
 - Компьютер с установленным [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 - [Подписка Azure](https://azure.microsoft.com/free)
@@ -88,7 +88,7 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
 7. Установите флажок "Я принимаю условия лицензии" и нажмите кнопку **Далее**.
-8. Выберите вариант **Пользовательская: установить только Windows (расширенная)**
+8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная).
 9. Нажмите кнопку **Далее**
 10. Когда установка завершится, перезапустите виртуальную машину, выполните вход и запустите обновление Windows, чтобы обеспечить актуальность виртуальной машины.  Установите последние обновления.
 
@@ -184,7 +184,7 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 ```
 
 ## <a name="create-a-certificate-for-ad-fs"></a>Создание сертификата для AD FS
-Теперь мы создадим SSL-сертификат, который будет использоваться службами AD FS.  Это будет самозаверяющий сертификат только для тестирования.  Корпорация Майкрософт не рекомендует использовать самозаверяющий сертификат в рабочей среде. Выполните следующие действия.
+Теперь мы создадим TLS/SSL-сертификат, который будет использоваться службами AD FS.  Это будет самозаверяющий сертификат только для тестирования.  Корпорация Майкрософт не рекомендует использовать самозаверяющий сертификат в рабочей среде. Выполните следующие действия.
 
 1. Откройте интегрированную среду сценариев PowerShell от имени администратора.
 2. Выполните следующий сценарий.
@@ -204,7 +204,7 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 1. Перейдите на [портал Azure](https://portal.azure.com) и выполните вход с учетной записью, имеющей подписку Azure.
 2. Щелкните **значок "плюс" (+)** и выполните поиск по запросу **Azure Active Directory**.
 3. В результатах поиска выберите **Azure Active Directory**.
-4. Нажмите кнопку **Создать**.</br>
+4. Нажмите кнопку **создания**.</br>
 ![Создание](media/tutorial-password-hash-sync/create1.png)</br>
 5. Укажите **имя организации** с **первоначальным доменным именем**. Щелкните **Создать**. В результате будет создан каталог.
 6. По завершении щелкните ссылку **здесь**, чтобы перейти к управлению каталогом.

@@ -1,19 +1,19 @@
 ---
-title: Скрипт PowerShell для создания учетной записи Azure Cosmos с правилами брандмауэра для IP-адресов
-description: Пример скрипта Azure PowerShell для создания учетной записи Azure Cosmos с правилами брандмауэра для IP-адресов
+title: Скрипт PowerShell для создания учетной записи Azure Cosmos DB с правилами брандмауэра для IP-адресов
+description: Пример скрипта Azure PowerShell для создания учетной записи Azure Cosmos DB с правилами брандмауэра для IP-адресов
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 09/20/2019
+ms.date: 03/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: 6f018815bb8afd50bd9f21f8c088fd688ace1174
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f01e8e818a1b3cf4f999afa1e0801b2341ede2bf
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75445071"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80365683"
 ---
-# <a name="create-an-azure-cosmos-account-with-ip-firewall"></a>Создания учетной записи Azure Cosmos с правилами брандмауэра для IP-адресов
+# <a name="create-an-azure-cosmos-db-account-with-ip-firewall"></a>Создание учетной записи Azure Cosmos DB с правилами брандмауэра для IP-адресов
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -40,10 +40,9 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 
 | Get-Help | Примечания |
 |---|---|
-|**Ресурсы Azure**| |
-| [New-AzResource](https://docs.microsoft.com/powershell/module/az.resources/new-azresource) | Создает ресурса. |
+|**Azure Cosmos DB**| |
+| [New-AzCosmosDBAccount](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount) | Создает учетную запись Cosmos DB. |
 |**Группы ресурсов Azure**| |
-| [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 

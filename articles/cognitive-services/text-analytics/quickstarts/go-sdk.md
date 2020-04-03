@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Клиентская библиотека Анализа текста для Go | Документация Майкрософт
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описывается, как определить язык с помощью клиентской библиотеки API "Анализ текста" для Go из Azure Cognitive Services.
+description: В этом кратком руководстве описывается, как определить язык с помощью клиентской библиотеки API Анализ текста для Go из Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme

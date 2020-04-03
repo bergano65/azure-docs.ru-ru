@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание схемы на портале
 description: В рамках этого краткого руководства вы используете службу Azure Blueprints, которая позволяет создавать, определять и развертывать артефакты с помощью портала Azure.
-ms.date: 11/21/2019
+ms.date: 03/25/2020
 ms.topic: quickstart
-ms.openlocfilehash: fa9eb8285086e35f8b23798c41a09529d0f49582
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 457f4f9c53f45077129b291c904bc1580b6d965e
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78356815"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80282058"
 ---
 # <a name="quickstart-define-and-assign-a-blueprint-in-the-portal"></a>Краткое руководство. Определение и назначение схемы на портале
 
@@ -29,6 +29,8 @@ ms.locfileid: "78356815"
    Можно также щелкнуть **Создать** на странице **Приступая к работе**, чтобы перейти непосредственно к созданию схемы.
 
    ![Создание схемы на странице определения схем](./media/create-blueprint-portal/create-blueprint-button.png)
+
+1. Выберите **Начать с пустой схемы** на карточке в верхней части встроенного списка схем.
 
 1. Укажите **имя схемы**, например **MyBlueprint** (здесь можно использовать до 48 букв и цифр, без пробелов и специальных символов). Поле **Описание схемы** пока оставьте пустым.
 

@@ -1,20 +1,19 @@
 ---
-title: Скрипт PowerShell — оценка пропускной способности (ЕЗ/с) для ресурсов API Cassandra службы Azure Cosmos DB
-description: Скрипт Azure PowerShell — оценка пропускной способности (ЕЗ/с) Azure Cosmos DB для API Cassandra
+title: Скрипт PowerShell для обновления регионов учетной записи Azure Cosmos
+description: Пример скрипта Azure PowerShell для обновления регионов учетной записи Azure Cosmos
 author: markjbrown
 ms.service: cosmos-db
-ms.subservice: cosmosdb-cassandra
 ms.topic: sample
-ms.date: 03/18/2020
+ms.date: 03/21/2020
 ms.author: mjbrown
-ms.openlocfilehash: f1cae958fce1de000ee4349a2fe8229d69f1a0ae
+ms.openlocfilehash: 4a8e24b4445e2bf29b35e87600de260c523d4376
 ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366165"
+ms.locfileid: "80367177"
 ---
-# <a name="get-throughput-rus-for-a-keyspace-or-table-for-azure-cosmos-db---cassandra-api"></a>Оценка пропускной способности (ЕЗ/с) для пространства ключей или таблицы в Azure Cosmos DB — API Cassandra
+# <a name="update-an-azure-cosmos-accounts-regions-using-powershell"></a>Обновление регионов учетной записи Azure Cosmos с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -22,7 +21,12 @@ ms.locfileid: "80366165"
 
 ## <a name="sample-script"></a>Пример скрипта
 
-[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/cassandra/ps-cassandra-ru-get.ps1 "Get throughput on a keyspace or table for Cassandra API")]
+> [!NOTE]
+> Нельзя изменять регионы вместе с другими свойствами учетной записи Cosmos в рамках одной операции. Такие изменения должны выполняться поочередно.
+> [!NOTE]
+> В этом примере демонстрируется использование учетной записи API SQL (Core). Чтобы использовать этот пример с другими API, соответствующие свойства необходимо скопировать в скрипт для такого API.
+
+[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/common/ps-account-update-region.ps1 "Update Azure Cosmos account regions")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
@@ -38,9 +42,8 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 
 | Get-Help | Примечания |
 |---|---|
-|**Azure Cosmos DB**| |
-| [Get-AzCosmosDBCassandraKeyspaceThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbcassandrakeyspacethroughput) | Возвращает значение пропускной способности указанного пространства ключей API Cassandra. |
-| [Get-AzCosmosDBCassandraTableThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbcassandratablethroughput) | Возвращает значение пропускной способности указанной таблицы API Cassandra. |
+|**Ресурсы Azure**| |
+| [Set-AzResource](https://docs.microsoft.com/powershell/module/az.resources/set-azresource) | Обновление ресурса. |
 |**Группы ресурсов Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
