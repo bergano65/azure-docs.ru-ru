@@ -56,7 +56,7 @@
     - name: Настройка
       items:
         - name: Подготовка данных для службы пользовательского распознавания речи
-          href: how-to-custom-speech-test-data.md
+          href: how-to-custom-speech-test-and-train.md
         - name: Проверка данных службы пользовательского распознавания речи
           href: how-to-custom-speech-inspect-data.md
         - name: Оценка точности службы пользовательского распознавание речи
@@ -67,10 +67,6 @@
           href: how-to-custom-speech-deploy-model.md
         - name: Создание транскрипций с подписями человека
           href: how-to-custom-speech-human-labeled-transcriptions.md
-        - name: Рекомендации по именованию настраиваемых ключевых слов
-          href: speech-devices-sdk-kws-guidelines.md
-        - name: Выявление пользовательских ключевых слов
-          href: speech-devices-sdk-create-kws.md
     - name: Справочник
       items:
         - name: API для работы с пакетом SDK службы "Речь"
@@ -448,6 +444,10 @@
         - name: Использование контейнеров службы "Речь" с экземплярами контейнеров Azure
           displayName: 'ACI,azure container instances,container instances,containers'
           href: deploy-speech-on-container-instances.md
+    - name: Ресурсы
+      items:
+        - name: Часто задаваемые вопросы о контейнерах
+          href: speech-container-faq.md
 - name: Пакет SDK для службы "Речь"
   items:
     - name: Обзор
