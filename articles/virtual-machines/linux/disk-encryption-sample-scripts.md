@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: c98da4b41da183f56d80fad1e8c01706d1cfcf23
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b54f9f3466fe5f7e2da622077f53575d6f43f72d
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78970511"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585954"
 ---
 # <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
 
@@ -80,7 +80,7 @@ ms.locfileid: "78970511"
 
 ### <a name="prerequisites-for-os-disk-encryption"></a>Предварительные требования для шифрования диска ОС
 
-* VM должен использовать дистрибутив, совместимый с шифрованием диска ОС, как указано в [поддерживаемых операционных системах шифрования Azure Disk](disk-encryption-overview.md#supported-vm-sizes) 
+* VM должен использовать дистрибутив, совместимый с шифрованием диска ОС, как указано в [поддерживаемых операционных системах шифрования Azure Disk](disk-encryption-overview.md#supported-vms) 
 * Виртуальная машина должна быть создана из образа Marketplace в Azure Resource Manager.
 * Виртуальная машина Azure по крайней мере с 4 ГБ ОЗУ (рекомендуемый размер — 7 ГБ).
 * (Для RHEL и CentOS.) Отключите SELinux. Чтобы отключить SELinux на виртуальной машине, ознакомьтесь с разделом "4.4.2. Disabling SELinux" (4.4.2. Отключение SELinux) [руководства пользователя и администратора SELinux](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide/sect-Security-Enhanced_Linux-Working_with_SELinux-Changing_SELinux_Modes.html#sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux).
@@ -294,7 +294,7 @@ ms.locfileid: "78970511"
    ```bash
     if [ 1 ]; then
    ```
-4. Измените файл /usr/lib/dracut/modules.d/90crypt/cryptroot-ask.sh, добавив следующий текст после строки # Open LUKS device.
+4. Отредкивание /usr/lib/dracut/modules.d/90crypt/cryptroot-ask.sh и придатите его к устройству "Открытые LUKS":
 
     ```bash
     MountPoint=/tmp-keydisk-mount
@@ -375,7 +375,7 @@ ms.locfileid: "78970511"
    ```bash
     if [ 1 ]; then
    ```
-4. Измените файл /usr/lib/dracut/modules.d/90crypt/cryptroot-ask.sh, добавив следующий текст после строки # Open LUKS device.
+4. Edit /usr/lib/dracut/modules.d/90crypt/cryptroot-ask.sh и придаток следующее после "Открытое устройство LUKS":
     ```bash
     MountPoint=/tmp-keydisk-mount
     KeyFileName=LinuxPassPhraseFileName
@@ -396,7 +396,7 @@ ms.locfileid: "78970511"
     fi
     done
     ```    
-5. Выполните команду /usr/sbin/dracut -f -v, чтобы обновить initrd.
+5. Выполнить "/usr/sbin/dracut -f-v" для обновления initrd.
 
     ![Выполнение команды /usr/sbin/dracut -f -v при настройке CentOS 7](./media/disk-encryption/centos-encrypt-fig5.png)
 

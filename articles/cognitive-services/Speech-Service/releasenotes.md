@@ -1,27 +1,59 @@
 ---
-title: Заметки о выпуске - Речевая служба
+title: Заметки о выпуске - Служба речи
 titleSuffix: Azure Cognitive Services
 description: Запущенный журнал функций службы речевой связи, улучшений, исправлений ошибок и известных проблем.
 services: cognitive-services
-author: brianem
+author: oliversc
 manager: jhakulin
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/25/2020
-ms.author: brianem
+ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: cbe9c7cbd0f402e38d1163050d77b055f89948ba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7bab0a28ba2b75903b6bdf4708e6aa0a98bdc9e5
+ms.sourcegitcommit: 515482c6348d5bef78bb5def9b71c01bb469ed80
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79219646"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80607402"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
+## <a name="speech-sdk-1110-2020-march-release"></a>Речь SDK 1.11.0: 2020-Март релиз
+
+**Новые функции**
+
+- Linux: Добавлена поддержка Red Hat Enterprise Linux (RHEL)/CentOS 7 x64 с [инструкциями](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-configure-rhel-centos-7) о том, как настроить систему для Speech SDK.
+- Linux: Добавлена поддержка .NET Core C на Linux ARM32 и ARM64. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=linux). 
+- СИ, СЗ: `UtteranceId` Добавлено в `ConversationTranscriptionResult`, согласованный идентификатор во всех промежуточных и окончательный результат распознавания речи. Подробная информация для [СЗ](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult?view=azure-dotnet), [СЗ](https://docs.microsoft.com/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
+- Python: Добавлена `Language ID`поддержка . Пожалуйста, смотрите speech_sample.py в [GitHub репо](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console).
+- Windows: Добавлена поддержка формата сжатого звука на платформе Windows для всех консольных приложений win32. Подробности [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-codec-compressed-audio-input-streams). 
+- JavaScript: Поддержка синтеза речи (текст к речи) в NodeJS. Узнайте больше [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/text-to-speech). 
+- JavaScript: Добавление новых API, чтобы обеспечить проверку всех отправки и получения сообщений. Узнайте больше [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript). 
+        
+**Исправления ошибок**
+
+- СИ, СЗ: Исправлена `SendMessageAsync` проблема, так что теперь отправляет двоичное сообщение как двоичный тип. Подробная информация для [СЗ](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [СЗ](https://docs.microsoft.com/cpp/cognitive-services/speech/connection).
+- С, СЗ: Исправлена проблема, `Connection MessageReceived` при которой `Recognizer` использование события `Connection` может привести к сбою, если он удаляется перед объектом. Подробная информация для [СЗ](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived?view=azure-dotnet), [СЗ](https://docs.microsoft.com/cpp/cognitive-services/speech/connection#messagereceived).
+- Android: Размер буфера аудио от микрофона уменьшился с 800 мс до 100 мс для улучшения задержки.
+- Android: Исправлена [проблема](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/563) с эмулятором Android x86 в Android Studio.
+- JavaScript: Добавлена поддержка регионов `fromSubscription` Китая с помощью API. Подробности [здесь](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#fromsubscription-string--string-). 
+- JavaScript: Добавить больше информации об ошибках для сбоев соединения от NodeJS.
+        
+**Примеры**
+
+- Единство: Общедоступный выборка распознавания намерения фиксируется, когда импорт LUIS json не удается. Подробности [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/369).
+- Python: Образец `Language ID`добавлен для . Подробности [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_sample.py).
+    
+**Covid19 сокращенное тестирование**
+
+Из-за работы удаленно в течение последних нескольких недель, мы не могли сделать столько ручного тестирования проверки устройства, как мы обычно делаем. Примером этого является тестирование ввода микрофона и вывода динамиков на Linux, iOS и macOS. Мы не внесли никаких изменений, которые, по нашему мнению, могли бы что-либо сломать на этих платформах, и все наши автоматизированные тесты прошли. В маловероятном случае, если мы что-то пропустили, пожалуйста, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?page=2&q=is%3Aissue+is%3Aopen).<br> Благодарим Вас за постоянную поддержку. Как всегда, пожалуйста, разместите вопросы или отзывы о [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?page=2&q=is%3Aissue+is%3Aopen) или [Стек переполнения](https://stackoverflow.microsoft.com/questions/tagged/731).<br>
+Оставайтесь здоровыми!
+
 ## <a name="speech-sdk-1100-2020-february-release"></a>Выступление SDK 1.10.0: 2020-февраль релиз
 
 **Новые функции**
+
  - Добавлены пакеты Python для поддержки нового выпуска 3.8 Python.
  - Поддержка Red Hat Enterprise Linux (RHEL)/CentOS 8 x64 (КЗ, КЗ, Ява, Пайтон).
    > [!NOTE] 
@@ -33,6 +65,7 @@ ms.locfileid: "79219646"
  - Обновленные модели распознавания речи для 19 локали для снижения средней частоты ошибок слов на 18,6% (es-ES, es-MX, fr-CA, fr-FR, it-IT, ja-JP, ko-KR, pt-BR, zh-CN, zh-HK, nb-NO, fi-FL, ru-RU, pl-PL, ca-ES, zh-TW, th-TH, pt-PT-PT, PT-PT. Новые модели приносят значительные улучшения в нескольких областях, включая сценарии диктовки, Call-Center транскрипции и видеоиндексации.
 
 **Исправления ошибок**
+
  - Исправлена ошибка, где разговор Transcriber не ждут должным образом в JAVA AIS 
  - Android x86 эмулятор исправить для Xamarin [GitHub вопрос](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/363)
  - Добавить отсутствует (Получить Набор)Методы свойств для AudioConfig
@@ -41,9 +74,11 @@ ms.locfileid: "79219646"
  - Генерация id в универсальных windows Applications теперь использует соответствующий уникальный алгоритм GUID; ранее и непреднамеренно по умолчанию заглушается реализация, которая часто приводит к столкновениям по поводу больших наборов взаимодействий.
  
  **Примеры**
+ 
  - Образец Unity для использования Speech SDK с [микрофоном Unity и потоковой передачей режима push](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/unity/from-unitymicrophone)
 
 **Другие изменения**
+
  - [Документация конфигурации OpenSSL обновлена для Linux](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-configure-openssl-linux)
 
 ## <a name="speech-sdk-190-2020-january-release"></a>Речь SDK 1.9.0: 2020-январь релиз
@@ -59,13 +94,11 @@ ms.locfileid: "79219646"
 - JavaScript: Добавлена `FromHost API` поддержка для облегчения использования с контейнерами на прем и суверенными облаками. Смотрите документацию [здесь](speech-container-howto.md).
 - JavaScript: Теперь `NODE_TLS_REJECT_UNAUTHORIZED` мы чтим благодаря вкладу [от orgads](https://github.com/orgads). Дополнительные сведения см. [здесь](https://github.com/microsoft/cognitive-services-speech-sdk-js/pull/75).
 
-
 **Критические изменения**
 
 - `OpenSSL`был обновлен до версии 1.1.1b и статично связан с основной библиотекой Speech SDK для Linux. Это может привести к слому, если ваш почтовый ящик `OpenSSL` не был установлен в `/usr/lib/ssl` каталог есистемы. Пожалуйста, проверьте [нашу документацию](how-to-configure-openssl-linux.md) в соответствии с документами речи SDK для работы вокруг этого вопроса.
 - Мы изменили тип данных, `WordLevelTimingResult.Offset` `int` возвращенный для C,, на `long` доступ к `WordLevelTimingResults` данным речи длиннее 2 минут.
 - `PushAudioInputStream`и `PullAudioInputStream` теперь отправить информацию о заголовок евки в службу речи на `AudioStreamFormat`основе , дополнительно указано, когда они были созданы. Теперь клиенты должны использовать [поддерживаемый формат ввода звука.](how-to-use-audio-input-streams.md) Любые другие форматы получат неоптимальные результаты распознавания или могут вызвать другие проблемы. 
-
 
 **Исправления ошибок**
 
@@ -81,13 +114,11 @@ ms.locfileid: "79219646"
 - JavaScript: добавлена поддержка для настройки свойств обслуживания, как добавлено в 1.7.
 - JavaScript: исправлена проблема, при которой ошибка соединения может привести к непрерывным неудачным попыткам повторного подключения websocket.
 
-
 **Примеры**
 
 - Добавлен образец распознавания ключевых слов для Android [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/java/android/sdkdemo).
 - Добавлен образец TTS для сценария сервера [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/csharp/sharedcontent/console/speech_synthesis_server_scenario_sample.cs).
 - Добавлены мульти-устройства разговор quickstarts для C и C » [здесь](quickstarts/multi-device-conversation.md).
-
 
 **Другие изменения**
 

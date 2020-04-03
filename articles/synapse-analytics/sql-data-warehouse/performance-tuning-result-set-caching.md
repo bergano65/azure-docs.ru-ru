@@ -1,6 +1,6 @@
 ---
 title: Performance tuning with result set caching (Настройка производительности путем кэширования результирующего набора)
-description: Обзор функции кэширования наборов результатов для аналитики S'L в Azure Synapse Analytics
+description: Обзор функции кэширования наборов результатов для пула Synapse S'L в Azure Synapse Analytics
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,24 +11,26 @@ ms.date: 10/10/2019
 ms.author: xiaoyul
 ms.reviewer: nidejaco;
 ms.custom: azure-synapse
-ms.openlocfilehash: da476dc14949ebab1a054a9624d91acb25b9f2b4
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: ef5be63b2068297aedf4cf12d914da09b1efed41
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80474478"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80583819"
 ---
-# <a name="performance-tuning-with-result-set-caching"></a>Performance tuning with result set caching (Настройка производительности путем кэширования результирующего набора)  
-При включении кэширования набора результатов, s'L Analytics автоматически кэширует запрос в базе данных пользователей для повторного использования.  Это позволяет последующим выполнениям запросов получать результаты непосредственно из сохраняемого кэша, поэтому повторная вычисления не требуется.   Кэширование набора результатов улучшает производительность запроса и снижает использование вычислительных ресурсов.  Кроме того, запросы с использованием кэшированных результатов не используют слоты для параллелизма и, таким образом, не учитываются в существующих лимитах параллелизма. Для обеспечения безопасности пользователи могут получить доступ к кэшированным результатам только в том случае, если у них есть те же разрешения на доступ к данным, что и у пользователей, создающих кэшированные результаты.  
+# <a name="performance-tuning-with-result-set-caching"></a>Performance tuning with result set caching (Настройка производительности путем кэширования результирующего набора)
+
+При включении кэширования набора результатов пул Synapse S'L автоматически кэширует запрос в базе данных пользователей для повторного использования.  Это позволяет последующим выполнениям запросов получать результаты непосредственно из сохраняемого кэша, поэтому повторная вычисления не требуется.   Кэширование набора результатов улучшает производительность запроса и снижает использование вычислительных ресурсов.  Кроме того, запросы с использованием кэшированных результатов не используют слоты для параллелизма и, таким образом, не учитываются в существующих лимитах параллелизма. Для обеспечения безопасности пользователи могут получить доступ к кэшированным результатам только в том случае, если у них есть те же разрешения на доступ к данным, что и у пользователей, создающих кэшированные результаты.  
 
 ## <a name="key-commands"></a>Ключевые команды
-[Включите кэширование результатов ON/OFF для базы данных пользователей](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest)
 
-[Включите кэширование результатов ON/OFF для сеанса](https://docs.microsoft.com/sql/t-sql/statements/set-result-set-caching-transact-sql?view=azure-sqldw-latest)
+[Включите кэширование результатов ON/OFF для базы данных пользователей](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-[Проверьте размер набора кэшированных результатов](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-showresultcachespaceused-transact-sql?view=azure-sqldw-latest)  
+[Включите кэширование результатов ON/OFF для сеанса](/sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-[Очистка кэша](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?view=azure-sqldw-latest)
+[Проверьте размер набора кэшированных результатов](/sql/t-sql/database-console-commands/dbcc-showresultcachespaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  
+
+[Очистка кэша](/sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 ## <a name="whats-not-cached"></a>Что не кэшируется  
 
@@ -39,7 +41,7 @@ ms.locfileid: "80474478"
 - запросы, возвращающие данные с размером строк более 64 КБ.
 
 > [!IMPORTANT]
-> Операции для создания кэша набора результатов и извлечения данных из кэша происходят на узле управления экземпляра S'L Analytics.
+> Операции для создания кэша набора результатов и извлечения данных из кэша происходят на узле управления экземпляра пула Synapse S'L.
 > Если кэширование результирующего набора включено, выполнение запросов, возвращающих большие (например, более одного миллиона строк) наборы, может привести к высокой загрузке ЦП на управляющем узле и снизить общую скорость реакции экземпляра.  Как правило, такие запросы используются в ходе исследования данных, а также при выполнении операций извлечения, преобразования и загрузки. Чтобы избежать чрезмерной загрузки управляющего узла и снижения производительности, перед выполнение запросов такого типа пользователям следует отключить кэширование результирующего набора для базы данных.  
 
 Запустите этот запрос для времени, заработаваемого операциями кэширования, настроенным результатом для запроса:
@@ -76,7 +78,7 @@ WHERE request_id = <'Your_Query_Request_ID'>
 
 Максимальный размер кэша результирующих наборов составляет 1 ТБ на базу данных.  Кэшированные результаты автоматически аннулируются при изменении данных базового запроса.  
 
-Выселение кэша управляется s'L Analytics автоматически в соответствии с этим графиком: 
+Выселение кэша выполняется автоматически по следующему графику: 
 - Каждые 48 часов, если набор результатов не был использован или был признан недействительным. 
 - Когда кэш набора результата приближается к максимальному размеру.
 
@@ -87,4 +89,5 @@ WHERE request_id = <'Your_Query_Request_ID'>
 Приостановка базы данных не опорожняет набор кэшированных результатов.  
 
 ## <a name="next-steps"></a>Следующие шаги
+
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md). 

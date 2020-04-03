@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 05/28/2019
 ms.author: juliako
-ms.openlocfilehash: a813c77e81e51bfe13e75ed6c8d0e24b4d0fa645
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9c80056fd62173ff1e5a6ed3979adba71b7706cc
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "66392927"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582756"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
@@ -34,7 +34,7 @@ ms.locfileid: "66392927"
 
 > [!IMPORTANT]
 > * Свойства **политик потоковой передачи** типа Datetime всегда задаются в формате UTC.
-> * Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. Дополнительные сведения см. в статье [Квоты и ограничения](limits-quotas-constraints.md).
+> * Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. Для получения дополнительной [информации см.](limits-quotas-constraints.md)
 
 ## <a name="decision-tree"></a>Дерево решений
 
@@ -83,7 +83,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)

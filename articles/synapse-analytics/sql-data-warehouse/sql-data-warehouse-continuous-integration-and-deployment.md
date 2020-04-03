@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: f73fbbc42085b3a0cb6ab7dd1c0e32838a166ccf
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 39501cef3bb2f7e4a0e061968520f687cf97ecc5
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350635"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80584203"
 ---
 # <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание для складирования данных
 
@@ -60,9 +60,9 @@ ms.locfileid: "80350635"
 
    Запустите и проверьте свой конвейер. Вы можете вносить изменения локально и возвращать изменения в системе управления версиями, в результате чего должна выполняться автоматическая сборка и развертывание.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Исследуйте [архитектуру MPP аналитики S'L](massively-parallel-processing-mpp-architecture.md)
+- Исследуйте [архитектуру MPP пула MPP synapse S'L](massively-parallel-processing-mpp-architecture.md)
 - Быстрое создание [пула SQL](create-data-warehouse-portal.md)
-- [Данные образца нагрузки](load-data-from-azure-blob-storage-using-polybase.md)
+- [Загрузка примера данных](load-data-from-azure-blob-storage-using-polybase.md)
 - Просмотрите [видео](/azure/sql-data-warehouse/sql-data-warehouse-videos).

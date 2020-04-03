@@ -81,14 +81,10 @@
           href: howto-create-personal-dashboards.md
         - name: Выполнение задания
           href: howto-run-a-job.md
-        - name: Создание версии шаблона устройства
-          href: howto-version-device-template.md
     - name: Преобразование
       items:
         - name: Экспорт данных в целевое расположение в Azure
           href: howto-export-data.md
-        - name: Обзор интерфейсов API для IoT Central
-          href: 'https://docs.microsoft.com/learn/modules/manage-iot-central-apps-with-rest-api/'
         - name: Создание действий веб-перехватчиков на основе правил
           href: howto-create-webhooks.md
         - name: Подключение групп действий Azure Monitor на основе правил

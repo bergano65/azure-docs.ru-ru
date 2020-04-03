@@ -1,6 +1,6 @@
 ---
 title: Квоты и ограничения в медиасервисах Azure
-description: В этой теме описаны квоты и ограничения в службах microsoft Azure Media.
+description: Эта тема описывает квоты и ограничения в службах microsoft Azure Media Services.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/31/2020
+ms.date: 04/01/2020
 ms.author: juliako
-ms.openlocfilehash: 6fb2f8f9172533a2c7f4aa03e99bd08e16a1f1dc
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 2d4f5f83335f6f115362bcf66cf69d7f9de7eaa5
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/02/2020
-ms.locfileid: "80545925"
+ms.locfileid: "80582322"
 ---
 # <a name="azure-media-services-quotas-and-limits"></a>Квоты и лимиты медиаслужб Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "80545925"
 | Выходы в реальном маштабе времени в в реальном маштабе времени события |3 <sup>(5)</sup> |
 | Максимальная продолжительность выхода в реальном маштабе времени | 25 часов |
 
-<sup>4</sup> Подробную информацию об ограничениях Live Event [можно](live-event-types-comparison.md)узнать.
+<sup>4</sup> Подробную информацию о лимитах Live Event [можно](live-event-types-comparison.md)узнать.
 
 <sup>5</sup> Live Выходы начинаются на создание и остановить при удалении.
 
@@ -87,7 +87,7 @@ ms.locfileid: "80545925"
 
 | Ресурс | Ограничение по умолчанию | 
 | --- | --- | 
-| [Потоковые конечные точки](streaming-endpoint-concept.md) (остановлены или запущены) на учетную запись Media Services|2 (фиксированный)|
+| [Потоковые конечные точки](streaming-endpoint-concept.md) (остановлены или запущены) на учетную запись Media Services|2 |
 | [Фильтры динамических манифестов](filters-dynamic-manifest-overview.md)|100|
 | [Политики потоковой передачи](streaming-policy-concept.md) | 100 <sup>(6)</sup> |
 | Уникальные [потоковые локаторы,](streaming-locators-concept.md) связанные с активом в одно время | 100<sup>(7)</sup> (фиксированная) |
@@ -107,6 +107,6 @@ ms.locfileid: "80545925"
 
 Для ресурсов, которые не являются фиксированными, вы можете попросить о квотах, которые будут подняты, открыв [билет поддержки.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) Укажите в запросе подробную информацию о необходимых изменениях квоты, сценариях использования и регионах. <br/>**Не** создавайте дополнительные учетные записи служб мультимедиа Azure, пытаясь расширить ограничения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Обзор](media-services-overview.md)

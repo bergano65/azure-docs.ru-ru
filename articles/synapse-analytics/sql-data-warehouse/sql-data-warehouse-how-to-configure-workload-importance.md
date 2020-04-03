@@ -11,16 +11,16 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 85fa6a989ae1a6214392914ffd46cd12af27a8d2
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 4aa0e7da1e77334a8b9048dab4a461133f220bd1
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350480"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80582454"
 ---
 # <a name="configure-workload-importance-in-azure-synapse-analytics"></a>Настройка важности рабочей нагрузки в аналитике Azure Synapse
 
-Заяц значение в S'L Analytics для Azure Synapse позволяет влиять на планирование запросов. Запросы с более высокой важностью будут запланированы для выполнения запросов с меньшим значением. Чтобы присвоить значение запросам, необходимо создать классификатор рабочей нагрузки.
+Значение Synapse S'L для Azure Synapse позволяет влиять на планирование запросов. Запросы с более высокой важностью будут запланированы для выполнения запросов с меньшим значением. Чтобы присвоить значение запросам, необходимо создать классификатор рабочей нагрузки.
 
 ## <a name="create-a-workload-classifier-with-importance"></a>Создание классификатора рабочей нагрузки с важностью
 
@@ -49,7 +49,7 @@ CREATE WORKLOAD CLASSIFIER AdhocClassifier 
          ,IMPORTANCE     =  below_normal);  
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 - Для получения дополнительной информации об управлении рабочей нагрузкой [см.](sql-data-warehouse-workload-classification.md)
 - Для получения дополнительной информации о важности [см.](sql-data-warehouse-workload-importance.md)
 

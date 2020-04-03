@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: b285daa465c8d069b359e94c9203c1ffbea24c06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0f3d6580b738a77de9654de0df9b4ce1120fc6eb
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78970684"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80584040"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -37,7 +37,7 @@ ms.locfileid: "78970684"
 
 ## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Какие размеры VM и операционные системы поддерживают шифрование Azure Disk?
 
-В статье, опубликованной в обзоре [шифрования azure Disk,](disk-encryption-overview.md) [перечислены размеры VM](disk-encryption-overview.md#supported-vm-sizes) и [операционные системы VM,](disk-encryption-overview.md#supported-operating-systems) поддерживающие шифрование Azure Disk.
+В статье, опубликованной в обзоре [шифрования azure Disk,](disk-encryption-overview.md) [перечислены размеры VM](disk-encryption-overview.md#supported-vms) и [операционные системы VM,](disk-encryption-overview.md#supported-operating-systems) поддерживающие шифрование Azure Disk.
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
@@ -54,7 +54,7 @@ ms.locfileid: "78970684"
 Чтобы повернуть секреты, просто позвоните по той же команде, что и первоначально для включения шифрования диска, указывая другой Key Vault. Чтобы повернуть ключ шифрования, позвоните той же команде, что и первоначально для включения шифрования диска, с указанием нового шифрования ключа. 
 
 >[!WARNING]
-> - Если ранее вы использовали [шифрование Azure Disk с приложением Azure AD,](disk-encryption-linux-aad.md) указав учетные данные Azure AD для шифрования этого VM, вам придется продолжать использовать эту опцию для шифрования VM. На этой зашифрованной виртуальной машине нельзя использовать шифрование дисков Azure, так как этот сценарий не работает — переключение из приложения AAD для данной зашифрованной виртуальной машины сейчас не поддерживается.
+> - Если ранее вы использовали [шифрование Azure Disk с приложением Azure AD,](disk-encryption-linux-aad.md) указав учетные данные Azure AD для шифрования этого VM, вам придется продолжать использовать эту опцию для шифрования VM. Вы не можете использовать шифрование Azure Disk на этом зашифрованном VM, так как это не поддерживается сценарий, то есть отключение от приложения AAD для этого зашифрованного VM еще не поддерживается.
 
 ## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Как добавить или удалить ключ шифрования, если я изначально его не использовал?
 
@@ -93,7 +93,7 @@ ms.locfileid: "78970684"
 > [!NOTE]
 > Расширение предварительного провиста шифрования дисков Linux Azure "Microsoft.OSTCExtension.AzureDiskEncryptionForLinux" является устаревшим. Это расширение было опубликовано для предварительного релиза шифрования дисков Azure. Не следует использовать предварительную версию расширения при тестировании или развертывании.
 
-> Для сценариев развертывания, таких как Azure Resource Manager (ARM), где вам необходимо развернуть расширение шифрования диска Azure для Linux VM для включения шифрования на Вашем Linux IaaS VM, необходимо использовать расширение с поддержкой шифрования диска Azure " Microsoft.Azure.Security.AzureDiskEncryptionForLinux".
+> Для сценариев развертывания, таких как Azure Resource Manager (ARM), где необходимо развернуть расширение шифрования дисков Azure для Linux VM для включения шифрования на Linux IaaS VM, необходимо использовать расширение с поддержкой шифрования дисков Azure "Microsoft.Azure.Security.AzureDiskEncryptionForLinux".
 
 ## <a name="can-i-apply-azure-disk-encryption-on-my-custom-linux-image"></a>Можно ли применять шифрование дисков Azure в пользовательском образе Linux?
 
@@ -138,7 +138,7 @@ ms.locfileid: "78970684"
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Обзор шифрования дисков Azure](disk-encryption-overview.md)

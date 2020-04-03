@@ -10,12 +10,12 @@ ms.author: migreene
 ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 275b3bd25f931b73e8a378433899ef9ade4d47c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d6d257198fcae54b1214d77f6b905d876d2687f5
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76028276"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585531"
 ---
 # <a name="configuration-based-on-stig"></a>Использование конфигурации на основе STIG
 
@@ -37,11 +37,11 @@ ms.locfileid: "76028276"
 PowerSTIG решает проблему, предоставляя [композитные ресурсы](https://github.com/microsoft/powerstig#powerstigdsc) для решения каждой области конфигурации, а не пытаясь решить весь диапазон параметров в одном большом файле.
 
 После создания конфигураций можно использовать [скрипты Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations) для генерации файлов MOF и [загрузки файлов MOF в Azure Automation.](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation)
-Затем зарегистрируйте серверы либо в [помещении,](/azure/automation/automation-dsc-onboarding#physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) либо [в Azure,](/azure/automation/automation-dsc-onboarding#azure-virtual-machines) чтобы вытащить конфигурации.
+Затем зарегистрируйте серверы либо в [помещении,](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) либо [в Azure,](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) чтобы вытащить конфигурации.
 
 Чтобы опробовать PowerSTIG, посетите [галерею PowerShell](https://www.powershellgallery.com) и загрузите решение или нажмите "Сайт проекта", чтобы просмотреть [документацию.](https://github.com/microsoft/powerstig)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview)
 - [Ресурсы DSC](/powershell/scripting/dsc/resources/resources)

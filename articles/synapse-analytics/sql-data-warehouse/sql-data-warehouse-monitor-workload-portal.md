@@ -1,6 +1,6 @@
 ---
 title: Мониторинг рабочей нагрузки - Портал Azure
-description: Мониторинг аналитики с помощью портала Azure
+description: Мониторинг Синапсе СЗЛ с помощью портала Azure
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: ''
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 344e2cd03408b5bd1e966abc8abb72bce6078acc
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 64e61b00ecebec82b465cb13c6df0e323f6c7777
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350332"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586551"
 ---
 # <a name="monitor-workload---azure-portal"></a>Мониторинг рабочей нагрузки - Портал Azure
 
-В этой статье описывается, как использовать портал Azure для мониторинга рабочей нагрузки. Это включает в себя настройку журналов Azure Monitor для изучения тенденций выполнения запросов и рабочей нагрузки с помощью аналитики журналов для [аналитики S'L.](https://azure.microsoft.com/blog/workload-insights-with-sql-data-warehouse-delivered-through-azure-monitor-diagnostic-logs-pass/)
+В этой статье описывается, как использовать портал Azure для мониторинга рабочей нагрузки. Это включает в себя настройку журналов Azure Monitor для изучения тенденций выполнения запросов и рабочей нагрузки с помощью аналитики журналов для [Synapse S'L.](https://azure.microsoft.com/blog/workload-insights-with-sql-data-warehouse-delivered-through-azure-monitor-diagnostic-logs-pass/)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -97,6 +97,6 @@ AzureDiagnostics
 | where Type_s == "UserConcurrencyResourceType"
 | summarize totalQueuedQueries = dcount(RequestId_s)
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы настроили и настроили журналы мониторов Azure, [настройте панели мониторинга Azure](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards) для обмена данными в вашей команде.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: fb2f9ff5af68575d9f9d29e9a6aca83d603395b3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6ff9e62ed145b7892d2997193dae8e171ae49c98
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77672418"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585381"
 ---
 # <a name="create-diagnostic-setting-to-collect-platform-logs-and-metrics-in-azure"></a>Создание диагностических параметров для сбора журналов платформ и метрик в Azure
 [Платформы журналов](platform-logs-overview.md) в Azure, включая журналы деятельности Azure и журналы ресурсов, предоставляют подробную информацию о диагностике и аудите для ресурсов Azure и платформы Azure, от которой они зависят. В этой статье приводится подробная информация о создании и настройке диагностических настроек для отправки журналов платформ в различные пункты назначения.
@@ -53,7 +53,7 @@ ms.locfileid: "77672418"
     
         ![Параметры диагностики](media/diagnostic-settings/menu-monitor.png)
 
-    - Для журнала activity нажмите **журнал Activity** в меню **Azure Monitor,** а затем **в настройках Диагностики.** Убедитесь, что вы отогивайте любую устаревшую конфигурацию для журнала activity. [Отогивайте существующие настройки](diagnostic-settings-legacy.md#disable-existing-settings) для получения подробной информации.
+    - Для журнала activity нажмите **журнал Activity** в меню **Azure Monitor,** а затем **в настройках Диагностики.** Убедитесь, что вы отогивайте любую устаревшую конфигурацию для журнала activity. [Отогивайте существующие настройки](/azure/azure-monitor/platform/activity-log-collect#collecting-activity-log) для получения подробной информации.
 
         ![Параметры диагностики](media/diagnostic-settings/menu-activity-log.png)
 
@@ -133,6 +133,6 @@ az monitor diagnostic-settings create  \
 ### <a name="configure-diagnostic-settings-using-resource-manager-template"></a>Настройка диагностических настроек с помощью шаблона «Менеджер ресурсов»
 Просрвините [диагностическую настройку в Azure Monitor с помощью шаблона «Менеджер ресурсов»](diagnostic-settings-template.md) для создания или обновления диагностических настроек с помощью шаблона «Менеджер ресурсов».
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте больше о журналах платформы Azure](platform-logs-overview.md)

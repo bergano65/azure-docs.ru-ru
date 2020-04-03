@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/15/2019
+ms.date: 04/02/2020
 ms.author: b-juche
-ms.openlocfilehash: 8f50b2ad34c705c8d3831d8243f136c41d750dc0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b21db3e842898e8ce11b560714888b946373300e
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60691104"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80616431"
 ---
 # <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
 
@@ -41,13 +41,13 @@ ms.locfileid: "60691104"
     Появится окно New Capacity Pool (Новый пул емкости).
 
 3. Укажите следующую информацию для нового пула емкости.  
-   * **Название**  
+   * **имя**;  
      Придумайте название для пула емкости.  
      Название пула емкости должно быть уникальным для каждой учетной записи NetApp.
 
    * **Уровень обслуживания**   
      В этом поле отображается целевая производительность пула емкости.  
-     Укажите уровень обслуживания для пула емкости: [**Premium**](azure-netapp-files-service-levels.md#Premium) или [**Standard**](azure-netapp-files-service-levels.md#Standard).
+     Укажите уровень обслуживания для пула емкости: [**Ultra,**](azure-netapp-files-service-levels.md#Ultra) [**Premium**](azure-netapp-files-service-levels.md#Premium)или [**Standard**](azure-netapp-files-service-levels.md#Standard).
 
    * **Размер**     
      Укажите приобретаемый размер пула емкости.        
@@ -57,7 +57,7 @@ ms.locfileid: "60691104"
 
 4. Нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 - Сведения о ценах на разные уровни обслуживания см. на странице [Цены на службу Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)

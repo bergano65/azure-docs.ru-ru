@@ -11,12 +11,12 @@ ms.date: 03/22/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: a640f2f260c94cd7502aa79badb32bd26abebb11
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 81191fd3b654f612f2621757f3006268276477de
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350319"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586531"
 ---
 # <a name="maximizing-rowgroup-quality-for-columnstore"></a>Максимальное повышение качества группы строк для индекса columnstore
 
@@ -89,7 +89,7 @@ To view an estimate of the memory requirements to compress a rowgroup of maximum
 
 Используемый метод сжатия длинных строк предназначен для сжатия текста. Этот метод сжатия использует *словари* для хранения текстовых шаблонов. Максимальный размер словаря составляет 16 МБ. Для каждого столбца длинной строки в группе строк используется только один словарь.
 
-Для углубленного обсуждения требований к памяти [SQL Analytics scaling: configuration and guidance](https://channel9.msdn.com/Events/Ignite/2016/BRK3291)columnstore см.
+Для углубленного обсуждения требований к памяти [Synapse SQL scaling: configuration and guidance](https://channel9.msdn.com/Events/Ignite/2016/BRK3291)columnstore см.
 
 ## <a name="ways-to-reduce-memory-requirements"></a>Способы снижения требований к памяти
 
@@ -139,6 +139,6 @@ OPTION (MAXDOP 1);
 - Сведения об увеличении числа DWU см.в разделе [Масштабирование производительности](quickstart-scale-compute-portal.md).
 - Сведения об изменении класса ресурсов для запросов см. в разделе [Пример изменения класса ресурсов пользователя](resource-classes-for-workload-management.md#change-a-users-resource-class).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Чтобы найти больше способов повышения производительности [Performance overview](cheat-sheet.md)для аналитики S'L, см.
+Чтобы найти больше способов повышения производительности для Synapse S'L, [см.](cheat-sheet.md)

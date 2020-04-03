@@ -15,12 +15,12 @@
       href: quick-backup-vm-powershell.md
     - name: Резервное копирование виртуальной машины с помощью интерфейса командной строки
       href: quick-backup-vm-cli.md
-    - name: "Резервное копирование виртуальной машины\_— шаблон Resource Manager"
-      displayName: ARM
+    - name: Резервное копирование виртуальной машины (шаблон ARM)
+      displayName: Resource Manager
       href: quick-backup-vm-template.md
 - name: Учебники
   items:
-    - name: Резервное копирование виртуальных машин Azure в нужном масштабе
+    - name: Резервное копирование нескольких виртуальных машин Azure
       href: tutorial-backup-vm-at-scale.md
     - name: Резервное копирование виртуальных машин Azure с помощью PowerShell
       href: tutorial-backup-azure-vm.md
@@ -58,6 +58,8 @@
           href: backup-support-matrix-mabs-dpm.md
         - name: Таблица поддержки агента Служб восстановления Microsoft Azure
           href: backup-support-matrix-mars-agent.md
+        - name: Таблица поддержки резервного копирования SQL Server
+          href: sql-support-matrix.md
         - name: Матрица поддержки резервного копирования SAP HANA
           href: sap-hana-backup-support-matrix.md
         - name: Поддерживаемые номера SKU виртуальных машин для Политики Azure
@@ -164,10 +166,10 @@
           href: backup-azure-manage-mars.md
     - name: Резервное копирование общих папок Azure
       items:
+        - name: Обзор
+          href: azure-file-share-backup-overview.md
         - name: на портале Azure;
           items:
-            - name: Обзор
-              href: azure-file-share-backup-overview.md
             - name: Резервное копирование
               href: backup-afs.md
             - name: Восстановить
@@ -336,6 +338,8 @@
           href: backup-rm-template-samples.md
     - name: Безопасность
       items:
+        - name: Обзор
+          href: security-overview.md
         - name: Управление доступом на основе ролей
           href: backup-rbac-rs-vault.md
         - name: Безопасность облачных рабочих нагрузок
@@ -382,6 +386,8 @@
       href: /azure/templates/microsoft.recoveryservices/allversions
 - name: Ресурсы
   items:
+    - name: Соответствие нормативным требованиям
+      href: compliance-offerings.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Форум MSDN

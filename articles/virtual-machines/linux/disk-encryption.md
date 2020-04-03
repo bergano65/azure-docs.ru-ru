@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: 88d25083a1105023279f3907a4573319fabe087c
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 912677a10d7098b891a4f6972b61761cd72cf292
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80520771"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585940"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование дисков, управляемых Azure на стороне сервера
 
@@ -34,7 +34,11 @@ ms.locfileid: "80520771"
 
 ## <a name="customer-managed-keys"></a>Ключи, управляемые клиентом
 
-Вы можете управлять шифрованием на уровне каждого управляемого диска, с вашими собственными ключами. Шифрование на стороне сервера для управляемых дисков с ключами, управляемыми клиентом, предлагает интегрированный опыт работы с Azure Key Vault. Вы можете импортировать [ключи RSA](../../key-vault/key-vault-hsm-protected-keys.md) в Key Vault или создавать новые клавиши RSA в Azure Key Vault. Управляемые диски Azure обрабатывают шифрование и расшифровку полностью прозрачным способом с помощью [шифрования конвертов.](../../storage/common/storage-client-side-encryption.md#encryption-and-decryption-via-the-envelope-technique) Он шифрует данные с помощью ключа шифрования данных [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 256 (DEK), который, в свою очередь, защищен с помощью ключей. Вы должны предоставить доступ к управляемым дискам в вашем Ключевом Убежище, чтобы использовать ваши ключи для шифрования и расшифровки DEK. Это позволяет полностью контролировать свои данные и ключи. Вы можете отключить ключи или отозвать доступ к управляемым дискам в любое время. Вы также можете провести аудит использования ключей шифрования с помощью мониторинга Azure Key Vault, чтобы убедиться, что только управляемые диски или другие надежные службы Azure получают доступ к вашим ключам.
+Вы можете управлять шифрованием на уровне каждого управляемого диска, с вашими собственными ключами. Шифрование на стороне сервера для управляемых дисков с ключами, управляемыми клиентом, предлагает интегрированный опыт работы с Azure Key Vault. Вы можете импортировать [ключи RSA](../../key-vault/key-vault-hsm-protected-keys.md) в Key Vault или создавать новые клавиши RSA в Azure Key Vault. 
+
+Управляемые диски Azure обрабатывают шифрование и расшифровку полностью прозрачным способом с помощью [шифрования конвертов.](../../storage/common/storage-client-side-encryption.md#encryption-and-decryption-via-the-envelope-technique) Он шифрует данные с помощью ключа шифрования данных [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 256 (DEK), который, в свою очередь, защищен с помощью ключей. Служба хранения генерирует ключи шифрования данных и шифрует их ключами, управляемыми клиентами, с помощью шифрования RSA. Шифрование конверта позволяет периодически поворачивать (изменять) ключи в соответствии с вашими правилами соответствия, не влияя на ваши ВМ. При повороте ключей служба хранения повторно шифрует ключи шифрования данных новыми ключами, управляемыми клиентом. 
+
+Вы должны предоставить доступ к управляемым дискам в вашем Ключевом Убежище, чтобы использовать ваши ключи для шифрования и расшифровки DEK. Это позволяет полностью контролировать свои данные и ключи. Вы можете отключить ключи или отозвать доступ к управляемым дискам в любое время. Вы также можете провести аудит использования ключей шифрования с помощью мониторинга Azure Key Vault, чтобы убедиться, что только управляемые диски или другие надежные службы Azure получают доступ к вашим ключам.
 
 Для премиальных SSD-навистых, стандартных SSD-наготовителя химаху до разогнана: при отключении или удалении ключа любые ВМ с дисками с использованием этого ключа автоматически выключаются. После этого, VMs не будет пригодным для удовкостных, если ключ включен снова или вы назначите новый ключ.
 
@@ -190,6 +194,32 @@ az vm disk attach --vm-name $vmName --lun $diskLUN --ids $diskId
 
 ```
 
+#### <a name="change-the-key-of-a-diskencryptionset-to-rotate-the-key-for-all-the-resources-referencing-the-diskencryptionset"></a>Измените ключ DiskEncryptionSet, чтобы повернуть ключ для всех ресурсов, ссылающихся на DiskEncryptionSet
+
+```azurecli
+
+rgName=yourResourceGroupName
+keyVaultName=yourKeyVaultName
+keyName=yourKeyName
+diskEncryptionSetName=yourDiskEncryptionSetName
+
+
+keyVaultId=$(az keyvault show --name $keyVaultName--query [id] -o tsv)
+
+keyVaultKeyUrl=$(az keyvault key show --vault-name $keyVaultName --name $keyName --query [key.kid] -o tsv)
+
+az disk-encryption-set update -n keyrotationdes -g keyrotationtesting --key-url $keyVaultKeyUrl --source-vault $keyVaultId
+
+```
+
+#### <a name="find-the-status-of-server-side-encryption-of-a-disk"></a>Найти состояние шифрования диска на стороне сервера
+
+```azurecli
+
+az disk show -g yourResourceGroupName -n yourDiskName --query [encryption.type] -o tsv
+
+```
+
 > [!IMPORTANT]
 > Управляемые клиентами ключи опираются на управляемые идентификаторы для ресурсов Azure, функцию Active Directory Azure (Azure AD). При настройке ключей, управляемых клиентом, управляемая идентификация автоматически назначается вашим ресурсам под крышкой. Если впоследствии вы переведете подписную подписку, группу ресурсов или управляемый диск из одного каталога Azure AD в другой, управляемая идентификация, связанная с управляемыми дисками, не передается новому арендатору, поэтому ключи, управляемые клиентом, могут больше не работать. Для получения дополнительной [информации см. Передача подписки между каталогами Azure AD](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories).
 
@@ -202,7 +232,7 @@ az vm disk attach --vm-name $vmName --lun $diskLUN --ids $diskId
 
 [Лазурное шифрование дисков для виртуальных машин и виртуальных наборов машин](../../security/fundamentals/azure-disk-encryption-vms-vmss.md) использует функцию [BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview) Windows и функцию [DM-Crypt](https://en.wikipedia.org/wiki/Dm-crypt) Linux для шифрования управляемых дисков с управляемыми клиентом ключами в гостевом VM.  Шифрование на стороне сервера с ключами, управляемыми клиентом, улучшает ADE, позволяя использовать любые типы ОС и изображения для ви-х годов путем шифрования данных в службе хранения данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Исследуйте шаблоны менеджера ресурсов Azure для создания зашифрованных дисков с ключами, управляемыми клиентом](https://github.com/ramankumarlive/manageddiskscmkpreview)
 - [Что такое хранилище ключей Azure?](../../key-vault/key-vault-overview.md)

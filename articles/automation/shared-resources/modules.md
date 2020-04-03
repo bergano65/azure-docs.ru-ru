@@ -8,25 +8,85 @@ ms.author: magoedte
 ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 859eea66d10e07a3503e33166bc77c8a97577acd
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 605d1bc72406a9aeecc9273f9bd2d7fd2b30ab11
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548936"
+ms.locfileid: "80618694"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Управление модулями в автоматизации Azure
 
-Azure Automation позволяет импортировать модули PowerShell в учетную запись автоматизации, которые будут использоваться в runbooks на основе PowerShell. Эти модули могут быть созданными вами модулями, модулями из галереи PowerShell или модулями AzureRM и Az для Azure. При создании учетной записи Автоматизации некоторые модули импортируются по умолчанию.
+Модули PowerShell можно импортировать в Azure Automation, чтобы сделать их cmdlets доступными в runbooks и их ресурсах DSC, доступных в конфигурациях DSC. За кулисами Azure Automation хранит эти модули. Во время выполнения задания и времени выполнения выполнения выполнения компиляции DSC автоматизация загружает их в песочницы Azure Automation, где выполняются записи runbooks и компилируются конфигурации DSC. Любые ресурсы DSC в модулях также автоматически размещаются на опрашиваемом сервере Automation DSC. Машины могут тянуть их, когда они применяют сяочку DSC.
 
-## <a name="import-modules"></a>Импорт модулей
+Модули, используемые в Azure Automation, могут быть созданными вами модулями, модулями из галереи PowerShell или модулями AzureRM и Az для Azure. При создании учетной записи Автоматизации некоторые модули импортируются по умолчанию.
+
+## <a name="default-modules"></a>Модули по умолчанию
+
+В следующей таблице перечислены модули, импортируемые по умолчанию при создании учетной записи Автоматизации. Автоматизация может импортировать новые версии этих модулей. Однако вы не можете удалить исходную версию из учетной записи Automation, даже если вы удалите новую версию.
+
+|Имя модуля|Version|
+|---|---|
+| AuditPolicyDsc | 1.1.0.0 |
+| Azure | 1.0.3 |
+| Azure.Storage; | 1.0.3 |
+| AzureRM.Automation | 1.0.3 |
+| AzureRM.Compute | 1.2.1 |
+| AzureRM.Profile | 1.0.3 |
+| AzureRM.Resources | 1.0.3 |
+| AzureRM.Sql | 1.0.3 |
+| AzureRM.Storage | 1.0.3 |
+| ComputerManagementDsc | 5.0.0.0 |
+| GPRegistryPolicyParser | 0,2 |
+| Microsoft.PowerShell.Core | 0 |
+| Microsoft.PowerShell.Diagnostics |  |
+| Microsoft.PowerShell.Management |  |
+| Microsoft.PowerShell.Security |  |
+| Microsoft.PowerShell.Utility |  |
+| Microsoft.WSMan.Management |  |
+| Оркестр.AssetManagement.Cmdlets | 1 |
+| PSDscРесурсы | 2.9.0.0 |
+| SecurityPolicyDsc | 2.1.0.0 |
+| StateConfigCompositeРесурсы | 1 |
+| xDSCDomainjoin | 1,1 |
+| xPowerShellExecutionПолитика | 1.1.0.0 |
+| xУдаленныйнанаАдмин | 1.1.0.0 |
+
+## <a name="internal-cmdlets"></a>Внутренние смдлеты
+
+В таблице ниже перечислены cmdlets во внутреннем `Orchestrator.AssetManagement.Cmdlets` модуле, импортируемом в каждую учетную запись Автоматизации. Эти cmdlets доступны в ваших runbooks и DSC конфигурациях и позволяют взаимодействовать с активами в вашей учетной записи Автоматизация. Кроме того, внутренние cmdlets позволяют извлекать секреты из зашифрованных переменных, учетных данных и зашифрованных соединений. Cmdlets Azure PowerShell не в состоянии получить эти секреты. Эти cmdlets не требуют от вас неявного подключения к Azure при их использовании, как при использовании учетной записи Run As для проверки подлинности в Azure.
+
+>[!NOTE]
+>Эти внутренние cmdlets доступны на Windows Hybrid Runbook работника, но не на Linux Гибридный Runbook работника. Используйте соответствующие смлеты [модуля](../az-modules.md) [AzureRM.Automation](https://docs.microsoft.com/powershell/module/AzureRM.Automation/?view=azurermps-6.13.0) или Az для запусков, работающих непосредственно на компьютере или против ресурсов в вашей среде. 
+
+|name|Описание|
+|---|---|
+|Get-AutomationCertificate|`Get-AutomationCertificate [-Name] <string> [<CommonParameters>]`|
+|Get-AutomationConnection|`Get-AutomationConnection [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]` |
+|Get-AutomationPSCredential|`Get-AutomationPSCredential [-Name] <string> [<CommonParameters>]` |
+|Get-AutomationVariable|`Get-AutomationVariable [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]`|
+|Set-AutomationVariable|`Set-AutomationVariable [-Name] <string> -Value <Object> [<CommonParameters>]` |
+|Старт-АвтоматизацияRunbook|`Start-AutomationRunbook [-Name] <string> [-Parameters <IDictionary>] [-RunOn <string>] [-JobId <guid>] [<CommonParameters>]`|
+|Wait-AutomationJob|`Wait-AutomationJob -Id <guid[]> [-TimeoutInMinutes <int>] [-DelayInSeconds <int>] [-OutputJobsTransitionedToRunning] [<CommonParameters>]`|
+
+## <a name="importing-modules"></a>Импорт модулей
 
 Существует несколько способов ввоза модуля в учетную запись автоматизации. В следующих разделах показаны различные способы импорта модуля.
 
 > [!NOTE]
 > Максимальный размер пути для файла в модуле, используемом в Автоматизации Azure, составляет 140 символов. Автоматизация не может импортировать файл с размером пути более 140 символов в сеанс PowerShell с `Import-Module`помощью.
 
-### <a name="powershell"></a>PowerShell
+### <a name="import-modules-in-azure-portal"></a>Импортные модули на портале Azure
+
+Импорт модуля на портале Azure:
+
+1. Перейдите к учетной записи службы автоматизации.
+2. Выберите **модули** под **общими ресурсами.**
+3. Нажмите **Добавить модуль**. 
+4. Выберите файл **.zip,** содержащий ваш модуль.
+5. Нажмите **OK,** чтобы начать процесс импорта.
+
+### <a name="import-modules-using-powershell"></a>Импортные модули с использованием PowerShell
 
 Для импорта модуля в учетную запись автоматизации можно использовать смдlet [New-AzureRmAutomationModule.](/powershell/module/azurerm.automation/new-azurermautomationmodule) Cmdlet принимает URL для пакета модуля .zip.
 
@@ -39,20 +99,9 @@ New-AzureRmAutomationModule -Name <ModuleName> -ContentLinkUri <ModuleUri> -Reso
 ```azurepowershell-interactive
 $moduleName = <ModuleName>
 $moduleVersion = <ModuleVersion>
-New-AzAutomationModule -AutomationAccountName <AutomationAccountName> -ResourceGroupName <ResourceGroupName> -Name $moduleName -ContentLinkUri "https://www.powershellgallery.com/api/v2/package/$moduleName/$moduleVersion"
+New-AzureRmAutomationModule -AutomationAccountName <AutomationAccountName> -ResourceGroupName <ResourceGroupName> -Name $moduleName -ContentLinkUri "https://www.powershellgallery.com/api/v2/package/$moduleName/$moduleVersion"
 ```
-
-### <a name="azure-portal"></a>Портал Azure
-
-Импорт модуля на портале Azure:
-
-1. Перейдите к учетной записи службы автоматизации.
-2. Выберите **модули** под **общими ресурсами.**
-3. Нажмите **Добавить модуль**. 
-4. Выберите файл **.zip,** содержащий ваш модуль.
-5. Нажмите **OK,** чтобы начать процесс импорта.
-
-### <a name="powershell-gallery"></a>Коллекция PowerShell
+### <a name="import-modules-from-powershell-gallery"></a>Импортные модули из галереи PowerShell
 
 Модули [PowerShell Gallery](https://www.powershellgallery.com) можно импортировать либо непосредственно из галереи, либо из учетной записи Автоматизации.
 
@@ -73,11 +122,11 @@ New-AzAutomationModule -AutomationAccountName <AutomationAccountName> -ResourceG
 
 ![Импорт Галереи PowerShell с портала Azure](../media/modules/gallery-azure-portal.png)
 
-## <a name="delete-modules"></a>Удаление модулей
+## <a name="deleting-modules"></a>Модули деления
 
 Если у вас возникли проблемы с модулем или вам нужно откатиться к предыдущей версии модуля, вы можете удалить его из учетной записи Автоматизация. Нельзя удалять исходные версии [модулей по умолчанию, импортируемых](#default-modules) при создании учетной записи Автоматизации. Если модуль для удаления является новой версией одного из [модулей по умолчанию,](#default-modules)он откатывается к версии, которая была установлена с вашей учетной записью Автоматизация. В противном случае любой модуль, удаленный из учетной записи Automation, удаляется.
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="delete-modules-in-azure-portal"></a>Удаление модулей на портале Azure
 
 Чтобы удалить модуль на портале Azure:
 
@@ -85,32 +134,14 @@ New-AzAutomationModule -AutomationAccountName <AutomationAccountName> -ResourceG
 2. Выберите модуль, который вы хотите удалить. 
 3. На странице **Модуля** выберите **Удалить**. Если этот модуль является одним из [модулей по умолчанию,](#default-modules)он возвращается к версии, которая существовала при создании учетной записи Автоматизации.
 
-### <a name="powershell"></a>PowerShell
+### <a name="delete-modules-using-powershell"></a>Удаление модулей с помощью PowerShell
 
 Чтобы удалить модуль через PowerShell, запустите следующую команду:
 
 ```azurepowershell-interactive
 Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automationAccountName> -ResourceGroupName <resourceGroupName>
 ```
-
-## <a name="internal-cmdlets"></a>Внутренние смдлеты
-
-В таблице ниже перечислены cmdlets во внутреннем `Orchestrator.AssetManagement.Cmdlets` модуле, импортируемом в каждую учетную запись Автоматизации. Эти cmdlets доступны в ваших runbooks и DSC конфигурациях и позволяют взаимодействовать с активами в вашей учетной записи Автоматизация. Кроме того, внутренние cmdlets позволяют извлекать секреты из зашифрованных переменных, учетных данных и зашифрованных соединений. Cmdlets Azure PowerShell не в состоянии получить эти секреты. Эти cmdlets не требуют от вас неявного подключения к Azure при их использовании, как при использовании учетной записи Run As для проверки подлинности в Azure.
-
->[!NOTE]
->Эти внутренние cmdlets доступны на Windows Hybrid Runbook работника, но не на Linux Гибридный Runbook работника. Используйте соответствующие смлеты [модуля](../az-modules.md) [AzureRM.Automation](https://docs.microsoft.com/powershell/module/AzureRM.Automation/?view=azurermps-6.13.0) или Az для запусков, работающих непосредственно на компьютере или против ресурсов в вашей среде. 
-
-|Имя|Описание|
-|---|---|
-|Get-AutomationCertificate|`Get-AutomationCertificate [-Name] <string> [<CommonParameters>]`|
-|Get-AutomationConnection|`Get-AutomationConnection [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]` |
-|Get-AutomationPSCredential|`Get-AutomationPSCredential [-Name] <string> [<CommonParameters>]` |
-|Get-AutomationVariable|`Get-AutomationVariable [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]`|
-|Set-AutomationVariable|`Set-AutomationVariable [-Name] <string> -Value <Object> [<CommonParameters>]` |
-|Старт-АвтоматизацияRunbook|`Start-AutomationRunbook [-Name] <string> [-Parameters <IDictionary>] [-RunOn <string>] [-JobId <guid>] [<CommonParameters>]`|
-|Wait-AutomationJob|`Wait-AutomationJob -Id <guid[]> [-TimeoutInMinutes <int>] [-DelayInSeconds <int>] [-OutputJobsTransitionedToRunning] [<CommonParameters>]`|
-
-## <a name="add-a-connection-type-to-your-module"></a>Добавление типа соединения в модуль
+## <a name="adding-a-connection-type-to-your-module"></a>Добавление типа соединения в модуль
 
 Вы можете предоставить пользовательский [тип соединения](../automation-connections.md) для использования в вашей учетной записи Automation, добавив дополнительный файл метаданных в модуль. В этом файле указывается тип подключения Azure Automation, который будет использоваться с cmdlets модуля в вашей учетной записи Automation. Для достижения этой цели необходимо сначала узнать, как автор модуля PowerShell. [Узнайте, как написать модуль сценария PowerShell](/powershell/scripting/developer/module/how-to-write-a-powershell-script-module).
 
@@ -139,13 +170,13 @@ Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automa
 }
 ```
 
-## <a name="module-best-practices"></a>Модуль передовой практики
+## <a name="best-practices-for-authoring-modules"></a>Лучшие практики для авторских модулей
 
-Модули PowerShell можно импортировать в Azure Automation, чтобы сделать их cmdlets доступными в runbooks и их ресурсах DSC, доступных в конфигурациях DSC. За кулисами Azure Automation хранит эти модули. Во время выполнения задания и времени выполнения выполнения выполнения компиляции DSC автоматизация загружает их в песочницы Azure Automation, где выполняются записи runbooks и компилируются конфигурации DSC. Любые ресурсы DSC в модулях также автоматически размещаются на опрашиваемом сервере Automation DSC. Машины могут тянуть их, когда они применяют сяочку DSC.
+Мы рекомендуем вам следовать соображениям в этом разделе, когда вы авторите модуль PowerShell для использования в Azure Automation.
 
-Мы рекомендуем вам учитывать следующее, когда вы авторите модуль PowerShell для использования в Azure Automation:
+### <a name="version-folder"></a>Папка версии
 
-* НЕ включайте папку версии в пакет **.zip.**  Эта проблема в меньшей безопасности вызывает озабоченность у runbooks, но вызывает проблемы с Государственной службой конфигурации. Azure Automation автоматически создает папку версии при распределении модуля на узлы, управляемые DSC. Если папка версии существует, вы в конечном итоге с двумя экземплярами. Вот пример структуры папки для модуля DSC:
+НЕ включайте папку версии в пакет **.zip** для модуля.  Эта проблема в меньшей безопасности вызывает озабоченность у runbooks, но вызывает проблемы с Государственной службой конфигурации. Azure Automation автоматически создает папку версии при распределении модуля на узлы, управляемые DSC. Если папка версии существует, вы в конечном итоге с двумя экземплярами. Вот пример структуры папки для модуля DSC:
 
 ```powershell
 myModule
@@ -156,7 +187,9 @@ myModule
   myModuleManifest.psd1
 ```
 
-* Добавьте краткие сведения, описание и справочный универсальный код ресурса (URI) в каждый командлет в модуле. В PowerShell можно определить информацию о справках для cmdlets с помощью `Get-Help` cmdlet. Ниже приводится следующий пример, как определить резюме и помочь URI в файле модуля **.psm1:**
+### <a name="help-information"></a>Информация о справках
+
+Включите резюме, описание и помощь URI для каждого cmdlet в вашем модуле. В PowerShell можно определить информацию о справках для cmdlets с помощью `Get-Help` cmdlet. Ниже приводится следующий пример, как определить резюме и помочь URI в файле модуля **.psm1:**
 
   ```powershell
   <#
@@ -200,7 +233,9 @@ myModule
 
   ![Справка по модулям интеграции](../media/modules/module-activity-description.png)
 
-* Если модуль подключается к внешней службе, определите [тип соединения.](#add-a-connection-type-to-your-module) Каждый cmdlet в модуле должен принимать объект соединения (экземпляр этого типа соединения) в качестве параметра. Пользователи отображают параметры актива соединения с соответствующими параметрами cmdlet каждый раз, когда они называют cmdlet. Основываясь на приведенном выше примере runbook, он `ContosoConnection` использует пример актива соединения Contoso, который вызывается для доступа к ресурсам Contoso и возврата данных из внешнего сервиса.
+### <a name="connection-type"></a>Тип соединений
+
+Если модуль подключается к внешней службе, определите [тип соединения.](#adding-a-connection-type-to-your-module) Каждый cmdlet в модуле должен принимать объект соединения (экземпляр этого типа соединения) в качестве параметра. Пользователи отображают параметры актива соединения с соответствующими параметрами cmdlet каждый раз, когда они называют cmdlet. Основываясь на приведенном выше примере runbook, он `ContosoConnection` использует пример актива соединения Contoso, который вызывается для доступа к ресурсам Contoso и возврата данных из внешнего сервиса.
 
   В следующем примере поля отображаются по `PSCredential` свойствам `UserName` объекта, `Password` а затем передаются в cmdlet.
 
@@ -223,9 +258,11 @@ myModule
 
   Можно включить аналогичное поведение для ваших cmdlets, позволяя им принимать объект соединения непосредственно в качестве параметра, а не только поля соединения для параметров. Обычно для каждого командлета нужно указать набор параметров, чтобы пользователь, который не использует службу автоматизации Azure, мог вызывать командлеты, не создавая хэш-таблицу, используемую в качестве объекта подключения. Набор `UserAccount`параметров, используется для передачи свойств поля соединения. `ConnectionObject`позволяет пройти соединение прямо через.
 
-* Определите тип вывода для всех cmdlets в модуле. При этом можно воспользоваться технологией IntelliSense, используемой во время разработки, чтобы определить свойства выходных данных командлета, используемых при создании модуля. Это особенно полезно при графической разработке Runbook в службе автоматизации, при которой знание аспектов разработки упрощает работу пользователей с модулем.
+### <a name="output-type"></a>Тип выходных данных
 
-Добавьте, `[OutputType([<MyOutputType>])]` где MyOutputType является действительным типом. Чтобы узнать больше о OutputType, [см.](/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute) Следующий код является примером добавления `OutputType` в cmdlet:
+Определите тип вывода для всех cmdlets в модуле. При этом можно воспользоваться технологией IntelliSense, используемой во время разработки, чтобы определить свойства выходных данных командлета, используемых при создании модуля. Эта практика особенно полезна во время графического авторизации Automation runbook, для которого знания о времени проектирования являются ключом к простому пользовательскому опыту работы с вашим модулем.
+
+Добавьте, `[OutputType([<MyOutputType>])]` где `MyOutputType` является действительным типом. Чтобы узнать `OutputType`больше о, см. [About Functions OutputTypeAttribute](/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute) Следующий код является примером добавления `OutputType` в cmdlet:
 
   ```powershell
   function Get-ContosoUser {
@@ -244,7 +281,9 @@ myModule
 
   ![POSH IntelliSense](../media/modules/automation-posh-ise-intellisense.png)
 
-* Не указывайте сведения о состоянии всех командлетов. Несколько заданий Runbook могут одновременно работать в том же AppDomain и тот же процесс и песочнице. Если на этих уровнях есть какое-либо состояние, где имеются общие сведения, задания могут влиять друг на друга. Такое поведение может привести к прерывистым и трудно диагностировать проблемы.  Ниже представлен пример неправильного использования.
+### <a name="cmdlet-state"></a>Состояние Кмдлет
+
+Сделайте все cmdlets в вашем модуле без состояния. Несколько заданий Runbook `AppDomain` могут одновременно работать в том же и том же процессе и песочнице. Если на этих уровнях есть какое-либо состояние, где имеются общие сведения, задания могут влиять друг на друга. Такое поведение может привести к периодическим и трудно диагностировать проблемы. Вот пример того, что НЕ делать:
 
   ```powershell
   $globalNum = 0
@@ -262,41 +301,20 @@ myModule
   }
   ```
 
-* Модуль должен полностью содержаться в пакете, способном кскопии. Модули Azure Automation распространяются в песочницах автоматизации, когда руны должны выполняться. Модули должны работать независимо от узла, на котором они запущены. Вы должны быть в состоянии застегнуть и переместить модуль пакет и его функции, как обычно, когда импортируется в powerShell среды другого хозяина. Для этого модуль не должен зависеть от файлов за пределами папки модуля, которая застегивается при импорте модуля в Azure Automation. Модуль также не должен зависеть от каких-либо уникальных параметров реестра на узле, например от параметров, заданных при установке продукта. Все файлы в модуле должны иметь путь менее 140 символов. Любые пути более 140 символов вызывают проблемы с импортом вашего runbook. Если вы не будете следовать этой передовой практике, модуль не используется в Azure Automation.  
+### <a name="module-dependency"></a>Зависимость модуля
 
-* Если в модуле ссылается [на модуль Azure PowerShell Az,](/powershell/azure/new-azureps-module-az?view=azps-1.1.0) убедитесь, `AzureRM`что вы также не ссылаетесь на вас. Вы не можете `Az` использовать модуль в `AzureRM` сочетании с модулем. `Az`поддерживается в runbooks, но не импортируется по умолчанию. Чтобы узнать `Az` о модуле и соображениях, которые следует учитывать, [см.](../az-modules.md)
+Убедитесь, что модуль полностью содержится в пакете, способном кскопии. Модули Azure Automation распространяются в песочницах автоматизации при выполнении рун. Модули должны работать независимо от узла, который их запускает. 
 
-## <a name="default-modules"></a>Модули по умолчанию
+Вы должны быть в состоянии застегнуть и переместить модуль пакет и его функции, как обычно, когда импортируется в powerShell среды другого хозяина. Чтобы это произошло, убедитесь, что модуль не зависит от файлов за пределами папки модуля, которая застегивается при импорте модуля в Azure Automation. 
 
-В следующей таблице перечислены модули, импортируемые по умолчанию при создании учетной записи Автоматизации. Автоматизация может импортировать новые версии этих модулей. Однако вы не можете удалить исходную версию из учетной записи Automation, даже если вы удалите новую версию.
+Ваш модуль не должен зависеть от каких-либо уникальных настроек реестра на хосте. Примером могут быть настройки, сделанные при установке продукта. 
 
-|Имя модуля|Версия|
-|---|---|
-| AuditPolicyDsc | 1.1.0.0 |
-| Azure | 1.0.3 |
-| Azure.Storage; | 1.0.3 |
-| AzureRM.Automation | 1.0.3 |
-| AzureRM.Compute | 1.2.1 |
-| AzureRM.Profile | 1.0.3 |
-| AzureRM.Resources | 1.0.3 |
-| AzureRM.Sql | 1.0.3 |
-| AzureRM.Storage | 1.0.3 |
-| ComputerManagementDsc | 5.0.0.0 |
-| GPRegistryPolicyParser | 0,2 |
-| Microsoft.PowerShell.Core | 0 |
-| Microsoft.PowerShell.Diagnostics |  |
-| Microsoft.PowerShell.Management |  |
-| Microsoft.PowerShell.Security |  |
-| Microsoft.PowerShell.Utility |  |
-| Microsoft.WSMan.Management |  |
-| Оркестр.AssetManagement.Cmdlets | 1 |
-| PSDscРесурсы | 2.9.0.0 |
-| SecurityPolicyDsc | 2.1.0.0 |
-| StateConfigCompositeРесурсы | 1 |
-| xDSCDomainjoin | 1,1 |
-| xPowerShellExecutionПолитика | 1.1.0.0 |
-| xУдаленныйнанаАдмин | 1.1.0.0 |
+Убедитесь, что все файлы в модуле имеют пути с менее чем 140 символов. Любые пути более 140 символов вызывают проблемы с импортом runbooks. Если вы не будете следовать этой передовой практике, модуль не используется в Azure Automation.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="references-to-azurerm-and-az"></a>Ссылки на AzureRM и Az
+
+Если в модуле есть ссылки на [модуль Azure PowerShell Az,](/powershell/azure/new-azureps-module-az?view=azps-1.1.0) убедитесь, что вы также не ссылаетесь на AzureRM. Модуль Az не может использоваться совместно с модулем AzureRM. Az поддерживается в runbooks, но не импортируется по умолчанию. Чтобы узнать о модуле Az и [Az module support in Azure Automation](../az-modules.md)соображениях, которые следует учитывать, см.
+
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать больше о создании модулей PowerShell, смотрите [Написать модуль Windows PowerShell](/powershell/scripting/developer/windows-powershell).

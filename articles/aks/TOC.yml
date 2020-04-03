@@ -314,10 +314,6 @@
                   maintainContext: true
         - name: Запуск приложений с помощью Helm
           href: kubernetes-helm.md
-        - name: С помощью открытого компонента Service Broker для Azure
-          href: integrate-azure.md
-        - name: "Использование API Cosmos\_DB для MongoDB с OSBA"
-          href: use-cosmosdb-osba-mongo-app.md
         - name: С помощью OpenFaaS
           href: openfaas.md
         - name: Запуск заданий Spark

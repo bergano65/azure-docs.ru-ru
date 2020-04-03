@@ -58,8 +58,6 @@
       href: sql-database-managed-instance-quickstart-guide.md
 - name: Основные понятия
   items:
-    - name: Документация по стандартным функциям
-      href: sql-database-paas-index.yml
     - name: Сравнение возможностей
       href: sql-database-features.md
     - name: Практическое руководство
@@ -280,8 +278,6 @@
                   href: sql-database-xevent-code-ring-buffer.md
     - name: Масштабируемость
       items:
-        - name: Документация по масштабируемости
-          href: sql-database-scalability-index.yml
         - name: Увеличение и уменьшение масштаба
           href: sql-database-scale-resources.md
         - name: Горизонтальное масштабирование для чтения
@@ -310,8 +306,6 @@
           href: sql-database-elastic-transactions-overview.md
     - name: Возможности базы данных
       items:
-        - name: Документация по функциям базы данных
-          href: sql-database-features-index.yml
         - name: Возможности при использовании нескольких моделей
           href: sql-database-multi-model-features.md
         - name: В памяти
@@ -685,7 +679,6 @@
         - name: Примеры кода
           href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
 - name: Управляемый экземпляр SQL
-  href: sql-database-managed-instance-index.yml
   items:
     - name: Обзор
       items:
