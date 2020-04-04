@@ -8,12 +8,12 @@ ms.date: 12/08/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 6ddda38d887cdfe30b449847e2f625ba17f33898
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ff9415ca20b859468528b56d27355430c4fc5a0f
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76510810"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80652069"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
@@ -182,7 +182,7 @@ var options = {
 
 Этот раздел знакомит вас с примером приложения для подключения клиентского устройства Azure IoT Python к шлюзу IoT Edge.
 
-1. Получите образец для **send_message** от [устройства SDK SDK Azure для образцов Python.](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/advanced-edge-scenarios)
+1. Получите образец для **send_message** от [устройства SDK SDK Azure для образцов Python.](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/async-edge-scenarios)
 2. Убедитесь, что вы работаете в контейнере IoT Edge или `EdgeHubConnectionString` `EdgeModuleCACertificateFile` в сценарии отладки, имейте набор переменных среды.
 3. В документации по пакету SDK вы найдете инструкции по запуску примера на конкретном устройстве.
 

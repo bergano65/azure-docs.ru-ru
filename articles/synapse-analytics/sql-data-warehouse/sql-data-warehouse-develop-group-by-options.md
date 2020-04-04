@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 28ac075d043f7605b6dfdac6879063fbe9308123
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 25e6770fb38d13591186754bc5e6a7641083a899
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80619044"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633518"
 ---
 # <a name="group-by-options-in-synapse-sql-pool"></a>Группа по опциям в бассейне Synapse S'L
 
@@ -24,7 +24,7 @@ ms.locfileid: "80619044"
 
 ## <a name="what-does-group-by-do"></a>Предназначение предложения GROUP BY
 
-Предложение T-SQL [GROUP BY](/sql/t-sql/queries/select-group-by-transact-sql) используется для объединения данных в сводный набор строк. Group BY имеет несколько вариантов, которые бассейн S'L не поддерживает. Эти варианты имеют обходные пути, которые являются следующими:
+Предложение T-SQL [GROUP BY](/sql/t-sql/queries/select-group-by-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) используется для объединения данных в сводный набор строк. Group BY имеет несколько вариантов, которые бассейн S'L не поддерживает. Эти варианты имеют обходные пути, которые являются следующими:
 
 * GROUP BY с ROLLUP;
 * GROUPING SETS
@@ -35,6 +35,7 @@ ms.locfileid: "80619044"
 Самый простой вариант здесь заключается в использовании UNION ALL для выполнения свертывания, а не полагаться на явный синтаксис. Результат точно такой же.
 
 Пример использования инструкции GROUP BY с оператором ROLLUP.
+
 ```sql
 SELECT [SalesTerritoryCountry]
 ,      [SalesTerritoryRegion]
@@ -84,9 +85,10 @@ JOIN  dbo.DimSalesTerritory t     ON s.SalesTerritoryKey       = t.SalesTerritor
 Для замены GROUPING SETS применяется тот же принцип. Достаточно создать разделы с UNION ALL для требуемых уровней объединения.
 
 ## <a name="cube-options"></a>Параметры Cube
+
 С помощью подхода UNION ALL можно создать GROUP BY WITH CUBE. Проблема в том, что в этом случае код может быстро разрастись и стать слишком громоздким. Чтобы смягчить эту проблему, можно использовать этот более продвинутый подход.
 
-Используя предыдущий пример, первым шагом является определение «кубика», который определяет все уровни агрегации, которые мы хотим создать. 
+Используя предыдущий пример, первым шагом является определение «кубика», который определяет все уровни агрегации, которые мы хотим создать.
 
 Обратите внимание на CROSS JOIN из двух производных таблиц, так как это генерирует все уровни для нас. Остальная часть кода предназначена для форматирования:
 
@@ -181,6 +183,6 @@ ORDER BY 1,2,3
 
 Разбивая код на разделы и создавая конструкцию циклов, код становится более управляемым и обслуживаемым.
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
+## <a name="next-steps"></a>Дальнейшие действия
 
+Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).

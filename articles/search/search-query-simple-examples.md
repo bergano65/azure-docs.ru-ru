@@ -8,20 +8,20 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 525c20f5b6e24811ab092a63fa84fe6ebbd7b618
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 42ace2444c7d8e790c7575a7c1a7b3b1219d090a
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72808192"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656423"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в когнитивном поиске Azure
 
-В Azure Cognitive Search [простой синтаксис запроса](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) вызывает парсер запроса запроса по умолчанию для выполнения запросов полного текста с индексом. Этот парсер быстро обрабатывает общие сценарии, включая полный поиск текста, отфильтрованный и граненый поиск, а также гео-поиск. 
+В Azure Cognitive Search [простой синтаксис запроса](query-simple-syntax.md) вызывает парсер запроса запроса по умолчанию для выполнения запросов полного текста с индексом. Этот парсер быстро обрабатывает общие сценарии, включая полный поиск текста, отфильтрованный и граненый поиск, а также гео-поиск. 
 
 В этой статье мы используем примеры для иллюстрации простого синтаксиса.
 
-Альтернативным синтаксисом запроса является [Full Lucene,](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)поддерживающий более сложные структуры запросов, такие как нечеткий и поиск подстановочных знаков, что может занять дополнительное время для обработки. Для получения дополнительной информации и примеров, демонстрирующих полный синтаксис, [см.](search-query-lucene-examples.md)
+Альтернативным синтаксисом запроса является [Full Lucene,](query-lucene-syntax.md)поддерживающий более сложные структуры запросов, такие как нечеткий и поиск подстановочных знаков, что может занять дополнительное время для обработки. Для получения дополнительной информации и примеров, демонстрирующих полный синтаксис, [см.](search-query-lucene-examples.md)
 
 ## <a name="formulate-requests-in-postman"></a>Формирование запросов в Postman
 
@@ -295,6 +295,6 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 + [Примеры синтаксиса запросов Lucene для создания расширенных запросов](search-query-lucene-examples.md)
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
 + [Фильтры и синтаксис Orderby](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)

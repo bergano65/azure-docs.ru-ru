@@ -4,19 +4,19 @@ description: Интеграция инфраструктуры VPN с Azure MFA 
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/21/2019
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f446f1549b3efcd5f27752fac972dfd80c8650d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ec8d5b66c71c558e56f3d1f48cec96d7cc487552
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75425400"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80654133"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "75425400"
 2. Выступая в качестве клиента RADIUS, VPN-сервер преобразовывает этот запрос в сообщение *Access-Request* RADIUS (пароль при этом шифруется) и отправляет его на сервер RADIUS, на котором установлено расширение NPS.
 3. Сочетание имени пользователя и пароля проверяется в Active Directory. Если имя пользователя и пароль указаны неправильно, сервер RADIUS отправляет сообщение *Access-Reject*.
 4. Если выполнены все условия, указанные в запросе на подключение NPS и политиках сети (например, ограничение времени дня или членства в группах), расширение NPS активирует запрос на дополнительную аутентификацию с помощью Azure MFA.
-5. Служба Azure MFA обращается к Azure Active Directory, получает сведения о пользователе и выполняет дополнительную аутентификацию по тому методу, который настроен пользователем (звонок на мобильный телефон, текстовое сообщение или мобильное приложение).
+5. Multi-Factor Authentication Azure общается с Active Directory Azure, получает данные пользователя и выполняет вторичную аутентификацию с помощью метода, настроенного пользователем (вызов мобильного телефона, текстовое сообщение или мобильное приложение).
 6. В случае успешного выполнения запроса защиты MFA служба Azure MFA передает результат в расширение NPS.
 7. После аутентификации и авторизации подключения сервер политики сети, на котором установлено расширение NPS, отправляет сообщение *Access-Accept* RADIUS на VPN-сервер (клиент RADIUS).
 8. Пользователю предоставляется доступ к виртуальному порту на VPN-сервере, и создается зашифрованный VPN-туннель.
@@ -108,8 +108,8 @@ ms.locfileid: "75425400"
 
 Приведенные ниже библиотеки устанавливаются автоматически вместе с расширением NPS.
 
--   [Распространяемые пакеты Visual C++ для Visual Studio 2013 (X64)](https://www.microsoft.com/download/details.aspx?id=40784)
--   [Модуль Microsoft Azure Active Directory для Windows PowerShell, версия 1.1.166](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)
+-    [Распространяемые пакеты Visual C++ для Visual Studio 2013 (X64)](https://www.microsoft.com/download/details.aspx?id=40784)
+-    [Модуль Microsoft Azure Active Directory для Windows PowerShell, версия 1.1.166](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)
 
 Если модуль PowerShell для Microsoft Azure Active Directory отсутствует, то он устанавливается с помощью сценария настройки, который запускается в процессе установки. Нет необходимости устанавливать этот модуль заранее.
 
@@ -178,7 +178,7 @@ ms.locfileid: "75425400"
 
     ![Указать окно групп пользователей, чтобы разрешить или запретить доступ](./media/howto-mfa-nps-extension-vpn/image7.png)
 
-9. Нажмите кнопку **Далее**.
+9. Выберите **Далее**.
 
 10. В окне **Задайте IP-фильтры** щелкните **Далее**.
 
@@ -249,7 +249,7 @@ ms.locfileid: "75425400"
 
     ![Добавить окно сервера RADIUS, настраивающее тайм-аут](./media/howto-mfa-nps-extension-vpn/image16.png)
 
-8. Нажмите кнопку **ОК**.
+8. Щелкните **ОК**.
 
 ### <a name="test-vpn-connectivity"></a>Проверка VPN-подключения
 
@@ -361,7 +361,7 @@ ms.locfileid: "75425400"
 * создает самозаверяющий сертификат;
 * связывает открытый ключ сертификата с субъектом-службой в Azure AD;
 * сохраняет сертификат в хранилище на локальном компьютере;
-* предоставляет сетевому пользователю доступ к закрытому ключу сертификата;
+* Предоставляет пользователю сети доступ к личному ключу сертификата.
 * перезапускает службу NPS.
 
 Если вы хотите использовать собственные сертификаты, необходимо привязать открытый ключ сертификата к субъекту-службе в Azure AD и т. д.

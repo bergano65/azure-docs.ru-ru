@@ -8,15 +8,15 @@ ms.assetid: 89e407e1-e1e0-49d1-8b89-de11484eee46
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: e6fcb53995fd255386e5b291937d6d50c850c724
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 595436daa2efbd8e706a539d0a89c3ea98be31ff
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80476295"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655462"
 ---
 # <a name="delete-an-azure-active-directory-domain-services-managed-domain-using-the-azure-portal"></a>Удаление домена Active Directory Domain Services, управляемого с помощью портала Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "80476295"
 
 Удаление домена Azure AD DS может занять 15-20 минут или более.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Рассмотрите [возможность обмена отзывами][feedback] о функциях, которые вы хотели бы видеть в Azure AD DS.
 

@@ -7,12 +7,12 @@ ms.reviewers: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/12/2020
 tags: connectors
-ms.openlocfilehash: d65b81f18d4dcb0ee97a21a7edec885e308bd8d4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1885d7f8713b3801ce0c9846b7a8509b3864032a
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79297307"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656305"
 ---
 # <a name="receive-and-respond-to-inbound-https-requests-in-azure-logic-apps"></a>Получение и ответ на входящие запросы HTTPS в приложениях логики Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "79297307"
 > [!NOTE]
 > Триггер Запроса поддерживает *только* безопасность уровня транспорта (TLS) 1.2 для входящих вызовов. Исходящие вызовы продолжают поддерживать TLS 1.0, 1.1 и 1.2. Для получения дополнительной [информации см.](https://docs.microsoft.com/security/solving-tls1-problem)
 >
-> Если вы видите ошибки рукопожатия SSL, убедитесь, что вы используете TLS 1.2. Для входящих вызовов приведены поддерживаемые наборы шифров:
+> Если вы видите ошибки рукопожатия TLS, убедитесь, что вы используете TLS 1.2. Для входящих вызовов приведены поддерживаемые наборы шифров:
 >
 > * TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
 > * TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256

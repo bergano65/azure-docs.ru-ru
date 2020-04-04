@@ -9,18 +9,18 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: dapine
-ms.openlocfilehash: d7ce77404359b32effcc7a5da3f9429e9fdf7005
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 5f9ad827fa947e645f7eb4850f90a73c61a45cd3
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80618580"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637113"
 ---
 # <a name="azure-cognitive-services-support-and-feedback-options"></a>Поддержка когнитивных служб Azure и варианты обратной связи
 
 Вы только начинаете изучать функциональность когнитивных служб Azure? Возможно, вы внедряете новую функцию в приложение. Или после использования службы, есть ли у вас предложения о том, как ее улучшить? Ниже приведены варианты, где вы можете получить поддержку, оставаться в курсе событий, давать обратную связь и сообщать об ошибках для Cognitive Services.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Техническая поддержка
 
 ### <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
@@ -87,6 +87,7 @@ ms.locfileid: "80618580"
  - [Службы "Речь"](speech-service/releasenotes.md)
  - [Речевые услуги SDK](speech-service/devices-sdk-release-notes.md)
  - [Анализ текста](text-analytics/whats-new.md)
+ - [Индексатор видео](../media-services/video-indexer/release-notes.md)
 
 ### <a name="azure-blog"></a>Блог Azure
 
@@ -179,7 +180,7 @@ Reddit — это дискуссионный веб-сайт, [Azure Cognitive S
 
 [MicrosoftDocs](https://github.com/MicrosoftDocs/azure-docs/tree/master/articles/cognitive-services)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Общие сведения об Azure Cognitive Services](welcome.md)

@@ -1,74 +1,70 @@
 ---
-title: Как настроить LVM и RAID на склепе на Linux VM
-description: В этой статье содержатся инструкции по настройке LVM и RAID на склепе на Linux VMs.
+title: Налажить LVM и RAID на зашифрованных устройствах - Шифрование дисков Azure
+description: В этой статье содержатся инструкции по настройке LVM и RAID на зашифрованных устройствах для Linux VMs.
 author: jofrance
 ms.service: security
 ms.topic: article
 ms.author: jofrance
 ms.date: 03/17/2020
 ms.custom: seodec18
-ms.openlocfilehash: 78ba47ba887cf7c90adf70d9d444fbd8a3c721cc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4e342ff44af38b8e79dc8695c1270b1f5c68e0a8
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80284914"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80657447"
 ---
-# <a name="how-to-configure-lvm-and-raid-on-crypt"></a>Как настроить LVM и RAID на склепе
+# <a name="configure-lvm-and-raid-on-encrypted-devices"></a>Настройка LVM и RAID на зашифрованных устройствах
 
-Этот документ представляет собой поэтапный процесс о том, как выполнять LVM на крипто и рейд на конфигурации crypt.
-
-### <a name="environment"></a>Среда
+Эта статья представляет собой поэтапный процесс выполнения логических управлений объемами (LVM) и RAID на зашифрованных устройствах. Процесс применяется к следующим средам:
 
 - Дистрибутивы Linux
     - RHEL 7.6
     - Увунту 18,04"
     - SUSE 12"
-- ADE Единый пропуск
-- Двойной пропуск ADE
+- Расширение однопроходного шифрования дисков Azure
+- Расширение двухпроходного шифрования Azure Disk
 
 
 ## <a name="scenarios"></a>Сценарии
 
-**Этот сценарий применим к расширениям aDE с двойным проходом и одним проходом.**  
+Процедуры в этой статье поддерживают следующие сценарии:  
 
-- Настройка LVM поверх зашифрованных устройств (LVM-на-Crypt)
-- Наконфигурните RAID поверх зашифрованных устройств (RAID-on-Crypt)
+- Настройка LVM поверх зашифрованных устройств (LVM-на-crypt)
+- Наконфигурните RAID поверх зашифрованных устройств (RAID-на-crypt)
 
-После шифрования базового устройства можно создать структуры LVM или RAID поверх этого зашифрованного слоя. Физические объемы (PV) создаются поверх зашифрованного слоя.
-Физические объемы используются для создания группы объемов.
-Вы создаете тома и добавляете необходимые записи на /etc/fstab. 
+После того, как базовое устройство или устройства будут зашифрованы, вы можете создать структуры LVM или RAID поверх этого зашифрованного слоя. 
 
-![Проверка дисков, прикрепленных PowerShell](./media/disk-encryption/lvm-raid-on-crypt/000-lvm-raid-crypt-diagram.png)
+Физические тома (PVs) создаются поверх зашифрованного слоя. Физические тома используются для создания группы объемов. Вы создаете тома и добавляете необходимые записи на /etc/fstab. 
+
+![Диаграмма слоев структур LVM](./media/disk-encryption/lvm-raid-on-crypt/000-lvm-raid-crypt-diagram.png)
 
 Аналогичным образом устройство RAID создается поверх зашифрованного слоя на дисках. Файловая система создается поверх устройства RAID и добавляется в /etc/fstab в качестве обычного устройства.
 
-### <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Рекомендации
 
-Рекомендуемый метод для использования LVM-на-Crypt.
+Мы рекомендуем использовать LVM-на-crypt. RAID — это вариант, когда LVM не может быть использован из-за определенных ограничений приложения или среды.
 
-RAID учитывается, когда LVM не может быть использован из-за определенных ограничений приложения/среды.
+Вы будете использовать опцию **EncryptFormatAll.** Для получения дополнительной информации об этой опции, [см.](https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-linux#use-encryptformatall-feature-for-data-disks-on-linux-vms)
 
-Вы будете использовать вариант EncryptFormatAll, информация об https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-linux#use-encryptformatall-feature-for-data-disks-on-linux-vmsэтой функции находится здесь: .
+Хотя вы можете использовать этот метод, когда вы также шифрования ОС, мы просто шифрования данных дисков здесь.
 
-Хотя этот метод может быть сделано, когда также шифрование ОС, мы просто шифрования дисков данных.
+Процедуры предполагают, что вы уже рассмотрели предпосылки в [сценариях шифрования дисков Azure на Linux VMs](https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-linux) и в [квикстарте: Создание и шифрование Linux VM с помощью Azure CLI.](https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-cli-quickstart)
 
-Эта процедура предполагает, что вы уже рассмотрели https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-linux предварительные https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-cli-quickstartтребования, упомянутые здесь: и здесь .
+Двухпроходная версия Azure Disk Encryption находится на пути амортизации и больше не должна использоваться в новых шифрованиях.
 
-Версия aDE с двойным пропуском находится на пути амортизации и больше не должна использоваться на новых шифрованиях ADE.
-
-### <a name="procedure"></a>Процедура
-
-При использовании конфигураций "на склепе" вы будете следить за процессом, изложенным ниже:
-
->[!NOTE] 
->Мы используем переменные по всему документу, заменяя значения соответствующим образом.
 ## <a name="general-steps"></a>основные шаги
-### <a name="deploy-a-vm"></a>Развертывание виртуальной машины 
->[!NOTE] 
->Хотя это необязательно, мы рекомендуем вам применить это на недавно развернутом VM.
 
-PowerShell
+При использовании конфигураций "на склепе" используйте процесс, описанный в следующих процедурах.
+
+>[!NOTE] 
+>Мы используем переменные на протяжении всей статьи. Заменить значения соответственно.
+
+### <a name="deploy-a-vm"></a>Развертывание виртуальной машины 
+Следующие команды не являются обязательными, но мы рекомендуем применить их на недавно развернутой виртуальной машине (VM).
+
+PowerShell.
+
 ```powershell
 New-AzVm -ResourceGroupName ${RGNAME} `
 -Name ${VMNAME} `
@@ -78,7 +74,8 @@ New-AzVm -ResourceGroupName ${RGNAME} `
 -Credential ${creds} `
 -Verbose
 ```
-Интерфейс командной строки.
+Azure CLI:
+
 ```bash
 az vm create \
 -n ${VMNAME} \
@@ -90,8 +87,11 @@ az vm create \
 --size ${VMSIZE} \
 -o table
 ```
-### <a name="attach-disks-to-the-vm"></a>Прикрепите диски к vm:
-Повторите для $N количество новых дисков, которые вы хотите прикрепить к VM PowerShell
+### <a name="attach-disks-to-the-vm"></a>Прикрепите диски к VM
+Повторите следующие `$N` команды для количества новых дисков, которые вы хотите прикрепить к VM.
+
+PowerShell.
+
 ```powershell
 $storageType = 'Standard_LRS'
 $dataDiskName = ${VMNAME} + '_datadisk0'
@@ -101,7 +101,9 @@ $vm = Get-AzVM -Name ${VMNAME} -ResourceGroupName ${RGNAME}
 $vm = Add-AzVMDataDisk -VM $vm -Name $dataDiskName -CreateOption Attach -ManagedDiskId $dataDisk1.Id -Lun 0
 Update-AzVM -VM ${VM} -ResourceGroupName ${RGNAME}
 ```
-Интерфейс командной строки.
+
+Azure CLI:
+
 ```bash
 az vm disk attach \
 -g ${RGNAME} \
@@ -111,45 +113,59 @@ az vm disk attach \
 --new \
 -o table
 ```
-### <a name="verify-the-disks-are-attached-to-the-vm"></a>Проверить диски прилагаются к VM:
+
+### <a name="verify-that-the-disks-are-attached-to-the-vm"></a>Проверить, что диски прикреплены к VM
 PowerShell.
 ```powershell
 $VM = Get-AzVM -ResourceGroupName ${RGNAME} -Name ${VMNAME}
 $VM.StorageProfile.DataDisks | Select-Object Lun,Name,DiskSizeGB
 ```
-![Проверьте диски,](./media/disk-encryption/lvm-raid-on-crypt/001-lvm-raid-check-disks-powershell.png) прикрепленные PowerShell CLI:
+![Список прикрепленных дисков в PowerShell](./media/disk-encryption/lvm-raid-on-crypt/001-lvm-raid-check-disks-powershell.png)
+
+Azure CLI:
+
 ```bash
 az vm show -g ${RGNAME} -n ${VMNAME} --query storageProfile.dataDisks -o table
 ```
-![Проверьте диски прилагается](./media/disk-encryption/lvm-raid-on-crypt/002-lvm-raid-check-disks-cli.png) ![CLI Портал: Проверьте диски прилагается CLI](./media/disk-encryption/lvm-raid-on-crypt/003-lvm-raid-check-disks-portal.png) OS:
+![Список прикрепленных дисков в Azure CLI](./media/disk-encryption/lvm-raid-on-crypt/002-lvm-raid-check-disks-cli.png)
+
+Портал:
+
+![Список прикрепленных дисков на портале](./media/disk-encryption/lvm-raid-on-crypt/003-lvm-raid-check-disks-portal.png)
+
+ОС:
+
 ```bash
 lsblk 
 ```
-![Проверка прикрепленных дисков портала](./media/disk-encryption/lvm-raid-on-crypt/004-lvm-raid-check-disks-os.png)
+![Список прикрепленных дисков в ОС](./media/disk-encryption/lvm-raid-on-crypt/004-lvm-raid-check-disks-os.png)
+
 ### <a name="configure-the-disks-to-be-encrypted"></a>Настройка дисков для шифрования
-Эта конфигурация сделана, что уровень операционной системы, соответствующие диски настроены для традиционного шифрования ADE:
+Эта конфигурация выполняется на уровне операционной системы. Соответствующие диски настроены для традиционного шифрования с помощью шифрования Azure Disk:
 
-Файлсистемы создаются поверх дисков.
+- Файловые системы создаются поверх дисков.
+- Для установки файловых систем создаются временные точки крепления.
+- Файловые системы настроены на /etc/fstab для установки во время загрузки.
 
-Для установки файлов создаются временные точки крепления.
-
-Filesystems настроены на /etc/fstab для установки во время загрузки.
-
-Проверьте письмо устройства, назначенное новым дискам, на этом примере мы используем четыре диска данных
+Проверьте письмо устройства, назначенное новым дискам. В этом примере мы используем четыре диска данных.
 
 ```bash
 lsblk 
 ```
-![Проверка дисков прилагается os](./media/disk-encryption/lvm-raid-on-crypt/004-lvm-raid-check-disks-os.png)
+![Диски данных, прикрепленные к ОС](./media/disk-encryption/lvm-raid-on-crypt/004-lvm-raid-check-disks-os.png)
 
-### <a name="create-a-filesystem-on-top-of-each-disk"></a>Создайте файловую систему поверх каждого диска.
-Эта команда итерирует создание файловой системы ext4 на каждом диске, определенном на "в" части цикла "для".
+### <a name="create-a-file-system-on-top-of-each-disk"></a>Создание файловой системы поверх каждого диска
+Эта команда итерирует создание файловой системы ext4 на каждом диске, определенной на "в" части цикла "для".
+
 ```bash
 for disk in c d e f; do echo mkfs.ext4 -F /dev/sd${disk}; done |bash
 ```
-![Проверьте диски](./media/disk-encryption/lvm-raid-on-crypt/005-lvm-raid-create-temp-fs.png) прилагается os Найти UUID файлов недавно созданных систем, создать временную папку, чтобы смонтировать его, добавить соответствующие записи на / и т.д. / fstab и установить все файловые системы.
+![Создание файловой системы ext4](./media/disk-encryption/lvm-raid-on-crypt/005-lvm-raid-create-temp-fs.png)
+
+Найдите универсально уникальный идентификатор (UUID) файловых систем, которые вы недавно создали, создайте временную папку, добавьте соответствующие записи на /etc/fstab, и установите все файловые системы.
 
 Эта команда также итерирует на каждом диске, определенном на "в" части цикла "для":
+
 ```bash
 for disk in c d e f; do diskuuid="$(blkid -s UUID -o value /dev/sd${disk})"; \
 mkdir /tempdata${disk}; \
@@ -157,17 +173,23 @@ echo "UUID=${diskuuid} /tempdata${disk} ext4 defaults,nofail 0 0" >> /etc/fstab;
 mount -a; \
 done
 ``` 
-### <a name="verify-the-disks-are-mounted-properly"></a>Проверить диски установлены должным образом:
+
+### <a name="verify-that-the-disks-are-mounted-properly"></a>Убедитесь, что диски установлены должным образом
 ```bash
 lsblk
 ```
-![Проверьте временные](./media/disk-encryption/lvm-raid-on-crypt/006-lvm-raid-verify-temp-fs.png) файлы, установленные и настроенные:
+![Список установленных временных файловых систем](./media/disk-encryption/lvm-raid-on-crypt/006-lvm-raid-verify-temp-fs.png)
+
+Также убедитесь, что диски настроены:
+
 ```bash
 cat /etc/fstab
 ```
-![Проверьте fstab](./media/disk-encryption/lvm-raid-on-crypt/007-lvm-raid-verify-temp-fstab.png)
-### <a name="encrypt-the-data-disks"></a>Шифрование дисков данных:
-PowerShell с помощью KEK:
+![Информация о конфигурации через fstab](./media/disk-encryption/lvm-raid-on-crypt/007-lvm-raid-verify-temp-fstab.png)
+
+### <a name="encrypt-the-data-disks"></a>Шифрование дисков данных
+PowerShell с помощью ключа шифрования (KEK):
+
 ```powershell
 $sequenceVersion = [Guid]::NewGuid() 
 Set-AzVMDiskEncryptionExtension -ResourceGroupName $RGNAME `
@@ -181,7 +203,9 @@ Set-AzVMDiskEncryptionExtension -ResourceGroupName $RGNAME `
 -SequenceVersion $sequenceVersion `
 -skipVmBackup;
 ```
-CLI с использованием KEK:
+
+Azure CLI с помощью KEK:
+
 ```bash
 az vm encryption enable \
 --resource-group ${RGNAME} \
@@ -198,125 +222,166 @@ az vm encryption enable \
 Продолжайте делать следующий шаг только тогда, когда все диски зашифрованы.
 
 PowerShell.
+
 ```powershell
 Get-AzVmDiskEncryptionStatus -ResourceGroupName ${RGNAME} -VMName ${VMNAME}
 ```
-![Проверьте](./media/disk-encryption/lvm-raid-on-crypt/008-lvm-raid-verify-encryption-status-ps.png) шифрование ps CLI:
+![Статус шифрования в PowerShell](./media/disk-encryption/lvm-raid-on-crypt/008-lvm-raid-verify-encryption-status-ps.png)
+
+Azure CLI:
+
 ```bash
 az vm encryption show -n ${VMNAME} -g ${RGNAME} -o table
 ```
-![Проверьте шифрование](./media/disk-encryption/lvm-raid-on-crypt/009-lvm-raid-verify-encryption-status-cli.png) ![CLI](./media/disk-encryption/lvm-raid-on-crypt/010-lvm-raid-verify-encryption-status-portal.png) Портал: Проверьте шифрование OS OS Уровень:
+![Статус шифрования в ClI Azure](./media/disk-encryption/lvm-raid-on-crypt/009-lvm-raid-verify-encryption-status-cli.png)
+
+Портал:
+
+![Статус шифрования на портале](./media/disk-encryption/lvm-raid-on-crypt/010-lvm-raid-verify-encryption-status-portal.png)
+
+Уровень ОС:
+
 ```bash
 lsblk
 ```
-![Проверить шифрование CLI](./media/disk-encryption/lvm-raid-on-crypt/011-lvm-raid-verify-encryption-status-os.png)
+![Статус шифрования в ОС](./media/disk-encryption/lvm-raid-on-crypt/011-lvm-raid-verify-encryption-status-os.png)
 
-Расширение добавит файловые системы в "/var/lib/azure_disk_encryption_config/azure_crypt_mount" (старое шифрование) или добавлено в "/etc/crypttab" (новые шифрования).
+Расширение добавит файловые системы в /var/lib/azure_disk_encryption_config/azure_crypt_mount (старое шифрование) или в /etc/crypttab (новые шифрования).
 
-Не изменяйте ни один из этих файлов.
+>[!NOTE] 
+>Не изменяйте ни один из этих файлов.
 
-Этот файл будет заботиться об активации этих дисков во время процесса загрузки, чтобы они могли быть позже использованы LVM или RAID. 
+Этот файл будет заботиться об активации этих дисков во время процесса загрузки, так что LVM или RAID может использовать их позже. 
 
-Не беспокойтесь о точках крепления на этом файле, так как ADE потеряет возможность получить диски, установленные в качестве обычной файловой системы после того, как мы создадим физический объем или устройство рейда поверх этих зашифрованных устройств (который избавится от формата файловой системы, который мы использовали во время процесс подготовки).
-### <a name="remove-the-temp-folders-and-temp-fstab-entries"></a>Удалите папки темпа и временные записи fstab
-Вы разгрузите файловые системы на дисках, которые будут использоваться как часть LVM
+Не беспокойтесь о точках крепления в этом файле. Шифрование azure Disk потеряет возможность запускать диски в качестве обычной файловой системы после того, как мы создадим физический том или устройство RAID поверх этих зашифрованных устройств. (Это удалит формат файловой системы, который мы использовали во время процесса подготовки.)
+
+### <a name="remove-the-temporary-folders-and-temporary-fstab-entries"></a>Удалить временные папки и временные записи fstab
+Вы разгрузите файловые системы на дисках, которые будут использоваться как часть LVM.
+
 ```bash
-for disk in c d e f; do umount /tempdata${disk}; done
+for disk in c d e f; do unmount /tempdata${disk}; done
 ```
 И удалить /etc / fstab записей:
+
 ```bash
 vi /etc/fstab
 ```
 ### <a name="verify-that-the-disks-are-not-mounted-and-that-the-entries-on-etcfstab-were-removed"></a>Убедитесь, что диски не установлены и что записи на /etc/fstab были удалены
+
 ```bash
 lsblk
 ```
-![Проверьте системы](./media/disk-encryption/lvm-raid-on-crypt/012-lvm-raid-verify-disks-not-mounted.png) temp unmounted и настроены:
+![Проверка того, что временные файловые системы не установлены](./media/disk-encryption/lvm-raid-on-crypt/012-lvm-raid-verify-disks-not-mounted.png)
+
+И убедитесь, что диски настроены:
 ```bash
 cat /etc/fstab
 ```
-![Проверка записей temp fstab удаляются](./media/disk-encryption/lvm-raid-on-crypt/013-lvm-raid-verify-fstab-temp-removed.png)
-## <a name="for-lvm-on-crypt"></a>Для LVM-на-склепе
-Теперь, когда базовые диски зашифрованы, можно приступить к созданию структур LVM.
+![Проверка того, что временные записи fstab удаляются](./media/disk-encryption/lvm-raid-on-crypt/013-lvm-raid-verify-fstab-temp-removed.png)
 
-Вместо того, чтобы использовать имя устройства, используйте /dev/mapper пути для каждого из дисков, чтобы создать физический объем (на слое склепа в верхней части диска не на самом диске).
+## <a name="steps-for-lvm-on-crypt"></a>Шаги для LVM-на-склепе
+Теперь, когда базовые диски зашифрованы, можно создать структуры LVM.
+
+Вместо того, чтобы использовать имя устройства, используйте /dev/mapper пути для каждого из дисков, чтобы создать физический объем (на слое склепа в верхней части диска, а не на самом диске).
+
 ### <a name="configure-lvm-on-top-of-the-encrypted-layers"></a>Настройка LVM поверх зашифрованных слоев
 #### <a name="create-the-physical-volumes"></a>Создание физических объемов
-Вы получите предупреждение с просьбой, если это нормально, чтобы уничтожить подпись файловой системы. 
+Вы получите предупреждение, которое спрашивает, если это нормально, чтобы уничтожить подпись файловой системы. Продолжить, введя **у**, или использовать **эхо "y",** как показано на рисунке:
 
-Вы можете продолжить, введя 'y' или использовать эхо "y", как показано на рисунке:
 ```bash
 echo "y" | pvcreate /dev/mapper/c49ff535-1df9-45ad-9dad-f0846509f052
 echo "y" | pvcreate /dev/mapper/6712ad6f-65ce-487b-aa52-462f381611a1
 echo "y" | pvcreate /dev/mapper/ea607dfd-c396-48d6-bc54-603cf741bc2a
 echo "y" | pvcreate /dev/mapper/4159c60a-a546-455b-985f-92865d51158c
 ```
-![pvcreate](./media/disk-encryption/lvm-raid-on-crypt/014-lvm-raid-pvcreate.png)
+![Проверка того, что физический том был создан](./media/disk-encryption/lvm-raid-on-crypt/014-lvm-raid-pvcreate.png)
+
 >[!NOTE] 
->Имена /dev/mapper/device здесь должны быть заменены для ваших фактических значений на основе вывода lsblk.
-#### <a name="verify-the-physical-volumes-information"></a>Проверка информации о физических объемах
+>Имена /dev/mapper/устройства здесь должны быть заменены для ваших фактических значений на основе вывода **lsblk**.
+
+#### <a name="verify-the-information-for-physical-volumes"></a>Проверка информации на физические объемы
 ```bash
 pvs
 ```
-![проверить физические объемы 1](./media/disk-encryption/lvm-raid-on-crypt/015-lvm-raid-pvs.png)
+
+![Информация для физических объемов](./media/disk-encryption/lvm-raid-on-crypt/015-lvm-raid-pvs.png)
+
 #### <a name="create-the-volume-group"></a>Создание группы громкости
-Создание VG с использованием тех же устройств, которые уже инициализированы
+Создайте группу громкости, используя те же устройства, которые уже инициализированы:
+
 ```bash
 vgcreate vgdata /dev/mapper/
 ```
-### <a name="check-the-volume-group-information"></a>Проверка информации группы громкости
+
+### <a name="check-the-information-for-the-volume-group"></a>Проверка информации для группы томов
+
 ```bash
 vgdisplay -v vgdata
 ```
 ```bash
 pvs
 ```
-![проверить физические объемы 2](./media/disk-encryption/lvm-raid-on-crypt/016-lvm-raid-pvs-on-vg.png)
+![Информация для группы объемов](./media/disk-encryption/lvm-raid-on-crypt/016-lvm-raid-pvs-on-vg.png)
+
 #### <a name="create-logical-volumes"></a>Создание логических томов
+
 ```bash
 lvcreate -L 10G -n lvdata1 vgdata
 lvcreate -L 7G -n lvdata2 vgdata
 ``` 
-#### <a name="check-the-logical-volumes-created"></a>Проверка созданных логических объемов
+
+#### <a name="check-the-created-logical-volumes"></a>Проверьте созданные логические тома
+
 ```bash
 lvdisplay
 lvdisplay vgdata/lvdata1
 lvdisplay vgdata/lvdata2
 ```
-![проверить lvs](./media/disk-encryption/lvm-raid-on-crypt/017-lvm-raid-lvs.png)
-#### <a name="create-filesystems-on-top-of-the-logical-volumes-structures"></a>Создание файлов поверх структуры логического объема (ы) (ы)
+![Информация для логических томов](./media/disk-encryption/lvm-raid-on-crypt/017-lvm-raid-lvs.png)
+
+#### <a name="create-file-systems-on-top-of-the-structures-for-logical-volumes"></a>Создание файловых систем поверх структур для логических томов
+
 ```bash
 echo "yes" | mkfs.ext4 /dev/vgdata/lvdata1
 echo "yes" | mkfs.ext4 /dev/vgdata/lvdata2
 ```
-#### <a name="create-the-mount-points-for-the-new-filesystems"></a>Создание точек крепления для новых файлов
+
+#### <a name="create-the-mount-points-for-the-new-file-systems"></a>Создание точек крепления для новых файловых систем
+
 ```bash
 mkdir /data0
 mkdir /data1
 ```
+
 #### <a name="add-the-new-file-systems-to-etcfstab-and-mount-them"></a>Добавьте новые файловые системы в /etc/fstab и смонтирите их
+
 ```bash
 echo "/dev/mapper/vgdata-lvdata1 /data0 ext4 defaults,nofail 0 0" >>/etc/fstab
 echo "/dev/mapper/vgdata-lvdata2 /data1 ext4 defaults,nofail 0 0" >>/etc/fstab
 mount -a
 ```
-#### <a name="verify-that-the-new-filesystems-are-mounted"></a>Проверить, что новые файловые системы установлены
+
+#### <a name="verify-that-the-new-file-systems-are-mounted"></a>Проверить, что новые файловые системы установлены
+
 ```bash
 lsblk -fs
 df -h
 ```
-![проверить логические](./media/disk-encryption/lvm-raid-on-crypt/018-lvm-raid-lsblk-after-lvm.png) тома На этом варианте lsblk, мы перечисляем устройства, показывающие зависимости от обратного порядка, эта опция помогает определить устройства, сгруппированные по логическому объему, а не оригинальные /dev/sd'disk названия устройств.
+![Информация для установленных файловых систем](./media/disk-encryption/lvm-raid-on-crypt/018-lvm-raid-lsblk-after-lvm.png)
 
-Важно: убедитесь, что опция "nofail" добавляется к параметрам точек крепления объемов LVM, созданных поверх зашифрованного устройства ADE. Важно, чтобы избежать ОС от застрять во время процесса загрузки (или в режиме обслуживания). 
+На этом варианте **lsblk**мы перечисляем устройства, показывающие зависимости в обратном порядке. Эта опция помогает идентифицировать устройства, сгруппированные по логическому объему, а не исходные имена /dev/sd'disk.
 
-Зашифрованный диск разблокируются в конце процесса загрузки, объемы LVM и файловые системы будут автоматически установлены.
+Важно убедиться, что опция **nofail** добавляется к параметрам точек крепления томов LVM, созданных поверх устройства, зашифрованного с помощью шифрования Azure Disk. Это предотвращает застрять ОС во время процесса загрузки (или в режиме обслуживания).
 
-Если опция nofail не используется, ОС никогда не попадет на стадию запуска ADE, а диск данных (ы) разблокирован и установлен.
+Если вы не используете опцию **nofail:**
 
-Вы можете протестировать перезагрузку VM и проверки файловых систем также автоматически смонтированы после загрузки времени. 
+- ОС никогда не попадет в стадию запуска лазурного диска и разблокируются и монтируются диски данных. 
+- Зашифрованные диски будут разблокированы в конце процесса загрузки. Объемы LVM и файловые системы будут автоматически монтированы до тех пор, пока шифрование Azure Disk не разблокирует их. 
 
-Примите во внимание, что этот процесс может занять несколько минут в зависимости от количества файловых систем и размеров
+Вы можете протестировать перезагрузку VM и проверить, что файловые системы также автоматически устанавливаются после загрузки. Этот процесс может занять несколько минут, в зависимости от количества и размеров файловых систем.
+
 #### <a name="reboot-the-vm-and-verify-after-reboot"></a>Перезагрузка VM и проверить после перезагрузки
+
 ```bash
 shutdown -r now
 ```
@@ -324,8 +389,8 @@ shutdown -r now
 lsblk
 df -h
 ```
-## <a name="for-raid-on-crypt"></a>Для RAID-на-Crypt
-Теперь основные диски зашифрованы вы можете продолжать создавать RAID структур, так же, как LVM, вместо того, чтобы использовать имя устройства, использовать / Dev / Mapper пути для каждого из дисков.
+## <a name="steps-for-raid-on-crypt"></a>Шаги для RAID-на-склепе
+Теперь, когда базовые диски зашифрованы, можно продолжить создание структур RAID. Процесс такой же, как и для LVM, но вместо того, чтобы использовать имя устройства, используйте /dev/mapper пути для каждого диска.
 
 #### <a name="configure-raid-on-top-of-the-encrypted-layer-of-the-disks"></a>Настройка RAID поверх зашифрованного слоя дисков
 ```bash
@@ -337,21 +402,26 @@ mdadm --create /dev/md10 \
 /dev/mapper/ea607dfd-c396-48d6-bc54-603cf741bc2a \
 /dev/mapper/4159c60a-a546-455b-985f-92865d51158c
 ```
-![mdadm создать](./media/disk-encryption/lvm-raid-on-crypt/019-lvm-raid-md-creation.png)
+![Информация для настроенного RAID через команду mdadm](./media/disk-encryption/lvm-raid-on-crypt/019-lvm-raid-md-creation.png)
+
 >[!NOTE] 
->Имена /dev/mapper/device здесь должны быть заменены для ваших фактических значений на основе вывода lsblk.
-#### <a name="checkmonitor-the-raid-creation"></a>Проверьте/проконтролировать создание RAID:
+>Имена /dev/mapper/устройства здесь должны быть заменены на фактические значения, основанные на выходе **lsblk.**
+
+### <a name="checkmonitor-raid-creation"></a>Проверка /монитор RAID создание
 ```bash
 watch -n1 cat /proc/mdstat
 mdadm --examine /dev/mapper/[]
 mdadm --detail /dev/md10
 ```
-![проверить mdadm](./media/disk-encryption/lvm-raid-on-crypt/020-lvm-raid-md-details.png)
-#### <a name="create-a-filesystem-on-top-of-the-new-raid-device"></a>Создайте файловую систему поверх нового устройства Raid:
+![Статус RAID](./media/disk-encryption/lvm-raid-on-crypt/020-lvm-raid-md-details.png)
+
+### <a name="create-a-file-system-on-top-of-the-new-raid-device"></a>Создание файловой системы поверх нового устройства RAID
 ```bash
 mkfs.ext4 /dev/md10
 ```
-Создайте новую точку крепления для файловой системы, добавьте новую файловую систему в /etc/fstab, и установите ее
+
+Создайте новую точку крепления для файловой системы, добавьте новую файловую систему в /etc/fstab, и установите ее:
+
 ```bash
 for device in md10; do diskuuid="$(blkid -s UUID -o value /dev/${device})"; \
 mkdir /raiddata; \
@@ -359,26 +429,30 @@ echo "UUID=${diskuuid} /raiddata ext4 defaults,nofail 0 0" >> /etc/fstab; \
 mount -a; \
 done
 ```
-Проверить, что новые файловые системы установлены
+
+Убедитесь, что новая файловая система установлена:
+
 ```bash
 lsblk -fs
 df -h
 ```
-![проверить mdadm](./media/disk-encryption/lvm-raid-on-crypt/021-lvm-raid-lsblk-md-details.png)
+![Информация для установленных файловых систем](./media/disk-encryption/lvm-raid-on-crypt/021-lvm-raid-lsblk-md-details.png)
 
-Важно: убедитесь, что опция "nofail" добавляется к параметрам точки крепления томов RAID, созданных поверх зашифрованного устройства ADE. 
+Важно убедиться, что опция **nofail** добавляется в параметры точки крепления томов RAID, созданных поверх устройства, зашифрованного с помощью шифрования Azure Disk. Это предотвращает застрять ОС во время процесса загрузки (или в режиме обслуживания).
 
-Очень важно, чтобы избежать ОС от застрять во время процесса загрузки (или в режиме обслуживания). 
+Если вы не используете опцию **nofail:**
 
-Зашифрованный диск будет разблокирован в конце процесса загрузки, а объемы RAID и файловые системы будут автоматически монтироваться до тех пор, пока они не будут разблокированы ADE, если опция nofail не будет использована.
+- ОС никогда не попадет в стадию запуска лазурного диска и разблокируются и монтируются диски данных.
+- Зашифрованные диски будут разблокированы в конце процесса загрузки. Объемы и файловые системы RAID будут автоматически монтированы до тех пор, пока шифрование Azure Disk не разблокирует их.
 
-ОС никогда не попадет в стадию запуска ADE, а диски данных разблокированы и установлены.
+Вы можете протестировать перезагрузку VM и проверить, что файловые системы также автоматически устанавливаются после загрузки. Этот процесс может занять несколько минут, в зависимости от количества и размеров файловых систем.
 
-Вы можете протестировать перезагрузку VM и проверки файловых систем также автоматически смонтированы после загрузки времени. Примите во внимание, что этот процесс может занять несколько минут в зависимости от количества файловых систем и размеров
 ```bash
 shutdown -r now
 ```
+
 И когда вы можете войти в систему:
+
 ```bash
 lsblk
 df -h

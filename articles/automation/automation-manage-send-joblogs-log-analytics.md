@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: beb69edc57b5a13db0f6d2e5e1536804f3472aff
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 54f77f55a127cd712d43419eb6a85fd5d93a478c
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75421914"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80652174"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Переработайте статус задания и потоки рабочих мест от журналов автоматизации к мониторингу Azure
 
@@ -30,58 +30,32 @@ ms.locfileid: "75421914"
 
 * Последний релиз [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/).
 * Рабочая область Log Analytics. Для получения дополнительной [информации см.](../log-analytics/log-analytics-get-started.md)
-* ResourceId для учетной записи службы автоматизации Azure.
+* Идентификатор ресурса для учетной записи Azure Automation.
 
-Вот как можно найти ResourceId для учетной записи службы автоматизации Azure.
+Используйте следующую команду, чтобы найти идентификатор ресурса для учетной записи Azure Automation:
 
 ```powershell-interactive
 # Find the ResourceId for the Automation Account
 Get-AzResource -ResourceType "Microsoft.Automation/automationAccounts"
 ```
 
-Чтобы узнать ResourceId для рабочей области Log Analytics, выполните следующую команду PowerShell.
+Чтобы найти идентификатор ресурса для рабочего пространства Log Analytics, запустите следующую команду PowerShell:
 
 ```powershell-interactive
 # Find the ResourceId for the Log Analytics workspace
 Get-AzResource -ResourceType "Microsoft.OperationalInsights/workspaces"
 ```
 
-Если у вас несколько учетных записей службы автоматизации или рабочих областей, в выходных данных предыдущей команды найдите нужное значение *Name* и скопируйте соответствующее значение *ResourceId*.
+Если в выводе предыдущих команд имеется несколько учетных записей автоматизации или рабочее пространство, найдите имя, необходимое для настройки и копирования значения для идентификатора ресурса.
 
-Если вам нужно найти значение *Name* для своей учетной записи службы автоматизации, на портале Azure выберите свою учетную запись службы автоматизации в колонке **Учетная запись службы автоматизации** и выберите **Все параметры**. В колонке **Все параметры** в разделе **Параметры учетной записи** выберите пункт **Свойства**.  В колонке **Свойства** вы увидите нужные значения.<br> ![Свойства учетной записи службы автоматизации](media/automation-manage-send-joblogs-log-analytics/automation-account-properties.png).
+1. На портале Azure выберите учетную запись Автоматизации из лезвия **учетной записи Automation** и выберите **все настройки.** 
+2. Из лезвия **всех настроек,** под **настройками учетной записи,** выберите **Свойства.**  
+3. В лезвии **Свойств** обратите внимание на эти значения.<br> ![Автоматизация](media/automation-manage-send-joblogs-log-analytics/automation-account-properties.png)свойств учетной записи.
 
-## <a name="set-up-integration-with-azure-monitor-logs"></a>Настройка интеграции с журналами Azure Monitor
-
-1. На своем компьютере запустите **Windows PowerShell** на **начальном** экране.
-2. Выполните приведенные ниже команды PowerShell и измените значения параметров `[your resource id]` и `[resource id of the log analytics workspace]`, указав значения из предыдущего шага.
-
-   ```powershell-interactive
-   $workspaceId = "[resource id of the log analytics workspace]"
-   $automationAccountId = "[resource id of your automation account]"
-
-   Set-AzDiagnosticSetting -ResourceId $automationAccountId -WorkspaceId $workspaceId -Enabled 1
-   ```
-
-После запуска этого скрипта может пройти час, прежде чем вы начнете видеть записи в журналах Azure Monitor новых jobLogs или JobStreams, заражаемых.
-
-Чтобы просмотреть журналы, запустите следующий запрос в поиске журналов аналитики журналов:`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
-
-### <a name="verify-configuration"></a>Проверка конфигурации
-
-Чтобы убедиться, что ваша учетная запись службы автоматизации отправляет журналы в рабочую область Log Analytics, проверьте правильность настройки диагностики в учетной записи службы автоматизации, используя следующую команду PowerShell.
-
-```powershell-interactive
-Get-AzDiagnosticSetting -ResourceId $automationAccountId
-```
-
-В выходных данных убедитесь в следующем.
-
-* Под *журналами*значение *enabled* is *True.*
-* Значение *WorkspaceId* устанавливается в ResourceId рабочего пространства Analytics.
 
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 
-Диагностика от Azure Automation создает два типа записей в журналах Azure Monitor и помечена как **AzureDiagnostics.** В следующих запросах используется обновленный язык запроса для журналов Azure Monitor. Для получения информации об общих запросах между устаревшим языком запросов и новым языком запросов Azure Kusto посетите [Legacy для нового читлина Azure Kusto Query Language](https://docs.loganalytics.io/docs/Learn/References/Legacy-to-new-to-Azure-Log-Analytics-Language)
+Диагностика Azure Automation создает два типа записей в журналах Azure Monitor, помеченных как `AzureDiagnostics`. Таблицы в следующих разделах представляют примеры записей, генерируемых Azure Automation, и типов данных, которые отображаются в результатах поиска журналов.
 
 ### <a name="job-logs"></a>Журналы заданий
 
@@ -89,44 +63,72 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
-| Caller_s |Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
-| Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
-| JobId_g |GUID, представляющий собой идентификатор задания Runbook. |
+| Caller_s |Звонящее, инициироваввначало операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
+| Tenant_g | GUID идентифицирует арендатора для вызываемого абонента. |
+| JobId_g |GUID определяет работу runbook. |
 | ResultType |Состояние задания Runbook. Возможны следующие значения:<br>Новое<br>- Создано<br>Started<br>- Остановлена<br>Приостановлено<br>Сбой<br>Завершено |
 | Категория | Классификация типа данных. Для службы автоматизации значением является JobLogs. |
-| OperationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
-| Ресурс | Имя учетной записи службы автоматизации |
-| SourceSystem | Как журналы Azure Monitor собирали данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
-| ResultDescription |Описывает состояние результата задания Runbook. Возможны следующие значения:<br>— Job is started;<br>— Job Failed;<br>- Job Completed. |
-| CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
-| ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
-| SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
-| ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
-| ResourceProvider | MICROSOFT.AUTOMATION |
-| ResourceType | AUTOMATIONACCOUNTS |
-
+| OperationName | Тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
+| Ресурс | Название учетной записи Автоматизация |
+| SourceSystem | Система, которую используют журналы Azure Monitor для сбора данных. Значение всегда является Azure для диагностики Azure. |
+| ResultDescription |Состояние результата выполнения результатов выполнения. Возможны следующие значения:<br>— Job is started;<br>— Job Failed;<br>- Job Completed. |
+| CorrelationId |Корреляция GUID работы runbook. |
+| ResourceId |Идентификатор ресурса учетной записи Azure Automation в runbook. |
+| SubscriptionId | ГРАФИЧЕСКИй интерфейс подписки Azure для учетной записи Автоматизации. |
+| ResourceGroup | Название группы ресурсов для учетной записи Automation. |
+| ResourceProvider | Поставщики ресурсов. Значение MICROSOFT. Автоматизации. |
+| ResourceType | Тип ресурса. Значение AUTOMATIONACCOUNTS. |
 
 ### <a name="job-streams"></a>Потоки заданий
 | Свойство | Описание |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
-| Caller_s |Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
+| Caller_s |Звонящее, инициироваввначало операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
 | StreamType_s |Тип потока задания. Возможны следующие значения:<br>ход выполнения<br>Выходные данные<br>Предупреждение<br>error<br>debug<br>- Verbose. |
-| Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
-| JobId_g |GUID, представляющий собой идентификатор задания Runbook. |
+| Tenant_g | GUID идентифицирует арендатора для вызываемого абонента. |
+| JobId_g |GUID определяет работу runbook. |
 | ResultType |Состояние задания Runbook. Возможны следующие значения:<br>- In Progress |
 | Категория | Классификация типа данных. Для службы автоматизации значением является JobStreams. |
-| OperationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
-| Ресурс | Имя учетной записи службы автоматизации |
-| SourceSystem | Как журналы Azure Monitor собирали данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
-| ResultDescription |Включает в себя выходной поток из Runbook. |
-| CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
-| ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
-| SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
-| ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
-| ResourceProvider | MICROSOFT.AUTOMATION |
-| ResourceType | AUTOMATIONACCOUNTS |
+| OperationName | Тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
+| Ресурс | Название учетной записи Автоматизация. |
+| SourceSystem | Система, которую используют журналы Azure Monitor для сбора данных. Значение всегда является Azure для диагностики Azure. |
+| ResultDescription |Описание, которое включает в себя выходной поток из runbook. |
+| CorrelationId |Корреляция GUID работы runbook. |
+| ResourceId |Идентификатор ресурса учетной записи Azure Automation в runbook. |
+| SubscriptionId | ГРАФИЧЕСКИй интерфейс подписки Azure для учетной записи Автоматизации. |
+| ResourceGroup | Название группы ресурсов для учетной записи Automation. |
+| ResourceProvider | Поставщики ресурсов. Значение MICROSOFT. Автоматизации. |
+| ResourceType | Тип ресурса. Значение AUTOMATIONACCOUNTS. |
+
+## <a name="setting-up-integration-with-azure-monitor-logs"></a>Настройка интеграции с журналами Azure Monitor
+
+1. На своем компьютере запустите Windows PowerShell на **начальном** экране.
+2. Выполнить следующие команды PowerShell и отсваивать значение для значений `[your resource ID]` и `[resource ID of the log analytics workspace]` значений из предыдущего раздела.
+
+   ```powershell-interactive
+   $workspaceId = "[resource ID of the log analytics workspace]"
+   $automationAccountId = "[resource ID of your Automation account]"
+
+   Set-AzDiagnosticSetting -ResourceId $automationAccountId -WorkspaceId $workspaceId -Enabled 1
+   ```
+
+После запуска этого скрипта может пройти час, прежде чем вы начнете `JobLogs` `JobStreams` видеть записи в новых или написанных журналах Azure Monitor.
+
+Чтобы просмотреть журналы, запустите следующий запрос в поиске журналов аналитики журналов:`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
+
+### <a name="verify-configuration"></a>Проверка конфигурации
+
+Чтобы подтвердить, что ваша учетная запись Automation отправляет журналы в рабочее пространство Log Analytics, проверьте, правильно ли настраиваются на учетную запись Автоматизация с помощью следующей команды PowerShell.
+
+```powershell-interactive
+Get-AzDiagnosticSetting -ResourceId $automationAccountId
+```
+
+В выходных данных убедитесь, что:
+
+* Под, `Logs`значение `Enabled` для правда.
+* `WorkspaceId`устанавливается значение `ResourceId` для рабочего пространства log Analytics.
 
 ## <a name="viewing-automation-logs-in-azure-monitor-logs"></a>Просмотр журналов автоматизации в журналах Azure Monitor
 
@@ -135,39 +137,44 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 Чтобы просмотреть журналы, выполните следующий запрос: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
 
 ### <a name="send-an-email-when-a-runbook-job-fails-or-suspends"></a>Отправка электронного сообщения при сбое или приостановке задания Runbook
+
 Один из наших основных клиентов запрашивает возможность отправлять электронное сообщение или текст при возникновении ошибки в работе задания runbook.
 
-Чтобы создать правило генерации оповещений, начните с создания поиска в журнале записей заданий Runbook, которые должны вызывать оповещение. Щелкните кнопку **Оповещение**, чтобы создать и настроить правило генерации оповещений.
+Чтобы создать правило оповещения, начните с создания поиска журнала для записей работы Runbook, которые должны вызывать оповещение. Щелкните кнопку **Оповещение**, чтобы создать и настроить правило генерации оповещений.
 
 1. На странице обзора рабочего пространства Log Analytics нажмите **«Вид журналов».**
-2. Создайте запрос для поиска оповещения по журналам. Для этого в поле запроса введите следующее условие поиска: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended")`. Можно также применить группирование по RunbookName с помощью: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended") | summarize AggregatedValue = count() by RunbookName_s`
+2. Создайте запрос поиска журнала для оповещения, введя следующий поиск в поле запроса:`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended")`<br><br>Вы также можете группироваться по названию runbook, используя:`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended") | summarize AggregatedValue = count() by RunbookName_s`
 
-   Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Имя учетной записи службы автоматизации можно найти в поле "Ресурс" для поиска JobLogs.
+   Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Название учетной записи `Resource` автоматизации `JobLogs`можно найти в поле в поиске .
 3. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/platform/alerts-unified-log.md).
 
 ### <a name="find-all-jobs-that-have-completed-with-errors"></a>Поиск всех заданий, завершенных с ошибками
-Помимо оповещений о сбоях можно узнать, когда задание Runbook вызывает устранимую ошибку. В этих случаях PowerShell создает поток сообщений об ошибках, но устранимые ошибки не приводят к приостановке или сбою задания.
+
+Помимо оповещений о сбоях можно узнать, когда задание Runbook вызывает устранимую ошибку. В этих случаях PowerShell производит поток ошибок, но ошибки, не прекращающиеся, не приводят к приостановке или сбою в работе.
 
 1. В рабочем пространстве журнала Analytics щелкните **журналы**.
-2. В поле запроса введите `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobStreams" and StreamType_s == "Error" | summarize AggregatedValue = count() by JobId_g` и нажмите кнопку **Поиск**.
+2. В поле запроса `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobStreams" and StreamType_s == "Error" | summarize AggregatedValue = count() by JobId_g`введите .
+3. Нажмите кнопку **поиска.**
 
 ### <a name="view-job-streams-for-a-job"></a>Просмотр потоков заданий для задания
-При отладке задания можно также просмотреть потоки заданий. Приведенный ниже запрос отображает все потоки для одного задания с GUID 2ebd22ea-e05e-4eb9-9d76-d73cbd4356e0.
+
+При отладке задания также можно захотеть заглянуть в потоки задания. Приведенный ниже запрос отображает все потоки для одного задания с GUID 2ebd22ea-e05e-4eb9-9d76-d73cbd4356e0.
 
 `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobStreams" and JobId_g == "2ebd22ea-e05e-4eb9-9d76-d73cbd4356e0" | sort by TimeGenerated asc | project ResultDescription`
 
 ### <a name="view-historical-job-status"></a>Просмотр хронологии состояния задания
-Наконец, вам может понадобиться визуализировать журнал задания по прошествии времени. Для поиска для поиска состояния заданий по прошествии времени можно использовать приведенный ниже запрос.
+
+Наконец, вы можете визуализировать свою историю работы с течением времени. Для поиска для поиска состояния заданий по прошествии времени можно использовать приведенный ниже запрос.
 
 `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and ResultType != "started" | summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h)`
 <br> ![Диаграмма хронологии состояния задания в Log Analytics](media/automation-manage-send-joblogs-log-analytics/historical-job-status-chart.png)<br>
 
-## <a name="remove-diagnostic-settings"></a>Удаление параметров диагностики
+## <a name="removing-diagnostic-settings"></a>Удаление диагностических настроек
 
-Чтобы удалить параметр диагностики из учетной записи службы автоматизации, выполните следующие команды:
+Чтобы удалить диагностическую настройку из учетной записи Automation, запустите следующую команду:
 
 ```powershell-interactive
-$automationAccountId = "[resource id of your automation account]"
+$automationAccountId = "[resource ID of your Automation account]"
 
 Remove-AzDiagnosticSetting -ResourceId $automationAccountId
 ```

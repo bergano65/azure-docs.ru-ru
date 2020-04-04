@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: dfdfa9f69e00aa644c21fc96cb70e9fa460ca0c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0a282a412823207e5f662441158000e8c6121796
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77211697"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637926"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
 
@@ -109,7 +109,7 @@ ms.locfileid: "77211697"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Если шаблон содержит ресурс [Microsoft.Web/certificates](/azure/templates/microsoft.web/certificates) для SSL-привязки и сертификат хранится в Key Vault, необходимо убедиться в том, что удостоверение службы приложений имеет доступ к сертификату.
+Если ваш шаблон включает ресурс [Microsoft.Web/сертификаты](/azure/templates/microsoft.web/certificates) для привязки TLS/SSL, а сертификат хранится в Хранилище ключей, необходимо убедиться, что идентификатор Службы Приложения может получить доступ к сертификату.
 
 В глобальной среде Azure субъект-служба службы приложений имеет идентификатор **abfa0a7c-a6b6-4736-8310-5855508787cd**. Чтобы предоставить доступ к Key Vault для субъекта-службы службы приложений, используйте:
 

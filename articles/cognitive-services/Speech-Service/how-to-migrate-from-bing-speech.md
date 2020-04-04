@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/17/2020
+ms.date: 04/03/2020
 ms.author: nitinme
-ms.openlocfilehash: b95e16f2d8257bfffcaf2524fe7f8ce6be565689
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7b78bdb070cdf1364fe7fbdc75f175be7ce145ff
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80366588"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656447"
 ---
 # <a name="migrate-from-bing-speech-to-the-speech-service"></a>Миграция из Bing Speech в речевую службу
 
@@ -93,4 +93,4 @@ ms.locfileid: "80366588"
 ## <a name="see-also"></a>См. также
 * [Заметки об освобождении речевой службы](releasenotes.md)
 * [Что такое служба речи](overview.md)
-* [Речевой сервис и документация речи SDK](speech-sdk.md#get-the-sdk)
+* [Речевой сервис и документация речи SDK](speech-sdk.md#get-the-speech-sdk)

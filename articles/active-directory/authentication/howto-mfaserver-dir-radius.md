@@ -4,19 +4,19 @@ description: Развертывание аутентификации RADIUS на
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/21/2019
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b38341613c98bf85df8cb47ccafc3df5709a1fd4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 552226c35d4d129f73b96b689871708950b7ffb1
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75425200"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80652950"
 ---
 # <a name="integrate-radius-authentication-with-azure-multi-factor-authentication-server"></a>Интеграция аутентификации RADIUS с сервером Многофакторной идентификации Azure
 
@@ -77,9 +77,9 @@ RADIUS — это стандартный протокол принятия и о
 
 Для настройки клиента RADIUS используйте следующие рекомендации.
 
-* Настройте устройство или сервер для проверки подлинности с помощью RADIUS по IP-адресу сервера Многофакторной идентификации Azure, который будет действовать как сервер RADIUS.
+* Направьте прибор/сервер для проверки подлинности с помощью RADIUS на IP-адрес Azure Multi-Factor Authentication Server, который действует как сервер RADIUS.
 * Используйте тот же общий секрет, который был настроен ранее.
-* Установите время ожидания RADIUS в диапазоне 30–60 секунд, чтобы его было достаточно для проверки учетных данных пользователя, двухфакторной проверки подлинности, получения ответа и отправки ответа на запрос на доступ к RADIUS.
+* Назначьте тайм-аут RADIUS до 30-60 секунд, чтобы было время проверить учетные данные пользователя, выполнить двухэтапную проверку, получить ответ, а затем ответить на запрос доступа RADIUS.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

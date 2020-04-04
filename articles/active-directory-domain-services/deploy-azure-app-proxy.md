@@ -8,15 +8,15 @@ ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/31/2020
 ms.author: iainfou
-ms.openlocfilehash: 3fb731736941293a82baba86165a1205bd8a05c5
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: c1dc5216f758c2dda263e2f61b043dbde5f76604
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80519033"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655504"
 ---
 # <a name="deploy-azure-ad-application-proxy-for-secure-access-to-internal-applications-in-an-azure-ad-domain-services-managed-domain"></a>Развертывание прокси-приложения Azure AD для безопасного доступа к внутренним приложениям в домене Azure AD Domain
 
@@ -26,7 +26,7 @@ ms.locfileid: "80519033"
 
 В этой статье показано, как создать и настроить разъем прокси-сервер Azure AD Application Для обеспечения безопасного доступа к приложениям в домене Azure AD DS.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для завершения этой статьи необходимы следующие ресурсы и привилегии:
 

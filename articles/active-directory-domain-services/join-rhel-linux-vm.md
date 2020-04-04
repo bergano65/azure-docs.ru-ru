@@ -8,15 +8,15 @@ ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: iainfou
-ms.openlocfilehash: d12dd0c79f2e9c1d2b0cc17956a0bb8d8fa35865
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 81eec19cb4af3a6b668bbfc26105085b4eec2a19
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78299148"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655148"
 ---
 # <a name="join-a-red-hat-enterprise-linux-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>Join a Red Hat Enterprise Linux virtual machine to an Azure AD Domain Services managed domain (Присоединение виртуальной машины Red Hat Enterprise Linux к управляемому домену доменных служб Azure AD)
 
@@ -29,7 +29,7 @@ ms.locfileid: "78299148"
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
 * Активная подписка Azure.
-    * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
@@ -43,8 +43,8 @@ ms.locfileid: "78299148"
 Если вам нужно создать RHEL Linux VM, или хотите создать тест VM для использования в этой статье, вы можете использовать один из следующих методов:
 
 * [Портал Azure](../virtual-machines/linux/quick-create-portal.md)
-* [Лазурный CLI](../virtual-machines/linux/quick-create-cli.md)
-* [Лазурная силаШелл](../virtual-machines/linux/quick-create-powershell.md)
+* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 При создании VM обратите внимание на настройки виртуальной сети, чтобы убедиться, что VM может общаться с доменом Azure AD DS:
 

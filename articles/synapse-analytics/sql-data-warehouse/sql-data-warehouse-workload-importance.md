@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 84f432c45729091be1264bff85d1e32fac10f3ef
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 2c8617cffaa81da6423011a494b8dbc82c42d218
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80583159"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632458"
 ---
 # <a name="azure-synapse-analytics-workload-importance"></a>Важность рабочей нагрузки Azure Synapse Analytics
 
@@ -60,10 +60,10 @@ ms.locfileid: "80583159"
 
 Поскольку 5 евро является средним, он требует двух слотов для параллелизма. No5 нужно дождаться завершения двух запущенных запросов.  Однако, когда один из запущенных запросов (No1-No4) завершается, No6 планируется немедленно, потому что ресурсы существуют для выполнения запроса.  Если No5 имеет более высокое значение, чем No 6, No 6 ждет, пока No 5 работает, прежде чем он может начать выполнение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Для получения дополнительной информации о создании классификатора, [см.](/sql/t-sql/statements/create-workload-classifier-transact-sql)  
 - Для получения дополнительной информации о классификации рабочей нагрузки [см.](sql-data-warehouse-workload-classification.md)  
-- Ознакомьтесь с [классификатором рабочей нагрузки](quickstart-create-a-workload-classifier-tsql.md) «Быстрый запуск» для создания классификатора рабочей нагрузки. 
+- Ознакомьтесь с [классификатором рабочей нагрузки](quickstart-create-a-workload-classifier-tsql.md) «Быстрый запуск» для создания классификатора рабочей нагрузки.
 - См. статьи с инструкциями по [настройке уровня важности рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md), а также по [администрированию и мониторингу рабочих нагрузок](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
 - Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=azure-sqldw-latest).

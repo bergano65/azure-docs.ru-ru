@@ -8,13 +8,13 @@ ms.subservice: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
-ms.date: 07/16/2018
-ms.openlocfilehash: 1d15d53816d916bd28841aae39255685524faa2d
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.date: 04/02/2020
+ms.openlocfilehash: 7292064a1df8aa9bfffcd9a19a03f7b332c0615e
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80477869"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632735"
 ---
 # <a name="data-science-with-a-linux-data-science-virtual-machine-in-azure"></a>Наука о данных с виртуальной машиной Linux Data Science в Azure
 
@@ -45,16 +45,22 @@ ms.locfileid: "80477869"
 
 Чтобы загрузить данные, откройте окно терминала, а затем запустите эту команду:
 
-    wget https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/spambase.data
+```bash
+wget --no-check-certificate https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/spambase.data
+```
 
 Загруженный файл не имеет строки заголовка. Давайте создадим еще один файл, в который есть заголовок. Для этого выполните следующую команду:
 
-    echo 'word_freq_make, word_freq_address, word_freq_all, word_freq_3d,word_freq_our, word_freq_over, word_freq_remove, word_freq_internet,word_freq_order, word_freq_mail, word_freq_receive, word_freq_will,word_freq_people, word_freq_report, word_freq_addresses, word_freq_free,word_freq_business, word_freq_email, word_freq_you, word_freq_credit,word_freq_your, word_freq_font, word_freq_000, word_freq_money,word_freq_hp, word_freq_hpl, word_freq_george, word_freq_650, word_freq_lab,word_freq_labs, word_freq_telnet, word_freq_857, word_freq_data,word_freq_415, word_freq_85, word_freq_technology, word_freq_1999,word_freq_parts, word_freq_pm, word_freq_direct, word_freq_cs, word_freq_meeting,word_freq_original, word_freq_project, word_freq_re, word_freq_edu,word_freq_table, word_freq_conference, char_freq_semicolon, char_freq_leftParen,char_freq_leftBracket, char_freq_exclamation, char_freq_dollar, char_freq_pound, capital_run_length_average,capital_run_length_longest, capital_run_length_total, spam' > headers
+```bash
+echo 'word_freq_make, word_freq_address, word_freq_all, word_freq_3d,word_freq_our, word_freq_over, word_freq_remove, word_freq_internet,word_freq_order, word_freq_mail, word_freq_receive, word_freq_will,word_freq_people, word_freq_report, word_freq_addresses, word_freq_free,word_freq_business, word_freq_email, word_freq_you, word_freq_credit,word_freq_your, word_freq_font, word_freq_000, word_freq_money,word_freq_hp, word_freq_hpl, word_freq_george, word_freq_650, word_freq_lab,word_freq_labs, word_freq_telnet, word_freq_857, word_freq_data,word_freq_415, word_freq_85, word_freq_technology, word_freq_1999,word_freq_parts, word_freq_pm, word_freq_direct, word_freq_cs, word_freq_meeting,word_freq_original, word_freq_project, word_freq_re, word_freq_edu,word_freq_table, word_freq_conference, char_freq_semicolon, char_freq_leftParen,char_freq_leftBracket, char_freq_exclamation, char_freq_dollar, char_freq_pound, capital_run_length_average,capital_run_length_longest, capital_run_length_total, spam' > headers
+```
 
 Затем соперейте два файла вместе:
 
-    cat spambase.data >> headers
-    mv headers spambaseHeaders.data
+```bash
+cat spambase.data >> headers
+mv headers spambaseHeaders.data
+```
 
 Набор данных имеет несколько типов статистических данных для каждого письма:
 
@@ -71,51 +77,69 @@ ms.locfileid: "80477869"
 
 Чтобы получить копии образцов кода, которые используются в этом пошаговом шаге, используйте git для клонирования репозитория Azure-Machine-Learning-Data-Science. Git предустановлен на DSVM. На командной строке git, запустите:
 
-    git clone https://github.com/Azure/Azure-MachineLearning-DataScience.git
+```bash
+git clone https://github.com/Azure/Azure-MachineLearning-DataScience.git
+```
 
 Откройте окно терминала и начните новую сессию R в интерактивной консоли R. Вы также можете использовать RStudio, который предустановлен на DSVM.
 
 Для импорта данных и настройки среды:
 
-    data <- read.csv("spambaseHeaders.data")
-    set.seed(123)
+```R
+data <- read.csv("spambaseHeaders.data")
+set.seed(123)
+```
 
 Чтобы просмотреть сводные статистические данные по каждому столбцу, выполните следующую команду:
 
-    summary(data)
+```R
+summary(data)
+```
 
 Чтобы получить другое представление данных, выполните следующую команду:
 
-    str(data)
+```R
+str(data)
+```
 
 В этом представлении отображается тип каждой переменной и первые несколько значений в наборе данных.
 
 Столбец **spam** распознан как целое число, но это на самом деле категориальная переменная (или факторная). Чтобы задать тип данных в этом столбце, выполните следующую команду:
 
-    data$spam <- as.factor(data$spam)
+```R
+data$spam <- as.factor(data$spam)
+```
 
 Чтобы сделать некоторые исследовательский анализ, используйте пакет [ggplot2,](https://ggplot2.tidyverse.org/) популярная библиотека графиков для R, которая предустановлена на DSVM. На основе сводных данных, отображаемых ранее, мы имеем сводные статистические данные о частоте восклицательного знака характера. Давайте посюжетим эти частоты здесь, запустив следующие команды:
 
-    library(ggplot2)
-    ggplot(data) + geom_histogram(aes(x=char_freq_exclamation), binwidth=0.25)
+```R
+library(ggplot2)
+ggplot(data) + geom_histogram(aes(x=char_freq_exclamation), binwidth=0.25)
+```
 
 Поскольку нулевая планка искажает сюжет, давайте устраним его:
 
-    email_with_exclamation = data[data$char_freq_exclamation > 0, ]
-    ggplot(email_with_exclamation) + geom_histogram(aes(x=char_freq_exclamation), binwidth=0.25)
+```R
+email_with_exclamation = data[data$char_freq_exclamation > 0, ]
+ggplot(email_with_exclamation) + geom_histogram(aes(x=char_freq_exclamation), binwidth=0.25)
+```
 
 Существует нетривиальная плотность выше 1, что выглядит интересно. Давайте посмотрим только на эти данные:
 
-    ggplot(data[data$char_freq_exclamation > 1, ]) + geom_histogram(aes(x=char_freq_exclamation), binwidth=0.25)
+```R
+ggplot(data[data$char_freq_exclamation > 1, ]) + geom_histogram(aes(x=char_freq_exclamation), binwidth=0.25)
+```
 
 Затем разделите его спамом по сравнению с ветчиной:
 
-    ggplot(data[data$char_freq_exclamation > 1, ], aes(x=char_freq_exclamation)) +
-    geom_density(lty=3) +
-    geom_density(aes(fill=spam, colour=spam), alpha=0.55) +
-    xlab("spam") +
-    ggtitle("Distribution of spam \nby frequency of !") +
-    labs(fill="spam", y="Density")
+```R
+ggplot(data[data$char_freq_exclamation > 1, ], aes(x=char_freq_exclamation)) +
+geom_density(lty=3) +
+geom_density(aes(fill=spam, colour=spam), alpha=0.55) +
+xlab("spam") +
+ggtitle("Distribution of spam \nby frequency of !") +
+labs(fill="spam", y="Density")
+```
 
 Эти примеры должны помочь вам сделать похожие сюжеты и исследовать данные в других столбцах.
 
@@ -128,16 +152,20 @@ ms.locfileid: "80477869"
 
 Во-первых, давайте разделим набор данных на наборы обучения и тестовые наборы:
 
-    rnd <- runif(dim(data)[1])
-    trainSet = subset(data, rnd <= 0.7)
-    testSet = subset(data, rnd > 0.7)
+```R
+rnd <- runif(dim(data)[1])
+trainSet = subset(data, rnd <= 0.7)
+testSet = subset(data, rnd > 0.7)
+```
 
 Затем создайте дерево решений для классификации писем:
 
-    require(rpart)
-    model.rpart <- rpart(spam ~ ., method = "class", data = trainSet)
-    plot(model.rpart)
-    text(model.rpart)
+```R
+require(rpart)
+model.rpart <- rpart(spam ~ ., method = "class", data = trainSet)
+plot(model.rpart)
+text(model.rpart)
+```
 
 Ниже приведен результат:
 
@@ -145,99 +173,37 @@ ms.locfileid: "80477869"
 
 Чтобы определить, насколько хорошо эта модель работает с обучающим набором данных, используйте следующий код:
 
-    trainSetPred <- predict(model.rpart, newdata = trainSet, type = "class")
-    t <- table(`Actual Class` = trainSet$spam, `Predicted Class` = trainSetPred)
-    accuracy <- sum(diag(t))/sum(t)
-    accuracy
+```R
+trainSetPred <- predict(model.rpart, newdata = trainSet, type = "class")
+t <- table(`Actual Class` = trainSet$spam, `Predicted Class` = trainSetPred)
+accuracy <- sum(diag(t))/sum(t)
+accuracy
+```
 
 Чтобы определить, насколько хорошо она работает с тестовым набором данных:
 
-    testSetPred <- predict(model.rpart, newdata = testSet, type = "class")
-    t <- table(`Actual Class` = testSet$spam, `Predicted Class` = testSetPred)
-    accuracy <- sum(diag(t))/sum(t)
-    accuracy
+```R
+testSetPred <- predict(model.rpart, newdata = testSet, type = "class")
+t <- table(`Actual Class` = testSet$spam, `Predicted Class` = testSetPred)
+accuracy <- sum(diag(t))/sum(t)
+accuracy
+```
 
 Теперь давайте испробуем модель случайного леса. Случайные леса тренируют множество деревьев решений и выводит класс, который является режимом классификации из всех отдельных деревьев решений. Они обеспечивают более мощный подход к машинного обучению, поскольку они корректируют тенденцию модели дерева решений переукладывать набор обучающих данных.
 
-    require(randomForest)
-    trainVars <- setdiff(colnames(data), 'spam')
-    model.rf <- randomForest(x=trainSet[, trainVars], y=trainSet$spam)
+```R
+require(randomForest)
+trainVars <- setdiff(colnames(data), 'spam')
+model.rf <- randomForest(x=trainSet[, trainVars], y=trainSet$spam)
 
-    trainSetPred <- predict(model.rf, newdata = trainSet[, trainVars], type = "class")
-    table(`Actual Class` = trainSet$spam, `Predicted Class` = trainSetPred)
+trainSetPred <- predict(model.rf, newdata = trainSet[, trainVars], type = "class")
+table(`Actual Class` = trainSet$spam, `Predicted Class` = trainSetPred)
 
-    testSetPred <- predict(model.rf, newdata = testSet[, trainVars], type = "class")
-    t <- table(`Actual Class` = testSet$spam, `Predicted Class` = testSetPred)
-    accuracy <- sum(diag(t))/sum(t)
-    accuracy
-
-
-## <a name="deploy-a-model-to-azure-machine-learning-studio-classic"></a>Развертывание модели в студии машинного обучения Azure (классический)
-
-[Azure Machine Learning Studio (классическая)](https://studio.azureml.net/) — это облачный сервис, который упрощает создание и развертывание моделей прогностической аналитики. Хорошей особенностью Azure Machine Learning Studio (классический) является его способность публиковать любые функции R в качестве веб-сервиса. Пакет Azure Machine Learning Studio (классический) R упрощает развертывание прямо с сеанса R на DSVM.
-
-Чтобы развернуть код дерева решений из предыдущего раздела, восвай в Студию машинного обучения Azure (классический). Для этого необходимо указать идентификатор рабочей области и маркер авторизации. Чтобы найти эти значения и инициализировать переменные Azure Machine Learning с ними, выполните следующие шаги:
-
-1. В левом меню выберите **Настройки**. Обратите внимание на значение **ДЛЯ WORKSPACE ID**.
-
-   ![Идентификатор рабочего пространства Azure Machine Learning Studio (классический)](./media/linux-dsvm-walkthrough/workspace-id.png)
-
-1. Выберите **вкладку Токенов авторизации.** Обратите внимание на значение **для токенов первичной авторизации.**
-
-   ![Студия машинного обучения Azure (классический) основной токен авторизации](./media/linux-dsvm-walkthrough/workspace-token.png)
-1. Загрузите пакет **AzureML,** а затем установите значения переменных с помощью маркера и идентификатора рабочего пространства в сессии R на DSVM:
-
-        if(!require("devtools")) install.packages("devtools")
-        devtools::install_github("RevolutionAnalytics/AzureML")
-        if(!require("AzureML")) install.packages("AzureML")
-        require(AzureML)
-        wsAuth = "<authorization-token>"
-        wsID = "<workspace-id>"
-
-1. Давайте упростим модель, чтобы облегчить реализацию этой демонстрации. Выберите три переменные в дереве решений, близком к корню, и создайте новое дерево, используя только эти три переменные:
-
-        colNames <- c("char_freq_dollar", "word_freq_remove", "word_freq_hp", "spam")
-        smallTrainSet <- trainSet[, colNames]
-        smallTestSet <- testSet[, colNames]
-        model.rpart <- rpart(spam ~ ., method = "class", data = smallTrainSet)
-
-1. Нам нужна функция прогнозирования, которая принимает в качестве входных данных признаки и возвращает прогнозируемые значения.
-
-        predictSpam <- function(newdata) {
-        predictDF <- predict(model.rpart, newdata = newdata)
-        return(colnames(predictDF)[apply(predictDF, 1, which.max)])
-        }
-
-1. Создайте файл settings.json для этого рабочего пространства:
-
-        vim ~/.azureml/settings.json
-
-1. Убедитесь, что следующее содержимое помещается в настройки.json:
-
-         {"workspace":{
-           "id": "<workspace-id>",
-           "authorization_token": "<authorization-token>",
-           "api_endpoint": "https://studioapi.azureml.net",
-           "management_endpoint": "https://management.azureml.net"
-         }
-
-
-1. Публикация функции **predictSpam** в AzureML с помощью функции **publishWebService:**
-
-        ws <- workspace()
-        spamWebService <- publishWebService(ws, fun = predictSpam, name="spamWebService", inputSchema = smallTrainSet, data.frame=TRUE)
-
-1. Эта функция принимает функцию **predictSpam,** создает веб-сервис под названием **spamWebService,** который определил входные данные и выходы, а затем возвращает информацию о новой конечной точке.
-
-    Используйте эту команду для просмотра деталей последнего опубликованного веб-сервиса, включая конечную точку API и ключи доступа:
-
-        s<-tail(services(ws, name = "spamWebService"), 1)
-        ep <- endpoints(ws,s)
-        ep
-
-1. Чтобы испытать эту функцию на первых 10 строках тестового набора данных, выполните следующую команду:
-
-        consume(ep, smallTestSet[1:10, ])
+testSetPred <- predict(model.rf, newdata = testSet[, trainVars], type = "class")
+t <- table(`Actual Class` = testSet$spam, `Predicted Class` = testSetPred)
+accuracy <- sum(diag(t))/sum(t)
+accuracy
+```
 
 <a name="deep-learning"></a>
 
@@ -268,19 +234,21 @@ ms.locfileid: "80477869"
 
 [XGBoost](https://xgboost.readthedocs.org/en/latest/) обеспечивает быструю и точную реализацию увеличенного дерева.
 
-    require(xgboost)
-    data <- read.csv("spambaseHeaders.data")
-    set.seed(123)
+```R
+require(xgboost)
+data <- read.csv("spambaseHeaders.data")
+set.seed(123)
 
-    rnd <- runif(dim(data)[1])
-    trainSet = subset(data, rnd <= 0.7)
-    testSet = subset(data, rnd > 0.7)
+rnd <- runif(dim(data)[1])
+trainSet = subset(data, rnd <= 0.7)
+testSet = subset(data, rnd > 0.7)
 
-    bst <- xgboost(data = data.matrix(trainSet[,0:57]), label = trainSet$spam, nthread = 2, nrounds = 2, objective = "binary:logistic")
+bst <- xgboost(data = data.matrix(trainSet[,0:57]), label = trainSet$spam, nthread = 2, nrounds = 2, objective = "binary:logistic")
 
-    pred <- predict(bst, data.matrix(testSet[, 0:57]))
-    accuracy <- 1.0 - mean(as.numeric(pred > 0.5) != testSet$spam)
-    print(paste("test accuracy = ", accuracy))
+pred <- predict(bst, data.matrix(testSet[, 0:57]))
+accuracy <- 1.0 - mean(as.numeric(pred > 0.5) != testSet$spam)
+print(paste("test accuracy = ", accuracy))
+```
 
 XGBoost также может звонить с Python или командной строки.
 
@@ -293,45 +261,52 @@ XGBoost также может звонить с Python или командной
 
 Давайте прочитаем в некоторых наборах данных spambase и классифицировать электронные письма с машинами поддержки векторных в Scikit-учиться:
 
-    import pandas
-    from sklearn import svm
-    data = pandas.read_csv("spambaseHeaders.data", sep = ',\s*')
-    X = data.ix[:, 0:57]
-    y = data.ix[:, 57]
-    clf = svm.SVC()
-    clf.fit(X, y)
+```Python
+import pandas
+from sklearn import svm
+data = pandas.read_csv("spambaseHeaders.data", sep = ',\s*')
+X = data.ix[:, 0:57]
+y = data.ix[:, 57]
+clf = svm.SVC()
+clf.fit(X, y)
+```
 
 Для создания прогнозов используем следующую команду:
 
-    clf.predict(X.ix[0:20, :])
+```Python
+clf.predict(X.ix[0:20, :])
+```
 
 Чтобы продемонстрировать, как опубликовать конечную точку машинного обучения Azure, давайте сделаем более базовую модель. Мы будем использовать три переменные, которые мы использовали, когда мы опубликовали модель R ранее:
 
-    X = data[["char_freq_dollar", "word_freq_remove", "word_freq_hp"]]
-    y = data.ix[:, 57]
-    clf = svm.SVC()
-    clf.fit(X, y)
+```Python
+X = data[["char_freq_dollar", "word_freq_remove", "word_freq_hp"]]
+y = data.ix[:, 57]
+clf = svm.SVC()
+clf.fit(X, y)
+```
 
 Чтобы опубликовать модель для машинного обучения Azure:
 
-    # Publish the model.
-    workspace_id = "<workspace-id>"
-    workspace_token = "<workspace-token>"
-    from azureml import services
-    @services.publish(workspace_id, workspace_token)
-    @services.types(char_freq_dollar = float, word_freq_remove = float, word_freq_hp = float)
-    @services.returns(int) # 0 or 1
-    def predictSpam(char_freq_dollar, word_freq_remove, word_freq_hp):
-        inputArray = [char_freq_dollar, word_freq_remove, word_freq_hp]
-        return clf.predict(inputArray)
+```Python
+# Publish the model.
+workspace_id = "<workspace-id>"
+workspace_token = "<workspace-token>"
+from azureml import services
+@services.publish(workspace_id, workspace_token)
+@services.types(char_freq_dollar = float, word_freq_remove = float, word_freq_hp = float)
+@services.returns(int) # 0 or 1
+def predictSpam(char_freq_dollar, word_freq_remove, word_freq_hp):
+    inputArray = [char_freq_dollar, word_freq_remove, word_freq_hp]
+    return clf.predict(inputArray)
 
-    # Get some info about the resulting model.
-    predictSpam.service.url
-    predictSpam.service.api_key
+# Get some info about the resulting model.
+predictSpam.service.url
+predictSpam.service.api_key
 
-    # Call the model
-    predictSpam.service(1, 1, 1)
-
+# Call the model
+predictSpam.service(1, 1, 1)
+```
 
 > [!NOTE]
 > Эта опция доступна только для Python 2.7. Он еще не поддерживается на Python 3.5. Для запуска используйте **/anaconda/bin/python2.7**.
@@ -343,14 +318,14 @@ XGBoost также может звонить с Python или командной
 > [!NOTE]
 > Чтобы использовать менеджер пакетов `pip` Python (через команду) из ноутбука Jupyter в текущем ядре, используйте эту команду в ячейке кода:
 >
->   ```python
+>   ```Python
 >    import sys
 >    ! {sys.executable} -m pip install numpy -y
 >   ```
 > 
 > Чтобы использовать установщик Conda (через `conda` команду) из ноутбука Jupyter в текущем ядре, используйте эту команду в ячейке кода:
 >
->   ```python
+>   ```Python
 >    import sys
 >    ! {sys.prefix}/bin/conda install --yes --prefix {sys.prefix} numpy
 >   ```
@@ -372,9 +347,11 @@ XGBoost также может звонить с Python или командной
 
 Установите и начните Rattle, запустив следующие команды:
 
-    if(!require("rattle")) install.packages("rattle")
-    require(rattle)
-    rattle()
+```R
+if(!require("rattle")) install.packages("rattle")
+require(rattle)
+rattle()
+```
 
 > [!NOTE]
 > Вам не нужно устанавливать Rattle на DSVM. Тем не менее, вам может быть предложено установить дополнительные пакеты, когда Rattle открывается.
@@ -385,7 +362,7 @@ XGBoost также может звонить с Python или командной
 
 1. Для загрузки файла выберите вкладку **Data.**
 1. Выберите селектор рядом с **Filename,** а затем выберите **spambaseHeaders.data.**
-1. Чтобы загрузить файл, выберите **Выполнить**. Вы должны увидеть резюме каждого столбца, включая его идентифицированный тип данных; будь то вход, цель или другой тип переменной; и количество уникальных ценностей.
+1. Чтобы загрузить файл, Щелкните **Выполнить**. Вы должны увидеть резюме каждого столбца, включая его идентифицированный тип данных; будь то вход, цель или другой тип переменной; и количество уникальных ценностей.
 1. Rattle правильно распознал тип данных столбца **spam** как целевой объект. Выберите столбец **спама,** а затем установите **тип целевых данных** на **Categoric.**
 
 Чтобы изучить данные:
@@ -398,12 +375,12 @@ XGBoost также может звонить с Python или командной
 
 1. Установите флажок **Distributions**(Дистрибутивы).
 1. Для **word_freq_remove** и **word_freq_you**, выберите **Гистограмма**.
-1. Нажмите кнопку **Выполнить**. Вы должны увидеть оба участка плотности в одном окне графика, где ясно, что слово _вы_ появляетсяе гораздо чаще в письмах, чем _удалить_.
+1. Выберите **Выполнить**. Вы должны увидеть оба участка плотности в одном окне графика, где ясно, что слово _вы_ появляетсяе гораздо чаще в письмах, чем _удалить_.
 
 Интересен и сюжеты **Корреляции.** Для создания сюжета:
 
 1. Для **типа**, выберите **Корреляция**.
-1. Нажмите кнопку **Выполнить**.
+1. Выберите **Выполнить**.
 1. Rattle рекомендует использовать не более 40 переменных. Нажмите кнопку **Yes** (Да), чтобы просмотреть график.
 
 Есть некоторые интересные корреляции, которые приходят: _технология_ сильно коррелирует с _HP_ и _лабораторий,_ например. Это также сильно коррелирует с _650,_ потому что код области доноров набора данных составляет 650.
@@ -425,7 +402,7 @@ Rattle также может запустить кластерный анали�
 * word_freq_business;
 * spam
 
-Вернуться к вкладке **кластера.** Выберите **KMeans,** а затем установите **количество кластеров** до **4.** Нажмите кнопку **Выполнить**. Результаты появятся в окне вывода. Один кластер имеет высокую частоту _Джордж_ и _л.с.,_ и, вероятно, законной деловой электронной почты.
+Вернуться к вкладке **кластера.** Выберите **KMeans,** а затем установите **количество кластеров** до **4.** Выберите **Выполнить**. Результаты появятся в окне вывода. Один кластер имеет высокую частоту _Джордж_ и _л.с.,_ и, вероятно, законной деловой электронной почты.
 
 Для создания базовой модели машинного обучения дерева решений:
 
@@ -437,7 +414,7 @@ Rattle также может запустить кластерный анали�
 Полезной особенностью Rattle является его способность запустить несколько методов машинного обучения и быстро оценить их. Вот шаги:
 
 1. Для **типа**, выберите **все**.
-1. Нажмите кнопку **Выполнить**.
+1. Выберите **Выполнить**.
 1. Когда Rattle завершает работу, вы можете выбрать любое значение **типа,** например **SVM,** и просмотреть результаты.
 1. Вы также можете сравнить производительность моделей на наборе проверки с помощью вкладки **Оценка.** Например, в выборе **Матрицы ошибок** отображается матрица путаницы, общая ошибка и усреднение ошибки класса для каждой модели в наборе проверки. Вы также можете построить кривые ROC, провести анализ чувствительности и сделать другие типы оценок моделей.
 
@@ -452,48 +429,64 @@ Rattle также может запустить кластерный анали�
 
 Прежде чем загрузить данные необходимо разрешить проверку подлинности пароля от локального хоста. В окне командной строки выполните следующую команду.
 
-    sudo gedit /var/lib/pgsql/data/pg_hba.conf
+```Bash
+sudo gedit /var/lib/pgsql/data/pg_hba.conf
+```
 
 В нижней части файла конфигурации расположены несколько строк, описывающие разрешенные подключения.
 
-    # "local" is only for Unix domain socket connections:
-    local   all             all                                     trust
-    # IPv4 local connections:
-    host    all             all             127.0.0.1/32            ident
-    # IPv6 local connections:
-    host    all             all             ::1/128                 ident
+```
+# "local" is only for Unix domain socket connections:
+local   all             all                                     trust
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            ident
+# IPv6 local connections:
+host    all             all             ::1/128                 ident
+```
 
 Измените линию **локальных подключений IPv4,** чтобы использовать **md5** вместо **ident,** чтобы мы могли войти в систему с помощью имени пользователя и пароля:
 
-    # IPv4 local connections:
-    host    all             all             127.0.0.1/32            md5
+```
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+```
 
 Затем перезапустите сервис PostgreS'L:
 
-    sudo systemctl restart postgresql
+```Bash
+sudo systemctl restart postgresql
+```
 
 Чтобы запустить *psql* (интерактивный терминал для PostgreS'L) в качестве встроенного пользователя postgres, запустите эту команду:
 
-    sudo -u postgres psql
+```Bash
+sudo -u postgres psql
+```
 
 Создайте новую учетную запись пользователя, используя имя пользователя учетной записи Linux, которую вы использовали для входа в систему. Создайте пароль:
 
-    CREATE USER <username> WITH CREATEDB;
-    CREATE DATABASE <username>;
-    ALTER USER <username> password '<password>';
-    \quit
+```Bash
+CREATE USER <username> WITH CREATEDB;
+CREATE DATABASE <username>;
+ALTER USER <username> password '<password>';
+\quit
+```
 
 Войти в psql:
 
-    psql
+```Bash
+psql
+```
 
 Импортируйте данные в новую базу данных:
 
-    CREATE DATABASE spam;
-    \c spam
-    CREATE TABLE data (word_freq_make real, word_freq_address real, word_freq_all real, word_freq_3d real,word_freq_our real, word_freq_over real, word_freq_remove real, word_freq_internet real,word_freq_order real, word_freq_mail real, word_freq_receive real, word_freq_will real,word_freq_people real, word_freq_report real, word_freq_addresses real, word_freq_free real,word_freq_business real, word_freq_email real, word_freq_you real, word_freq_credit real,word_freq_your real, word_freq_font real, word_freq_000 real, word_freq_money real,word_freq_hp real, word_freq_hpl real, word_freq_george real, word_freq_650 real, word_freq_lab real,word_freq_labs real, word_freq_telnet real, word_freq_857 real, word_freq_data real,word_freq_415 real, word_freq_85 real, word_freq_technology real, word_freq_1999 real,word_freq_parts real, word_freq_pm real, word_freq_direct real, word_freq_cs real, word_freq_meeting real,word_freq_original real, word_freq_project real, word_freq_re real, word_freq_edu real,word_freq_table real, word_freq_conference real, char_freq_semicolon real, char_freq_leftParen real,char_freq_leftBracket real, char_freq_exclamation real, char_freq_dollar real, char_freq_pound real, capital_run_length_average real, capital_run_length_longest real, capital_run_length_total real, spam integer);
-    \copy data FROM /home/<username>/spambase.data DELIMITER ',' CSV;
-    \quit
+```SQL
+CREATE DATABASE spam;
+\c spam
+CREATE TABLE data (word_freq_make real, word_freq_address real, word_freq_all real, word_freq_3d real,word_freq_our real, word_freq_over real, word_freq_remove real, word_freq_internet real,word_freq_order real, word_freq_mail real, word_freq_receive real, word_freq_will real,word_freq_people real, word_freq_report real, word_freq_addresses real, word_freq_free real,word_freq_business real, word_freq_email real, word_freq_you real, word_freq_credit real,word_freq_your real, word_freq_font real, word_freq_000 real, word_freq_money real,word_freq_hp real, word_freq_hpl real, word_freq_george real, word_freq_650 real, word_freq_lab real,word_freq_labs real, word_freq_telnet real, word_freq_857 real, word_freq_data real,word_freq_415 real, word_freq_85 real, word_freq_technology real, word_freq_1999 real,word_freq_parts real, word_freq_pm real, word_freq_direct real, word_freq_cs real, word_freq_meeting real,word_freq_original real, word_freq_project real, word_freq_re real, word_freq_edu real,word_freq_table real, word_freq_conference real, char_freq_semicolon real, char_freq_leftParen real,char_freq_leftBracket real, char_freq_exclamation real, char_freq_dollar real, char_freq_pound real, capital_run_length_average real, capital_run_length_longest real, capital_run_length_total real, spam integer);
+\copy data FROM /home/<username>/spambase.data DELIMITER ',' CSV;
+\quit
+```
 
 Теперь давайте рассмотрим данные и запустим некоторые запросы, используя S'куиррел, графический инструмент, который можно использовать для взаимодействия с базами данных через драйвер JDBC.
 
@@ -515,7 +508,7 @@ Rattle также может запустить кластерный анали�
 1. Введите имя пользователя и пароль.
 1. Щелкните **ОК**.
 1. Чтобы открыть окно **Подключение**, дважды щелкните псевдоним **База данных нежелательной почты**.
-1. Выберите **Подключиться**.
+1. Выберите **Подключите**.
 
 Чтобы выполнить запросы:
 
@@ -525,11 +518,15 @@ Rattle также может запустить кластерный анали�
 
 Есть еще много запросов, которые можно запустить для изучения этих данных. Например, как отличается частота упоминания слова *make* в нежелательной и обычной почте?
 
-    SELECT avg(word_freq_make), spam from data group by spam;
+```SQL
+SELECT avg(word_freq_make), spam from data group by spam;
+```
 
 Или, каковы характеристики электронной почты, которые часто содержат *3d?*
 
-    SELECT * from data order by word_freq_3d desc;
+```SQL
+SELECT * from data order by word_freq_3d desc;
+```
 
 Большинство писем, которые имеют *3d* высокий возникновение 3d-видимому, спам. Эта информация может быть полезна для создания прогностической модели для классификации электронных писем.
 
@@ -541,28 +538,36 @@ Rattle также может запустить кластерный анали�
 
 Чтобы подключиться к хранилищу данных и создать таблицу, выполните следующую команду из командной строки:
 
-    sqlcmd -S <server-name>.database.windows.net -d <database-name> -U <username> -P <password> -I
+```Bash
+sqlcmd -S <server-name>.database.windows.net -d <database-name> -U <username> -P <password> -I
+```
 
 В запросе sqlcmd запустите эту команду:
 
-    CREATE TABLE spam (word_freq_make real, word_freq_address real, word_freq_all real, word_freq_3d real,word_freq_our real, word_freq_over real, word_freq_remove real, word_freq_internet real,word_freq_order real, word_freq_mail real, word_freq_receive real, word_freq_will real,word_freq_people real, word_freq_report real, word_freq_addresses real, word_freq_free real,word_freq_business real, word_freq_email real, word_freq_you real, word_freq_credit real,word_freq_your real, word_freq_font real, word_freq_000 real, word_freq_money real,word_freq_hp real, word_freq_hpl real, word_freq_george real, word_freq_650 real, word_freq_lab real,word_freq_labs real, word_freq_telnet real, word_freq_857 real, word_freq_data real,word_freq_415 real, word_freq_85 real, word_freq_technology real, word_freq_1999 real,word_freq_parts real, word_freq_pm real, word_freq_direct real, word_freq_cs real, word_freq_meeting real,word_freq_original real, word_freq_project real, word_freq_re real, word_freq_edu real,word_freq_table real, word_freq_conference real, char_freq_semicolon real, char_freq_leftParen real,char_freq_leftBracket real, char_freq_exclamation real, char_freq_dollar real, char_freq_pound real, capital_run_length_average real, capital_run_length_longest real, capital_run_length_total real, spam integer) WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
-    GO
+```SQL
+CREATE TABLE spam (word_freq_make real, word_freq_address real, word_freq_all real, word_freq_3d real,word_freq_our real, word_freq_over real, word_freq_remove real, word_freq_internet real,word_freq_order real, word_freq_mail real, word_freq_receive real, word_freq_will real,word_freq_people real, word_freq_report real, word_freq_addresses real, word_freq_free real,word_freq_business real, word_freq_email real, word_freq_you real, word_freq_credit real,word_freq_your real, word_freq_font real, word_freq_000 real, word_freq_money real,word_freq_hp real, word_freq_hpl real, word_freq_george real, word_freq_650 real, word_freq_lab real,word_freq_labs real, word_freq_telnet real, word_freq_857 real, word_freq_data real,word_freq_415 real, word_freq_85 real, word_freq_technology real, word_freq_1999 real,word_freq_parts real, word_freq_pm real, word_freq_direct real, word_freq_cs real, word_freq_meeting real,word_freq_original real, word_freq_project real, word_freq_re real, word_freq_edu real,word_freq_table real, word_freq_conference real, char_freq_semicolon real, char_freq_leftParen real,char_freq_leftBracket real, char_freq_exclamation real, char_freq_dollar real, char_freq_pound real, capital_run_length_average real, capital_run_length_longest real, capital_run_length_total real, spam integer) WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
+GO
+```
 
 Копировать данные с помощью bcp:
 
-    bcp spam in spambaseHeaders.data -q -c -t  ',' -S <server-name>.database.windows.net -d <database-name> -U <username> -P <password> -F 1 -r "\r\n"
+```bash
+bcp spam in spambaseHeaders.data -q -c -t  ',' -S <server-name>.database.windows.net -d <database-name> -U <username> -P <password> -F 1 -r "\r\n"
+```
 
 > [!NOTE]
 > Загруженный файл содержит окончание строки в стиле Windows. Инструмент bcp ожидает окончания линии в стиле Unix. Используйте флаг -r, чтобы сказать bcp.
 
 Затем, запрос с помощью sqlcmd:
 
-    select top 10 spam, char_freq_dollar from spam;
-    GO
+```sql
+select top 10 spam, char_freq_dollar from spam;
+GO
+```
 
 Вы также можете задать запрос с помощью S'Куиррел СЗЛ. Выполняй те же шаги, подобные PostgreS'L, с помощью драйвера S'L Server JDBC. Драйвер JDBC находится в папке /usr/share/java/jdbcdrivers/sqljdbc42.jar.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для обзора статей, которые проходят через задачи, которые включают в себя процесс науки о данных в Azure, [см.](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/overview)
 

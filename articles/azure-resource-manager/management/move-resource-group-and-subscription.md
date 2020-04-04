@@ -3,12 +3,12 @@ title: Перемещение ресурсов в новую группу под
 description: Перемещайте ресурсы в новую группу ресурсов или новую подписку с помощью Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 03/02/2020
-ms.openlocfilehash: 40432c55a7f7e289d2e5cbc8afe94847074e4ca8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ffb5f8be81d3628084d127db404ab994d4d5b938
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79248857"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631504"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -107,7 +107,7 @@ ms.locfileid: "79248857"
 
 * Шаг 1: Если зависимые ресурсы распределены между различными группами ресурсов, сначала переместите их в одну группу ресурсов.
 * Шаг 2: Перемещение ресурсов и зависимых ресурсов вместе из подписки источника в целевую подписку.
-* Шаг 3: Дополнительно перераспределите зависимые ресурсы между различными группами ресурсов в рамках целевой подписки. 
+* Шаг 3: Дополнительно перераспределите зависимые ресурсы между различными группами ресурсов в рамках целевой подписки.
 
 ## <a name="validate-move"></a>Проверка перемещения
 
@@ -231,7 +231,7 @@ POST https://management.azure.com/subscriptions/{source-subscription-id}/resourc
 
 Если вы обнаружите ошибку, см. [Troubleshoot, перемещая ресурсы Azure в новую группу ресурсов или подписку.](troubleshoot-move.md)
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 **Вопрос: Операция перемещения ресурса, которая обычно занимает несколько минут, работает уже почти час. Что-то не так?**
 
@@ -260,8 +260,9 @@ POST https://management.azure.com/subscriptions/{source-subscription-id}/resourc
 Например, для перемещения виртуальной машины может потребоваться перемещение семи типов ресурсов с тремя различными поставщиками ресурсов. Эти поставщики ресурсов и типы:
 
 * Microsoft.Compute;
-   * virtualMachines
-   * disks
+
+  * virtualMachines
+  * disks
 * Microsoft.Network.
   * networkInterfaces
   * publicIPAddresses

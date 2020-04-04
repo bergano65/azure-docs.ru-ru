@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 03/04/2020
+ms.date: 04/02/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol, rosssmi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9859c884f6a1e22a1ac2bd21106ef51ead23fa41
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6b282962cc713487b8ee5113b02b8533a1538fff
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79080072"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631893"
 ---
 # <a name="how-to-require-app-protection-policy-and-an-approved-client-app-for-cloud-app-access-with-conditional-access"></a>Как: Требуется политика защиты приложений и утвержденное клиентское приложение для доступа к облачным приложениям с условным доступом
 
@@ -59,7 +59,7 @@ ms.locfileid: "79080072"
 1. Под **контролем** > доступа**Грант**, выберите следующие варианты:
    - **Требование утвержденного клиентского приложения**
    - **Требование политики защиты приложений (предварительная версия)**
-   - **Требуется один из выбранных элементов управления**
+   - **Требовать все выбранные элементы управления**
 1. Подтвердите настройки и **установите политику Включить** **в On.**
 1. Выберите **Создать** для создания и включения политики.
 
@@ -138,7 +138,7 @@ ms.locfileid: "79080072"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Что такое условный доступ?](overview.md)
+[Что собой представляет условный доступ](overview.md)
 
 [Компоненты условного доступа](concept-conditional-access-policies.md)
 

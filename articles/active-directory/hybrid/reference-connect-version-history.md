@@ -8,16 +8,16 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 04/01/2020
+ms.date: 04/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01956c2fee1c15bc86e8d80aa05c70db647bf593
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 60dca30496aa17ad7add00ca4eca914cb58fddd7
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80616878"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655976"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -57,7 +57,7 @@ ms.locfileid: "80616878"
 ### <a name="functional-changes-adsyncautoupgrade"></a>Функциональные изменения ADSyncAutoUpgrade 
 
 - Добавлена поддержка функции mS-DS-ConsistencyGuid для групповых объектов. Это позволяет перемещать группы между лесами или переподключать группы в AD в Azure AD, где изменился объект группы AD, например, когда сервер AD перестраивается после катастрофы. Для получения дополнительной информации [см. Перемещение групп между лесами](how-to-connect-migrate-groups.md).
-- Атрибут mS-DS-ConsistencyGuid автоматически устанавливается на группы al synced, и вам не нужно ничего делать для включения этой функции. 
+- Атрибут mS-DS-ConsistencyGuid автоматически устанавливается на все синхронизированные группы, и вам не нужно ничего делать для включения этой функции. 
 - Удален Get-ADSyncRunProfile, потому что он больше не используется. 
 - Изменено предупреждение, просматриваемый при попытке использовать учетную запись Корпоративного Админ или Domain Admin для учетной записи разъема AD DS, чтобы обеспечить больший контекст. 
 - Добавлен новый cmdlet для удаления объектов из пространства разъема старый инструмент CSDelete.exe удаляется, и он заменяется новым cmdlet Remove-ADSyncCSObject. Смдlet Remove-ADSyncCSObject использует CsObject в качестве ввода. Этот объект можно извлечь с помощью cmdlet Get-ADSyncCSObject.
@@ -1383,5 +1383,5 @@ Desktop SSO
 
 **Первоначальный выпуск Azure AD Sync.**
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

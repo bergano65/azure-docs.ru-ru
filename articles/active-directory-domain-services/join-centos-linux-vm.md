@@ -8,15 +8,15 @@ ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: iainfou
-ms.openlocfilehash: c634b1288727ae045d1fb8b6f6cdff4a80e757ce
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d08552dcae51c897f2419d94e5e61e857247f09a
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78298911"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655236"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>Присоединиться к виртуальной машине CentOS Linux к домену Azure AD Domain Services, управляемому
 
@@ -29,7 +29,7 @@ ms.locfileid: "78298911"
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
 * Активная подписка Azure.
-    * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
@@ -43,8 +43,8 @@ ms.locfileid: "78298911"
 Если вам нужно создать CentOS Linux VM, или хотите создать тест VM для использования в этой статье, вы можете использовать один из следующих методов:
 
 * [Портал Azure](../virtual-machines/linux/quick-create-portal.md)
-* [Лазурный CLI](../virtual-machines/linux/quick-create-cli.md)
-* [Лазурная силаШелл](../virtual-machines/linux/quick-create-powershell.md)
+* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 При создании VM обратите внимание на настройки виртуальной сети, чтобы убедиться, что VM может общаться с доменом Azure AD DS:
 

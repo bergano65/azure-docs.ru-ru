@@ -1,126 +1,139 @@
 ---
 title: О речи SDK - Речевая служба
 titleSuffix: Azure Cognitive Services
-description: Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям встроенный доступ к функциям службы "Речь", что облегчает разработку программного обеспечения. Эта статья содержит дополнительные сведения о пакете SDK для Windows, Linux и Android.
+description: Комплект разработки программного обеспечения Speech (SDK) предоставляет многие возможности службы речевой связи, что упрощает разработку приложений с поддержкой речи.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 04/03/2020
 ms.author: dapine
-ms.openlocfilehash: 984d2dfe07faa22756b4be167aa86a69806b1a84
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a2ff4a94c1b2941f645cd7032ef476d33dffdb00
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78331099"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656539"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
-Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям доступ к функциям службы "Речь", что облегчает разработку программного обеспечения с поддержкой речи. В настоящее время, SDKs обеспечить доступ к **речи к тексту**, **текст к речи**, перевод **речи**, **признание намерений**, и **Бот Framework в Прямой линии речи канала**.
-
-Вы можете легко захватить аудио с микрофона, читать из потока, или получить доступ к аудио файлы из хранилища с речью SDK. Speech SDK поддерживает WAV/PCM 16-битный, 16 кГц/8 кГц, одноканальный звук для распознавания речи. Дополнительные аудиоформаты поддерживаются с помощью [точки от речи к тексту REST](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) или [службы пакетной транскрипции.](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats)
-
-Общий обзор возможностей и поддерживаемых платформ можно найти на [странице ввода](https://aka.ms/csspeech)документации.
+Комплект разработки программного обеспечения Speech (SDK) предоставляет многие возможности службы речевой связи, чтобы дать вам возможность разрабатывать приложения с поддержкой речи. Speech SDK доступен на многих языках программирования и на всех платформах.
 
 [!INCLUDE [Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 
-[!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
+## <a name="scenario-capabilities"></a>Возможности сценария
 
-## <a name="get-the-sdk"></a>Получение пакета SDK
+Speech SDK предоставляет множество функций службы Speech, но не все из них. Возможности Речи SDK часто связаны со сценариями. Speech SDK идеально подходит как для сценариев в реальном времени, так и в реальном времени, используя локальные устройства, файлы, хранилище azure blob и даже потоки ввода и вывода. Если сценарий не достижим с помощью Speech SDK, ищите альтернативу REST API.
+
+### <a name="speech-to-text"></a>Преобразование речи в текст
+
+[Речевой текст](speech-to-text.md) (также известный как *распознавание речи)* транскрибирует аудиопотоки в текст, который ваши приложения, инструменты или устройства могут потреблять или отображать. Используйте преобразование речи в текст с помощью портала [Распознавание речи (LUIS)](../luis/index.yml), чтобы получать намерения пользователя из расшифрованной речи и выполнять голосовые команды. Используйте [речевой перевод](speech-translation.md) для перевода речевого ввода на другой язык с помощью одного вызова. Для получения дополнительной [информации, см.](speech-to-text-basics.md)
+
+### <a name="text-to-speech"></a>Преобразование текста в речь
+
+[Текст к речи](text-to-speech.md) (также известный как *синтез речи)* преобразует текст в человекоподобную синтезированную речь. Входной текст либо строки буквальные или с использованием [языка синтеза речи (SSML)](speech-synthesis-markup.md). Для получения дополнительной информации о стандартных или нейронных голосов, см [Текст к речи языка и голосовой поддержки](language-support.md#text-to-speech).
+
+### <a name="voice-assistants"></a>Голосовые помощники
+
+Голосовые помощники, использующие Speech SDK, позволяют разработчикам создавать естественные, похожие на человека разговорные интерфейсы для своих приложений и опыта. Услуга голосового помощника обеспечивает быстрое и надежное взаимодействие между устройством и помощником. Для выполнения задачи в реализации используется канал прямой линии Bot Framework или интегрированная служба пользовательских команд (Preview). Кроме того, голосовые помощники могут быть созданы с помощью [пользовательского голосового портала](https://aka.ms/customvoice) для создания уникального голосового интерфейса.
+
+#### <a name="keyword-spotting"></a>Ключевое слово пятнистость
+
+Концепция [пятнистости ключевых слов](speech-devices-sdk-create-kws.md) поддерживается в речи SDK. Ключевое слово пятнистость является актом выявления ключевого слова в речи, а затем действия, услышав ключевое слово. Например, "Эй Кортана" активирует ассистент Кортана.
+
+### <a name="meeting-scenarios"></a>Сценарии встреч
+
+Speech SDK идеально подходит для транскрибирования сценариев собраний, будь то с одного устройства или с нескольких устройств.
+
+#### <a name="conversation-transcription"></a>Транскрибирование бесед
+
+[Разговор Транскрипция](conversation-transcription.md) позволяет в режиме реального времени (и асинхронные) распознавания речи, идентификации оратора, и предложение присвоения каждого оратора (также известный как *диаризация*). Идеально подходит для записи личных встреч с возможностью различать ораторов.
+
+#### <a name="multi-device-conversation"></a>Ведение беседы с использованием нескольких устройств
+
+С [Multi-устройств Разговор](multi-device-conversation.md), подключить несколько устройств или клиентов в разговоре для отправки речевых или текстовых сообщений, с легкой поддержкой для транскрипции и перевода.
+
+### <a name="custom--agent-scenarios"></a>Сценарии пользовательских / агентов
+
+Речевой SDK может быть использован для расшифровки сценариев колл-центра, где генерируются телефонные данные.
+
+#### <a name="call-center-transcription"></a>Транскрибирование вызовов в центр обработки
+
+[Транскрипция Call Center](call-center-transcription.md) является распространенным сценарием для речевого текста для расшифровки больших объемов телефонных данных, которые могут поступать из различных систем, таких как интерактивный голосовой ответ (IVR). Последние модели распознавания речи от службы speech преуспевают в расшифровке этих телефонных данных, даже в тех случаях, когда данные трудно понять человеку.
+
+### <a name="codec-compressed-audio-input"></a>Кодек сжатый аудио ввод
+
+Некоторые из языков программирования Speech SDK поддерживают кодек сжатых потоков ввода звука. Для получения дополнительной <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-codec-compressed-audio-input-streams" target="_blank">информации <span class="docon docon-navigate-external x-hidden-focus"> </span>см. </a>
+
+## <a name="rest-api"></a>REST API
+
+В то время как Speech SDK охватывает многие возможности службы речевой речи, для некоторых сценариев вы можете использовать REST API. Например, управление конечными точками подвергается воздействию только через REST API.
+
+> [!TIP]
+> Полагаясь на REST API, используйте редактор Swagger для автоматического создания клиентских библиотек. Например, для создания библиотеки клиентов транскрипции пакета.
+> 1. Скопируйте пример URL ниже:
+>     ```http
+>     https://westus.cris.ai/docs/v2.0/swagger
+>     ```
+> 1. Перейдите к <a href="https://editor.swagger.io/" target="_blank">редактору <span class="docon docon-navigate-external x-hidden-focus"></span> Swagger</a>
+> 1. Выберите > **URL-адрес импорта** **файлов**и вставьте URL
+> 1. Выберите **«Создать клиента»** и выберите нужный язык программирования
+
+### <a name="batch-transcription"></a>Пакетное транскрибирование
+
+[Расшифровка пакетов](batch-transcription.md) обеспечивает асинхронную расшифровку больших объемов данных. Расшифровка пакетов возможна только на aPI REST.
+
+## <a name="customization"></a>Настройка
+
+Служба речевых сообщений обеспечивает отличную функциональность с помощью моделей по умолчанию между речевыми, текстовыми и речевыми переводами и речевыми переводами. Иногда вы можете увеличить базовую производительность, чтобы работать еще лучше с уникальным случаем использования. Служба речевого сообщения имеет множество инструментов настройки без кода, которые облегчают ее и позволяют создавать конкурентные преимущества с помощью пользовательских моделей на основе собственных данных. Эти модели будут доступны только для вас и вашей организации.
+
+### <a name="custom-speech-to-text"></a>Пользовательские речи к тексту
+
+При использовании речи к тексту для распознавания и транскрипции в уникальной среде, вы можете создавать и обучать пользовательские акустические, язык и произношение моделей для решения окружающего шума или отрасли конкретных лексики. Создание и управление не-код пользовательских моделей речи доступна через [пользовательский портал речи](https://aka.ms/customspeech). После публикации модели Custom Speech она может быть использована Речевым SDK.
+
+### <a name="custom-text-to-speech"></a>Пользовательский текст к речи
+
+Пользовательский текст к речи, также известный как пользовательский голос представляет собой набор онлайн-инструментов, которые позволяют создать узнаваемый, единственный в своем роде голос для вашего бренда. Создание и управление безкодовыми моделями Custom Voice доступны через [пользовательский голосовой портал.](https://aka.ms/customvoice) После публикации модели Custom Voice она может быть использована Речевым SDK.
+
+## <a name="get-the-speech-sdk"></a>Получение пакета SDK для службы "Речь"
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
-> [!WARNING]
-> Speech SDK поддерживает Windows 10 или более поздние версии. Более ранние версии Windows **не поддерживаются.**
-
-Для Windows поддерживаются следующие языки:
-
-* C# (UWP и .NET), C++: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Пакет содержит 32-разрядные и 64-разрядные клиентские библиотеки и управляемые библиотеки (.NET). SDK может быть установлен в Visual Studio с помощью NuGet, [Microsoft.CognitiveServices.Speech](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech).
-
-* Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только 64-разрядные версии Windows. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.8.0` в качестве зависимости.
+[!INCLUDE [Get the Speech SDK](includes/get-speech-sdk-windows.md)]
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
-> [!NOTE]
-> В настоящее время мы поддерживаем только Ubuntu 16.04, Ubuntu 18.04, Debian 9, Red Hat Enterprise Linux (RHEL) 8 и CentOS 8 на следующих целевых архитектурах:
-> - x86 (Debian/Ubuntu), x64, ARM32 (Debian/Ubuntu) и ARM64 (Debian/Ubuntu) для разработки КЗ
-> - x64, ARM32 (Debian/Ubuntu) и ARM64 (Debian/Ubuntu) для Java
-> - x64 для ядра и python .NET
+[!INCLUDE [Get the Speech SDK](includes/get-speech-sdk-linux.md)]
 
-Убедитесь, что у вас есть необходимые библиотеки, установленные, запустив следующие команды оболочки:
+# <a name="ios"></a>[iOS](#tab/ios)
 
-В Ubuntu:
+[!INCLUDE [Get the Speech SDK](includes/get-speech-sdk-ios.md)]
 
-```sh
-sudo apt-get update
-sudo apt-get install libssl1.0.0 libasound2
-```
+# <a name="macos"></a>[macOS](#tab/macos)
 
-Для Debian 9:
-
-```sh
-sudo apt-get update
-sudo apt-get install libssl1.0.2 libasound2
-```
-
-На RHEL/CentOS 8:
-
-```sh
-sudo yum update
-sudo yum install alsa-lib openssl
-```
-
-> [!NOTE]
-> На RHEL/CentOS 8 следуйте инструкциям о том, [как настроить OpenSSL для Linux.](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md)
-
-* C#: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Чтобы ссылаться на пакет SDK, добавьте следующую ссылку на пакет в проект:
-
-  ```xml
-  <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.8.0" />
-  ```
-
-* Java: можно ссылаться и использовать последнюю версию пакета SDK Maven для распознавания речи. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0` в качестве зависимости.
-
-* C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK:
-
-  |путь|Описание|
-  |-|-|
-  |`license.md`|Лицензия|
-  |`ThirdPartyNotices.md`|Уведомления сторонних производителей|
-  |`include`|Файлы заголовков для C и C++|
-  |`lib/x64`|Собственная библиотека x64 для связывания с приложением|
-  |`lib/x86`|Собственная библиотека x86 для связывания с приложением|
-
-  Чтобы создать приложение, скопируйте или переместите необходимые двоичные файлы (и библиотеки) в среду разработки. Включите их как обязательные в процесс сборки.
+[!INCLUDE [Get the Speech SDK](includes/get-speech-sdk-macos.md)]
 
 # <a name="android"></a>[Android](#tab/android)
 
-Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0`.
+[!INCLUDE [Get the Speech SDK](includes/get-speech-sdk-android.md)]
 
-Чтобы использовать этот пакет из проекта Android Studio, внесите следующие изменения:
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-* В файл build.gradle уровня проекта добавьте следующий текст в раздел `repository`:
+[!INCLUDE [Get the Node.js Speech SDK](includes/get-speech-sdk-nodejs.md)]
 
-  ```gradle
-  maven { url 'https://csspeechstorage.blob.core.windows.net/maven/' }
-  ```
+# <a name="browser"></a>[Браузер](#tab/browser)
 
-* В файл build.gradle уровня модуля добавьте следующий текст в раздел `dependencies`:
-
-  ```gradle
-  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.7.0'
-  ```
-
-Пакет SDK для Java также входит в [пакет SDK для устройств распознавания речи](speech-devices-sdk.md).
+[!INCLUDE [Get the Browser Speech SDK](includes/get-speech-sdk-browser.md)]
 
 ---
 
-[!INCLUDE [Get the samples](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
+[!INCLUDE [License notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
+
+[!INCLUDE [Sample source code](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
-* [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)
+* [Распознавание речи в C#](quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

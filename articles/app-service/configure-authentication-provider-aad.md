@@ -5,12 +5,12 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 09/03/2019
 ms.custom: seodec18, fasttrack-edit
-ms.openlocfilehash: 4b42f0966288e4ee72b689ddce6313a41e91f13e
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: dbbe58df4f1cfe93555b494e525fad18f5b02664
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80438038"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632570"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Настройте приложение App Service или Azure Functions для использования входа в AD Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "80438038"
 1. После создания регистрации приложения скопируйте **идентификатор приложения (клиента)** и **идентификатор каталога (арендатора)** на более поздний срок.
 1. Выберите **Проверка подлинности**. В рамках **неявного гранта,** позволяют **токены ID,** чтобы позволить OpenID Подключить пользователей войти в систему App Service.
 1. (Необязательно) Выберите **Брендинг**. В **URL-адресе главной страницы**введите URL-адрес приложения App Service и выберите **Сохранить.**
-1. Выберите **выставочку набора API.** > **Set** Вставьте в URL приложения Службы app и выберите **Сохранить**.
+1. Выберите **выставочку набора API.** > **Set** Для приложения с одним арендатором вставьте URL приложения App Service и выберите **Сохранить** и для мультитенантного приложения, вставьте в URL, который основан на одном из проверенных доменов арендатора, а затем выберите **Сохранить**.
 
    > [!NOTE]
    > Это значение является **URI-идентификатором приложения.** Если вашему веб-приложению требуется доступ к API в облаке, при настройке ресурса облачного сервиса App требуется **URI-URI приложения application.** Вы можете использовать это, например, если вы хотите, чтобы облачный сервис явно предоставил доступ к веб-приложению.
@@ -127,7 +127,7 @@ ms.locfileid: "80438038"
 
 Теперь вы настроили приложение для наиболее родных клиентов, которое может получить доступ к приложению Службы app от имени пользователя.
 
-## <a name="next-steps"></a><a name="related-content"> </a>Следующие шаги
+## <a name="next-steps"></a><a name="related-content"> </a>Дальнейшие действия
 
 [!INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
 

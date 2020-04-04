@@ -11,24 +11,26 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 4cec4801f2a15ebf858f50377c9718fdacac4e29
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 72a39804931c0834233e91190aacffa8d35912df
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80619006"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633475"
 ---
 # <a name="using-t-sql-loops-in-synapse-sql-pool"></a>Использование петли Т-СЗЛ в бассейне Synapse S'L
+
 В эту статью включены советы по разработке решений для пула СЗЛ с использованием циклов T-S'L и замены курсоров.
 
 ## <a name="purpose-of-while-loops"></a>Назначение циклов WHILE
 
-Бассейн Synapse S'L поддерживает цикл [WHILE](https://docs.microsoft.com/sql/t-sql/language-elements/while-transact-sql?view=sql-server-ver15) для многократного выполнения блоков оператора. Цикл WHILE продолжается, пока не будут выполнены указанные условия или пока код не прервет цикл с помощью ключевого слова BREAK. 
+Бассейн Synapse S'L поддерживает цикл [WHILE](/sql/t-sql/language-elements/while-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для многократного выполнения блоков оператора. Цикл WHILE продолжается, пока не будут выполнены указанные условия или пока код не прервет цикл с помощью ключевого слова BREAK.
 
 Циклы полезны для замены курсоров, определенных в коде SQL. К счастью, почти все курсоры, записанные в коде SQL, относятся к разряду перемотки и доступности только для чтения. Таким образом, ПЕТли WHILE являются отличной альтернативой для замены курсоров.
 
 ## <a name="replacing-cursors-in-synapse-sql-pool"></a>Замена курсоров в бассейне Synapse S'L
-Однако, прежде чем сначала нырять в голову, вы должны задать себе следующий вопрос: «Может ли этот курсор быть переписан для использования сет-операций?» 
+
+Однако, прежде чем сначала нырять в голову, вы должны задать себе следующий вопрос: «Может ли этот курсор быть переписан для использования сет-операций?»
 
 Во многих случаях ответ "да" и часто является наилучшим подходом. Операция, ориентированная на работу с набором данных, нередко выполняется быстрее, чем итеративный метод построчного перебора.
 
@@ -36,7 +38,7 @@ ms.locfileid: "80619006"
 
 Для начала создайте временную таблицу с уникальным номером строки, обозначающим отдельные операторы:
 
-```
+```sql
 CREATE TABLE #tbl
 WITH
 ( DISTRIBUTION = ROUND_ROBIN
@@ -51,7 +53,7 @@ FROM    sys.tables
 
 Затем инициализируйте переменные, необходимые для выполнения цикла:
 
-```
+```sql
 DECLARE @nbr_statements INT = (SELECT COUNT(*) FROM #tbl)
 ,       @i INT = 1
 ;
@@ -59,7 +61,7 @@ DECLARE @nbr_statements INT = (SELECT COUNT(*) FROM #tbl)
 
 Теперь запустите цикл последовательного выполнения операторов:
 
-```
+```sql
 WHILE   @i <= @nbr_statements
 BEGIN
     DECLARE @sql_code NVARCHAR(4000) = (SELECT sql_code FROM #tbl WHERE Sequence = @i);
@@ -70,10 +72,10 @@ END
 
 И, наконец, удалите временную таблицу, созданной на первом этапе:
 
-```
+```sql
 DROP TABLE #tbl;
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
+## <a name="next-steps"></a>Дальнейшие действия
 
+Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).

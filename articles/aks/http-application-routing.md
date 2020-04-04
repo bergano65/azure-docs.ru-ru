@@ -1,17 +1,17 @@
 ---
 title: Надстройка маршрутизации приложений HTTP в Службе Azure Kubernetes (AKS)
-description: Использование надстройки маршрутизации приложений HTTP в Службе Azure Kubernetes (AKS).
+description: Используйте надстройку http для доступа к приложениям, развернутым в службе Azure Kubernetes (AKS).
 services: container-service
 author: lachie83
 ms.topic: article
 ms.date: 08/06/2019
 ms.author: laevenso
-ms.openlocfilehash: 5794e46f10abec1ceef4c79a881f7f353e729634
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6ffc9daaf1b87fc9fb6ebbb0f2787f07282afe5e
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77595694"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632409"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -206,7 +206,7 @@ kubectl delete configmaps addon-http-application-routing-nginx-configuration --n
 
 Повторите предыдущий шаг `kubectl delete` для всех ресурсов *addon-http-application-routing*, которые остаются в кластере.
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Выполните команду [kubectl logs][kubectl-logs], чтобы просмотреть журналы приложений для внешнего приложения DNS. В журналах должно быть указано, что записи A и TXT DNS успешно созданы.
 

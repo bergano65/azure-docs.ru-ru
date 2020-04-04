@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 03/11/2020
+ms.date: 03/23/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 6077db0a09b09f7e4bfb859902da53b173845e55
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: b8073240bdda38757a5e4feee66c9f54746966c4
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80520767"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632045"
 ---
 ### <a name="portal"></a>Портал
 
@@ -21,7 +21,7 @@ ms.locfileid: "80520767"
 
 #### <a name="setting-up-your-azure-key-vault"></a>Настройка хранилища ключей Azure
 
-1. Вопием на [портале Azure](https://portal.azure.com/) и ищите Key Vault
+1. Войти на [портал Azure](https://portal.azure.com/).
 1. Поиск и выберите **Ключевые Убежища.**
 
     [![sse-key-vault-portal-search.png](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search.png)](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search-expanded.png#lightbox)
@@ -30,7 +30,7 @@ ms.locfileid: "80520767"
     > Хранилище ключей Azure, набор шифрования дисков, VM, диски и моментальные снимки должны находиться в одном регионе, а подписка на развертывание для успешного развертывания.
 
 1. Выберите **«Добавить»** для создания нового Убежища ключей.
-1. Создание новой группы ресурсов
+1. Создайте новую группу ресурсов.
 1. Введите имя хранилища ключей, выберите регион и выберите уровень ценообразования.
 1. Выберите **Обзор : Создайте,** проверьте свой выбор, а затем выберите **Создать**.
 
@@ -38,7 +38,7 @@ ms.locfileid: "80520767"
 
 1. Как только хранилище ключей завершит развертывание, выберите его.
 1. Выберите **ключи** под **настройками.**
-1. Выберите **generate/Import**
+1. Выберите **Generate/Импорт**.
 
     ![Скриншот панели настроек параметров ресурсов Key Vault. Отображает кнопку генерации/импорта внутри настроек.](media/virtual-machines-disk-encryption-portal/sse-key-vault-generate-settings.png)
 
@@ -49,15 +49,8 @@ ms.locfileid: "80520767"
 
 #### <a name="setting-up-your-disk-encryption-set"></a>Настройка набора шифрования диска
 
-Для создания и настройки наборов шифрования дисков необходимо использовать следующую ссылку: https://aka.ms/diskencryptionsets. Если вы находитесь в регионах правительства Microsoft Azure, вы должны использовать эту ссылку вместо: [https://aka.ms/diskencryptionsetsff](https://aka.ms/diskencryptionsetsff). Создание набора шифрования дисков пока не доступно на глобальном портале Azure.
-
-1. Откройте наборы шифрования дисков, подходящие для вашего региона:
-
-    Общественные регионы:[https://aka.ms/diskencryptionsets](https://aka.ms/diskencryptionsets)
-
-    Регионы правительства Лазурного государства:[https://aka.ms/diskencryptionsetsff](https://aka.ms/diskencryptionsetsff)
-    
-1. Выберите **«Добавить**.
+1. Поиск **наборов шифрования дисков** и выберите его.
+1. На **диске Наборы наборов шифрования** выберите **:Добавить**.
 
     ![Скриншот главного экрана портала шифрования диска. Выделение кнопки «Добавить»](media/virtual-machines-disk-encryption-portal/sse-create-disk-encryption-set.png)
 
@@ -82,12 +75,6 @@ ms.locfileid: "80520767"
 Теперь, когда вы создали и создали хранилище ключей и набор шифрования дисков, вы можете развернуть VM с помощью шифрования.
 Процесс развертывания VM аналогичен стандартному процессу развертывания, единственным отличием является то, что вам нужно развернуть VM в том же регионе, что и другие ресурсы, и вы решили использовать ключ с управлением клиента.
 
-1. Откройте наборы шифрования дисков, подходящие для вашего региона:
-
-    Общественные регионы:[https://aka.ms/diskencryptionsets](https://aka.ms/diskencryptionsets)
-
-    Регионы правительства Лазурного государства:[https://aka.ms/diskencryptionsetsff](https://aka.ms/diskencryptionsetsff)
-
 1. Поиск **виртуальных машин** и выберите **: Добавить** для создания VM.
 1. На вкладке **Basic** выберите ту же область, что и набор шифрования дисков и Хранилище ключей Azure.
 1. Заполните другие значения на вкладке **Basic,** как вам нравится.
@@ -102,16 +89,8 @@ ms.locfileid: "80520767"
 
 #### <a name="enable-on-an-existing-disk"></a>Включить на существующем диске
 
-Для управления и настройки шифрования диска на существующих дисках необходимо использовать следующую ссылку: https://aka.ms/diskencryptionsets. Включение ключей, управляемых клиентами на существующих дисках, пока не доступно на глобальном портале Azure.
-
 > [!CAUTION]
 > Включение шифрования диска на любых дисках, прикрепленных к VM, потребует, чтобы вы остановили VM.
-
-1. Откройте наборы шифрования дисков, подходящие для вашего региона:
-
-    Общественные регионы:[https://aka.ms/diskencryptionsets](https://aka.ms/diskencryptionsets)
-
-    Регионы правительства Лазурного государства:[https://aka.ms/diskencryptionsetsff](https://aka.ms/diskencryptionsetsff)
     
 1. Перейдите к VM, который находится в том же регионе, что и один из наборов шифрования дисков.
 1. Откройте VM и выберите **Stop**.

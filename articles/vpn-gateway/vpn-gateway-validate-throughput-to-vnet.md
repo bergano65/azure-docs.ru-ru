@@ -4,17 +4,18 @@ description: Этот документ помогает пользователю
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: cherylmc
+manager: dcscontentpm
 ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 05/29/2019
 ms.author: radwiv
 ms.reviewer: chadmat;genli
-ms.openlocfilehash: a88e339e82484c2ec1cd2276f6218fa718b990f9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dcf86deda32069bf9711dbeb733dc9361e22a771
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75860492"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631769"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Порядок проверки пропускной способности VPN для виртуальной сети
 
@@ -242,7 +243,7 @@ ms.locfileid: "75860492"
 
 * Портал на **основе политики**: VPN на основе политики шифруют и направляют пакеты через туннели IPsec на основе комбинаций адресных префиксов между вашей предварительной сетью и Azure VNet. Политика (или селектор трафика) обычно определяется как список доступа в конфигурации VPN.
 
-* **UsePolicyBasedTrafficSelector** соединения: ("UsePolicyBasedTrafficTrafficSelectors" для $True на соединение будет настроить Azure VPN шлюз для подключения к политике на основе VPN брандмауэра на территории. Если вы включите PolicyBasedTrafficSelectors, вам необходимо убедиться, что ваше VPN-устройство имеет соответствующие селекторы трафика, определенные со всеми комбинациями локальной сети (локальный сетевой шлюз) префиксы к и из префиксов виртуальной сети Azure, а не любой к любому.
+* **UsePolicyBasedTrafficSelector** соединения: ("UsePolicyBasedTrafficTrafficSelectors" для $True на соединение будет настроить Azure VPN шлюз для подключения к политике на основе VPN брандмауэра на территории. Если вы включите PolicyBasedTrafficSelectors, вам необходимо убедиться, что ваше VPN-устройство имеет соответствующие селекторы трафика, определенные со всеми комбинациями локальной сети (локальный сетевой шлюз) префиксы и из префиксов виртуальной сети Azure, а не какой-либо.
 
 Ненадлежащая конфигурация может привести к частым отключениям в туннеле, перепадениям пакетов, плохой пропускной связи и задержке.
 

@@ -1,6 +1,6 @@
 ---
 title: Строки подключения
-description: Строки подключения для хранилища данных SQL.
+description: Строки подключения для бассейна Synapse S'L
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,15 +11,17 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f64c584ea5a32f371f84facc195cd02ef6ffdff0
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 4c3f73fb763fa28ac826ebb97c3c325a2408542c
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350626"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633574"
 ---
-# <a name="connection-strings-for-azure-sql-data-warehouse"></a>Строки подключения для хранилища данных SQL Azure
-К хранилищу данных SQL можно подключиться с помощью различных протоколов, таких как [ADO.NET][ADO.NET], [ODBC][ODBC], [PHP][PHP] и [JDBC][JDBC]. Ниже приведены некоторые примеры строк подключения для каждого протокола.  Кроме того, для формирования строки подключения можно использовать портал Azure.  Чтобы создать строку подключения с помощью портала Azure, перейдите к колонке своей базы данных и в разделе *Основное* щелкните *Показать строки подключения к базам данных*.
+# <a name="connection-strings-for-synapse-sql-pool"></a>Строки подключения для бассейна Synapse S'L
+Вы можете подключиться к пулу S'L с несколькими различными протоколами приложений, такими как, [ADO.NET,](https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx) [ODBC,](https://msdn.microsoft.com/library/jj730314.aspx) [PHP](https://msdn.microsoft.com/library/cc296172.aspx?f=255&MSPPError=-2147217396)и [JDBC.](https://msdn.microsoft.com/library/mt484311(v=sql.110).aspx) Ниже приведены некоторые примеры строк подключения для каждого протокола.  Кроме того, для формирования строки подключения можно использовать портал Azure.  
+
+Чтобы создать строку подключения с помощью портала Azure, перейдите к колонке своей базы данных и в разделе *Основное* щелкните *Показать строки подключения к базам данных*.
 
 ## <a name="sample-adonet-connection-string"></a>Пример строки подключения по протоколу ADO.NET
 ```csharp
@@ -47,17 +49,4 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 > 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Чтобы приступить к отправке запросов к хранилищу данных с помощью Visual Studio и других приложений, см. статью [Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT][Query with Visual Studio].
-
-<!--Image references-->
-
-<!--Azure.com references-->
-[Query with Visual Studio]:sql-data-warehouse-query-visual-studio.md
-
-<!--MSDN references-->
-[ADO.NET]: https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx
-[ODBC]: https://msdn.microsoft.com/library/jj730314.aspx
-[PHP]: https://msdn.microsoft.com/library/cc296172.aspx?f=255&MSPPError=-2147217396
-[JDBC]: https://msdn.microsoft.com/library/mt484311(v=sql.110).aspx
-
-<!--Other references-->
+Чтобы начать запрос на пул S'L с помощью Visual Studio и других приложений, [см.](sql-data-warehouse-query-visual-studio.md)

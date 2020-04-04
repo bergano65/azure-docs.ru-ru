@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 785a8a031a10232a37b235711ba919fdc1df35d3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a7be99959c2ae420cff667491f68c40dfa0862a9
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77061435"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80652384"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset"></a>Запланируйте сбросить пароля самообслуживания от Azure Active Directory
 
@@ -316,7 +316,7 @@ Azure AD может предоставить дополнительную инф
 
 [Использование и информация](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-methods-usage-insights) позволяют понять, как в вашей организации работают методы аутентификации таких функций, как Azure MFA и SSPR. Эта возможность отчетности предоставляет организации средства для понимания того, какие методы регистрируются и как их использовать.
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 * Ссылка на [сбросить пароль самообслуживания Troubleshoot](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-troubleshoot) 
 

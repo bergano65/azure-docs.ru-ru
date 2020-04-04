@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 02/12/2020
 ms.author: shvija
-ms.openlocfilehash: 6dcbf0ad0f6678d892c5c02446cac09b4325384c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7d3525bc7a25550a79ceeb008e3c69c77a56aa0a
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80283656"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632871"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -94,16 +94,6 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 *   потоки Kafka.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
-В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. Дополнительные сведения см. по следующим ссылкам:
-
-- [Как создать центр событий](event-hubs-create.md)
-- [Потоковая передача данных в Центры событий из приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
-- [Зеркальное отображение брокера Kafka в концентраторе событий](event-hubs-kafka-mirror-maker-tutorial.md)
-- [Подключение Apache Spark к концентратору событий](event-hubs-kafka-spark-tutorial.md)
-- [Подключение Apache Flink к концентратору событий](event-hubs-kafka-flink-tutorial.md)
-- [Интеграция Kafka Connect с центром событий](event-hubs-kafka-connect-tutorial.md)
-- [Подключение Потоков Akka к центру событий](event-hubs-kafka-akka-streams-tutorial.md)
-- [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)
+В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. Чтобы узнать больше, смотрите [руководство разработчика Apache Kafka для центров событий Azure.](apache-kafka-developer-guide.md)
 
 

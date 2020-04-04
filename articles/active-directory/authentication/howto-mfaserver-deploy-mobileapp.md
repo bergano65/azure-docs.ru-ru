@@ -4,23 +4,23 @@ description: Настройка сервера Многофакторной ид
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/11/2018
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f62aacf8264eb583c523b6ee785f1908f0241644
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 785c4ccf591ce6a7a50a3d144fb1740121c73ce6
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74848159"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80653196"
 ---
 # <a name="enable-mobile-app-authentication-with-azure-multi-factor-authentication-server"></a>Включение аутентификации мобильных приложений с помощью сервера Многофакторной идентификации Azure
 
-Приложение Microsoft Authenticator предлагает возможность дополнительной внешней проверки. Вместо автоматического телефонного вызова или отправки SMS пользователю при входе в систему служба Многофакторной идентификации Azure отправляет push-уведомление в приложение Microsoft Authenticator, которое установлено на смартфоне или планшете пользователя. Чтобы выполнить вход, пользователю в приложении нужно просто коснуться элемента **Проверить** (или ввести ПИН-код и коснуться элемента "Проверить подлинность").
+Приложение Microsoft Authenticator предлагает возможность дополнительной внешней проверки. Вместо того, чтобы размещать автоматический телефонный звонок или SMS пользователю во время входа, Azure Multi-Factor Authentication нажимает уведомление в приложение Microsoft Authenticator на смартфоне или планшете пользователя. Пользователь просто нажимает **Verify** (или вводит PIN-код и нажимает "Authenticate") в приложении, чтобы завершить вход.
 
 Использование мобильного приложения для двухфакторной проверки используется является предпочтительным, когда телефонная связь ненадежна. При использовании такого приложения, как генератор OATH-токенов, не требуется подключение к сети или Интернету.
 

@@ -11,18 +11,18 @@ ms.date: 04/27/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: e0317b3a3e7ab13a78a5d1fe3672d664030436ab
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: aa2cff552b49bceeaf6fd46510bf78384f0e7bfb
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80346641"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631967"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Используйте функции Azure для управления ресурсами вычислений в пуле Azure Synapse Analytics
 
 В этом обучаемом используется azure Functions для управления вычислительными ресурсами для пула S'L в Azure Synapse Analytics.
 
-Для того, чтобы использовать приложение Azure Function App с пулом S'L, необходимо создать [основную учетную запись службы](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) с доступом к вкладчикам по той же подписке, что и экземпляр пула S'L. 
+Для того, чтобы использовать приложение Azure Function App с пулом S'L, необходимо создать [основную учетную запись службы](../../active-directory/develop/howto-create-service-principal-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) с доступом к вкладчикам по той же подписке, что и экземпляр пула S'L.
 
 ## <a name="deploy-timer-based-scaling-with-an-azure-resource-manager-template"></a>Развертывание масштабирования по таймеру с помощью шаблона Azure Resource Manager
 
@@ -32,7 +32,7 @@ ms.locfileid: "80346641"
 - Имя логического сервера, в которого находится экземпляр пула S'L
 - Имя экземпляра пула S'L
 - идентификатор клиента (идентификатор каталога) Azure Active Directory;
-- Идентификатор подписки 
+- Идентификатор подписки
 - идентификатор приложения субъекта-службы;
 - секретный ключ субъекта-службы.
 
@@ -46,7 +46,7 @@ ms.locfileid: "80346641"
 
 ## <a name="change-the-compute-level"></a>Изменение уровня вычислений
 
-1. Перейдите к службе приложения-функции. Если вы развернули шаблон со значениями по умолчанию, эта служба должна называться *DWOperations*. Когда приложение-функция откроется, вы увидите пять развернутых функций в службе приложения-функции. 
+1. Перейдите к службе приложения-функции. Если вы развернули шаблон со значениями по умолчанию, эта служба должна называться *DWOperations*. Когда приложение-функция откроется, вы увидите пять развернутых функций в службе приложения-функции.
 
    ![Функции, развернутые с помощью шаблона](./media/manage-compute-with-azure-functions/five-functions.png)
 
@@ -54,23 +54,23 @@ ms.locfileid: "80346641"
 
    ![Выбор пункта "Интегрировать" для функции](./media/manage-compute-with-azure-functions/select-integrate.png)
 
-3. В текущий момент должно отображаться значение *%ScaleDownTime%* или *%ScaleUpTime%*. Эти значения указывают на то, что расписание основано на значениях, определенных в [параметрах приложения](../../azure-functions/functions-how-to-use-azure-function-app-settings.md). Пока что это значение можно проигнорировать и изменить время в расписании по своему усмотрению, основываясь на следующих шагах.
+3. В текущий момент должно отображаться значение *%ScaleDownTime%* или *%ScaleUpTime%*. Эти значения указывают на то, что расписание основано на значениях, определенных в [параметрах приложения](../../azure-functions/functions-how-to-use-azure-function-app-settings.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Пока что это значение можно проигнорировать и изменить время в расписании по своему усмотрению, основываясь на следующих шагах.
 
-4. В области расписания добавьте время, которое должно отражаться в выражении CRON, чтобы определить частоту увеличения масштаба хранилища данных SQL. 
+4. В области расписания добавьте время, которое должно отражаться в выражении CRON, чтобы определить частоту увеличения масштаба хранилища данных SQL.
 
    ![Изменение расписания функции](./media/manage-compute-with-azure-functions/change-schedule.png)
 
-   Значение `schedule` представляет собой [выражение CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression) с шестью полями: 
+   Значение `schedule` представляет собой [выражение CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression) с шестью полями:
+
    ```json
    {second} {minute} {hour} {day} {month} {day-of-week}
    ```
 
-   Например, *«0 30 9 * * 1-5»* будет отражать триггер, активирующийся каждый будний день в 9:30. Дополнительные сведения см. в [примерах расписаний](../../azure-functions/functions-bindings-timer.md#example) службы "Функции Azure".
-
+   Например, *«0 30 9 * * 1-5»* будет отражать триггер, активирующийся каждый будний день в 9:30. Дополнительные сведения см. в [примерах расписаний](../../azure-functions/functions-bindings-timer.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#example) службы "Функции Azure".
 
 ## <a name="change-the-time-of-the-scale-operation"></a>Изменение времени операции масштабирования
 
-1. Перейдите к службе приложения-функции. Если вы развернули шаблон со значениями по умолчанию, эта служба должна называться *DWOperations*. Когда приложение-функция откроется, вы увидите пять развернутых функций в службе приложения-функции. 
+1. Перейдите к службе приложения-функции. Если вы развернули шаблон со значениями по умолчанию, эта служба должна называться *DWOperations*. Когда приложение-функция откроется, вы увидите пять развернутых функций в службе приложения-функции.
 
 2. Выберите *DWScaleDownTrigger* или *DWScaleUpTrigger* в зависимости от того, что нужно изменить: значение увеличения или уменьшения масштаба вычислений. После выбора функций в области должен отобразиться файл *index.js*.
 
@@ -78,7 +78,7 @@ ms.locfileid: "80346641"
 
 3. Замените значение параметра *ServiceLevelObjective* на значение необходимого уровня и нажмите кнопку "Сохранить". Это значение задает уровень вычислений, на основе которого будет масштабироваться ваш экземпляр хранилища данных в соответствии с расписанием, определенным в разделе «Интеграция».
 
-## <a name="use-pause-or-resume-instead-of-scale"></a>Использование приостановки или возобновления работы вместо масштабирования 
+## <a name="use-pause-or-resume-instead-of-scale"></a>Использование приостановки или возобновления работы вместо масштабирования
 
 Сейчас по умолчанию включены функции *DWScaleDownTrigger* и *DWScaleUpTrigger*. Если вместо функции масштабирования вам нужно использовать приостановку или возобновление работы, можете включить *DWPauseTrigger* или *DWResumeTrigger*.
 
@@ -86,15 +86,12 @@ ms.locfileid: "80346641"
 
    ![Панель "Функции"](./media/manage-compute-with-azure-functions/functions-pane.png)
 
-
-
 2. Передвиньте переключатели для соответствующих триггеров, которые нужно включить.
 
 3. Перейдите на вкладки *интеграции* для соответствующих триггеров, чтобы изменить их расписание.
 
    > [!NOTE]
    > Функциональная разница между триггерами масштабирования и триггерами паузы или возобновления — это сообщение, отправленное в очередь. Дополнительные сведения см. в разделе [Добавление новой функции триггера](manage-compute-with-azure-functions.md#add-a-new-trigger-function).
-
 
 ## <a name="add-a-new-trigger-function"></a>Добавление новой функции триггера
 
@@ -136,46 +133,42 @@ ms.locfileid: "80346641"
    }
    ```
 
-
 ## <a name="complex-scheduling"></a>Создание сложного расписания
 
 В этом разделе кратко показано, что необходимо для более комплексного планирования возможностей паузы, возобновления и масштабирования.
 
-### <a name="example-1"></a>Пример 1:
+### <a name="example-1"></a>Пример 1
 
 Ежедневное увеличение масштаба до значения DW600 в 8:00 и уменьшение масштаба до DW200 в 20:00.
 
-| Компонент  | Расписание     | Операция                                |
+| Функция  | Расписание     | Операция                                |
 | :-------- | :----------- | :--------------------------------------- |
 | Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW600"}` |
 | Функция 2 | 0 0 20 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
 
-### <a name="example-2"></a>Пример 2. 
+### <a name="example-2"></a>Пример 2
 
 Ежедневное увеличение масштаба в 8:00 до DW1000, однократное уменьшение до DW600 в 16:00 и уменьшение масштаба в 22:00 до DW200.
 
-| Компонент  | Расписание     | Операция                                |
+| Функция  | Расписание     | Операция                                |
 | :-------- | :----------- | :--------------------------------------- |
 | Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW1000"}` |
 | Функция 2 | 0 0 16 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600"}` |
 | Функция 3 | 0 0 22 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
 
-### <a name="example-3"></a>Пример 3. 
+### <a name="example-3"></a>Пример 3
 
 Увеличение масштаба до DW1000 в 8:00 и уменьшение масштаба до DW600 один раз в 16:00 в рабочие дни. Приостановка работы в пятницу в 23:00 и возобновление работы в понедельник в 7:00.
 
-| Компонент  | Расписание       | Операция                                |
+| Функция  | Расписание       | Операция                                |
 | :-------- | :------------- | :--------------------------------------- |
 | Функция 1 | 0 0 8 * * 1-5  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW1000"}` |
 | Функция 2 | 0 0 16 * * 1-5 | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600"}` |
 | Функция 3 | 0 0 23 * * 5   | `var operation = {"operationType": "PauseDw"}` |
 | Функция 4 | 0 0 7 * * 0    | `var operation = {"operationType": "ResumeDw"}` |
 
-
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о функциях Azure триггера с таймером см. [здесь](../../azure-functions/functions-create-scheduled-function.md).
+Дополнительные сведения о функциях Azure триггера с таймером см. [здесь](../../azure-functions/functions-create-scheduled-function.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 Опробуйте [репозиторий образцов](https://github.com/Microsoft/sql-data-warehouse-samples)пула S'L.
-

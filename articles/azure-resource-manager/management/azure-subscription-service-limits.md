@@ -2,13 +2,13 @@
 title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит информацию о том, как увеличить лимиты вместе с максимальными значениями.
 ms.topic: conceptual
-ms.date: 03/26/2020
-ms.openlocfilehash: 397d6a719f64a49208e651469fab9cf841ccd4ad
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.date: 04/03/2020
+ms.openlocfilehash: 4200784e3018ec80d9fbbbc0d3680b6b0e6d2cb3
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80521354"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656216"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 

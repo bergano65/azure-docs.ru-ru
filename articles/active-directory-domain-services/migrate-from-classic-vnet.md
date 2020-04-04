@@ -6,15 +6,15 @@ manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/22/2020
 ms.author: iainfou
-ms.openlocfilehash: e7caacf23cb489da6f9f85748ae839bc4babff8e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6acf9301367ae2c6947f6935c43f420d3d7cac65
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77917311"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655014"
 ---
 # <a name="migrate-azure-ad-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>Переносите службы домена Azure AD из классической виртуальной сетевой модели в менеджер ресурсов
 
@@ -102,7 +102,7 @@ ms.locfileid: "77917311"
 1. Настройка виртуальной сети между виртуальной сетью Classic и новой виртуальной сетью Resource Manager.
 1. [Позже, перенести дополнительные ресурсы][migrate-iaas] из виртуальной сети Classic по мере необходимости.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 При подготовке и переносе домена Azure AD DS возникают некоторые соображения, учитывающие доступность служб аутентификации и управления. Управляемый домен Azure AD DS недоступен в течение определенного периода времени во время миграции. Приложения и службы, опирающиеся на aD-интерфейс Azure AD, испытывают время простоя во время миграции.
 

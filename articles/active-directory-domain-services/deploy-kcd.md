@@ -8,15 +8,15 @@ ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 0d7c9319097d81f4db2e2c5ecfc692269d27a4db
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 07aa9ade25d1d986833b6da2f3907d07b752b662
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80476100"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655429"
 ---
 # <a name="configure-kerberos-constrained-delegation-kcd-in-azure-active-directory-domain-services"></a>Настройка ограниченной делегации Kerberos (KCD) в службах активных доменов каталогов Azure
 
@@ -89,7 +89,7 @@ Windows Server 2012 и позже предоставляет администр�
     Set-ADUser backendsvc -PrincipalsAllowedToDelegateToAccount $ImpersonatingAccount
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о работе делегации в службах доменов Active Directory можно узнать в службах доменов [Active][kcd-technet]Directory, см.
 

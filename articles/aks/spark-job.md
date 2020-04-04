@@ -1,17 +1,17 @@
 ---
 title: Запуск задания Apache Spark с помощью Службы Azure Kubernetes (AKS)
-description: Использование Службы Azure Kubernetes (AKS) для выполнения задания Apache Spark
+description: Используйте службу Azure Kubernetes (AKS) для создания и запуска задания Apache Spark для крупномасштабной обработки данных.
 author: lenadroid
 ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 4b3248cb9ab61a158f70b5a2d6ae9dd846501816
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8ebd8990a2fdd43b243f5dd6feb632d782fdeb0b
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79473631"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632689"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 

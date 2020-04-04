@@ -1,6 +1,6 @@
 ---
 title: Связь с sqlcmd
-description: Подключайтесь к хранилищу данных SQL Azure и создавайте запросы к нему с помощью служебной программы командной строки sqlcmd.
+description: Используйте утилиту командной строки sqlcmd для подключения и запроса пула Synapse S'L.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 118997c39b56254eb47bc24350a0558e0b7620f9
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: cfb1b7558f8d7675009a0ebc729cc1a560f03d12
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350507"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633379"
 ---
-# <a name="connect-to-sql-data-warehouse-with-sqlcmd"></a>Подключение к хранилищу данных SQL с помощью sqlcmd
+# <a name="connect-to-synapse-sql-pool-with-sqlcmd"></a>Подключение к бассейну Synapse S'L с кв.м
 > [!div class="op_single_selector"]
-> * [Мощность BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
+> * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Машинное обучение Azure](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
 > * [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 > * [Sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
@@ -28,14 +28,14 @@ ms.locfileid: "80350507"
 > 
 > 
 
-Используйте утилиту командной строки [sqlcmd][sqlcmd] для подключения и запроса хранилища данных Azure S'L.  
+Используйте командную линию «sqlcmd» для подключения к пулу S'L и запроса.  
 
 ## <a name="1-connect"></a>1. Подключение
-Чтобы начать использовать [sqlcmd][sqlcmd], откройте командную строку и введите **sqlcmd** и строку подключения к базе данных хранилища данных SQL. В строке подключения обязательно укажите следующие параметры.
+Чтобы начать работу с «sqlcmd» (sqlcmd), откройте запрос команды и введите **sqlcmd** с последующей строкой подключения для базы данных пула S'L. В строке подключения обязательно укажите следующие параметры.
 
 * **Server (-S)**  — сервер в формате `<`имя_сервера`>`.database.windows.net
 * **База данных (-d):** Имя базы данных.
-* **Enable Quoted Identifiers (-I)** — для подключения к экземпляру хранилища данных SQL необходимо включить заключенные в кавычки идентификаторы.
+* **Включить цитируемые идентификаторы (-I):** Цитируемые идентификаторы должны быть включены для подключения к экземпляру пула S'L.
 
 Чтобы использовать проверку подлинности SQL Server, необходимо добавить параметры имени пользователя и пароля.
 
@@ -84,14 +84,4 @@ sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@sswor
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о параметрах, доступных в sqlcmd, см. в [документации по sqlcmd][sqlcmd].
-
-<!--Image references-->
-
-<!--Article references-->
-
-<!--MSDN references--> 
-[sqlcmd]: https://msdn.microsoft.com/library/ms162773.aspx
-[Azure portal]: https://portal.azure.com
-
-<!--Other Web references-->
+Для получения более подробной информации о вариантах, доступных в sqlcmd, [см.](https://msdn.microsoft.com/library/ms162773.aspx)

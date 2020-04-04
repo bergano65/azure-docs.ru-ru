@@ -12,14 +12,15 @@ ms.subservice: ''
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: aa2f903611f52f8f7a8ede0040b592a7dddd0e89
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: b8e37a15f473e5777fe5412b785a0916bd78f095
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80584470"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655914"
 ---
 # <a name="getting-started-with-visual-studio-2019"></a>Начало работы с Visual Studio 2019
+
 Visual Studio **2019** S'L Server Data Tools (SSDT) представляет собой единый инструмент, позволяющий делать следующее:
 
 - Подключение, запрос и разработка приложений
@@ -30,29 +31,26 @@ Visual Studio **2019** S'L Server Data Tools (SSDT) представляет с�
 - Настройка конвейеров непрерывной интеграции и развертывания с серверами автоматизации, такими как Azure DevOps
 
 ## <a name="install-visual-studio-2019"></a>Установка Visual Studio 2019.
+
 Смотрите [Скачать Visual Studio 2019,][] чтобы скачать и установить Visual Studio **16.3 и выше**. Во время установки выберите рабочую нагрузку для хранения и обработки данных. В Visual Studio 2019 больше не требуется установка автономного SSDT.
 
 ## <a name="unsupported-features-in-ssdt"></a>Неподдерживаемые функции в SSDT
 
 Бывают случаи, когда релизы функций для Synapse S'L могут не включать поддержку SSDT. Следующие функции в настоящее время не поддерживаются:
 
-- [Материализованные представления](https://docs.microsoft.com/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest) (в процессе)
-- [Заказанные кластерные индексы columnstore](https://docs.microsoft.com/sql/t-sql/statements/create-columnstore-index-transact-sql?view=azure-sqldw-latest#examples--and-) (в процессе)
-- [Заявление COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) (в процессе)
-- [Управление рабочей нагрузкой](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-workload-management) - группы рабочей нагрузки и классификаторы (в процессе)
-- [Безопасность на уровне строк](https://docs.microsoft.com/sql/relational-databases/security/row-level-security?view=sql-server-ver15)
+- [Материализованные представления](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [Заказанные кластерные индексы columnstore](/sql/t-sql/statements/create-columnstore-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest#examples--and-)
+- [Заявление COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [Управление рабочей нагрузкой](sql-data-warehouse-workload-management.md) - группы рабочей нагрузки и классификаторы
+- [Безопасность на уровне строк](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
   - Отправьте билет поддержки или проголосуйте [здесь,](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040057-ssdt-row-level-security) чтобы получить поддержку функции.
-- [Динамическое маскирование данных](https://docs.microsoft.com/sql/relational-databases/security/dynamic-data-masking?toc=%2Fazure%2Fsql-data-warehouse%2Ftoc.json&view=sql-server-2017#defining-a-dynamic-data-mask)
-  - Отправьте билет поддержки или проголосуйте [здесь,](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040048-ssdt-support-dynamic-data-masking) чтобы получить поддержку функции. 
-- Функция [PREDICT](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=sql-server-ver15&viewFallbackFrom=azure-sqldw-latest) 
-- [Таблицы с ограничениями](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-table-constraints#table-constraints) не поддерживаются. Для этих объектов таблицы установите действие сборки на "Нет".
+- [Динамическое маскирование данных](/sql/relational-databases/security/dynamic-data-masking?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest#defining-a-dynamic-data-mask)
+  - Отправьте билет поддержки или проголосуйте [здесь,](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040048-ssdt-support-dynamic-data-masking) чтобы получить поддержку функции.
+- [Таблицы с ограничениями](sql-data-warehouse-table-constraints.md#table-constraints) не поддерживаются. Для этих объектов таблицы установите действие сборки на "Нет".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть последняя версия SSDT, вы готовы [подключиться](sql-data-warehouse-query-visual-studio.md) к вашему пулу S'L.
-
-
-
 
 <!--Other-->
 

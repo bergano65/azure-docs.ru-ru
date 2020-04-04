@@ -7,18 +7,18 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: jaredro
-ms.openlocfilehash: 76de7a8854a58deb924cbbe3177ad5a7b5fd57a2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 587a17659a412d6f894faf5a744a7d9c444935c8
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74083467"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656745"
 ---
 # <a name="configure-expressroute-global-reach"></a>Настройка ExpressRoute Global Reach
 
 Эта статья поможет вам настроить ExpressRoute Global Reach с помощью PowerShell. Дополнительные сведения см. в разделе [Связывание каналов ExpressRoute для включения ExpressRoute Global Reach (предварительная версия)](expressroute-global-reach.md).
 
- ## <a name="before-you-begin"></a>Перед началом
+ ## <a name="before-you-begin"></a>Подготовка к работе
 
 Прежде чем начать настройку, проверьте следующее:
 
@@ -38,7 +38,7 @@ ms.locfileid: "74083467"
 1. Чтобы запустить конфигурацию, вопийте в учетную запись Azure и выберите подписку, которую вы хотите использовать.
 
    [!INCLUDE [sign in](../../includes/expressroute-cloud-shell-connect.md)]
-2. Определите схемы ExpressRoute, которые вы хотите использовать. Вы можете включить ExpressRoute Global Reach между любыми двумя схемами ExpressRoute, если они расположены в поддерживаемых странах/регионах и были созданы в разных местах. 
+2. Определите схемы ExpressRoute, которые вы хотите использовать. Вы можете включить ExpressRoute Global Reach между частным пирингом любых двух схем ExpressRoute, если они расположены в поддерживаемых странах/регионах и были созданы в разных местах для пиринга. 
 
    * Если подписке принадлежат оба канала, вы можете выбрать канал для выполнения конфигурации в следующих разделах.
    * Если два канала находятся в разных подписках Azure, может потребоваться выполнить авторизацию из одной подписки Azure. Затем необходимо передать ключ авторизации при выполнении команды конфигурации в другой подписке Azure.

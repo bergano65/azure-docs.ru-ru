@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3bd166572cea23fbb710cd053c28f51e76ba534a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 42596ba5470c6062efba4fd1050c1c9745b76e80
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79476677"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637327"
 ---
 # <a name="manage-azure-ad-b2c-user-accounts-with-microsoft-graph"></a>Управление учетными записями пользователей Azure AD B2C с помощью Microsoft Graph
 
@@ -151,7 +151,7 @@ git clone https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-ma
 
 ### <a name="code-discussion"></a>Обсуждение кода
 
-В примере кода используется [Microsoft Graph SDK,](https://docs.microsoft.com/graph/sdks/sdks-overview)который предназначен для упрощения создания высококачественных, эффективных и устойчивых приложений, которые получают доступ к Microsoft Graph. Таким образом, вам не нужно делать прямой все Microsoft Graph API.
+В примере кода используется [Microsoft Graph SDK,](https://docs.microsoft.com/graph/sdks/sdks-overview)который предназначен для упрощения создания высококачественных, эффективных и устойчивых приложений, которые получают доступ к Microsoft Graph.
 
 Любой запрос на API Microsoft Graph требует токен доступа для проверки подлинности. В решении используется пакет [Microsoft.Graph.Auth](https://www.nuget.org/packages/Microsoft.Graph.Auth/) NuGet, который обеспечивает обертку на основе сценариев проверки библиотеки подлинности Майкрософт (MSAL) для использования в Microsoft Graph SDK.
 

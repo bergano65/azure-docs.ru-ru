@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 99220fdf5dfb47f235637f83ba9be4ec015758bd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9f33dc9528d5f7043dda2c6fad207a9a51347a2b
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294445"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631490"
 ---
 # <a name="troubleshoot-issues-with-azure-automation-desired-state-configuration-dsc"></a>Проблемы устранения проблем с конфигурацией Azure Automation Desired State (DSC)
 
@@ -48,13 +48,13 @@ ms.locfileid: "80294445"
 
 ### <a name="3-ensure-that-nodes-and-the-automation-workspace-have-required-modules"></a>3. Обеспечить, чтобы узлы и рабочее пространство автоматизации имели необходимые модули
 
-DSC зависит от модулей, установленных на уделе. При использовании конфигурации состояния автоматизации Azure импортируйте все необходимые модули в свою учетную запись Автоматизации, используя шаги, перечисленные в [импортных модулях.](../shared-resources/modules.md#import-modules) Конфигурации также могут иметь зависимость от определенных версий модулей. Для получения дополнительной [информации см.](shared-resources.md#modules)
+DSC зависит от модулей, установленных на уделе. При использовании конфигурации состояния автоматизации Azure импортируйте все необходимые модули в свою учетную запись Автоматизации, используя шаги, перечисленные в [импортных модулях.](../shared-resources/modules.md#importing-modules) Конфигурации также могут иметь зависимость от определенных версий модулей. Для получения дополнительной [информации см.](shared-resources.md#modules)
 
 ## <a name="common-errors-when-working-with-dsc"></a>Распространенные ошибки при работе с DSC
 
 ### <a name="scenario-a-configuration-with-special-characters-cannot-be-deleted-from-the-portal"></a><a name="unsupported-characters"></a>Сценарий: Конфигурация со специальными символами не может быть удалена с портала
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При попытке удалить конфигурацию DSC с портала вы увидите следующую ошибку:
 
@@ -74,7 +74,7 @@ An error occurred while deleting the DSC configuration '<name>'.  Error-details:
 
 ### <a name="scenario-failed-to-register-dsc-agent"></a><a name="failed-to-register-agent"></a>Сценарий: Не удалось зарегистрировать агента Dsc
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При попытке `Set-DscLocalConfigurationManager` запустить или другой DSC cmdlet вы получаете ошибку:
 
@@ -99,7 +99,7 @@ ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-
 
 ### <a name="a-nameunauthorizedscenario-status-reports-return-response-code-unauthorized"></a><a name="unauthorized"><a/>Сценарий: Отчеты о состоянии возвращают код ответа "Несанкционированный"
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При регистрации узла в State Configuration (DSC) вы получаете одно из следующих сообщений об ошибке:
 
@@ -161,7 +161,7 @@ If (($certs.Count) -gt 0)
 
 ### <a name="scenario-node-is-in-failed-status-with-a-not-found-error"></a><a name="failed-not-found"></a>Сценарий: узел находится в состоянии сбоя с ошибкой "Не найден"
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 В отчете об узле указано состояние **сбоя** и содержится сообщение об ошибке:
 
@@ -183,7 +183,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 
 ### <a name="scenario-no-node-configurations-mof-files-were-produced-when-a-configuration-is-compiled"></a><a name="no-mof-files"></a>Сценарий: При компилировании конфигурации не производились конфигурации узлов (файлов MOF)
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Задание компиляции DSC приостановлено с ошибкой:
 
@@ -204,7 +204,7 @@ Compilation completed successfully, but no node configuration.mofs were generate
 
 ### <a name="scenario-the-dsc-node-report-becomes-stuck-in-progress-state"></a><a name="dsc-in-progress"></a>Сценарий: Отчет узла DSC застревает в состоянии «в прогрессе»
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Агент DSC выводит такое сообщение:
 
@@ -222,7 +222,7 @@ No instance found with given property values
 
 ### <a name="scenario-unable-to-use-a-credential-in-a-dsc-configuration"></a><a name="issue-using-credential"></a>Сценарий: Невозможно использовать учетные данные в конфигурации DSC
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Задание компиляции DSC приостановлено со следующей ошибкой:
 
@@ -240,7 +240,7 @@ System.InvalidOperationException error processing property 'Credential' of type 
 
 ### <a name="scenario-onboarding-from-dsc-extension-failure-processing-extension-error"></a><a name="failure-processing-extension"></a>Сценарий: Посадка из расширения dsc, ошибка "Отказ в обработке"
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При посадке с использованием расширения DSC возникает сбой, содержащий ошибку:
 
@@ -259,7 +259,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 
 ### <a name="scenario-registering-a-node-with-powershell-returns-the-error-one-or-more-errors-occurred"></a><a name="cross-subscription"></a>Сценарий: Регистрация узла с PowerShell возвращает ошибку "Одна или несколько ошибок произошло"
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При регистрации узла `Register-AzAutomationDSCNode` `Register-AzureRMAutomationDSCNode`с использованием или при использовании следующей ошибки.
 
@@ -282,7 +282,7 @@ One or more errors occurred.
 
 ### <a name="scenario-error-message---provisioning-failed"></a><a name="agent-has-a-problem"></a>Сценарий: Сообщение об ошибке - "Обеспечение не удалось"
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При регистрации узла вы видите ошибку:
 
@@ -302,7 +302,7 @@ Provisioning has failed
 
 ### <a name="scenario-applying-a-configuration-in-linux-a-failure-occurs-with-a-general-error"></a><a name="failure-linux-temp-noexec"></a>Сценарий: Применяя конфигурацию в Linux, сбой происходит с общей ошибкой
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При применении конфигурации в Linux возникает сбой, содержащий ошибку:
 
@@ -320,7 +320,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 ### <a name="scenario-node-configuration-names-that-overlap-could-result-in-bad-release"></a><a name="compilation-node-name-overlap"></a>Сценарий: Имена конфигурации узлов, которые перекрываются, могут привести к плохому выпуску
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Если один сценарий конфигурации используется для генерации нескольких конфигураций узлов, а некоторые конфигурации узлов имеют имя, которое является подмножеством других, проблема в службе компиляции может привести к назначению неправильной конфигурации.  Это происходит только при использовании одного скрипта для генерации конфигураций с данными конфигурации на узла и только при перекрытии имени в начале строки.
 
@@ -336,7 +336,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 ### <a name="scenario-gateway-timeout-error-on-dsc-configuration-upload"></a><a name="gateway-timeout"></a>Сценарий: Ошибка тайм-аута шлюза на загрузке конфигурации DSC
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Вы получаете ошибку `GatewayTimeout` при загрузке конфигурации DSC. 
 

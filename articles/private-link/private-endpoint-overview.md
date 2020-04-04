@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: fd389c1e909e6875ead8410b5ca692b82c79e0de
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6782d745bfced576fe06019b0d41af86c8c63ed4
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80063071"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656269"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -56,8 +56,8 @@ ms.locfileid: "80063071"
 |**База данных SQL Azure** | Microsoft.Sql/servers    |  Сервер Sql (sqlServer)        |
 |**Azure Synapse Analytics** | Microsoft.Sql/servers    |  Сервер Sql (sqlServer)        | 
 |**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Blob (blob, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Веб (интернет, web_secondary)        |
-|**Лазурное хранилище озер данных Gen2**  | Microsoft.Storage/storageAccounts    |  Blob (blob, blob_secondary)<BR> Система файлов озера данных Gen2 (dfs, dfs_secondary)       |
-|**Azure Космос DB** | Microsoft.AzureCosmosDB/databaseAccounts | Sql, MongoDB, Кассандра, Гремлин, Стол|
+|**Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Blob (blob, blob_secondary)<BR> Система файлов озера данных Gen2 (dfs, dfs_secondary)       |
+|**Azure Cosmos DB** | Microsoft.AzureCosmosDB/databaseAccounts | Sql, MongoDB, Кассандра, Гремлин, Стол|
 |**База данных Azure для PostgreS-L -Одинсервер** | Microsoft.DBforPostgreSQL/servers   | postgresqlServer |
 |**База данных Azure для MySQL** | Microsoft.DBforMySQL/servers    | mysqlServer |
 |**База данных Azure для MariaDB** | Microsoft.DBforMariaDB/servers    | mariadbServer |
@@ -66,13 +66,15 @@ ms.locfileid: "80063071"
 |**Поиск Azure;** | Microsoft.Search/SearchService| поискСервис|  
 |**Реестр контейнеров Azure** | Microsoft.ContainerRegistry/registries  | реестр |
 |**Конфигурация приложений Azure** | Microsoft.Appconfiguration/configurationStores   | configurationStore |
-|**Резервное копирование Azure** | Microsoft.RecoveryServices/vaults   | Хранилище |
+|**Azure Backup** | Microsoft.RecoveryServices/vaults   | Хранилище |
 |**Концентратор событий Azure** | Microsoft.EventHub/namespaces    | namespace |
-|**Сервисный автобус Azure** | Microsoft.ServiceBus/namespaces | namespace |
+|**Служебная шина Azure** | Microsoft.ServiceBus/namespaces | namespace |
 |**Ретранслятор Azure** | Microsoft.Relay/namespaces | namespace |
 |**Сетка событий Azure** | Microsoft.EventGrid/topics  | Раздел |
 |**Сетка событий Azure** | Microsoft.EventGrid/домены | домен |
-|**Лазурные WebApps** | Microsoft.Web/sites    | sites |
+|**Лазурные WebApps** | Microsoft.Web/sites    | site |
+|**Машинное обучение Azure** | Microsoft.MachineLearningServices/workspaces  | Рабочая область |
+  
  
 ## <a name="network-security-of-private-endpoints"></a>Сетевая безопасность частных конечных точек 
 При использовании частных конечных точек для служб Azure трафик обеспечивается определенным ресурсом частного соединения. Платформа выполняет элемент управления доступом для проверки сетевых соединений, достигающих только указанного частного ресурса ссылки. Для доступа к дополнительным ресурсам в той же службе Azure требуются дополнительные частные конечные точки. 
@@ -143,6 +145,7 @@ ms.locfileid: "80063071"
 |Azure Event Grid (Microsoft.EventGrid/темы)   | Раздел | Теме. (регион).privatelink.eventgrid.azure.net|
 |Azure Event Grid (Microsoft.EventGrid/домены) | домен | Домена. (регион).privatelink.eventgrid.azure.net |
 |Лазурные webApps (Microsoft.Web/сайты) | site | privatelink.azurewebsites.net |
+|Машинное обучение Azure (Microsoft.MachineLearningServices/рабочие области)   | Рабочая область | privatelink.api.azureml.ms |
  
 Azure создаст каноническое имя DNS-записи (CNAME) на общедоступной DNS, чтобы перенаправить разрешение на предлагаемые доменные имена. Вы сможете переопределить разрешение с помощью частного IP-адреса ваших частных конечных точек. 
  

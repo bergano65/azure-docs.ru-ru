@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/26/2020
+ms.date: 04/03/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 215244204aa58cc2fdedc639d48e01b514759694
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b270ce3cd15dbd1e8dd53bd60376a87d6e08f75c
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78196014"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637212"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранения Blob доступны в Azure Data Lake Storage Gen2
 
@@ -36,9 +36,9 @@ ms.locfileid: "78196014"
 |Команды памяти хранилища Blob PowerShell|Общедоступная версия|[Быстрый запуск: Загрузить, скачать и список капли с PowerShell](storage-quickstart-blobs-powershell.md)|
 |Команды хранения Blob Azure CLI|Общедоступная версия|[Быстрый запуск: Создайте, загрузите и перечислите капли с помощью Azure CLI](storage-quickstart-blobs-cli.md)|
 |API хранилища BLOB-объектов|Общедоступная версия|[Быстрый запуск: Библиотека хранения данных Azure Blob v12 для .NET](storage-quickstart-blobs-dotnet.md)<br>[Быстрый запуск: Управление капли с Java v12 SDK](storage-quickstart-blobs-java.md)<br>[Быстрый старт: Управление капли с Python v12 SDK](storage-quickstart-blobs-python.md)<br>[Быстрый запуск: Управление капли с JavaScript v12 SDK в Node.js](storage-quickstart-blobs-nodejs.md)|
-|Архив доступ уровень|Preview (Предварительный просмотр)|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
-|Политики управления жизненным циклом|Preview (Предварительный просмотр)|[Управление жизненным циклом хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md)|
-|Журналы диагностики|Preview (Предварительный просмотр)|[Ведение журнала Аналитики Службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Архив доступ уровень|Предварительный просмотр|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
+|Политики управления жизненным циклом|Предварительный просмотр|[Управление жизненным циклом хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md)|
+|Журналы диагностики|Общедоступная версия|[Ведение журнала Аналитики Службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Канал изменений|Еще не поддерживается|[Изменение поддержки кормов в хранилище Azure Blob](storage-blob-change-feed.md)|
 |Сбой учетной записи|Еще не поддерживается|[Восстановление после стихийных бедствий и сбой учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Blob контейнер ACL|Еще не поддерживается|[Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|

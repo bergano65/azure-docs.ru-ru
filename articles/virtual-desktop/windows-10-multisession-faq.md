@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 4301aaed0152e07eb2a941b56637239b66c33878
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d7ea99e2ee8e2882c211ee17acec70222dc058a8
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79127354"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637099"
 ---
 # <a name="windows-10-enterprise-multi-session-faq"></a>Windows 10 Корпоративная с поддержкой нескольких сеансов: часто задаваемые вопросы
 
@@ -39,7 +39,7 @@ Windows 10 Enterprise multi-session — это виртуальное издан
 
 Вы можете запустить виртуальную машину (VM) в Azure с Windows 10 Windows 10 Enterprise многосессионно и настроить ее, установив LOB-приложения, sysprep/generalize, а затем создать изображение с помощью портала Azure.  
  
-Чтобы начать работу, создайте VM в Azure с windows 10 Windows 10 Enterprise multi-session. Вместо того, чтобы запускать VM в Azure, вы можете скачать VHD напрямую. После этого вы сможете использовать загруженный VHD для создания нового поколения 1 VM на ПК с Windows 10 с включенным Hyper-V.
+Чтобы начать работу, создайте VM в Azure с многосессионным Windows 10 Enterprise. Вместо того, чтобы запускать VM в Azure, вы можете скачать VHD напрямую. После этого вы сможете использовать загруженный VHD для создания нового поколения 1 VM на ПК с Windows 10 с включенным Hyper-V.
 
 Настройте изображение под свои нужды, установив LOB-приложения и сиспреп изображение. Когда вы закончите настройку, загрузите изображение в Azure с VHD внутри. После этого получите windows Virtual Desktop из Azure Marketplace и используйте его для развертывания нового пула хоста с настраиваемым изображением.
  

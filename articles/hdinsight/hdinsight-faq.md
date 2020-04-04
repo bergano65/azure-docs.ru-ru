@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: b05b83086cc9d8449d9517897f347b6e2685aa95
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8a37e1b9bc4a0b953dc727dbab2813dd938ed576
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76720356"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80652219"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: Часто задаваемые вопросы
 
@@ -135,7 +135,7 @@ ms.locfileid: "76720356"
 
 ### <a name="how-can-i-estimate-the-size-of-a-hive-metastore-database"></a>Как оценить размер базы данных metastore Hive?
 
-Метамагазин Hive используется для хранения метаданных для источников данных, которые используются сервером Hive. Требования к размеру частично зависят от количества и сложности ваших источников данных Hive и не могут быть оценены заранее. Как указано в [рекомендациях Hive metastore,](hdinsight-use-external-metadata-stores.md#hive-metastore-best-practices)вы можете начать с уровня S2, который обеспечивает 50 DTU и 250 ГБ памяти, и если вы видите узкое место, вы можете масштабировать базу данных.
+Метамагазин Hive используется для хранения метаданных для источников данных, которые используются сервером Hive. Требования к размеру частично зависят от количества и сложности ваших источников данных Hive и не могут быть оценены заранее. Как указано в [руководстве Hive metastore,](hdinsight-use-external-metadata-stores.md#hive-metastore-guidelines)вы можете начать с уровня S2, который обеспечивает 50 DTU и 250 ГБ памяти, и если вы видите узкое место, вы можете масштабировать базу данных.
 
 ### <a name="do-you-support-any-other-database-other-than-azure-sql-database-as-an-external-metastore"></a>Поддерживаете ли вы какую-либо другую базу данных, кроме базы данных Azure S'L, как внешний метамагазин?
 
@@ -202,7 +202,7 @@ ktutil: q
 
 ### <a name="can-i-use-a-self-signed-certificate-in-an-aad-ds-secure-ldap-setup-and-provision-an-esp-cluster"></a>Могу ли я использовать сертификат, подписанный самостоятельно, в безопасной установке LDAP AAD-DS и предоставить кластер ESP?
 
-Рекомендуется использовать сертификат, выданный органом по сертификации, но использование сертификата, подписанного самостоятельно, также поддерживается на ESP. Дополнительные сведения см. в разделе:
+Рекомендуется использовать сертификат, выданный органом по сертификации, но использование сертификата, подписанного самостоятельно, также поддерживается на ESP. Дополнительные сведения можно найти в разделе
 
 - [Включение доменных служб Azure Active Directory](domain-joined/apache-domain-joined-configure-using-azure-adds.md#enable-azure-ad-ds)
 
@@ -279,7 +279,7 @@ done
 
 В настоящее время не существует плагина Ranger для хранения каблов и хранения azure Data Lake Storage Gen1 или Gen2. Для кластеров ESP следует использовать хранилище озер Данных Azure, поскольку можно, по крайней мере, устанавливать мелкозернистые разрешения вручную на уровне файловой системы с помощью инструментов HDFS. Кроме того, при использовании Azure Data Lake Storage кластеры ESP будут выполнять часть управления доступом файловой системы с помощью Active Directory Azure на уровне кластеров. 
 
-Политики доступа к данным можно назначить группам безопасности пользователей с помощью Azure Storage Explorer. Дополнительные сведения см. в разделе:
+Политики доступа к данным можно назначить группам безопасности пользователей с помощью Azure Storage Explorer. Дополнительные сведения можно найти в разделе
 
 - [Как установить разрешения для пользователей Azure AD на запрос данных в Data Lake Storage Gen2 с помощью Hive или других служб?](hdinsight-hadoop-use-data-lake-storage-gen2.md#how-do-i-set-permissions-for-azure-ad-users-to-query-data-in-data-lake-storage-gen2-by-using-hive-or-other-services)
 - [Установка разрешений на уровне файлов и каталогов в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure](/azure/storage/blobs/data-lake-storage-how-to-set-permissions-storage-explorer)

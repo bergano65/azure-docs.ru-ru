@@ -11,19 +11,20 @@ ms.date: 02/04/2019
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 47ee6f7627602732800949bcb9701045fcbff1a8
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: b24706943cdf59fba89a8007c4914b628b9e34d5
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80583178"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632962"
 ---
-# <a name="troubleshooting-synapse-sql-pool-in-azure-synapse-analytics"></a>Проблемное устранение бассейна Synapse S'L в аналитике Azure Synapse
+# <a name="troubleshooting-sql-analytics-in-azure-synapse"></a>Несоответствие си-Л-аналитики в Azure Synapse
 
 В этой статье даны рекомендации по устранению распространенных неполадок.
 
 ## <a name="connecting"></a>Соединение
-| Проблема                                                        | Решение                                                   |
+
+| Проблемы                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Ошибка входа пользователя "NT AUTHORITY\ANONYMOUS LOGON". (Microsoft SQL Server, ошибка: 18456) | Эта ошибка возникает, когда пользователь Azure AD пытается подключиться к основной базе данных, но не имеет в своем ключе пользователя.  Чтобы исправить эту проблему, укажите пул S'L, к который вы хотите подключиться во время подключения, либо добавьте пользователя в основной базу данных.  Более подробную информацию можно узнать из [статьи по обзору безопасности.](sql-data-warehouse-overview-manage-security.md) |
 | Субъект-сервер "MyUserName" не может получить доступ к базе данных master в текущем контексте безопасности. Невозможно открыть пользовательскую базу данных по умолчанию. Ошибка входа. Пользователю "MyUserName" не удалось войти в систему. (Microsoft SQL Server, ошибка: 916) | Эта ошибка возникает, когда пользователь Azure AD пытается подключиться к основной базе данных, но не имеет в своем ключе пользователя.  Чтобы исправить эту проблему, укажите пул S'L, к который вы хотите подключиться во время подключения, либо добавьте пользователя в основной базу данных.  Более подробную информацию можно узнать из [статьи по обзору безопасности.](sql-data-warehouse-overview-manage-security.md) |
@@ -32,14 +33,16 @@ ms.locfileid: "80583178"
 | Не удается подключиться с помощью средства или драйвера                           | В пуле Synapse S'L рекомендуется использовать [SSMS,](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) [SSDT для Visual Studio](sql-data-warehouse-install-visual-studio.md)или [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) для запроса данных. Для получения дополнительной информации о драйверах и подключении к Azure Synapse [см.](sql-data-warehouse-connection-strings.md) [Connect to Azure Synapse](sql-data-warehouse-connect-overview.md) |
 
 ## <a name="tools"></a>Инструменты
-| Проблема                                                        | Решение                                                   |
+
+| Проблемы                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Исследователь объектов Visual Studio отсутствует у пользователей Azure AD           | Это известная проблема  Сведения о пользователях можно просмотреть в файле [sys.database_principals](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?view=sql-server-ver15).  Подробнее об использовании Active-каталога Azure с пулом Synapse с помощью Azure Active Directory можно ознакомиться с [помощью Azure.](sql-data-warehouse-authentication.md) |
 | Ручное написание сценариев, использование мастера скриптов или подключение через SSMS происходит медленно, не отвечает или производит ошибки | Убедитесь, что пользователи были созданы в базе данных master. В вариантах сценариев также убедитесь, что издание движка настроено как "Microsoft Azure S'L Data Warehouse Edition" и тип двигателя - "База данных Microsoft Azure S'L". |
 | Создание скриптов в SSMS завершается ошибкой                               | Создание сценария для пула Synapse S'L не удается, если опция "Создание сценария для зависимых объектов" настроена на "True". В качестве обходного пути пользователи должны вручную перейти к **Tools -> Options ->S'L Server Object Explorer -> generate script for dependent options и установить ложное** |
 
 ## <a name="performance"></a>Производительность
-| Проблема                                                        | Решение                                                   |
+
+| Проблемы                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Устранение проблем с производительностью запросов                            | Если вы пытаетесь устранить проблему конкретного запроса, для начала ознакомьтесь со статьей [Мониторинг рабочей нагрузки с помощью динамических административных представлений](sql-data-warehouse-manage-monitor.md#monitor-query-execution). |
 | Проблемы пространства TempDB | Мониторинг использования пространства [TempDB.](sql-data-warehouse-manage-monitor.md#monitor-tempdb)  Общие причины для запуска из пространства TempDB являются:<br>- Недостаточно ресурсов, выделяемых на запрос, вызывая утечку данных в TempDB.  Посмотреть [управление рабочей нагрузкой](resource-classes-for-workload-management.md) <br>- Статистика отсутствует или устарела, вызывая чрезмерное перемещение данных.  Подробнее о том, как создавать статистику, читайте в [материале «Ведение таблицы»](sql-data-warehouse-tables-statistics.md)<br>- Пространство TempDB выделяется на уровень обслуживания.  [Масштабирование пула S'L](sql-data-warehouse-manage-compute-overview.md#scaling-compute) до более высокого параметра DWU выделяет больше пространства TempDB.|
@@ -50,16 +53,17 @@ ms.locfileid: "80583178"
 | Низкая производительность запросов как результат низкого качества индексов     | Иногда выполнение запросов может замедляться из-за [низкого качества индекса columnstore](sql-data-warehouse-tables-index.md#causes-of-poor-columnstore-index-quality).  Дополнительные сведения см. в статье об индексировании таблиц в разделе, посвященном [повышению качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality). |
 
 ## <a name="system-management"></a>Управление системой
-| Проблема                                                        | Решение                                                   |
+
+| Проблемы                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Сообщение 40847: не удалось выполнить операцию, так как сервер достиг допустимой квоты в 45 000 единиц транзакций базы данных (DTU). | Либо уменьшите значение [DWU](what-is-a-data-warehouse-unit-dwu-cdwu.md) создаваемой базы данных, либо [запросите увеличение квоты](sql-data-warehouse-get-started-create-support-ticket.md). |
-| Анализ использования пространства                              | Сведения об использовании пространства в системе см. в разделе о [запросах размера таблицы]( ../../sql-data-warehouse/sql-data-warehouse-tables-overview.md#table-size-queries). |
+| Анализ использования пространства                              | Сведения об использовании пространства в системе см. в разделе о [запросах размера таблицы](sql-data-warehouse-tables-overview.md#table-size-queries). |
 | Справка по управлению таблицами                                    | Справочную информацию об управлении таблицами см. в статье [Общие сведения о таблицах в хранилище данных SQL](sql-data-warehouse-tables-overview.md).  Дополнительные сведения см. в статьях, посвященных [типам данных таблиц](sql-data-warehouse-tables-data-types.md), [распределению](sql-data-warehouse-tables-distribute.md), [индексированию](sql-data-warehouse-tables-index.md), [секционированию](sql-data-warehouse-tables-partition.md), [управлению статистикой таблиц](sql-data-warehouse-tables-statistics.md) и [временным таблицам](sql-data-warehouse-tables-temporary.md). |
 | Прозрачная панель прогресса шифрования данных (TDE) не обновляется на портале Azure | Состояние прозрачного шифрования данных можно узнать с помощью [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption). |
 
-
 ## <a name="differences-from-sql-database"></a>Отличия от базы данных SQL
-| Проблема                                 | Решение                                                   |
+
+| Проблемы                                 | Решение                                                   |
 | :------------------------------------ | :----------------------------------------------------------- |
 | Неподдерживаемые функции базы данных SQL     | Ознакомьтесь с разделом [Неподдерживаемые функции таблиц](sql-data-warehouse-tables-overview.md#unsupported-table-features). |
 | Неподдерживаемые типы данных базы данных SQL   | Ознакомьтесь с разделом [Неподдерживаемые типы данных](sql-data-warehouse-tables-data-types.md#identify-unsupported-data-types).        |
@@ -68,7 +72,8 @@ ms.locfileid: "80583178"
 | Ограничения хранимых процедур          | Ознакомьтесь с [ограничениями хранимых процедур](sql-data-warehouse-develop-stored-procedures.md#limitations). |
 | Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Сведения о поддерживаемом синтаксисе см. в статье, посвященной инструкции [CREATE FUNCTION](https://docs.microsoft.com/sql/t-sql/statements/create-function-sql-data-warehouse?view=aps-pdw-2016-au7). |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
+
 Ниже перечислены некоторые ресурсы, которые можно использовать для поиска решения вашей проблемы.
 
 * [Блоги](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)

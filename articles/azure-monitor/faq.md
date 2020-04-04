@@ -7,18 +7,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/26/2020
-ms.openlocfilehash: 306d847c2bc5af72d37dbf8bf472a5bae63e9fd5
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: db63ce2d56eb78bf6b361d530511b6902c1cb6d5
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80528499"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637771"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor часто задаваемые вопросы
 
 Этот часто задаваемые вопросы Майкрософт представляет собой список часто задаваемых вопросов о Azure Monitor.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="what-is-azure-monitor"></a>Общие сведения об Azure Monitor
 [Azure Monitor](overview.md) — это служба в Azure, которая обеспечивает мониторинг производительности и доступности приложений и служб в Azure, других облачных средах или на месте. Azure Monitor собирает данные из нескольких источников в общую платформу данных, где их можно анализировать на предмет тенденций и аномалий. Богатые функции Azure Monitor помогают быстро выявлять критические ситуации, которые могут повлиять на ваше приложение, и реагировать на них.
@@ -177,7 +177,7 @@ WireData
 
 
 ### <a name="what-are-the-firewall-requirements-for-azure-monitor-agents"></a>Каковы требования к брандмауэру для агентов Azure Monitor?
-Просмотрите [требования сетевого брандмауэра](platform/log-analytics-agent.md#firewall-requirements)к деталям требований к брандмауэру.
+Просмотрите [требования сетевого брандмауэра](platform/log-analytics-agent.md#network-requirements)к деталям требований к брандмауэру.
 
 
 ## <a name="visualizations"></a>Визуализации
@@ -284,7 +284,7 @@ WireData
 
 * [Azure диагностика](platform/diagnostics-extension-to-application-insights.md)
 * [Импорт в службу аналитики](platform/data-collector-api.md)
-* [Аналитика журнала](platform/data-collector-api.md)
+* [Log Analytics](platform/data-collector-api.md)
 * [Logstash](platform/data-collector-api.md)
 
 ### <a name="can-i-filter-out-or-modify-some-telemetry"></a>Можно ли отфильтровать или изменить некоторые данные телеметрии?
@@ -333,7 +333,7 @@ WireData
 
 Вы можете:
 
-* Используйте два отдельных ключа инструментария (отдельные ресурсы Application Insights) для данных клиента и сервера. либо
+* Используйте два отдельных ключа инструментария (отдельные ресурсы Application Insights) для данных клиента и сервера. Или
 * создать прокси-сервер, работающий на вашем сервере, и передавать данные веб-клиента через него.
 
 ### <a name="how-do-i-see-post-data-in-diagnostic-search"></a><a name="post"></a>Как просмотреть данные POST в колонке «Поиск по журналу диагностики»?
@@ -718,7 +718,7 @@ LogEntry : ({"Hello": "This example has multiple lines:","Docker/Moby": "will no
 ## <a name="next-steps"></a>Дальнейшие действия
 Если на ваш вопрос не ответили здесь, вы можете обратиться к следующим форумам на дополнительные вопросы и ответы.
 
-- [Аналитика журнала](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights)
+- [Log Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights)
 - [Application Insights](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=ApplicationInsights)
 
 Для получения общей обратной связи на Azure Monitor, пожалуйста, посетите [форум обратной связи](https://feedback.azure.com/forums/34192--general-feedback).

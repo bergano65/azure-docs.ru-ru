@@ -11,12 +11,12 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 635b65d16ae9a59816506023d323243f043ce7da
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: e1d0c5cd850fa0dbacf104d3fcd72d83007df878
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350386"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632250"
 ---
 # <a name="restore-an-existing-sql-pool"></a>Восстановление существующего пула S'L
 
@@ -26,7 +26,7 @@ ms.locfileid: "80350386"
 
 **Проверьте ресурсы DTU.** Каждый пул размещается сервером S'L (например, myserver.database.windows.net), который имеет по умолчанию квоту DTU. Проверка сервера S'L имеет достаточно оставшихся dTU квоты для базы данных восстанавливается. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 1. Убедитесь в том, чтобы [установить Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 2. Имейте существующую точку восстановления, которую вы хотите восстановить. Если требуется создать новое восстановление, [см.](sql-data-warehouse-restore-points.md)
@@ -51,7 +51,7 @@ ms.locfileid: "80350386"
 
 7. Убедитесь, что восстановленный пул S'L находится в сети.
 
-8. После завершения восстановления можно настроить восстановленный пул S'L, после [настройки базы данных после восстановления.](../../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery)
+8. После завершения восстановления можно настроить восстановленный пул S'L, после [настройки базы данных после восстановления.](../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery)
 
 ```Powershell
 
@@ -100,7 +100,6 @@ $RestoredDatabase.status
     ![Точки автоматического восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-11.png)
 
 ## <a name="next-steps"></a>Next Steps
+
 - [Восстановление удаленного пула S'L](sql-data-warehouse-restore-deleted-dw.md)
 - [Восстановление из пула георезервного копирования S'L](sql-data-warehouse-restore-from-geo-backup.md)
-
- 

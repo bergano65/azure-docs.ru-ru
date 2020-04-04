@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 03/12/2020
 ms.author: jispar
 ms.reviewer: kumud
-ms.openlocfilehash: 568fc880711d42941fd9aef2ea19b8ac3123793a
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: 7da20a0bf87b33f05ea7f1d457157c5b7ee2ec7b
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80384251"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631514"
 ---
 # <a name="virtual-network-service-tags"></a>Виртуальные сетевые теги обслуживания
 <a name="network-service-tags"></a>
@@ -79,7 +79,7 @@ ms.locfileid: "80384251"
 | **AzureSiteВосстановление** | Восстановление сайта Azure.<br/><br/>*Примечание:* Этот тег имеет зависимость от **AzureActiveDirectory,** **AzureKeyVault**, **EventHub,****GuestAndHybridManagement** и **теги хранения.** | Исходящие | нет | нет |
 | **AzureTrafficManager.** | Azure Traffic Manager зондIP-адреса.<br/><br/>Для получения дополнительной информации об [Azure Traffic Manager FAQ](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs)IP-адресах traffic Manager, см. | Входящий трафик | нет | Да |  
 | **BatchNodeManagement** | Трафик управления для развертывания, посвященный пакету Azure. | both | нет | Да |
-| **CognitiveServicesManagement** | Адрес варьируется для трафика для когнитивных служб Azure. | Исходящие | нет | нет |
+| **CognitiveServicesManagement** | Адрес варьируется для трафика для когнитивных служб Azure. | both | нет | нет |
 | **DataFactory**  | Фабрика данных Azure | both | нет | нет |
 | **DataFactoryManagement** | Трафик управления для фабрики данных Azure. | Исходящие | нет | нет |
 | **Dynamics365ForMarketingEmail** | Адрес диапазонов для маркетинговой электронной почты службы Dynamics 365. | Исходящие | Да | нет |
@@ -124,9 +124,9 @@ ms.locfileid: "80384251"
 ### <a name="use-the-service-tag-discovery-api-public-preview"></a>Используйте API обнаружения тегов службы (публичный предварительный просмотр)
 Вы можете программно получить текущий список тегов услуг вместе с данными диапазона IP-адресов:
 
-- [Остальные](https://docs.microsoft.com/rest/api/virtualnetwork/servicetags/list)
-- [Лазурная силаШелл](https://docs.microsoft.com/powershell/module/az.network/Get-AzNetworkServiceTag?view=azps-2.8.0&viewFallbackFrom=azps-2.3.2)
-- [Лазурный CLI](https://docs.microsoft.com/cli/azure/network?view=azure-cli-latest#az-network-list-service-tags)
+- [REST](https://docs.microsoft.com/rest/api/virtualnetwork/servicetags/list)
+- [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.network/Get-AzNetworkServiceTag?view=azps-2.8.0&viewFallbackFrom=azps-2.3.2)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/network?view=azure-cli-latest#az-network-list-service-tags)
 
 > [!NOTE]
 > В то время как он в общедоступном предварительном просмотре, API обнаружения может вернуть информацию, которая менее актуна, чем информация, возвращенная загрузками JSON. (См. следующий раздел).

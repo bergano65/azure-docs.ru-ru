@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 64e61b00ecebec82b465cb13c6df0e323f6c7777
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 9eacb813c3ddce028fcd9b24c86c6d32ed7a7584
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80586551"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633227"
 ---
 # <a name="monitor-workload---azure-portal"></a>Мониторинг рабочей нагрузки - Портал Azure
 
@@ -24,11 +24,11 @@ ms.locfileid: "80586551"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-- Бассейн S'L: Мы будем собирать журналы для пула S'L. Если у вас нет подготовленного пула S'L, [см.](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-get-started-tutorial)
+- Бассейн S'L: Мы будем собирать журналы для пула S'L. Если у вас нет подготовленного пула S'L, [см.](load-data-from-azure-blob-storage-using-polybase.md)
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
-Перейдите к лезвию просмотра для рабочих областей log Analytics и создайте рабочее пространство 
+Перейдите к лезвию просмотра для рабочих областей log Analytics и создайте рабочее пространство
 
 ![Рабочие области Log Analytics](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspaces.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "80586551"
 
 ![Добавление рабочего пространства Analytics](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace_2.png)
 
-Для получения более подробной информации о рабочих областях, посетите следующую [документацию](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace#create-a-workspace).
+Для получения более подробной информации о рабочих областях, посетите следующую [документацию](../../azure-monitor/learn/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace).
 
 ## <a name="turn-on-diagnostic-logs"></a>Включите диагностические журналы
 
@@ -47,7 +47,6 @@ ms.locfileid: "80586551"
 - [sys.dm_pdw_dms_workers](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-dms-workers-transact-sql?view=aps-pdw-2016-au7)
 - [sys.dm_pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql?view=aps-pdw-2016-au7)
 - [sys.dm_pdw_sql_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-sql-requests-transact-sql?view=aps-pdw-2016-au7)
-
 
 ![Включение журналов диагностики](./media/sql-data-warehouse-monitor-workload-portal/enable_diagnostic_logs.png)
 
@@ -64,39 +63,38 @@ ms.locfileid: "80586551"
 - Создание оповещений журнала
 - Результаты запроса на панели мониторинга
 
-Для получения подробной информации о возможностях журнальных запросов посетите следующую [документацию.](https://docs.microsoft.com/azure/azure-monitor/log-query/query-language)
+Для получения подробной информации о возможностях журнальных запросов посетите следующую [документацию.](../../azure-monitor/log-query/query-language.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 
 ![Редактор рабочего пространства журнала Analytics](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_editor.png)
-
-
 
 ![Запросы рабочего пространства журналов Analytics](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_queries.png)
 
 ## <a name="sample-log-queries"></a>Запросы образцов журналов
 
-
-
 ```Kusto
-//List all queries 
+//List all queries
 AzureDiagnostics
 | where Category contains "ExecRequests"
 | project TimeGenerated, StartTime_t, EndTime_t, Status_s, Command_s, ResourceClass_s, duration=datetime_diff('millisecond',EndTime_t, StartTime_t)
 ```
+
 ```Kusto
 //Chart the most active resource classes
 AzureDiagnostics
 | where Category contains "ExecRequests"
 | where Status_s == "Completed"
 | summarize totalQueries = dcount(RequestId_s) by ResourceClass_s
-| render barchart 
+| render barchart
 ```
+
 ```Kusto
 //Count of all queued queries
 AzureDiagnostics
-| where Category contains "waits" 
+| where Category contains "waits"
 | where Type_s == "UserConcurrencyResourceType"
 | summarize totalQueuedQueries = dcount(RequestId_s)
 ```
-## <a name="next-steps"></a>Следующие шаги
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили и настроили журналы мониторов Azure, [настройте панели мониторинга Azure](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards) для обмена данными в вашей команде.

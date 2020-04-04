@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: eddfcacd01a67fffa8e3e992e021ed1771d25944
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 61c2b914671020b822814fc283b5f2641c2e787b
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79471342"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80657463"
 ---
 # <a name="azure-security-baseline-for-hdinsight"></a>Базовый унизел безопасности Azure для HDInsight
 
@@ -1316,7 +1316,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 Как включить Soft-Delete в Хранилище ключей Azure:
 
-https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 

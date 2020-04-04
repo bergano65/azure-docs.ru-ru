@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: 23e3c9db6302d2db597283358ff71c3693ecf435
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 4/2/2020
+ms.openlocfilehash: 1b79a49b2fb87ebf180aaaa40447f40c5a982c2e
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79530178"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632290"
 ---
 # <a name="create-users-in-azure-database-for-mariadb"></a>Создание пользователей в базе данных Azure для MariaDB 
 В этой статье описывается создание пользователей в базе данных Azure для MariaDB.
@@ -21,6 +21,9 @@ ms.locfileid: "79530178"
 Администратор сервера получает определенные привилегии для выполнения следующих операций на сервере: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER.
 
 После создания сервера базы данных Azure для MariaDB с помощью первой учетной записи администратора сервера можно создать дополнительных пользователей и предоставить им права администратора. Кроме того, учетная запись администратора сервера может использоваться для создания менее привилегированных пользователей, имеющих доступ к отдельным схемам базы данных.
+
+> [!NOTE]
+> Привилегия SUPER и роль DBA не поддерживаются. Просмотрите [привилегии](concepts-limits.md#privilege-support) в статье об ограничениях, чтобы понять, что не поддерживается в службе.
 
 ## <a name="create-additional-admin-users"></a>Создание дополнительных администраторов
 1. Получите сведения о подключении и имя пользователя администратора.

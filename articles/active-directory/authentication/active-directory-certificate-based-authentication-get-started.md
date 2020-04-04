@@ -4,19 +4,19 @@ description: Узнайте, как настроить в своей среде 
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/21/2019
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b57c4f474b0b9def08005f32f48225d36ea8cf1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3a6c44a8253c81b44d02351b2df9c943d9f358f8
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74848839"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80654341"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory
 
@@ -40,7 +40,7 @@ ms.locfileid: "74848839"
 - Корневой центр сертификации и все промежуточные центры сертификации должны быть настроены в Azure Active Directory.
 - У каждого центра сертификации должен быть список отзыва сертификатов (CRL), на который можно сослаться с помощью URL-адреса для Интернета.
 - В Azure Active Directory должен быть настроен хотя бы один центр сертификации. Соответствующие действия описаны в разделе [Настройка центров сертификации](#step-2-configure-the-certificate-authorities).
-- Для клиентов Exchange ActiveSync: в сертификате клиента в поле "Альтернативное имя субъекта" в качестве значения имени субъекта или имени RFC822 должен быть указан маршрутизируемый адрес электронной почты пользователя в Exchange Online. Azure Active Directory сопоставляет значение RFC822 с атрибутом прокси-адреса в каталоге.
+- Для клиентов Exchange ActiveSync, сертификат клиента должен иметь адрес электронной почты пользователя в Exchange онлайн в любом случае основное имя или RFC822 Название значение поля альтернативного имени субъекта. Azure Active Directory сопоставляет значение RFC822 с атрибутом прокси-адреса в каталоге.
 - Устройство клиента должно иметь доступ хотя бы к одному центру сертификации, выдающему сертификаты клиента.
 - Для аутентификации вашего клиента должен быть выдан сертификат клиента.
 

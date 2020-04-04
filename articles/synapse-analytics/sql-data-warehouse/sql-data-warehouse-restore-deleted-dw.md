@@ -11,18 +11,18 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 5f0432cafee07dbed071d24aa8c24ee9b2176967
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 251fdb83e848aaac3a5391320df23149ce1bce33
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350178"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633048"
 ---
 # <a name="restore-a-deleted-sql-pool-using-azure-synapse-analytics"></a>Восстановление удаленного пула S'L с помощью аналитики Azure Synapse
 
 В этой статье вы научитесь восстанавливать S'L с помощью портала Azure или PowerShell.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -39,16 +39,16 @@ ms.locfileid: "80350178"
 5. Получите специальный удаленный хранилище данных.
 6. Восстановление удаленного хранилища данных
     1. Чтобы восстановить удаленный хранилище данных S'L на другом логическом сервере, не забудьте указать другое логическое имя сервера.  Этот логический сервер также может находиться в другой группе ресурсов и регионе.
-    1. Чтобы восстановить другую подписку, используйте кнопку [Move](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources#use-the-portal) для перемещения логического сервера в другую подписку.
-1. Убедитесь, что восстановленный хранилище данных находится в режиме онлайн.
-1. После завершения восстановления можно настроить восстановленный хранилище данных, после [настройки базы данных после восстановления.](../../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery)
+    1. Чтобы восстановить другую подписку, используйте кнопку [Move](../../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#use-the-portal) для перемещения логического сервера в другую подписку.
+7. Убедитесь, что восстановленный хранилище данных находится в режиме онлайн.
+8. После завершения восстановления можно настроить восстановленный хранилище данных, после [настройки базы данных после восстановления.](../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery)
 
 ```Powershell
 $SubscriptionName="<YourSubscriptionName>"
 $ResourceGroupName="<YourResourceGroupName>"
 $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
 #$TargetResourceGroupName="<YourTargetResourceGroupName>" # uncomment to restore to a different logical server.
-#$TargetServerName="<YourtargetServerNameWithoutURLSuffixSeeNote>" 
+#$TargetServerName="<YourtargetServerNameWithoutURLSuffixSeeNote>"
 $DatabaseName="<YourDatabaseName>"
 $NewDatabaseName="<YourDatabaseName>"
 
@@ -86,5 +86,6 @@ $RestoredDatabase.status
     ![Указание нового имени базы данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-21.png)
 
 ## <a name="next-steps"></a>Next Steps
+
 - [Восстановление существующего пула S'L](sql-data-warehouse-restore-active-paused-dw.md)
 - [Восстановление из пула георезервного копирования S'L](sql-data-warehouse-restore-from-geo-backup.md)

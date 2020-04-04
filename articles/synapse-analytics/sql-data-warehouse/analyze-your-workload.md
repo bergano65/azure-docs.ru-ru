@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: d10a642f9309e4bb93368564488fc75be15fa27c
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 6a38fe65b4aedf4f594531f5e9cd8cf9b5dfaac7
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80586083"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631236"
 ---
 # <a name="analyze-your-workload-in-azure-synapse-analytics"></a>Проанализируйте рабочую нагрузку в Azure Synapse Analytics
 
@@ -68,7 +68,7 @@ WHERE   r.name IN ('mediumrc','largerc','xlargerc')
 * **LocalQueriesConcurrencyResourceType**относится к запросам, которые не входят в платформу слотов выдачи. В качестве примеров таких запросов можно привести запросы и системные функции динамических административных представлений, такие как `SELECT @@VERSION` .
 * **UserConcurrencyResourceType**относится к запросам, которые входят в платформу слотов выдачи. В качестве примеров использования этого типа ресурсов можно привести запросы к таблицам пользователя.
 * **DmsConcurrencyResourceType**относится к ожиданиям, связанным с операциями перемещения данных.
-* **BackupConcurrencyResourceType**может использоваться при создании резервной копии базы данных. Максимальное значение для этого типа ресурсов равно 1. При одновременном запросе сразу нескольких резервных копий все остальные запросы помещаются в очередь. Как правило, мы рекомендуем минимальное время между последовательными снимками 10 минут. 
+* **BackupConcurrencyResourceType**может использоваться при создании резервной копии базы данных. Максимальное значение для этого типа ресурсов равно 1. При одновременном запросе сразу нескольких резервных копий все остальные запросы помещаются в очередь. Как правило, мы рекомендуем минимальное время между последовательными снимками 10 минут.
 
 Определить, какие ресурсы необходимы для запроса, можно при помощи динамического административного представления `sys.dm_pdw_waits` .
 
@@ -151,6 +151,6 @@ FROM    sys.dm_pdw_wait_stats w
 ;
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительной информации об управлении пользователями баз данных и безопасности, [см.](sql-data-warehouse-overview-manage-security.md) Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в разделе [Повышение качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).

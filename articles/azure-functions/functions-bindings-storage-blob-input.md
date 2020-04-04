@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
-ms.openlocfilehash: e074d7d74c0c5f020cb8086124634b25012927db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 33db9a8d86e02db2076cdb85170d466697930b96
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77202155"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633883"
 ---
 # <a name="azure-blob-storage-input-binding-for-azure-functions"></a>Привязка ввода хранилища Azure Blob для функций Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "77202155"
 
 ## <a name="example"></a>Пример
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Ниже приведен пример [функции C#](functions-dotnet-class-library.md), которая использует триггер очереди и входную привязку большого двоичного объекта. Сообщение в очереди содержит имя большого двоичного объекта, а функция записывает в журнал размер большого двоичного объекта.
 
@@ -84,7 +84,7 @@ public static void Run(string myQueueItem, string myInputBlob, out string myOutp
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 <!--Same example for input and output. -->
 
@@ -154,6 +154,7 @@ module.exports = function(context) {
     {
       "name": "inputblob",
       "type": "blob",
+      "dataType": "binary",
       "path": "samples-workitems/{queueTrigger}",
       "connection": "MyStorageConnectionAppSetting",
       "direction": "in"
@@ -245,7 +246,7 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.Input
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [BlobAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobAttribute.cs).
 
@@ -282,7 +283,7 @@ public static void Run(
 
 Атрибуты не поддерживаются скриптом C'.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются JavaScript.
 
@@ -305,7 +306,7 @@ public static void Run(
 |**тип** | Недоступно | Нужно задать значение `blob`. |
 |**direction** | Недоступно | Нужно задать значение `in`. Исключения приведены в этом [разделе](#usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.|
-|**Путь** |**BlobPath** | Путь к BLOB-объекту. |
+|**path** |**BlobPath** | Путь к BLOB-объекту. |
 |**Подключения** |**Подключения**| Название параметра приложения, содержащего [строку подключения хранилища](../storage/common/storage-configure-connection-string.md) для использования для этого связывания. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если `connection` вы установите "MyStorage", время выполнения функций ищет настройки приложения, которые называются "AzureWebWebJobsMyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 |Недоступно | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
@@ -313,7 +314,7 @@ public static void Run(
 
 ## <a name="usage"></a>Использование
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 [!INCLUDE [functions-bindings-blob-storage-input-usage.md](../../includes/functions-bindings-blob-storage-input-usage.md)]
 
@@ -321,7 +322,7 @@ public static void Run(
 
 [!INCLUDE [functions-bindings-blob-storage-input-usage.md](../../includes/functions-bindings-blob-storage-input-usage.md)]
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к данным `context.bindings.<NAME>` `<NAME>` blob, используя, где соответствует значению, определенному в *function.json*.
 

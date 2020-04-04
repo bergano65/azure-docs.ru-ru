@@ -11,12 +11,12 @@ ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 637e377e469eeb1a82b6c0ad3a845d94ac09c7db
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 3299aa8ed85cff5c29d043d30aac08db45ffe5d4
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351198"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632273"
 ---
 # <a name="optimize-performance-by-upgrading-azure-synapse-analytics-sql-pool"></a>Оптимизация производительности за счет обновления пула Azure Synapse Analytics S'L
 
@@ -24,15 +24,14 @@ ms.locfileid: "80351198"
 
 ## <a name="why-upgrade"></a>Зачем выполнять обновление
 
-Теперь можно плавно перейти на уровень оптимизированного уровня «Компьютер Gen2» на портале Azure для [поддерживаемых регионов.](gen2-migration-schedule.md#automated-schedule-and-region-availability-table) Если ваш регион не поддерживает самостоятельное обновление, можно перейти на поддерживаемый регион или дождаться, когда функция самостоятельного обновления станет доступна в вашем регионе. Выполните обновление сейчас, чтобы воспользоваться преимуществами последнего поколения оборудования Azure и усовершенствованной архитектуры хранилища, включая повышенную производительность, масштабируемость и неограниченное хранение по столбцам. 
+Теперь можно плавно перейти на уровень оптимизированного уровня «Компьютер Gen2» на портале Azure для [поддерживаемых регионов.](gen2-migration-schedule.md#automated-schedule-and-region-availability-table) Если ваш регион не поддерживает самостоятельное обновление, можно перейти на поддерживаемый регион или дождаться, когда функция самостоятельного обновления станет доступна в вашем регионе. Выполните обновление сейчас, чтобы воспользоваться преимуществами последнего поколения оборудования Azure и усовершенствованной архитектуры хранилища, включая повышенную производительность, масштабируемость и неограниченное хранение по столбцам.
 
 > [!VIDEO https://www.youtube.com/embed/9B2F0gLoyss]
 
-## <a name="applies-to"></a>Применяется к
+> [!IMPORTANT]
+> Это обновление относится к пулам вычислительного оптимизированного уровня Gen1 в [поддерживаемых регионах.](gen2-migration-schedule.md#automated-schedule-and-region-availability-table)
 
-Это обновление относится к пулам вычислительного оптимизированного уровня Gen1 в [поддерживаемых регионах.](gen2-migration-schedule.md#automated-schedule-and-region-availability-table)
-
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 1. Проверьте, поддерживает ли ваш [регион](gen2-migration-schedule.md#automated-schedule-and-region-availability-table) перенос хранилища 1-го поколения в хранилище 2-го поколения. Обратите внимание на даты автоматического переноса. Чтобы избежать конфликтов с автоматизированным процессом, запланируйте ручной перенос на дату, предшествующую дате запуска автоматизированного процесса.
 2. Если вы находитесь в регионе, который еще не поддерживается, регулярно проверяйте, не был ли ваш регион добавлен в список поддерживаемых, или выполните [обновление с помощью восстановления](#upgrade-from-an-azure-geographical-region-using-restore-through-the-azure-portal) в поддерживаемый регион.
@@ -54,28 +53,26 @@ ms.locfileid: "80351198"
    |           DW3000            |           DW3000c           |
    |           DW6000            |           DW6000c           |
 
-> [!Note]
+> [!NOTE]
 > Предлагаемые уровни производительности не гарантируют прямое преобразование. Например, мы рекомендуем перейти с DW600 на DW500c.
 
 ## <a name="upgrade-in-a-supported-region-using-the-azure-portal"></a>Обновление в поддерживаемом регионе с помощью портала Azure
 
-## <a name="before-you-begin"></a>Перед началом
+- Миграция с Gen1 в Gen2 через портал Azure является постоянной. Существует не процесс возвращения в Gen1.
+- Для перехода в Gen2 должен быть запущен пул S'L
+
+### <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-> [!NOTE]
-> Миграция с Gen1 в Gen2 через портал Azure является постоянной. Существует не процесс возвращения в Gen1.  
+- Войдите на [портал Azure](https://portal.azure.com/).
+- Убедитесь, что пул S'L работает - он должен быть для перехода на Gen2
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-
-Войдите на [портал Azure](https://portal.azure.com/).
+### <a name="powershell-upgrade-commands"></a>Команды обновления PowerShell
 
 1. Если переутим пул вычислительного оптимизированного уровня Gen1, который будет обновлен, [возобновится, возобновите пул S'L.](pause-and-resume-compute-portal.md)
 
-   > [!NOTE]
-   > Для перехода на Gen2 должен быть запущен пул S'L.
-
-2. Будьте готовы к непродолжительному простою. 
+2. Будьте готовы к непродолжительному простою.
 
 3. Определите все ссылки на код, связанные с уровнями производительности 1-го поколения "Оптимизировано для вычислений" и измените их на эквивалентный уровень производительности 2-го поколения "Оптимизировано для вычислений" Ниже представлены два примера, в которых нужно обновить ссылки на код перед обновлением:
 
@@ -91,7 +88,7 @@ ms.locfileid: "80351198"
    Set-AzSqlDatabase -ResourceGroupName "myResourceGroup" -DatabaseName "mySampleDataWarehouse" -ServerName "mynewserver-20171113" -RequestedServiceObjectiveName "DW300c"
    ```
 
-   > [!NOTE] 
+   > [!NOTE]
    > -RequestedServiceObjectiveName "DW300" изменено на -RequestedServiceObjectiveName "DW300**c**"
    >
 
@@ -104,19 +101,20 @@ ms.locfileid: "80351198"
    Изменено на:
 
    ```sql
-   ALTER DATABASE mySampleDataWarehouse MODIFY (SERVICE_OBJECTIVE = 'DW300c') ; 
+   ALTER DATABASE mySampleDataWarehouse MODIFY (SERVICE_OBJECTIVE = 'DW300c') ;
    ```
-   > [!NOTE] 
+
+   > [!NOTE]
    > SERVICE_OBJECTIVE = 'DW300' изменено на SERVICE_OBJECTIVE = 'DW300**c**'
 
 ## <a name="start-the-upgrade"></a>Начало обновления
 
-1. Перейдите в свой оптимизированный пул Gen1 СЗЛ на портале Azure. Если переутим пул вычислительного оптимизированного уровня Gen1, который будет обновлен, [возобновится, возобновите пул S'L.](pause-and-resume-compute-portal.md) 
+1. Перейдите в свой оптимизированный пул Gen1 СЗЛ на портале Azure. Если переутим пул вычислительного оптимизированного уровня Gen1, который будет обновлен, [возобновится, возобновите пул S'L.](pause-and-resume-compute-portal.md)
 2. Выберите обновление до карты **Gen2** под вкладкой Задачи: ![Upgrade_1](./media/upgrade-to-latest-generation/upgrade-to-gen2-1.png)
-    
-    > [!NOTE]
-    > Если карта **Повысить до Gen2** не отображается на вкладке "Задачи", для типа вашей подписки действуют ограничения в текущем регионе.
-    > [Отправьте запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) на добавление вашей подписки в список разрешений.
+
+   > [!NOTE]
+   > Если карта **Повысить до Gen2** не отображается на вкладке "Задачи", для типа вашей подписки действуют ограничения в текущем регионе.
+   > [Отправьте запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) на добавление вашей подписки в список разрешений.
 
 3. Перед обновлением убедитесь, что рабочая нагрузка завершена и приостановлена. Вы будете испытывать простои в течение нескольких минут, прежде чем ваш пул S'L снова в сети, как вычислительный оптимизированный Gen2 уровня S'L бассейн. Выберите **Обновить**.
 
@@ -126,58 +124,58 @@ ms.locfileid: "80351198"
 
    ![Upgrade3](./media/upgrade-to-latest-generation/upgrade-to-gen2-3.png)
 
-   Первым шагом процесса обновления является масштабирование ("Обновление — автономный режим"), при котором все сеансы будут прерваны, а соединение разорвано. 
+   Первым шагом процесса обновления является масштабирование ("Обновление — автономный режим"), при котором все сеансы будут прерваны, а соединение разорвано.
 
-   Второй шаг процесса обновления — перенос данных ("Обновление — в сети"). Перенос данных является малозаметным фоновым сетевым процессом. Он медленно перемещает данные столбцов из старой архитектуры службы хранилища в новую архитектуру службы хранилища, использующую локальный кэш SSD. В течение этого времени ваш пул S'L будет находиться в режиме онлайн для запросов и загрузки. При этом все данные будут доступны для запросов, вне зависимости от того, были ли они перенесены. Перенос данных происходит с разной скоростью в зависимости от их размера, уровня производительности и количества сегментов columnstore. 
+   Второй шаг процесса обновления — перенос данных ("Обновление — в сети"). Перенос данных является малозаметным фоновым сетевым процессом. Он медленно перемещает данные столбцов из старой архитектуры службы хранилища в новую архитектуру службы хранилища, использующую локальный кэш SSD. В течение этого времени ваш пул S'L будет находиться в режиме онлайн для запросов и загрузки. При этом все данные будут доступны для запросов, вне зависимости от того, были ли они перенесены. Перенос данных происходит с разной скоростью в зависимости от их размера, уровня производительности и количества сегментов columnstore.
 
 5. **Дополнительная рекомендация:** После завершения операции масштабирования можно ускорить процесс обработки данных. Вы можете сразу инициировать перемещение данных, выполнив инструкцию [Alter Index rebuild](sql-data-warehouse-tables-index.md) для всех основных таблиц columnstore, которые вы сможете запрашивать при наличии более высокого целевого уровня обслуживания и оптимального класса ресурсов. Эта операция является **автономной** по сравнению с малозаметным фоновым процессом, который может потребовать несколько часов в зависимости от количества и размеров таблиц. Тем не менее после завершения этой операции перенос данных будет происходить намного быстрее благодаря новой улучшенной архитектуре хранилища с высококачественными группами строк.
- 
+
 > [!NOTE]
 > Операция "Alter Index rebuild" — это автономная операция. Таблицы будут недоступны до завершения повторной сборки.
 
 Следующий запрос формирует необходимые команды Alter Index Rebuild для ускорения процесса переноса данных.
 
 ```sql
-SELECT 'ALTER INDEX [' + idx.NAME + '] ON [' 
-       + Schema_name(tbl.schema_id) + '].[' 
-       + Object_name(idx.object_id) + '] REBUILD ' + ( CASE 
-                                                         WHEN ( 
-                                                     (SELECT Count(*) 
-                                                      FROM   sys.partitions 
-                                                             part2 
-                                                      WHERE  part2.index_id 
-                                                             = idx.index_id 
-                                                             AND 
-                                                     idx.object_id = 
-                                                     part2.object_id) 
-                                                     > 1 ) THEN 
-              ' PARTITION = ' 
-              + Cast(part.partition_number AS NVARCHAR(256)) 
-              ELSE '' 
-                                                       END ) + '; SELECT ''[' + 
-              idx.NAME + '] ON [' + Schema_name(tbl.schema_id) + '].[' + 
-              Object_name(idx.object_id) + '] ' + ( 
-              CASE 
-                WHEN ( (SELECT Count(*) 
-                        FROM   sys.partitions 
-                               part2 
-                        WHERE 
-                     part2.index_id = 
-                     idx.index_id 
-                     AND idx.object_id 
-                         = part2.object_id) > 1 ) THEN 
-              ' PARTITION = ' 
-              + Cast(part.partition_number AS NVARCHAR(256)) 
-              + ' completed'';' 
-              ELSE ' completed'';' 
-                                                    END ) 
-FROM   sys.indexes idx 
-       INNER JOIN sys.tables tbl 
-               ON idx.object_id = tbl.object_id 
-       LEFT OUTER JOIN sys.partitions part 
-                    ON idx.index_id = part.index_id 
-                       AND idx.object_id = part.object_id 
-WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE'; 
+SELECT 'ALTER INDEX [' + idx.NAME + '] ON ['
+       + Schema_name(tbl.schema_id) + '].['
+       + Object_name(idx.object_id) + '] REBUILD ' + ( CASE
+                                                         WHEN (
+                                                     (SELECT Count(*)
+                                                      FROM   sys.partitions
+                                                             part2
+                                                      WHERE  part2.index_id
+                                                             = idx.index_id
+                                                             AND
+                                                     idx.object_id =
+                                                     part2.object_id)
+                                                     > 1 ) THEN
+              ' PARTITION = '
+              + Cast(part.partition_number AS NVARCHAR(256))
+              ELSE ''
+                                                       END ) + '; SELECT ''[' +
+              idx.NAME + '] ON [' + Schema_name(tbl.schema_id) + '].[' +
+              Object_name(idx.object_id) + '] ' + (
+              CASE
+                WHEN ( (SELECT Count(*)
+                        FROM   sys.partitions
+                               part2
+                        WHERE
+                     part2.index_id =
+                     idx.index_id
+                     AND idx.object_id
+                         = part2.object_id) > 1 ) THEN
+              ' PARTITION = '
+              + Cast(part.partition_number AS NVARCHAR(256))
+              + ' completed'';'
+              ELSE ' completed'';'
+                                                    END )
+FROM   sys.indexes idx
+       INNER JOIN sys.tables tbl
+               ON idx.object_id = tbl.object_id
+       LEFT OUTER JOIN sys.partitions part
+                    ON idx.index_id = part.index_id
+                       AND idx.object_id = part.object_id
+WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 ```
 
 ## <a name="upgrade-from-an-azure-geographical-region-using-restore-through-the-azure-portal"></a>Обновление из географического региона Azure с помощью восстановления на портале Azure
@@ -204,7 +202,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 
     ![ Обзор восстановления](./media/upgrade-to-latest-generation/restoring_0.png)
 
-4. Выберите либо **автоматические точки восстановления,** либо **определенные пользователем точки восстановления.** Для точек восстановления, определяемых пользователем, **выберите определяемую пользователем точку восстановления** или **создайте новую точку восстановления, определяемую пользователем.** Для сервера выберите **Создать новый** и выбрать сервер в поддерживаемом Gen2 географическом регионе. 
+4. Выберите либо **автоматические точки восстановления,** либо **определенные пользователем точки восстановления.** Для точек восстановления, определяемых пользователем, **выберите определяемую пользователем точку восстановления** или **создайте новую точку восстановления, определяемую пользователем.** Для сервера выберите **Создать новый** и выбрать сервер в поддерживаемом Gen2 географическом регионе.
 
     ![Точки автоматического восстановления](./media/upgrade-to-latest-generation/restoring_1.png)
 
@@ -240,10 +238,9 @@ $GeoRestoredDatabase.status
 ```
 
 > [!NOTE]
-> Чтобы настроить базу данных после восстановления, см. раздел [Настройка базы данных после восстановления](../../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery).
+> Чтобы настроить базу данных после восстановления, см. раздел [Настройка базы данных после восстановления](../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
 
 Восстановленная база данных будет поддерживать прозрачное шифрование данных, если исходная база данных поддерживает прозрачное шифрование данных.
-
 
 Если у вас возникли какие-либо проблемы с пулом S'L, создайте [запрос на поддержку](sql-data-warehouse-get-started-create-support-ticket.md) и ссылку "Gen2 обновление" в качестве возможной причины.
 

@@ -11,18 +11,18 @@ ms.date: 07/12/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 4390ed39c86e041d3fbd776415f0ffbe71f605bd
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 68d53d2a33b7ab705dfa88f03618a5d5a3d1bced
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350170"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633040"
 ---
 # <a name="geo-restore-for-sql-pool"></a>Гео-восстановление для бассейна S'L
 
 В этой статье вы научитесь восстанавливать свой пул s'L из гео-резервного копирования через портал Azure и PowerShell.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -38,12 +38,12 @@ ms.locfileid: "80350170"
 
 1. Перед тем, как начать, не забудьте [установить Azure PowerShell.](https://docs.microsoft.com/powershell/azure/overview)
 2. Откройте PowerShell.
-2. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
-3. Выберите подписку, содержащую хранилище данных, подкоторыминое восстановление.
-4. Получите хранилище данных, который вы хотите восстановить.
-5. Создайте запрос на восстановление хранилища данных.
-6. Проверьте состояние геовосстановленного хранилища данных.
-7. Чтобы настроить хранилище данных после восстановления, см. раздел [Настройка базы данных после восстановления]( ../../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery).
+3. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
+4. Выберите подписку, содержащую хранилище данных, подкоторыминое восстановление.
+5. Получите хранилище данных, который вы хотите восстановить.
+6. Создайте запрос на восстановление хранилища данных.
+7. Проверьте состояние геовосстановленного хранилища данных.
+8. Чтобы настроить хранилище данных после восстановления, см. раздел [Настройка базы данных после восстановления]( ../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
 
 ```Powershell
 $SubscriptionName="<YourSubscriptionName>"
@@ -77,24 +77,25 @@ $GeoRestoredDatabase.status
 Выполните последующие действия, изложенные ниже, чтобы восстановить пул S'L из гео-резервного копирования:
 
 1. Вопийте на свой [портал Azure.](https://portal.azure.com/)
-1. Щелкните **+ Create a resource** (+ Создать ресурс). 
+2. Щелкните **+ Create a resource** (+ Создать ресурс).
 
-![Новый DW](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
+   ![Новый DW](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
 
 3. Нажмите **на базы данных,** а затем — аналитика Azure Synapse (ранее S'L DW).
 
-![Новый DW 2](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new-02.png)
+   ![Новый DW 2](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new-02.png)
 
 4. Заполните информацию, запрашиваемую во вкладке **Основы,** и нажмите **Далее: Дополнительные настройки.**
 
-![Основы](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
+   ![Основы](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
 
 5. Для **использования существующего** параметра данных выберите **резервное копирование** и выберите соответствующую резервную приготовитечку из параметров прокрутки вниз. Нажмите **Обзор и Создайте**.
- 
-![резервная копия](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
+
+   ![резервная копия](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
 
 6. После восстановления хранилища данных убедитесь, что **статус** находится в сети.
 
 ## <a name="next-steps"></a>Next Steps
+
 - [Восстановление существующего пула S'L](sql-data-warehouse-restore-active-paused-dw.md)
 - [Восстановление удаленного пула S'L](sql-data-warehouse-restore-deleted-dw.md)

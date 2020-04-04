@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/22/2017
-ms.openlocfilehash: 110a684cf6ad21c13411d3bc2ada84750744f00e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5e0dcd478c6eb6696a0e07d35d4dccddac68ac1c
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77191409"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656238"
 ---
 # <a name="increase-security-for-calls-to-custom-apis-from-azure-logic-apps"></a>Повысить безопасность вызовов пользовательских AI из приложений логики Azure
 
@@ -250,7 +250,7 @@ ms.locfileid: "77191409"
 
 | Свойство | Обязательно | Описание |
 | -------- | -------- | ----------- |
-| `type` | Да | Тип проверки подлинности. Для SSL-сертификатов клиента используйте значение `ClientCertificate`. |
+| `type` | Да | Тип проверки подлинности. Для сертификатов клиентов TLS/SSL `ClientCertificate`значение должно быть. |
 | `password` | нет | Пароль для доступа к сертификату клиента (PFX-файл). |
 | `pfx` | Да | Содержимое сертификата клиента в кодировке Base64 (PFX-файл). |
 ||||

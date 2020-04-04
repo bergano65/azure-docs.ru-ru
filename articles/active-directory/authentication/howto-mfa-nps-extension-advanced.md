@@ -4,19 +4,19 @@ description: После установки расширения NPS выполн
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/11/2018
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ea5b4f52fc161cb8359ef56e76e0607459d6280
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 34d92af88106151e7efba679c53c5b5bd1c07dcd
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74848363"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80653784"
 ---
 # <a name="advanced-configuration-options-for-the-nps-extension-for-multi-factor-authentication"></a>Параметры расширенной конфигурации расширения NPS для Многофакторной идентификации
 
@@ -30,7 +30,7 @@ ms.locfileid: "74848363"
 
 Чтобы настроить альтернативные имена пользователей, перейдите к `HKLM\SOFTWARE\Microsoft\AzureMfa` и измените следующие значения реестра:
 
-| name | Тип | Значение по умолчанию | Описание |
+| name | Type | Значение по умолчанию | Описание |
 | ---- | ---- | ------------- | ----------- |
 | LDAP_ALTERNATE_LOGINID_ATTRIBUTE | строка | Empty | Укажите имя атрибута Active Directory, которое нужно использовать вместо имени участника-пользователя. Этот атрибут используется в качестве атрибута AlternateLoginId. Если это значение реестра указано как [допустимый атрибут Active Directory](https://msdn.microsoft.com/library/ms675090.aspx) (например, mail или displayName), тогда значение атрибута используется вместо имени участника-пользователя для проверки подлинности. Если значение реестра пустое или не настроено, тогда AlternateLoginId отключен и имя участника-пользователя используется для проверки подлинности. |
 | LDAP_FORCE_GLOBAL_CATALOG | Логическое | False | Используйте этот параметр, чтобы принудительно использовать глобальный каталог для поисков LDAP при поиске AlternateLoginId. Настройте контроллер домена в качестве глобального каталога, добавьте для него атрибут AlternateLoginId, а затем включите этот параметр. <br><br> Если LDAP_LOOKUP_FORESTS настроен (не пустой), **этот параметр будет устанавливаться со значением TRUE** независимо от значения параметра реестра. В этом случае расширению NPS требуется глобальный каталог с настроенным атрибутом AlternateLoginId для каждого леса. |
@@ -44,7 +44,7 @@ ms.locfileid: "74848363"
 
 Чтобы настроить список разрешенных `HKLM\SOFTWARE\Microsoft\AzureMfa` испот, перейдите и назначаем следующее значение реестра:
 
-| name | Тип | Значение по умолчанию | Описание |
+| name | Type | Значение по умолчанию | Описание |
 | ---- | ---- | ------------- | ----------- |
 | IP_WHITELIST | строка | Empty | Предоставьте список разделенных точкой с запятой IP-адресов. Включите в него IP-адреса компьютеров, где создаются запросы к службе, например NAS- или VPN-сервер. Диапазоны и подсети IP не поддерживаются. <br><br> Например, *10.0.0.1;10.0.0.2;10.0.0.3*.
 

@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: 0a9c32affc50a6d357d4160e00486c896d762e3f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a6030cbb756525137497834ac911835033858401
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75385819"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80652082"
 ---
 # <a name="customize-the-lifecycle-of-a-web-or-worker-role-in-net"></a>Адаптируйте жизненный цикл веб-роли или рабочей роли в .NET
 Создавая рабочую роль, вы расширяете класс [RoleEntryPoint](/previous-versions/azure/reference/ee758619(v=azure.100)) , который предоставляет вам методы переопределения, которые позволяют реагировать на события жизненного цикла. Этот класс необязателен для веб-ролей, поэтому его следует использовать для реагирования на события жизненного цикла.
@@ -23,7 +23,7 @@ ms.locfileid: "75385819"
 
 При расширении класса **RoleEntryPoint** следует помнить о поведении следующих методов.
 
-* Методы [OnStart](/previous-versions/azure/reference/ee772851(v=azure.100)) и [OnStop](/previous-versions/azure/reference/ee772844(v=azure.100)) возвращают логическое значение, и эти методы могут вернуть значение **false**.
+* Метод [OnStart](/previous-versions/azure/reference/ee772851(v=azure.100)) возвращает значение boolean, так что можно вернуть **ложное** из этого метода.
   
    Если код возвращает **false**, роль процесса немедленно завершается без запуска процессов завершения имеющихся последовательностей. В большинстве случаев нужно избегать возвращения значения **false** из метода **OnStart**.
 * Любое непойманное исключение из перегрузки метода **RoleEntryPoint** считается необработанным исключением.

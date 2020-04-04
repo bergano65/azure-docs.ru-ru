@@ -3,12 +3,12 @@ title: IP-адреса в Функциях Azure
 description: Узнайте, как найти входящий и исходящие IP-адреса для приложений-функций, и по каким причинам они изменяются.
 ms.topic: conceptual
 ms.date: 12/03/2018
-ms.openlocfilehash: a1c4174b8f1f2349cbd35c32cbee468ee5b4cd4a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bfd2d573e0a1c78d0ef4c68be224f92e8f689f62
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79276495"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656780"
 ---
 # <a name="ip-addresses-in-azure-functions"></a>IP-адреса в Функциях Azure
 
@@ -86,7 +86,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 
 - удалите приложение-функцию и создадите его заново в другой группе ресурсов;
 - удалите последнее приложение-функцию с некоторым сочетанием группы ресурсов и региона и создадите его заново;
-- Удалите привязку SSL, например, во время [обновления сертификата.](../app-service/configure-ssl-certificate.md#renew-certificate)
+- Удалите привязку TLS, например, во время [обновления сертификата.](../app-service/configure-ssl-certificate.md#renew-certificate)
 
 Когда приложение функции работает в [плане потребления,](functions-scale.md#consumption-plan)входящий IP-адрес может также измениться, даже если вы не предприняли никаких действий, таких как [те, которые перечислены выше.](#inbound-ip-address-changes)
 

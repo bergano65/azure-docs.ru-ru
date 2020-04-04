@@ -4,12 +4,12 @@ description: Мониторинг топологий сложных прилож
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: dce2fdbe7e0c390309be38d2ebab4c73dbb4ed2e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0823dd5d880c778f9b7a231ac14f1cbba1940927
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77666281"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80657393"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -85,7 +85,7 @@ ms.locfileid: "77666281"
 
 Карта приложений использует свойство **имени роли облака** для идентификации компонентов на карте. SDK Application Insights автоматически добавляет свойство имени роли облака в телеметрию, излучаемую компонентами. Например, SDK добавит имя веб-сайта или имя роли службы в свойство имени роли облака. Но бывают случаи, когда необходимо переопределить значение по умолчанию. Чтобы переопределить имя роли облака и изменить то, что отображается на карте приложений:
 
-### <a name="netnet-core"></a>.NET/.NET Core
+# <a name="netnetcore"></a>[.NET/.NetCore](#tab/net)
 
 **Напишите пользовательские Телеметрия Initializer как унаситритель, как ниже.**
 
@@ -153,7 +153,26 @@ namespace CustomInitializer.Telemetry
 }
 ```
 
-### <a name="nodejs"></a>Node.js
+# <a name="java"></a>[Java](#tab/java)
+
+Начиная с Application Insights Java SDK 2.5.0, вы `<RoleName>` можете `ApplicationInsights.xml` указать имя роли облака, добавив в файл, например.
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" schemaVersion="2014-05-30">
+   <InstrumentationKey>** Your instrumentation key **</InstrumentationKey>
+   <RoleName>** Your role name **</RoleName>
+   ...
+</ApplicationInsights>
+```
+
+Если вы используете Spring Boot с начальным набором Application Insights Spring Boot, все, что необходимо изменить, — задать пользовательское имя приложения в файле application.properties.
+
+`spring.application.name=<name-of-app>`
+
+Стартер Spring Boot автоматически присвоит имя роли облака значению, которое вы вводите для spring.application.name свойства.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
 ```javascript
 var appInsights = require("applicationinsights");
@@ -174,26 +193,7 @@ appInsights.defaultClient.addTelemetryProcessor(envelope => {
 });
 ```
 
-### <a name="java"></a>Java
-
-Начиная с Application Insights Java SDK 2.5.0, вы `<RoleName>` можете `ApplicationInsights.xml` указать имя роли облака, добавив в файл, например.
-
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" schemaVersion="2014-05-30">
-   <InstrumentationKey>** Your instrumentation key **</InstrumentationKey>
-   <RoleName>** Your role name **</RoleName>
-   ...
-</ApplicationInsights>
-```
-
-Если вы используете Spring Boot с начальным набором Application Insights Spring Boot, все, что необходимо изменить, — задать пользовательское имя приложения в файле application.properties.
-
-`spring.application.name=<name-of-app>`
-
-Стартер Spring Boot автоматически присвоит имя роли облака значению, которое вы вводите для spring.application.name свойства.
-
-### <a name="clientbrowser-side-javascript"></a>JavaScript на стороне клиента или браузера
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 appInsights.queue.push(() => {
@@ -203,6 +203,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 });
 });
 ```
+---
 
 ### <a name="understanding-cloud-role-name-within-the-context-of-the-application-map"></a>Понимание имени роли облака в контексте Карты Приложений
 
@@ -236,7 +237,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общее
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
@@ -254,7 +255,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Карта приложения конструирует узло приложения для каждого уникального имени роли облака, присутствующем узло в телеметрии запроса, и узло зависимости для каждого уникального сочетания типа, цели и имени роли облака в телеметрии зависимости. Если в телеметрии более 10 000 узлов, Application Map не сможет получить все узлы и ссылки, поэтому ваша карта будет неполной. В этом случае при просмотре карты появится предупреждающее сообщение.
 
-Кроме того, Карта приложений поддерживает только до 1000 отдельных негруппированных узлов, отображаемых одновременно. Карта приложений снижает сложность зрения, группируя зависимости, которые имеют один и тот же тип и абонентов, но если телеметрия имеет слишком много уникальных имен ролей облака или слишком много типов зависимостей, эта группировка будет недостаточной, и карта не сможет Визуализации.
+Кроме того, Карта приложений поддерживает только до 1000 отдельных негруппированных узлов, отображаемых одновременно. Карта приложений снижает сложность зрения, группируя зависимости, которые имеют один и тот же тип и абонентов, но если телеметрия имеет слишком много уникальных имен ролей облака или слишком много типов зависимостей, эта группировка будет недостаточной, и карта не сможет визуализировать.
 
 Чтобы исправить это, необходимо изменить приборы, чтобы правильно установить имя роли облака, тип зависимости и целевые поля зависимости.
 

@@ -1,15 +1,15 @@
 ---
 title: Обновление кластера службы Azure Kubernetes (AKS)
-description: Сведения об обновлении кластера Службы Azure Kubernetes (AKS)
+description: Узнайте, как обновить кластер Службы Azure Kubernetes (AKS) для получения последних функций и обновлений безопасности.
 services: container-service
 ms.topic: article
 ms.date: 05/31/2019
-ms.openlocfilehash: 4520297e83f96f95b10ecafd5af52a913dc5f450
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 183e0a85f65d24dc7133307391931bea754a456d
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77621980"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632613"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -17,9 +17,9 @@ ms.locfileid: "77621980"
 
 Для кластеров AKS, которые используют несколько пулов узлов или узлов Windows Server (в настоящее время в предварительном просмотре в AKS), [см.][nodepool-upgrade]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Эта статья требует, чтобы вы запускали версию Azure CLI 2.0.65 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.][azure-cli-install]
+Эта статья требует, чтобы вы запускали версию Azure CLI 2.0.65 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 > [!WARNING]
 > Обновление кластера AKS запускает оцепление и слив узлов. Если у вас есть низкая квота вычислений, обновление может выйти из строя. Подробнее об увеличении квот читайте в [сообщении.](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request)

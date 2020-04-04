@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/25/2018
 tags: connectors
-ms.openlocfilehash: 60acd128495176cd0a90418c61edf53bdcd88e5a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1cfc53dcd730262101c0e879e0419ba3f2db4d38
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77647577"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80657003"
 ---
 # <a name="send-email-from-your-smtp-account-with-azure-logic-apps"></a>Отправка сообщений электронной почты из учетной записи SMTP с помощью Azure Logic Apps
 
@@ -56,7 +56,7 @@ ms.locfileid: "77647577"
    | **Имя пользователя** | Да | Имя пользователя для учетной записи SMTP | 
    | **Пароль** | Да | Пароль для учетной записи SMTP | 
    | **Порт SMTP-сервера** | нет | Определенный порт SMTP-сервера, который вы хотите использовать | 
-   | **Включить SSL?** | нет | Включает и отключает SSL-шифрование | 
+   | **Включить SSL?** | нет | Включите или выключите шифрование TLS/SSL. | 
    |||| 
 
 1. Укажите необходимые сведения для выбранного действия. 

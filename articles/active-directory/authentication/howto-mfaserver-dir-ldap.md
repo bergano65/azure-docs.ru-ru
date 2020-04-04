@@ -4,19 +4,19 @@ description: Развертывание проверки подлинности 
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/11/2018
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf7a5400fce2fce1b75cbd579830f929fcc0d0dd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2df89a764bc9b92a830b13e4216412694bb95523
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79454471"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80653013"
 ---
 # <a name="ldap-authentication-and-azure-multi-factor-authentication-server"></a>Аутентификация LDAP и сервер Многофакторной идентификации Azure
 
@@ -79,5 +79,5 @@ ms.locfileid: "79454471"
 Для настройки клиента LDAP используйте следующие рекомендации.
 
 * Настраивайте устройство, сервер или приложение для проверки подлинности по протоколу LDAP с сервером Многофакторной идентификации Azure таким образом, как будто это ваш каталог LDAP. Следует использовать те же настройки, которые обычно используются для прямого подключения к каталогу LDAP, за исключением имени сервера или IP-адреса, в качестве которого будет применяться адрес сервера Многофакторной идентификации Azure.
-* Для времени ожидания LDAP установите значение в диапазоне 30–60 секунд, чтобы оставалось время на проверку учетных данных пользователя с каталогом LDAP, выполнение двухфакторной проверки подлинности, получение ответа и отправку ответа на запрос на доступ LDAP.
+* Назначьте тайм-аут LDAP до 30-60 секунд, чтобы было время проверить учетные данные пользователя с каталогом LDAP, выполнить проверку второго шага, получить ответ и ответить на запрос доступа LDAP.
 * При использовании LDAPS прибор или сервер, делающие запросы LDAP, должны доверять сертификату TLS/SSL, установленного на сервере аутентификации Azure Multi-Factor.

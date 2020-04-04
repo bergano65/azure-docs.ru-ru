@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок с гибридными рабочими ролями Runbook в службе автоматизации Azure
-description: В этой статье приводятся сведения об устранении неполадок с гибридными рабочими ролями Runbook в службе автоматизации Azure
+description: В этой статье содержится информация для устранения неполадок в гибридных runbook работников Azure Automation.
 services: automation
 ms.service: automation
 ms.subservice: ''
@@ -9,24 +9,24 @@ ms.author: magoedte
 ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 33e3e162892f1e2a148258273160ca26fa9c2efd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d2587af0ada18b5c4271e7411783fe60211a3479
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80153528"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637859"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
 В этой статье приводятся сведения об устранении неполадок с гибридными рабочими ролями Runbook.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. Для Windows этот агент является агентом log Analytics для Windows, также именуемым агентом мониторинга Майкрософт (MMA). Для Linux, это журнал Analytics агент для Linux.
 
 ### <a name="scenario-runbook-execution-fails"></a><a name="runbook-execution-fails"></a>Сценарий: происходит сбой выполнения модуля Runbook
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Выполнение Runbook не удается, и вы получите следующую ошибку.
 
@@ -58,7 +58,7 @@ ms.locfileid: "80153528"
 
 ### <a name="scenario-event-15011-in-hybrid-runbook-worker"></a><a name="cannot-connect-signalr"></a>Сценарий: Событие 15011 в гибридных Runbook работника
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Гибридный Runbook Worker получает событие 15011, указывая, что результат запроса недействителен. Следующая ошибка появляется при попытке работника открыть соединение с [сервером SignalR.](https://docs.microsoft.com/aspnet/core/signalr/introduction?view=aspnetcore-3.1)
 
@@ -84,7 +84,7 @@ ms.locfileid: "80153528"
 
 ### <a name="scenario-windows-azure-vms-automatically-dropped-from-hybrid-worker-group"></a><a name="vm-automatically-dropped"></a>Сценарий: Windows Azure VMs автоматически вырывается из гибридной рабочей группы
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Вы не можете видеть гибридный Runbook работника или vMs, когда рабочая машина была выключена в течение длительного времени.
 
@@ -98,7 +98,7 @@ ms.locfileid: "80153528"
 
 ### <a name="scenario-no-certificate-was-found-in-the-certificate-store-on-hybrid-runbook-worker"></a><a name="no-cert-found"></a>Сценарий: Сертификат не найден в магазине сертификатов на Hybrid Runbook Worker
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Запуск книги, работающего на гибридном Runbook Worker, выходит из строя со следующим сообщением об ошибке.
 
@@ -120,7 +120,7 @@ At line:3 char:1
 
 ### <a name="scenario-error-403-during-registration-of-hybrid-runbook-worker"></a><a name="error-403-on-registration"></a>Сценарий: Ошибка 403 во время регистрации гибридного runbook работника
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Начальная фаза регистрации работника завершается неудачей, и вы получаете следующую ошибку (403).
 
@@ -131,7 +131,9 @@ At line:3 char:1
 #### <a name="cause"></a>Причина
 
 Возможны следующие причины:
+
 * В настройках агента имеется неправильно набранный идентификатор рабочего пространства или ключ рабочей области (первичный). 
+
 * Гибридный Runbook Worker не может загрузить конфигурацию, что вызывает ошибку связывания учетной записи. Когда Azure предоставляет решения, он поддерживает только определенные регионы для увязки рабочего пространства log Analytics и учетной записи автоматизации. Также возможно, что на компьютере установлена неверная дата и/или время. Если время составляет 15 минут от текущего времени, посадка не удается.
 
 #### <a name="resolution"></a>Решение
@@ -143,7 +145,7 @@ At line:3 char:1
 
 Рабочая область и учетная запись Log Analytics должны находиться в связанном регионе. Для списка поддерживаемых регионов [см.](../how-to/region-mappings.md)
 
-Возможно, вам также потребуется обновить дату и часовой пояс вашего компьютера. Если вы выберете пользовательский диапазон времени, убедитесь, что диапазон находится в UTC, который может отличаться от вашего местного часового пояса.
+Возможно, вам также потребуется обновить дату и/или часовой пояс вашего компьютера. Если вы выберете пользовательский диапазон времени, убедитесь, что диапазон находится в UTC, который может отличаться от вашего местного часового пояса.
 
 ## <a name="linux"></a>Linux
 
@@ -151,7 +153,7 @@ Linux Hybrid Runbook Worker зависит от [агента Log Analytics дл
 
 ### <a name="scenario-the-log-analytics-agent-for-linux-isnt-running"></a><a name="oms-agent-not-running"></a>Сценарий: Агент аналитики журнала для Linux не работает
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Агент Log Analytics для Linux не работает
 
@@ -193,7 +195,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ### <a name="scenario-the-microsoft-monitoring-agent-isnt-running"></a><a name="mma-not-running"></a>Сценарий: Агент мониторинга Майкрософт не работает
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Служба `healthservice` не работает на компьютере с гибридной рабочей ролью Runbook.
 
@@ -207,7 +209,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ### <a name="scenario-event-4502-in-operations-manager-log"></a><a name="event-4502"></a>Сценарий: Событие 4502 в журнале менеджера операций
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 В журнале событий **«Менеджер по приложениям и службам»** вы увидите `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent` событие 4502 и EventMessage, содержащее следующее описание:<br>`The certificate presented by the service \<wsid\>.oms.opinsights.azure.com was not issued by a certificate authority used for Microsoft services. Please contact your network administrator to see if they are running a proxy that intercepts TLS/SSL communication.`
 
@@ -221,9 +223,38 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Гибридные работники отправляют [выходы и сообщения Runbook](../automation-runbook-output-and-messages.md) в Azure Automation так же, как задания runbook, работающие в облаке, отправляют выходные данные и сообщения. Вы можете включить потоки Verbose и Progress так же, как и для runbooks.
 
+### <a name="scenario-orchestratorsandboxexe-cant-connect-to-office-365-through-proxy"></a><a name="no-orchestrator-sandbox-connect-O365"></a>Сценарий: Orchestrator.Sandbox.exe не может подключиться к Office 365 через прокси
+
+#### <a name="issue"></a>Проблемы
+
+Скрипт, работающий на Windows Hybrid Runbook Worker, не может подключиться, как ожидалось, к Office 365 на песочнице Orchestrator. Скрипт использует [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice?view=azureadps-1.0) для подключения. 
+
+Если настроить **Orchestrator.Sandbox.exe.config,** чтобы установить прокси и список обхода, песочница по-прежнему не подключается должным образом. Файл **Powershell_ise.exe.config** с тем же самыми настройками списка прокси и обхода, кажется, работает так, как вы ожидаете. Системы автоматизации управления обслуживанием (SMA) и журналы PowerShell не предоставляют никакой информации о прокси-сервере.
+
+#### <a name="cause"></a>Причина
+
+Подключение к службам Федерации активных каталогов (ADFS) на сервере не может обойти прокси. Помните, что песочница PowerShell работает как зарегистрированный пользователь. Тем не менее, оркестратор песочница сильно настроены и могут игнорировать **Orchestrator.Sandbox.exe.config** настройки файлов. Он имеет специальный код для обработки машин или MMA прокси настройки, но не для обработки других пользовательских настроек прокси. 
+
+#### <a name="resolution"></a>Решение
+
+Вы можете решить проблему для sandbox Orchestrator, перемив сценарий, чтобы использовать модули Azure AD вместо модуля MSOnline для смдлетов PowerShell. Смотрите, [как переход от оркестратора к автоматизации Azure (бета)](https://docs.microsoft.com/azure/automation/automation-orchestrator-migration).
+
+Если вы хотите продолжать использовать cmdlets модуля MSOnline, измените свой скрипт, чтобы использовать [Invoke-Command.](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7) Укажите значения `ComputerName` для `Credential` и параметров. 
+
+```powershell
+$Credential = Get-AutomationPSCredential -Name MyProxyAccessibleCredential
+Invoke-Command -ComputerName $env:COMPUTERNAME -Credential $Credential 
+{ Connect-MsolService … }
+```
+
+Это изменение кода запускает совершенно новую сессию PowerShell в контексте указанных учетных данных. Это должно позволить трафику проходить через прокси-сервер, который проверяет подлинность активного пользователя.
+
+>[!NOTE]
+>Это решение делает ненужным манипулировать файлконфигурации песочницы. Даже если вам удастся заставить файл конфигурации работать со сценарием, файл уничтожается каждый раз, когда обновляется гибридный агент Runbook Worker.
+
 ### <a name="scenario-hybrid-runbook-worker-not-reporting"></a><a name="corrupt-cache"></a>Сценарий: Гибридный работник Runbook не отчитывается
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Компьютер гибридной рабочей роли Runbook работает, но в рабочей области не отображаются данные о пульсе для компьютера.
 
@@ -253,7 +284,7 @@ Start-Service -Name HealthService
 
 ### <a name="scenario-you-cant-add-a-hybrid-runbook-worker"></a><a name="already-registered"></a>Сценарий: Вы не можете добавить гибридный runbook работника
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Вы получите следующее сообщение при попытке добавить гибридную рабочую роль Runbook с помощью командлета `Add-HybridRunbookWorker`.
 

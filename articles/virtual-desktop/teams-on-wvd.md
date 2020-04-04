@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ea9bfd21e7f3b92c99600a2492a809a0fc051ed9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8b9b33076a2c2cea27fea181b760a721488682c9
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80159622"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80657022"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Используйте команды Майкрософт на виртуальном рабочем столе Windows
 
@@ -33,15 +33,25 @@ ms.locfileid: "80159622"
 
 Вы можете использовать неоптимизированные команды Microsoft в средах Windows Virtual Desktop, чтобы использовать функции полного чата и совместной работы команд Майкрософт, а также аудиовызовы. Качество звука в вызовах будет варьироваться в зависимости от конфигурации хоста, поскольку неоптимизированные вызовы используют больше вашего процессора.
 
+### <a name="prepare-your-image-for-teams"></a>Подготовьте свой образ для команд
+
+Чтобы включить установку Teams в машине, установите следующий ключ реестра на хосте:
+
+```shell
+  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Teams\IsWVDEnvironment]
+  Type: REG_DWORD
+  Value: 0x1
+```
+
 ### <a name="install-microsoft-teams"></a>Установка команд Майкрософт
 
-Для установки команд Майкрософт в среде виртуального рабочего стола Windows:
+Вы можете развернуть настольное приложение Teams с помощью установки для одного компьютера. Для установки команд Майкрософт в среде виртуального рабочего стола Windows:
 
 1. Скачать [пакет Teams MSI,](https://docs.microsoft.com/microsoftteams/teams-for-vdi#deploy-the-teams-desktop-app-to-the-vm) который соответствует вашей среде. Рекомендуем использовать 64-разрядный установщик на 64-битной операционной системе.
 2. Запустите эту команду, чтобы установить MSI на хост VM.
 
       ```shell
-      msiexec /i <msi_name> /l*v < install_logfile_name> ALLUSER=1
+      msiexec /i <msi_name> /l*v < install_logfile_name> ALLUSERS=1
       ```
 
       Это позволит установить команды либо файлы программы или файлы программы (x86). При следующем входе в команду и запуске команды приложение запросит ваши учетные данные.
@@ -56,4 +66,4 @@ ms.locfileid: "80159622"
       ```
 
       > [!NOTE]
-      > Если вы установите команды с настройкой MSI ALLUSER-1, автоматические обновления будут отключены. Мы рекомендуем вам не забудьте обновлять команды по крайней мере один раз в месяц.
+      > Если вы установите команды с настройкой MSI ALLUSERS-1, автоматические обновления будут отключены. Мы рекомендуем вам не забудьте обновлять команды по крайней мере один раз в месяц.

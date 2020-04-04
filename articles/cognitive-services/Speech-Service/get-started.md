@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/26/2020
+ms.date: 04/03/2020
 ms.author: erhopf
 ms.custom: seodec18, seo-javascript-october2019
-ms.openlocfilehash: f74e3ea3d20ad2666b434e009cf62add6f88d200
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4604bfe7c815f79733f99a1a3727e4c68527e7ec
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79219668"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656124"
 ---
-# <a name="try-the-speech-service-for-free"></a>Бесплатная пробная подписка на службу "Речь"
+# <a name="try-the-speech-service-for-free"></a>Попробуйте услугу речи бесплатно'
 
 В этой статье вы выбираете вариант, чтобы легко протестировать услугу Speech бесплатно, чтобы вы могли узнать, что служба может сделать, и решить, является ли это правильным для ваших нужд. Выберите один из двух следующих вариантов в зависимости от вашей ситуации и случая использования:
 
@@ -71,7 +71,7 @@ ms.locfileid: "79219668"
    - Выберите [регион,](regions.md) в котором будет использоваться ресурс.
    - Выберите бесплатный (F0) или платный (S0) ценовой уровень. Для получения полной информации о ценах и квотах использования для каждого уровня выберите **полную информацию о ценах.**
    - Создайте новую (или назначьте существующую) группу ресурсов для этой подписки на службу "Речь". Группы ресурсов помогают упорядочивать различные подписки Azure.
-   - Выберите **Создать**. Это приведет вас к обзору развертывания и отображению сообщений о ходе развертывания.
+   - Нажмите кнопку **создания**. Это приведет вас к обзору развертывания и отображению сообщений о ходе развертывания.
 
 > [!NOTE]
 > Можно создать неограниченное количество подписок в категории "Стандартный" в одном или нескольких регионах. Тем не менее можно создать только одну бесплатную подписку. Развертывание моделей на свободном уровне, которое остается неиспользованным в течение 7 дней, будет автоматически списано.
@@ -97,4 +97,4 @@ ms.locfileid: "79219668"
 
 > [!div class="nextstepaction"]
 > [Быстрый запуск: Признать речь в образцах](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)
-> [SDK речи](speech-sdk.md#get-the-samples)
+> [SDK речи](speech-sdk.md#sample-source-code)

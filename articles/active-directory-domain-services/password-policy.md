@@ -8,15 +8,15 @@ ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: cc1863ff4200ee4cca94f18e3adfffa7ea42db96
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: b14fed07c9bd9b5fcb6a5489719481902351fc0d
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80475936"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80654869"
 ---
 # <a name="password-and-account-lockout-policies-on-managed-domains"></a>Политики паролей и блокировки учетных записей в управляемых доменах
 
@@ -45,6 +45,11 @@ ms.locfileid: "80475936"
 ## <a name="default-password-policy-settings"></a>Настройки политики паролей по умолчанию
 
 Политики в отношении готовых паролей (FGPP) позволяют применять определенные ограничения для политики блокировки паролей и учетных записей для разных пользователей в домене. Например, для защиты привилегированных учетных записей можно применить более строгие настройки блокировки учетных записей, чем обычные непривилегированные учетные записи. Можно создать несколько FGP-провайдеров в домене Azure AD DS и указать порядок приоритета их применения к пользователям.
+
+Для получения дополнительной информации о политике паролей и использовании Центра администрирования active Directory см.
+
+* [Узнайте о мелкозернистых политиках паролей](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770394(v=ws.10))
+* [Настройка мелкозернистой политики паролей с помощью Центра администрирования AD](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#fine_grained_pswd_policy_mgmt)
 
 Политики распределяются через групповую ассоциацию в домене Azure AD DS, и любые внесенные изменения применяются при следующем входе пользователя. Изменение политики не открывает учетную запись пользователя, которая уже заблокирована.
 
@@ -122,7 +127,7 @@ ms.locfileid: "80475936"
 
 1. С названием выбранной вами группы, которая теперь отображается в разделе **Directly Applies To,** выберите **OK,** чтобы сохранить пользовательскую политику паролей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительной информации о политике паролей и использовании Центра администрирования active Directory см.
 

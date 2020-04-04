@@ -9,12 +9,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 147f43148c0f804adf70f1a792ba1b8a772fdae4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8da8cd7110cd17d0aadd52cce1263c7c0fcfdf5c
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294496"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632168"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -803,16 +803,6 @@ pd.read_sql(queryString, connection)
 ```
 
 ![Верхние строки данных из таблицы](./media/vm-do-ten-things/DownSample_Data_For_Modeling_v2.PNG)
-
-#### <a name="read-data-from-hdi-by-using-azure-machine-learning-studio-classic-reader-module"></a>Прочитайте данные с ИРЧП с помощью студии машинного обучения Azure (классический): модуль чтения
-
-Вы также можете использовать модуль чтения в Azure Machine Learning Studio (классический) для доступа к базе данных в кластере Hadoop. Подключите учетные данные кластеров ИПЧП и учетной записи хранения данных Azure, чтобы можно было создать модели машинного обучения с помощью базы данных в кластерах ИПДО.
-
-![Свойства модуля "Читатель"](./media/vm-do-ten-things/AML_Reader_Hive.PNG)
-
-Затем можно просмотреть набор набранных данных:
-
-![Просмотр оцененного набора данных](./media/vm-do-ten-things/AML_Model_Results.PNG)
 
 ### <a name="azure-sql-data-warehouse-and-databases"></a>Хранилище данных и базы данных Azure S'L
 Хранилище данных Azure S'L — это упругий склад данных как сервис с опытом работы с сервером Корпоративного класса.

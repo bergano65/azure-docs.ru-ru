@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 3/13/2020
+ms.date: 04/03/2020
 ms.author: b-juche
-ms.openlocfilehash: 36b2d50722a1840e461d6907f440d859c7c82117
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ac660b20d519e49e832e979603f763fa672757a5
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79408833"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637397"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Ограничения ресурсов для службы Azure NetApp Files
 
@@ -36,7 +36,7 @@ ms.locfileid: "79408833"
 |  Количество объемов на пул емкости     |    500   |    Да     |
 |  Количество снимков на объем       |    255     |    нет        |
 |  Количество подсетей, делегированных файлам NetApp Azure (Microsoft.NetApp/volumes) в виртуальной сети Azure    |   1   |    нет    |
-|  Количество использованных ит-провайдеров в VNet (включая сразу же заглянув VNets) с azure NetApp Files   |    1000   |    Да   |
+|  Количество использованных ит-провайдеров в VNet (включая сразу же заглянув VNets) с azure NetApp Files   |    1000   |    нет   |
 |  Минимальный размер единого пула емкости   |  4 ТиБ     |    нет  |
 |  Максимальный размер единого пула емкости    |  500 ТиБ   |   нет   |
 |  Минимальный размер одного тома    |    100 ГиБ    |    нет    |

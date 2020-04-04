@@ -8,12 +8,12 @@ ms.date: 03/03/2017
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 86b399879807e480176ee9a3ca3feaba1ec5dd85
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4ad9f13bcdf36b67400adb62d58ee260ff256bb3
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78250887"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637142"
 ---
 # <a name="storage-analytics"></a>аналитики хранилища
 
@@ -26,8 +26,6 @@ ms.locfileid: "78250887"
 В аналитике хранилища установлено ограничение в 20 ТБ для объема хранимых данных, не зависящее от общего ограничения на вашу учетную запись хранения. Для получения дополнительной информации об [Scalability and performance targets for standard storage accounts](scalability-targets-standard-account.md)ограничениях учетной записи хранилища см.
 
 Дополнительные указания о функциях аналитики хранилища и других инструментах идентификации, диагностики и устранения неполадок, связанных со службой хранилища Azure, см. в статье [Мониторинг, диагностика и устранение неполадок службы хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md).
-
-[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="billing-for-storage-analytics"></a>Оплата аналитики хранилища
 

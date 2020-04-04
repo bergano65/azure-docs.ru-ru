@@ -11,20 +11,20 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: amishu
 zone_pivot_groups: programming-languages-set-twelve
-ms.openlocfilehash: 6aabd27ae38cac0bb9effad2adcadc4935a28c6e
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: bd6b500a823bde654da4442704b75451806d6a46
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80409591"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637301"
 ---
 # <a name="use-codec-compressed-audio-input-with-the-speech-sdk"></a>Используйте кодек сжатого звука ввода с речью SDK
 
 Служба речевого ввода SDK **Compressed Audio Input Stream** API предоставляет способ `PullStream` `PushStream`потоковой передачи сжатого звука в службу speech с помощью a или .
 
-> [!IMPORTANT]
-> Потоковое сжатое входное аудио в настоящее время поддерживается для C, C, Java на Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8). Он также поддерживается для Java в Android и Objective-C в платформе iOS.
-> Требуется речевая версия SDK 1.7.0 или выше (версия 1.10.0 или выше для RHEL 8, CentOS 8).
+Потоковая передача сжатого вхостабля в настоящее время поддерживается для C, C, Java на Windows (приложения UWP не поддерживаются) и Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8). Он также поддерживается для Java в Android и Objective-C в платформе iOS.
+* Речь SDK версия 1.10.0 или позже требуется для RHEL 8 и CentOS 8
+* Версия SDK 1.11.0 или позже требуется для Windows.
 
 [!INCLUDE [supported-audio-formats](includes/supported-audio-formats.md)]
 
@@ -64,7 +64,7 @@ ms.locfileid: "80409591"
 [!INCLUDE [prerequisites](includes/how-to/compressed-audio-input/objectivec/examples.md)]
 ::: zone-end
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как распознать речь](quickstarts/speech-to-text-from-microphone.md)

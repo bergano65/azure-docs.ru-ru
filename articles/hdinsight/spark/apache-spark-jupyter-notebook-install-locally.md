@@ -5,19 +5,19 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.openlocfilehash: 225ee7028b9610a4974f9bee05da667d78d3355e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: hdinsightactive
+ms.date: 04/02/2020
+ms.openlocfilehash: 1d044ddaea0a2c7a1d489523cc9aa4515df0728a
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73903738"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632659"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
 
-Из этой статьи вы узнаете, как установить записную книжку Jupyter с пользовательскими ядрами PySpark (для Python) и Apache Spark (для Scala) с помощью magic-команд Spark, а затем подключить эту записную книжку к кластеру HDInsight. Существуют разные причины для установки Jupyter на локальном компьютере, но есть и некоторые трудности. Дополнительные сведения см. в разделе [Зачем устанавливать Jupyter на компьютер?](#why-should-i-install-jupyter-on-my-computer) в конце этой статьи.
+В этой статье вы узнаете, как установить ноутбук Jupyter с пользовательскими PySpark (для Python) и Apache Spark (для Scala) ядер с магией Spark. Затем ноутбук подключается к кластеру HDInsight.
 
 Есть четыре ключевых шага, связанных с установкой Jupyter и подключение к Apache Spark на HDInsight.
 
@@ -26,17 +26,17 @@ ms.locfileid: "73903738"
 * Установите ядра PySpark и Spark с помощью волшебной команды Spark.
 * Настройте волшебную команду Spark для доступа к кластеру Spark в HDInsight.
 
-Дополнительные сведения о пользовательских ядрах и волшебных командах Spark, доступных для записных книжек Jupyter в кластере HDInsight, см. в статье [Ядра, доступные для использования записными книжками Jupyter с кластерами Apache Spark в HDInsight на платформе Linux](apache-spark-jupyter-notebook-kernels.md).
+Для получения дополнительной информации о пользовательских ядер и Spark магии, [см. Ядра доступны для ноутбуков Jupyter с Apache Spark Linux кластеров на HDInsight](apache-spark-jupyter-notebook-kernels.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md). Это является необходимым условием для подключения ноутбука Jupyter к кластеру HDInsight после установки ноутбука.
+* Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md). Локальный блокнот подключается к кластеру HDInsight.
 
 * Опыт работы с записными книжками Jupyter с Spark в HDInsight.
 
 ## <a name="install-jupyter-notebook-on-your-computer"></a>Установка записной книжки Jupyter на компьютер
 
-Перед установкой записных книжек Jupyter необходимо установить Python. В [дистрибутиве Anaconda](https://www.anaconda.com/download/) будут установлены как Python, так и Jupyter Notebook.
+Установите Python перед установкой ноутбуков Jupyter. В [дистрибутиве Anaconda](https://www.anaconda.com/download/) будут установлены как Python, так и Jupyter Notebook.
 
 Скачайте [установщик Anaconda](https://www.anaconda.com/download/) для своей платформы и запустите программу установки. В мастере установки укажите параметр для добавления Anaconda в переменную PATH.  Смотрите также, [Установка Jupyter с помощью Anaconda](https://jupyter.readthedocs.io/en/latest/install.html).
 
@@ -63,11 +63,11 @@ ms.locfileid: "73903738"
     pip show sparkmagic
     ```
 
-    Затем измените рабочий каталог на место, идентифицированное с приведенной выше командой.
+    Затем измените рабочий каталог на **место,** идентифицированное с приведенной выше командой.
 
 1. Из нового рабочего каталога введите одну или несколько команд ниже, чтобы установить нужное ядро (ы):
 
-    |Ядро | Команда |
+    |Ядро | Get-Help |
     |---|---|
     |Spark|`jupyter-kernelspec install sparkmagic/kernels/sparkkernel`|
     |SparkR|`jupyter-kernelspec install sparkmagic/kernels/sparkrkernel`|
@@ -90,7 +90,7 @@ ms.locfileid: "73903738"
     python
     ```
 
-2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы определить домашний каталог, и создать папку под названием **.sparkmagic.**  Полный путь будет пробит.
+2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы определить домашний каталог, и создать папку под названием ** \.sparkmagic.**  Полный путь будет пробит.
 
     ```python
     import os
@@ -146,7 +146,7 @@ ms.locfileid: "73903738"
     jupyter notebook
     ```
 
-6. Убедитесь, что вы можете использовать магию Spark, доступную с ядрами. Выполните следующие действия.
+6. Убедитесь, что вы можете использовать магию Spark, доступную с ядрами. Выполните следующие шаги.
 
     а. Создайте новую записную книжку. Из правого угла выберите **Новый**. Вы должны увидеть ядро по умолчанию **Python 2** или **Python 3** и установленные ядра. Фактические значения могут варьироваться в зависимости от выбора установки.  Выберите **PySpark**.
 
@@ -168,9 +168,9 @@ ms.locfileid: "73903738"
 
 ## <a name="why-should-i-install-jupyter-on-my-computer"></a>Зачем устанавливать Jupyter на моем компьютере?
 
-Может быть несколько причин, по которым вам потребуется установить на компьютер Jupyter и подключить к кластеру Apache Spark в HDInsight.
+Причины установки Jupyter на вашем компьютере, а затем подключить его к кластеру Apache Spark на HDInsight:
 
-* Хотя записные книжки Jupyter уже доступны в кластере Spark в Azure HDInsight, после их установки на компьютер вы сможете создавать записные книжки локально, тестировать приложения на работающем кластере и отправлять записные книжки в кластер. Для отправки записных книжек в кластер можно отправить их с помощью записной книжки Jupyter, которая запущена на кластере, или сохранить их в папке /HdiNotebooks в учетной записи хранения, связанной с кластером. Дополнительные сведения о хранении записных книжек в кластере см. в разделе [Где хранятся записные книжки](apache-spark-jupyter-notebook-kernels.md#where-are-the-notebooks-stored).
+* Предоставляет возможность локально создавать блокноты, тестировать приложение на уровне запущенного кластера, а затем загружать блокноты в кластер. Чтобы загрузить блокноты в кластер, вы можете загрузить их с помощью работающего ноутбука `/HdiNotebooks` Jupyter или кластера, либо сохранить их в папку в учетной записи хранения, связанной с кластером. Дополнительные сведения о хранении записных книжек в кластере см. в разделе [Где хранятся записные книжки](apache-spark-jupyter-notebook-kernels.md#where-are-the-notebooks-stored).
 * С помощью локально доступных записных книжек вы сможете подключиться к различным кластерам Spark в зависимости от потребностей вашего приложения.
 * Можно использовать GitHub для реализации системы управления версиями, чтобы контролировать версии записных книжек. Вы также можете создать среду совместной работы, в которой несколько пользователей будут работать с одной записной книжкой.
 * Вы можете работать с записными книжками локально даже без кластера. Кластер нужен только для тестирования записных книжек, но не обязателен для ручного управления записными книжками или средой разработки.
@@ -182,5 +182,5 @@ ms.locfileid: "73903738"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
-* [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
+* [Apache Spark с BI: Анализ данных Apache Spark с помощью Power BI в HDInsight](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
