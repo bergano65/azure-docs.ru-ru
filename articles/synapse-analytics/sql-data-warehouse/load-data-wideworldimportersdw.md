@@ -11,18 +11,19 @@ ms.date: 07/17/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, synapse-analytics
-ms.openlocfilehash: 5bc9490733f5e29b6668a9655ac5b8b5dbe9bda8
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: b6d2d5c9ac7eabf703887d559a2d2b86b89dd5c8
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80346697"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632016"
 ---
 # <a name="tutorial-load-data-to--azure-synapse-analytics-sql-pool"></a>Учебник: Загрузка данных в пул Аналитики Azure Synapse
 
-В этом учебнике используется PolyBase для загрузки хранилища данных WideWorldImportersDW из хранилища Azure Blob на ваш склад данных в пуле Azure Synapse Analytics S'L. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) используются, чтобы выполнить такие действия:
+В этом учебнике используется PolyBase для загрузки хранилища данных WideWorldImportersDW из хранилища Azure Blob на ваш склад данных в пуле Azure Synapse Analytics S'L. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS) используются, чтобы выполнить такие действия:
 
 > [!div class="checklist"]
+>
 > * Создание хранилища данных с помощью пула S'L на портале Azure
 > * настроить правило брандмауэра на уровне сервера на портале Azure;
 > * Подключение к пулу S'L с помощью SSMS
@@ -33,11 +34,11 @@ ms.locfileid: "80346697"
 > * создать годичный объем данных в таблицах фактов по продажам и измерениям дат;
 > * создать статистику для вновь загруженных данных.
 
-Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
+Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -45,9 +46,9 @@ ms.locfileid: "80346697"
 
 ## <a name="create-a-blank-data-warehouse-in-sql-pool"></a>Создание пустого хранилища данных в пуле S'L
 
-Пул пула S'L создается с определенным набором [вычислительных ресурсов.](memory-concurrency-limits.md) Пуля S'L создается в [группе ресурсов Azure](../../azure-resource-manager/management/overview.md) и на [логическом сервере Azure s-L.](../../sql-database/sql-database-features.md) 
+Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). Пуля S'L создается в [группе ресурсов Azure](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и на [логическом сервере Azure s-L.](../../sql-database/sql-database-features.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 
-Выполните следующие действия, чтобы создать пустой пул S'L. 
+Выполните следующие действия, чтобы создать пустой пул S'L.
 
 1. Выберите **Создать ресурс** на портале Azure.
 
@@ -55,60 +56,59 @@ ms.locfileid: "80346697"
 
     ![создать пул S'L](./media/load-data-wideworldimportersdw/create-empty-data-warehouse.png)
 
-1. Заполните раздел **«Подробности проекта»** со следующей информацией:   
+1. Заполните раздел **«Подробности проекта»** со следующей информацией:
 
-   | Параметр | Пример | Описание | 
+   | Параметр | Пример | Описание |
    | ------- | --------------- | ----------- |
    | **Подписка** | Ваша подписка  | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
+   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
 
-1. В соответствии с **сведениями о пуле S'L,** укажите имя для вашего пула S'L. Затем выберите существующий сервер из выпадения вниз, либо **создайте новые** настройки **сервера** для создания нового сервера. Заполните форму, указав следующую информацию. 
+1. В соответствии с **сведениями о пуле S'L,** укажите имя для вашего пула S'L. Затем выберите существующий сервер из выпадения вниз, либо **создайте новые** настройки **сервера** для создания нового сервера. Заполните форму, указав следующую информацию.
 
-    | Параметр | Рекомендуемое значение | Описание | 
+    | Параметр | Рекомендуемое значение | Описание |
     | ------- | --------------- | ----------- |
-    |**Название бассейна S'L**|SampleDW| Для действительных имен баз данных [см.](/sql/relational-databases/databases/database-identifiers) | 
-    | **Имя сервера** | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). | 
+    |**Имя пула SQL**|SampleDW| Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). |
+    | **Имя сервера** | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
     | **учетные данные администратора сервера для входа;** | Любое допустимое имя | Для действительных имен входа [см.](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers)|
     | **Пароль** | Любой допустимый пароль | Длина пароля должна составлять минимум 8 символов. Пароль должен содержать символы трех категорий из перечисленных: прописные буквы, строчные буквы, цифры и специальные символы. |
     | **Расположение** | Любое допустимое расположение | Для получения информации [Azure Regions](https://azure.microsoft.com/regions/)о регионах см. |
 
     ![создание сервера базы данных](./media/load-data-wideworldimportersdw/create-database-server.png)
 
-1. **Выберите уровень производительности.** Ползунок по умолчанию установлен на **DW1000c.** Переместите ползунок вверх и вниз, чтобы выбрать нужную шкалу производительности. 
+1. **Выберите уровень производительности.** Ползунок по умолчанию установлен на **DW1000c.** Переместите ползунок вверх и вниз, чтобы выбрать нужную шкалу производительности.
 
     ![создание сервера базы данных](./media/load-data-wideworldimportersdw/create-data-warehouse.png)
 
-1. На странице **дополнительных настроек** установите **существующие данные «Нет»** и оставьте **коллажа** по умолчанию *SQL_Latin1_General_CP1_CI_AS*. 
+1. На странице **дополнительных настроек** установите **существующие данные «Нет»** и оставьте **коллажа** по умолчанию *SQL_Latin1_General_CP1_CI_AS*.
 
-1. Выберите **Обзор и создайте** для просмотра настроек, а затем выберите **Создать** для создания хранилища данных. Вы можете следить за ходом работ, открыв **аядоновую** страницу в ходе работы из меню **Уведомлений.** 
+1. Выберите **Обзор и создайте** для просмотра настроек, а затем выберите **Создать** для создания хранилища данных. Вы можете следить за ходом работ, открыв **аядоновую** страницу в ходе работы из меню **Уведомлений.**
 
      ![уведомление](./media/load-data-wideworldimportersdw/notification.png)
 
 ## <a name="create-a-server-level-firewall-rule"></a>создадим правило брандмауэра на уровне сервера;
 
-Служба Аналитики Azure Synapse создает брандмауэр на уровне сервера, который предотвращает подключение внешних приложений и инструментов к серверу или любым базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов.  Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../sql-database/sql-database-firewall-configure.md) для IP-адреса клиента. 
+Служба Аналитики Azure Synapse создает брандмауэр на уровне сервера, который предотвращает подключение внешних приложений и инструментов к серверу или любым базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов.  Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../sql-database/sql-database-firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) для IP-адреса клиента.
 
 > [!NOTE]
 > Бассейн Azure Synapse Analytics S'L общается по порту 1433. Если вы пытаетесь подключиться из корпоративной сети, то исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433.
 >
 
+1. После завершения развертывания ищите имя пула в поле поиска в меню навигации и выберите ресурс пула S'L. Выберите имя сервера.
 
-1. После завершения развертывания ищите имя пула в поле поиска в меню навигации и выберите ресурс пула S'L. Выберите имя сервера. 
+    ![перейти на ваш ресурс](./media/load-data-wideworldimportersdw/search-for-sql-pool.png)
 
-    ![перейти на ваш ресурс](./media/load-data-wideworldimportersdw/search-for-sql-pool.png) 
+1. Выберите имя сервера.
+    ![имя сервера](././media/load-data-wideworldimportersdw/find-server-name.png)
 
-1. Выберите имя сервера. 
-    ![имя сервера](././media/load-data-wideworldimportersdw/find-server-name.png) 
+1. Щелкните ссылку **Показать параметры брандмауэра**. Открывается страница **настроек Firewall** для сервера пула S'L.
 
-1. Выберите **настройки брандмауэра**Show. Открывается страница **настроек Firewall** для сервера пула S'L. 
-
-    ![параметры сервера](./media/load-data-wideworldimportersdw/server-settings.png) 
+    ![параметры сервера](./media/load-data-wideworldimportersdw/server-settings.png)
 
 1. На странице **Firewalls и виртуальных сетей** выберите **добавить ip-адрес клиента,** чтобы добавить ваш текущий IP-адрес в новое правило брандмауэра. С использованием правила брандмауэра можно открыть порт 1433 для одного IP-адреса или диапазона IP-адресов.
 
-    ![правило брандмауэра для сервера](./media/load-data-wideworldimportersdw/server-firewall-rule.png) 
+    ![правило брандмауэра для сервера](./media/load-data-wideworldimportersdw/server-firewall-rule.png)
 
-1. Нажмите кнопку **Сохранить**. Для текущего IP-адреса будет создано правило брандмауэра уровня сервера, с помощью которого можно открыть порт 1433 логического сервера.
+1. Щелкните **Сохранить**. Для текущего IP-адреса будет создано правило брандмауэра уровня сервера, с помощью которого можно открыть порт 1433 логического сервера.
 
 Теперь подключиться к серверу S'L можно с помощью Вашего IP-адреса клиента. Подключение выполняется из SQL Server Management Studio или другого инструмента на ваше усмотрение. При подключении используйте созданную ранее учетную запись serveradmin.  
 
@@ -119,45 +119,45 @@ ms.locfileid: "80346697"
 
 Полностью квалифицированное имя сервера — это то, что используется для подключения к серверу. Перейдите на свой ресурс пула S'L на портале Azure и просмотрите полностью квалифицированное имя под **именем Server.**
 
-![имя сервера](././media/load-data-wideworldimportersdw/find-server-name.png) 
+![имя сервера](././media/load-data-wideworldimportersdw/find-server-name.png)
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
-В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
+В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 1. Откройте среду SQL Server Management Studio.
 
 2. В диалоговом окне **Соединение с сервером** введите следующие данные:
 
-    | Параметр      | Рекомендуемое значение | Описание | 
-    | ------------ | --------------- | ----------- | 
+    | Параметр      | Рекомендуемое значение | Описание |
+    | ------------ | --------------- | ----------- |
     | Тип сервера | Ядро СУБД | Это обязательное значение |
     | Имя сервера | Полное имя сервера | Например, **sqlpoolservername.database.windows.net** является полностью квалифицированным именем сервера. |
-    | Проверка подлинности | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
+    | Аутентификация | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
     | Имя входа | Учетная запись администратора сервера | Это учетная запись, которая была указана при создании сервера. |
     | Пароль | Пароль для учетной записи администратора сервера | Это пароль, указанный при создании сервера. |
 
     ![подключение к серверу](./media/load-data-wideworldimportersdw/connect-to-server.png)
 
-4. Нажмите кнопку **Подключить**. В SSMS открывается окно обозревателя объектов. 
+3. Нажмите кнопку **Подключить**. В SSMS открывается окно обозревателя объектов.
 
-5. В обозревателе объектов разверните узел **Базы данных**. Затем разверните **Системные базы данных** и **master**, чтобы просмотреть объекты в базе данных master.  Расширьте **SampleDW** для просмотра объектов в новой базе данных.
+4. В обозревателе объектов разверните узел **Базы данных**. Затем разверните **Системные базы данных** и **master**, чтобы просмотреть объекты в базе данных master.  Расширьте **SampleDW** для просмотра объектов в новой базе данных.
 
-    ![объекты базы данных](./media/load-data-wideworldimportersdw/connected.png) 
+    ![объекты базы данных](./media/load-data-wideworldimportersdw/connected.png)
 
 ## <a name="create-a-user-for-loading-data"></a>Создание учетной записи пользователя для загрузки данных
 
-Учетная запись администратора сервера предназначена для операций управления и не подходит для выполнения запросов к пользовательским данным. Загрузка данных — это операция с интенсивным использованием памяти. Максимумы памяти определяются в соответствии с типом пула «Поколение» , который вы используете, [единицами хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md)и [классом ресурсов.](resource-classes-for-workload-management.md) 
+Учетная запись администратора сервера предназначена для операций управления и не подходит для выполнения запросов к пользовательским данным. Загрузка данных — это операция с интенсивным использованием памяти. Максимумы памяти определяются в соответствии с типом пула «Поколение» , который вы используете, [единицами хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md)и [классом ресурсов.](resource-classes-for-workload-management.md)
 
 Лучше всего создать имя для входа и имя пользователя, предназначенные для загрузки данных. Затем добавьте пользователя загрузки в [класс ресурсов](resource-classes-for-workload-management.md), позволяющий выполнять соответствующее выделение максимальной памяти.
 
-Поскольку вы подключены в качестве администратора сервера, вы можете создавать пользователей и имена для входа. В результате выполнения этих действий создаются учетные данные пользователя **LoaderRC60**. Затем назначаем пользователя классу ресурсов **staticrc60**. 
+Поскольку вы подключены в качестве администратора сервера, вы можете создавать пользователей и имена для входа. В результате выполнения этих действий создаются учетные данные пользователя **LoaderRC60**. Затем назначаем пользователя классу ресурсов **staticrc60**.
 
-1.  В среде SSMS щелкните правой кнопкой мыши папку **master**, чтобы отобразилось раскрывающееся меню. Затем щелкните **Новый запрос**. Откроется новое окно запроса.
+1. В среде SSMS щелкните правой кнопкой мыши папку **master**, чтобы отобразилось раскрывающееся меню. Затем щелкните **Новый запрос**. Откроется новое окно запроса.
 
     ![Создание запроса в базе данных master](./media/load-data-wideworldimportersdw/create-loader-login.png)
 
-2. В окне запроса введите следующие команды T-SQL, чтобы создать учетные данные для входа пользователя LoaderRC60, заменив 'a123STRONGpassword!' на собственный пароль. 
+2. В окне запроса введите следующие команды T-SQL, чтобы создать учетные данные для входа пользователя LoaderRC60, заменив 'a123STRONGpassword!' на собственный пароль.
 
     ```sql
     CREATE LOGIN LoaderRC60 WITH PASSWORD = 'a123STRONGpassword!';
@@ -169,8 +169,8 @@ ms.locfileid: "80346697"
 4. Щелкните правой кнопкой мыши **SampleDW** и выберите **Создать запрос**. Откроется окно нового запроса.  
 
     ![Новый запрос к примеру хранилища данных](./media/load-data-wideworldimportersdw/create-loading-user.png)
- 
-5. Введите следующие команды T-SQL, чтобы создать пользователя базы данных с именем LoaderRC60 для входа в LoaderRC60. Вторая строка предоставляет новому пользователю разрешения на управление (CONTROL) новым хранилищем данных.  Эти разрешения аналогичны назначению пользователя владельцем базы данных. Третья строка добавляет нового пользователя в качестве участника [класса ресурсов](resource-classes-for-workload-management.md) staticrc60.
+
+5. Введите следующие команды T-SQL, чтобы создать пользователя базы данных с именем LoaderRC60 для входа в LoaderRC60. Вторая строка предоставляет новому пользователю разрешения на управление (CONTROL) новым хранилищем данных.  Эти разрешения аналогичны назначению пользователя владельцем базы данных. Третья строка добавляет нового пользователя в `staticrc60` качестве члена [класса ресурсов.](resource-classes-for-workload-management.md)
 
     ```sql
     CREATE USER LoaderRC60 FOR LOGIN LoaderRC60;
@@ -202,19 +202,19 @@ ms.locfileid: "80346697"
 
 Выполните следующие скрипты SQL и укажите сведения о данных, которые требуется загрузить. К этим сведениям относится информация о расположении данных, формате содержимого данных и определении таблицы для данных. Данные находятся в глобальной Azure Blob.
 
-1. В предыдущем разделе вы вошли в свое хранилище данных как пользователь LoaderRC60. В среде SSMS щелкните правой кнопкой мыши **SampleDW** под подключением LoaderRC60 и выберите **Создать запрос**.  Откроется окно нового запроса. 
+1. В предыдущем разделе вы вошли в свое хранилище данных как пользователь LoaderRC60. В среде SSMS щелкните правой кнопкой мыши **SampleDW** под подключением LoaderRC60 и выберите **Создать запрос**.  Откроется окно нового запроса.
 
     ![Окно нового запроса загрузки](./media/load-data-wideworldimportersdw/new-loading-query.png)
 
 2. Сравните окно запроса с предыдущим изображением.  Проверьте работоспособность нового окна запросов с учетными данными LoaderRC60 и выполнение запросов к базе данных SampleDW. Используйте это окно запроса для выполнения всех шагов загрузки.
 
-3. Создайте главный ключ базы данных SampleDW. Главный ключ создается для каждой базы данных только один раз. 
+3. Создайте главный ключ базы данных SampleDW. Главный ключ создается для каждой базы данных только один раз.
 
     ```sql
     CREATE MASTER KEY;
     ```
 
-4. Выполните приведенную ниже инструкцию [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql), чтобы определить расположение большого двоичного объекта Azure. Это расположение внешних данных импортеров во всем мире.  Для выполнения команды, добавленной в окно запроса, выделите команды, которые необходимо выполнить, и нажмите кнопку **Выполнить**.
+4. Выполните приведенную ниже инструкцию [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы определить расположение большого двоичного объекта Azure. Это расположение внешних данных импортеров во всем мире.  Для выполнения команды, добавленной в окно запроса, выделите команды, которые необходимо выполнить, и нажмите кнопку **Выполнить**.
 
     ```sql
     CREATE EXTERNAL DATA SOURCE WWIStorage
@@ -225,22 +225,22 @@ ms.locfileid: "80346697"
     );
     ```
 
-5. Выполните приведенную ниже инструкцию T-SQL [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql), чтобы указать характеристики и параметры форматирования для внешнего файла данных. Эта инструкция указывает, что внешние данные хранятся в виде текста, а значения разделяются символом вертикальной черты (|).  
+5. Выполните приведенную ниже инструкцию T-SQL [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы указать характеристики и параметры форматирования для внешнего файла данных. Эта инструкция указывает, что внешние данные хранятся в виде текста, а значения разделяются символом вертикальной черты (|).  
 
     ```sql
-    CREATE EXTERNAL FILE FORMAT TextFileFormat 
-    WITH 
-    (   
+    CREATE EXTERNAL FILE FORMAT TextFileFormat
+    WITH
+    (
         FORMAT_TYPE = DELIMITEDTEXT,
         FORMAT_OPTIONS
-        (   
+        (
             FIELD_TERMINATOR = '|',
-            USE_TYPE_DEFAULT = FALSE 
+            USE_TYPE_DEFAULT = FALSE
         )
     );
     ```
 
-6.  Выполните приведенные ниже инструкции [CREATE SCHEMA](/sql/t-sql/statements/create-schema-transact-sql), чтобы создать схему форматирования внешних файлов. Эта схема форматирования внешних файлов описывает способ организации внешних таблиц, которые будут созданы. Схема wwi организует стандартные таблицы для хранения данных. 
+6. Выполните приведенные ниже инструкции [CREATE SCHEMA](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы создать схему форматирования внешних файлов. Эта схема форматирования внешних файлов описывает способ организации внешних таблиц, которые будут созданы. Схема wwi организует стандартные таблицы для хранения данных.
 
     ```sql
     CREATE SCHEMA ext;
@@ -267,7 +267,7 @@ ms.locfileid: "80346697"
         [Valid To] [datetime2](7) NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH (LOCATION='/v1/dimension_City/',   
+    WITH (LOCATION='/v1/dimension_City/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -286,7 +286,7 @@ ms.locfileid: "80346697"
         [Valid To] [datetime2](7) NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH (LOCATION='/v1/dimension_Customer/',   
+    WITH (LOCATION='/v1/dimension_Customer/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -303,7 +303,7 @@ ms.locfileid: "80346697"
         [Valid To] [datetime2](7) NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION='/v1/dimension_Employee/',   
+    WITH ( LOCATION='/v1/dimension_Employee/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -317,7 +317,7 @@ ms.locfileid: "80346697"
         [Valid To] [datetime2](7) NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/dimension_PaymentMethod/',   
+    WITH ( LOCATION ='/v1/dimension_PaymentMethod/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -345,7 +345,7 @@ ms.locfileid: "80346697"
         [Valid To] [datetime2](7) NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/dimension_StockItem/',   
+    WITH ( LOCATION ='/v1/dimension_StockItem/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -364,7 +364,7 @@ ms.locfileid: "80346697"
         [Valid To] [datetime2](7) NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/dimension_Supplier/',   
+    WITH ( LOCATION ='/v1/dimension_Supplier/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -377,8 +377,8 @@ ms.locfileid: "80346697"
         [Valid From] [datetime2](7) NOT NULL,
         [Valid To] [datetime2](7) NOT NULL,
         [Lineage Key] [int] NOT NULL
-    )    
-    WITH ( LOCATION ='/v1/dimension_TransactionType/',   
+    )
+    WITH ( LOCATION ='/v1/dimension_TransactionType/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -397,7 +397,7 @@ ms.locfileid: "80346697"
         [Quantity] [int] NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/fact_Movement/',   
+    WITH ( LOCATION ='/v1/fact_Movement/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -424,8 +424,8 @@ ms.locfileid: "80346697"
         [Total Including Tax] [decimal](18, 2) NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/fact_Order/',   
-        DATA_SOURCE = WWIStorage,  
+    WITH ( LOCATION ='/v1/fact_Order/',
+        DATA_SOURCE = WWIStorage,
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
         REJECT_VALUE = 0
@@ -443,7 +443,7 @@ ms.locfileid: "80346697"
         [Is Order Finalized] [bit] NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/fact_Purchase/',   
+    WITH ( LOCATION ='/v1/fact_Purchase/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -472,7 +472,7 @@ ms.locfileid: "80346697"
         [Total Chiller Items] [int] NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/fact_Sale/',   
+    WITH ( LOCATION ='/v1/fact_Sale/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -489,7 +489,7 @@ ms.locfileid: "80346697"
         [Target Stock Level] [int] NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/fact_StockHolding/',   
+    WITH ( LOCATION ='/v1/fact_StockHolding/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -515,7 +515,7 @@ ms.locfileid: "80346697"
         [Is Finalized] [bit] NOT NULL,
         [Lineage Key] [int] NOT NULL
     )
-    WITH ( LOCATION ='/v1/fact_Transaction/',   
+    WITH ( LOCATION ='/v1/fact_Transaction/',
         DATA_SOURCE = WWIStorage,  
         FILE_FORMAT = TextFileFormat,
         REJECT_TYPE = VALUE,
@@ -533,9 +533,8 @@ ms.locfileid: "80346697"
 
 > [!NOTE]
 > В этом руководстве данные загружаются непосредственно в итоговую таблицу. Как правило, в рабочей среде для загрузки данных в промежуточную таблицу используется команда CREATE TABLE AS SELECT. Если данные расположены в промежуточной таблице, вы можете выполнять все необходимые преобразования. Чтобы добавить данные из промежуточной таблицы в рабочую, используйте выражение INSERT...SELECT. Дополнительные сведения см. в разделе [Вставка данных в рабочую таблицу](guidance-for-loading-data.md#inserting-data-into-a-production-table).
-> 
 
-В сценарии используется инструкция T-SQL [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse), чтобы загрузить данные из Azure Storage Blob в новые таблицы в хранилище данных. CTAS создает таблицу на основе результатов инструкции Select. В новой таблице содержатся те же столбцы и типы данных, которые были выведены инструкцией Select. Когда выбранное заявление выбирается из внешней таблицы, данные импортируются в реляционную таблицу в хранилище данных. 
+В сценарии используется инструкция T-SQL [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы загрузить данные из Azure Storage Blob в новые таблицы в хранилище данных. CTAS создает таблицу на основе результатов инструкции Select. В новой таблице содержатся те же столбцы и типы данных, которые были выведены инструкцией Select. Когда выбранное заявление выбирается из внешней таблицы, данные импортируются в реляционную таблицу в хранилище данных.
 
 Этот скрипт не загружает данные в таблицы wwi.dimension_Date и wwi.fact_Sale. Эти таблицы создаются на следующих этапах для ограничения числа строк в таблицах с допустимыми пределами.
 
@@ -544,7 +543,7 @@ ms.locfileid: "80346697"
     ```sql
     CREATE TABLE [wwi].[dimension_City]
     WITH
-    ( 
+    (
         DISTRIBUTION = REPLICATE,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -555,7 +554,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[dimension_Customer]
     WITH
-    ( 
+    (
         DISTRIBUTION = REPLICATE,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -566,7 +565,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[dimension_Employee]
     WITH
-    ( 
+    (
         DISTRIBUTION = REPLICATE,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -577,7 +576,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[dimension_PaymentMethod]
     WITH
-    ( 
+    (
         DISTRIBUTION = REPLICATE,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -588,7 +587,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[dimension_StockItem]
     WITH
-    ( 
+    (
         DISTRIBUTION = REPLICATE,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -599,7 +598,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[dimension_Supplier]
     WITH
-    ( 
+    (
         DISTRIBUTION = REPLICATE,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -610,7 +609,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[dimension_TransactionType]
     WITH
-    ( 
+    (
         DISTRIBUTION = REPLICATE,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -621,7 +620,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[fact_Movement]
     WITH
-    ( 
+    (
         DISTRIBUTION = HASH([Movement Key]),
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -632,7 +631,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[fact_Order]
     WITH
-    ( 
+    (
         DISTRIBUTION = HASH([Order Key]),
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -643,7 +642,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[fact_Purchase]
     WITH
-    ( 
+    (
         DISTRIBUTION = HASH([Purchase Key]),
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -654,7 +653,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[seed_Sale]
     WITH
-    ( 
+    (
         DISTRIBUTION = HASH([WWI Invoice ID]),
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -665,7 +664,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[fact_StockHolding]
     WITH
-    ( 
+    (
         DISTRIBUTION = HASH([Stock Holding Key]),
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -676,7 +675,7 @@ ms.locfileid: "80346697"
 
     CREATE TABLE [wwi].[fact_Transaction]
     WITH
-    ( 
+    (
         DISTRIBUTION = HASH([Transaction Key]),
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -695,7 +694,7 @@ ms.locfileid: "80346697"
         r.status,
         count(distinct input_name) as nbr_files,
         sum(s.bytes_processed)/1024/1024/1024 as gb_processed
-    FROM 
+    FROM
         sys.dm_pdw_exec_requests r
         INNER JOIN sys.dm_pdw_dms_external_work s
         ON r.request_id = s.request_id
@@ -717,7 +716,7 @@ ms.locfileid: "80346697"
         s.request_id,
         r.status
     ORDER BY
-        nbr_files desc, 
+        nbr_files desc,
         gb_processed desc;
     ```
 
@@ -755,7 +754,7 @@ ms.locfileid: "80346697"
         [Fiscal Year Label] [nvarchar](10) NOT NULL,
         [ISO Week Number] [int] NOT NULL
     )
-    WITH 
+    WITH
     (
         DISTRIBUTION = REPLICATE,
         CLUSTERED INDEX ([Date])
@@ -791,7 +790,7 @@ ms.locfileid: "80346697"
     )
     ```
 
-2. Создайте [wwi].[InitialSalesDataPopulation], чтобы увеличить число строк в [wwi].[seed_Sale] в восемь раз. 
+2. Создайте [wwi].[InitialSalesDataPopulation], чтобы увеличить число строк в [wwi].[seed_Sale] в восемь раз.
 
     ```sql
     CREATE PROCEDURE [wwi].[InitialSalesDataPopulation] AS
@@ -824,7 +823,7 @@ ms.locfileid: "80346697"
     ```sql
     CREATE PROCEDURE [wwi].[PopulateDateDimensionForYear] @Year [int] AS
     BEGIN
-        IF OBJECT_ID('tempdb..#month', 'U') IS NOT NULL 
+        IF OBJECT_ID('tempdb..#month', 'U') IS NOT NULL
             DROP TABLE #month
         CREATE TABLE #month (
             monthnum int,
@@ -834,7 +833,7 @@ ms.locfileid: "80346697"
         INSERT INTO #month
             SELECT 1, 31 UNION SELECT 2, CASE WHEN (@YEAR % 4 = 0 AND @YEAR % 100 <> 0) OR @YEAR % 400 = 0 THEN 29 ELSE 28 END UNION SELECT 3,31 UNION SELECT 4,30 UNION SELECT 5,31 UNION SELECT 6,30 UNION SELECT 7,31 UNION SELECT 8,31 UNION SELECT 9,30 UNION SELECT 10,31 UNION SELECT 11,30 UNION SELECT 12,31
 
-        IF OBJECT_ID('tempdb..#days', 'U') IS NOT NULL 
+        IF OBJECT_ID('tempdb..#days', 'U') IS NOT NULL
             DROP TABLE #days
         CREATE TABLE #days (days int)
         WITH (DISTRIBUTION = ROUND_ROBIN, HEAP)
@@ -843,7 +842,7 @@ ms.locfileid: "80346697"
             SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9 UNION SELECT 10 UNION SELECT 11 UNION SELECT 12 UNION SELECT 13 UNION SELECT 14 UNION SELECT 15 UNION SELECT 16 UNION SELECT 17 UNION SELECT 18 UNION SELECT 19 UNION SELECT 20    UNION SELECT 21 UNION SELECT 22 UNION SELECT 23 UNION SELECT 24 UNION SELECT 25 UNION SELECT 26 UNION SELECT 27 UNION SELECT 28 UNION SELECT 29 UNION SELECT 30 UNION SELECT 31
 
         INSERT [wwi].[dimension_Date] (
-            [Date], [Day Number], [Day], [Month], [Short Month], [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label], [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label], [ISO Week Number] 
+            [Date], [Day Number], [Day], [Month], [Short Month], [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label], [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label], [ISO Week Number]
         )
         SELECT
             CAST(CAST(monthnum AS VARCHAR(2)) + '/' + CAST([days] AS VARCHAR(3)) + '/' + CAST(@year AS CHAR(4)) AS DATE) AS [Date]
@@ -876,6 +875,7 @@ ms.locfileid: "80346697"
     DROP table #days;
     END;
     ```
+
 4. Создайте эту процедуру, которая населяет таблицы wwi.dimension_Date и wwi.fact_Sale. Она осуществляет вызов [wwi].[PopulateDateDimensionForYear] для заполнения wwi.dimension_Date.
 
     ```sql
@@ -888,7 +888,7 @@ ms.locfileid: "80346697"
 
         DECLARE @OrderCounter bigint = 0;
         DECLARE @NumberOfSalesPerDay bigint = @EstimatedRowsPerDay;
-        DECLARE @DateCounter date; 
+        DECLARE @DateCounter date;
         DECLARE @StartingSaleKey bigint;
         DECLARE @MaximumSaleKey bigint = (SELECT MAX([Sale Key]) FROM wwi.seed_Sale);
         DECLARE @MaxDate date;
@@ -920,7 +920,7 @@ ms.locfileid: "80346697"
             SELECT TOP(@VariantNumberOfSalesPerDay)
                 [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], @DateCounter, DATEADD(day, 1, @DateCounter), [Salesperson Key], [WWI Invoice ID], [Description], Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax], [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items], [Lineage Key]
             FROM [wwi].[seed_Sale]
-            WHERE 
+            WHERE
                  --[Sale Key] > @StartingSaleKey and /* IDENTITY DOES NOT WORK THE SAME IN SQLDW AND CAN'T USE THIS METHOD FOR VARIANT */
                 [Invoice Date Key] >=cast(@YEAR AS CHAR(4)) + '-01-01'
             ORDER BY [Sale Key];
@@ -932,12 +932,12 @@ ms.locfileid: "80346697"
     ```
 
 ## <a name="generate-millions-of-rows"></a>Создание нескольких миллионов строк
-Используйте сохраненные процедуры, созданные для генерации миллионов строк в таблице wwi.fact_Sale, и соответствующие данные в таблице wwi.dimension_Date. 
 
+Используйте сохраненные процедуры, созданные для генерации миллионов строк в таблице wwi.fact_Sale, и соответствующие данные в таблице wwi.dimension_Date.
 
 1. Запустите эту процедуру, чтобы задать начальное значение [wwi].[seed_Sale] с несколькими строками.
 
-    ```sql    
+    ```sql
     EXEC [wwi].[InitialSalesDataPopulation]
     ```
 
@@ -946,6 +946,7 @@ ms.locfileid: "80346697"
     ```sql
     EXEC [wwi].[Configuration_PopulateLargeSaleTable] 100000, 2000
     ```
+
 3. Создание данных на предыдущем шаге может занять некоторое время, так как заполняются данные для всех дней года.  Чтобы узнать, данные какого дня заполняются, выполните новый запрос и команду SQL:
 
     ```sql
@@ -962,22 +963,22 @@ ms.locfileid: "80346697"
 
 Пулс S'L реплицирует таблицу, кэширование данных к каждому вычислительному узлам. Кэш заполняется при выполнении запросов к таблице. Поэтому первый запрос к реплицированной таблице может потребовать дополнительного времени на заполнение кэша. После заполнения кэша запросы к реплицированным таблицам выполняться быстрее.
 
-Выполите запросы SQL для заполнения кэша реплицируемой таблицы на вычислительных узлах. 
+Выполите запросы SQL для заполнения кэша реплицируемой таблицы на вычислительных узлах.
 
-    ```sql
-    SELECT TOP 1 * FROM [wwi].[dimension_City];
-    SELECT TOP 1 * FROM [wwi].[dimension_Customer];
-    SELECT TOP 1 * FROM [wwi].[dimension_Date];
-    SELECT TOP 1 * FROM [wwi].[dimension_Employee];
-    SELECT TOP 1 * FROM [wwi].[dimension_PaymentMethod];
-    SELECT TOP 1 * FROM [wwi].[dimension_StockItem];
-    SELECT TOP 1 * FROM [wwi].[dimension_Supplier];
-    SELECT TOP 1 * FROM [wwi].[dimension_TransactionType];
-    ```
+```sql
+SELECT TOP 1 * FROM [wwi].[dimension_City];
+SELECT TOP 1 * FROM [wwi].[dimension_Customer];
+SELECT TOP 1 * FROM [wwi].[dimension_Date];
+SELECT TOP 1 * FROM [wwi].[dimension_Employee];
+SELECT TOP 1 * FROM [wwi].[dimension_PaymentMethod];
+SELECT TOP 1 * FROM [wwi].[dimension_StockItem];
+SELECT TOP 1 * FROM [wwi].[dimension_Supplier];
+SELECT TOP 1 * FROM [wwi].[dimension_TransactionType];
+```
 
 ## <a name="create-statistics-on-newly-loaded-data"></a>Создание статистики для вновь загруженных данных
 
-Поэтому после первой загрузки нужно создать статистику для каждого столбца каждой таблицы, чтобы обеспечить высокую производительность. Также важно обновлять статистику после существенных изменений данных. 
+Поэтому после первой загрузки нужно создать статистику для каждого столбца каждой таблицы, чтобы обеспечить высокую производительность. Также важно обновлять статистику после существенных изменений данных.
 
 1. Создайте хранимую процедуру обновления статистики по всем столбцам всех таблиц.
 
@@ -1007,7 +1008,7 @@ ms.locfileid: "80346697"
     BEGIN;
         DROP TABLE #stats_ddl;
     END;
-    
+
     CREATE TABLE #stats_ddl
     WITH    (   DISTRIBUTION    = HASH([seq_nmbr])
             ,   LOCATION        = USER_DB
@@ -1090,11 +1091,13 @@ ms.locfileid: "80346697"
 
 5. Чтобы удалить группу ресурсов, щелкните **SampleRG**, а затем нажмите кнопку **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дальнейшие действия 
-Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы создали внешние таблицы для определения структуры данных, хранящихся в Azure Storage Blob, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
+## <a name="next-steps"></a>Дальнейшие действия
+
+Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы создали внешние таблицы для определения структуры данных, хранящихся в Azure Storage Blob, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных.
 
 Вы выполнили такие действия:
 > [!div class="checklist"]
+>
 > * Создание хранилища данных с помощью пула S'L на портале Azure
 > * настроить правило брандмауэра на уровне сервера на портале Azure;
 > * Подключен к пулу S'L с помощью SSMS

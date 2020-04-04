@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: bb907ee59891e5a9a1ffc9c8c6eee34d3e71ad2f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 4/1/2020
+ms.openlocfilehash: 18f227c1888e0565eebb640fa61ced56dc994865
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79531946"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632342"
 ---
 # <a name="limitations-in-azure-database-for-mariadb"></a>Ограничения в службе "База данных Azure для MariaDB"
 В следующих разделах приводятся ограничения, касающиеся емкости, поддерживаемых подсистем хранилища, поддерживаемых разрешений, поддерживаемых инструкций языка обработки данных и функциональных возможностей в службе базы данных.
@@ -147,6 +147,10 @@ ms.locfileid: "79531946"
 |С оптимизацией для операций в памяти|8|16777216|1024|536 870 912|
 |С оптимизацией для операций в памяти|16|16777216|1024|1073741824|
 |С оптимизацией для операций в памяти|32|16777216|1024|1073741824|
+
+### <a name="time_zone"></a>time_zone
+
+Таблицы часового пояса могут быть `mysql.az_load_timezone` заселены, вызывая сохраненную процедуру с такого инструмента, как командная строка MyS'L или MyS'L Workbench. Обратитесь к [статьям портала Azure](howto-server-parameters.md#working-with-the-time-zone-parameter) или [Azure CLI,](howto-configure-server-parameters-cli.md#working-with-the-time-zone-parameter) чтобы вызвать сохраненную процедуру и установить глобальные или часовые пояса сессии.
 
 ## <a name="storage-engine-support"></a>Поддержка подсистем хранилища
 

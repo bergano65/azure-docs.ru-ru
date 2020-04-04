@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 ms.date: 04/16/2019
-ms.openlocfilehash: 906ae2a970ce1d5b82302d0277ca45bd93c23011
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b56375388f6293d27bcd2f2548d8b20205a92b15
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79256917"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80638037"
 ---
 # <a name="how-to-use-a-managed-instance-in-azure-sql-database"></a>Использование управляемого экземпляра в Базе данных SQL Azure
 
@@ -43,6 +43,7 @@ ms.locfileid: "79256917"
 
 - [Настройка репликации в Управляемом экземпляре Базы данных SQL Azure](replication-with-sql-database-managed-instance.md) — позволяет реплицировать данные между управляемыми экземплярами или с локального сервера SQL Server на управляемый экземпляр и наоборот. Дополнительные сведения о том, как использовать и настроить репликацию транзакций, можно найти в этом руководстве.
 - [Настройка обнаружения угроз](sql-database-managed-instance-threat-detection.md) — [обнаружение угроз](sql-database-threat-detection-overview.md) — это встроенная функция Базы данных SQL Azure, которая обнаруживает различные потенциальные атаки, такие как внедрение кода SQL или доступ из подозрительных мест. В этом руководстве вы узнаете, как включить и настроить [обнаружение угроз](sql-database-threat-detection-overview.md) для управляемого экземпляра.
+- [Создание оповещений](sql-database-managed-instance-alerts.md) позволяет настроить оповещения на контролируемых метриках, таких как использование процессора, потребление складских помещений, IOPS и другие для управляемого экземпляра. В этом руководстве вы узнаете, как включить и настроить оповещения для управляемого экземпляра.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -4,25 +4,25 @@ description: Эта статья содержит информацию о том
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/30/2018
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b47e6bac031a5f2cffc8734fee976fbf8dadc666
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c5d5354f5bca7a4c9ab00066167ad19890536629
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80129086"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80653619"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Отчеты в службе Многофакторной идентификации Azure
 
 Служба "Многофакторная идентификация Azure" предоставляет несколько типов отчетов, которые могут быть полезны для вас и вашей организации. Просмотреть их можно на портале Azure. В следующей таблице перечислены доступные отчеты:
 
-| Report | Расположение | Описание |
+| Report | Местоположение | Описание |
 |:--- |:--- |:--- |
 | Журнал заблокированных пользователей | Azure AD > Security > МиДА > Блок /разблокировать пользователей | История запросов на блокировку или разблокирование пользователей. |
 | Предупреждения об использовании и о мошенничестве | "Azure AD > События входа" | Сведения об общем использовании, сводка пользователей, сведения о пользователях, а также история предупреждений о мошенничестве, отправленных в течение указанного диапазона дат. |
@@ -90,7 +90,7 @@ ms.locfileid: "80129086"
       - Звонок был направлен на голосовую почту.
       - Недопустимый формат номера телефона.
       - Ошибка службы.
-      - Не удается подключиться к телефону пользователя.
+      - не удается связаться с телефоном пользователя
       - Не удается отправить уведомление от мобильного приложения на устройстве.
       - Не удается отправить уведомление от мобильного приложения.
       - Пользователь отклонил проверку подлинности.

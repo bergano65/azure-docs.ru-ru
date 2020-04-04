@@ -11,15 +11,17 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: f904619b1cea97849e631310cf303ed07194a01e
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: b1f21a996f7394def4d6b1e8bde9a5ccdf703dbb
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80349919"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632426"
 ---
 # <a name="azure-synapse-analytics--workload-management-portal-monitoring-preview"></a>Аналитика Azure Synapse - Мониторинг портала управления рабочей нагрузкой (Предварительный просмотр)
-В этой статье объясняется, как контролировать использование ресурсов [группы рабочих](sql-data-warehouse-workload-isolation.md#workload-groups) и активность запросов. Подробную информацию о том, как настроить Explorer Azure Metrics Explorer, можно найти статью [Azure Metrics Explorer.](../../azure-monitor/platform/metrics-getting-started.md)  Подробнее о том, как контролировать потребление ресурсов системы, можно ознакомиться в разделе [«Использование ресурсов ресурсов»](sql-data-warehouse-concept-resource-utilization-query-activity.md#resource-utilization) в документации Azure Synapse Analytics Monitoring.
+
+В этой статье объясняется, как контролировать использование ресурсов [группы рабочих](sql-data-warehouse-workload-isolation.md#workload-groups) и активность запросов.
+Подробную информацию о том, как настроить Explorer Azure Metrics Explorer, можно найти статью [Azure Metrics Explorer.](../../azure-monitor/platform/metrics-getting-started.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)  Подробнее о том, как контролировать потребление ресурсов системы, можно ознакомиться в разделе [«Использование ресурсов ресурсов»](sql-data-warehouse-concept-resource-utilization-query-activity.md#resource-utilization) в документации Azure Synapse Analytics Monitoring.
 Для мониторинга управления рабочей нагрузкой предусмотрены две различные категории групп рабочей нагрузки: распределение ресурсов и деятельность по запросу.  Эти показатели могут быть разделены и отфильтрованы рабочей группой.  Метрики могут быть разделены и отфильтрованы на основе, если они определяются системой (группы рабочей нагрузки класса ресурсов) или пользовательскими (созданными пользователем с помощью синтаксиса [CREATE WORKLOAD GROUP).](https://docs.microsoft.com/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)
 
 ## <a name="workload-management-metric-definitions"></a>Определения метрик управления рабочей нагрузкой
@@ -35,20 +37,24 @@ ms.locfileid: "80349919"
 |Запросы группрабочей рабочей нагрузки в очереди | Запросы для группы рабочей нагрузки, которые в настоящее время стоят в очереди, ожидая начала выполнения.  Запросы могут быть очереди, потому что они ждут ресурсов или замков.<br><br>Запросы могут ждать по многим причинам.  Если система перегружена и спрос на параллели больше, чем доступен, запросы будут стоять в очереди.<br><br>Рассмотрите возможность добавления дополнительных `CAP_PERCENTAGE_RESOURCE` ресурсов в группу рабочей нагрузки путем увеличения параметра в заявлении [CREATE WORKLOAD GROUP.](https://docs.microsoft.com/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)  Если `CAP_PERCENTAGE_RESOURCE` показатель *процентного созыва эффективного ограничения ресурсов* превышает метрику, то настроенная изоляция рабочей нагрузки для другой группы рабочей нагрузки влияет на ресурсы, выделенные этой группе рабочей нагрузки.  Рассмотрите `MIN_PERCENTAGE_RESOURCE` возможность снижения других групп рабочей нагрузки или масштабируйте экземпляр, чтобы добавить больше ресурсов. |SUM |
 
 ## <a name="monitoring-scenarios-and-actions"></a>Мониторинг сценариев и действий
+
 Ниже приведенряды конфигурации диаграмм, чтобы выделить использование метрикуправления рабочей нагрузкой для устранения неполадок наряду с сопутствующими действиями по решению проблемы.
 
 ### <a name="underutilized-workload-isolation"></a>Недоиспользованная изоляция рабочей нагрузки
-Рассмотрим следующую конфигурацию рабочей группы и `wgPriority` классификатора, в которой создается названная группа рабочей нагрузки и отображается *TheCEO* `membername` с помощью классификатора рабочей `wcCEOPriority` нагрузки.  Рабочая `wgPriority` группа имеет 25% изоляции рабочей`MIN_PERCENTAGE_RESOURCE` нагрузки, настроенной для нее (No 25).  Каждому запросу, представленному *TheCEO,* дается`REQUEST_MIN_RESOURCE_GRANT_PERCENT` 5% системных ресурсов (No 5).
-```sql
-CREATE WORKLOAD GROUP wgPriority 
-WITH ( MIN_PERCENTAGE_RESOURCE = 25   
-      ,CAP_PERCENTAGE_RESOURCE = 50 
-      ,REQUEST_MIN_RESOURCE_GRANT_PERCENT = 5); 
 
-CREATE WORKLOAD CLASSIFIER wcCEOPriority 
+Рассмотрим следующую конфигурацию рабочей группы и `wgPriority` классификатора, в которой создается названная группа рабочей нагрузки и отображается *TheCEO* `membername` с помощью классификатора рабочей `wcCEOPriority` нагрузки.  Рабочая `wgPriority` группа имеет 25% изоляции рабочей`MIN_PERCENTAGE_RESOURCE` нагрузки, настроенной для нее (No 25).  Каждому запросу, представленному *TheCEO,* дается`REQUEST_MIN_RESOURCE_GRANT_PERCENT` 5% системных ресурсов (No 5).
+
+```sql
+CREATE WORKLOAD GROUP wgPriority
+WITH ( MIN_PERCENTAGE_RESOURCE = 25
+      ,CAP_PERCENTAGE_RESOURCE = 50
+      ,REQUEST_MIN_RESOURCE_GRANT_PERCENT = 5);
+
+CREATE WORKLOAD CLASSIFIER wcCEOPriority
 WITH ( WORKLOAD_GROUP = 'wgPriority'
       ,MEMBERNAME = 'TheCEO');
 ```
+
 Приведенная ниже диаграмма настроена следующим образом:<br>
 Метрика 1: *Эффективный мин-процент ресурсов* `blue line`(Авг агрегация, )<br>
 Метрика 2: *Распределение групп рабочей нагрузки по системным процентам* (агрегация Avg, `purple line`)<br>
@@ -56,18 +62,20 @@ WITH ( WORKLOAD_GROUP = 'wgPriority'
 ![underutilized-wg.png](./media/sql-data-warehouse-workload-management-portal-monitor/underutilized-wg.png) Диаграмма показывает, что с 25% изоляции рабочей нагрузки, только 10% используется в среднем.  В этом случае `MIN_PERCENTAGE_RESOURCE` значение параметра может быть снижено до 10 или 15 и позволить другим рабочим нагрузкам в системе потреблять ресурсы.
 
 ### <a name="workload-group-bottleneck"></a>Узкое место группы рабочей нагрузки
+
 Рассмотрим следующую конфигурацию рабочей группы и `wgDataAnalyst` классификатора, в которой создается `wcDataAnalyst` названная группа рабочей нагрузки и отображается *DataAnalyst* `membername` с помощью классификатора рабочей нагрузки.  Рабочая `wgDataAnalyst` группа имеет 6% изоляции рабочей`MIN_PERCENTAGE_RESOURCE` нагрузки, настроенной для нее (No 6) и ограничение ресурсов в 9% (No`CAP_PERCENTAGE_RESOURCE` 9).  На каждый запрос, представленный *DataAnalyst,* дается`REQUEST_MIN_RESOURCE_GRANT_PERCENT` 3% системных ресурсов (No 3).
 
 ```sql
 CREATE WORKLOAD GROUP wgDataAnalyst  
-WITH ( MIN_PERCENTAGE_RESOURCE = 6   
-      ,CAP_PERCENTAGE_RESOURCE = 9 
-      ,REQUEST_MIN_RESOURCE_GRANT_PERCENT = 3); 
+WITH ( MIN_PERCENTAGE_RESOURCE = 6
+      ,CAP_PERCENTAGE_RESOURCE = 9
+      ,REQUEST_MIN_RESOURCE_GRANT_PERCENT = 3);
 
-CREATE WORKLOAD CLASSIFIER wcDataAnalyst 
+CREATE WORKLOAD CLASSIFIER wcDataAnalyst
 WITH ( WORKLOAD_GROUP = 'wgDataAnalyst'
       ,MEMBERNAME = 'DataAnalyst');
 ```
+
 Приведенная ниже диаграмма настроена следующим образом:<br>
 Метрика 1: *Эффективный процент ресурсов крышки* (агрегация Avg, `blue line`)<br>
 Метрика 2: *Распределение группрабочей рабочей нагрузки по максимальному проценту ресурсов* (агрегация Avg, `purple line`)<br>
@@ -76,8 +84,8 @@ WITH ( WORKLOAD_GROUP = 'wgDataAnalyst'
 ![бутылка шеи-Wg](./media/sql-data-warehouse-workload-management-portal-monitor/bottle-necked-wg.png) Диаграмма показывает, что с 9% крышкой на ресурсы, рабочая нагрузка группа 90% "используется (от *распределения группы рабочей нагрузки по максимальной метрики процент ресурсов).*  Существует устойчивая очередь запросов, как показано из *группы рабочей нагрузки в очереди запросов метрики.*  В этом случае `CAP_PERCENTAGE_RESOURCE` увеличение значения выше 9% позволит выполнять одновременно больше запросов.  Увеличение `CAP_PERCENTAGE_RESOURCE` предполагает, что имеется достаточно ресурсов, а не изолированы другими группами рабочей нагрузки.  Проверить крышку увеличилось путем проверки *Эффективное ограничение ресурса процент метрики.*  Если больше пропускной результат желательно, `REQUEST_MIN_RESOURCE_GRANT_PERCENT` также рассмотреть вопрос об увеличении до значения больше, чем 3.  Увеличение `REQUEST_MIN_RESOURCE_GRANT_PERCENT` может позволить запросы работать быстрее.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Быстрый запуск: Настройка изоляции рабочей нагрузки с помощью T-S'L](quickstart-configure-workload-isolation-tsql.md)<br>
-[CREATE WORKLOAD GROUP (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)<br>
-[Классификатор CREATE WORKLOAD (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest)<br>
-[Мониторинг использования ресурсов](sql-data-warehouse-concept-resource-utilization-query-activity.md)
 
+- [Быстрый запуск: Настройка изоляции рабочей нагрузки с помощью T-S'L](quickstart-configure-workload-isolation-tsql.md)<br>
+- [CREATE WORKLOAD GROUP (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)<br>
+- [Классификатор CREATE WORKLOAD (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest)<br>
+- [Мониторинг использования ресурсов](sql-data-warehouse-concept-resource-utilization-query-activity.md)

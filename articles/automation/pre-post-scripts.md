@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 05/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 35fba966fcdb6d1c5cd7c531bb22c9c78ae16ff3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bbf7f2945ad6a94c51cfd0c7db1e8c85d739c6ed
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75417801"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631623"
 ---
 # <a name="manage-pre-and-post-scripts"></a>Управление до и после сценария
 
@@ -18,7 +18,7 @@ ms.locfileid: "75417801"
 
 ## <a name="runbook-requirements"></a>Требования к модулям Runbook
 
-Для того, чтобы книга запуска использовалась в качестве предварительного или постскриптума, книга запуска должна быть импортирована в вашу учетную запись Автоматизации и опубликована. Чтобы узнать больше об этом процессе, смотрите [Publish runbook](manage-runbooks.md#publish-a-runbook).
+Для того, чтобы книга запуска использовалась в качестве предварительного или постскриптума, книга запуска должна быть импортирована в вашу учетную запись Автоматизации и опубликована. Чтобы узнать больше об этом процессе, смотрите [Publish runbook](manage-runbooks.md#publishing-a-runbook).
 
 ## <a name="using-a-pre-script-or-post-script"></a>Использование предварительного сценария или пост-скрипта
 

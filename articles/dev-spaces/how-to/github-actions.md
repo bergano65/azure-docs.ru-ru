@@ -1,17 +1,17 @@
 ---
 title: Действия GitHub & службе Azure Kubernetes (предварительный просмотр)
 services: azure-dev-spaces
-ms.date: 02/04/2020
+ms.date: 04/03/2020
 ms.topic: conceptual
 description: Просмотр и тестирование запроса на вытягивание непосредственно в службе Azure Kubernetes с помощью действий GitHub и пространства Azure Dev
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, контейнеры, действия GitHub, шлем, сервисная сетка, разгром сервисной сетки, кубектль, k8s
 manager: gwallace
-ms.openlocfilehash: 49715e38f36d4421b7327640ec8392a83b3c2996
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a83da0ef3958748831eb0eeda1aa5e91efa7ef2e
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78252377"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637944"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службе Azure Kubernetes (предварительный просмотр)
 
@@ -101,6 +101,11 @@ az role assignment create --assignee <ClientId>  --scope <ACRId> --role AcrPush
 > Все эти секреты используются в действии GitHub и настроены в [.github/workflows/bikes.yml.][github-action-yaml]
 
 Дополнительно, если вы хотите обновить мастер-пространство после того, как ваш PR сливается, добавить *GATEWAY_HOST* секрет, который принимает форму *<MASTER_SPACE>.gateway.<HOST_SUFFIX>*, который в этом примере является *dev.gateway.fedcab0987.eus.azds.io*. Как только вы объедините изменения в основной ветке в вилке, другое действие будет запущено для восстановления и запуска всего приложения в пространстве мастер-разработчиков. В этом примере мастер-пространство является *dev.* Это действие настроено в [.github/workflows/bikesharing.yml][github-action-bikesharing-yaml].
+
+Кроме того, если вы хотите, чтобы изменения в вашем PR для запуска в grandchild пространстве, обновить *MASTER_SPACE* и *HOST* секреты. Например, если приложение работает в *dev* с ребенком пространства *dev/azureuser1*, чтобы иметь PR работать в детском пространстве *dev/azureuser1*:
+
+* Обновление *MASTER_SPACE* в детское пространство, необходимое для того, чтобы быть родительским, в этом примере *azureuser1.*
+* Обновление *HOST* до *<GRANDPARENT_SPACE>.<APP_NAME>,<HOST_SUFFIX>*, в этом примере *dev.bikesharingweb.fedcab0987.eus.azds.io*.
 
 ## <a name="create-a-new-branch-for-code-changes"></a>Создание новой ветки для изменения кода
 

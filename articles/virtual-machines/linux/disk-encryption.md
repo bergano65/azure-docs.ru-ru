@@ -2,17 +2,17 @@
 title: Шифрование управляемых дисков на стороне сервера - Azure CLI
 description: Azure Storage защищает ваши данные, шифруя их в состоянии покоя, прежде чем сохранять их в кластерах хранения. Вы можете полагаться на управляемые корпорацией Майкрософт ключи для шифрования управляемых дисков или использовать управляемые клиентом ключи для управления шифрованием с помощью собственных ключей.
 author: roygara
-ms.date: 03/12/2020
+ms.date: 04/02/2020
 ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: 912677a10d7098b891a4f6972b61761cd72cf292
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 20aa55f9fc4ea65da1973628aeec313a5367816a
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80585940"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632060"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование дисков, управляемых Azure на стороне сервера
 
@@ -232,7 +232,7 @@ az disk show -g yourResourceGroupName -n yourDiskName --query [encryption.type] 
 
 [Лазурное шифрование дисков для виртуальных машин и виртуальных наборов машин](../../security/fundamentals/azure-disk-encryption-vms-vmss.md) использует функцию [BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview) Windows и функцию [DM-Crypt](https://en.wikipedia.org/wiki/Dm-crypt) Linux для шифрования управляемых дисков с управляемыми клиентом ключами в гостевом VM.  Шифрование на стороне сервера с ключами, управляемыми клиентом, улучшает ADE, позволяя использовать любые типы ОС и изображения для ви-х годов путем шифрования данных в службе хранения данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Исследуйте шаблоны менеджера ресурсов Azure для создания зашифрованных дисков с ключами, управляемыми клиентом](https://github.com/ramankumarlive/manageddiskscmkpreview)
 - [Что такое хранилище ключей Azure?](../../key-vault/key-vault-overview.md)

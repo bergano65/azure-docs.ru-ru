@@ -8,12 +8,12 @@ ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: b5d326d02587d6b5bd8fd73dcccfefdb13c47d57
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 26c5c5b31d5f3f9e1a642c0bafb947190e479055
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79500922"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632632"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -33,7 +33,7 @@ ms.locfileid: "79500922"
 
 3. **Убедитесь, что ваши узлы и рабочее пространство автоматизации имеют необходимые модули.** 
 
-    Если в runbook импортируются какие-либо модули, убедитесь, что они доступны для вашей учетной записи Автоматизации, используя шаги, перечисленные в [модулях Импорта.](../shared-resources/modules.md#import-modules) Обновите свои модули до последней версии, следуя инструкциям [в модулях Update Azure в Azure Automation.](..//automation-update-azure-modules.md) Для получения дополнительной [информации](shared-resources.md#modules)об устранении неполадок см.
+    Если в runbook импортируются какие-либо модули, убедитесь, что они доступны для вашей учетной записи Автоматизации, используя шаги, перечисленные в [модулях Импорта.](../shared-resources/modules.md#importing-modules) Обновите свои модули до последней версии, следуя инструкциям [в модулях Update Azure в Azure Automation.](..//automation-update-azure-modules.md) Для получения дополнительной [информации](shared-resources.md#modules)об устранении неполадок см.
 
 4. **Делайте, если ваша книга приостановлена или неожиданно выходит из строя.**
 
@@ -43,7 +43,7 @@ ms.locfileid: "79500922"
 
 ## <a name="scenario-run-login-azurermaccount-to-log-in"></a><a name="login-azurerm"></a>Сценарий: Выполнить Login-AzureRMAccount для входа в систему
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вы получаете следующую ошибку при выполнении runbook:
 
@@ -92,7 +92,7 @@ Run Login-AzureRMAccount to login.
 
 ## <a name="scenario-unable-to-find-the-azure-subscription"></a><a name="unable-to-find-subscription"></a>Сценарий: не удается найти подписку Azure
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вы получаете следующую ошибку при работе с `Select-AzureSubscription` `Select-AzureRmSubscription` или cmdlet:
 
@@ -129,7 +129,7 @@ The subscription named <subscription name> cannot be found.
 
 ## <a name="scenario-authentication-to-azure-failed-because-multi-factor-authentication-is-enabled"></a><a name="auth-failed-mfa"></a>Сценарий: не удается выполнить проверку подлинности в Azure из-за включенной многофакторной проверки подлинности
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При аутентификации в Azure с помощью своего имени и пароля вы получаете следующую ошибку:
 
@@ -147,7 +147,7 @@ Add-AzureAccount: AADSTS50079: Strong authentication enrollment (proof-up) is re
 
 ## <a name="scenario-you-see-an-error-in-your-job-streams-about-the-get_serializationsettings-method"></a><a name="get-serializationsettings"></a>Сценарий: В потоках работы видно, что в потоках работы прослушаешься get_SerializationSettings
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 В потоках вакансий в потоке вакансий можно увидеть следующую ошибку:
 
@@ -173,7 +173,7 @@ At line:16 char:1
 
 ## <a name="scenario-the-runbook-fails-with-the-error-a-task-was-canceled"></a><a name="task-was-cancelled"></a>Сценарий. Выполнение модуля Runbook завершается ошибкой отмены задачи
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 В модуле Runbook возникает ошибка, аналогичная приведенной ниже:
 
@@ -196,7 +196,7 @@ Exception: A task was canceled.
 
 ## <a name="scenario-runbooks-fail-when-dealing-with-multiple-subscriptions"></a><a name="runbook-auth-failure"></a>Сценарий: Runbooks терпят неудачу при работе с несколькими подписками
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При запуске руны в runbook работает не удается управлять ресурсами Azure.
 
@@ -235,7 +235,7 @@ Start-AzureRmAutomationRunbook `
 
 ## <a name="scenario-term-not-recognized-as-the-name-of-a-cmdlet-function-script"></a><a name="not-recognized-as-cmdlet"></a>Сценарий: Срок, не признанный как название cmdlet, функция, сценарий
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 В модуле Runbook возникает ошибка, аналогичная приведенной ниже:
 
@@ -260,7 +260,7 @@ The term 'Connect-AzureRmAccount' is not recognized as the name of a cmdlet, fun
 
 ## <a name="scenario-the-runbook-job-start-was-attempted-three-times-but-failed-to-start-each-time"></a><a name="job-attempted-3-times"></a>Сценарий: Запуск работы runbook был предпринят три раза, но не запускался каждый раз
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Ваша книга не удается со следующей ошибкой:
 
@@ -284,7 +284,7 @@ The job was tried three times but it failed
 
 ### <a name="resolution"></a>Решение
 
-* Предел памяти, сетевые розетки. Предлагаемые способы работы в пределах памяти — разделить рабочую нагрузку между несколькими runbooks, обработать меньше данных в памяти, избежать написания ненужных выходных данных из ваших runbooks и рассмотреть, сколько контрольных личек записано в рабочий процесс PowerShell Модулей runbook. Используйте четкий метод, `$myVar.clear`например, чтобы `[GC]::Collect` очистить переменные и использовать для запуска сбора мусора немедленно. Эти действия уменьшают объем памяти, занимаемой модулем runbook во время выполнения.
+* Предел памяти, сетевые розетки. Предлагаемые способы работы в пределах памяти — разделить рабочую нагрузку между несколькими runbooks, обработать меньше данных в памяти, избежать написания ненужных выходных данных из ваших runbooks и рассмотреть, сколько контрольных личек записано в ваших рукописных учебниках powerShell. Используйте четкий метод, `$myVar.clear`например, чтобы `[GC]::Collect` очистить переменные и использовать для запуска сбора мусора немедленно. Эти действия уменьшают объем памяти, занимаемой модулем runbook во время выполнения.
 
 * Модуль несовместим. Обновите модули Azure, выяснив следующие шаги в [мочеиспускании модулей Azure PowerShell в Azure Automation.](../automation-update-azure-modules.md)
 
@@ -296,7 +296,7 @@ The job was tried three times but it failed
 
 ## <a name="scenario-sign-in-to-azure-account-failed"></a><a name="sign-in-failed"></a>Сценарий: Запись на учетную запись Azure не удалась
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вы получаете одну из следующих `Add-AzureAccount` `Connect-AzureRmAccount` ошибок при работе с или cmdlet:
 
@@ -355,7 +355,7 @@ No certificate was found in the certificate store with thumbprint
 
 ## <a name="scenario-object-reference-not-set-to-an-instance-of-an-object"></a><a name="child-runbook-object"></a>Сценарий: Ссылка на объект не установлена на экземпляр объекта
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вы получаете следующую ошибку при входе `Wait` в детскую запущенную книгу с параметром, и поток вывода содержит объект:
 
@@ -395,7 +395,7 @@ $jobResults | Get-AzureRmAutomationJobOutput | Get-AzureRmAutomationJobOutputRec
 
 ## <a name="scenario-runbook-fails-because-of-deserialized-object"></a><a name="fails-deserialized-object"></a>Сценарий: сбой модуля Runbook из-за десериализованного объекта
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Выполнение модуля Runbook завершилось ошибкой.
 
@@ -419,7 +419,7 @@ Cannot convert the <ParameterType> value of type Deserialized <ParameterType> to
 
 ## <a name="scenario-runbook-job-fails-because-allocated-quota-exceeded"></a><a name="quota-exceeded"></a>Сценарий: Задание Runbook не удается из-за превышения выделенной квоты
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Выполнение задания Runbook завершилось ошибкой.
 
@@ -442,7 +442,7 @@ The quota for the monthly total job run time has been reached for this subscript
 
 ## <a name="scenario-cmdlet-not-recognized-when-executing-a-runbook"></a><a name="cmdlet-not-recognized"></a>Сценарий: не удается распознать командлет при выполнении модуля Runbook
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Выполнение задания Runbook завершилось ошибкой.
 
@@ -465,7 +465,7 @@ The quota for the monthly total job run time has been reached for this subscript
 
 ## <a name="scenario-a-long-running-runbook-fails-to-complete"></a><a name="long-running-runbook"></a>Сценарий: Долгосрочный runbook не завершается
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Runbook находится в остановленном состоянии в течение 3 часов после выполнения команды. Вы также можете получить эту ошибку:
 
@@ -493,7 +493,7 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 ## <a name="scenario-status-400-bad-request-when-calling-a-webhook"></a><a name="expired webhook"></a>Сценарий: Статус: 400 Bad Request при вызове веб-крючка
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При попытке вызвать веб-крюк для запуска Azure Automation получает следующую ошибку:
 
@@ -511,7 +511,7 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 ## <a name="scenario-429-the-request-rate-is-currently-too-large"></a><a name="429"></a>Сценарий: 429: Коэффициент запроса в настоящее время слишком велик...
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При выполнении командлета `Get-AzureRmAutomationJobOutput` вы получаете следующее сообщение об ошибке:
 
@@ -533,7 +533,7 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 ## <a name="scenario-powershell-job-fails-with-error-cannot-invoke-method"></a><a name="cannot-invoke-method"></a>Сценарий: Работа PowerShell не справляется с ошибкой: не может вызвать метод
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вы получаете следующее сообщение об ошибке при запуске задания PowerShell в запущенной в Azure книге:
 
@@ -556,7 +556,7 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 
 ## <a name="scenario-linux-hybrid-runbook-worker-receives-a-prompt-for-a-password-when-signing-a-runbook"></a>Сценарий: Linux Hybrid Runbook Worker получает подсказку для пароля при подписании runbook
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Запуск `sudo` команды для Linux Hybrid Runbook Worker получает неожиданный запрос для пароля.
 
@@ -572,7 +572,7 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 
 ## <a name="scenario-cmdlet-failing-in-pnp-powershell-runbook-on-azure-automation"></a>Сценарий: Cmdlet не удается в PnP PowerShell runbook на Azure автоматизации
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Когда запуск записывает созданный PnP PowerShell объект на выход Azure Automation напрямую, выход cmdlet не может передаваться обратно в Автоматизацию.
 

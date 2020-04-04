@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2019
-ms.openlocfilehash: 65a6f51d0eef28ea33adcc755d3d51f1e06a5341
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: 70fa66a96291e0c2a638bf69bdce7da531d32bb7
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80528337"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637472"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к мониторингу Azure
 
@@ -32,14 +32,14 @@ ms.locfileid: "80528337"
 
 Если вам нужно настроить агента для отчета в более чем одно рабочее пространство, это не может быть выполнено во время первоначальной настройки, только после обновления настроек из панели управления или PowerShell, как описано в [Добавлении или удалении рабочего пространства.](agent-manage.md#adding-or-removing-a-workspace)  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#network-requirements).
 
 ## <a name="obtain-workspace-id-and-key"></a>Получение идентификатора и ключа рабочей области
 Перед установкой агента Log Analytics для Windows требуется получить идентификатор и ключ для рабочей области Log Analytics.  Эта информация необходима во время настройки с каждого метода установки, чтобы правильно настроить агента и гарантировать, что он может успешно общаться с Azure Monitor в коммерческом и правительственном облаке Правительства США. 
 
 1. На портале Azure поиск и выбор **рабочих областей анализа журналов.**
 2. В списке рабочих областей Log Analytics выберите ту, в которую агент должен отправлять отчеты.
-3. Выберите **Дополнительные параметры**.<br><br> ![Дополнительные параметры Log Analytics](media/agent-windows/log-analytics-advanced-settings-01.png)<br><br>  
+3. Выберите **Расширенные настройки.**<br><br> ![Дополнительные параметры Log Analytics](media/agent-windows/log-analytics-advanced-settings-01.png)<br><br>  
 4. Выберите **Подключенные источники**, а затем выберите **Серверы с Windows**.   
 5. Скопируйте **идентификатор рабочей области** и **первичный ключ** и вставьте их в удобный для вас редактор.    
    
@@ -136,44 +136,44 @@ ms.locfileid: "80528337"
 Чтобы извлечь код продукта из пакета установщика агента напрямую, вы можете воспользоваться Orca.exe (компонент пакета разработки программного обеспечения для Windows), который можно найти на странице [компонентов Windows SDK для разработчиков установщика Windows](https://msdn.microsoft.com/library/windows/desktop/aa370834%28v=vs.85%29.aspx). Кроме того, вы можете использовать PowerShell с [примером сценария](https://www.scconfigmgr.com/2014/08/22/how-to-get-msi-file-information-with-powershell/), написанного специалистом с рангом Microsoft Valuable Professional (MVP).  В обоих случаях сначала нужно извлечь файл**MOMagent.msi** из пакета установки MMASetup.  Эта процедура рассматривается выше в разделе [Установка агента с помощью командной строки](#install-the-agent-using-the-command-line).  
 
 1. Импортируйте модуль xPSDesiredStateConfiguration [https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration) DSC из системы автоматизации Azure.  
-1. Создайте в службе автоматизации Azure ресурсы-контейнеры для переменных *OPSINSIGHTS_WS_ID* и *OPSINSIGHTS_WS_KEY*. В качестве значения параметра *OPSINSIGHTS_WS_ID* укажите идентификатор рабочей области Log Analytics, а для параметра *OPSINSIGHTS_WS_KEY* — первичный ключ рабочей области.
-1. Скопируйте скрипт и сохраните его как файл MMAgent.ps1.
+2.    Создайте в службе автоматизации Azure ресурсы-контейнеры для переменных *OPSINSIGHTS_WS_ID* и *OPSINSIGHTS_WS_KEY*. В качестве значения параметра *OPSINSIGHTS_WS_ID* укажите идентификатор рабочей области Log Analytics, а для параметра *OPSINSIGHTS_WS_KEY* — первичный ключ рабочей области.
+3.    Скопируйте скрипт и сохраните его как файл MMAgent.ps1.
 
-   ```powershell
-   Configuration MMAgent
-   {
-       $OIPackageLocalPath = "C:\Deploy\MMASetup-AMD64.exe"
-       $OPSINSIGHTS_WS_ID = Get-AutomationVariable -Name "OPSINSIGHTS_WS_ID"
-       $OPSINSIGHTS_WS_KEY = Get-AutomationVariable -Name "OPSINSIGHTS_WS_KEY"
+```powershell
+Configuration MMAgent
+{
+    $OIPackageLocalPath = "C:\Deploy\MMASetup-AMD64.exe"
+    $OPSINSIGHTS_WS_ID = Get-AutomationVariable -Name "OPSINSIGHTS_WS_ID"
+    $OPSINSIGHTS_WS_KEY = Get-AutomationVariable -Name "OPSINSIGHTS_WS_KEY"
 
-       Import-DscResource -ModuleName xPSDesiredStateConfiguration
-       Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xPSDesiredStateConfiguration
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-       Node OMSnode {
-           Service OIService
-           {
-               Name = "HealthService"
-               State = "Running"
-               DependsOn = "[Package]OI"
-           }
+    Node OMSnode {
+        Service OIService
+        {
+            Name = "HealthService"
+            State = "Running"
+            DependsOn = "[Package]OI"
+        }
 
-           xRemoteFile OIPackage {
-               Uri = "https://go.microsoft.com/fwlink/?LinkId=828603"
-               DestinationPath = $OIPackageLocalPath
-           }
+        xRemoteFile OIPackage {
+            Uri = "https://go.microsoft.com/fwlink/?LinkId=828603"
+            DestinationPath = $OIPackageLocalPath
+        }
 
-           Package OI {
-               Ensure = "Present"
-               Path  = $OIPackageLocalPath
-               Name = "Microsoft Monitoring Agent"
-               ProductId = "8A7F2C51-4C7D-4BFD-9014-91D11F24AAE2"
-               Arguments = '/C:"setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=' + $OPSINSIGHTS_WS_ID + '      OPINSIGHTS_WORKSPACE_KEY=' + $OPSINSIGHTS_WS_KEY + ' AcceptEndUserLicenseAgreement=1"'
-               DependsOn = "[xRemoteFile]OIPackage"
-           }
-       }
-   }
+        Package OI {
+            Ensure = "Present"
+            Path  = $OIPackageLocalPath
+            Name = "Microsoft Monitoring Agent"
+            ProductId = "8A7F2C51-4C7D-4BFD-9014-91D11F24AAE2"
+            Arguments = '/C:"setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=' + $OPSINSIGHTS_WS_ID + ' OPINSIGHTS_WORKSPACE_KEY=' + $OPSINSIGHTS_WS_KEY + ' AcceptEndUserLicenseAgreement=1"'
+            DependsOn = "[xRemoteFile]OIPackage"
+        }
+    }
+}
 
-   ```
+```
 
 4. Обновите значение `ProductId` в скрипте с кодом продукта, извлеченном из последней версии установленного пакета агента, используя рекомендованные выше методы. 
 5. [Переместите сценарий настройки MMAgent.ps1](../../automation/automation-dsc-getting-started.md#importing-a-configuration-into-azure-automation) в учетную запись автоматизации. 

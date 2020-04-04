@@ -1,6 +1,6 @@
 ---
 title: Присваивать переменные
-description: Советы по присваиванию значений переменных T-SQL в хранилище данных SQL Azure для разработки решений.
+description: В этой статье вы найдете важные советы по назначению переменных T-S'L в пуле S'L.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,27 +11,27 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 0adcd9bdf92b7ec649b7d91ca0e655fc006b3549
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 2dcf706ea59657abc2718a69e59191604dc2849d
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351663"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633407"
 ---
-# <a name="assigning-variables-in-azure-sql-data-warehouse"></a>Назначение переменных в хранилище данных SQL Azure
+# <a name="assign-variables-in-synapse-sql-pool"></a>Назначать переменные в пуле Synapse S'L
 
-Советы по присваиванию значений переменных T-SQL в хранилище данных SQL Azure для разработки решений.
+В этой статье вы найдете важные советы по назначению переменных T-S'L в пуле S'L.
 
-## <a name="setting-variables-with-declare"></a>Задание переменных с помощью DECLARE
+## <a name="set-variables-with-declare"></a>Набор переменных с помощью DECLARE
 
-Переменные в хранилище данных SQL задаются с помощью инструкции `DECLARE` или инструкции `SET`. Инициализация переменных с помощью DECLARE — один из наиболее гибких способов задать значение переменной в хранилище данных SQL.
+Переменные в пуле S'L устанавливаются с помощью `DECLARE` оператора или `SET` оператора. Инициализация переменных с помощью DECLARE является одним из наиболее гибких способов установки переменного значения в пуле S'L.
 
 ```sql
 DECLARE @v  int = 0
 ;
 ```
 
-С помощью DECLARE можно задать одновременно несколько переменных. SELECT или UPDATE нельзя использовать для выполнения следующего кода:
+С помощью DECLARE можно задать одновременно несколько переменных. Вы не можете использовать SELECT или UPDATE, чтобы сделать следующее:
 
 ```sql
 DECLARE @v  INT = (SELECT TOP 1 c_customer_sk FROM Customer where c_last_name = 'Smith')
@@ -39,7 +39,7 @@ DECLARE @v  INT = (SELECT TOP 1 c_customer_sk FROM Customer where c_last_name = 
 ;
 ```
 
-Нельзя инициализировать и использовать переменную в одной и той же инструкции DECLARE. Чтобы проиллюстрировать это, ниже приведен **недопустимый** пример, так как @p1 инициализируется и используется в одной и той же инструкции DECLARE. Следующий пример приводит к возникновению ошибки.
+Вы не можете инициализировать и использовать переменную в той же ан-нет DECLARE. Чтобы проиллюстрировать это, ниже приведен **недопустимый** пример, так как @p1 инициализируется и используется в одной и той же инструкции DECLARE. Таким образом, следующий пример дает ошибку:
 
 ```sql
 DECLARE @p1 int = 0
@@ -47,7 +47,7 @@ DECLARE @p1 int = 0
 ;
 ```
 
-## <a name="setting-values-with-set"></a>Задание значений с помощью SET
+## <a name="set-values-with-set"></a>Установка значений с SET
 
 SET — это очень распространенный метод задания одной переменной.
 

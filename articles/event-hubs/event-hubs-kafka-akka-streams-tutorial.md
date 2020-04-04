@@ -4,21 +4,19 @@ description: В этой статье приводится информация 
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
-manager: timlt
 editor: ''
 ms.assetid: ''
 ms.service: event-hubs
 ms.devlang: na
-ms.topic: article
-ms.custom: seodec18
-ms.date: 12/06/2018
+ms.topic: how-to
+ms.date: 04/02/2020
 ms.author: shvija
-ms.openlocfilehash: c53fcc7b4b99e77237ba7ea9219aef4182f2af61
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 0b96f1448fd223aae2dde77c5c05a8c9bd74ee9b
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80521824"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80632844"
 ---
 # <a name="using-akka-streams-with-event-hubs-for-apache-kafka"></a>Использование Akka Streams с Центрами событий для Apache Kafka
 В этом учебнике показано, как подключить Akka Streams к центру событий без изменения клиентских протоколов или запуска собственных кластеров. Центры событий Azure для Kafka поддерживают [версию Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
@@ -140,22 +138,11 @@ mvn exec:java -Dexec.mainClass="AkkaTestConsumer"
 Дополнительные сведения об Akka Streams см. в руководстве по [Akka Streams Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом уроке вы узнали, как подключить Akka Streams к центру событий, не меняя клиентов протокола или не запуская собственные кластеры. Центры событий Azure для платформы Kafka поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html) В рамках данного руководства вы сделали следующее: 
+Чтобы узнать больше о событиях концентраторов для Кафки, смотрите следующие статьи:  
 
-> [!div class="checklist"]
-> * Создание пространства имен в Центрах событий
-> * Клонирование примера проекта
-> * Запуск производителя Akka Streams 
-> * Запуск потребителя Akka Streams
-
-Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в статьях:  
-
-- [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
-- [Центры событий Azure для Apache Kafka (предварительная версия)](event-hubs-for-kafka-ecosystem-overview.md)
-- [Как создать центр событий](event-hubs-create.md)
-- [Потоковая передача данных в Центры событий из приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
 - [Зеркальное отображение брокера Kafka в концентраторе событий](event-hubs-kafka-mirror-maker-tutorial.md)
 - [Подключение Apache Spark к концентратору событий](event-hubs-kafka-spark-tutorial.md)
 - [Подключение Apache Flink к концентратору событий](event-hubs-kafka-flink-tutorial.md)
 - [Интеграция Kafka Connect с центром событий](event-hubs-kafka-connect-tutorial.md)
 - [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)
+- [Руководство разработчиков Apache Kafka для центров событий Azure](apache-kafka-developer-guide.md)

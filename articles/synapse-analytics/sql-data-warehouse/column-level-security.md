@@ -1,6 +1,6 @@
 ---
 title: Что такое безопасность на уровне столбцов для Azure Synapse?
-description: Безопасность столбцов позволяет клиентам контролировать доступ к столбцам таблиц базы данных на основе контекста выполнения пользователя или членства в группе, упрощая проектирование и кодирование безопасности в приложении, а также позволяя осуществлять ограничения на столбец Доступа.
+description: Безопасность столбцов позволяет клиентам контролировать доступ к столбцам таблиц базы данных на основе контекста выполнения пользователя или членства в группе, упрощая проектирование и кодирование безопасности в приложении, а также позволяя осуществлять ограничения на доступ к столбцу.
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -12,24 +12,23 @@ ms.author: jrasnick
 ms.reviewer: igorstan, carlrab
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 24ead458232b096a5c69ffe8b45c6298a9da9f75
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 61a3e2eadaf79cdb30a931b31cff709298d0a22c
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80349095"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631301"
 ---
 # <a name="column-level-security"></a>Безопасность на уровне столбцов
 
 Безопасность столбцов позволяет клиентам контролировать доступ к столбцам таблиц на основе контекста выполнения пользователя или членства в группе.
 
-
 > [!VIDEO https://www.youtube.com/embed/OU_ESg0g8r8]
-С момента публикации этого видео [Security Row](/sql/relational-databases/security/row-level-security?toc=%2Fazure%2Fsql-data-warehouse%2Ftoc&view=sql-server-2017) стал доступен для Azure Synapse. 
+С момента публикации этого видео [Security Row](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) стал доступен для Azure Synapse.
 
 Безопасность на уровне столбцов упрощает проектирование и кодирование безопасности в приложении, позволяя ограничить доступ столбцов для защиты конфиденциальных данных. Например, можно предоставить конкретным пользователям доступ только к определенным столбцам таблицы, имеющей отношение к их отделу. Логика ограничения находится на уровне базы данных, а не на отдалении от данных на другом уровне приложения. База данных применяет ограничения доступа каждый раз, когда попытка доступа к данным с любого уровня. Это ограничение делает вашу безопасность более надежной и надежной, уменьшая площадь поверхности вашей общей системы безопасности. Кроме того, безопасность на уровне столбцов также устраняет необходимость введения представлений для фильтрации столбцов для наложения ограничений на доступ пользователей.
 
-Вы можете реализовать безопасность на уровне столбцов с помощью оператора [GRANT](https://docs.microsoft.com/sql/t-sql/statements/grant-transact-sql) T-S'L. При использовании этого механизма поддерживаются проверки подлинности SQL и Azure Active Directory (AAD).
+Вы можете реализовать безопасность на уровне столбцов с помощью оператора [GRANT](/sql/t-sql/statements/grant-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) T-S'L. При использовании этого механизма поддерживаются проверки подлинности SQL и Azure Active Directory (AAD).
 
 ![cls](./media/column-level-security/cls.png)
 
@@ -52,6 +51,7 @@ GRANT <permission> [ ,...n ] ON
 ```
 
 ## <a name="example"></a>Пример
+
 В следующем примере `TestUser` показано, как `SSN` ограничить `Membership` доступ к столбце таблицы:
 
 Создайте `Membership` таблицу с столбцом SSN, используемым для хранения номеров социального страхования:

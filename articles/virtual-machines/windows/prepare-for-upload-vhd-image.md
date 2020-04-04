@@ -14,16 +14,16 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: 719a1985aeb0db7b0cf7f55a10762bf3ebb3e045
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8118ecde698b54213547e717d25613c0c3e0d3fd
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79250196"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631555"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
-Перед загрузкой виртуального компьютера Windows (VM) из помещения в Azure необходимо подготовить виртуальный жесткий диск (VHD или VHDX). Azure поддерживает vMs-инорезы поколения 1 и поколения 2, которые находятся в формате файлов VHD и имеют диск фиксированного размера. Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ. 
+Перед загрузкой виртуального компьютера Windows (VM) из помещения в Azure необходимо подготовить виртуальный жесткий диск (VHD или VHDX). Azure поддерживает vMs-инорезы поколения 1 и поколения 2, которые находятся в формате файлов VHD и имеют диск фиксированного размера. Максимальный размер, разрешенный для VHD, составляет 2 ТБ.
 
 В поколении 1 VM можно преобразовать файловую систему VHDX в VHD. Можно также преобразовать динамически расширяющийся диск на диск фиксированного размера. Но вы не можете изменить поколение виртуальной машины. Для получения дополнительной информации [см.](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v) [Azure support for generation 2 VMs (preview)](generation-2.md)
 
@@ -451,7 +451,7 @@ Get-Service -Name RemoteRegistry | Where-Object { $_.StartType -ne 'Automatic' }
 
     ![Средство SysPrep](media/prepare-for-upload-vhd-image/syspre.png)
 1. В окне **Параметры завершения работы** выберите параметр **Завершение работы**.
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 1. Когда Сиспреп закончит, выключите VM. Не используйте **Restart,** чтобы выключить VM.
 
 Теперь диск VHD можно отправлять. Для получения дополнительной информации о том, как создать VM с обобщенного диска, [см. Загрузите обобщенный VHD и используйте его для создания нового VM в Azure.](sa-upload-generalized.md)

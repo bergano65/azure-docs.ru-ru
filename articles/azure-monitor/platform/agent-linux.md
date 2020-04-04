@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 01/21/2020
-ms.openlocfilehash: aa2356901403c7a63aa4aa96dcb38f9c0c971e58
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: 9807d6eeb07b953ab75b328ce64c5166ca52dd2a
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80528351"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637524"
 ---
 # <a name="connect-linux-computers-to-azure-monitor"></a>Подключение компьютеров Linux к Azure Monitor
 
@@ -22,7 +22,7 @@ ms.locfileid: "80528351"
 * [Вручную загрузите и установите](#install-the-agent-manually) агент. Это необходимо, если компьютер Linux не имеет доступа к Интернету и будет общаться с Azure Monitor или Azure Automation через [шлюз Log Analytics.](gateway.md) 
 * [Установите агент для Linux с помощью обертки-скрипта,](#install-the-agent-using-wrapper-script) размещенного на GitHub. Это рекомендуемый метод для установки и обновления агента, когда компьютер имеет подключение к Интернету, непосредственно или через прокси-сервер.
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Linux](log-analytics-agent.md#supported-linux-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Linux](log-analytics-agent.md#supported-linux-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#network-requirements).
 
 >[!NOTE]
 >Агент Log Analytics для Linux невозможно настроить для отправки отчетов в несколько рабочих областей Log Analytics. Он может быть настроен только для отчета как в группе управления менеджером по управлению операциями System Center, так и в рабочее пространство Log Analytics, или либо по отдельности.
@@ -31,7 +31,7 @@ ms.locfileid: "80528351"
 
 Агент Log Analytics для Linux состоит из нескольких пакетов. Файл релиза содержит следующие пакеты, которые доступны при `--extract` запуске расслоения оболочки с параметром:
 
-**Пакет** | **Версия** | **Описание**
+**Пакет** | **Version** | **Описание**
 ----------- | ----------- | --------------
 omsagent | 1.12.15 | Агент аналитики журнала для Linux
 omsconfig | 1.1.1 | Агент конфигурации для агента Log Analytics

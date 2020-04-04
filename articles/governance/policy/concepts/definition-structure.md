@@ -1,14 +1,14 @@
 ---
 title: Сведения о структуре определения политики
 description: Описывает, как определения политик используются для создания конвенций для ресурсов Azure в вашей организации.
-ms.date: 02/26/2020
+ms.date: 04/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: d7cb1ab7d045a0595f6949052ecedba6cd1bf694
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e6b1d5c43f290fc2dd953492440670608a15faca
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80239985"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80638081"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -361,7 +361,7 @@ ms.locfileid: "80239985"
     "policyRule": {
         "if": {
             "value": "[less(length(field('tags')), 3)]",
-            "equals": true
+            "equals": "true"
         },
         "then": {
             "effect": "deny"
@@ -578,6 +578,9 @@ ms.locfileid: "80239985"
 - resourceId()
 - variables()
 
+> [!NOTE]
+> Эти функции по-прежнему доступны в `details.deployment.properties.template` части развертывания шаблона в определении политики **deployIfNotExists.**
+
 Следующая функция доступна для использования в правиле политики, но отличается от использования в шаблоне менеджера ресурсов Azure:
 
 - `utcNow()`- В отличие от шаблона Resource Manager, это может быть использовано вне значения defaultValue.
@@ -593,10 +596,9 @@ ms.locfileid: "80239985"
   - Возвращает значение этого поля из ресурса, который оценивается условием If
   - `field` предназначена главным образом для использования с **AuditIfNotExists** и **DeployIfNotExists**, чтобы ссылаться на поля в ресурсе, который оценивается. Это можно увидеть на [примере DeployIfNotExists](effects.md#deployifnotexists-example).
 - `requestContext().apiVersion`
-  - Возвращает версию API запроса, который вызвал `2019-09-01`оценку политики (пример: ). Это будет версия API, которая использовалась в запросе PUT/PATCH для оценки создания/обновления ресурсов. Последняя версия API всегда используется при оценке соответствия существующим ресурсам.
+  - Возвращает версию API запроса, который вызвал `2019-09-01`оценку политики (пример: ).
+    Это будет версия API, которая использовалась в запросе PUT/PATCH для оценки создания/обновления ресурсов. Последняя версия API всегда используется при оценке соответствия существующим ресурсам.
   
-
-
 #### <a name="policy-function-example"></a>Пример функции политики
 
 В этом примере правила политики функция ресурса `resourceGroup` используется для получения свойства **name** в сочетании с массивом `concat` и функцией объекта для создания условия `like`, требующего, чтобы имя ресурса начиналось с имени группы ресурсов.
@@ -707,8 +709,6 @@ ms.locfileid: "80239985"
     }
 }
 ```
-
-
 
 Для получения более [подробной\*информации, см.](../how-to/author-policies-for-arrays.md#evaluating-the--alias)
 

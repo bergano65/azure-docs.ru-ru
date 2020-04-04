@@ -4,19 +4,19 @@ description: Включить комбинированную azure AD Multi-фа
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/21/2019
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25c64d9e959b1d68de23e83e26d3495bd3939986
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f454b0296a3463d7346c2945b21162e5a38c0eb7
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75425198"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80652506"
 ---
 # <a name="enable-combined-security-information-registration-preview"></a>Включить комбинированную регистрацию информации безопасности (предварительный просмотр)
 
@@ -48,7 +48,7 @@ ms.locfileid: "75425198"
 > Начиная с марта 2019 года, параметры телефонного звонка не будут доступны для пользователей Multi-Factor Authentication и SSPR в бесплатных/пробных aD-клиентах. Это изменение не влияет на SMS-сообщения. Параметры телефонного звонка по-прежнему будут доступны пользователям в платных ad-арендаторах Azure.
 
 > [!NOTE]
-> После включения комбинированной регистрации пользователи, которые регистрируют или подтверждают свой номер телефона или мобильное приложение через новый опыт, могут использовать их для мультифакторной аутентификации и SSPR, если эти методы включены в Multi-Factor Authentication и SSPR Политики. Если вы откажете сьюет, пользователи, которые перейдут `https://aka.ms/ssprsetup` на предыдущую страницу регистрации SSPR, должны будут выполнить многофакторную аутентификацию, прежде чем они смогут получить доступ к странице.
+> После включения комбинированной регистрации пользователи, которые регистрируют или подтверждают свой номер телефона или мобильное приложение через новый опыт, могут использовать их для мультифакторной аутентификации и SSPR, если эти методы включены в политиках Multi-Factor Authentication и SSPR. Если вы откажете сьюет, пользователи, которые перейдут `https://aka.ms/ssprsetup` на предыдущую страницу регистрации SSPR, должны будут выполнить многофакторную аутентификацию, прежде чем они смогут получить доступ к странице.
 
 Если вы настроили список назначения зоны в Internet Explorer, следующие сайты должны находиться в одной зоне:
 

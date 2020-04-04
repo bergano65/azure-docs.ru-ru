@@ -16,16 +16,23 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5a2107974cd63c0d02aaeb555430453c39990bd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 12e3b86f41e7188778393ab717554907ef5d44ec
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79262026"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631748"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр, добавление и удаление назначений для пакета доступа в управлении правами Azure AD
 
 В управлении правами Azure AD можно увидеть, кому было поручено получить доступ к пакетам, их политике и статусу. Если пакет доступа имеет соответствующую политику, вы также можете непосредственно назначить пользователя пакету доступа. В этой статье описывается, как просматривать, добавлять и удалять назначения для пакетов доступа.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Чтобы использовать управление правами Azure AD и назначить пользователям доступ к пакетам, необходимо иметь одну из следующих лицензий:
+
+- Azure AD Premium P2
+- лицензия Enterprise Mobility + Security (EMS) E5.
 
 ## <a name="view-who-has-an-assignment"></a>Просмотр того, у кого есть назначение
 

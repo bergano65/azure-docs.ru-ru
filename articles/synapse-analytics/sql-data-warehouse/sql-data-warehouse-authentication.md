@@ -12,16 +12,16 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tag: azure-synapse
-ms.openlocfilehash: ccc5db828a03c37d3fc4f49b13883ac3eeda2368
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: d0a246b111e4ab27a9e595952bb029fa62fe976d
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80584228"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633668"
 ---
 # <a name="authenticate-to-azure-synapse-analytics"></a>Проверка подлинности аналитики Azure Synapse
 
-Узнайте, как проверить подлинность в Synapse s'L poooo в Azure Synapse с помощью Azure Active Directory (Azure AD) или проверки подлинности сервера S'L.
+Узнайте, как проверить подлинность для s'L Analytics в Azure Synapse с помощью Azure Active Directory (AAD) или проверки подлинности сервера S'L.
 
 Для подключения к пулу S'L необходимо передать учетные данные безопасности для целей проверки подлинности. После установки подключения некоторые его параметры настраиваются при установке сеанса запроса.  
 
@@ -44,12 +44,10 @@ ms.locfileid: "80584228"
 
 > [!NOTE]
 > Использование инструкции Transact-SQL **USE MyDatabase;** для изменения базы данных, к которой осуществляется подключение, не поддерживается. Для руководства, подключающегося к пулу S'L с SSDT, обратитесь к запросу со статьей [Visual Studio.](sql-data-warehouse-query-visual-studio.md)
-> 
-> 
 
-## <a name="azure-active-directory-azure-ad-authentication"></a>Активная каталог Azure (Azure AD) аутентификация
+## <a name="azure-active-directory-aad-authentication"></a>Аутентификация Azure Active Directory (AAD)
 
-Активная аутентификация [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md) — это механизм подключения к пулу S'L с помощью идентификаторов в Active Directory Azure (Azure AD). С помощью аутентификации Azure Active Directory можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Управление центральным идентификатором предоставляет единое место для управления пользователями Azure Synapse и упрощает управление разрешениями. 
+Активная аутентификация [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) — это механизм подключения к пулу S'L с помощью идентификаторов в Active Directory Azure (Azure AD). С помощью аутентификации Azure Active Directory можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Управление центральным идентификатором предоставляет единое место для управления пользователями Azure Synapse и упрощает управление разрешениями.
 
 ### <a name="benefits"></a>Преимущества
 
@@ -62,12 +60,10 @@ ms.locfileid: "80584228"
 * возможность исключить хранение паролей с помощью встроенной проверки подлинности Windows и других видов аутентификации, поддерживаемых Azure Active Directory;
 * для проверки подлинности удостоверений на уровне базы данных используются данные пользователей автономной базы данных;
 * Поддерживает проверку подлинности токенов для приложений, подключающихся к пулу S'L.
-* Поддерживает многофакторную аутентификацию с помощью универсальная аутентификация Active Directory для различных инструментов, включая [студию управления серверами,](../../sql-database/sql-database-ssms-mfa-authentication.md) а также [инструменты серверных данных S'L.](https://docs.microsoft.com/sql/ssdt/azure-active-directory?toc=/azure/sql-data-warehouse/toc.json)
+* Поддерживает многофакторную аутентификацию с помощью универсальная аутентификация Active Directory для различных инструментов, включая [студию управления серверами,](../../sql-database/sql-database-ssms-mfa-authentication.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) а также [инструменты серверных данных S'L.](/sql/ssdt/azure-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 > [!NOTE]
-> Azure Active Directory является сравнительно новым компонентом и имеет некоторые ограничения. Чтобы убедиться, что Azure Active Directory подходит для вашей среды, ознакомьтесь с разделом [Функции и ограничения Azure AD](../../sql-database/sql-database-aad-authentication.md#azure-ad-features-and-limitations), в частности с его подразделом "Дополнительные замечания".
-> 
-> 
+> Azure Active Directory является сравнительно новым компонентом и имеет некоторые ограничения. Чтобы убедиться, что Azure Active Directory подходит для вашей среды, ознакомьтесь с разделом [Функции и ограничения Azure AD](../../sql-database/sql-database-aad-authentication.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#azure-ad-features-and-limitations), в частности с его подразделом "Дополнительные замечания".
 
 ### <a name="configuration-steps"></a>Этапы настройки
 
@@ -80,13 +76,13 @@ ms.locfileid: "80584228"
 5. Создание пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD
 6. Подключитесь к пулу S'L, используя идентификаторы Azure AD
 
-Сейчас пользователи Azure Active Directory не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](https://msdn.microsoft.com/library/ms187328.aspx).
+Сейчас пользователи Azure Active Directory не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql??toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest#azure-ad-features-and-limitations).
 
 ### <a name="find-the-details"></a>Поиск подробных сведений
 
-* Шаги по настройке и использованию аутентификации active Directory Azure практически идентичны для базы данных Azure S'L и пула Synapse S'L в Azure Synapse. Следуйте подробным шагам в теме [Подключение к базе данных S'L или пулу S'L, используя активную проверку подлинности каталогов Azure.](../../sql-database/sql-database-aad-authentication.md)
-* Создайте пользовательские роли базы данных и назначьте их пользователям. Затем предоставьте ролям управляемые разрешения. Дополнительные сведения см. в разделе [Приступая к работе с разрешениями Database Engine](https://msdn.microsoft.com/library/mt667986.aspx).
+* Шаги по настройке и использованию аутентификации active Directory Azure практически идентичны для базы данных Azure S'L и аналитики S'L в Azure Synapse. Следуйте подробным шагам в теме [Подключение к базе данных S'L или пулу S'L, используя активную проверку подлинности каталогов Azure.](../../sql-database/sql-database-aad-authentication.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
+* Создайте пользовательские роли базы данных и назначьте их пользователям. Затем предоставьте ролям управляемые разрешения. Дополнительные сведения см. в разделе [Приступая к работе с разрешениями Database Engine](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать запрос с Visual Studio и другими приложениями, [см.](sql-data-warehouse-query-visual-studio.md)

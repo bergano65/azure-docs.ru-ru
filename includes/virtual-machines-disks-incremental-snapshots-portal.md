@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 03/12/2020
+ms.date: 04/02/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 8f2e2081ee31e2ce7b21677bd261ed7eda705334
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: de0cf260207747f4acb02a377819a13de8b8ba22
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79485916"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80628426"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
 
@@ -26,9 +26,8 @@ ms.locfileid: "79485916"
 
 ## <a name="portal"></a>Портал
 
-Для создания и настройки дополнительных снимков на глобальном портале Azure [https://aka.ms/incrementalsnapshots](https://aka.ms/incrementalsnapshots)необходимо использовать следующую ссылку: Создание инкрементных моментальных снимков пока не доступно на глобальном портале Azure.
 
-1. Войдите на [портал Azure](https://aka.ms/incrementalsnapshots) с предоставленной ссылкой и перейдите на диск, который вы хотите сделать снимок.
+1. Войдите на [портал Azure](https://portal.azure.com/) и перейдите на диск, который вы хотите сделать.
 1. На диске выберите **Создать снимок**
 
     :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/create-snapshot-button-incremental.png" alt-text="Скриншот. Лезвие диска с выделенным моментальным снимком , так как это то, что вы должны выбрать.":::

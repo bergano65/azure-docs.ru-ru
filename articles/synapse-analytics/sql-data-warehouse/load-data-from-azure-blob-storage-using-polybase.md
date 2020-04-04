@@ -11,18 +11,19 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: e17b5be0f4f3d568bd5ec836659c4444b384b2fa
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 741779e8328c38e544b1ad297e59155dab4e8c0d
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80583747"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633906"
 ---
 # <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Учебник: Загрузите набор данных такси
 
-В этом учебнике используется PolyBase для загрузки данных New York Taxicab с глобальной учетной записи хранения azure blob. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) используются, чтобы выполнить такие действия: 
+В этом учебнике используется PolyBase для загрузки данных New York Taxicab с глобальной учетной записи хранения azure blob. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS) используются, чтобы выполнить такие действия:
 
 > [!div class="checklist"]
+>
 > * Создание пула S'L на портале Azure
 > * настроить правило брандмауэра на уровне сервера на портале Azure;
 > * подключиться к хранилищу данных с помощью SSMS;
@@ -34,10 +35,9 @@ ms.locfileid: "80583747"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
-
+Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
@@ -45,9 +45,9 @@ ms.locfileid: "80583747"
 
 ## <a name="create-a-blank-database"></a>Создание пустой базы данных
 
-Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md) и [логического сервера SQL Azure](../../sql-database/sql-database-features.md). 
+Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [логического сервера SQL Azure](../../sql-database/sql-database-features.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
-Выполните следующие действия, чтобы создать пустую базу данных. 
+Выполните следующие действия, чтобы создать пустую базу данных.
 
 1. Выберите **Создать ресурс** в верхнем левом углу портала Azure.
 
@@ -55,23 +55,23 @@ ms.locfileid: "80583747"
 
     ![создание хранилища данных](./media/load-data-from-azure-blob-storage-using-polybase/create-empty-data-warehouse.png)
 
-3. Заполните форму, указав следующую информацию. 
+3. Заполните форму, указав следующую информацию.
 
    | Параметр            | Рекомендуемое значение       | Описание                                                  |
    | ------------------ | --------------------- | ------------------------------------------------------------ |
-   | *Имя**            | mySampleDataWarehouse | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers). |
+   | *Имя**            | mySampleDataWarehouse | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). |
    | **Подписка**   | Ваша подписка     | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-   | **Группа ресурсов** | myResourceGroup       | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
+   | **Группа ресурсов** | myResourceGroup       | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
    | **Выбор источника**  | Пустая база данных        | Указывает, что требуется создать пустую базу данных. Обратите внимание, что хранилище данных — это один из типов базы данных. |
 
     ![создание хранилища данных](./media/load-data-from-azure-blob-storage-using-polybase/create-data-warehouse.png)
 
-4. Выберите **Сервер**, чтобы создать и настроить сервер для новой базы данных. Заполните форму для **создания сервера**, указав следующую информацию. 
+4. Выберите **Сервер**, чтобы создать и настроить сервер для новой базы данных. Заполните форму для **создания сервера**, указав следующую информацию.
 
     | Параметр                | Рекомендуемое значение          | Описание                                                  |
     | ---------------------- | ------------------------ | ------------------------------------------------------------ |
-    | **Имя сервера**        | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
-    | **учетные данные администратора сервера для входа;** | Любое допустимое имя           | Для действительных имен входа [см.](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers) |
+    | **Имя сервера**        | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
+    | **учетные данные администратора сервера для входа;** | Любое допустимое имя           | Для действительных имен входа [см.](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) |
     | **Пароль**           | Любой допустимый пароль       | Длина пароля должна составлять минимум 8 символов. Пароль должен содержать символы трех категорий из перечисленных: прописные буквы, строчные буквы, цифры и специальные символы. |
     | **Расположение**           | Любое допустимое расположение       | Для получения информации [Azure Regions](https://azure.microsoft.com/regions/)о регионах см. |
 
@@ -79,47 +79,47 @@ ms.locfileid: "80583747"
 
 5. Щелкните **Выбрать**.
 
-6. Выберите **уровень производительности,** чтобы указать, является ли хранилище данных Gen1 или Gen2, а также количество единиц хранилища данных. 
+6. Выберите **уровень производительности,** чтобы указать, является ли хранилище данных Gen1 или Gen2, а также количество единиц хранилища данных.
 
-7. Для этого руководства выберите пул **Gen2.** Ползунок установлен на **DW1000c** по умолчанию.  Попробуйте переместить его вверх и вниз, чтобы увидеть, как он работает. 
+7. Для этого руководства выберите пул **Gen2.** Ползунок установлен на **DW1000c** по умолчанию.  Попробуйте переместить его вверх и вниз, чтобы увидеть, как он работает.
 
     ![настройка производительности](./media/load-data-from-azure-blob-storage-using-polybase/configure-performance.png)
 
 8. Нажмите кнопку **Применить**.
-9. В окни для подготовки выберите **коллаж** для пустой базы данных. В этом руководстве используйте значение по умолчанию. Для получения дополнительной информации [Collations](/sql/t-sql/statements/collations) о коллажах см.
+9. В окни для подготовки выберите **коллаж** для пустой базы данных. В этом руководстве используйте значение по умолчанию. Для получения дополнительной информации [Collations](/sql/t-sql/statements/collations?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) о коллажах см.
 
-11. Теперь, когда вы завершили работу в форме, выберите **Создать** для предоставления базы данных. Подготовка занимает несколько минут. 
+10. Теперь, когда вы завершили работу в форме, выберите **Создать** для предоставления базы данных. Подготовка занимает несколько минут.
 
-12. На панели инструментов щелкните значок **Уведомления**, чтобы отслеживать процесс развертывания.
+11. На панели инструментов щелкните значок **Уведомления**, чтобы отслеживать процесс развертывания.
   
      ![уведомление](./media/load-data-from-azure-blob-storage-using-polybase/notification.png)
 
 ## <a name="create-a-server-level-firewall-rule"></a>создадим правило брандмауэра на уровне сервера;
 
-Брандмауэр на уровне сервера, который предотвращает подключение внешних приложений и инструментов к серверу или любым базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов.  Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../sql-database/sql-database-firewall-configure.md) для IP-адреса клиента. 
+Брандмауэр на уровне сервера, который предотвращает подключение внешних приложений и инструментов к серверу или любым базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов.  Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../sql-database/sql-database-firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) для IP-адреса клиента.
 
 > [!NOTE]
 > Хранилище данных SQL обменивается данными через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, то исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433.
 
-1. После завершения развертывания выберите **базы данных s'L** из меню слева, а затем выберите **mySampleDatabase** на странице **баз данных S'L.** После этого откроется страница обзора базы данных, где будет указано полное имя сервера (например, **mynewserver-20180430.database.windows.net**) и предоставлены параметры для дальнейшей настройки. 
+1. После завершения развертывания выберите **базы данных s'L** из меню слева, а затем выберите **mySampleDatabase** на странице **баз данных S'L.** После этого откроется страница обзора базы данных, где будет указано полное имя сервера (например, **mynewserver-20180430.database.windows.net**) и предоставлены параметры для дальнейшей настройки.
 
 2. Скопируйте полное имя сервера. Оно понадобится вам при работе с последующими руководствами для подключения к серверу и связанным базам данных. Затем выберите имя сервера для открытия настроек сервера.
 
-    ![поиск имени сервера](././media/load-data-from-azure-blob-storage-using-polybase/find-server-name.png) 
+    ![поиск имени сервера](././media/load-data-from-azure-blob-storage-using-polybase/find-server-name.png)
 
 3. Выберите имя сервера для открытия настроек сервера.
 
-    ![параметры сервера](./media/load-data-from-azure-blob-storage-using-polybase/server-settings.png) 
+    ![параметры сервера](./media/load-data-from-azure-blob-storage-using-polybase/server-settings.png)
 
-5. Щелкните ссылку **Показать параметры брандмауэра**. Откроется страница **параметров брандмауэра** для сервера Базы данных SQL. 
+4. Щелкните ссылку **Показать параметры брандмауэра**. Откроется страница **параметров брандмауэра** для сервера Базы данных SQL.
 
-    ![правило брандмауэра для сервера](./media/load-data-from-azure-blob-storage-using-polybase/server-firewall-rule.png) 
+    ![правило брандмауэра для сервера](./media/load-data-from-azure-blob-storage-using-polybase/server-firewall-rule.png)
 
-4. На панели инструментов выберите **Добавить IP-адрес клиента**, чтобы добавить текущий IP-адрес в новое правило брандмауэра. С использованием правила брандмауэра можно открыть порт 1433 для одного IP-адреса или диапазона IP-адресов.
+5. На панели инструментов выберите **Добавить IP-адрес клиента**, чтобы добавить текущий IP-адрес в новое правило брандмауэра. С использованием правила брандмауэра можно открыть порт 1433 для одного IP-адреса или диапазона IP-адресов.
 
-5. Щелкните **Сохранить**. Для текущего IP-адреса будет создано правило брандмауэра уровня сервера, с помощью которого можно открыть порт 1433 логического сервера.
+6. Щелкните **Сохранить**. Для текущего IP-адреса будет создано правило брандмауэра уровня сервера, с помощью которого можно открыть порт 1433 логического сервера.
 
-6. Выберите **OK,** а затем закройте страницу **настроек Firewall.**
+7. Выберите **OK,** а затем закройте страницу **настроек Firewall.**
 
 Теперь с помощью этого IP-адреса можно подключиться к серверу SQL и его хранилищам данных. Подключение выполняется из SQL Server Management Studio или другого инструмента на ваше усмотрение. При подключении используйте созданную ранее учетную запись ServerAdmin.  
 
@@ -131,14 +131,14 @@ ms.locfileid: "80583747"
 Получите полное имя сервера SQL на портале Azure. Это полное имя затем понадобится при подключении к серверу.
 
 1. Войти на [портал Azure](https://portal.azure.com/).
-2. Выберите **аналитику Azure Synapse** из меню слева и выберите базу данных на странице **Azure Synapse Analytics.** 
-3. На странице портала Azure вашей базы данных в области **Основные компоненты** найдите и скопируйте **имя сервера**. В этом примере полное имя — mynewserver-20180430.database.windows.net. 
+2. Выберите **аналитику Azure Synapse** из меню слева и выберите базу данных на странице **Azure Synapse Analytics.**
+3. На странице портала Azure вашей базы данных в области **Основные компоненты** найдите и скопируйте **имя сервера**. В этом примере полное имя — mynewserver-20180430.database.windows.net.
 
     ![Сведения о подключении](././media/load-data-from-azure-blob-storage-using-polybase/find-server-name.png)  
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
-В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
+В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 1. Откройте среду SQL Server Management Studio.
 
@@ -154,25 +154,25 @@ ms.locfileid: "80583747"
 
     ![подключение к серверу](./media/load-data-from-azure-blob-storage-using-polybase/connect-to-server.png)
 
-4. Выберите **Подключите**. В SSMS открывается окно обозревателя объектов. 
+3. Выберите **Подключите**. В SSMS открывается окно обозревателя объектов.
 
-5. В обозревателе объектов разверните узел **Базы данных**. Затем разверните **Системные базы данных** и **master**, чтобы просмотреть объекты в базе данных master.  Разверните папку **mySampleDatabase**, чтобы просмотреть объекты в новой базе данных.
+4. В обозревателе объектов разверните узел **Базы данных**. Затем разверните **Системные базы данных** и **master**, чтобы просмотреть объекты в базе данных master.  Разверните папку **mySampleDatabase**, чтобы просмотреть объекты в новой базе данных.
 
-    ![объекты базы данных](./media/load-data-from-azure-blob-storage-using-polybase/connected.png) 
+    ![объекты базы данных](./media/load-data-from-azure-blob-storage-using-polybase/connected.png)
 
 ## <a name="create-a-user-for-loading-data"></a>Создание учетной записи пользователя для загрузки данных
 
-Учетная запись администратора сервера предназначена для операций управления и не подходит для выполнения запросов к пользовательским данным. Загрузка данных — это операция с интенсивным использованием памяти. Максимумы памяти определяются в соответствии с [единицами хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md) и настраиваемым [классом ресурсов.](resource-classes-for-workload-management.md) 
+Учетная запись администратора сервера предназначена для операций управления и не подходит для выполнения запросов к пользовательским данным. Загрузка данных — это операция с интенсивным использованием памяти. Максимумы памяти определяются в соответствии с [единицами хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md) и настроенным [классом ресурсов.](resource-classes-for-workload-management.md)
 
 Лучше всего создать имя для входа и имя пользователя, предназначенные для загрузки данных. Затем добавьте пользователя загрузки в [класс ресурсов](resource-classes-for-workload-management.md), позволяющий выполнять соответствующее выделение максимальной памяти.
 
-Поскольку вы подключены в качестве администратора сервера, вы можете создавать пользователей и имена для входа. Используйте эти действия для создания имени для входа и пользователя **LoaderRC20**. Затем назначьте пользователя классу ресурсов **staticrc20**. 
+Поскольку вы подключены в качестве администратора сервера, вы можете создавать пользователей и имена для входа. Используйте эти действия для создания имени для входа и пользователя **LoaderRC20**. Затем назначьте пользователя классу ресурсов **staticrc20**.
 
-1.  В SSMS **мастер** правильного выбора, чтобы показать выпадающее меню и выбрать **новый запрос.** Откроется новое окно запроса.
+1. В SSMS **мастер** правильного выбора, чтобы показать выпадающее меню и выбрать **новый запрос.** Откроется новое окно запроса.
 
     ![Создание запроса в базе данных master](./media/load-data-from-azure-blob-storage-using-polybase/create-loader-login.png)
 
-2. В окне запроса введите следующие команды T-SQL, чтобы создать имя для входа и пользователя LoaderRC20, заменив 'a123STRONGpassword!' на собственный пароль. 
+2. В окне запроса введите следующие команды T-SQL, чтобы создать имя для входа и пользователя LoaderRC20, заменив 'a123STRONGpassword!' на собственный пароль.
 
     ```sql
     CREATE LOGIN LoaderRC20 WITH PASSWORD = 'a123STRONGpassword!';
@@ -215,21 +215,21 @@ ms.locfileid: "80583747"
 
 Все готово для начала процесса загрузки данных в новое хранилище данных. В этом учебнике показано, как использовать внешние таблицы для загрузки данных такси в Нью-йорке с капли хранения данных Azure Storage. Для получения будущей справки, чтобы узнать, как получить данные в хранилище Azure blob или загрузить их непосредственно из источника, смотрите [обзор загрузки.](design-elt-data-loading.md)
 
-Выполнить следующие скрипты S'L и указать информацию о данных, которые вы хотите загрузить. К этим сведениям относится информация о расположении данных, формате содержимого данных и определении таблицы для данных. 
+Выполнить следующие скрипты S'L и указать информацию о данных, которые вы хотите загрузить. К этим сведениям относится информация о расположении данных, формате содержимого данных и определении таблицы для данных.
 
-1. В предыдущем разделе вы вошли в хранилище данных как пользователь LoaderRC20. В среде SSMS щелкните правой кнопкой мыши подключение LoaderRC20 и выберите **Новый запрос**.  Откроется окно нового запроса. 
+1. В предыдущем разделе вы вошли в хранилище данных как пользователь LoaderRC20. В среде SSMS щелкните правой кнопкой мыши подключение LoaderRC20 и выберите **Новый запрос**.  Откроется окно нового запроса.
 
     ![Окно нового запроса загрузки](./media/load-data-from-azure-blob-storage-using-polybase/new-loading-query.png)
 
 2. Сравните окно запроса с предыдущим изображением.  Убедитесь, что окно нового запроса запущено как LoaderRC20 и выполняет запросы к базе данных MySampleDataWarehouse. Используйте это окно запроса для выполнения всех шагов загрузки.
 
-3. Создайте главный ключ для базы данных MySampleDataWarehouse. Главный ключ создается для каждой базы данных только один раз. 
+3. Создайте главный ключ для базы данных MySampleDataWarehouse. Главный ключ создается для каждой базы данных только один раз.
 
     ```sql
     CREATE MASTER KEY;
     ```
 
-4. Выполните приведенную ниже инструкцию [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql), чтобы определить расположение большого двоичного объекта Azure. Это и есть расположение внешних данных о такси.  Чтобы запустить команду, которая была привернута к окну запроса, выделите команды, которые вы хотите выполнить, и выберите **«Выполнить».**
+4. Выполните приведенную ниже инструкцию [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы определить расположение большого двоичного объекта Azure. Это и есть расположение внешних данных о такси.  Чтобы запустить команду, которая была привернута к окну запроса, выделите команды, которые вы хотите выполнить, и выберите **«Выполнить».**
 
     ```sql
     CREATE EXTERNAL DATA SOURCE NYTPublic
@@ -240,13 +240,13 @@ ms.locfileid: "80583747"
     );
     ```
 
-5. Выполните приведенную ниже инструкцию T-SQL [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql), чтобы указать характеристики и параметры форматирования для внешнего файла данных. Эта инструкция указывает, что внешние данные хранятся в виде текста, а значения разделяются символом вертикальной черты (|). Внешний файл сжимается с помощью Gzip. 
+5. Выполните приведенную ниже инструкцию T-SQL [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы указать характеристики и параметры форматирования для внешнего файла данных. Эта инструкция указывает, что внешние данные хранятся в виде текста, а значения разделяются символом вертикальной черты (|). Внешний файл сжимается с помощью Gzip.
 
     ```sql
     CREATE EXTERNAL FILE FORMAT uncompressedcsv
     WITH (
         FORMAT_TYPE = DELIMITEDTEXT,
-        FORMAT_OPTIONS ( 
+        FORMAT_OPTIONS (
             FIELD_TERMINATOR = ',',
             STRING_DELIMITER = '',
             DATE_FORMAT = '',
@@ -254,7 +254,7 @@ ms.locfileid: "80583747"
         )
     );
     CREATE EXTERNAL FILE FORMAT compressedcsv
-    WITH ( 
+    WITH (
         FORMAT_TYPE = DELIMITEDTEXT,
         FORMAT_OPTIONS ( FIELD_TERMINATOR = '|',
             STRING_DELIMITER = '',
@@ -265,7 +265,7 @@ ms.locfileid: "80583747"
     );
     ```
 
-6.  Выполните приведенную ниже инструкцию [CREATE SCHEMA](/sql/t-sql/statements/create-schema-transact-sql), чтобы создать схему для формата внешних файлов. Эта схема предоставляет способ организации внешних таблиц, которые будут созданы.
+6. Выполните приведенную ниже инструкцию [CREATE SCHEMA](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы создать схему для формата внешних файлов. Эта схема предоставляет способ организации внешних таблиц, которые будут созданы.
 
     ```sql
     CREATE SCHEMA ext;
@@ -274,7 +274,7 @@ ms.locfileid: "80583747"
 7. Создайте внешние таблицы. Определения таблицы хранятся в хранилище данных, но таблицы ссылаются на данные, которые хранятся в хранилище Azure blob. Выполните следующие команды T-SQL, чтобы создать несколько внешних таблиц, все из которых будут указывать на BLOB-объект Azure, определенный нами ранее во внешнем источнике данных.
 
     ```sql
-    CREATE EXTERNAL TABLE [ext].[Date] 
+    CREATE EXTERNAL TABLE [ext].[Date]
     (
         [DateID] int NOT NULL,
         [Date] datetime NULL,
@@ -316,7 +316,7 @@ ms.locfileid: "80583747"
         FILE_FORMAT = uncompressedcsv,
         REJECT_TYPE = value,
         REJECT_VALUE = 0
-    ); 
+    );
     CREATE EXTERNAL TABLE [ext].[Geography]
     (
         [GeographyID] int NOT NULL,
@@ -333,8 +333,8 @@ ms.locfileid: "80583747"
         DATA_SOURCE = NYTPublic,
         FILE_FORMAT = uncompressedcsv,
         REJECT_TYPE = value,
-        REJECT_VALUE = 0 
-    );      
+        REJECT_VALUE = 0
+    );
     CREATE EXTERNAL TABLE [ext].[HackneyLicense]
     (
         [HackneyLicenseID] int NOT NULL,
@@ -447,14 +447,14 @@ ms.locfileid: "80583747"
 > [!NOTE]
 > В этом руководстве данные загружаются непосредственно в итоговую таблицу. Как правило, в рабочей среде для загрузки данных в промежуточную таблицу используется команда CREATE TABLE AS SELECT. Если данные расположены в промежуточной таблице, вы можете выполнять все необходимые преобразования. Чтобы добавить данные из промежуточной таблицы в рабочую, используйте выражение INSERT...SELECT. Дополнительные сведения см. в разделе [Вставка данных в рабочую таблицу](guidance-for-loading-data.md#inserting-data-into-a-production-table).
 
-В сценарии используется инструкция T-SQL [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse), чтобы загрузить данные из Azure Storage Blob в новые таблицы в хранилище данных. CTAS создает таблицу на основе результатов инструкции Select. В новой таблице содержатся те же столбцы и типы данных, которые были выведены инструкцией Select. Когда выбранное заявление выбирается из внешней таблицы, данные импортируются в реляционную таблицу в хранилище данных. 
+В сценарии используется инструкция T-SQL [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы загрузить данные из Azure Storage Blob в новые таблицы в хранилище данных. CTAS создает таблицу на основе результатов инструкции Select. В новой таблице содержатся те же столбцы и типы данных, которые были выведены инструкцией Select. Когда выбранное заявление выбирается из внешней таблицы, данные импортируются в реляционную таблицу в хранилище данных.
 
 1. Выполните следующий сценарий для загрузки данных в новые таблицы в хранилище данных.
 
     ```sql
     CREATE TABLE [dbo].[Date]
     WITH
-    ( 
+    (
         DISTRIBUTION = ROUND_ROBIN,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -463,7 +463,7 @@ ms.locfileid: "80583747"
     ;
     CREATE TABLE [dbo].[Geography]
     WITH
-    ( 
+    (
         DISTRIBUTION = ROUND_ROBIN,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -473,7 +473,7 @@ ms.locfileid: "80583747"
     ;
     CREATE TABLE [dbo].[HackneyLicense]
     WITH
-    ( 
+    (
         DISTRIBUTION = ROUND_ROBIN,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -500,7 +500,7 @@ ms.locfileid: "80583747"
     ;
     CREATE TABLE [dbo].[Weather]
     WITH
-    ( 
+    (
         DISTRIBUTION = ROUND_ROBIN,
         CLUSTERED COLUMNSTORE INDEX
     )
@@ -518,7 +518,7 @@ ms.locfileid: "80583747"
     ;
     ```
 
-2. Просмотрите данные при загрузке. Вы загружаете несколько ГБ данных и сжимаете их в высокоэффективные кластерные индексы столбцов. Выполните следующий запрос, использующий динамические административные представления, для отображения состояния загрузки. 
+2. Просмотрите данные при загрузке. Вы загружаете несколько ГБ данных и сжимаете их в высокоэффективные кластерные индексы столбцов. Выполните следующий запрос, использующий динамические административные представления, для отображения состояния загрузки.
 
     ```sql
     SELECT
@@ -527,7 +527,7 @@ ms.locfileid: "80583747"
         r.status,
         count(distinct input_name) as nbr_files,
         sum(s.bytes_processed)/1024/1024/1024.0 as gb_processed
-    FROM 
+    FROM
         sys.dm_pdw_exec_requests r
         INNER JOIN sys.dm_pdw_dms_external_work s
         ON r.request_id = s.request_id
@@ -544,7 +544,7 @@ ms.locfileid: "80583747"
         s.request_id,
         r.status
     ORDER BY
-        nbr_files desc, 
+        nbr_files desc,
         gb_processed desc;
     ```
 
@@ -559,14 +559,17 @@ ms.locfileid: "80583747"
     ![Просмотр загруженных таблиц](./media/load-data-from-azure-blob-storage-using-polybase/view-loaded-tables.png)
 
 ## <a name="authenticate-using-managed-identities-to-load-optional"></a>Authenticate с помощью управляемых идентификационных данных для загрузки (необязательно)
-Загрузка с помощью PolyBase и аутентификации с помощью управляемых идентификаторов является наиболее безопасным механизмом и позволяет использовать виртуальные конечные точки сетевого обслуживания с Azure Storage. 
+
+Загрузка с помощью PolyBase и аутентификации с помощью управляемых идентификаторов является наиболее безопасным механизмом и позволяет использовать виртуальные конечные точки сетевого обслуживания с Azure Storage.
 
 ### <a name="prerequisites"></a>Предварительные требования
-1.    Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
-2.    При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
-3.  Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
+
+1. Установите Azure PowerShell, следуя инструкциям в этом [руководстве](/powershell/azure/install-az-ps?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+2. При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](../../storage/common/storage-account-upgrade.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+3. Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](../../storage/common/storage-network-security.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#exceptions).
 
 #### <a name="steps"></a>Шаги
+
 1. В PowerShell **зарегистрируйте свой сервер S'L** в Active Directory (AAD):
 
    ```powershell
@@ -574,41 +577,42 @@ ms.locfileid: "80583747"
    Select-AzSubscription -SubscriptionId your-subscriptionId
    Set-AzSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-database-servername -AssignIdentity
    ```
-   
-   1. Создайте **учетную запись хранения общего назначения версии 2** с помощью этого [руководства](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+
+2. Создайте **учетную запись хранения общего назначения версии 2** с помощью этого [руководства](../../storage/common/storage-account-create.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+
+   > [!NOTE]
+   > При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](../../storage/common/storage-account-upgrade.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+
+3. Под учетной записью хранилища перейдите на **контроль доступа (IAM)** и выберите **назначение роли Добавить.** Назначьте роль **вкладчика по хранению данных Blob** Data RBAC на сервер базы данных S'L.
+
+   > [!NOTE]
+   > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+  
+**Установка подключения Polybase к учетной записи службы хранилища Azure:**
+
+1. Создайте учетные данные с областью данных с **помощью IDENTITY и 'Управляемой идентификации службы':**
+
+   ```SQL
+   CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
+   ```
 
    > [!NOTE]
    >
-   > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
-   
-1. Под учетной записью хранилища перейдите на **контроль доступа (IAM)** и выберите **назначение роли Добавить.** Назначьте роль **вкладчика по хранению данных Blob** Data RBAC на сервер базы данных S'L.
+   > * Не нужно указывать СЕКРЕТ с использованием ключа доступа к хранилищу Azure, так как на самом деле этот механизм использует [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+   > * Идентификационным названием должно быть **«Управляемая идентификация службы»** для подключения PolyBase для работы с учетной записью Хранилища Azure.
 
-   > [!NOTE] 
-   > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
-  
-1. **Установка подключения Polybase к учетной записи службы хранилища Azure:**
-  
-   1. Создайте учетные данные с областью данных с **помощью IDENTITY и 'Управляемой идентификации службы':**
+2. Создайте внешний источник данных, определяющий учетные данные базы данных с помощью итог управляемой службы.
 
-       ```SQL
-       CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
-       ```
-       > [!NOTE] 
-       > - Не нужно указывать СЕКРЕТ с использованием ключа доступа к хранилищу Azure, так как на самом деле этот механизм использует [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
-       > - Идентификационным названием должно быть **«Управляемая идентификация службы»** для подключения PolyBase для работы с учетной записью Хранилища Azure.
-   
-   1. Создайте внешний источник данных, определяющий учетные данные базы данных с помощью итог управляемой службы.
-     
-   1. Выполните запрос как обычно, используя [внешние таблицы](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql).
+3. Выполните запрос как обычно, используя [внешние таблицы](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-Если вы хотите настроить конечные точки виртуальных сетевых служб для Azure Synapse Analytics, обратитесь к следующей [документации.](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) 
+Если вы хотите настроить конечные точки виртуальных сетевых служб для Azure Synapse Analytics, обратитесь к следующей [документации.](../../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Плата взимается за вычислительные ресурсы и данные, которые загружаются в хранилище данных. По ним выставляется отдельный счет. 
+Плата взимается за вычислительные ресурсы и данные, которые загружаются в хранилище данных. По ним выставляется отдельный счет.
 
-- Если вы хотите сохранить данные в хранилище, то можете приостановить работу вычислительных ресурсов, когда не используете хранилище данных. В случае приостановки работы вычислительных ресурсов плата будет взиматься только за хранение данных. Вы можете возобновить работу вычислительных ресурсов в любой момент, когда готовы приступить к работе с данными.
-- Если вы хотите исключить будущие расходы, то можете удалить хранилище данных. 
+* Если вы хотите сохранить данные в хранилище, то можете приостановить работу вычислительных ресурсов, когда не используете хранилище данных. В случае приостановки работы вычислительных ресурсов плата будет взиматься только за хранение данных. Вы можете возобновить работу вычислительных ресурсов в любой момент, когда готовы приступить к работе с данными.
+* Если вы хотите исключить будущие расходы, то можете удалить хранилище данных.
 
 Выполните следующие действия, чтобы очистить ресурсы по необходимости.
 
@@ -624,11 +628,13 @@ ms.locfileid: "80583747"
 
 5. Чтобы удалить группу ресурсов, выберите **myResourceGroup**, а затем **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дальнейшие действия 
-Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы создали внешние таблицы для определения структуры данных, хранящихся в Azure Storage Blob, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
+## <a name="next-steps"></a>Дальнейшие действия
+
+Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы создали внешние таблицы для определения структуры данных, хранящихся в Azure Storage Blob, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных.
 
 Вы выполнили такие действия:
 > [!div class="checklist"]
+>
 > * создали хранилище данных на портале Azure;
 > * настроить правило брандмауэра на уровне сервера на портале Azure;
 > * подключились к хранилищу данных с помощью SSMS;
