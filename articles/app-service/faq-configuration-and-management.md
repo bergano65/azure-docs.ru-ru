@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 300294f37c809b01fe8fba7e627d6bc5bdc9903a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9e7070e925d12df82adbc3683da5b10e48c5d4b0
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78942934"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668130"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -35,14 +35,14 @@ ms.locfileid: "78942934"
 Сведения об этом см. в статье [Приобретение и настройка имени личного домена для службы приложений Azure](manage-custom-dns-buy-domain.md).
 
 
-## <a name="how-do-i-upload-and-configure-an-existing-ssl-certificate-for-my-web-app"></a>Как загрузить и настроить существующий сертификат SSL для веб-приложения?
+## <a name="how-do-i-upload-and-configure-an-existing-tlsssl-certificate-for-my-web-app"></a>Как загрузить и настроить существующий сертификат TLS/SSL для моего веб-приложения?
 
-Чтобы узнать, как загрузить и настроить существующий пользовательский сертификат SSL, [см.](configure-ssl-certificate.md)
+Чтобы узнать, как загрузить и настроить существующий пользовательский сертификат TLS/SSL, [перевежните сертификат TLS/SSL в приложение App Service.](configure-ssl-certificate.md)
 
 
-## <a name="how-do-i-purchase-and-configure-a-new-ssl-certificate-in-azure-for-my-web-app"></a>Как приобрести и настроить новый сертификат SSL в Azure для веб-приложения?
+## <a name="how-do-i-purchase-and-configure-a-new-tlsssl-certificate-in-azure-for-my-web-app"></a>Как приобрести и настроить новый сертификат TLS/SSL в Azure для моего веб-приложения?
 
-Сведения об этом см. в статье [Приобретение и настройка сертификата SSL для службы приложений Azure](configure-ssl-certificate.md).
+Чтобы узнать, как приобрести и настроить сертификат TLS/SSL для веб-приложения Службы приложения, [пересмотрите сертификат TLS/SSL в приложение App Service.](configure-ssl-certificate.md)
 
 
 ## <a name="how-do-i-move-application-insights-resources"></a>Как перемещать ресурсы Application Insights?
@@ -63,7 +63,7 @@ ms.locfileid: "78942934"
 2. В разделе **Параметры приложения** добавьте параметр:
     * Ключ = WEBSITE_TIME_ZONE
     * Значение = *требуемый часовой пояс*
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 Для служб приложений, запускаемых в Windows, см. столбец **"Часовой пояс"** в статье ["Временные поясы по умолчанию"](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для общепринятых значений. Для служб приложений, запускаемых на Linux, установите [имя базы данных ТЗ](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Вот пример названия базы данных ТЗ: Америка/Адак.
 
@@ -84,7 +84,7 @@ ms.locfileid: "78942934"
 
 ## <a name="how-do-i-get-a-reserved-or-dedicated-inbound-ip-address-for-my-web-app"></a>Как получить зарезервированный или выделенный входящий IP-адрес для веб-приложения?
 
-Настройте выделенный или зарезервированный IP-адрес для входящих вызовов, поступающих на веб-сайт приложения Azure, установите и настройте сертификат SSL на основе IP-адресов.
+Чтобы настроить специальный или зарезервированный IP-адрес для входящих звонков на веб-сайт приложения Azure, установите и назначьте сертификат TLS/SSL на основе IP.
 
 Чтобы использовать выделенный или зарезервированный IP-адрес для входящих вызовов, требуется план службы приложений категории "Базовый" или выше.
 

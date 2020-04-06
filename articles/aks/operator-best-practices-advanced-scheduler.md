@@ -1,15 +1,16 @@
 ---
-title: Рекомендации для оператора — расширенные возможности планировщика в службе Azure Kubernetes (AKS)
+title: Рекомендации по функциям планировщика
+titleSuffix: Azure Kubernetes Service
 description: Ознакомьтесь с рекомендациями для операторов по использованию расширенных возможностей планировщика в службе Azure Kubernetes (AKS), включая отметки и толерантности, селекторы узлов, подобие, подобие модулей pod и анти-подобие
 services: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
-ms.openlocfilehash: 546c1d6ae25a33c6df93469ccf8c230b4b1c474b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 47b2d78f7dc831c4314c4215f5e0a9e17f75f0dc
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79252900"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668360"
 ---
 # <a name="best-practices-for-advanced-scheduler-features-in-azure-kubernetes-service-aks"></a>Рекомендации по расширенным возможностям планировщика в службе Azure Kubernetes (AKS)
 
@@ -178,7 +179,7 @@ spec:
 
 Это пример более сложного развертывания, чем в случае использования селекторов узла или подобия узлов. Такое развертывание позволяет управлять тем, как Kubernetes назначает модули pod на узлы, и логически изолировать ресурсы. Для полного примера этого веб-приложения с Azure [Co-locate pods on the same node][k8s-pod-affinity]Кэш для примера Redis см.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Эта статья посвящена расширенным возможностям планировщика Kubernetes. Дополнительную информацию об операциях кластера в AKS см. в рекомендациях на такие темы:
 

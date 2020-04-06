@@ -1,15 +1,16 @@
 ---
-title: Создание контроллера входящего HTTP-трафика со статическим IP-адресом в Службе Azure Kubernetes (AKS)
+title: Используйте всхлипающий контроллер со статичным IP
+titleSuffix: Azure Kubernetes Service
 description: Сведения об установке и настройке контроллера входящего трафика NGINX со статическим общедоступным IP-адресом в кластере Службы Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
 ms.date: 05/24/2019
-ms.openlocfilehash: 3e79bbe76a751097acd5c9d3c42dbd4020b6866b
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: fe7f1070ce233c204d9658d4a75c5e1c7a189f12
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80617287"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668520"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
 
@@ -24,13 +25,13 @@ ms.locfileid: "80617287"
 - [Создать контроллер входящего трафика, который использует ваши собственные сертификаты TLS][aks-ingress-own-tls]
 - [Создать контроллер входящего трафика, который использует службу Let's Encrypt для автоматического создания сертификатов TLS со динамическим общедоступным IP-адресом][aks-ingress-tls]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 В этой статье для установки контроллера входящего трафика NGINX cert-manager и примера веб-приложения используется Helm. Убедитесь, что вы используете последний выпуск Helm. Для инструкций по [обновлению][helm-install]см. Для получения дополнительной информации о настройке и использовании Helm [см.][use-helm]
 
-В этой статье также требуется, чтобы вы запускали версию Azure CLI 2.0.64 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.][azure-cli-install]
+В этой статье также требуется, чтобы вы запускали версию Azure CLI 2.0.64 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="create-an-ingress-controller"></a>Создание контроллера входящего трафика
 

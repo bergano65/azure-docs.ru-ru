@@ -1,6 +1,6 @@
 ---
-title: Развертывание многофакторной аутентификации Azure - Активный каталог Azure
-description: Планирование многофакторной аутентификации Microsoft Azure
+title: Соображения развертывания для многофакторной аутентификации Azure
+description: Узнайте о соображениях развертывания и стратегии успешной реализации многофакторной аутентификации Azure
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,18 +11,25 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ae58482ced524958ffcdd6094ae57856d088eaf
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: a70c6ae3ebc7f5b39550508594bd4d4907e68a67
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80653957"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80667347"
 ---
-# <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания облачной службы Многофакторной идентификации Azure
+# <a name="plan-an-azure-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной аутентификации Azure
 
 Люди подключаются к организационным ресурсам во все более сложных сценариях. Люди подключаются к устройствам, принадлежащим организации, личным и общедоступным устройствам, на и вне корпоративной сети, используя смартфоны, планшеты, ПК и ноутбуки, часто на нескольких платформах. В этом всегда подключенном, многофункциональном и многоплатформеном мире безопасность учетных записей пользователей как никогда важна. Пароли, независимо от их сложности, используемые на устройствах, сетях и платформах, больше не достаточны для обеспечения безопасности учетной записи пользователя, особенно когда пользователи склонны повторно использовать пароли в разных учетных записях. Сложные фишинг и другие атаки социальной инженерии могут привести к тому, что имена пользователей и пароли будут размещаться и продаваться по темной сети.
 
 [Multi-Factor Authentication (MFA) Azure Multi-Factor Authentication (MFA)](concept-mfa-howitworks.md) помогает защитить доступ к данным и приложениям. Он обеспечивает дополнительный уровень безопасности с помощью второй формы проверки подлинности. Организации могут использовать [Условный доступ,](../conditional-access/overview.md) чтобы сделать решение соответствовать их конкретным потребностям.
+
+В этом руководстве по развертыванию показано, как планировать, а затем тестировать развертывание Azure Multi-Factor Authentication.
+
+Чтобы быстро увидеть многофакторную аутентификацию Azure в действии, а затем вернуться, чтобы понять дополнительные соображения развертывания:
+
+> [!div class="nextstepaction"]
+> [Включение многофакторной проверки подлинности в Azure](tutorial-enable-azure-mfa.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -173,7 +180,7 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-
 
 Если пользователи были включены с помощью включенной и принудительной azure Multi-Фактор аутентификации, следующая PowerShell может помочь вам сделать преобразование в условную azure Multi-Факторную аутентификацию.
 
-Выполнить эту PowerShell в окне ISE или сохранить как . Файл PS1 для локального запуска.
+Запустите эту PowerShell в окне `.PS1` ISE или сохраните в качестве файла для локального запуска.
 
 ```PowerShell
 # Sets the MFA requirement state
@@ -317,7 +324,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 Если срок действия сертификатов приближается к истечению срока действия, [создайте и проверьте новый сертификат MFA на каждом сервере AD FS.](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa#configure-the-ad-fs-servers)
 
-Ниже приводится информация о том, как управлять сертификатами Azure MFA на серверах AD FS. При настройке AD FS с Azure MFA сертификаты, генерируемые через cmdlet `New-AdfsAzureMfaTenantCertificate` PowerShell, действительны в течение 2 лет. Обновить и установить обновленные сертификаты до истечения срока действия сбоев в работе службы МИД.
+Ниже приводится информация о том, как управлять сертификатами Azure MFA на серверах AD FS. При настройке AD FS с Azure MFA сертификаты, генерируемые через cmdlet `New-AdfsAzureMfaTenantCertificate` PowerShell, действительны в течение двух лет. Обновить и установить обновленные сертификаты до истечения срока действия сбоев в работе службы МИД.
 
 ## <a name="implement-your-plan"></a>Реализация плана
 
@@ -355,8 +362,9 @@ Multi-Factor Authentication Azure предоставляет отчеты чер
 
 Найдите решения для общих проблем с Azure MFA в [статье troubleshooting Azure Multi-Factor Authentication](https://support.microsoft.com/help/2937344/troubleshooting-azure-multi-factor-authentication-issues) в Центре поддержки Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Какие методы проверки подлинности доступны?](concept-authentication-methods.md)
-* [Включение конвергентной регистрации для Многофакторной идентификации Azure и самостоятельного сброса пароля в Azure AD](concept-registration-mfa-sspr-converged.md)
-* Почему пользователю было предложено или не предложено выполнить MFA? Ознакомьтесь с разделом [Отчет по действиям входа Azure AD](howto-mfa-reporting.md#azure-ad-sign-ins-report).
+Чтобы увидеть в действии многофакторную аутентификацию Azure Multi-Factor Authentication, заполните следующее руководство:
+
+> [!div class="nextstepaction"]
+> [Включение многофакторной проверки подлинности в Azure](tutorial-enable-azure-mfa.md)

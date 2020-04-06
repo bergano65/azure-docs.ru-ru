@@ -1,6 +1,6 @@
 ---
-title: Развертывание сброса паролем самообслуживания - Активный каталог Azure
-description: Стратегия успешной реализации сбросить паролем самообслуживания Azure AD
+title: Соображения развертывания для сброса пароля самообслуживания Azure Active Directory
+description: Узнайте о соображениях развертывания и стратегии успешной реализации сброса паролей самообслуживания Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,27 +11,34 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7be99959c2ae420cff667491f68c40dfa0862a9
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: cd5b9e1f2640e68f7c819a49ad34d9c051c582c5
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80652384"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80667330"
 ---
-# <a name="plan-an-azure-active-directory-self-service-password-reset"></a>Запланируйте сбросить пароля самообслуживания от Azure Active Directory
+# <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Планирование развертывания сброса паролей самообслуживания Azure Active Directory
 
-> [!NOTE]
-> Этот план развертывания предлагает руководство по планированию и лучшие методы развертывания сброса паролей самообслуживания Azure AD (SSPR). <br>**Если вы ищете инструмент SSPR, чтобы вернуться [https://aka.ms/sspr](https://aka.ms/sspr)в свой аккаунт, перейдите на **.
+> [!IMPORTANT]
+> Этот план развертывания предлагает рекомендации и рекомендации по развертыванию сброса паролей самообслуживания Azure AD (SSPR).
+>
+> **Если вы и конечный пользователь и должны вернуться [https://aka.ms/sspr](https://aka.ms/sspr)в свой аккаунт, перейдите на **.
 
-[Self-Service Password Reset (SSPR)](https://www.youtube.com/watch?v=tnb2Qf4hTP8) — это функция Active Directory (AD), которая позволяет пользователям сбросить свои пароли без обращения за помощью к ИТ-персоналу. Пользователи могут быстро разблокировать себя и продолжать работать независимо от того, где они находятся или время суток. Позволяя сотрудникам разблокировать себя, ваша организация может сократить непродуктивное время и высокие затраты на поддержку наиболее распространенных проблем, связанных с паролем. 
+[Self-Service Password Reset (SSPR)](https://www.youtube.com/watch?v=tnb2Qf4hTP8) — это функция Active Directory (AD), которая позволяет пользователям сбросить свои пароли без обращения за помощью к ИТ-персоналу. Пользователи могут быстро разблокировать себя и продолжать работать независимо от того, где они находятся или время суток. Позволяя сотрудникам разблокировать себя, ваша организация может сократить непродуктивное время и высокие затраты на поддержку наиболее распространенных проблем, связанных с паролем.
 
 SSPR имеет следующие ключевые возможности:
 
 * Самообслуживание позволяет конечным пользователям сбросить свои просроченные или неистекающие пароли без обращения к администратору или службе поддержки для поддержки.
-
 * [Пароль Списания](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback) позволяет управление локальных паролей и разрешение блокировки учетной записи, хотя облако.
-
 * Отчеты об управлении паролями дают администраторам представление о сбое паролей и регистрационных действиях, происходящих в их организации.
+
+В этом руководстве по развертыванию показано, как планировать, а затем тестировать развертывание SSPR.
+
+Чтобы быстро увидеть SSPR в действии, а затем вернуться, чтобы понять дополнительные соображения развертывания:
+
+> [!div class="nextstepaction"]
+> [Включить сбросить пароли самообслуживания (SSPR)](tutorial-enable-sspr.md)
 
 ## <a name="learn-about-sspr"></a>Узнайте больше о SSPR
 
@@ -68,7 +75,7 @@ Azure Active Directory лицензируется на каждого польз
 
 | Ресурсы| Ссылка и описание |
 | - | - |
-| Видео| [Уполномочить пользователей лучшей масштабируемой ИТ](https://youtu.be/g9RpRnylxS8) 
+| Видеоролики| [Уполномочить пользователей лучшей масштабируемой ИТ](https://youtu.be/g9RpRnylxS8) 
 | |[Что такое сбросить пароль самообслуживания?](https://youtu.be/hc97Yx5PJiM)|
 | |[Развертывание сбросить паролем самообслуживания](https://www.youtube.com/watch?v=Pa0eyqjEjvQ&index=18&list=PLLasX02E8BPBm1xNMRdvP6GtA6otQUqp0)|
 | |[Как настроить сбросить пароли самообслуживания для пользователей в Azure AD?](https://azure.microsoft.com/resources/videos/self-service-password-reset-azure-ad/) |
@@ -79,7 +86,7 @@ Azure Active Directory лицензируется на каждого польз
 |Учебники |[Заполните развертывание паролей самообслуживания Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot) |
 | |[Включение компонента обратной записи паролей](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-writeback) |
 | |[Сбросить пароль Azure AD с экрана входа для Windows 10](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-windows) |
-| часто задаваемые вопросы|[Вопросы и ответы об управлении паролями](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-faq) |
+| ВОПРОСЫ И ОТВЕТЫ|[Вопросы и ответы об управлении паролями](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-faq) |
 
 
 ### <a name="solution-architecture"></a>Архитектура решения
@@ -213,7 +220,7 @@ Azure Active Directory лицензируется на каждого польз
 
 ### <a name="environments-with-multiple-identity-management-systems"></a>Среды с несколькими системами управления идентификационными данными
 
-Некоторые среды имеют несколько систем управления идентификацией. Менеджеры идентификации на premesis, такие как Oracle AM и SiteMinder, требуют синхронизации с AD для паролей. Это можно сделать с помощью такого инструмента, как Служба уведомления об изменении пароля (PCNS) с помощью менеджера идентификации Майкрософт (MIM). Чтобы найти информацию об этом более [Deploy the MIM Password Change Notification Service on a domain controller](https://docs.microsoft.com/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller)сложном сценарии, см.
+Некоторые среды имеют несколько систем управления идентификацией. Руководители личных данных, такие как Oracle AM и SiteMinder, требуют синхронизации с AD для паролей. Это можно сделать с помощью такого инструмента, как Служба уведомления об изменении пароля (PCNS) с помощью менеджера идентификации Майкрософт (MIM). Чтобы найти информацию об этом более [Deploy the MIM Password Change Notification Service on a domain controller](https://docs.microsoft.com/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller)сложном сценарии, см.
 
 ## <a name="plan-testing-and-support"></a>Планирование тестирования и поддержки
 
@@ -255,7 +262,7 @@ Azure Active Directory лицензируется на каждого польз
 | Пользователь не может установить новый пароль| Пользователь завершает проверку во время потока сбросить пароль, но не может установить новый пароль. |
 | Пользователь не видит ссылку на пароль снавпана на устройстве Windows 10| Пользователь пытается сбросить пароль с экрана блокировки Windows 10, но устройство либо не присоединилось к Azure AD, либо политика устройства Intune не включена |
 
-### <a name="plan-roll-back"></a>Откат плана
+### <a name="plan-rollback"></a>Откат плана
 
 Для отката развертывания:
 
@@ -295,7 +302,7 @@ Azure Active Directory лицензируется на каждого польз
 1. [Интеграция с локальной средой](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-writeback)
 
 ### <a name="enable-sspr-in-windows"></a>Включить SSPR в Windows
-Для машин с Windows 7, 8, 8.1 и 10 вы можете [позволить пользователям сбросить свой пароль на экране входа windows](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-windows)
+Для машин с Windows 7, 8, 8.1 и 10 вы можете [позволить пользователям сбросить свой пароль на экране Windows](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-windows)
 
 ## <a name="manage-sspr"></a>Управление SSPR
 
@@ -334,9 +341,9 @@ Azure AD может предоставить дополнительную инф
 
 * [Что такое компонент обратной записи паролей?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Для начала развертывания SSPR [см.](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot)
+* Для начала развертывания SSPR см. [Сбросить пароля самообслуживания «Включить Azure AD»](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-sspr.md)
 
 * [Рассмотрите возможность внедрения защиты паролей Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad)
 

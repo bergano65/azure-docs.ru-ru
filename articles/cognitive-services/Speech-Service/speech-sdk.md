@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: dapine
-ms.openlocfilehash: a2ff4a94c1b2941f645cd7032ef476d33dffdb00
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 440944033e4b6a8fb29cf9ace6ad784b91316526
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656539"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668768"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
@@ -69,21 +69,11 @@ Speech SDK идеально подходит для транскрибирова
 
 ## <a name="rest-api"></a>REST API
 
-В то время как Speech SDK охватывает многие возможности службы речевой речи, для некоторых сценариев вы можете использовать REST API. Например, управление конечными точками подвергается воздействию только через REST API.
-
-> [!TIP]
-> Полагаясь на REST API, используйте редактор Swagger для автоматического создания клиентских библиотек. Например, для создания библиотеки клиентов транскрипции пакета.
-> 1. Скопируйте пример URL ниже:
->     ```http
->     https://westus.cris.ai/docs/v2.0/swagger
->     ```
-> 1. Перейдите к <a href="https://editor.swagger.io/" target="_blank">редактору <span class="docon docon-navigate-external x-hidden-focus"></span> Swagger</a>
-> 1. Выберите > **URL-адрес импорта** **файлов**и вставьте URL
-> 1. Выберите **«Создать клиента»** и выберите нужный язык программирования
+В то время как Speech SDK охватывает многие возможности службы речевой речи, для некоторых сценариев вы можете использовать REST API.
 
 ### <a name="batch-transcription"></a>Пакетное транскрибирование
 
-[Расшифровка пакетов](batch-transcription.md) обеспечивает асинхронную расшифровку больших объемов данных. Расшифровка пакетов возможна только на aPI REST.
+[Расшифровка пакетов](batch-transcription.md) обеспечивает асинхронную расшифровку больших объемов данных. Расшифровка пакетов возможна только на aPI REST. В дополнение к преобразованию речевого звука в текст, пакет речи к тексту также позволяет диаратизации и настроения-анализа.
 
 ## <a name="customization"></a>Настройка
 
@@ -133,7 +123,7 @@ Speech SDK идеально подходит для транскрибирова
 
 [!INCLUDE [Sample source code](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

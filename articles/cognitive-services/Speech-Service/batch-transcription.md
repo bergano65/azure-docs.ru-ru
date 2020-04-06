@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/18/2020
 ms.author: wolfma
-ms.openlocfilehash: ee7fbddade055c11f5870aa5a588a2fd02f10a23
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fb39f1ec83416ee8ab2a33b514971110db0c0b17
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131604"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668836"
 ---
 # <a name="what-is-batch-transcription"></a>Что такое партийная транскрипция?
 
@@ -305,9 +305,6 @@ Sentiment is scored per audio segment based on the lexical form. Весь тек
 
 Полные образцы доступны в [репозитории образцов GitHub](https://aka.ms/csspeech/samples) внутри `samples/batch` субдиректории.
 
-> [!NOTE]
-> Функциональность транскрипции пакетов разоблачается через описанный выше API REST. Таким образом, транскрипция пакета может быть использована практически из любого языка программирования или среды, которая поддерживает REST. Приведенные ниже примеры и примеры в GitHub являются лишь репрезентативными и **не** означают ограничений на то, где можно использовать API.
-
 Чтобы использовать настраиваемую акустическую или языковую модель, необходимо добавить в пример кода сведения о подписке, регион службы, URI SAS с указанием на аудиофайл для транскрибирования и идентификаторы моделей.
 
 [!code-csharp[Configuration variables for batch transcription](~/samples-cognitive-services-speech-sdk/samples/batch/csharp/program.cs#batchdefinition)]
@@ -329,6 +326,6 @@ Sentiment is scored per audio segment based on the lexical form. Весь тек
 
 Пример можно скачать в [репозитории с примерами GitHub](https://aka.ms/csspeech/samples) в каталоге `samples/batch`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)

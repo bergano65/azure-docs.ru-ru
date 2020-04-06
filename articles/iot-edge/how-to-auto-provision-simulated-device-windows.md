@@ -4,16 +4,16 @@ description: Использование имитированного устро�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 01/09/2019
+ms.date: 4/3/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: ee4f01c3ec57b0cf9e3ecf47254b57be95ea051a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fc051e2a0ebbdae7c62ff8a249747d118d3c2ce4
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76510946"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668690"
 ---
 # <a name="create-and-provision-a-simulated-iot-edge-device-with-a-virtual-tpm-on-windows"></a>Создание и предоставление смоделированного устройства IoT Edge с виртуальным TPM на Windows
 
@@ -60,11 +60,14 @@ DPS поддерживает симметричное подтверждение
 
 При создании индивидуальной регистрации выберите **True,** чтобы объявить, что смоделированное устройство TPM на вашем компьютере разработки Windows является **устройством IoT Edge.**
 
+> [!TIP]
+> В Azure CLI можно создать [группу регистрации](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/dps/enrollment) или [регистрации](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/dps/enrollment-group) и использовать флаг **с поддержкой края,** чтобы указать, что устройство или группа устройств — это устройство IoT Edge.
+
 Руководства по использованию виртуальных устройств и отдельной регистрации:
 
 * [C](../iot-dps/quick-create-simulated-device.md)
 * [Java](../iot-dps/quick-create-simulated-device-tpm-java.md)
-* [C #](../iot-dps/quick-create-simulated-device-tpm-csharp.md)
+* [C#](../iot-dps/quick-create-simulated-device-tpm-csharp.md)
 * [Node.js](../iot-dps/quick-create-simulated-device-tpm-node.md)
 * [Python](../iot-dps/quick-create-simulated-device-tpm-python.md)
 
@@ -128,6 +131,6 @@ Get-Service iotedge
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Процесс регистрации Службы подготовки устройств к добавлению в Центр Интернета вещей позволяет задать идентификатор устройства и теги двойников устройств параллельно с подготовкой нового устройства. Эти значения можно использовать для указания отдельных устройств или групп устройств с помощью автоматического управления устройствами. См. дополнительные сведения о развертывании и мониторинге модулей IoT Edge с поддержкой масштабирования с помощью [портала Azure](how-to-deploy-monitor.md) или [Azure CLI](how-to-deploy-monitor-cli.md).

@@ -1,15 +1,16 @@
 ---
-title: Создание внутренней подсистемы балансировки нагрузки в Службе Azure Kubernetes (AKS)
+title: Создание внутреннего балансировщика нагрузки
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как создать и использовать внутреннюю подсистему балансировки нагрузки для предоставления доступа к службам через AKS (Службу Azure Kubernetes).
 services: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.openlocfilehash: ff102ebe50dd4d2169090718ced9e550701b1b09
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4decd66a558b031f1aaaf9c64556dae545ed05d3
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79259413"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668408"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Использование внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS)
 
@@ -18,7 +19,7 @@ ms.locfileid: "79259413"
 > [!NOTE]
 > Доступны два номера SKU Azure Load Balancer: ценовых категорий *Базовый* и *Стандартный*. По умолчанию Стандартный SKU используется при создании кластера AKS.  При создании службы с типом, как LoadBalancer, вы получите тот же тип LB, что и при предоставлении кластера. Дополнительные сведения см. в разделе [Сравнение номеров SKU для Azure Load Balancer][azure-lb-comparison].
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
@@ -133,7 +134,7 @@ spec:
 
 Вы можете также напрямую удалить службу, как и любой ресурс Kubernetes, например `kubectl delete service internal-app`. При этом также будет удалена базовая подсистема балансировки нагрузки Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о службах Kubernetes в [документации по службам Kubernetes][kubernetes-services].
 

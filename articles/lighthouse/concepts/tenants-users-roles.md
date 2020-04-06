@@ -1,14 +1,14 @@
 ---
 title: Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 description: Изучите принципы действия арендаторов, пользователей и ролей Azure Active Directory, а также узнайте о том, как их можно использовать в сценариях Azure Lighthouse.
-ms.date: 03/24/2020
+ms.date: 04/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7540e17fd80f9a1d8e996295000c126614b838d2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4734f12c8b4b25bf75ecabc39d9e99d8ebe0951c
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80246897"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668875"
 ---
 # <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 
@@ -41,11 +41,12 @@ ms.locfileid: "80246897"
 - Обязательно следуйте принципам минимальных привилегий, чтобы у пользователей были только разрешения, необходимые для выполнения их заданий. Это помогает снизить вероятность непреднамеренных ошибок. Дополнительные сведения см. в статье [Recommended security practices](../concepts/recommended-security-practices.md) (Рекомендации по безопасности).
 - Добавьте пользователя с ролью [Managed Services Registration Assignment Delete](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) (Удаление назначенных регистраций управляемых служб), чтобы можно было при необходимости [удалить доступ к делегированию](../how-to/onboard-customer.md#remove-access-to-a-delegation) позже. Если эта роль не назначена, делегированные ресурсы могут быть удалены только пользователем в арендаторе клиента.
 - Убедитесь, что любой пользователь, которому нужно [просматривать страницу "Мои клиенты" на портале Azure](../how-to/view-manage-customers.md), имеет роль [Читатель](../../role-based-access-control/built-in-roles.md#reader) (или другую встроенную роль, которая предоставляет доступ для чтения).
+- Пользователи в управляющем арендаторе не будут иметь доступа к просмотру платежной информации для делегированной подписки клиента, даже если у них есть встроенная роль, которая обычно позволяет получить доступ. Это связано с тем, что доступ к платежной информации требует дополнительных шагов, которые в настоящее время поддерживаются только для пользователей в рамках одного и того же арендатора.
 
 > [!IMPORTANT]
 > Для добавления разрешений для группы Azure AD **тип группы** должен быть **безопасности,** а не **Office 365.** Эта опция выбирается при создании группы. Дополнительные сведения см. в разделе [Создание базовой группы и добавление членов с помощью Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [рекомендациях по обеспечению безопасности для делегированного управления ресурсами Azure](recommended-security-practices.md).
 - Подключите клиентов к делегированному управлению ресурсами Azure с помощью [шаблонов Azure Resource Manager](../how-to/onboard-customer.md) или путем [публикации предложения частных или общедоступных управляемых служб в Azure Marketplace](../how-to/publish-managed-services-offers.md).

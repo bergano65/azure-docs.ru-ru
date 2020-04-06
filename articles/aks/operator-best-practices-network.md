@@ -1,15 +1,16 @@
 ---
-title: Рекомендации для оператора — подключение сетей в Службе Azure Kubernetes (AKS)
+title: Рекомендации по сетевым ресурсам
+titleSuffix: Azure Kubernetes Service
 description: Актуальные рекомендации для оператора кластера по использованию ресурсов и установке подключения виртуальных сетей в Службе Azure Kubernetes (AKS)
 services: container-service
 ms.topic: conceptual
 ms.date: 12/10/2018
-ms.openlocfilehash: 93659a0891b09c83db9f63fe0756fcf4d7e87f6a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c8aee9967e09d2ae8bec3ee170756d8d22de0fe4
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77594691"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668205"
 ---
 # <a name="best-practices-for-network-connectivity-and-security-in-azure-kubernetes-service-aks"></a>Рекомендации по подключению сетей и обеспечению безопасности в службе Azure Kubernetes (AKS)
 
@@ -157,7 +158,7 @@ spec:
 
 Сеть управления для узла-бастиона должна быть также защищена. Используйте [Azure ExpressRoute][expressroute] или [VPN-шлюз][vpn-gateway] для подключения к локальной сети и управляйте доступом с помощью групп безопасности сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье описаны вопросы, связанные с безопасностью и подключению сетей. См. дополнительные сведения о [сетях в Службе Azure Kubernetes (AKS)][aks-concepts-network]
 

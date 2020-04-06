@@ -1,15 +1,16 @@
 ---
-title: Создание контроллера входящего трафика HTTPS с помощью кластера Службы Azure Kubernetes (AKS)
+title: Создание входа с автоматическим TLS
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как установить и настроить контроллер входа NGINX, который использует Let's Encrypt для автоматического генерации сертификатов TLS в кластере Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: article
 ms.date: 01/29/2020
-ms.openlocfilehash: ece117d60ae3d7fd70c0972bb463340c5d38c9e1
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.openlocfilehash: c98310bc5dc6b8f17403505cbcdd7e51355ca2b7
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80637265"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668432"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -339,7 +340,7 @@ kubectl delete -f hello-world-ingress.yaml --namespace ingress-basic
 kubectl delete namespace ingress-basic
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
 

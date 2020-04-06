@@ -1,17 +1,18 @@
 ---
-title: Используйте балансиватор нагрузки Standard SKU в службе Azure Kubernetes (AKS)
+title: Использование балансивизатора нагрузки Standard SKU
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как использовать балансомер нагрузки со стандартным SKU для предоставления услуг службы Azure Kubernetes Service (AKS).
 services: container-service
 author: zr-msft
 ms.topic: article
 ms.date: 09/27/2019
 ms.author: zarhoads
-ms.openlocfilehash: 9c414572e1c3b2f046ae9a14139885e9927ab3bb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 17e474de9c221126d67cc2982ba11c6ff75e7aa3
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79252913"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668492"
 ---
 # <a name="use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Используйте балансиватор нагрузки Standard SKU в службе Azure Kubernetes (AKS)
 
@@ -25,9 +26,9 @@ ms.locfileid: "79252913"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, эта статья требует, чтобы вы запускали версию Azure CLI 2.0.81 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.][install-azure-cli]
+Если вы решили установить и использовать CLI локально, эта статья требует, чтобы вы запускали версию Azure CLI 2.0.81 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS со *стандартным* балансом загрузки SKU Azure. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
@@ -248,7 +249,7 @@ spec:
 
 Вышеприведенный пример обновляет правило, чтобы разрешить входящий внешний трафик только из *диапазона MY_EXTERNAL_IP_RANGE.* Более подробная информация об использовании этого метода для ограничения доступа к службе балансо-баланса нагрузки доступна в [документации Kubernetes.][kubernetes-cloud-provider-firewall]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о службах Kubernetes в [документации по службам Kubernetes][kubernetes-services].
 

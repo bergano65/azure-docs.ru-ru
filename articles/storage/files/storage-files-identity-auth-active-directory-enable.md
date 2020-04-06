@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: rogarana
-ms.openlocfilehash: 0bf8960f1e97de45d5369f69c698311d0b4e3dbb
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 081ee364b3ddee5d1d1be75613309a4ae427066f
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80584514"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80666841"
 ---
 # <a name="enable-active-directory-authentication-over-smb-for-azure-file-shares"></a>Включить активную проверку подлинности каталога по сравнению с SMB для файлов Azure
 
@@ -34,6 +34,9 @@ ms.locfileid: "80584514"
 При вмененных aD-файлов Azure через SMB, объединенные в домены AD компьютеры могут монтировать файлы Azure, используя существующие учетные данные AD. Эта возможность может быть включена с помощью среды AD, размещенной либо в машинах на прем,или в Azure.
 
 Идентификаторы DD, используемые для доступа к файловым долям Azure, должны быть синхронизированы с Azure AD для обеспечения соблюдения разрешений файлов уровня общего доступа через стандартную [ролевую модель управления доступом (RBAC).](../../role-based-access-control/overview.md) [DACLs в стиле Windows](https://docs.microsoft.com/previous-versions/technet-magazine/cc161041(v=msdn.10)?redirectedfrom=MSDN) на файлах/каталогах, переносимых с существующих файловых серверов, будут сохранены и приведены в исполнение. Эта функция обеспечивает бесшовную интеграцию с инфраструктурой домена AD предприятия. При замене файловых серверов на преме на файлы Azure существующие пользователи могут получать доступ к файлам Azure от своих текущих клиентов с одним опытом вхождения без каких-либо изменений в учетных данных, накоторых они используются.  
+
+> [!NOTE]
+> Чтобы помочь настроить аутентификацию Azure Files AD для общего использования, мы опубликовали [два видео](https://docs.microsoft.com/azure/storage/files/storage-files-introduction#videos) с шаг за шагом руководством по замене файловых серверов на лазурные файлы и использованию файлов Azure в качестве контейнера профиля для Windows Virtual Desktop.
  
 ## <a name="prerequisites"></a>Предварительные требования 
 
@@ -69,15 +72,17 @@ ms.locfileid: "80584514"
 
 Прежде чем включить aD Authentication по сравнению с SMB для файлов Azure, мы рекомендуем вам пройти через [предпосылки](#prerequisites) и убедиться, что вы выполнили все этапы. Предпосылки подтверждают правильное настройку сред AD, Azure AD и Azure Storage. 
 
-Далее предоставите доступ к ресурсам Azure Files с учетными данными AD: 
+Далее выполните ниже приведенные ниже действия для настройки файлов Azure для аутентификации АД: 
 
-- Включить аутентификацию AD файлов Azure в учетной записи хранения.  
+1. Включить аутентификацию AD файлов Azure в учетной записи хранения. 
 
-- Присвоить разрешения доступа для доступа к идентации Azure AD (пользователь, группа или основной службы), которая синхронизируется с целевым идентатором AD. 
+2. Присвоить разрешения доступа для доступа к идентации Azure AD (пользователь, группа или основной службы), которая синхронизируется с целевым идентатором AD. 
 
-- Налаживание ACL по сравнению с SMB для каталогов и файлов. 
+3. Налаживание ACL по сравнению с SMB для каталогов и файлов. 
 
-- Установите совместное приложение Azure из домена AD, примкнувке к VM. 
+4. Установите совместное приложение Azure из домена AD, примкнувке к VM. 
+
+5. Поверните пароль учетной записи AD (необязательно)
 
 Следующая диаграмма иллюстрирует сквозной рабочий процесс для обеспечения аутентификации Azure AD по сравнению с SMB для файлов Azure. 
 
@@ -86,25 +91,28 @@ ms.locfileid: "80584514"
 > [!NOTE]
 > Проверка подлинности AD над SMB для файлов Azure поддерживается только на машинах или vMs, работающих на версиях ОС, более новых, чем Windows 7 или Windows Server 2008 R2. 
 
-## <a name="enable-ad-authentication-for-your-account"></a>Включить аутентификацию AD для вашей учетной записи 
+## <a name="1-enable-ad-authentication-for-your-account"></a>1. Включить аутентификацию AD для вашей учетной записи 
 
 Чтобы включить аутентификацию AD по сравнению с SMB для файлов Azure, необходимо сначала зарегистрировать учетную запись хранилища в AD, а затем установить необходимые свойства домена на учетной записи хранилища. Когда функция включена на учетной записи хранилища, она применяется ко всем новым и существующим файловым долям в учетной записи. Используйте `join-AzStorageAccountForAuth` для включения функции. Подробное описание сквозного рабочего процесса можно найти в разделе ниже. 
 
 > [!IMPORTANT]
 > Cmdlet `Join-AzStorageAccountForAuth` внесет изменения в вашу среду AD. Прочитайте следующее объяснение, чтобы лучше понять, что он делает, чтобы убедиться, что у вас есть соответствующие разрешения для выполнения команды и что применяемые изменения согласуются с политиками соответствия и безопасности. 
 
-Cmdlet `Join-AzStorageAccountForAuth` выполнит эквивалент автономного домена, примкнувного к указанному счету хранения. Это создаст учетную запись в домене AD, либо [учетную запись компьютера](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) или [учетную запись журнала службы.](https://docs.microsoft.com/windows/win32/ad/about-service-logon-accounts) Созданная учетная запись AD представляет учетную запись хранилища в домене AD. Если учетная запись AD создана в рамках организационной группы AD (OU), которая обеспечивает истечение срока действия пароля, необходимо обновить пароль до достижения максимального возраста пароля. Неспособность обновить пароль учетной записи AD приведет к сбоям в проверке подлинности при доступе к файлам Azure. Чтобы узнать, как обновить пароль, [см.](#update-ad-account-password)
+Cmdlet `Join-AzStorageAccountForAuth` выполнит эквивалент автономного домена, примкнувного к указанному счету хранения. Это создаст учетную запись в домене AD, либо [учетную запись компьютера](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) (по умолчанию) или [учетную запись входа в службу службы.](https://docs.microsoft.com/windows/win32/ad/about-service-logon-accounts) Созданная учетная запись AD представляет учетную запись хранилища в домене AD. Если учетная запись AD создана в рамках организационной группы AD (OU), которая обеспечивает истечение срока действия пароля, необходимо обновить пароль до достижения максимального возраста пароля. Неспособность обновить пароль учетной записи AD приведет к сбоям в проверке подлинности при доступе к файлам Azure. Чтобы узнать, как обновить пароль, [см.](#5-update-ad-account-password)
 
 Вы можете использовать следующий скрипт для выполнения регистрации и включения функции или, в качестве альтернативы, вы можете вручную выполнять операции, которые будет скрипт. Эти операции описаны в разделе, следуя сценарию. Вам не нужно делать и то, и другое.
 
-### <a name="1-check-prerequisites"></a>1. Проверка предпосылок
+### <a name="11-check-prerequisites"></a>1.1 Проверка предпосылок
 - [Скачать и распаковать модуль AzFilesHybrid](https://github.com/Azure-Samples/azure-files-samples/releases)
 - Установка и выполнение модуля в устройстве, которое является доменом, объединенным с AD-учетными данными, которые имеют разрешения на создание учетной записи входа в службу услуг или учетную запись компьютера в целевой AD.
 -  Запустите скрипт с помощью учетных данных AD, синхронизированных с Azure AD. Учетные данные AD должны иметь либо разрешения владельца учетной записи хранилища, либо разрешения на роль участника RBAC.
 - Убедитесь, что ваша учетная запись хранилища находится в [поддерживаемом регионе.](#regional-availability)
 
-### <a name="2-domain-join-your-storage-account"></a>2. Домен присоединяется к вашей учетной записи хранилища
+### <a name="12-domain-join-your-storage-account"></a>1.2 Домен присоединиться к вашей учетной записи хранения
 Не забудьте заменить значения заполнителя на ваши собственные в параметрах ниже, прежде чем выполнять его в PowerShell.
+> [!IMPORTANT]
+> Мы рекомендуем вам предоставить организационную группу AD (OU), которая НЕ обеспечивает истечение срока действия пароля. Если вы используете OU с настройкой пароля, необходимо обновить пароль до достижения максимального возраста пароля. Неспособность обновить пароль учетной записи AD приведет к сбоям в проверке подлинности при доступе к файлам Azure. Чтобы узнать, как обновить пароль, [см.](#5-update-ad-account-password)
+
 
 ```PowerShell
 #Change the execution policy to unblock importing AzFilesHybrid.psm1 module
@@ -123,19 +131,19 @@ Connect-AzAccount
 Select-AzSubscription -SubscriptionId "<your-subscription-id-here>"
 
 # Register the target storage account with your active directory environment under the target OU (for example: specify the OU with Name as "UserAccounts" or DistinguishedName as "OU=UserAccounts,DC=CONTOSO,DC=COM"). 
-# You can use to this PowerShell cmdlet: Get-ADOrganizationalUnit to find the Name and DistinguishedName of your target OU. If you are using the OU Name, specify it with -OrganizationalUnitName as shown below. If you are using the OU DistinguishedName, you can set it with -OrganizationalUnitDistinguishedName.
+# You can use to this PowerShell cmdlet: Get-ADOrganizationalUnit to find the Name and DistinguishedName of your target OU. If you are using the OU Name, specify it with -OrganizationalUnitName as shown below. If you are using the OU DistinguishedName, you can set it with -OrganizationalUnitDistinguishedName. You can choose to provide one of the two names to specify the target OU.
 # You can choose to create the identity that represents the storage account as either a Service Logon Account or Computer Account, depends on the AD permission you have and preference. 
 Join-AzStorageAccountForAuth `
         -ResourceGroupName "<resource-group-name-here>" `
         -Name "<storage-account-name-here>" `
         -DomainAccountType "ComputerAccount" `
-        -OrganizationalUnitName "<ou-name-here>"
+        -OrganizationalUnitName "<ou-name-here>" or -OrganizationalUnitDistinguishedName "<ou-distinguishedname-here>"
 ```
 
 В следующем описании суммируются все действия, выполняемые при выполнении `Join-AzStorageAccountForAuth` cmdlet. Вы можете выполнять эти действия вручную, если вы предпочитаете не использовать команду:
 
 > [!NOTE]
-> Если вы уже успешно `Join-AzStorageAccountForAuth` выполнили сценарий выше, перейдите к следующему разделу "3. Подтвердите, что функция включена». Вам не нужно выполнять операции ниже снова.
+> Если вы уже успешно `Join-AzStorageAccountForAuth` выполнили приведенный выше сценарий, перейдите в следующий раздел "1.3 Подтвердите, что функция включена". Вам не нужно выполнять операции ниже снова.
 
 #### <a name="a-checking-environment"></a>а. Проверка среды
 
@@ -147,7 +155,7 @@ Join-AzStorageAccountForAuth `
 
 Если у вас есть этот ключ, создайте либо учетную запись службы или компьютера под OU. Используйте следующую спецификацию: SPN: "cifs/your-storage-account-name-here.file.core.windows.net" Пароль: ключ Kerberos для вашей учетной записи хранения.
 
-Если ваш OU обеспечивает истечение пароля, необходимо обновить пароль до достижения максимального возраста пароля, чтобы предотвратить сбои в проверке подлинности при доступе к файлам Azure. Подробнее о том, как прочитать [пароль учетной записи Update AD.](#update-ad-account-password)
+Если ваш OU обеспечивает истечение пароля, необходимо обновить пароль до достижения максимального возраста пароля, чтобы предотвратить сбои в проверке подлинности при доступе к файлам Azure. Подробнее о том, как прочитать [пароль учетной записи Update AD.](#5-update-ad-account-password)
 
 Храните SID вновь созданной учетной записи, она вам понадобится для следующего шага. Только что созданный AD-иноеудостоверения, представляющий учетную запись хранения, не требуется синхронизировать с Azure AD.
 
@@ -170,7 +178,7 @@ Set-AzStorageAccount `
 ```
 
 
-### <a name="3-confirm-that-the-feature-is-enabled"></a>3. Подтвердите, что функция включена
+### <a name="13-confirm-that-the-feature-is-enabled"></a>1.3 Подтвердите, что функция включена
 
 Вы можете проверить, включена ли функция в учетной записи хранилища, вы можете использовать следующий скрипт:
 
@@ -191,9 +199,9 @@ $storageAccount.AzureFilesIdentityBasedAuth.ActiveDirectoryProperties
 
 [!INCLUDE [storage-files-aad-permissions-and-mounting](../../../includes/storage-files-aad-permissions-and-mounting.md)]
 
-Теперь вы успешно включили аутентификацию AD по сравнению с SMB и назначили пользовательскую роль, которая обеспечивает доступ к файлу Azure с идентификацией AD. Чтобы предоставить дополнительный доступ пользователям к вашей совместной части файла, следуйте инструкциям в [разрешении доступа Назначить](#assign-access-permissions-to-an-identity) использовать идентификационные данные и настроить разрешения NTFS по разделам [SMB.](#configure-ntfs-permissions-over-smb)
+Теперь вы успешно включили аутентификацию AD по сравнению с SMB и назначили пользовательскую роль, которая обеспечивает доступ к файлу Azure с идентификацией AD. Чтобы предоставить дополнительный доступ пользователям к вашей совместной части файла, следуйте инструкциям в [разрешении доступа Назначить](#2-assign-access-permissions-to-an-identity) использовать идентификационные данные и настроить разрешения NTFS по разделам [SMB.](#3-configure-ntfs-permissions-over-smb)
 
-## <a name="update-ad-account-password"></a>Обновление пароля учетной записи AD
+## <a name="5-update-ad-account-password"></a>5. Обновление учетной записи AD пароль
 
 Если вы зарегистрировали идентификационный знак/аккаунт AD, представляющий вашу учетную запись хранения в соответствии с OU, которая обеспечивает соблюдение срока действия пароля, необходимо повернуть пароль до достижения максимального возраста пароля. Неспособность обновить пароль учетной записи AD приведет к сбоям в проверке подлинности при доступе к файлам Azure.  
 

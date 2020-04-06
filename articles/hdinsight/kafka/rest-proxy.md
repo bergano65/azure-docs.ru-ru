@@ -6,37 +6,37 @@ ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 04/01/2020
-ms.openlocfilehash: 8997b385960c58b17747dfcfced74010af80550b
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.date: 04/03/2020
+ms.openlocfilehash: 6bf34f8fb15bf8fddb1ba398ed678d5c98b8c84f
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548217"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80667786"
 ---
 # <a name="interact-with-apache-kafka-clusters-in-azure-hdinsight-using-a-rest-proxy"></a>Взаимодействие с кластерами Apache Kafka в Azure HDInsight с помощью прокси REST
 
-Прокси Kafka REST позволяет взаимодействовать с кластером Kafka через REST API через HTTP. Это означает, что ваши клиенты Kafka могут находиться за пределами вашей виртуальной сети. Кроме того, клиенты могут совершать простые http-звонки для отправки и приема сообщений в кластер Kafka, а не полагаться на библиотеки Kafka. Этот учебник покажет вам, как создать кластер REST прокси с поддержкой Kafka и предоставит пример кода, который показывает, как совершать звонки на прокси REST.
+Прокси Kafka REST позволяет взаимодействовать с кластером Kafka через REST API через HTTP. Это действие означает, что ваши клиенты Kafka могут находиться за пределами вашей виртуальной сети. Клиенты могут совершать простые http-звонки в кластер Kafka, вместо того, чтобы полагаться на библиотеки Kafka. В этой статье будет показан способ создания кластера proxy REST с поддержкой Kafka. Также предоставляется пример кода, который показывает, как совершать звонки на прокси REST.
 
 ## <a name="rest-api-reference"></a>Справочник по REST API
 
-Для полной спецификации операций, поддерживаемых API [HDInsight Kafka REST Proxy API Reference](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy)Kafka REST, см.
+Для операций, поддерживаемых API Kafka REST, [см.](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy)
 
 ## <a name="background"></a>Историческая справка
 
-![Архитектура прокси-серверов Kafka REST](./media/rest-proxy/rest-proxy-architecture.png)
+![Дизайн прокси-сервера Kafka REST](./media/rest-proxy/rest-proxy-architecture.png)
 
-Для получения полной спецификации операций, [Apache Kafka REST Proxy API](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy)поддерживаемых API, пожалуйста, см.
+Полную спецификацию операций, поддерживаемых API, можно узнать на [Apache Kafka REST Proxy API.](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy)
 
 ### <a name="rest-proxy-endpoint"></a>КОНЕЧНая точка REST Прокси
 
-Создание кластера HDInsight Kafka с прокси-сервером REST создает новую общедоступную точку для кластера, которую можно найти в кластере HDInsight "Свойства" на портале Azure.
+Создание кластера HDInsight Kafka с помощью прокси-сервера REST создает новую общедоступную точку для кластера, которую можно найти в кластере HDInsight **Properties** на портале Azure.
 
 ### <a name="security"></a>Безопасность
 
-Доступ к прокси-серверу Kafka REST управляется с помощью групп безопасности Azure Active Directory. При создании кластера Kafka с включенным прокси-сервером REST вы предоставите группу безопасности Active Directory Azure, которая должна иметь доступ к конечной точке REST. Клиенты Kafka (приложения), которым необходим доступ к прокси-серверу REST, должны быть зарегистрированы в этой группе владельцем группы. Владелец группы может сделать это через портал или через PowerShell.
+Доступ к прокси-серверу Kafka REST управляется с помощью групп безопасности Azure Active Directory. При создании кластера Kafka предоставьте группе безопасности Azure AD доступ к конечным точкам REST. Клиенты Kafka, которым необходим доступ к прокси-серверу REST, должны быть зарегистрированы в этой группе владельцем группы. Владелец группы может зарегистрироваться через портал или через PowerShell.
 
-Прежде чем делать запросы в конечную точку прокси REST, клиентское приложение должно получить токен OAuth для проверки членства в правильной группе безопасности. Найдите [нижепример приложения Клиента,](#client-application-sample) который показывает, как получить токен OAuth. После того, как клиентское приложение имеет токен OAuth, они должны передать этот токен в запросе HTTP, сделанном прокси REST.
+Для запросов на конечную точку прокси-сервера REST клиентские приложения должны получить токен OAuth. Токен используется для проверки членства группы безопасности. Найдите [нижепример приложения Клиента,](#client-application-sample) который показывает, как получить токен OAuth. Клиентское приложение передает токен OAuth в запросе HTTP прокси REST.
 
 > [!NOTE]  
 > [См. Управление приложением и доступом к ресурсам с помощью групп Active Directory Azure,](../../active-directory/fundamentals/active-directory-manage-groups.md)чтобы узнать больше о группах безопасности AAD. Для получения дополнительной информации о том, [Authorize access to Azure Active Directory web applications using the OAuth 2.0 code grant flow](../../active-directory/develop/v1-protocols-oauth-code.md)как работают токены OAuth, см.
@@ -45,15 +45,17 @@ ms.locfileid: "80548217"
 
 1. зарегистрировать приложение в Azure AD; Клиентские приложения, которые вы пишете для взаимодействия с прокси-сервером Kafka REST, будут использовать идентификатор этого приложения и секрет проверки подлинности в Azure.
 
-1. Создайте группу безопасности Azure AD и добавьте приложение, зарегистрированное в Azure AD, в группу безопасности в качестве «члена» группы. Эта группа безопасности будет использоваться для контроля, какие приложения могут взаимодействовать с прокси REST. Для получения дополнительной информации о создании групп Azure AD [см. Создать базовую группу и добавить участников с помощью Active Directory Azure.](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)
+1. Создайте группу безопасности Azure AD. Добавьте приложение, зарегистрированное в Azure AD, в группу безопасности в качестве **члена** группы. Эта группа безопасности будет использоваться для контроля, какие приложения могут взаимодействовать с прокси REST. Для получения дополнительной информации о создании групп Azure AD [см. Создать базовую группу и добавить участников с помощью Active Directory Azure.](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)
 
-    Проверка группы типа "Безопасность" ![Security Group](./media/rest-proxy/rest-proxy-group.png)
+    Проверка группы типа **Безопасности.**
+    ![Группа безопасности](./media/rest-proxy/rest-proxy-group.png)
 
-    Проверка того, что ![приложение является участником членства в Group Validate](./media/rest-proxy/rest-proxy-membergroup.png)
+    Проверка этого приложения является членом Группы.
+    ![Проверка членства](./media/rest-proxy/rest-proxy-membergroup.png)
 
 ## <a name="create-a-kafka-cluster-with-rest-proxy-enabled"></a>Создание кластера Kafka с включенным прокси-сервером REST
 
-1. Во время рабочего процесса создания кластера Kafka во вкладке "Безопасность и сеть" проверьте опцию "Включить прокси-сервер Kafka REST".
+1. Во время рабочего процесса создания кластера Kafka во вкладке **«Безопасность и сеть»** проверьте **прокси-опцию Enable Kafka REST.**
 
      ![Включить прокси-сервер Kafka REST и выбрать группу безопасности](./media/rest-proxy/azure-portal-cluster-security-networking-kafka-rest.png)
 
@@ -73,19 +75,23 @@ ms.locfileid: "80548217"
 
 1. Сохраните пример кода на машине с установленным Python.
 1. Установите требуемые зависимые `pip3 install adal` `pip install msrestazure`питоны путем выполнения и .
-1. Измените раздел кода *Нанастройка этих свойств* и обновите следующие свойства для среды:
-    1.    *Идентификатор арендатора* — арендатор Azure, где находится ваша подписка.
-    1.    *Идентификатор клиента* — идентификатор приложения, зарегистрированного в группе безопасности.
-    1.    *Секрет клиента* - Секрет приложения, которое вы зарегистрировали в группе безопасности
-    1.    *Kafkarest_endpoint* - получить это значение из вкладки "свойства" в обзоре кластера, описанном в [разделе развертывания.](#create-a-kafka-cluster-with-rest-proxy-enabled) Она должна быть в следующем формате –`https://<clustername>-kafkarest.azurehdinsight.net`
+1. Измените раздел кода **Нанастройка этих свойств** и обновите следующие свойства для среды:
+
+    |Свойство |Описание |
+    |---|---|
+    |Tenant ID|Арендатор Azure, где находится ваша подписка.|
+    |Идентификатор клиента|Идентификатор приложения, зарегистрированного в группе безопасности.|
+    |Секрет клиента|Секрет приложения, которое вы зарегистрировали в группе безопасности.|
+    |Kafkarest_endpoint|Получите это значение из вкладки **Свойства** в обзоре кластера, описанном в [разделе развертывания.](#create-a-kafka-cluster-with-rest-proxy-enabled) Она должна быть в следующем формате –`https://<clustername>-kafkarest.azurehdinsight.net`|
+
 1. Из командной строки выполните файл python путем выполнения`python <filename.py>`
 
-Этот код делает следующее:
+Этот код выполняет следующее действие:
 
-1. Получает токен OAuth из Azure AD
-1. Показывает, как сделать запрос на прокси Кафка REST
+1. Получает токен OAuth из Azure AD.
+1. Показывает, как сделать запрос на прокси Kafka REST.
 
-Для получения дополнительной информации о получении токенов OAuth в python [см.](https://docs.microsoft.com/python/api/adal/adal.authentication_context.authenticationcontext?view=azure-python) Вы можете увидеть задержку, в то время как темы, которые не созданы или удалены через прокси Kafka REST, отражаются там. Эта задержка связана с обновлением кэша.
+Для получения дополнительной информации о получении токенов OAuth в python [см.](https://docs.microsoft.com/python/api/adal/adal.authentication_context.authenticationcontext?view=azure-python) Вы можете увидеть `topics` задержку, в то время как которые не созданы или удалены через прокси Kafka REST отражаются там. Эта задержка происходит из-за обновления кэша.
 
 ```python
 #Required python packages
@@ -137,6 +143,6 @@ print(response.content)
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=<clientid>&client_secret=<clientsecret>&grant_type=client_credentials&resource=https://hib.azurehdinsight.net' 'https://login.microsoftonline.com/<tenantid>/oauth2/token'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Справочные документы API по доверенности Kafka REST](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy/)

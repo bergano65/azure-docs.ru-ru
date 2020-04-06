@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 1392f69bea09996e46ad4c112474f9067ff5a63d
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: ed7686bbef7dc1342528475226d11b8b8b8fb640
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656911"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668608"
 ---
 # <a name="lucene-query-syntax-in-azure-cognitive-search"></a>Синтаксис Lucene запросв в Azure Cognitive Search
 
@@ -104,7 +104,7 @@ POST /indexes/hotels/docs/search?api-version=2019-05-06
 
 ### <a name="or-operator-or-or-"></a>Оператор OR (`OR` или `||`)
 
-Оператор OR представляет собой вертикальную черту. Например, условие `wifi || luxury` будет искать документы, содержащие "wifi" или "luxury", или и то и другое. Так как OR является оператором соединения по умолчанию, вы также можете его оставить, то есть `wifi luxury` аналогично `wifi || luxuery`.
+Оператор OR представляет собой вертикальную черту. Например, условие `wifi || luxury` будет искать документы, содержащие "wifi" или "luxury", или и то и другое. Так как OR является оператором соединения по умолчанию, вы также можете его оставить, то есть `wifi luxury` аналогично `wifi || luxury`.
 
 ### <a name="and-operator-and--or-"></a>Оператор AND (`AND`, `&&` или `+`)
 
@@ -162,6 +162,8 @@ POST /indexes/hotels/docs/search?api-version=2019-05-06
  Операция поиска по регулярным выражениям позволяет найти совпадение в зависимости от содержимого между косыми чертами "/", как указано в документации [класса RegExp](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/util/automaton/RegExp.html).  
 
  Например, чтобы найти документы, содержащие "motel" или "hotel", укажите `/[mh]otel/`. Поиск с регулярными выражениями сопоставляется с отдельными словами.
+
+Некоторые инструменты и языки налагают дополнительные требования к персонажу побега. Для JSON строки, которые включают передний слэш, `search=/.*microsoft.com\/azure\/.*/` избежаны с отсталой чертой: "microsoft.com/azure/" становится местом, где `search=/.* <string-placeholder>.*/` устанавливает регулярное выражение, и `microsoft.com\/azure\/` является строкой с сбежавшей вперед слэш.
 
 ##  <a name="wildcard-search"></a><a name="bkmk_wildcard"></a>Поиск wildcard  
  Вы можете использовать распознаваемый синтаксис для поиска с использованием одного (?) или нескольких (*) подстановочных знаков. Обратите внимание, что средство синтаксического анализа запросов Lucene поддерживает использование этих символов для поиска одного слова, а не фразы.

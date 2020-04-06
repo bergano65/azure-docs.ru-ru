@@ -1,15 +1,16 @@
 ---
-title: Обновление и перезагрузка узлов Linux с помощью kured в Службе Azure Kubernetes (AKS)
+title: Ручка Linux узла перезагрузки с kured
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как обновить узлы Linux и автоматики перезагрузить их с помощью kured в Службе Azure Kubernetes (AKS)
 services: container-service
 ms.topic: article
 ms.date: 02/28/2019
-ms.openlocfilehash: 74b12c1bc6e2a88582cc357c8091b5590e6bf3cb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8006baa3025ee1e794359bed854094cc9005dd14
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78191288"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668384"
 ---
 # <a name="apply-security-and-kernel-updates-to-linux-nodes-in-azure-kubernetes-service-aks"></a>Применяйте обновления безопасности и ядра к узлам Linux в службе Azure Kubernetes (AKS)
 
@@ -22,7 +23,7 @@ ms.locfileid: "78191288"
 > [!NOTE]
 > `Kured` создается как проект Weaveworks с открытым кодом. Поддержка для этого проекта в AKS предоставляется только по мере возможности. Дополнительную поддержку можно найти в канале slack #weave сообщества.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
@@ -98,7 +99,7 @@ aks-nodepool1-28993262-0   Ready     agent     1h        v1.11.7   10.240.0.4   
 aks-nodepool1-28993262-1   Ready     agent     1h        v1.11.7   10.240.0.5    <none>        Ubuntu 16.04.6 LTS   4.15.0-1037-azure   docker://3.0.4
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье `kured` подробно описано, как использовать для автоматической перезагрузки узлов Linux в процессе обновления безопасности. Чтобы перейти на последнюю версию Kubernetes, вы можете [обновить кластер AKS][aks-upgrade].
 

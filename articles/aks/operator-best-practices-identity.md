@@ -1,15 +1,16 @@
 ---
-title: Рекомендации для оператора— идентификация в службах Azure Kubernetes (AKS)
+title: Рекомендации по управлению удостоверением личности
+titleSuffix: Azure Kubernetes Service
 description: Ознакомьтесь с рекомендациями по управлению аутентификацией и авторизацией для кластеров в службе Azure Kubernetes (AKS) для операторов кластеров.
 services: container-service
 ms.topic: conceptual
 ms.date: 04/24/2019
-ms.openlocfilehash: 5ff5bdaced46a20dec3e7c5d7fb029f9428a12f2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0e3569be769fcf70a65cbfee62a3b80a5abdc3b5
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77594776"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668320"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)
 
@@ -110,7 +111,7 @@ roleRef:
 
 Чтобы использовать удостоверения pod, назначьте [удостоверения Azure Active Directory для приложений Kubernetes][aad-pod-identity].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье с рекомендациями мы рассказали об аутентификации и авторизации для кластера и ресурсов. Чтобы реализовать некоторые из этих рекомендаций, ознакомьтесь со следующими статьями:
 

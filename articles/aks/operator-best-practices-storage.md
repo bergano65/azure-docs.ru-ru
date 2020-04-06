@@ -1,15 +1,16 @@
 ---
-title: Рекомендации для оператора. Хранение в Службе Azure Kubernetes (AKS)
+title: Рекомендации по хранению и резервному копированию
+titleSuffix: Azure Kubernetes Service
 description: Рекомендации для оператора кластера по хранению, шифрованию данных и резервному копированию в Службе Azure Kubernetes (AKS)
 services: container-service
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: b1336d10b091be4f3eb2a711401cafd3f58221fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 90abf2e36fd46c707904d87f00362091fe931743
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78399475"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668100"
 ---
 # <a name="best-practices-for-storage-and-backups-in-azure-kubernetes-service-aks"></a>Рекомендации по хранению и резервному копированию в Службе Azure Kubernetes (AKS)
 
@@ -93,7 +94,7 @@ ms.locfileid: "78399475"
 
 Выясните ограничения разных подходов к резервному копированию данных и оцените необходимость замораживать данные перед созданием моментального снимка. Резервные копии данных не всегда позволят восстановить среду приложения в кластерном развертывании. Дополнительные сведения об этих сценариях см. в руководстве по [обеспечению непрерывности бизнеса и аварийного восстановления в AKS][best-practices-multi-region].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Эта статья посвящена рекомендациям по организации хранения в Службе контейнеров Azure. Дополнительные сведения об основах хранения в Kubernetes см. в статье [Возможности хранения данных в Службе Azure Kubernetes (AKS)][aks-concepts-storage].
 

@@ -12,20 +12,20 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/31/2020
+ms.date: 04/03/2020
 ms.author: b-juche
-ms.openlocfilehash: 9ad9e13667791c38a8bf8be01919bcdbd0032102
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: c4e7566eeb28bc5709acd60ced9fcdffb7e8a725
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80519582"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668000"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
 Azure NetApp Files поддерживает объемы NFS и SMBv3. Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том SMBv3. Если вы хотите создать том NFS, [см.](azure-netapp-files-create-volumes.md) 
 
-## <a name="before-you-begin"></a>Перед началом 
+## <a name="before-you-begin"></a>Подготовка к работе 
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
@@ -45,7 +45,7 @@ Azure NetApp Files поддерживает объемы NFS и SMBv3. Потр�
     |    AD веб-службы    |    9389      |    TCP           |
     |    DNS                |    53        |    TCP           |
     |    DNS                |    53        |    UDP           |
-    |    ICMPv4             |    Н/Д       |    Эхо Ответ    |
+    |    ICMPv4             |    Недоступно       |    Эхо Ответ    |
     |    Kerberos           |    464       |    TCP           |
     |    Kerberos           |    464       |    UDP           |
     |    Kerberos           |    88        |    TCP           |
@@ -74,13 +74,15 @@ Azure NetApp Files поддерживает объемы NFS и SMBv3. Потр�
 
     Смотрите [Проектирование топологии сайта](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology) о сайтах и услугах AD. 
     
-* Azure NetApp Files поддерживает DES, Kerberos AES 128 и Kerberos AES 256 (от наименее безопасных до наиболее безопасных). Учетные данные пользователей, используемые для присоединения к Active Directory, должны иметь наивысший соответствующий вариант учетной записи, который соответствует возможностям, включенным для вашего Active Directory.   
+<!--
+* Azure NetApp Files supports DES, Kerberos AES 128, and Kerberos AES 256 encryption types (from the least secure to the most secure). The user credentials used to join Active Directory must have the highest corresponding account option enabled that matches the capabilities enabled for your Active Directory.   
 
-    Например, если в Active Directory есть только возможность AES-128, необходимо включить опцию учетной записи AES-128 для учетных данных пользователей. Если ваш Active Directory имеет возможность AES-256, необходимо включить опцию учетной записи AES-256 (которая также поддерживает AES-128). Если в вашем Active Directory нет возможности шифрования Kerberos, Azure NetApp Files использует DES по умолчанию.  
+    For example, if your Active Directory has only the AES-128 capability, you must enable the AES-128 account option for the user credentials. If your Active Directory has the AES-256 capability, you must enable the AES-256 account option (which also supports AES-128). If your Active Directory does not have any Kerberos encryption capability, Azure NetApp Files uses DES by default.  
 
-    Вы можете включить параметры учетной записи в свойствах консоли Active Directory и Computers MMC:   
+    You can enable the account options in the properties of the Active Directory Users and Computers MMC console:   
 
-    ![Активные пользователи каталога и компьютеры MMC](../media/azure-netapp-files/ad-users-computers-mmc.png)
+    ![Active Directory Users and Computers MMC](../media/azure-netapp-files/ad-users-computers-mmc.png)
+-->
 
 О дополнительной информации о Файлах SMB Azure NetApp [Файлы SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs) о дополнительной информации aD. 
 
@@ -221,7 +223,7 @@ Azure NetApp Files поддерживает объемы NFS и SMBv3. Потр�
  
     От пула емкости том наследует атрибуты подписки, группы ресурсов и расположения. Состояние развертывания можно отслеживать на вкладке уведомлений.
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)

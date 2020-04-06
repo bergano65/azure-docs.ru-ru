@@ -1,5 +1,5 @@
 ---
-title: Высокая доступность и аварийное восстановление в службе Azure Kubernetes (AKS)
+title: Лучшие практики для непрерывности бизнеса AKS и аварийного восстановления
 description: Изучите рекомендации оператора кластера для достижения максимального времени работы приложений, обеспечения высокой доступности и подготовки к аварийному восстановлению в службе Azure Kubernetes Service (AKS).
 services: container-service
 author: lastcoolnameleft
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 6aff60cbc4a4cab557e6e202ea1181d5b20bbd20
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 7aa93d8ba21cafddc5511e16fa430b76942b1a6d
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80655872"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668293"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -130,7 +130,7 @@ Kubernetes в настоящее время не обеспечивает нат
 
 ![асинхронная репликация на основе приложений;](media/operator-best-practices-bc-dr/aks-app-based-async-repl.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье основное внимание уделяется вопросам непрерывности бизнеса и восстановления аварийности для кластеров AKS. Для получения дополнительной информации о кластерных операциях в AKS см.
 

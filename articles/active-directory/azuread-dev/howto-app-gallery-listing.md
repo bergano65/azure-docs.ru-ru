@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 969193b2c0843c4eb217d2bdb9f9ad9a40ccf9af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fbdae8b8506731f13ff08e877ea8eedb6d57fa78
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80154973"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80666943"
 ---
 # <a name="list-your-application-in-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -49,9 +49,9 @@ ms.locfileid: "80154973"
 
 ## <a name="submit-the-request-in-the-portal"></a>Отправка запроса на портале
 
-После проверки того, что интеграция приложений работает с Azure AD, отправьте запрос на доступ на [портале Application Network.](https://microsoft.sharepoint.com/teams/apponboarding/Apps) Если у вас есть учетная запись Office 365, используйте ее для входа на этот портал. В противном случае используйте учетную запись Майкрософт, например Outlook или Hotmail, для входиный восподписания.
+После проверки того, что интеграция приложений работает с Azure AD, отправьте запрос на приложение на [портале Microsoft Application Network.](https://microsoft.sharepoint.com/teams/apponboarding/Apps)
 
-Если после входной регистрации появляется следующая страница, обратитесь в [группу интеграции Azure AD SSO.](<mailto:SaaSApplicationIntegrations@service.microsoft.com>) Предоставьте учетную запись электронной почты, которую вы хотите использовать для отправки запроса. Команда Azure AD добавит учетную запись на портале Microsoft Application Network.
+Если после входной регистрации появляется следующая страница, обратитесь в [группу интеграции Azure AD SSO.](<mailto:SaaSApplicationIntegrations@service.microsoft.com>) Предоставьте учетную запись электронной почты, которую вы хотите использовать для отправки запроса. Предпочтительным является адрес [name@yourbusiness.com](mailto:name@yourbusiness.com) деловой электронной почты. Команда Azure AD добавит учетную запись на портале Microsoft Application Network.
 
 ![Сообщение запроса доступа на портале SharePoint](./media/howto-app-gallery-listing/errorimage.png)
 

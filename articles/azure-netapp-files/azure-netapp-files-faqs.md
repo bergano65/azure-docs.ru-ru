@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 04/03/2020
 ms.author: b-juche
-ms.openlocfilehash: 59453dbb9617f5a2ddbdca08709747b11a688560
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: aebc669a90511e48ddd2a7876553948c04b97710
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80547088"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80667812"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Задаваемые вопросы о файлах NetApp Azure
 
@@ -145,9 +145,11 @@ Azure NetApp Files поддерживает Windows Server 2008r2SP1-2019 вер
 
 Размер объема, о которых сообщает клиент SMB, — это максимальный размер, до которым может вырасти объем файлов NetApp Azure. Размер объема файлов Azure NetApp, показанный на клиенте SMB, не отражает квоту или размер объема. Вы можете получить объем или квоту файлов Azure NetApp через портал Azure или API.
 
-### <a name="does-azure-netapp-files-support-kerberos-encryption"></a>Поддерживают ли файлы Сети Приложения Azure шифрование Kerberos?
+<!--
+### Does Azure NetApp Files support Kerberos encryption?
 
-Да, по умолчанию, Azure NetApp Files поддерживает шифрование AES-128 и AES-256 для трафика между службой и целевыми контроллерами доменов Active Directory. Смотрите [Создать объем SMB для файлов Сети Azure](azure-netapp-files-create-volumes-smb.md) для требований. 
+Yes, by default, Azure NetApp Files supports both AES-128 and AES-256 encryption for traffic between the service and the targeted Active Directory domain controllers. See [Create an SMB volume for Azure NetApp Files](azure-netapp-files-create-volumes-smb.md) for requirements. 
+-->
 
 <!--
 ### Does Azure NetApp Files support LDAP signing? 
@@ -223,7 +225,7 @@ NetApp предлагает решение на базе SaaS, [NetApp Cloud Syn
 
 Нет. Служба импорта/экспорта Azure в настоящее время не поддерживает файлы NetApp Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
 - [Часто задаваемые вопросы Microsoft Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
 - [Задаваемые вопросы виртуальной сети Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)

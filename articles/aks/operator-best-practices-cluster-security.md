@@ -1,15 +1,16 @@
 ---
-title: Рекомендации для операторов. Безопасность кластера в службах Azure Kubernetes (AKS)
+title: Рекомендации по безопасности кластеров
+titleSuffix: Azure Kubernetes Service
 description: Ознакомьтесь с рекомендациями по управлению безопасностью и обновлениями для кластеров в службе Azure Kubernetes (AKS) для операторов кластеров.
 services: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: f02f6588946e2b63a1a092aba15603d1685e8207
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3d4e8577116ba1d78aaa881887f64e71c04af4f2
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77594810"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668333"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Рекомендации по безопасности и обновлениям кластера в службах Azure Kubernetes (AKS)
 
@@ -206,7 +207,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 
 Дополнительные сведения о том, как обрабатывать перезагрузки узла, см. в статье [Применение обновлений безопасности и ядра для узлов в Службе Azure Kubernetes (AKS)][aks-kured].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Эта статья посвящена вопросам, связанным с безопасностью кластера AKS. Для реализации части этих рекомендаций требуются сведения, опубликованные в следующих статьях:
 

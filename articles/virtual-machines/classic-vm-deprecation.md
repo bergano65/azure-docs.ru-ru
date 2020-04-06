@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 764567bffd2a08ebb5beb17e3063998848b3f110
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e56aa5ec073aadc2a16d53c266d33255a34077cb
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79127330"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668808"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Переимите ресурсы IaaS в отдел ресурсов Azure до 1 марта 2023 года 
 
@@ -45,6 +45,6 @@ ms.locfileid: "79127330"
 
 - Для получения дополнительной информации обратитесь к [часто задаваемым вопросам о классической технологии для миграции диспетчера ресурсов Azure](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-faq)
 
-- По техническим вопросам и вопросам [обратитесь в службу поддержки.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
+- По техническим вопросам, вопросам и подписке белый список [контактной поддержки.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
 - Для других вопросов, не являются частью часто задаваемых вопросов и обратной связи, комментарий ниже.
