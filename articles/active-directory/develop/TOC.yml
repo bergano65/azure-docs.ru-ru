@@ -26,6 +26,8 @@
     - name: Одностраничные приложения
       displayName: SPA
       items:
+        - name: Angular
+          href: quickstart-v2-angular.md
         - name: JavaScript
           href: quickstart-v2-javascript.md
     - name: Веб-приложения
@@ -69,6 +71,8 @@
     - name: Одностраничные приложения
       displayName: SPA
       items:
+        - name: Angular
+          href: tutorial-v2-angular.md
         - name: JavaScript
           href: tutorial-v2-javascript-spa.md
     - name: Веб-приложения
@@ -219,8 +223,12 @@
               href: scenario-mobile-app-configuration.md
             - name: Конфигурация для конкретных мобильных платформ
               items:
+                - name: Подключаемый модуль единого входа Microsoft Enterprise для устройств Apple
+                  href: apple-sso-plugin.md
                 - name: Режим совместной работы с устройством Android
-                  href: shared-device-mode.md
+                  href: msal-android-shared-devices.md
+                - name: Режим совместной работы с устройством iOS
+                  href: msal-ios-shared-devices.md
                 - name: Xamarin Android
                   href: msal-net-xamarin-android-considerations.md
                 - name: Системный браузер в Android
@@ -308,6 +316,17 @@
           href: msal-handling-exceptions.md
         - name: Logging
           href: msal-logging.md
+        - name: Общие устройства
+          items:
+            - name: Общие сведения об общих устройствах
+              href: msal-shared-devices.md
+              displayName: 'shared device mode, firstline worker, frontline worker'
+            - name: Режим совместной работы с устройством iOS
+              href: msal-ios-shared-devices.md
+              displayName: 'firstline worker, frontline worker'
+            - name: Режим совместной работы с устройством Android
+              href: msal-android-shared-devices.md
+              displayName: 'firstline worker, frontline worker'
         - name: Единый вход
           displayName: SSO
           items:

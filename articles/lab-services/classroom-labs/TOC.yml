@@ -102,6 +102,8 @@
               href: how-to-enable-nested-virtualization-template-vm-using-script.md
         - name: Подготовка виртуальной машины Windows
           href: how-to-prepare-windows-template.md
+        - name: Управление поведением завершения работы Windows
+          href: how-to-windows-shutdown.md
         - name: Просмотр сведений о поддержке (инструктор)
           href: lab-creator-support-information.md
     - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)

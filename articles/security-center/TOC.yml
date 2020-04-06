@@ -29,6 +29,8 @@
       href: quick-onboard-azure-stack.md
 - name: Учебники
   items:
+    - name: Руководство по планированию и эксплуатации
+      href: security-center-planning-and-operations-guide.md
     - name: Защита ресурсов
       href: tutorial-protect-resources.md
     - name: Реагирование на инциденты
@@ -71,8 +73,8 @@
           href: security-center-incident.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
           href: security-center-alerts-cloud-smart.md
-        - name: Карта оповещений системы безопасности и аналитика угроз
-          href: security-center-threat-intel.md
+        - name: Отчеты об угрозах
+          href: security-center-threat-report.md
         - name: Проверка оповещений (в тестовом файле EICAR)
           href: security-center-alert-validation.md
 - name: Практические руководства
@@ -149,6 +151,8 @@
           href: security-center-sql-service-recommendations.md
         - name: Защита идентификации и доступа
           href: security-center-identity-access.md
+        - name: Управление пользовательскими данными исследования
+          href: security-center-investigation-user-data.md
     - name: Применение средств защиты в облаке
       items:
         - name: Управление JIT-доступом
@@ -159,24 +163,6 @@
           href: security-center-file-integrity-monitoring.md
         - name: Адаптивная защита сети
           href: security-center-adaptive-network-hardening.md
-    - name: Архив
-      items:
-        - name: Применение шифрования дисков
-          href: security-center-apply-disk-encryption.md
-        - name: Применение обновлений системы
-          href: security-center-apply-system-updates.md
-        - name: Установка Endpoint Protection
-          href: security-center-install-endpoint-protection.md
-        - name: Отчеты об угрозах
-          href: security-center-threat-report.md
-        - name: Оценка надежности предупреждения
-          href: security-center-confidence-score.md
-        - name: Исследование
-          href: security-center-investigation.md
-        - name: Управление пользовательскими данными исследования
-          href: security-center-investigation-user-data.md
-        - name: Планирование и эксплуатация
-          href: security-center-planning-and-operations-guide.md
 - name: Справочник
   items:
     - name: Интерфейсы REST API

@@ -81,10 +81,14 @@
           items:
             - name: 'Создание шлюза виртуальной сети, избыточного между зонами'
               href: ../vpn-gateway/create-zone-redundant-vnet-gateway.md
-        - name: Удостоверение
+        - name: Идентификация
           items:
             - name: Создание экземпляра доменных служб Azure Active Directory
               href: ../active-directory-domain-services/tutorial-create-instance.md
+    - name: Документация по Пограничных зонам
+      items:
+        - name: Что такое Пограничные зоны?
+          href: ../networking/edge-zones-overview.md
 - name: Аварийное восстановление
   items:
     - name: Использование Azure Site Recovery

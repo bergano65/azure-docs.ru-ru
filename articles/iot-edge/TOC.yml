@@ -143,12 +143,18 @@
           href: how-to-auto-provision-x509-certs.md
         - name: Аттестация симметричных ключей
           href: how-to-auto-provision-symmetric-keys.md
-    - name: Разработка и отладка пользовательских модулей
+    - name: Разработка пользовательских модулей
       items:
-        - name: "Visual Studio\_2019"
+        - name: Разработка с помощью Visual Studio 2019
           href: how-to-visual-studio-develop-module.md
-        - name: Visual Studio Code
+        - name: Разработка с помощью Visual Studio Code
           href: how-to-vs-code-develop-module.md
+        - name: Настройка createOptions модуля
+          items:
+            - name: Общие сведения об использовании createOptions
+              href: how-to-use-create-options.md
+            - name: Предоставление модулям доступа к локальному хранилищу устройства
+              href: how-to-access-host-storage-from-module.md
     - name: Развертывание модулей
       items:
         - name: Развертывание на отдельных устройствах
@@ -183,11 +189,9 @@
           href: deploy-modbus-gateway.md
     - name: Настройка поддержки прокси-сервера
       href: how-to-configure-proxy-support.md
-    - name: Хранение данных в пограничной системе
+    - name: Хранилище BLOB-объектов Azure в IoT Edge
       items:
-        - name: Предоставление модулям доступа к локальному хранилищу устройства
-          href: how-to-access-host-storage-from-module.md
-        - name: Хранилище BLOB-объектов Azure в IoT Edge
+        - name: Общие сведения о хранилище BLOB-объектов в пограничной среде
           href: how-to-store-data-blob.md
         - name: Развертывание модулей хранилища BLOB-объектов
           href: how-to-deploy-blob.md

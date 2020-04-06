@@ -150,6 +150,8 @@
               href: plan-migrate-adfs-password-hash-sync.md
             - name: Миграция из федерации в PTA
               href: plan-migrate-adfs-pass-through-authentication.md
+            - name: Перемещение групп из одного леса в другой
+              href: how-to-connect-migrate-groups.md
         - name: Рекомендации по разработке архитектуры гибридной идентификации
           items:
             - name: Обзор рекомендаций по разработке архитектуры гибридной идентификации

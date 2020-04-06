@@ -23,6 +23,9 @@
           href: knowledge-store-create-portal.md
         - name: Подача запросов с использованием обозревателя поиска
           href: search-explorer.md
+    - name: Шаблон ARM
+      displayName: Resource Manager
+      href: search-get-started-arm.md
     - name: 'C#'
       href: search-get-started-dotnet.md
     - name: Java
@@ -77,14 +80,6 @@
       href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=python'
     - name: Примеры REST
       href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=rest'
-- name: Обучение
-  items:
-    - name: Введение (Microsoft Learn)
-      href: 'https://docs.microsoft.com/learn/modules/intro-to-azure-search/'
-    - name: Добавление функции поиска в приложения (Pluralsight)
-      href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
-    - name: Курс для разработчиков (Pluralsight)
-      href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
 - name: Основные понятия
   items:
     - name: Полнотекстовый поиск
@@ -233,7 +228,7 @@
           href: search-query-simple-examples.md
         - name: Использование полного синтаксиса Lucene
           href: search-query-lucene-examples.md
-        - name: Специальные символы и частично указанные термины
+        - name: Частично введенные термины и специальные символы
           href: search-query-partial-matching.md
         - name: Подача запросов из Power Apps
           href: search-howto-powerapps.md
@@ -261,7 +256,7 @@
           href: search-example-adventureworks-multilevel-faceting.md
     - name: Результаты
       items:
-        - name: Функции страниц
+        - name: Работа с результатами
           href: search-pagination-page-layout.md
         - name: Настройка релевантности (профили повышения)
           href: index-add-scoring-profiles.md
@@ -460,6 +455,14 @@
           href: 'https://aka.ms/azjobsdemo'
         - name: Варианты использования поиска
           href: 'https://searchsamples.azurewebsites.net/'
+    - name: Обучение
+      items:
+        - name: Введение (Microsoft Learn)
+          href: 'https://docs.microsoft.com/learn/modules/intro-to-azure-search/'
+        - name: Добавление функции поиска в приложения (Pluralsight)
+          href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
+        - name: Курс для разработчиков (Pluralsight)
+          href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: search-faq-frequently-asked-questions.md
     - name: Цены

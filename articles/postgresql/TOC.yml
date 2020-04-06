@@ -149,6 +149,8 @@
           items:
             - name: Реплики чтения
               href: concepts-read-replicas.md
+            - name: Логическое декодирование
+              href: concepts-logical.md
     - name: Гипермасштабирование (Citus)
       items:
         - name: Узлы
@@ -269,6 +271,8 @@
           items:
             - name: Портал Azure
               href: howto-data-encryption-portal.md
+            - name: Azure CLI
+              href: howto-data-encryption-cli.md
         - name: Перезапуск сервера
           items:
             - name: Портал Azure

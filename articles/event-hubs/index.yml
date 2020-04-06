@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: spelluru
   ms.author: spelluru
-  ms.date: 01/29/2020
-  ms.openlocfilehash: 957a942efd618003dd3ff3f9f76be72799770859
-  ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+  ms.date: 03/13/2020
+  ms.openlocfilehash: 24f3c35b41effaaad7aa3058c4a3d3af13739a01
+  ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80288297"
+  ms.lasthandoff: 04/01/2020
+  ms.locfileid: "80520313"
 landingContent:
 - title: Сведения о Центрах событий
   linkLists:
@@ -69,8 +69,6 @@ landingContent:
       url: event-hubs-kafka-stream-analytics.md
   - linkListType: how-to-guide
     links:
-    - text: Создание концентратора событий с поддержкой Apache Kafka
-      url: event-hubs-create.md
     - text: Зеркальное отображение брокера Kafka в концентраторе событий
       url: event-hubs-kafka-mirror-maker-tutorial.md
     - text: Подключение Apache Spark к концентратору событий
@@ -99,12 +97,34 @@ landingContent:
       url: event-hubs-storm-getstarted-receive.md
     - text: Go
       url: event-hubs-go-get-started-send.md
+- title: Центры событий в Azure Stack Hub (предварительная версия)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Обзор
+      url: /azure-stack/user/event-hubs-overview
+    - text: Набор общих признаков
+      url: /azure-stack/user/event-hubs-overview#features
+  - linkListType: how-to-guide
+    links:
+    - text: Планирование ресурсов
+      url: /azure-stack/operator/event-hubs-rp-capacity-planning
+    - text: Предварительные требования для установки (оператор)
+      url: /azure-stack/operator/event-hubs-rp-prerequisites
+    - text: Установка (оператор)
+      url: /azure-stack/operator/event-hubs-rp-install
+    - text: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек
+      url: use-blob-storage-checkpoint-store-azure-stack-hub.md
+  - linkListType: quickstart
+    links:
+    - text: Создание кластера Центров событий
+      url: /azure-stack/user/event-hubs-quickstart-cluster-portal
 - title: Сбор событий
   linkLists:
   - linkListType: overview
     links:
     - text: Сбор событий в хранилище BLOB-объектов Azure или Azure Data Lake Storage
-      url: event-hubs-dedicated-overview.md
+      url: event-hubs-capture-overview.md
   - linkListType: quickstart
     links:
     - text: Включение сбора событий с помощью портала Azure

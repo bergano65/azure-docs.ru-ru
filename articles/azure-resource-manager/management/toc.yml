@@ -52,18 +52,24 @@
           href: region-move-support.md
         - name: Службы
           items:
+            - name: Центр Интернета вещей Azure
+              href: ../../iot-hub/iot-hub-how-to-clone.md?toc=/azure/azure-resource-manager/toc.json
             - name: Виртуальные машины Azure
               href: ../../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/azure-resource-manager/toc.json
             - name: Хранилище Azure
               href: ../../storage/common/storage-account-move.md?toc=/azure/azure-resource-manager/toc.json
             - name: Azure SQL
               href: ../../sql-database/sql-database-move-resources-across-regions.md?toc=/azure/azure-resource-manager/toc.json
-            - name: Виртуальная сеть
-              href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
+            - name: приложениях логики.
+              href: ../../logic-apps/move-logic-app-resources.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Конфигурация управления обслуживанием
+              href: ../../virtual-machines/move-region-maintenance-configuration.md?toc=/azure/azure-resource-manager/toc.json
             - name: Группа безопасности сети (NSG)
               href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
             - name: Общедоступные IP-адреса
               href: ../../virtual-network/move-across-regions-publicip-portal.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Виртуальная сеть
+              href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
     - name: Теги
       items:
         - name: Рекомендации по принятию решений

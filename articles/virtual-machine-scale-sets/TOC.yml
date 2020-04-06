@@ -13,11 +13,13 @@
       href: quick-create-cli.md
     - name: Создание с помощью Azure PowerShell
       href: quick-create-powershell.md
-    - name: Создание с помощью шаблона
+    - name: Создание с помощью шаблона ARM
       items:
         - name: Масштабируемый набор Linux
+          displayName: 'ARM, resource manager'
           href: quick-create-template-linux.md
         - name: Масштабируемый набор Windows
+          displayName: 'ARM, resource manager'
           href: quick-create-template-windows.md
 - name: Учебники
   items:
@@ -155,7 +157,7 @@
     - name: Автоматизация инфраструктуры
       href: ../virtual-machines/windows/infrastructure-automation.md
       maintainContext: true
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Безопасность и политика
           href: ../virtual-machines/windows/security-policy.md

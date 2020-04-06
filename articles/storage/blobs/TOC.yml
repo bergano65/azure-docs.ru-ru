@@ -13,7 +13,7 @@
           href: storage-blobs-introduction.md
     - name: Краткие руководства
       items:
-        - name: Управление большими двоичными объектами без кода
+        - name: Работа с большими двоичными объектами
           items:
             - name: Портал Azure
               href: storage-quickstart-blobs-portal.md
@@ -23,8 +23,6 @@
               href: storage-quickstart-blobs-powershell.md
             - name: CLI
               href: storage-quickstart-blobs-cli.md
-        - name: Разработка с использованием больших двоичных объектов
-          items:
             - name: .NET
               items:
                 - name: .NET (пакет SDK версии 12)

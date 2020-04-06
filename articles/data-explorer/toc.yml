@@ -67,7 +67,13 @@
     - name: Прием данных
       items:
         - name: Прием данных одним щелчком
-          href: ingest-data-one-click.md
+          items:
+            - name: Общие сведения о приеме одним щелчком
+              href: ingest-data-one-click.md
+            - name: Прием одним щелчком в новую таблицу
+              href: one-click-ingestion-new-table.md
+            - name: Прием одним щелчком в существующую таблицу
+              href: one-click-ingestion-existing-table.md
         - name: Прием потоковой передачи
           href: ingest-data-streaming.md
         - name: Использование LightIngest
@@ -188,6 +194,8 @@
               href: customer-managed-keys-csharp.md
             - name: Шаблон Azure Resource Manager
               href: customer-managed-keys-resource-manager.md
+        - name: Создание приложения Azure AD
+          href: provision-azure-ad-app.md
     - name: Управление
       items:
         - name: Кластер
@@ -208,6 +216,8 @@
                   href: cluster-principal-python.md
                 - name: Шаблон Azure Resource Manager
                   href: cluster-principal-resource-manager.md
+            - name: Управление расширениями языка кластера
+              href: language-extensions.md
         - name: База данных
           items:
             - name: Базы данных подписчиков
@@ -240,6 +250,8 @@
           href: using-diagnostic-logs.md
         - name: Использование метрик для мониторинга работоспособности кластера
           href: using-metrics.md
+        - name: Использование Работоспособности ресурсов для мониторинга работоспособности кластера
+          href: monitor-with-resource-health.md
     - name: Интеграция с другими средствами
       items:
         - name: Фабрика данных Azure
@@ -264,6 +276,8 @@
           href: connect-from-databricks.md
         - name: Анализ данных в Jupyter Notebook и Kqlmagic
           href: kqlmagic.md
+        - name: Анализ данных в Записных книжках Azure
+          href: azure-notebooks.md
         - name: Azure Pipelines
           href: devops.md
     - name: Диагностика

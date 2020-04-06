@@ -103,6 +103,8 @@
       href: concepts-tpm-attestation.md
     - name: Аттестация симметричных ключей
       href: concepts-symmetric-key-attestation.md
+    - name: Рекомендации по обеспечению безопасности для изготовителей устройств
+      href: concepts-device-oem-security-practices.md
 - name: Практические руководства
   items:
     - name: Подключение MXChip IoT DevKit к Центру Интернета вещей

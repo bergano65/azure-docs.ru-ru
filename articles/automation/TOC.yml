@@ -15,22 +15,26 @@
     - name: Управление учетной записью запуска от имени в службе автоматизации
       href: manage-runas-account.md
       displayName: certificate renewal
-    - name: Настройка проверки подлинности с помощью AWS
-      href: automation-config-aws-account.md
-    - name: Шифрование защищенных ресурсов в Службе автоматизации Azure
-      href: automation-secure-asset-encryption.md
     - name: Управление доступом на основе ролей
       href: automation-role-based-access-control.md
       displayName: RBAC
+    - name: Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure
+      href: automation-use-azure-ad.md
+    - name: Управление службами Office 365 с помощью службы автоматизации Azure
+      href: manage-office-365.md
+    - name: Настройка проверки подлинности с помощью AWS
+      href: automation-config-aws-account.md
+    - name: Шифрование защищенных ресурсов в службе автоматизации Azure
+      href: automation-secure-asset-encryption.md
     - name: Перемещение учетной записи службы автоматизации в другую подписку
       href: how-to/move-account.md
     - name: Автоматизация подключения служб автоматизации
       href: /azure/architecture/cloud-adoption/operations/azure-server-management/onboarding-automation
-    - name: 'Регионы, в которых поддерживается сопоставление рабочих областей Log Analytics'
-      href: how-to/region-mappings.md
     - name: Управление данными службы автоматизации Azure
       href: automation-managing-data.md
       displayName: backup
+    - name: 'Регионы, в которых поддерживается сопоставление рабочих областей Log Analytics'
+      href: how-to/region-mappings.md
     - name: Диагностика
       items:
         - name: Устранение неполадок с учетной записью службы автоматизации
@@ -56,7 +60,15 @@
     - name: Руководства
       items:
         - name: Запуск и остановка виртуальных машин в нерабочее время
-          href: automation-solution-vm-management.md
+          items:
+            - name: Обзор
+              href: automation-solution-vm-management.md
+            - name: Включение решения
+              href: automation-solution-vm-management-enable.md
+            - name: Настройка решения
+              href: automation-solution-vm-management-config.md
+            - name: Анализ данных с помощью запросов к журналу
+              href: automation-solution-vm-management-logs.md
         - name: Управление модулями runbook
           href: manage-runbooks.md
         - name: Создание модулей runbook
@@ -317,9 +329,9 @@
       href: shared-resources/credentials.md
     - name: Модули PowerShell
       items:
-        - name: Модули
+        - name: Администрирование модулей в службе автоматизации Azure
           href: shared-resources/modules.md
-        - name: Использование модулей Az в службе автоматизации Azure
+        - name: Поддержка модулей Az в службе автоматизации Azure
           href: az-modules.md
         - name: Обновление модулей Azure PowerShell
           href: automation-update-azure-modules.md

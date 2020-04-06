@@ -15,7 +15,7 @@
     - name: Мониторинг виртуальных машин
       items:
         - name: Виртуальные машины Azure
-          href: learn/quick-collect-azurevm.md
+          href: learn/quick-monitor-azure-vm.md
         - name: Компьютер Linux
           href: learn/quick-collect-linux-computer.md
         - name: Компьютер Windows
@@ -303,10 +303,6 @@
             - name: Корреляция данных телеметрии
               href: app/correlation.md
               displayname: 'correlation headers, w3c, distributed tracing, tracing'
-            - name: Локальный сервер переадресации
-              href: app/opencensus-local-forwarder.md
-            - name: Go
-              href: app/opencensus-go.md
         - name: Live Metrics Stream
           displayname: 'live, quickpulse, quick pulse, live metrics'
           href: app/live-stream.md
@@ -488,9 +484,17 @@
             - name: Обзор
               displayName: 'Platform logs, Resource logs, Activity log'
               href: platform/platform-logs-overview.md
-            - name: Просмотр журнала действий
-              displayName: Platform logs
-              href: platform/activity-log-view.md
+            - name: Журнал действий
+              items:
+                - name: Просмотр на портале Azure
+                  displayName: 'Platform logs, Activity log'
+                  href: platform/activity-log-view.md
+                - name: Сбор и анализ
+                  displayName: 'Platform logs, Activity log'
+                  href: platform/activity-log-collect.md
+                - name: Экспорт (прежние версии)
+                  displayname: Activity log
+                  href: platform/activity-log-export.md
             - name: Отправка в места назначения
               items:
                 - name: Рабочая область Log Analytics
@@ -502,20 +506,6 @@
                 - name: Центры событий
                   displayname: 'Resource logs, Activity log, Platform logs'
                   href: platform/resource-logs-stream-event-hubs.md
-            - name: Сбор устаревших журналов действий
-              items:
-                - name: Обзор
-                  displayName: Resource logs
-                  href: platform/diagnostic-settings-legacy.md
-                - name: Сбор и анализ
-                  displayname: Activity log
-                  href: platform/activity-log-collect.md
-                - name: Сбор данных для всех клиентов
-                  displayname: Activity log
-                  href: platform/activity-log-collect-tenants.md
-                - name: Экспорт
-                  displayname: Activity log
-                  href: platform/activity-log-export.md
         - name: Параметры диагностики
           items:
             - name: Создание параметра диагностики
@@ -531,6 +521,8 @@
           href: platform/stream-monitoring-data-event-hubs.md
     - name: Мониторинг виртуальных машин и гостевой ОС
       items:
+        - name: Мониторинг виртуальных машин Azure
+          href: insights/monitor-vm-azure.md
         - name: Агенты
           items:
             - name: Общие сведения об агентах
@@ -636,12 +628,10 @@
           items:
             - name: Обзор
               href: insights/vminsights-overview.md
-            - name: Известные проблемы
-              href: insights/vminsights-known-issues.md
             - name: Часто задаваемые вопросы об общедоступной версии
               href: insights/vminsights-ga-release-faq.md
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: 'faq.md#azure-monitor-for-vms-preview'
+              href: 'faq.md#azure-monitor-for-vms'
             - name: Включение мониторинга
               items:
                 - name: Общие сведения о включении мониторинга
@@ -654,18 +644,16 @@
                   href: insights/vminsights-enable-at-scale-powershell.md
                 - name: Включение в гибридной среде
                   href: insights/vminsights-enable-hybrid-cloud.md
-                - name: Интеграция с Operations Manager
-                  href: insights/service-map-scom.md
-            - name: Мониторинг работоспособности
-              href: insights/vminsights-health.md
             - name: Сопоставление зависимостей
               href: insights/vminsights-maps.md
             - name: Мониторинг производительности
               href: insights/vminsights-performance.md
-            - name: Использование книг
-              href: insights/vminsights-workbooks.md
             - name: Анализ данных с помощью запросов к журналу
               href: insights/vminsights-log-search.md
+            - name: Визуализация данных с помощью книг
+              href: insights/vminsights-workbooks.md
+            - name: Создание правил генерации оповещений
+              href: insights/vminsights-alerts.md
             - name: Обновление агента зависимостей
               href: insights/vminsights-dependency-agent-maintenance.md
             - name: Отключение мониторинга
@@ -680,6 +668,8 @@
               href: insights/wire-data.md
             - name: Решение "Сопоставление служб"
               href: insights/service-map.md
+            - name: Сопоставление служб и Operations Manager
+              href: insights/service-map-scom.md
         - name: Группы компьютеров
           href: platform/computer-groups.md
     - name: Мониторинг контейнеров
@@ -708,6 +698,8 @@
               href: insights/container-insights-analyze.md
             - name: Мониторинг работоспособности
               href: insights/container-insights-health.md
+            - name: Мониторинг производительности GPU
+              href: insights/container-insights-gpu-monitoring.md
             - name: Просмотр динамических данных
               items:
                 - name: Общие сведения о динамических данных (предварительная версия)
@@ -896,13 +888,11 @@
                   href: log-query/query-optimization.md
                 - name: Анализ текстовых данных
                   href: log-query/parse-text.md
-        - name: Flow / Logic Apps
+        - name: Logic Apps
           items:
-            - name: Соединитель для Flow с журналами
-              href: platform/flow-tutorial.md
-            - name: Соединитель для Flow с приложениями
-              href: app/automate-with-flow.md
-            - name: Logic Apps с приложениями
+            - name: Соединитель для журналов Azure Monitor
+              href: platform/logicapp-flow-connector.md
+            - name: Соединитель Application Insights
               href: app/automate-with-logic-apps.md
         - name: REST API
           displayname: 'metrics, analyze'
@@ -975,6 +965,8 @@
           href: platform/grafana-plugin.md
     - name: Оповещение
       items:
+        - name: 'Устранение неполадок, связанных с оповещениями'
+          href: platform/alerts-troubleshoot.md
         - name: Правила генерации оповещений приложения
           items:
             - name: Доступность
@@ -999,7 +991,7 @@
               href: platform/alerts-log-query.md
             - name: Действия webhook
               href: platform/alerts-log-webhook.md
-            - name: Устранение неполадок
+            - name: 'Устранение неполадок, связанных с оповещениями журналов'
               href: platform/alert-log-troubleshoot.md
         - name: Правила генерации оповещений журнала действий
           items:
@@ -1263,8 +1255,6 @@
           href: 'https://azure.microsoft.com/updates/?product=log-analytics'
         - name: Заметки о выпуске пакета SDK
           href: app/release-notes.md
-    - name: Windows Analytics
-      href: 'https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/?products=monitor&regions=all'
     - name: Видео
