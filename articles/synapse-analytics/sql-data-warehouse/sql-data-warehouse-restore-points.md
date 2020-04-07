@@ -11,12 +11,12 @@ ms.date: 07/03/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: d056b30c44ced5f3e8ce9041e2366290bee485da
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 5c9b7eb1b03b6b6e3721c13f9ebf7da25dd2e376
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350143"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745054"
 ---
 # <a name="user-defined-restore-points"></a>Точки восстановления, определяемые пользователем
 
@@ -24,9 +24,9 @@ ms.locfileid: "80350143"
 
 ## <a name="create-user-defined-restore-points-through-powershell"></a>Создание точек восстановления, определяемых пользователем, через PowerShell
 
-Для создания определяемой пользователем точки восстановления используйте смдлет [New-AzSqlDatabaseRestorePoint](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaserestorepoint?view=azps-2.4.0) PowerShell.
+Для создания определяемой пользователем точки восстановления используйте смдлет [New-AzSqlDatabaseRestorePoint](/powershell/module/az.sql/new-azsqldatabaserestorepoint?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) PowerShell.
 
-1. Перед тем, как начать, не забудьте [установить Azure PowerShell.](https://docs.microsoft.com/powershell/azure/overview)
+1. Перед тем, как начать, не забудьте [установить Azure PowerShell.](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 2. Откройте PowerShell.
 3. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
 4. Выберите подписку, содержащую базу данных, которую нужно восстановить.

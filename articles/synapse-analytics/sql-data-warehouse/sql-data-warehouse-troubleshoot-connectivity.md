@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 08fb0a6675d18370482abe9b1d7b9a0d9ee5c364
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 8aaca40961b1294336b236305ecdffcc92c5a4d9
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633010"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80742577"
 ---
 # <a name="troubleshooting-connectivity-issues"></a>Устранение неполадок с подключением
 
@@ -79,14 +79,14 @@ ms.locfileid: "80633010"
 
 Убедитесь, что вы используете последние версии драйверов.Использование старой версии драйверов может привести к неожиданному поведению, так как старые драйверы могут не поддерживать новые функции.
 
-- [ODBC](/sql/connect/odbc/download-odbc-driver-for-sql-server)
-- [JDBC](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server)
-- [OLE DB](/sql/connect/oledb/download-oledb-driver-for-sql-server)
-- [PHP](/sql/connect/php/download-drivers-php-sql-server)
+- [ODBC](/sql/connect/odbc/download-odbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [JDBC](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [OLE DB](/sql/connect/oledb/download-oledb-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [PHP](/sql/connect/php/download-drivers-php-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 ## <a name="check-your-connection-string"></a>Проверка строки подключения
 
-Убедитесь, что строки подключения заданы правильно.  Ниже приведены некоторые образцы.  Дополнительные сведения о строках подключений можно найти [здесь](/sql-data-warehouse/sql-data-warehouse-connection-strings.md).
+Убедитесь, что строки подключения заданы правильно.  Ниже приведены некоторые образцы.  Дополнительные сведения о строках подключений можно найти [здесь](sql-data-warehouse-connection-strings.md).
 
 Строка подключения по протоколу ADO.NET
 
@@ -122,4 +122,4 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 ## <a name="still-having-connectivity-issues"></a>Все еще возникали проблемы с подключением?
 
-Создайте [билет поддержки,](/sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket.md) чтобы инженерная команда смогли поддержать вас.
+Создайте [билет поддержки,](sql-data-warehouse-get-started-create-support-ticket.md) чтобы инженерная команда смогли поддержать вас.

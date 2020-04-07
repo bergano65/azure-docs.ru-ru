@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 2c8617cffaa81da6423011a494b8dbc82c42d218
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 43ee14784b6049e9b5c1a78e733e72bbc45f915d
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632458"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80744041"
 ---
 # <a name="azure-synapse-analytics-workload-importance"></a>Важность рабочей нагрузки Azure Synapse Analytics
 
@@ -38,7 +38,7 @@ ms.locfileid: "80632458"
 
 ### <a name="locking"></a>Блокировка
 
-Доступ к блокировкам для чтения и записи деятельности является одной из областей естественного раздора. Такие действия, как [переключение разделов](/azure/sql-data-warehouse/sql-data-warehouse-tables-partition) или [RENAME OBJECT,](/sql/t-sql/statements/rename-transact-sql?view=azure-sqldw-latest) требуют повышенных замков.  Без важности рабочей нагрузки пул Synapse S'L в Azure Synapse оптимизирует пропускную вылим. Оптимизация пропускной платы означает, что при запуске и очередях запросов имеют одинаковые потребности блокировки и доступны ресурсы, запросы в очереди могут обойти запросы с более высокими потребностями блокировки, которые поступили в очередь запросов ранее. После того, как значение рабочей нагрузки применяется к запросам с более высокими потребностями блокировки. Запрос с более важным значением будет запущен перед запросом с меньшим значением.
+Доступ к блокировкам для чтения и записи деятельности является одной из областей естественного раздора. Такие действия, как [переключение разделов](sql-data-warehouse-tables-partition.md) или [RENAME OBJECT,](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) требуют повышенных замков.  Без важности рабочей нагрузки пул Synapse S'L в Azure Synapse оптимизирует пропускную вылим. Оптимизация пропускной платы означает, что при запуске и очередях запросов имеют одинаковые потребности блокировки и доступны ресурсы, запросы в очереди могут обойти запросы с более высокими потребностями блокировки, которые поступили в очередь запросов ранее. После того, как значение рабочей нагрузки применяется к запросам с более высокими потребностями блокировки. Запрос с более важным значением будет запущен перед запросом с меньшим значением.
 
 Рассмотрим следующий пример:
 
@@ -62,8 +62,8 @@ ms.locfileid: "80632458"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Для получения дополнительной информации о создании классификатора, [см.](/sql/t-sql/statements/create-workload-classifier-transact-sql)  
+- Для получения дополнительной информации о создании классификатора, [см.](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  
 - Для получения дополнительной информации о классификации рабочей нагрузки [см.](sql-data-warehouse-workload-classification.md)  
 - Ознакомьтесь с [классификатором рабочей нагрузки](quickstart-create-a-workload-classifier-tsql.md) «Быстрый запуск» для создания классификатора рабочей нагрузки.
 - См. статьи с инструкциями по [настройке уровня важности рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md), а также по [администрированию и мониторингу рабочих нагрузок](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
-- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=azure-sqldw-latest).
+- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).

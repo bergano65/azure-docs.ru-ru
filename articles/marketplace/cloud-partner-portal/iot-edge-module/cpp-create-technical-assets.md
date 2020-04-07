@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 304ea31f2a6f9820226a6ad0db8bfc803e6fdb94
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cd9cd9f3986ef1944d9f9119296af5512b352d1d
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80285220"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80744318"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureIoTTechAsset) для управления мигрированными предложениями.
 
 В этой статье описываются требования, которым должны соответствовать технические ресурсы для модуля IoT Edge для публикации в Azure Marketplace.
 
@@ -58,7 +61,7 @@ ms.locfileid: "80285220"
     <p><u>Minimum hardware requirements:</u> Linux x64 and arm32  OS, 1GB of RAM, 500 Mb of storage</p>
   ```
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Также предоставляются стандартные параметры конфигурации, чтобы развертывание на устройстве IoT Edge выполнялось максимально просто. Кроме того, контейнер может включать пакет SDK для модуля IoT Edge, чтобы поддерживать взаимодействие с Центром Edge и Центром Интернета вещей.
 

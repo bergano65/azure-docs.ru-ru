@@ -5,16 +5,19 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: c2700339a7ac8342da0250227cff898c20e60118
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1298a6d277f072491d05945b272925a2aba52e02
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278558"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745653"
 ---
 # <a name="create-a-consulting-offer"></a>Создание консалтингового предложения
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления предложениями услуг Консалтинга в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
 
 В этой статье описывается, как создать и опубликовать предложение консультационных услуг.
 
@@ -34,5 +37,5 @@ ms.locfileid: "80278558"
 
 Страница **Новое предложение** для предложения консультационной услуги содержит вкладки и поля форм, которые будут использоваться для создания нового предложения. Перечисленные ниже статьи содержат описание использования вкладок, чтобы определить параметры предложения и сведения об интернет-магазине для нового предложения.
 
--   [Определите настройки предложения](./cpp-consulting-service-define-offer-settings.md)
--   [Вкладка со сведениями об онлайн-магазине](./cpp-consulting-service-storefront-details.md)
+-    [Определите настройки предложения](./cpp-consulting-service-define-offer-settings.md)
+-    [Вкладка со сведениями об онлайн-магазине](./cpp-consulting-service-storefront-details.md)

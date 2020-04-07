@@ -11,12 +11,12 @@ ms.date: 02/19/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 87b33e91076f8f7f31740795f0ec05cea49a1e83
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: e99fd898956e11a4827d023691111a47e5a790c0
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80631201"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80744957"
 ---
 # <a name="data-loading-strategies-for-synapse-sql-pool"></a>Стратегии загрузки данных для пула Synapse S'L
 
@@ -24,7 +24,7 @@ ms.locfileid: "80631201"
 
 Использование процесса extract, Load, and Transform (ELT) использует MPP и устраняет ресурсы, необходимые для преобразования данных до загрузки.
 
-В то время как пул S'L поддерживает многие методы загрузки, в том числе популярные варианты сервера S'L, такие как [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse?toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [API SqlBulkCopy,](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse?toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)самый быстрый и масштабируемый способ загрузки данных — через внешние таблицы PolyBase и [заявление COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse?toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (предварительный просмотр).
+В то время как пул S'L поддерживает многие методы загрузки, в том числе популярные варианты сервера S'L, такие как [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [API SqlBulkCopy,](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)самый быстрый и масштабируемый способ загрузки данных — через внешние таблицы PolyBase и [заявление COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (предварительный просмотр).
 
 С помощью PolyBase и оператора COPY вы можете получить доступ к внешним данным, хранящимся в хранилище Azure Blob или в магазине Azure Data Lake Store на языке T-S'L. Для максимальной гибкости при загрузке мы рекомендуем использовать выписку COPY.
 
@@ -58,7 +58,7 @@ Extract, Load, and Transform (ELT) — это процесс, с помощью 
 
 С помощью PolyBase и оператора COPY можно загрузить данные из закодированных файлов UTF-8 и UTF-16. В дополнение к делимитировавану текст или CSV файлы, он загружается из форматов файлов Hadoop, таких как ORC и Паркет. PolyBase и заявление COPY также могут загружать данные из сжатых файлов Gzip и Snappy.
 
-Расширенный ASCII, формат с фиксированной шириной и вложенные форматы, такие как Win'ip или XML, не поддерживаются. Если вы экспортируете с сервера S'L, вы можете использовать [инструмент командной строки bcp](/sql/tools/bcp-utility?toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для экспорта данных в делимитированные текстовые файлы.
+Расширенный ASCII, формат с фиксированной шириной и вложенные форматы, такие как Win'ip или XML, не поддерживаются. Если вы экспортируете с сервера S'L, вы можете использовать [инструмент командной строки bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для экспорта данных в делимитированные текстовые файлы.
 
 ## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Поземляй данные в хранилище Azure Blob или магазин Azure Data Lake Store
 
@@ -141,10 +141,10 @@ Extract, Load, and Transform (ELT) — это процесс, с помощью 
 
 ### <a name="other-loading-options"></a>Другие варианты загрузки
 
-В дополнение к PolyBase и выписке COPY, вы можете использовать [bcp](https://docs.microsoft.com/sql/tools/bcp-utility?view=sql-server-ver15) или [API SqlBulkCopy.](https://msdn.microsoft.com/library/system.data.sqlclient.sqlbulkcopy.aspx) bcp загружается непосредственно в базу данных, не проходя через хранилище Azure Blob, и предназначен только для небольших нагрузок.
+В дополнение к PolyBase и выписке COPY, вы можете использовать [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) или [API SqlBulkCopy.](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) bcp загружается непосредственно в базу данных, не проходя через хранилище Azure Blob, и предназначен только для небольших нагрузок.
 
 > [!NOTE]
-> Обратите внимание, что производительность загрузки этих опций ниже, чем PolyBase и заявление COPY.
+> Производительность нагрузки этих опций ниже, чем PolyBase и заявление COPY.
 
 ## <a name="5-transform-the-data"></a>5. Преобразование данных
 

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a8675756aeef1140dbebd94023d7f7fb4c7af99
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: d4f08161daf1d9c1a4431d9e3fba3ca741d88b16
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80652259"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743342"
 ---
 # <a name="how-to-enable-password-reset-from-the-windows-login-screen"></a>Как: Включить сбросить пароль с экрана входа в Windows
 
@@ -43,7 +43,7 @@ ms.locfileid: "80652259"
 - Сочетание следующих трех параметров может привести к тому, что эта функция не сработает.
     - Интерактивный логон: Не требуйте CTRL-ALT-DEL
     - ОтключитьУведомления LockScreenApp - 1 или включенный
-    - IsContentDeliveryPolicyEnforced No 1 или True
+    - Windows SKU не является домашним или профессиональным изданием
 
 ## <a name="windows-10-password-reset"></a>Сбросить пароли Windows 10
 

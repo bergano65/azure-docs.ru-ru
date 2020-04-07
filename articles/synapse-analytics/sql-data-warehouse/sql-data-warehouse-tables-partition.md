@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 4e19c20036d74752b75a668d6a37c46ef1b008e6
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 368276f75128c80b8df326a26acf26c841e9f68a
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80583189"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80742686"
 ---
 # <a name="partitioning-tables-in-synapse-sql-pool"></a>Таблицы разделов в бассейне Synapse S'L
 
@@ -46,9 +46,9 @@ ms.locfileid: "80583189"
 
 ## <a name="syntax-differences-from-sql-server"></a>Отличия синтаксиса от SQL Server
 
-В пуле Synapse S'L используется способ определения разделов, который проще, чем сервер S'L. Функции и схемы раздела не используются в пуле Synapse S'L, как это имеется в сервере S'L Server. Вам нужно только определить секционированный столбец и граничные точки. Хотя синтаксис секционирования может немного отличаться от синтаксиса SQL Server, основные понятия одинаковые. S'L Server и Synapse S'L пул поддерживают одну колонку разделов на стол, которая может быть разлита. Дополнительные сведения о секционировании см. в статье [Секционированные таблицы и индексы](/sql/relational-databases/partitions/partitioned-tables-and-indexes).
+В пуле Synapse S'L используется способ определения разделов, который проще, чем сервер S'L. Функции и схемы раздела не используются в пуле Synapse S'L, как это имеется в сервере S'L Server. Вам нужно только определить секционированный столбец и граничные точки. Хотя синтаксис секционирования может немного отличаться от синтаксиса SQL Server, основные понятия одинаковые. S'L Server и Synapse S'L пул поддерживают одну колонку разделов на стол, которая может быть разлита. Дополнительные сведения о секционировании см. в статье [Секционированные таблицы и индексы](/sql/relational-databases/partitions/partitioned-tables-and-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-В приведенном ниже примере таблица FactInternetSales секционируется по столбцу OrderDateKey с помощью инструкции [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse).
+В приведенном ниже примере таблица FactInternetSales секционируется по столбцу OrderDateKey с помощью инструкции [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ```sql
 CREATE TABLE [dbo].[FactInternetSales]
@@ -78,8 +78,8 @@ WITH
 
 Для переноса определений раздела сервера S'L в пул Synapse S'L просто:
 
-- удалить [схему секционирования](/sql/t-sql/statements/create-partition-scheme-transact-sql) SQL Server;
-- добавить определение [функции секционирования](/sql/t-sql/statements/create-partition-function-transact-sql) в инструкцию CREATE TABLE.
+- удалить [схему секционирования](/sql/t-sql/statements/create-partition-scheme-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) SQL Server;
+- добавить определение [функции секционирования](/sql/t-sql/statements/create-partition-function-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) в инструкцию CREATE TABLE.
 
 Если вы переносите секционированную таблицу из экземпляра SQL Server, количество строк в каждой секции можно запросить с помощью приведенного ниже алгоритма SQL. Имейте в виду, что если в пуле Synapse S'L используется одна и та же гранулированная часть раздела, то количество строк на перегородку уменьшается в 60 раз.  
 
@@ -119,7 +119,7 @@ GROUP BY    s.[name]
 
 ## <a name="partition-switching"></a>Переключение секций
 
-Бассейн Synapse S'L поддерживает разделение разделов, слияние и переключение. Для каждой из этих функций используется инструкция [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql).
+Бассейн Synapse S'L поддерживает разделение разделов, слияние и переключение. Для каждой из этих функций используется инструкция [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 Для переключения секций между двумя таблицами необходимо убедиться, что секции выровнены по соответствующим границам и их определения таблиц совпадают. Вы не можете установить диапазон значений в таблице с помощью ограничений CHECK, а значит, исходная таблица должна иметь такие же границы секций, как целевая. Если границы не будут совпадать, переключение секций завершится ошибкой из-за невозможности синхронизировать метаданные.
 
@@ -341,7 +341,6 @@ ALTER TABLE dbo.FactInternetSales_NewSales SWITCH PARTITION 2 TO dbo.FactInterne
 
 При таком подходе код в исходном управлении остается статичным, а значения границы раздела могут быть динамическими; развивается с базой данных с течением времени.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).
-

@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: victorh
-ms.openlocfilehash: 45276884d59ac8d1d876e2225ac02bb51c3f74fc
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 5ddbb58837fbda0f14a07186d5a3053055954454
+ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437728"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677450"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -212,4 +212,8 @@ Set-AzFirewall -AzureFirewall $fw
 
 ## <a name="why-can-a-tcp-ping-and-similar-tools-successfully-connect-to-a-target-fqdn-even-when-no-rule-on-azure-firewall-allows-that-traffic"></a>Почему TCP ping и подобные инструменты могут успешно подключиться к целевому F-DN даже в том случае, если ни одно правило о Azure Firewall не позволяет этот трафик?
 
-TCP пинг на самом деле не подключение к целевой F'DN. Это происходит потому, что прозрачный прокси-сервер Azure Firewall слушается в порту 80/443 для исходящего трафика. TCP ping устанавливает соединение с брандмауэром, который затем отбрасывает пакет и регистрирует соединение. Такое поведение не оказывает никакого влияния на безопасность. Однако, чтобы избежать путаницы, мы исследуем потенциальные изменения в этом поведении. 
+TCP пинг на самом деле не подключение к целевой F'DN. Это происходит потому, что прозрачный прокси-сервер Azure Firewall слушается в порту 80/443 для исходящего трафика. TCP ping устанавливает соединение с брандмауэром, который затем отбрасывает пакет и регистрирует соединение. Такое поведение не оказывает никакого влияния на безопасность. Однако, чтобы избежать путаницы, мы исследуем потенциальные изменения в этом поведении.
+
+## <a name="are-there-limits-for-the-number-of-ip-addresses-supported-by-ip-groups"></a>Существуют ли ограничения на количество IP-адресов, поддерживаемых IP-группами?
+
+Да. Для получения дополнительной [Azure subscription and service limits, quotas, and constraints](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-firewall-limits) информации см.

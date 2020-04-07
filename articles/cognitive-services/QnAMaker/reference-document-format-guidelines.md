@@ -2,13 +2,13 @@
 title: Руководящие принципы формата импортного документа - NA Maker
 description: Понять, как типы URL-адресов используются для импорта и создания наборов nA.
 ms.topic: reference
-ms.date: 01/02/2020
-ms.openlocfilehash: 6a954f2fd607b70c6db256ab6dcc1dbcd7a5a473
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/06/2020
+ms.openlocfilehash: 1e006520ce5c61f2da3f425af2332b0d41cc3881
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77651842"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80754905"
 ---
 # <a name="format-guidelines-for-imported-documents-and-urls"></a>Руководство по форматированию импортируемых документов и URL-адресов
 
@@ -20,6 +20,8 @@ ms.locfileid: "77651842"
 
 Если вы добавляете или отсваивайте содержимое непосредственно в вашей базе знаний, используйте **форматирование разметки** для создания богатого текстового контента или изменяйте содержание формата разметки, которое уже находится в ответе. Создатель nA поддерживает большую часть формата разметки, чтобы принести богатые текстовые возможности для вашего контента. Однако клиентское приложение, например чат-бот, может не поддерживать тот же набор форматов разметки. Важно проверить отображение ответов клиентского приложения.
 
+Смотрите полный список [типов и примеров содержимого.](./Concepts/content-types.md#file-and-url-data-types)
+
 ## <a name="basic-document-formatting"></a>Форматирование базового документа
 
 NA Maker определяет разделы и подразделы и отношения в файле на основе визуальных подсказок, таких как:
@@ -28,12 +30,6 @@ NA Maker определяет разделы и подразделы и отно
 * стиль шрифта
 * Нумерации
 * цвета
-
-|Примеры документов|
-|--|
-||
-
-
 
 ## <a name="product-manuals"></a>Руководства по продукции
 
@@ -116,7 +112,8 @@ Answer2
 * Первый символ заголовка должен быть капитализирован.
 * Не заканчивайте заголовок с `?`вопросительным знаком, .
 
+**Примеры документов**:<br>[Поверхность Pro (docx)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/multi-turn.docx)<br>[Преимущества Контосо (docx)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.docx)<br>[Преимущества Контосо (pdf)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.pdf)
 
-|Примеры документов|
-|--|
-||
+## <a name="next-steps"></a>Дальнейшие действия
+
+Посмотреть полный список [типов и примеров содержимого](./Concepts/content-types.md#file-and-url-data-types)

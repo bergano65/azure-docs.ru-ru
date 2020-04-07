@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: e321df3f27defdceab31fe3b425a4169928ba3f6
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 0d768581b8f1a177190da08986af8b60b4861432
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80631953"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80744215"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-architecture"></a>Архитектура Azure Synapse Analytics (ранее S'L DW)
 
@@ -66,7 +66,7 @@ Synapse S'L использует хранилище Azure, чтобы сохра
 
 Вычислительные узлы обеспечивают вычислительную мощность. Чтобы выполнить обработку, дистрибутивы сопоставляются с вычислительными узлами. При оплате большего количества вычислительных ресурсов дистрибутивы переходят в доступные вычислительные узлы. Количество вычислительных узлов колеблется от 1 до 60 и определяется уровнем обслуживания для Synapse S'L.
 
-У каждого вычислительного узла есть идентификатор узла, который видно в представлениях системы. Идентификатор вычислительного узла можно увидеть в столбце node_id в системных представлениях, имена которых начинаются с sys.pdw_nodes. Список системных представлений см. в [системном представлении MPP](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views?view=aps-pdw-2016-au7).
+У каждого вычислительного узла есть идентификатор узла, который видно в представлениях системы. Идентификатор вычислительного узла можно увидеть в столбце node_id в системных представлениях, имена которых начинаются с sys.pdw_nodes. Список системных представлений см. в [системном представлении MPP](/sql/relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ### <a name="data-movement-service"></a>Служба перемещения данных
 

@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: c3fcbf69e7dae14ccd2114a14c685b0443f70fef
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 5d81dc1f4da6e952061496fa348d0f8e87b00b81
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632437"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80742971"
 ---
 # <a name="azure-synapse-analytics-workload-group-isolation-preview"></a>Изоляция рабочей нагрузки Azure Synapse Analytics (Предварительный просмотр)
 
@@ -24,20 +24,20 @@ ms.locfileid: "80632437"
 
 ## <a name="workload-groups"></a>Группы рабочей нагрузки
 
-Группы рабочей нагрузки являются контейнерами для набора запросов и являются основой для настройки управления рабочей нагрузкой, включая изоляцию рабочей нагрузки в системе.  Группы рабочей нагрузки создаются с помощью синтаксиса [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)  Простая конфигурация управления рабочей нагрузкой может управлять нагрузками данных и запросами пользователей.  Например, названная группа `wgDataLoads` рабочей нагрузки будет определять аспекты рабочей нагрузки для загрузки данных в систему. Кроме того, названная `wgUserQueries` группа рабочей нагрузки будет определять аспекты рабочей нагрузки для пользователей, запускающих запросы для чтения данных из системы.
+Группы рабочей нагрузки являются контейнерами для набора запросов и являются основой для настройки управления рабочей нагрузкой, включая изоляцию рабочей нагрузки в системе.  Группы рабочей нагрузки создаются с помощью синтаксиса [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  Простая конфигурация управления рабочей нагрузкой может управлять нагрузками данных и запросами пользователей.  Например, названная группа `wgDataLoads` рабочей нагрузки будет определять аспекты рабочей нагрузки для загрузки данных в систему. Кроме того, названная `wgUserQueries` группа рабочей нагрузки будет определять аспекты рабочей нагрузки для пользователей, запускающих запросы для чтения данных из системы.
 
 В следующих разделах будет освещено, как группы рабочей нагрузки предоставляют возможность определять изоляцию, сдерживание, определение ресурсов запроса и придерживаться правил выполнения.
 
 ## <a name="workload-isolation"></a>Изоляция рабочей нагрузки
 
-Изоляция рабочей нагрузки означает, что ресурсы зарезервированы исключительно для группы рабочей нагрузки.  Изоляция рабочей нагрузки достигается путем настройки MIN_PERCENTAGE_RESOURCE параметра на более чем нулевую в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)  Для непрерывного выполнения рабочих нагрузок, которые должны придерживаться жестких SLAs, изоляция гарантирует, что ресурсы всегда доступны для группы рабочей нагрузки.
+Изоляция рабочей нагрузки означает, что ресурсы зарезервированы исключительно для группы рабочей нагрузки.  Изоляция рабочей нагрузки достигается путем настройки MIN_PERCENTAGE_RESOURCE параметра на более чем нулевую в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  Для непрерывного выполнения рабочих нагрузок, которые должны придерживаться жестких SLAs, изоляция гарантирует, что ресурсы всегда доступны для группы рабочей нагрузки.
 
 Настройка изоляции рабочей нагрузки неявно определяет гарантированный уровень параллелизма. Например, рабочая группа `MIN_PERCENTAGE_RESOURCE` нагрузки с набором до 30% и `REQUEST_MIN_RESOURCE_GRANT_PERCENT` установленной до 2% гарантируется 15 параллелизма.  Уровень конпарции гарантирован, поскольку 15-2% слотов ресурсов зарезервированы в `REQUEST_*MAX*_RESOURCE_GRANT_PERCENT` пределах рабочей группы нагрузки в любое время (независимо от того, как настроен).  Если `REQUEST_MAX_RESOURCE_GRANT_PERCENT` больше, `REQUEST_MIN_RESOURCE_GRANT_PERCENT` `CAP_PERCENTAGE_RESOURCE` чем и `MIN_PERCENTAGE_RESOURCE` больше, чем дополнительные ресурсы добавляются на запрос.  Если `REQUEST_MAX_RESOURCE_GRANT_PERCENT` `REQUEST_MIN_RESOURCE_GRANT_PERCENT` и равны `CAP_PERCENTAGE_RESOURCE` и `MIN_PERCENTAGE_RESOURCE`больше, чем, дополнительные параллелизм авозможны.  Рассмотрим ниже метод определения гарантированной параллелизма:
 
 (Гарантированная параллели)`MIN_PERCENTAGE_RESOURCE``REQUEST_MIN_RESOURCE_GRANT_PERCENT`
 
 > [!NOTE]
-> Существуют определенные минимальные жизнеспособные значения уровня обслуживания для min_percentage_resource.  Для получения дополнительной [информации,](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest#effective-values) см Эффективные значения для получения дополнительной информации.
+> Существуют определенные минимальные жизнеспособные значения уровня обслуживания для min_percentage_resource.  Для получения дополнительной [информации,](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest#effective-values) см Эффективные значения для получения дополнительной информации.
 
 При отсутствии изоляции рабочей нагрузки запросы работают в [общем пуле](#shared-pool-resources) ресурсов.  Доступ к ресурсам в общем пуле не гарантируется и назначается на [важной](sql-data-warehouse-workload-importance.md) основе.
 
@@ -50,18 +50,18 @@ ms.locfileid: "80632437"
 
 ## <a name="workload-containment"></a>Сдерживание рабочей нагрузки
 
-Сдерживание рабочей нагрузки означает ограничение объема ресурсов, которые может потреблять рабочая группа.  Сдерживание рабочей нагрузки достигается путем настройки CAP_PERCENTAGE_RESOURCE параметра до менее 100 в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)  Рассмотрим сценарий, при котором пользователям необходим доступ к системе, чтобы они могли выполнить анализ «что-если» с помощью специальных запросов.  Эти типы запросов могут оказать негативное влияние на другие рабочие нагрузки, которые работают в системе.  Настройка сдерживания обеспечивает ограниченность ресурсов.
+Сдерживание рабочей нагрузки означает ограничение объема ресурсов, которые может потреблять рабочая группа.  Сдерживание рабочей нагрузки достигается путем настройки CAP_PERCENTAGE_RESOURCE параметра до менее 100 в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  Рассмотрим сценарий, при котором пользователям необходим доступ к системе, чтобы они могли выполнить анализ «что-если» с помощью специальных запросов.  Эти типы запросов могут оказать негативное влияние на другие рабочие нагрузки, которые работают в системе.  Настройка сдерживания обеспечивает ограниченность ресурсов.
 
 Настройка сдерживания рабочей нагрузки неявно определяет максимальный уровень параллелизма.  При CAP_PERCENTAGE_RESOURCE установлен на 60% и REQUEST_MIN_RESOURCE_GRANT_PERCENT установлен на 1%, до 60-параллелизма уровня допускается для рабочей группы нагрузки.  Рассмотрим метод, приведенный ниже для определения максимальной параллелизма:
 
 (Макс Параллелизм)`CAP_PERCENTAGE_RESOURCE``REQUEST_MIN_RESOURCE_GRANT_PERCENT`
 
 > [!NOTE]
-> Эффективная CAP_PERCENTAGE_RESOURCE рабочей группы не достигнет 100% при создании рабочих групп с MIN_PERCENTAGE_RESOURCE на уровне, превышаюем ноль.  См [sys.dm_workload_management_workload_groups_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-workload-management-workload-group-stats-transact-sql?view=azure-sqldw-latest) для эффективных значений времени выполнения.
+> Эффективная CAP_PERCENTAGE_RESOURCE рабочей группы не достигнет 100% при создании рабочих групп с MIN_PERCENTAGE_RESOURCE на уровне, превышаюем ноль.  См [sys.dm_workload_management_workload_groups_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-workload-management-workload-group-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для эффективных значений времени выполнения.
 
 ## <a name="resources-per-request-definition"></a>Ресурсы на определение запроса
 
-Группы рабочей нагрузки обеспечивают механизм определения мин и максимального объема ресурсов, которые выделяются по запросу с REQUEST_MIN_RESOURCE_GRANT_PERCENT и REQUEST_MAX_RESOURCE_GRANT_PERCENT параметров в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)  В этом случае ресурсами являются процессор и память.  Настройка этих значений определяет, сколько ресурсов и какой уровень параллелизма может быть достигнут в системе.
+Группы рабочей нагрузки обеспечивают механизм определения мин и максимального объема ресурсов, которые выделяются по запросу с REQUEST_MIN_RESOURCE_GRANT_PERCENT и REQUEST_MAX_RESOURCE_GRANT_PERCENT параметров в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  В этом случае ресурсами являются процессор и память.  Настройка этих значений определяет, сколько ресурсов и какой уровень параллелизма может быть достигнут в системе.
 
 > [!NOTE]
 > REQUEST_MAX_RESOURCE_GRANT_PERCENT является необязательным параметром, который по умолчанию по умолчанию к тому же значению, которое указывается для REQUEST_MIN_RESOURCE_GRANT_PERCENT.
@@ -71,11 +71,11 @@ ms.locfileid: "80632437"
 Настройка REQUEST_MAX_RESOURCE_GRANT_PERCENT на значение, превышающее REQUEST_MIN_RESOURCE_GRANT_PERCENT, позволяет системе выделять больше ресурсов на запрос.  При планировании запроса система определяет фактическое распределение ресурсов в запросе, которое находится между REQUEST_MIN_RESOURCE_GRANT_PERCENT и REQUEST_MAX_RESOURCE_GRANT_PERCENT, на основе доступности ресурсов в общем пуле и текущей нагрузки на систему.  Ресурсы должны существовать в [общем пуле](#shared-pool-resources) ресурсов при запланировании запроса.  
 
 > [!NOTE]
-> REQUEST_MIN_RESOURCE_GRANT_PERCENT и REQUEST_MAX_RESOURCE_GRANT_PERCENT имеют эффективные ценности, которые зависят от эффективных MIN_PERCENTAGE_RESOURCE и CAP_PERCENTAGE_RESOURCE ценностей.  См [sys.dm_workload_management_workload_groups_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-workload-management-workload-group-stats-transact-sql?view=azure-sqldw-latest) для эффективных значений времени выполнения.
+> REQUEST_MIN_RESOURCE_GRANT_PERCENT и REQUEST_MAX_RESOURCE_GRANT_PERCENT имеют эффективные ценности, которые зависят от эффективных MIN_PERCENTAGE_RESOURCE и CAP_PERCENTAGE_RESOURCE ценностей.  См [sys.dm_workload_management_workload_groups_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-workload-management-workload-group-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для эффективных значений времени выполнения.
 
 ## <a name="execution-rules"></a>Правила исполнения
 
-В специальных системах отчетности клиенты могут случайно выполнять запросы, которые серьезно влияют на производительность других.  Системные админы вынуждены тратить время на убийство беглых запросов, чтобы высвободить системные ресурсы.  Группы рабочей нагрузки предлагают возможность настройки правила тайм-аута выполнения запроса для отмены запросов, превышающий указанное значение.  Правило настраивается путем `QUERY_EXECUTION_TIMEOUT_SEC` установки параметра в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)
+В специальных системах отчетности клиенты могут случайно выполнять запросы, которые серьезно влияют на производительность других.  Системные админы вынуждены тратить время на убийство беглых запросов, чтобы высвободить системные ресурсы.  Группы рабочей нагрузки предлагают возможность настройки правила тайм-аута выполнения запроса для отмены запросов, превышающий указанное значение.  Правило настраивается путем `QUERY_EXECUTION_TIMEOUT_SEC` установки параметра в синтаксисе [CREATE WORKLOAD GROUP.](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 ## <a name="shared-pool-resources"></a>Общие ресурсы пула
 
@@ -88,6 +88,6 @@ ms.locfileid: "80632437"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Быстрый запуск: настройка изоляции рабочей нагрузки](quickstart-configure-workload-isolation-tsql.md)
-- [CREATE WORKLOAD GROUP](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)
+- [CREATE WORKLOAD GROUP](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Преобразование классов ресурсов в группы рабочей нагрузки.](sql-data-warehouse-how-to-convert-resource-classes-workload-groups.md)
 - [Мониторинг портала управления рабочей нагрузкой](sql-data-warehouse-workload-management-portal-monitor.md).  

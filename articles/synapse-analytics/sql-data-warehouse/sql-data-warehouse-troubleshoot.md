@@ -11,12 +11,12 @@ ms.date: 02/04/2019
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: b24706943cdf59fba89a8007c4914b628b9e34d5
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 973d2339db1e55f2cca45025f2d678e5126f4317
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632962"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743668"
 ---
 # <a name="troubleshooting-sql-analytics-in-azure-synapse"></a>Несоответствие си-Л-аналитики в Azure Synapse
 
@@ -30,13 +30,13 @@ ms.locfileid: "80632962"
 | Субъект-сервер "MyUserName" не может получить доступ к базе данных master в текущем контексте безопасности. Невозможно открыть пользовательскую базу данных по умолчанию. Ошибка входа. Пользователю "MyUserName" не удалось войти в систему. (Microsoft SQL Server, ошибка: 916) | Эта ошибка возникает, когда пользователь Azure AD пытается подключиться к основной базе данных, но не имеет в своем ключе пользователя.  Чтобы исправить эту проблему, укажите пул S'L, к который вы хотите подключиться во время подключения, либо добавьте пользователя в основной базу данных.  Более подробную информацию можно узнать из [статьи по обзору безопасности.](sql-data-warehouse-overview-manage-security.md) |
 | Ошибка CTAIP                                                  | Эта ошибка может возникнуть при создании входа в базу данных серверов S'L, но не в базе данных S'L.  Если возникла эта ошибка, ознакомьтесь со статьей с [общими сведениями о безопасности](sql-data-warehouse-overview-manage-security.md) .  В этой статье объясняется, как создать логин и пользователя на мастер, а затем как создать пользователя в базе данных S'L. |
 | Заблокировано брандмауэром                                          | Пулы S'L защищены брандмауэрами, чтобы обеспечить доступ к базе данных только известных IP-адресов. Брандмауэры являются безопасными по умолчанию. Это означает, что перед подключением необходимо прямо разрешить доступ для IP-адреса или диапазона IP-адресов.  Чтобы настроить брандмауэр для предоставления доступа, выполните указания в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure](create-data-warehouse-portal.md) статьи [Создание хранилища данных SQL Azure](create-data-warehouse-portal.md). |
-| Не удается подключиться с помощью средства или драйвера                           | В пуле Synapse S'L рекомендуется использовать [SSMS,](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) [SSDT для Visual Studio](sql-data-warehouse-install-visual-studio.md)или [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) для запроса данных. Для получения дополнительной информации о драйверах и подключении к Azure Synapse [см.](sql-data-warehouse-connection-strings.md) [Connect to Azure Synapse](sql-data-warehouse-connect-overview.md) |
+| Не удается подключиться с помощью средства или драйвера                           | В пуле Synapse S'L рекомендуется использовать [SSMS,](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) [SSDT для Visual Studio](sql-data-warehouse-install-visual-studio.md)или [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) для запроса данных. Для получения дополнительной информации о драйверах и подключении к Azure Synapse [см.](sql-data-warehouse-connection-strings.md) [Connect to Azure Synapse](sql-data-warehouse-connect-overview.md) |
 
 ## <a name="tools"></a>Инструменты
 
 | Проблемы                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Исследователь объектов Visual Studio отсутствует у пользователей Azure AD           | Это известная проблема  Сведения о пользователях можно просмотреть в файле [sys.database_principals](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?view=sql-server-ver15).  Подробнее об использовании Active-каталога Azure с пулом Synapse с помощью Azure Active Directory можно ознакомиться с [помощью Azure.](sql-data-warehouse-authentication.md) |
+| Исследователь объектов Visual Studio отсутствует у пользователей Azure AD           | Это известная проблема  Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Подробнее об использовании Active-каталога Azure с пулом Synapse с помощью Azure Active Directory можно ознакомиться с [помощью Azure.](sql-data-warehouse-authentication.md) |
 | Ручное написание сценариев, использование мастера скриптов или подключение через SSMS происходит медленно, не отвечает или производит ошибки | Убедитесь, что пользователи были созданы в базе данных master. В вариантах сценариев также убедитесь, что издание движка настроено как "Microsoft Azure S'L Data Warehouse Edition" и тип двигателя - "База данных Microsoft Azure S'L". |
 | Создание скриптов в SSMS завершается ошибкой                               | Создание сценария для пула Synapse S'L не удается, если опция "Создание сценария для зависимых объектов" настроена на "True". В качестве обходного пути пользователи должны вручную перейти к **Tools -> Options ->S'L Server Object Explorer -> generate script for dependent options и установить ложное** |
 
@@ -59,7 +59,7 @@ ms.locfileid: "80632962"
 | Сообщение 40847: не удалось выполнить операцию, так как сервер достиг допустимой квоты в 45 000 единиц транзакций базы данных (DTU). | Либо уменьшите значение [DWU](what-is-a-data-warehouse-unit-dwu-cdwu.md) создаваемой базы данных, либо [запросите увеличение квоты](sql-data-warehouse-get-started-create-support-ticket.md). |
 | Анализ использования пространства                              | Сведения об использовании пространства в системе см. в разделе о [запросах размера таблицы](sql-data-warehouse-tables-overview.md#table-size-queries). |
 | Справка по управлению таблицами                                    | Справочную информацию об управлении таблицами см. в статье [Общие сведения о таблицах в хранилище данных SQL](sql-data-warehouse-tables-overview.md).  Дополнительные сведения см. в статьях, посвященных [типам данных таблиц](sql-data-warehouse-tables-data-types.md), [распределению](sql-data-warehouse-tables-distribute.md), [индексированию](sql-data-warehouse-tables-index.md), [секционированию](sql-data-warehouse-tables-partition.md), [управлению статистикой таблиц](sql-data-warehouse-tables-statistics.md) и [временным таблицам](sql-data-warehouse-tables-temporary.md). |
-| Прозрачная панель прогресса шифрования данных (TDE) не обновляется на портале Azure | Состояние прозрачного шифрования данных можно узнать с помощью [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption). |
+| Прозрачная панель прогресса шифрования данных (TDE) не обновляется на портале Azure | Состояние прозрачного шифрования данных можно узнать с помощью [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
 
 ## <a name="differences-from-sql-database"></a>Отличия от базы данных SQL
 
@@ -70,7 +70,7 @@ ms.locfileid: "80632962"
 | Ограничения относительно инструкций DELETE и UPDATE         | Ознакомьтесь с обходными решениями для инструкций [UPDATE](sql-data-warehouse-develop-ctas.md#ansi-join-replacement-for-update-statements) и [DELETE](sql-data-warehouse-develop-ctas.md#ansi-join-replacement-for-delete-statements), а также с [использованием инструкции CTAS для обхода неподдерживаемого синтаксиса UPDATE и DELETE](sql-data-warehouse-develop-ctas.md). |
 | Инструкция MERGE не поддерживается      | Ознакомьтесь с [обходными решениями для инструкции MERGE](sql-data-warehouse-develop-ctas.md#replace-merge-statements).                  |
 | Ограничения хранимых процедур          | Ознакомьтесь с [ограничениями хранимых процедур](sql-data-warehouse-develop-stored-procedures.md#limitations). |
-| Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Сведения о поддерживаемом синтаксисе см. в статье, посвященной инструкции [CREATE FUNCTION](https://docs.microsoft.com/sql/t-sql/statements/create-function-sql-data-warehouse?view=aps-pdw-2016-au7). |
+| Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Сведения о поддерживаемом синтаксисе см. в статье, посвященной инструкции [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

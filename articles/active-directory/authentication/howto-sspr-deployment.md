@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd5b9e1f2640e68f7c819a49ad34d9c051c582c5
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: c11521ec074b63843b873c39102b68bf185d2821
+ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80667330"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80676728"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Планирование развертывания сброса паролей самообслуживания Azure Active Directory
 
@@ -75,7 +75,7 @@ Azure Active Directory лицензируется на каждого польз
 
 | Ресурсы| Ссылка и описание |
 | - | - |
-| Видеоролики| [Уполномочить пользователей лучшей масштабируемой ИТ](https://youtu.be/g9RpRnylxS8) 
+| Видео| [Уполномочить пользователей лучшей масштабируемой ИТ](https://youtu.be/g9RpRnylxS8) 
 | |[Что такое сбросить пароль самообслуживания?](https://youtu.be/hc97Yx5PJiM)|
 | |[Развертывание сбросить паролем самообслуживания](https://www.youtube.com/watch?v=Pa0eyqjEjvQ&index=18&list=PLLasX02E8BPBm1xNMRdvP6GtA6otQUqp0)|
 | |[Как настроить сбросить пароли самообслуживания для пользователей в Azure AD?](https://azure.microsoft.com/resources/videos/self-service-password-reset-azure-ad/) |
@@ -341,9 +341,9 @@ Azure AD может предоставить дополнительную инф
 
 * [Что такое компонент обратной записи паролей?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Для начала развертывания SSPR см. [Сбросить пароля самообслуживания «Включить Azure AD»](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-sspr.md)
+* Для начала развертывания SSPR см. [Сбросить пароля самообслуживания «Включить Azure AD»](tutorial-enable-sspr.md)
 
 * [Рассмотрите возможность внедрения защиты паролей Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad)
 

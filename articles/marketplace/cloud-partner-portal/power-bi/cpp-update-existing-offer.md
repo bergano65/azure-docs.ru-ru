@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 01/31/2019
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 04e10b9c5410d15d3509829af7502c9a93c7267d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 02f2f8ce523e9316b749a9639112176a74da66d2
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281635"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745533"
 ---
 # <a name="update-a-power-bi-app-offer"></a>Обновление предложения Power BI App
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 В этой статье показано, как обновить предложение Microsoft Power BI App на [портале Cloud Partner,](https://cloudpartner.azure.com/) а затем переиздать предложение. Вот несколько распространенных причин для обновления предложения:
 

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07ba38a5d7e8e8a89ba122efb1734c1f13a94d48
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 402eaecbf03fd52fbb5e871fdd196da2bc9a3e1f
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80332184"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743536"
 ---
 # <a name="passwordless-authentication-options-for-azure-active-directory"></a>Параметры проверки подлинности без паролей для active Directory Azure
 
@@ -97,7 +97,7 @@ Windows Hello for Business идеально подходит для информ
 8. Azure AD проверяет подписанный nonce с помощью общедоступного ключа FIDO2.
 9. Azure AD возвращает PRT, чтобы обеспечить доступ к ресурсам.
 
-Хотя есть много ключей, сертифицированных FIDO2 Альянсом FIDO, Microsoft требует некоторых дополнительных расширений спецификации ПРОТОКОЛа FIDO2 клиента к аутентификатору (CTAP), которые должны быть реализованы поставщиком для обеспечения максимальной безопасности и наилучших Опыт.
+Хотя есть много ключей, сертифицированных FIDO2 Альянсом FIDO, Microsoft требует некоторых дополнительных расширений спецификации ПРОТОКОЛа FIDO2 клиента к аутентификатору (CTAP), которые должны быть реализованы поставщиком для обеспечения максимальной безопасности и наилучшего опыта.
 
 Ключ безопасности **должен** реализовать следующие функции и расширения из протокола FIDO2 CTAP, чтобы быть совместимым с Корпорацией Майкрософт:
 
@@ -142,7 +142,7 @@ Windows Hello for Business идеально подходит для информ
 
 Вот некоторые факторы, которые вы должны учитывать при выборе технологии Microsoft без паролей:
 
-||**Настройка Windows Hello для бизнеса**|**Безпачная регистрация с приложением Microsoft Authenticator**|**Ключи безопасности FIDO2**|
+||**Windows Hello для бизнеса**|**Безпачная регистрация с приложением Microsoft Authenticator**|**Ключи безопасности FIDO2**|
 |:-|:-|:-|:-|
 |**Предварительное условие**| Windows 10 версии 1809 или более поздней.<br>Azure Active Directory| Приложение Microsoft Authenticator<br>Телефон (устройства iOS и Android под управлением Android 6.0 и выше.)|Windows 10 версии 1809 или более поздней.<br>Azure Active Directory|
 |**Режим**|Платформа|Программное обеспечение|Оборудование|
@@ -162,7 +162,7 @@ Windows Hello for Business идеально подходит для информ
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Включить параметры ключей безопасности FIDO2 без паролей в вашей организации](howto-authentication-passwordless-security-key.md)
+[Включить параметры ключа безопасности FIDO2 без паролей в вашей организации](howto-authentication-passwordless-security-key.md)
 
 [Включить параметры без паролей на основе телефона в вашей организации](howto-authentication-passwordless-phone.md)
 

@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: e5ad5f6f2f5be239af23ee4802cf09c388c93ae9
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: e170a789727fb0de36705895245cc638d30ee3d7
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632911"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745508"
 ---
 # <a name="best-practices-for-loading-data-using-synapse-sql-pool"></a>Рекомендации по загрузке данных с помощью пула Synapse S'L
 
@@ -104,7 +104,7 @@ User_A и user_B теперь заблокированы из схемы дру�
 
 ## <a name="increase-batch-size-when-using-sqlbulkcopy-api-or-bcp"></a>Увеличьте размер партии при использовании API SqLBulkCopy или bcp
 
-Загрузка с Помощью PolyBase обеспечит самую высокую пропускную выливку с помощью пула S'L. Если вы не можете использовать PolyBase для загрузки и должны использовать [API SqLBulkCopy](https://msdn.microsoft.com/library/system.data.sqlclient.sqlbulkcopy.aspx) или [bcp,](https://docs.microsoft.com/sql/tools/bcp-utility?view=sql-server-ver15)вы должны рассмотреть вопрос об увеличении размера партии для лучшей пропускной всей входной.
+Загрузка с Помощью PolyBase обеспечит самую высокую пропускную выливку с помощью пула S'L. Если вы не можете использовать PolyBase для загрузки и должны использовать [API SqLBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) или [bcp,](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)вы должны рассмотреть вопрос об увеличении размера партии для лучшей пропускной всей входной.
 
 > [!TIP]
 > Размер партии от 100 K до 1M строк является рекомендуемым базовым уровнем для определения оптимальной емкости размера партии.
@@ -120,7 +120,7 @@ User_A и user_B теперь заблокированы из схемы дру�
 
 Чтобы устранить "грязные" записи, убедитесь в правильности определений внешней таблицы и формата внешнего файла, а также в том, что внешние данные соответствуют этим определениям.
 
-Если подмножество внешних записей данных является грязным, вы можете отклонить эти записи для ваших запросов, используя варианты отклонения в [CREATE EXTERNAL TABLE (Transact-S'L).](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql?view=sql-server-ver15)
+Если подмножество внешних записей данных является грязным, вы можете отклонить эти записи для ваших запросов, используя варианты отклонения в [CREATE EXTERNAL TABLE (Transact-S'L).](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 ## <a name="inserting-data-into-a-production-table"></a>Вставка данных в рабочую таблицу
 

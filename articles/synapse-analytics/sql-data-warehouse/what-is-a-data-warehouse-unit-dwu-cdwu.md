@@ -11,12 +11,12 @@ ms.date: 11/22/2019
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 01a05755fc18a85a95e9c1bec1c470d37af656d1
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 62cf1f369cbde372e82e7c3ffe26473f09668bc7
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632229"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80742544"
 ---
 # <a name="data-warehouse-units-dwus"></a>Единицы хранилища данных (DWUs)
 
@@ -24,9 +24,9 @@ ms.locfileid: "80632229"
 
 ## <a name="what-are-data-warehouse-units"></a>Что такое единицы хранилища данных
 
-[Бассейн Synapse S'L](sql-data-warehouse-overview-what-is.md#synapse-sql-pool-in-azure-synapse) представляет собой набор аналитических ресурсов, которые в настоящее время подготовлены. Аналитические ресурсы определяются как сочетание процессора, памяти и иомы. 
+[Бассейн Synapse S'L](sql-data-warehouse-overview-what-is.md#synapse-sql-pool-in-azure-synapse) представляет собой набор аналитических ресурсов, которые в настоящее время подготовлены. Аналитические ресурсы определяются как сочетание процессора, памяти и иомы.
 
-Эти три ресурса объединяются в единицы вычислительной шкалы, называемые единицами хранилища данных (DWUs). Единица DWU представляет собой абстрактный, нормализованный объем вычислительных ресурсов и производительности. 
+Эти три ресурса объединяются в единицы вычислительной шкалы, называемые единицами хранилища данных (DWUs). Единица DWU представляет собой абстрактный, нормализованный объем вычислительных ресурсов и производительности.
 
 Изменение уровня обслуживания изменяет количество DWUs, доступных для системы, что, в свою очередь, корректирует производительность и стоимость вашей системы.
 
@@ -72,7 +72,7 @@ CREATE DATABASE mySQLDW
 2. Отслеживайте производительность приложения по мере загрузки тестовых данных в систему, сравнивая ее с количеством выбранных DWU.
 3. Определите любые дополнительные требования для периодов пиковой активности. Рабочие нагрузки, которые показывают значительные пики и впадины в активности, возможно, потребуется часто масштабировать.
 
-Пул сс-L — это масштабная система, которая может предоставлять огромные объемы вычислений и запросов в больших количествах данных. 
+Пул сс-L — это масштабная система, которая может предоставлять огромные объемы вычислений и запросов в больших количествах данных.
 
 Чтобы ознакомиться с реальными возможностями масштабирования, особенно при использовании большого количества DWU, мы рекомендуем во время масштабирования выполнить масштабирование набора данных, чтобы проверить, достаточно ли используется данных для ЦП. Для проверки масштабирования мы рекомендуем использовать как минимум 1 TБ.
 
@@ -82,7 +82,7 @@ CREATE DATABASE mySQLDW
 
 ## <a name="permissions"></a>Разрешения
 
-Чтобы изменить единицы использования хранилища данных, требуются разрешения, описанные в статье об [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql).
+Чтобы изменить единицы использования хранилища данных, требуются разрешения, описанные в статье об [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 Встроенные роли для ресурсов Azure, такие как участник базы данных SQL и участник SQL Server, позволяют изменять параметры DWU.
 
@@ -134,7 +134,7 @@ Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServi
 Изменение DWU:
 
 1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
-2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql). В следующем примере приводится цель уровня обслуживания DW1000c для базы данных MySLDW.
+2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). В следующем примере приводится цель уровня обслуживания DW1000c для базы данных MySLDW.
 
 ```Sql
 ALTER DATABASE MySQLDW

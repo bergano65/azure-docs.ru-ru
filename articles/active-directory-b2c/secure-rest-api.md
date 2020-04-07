@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 37d1c181c18f69c040040da2be138eaad3a61693
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.openlocfilehash: 5a80c6e3bd8cf647590ed757c042ef3301e27b4a
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80396853"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743509"
 ---
 # <a name="secure-your-restful-services"></a>Обезоверьтейте свои услуги RESTful 
 
@@ -272,7 +272,7 @@ Authorization: Bearer <token>
 1. Убедитесь, что вы добавляете претензию, используемую выше, в качестве входиного требования:
 
     ```xml
-    <InputClaim ClaimTyeReferenceId="bearerToken"/>
+    <InputClaim ClaimTypeReferenceId="bearerToken"/>
     ```    
 
 После добавления вышеуказанных фрагментов технический профиль должен выглядеть следующим кодом XML:
@@ -292,7 +292,7 @@ Authorization: Bearer <token>
         <Item Key="AllowInsecureAuthInProduction">false</Item>
       </Metadata>
       <InputClaims>
-        <InputClaim ClaimTyeReferenceId="bearerToken"/>
+        <InputClaim ClaimTypeReferenceId="bearerToken"/>
       </InputClaims>
       ...
     </TechnicalProfile>
@@ -357,6 +357,6 @@ Authorization: Bearer <token>
 </ClaimsProvider>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробнее о элементе [технического профиля Restful](restful-technical-profile.md) читайте в справке IEF. 

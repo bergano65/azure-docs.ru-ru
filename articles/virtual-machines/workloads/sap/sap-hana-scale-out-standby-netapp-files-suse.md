@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 01/10/2020
+ms.date: 04/06/2020
 ms.author: radeltch
-ms.openlocfilehash: c594ef3a62d45fb68002ec2b21fb89115f7a30af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b584341931299e408b596bd6a66d1da4580cfffe
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77565814"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80754776"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-suse-linux-enterprise-server"></a>Развертывание системы масштабирования SAP HANA с резервным узлами на VMs Azure с помощью файлов Azure NetApp на сервере SUSE Linux Enterprise Server 
 
@@ -83,7 +83,6 @@ ms.locfileid: "77565814"
 * [SUSE SAP HA Best Practice Guides][suse-ha-guide]: Содержит всю необходимую информацию для настройки NetWeaver High Availability и SAP HANA System Replication на месте (для использования в качестве общего базового; они предоставляют гораздо более подробную информацию)
 * [Заметки о выпуске расширения SUSE высокого уровня доступности 12 SP3][suse-ha-12sp3-relnotes]
 * [Приложения NetApp SAP от Microsoft Azure с помощью файлов NetApp Azure][anf-sap-applications-azure]
-* [SAP HANA на Системах NetApp с системой сетевого файла (NFS)](https://www.netapp.com/us/media/tr-4435.pdf): Руководство по конфигурации, содержащее информацию о том, как настроить SAP HANA с помощью Azure NFS с помощью NetApp
 
 
 ## <a name="overview"></a>Обзор
@@ -249,7 +248,7 @@ ms.locfileid: "77565814"
 
     d. Выберите **Сеть**, а затем прикрепить сетевой интерфейс. В списке выпадающих **сетевых интерфейсов Attach** выберите `hana` уже созданные сетевые интерфейсы для подсетей и подсетей. `storage`  
     
-    д) Нажмите кнопку **Сохранить**. 
+    д) Щелкните **Сохранить**. 
  
     е) Повторите шаги b через e для остальных виртуальных машин (в нашем примере, **hanadb2** и **hanadb3).**
  
@@ -334,7 +333,7 @@ ms.locfileid: "77565814"
 
     Перезагрузите VM для активации изменений.  
 
-3. **Подготовьте** ОС для запуска SAP HANA на NetApp Systems с NFS, как описано в [SAP HANA на NetApp AFF Systems с руководством по конфигурации NFS.](https://www.netapp.com/us/media/tr-4435.pdf) Создание файла конфигурации */etc/sysctl.d/netapp-hana.conf* для настроек конфигурации NetApp.  
+3. **Подготовьте** ОС для запуска SAP HANA на NetApp Systems с помощью NFS, как описано в [приложениях NetApp SAP на Microsoft Azure с помощью файлов NetApp Azure.][anf-sap-applications-azure] Создание файла конфигурации */etc/sysctl.d/netapp-hana.conf* для настроек конфигурации NetApp.  
 
     <pre><code>
     vi /etc/sysctl.d/netapp-hana.conf
@@ -368,7 +367,7 @@ ms.locfileid: "77565814"
     vm.swappiness=10
     </code></pre>
 
-4. **Отрегулируйте** настройки sunrpc, как это рекомендовано в [SAP HANA на NetApp AFF Systems с помощью руководства по конфигурации NFS.](https://www.netapp.com/us/media/tr-4435.pdf)  
+4. **Отрегулируйте** настройки sunrpc, как это рекомендуется в [приложениях NetApp SAP в Microsoft Azure с помощью файлов Azure NetApp.][anf-sap-applications-azure]  
 
     <pre><code>
     vi /etc/modprobe.d/sunrpc.conf
@@ -633,11 +632,11 @@ ms.locfileid: "77565814"
 6. Чтобы оптимизировать SAP HANA для базового хранилища файлов Azure NetApp, установите следующие параметры SAP HANA:
 
    - `max_parallel_io_requests`**128 г.**
-   - `async_read_submit` **on**
-   - `async_write_submit_active` **on**
+   - `async_read_submit`**на**
+   - `async_write_submit_active`**на**
    - `async_write_submit_blocks`**все**
 
-   Для получения дополнительной информации [см. SAP HANA на NetApp AFF Systems с NFS Configuration Guide](https://www.netapp.com/us/media/tr-4435.pdf). 
+   Для получения дополнительной информации смотрите [приложения NetApp SAP на Microsoft Azure с помощью файлов NetApp Azure.][anf-sap-applications-azure] 
 
    Начиная с систем SAP HANA 2.0, вы `global.ini`можете установить параметры в . Для получения дополнительной информации см. SAP Note [1999930](https://launchpad.support.sap.com/#/notes/1999930).  
    
@@ -855,5 +854,4 @@ ms.locfileid: "77565814"
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
-* Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).
 * Чтобы узнать, как установить высокую доступность и планировать аварийное восстановление SAP HANA на Azure VMs, [см.][sap-hana-ha]

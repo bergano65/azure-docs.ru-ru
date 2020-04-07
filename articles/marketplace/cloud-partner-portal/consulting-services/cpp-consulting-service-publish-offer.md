@@ -5,16 +5,19 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 1b00e177ed45762d10d0603b1d0a1fb2c1807416
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b2de4114e8a1b48de2ad64b783d15f56fef4fc30
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278507"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743748"
 ---
 # <a name="publish-a-consulting-service-offer"></a>Публикация предложения консультационных услуг
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления предложениями услуг Консалтинга в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
 
 После заполнения строк **Параметры предложения**, **Сведения об онлайн-магазине** и **Контакты**, выберите **Опубликовать** и укажите адрес электронной почты. Когда корпорация Майкрософт будет готова опубликовать ваше предложение, вы получите по электронной почте сообщение для его предварительного просмотра перед запуском. В любой момент можно вернуться на портал, чтобы проверить состояние вашего предложения.
 

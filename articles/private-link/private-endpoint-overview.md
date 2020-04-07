@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: 6782d745bfced576fe06019b0d41af86c8c63ed4
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: b8f55b0693b7ffdf10516cfb19b67ccc5a94dc5a
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656269"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80742906"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -144,7 +144,7 @@ ms.locfileid: "80656269"
 |Реле Azure (Microsoft.Relay/namespaces) | namespace |privatelink.servicebus.windows.net|
 |Azure Event Grid (Microsoft.EventGrid/темы)   | Раздел | Теме. (регион).privatelink.eventgrid.azure.net|
 |Azure Event Grid (Microsoft.EventGrid/домены) | домен | Домена. (регион).privatelink.eventgrid.azure.net |
-|Лазурные webApps (Microsoft.Web/сайты) | site | privatelink.azurewebsites.net |
+|Лазурные WebApps (Microsoft.Web/сайты)    | site | privatelink.azurewebsites.net |
 |Машинное обучение Azure (Microsoft.MachineLearningServices/рабочие области)   | Рабочая область | privatelink.api.azureml.ms |
  
 Azure создаст каноническое имя DNS-записи (CNAME) на общедоступной DNS, чтобы перенаправить разрешение на предлагаемые доменные имена. Вы сможете переопределить разрешение с помощью частного IP-адреса ваших частных конечных точек. 

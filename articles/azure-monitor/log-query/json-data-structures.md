@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: 8be4f318149590ff08b73fda719e99a17220ec2e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f792820b7b0dff20e647031410ba87ac26c2495a
+ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77670157"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80672972"
 ---
 # <a name="working-with-json-and-data-structures-in-azure-monitor-log-queries"></a>Работа с JSON и структурой данных в запросах журнала Azure Monitor
 
@@ -48,7 +48,7 @@ print hosts_report
 Если имеется только один элемент, можно использовать только точечную нотацию:
 
 ```Kusto
-let hosts_report='{"location":"North_DC", "status":"running", "rate":5}';
+let hosts_report=dynamic({"location":"North_DC", "status":"running", "rate":5});
 print hosts_report 
 | extend status = hosts_report.status
 ```
@@ -126,10 +126,10 @@ print hosts_object
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала в Azure Monitor.
 
-- [Работа со строками](string-operations.md)
-- [Работа со значениями даты и времени](datetime-operations.md)
-- [Функции агрегирования](aggregations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
+- [Операции со строками](string-operations.md)
+- [Операции с датой и временем](datetime-operations.md)
+- [Агрегатные функции](aggregations.md)
+- [Расширенные агрегатные функции](advanced-aggregations.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
 - [Соединения](joins.md)
 - [Диаграммы](charts.md)

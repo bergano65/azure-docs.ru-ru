@@ -17,8 +17,6 @@
       href: provision-vm.md
     - name: Создание виртуальной машины для обработки и анализа данных на платформе Ubuntu
       href: dsvm-ubuntu-intro.md
-    - name: Создание виртуальной машины CentOS для обработки и анализа данных
-      href: linux-dsvm-intro.md
     - name: Создание виртуальной машины для обработки и анализа геоданных средствами ИИ
       href: provision-geo-ai-dsvm.md
 - name: Основные понятия
@@ -67,8 +65,6 @@
   items:
     - name: Виртуальная машина для обработки и анализа данных на платформе Ubuntu
       href: reference-ubuntu-vm.md
-    - name: Виртуальная машина для обработки и анализа данных на платформе CentOS
-      href: reference-centos-vm.md
     - name: Заметки о выпуске
       href: release-notes.md
     - name: Известные проблемы

@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 2/24/2020
 ms.subservice: alerts
-ms.openlocfilehash: fe1f1d2700619bfcac4512bb0e631262edf8401c
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.openlocfilehash: 02424d7df24305d6642c364f12e3ed6e8674a01d
+ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80398099"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677011"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
@@ -563,7 +563,7 @@ az group deployment create \
 
 ## <a name="template-for-a-static-threshold-metric-alert-that-monitors-multiple-criteria"></a>Шаблон для метрика статический порог, который отслеживает несколько критериев
 
-Новые оповещения метрик поддерживают оповещения о многомерных метриках, а также несколько критериев. Вы можете использовать следующий шаблон для создания более продвинутого правила предупреждения метрики о мерных метриках и указания нескольких критериев.
+Новые метрические оповещения поддерживают оповещение о многомерных метриках, а также поддерживают определение нескольких критериев (до 5 критериев на правило оповещения). Вы можете использовать следующий шаблон для создания более продвинутого правила предупреждения метрики о мерных метриках и указания нескольких критериев.
 
 Пожалуйста, обратите внимание на следующие ограничения при использовании измерений в правиле оповещения, содержащем несколько критериев:
 - Вы можете выбрать только одно значение на измерение в пределах каждого критерия.
@@ -3622,7 +3622,7 @@ az group deployment create \
     --parameters @availabilityalert.parameters.json
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [оповещениях в Azure](alerts-overview.md)
 - Сведения о [создании группы действий с помощью шаблона Resource Manager](action-groups-create-resource-manager-template.md)

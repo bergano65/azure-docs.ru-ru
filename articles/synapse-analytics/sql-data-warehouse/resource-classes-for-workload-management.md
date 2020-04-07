@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 86cc081ef47eb2ac2e8e0a49bc79e8973f34baf1
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: c2ac05cb2a6b3bd185d5e3a84df4f3d9a01c5bef
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633697"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743266"
 ---
 # <a name="workload-management-with-resource-classes-in-azure-synapse-analytics"></a>Управление рабочей нагрузкой с классами ресурсов в Azure Synapse Analytics
 
@@ -162,13 +162,13 @@ WHERE  name LIKE '%rc%' AND type_desc = 'DATABASE_ROLE';
 
 Классы ресурсов реализуются путем назначения пользователям ролей базы данных. Когда пользователь выполняет запрос, он выполняется с классом ресурса пользователя. Например, если пользователь является участником роли базы данных staticrc10, его запросы работают с небольшим количеством памяти. Если пользователь базы данных является членом ролей базы данных xlargerc или staticrc80, его запросы работают с большим объемом памяти.
 
-Чтобы увеличить класс ресурсов пользователя, используйте [sp_addrolemember,](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) чтобы добавить пользователя в роль базы данных большого класса ресурсов.  Ниже приведенный код добавляет пользователя к роли базы данных largerc.  Каждый запрос получает 22% памяти системы.
+Чтобы увеличить класс ресурсов пользователя, используйте [sp_addrolemember,](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) чтобы добавить пользователя в роль базы данных большого класса ресурсов.  Ниже приведенный код добавляет пользователя к роли базы данных largerc.  Каждый запрос получает 22% памяти системы.
 
 ```sql
 EXEC sp_addrolemember 'largerc', 'loaduser';
 ```
 
-Чтобы уменьшить класс ресурсов, используйте хранимую процедуру [sp_droprolemember](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql).  Если 'loaduser' не является членом или любымдругим классом ресурсов, они переходят в класс ресурсов smallrc по умолчанию с 3% грантом памяти.  
+Чтобы уменьшить класс ресурсов, используйте хранимую процедуру [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Если 'loaduser' не является членом или любымдругим классом ресурсов, они переходят в класс ресурсов smallrc по умолчанию с 3% грантом памяти.  
 
 ```sql
 EXEC sp_droprolemember 'largerc', 'loaduser';

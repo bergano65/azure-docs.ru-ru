@@ -12,12 +12,12 @@ ms.subservice: ''
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: b8e37a15f473e5777fe5412b785a0916bd78f095
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: f83ae9c8290a52381c8087b46da959d4723d7f4e
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80655914"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745164"
 ---
 # <a name="getting-started-with-visual-studio-2019"></a>Начало работы с Visual Studio 2019
 
@@ -32,7 +32,7 @@ Visual Studio **2019** S'L Server Data Tools (SSDT) представляет с�
 
 ## <a name="install-visual-studio-2019"></a>Установка Visual Studio 2019.
 
-Смотрите [Скачать Visual Studio 2019,][] чтобы скачать и установить Visual Studio **16.3 и выше**. Во время установки выберите рабочую нагрузку для хранения и обработки данных. В Visual Studio 2019 больше не требуется установка автономного SSDT.
+Смотрите [Скачать Visual Studio 2019,](https://visualstudio.microsoft.com/downloads/) чтобы скачать и установить Visual Studio **16.3 и выше**. Во время установки выберите рабочую нагрузку для хранения и обработки данных. В Visual Studio 2019 больше не требуется установка автономного SSDT.
 
 ## <a name="unsupported-features-in-ssdt"></a>Неподдерживаемые функции в SSDT
 
@@ -43,18 +43,11 @@ Visual Studio **2019** S'L Server Data Tools (SSDT) представляет с�
 - [Заявление COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Управление рабочей нагрузкой](sql-data-warehouse-workload-management.md) - группы рабочей нагрузки и классификаторы
 - [Безопасность на уровне строк](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-  - Отправьте билет поддержки или проголосуйте [здесь,](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040057-ssdt-row-level-security) чтобы получить поддержку функции.
+  - Отправить [билет поддержки или проголосовать,](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040057-ssdt-row-level-security) чтобы получить поддержку функции.
 - [Динамическое маскирование данных](/sql/relational-databases/security/dynamic-data-masking?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest#defining-a-dynamic-data-mask)
-  - Отправьте билет поддержки или проголосуйте [здесь,](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040048-ssdt-support-dynamic-data-masking) чтобы получить поддержку функции.
+   - Отправить [билет поддержки или проголосовать,](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040048-ssdt-support-dynamic-data-masking) чтобы получить поддержку функции.
 - [Таблицы с ограничениями](sql-data-warehouse-table-constraints.md#table-constraints) не поддерживаются. Для этих объектов таблицы установите действие сборки на "Нет".
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть последняя версия SSDT, вы готовы [подключиться](sql-data-warehouse-query-visual-studio.md) к вашему пулу S'L.
-
-<!--Other-->
-
-[Скачивание Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
-[Installing Visual Studio]: https://msdn.microsoft.com/library/e2h7fzkw.aspx
-[SSDT Download]: https://msdn.microsoft.com/library/mt204009.aspx
-[UserVoice]: https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/13313247-database-project-from-visual-studio-to-support-azu

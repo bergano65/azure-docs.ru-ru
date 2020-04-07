@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 67f863826a2e9eb1bffcb316754ad5c40a2f2bb1
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: e7aa0c402878c994aabe4e12d811a99e300d7e67
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80583136"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743657"
 ---
 # <a name="azure-synapse-analytics-workload-classification"></a>Классификация рабочей нагрузки Azure Synapse Analytics
 
@@ -36,7 +36,7 @@ ms.locfileid: "80583136"
 
 ## <a name="classification-process"></a>Процесс классификации
 
-Классификация для пула Synapse S'L в Azure Synapse достигается сегодня путем присвоения пользователям роли, которая имеет соответствующий класс ресурсов, присвоенный ему с помощью [sp_addrolemember.](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql) Возможность характеристики запросов, выходящих за рамки входа в класс ресурсов, ограничена этой возможностью. Более богатый метод классификации теперь доступен с синтаксисом [CREATE WORKLOAD CLASSIFIER.](/sql/t-sql/statements/create-workload-classifier-transact-sql)  С помощью этого синтаксиса пользователи пула Synapse S'L могут присвоить значение и размер системных ресурсов, назначенных запросу по параметру. `workload_group` 
+Классификация для пула Synapse S'L в Azure Synapse достигается сегодня путем присвоения пользователям роли, которая имеет соответствующий класс ресурсов, присвоенный ему с помощью [sp_addrolemember.](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) Возможность характеристики запросов, выходящих за рамки входа в класс ресурсов, ограничена этой возможностью. Более богатый метод классификации теперь доступен с синтаксисом [CREATE WORKLOAD CLASSIFIER.](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  С помощью этого синтаксиса пользователи пула Synapse S'L могут присвоить значение и размер системных ресурсов, назначенных запросу по параметру. `workload_group`
 
 > [!NOTE]
 > Классификация оценивается на основе запроса. Несколько запросов за один сеанс можно классифицировать по-разному.
@@ -76,7 +76,7 @@ SELECT * FROM sys.workload_management_workload_classifiers where classifier_id <
 - Для тестирования нового синтаксиса классификации роль базы данных DBARole (членом которой является DBAUser), имеет классификатор, созданный для них отображение их до среднего и высокого значения.
 - Когда DBAUser входит в систему и запускает запрос, запрос будет назначен более крупным. Потому что пользователь имеет приоритет над членством в роли.
 
-Чтобы упростить неправильное устранение неполадок, мы рекомендуем удалить отображение ролей класса ресурсов при создании классификаторов рабочей нагрузки.  Приведенный ниже код возвращает существующие членские роли класса ресурсов.  Выполнить [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql) для каждого имени участника, возвращенного из соответствующего класса ресурсов.
+Чтобы упростить неправильное устранение неполадок, мы рекомендуем удалить отображение ролей класса ресурсов при создании классификаторов рабочей нагрузки.  Приведенный ниже код возвращает существующие членские роли класса ресурсов.  Выполнить [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для каждого имени участника, возвращенного из соответствующего класса ресурсов.
 
 ```sql
 SELECT  r.name AS [Resource Class]
@@ -90,9 +90,9 @@ WHERE   r.name IN ('mediumrc','largerc','xlargerc','staticrc10','staticrc20','st
 sp_droprolemember '[Resource Class]', membername
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Для получения дополнительной информации о создании классификатора, [см.](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql)  
+- Для получения дополнительной информации о создании классификатора, [см.](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  
 - Ознакомьтесь с тем, как создать классификатор рабочей [нагрузки, создайте классификатор рабочей нагрузки.](quickstart-create-a-workload-classifier-tsql.md)
 - Ознакомьтесь со [статьями, настраиваемыми значением рабочей нагрузки,](sql-data-warehouse-how-to-configure-workload-importance.md) а также как [управлять и контролировать управление рабочей нагрузкой.](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md)
-- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
+- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).

@@ -1,15 +1,15 @@
 ---
 title: Ограничения блокчейн-сервиса Azure
 description: Обзор сервисных и функциональных ограничений в сервисе Azure Blockchain
-ms.date: 03/30/2020
+ms.date: 04/02/2020
 ms.topic: conceptual
 ms.reviewer: ravastra
-ms.openlocfilehash: c728e617ac37795988cd596c7cb0c5025aac4ccf
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: 71e1bebf10fa0142870d03977182472da1ad031f
+ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80529576"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80676516"
 ---
 # <a name="limits-in-azure-blockchain-service"></a>Ограничения в блокчейн-сервисе Azure
 
@@ -35,7 +35,6 @@ ms.locfileid: "80529576"
 Максимальное количество хранилища, которое может быть использовано на узла для данных и журналов реестра реестра, составляет 1,8 терабайта.
 
 Уменьшение размера регистра и хранилища журналов не поддерживается.
-
 ## <a name="consortium-limits"></a>Ограничения консорциума
 
 * **Имена консорциумов и членов должны быть уникальными** для других консорциумов и имен членов службы блокчейн Azure.
@@ -59,6 +58,12 @@ ms.locfileid: "80529576"
 * **Все члены консорциума должны использовать одну и ту же версию книги**
 
     Для получения дополнительной информации о версиях исправления, обновлений [Patching, updates, and versions](ledger-versions.md)и книг, доступных в Azure Blockchain Service, см.
+
+## <a name="performance"></a>Производительность
+
+Не используйте газовую *функцию eth.estimate* для каждой передачи транзакции. Функция *eth.estimate* является интенсивной памятью. Вызов функции в несколько раз резко сокращает транзакции в секунду.
+
+Если возможно, используйте консервативную стоимость газа для подачи сделок и минимизировать использование *eth.estimate*.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: fe35dc4c22f3852934cde0d6f33084b56266d514
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9e3c33bb7493f07d9fbf19710f21d0114e7abec8
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73807703"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80757060"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Миграция трафика базы данных Лазурного Средства данных S'L на новые шлюзы
 
@@ -54,7 +54,7 @@ ms.locfileid: "73807703"
 
 Мы рекомендуем разрешить исходящий трафик на IP-адреса для всех [IP-адресов шлюза базы данных Azure S'L](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) database в регионе на порте TCP 1433 и портового диапазона 11000-11999. Эта рекомендация применима к клиентам, подключенным из помещений, а также тем, кто подключается через Услуги Endpoints. Для получения дополнительной информации [Connection policy](sql-database-connectivity-architecture.md#connection-policy)о диапазонах портов см.
 
-Соединения, сделанные из приложений, использующих Microsoft JDBC Driver ниже версии 4.0, могут привести к отказу в проверке сертификата. Нижние версии Microsoft JDBC опираются на общее имя (CN) в поле предмета сертификата. Смягчение должно обеспечить, чтобы свойство hostNameInCertificate было установлено на database.windows.net. Для получения дополнительной информации о том, как настроить свойство hostNameInCertificate, [см. Подключение с SSL шифрования](/sql/connect/jdbc/connecting-with-ssl-encryption).
+Соединения, сделанные из приложений, использующих Microsoft JDBC Driver ниже версии 4.0, могут привести к отказу в проверке сертификата. Нижние версии Microsoft JDBC опираются на общее имя (CN) в поле предмета сертификата. Смягчение должно обеспечить, чтобы свойство hostNameInCertificate было установлено на database.windows.net. Для получения дополнительной информации о том, как настроить свойство hostNameInCertificate, [см. Подключение с шифрованием](/sql/connect/jdbc/connecting-with-ssl-encryption).
 
 Если приведенное выше смягчение не работает, подайте запрос на поддержку базы данных S'L, используя следующий URL:https://aka.ms/getazuresupport
 

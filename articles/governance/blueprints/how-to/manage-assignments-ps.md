@@ -3,12 +3,12 @@ title: Как управлять назначениями с Помощью Powe
 description: Узнайте, как управлять назначениями чертежей с помощью официального модуля Azure Blueprints PowerShell, Az.Blueprint.
 ms.date: 09/30/2019
 ms.topic: how-to
-ms.openlocfilehash: b16cf887ba8bfc51616839db5f4af87944ec686d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0868e5e207202511c1981a930870bfdc68a77a8f
+ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80247407"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677429"
 ---
 # <a name="how-to-manage-assignments-with-powershell"></a>Как управлять назначениями с Помощью PowerShell
 
@@ -27,12 +27,12 @@ ms.locfileid: "80247407"
 
 ### <a name="install-the-module"></a>Установка модуля
 
-Модуль Blueprints для PowerShell является **Az.Blueprint**.
+Модуль Azure Blueprints для PowerShell является **Az.Blueprint**.
 
 1. Запустите следующие команды из командной строки PowerShell **с правами администратора**.
 
    ```azurepowershell-interactive
-   # Install the Blueprints module from PowerShell Gallery
+   # Install the Azure Blueprints module from PowerShell Gallery
    Install-Module -Name Az.Blueprint
    ```
 
@@ -379,7 +379,7 @@ Remove-AzBlueprintAssignment -InputObject $bpAssignment -SubscriptionId '{subId}
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
+- Узнайте о [жизненном цикле чертежей.](../concepts/lifecycle.md)
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../concepts/resource-locking.md).

@@ -11,12 +11,12 @@ ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 28dbe66d27ac75bee2ceecd160ead3dea6538034
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 6e942130d9acf803665e52498ef6a4976cc9ade7
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633810"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743174"
 ---
 # <a name="performance-tuning-with-materialized-views"></a>Performance tuning with materialized views (Настройка производительности с помощью материализованных представлений)
 
@@ -32,7 +32,7 @@ ms.locfileid: "80633810"
 
 Материализованное представление предварительно вычисляет, хранит и поддерживает свои данные в пуле S'L точно так же, как таблица.  При использовании материализованного представления перерасчет не требуется.  Вот почему запросы, которые используют все или подмножество данных в материализованных представлениях, могут получить более высокую производительность.  Более того, запросы могут использовать материализованное представление без прямой ссылки на него, поэтому нет необходимости менять код приложения.  
 
-Большинство требований, предъявляемых к стандартному представлению, по-прежнему применяются к материализованному представлению. Для получения подробной информации о материализованном синтаксисе представления и других требованиях, обратитесь к [CREATE MATERIALIZED VIEW AS SELECT](https://docs.microsoft.com/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest).
+Большинство требований, предъявляемых к стандартному представлению, по-прежнему применяются к материализованному представлению. Для получения подробной информации о материализованном синтаксисе представления и других требованиях, обратитесь к [CREATE MATERIALIZED VIEW AS SELECT](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 | Сравнение                     | Просмотр                                         | Материализованное представление
 |:-------------------------------|:---------------------------------------------|:--------------------------------------------------------------|
@@ -58,8 +58,8 @@ ms.locfileid: "80633810"
 По сравнению с другими поставщиками хранилища данных материализованные представления, реализованные в Хранилище данных Azure S'L, также предоставляют следующие дополнительные преимущества:
 
 - Автоматическое и синхронное обновление данных с изменениями данных в базовых таблицах. Вмешательство пользователя не требуется.
-- Широкая агрегированная поддержка функций. Смотрите [CREATE MATERIALIZED VIEW AS SELECT (Трансакт-СЗЛ)](https://docs.microsoft.com/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest).
-- Поддержка рекомендации по конкретному запросу материализованного представления.  Смотрите [EXPLAIN (Трансакт-СЗЛ)](https://docs.microsoft.com/sql/t-sql/queries/explain-transact-sql?view=azure-sqldw-latest).
+- Широкая агрегированная поддержка функций. Смотрите [CREATE MATERIALIZED VIEW AS SELECT (Трансакт-СЗЛ)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Поддержка рекомендации по конкретному запросу материализованного представления.  Смотрите [EXPLAIN (Трансакт-СЗЛ)](/sql/t-sql/queries/explain-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ## <a name="common-scenarios"></a>Распространенные сценарии  
 

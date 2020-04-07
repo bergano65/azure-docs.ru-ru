@@ -1,14 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов менеджера ресурсов
 description: Укажите список типов ресурсов «Менеджер ресурсов ресурса», поддерживаемый графиком ресурсов Azure и историей изменений.
-ms.date: 03/23/2020
+ms.date: 04/06/2020
 ms.topic: reference
-ms.openlocfilehash: 64fd860090cc15cc6914ee926772146b98477edb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 85cab92981568f5ea3770e1102c3480ae4f3e638
+ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80130615"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677056"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица график ресурсов Azure и ссылка на тип ресурса
 
@@ -188,6 +188,7 @@ Graph ресурсAzры поддерживает следующие **типы 
 - microsoft.eventhub/кластеры
 - microsoft.eventhub/namespaces
 - microsoft.experimentation/experimentworkspaces
+- microsoft.falcon/namespaces
 - microsoft.gaming/titles
 - microsoft.genomics/accounts
 - microsoft.guestconfiguration/automanagedaccounts
@@ -290,6 +291,7 @@ Graph ресурсAzры поддерживает следующие **типы 
 - microsoft.network/networkexperimentпрофили
 - microsoft.network/networkintentpolicies
 - microsoft.network/networkinterfaces
+- microsoft.network/networkmanagers
 - microsoft.network/networkprofiles
 - microsoft.network/networksecuritygroups
 - microsoft.network/networkvirtualappliances
@@ -446,6 +448,7 @@ Graph ресурсAzры поддерживает следующие **типы 
 - wandisco.fusion/fusiongroups
 - wandisco.fusion/fusiongroups/azurezones
 - wandisco.fusion/fusiongroups/azurezones/plugins
+- wandisco.fusion/fusiongroups/hivereplicationrules
 - wandisco.fusion/fusiongroups/managedonpremzones
 - wandisco.fusion/fusiongroups/onpremzones
 - wandisco.fusion/fusiongroups/replicationrules

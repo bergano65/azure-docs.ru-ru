@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 66da0321930ac38217a336380c9889963a433e67
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 94e5e6fb826528aab1a358d44cb51bfcd6219032
+ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75531366"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80673592"
 ---
 # <a name="implement-iot-plug-and-play-preview-model-discovery-in-an-iot-solution"></a>Внедрение обнаружения модели IoT Plug и Play Preview в решении IoT
 
@@ -46,7 +46,7 @@ ms.locfileid: "75531366"
 
 Вы будете иметь модель возможностей и интерфейсы для устройств, которые будут подключаться к вашему решению заранее. Используйте следующие шаги для подготовки решения:
 
-1. Храните интерфейс jSON файлов в Azure в месте, где ваше решение может прочитать их.
+1. Храните интерфейс jSON файлов в [репозитории моделей,](./howto-manage-models.md) где ваше решение может прочитать их.
 1. Напишите логику в своем решении IoT на основе ожидаемых моделей и интерфейса возможностей IoT Plug и Play.
 1. Подпишитесь на уведомления от концентратора IoT, который использует ваше решение.
 

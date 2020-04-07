@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: dceff3e320554edc972654aa49552bffbc4c9a13
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 821007e40eaa91c98f157ee0b28fe01f37e3cbc9
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286495"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743965"
 ---
 # <a name="update-an-existing-iot-edge-module-offer"></a>Обновление существующего предложения модуля IoT Edge
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
 
 В этой статье описана процедура обновления предложения модуля IoT Edge на [Портале Cloud Partner](https://cloudpartner.azure.com/) и его повторная публикация.
 

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: arthii, logicappspm
 ms.topic: article
 ms.date: 12/05/2019
-ms.openlocfilehash: 797cd82327d68003d4e5f007d1f16e9534092ac0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f2f8b9f207993c49201d03d3d1fed3c5800e8780
+ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79283996"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80673815"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -22,7 +22,7 @@ ms.locfileid: "79283996"
 * [Microsoft Power Apps на месте данных шлюз](/powerapps/maker/canvas-apps/gateway-reference)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
-В этой статье показано, как загружать, устанавливать и настраивать шлюз данных, чтобы можно было получить доступ к источникам данных из приложений Azure Logic Apps. Вы также можете узнать больше о [том, как работает шлюз данных](#gateway-cloud-service) позже в этой теме. Для получения дополнительной информации о шлюзе, [см. Что такое на-предварительный шлюз?](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem)
+В этой статье показано, как загружать, устанавливать и настраивать шлюз данных, чтобы можно было получить доступ к источникам данных из приложений Azure Logic Apps. Вы также можете узнать больше о [том, как работает шлюз данных](#gateway-cloud-service) позже в этой теме. Для получения дополнительной информации о шлюзе, [см. Что такое на-предварительный шлюз?](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem) Чтобы автоматизировать установку шлюзов и задачи управления, посетите галерею PowerShell для [DataGateway PowerShell cmdlets.](https://www.powershellgallery.com/packages/DataGateway/3000.15.15)
 
 <a name="requirements"></a>
 

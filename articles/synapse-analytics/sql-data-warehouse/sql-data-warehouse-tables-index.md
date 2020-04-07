@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: d5acc2b69ed521af4fd4777dc9f3496290078379
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 0d63f2c29bfdbdf320185647bd33ec30500ed874
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80583270"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80742694"
 ---
 # <a name="indexing-tables-in-synapse-sql-pool"></a>Таблицы индексирования в бассейне Synapse S'L
 
@@ -24,9 +24,9 @@ ms.locfileid: "80583270"
 
 ## <a name="index-types"></a>Типы индексов
 
-Бассейн Synapse S'L предлагает несколько вариантов индексации, включая [кластерные индексы столбцов,](/sql/relational-databases/indexes/columnstore-indexes-overview) [кластерные индексы и некластерные индексы,](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described)а также неиндексный вариант, также известный как [куча.](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes)  
+Бассейн Synapse S'L предлагает несколько вариантов индексации, включая [кластерные индексы столбцов,](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) [кластерные индексы и некластерные индексы,](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)а также неиндексный вариант, также известный как [куча.](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  
 
-Чтобы создать таблицу с индексом, см. [CREATE TABLE (Synapse SQL pool)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse)
+Чтобы создать таблицу с индексом, см. [CREATE TABLE (Synapse SQL pool)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 ## <a name="clustered-columnstore-indexes"></a>Кластеризованные индексы Columnstore
 
@@ -230,7 +230,7 @@ EXEC sp_addrolemember 'xlargerc', 'LoadUser'
 
 Войдите в систему в качестве пользователя со ступени 1 (например, LoadUser), который теперь использует более высокий класс ресурсов, и выполняйте операторы ALTER INDEX. Убедитесь, что этот пользователь имеет разрешение ALTER в отношении таблиц, в которых будет выполнятся перестроение индекса. В этих примерах показано перестроение всего индекса Columnstore и перестроение одной секции. В больших таблицах целесообразно перестроить только одну секцию за раз.
 
-Кроме того, вместо восстановления индекса можно скопировать таблицу в новую таблицу [с помощью CTAS.](sql-data-warehouse-develop-ctas.md) Какой способ лучше? Для больших объемов данных инструкция CTAS обычно выполняется быстрее, чем [ALTER INDEX](/sql/t-sql/statements/alter-index-transact-sql). Что же касается небольших объемов данных, рекомендуем использовать инструкцию ALTER INDEX. Она проще в использовании и не требует замены таблицы.
+Кроме того, вместо восстановления индекса можно скопировать таблицу в новую таблицу [с помощью CTAS.](sql-data-warehouse-develop-ctas.md) Какой способ лучше? Для больших объемов данных инструкция CTAS обычно выполняется быстрее, чем [ALTER INDEX](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Что же касается небольших объемов данных, рекомендуем использовать инструкцию ALTER INDEX. Она проще в использовании и не требует замены таблицы.
 
 ```sql
 -- Rebuild the entire clustered index
@@ -252,7 +252,7 @@ ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_CO
 ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_COMPRESSION = COLUMNSTORE)
 ```
 
-Восстановление индекса в пуле Synapse S'L является автономной операцией.  Дополнительные сведения о перестройке индексов см. в разделе об использовании инструкции ALTER INDEX REORGANIZE в статьях [Дефрагментация индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-defragmentation) и работе с [ALTER INDEX (Transact-SQL)](/sql/t-sql/statements/alter-index-transact-sql).
+Восстановление индекса в пуле Synapse S'L является автономной операцией.  Дополнительные сведения о перестройке индексов см. в разделе об использовании инструкции ALTER INDEX REORGANIZE в статьях [Дефрагментация индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-defragmentation?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и работе с [ALTER INDEX (Transact-SQL)](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ### <a name="step-3-verify-clustered-columnstore-segment-quality-has-improved"></a>Шаг 3. Проверка улучшения качества кластеризованных сегментов Columnstore
 
@@ -260,7 +260,7 @@ ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_CO
 
 ## <a name="rebuilding-indexes-with-ctas-and-partition-switching"></a>Перестроение индексов с помощью инструкции CTAS и переключения секций
 
-В этом примере для перестроения секции таблицы используется инструкция [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) и переключение секций.
+В этом примере для перестроения секции таблицы используется инструкция [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и переключение секций.
 
 ```sql
 -- Step 1: Select the partition of data and write it out to a new table using CTAS
@@ -285,6 +285,6 @@ ALTER TABLE [dbo].[FactInternetSales_20000101_20010101] SWITCH PARTITION 2 TO  [
 
 Для получения более подробной информации о воссоздании разделов с помощью CTAS [см.](sql-data-warehouse-tables-partition.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).

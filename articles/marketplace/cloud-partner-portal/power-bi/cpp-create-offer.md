@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 01/29/2019
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: ee3501e7feec77c842f3784f6c2820af05637e6b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 43bb34a80d8d62cfa2bde445b94fb97da25ccda3
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286393"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745475"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 В этой статье приведены шаги по созданию нового предложения приложения Power BI для [AppSource](https://appsource.microsoft.com). Каждое предложение отображается в виде отдельной сущности в AppSource. При создании нового предложения на [Портале Cloud Partner](https://cloudpartner.azure.com/) необходимо предоставить четыре группы ресурсов для предложения.
 

@@ -2,13 +2,13 @@
 title: Расширение базы знаний в QnA Maker
 description: Улучшить качество вашей базы знаний с активным обучением. Просмотрите, примите или отклоняйте, добавляйте, не удаляя и не изменяя существующие вопросы.
 ms.topic: conceptual
-ms.date: 03/31/2020
-ms.openlocfilehash: 1eb0ed42f700c14350a5e4f1eff9b7592cbf8ef6
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.date: 04/06/2020
+ms.openlocfilehash: 7fafc23eaf21099ebb974da226d07c351fa19699
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80474884"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756743"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять активное обучение предлагаемые вопросы в базе знаний
 
@@ -33,7 +33,7 @@ ms.locfileid: "80474884"
 
 1. Каждая пара NA предлагает новые альтернативы `✔` вопроса с галочкой, , принять вопрос или `x` отклонить предложения. Установите флажок, чтобы добавить вопрос.
 
-    [![Выберите или отклоните предложенные варианты вопроса активного обучения, выбрав зеленый чековую отметку или красный знак удаления.](../media/improve-knowledge-base/accept-active-learning-suggestions.png)](../media/improve-knowledge-base/accept-active-learning-suggestions.png#lightbox)
+    [![Выберите или отклоните предложенные варианты вопроса активного обучения, выбрав зеленый чековую отметку или красный знак удаления.](../media/improve-knowledge-base/accept-active-learning-suggestions-small.png)](../media/improve-knowledge-base/accept-active-learning-suggestions.png#lightbox)
 
     Вы можете добавить или удалить _все предложения,_ выбрав **Добавить все** или **отклонить все** в контекстной панели инструментов.
 
@@ -127,7 +127,7 @@ Content-Type: application/json
 {"feedbackRecords": [{"userId": "1","userQuestion": "<question-text>","qnaId": 1}]}
 ```
 
-|Свойство запроса HTTP|Имя|Тип|Назначение|
+|Свойство запроса HTTP|name|Type|Назначение|
 |--|--|--|--|
 |Параметр маршрута URL|Идентификатор базы знаний|строка|Идентификатор GUID для базы знаний.|
 |Пользовательский поддомен|Имя ресурса NAMaker|строка|Название ресурса используется в качестве пользовательского поддона для вашего создателя. Это доступно на странице «Настройки» после публикации базы знаний. Он указан как `host`.|
@@ -137,7 +137,7 @@ Content-Type: application/json
 
 Тело JSON имеет несколько настроек:
 
-|Свойство тела JSON|Тип|Назначение|
+|Свойство тела JSON|Type|Назначение|
 |--|--|--|--|
 |`feedbackRecords`|массиве|Список отзывов.|
 |`userId`|строка|Идентификатор пользователя лица, принимающего предложенные вопросы. Формат идентификатора пользователя за вами. Например, адрес электронной почты может быть действительным идентификатором пользователя в вашей архитектуре. Необязательный параметр.|
@@ -343,7 +343,7 @@ async callTrain(stepContext){
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)

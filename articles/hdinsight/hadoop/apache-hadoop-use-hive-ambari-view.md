@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/24/2019
-ms.openlocfilehash: 6c199a0dd75b89d9c9368e799c97a28b73758d06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: hdinsightactive
+ms.date: 04/06/2020
+ms.openlocfilehash: 787d88d336abcf3b0ba9b14c3d3798850b665eca
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73097105"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745090"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -23,14 +23,13 @@ ms.locfileid: "73097105"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Хадуп на HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
-* веб-браузера;
+Кластер Хадуп на HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
 ## <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
-1. На [портале Azure](https://portal.azure.com/)выберите кластер.  Смотрите [список и отображайте кластеры](../hdinsight-administer-use-portal-linux.md#showClusters) для инструкций. Кластер откроется в новой колонке портала.
+1. На [портале Azure](https://portal.azure.com/)выберите кластер.  Смотрите [список и отображайте кластеры](../hdinsight-administer-use-portal-linux.md#showClusters) для инструкций. Кластер открывается в новом представлении портала.
 
-1. Из **панелей мониторинга кластера**выберите **виды Ambari.** Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Кроме того, `https://CLUSTERNAME.azurehdinsight.net/#/main/views` перейдите в `CLUSTERNAME` браузере, где находится название кластера.
+1. Из **панелей мониторинга кластера**выберите **виды Ambari.** Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Вы также можете `https://CLUSTERNAME.azurehdinsight.net/#/main/views` перемещаться `CLUSTERNAME` в браузере, где находится название кластера.
 
 1. В списке представлений выберите __Представление Hive__.
 
@@ -59,18 +58,15 @@ ms.locfileid: "73097105"
         GROUP BY t4;
     ```
 
-    Эти операторы выполняют следующие действия:
+    Эти заявления делают следующие действия:
 
-   * `DROP TABLE` — удаляет таблицу и файл данных, если таблица уже существует.
-
-   * `CREATE EXTERNAL TABLE` — создает "внешнюю" таблицу в Hive.
-     Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
-
-   * `ROW FORMAT` — показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.
-
-   * `STORED AS TEXTFILE LOCATION` — показывает место хранения данных и их формат (текст).
-
-   * `SELECT` — выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].
+    |. | Описание |
+    |---|---|
+    |DROP TABLE|удаляет таблицу и файл данных, если таблица уже существует.|
+    |СОЗДАНИЕ ВНЕШНЕЙ ТАБЛИЦЫ|создает "внешнюю" таблицу в Hive. Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.|
+    |ФОРМАТ СТРОКИ|показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.|
+    |СОХРАНЯЕТСЯ КАК МЕСТОПОЛОЖЕНИЕ ТЕКСТФАЙЛА|показывает место хранения данных и их формат (текст).|
+    |SELECT|выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].|
 
    > [!IMPORTANT]  
    > Оставьте для параметра __База данных__ значение __по умолчанию__. В примерах в этом документе используется база данных по умолчанию, входящая в состав HDInsight.
@@ -116,7 +112,7 @@ ms.locfileid: "73097105"
 
 Из вкладки **«Запрос»** можно дополнительно сохранить запросы. После сохранения запроса можно повторно использовать его из вкладки __Saved Queries__ (Сохраненные запросы).
 
-![Представление Apache Hive сохранено на вкладке запросов](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
+![Представления Apache Hive сохранены на вкладке запросов](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
 
 > [!TIP]  
 > Запросы сохраняются в системе хранения данных кластера по умолчанию. Сохраненные запросы можно найти в следующем расположении: `/user/<username>/hive/scripts`. Они хранятся в виде обычных текстовых файлов `.hql`.
@@ -131,7 +127,7 @@ ms.locfileid: "73097105"
 
 ![Apache Hive просмотреть дисплей вкладок UDFs](./media/apache-hadoop-use-hive-ambari-view/user-defined-functions.png)
 
-После добавления в представление Hive UDF в нижней части **редактора запросов** появляется кнопка **Insert udfs** (Вставить определяемые пользователем функции). Нажав эту кнопку, вы увидите раскрывающийся список функций, определенных в представлении Hive. Выбирая определяемую пользователем функцию, вы добавляете в запрос соответствующие инструкции HiveQL.
+Кнопка **insert udfs** отображается в нижней части **редактора запроса.** Эта запись отображает список выпадающих данных UDF, определенный в Представлени Hive View. Выбирая определяемую пользователем функцию, вы добавляете в запрос соответствующие инструкции HiveQL.
 
 Например, если вы определили UDF со следующими свойствами:
 
@@ -155,13 +151,13 @@ create temporary function myawesomeudf as 'com.myudfs.Awesome';
 Дополнительные сведения об использовании определяемых пользователем функций с Hive в HDInsight см. в следующих статьях:
 
 * [Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight](python-udf-hdinsight.md)
-* [How to add custom Hive UDFs to HDInsight](https://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx) (Как добавить пользовательские UDF Hive в HDInsight)
+* [Использование определяемых пользователем функций Java с Apache Hive в HDInsight](./apache-hadoop-hive-java-udf.md)
 
 ## <a name="hive-settings"></a>Параметры Hive
 
 Вы можете изменять различные настройки Hive. Например, для изменения механизма выполнения для Hive с Tez (значение по умолчанию) на MapReduce.
 
-## <a name="next-steps"></a><a id="nextsteps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общая информация о Hive в HDInsight:
 
