@@ -77,6 +77,8 @@
           href: troubleshoot-guide-critical-process-died.md
         - name: Сбой критически важной службы
           href: troubleshoot-critical-service-failed-boot-error.md
+        - name: При применении политик локальных пользователей и групп виртуальная машина не отвечает
+          href: troubleshoot-vm-unresponsive-group-policy-local-users.md
         - name: 'Диск, не поддерживающий загрузку'
           href: troubleshoot-guide-not-bootable-disk.md
         - name: Цикл перезагрузки
@@ -87,6 +89,8 @@
           href: troubleshoot-vm-boot-configure-update.md
         - name: Не удается загрузить виртуальную машину из-за диспетчера загрузки Windows
           href: troubleshoot-guide-windows-boot-manager-menu.md
+        - name: Виртуальная машина не отвечает из-за обновления
+          href: unresponsive-vm-apply-windows-update.md
 - name: Не удается подключиться к виртуальной машине
   items:
     - name: RDP

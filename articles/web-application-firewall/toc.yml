@@ -18,6 +18,14 @@
       items:
         - name: Брандмауэр веб-приложения в Azure CDN
           href: ./cdn/cdn-overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Шлюз приложений
+      items:
+        - name: "Развертывание WAF версии\_2 с помощью шаблона ARM"
+          displayName: Resource Manager
+          href: ./ag/quick-create-template.md
 - name: Учебники
   items:
     - name: Шлюз приложений

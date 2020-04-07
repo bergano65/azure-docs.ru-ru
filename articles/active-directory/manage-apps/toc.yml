@@ -7,6 +7,8 @@
       href: what-is-application-management.md
     - name: Что собой представляет прокси приложения для локальных приложений?
       href: what-is-application-proxy.md
+    - name: Общие сценарии управления приложениями
+      href: common-scenarios.md
     - name: Что собой представляет подготовка приложения?
       href: /azure/active-directory/app-provisioning/user-provisioning?context=azure/active-directory/manage-apps/context/manage-apps-context
 - name: Краткие руководства
@@ -84,7 +86,7 @@
           href: application-proxy-connectors.md
         - name: Группы соединителей
           href: application-proxy-connector-groups.md
-        - name: безопасность
+        - name: Безопасность
           href: application-proxy-security.md
         - name: Топология сети
           href: application-proxy-network-topology.md

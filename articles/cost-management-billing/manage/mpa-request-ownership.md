@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: c4366b272aab160828afca927f6432c98a8fecd7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: da16e0898f08e1cca602ca5927bce82ed32353fe
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79370735"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437858"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-to-your-mpa-account"></a>Получение права владения на выставление счетов в подписках Azure по учетной записи MPA
 
@@ -139,7 +139,7 @@ ms.locfileid: "79370735"
 
 ### <a name="azure-reservations-transfer"></a>Перемещение Azure Reserved Virtual Machine Instances
 
-Резервирования в Azure не переносятся автоматически вместе с подписками. Вы можете сохранить резервирование в EA для других подписок или [отменить резервирование](https://docs.microsoft.com/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations), после чего партнер сможет повторно приобрести его в рамках CSP. 
+Azure Reserved Virtual Machine Instances не перемещаются с подписками автоматически. Вы можете сохранить резервирование в EA для других подписок или [отменить резервирование](https://docs.microsoft.com/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations), после чего партнер сможет повторно приобрести его в рамках CSP. 
 
 ### <a name="access-to-azure-services"></a>Доступ к службам Azure
 

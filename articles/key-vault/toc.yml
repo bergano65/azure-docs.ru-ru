@@ -69,12 +69,14 @@
   items:
     - name: Основные понятия
       href: basic-concepts.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Общие сведения о безопасности
           href: overview-security.md
         - name: Базовые средства безопасности
           href: security-baseline.md
+        - name: Встроенные функции обеспечения безопасности
+          href: key-vault-security-controls.md
         - name: Системы безопасности
           href: key-vault-ovw-security-worlds.md
         - name: Защита хранилища ключей
@@ -103,7 +105,7 @@
           href: create-certificate-scenarios.md
 - name: Практические руководства
   items:
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Рекомендации
           href: security-recommendations.md

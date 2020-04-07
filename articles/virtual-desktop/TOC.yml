@@ -88,6 +88,10 @@
       href: app-attach.md
     - name: Использование Microsoft Teams
       href: teams-on-wvd.md
+    - name: Настройка Многофакторной идентификации Azure
+      href: set-up-mfa.md
+    - name: Установка языковых пакетов
+      href: language-packs.md
 - name: Основные понятия
   items:
     - name: Среда Виртуального рабочего стола Windows
