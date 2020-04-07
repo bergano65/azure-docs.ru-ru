@@ -32,8 +32,6 @@
       href: tutorial-sql-backup.md
     - name: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
       href: tutorial-backup-sap-hana-db.md
-    - name: Резервное копирование общих папок в службе Файлы Azure
-      href: tutorial-backup-azure-files.md
     - name: Резервное копирование Windows Server
       href: tutorial-backup-windows-server-to-azure.md
     - name: Восстановление файлов в Windows Server

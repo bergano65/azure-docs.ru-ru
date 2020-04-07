@@ -3,12 +3,12 @@ title: Управление базами знаний - NA Maker
 description: Компания «NA Maker» позволяет управлять базами знаний, предоставляя доступ к настройкам базы знаний и контенту.
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 57839125011016daed5f0b3d441a83e8db488198
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4eb07b30b10826c361f4f9b805b517e372fc5ea1
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80071147"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756799"
 ---
 # <a name="create-knowledge-base-and-manage-settings"></a>Создание базы знаний и управление настройками
 
@@ -17,7 +17,7 @@ ms.locfileid: "80071147"
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
-> * Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
+> * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 > * [Ресурс nA Maker,](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) созданный на портале Azure. Запишите идентификатор Azure Active Directory, подписку и имя ресурса QnA, выбранное при создании ресурса.
 
 ## <a name="create-a-knowledge-base"></a>Создание базы знаний
@@ -107,5 +107,5 @@ ms.locfileid: "80071147"
 
 Узнайте об [управлении языком](language-knowledge-base.md) всех баз знаний в ресурсе.
 
-* Наборы «Эрит»
+* Элит пар Зна
 * Управление ресурсами Azure, используемыми создателем NA

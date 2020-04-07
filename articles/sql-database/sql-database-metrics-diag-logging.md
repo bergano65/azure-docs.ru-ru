@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
-ms.date: 03/10/2020
-ms.openlocfilehash: 880072c9865e38e181869506e35968767fa95e8a
-ms.sourcegitcommit: d0fd35f4f0f3ec71159e9fb43fcd8e89d653f3f2
+ms.date: 04/06/2020
+ms.openlocfilehash: 9c9f069ad38c65aa0bbfdcde9eef3fed32585d9e
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80387909"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756415"
 ---
 # <a name="configure-streaming-export-of-azure-sql-database-diagnostic-telemetry"></a>Настройка потокового экспорта диагностической телеметрии базы данных Azure S'L
 
@@ -126,7 +126,7 @@ ms.locfileid: "80387909"
 7. Выберите флажок для упругой пульт диагностической телеметрии: **Основные** метрики.
    ![Настройка диагностики для эластичных пулов](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-elasticpool-selection.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Щелкните **Сохранить**.
 9. Кроме того, настроить потоковую передачу диагностической телеметрии для каждой базы данных в эластичной пуле, которую вы хотите контролировать, выполняя следующие шаги, описанные в следующем разделе.
 
 > [!IMPORTANT]
@@ -155,7 +155,7 @@ ms.locfileid: "80387909"
 8. Для расширенного, одноминутного мониторинга выберите флажок для **основных** метрик.
 
    ![Настройка диагностики для отдельных баз данных, баз данных в пуле или баз данных экземпляров](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-selection.png)
-9. Нажмите кнопку **Сохранить**.
+9. Щелкните **Сохранить**.
 10. Повторите эти шаги для каждой базы данных, которые вы хотите контролировать.
 
 > [!TIP]
@@ -167,7 +167,7 @@ ms.locfileid: "80387909"
 
 | Ресурс | Мониторинг телеметрии |
 | :------------------- | ------------------- |
-| **Управляемый экземпляр** | [ResourceUsageStats](#resource-usage-stats-for-managed-instances) содержит количество виртуальных ядер, средний процент использования ЦП, а также сведения о запросах ввода-вывода, прочитанных и записанных байтах, зарезервированном и используемом дисковом пространстве. |
+| **управляемый экземпляр** | [ResourceUsageStats](#resource-usage-stats-for-managed-instances) содержит количество виртуальных ядер, средний процент использования ЦП, а также сведения о запросах ввода-вывода, прочитанных и записанных байтах, зарезервированном и используемом дисковом пространстве. |
 
 Для настройки потоковой передачи диагностической телеметрии для управляемых баз данных экземпляров и экземпляров необходимо отдельно настроить каждую из них:
 
@@ -191,7 +191,7 @@ ms.locfileid: "80387909"
 
    ![Настройка диагностики для управляемого экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-mi-selection.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Щелкните **Сохранить**.
 9. Кроме того, настроить потоковую передачу диагностической телеметрии для каждой базы данных экземпляра в управляемом экземпляре, который требуется контролировать, следуя шагам, описанным в следующем разделе.
 
 > [!IMPORTANT]
@@ -219,7 +219,7 @@ ms.locfileid: "80387909"
 5. Выберите ресурс назначения для данных потоковой диагностики: **Архив для учетной записи хранения,** **Поток к концентратору событий**или Отправить в Log **Analytics.**
 6. Выберите флажки для диагностической телеметрии базы данных: **S'LInsights**, **queryStoreRuntimeStatistics**, **queryStoreWaitStatistics**, и **Ошибки**.
    ![Настройка диагностики для баз данных экземпляров](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-selection.png)
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 8. Повторите эти действия для каждой базы данных экземпляра, под ней вы хотите контролировать.
 
 > [!TIP]
@@ -283,7 +283,7 @@ ms.locfileid: "80387909"
 
   Замените \<subID\> идентификатором подписки, \<RG_NAME\> именем группы ресурсов, а \<WS_NAME\> — именем рабочей области.
 
-# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Можно включить ведение журналов метрик и диагностики с помощью Azure CLI.
 
@@ -438,13 +438,13 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="basic-metrics-for-elastic-pools"></a>Основные метрики для эластичных бассейнов
 
-|**Ресурсов**|**Метрики**|
+|**Ресурс**|**Метрики**|
 |---|---|
 |Эластичный пул|Сведения о проценте использования DTU, используемых единицах DTU, ограничении DTU, проценте использования ЦП, проценте чтения физических данных, проценте записей в журнал, проценте сеансов, проценте рабочих ролей, хранилище, проценте хранилища, ограничении хранилища, проценте хранилища XTP. |
 
 #### <a name="basic-metrics-for-single-and-pooled-databases"></a>Основные метрики для отдельных и объединенных баз данных
 
-|**Ресурсов**|**Метрики**|
+|**Ресурс**|**Метрики**|
 |---|---|
 |Единая и объединенная база данных|Сведения о проценте использования DTU, используемых единицах DTU, ограничении DTU, проценте использования ЦП, проценте чтения физических данных, проценте записей в журнал, проценте успешных, неудачных или заблокированных подключений брандмауэра, проценте сеансов, проценте рабочих ролей, хранилище, проценте хранилища, проценте хранилища XTP и взаимоблокировках. |
 
@@ -452,11 +452,17 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 Обратитесь к следующей таблице для получения подробной информации о расширенных метриках.
 
-|**Метрические**|**Отображаемое имя метрики**|**Описание**|
+|**Метрика**|**Отображаемое имя метрики**|**Описание**|
 |---|---|---|
-|tempdb_data_size| Темпб данных файл размер килобайт |Темп файла данных Размер килобайт. Не применяется к хранилищам данных. Эта метрика будет доступна для баз данных с использованием модели покупки vCore с 2 vCores и выше, или 200 DTU и выше для DTU на основе моделей покупки. Эта метрика в настоящее время недоступна для баз данных Hyperscale.|
-|tempdb_log_size| Tempdb журнал файл размер килобайт |Tempdb журнал файл размер килобайт. Не применяется к хранилищам данных. Эта метрика будет доступна для баз данных с использованием модели покупки vCore с 2 vCores и выше, или 200 DTU и выше для DTU на основе моделей покупки. Эта метрика в настоящее время недоступна для баз данных Hyperscale.|
-|tempdb_log_used_percent| Tempdb Процент Журнала Используется |Tempdb Процент Журнала Используется. Не применяется к хранилищам данных. Эта метрика будет доступна для баз данных с использованием модели покупки vCore с 2 vCores и выше, или 200 DTU и выше для DTU на основе моделей покупки. Эта метрика в настоящее время недоступна для баз данных Hyperscale.|
+|sqlserver_process_core_percent<sup>1</sup>|Основные проценты основных процессов сервера Сервера|Процент использования процессора для процесса S'L Server, измеряемый операционной системой.|
+|sqlserver_process_memory_percent<sup>1</sup> |Процент памяти процесса обработки серверов S'L|Процент использования памяти для процесса S'L Server, измеряемый операционной системой.|
+|tempdb_data_size<sup>2</sup>| Темпб данных файл размер килобайт |Темп файла данных Размер килобайт.|
+|tempdb_log_size<sup>2</sup>| Tempdb журнал файл размер килобайт |Tempdb журнал файл размер килобайт.|
+|tempdb_log_used_percent<sup>2</sup>| Tempdb Процент Журнала Используется |Tempdb Процент Журнала Используется.|
+
+<sup>1</sup> Эта метрика доступна для баз данных, использующих модель покупки vCore с 2 vCores и выше, или 200 DTU и выше для DTU на основе моделей покупки. 
+
+<sup>2</sup> Эта метрика доступна для баз данных с использованием модели покупки vCore с 2 vCores и выше, или 200 DTU и выше для DTU на основе моделей покупки. Эта метрика в настоящее время недоступна для баз данных Hyperscale или складов данных.
 
 ### <a name="basic-logs"></a>Основные журналы
 
@@ -469,7 +475,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure.|
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: ResourceUsageStats |
 |Ресурс|Имя ресурса. |
@@ -494,7 +500,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreRuntimeStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreRuntimeStatisticsEvent. |
@@ -545,7 +551,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreWaitStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreWaitStatisticsEvent. |
@@ -583,7 +589,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Errors. |
 |OperationName|Имя операции. Всегда: ErrorEvent. |
@@ -612,7 +618,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: DatabaseWaitStatistics. |
 |OperationName|Имя операции. Всегда: DatabaseWaitStatisticsEvent. |
@@ -641,7 +647,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Timeouts. |
 |OperationName|Имя операции. Всегда: TimeoutEvent. |
@@ -664,7 +670,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Blocks. |
 |OperationName|Имя операции. Всегда: BlockEvent. |
@@ -688,7 +694,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC] |Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Deadlocks. |
 |OperationName|Имя операции. Всегда: DeadlockEvent. |
@@ -709,7 +715,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: AutomaticTuning. |
 |Ресурс|Имя ресурса. |

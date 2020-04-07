@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 03/31/2020
+ms.date: 04/06/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 64469641173cfe31c3e4fbac5e2f21c75a94c716
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: df7461443fc9e89209545e8a2dfb9ad0addf3f3e
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80521864"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80757151"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Используйте Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -110,6 +110,7 @@ ms.locfileid: "80521864"
 
 
 ## <a name="change-log"></a>Журнал изменений
+- 04/06/2020: Изменения в [масштабе SAP HANA с резервным узлом на Azure VMs с файлами Azure NetApp на SLES](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse) и в [SAP HANA масштаб-аут с резервным узлом на Azure VMs с azure NetApp Файлы на RHEL,](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-rhel) чтобы удалить ссылки на NetApp [TR-4435](https://www.netapp.com/us/media/tr-4746.pdf) (заменен [TR-4746](https://www.netapp.com/us/media/tr-4746.pdf))
 - 03/31/2020: Изменение [высокой доступности SAP HANA на Azure VMs на SLES](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability) и [высокая доступность SAP HANA на Azure VMs на RHEL,](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel) чтобы добавить инструкции, как указать размер полосы при создании полосатых томов
 - 03/27/2020: Изменение [высокой доступности для SAP NW на Azure VMs на SLES с помощью ПРИЛОЖЕНИй SAP для выравнивания](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files) вариантов крепления файловой системы с NetApp TR-4746 (удалите опцию синхронизации)
 - 03/26/2020: Изменение [высокой доступности для SAP NetWeaver на Azure VMs на SLES мульти-SID руководство,](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-multi-sid) чтобы добавить ссылку на NetApp TR-4746

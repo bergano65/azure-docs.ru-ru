@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: nishankgu
 ms.author: nigup
 ms.date: 03/05/2020
-ms.openlocfilehash: 17a4652604c0faa804d24530869aac0848c972b3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 530647c3d32b62f0cac250795ccce580b182fa92
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78399159"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756601"
 ---
 # <a name="manage-and-request-quotas-for-azure-resources"></a>Управление квотами для ресурсов Azure и их запрашивание
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -60,9 +60,9 @@ ms.locfileid: "78399159"
 
 + Кластеры в регионе имеют предел по умолчанию 200. Они распределяются между обучаемым кластером и экземпляром вычислений (который рассматривается как единый кластер узлов для целей квот). Свяжитесь со службой поддержки Azure, чтобы оставить запрос на повышение лимита.
 
-+ Есть и другие строгие ограничения, которые не могут быть превышены после попадания.
++ Есть и другие строгие ограничения, которые не могут быть превышены после удара.
 
-| **Ресурсов** | **Максимальное ограничение** |
+| **Ресурс** | **Максимальное ограничение** |
 | --- | --- |
 | Максимальное количество рабочих областей на группу ресурсов | 800 |
 | Максимальное число узлов в одном ресурсе Вычислительной среды Машинного обучения Azure (AmlCompute) | 100 узлов |
@@ -91,7 +91,7 @@ ms.locfileid: "78399159"
 
 Более подробный и актуальный список квот см. в [статье о квотах на уровне среды Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#container-instances-limits).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 Существует ограничение на количество учетных записей хранения в регионе, а также в рамках данной подписки. Лимит по умолчанию составляет 250 и включает в себя как стандартные, так и премиум-аккаунты. Если требуется более 250 учетных записей хранилища в данном регионе, сделайте запрос через [поддержку Azure.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/) Команда разработчиков службы хранилища Azure рассмотрит вашу аргументацию и может утвердить до 250 учетных записей хранения для заданного региона.
 
 

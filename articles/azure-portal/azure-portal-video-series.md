@@ -5,16 +5,16 @@ services: azure-portal
 keywords: ''
 author: mgblythe
 ms.author: mblythe
-ms.date: 12/20/2019
+ms.date: 04/06/2020
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 93c9ce45fd660f444146827e2f5bafaeb12fc471
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5aa1a677836be3f05269539d52abf7bd8704833d
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76310531"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80757064"
 ---
 # <a name="azure-portal-how-to-video-series"></a>Серия видеоинструкций по работе с порталом Azure
 
@@ -22,18 +22,18 @@ ms.locfileid: "76310531"
 
 ## <a name="featured-video"></a>Рекомендуемое видео
 
-В этом видео, мы исследуем, как устранить общие проблемы с виртуальными машинами.
+В этом видео мы покажем вам, как сэкономить деньги в Azure, используя рекомендации по затратам Azure Advisor.
 
-> [!VIDEO https://www.youtube.com/embed/MAJrN-2IPY8]
+> [!VIDEO https://www.youtube.com/embed/ky2WS3KWuYs]
 
-[Устранение проблем с общими проблемами с виртуальными машинами](https://www.youtube.com/watch?v=MAJrN-2IPY8)
+[Как использовать рекомендации по затратам на Консультанте Azure](https://www.youtube.com/watch?v=ky2WS3KWuYs)
 
 Догнать на этих последних видео вы, возможно, пропустили:
 
 |   |   |   |
 | ------| ------ | ------ |
-| [![Изображение видео YouTube о том, как создать функциональное приложение](https://i.ytimg.com/vi/BEIZKCDElMs/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAf2gcTSuNBP-DczGeEB7rQLKc4UQ)](http://www.youtube.com/watch?v=BEIZKCDElMs) | [![Изображение видео YouTube о том, как использовать новый домашний экран Azure](https://i.ytimg.com/vi/Ddo__jkzgVo/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBUZwS_xaZIkYNakpHFvFIiD8i-Tw)](http://www.youtube.com/watch?v=Ddo__jkzgVo) | [![Изображение видео YouTube о том, как максимально ещё можно сделать из Azure Advisor](https://i.ytimg.com/vi/ANz3cCiFsJw/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAiBhmM0tZo_eV_u_JClkx3SXaWFw)](http://www.youtube.com/watch?v=ANz3cCiFsJw) |
-| [Как создать функциональное приложение](https://www.youtube.com/watch?v=BEIZKCDElMs) | [Как использовать новый дом Azure](https://www.youtube.com/watch?v=Ddo__jkzgVo) | [Как максимально сделать из Azure Advisor](https://www.youtube.com/watch?v=ANz3cCiFsJw) |
+| [![Изображение видео YouTube об использовании трудовых книжек Azure Monitor](https://i.ytimg.com/vi/Z5xRyy3HB8U/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAf2gcTSuNBP-DczGeEB7rQLKc4UQ)](http://www.youtube.com/watch?v=Z5xRyy3HB8U) | [![Изображение видео YouTube о фильтрации просмотра списка ресурсов на портале Azure](https://i.ytimg.com/vi/L3I-xOZKWcg/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBUZwS_xaZIkYNakpHFvFIiD8i-Tw)](http://www.youtube.com/watch?v=L3I-xOZKWcg) | [![Изображение видео YouTube об использовании автоматического обновления для приборных панелей](https://i.ytimg.com/vi/tVoDXygZzWM/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAiBhmM0tZo_eV_u_JClkx3SXaWFw)](http://www.youtube.com/watch?v=tVoDXygZzWM) |
+| [Использование трудовых книжек Azure Monitor](https://www.youtube.com/watch?v=Z5xRyy3HB8U) | [Фильтрация представления списка ресурсов на портале Azure](https://www.youtube.com/watch?v=L3I-xOZKWcg) | [Использование автоматического обновления для панелей мониторинга](https://www.youtube.com/watch?v=tVoDXygZzWM) |
 
 ## <a name="video-playlist"></a>Видео плейлист
 

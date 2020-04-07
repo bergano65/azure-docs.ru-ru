@@ -2,16 +2,16 @@
 title: Создание приложения функции Azure с помощью Java и Eclipse
 description: Практическое руководство по созданию простого бессерверного HTTP-приложения с использованием Java и Eclipse и его публикации в решении "Функции Azure".
 author: jeffhollan
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: c82432a3d76a84eba1ad921d936b2f3ba064e2ae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 42e9ed7c080c9274fad7eda8e4c8af3631ed41f5
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79136839"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756485"
 ---
 # <a name="create-your-first-function-with-java-and-eclipse"></a>Создайте свою первую функцию с помощью Java и Eclipse 
 
@@ -28,7 +28,7 @@ ms.locfileid: "79136839"
 -  [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.
 -  [Apache Maven](https://maven.apache.org), версия 3.0 или выше.
 -  [Eclipse](https://www.eclipse.org/downloads/packages/) с поддержкой Java и Maven.
--  [Лазурный CLI](https://docs.microsoft.com/cli/azure)
+-  [Azure CLI](https://docs.microsoft.com/cli/azure)
 
 > [!IMPORTANT] 
 > Переменной среде JAVA_HOME необходимо присвоить расположение установки JDK, чтобы завершить выполнение заданий этого краткого руководства.

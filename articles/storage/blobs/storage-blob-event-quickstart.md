@@ -8,12 +8,12 @@ ms.date: 03/05/2020
 ms.topic: how-to
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: 93a146e481e6bb8b9180012d8c569d45521b4450
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ad5662a722db764d09c1ead528a98c09c1d3df7f
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79269319"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745513"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-azure-cli"></a>Быстрый запуск: События хранения маршрутов в конечную точку С Azure CLI
 
@@ -29,7 +29,7 @@ ms.locfileid: "79269319"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решите установить и использовать CLI локально, эта статья требует, чтобы вы запускали последнюю версию Azure CLI (2.0.70 или позже). Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
+Если вы решите установить и использовать CLI локально, эта статья требует, чтобы вы запускали последнюю версию Azure CLI (2.0.70 или позже). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 Если вы не используете Cloud Shell, сначала выполните вход с помощью `az login`.
 
@@ -93,7 +93,7 @@ storageid=$(az storage account show --name <storage_account_name> --resource-gro
 endpoint=https://$sitename.azurewebsites.net/api/updates
 
 az eventgrid event-subscription create \
-  --resource-id $storageid \
+  --source-resource-id $storageid \
   --name <event_subscription_name> \
   --endpoint $endpoint
 ```

@@ -9,12 +9,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 04/02/2020
-ms.openlocfilehash: 7292064a1df8aa9bfffcd9a19a03f7b332c0615e
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 1298d5fe1d7407e836f454c2130a913dde6f8eec
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632735"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80755141"
 ---
 # <a name="data-science-with-a-linux-data-science-virtual-machine-in-azure"></a>Наука о данных с виртуальной машиной Linux Data Science в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "80632735"
 Набор данных [spambase](https://archive.ics.uci.edu/ml/datasets/spambase) представляет собой относительно небольшой набор данных, содержащий 4601 пример. Набор данных является удобным размером для демонстрации некоторых ключевых особенностей DSVM, поскольку он сохраняет скромные потребности в ресурсах.
 
 > [!NOTE]
-> Это пошаговое походе было создано с помощью D2 v2-размера Linux DSVM (CentOS Edition). Вы можете использовать DSVM такого размера для завершения процедур, которые продемонстрированы в этом пошаговом шаге.
+> Это пошаговое походе было создано с помощью D2 v2-размера Linux DSVM (Ubuntu 18.04 Edition). Вы можете использовать DSVM такого размера для завершения процедур, которые продемонстрированы в этом пошаговом шаге.
 
 Если вам нужно больше места для хранения, вы можете создать дополнительные диски и прикрепить их к DSVM. Диски используют постоянное хранилище Azure, поэтому их данные сохраняются, даже если сервер перезаготовляется из-за повторного размера или выключен. Чтобы добавить диск и прикрепить его к DSVM, завершить шаги в [Добавить диск на Linux VM](../../virtual-machines/linux/add-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). В шагах для добавления диска используется Azure CLI, который уже установлен на DSVM. Вы можете полностью выполнить шаги от самого DSVM. Другим вариантом увеличения хранилища является использование [файлов Azure.](../../storage/files/storage-how-to-use-files-linux.md)
 

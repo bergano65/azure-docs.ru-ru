@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 02/10/2020
-ms.openlocfilehash: f02046d1e2ee558ca4ea4472a03fddb5d0a6a16f
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: feaa0c22ec98d170a65e5c9bee119ba3904a95cf
+ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80549323"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80673728"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов машинного обучения Azure
 
@@ -119,7 +119,7 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path, set_column_type
 titanic_ds.take(3).to_pandas_dataframe()
 ```
 
-| |ПассажирИд|Survived|Pclass|Имя|Секс|Возраст|СибСп|Парч|Билет|Плата|Кабина|Начал
+| |ПассажирИд|Survived|Pclass|name|Секс|Возраст|СибСп|Парч|Билет|Плата|Кабина|Начал
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|False|3|Браунд, мистер Оуэн Харрис|Мужской|22.0|1|0|A/5 21171|7.2500||S
 1|2|True|1|Cumings, миссис Джон Брэдли (Флоренция Бриггс Th...|Женский|38.0|1|0|PC 17599|71.2833|C85|C
@@ -245,7 +245,7 @@ file_dataset = MNIST.get_file_dataset()
 
 from azureml.opendatasets import Diabetes
 
-# Diabetes class can return ONLY return TabularDataset and must be called from the static function
+# Diabetes class can return ONLY TabularDataset and must be called from the static function
 diabetes_tabular = Diabetes.get_tabular_dataset()
 ```
 

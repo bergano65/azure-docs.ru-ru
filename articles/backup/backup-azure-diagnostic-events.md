@@ -3,12 +3,12 @@ title: Использование настроек диагностики для
 description: Статья, описывающая, как использовать старые и новые диагностические события для резервного копирования Azure
 ms.topic: conceptual
 ms.date: 10/30/2019
-ms.openlocfilehash: e3919d120e5f741af6cd30dd27e5a1dfa2b06cf2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d10bedf3818559971eff12624152d0e797f6c3cc
+ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79136945"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80672784"
 ---
 # <a name="using-diagnostics-settings-for-recovery-services-vaults"></a>Использование параметров диагностики для хранилищ Службы восстановления
 
@@ -39,28 +39,60 @@ ms.locfileid: "79136945"
 
 Чтобы отправить данные о диагностике хранилища в Лос-Анджелес:
 
-1.  Перейдите к хранилищу и нажмите на **диагностические настройки.** Нажмите **и добавьте диагностическую настройку**.
-2.  Назовите настройки Диагностики.
-3.  Проверьте поле **Отправить в журнал Analytics** и выберите журнал Analytics Рабочее пространство.
-4.  Выберите **Ресурс Конкретные** в переключении и проверить следующие шесть событий - **CoreAzureBackup**, **AddonAzureBackupAlerts**, **AddonAzureBackupProtectedInstance**, **AddonAzureBackupJobs**, **AddonAzureBackupPolicy**, и **AddonAzureBackupStorage**.
-5.  Нажмите на **Сохранить**.
+1.    Перейдите к хранилищу и нажмите на **диагностические настройки.** Нажмите **и добавьте диагностическую настройку**.
+2.    Назовите настройки Диагностики.
+3.    Проверьте поле **Отправить в журнал Analytics** и выберите журнал Analytics Рабочее пространство.
+4.    Выберите **Ресурс Конкретные** в переключении и проверить следующие шесть событий - **CoreAzureBackup**, **AddonAzureBackupAlerts**, **AddonAzureBackupProtectedInstance**, **AddonAzureBackupJobs**, **AddonAzureBackupPolicy**, и **AddonAzureBackupStorage**.
+5.    Нажмите на **Сохранить**.
 
 ![Режим «Конкретный ресурс»](./media/backup-azure-diagnostics-events/resource-specific-blade.png)
 
 Как только данные поступают в рабочее пространство Лос-Анджелеса, в рабочей области создаются специальные таблицы для каждого из этих событий. Вы можете задать вопрос любой из этих таблиц напрямую, а также выполнить соединения или соединения между этими таблицами, если это необходимо.
 
 > [!IMPORTANT]
-> Вышеупомянутые шесть событий, а именно: CoreAzureBackup, AddonAzureBackupAlerts, AddonAzureBackupProtectedInstance, AddonAzureBackUpJobs, AddonAzureBackupPolicy и AddonAzureBackupStorage, поддерживаются **только** в режиме ресурса. **Обратите внимание, что если вы попытаетесь отправить данные для этих шести событий в режиме Azure Diagnostics, никакие данные не будут поступать в рабочее пространство Лос-Анджелеса.**
+> Вышеупомянутые шесть событий, а именно: CoreAzureBackup, AddonAzureBackupAlerts, AddonAzureBackupProtectedInstance, AddonAzureBackUpJobs, AddonAzureBackupPolicy и AddonAzureBackupStorage, поддерживаются **только** в режиме ресурса в [отчетах о резервном копировании.](https://docs.microsoft.com/azure/backup/configure-reports) **Обратите внимание, что если вы попытаетесь отправить данные для этих шести событий в режиме диагностики Azure, в отчетах о резервном копировании данных не будет видно.**
 
 ## <a name="legacy-event"></a>Наследие событие
 
 Традиционно все данные диагностики, связанные с резервным копированием для хранилища, содержатся в одном событии под названием «AzureBackupReport». Шесть описанных выше событий, по сути, являются разложением всех данных, содержащихся в AzureBackupReport. 
 
-В настоящее время мы продолжаем поддерживать событие AzureBackupReport для обратной совместимости, в тех случаях, когда пользователи имеют существующие пользовательские запросы на этом событии, например, пользовательские оповещения журнала, пользовательские визуализации и т.д. Тем не менее, **мы рекомендуем перейти к новым событиям как можно раньше,** так как это значительно упрощает работу с данными в запросах журнала, обеспечивает лучшую обнаруживаемость схем и их структуры, повышает производительность как во время задержки приема, так и во время запроса. **Поддержка использования режима Azure Diagnostics в конечном итоге будет постепенно прекращена, и поэтому выбор новых событий может помочь вам избежать сложных миграций на более поздний срок.**
+В настоящее время мы продолжаем поддерживать событие AzureBackupReport для обратной совместимости, в тех случаях, когда пользователи имеют существующие пользовательские запросы на этом событии, например, пользовательские оповещения журнала, пользовательские визуализации и т.д. Тем не менее, **мы рекомендуем перейти к [новым событиям](https://docs.microsoft.com/azure/backup/backup-azure-diagnostic-events#diagnostics-events-available-for-azure-backup-users) как можно раньше,** так как это значительно упрощает работу с данными в запросах журнала, обеспечивает лучшую обнаруживаемость схем и их структуры, повышает производительность как во время задержки приема, так и во время запроса. 
 
-Используйте встроенную политику Резервного копирования Azure, чтобы добавить новую настройку диагностики с 6 новыми событиями для всех хранилищ в определенной области: [Настройте настройки диагностики Vault в масштабе](https://docs.microsoft.com/azure/backup/azure-policy-configure-diagnostics)
+**Наследие события в режиме Azure Diagnostics в конечном итоге будет обескуражено, и, следовательно, выбор новых событий может помочь вам избежать сложных миграций на более поздний срок.** Наше решение для [отчетности,](https://docs.microsoft.com/azure/backup/configure-reports) которое использует Log Analytics, также перестанет поддерживать данные из устаревшего события.
 
-Вы можете создать отдельные настройки диагностики для AzureBackupReport и шести новых событий, пока не перейдете все пользовательские запросы для использования данных из новых таблиц. На рисунке ниже показан пример хранилища с двумя диагностическими настройками. Первая настройка под названием **Setting1** отправляет данные события AzureBackupReport в рабочее пространство LA в режиме AzureDiagnostics. Второй параметр под названием **Setting2** отправляет данные о шести новых событиях резервного копирования Azure в рабочее пространство LA в режиме «Конкретные ресурсы».
+### <a name="steps-to-move-to-new-diagnostics-settings-to-log-analytics-workspace"></a>Шаги для перехода к новым настройкам диагностики (в рабочее пространство Log Analytics)
+
+1. Определите, какие хранилища отправляют данные в рабочее пространство Log Analytics (ы) с помощью устаревшего события и подписки, к которым они принадлежат. Выполнить ниже рабочие области, чтобы определить эти хранилища и подписки:
+
+    ````Kusto
+    let RangeStart = startofday(ago(3d));
+    let VaultUnderAzureDiagnostics = (){
+        AzureDiagnostics
+        | where TimeGenerated >= RangeStart | where Category == "AzureBackupReport" and OperationName == "Vault" and SchemaVersion_s == "V2"
+        | summarize arg_max(TimeGenerated, *) by ResourceId    
+        | project ResourceId, Category};
+    let VaultUnderResourceSpecific = (){
+        CoreAzureBackup
+        | where TimeGenerated >= RangeStart | where OperationName == "Vault" 
+        | summarize arg_max(TimeGenerated, *) by ResourceId
+        | project ResourceId, Category};
+        // Some Workspaces will not have AzureDiagnostics Table, hence you need to use isFuzzy
+    let CombinedVaultTable = (){
+        CombinedTable | union isfuzzy = true 
+        (VaultUnderAzureDiagnostics() ),
+        (VaultUnderResourceSpecific() )
+        | distinct ResourceId, Category};
+    CombinedVaultTable | where Category == "AzureBackupReport"
+    | join kind = leftanti ( 
+    CombinedVaultTable | where Category == "CoreAzureBackup"
+    ) on ResourceId
+    | parse ResourceId with * "SUBSCRIPTIONS/" SubscriptionId:string "/RESOURCEGROUPS" * "MICROSOFT.RECOVERYSERVICES/VAULTS/" VaultName:string
+    | project ResourceId, SubscriptionId, VaultName
+    ````
+
+2. Используйте [встроенную политику Azure Backure](https://docs.microsoft.com/azure/backup/azure-policy-configure-diagnostics) для добавления новой настройки диагностики для всех хранилищ в заданной области. Эта политика добавляет новую настройку диагностики в те хранилища, которые либо не имеют настройки диагностики (или) имеют только устаревшие настройки диагностики. Эта политика может быть назначена всей группе подписки или ресурсов одновременно. Обратите внимание, что вам потребуется доступ к каждой подписке, для которой назначена политика.
+
+Вы можете выбрать отдельные настройки диагностики для AzureBackupReport и шести новых событий, пока не перейдете все пользовательские запросы для использования данных из новых таблиц. На рисунке ниже показан пример хранилища с двумя диагностическими настройками. Первая настройка под названием **Setting1** отправляет данные события AzureBackupReport в рабочее пространство LA в режиме AzureDiagnostics. Второй параметр под названием **Setting2** отправляет данные о шести новых событиях резервного копирования Azure в рабочее пространство LA в режиме «Конкретные ресурсы».
 
 ![Две настройки](./media/backup-azure-diagnostics-events/two-settings-example.png)
 

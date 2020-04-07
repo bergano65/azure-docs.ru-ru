@@ -2,16 +2,16 @@
 title: Создание функции Azure с помощью Java и IntelliJ
 description: Сведения о создание и публикации простого независимого HTTP-приложения в Azure с использованием функций Java и IntelliJ.
 author: jeffhollan
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 7003dc19a7bfc405809de91534028aba8e0416c5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 05074696ca2cc9d425269561523beb11eb18c4f3
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79136856"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756443"
 ---
 # <a name="create-your-first-azure-function-with-java-and-intellij"></a>Создайте свою первую функцию Azure с помощью Java и IntelliJ
 
@@ -31,7 +31,7 @@ ms.locfileid: "79136856"
 - [Комплект Java-разработчика](https://www.azul.com/downloads/zulu/) (JDK), версия 8
 - [Apache Maven 3.0](https://maven.apache.org) или более поздней версии
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download), версия Community или Ultimate с Maven
-- [Лазурный CLI](https://docs.microsoft.com/cli/azure)
+- [Azure CLI](https://docs.microsoft.com/cli/azure)
 
 > [!IMPORTANT]
 > Чтобы завершить выполнение шагов из этой статьи, переменной среде JAVA_HOME необходимо присвоить расположение установки JDK.

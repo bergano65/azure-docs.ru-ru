@@ -1,14 +1,14 @@
 ---
 title: Создание приложения-функции на платформе Linux с помощью портала Azure
 description: Узнайте, как создать первую функцию Azure, выполняемую без сервера, с помощью портала Azure.
-ms.topic: quickstart
+ms.topic: how-to
 ms.date: 02/28/2019
-ms.openlocfilehash: 1492188f72eb4a691ddceb78aa269601f192e467
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: b2de36faf07ad661ff8817adc48b726f54990ceb
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76963841"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80754115"
 ---
 # <a name="create-a-function-app-on-linux-in-an-azure-app-service-plan"></a>Создание приложения-функции на платформе Linux в плане службы приложений Azure
 

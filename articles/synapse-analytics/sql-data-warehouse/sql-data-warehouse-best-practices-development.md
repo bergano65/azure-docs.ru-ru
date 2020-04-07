@@ -11,30 +11,34 @@ ms.date: 09/04/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 5857a10d0aaf0d0c37ab55a2d0d29e5315340c9f
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 9c4f08b143ab4a0d3e780f68f8d5ab823d4eae12
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633651"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745366"
 ---
 # <a name="development-best-practices-for-synapse-sql-pool"></a>Лучшие практики разработки для бассейна Synapse S'L
-В этой статье описаны рекомендации и рекомендации по разработке решения для пула S'L. 
 
-## <a name="tune-query-performance-with-new-product-enhancements"></a>Настройка производительности запроса с помощью новых усовершенствований продукта  
+В этой статье описаны рекомендации и рекомендации по разработке решения для пула S'L.
+
+## <a name="tune-query-performance-with-new-product-enhancements"></a>Настройка производительности запроса с помощью новых усовершенствований продукта
+
 - [Performance tuning with materialized views](performance-tuning-materialized-views.md) (Настройка производительности с помощью материализованных представлений)
 - [Performance tuning with result set caching](performance-tuning-ordered-cci.md) (Настройка производительности с помощью упорядоченного кластеризованного индекса columnstore)
 - [Performance tuning with result set caching](performance-tuning-result-set-caching.md) (Настройка производительности путем кэширования результирующего набора)
 
 ## <a name="reduce-cost-with-pause-and-scale"></a>Снижение расходов за счет приостановки и масштабирования ресурсов
-Для получения дополнительной информации о снижении затрат [Manage compute](sql-data-warehouse-manage-compute-overview.md) за счет приостановки и масштабирования см. 
+
+Для получения дополнительной информации о снижении затрат [Manage compute](sql-data-warehouse-manage-compute-overview.md) за счет приостановки и масштабирования см.
 
 ## <a name="maintain-statistics"></a>Обеспечение статистики
+
 Пул спомощьи может быть настроен для автоматического обнаружения и создания статистики по столбцам.  Планы запросов, созданные оптимизатором, хороши только так же хорошо, как и доступная статистика.  
 
-Мы рекомендуем включить AUTO_CREATE_STATISTICS для баз данных и обновлять статистику ежедневно или после каждой загрузки, чтобы гарантировать, что статистика столбцов, используемых в ваших запросах, всегда актуальна. 
+Мы рекомендуем включить AUTO_CREATE_STATISTICS для баз данных и обновлять статистику ежедневно или после каждой загрузки, чтобы гарантировать, что статистика столбцов, используемых в ваших запросах, всегда актуальна.
 
-Если вы обнаружите, что обновление всех статистических данных занимает слишком много времени, вы можете попытаться быть более избирательными в отношении того, какие столбцы нуждаются в частых обновлениях статистики. Например, можно ежедневно обновлять столбцы дат, в которые добавляются новые значения. 
+Если вы обнаружите, что обновление всех статистических данных занимает слишком много времени, вы можете попытаться быть более избирательными в отношении того, какие столбцы нуждаются в частых обновлениях статистики. Например, можно ежедневно обновлять столбцы дат, в которые добавляются новые значения.
 
 > [!TIP]
 > Наибольшую выгоду вы получите, обновив статистику по столбикам, участвующим в соединениях, столбцам, используемым в пункте WHERE, и столбцам, найденным в GROUP BY.
@@ -42,6 +46,7 @@ ms.locfileid: "80633651"
 Смотрите также [Управление таблицей статистики](sql-data-warehouse-tables-statistics.md), [CREATE STATISTICS](sql-data-warehouse-tables-statistics.md), и ОБНОВЛЕНИЕ [STATISTICS](sql-data-warehouse-tables-statistics.md#update-statistics).
 
 ## <a name="hash-distribute-large-tables"></a>Хэш-распределение больших таблиц
+
 По умолчанию таблицы распределяются по методу циклического перебора.  Эта конструкция упрощает для пользователей начало создавать таблицы без необходимости решать, как распределять их таблицы.  
 
 Таблицы с распределением по методу циклического перебора могут вполне годиться для некоторых рабочих нагрузок, но в большинстве случаев намного эффективнее использовать столбец распределения.  Наглядно это превосходство можно увидеть при объединении больших таблиц фактов.  
@@ -53,6 +58,7 @@ ms.locfileid: "80633651"
 Смотрите также [Обзор таблицы](sql-data-warehouse-tables-overview.md), [Распределение таблицы](sql-data-warehouse-tables-distribute.md), [Выбор распределения таблицы](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [CREATE TABLE](sql-data-warehouse-tables-overview.md), и CREATE TABLE [AS SELECT](sql-data-warehouse-develop-ctas.md)
 
 ## <a name="do-not-over-partition"></a>Недопущение избыточного секционирования
+
 В то время как данные раздела могут быть эффективными для поддержания ваших данных путем переключения разделов или оптимизации сканирования с помощью исключения раздела, наличие слишком большого количества разделов может замедлить ваши запросы.  
 
 Часто стратегия раздела с высокой гранулированностью, которая может хорошо работать на сервере S'L, может плохо работать в пуле S'L.  Слишком большое количество секций снижает эффективность кластеризованных индексов Columnstore, если в секции содержится менее миллиона строк.  
@@ -65,6 +71,7 @@ ms.locfileid: "80633651"
 Смотрите также [раздел таблицы](sql-data-warehouse-tables-partition.md).
 
 ## <a name="minimize-transaction-sizes"></a>Уменьшение размера транзакций
+
 Инструкции INSERT, UPDATE и DELETE выполняются в транзакциях. В случае сбоя их необходимо откатить.  Чтобы сократить время выполнения отката, необходимо по возможности уменьшить размеры транзакций.  Это можно сделать, разделив инструкции INSERT, UPDATE и DELETE на части.  
 
 Например, если у вас есть INSERT, который, как ожидается, займет 1 час, если это возможно, разбейте INSERT на четыре части, каждая из которых будет работать за 15 минут.  Для снижения риска отката можно использовать специальные случаи минимальной регистрации, такие как CTAS, TRUNCATE, DROP TABLE или INSERT.  
@@ -73,9 +80,10 @@ ms.locfileid: "80633651"
 
 Для неразделенных таблиц рассмотрите возможность использования CTAS для записи данных, которые вы хотите сохранить в таблице, а не с помощью DELETE.  Если CTAS занимает столько же времени, это гораздо безопаснее работать, поскольку она имеет минимальный журнал записи транзакций и может быть отменена быстро, если это необходимо.
 
-Смотрите также [Понимание транзакций](sql-data-warehouse-develop-transactions.md), [Оптимизация транзакций](sql-data-warehouse-develop-best-practices-transactions.md), [Раздел таблицы](sql-data-warehouse-tables-partition.md), [TRUNCATE TABLE](https://msdn.microsoft.com/library/ms177570.aspx), ALTER [TABLE](https://msdn.microsoft.com/library/ms190273.aspx), и [Создать таблицу как выбрать (CTAS)](sql-data-warehouse-develop-ctas.md).
+Смотрите также [Понимание транзакций](sql-data-warehouse-develop-transactions.md), [Оптимизация транзакций](sql-data-warehouse-develop-best-practices-transactions.md), [Раздел таблицы](sql-data-warehouse-tables-partition.md), [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), ALTER [TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), и [Создать таблицу как выбрать (CTAS)](sql-data-warehouse-develop-ctas.md).
 
 ## <a name="use-the-smallest-possible-column-size"></a>Использование минимального размера столбца
+
 При определении DDL использование наименьшего типа данных, который будет поддерживать ваши данные, улучшит производительность запроса.  Этот подход особенно важен для столбцов CHAR и VARCHAR.  
 
 Если самое длинное значение в столбце состоит из 25 знаков, столбец необходимо определить как VARCHAR(25).  Не рекомендуется использовать по умолчанию длинные значения столбцов.  Кроме того, по возможности определяйте столбцы как VARCHAR, а не NVARCHAR.
@@ -83,6 +91,7 @@ ms.locfileid: "80633651"
 Смотрите также обзор [таблицы, типы данных таблицы](sql-data-warehouse-tables-data-types.md)и [CREATE TABLE.](sql-data-warehouse-tables-overview.md) [Table overview](sql-data-warehouse-tables-overview.md)
 
 ## <a name="optimize-clustered-columnstore-tables"></a>Оптимизация таблиц с кластеризованными индексами columnstore
+
 Кластерные индексы столбцов являются одним из наиболее эффективных способов хранения данных в пуле S'L.  По умолчанию таблицы в пуле S'L создаются как кластерный columnStore.  
 
 > [!NOTE]
@@ -98,16 +107,17 @@ ms.locfileid: "80633651"
 
 Для таблицы с менее чем 60 миллионами строк может не иметь смысла иметь индекс столбцов.  Для таблицы с количеством строк менее 60 миллионов бессмысленно использовать индекс Columnstore, хотя он и не повлияет на производительность.  
 
-Более того, чтобы воспользоваться преимуществами кластеризованного индекса Columnstore при секционировании данных, каждая секция должна состоять из миллиона строк.  Если таблица состоит из 100 секций, чтобы использовать кластеризованный индекс Columnstore, она должна состоять из как минимум 6 миллиардов строк (60 распределений * 100 секций * 1 миллион строк).  
+Более того, чтобы воспользоваться преимуществами кластеризованного индекса Columnstore при секционировании данных, каждая секция должна состоять из миллиона строк.  Если таблица имеет 100 разделов, то она должна иметь по крайней мере 6 миллиардов строк, чтобы воспользоваться кластерными столбиками магазина (60 дистрибутивов *100 разделов* 1 миллион строк).  
 
 Если таблица не содержит такого количества строк, рекомендуется уменьшить количество секций или использовать таблицу без кластеризованных индексов.  Чтобы получить более высокую производительность, возможно, вместо кластеризованной таблицы стоит использовать таблицу без кластеризованных индексов, содержащую вторичные индексы.
 
 > [!TIP]
 > Если выбрать только необходимые столбцы, запросы к таблице ColumnStore будут выполняться быстрее.  
 
-Смотрите также [индексы таблицы,](sql-data-warehouse-tables-index.md) [направляющиеся индексы columnstore](https://msdn.microsoft.com/library/gg492088.aspx)и[индексы магазина восстановления.](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality)
+Смотрите также [индексы таблицы,](sql-data-warehouse-tables-index.md) [направляющиеся индексы columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)и [индексы магазина восстановления.](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality)
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 Если вы не нашли то, что искали в этой статье, попробуйте использовать «Поиск документов» в левой части этой страницы для поиска всех документов Azure Synapse.  
 
 [Форум Azure Synapse](https://social.msdn.microsoft.com/Forums/sqlserver/home?forum=AzureSQLDataWarehouse) — это место для размещения вопросов другим пользователям и группе продуктов Azure Synapse.  Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  
@@ -115,5 +125,3 @@ ms.locfileid: "80633651"
 Вопросы также можно задавать на [форуме по хранилищу данных SQL Azure на сайте Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw).
 
 Используйте страницу [обратной связи Azure Synapse](https://feedback.azure.com/forums/307516-sql-data-warehouse) для запросов функций.  Ваши отзывы и голоса за отзывы, оставленные другими пользователями, помогут нам определить, какие улучшения функций наиболее приоритетные.
-
-

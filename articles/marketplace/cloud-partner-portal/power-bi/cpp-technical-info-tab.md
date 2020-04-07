@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 04/24/2019
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: ab84cc2f4910d1186e842758df7814ca5dd6464d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 92bc172fd9a47d3b140e60a4083d65a2f532769a
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281652"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745575"
 ---
 # <a name="power-bi-apps-technical-info-tab"></a>Вкладка технической информации о приложениях Power BI
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 На странице **«Новое предложение»** используйте вкладку **«Техническая информация»,** чтобы предоставить URL-адрес пакета установки Power BI и другую информацию, необходимую для проверки нового предложения.  Для первоначального релиза все приложения Power BI бесплатны и доступны для скачивания с AppSource. Из-за этого вы не можете определить единицы учета запасов (SKUs) для этого типа предложения.
 

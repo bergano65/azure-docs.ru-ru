@@ -11,12 +11,12 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e1d0c5cd850fa0dbacf104d3fcd72d83007df878
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 6fa8bd42eb067124ab6ea1db77e2f3d6fba79638
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632250"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745211"
 ---
 # <a name="restore-an-existing-sql-pool"></a>Восстановление существующего пула S'L
 
@@ -28,12 +28,12 @@ ms.locfileid: "80632250"
 
 ## <a name="before-you-begin"></a>Подготовка к работе
 
-1. Убедитесь в том, чтобы [установить Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
+1. Убедитесь в том, чтобы [установить Azure PowerShell](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Имейте существующую точку восстановления, которую вы хотите восстановить. Если требуется создать новое восстановление, [см.](sql-data-warehouse-restore-points.md)
 
 ## <a name="restore-an-existing-sql-pool-through-powershell"></a>Восстановление существующего пула S'L через PowerShell
 
-Для восстановления существующего пула S'L из точки восстановления используйте смдлет [Restore-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) PowerShell.
+Для восстановления существующего пула S'L из точки восстановления используйте смдлет [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) PowerShell.
 
 1. Откройте PowerShell.
 
@@ -45,7 +45,7 @@ ms.locfileid: "80632250"
 
 5. Выберите нужные точки восстановления с помощью свойства RestorePointCreationDate.
 
-6. Восстановить пул S'L в нужной точке восстановления с помощью [Restore-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) PowerShell cmdlet.
+6. Восстановить пул S'L в нужной точке восстановления с помощью [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) PowerShell cmdlet.
         1. Чтобы восстановить пул S'L на другом логическом сервере, не забудьте указать другое логическое имя сервера.  Этот логический сервер также может находиться в другой группе ресурсов и регионе.
         2. Чтобы восстановить другую подписку, используйте кнопку "Движение", чтобы переместить логический сервер в другую подписку.
 

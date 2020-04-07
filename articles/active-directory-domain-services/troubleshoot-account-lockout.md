@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 10/02/2019
+ms.date: 04/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 2e274aa353f6c3e485ae10a6a67ee2940eb88b08
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7d2e22804c06f589c7990bf8f19319b897363a93
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80246326"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743454"
 ---
 # <a name="troubleshoot-account-lockout-problems-with-an-azure-ad-domain-services-managed-domain"></a>Проблемы блокировки учетной записи с доменом Azure AD Domain
 
@@ -33,11 +33,11 @@ ms.locfileid: "80246326"
 
 ### <a name="fine-grained-password-policy"></a>Политика тонкозернистого пароля
 
-Политики в отношении готовых паролей (FGPP) позволяют применять определенные ограничения для политики блокировки паролей и учетных записей для разных пользователей в домене. FGPP влияет только на пользователей, созданных в Azure AD DS. Облачные пользователи и пользователи доменов, синхронизированные с управляемым доменом Azure AD DS из Azure AD, не подвержены влиянию политик и средств паролей.
+Политики в отношении готовых паролей (FGPP) позволяют применять определенные ограничения для политики блокировки паролей и учетных записей для разных пользователей в домене. FGPP влияет только на пользователей в домене Azure AD DS. Пользователи облачных и доменных, синхронизированные с управляемым доменом Azure AD DS с Azure AD, зависят только от политики паролей в DD Azure AD. Их учетные записи в Azure AD или в каталоге не влияют.
 
 Политики распределяются через групповую ассоциацию в домене Azure AD DS, и любые внесенные изменения применяются при следующем входе пользователя. Изменение политики не открывает учетную запись пользователя, которая уже заблокирована.
 
-Для получения дополнительной информации о мелкозернистых политиках паролей [см.][configure-fgpp]
+Для получения дополнительной информации о мелкозернистых политиках паролей и различиях между пользователями, созданными непосредственно [Configure password and account lockout policies][configure-fgpp]в Azure AD DS и синхронизированных с Azure AD, см.
 
 ## <a name="common-account-lockout-reasons"></a>Общие причины блокировки учетной записи
 

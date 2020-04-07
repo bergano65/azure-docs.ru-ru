@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 01/31/2019
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: df0708ff964595181d00d8402f1162e0832c70eb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0079c5a9409aafd4d6341ec9febb5115dc4023a1
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286376"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745406"
 ---
 # <a name="create-power-bi-app-offer-technical-assets"></a>Создание технических ресурсов предложения приложения Power BI
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 Основной технический ресурс, необходимый для этого типа предложения — приложение Power BI. Приложение Power BI является коллекцией из основного набора данных, отчетов и панелей мониторинга, а также дополнительных подключенных служб и внедренных наборов данных. Она была создана из типа ресурса, ранее известного как [пакет содержимого](https://docs.microsoft.com/power-bi/service-organizational-content-pack-introduction). Дополнительные сведения о разработке такого типа приложений см. в статье [Что такое приложения-шаблоны Power BI? (предварительная версия)](https://go.microsoft.com/fwlink/?linkid=2028636).
 

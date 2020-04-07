@@ -7,16 +7,19 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: dsindona
-ms.openlocfilehash: 1720026b4beff941b02a60cd1c755a043d66bdb5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9b59181f7c1b24a7bc00ab579bbe67a70f499c92
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281499"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80755378"
 ---
 # <a name="configure-lead-management-for-salesforce"></a>Настройка управления интересами для Salesforce
 
-В этой статье описывается, как настроить систему Salesforce для обработки продаж приводит от вашего предложения рынка.
+В этой статье описывается, как настроить систему Salesforce для обработки продаж приводит от вашего коммерческого предложения рынке.
+
+> [!Note]
+> Marketplace не поддерживает предварительно заполненные списки, такие как список значений для поля **страны.** Убедитесь, что перед продолжением списков нет. Кроме того, можно настроить [конечную точку HTTPS](./commercial-marketplace-lead-management-instructions-https.md) или [таблицу Azure](./commercial-marketplace-lead-management-instructions-azure-table.md) для получения удовбытостей.
 
 ## <a name="set-up-your-salesforce-system"></a>Настройка системы Salesforce
 
@@ -26,14 +29,16 @@ ms.locfileid: "80281499"
     ![Установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-1.png)
 
     1. Со страницы настройки перейдите через левую навигацию на **платформу Инструменты >настройки функции >Маркетинг->Web-to-Lead**.
-    ![SalesForce Web-to-Lead](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-2.png)
+
+        ![SalesForce Web-to-Lead](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-2.png)
 
 3. Если вы используете опыт Salesforce Classic:
     1. Выберите **настройку** на главной странице Salesforce.
     ![Классическая установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-setup.png)
 
     1. Со страницы настройки перейдите через левую навигацию в **Build->Настроить->ведет >Web-to-Lead.**
-    ![Salesforce классический веб-к-ведущего](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
+
+        ![Salesforce классический веб-к-ведущего](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
 
 Остальные инструкции одинаковы, независимо от того, какой опыт Salesforce вы используете.
 
@@ -59,7 +64,7 @@ ms.locfileid: "80281499"
 
 1. На всплывающем окне подключения выберите **Salesforce** для **ведущего** назначения `oid` и вставьте в созданной из веб-формы, созданной вами, следуя более ранним шагам в поле **идентификатора Организации.**
 
-1. Нажмите кнопку **Сохранить**. 
+1. Щелкните **Сохранить**. 
 
     >[!Note]
     >Вы должны закончить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить приводит для предложения.

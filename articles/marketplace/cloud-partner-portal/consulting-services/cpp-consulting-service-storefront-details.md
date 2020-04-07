@@ -5,16 +5,19 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 04/23/2019
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 7e1989ee5fcc428bc7d29c17432ded8dab24ecee
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 22531c1080021c5e3724e5584b85bb58446fb1d3
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281703"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80744126"
 ---
 # <a name="storefront-details-tab"></a>Вкладка "Сведения об онлайн-магазине"
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления предложениями услуг Консалтинга в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
 
 В этой статье описывается, как ввести сведения о вашем онлайн-магазине. Вкладка **сведений об онлайн-магазине** состоит из следующих разделов:
 

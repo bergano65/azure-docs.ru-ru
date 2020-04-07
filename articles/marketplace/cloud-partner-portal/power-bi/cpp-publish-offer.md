@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 01/31/2019
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 89d437fe74d209e0dc04ffc590a1e32426b28732
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d52270e623a713d7188ac5ff907ebb82ada13283
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80275872"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745604"
 ---
 # <a name="publish-a-power-bi-app-offer"></a>Опубликуйте предложение Power BI App
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 Последним шагом после того, как вы определили предложение на портале Cloud Partner и создали связанные с ними технические активы, является отправка предложения для публикации. Чтобы начать этот процесс, в левом стекле окна **нового предложения,** выберите **Publish**. Дополнительные сведения см. в статье [Публикация предложений Azure Marketplace и AppSource](../manage-offers/cpp-publish-offer.md).
 

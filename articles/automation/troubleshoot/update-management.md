@@ -8,28 +8,28 @@ ms.date: 03/17/2020
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 91bcdc65a7ff3bcaf09f12d69ba4c7aaeb84ffa7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 900853b1ca68c1c540223db670b1173f5bb2fa2b
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80132860"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80754443"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
-В этой статье рассматриваются решения проблем, с которыми вы можете столкнуться при использовании управления обновлением.
+В этой статье рассматриваются решения проблем, с которыми вы можете встретить при использовании управления обновлением.
 
 Для агента Hybrid Worker есть средство устранения неполадок агента Hybrid Worker, чтобы определить основную проблему. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md). Для всех остальных проблем используйте следующее руководство по устранению неполадок.
 
-Если вы столкнулись с проблемами во время попытки на борту решения на виртуальной машине (VM), проверьте журнал **менеджера операций** в **журнале приложений и служб** на локальной машине для событий с идентификатором событий 4502 и сведениями о событиях, которые содержат `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent`.
+Если вы столкнулись с проблемами при посадке решения на виртуальной машине (VM), проверьте журнал **менеджера операций** в **журнале приложений и служб** на локальной машине. Ищите события с id 4502 события `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent`и сведения о событиях, которые содержат .
 
 В следующем разделе освещаются конкретные сообщения об ошибках и возможные разрешения для каждого из них. Для других вопросов, связанных с посадкой на борт, [см.](onboarding.md)
 
 ## <a name="scenario-you-receive-the-error-failed-to-enable-the-update-solution"></a>Сценарий: Вы получаете ошибку "Не удалось включить решение обновления"
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
-При попытке включить решение управления обновлением в учетной записи Автоматизации вы сталкиваетесь со следующей ошибкой:
+При попытке включить решение управления обновлением в учетную запись Автоматизации вы получаете следующую ошибку:
 
 ```error
 Error details: Failed to enable the Update solution
@@ -39,11 +39,11 @@ Error details: Failed to enable the Update solution
 
 Эта ошибка может возникать по следующим причинам.
 
-* Требования сетевого брандмауэра к агенту Log Analytics могут быть неправильно настроены, в результате чего агент сбой при решении URL-адресов DNS.
+* Требования сетевого брандмауэра к агенту Log Analytics могут быть настроены неправильно. Это может привести к сбою агента при решении URL-адресов DNS.
 
 * Таргетинг решений неправильно настроен, и машина не получает обновлений, как ожидалось.
 
-* Вы также можете заметить, что `Non-compliant` машина показывает статус под **соответствием**. В то же время, агент обновления `Disconnected` **готовности** сообщает агент как .
+* Вы также можете заметить, что `Non-compliant` машина показывает статус под **соответствием**. В то же время, Agent Desktop `Disconnected` **Analytics** сообщает агент, как .
 
 ### <a name="resolution"></a>Решение
 
@@ -53,15 +53,15 @@ Error details: Failed to enable the Update solution
 
 * Перейдите в [сеть планирования,](../../azure-monitor/platform/log-analytics-agent.md#network-requirements) чтобы узнать о том, какие адреса и порты должны быть разрешены для агента журнала Analytics для работы.
 
-* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-onboard-solutions-from-automation-account.md#scope-configuration) определяет, какие машины настраиваться для решения. Если машина отображается в рабочем пространстве, но не на портале **управления обновлением,** вам нужно настроить конфигурацию области для таргетинга на машины. Чтобы узнать о конфигурации области, [см.](../automation-onboard-solutions-from-automation-account.md#onboard-machines-in-the-workspace)
+* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-onboard-solutions-from-automation-account.md#scope-configuration) определяет, какие машины настраиваться для решения. Если машина отображается в рабочем пространстве, но не на портале управления обновлениями, вам необходимо настроить конфигурацию области для таргетинга на машины. Чтобы узнать о конфигурации области, [см.](../automation-onboard-solutions-from-automation-account.md#onboard-machines-in-the-workspace)
 
 * Удалите конфигурацию рабочего, выпустив следующие действия в [деле удаления гибридного сотрудника runbook.](../automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) 
 
 ## <a name="scenario-superseded-update-indicated-as-missing-in-update-management"></a>Сценарий: Застеченное обновление, указанное как отсутствующее в управлении обновлением
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
-Старые обновления появляются в обновлении управления в учетной записи автоматизации, как отсутствует, даже если они были заменены. Замененное обновление — это обновление, которое не должно быть установлено, потому что доступно более позднее обновление, исправляющее ту же уязвимость. Управление обновлением игнорирует замененное обновление и делает его неприменимым в пользу заменяющего обновления. Для получения информации о связанной с ней проблеме [см.](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer)
+Старые обновления появляются в обновлении управления в учетной записи автоматизации, как отсутствует, даже если они были заменены. Замененное обновление — это обновление, которое вам не нужно устанавливать, потому что доступно более позднее обновление, исправляющее ту же уязвимость. Управление обновлением игнорирует замененное обновление и делает его неприменимым в пользу заменяющего обновления. Для получения информации о связанной с ней проблеме [см.](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer)
 
 ### <a name="cause"></a>Причина
 
@@ -69,7 +69,7 @@ Error details: Failed to enable the Update solution
 
 ### <a name="resolution"></a>Решение
 
-Когда заменяемое обновление становится на 100 процентов неприменимым, `Declined`следует изменить состояние утверждения этого обновления на . Для этого для всех ваших обновлений:
+Когда заменяемое обновление становится на 100 процентов неприменимым, `Declined`следует изменить состояние утверждения этого обновления на . Чтобы изменить состояние утверждения для всех обновлений:
 
 1. В учетной записи Automation выберите **управление обновлением** для просмотра состояния машины. Смотрите [оценки обновления просмотра](../manage-update-multi.md#view-an-update-assessment).
 
@@ -83,13 +83,13 @@ Error details: Failed to enable the Update solution
 
 6. Выполнить мастер очистки, чтобы удалить файлы из отклоненных обновлений. 
 
-7. Для WSUS вручную очистите все замененные обновления для обновления инфраструктуры.
+7. Для служб обновления Windows Server (WSUS) вручную очистите все замененные обновления для обновления инфраструктуры.
 
 8. Регулярно повторяйте эту процедуру, чтобы исправить проблему с дисплеем и свести к минимуму количество дискового пространства, используемого для управления обновлением.
 
 ## <a name="scenario-machines-dont-show-up-in-the-portal-under-update-management"></a><a name="nologs"></a>Сценарий: Машины не отображаются на портале под управлением обновления
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Ваши машины имеют следующие симптомы:
 
@@ -109,22 +109,22 @@ Error details: Failed to enable the Update solution
 
 ### <a name="resolution"></a>Решение
 
-* Запустите устранение неполадок для [Windows](update-agent-issues.md#troubleshoot-offline) или [Linux](update-agent-issues-linux.md#troubleshoot-offline), в зависимости от ОС.
+1. Запустите устранение неполадок для [Windows](update-agent-issues.md#troubleshoot-offline) или [Linux](update-agent-issues-linux.md#troubleshoot-offline), в зависимости от ОС.
 
-* Убедитесь, что ваша машина отчитывается перед правильным рабочим пространством. Для получения рекомендаций о том, как проверить этот аспект, [см.](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-log-analytics) Также убедитесь, что это рабочее пространство связано с учетной записью Azure Automation. Чтобы подтвердить, перейдите на свой аккаунт Автоматизации и выберите **связанное рабочее пространство** под **ссылками ресурсов.**
+2. Убедитесь, что ваша машина отчитывается перед правильным рабочим пространством. Для получения рекомендаций о том, как проверить этот аспект, [см.](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-log-analytics) Также убедитесь, что это рабочее пространство связано с учетной записью Azure Automation. Чтобы подтвердить, перейдите на свой аккаунт Автоматизации и выберите **связанное рабочее пространство** под **ссылками ресурсов.**
 
-* Убедитесь, что машины отображаются в рабочем пространстве Log Analytics. Выполнить следующий запрос в рабочей области Log Analytics, который связан с учетной записью Автоматизация:
+3. Убедитесь, что машины отображаются в рабочем пространстве Log Analytics. Выполнить следующий запрос в рабочей области Log Analytics, который связан с учетной записью Автоматизация:
 
   ```loganalytics
   Heartbeat
   | summarize by Computer, Solutions
   ```
- 
-  Если вы не видите свою машину в результатах запроса, она недавно зарегистрировалась, что означает, что, вероятно, существует проблема локальной конфигурации, и вы должны [переустановить агент.](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows) Если машина отображается в результатах запроса, необходимо проверить конфигурацию области, указанную в следующем элементе в этом списке.
 
-* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-onboard-solutions-from-automation-account.md#scope-configuration) определяет, какие машины настраиваться для решения. Если машина отображается в рабочем пространстве, но не на портале **управления обновлением,** вам нужно настроить конфигурацию области для таргетинга на машины. Чтобы узнать, как это сделать, смотрите [бортовые машины в рабочей области.](../automation-onboard-solutions-from-automation-account.md#onboard-machines-in-the-workspace)
+4. Если вы не видите свою машину в результатах запроса, она недавно зарегистрировалась. Вероятно, есть проблема локальной конфигурации, и вы должны [переустановить агент.](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows) 
 
-* В рабочей области запустите следующий запрос:
+5. Если машина отображается в результатах запроса, проверьте проблемы конфигурации области. [Конфигурация области](../automation-onboard-solutions-from-automation-account.md#scope-configuration) определяет, какие машины настроены для решения. Если машина отображается в рабочем пространстве, но не на портале управления обновлениями, необходимо настроить конфигурацию области для таргетинга на машины. Чтобы узнать, как это сделать, смотрите [бортовые машины в рабочей области.](../automation-onboard-solutions-from-automation-account.md#onboard-machines-in-the-workspace)
+
+6. В рабочей области запустите следующий запрос:
 
   ```loganalytics
   Operation
@@ -132,27 +132,27 @@ Error details: Failed to enable the Update solution
   | sort by TimeGenerated desc
   ```
 
-  Если вы `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota` получаете результат, в рабочем пространстве определена квота, которая была достигнута и которая не позволяет сохранить данные. В рабочем пространстве перейдите в управление**объемом данных** **Usage и estimated costs,** > проверьте свою квоту или удалите ее.
+7. Если вы `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota` получаете результат, в рабочем пространстве определена квота, которая была достигнута и которая не позволяет сохранить данные. В рабочем пространстве перейдите к **управлению объемом данных** в рамках **Use и сметных затрат,** а также проверьте свою квоту или удалите ее.
 
-* Если эти действия не решат проблему, выполните следующие действия в [развертывании рабочего с гибридным Runbook Windows](../automation-windows-hrw-install.md) для переустановки гибридного рабочего для Windows. Для Linux выполните последующие шаги в [развертывании Linux Hybrid Runbook Worker.](../automation-linux-hrw-install.md)
+8. Если проблема еще не решена, выполните последующие действия в [развертывании рабочего с гибридным Runbook для](../automation-windows-hrw-install.md) переустановки гибридного рабочего для Windows. Для Linux выполните последующие шаги в [развертывании Linux Hybrid Runbook Worker.](../automation-linux-hrw-install.md)
 
 ## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Сценарий: Невозможно зарегистрировать поставщика ресурсов автоматизации для подписок
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
-Когда вы работаете с решениями в учетной записи Автоматизации, вы сталкиваетесь со следующей ошибкой:
+При работе с решениями в учетной записи Автоматизации возникает следующая ошибка:
 
 ```error
-Error details: Unable to register Automation Resource Provider for subscriptions:
+Error details: Unable to register Automation Resource Provider for subscriptions
 ```
 
 ### <a name="cause"></a>Причина
 
-Поставщик ресурсов автоматизации не зарегистрирован в подписке.
+Поставщик ресурсов Automation не зарегистрирован в подписке.
 
 ### <a name="resolution"></a>Решение
 
-Чтобы зарегистрировать поставщика ресурсов автоматизации, выполните следующие действия на портале Azure:
+Чтобы зарегистрировать поставщика ресурсов Automation, выполните следующие действия на портале Azure:
 
 1. В списке служб Azure в нижней части портала выберите **все службы,** а затем выберите **Подписки** в общей группе обслуживания.
 2. Выберите свою подписку.
@@ -160,9 +160,47 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 4. Из списка поставщиков ресурсов убедитесь, что поставщик `Microsoft.Automation` ресурсов зарегистрирован.
 5. Если он не указан, `Microsoft.Automation` зарегистрируйте поставщика, выполнив следующие действия по [ошибкам Resolve для регистрации поставщика ресурсов.](/azure/azure-resource-manager/resource-manager-register-provider-errors)
 
+## <a name="scenario-scheduled-update-with-a-dynamic-schedule-missed-some-machines"></a><a name="update-missed-machines"></a>Сценарий: Запланированное обновление с динамическим графиком пропустили некоторые машины
+
+### <a name="issue"></a>Проблемы
+
+Предварительные машины, включенные в обновление, не все отображаются в списке машин, исправленных во время запланированного запуска.
+
+### <a name="cause"></a>Причина
+
+Эта проблема может иметь одну из следующих причин:
+
+* Подписки, определенные в области динамического запроса, не настроены для зарегистрированного поставщика ресурсов Automation. 
+* Машины были недоступны или не имели соответствующих тегов при выполнении расписания.
+
+### <a name="resolution"></a>Решение
+
+#### <a name="subscriptions-not-configured-for-registered-automation-resource-provider"></a>Подписки, не настроенные для зарегистрированного поставщика ресурсов Автоматизация
+
+Если ваша подписка не настроена для поставщика ресурсов Automation, вы не можете запросить или получить информацию о машинах в этой подписке. Используйте следующие шаги, чтобы обеспечить регистрацию подписки.
+
+1. На [портале Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal)получите доступ к списку служб Azure.
+2. Выберите **все службы,** а затем выберите Подписки в общей **группе** обслуживания. 
+3. Найдите подписку, определенную в области развертывания.
+4. В **настройках**выберите **поставщиков ресурсов.**
+5. Убедитесь, `Microsoft.Automation` что поставщик ресурсов зарегистрирован.
+6. Если он не указан, `Microsoft.Automation` зарегистрируйте поставщика, выполнив следующие действия по [ошибкам Resolve для регистрации поставщика ресурсов.](/azure/azure-resource-manager/resource-manager-register-provider-errors)
+
+#### <a name="machines-not-available-or-not-tagged-correctly-when-schedule-executed"></a>Машины недоступны или неправильно помечены при выполнении расписания
+
+Используйте следующую процедуру, если подписка настроена для поставщика ресурсов Automation, но выполнение графика обновления с указанными [динамическими группами](../automation-update-management-groups.md) пропустило некоторые машины.
+
+1. На портале Azure откройте учетную запись Automation и выберите **управление обновлением.**
+2. Проверьте [историю управления обновлением,](https://docs.microsoft.com/azure/automation/manage-update-multi#view-results-of-an-update-deployment) чтобы определить точное время выполнения развертывания обновления. 
+3. Для машин, которые, по закоторым вы подозреваете, были пропущены управлением обновлением, используйте график ресурсов Azure для [поиска изменений в машинах.](https://docs.microsoft.com/azure/governance/resource-graph/how-to/get-resource-changes#find-detected-change-events-and-view-change-details) 
+4. Поиск изменений в течение значительного периода, например за один день до развертывания обновления.
+5. Проверьте результаты поиска на наличие системных изменений, таких как удаление или обновление изменений, для машин в этот период. Эти изменения могут изменить состояние машины или теги, так что машины не будут выбраны в списке машин при развертывании обновлений.
+6. Отрегулируйте настройки машин и ресурсов по мере необходимости для исправления состояния машины или проблем с тегами.
+7. Повторное расписание обновлений, чтобы обеспечить развертывание с указанными динамическими группами включает в себя все машины.
+
 ## <a name="scenario-components-for-update-management-solution-enabled-while-vm-continues-to-show-as-being-configured"></a><a name="components-enabled-not-working"></a>Сценарий: Включены компоненты для решения управления обновлением, в то время как VM продолжает отображаться как настроенный
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Приведенное ниже сообщение на виртуальной машине не исчезает в течение 15 минут после подключения:
 
@@ -216,7 +254,7 @@ Update
 
 ## <a name="scenario-you-receive-a-linked-subscription-error-when-you-create-an-update-deployment-for-machines-in-another-azure-tenant"></a><a name="multi-tenant"></a>Сценарий: При создании развертывания обновления для машин в другом клиенте Azure вы получаете связанную ошибку подписки
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вы сталкиваетесь со следующей ошибкой при попытке создания развертывания обновлений для машин в другом арендаторе Azure:
 
@@ -245,7 +283,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 ## <a name="scenario-unexplained-reboots"></a><a name="node-reboots"></a>Сценарий: Необъяснимые перезагрузки
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Даже если вы установили опцию **управления перезагрузкой,** **чтобы никогда не перезагрузить,** машины по-прежнему перезагрузки после установки обновлений.
 
@@ -259,7 +297,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 ## <a name="scenario-machine-shows-failed-to-start-in-an-update-deployment"></a><a name="failed-to-start"></a>Сценарий: Машина показывает "Не удалось начать" в развертывании обновления
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Машина показывает `Failed to start` статус. При просмотре конкретных деталей для машины вы видите следующую ошибку:
 
@@ -291,11 +329,11 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
    Heartbeat | where TimeGenerated > ago(30d) | distinct SourceComputerId, Computer, ComputerIP
    ```
 
-* После того, как вы найдете затронутые машины, откорректировать развертывание обновлений, нацеленных на эти машины, а затем удалите и повторно добавьте их так, чтобы это `SourceComputerId` отражало правильное значение.
+* После того, как вы найдете затронутые машины, отредкаконите развертывания `SourceComputerId` обновлений, нацеленные на эти машины, а затем удалите и прочитайте их так, чтобы это отражало правильное значение.
 
 ## <a name="scenario-updates-are-installed-without-a-deployment"></a><a name="updates-nodeployment"></a>Сценарий: Обновления устанавливаются без развертывания
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При регистрации машины Windows в управлении обновлением вы видите обновления, установленные без развертывания.
 
@@ -313,7 +351,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 ## <a name="scenario-machine-is-already-registered-to-a-different-account"></a><a name="machine-already-registered"></a>Сценарий: компьютер уже зарегистрирован на другой учетной записи
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Отображается следующее сообщение об ошибке:
 
@@ -332,7 +370,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-machine-cant-communicate-with-the-service"></a><a name="machine-unable-to-communicate"></a>Сценарий: Машина не может общаться с службой
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Отображается одно из следующих сообщений об ошибке.
 
@@ -362,7 +400,7 @@ Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 
 ## <a name="scenario-unable-to-create-self-signed-certificate"></a><a name="unable-to-create-selfsigned-cert"></a>Сценарий: не удалось создать самозаверяющий сертификат
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Отображается одно из следующих сообщений об ошибке.
 
@@ -380,7 +418,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-the-scheduled-update-failed-with-a-maintenancewindowexceeded-error"></a><a name="mw-exceeded"></a>Сценарий: Запланированное обновление не удалось с ошибкой MaintenanceWindowExceededure
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Окно обслуживания по умолчанию для обновлений составляет 120 минут. Окно обслуживания можно увеличить максимум до 6 часов или 360 минут.
 
@@ -392,7 +430,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-machine-shows-as-not-assessed-and-shows-an-hresult-exception"></a><a name="hresult"></a>Сценарий: Машина показывает, как "Не оценивается" и показывает исключение HRESULT
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 * У вас есть `Not assessed` машины, которые отображались как в соответствии с **требованиями,** и вы видите сообщение об исключении под ними.
 * На портале видна код ошибки HRESULT.
@@ -403,12 +441,14 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="resolution"></a>Решение
 
-Попробуйте выполнить обновления локально на машине. Если это не удается, это обычно означает, что есть ошибка конфигурации с агентом обновления.
+Попробуйте выполнить обновления локально на машине. Если эта операция не удается, это обычно означает, что есть ошибка конфигурации агента обновления.
 
-Эта проблема часто вызвана проблемами конфигурации сети и брандмауэра. Попробуйте сделать следующее.
+Эта проблема часто вызвана проблемами конфигурации сети и брандмауэра. Используйте следующие проверки, чтобы исправить проблему.
 
 * Для Linux проверьте соответствующую документацию, чтобы убедиться, что вы можете достичь конечной точки сети репозитория пакета.
+
 * Для Windows проверьте конфигурацию агента, как указано в [обновлениях, не загружая с конечной точки интрасети (WSUS/SCCM).](/windows/deployment/update/windows-update-troubleshooting#updates-arent-downloading-from-the-intranet-endpoint-wsussccm)
+
   * Если машины настроены для обновления Windows, убедитесь, что вы можете достичь конечных точек, описанных в [вопросах, связанных с HTTP/прокси.](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy)
   * Если машины настроены для служб обновления серверов Windows (WSUS), убедитесь, что вы можете достичь сервера WSUS, настроенного [ключом реестра WUServer.](/windows/deployment/update/waas-wu-settings)
 
@@ -435,7 +475,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-update-run-returns-failed-status-linux"></a>Сценарий: Обновление запуска возвращает "Неудалось" статус (Linux)
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Запускается запуск обновления, но во время выполнения он сталкивается с ошибками.
 
@@ -453,9 +493,9 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Если сбои возникают во время выполнения обновления после его успешного запуска, [проверьте выход задания](../manage-update-multi.md#view-results-of-an-update-deployment) из пострадавшей машины в запуске. Вы можете найти конкретные сообщения об ошибках от ваших машин, которые вы можете исследовать и принять меры. Для успешного обновления развертываний управлению обновлениями необходима работоспособность диспетчера пакетов.
 
-Если конкретные патчи, пакеты или обновления видны непосредственно перед сбой задания, можно попробовать [исключить](../automation-tutorial-update-management.md#schedule-an-update-deployment) их из следующего развертывания обновления. Чтобы собрать информацию о [Windows Update log files](/windows/deployment/update/windows-update-logs)журнале из windows Update, см.
+Если конкретные патчи, пакеты или обновления видны непосредственно перед сбой задания, можно попробовать [исключить](../automation-tutorial-update-management.md#schedule-an-update-deployment) эти элементы из следующего развертывания обновления. Чтобы собрать информацию о журнале из windows Update, смотрите [файлы журналов обновления Windows.](/windows/deployment/update/windows-update-logs)
 
-Если вы не можете решить проблему с исправлением, сделайте копию следующего файла журнала и сохраните его для устранения неполадок до начала следующего развертывания обновления:
+Если вы не можете решить проблему с исправлением, сделайте копию следующего файла журнала и сохраните его для устранения неполадок до начала следующего развертывания обновления.
 
 ```bash
 /var/opt/microsoft/omsagent/run/automationworker/omsupdatemgmt.log

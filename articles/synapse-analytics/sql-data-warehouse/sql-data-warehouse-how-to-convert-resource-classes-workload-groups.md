@@ -11,12 +11,12 @@ ms.date: 11/4/2019
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: a249dfc4f04fbd7b6b73a0e9f37d53106bf82efd
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 8cee874106598c7d81b923d7dd32ba91902d9326
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633340"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80745185"
 ---
 # <a name="convert-resource-classes-to-workload-groups"></a>Преобразование классов ресурсов в группы рабочей нагрузки
 
@@ -53,7 +53,7 @@ CREATE WORKLOAD GROUP wgDataLoads WITH
 
 ## <a name="create-the-classifier"></a>Создание классификатора
 
-Ранее отображение запросов в классах ресурсов осуществлялось с [помощью sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Для достижения той же функциональности и картографических запросов для групп рабочей нагрузки используйте синтаксис [CREATE WORKLOAD CLASSIFIER.](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql)  Использование sp_addrolemember позволяет отображать ресурсы только к запросу на основе входа.  Классификатор предоставляет дополнительные опции, помимо входа, такие как:
+Ранее отображение запросов в классах ресурсов осуществлялось с [помощью sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Для достижения той же функциональности и картографических запросов для групп рабочей нагрузки используйте синтаксис [CREATE WORKLOAD CLASSIFIER.](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  Использование sp_addrolemember позволяет отображать ресурсы только к запросу на основе входа.  Классификатор предоставляет дополнительные опции, помимо входа, такие как:
     - label
     - сеанс
     - время приведенный ниже пример назначает `AdfLogin` запросы из входа, которые `factloads` также имеют `wgDataLoads` [OPTION LABEL,](sql-data-warehouse-develop-label.md) установленный для группы рабочей нагрузки, созданной выше.

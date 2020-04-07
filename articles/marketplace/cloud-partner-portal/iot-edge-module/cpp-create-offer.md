@@ -5,16 +5,19 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 164b26560020054f4da8bd1aa0ba2a3ecff1875a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 112c2ba831ab27faaca755079e9d20e2aebfcf9f
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286631"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80744402"
 ---
 # <a name="create-a-new-iot-edge-module-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение модуля IoT Edge с помощью портала Cloud Partner.
+
+>[!Important]
+>С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
 
 В этой статье описывается, как создать и опубликовать запись предложения модуля IoT Edge для Azure Marketplace. Каждое предложение отображается в виде отдельной сущности в Azure Marketplace и связывается с одним или несколькими номерами SKU.  Предложение модуля IoT Edge представляет собой следующие группы ресурсов и службы поддержки.
 

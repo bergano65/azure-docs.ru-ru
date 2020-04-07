@@ -9,12 +9,12 @@ ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit
-ms.openlocfilehash: c2717b1f29af39c6fdc4602b11acba131d959f03
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4d139cfa50afa94621066995314737fac70bbafe
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79534394"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756277"
 ---
 # <a name="using-private-endpoints-for-azure-web-app-preview"></a>Использование частных конечных точек для веб-приложения Azure (Предварительный просмотр)
 
@@ -25,7 +25,7 @@ ms.locfileid: "79534394"
 
 Использование частной конечных точек для веб-приложения позволяет:
 
-- Защитите web-приложение, настройвая конечную точку службы, устраняя общедоступное воздействие.
+- Защитите web-приложение, нанастройки частной конечных точек, устраняя публичное воздействие.
 - Безопасное подключение к Web App из закрытых сетей, которые подключаются к VNet с помощью VPN или ExpressRoute частных пиринг.
 
 Если вам просто нужно безопасное соединение между VNet и веб-приложением, то конечная точка службы является самым простым решением. Если вам также нужно попасть в веб-приложение из предварительного через шлюз Azure, региональный VNet или глобально заглянул VNet, Private Endpoint является решением.  
