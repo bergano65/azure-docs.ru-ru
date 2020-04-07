@@ -3,12 +3,12 @@ title: База знаний о дизайне - NA Maker
 description: База знаний создателя NA состоит из набора наборов вопросов и ответов и дополнительных метаданных, связанных с каждой парой NA.
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: cb71de0f6a3e372d8c1c1fede67ba0c0354532ca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1d24434d1343f4174cfbfeb3a30c36737b213168
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "76844328"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756787"
 ---
 # <a name="question-and-answer-set-concepts"></a>Понятия набора вопросов и ответов
 
@@ -33,7 +33,7 @@ ms.locfileid: "76844328"
 
 ## <a name="editorially-add-to-knowledge-base"></a>Добавление в базу знаний в режиме редактирования
 
-Если у вас нет уже существующего контента для заполнения базы знаний, вы можете добавить наборы qnA редакционно на портале «NA Maker». Узнайте, как [обновить базу знаний](../How-To/edit-knowledge-base.md).
+Если у вас нет уже существующего контента для заполнения базы знаний, вы можете добавить пары qnA редакционно на портале NA Maker. Узнайте, как [обновить базу знаний](../How-To/edit-knowledge-base.md).
 
 ## <a name="editing-your-knowledge-base-locally"></a>Локальное изменение базы знаний
 

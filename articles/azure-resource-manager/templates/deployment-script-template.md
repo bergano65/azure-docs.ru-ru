@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 03/30/2020
+ms.date: 04/06/2020
 ms.author: jgao
-ms.openlocfilehash: 3ef1c3d3fe0fd1ecad95e027b06ce14fd70d4d3f
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: aa49b313f0fb10175dc6c0003f1a919f61731269
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437877"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743314"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Используйте сценарии развертывания в шаблонах (Предварительный просмотр)
 
@@ -33,6 +33,8 @@ ms.locfileid: "80437877"
 - Разрешить указать имена, используемые для выполнения скриптов. В настоящее время поддерживается только [управляемая иличность Azure, назначенная пользователем.](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
 - Разрешить передачу аргументов командной строки скрипту.
 - Можно указать выходы скриптов и передать их обратно в развертывание.
+
+Ресурс скриптов развертывания доступен только в регионах, где доступна группа Ресурсов контейнеров Azure.  Просмотрите [доступность ресурсов для экземпляров контейнеров Azure в регионах Azure.](../../container-instances/container-instances-region-availability.md)
 
 > [!IMPORTANT]
 > Два ресурса скрипта развертывания, учетная запись хранения и экземпляр контейнера, создаются в одной группе ресурсов для выполнения сценариев и устранения неполадок. Эти ресурсы обычно удаляются службой скриптов при выполнении сценария развертывания в состоянии терминала. Плата взимается за ресурсы, пока они не будут удалены. Чтобы узнать больше, смотрите [ресурсы скриптов развертывания Clean-up.](#clean-up-deployment-script-resources)
@@ -189,6 +191,8 @@ Write-Host "Press [ENTER] to continue ..."
 Чтобы просмотреть пример, выберите [здесь](https://github.com/Azure/azure-docs-json-samples/blob/master/deployment-script/deploymentscript-helloworld-primaryscripturi.json).
 
 Внешние файлы скриптов должны быть доступны.  Чтобы обезопасить файлы скриптов, которые хранятся в учетных записях хранения Azure, [см.](./template-tutorial-secure-artifacts.md)
+
+Вы несете ответственность за обеспечение целостности скриптов, на которые ссылается сценарий развертывания, либо **PrimaryScriptUri,** либо **SupportingScriptUris.**  Ссылка только сценарии, которым вы доверяете.
 
 ## <a name="use-supporting-scripts"></a>Использование вспомогательных скриптов
 
@@ -375,7 +379,7 @@ armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups
 
 После успешного тестирования скрипта его можно использовать в качестве сценария развертывания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать сценарии развертывания. Чтобы пройти через учебник по сценарию развертывания:
 

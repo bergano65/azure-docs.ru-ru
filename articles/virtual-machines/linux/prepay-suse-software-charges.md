@@ -7,14 +7,14 @@ ms.service: virtual-machines-linux
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/01/2019
+ms.date: 04/06/2020
 ms.author: banders
-ms.openlocfilehash: 3bb7a62433993f1af26b1ce8bcb4ed258c34623c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3e05920e495dd4aa14be6c849590a37a2bafa33f
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75973135"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80757234"
 ---
 # <a name="prepay-for-azure-software-plans"></a>Предварительная оплата планов программного обеспечения Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "75973135"
 4. Выберите область. Область резервирования может охватывать одну или несколько подписок (общая область).
     - Единая подписка - Скидка плана применяется к соответствующей использованию в подписке.
     - Общий вариант - Скидка плана применяется к соответствующим экземплярам в любой подписке в контексте выставления счетов. Для корпоративных клиентов контекст выставления счетов является регистрацией и включает в себя все подписки в регистрации. Для индивидуального плана с клиентами с оплатой по мере использования, контекст выставления счетов представляет собой индивидуальные планы с подпиской о ценах с оплатой по мере использования, созданной администратором учетной записи.
+    - Единая группа ресурсов - Применяет скидку на резервирование только к соответствующим ресурсам только в выбранной группе ресурсов.
 5. Выберите продукт, чтобы выбрать размер VM и тип изображения. Скидка распространяется только на выбранный размер VM.
 6. Выберите срок на один год или три года.
 7. Выберите количество, которое является числом предоплаченных экземпляров VM, которые могут получить скидку на выставление счетов.
@@ -60,7 +61,7 @@ ms.locfileid: "75973135"
 
 Вы не можете отменить или обменять купленный вами план SUSE или RedHat. Проверьте использование, чтобы убедиться в том, что вы приобретаете подходящей план. Для получения помощи в определении того, что купить, [см.](../../cost-management-billing/reservations/understand-suse-reservation-charges.md)
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Нужна помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос на поддержку.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
@@ -70,7 +71,7 @@ ms.locfileid: "75973135"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Общие сведения о резервированиях в Azure](../../cost-management-billing/reservations/save-compute-costs-reservations.md)
+- [Что такое бронирование Azure?](../../cost-management-billing/reservations/save-compute-costs-reservations.md)
 - [Управление бронированием в Azure](../../cost-management-billing/reservations/manage-reserved-vm-instance.md)
 - [Understand how the SUSE Linux Enterprise software plan discount is applied](../../cost-management-billing/reservations/understand-suse-reservation-charges.md) (Общие сведения о применении скидок на программное обеспечение SUSE Linux Enterprise)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../../cost-management-billing/reservations/understand-reserved-instance-usage.md)

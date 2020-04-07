@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 90adb3b973b6952d10ef89e4b40d0fc68489e224
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8701fe6857e95334a5e1d24bfe70feb130d5512c
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80061107"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756032"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -21,7 +21,7 @@ AzCopy — это утилита командной строки, которую
 > [!NOTE]
 > AzCopy **V10** является поддерживаемой в настоящее время версией AzCopy.
 >
-> Если вам нужно использовать AzCopy **v8.1,** [см.](#previous-version)
+> Если вам нужно использовать предыдущую версию AzCopy, [см.](#previous-version)
 
 <a id="download-and-install-azcopy" />
 
@@ -67,7 +67,7 @@ AzCopy — это утилита командной строки, которую
 |--|--|
 |**Хранилище BLOB-объектов** | Azure AD & SAS |
 |**Хранилище Blob (иерархическое пространство имен)** | Azure AD & SAS |
-|**Хранилище файлов** | Только SAS |
+|**Хранение файлов** | Только SAS |
 
 ### <a name="option-1-use-azure-active-directory"></a>Вариант 1: Используйте активный каталог Azure
 
@@ -308,11 +308,11 @@ Storage Explorer использует ключ учетной записи дл�
 
 ## <a name="use-the-previous-version-of-azcopy"></a>Используйте предыдущую версию AzCopy
 
-Если вам нужно использовать предыдущую версию AzCopy (AzCopy v8.1), см.
+Если вам нужно использовать предыдущую версию AzCopy, см.
 
 - [AzCopy в Windows (версия 8)](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy)
 
-- [AzCopy в Linux (версия 8)](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy-linux)
+- [AzCopy на Linux (v7)](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy-linux)
 
 ## <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configure, optimize, and troubleshoot AzCopy (Настройка, оптимизация и устранение неполадок с AzCopy)
 

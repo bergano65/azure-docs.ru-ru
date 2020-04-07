@@ -7,12 +7,12 @@ ms.reviewer: kerend
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: d293b76e004d693813a074cb8551a86cb3c0bec2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bcf6a0ccfc04890052f1a4bab19f97ee4e55f87a
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76772335"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756613"
 ---
 # <a name="ingest-json-formatted-sample-data-into-azure-data-explorer"></a>Ingest JSON отформатировал выборочные данные в Azure Data Explorer
 
@@ -54,7 +54,7 @@ Azure Data Explorer поддерживает два формата файлов 
 
 Используйте язык запросов Kusto для поимки данных в сыром формате JSON.
 
-1. Войти [https://dataexplorer.azure.com](https://dataexplorer.azure.com)на ввесенку .
+1. Выполните вход на странице [https://dataexplorer.azure.com](https://dataexplorer.azure.com).
 
 1. Выберите **Добавить кластер**.
 
@@ -82,7 +82,7 @@ Azure Data Explorer поддерживает два формата файлов 
     .ingest into table RawEvents h'https://kustosamplefiles.blob.core.windows.net/jsonsamplefiles/simple.json?st=2018-08-31T22%3A02%3A25Z&se=2020-09-01T22%3A02%3A00Z&sp=r&sv=2018-03-28&sr=b&sig=LQIbomcKI8Ooz425hWtjeq6d61uEaq21UVX7YrM61N4%3D' with (format=json, jsonMappingReference=RawEventMapping)
     ```
 
-# <a name="c"></a>[C #](#tab/c-sharp)
+# <a name="c"></a>[C#](#tab/c-sharp)
 
 Используйте C-е для глотания данных в сыром формате JSON.
 
@@ -232,7 +232,7 @@ Azure Data Explorer поддерживает два формата файлов 
 
     Файл 'simple.json' имеет несколько линейных записей JSON. `json`Формат, и отображение, используемое в `FlatEventMapping` глотании команды вы создали.
 
-# <a name="c"></a>[C #](#tab/c-sharp)
+# <a name="c"></a>[C#](#tab/c-sharp)
 
 1. Создайте новую таблицу с аналогичной схемой с входными данными JSON. Мы будем использовать эту таблицу для всех следующих примеров и глотание команд. 
 
@@ -337,7 +337,7 @@ Azure Data Explorer поддерживает два формата файлов 
 .ingest into table Events h'https://kustosamplefiles.blob.core.windows.net/jsonsamplefiles/multilined.json?st=2018-08-31T22%3A02%3A25Z&se=2020-09-01T22%3A02%3A00Z&sp=r&sv=2018-03-28&sr=b&sig=LQIbomcKI8Ooz425hWtjeq6d61uEaq21UVX7YrM61N4%3D' with (format=multijson, jsonMappingReference=FlatEventMapping)
 ```
 
-# <a name="c"></a>[C #](#tab/c-sharp)
+# <a name="c"></a>[C#](#tab/c-sharp)
 
 Проем данных `Events` в таблицу.
 
@@ -427,7 +427,7 @@ INGESTION_CLIENT.ingest_from_blob(
 1. Проем данных `RawEvents` в таблицу.
 
     ```Kusto
-    .ingest into table Events h'https://kustosamplefiles.blob.core.windows.net/jsonsamplefiles/array.json?st=2018-08-31T22%3A02%3A25Z&se=2020-09-01T22%3A02%3A00Z&sp=r&sv=2018-03-28&sr=b&sig=LQIbomcKI8Ooz425hWtjeq6d61uEaq21UVX7YrM61N4%3D' with (format=multijson, jsonMappingReference=RawEventMapping)
+    .ingest into table RawEvents h'https://kustosamplefiles.blob.core.windows.net/jsonsamplefiles/array.json?st=2018-08-31T22%3A02%3A25Z&se=2020-09-01T22%3A02%3A00Z&sp=r&sv=2018-03-28&sr=b&sig=LQIbomcKI8Ooz425hWtjeq6d61uEaq21UVX7YrM61N4%3D' with (format=multijson, jsonMappingReference=RawEventMapping)
     ```
 
 1. Просмотрите данные `Events` в таблице.
@@ -436,7 +436,7 @@ INGESTION_CLIENT.ingest_from_blob(
     Events
     ```
 
-# <a name="c"></a>[C #](#tab/c-sharp)
+# <a name="c"></a>[C#](#tab/c-sharp)
 
 1. Создайте функцию обновления, которая `records` расширяет коллекцию так, чтобы каждое `mv-expand` значение в коллекции получало отдельную строку с помощью оператора. Мы будем использовать `RawEvents` таблицу как `Events` исходную таблицу и как целевую таблицу.   
 
@@ -584,7 +584,7 @@ INGESTION_CLIENT.ingest_from_blob(
     .ingest into table Events h'https://kustosamplefiles.blob.core.windows.net/jsonsamplefiles/dictionary.json?st=2018-08-31T22%3A02%3A25Z&se=2020-09-01T22%3A02%3A00Z&sp=r&sv=2018-03-28&sr=b&sig=LQIbomcKI8Ooz425hWtjeq6d61uEaq21UVX7YrM61N4%3D' with (format=multijson, jsonMappingReference=KeyValueEventMapping)
     ```
 
-# <a name="c"></a>[C #](#tab/c-sharp)
+# <a name="c"></a>[C#](#tab/c-sharp)
 
 1. Создайте отображение JSON.
 

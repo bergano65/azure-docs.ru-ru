@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: d8e6f4b58cf17a7502e2c0d67e4fa67af7cdb3f5
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 25b8df0d8565686737b33aac16d4bf698ce43280
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632952"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80757206"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование дисков, управляемых Azure на стороне сервера
 
@@ -91,6 +91,9 @@ ms.locfileid: "80632952"
 
     При создании экземпляра Key Vault необходимо включить защиту от мягкого удаления и очистки. Мягкое удаление гарантирует, что Key Vault содержит удаленный ключ для данного периода удержания (90 дней по умолчанию). Защита очистки гарантирует, что удаленный ключ не может быть удален навсегда до тех пор, пока не пройдет период хранения. Эти параметры защищают вас от потери данных из-за случайного удаления. Эти настройки являются обязательными при использовании Key Vault для шифрования управляемых дисков.
 
+    > [!IMPORTANT]
+    > Не регистрируй область, если это так, у вас могут возникнуть проблемы при назначении дополнительных дисков ресурсу на портале Azure.
+    
     ```powershell
     $ResourceGroupName="yourResourceGroupName"
     $LocationName="westcentralus"
