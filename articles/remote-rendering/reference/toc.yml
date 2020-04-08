@@ -1,0 +1,12 @@
+- name: Сопоставление материалов для форматов модели
+  href: material-mapping.md
+- name: Регионы
+  href: regions.md
+- name: Требования к сети
+  href: network-requirements.md
+- name: Ограничения
+  href: limits.md
+- name: Репозиторий arrClient (GitHub)
+  href: 'https://dev.azure.com/arrClient/arrClient/_git/arrClient'
+- name: REST API управления ресурсами Смешанной реальности Azure
+  href: 'https://docs.microsoft.com/rest/api/mixedreality/'

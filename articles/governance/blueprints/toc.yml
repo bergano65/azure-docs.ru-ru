@@ -225,7 +225,7 @@
     - name: Настройка порядка развертывания схемы
       displayName: customize
       href: ./concepts/sequencing-order.md
-    - name: Блокировка ресурсов в Blueprint
+    - name: Блокировка ресурсов в Azure Blueprints
       displayName: 'mode, state, read only, edit, denyAssignments'
       href: ./concepts/resource-locking.md
 - name: Практические руководства

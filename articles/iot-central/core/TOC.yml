@@ -21,8 +21,10 @@
   items:
     - name: Подключение
       items:
-        - name: Подключение устройства
-          href: tutorial-connect-device.md
+        - name: Подключение устройства (Node.js)
+          href: tutorial-connect-device-nodejs.md
+        - name: Подключение устройства (Python)
+          href: tutorial-connect-device-python.md
         - name: Подключение устройства Plug and Play (предварительная версия)
           href: tutorial-connect-pnp-device.md
         - name: Создание шаблона для устройства шлюза

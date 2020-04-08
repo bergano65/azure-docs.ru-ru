@@ -1,23 +1,23 @@
 ### YamlMime:Landing
-title: Добро пожаловать на коммерческую платформу Майкрософт
-summary: Ознакомьтесь с коммерческой платформой Майкрософт — интернет-магазином приложений и служб, который позволяет начинающим компаниям и целым предприятиям предлагать свои решения клиентам по всему миру.
+title: Вас приветствует коммерческая платформа
+summary: Ознакомьтесь с коммерческой платформой — интернет-магазином приложений и служб, в котором компании любого размера могут предлагать свои решения клиентам по всему миру.
 metadata:
-  title: Добро пожаловать на коммерческую платформу Майкрософт
-  description: Ознакомьтесь с коммерческой платформой Майкрософт — интернет-магазином приложений и служб, который позволяет начинающим компаниям и целым предприятиям предлагать свои решения клиентам по всему миру.
+  title: Вас приветствует коммерческая платформа
+  description: Ознакомьтесь с коммерческой платформой — интернет-магазином приложений и служб, в котором компании любого размера могут предлагать свои решения клиентам по всему миру.
   ms.service: marketplace
   ms.subservice: partnercenter-marketplace-publisher
   ms.topic: landing-page
   author: MaggiePucciEvans
   ms.author: evansma
-  ms.date: 03/04/2020
-  ms.openlocfilehash: 3dced8953c09520b96a9aa24cf7b5db1022de6ce
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.date: 04/02/2020
+  ms.openlocfilehash: 6351a18cf2e56152adfc0ad8433ee40cec4e9d9c
+  ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "78927602"
+  ms.lasthandoff: 04/06/2020
+  ms.locfileid: "80756317"
 landingContent:
-- title: Работа с коммерческой платформой Майкрософт
+- title: Работа с коммерческой платформой
   linkLists:
   - linkListType: get-started
     links:
@@ -25,44 +25,52 @@ landingContent:
       url: ./partner-center-portal/create-account.md
     - text: Выбор варианта публикации
       url: ./determine-your-listing-type.md
+    - text: Политики и условия
+      url: ./policies-terms.md
     - text: Вопросы и ответы о коммерческой платформе Майкрософт
       url: ./marketplace-faq-publisher-guide.md
     - text: Заметки о выпуске
       url: https://aka.ms/publicmarketplaceroadmap
-    - text: Политики и условия
-      url: ./policies-terms.md
 - title: Распространенные сценарии и задачи
   linkLists:
   - linkListType: overview
     links:
-    - text: Рекомендации по маркетингу
-      url: ./gtm-marketing-best-practices.md
-    - text: Рекомендации по размещению предложений
-      url: ./gtm-offer-listing-best-practices.md
     - text: Руководство по публикации SaaS-приложений
       url: ./marketplace-saas-applications-technical-publishing-guide.md
+    - text: Рекомендации по маркетингу
+      url: ./gtm-marketing-best-practices.md
+    - text: Поставщики облачных решений
+      url: ./cloud-solution-providers.md
+    - text: Рекомендации по размещению предложений
+      url: ./gtm-offer-listing-best-practices.md
   - linkListType: get-started
     links:
+    - text: Потенциальные клиенты, связанные с предложением в marketplace
+      url: ./partner-center-portal/commercial-marketplace-get-customer-leads.md
+    - text: Вариант совместной продажи в Центре партнеров
+      url: ./partner-center-portal/commercial-marketplace-co-sell.md
+    - text: Участие партнеров в совместных продажах
+      url: ./marketplace-co-sell.md
+    - text: Обеспечение доступности решений в Microsoft AppSource и в Office
+      url: https://docs.microsoft.com/office/dev/store/submit-to-appsource-via-partner-center
     - text: Принятие участия в обсуждениях на форумах сообществ Azure Marketplace и AppSource
       url: https://aka.ms/MarketplaceCommunity
     - text: Регистрация на вебинары для принятия участия в обсуждениях или просмотра вебинаров позже по запросу
       url: https://aka.ms/allwebinars
-    - text: Обеспечение доступности решений в Microsoft AppSource и в Office
-      url: https://docs.microsoft.com/office/dev/store/submit-to-appsource-via-partner-center
 - title: Анализ данных о предложении и клиентах
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Панель мониторинга "Сводка"
       url: ./partner-center-portal/summary-dashboard.md
-    - text: Панель мониторинга заказов
-      url: ./partner-center-portal/orders-dashboard.md
-    - text: Панель мониторинга клиентов
-      url: ./partner-center-portal/customer-dashboard.md
-    - text: Панель мониторинга использования
-      url: ./partner-center-portal/usage-dashboard.md
     - text: Панель мониторинга аналитики Marketplace
       url: ./partner-center-portal/insights-dashboard.md
+    - text: Панель мониторинга использования
+      url: ./partner-center-portal/usage-dashboard.md
+    - text: Панель мониторинга клиентов
+      url: ./partner-center-portal/customer-dashboard.md
+    - text: Панель мониторинга заказов
+      url: ./partner-center-portal/orders-dashboard.md
     - text: Панель мониторинга скачиваний
       url: ./partner-center-portal/downloads-dashboard.md
     - text: Панель мониторинга оценок и рецензий
@@ -71,61 +79,61 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Предложения для приложений Azure
-      url: ./partner-center-portal/create-new-azure-apps-offer.md
-    - text: Предложения для Dynamics 365 for Customer Engagement и PowerApps
-      url: ./partner-center-portal/create-new-customer-engagement-offer.md
-    - text: Предложения для Dynamics 365 for Operations
-      url: ./partner-center-portal/create-new-operations-offer.md
-    - text: Предложения для Dynamics 365 Business Central
-      url: ./partner-center-portal/create-new-business-central-offer.md
     - text: Предложения SaaS
       url: ./partner-center-portal/create-new-saas-offer.md
     - text: Предложения для виртуальных машин
       url: ./cloud-partner-portal/virtual-machine/cpp-virtual-machine-offer.md
+    - text: Предложения для приложений Azure
+      url: ./partner-center-portal/create-new-azure-apps-offer.md
+    - text: Предложения для Dynamics 365 for Customer Engagement и PowerApps
+      url: ./partner-center-portal/create-new-customer-engagement-offer.md
+    - text: Предложения для Dynamics 365 Business Central
+      url: ./partner-center-portal/create-new-business-central-offer.md
+    - text: Предложения для Dynamics 365 for Operations
+      url: ./partner-center-portal/create-new-operations-offer.md
     - text: Другие типы предложений
       url: ./cloud-partner-portal/cpp-marketplace-offers.md
 - title: Оплата
   linkLists:
   - linkListType: concept
     links:
-    - text: Настройка счета для выплат и налоговых форм
-      url: ./partner-center-portal/set-up-your-payout-account-tax-forms.md
-    - text: Выставление счетов для коммерческой платформы
-      url: ./partner-center-portal/billing-details.md
-    - text: Пороги, методы и сроки оплаты
-      url: ./partner-center-portal/payment-thresholds-methods-timeframes.md
     - text: Отчеты о выплатах
       url: ./partner-center-portal/payout-summary.md
+    - text: Пороги, методы и сроки оплаты
+      url: ./partner-center-portal/payment-thresholds-methods-timeframes.md
+    - text: Настройка счета для выплат и налоговых форм
+      url: ./partner-center-portal/set-up-your-payout-account-tax-forms.md
     - text: Сведения о налогах
       url: ./partner-center-portal/tax-details-paid-transactions.md
+    - text: Выставление счетов для коммерческой платформы
+      url: ./partner-center-portal/billing-details.md
 - title: Справочник по API
   linkLists:
   - linkListType: reference
     links:
-    - text: Предварительные требования для API
-      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-prerequisites.md
     - text: API исполнения SaaS
       url: ./partner-center-portal/pc-saas-fulfillment-api-v2.md
-    - text: Справочные материалы по API портала Cloud Partner
-      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-overview.md
     - text: API-интерфейсы службы из Marketplace для контроля потребления
       url: ./partner-center-portal/marketplace-metering-service-apis-faq.md
-    - text: Создание или изменение предложения
-      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-creating-offer.md
+    - text: Справочные материалы по API портала Cloud Partner
+      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-overview.md
+    - text: Предварительные требования для API
+      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-prerequisites.md
     - text: Получение предложений
       url: .//cloud-partner-portal-orig/cloud-partner-portal-api-retrieve-offers.md
-    - text: Запуск
-      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-go-live.md
+    - text: Создание или изменение предложения
+      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-creating-offer.md
     - text: Цены на предложения виртуальных машин
       url: ./cloud-partner-portal-orig/cloud-partner-portal-api-setting-price.md
+    - text: Запуск
+      url: ./cloud-partner-portal-orig/cloud-partner-portal-api-go-live.md
 - title: Получение поддержки
   linkLists:
   - linkListType: get-started
     links:
     - text: Варианты поддержки
       url: ./partner-center-portal/support.md
-    - text: Географическая доступность и валюты
-      url: ./marketplace-geo-availability-currencies.md
     - text: Устранение ошибок аутентификации
       url: ./cloud-partner-portal-orig/cloud-partner-portal-api-troubleshooting-authentication-errors.md
+    - text: Географическая доступность и валюты
+      url: ./marketplace-geo-availability-currencies.md
