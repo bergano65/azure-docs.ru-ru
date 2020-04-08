@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 03/04/2020
+ms.date: 04/07/2020
 ms.author: victorh
-ms.openlocfilehash: 550d9f4f5396b2165260e39cd28222b083dd6756
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f021eed959ef88a1ef3671e1d0ace8080710c92a
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79279992"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80810229"
 ---
 # <a name="azure-application-gateway-features"></a>Функции azure Application Gateway
 
@@ -26,14 +26,14 @@ ms.locfileid: "79279992"
 - [Автомасштабирования](#autoscaling)
 - [Резервность зон](#zone-redundancy)
 - [Статический виртуальный IP-адрес](#static-vip)
-- [Веб-приложение брандмауэр](#web-application-firewall)
+- [Брандмауэр веб-приложения](#web-application-firewall)
 - [Контроллер входящего трафика для AKS](#ingress-controller-for-aks)
 - [Маршрутизация на основе URL-адреса](#url-based-routing)
 - [Размещение нескольких сайтов](#multiple-site-hosting)
 - [Перенаправление](#redirection)
 - [Сродство сессии](#session-affinity)
 - [Трафик WebSocket и HTTP/2](#websocket-and-http2-traffic)
-- [Соединение слива](#connection-draining)
+- [фильтрация подключений;](#connection-draining)
 - [Пользовательские страницы ошибок](#custom-error-pages)
 - [Перезапись заголовков HTTP](#rewrite-http-headers)
 - [Определение размера](#sizing)
@@ -160,6 +160,10 @@ Web Application Firewall (WAF) — это служба, обеспечивающ
 
 > [!NOTE]
 > Это примерные значения для настройки пропускной способности шлюза приложений. Фактическая пропускная способность зависит от различных параметров среды, таких как средний размер страницы, расположение внутренних экземпляров и время обработки страницы сервером. Чтобы точно определить производительность, выполните собственные тесты. Приведенные здесь значения служат только для планирования емкости.
+
+## <a name="version-feature-comparison"></a>Сравнение функций версии
+
+Для сравнения функций приложения Gateway v1-v2 [см. Autoscaling и зоны-излишние шлюзы приложений v2](application-gateway-autoscaling-zone-redundant.md#feature-comparison-between-v1-sku-and-v2-sku)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

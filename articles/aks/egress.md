@@ -1,15 +1,16 @@
 ---
-title: Статический IP-адрес для исходящего трафика в Службе Azure Kubernetes (AKS)
+title: Используйте статический IP для трафика на вывоз
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как создать и использовать статический общедоступный IP-адрес для исходящего трафика в кластере Службы Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.openlocfilehash: 5850f8dfc08ed80dfe5e5e13f49808c3fd9338c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 08a9682434605fffde73c835e7a9e9d6971d7ff0
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77595762"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803388"
 ---
 # <a name="use-a-static-public-ip-address-for-egress-traffic-in-azure-kubernetes-service-aks"></a>Использование статического IP-адреса для исходящего трафика в Службе Azure Kubernetes (AKS)
 
@@ -17,7 +18,7 @@ ms.locfileid: "77595762"
 
 Узнайте, как создать и использовать статический общедоступный IP-адрес для исходящего трафика в кластере AKS.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 

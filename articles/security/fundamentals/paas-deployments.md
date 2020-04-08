@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 8fd5a063683d09cb94b45205426871d880119cc2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0643ae792c890b65f239d9a0c16a05639dd4f8b9
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77138014"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811468"
 ---
 # <a name="securing-paas-deployments"></a>Защита развернутых служб PaaS
 
@@ -100,8 +100,8 @@ ms.locfileid: "77138014"
 
 | Threat | Свойство безопасности | Потенциальные миграции платформы Azure |
 | --- | --- | --- |
-| Спуфинг | Проверка подлинности | Требуйте HTTPS-подключения. |
-| Подделка | Целостность | Проверяйте SSL-сертификаты. |
+| Спуфинг | Аутентификация | Требуйте HTTPS-подключения. |
+| Подделка | Целостность | Проверка сертификатов TLS/SSL. |
 | Отказ | Неподдельность | Включите [мониторинг и диагностику](/azure/architecture/best-practices/monitoring) в Azure. |
 | Раскрытие информации | Конфиденциальность | Зашифруйте конфиденциальные неактивные данные с помощью [сертификатов службы](/rest/api/appservice/certificates). |
 | Отказ в обслуживании | Доступность | Отслеживайте метрики производительности на наличие признаков атаки типа "отказ в обслуживании". Примените фильтры подключения. |

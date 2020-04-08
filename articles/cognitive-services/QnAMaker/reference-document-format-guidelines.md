@@ -1,14 +1,14 @@
 ---
 title: Руководящие принципы формата импортного документа - NA Maker
-description: Понять, как типы URL-адресов используются для импорта и создания наборов nA.
+description: Понять, как типы URL-адресов используются для импорта и создания пар NA.
 ms.topic: reference
 ms.date: 04/06/2020
-ms.openlocfilehash: 1e006520ce5c61f2da3f425af2332b0d41cc3881
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 799e85e2200d3caa29c9b76bc57a62fc883d246d
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80754905"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804339"
 ---
 # <a name="format-guidelines-for-imported-documents-and-urls"></a>Руководство по форматированию импортируемых документов и URL-адресов
 

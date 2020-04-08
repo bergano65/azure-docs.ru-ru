@@ -3,12 +3,12 @@ title: Импорт из источников данных - NA Maker
 description: База знаний создателя NA состоит из набора наборов вопросов и ответов и дополнительных метаданных, связанных с каждой парой NA.
 ms.topic: conceptual
 ms.date: 03/16/2020
-ms.openlocfilehash: e7772b2c76dfb92ced4d2c0d4b8dae97a59d1b83
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f648e15be803159dadb3f8bd047b2f46885eec91
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79457827"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804288"
 ---
 # <a name="importing-from-data-sources"></a>Импорт из источников данных
 
@@ -56,7 +56,7 @@ ms.locfileid: "79457827"
 
 ## <a name="export-as-example"></a>Экспорт в качестве примера
 
-Если вы не знаете, как представить набор `.tsv` в файле, установленный в файле:
+Если вы не знаете, как представить свою `.tsv` пару qnA в файле:
 * Используйте этот [загружаемый пример с GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Structured-multi-turn-format.xlsx?raw=true)
 * Или создайте набор на портале SnA Maker, сохраните, а затем экспортировать базу знаний на пример того, как представлять набор.
 

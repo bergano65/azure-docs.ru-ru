@@ -3,14 +3,14 @@ title: Конфигурация сервиса - NA Maker
 description: Понять, как и где настроить ресурсы.
 ms.topic: reference
 ms.date: 02/21/2020
-ms.openlocfilehash: 8ef6fecbfeb119d0c68ec5bc3bbc90ec449dbb7d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3be32d1778604121c2acac88415cbfbc4bdbca3d
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77651864"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804266"
 ---
-# <a name="service-configuration"></a>Конфигурация сервиса
+# <a name="service-configuration"></a>Конфигурация службы
 
 Создатель NA использует несколько ресурсов (услугИ Azure), включая Cognitive Search, App Service, App Service Plan и Application Insight.
 
@@ -27,8 +27,8 @@ NA Maker использует службу app Service для предостав
 
 |Ресурс|Параметр|
 |--|--|
-|AzureSearchAdminKey|Когнитивный поиск - используется для хранения наборов и ranker #1|
-|AzureSearchName|Когнитивный поиск - используется для хранения наборов и ranker #1|
+|AzureSearchAdminKey|Когнитивный поиск - используется для хранения парных пар и ranker #1|
+|AzureSearchName|Когнитивный поиск - используется для хранения парных пар и ranker #1|
 |По умолчаниюОтветнайд|Текст ответа, когда не найдено совпадений|
 |UserAppInsightsAppId|Чат-журнал и телеметрия|
 |UserAppInsightsKey|Чат-журнал и телеметрия|

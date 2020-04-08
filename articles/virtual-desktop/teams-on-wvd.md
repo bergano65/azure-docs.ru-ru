@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8b9b33076a2c2cea27fea181b760a721488682c9
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 702df1bfaf0701a40e514f8a47151f96917adf38
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80657022"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811595"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Используйте команды Майкрософт на виртуальном рабочем столе Windows
 
@@ -51,7 +51,7 @@ ms.locfileid: "80657022"
 2. Запустите эту команду, чтобы установить MSI на хост VM.
 
       ```shell
-      msiexec /i <msi_name> /l*v < install_logfile_name> ALLUSERS=1
+      msiexec /i <msi_name> /l*v < install_logfile_name> ALLUSER=1
       ```
 
       Это позволит установить команды либо файлы программы или файлы программы (x86). При следующем входе в команду и запуске команды приложение запросит ваши учетные данные.

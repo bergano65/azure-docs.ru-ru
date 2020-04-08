@@ -1,15 +1,16 @@
 ---
-title: Создание тома "Статический" для нескольких групп контейнеров в Службе Azure Kubernetes (AKS)
+title: Ручное создание общего с файлами Azure
+titleSuffix: Azure Kubernetes Service
 description: Сведения о том, как вручную создавать том с файлами Azure для использования с несколькими параллельными pod в Службе Azure Kubernetes (AKS)
 services: container-service
 ms.topic: article
 ms.date: 03/01/2019
-ms.openlocfilehash: 084ab5cd6736c9148bcab1faf048d3d9081855d4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 412b7158ea366eefb1c3e9c1d2586d54c316aa6c
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77596408"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803455"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-files-share-in-azure-kubernetes-service-aks"></a>Создание вручную и совместное использование тома с файловым ресурсом Azure в службе Azure Kubernetes (AKS)
 
@@ -17,7 +18,7 @@ ms.locfileid: "77596408"
 
 Для получения дополнительной информации о объемах Kubernetes [см.][concepts-storage]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
@@ -132,7 +133,7 @@ Volumes:
 
 ## <a name="mount-options"></a>Параметры подключения
 
-Значение по умолчанию для *fileMode* и *dirMode* составляет *0755* для версии Kubernetes 1.9.1 и выше. При использовании кластера с версией Kuberetes 1.8.5 или больше и статически создавая постоянный объект объема, параметры крепления должны быть указаны на объекте *PersistentVolume.* В следующем примере задается значение *0777*.
+Значение по умолчанию для *fileMode* и *dirMode* составляет *0755* для версии Kubernetes 1.9.1 и выше. При использовании кластера с версией Kubernetes 1.8.5 или больше и статично создавая постоянный объект объема, параметры крепления должны быть указаны на объекте *PersistentVolume.* В следующем примере задается значение *0777*.
 
 ```yaml
 apiVersion: v1

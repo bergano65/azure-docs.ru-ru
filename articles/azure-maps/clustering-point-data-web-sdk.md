@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen
-ms.openlocfilehash: e65681aefc047ba540d4ad0d91ef6e4d2af5f3ca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ce2891201331ee1efd861d2f13cec78c0551b6ba
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77190259"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804577"
 ---
 # <a name="clustering-point-data"></a>Данные точек кластеризации
 
@@ -62,7 +62,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Кластеризация базового слоя пузыря" src="//codepen.io/azuremaps/embed/qvzRZY/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Кластеризация базового слоя пузыря" src="//codepen.io/azuremaps/embed/qvzRZY/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/qvzRZY/'>кластеризации слоя пузыря</a> Pen Basic<a href='https://codepen.io/azuremaps'>@azuremaps</a>по картам Azure () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -74,7 +74,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Слой кластерного символа" src="//codepen.io/azuremaps/embed/Wmqpzz/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Слой кластерного символа" src="//codepen.io/azuremaps/embed/Wmqpzz/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/Wmqpzz/'>слой символа с кластером</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>pen по картам Azure () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -84,7 +84,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Кластер взвешенная карта тепла" src="//codepen.io/azuremaps/embed/VRJrgO/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Кластер взвешенная карта тепла" src="//codepen.io/azuremaps/embed/VRJrgO/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/VRJrgO/'>перо кластера взвешенных ТеплоКарта</a> Azure Maps ( )<a href='https://codepen.io/azuremaps'>@azuremaps</a>на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -103,7 +103,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Кластер получитьКластерРасширение Зума" src="//codepen.io/azuremaps/embed/moZWeV/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Кластер получитьКластерРасширение Зума" src="//codepen.io/azuremaps/embed/moZWeV/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/moZWeV/'>Перский кластер getClusterРасширения По</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -113,7 +113,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 <br/>
 
- <iframe height="500" style="width: 100%;" scrolling="no" title="Кластерная область выпуклого корпуса" src="//codepen.io/azuremaps/embed/QoXqWJ/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+ <iframe height="500" style="width: 100%;" scrolling="no" title="Кластерная область выпуклого корпуса" src="//codepen.io/azuremaps/embed/QoXqWJ/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/QoXqWJ/'>выпуклую область пен-кластера</a> по Azure Maps ()<a href='https://codepen.io/azuremaps'>@azuremaps</a>на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -123,7 +123,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 В следующем примере используется агрегированное выражение. Код вычисляет подсчет на основе свойства типа сущности каждой точки данных в кластере. Когда пользователь нажимает на кластер, всплывающее окно отображает дополнительную информацию о кластере.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Кластерные агрегаты" src="//codepen.io/azuremaps/embed/jgYyRL/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Кластерные агрегаты" src="//codepen.io/azuremaps/embed/jgYyRL/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/jgYyRL/'>агрегаты кластера</a> пера<a href='https://codepen.io/azuremaps'>@azuremaps</a>по Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 

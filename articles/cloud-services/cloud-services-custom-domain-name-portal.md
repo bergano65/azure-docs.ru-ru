@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
-ms.openlocfilehash: b1f75a5f7a97907bf5b8bb460ff2df420d053f9e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e764e6a474b9843d43f9e8af9cf3b6a8ddf37189
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75386805"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811652"
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Настройка пользовательского доменного имени для облачной службы Azure
 При создании облачной службы Azure ей назначается поддомен **cloudapp.net**. Например, если имя облачной службы — contoso, пользователи будут иметь доступ к приложению по такому URL-адресу: `http://contoso.cloudapp.net`. Azure также назначает виртуальный IP-адрес.
@@ -30,7 +30,7 @@ ms.locfileid: "75386805"
 <p/>
 
 > [!TIP]
-> Приступите к работе быстрее — воспользуйтесь НОВЫМ [пошаговым руководством](https://support.microsoft.com/kb/2990804)Azure!  С его помощью вы без труда сможете связать пользовательское доменное имя И защитить обмен данными (SSL) с облачными службами Azure или веб-сайтами Azure.
+> Приступите к работе быстрее — воспользуйтесь НОВЫМ [пошаговым руководством](https://support.microsoft.com/kb/2990804)Azure!  Это делает привязку пользовательского доменного имени и обеспечение безопасности связи (TLS) с облачными службами Azure или веб-сайтами Azure.
 > 
 > 
 
@@ -62,7 +62,7 @@ ms.locfileid: "75386805"
 
        ![Раздел краткого описания, в котором отображается URL-адрес][csurl]
 
-       **Или**
+       **OR**
    * Установите и настройте [Azure Powershell](/powershell/azure/overview), а затем используйте следующую команду:
 
        ```powershell
@@ -95,7 +95,7 @@ ms.locfileid: "75386805"
 
        ![Раздел краткого описания, в котором отображается VIP-адрес][vip]
 
-       **Или**
+       **OR**
    * Установите и настройте [Azure Powershell](/powershell/azure/overview), а затем используйте следующую команду:
 
        ```powershell
@@ -128,7 +128,7 @@ ms.locfileid: "75386805"
 * [Сопоставление содержимого CDN с пользовательским доменом](../cdn/cdn-map-content-to-custom-domain.md)
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
-* Настройка [SSL-сертификатов](cloud-services-configure-ssl-certificate-portal.md).
+* Настройка [сертификатов TLS/SSL.](cloud-services-configure-ssl-certificate-portal.md)
 
 [Expose Your Application on a Custom Domain]: #access-app
 [Add a CNAME Record for Your Custom Domain]: #add-cname

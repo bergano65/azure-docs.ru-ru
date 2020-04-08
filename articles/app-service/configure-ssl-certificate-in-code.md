@@ -1,24 +1,24 @@
 ---
-title: Использование sSL-сертификата в коде
+title: Использование сертификата TLS/SSL в коде
 description: Узнайте, как использовать сертификаты клиента в коде. Authenticate с удаленными ресурсами с сертификатом клиента, или запустить криптографические задачи с ними.
 ms.topic: article
 ms.date: 11/04/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: d783b61c372c7d0f8cca13106bf297ab9b55c424
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d76bac60bae11f0843d81de523030154af62a373
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74671894"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811696"
 ---
-# <a name="use-an-ssl-certificate-in-your-code-in-azure-app-service"></a>Используйте sSL-сертификат в коде в службе приложений Azure
+# <a name="use-a-tlsssl-certificate-in-your-code-in-azure-app-service"></a>Используйте сертификат TLS/SSL в коде в службе приложений Azure
 
 В коде приложения вы можете получить доступ к [общедоступным или частным сертификатам, которые вы добавляете в Службу app Service.](configure-ssl-certificate.md) Код приложения может выступать в качестве клиента и получить доступ к внешней службе, которая требует проверки подлинности сертификата, или, возможно, потребуется выполнять криптографические задачи. В этом руководстве показано, как использовать государственные или частные сертификаты в коде приложения.
 
-Такой подход к использованию сертификатов в коде использует функциональность SSL в службе приложений, которая требует, чтобы ваше приложение было в **базовом** уровне или выше. Если ваше приложение находится в **свободном** или **общем** уровне, вы можете [включить файл сертификата в репозиторий приложения.](#load-certificate-from-file)
+Такой подход к использованию сертификатов в коде использует функциональность TLS в службе приложений, которая требует, чтобы ваше приложение было в **базовом** уровне или выше. Если ваше приложение находится в **свободном** или **общем** уровне, вы можете [включить файл сертификата в репозиторий приложения.](#load-certificate-from-file)
 
-Доверив управление SSL-сертификатами службе приложений, вы сможете разделить сертификаты и код приложения, защитив таким образом конфиденциальные данные.
+Когда вы позволяете Службе App управлять сертификатами TLS/SSL, вы можете отдельно сохранять сертификаты и код приложения и защищать конфиденциальные данные.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -58,25 +58,32 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ```csharp
 using System;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-...
-X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
-certStore.Open(OpenFlags.ReadOnly);
-X509Certificate2Collection certCollection = certStore.Certificates.Find(
-                            X509FindType.FindByThumbprint,
-                            // Replace below with your certificate's thumbprint
-                            "E661583E8FABEF4C0BEF694CBC41C28FB81CD870",
-                            false);
-// Get the first cert with the thumbprint
-if (certCollection.Count > 0)
+string certThumbprint = "E661583E8FABEF4C0BEF694CBC41C28FB81CD870";
+bool validOnly = false;
+
+using (X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
 {
-    X509Certificate2 cert = certCollection[0];
-    // Use certificate
-    Console.WriteLine(cert.FriendlyName);
+  certStore.Open(OpenFlags.ReadOnly);
+
+  X509Certificate2Collection certCollection = certStore.Certificates.Find(
+                              X509FindType.FindByThumbprint,
+                              // Replace below with your certificate's thumbprint
+                              certThumbprint,
+                              validOnly);
+  // Get the first cert with the thumbprint
+  X509Certificate2 cert = certCollection.OfType<X509Certificate>().FirstOrDefault();
+
+  if (cert is null)
+      throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
+
+  // Use certificate
+  Console.WriteLine(cert.FriendlyName);
+  
+  // Consider to call Dispose() on the certificate after it's being used, avaliable in .NET 4.6 and later
 }
-certStore.Close();
-...
 ```
 
 В Java-коде вы получаете доступ к сертификату из магазина "Windows-MY" с помощью поля "Общее имя субъекта" [(см. Открытый сертификат клавиши).](https://en.wikipedia.org/wiki/Public_key_certificate) Следующий код показывает, как загрузить частный сертификат ключа:
@@ -111,16 +118,17 @@ PrivateKey privKey = (PrivateKey) ks.getKey("<subject-cn>", ("<password>").toCha
 
 ```csharp
 using System;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
 ...
-var bytes = System.IO.File.ReadAllBytes("/var/ssl/certs/<thumbprint>.der");
+var bytes = File.ReadAllBytes("/var/ssl/certs/<thumbprint>.der");
 var cert = new X509Certificate2(bytes);
 
 // Use the loaded certificate
 ```
 
-Чтобы узнать, как загрузить сертификат SSL из файла в Node.js, PHP, Python, Java или Ruby, см.
+Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node.js, PHP, Python, Java или Ruby, см.
 
 ## <a name="load-certificate-from-file"></a>Сертификат загрузки из файла
 
@@ -133,26 +141,27 @@ var cert = new X509Certificate2(bytes);
 > az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_USER_PROFILE=1
 > ```
 >
-> Такой подход к использованию сертификатов в коде использует функциональность SSL в службе приложений, которая требует, чтобы ваше приложение было в **базовом** уровне или выше.
+> Такой подход к использованию сертификатов в коде использует функциональность TLS в службе приложений, которая требует, чтобы ваше приложение было в **базовом** уровне или выше.
 
 Следующий пример C's загружает общедоступный сертификат с относительного пути в приложении:
 
 ```csharp
 using System;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
 ...
-var bytes = System.IO.File.ReadAllBytes("~/<relative-path-to-cert-file>");
+var bytes = File.ReadAllBytes("~/<relative-path-to-cert-file>");
 var cert = new X509Certificate2(bytes);
 
 // Use the loaded certificate
 ```
 
-Чтобы узнать, как загрузить сертификат SSL из файла в Node.js, PHP, Python, Java или Ruby, см.
+Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node.js, PHP, Python, Java или Ruby, см.
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-* [Защита настраиваемого DNS-имени с помощью привязки SSL](configure-ssl-bindings.md)
+* [Защищайте пользовательское имя DNS с привязкой TLS/SSL в службе приложений Azure](configure-ssl-bindings.md)
 * [Принудительное использование HTTPS](configure-ssl-bindings.md#enforce-https)
 * [Принудительное применение TLS 1.1/1.2](configure-ssl-bindings.md#enforce-tls-versions)
 * [FAQ : App Service Certificates](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (Вопросы по сертификатам службы приложений и ответы на них)

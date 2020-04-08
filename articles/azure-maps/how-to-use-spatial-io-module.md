@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 5bcfeebc1fcb96cfdf6ea802293eb4027f339815
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1de9dd9721700418b1aa9ba661fc070db1dbedcc
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80335209"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804645"
 ---
 # <a name="how-to-use-the-azure-maps-spatial-io-module"></a>Как использовать модуль пространственного IO Карты Azure
 
@@ -26,6 +26,13 @@ ms.locfileid: "80335209"
 - [Использование высокоскоростного XML и делимитированных классов чтения файлов и писателей.](spatial-io-core-operations.md)
 
 В этом руководстве мы узнаем, как интегрировать и использовать модуль Пространственного IO в веб-приложении.
+
+Это видео содержит обзор модуля пространственного IO в Azure Maps Web SDK.
+
+<br/>
+
+<iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Easily-integrate-spatial-data-into-the-Azure-Maps/player" width="960" height="540" allowFullScreen frameBorder="0" title="Легко интегрировать пространственные данные в Карты Azure - Microsoft Channel 9 Видео"></iframe>
+
 
 > [!WARNING]
 > Используйте только данные и службы, полученные из источника, которому вы доверяете, особенно если ссылаться на них из другого домена. Модуль пространственного IO принимает меры, чтобы свести к минимуму риск, однако самый безопасный подход слишком не позволяет любые danagerous данных в вашем приложении, чтобы начать с. 

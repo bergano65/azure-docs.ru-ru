@@ -2,13 +2,13 @@
 title: Перемещение поддержки операций по типу ресурса
 description: Список типов ресурсов Azure, подлежащих перемещению в новую группу ресурсов или подписку.
 ms.topic: conceptual
-ms.date: 03/17/2020
-ms.openlocfilehash: 2250283136608161956716abadb63b9f706bf581
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/06/2020
+ms.openlocfilehash: 90fbec4dc076feb1fee8c38cf9757d3c5ddbafaf
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79460421"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804798"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. Он также предоставляет информацию об особых условиях для рассмотрения при перемещении ресурса.
@@ -35,6 +35,7 @@ ms.locfileid: "79460421"
 > - [Microsoft.BingMaps](#microsoftbingmaps)
 > - [Microsoft.BizTalkServices](#microsoftbiztalkservices)
 > - [Microsoft.Blockchain](#microsoftblockchain)
+> - [Microsoft.BlockchainTokens](#microsoftblockchaintokens)
 > - [Microsoft.Blueprint](#microsoftblueprint)
 > - [Microsoft.BotService](#microsoftbotservice)
 > - [Microsoft.Cache](#microsoftcache)
@@ -43,6 +44,7 @@ ms.locfileid: "79460421"
 > - [Microsoft.ClassicCompute](#microsoftclassiccompute)
 > - [Microsoft.ClassicNetwork](#microsoftclassicnetwork)
 > - [Microsoft.ClassicStorage](#microsoftclassicstorage)
+> - [Microsoft.Cognition](#microsoftcognition)
 > - [Microsoft.CognitiveServices](#microsoftcognitiveservices)
 > - [Microsoft.Compute](#microsoftcompute)
 > - [Microsoft.Consumption](#microsoftconsumption)
@@ -72,6 +74,7 @@ ms.locfileid: "79460421"
 > - [Microsoft.DBforMySQL](#microsoftdbformysql)
 > - [Microsoft.DBforPostgreSQL](#microsoftdbforpostgresql)
 > - [Microsoft.DeploymentManager](#microsoftdeploymentmanager)
+> - [Microsoft.DesktopVirtualization](#microsoftdesktopvirtualization)
 > - [Microsoft.Devices](#microsoftdevices)
 > - [Microsoft.DevOps](#microsoftdevops)
 > - [Microsoft.DevSpaces](#microsoftdevspaces)
@@ -82,6 +85,7 @@ ms.locfileid: "79460421"
 > - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
 > - [Microsoft.EventGrid](#microsofteventgrid)
 > - [Microsoft.EventHub](#microsofteventhub)
+> - [Microsoft.Эксперименты](#microsoftexperimentation)
 > - [Microsoft.Falcon](#microsoftfalcon)
 > - [Microsoft.Genomics](#microsoftgenomics)
 > - [Microsoft.GuestConfiguration](#microsoftguestconfiguration)
@@ -90,11 +94,13 @@ ms.locfileid: "79460421"
 > - [Microsoft.HealthcareApis](#microsofthealthcareapis)
 > - [Microsoft.HybridCompute](#microsofthybridcompute)
 > - [Microsoft.HybridData](#microsofthybriddata)
+> - [Microsoft.Hydra](#microsofthydra)
 > - [Microsoft.ImportExport](#microsoftimportexport)
 > - [microsoft.insights](#microsoftinsights)
 > - [Microsoft.IoTCentral](#microsoftiotcentral)
 > - [Microsoft.IoTSpaces](#microsoftiotspaces)
 > - [Microsoft.KeyVault](#microsoftkeyvault)
+> - [Microsoft.Kubernetes](#microsoftkubernetes)
 > - [Microsoft.Kusto](#microsoftkusto)
 > - [Microsoft.LabServices](#microsoftlabservices)
 > - [Microsoft.LocationBasedServices](#microsoftlocationbasedservices)
@@ -106,7 +112,9 @@ ms.locfileid: "79460421"
 > - [Microsoft.MachineLearningModelManagement](#microsoftmachinelearningmodelmanagement)
 > - [Microsoft.MachineLearningOperationalization](#microsoftmachinelearningoperationalization)
 > - [Microsoft.MachineLearningServices](#microsoftmachinelearningservices)
+> - [Microsoft.Maintenance](#microsoftmaintenance)
 > - [Microsoft.ManagedIdentity](#microsoftmanagedidentity)
+> - [Microsoft.ManagedNetwork](#microsoftmanagednetwork)
 > - [Microsoft.ManagedServices](#microsoftmanagedservices)
 > - [Microsoft.Maps](#microsoftmaps)
 > - [Microsoft.MarketplaceApps](#microsoftmarketplaceapps)
@@ -128,7 +136,9 @@ ms.locfileid: "79460421"
 > - [Microsoft.ProjectBabylon](#microsoftprojectbabylon)
 > - [Microsoft.ProjectOxford](#microsoftprojectoxford)
 > - [Microsoft.ProviderHub](#microsoftproviderhub)
+> - [Microsoft.Квантовая](#microsoftquantum)
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
+> - [Microsoft.RedHatOpenShift](#microsoftredhatopenshift)
 > - [Microsoft.Relay](#microsoftrelay)
 > - [Microsoft.ResourceGraph](#microsoftresourcegraph)
 > - [Microsoft.ResourceHealth](#microsoftresourcehealth)
@@ -149,6 +159,7 @@ ms.locfileid: "79460421"
 > - [Microsoft.SqlVirtualMachine](#microsoftsqlvirtualmachine)
 > - [Microsoft.SqlVM](#microsoftsqlvm)
 > - [Microsoft.Storage;](#microsoftstorage)
+> - [Microsoft.StorageCache](#microsoftstoragecache)
 > - [Microsoft.StorageSync](#microsoftstoragesync)
 > - [Microsoft.StorageSyncDev](#microsoftstoragesyncdev)
 > - [Microsoft.StorageSyncInt](#microsoftstoragesyncint)
@@ -157,13 +168,17 @@ ms.locfileid: "79460421"
 > - [Microsoft.StreamAnalyticsExplorer](#microsoftstreamanalyticsexplorer)
 > - [Microsoft.Subscription](#microsoftsubscription)
 > - [microsoft.support](#microsoftsupport)
+> - [Microsoft.Synapse](#microsoftsynapse)
 > - [Microsoft.TerraformOSS](#microsoftterraformoss)
 > - [Microsoft.TimeSeriesInsights](#microsofttimeseriesinsights)
 > - [Microsoft.Token](#microsofttoken)
+> - [Microsoft.VirtualMachineImages](#microsoftvirtualmachineimages)
 > - [microsoft.visualstudio](#microsoftvisualstudio)
 > - [Microsoft.VMwareCloudSimple](#microsoftvmwarecloudsimple)
+> - [Microsoft.VnfManager](#microsoftvnfmanager)
 > - [Microsoft.VSOnline](#microsoftvsonline)
 > - [Microsoft.Web](#microsoftweb)
+> - [Microsoft.WindowsESU](#microsoftwindowsesu)
 > - [Microsoft.WindowsIoT](#microsoftwindowsiot)
 > - [Microsoft.WorkloadMonitor](#microsoftworkloadmonitor)
 
@@ -344,7 +359,15 @@ ms.locfileid: "79460421"
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | blockchainmembers | нет | нет |
+> | кордачлены | нет | нет |
 > | Наблюдателей | нет | нет |
+
+## <a name="microsoftblockchaintokens"></a>Microsoft.BlockchainTokens
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | токенсервисы | нет | нет |
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
@@ -423,6 +446,13 @@ ms.locfileid: "79460421"
 > [!IMPORTANT]
 > Смотрите [руководство по перемещению классического развертывания.](./move-limitations/classic-model-move-limitations.md) Классические ресурсы развертывания могут перемещаться по подписям с операцией, специфичной для этого сценария.
 
+## <a name="microsoftcognition"></a>Microsoft.Cognition
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | синтетики | нет | нет |
+
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 
 > [!div class="mx-tableFixed"]
@@ -446,6 +476,7 @@ ms.locfileid: "79460421"
 > | images | Да | Да |
 > | proximityplacementgroups | Да | Да |
 > | restorepointcollections | нет | нет |
+> | sharedvmextensions | нет | нет |
 > | sharedvmimages | нет | нет |
 > | sharedvmimages / версии | нет | нет |
 > | snapshots | Да | Да |
@@ -506,6 +537,7 @@ ms.locfileid: "79460421"
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | registries | Да | Да |
+> | реестры / agentpools | нет | нет |
 > | реестры / сборки | Да | Да |
 > | реестры / репликации | Да | Да |
 > | реестры / taskruns | Да | Да |
@@ -700,6 +732,15 @@ ms.locfileid: "79460421"
 > | сервисопологи / услуги / сервисы | Да | Да |
 > | steps | Да | Да |
 
+## <a name="microsoftdesktopvirtualization"></a>Microsoft.DesktopVirtualization
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | группы заявок | нет | нет |
+> | хостпулы | нет | нет |
+> | workspaces | нет | нет |
+
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
 > [!div class="mx-tableFixed"]
@@ -774,6 +815,7 @@ ms.locfileid: "79460421"
 > | eventsubscriptions | Нет - не может быть перемещен самостоятельно, но автоматически перемещен с подпиской ресурса. | Нет - не может быть перемещен самостоятельно, но автоматически перемещен с подпиской ресурса. |
 > | extensiontopics | нет | нет |
 > | пространства partnername | Да | Да |
+> | партнерские регистрации | нет | нет |
 > | partnertopics | Да | Да |
 > | системные топы | Да | Да |
 > | topics | Да | Да |
@@ -785,6 +827,13 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | clusters | Да | Да |
 > | пространства имен | Да | Да |
+
+## <a name="microsoftexperimentation"></a>Microsoft.Эксперименты
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | экспериментальныепространства | нет | нет |
 
 ## <a name="microsoftfalcon"></a>Microsoft.Falcon
 
@@ -805,6 +854,8 @@ ms.locfileid: "79460421"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
+> | автоуправляемые счета | нет | нет |
+> | автоуправляемыевационные профили | нет | нет |
 > | назначения для гостей | нет | нет |
 > | software | нет | нет |
 > | softwareupdateprofile | нет | нет |
@@ -852,6 +903,14 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | datamanagers | Да | Да |
 
+## <a name="microsofthydra"></a>Microsoft.Hydra
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | components | нет | нет |
+> | сетевые скопы | нет | нет |
+
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
 > [!div class="mx-tableFixed"]
@@ -871,10 +930,12 @@ ms.locfileid: "79460421"
 > | baseline | нет | нет |
 > | calculatebaseline | нет | нет |
 > | components | Да | Да |
+> | правила сбора данных | нет | нет |
 > | диагностика | нет | нет |
 > | диагностическиекатегории | нет | нет |
 > | eventtypes | нет | нет |
 > | расширенная диагностика | нет | нет |
+> | guestdiagnosticsettings | нет | нет |
 > | logdefinitions | нет | нет |
 > | журналы | нет | нет |
 > | metricalerts | нет | нет |
@@ -883,6 +944,7 @@ ms.locfileid: "79460421"
 > | метрикименные пространства | нет | нет |
 > | Метрики | нет | нет |
 > | myworkbooks | нет | нет |
+> | notificationgroups | нет | нет |
 > | privatelinkscopes | Да | Да |
 > | scheduledqueryrules | Да | Да |
 > | Топология | нет | нет |
@@ -915,10 +977,18 @@ ms.locfileid: "79460421"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
+> | hsmpools | нет | нет |
 > | vaults | Да | Да |
 
 > [!IMPORTANT]
 > Ключевые Убежища, используемые для шифрования дисков, не могут быть перемещены в группу ресурсов в той же подписке или по подписке.
+
+## <a name="microsoftkubernetes"></a>Microsoft.Kubernetes
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | связанные кластеры | нет | нет |
 
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
 
@@ -965,7 +1035,7 @@ ms.locfileid: "79460421"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | commitmentplans | Да | Да |
+> | commitmentplans | нет | нет |
 > | webservices | Да | нет |
 > | workspaces | Да | Да |
 
@@ -1010,6 +1080,16 @@ ms.locfileid: "79460421"
 > | workspaces | нет | нет |
 > | рабочие области / вычисления | нет | нет |
 
+## <a name="microsoftmaintenance"></a>Microsoft.Maintenance
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | применяемые обновления | нет | нет |
+> | конфигурационные назначения | нет | нет |
+> | техобслуживания конфигураций | Да | Да |
+> | Обновления | нет | нет |
+
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 
 > [!div class="mx-tableFixed"]
@@ -1017,6 +1097,16 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | удостоверения; | нет | нет |
 > | userassignedidentities | нет | нет |
+
+## <a name="microsoftmanagednetwork"></a>Microsoft.ManagedNetwork
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | управляемыесети | нет | нет |
+> | управляемыесети / управляемыесетевые группы | нет | нет |
+> | управляемыесети / управляемыесетевоеполитики | нет | нет |
+> | уведомление | нет | нет |
 
 ## <a name="microsoftmanagedservices"></a>Microsoft.ManagedServices
 
@@ -1032,6 +1122,7 @@ ms.locfileid: "79460421"
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | accounts | Да | Да |
+> | счета / приваты | Да | Да |
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 
@@ -1063,6 +1154,7 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | assessmentprojects | Да | Да |
 > | migrateprojects | Да | Да |
+> | movecollections | нет | нет |
 > | projects | нет | нет |
 
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
@@ -1155,6 +1247,7 @@ ms.locfileid: "79460421"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
+> | clusters | нет | нет |
 > | хранениеinsightconfigs | нет | нет |
 > | workspaces | Да | Да |
 
@@ -1238,6 +1331,13 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | rollouts | нет | нет |
 
+## <a name="microsoftquantum"></a>Microsoft.Квантовая
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | workspaces | нет | нет |
+
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
 > [!div class="mx-tableFixed"]
@@ -1249,6 +1349,13 @@ ms.locfileid: "79460421"
 
 > [!IMPORTANT]
 > Смотрите [руководство по перемещению служб восстановления.](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json)
+
+## <a name="microsoftredhatopenshift"></a>Microsoft.RedHatOpenShift
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | openshiftкластеры | нет | нет |
 
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 
@@ -1374,6 +1481,7 @@ ms.locfileid: "79460421"
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | веб-масштабированием; | Да | Да |
+> | containergroups | нет | нет |
 > | gateways | Да | Да |
 > | networks | Да | Да |
 > | секретные коды | Да | Да |
@@ -1449,6 +1557,13 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | storageaccounts | Да | Да |
 
+## <a name="microsoftstoragecache"></a>Microsoft.StorageCache
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | Кэшей | нет | нет |
+
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 
 > [!div class="mx-tableFixed"]
@@ -1512,6 +1627,15 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | supporttickets | нет | нет |
 
+## <a name="microsoftsynapse"></a>Microsoft.Synapse
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | workspaces | нет | нет |
+> | рабочие места / bigdatapools | нет | нет |
+> | рабочие места / кв. | нет | нет |
+
 ## <a name="microsoftterraformoss"></a>Microsoft.TerraformOSS
 
 > [!div class="mx-tableFixed"]
@@ -1536,6 +1660,13 @@ ms.locfileid: "79460421"
 > | ------------- | ----------- | ---------- |
 > | stores | Да | Да |
 
+## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | imagetemplates | нет | нет |
+
 ## <a name="microsoftvisualstudio"></a>microsoft.visualstudio
 
 > [!div class="mx-tableFixed"]
@@ -1557,6 +1688,14 @@ ms.locfileid: "79460421"
 > | dedicatedcloudservices | нет | нет |
 > | virtualmachines | нет | нет |
 
+## <a name="microsoftvnfmanager"></a>Microsoft.VnfManager
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | устройства | нет | нет |
+> | vnfs | нет | нет |
+
 ## <a name="microsoftvsonline"></a>Microsoft.VSOnline
 
 > [!div class="mx-tableFixed"]
@@ -1575,6 +1714,7 @@ ms.locfileid: "79460421"
 > | connections | Да | Да |
 > | customapis | Да | Да |
 > | hostingenvironments | нет | нет |
+> | кубеэкологи | Да | Да |
 > | serverfarms | Да | Да |
 > | sites | Да | Да |
 > | сайты / Премьераддоны | Да | Да |
@@ -1583,6 +1723,13 @@ ms.locfileid: "79460421"
 
 > [!IMPORTANT]
 > Смотрите [руководство App Service move.](./move-limitations/app-service-move-limitations.md)
+
+## <a name="microsoftwindowsesu"></a>Microsoft.WindowsESU
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | мультиактивацииключ | нет | нет |
 
 ## <a name="microsoftwindowsiot"></a>Microsoft.WindowsIoT
 

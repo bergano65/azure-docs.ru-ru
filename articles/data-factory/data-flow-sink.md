@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/12/2019
-ms.openlocfilehash: a0b9d424c1995fba075c05ffe5058e297d764775
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8941c097fbb2d05c3a28be87d216b7a2679ebc68
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79531266"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804900"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование раковины в потоке данных отображения
 
@@ -39,7 +39,9 @@ ms.locfileid: "79531266"
 
 ## <a name="sink-settings"></a>Настройки раковины
 
-После того как вы добавили раковину, настроить через **вкладку раковина.** Здесь вы можете выбрать или создать набор данных, который пишет раковина 
+После того как вы добавили раковину, настроить через **вкладку раковина.** Здесь вы можете выбрать или создать набор данных, на который пишет раковина. Ниже приводится видео, объясняющее ряд различных вариантов sink для разграниченных типов файлов текста:
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4tf7T]
 
 ![Настройки раковины](media/data-flow/sink-settings.png "Настройки раковины")
 

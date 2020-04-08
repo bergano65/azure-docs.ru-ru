@@ -8,14 +8,14 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 8244a0f164c8578bf9f79e4b66beb529b6a15f67
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: f31c084be2fb017c0db521328e4ccdff9dd2aa25
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80586013"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80810470"
 ---
-# <a name="planning-and-operations-guide"></a>Руководство по планированию и операциям
+# <a name="planning-and-operations-guide"></a>Руководство по планированию и эксплуатации
 Это руководство предназначено для специалистов по информационным технологиям (ИТ), ИТ-архитекторов, аналитиков по информационной безопасности и облачных администраторов, планирующих использовать Центр безопасности Azure.
 
 
@@ -25,7 +25,7 @@ ms.locfileid: "80586013"
 * роли безопасности и элементы контроля доступа;
 * политики безопасности и рекомендации по ее обеспечению;
 * сбор и хранение данных;
-* Текущие ресурсы, не относящиеся к Azure
+* Перенос ресурсов, не относящихся к Azure
 * текущий мониторинг безопасности;
 * реагирование на инциденты.
 
@@ -246,7 +246,7 @@ ms.locfileid: "80586013"
 >
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе описывается, как спланировать переход к использованию центра безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Управление и реагирование на оповещения о безопасности в Центре безопасности Azure](security-center-managing-and-responding-alerts.md)

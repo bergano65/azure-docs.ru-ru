@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 29d837446960b7535b26284efdfab7a1c59ea968
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fece1155d2f707f11dda9f3896bd8a08deff1557
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80132495"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80802389"
 ---
 # <a name="http-features"></a>Особенности HTTP
 
@@ -41,13 +41,13 @@ ms.locfileid: "80132495"
 
 [Связывание клиента-оркестра](durable-functions-bindings.md#orchestration-client) предоставляет AIS, которые могут генерировать удобные полезные нагрузки http-ответов. Например, он может создать ответ, содержащий ссылки на Управечные AIS для конкретного экземпляра оркестровки. Следующие примеры показывают функцию HTTP-trigger, которая демонстрирует, как использовать этот API для нового экземпляра оркестровки:
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs)]
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-**index.js**
+**Файл index.js**
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
 
@@ -114,7 +114,7 @@ Retry-After: 10
 
 Следующий пример кода показывает функцию оркестратора, выполняя исходящий запрос HTTP:
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("CheckSiteAvailable")]
@@ -134,7 +134,7 @@ public static async Task CheckSiteAvailable(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -172,7 +172,7 @@ API "вызов HTTP" может автоматически реализоват
 
 Следующий код является примером функции оркестратора .NET. Функция делает аутентифицированные вызовы для перезагрузки виртуальной машины с помощью виртуальных машин Azure Resource Manager [REST API.](https://docs.microsoft.com/rest/api/compute/virtualmachines)
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("RestartVm")]
@@ -198,7 +198,7 @@ public static async Task RunOrchestrator(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -232,7 +232,7 @@ module.exports = df.orchestrator(function*(context) {
 * Токены никогда не хранятся в состоянии прочной оркестровки.
 * Вам не нужно писать код для управления приобретением токенов.
 
-Более полный пример можно найти в [предварительно собранном образце RestartVMs.](https://github.com/Azure/azure-functions-durable-extension/blob/v2/samples/v2/precompiled/RestartVMs.cs)
+Более полный пример можно найти в [предварительно собранном образце RestartVMs.](https://github.com/Azure/azure-functions-durable-extension/blob/dev/samples/precompiled/RestartVMs.cs)
 
 Управляемые идентификаторы не ограничиваются управлением ресурсами Azure. Управляемые идентификаторы можно использовать для доступа к любому API, который принимает токены на предъявителя Azure AD, включая службы Azure от Microsoft и веб-приложения от партнеров. Веб-приложение партнера может быть даже еще одним приложением функции. Для списка служб Azure от корпорации Майкрософт, поддерживающих аутентификацию с помощью Azure AD, см. [службы Azure, поддерживающие аутентификацию Azure AD.](../../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)
 

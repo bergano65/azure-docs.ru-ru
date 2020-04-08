@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: seodec18
-ms.openlocfilehash: ce0a170a629f347e2687a2e9f63fb3438fe2bd2f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 18469c94b66acab27b58243e8d15eb924843319b
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79280174"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811123"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройте приложение App Service на портале Azure
 
@@ -35,10 +35,10 @@ ms.locfileid: "79280174"
 
 - [ASP.NET Core](containers/configure-language-dotnetcore.md#access-environment-variables)
 - [Node.js](containers/configure-language-nodejs.md#access-environment-variables)
-- [Php](containers/configure-language-php.md#access-environment-variables)
+- [PHP](containers/configure-language-php.md#access-environment-variables)
 - [Python](containers/how-to-configure-python.md#access-environment-variables)
 - [Java](containers/configure-language-java.md#data-sources)
-- [Руби](containers/configure-language-ruby.md#access-environment-variables)
+- [Ruby](containers/configure-language-ruby.md#access-environment-variables)
 - [Пользовательские контейнеры](containers/configure-custom-container.md#configure-environment-variables)
 
 Параметры приложения всегда шифруются при хранении.
@@ -96,19 +96,20 @@ ms.locfileid: "79280174"
 
 Во время выполнения строки соединения доступны в качестве переменных среды, прикреплив к следующим типам соединения:
 
-* SQL Server: `SQLCONNSTR_`
-* MySQL: `MYSQLCONNSTR_`
-* База данных SQL: `SQLAZURECONNSTR_`
+* Sqlserver:`SQLCONNSTR_`  
+* MySQL: `MYSQLCONNSTR_` 
+* С-Лазазур:`SQLAZURECONNSTR_` 
 * Пользовательская: `CUSTOMCONNSTR_`
+* Postgresql:`POSTGRESQLCONNSTR_`  
 
 Например, строка подключения MySql под названием *connectionstring1* может быть доступна в качестве переменной `MYSQLCONNSTR_connectionString1`среды. Для конкретных шагов стеков языка см.:
 
 - [ASP.NET Core](containers/configure-language-dotnetcore.md#access-environment-variables)
 - [Node.js](containers/configure-language-nodejs.md#access-environment-variables)
-- [Php](containers/configure-language-php.md#access-environment-variables)
+- [PHP](containers/configure-language-php.md#access-environment-variables)
 - [Python](containers/how-to-configure-python.md#access-environment-variables)
 - [Java](containers/configure-language-java.md#data-sources)
-- [Руби](containers/configure-language-ruby.md#access-environment-variables)
+- [Ruby](containers/configure-language-ruby.md#access-environment-variables)
 - [Пользовательские контейнеры](containers/configure-custom-container.md#configure-environment-variables)
 
 Строки подключения всегда шифруются при хранении.
@@ -173,7 +174,7 @@ ms.locfileid: "79280174"
     - **Управляемая версия конвейера**: [Режим конвейера]IIS . Установите его на **Classic,** если у вас есть устаревающее приложение, которое требует более старой версии IIS.
     - **Версия HTTP**: Установить **2.0** для поддержки протокола [HTTPS/2.](https://wikipedia.org/wiki/HTTP/2)
     > [!NOTE]
-    > Большинство современных браузеров поддерживают протокол HTTP/2 только через TLS, а для незашифрованного трафика продолжает использоваться протокол HTTP/1.1. Чтобы обеспечить подключение клиентских браузеров к вашему приложению с помощью HTTP/2, [закрепите пользовательское dNS-имя с помощью привязки SSL в службе приложений Azure.](configure-ssl-bindings.md)
+    > Большинство современных браузеров поддерживают протокол HTTP/2 только через TLS, а для незашифрованного трафика продолжает использоваться протокол HTTP/1.1. Чтобы обеспечить подключение клиентских браузеров к вашему приложению с помощью HTTP/2, защитите пользовательское имя DNS. Для получения дополнительной информации смотрите [безопасное пользовательское имя DNS с привязкой TLS/SSL в службе приложений Azure.](configure-ssl-bindings.md)
     - **ARR сродство**: В развертывании нескольких экземпляров убедитесь, что клиент направляется в тот же экземпляр в течение всего срока сеанса. Эту опцию можно настроить **для** приложений без состояния.
 - **Отладка**: Включить удаленную отладку для [ASP.NET,](troubleshoot-dotnet-visual-studio.md#remotedebug) [ASP.NET приложения](/visualstudio/debugger/remote-debugging-azure) [Node.js.](containers/configure-language-nodejs.md#debug-remotely) Эта опция автоматически выключается через 48 часов.
 - **Входящие сертификаты клиента**: требуют сертификаты клиента во [взаимной аутентификации.](app-service-web-configure-tls-mutual-auth.md)
@@ -235,10 +236,10 @@ ms.locfileid: "79280174"
 
 - [ASP.NET Core](containers/configure-language-dotnetcore.md)
 - [Node.js](containers/configure-language-nodejs.md)
-- [Php](containers/configure-language-php.md)
+- [PHP](containers/configure-language-php.md)
 - [Python](containers/how-to-configure-python.md)
 - [Java](containers/configure-language-java.md)
-- [Руби](containers/configure-language-ruby.md)
+- [Ruby](containers/configure-language-ruby.md)
 
 ## <a name="configure-custom-containers"></a>Настройка пользовательских контейнеров
 
@@ -248,7 +249,7 @@ ms.locfileid: "79280174"
 
 - [Настройка личного доменного имени в службе приложений Azure]
 - [Настройка промежуточных сред в службе приложений Azure]
-- [Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure](configure-ssl-bindings.md)
+- [Защищайте пользовательское имя DNS с привязкой TLS/SSL в службе приложений Azure](configure-ssl-bindings.md)
 - [Включение журналов диагностики](troubleshoot-diagnostic-logs.md)
 - [Масштабирование приложения в службе приложений Azure]
 - [Основы мониторинга в службе приложений Azure]

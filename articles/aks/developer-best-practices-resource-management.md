@@ -1,17 +1,18 @@
 ---
-title: Рекомендации для разработчиков по управлению ресурсами в службах Azure Kubernetes (AKS)
+title: Рекомендации по управлению ресурсами
+titleSuffix: Azure Kubernetes Service
 description: Ознакомьтесь с рекомендациями для разработчиков приложений по управлению ресурсами в службе Azure Kubernetes (AKS)
 services: container-service
 author: zr-msft
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zarhoads
-ms.openlocfilehash: 66676c90e73d1886c86d8afda8cbbecce239a005
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0052657c947f8a9ff9c9d6aef86ff16d9a22adae
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79259530"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803489"
 ---
 # <a name="best-practices-for-application-developers-to-manage-resources-in-azure-kubernetes-service-aks"></a>Рекомендации для разработчиков приложений по управлению ресурсами в службе Azure Kubernetes (AKS)
 
@@ -107,7 +108,7 @@ Azure Dev Spaces позволяет разрабатывать, отлажива
 
 Чтобы реализовать некоторые из этих рекомендаций, ознакомьтесь со следующими статьями:
 
-* [Рабочие среды Azure для разработчиков][dev-spaces]
+* [Разработка с помощью Dev Spaces][dev-spaces]
 * [Проверка наличия проблем с помощью kube-advisor][aks-kubeadvisor]
 
 <!-- EXTERNAL LINKS -->

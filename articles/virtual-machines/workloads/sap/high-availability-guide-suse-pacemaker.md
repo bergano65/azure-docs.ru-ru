@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 03/17/2020
+ms.date: 04/07/2020
 ms.author: radeltch
-ms.openlocfilehash: 9d3d0ddbd1282827f17cd82228fcf0f3fba3a60f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 06ee1b6184e69ace68adcbfa36ad2384dc9fdd99
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79471988"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811581"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -365,6 +365,9 @@ o- / ...........................................................................
    </code></pre>
 
 1. **Настройка** облачно-нетконбига-лазурного налажи для кластера HA
+
+   >[!NOTE]
+   > Проверьте установленную версию пакета **облако-netconfig-azure,** **запустив zypper info cloud-netconfig-azure.** Если версия в вашей среде 1.3 или выше, больше нет необходимости подавлять управление сетевыми интерфейсами плагином облачной сети. Если версия ниже 1,3, мы предлагаем обновить пакет **облачно-неткониг-лазурный** до последней доступной версии.  
 
    Измените файл конфигурации для сетевого интерфейса, как показано ниже, чтобы предотвратить удаление виртуального IP-адреса облачной сети (Pacemaker должен контролировать VIP-назначение). Для получения дополнительной информации [см.](https://www.suse.com/support/kb/doc/?id=7023633) 
 

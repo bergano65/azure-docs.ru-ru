@@ -1,15 +1,16 @@
 ---
-title: Управление кластерными ресурсами с помощью RBAC и Azure AD в службе Azure Kubernetes
+title: Используйте Azure AD и RBAC для кластеров
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как использовать членство в группе Active Directory, чтобы ограничить доступ к кластерным ресурсам с помощью ролевой системы управления доступом (RBAC) в службе Azure Kubernetes (AKS)
 services: container-service
 ms.topic: article
 ms.date: 04/16/2019
-ms.openlocfilehash: 456b6dcdd590b48e06c830db85b726d4bebb69e3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ad195085c049776bf0db418c57f2c72830f1adff
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77596527"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803575"
 ---
 # <a name="control-access-to-cluster-resources-using-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Управление доступом к кластерным ресурсам с помощью элементанного управления доступом и идентификаторов активных каталогов Azure в службе Azure Kubernetes
 
@@ -17,11 +18,11 @@ ms.locfileid: "77596527"
 
 В этой статье показано, как использовать членство в группе Azure AD для управления доступом к пространствам имен и кластерным ресурсам с помощью Kubernetes RBAC в кластере AKS. Примеры групп и пользователей создаются в Azure AD, затем в кластере AKS создаются роли и переплеты ролей для предоставления соответствующих разрешений на создание и просмотр ресурсов.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что с интеграцией Azure AD включен существующий кластер AKS. Если вам нужен кластер AKS, [см.][azure-ad-aks-cli]
 
-Вам нужна версия Azure CLI 2.0.61 или более поздняя установка и настройка. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.][install-azure-cli]
+Вам нужна версия Azure CLI 2.0.61 или более поздняя установка и настройка. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="create-demo-groups-in-azure-ad"></a>Создание демо-групп в Azure AD
 

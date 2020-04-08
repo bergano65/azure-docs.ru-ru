@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: cf9c79f608aa3ffd1137be41ff3348f62b890867
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d8509af7829910bdda8bba3d63553e83626fe784
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77198315"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804679"
 ---
 # <a name="drawing-tool-events"></a>Рисование событий инструмента
 
@@ -31,7 +31,7 @@ ms.locfileid: "77198315"
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="События, нарисовав инструменты," src="https://codepen.io/azuremaps/embed/dyPMRWo?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="События, нарисовав инструменты," src="https://codepen.io/azuremaps/embed/dyPMRWo?height=500&theme-id=default&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/dyPMRWo'>события инструментов Pen Drawing</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>по картам Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -59,7 +59,7 @@ ms.locfileid: "77198315"
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Рисовать и искать в области полигона" src="https://codepen.io/azuremaps/embed/eYmZGNv?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Рисовать и искать в области полигона" src="https://codepen.io/azuremaps/embed/eYmZGNv?height=500&theme-id=default&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/eYmZGNv'>Pen Draw и поиск в области полигона</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -71,7 +71,7 @@ ms.locfileid: "77198315"
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Измерительный инструмент" src="https://codepen.io/azuremaps/embed/RwNaZXe?height=500&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Измерительный инструмент" src="https://codepen.io/azuremaps/embed/RwNaZXe?height=500&theme-id=default&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите <a href='https://codepen.io/azuremaps/pen/RwNaZXe'>инструмент измерения</a> пера по<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 

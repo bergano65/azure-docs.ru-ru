@@ -2,13 +2,13 @@
 title: Функции шаблона - ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
-ms.date: 03/31/2020
-ms.openlocfilehash: 23c0463649e748b35917c959a73536147e91f60b
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.date: 04/06/2020
+ms.openlocfilehash: 90cee78c29c26c88d808cdef798e74a2184a5fcf
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80744993"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804764"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Функции ресурсов для шаблонов ARM
 
@@ -496,7 +496,9 @@ reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])
 
 ### <a name="valid-uses"></a>Действительное использование
 
-Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании [итерации свойств](copy-properties.md)можно использовать `input` функцию ссылки, поскольку выражение присваивается свойству ресурса. Вы не можете использовать `count` его с потому что отсчет должен быть обусловлен прежде чем функция справки разрешена.
+Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании [итерации свойств](copy-properties.md)можно использовать `input` функцию ссылки, поскольку выражение присваивается свойству ресурса.
+
+Вы не можете использовать функцию ссылки `count` для установки значения свойства в цикле копирования. Можно установить другие свойства в цикле. Ссылка блокируется для свойства подсчета, поскольку это свойство должно быть определено до того, как будет решена эталонная функция.
 
 Вы не можете использовать функцию отсчета в выводах [вложенного шаблона,](linked-templates.md#nested-template) чтобы вернуть ресурс, развернутый в вложенном шаблоне. Вместо этого используйте [связанный шаблон.](linked-templates.md#linked-template)
 
@@ -896,7 +898,7 @@ resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| name | Type | Значение |
+| name | Тип | Значение |
 | ---- | ---- | ----- |
 | sameRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |

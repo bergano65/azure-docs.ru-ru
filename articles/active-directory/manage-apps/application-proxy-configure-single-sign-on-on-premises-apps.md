@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccf34b52e06e369fe4dd459ff9dfa2880596fb35
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d3d2117e913f292e92f37f31d2e123587c70a189
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79481353"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803303"
 ---
 # <a name="saml-single-sign-on-for-on-premises-applications-with-application-proxy"></a>SAML одиночный вданный для местных приложений с прокси-сервером приложения
 
@@ -74,14 +74,14 @@ SAML SSO с Application Proxy также работает с функцией ш
 
 2. На **странице Set up Single Sign-On со** страницей SAML перейдите на заголовок **Basic SAML Configuration** и выберите значок **edit** (карандаш). Убедитесь, что **внешний URL,** настроенный в прокси-сервере приложения, заполняется в полях **идентификации,** **url-адреса ответов**и **URL-адресов logout.** Эти URL-адреса необходимы для правильной работы прокси-сервера приложения. 
 
-3. Отспособьте **URL-адрес ответа,** настроенный ранее, чтобы его домен был догнан прокси-сервером приложения. Например, если ваш `https://contosotravel-f128.msappproxy.net` **внешний URL** и `https://contosotravel.com/acs`исходный **URL-адрес ответа** был, `https://contosotravel-f128.msappproxy.net/acs`вам нужно обновить исходный **URL-адрес ответа.** 
+3. Отспособьте **URL-адрес ответа,** настроенный ранее, чтобы его домен был добыт в Интернете через Application Proxy. Например, если ваш `https://contosotravel-f128.msappproxy.net` **внешний URL** и `https://contosotravel.com/acs`исходный **URL-адрес ответа** был, `https://contosotravel-f128.msappproxy.net/acs`вам нужно обновить исходный **URL-адрес ответа.**
 
     ![Введите базовые данные конфигурации SAML](./media/application-proxy-configure-single-sign-on-on-premises-apps/basic-saml-configuration.png)
 
 
 4. Выберите флажок рядом с обновленным **URL-адресом ответа,** чтобы отметить его по умолчанию.
 
-   * Если необходимый **URL-адрес ответа** уже указан, отметьте этот **URL-адрес ответа** по умолчанию и удалите ранее настроенный **URL-адрес ответа.**
+   * После маркировки необходимого **URL-адреса ответа** по умолчанию можно также удалить ранее настроенный **URL-адрес ответа,** в который использовался внутренний URL.
 
    * Для потока, инициированного SP, убедитесь, что приложение бэк-энда определяет правильный **URL-адрес ответа** или URL-адрес Службы защиты прав потребителей для получения токена проверки подлинности.
 

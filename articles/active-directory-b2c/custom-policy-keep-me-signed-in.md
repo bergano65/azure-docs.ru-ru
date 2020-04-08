@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a0de94cdce1d7f0e9da9d2844b300956ad6f6970
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 041fb8d881307b52fb170a11618f930debc522a4
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80330837"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803166"
 ---
 # <a name="enable-keep-me-signed-in-kmsi-in-azure-active-directory-b2c"></a>Включение функции "Оставаться в системе" в Azure Active Directory B2C
 
@@ -54,7 +54,7 @@ ms.locfileid: "80330837"
 
 ## <a name="add-the-metadata-to-the-self-asserted-technical-profile"></a>Добавление метаданных в самоутверждаемый технический профиль
 
-Чтобы добавить флажок KMSI в страницу регистрации `setting.enableRememberMe` и регистрации, установите метаданные на ложные. Переиздайте технические профили SelfAsserted-LocalAccountSignin-Email в файле расширения.
+Чтобы добавить флажок KMSI в страницу регистрации `setting.enableRememberMe` и регистрации, установите метаданные на истину. Переиздайте технические профили SelfAsserted-LocalAccountSignin-Email в файле расширения.
 
 1. Найдите элемент ClaimsProviders. Если такой элемент не существует, добавьте его.
 1. Добавьте следующие поставщик претензий в элемент ClaimsProviders:

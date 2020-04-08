@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: 34a70a4698b69881a06cfb7a7017fa0c30647197
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 81b7fb687bb6ef88d1ed436923d0e5ff7561c22b
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80047683"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803251"
 ---
 # <a name="api-management-transformation-policies"></a>Политики преобразования службы управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -78,8 +78,8 @@ ms.locfileid: "80047683"
 |name|Описание|Обязательно|Значение по умолчанию|
 |----------|-----------------|--------------|-------------|
 |apply|Для атрибута нужно задать одно из следующих значений:<br /><br /> always — всегда применять преобразование;<br />content-type-json — преобразовать только в том случае, если в заголовке ответа Content-Type указано наличие формата JSON.|Да|Недоступно|
-|consider-accept-header|Для атрибута нужно задать одно из следующих значений:<br /><br /> true — применять преобразование, только если XML запрашивается в заголовке запроса Accept;<br />false — всегда применять преобразование.|нет|Да|
-|parse-date|Если задано значение `false`, значения даты просто копируются при преобразовании.|нет|Да|
+|consider-accept-header|Для атрибута нужно задать одно из следующих значений:<br /><br /> true — применять преобразование, только если XML запрашивается в заголовке запроса Accept;<br />false — всегда применять преобразование.|нет|true|
+|parse-date|Если задано значение `false`, значения даты просто копируются при преобразовании.|нет|true|
 
 ### <a name="usage"></a>Использование
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
@@ -123,7 +123,7 @@ ms.locfileid: "80047683"
 |----------|-----------------|--------------|-------------|
 |kind|Для атрибута нужно задать одно из следующих значений:<br /><br /> javascript-friendly — преобразованный JSON имеет форму, понятную разработчикам JavaScript;<br />direct — преобразованный JSON отражает структуру исходного XML-документа.|Да|Недоступно|
 |apply|Для атрибута нужно задать одно из следующих значений:<br /><br /> always — всегда применять преобразование;<br />content-type-xml — преобразовать только в том случае, если в заголовке ответа Content-Type указано наличие формата XML.|Да|Недоступно|
-|consider-accept-header|Для атрибута нужно задать одно из следующих значений:<br /><br /> true — применять преобразование, только если JSON запрашивается в заголовке запроса Accept;<br />false — всегда применять преобразование.|нет|Да|
+|consider-accept-header|Для атрибута нужно задать одно из следующих значений:<br /><br /> true — применять преобразование, только если JSON запрашивается в заголовке запроса Accept;<br />false — всегда применять преобразование.|нет|true|
 
 ### <a name="usage"></a>Использование
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
@@ -207,7 +207,7 @@ ms.locfileid: "80047683"
 <set-backend-service base-url="base URL of the backend service" />
 ```
 
-или диспетчер конфигурации служб
+or
 
 ```xml
 <set-backend-service backend-id="identifier of the backend entity specifying base URL of the backend service" />
@@ -513,7 +513,7 @@ OriginalUrl.
 |name|Описание|Обязательно|
 |----------|-----------------|--------------|
 |set-header|Корневой элемент.|Да|
-|значение|Указывает значение заголовка, которое должно быть установлено. Для нескольких заголовков с одним и тем же именем добавьте дополнительные элементы `value`.|нет|
+|value|Указывает значение заголовка, которое должно быть установлено. Для нескольких заголовков с одним и тем же именем добавьте дополнительные элементы `value`.|нет|
 
 ### <a name="properties"></a>Свойства
 
@@ -540,17 +540,12 @@ OriginalUrl.
 </set-query-parameter>
 ```
 
-### <a name="examples"></a>Примеры
-
 #### <a name="example"></a>Пример
 
 ```xml
 
-<set-query-parameter>
-  <parameter name="api-key" exists-action="skip">
-    <value>12345678901</value>
-  </parameter>
-  <!-- for multiple parameters with the same name add additional value elements -->
+<set-query-parameter name="api-key" exists-action="skip">
+  <value>12345678901</value>
 </set-query-parameter>
 
 ```
@@ -573,7 +568,7 @@ OriginalUrl.
 |name|Описание|Обязательно|
 |----------|-----------------|--------------|
 |set-query-parameter|Корневой элемент.|Да|
-|значение|Указывает значение параметра запроса, которое должно быть установлено. Для нескольких параметров запроса с одним и тем же именем добавьте дополнительные элементы `value`.|Да|
+|value|Указывает значение параметра запроса, которое должно быть установлено. Для нескольких параметров запроса с одним и тем же именем добавьте дополнительные элементы `value`.|Да|
 
 ### <a name="properties"></a>Свойства
 
@@ -658,7 +653,7 @@ OriginalUrl.
 |Атрибут|Описание|Обязательно|Значение по умолчанию|
 |---------------|-----------------|--------------|-------------|
 |шаблон|Фактический URL-адрес веб-службы с любыми параметрами строки запроса. При использовании выражений все значение должно быть выражением.|Да|Недоступно|
-|copy-unmatched-params|Указывает, добавляются ли в определяемый шаблоном перезаписи URL-адрес параметры запроса во входящем запросе, отсутствующие в исходном шаблоне URL-адреса.|нет|Да|
+|copy-unmatched-params|Указывает, добавляются ли в определяемый шаблоном перезаписи URL-адрес параметры запроса во входящем запросе, отсутствующие в исходном шаблоне URL-адреса.|нет|true|
 
 ### <a name="usage"></a>Использование
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file
-ms.openlocfilehash: 0aa62a76727f6f913c277100d8c5b36ed1b00110
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f2133524f57576c4646de9d4bf7f37b573a77e6d
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77618487"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80813757"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -40,7 +40,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 Создайте хранилище ключей, используя команду [Az keyvault,](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) команду Azure CLI, команду [New-AzKeyvault](/powershell/module/az.keyvault/new-azkeyvault) Azure Powershell, [портал Azure](https://portal.azure.com)или [шаблон менеджера ресурсов.](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create)
 
 >[!WARNING]
-> Для обеспечения того, чтобы секреты шифрования не пересекали региональные границы, Шифрование дисков Azure требует, чтобы Key Vault и VMs были расположены в одном регионе. Создайте и используйте Key Vault, который находится в том же регионе, что и вшивки в использовании ввода-нора. 
+> Для обеспечения того, чтобы секреты шифрования не пересекали региональные границы, Шифрование дисков Azure требует, чтобы Key Vault и VMs были расположены в одном регионе и в той же подписке. Создайте и используйте Key Vault, который находится в том же регионе, что и вшивки в использовании ввода-нора. 
 
 Каждый Key Vault должен иметь уникальное имя. В следующих примерах замените <your-unique-keyvault-name> именем своего хранилища ключей.
 
@@ -120,7 +120,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 1. Выберите хранилище ключей, перейдите на **политику доступа**и **нажмите кнопку, чтобы показать расширенные политики доступа.**
 2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
 3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. Нажмите **Сохранить**.
+4. Выберите команду **Сохранить**.
 
     ![Установка политики расширенного доступа к хранилищу Azure Key Vault](../articles/virtual-machines/media/disk-encryption/keyvault-portal-fig4.png)
 

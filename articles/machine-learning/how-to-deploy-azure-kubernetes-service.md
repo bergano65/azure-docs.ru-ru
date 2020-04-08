@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 01/16/2020
-ms.openlocfilehash: 792964f28ddb3fcb10932b8de9499a9c7027960f
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: aec1b7f7bf60be34d21d52ca652a776cf3275fe8
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80475382"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811766"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -135,7 +135,7 @@ az ml computetarget create aks -n myaks
 
 Для получения дополнительной информации о создании кластера AKS с помощью Azure CLI или портала смотрите следующие статьи:
 
-* [Создание кластера AKS (CLI)](https://docs.microsoft.com/cli/azure/aks?toc=%2Fazure%2Faks%2FTOC.json&bc=%2Fazure%2Fbread%2Ftoc.json&view=azure-cli-latest#az-aks-create)
+* [Создание кластера AKS с помощью CLI](https://docs.microsoft.com/cli/azure/aks?toc=%2Fazure%2Faks%2FTOC.json&bc=%2Fazure%2Fbread%2Ftoc.json&view=azure-cli-latest#az-aks-create)
 * [Создание кластера AKS (портал)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal?view=azure-cli-latest)
 
 Следующие примеры демонстрируют, как прикрепить существующий кластер AKS к рабочему пространству:
@@ -233,10 +233,28 @@ az ml model deploy -ct myaks -m mymodel:1 -n myservice -ic inferenceconfig.json 
 > Развертывание через VS Code требует заблаговременного создания или присоединения кластера AKS к рабочему пространству.
 
 ## <a name="deploy-models-to-aks-using-controlled-rollout-preview"></a>Развертывание моделей на AKS с помощью контролируемого развертывания (предварительный просмотр)
-Анализируйте и продвигайте модельные версии контролируемым образом с помощью конечных точек. Развертывание до 6 версий за одной конечной точкой и настроить % трафика скоринга на каждую развернутую версию. Можно включить информацию о приложениях для просмотра операционных показателей конечных точек и развернутых версий.
+
+Анализируйте и продвигайте модельные версии контролируемым образом с помощью конечных точек. Можно развернуть до шести версий за одной конечнейточкой. Конечные точки предоставляют следующие возможности:
+
+* Налаживание __процентного показателя трафика, отправленного на каждую конечную точку.__ Например, маршрут 20% трафика до конечной точки 'тест' и 80% к 'производству'.
+
+    > [!NOTE]
+    > Если на вас не приходится 100% трафика, оставшийся процент направляется в конечную __версию по умолчанию.__ Например, если настроить конечную версию 'тест', чтобы получить 10% трафика, и 'prod' для 30%, остальные 60% отправляются в конечную версию по умолчанию.
+    >
+    > Созданная первая конечная точка автоматически настраивается по умолчанию. Вы можете изменить `is_default=True` это, установив при создании или обновлении версии конечных точек.
+     
+* Тег конечная версия как __контроль__ или __лечение.__ Например, текущая конечная версия производства может быть элементом управления, в то время как потенциальные новые модели развертываются в качестве вариантов обработки. После оценки производительности версий обработки, если один превосходит текущий контроль, он может быть повышен до нового производства / контроля.
+
+    > [!NOTE]
+    > Вы можете иметь только __один__ контроль. Вы можете иметь несколько процедур.
+
+Можно включить информацию о приложениях для просмотра операционных показателей конечных точек и развернутых версий.
 
 ### <a name="create-an-endpoint"></a>Создание конечной точки
-Как только вы будете готовы развернуть свои модели, создайте конечную точку скоринга и разместите первую версию. На приведенном ниже шаге показано, как развернуть и создать конечную точку с помощью SDK. Первое развертывание будет определено как версия по умолчанию, что означает, что неопределенный процентиль трафика во всех версиях будет переходить в версию по умолчанию.  
+Как только вы будете готовы развернуть свои модели, создайте конечную точку скоринга и разместите первую версию. В следующем примере показано, как развернуть и создать конечную точку с помощью SDK. Первое развертывание будет определено как версия по умолчанию, что означает, что неопределенный процентиль трафика во всех версиях будет переходить в версию по умолчанию.  
+
+> [!TIP]
+> В следующем примере конфигурация устанавливает начальную конечную версию для обработки 20% трафика. Так как это первая конечная точка, это также версия по умолчанию. И так как у нас нет других версий для других 80% трафика, он направляется по умолчанию, а также. До тех пор, пока другие версии, которые принимают процент трафика развернуты, это эффективно получает 100% трафика.
 
 ```python
 import azureml.core,
@@ -247,8 +265,8 @@ from azureml.core.compute import ComputeTarget
 compute = ComputeTarget(ws, 'myaks')
 namespace_name= endpointnamespace
 # define the endpoint and version name
-endpoint_name = "mynewendpoint",
-version_name= "versiona",
+endpoint_name = "mynewendpoint"
+version_name= "versiona"
 # create the deployment config and define the scoring traffic percentile for the first deployment
 endpoint_deployment_config = AksEndpoint.deploy_configuration(cpu_cores = 0.1, memory_gb = 0.2,
                                                               enable_app_insights = True,
@@ -258,11 +276,16 @@ endpoint_deployment_config = AksEndpoint.deploy_configuration(cpu_cores = 0.1, m
                                                               traffic_percentile = 20)
  # deploy the model and endpoint
  endpoint = Model.deploy(ws, endpoint_name, [model], inference_config, endpoint_deployment_config, compute)
+ # Wait for he process to complete
+ endpoint.wait_for_deployment(True)
  ```
 
 ### <a name="update-and-add-versions-to-an-endpoint"></a>Обновление и добавление версий в конечную точку
 
 Добавьте еще одну версию в конечную точку и настройте баллингный процентиль трафика, идущий в версию. Существует два типа версий: контроль и вариант лечения. Там может быть несколько версий лечения, чтобы помочь сравнить с одной версии управления.
+
+> [!TIP]
+> Вторая версия, созданная следующим фрагментом кода, принимает 10% трафика. Первая версия настроена на 20%, поэтому только 30% трафика настроено для конкретных версий. Остальные 70% отправляются в первую конечную версию, потому что это также версия по умолчанию.
 
  ```python
 from azureml.core.webservice import AksEndpoint
@@ -275,9 +298,13 @@ endpoint.create_version(version_name = version_name_add,
                         tags = {'modelVersion':'b'},
                         description = "my second version",
                         traffic_percentile = 10)
+endpoint.wait_for_deployment(True)
 ```
 
-Обновление существующих версий или удалить их в конечную точку. Можно изменить тип по умолчанию, тип управления и процентиль трафика.
+Обновление существующих версий или удалить их в конечную точку. Можно изменить тип по умолчанию, тип управления и процентиль трафика. В следующем примере вторая версия увеличивает трафик до 40% и теперь является по умолчанию.
+
+> [!TIP]
+> После следующего фрагмента кода вторая версия теперь по умолчанию. Теперь он настроен для 40%, в то время как оригинальная версия по-прежнему настроена для 20%. Это означает, что 40% трафика не учитывается конфигурациями версий. Оставшийся трафик будет направлен на вторую версию, потому что теперь он находится по умолчанию. Он эффективно получает 80% трафика.
 
  ```python
 from azureml.core.webservice import AksEndpoint
@@ -288,7 +315,8 @@ endpoint.update_version(version_name=endpoint.versions["versionb"].name,
                         traffic_percentile=40,
                         is_default=True,
                         is_control_version_type=True)
-
+# Wait for the process to complete before deleting
+endpoint.wait_for_deployment(true)
 # delete a version in an endpoint
 endpoint.delete_version(version_name="versionb")
 
@@ -343,7 +371,7 @@ print(token)
 
 [!INCLUDE [aml-update-web-service](../../includes/machine-learning-update-web-service.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Безопасные эксперименты и выводы в виртуальной сети](how-to-enable-virtual-network.md)
 * [Как развернуть модель с помощью пользовательского изображения Docker](how-to-deploy-custom-docker-image.md)
