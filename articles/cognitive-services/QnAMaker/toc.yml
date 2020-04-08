@@ -89,7 +89,7 @@
           href: How-To/test-knowledge-base.md
     - name: Управление наборами вопросов и ответов
       items:
-        - name: Изменение набора вопросов и ответов
+        - name: Изменение наборов вопросов и ответов
           href: How-To/edit-knowledge-base.md
         - name: Добавление запросов для дальнейших действий
           href: How-To/multiturn-conversation.md

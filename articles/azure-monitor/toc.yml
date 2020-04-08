@@ -220,6 +220,8 @@
               href: app/api-custom-events-metrics.md
             - name: Устранение неполадок с ASP.NET
               href: app/asp-net-troubleshoot-no-data.md
+            - name: Удаление Application Insights
+              href: app/remove-application-insights.md
         - name: Мониторинг без написания кода
           items:
             - name: Виртуальные машины Azure и масштабируемые наборы

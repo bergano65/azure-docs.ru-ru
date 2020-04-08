@@ -2,19 +2,19 @@
 title: Служба Azure Kubernetes (AKS)
 summary: AKS позволяет быстро развертывать готовые к использованию в рабочей среде кластеры Kubernetes в Azure. Узнайте, как использовать AKS, изучив эти краткие руководства, учебные материалы и примеры.
 metadata:
-  title: Служба Azure Kubernetes (AKS)
+  title: Документация по Службе Azure Kubernetes (AKS)
   description: AKS позволяет быстро развертывать готовые к использованию в рабочей среде кластеры Kubernetes в Azure. Узнайте, как использовать AKS, изучив эти краткие руководства, учебные материалы и примеры.
   ms.service: container-service
   ms.topic: landing-page
   author: laurenhughes
   ms.author: lahugh
   ms.date: 03/25/2020
-  ms.openlocfilehash: 7482eb14fb6bcb80bc8f8b9d06057287cb862a27
-  ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+  ms.openlocfilehash: 4829b95fb62a33406248f503e646238e116cb413
+  ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/27/2020
-  ms.locfileid: "80335987"
+  ms.lasthandoff: 04/07/2020
+  ms.locfileid: "80803285"
 landingContent:
 - title: Сведения о Службе Azure Kubernetes (AKS)
   linkLists:
