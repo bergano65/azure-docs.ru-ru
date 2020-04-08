@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: a9f12849525daeea69ece6e81077446f062e8889
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: f5588503825281f407ddbbc2c1c57cd94a9c7ee6
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80384404"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804713"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-postgresql"></a>Используйте активный каталог Azure для проверки подлинности с помощью PostgreS'L
 
@@ -24,7 +24,9 @@ ms.locfileid: "80384404"
 
 ## <a name="setting-the-azure-ad-admin-user"></a>Настройка пользователя AD Adin Azure
 
-Только пользователь Azure Admin может создавать/включать пользователей для проверки подлинности на основе Azure AD. Для создания и пользователя Azure AdA Adin, пожалуйста, выполните следующие действия
+Только пользователи администратора Azure AD могут создавать/включать пользователей для проверки подлинности на основе Azure AD. Мы рекомендуем не использовать администратор Azure AD для регулярных операций с базами данных, так как он имеет повышенные пользовательские разрешения (например, CREATEDB).
+
+Чтобы настроить администратора Azure AD (вы можете использовать пользователя или группу), пожалуйста, выполните следующие действия
 
 1. На портале Azure выберите экземпляр базы данных Azure для PostgreS'L, который необходимо включить для Azure AD.
 2. В настройках выберите Active Directory Admin:
@@ -37,36 +39,6 @@ ms.locfileid: "80384404"
 > При настройке администратора новый пользователь добавляется в базу данных Azure для сервера PostgreS'L с полными разрешениями администратора. Роль будет играть пользователь Azure AD Admin в базе `azure_ad_admin`данных Azure для PostgreS'L.
 
 Только один администратор Azure AD может быть создан на сервере PostgreS'L, а выбор другого будет перезаписывать существующий админ Azure Ad, настроенный на сервер. Можно указать группу Azure AD вместо отдельного пользователя, чтобы иметь несколько администраторов. Обратите внимание, что вы впишетесь с именем группы для целей администрирования.
-
-## <a name="creating-azure-ad-users-in-azure-database-for-postgresql"></a>Создание пользователей Azure AD в базе данных Azure для PostgreS'L
-
-Чтобы добавить пользователя Azure AD в базу данных Azure для базы данных PostgreS'L, выполните следующие шаги после подключения (см. более поздний раздел о том, как подключиться):
-
-1. Сначала убедитесь, что пользователь `<user>@yourtenant.onmicrosoft.com` Azure AD является действительным пользователем в нанимательazадных AD.
-2. Подпишитесь на базу данных Azure для экземпляра PostgreS'L в качестве пользователя Azure AD Adin.
-3. Создание `<user>@yourtenant.onmicrosoft.com` роли в базе данных Azure для PostgreS'L.
-4. Сделать `<user>@yourtenant.onmicrosoft.com` членом роли azure_ad_user. Это должно быть предоставлено только пользователям Azure AD.
-
-**Примере:**
-
-```sql
-CREATE ROLE "user1@yourtenant.onmicrosoft.com" WITH LOGIN IN ROLE azure_ad_user;
-```
-
-> [!NOTE]
-> Проверка подлинности пользователя через Azure AD не дает пользователю никаких разрешений на доступ к объектам в базе данных Azure для базы данных PostgreS'L. Вы должны предоставить пользователю необходимые разрешения вручную.
-
-## <a name="creating-azure-ad-groups-in-azure-database-for-postgresql"></a>Создание групп Azure AD в базе данных Azure для PostgreS'L
-
-Чтобы включить группу Azure AD для доступа к базе данных, используйте тот же механизм, что и для пользователей, но вместо этого укажите имя группы:
-
-**Примере:**
-
-```sql
-CREATE ROLE "Prod DB Readonly" WITH LOGIN IN ROLE azure_ad_user;
-```
-
-При входе в систему члены группы будут использовать свои токены личного доступа, но подписываются с именем группы, указанным как имя пользователя.
 
 ## <a name="connecting-to-azure-database-for-postgresql-using-azure-ad"></a>Подключение к базе данных Azure для PostgreS'L с помощью Azure AD
 
@@ -167,6 +139,36 @@ psql "host=mydb.postgres... user=user@tenant.onmicrosoft.com@mydb dbname=postgre
 ```
 
 Теперь вы проходят аутентификацию на сервере PostgreS'L с помощью аутентификации Azure AD.
+
+## <a name="creating-azure-ad-users-in-azure-database-for-postgresql"></a>Создание пользователей Azure AD в базе данных Azure для PostgreS'L
+
+Чтобы добавить пользователя Azure AD в базу данных Azure для базы данных PostgreS'L, выполните следующие шаги после подключения (см. более поздний раздел о том, как подключиться):
+
+1. Сначала убедитесь, что пользователь `<user>@yourtenant.onmicrosoft.com` Azure AD является действительным пользователем в нанимательazадных AD.
+2. Подпишитесь на базу данных Azure для экземпляра PostgreS'L в качестве пользователя Azure AD Adin.
+3. Создание `<user>@yourtenant.onmicrosoft.com` роли в базе данных Azure для PostgreS'L.
+4. Сделать `<user>@yourtenant.onmicrosoft.com` членом роли azure_ad_user. Это должно быть предоставлено только пользователям Azure AD.
+
+**Примере:**
+
+```sql
+CREATE ROLE "user1@yourtenant.onmicrosoft.com" WITH LOGIN IN ROLE azure_ad_user;
+```
+
+> [!NOTE]
+> Проверка подлинности пользователя через Azure AD не дает пользователю никаких разрешений на доступ к объектам в базе данных Azure для базы данных PostgreS'L. Вы должны предоставить пользователю необходимые разрешения вручную.
+
+## <a name="creating-azure-ad-groups-in-azure-database-for-postgresql"></a>Создание групп Azure AD в базе данных Azure для PostgreS'L
+
+Чтобы включить группу Azure AD для доступа к базе данных, используйте тот же механизм, что и для пользователей, но вместо этого укажите имя группы:
+
+**Примере:**
+
+```sql
+CREATE ROLE "Prod DB Readonly" WITH LOGIN IN ROLE azure_ad_user;
+```
+
+При входе в систему члены группы будут использовать свои токены личного доступа, но подписываются с именем группы, указанным как имя пользователя.
 
 ## <a name="token-validation"></a>Проверка токенов
 

@@ -1,18 +1,18 @@
 ---
 title: Типы URL-адресов, поддерживаемые для импорта - NA Maker
-description: Понять, как типы URL-адресов используются для импорта и создания наборов nA.
+description: Понять, как типы URL-адресов используются для импорта и создания пар NA.
 ms.topic: reference
 ms.date: 01/02/2020
-ms.openlocfilehash: cf2a02f55d7c95ff9b3f0231ea07a783d18b73cf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c6c6c7ba19fe7be54733f45997134fddb56a6ba0
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77651831"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804322"
 ---
 # <a name="urls-supported-for-importing-documents"></a>URL-адреса, поддерживаемые для импорта документов
 
-Понять, как типы URL-адресов используются для импорта и создания наборов nA.
+Понять, как типы URL-адресов используются для импорта и создания пар NA.
 
 ## <a name="faq-urls"></a>URL-адреса вопросов и ответов
 

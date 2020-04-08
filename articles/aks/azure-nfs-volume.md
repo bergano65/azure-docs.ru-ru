@@ -1,17 +1,18 @@
 ---
-title: Создание сервера NFS (Network File System) Ubuntu Server для использования стручками службы Azure Kubernetes (AKS)
+title: Создание объема NFS Ubuntu Linux Server
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как вручную создать объем NFS Ubuntu Linux Server для использования с помощью стручков в службе Azure Kubernetes (AKS)
 services: container-service
 author: ozboms
 ms.topic: article
 ms.date: 4/25/2019
 ms.author: obboms
-ms.openlocfilehash: e5676710bc47557318f3e2adcf36ec0ed13d47de
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7db3f806df88e5b23012e97ba5c2f14ca65b2508
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77596629"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803472"
 ---
 # <a name="manually-create-and-use-an-nfs-network-file-system-linux-server-volume-with-azure-kubernetes-service-aks"></a>Вручную создавайте и используйте объем Linux Server NFS (Network File System) с помощью сервиса Azure Kubernetes (AKS)
 Обмен данными между контейнерами часто является необходимым компонентом контейнерных служб и приложений. Обычно у вас есть различные стручки, которые нуждаются в доступе к одной и той же информации на внешнем постоянном томе.    
@@ -19,7 +20,7 @@ ms.locfileid: "77596629"
 
 В этой статье будет показан способ создания NFS Server на виртуальной машине Ubuntu. А также предоставить вашим контейнерам AKS доступ к этой общей файловой системе.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 Эта статья предполагает, что у вас есть существующий кластер AKS. Если вам нужен кластер AKS, см. быстрый запуск AKS [с помощью Azure CLI][aks-quickstart-cli] или [с помощью портала Azure.][aks-quickstart-portal]
 
 Кластер AKS должен жить в тех же или заглянунных виртуальных сетях, что и NFS Server. Кластер должен быть создан в существующем VNET, который может быть таким же VNET, как ваш VM.

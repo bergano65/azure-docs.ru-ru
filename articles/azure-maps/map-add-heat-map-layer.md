@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 4a853871ef5f66881235e5a6ffec0886b81f5a92
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 19765bd28f365cc6f6d5b06646896613dd3e3e87
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77208545"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804560"
 ---
 # <a name="add-a-heat-map-layer"></a>Добавление слоя тепловой карты
 
@@ -98,11 +98,11 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 
 Используйте `zoom` выражение для масштабирования радиуса для каждого уровня масштабирования, чтобы каждая точка данных покрывала одну и ту же физическую область карты. Это выражение делает слой тепловой карты более статичным и последовательным. Каждый уровень масштабирования карты имеет в два раза больше пикселей вертикально и горизонтально, чем предыдущий уровень масштабирования. 
 
-Масштабирование радиуса таким образом, чтобы он удваивается с каждым уровнем масштабирования, создает тепловую карту, которая выглядит последовательной на всех уровнях масштабирования. Чтобы применить это масштабирование, `zoom` используйте `exponential interpolation` с выражением базы 2, как показано в следующем примере. Увеличьте масштаб карты, чтобы увидеть, как масштабируется тепловая карта с уровнем масштабирования.
+Масштабирование радиуса таким образом, чтобы он удваивается с каждым уровнем масштабирования, создает тепловую карту, которая выглядит последовательной на всех уровнях масштабирования. Чтобы применить это масштабирование, `zoom` используйте `exponential interpolation` с выражением базы 2, с радиусом пикселя, установленным для минимального `2 * Math.pow(2, minZoom - maxZoom)` уровня масштабирования и масштабируемого радиуса для максимального уровня масштабирования, рассчитанного как показано в следующем образце. Увеличьте масштаб карты, чтобы увидеть, как масштабируется тепловая карта с уровнем масштабирования.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Последовательная масштабируемая карта тепла" src="//codepen.io/azuremaps/embed/OGyMZr/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Последовательная масштабируемая карта тепла" src="//codepen.io/azuremaps/embed/OGyMZr/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Смотрите карту термопада Pen Consistent по<a href='https://codepen.io/azuremaps'>@azuremaps</a> <a href='https://codepen.io/azuremaps/pen/OGyMZr/'>увеличенной тепловой карте</a> по картам Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 

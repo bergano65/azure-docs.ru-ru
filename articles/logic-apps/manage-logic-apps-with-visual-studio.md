@@ -7,16 +7,18 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.custom: mvc
 ms.date: 10/29/2019
-ms.openlocfilehash: 6319d2d72df69cc9633bd2b2ff8e777c2a48966a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 73df5b7f10e038b6894996eb83dec7b6914a4536
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79270255"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80803196"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
 Хотя вы можете создавать, отсеивать, управлять и развертывать логические приложения на [портале Azure,](https://portal.azure.com)вы также можете использовать Visual Studio, когда вы хотите добавить свои логические приложения для управления исходными данными, опубликовать различные версии и создать шаблоны [управления ресурсами Azure](../azure-resource-manager/management/overview.md) для различных сред развертывания. С помощью Visual Studio Cloud Explorer вы можете найти приложения логики и другие ресурсы Azure и управлять ими. Например, вы можете открывать, загружать, редактировать, запускать, просматривать журнал запусков, а также отключать и включать приложения логики, которые уже развернуты на портале Azure. Если вы ранее не работали с Azure Logic Apps в Visual Studio, [узнайте о создании приложений логики с помощью Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
+
+Вы также можете [управлять логическими приложениями на портале Azure.](manage-logic-apps-with-azure-portal.md)
 
 > [!IMPORTANT]
 > Развертывание или публикация приложения логики из Visual Studio перезаписывает версию этого приложения на портале Azure. Поэтому, если вы вносите изменения на портале Azure, которые нужно сохранить, [обновите приложение логики в Visual Studio](#refresh) с портала Azure перед следующим развертыванием или публикацией из Visual Studio.
@@ -39,13 +41,13 @@ ms.locfileid: "79270255"
 
   * [Azure SDK (2.9.1 или более позднее)](https://azure.microsoft.com/downloads/)
 
-  * [Лазурная силаШелл](https://github.com/Azure/azure-powershell#installation)
+  * [Azure PowerShell](https://github.com/Azure/azure-powershell#installation)
 
   * Новейшие средства Azure Logic Apps для расширения Visual Studio нужной версии:
 
-    * [Визуальная студия 2019](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019)
+    * [Visual Studio 2019](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019)
 
-    * [Visual Studio 2017.](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
+    * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
 
     * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
 

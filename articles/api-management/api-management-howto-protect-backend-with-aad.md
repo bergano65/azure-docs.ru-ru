@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 8b396b782c1254b3229aeeb8e51b61cc744d6318
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 300f44daeeea5e8a774575dabcb00686906bb5de
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77190365"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804373"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
@@ -137,7 +137,7 @@ ms.locfileid: "77190365"
 
 1. Если вы используете конечные точки **v1,** добавьте параметр тела, названный **ресурсом.** Для значения этого параметра используйте **идентификатор приложения для** задней части. 
 
-1. Если вы используете конечные точки **v2,** используйте область, созданную для бэкэнд-приложения в области **области по умолчанию.**
+1. Если вы используете конечные точки **v2,** используйте область, созданную для бэкэнд-приложения в области **области по умолчанию.** Кроме того, не забудьте [`accessTokenAcceptedVersion`](/azure/active-directory/develop/reference-app-manifest#accesstokenacceptedversion-attribute) установить `2` значение для свойства в [манифесте приложения.](/azure/active-directory/develop/reference-app-manifest)
 
 1. Затем укажите учетные данные клиента. Это должны быть учетные данные клиентского приложения.
 
@@ -147,7 +147,7 @@ ms.locfileid: "77190365"
 
 1. Далее в качестве типа предоставления кода авторизации указан **redirect_url**. Запишите этот URL-адрес.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. Вернитесь к клиенту-приложению и выберите **аутентификацию.**
 
@@ -165,7 +165,7 @@ ms.locfileid: "77190365"
 
 4. В разделе **безопасности** выберите **OAuth 2.0**, а также настроенный ранее сервер OAuth 2.0. 
 
-5. Нажмите кнопку **Сохранить**.
+5. Щелкните **Сохранить**.
 
 ## <a name="successfully-call-the-api-from-the-developer-portal"></a>Удачный вызов API с портала разработчика
 

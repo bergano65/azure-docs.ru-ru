@@ -3,12 +3,12 @@ title: Интеграция с другими приложениями - NA Make
 description: NA Maker интегрируется в клиентские приложения, такие как чат-боты, а также с другими службами обработки естественного языка, такими как Language Understanding (LUIS).
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: 38b275aa2b8cf5768a2bc95634a7ff4892893eda
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c1edbfb6badfb73ce08a99709da0f8bfb61b7dc3
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78300525"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80804194"
 ---
 # <a name="design-knowledge-base-for-client-applications"></a>База знаний для клиентских приложений
 
@@ -24,7 +24,7 @@ NA Maker интегрируется с разговорными клиентск
 
 ## <a name="providing-multi-turn-conversations"></a>Обеспечение многоповоротных разговоров
 
-Клиент-бот предоставляет наилучший выбранный ответ из вашей базы знаний, и может предоставить последующие запросы, если ответ является частью набора multi-turn. [Узнайте, как добавить](../how-to/multiturn-conversation.md) многоповоротный вопрос и наборы ответов в свою базу знаний.
+Клиент-бот предоставляет наилучший выбранный ответ из вашей базы знаний, и может предоставить последующие запросы, если ответ является частью пары multi-turn. [Узнайте, как добавить](../how-to/multiturn-conversation.md) многоповоротный вопрос и наборы ответов в свою базу знаний.
 
 ## <a name="natural-language-processing"></a>Обработка естественного языка
 
