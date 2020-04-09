@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 67dedfce4be81fdf686918a310b89cf463ed389a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: dc9c55c7caf2f78d66d8873e2da8ed7efdbdcec9
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79457259"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411641"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-net-sdk-v3"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для .NET (пакет SDK версии 3)
 
@@ -153,13 +153,26 @@ az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-se
 
 Перед сборкой и запуском приложения выполните команду `setx`, чтобы задать переменные среды `akvClientId`, `akvClientSecret`, `akvTenantId` и `akvSubscriptionId` с записанными выше значениями.
 
+**Windows**
+
 ```console
-setx akvClientId <your-clientID>
+setx akvClientId "<your-clientID>"
+setx akvClientSecret "<your-clientSecret>"
+```
 
-setx akvClientSecret <your-clientSecret>
-````
+**Linux**
 
-При каждом вызове `setx` вы будете получать ответ об успешном выполнении "SUCCESS: Specified value was saved." (Указанное значение сохранено.)
+```bash
+export akvClientId = "<your-clientID>"
+export akvClientSecret = "<your-clientSecret>"
+```
+
+**MacOS**
+
+```bash
+export akvClientId = "<your-clientID>"
+export akvClientSecret = "<your-clientSecret>"
+```
 
 Укажите эти переменные среды в строках кода, а затем выполните для приложения проверку подлинности, передавая переменные в [класс KeyVaultClient](/dotnet/api/microsoft.azure.keyvault.keyvaultclient):
 

@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 12/17/2019
+ms.date: 04/02/2020
 ms.author: erhopf
-ms.openlocfilehash: 93a5a29c225912a48cf99ba6126690c298dfef9d
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 9a3f478604547819162ad13d39a9383263321857
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78925116"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80671162"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -22,7 +22,7 @@ ms.locfileid: "78925116"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=uwp).
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=uwp&pivots=programming-language-csharp).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 Если вы уже сделали это, отлично. Давайте продолжим.
@@ -93,4 +93,4 @@ ms.locfileid: "78925116"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
+[!INCLUDE [footer](../footer.md)]

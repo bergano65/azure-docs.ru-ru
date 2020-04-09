@@ -1,22 +1,14 @@
 ---
 title: Руководство по Руководство по составным сущностям — LUIS
-titleSuffix: Azure Cognitive Services
 description: В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/17/2019
-ms.author: diberry
-ms.openlocfilehash: f2b2c3f52610cd9fae0845b15aebf032a088000b
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 03/31/2020
+ms.openlocfilehash: 5b8185a56c54ec92ce8ceaf1cd029dd31f6e709c
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75447950"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478684"
 ---
 # <a name="tutorial-group-and-extract-related-data"></a>Руководство по Группирование и извлечение связанных данных
 В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
@@ -108,11 +100,11 @@ LUIS предоставляет несколько предварительно 
 
 ## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения
 
-[!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
+Чтобы обучить приложение, щелкните **Обучение**. Обучение применяет к активной модели все изменения, например новые сущности и помеченные речевые фрагменты.
 
-## <a name="publish-the-app-so-the-trained-model-is-queryable-from-the-endpoint"></a>Публикация приложения, чтобы в обученную модель можно было отправлять запросы из конечной точки
+## <a name="publish-the-app-to-access-it-from-the-http-endpoint"></a>Публикация приложения для доступа к нему через конечную точку HTTP
 
-[!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
+[!INCLUDE [LUIS How to Publish steps](includes/howto-publish.md)]
 
 ## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Получение намерения и прогнозирование сущности из конечной точки
 
@@ -186,9 +178,7 @@ LUIS предоставляет несколько предварительно 
 
    Это высказывание возвращает массив составных сущностей. Каждой сущности присваивается тип и значение. Чтобы достичь большей точности для каждой дочерней сущности, используйте комбинацию типа и значения из элемента составного массива, это позволит найти соответствующий элемент в массиве сущностей.
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-[!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
+[!INCLUDE [LUIS How to clean up resources](includes/quickstart-tutorial-cleanup-resources.md)]
 
 ## <a name="related-information"></a>Дополнительные сведения
 

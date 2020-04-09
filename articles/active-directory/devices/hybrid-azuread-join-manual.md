@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6754393bdeabcd67dcf6514102e3c825a26fc3e9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 878960738830dbe2f94b977e98215a681c4a79d2
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79222951"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80802558"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -85,7 +85,7 @@ Azure AD Connect выполняет следующие функции:
 | Настройка точки подключения службы | ![Проверить][1] | ![Проверить][1] | ![Проверить][1] |
 | настройка выдачи утверждений; |     | ![Проверить][1] | ![Проверить][1] |
 | Включение поддержки устройств с ОС, отличными от Windows 10 |       |        | ![Проверить][1] |
-| Проверка присоединенных устройств. | ![Проверить][1] | ![Проверить][1] | [Проверка][1] |
+| Проверка присоединенных устройств. | ![Проверить][1] | ![Проверить][1] | ![Проверить][1] |
 
 ## <a name="configure-a-service-connection-point"></a>настройка точки подключения службы;
 

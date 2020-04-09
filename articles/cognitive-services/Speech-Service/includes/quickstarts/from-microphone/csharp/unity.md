@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 12/17/2019
+ms.date: 04/02/2020
 ms.author: erhopf
-ms.openlocfilehash: be8497cb07bd3c761c59bfc55e773b5dcc937c50
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 6b3c8c62382d548d8a1bc7d5f611cdfbe2fd72fb
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78924766"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80671479"
 ---
 > [!NOTE]
 > Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
@@ -25,7 +25,7 @@ ms.locfileid: "78924766"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=unity).
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=unity&pivots=programming-language-csharp).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 Если вы уже сделали это, отлично. Давайте продолжим.
@@ -133,4 +133,4 @@ ms.locfileid: "78924766"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
+[!INCLUDE [footer](../footer.md)]

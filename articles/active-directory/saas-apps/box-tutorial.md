@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 03/24/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab129315f398061eaa427f05f3bd4b1cabff0dc3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 35f8172d418cb9926ba0be2de945ff559fba14cf
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77046773"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80583103"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-box"></a>Руководство по интеграции единого входа Azure Active Directory с Box
 
@@ -87,6 +87,8 @@ ms.locfileid: "77046773"
     а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.account.box.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `box.net`
+
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://sso.services.box.net/sp/ACS.saml2`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения значения обратитесь в [техническую поддержку клиента Box](https://community.box.com/t5/custom/page/page-id/submit_sso_questionaire). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

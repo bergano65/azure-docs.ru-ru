@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 1f4b3387375b52b28600590a099884277f3de63e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f909ca12ce080fc5d1241bcc649c041361e405a7
+ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78943034"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80421176"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Руководство по Развертывание Функций Azure как модулей IoT Edge
 
@@ -31,9 +31,6 @@ ms.locfileid: "78943034"
 
 ![Схема архитектуры из руководства: размещение и развертывание Функций как модуля](./media/tutorial-deploy-function/functions-architecture.png)
 </center>
-
->[!NOTE]
->Модули службы "Функции Azure", используемые в Azure IoT Edge, находятся на стадии [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Функция Azure, создаваемая в этом руководстве, фильтрует данные температуры, созданные устройством. Она отправляет сообщения в вышестоящий Центр Интернета вещей Azure, когда температура превышает заданное пороговое значение.
 

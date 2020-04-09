@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: 93e5ee9b46fb3387b70dd5092f72efcaa8a2bc19
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4bf85a8e38a3cfc46fe4dbaf86639899e7267178
+ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79223071"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80676609"
 ---
 # <a name="tutorial-enable-password-synchronization-in-azure-active-directory-domain-services-for-hybrid-environments"></a>Руководство по Включению синхронизации паролей в Доменных службах Azure Active Directory для гибридных сред
 
@@ -68,7 +68,7 @@ Azure AD Connect можно настроить для синхронизаци�
 
     На снимке экрана в этом примере используются следующие соединители:
 
-    * соединитель Azure AD называется *aaddscontoso.onmicrosoft.com - AAD*;
+    * соединитель Azure AD называется *contoso.onmicrosoft.com - AAD*;
     * локальный соединитель AD DS называется *onprem.contoso.com*;
 
 1. Скопируйте и вставьте следующий скрипт PowerShell на компьютер с установленным Azure AD Connect. Скрипт запускает полную синхронизацию паролей, включающую устаревшие хэши паролей. Обновите переменные `$azureadConnector` и `$adConnector`, указав имена соединителей из предыдущего шага.

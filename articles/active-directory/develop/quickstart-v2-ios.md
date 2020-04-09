@@ -12,12 +12,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: f0b4d1f557006ba8a343a0497262cc5c8254e86c
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 3b0d8c8aa73903572a6a310e07aae57ec71f9cb7
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561588"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80473651"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -64,7 +64,7 @@ ms.locfileid: "77561588"
 > [!div renderon="portal" class="sxs-lookup"]
 >
 > #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
-> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления, совместимые с брокером авторизации.
+> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления, совместимый с брокером авторизации.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >
@@ -117,7 +117,7 @@ ms.locfileid: "77561588"
 > 1. Создайте и запустите приложение.
 > [!div class="sxs-lookup" renderon="portal"]
 > > [!NOTE]
-> > Enter_the_Supported_Account_Info_Here
+> > `Enter_the_Supported_Account_Info_Here`
 > [!div renderon="docs"]
 >
 > 1. Извлеките ZIP-файл и откройте проект в XCode.
@@ -270,25 +270,30 @@ self.applicationContext!.acquireToken(with: parameters) { (result, error) in /* 
 Приложения не требуют, чтобы пользователи выполняли вход каждый раз при запросе маркера. Если пользователь уже вошел, этот метод позволяет приложениям запрашивать маркеры автоматически. 
 
 ```swift
-guard let account = try self.applicationContext!.allAccounts().first else { return }
-        
-let silentParams = MSALSilentTokenParameters(scopes: kScopes, account: account)
-self.applicationContext!.acquireTokenSilent(with: silentParams) { (result, error) in /* Add your handling logic */}
+self.applicationContext!.getCurrentAccount(with: nil) { (currentAccount, previousAccount, error) in
+            
+   guard let account = currentAccount else {
+      return
+   }
+            
+   let silentParams = MSALSilentTokenParameters(scopes: self.kScopes, account: account)
+   self.applicationContext!.acquireTokenSilent(with: silentParams) { (result, error) in /* Add your handling logic */}
+}
 ```
 
 > |Где: ||
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области (то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`)). |
-> | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `applicationContext.account(forHomeAccountId: self.homeAccountId)`. |
+> | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `accountsFromDeviceForParameters:completionBlock:` и правильного идентификатора `accountIdentifier`. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В руководстве по iOS вы найдете пошаговые инструкции по созданию приложений, а также полное описание того, о чем говорится в этом кратком руководстве.
+В руководстве по iOS и macOS вы найдете пошаговые инструкции по созданию приложений, а также полное описание того, о чем говорится в этом кратком руководстве.
 
 ### <a name="learn-how-to-create-the-application-used-in-this-quickstart"></a>Узнайте, как создавать приложения, используемые в этом кратком руководстве.
 
 > [!div class="nextstepaction"]
-> [Вызов API Microsoft Graph из приложения iOS](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
+> [Руководство по вызову API Graph для iOS и macOS](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 

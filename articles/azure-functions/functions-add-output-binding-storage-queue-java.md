@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 10/14/2019
 ms.topic: quickstart
 zone_pivot_groups: java-build-tools-set
-ms.openlocfilehash: 8ae69bfa7ed00e310205332e05c071158c5fc9a3
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: d9815fd27a57acc8b418962e610d2ae1c106edde
+ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78272807"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80673304"
 ---
 # <a name="connect-your-java-function-to-azure-storage"></a>Подключение функции Java к службе хранилища Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "78272807"
 
 Большинство привязок требуют сохраненную строку подключения, которая будет использоваться Функциями Azure для доступа к привязанным службам. Чтобы упростить это подключение, вам следует использовать учетную запись хранения, созданную в приложении-функции. Подключение к этой учетной записи уже хранится в параметрах приложения под названием `AzureWebJobsStorage`.  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этой статьей следует завершить все шаги из [части 1 краткого руководства по Java](functions-create-first-java-maven.md).
 
@@ -37,77 +37,13 @@ ms.locfileid: "78272807"
 
 ## <a name="add-an-output-binding"></a>Добавление выходной привязки
 
-В проекте Java привязки определяются как заметки привязки для метода функции. Затем на основе этих заметок автоматически создается файл *function.json*.
-
-Найдите расположение вашего кода функции в _src/main/java_, откройте файл проекта *Function.java* и добавьте следующий параметр в `run` определение метода:
-
-```java
-@QueueOutput(name = "msg", queueName = "outqueue", connection = "AzureWebJobsStorage") OutputBinding<String> msg
-```
-
-Параметр `msg` имеет тип [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding), представляющий собой набор строк, записываемых в виде сообщений в выходную привязку после завершения выполнения функции. В этом случае выходные данные представляют собой очередь хранилища с именем `outqueue`. Строка подключения для учетной записи хранения задается методом `connection`. Вместо самой строки подключения передается параметр приложения, содержащий строку подключения к учетной записи хранилища.
-
-Определение метода `run` теперь должно выглядеть следующим образом:  
-
-```java
-@FunctionName("HttpTrigger-Java")
-public HttpResponseMessage run(
-        @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION)  
-        HttpRequestMessage<Optional<String>> request, 
-        @QueueOutput(name = "msg", queueName = "outqueue", connection = "AzureWebJobsStorage") 
-        OutputBinding<String> msg, final ExecutionContext context) {
-    ...
-}
-```
+[!INCLUDE [functions-add-output-binding-java-cli](../../includes/functions-add-output-binding-java-cli.md)]
 
 ## <a name="add-code-that-uses-the-output-binding"></a>Добавление кода, который использует выходную привязку
 
-Теперь для записи в выходную привязку из кода функции вы можете использовать новый параметр `msg`. Добавьте следующую строку кода перед успешным ответом, чтобы добавить значение `name` к выходной привязке `msg`.
+[!INCLUDE [functions-add-output-binding-java-code](../../includes/functions-add-output-binding-java-code.md)]
 
-```java
-msg.setValue(name);
-```
-
-После использования выходной привязки вам для проверки подлинности, получения ссылки на очередь или записи данных больше не потребуется код пакета SDK службы хранилища Azure. Вместо вас эти задачи будут выполнены выходной привязкой очереди и средой выполнения функции.
-
-Теперь метод `run` должен выглядеть следующим образом:
-
-```java
-@FunctionName("HttpTrigger-Java")
-public HttpResponseMessage run(
-        @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request, 
-        @QueueOutput(name = "msg", queueName = "outqueue", connection = "AzureWebJobsStorage") 
-        OutputBinding<String> msg, final ExecutionContext context) {
-    context.getLogger().info("Java HTTP trigger processed a request.");
-
-    // Parse query parameter
-    String query = request.getQueryParameters().get("name");
-    String name = request.getBody().orElse(query);
-
-    if (name == null) {
-        return request.createResponseBuilder(HttpStatus.BAD_REQUEST).body("Please pass a name on the query string or in the request body").build();
-    } else {
-        // Write the name to the message queue. 
-        msg.setValue(name);
-
-        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
-    }
-}
-```
-
-## <a name="update-the-tests"></a>Обновление тестов
-
-Поскольку архетип также создает набор тестов, необходимо обновить эти тесты для обработки нового параметра `msg` в сигнатуре метода `run`.  
-
-Найдите местоположение тестового кода в _src/test/java_, откройте файл проекта *Function.java* и замените строку кода в `//Invoke` следующим кодом.
-
-```java
-@SuppressWarnings("unchecked")
-final OutputBinding<String> msg = (OutputBinding<String>)mock(OutputBinding.class);
-
-// Invoke
-final HttpResponseMessage ret = new Function().run(req, msg, context);
-``` 
+[!INCLUDE [functions-add-output-binding-java-test-cli](../../includes/functions-add-output-binding-java-test-cli.md)]
 
 Теперь новую выходную привязку можно испытать локально.
 
@@ -115,19 +51,17 @@ final HttpResponseMessage ret = new Function().run(req, msg, context);
 
 Как и прежде, чтобы построить проект и запустить среду выполнения функций локально, используйте следующую команду.
 
-::: zone pivot="java-build-tools-maven"  
+# <a name="maven"></a>[Maven](#tab/maven)
 ```bash
 mvn clean package 
 mvn azure-functions:run
 ```
-::: zone-end
-
-::: zone pivot="java-build-tools-gradle"  
+# <a name="gradle"></a>[Gradle](#tab/gradle) 
 ```bash
 gradle jar --info
 gradle azureFunctionsRun
 ```
-::: zone-end
+---
 
 > [!NOTE]  
 > Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#add-to-your-functions-app).
@@ -150,17 +84,15 @@ curl -w "\n" http://localhost:7071/api/HttpTrigger-Java --data AzureFunctions
 
 Чтобы обновить опубликованное приложение, выполните следующую команду еще раз:  
 
-::: zone pivot="java-build-tools-maven"  
+# <a name="maven"></a>[Maven](#tab/maven)  
 ```bash
 mvn azure-functions:deploy
 ```
-::: zone-end
-
-::: zone pivot="java-build-tools-gradle"  
+# <a name="gradle"></a>[Gradle](#tab/gradle)  
 ```bash
 gradle azureFunctionsDeploy
 ```
-::: zone-end
+---
 
 Чтобы проверить развернутую функцию, можно снова использовать cURL. Как и ранее, передайте значение `AzureFunctions` в тексте запроса POST к URL-адресу, как показано в следующем примере:
 

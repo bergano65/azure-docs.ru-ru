@@ -3,12 +3,12 @@ title: Что собой представляет Azure Lighthouse?
 description: Azure Lighthouse позволяет поставщикам служб доставлять клиентам управляемые службы с высоким уровнем автоматизации и эффективностью в масштабе.
 ms.date: 11/11/2019
 ms.topic: overview
-ms.openlocfilehash: 0bec1f5b727ca3ecd604d2654358ca9a5507abe4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 1d4d33238f30c2a579c6a0da6a39238207db4f4a
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75646200"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982792"
 ---
 # <a name="what-is-azure-lighthouse"></a>Что собой представляет Azure Lighthouse?
 
@@ -32,7 +32,7 @@ Azure Lighthouse содержит несколько способов оптим
 
 - **Azure delegated resource management** (Делегированное управление ресурсами Azure). Управляйте клиентскими ресурсами Azure безопасно из вашего арендатора без необходимости переключения контекста и уровня управления. Дополнительные сведения см.раздел [Делегированное управление ресурсами Azure](concepts/azure-delegated-resource-management.md).
 - **Новые возможности портала Azure**. Просмотрите сведения о всех арендаторах на новой странице **Мои клиенты** на [портале Azure](https://portal.azure.com). Соответствующая колонка **Поставщики служб** позволяет вашим клиентам просматривать и управлять доступом поставщика служб. Дополнительные сведения см. [View and manage customers](./how-to/view-manage-customers.md) (Просмотр клиентов и управление ими) и [View and manage service providers](how-to/view-manage-service-providers.md) (Просмотр поставщиков служб и управление ими).
-- **Шаблоны Azure Resource Manager**. Упрощенное выполнение задач управления, включая подключение клиентов к делегированному управлению ресурсами Azure. Дополнительные сведения см. в нашем [репозитории с примерами](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates) и статье [Onboard a customer to Azure delegated resource management](how-to/onboard-customer.md) (Подключение клиента к системе делегированного управления ресурсами Azure).
+- **Шаблоны Azure Resource Manager**. Упрощенное выполнение задач управления, включая подключение клиентов к делегированному управлению ресурсами Azure. Дополнительные сведения см. в нашем [репозитории с примерами](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates) и статье [Onboard a customer to Azure delegated resource management](how-to/onboard-customer.md) (Подключение клиента к системе делегированного управления ресурсами Azure).
 - **Managed services offers in Azure Marketplace** (Предложения управляемых служб в Azure Marketplace). Предоставьте клиентам службы через частные или общедоступные предложения и автоматически применяйте их к делегированному управлению ресурсами Azure в качестве альтернативы для подключения с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Managed services offers in Azure Marketplace](concepts/managed-services-offers.md) (Предложения управляемых служб в Azure Marketplace)
 - **Управляемые приложения Azure**. Создавайте пакет приложений и отправляйте приложения, которые клиенты смогут легко развертывать и использовать в собственных подписках. Приложение развертывается в группу ресурсов, доступ к которой выполняется с помощью арендатора, позволяя управлять службой в рамках общей работы Azure Lighthouse. Дополнительные сведения см. в [Azure managed applications overview](../azure-resource-manager/managed-applications/overview.md) (Общие сведения об управляемых приложениях Azure).
 

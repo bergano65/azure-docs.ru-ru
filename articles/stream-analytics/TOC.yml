@@ -39,6 +39,8 @@
       href: streaming-technologies.md
     - name: Выбор средства разработки для заданий
       href: feature-comparison.md
+    - name: Разработка в локальной среде
+      href: develop-locally.md
     - name: Типы входных данных для задания
       items:
         - name: Общие сведения о входных данных
