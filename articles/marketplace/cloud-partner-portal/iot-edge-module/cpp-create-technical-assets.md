@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: cd9cd9f3986ef1944d9f9119296af5512b352d1d
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: b36d03695c107054549fba716f4cc27ecb7bba26
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80744318"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80983489"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureIoTTechAsset) для управления мигрированными предложениями.
+>С 13 апреля 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureIoTTechAsset) для управления мигрированными предложениями.
 
 В этой статье описываются требования, которым должны соответствовать технические ресурсы для модуля IoT Edge для публикации в Azure Marketplace.
 

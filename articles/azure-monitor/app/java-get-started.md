@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: efa498ba600a664beab4b9a49eae2b2c3f1c8397
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2355cb7ab995cab3060c7a94c9e7ea344bd9e92b
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80298310"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984646"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Быстрый запуск: Начните с Application Insights в веб-проекте Java
 
@@ -223,7 +223,7 @@ Application Insights — это расширяемая служба аналит
 
 Пакет средств разработки для Java Application Insights теперь поддерживает [распределенную трассировку W3C](https://w3c.github.io/trace-context/).
 
-Конфигурация входящих параметров пакета средств разработки описана далее в статье о [корреляции](correlation.md#telemetry-correlation-in-the-java-sdk).
+Конфигурация входящих параметров пакета средств разработки описана далее в статье о [корреляции](correlation.md).
 
 Конфигурация входящих параметров пакета средств разработки задана в файле [AI-Agent.xml](java-agent.md).
 
@@ -258,7 +258,7 @@ Application Insights — это расширяемая служба аналит
 * `displayName` — имя, отображаемое в портале Application Insights.
 * `objectName` — имя объекта JMX.
 * `attribute` — атрибут имени объекта JMX для выборки
-* `type` (необязательно) — тип атрибута объекта JMX:
+* `type`(необязательно) - Тип атрибута объекта JMX:
   * по умолчанию: простой тип, такой как int или long;
   * `composite`— данные счетчика производительности имеют формат "Атрибут.Данные";
   * `tabular`— данные счетчика производительности имеют формат строки таблицы.

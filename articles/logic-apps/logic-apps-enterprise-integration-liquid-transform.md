@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 04/01/2020
-ms.openlocfilehash: 0ab9297e772a3b75a077da1c2ae74e5058b2731f
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: d2598dfe9d7972dcb764abf4a1239613a1e8417a
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80657339"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879179"
 ---
 # <a name="perform-advanced-json-transformations-with-liquid-templates-in-azure-logic-apps"></a>Выполнение сложных преобразований JSON с помощью шаблонов Liquid в Azure Logic Apps
 
@@ -33,7 +33,7 @@ ms.locfileid: "80657339"
 
 ## <a name="create-liquid-template-or-map-for-your-integration-account"></a>Создание шаблона или сопоставления Liquid в учетной записи интеграции
 
-1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге. В шаблоне Liquid вы можете использовать [фильтры Liquid,](https://shopify.github.io/liquid/basics/introduction/#filters)которые используют конвенции [DotLiquid](https://dotliquidmarkup.org/) и именования C.
+1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге. В шаблоне Liquid вы можете использовать [фильтры Liquid,](https://shopify.github.io/liquid/basics/introduction/#filters)которые используют конвенции [DotLiquid](https://github.com/dotliquid/dotliquid) и именования C.
 
    > [!NOTE]
    > Убедитесь, что имена фильтров используют *корпус предложения* в шаблоне. В противном случае фильтры не будут работать. Кроме того, карты имеют [ограничения размера файла.](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits)

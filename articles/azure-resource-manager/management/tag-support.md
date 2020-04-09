@@ -3,12 +3,12 @@ title: Поддержка тегов для ресурсов
 description: В этой статье описываются типы ресурсов Azure, поддерживающие теги, а также приводятся сведения о всех службах Azure.
 ms.topic: conceptual
 ms.date: 04/06/2020
-ms.openlocfilehash: e012126995136bec15dc360be5e91007b6f69f09
-ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
+ms.openlocfilehash: b8b1c0b738bb8b94ee53433141f1ae3dbbb3f942
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80802498"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982333"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](tag-resources.md). Столбец с **метками поддержки** указывает, есть ли у типа ресурса свойство для тега. Столбец с меткой **Тег в отчете о затратах** указывает, передает ли этот тип ресурса тег отчету о затратах. Вы можете просматривать затраты по тегам в [анализе затрат управления затратами](../../cost-management-billing/costs/quick-acm-cost-analysis.md#understanding-grouping-and-filtering-options) и [счет-фактурой Azure и данными о ежедневном использовании.](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md)
@@ -1493,6 +1493,7 @@ ms.locfileid: "80802498"
 > | networkSecurityGroups | Да | Да |
 > | networkWatchers | Да | нет |
 > | networkWatchers / connectionMonitors | Да | нет |
+> | networkWatchers / flowLogs | нет | нет |
 > | networkWatchers / линзы | Да | нет |
 > | networkWatchers / pingMeshes | Да | нет |
 > | p2sVpnGateways | Да | Да |

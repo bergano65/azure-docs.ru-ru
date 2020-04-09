@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: e7b7d04cd3d1ed9792f8ad3c7bc302e4a2c2180f
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: 7a35277a61217dab2982d6436903cd09abfe8c7d
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745030"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984969"
 ---
 # <a name="iot-edge-module-offer-settings-tab"></a>Вкладка "Параметры предложения модуля IoT Edge"
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
+>С 13 апреля 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
 
 Открывается страница **Модули IoT Edge > Новое предложение** с фокусом на вкладке **Параметры предложения**. 
 

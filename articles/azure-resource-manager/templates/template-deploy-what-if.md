@@ -3,29 +3,68 @@ title: Развертывание шаблона что-если (Предвар
 description: Определите, какие изменения произойдут с вашими ресурсами перед развертыванием шаблона управления ресурсами Azure.
 author: mumian
 ms.topic: conceptual
-ms.date: 03/05/2020
+ms.date: 04/06/2020
 ms.author: jgao
-ms.openlocfilehash: bc42585204e5cc2c3ece5293a3934fd22fe8507b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9e0d0d572e08961b585a93e66e400b8c2e54bf7f
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80156452"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886846"
 ---
 # <a name="arm-template-deployment-what-if-operation-preview"></a>Развертывание шаблона ARM что-если (Предварительный просмотр)
 
 Перед развертыванием шаблона Azure Resource Manager (ARM) можно просмотреть изменения, которые произойдут. Менеджер ресурсов Azure предоставляет операцию what-if, чтобы вы могли видеть, как изменятся ресурсы при развертывании шаблона. Операция what-if не внесет никаких изменений в существующие ресурсы. Вместо этого он предсказывает изменения, если указанный шаблон развернут.
 
 > [!NOTE]
-> Операция what-if в настоящее время находится в предварительном просмотре. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/armtemplatepreviews). В качестве предварительного релиза результаты могут иногда показывать, что ресурс изменится, когда на самом деле никаких изменений не произойдет. Мы работаем над тем, чтобы уменьшить эти проблемы, но нам нужна ваша помощь. Пожалуйста, сообщите об этих проблемах на [https://aka.ms/whatifissues](https://aka.ms/whatifissues).
+> Операция what-if в настоящее время находится в предварительном просмотре. В качестве предварительного релиза результаты могут иногда показывать, что ресурс изменится, когда на самом деле никаких изменений не произойдет. Мы работаем над тем, чтобы уменьшить эти проблемы, но нам нужна ваша помощь. Пожалуйста, сообщите об этих проблемах на [https://aka.ms/whatifissues](https://aka.ms/whatifissues).
 
 Вы можете использовать операцию «что,если» с командами PowerShell или операции REST API.
+
+## <a name="install-powershell-module"></a>Установка модуля PowerShell
+
+Чтобы использовать что-если в PowerShell, установите предварительную версию модуля Az.Resources из галереи PowerShell.
+
+### <a name="uninstall-alpha-version"></a>Удалить альфа-версию
+
+Если вы ранее установили альфа-версию модуля «что если», удалите этот модуль. Альфа-версия была доступна только для пользователей, которые подписались на ранний предварительный просмотр. Если вы не установили предварительный просмотр, вы можете пропустить этот раздел.
+
+1. Запустите PowerShell от имени администратора.
+1. Проверьте установленные версии модуля Az.Resources.
+
+   ```powershell
+   Get-InstalledModule -Name Az.Resources -AllVersions | select Name,Version
+   ```
+
+1. Если у вас есть установленная версия с номером версии в формате **2.x.-альфа,** удалите эту версию.
+
+   ```powershell
+   Uninstall-Module Az.Resources -RequiredVersion 2.0.1-alpha5 -AllowPrerelease
+   ```
+
+1. Отменить регистрацию репозитория «что если», используемого для установки предварительного просмотра.
+
+   ```powershell
+   Unregister-PSRepository -Name WhatIfRepository
+   ```
+
+### <a name="install-preview-version"></a>Установка предварительной версии
+
+Для установки модуля предварительного просмотра используйте:
+
+```powershell
+Install-Module Az.Resources -RequiredVersion 1.12.1-preview -AllowPrerelease
+```
+
+Вы готовы использовать что-если.
+
+## <a name="see-results"></a>Просмотр результатов
 
 В PowerShell выход включает в себя цветные результаты, которые помогут вам увидеть различные типы изменений.
 
 ![Развертывание шаблона менеджера ресурсов — что-если операция полная нагрузка ресурсов и типы изменений](./media/template-deploy-what-if/resource-manager-deployment-whatif-change-types.png)
 
-Текст ouptput:
+Вывод текста:
 
 ```powershell
 Resource and property changes are indicated with these symbols:
@@ -72,11 +111,8 @@ Resource changes: 1 to modify.
 
 Предыдущие команды возвращают текстовое резюме, которое можно проверить вручную. Чтобы получить объект, который можно программно проверить на предмет изменений, используйте:
 
-* `$results = Get-AzResourceGroupDeploymentWhatIf`для развертывания групп ресурсов
-* `$results = Get-AzSubscriptionDeploymentWhatIf`или `$results = Get-AzDeploymentWhatIf` для развертывания уровня подписки
-
-> [!NOTE]
-> До выпуска версии 2.0.1-alpha5 вы `New-AzDeploymentWhatIf` использовали команду. Эта команда была `Get-AzDeploymentWhatIf`заменена `Get-AzResourceGroupDeploymentWhatIf`, `Get-AzSubscriptionDeploymentWhatIf` и команды. Если вы использовали более раннюю версию, вам нужно обновить этот синтаксис. Параметр `-ScopeType` удален.
+* `$results = Get-AzResourceGroupDeploymentWhatIfResult`для развертывания групп ресурсов
+* `$results = Get-AzSubscriptionDeploymentWhatIfResult`или `$results = Get-AzDeploymentWhatIfResult` для развертывания уровня подписки
 
 ### <a name="azure-rest-api"></a>REST API Azure
 
@@ -170,7 +206,7 @@ New-AzResourceGroupDeployment `
 
 ### <a name="test-modification"></a>Тестовая модификация
 
-После завершения развертывания вы будете готовы протестировать операцию «что если». На этот раз развернуть [шаблон, который изменяет виртуальную сеть.](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/what-if/what-if-after.json) Не хватает одного исходного тега, подсеть была удалена, и адрес наячесть изменилась.
+После завершения развертывания вы будете готовы протестировать операцию «что если». На этот раз развернуть [шаблон, который изменяет виртуальную сеть.](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/what-if/what-if-after.json) Не хватает одного исходного тега, подсеть была удалена, и адресная префикс изменилась.
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -223,7 +259,7 @@ Resource changes: 1 to modify.
 Теперь давайте программно оценим результаты «что, если» параметрию команды.
 
 ```azurepowershell
-$results = Get-AzResourceGroupDeploymentWhatIf `
+$results = Get-AzResourceGroupDeploymentWhatIfResult `
   -ResourceGroupName ExampleGroup `
   -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-after.json"
 ```

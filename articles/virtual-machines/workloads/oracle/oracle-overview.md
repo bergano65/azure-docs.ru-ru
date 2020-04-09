@@ -11,18 +11,18 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 06/04/2019
+ms.date: 03/16/2020
 ms.author: rogirdh
-ms.openlocfilehash: 6ab41182d59f8c96edfca4854aad5f9a13f53436
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 101cfc9edce8f4df1ad2388c08a5bd9702dffe68
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74806615"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878227"
 ---
 # <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Обзор приложений и решений Oracle в Azure
 
-В этой статье представлены возможности для запуска решений Oracle с использованием инфраструктуры Azure. Смотрите также подробные представления о доступных [изображениях Oracle VM](oracle-vm-solutions.md) в Azure Marketplace, а также о возможности предварительного просмотра для [соединения Azure с облачной инфраструктурой Oracle (OCI).](oracle-oci-overview.md)
+В этой статье представлены возможности для запуска решений Oracle с использованием инфраструктуры Azure. Смотрите также подробные знакомства с доступными [изображениями Oracle VM](oracle-vm-solutions.md) в Azure Marketplace и [возможностью соединения Azure с облачной инфраструктурой Oracle (OCI).](oracle-oci-overview.md)
 
 ## <a name="oracle-databases-on-azure-infrastructure"></a>Базы данных Oracle об инфраструктуре Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "74806615"
 
 * Резервное копирование базы данных Oracle с помощью Oracle RMAN и опционально использовать [Azure Blob предохранитель](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-mount-container-linux) для установки [высоко реудирующей учетной записи хранения Azure Blob storage](https://docs.microsoft.com/azure/storage/common/storage-redundancy) и написать резервные копии RMAN на нее для дополнительной устойчивости.
 
-## <a name="integration-of-azure-with-oci-preview"></a>Интеграция Azure с OCI (предварительный просмотр)
+## <a name="integration-of-azure-with-oci"></a>Интеграция Azure с OCI
 
 Запуск oracle-приложений в инфраструктуре Azure, подключенных к базам данных бэкэнда в облачной инфраструктуре Oracle (OCI). Это решение использует следующие возможности: 
 
@@ -67,7 +67,10 @@ ms.locfileid: "74806615"
 
 ### <a name="deploy-oracle-applications-on-azure"></a>Развертывание приложений Oracle в Azure
 
-Используйте шаблоны Terraform для настройки инфраструктуры Azure и установки oracle Applications, проверенных и поддерживаемых для запуска в кросс-облачной конфигурации:
+Используйте шаблоны Terraform для настройки инфраструктуры Azure и установки приложений Oracle. 
+
+> [!IMPORTANT]
+> Oracle сертифицирует эти приложения для запуска в Azure при использовании решения для интерконнекта Azure /Oracle Cloud к маю 2020 года.
 
 * E-Бизнес Люкс
 * JD Эдвардс EnterpriseOne

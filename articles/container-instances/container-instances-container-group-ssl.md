@@ -1,36 +1,36 @@
 ---
-title: Включить SSL с вольным контейнером
+title: Включить TLS с контейнером sidecar
 description: Создайте конечную точку SSL или TLS для контейнерной группы, работая в контейнерных инстанциях Azure, запустив Nginx в контейнере для sidecar
 ms.topic: article
 ms.date: 02/14/2020
-ms.openlocfilehash: 43b39c7c13d6d5e52aae2ce1706e4880ab27d225
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b9ea9367219db694b89d6bf4a1e52efb373c71c4
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294948"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984612"
 ---
-# <a name="enable-an-ssl-endpoint-in-a-sidecar-container"></a>Включить конечную точку SSL в контейнере для sidecar
+# <a name="enable-a-tls-endpoint-in-a-sidecar-container"></a>Включить конечную точку TLS в контейнере для sidecar
 
-В этой статье показано, как создать [группу контейнеров](container-instances-container-groups.md) с контейнером приложений и баклажан под управлением поставщика SSL. Настраивая группу контейнеров с отдельной конечней точкой SSL, вы включаете SSL-соединения для приложения без изменения кода приложения.
+В этой статье показано, как создать [группу контейнеров](container-instances-container-groups.md) с контейнером приложений и баклажан под управлением поставщика TLS/SSL. Настраивая группу контейнеров с отдельной конечней точкой TLS, вы включите соединения TLS для приложения без изменения кода приложения.
 
 Вы настраиваете примерную группу контейнеров, состоящую из двух контейнеров:
 * Контейнер приложений, который запускает простое веб-приложение с использованием общедоступного изображения [Microsoft aci-helloworld.](https://hub.docker.com/_/microsoft-azuredocs-aci-helloworld) 
-* Вбаквого вагона работает изображение [Nginx,](https://hub.docker.com/_/nginx) настроенное на использование SSL. 
+* Контейнер для sidecar, работающий с общедоступным изображением [Nginx,](https://hub.docker.com/_/nginx) настроенный на использование TLS. 
 
 В этом примере группа контейнеров предоставляет порт 443 только для Nginx со своим общедоступным IP-адресом. Nginx маршруты HTTPS запросы на компаньон веб-приложение, которое слушает внутри порта 80. Можно адаптировать пример для контейнерных приложений, которые слушают в других портах. 
 
-Ознакомьтесь с [следующими шагами](#next-steps) для других подходов к включению SSL в группу контейнеров.
+Ознакомьтесь с [другими шагами](#next-steps) по включению TLS в группу контейнеров.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Для выполнения задач этой статьи можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Если вы хотите использовать его локально, рекомендуется использовать версию 2.0.55 или более позднюю. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
+Для выполнения задач этой статьи можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Если вы хотите использовать его локально, рекомендуется использовать версию 2.0.55 или более позднюю. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
-Чтобы настроить Nginx в качестве поставщика SSL, вам нужен сертификат SSL. В этой статье показано, как создать и настроить самоподписанный Сертификат SSL. Для производственных сценариев необходимо получить сертификат от сертификата.
+Чтобы настроить Nginx в качестве поставщика TLS, вам нужен сертификат TLS/SSL. В этой статье показано, как создать и настроить самоподписанный сертификат TLS/SSL. Для производственных сценариев необходимо получить сертификат от сертификата.
 
-Для создания собственно подписанного SSL-сертификата воспользуйтесь инструментом [OpenSSL,](https://www.openssl.org/) доступным в Azure Cloud Shell и многими дистрибутивами Linux, или используйте сопоставимый клиентский инструмент в операционной системе.
+Для создания самостоятельно подписанного сертификата TLS/SSL воспользуйтесь инструментом [OpenSSL,](https://www.openssl.org/) доступным в Azure Cloud Shell и многими дистрибутивами Linux, или используйте сопоставимый клиентский инструмент в операционной системе.
 
 Сначала создайте запрос сертификата (.csr файл) в локальном рабочем каталоге:
 
@@ -48,11 +48,11 @@ openssl x509 -req -days 365 -in ssl.csr -signkey ssl.key -out ssl.crt
 
 Теперь вы должны увидеть три файла в`ssl.csr`каталоге:`ssl.key`запрос на сертификат (),`ssl.crt`частный ключ ( ), и самоподписанный сертификат (). Вы `ssl.key` используете и `ssl.crt` в более поздних шагах.
 
-## <a name="configure-nginx-to-use-ssl"></a>Нанастройка Nginx для использования SSL
+## <a name="configure-nginx-to-use-tls"></a>Нанастройка Nginx для использования TLS
 
 ### <a name="create-nginx-configuration-file"></a>Создание файла конфигурации Nginx
 
-В этом разделе создается файл конфигурации для использования Nginx SSL. Начните с копирования следующего текста `nginx.conf`в новый файл под названием. В Azure Cloud Shell вы можете использовать Visual Studio Code для создания файла в рабочем каталоге:
+В этом разделе создается файл конфигурации для использования Nginx TLS. Начните с копирования следующего текста `nginx.conf`в новый файл под названием. В Azure Cloud Shell вы можете использовать Visual Studio Code для создания файла в рабочем каталоге:
 
 ```console
 code nginx.conf
@@ -93,7 +93,7 @@ http {
         ssl_ciphers                ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-RSA-RC4-SHA:ECDHE-ECDSA-RC4-SHA:AES128:AES256:RC4-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK;
         ssl_prefer_server_ciphers  on;
 
-        # Optimize SSL by caching session parameters for 10 minutes. This cuts down on the number of expensive SSL handshakes.
+        # Optimize TLS/SSL by caching session parameters for 10 minutes. This cuts down on the number of expensive TLS/SSL handshakes.
         # The handshake is the most CPU-intensive operation, and by default it is re-negotiated on every new/parallel connection.
         # By enabling a cache (of type "shared between all Nginx workers"), we tell the client to re-use the already negotiated state.
         # Further optimization can be achieved by raising keepalive_timeout, but that shouldn't be done unless you serve primarily HTTPS.
@@ -124,7 +124,7 @@ http {
 
 ### <a name="base64-encode-secrets-and-configuration-file"></a>Base64-кодирует секреты и файл конфигурации
 
-Base64 кодирует файл конфигурации Nginx, сертификат SSL и sSL-ключ. В следующем разделе вы вводите закодированное содержимое в файл YAML, используемый для развертывания группы контейнеров.
+Base64 кодирует файл конфигурации Nginx, сертификат TLS/SSL и ключ TLS. В следующем разделе вы вводите закодированное содержимое в файл YAML, используемый для развертывания группы контейнеров.
 
 ```console
 cat nginx.conf | base64 > base64-nginx.conf
@@ -221,7 +221,7 @@ Name          ResourceGroup    Status    Image                                  
 app-with-ssl  myresourcegroup  Running   nginx, mcr.microsoft.com/azuredocs/aci-helloworld        52.157.22.76:443     Public     1.0 core/1.5 gb  Linux     westus
 ```
 
-## <a name="verify-ssl-connection"></a>Проверить соединение SSL
+## <a name="verify-tls-connection"></a>Проверить подключение TLS
 
 Используйте браузер для навигации по общедоступному IP-адресу контейнерной группы. IP-адрес, показанный `52.157.22.76`в этом примере, так что URL **https://52.157.22.76**. Вы должны использовать HTTPS, чтобы увидеть запущенное приложение, из-за конфигурации сервера Nginx. Попытки подключения к HTTP завершаются неудачей.
 
@@ -234,11 +234,11 @@ app-with-ssl  myresourcegroup  Running   nginx, mcr.microsoft.com/azuredocs/aci-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье показано, как настроить контейнер Nginx, чтобы включить SSL-соединения в веб-приложение, работая в группе контейнеров. Вы можете адаптировать этот пример для приложений, которые слушают в портах, отличных от порта 80. Вы также можете обновить файл конфигурации Nginx, чтобы автоматически перенаправить серверные соединения на порт 80 (HTTP) для использования HTTPS.
+В этой статье показано, как настроить контейнер Nginx для подключения TLS к веб-приложению, работая в группе контейнеров. Вы можете адаптировать этот пример для приложений, которые слушают в портах, отличных от порта 80. Вы также можете обновить файл конфигурации Nginx, чтобы автоматически перенаправить серверные соединения на порт 80 (HTTP) для использования HTTPS.
 
-Хотя эта статья использует Nginx в баке, вы можете использовать другой поставщик SSL, таких как [Caddy](https://caddyserver.com/).
+Хотя эта статья использует Nginx в баке, вы можете использовать другой поставщик TLS, таких как [Caddy](https://caddyserver.com/).
 
-При развертывании группы контейнеров в [виртуальной сети Azure](container-instances-vnet.md)можно рассмотреть другие варианты, позволяющие включить конечную точку SSL для экземпляра контейнера бэкэнда, включая:
+При развертывании группы контейнеров в [виртуальной сети Azure](container-instances-vnet.md)можно рассмотреть другие варианты, позволяющие включить конечную точку TLS для экземпляра контейнеров бэкэнда, включая:
 
 * [Прокси-функции Azure](../azure-functions/functions-proxies.md)
 * [Управление API Azure](../api-management/api-management-key-concepts.md)

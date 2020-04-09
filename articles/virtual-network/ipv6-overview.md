@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 887f9e100a60561271a4c15777e7131ea1f1f722
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 312e9db594983f85372285bdff415a2d5dc76ed3
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80631434"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984016"
 ---
 # <a name="what-is-ipv6-for-azure-virtual-network"></a>Что такое IPv6 для виртуальной сети Azure?
 
@@ -73,7 +73,7 @@ IPv6 для Azure VNET — это базовый набор функций, по
 
 ## <a name="limitations"></a>Ограничения
 Текущий iPv6 для виртуального сетевого релиза Azure имеет следующие ограничения:
-- IPv6 для виртуальной сети Azure доступен во всех глобальных коммерческих регионах Azure, используя все методы развертывания.  Развертывание в облаке правительства США временно ограничено шаблоном ARM (JSON), интерфейсом Command Line Interface (CLI) и Powershell.  Поддержка IPv6 на облачном портале правительства США будет использована в ближайшее время.  
+- IPv6 для виртуальной сети Azure доступен во всех глобальных коммерческих регионах Azure, используя все методы развертывания.  Развертывание в облаке правительства США временно ограничено шаблоном ARM (JSON), интерфейсом Command Line Interface (CLI) и Powershell.  Поддержка IPv6 на облачном портале Правительства США будет доступна в ближайшее время.  
 - Шлюзы ExpressRoute могут использоваться только для движения IPv4 в VNET с включенным IPv6.  Поддержка движения IPv6 находится на нашей дорожной карте.   
 - VPN шлюзы не могут быть использованы в VNET с iPv6 включен, либо непосредственно или заглянул с "UseRemoteGateway".
 - Платформа Azure (AKS и т.д.) не поддерживает связь IPv6 для контейнеров.  

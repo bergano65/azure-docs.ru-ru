@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 968241eff1bcab449f9a4def7a394a508461ec95
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a22808b1d7ab2b2451f50470e8da3770d07407a5
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79271178"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985666"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Настройка сертификата безопасности X.509 в Центре Интернета вещей Azure
 
@@ -38,6 +38,9 @@ ms.locfileid: "79271178"
 * Создайте свои собственные сертификаты X.509 с помощью стороннего инструмента, такого как [OpenSSL.](https://www.openssl.org/) Этот метод подходит для целей тестирования и разработки. Сведения о создании тестовых сертификатов ЦС с помощью PowerShell или Bash см. в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md). В остальной части этого руководства используются тестовые сертификаты ЦС, созданные по инструкциям в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md).
 
 * Создайте [промежуточный сертификат CA X.509,](iot-hub-x509ca-overview.md#sign-devices-into-the-certificate-chain-of-trust) подписанный существующим корневым сертификатом CA, и загрузите его в концентратор. После того, как промежуточный сертификат загружен и проверен, в соответствии с инструкциями ниже, он может быть использован в месте корневого сертификата CA, упомянутого ниже. Такие инструменты, как OpenSSL[(opensl req](https://www.openssl.org/docs/man1.1.0/man1/req.html) и [openssl ca)](https://www.openssl.org/docs/man1.1.0/man1/ca.html)могут быть использованы для создания и подписания промежуточного сертификата CA.
+
+> [!NOTE]
+> Не загружайте корень третьей стороны, если он не является уникальным для вас, потому что это позволит другим клиентам третьей стороны подключить свои устройства к вашему IoT Hub.
 
 ## <a name="register-x509-ca-certificates-to-your-iot-hub"></a>Регистрация сертификата ЦС X.509 в Центре Интернета вещей
 
@@ -83,7 +86,7 @@ ms.locfileid: "79271178"
 
 Далее мы рассмотрим, как создать приложение C#, чтобы смоделировать устройство X.509, зарегистрированное для вашего Центра Интернета вещей. Мы отправим значения температуры и влажности с виртуального устройства в ваш центр. В этом учебнике мы создадим только приложение устройства. Создание приложения службы Центра Интернета вещей, которое будет отправлять ответы на события, отправленные этим виртуальным устройством, останется в качестве упражнения для читателей. В примере приложения C# предполагается, что вы выполнили процедуру, описанную в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md).
 
-1. Откройте Visual Studio, выберите **Создать новый проект,** а затем выбрать шаблон проекта **Console App (.NET Framework).** Нажмите кнопку **Далее**.
+1. Откройте Visual Studio, выберите **Создать новый проект,** а затем выбрать шаблон проекта **Console App (.NET Framework).** Выберите **Далее**.
 
 1. В **настройке нового проекта,** назовите проект *SimulateX509Device*, а затем выберите **Создать.**
 
@@ -91,7 +94,7 @@ ms.locfileid: "79271178"
 
 1. В Solution Explorer, правой кнопкой мыши **SimulateX509Device** проекта, а затем выберите **Управление NuGet пакеты**.
 
-1. В **наборе NuGet —** выберите **просмотр** и поиск и выбор **Microsoft.Azure.Devices.Client**. Нажмите кнопку **Установить**.
+1. В **наборе NuGet —** выберите **просмотр** и поиск и выбор **Microsoft.Azure.Devices.Client**. Выберите пункт **Установить**.
 
    ![Добавление пакета NuGet SDK устройства в Visual Studio](./media/iot-hub-security-x509-get-started/device-sdk-nuget.png)
 

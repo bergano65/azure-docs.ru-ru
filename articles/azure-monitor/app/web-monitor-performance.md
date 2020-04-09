@@ -4,12 +4,12 @@ description: Приступая к работе с Application Insights. Ана�
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.reviewer: sdash
-ms.openlocfilehash: e398f23559729580ae4ad8b6507c2f09328052b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 873fc41585c387246d83008a8f97d6c4d9a32c3b
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79275624"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985071"
 ---
 # <a name="monitor-performance-in-web-applications"></a>Отслеживание производительности в веб-приложениях
 
@@ -26,8 +26,7 @@ Application Insights можно отслеживать веб-приложени
 * [Веб-приложения ASP.NET](../../azure-monitor/app/asp-net.md)
   * [Добавление мониторинга исключений](../../azure-monitor/app/asp-net-exceptions.md)
   * [Добавление мониторинга зависимостей](../../azure-monitor/app/monitor-performance-live-website-now.md)
-* [Веб-приложений Java EE](../../azure-monitor/app/java-get-started.md)
-  * [Добавление мониторинга зависимостей](../../azure-monitor/app/java-agent.md)
+* [Веб-приложений Java EE](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent)
 
 ## <a name="exploring-performance-metrics"></a><a name="view"></a>Просмотр метрик производительности
 На [портале Azure](https://portal.azure.com)перейдите к ресурсу Application Insights, настроенному для приложения. В колонке "Обзор" отображаются основные данные производительности:

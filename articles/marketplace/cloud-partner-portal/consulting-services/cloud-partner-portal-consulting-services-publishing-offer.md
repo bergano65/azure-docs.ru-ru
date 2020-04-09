@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: ceef030d2c0176313cbce8f6817a89c06f134d3d
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: dace05715828395aed3953b42bf7926df292bbdb
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745681"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981347"
 ---
 # <a name="azure-and-dynamics-365-consulting-service-offer"></a>Предложение консультационных услуг в Dynamics 365 и Azure
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления предложениями услуг Консалтинга в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
+>С 13 апреля 2020 года мы начнем перемещение управления предложениями консалтингового сервиса в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
 
 В этой статье описано, как публиковать предложения консультационной услуги в Microsoft <a href="https://azuremarketplace.microsoft.com">Azure Marketplace</a> или в <a href="https://appsource.microsoft.com">AppSource</a>. Решения на основе Microsoft <a href="https://dynamics.microsoft.com">Dynamics 365,</a> <a href="https://powerbi.microsoft.com">Power BI</a>и <a href="https://powerapps.microsoft.com">Power Apps</a> могут быть перечислены в AppSource. Предложения, основанные на других <a href="https://azure.microsoft.com/services">службах Microsoft Azure</a>, могут размещаться в Azure Marketplace.
 

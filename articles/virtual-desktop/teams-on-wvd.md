@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 702df1bfaf0701a40e514f8a47151f96917adf38
-ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
+ms.openlocfilehash: cfec30e56b0fd523896cbc1a7e84e92f639075a8
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80811595"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879060"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Используйте команды Майкрософт на виртуальном рабочем столе Windows
 
@@ -40,7 +40,7 @@ ms.locfileid: "80811595"
 ```shell
   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Teams\IsWVDEnvironment]
   Type: REG_DWORD
-  Value: 0x1
+  Value: 1
 ```
 
 ### <a name="install-microsoft-teams"></a>Установка команд Майкрософт
@@ -66,4 +66,4 @@ ms.locfileid: "80811595"
       ```
 
       > [!NOTE]
-      > Если вы установите команды с настройкой MSI ALLUSERS-1, автоматические обновления будут отключены. Мы рекомендуем вам не забудьте обновлять команды по крайней мере один раз в месяц.
+      > Если вы установите команды с настройкой MSI ALLUSER-1, автоматические обновления будут отключены. Мы рекомендуем вам не забудьте обновлять команды по крайней мере один раз в месяц.

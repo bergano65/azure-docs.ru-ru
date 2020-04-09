@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 2220352f817b488b3992b88920428063edde006e
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: 9d78ff53fb520dcfc80a812d53ae188e340722af
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745011"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80983200"
 ---
 # <a name="publish-iot-edge-module-offer"></a>Публикация предложения модуля IoT Edge
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
+>С 13 апреля 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
 
  Опубликовать предложение можно после создания нового предложения с информацией на странице **Новое предложение**. Выберите **Публиковать**, чтобы начать процесс публикации.
 

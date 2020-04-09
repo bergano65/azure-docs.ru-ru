@@ -3,25 +3,21 @@ title: Защищенная регистрация веб-приложений A
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать защищенный веб-aPI и информацию, необходимую для регистрации приложения.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 2d9e5d051f101288b8528b47fa88b4783a040950
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2cdf3ff45a400d4b8d0b2605bf7ddc364aff1fe6
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79262507"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80882392"
 ---
 # <a name="protected-web-api-app-registration"></a>Защищенный веб-aPI: Регистрация приложений
 
@@ -151,7 +147,7 @@ ms.locfileid: "79262507"
    >
    > Но, как было уличено в предыдущем разделе, ваш веб-API всегда может убедиться, что приложение имеет правильную роль, которая санкционирована админом-арендатором. API выполняет эту проверку, подтверждая, что маркер доступа имеет претензию ролей и что значение для этой претензии является правильным. В предыдущем образце JSON `access_as_application`значение .
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

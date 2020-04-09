@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 02/27/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9fc45ead65a29f2e7567133b5af4667bdb7c79ef
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8973412b2d6575d524874ba05b34af7661655e19
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80154990"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981075"
 ---
 # <a name="error-handling-best-practices-for-azure-active-directory-authentication-library-adal-clients"></a>Руководство по обработке ошибок для клиентов библиотеки аутентификации Active Directory (ADAL)
 
@@ -543,7 +543,7 @@ adb logcat > "C:\logmsg\logfile.txt";
 
 #### <a name="operating-system-errors"></a>Ошибки операционной системы
 
-Ошибки iOS могут возникать во время входа в систему, когда пользователи используют веб-представления. Кроме того, они могут возникать из-за типа аутентификации. Это может быть вызвано такими условиями как, например, ошибки SSL, истечение времени ожидания или ошибками в сети:
+Ошибки iOS могут возникать во время входа в систему, когда пользователи используют веб-представления. Кроме того, они могут возникать из-за типа аутентификации. Это может быть вызвано такими условиями, как ошибки TLS, тайм-ауты или сетевые ошибки:
 
 - При совместном использовании прав доступа имена входа не являются постоянными и кэш остается пустым. Эту проблему можно решить, добавив следующую строку кода в цепочку ключей: `[[ADAuthenticationSettings sharedInstance] setSharedCacheKeychainGroup:nil];`.
 - Для ошибок NsUrlDomain действие изменяется в зависимости от логики приложения. Дополнительные сведения об обрабатываемых экземплярах см. в [справочной документации о NSURLErrorDomain](https://developer.apple.com/documentation/foundation/nsurlerrordomain#declarations).

@@ -2,13 +2,13 @@
 title: Функции шаблонов
 description: Описывает функции, используемые в шаблоне диспетчера ресурсов Azure для извлечения значений, работы со строками и числовыми значениями и получения сведений о развертывании.
 ms.topic: conceptual
-ms.date: 02/13/2020
-ms.openlocfilehash: 1d2789e59c091b4e6c39be48b83fe610a592abe1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/06/2020
+ms.openlocfilehash: fbd82f89ed9a97a3f376a9ed6eaa8ae3760759ff
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80156265"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982384"
 ---
 # <a name="arm-template-functions"></a>Функции шаблона ARM
 
@@ -41,8 +41,8 @@ ms.locfileid: "80156265"
 Resource Manager предоставляет ряд функций для работы с массивами и объектами.
 
 * [Массива](template-functions-array.md#array)
-* [coalesce](template-functions-array.md#coalesce)
-* [concat](template-functions-array.md#concat)
+* [Coalesce](template-functions-array.md#coalesce)
+* [Concat](template-functions-array.md#concat)
 * [Содержит](template-functions-array.md#contains)
 * [createArray](template-functions-array.md#createarray)
 * [Пустой](template-functions-array.md#empty)
@@ -52,7 +52,7 @@ Resource Manager предоставляет ряд функций для раб�
 * [Последний](template-functions-array.md#last)
 * [длина](template-functions-array.md#length)
 * [Мин](template-functions-array.md#min)
-* [max](template-functions-array.md#max)
+* [Макс](template-functions-array.md#max)
 * [Диапазон](template-functions-array.md#range)
 * [Пропустить](template-functions-array.md#skip)
 * [Принять](template-functions-array.md#take)
@@ -77,6 +77,13 @@ Resource Manager предоставляет ряд функций для вып�
 <a id="deployment" aria-hidden="true" />
 <a id="parameters" aria-hidden="true" />
 <a id="variables" aria-hidden="true" />
+
+## <a name="date-functions"></a>Функции данных
+
+Менеджер ресурсов предоставляет следующие функции для работы с датами.
+
+* [dateTimeAdd](template-functions-date.md#datetimeadd)
+* [utcnow](template-functions-date.md#utcnow)
 
 ## <a name="deployment-value-functions"></a>Функции для параметров развертывания
 
@@ -124,7 +131,7 @@ Resource Manager предоставляет для работы с логиче�
 * [Плавать](template-functions-numeric.md#float)
 * [Int](template-functions-numeric.md#int)
 * [Мин](template-functions-numeric.md#min)
-* [max](template-functions-numeric.md#max)
+* [Макс](template-functions-numeric.md#max)
 * [Мод](template-functions-numeric.md#mod)
 * [mul](template-functions-numeric.md#mul)
 * [Sub](template-functions-numeric.md#sub)
@@ -195,7 +202,7 @@ Resource Manager предоставляет для работы с логиче�
 * [base64](template-functions-string.md#base64)
 * [base64ToJson](template-functions-string.md#base64tojson)
 * [base64ToString](template-functions-string.md#base64tostring)
-* [concat](template-functions-string.md#concat)
+* [Concat](template-functions-string.md#concat)
 * [Содержит](template-functions-string.md#contains)
 * [dataUri](template-functions-string.md#datauri)
 * [dataUriToString](template-functions-string.md#datauritostring)
@@ -214,7 +221,7 @@ Resource Manager предоставляет для работы с логиче�
 * [Пропустить](template-functions-string.md#skip)
 * [Сплит](template-functions-string.md#split)
 * [начинаетсяс](template-functions-string.md#startswith)
-* [Строка](template-functions-string.md#string)
+* [строка](template-functions-string.md#string)
 * [Подстроки](template-functions-string.md#substring)
 * [Принять](template-functions-string.md#take)
 * [в Толоуэр](template-functions-string.md#tolower)
@@ -224,7 +231,6 @@ Resource Manager предоставляет для работы с логиче�
 * [Uri](template-functions-string.md#uri)
 * [uriComponent](template-functions-string.md#uricomponent)
 * [uriComponentToString](template-functions-string.md#uricomponenttostring)
-* [utcnow](template-functions-string.md#utcnow)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

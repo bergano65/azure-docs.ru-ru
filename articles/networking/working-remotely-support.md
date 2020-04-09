@@ -7,12 +7,12 @@ ms.service: virtual-network
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: rambala
-ms.openlocfilehash: bcdd938365e50da1f5ae0e830e86692f1b915123
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: e0e5806ec59cd2d75111db213d8511488d043eec
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80618917"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982860"
 ---
 # <a name="working-remotely-using-azure-networking-services"></a>Работа удаленно с помощью сетевых служб Azure
 
@@ -76,20 +76,20 @@ Azure также имеет богатый набор партнеров по э
 
 Для развертывания в других общедоступных облаках корпорация Майкрософт может обеспечить глобальное подключение. В этом отношении могут помочь Azure Virtual WAN, VPN или ExpressRoute. Чтобы расширить подключение от Azure к другим облакам, можно настроить S2S VPN между двумя облаками. Можно также установить подключение из Azure в другие общедоступные облака с помощью ExpressRoute. Облако Oracle является частью партнерской экосистемы ExpressRoute. Можно [настроить прямую взаимосвязь между Azure и облачной инфраструктурой Oracle.][Az-OCI] Большинство поставщиков услуг, входят в партнерскую экосистему ExpressRoute, также предлагают частную связь с другими общедоступными облаками. Используя этих поставщиков услуг, можно установить частную связь между развертыванием в Azure и другими облаками через ExpressRoute.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих статьях рассказывается о том, как различные сетевые функции Azure могут использоваться для масштабирования удаленной работы пользователей:
 
-| **Статьи** | **Последнее обновление** |
+| **Статьи** | **Описание** |
 | --- | --- |
-| [Как дать возможность пользователям работать удаленно](../vpn-gateway/work-remotely-support.md) | 23 марта 2020 г. |
-| [Борьба удовлетворить работу из дома потребностей? Вот где Azure Виртуальный WAN может помочь](../virtual-wan/work-remotely-support.md) | 23 марта 2020 г. |
-| [Поддержка больших объемов трафика Шлюза приложений](../application-gateway/high-traffic-support.md) | 23 марта 2020 г. |
-| [Сеть Виртуальный прибор (NVA) соображения для удаленной работы](../vpn-gateway/nva-work-remotely-support.md)| 23 марта 2020 г. |
-| [Переход на протокол OpenVPN или IKEv2 из SSTP](https://go.microsoft.com/fwlink/?linkid=2124112) | 23 марта 2020 г. |
-| [Работа удаленно с помощью Azure Bastion](../bastion/work-remotely-support.md) | 23 марта 2020 г. |
-| [Использование Azure ExpressRoute для создания гибридного подключения для поддержки удаленных пользователей](../expressroute/work-remotely-support.md) | 23 марта 2020 г. |
-| [Удаленная служба работы Azure Firewall](../firewall/remote-work-support.md)|25 марта 2020 года|
+| [Как дать возможность пользователям работать удаленно](../vpn-gateway/work-remotely-support.md) | Просмотрите доступные варианты настройки удаленного доступа для пользователей или дополнить существующие решения дополнительными возможностями для вашей организации.|
+| [Борьба удовлетворить работу из дома потребностей? Вот где Azure Виртуальный WAN может помочь](../virtual-wan/work-remotely-support.md) | Используйте Azure Virtual WAN для удовлетворения потребностей организации в удаленном подключении.|
+| [Поддержка больших объемов трафика Шлюза приложений](../application-gateway/high-traffic-support.md) | Используйте шлюз приложений с веб-приложением Firewall (WAF) для масштабируемого и безопасного способа управления трафиком в веб-приложениях. |
+| [Сеть Виртуальный прибор (NVA) соображения для удаленной работы](../vpn-gateway/nva-work-remotely-support.md)|Просмотрите рекомендации по использованию NVA в Azure для предоставления решений для удаленного доступа. |
+| [Переход на протокол OpenVPN или IKEv2 из SSTP](https://go.microsoft.com/fwlink/?linkid=2124112) | Преодолеть 128 лимита одновременных соединений SSTP путем перехода на протокол OpenVPN или IKEv2.|
+| [Работа удаленно с помощью Azure Bastion](../bastion/work-remotely-support.md) | Обеспечить безопасное и беспрепятственное подключение RDP/SSH к виртуальным машинам в виртуальной сети Azure, непосредственно на портале Azure, без использования общедоступного IP-адреса. |
+| [Использование Azure ExpressRoute для создания гибридного подключения для поддержки удаленных пользователей](../expressroute/work-remotely-support.md) | Используйте ExpressRoute для гибридного подключения, чтобы пользователи в вашей организации могли работать удаленно.|
+| [Удаленная служба работы Azure Firewall](../firewall/remote-work-support.md)|Защитите свои виртуальные сетевые ресурсы Azure с помощью Azure Firewall. |
 
 <!--Link References-->
 [VNet-peer]: https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview

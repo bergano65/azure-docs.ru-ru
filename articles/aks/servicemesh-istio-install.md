@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 02/19/2020
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: f0fe4ab46bfe5c0c0c2ea67aa2e2694321628be5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d1d02cb42a86023e5c341daab678c39f22f75dda
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79136369"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80877700"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
@@ -33,7 +33,7 @@ ms.locfileid: "79136369"
 > * Доступ к дополнениям
 > * Удалить Istio из AKS
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Шаги, описанные в этой статье, предполагают, что вы создали `1.13` кластер AKS (Kubernetes `kubectl` и выше, с включенным RBAC) и установили связь с кластером. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
 
@@ -97,7 +97,10 @@ kubectl create namespace istio-system --save-config
 > Istio в настоящее время должен быть запланирован для запуска на узлах Linux. Если в кластере есть узлы Windows Server, необходимо убедиться, что стручки Istio будут запущены только на узлах Linux. Мы будем использовать [селекторы узлов,][kubernetes-node-selectors] чтобы убедиться, что стручки запланированы на правильные узлы.
 
 > [!CAUTION]
-> [SDS (секретная служба обнаружения)][istio-feature-sds] и [Istio CNI][istio-feature-cni] Istio особенности в настоящее время в [Альфа][istio-feature-stages], так что мысли должны быть даны, прежде чем включить эти. Кроме того, функция проекции [объема токенов счета обслуживания][kubernetes-feature-sa-projected-volume] Kubernetes (требование для SDS) не включена в текущих версиях AKS.
+> [SDS (секретная служба обнаружения)][istio-feature-sds] и [Istio CNI][istio-feature-cni] Istio особенности в настоящее время в [Альфа][istio-feature-stages], так что мысли должны быть даны, прежде чем включить эти. 
+>
+> Обратите внимание, что функция проекции [объема токенов счета обслуживания][kubernetes-feature-sa-projected-volume] Kubernetes (требование для SDS) теперь **включена** для всех Kubernetes 1.13 и более высоких версий на AKS.
+
 Создайте файл, вызванный `istio.aks.yaml` следующим содержанием. Этот файл будет содержать детали [спецификации плоскости управления Istio][istio-control-plane] для настройки Istio.
 
 ```yaml

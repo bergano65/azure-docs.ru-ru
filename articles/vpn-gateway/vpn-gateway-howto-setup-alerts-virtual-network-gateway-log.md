@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: b587fa31f1aa42e8dbd5a9d2430c0117891f2091
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 49510b26e0b2a9c69dd65faf0f343e86d1a068db
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80239783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878907"
 ---
 # <a name="set-up-alerts-on-diagnostic-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях диагностического журнала с VPN Gateway
 
@@ -20,13 +20,13 @@ ms.locfileid: "80239783"
 
 Следующие журналы доступны в Azure:
 
-|***Название*** | ***Описание*** |
+|***имя***; | ***Описание*** |
 |---        | ---               |
 |GatewayDiagnosticLog | Содержит диагностические журналы для событий конфигурации шлюза, первичных изменений и событий обслуживания |
 |TunnelDiagnosticLog | Содержит события изменения состояния туннеля. События подключения/отключения туннеля имеют обобщенные причины изменения состояния, если это применимо |
 |RouteDiagnosticLog | Изменения журналов в статических маршрутах и событиях BGP, которые происходят на шлюзе |
 |IKEDiagnosticLog | Логи IKE контролируют сообщения и события на шлюзе |
-|P2SDiagnosticLog | Входы в диспетчерские сообщения и события от точки к сайту на шлюзе |
+|P2SDiagnosticLog | Входы в диспетчерские сообщения и события от точки к месту на шлюзе. Информация об источнике соединения предоставляется только для подключений IKEv2 |
 
 ## <a name="set-up-alerts-in-the-azure-portal"></a><a name="setup"></a>Настройка оповещений на портале Azure
 

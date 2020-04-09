@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 06/25/2019
 ms.author: wesmc
-ms.openlocfilehash: 5d6ba2bd52d8f4af4244e8ce1babeb7bc9d37fe4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 326b79e1aca6fa82b3275249401c755428a8b71d
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80235677"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878567"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -82,7 +82,13 @@ ms.locfileid: "80235677"
     ```
 
    > [!NOTE]
-   > Если вы работаете `device-identity`с ошибкой, установите [расширение Azure IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension/blob/dev/README.md) для получения более подробной информации.
+   > При запуске `device-identity`ошибки установите [расширение Azure IoT для Azure CLI.](https://github.com/Azure/azure-iot-cli-extension/blob/dev/README.md)
+   > Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение IoT добавляет команды, характерные для IoT Hub, IoT Edge и службы обеспечения устройств IoT (DPS) в Azure CLI.
+   > 
+   > ```azurecli-interactive
+   > az extension add --name azure-iot
+   >  ```
+   >
   
 1. Запустите следующие команды в Azure Cloud Shell, чтобы получить _строку подключения устройства_ для только что зарегистрированного устройства:
 

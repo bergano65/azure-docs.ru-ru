@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 1bcf06056dd7fdaf22716409f53d86da7321b94d
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: f4fb5fba78cdea7996d006d34b2f07f3ac5e58fa
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745590"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981296"
 ---
 # <a name="power-bi-app-storefront-details-tab"></a>Вкладка сведения о Power BI
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
+>Начиная с 13 апреля 2020 года, мы начнем перемещение управления вашей power BI приложение предлагает партнеру центра. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 На странице **«Новое предложение»** используйте вкладку **Storefront Подробности** для предоставления маркетинговой, продаж и правовой информации потенциальным клиентам. На этой вкладке можно также настроить управление для версий, генерируются Azure Marketplace. Эта длинная форма разделена на шесть разделов: **Подробная информация о предложении**, **Подробная информация о листинге**, **Маркетинговые артефакты**, **юридические**, **поддержка клиентов**, и **руководство.**  Звездочка (кв) в конце метки поля означает, что поле требуется.
 
@@ -114,7 +114,7 @@ ms.locfileid: "80745590"
 |------------------------|--------------------------------------            |
 |  **Нет**              | Не собирайте никаких зацепок. Это параметр по умолчанию.  |
 | **Большой двоичный объект Azure (не рекомендуется)** | Укажите [хранилище Azure Blob,](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) используя имя контейнера и строку соединения.  Этот выбор является deprecated. Вместо этого используйте **таблицу Azure.**  |
-| **Лазурный стол**        | Укажите [хранилище таблицы Azure](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview) с помощью строки соединения.  |
+| **таблице Azure**        | Укажите [хранилище таблицы Azure](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview) с помощью строки соединения.  |
 | **Динамика CRM Онлайн** | Укажите [Dynamics 365](https://dynamics.microsoft.com/) с помощью URL-адресов и учетных данных проверки подлинности. |
 | **Конечная точка HTTPS**     | Укажите конечную точку HTTPS с помощью полезной нагрузки JSON.   |
 | **Marketo**            | Укажите экземпляр Marketo, используя идентификатор [сервера,](https://www.marketo.com/) идентификатор munchkin и идентификатор формы.   |

@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: e085c465ecdd21452e8f0ca5aa721ad0059caf30
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: b7365babd9a6cdba28da59a9113edf32d2974fb0
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80744323"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984833"
 ---
 # <a name="power-bi-app-contacts-tab"></a>Вкладка контактов приложения Power BI
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
+>Начиная с 13 апреля 2020 года, мы начнем перемещение управления вашей power BI приложение предлагает партнеру центра. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 Используйте вкладку **Контакты** на странице **Новое предложение**, чтобы предоставить технические ресурсы и пользовательскую поддержку для предложения. Она разделена на две секции: **инженерное дело** и **поддержка клиентов.**
 

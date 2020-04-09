@@ -11,12 +11,12 @@ author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 01/09/2020
-ms.openlocfilehash: 8c261a010a1e8f4d1be9b3883510eb38c37a15ca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c1b70aaef49cc2b993c873509dc935d71069efa2
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80296877"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985921"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, мониторинг и отмена тренировочных забегов в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -264,16 +264,41 @@ with exp.start_logging() as parent_run:
 
 ### <a name="submit-child-runs"></a>Отправка детских запусков
 
-Запуски детей также могут быть отправлены с родительского запуска. Это позволяет создавать иерархии родительских и детских запусков, каждый из которых работает на различных вычислительных целях, соединенных общим идентификатором родительского запуска.
+Запуски детей также могут быть отправлены с родительского запуска. Это позволяет создавать иерархии родительских и детских бегов. 
 
-Используйте метод ["submit_child()",](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#submit-child-config--tags-none----kwargs-) чтобы отправить запуск ребенка из родительского запуска. Для этого в сценарии родительского запуска получите контекст выполнения ``submit_child`` и отправьте запуск ребенка методом экземпляра контекста.
+Вы можете пожелать, чтобы ваш ребенок работает, чтобы использовать другую конфигурацию выполнения, чем родительский запуск. Например, для родителей можно использовать менее мощную конфигурацию на основе процессора, используя конфигурации на основе графического процессора для детей. Другим общим желанием является передача каждому ребенку различных аргументов и данных. Чтобы настроить запуск ребенка, `RunConfiguration` передайте объект `ScriptRunConfig` конструктору ребенка. Этот пример кода, который будет `ScriptRunConfig` частью сценария родительского объекта:
+
+- Создание `RunConfiguration` извлечения названного вычислительного ресурса`"gpu-compute"`
+- Итерирует различные значения аргумента, которые `ScriptRunConfig` будут переданы объектам детей
+- Создает и отправляет новый запуск ребенка, используя пользовательский ресурс вычислений и аргумент
+- Блоки до завершения полного запуска полного ребенка
 
 ```python
-## In parent run script
-parent_run = Run.get_context()
-child_run_config = ScriptRunConfig(source_directory='.', script='child_script.py')
-parent_run.submit_child(child_run_config)
+# parent.py
+# This script controls the launching of child scripts
+from azureml.core import Run, ScriptRunConfig, RunConfiguration
+
+run_config_for_aml_compute = RunConfiguration()
+run_config_for_aml_compute.target = "gpu-compute"
+run_config_for_aml_compute.environment.docker.enabled = True 
+
+run = Run.get_context()
+
+child_args = ['Apple', 'Banana', 'Orange']
+for arg in child_args: 
+    run.log('Status', f'Launching {arg}')
+    child_config = ScriptRunConfig(source_directory=".", script='child.py', arguments=['--fruit', arg], run_config = run_config_for_aml_compute)
+    # Starts the run asynchronously
+    run.submit_child(child_config)
+
+# Experiment will "complete" successfully at this point. 
+# Instead of returning immediately, block until child runs complete
+
+for child in run.get_children():
+    child.wait_for_completion()
 ```
+
+Для создания большого количества запусков с идентичными конфигурациями, [`create_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#create-children-count-none--tag-key-none--tag-values-none-) аргументами и входными данными и эффективными методами используйте метод. Поскольку каждое творение приводит к сетевому вызову, создание партии запусков является более эффективным, чем создание их по одному.
 
 В рамках выполнения ребенка можно просмотреть идентификатор родительского запуска:
 

@@ -3,20 +3,20 @@ title: Отладить и устранить неполадки конвейе�
 titleSuffix: Azure Machine Learning
 description: Добавьте журналирование в конвейеры обучения и пакетного скоринга и просмотреданных результатов в Application Insights.
 services: machine-learning
-author: aburek
-ms.author: cgronlun
+author: sanpil
+ms.author: sanpil
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: 217a89f6ede4e4b1d2182eed79b088808432044f
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: b3e4bf19a7ec153f85483f3c5028e468e06ed7f0
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80529363"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982367"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines-in-application-insights"></a>Отладить и устранить неполадки конвейеров машинного обучения в Application Insights
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]

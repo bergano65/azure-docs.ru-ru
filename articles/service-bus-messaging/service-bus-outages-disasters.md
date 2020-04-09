@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: aschhab
-ms.openlocfilehash: 2a7f5d5eacb2d03e64ae95d34e1cf0bd37bbc7f2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 07b071b0e8efc5d664dada133a214d778c6531d0
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79259257"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984952"
 ---
 # <a name="best-practices-for-insulating-applications-against-service-bus-outages-and-disasters"></a>Рекомендации по изолированию приложений от простоев и аварий служебной шины
 
@@ -33,7 +33,7 @@ ms.locfileid: "79259257"
 
 ### <a name="availability-zones"></a>зоны доступности;
 
-SKU Служебной шины ценовой категории "Премиум" поддерживает [Зоны доступности](../availability-zones/az-overview.md), предоставляя изолированные от сбоев расположения в пределах одного и того же региона Azure.
+SKU Служебной шины ценовой категории "Премиум" поддерживает [Зоны доступности](../availability-zones/az-overview.md), предоставляя изолированные от сбоев расположения в пределах одного и того же региона Azure. Service Bus управляет тремя копиями магазина обмена сообщениями (1 первичный и 2 вторичный). Service Bus синхронизирует все три копии для операций по управлению данными и управлением. Если первичная копия не удается, одна из вторичных копий повышается до первичного без предполагаемого простоя. Если приложения видят переходные отключения от Service Bus, логика повторной попытки в SDK автоматически подключается к Service Bus. 
 
 > [!NOTE]
 > Поддержка Зон доступности Служебной шины Azure ценовой категории "Премицм"доступна только в [регионах Azure](../availability-zones/az-overview.md#services-support-by-region), в которых представлены зоны доступности.

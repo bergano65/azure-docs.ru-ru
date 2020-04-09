@@ -4,12 +4,12 @@ description: Как настроить узлы транзакций Azure Block
 ms.date: 11/20/2019
 ms.topic: article
 ms.reviewer: janders
-ms.openlocfilehash: 4a9a4f660dd171e65b600ec4cd66714ca476b091
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8fa18496d0c1aa59beb55569e731967d5ebea427
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79252263"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80876935"
 ---
 # <a name="configure-azure-blockchain-service-transaction-nodes"></a>Настройте узлы транзакций Azure Blockchain Service
 
@@ -37,10 +37,10 @@ ms.locfileid: "79252263"
 
     | Параметр | Описание |
     |---------|-------------|
-    | name | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Например, `newnode-myblockchainmember.blockchain.azure.com`. Имя узла не может быть изменено после его создания. |
+    | Имя | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Например, `newnode-myblockchainmember.blockchain.azure.com`. Имя узла не может быть изменено после его создания. |
     | Пароль | Установите надежный пароль. Используйте пароль для доступа к конечной точке узла транзакции с базовой аутентификацией.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
     Подготовка нового узла транзакций занимает около 10 минут. Дополнительные узлы транзакций несут затраты. Для получения дополнительной информации о затратах [см.](https://aka.ms/ABSPricing)
 
@@ -54,7 +54,7 @@ ms.locfileid: "79252263"
 
     ![Конечные точки](./media/configure-transaction-nodes/endpoints.png)
 
-Конечные точки узла транзакций безопасны и требуют проверки подлинности. Вы можете подключиться к конечной точке транзакции с помощью аутентификации Azure AD, базовой аутентификации HTTPS и с помощью ключа доступа через HTTPS или Websocket по SSL.
+Конечные точки узла транзакций безопасны и требуют проверки подлинности. Вы можете подключиться к конечной точке транзакции с помощью аутентификации Azure AD, базовой аутентификации HTTPS и с помощью ключа доступа через HTTPS или Websocket через TLS.
 
 ### <a name="azure-active-directory-access-control"></a>Контроль доступа к активному каталогу Azure
 

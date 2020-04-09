@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 9/23/2019
 ms.author: dsindona
-ms.openlocfilehash: 348633ffc91bc25a226b05743a18d2c87533a01d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2895944dea6417949488076186135680523e19db
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280649"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80874969"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -186,7 +186,7 @@ GUIDs должны быть зарегистрированы для того, ч
 
 1. Чтобы зарегистрировать дополнительный идентификатор GUID, снова щелкните **Add Tracking GUID** (Добавить GUID отслеживания). На странице появятся дополнительные поля.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 
 ## <a name="verify-the-guid-deployment"></a>Проверка развертывания GUID
@@ -232,7 +232,7 @@ foreach ($deployment in $deployments){
 
 ## <a name="report"></a>Report
 
-Отчет об использовании клиента можно найти в панели мониторинга Partner Center Analyze. ([https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)). Для просмотра отчета необходимо использовать учетные данные Центра партнеров для входины. Если вы столкнулись с какими-либо проблемами с отчетом или ввоза, создайте запрос поддержки, следуя инструкции в разделе Поддержка Get.
+Отчет об атрибуции использования клиентов можно найти[https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)в панели мониторинга Partner Center (). Для просмотра отчета необходимо использовать учетные данные Центра партнеров для входины. Если вы столкнулись с какими-либо проблемами с отчетом или ввоза, создайте запрос поддержки, следуя инструкции в разделе Поддержка Get.
 
 Выберите отслеживаемый шаблон в списке отсева типов ассоциации партнеров, чтобы просмотреть отчет.
 
@@ -267,7 +267,7 @@ foreach ($deployment in $deployments){
 1. Выберите **категорию**, которая соответствует вашей проблеме.
 
    - Если проблема связана с отслеживанием потребления, выберите **Прочее**.
-   - Если возникла проблема с доступом к Порталу Cloud Partner Azure Marketplace, выберите **Проблема доступа**.
+   - Для проблем с доступом в Azure Marketplace выберите **проблему доступа.**
 
      ![Выбор категории проблемы](media/marketplace-publishers-guide/lu-article-incident.png)
 
@@ -288,7 +288,7 @@ foreach ($deployment in $deployments){
 
 ### <a name="how-to-submit-a-technical-consultation-request"></a>Как подать запрос на техническую консультацию
 
-1. Посетите [https://aka.ms/TechnicalJourney](https://aka.ms/TechnicalJourney).
+1. Перейдите на страницу [https://aka.ms/TechnicalJourney](https://aka.ms/TechnicalJourney).
 1. Выберите инфраструктуру и управление облаке, а также откроется новая страница для просмотра технического путешествия.
 1. В службах развертывания нажмите кнопку «Отправить запрос»
 1. Восприкажитесь в использовании MSA (учетная запись MPN) или AAD (учетная запись Partner Dashboard); на основе ваших учетных данных, онлайн-формы запроса откроется:
@@ -303,7 +303,7 @@ foreach ($deployment in $deployments){
 
 С вами свяжется технический консультант-партнер Microsoft, чтобы настроить вызов для сферы ваших потребностей.
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Зачем добавлять GUID в шаблон?**
 
@@ -315,7 +315,7 @@ foreach ($deployment in $deployments){
 
 **Можно ли отслеживать шаблоны, развертываемые из репозитория сторонних производителей, например GitHub?**
 
-Да. Данные о потреблении будут отслеживаться, если в шаблоне на момент развертывания указан GUID. Партнеры должны иметь профиль в CPP для регистрации GUID, используемых для развертывания за пределами Azure Marketplace.
+Да. Данные о потреблении будут отслеживаться, если в шаблоне на момент развертывания указан GUID. Партнеры должны иметь профиль в регистрации на коммерческом рынке в Partner Center для регистрации GUID, используемых для развертывания за пределами Azure Marketplace.
 
 **Получает ли клиент отчеты?**
 

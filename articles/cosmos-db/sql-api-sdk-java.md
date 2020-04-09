@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 02/21/2020
 ms.author: sngun
-ms.openlocfilehash: 514982727509788918c159e07f8061962df32336
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e57029e53365fbf99054e2d926296ccca3360663
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77558934"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80983608"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "77558934"
 > * [Async Java](sql-api-sdk-async-java.md)
 > * [Java](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [Остальные](https://docs.microsoft.com/rest/api/cosmos-db/)
+> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
 > * [Массовый исполнитель - .NET](sql-api-sdk-bulk-executor-dot-net.md)
@@ -39,7 +39,7 @@ ms.locfileid: "77558934"
 |**Участие в разработке пакета SDK**|[GitHub](https://github.com/Azure/azure-documentdb-java/)|
 |**Начало работы**|[Приступая к работе с пакетом SDK для Java](sql-api-java-get-started.md)|
 |**Руководство по веб-приложениям**|[Разработка веб-приложений с Azure Cosmos DB](sql-api-java-application.md)|
-|**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)|
+|**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](/java/azure/jdk/?view=azure-java-stable)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
@@ -131,7 +131,7 @@ ms.locfileid: "77558934"
 
 ### <a name="1150"></a><a name="1.15.0"/>1.15.0
 * Повышенная производительность сериализации JSON.
-* Для этой версии пакета SDK требуется последняя версия эмулятора Azure Cosmos DB. Ее можно скачать по адресу https://aka.ms/cosmosdb-emulator.
+* Эта версия SDK требует последней версии [Эмулятора Azure Cosmos DB.](https://aka.ms/cosmosdb-emulator)
 
 ### <a name="1140"></a><a name="1.14.0"/>1.14.0
 * Внутренние изменения в библиотеках партнеров корпорации Майкрософт.
@@ -288,7 +288,7 @@ ms.locfileid: "77558934"
 | [1.14.0](#1.14.0) |28 октября 2017 г. |30 мая 2020 г. |
 | [1.13.0](#1.13.0) |25 августа 2017 г. |30 мая 2020 г. |
 | [1.12.0](#1.12.0) |11 июля 2017 г. |30 мая 2020 г. |
-| [1.11.0](#1.11.0) |10 мая 2017 г. |30 мая 2020 г. |
+| [1.11.0](#1.11.0) |10 мая 2017 г. |30 мая 2020 г. |
 | [1.10.0](#1.10.0) |11 марта 2017 г. |30 мая 2020 г. |
 | [1.9.6](#1.9.6) |21 февраля 2017 г. |30 мая 2020 г. |
 | [1.9.5](#1.9.5) |31 января 2017 г. |30 мая 2020 г. |
@@ -317,7 +317,7 @@ ms.locfileid: "77558934"
 | 0.9.1-prelease |19 декабря 2014 г. |29 февраля 2016 г. |
 | 0.9.0-prelease |10 декабря 2014 г. |29 февраля 2016 г. |
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>См. также

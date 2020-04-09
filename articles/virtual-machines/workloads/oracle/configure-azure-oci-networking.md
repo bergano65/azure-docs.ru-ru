@@ -11,21 +11,26 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 08/02/2019
+ms.date: 03/16/2020
 ms.author: rogirdh
-ms.openlocfilehash: 0e2e16ccc04ff6df80597d646a00c40551e4cfd0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cd0b8a50d25cd8d1a66a8eb98e54ec231aa2c62f
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78302055"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878720"
 ---
 # <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого соединения между Azure и облачной инфраструктурой Oracle  
 
-Для создания [интегрированного мультиобуладора](oracle-oci-overview.md) (предварительный просмотр) Microsoft и Oracle предлагают прямую взаимосвязь между Azure и Oracle Cloud Infrastructure (OCI) через [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [FastConnect.](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm) Благодаря взаимодействию ExpressRoute и FastConnect клиенты могут испытывать низкую задержку, высокую пропускную связь, частную прямую связь между двумя облаками.
+Для создания [интегрированного мультиобуладора](oracle-oci-overview.md)Microsoft и Oracle предлагают прямую взаимосвязь между Azure и облачной инфраструктурой Oracle (OCI) через [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [FastConnect.](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm) Благодаря взаимодействию ExpressRoute и FastConnect клиенты могут испытывать низкую задержку, высокую пропускную связь, частную прямую связь между двумя облаками.
 
 > [!IMPORTANT]
-> Связь между Microsoft Azure и OCI находится в стадии предварительного просмотра. Для установления связи с низкой задержкой между Azure и OCI для этой возможности необходимо сначала настроить подписку Azure. Вы должны зарегистрироваться в предварительном просмотре, заполнив эту [короткую форму опроса.](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyzVVsi364tClw522rL9tkpUMVFGVVFWRlhMNUlRQTVWSTEzT0dXMlRUTyQlQCN0PWcu) После активации подписки на электронную почту будет отправлено письмо. Вы не сможете использовать функцию, пока не получите подтверждение по электронной почте. Вы также можете связаться с вашим представителем Майкрософт, чтобы быть включенным для этого предварительного просмотра. Доступ к возможности предварительного просмотра может быть доступным и ограничен корпорацией Майкрософт по своему усмотрению. Завершение обследования не гарантирует доступа. Этот предварительный просмотр предоставляется без соглашения об уровне обслуживания и не должен использоваться для производственных нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. Дополнительные [условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) для предварительных просмотров Microsoft Azure можно узнать подробнее. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+> Oracle сертифицирует эти приложения для запуска в Azure при использовании решения для интерконнекта Azure /Oracle Cloud к маю 2020 года.
+> * E-Бизнес Люкс
+> * JD Эдвардс EnterpriseOne
+> * Peoplesoft
+> * Приложения Oracle Retail
+> * Oracle Гиперион Финансовое управление
 
 Следующее изображение показывает обзор взаимосвязи на высоком уровне:
 
@@ -36,8 +41,6 @@ ms.locfileid: "78302055"
 * Чтобы установить связь между Azure и OCI, необходимо иметь активную подписку Azure и активную аренду OCI.
 
 * Связь возможна только в том случае, если место пиринга Azure ExpressRoute находится в непосредственной близости от или в том же месте, что и OCI FastConnect. См [Доступность региона](oracle-oci-overview.md#region-availability).
-
-* Для этой возможности предварительного просмотра необходимо включена подписка Azure.
 
 ## <a name="configure-direct-connectivity-between-expressroute-and-fastconnect"></a>Налаживание прямого соединения между ExpressRoute и FastConnect
 

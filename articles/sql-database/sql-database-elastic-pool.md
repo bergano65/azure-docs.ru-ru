@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, carlrab
 ms.date: 08/06/2019
-ms.openlocfilehash: 3c476393153f6bc1d18d5c163bcd69484583eb15
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8139ed8f4f4799a963a051eed96dd87c4ac38aec
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79256280"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981432"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-azure-sql-databases"></a>Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов
 
@@ -224,7 +224,6 @@ ms.locfileid: "79256280"
 
 - Для получения информации о ценах [см.](https://azure.microsoft.com/pricing/details/sql-database/elastic)
 - Чтобы масштабировать эластичные пулы, см. разделы [Масштабирование эластичных пулов](sql-database-elastic-pool-scale.md) и [Масштабирование эластичного пула — пример кода](scripts/sql-database-monitor-and-scale-pool-powershell.md)
-- Мы рекомендуем просмотреть [видеокурс о возможностях эластичной базы данных SQL Azure на сайте Microsoft Virtual Academy](https://mva.microsoft.com/training-courses/elastic-database-capabilities-with-azure-sql-db-16554).
 - Дополнительные сведения о шаблонах разработки для приложений SaaS, использующих пулы эластичных БД, см. в статье [Шаблоны разработки для мультитенантных приложений SaaS с использованием Базы данных Azure SQL](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 - Дополнительные сведения об эластичных пулах см. в статье [Общие сведения о приложении SaaS Wingtip](sql-database-wtp-overview.md).
 - Чтобы узнать об управлении ресурсами в [Resource management in dense elastic pools](sql-database-elastic-pool-resource-management.md)эластичных пулах с большим количеством баз данных, см.

@@ -11,18 +11,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: 415a89cbccd6b43d64ba1a553d44ac003df5806a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8a3ae8065553b34a72528cb0f2681e327dc90097
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79471631"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985190"
 ---
 # <a name="http2-support-in-azure-front-door"></a>Поддержка HTTP/2 в передней двери Azure
 
-Сейчас HTTP/2 поддерживается во всех конфигурациях Front Door. Никаких действий со стороны пользователей не требуется.
+В настоящее время поддержка HTTP/2 активна для всех конфигураций Передней двери Azure. Никаких действий со стороны пользователей не требуется.
 
 HTTP/2 является основной редакцией HTTP/1.1. Этот протокол обеспечивает более высокую производительность, сокращение времени ответа и более удобную среду работы пользователей наряду с привычными методами, кодами состояния и семантикой HTTP. Хотя HTTP/2 предназначен для работы с HTTP и HTTPS, многие клиентские веб-браузеры поддерживают только HTTP/2 через протокол TLS.
+
+> [!NOTE]
+> Поддержка протокола HTTP/2 доступна только для запросов от клиентов к Front Door. Связь от передней двери к задней заканчивается в задней части пула происходит по HTTP/1.1. 
 
 ### <a name="http2-benefits"></a>Преимущества HTTP/2
 

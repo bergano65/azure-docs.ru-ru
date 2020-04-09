@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 112c2ba831ab27faaca755079e9d20e2aebfcf9f
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: ab40a0e90bee8f034d811aac2781192359cbc109
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80744402"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981755"
 ---
 # <a name="create-a-new-iot-edge-module-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение модуля IoT Edge с помощью портала Cloud Partner.
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
+>С 13 апреля 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
 
 В этой статье описывается, как создать и опубликовать запись предложения модуля IoT Edge для Azure Marketplace. Каждое предложение отображается в виде отдельной сущности в Azure Marketplace и связывается с одним или несколькими номерами SKU.  Предложение модуля IoT Edge представляет собой следующие группы ресурсов и службы поддержки.
 
@@ -38,7 +38,7 @@ ms.locfileid: "80744402"
 
 Страница **Новое предложение** для предложения модуля IoT Edge предоставляет набор вкладок и поля форм, которые будут использоваться для создания нового предложения. Каждая из перечисленных ниже статей описывает, как использовать вкладку, чтобы определить группы ресурсов и службы поддержки для нового предложения модуля IoT Edge.
 
-- [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
+- [Вкладка "Параметры предложения"](./cpp-offer-settings-tab.md)
 - [Вкладка "Номера SKU"](./cpp-skus-tab.md)
 - [Вкладка "Marketplace"](./cpp-marketplace-tab.md)
 - [Вкладка "Поддержка"](./cpp-support-tab.md)

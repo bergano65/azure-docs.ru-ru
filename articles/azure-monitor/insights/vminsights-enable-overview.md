@@ -5,13 +5,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/27/2020
-ms.openlocfilehash: 26ed33e967aff1714d2a6fb174eab623e71534c2
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.date: 04/08/2020
+ms.openlocfilehash: 5bb5d5dd5110f176b59a99f6a3aa223184158da5
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80382738"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982316"
 ---
 # <a name="enable-azure-monitor-for-vms-overview"></a>Включить Azure Monitor для обзора св.м
 
@@ -59,7 +59,7 @@ Azure Monitor для ВМ поддерживает рабочее простра
 >
 
 Если у вас нет рабочего пространства Log Analytics, его можно создать с помощью одного из ресурсов:
-* [Лазурный CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)
+* [Azure CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)
 * [PowerShell](../../azure-monitor/learn/quick-create-workspace-posh.md)
 * [Портал Azure](../../azure-monitor/learn/quick-create-workspace.md)
 * [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md)
@@ -82,16 +82,16 @@ Azure Monitor для ВМ поддерживает рабочее простра
 
 |Версия ОС |Производительность |Maps |
 |-----------|------------|-----|
-|Windows Server 2019 | X | X |
+|Windows Server 2019 | X | X |
 |Windows Server 2016 1803 | X | X |
 |Windows Server 2016 | X | X |
 |Windows Server 2012 R2 | X | X |
 |Windows Server 2012 | X | X |
 |Windows Server 2008 R2 | X | X|
 |Windows 10 1803 | X | X |
-|Windows 8.1 | X | X |
+|Windows 8.1 | X | X |
 |Windows 8 | X | X |
-|Windows 7 с пакетом обновления 1 (SP1) | X | X |
+|Windows 7 SP1 | X | X |
 |Red Hat Enterprise Linux (RHEL) 6, 7| X | X| 
 |Ubuntu 18.04, 16.04 | X | X |
 |CentOS Linux 7, 6 | X | X |
@@ -173,10 +173,10 @@ Azure Monitor для ВМ поддерживает рабочее простра
 
 Вы можете скачать агент зависимости из следующих местоположений:
 
-| Файл | OS | Версия | SHA-256 |
+| Файл | Операционная система | Version | SHA-256 |
 |:--|:--|:--|:--|
-| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) | Windows | 9.10.2.9060 | B7725B6B205CF8c336D9d95636c816412740E9d649BCACB6f862ae3896  |
-| [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.10.2.9060 | C6995A67A7782AEC312647D74A99C3C323F68F5FFA490F4B4B6006A2FF2941B0 |
+| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) | Windows | 9.10.3.9380 | 40763BD0A5B6077DF3F9E7BCC17D91717F5CE95f2F5633D8B733F143921  |
+| [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.10.3.9380 | BB41BB59BDD293968F02A9EF821F96394066AA1BDF1F679255DB9ee0d54aa7f0B |
 
 ## <a name="role-based-access-control"></a>Управление доступом на основе ролей
 

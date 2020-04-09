@@ -3,12 +3,12 @@ title: Ограничения на наименование ресурсов
 description: Отображаетправила правила и ограничения для именования ресурсов Azure.
 ms.topic: conceptual
 ms.date: 03/27/2020
-ms.openlocfilehash: 580b7efd26d5729baf236b59452f63483c003e44
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: f6203f987654b33b32da72bfec030a9d0ab69df8
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366220"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981534"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Правила и ограничения именования для ресурсов Azure
 

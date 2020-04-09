@@ -5,12 +5,12 @@ author: radicmilos
 ms.topic: conceptual
 ms.date: 04/17/2018
 ms.author: miradic
-ms.openlocfilehash: 3660ece7add8f279292340aae9ab445b682fe045
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: edcf2774873cc23a74a47cc1c9a12e2daa2ed419
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75452085"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984543"
 ---
 # <a name="introduction-to-auto-scaling"></a>Знакомство с автомасштабированием
 Автомасштабирование — это дополнительная возможность службы Service Fabric, позволяющая динамически масштабировать службы на основе нагрузки, предоставляемой службами, или на основе использования ресурсов. Автомасштабирование предоставляет большую эластичность и позволяет подготовить дополнительные экземпляры или разделы службы по запросу. Весь процесс автомасштабирования автоматизирован и прозрачен, и после настройки политик в службе нет необходимости в выполнении масштабирования на уровне службы вручную. Автомасштабирование можно включить во время создания службы или в любое другое время путем обновления службы.
@@ -136,6 +136,9 @@ Update-ServiceFabricService -Stateless -ServiceName "fabric:/AppName/ServiceName
 
 ### <a name="using-application-manifest"></a>Использование манифеста приложения
 ``` xml
+<NamedPartition>
+    <Partition Name="0" />
+</NamedPartition>
 <ServiceScalingPolicies>
     <ScalingPolicy>
         <AverageServiceLoadScalingTrigger MetricName="servicefabric:/_MemoryInMB" LowerLoadThreshold="300" UpperLoadThreshold="500" ScaleIntervalInSeconds="600"/>

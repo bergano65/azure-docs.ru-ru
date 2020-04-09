@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 306f13cbc83c0c48ce1c90581762275a86dfcb90
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: 45304e12bf959cb1f695384535360af283ee3f10
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80743967"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981874"
 ---
 # <a name="iot-edge-module-support-tab"></a>Модуль IoT Edge: вкладка "Поддержка"
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
+>С 13 апреля 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
 
 Используйте вкладку **Поддержка** на странице **Новое предложение**, чтобы предоставить технические ресурсы и пользовательскую поддержку для предложения.  В форме поддержки представлены три области для ввода данных: **Engineering Contact** (Контакт по техническим вопросам), **Customer Support** (Поддержка клиентов) и **Support URLs** (URL-адреса для получения поддержки). Символ звездочки (*) после имени поля указывает, что оно является обязательным.
 

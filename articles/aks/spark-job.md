@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 8ebd8990a2fdd43b243f5dd6feb632d782fdeb0b
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 2e399c1a7b0f9bbc2aac375fe8af969a2b9e0e48
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632689"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80877633"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
@@ -293,7 +293,7 @@ Pi is roughly 3.152155760778804
 
 В приведенном выше примере JAR-файл Spark был загружен в хранилище Azure. Другой вариант — упаковать JAR-файл в пользовательские образы Docker.
 
-Для этого найдите `dockerfile` для образа Spark в каталоге `$sparkdir/resource-managers/kubernetes/docker/src/main/dockerfiles/spark/`. Добавьте оператор `ADD` для `jar` задания Spark где-то между объявлениями `WORKDIR` и `ENTRYPOINT`.
+Для этого найдите `dockerfile` для образа Spark в каталоге `$sparkdir/resource-managers/kubernetes/docker/src/main/dockerfiles/spark/`. Добавьте `ADD` выписку для `jar` задания `WORKDIR` `ENTRYPOINT` Spark где-то между и декларациями.
 
 Обновите путь к JAR-файлу, указав расположение файла `SparkPi-assembly-0.1.0-SNAPSHOT.jar` в вашей системе разработки. Также можно использовать собственный настраиваемый JAR-файл.
 

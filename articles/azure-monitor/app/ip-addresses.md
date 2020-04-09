@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 12/19/2019
-ms.openlocfilehash: 74d696c19ac2a2d0d367f5a018fde8cd3a0eedb2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 454138f8e0d92935126f446455810a444b0a053a
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79535210"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984152"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
 Служба [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) использует несколько IP-адресов. Вам могут понадобиться эти адреса, если отслеживаемое приложение расположено за брандмауэром.
@@ -43,17 +43,19 @@ ms.locfileid: "79535210"
 
 | Назначение | URL-адрес | IP-адрес | порты; |
 | --- | --- | --- | --- |
-| Параметр Configuration |`management.core.windows.net` | |`443` |
-| Параметр Configuration |`management.azure.com` | |`443` |
-| Параметр Configuration |`login.windows.net` | |`443` |
-| Параметр Configuration |`login.microsoftonline.com` | |`443` |
-| Параметр Configuration |`secure.aadcdn.microsoftonline-p.com` | |`443` |
-| Параметр Configuration |`auth.gfx.ms` | |`443` |
-| Параметр Configuration |`login.live.com` | |`443` |
+| Конфигурация |`management.core.windows.net` | |`443` |
+| Конфигурация |`management.azure.com` | |`443` |
+| Конфигурация |`login.windows.net` | |`443` |
+| Конфигурация |`login.microsoftonline.com` | |`443` |
+| Конфигурация |`secure.aadcdn.microsoftonline-p.com` | |`443` |
+| Конфигурация |`auth.gfx.ms` | |`443` |
+| Конфигурация |`login.live.com` | |`443` |
 | Установка | `globalcdn.nuget.org`, `packages.nuget.org` ,`api.nuget.org/v3/index.json` `nuget.org`, `api.nuget.org`, `dc.services.vsallin.net` | |`443` |
 
 ## <a name="availability-tests"></a>Тесты доступности
 Ниже приведен список адресов, которые используются для [проверки доступности веб-сайтов](../../azure-monitor/app/monitor-web-app-availability.md) . Если вам нужно запустить веб-тесты в приложении, а веб-сервер обслуживает только определенные клиенты, следует разрешить входящий трафик от наших серверов тестирования доступности.
+
+### <a name="service-tag"></a>Сервисный тег
 
 Если вы используете группы безопасности сети Azure, просто добавьте **правило входящего порта,** чтобы разрешить трафик из тестов доступности Application Insights, выбрав **тег и** исходный код **и** **ApplicationInsightsAvailability** в качестве **тега службы Исходный.**
 
@@ -64,6 +66,11 @@ ms.locfileid: "79535210"
 >![Добавление вкладки входящего правила безопасности](./media/ip-addresses/add-inbound-security-rule2.png)
 
 Откройте порты 80 (HTTP) и 443 (HTTPS) для входящего трафика с этих адресов (IP-адреса сгруппированы по расположению):
+
+### <a name="addresses-grouped-by-location"></a>Адреса, сгруппированные по местоположению
+
+> [!NOTE]
+> Эти адреса перечислены с использованием обозначения Classless Inter-Domain Routing (CIDR). Это означает, что `51.144.56.112/28` запись, как эквивалентно `51.144.56.112` 16 `51.144.56.127`IPs, начиная с и заканчивая .
 
 ```
 Australia East
@@ -232,7 +239,7 @@ East US
 | --- | --- | --- | --- |
 | Агент | agent.azureserviceprofiler.net<br/>*.agent.azureserviceprofiler.net | 20.190.60.38<br/>20.190.60.32<br/>52.173.196.230<br/>52.173.196.209<br/>23.102.44.211<br/>23.102.45.216<br/>13.69.51.218<br/>13.69.51.175<br/>138.91.32.98<br/>138.91.37.93<br/>40.121.61.208<br/>40.121.57.2<br/>51.140.60.235<br/>51.140.180.52<br/>52.138.31.112<br/>52.138.31.127<br/>104.211.90.234<br/>104.211.91.254<br/>13.70.124.27<br/>13.75.195.15<br/>52.185.132.101<br/>52.185.132.170<br/>20.188.36.28<br/>40.89.153.171<br/>52.141.22.239<br/>52.141.22.149<br/>102.133.162.233<br/>102.133.161.73<br/>191.232.214.6<br/>191.232.213.239 | 443
 | Портал | gateway.azureserviceprofiler.net | Динамический | 443
-| Хранилище | *.core.windows.net | Динамический | 443
+| Память | *.core.windows.net | Динамический | 443
 
 ## <a name="snapshot-debugger"></a>Snapshot Debugger
 
@@ -243,4 +250,4 @@ East US
 | --- | --- | --- | --- |
 | Агент | ppe.azureserviceprofiler.net<br/>*.ppe.azureserviceprofiler.net | 20.190.60.38<br/>20.190.60.32<br/>52.173.196.230<br/>52.173.196.209<br/>23.102.44.211<br/>23.102.45.216<br/>13.69.51.218<br/>13.69.51.175<br/>138.91.32.98<br/>138.91.37.93<br/>40.121.61.208<br/>40.121.57.2<br/>51.140.60.235<br/>51.140.180.52<br/>52.138.31.112<br/>52.138.31.127<br/>104.211.90.234<br/>104.211.91.254<br/>13.70.124.27<br/>13.75.195.15<br/>52.185.132.101<br/>52.185.132.170<br/>20.188.36.28<br/>40.89.153.171<br/>52.141.22.239<br/>52.141.22.149<br/>102.133.162.233<br/>102.133.161.73<br/>191.232.214.6<br/>191.232.213.239 | 443
 | Портал | ppe.gateway.azureserviceprofiler.net | Динамический | 443
-| Хранилище | *.core.windows.net | Динамический | 443
+| Память | *.core.windows.net | Динамический | 443

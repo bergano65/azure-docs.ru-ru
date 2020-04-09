@@ -1,17 +1,17 @@
 ---
-title: Анализ шаблонов навигации пользователя с помощью инструмента "Маршруты пользователя"в Azure Application Insights | Документация Майкрософт
+title: Azure Application Insights User Flows анализирует потоки навигации
 description: Анализируйте то, как пользователи выполняют переходы между страницами и компонентами веб-приложения.
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 01/24/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: a4a81a3e4c5759e444836162319abb97d83a4c74
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8622ede9e6f7fba2fde2e0b2e90eb31520a23d04
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77671075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80892450"
 ---
 # <a name="analyze-user-navigation-patterns-with-user-flows-in-application-insights"></a>Анализ шаблонов навигации пользователя с помощью инструмента "Маршруты пользователя"в Azure Application Insights
 
@@ -91,5 +91,5 @@ ms.locfileid: "77671075"
 
 * [Общие сведения об использовании](usage-overview.md)
 * [Пользователи, сессии и события](usage-segmentation.md)
-* [Хранения](usage-retention.md)
+* [Сохранение](usage-retention.md)
 * [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md)

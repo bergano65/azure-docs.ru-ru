@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 1298a6d277f072491d05945b272925a2aba52e02
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: ed744cfbb49393980c2622b00233fca373b32019
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745653"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985139"
 ---
 # <a name="create-a-consulting-offer"></a>Создание консалтингового предложения
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления предложениями услуг Консалтинга в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
+>С 13 апреля 2020 года мы начнем перемещение управления предложениями консалтингового сервиса в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
 
 В этой статье описывается, как создать и опубликовать предложение консультационных услуг.
 

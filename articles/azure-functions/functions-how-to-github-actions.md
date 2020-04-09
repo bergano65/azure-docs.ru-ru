@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: cshoe
-ms.openlocfilehash: dd74fd5c38e5a8800d2092afc1db1b412b126861
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 54010269e5b61ebf28a29dd3165c4310f3472817
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77649914"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878210"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная доставка с помощью GitHub Action
 
@@ -25,7 +25,7 @@ ms.locfileid: "77649914"
 | Section | Задания |
 | ------- | ----- |
 | **Проверка подлинности** | <ol><li>Определите директора службы.</li><li>Скачать профиль публикации.</li><li>Создайте секрет GitHub.</li></ol>|
-| **Построить** | <ol><li>Настройка среды.</li><li>Создайте приложение-функцию.</li></ol> |
+| **Сборка** | <ol><li>Настройка среды.</li><li>Создайте приложение-функцию.</li></ol> |
 | **Развернуть** | <ol><li>Развертывание приложения функции.</li></ol>|
 
 > [!NOTE]
@@ -69,13 +69,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 Настройка среды осуществляется с помощью действия настройки публикации, специфичном для языка.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана часть рабочего процесса, используюметодная `actions/setup-node` для настройки среды:
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Node 10.x
@@ -90,7 +90,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Python 3.6
@@ -99,13 +99,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         python-version: 3.6
 ```
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В следующем примере показана часть рабочего процесса, используюметодная `actions/setup-dotnet` для настройки среды:
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Dotnet 2.2.300
@@ -120,7 +120,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Java 1.8.x
@@ -138,7 +138,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 В следующем примере показана часть рабочего процесса, которая создает приложение функции, которая является специфическим для языка:
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```yaml
     - name: 'Run npm'
@@ -167,7 +167,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```yaml
     - name: 'Run dotnet build'

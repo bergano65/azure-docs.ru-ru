@@ -3,12 +3,12 @@ title: Фильтрация и предварительная обработка
 description: Из этой статьи вы узнаете, как создать обработчики и инициализаторы телеметрии для того, чтобы пакет SDK мог выполнять фильтрацию, и как добавлять свойства к данным перед отправкой данных телеметрии на портал Application Insights.
 ms.topic: conceptual
 ms.date: 11/23/2016
-ms.openlocfilehash: 53b6ecc51961feba35d571eab3115c8e7ccf9964
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 8f2064f73821a017046cbb552a8dcf592ce13267
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366298"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80983764"
 ---
 # <a name="filtering-and-preprocessing-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка данных телеметрии в пакете SDK для Application Insights
 
@@ -21,7 +21,7 @@ ms.locfileid: "80366298"
 
 Перед началом:
 
-* Установите соответствующий SDK для вашего приложения: [ASP.NET,](asp-net.md) [ASP.NET Core](asp-net-core.md), [Non HTTP/Worker для .NET/.NET Core](worker-service.md), [Java](../../azure-monitor/app/java-get-started.md) или [JavaScript](javascript.md)
+* Установите соответствующий SDK для вашего приложения: [ASP.NET,](asp-net.md) [ASP.NET Core](asp-net-core.md), [Non HTTP/Worker для .NET/.NET Core](worker-service.md), или [JavaScript](javascript.md)
 
 <a name="filtering"></a>
 
@@ -203,7 +203,7 @@ public void Process(ITelemetry item)
    ```JS
    var filteringFunction = (envelope) => {
      if (envelope.data.someField === 'tobefilteredout') {
-        return false;
+         return false;
      }
   
      return true;
@@ -227,7 +227,7 @@ public void Process(ITelemetry item)
 
 **Определение инициализатора**
 
-*C #*
+*C#*
 
 ```csharp
 using System;
@@ -307,28 +307,8 @@ protected void Application_Start()
     services.AddSingleton<ITelemetryInitializer, MyTelemetryInitializer>();
 }
 ```
-
-### <a name="java-telemetry-initializers"></a>Инициализаторы телеметрии Java
-
-[Документация SDK для Java](https://docs.microsoft.com/java/api/com.microsoft.applicationinsights.extensibility.telemetryinitializer?view=azure-java-stable)
-
-```Java
-public interface TelemetryInitializer
-{ /** Initializes properties of the specified object. * @param telemetry The {@link com.microsoft.applicationinsights.telemetry.Telemetry} to initialize. */
-
-void initialize(Telemetry telemetry); }
-```
-
-Затем зарегистрируйте пользовательский инициализатор в файле applicationinsights.xml.
-
-```xml
-<Add type="mypackage.MyConfigurableContextInitializer">
-    <Param name="some_config_property" value="some_value" />
-</Add>
-```
-
 ### <a name="javascript-telemetry-initializers"></a>Инициализаторы телеметрии JavaScript
-*Javascript*
+*JavaScript*
 
 Вставьте инициализатор телеметрии сразу после кода инициализации, полученного на портале:
 
@@ -544,5 +524,5 @@ public void Initialize(ITelemetry telemetry)
 
 ## <a name="next-steps"></a><a name="next"></a>Дальнейшие действия
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
-* [Выборки](../../azure-monitor/app/sampling.md)
+* [Выборка](../../azure-monitor/app/sampling.md)
 * [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)

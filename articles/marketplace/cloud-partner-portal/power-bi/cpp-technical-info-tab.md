@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 92bc172fd9a47d3b140e60a4083d65a2f532769a
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: d814ebc34193f5d7c0c3828d32aa3d2af29f3679
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745575"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981364"
 ---
 # <a name="power-bi-apps-technical-info-tab"></a>Вкладка технической информации о приложениях Power BI
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
+>Начиная с 13 апреля 2020 года, мы начнем перемещение управления вашей power BI приложение предлагает партнеру центра. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 На странице **«Новое предложение»** используйте вкладку **«Техническая информация»,** чтобы предоставить URL-адрес пакета установки Power BI и другую информацию, необходимую для проверки нового предложения.  Для первоначального релиза все приложения Power BI бесплатны и доступны для скачивания с AppSource. Из-за этого вы не можете определить единицы учета запасов (SKUs) для этого типа предложения.
 

@@ -13,14 +13,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/24/2018
+ms.date: 04/08/2020
 ms.author: anavin
-ms.openlocfilehash: 12fb7e03062600745cd8511d37b439ce44f2ef78
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9604d5567e74ef470c3e798b6a3df9e48d6fde5d
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75640726"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985309"
 ---
 # <a name="public-ip-address-prefix"></a>Префикс общедоступного IP-адреса
 
@@ -56,7 +56,7 @@ ms.locfileid: "75640726"
 ## <a name="constraints"></a>Ограничения
 
 - Невозможно указать IP-адреса для префикса. Azure выделяет IP-адреса для префикса в зависимости от указанного вами размера.
-- Вы можете создать приставку до 16 IP-адресов или /28. Дополнительные сведения см. в разделе об [ограничениях Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
+- Вы можете создать префикс до 16 IP-адресов или /28 по умолчанию. [Ограничения сети отзывов увеличивают запросы,](https://docs.microsoft.com/azure/azure-portal/supportability/networking-quota-requests) а Azure - ограничения на получение дополнительной [информации.](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits)
 - После создания префикса изменить диапазон невозможно.
 - Только статические общедоступные IP-адреса, созданные с помощью номера SKU "Стандартный", можно назначить из диапазона префикса. Дополнительные сведения о номерах SKU общедоступных IP-адресов см. в разделе [Общедоступные IP-адреса](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 - Адреса из диапазона могут назначаться только ресурсам Azure Resource Manager. Ресурсам, созданным с помощью классической модели развертывания, назначить адреса невозможно.

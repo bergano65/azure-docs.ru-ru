@@ -5,12 +5,12 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 03/24/2020
-ms.openlocfilehash: 1ca4b70139ed5e0a136f6f5f2b0382b8c1688983
-ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
+ms.openlocfilehash: 27abdfe28e2594c98778b51532fbd22f95bfa3ac
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80389415"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984714"
 ---
 # <a name="integrate-azure-ad-in-azure-kubernetes-service-preview"></a>Интеграция Azure AD в службу Azure Kubernetes (Предварительный просмотр)
 
@@ -29,7 +29,7 @@ ms.locfileid: "80389415"
 > - [Политики поддержки AKS](support-policies.md)
 > - [Часто задаваемые вопросы о поддержке Azure](faq.md)
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Необходимо установить следующие ресурсы:
 
@@ -49,11 +49,10 @@ az extension update --name aks-preview
 az extension list
 ```
 
-Для установки kubectl используйте следующие
+Для установки kubectl используйте следующее:
+
 ```azurecli
-curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.18.0-beta.2/bin/linux/amd64/kubectl"
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+sudo az aks install-cli
 kubectl version --client
 ```
 
@@ -99,7 +98,7 @@ az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad
 После создания группы и добавления себя (и других) в качестве участника можно обновить кластер с группой Azure AD, используя следующую команду
 
 ```azurecli-interactive
-az aks update -g MyResourceGroup -n MyManagedCluster --enable-aad [--aad-admin-group-object-ids <id1,id2>] [--aad-tenant-id <id>]
+az aks update -g MyResourceGroup -n MyManagedCluster [--aad-admin-group-object-ids <id1,id2>] [--aad-tenant-id <id>]
 ```
 Кроме того, если сначала создать группу и добавить участников, можно включить группу Azure AD во время создания следующей команды,
 

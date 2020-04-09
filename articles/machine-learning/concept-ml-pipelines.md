@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: laobri
 author: lobrien
-ms.date: 11/06/2019
-ms.openlocfilehash: da45c0db027dffc89bd058b70331a4bd6d093b08
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.openlocfilehash: 0cefa78b6f52cc67df8817f68a9b793ab86b2a7f
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80336956"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878584"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Что такое конвейеры машинного обучения Azure?
 
@@ -64,7 +64,7 @@ ms.locfileid: "80336956"
 
 Вы можете [отслеживать метрики для своих экспериментов конвейера](https://docs.microsoft.com/azure/machine-learning/how-to-track-experiments) непосредственно на портале Azure или [на целевой странице рабочего пространства (предварительный просмотр).](https://ml.azure.com) После публикации конвейера можно настроить конечную точку REST, которая позволяет повторно запустить конвейер с любой платформы или стека.
 
-Короче говоря, все сложные задачи жизненного цикла машинного обучения могут быть помогли с конвейерами. Другие технологии конвейеров Azure имеют свои преимущества, такие как [конвейеры Azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) для работы с данными и [конвейеры Azure](https://azure.microsoft.com/services/devops/pipelines/) для непрерывной интеграции и развертывания. Но если основное внимание уделяется машинному обучению, конвейеры Azure Machine Learning, скорее всего, будут лучшим выбором для ваших потребностей в рабочем процессе. 
+Короче говоря, все сложные задачи жизненного цикла машинного обучения могут быть помогли с конвейерами. Другие технологии конвейера Azure имеют свои сильные стороны. [Конвейеры Azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) преуспевают в работе с данными, а [azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) является подходящим инструментом для непрерывной интеграции и развертывания. Но если основное внимание уделяется машинному обучению, конвейеры Azure Machine Learning, скорее всего, будут лучшим выбором для ваших потребностей в рабочем процессе. 
 
 ## <a name="what-are-azure-ml-pipelines"></a>Что такое провода Azure ML?
 
@@ -126,7 +126,7 @@ ms.locfileid: "80336956"
 
 Шаги в конвейере могут иметь зависимость от других шагов. Служба конвейеров Azure ML выполняет работу по анализу и организации этих зависимостей. Узлы в полученном "графике выполнения" являются этапами обработки. Каждый шаг может включать создание или повторное использование определенной комбинации аппаратного и программного обеспечения, повторное использование кэшированных результатов и так далее. Оркестровка и оптимизация этого графика выполнения может значительно ускорить фазу ML и сократить затраты. 
 
-Поскольку шаги запускаются независимо, объекты для хранения входных и выходных данных, которые текут между шагами, должны быть определены извне. Это роль [DataReference,](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py) [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py)и связанных с ними классов. Эти объекты данных связаны с объектом [Datastore,](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore%28class%29?view=azure-ml-py) который инкапсулирует их конфигурацию хранения. Базовый `PipelineStep` класс всегда создается со строкой, `name` списком `outputs` `inputs`и списком . Как правило, он также `arguments` имеет список и `resource_inputs`часто он будет иметь список . Подклассы, как правило, также имеют `PythonScriptStep` дополнительные аргументы (например, требуется имя файла и путь запуска скрипта). 
+Поскольку шаги запускаются независимо, объекты для хранения входных и выходных данных, которые текут между шагами, должны быть определены извне. Это роль [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py)и [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py), объектов. Эти объекты данных связаны с объектом [Datastore,](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore%28class%29?view=azure-ml-py) который инкапсулирует их конфигурацию хранения. Базовый `PipelineStep` класс всегда создается со строкой, `name` списком `outputs` `inputs`и списком . Как правило, он также `arguments` имеет список и `resource_inputs`часто он будет иметь список . Подклассы, как правило, также имеют `PythonScriptStep` дополнительные аргументы (например, требуется имя файла и путь запуска скрипта). 
 
 График выполнения является ацикличным, но конвейеры могут работать по постоянному графику и могут запускать скрипты Python, которые могут записывать информацию о состоянии в файловую систему, что позволяет создавать сложные профили. При проектировании конвейера так, чтобы определенные шаги запускали параллельно или асинхронно, Azure Machine Learning прозрачно обрабатывает анализ зависимости и координацию фан-аутов и фан-ви. Как правило, вам не нужно беспокоиться о деталях графика выполнения, но он доступен через атрибут [Pipeline.graph.](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline.pipeline?view=azure-ml-py#attributes) 
 
@@ -141,19 +141,16 @@ blob_store = Datastore(ws, "workspaceblobstore")
 compute_target = ws.compute_targets["STANDARD_NC6"]
 experiment = Experiment(ws, 'MyExperiment') 
 
-input_data = DataReference(
-    datastore=Datastore(ws, blob_store),
-    data_reference_name="test_data",
-    path_on_datastore="20newsgroups/20news.pkl")
+input_data = Dataset.File.from_files(
+    DataPath(datastore, '20newsgroups/20news.pkl'))
 
-output_data = PipelineData(
-    "output_data",
-    datastore=blob_store,
-    output_name="output_data1")
+output_data = PipelineData("output_data", datastore=blob_store)
+
+input_named = input_data.as_named_input('input')
 
 steps = [ PythonScriptStep(
     script_name="train.py",
-    arguments=["--input", input_data, "--output", output_data],
+    arguments=["--input", input_named.as_download(), "--output", output_data],
     inputs=[input_data],
     outputs=[output_data],
     compute_target=compute_target,
@@ -168,7 +165,7 @@ pipeline_run.wait_for_completion()
 
 Фрагмент начинается с общих объектов машинного `Datastore`обучения Azure, a `Experiment` `Workspace`, , [ComputeTarget](https://docs.microsoft.com/python/api/azureml-core/azureml.core.computetarget?view=azure-ml-py)и . Затем код создает объекты `input_data` для `output_data`удержания и . Массив `steps` содержит один элемент, `PythonScriptStep` который будет использовать объекты `compute_target`данных и работать на . Затем код мгновенно мгновьясь за сам `Pipeline` объект, проходя в рабочем пространстве и массиве шагов. Вызов для `experiment.submit(pipeline)` запуска конвейера Azure ML. Вызов `wait_for_completion()` блоков до завершения конвейера. 
 
-Чтобы узнать больше о подключении конвейера к данным, смотрите статьи [Как получить доступ к данным](how-to-access-data.md) и как зарегистрировать [наборы данных.](how-to-create-register-datasets.md) 
+Чтобы узнать больше о подключении конвейера к данным, смотрите [статьи доступ к данным в Azure Machine Learning](concept-data.md) и [Перемещение данных в и между этапами конвейера ML (Python)](how-to-move-data-in-out-of-pipelines.md). 
 
 ## <a name="best-practices-when-using-pipelines"></a>Рекомендации при использовании трубопроводов
 
@@ -207,9 +204,9 @@ pipeline_run.wait_for_completion()
 
 ### <a name="choosing-the-proper-pipelinestep-subclass"></a>Выбор правильного подкласса PipelineStep
 
-Является `PythonScriptStep` наиболее гибким подклассом абстрактных `PipelineStep`. Другие подклассы, такие как `EstimatorStep` подклассы, могут `DataTransferStep` выполнять определенные задачи с меньшим количеством кода. Например, `EstimatorStep` можно создать, просто передавая имя для `Estimator`шага, и вычислительной цели. Или можно переопределить входы и выходы, параметры конвейера и аргументы. Для получения дополнительной информации [см. модели поездов с помощью машинного обучения Azure с помощью оценщика](how-to-train-ml-models.md). 
+Является `PythonScriptStep` наиболее гибким подклассом абстрактных `PipelineStep`. Другие подклассы, такие как `EstimatorStep` подклассы, могут `DataTransferStep` выполнять определенные задачи с меньшим количеством кода. Например, `EstimatorStep` можно создать, просто перейдя в имя `Estimator`для шага, и вычислительной цели. Или можно переопределить входы и выходы, параметры конвейера и аргументы. Для получения дополнительной информации [см. модели поездов с помощью машинного обучения Azure с помощью оценщика](how-to-train-ml-models.md). 
 
-Это `DataTransferStep` упрощает перемещение данных между источниками данных и поглотителями. Код для этого вручную прост, но повторяющийся. Вместо этого можно просто `DataTransferStep` создать имя, ссылки на источник данных и раковину данных, а также цель вычислений. Ноутбук [Azure Machine Learning Pipeline с DataTransferStep](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-data-transfer.ipynb) демонстрирует эту гибкость.
+Это `DataTransferStep` упрощает перемещение данных между источниками данных и поглотителями. Код для ручной передачи прост, но повторяющийся. Вместо этого можно просто `DataTransferStep` создать имя, ссылки на источник данных и раковину данных, а также цель вычислений. Ноутбук [Azure Machine Learning Pipeline с DataTransferStep](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-data-transfer.ipynb) демонстрирует эту гибкость.
 
 ## <a name="modules"></a>Модули
 

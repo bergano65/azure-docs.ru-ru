@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: reference
 ms.date: 11/29/2018
 ms.author: sngun
-ms.openlocfilehash: 090446d286b38a0bfcbde4ed9e77235050b36417
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: b81a3921ec11d589dadbdebd698ab9ad67d7649c
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80547697"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982911"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Python для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -71,7 +71,7 @@ ms.locfileid: "80547697"
 * Обновленная документация для Azure DB Cosmos вместо Azure DocumentDB.
 
 ### <a name="230"></a><a name="2.3.0"/>2.3.0
-* Для этой версии пакета SDK требуется последняя версия эмулятора Azure Cosmos DB. Ее можно скачать по адресу https://aka.ms/cosmosdb-emulator.
+* Эта версия SDK требует последней версии [Эмулятора Azure Cosmos DB.](https://aka.ms/cosmosdb-emulator)
 
 ### <a name="221"></a><a name="2.2.1"/>2.2.1
 * Исправление ошибок в статистическом словаре.
@@ -165,7 +165,7 @@ ms.locfileid: "80547697"
 | [2.3.1](#2.3.1) |21 декабря 2017 г. |30 августа 2020 года |
 | [2.3.0](#2.3.0) |10 ноября 2017 г. |30 августа 2020 года |
 | [2.2.1](#2.2.1) |29 сентября 2017 г. |30 августа 2020 года |
-| [2.2.0](#2.2.0) |10 мая 2017 г. |30 августа 2020 года |
+| [2.2.0](#2.2.0) |10 мая 2017 г. |30 августа 2020 года |
 | [2.1.0](#2.1.0) |1 мая 2017 г. |30 августа 2020 года |
 | [2.0.1](#2.0.1) |30 октября 2016 г. |30 августа 2020 года |
 | [2.0.0](#2.0.0) |29 сентября 2016 г. |30 августа 2020 года |

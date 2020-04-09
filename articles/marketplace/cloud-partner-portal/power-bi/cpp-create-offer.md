@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 43bb34a80d8d62cfa2bde445b94fb97da25ccda3
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: c396468bff0edef5cfceccd3d3c3394662111c10
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745475"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984850"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
 
 >[!Important]
->С 30 марта 2020 года мы начнем перемещение управления вашим приложением Power BI в Partner Center. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
+>Начиная с 13 апреля 2020 года, мы начнем перемещение управления вашей power BI приложение предлагает партнеру центра. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания приложений Power BI,](https://aka.ms/AzureCreatePBIServiceApp) чтобы управлять мигрированными предложениями.
 
 В этой статье приведены шаги по созданию нового предложения приложения Power BI для [AppSource](https://appsource.microsoft.com). Каждое предложение отображается в виде отдельной сущности в AppSource. При создании нового предложения на [Портале Cloud Partner](https://cloudpartner.azure.com/) необходимо предоставить четыре группы ресурсов для предложения.
 
@@ -44,7 +44,7 @@ ms.locfileid: "80745475"
 
 В следующих статьях описаны вкладки на странице **Новое предложение** для типа предложения приложения Power BI. Каждая статья описывает группы ресурсов и вспомогательные службы для нового предложения приложения Power BI.
 
--  [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
+-  [Вкладка "Параметры предложения"](./cpp-offer-settings-tab.md)
 -  [Вкладка "Технические сведения"](./cpp-technical-info-tab.md)
 -  [Вкладка "Сведения об онлайн-магазине"](./cpp-storefront-details-tab.md)
 -  [Вкладка "Контакты"](./cpp-contacts-tab.md)
