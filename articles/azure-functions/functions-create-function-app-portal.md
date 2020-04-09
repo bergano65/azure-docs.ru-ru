@@ -1,15 +1,15 @@
 ---
-title: Создание функционального приложения с портала Azure
+title: Создание приложения-функции на портале Azure
 description: Создайте новое приложение функции в Azure с портала.
 ms.topic: how-to
 ms.date: 08/29/2019
 ms.custom: mvc
-ms.openlocfilehash: 6c17dc28d7eea4897759c1c832fdb1aba7f1e445
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 001b4e4f0ea7fbacd232b2a87abfe353f34919bd
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80756527"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985020"
 ---
 # <a name="create-a-function-app-from-the-azure-portal"></a>Создание приложения-функции на портале Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "80756527"
 >[!NOTE]
 >При использовании плана потребления файлы кода и конфигурации привязок приложения-функции хранятся в хранилище файлов Azure в основной учетной записи хранения. При удалении основной учетной записи хранения это содержимое удаляется без возможности восстановления.
 
-Подробнее о типах учетных записей хранилища можно узнать в [представлении служб хранения Azure.](../storage/common/storage-introduction.md#azure-storage-services) 
+Подробнее о типах учетных записей хранилища можно узнать в [представлении служб хранения Azure.](../storage/common/storage-introduction.md#core-storage-services) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

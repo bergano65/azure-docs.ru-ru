@@ -3,18 +3,18 @@ title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как создать ресурс экземпляра контейнеров Azure.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/21/2019
-ms.author: dapine
-ms.openlocfilehash: 18f4edf5cc63a448779423cc1b302130b4b80724
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 09957461fd92114d1181a570550ee1a189edd8ea
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "75692568"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80876463"
 ---
 ## <a name="create-an-azure-container-instance-resource"></a>Создание ресурса Azure Container Instance
 
@@ -27,7 +27,7 @@ ms.locfileid: "75692568"
     |Подписка|Выберите свою подписку.|
     |Группа ресурсов|Выберите доступную группу ресурсов или `cognitive-services`создайте новую, например.|
     |Имя контейнера|Введите имя, такое как `cognitive-container-instance`. Имя должно быть в нижних крышках.|
-    |Расположение|Выберите область для развертывания.|
+    |Местоположение|Выберите область для развертывания.|
     |Тип образа|Если изображение контейнера хранится в реестре контейнеров, `Public`не требующих учетных данных, выберите: Если для доступа к изображению `Private`контейнера требуются учетные данные, выберите. Обратитесь к [репозиториям контейнеров и изображениям](../../cognitive-services-container-support.md#container-repositories-and-images) `Public` для `Private` получения подробной информации о том, является ли изображение контейнера или ("Публичный предварительный просмотр"). |
     |Имя образа|Введите расположение контейнера Cognitive Services. Местоположение — это то, что используется `docker pull` в качестве аргумента для команды. Обратитесь к [репозиториям контейнеров и изображениям](../../cognitive-services-container-support.md#container-repositories-and-images) для доступных имен изображений и их соответствующего репозитория.<br><br>Имя изображения должно быть полностью квалифицировано с указанием трех частей. Во-первых, контейнер реестра, то репозиторий, `<container-registry>/<repository>/<image-name>`наконец, имя изображения: .<br><br>Вот пример, `mcr.microsoft.com/azure-cognitive-services/keyphrase` который представляет изображение извлечения ключевых фраз в реестре контейнеров Майкрософт в репозитории когнитивных служб Azure. Другим примером `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` является представление изображения «Речи к тексту» в репозитории Контейнерного просмотра контейнеров Майкрософт. |
     |Тип ОС|`Linux`|
@@ -41,7 +41,7 @@ ms.locfileid: "75692568"
 
 4. На вкладке **Advanced** введите требуемые **переменные среды** для параметров выставления счетов контейнеров ресурса Azure Container Instance:
 
-    | Ключ | Значение |
+    | Клавиши | Значение |
     |--|--|
     |`apikey`|Скопировано со страницы **ключей** ресурса. Это 32 алфавитного символа строки без каких-либо пробелов или тире, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|
     |`billing`|Скопировано со страницы **"Обзор"** ресурса.|

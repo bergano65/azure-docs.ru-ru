@@ -7,12 +7,12 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 02/08/2020
 ms.author: victorh
-ms.openlocfilehash: 3e8cd2f1e594cd6a60296b2df135f275641df313
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e3738da806ff36cdb7e8d561b88a457a5264eb76
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77086987"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886931"
 ---
 # <a name="create-web-application-firewall-policies-for-application-gateway"></a>Создание политик веб-приложений firewall для шлюза приложений
 
@@ -24,6 +24,8 @@ ms.locfileid: "77086987"
 
    > [!NOTE]
    > Политики WAF для отдельных сайтов и отдельных URI предоставляются в общедоступной предварительной версии. Это означает, что на них распространяются дополнительные условия использования корпорации Майкрософт. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+   > [!NOTE]
+   > После того, как политика брандмауэра связана с WAF, всегда должна быть политика, связанная с этим WAF. Вы можете перезаписать эту политику, но полностью не поддерживается отказ от политики от WAF. 
 
 Все новые настройки WAF-излгин-файервола web-приложений (таможенные правила, управляемые конфигурации rulset, исключения и т.д.) живут внутри политики WAF. Если у вас есть существующий WAF, эти настройки все еще могут существовать в вашей конфигурации WAF. Подробнее о том, как перейти к новой политике WAF, можно [узнать](#migrate) о том, как перейти к новой политике WAF, см. 
 

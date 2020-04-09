@@ -2,19 +2,19 @@
 title: Как настроить контейнер для распознавания форм
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как настраивать контейнер Распознавателя документов для синтаксического анализа данных форм и таблиц.
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.author: dapine
-ms.openlocfilehash: 5439ec0c0aab5b8c127b651147e4b25d27c58390
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: bc48c0ba23e73adec312adfeeb1fcd57dba6ceec
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "75379629"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879162"
 ---
 # <a name="configure-form-recognizer-containers"></a>Настройка контейнера Распознавателя документов
 
@@ -48,7 +48,7 @@ ms.locfileid: "75379629"
 
 Этот параметр указывается в разделе **конечной точки** на странице **общих сведений о Распознавателе документов** портала Azure.
 
-|Обязательно| name | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | Строка | Биллинг endpoint URI. Для получения дополнительной информации о получении биллинга URI [см.](form-recognizer-container-howto.md#gathering-required-parameters) Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
@@ -77,7 +77,7 @@ ms.locfileid: "75379629"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](form-recognizer-container-howto.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и разрешениями для расположения подключения к узлу.
 
-|Необязательный| name | Тип данных | Описание |
+|Необязательный| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Обязательно| `Input` | Строка | Цель входного подключения. Значение по умолчанию — `/input`.    <br><br>Пример<br>`--mount type=bind,src=c:\input,target=/input`|
 |Обязательно| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`.  <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|

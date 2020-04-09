@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/26/2020
 ms.author: damendo
-ms.openlocfilehash: 35d185a625a81a259c366a45999769ecf76c6a7d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 104311904b99cadbbc8c0267a98f2709443608ea
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77538164"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80891464"
 ---
 # <a name="configure-nsg-flow-logs-from-an-azure-resource-manager-template"></a>Настройка журналов потоков NSG из шаблона управления ресурсами Azure
 
 > [!div class="op_single_selector"]
 > - [Портал Azure](network-watcher-nsg-flow-logging-portal.md)
 > - [PowerShell](network-watcher-nsg-flow-logging-powershell.md)
-> - [Лазурный CLI](network-watcher-nsg-flow-logging-cli.md)
+> - [Azure CLI](network-watcher-nsg-flow-logging-cli.md)
 > - [REST API](network-watcher-nsg-flow-logging-rest.md)
 > - [Azure Resource Manager](network-watcher-nsg-flow-logging-azure-resource-manager.md)
 
@@ -169,6 +169,8 @@ New-AzResourceGroupDeployment -Name EnableFlowLog -ResourceGroupName NetworkWatc
 
 Существует несколько способов проверить, удалось ли развертывание. Консоль PowerShell должна отображать "ProvisioningState" как "Успешно". Кроме того, вы можете посетить [страницу портала NSG Flow Logs,](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) чтобы подтвердить свои изменения. Если возникли проблемы с развертыванием, осмотрите [общие ошибки развертывания Отдела Задач с менеджером ресурсов Azure.](https://docs.microsoft.com/azure/azure-resource-manager/templates/common-deployment-errors)
 
+## <a name="deleting-your-resource"></a>Удаляние ресурса
+Azure позволяет устрашать ресурсы через режим развертывания «Полное». Чтобы удалить ресурс Flow Logs, укажите развертывание в полном режиме без включения ресурса, который вы хотите удалить. Подробнее о [режиме полного развертывания](https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-modes#complete-mode)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

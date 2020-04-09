@@ -2,27 +2,22 @@
 title: Платформа идентификации Microsoft & потоке утверждения носителей SAML (ru) Azure
 description: Узнайте, как получить данные из Microsoft Graph, не побуждая пользователя к учетных данных с помощью потока утверждения носителя SAML.
 services: active-directory
-documentationcenter: ''
 author: umeshbarapatre
 manager: CelesteDG
-editor: ''
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 16f30473ded5f1de5dc94c1cff9da96165b1a01c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1cd79b1f9e4cd3afadee250da0c184c0c5b8ac07
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76700215"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886183"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Платформа идентификации Microsoft и поток утверждения носителя OAuth 2.0 SAML
 Поток утверждения носителя OAuth 2.0 SAML позволяет запрашивать токен доступа OAuth, используя утверждение SAML, когда клиенту необходимо использовать существующие доверительные отношения. Подпись, применяемая к утверждению SAML, обеспечивает аутентификацию авторизованного приложения. Утверждение SAML — это токен безопасности XML, выпущенный поставщиком идентификационных данных и потребляемый поставщиком услуг. Поставщик услуг полагается на свой контент для определения предмета утверждения в целях безопасности.

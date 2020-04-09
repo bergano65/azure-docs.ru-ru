@@ -4,12 +4,12 @@ description: Концепции доступа к данным и безопас
 ms.date: 11/22/2019
 ms.topic: conceptual
 ms.reviewer: janders
-ms.openlocfilehash: 06bf4e0fa4037b07505a4f816fc7af56c14576d8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 989d9f2afad30517a85185878d694c0b6640e987
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75982224"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879604"
 ---
 # <a name="azure-blockchain-service-security"></a>Безопасность блокчейн-сервиса Azure
 
@@ -25,9 +25,9 @@ ms.locfileid: "75982224"
 
 Данные пользователей хранятся в хранилище Azure. Данные пользователей шифруются в движении и в состоянии покоя для обеспечения безопасности и конфиденциальности. Для получения дополнительной информации см.: [Руководство по безопасности хранилища Azure](../../storage/blobs/security-recommendations.md).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
-Транзакции могут быть отправлены в блокчейн-узлы через конечную точку RPC. Клиенты общаются с узлами транзакций с помощью обратного прокси-сервера, который обрабатывает аутентификацию пользователя и шифрует данные по SSL.
+Транзакции могут быть отправлены в блокчейн-узлы через конечную точку RPC. Клиенты общаются с узлами транзакций с помощью обратного прокси-сервера, который обрабатывает аутентификацию пользователя и шифрует данные по TLS.
 
 ![Диаграмма аутентификации](./media/data-security/authentication.png)
 

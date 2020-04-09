@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: how-to
 manager: philmea
-ms.openlocfilehash: 5d876d7db13ce73603f212ec11544cb2f680bf46
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 02481d5dcbaba15c9b17a27348207d9af64f3355
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80158186"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982044"
 ---
 # <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Создание и управление приложением Azure IoT Central с портала CSP
 
@@ -33,7 +33,7 @@ Azure IoT Central отображается как служба, доступна
 
 ![Создание диспетчера для поставщиков облачных решений](media/howto-create-and-manage-applications-csp/image3.png)
 
-Чтобы создать центральное приложение Azure IoT, выберите **сборку** в левом меню. Выберите один из отраслевых шаблонов или **создайте приложение Legacy** для создания приложения с нуля. Будет загружена страница создания приложения. Необходимо заполнить все поля на этой странице и нажать кнопку **Создать**. Ниже приводятся сведения о каждом поле.
+Чтобы создать центральное приложение Azure IoT, выберите **сборку** в левом меню. Выберите один из отраслевых шаблонов или **пользовательский приложение** для создания приложения с нуля. Будет загружена страница создания приложения. Необходимо заполнить все поля на этой странице и нажать кнопку **Создать**. Ниже приводятся сведения о каждом поле.
 
 ![Страница создания приложения для CSP](media/howto-create-and-manage-applications-csp/image4.png)
 
@@ -73,7 +73,7 @@ URL-адрес приложения будет создан автоматиче
 
 Дополнительные сведения см. в разделе о [подписках Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing).
 
-## <a name="location"></a>Расположение
+## <a name="location"></a>Местоположение
 
 **Местоположение** — это [география,](https://azure.microsoft.com/global-infrastructure/geographies/) где вы хотите создать приложение. Как правило, следует выбирать расположение как можно ближе к устройствам, чтобы обеспечить оптимальную производительность. В настоящее время вы можете создать ioT Центральное приложение в **Австралии,** **Азиатско-Тихоокеанском регионе,** **Европе,** **США,** **Великобритании**и **Японии.** Выбрав расположение, вы не сможете переместить приложение в другое расположение.
 

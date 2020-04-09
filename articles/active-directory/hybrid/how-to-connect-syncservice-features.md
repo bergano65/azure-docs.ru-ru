@@ -16,12 +16,12 @@ ms.date: 06/25/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5486a8d8bd4c295f49e0ab847daf45d0fcab47ad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d3f6b698922440c6e3e9b488cca93ca8d98d9c59
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78300542"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80983081"
 ---
 # <a name="azure-ad-connect-sync-service-features"></a>Функции службы синхронизации Azure AD Connect
 
@@ -89,12 +89,14 @@ Set-MsolDirSyncFeature -Feature EnableSoftMatchOnUpn -Enable $true
 
 ## <a name="synchronize-userprincipalname-updates"></a>Синхронизация обновлений атрибута userPrincipalName
 
-Обновления атрибута userPrincipalName с помощью службы синхронизации из локальной среды блокируются за исключением тех случаев, когда выполняются два следующих условия:
+Исторически сложилось так, что обновления атрибута UserPrincipalName с помощью службы синхронизации из предварительного помещения были заблокированы, если оба этих условия не были правдой:
 
 * пользователь является управляемым (нефедеративным);
 * пользователю не назначена лицензия.
 
-Дополнительные сведения см. в статье [User names in Office 365, Azure, or Intune don't match the on-premises UPN or alternate login ID](https://support.microsoft.com/kb/2523192) (Имена пользователей в Office 365, Azure или Intune не совпадают с локальным именем участника-пользователя или альтернативным именем для входа).
+> [!NOTE]
+> С марта 2019 года допускается синхронизация изменений UPN для учетных записей федеративного пользователя.
+> 
 
 Включение этой функции позволяет механизму синхронизации обновлять userPrincipalName при изменении его на месте и вы используете синхронизацию хэша пароля или сквозную аутентификацию.
 

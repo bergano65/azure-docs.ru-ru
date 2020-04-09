@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.openlocfilehash: b9b66c379714c2f4fa2421876fda3bdb500ce6c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: db9e86706ecd4e5b2526e1d801dda45ed6b345c6
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78250373"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80887254"
 ---
 # <a name="monitoring-azure-cosmos-db"></a>Мониторинг Azure Космос DB
 При наличии критических приложений и бизнес-процессов, опирающихся на ресурсы Azure, необходимо отслеживать их доступность, производительность и работу. В этой статье описаны данные мониторинга, генерируемые базами данных Azure Cosmos, и то, как можно использовать функции Azure Monitor для анализа и оповещения об этих данных.
@@ -63,10 +63,6 @@ Azure Cosmos DB создает данные мониторинга с помощ
 Вы можете сгруппировать метрики с помощью опции **расщепления Apply.** Например, можно сгруппировать единицы запроса на тип операции и просмотреть график для всех операций одновременно, как показано на следующем изображении:
 
 ![Добавить фильтр расщепления притязаний](./media/monitor-cosmos-db/apply-metrics-splitting.png)
-
-Вот еще один пример для просмотра метрик задержки сервера для определенной базы данных, контейнера или операции:
-
-![Метрики задержки сервера](./media/monitor-cosmos-db/serverside-latency-metric.png)
 
 ## <a name="monitoring-data-collected-from-azure-cosmos-db"></a>Мониторинг данных, собранных с Azure Cosmos DB
 

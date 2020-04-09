@@ -1,15 +1,16 @@
 ---
-title: Используйте статический IP-адрес и dNS-метку с балансивизатором нагрузки Службы Azure Kubernetes (AKS)
+title: Используйте статический IP с балансером нагрузки
+titleSuffix: Azure Kubernetes Service
 description: Сведения о создании и использовании статического IP-адреса с подсистемой балансировки нагрузки Службы Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
 ms.date: 03/09/2020
-ms.openlocfilehash: 6c219976db21fb05ea1ad313b4effdf95906f986
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5051232f29ad51d9fee893a4a660fc81f6e60d77
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80047957"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886744"
 ---
 # <a name="use-a-static-public-ip-address-and-dns-label-with-the-azure-kubernetes-service-aks-load-balancer"></a>Используйте статический общедоступный IP-адрес и метку DNS с балансивизатором нагрузки Службы Azure Kubernetes (AKS)
 
@@ -17,7 +18,7 @@ ms.locfileid: "80047957"
 
 В этой статье описывается создание статического общедоступного IP-адреса и его назначение службе Kubernetes.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
@@ -121,7 +122,7 @@ spec:
 > [!NOTE] 
 > Чтобы опубликовать сервис на своем домене, [см.][azure-dns-zone] [external-dns][external-dns]
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Если статического IP-адреса, определенного в свойстве *нагрузкиBalancerIP* манифеста службы Kubernetes, не существует или не создан в группе ресурсов узлов и не настроены дополнительные делегации, создание службы балансировора нагрузки завершается неудачей. Для устранения неполадок просмотрите события создания службы, выполнив команду [kubectl describe][kubectl-describe]. Введите имя службы, указанное в манифесте YAML, как показано в следующем примере:
 

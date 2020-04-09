@@ -3,19 +3,19 @@ title: Настройка контейнеров для речевой речи
 titleSuffix: Azure Cognitive Services
 description: Служба речевого сообщения предоставляет каждому контейнеру общую структуру конфигурации, так что вы можете легко настроить и управлять хранением, журналом и телеметрией, а также настройками безопасности для контейнеров.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/09/2020
-ms.author: dapine
-ms.openlocfilehash: dd5a531e4a979cba9c2a766c7774762a0427ad02
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 5c74aa48b18661236eb55278d1e5a05215b2432c
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79037324"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80877581"
 ---
 # <a name="configure-speech-service-containers"></a>Настройка контейнеров для обслуживания речи
 
@@ -50,7 +50,7 @@ ms.locfileid: "79037324"
 
 - Портал Azure: Обзор **речи,** помеченный`Endpoint`
 
-| Обязательно | name | Тип данных | Описание |
+| Обязательно | Имя | Тип данных | Описание |
 | -------- | ---- | --------- | ----------- |
 | Да | `Billing` | Строка | Биллинг endpoint URI. Для получения дополнительной информации о получении биллинга URI [см.](speech-container-howto.md#gathering-required-parameters) Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
@@ -78,7 +78,7 @@ ms.locfileid: "79037324"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](speech-container-howto.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу.
 
-| Необязательный | name | Тип данных | Описание |
+| Необязательный | Имя | Тип данных | Описание |
 | -------- | ---- | --------- | ----------- |
 | Не разрешено | `Input` | Строка | Стандартные контейнеры речи не используют это. Пользовательские речевые контейнеры используют [реанительные крепления.](#volume-mount-settings)                                                                                    |
 | Необязательный | `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output` |
@@ -130,7 +130,7 @@ ms.locfileid: "79037324"
 
 Следующие примеры Docker для контейнера речи.
 
-## <a name="speech-to-text"></a>[Речево-текст](#tab/stt)
+## <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 ### <a name="basic-example-for-speech-to-text"></a>Базовый пример для речи к тексту
 
@@ -180,7 +180,7 @@ ApiKey={API_KEY} \
 Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="text-to-speech"></a>[Текст к речи](#tab/tss)
+## <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tss)
 
 ### <a name="basic-example-for-text-to-speech"></a>Основной пример для текста к речи
 

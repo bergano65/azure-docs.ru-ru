@@ -2,18 +2,18 @@
 title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/07/2019
-ms.author: dapine
-ms.openlocfilehash: 2cb2cfbdfbac5d496f109d85977b41a050766ab0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 2647c604bebc2885f5c8516eb997792b65751e88
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "73499107"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80876102"
 ---
 ## <a name="create-an-computer-vision-resource"></a>Создание ресурса компьютерного зрения
 
@@ -23,9 +23,9 @@ ms.locfileid: "73499107"
 
     |Параметр|Значение|
     |--|--|
-    |name|Требуемое имя (от 2 до 64 символов)|
+    |Имя|Требуемое имя (от 2 до 64 символов)|
     |Подписка|Выберите соответствующую подписку|
-    |Расположение|Выберите доступное поблизости расположение|
+    |Местоположение|Выберите доступное поблизости расположение|
     |Ценовая категория|`F0` — минимальная ценовая категория|
     |Группа ресурсов|Выберите доступную группу ресурсов|
 

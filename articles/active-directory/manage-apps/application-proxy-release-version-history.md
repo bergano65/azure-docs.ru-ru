@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/05/2019
+ms.date: 04/07/2020
 ms.subservice: app-mgmt
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9ecd193282ed9b7333df44689530b4d057ad7f8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f027fbce66a73306165a0ad35d1ba3faa7a5c0bc
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "68693899"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80983897"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Прокси-сервер Azure AD Application: история выпуска версии
 В этой статье перечислены версии и функции прокси-приложения Azure Active Directory (Azure AD), которые были выпущены. Команда Azure AD регулярно обновляет прокси-сервер приложений с новыми функциями и функциональностью. Подключение прокси-серверов приложения обновляется автоматически при выпуске новой версии. 
@@ -35,6 +35,22 @@ ms.locfileid: "68693899"
 Как включить прокси-сервер приложений | В этом [учебнике](application-proxy-add-on-premises-application.md)описаны предварительные требования для включения приложения Proxy и установки и регистрации разъема.
 Сведения о соединителях прокси приложения Azure AD | Узнайте больше об [управлении разъемом](application-proxy-connectors.md) и о том, как разъемы [автоматически обновляются.](application-proxy-connectors.md#automatic-updates)
 Azure AD приложение Прокси-коннектор Скачать |  [Скачать последний разъем](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download).
+
+## <a name="1515260"></a>1.5.1526.0
+
+### <a name="release-status"></a>Состояние выпуска
+
+Апрель 07, 2020: Выпущен для скачивания
+
+### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
+-   Соединения используют tLS 1.2 только для всех соединений. Для [Connector pre-requisites](application-proxy-add-on-premises-application.md#before-you-begin) получения более подробной информации см.
+- Улучшенная сигнализация между службами Connector и Azure. Это включает в себя поддержку надежных сеансов связи WCF между службами Connector и Azure и улучшений кэширования DNS для коммуникаций WebSocket.
+- Поддержка настройки прокси между соединителем и приложением бэкэнда. Для получения дополнительной информации [см. Работа с существующими на-предпосылки прокси-серверов](application-proxy-configure-connectors-with-proxy-servers.md).
+
+### <a name="fixed-issues"></a>Исправленные проблемы
+- Удален отображаются в порт 8080 для связи от служб ы «Соединитель» и «Azure».
+- Добавлены отладки следов для сообщений WebSocket. 
+- Разрешено сохранение атрибута SameSite при установке на файлы бэкэнда.
 
 ## <a name="156120"></a>1.5.612.0
 

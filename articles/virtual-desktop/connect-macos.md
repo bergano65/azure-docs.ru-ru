@@ -5,15 +5,15 @@ services: virtual-desktop
 author: heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 12/13/2019
+ms.date: 04/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 673c20355e9ad4abf2c8318b3eb2ebbcc36ed8fd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6ac3ee8d44d68f5c7929c2f93f1a1182c7f6083b
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79128231"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80891260"
 ---
 # <a name="connect-with-the-macos-client"></a>Подключение с помощью клиента macOS
 
@@ -31,11 +31,11 @@ ms.locfileid: "79128231"
 
 Чтобы подписаться на канал:
 
-1. Выберите **Добавить канал** на главной странице, чтобы подключиться к службе и получить ресурсы.
+1. Выберите **Добавить рабочее пространство** на главной странице, чтобы подключиться к службе и получить ресурсы.
 2. Введите значение параметра Feed URL (URL-адрес веб-канала). Это может быть URL-адрес или адрес электронной почты.
    - Если вы используете URL-адрес, используйте тот, который вам дал ваш админ. Как правило, <https://rdweb.wvd.microsoft.com>URL-адрес .
    - Чтобы использовать электронную почту, введите свой адрес электронной почты. Это говорит клиенту искать URL,связанный с вашим адресом электронной почты, если ваш администратор настроил сервер таким образом.
-3. Выберите **Подписку**.
+3. Выберите **Добавить**.
 4. При появлении запроса войдите в систему со своей учетной записью.
 
 После вхува в список доступных ресурсов.

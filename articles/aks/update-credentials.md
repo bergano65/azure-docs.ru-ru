@@ -1,15 +1,16 @@
 ---
-title: Сброс учетных данных для кластера Службы Azure Kubernetes (AKS)
+title: Сбросить учетные данные для кластера
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как обновить или сбросить учетные данные службы или учетных данных aAD-приложений для кластера Azure Kubernetes (AKS)
 services: container-service
 ms.topic: article
 ms.date: 03/11/2019
-ms.openlocfilehash: b7d652be3733cb130a3973909de59489047efe0a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0203321af32bcc2ae70b726737b85870d08be86f
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79475550"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886761"
 ---
 # <a name="update-or-rotate-the-credentials-for-azure-kubernetes-service-aks"></a>Обновление или поверните учетные данные службы Azure Kubernetes (AKS)
 
@@ -17,7 +18,7 @@ ms.locfileid: "79475550"
 
 Возможно, вы также [интегрировали кластер AKS с Azure Active Directory][aad-integration]и использовать его в качестве поставщика аутентификации для кластера. В этом случае для кластера будет создано еще 2 идентификатора, aAD Server App и приложение клиента AAD, вы также можете сбросить эти учетные данные. 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Вам нужна версия Azure CLI 2.0.65 или более поздняя установленная и настроенная. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 

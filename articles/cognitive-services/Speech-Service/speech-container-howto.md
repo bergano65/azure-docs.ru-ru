@@ -3,19 +3,19 @@ title: Установка речевых контейнеров - Речевой
 titleSuffix: Azure Cognitive Services
 description: Установка и запуск речевых контейнеров. Преобразование речи в текст позволяет расшифровывать аудиопотоки в режиме реального времени и сохранять их в текстовом формате, который ваши приложения, инструменты или устройства могут использовать или отображать. Преобразование текста в речь преобразует вводимый текст в синтезированную речь, похожую на человеческую.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.author: dapine
-ms.openlocfilehash: 2beee81bc365d00e59a62cacabacc5f5d6b62a42
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 2caae4fecdf13a1833f23cf9423cf3ded67f6f72
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79474787"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879035"
 ---
 # <a name="install-and-run-speech-service-containers-preview"></a>Установка и запуск контейнеров службы речевой речи (Предварительный просмотр)
 
@@ -26,7 +26,7 @@ ms.locfileid: "79474787"
 > [!IMPORTANT]
 > Все речевые контейнеры в настоящее время предлагаются в рамках [публичного "Gated" Предварительный](../cognitive-services-container-support.md#public-gated-preview-container-registry-containerpreviewazurecrio)просмотр . Объявление будет сделано, когда речевые контейнеры прогресса в общей доступности (GA).
 
-| Компонент | Компоненты | Последняя версия |
+| Функция | Компоненты | Последняя версия |
 |--|--|--|
 | Преобразование речи в текст | Транскрибирует непрерывную речь в реальном времени или пакетные аудиозаписи в текст с промежуточными результатами. | 2.1.1 |
 | Пользовательские речи к тексту | Используя пользовательскую модель с [портала Custom Speech,](https://speech.microsoft.com/customspeech)транскрибирует непрерывную речь в реальном времени или пакетные аудиозаписи в текст с промежуточными результатами. | 2.1.1 |
@@ -73,7 +73,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице описывается минимальное и рекомендуемое распределение ресурсов для каждого контейнера речи.
 
-# <a name="speech-to-text"></a>[Речево-текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 | Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
@@ -85,7 +85,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 |-----------|---------|-------------|
 | Пользовательские речи к тексту | 2 ядра, 2-ГБ памяти | 4 ядра, 4-ГБ памяти |
 
-# <a name="text-to-speech"></a>[Текст к речи](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 | Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
@@ -110,7 +110,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 Изображения контейнеров для речи доступны в следующем реестре контейнеров.
 
-# <a name="speech-to-text"></a>[Речево-текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 | Контейнер | Хранилище |
 |-----------|------------|
@@ -122,7 +122,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 |-----------|------------|
 | Пользовательские речи к тексту | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text:latest` |
 
-# <a name="text-to-speech"></a>[Текст к речи](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 | Контейнер | Хранилище |
 |-----------|------------|
@@ -140,7 +140,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 ### <a name="docker-pull-for-the-speech-containers"></a>Докер тянуть для речи контейнеров
 
-# <a name="speech-to-text"></a>[Речево-текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 #### <a name="docker-pull-for-the-speech-to-text-container"></a>Докер тянуть для речи к тексту контейнера
 
@@ -182,7 +182,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-spee
 > [!NOTE]
 > И `locale` `voice` для пользовательских контейнеров речи определяется пользовательской модели попадает в контейнер.
 
-# <a name="text-to-speech"></a>[Текст к речи](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 #### <a name="docker-pull-for-the-text-to-speech-container"></a>Докер тянуть для текст-к-речи контейнера
 
@@ -240,7 +240,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-text
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Обратитесь к [сбору необходимых параметров](#gathering-required-parameters) `{Endpoint_URI}` для `{API_Key}` получения подробной информации о том, как получить и значения. Также доступны `docker run` [дополнительные примеры](speech-container-configuration.md#example-docker-run-commands) команды.
 
-# <a name="speech-to-text"></a>[Речево-текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 Для запуска контейнера *«Речи к тексту»* выполните следующую `docker run` команду.
 
@@ -311,7 +311,7 @@ ApiKey={API_KEY}
 * Если пользовательская модель была ранее `ModelId` загружена, она игнорируется.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
-# <a name="text-to-speech"></a>[Текст к речи](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 Для запуска контейнера *«Текст-к-речи»* выполните следующую `docker run` команду.
 
@@ -428,9 +428,9 @@ ApiKey={API_KEY}
 В этой статье вы изучили концепции и рабочий процесс для загрузки, установки и запуска контейнеров речевой речи. В разделе "Сводка" сделайте следующее.
 
 * Речь предоставляет четыре Linux контейнеров для Docker, инкапсулируя различные возможности:
-  * *Речево-текст*
+  * *Преобразование речи в текст*
   * *Пользовательские речи к тексту*
-  * *Текст к речи*
+  * *Преобразование текста в речь*
   * *Пользовательский текст к речи*
 * Изображения контейнеров загружаются из реестра контейнеров в Azure.
 * Образы контейнеров выполняются в Docker.

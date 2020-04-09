@@ -1,28 +1,23 @@
 ---
-title: Azure Active Directory. Справочные материалы о критических изменениях | Документация Майкрософт
+title: Ссылка на изменения активных каталогов Azure
 description: Дополнительные сведения об изменениях, внесенных в протоколы Azure AD, которые могут повлиять на приложение.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: 68517c83-1279-4cc7-a7c1-c7ccc3dbe146
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 3/13/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 1248063c1b4c1b1e124ff671797450dd5c1b8727
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 52ede7d66bd657b5002272e34673b4b01c9ab1aa
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80050171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80883463"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности. 
 
@@ -42,7 +37,7 @@ ms.locfileid: "80050171"
 
 Пока не запланировано.  Пожалуйста, см. ниже для изменений, которые находятся в или приходят к производству. 
 
-## <a name="march-2020"></a>Март 2020 г. 
+## <a name="march-2020"></a>Март 2020 г. 
 
 ### <a name="user-passwords-will-be-restricted-to-256-characters"></a>Пароли пользователей будут ограничены 256 символами.
 

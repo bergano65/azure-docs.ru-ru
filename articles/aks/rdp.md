@@ -1,15 +1,16 @@
 ---
-title: RDP в блокальные узлы Windows Server Службы Azure (AKS)
+title: RDP к узлам AKS Windows Server
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как создать соединение RDP с кластером Azure Kubernetes (AKS) кластера Windows Server для устранения неполадок и задач обслуживания.
 services: container-service
 ms.topic: article
 ms.date: 06/04/2019
-ms.openlocfilehash: 897504aa9902d0feaf4245c719d3a4a3c6fd2241
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 140d59894b38c7f07f16b0ac3cf99316c201d120
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77594487"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886795"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключитесь к блоку Службы Windows Server с RDP в кластере Azure Kubernetes (AKS) для технического обслуживания или устранения неполадок
 
@@ -19,7 +20,7 @@ ms.locfileid: "77594487"
 
 В этой статье показано, как создать соединение RDP с узлами AKS с помощью своих частных IP-адресов.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть существующий кластер AKS с узлами Windows Server. Если вам нужен кластер AKS, смотрите статью о [создании кластера AKS с контейнером Windows с помощью Azure CLI.][aks-windows-cli] Вам нужно имя пользователя администратора Windows и пароль для узла Windows Server, который вы хотите устранить. Вам также нужен клиент RDP, такой как [Microsoft Remote Desktop.][rdp-mac]
 

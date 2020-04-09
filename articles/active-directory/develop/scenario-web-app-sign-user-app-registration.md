@@ -2,24 +2,21 @@
 title: Зарегистрируйте веб-приложение, которое подписывается в пользователях - платформа идентификации Microsoft Azure
 description: Узнайте, как зарегистрировать веб-приложение, которое подписывает в пользователях
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: f2513b1fee022199f040ba0dcf83110c0b3b1365
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7d2eb5356b1abc54508fd6bf8d35fd9fc39d02ec
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76701575"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80881585"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Веб-приложение, которое подписывает в пользователях: Регистрация приложений
 
@@ -58,7 +55,7 @@ ms.locfileid: "76701575"
    1. Для **URL-адреса ответа**добавьте **https://localhost:44321/signin-oidc** **веб-тип**.
    1. В разделе **Дополнительные параметры** задайте для параметра **URL-адрес выхода** значение **https://localhost:44321/signout-oidc**.
    1. В разделе **Неявное предоставление разрешения** установите флажок **Токены идентификатора**.
-   1. Нажмите кнопку **Сохранить**.
+   1. Щелкните **Сохранить**.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
@@ -69,7 +66,7 @@ ms.locfileid: "76701575"
 1. Выберите **Зарегистрировать**, чтобы создать приложение.
 1. Выберите меню **аутентификации.**
 1. В разделе **Расширенные настройки** | **Неявного гранта** выберите **токены ID.** Этот пример [требует, чтобы неявный поток грантов](v2-oauth2-implicit-grant-flow.md) был включен для регистрации в пользователе.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -92,7 +89,7 @@ ms.locfileid: "76701575"
 
    1. Введите описание ключа.
    1. Выберите ключевой срок **в 1 год**.
-   1. Нажмите кнопку **Добавить**.
+   1. Выберите **Добавить**.
    1. Когда появится ключевое значение, скопируйте его на потом. Это значение не будет отображаться снова или быть извлеченным любыми другими средствами.
 
 # <a name="python"></a>[Python](#tab/python)
@@ -108,7 +105,7 @@ ms.locfileid: "76701575"
 
    1. Введите описание ключа.
    1. Выберите срок действия ключа**в 1 год**.
-   1. Нажмите кнопку **Добавить**.
+   1. Выберите **Добавить**.
    1. Когда появится ключевое значение, скопируйте его. Он понадобится вам позднее.
 ---
 

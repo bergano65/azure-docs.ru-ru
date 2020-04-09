@@ -1,5 +1,5 @@
 ---
-title: Ссылка на идентификационный знак платформы Майкрософт (ru) Документы Майкрософт
+title: Ссылка на идентификационный знак платформы Майкрософт
 description: Узнайте, как использовать id_tokens, излучаемые конечными точками Azure AD v1.0 и платформой идентификации Майкрософт (v2.0).
 services: active-directory
 author: rwike77
@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 1efd027edb85cabcfdc2a170771ef19182b5c9f8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3ede70719c124caebc541df8578ab2720fc68cd5
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77160956"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80885520"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Токены идентификационной платформы Майкрософт
 

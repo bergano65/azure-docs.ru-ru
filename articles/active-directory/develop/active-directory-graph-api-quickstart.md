@@ -4,7 +4,6 @@ description: API Graph Azure Active Directory (Azure AD) обеспечивае�
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: 9dc268a9-32e8-402c-a43f-02b183c295c5
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
@@ -13,12 +12,12 @@ ms.date: 08/28/2019
 ms.author: ryanwi
 ms.reviewer: sureshja
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 701aadcbfe03c82f6a4c341ef9698f8a1bf1a347
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: e417d29341ecd175f5ef97761292568b200fc64e
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80476587"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80884517"
 ---
 # <a name="how-to-use-the-azure-ad-graph-api"></a>Использование API Graph Azure AD
 
@@ -118,7 +117,7 @@ API Azure AD GraphPI обеспечивает программный досту�
 
 Для получения дополнительной информации об объектах и типах Azure AD, которые подвергаются [Azure AD Graph REST API reference](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)graph, а также об операциях, которые могут быть выполнены на них с помощью Графика, см.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 * Подробнее о [прихожей API API Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)

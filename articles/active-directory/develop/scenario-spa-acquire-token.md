@@ -2,24 +2,21 @@
 title: Приобретите токен для вызова веб-API (одностраничных приложений) - платформа идентификации Майкрософт Azure
 description: Узнайте, как создать одностраничное приложение (приобрести токен для вызова API)
 services: active-directory
-documentationcenter: dev-center-name
 author: negoe
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/20/2019
 ms.author: negoe
 ms.custom: aaddev
-ms.openlocfilehash: 393c3a06a2366a7d6947faf8bbfe038d6c5982fc
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: eeba01a609a1a21ed564c0b9cb78a28a4ad5c95a
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80419663"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80882324"
 ---
 # <a name="single-page-application-acquire-a-token-to-call-an-api"></a>Одностраничное приложение: Приобрести токен для вызова API
 
@@ -199,7 +196,7 @@ myMSALObj.acquireTokenPopup(request);
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-spa-call-api.md)

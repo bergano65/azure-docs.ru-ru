@@ -17,12 +17,12 @@ ms.date: 01/24/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 843f12d14120a7becdc1e8b15bfcc65948602c44
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 86a0e0b3c64554e00a5ba7734af28dc136df643f
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74007751"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80891515"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Справочные материалы по действиям аудита в Azure Active Directory
 
@@ -135,11 +135,11 @@ ms.locfileid: "74007751"
 |Управление приложениями|AdminPolicyDatas-SetResources|
 |Управление приложениями|AdminUserJourneys-GetResources|
 |Управление приложениями|AdminUserJourneys-RemoveResources|
-|Проверка подлинности|AdminUserJourneys-SetResources|
-|Проверка подлинности|Create IdentityProvider (Создание записи IdentityProvider)|
-|Проверка подлинности|Create V1 application (Создание приложения версии 1)|
-|Проверка подлинности|Create V2 application (Создание приложения версии 2)|
-|Проверка подлинности|Create a custom domains in the tenant (Создание личных доменов в клиенте)|
+|Аутентификация|AdminUserJourneys-SetResources|
+|Аутентификация|Create IdentityProvider (Создание записи IdentityProvider)|
+|Аутентификация|Create V1 application (Создание приложения версии 1)|
+|Аутентификация|Create V2 application (Создание приложения версии 2)|
+|Аутентификация|Create a custom domains in the tenant (Создание личных доменов в клиенте)|
 |Авторизация|Create a new AdminUserJourney (Создание записи AdminUserJourney)|
 |Авторизация|Create localized resource json (Создание JSON-файла локализованных ресурсов)|
 |Авторизация|Create new Custom IDP (Создание настраиваемого поставщика удостоверений)|
@@ -256,17 +256,17 @@ ms.locfileid: "74007751"
 |Управление каталогом|Get tenant Info (Получение сведений о клиенте)|
 |Управление каталогом|Get tenant allowed features (Получение допустимых функций клиента)|
 |Управление каталогом|Get tenantDomains (Получение доменов клиента)|
-|Ключ|Gets the type of tenant (Получение сведений о типе клиента)|
-|Ключ|Verify if B2C feature is enabled (Проверка того, включен ли компонент B2C)|
-|Ключ|Проверка того, включен ли компонент|
-|Ключ|Добавление партнера для компании|
-|Ключ|Add unverified domain (Добавление непроверенного домена)|
-|Ключ|Add verified domain (Добавление проверенного домена)|
-|Ключ|Create company (Создание организации)|
-|Ключ|Создание параметров организации.|
-|Ключ|Удаление параметров организации.|
-|Ключ|Demote partner (Изменение типа партнера)|
-|Ключ|Directory deleted (Каталог удален)|
+|Клавиши|Gets the type of tenant (Получение сведений о типе клиента)|
+|Клавиши|Verify if B2C feature is enabled (Проверка того, включен ли компонент B2C)|
+|Клавиши|Проверка того, включен ли компонент|
+|Клавиши|Добавление партнера для компании|
+|Клавиши|Add unverified domain (Добавление непроверенного домена)|
+|Клавиши|Add verified domain (Добавление проверенного домена)|
+|Клавиши|Create company (Создание организации)|
+|Клавиши|Создание параметров организации.|
+|Клавиши|Удаление параметров организации.|
+|Клавиши|Demote partner (Изменение типа партнера)|
+|Клавиши|Directory deleted (Каталог удален)|
 |Другие|Directory deleted permanently (Каталог удален без возможности восстановления)|
 |Другие|Directory scheduled for deletion (Запланировано удаление этого каталога)|
 |Ресурс|Promote company to partner (Продвижение компании до партнера)|
@@ -370,8 +370,8 @@ ms.locfileid: "74007751"
 |Управление приложениями|Edit Terms Of Use (Изменение условий использования)|
 |Управление приложениями|Publish Terms Of Use (Публикация условий использования)|
 |Управление приложениями|Unpublish Terms Of Use (Отмена публикации условий использования)|
-|Управление приложениями|Add application SSL certificate (Добавление SSL-сертификата приложения)|
-|Управление приложениями|Delete SSL binding (Удаление привязки SSL)|
+|Управление приложениями|Добавление сертификата TLS/SSL|
+|Управление приложениями|Удаление связывания TLS|
 |Управление приложениями|Register connector (Регистрация соединителя)|
 |Управление приложениями|AdminPolicyDatas-RemoveResources|
 |Управление приложениями|AdminPolicyDatas-SetResources|

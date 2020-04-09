@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: de91f61385942db077bc98721eabe9f3f0b8624c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8d44e53520481e4ada5c2f16f0c56a4a6a724ec1
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74083006"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80892484"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "74083006"
     Для завершения процесса регистрации Azure CDN использует поддомен *cdnverify* с целью проверки сопоставления DNS. Дополнительные сведения см. в разделе [Создание записи CNAME DNS](cdn-map-content-to-custom-domain.md#create-a-cname-dns-record). Этот шаг позволяет Azure CDN распознавать пользовательский домен, чтобы отвечать на его запросы.
     
     > [!NOTE]
-    > Чтобы включить SSL на **Azure CDN из** профилей Akamai, необходимо непосредственно защелки пользовательского домена к вашей цели. cdnverify для включения SSL еще не поддерживается. 
+    > Чтобы включить TLS на **Azure CDN из** профилей Akamai, необходимо непосредственно заселить пользовательский домен в конечную точку. cdnverify для включения TLS еще не поддерживается. 
     >
 
 3.  Вернитесь на веб-сайт поставщика домена для своего личного домена и обновите первое созданное сопоставление DNS, чтобы пользовательский домен был подключён ко второй конечной точке CDN.

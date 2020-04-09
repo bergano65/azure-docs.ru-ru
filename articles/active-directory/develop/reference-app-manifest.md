@@ -1,5 +1,5 @@
 ---
-title: Основные сведения о манифесте приложения Azure Active Directory | Документация Майкрософт
+title: Понимание манифеста приложения Active Directory Azure
 description: Подробное описание манифеста приложения Azure Active Directory, который представляет конфигурацию удостоверений приложения в клиенте Azure AD и используется для упрощения авторизации OAuth, предоставления согласия и многого другого.
 services: active-directory
 author: rwike77
@@ -12,12 +12,12 @@ ms.date: 03/23/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: 6d9a4af5ee814282589959fcf840c1061358ca18
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: 487559aaf632a30b7efcda490f92a90d4f59b8f5
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80383945"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80883480"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Манифест приложения Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "80383945"
 
 ### <a name="accesstokenacceptedversion-attribute"></a>accessTokenAcceptedVersion атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | accessTokenAcceptedVersion | Int32, допускающий значение NULL |
 
@@ -63,7 +63,7 @@ ms.locfileid: "80383945"
 
 ### <a name="addins-attribute"></a>addIns атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | addIns | Collection |
 
@@ -88,7 +88,7 @@ ms.locfileid: "80383945"
 
 ### <a name="allowpublicclient-attribute"></a>allowPublicClient атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | allowPublicClient | Логическое |
 
@@ -102,7 +102,7 @@ ms.locfileid: "80383945"
 
 ### <a name="availabletoothertenants-attribute"></a>доступныеАтрибутыToOtherTenants
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | AvailableToOtherTenants | Логическое |
 
@@ -113,7 +113,7 @@ ms.locfileid: "80383945"
 
 ### <a name="appid-attribute"></a>атрибут appId
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | appId | Строка |
 
@@ -127,7 +127,7 @@ ms.locfileid: "80383945"
 
 ### <a name="approles-attribute"></a>appRoles атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | appRoles | Collection |
 
@@ -152,7 +152,7 @@ ms.locfileid: "80383945"
 
 ### <a name="displayname-attribute"></a>Атрибут displayName
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | displayName | Строка |
 
@@ -163,7 +163,7 @@ ms.locfileid: "80383945"
 
 ### <a name="errorurl-attribute"></a>атрибут errorUrl
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | errorUrl | Строка |
 
@@ -171,7 +171,7 @@ ms.locfileid: "80383945"
 
 ### <a name="groupmembershipclaims-attribute"></a>атрибут groupMembershipClaims
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 |groupMembershipClaims | Строка |
 
@@ -189,7 +189,7 @@ ms.locfileid: "80383945"
 
 ### <a name="homepage-attribute"></a>атрибут домашней страницы
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | homepage |Строка |
 
@@ -200,7 +200,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="objectid-attribute"></a>objectId атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 |objectId | Строка |
 
@@ -216,7 +216,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="optionalclaims-attribute"></a>дополнительные претензии атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | optionalClaims | Строка |
 
@@ -232,7 +232,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="id-attribute"></a>id, атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | идентификатор | Строка |
 
@@ -246,7 +246,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="identifieruris-attribute"></a>идентификаторUris атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | identifierUris | Массив строк |
 
@@ -260,7 +260,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="informationalurls-attribute"></a>атрибут informationalUrls
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | informationalUrls | Строка |
 
@@ -279,7 +279,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="keycredentials-attribute"></a>атрибут keyCredentials
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | keyCredentials | Collection |
 
@@ -303,7 +303,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="knownclientapplications-attribute"></a>известный атрибут клиент-приложений
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | knownClientApplications | Массив строк |
 
@@ -317,7 +317,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="logourl-attribute"></a>logoUrl атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | logoUrl | Строка |
 
@@ -331,7 +331,7 @@ URL-адрес домашней страницы приложения.
 
 ### <a name="logouturl-attribute"></a>logoutUrl атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | logoutUrl | Строка |
 
@@ -345,7 +345,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="name-attribute"></a>атрибут name
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | name | Строка |
 
@@ -359,7 +359,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="oauth2allowimplicitflow-attribute"></a>oauth2AllowImplicitFlow атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | oauth2AllowImplicitFlow | Логическое |
 
@@ -373,7 +373,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="oauth2allowidtokenimplicitflow-attribute"></a>oauth2AllowIdTokenImplicitFlowFlowFlowFlow
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | oauth2AllowIdTokenImplicitFlowFlow | Логическое |
 
@@ -387,7 +387,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="oauth2permissions-attribute"></a>атрибут oauth2Permissions
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | oauth2Permissions | Collection |
 
@@ -412,7 +412,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="oauth2requiredpostresponse-attribute"></a>oauth2RequiredPostResponse атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | oauth2RequiredPostResponse | Логическое |
 
@@ -426,7 +426,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="parentalcontrolsettings-attribute"></a>Атрибут родительскогоControlSettings
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | РодительскиеКонтрольНастройки | Строка |
 
@@ -444,7 +444,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="passwordcredentials-attribute"></a>passwordCredentials атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | passwordCredentials | Collection |
 
@@ -466,7 +466,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="preauthorizedapplications-attribute"></a>атрибут preAuthorizedApplications
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | предварительноавторизованныеприложения | Collection |
 
@@ -487,7 +487,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="publicclient-attribute"></a>PublicClient атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | publicClient | Логическое|
 
@@ -497,7 +497,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="publisherdomain-attribute"></a>publisherDomain атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | publisherDomain | Строка |
 
@@ -511,7 +511,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="replyurls-attribute"></a>атрибут replyUrls
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | replyUrls | Массив строк |
 
@@ -521,7 +521,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="replyurlswithtype-attribute"></a>атрибут replyUrlsWithType
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | replyUrlsWithType | Collection |
 
@@ -545,7 +545,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="requiredresourceaccess-attribute"></a>требуется атрибутResourceAccess
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | requiredResourceAccess | Collection |
 
@@ -572,7 +572,7 @@ URL-адрес для выхода из приложения.
 
 ### <a name="samlmetadataurl-attribute"></a>samlMetadataUrl атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | samlMetadataUrl | Строка |
 
@@ -586,7 +586,7 @@ URL-адрес метаданных SAML для приложения.
 
 ### <a name="signinurl-attribute"></a>signInUrl атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | signInUrl | Строка |
 
@@ -600,7 +600,7 @@ URL-адрес метаданных SAML для приложения.
 
 ### <a name="signinaudience-attribute"></a>signInAudience атрибут
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | signInAudience | Строка |
 
@@ -618,7 +618,7 @@ URL-адрес метаданных SAML для приложения.
 
 ### <a name="tags-attribute"></a>Атрибут тегов
 
-| Ключ | Тип значения |
+| Клавиши | Тип значения |
 | :--- | :--- |
 | tags | Массив строк  |
 

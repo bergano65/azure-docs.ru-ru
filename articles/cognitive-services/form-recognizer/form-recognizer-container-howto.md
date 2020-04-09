@@ -2,19 +2,19 @@
 title: Как установить и запустить контейнер для распознавания форм
 titleSuffix: Azure Cognitive Services
 description: В этой статье будет объяснено, как использовать контейнер распознавания форм когнитивных служб Azure для анализа данных формы и таблицы.
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 03/17/2020
-ms.author: dapine
-ms.openlocfilehash: c8ce4b913548429ff83e0b8aa3cb65455fc9b4c5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 8cfa9114c5a5e57882cb84b604c1cf71be9acc52
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79474702"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878346"
 ---
 # <a name="install-and-run-form-recognizer-containers-preview"></a>Установка и запуск контейнеров распознавания форм (Предварительный просмотр)
 
@@ -25,7 +25,7 @@ ms.locfileid: "79474702"
 > [!IMPORTANT]
 > Контейнеры распознавания форм в настоящее время используют версию 1.0 API распознавания форм. Вы можете получить доступ к последней версии API, используя управляемую службу.
 
-| Компонент | Компоненты |
+| Функция | Компоненты |
 |----------|----------|
 | Распознаватель документов | <li>Обрабатывает файлы PDF, PNG и JPG<li>Поезда пользовательских моделей с минимум пятью формами одной и той же компоновки <li>Извлекает пары "ключ — значение" и сведения о таблице <li>Использует функцию "Распознавания текста" API Компьютерного зрения Cognitive Service для обнаружения и извлечения печатного текста из изображений в формах<li>Не требует добавления заметок или меток |
 

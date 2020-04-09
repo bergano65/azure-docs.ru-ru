@@ -3,18 +3,18 @@ title: Контейнеры Cognitive Services часто задают вопр�
 titleSuffix: Azure Cognitive Services
 description: Часто задаваемые вопросы и ответы.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 11/11/2019
-ms.author: dapine
-ms.openlocfilehash: 33b99d50db4384c7de818a7dd0bb8492c86bef97
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 8aae650065e8de11ccdc55a8a056c379a219fcb4
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "73961891"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80876512"
 ---
 # <a name="azure-cognitive-services-containers-frequently-asked-questions-faq"></a>Контейнеры Azure Cognitive Services часто задают вопросы (Часто задаваемые вопросы)
 
@@ -31,7 +31,7 @@ ms.locfileid: "73961891"
 > * [Распознаватель документов][fr-containers]
 > * [Распознавание речи (LUIS)][lu-containers]
 > * [API службы "Речь"][sp-containers]
-> * [Текстовая аналитика][ta-containers]
+> * [Анализ текста][ta-containers]
 
 **В: Есть ли разница между облаком Когнитивных Услуг и контейнерами?**
 
@@ -113,7 +113,7 @@ ms.locfileid: "73961891"
 * [Распознаватель документов][fr-containers-billing]
 * [Распознавание речи (LUIS)][lu-containers-billing]
 * [API службы "Речь"][sp-containers-billing]
-* [Текстовая аналитика][ta-containers-billing]
+* [Анализ текста][ta-containers-billing]
 
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют данные клиента в корпорацию Майкрософт.
@@ -140,7 +140,7 @@ ms.locfileid: "73961891"
 * [Распознаватель документов][fr-containers-recommendations]
 * [Распознавание речи (LUIS)][lu-containers-recommendations]
 * [API службы "Речь"][sp-containers-recommendations]
-* [Текстовая аналитика][ta-containers-recommendations]
+* [Анализ текста][ta-containers-recommendations]
  
 **В: Поддерживаются ли эти контейнеры в настоящее время в Windows?**
 

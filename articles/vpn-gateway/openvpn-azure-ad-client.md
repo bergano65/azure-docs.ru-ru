@@ -5,14 +5,14 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 02/28/2020
+ms.date: 04/07/2020
 ms.author: alzam
-ms.openlocfilehash: 9250464e3d28bdac20840aa9f69cfac707f73b30
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7bc28a03476e773325d14808e1c7ac99103b2d5d
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80371490"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879451"
 ---
 # <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений к протоколу P2S OpenVPN: аутентификация Azure AD
 
@@ -154,7 +154,7 @@ ms.locfileid: "80371490"
 
     ![диагностика](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Как добавить суффиксы DNS в VPN-клиент?
 
@@ -230,6 +230,16 @@ ms.locfileid: "80371490"
 </clientconfig>
 </azvpnprofile>
 ```
+
+### <a name="can-i-import-the-profile-from-a-command-line-prompt"></a>Могу ли я импортировать профиль из запроса командной строки?
+
+Вы можете импортировать профиль из запроса командной строки, разместив загруженный файл **azurevpnconfig.xml** в **%userprofile AzureVpn_8wekyb3d8bbwe%**
+
+```
+azurevpn -i azurevpnconfig.xml 
+```
+заставить импорт использовать **-f** переключатель, а также
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

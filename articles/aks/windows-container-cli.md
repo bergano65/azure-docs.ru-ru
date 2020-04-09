@@ -1,15 +1,15 @@
 ---
-title: Предварительный просмотр - Создание контейнера Windows Server в кластере службы Azure Kubernetes (AKS)
+title: Запуск контейнера Windows Server в кластере службы Azure Kubernetes
 description: Узнайте, как быстро создать кластер Kubernetes, разверните приложение в контейнере Windows Server в службе Azure Kubernetes (AKS) с помощью Azure CLI.
 services: container-service
 ms.topic: article
 ms.date: 01/27/2020
-ms.openlocfilehash: 259728da5ea7f71110ce183ae25bb47a0f873614
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8d2a91f63815e7ba4bcbe4084b80a06fa7779099
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79475516"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886727"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр - Создание контейнера Windows Server в кластере службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -25,9 +25,9 @@ ms.locfileid: "79475516"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, эта статья требует, чтобы вы запускали версию Azure CLI 2.0.61 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.][azure-cli-install]
+Если вы решили установить и использовать CLI локально, эта статья требует, чтобы вы запускали версию Azure CLI 2.0.61 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 После создания кластера, который может запускать контейнеры Windows Server, необходимо добавить дополнительный пул узлов. Добавление дополнительного пула узлов покрыто более поздним шагом, но сначала необходимо включить несколько функций предварительного просмотра.
 
@@ -88,7 +88,7 @@ az provider register --namespace Microsoft.ContainerService
 
 Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
 
-В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Следующий пример создает группу ресурсов под названием *myResourceGroup* в *восточном* месте.
 
 > [!NOTE]
 > Эта статья использует Bash синтаксис для команд в этом учебнике.
@@ -196,7 +196,7 @@ aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.15.7
 aksnpwin987654                      Ready    agent   108s   v1.15.7
 ```
 
-## <a name="run-the-application"></a>Выполнение приложения
+## <a name="run-the-application"></a>Запуск приложения
 
 Файл манифеста Kubernetes определяет требуемое состояние для кластера, включая образы контейнеров, которые нужно запустить. В этой статье используется манифест для создания всех объектов, необходимых для запуска ASP.NET примерприложения в контейнере Windows Server. Этот манифест включает в себя [развертывание Kubernetes][kubernetes-deployment] для ASP.NET примерприложения и внешнюю [службу Kubernetes][kubernetes-service] для доступа к приложению из Интернета.
 

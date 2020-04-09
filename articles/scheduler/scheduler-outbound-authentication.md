@@ -8,12 +8,12 @@ ms.author: deli
 ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/15/2016
-ms.openlocfilehash: bcd14e618323aec1c7ce47fcebb25099fa96be81
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0a8d79af9f45731971cb1be1f39fc193f9d0f0d9
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78898516"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878975"
 ---
 # <a name="outbound-authentication-for-azure-scheduler"></a>Исходящая проверка подлинности планировщика Azure
 
@@ -47,8 +47,8 @@ ms.locfileid: "78898516"
 
 | Элемент | Обязательно | Описание |
 |---------|----------|-------------|
-| **authentication** (родительский элемент) | Объект проверки подлинности для использования SSL-сертификата клиента |
-| **тип** | Да | Тип проверки подлинности. Для клиентских SSL-сертификатов это значение равно `ClientCertificate`. |
+| **authentication** (родительский элемент) | Объект аутентификации для использования клиентского сертификата SSL/TLS |
+| **тип** | Да | Тип проверки подлинности. Для сертификатов клиентов SSL/TLS `ClientCertificate`значение составляет . |
 | **Pfx** | Да | Содержимое PFX-файла в кодировке Base64 |
 | **пароль** | Да | Пароль для доступа к PFX-файлу |
 ||| 
@@ -59,8 +59,8 @@ ms.locfileid: "78898516"
 
 | Элемент | Описание | 
 |---------|-------------| 
-| **authentication** (родительский элемент) | Объект проверки подлинности для использования SSL-сертификата клиента |
-| **тип** | Тип проверки подлинности. Для клиентских SSL-сертификатов это значение равно `ClientCertificate`. |
+| **authentication** (родительский элемент) | Объект аутентификации для использования клиентского сертификата SSL/TLS |
+| **тип** | Тип проверки подлинности. Для сертификатов клиентов SSL/TLS `ClientCertificate`значение составляет . |
 | **certificateThumbprint** |Отпечаток сертификата |
 | **certificateSubjectName** |Различающееся имя субъекта сертификата |
 | **certificateExpiration** | Дата окончания срока действия сертификата |

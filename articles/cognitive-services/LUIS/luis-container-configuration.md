@@ -3,20 +3,20 @@ title: Настройки контейнеров Docker - LUIS
 titleSuffix: Azure Cognitive Services
 description: Среда выполнения контейнера LUIS настраивается с помощью аргументов команды `docker run`. LUIS поддерживает несколько обязательных и несколько необязательных параметров.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.author: dapine
-ms.openlocfilehash: a30fcd0ec7e53c78876596baf787639e81c638db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 48a9856c58a815eabcc0b105efcd548e66ddd552
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "73795008"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80874217"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Настройка контейнеров Docker Интеллектуальной службы распознавания речи 
 
@@ -34,7 +34,7 @@ ms.locfileid: "73795008"
 |Да|[Лицензионное соглашение](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
 |нет|[Fluentd](#fluentd-settings)|Записывает данные в журнал и (необязательно) передает метрики на сервер Fluentd.|
 |нет|[Прокси-сервер HTTP](#http-proxy-credentials-settings)|Настраивает прокси-сервер HTTP для исходящих запросов.|
-|нет|[Ведение журнала](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |
+|нет|[Logging](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |
 |Да|[Подключения](#mount-settings)|Читает и записывает данные с главного компьютера в контейнер и обратно.|
 
 > [!IMPORTANT]
@@ -64,7 +64,7 @@ ms.locfileid: "73795008"
 * Портал Azure: Обзор **когнитивных услуг,** помеченный`Endpoint`
 * Портал LUIS: Страница **настроек ключей и конечных точек,** как часть конечной точки URI.
 
-| Обязательно | name | Тип данных | Описание |
+| Обязательно | Имя | Тип данных | Описание |
 |----------|------|-----------|-------------|
 | Да      | `Billing` | строка | Биллинг endpoint URI. Для получения дополнительной информации о получении биллинга URI [см.](luis-container-howto.md#gathering-required-parameters) Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
@@ -94,7 +94,7 @@ ms.locfileid: "73795008"
 
 В следующей таблице описаны поддерживаемые параметры.
 
-|Обязательно| name | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Да| `Input` | Строка | Цель входного подключения. Значение по умолчанию — `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример<br>`--mount type=bind,src=c:\input,target=/input`|
 |нет| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда относятся журналы запросов LUIS и журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|

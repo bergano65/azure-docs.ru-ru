@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 04/08/2020
 ms.author: aschhab
-ms.openlocfilehash: 3a4fca0b3b60fcb76bcdc4f5f2d53df816c5053b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8020b12ca892fbf7dec6fed6259526d958fb110f
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76756388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80891770"
 ---
 # <a name="message-counters"></a>Счетчики сообщений
 
@@ -43,6 +43,11 @@ ms.locfileid: "76756388"
 -   [TransferMessageCount](/dotnet/api/microsoft.servicebus.messaging.messagecountdetails.transfermessagecount#Microsoft_ServiceBus_Messaging_MessageCountDetails_TransferMessageCount): число сообщений, ожидающих передачи в другую очередь или раздел.
 
 Если приложению требуется масштабировать ресурсы в зависимости от длины очереди, оно должно делать это размеренно. Получение данных счетчиков сообщений является ресурсоемкой операцией в брокере обмена сообщениями, и частое ее выполнение напрямую негативно влияет на производительность сущности.
+
+> [!NOTE]
+> Сообщения, отправляемые на тему «Автобус обслуживания», направляются в подписки на эту тему. Таким образом, количество активных сообщений на саму тему составляет 0, так как эти сообщения были успешно перенаправлены в подписку. Получите количество сообщений по подписке и убедитесь, что он больше, чем 0. Даже если вы видите сообщения в подписке, они фактически хранятся в хранилище, принадлежащем теме. 
+
+Если вы посмотрите на подписки, то они будут иметь ненулевой количество сообщений (которые добавляют до 323 МБ пространства для всего объекта).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

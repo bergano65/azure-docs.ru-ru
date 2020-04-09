@@ -3,19 +3,19 @@ title: Установка речевых контейнеров
 titleSuffix: Azure Cognitive Services
 description: Подробная информация о вариантах конфигурации диаграммы диаграммы от текста к речи.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 08/22/2019
-ms.author: dapine
-ms.openlocfilehash: c87132c3ae41dec82e3493f9a0ee2397455ff881
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 22168974ab8b285413b4fa6e947c05f65a73ae12
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "69971353"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80874362"
 ---
 ### <a name="text-to-speech-sub-chart-chartstexttospeech"></a>Текст к речи (подчарт: диаграммы/textToSpeech)
 

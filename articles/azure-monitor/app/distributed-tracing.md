@@ -6,12 +6,12 @@ author: nikmd23
 ms.author: nimolnar
 ms.date: 09/17/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: c2f384370c3ceaf24164e4a27adc05b1a1e1ddf7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 83575aa7f9b63615f453e00bd06b00a5540b9a9e
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294960"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80892263"
 ---
 # <a name="what-is-distributed-tracing"></a>Что такое распределенная трассировка?
 
@@ -27,17 +27,17 @@ Azure Monitor также предлагает представление [схе
 
 ## <a name="how-to-enable-distributed-tracing"></a>Включение распределенной трассировки
 
-Включить распределенную трассировку между службами в приложении так же просто, как добавить правильный пакет SDK или библиотеку для каждой службы, в зависимости от языка, на котором была реализована служба.
+Включить распределенный отслеживание между службами в приложении так же просто, как добавить в каждую службу соответствующий агент, SDK или библиотеку на основе языка, на котором была реализована служба.
 
-## <a name="enabling-via-application-insights-sdks"></a>Включение с помощью пакетов SDK Application Insights
+## <a name="enabling-via-application-insights-through-auto-instrumentation-or-sdks"></a>Включение через Application Insights через автоинструментарий или SDK
 
-Пакеты SDK Application Insights для .NET, .NET Core, Java, Node.js и JavaScript изначально поддерживают распределенную трассировку. Инструкции по установке и настройке каждого пакета SDK Application Insights приведены ниже.
+Агенты Application Insights и/или SDK для .NET, .NET Core, Java, Node.js и JavaScript поддерживают распределенный отслеживание нативной основе. Инструкции по установке и настройке каждого пакета SDK Application Insights приведены ниже.
 
 * [.NET](https://docs.microsoft.com/azure/application-insights/quick-monitor-portal)
 * [.NET Core](https://docs.microsoft.com/azure/application-insights/app-insights-dotnetcore-quick-start)
-* [Java](https://docs.microsoft.com/azure/application-insights/app-insights-java-get-started)
+* [Java](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent)
 * [Node.js](https://docs.microsoft.com/azure/application-insights/app-insights-nodejs-quick-start)
-* [Javascript](https://docs.microsoft.com/azure/application-insights/app-insights-javascript)
+* [JavaScript](https://docs.microsoft.com/azure/application-insights/app-insights-javascript)
 * [Python](opencensus-python.md)
 
 При установке и настройке надлежащего пакета SDK Application Insights для популярных фреймворков, библиотек и технологий информация о трассировке автоматически собирается с помощью сборщиков зависимостей SDK. Полный список поддерживаемых технологий доступен в [документации по автоматическому сбору зависимостей](https://docs.microsoft.com/azure/application-insights/auto-collect-dependencies).

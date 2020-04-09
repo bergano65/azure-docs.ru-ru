@@ -2,27 +2,22 @@
 title: Учетные данные клиентов OAuth 2.0 поступают на платформу идентификации Майкрософт Azure
 description: Создавайте веб-приложения с помощью реализации платформы идентификации Microsoft протокола аутентификации OAuth 2.0.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: 9b7cfbd7-f89f-4e33-aff2-414edd584b07
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 4bf6d777662ad1ba4843d6e650dfd3a6a357822f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a03f8cb412b6d6ae95165331ae836bdfde5d670d
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79262364"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886302"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-client-credentials-flow"></a>Платформа идентификации Майкрософт и поток учетных данных клиентов OAuth 2.0
 
@@ -277,7 +272,7 @@ curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...." 'https://graph
 
 Чтобы получить дополнительные сведения об учетных данных клиента, прочтите [эту статью](https://aka.ms/msal-net-client-credentials) из библиотеки проверки подлинности Майкрософт.
 
-| Пример | Платформа |Описание |
+| Образец | Платформа |Описание |
 |--------|----------|------------|
 |[active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) | Консоль .NET Core 2.1 | Простое приложение .NET Core, которое отображает пользователей клиента, которые делают запрос в Microsoft Graph не от имени пользователя, а используя удостоверение приложения. В примере также показаны различные варианты проверки подлинности с помощью сертификатов. |
 |[active-directory-dotnet-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2)|ASP.NET MVC 3 | Веб-приложение, которое синхронизирует данные из Microsoft Graph на основе удостоверения приложения, а не имени пользователя. |

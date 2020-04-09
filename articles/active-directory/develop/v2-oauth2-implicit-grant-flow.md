@@ -2,27 +2,22 @@
 title: OAuth 2.0 неявного потока грантов - платформа идентификации Microsoft (ru) Azure
 description: Безопасные одностраничные приложения с использованием неявного потока идентификационных данных платформы Майкрософт.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: 3605931f-dc24-4910-bb50-5375defec6a8
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 53d498f4aed8ec86cc57c35824a9fb8aa471dc1d
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: 4ef8ca9e116328e14182ca77c787befa837041d0
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80419683"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886234"
 ---
 # <a name="microsoft-identity-platform-and-implicit-grant-flow"></a>Платформа идентификации Майкрософт и неявный поток грантов
 
@@ -244,6 +239,6 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/logout?post_logout_redire
 | `tenant` |обязательно |Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Дополнительные сведения см. в [описании протоколов](active-directory-v2-protocols.md#endpoints). |
 | `post_logout_redirect_uri` | рекомендуется | URL-адрес, на который следует возвратить пользователя после выхода. Это значение должно соответствовать одному из универсальных кодов ресурсов (URI) перенаправления, зарегистрированных для приложения. Если пользователь не включен, он будет показан общий текст сообщения конечным пунктом платформы идентификации Майкрософт. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Перейдите на страницу [примеров MSAL JS](sample-v2-code.md), чтобы приступить к созданию кода.

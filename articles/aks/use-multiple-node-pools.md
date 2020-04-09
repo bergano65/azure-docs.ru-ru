@@ -3,13 +3,13 @@ title: Используйте несколько пулов узлов в слу
 description: Узнайте, как создать и управлять несколькими пулями узлов для кластера в службе Azure Kubernetes (AKS)
 services: container-service
 ms.topic: article
-ms.date: 03/10/2020
-ms.openlocfilehash: 87f066ed17e5274439082956803d269bdd5853f5
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.date: 04/08/2020
+ms.openlocfilehash: 26fd541552ee203216af5a08d948644d82061191
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80616502"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984918"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание и управление несколькими пулями узлов для кластера в службе Azure Kubernetes (AKS)
 
@@ -20,9 +20,9 @@ ms.locfileid: "80616502"
 
 В этой статье показано, как создавать и управлять несколькими пулями узлов в кластере AKS.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Вам нужна версия Azure CLI 2.2.0 или более поздняя установка и настройка. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.][install-azure-cli]
+Вам нужна версия Azure CLI 2.2.0 или более поздняя установка и настройка. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="limitations"></a>Ограничения
 
@@ -513,9 +513,9 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
     ...
     "provisioningState": "Creating",
     ...
-    "nodeTaints":  {
-      "sku": "gpu:NoSchedule"
-    },
+    "nodeTaints":  [
+      "sku=gpu:NoSchedule"
+    ],
     ...
   },
  ...
@@ -751,7 +751,7 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpu
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как создавать и управлять несколькими пулями узлов в кластере AKS. Для получения дополнительной информации о том, как управлять стручками в пулах узлов, [см.][operator-best-practices-advanced-scheduler]
 

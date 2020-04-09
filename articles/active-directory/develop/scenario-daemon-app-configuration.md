@@ -2,25 +2,21 @@
 title: Налаживайте приложения daemon, которые называют веб-AI - платформа идентификации Microsoft (ru) Azure
 description: Узнайте, как настроить код для приложения daemon, которое вызывает web AA (конфигурация приложения)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: fc441ef64f98ace04b7b847c03d575215656f9db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bb2cc90e586f71bb7c90efd62ba3705cd9223bc5
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77611838"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80885503"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Приложение Daemon, которое вызывает веб-AIS - конфигурация кода
 
@@ -243,7 +239,7 @@ ConfidentialClientApplication cca =
                 .build();
 ```
 
-или диспетчер конфигурации служб
+or
 
 ```Java
 PrivateKey key = getPrivateKey(); /* RSA private key to sign the assertion */

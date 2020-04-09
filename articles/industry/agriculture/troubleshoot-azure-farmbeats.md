@@ -5,16 +5,19 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 2270ee7c850c528bd24fa2e58c2b1684acfc24d6
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 74522502f5405b56a3a604f20a695de83ef3c3a5
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80585298"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886489"
 ---
 # <a name="troubleshoot"></a>Диагностика
 
 В этой статье приведены решения общих проблем Azure FarmBeats. Для получения дополнительной помощи свяжитесь farmbeatssupport@microsoft.comс нами [форум поддержки](https://social.msdn.microsoft.com/Forums/home?forum=ProjectFarmBeats) или напишите нам по адресу .
+
+> [!NOTE]
+  > Если вы установили FarmBeats в апреле, и ваши рабочие места не сдаются с пустым сообщением об ошибке, ваша установка, возможно, не была выделена какой-либо пакетной квоты из-за всех ресурсов, направленных на чрезвычайные ситуации, здравоохранение и другие критические потребности. Вам нужно будет запросить вм: Вым, которые будут выделены на счет пакета.
 
 ## <a name="install-issues"></a>Установка проблем
 
@@ -198,7 +201,7 @@ ms.locfileid: "80585298"
 
   **Обновление имени пользователя Sentinel**
 
-    1. Войти на [портал Azure](https://portal.azure.com).
+    1. Войдите на [портал Azure](https://portal.azure.com).
     2. В поле **поиска** ищите группу ресурсов FarmBeats Datahub.
     3. Выберите хранилище учетной записи хранения данных > **контейнеры** > **пакетные препи-файлы** > **to_vm** > **config.ini**
     4. Выберите **edit**
@@ -206,7 +209,7 @@ ms.locfileid: "80585298"
 
   **Обновление паролей Sentinel**
 
-    1. Войти на [портал Azure](https://portal.azure.com).
+    1. Войдите на [портал Azure](https://portal.azure.com).
     2. В поле **поиска** ищите группу ресурсов FarmBeats Datahub.
     3. Выберите keyvault-'
     4. Выберите политики доступа в настройках

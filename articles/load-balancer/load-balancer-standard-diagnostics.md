@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2019
 ms.author: allensu
-ms.openlocfilehash: 861961bb66adc7ed9509eab973516a964cb67492
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 1d6fa75beabdc36750525310008add9594562228
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80521068"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80887118"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Диагностика Load Balancer (цен. категория "Стандартный") с помощью метрик, оповещений и сведений о работоспособности ресурсов
 
@@ -69,8 +69,6 @@ Azure Load Balancer предоставляет многомерные метри
 
 Инструкции по получению определений и значений многомерных метрик с помощью API см. в статье [Azure Monitoring REST API walkthrough](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough#retrieve-metric-definitions-multi-dimensional-api) (Пошаговое руководство по REST API Azure Monitor). Эти метрики могут быть записаны на учетную запись хранилища только через опцию "Все метрики". 
 
-### <a name="common-diagnostic-scenarios-and-recommended-views"></a><a name = "DiagnosticScenarios"></a>Распространенные сценарии диагностики и рекомендуемые представления
-
 ### <a name="configure-alerts-for-multi-dimensional-metrics"></a>Настройка оповещений для многомерных метрик ###
 
 Балансизатор стандартной загрузки Azure поддерживает легко настраиваемые оповещения для многомерных метрик. Нанастройка пользовательских пороговых значений для конкретных метрик для запуска оповещений с различными уровнями серьезности, чтобы расширить возможности бесконтактного опыта мониторинга ресурсов.
@@ -82,10 +80,11 @@ Azure Load Balancer предоставляет многомерные метри
     1.  (Необязательно) Добавление группы действий для автоматического ремонта
     1.  Назначить серьезность оповещения, имя и описание, которое позволяет интуитивно реагировать
 
-
   >[!NOTE]
   >Окно конфигурации состояния оповещения покажет временные ряды для истории сигналов. Существует возможность фильтрации этой временной серии по таким измерениям, как Backend IP. Это позволит фильтровать график временных рядов, но **не** сам оповещение. Невозможно настроить оповещения для конкретных IP-адресов Backend.
-  
+
+### <a name="common-diagnostic-scenarios-and-recommended-views"></a><a name = "DiagnosticScenarios"></a>Распространенные сценарии диагностики и рекомендуемые представления
+
 #### <a name="is-the-data-path-up-and-available-for-my-load-balancer-vip"></a>Доступен ли путь к данным для виртуального IP-адреса подсистемы балансировки нагрузки?
 
 Метрика доступности виртуального IP-адреса предоставляет сведения о работоспособности пути к данным из региона к вычислительному узлу, где размещены виртуальные машины. Эта метрика отражает работоспособность инфраструктуры Azure. Используя эту метрику, можно:

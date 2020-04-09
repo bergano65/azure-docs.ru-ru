@@ -3,7 +3,6 @@ title: Как обрабатывать изменения cookie SameSite в б�
 titleSuffix: Microsoft identity platform
 description: Узнайте, как обрабатывать изменения файлов cookie SameSite в браузере Chrome.
 services: active-directory
-documentationcenter: ''
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
@@ -14,12 +13,12 @@ ms.date: 01/27/2020
 ms.author: jmprieur
 ms.reviewer: kkrishna
 ms.custom: aaddev
-ms.openlocfilehash: 056b787bbbcde6ba7f9510043deabdcf85ac7467
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e414e5cb7ad9097eb815240f83d9f529f839b6b4
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80050524"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80884007"
 ---
 # <a name="handle-samesite-cookie-changes-in-chrome-browser"></a>Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
 
@@ -52,7 +51,7 @@ ms.locfileid: "80050524"
 
 В таблице ниже представлены запросы на вытягивание, которые работали вокруг изменений SameSite в наших образцах ASP.NET и ASP.NET Core.
 
-| Пример | Запрос на вытягивание |
+| Образец | Запрос на вытягивание |
 | ------ | ------------ |
 |  [ASP.NET Core Web App дополнительный учебник](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2)  |  [Тот же сайт печенье исправить #261](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/pull/261)  |
 |  [ASP.NET образец веб-приложения MVC](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect)  |  [Тот же сайт печенье исправить #35](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/pull/35)  |
@@ -65,13 +64,13 @@ ms.locfileid: "80050524"
 
 # <a name="python"></a>[Python](#tab/python)
 
-| Пример |
+| Образец |
 | ------ |
 |  [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp)  |
 
 # <a name="java"></a>[Java](#tab/java)
 
-| Пример | Запрос на вытягивание |
+| Образец | Запрос на вытягивание |
 | ------ | ------------ |
 |  [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp)  | [Тот же сайт печенье исправить #24](https://github.com/Azure-Samples/ms-identity-java-webapp/pull/24)
 |  [ms-identity-java-webapi](https://github.com/Azure-Samples/ms-identity-java-webapi)  | [Тот же сайт печенье исправить #4](https://github.com/Azure-Samples/ms-identity-java-webapi/pull/4)

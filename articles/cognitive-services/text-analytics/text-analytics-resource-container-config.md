@@ -3,20 +3,20 @@ title: Настройка контейнеров - Текстовая анали
 titleSuffix: Azure Cognitive Services
 description: Анализ текста предоставляет контейнер с общей платформой конфигурации, что позволяет легко настроить хранилище, ведение журнала, данные телеметрии и параметры безопасности для контейнеров, а также управлять ими.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.author: dapine
-ms.openlocfilehash: 8a39327275dca43ddb6ce0e46a3e3bb51ec4555b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: f062fb2f3a653bc1b2845b92e373fdb67ba583d8
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "73795310"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878694"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -49,7 +49,7 @@ ms.locfileid: "73795310"
 
 * Портал Azure: **Обзор анализа текста,** помеченный`Endpoint`
 
-|Обязательно| name | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | Строка | Биллинг endpoint URI. Для получения дополнительной информации о получении биллинга URI [см.](how-tos/text-analytics-how-to-install-containers.md#gathering-required-parameters) Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
@@ -77,7 +77,7 @@ ms.locfileid: "73795310"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательный| name | Тип данных | Описание |
+|Необязательный| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строка | Контейнеры API анализа текста не используют этот элемент.|
 |Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|

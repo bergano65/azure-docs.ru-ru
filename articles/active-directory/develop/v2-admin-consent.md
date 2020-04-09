@@ -1,28 +1,23 @@
 ---
-title: Протоколы согласия платформы идентификации Майкрософт (ru) Документы Майкрософт
+title: Протоколы согласия платформы идентификации Майкрософт
 description: Описание авторизации в конечной точке платформы майкрософт, включая области, разрешения и согласие.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: 8f98cbf0-a71d-4e34-babf-e642ad9ff423
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/3/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: b9d6ab0fc2f2bf500f17161de7e090a6f60c0feb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c9f633e0d205adaf5cefb2e3c036ce7f48253651
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76700742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886387"
 ---
 # <a name="admin-consent-on-the-microsoft-identity-platform"></a>Согласие админа на платформе идентификации Майкрософт
 

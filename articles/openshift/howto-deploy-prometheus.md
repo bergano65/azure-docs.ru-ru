@@ -1,5 +1,5 @@
 ---
-title: Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift (ru) Документы Майкрософт
+title: Развертывание экземпляра Prometheus в кластере Azure Red Hat OpenShift
 description: Создайте экземпляр Prometheus в кластере Azure Red Hat OpenShift для мониторинга метрик приложения.
 author: makdaam
 ms.author: b-lejaku
@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 06/17/2019
 keywords: prometheus, аро, openshift, метрики, красная шляпа
-ms.openlocfilehash: f81a993caa31578e689fb3a90108f3cf0ca81fc2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7f22df587f51af735e0ea663e53f6eef14d60692
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "69875138"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886894"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift
 
@@ -214,4 +214,4 @@ oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=examp
  - [Java](https://github.com/prometheus/client_java)
  - [Python](https://github.com/prometheus/client_python)
  - [Перейти](https://github.com/prometheus/client_golang)
- - [Руби](https://github.com/prometheus/client_ruby)
+ - [Ruby](https://github.com/prometheus/client_ruby)

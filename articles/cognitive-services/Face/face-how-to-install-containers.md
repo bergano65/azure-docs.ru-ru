@@ -3,20 +3,20 @@ title: Установка и запуск контейнеров - Лицо
 titleSuffix: Azure Cognitive Services
 description: Эта статья показывает вам, как загружать, устанавливать и запускать контейнеры для Face в этом пошаговом уроке.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 11/21/2019
-ms.author: dapine
-ms.openlocfilehash: e467b195ab1e2124286bfef74d7d1b71a4d99dd6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 74465bddb57c14af4d02c1d3bfdc46f3ac25bef3
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "76165979"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878550"
 ---
 # <a name="install-and-run-face-containers-preview"></a>Установка и запуск контейнеров face (Предварительный просмотр)
 

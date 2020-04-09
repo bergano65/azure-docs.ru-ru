@@ -5,14 +5,14 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 064a7b8adaec6f47a153743b58f4e1caf50db723
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 38116efc9e87eca8e2514a0a84045a69b8d42326
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80681510"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80887050"
 ---
-# <a name="use-the-model-conversion-rest-api"></a>Использование конверсии модели REST API
+# <a name="use-the-model-conversion-rest-api"></a>Использование REST API преобразования модели
 
 Служба [преобразования моделей](model-conversion.md) контролируется через [REST API.](https://en.wikipedia.org/wiki/Representational_state_transfer) В этой статье описаны данные Службы Конверсии API.
 
@@ -47,7 +47,7 @@ ms.locfileid: "80681510"
 
 | Конечная точка | Метод |
 |-----------|:-----------|
-| /v1/accounts/**accountID**accountID/conversion/create | POST |
+| /v1/accounts/**accountID**accountID/conversions/create | POST |
 
 Возвращает идентификатор текущего преобразования, завернутый в документ JSON. Название поля — «преобразование».
 
@@ -77,7 +77,7 @@ ms.locfileid: "80681510"
 
 | Конечная точка | Метод |
 |-----------|:-----------|
-| /v1/accounts/**accountID**accountID/conversion/createWithSharedAccessSignature | POST |
+| /v1/accounts/**accountID**accountID/conversions/createWithSharedAccessSignature | POST |
 
 Возвращает идентификатор текущего преобразования, завернутый в документ JSON. Название поля — «преобразование».
 
@@ -128,5 +128,5 @@ ms.locfileid: "80681510"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Используйте хранилище Azure Blob для преобразования модели](blob-storage.md)
+- [Использование хранилища BLOB-объектов Azure для преобразования модели](blob-storage.md)
 - [Преобразование модели](model-conversion.md)

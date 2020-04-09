@@ -13,19 +13,17 @@ ms.author: ajburnle
 ms.reviewer: piotrci
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 961444e15ae1c45db1fc7423a6ac3cc96cc7b3fb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 89c4fa536994ecc8cecb50c907d43df2110be7df
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75768016"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80982605"
 ---
 # <a name="manage-app-and-resource-access-using-azure-active-directory-groups"></a>Управление доступом к приложениям и ресурсам с помощью групп Azure Active Directory
 Активный каталог Azure (Azure AD) позволяет использовать группы для управления доступом к облачным приложениям, приложениям и ресурсам. Ваши ресурсы могут быть частью организации Azure AD, например, разрешения на управление объектами через роли в Azure AD или внешние для организации, например для приложений Software as a Service (SaaS), служб Ызуротации, сайтов SharePoint и ресурсов.
 
 >[!NOTE]
->Чтобы использовать Azure Active Directory, необходима учетная запись Azure. Если у вас нет учетной записи, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
->
 > На портале Azure можно увидеть некоторые группы, членство и данные группы которых вы не можете управлять на портале:
 >
 > - Группы, синхронизированные с наймом Active Directory, могут управляться только в предприимчивом Active Directory.

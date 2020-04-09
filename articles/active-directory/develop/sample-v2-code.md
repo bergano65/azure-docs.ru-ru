@@ -1,28 +1,23 @@
 ---
-title: Образцы кода для платформы идентификации Майкрософт Документы Майкрософт
+title: Образцы кода для платформы идентификации Майкрософт
 description: Обеспечивает индекс доступных образцов кода платформы идентификации Майкрософт (v2.0 endpoint), организованный по сценарию.
 services: active-directory
-documentationcenter: dev-center-name
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: a242a5ff-7300-40c2-ba83-fb6035707433
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: d8f69096544b0c3b51513d0cb5c4330fcbb1c18c
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: 5596f5f40e293a7bd11ac6a5f900e05c0b8d3b0e
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80419827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80883140"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Образцы кода идентификационной платформы Майкрософт (конечная точка v2.0)
 
@@ -108,7 +103,7 @@ ms.locfileid: "80419827"
 
 Следующие примеры показывают, как защитить веб-API с конечным пунктом платформы идентификации Майкрософт, и как вызвать aPI ниже по течению от Web API.
 
-| Платформа | Пример |
+| Платформа | Образец |
 | -------- | ------------------- |
 | ![На этом изображении изображен логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET ядро 2.2 | ASP.NET Core web API (сервис) [dotnet-родной-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi-calls-msgraph)  |
 | ![На этом изображении изображен логотип ASP.NET](media/sample-v2-code/logo_NET.png)</p>ASP.NET MVC 3 | Web API (услуга) [ms-identity-aspnet-webapi-onbehalfof](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof) |
@@ -120,7 +115,7 @@ ms.locfileid: "80419827"
 
 Следующие примеры показывают, как защитить функцию Azure с помощью HttpTrigger и разоблачить веб-API с конечным пунктом платформы идентификации Майкрософт, а также как вызвать API ниже по течению от Web API.
 
-| Платформа | Пример |
+| Платформа | Образец |
 | -------- | ------------------- |
 | ![На этом изображении изображен логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET ядро 2.2 | ASP.NET Core Web API (сервис) Azure Функция [Dotnet-родной-aspnetcore-v2](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions)  |
 | ![На этом изображении изображен логотип Node.js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Web API (услуга) [NodeJS и паспортно-azure-ad](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |

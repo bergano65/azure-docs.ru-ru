@@ -2,18 +2,18 @@
 title: Требования к контейнеру и рекомендации
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/20/2019
-ms.author: dapine
-ms.openlocfilehash: 2fa97a3a18741f506e10e5e4d61da286db3f744c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: c62044582cb488a5ef2d20b3f407c0865b3994ba
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "73481775"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80877986"
 ---
 > [!NOTE]
 > Требования и рекомендации основаны на тестах с одним запросом в секунду, используя 8-МБ изображение отсканированного делового письма, которое содержит 29 строк и в общей сложности 803 символов.

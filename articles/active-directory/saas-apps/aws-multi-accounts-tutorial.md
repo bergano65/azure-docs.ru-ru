@@ -1,6 +1,6 @@
 ---
 title: Руководство по интеграции Azure Active Directory с Amazon Web Services (AWS) для подключения нескольких учетных записей | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и несколькими учетными записями Amazon Web Services (AWS).
+description: Узнайте, как настроить единый всконь между Azure AD и Amazon Web Services (AWS) (Legacy Tutorial).
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -11,21 +11,20 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 01/07/2019
+ms.date: 04/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edd54352b1328c95ae2c3e466003b64eaa0fcfde
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7a6ab13dea1a1db96cbb2f2ac70b9779eca60591
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77368000"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80885389"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство по интеграции Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
+# <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws-legacy-tutorial"></a>Учебник: Активная интеграция каталога Azure с веб-службами Amazon (AWS) (Наследие)
 
-В этом руководстве описано, как интегрировать приложение Azure Active Directory (Azure AD) с несколькими учетными записями Amazon Web Services (AWS).
+В этом уроке вы узнаете, как интегрировать активный каталог Azure (Azure AD) с веб-службами Amazon (AWS) (Legacy Tutorial).
 
 Интеграция Azure AD с приложением Amazon Web Services обеспечивает следующие преимущества.
 
@@ -37,8 +36,8 @@ ms.locfileid: "77368000"
 
 ![Amazon Web Services (AWS) в списке результатов](./media/aws-multi-accounts-tutorial/amazonwebservice.png)
 
->[!NOTE]
->Учтите, что подключение одного приложения AWS ко всем учетным записям AWS не рекомендуется. Вместо этого мы рекомендуем использовать [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход, чтобы настроить несколько экземпляров учетной записи AWS для нескольких экземпляров приложений AWS в Azure AD.
+> [!NOTE]
+> Учтите, что подключение одного приложения AWS ко всем учетным записям AWS не рекомендуется. Вместо этого мы рекомендуем использовать [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход, чтобы настроить несколько экземпляров учетной записи AWS для нескольких экземпляров приложений AWS в Azure AD. Этот [подход](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) следует использовать только в том случае, если в нем очень меньше учетных записей и ролей AWS. [эта](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) модель не масштабируется по мере роста учетных записей и ролей AWS в этих учетных записях. Кроме того, [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход не использует функциональность импорта aWS Role с помощью обеспечения пользователей Azure AD, поэтому вам придется вручную добавлять/обновлять/удалять роли. Для других ограничений на [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход, пожалуйста, смотрите подробности ниже.
 
 **Обратите внимание на то, что мы не рекомендуем использовать этот подход по следующим причинам.**
 
@@ -70,32 +69,22 @@ ms.locfileid: "77368000"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Amazon Web Services (AWS) поддерживает **SP и InP** инициированных SSO
+* После настройки Amazon Web Services (AWS) можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-amazon-web-services-aws-from-the-gallery"></a>Добавление Amazon Web Services из коллекции
 
 Чтобы настроить интеграцию Amazon Web Services с Azure AD, вам потребуется добавить Amazon Web Services из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Amazon Web Services (AWS) из коллекции, выполните следующее.**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Amazon Web Services (AWS)**.
+1. Выберите **Amazon Web Services (AWS)** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+1. Как только приложение добавлено, перейдите на страницу **Свойства** и скопируйте **идентификатор объекта**.
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
-
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
-
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
-
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
-
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
-
-4. В поле поиска введите **Amazon Web Services (AWS)**, выберите **Amazon Web Services (AWS)** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
-
-     ![Amazon Web Services (AWS) в списке результатов](common/search-new-app.png)
-
-5. Как только приложение добавлено, перейдите на страницу **Свойства** и скопируйте **идентификатор объекта**.
-
-    ![Amazon Web Services (AWS) в списке результатов](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_properties.png)
+    ![Amazon Web Services (AWS) в списке результатов](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-properties.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -121,7 +110,7 @@ ms.locfileid: "77368000"
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоге **метода «Выберите единый вход»** выберите режим **SAML/WS-Fed** для включения одного входа.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
@@ -129,9 +118,7 @@ ms.locfileid: "77368000"
 
     ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
-
-    ![Изображение](common/preintegrated.png)
+4. В разделе **Basic SAML Configuration** пользователю не нужно выполнять никаких шагов, так как приложение уже предварительно интегрировано с Azure и нажмите **Кнопка Сохранить**.
 
 5. Приложение Amazon Web Services (AWS) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
 
@@ -139,11 +126,11 @@ ms.locfileid: "77368000"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    | name  | Исходный атрибут  | Пространство имен |
+    | Имя  | Исходный атрибут  | Пространство имен |
     | --------------- | --------------- | --------------- |
-    | RoleSessionName | user.userprincipalname | https://aws.amazon.com/SAML/Attributes |
-    | Роль            | user.assignedroles |  https://aws.amazon.com/SAML/Attributes |
-    | SessionDuration             | "Укажите значение от 900 секунд (15 минут) до 43 200 секунд (12 часов)." |  https://aws.amazon.com/SAML/Attributes |
+    | RoleSessionName | user.userprincipalname | `https://aws.amazon.com/SAML/Attributes` |
+    | Роль            | user.assignedroles |  `https://aws.amazon.com/SAML/Attributes`|
+    | SessionDuration             | "Укажите значение от 900 секунд (15 минут) до 43 200 секунд (12 часов)." |  `https://aws.amazon.com/SAML/Attributes` |
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
@@ -161,7 +148,7 @@ ms.locfileid: "77368000"
 
     е) Нажмите **Ok**
 
-    ж. Нажмите **Сохранить**.
+    ж. Выберите команду **Сохранить**.
 
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML метаданных федерации** и сохранить его на компьютере.
 
@@ -171,19 +158,19 @@ ms.locfileid: "77368000"
 
 1. В другом окне браузера войдите на сайт Amazon Web Services компании в качестве администратора.
 
-2. Щелкните **AWS Home** (Домашняя страница AWS).
+1. Щелкните **AWS Home** (Домашняя страница AWS).
 
     ![Настройка главной страницы единого входа][11]
 
-3. Щелкните **Identity and Access Management**(Управление удостоверениями и доступом).
+1. Щелкните **Identity and Access Management**(Управление удостоверениями и доступом).
 
     ![Настройка удостоверения для единого входа][12]
 
-4. Щелкните **Identity Providers** (Поставщики удостоверений), затем щелкните **Create Provider** (Создать поставщик).
+1. Щелкните **Identity Providers** (Поставщики удостоверений), затем щелкните **Create Provider** (Создать поставщик).
 
     ![Настройка поставщика единого входа][13]
 
-5. На странице диалогового окна **Configure Provider** (Настройка поставщика) выполните следующие действия.
+1. На странице диалогового окна **Configure Provider** (Настройка поставщика) выполните следующие действия.
 
     ![Настройка диалогового окна единого входа][14]
 
@@ -195,15 +182,15 @@ ms.locfileid: "77368000"
 
     d. Щелкните **Следующий шаг**.
 
-6. На странице диалогового окна **Verify Provider Information** (Проверка сведений о поставщике) щелкните **Create** (Создать).
+1. На странице диалогового окна **Verify Provider Information** (Проверка сведений о поставщике) щелкните **Create** (Создать).
 
     ![Настройка проверки единого входа][15]
 
-7. Щелкните **Roles** (Роли), а затем нажмите кнопку **Create role** (Создать роль).
+1. Щелкните **Roles** (Роли), а затем нажмите кнопку **Create role** (Создать роль).
 
     ![Настройка ролей для единого входа][16]
 
-8. На странице **Create role** (Создание роли) выполните следующие действия.  
+1. На странице **Create role** (Создание роли) выполните следующие действия.  
 
     ![Настройка доверия для единого входа][19]
 
@@ -215,51 +202,72 @@ ms.locfileid: "77368000"
   
     d. Щелкните **Next: Permissions** (Далее: разрешения).
 
-9. В диалоговом окне **Attach Permissions Policies** (Вложить политики разрешений) вложите соответствующую политику согласно вашей организации. Щелкните **Next: Review** (Далее. Проверка).  
+1. Поиск **Администратор Доступ** в панели поиска и выберите **Checkbox AdministratorAccess,** а затем нажмите **Далее: Теги**.
 
-    ![Настройка политики единого входа][33]
+    ![Выберите доступ к администратору](./media/aws-multi-accounts-tutorial/administrator-access.png)
 
-10. В диалоговом окне **Review** (Обзор) выполните следующие действия.
+1. В разделе **Добавление тегов (необязательно)** выполните следующие действия:
+
+    ![Выберите доступ к администратору](./media/aws-multi-accounts-tutorial/config2.png)
+
+    а. В **ключевом** текстовом ящике введите ключевое имя для ex: Azureadtest.
+
+    b. В текстовом ящике **значения (необязательный)** `accountname-aws-admin`введите ключевое значение, используя следующий формат. Имя учетной записи должно быть во всех нижних регистрах.
+
+    c. Нажмите **дальше: Обзор**.
+
+1. В диалоговом окне **Review** (Обзор) выполните следующие действия.
 
     ![Проверка настройки единого входа][34]
 
-    а. В текстовом поле **Role name** (Имя роли) введите имя роли.
+    а. В текстовом ящике **имени имени** роли `accountname-aws-admin`введите значение в следующем шаблоне.
 
-    b. В текстовом поле **Role description** (Описание роли) введите описание.
+    b. В текстовом ящике **описания роли** введите то же значение, которое вы использовали для имени роли.
 
     c. Щелкните **Создать роль**.
 
     d. Создайте необходимое количество ролей и сопоставьте их с поставщиком удостоверений.
 
-11. Выйдите из текущей учетной записи AWS и войдите в систему с другой учетной записью, в которой нужно настроить единый вход с помощью Azure AD.
+    > [!NOTE]
+    > Аналогичным образом создать оставшиеся другие роли, такие как имя учетной записи-финансы-админ, имя учетной записи читать только пользователь, имя учетной записи-devops-пользователя, имя учетной записи-tpm-пользователя с различными политиками, которые будут прикреплены. Позже также эти ролевые политики могут быть изменены в соответствии с требованиями по учетной записи AWS, но всегда лучше сохранить одни и те же политики для каждой роли в учетных записях AWS.
 
-12. Выполните шаги 2–10, чтобы создать несколько ролей, которые необходимо настроить для этой учетной записи. При наличии более двух учетных записей выполните те же шаги для всех учетных записей, чтобы создать для них роли.
+1. Пожалуйста, обратите внимание на идентификатор учетной записи для этой учетной записи AWS либо из свойств EC2, либо из панели мониторинга IAM, как показано ниже:
 
-13. После создания всех ролей в учетных записях они отображаются в соответствующем списке **ролей**.
+    ![Выберите доступ к администратору](./media/aws-multi-accounts-tutorial/aws-accountid.png)
 
-    ![Настройка ролей](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_listofroles.png)
+1. Теперь зайдите на [портал Azure](https://portal.azure.com/) и перейдите к **группам**.
 
-14. Необходимо зафиксировать все ARN ролей и доверенные сущности для всех ролей в учетных записях, которые необходимо вручную сопоставлять с приложением Azure AD.
+1. Создавайте новые группы с тем же именем, что и роли IAM, созданные ранее, и записывайте **идентиобразование объектов** этих новых групп.
 
-15. Щелкните роли, чтобы скопировать значения **ARN роли** и **доверенных сущностей**. Эти значения нужны всем ролям, которые необходимо создать в Azure AD.
+    ![Выберите доступ к администратору](./media/aws-multi-accounts-tutorial/copy-objectids.png)
 
-    ![Настройка ролей](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_role_summary.png)
+1. Выйдите из текущей учетной записи AWS и войдите в систему с другой учетной записью, в которой нужно настроить единый вход с помощью Azure AD.
 
-16. Выполните то же самое для всех ролей во всех учетных записях и сохраните их всех в формате **ARN роли,доверенные сущности** в блокноте.
+1. После создания всех ролей в учетных записях они отображаются в соответствующем списке **ролей**.
 
-17. Откройте [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) в другом окне.
+    ![Настройка ролей](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-listofroles.png)
 
-    а. Войдите на сайт обозревателя Graph с учетными данными глобального администратора или соадминистратора вашего клиента.
+1. Необходимо зафиксировать все ARN ролей и доверенные сущности для всех ролей в учетных записях, которые необходимо вручную сопоставлять с приложением Azure AD.
+
+1. Щелкните роли, чтобы скопировать значения **ARN роли** и **доверенных сущностей**. Эти значения нужны всем ролям, которые необходимо создать в Azure AD.
+
+    ![Настройка ролей](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-role-summary.png)
+
+1. Выполните то же самое для всех ролей во всех учетных записях и сохраните их всех в формате **ARN роли,доверенные сущности** в блокноте.
+
+1. Откройте [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) в другом окне.
+
+    а. Зарегистрируйтесь на сайте Microsoft Graph Explorer, используя учетные данные Global Admin/Co-admin для вашего клиента.
 
     b. У вас должно быть достаточно разрешений для создания ролей. Щелкните **Изменить разрешения**, чтобы получить требуемые разрешения.
 
-    ![Диалоговое окно обозревателя Graph](./media/aws-multi-accounts-tutorial/graph-explorer-new9.png)
+    ![Microsoft Graph Explorer диалоговые окна](./media/aws-multi-accounts-tutorial/graph-explorer-new9.png)
 
     c. Выберите следующие разрешения из списка (если у вас их еще нет) и щелкните "Изменить разрешения". 
 
-    ![Диалоговое окно обозревателя Graph](./media/aws-multi-accounts-tutorial/graph-explorer-new10.png)
+    ![Microsoft Graph Explorer диалоговые окна](./media/aws-multi-accounts-tutorial/graph-explorer-new10.png)
 
-    d. Вам необходимо снова войти в систему и принять запрос. После принятия запроса вы снова войдете в обозреватель Graph.
+    d. Вам необходимо снова войти в систему и принять запрос. После получения согласия вы снова вошли в Microsoft Graph Explorer.
 
     д) В раскрывающемся списке измените версию на **Бета**. Чтобы получить все субъекты-службы клиента, используйте следующий запрос:
 
@@ -267,17 +275,17 @@ ms.locfileid: "77368000"
 
     При использовании нескольких каталогов можно использовать следующий шаблон, в котором есть основной домен: `https://graph.microsoft.com/beta/contoso.com/servicePrincipals`.
 
-    ![Диалоговое окно обозревателя Graph](./media/aws-multi-accounts-tutorial/graph-explorer-new1.png)
+    ![Microsoft Graph Explorer диалоговые окна](./media/aws-multi-accounts-tutorial/graph-explorer-new1.png)
 
-    е) В полученном списке субъектов-служб найдите ту, в которую нужно внести изменения. Также для поиска приложений в списке субъектов-служб можно использовать сочетание клавиш CTRL+F. Используя **идентификатор объекта**, который был скопирован со страницы свойств Azure AD, выполните следующий запрос для получения соответствующего субъекта-службы.
+    е) В полученном списке субъектов-служб найдите ту, в которую нужно внести изменения. Также для поиска приложений в списке субъектов-служб можно использовать сочетание клавиш CTRL+F. Следующий запрос можно использовать, используя **идентификатор объекта,** который вы скопировали со страницы Azure AD Properties, чтобы перейти к соответствующему директору службы.
 
     `https://graph.microsoft.com/beta/servicePrincipals/<objectID>`.
 
-    ![Диалоговое окно обозревателя Graph](./media/aws-multi-accounts-tutorial/graph-explorer-new2.png)
+    ![Microsoft Graph Explorer диалоговые окна](./media/aws-multi-accounts-tutorial/graph-explorer-new2.png)
 
     ж. Извлеките свойство appRoles из объекта субъекта-службы.
 
-    ![Диалоговое окно обозревателя Graph](./media/aws-multi-accounts-tutorial/graph-explorer-new3.png)
+    ![Microsoft Graph Explorer диалоговые окна](./media/aws-multi-accounts-tutorial/graph-explorer-new3.png)
 
     h. Теперь вам следует создать роли для приложения. 
 
@@ -327,20 +335,20 @@ ms.locfileid: "77368000"
 
     j. Вернитесь к Microsoft Graph Explorer и измените метод с **GET** на **PATCH.** Примените к объекту субъекта-службы нужные роли, обновив свойство appRoles, как показано в примере выше. Щелкните **Выполнить запрос**, чтобы выполнить операцию исправления. Сообщение об успешном выполнении подтвердит создание роли для приложения Amazon Web Services
 
-    ![Microsoft Graph explorer диалоговые окна](./media/aws-multi-accounts-tutorial/graph-explorer-new11.png)
+    ![Microsoft Graph Explorer диалоговые окна](./media/aws-multi-accounts-tutorial/graph-explorer-new11.png)
 
-18. Добавив новые роли в субъект-службу, вы сможете назначить эти роли и группы пользователям. Для этого перейдите на портал и найдите приложение Amazon Web Services. Щелкните вкладку **Пользователи и группы** в верхней части окна.
+1. Добавив новые роли в субъект-службу, вы сможете назначить эти роли и группы пользователям. Для этого перейдите на портал и найдите приложение Amazon Web Services. Щелкните вкладку **Пользователи и группы** в верхней части окна.
 
-19. Мы рекомендуем создавать группы для каждой роли AWS, чтобы вы могли присвоить определенную роль этой группе. Обратите внимание, что группа сопоставляется с ролью по принципу "один к одному". Затем можно добавить участников, которые принадлежат к этой группе.
+1. Мы рекомендуем создавать группы для каждой роли AWS, чтобы вы могли присвоить определенную роль этой группе. Обратите внимание, что группа сопоставляется с ролью по принципу "один к одному". Затем можно добавить участников, которые принадлежат к этой группе.
 
-20. После создания групп выберите группу и присвойте ее приложению.
+1. После создания групп выберите группу и присвойте ее приложению.
 
     ![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/graph-explorer-new5.png)
 
     > [!Note]
     > Вложенные группы не поддерживаются при назначении групп.
 
-21. Чтобы присвоить роль группе, выберите роль и нажмите кнопку **Присвоить** в нижней части страницы.
+1. Чтобы присвоить роль группе, выберите роль и нажмите кнопку **Присвоить** в нижней части страницы.
 
     ![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/graph-explorer-new6.png)
 
@@ -353,19 +361,21 @@ ms.locfileid: "77368000"
 
 Щелкнув плитку Amazon Web Services на панели доступа, вы перейдете на страницу приложения Amazon Web Services с возможностью выбрать роль.
 
-![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_test_screen.png)
+![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-test-screen.png)
 
 Также можно проверить ответ SAML, чтобы увидеть роли, передаваемые как утверждения.
 
-![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_test_saml.png)
+![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-test-saml.png)
 
 См. дополнительные сведения о [панели доступа](../active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Как настроить подготовку с помощью AIS Microsoft Graph](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-configure-api)
-* [Список учебников по интеграции приложений SaaS с помощью активного каталога Azure](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
+* [Как настроить подготовку с помощью AIS MS Graph](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-configure-api)
+* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
+* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+* [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+* [Как защитить Amazon Web Services (AWS) с улучшенной видимостью и контролем](https://docs.microsoft.com/cloud-app-security/protect-aws)
 
 <!--Image references-->
 
@@ -380,11 +390,11 @@ ms.locfileid: "77368000"
 [19]: ./media/aws-multi-accounts-tutorial/ic795025.png
 [32]: ./media/aws-multi-accounts-tutorial/ic7950251.png
 [33]: ./media/aws-multi-accounts-tutorial/ic7950252.png
-[35]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_provisioning.png
-[34]: ./media/aws-multi-accounts-tutorial/ic7950253.png
-[36]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_securitycredentials.png
-[37]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_securitycredentials_continue.png
-[38]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_createnewaccesskey.png
-[39]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_provisioning_automatic.png
-[40]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_provisioning_testconnection.png
+[35]: ./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-provisioning.png
+[34]: ./media/aws-multi-accounts-tutorial/config3.png
+[36]: ./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-securitycredentials.png
+[37]: ./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-securitycredentials-continue.png
+[38]: ./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-createnewaccesskey.png
+[39]: ./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-provisioning-automatic.png
+[40]: ./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-provisioning-testconnection.png
 [41]: ./media/aws-multi-accounts-tutorial/

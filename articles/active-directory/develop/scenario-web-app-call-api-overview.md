@@ -2,24 +2,21 @@
 title: Создайте веб-приложение, которое вызывает веб-AI - идентификационная платформа Microsoft Azure
 description: Узнайте, как создать веб-приложение, которое вызывает веб-AIS (обзор)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 14f513306b3f0bc0c06a4143e5174c3ecddaef62
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 5af9e34baf6115e801fbfe35e6e3895e48b360e7
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80617164"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80881729"
 ---
 # <a name="scenario-a-web-app-that-calls-web-apis"></a>Сценарий: Веб-приложение, которое вызывает веб-AIS
 
@@ -32,7 +29,7 @@ ms.locfileid: "80617164"
 Этот сценарий предполагает, что вы уже прошли через следующий сценарий:
 
 > [!div class="nextstepaction"]
-> [Веб-приложение, которое подписывает в пользователях](scenario-web-app-sign-user-overview.md)
+> [Веб-приложение, которое поддерживает вход пользователей](scenario-web-app-sign-user-overview.md)
 
 ## <a name="overview"></a>Обзор
 
@@ -55,7 +52,7 @@ ms.locfileid: "80617164"
 - Во время [регистрации заявления](scenario-web-app-call-api-app-registration.md)вы должны предоставить ответ URI, секрет или сертификат, который будет передан Azure AD. Если вы развернете приложение в нескольких местах, вы предоставите эту информацию для каждого местоположения.
 - [Конфигурация приложения](scenario-web-app-call-api-app-configuration.md) должна предоставить учетные данные клиента, которые были переданы Azure AD во время регистрации приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Веб-приложение, которое вызывает веб-AIS: Регистрация приложений](scenario-web-app-call-api-app-registration.md)

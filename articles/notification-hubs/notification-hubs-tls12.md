@@ -5,27 +5,25 @@ services: notification-hubs
 documentationcenter: .net
 author: sethmanheim
 manager: femila
-editor: jwargo
-ms.assetid: ''
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 01/30/2020
+ms.date: 04/07/2020
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 01/28/2020
-ms.openlocfilehash: 87309e20efd9d6f8bd1a659451e5a603e6b95bc8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4da96df50e961f4291029a37e883fdcf88c6c87f
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76908531"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80885758"
 ---
 # <a name="transport-layer-security-tls"></a>Протокол TLS
 
-Чтобы обеспечить более высокий уровень безопасности, центры уведомлений отстранят поддержку версий TLS 1.0 и 1.1 30 апреля 2020 года. Эти старые протоколы обеспечивают слабую криптографию и уязвимы для атак BEAST и POODLE. Приложения, развернутые на устройствах под управлением Android-версии 5 или больше, или iOS-версии 5 или больше, не влияют на это изменение, поскольку эти операционные системы поддерживают TLS 1.2, а клиент и сервер будут вести переговоры о наивысшей взаимно поддерживаемой версии протокол при подключении.
+Для обеспечения более высокого уровня безопасности, Notification Hubs отстранят поддержку версий TLS 1.0 и 1.1 31 мая 2020 года (продлен с 30 апреля 2020 года). Эти старые протоколы обеспечивают слабую криптографию и уязвимы для атак BEAST и POODLE. Приложения, развернутые на устройствах под управлением Android-версии 5 или больше, или iOS-версии 5 или больше, не влияют на это изменение, поскольку эти операционные системы поддерживают TLS 1.2, а клиент и сервер будут вести переговоры о самой высокой взаимно поддерживаемой версии протокола при подключении.
 
 Мы рекомендуем просмотреть все приложения, которые используют концентраторы уведомлений Azure, чтобы убедиться, что они используют наиболее применимые библиотеки и tLS стеки, которые поддерживают TLS 1.2.
 

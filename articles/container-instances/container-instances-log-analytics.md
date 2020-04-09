@@ -2,20 +2,22 @@
 title: Сбор & анализу журналов ресурсов
 description: Узнайте, как отправлять журналы ресурсов и данные событий из групп контейнеров в экземплярах контейнеров Azure в журналы Azure Monitor
 ms.topic: article
-ms.date: 01/08/2020
+ms.date: 04/07/2020
 ms.author: danlep
-ms.openlocfilehash: 304e98fff386911b878877d2f03d489d0eef5dd7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bd21a511641d5ea027c18bedb4dce47749110bcb
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75770549"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80892399"
 ---
 # <a name="container-group-and-instance-logging-with-azure-monitor-logs"></a>Контейнерная группа и журнал экземпляров с журналами Azure Monitor
 
 Рабочие области журналов Analytics предоставляют централизованное место для хранения и запроса данных журнала не только из ресурсов Azure, но и локальных ресурсов и ресурсов в других облаках. Экземпляры контейнеров Azure по умолчанию поддерживают отправку журналов и данных событий в журналы Azure Monitor.
 
-Чтобы отправить журнал контейнерных групп и данные событий в журналы Azure Monitor, укажите существующий идентификатор рабочего пространства Log Analytics и ключ рабочего пространства при создании группы контейнеров. В следующих разделах описывается, как создать группу контейнеров с поддержкой журналов и как заставить журналы запросов.
+Чтобы отправить журнал контейнерных групп и данные событий в журналы Azure Monitor, укажите существующий идентификатор рабочего пространства Log Analytics и ключ рабочего пространства при настройке группы контейнеров. 
+
+В следующих разделах описывается, как создать группу контейнеров с поддержкой журналов и как заставить журналы запросов. Вы также можете [обновить группу контейнеров](container-instances-update.md) с идентификатором рабочего пространства и ключом рабочего пространства для включения в систему регистрации.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -26,7 +28,7 @@ ms.locfileid: "75770549"
 
 Чтобы включить ведение журнала в экземпляре контейнера, необходимо следующее:
 
-* [Рабочее пространство аналитики журналов](../azure-monitor/learn/quick-create-workspace.md)
+* [Рабочая область Log Analytics](../azure-monitor/learn/quick-create-workspace.md)
 * [Azure CLI](/cli/azure/install-azure-cli) (или [Cloud Shell](/azure/cloud-shell/overview))
 
 ## <a name="get-log-analytics-credentials"></a>Получение учетных данных Log Analytics
