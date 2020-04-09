@@ -3,16 +3,16 @@ title: Развертывание политики, которую можно и
 description: Узнайте, как подключить клиента к системе делегированного управления ресурсами Azure, предоставив доступ к ресурсам и возможность управления ими через собственный клиент.
 ms.date: 10/11/2019
 ms.topic: conceptual
-ms.openlocfilehash: c06ed4ea597808aee18d4a848bcfea7152b9cf8e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b625e9e3c96866cfbc655a55b770c9ac07a626bd
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79270645"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985173"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Развертывание политики, которую можно исправить в рамках делегированной подписки
 
-[Azure Lighthouse](../overview.md) позволяет поставщикам служб создавать и редактировать определения политики в рамках делегированной подписки. Однако для развертывания политик, использующих [задачу исправления](../../governance/policy/how-to/remediate-resources.md) (то есть политики с эффектом [deployIfNotExists](../../governance/policy/concepts/effects.md#deployifnotexists) или [modify](../../governance/policy/concepts/effects.md#modify)), в клиенте клиента необходимо создать [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md). Это управляемое удостоверение может использоваться политикой Azure для развертывания шаблона в политике. Для включения этого сценария, как при подключении клиента к управлению делегированными ресурсами Azure, так и при развертывании самой политики необходимо выполнять некоторые шаги.
+[Azure Lighthouse](../overview.md) позволяет поставщикам служб создавать и редактировать определения политики в рамках делегированной подписки. Однако для развертывания политик, которые используют [задачу восстановления](../../governance/policy/how-to/remediate-resources.md) (т.е. политики с [эффектом deployIfNotExists](../../governance/policy/concepts/effects.md#deployifnotexists) или [изменяют](../../governance/policy/concepts/effects.md#modify) эффект), необходимо создать [управляемый иектированный данный](../../active-directory/managed-identities-azure-resources/overview.md) в клиенте-клиенте. Это управляемое удостоверение может использоваться политикой Azure для развертывания шаблона в политике. Для включения этого сценария, как при подключении клиента к управлению делегированными ресурсами Azure, так и при развертывании самой политики необходимо выполнять некоторые шаги.
 
 ## <a name="create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant"></a>Создание пользователя, который может назначать роли управляемому удостоверению в клиенте клиента
 
@@ -40,7 +40,7 @@ ms.locfileid: "79270645"
 
 После создания пользователя с необходимыми разрешениями, как описано выше, этот пользователь может развернуть политики в клиенте клиента, использующем задачи по исправлению.
 
-Например, предположим, что вы хотите включить диагностику для ресурсов Azure Key Vault в клиенте клиента, как показано в этом [примере](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/policy-enforce-keyvault-monitoring). Пользователь в управляющем клиенте с соответствующими разрешениями (как описано выше) развернет [шаблон Azure Resource Manager](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/policy-enforce-keyvault-monitoring/enforceAzureMonitoredKeyVault.json), чтобы включить этот сценарий.
+Например, предположим, что вы хотели включить диагностику ресурсов Azure Key Vault в клиенте-клиенте, как показано в этом [примере.](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-enforce-keyvault-monitoring) Пользователь в управляющем клиенте с соответствующими разрешениями (как описано выше) развернет [шаблон Azure Resource Manager](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/policy-enforce-keyvault-monitoring/enforceAzureMonitoredKeyVault.json), чтобы включить этот сценарий.
 
 Обратите внимание, что создание назначения политики для использования с делегированной подпиской в настоящее время должно осуществляться через API, а не на портале Azure. При этом для **apiVersion** должно быть задано **2019-04-01-preview**, включающее новое свойство **DelegatedManagedIdentityResourceId**. Это свойство позволяет включить управляемое удостоверение, которое находится в клиенте клиента (в подписке или группе ресурсов, подключенной к управлению делегированными ресурсами Azure).
 
@@ -62,7 +62,7 @@ ms.locfileid: "79270645"
 ```
 
 > [!TIP]
-> Доступен [аналогичный пример](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/policy-add-or-replace-tag), демонстрирующий, как развернуть политику, которая добавляет или удаляет тег (используя эффект изменения) в делегированной подписке.
+> Доступен [аналогичный пример](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-add-or-replace-tag), демонстрирующий, как развернуть политику, которая добавляет или удаляет тег (используя эффект изменения) в делегированной подписке.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

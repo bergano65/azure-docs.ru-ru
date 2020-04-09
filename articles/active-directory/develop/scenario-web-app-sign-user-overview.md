@@ -2,24 +2,21 @@
 title: Войти в число пользователей из веб-приложения - платформа идентификации Майкрософт (ru) Azure
 description: Узнайте, как создать веб-приложение, которое подписывается в пользователях (обзор)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 403f589702fd7142f0515a3b6f19ee1b9bbb6420
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 65d254cec5735c54e19f5adfde57fb6aed776a2c
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76701558"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80881491"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Сценарий: Веб-приложение, которое подписывает в пользователях
 

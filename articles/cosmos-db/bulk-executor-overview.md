@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: 9d335bcf6daf0b38e7a68ca2d40894dd64c93e40
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: af17f9c2ef7eea5eb531327d4df13d5885a49b7e
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75442153"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985598"
 ---
 # <a name="azure-cosmos-db-bulk-executor-library-overview"></a>Общие сведения о библиотеке массового исполнителя в Azure Cosmos DB
  
@@ -51,4 +51,4 @@ Azure Cosmos DB — это быстрая, гибкая и глобально р
 * Узнайте больше, опробовав пример приложений, потребляющих библиотеку исполнителей навалом в [.NET](bulk-executor-dot-net.md) и [Java.](bulk-executor-java.md)  
 * Ознакомьтесь со сведениями и заметками о выпуске пакета SDK для массового исполнителя в статьях для [.NET](sql-api-sdk-bulk-executor-dot-net.md) и для [Java](sql-api-sdk-bulk-executor-java.md).
 * Библиотека-исполнитель навалом интегрирована в разъем Cosmos DB Spark, чтобы узнать больше, [см.](spark-connector.md)  
-* Библиотека массового исполнителя также интегрирована в новую версию [соединителя Azure Cosmos DB](https://aka.ms/bulkexecutor-adf-v2) для фабрики данных Azure в целях копирования данных.
+* Библиотека массового исполнителя также интегрирована в новую версию [соединителя Azure Cosmos DB](../data-factory/connector-azure-cosmos-db.md) для фабрики данных Azure в целях копирования данных.

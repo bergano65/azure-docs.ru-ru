@@ -7,18 +7,18 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7e96f9484c103ebe75e21705b94cf35b9e16c54f
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: b51f7a8b62d7131b7bbfc77101e60fab22e1f148
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80529331"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985802"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Windows
 
-Лазурное шифрование дисков использует внешний протектор ключов BitLocker для обеспечения громкости шифрования для ОС и дисков данных виртуальных машин Azure (VMs) и интегрировано с Azure Key Vault, чтобы помочь вам управлять и управлять ключами шифрования диска и секретами. Для обзора службы [см.](disk-encryption-overview.md)
+Лазурное шифрование дисков для виртуальных машин Windows (VMs) использует функцию Bitlocker Windows для обеспечения полного шифрования диска диска WindOS и диска данных. Кроме того, он обеспечивает шифрование эфемерного ресурсного диска, когда параметр VolumeType является все.
 
-Существует множество сценариев шифрования дисков, и шаги могут меняться в зависимости от сценария. Следующие разделы более подробно охватывают сценарии для Windows VMs.
+Шифрование azure Disk [интегрировано с Azure Key Vault,](disk-encryption-key-vault.md) чтобы помочь вам управлять ключами и секретами шифрования дисков и управлять ими. Для обзора службы [см.](disk-encryption-overview.md)
 
 Вы можете применять шифрование диска только к виртуальным машинам [поддерживаемых размеров VM и операционным системам.](disk-encryption-overview.md#supported-vms-and-operating-systems) Вы также должны выполнить следующие предпосылки:
 
@@ -39,9 +39,6 @@ ms.locfileid: "80529331"
 
 ## <a name="enable-encryption-on-an-existing-or-running-windows-vm"></a>Включить шифрование на существующей или подходящей Windows VM
 В этом сценарии шифрование можно включить с помощью шаблона Resource Manager, командлетов PowerShell или команд интерфейса командной строки. Сведения о схеме для расширения виртуальной машины см. в статье [Шифрование дисков Azure для Windows ](../extensions/azure-disk-enc-windows.md).
-
-## <a name="enable-encryption-on-existing-or-running-iaas-windows-vms"></a> Включение шифрования на виртуальной машине IaaS Windows, которая уже существует или работает
-Вы можете включить шифрование с помощью шаблона, powerShell cmdlets или команд CLI. Сведения о схеме для расширения виртуальной машины см. в статье [Шифрование дисков Azure для Windows ](../extensions/azure-disk-enc-windows.md).
 
 ### <a name="enable-encryption-on-existing-or-running-vms-with-azure-powershell"></a> Включение шифрования на существующих или работающих виртуальных машинах с помощью Azure PowerShell 
 Используйте [cmdlet Set-AzVMDiskEncryptionExtension,](/powershell/module/az.compute/set-azvmdiskencryptionextension) чтобы включить шифрование на работающей виртуальной машине IaaS в Azure. 

@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 03/20/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 4f8fae6580272ed53b8d440ba3e74c6a1ed1e61a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f69f17dc9d0cab2491a2c7f37b5bd082cc96b2d6
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80061507"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985428"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
 В этой статье описаны ограничения и известные проблемы хранения Azure Data Lake Data Gen2.
 
-## <a name="supported-blob-storage-features"></a>Поддерживаемые функции хранения Blob
+## <a name="supported-blob-storage-features"></a>Поддерживаемые функции хранилища BLOB-объектов
 
 Все большее число функций хранения Blob теперь работают с учетными записями, которые имеют иерархическое пространство имен. Полный список можно найти [в функции хранилища данных Blob, доступные в Azure Data Lake Storage.](data-lake-storage-supported-blob-storage-features.md)
 
 ## <a name="supported-azure-service-integrations"></a>Поддерживаемые интеграции служб Azure
 
-ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Для списка поддерживаемых служб Azure можно ознакомиться с [службами Azure, которые поддерживают данные Azure Data Lake Storage Gen2.](data-lake-storage-supported-azure-services.md)
+Azure Data Lake Storage 2 поддерживает несколько служб Azure, которые можно использовать для глотания данных, проведения аналитики и создания визуальных представлений. Для списка поддерживаемых служб Azure можно ознакомиться с [службами Azure, которые поддерживают данные Azure Data Lake Storage Gen2.](data-lake-storage-supported-azure-services.md)
 
 Просмотрите [службы Azure, поддерживающие систему хранения данных Azure Data Lake Data Gen2.](data-lake-storage-supported-azure-services.md)
 
@@ -41,7 +41,7 @@ Blob AБИ и AA-аПЫ хранения данных Озера Gen2 могут
 
 В этом разделе описаны проблемы и ограничения с использованием blob AIS и AA-аДИ Data Lake Storage Gen2 для работы на одних и тех же данных.
 
-* Нельзя использовать aIS Blob и AA,slake Storage для записи в один и тот же экземпляр файла. Если вы пишете в файл с помощью API Data Lake Storage Gen2, то блоки этого файла не будут видны для вызовов на API [Blob Get Block List.](https://docs.microsoft.com/rest/api/storageservices/get-block-list) Перезапись файла можно с помощью aIS Data Lake Storage Gen2 или APIs Blob. Это не повлияет на свойства файлов.
+* Для записи в один экземпляр файла нельзя использовать aIs Blob и AA, наносившие данные для хранения данных. Если вы пишете в файл с помощью API Data Lake Storage Gen2, то блоки этого файла не будут видны для вызовов на API [Blob Get Block List.](https://docs.microsoft.com/rest/api/storageservices/get-block-list) Перезапись файла можно с помощью aIS Data Lake Storage Gen2 или APIs Blob. Это не повлияет на свойства файлов.
 
 * При использовании операции [List Blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) без указания делимитера результаты будут включать как каталоги, так и капли. Если вы решите использовать делимитер, используйте`/`только передний слэш (). Это единственный поддерживаемый делимитер.
 
@@ -112,11 +112,8 @@ ACLs еще не поддерживаются.
 
 Если [анонимный доступ к чтению](storage-manage-access-to-resources.md) был предоставлен контейнеру, то ACL не влияют на этот контейнер или файлы в этом контейнере.
 
-## <a name="windows-azure-storage-blob-wasb-driver"></a>Драйвер хранения данных Windows Azure (WASB)
+## <a name="windows-azure-storage-blob-wasb-driver-unsupported-with-adls-gen2"></a>Драйвер хранения данных Windows Azure (WASB) (не поддерживается ADLS Gen2)
 
-В настоящее время существует несколько проблем, связанных с использованием драйвера WASB вместе с учетными записями, которые имеют иерархическое пространство имен. Рекомендуем использовать драйвер [файловой системы Azure Blob (ABFS)](data-lake-storage-abfs-driver.md) в рабочих нагрузках. 
+В настоящее время драйвер WASB, который был разработан для работы только с Blob API, сталкивается с проблемами в нескольких распространенных сценариях, т.е. когда он является клиентом учетной записи хранения с поддержкой пространства имен. Обратите внимание, что Multi-Protocol Access (MPA) также НЕ смягчит эти проблемы. 
 
-
-
-
-
+В настоящее время (и, скорее всего, в обозримом будущем), мы не будем поддерживать клиентов, использующих драйвер WASB в качестве клиента на учетную запись хранения с поддержкой пространства имен. Вместо этого мы рекомендуем использовать драйвер [файловой системы Azure Blob (ABFS)](data-lake-storage-abfs-driver.md) в среде Hadoop. Если вы пытаетесь перенестись из среды на предпосылки Hadoop с версией раньше, чем ветвь Hadoop-3, пожалуйста, откройте билет поддержки Azure, чтобы мы могли связаться с вами на правильном пути для вас и вашей организации.

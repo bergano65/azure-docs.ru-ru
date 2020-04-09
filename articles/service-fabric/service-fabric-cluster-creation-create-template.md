@@ -3,12 +3,12 @@ title: Создание кластерного шаблона Azure Service Fabr
 description: Сведения о создании шаблона Resource Manager для кластера Service Fabric. Настройка безопасности, Azure Key Vault и Azure Active Directory (Azure AD) для проверки подлинности клиентов.
 ms.topic: conceptual
 ms.date: 08/16/2018
-ms.openlocfilehash: a00f2bc505acd89d9fb9488565b6235bf7d146ba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6cf0f9c3b8b54db7bd27ec8dd9c9d59d849c74cc
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79258880"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985377"
 ---
 # <a name="create-a-service-fabric-cluster-resource-manager-template"></a>Создание шаблона Resource Manager для кластера Service Fabric
 
@@ -84,7 +84,7 @@ ms.locfileid: "79258880"
       "extensionProfile": {
         "extensions": [
           {
-            "name": "[concat('ServiceFabricNodeVmExt','_vmNodeType0Name')]",
+            "name": "[concat('ServiceFabricNodeVmExt_',variables('vmNodeType0Name'))]",
             "properties": {
               ...
               "settings": {

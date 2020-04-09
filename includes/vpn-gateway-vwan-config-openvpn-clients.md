@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/17/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 921e22e637782ffd744af1a28e6bd43e7dd53c67
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 55fa01d100c60c6411774373428ff4bbd9a56822
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80066154"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80986650"
 ---
 ## <a name="windows-clients"></a><a name="windows"></a>Клиенты Windows
 
@@ -130,7 +130,7 @@ ms.locfileid: "80066154"
 5. Извлеките закрытый ключ и отпечаток base64 из PFX-файла. Это можно сделать несколькими способами. Это можно сделать с помощью OpenSSL на компьютере.
 
     ```
-    openssl.exe pkcs12 -in "filename.pfx" -nodes -out "profileinfo.txt"
+    openssl pkcs12 -in "filename.pfx" -nodes -out "profileinfo.txt"
     ```
    Файл *profileinfo.txt* содержит закрытый ключ, отпечаток для ЦС и сертификат клиента. Не забудьте использовать отпечаток сертификата клиента.
 
@@ -161,7 +161,7 @@ ms.locfileid: "80066154"
 11. Чтобы подключиться с помощью командной строки, введите следующую команду:
   
     ```
-    sudo openvpn –-config <name and path of your VPN profile file>&
+    sudo openvpn --config <name and path of your VPN profile file>&
     ```
 12. Чтобы подключиться с помощью графического пользовательского интерфейса, перейдите в параметры системы.
 13. Нажмите, **+** чтобы добавить новое СОЕДИНЕНИЕ VPN.

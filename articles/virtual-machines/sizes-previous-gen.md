@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/20/2020
 ms.author: jonbeck
-ms.openlocfilehash: 7f13ab3cd6ff765bc3b1bee8e8fad7e7273f6c7d
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: 6cf43df756e9bed0438169c9c01b868653d84b57
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80673918"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985734"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
 
@@ -342,7 +342,7 @@ ACU: 180–240
 <sup>1</sup> Экземпляр изолирован на оборудовании, выделенном единственному заказчику.
 <br>
 
-# <a name="nv-series"></a>Серия NV
+## <a name="nv-series"></a>Серия NV
 **Рекомендация по новым размерам**: [NVv3-серия](nvv3-series.md) и [NVv4-серия](nvv4-series.md)
 
 Виртуальные машины серии NV созданы на базе GPU [Tesla M60 от NVIDIA](https://images.nvidia.com/content/tesla/pdf/188417-Tesla-M60-DS-A4-fnl-Web.pdf) и технологии NVIDIA GRID для ускоренных классических приложений и виртуальных рабочих столов, где пользователи могут визуализировать свои данные или моделирование. С помощью экземпляров NV пользователи могут визуализировать свои рабочие процессы с большим объемом графики и получить расширенные возможности работы с графикой, а также запускать рабочие нагрузки одиночной точности, такие как кодирование и отрисовка. VMs-серии NV также оснащены процессорами Intel Xeon E5-2690 v3 (Haswell).

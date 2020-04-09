@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 03/25/2020
+ms.date: 04/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: ce9f5730575b4ab68e293c78ea40d8deb1d2c89c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0b8c8a0baba5a80c6a383e6f8f14e29b482dbc82
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278756"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878618"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -44,7 +44,7 @@ ms.locfileid: "80278756"
 | **Государственные организации Австралии** | Центральная Австралия, Центральная Австралия 2 |Канберра, Канберра 2 |
 | **Европа** | Франция Центральная, Франция юг, Германия Север, Германия Западная Центральная, Северная Европа, Норвегия Восток, Норвегия Запад, Швейцария Север, Швейцария Запад, Великобритания Запад, Великобритания на юге, Западная Европа |Амстердам, Амстердам2, Копенгаген, Дублин, Франкфурт, Ньюсен, Лондон, Лондон2, Марсель, Милан, Мюнхен, Ньюпорт (Уэльс), Осло, Париж, Ставангер, Стокгольм, Цюрих, Мюнхен |
 | **Северная Америка** | Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Даллас, Денвер, Лас-Вегас, Лос-Анджелес, Майами, Нью-йорк, Сан-Антонио, Сиэтл, Силиконовая долина, Силиконовая долина2, Вашингтон, Вашингтон, округ Колумбия, Монреаль, Квебек, Торонто, Ванкувер |
-| **Азии** | Восточная Азия, Юго-Восточная Азия | Бангкок, Гонконг, Гонконг2, Джакарта, Куала-Лумпур, Сингапур, Сингапур2, Тайбэй |
+| **Азия** | Восточная Азия, Юго-Восточная Азия | Бангкок, Гонконг, Гонконг2, Джакарта, Куала-Лумпур, Сингапур, Сингапур2, Тайбэй |
 | **Индия** | Западная Индия, Центральная Индия, Южная Индия |Ченнаи, Ченнаи 2, Мумбаи, Мумбаи 2 |
 | **Япония** | Западная Япония, Восточная Япония |Осака, Токио2 |
 | **Океания** | Восточная Австралия, Юго-Восточная Австралия |Окленд, Мельбурн, Перт, Сидней, Сидней2 | 
@@ -95,7 +95,7 @@ ms.locfileid: "80278756"
 | **Дубай** | [PCCS](https://www.pacificcontrols.net/cloudservices/index.html) | 3 | Северная часть ОАЭ; | Недоступно | Этисалат ОАЭ |
 | **Дубай2** | [du datamena](http://datamena.com/solutions/data-centre) | 3 | Северная часть ОАЭ; | Недоступно | du Datamena, Мегапорт, Оранжевый, Orixcom |
 | **Дублин** | [Equinix DB3](https://www.equinix.com/locations/europe-colocation/ireland-colocation/dublin-data-centers/db3/) | 1 | Северная Европа | 10G, 100G | Кольт, Эйр, Эквиникс, euNetworks, Интерксион, Мегапорт |
-| **Франкфурт** | [Интерксион FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Германия Западно-Центральная | 10G, 100G | CenturyLink Облако Connect, Кольт, DE-CIX, GEANT, Интерксион, Мегапорт, Оранжевый, Telia Carrier |
+| **Франкфурт** | [Интерксион FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Германия Западно-Центральная | 10G, 100G | CenturyLink Облако Connect, Кольт, DE-CIX, Equinix, GEANT, Интерксион, Мегапорт, Оранжевый, Telia Carrier |
 | **Женева** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Швейцария Запад | 10G, 100G | Equinix, Megaport |
 | **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | Недоступно | Арьяк Сети, Британский Телеком, CenturyLink Cloud Connect, Главный Телеком, China Telecom Global, Equinix, InterCloud, Мегапорт, NTT Связи, Оранжевый, PCCW Global Limited, Tata Communications, Telia Carrier, Verizon |
 | **Гонконг2** | [МЕГА-и](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Недоступно | 10G | |
@@ -236,7 +236,7 @@ ms.locfileid: "80278756"
 
 | **Continent** | **Системные интеграторы** |
 | --- | --- |
-| **Азии** |Avanade Inc., OneAs1a |
+| **Азия** |Avanade Inc., OneAs1a |
 | **Австралия** | Ensyst, IT Consultancy, MOQdigital, Vigilant.IT |
 | **Европа** |Avanade Inc., Altogee, Bright Skies GmbH, Inframon, MSG Services, New Signature, Nelite, Orange Networks, sol-tec |
 | **Северная Америка** |Avanade Inc., Equinix Professional Services, FlexManage, Lightstream, Perficient, Presidio |

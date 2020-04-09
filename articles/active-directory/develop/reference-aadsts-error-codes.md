@@ -2,26 +2,22 @@
 title: Проверка подлинности Azure AD & коды авторизации
 description: Сведения о кодах ошибок AADSTS, которые возвращаются службой маркеров безопасности Azure AD.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: reference
-ms.date: 03/31/2020
+ms.date: 04/07/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 91d285e2a839a7d6266c5d58f52901a48a7a8c84
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 40a7406ea91c95daad2f180b9d0f4620cdbbf454
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80473173"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80875934"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Коды аутентификации и авторизации Azure AD
 
@@ -133,6 +129,7 @@ ms.locfileid: "80473173"
 | AADSTS50180 | WindowsIntegratedAuthMissing — требуется встроенная проверка подлинности Windows. Включите в клиенте простой единый вход. |
 | AADSTS50187 | DeviceInformationNotProvided: служба не смогла выполнить проверку подлинности устройства. |
 | AADSTS50196 | LoopDetected - Обнаружена клиентская петля. Проверьте логику приложения, чтобы убедиться, что кэширование маркеров реализовано, и что условия ошибки обрабатываются правильно.  Приложение сделало слишком много одного и того же запроса за слишком короткий период, указывая, что оно находится в неисправном состоянии или оскорбительно запрашивает токены. |
+| AADSTS50197 | ConflictingIdentities - Пользователь не может быть найден. Попробуйте зарегистрироваться снова. |
 | AADSTS50199 | CmsiInterrupt - По соображениям безопасности для этого запроса требуется подтверждение пользователем.  Потому что это "interaction_required" ошибка, клиент должен сделать интерактивный auth.  Это происходит потому, что веб-вью системы был использован для запроса маркера для родного приложения - пользователь должен быть предложено спросить, если это было на самом деле приложение, которое они хотели войти в.|
 | AADSTS51000 | RequiredFeatureNotEnabled: компонент отключен. |
 | AADSTS51001 | DomainHintMustbePresent — должно присутствовать указание домена с локальным идентификатором безопасности или локальным именем участника-пользователя. |
@@ -278,6 +275,6 @@ ms.locfileid: "80473173"
 | AADSTS7000112 | НесанкционированноЕПриложениеКлиенты - Приложение отключено. |
 | AADSTS7500529 | Значение 'SAMLId-Guid' не является действительным SAML ID - Azure AD использует этот атрибут для заполнения атрибута InResponseTo возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * У вас есть вопрос или не можете найти нужную информацию? Создайте запрос в GitHub или изучите статью [Возможности получения поддержки и справки для разработчиков](active-directory-develop-help-support.md), чтобы узнать о других способах получения поддержки и справки.

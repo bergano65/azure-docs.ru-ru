@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 7b5569738721038beadc78d94c81393803b6d36a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fa0cf5d698bc2186928e0db19be173ec725485e8
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79250989"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985938"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>Сценарии и доступность функций служб мультимедиа в центрах обработки данных
 
@@ -169,7 +169,7 @@ ms.locfileid: "79250989"
 
 #### <a name="availability"></a>Доступность
 
-Чтобы определить, доступны ли Службы мультимедиа в центре обработки данных, перейдите на страницу https://azure.microsoft.com/status/ и прокрутите до таблицы мультимедиа.
+Используйте [продукты Azure по регионам,](https://azure.microsoft.com/global-infrastructure/services/?products=media-services&regions=all) чтобы определить, доступны ли медиа-услуги в определенном центре обработки данных.
 
 ### <a name="streaming-endpoints"></a>Конечные точки потоковой передачи 
 
@@ -177,10 +177,10 @@ ms.locfileid: "79250989"
 
 #### <a name="availability"></a>Доступность
 
-|name|Состояние|Центры обработки данных
+|Имя|Состояние|Центры обработки данных
 |---|---|---|
-|Standard|GA|All|
-|Premium|GA|All|
+|Standard|GA|Все|
+|Premium|GA|Все|
 
 ### <a name="live-encoding"></a>Кодирование в реальном времени
 
@@ -196,7 +196,7 @@ AMS предлагает два кодировщика по требованию
 
 |Имя обработчика мультимедиа|Состояние|Центры обработки данных
 |---|---|---|
-|Стандартный кодировщик служб мультимедиа|GA|All|
+|Стандартный кодировщик служб мультимедиа|GA|Все|
 |Media Encoder Premium Workflow|GA|Все, кроме региона "Китай"|
 
 ### <a name="analytics-media-processors"></a>Обработчики мультимедиа аналитики
@@ -210,12 +210,12 @@ AMS предлагает два кодировщика по требованию
 
 |Имя обработчика мультимедиа|Состояние|Центры обработки данных
 |---|---|---|
-|Azure Media Face Detector|Preview (Предварительный просмотр)|All|
-|Azure Media Indexer|GA|All|
-|Azure Media Motion Detector|Preview (Предварительный просмотр)|All|
-|Azure Media OCR|Preview (Предварительный просмотр)|All|
-|Azure Media Redactor|GA|All|
-|Azure Media Video Thumbnails|Preview (Предварительный просмотр)|All|
+|Azure Media Face Detector|Предварительный просмотр|Все|
+|Azure Media Indexer|GA|Все|
+|Azure Media Motion Detector|Предварительный просмотр|Все|
+|Azure Media OCR|Предварительный просмотр|Все|
+|Azure Media Redactor|GA|Все|
+|Azure Media Video Thumbnails|Предварительный просмотр|Все|
 
 ### <a name="protection"></a>Защита
 
@@ -225,10 +225,10 @@ AMS предлагает два кодировщика по требованию
 
 |Шифрование|Состояние|Центры обработки данных|
 |---|---|---| 
-|Хранилище|GA|All|
-|Ключи AES-128|GA|All|
-|FairPlay|GA|All|
-|PlayReady|GA|All|
+|Память|GA|Все|
+|Ключи AES-128|GA|Все|
+|FairPlay|GA|Все|
+|PlayReady|GA|Все|
 |Widevine|GA|Все, кроме Германии, федерального правительства США и Китая.
 
 ### <a name="reserved-units-rus"></a>Зарезервированные единицы
@@ -251,7 +251,7 @@ AMS предлагает два кодировщика по требованию
 
 |Имя типа зарезервированных единиц|Состояние|Центры обработки данных
 |---|---|---|
-|S1|GA|All|
+|S1|GA|Все|
 |S2|GA|Все регионы, кроме "Южная Бразилия" и "Западная Индия"|
 |S3|GA|Все регионы, кроме "Западная Индия"|
 

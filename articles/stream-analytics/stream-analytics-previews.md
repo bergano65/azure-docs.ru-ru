@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 3/9/2020
-ms.openlocfilehash: 3e99263f6bf472c256e1747b8567249bbd62a445
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4c265665be26dcc6868ea9a303b0c12c52dfe05b
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78969619"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878312"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -47,9 +47,9 @@ ms.locfileid: "78969619"
 Задания Azure Stream Analytics можно создать в Visual Studio Code. Смотрите наш [VS код начала учебник](https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code).
 
 
-### <a name="integration-with-azure-machine-learning"></a>Интеграция со службой "Машинное обучение Azure"
+### <a name="real-time-high-performance-scoring-with-custom-ml-models-managed-by-azure-machine-learning"></a>Высокая производительность в реальном времени с помощью пользовательских моделей ML, управляемых Azure Machine Learning
 
-Задания Stream Analytics можно масштабировать с помощью функций Машинного обучения. Дополнительные сведения об использовании функций Машинного обучения в задании Stream Analytics см. в статье [Масштабирование заданий Stream Analytics с помощью функций машинного обучения Azure](stream-analytics-scale-with-machine-learning-functions.md). Ознакомьтесь с реальным сценарием в статье [Выполнение анализа тональности с помощью Azure Stream Analytics и Машинного обучения Azure](stream-analytics-machine-learning-integration-tutorial.md).
+Azure Stream Analytics поддерживает высокопроизводительные оценки в режиме реального времени, используя пользовательские модели машинного обучения, управляемые Azure Machine Learning, и размещенные в Azure Kubernetes Service (AKS) или Azure Container Instances (ACI), используя рабочий процесс, который не требует записи кода. [Подпишитесь](https://aka.ms/asapreview1) на предварительный просмотр
 
 
 ### <a name="live-data-testing-in-visual-studio"></a>Динамическое тестирование данных в Visual Studio
@@ -64,10 +64,6 @@ ms.locfileid: "78969619"
 ## <a name="other-previews"></a>Другие предварительные просмотры
 
 Следующие функции также доступны в предварительном просмотре по запросу.
-
-### <a name="real-time-high-performance-scoring-with-custom-ml-models-managed-by-azure-machine-learning"></a>Высокая производительность в реальном времени с помощью пользовательских моделей ML, управляемых Azure Machine Learning
-
-Azure Stream Analytics поддерживает высокопроизводительные оценки в режиме реального времени, используя пользовательские модели машинного обучения, управляемые Azure Machine Learning, и размещенные в Azure Kubernetes Service (AKS) или Azure Container Instances (ACI), используя рабочий процесс не требует, чтобы вы писали код. [Подпишитесь](https://aka.ms/asapreview1) на предварительный просмотр
 
 ### <a name="support-for-azure-stack"></a>Поддержка стека Azure
 Эта функция включена во время выполнения Azure IoT Edge, использует пользовательские функции Azure Stack, такие как нативная поддержка локальных входных данных и выходов, работающих на Azure Stack (например, концентраторы событий, IoT Hub, Blob Storage). Эта новая интеграция позволяет создавать гибридные архитектуры, которые могут анализировать ваши данные близко к месту их создания, снижая задержку и максимизируя информацию.

@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 01e683e31905281d25fdcf976bc58397c052a6c3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d9c1cff53d5d0f0385d3d61938c7fb6309efb7b1
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79243189"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985394"
 ---
 # <a name="register-a-sql-server-virtual-machine-in-azure-with-the-sql-vm-resource-provider"></a>Зарегистрируйте виртуальную машину сервера S'L в Azure с помощью поставщика ресурсов S'L VM
 
@@ -35,7 +35,7 @@ ms.locfileid: "79243189"
 
 - **Упрощенное управление лицензиями**: Регистрация с поставщиком ресурсов S'L VM упрощает управление лицензиями сервера S'L Server и позволяет быстро идентифицировать VMs-сервер с помощью портала Azure Hybrid Benefit, включенного с помощью [портала Azure,](virtual-machines-windows-sql-manage-portal.md)Az CLI или PowerShell: 
 
-   # <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
+   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
    ```azurecli-interactive
    $vms = az sql vm list | ConvertFrom-Json
@@ -178,9 +178,9 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 
 Сервер 2008 и 2008 R2, установленный на Windows Server 2008 _(не R2),_ может быть зарегистрирован в поставщике ресурсов S'L VM в [режиме NoAgent.](#management-modes) Эта опция обеспечивает соответствие требованиям и позволяет контролировать VM сервера S'L server на портале Azure с ограниченной функциональностью.
 
-Укажите `AHUB` `PAYG`либо `DR` , , или как **sqlLicenseType**, и либо `SQL2008-WS2008` или `SQL2008R2-WS2008` как **sqlImageOffer**. 
+Укажите `AHUB` `PAYG`либо `DR` , , или как `SQL2008-WS2008` **sqlLicenseType**, и или как `SQL2008R2-WS2008` **sqlImageOffer**. 
 
-Чтобы зарегистрировать экземпляр S'L Server 2008 или 2008 R2 на примере Windows Server 2008, используйте следующий фрагмент кода Az CLI или PowerShell: 
+Чтобы зарегистрировать свой S'L Server 2008 или 2008 R2 на примере Windows Server 2008, используйте следующий фрагмент кода Az CLI или PowerShell: 
 
 
 # <a name="az-cli"></a>[Azure CLI](#tab/bash)
@@ -190,7 +190,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
   ```azurecli-interactive
    az sql vm create -n sqlvm -g myresourcegroup -l eastus |
    --license-type PAYG --sql-mgmt-type NoAgent 
-   --image-sku Enterprise --image-offer SQL2008-WS2008R2
+   --image-sku Enterprise --image-offer SQL2008-WS2008
  ```
  
  
@@ -199,7 +199,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
   ```azurecli-interactive
    az sql vm create -n sqlvm -g myresourcegroup -l eastus |
    --license-type PAYG --sql-mgmt-type NoAgent 
-   --image-sku Enterprise --image-offer SQL2008R2-WS2008R2
+   --image-sku Enterprise --image-offer SQL2008R2-WS2008
  ```
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
@@ -345,7 +345,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 
 ### <a name="command-line"></a>Командная строка
 
-# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 Чтобы отменить регистрацию виртуальной машины S'L Server от поставщика ресурсов с помощью Azure CLI, используйте команду [удаления az sql vm.](/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-delete) Это позволит удалить *виртуальный машинный ресурс* S'L Server, но не удалит виртуальную машину. 
 
 
