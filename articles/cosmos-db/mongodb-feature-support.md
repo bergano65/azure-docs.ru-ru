@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/16/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 12e5dba0339b6092564e5d35c1a6250b0c47f50f
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 94b65b4e7947bc02b1fdaae90c8f774ec216e7bb
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "72755003"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80981891"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-32-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.2) — поддержка возможностей и синтаксиса
 
@@ -77,7 +77,7 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 ## <a name="aggregation-pipelinea"></a>Конвейер статистической обработки</a>
 
-Cosmos DB поддерживает конвейер статистической обработки для MongoDB версии 3.2 в режиме общедоступной предварительной версии. В [блоге Azure](https://aka.ms/mongodb-aggregation) вы найдете инструкции по освоению этой общедоступной предварительной версии.
+Cosmos DB поддерживает конвейер статистической обработки для MongoDB версии 3.2 в режиме общедоступной предварительной версии. В [блоге Azure](https://azure.microsoft.com/blog/azure-cosmosdb-extends-support-for-mongodb-aggregation-pipeline-unique-indexes-and-more/) вы найдете инструкции по освоению этой общедоступной предварительной версии.
 
 ### <a name="aggregation-commands"></a>Команды статистической обработки
 

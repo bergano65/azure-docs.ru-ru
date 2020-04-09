@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 5d5b2509b212172758fa867d9f27b829f43aeeaa
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 685d6970b0e88032fe503bf97a139c0b8c0f8a73
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80349116"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80631348"
 ---
 # <a name="quickstart-create-and-query-a-synapse-sql-pool-using-the-azure-portal"></a>Краткое руководство. Создание пула SQL Synapse и отправка в него запросов, используя портал Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "80349116"
    > [!NOTE]
    > Создание пула SQL в Azure Synapse может привести к дополнительным расходам. Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/).
 
-2. Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
+2. Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "80349116"
 
 ## <a name="create-a-sql-pool"></a>Создание пула SQL
 
-Хранилища данных создаются с использованием пула SQL в Azure Synapse Analytics. Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md) и [логического сервера SQL Azure](../../sql-database/sql-database-servers.md).
+Хранилища данных создаются с использованием пула SQL в Azure Synapse Analytics. Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [логического сервера SQL Azure](../../sql-database/sql-database-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 Следуйте приведенным инструкциям по созданию пула SQL, содержащего пример данных **AdventureWorksDW**.
 
@@ -54,9 +54,9 @@ ms.locfileid: "80349116"
    | Параметр | Рекомендуемое значение | Описание |
    | :------ | :-------------- | :---------- |
    | **Подписка** | Ваша подписка | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
-   | **Имя пула SQL** | Любое глобально уникальное имя (например, *mySampleDataWarehouse*). | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers). Обратите внимание, что пул SQL является одним из типов базы данных. |
-   | **Server** | Любое глобально уникальное имя | Выберите существующий сервер или создайте сервер с новым именем, щелкнув ссылку **Создать новый**. Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
+   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
+   | **Имя пула SQL** | Любое глобально уникальное имя (например, *mySampleDataWarehouse*). | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Обратите внимание, что пул SQL является одним из типов базы данных. |
+   | **Server** | Любое глобально уникальное имя | Выберите существующий сервер или создайте сервер с новым именем, щелкнув ссылку **Создать новый**. Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
 
    ![Основные сведения при создании хранилища данных](./media/create-data-warehouse-portal/create-sql-pool-basics.png)
 
@@ -78,7 +78,7 @@ ms.locfileid: "80349116"
 
 ## <a name="create-a-server-level-firewall-rule"></a>создадим правило брандмауэра на уровне сервера;
 
-Служба Azure Synapse создает брандмауэр на уровне сервера. Этот брандмауэр предотвращает подключение внешних приложений и инструментов к серверу или базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов. Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../sql-database/sql-database-firewall-configure.md) для IP-адреса клиента.
+Служба Azure Synapse создает брандмауэр на уровне сервера. Этот брандмауэр предотвращает подключение внешних приложений и инструментов к серверу или базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов. Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../sql-database/sql-database-firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) для IP-адреса клиента.
 
 > [!NOTE]
 > Azure Synapse обменивается данными через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, то исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433.
@@ -124,7 +124,7 @@ ms.locfileid: "80349116"
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
-В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
+В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 1. Откройте среду SQL Server Management Studio.
 
@@ -141,11 +141,11 @@ ms.locfileid: "80349116"
 
    ![подключение к серверу](./media/create-data-warehouse-portal/connect-to-server-ssms.png)
 
-3. Нажмите кнопку **Подключиться**. В SSMS открывается окно обозревателя объектов. 
+3. Нажмите кнопку **Подключиться**. В SSMS открывается окно обозревателя объектов.
 
 4. В обозревателе объектов разверните узел **Базы данных**. Затем разверните папку **mySampleDatabase**, чтобы просмотреть объекты в новой базе данных.
 
-   ![объекты базы данных](./media/create-data-warehouse-portal/connected-ssms.png) 
+   ![объекты базы данных](./media/create-data-warehouse-portal/connected-ssms.png)
 
 ## <a name="run-some-queries"></a>Выполнение запросов
 
@@ -163,7 +163,7 @@ ms.locfileid: "80349116"
 
    ![Отправка запросов к базам данных](./media/create-data-warehouse-portal/query-databases.png)
 
-4. Чтобы просмотреть некоторые данные, используйте следующую команду. Она позволяет узнать количество клиентов с фамилией "Adams", у которых трое детей. Список результатов содержит шесть клиентов. 
+4. Чтобы просмотреть некоторые данные, используйте следующую команду. Она позволяет узнать количество клиентов с фамилией "Adams", у которых трое детей. Список результатов содержит шесть клиентов.
 
     ```sql
     SELECT LastName, FirstName FROM dbo.dimCustomer
@@ -196,4 +196,4 @@ ms.locfileid: "80349116"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье о [загрузке данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md). 
+Дополнительные сведения см. в статье о [загрузке данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md).

@@ -13,18 +13,18 @@ ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: bwren
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: 11b61612a261b32e2d15b5dc70005b18aa112ed4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 6435535ee14450c590a79ea68c8855c29df8bd9a
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79215182"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637873"
 ---
 # <a name="collect-data-from-a-windows-computer-in-a-hybrid-environment-with-azure-monitor"></a>Сбор данных с компьютера Windows в гибридной среде с помощью Azure Monitor
 
 [Azure Monitor](../overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows в вашей среде в рабочую область Log Analytics для подробного анализа и корреляции. [Агент Log Analytics](../platform/log-analytics-agent.md) позволяет Azure Monitor собирать данные из центра обработки данных или другой облачной среды. В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий. Сведения о виртуальных машинах Windows в Azure см. в статье [Сбор данных о виртуальных машинах Azure](../../azure-monitor/learn/quick-collect-azurevm.md).  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](../../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems) и [конфигурации сетевых брандмауэров](../../azure-monitor/platform/log-analytics-agent.md#network-firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](../../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems) и [конфигурации сетевых брандмауэров](../../azure-monitor/platform/log-analytics-agent.md#network-requirements).
  
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

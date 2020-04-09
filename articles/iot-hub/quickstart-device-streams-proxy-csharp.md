@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: c8ef6a87e839e6d8dfb296e7b24f3d0d95843d1c
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 97551ac63066f7064c16a001d9ce1f6bc31465ec
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78675467"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586587"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C# (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "78675467"
 
 На рисунке, приведенном ниже, показано, как в этом примере приложения локального прокси-сервера устройств и служб обеспечивают сквозное подключение между клиентом SSH и процессами управляющей программы SSH. В данном случае предполагается, что управляющая программа запущена на том же устройстве, что и приложение локального прокси-сервера устройства.
 
-![Настройка приложения локального прокси-сервера](./media/quickstart-device-streams-proxy-csharp/device-stream-proxy-diagram.svg)
+![Настройка приложения локального прокси-сервера](./media/quickstart-device-streams-proxy-csharp/device-stream-proxy-diagram.png)
 
 1. Приложение локального прокси-сервера службы подключается к центру Интернета вещей, а также инициирует поток устройств в целевое устройство.
 
@@ -45,7 +45,7 @@ ms.locfileid: "78675467"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

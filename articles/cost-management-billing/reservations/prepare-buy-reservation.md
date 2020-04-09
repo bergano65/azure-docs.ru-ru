@@ -5,14 +5,14 @@ author: bandersmsft
 ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 03/30/2020
+ms.date: 04/07/2020
 ms.author: banders
-ms.openlocfilehash: 3a45a04786bb9976a42269191c8b24282905f96f
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 1f44b0a0e2278bfcfbbf7cde1a3605fe334eaa3f
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80436973"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886523"
 ---
 # <a name="buy-a-reservation"></a>Покупка резервирования
 
@@ -43,8 +43,6 @@ ms.locfileid: "80436973"
 1. Резервирования, ограниченные группой ресурсов.
 2. Резервирования, ограниченные одной областью действия.
 3. Резервирования с общей областью действия.
-
-Одна группа ресурсов может получать скидки по нескольким резервированиям, в зависимости от настроек областей резервирования.
 
 Область резервирования можно изменить в любой момент после покупки. Для этого перейдите к резервированию, щелкните **Конфигурация** и задайте новую область резервирования. Изменение области резервирования не считается коммерческой транзакцией. Срок резервирования при этом не изменяется. Дополнительные сведения об изменении области резервирования см. [здесь](manage-reserved-vm-instance.md#change-the-reservation-scope).
 

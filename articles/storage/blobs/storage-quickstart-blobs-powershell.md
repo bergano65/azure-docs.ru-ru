@@ -7,14 +7,14 @@ author: tamram
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.date: 02/26/2020
+ms.date: 03/31/2020
 ms.author: tamram
-ms.openlocfilehash: 479145f4d42c0708c109ab582e76e3691971c6ad
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 3b005bc359b3c1b0cafe663b7ce2b599b10973a1
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80061406"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80473997"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-powershell"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "80061406"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Для работы с этим кратким руководством требуется модуль Azure PowerShell 0.7 или более поздней версии. Чтобы узнать версию, выполните команду `Get-InstalledModule -Name Az -AllVersions | select Name,Version`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
+Для работы с этим кратким руководством требуется модуль Azure PowerShell 0.7 или более поздней версии. Чтобы узнать версию, выполните команду `Get-InstalledModule -Name Az -AllVersions | select Name,Version`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 [!INCLUDE [storage-quickstart-tutorial-intro-include-powershell](../../../includes/storage-quickstart-tutorial-intro-include-powershell.md)]
 
@@ -36,7 +36,7 @@ ms.locfileid: "80061406"
 
 Большие двоичные объекты всегда отправляются в контейнер. Вы можете упорядочивать группы больших двоичных объектов аналогично организации файлов в папках на компьютере.
 
-Задайте имя контейнера, а затем создайте контейнер с помощью командлета [New-AzStorageContainer](/powershell/module/az.storage/new-AzStoragecontainer). Задайте разрешения `blob`, чтобы предоставить открытый доступ к файлам. В этом примере контейнеру присвоено имя *quickstartblobs*.
+Задайте имя контейнера, а затем создайте контейнер с помощью командлета [New-AzStorageContainer](/powershell/module/az.storage/new-azstoragecontainer). Задайте разрешения `blob`, чтобы предоставить открытый доступ к файлам. В этом примере контейнеру присвоено имя *quickstartblobs*.
 
 ```powershell
 $containerName = "quickstartblobs"
@@ -47,7 +47,7 @@ New-AzStorageContainer -Name $containerName -Context $ctx -Permission blob
 
 Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. VHD-файлы, поддерживаемые для резервных виртуальных машин IaaS, являются страничными BLOB-объектами. Используйте добавочные большие двоичные объекты для ведения журнала, например, если требуется выполнять запись в файл и добавлять дополнительные сведения. Большинство файлов, находящихся в хранилище BLOB-объектов, представляют собой блочные BLOB-объекты. 
 
-Для передачи файла в блочный BLOB-объект получите ссылку на контейнер, а затем получите ссылку на блочный BLOB-объект в этом контейнере. При наличии ссылки на большой двоичный объект вы можете отправлять в него данные с помощью командлета [Set-AzStorageBlobContent](/powershell/module/az.storage/set-AzStorageblobcontent). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет имеющийся.
+Для передачи файла в блочный BLOB-объект получите ссылку на контейнер, а затем получите ссылку на блочный BLOB-объект в этом контейнере. При наличии ссылки на большой двоичный объект вы можете отправлять в него данные с помощью командлета [Set-AzStorageBlobContent](/powershell/module/az.storage/set-azstorageblobcontent). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет имеющийся.
 
 В следующих примерах показана отправка файлов *Image001.jpg* и *Image002.png* из папки *D:\\_TestImages* на локальном диске в созданный контейнер.
 
@@ -69,7 +69,7 @@ Set-AzStorageBlobContent -File "D:\_TestImages\Image002.png" `
 
 ## <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Получите список больших двоичных объектов в контейнере с помощью командлета [Get-AzStorageBlob](/powershell/module/az.storage/get-AzStorageblob). В этом примере показаны только имена отправленных BLOB-объектов.
+Получите список больших двоичных объектов в контейнере с помощью командлета [Get-AzStorageBlob](/powershell/module/az.storage/get-azstorageblob). В этом примере показаны только имена отправленных BLOB-объектов.
 
 ```powershell
 Get-AzStorageBlob -Container $ContainerName -Context $ctx | select Name
@@ -77,7 +77,7 @@ Get-AzStorageBlob -Container $ContainerName -Context $ctx | select Name
 
 ## <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
-Скачайте большие двоичные объекты на локальный диск. Для каждого скачиваемого большого двоичного объекта задайте имя и вызовите командлет [Get-AzStorageBlobContent](/powershell/module/az.storage/get-AzStorageblobcontent).
+Скачайте большие двоичные объекты на локальный диск. Для каждого скачиваемого большого двоичного объекта задайте имя и вызовите командлет [Get-AzStorageBlobContent](/powershell/module/az.storage/get-azstorageblobcontent).
 
 В этом примере показано скачивание больших двоичных объектов на локальный диск *D:\\_TestImages\Downloads*. 
 

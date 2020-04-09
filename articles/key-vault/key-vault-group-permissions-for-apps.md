@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d5086377b0bb7f3ca2ece643f82a4e45156f1955
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a3be46f2b50afbe2347445a8b3220c74d1bfc52c
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78184882"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656984"
 ---
 # <a name="provide-key-vault-authentication-with-an-access-control-policy"></a>Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом
 
@@ -155,7 +155,7 @@ az keyvault set-policy -n <your-unique-keyvault-name> --spn <ApplicationID-of-yo
 В Azure PowerShell это делается путем передачи objectId в командлет [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy?view=azps-2.7.0). 
 
 ```azurepowershell-interactive
-Set-AzKeyVaultAccessPolicy –VaultName <your-key-vault-name> -PermissionsToKeys create,decrypt,delete,encrypt,get,list,unwrapKey,wrapKey -PermissionsToSecrets get,list,set,delete -ApplicationId <Id>
+Set-AzKeyVaultAccessPolicy –VaultName <your-key-vault-name> -PermissionsToKeys create,decrypt,delete,encrypt,get,list,unwrapKey,wrapKey -PermissionsToSecrets get,list,set,delete -ObjectId <Id>
 
 ```
 
