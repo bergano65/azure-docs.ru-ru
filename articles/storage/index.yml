@@ -1,141 +1,149 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Hub
 title: Документация по службе хранилища Azure
+summary: Служба хранилища Azure включает в себя хранилище объектов, файлов, дисков, очередей и таблиц. Кроме того, есть службы для гибридных решений хранения, а также службы для передачи, совместного использования и резервного копирования данных.
+brand: azure
 metadata:
-  title: Документация по службе хранилища Azure. Руководства и справочник по API | Документация Майкрософт
-  description: 'Служба хранилища Azure является облачной службой под управлением корпорации Майкрософт, которая предоставляет хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя хранилище BLOB-объектов Azure, Azure Data Lake Storage 2-го поколения, Файлы Azure, Хранилище очередей Azure и таблиц Azure.'
-  services: storage
-  author: tamram
-  manager: twooley
+  title: Документация по службе хранилища Azure
+  description: Главная страница документации по службе хранилища Azure. Ссылки на документацию по службам для облачных и гибридных решений хранения, а также по службам для передачи, совместного использования и резервного копирования данных.
   ms.service: storage
-  ms.tgt_pltfrm: na
-  ms.devlang: na
-  ms.topic: landing-page
-  ms.date: 06/27/2018
-  ms.author: tamram
-abstract:
-  description: 'Служба хранилища Azure является службой под управлением корпорации Майкрософт, которая предоставляет облачное хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя хранилище BLOB-объектов Azure (объектов), Azure Data Lake Storage 2-го поколения, Файлы Azure, Хранилище очередей Azure и таблиц Azure. Ознакомьтесь с нашими руководствами, чтобы узнать, как использовать службу хранилища Azure в приложениях.'
-sections:
-  - title: Пятиминутные руководства по началу работы
+  ms.topic: hub-page
+  author: twooley
+  ms.author: twooley
+  ms.date: 04/07/2020
+  ms.openlocfilehash: 5f599c7cc608a5e6a6246ed82c8f7b48e427dd66
+  ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 04/09/2020
+  ms.locfileid: "80985343"
+highlightedContent:
+  items:
+  - title: Общие сведения об основных службах хранения
+    itemType: concept
+    url: /azure/storage/common/storage-introduction?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - title: Сведения о типах учетных записей хранения
+    itemType: concept
+    url: /azure/storage/common/storage-account-overview?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - title: Создание учетной записи хранения
+    itemType: how-to-guide
+    url: /azure/storage/common/storage-account-create?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - title: Сведения об избыточности данных
+    itemType: concept
+    url: /azure/storage/common/storage-redundancy?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - title: Передача данных в Azure
+    itemType: concept
+    url: /azure/storage/common/storage-choose-data-transfer-solution?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+additionalContent:
+  sections:
+  - title: Решения для хранения данных в облаке
     items:
-      - type: paragraph
-        text: Эти краткие руководства помогут в работе со службой хранилища Azure.
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: media/index/portal.svg
-              text: Портал
-          - image:
-              src: media/index/logo_powershell.svg
-              text: PowerShell
-          - image:
-              src: media/index/cli.svg
-              text: Azure CLI
-          - image:
-              src: media/index/logo_net.svg
-          - image:
-              src: media/index/logo_java.svg
-          - image:
-              src: media/index/logo_python.svg
-          - image:
-              src: media/index/logo_nodejs.svg
-        rows:
-          - title: Создание учетной записи хранения
-            values:
-              - href: /azure/storage/common/storage-quickstart-create-account?tabs=portal
-              - href: /azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell
-              - href: /azure/storage/common/storage-quickstart-create-account?tabs=azure-cli
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-          - title: Краткие руководства по работе с большими двоичными объектами
-            values:
-              - href: /azure/storage/blobs/storage-quickstart-blobs-portal
-              - href: /azure/storage/blobs/storage-quickstart-blobs-powershell
-              - href: /azure/storage/blobs/storage-quickstart-blobs-cli
-              - href: /azure/storage/blobs/storage-quickstart-blobs-dotnet
-              - href: /azure/storage/blobs/storage-quickstart-blobs-java
-              - href: /azure/storage/blobs/storage-quickstart-blobs-python
-              - href: /azure/storage/blobs/storage-quickstart-blobs-nodejs
-          - title: Data Lake Storage 2-го поколения
-            values:
-              - href: /azure/storage/blobs/data-lake-storage-quickstart-create-account
-              - href: /azure/storage/blobs/data-lake-storage-quickstart-create-account
-              - href: /azure/storage/blobs/data-lake-storage-quickstart-create-account
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-  - title: Пошаговые инструкции
+    - title: Хранилище объектов для приложений
+      links:
+      - url: /azure/storage/blobs/storage-blobs-introduction
+        text: Сведения о хранении неструктурированных данных (хранилище BLOB-объектов)
+      - url: /rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs
+        text: Общие сведения о блочных, добавочных и страничных BLOB-объектах
+      - url: /azure/storage/blobs/
+        text: Подробнее >
+    - title: Хранилище для аналитики больших данных
+      links:
+      - url: /azure/storage/blobs/data-lake-storage-introduction
+        text: Сведения о хранилище для корпоративных озер данных (Data Lake Storage)
+      - url: /azure/storage/blobs/data-lake-storage-data-scenarios
+        text: Общие сведения о параметрах и средствах для обработки больших данных
+    - title: Размещенные в облаке общие папки
+      links:
+      - url: /azure/storage/files/storage-files-introduction
+        text: Использование общих папок, предоставляемых основной платформой службы хранилища Azure (Файлы Azure)
+      - url: /azure/azure-netapp-files/azure-netapp-files-introduction
+        text: Использование томов, предоставляемых NetApp ONTAP (Azure NetApp Files)
+    - title: Хранилище дисков для рабочих нагрузок IaaS
+      links:
+      - url: /azure/virtual-machines/windows/managed-disks-overview
+        text: Сведения о томах хранилища на уровне блоков для виртуальных машин Azure
+      - url: /azure/virtual-machines/windows/disks-types
+        text: Сведения о доступных типах дисков
+      - url: /azure/virtual-machines/windows/attach-managed-disk-portal
+        text: Добавление нового диска в виртуальную машину (Windows)
+      - url: /azure/virtual-machines/linux/attach-disk-portal
+        text: Подключение диска данных к виртуальной машине (Linux)
+    - title: Хранилище для очередей асинхронных сообщений
+      links:
+      - url: /azure/storage/queues/storage-queues-introduction
+        text: Сведения о решении для очередей (Хранилище очередей) в службе хранилища Azure
+      - url: /azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted
+        text: Сравнение Хранилища очередей и очередей Служебной шины
+      - url: /azure/storage/queues/
+        text: Подробнее >
+    - title: Хранилище для структурированных данных NoSQL
+      links:
+      - url: /azure/storage/tables/table-storage-overview
+        text: Хранение структурированных данных NoSQL в облаке (Хранилище таблиц и Cosmos DB)
+      - url: /azure/cosmos-db/table-support
+        text: Сравнение Хранилища таблиц и API таблиц Cosmos DB
+      - url: /azure/storage/tables/
+        text: Подробнее >
+  - title: Гибридные решения для хранения
     items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: BLOB-объекты
-            html: <p>Передача и обработка данных изображений в облаке</p><ul><li><a href="/azure/storage/blobs/storage-upload-process-images">Отправка и получение данных изображений в облаке</a></li><li><a href="/azure/event-grid/resize-images-on-storage-blob-upload-event?toc=%2fazure%2fstorage%2fblobs%2ftoc.json">Активация Функций Azure для обработки больших двоичных объектов</a></li><li><a href="/azure/storage/blobs/storage-secure-access-application">Защита данных приложения</a></li><li><a href="/azure/storage/blobs/storage-monitor-troubleshoot-storage-application">Мониторинг и устранение неполадок хранилища</a></li></ul><p>Обеспечение высокого уровня доступности при проектировании приложения</p><ul><li><a href="/azure/storage/blobs/storage-create-geo-redundant-storage">Обеспечение высокого уровня доступности данных приложения</a></li><li><a href="/azure/storage/blobs/storage-simulate-failure-ragrs-account-app">Моделирование сбоя при чтении данных в основном регионе</a></li></ul>
-          - title: Data Lake Storage 2-го поколения
-            html: '<p><a href="/azure/storage/blobs/data-lake-storage-handle-data-using-databricks">Извлечение, преобразование и загрузка данных с помощью Azure Databricks</a></p><p><a href="/azure/storage/blobs/data-lake-storage-use-databricks-spark">Доступ к данным Azure Data Lake Storage 2-го поколения с помощью DataBricks и Spark</a></p><p><a href="/azure/storage/blobs/data-lake-storage-tutorial-extract-transform-load-hive">Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight</a></p>'
-  - title: Примеры
+    - title: Развертывание локальной общей папки в облаке
+      links:
+      - url: /azure/storage/files/storage-sync-files-planning
+        text: Синхронизация общих папок Azure с файловым сервером Windows (Azure FileSync)
+      - url: /azure/storage/files/storage-sync-files-deployment-guide
+        text: Развертывание Синхронизации файлов Azure
+      - url: /azure/storage/files/
+        text: Подробнее >
+    - title: Передача данных по сети (из локальной среды в Azure)
+      links:
+      - url: /azure/databox-online/data-box-gateway-overview
+        text: Простой способ передачи данных в Azure (Шлюз Data Box)
+      - url: /azure/databox-online/data-box-edge-overview
+        text: Локальная обработка данных перед передачей в Azure (Azure Stack Edge)
+      - url: /azure/databox-online/
+        text: Подробнее >
+    - title: Кэширование для высокопроизводительных вычислительных рабочих нагрузок (HPC)
+      links:
+      - url: /azure/hpc-cache/hpc-cache-overview
+        text: Использование полностью управляемой службы кэширования файлов (Azure HPC Cache)
+      - url: /azure/avere-vfxt/avere-vfxt-overview
+        text: Кэширование данных локального устройства NAS в Azure (Avere vFXT для Azure)
+      - url: /azure/fxt-edge-filer/fxt-overview
+        text: Развертывание локального модуля кэширования (Azure FXT Edge Filer)
+  - title: Операции с данными
     items:
-      - type: paragraph
-        text: 'Скрипты для выполнения стандартных задач управления:'
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: '.NET: <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=blob&sort=0&platform=dotnet">большие двоичные объекты</a> | <a     href="https://azure.microsoft.com/resources/samples/?service=storage&term=file&sort=0&platform=dotnet">файлы</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=queue&sort=0&platform=dotnet">очереди</a>'
-          - html: 'Java: <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=blob&sort=0&platform=java">большие двоичные объекты</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=file&sort=0&platform=java">файлы</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=queue&sort=0&platform=java">очереди</a>'
-          - html: <a href="/azure/storage/blobs/storage-samples-blobs-powershell">Azure PowerShell</a>
-          - html: <a href="/azure/storage/blobs/storage-samples-blobs-cli">Azure CLI</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Основные сведения о данных в Azure
-            href: /learn/modules/intro-to-data-in-azure/
-            image:
-              src: /learn/achievements/intro-to-data-in-azure.svg
-              href: //learn/modules/intro-to-data-in-azure/
-          - title: "\_Выбор подхода к хранению данных в Azure"
-            href: /learn/modules/choose-storage-approach-in-azure/
-            image:
-              src: /learn/achievements/choose-storage-approach-in-azure.svg
-              href: /learn/modules/choose-storage-approach-in-azure/
-          - title: Создание учетной записи хранения Azure
-            href: /learn/modules/create-azure-storage-account/
-            image:
-              src: /learn/achievements/create-azure-storage-account.svg
-              href: /learn/modules/create-azure-storage-account/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-storage">Дополнительные интерактивные руководства…</a>
-  - title: Бесплатные видеоуроки Pluralsight
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Разработка с помощью .NET в Azure
-            href: 'https://app.pluralsight.com/library/courses/developing-dotnet-microsoft-azure-getting-started/table-of-contents'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://app.pluralsight.com/library/courses/developing-dotnet-microsoft-azure-getting-started/table-of-contents'
-          - title: Разработка с помощью Node.js в Azure
-            href: 'https://app.pluralsight.com/library/courses/developing-nodejs-microsoft-azure-getting-started/table-of-contents'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://app.pluralsight.com/library/courses/developing-nodejs-microsoft-azure-getting-started/table-of-contents'
-  - title: Справочник
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/powershell/storage">PowerShell</a></p><p><a href="/cli/azure/storage">Azure CLI</a></p>
-          - title: REST
-            html: '<p><a href="/rest/api/storageservices">API служб хранения BLOB-объектов, очередей, таблиц и файлов</a></p><p><a href="/rest/api/storagerp">API поставщика ресурсов хранилища</a></p><p><a href="/rest/api/storageimportexport">API службы импорта и экспорта</a></p>'
+    - title: Автономная массовая передача в Azure
+      links:
+      - url: /azure/databox/data-box-disk-overview
+        text: Передача менее 40 ТБ данных (Диск Data Box)
+      - url: /azure/databox/data-box-overview
+        text: Передача 40–500 ТБ данных (Data Box)
+      - url: /azure/databox/data-box-heavy-overview
+        text: Передача более 500 ТБ данных (Data Box Heavy)
+      - url: /azure/databox/
+        text: Подробнее >
+    - title: Передача небольших наборов данных (по сети)
+      links:
+      - url: /azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        text: Использование программы командной строки AzCopy
+      - url: /azure/storage/blobs/storage-quickstart-blobs-storage-explorer
+        text: Использование Обозревателя службы хранилища Azure (инструмент с графическим пользовательским интерфейсом)
+    - title: Управление затратами
+      links:
+      - url: /azure/storage/blobs/storage-blob-storage-tiers
+        text: Выгодное распределение данных BLOB-объектов по уровням (горячий, холодный, архивный)
+    - title: Общий доступ к данным
+      links:
+      - url: /azure/data-share/
+        text: Совместное использование данных с клиентами и партнерами (Azure Data Share)
+      - url: /azure/data-share/supported-data-stores
+        text: Поддерживаемые хранилища данных для общего доступа
+      - url: /azure/data-share/
+        text: Подробнее >
+    - title: Архивация данных
+      links:
+      - url: /azure/backup/quick-backup-vm-portal
+        text: Резервное копирование виртуальных машин (Azure Backup)
+      - url: /azure/backup/tutorial-backup-azure-files
+        text: Резервное копирование общих папок Azure (предварительная версия)
+      - url: /azure/backup/
+        text: Подробнее >

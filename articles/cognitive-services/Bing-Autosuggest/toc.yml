@@ -26,10 +26,8 @@
           href: quickstarts/ruby.md
     - name: Клиентская библиотека
       items:
-        - name: 'C#'
-          href: quickstarts/csharp-sdk.md
-        - name: Go
-          href: quickstarts/go-sdk.md
+        - name: Клиентские библиотеки для Автозаполнения Bing
+          href: ./quickstarts/client-libraries.md
 - name: Учебники
   items:
     - name: Одностраничное веб-приложение

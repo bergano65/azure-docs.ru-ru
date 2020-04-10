@@ -83,9 +83,9 @@
         - name: 3. Создание конвейера
           displayName: Devop
           href: deployment-tutorial-pipeline.md
-    - name: Дополнительно
+    - name: Дополнительные шаблоны
       items:
-        - name: Использование справочной документации по шаблонам
+        - name: Использование справочника по шаблонам
           href: template-tutorial-use-template-reference.md
         - name: Развертывание нескольких экземпляров
           displayName: 'iteration,copy'
@@ -101,23 +101,21 @@
         - name: Интеграция Key Vault
           displayName: secrets
           href: template-tutorial-use-key-vault.md
-        - name: Создание связанных шаблонов
-          href: template-tutorial-create-linked-templates.md
         - name: Развертывание расширений виртуальных машин
           displayName: virtual machine extensions
           href: template-tutorial-deploy-vm-extensions.md
         - name: Развертывание расширений SQL
           href: template-tutorial-deploy-sql-extensions-bacpac.md
-        - name: Защита артефактов
-          href: template-tutorial-secure-artifacts.md
+        - name: Устранение неполадок развертывания шаблона
+          href: template-tutorial-troubleshoot.md
+    - name: Диспетчер развертывания
+      items:
         - name: Использование методик безопасного развертывания
           displayName: adm
           href: deployment-manager-tutorial.md
         - name: Использование проверки работоспособности в диспетчере развертывания
           displayName: adm
           href: deployment-manager-tutorial-health-check.md
-        - name: Устранение неполадок развертывания шаблона
-          href: template-tutorial-troubleshoot.md
 - name: Примеры
   items:
     - name: Шаблоны быстрого запуска Azure
@@ -293,6 +291,8 @@
           href: template-functions-array.md
         - name: Функции сравнения
           href: template-functions-comparison.md
+        - name: Функции данных
+          href: template-functions-date.md
         - name: Функции развертывания
           href: template-functions-deployment.md
         - name: Логические функции

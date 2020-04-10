@@ -213,6 +213,8 @@
     - name: Диагностика
       items:
         - name: Руководство по устранению неполадок
+          href: service-bus-troubleshooting-guide.md
+        - name: Исключения в обмене сообщениями
           href: service-bus-messaging-exceptions.md
         - name: Исключения Resource Manager
           href: service-bus-resource-manager-exceptions.md

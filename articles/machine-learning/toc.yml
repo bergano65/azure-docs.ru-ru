@@ -15,24 +15,27 @@
 - name: Учебники
   expanded: true
   items:
-    - name: Студия и конструктор
+    - name: Студия
       items:
         - name: Конструктор (перетаскивание)
           items:
-            - name: 'Конструктор: 1. Обучение регрессионной модели'
+            - name: 1. Обучение регрессионной модели
               displayName: studio
               href: tutorial-designer-automobile-price-train-score.md
-            - name: 'Конструктор: 2. Развертывание этой модели'
+            - name: 2. Развертывание этой модели
               displayName: studio
               href: tutorial-designer-automobile-price-deploy.md
         - name: Автоматизированное машинное обучение (пользовательский интерфейс)
           items:
-            - name: Создание эксперимента автоматизированного машинного обучения
+            - name: Создание эксперимента автоматического машинного обучения
               displayName: 'automl, automated, auto ml, portal, ui'
               href: tutorial-first-experiment-automated-ml.md
-            - name: Прогнозирование спроса с помощью автоматизированного машинного обучения (данные о прокате велосипедов)
+            - name: Прогнозирование спроса (данные о прокате велосипедов)
               displayName: 'automl, automated, auto ml, portal, ui'
               href: tutorial-automated-ml-forecast.md
+        - name: Маркировка данных изображения
+          displayName: 'tag, tagging, images'
+          href: tutorial-labeling.md
     - name: Пакет SDK для Python
       items:
         - name: Создание первого эксперимента машинного обучения
@@ -78,14 +81,14 @@
     - name: Jupyter Notebook
       displayName: 'example, examples, server, jupyter, azure notebooks, python, notebook, github'
       href: samples-notebooks.md
-    - name: Открытые наборы данных Azure
-      href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
     - name: Наборы данных конструктора
       href: sample-designer-datasets.md
-    - name: Полные примеры MLOps
-      href: 'https://github.com/microsoft/MLOps'
     - name: Примеры конвейеров из конструктора
       href: samples-designer.md
+    - name: Полные примеры MLOps
+      href: 'https://github.com/microsoft/MLOps'
+    - name: Открытые наборы данных (общедоступные)
+      href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
 - name: Основные понятия
   items:
     - name: Рабочая область
@@ -115,10 +118,10 @@
       href: /azure/machine-learning/algorithm-cheat-sheet
     - name: Выбор алгоритмов
       href: /azure/machine-learning/how-to-select-algorithms
-    - name: Автоматическое машинное обучение
+    - name: Автоматическое Машинное обучение
       displayName: 'automl, auto ml'
       href: concept-automated-ml.md
-    - name: Управление устранением недочетов ML
+    - name: Лжевзаимосвязь и несбалансированные данные
       displayName: 'automl, auto ml, risks'
       href: concept-manage-ml-pitfalls.md
     - name: Вычислительная операция
@@ -351,6 +354,8 @@
       items:
         - name: Создание конвейеров ML (Python)
           href: how-to-create-your-first-pipeline.md
+        - name: Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
+          href: how-to-move-data-in-out-of-pipelines.md
         - name: Планирование конвейера (Python)
           href: how-to-schedule-pipelines.md
         - name: Активация конвейера
