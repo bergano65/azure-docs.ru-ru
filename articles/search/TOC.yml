@@ -114,12 +114,6 @@
               href: index-add-language-analyzers.md
             - name: Добавление настраиваемого анализатора
               href: index-add-custom-analyzers.md
-        - name: Опережающий ввод
-          items:
-            - name: Создание средства подбора
-              href: index-add-suggesters.md
-            - name: Добавление предложения или автозаполнение
-              href: search-autocomplete-tutorial.md
         - name: Синонимы
           items:
             - name: Добавление синонимов
@@ -230,6 +224,14 @@
           href: search-query-lucene-examples.md
         - name: Частично введенные термины и специальные символы
           href: search-query-partial-matching.md
+        - name: Поиск нечетких соответствий
+          href: search-query-fuzzy.md
+        - name: Автозавершение при поиске по мере ввода
+          items:
+            - name: Создание средства подбора
+              href: index-add-suggesters.md
+            - name: Добавление предложения или автозаполнение
+              href: search-autocomplete-tutorial.md
         - name: Подача запросов из Power Apps
           href: search-howto-powerapps.md
         - name: Справочник по синтаксису

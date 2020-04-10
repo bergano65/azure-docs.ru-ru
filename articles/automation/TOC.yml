@@ -278,10 +278,7 @@
         - name: Настройка требуемого состояния серверов и управление смещением с помощью State Configuration
           href: tutorial-configure-servers-desired-state.md
           displayName: 'DSC, compliance'
-        - name: Подключение виртуальных машин для управления
-          href: automation-dsc-onboarding.md
-          displayName: 'DSC, state configuration'
-        - name: Компиляция конфигураций DSC
+        - name: Выполнение сборки конфигураций DSC
           href: automation-dsc-compile.md
           displayName: 'state configuration, composite resources, configurationData'
         - name: Исправление несоответствующих серверов DSC
@@ -289,7 +286,7 @@
           displayName: 'state configuration, DSC, remediate'
         - name: Создание конфигураций DSC с помощью составных ресурсов
           href: compose-configurationwithcompositeresources.md
-        - name: Непрерывное развертывание с помощью Chocolatey
+        - name: Обеспечение непрерывного развертывания с помощью Chocolatey
           href: automation-dsc-cd-chocolatey.md
           displayName: 'dsc, state configuration'
         - name: Пересылка данных отчетов State Configuration в журналы Azure Monitor
@@ -297,12 +294,12 @@
           displayName: DSC
     - name: Диагностика
       items:
-        - name: Переход
+        - name: Устранение неполадок подключения
           href: troubleshoot/onboarding.md
           displayName: troubleshoot
         - name: Устранение неполадок со State Configuration (DSC)
           href: troubleshoot/desired-state-configuration.md
-          displayName: 'Desired State Configuration, troubleshoot'
+          displayName: 'state configuration, DSC, troubleshoot'
     - name: Справочник
       items:
         - name: Решения сообщества
