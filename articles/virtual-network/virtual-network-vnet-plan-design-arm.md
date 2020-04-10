@@ -4,22 +4,20 @@ description: Узнайте, как планировать виртуальны�
 services: virtual-network
 documentationcenter: na
 author: KumudD
-manager: twooley
-editor: ''
-ms.assetid: 3a4a9aea-7608-4d2e-bb3c-40de2e537200
+manager: mtillman
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/16/2018
+ms.date: 04/08/2020
 ms.author: kumud
-ms.openlocfilehash: 6e066d28afc4b0959b15284378cde682fbc05615
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 95dd7be118e869aed02bb55918ab0cefa0d05d03
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77190462"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998874"
 ---
 # <a name="plan-virtual-networks"></a>Планирование виртуальных сетей
 
@@ -115,6 +113,6 @@ Azure использует [управление доступом на осно�
 
 Политики применяются к следующей иерархии: группе управления, подписке и группе ресурсов. Узнайте больше о [политике Azure](../governance/policy/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или разверните некоторые примеры [шаблона политики](policy-samples.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения обо всех задачах, параметрах и вариантах для [виртуальной сети](manage-virtual-network.md), [подсети и конечной точкой службы](virtual-network-manage-subnet.md), [сетевого интерфейса](virtual-network-network-interface.md), [пиринга](virtual-network-manage-peering.md), [группы безопасности сети и приложений](manage-network-security-group.md) или [таблицы маршрутов](manage-route-table.md).

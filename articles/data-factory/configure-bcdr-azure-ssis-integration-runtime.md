@@ -11,13 +11,13 @@ manager: mflasko
 ms.reviewer: douglasl
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/14/2018
-ms.openlocfilehash: 92f7d25a9c19409b220b6a71fba87da91e51a415
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/09/2020
+ms.openlocfilehash: 532258cecd823e10057ddc3536cd24071e444581
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74928496"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80992068"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-with-azure-sql-database-geo-replication-and-failover"></a>Настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure и отработка отказа
 
@@ -112,9 +112,11 @@ ms.locfileid: "74928496"
 
 ### <a name="steps"></a>Шаги
 
-Выполните следующие шаги, чтобы остановить среду выполнения интеграции Azure-SSIS, переключить ее в новый регион и запустить снова.
+Выполните следующие действия, чтобы переместить ИК Azure-SSIS в новый регион.
+> [!NOTE]
+> Шаг 3 (создание ИК) должно быть сделано через PowerShell. Портал Azure сообщит об ошибке, в котором будет указано, что SSISDB уже существует.
 
-1. Выполните процедуру хранения, чтобы сделать ** \<\> ** SSISDB прикрепленным к new_data_factory_name или ** \<new_integration_runtime_name.\>**
+1. Выполните процедуру хранения для обновления метаданных в ** \<\> ** SSISDB для приема соединений с new_data_factory_name и ** \<new_integration_runtime_name.\>**
    
   ```SQL
     EXEC [catalog].[failover_integration_runtime] @data_factory_name='<new_data_factory_name>', @integration_runtime_name='<new_integration_runtime_name>'
@@ -153,7 +155,7 @@ ms.locfileid: "74928496"
 
 4. Запустите среду выполнения интеграции снова.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь со следующими параметрами конфигурации для среды выполнения интеграции Azure-SSIS:
 

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
-ms.openlocfilehash: deb5c87073a8963fc052d90f0f7c494cc0644f51
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: abb323bbdb2d49f46fea83e1c881f1ef6a4efff7
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74927564"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80990809"
 ---
 # <a name="copy-data-from-oracle-eloqua-using-azure-data-factory-preview"></a>Копирование данных из Oracle Eloqua с помощью фабрики данных Azure (предварительная версия)
 
@@ -53,8 +53,8 @@ ms.locfileid: "74927564"
 | username | Имя сайта и имя пользователя учетной записи Eloqua в формате `SiteName\Username`, например `Eloqua\Alice`.  | Да |
 | password | Пароль, соответствующий имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
-| useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
+| useHostVerification | Уточняется, следует ли требовать, чтобы имя хоста в сертификате сервера соответствовало названию сервера при подключении к TLS. Значение по умолчанию — true.  | нет |
+| usePeerVerification | Уточняется, следует ли проверять личность сервера при подключении к TLS. Значение по умолчанию — true.  | нет |
 
 **Примере:**
 
@@ -153,5 +153,5 @@ ms.locfileid: "74927564"
 Чтобы узнать подробности о свойствах, проверьте [активность поиска.](control-flow-lookup-activity.md)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. список хранилищ данных, [поддерживаемых фабрикой данных Azure](copy-activity-overview.md#supported-data-stores-and-formats).

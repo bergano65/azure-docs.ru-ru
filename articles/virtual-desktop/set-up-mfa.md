@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0b3c47e1bbe5efdc5ee303305e52a785a49d0c00
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: b470f9278bdca94d1fe98c64b11b070fb36cb075
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80586877"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998475"
 ---
-# <a name="set-up-azure-multi-factor-authentication"></a>Настройка многофакторной аутентификации Azure
+# <a name="set-up-azure-multi-factor-authentication"></a>Настройка Многофакторной идентификации Azure
 
 Клиент Windows для Windows Virtual Desktop является отличным вариантом для интеграции Windows Virtual Desktop с локальной машиной. Однако при настройке учетной записи Windows Virtual Desktop в клиент Windows необходимо принять определенные меры, чтобы обезопасить себя и своих пользователей.
 
@@ -32,7 +32,7 @@ ms.locfileid: "80586877"
   - Активный каталог Azure Premium P1 или P2
   - Корпоративная мобильность - Безопасность E3 или E5
 - Группа Active Directory Azure с пользователями, назначенными в качестве членов группы.
-- Включите Azure MFA для всех пользователей. Для получения дополнительной информации о том, как это сделать, см. [Как потребовать двухэтапной проверки для пользователя](/active-directory/authentication/howto-mfa-userstates).
+- Включите Azure MFA для всех пользователей. Для получения дополнительной информации о том, как это сделать, см. [Как потребовать двухэтапной проверки для пользователя](../active-directory/authentication/howto-mfa-userstates.md#view-the-status-for-a-user).
 
 >[!NOTE]
 >Следующие настройки также относится к [Windows Virtual Desktop веб-клиента.](https://rdweb.wvd.microsoft.com/webclient/index.html)

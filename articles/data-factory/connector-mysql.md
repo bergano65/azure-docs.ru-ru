@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/19/2020
 ms.author: jingwang
-ms.openlocfilehash: 0bfae10d3b3b491c3662385055b23cc585a6e24d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dcd8e400b978b2139de7a9f53b87cf6ec04e7484
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77471165"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80992000"
 ---
 # <a name="copy-data-from-mysql-using-azure-data-factory"></a>Копирование данных из MySQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -65,7 +65,7 @@ ms.locfileid: "77471165"
 
 | Свойство | Описание | Параметры | Обязательно |
 |:--- |:--- |:--- |:--- |
-| SSLMode | Этот параметр указывает, использует ли драйвер SSL-шифрование и проверку при подключении к MySQL. Например.`SSLMode=<0/1/2/3/4>`| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | нет |
+| SSLMode | В этом варианте указывается, использует ли драйвер шифрование и проверку TLS при подключении к MyS'L. Например.`SSLMode=<0/1/2/3/4>`| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | нет |
 | useSystemTrustStore | Этот параметр указывает, следует ли использовать сертификат ЦС из доверенного системного хранилища или из указанного PEM-файла. Пример: `UseSystemTrustStore=<0/1>;`| Enabled (1) / Disabled (0) **(по умолчанию)** | нет |
 
 **Примере:**
@@ -268,5 +268,5 @@ ms.locfileid: "77471165"
 
 Чтобы узнать подробности о свойствах, проверьте [активность поиска.](control-flow-lookup-activity.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

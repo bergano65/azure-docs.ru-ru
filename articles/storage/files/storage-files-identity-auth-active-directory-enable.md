@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: rogarana
-ms.openlocfilehash: 081ee364b3ddee5d1d1be75613309a4ae427066f
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: ae575eebf700f5495ea20d2bd3732ca21ad32315
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80666841"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011431"
 ---
 # <a name="enable-active-directory-authentication-over-smb-for-azure-file-shares"></a>Включить активную проверку подлинности каталога по сравнению с SMB для файлов Azure
 
@@ -36,7 +36,9 @@ ms.locfileid: "80666841"
 Идентификаторы DD, используемые для доступа к файловым долям Azure, должны быть синхронизированы с Azure AD для обеспечения соблюдения разрешений файлов уровня общего доступа через стандартную [ролевую модель управления доступом (RBAC).](../../role-based-access-control/overview.md) [DACLs в стиле Windows](https://docs.microsoft.com/previous-versions/technet-magazine/cc161041(v=msdn.10)?redirectedfrom=MSDN) на файлах/каталогах, переносимых с существующих файловых серверов, будут сохранены и приведены в исполнение. Эта функция обеспечивает бесшовную интеграцию с инфраструктурой домена AD предприятия. При замене файловых серверов на преме на файлы Azure существующие пользователи могут получать доступ к файлам Azure от своих текущих клиентов с одним опытом вхождения без каких-либо изменений в учетных данных, накоторых они используются.  
 
 > [!NOTE]
-> Чтобы помочь настроить аутентификацию Azure Files AD для общего использования, мы опубликовали [два видео](https://docs.microsoft.com/azure/storage/files/storage-files-introduction#videos) с шаг за шагом руководством по замене файловых серверов на лазурные файлы и использованию файлов Azure в качестве контейнера профиля для Windows Virtual Desktop.
+> Чтобы помочь настроить аутентификацию Azure Files AD для общего использования, мы опубликовали [два видео](https://docs.microsoft.com/azure/storage/files/storage-files-introduction#videos) с пошаговым руководством по 
+> * Замена файловых серверов на файлы Azure (включая настройку на частной ссылке для файлов и аутентификацию AD)
+> * Использование файлов Azure в качестве контейнера профиля для виртуального рабочего стола Windows (включая настройку аутентификации AD и конфигурацию FsLogix)
  
 ## <a name="prerequisites"></a>Предварительные требования 
 
@@ -111,8 +113,7 @@ Cmdlet `Join-AzStorageAccountForAuth` выполнит эквивалент ав
 ### <a name="12-domain-join-your-storage-account"></a>1.2 Домен присоединиться к вашей учетной записи хранения
 Не забудьте заменить значения заполнителя на ваши собственные в параметрах ниже, прежде чем выполнять его в PowerShell.
 > [!IMPORTANT]
-> Мы рекомендуем вам предоставить организационную группу AD (OU), которая НЕ обеспечивает истечение срока действия пароля. Если вы используете OU с настройкой пароля, необходимо обновить пароль до достижения максимального возраста пароля. Неспособность обновить пароль учетной записи AD приведет к сбоям в проверке подлинности при доступе к файлам Azure. Чтобы узнать, как обновить пароль, [см.](#5-update-ad-account-password)
-
+> Домен присоединиться cmdlet ниже создаст учетную запись AD для представления учетной записи хранения (файл доля) в AD. Вы можете зарегистрироваться в качестве учетной записи компьютера или учетной записи логона службы. Для учетных записей компьютеров возраст истечения срока действия пароля по умолчанию установлен в AD в 30 дней. Аналогичным образом, учетная запись входа в систему службы может иметь возраст истечения срока действия пароля по умолчанию в домене AD или Организационной группе (OU). Мы настоятельно рекомендуем вам проверить, что возраст истечения срока действия пароля настроен в вашей среде AD и планируем [обновить пароль учетной записи AD](#5-update-ad-account-password) учетной записи ниже до максимального возраста пароля. Неспособность обновить пароль учетной записи AD приведет к сбоям в проверке подлинности при доступе к файлам Azure. Можно рассмотреть возможность [создания нового организационного подразделения AD (OU) в AD](https://docs.microsoft.com/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps) и отключить политику истечения срока действия паролей в [учетных записях компьютеров](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852252(v=ws.11)?redirectedfrom=MSDN) или учетных записей логинов службы соответственно. 
 
 ```PowerShell
 #Change the execution policy to unblock importing AzFilesHybrid.psm1 module
@@ -138,6 +139,11 @@ Join-AzStorageAccountForAuth `
         -Name "<storage-account-name-here>" `
         -DomainAccountType "ComputerAccount" `
         -OrganizationalUnitName "<ou-name-here>" or -OrganizationalUnitDistinguishedName "<ou-distinguishedname-here>"
+
+#If you don't provide the OU name as an input parameter, the AD identity that represents the storage account will be created under the root directory.
+
+#
+
 ```
 
 В следующем описании суммируются все действия, выполняемые при выполнении `Join-AzStorageAccountForAuth` cmdlet. Вы можете выполнять эти действия вручную, если вы предпочитаете не использовать команду:

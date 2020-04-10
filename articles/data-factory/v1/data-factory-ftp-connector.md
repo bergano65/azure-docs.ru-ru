@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 55c8bf2210eb0990a91aeff1f90e4af4db2c22ab
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eeeb122d240d8c3eae4ebe1650f67cf0e4b9dac6
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79281409"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80992051"
 ---
 # <a name="move-data-from-an-ftp-server-by-using-azure-data-factory"></a>Перемещение данных с FTP-сервера с использованием фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -72,8 +72,8 @@ ms.locfileid: "79281409"
 | encryptedCredential |Укажите зашифрованные учетные данные для доступа к FTP-серверу. |нет |&nbsp; |
 | gatewayName |Укажите имя шлюза управления данными для подключения к локальному FTP-серверу. |нет |&nbsp; |
 | порт |Укажите порт, прослушиваемый FTP-сервером. |нет |21 |
-| enableSsl |Укажите, какой канал следует использовать (FTP через SSL или TLS). |нет |Да |
-| enableServerCertificateValidation |Укажите, следует ли включать проверку SSL-сертификата на сервере при использовании канала FTP через SSL или TLS. |нет |Да |
+| enableSsl |Укажите, какой канал следует использовать (FTP через SSL или TLS). |нет |true |
+| enableServerCertificateValidation |Укажите, следует ли включить проверку сертификата TLS/SSL при использовании FTP по каналу SSL/TLS. |нет |true |
 
 >[!NOTE]
 >Соединитель FTP поддерживает доступ к FTP-серверу без шифрования или с явным шифрованием SSL/TLS. Он не поддерживает неявное шифрование SSL/TLS.
@@ -388,7 +388,7 @@ ms.locfileid: "79281409"
 > [!NOTE]
 > Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. следующие статьи:
 
 * Сведения о ключевых факторах, влияющих на производительность перемещения данных (действие копирования) в фабрике данных, и различных способах оптимизации этого процесса см. в [руководстве по настройке производительности действия копирования](data-factory-copy-activity-performance.md).

@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/04/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3a0a5d39a7cb2162186291ea534a623ef45c40d4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7fea0f74a90bc7b786a9b302d6282f9fb70e5412
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78675632"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991489"
 ---
 # <a name="operating-system-upgrade"></a>Обновление операционной системы
 В этом документе описывается обновление операционной системы в HANA (крупные экземпляры).
@@ -62,6 +62,7 @@ ms.locfileid: "78675632"
   |---------------|-------------------------|--------------------|--------------|--------------|
   |   Suse        |  SLES 12 SP2            |   3.1.3ч           |  2.3.0.40    |   1.6.0.34   |
   |   Suse        |  SLES 12 с пакетом обновления 3 (SP3)            |   3.1.3ч           |  2.3.0.44    |   1.6.0.36   |
+  |   Suse        |  SLES 12 SP4            |   3.2.3b           |  2.3.0.47    |   2.0.0.54   |
   |   Red Hat     |  RHEL 7.2;               |   3.1.3ч           |  2.3.0.39    |   1.6.0.34   |
  
 
@@ -129,6 +130,6 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 * Система перезагрузки.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Ознакомьтесь с [резервным копированием и восстановлением](hana-overview-high-availability-disaster-recovery.md) операционной системы для номеров SKU класса I.
 - Обратите [резервное копирование ОС для II типа SkUs марок Revision 3](os-backup-type-ii-skus.md) для класса SKU типа II.

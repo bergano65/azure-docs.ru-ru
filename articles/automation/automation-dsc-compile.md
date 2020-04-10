@@ -1,18 +1,18 @@
 ---
-title: Компилирование конфигураций в службе "Настройка состояния службы автоматизации Azure"
+title: Составление конфигураций DSC в конфигурации состояния автоматизации Azure
 description: В этой статье описывается, как компилировать конфигурации службы настройки требуемого состояния (DSC) для службы автоматизации Azure.
 services: automation
 ms.subservice: dsc
 ms.date: 04/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: b366777cce4dd4212a2e3ec0cdcd180e0d7164f4
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 6ce55b83f5547534e44d689adccdd952abc025d5
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80757178"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010959"
 ---
-# <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
+# <a name="compile-dsc-configurations-in-azure-automation-state-configuration"></a>Составление конфигураций DSC в конфигурации состояния автоматизации Azure
 
 Конфигурации желаемой конфигурации состояния (DSC) можно компилировать в конфигурации состояния автоматизации Azure следующим образом:
 
@@ -276,7 +276,7 @@ Start-AzAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -Automa
 Import-AzAutomationDscNodeConfiguration -AutomationAccountName 'MyAutomationAccount' -ResourceGroupName 'MyResourceGroup' -ConfigurationName 'MyNodeConfiguration' -Path 'C:\MyConfigurations\TestVM1.mof'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Для начала см. [Начало работы с конфигурацией состояния автоматизации Azure.](automation-dsc-getting-started.md)
 - Чтобы узнать о компиляции конфигураций DSC, чтобы можно было назначить их целевым узлам, см. [Конфигурации компиляции в конфигурации состояния azure Automation.](automation-dsc-compile.md)

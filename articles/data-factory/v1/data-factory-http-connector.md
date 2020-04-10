@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: e668f44bbc3d2e381edeb80c568a41355584a4ee
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 36592151385a08d75b9b34e85bfa9d62342fc8cd
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79260427"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991575"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Перемещение данных из источника HTTP с помощью фабрики данных Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "79260427"
 | type | Свойству **Тип** необходимо задать значение **Http**. | Да |
 | url | Базовый URL-адрес веб-сервера. | Да |
 | authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic **, **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой статьи. | Да |
-| enableServerCertificateValidation | Указывает, следует ли включать проверку SSL-сертификата на сервере, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверенный сертификат, установите значение **false**. | нет<br /> (значение по умолчанию **true**) |
+| enableServerCertificateValidation | Уточняется, следует ли включить проверку сертификата TLS/SSL сервера, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверенный сертификат, установите значение **false**. | нет<br /> (значение по умолчанию **true**) |
 | gatewayName | Имя экземпляра шлюза управления данными для подключения к локальному источнику HTTP. | Да, если вы копируете данные из локального источника HTTP |
 | encryptedCredential | Зашифрованные учетные данные для доступа к конечной точке HTTP. Значение создается автоматически при настройке сведений для проверки подлинности в мастере копирования или в диалоговом окне **ClickOnce**. | нет<br /> (применимо, только когда копирование данных выполняется с локального HTTP-сервера) |
 

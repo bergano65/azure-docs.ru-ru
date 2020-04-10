@@ -3,13 +3,13 @@ title: Используйте политики безопасности pod в �
 description: Узнайте, как контролировать прием стручков с помощью PodSecurityPolicy в azure Kubernetes Service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 04/17/2019
-ms.openlocfilehash: 74177136a7a61186ab1d273b57dbfce550a18ecf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/08/2020
+ms.openlocfilehash: 9e3a17e4775150247ef7924dffec68cc86a0bcac
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77914540"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998357"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Предварительный просмотр - Безопасность кластера с помощью политик безопасности стручка в службе Azure Kubernetes (AKS)
 
@@ -103,17 +103,17 @@ NAME         PRIV    CAPS   SELINUX    RUNASUSER          FSGROUP     SUPGROUP  
 privileged   true    *      RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *     configMap,emptyDir,projected,secret,downwardAPI,persistentVolumeClaim
 ```
 
-*Привилегированные* политики безопасности стручка применяются к любому подлинному пользователю в кластере AKS. Это назначение контролируется ClusterRoles и ClusterRoleBindings. Используйте [команду kubectl получить clusterrolebindings][kubectl-get] команды и поиск *по умолчанию:privileged:* связывание:
+*Привилегированные* политики безопасности стручка применяются к любому подлинному пользователю в кластере AKS. Это назначение контролируется ClusterRoles и ClusterRoleBindings. Используйте [команду kubectl получить команду rolebindings][kubectl-get] и поиск *по умолчанию:privileged:* связывание в пространстве имен *kube-системы:*
 
 ```console
-kubectl get clusterrolebindings default:privileged -o yaml
+kubectl get rolebindings default:privileged -n kube-system -o yaml
 ```
 
 Как показано на следующем сжатом выходе, *psp:restricted* ClusterRole назначается любой *системе:аутентифицированных* пользователей. Эта способность обеспечивает базовый уровень ограничений без определения собственных политик.
 
 ```
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
   [...]
   name: default:privileged
@@ -125,7 +125,7 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
-  name: system:authenticated
+  name: system:masters
 ```
 
 Важно понять, как эти политики по умолчанию взаимодействуют с запросами пользователей для планирования стручков, прежде чем вы начнете создавать свои собственные политики безопасности стручка. В следующих нескольких разделах давайте запланивне несколько стручков, чтобы увидеть эти политики по умолчанию в действии.
@@ -195,7 +195,7 @@ kubectl-nonadminuser apply -f nginx-privileged.yaml
 ```console
 $ kubectl-nonadminuser apply -f nginx-privileged.yaml
 
-Error from server (Forbidden): error when creating "nginx-privileged.yaml": pods "nginx-privileged" is forbidden: unable to validate against any pod security policy: [spec.containers[0].securityContext.privileged: Invalid value: true: Privileged containers are not allowed]
+Error from server (Forbidden): error when creating "nginx-privileged.yaml": pods "nginx-privileged" is forbidden: unable to validate against any pod security policy: []
 ```
 
 Стручок не достигает стадии планирования, поэтому нет ресурсов для удаления, прежде чем двигаться дальше.
@@ -223,44 +223,15 @@ spec:
 kubectl-nonadminuser apply -f nginx-unprivileged.yaml
 ```
 
-Планировщик Kubernetes принимает запрос на стручок. Однако, если вы посмотрите на `kubectl get pods`состояние стручка с помощью, есть ошибка:
+Стручок не запланирован, как показано на следующем выходе примера:
 
 ```console
-$ kubectl-nonadminuser get pods
+$ kubectl-nonadminuser apply -f nginx-unprivileged.yaml
 
-NAME                 READY   STATUS                       RESTARTS   AGE
-nginx-unprivileged   0/1     CreateContainerConfigError   0          26s
+Error from server (Forbidden): error when creating "nginx-unprivileged.yaml": pods "nginx-unprivileged" is forbidden: unable to validate against any pod security policy: []
 ```
 
-Используйте [команду kubectl, описывающий команду стручка,][kubectl-describe] чтобы посмотреть на события для стручка. Следующий конденсированный пример показывает, что контейнер и изображение требуют корневых разрешений, даже если мы не запрашивали их:
-
-```console
-$ kubectl-nonadminuser describe pod nginx-unprivileged
-
-Name:               nginx-unprivileged
-Namespace:          psp-aks
-Priority:           0
-PriorityClassName:  <none>
-Node:               aks-agentpool-34777077-0/10.240.0.4
-Start Time:         Thu, 28 Mar 2019 22:05:04 +0000
-[...]
-Events:
-  Type     Reason     Age                     From                               Message
-  ----     ------     ----                    ----                               -------
-  Normal   Scheduled  7m14s                   default-scheduler                  Successfully assigned psp-aks/nginx-unprivileged to aks-agentpool-34777077-0
-  Warning  Failed     5m2s (x12 over 7m13s)   kubelet, aks-agentpool-34777077-0  Error: container has runAsNonRoot and image will run as root
-  Normal   Pulled     2m10s (x25 over 7m13s)  kubelet, aks-agentpool-34777077-0  Container image "nginx:1.14.2" already present on machine
-```
-
-Несмотря на то, что мы не запрашивали привилегированный доступ, изображение контейнера для NGINX должно создать привязку для порта *80.* Для связывания портов *1024* и ниже требуется *корневой* пользователь. Когда стручок пытается запуститься, политика безопасности *ограниченного* стручка отклоняет этот запрос.
-
-Этот пример показывает, что политики безопасности стручка по умолчанию, созданные AKS, действуют и ограничивают действия, которые пользователь может выполнять. Важно понимать поведение этих политик по умолчанию, так как вы не можете ожидать, что основная стручка NGINX будет отклонена.
-
-Прежде чем перейти к следующему шагу, удалите этот тестовый модуль, используя команду [удаления kubectl:][kubectl-delete]
-
-```console
-kubectl-nonadminuser delete -f nginx-unprivileged.yaml
-```
+Стручок не достигает стадии планирования, поэтому нет ресурсов для удаления, прежде чем двигаться дальше.
 
 ## <a name="test-creation-of-a-pod-with-a-specific-user-context"></a>Тест создания стручка с определенным контекстом пользователя
 
@@ -287,61 +258,15 @@ spec:
 kubectl-nonadminuser apply -f nginx-unprivileged-nonroot.yaml
 ```
 
-Планировщик Kubernetes принимает запрос на стручок. Однако, если вы посмотрите на `kubectl get pods`состояние стручка с помощью, есть другая ошибка, чем предыдущий пример:
+Стручок не запланирован, как показано на следующем выходе примера:
 
 ```console
-$ kubectl-nonadminuser get pods
+$ kubectl-nonadminuser apply -f nginx-unprivileged-nonroot.yaml
 
-NAME                         READY   STATUS              RESTARTS   AGE
-nginx-unprivileged-nonroot   0/1     CrashLoopBackOff    1          3s
+Error from server (Forbidden): error when creating "nginx-unprivileged-nonroot.yaml": pods "nginx-unprivileged-nonroot" is forbidden: unable to validate against any pod security policy: []
 ```
 
-Используйте [команду kubectl, описывающий команду стручка,][kubectl-describe] чтобы посмотреть на события для стручка. Следующий сжатый пример показывает события стручка:
-
-```console
-$ kubectl-nonadminuser describe pods nginx-unprivileged
-
-Name:               nginx-unprivileged
-Namespace:          psp-aks
-Priority:           0
-PriorityClassName:  <none>
-Node:               aks-agentpool-34777077-0/10.240.0.4
-Start Time:         Thu, 28 Mar 2019 22:05:04 +0000
-[...]
-Events:
-  Type     Reason     Age                   From                               Message
-  ----     ------     ----                  ----                               -------
-  Normal   Scheduled  2m14s                 default-scheduler                  Successfully assigned psp-aks/nginx-unprivileged-nonroot to aks-agentpool-34777077-0
-  Normal   Pulled     118s (x3 over 2m13s)  kubelet, aks-agentpool-34777077-0  Container image "nginx:1.14.2" already present on machine
-  Normal   Created    118s (x3 over 2m13s)  kubelet, aks-agentpool-34777077-0  Created container
-  Normal   Started    118s (x3 over 2m12s)  kubelet, aks-agentpool-34777077-0  Started container
-  Warning  BackOff    105s (x5 over 2m11s)  kubelet, aks-agentpool-34777077-0  Back-off restarting failed container
-```
-
-События показывают, что контейнер был создан и запущен. Там нет ничего сразу очевидно, почему стручок находится в неудавом состоянии. Давайте посмотрим на модули стручков с помощью команды [журналов kubectl:][kubectl-logs]
-
-```console
-kubectl-nonadminuser logs nginx-unprivileged-nonroot --previous
-```
-
-Следующий вывод журнала приводит к тому, что в самой конфигурации NGINX при попытке запуска службы возникает ошибка разрешений. Эта ошибка снова вызвана необходимостью привязать к порту 80. Хотя спецификация стручка определила обычную учетную запись пользователя, этой учетной записи пользователя недостаточно на уровне ОС для запуска и привязки к ограниченному порту.
-
-```console
-$ kubectl-nonadminuser logs nginx-unprivileged-nonroot --previous
-
-2019/03/28 22:38:29 [warn] 1#1: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2
-nginx: [warn] the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2
-2019/03/28 22:38:29 [emerg] 1#1: mkdir() "/var/cache/nginx/client_temp" failed (13: Permission denied)
-nginx: [emerg] mkdir() "/var/cache/nginx/client_temp" failed (13: Permission denied)
-```
-
-Опять же, важно понимать поведение политикбезопасности безопасности по умолчанию. Эта ошибка была немного сложнее отследить, и опять же, вы не можете ожидать, что основные NGINX стручка будет отказано.
-
-Прежде чем перейти к следующему шагу, удалите этот тестовый модуль, используя команду [удаления kubectl:][kubectl-delete]
-
-```console
-kubectl-nonadminuser delete -f nginx-unprivileged-nonroot.yaml
-```
+Стручок не достигает стадии планирования, поэтому нет ресурсов для удаления, прежде чем двигаться дальше.
 
 ## <a name="create-a-custom-pod-security-policy"></a>Создание пользовательской политики безопасности стручка
 
@@ -383,7 +308,7 @@ $ kubectl get psp
 
 NAME                  PRIV    CAPS   SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
 privileged            true    *      RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
-psp-deny-privileged   false          RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *          configMap,emptyDir,projected,secret,downwardAPI,persistentVolumeClaim
+psp-deny-privileged   false          RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *          
 ```
 
 ## <a name="allow-user-account-to-use-the-custom-pod-security-policy"></a>Разрешить учетной записи пользователя использовать пользовательскую политику безопасности стручка
@@ -495,7 +420,7 @@ kubectl delete -f psp-deny-privileged.yaml
 kubectl delete namespace psp-aks
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как создать политику безопасности стручка для предотвращения использования привилегированном доступе. Существует множество функций, которые может выполнять политика, например тип громкости или пользователь RunAs. Для получения дополнительной информации о [Kubernetes pod security policy reference docs][kubernetes-policy-reference]доступных опциях см.
 

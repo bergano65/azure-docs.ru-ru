@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/01/2020
-ms.openlocfilehash: df80668f5e4a31d6247e9e9806e3de0667fd9036
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 451e83fa6ab547536a4cfd85304930e749a8247f
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656009"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998397"
 ---
 # <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Как работать с результатами поиска в Azure Cognitive Search
 
@@ -94,7 +94,11 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2019-05-06
 
 Хит-подчеркнув относится к форматированию текста (например, смелые или желтые освещаются) применяется к сопоставлению термина в результате, что делает его легко обнаружить матч. Инструкции по подсветке хита предоставляются в [запросе запроса.](https://docs.microsoft.com/rest/api/searchservice/search-documents) Поисковая система прикрепивает соответствующий `highlightPreTag` термин `highlightPostTag`в теги, и ваш код обрабатывает ответ (например, применяя жирный шрифт).
 
-Форматирование применяется к запросам всего срока. В следующем примере термины "песчаный", "песок", "пляж", "пляж", найденные в поле описания, помечены для выделения. Запросы на частичных терминах, таких как нечеткий поиск или поиск подстановочных знаков, которые приводят к расширению запроса в движке, не могут использовать выделение хита.
+Форматирование применяется к запросам всего срока. В следующем примере термины "песчаный", "песок", "пляж", "пляж", найденные в поле описания, помечены для выделения. Запросы, которые вызывают расширение запроса в движке, такие как нечеткий и поиск подстановочных знаков, имеют ограниченную поддержку выделения хита.
+
+```http
+GET /indexes/hotels-sample-index/docs/search=sandy beaches&highlight=Description?api-version=2019-05-06 
+```
 
 ```http
 POST /indexes/hotels-sample-index/docs/search?api-version=2019-05-06 
@@ -109,7 +113,7 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2019-05-06
 >
 > Когда вы пишете клиентский код, который реализует выделение хита, будьте в курсе этого изменения. Обратите внимание, что это не повлияет на вас, если вы не создадите совершенно новый поисковый сервис.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы быстро создать страницу поиска для клиента, рассмотрим следующие варианты:
 

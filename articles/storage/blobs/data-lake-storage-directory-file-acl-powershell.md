@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/02/2020
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 58548c5cb1aa6aba6dda09d5d420b36bb8154726
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 9b0e0b39b7ac7d7834c9cdcbd79ba45b024c823a
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656399"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80992017"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Используйте PowerShell для управления каталогами, файлами и ACL в Azure Data Lake Storage 2 (предварительный просмотр)
 
@@ -151,7 +151,7 @@ Move-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname
 > [!NOTE]
 > Используйте `-Force` параметр, если вы хотите перезаписать без подсказок.
 
-Этот пример перемещает каталог `my-directory` с именем `my-directory-2` в `my-subdirectory`подкаталог имени . Этот пример также применяет umask к субдиректору.
+Этот пример перемещает каталог `my-directory` с именем `my-directory-2` в `my-subdirectory`подкаталог имени . 
 
 ```powershell
 $filesystemName = "my-file-system"

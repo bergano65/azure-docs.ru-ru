@@ -1,21 +1,21 @@
 ---
 title: Обзор автомасштабирования с помощью масштабируемых наборов виртуальных машин Azure
 description: Узнайте о различных способах автомасштабирования масштабируемого набора виртуальных машин Azure на основе производительности или по фиксированному расписанию.
-author: cynthn
+author: ju-shim
 tags: azure-resource-manager
 ms.assetid: d29a3385-179e-4331-a315-daa7ea5701df
 ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: cynthn
+ms.author: jushiman
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: eb96be187502afcccfd3fb2c88f709facfbc3b59
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8b3af40de107fd9273ec50425c58afc9772ea426
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76278144"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010347"
 ---
 # <a name="overview-of-autoscale-with-azure-virtual-machine-scale-sets"></a>Обзор автомасштабирования с помощью масштабируемых наборов виртуальных машин Azure
 Масштабируемый набор виртуальных машин Azure может автоматически увеличивать или уменьшать количество экземпляров виртуальных машин для выполнения вашего приложения. Подобная автоматическая гибкая реакция на событие снижает расходы на управление, связанные с мониторингом и оптимизацией производительности приложения. Вы создаете правила, определяющие допустимую производительность для работы клиента. При достижении определенных порогов задействуются правила автомасштабирования для настройки емкости масштабируемого набора. Можно также запланировать события, чтобы автоматически увеличить или уменьшить емкость масштабируемого набора фиксированное число раз. Эта статья содержит общие сведения о доступных метриках производительности и возможностях автомасштабирования.
@@ -35,8 +35,8 @@ ms.locfileid: "76278144"
 Правила автомасштабирования, использующие метрики на основе узла, можно создавать с помощью одного из следующих средств:
 
 - [Портал Azure](virtual-machine-scale-sets-autoscale-portal.md)
-- [Лазурная силаШелл](tutorial-autoscale-powershell.md)
-- [Лазурный CLI](tutorial-autoscale-cli.md)
+- [Azure PowerShell](tutorial-autoscale-powershell.md)
+- [Azure CLI](tutorial-autoscale-cli.md)
 - [шаблон Azure.](tutorial-autoscale-template.md)
 
 Чтобы создать правила автомасштабирования, которые используют более подробные метрики производительности, вы можете [установить и настроить расширение системы диагностики Azure](#in-guest-vm-metrics-with-the-azure-diagnostics-extension) на экземплярах виртуальных машин или [настроить приложение для использования Application Insights](#application-level-metrics-with-app-insights).
@@ -129,11 +129,11 @@ ms.locfileid: "76278144"
 - В случае маркетингового события, рекламной акции или праздничной распродажи можно заранее автоматически масштабировать количество экземпляров виртуальных машин в соответствии с прогнозируемым спросом. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Правила автомасштабирования, использующие метрики на основе узла, можно создавать с помощью одного из следующих инструментов:
 
-- [Лазурная силаШелл](tutorial-autoscale-powershell.md)
-- [Лазурный CLI](tutorial-autoscale-cli.md)
+- [Azure PowerShell](tutorial-autoscale-powershell.md)
+- [Azure CLI](tutorial-autoscale-cli.md)
 - [шаблон Azure.](tutorial-autoscale-template.md)
 
 В этом обзор описывается, как использовать правила автомасштабирования для горизонтального масштабирования, а также как увеличивать или уменьшать *число* экземпляров виртуальных машин в масштабируемом наборе. Чтобы увеличить или уменьшить *размер* экземпляров виртуальных машин, вы также можете выполнить вертикальное масштабирование. Для получения дополнительной информации [см.](virtual-machine-scale-sets-vertical-scale-reprovision.md)

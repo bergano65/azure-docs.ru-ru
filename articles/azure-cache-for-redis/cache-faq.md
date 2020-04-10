@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 04/29/2019
-ms.openlocfilehash: ddf7999153e9d9722e627d148b116750fe3aaecf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6ba292850c057284fff265c8a77386d21374942a
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79278718"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010228"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Redis для Azure
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis.
@@ -54,7 +54,7 @@ ms.locfileid: "79278718"
 * [Что такое базы данных Redis?](#what-are-redis-databases)
 
 ## <a name="security-faqs"></a>Часто задаваемые вопросы о безопасности
-* [Когда следует включать порт, не являющийся портом SSL, для подключения к Redis?](#when-should-i-enable-the-non-ssl-port-for-connecting-to-redis)
+* [Когда следует включить порт, не относящийся к TLS/SSL, для подключения к Redis?](#when-should-i-enable-the-non-tlsssl-port-for-connecting-to-redis)
 
 ## <a name="production-faqs"></a>Часто задаваемые вопросы о рабочей среде
 * [Какие рекомендации следует учитывать для рабочей среды?](#what-are-some-production-best-practices)
@@ -112,7 +112,7 @@ ms.locfileid: "79278718"
 <a name="cache-performance"></a>
 
 ### <a name="azure-cache-for-redis-performance"></a>Производительность кэша Azure для Redis
-В следующей таблице показаны максимальные значения пропускной способности, наблюдаемые при тестировании разных размеров кэша уровней "Стандартный" или "Премиум" с помощью `redis-benchmark.exe` из виртуальной машины IaaS для конечной точки кэша Azure для Redis. Для пропускной способности SSL используется redis-benchmark со stunnel для подключения к конечной точке кэша Azure для Redis.
+В следующей таблице показаны максимальные значения пропускной способности, наблюдаемые при тестировании разных размеров кэша уровней "Стандартный" или "Премиум" с помощью `redis-benchmark.exe` из виртуальной машины IaaS для конечной точки кэша Azure для Redis. Для пропускной связи TLS redis-benchmark используется с помощью туннеля для подключения к кэшу Azure для конечных точек Redis.
 
 >[!NOTE] 
 >Эти значения не гарантируются и для них не предусмотрено соглашение об уровне обслуживания, однако они должны быть типичными. Чтобы определить подходящий объем кэша для вашего приложения, вам следует загрузить его тестирование.
@@ -157,7 +157,7 @@ ms.locfileid: "79278718"
 ### <a name="can-i-use-azure-cache-for-redis-with-azure-government-cloud-azure-china-cloud-or-microsoft-azure-germany"></a>Могу ли я использовать кэш Azure для Redis с облаком Azure для государственных организаций, Microsoft Azure для Китая или Microsoft Azure – Германия?
 Да, Кэш Azure для Redis доступен в облаке Azure Government, облаке Azure China 21Vianet и Microsoft Azure в Германии. URL-адреса для доступа к кэшу Azure для Redis и для управления им в этих облаках различны в отличие от общедоступного облака Azure.
 
-| Cloud   | DNS-суффикс для кэша Redis            |
+| Облако   | DNS-суффикс для кэша Redis            |
 |---------|---------------------------------|
 | Public  | *.redis.cache.windows.net       |
 | US Gov  | *.redis.cache.usgovcloudapi.net |
@@ -244,7 +244,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 * `redis-cli -h <Azure Cache for Redis name>.redis.cache.windows.net -a <key>`
 
 > [!NOTE]
-> Инструменты командной строки Redis не работают с портом SSL, но вы можете использовать `stunnel` утилиту, например, надежно подключить инструменты к порту SSS, следуя указаниям в [каком использовании инструмента командной строки Redis с Azure Cache для](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-redis-cli-tool) статьи Redis.
+> Инструменты командной строки Redis не работают с портом TLS, но можно использовать `stunnel` утилиту, например, чтобы надежно подключить инструменты к порту TLS, следуя указаниям в [каком использовании инструмента командной строки Redis с Azure Cache для](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-redis-cli-tool) статьи Redis.
 >
 >
 
@@ -281,15 +281,15 @@ StackExchange.Redis имеет много параметров. В этом ра
 
 <a name="cache-ssl"></a>
 
-### <a name="when-should-i-enable-the-non-ssl-port-for-connecting-to-redis"></a>Когда следует включать порт, не являющийся портом SSL, для подключения к Redis?
-Сервер Redis не имеет встроенной поддержки SSL, но кэш Azure для Redis имеет. Если вы подключаетесь к кэшу Azure для Redis и ваш клиент поддерживает протокол SSL, например StackExchange.Redis, то следует использовать SSL.
+### <a name="when-should-i-enable-the-non-tlsssl-port-for-connecting-to-redis"></a>Когда следует включить порт, не относящийся к TLS/SSL, для подключения к Redis?
+Сервер Redis не поддерживает TLS, но Azure Cache для Redis делает. Если вы подключаетесь к Кэшу Azure для Redis и ваш клиент поддерживает TLS, как StackExchange.Redis, то вам следует использовать TLS.
 
 >[!NOTE]
->По умолчанию порт без SSL отключен для новых экземпляров кэша Azure для Redis. Если ваш клиент не поддерживает SSL, необходимо включить порт, не являющийся портом SSL, следуя указаниям, приведенным в разделе [Access ports](cache-configure.md#access-ports) (Порты доступа) статьи [Configure a cache in Azure Cache for Redis](cache-configure.md) (Настройка кэша Azure для Redis).
+>Порт, не отключаемый TLS, отключен по умолчанию для новых экземпляров Azure Cacдля для экземпляров Redis. Если клиент не поддерживает TLS, необходимо включить порт, не являйся TLS, следуя указаниям в разделе [портов доступа](cache-configure.md#access-ports) в разделе [«Настройка кэша» в статье Azure Cache для статьи Redis.](cache-configure.md)
 >
 >
 
-Инструменты Redis, такие как `redis-cli`, не работают с портом SSL, но вы можете использовать служебную программу, например `stunnel`, для безопасного подключения инструментов к порту SSL в соответствии с указаниями в записи блога [Анонс поставщика состояний сеансов ASP.NET для предварительной версии Redis](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
+Redis инструменты, такие как `redis-cli` не работают с портом TLS, но вы можете использовать утилиту, такую как `stunnel` безопасно подключить инструменты к порту TLS, следуя указаниям в [объявлении ASP.NET сессии Государственный провайдер для Redis Preview Release](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx) блоге.
 
 Инструкции по скачиванию инструментов Redis см. в разделе [Как выполнять команды Redis?](#cache-commands).
 
@@ -312,7 +312,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 * Создайте свою систему таким образом, чтобы она могла справляться с кратковременными сбоями подключения, [связанными с установкой исправлений и отработкой отказа](https://gist.github.com/JonCole/317fe03805d5802e31cfa37e646e419d#file-azureredis-patchingexplained-md).
 
 #### <a name="performance-testing"></a>Тестирование производительности
-* Начните с запуска `redis-benchmark.exe` , чтобы определить возможную пропускную способность перед созданием собственных тестов производительности. Так как `redis-benchmark` не поддерживает протокол SSL, то перед запуском теста необходимо [включить порт без SSL посредством портала Azure](cache-configure.md#access-ports). Примеры приведены в разделе [Как измерить и протестировать производительность моего кэша?](#how-can-i-benchmark-and-test-the-performance-of-my-cache)
+* Начните с запуска `redis-benchmark.exe` , чтобы определить возможную пропускную способность перед созданием собственных тестов производительности. Поскольку `redis-benchmark` TLS не поддерживается, перед запуском теста [необходимо включить порт Non-TLS через портал Azure.](cache-configure.md#access-ports) Примеры приведены в разделе [Как измерить и протестировать производительность моего кэша?](#how-can-i-benchmark-and-test-the-performance-of-my-cache)
 * Клиентская виртуальная машина, используемая для тестирования, должна находиться в том же регионе, что и экземпляр кэша Azure для Redis.
 * В качестве клиента рекомендуется использовать виртуальные машины серии Dv2, так как в них используется более производительное оборудование и они выдают лучшие результаты.
 * Убедитесь, что у выбранной клиентской виртуальной машины как минимум такая же емкость вычислительных ресурсов и пропускной способности, что и у тестируемого кэша.
@@ -411,7 +411,7 @@ void Application_Start(object sender, EventArgs e)
 
 * [Включение сборки мусора сервера](/dotnet/framework/configure-apps/file-schema/runtime/gcserver-element)
 * [Основы сборки мусора](/dotnet/standard/garbage-collection/fundamentals)
-* [Сборка мусора и производительность](/dotnet/standard/garbage-collection/performance)
+* [Сбор и производительность мусора](/dotnet/standard/garbage-collection/performance)
 
 
 ### <a name="performance-considerations-around-connections"></a>Рекомендации по производительности для подключений

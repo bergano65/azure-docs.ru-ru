@@ -3,12 +3,12 @@ title: Научитесь проверять содержимое виртуал
 description: Узнайте, как Azure Policy использует агента конфигурации гостей для проверки настроек внутри виртуальных машин.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 889e99e94b2c81a6654fcbe7851e93c40163a0c6
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 9e8486af2a9b7ab9e18b8c16f08e51759d1123d7
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985326"
+ms.locfileid: "80998856"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -73,7 +73,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 В следующей таблице перечислены операционные системы, поддерживаемые в образах Azure:
 
-|Издатель|Имя|Версии|
+|Издатель|name|Версии|
 |-|-|-|
 |Canonical|Сервер Ubuntu|14.04, 16.04, 18.04|
 |Credativ|Debian|8, 9|
@@ -91,6 +91,13 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 Для связи с поставщиком ресурсов Гостевой Конфигурации в Azure машинам требуется исходящий доступ к центрам обработки данных Azure в порту **443.** Если вы используете частную виртуальную сеть в Azure, которая не позволяет осуществлять исходящий трафик, назначайте исключения с [правилами Группы сетевой безопасности.](../../../virtual-network/manage-network-security-group.md#create-a-security-rule)
 [Тег сервиса](../../../virtual-network/service-tags-overview.md) "GuestAndHybridManagement" можно использовать для ссылки на службу конфигурации гостей.
+
+## <a name="azure-managed-identity-requirements"></a>Управляемые требования к идентификационным излза Azure
+
+Политики **DeployIfNotExists,** добавляющие расширение к виртуальным машинам, также позволяют системе, назначенной управляемой идентификации, если она не существует.
+
+> [!WARNING]
+> Избегайте включения пользователя, назначенного управляемым имитатом, виртуальным машинам в области политик, которые позволяют системе присваиваемо управляемое удостоверение. Назначенный пользователем идентификатор будет заменен и может стать машиной без ответа.
 
 ## <a name="guest-configuration-definition-requirements"></a>Требования к определению гостевой конфигурации
 
@@ -183,7 +190,7 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 - [Встроенные инициативы - Конфигурация гостей](../samples/built-in-initiatives.md#guest-configuration)
 - [Образцы политики Azure GitHub репо](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policySetDefinitions/Guest%20Configuration)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Просмотрите [примеры на примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](definition-structure.md).

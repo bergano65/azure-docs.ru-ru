@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: d4288b901a0e6e132e32f8391d108e79861fc331
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a6baf8b4609382be4a5a31d12cac581da2c17de6
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79371041"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011673"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для PostgreS-L - Единый сервер с помощью CLI
 
@@ -118,7 +118,7 @@ az resource show --ids $networkInterfaceId --api-version 2019-04-01 -o json
  
 #Create DNS records 
 az network private-dns record-set a create --name myserver --zone-name privatelink.postgres.database.azure.com --resource-group myResourceGroup  
-az network private-dns record-set a add-record --record-set-name myserver --zone-name privatelink.postgres.database.windows.net --resource-group myResourceGroup -a <Private IP Address>
+az network private-dns record-set a add-record --record-set-name myserver --zone-name privatelink.postgres.database.azure.com --resource-group myResourceGroup -a <Private IP Address>
 ```
 
 > [!NOTE] 
@@ -132,7 +132,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Выберите **Скачать RDP файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
+1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
 1. Откройте файл *downloaded.rdp*.
 
@@ -141,9 +141,9 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
-        > Возможно, вам придется выбрать **Дополнительные варианты** > **Используйте другую учетную запись,** чтобы указать учетные данные, которые вы ввели при создании VM.
+        > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
 
@@ -192,5 +192,5 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте больше о [том, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)

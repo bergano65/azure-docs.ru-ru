@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
-ms.openlocfilehash: 67c737423b0b2be4c666974feb2f10ca5cdf1111
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b0d1619ff7598c2acd2eb860db6dd32ba529bc63
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74929098"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991881"
 ---
 # <a name="copy-data-from-oracle-responsys-using-azure-data-factory-preview"></a>Копирование данных из Oracle Responsys с помощью фабрики данных Azure (предварительная версия)
 
@@ -53,8 +53,8 @@ ms.locfileid: "74929098"
 | clientid | Идентификатор клиента, связанный с приложением Responsys.  | Да |
 | clientSecret | Секрет клиента, связанный с приложением Responsys. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и разрешить действию копирования ADF передавать его оттуда при копировании данных. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
-| useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
+| useHostVerification | Уточняется, следует ли требовать, чтобы имя хоста в сертификате сервера соответствовало названию сервера при подключении к TLS. Значение по умолчанию — true.  | нет |
+| usePeerVerification | Уточняется, следует ли проверять личность сервера при подключении к TLS. Значение по умолчанию — true.  | нет |
 
 **Примере:**
 
@@ -158,5 +158,5 @@ ms.locfileid: "74929098"
 Чтобы узнать подробности о свойствах, проверьте [активность поиска.](control-flow-lookup-activity.md)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

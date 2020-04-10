@@ -7,17 +7,17 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/06/2020
 keywords: аро, openshift, аз-аро, красная шляпа, кли
-ms.openlocfilehash: 423f09c135da51b8401c1933a4a271d0becd2c8f
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 9488ef593cf4ec8600dcb42ea4a2cefa4fcb1446
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80349435"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998803"
 ---
 # <a name="create-access-and-manage-an-azure-red-hat-openshift-43-cluster"></a>Создание, доступ и управление кластером Azure Red Hat OpenShift 4.3
 
 > [!IMPORTANT]
-> Обратите внимание, что Azure Red Hat OpenShift 4.3 в настоящее время доступна только в частном предварительном просмотре в Восточной ЧАСТИ США. Частное предварительное принятие только по приглашению. Пожалуйста, не забудьте зарегистрировать подписку, прежде чем пытаться включить эту функцию: [Azure Red Hat OpenShift Частная регистрация предварительного просмотра](https://aka.ms/aro-preview-register)
+> Обратите внимание, что Azure Red Hat OpenShift 4.3 в настоящее время доступна только в частном предварительном просмотре в Восточной США и Восточной США 2. Частное предварительное принятие только по приглашению. Пожалуйста, не забудьте зарегистрировать подписку, прежде чем пытаться включить эту функцию: [Azure Red Hat OpenShift Частная регистрация предварительного просмотра](https://aka.ms/aro-preview-register)
 
 > [!NOTE]
 > Функции предварительного просмотра являются самообслуживанием и предоставляются как есть и по мере возможности и исключены из соглашения об уровне обслуживания (SLA) и ограниченной гарантии. Таким образом, функции не предназначены для использования в производстве.
@@ -65,7 +65,7 @@ ms.locfileid: "80349435"
    az -v
    ...
    Extensions:
-   aro                                0.1.0
+   aro                                0.3.0
    ...
    ```
   
@@ -108,7 +108,7 @@ ms.locfileid: "80349435"
 4. Добавьте две пустые подсети в виртуальную сеть.
 
    ```console
-    for subnet in "$CLUSTER-master" "$CLUSTER-worker"; do
+   for subnet in "$CLUSTER-master" "$CLUSTER-worker"; do
      az network vnet subnet create \
        -g "$RESOURCEGROUP" \
        --vnet-name vnet \
@@ -141,6 +141,8 @@ az aro create \
   --vnet vnet \
   --master-subnet "$CLUSTER-master" \
   --worker-subnet "$CLUSTER-worker" \
+  --cluster-resource-group "aro-$CLUSTER" \
+  --domain "$CLUSTER" \
   --pull-secret "$PULL_SECRET"
 ```
 

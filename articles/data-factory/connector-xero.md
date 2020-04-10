@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: jingwang
-ms.openlocfilehash: 1f6404da163e075b63a99a1d8474cdba4e064b06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bdb2dc283287bf83410f1846aca11f233e93d01b
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74930885"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80990860"
 ---
 # <a name="copy-data-from-xero-using-azure-data-factory"></a>Копирование данных из Xero с помощью Фабрики данных Azure
 
@@ -55,8 +55,8 @@ ms.locfileid: "74930885"
 | consumerKey | Ключ пользователя, связанный с приложением Xero. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | privateKey | Закрытый ключ из PEM-файла, созданный для частного приложения Xero. Дополнительные сведения см. в статье [Create a public/private key pair](https://developer.xero.com/documentation/api-guides/create-publicprivate-key) (Создание открытого и закрытого ключей). Примечание для **создания privatekey.pem с numbits 512** с использованием `openssl genrsa -out privatekey.pem 512`; 1024 не поддерживается. Включает весь текст из PEM-файла, в том числе окончания строк Unix (\n). Пример см. ниже.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
-| useHostVerification | Указывает, нужно ли, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. Значение по умолчанию — true.  | нет |
+| useHostVerification | Уточняется, требуется ли имя хоста в сертификате сервера для сопоставления имени узла сервера при подключении к TLS. Значение по умолчанию — true.  | нет |
+| usePeerVerification | Уточняется, следует ли проверять личность сервера при подключении к TLS. Значение по умолчанию — true.  | нет |
 
 **Примере:**
 
@@ -220,5 +220,5 @@ ms.locfileid: "74930885"
 Чтобы узнать подробности о свойствах, проверьте [активность поиска.](control-flow-lookup-activity.md)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Список источников данных, которые поддерживает действие копирования, приведен в таблице [поддерживаемых хранилищ данных и форматов](copy-activity-overview.md#supported-data-stores-and-formats).

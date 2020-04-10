@@ -17,12 +17,12 @@ ms.date: 03/04/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12abfc0d345c937ae886f9bfacfb8ce30227cc45
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7fd3580ca03fa49d428904c6da78fdf9cda202c7
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78399305"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991268"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
@@ -33,9 +33,10 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 Чтобы подготовить доступ к API отчетов, сделайте следующее:
 
 1. [Назначение ролей](#assign-roles)
-2. [Регистрация приложения](#register-an-application)
-3. [Предоставление разрешений](#grant-permissions)
-4. [Сбор параметров конфигурации](#gather-configuration-settings)
+2. [Лицензионные требования](#license-requirements)
+3. [Регистрация приложения](#register-an-application)
+4. [Разрешения на гранты](#grant-permissions)
+5. [Сбор параметров конфигурации](#gather-configuration-settings)
 
 ## <a name="assign-roles"></a>Назначение ролей
 
@@ -46,6 +47,10 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 - Администратор безопасности
 
 - глобального администратора;
+
+## <a name="license-requirements"></a>Лицензионные требования
+
+Для доступа к отчетам о входе для арендатора у арендатора должна быть связанная лицензия Azure AD Premium. Лицензия Azure AD Premium P1 (или выше) необходима для доступа к отчетам о входной регистрации для любого арендатора Azure AD. Кроме того, если тип каталога — Это Azure AD B2C, отчеты о входе доступны через API без каких-либо дополнительных лицензионных требований. 
 
 
 ## <a name="register-an-application"></a>Регистрация приложения
@@ -183,7 +188,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
     b. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
-    c. Нажмите **Сохранить**.
+    c. Выберите команду **Сохранить**.
 
     d. Скопируйте значение ключа.
 
@@ -217,7 +222,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 Выполните последующие действия в [Предпосылках для доступа к API-приложению от](howto-configure-prerequisites-for-reporting-api.md) отчетов Active Directory, чтобы убедиться, что ваше приложение работает с правильным набором разрешений. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
 * [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/25/2019
-ms.openlocfilehash: f5203de43a3d12c40e6cb5bbb33547769f5824c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 16778000855b7859e261d8b996b081f779e579f9
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75440780"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991455"
 ---
 # <a name="copy-data-to-and-from-azure-database-for-mysql-using-azure-data-factory"></a>Копирование данных в базу данных Azure и из базы данных для MyS'L с помощью фабрики данных Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "75440780"
 
 | Свойство | Описание | Параметры | Обязательно |
 |:--- |:--- |:--- |:--- |
-| SSLMode | Этот параметр указывает, использует ли драйвер SSL-шифрование и проверку при подключении к MySQL. Пример: `SSLMode=<0/1/2/3/4>`| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | нет |
+| SSLMode | В этом варианте указывается, использует ли драйвер шифрование и проверку TLS при подключении к MyS'L. Пример: `SSLMode=<0/1/2/3/4>`| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | нет |
 | useSystemTrustStore | Этот параметр указывает, следует ли использовать сертификат ЦС из доверенного системного хранилища или из указанного PEM-файла. Пример: `UseSystemTrustStore=<0/1>;`| Enabled (1) / Disabled (0) **(по умолчанию)** | нет |
 
 **Примере:**
@@ -272,5 +272,5 @@ ms.locfileid: "75440780"
 | `varchar` |`String` |
 | `year` |`Int32` |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

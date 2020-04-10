@@ -4,18 +4,18 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: MarkusVi
 ms.author: markvi
-ms.date: 04/03/2020
+ms.date: 04/09/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c7a65df100cd58561ce12ac2ae01281eebd419a
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 45a248300cd61a0e57b9f35c8905d7c335069a27
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656047"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991285"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -109,7 +109,7 @@ ms.locfileid: "80656047"
 Чтобы настроить управляемые удостоверения для Logic Apps (в регионах, где они доступны), см. следующий список.
 
 - [Портал Azure](/azure/logic-apps/create-managed-service-identity#enable-system-assigned-identity-in-azure-portal)
-- [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity)
+- [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/logic-apps/logic-apps-azure-resource-manager-templates-overview)
 
 ### <a name="azure-data-factory-v2"></a>Фабрика данных Azure версии 2
 
@@ -270,6 +270,9 @@ ms.locfileid: "80656047"
 | Azure для государственных организаций | `https://*.asazure.usgovcloudapi.net` | ![Доступно][check] |
 | Azure для Германии | `https://*.asazure.cloudapi.de` | ![Доступно][check] |
 | Azure China 21Vianet | `https://*.asazure.chinacloudapi.cn` | ![Доступно][check] |
+
+> [!Note]
+> Microsoft Power BI также [поддерживает управляемые идентификаторы.](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity)
 
 
 [check]: media/services-support-managed-identities/check.png "Доступны"

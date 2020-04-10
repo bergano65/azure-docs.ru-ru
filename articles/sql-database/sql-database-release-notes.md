@@ -7,14 +7,14 @@ ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 04/09/2020
 ms.author: sstein
-ms.openlocfilehash: 9fa93af72c2869efd7b6d2f1e8b96b0e667f8b16
-ms.sourcegitcommit: 515482c6348d5bef78bb5def9b71c01bb469ed80
+ms.openlocfilehash: b677fd7fe2b14e1c42443478a887ddfa2481dfbf
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80607548"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011452"
 ---
 # <a name="sql-database-release-notes"></a>Примечания к выпуску базы данных S'L
 
@@ -22,12 +22,11 @@ ms.locfileid: "80607548"
 
 ## <a name="features-in-public-preview"></a>Особенности в публичном предварительном просмотре
 
-### <a name="single-database"></a>[Отдельная база данных](#tab/single-database)
+### <a name="single-database"></a>[Единая база данных](#tab/single-database)
 
 | Компонент | Сведения |
 | ---| --- |
 | Новые поколения оборудования серии Fsv2 и M-серии| Для получения информации, см [Аппаратные поколения](sql-database-service-tiers-vcore.md#hardware-generations).|
-| [Частная ссылка Azure](https://azure.microsoft.com/updates/private-link-now-available-in-preview/)| Private Link упрощает архитектуру сети и обеспечивает связь между конечными точками в Azure, сохраняя данные в сети Azure, тем самым устраняя доступ к Интернету. Private Link также позволяет создавать и предоставлять собственные услуги в Azure. |
 | Ускоренное восстановление базы данных с помощью единых баз данных и эластичных пулов | Для получения [информации, см Ускоренное восстановление базы данных](sql-database-accelerated-database-recovery.md).|
 |Приблизительный подсчет различных объектов|Для получения информации, [см.](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing)|
 |Режим пакетов на Rowstore (под уровнем совместимости 150)|Для получения информации [см. режим пакетов на Rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore).|
@@ -48,7 +47,7 @@ ms.locfileid: "80607548"
 | ---| --- |
 | <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров S'L в облако. |
 | <a href="https://aka.ms/managed-instance-aadlogins">Принципы серверов Azure AD уровня инстанций (логины)</a> | Создавайте логины на уровне сервера с помощью заявления <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN FROM EXTERNAL PROVIDER.</a> |
-| [Транзакционная репликация](sql-database-managed-instance-transactional-replication.md) | Воспроизвести изменения из таблиц в другие базы данных, размещенные в управляемых инстанциях, единичных базах данных или в экземплярах сервера S'L, или обновите таблицы, когда некоторые строки изменены в других управляемых инстанциях или экземпляре сервера S'L. Для получения информации [см. Репликацию настройки в управляемой базой данных данных данных azure S'L.](replication-with-sql-database-managed-instance.md) |
+| [репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Воспроизвести изменения из таблиц в другие базы данных, размещенные в управляемых инстанциях, единичных базах данных или в экземплярах сервера S'L, или обновите таблицы, когда некоторые строки изменены в других управляемых инстанциях или экземпляре сервера S'L. Для получения информации [см. Репликацию настройки в управляемой базой данных данных данных azure S'L.](replication-with-sql-database-managed-instance.md) |
 | Обнаружение угроз |Для получения информации [см. Наверждем обнаружение угроз в управляемом экземпляре базы данных Azure S'L Database.](sql-database-managed-instance-threat-detection.md)|
 
 ---
@@ -76,7 +75,7 @@ ms.locfileid: "80607548"
 
 ### <a name="known-issues"></a>Известные проблемы
 
-|Проблема  |Дата обнаружена  |Состояние  |Дата решена  |
+|Проблемы  |Дата обнаружена  |Состояние  |Дата решена  |
 |---------|---------|---------|---------|
 |[Разрешения на группу ресурсов, не применяемые к Управляемой инстанции](#permissions-on-resource-group-not-applied-to-managed-instance)|Февраль 2020 г.|Имеет обходной путь||
 |[Ограничение ручного сбоя через портал для групп неудач](#limitation-of-manual-failover-via-portal-for-failover-groups)|Январь 2020 г.|Имеет обходной путь||

@@ -2,24 +2,23 @@
 title: Базовый униза Azure Security для пакета
 description: Базовый униза Azure Security для пакета
 author: msmbaldwin
-manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 02/28/2020
+ms.date: 04/09/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: a9569c1f5de797c77f447b5df15e85a57e8be84b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fef1afb9748fd6f2f59b972c451d95ae1204ef70
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79472934"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011639"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Базовый униза Azure Security для пакета
 
 Базовый униза azure Security Для пакета содержит рекомендации, которые помогут вам улучшить безопасность развертывания.
 
-Базовый узел для этих служб взят из [версии 1.0 Azure Security Benchmark,](https://docs.microsoft.com/azure/security/benchmarks/overview)которая содержит рекомендации о том, как можно обезопасить свои облачные решения в Azure с нашими рекомендациями по передовым практикам.
+Базовая версия этой службы взята из [версии 1.0 Azure Security Benchmark,](https://docs.microsoft.com/azure/security/benchmarks/overview)которая содержит рекомендации о том, как можно обезопасить свои облачные решения в Azure с нашими рекомендациями по передовым практикам.
 
 Для получения дополнительной информации смотрите [обзор базовых линий безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
 
@@ -30,7 +29,6 @@ ms.locfileid: "79472934"
 ### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1: Защита ресурсов, использующих группы сетевой безопасности или брандмауэр Azure в виртуальной сети
 
 **Руководство**: Развертывание пула azure Batch (ы) в виртуальной сети. Чтобы вычислительные узлы пула могли безопасно общаться с другими виртуальными машинами или с помощью предварительной сети, можно предоставить пул в подсети виртуальной сети Azure. Кроме того, развертывание пула в виртуальной сети дает вам контроль над группой сетевой безопасности (NSG), используемой для защиты сетевых интерфейсов отдельных узлов (NIC), а также подсети. Нанастройка NSG, чтобы разрешить трафик только из надежных IP (ы)/местоположений в Интернете.
-
 
 Как создать пакет Azure в виртуальной сети:
 
@@ -44,16 +42,13 @@ https://docs.microsoft.com/azure/batch/batch-virtual-network
 
 **Руководство**: Использование Центра безопасности Azure и рекомендации по защите сети, связанные с виртуальной группой сетевой безопасности (NSG), связанной с пулом пакетов. Включить журналы потока в NSG, используемый для защиты пула пакетов, и отправить журналы в учетную запись хранения Azure для аудита трафика. Вы также можете отправлять журналы потоков НСГ в рабочее пространство Azure Log Analytics и использовать аналитику Azure Traffic Analytics для получения информации о движении в облаке Azure. Некоторые преимущества Azure Traffic Analytics заключаются в способности визуализировать сетевую активность и выявлять горячие точки, выявлять угрозы безопасности, понимать шаблоны движения и определять неправильное конфигурации сетей.
 
-
 Как включить журналы потока NSG:
 
 https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
-
 Как включить и использовать аналитику трафика:
 
 https://docs.microsoft.com/azure/network-watcher/traffic-analytics
-
 
 Понимание сетевой безопасности, предоставляемой Центром безопасности Azure:
 
@@ -65,7 +60,7 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 ### <a name="13-protect-critical-web-applications"></a>1.3: Защита критически важных веб-приложений
 
-**Руководство**: Не применимо, Benchmark предназначен для веб-приложений, работающих на Azure App Service или IaaS экземпляров.
+**Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -75,11 +70,9 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 **Руководство:** Включить Azure DDoS (распределенный отказ в обслуживании) Стандартная защита в виртуальной сети, защищающей пул Azure Batch для защиты от DDoS-атак. Используйте Azure Security Center Integrated Threat Intelligence, чтобы отказать в сообщении с известными вредоносными или неиспользованными IP-адресами в Интернете.
 
-
 Как настроить DDoS-защиту:
 
 https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
-
 
 Поймите Azure Security Center Integrated Threat Intelligence:
 
@@ -93,7 +86,6 @@ https://docs.microsoft.com/azure/security-center/security-center-alerts-service-
 
 **Руководство:** Включить журналы потока в группе сетевой безопасности (NSG), используемой для защиты пула Azure Batch, и отправить журналы в учетную запись хранения Azure для аудита трафика.
 
-
 Как включить журналы потока NSG:
 
 https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
@@ -106,22 +98,17 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-loggin
 
 **Руководство**: Если это необходимо для целей соответствия, выберите виртуальный прибор сети из Azure Marketplace, который поддерживает системы обнаружения вторжений (IDS) и функции предотвращения вторжений (IPS) с возможностями проверки полезной нагрузки.
 
-
 Если обнаружение и/или предотвращение вторжения на основе инспекции полезной нагрузки не является обязательным требованием, можно использовать Брандмауэр Azure firewall с разведданными об угрозах. Фильтрация на основе интеллектуальных угроз На основе угроз Azure Firewall может предупреждать и отказывать в трафике на известные вредоносные IP-адреса и домены. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence.
 
-
 Развертывание брандмауэра Azure с общедоступным IP-адресом в той же виртуальной сети, что и узлы Azure Batch Pool. Налажить правила перевода сетевых адресов (NAT) между доверенными местоположениями в Интернете и частными IP-адресами ваших отдельных узлов пула. На Брандмауэре Azure, под threat Intelligence, накончается "Оповещение и отказ", чтобы заблокировать для оповещения и блокирования трафика на /от известных вредоносных IP-адресов и доменов. IP-адреса и домены получены из ленты Microsoft Threat Intelligence, и в него включены только самые высокие записи доверия. 
-
 
 Как создать пакет Azure в виртуальной сети:
 
 https://docs.microsoft.com/azure/batch/batch-virtual-network
 
-
 Как развернуть брандмауэр Azure:
 
 https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal
-
 
 Azure Marketplace:
 
@@ -143,7 +130,6 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Руководство**: Используйте виртуальные теги сетевого обслуживания для определения элементов управления доступом к сети в группах сетевой безопасности или брандмауэрах Azure, связанных с пулом Azure Batch(ы). Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указывая имя тега службы (например, ApiManagement) в соответствующем поле источника или назначения правила, можно разрешить или отклонить трафик для соответствующей службы. Корпорация Майкрософт управляет адресными префиксами, охватываемыми тегом службы, и автоматически обновляет тег службы при изменении адресов.
 
-
 Понимание и использование сервисных тегов:
 
 https://docs.microsoft.com/azure/virtual-network/service-tags-overview
@@ -155,8 +141,6 @@ https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9: Поддержание стандартных конфигураций безопасности для сетевых устройств
 
 **Руководство**: Определите и внедрить стандартные конфигурации безопасности для сетевых ресурсов, связанных с пулом Azure Batch (ы) с политикой Azure. Используйте псевдонимы Azure Policy в пространствах имен "Microsoft.Batch" и "Microsoft.Network" для создания пользовательских политик для аудита или обеспечения безопасности сетевой конфигурации пулов Azure Batch.
-
-
 
 Как настроить и управлять политикой Azure:
 
@@ -170,22 +154,17 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**: Используйте теги для групп сетевых служб (НСГ) и других ресурсов, связанных с сетевой безопасностью и потоком трафика, которые связаны с пакетными пулами Azure. Для отдельных правил NSG используйте поле "Описание", чтобы указать бизнес-потребности и/или продолжительность (и т.д.) для любых правил, разрешающие трафик в/из сети.
 
-
 Используйте любое из встроенных определений политики Azure, связанных с пометкой, например "Требуемый тег и его значение", чтобы гарантировать, что все ресурсы создаются с тегами и уведомлять вас о существующих немаркированных ресурсах.
 
-
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий на ресурсах, основанных на их тегах.
-
 
 Как создавать и использовать теги:
 
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-
 Как создать виртуальную сеть:
 
 https://docs.microsoft.com/azure/virtual-network/quick-create-portal
-
 
 Как создать NSG:
 
@@ -223,8 +202,6 @@ https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
 
 **Руководство:** Бортовая учетная запись Azure Batch в Azure Monitor для агрегирования данных безопасности, генерируемых кластерными устройствами. Используйте пользовательские запросы для обнаружения угроз в среде и реагирования на них.  Для мониторинга ресурсов уровня Azure Batch используйте aIs пакетных пакетов для мониторинга или запроса состояния ресурсов, включая задания, задачи, узлы и пулы.
 
-
-
 Как сесть на борт учетной записи Azure Batch в Azure Monitor:
 
 https://docs.microsoft.com/azure/batch/batch-diagnostics
@@ -237,14 +214,11 @@ https://docs.microsoft.com/azure/batch/batch-diagnostics
 
 **Руководство**: Для мониторинга уровня учетной записи Azure Batch следите за каждой учетной записью пакета с помощью функций Azure Monitor. Azure Monitor собирает метрики и (если настроено) журналы диагностики для ресурсов, относящихся к уровню учетной записи пакетной службы, таких как пулы, задания и задачи. Эти данные можно собирать и использовать вручную или программными средствами, чтобы отслеживать действия в учетной записи пакетной службы и диагностировать проблемы.
 
-
 Для мониторинга уровня ресурсов Azure Batch используйте aIs Azure Batch для мониторинга или запроса состояния ресурсов, включая задания, задачи, узлы и пулы пулов.
-
 
 Как настроить мониторинг и журнал на уровне учетной записи Azure Batch:
 
 https://docs.microsoft.com/azure/batch/monitoring-overview
-
 
 Понять мониторинг ресурсов пакетного уровня:
 
@@ -258,14 +232,11 @@ https://docs.microsoft.com/azure/batch/monitoring-overview#batch-resource-monito
 
 **Руководство**: Azure Monitor собирает метрики и диагностические журналы для ресурсов в вашей учетной записи Azure Batch. Собирайте и потребляйте эти данные различными способами для мониторинга учетной записи Azure Batch и диагностики проблем. Вы также можете настроить метрики оповещений, чтобы получать уведомления о достижении определенных значений.
 
-
 При необходимости вы, возможно, подключитесь к отдельным узлам пула через Secured Shell (SSH) или протокол удаленного рабочего стола (RDP) для доступа к локальным журналам операционной системы.
-
 
 Как собирать диагностические журналы из учетной записи Azure Batch:
 
 https://docs.microsoft.com/azure/batch/batch-diagnostics#batch-diagnostics
-
 
 Как удаленно подключиться к узлам пула Azure Batch:
 
@@ -279,11 +250,9 @@ https://docs.microsoft.com/azure/batch/batch-api-basics#error-handling
 
 **Руководство**: Бортовой пакетный учет Azure в Azure Monitor. Убедитесь, что используемое рабочее пространство Azure Log Analytics имеет период хранения журналов в соответствии с правилами соответствия организации
 
-
 Как настроить мониторинг и журнал Azure Batch:
 
 https://docs.microsoft.com/azure/batch/monitoring-overview
-
 
 Как настроить период хранения рабочего пространства Azure Log Analytics:
 
@@ -297,7 +266,6 @@ https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage
 
 **Руководство**: Создание метеосигналов Azure Batch, которые срабатывают при пересечении значения указанной метрики за данный порог.
 
-
 Как настроить метеосигналы Azure Batch:
 
 https://docs.microsoft.com/azure/batch/batch-diagnostics
@@ -309,7 +277,6 @@ https://docs.microsoft.com/azure/batch/batch-diagnostics
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7: Включить оповещения для аномальной активности
 
 **Руководство**: Создание метеосигналов Azure Batch, которые срабатывают при пересечении значения указанной метрики за данный порог.
-
 
 Как настроить метеосигналы Azure Batch:
 
@@ -351,19 +318,15 @@ https://docs.microsoft.com/azure/batch/batch-diagnostics
 
 **Руководство**: Ведение записи локальной административной учетной записи, созданной во время подготовки пула Azure Batch, а также любых других созданных учетных записей. Кроме того, если используется интеграция Azure Active Directory (AAD), AAD имеет встроенные роли, которые должны быть четко назначены и поэтому должны быть заданы. Используйте модуль AAD PowerShell для выполнения запросов на адок для обнаружения учетных записей, вносимых в административные группы.
 
-
 Кроме того, можно использовать рекомендации Центра идентификации безопасности Azure и рекомендации по управлению доступом.
-
 
 Как получить каталог роль в AAD с PowerShell:
 
 https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
 
-
 Как получить членов каталога роль в AAD с PowerShell:
 
 https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
-
 
 Как контролировать идентификацию и доступ в Центр безопасности Azure:
 
@@ -377,7 +340,6 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 **Руководство**: При подготовке пула Azure Batch предоставляется возможность создания локальных учетных записей машин. Нет никаких паролей по умолчанию для изменения, однако вы можете указать различные пароли для доступа Secured Shell (SSH) и удаленного протокола рабочего стола (RDP). После настройки пула azure Batch Pool можно создать случайного пользователя для отдельных узлов в портале Azure или через API-интерфейс управления ресурсами Azure.
 
-
 Как добавить пользователя в конкретный вычислительный узла:
 
 https://docs.microsoft.com/rest/api/batchservice/computenode/adduser
@@ -390,14 +352,11 @@ https://docs.microsoft.com/rest/api/batchservice/computenode/adduser
 
 **Руководство:** Интеграция аутентификации для приложений пакетов Azure с помощью активного каталога Azure. Создание политик и процедур, посвященных использованию выделенных административных учетных записей.
 
-
 Кроме того, можно использовать рекомендации Центра идентификации безопасности Azure и рекомендации по управлению доступом.
-
 
 Как проверить подлинность приложений пакетов с помощью Active Directory Azure:
 
 https://docs.microsoft.com/azure/batch/batch-aad-auth
-
 
 Как контролировать идентификацию и доступ в Центр безопасности Azure:
 
@@ -418,13 +377,12 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 ### <a name="35-use-multifactor-authentication-for-all-azure-active-directory-based-access"></a>3.5: Используйте multifactor Authentication для всего доступа на основе активного каталога Azure.
 
 **Руководство**: Интеграция аутентификации для приложений пакетов Azure с помощью активного каталога Azure (AAD). Включите многофакторную аутентификацию AAD (MFA) и следуйте рекомендациям Центра идентификации и управления доступом Azure.
- 
 
+ 
 
 Как включить МИД в Azure:
 
 https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
-
 
 Как контролировать личность и доступ в Центре безопасности Azure:
 
@@ -438,11 +396,9 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 **Руководство**: Используйте PAW (привилегированные рабочие станции доступа) с многофакторной аутентификацией (MFA), настроенной для входа в систему и настройки ресурсов Azure Batch.
 
-
 Узнайте о рабочих станциях привилегированном доступе:
 
 https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
-
 
 Как включить МИД в Azure:
 
@@ -456,11 +412,9 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 
 **Руководство**: Если вы интегрировали аутентификацию для приложений Azure Batch с Azure Active Directory (AAD), используйте отчеты безопасности Active Directory Azure для генерации журналов и предупреждений, когда в среде происходит подозрительная или небезопасная деятельность. Используйте Центр безопасности Azure для мониторинга активности идентификации и доступа.
 
-
 Как определить пользователей Azure AD, помеченных для рискованных действий:
 
 https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk
-
 
 Как отслеживать идентификацию пользователей и доступ к деятельности в Центре безопасности Azure:
 
@@ -474,8 +428,6 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 **Руководство**: Если вы интегрировали аутентификацию для приложений Azure Batch с Azure Active Directory, вы можете использовать условные места доступа, чтобы обеспечить доступ только из конкретных логических групп диапазонов IP-адресов или стран/регионов.
 
-
-
 Как настроить именованные места в Azure:
 
 https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
@@ -488,11 +440,9 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-
 
 **Руководство:** Использование активного каталога Azure (AAD) в качестве центральной системы аутентификации и авторизации и интеграции аутентификации для приложений Azure Batch с AAD. AAD защищает данные, используя надежное шифрование данных в состоянии покоя и в пути. AAD также соли, хэши, и надежно хранит учетные данные пользователей.
 
-
 Как создать и настроить экземпляр AAD:
 
 https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance
-
 
 Как проверить подлинность приложений Batch с помощью AAD:
 
@@ -506,7 +456,6 @@ https://docs.microsoft.com/azure/batch/batch-aad-auth
 
 **Руководство**: Активный каталог Azure (AAD) предоставляет журналы, помогая обнаружить устаревшие учетные записи. Кроме того, можно использовать Azure Identity Access Reviews для эффективного управления членством в группах, доступом к корпоративным приложениям и назначениям ролей. Доступ пользователей может быть рассмотрен на регулярной основе, чтобы убедиться, что только правильные пользователи имеют постоянный доступ.
 
-
 Как использовать обзоры доступа к идентификационным данным Azure:
 
 https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
@@ -518,7 +467,6 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 ### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3.11: Мониторинг попыток доступа к деактивированным счетам
 
 **Руководство**: Создание диагностических настроек для учетных записей пользователей Active Directory Azure, отправка журналов аудита и журналов входа в рабочее пространство Analytics Azure Log. Настройте желаемые оповещения в рабочей области Аналитики журналов Azure.
-
 
 Как интегрировать журналы активности Azure в Azure Monitor:
 
@@ -532,16 +480,13 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integ
 
 **Руководство:** Используйте функцию обнаружения рисков и защиты рисков Azure Active Directory (AAD) для настройки автоматизированных ответов на обнаруженные подозрительные действия, связанные с идентификаторами пользователей. Кроме того, можно проемить данные в Azure Sentinel для дальнейшего изучения.
 
-
 Как посмотреть AAD рискованные ввоза:
 
 https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
-
 Как настроить и включить политики защиты от идентификации:
 
 https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
-
 
 Как на борту Azure Sentinel:
 
@@ -553,7 +498,11 @@ https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 ### <a name="313-divprovide-microsoft-with-access-to-relevant-customer-data-during-support-scenariosbrdiv"></a>3.13: <div>Предоставить корпорации Майкрософт доступ к соответствующим данным клиентов во время сценариев поддержки<br></div>
 
-**Руководство**: Недоступно; Блокировка клиента еще не поддерживается для Azure Batch. Список поддерживаемых служб блокировки клиентов:https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
+**Руководство**: Недоступно; Блокировка клиента еще не поддерживается для Azure Batch.
+ 
+Список поддерживаемых служб блокировки клиентов:https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
+
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -567,7 +516,6 @@ https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 **Руководство**: Используйте теги для отслеживания ресурсов Azure, которые хранят или обрабатывают конфиденциальную информацию.
 
-
 Как создавать и использовать теги:
 
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
@@ -580,11 +528,9 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Реализация отдельных подписок и/или групп управления для разработки, тестирования и производства. Пулы пакетов Azure должны быть разделены виртуальной сетью/подсетью, помечены соответствующим образом и защищены группами сетевой безопасности (NSG). Данные Azure Batch должны содержаться в защищенной учетной записи хранения Azure.
 
-
 Как создать пакет Azure в виртуальной сети:
 
 https://docs.microsoft.com/azure/batch/batch-virtual-network
-
 
 Как защитить учетные записи хранения данных Azure:
 
@@ -598,17 +544,13 @@ https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
 **Руководство:** Для учетных записей хранения Azure, связанных с пулом пакетов Azure,s, которые содержат конфиденциальную информацию, отметьте их как конфиденциальные с помощью тегов и защитите их от наилучших практик Azure.
 
-
 Функции идентификации, классификации и предотвращения потерь пока не доступны для ресурсов Azure Storage или вычислений. Внедрить стороннее решение, если это необходимо для целей соответствия.
 
-
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт рассматривает все содержимое клиента как конфиденциальный и делает все усилия для защиты от потери данных клиентов и их воздействия. Для обеспечения безопасности данных клиентов в Azure корпорация Майкрософт внедрила и поддерживает набор надежных средств управления и возможностей защиты данных.
-
 
 Понимание защиты данных клиентов в Azure:
 
 https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
-
 
 Как защитить учетные записи хранения данных Azure:
 
@@ -622,13 +564,11 @@ https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
 **Руководство**: Шифрование всей конфиденциальной информации в пути. Ресурсы Microsoft Azure будут вести переговоры о TLS 1.2 по умолчанию. Убедитесь, что клиенты, подключенные к вашим пулам пакетов Azure или хранилищам данных (Учетные записи хранения данных Azure), могут вести переговоры о TLS 1.2 или больше.
 
-
 Убедитесь, что HTTPS необходим для доступа к учетной записи хранения, содержащей данные Azure Batch.
-
 
 Поймите шифрование учетной записи хранения Данных Azure в транзите:
 
-https://docs.microsoft.com/azure/storage/blobs/security-recommendations
+https://docs.microsoft.com/azure/storage/common/storage-security-guide#encryption-in-transit
 
 **Мониторинг Центра безопасности Azure:** Да
 
@@ -638,17 +578,13 @@ https://docs.microsoft.com/azure/storage/blobs/security-recommendations
 
 **Руководство**: Для учетных записей хранения Azure, связанных с пулом пакетов Azure,s, которые содержат конфиденциальную информацию, отметьте их как конфиденциальные с помощью тегов и защитите их с помощью рекомендаций Azure.
 
-
 Функции идентификации, классификации и предотвращения потерь пока не доступны для ресурсов Azure Storage или вычислений. Внедрить стороннее решение, если это необходимо для целей соответствия.
 
-
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт рассматривает все содержимое клиента как конфиденциальный и делает все усилия для защиты от потери данных клиентов и их воздействия. Для обеспечения безопасности данных клиентов в Azure корпорация Майкрософт внедрила и поддерживает набор надежных средств управления и возможностей защиты данных.
-
 
 Понимание защиты данных клиентов в Azure:
 
 https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
-
 
 Как защитить учетные записи хранения данных Azure:
 
@@ -662,11 +598,9 @@ https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
 **Руководство**: Используйте Управление доступом на основе ролей Azure Active Directory (AAD) (RBAC) для управления доступом к плоскости управления ресурсами Azure, включая учетную запись Batch, пакетный пул (ы) и учетные записи хранения.
 
-
 Поймите Azure RBAC:
 
 https://docs.microsoft.com/azure/role-based-access-control/overview
-
 
 Как настроить RBAC в Azure:
 
@@ -680,11 +614,7 @@ https://docs.microsoft.com/azure/role-based-access-control/role-assignments-port
 
 **Руководство**: Функции идентификации, классификации и предотвращения потерь пока не доступны для ресурсов Azure Storage или вычислений. Внедрить стороннее решение, если это необходимо для целей соответствия.
 
-
-
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт рассматривает все содержимое клиента как конфиденциальный и делает все усилия для защиты от потери данных клиентов и их воздействия. Для обеспечения безопасности данных клиентов в Azure корпорация Майкрософт внедрила и поддерживает набор надежных средств управления и возможностей защиты данных.
-
-
 
 Понимание защиты данных клиентов в Azure:
 
@@ -698,8 +628,6 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 **Руководство**: Для учетных записей хранения, связанных с учетной записью Azure Batch, рекомендуется разрешить корпорации Майкрософт управлять ключами шифрования, однако при необходимости у вас есть возможность управлять собственными ключами.
 
-
-
 Как управлять ключами шифрования для учетных записей хранения Azure:
 
 https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal
@@ -712,17 +640,11 @@ https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal
 
 **Руководство**: Используйте azure Monitor с журналом действий Azure для создания оповещений о том, когда происходят изменения в критическиважных ресурсах Azure, связанных с учетными записями/пулами пакетов Azure.
 
-
-
 Настроили диагностические настройки для учетных записей хранения, связанных с пакетным пулом Azure, для мониторинга и регистрации всех операций CRUD с помощью данных пула.
-
-
 
 Как создать оповещения для событий журнала активности Azure:
 
 https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
-
-
 
 Как включить дополнительную систему регистрации/аудит учетной записи хранения Azure:
 
@@ -740,7 +662,6 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 **Руководство:** Для узлов пакетного пула Azure вы несете ответственность за управление решением управления уязвимостями.
 
-
 В качестве опционов, если у вас есть подписка Rapid7, qualys или любая другая подписка на платформу управления уязвимостями, вы можете вручную установить агенты оценки уязвимостей на узлах пула пакетов и управлять узлами через соответствующий портал.
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
@@ -751,6 +672,7 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 **Руководство**: Корпорация Майкрософт для обслуживания и обновления базовых изображений узлов оговоренного пула Azure. Убедитесь, что операционная система узлов Azure Batch Pool остается исправленной на протяжении всего срока службы кластера, что может потребовать автоматического обновления, мониторинга узлов или выполнения периодических перезагрузок.
 
+
 **Мониторинг Центра безопасности Azure:** Да
 
 **Ответственность**: Общие сведения
@@ -758,6 +680,7 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 ### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3: Развертывание автоматизированного решения для управления патчами программного обеспечения третьей стороны
 
 **Руководство**: Убедитесь, что сторонние приложения узлов Azure Batch Pool остаются исправленными в течение всего срока службы кластера, что может потребовать автоматического обновления, мониторинга узлов или выполнения периодических перезагрузок.
+
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
@@ -787,19 +710,15 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 **Руководство**: Используйте график ресурсов Azure для запроса/обнаружения всех ресурсов (таких как вычисления, хранение, сеть и т.д.) в рамках подписки (ы). Убедитесь, что у вас есть соответствующие (читай) разрешения в арендаторе и можете перечислить все подписки Azure, а также ресурсы в рамках подписки.
 
+Хотя классические ресурсы Azure могут быть обнаружены с помощью диаграммы ресурсов, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager (ARM) в будущем.
 
-Хотя классические ресурсы Azure могут быть обнаружены через Azure Resource Graph Explorer, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager (ARM) в будущем.
-
-
-Как создавать запросы с помощью Azure Resource Graph Explorer:
+Как создавать запросы с помощью Графика Azure:
 
 https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
-
 
 Как просмотреть подписку на Azure:
 
 https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
-
 
 Поймите Azure RBAC:
 
@@ -813,7 +732,6 @@ https://docs.microsoft.com/azure/role-based-access-control/overview
 
 **Руководство**: Применяйте теги к ресурсам Azure, давая метаданные, чтобы логически организовать их в таксономию.
 
-
 Как создавать и использовать теги:
 
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
@@ -826,21 +744,15 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Используйте пометки, группы управления и отдельные подписки, где это уместно, для организации и отслеживания активов. Регулярно согласовывать инвентаризацию и своевременно исключать несанкционированные ресурсы из подписки.
 
-
-
 Как создать дополнительные подписки Azure:
 
 https://docs.microsoft.com/azure/billing/billing-create-subscription
-
-
 
 Как создать группы управления:
 
 https://docs.microsoft.com/azure/governance/management-groups/create
 
-
-
-Как создавать и использовать теги:
+Как создать и пользователь Теги:
 
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
@@ -851,6 +763,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 ### <a name="64-maintain-inventory-of-approved-azure-resources-and-software-titles"></a>6.4: Ведение инвентаризации утвержденных ресурсов Azure и названий программного обеспечения.
 
 **Руководство**: Определить список утвержденных ресурсов Azure и утвержденного программного обеспечения для вычислительных ресурсов
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -863,14 +776,12 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-
 Используйте график ресурсов Azure для запроса/обнаружения ресурсов в подписке(s). Убедитесь, что все ресурсы Azure, присутствующие в среде, утверждены.
-
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
+Как создавать запросы с помощью Графика Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-Как создавать запросы с помощью Azure Resource Graph Explorer:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
@@ -880,6 +791,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Для узлов пакетного кластера Azure реализуйте стороннее решение для мониторинга кластерных узлов для неодобренных программных приложений.
 
+
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
 **Ответственность**: Клиент
@@ -887,6 +799,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7: Удалите неодобренные ресурсы и программные приложения Azure
 
 **Руководство**: Для узлов пакетного кластера Azure реализуйте стороннее решение для мониторинга кластерных узлов для неодобренных программных приложений.
+
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
@@ -896,6 +809,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Для узлов пакетного пула Azure реализуем стороннее решение для предотвращения выполнения несанкционированного программного обеспечения.
 
+
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
 **Ответственность**: Клиент
@@ -904,15 +818,13 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Используйте политику Azure для ограничения типа ресурсов, которые могут быть созданы в подписке клиента (ы) с использованием следующих встроенных определений политики:
 
-
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-
 Как отказать в определенном типе ресурсов с помощью политики Azure:https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
+
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
@@ -922,6 +834,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Для узлов пакетного пула Azure реализуем стороннее решение для предотвращения выполнения несанкционированных типов файлов.
 
+
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
 **Ответственность**: Клиент
@@ -930,8 +843,8 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Используйте Azure Conditional Access, чтобы ограничить возможности пользователей взаимодействовать с менеджером ресурсов Azure, нанастройки "Блок-доступ" для приложения "Управление Microsoft Azure".
 
-
 Как настроить условный доступ, чтобы заблокировать доступ к менеджеру ресурсов Azure:https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
@@ -942,6 +855,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 **Руководство**: Не применимо,
 
 Это не применимо к Azure Batch, так как пользователям (не администраторам) пулов Azure Batch не требуется доступ к отдельным узлам для выполнения заданий. Администратор кластера уже имеет корневой доступ ко всем узлам.
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -963,11 +877,9 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство:** Используйте псевдонимы Azure Policy в пространстве имен «Microsoft.Batch» для создания пользовательских политик для аудита или обеспечения конфигурации учетных записей и пулов пакетов Azure.
 
-
 Как просмотреть доступные Aliases Azure Policy:
 
 https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
-
 
 Как настроить и управлять политикой Azure:
 
@@ -990,14 +902,15 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 **Руководство**: Используйте политику Azure «отрицать» и «развертывать, если не существует» для обеспечения безопасных параметров для ресурсов Azure, связанных с учетной записью пакета и пулами (например, виртуальные сети, подсети, брандмауэры Azure, учетные записи хранения Azure и т.д.). Для создания пользовательских политик можно использовать aliases Azure Policy из следующих областей имен:
 
 - Microsoft.Batch
-- Microsoft.Storage;
-- Microsoft.Network.
 
+- Microsoft.Storage;
+
+- Microsoft.Network.
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-
 Понять эффекты политики Azure:https://docs.microsoft.com/azure/governance/policy/concepts/effects
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -1015,11 +928,9 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**: При использовании пользовательских определений политикaz для учетных записей, пулов ресурсов или связанных с ними ресурсов Azure Repos используйте Azure Repos для безопасного хранения и управления кодом.
 
-
 Как хранить код в Azure DevOps:
 
 https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
-
 
 Документация Репос Azure:
 
@@ -1033,11 +944,9 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 **Руководство**: При использовании пользовательских изображений для пулов Azure Batch используйте элемент управления доступом на основе ролей (RBAC), чтобы обеспечить доступ к изображениям только авторизованным пользователям.
 
-
 Поймите RBAC в Azure:
 
 https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles
-
 
 Как настроить RBAC в Azure:
 
@@ -1051,8 +960,6 @@ https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-rol
 
 **Руководство**: Используйте встроенные определения политики Azure для оповещения, аудита и обеспечения безопасности конфигураций ресурсов, связанных с пакетом Azure.  Используйте псевдонимы Azure Policy в пространстве имен "Microsoft.Batch" для создания пользовательских политик для учетных записей и пулов пакетов Azure. Кроме того, разработайте процесс и конвейер для управления исключениями политики.
 
-
-
 Как настроить и управлять политикой Azure:
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
@@ -1065,6 +972,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**: Реализация стороннего решения для поддержания желаемого состояния для операционных систем узлов пакетов Azure.
 
+
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
 **Ответственность**: Клиент
@@ -1073,12 +981,16 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство:** Используйте псевдонимы Azure Policy в пространстве имен «Microsoft.Batch» для создания пользовательских политик для аудита или обеспечения соблюдения конфигурации экземпляра Azure Batch. Можно также использовать любые встроенные политики, созданные специально для Azure Batch, или ресурсы, используемые Azure Batch, такие как:
 
-- Подсети должны быть связаны с группой сетевой безопасности - Учетные записи хранения должны использовать виртуальную конечную точку службы сети
+- Подсети должны быть связаны с группой безопасности сети.
+
+-Учетные записи хранения должны использовать виртуальную конечную точку сетевого обслуживания
+
 - Необходимо включить журналы диагностики в учетных записях пакетной службы
 
 Как просмотреть доступные Aliases Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+
 
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
@@ -1089,6 +1001,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**: Реализация стороннего решения для мониторинга состояния операционных систем узлов пакетов пакетов Azure.
 
+
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
 **Ответственность**: Клиент
@@ -1097,16 +1010,13 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**: Azure Key Vault может использоваться при развертывании Azure Batch для управления ключами для хранения пулов в учетных записях хранения Azure.
 
-
 Как интегрироваться с управляемыми идентификаторами Azure:
 
 https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-
 Как создать убежище ключей Azure:
 
 https://docs.microsoft.com/azure/key-vault/quick-create-portal
-
 
 Как обеспечить аутентификацию Key Vault с управляемой идентификацией:
 
@@ -1119,6 +1029,7 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 ### <a name="712-securely-and-automatically-manage-identities"></a>7.12: Безопасно и автоматически управлять удостоверениями
 
 **Руководство**: Недоступно, Итог управляемой службы, не поддерживаемый пакетом Azure
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -1142,6 +1053,7 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
 **Руководство**: Используйте Windows Defender на отдельных узлах пула Azure Batch в случае операционных систем Windows, или предоставьте свое собственное решение для борьбы с вредоносным ПО, если вы используете Linux.
 
+
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
 **Ответственность**: Клиент
@@ -1150,9 +1062,7 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
 **Руководство**: Microsoft Antimalware включенна на базовом узеле, который поддерживает службы Azure (например, Azure Batch), однако она не выполняется на содержимом клиента.
 
-
 Предварительное сканирование любых файлов, загруженных на некомпьютерные ресурсы Azure, такие как Служба приложений, Хранение озер данных, Хранилище blob и т.д. Корпорация Майкрософт не может получить доступ к данным клиентов в этих случаях.
-
 
 Поймите Microsoft Antimalware для облачных служб Azure и виртуальных машин:
 
@@ -1166,6 +1076,7 @@ https://docs.microsoft.com/azure/security/fundamentals/antimalware
 
 **Руководство**: Используйте Windows Defender на отдельных узлах пула Azure Batch в случае операционных систем Windows и убедитесь, что автоматическое обновление включено. Предоставьте свое собственное решение для борьбы с вредоносным ПО, если вы используете Linux.
 
+
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
 **Ответственность**: Клиент
@@ -1177,7 +1088,6 @@ https://docs.microsoft.com/azure/security/fundamentals/antimalware
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1: Обеспечить регулярные автоматизированные резервные ups
 
 **Руководство**: При использовании учетной записи хранения Azure для хранилища данных пакета Azure выберите подходящий вариант избыточности (LRS, RS, GRS, RA-GRS). 
-
 
 Как настроить избыточность хранилища для учетных записей хранения Azure:
 
@@ -1191,11 +1101,9 @@ https://docs.microsoft.com/azure/storage/common/storage-redundancy
 
 **Руководство**: При использовании учетной записи хранения Azure для хранилища данных пакета Azure выберите подходящий вариант избыточности (LRS, RS, GRS, RA-GRS).  При использовании Azure Key Vault для любой части развертывания Azure Batch убедитесь, что ключи будут резервироваться.
 
-
 Как настроить избыточность хранилища для учетных записей хранения Azure:
 
 https://docs.microsoft.com/azure/storage/common/storage-redundancy
-
 
 Как создать резервную связь с ключами хранилища в Azure:
 
@@ -1209,11 +1117,9 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvau
 
 **Руководство:** Если вы управляете собственными ключами для учетных записей хранения Azure или любым другим ресурсом, связанным с реализацией Azure Batch, периодически тестируйте восстановление резервных ключей.
 
-
 Как создать резервную связь с ключами хранилища в Azure:
 
 https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0
-
 
 Как восстановить управляемый ключ клиента с помощью PowerShell:
 
@@ -1226,7 +1132,6 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4: Обеспечить защиту резервных и управляемых ключей клиента
 
 **Руководство**: Если Azure Key Vault используется для хранения любых ключей, связанных с учетными записями хранения пакетов Azure, позволяет удаленному удалению в Azure Key Vault для защиты ключей от случайного или вредоносного удаления.
-
 
 Как включить Soft Delete в Хранилище ключей Azure:
 
@@ -1243,8 +1148,6 @@ https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell
 ### <a name="101-create-incident-response-guide"></a>10.1: Создание руководства по реагированию на инциденты
 
 **Руководство**: Убедитесь, что существуют письменные планы реагирования на инциденты, которые определяют роли персонала, а также этапы обработки/управления инцидентами.
-
-
 
 Как настроить автоматизацию рабочих процессов в Центре безопасности Azure:
 
@@ -1276,8 +1179,6 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 
 **Руководство**: Контактная информация об инцидентах безопасности будет использоваться корпорацией Майкрософт для связи с вами, если Центр реагирования на безопасность Майкрософт (MSRC) обнаружит, что ваши данные были доступны незаконной или несанкционированной стороной.
 
-
-
 Как установить контакт с безопасностью Центра безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
@@ -1290,11 +1191,9 @@ https://docs.microsoft.com/azure/security-center/security-center-provide-securit
 
 **Руководство**: Экспорт оповещений и рекомендаций Центра безопасности Azure с использованием функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать оповещения и рекомендации либо вручную, либо в постоянном, непрерывном режиме. Для потоковой передачи оповещений в Azure Sentinel можно использовать разъем данных Центра безопасности Azure.
 
-
 Как настроить непрерывный экспорт:
 
 https://docs.microsoft.com/azure/security-center/continuous-export
-
 
 Как передавать оповещения в Azure Sentinel:
 
@@ -1307,8 +1206,6 @@ https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: Автоматизация реагирования на оповещения о безопасности
 
 **Руководство**: Используйте функцию автоматизации рабочего процесса в Центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" на оповещения и рекомендации по безопасности.
-
-
 
 Как настроить автоматизацию рабочего процесса и логические приложения:
 
@@ -1328,8 +1225,6 @@ https://docs.microsoft.com/azure/security-center/workflow-automation
 
 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
-
-
 Вы можете найти более подробную информацию о стратегии Microsoft и выполнении Red Teaming и тестировании на проникновение в реальном времени в майкарософт в отношении управляемой Microsoft облачной инфраструктуры, служб и приложений: 
 
 https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
@@ -1338,7 +1233,7 @@ https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Ответственность**: Общие сведения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть [тест безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Узнайте больше об [базовых линиях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

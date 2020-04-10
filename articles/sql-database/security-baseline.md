@@ -2,24 +2,23 @@
 title: Базовый универсаль безопасности Azure для базы данных Azure S'L
 description: Базовый универсаль безопасности Azure для базы данных Azure S'L
 author: msmbaldwin
-manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 02/28/2020
+ms.date: 04/09/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 35d4d44f0b9f1b210f38a034575b589c7211d55c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d51cf22d7be167501927e54ce159e0b732209b0d
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80246676"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011384"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database"></a>Базовый универсаль безопасности Azure для базы данных Azure S'L
 
 Базовая база данных Azure Security для базы данных Azure S'L содержит рекомендации, которые помогут вам улучшить безопасность развертывания.
 
-Базовый узел для этих служб взят из [версии 1.0 Azure Security Benchmark,](https://docs.microsoft.com/azure/security/benchmarks/overview)которая содержит рекомендации о том, как можно обезопасить свои облачные решения в Azure с нашими рекомендациями по передовым практикам.
+Базовая версия этой службы взята из [версии 1.0 Azure Security Benchmark,](https://docs.microsoft.com/azure/security/benchmarks/overview)которая содержит рекомендации о том, как можно обезопасить свои облачные решения в Azure с нашими рекомендациями по передовым практикам.
 
 Для получения дополнительной информации смотрите [обзор базовых линий безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
 
@@ -29,16 +28,15 @@ ms.locfileid: "80246676"
 
 ### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1: Защита ресурсов, использующих группы сетевой безопасности или брандмауэр Azure в виртуальной сети
 
-**Руководство**: Вы можете включить частную ссылку Azure, чтобы разрешить доступ к службам Azure PaaS (например, база данных S'L) и Azure размещает услуги клиентов/партнеров по частной конечной точке в вашей виртуальной сети. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Чтобы трафик поступал в базу данных SQL Azure, используйте теги служб SQL, которые разрешают исходящий трафик через механизм групп безопасности сети.
+**Руководство**: Вы можете включить частную ссылку Azure, чтобы разрешить доступ к службам Azure PaaS (например, база данных S'L) и Azure размещает услуги клиентов/партнеров по частной конечной точке в вашей виртуальной сети. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. 
 
+Чтобы трафик поступал в базу данных SQL Azure, используйте теги служб SQL, которые разрешают исходящий трафик через механизм групп безопасности сети.
 
 Правила виртуальной сети позволяют базе данных Azure S'L принимать только сообщения, которые отправляются из выбранных подсетей внутри виртуальной сети.
-
 
 Как настроить частную ссылку для базы данных Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview#how-to-set-up-private-link-for-azure-sql-database
-
 
 Как использовать конечные точки виртуального сетевого обслуживания и правила для серверов баз данных:
 
@@ -50,23 +48,23 @@ https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1.2: Мониторинг и регистрация конфигурации и трафика Vnets, Subnets и NICs
 
-**Руководство**: Использование Центра безопасности Azure и рекомендации по защите сети для подсети, в развертываемый сервер базы данных Azure S'L. Для виртуальных машин Azure (VM), которые будут подключаться к экземпляру Azure S'L Database Server, включите журналы потоков группы сетевой безопасности (NSG) для НСГ, защищающих эти виртуальные технологии, и отправьте журналы в учетную запись хранения Azure для аудита трафика. Вы также можете отправлять журналы потоков NSG в рабочее пространство Log Analytics и использовать аналитику трафика для получения информации о движении в облаке Azure. Некоторые преимущества Traffic Analytics — это возможность визуализации сетевой активности и выявления горячих точек, выявления угроз безопасности, понимания моделей движения и неправильной настройки сети.
+**Руководство**: Использование Центра безопасности Azure и рекомендации по защите сети для подсети, в развертываемый сервер базы данных Azure S'L. 
 
+Для виртуальных машин Azure (VM), которые будут подключаться к экземпляру Azure S'L Database Server, включите журналы потоков группы сетевой безопасности (NSG) для НСГ, защищающих эти виртуальные технологии, и отправьте журналы в учетную запись хранения Azure для аудита трафика. 
+
+Вы также можете отправлять журналы потоков NSG в рабочее пространство Log Analytics и использовать аналитику трафика для получения информации о движении в облаке Azure. Некоторые преимущества Traffic Analytics — это возможность визуализации сетевой активности и выявления горячих точек, выявления угроз безопасности, понимания моделей движения и неправильной настройки сети.
 
 Как включить журналы потока NSG:
 
 https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
-
 Понимание сетевой безопасности, предоставляемой Центром безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
 
-
 Как включить и использовать аналитику трафика:
 
 https://docs.microsoft.com/azure/network-watcher/traffic-analytics
-
 
 Понимание сетевой безопасности, предоставляемой Центром безопасности Azure:
 
@@ -80,6 +78,7 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 **Руководство**: Не применимо; эта рекомендация предназначена для Службы приложений Azure или для вычисления ресурсов, худавив веб-приложений.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -88,11 +87,9 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 **Руководство**: Включите стандарт Защиты DDoS для виртуальных сетей, связанных с экземплярами сервера S'L, для защиты от распределенных атак типа «отказ в обслуживании». Используйте Azure Security Center Integrated Threat Intelligence, чтобы отказать в сообщении с известными вредоносными или неиспользованными IP-адресами в Интернете.
 
-
 Как настроить DDoS-защиту:
 
 https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
-
 
 Поймите Azure Security Center Integrated Threat Intelligence:
 
@@ -106,11 +103,9 @@ https://docs.microsoft.com/azure/security-center/security-center-alerts-data-ser
 
 **Руководство:** Для виртуальных машин Azure (VMs), которые будут подключаться к экземпляру базы данных Azure S'L, включить журналы потоков группы сетевой безопасности (NSG) для НГУ, защищающие эти виртуальные технологии, и отправлять журналы в учетную запись хранения Azure для аудита трафика. При необходимости исследования аномальной активности включите пакет пакетnetwork-наблюдатель Network Watcher.
 
-
 Как включить журналы потока NSG:
 
 https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
-
 
 Как включить сетевой наблюдатель:
 
@@ -122,9 +117,10 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6: Развертывание сетевых систем обнаружения/предотвращения вторжений (IDS/IPS)
 
-**Руководство**: Включить расширенную защиту от угроз (ATP) для базы данных Azure S'L.  Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностей в доступе к базам данных и шаблонам запросов. Расширенная защита от угроз также интегрирует оповещения с Центром безопасности Azure.
+**Руководство**: Включить расширенную защиту от угроз (ATP) для базы данных Azure S'L.  Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностей в доступе к базам данных и шаблонам запросов. Расширенная защита от угроз также интегрирует оповещения с Центром безопасности Azure. 
 
 Понимание и использование расширенной защиты от угроз для базы данных Azure S'L:https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
+
 
 **Мониторинг Центра безопасности Azure:** Да
 
@@ -134,6 +130,7 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 **Руководство**: Не применимо; эта рекомендация предназначена для Службы приложений Azure или для вычисления ресурсов, худавив веб-приложений.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -142,14 +139,11 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 **Руководство**: Используйте виртуальные теги сетевого обслуживания для определения элементов управления доступом к сети в группах сетевой безопасности или Брандмауэре Azure. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указывая имя тега службы (например, ApiManagement) в соответствующем поле источника или назначения правила, можно разрешить или отклонить трафик для соответствующей службы. Корпорация Майкрософт управляет адресными префиксами, охватываемыми тегом службы, и автоматически обновляет тег службы при изменении адресов.
 
-
 При использовании конечных точек обслуживания для базы данных Azure S'L требуется выход на публичные IP-адреса базы данных Azure S'L: группы сетевой безопасности (НСГ) должны быть открыты для IP-адресов базы данных Azure S'L Database, чтобы обеспечить подключение. Это можно сделать, используя теги служб Ы NSG для базы данных Azure S'L.
-
 
 Понимание тегов служб с конечными точками обслуживания для базы данных Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview#limitations
-
 
 Понимание и использование тегов службы:
 
@@ -162,15 +156,15 @@ https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9: Поддержание стандартных конфигураций безопасности для сетевых устройств
 
 **Руководство:** Определение и реализация конфигураций сетевой безопасности для экземпляров сервера базы данных Azure S'L с помощью политики Azure. Для определения определений пользовательских политик или для определения пользовательских определений политики можно использовать пространство имен «Microsoft.Sql» или использовать любое из встроенных определений политики, предназначенных для защиты серверной сети серверов базы данных Azure S'L. Примером применимой встроенной сетевой политики безопасности для сервера базы данных Azure S'L может быть: «Сервер S'L должен использовать конечную точку виртуального сетевого обслуживания».
+
  
 
 Используйте шаблоны Azure для упрощения крупномасштабных развертываний Azure путем упаковки ключевых артефактов среды, таких как шаблоны управления ресурсами Azure, управление доступом на основе ролей (RBAC) и политики, в единое определение чертежа. Легко применять план к новым подпискам и средам, а также тонкой настройки управления и управления с помощью версий.
 
-
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-
 Как создать план Azure:https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
+
 
 **Мониторинг Центра безопасности Azure:** Да
 
@@ -180,12 +174,9 @@ https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 
 **Руководство**: Использование тегов для групп сетевой безопасности (NSG) и других ресурсов, связанных с сетевой безопасностью и потоком трафика. Для отдельных правил NSG используйте поле "Описание", чтобы указать бизнес-потребности и/или продолжительность (и т.д.) для любых правил, разрешающие трафик в/из сети.
 
-
 Используйте любое из встроенных определений политики Azure, связанных с пометкой, например "Требуемый тег и его значение", чтобы гарантировать, что все ресурсы создаются с тегами и уведомлять вас о существующих немаркированных ресурсах.
 
-
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий на ресурсах, основанных на их тегах.
-
 
 Как создавать и использовать теги:
 
@@ -199,11 +190,9 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Используйте журнал действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений для сетевых ресурсов, связанных с экземплярами серверов базы данных Azure S'L. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критически важных сетевых ресурсов.
 
-
 Как просмотреть и получить события журнала активности Azure:
 
 https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view
-
 
 Как создать оповещения в Azure Monitor:
 
@@ -221,8 +210,6 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 **Руководство**: Корпорация Майкрософт поддерживает источники времени для ресурсов Azure. Можно обновить синхронизацию времени для развертывания вычислений.
 
-
-
 Как настроить синхронизацию времени для вычислительных ресурсов Azure:
 
 https://docs.microsoft.com/azure/virtual-machines/windows/time-sync
@@ -235,22 +222,19 @@ https://docs.microsoft.com/azure/virtual-machines/windows/time-sync
 
 **Руководство**: Включить аудит базы данных Azure S'L для отслеживания событий базы данных и записи их в журнал аудита в учетной записи хранения Azure, рабочей области аналитики журналов или концентрах событий.
 
-
 Кроме того, можно передавать телеметрию диагностики Azure S'L в Azure S'L Analytics, облачное решение, которое отслеживает производительность баз данных Azure S'L, эластичных пулов и управляемых экземпляров в масштабе и в нескольких подписках. Решение поможет собирать и визуализировать показатели производительности Базы данных SQL Azure, а также обладает встроенными интеллектуальными возможностями для устранения неполадок производительности.
 
 Как настроить аудит для базы данных Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-auditing
 
-
-Как собирать метрики и журналы ресурсов с помощью Azure Monitor:
+Как собирать журналы и метрики платформы с помощью Azure Monitor:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging
 
-
 Как передать диагностику в аналитику Azure S'L:
 
-https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging#configure-the-streaming-export-of-diagnostic-telemetry
+https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging#stream-into-azure-sql-analytics
 
 **Мониторинг Центра безопасности Azure:** Да
 
@@ -259,7 +243,6 @@ https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging#
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3: Включить журнал аудита для ресурсов Azure
 
 **Руководство:** Возможность аудита на экземпляре сервера базы данных Azure S'L и выбрать место хранения для журналов аудита (Azure Storage, Log Analytics или Концентратор событий).
-
 
 Как включить аудит для сервера Azure S'L:
 
@@ -273,6 +256,7 @@ https://docs.microsoft.com/azure/sql-database/sql-database-auditing
 
 **Руководство**: Не применимо; этот бенчмарк предназначен для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -280,8 +264,6 @@ https://docs.microsoft.com/azure/sql-database/sql-database-auditing
 ### <a name="25-configure-security-log-storage-retention"></a>2.5: Настройка хранения журналов безопасности
 
 **Руководство**: При хранении журналов базы данных Azure S'L в рабочем пространстве аналитики журналов установите период хранения журналов в соответствии с правилами соответствия организации.
-
-
 
 Как установить параметры удержания журнала:
 
@@ -295,11 +277,9 @@ https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#chan
 
 **Руководство**: Анализ и мониторинг журналов для аномального поведения и регулярно просматривать результаты. Используйте расширенную защиту от угроз Центра безопасности Azure, чтобы предупредить о необычных действиях, связанных с экземпляром базы данных Azure S'L. Кроме того, назначьте оповещения на основе метеорных значений или записей журнала о деятельности Azure, связанных с экземплярами базы данных Azure S'L.
 
-
 Поймите расширенную защиту угроз и оповещения для сервера Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
-
 
 Как настроить пользовательские оповещения для базы данных Azure S'L:
 
@@ -313,19 +293,13 @@ https://docs.microsoft.com/azure/sql-database/sql-database-insights-alerts-porta
 
 **Руководство**: Используйте Расширенную защиту от угроз Azure для баз данных Azure S'L для мониторинга и оповещения об аномальных действиях. Включите расширенную безопасность данных для ваших баз данных S'L. Расширенная безопасность данных включает в себя функциональность для обнаружения и классификации конфиденциальных данных, всплывающих и смягчающих потенциальные уязвимости базы данных, а также обнаружения аномальных действий, которые могут указывать на угрозу для вашей базы данных.
 
-
-
 Понять расширенную защиту угроз и оповещение для базы данных Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
 
-
-
 Как включить расширенную безопасность данных для базы данных Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security
-
-
 
 Как управлять оповещениями в Центре безопасности Azure:
 
@@ -339,6 +313,7 @@ https://docs.microsoft.com/azure/security-center/security-center-managing-and-re
 
 **Руководство**: Не применимо; Для сервера Azure S'L Server антивредоносное решение управляется корпорацией Майкрософт на базовой платформе.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -347,6 +322,7 @@ https://docs.microsoft.com/azure/security-center/security-center-managing-and-re
 
 **Руководство**: Не применимо; Запись DNS не применяется к серверу Azure S'L Server.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -354,6 +330,7 @@ https://docs.microsoft.com/azure/security-center/security-center-managing-and-re
 ### <a name="210-enable-command-line-audit-logging"></a>2.10: Включить журнал аудита командной строки
 
 **Руководство**: Не применимо; аудит командной строки не применяется к серверу Azure S'L Server.
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -367,11 +344,9 @@ https://docs.microsoft.com/azure/security-center/security-center-managing-and-re
 
 **Руководство**: Активный каталог Azure (AAD) имеет встроенные роли, которые должны быть четко назначены и задаются запросом. Используйте модуль AAD PowerShell для выполнения специальных запросов для обнаружения учетных записей, входят в состав административных групп.
 
-
 Как получить роль каталога в Azure AD с PowerShell:
 
 https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
-
 
 Как получить роль участников каталога в Azure AD с PowerShell:
 
@@ -385,7 +360,6 @@ https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemem
 
 **Руководство**: Активный каталог Azure не имеет понятия паролей по умолчанию. При подготовке экземпляра базы данных Azure S'L рекомендуется интегрировать аутентификацию в Active Directory Azure.
 
-
 Как настроить и управлять аутентификацией активных каталогов Azure с помощью Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure
@@ -397,8 +371,6 @@ https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-co
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3: Использование выделенных административных учетных записей
 
 **Руководство**: Создание политик и процедур, окружающих использование выделенных административных учетных записей. Используйте identity identity и access Management Центра безопасности Azure для мониторинга количества административных учетных записей.
-
-
 
 Поймите идентификацию и доступ центра безопасности Azure:
 
@@ -412,6 +384,7 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 **Руководство**: Не применимо; в то время как вы можете настроить активную проверку подлинности каталогов Azure для интеграции с Azure S'L Server, единая регистрация не поддерживается.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -420,11 +393,9 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 **Руководство:** Включите активный каталог Azure (AAD) Multi-Factor Authentication (MFA) и следуйте рекомендациям Центра идентификации и управления доступом Azure.
 
-
 Как включить МИД в Azure:
 
 https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
-
 
 Как контролировать личность и доступ в Центре безопасности Azure:
 
@@ -438,11 +409,9 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 **Руководство**: Используйте привилегированное рабочее место доступа (PAW) с мультифакторной аутентификацией МИД, настроенной для входа в ресурсы Azure и настройки.
 
-
 Узнайте о рабочих станциях привилегированном доступе:
 
 https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
-
 
 Как включить МИД в Azure:
 
@@ -456,23 +425,15 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 
 **Руководство**: Используйте отчеты безопасности Azure Active Directory для генерации журналов и предупреждений, когда в среде происходит подозрительная или небезопасная деятельность.
 
-
-
 Используйте Расширенную защиту угроз для базы данных Azure S'L для обнаружения аномальных действий, указывающих на необычные и потенциально опасные попытки получить доступ к базам данных или эксплуатировать их.
-
-
 
 Как определить пользователей Azure AD, помеченных для рискованных действий:
 
 https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk
 
-
-
 Как отслеживать идентификацию пользователей и доступ к деятельности в Центре безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-identity-access
-
-
 
 Обзор Расширенной защиты от угроз и потенциальных предупреждений:
 
@@ -487,8 +448,8 @@ https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-over
 
 **Руководство**: Используйте условные места доступа, чтобы обеспечить доступ к portal и Azure Resource Management только из конкретных логических групп диапазонов IP-адресов или стран/регионов.
 
-
 Как настроить именованные места в Azure:https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
+
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
@@ -498,11 +459,9 @@ https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-over
 
 **Руководство:** Создайте администратора active Directory (AAD) Azure для экземпляров серверов базы данных Azure S'L.
 
-
 Как настроить и управлять аутентификацией активных каталогов Azure с помощью Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure
-
 
 Как создать и настроить экземпляр AAD:
 
@@ -516,7 +475,6 @@ https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-creat
 
 **Руководство**: Активный каталог Azure (AAD) предоставляет журналы, помогая обнаружить устаревшие учетные записи. Кроме того, используйте обзоры доступа КИОт Azure для эффективного управления членством в группах, доступа к корпоративным приложениям и ролевых назначений. Доступ пользователей может быть рассмотрен на регулярной основе, чтобы убедиться, что только правильные пользователи имеют постоянный доступ.
 
-
 Как использовать обзоры доступа к идентификационным данным Azure:
 
 https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
@@ -529,11 +487,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 **Руководство:** Настройка функциональной каталога Azure Active Directory (AAD) с помощью Azure S'L и создание диагностических настроек для учетных записей пользователей Azure Active Directory, отправка журналов аудита и журналов входа в рабочее пространство Log Analytics. Налаживайте желаемые оповещения в рабочей области Log Analytics.
 
-
 Как настроить и управлять аутентификацией активных каталогов Azure с помощью Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure
-
 
 Как интегрировать журналы активности Azure в Azure Monitor:
 
@@ -547,11 +503,9 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integ
 
 **Руководство:** Используйте Azure Active Directory (AAD) Identity Protection и обнаружения рисков для настройки автоматизированных ответов на обнаруженные подозрительные действия, связанные с идентификаторами пользователей. Кроме того, можно проемить данные в Azure Sentinel для дальнейшего изучения.
 
-
 Как просмотреть вхливые в систему Azure AD риски риска:
 
 https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
-
 
 Как настроить и включить политики защиты от идентификации:
 
@@ -564,7 +518,6 @@ https://docs.microsoft.com/azure/active-directory/identity-protection/howto-iden
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13: Предоставить корпорации Майкрософт доступ к соответствующим данным клиентов во время сценариев поддержки
 
 **Руководство**: В сценариях поддержки, в которых корпорации Майкрософт необходим доступ к данным клиентов, Azure Customer Lockbox предоставляет клиентам интерфейс для рассмотрения и утверждения или отклонения запросов на доступ к данным клиентов.
-
 
 Понять клиентскую блокировку:
 
@@ -582,7 +535,6 @@ https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview
 
 **Руководство**: Используйте теги для отслеживания ресурсов Azure, которые хранят или обрабатывают конфиденциальную информацию.
 
-
 Как создавать и использовать теги:
 
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
@@ -595,25 +547,17 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Реализация отдельных подписок и/или групп управления для разработки, тестирования и производства. Ресурсы должны быть разделены Vnet/Subnet, помечены соответствующим образом и защищены в NSG или Azure Firewall. Ресурсы, хранимые или обрабатывающие конфиденциальные данные, должны быть изолированы. Используйте частную ссылку; развертывание сервера Azure S'L Server в вашем Vnet и подключение в частном порядке с помощью частных конечных точек.
 
-
-
 Как создать дополнительные подписки Azure:
 
 https://docs.microsoft.com/azure/billing/billing-create-subscription
-
-
 
 Как создать группы управления:
 
 https://docs.microsoft.com/azure/governance/management-groups/create
 
-
-
 Как создавать и использовать теги:
 
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
-
-
 
 Как настроить частную ссылку для базы данных Azure S'L:
 
@@ -627,17 +571,11 @@ https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-over
 
 **Руководство:** Для баз данных Azure S'L, хранящихся или обрабатывающих конфиденциальную информацию, отметьте базу данных и связанные с ней ресурсы как конфиденциальные с помощью тегов. Настройте Private Link совместно с тегами группы сетевой безопасности в экземплярах базы данных Azure S'L, чтобы предотвратить эксфильтрацию конфиденциальной информации.
 
-
-
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт рассматривает все содержимое клиента как конфиденциальный и делает все усилия для защиты от потери данных клиентов и их воздействия. Для обеспечения безопасности данных клиентов в Azure корпорация Майкрософт внедрила и поддерживает набор надежных средств управления и возможностей защиты данных.
-
-
 
 Как настроить частную ссылку и НСК, чтобы предотвратить эксфильтрацию данных в экземплярах базы данных Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview
-
-
 
 Понимание защиты данных клиентов в Azure:
 
@@ -651,8 +589,6 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 **Руководство**: База данных Azure S'L защищает ваши данные, шифруя данные в движении с помощью безопасности уровня транспорта. Сервер S'L обеспечивает шифрование (SSL/TLS) в любое время для всех подключений. Это гарантирует, что все данные зашифрованы "в пути" между клиентом и сервером, независимо от настройки шифрования или TrustServerCertificate в строке соединения.
 
-
-
 Поймите шифрование Azure S'L в транзите:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-security-overview#information-protection-and-encryption
@@ -664,8 +600,6 @@ https://docs.microsoft.com/azure/sql-database/sql-database-security-overview#inf
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: Используйте инструмент активного обнаружения для идентификации конфиденциальных данных
 
 **Руководство**: Используйте функцию обнаружения и классификации данных базы данных Azure S'L. Обнаружение и классификация данных обеспечивают расширенные возможности, встроенные &amp; в базу данных Azure S'L для обнаружения, классификации, маркировки конфиденциальных данных в базах данных.
-
-
 
 Как использовать обнаружение данных и классификацию для сервера Azure S'L Server:
 
@@ -679,11 +613,9 @@ https://docs.microsoft.com/azure/sql-database/sql-database-data-discovery-and-cl
 
 **Руководство**: Используйте активный каталог Azure (AAD) для проверки подлинности и контроля доступа к экземплярам базы данных Azure S'L.
 
-
 Как интегрировать Azure S'L Server с active-каталогом Azure для проверки подлинности:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication
-
 
 Как управлять доступом в Azure S'L Server:
 
@@ -709,7 +641,6 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 **Руководство:** Прозрачное шифрование данных (TDE) помогает защитить базу данных Azure S'L, управляемый экземпляр Azure S'L и хранилище данных Azure от угрозы вредоносной деятельности в автономном режиме путем шифрования данных в состоянии покоя. Выполняется шифрование и расшифровка базы данных, связанных резервных копий и неактивных файлов журналов транзакций в реальном времени без необходимости изменения приложения. По умолчанию TDE включено для всех вновь развертываемых баз данных SQL Azure. Ключом шифрования TDE может управлять корпорация Майкрософт или заказчик.
 
-
 Как управлять прозрачным шифрованием данных и использовать собственные ключи шифрования:
 
 https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql?tabs=azure-portal#manage-transparent-data-encryption
@@ -721,7 +652,6 @@ https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9: Войти и предупредить об изменениях в критических ресурсах Azure
 
 **Руководство**: Используйте azure Monitor с журналом действий Azure для создания оповещений о случаях внесения изменений в производственные экземпляры баз данных Azure S-L и другие критически важные или связанные с ними ресурсы.
-
 
 Как создать оповещения для событий журнала активности Azure:
 
@@ -740,19 +670,13 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 **Руководство**: Включите расширенную безопасность данных для базы данных Azure S'L и следуйте рекомендациям Центра безопасности Azure по проведению оценки уязвимостей на серверах Azure S'L.
 
-
-
 Как провести оценку уязвимости в базах данных Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment
 
-
-
 Как обеспечить расширенную безопасность данных:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security
-
-
 
 Как реализовать рекомендации по оценке уязвимостей Центра безопасности Azure:
 
@@ -766,6 +690,7 @@ https://docs.microsoft.com/azure/security-center/security-center-vulnerability-a
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -773,6 +698,7 @@ https://docs.microsoft.com/azure/security-center/security-center-vulnerability-a
 ### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3: Развертывание автоматизированного решения для управления патчами сторонних программ
 
 **Руководство**: Не применимо; этот бенчмарк предназначен для вычислительных ресурсов.
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -782,11 +708,9 @@ https://docs.microsoft.com/azure/security-center/security-center-vulnerability-a
 
 **Руководство**: Включить периодические периодические сканирование для экземпляров базы данных Azure S'L; это настраивает оценку уязвимости для автоматического выполнения сканирования в базе данных один раз в неделю. Сводка результатов отправляется ​​на указанный адрес электронной почты. Сравните результаты, чтобы убедиться, что уязвимости были исправлены.
 
-
-
 Как экспортировать отчет об оценке уязвимости в Центре безопасности Azure:
 
-https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#implement-vulnerability-assessment
+https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#implementing-vulnerability-assessment
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -796,7 +720,9 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 
 **Руководство**: Используйте оценки риска по умолчанию (Secure Score), предоставляемые Центром безопасности Azure.
 
-Поймите безопасный счет центра безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-secure-score
+Поймите безопасный счет центра безопасности Azure:
+
+https://docs.microsoft.com/azure/security-center/security-center-secure-score
 
 **Мониторинг Центра безопасности Azure:** Да
 
@@ -810,17 +736,14 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 
 **Руководство**: Используйте график ресурсов Azure для запроса и обнаружения всех ресурсов (включая экземпляры Azure S'L Server) в подписке(ы).  Убедитесь, что у вас есть соответствующие (читай) разрешения в арендаторе и можете перечислить все подписки Azure, а также ресурсы в рамках подписки.
 
+Хотя классические ресурсы Azure могут быть обнаружены с помощью диаграммы ресурсов, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager в будущем.
 
-Хотя классические ресурсы Azure могут быть обнаружены с помощью графика ресурсов Azure, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager в будущем.
-
-
-Как создавать запросы с помощью графика ресурсов Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
-
+Как создавать запросы с помощью Графика Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 Как просмотреть подписку на Azure:https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
-
 Поймите Azure RBAC:https://docs.microsoft.com/azure/role-based-access-control/overview
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -829,8 +752,6 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 ### <a name="62-maintain-asset-metadata"></a>6.2: Поддержание метаданных активов
 
 **Руководство**: Применяйте теги к ресурсам Azure, давая метаданные, чтобы логически организовать их в таксономию.
-
-
 
 Как создавать и использовать теги:
 
@@ -844,19 +765,13 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Используйте пометки, группы управления и отдельные подписки, где это уместно, для организации и отслеживания активов. Регулярно согласовывать инвентаризацию и своевременно исключать несанкционированные ресурсы из подписки.
 
-
-
 Как создать дополнительные подписки Azure:
 
 https://docs.microsoft.com/azure/billing/billing-create-subscription
 
-
-
 Как создать группы управления:
 
 https://docs.microsoft.com/azure/governance/management-groups/create
-
-
 
 Как создавать и использовать теги:
 
@@ -879,13 +794,15 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 **Руководство**: Используйте политику Azure для ограничения типа ресурсов, которые могут быть созданы в подписке клиента (ы) с использованием следующих встроенных определений политики:
 
 - Недопустимые типы ресурсов
+
 - Допустимые типы ресурсов
 
 Используйте график ресурсов Azure для запроса/обнаружения ресурсов в подписке(s). Убедитесь, что все ресурсы Azure, присутствующие в среде, утверждены.
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Как создавать запросы с помощью графика ресурсов Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Как создавать запросы с помощью Графика Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -895,6 +812,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -903,6 +821,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -910,6 +829,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 ### <a name="68-use-only-approved-applications"></a>6.8: Используйте только одобренные приложения
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -920,6 +840,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 **Руководство**: Используйте политику Azure для ограничения типа ресурсов, которые могут быть созданы в подписке клиента (ы) с использованием следующих встроенных определений политики:
 
 - Недопустимые типы ресурсов
+
 - Допустимые типы ресурсов
 
 Используйте график ресурсов Azure для запроса/обнаружения ресурсов в подписке(s). Убедитесь, что все ресурсы Azure, присутствующие в среде, утверждены.
@@ -927,6 +848,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 Как отказать в определенном типе ресурсов с помощью политики Azure:https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
+
 
 
 **Мониторинг Центра безопасности Azure:** не применимо
@@ -937,6 +859,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Не применимо; эта рекомендация предназначена для приложений, работающих на вычислительных ресурсах.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -945,8 +868,8 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Используйте Azure Conditional Access, чтобы ограничить возможности пользователей взаимодействовать с менеджером ресурсов Azure, нанастройки "Блок-доступ" для приложения "Управление Microsoft Azure".
 
-
 Как настроить условный доступ, чтобы заблокировать доступ к менеджеру ресурсов Azure:https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+
 
 **Мониторинг Центра безопасности Azure**: В настоящее время недоступен
 
@@ -956,6 +879,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -963,6 +887,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13: Физически или логически сегрегировать приложения высокого риска
 
 **Руководство**: Не применимо; эта рекомендация предназначена для Службы приложений или вычислений ресурсов, худавав настольных или веб-приложений.
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -975,7 +900,6 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1: Создание безопасных конфигураций для всех ресурсов Azure
 
 **Руководство**: Используйте рекомендации Azure Policy или Azure Security Center для серверов/баз данных Azure s'L для поддержания конфигураций безопасности для всех ресурсов Azure.
-
 
 Как настроить и управлять политикой Azure:
 
@@ -997,13 +921,9 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**: Используйте политику Azure «отрицать» и «развертывать, если не существует» для обеспечения безопасных настроек в ресурсах Azure.
 
-
-
 Как настроить и управлять политикой Azure:
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
-
-
 
 Понять эффекты политики Azure:
 
@@ -1017,6 +937,7 @@ https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -1025,13 +946,9 @@ https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
 **Руководство:** При использовании пользовательских определений политики Azure используйте Azure DevOps или Azure Repos для безопасного хранения и управления кодом.
 
-
-
 Как хранить код в Azure DevOps:
 
 https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
-
-
 
 Документация Репос Azure:
 
@@ -1045,6 +962,7 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -1052,8 +970,6 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 ### <a name="77-deploy-system-configuration-management-tools"></a>7.7: Инструменты управления конфигурацией конфигурации системы развертывание
 
 **Руководство**: Используйте псевдонимы Azure Policy в пространстве имен «Microsoft.S'L» для создания пользовательских политик для оповещения, аудита и обеспечения безопасности конфигураций систем. Кроме того, разработайте процесс и конвейер для управления исключениями политики.
-
-
 
 Как настроить и управлять политикой Azure:
 
@@ -1067,6 +983,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -1074,8 +991,6 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7.9: Внедрение автоматизированного мониторинга конфигурации для служб Azure
 
 **Руководство**: Использование Центра безопасности Azure для выполнения базовых сканирований для серверов и баз данных Azure S-L.
-
-
 
 Как уделать рекомендации в Центре безопасности Azure:
 
@@ -1089,6 +1004,7 @@ https://docs.microsoft.com/azure/security-center/security-center-sql-service-rec
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -1096,8 +1012,6 @@ https://docs.microsoft.com/azure/security-center/security-center-sql-service-rec
 ### <a name="711-manage-azure-secrets-securely"></a>7.11: Надежное управление секретами Azure
 
 **Руководство**: Используйте Azure Key Vault для хранения ключей шифрования для прозрачного шифрования данных Лазурного средства (TDE).
-
-
 
 Как защитить конфиденциальные данные, хранящиеся в Azure S'L Server, и хранить ключи шифрования в Хранилище ключей Azure:
 
@@ -1111,11 +1025,9 @@ https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azur
 
 **Руководство:** Используйте управляемые идентификаторы для предоставления службам Azure автоматического управления идентификатором в Active Directory Azure (AAD). Управляемые идентификаторы позволяют аутентифицировать проверку любой службы, поддерживающей аутентификацию AAD, включая Azure Key Vault, без каких-либо учетных данных в коде.
 
-
 Учебник: Используйте систему Windows VM, назначенную управляемой интизией, чтобы получить доступ к Azure S'L:
 
 https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql
-
 
 Как настроить управляемые идентификаторы:
 
@@ -1143,6 +1055,7 @@ https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resou
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт обрабатывает антивредоносные программы для базовой платформы.
 
+
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Не применимо
@@ -1151,9 +1064,7 @@ https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resou
 
 **Руководство**: Антивредоносное початек Майкрософт включено на базовом узеле, поддерживающем службы Azure (например, Служба приложений Azure), однако оно не выполняется на контенте клиента.
 
-
 Предварительное сканирование любого содержимого, загруженного на некомпьютерные ресурсы Azure, такие как Служба приложений, Хранение озер данных, Хранилище blob, Azure S'L Server и т.д. Корпорация Майкрософт не может получить доступ к вашим данным в этих случаях.
-
 
 Поймите Microsoft Antimalware для облачных служб Azure и виртуальных машин:https://docs.microsoft.com/azure/security/fundamentals/antimalware
 
@@ -1164,6 +1075,7 @@ https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resou
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3: Обеспечить обновление антивредоносного программного обеспечения и подписей
 
 **Руководство**: Не применимо; эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт обрабатывает антивредоносные программы для базовой платформы.
+
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
@@ -1177,9 +1089,7 @@ https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resou
 
 **Руководство**: Для защиты вашего бизнеса от потери данных база данных Azure S'L автоматически создает полные резервные копии базы данных еженедельно, резервные копии дифференциальных баз данных каждые 12 часов и резервные копии журналов транзакций каждые 5 - 10 минут. Резервные копии хранятся в хранилище RA-GRS не менее 7 дней для всех уровней обслуживания. Все уровни обслуживания, за исключением базовой поддержки настраиваемый период хранения резервного копирования для точки в срок восстановления, до 35 дней.
 
-
 Чтобы соответствовать различным требованиям соответствия, можно выбрать различные периоды хранения для еженедельного, ежемесячного и/или ежегодного резервного копирования. Использование хранилища зависит от частоты резервного копирования и периода хранения.
-
 
 Понять резервные копирования и непрерывность бизнеса с Azure S'L Server:
 
@@ -1193,14 +1103,11 @@ https://docs.microsoft.com/azure/sql-database/sql-database-business-continuity
 
 **Руководство**: База данных Azure S'L автоматически создает резервные копии базы данных, которые хранятся от 7 до 35 дней, и использует гео-избыточное хранилище считываемых данных Azure (RA-GRS), чтобы гарантировать их сохранение, даже если центр обработки данных недоступен. Эти резервные копирования создаются автоматически. При необходимости включите долгосрочные георезервные резервные копирования для баз данных Azure S'L.
 
-
 При использовании управляемых клиентом ключей для шифрования прозрачных данных убедитесь, что ваши ключи резервируются.
-
 
 Понять резервные отсталые средства в сервере Azure S'L:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-automated-backups?tabs=single-database
-
 
 Как создать резервную связь с ключами хранилища в Azure:
 
@@ -1214,11 +1121,9 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvau
 
 **Руководство**: Обеспечьте возможность периодически выполнять восстановление содержимого в резервном копировании Azure. При необходимости протест восстановите содержимое изолированного VLAN. Тест-восстановление резервных ключей, управляемых клиентом.
 
-
 Как восстановить ключи хранилища в Azure:
 
 https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
-
 
 Как восстановить резервные данные базы данных Azure S'L с помощью восстановления point-in-time:
 
@@ -1231,7 +1136,6 @@ https://docs.microsoft.com/azure/sql-database/sql-database-recovery-using-backup
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4: Обеспечить защиту резервных и управляемых ключей клиента
 
 **Руководство**: Включить мягкое удаление в Azure Key Vault для защиты ключей от случайного или вредоносного удаления.
-
 
 Как включить мягкое удаление в Key Vault:
 
@@ -1249,8 +1153,6 @@ https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azu
 
 **Руководство**: Убедитесь, что существуют письменные планы реагирования на инциденты, которые определяют роли персонала, а также этапы обработки/управления инцидентами.
 
-
-
 Как настроить автоматизацию рабочих процессов в Центре безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
@@ -1262,7 +1164,9 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2: Создание процедуры оценки и приоритетов инцидентов
 
 **Руководство**: Центр безопасности присваивает серьезность предупреждениям, чтобы помочь вам определить приоритеты порядка, в котором вы посещаете каждое предупреждение, так что, когда ресурс скомпрометирован, вы можете добраться до него сразу. Тяжесть основана на том, насколько уверен центр безопасности в поиске или аналитический используется для выдачи оповещения, а также уровень уверенности, что был злой умысел за деятельность, которая привела к оповещению.
+
 Оповещения о безопасности в Центре безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-alerts-overview
+
 
 
 **Мониторинг Центра безопасности Azure:** Да
@@ -1272,8 +1176,6 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 ### <a name="103-test-security-response-procedures"></a>10.3: Процедуры реагирования на тестовую безопасность
 
 **Руководство**: Проведение упражнений для проверки возможностей реагирования на инциденты систем на регулярной каденции. Выявление слабых мест и пробелов и пересмотр плана по мере необходимости.
-
-
 
 Вы можете обратиться к публикации NIST: Руководство по тестированию, обучению и осуществлению программ для ИТ-планов и возможностей:
 
@@ -1287,8 +1189,6 @@ https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
 
 **Руководство**: Контактная информация об инцидентах безопасности будет использоваться корпорацией Майкрософт для связи с вами, если Центр реагирования на безопасность Майкрософт (MSRC) обнаружит, что доступ к вашим данным был получен незаконной или несанкционированной стороной.
 
-
-
 Как установить контакт с безопасностью Центра безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
@@ -1301,11 +1201,9 @@ https://docs.microsoft.com/azure/security-center/security-center-provide-securit
 
 **Руководство**: Экспорт оповещений и рекомендаций Центра безопасности Azure с использованием функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать оповещения и рекомендации либо вручную, либо в постоянном, непрерывном режиме. Для потоковой передачи оповещений в Sentinel можно использовать разъем данных Центра безопасности Azure.
 
-
 Как настроить непрерывный экспорт:
 
 https://docs.microsoft.com/azure/security-center/continuous-export
-
 
 Как передавать оповещения в Azure Sentinel:
 
@@ -1318,8 +1216,6 @@ https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: Автоматизация реагирования на оповещения о безопасности
 
 **Руководство**: Используйте функцию автоматизации рабочего процесса в Центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" на оповещения и рекомендации по безопасности.
-
-
 
 Как настроить автоматизацию рабочего процесса и логические приложения:
 
@@ -1339,15 +1235,13 @@ https://docs.microsoft.com/azure/security-center/workflow-automation
 
 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
-
-
 Вы можете найти более подробную информацию о стратегии Microsoft и выполнении Red Teaming и тестировании на проникновение в реальном времени в майкарософт в отношении управляемой Microsoft облачной инфраструктуры, служб и приложений:https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Мониторинг Центра безопасности Azure:** не применимо
 
 **Ответственность**: Общие сведения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть [тест безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Узнайте больше об [базовых линиях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

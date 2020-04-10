@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
-ms.openlocfilehash: 1ca439d1a82e3cdbe2cc0274cf63653d39048057
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4a05d955be88f68b3c0db1f4a29b3f6e1155aa0d
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79532558"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80992187"
 ---
 # <a name="copy-data-from-an-http-endpoint-by-using-azure-data-factory"></a>Копирование данных с источника HTTP с помощью фабрики данных Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "79532558"
 |:--- |:--- |:--- |
 | type | Для свойства **type** необходимо задать значение **HttpServer**. | Да |
 | url | Базовый URL-адрес веб-сервера. | Да |
-| enableServerCertificateValidation | Укажите, следует ли включать проверку SSL-сертификата на сервере при подключении к конечной точке HTTP. Если ваш сервер HTTPS использует самозаверенный сертификат, установите свойство **false**. | нет<br /> (значение по умолчанию **true**) |
+| enableServerCertificateValidation | Укажите, следует ли включить проверку сертификата сертификата TLS/SSL при подключении к конечному пункту HTTP. Если ваш сервер HTTPS использует самозаверенный сертификат, установите свойство **false**. | нет<br /> (значение по умолчанию **true**) |
 | authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic **, **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой таблицы. | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Узнайте больше из [раздела Prerequisites.](#prerequisites) Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |нет |
 
@@ -372,6 +372,6 @@ ms.locfileid: "79532558"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

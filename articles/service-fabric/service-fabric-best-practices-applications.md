@@ -5,12 +5,12 @@ author: markfussell
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: mfussell
-ms.openlocfilehash: 876980bd6a59bace9ab4e490358964d19fa52c7e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 56df6e28940eb15597a3d6bccca3f85e5f690f89
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77586093"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991660"
 ---
 # <a name="azure-service-fabric-application-design-best-practices"></a>Лучшие практики разработки приложений Azure Service Fabric
 
@@ -58,8 +58,8 @@ ms.locfileid: "77586093"
 ## <a name="how-to-work-with-reliable-services"></a>Как работать с надежными службами
 СервисНые услуги Fabric Reliable Services позволяют легко создавать услуги без гражданства и состояния. Для получения дополнительной информации смотрите [введение в надежные услуги](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction).
 - Всегда чтите [токен отмены](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-lifecycle#stateful-service-primary-swaps) в методе `RunAsync()` для `ChangeRole()` служб без состояния и состоянии состояния и методе предоставления услуг состояния. Если вы этого не сможете, СервисНая ткань не знает, можно ли закрыть вашу службу. Например, если вы не выполняете маркер отмены, может произойти гораздо больше времени обновления приложения.
--   Открытое и близкое [общение слушателей](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication) своевременно, и честь отмены токенов.
--   Никогда не смешивайте код синхронизации с кодом async. Например, не используйте `.GetAwaiter().GetResult()` в своих вызовах async. Используйте async *весь путь* через стек вызова.
+-    Открытое и близкое [общение слушателей](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication) своевременно, и честь отмены токенов.
+-    Никогда не смешивайте код синхронизации с кодом async. Например, не используйте `.GetAwaiter().GetResult()` в своих вызовах async. Используйте async *весь путь* через стек вызова.
 
 ## <a name="how-to-work-with-reliable-actors"></a>Как работать с надежными актерами
 Сервис Fabric Надежные актеры позволяют легко создавать штатные, виртуальные актеры. Для получения дополнительной информации, смотрите [введение в надежных актеров](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
@@ -77,7 +77,7 @@ ms.locfileid: "77586093"
 Будьте тщательны о [добавлении регистрации приложений](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-generation-app) в вызовы службы. Это поможет вам диагностировать сценарии, в которых службы звонят друг другу. Например, когда вызов ы B вызывает C, вызов может выполнить неудачу в любом месте. Если у вас недостаточно журналов, сбои трудно диагностировать. Если службы слишком много регистрируются из-за объемов вызовов, не забудьте хотя бы завести ошибки и предупреждения в журнале.
 
 ## <a name="iot-and-messaging-applications"></a>IoT и приложения для обмена сообщениями
-При чтении сообщений из [концентратора Azure IoT](https://docs.microsoft.com/azure/iot-hub/) или [Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs/)воспользуйтесь [ServiceFabricProcessor.](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor) ServiceFabricProcessor интегрируется с сервисными службами Fabric Reliable Services для поддержания состояния чтения с `IEventProcessor::ProcessEventsAsync()` разделов концентратора событий и переносит новые сообщения в ваши службы с помощью метода.
+При чтении сообщений из [концентратора Azure IoT](https://docs.microsoft.com/azure/iot-hub/) или [Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs/)воспользуйтесь [ServiceFabricProcessor.](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/ServiceFabricProcessor) ServiceFabricProcessor интегрируется с сервисными службами Fabric Reliable Services для поддержания состояния чтения с `IEventProcessor::ProcessEventsAsync()` разделов концентратора событий и переносит новые сообщения в ваши службы с помощью метода.
 
 
 ## <a name="design-guidance-on-azure"></a>Руководство по дизайну Azure

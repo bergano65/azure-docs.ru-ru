@@ -5,24 +5,24 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: c8968eb72b29b004d94e25433da65d3262287147
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1907eb7cde482927ee8e6b0a2522158f05c1808f
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79367148"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010942"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
 Runbooks выполняются на основе логики, определенной внутри них. Если работа модуля Runbook прерывается, он перезапускается. Такое поведение требует, чтобы вы написали runbooks, которые поддерживают перезагрузку, если возникают временные проблемы.
 
-Запуск книги в Azure Automation создает работу. Задание — это единый экземпляр выполнения выполнения runbook. Каждое задание имеет доступ к ресурсам Azure, подключявшись к подписке Azure. Задание имеет доступ к ресурсам в центре обработки данных только в том случае, если эти ресурсы доступны из общедоступного облака.
+Запуск запуска запуска в Azure Automation создает задание, которое представляет собой единый экземпляр выполнения runbook. Каждое задание имеет доступ к ресурсам Azure, подключявшись к подписке Azure. Задание имеет доступ к ресурсам в центре обработки данных только в том случае, если эти ресурсы доступны из общедоступного облака.
 
 Azure Automation назначает сотрудника для выполнения каждого задания во время выполнения runbook. Пока рабочие роли используются многими учетными записями Azure, задания от различных учетных записей службы автоматизации изолируются друг от друга. У вас нет контроля над тем, какой сотрудник обслуживает ваш запрос на работу.
 
 При просмотре списка runbooks на портале Azure отображается состояние каждого задания, запущенного для каждой запущенной книги. Azure Automation хранит журналы вакансий максимум на 30 дней. 
 
-На следующей диаграмме показан жизненный цикл работы в [справочниках PowerShell,](automation-runbook-types.md#powershell-runbooks) [графических учебниках](automation-runbook-types.md#graphical-runbooks)и [runbooks Workflow PowerShell.](automation-runbook-types.md#powershell-workflow-runbooks)
+На следующей диаграмме показан жизненный цикл работы для runbook для [powerShell runbooks](automation-runbook-types.md#powershell-runbooks), [графических runbooks](automation-runbook-types.md#graphical-runbooks), и [PowerShell Workflow runbooks](automation-runbook-types.md#powershell-workflow-runbooks).
 
 ![Состояния задания — рабочий процесс PowerShell](./media/automation-runbook-execution/job-statuses.png)
 
@@ -346,7 +346,7 @@ $JobInfo.GetEnumerator() | sort key -Descending | Select-Object -First 1
 
 Использование детских runbooks уменьшает общее количество времени для родительской runbook для завершения. Ваша книга может `Get-AzAutomationJob` использовать cmdlet для проверки статуса работы для детской книги, если она все еще выполняет операции после завершения ребенка.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать больше о методах, которые можно использовать для запуска [Starting a runbook in Azure Automation](automation-starting-a-runbook.md)запуска сборника в Azure Automation, см.
 * Для получения дополнительной информации о PowerShell, включая языковые справочные и учебные модули, обратитесь к [документам PowerShell](https://docs.microsoft.com/powershell/scripting/overview).

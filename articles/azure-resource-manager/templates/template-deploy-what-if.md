@@ -3,14 +3,14 @@ title: Развертывание шаблона что-если (Предвар
 description: Определите, какие изменения произойдут с вашими ресурсами перед развертыванием шаблона управления ресурсами Azure.
 author: mumian
 ms.topic: conceptual
-ms.date: 04/06/2020
+ms.date: 04/09/2020
 ms.author: jgao
-ms.openlocfilehash: 9e0d0d572e08961b585a93e66e400b8c2e54bf7f
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: b8e94d0b4f364e2873dfc21792a67f11c33483bf
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886846"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010195"
 ---
 # <a name="arm-template-deployment-what-if-operation-preview"></a>Развертывание шаблона ARM что-если (Предварительный просмотр)
 
@@ -24,6 +24,14 @@ ms.locfileid: "80886846"
 ## <a name="install-powershell-module"></a>Установка модуля PowerShell
 
 Чтобы использовать что-если в PowerShell, установите предварительную версию модуля Az.Resources из галереи PowerShell.
+
+### <a name="install-preview-version"></a>Установка предварительной версии
+
+Для установки модуля предварительного просмотра используйте:
+
+```powershell
+Install-Module Az.Resources -RequiredVersion 1.12.1-preview -AllowPrerelease
+```
 
 ### <a name="uninstall-alpha-version"></a>Удалить альфа-версию
 
@@ -47,14 +55,6 @@ ms.locfileid: "80886846"
    ```powershell
    Unregister-PSRepository -Name WhatIfRepository
    ```
-
-### <a name="install-preview-version"></a>Установка предварительной версии
-
-Для установки модуля предварительного просмотра используйте:
-
-```powershell
-Install-Module Az.Resources -RequiredVersion 1.12.1-preview -AllowPrerelease
-```
 
 Вы готовы использовать что-если.
 
@@ -320,7 +320,7 @@ Are you sure you want to execute the deployment?
 
 Вы видите ожидаемые изменения и можете подтвердить, что вы хотите, чтобы развертывание было запущено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Если вы заметили неправильные результаты из предварительного релиза что-если, пожалуйста, сообщите о проблемах на [https://aka.ms/whatifissues](https://aka.ms/whatifissues).
 - Для развертывания шаблонов с Azure PowerShell см. [Ресурсы развертывание с шаблонами ARM и Azure PowerShell.](deploy-powershell.md)

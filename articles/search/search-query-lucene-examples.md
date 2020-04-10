@@ -9,12 +9,12 @@ tags: Lucene query analyzer syntax
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 745be21c2a7a09a09fdbbfd57a305d09a4fac3ed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3c54f864b5bd562fdc0a84b2903198704032b360
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72793444"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998486"
 ---
 # <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-cognitive-search"></a>Используйте "полный" синтаксис поиска Lucene (продвинутые запросы в Azure Cognitive Search)
 
@@ -86,7 +86,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 Для краткости запрос нацелен только на поле *business_title* и указывает возвращаемые должности. Параметр **поискаFields** ограничивает выполнение запроса только полем business_title и **выбирает,** какие поля включены в ответ.
 
-### <a name="partial-query-string"></a>Частичная строка запроса
+### <a name="search-expression"></a>Выражение поиска
 
 ```http
 &search=*&searchFields=business_title&$select=business_title
@@ -119,7 +119,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 Полный синтаксис Lucene поддерживает отслеживание индивидуальных выражений поиска в определенном поле. Этот пример ищет названия дела с термином старший в их, но не младший.
 
-### <a name="partial-query-string"></a>Частичная строка запроса
+### <a name="search-expression"></a>Выражение поиска
 
 ```http
 $select=business_title&search=business_title:(senior NOT junior)
@@ -156,7 +156,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 Полный синтаксис Lucene также поддерживает поиск нечетких соответствий, то есть сопоставление терминов с подобной конструкцией. Чтобы выполнить поиск нечетких соответствий, необходимо добавить символ тильды `~` в конце слова. Дополнительно можно поставить цифру от 0 до 2, указывающую расстояние редактирования. Например, `blue~` или `blue~1` вернет результаты с blue, blues и glue.
 
-### <a name="partial-query-string"></a>Частичная строка запроса
+### <a name="search-expression"></a>Выражение поиска
 
 ```http
 searchFields=business_title&$select=business_title&search=business_title:asosiate~
@@ -186,7 +186,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 ## <a name="example-4-proximity-search"></a>Пример 4. Поиск с учетом расположения
 Операция поиска с учетом расположения позволяет найти слова, расположенные рядом в документе. Вставьте символ тильды "~" в конце фразы, а затем — цифру, обозначающую количество слов, определяющее границу близости. Например, если ввести "hotel airport"~5, будут найдены слова "hotel" и "airport", расположенные в пределах 5 слов друг от друга в документе.
 
-### <a name="partial-query-string"></a>Частичная строка запроса
+### <a name="search-expression"></a>Выражение поиска
 
 ```http
 searchFields=business_title&$select=business_title&search=business_title:%22senior%20analyst%22~1
@@ -239,7 +239,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 Операция поиска по регулярным выражениям позволяет найти совпадение в зависимости от содержимого между косыми чертами "/", как указано в документации [класса RegExp](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/util/automaton/RegExp.html).
 
-### <a name="partial-query-string"></a>Частичная строка запроса
+### <a name="search-expression"></a>Выражение поиска
 
 ```http
 searchFields=business_title&$select=business_title&search=business_title:/(Sen|Jun)ior/
@@ -262,7 +262,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 ## <a name="example-7-wildcard-search"></a>Пример 7. Поиск с использованием подстановочных знаков
 Вы можете использовать распознаваемый синтаксис для поиска с использованием одного (?) или нескольких (\*) подстановочных знаков. Обратите внимание, что средство синтаксического анализа запросов Lucene поддерживает использование этих символов для поиска одного слова, а не фразы.
 
-### <a name="partial-query-string"></a>Частичная строка запроса
+### <a name="search-expression"></a>Выражение поиска
 
 ```http
 searchFields=business_title&$select=business_title&search=business_title:prog*
@@ -281,7 +281,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 > Запросы с подстановочными знаками не [анализируются](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Попробуйте указать средство синтаксического анализа запросов Lucene в коде. Чтобы узнать о том, как настроить запросы поиска для .NET и REST API, воспользуйтесь приведенными ссылками. В этих ссылках используется простой синтаксис по умолчанию, поэтому потребуется применить полученные из этой статьи знания, чтобы задать **queryType**.
 
 * [Запрос индекса с помощью .NET SDK](search-query-dotnet.md)
@@ -291,5 +291,5 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 + [Примеры запросов с использованием простого синтаксиса](search-query-simple-examples.md)
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Полный синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)

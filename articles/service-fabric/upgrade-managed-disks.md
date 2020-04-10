@@ -2,13 +2,13 @@
 title: Обновление кластерных узлов для использования дисков управления Azure
 description: Вот как обновить существующий кластер Service Fabric для использования управляемых дисков Azure практически без простоя кластера.
 ms.topic: how-to
-ms.date: 3/01/2020
-ms.openlocfilehash: 2bda5572eda5579bb31c3613b220885f27220d99
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.date: 4/07/2020
+ms.openlocfilehash: 5f4698718a35970e47de2a0ee6d053802c8ef919
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80758057"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991217"
 ---
 # <a name="upgrade-cluster-nodes-to-use-azure-managed-disks"></a>Обновление кластерных узлов для использования дисков управления Azure
 
@@ -27,11 +27,11 @@ ms.locfileid: "80758057"
 > [!CAUTION]
 > Вы будете испытывать сбой с этой процедурой только в том случае, если у вас есть зависимости от кластера DNS (например, при доступе к [Service Fabric Explorer).](service-fabric-visualizing-your-cluster.md) Архитектурная [лучшая практика для фронт-энд-сервисов](https://docs.microsoft.com/azure/architecture/microservices/design/gateway) заключается в том, чтобы иметь какой-то [баланселизатор нагрузки](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) перед типами узлов, чтобы сделать возможным замена узлов без простоя.
 
-Ниже [приведены шаблоны и cmdlets](https://github.com/erikadoyle/service-fabric-scripts-and-templates/tree/managed-disks/templates/nodetype-upgrade-no-outage) для менеджера ресурсов Azure, которые мы будем использовать для завершения сценария обновления. Изменения шаблона будут объяснены в [развертывании обновленного набора шкалы для типа основного узла](#deploy-an-upgraded-scale-set-for-the-primary-node-type) ниже.
+Ниже [приведены шаблоны и cmdlets](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) для менеджера ресурсов Azure, которые мы будем использовать для завершения сценария обновления. Изменения шаблона будут объяснены в [развертывании обновленного набора шкалы для типа основного узла](#deploy-an-upgraded-scale-set-for-the-primary-node-type) ниже.
 
 ## <a name="set-up-the-test-cluster"></a>Настройка тестового кластера
 
-Давайте навескажем начальный кластер тестирования Service Fabric. Во-первых, [загрузите](https://github.com/erikadoyle/service-fabric-scripts-and-templates/tree/managed-disks/templates/nodetype-upgrade-no-outage) шаблоны шаблонов управления ресурсами Azure, которые мы будем использовать для завершения этого сценария.
+Давайте навескажем начальный кластер тестирования Service Fabric. Во-первых, [загрузите](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) шаблоны шаблонов управления ресурсами Azure, которые мы будем использовать для завершения этого сценария.
 
 Затем вопийте на свою учетную запись Azure.
 
@@ -356,7 +356,7 @@ foreach($name in $nodeNames){
 
 ![Служба Fabric Explorer с вниз узлы в состоянии ошибки удалены](./media/upgrade-managed-disks/service-fabric-explorer-healthy-cluster.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом пошаговом шаге вы узнали, как обновить наборы виртуальной шкалы машин кластера Service Fabric для использования управляемых дисков, избегая при этом перебоев в обслуживании во время процесса. Для получения дополнительной информации по смежным темам ознакомьтесь со следующими ресурсами.
 
@@ -370,6 +370,6 @@ foreach($name in $nodeNames){
 
 См. также:
 
-* [Пример: Обновление кластерных узлов для использования дисков с управлением Azure](https://github.com/erikadoyle/service-fabric-scripts-and-templates/tree/managed-disks/templates/nodetype-upgrade-no-outage)
+* [Пример: Обновление кластерных узлов для использования дисков с управлением Azure](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage)
 
 * [Рекомендации по вертикальному масштабированию](service-fabric-best-practices-capacity-scaling.md#vertical-scaling-considerations)

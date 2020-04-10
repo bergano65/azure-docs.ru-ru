@@ -1,5 +1,5 @@
 ---
-title: Начало работы со службой "Настройка состояния службы автоматизации Azure"
+title: Начало работы с конфигурацией состояния автоматизации Azure
 description: Описание и примеры самых распространенных задач в "Настройка состояния службы автоматизации Azure"
 services: automation
 ms.service: automation
@@ -9,14 +9,14 @@ ms.author: magoedte
 ms.date: 04/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 9fce9a769dd6d88c9926913d22716666284938c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2c33fbed6c547897847c79cc1260d2bdc9ec6b17
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74850964"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010330"
 ---
-# <a name="getting-started-with-azure-automation-state-configuration"></a>Начало работы со службой "Настройка состояния службы автоматизации Azure"
+# <a name="get-started-with-azure-automation-state-configuration"></a>Начало работы с конфигурацией состояния автоматизации Azure
 
 В этой статье описано, как выполнять самые распространенные задачи с помощью "Настройка состояния службы автоматизации Azure", например создание, импорт и компилирование конфигураций, подключение компьютеров для управления, а также просмотр отчетов. Обзор "Настройка состояния службы автоматизации Azure" см. в статье с [обзором этой службы](automation-dsc-overview.md). Документацию по DSC см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview).
 

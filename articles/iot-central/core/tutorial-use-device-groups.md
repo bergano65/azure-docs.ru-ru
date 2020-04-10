@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpfr
-ms.openlocfilehash: 758ac037fcd224d02f62239b3408b41b50390147
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 58fc71ab05c34e8acd252e7a1984c55996d1b3a7
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77167246"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80999036"
 ---
 # <a name="tutorial-use-device-groups-to-analyze-device-telemetry"></a>Учебник: Использование групп устройств для анализа телеметрии устройства
 
@@ -29,7 +29,7 @@ ms.locfileid: "77167246"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы вам необходимо пройти два предыдущих кратких руководства по [созданию приложения Azure IoT Central](./quick-deploy-iot-central.md) и [добавлению имитированного устройства в приложение IoT Central](./quick-create-pnp-device.md), чтобы создать шаблон устройства **MXChip IoT DevKit** и работать с ним.
+Перед началом работы вам необходимо пройти два предыдущих кратких руководства по [созданию приложения Azure IoT Central](./quick-deploy-iot-central.md) и [добавлению имитированного устройства в приложение IoT Central](./quick-create-simulated-device.md), чтобы создать шаблон устройства **MXChip IoT DevKit** и работать с ним.
 
 ## <a name="create-simulated-devices"></a>Создание смоделированных устройств
 
@@ -85,7 +85,7 @@ ms.locfileid: "77167246"
 
     Можно настроить представление, изменить отображаемый период времени и экспортировать данные.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как использовать группы устройств в приложении Azure IoT Central, вот следующий шаг:
 

@@ -1,21 +1,21 @@
 ---
-title: Публикация предложения управляемых услуг для Azure Marketplace
-description: Узнайте, как опубликовать предложение управляемых служб, которое подключает клиентов к управлению делегированными ресурсами Azure.
+title: Публикация предложения по управляемой службе для Azure Marketplace
+description: Узнайте, как опубликовать предложение управляемой службы, которое клиенты на борту делегировали управлению ресурсами Azure.
 ms.date: 04/08/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4791b1d2ae233b0cc7aad33dd5b15b6ea94b2018
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 247f711188fa10de19cece27f164fdfa71612d1b
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/09/2020
-ms.locfileid: "80984560"
+ms.locfileid: "80991915"
 ---
-# <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Публикация предложения управляемых услуг для Azure Marketplace
+# <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Публикация предложения по управляемой службе для Azure Marketplace
 
 > [!IMPORTANT]
-> С 14 апреля 2020 года мы начнем переходить управление предложениями по управляемому сервису в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create new managed service offers](../../marketplace/partner-center-portal/create-new-managed-service-offer.md) для управления мигрированными предложениями.
+> С 13 апреля 2020 года мы начнем переходить управление предложениями по управляемому сервису в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create a new Managed Service, предлагая](../../marketplace/partner-center-portal/create-new-managed-service-offer.md) управлять мигрированными предложениями.
 
-В этой статье вы узнаете, как опубликовать публичное или частное предложение управляемых услуг [Azure Marketplace](https://azuremarketplace.microsoft.com) с помощью [Cloud Partner Portal.](https://cloudpartner.azure.com/) Клиенты, купившие предложение, могут иметь возможность на борту подписки и групп ресурсов для [управления ресурсами Azure делегированных ресурсов.](../concepts/azure-delegated-resource-management.md)
+В этой статье вы узнаете, как опубликовать публичное или частное предложение управляемых сервисов [для Azure Marketplace](https://azuremarketplace.microsoft.com) с помощью [cloud Partner Portal.](https://cloudpartner.azure.com/) Клиенты, купившие предложение, могут иметь возможность на борту подписки и групп ресурсов для [управления ресурсами Azure делегированных ресурсов.](../concepts/azure-delegated-resource-management.md)
 
 ## <a name="publishing-requirements"></a>Требования к публикации
 
@@ -28,7 +28,7 @@ ms.locfileid: "80984560"
 > [!NOTE]
 > Если вы не хотите публиковать предложение в Azure Marketplace, вы можете вручную подключать клиентов с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Onboard a customer to Azure delegated resource management](onboard-customer.md) (Подключение клиента к системе делегированного управления ресурсами Azure)
 
-Публикация предложения управляемых служб аналогична публикации предложения любого другого типа в Azure Marketplace. Чтобы узнать об общем процессе публикации, смотрите [руководство Azure Marketplace и AppSource Publishing Guide.](../../marketplace/marketplace-publishers-guide.md) Также следует ознакомиться [с политиками сертификации для коммерческой платформы Marketplace](https://docs.microsoft.com/legal/marketplace/certification-policies), в частности с разделом [Managed Services](https://docs.microsoft.com/legal/marketplace/certification-policies#700-managed-services) (Управляемые службы).
+Публикация предложения управляемых сервисов аналогична публикации любого другого типа предложения на Azure Marketplace. Чтобы узнать об общем процессе публикации, смотрите [руководство Azure Marketplace и AppSource Publishing Guide.](../../marketplace/marketplace-publishers-guide.md) Также следует ознакомиться [с политиками сертификации для коммерческой платформы Marketplace](https://docs.microsoft.com/legal/marketplace/certification-policies), в частности с разделом [Managed Services](https://docs.microsoft.com/legal/marketplace/certification-policies#700-managed-services) (Управляемые службы).
 
 Как только клиент добавит ваше предложение, он сможет делегировать одну или несколько подписок или групп ресурсов, которые затем будут [переданы для управления ресурсами, делегированными Azure.](#the-customer-onboarding-process)
 
@@ -165,7 +165,7 @@ ms.locfileid: "80984560"
 
 После того, как клиент делегирует подписку (или одну или несколько групп ресурсов в рамках подписки), поставщик ресурсов **Microsoft.ManagedServices** будет зарегистрирован для этой подписки, и пользователи в вашем арендаторе смогут получить доступ к делегированным ресурсам в соответствии с авторизациями в вашем предложении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [коммерческом рынке](../../marketplace/partner-center-portal/commercial-marketplace-overview.md).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).

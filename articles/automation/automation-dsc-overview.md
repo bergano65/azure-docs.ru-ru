@@ -1,6 +1,6 @@
 ---
-title: Обзор службы "Настройка состояния службы автоматизации Azure"
-description: Обзор DSC службы "Настройка состояния службы автоматизации Azure", условий использования и распространенных проблем
+title: Общие сведения о State Configuration
+description: Обзор конфигурации состояния автоматизации Azure (DSC), ее условий и известных проблем
 keywords: PowerShell DSC, настройка требуемого состояния, PowerShell DSC для Azure
 services: automation
 ms.service: automation
@@ -10,14 +10,14 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 46cf0d6a12ffbc836db7bd79c0f2738a94e23085
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 02e540c9ac2654be97ff247749d1ed18573cfc24
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80283197"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010262"
 ---
-# <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
+# <a name="state-configuration-overview"></a>Общие сведения о State Configuration
 
 Система Azure Automation State Configuration — это служба Azure, которая позволяет писать, управлять и компилировать [конфигурации](/powershell/scripting/dsc/configurations/configurations)PowerShell Desired State Configuration (DSC). Служба также импортирует [DSC Ресурсы](/powershell/scripting/dsc/resources/resources)и назначает конфигурации для целевых узлов, все в облаке.
 
@@ -53,7 +53,7 @@ ms.locfileid: "80283197"
 - Windows Server 2012
 - Windows Server 2008 R2 с пакетом обновления 1 (SP1)
 - Windows 10
-- Windows 8.1
+- Windows 8.1
 - Windows 7
 
 >[!NOTE]
@@ -93,7 +93,7 @@ ms.locfileid: "80283197"
 
 При наличии учетной записи службы автоматизации, определенной для конкретного региона, можно ограничить обмен данными с таким региональным центром обработки данных. В таблице ниже содержатся записи DNS для каждого региона.
 
-| **Регионе** | **Запись DNS** |
+| **Регион** | **Запись DNS** |
 | --- | --- |
 | центрально-западная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
 | Центрально-южная часть США |scus-jobruntimedata-prod-su1.azure-automation.net</br>scus-agentservice-prod-1.azure-automation.net |
@@ -118,7 +118,7 @@ ms.locfileid: "80283197"
 
 Пользователям Azure ExpressRoute следует обратить внимание, что этот файл используется для того, чтобы обновлять протокол BGP в пространстве Azure в первую неделю каждого месяца.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы начать использовать DSC в конфигурации состояния автоматизации Azure, см. [Начало работы с конфигурацией состояния azure Automation State Configuration.](automation-dsc-getting-started.md)
 - Чтобы узнать, как на [Onboarding machines for management by Azure Automation State Configuration](automation-dsc-onboarding.md)бортовых узлах, см.

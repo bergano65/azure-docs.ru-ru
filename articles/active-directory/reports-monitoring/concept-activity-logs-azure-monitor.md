@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 04/22/2019
+ms.date: 04/09/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46e29fff3308f35b16dbff2f9cead82abc222a5c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 595c87d2b8182c9044baeb2662e34871d9e52c52
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79266550"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991251"
 ---
 # <a name="azure-ad-activity-logs-in-azure-monitor"></a>Журналы активности Azure AD в Azure Monitor
 
@@ -179,7 +179,7 @@ ms.locfileid: "79266550"
 
 **Вопрос: Какие средства SIEM поддерживаются в настоящее время?** 
 
-**A**: В настоящее время Azure Monitor поддерживается [Splunk](tutorial-integrate-activity-logs-with-splunk.md), «Радаром» и [логикой сумо](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory). Дополнительные сведения о работе соединителей см. в статье [Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+**A**: **A**: В настоящее время Azure Monitor поддерживается [Splunk,](tutorial-integrate-activity-logs-with-splunk.md)IBM «Радар», [«Логика сумо»,](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory) [ArcSight,](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-arcsight)LogRhythm и Logz.io. Дополнительные сведения о работе соединителей см. в статье [Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
 
 ---
 
@@ -202,7 +202,7 @@ ms.locfileid: "79266550"
 ---
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Руководство. Архивация журналов Azure Active Directory в учетной записи хранения Azure (предварительная версия)](quickstart-azure-monitor-route-logs-to-storage-account.md)
 * [Руководство. Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия)](quickstart-azure-monitor-stream-logs-to-event-hub.md)

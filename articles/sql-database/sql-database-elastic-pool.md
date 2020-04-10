@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, carlrab
-ms.date: 08/06/2019
-ms.openlocfilehash: 8139ed8f4f4799a963a051eed96dd87c4ac38aec
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.date: 04/09/2020
+ms.openlocfilehash: 3252ecb030234e4c5543c07dfb4fc702f850a73e
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/09/2020
-ms.locfileid: "80981432"
+ms.locfileid: "80998989"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-azure-sql-databases"></a>Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов
 
@@ -110,9 +110,9 @@ ms.locfileid: "80981432"
 - Максимальное число ресурсов, используемых всеми базами данных в пуле (максимальное число единиц DTU или виртуальных ядер в зависимости от выбора модели ресурса).
 - Максимальное число байтов памяти, используемых всеми базами данных в пуле.
 
-См. подробнее о доступных уровнях служб для каждой модели ресурсов в описании моделей приобретения на основе [единиц DTU](sql-database-service-tiers-dtu.md) и [виртуальных ядер](sql-database-service-tiers-vcore.md).
+Для доступных уровней обслуживания и ограничений [DTU-based purchasing model](sql-database-service-tiers-dtu.md) для каждой модели ресурсов [vCore-based purchasing model](sql-database-service-tiers-vcore.md)см.
 
-В случаях, когда невозможно использовать инструменты, вы сможете оценить экономность пула по сравнению с отдельными базами данных, выполнив следующие пошаговые инструкции:
+Следующие шаги могут помочь вам оценить, является ли пул более рентабельным, чем отдельные базы данных:
 
 1. Оцените количество единиц eDTU или виртуальных ядер, необходимых для пула, следующим образом:
 
@@ -126,6 +126,10 @@ ms.locfileid: "80981432"
 3. Для модели приобретения на основе единиц DTU выберите максимальную из оценок количества единиц eDTU, полученных на шаге 1 и шаге 2. Для модели приобретения на основе виртуальных ядер выберите оценку количества виртуальных ядер, полученную на шаге 1.
 4. В статье [Цены на Базу данных SQL Azure](https://azure.microsoft.com/pricing/details/sql-database/) найдите наименьший размер пула, который будет больше оценки, полученной на шаге 3.
 5. Сравните стоимость пула из шага 5 со стоимостью использования подходящего объема вычислительных ресурсов отдельных баз данных.
+
+> [!IMPORTANT]
+> Если количество баз данных в пуле приближается к максимально поддерживаемому, убедитесь, что учитывайте [управление ресурсами в плотных эластичных пулах.](sql-database-elastic-pool-resource-management.md)
+> 
 
 ## <a name="using-other-sql-database-features-with-elastic-pools"></a>Использование других функций базы данных SQL с эластичными пулами
 
@@ -218,9 +222,9 @@ ms.locfileid: "80981432"
 
 - [Дакско/CSI](https://customers.microsoft.com/story/726277-csi-daxko-partner-professional-service-azure)    
 
-   Daxko/CSI использует эластичные пулы с базой данных Azure S'L для ускорения цикла разработки и повышения качества обслуживания и производительности клиентов.   
+   Daxko/CSI использует эластичные пулы с базой данных Azure S'L для ускорения цикла разработки и повышения качества обслуживания и производительности клиентов.    
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Для получения информации о ценах [см.](https://azure.microsoft.com/pricing/details/sql-database/elastic)
 - Чтобы масштабировать эластичные пулы, см. разделы [Масштабирование эластичных пулов](sql-database-elastic-pool-scale.md) и [Масштабирование эластичного пула — пример кода](scripts/sql-database-monitor-and-scale-pool-powershell.md)

@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: reference
 ms.date: 10/25/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 17404388b2b6c3fee1c6ab666f7233a66817f642
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fe186e2ba8f3cafeb4d186066ba65ae036302f70
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74082870"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010517"
 ---
 # <a name="azure-event-grid-event-schema-for-azure-key-vault-preview"></a>Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)
 
@@ -25,13 +25,13 @@ ms.locfileid: "74082870"
 | Полное название мероприятия | Имя отображения событий | Описание |
 | ---------- | ----------- |---|
 | Microsoft.KeyVault.CertificateNewVersionCreated | Сертификат Новая версия Создана | Запуск при создании нового сертификата или новой версии сертификата. |
-| Microsoft.KeyVault.CertificateNearExpiry | Сертификат вблизи истечения | Запуск, когда текущая версия сертификата вот-вот истечет. (По умолчанию 30 дней до истечения срока действия.) |
+| Microsoft.KeyVault.CertificateNearExpiry | Сертификат вблизи истечения | Запуск, когда текущая версия сертификата вот-вот истечет. (Событие срабатывает за 30 дней до истечения срока действия.) |
 | Microsoft.KeyVault.CertificateExpired | Срок действия сертификата истек | Запуск по истечении срока действия сертификата. |
 | Microsoft.KeyVault.KeyNewVersionCreated | Создана новая ключевая версия | Срабатывает при создании нового ключа или новой ключевой версии. |
-| Microsoft.KeyVault.KeyNearExpiry | Ключевой ближайший срок действия | Сработал, когда текущая версия ключа вот-вот истечет. (По умолчанию 30 дней до истечения срока действия.) |
+| Microsoft.KeyVault.KeyNearExpiry | Ключевой ближайший срок действия | Сработал, когда текущая версия ключа вот-вот истечет. (Событие срабатывает за 30 дней до истечения срока действия.) |
 | Microsoft.KeyVault.KeyExpired | Срок действия ключа | Срабатывает при истечении срока действия ключа. |
 | Microsoft.KeyVault.SecretNewVersionCreated | Создана секретная новая версия | Запускается при создании новой секретной или новой секретной версии. |
-| Microsoft.KeyVault.SecretNearExpiry | Секрет почти срок годности | Срабатывает, когда текущая версия секрета вот-вот истечет. (По умолчанию 30 дней до истечения срока действия.) |
+| Microsoft.KeyVault.SecretNearExpiry | Секрет почти срок годности | Срабатывает, когда текущая версия секрета вот-вот истечет. (Событие срабатывает за 30 дней до истечения срока действия.) |
 | Microsoft.KeyVault.SecretExpired | Секретный истек | Срабатывает, когда срок действия секрета истек. |
 
 ## <a name="event-examples"></a>Примеры событий
@@ -76,7 +76,7 @@ ms.locfileid: "74082870"
 | exp | number | Срок годности в секундах с 1970-01-01T00:00 "объекта, который вызвал это событие |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для введения в Azure Event [What is Event Grid?](overview.md)Grid см.
 * Для получения дополнительной информации о том, как [Event Grid subscription schema](subscription-creation-schema.md)создать подписку Azure Event Grid, см.

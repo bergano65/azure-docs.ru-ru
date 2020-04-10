@@ -11,14 +11,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 4/7/2020
-ms.openlocfilehash: c65fbd9bbd83db9c7c8ec0e9041d08372243b72f
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: ee51be1d994c3b81765266e95c48d321a2f43b14
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80887649"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989448"
 ---
-# <a name="migrate-on-premises-ssis-jobs-to-azure-data-factory"></a>Перенос рабочих мест sSIS на фабрику данных Azure
+# <a name="migrate-sql-server-agent-jobs-to-adf-with-ssms"></a>Мигрируйте задания серверного агента s'L в ADF с помощью SSMS
 
 При [миграции на местах s-L Server Integration Services (SSIS) рабочих нагрузок sSIS в ADF](scenario-ssis-migration-overview.md), после переноса пакетов SSIS, вы можете сделать пакетное миграцию заданий серверного агента с типом шага работы пакета услуг интеграции серверов S'L Server На Лазурную фабрику (ADF) трубопроводы /мероприятия/график триггеров через S'L Server Management Studio (SSMS) **SSIS Job Migration Wizard**
 
@@ -78,6 +78,6 @@ ms.locfileid: "80887649"
 1. Мигрировать, а затем проверить результаты.
 ![шаг5](media/how-to-migrate-ssis-job-ssms/step5.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Запуск и мониторинг трубопровода](how-to-invoke-ssis-package-ssis-activity.md)

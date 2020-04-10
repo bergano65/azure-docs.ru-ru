@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: kanshiG
 ms.author: govindk
 ms.date: 04/07/2020
-ms.openlocfilehash: 38f5778e363a16117bab482a758666ec81352afd
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 62c10a2ada9ff7d3bf7090028dd9684192517d02
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80887571"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991426"
 ---
 # <a name="how-to-monitor-the-server-side-latency-for-operations-in-an-azure-cosmos-db-container-or-account"></a>Как контролировать задержку сервера для операций в контейнере или учетной записи Azure Cosmos DB
 
@@ -35,11 +35,11 @@ Azure Monitor для Azure Cosmos DB предоставляет представ
 
 1. Из панели **метрик** > **Выберите ресурс** > выбрать требуемую **подписку**и **группу ресурсов.** Для **типа ресурса**выберите **dB-учетные записи Azure Cosmos,** выберите одну из существующих учетных записей Azure Cosmos и выберите **Apply.**
    
-   ![Выберите учетную запись Cosmos DB для просмотра метрик](./media/monitor-server-side-latency/select-cosmosdb-account.png)
+   ![Выберите учетную запись Cosmos DB для просмотра метрик](./media/monitor-server-side-latency/select-cosmos-db-account.png)
 
 1. Далее выберите метрику **задержки сервера** из списка доступных метрик. Чтобы узнать подробно обо всех доступных метриках в этом списке, [см.](monitor-cosmos-db-reference.md) В этом примере давайте выберем в качестве значения агрегации значение **Server Side Latency** и **Avg.** В дополнение к этим деталям, вы также можете выбрать **диапазон времени** и **детализацию времени** метрик. На макс, вы можете просмотреть метрики за последние 30 дней.  После нанесения фильтра на основе фильтра отображается диаграмма. Вы можете увидеть среднее количество единиц запроса, потребляемых в минуту за выбранный период.  
 
-   ![Выберите метрику задержки сервера на портале Azure](./media/monitor-server-side-latency/serverside-latency-metric.png)
+   ![Выберите метрику задержки сервера на портале Azure](./media/monitor-server-side-latency/server-side-latency-metric.png)
 
 ## <a name="filters-for-server-side-latency"></a>Фильтры для задержки на стороне сервера
 
@@ -49,11 +49,11 @@ Azure Monitor для Azure Cosmos DB предоставляет представ
 
 Метрики **задержки серверной стороны** для каждой операции отображаются, как показано на следующем изображении:
 
-![Фильтры для метрик задержки сервера](./media/monitor-server-side-latency/serverside-latency-filters.png)
+![Фильтры для метрик задержки сервера](./media/monitor-server-side-latency/server-side-latency-filters.png)
 
 Вы также можете сгруппировать метрики с помощью опции **расщепления Apply.**  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Мониторинг данных DB Azure Cosmos с помощью [диагностических настроек](cosmosdb-monitor-resource-logs.md) в Azure
 * [Аудит операций самолета управления Azure Cosmos DB](audit-control-plane-logs.md)

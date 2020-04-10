@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 11/14/2019
+ms.date: 04/08/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 0d081a8cec088f4743bd0dc7d3cc37a9fade61d1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dfb094bc9f84e7129a3e1c733a054c5f6cd96372
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80117028"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81008653"
 ---
 Ультрадиски Azure предлагают высокую пропускную емкость, высокую емкость IOPS и последовательную систему хранения дисков с низкой задержкой для виртуальных машин Azure IaaS (VM). Это новое предложение обеспечивает первоклассную производительность с тем же уровнем доступности, что и имеющиеся предложения дисков. Одним из основных преимуществ ультра дисков является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезагрузки вашего VMs. Диски категории "Ультра" подходят для рабочих нагрузок, предполагающих интенсивную работу с данными, например SAP HANA, базы данных верхнего уровня и рабочие нагрузки с большим количеством транзакций.
 
@@ -23,9 +23,11 @@ ms.locfileid: "80117028"
 
 ## <a name="determine-vm-size-and-region-availability"></a>Определение размера ИТ и наличия региона
 
+### <a name="vms-using-availability-zones"></a>ВМ, использующие зоны доступности
+
 Чтобы использовать ультра диски, необходимо определить, в какой зоне доступности вы находитесь. Не каждый регион поддерживает каждый размер VM с ультра дисками. Чтобы определить, поддерживает ли ваш регион, зону и размер VM ультрадиски, запустите одну из следующих команд, убедитесь, что сначала замените **область,** **vmSize**и значения **подписки:**
 
-Интерфейс командной строки.
+#### <a name="cli"></a>CLI
 
 ```azurecli
 $subscription = "<yourSubID>"
@@ -37,7 +39,7 @@ $vmSize = "<yourVMSize>"
 az vm list-skus --resource-type virtualMachines  --location $region --query "[?name=='$vmSize'].locationInfo[0].zoneDetails[0].Name" --subscription $subscription
 ```
 
-PowerShell.
+#### <a name="powershell"></a>PowerShell
 
 ```powershell
 $region = "southeastasia"
@@ -58,9 +60,58 @@ $vmSize = "Standard_E64s_v3"
 
 Теперь, когда вы знаете, к какой зоне развертывать, выполните этапы развертывания в этой статье, чтобы либо развернуть VM с прикрепленным ультра диском, либо прикрепить ультрадиск к существующему VM.
 
+### <a name="vms-with-no-redundancy-options"></a>VMs без вариантов избыточности
+
+Ультра диски, развернутые в Западной ЧАСТИ США, должны быть развернуты без каких-либо вариантов избыточности, на данный момент. Однако, не каждый размер диска, который поддерживает ультра диски могут быть в этой области. Чтобы определить, какие из них в Западной США поддержки ультра дисков, вы можете использовать любой из следующих фрагментов кода. Убедитесь в `vmSize` том, чтобы заменить и `subscription` значения в первую очередь:
+
+```azurecli
+$subscription = "<yourSubID>"
+$region = "westus"
+# example value is Standard_E64s_v3
+$vmSize = "<yourVMSize>"
+
+az vm list-skus --resource-type virtualMachines  --location $region --query "[?name=='$vmSize'].capabilities" --subscription $subscription
+```
+
+```azurepowershell
+$region = "westus"
+$vmSize = "Standard_E64s_v3"
+(Get-AzComputeResourceSku | where {$_.Locations.Contains($region) -and ($_.Name -eq $vmSize) })[0].Capabilities
+```
+
+Ответ будет похож на следующую `UltraSSDAvailable   True` форму, указывает ли размер VM поддерживает ультра диски в этом регионе.
+
+```
+Name                                         Value
+----                                         -----
+MaxResourceVolumeMB                          884736
+OSVhdSizeMB                                  1047552
+vCPUs                                        64
+HyperVGenerations                            V1,V2
+MemoryGB                                     432
+MaxDataDiskCount                             32
+LowPriorityCapable                           True
+PremiumIO                                    True
+VMDeploymentTypes                            IaaS
+vCPUsAvailable                               64
+ACUs                                         160
+vCPUsPerCore                                 2
+CombinedTempDiskAndCachedIOPS                128000
+CombinedTempDiskAndCachedReadBytesPerSecond  1073741824
+CombinedTempDiskAndCachedWriteBytesPerSecond 1073741824
+CachedDiskBytes                              1717986918400
+UncachedDiskIOPS                             80000
+UncachedDiskBytesPerSecond                   1258291200
+EphemeralOSDiskSupported                     True
+AcceleratedNetworkingEnabled                 True
+RdmaEnabled                                  False
+MaxNetworkInterfaces                         8
+UltraSSDAvailable                            True
+```
+
 ## <a name="deploy-an-ultra-disk-using-azure-resource-manager"></a>Развертывание ультра-диска с помощью менеджера ресурсов Azure
 
-Во-первых, определите размер VM для развертывания. Для списка поддерживаемых размеров VM [см.](#ga-scope-and-limitations)
+Во-первых, определите размер VM для развертывания. Список поддерживаемых размеров VM можно узнать в разделе [область охвата и ограничений GA.](#ga-scope-and-limitations)
 
 Если вы хотите создать VM с несколькими ультра дисками, обратитесь к образцу [Создать VM с несколькими ультра дисков.](https://aka.ms/ultradiskArmTemplate)
 
@@ -109,7 +160,7 @@ $vmSize = "Standard_E64s_v3"
 
 ![ультра-варианты-да-enable.png](media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png)
 
-- Нажмите кнопку **Сохранить**.
+- Щелкните **Сохранить**.
 - Выберите **Добавить диск данных,** а затем в выпадении для **имя** выберите **Создать диск.**
 
 ![создать-и-прикрепить-новый-ультра-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/create-and-attach-new-ultra-disk.png)
@@ -135,7 +186,7 @@ $vmSize = "Standard_E64s_v3"
 ![выбор-ультра-диск-к-modify.png](media/virtual-machines-disks-getting-started-ultra-ssd/selecting-ultra-disk-to-modify.png)
 
 - Выберите **Конфигурацию,** а затем внести изменения.
-- Нажмите кнопку **Сохранить**.
+- Щелкните **Сохранить**.
 
 ![настройка-ультра-диск-производительность-и-размер.png](media/virtual-machines-disks-getting-started-ultra-ssd/configuring-ultra-disk-performance-and-size.png)
 
@@ -149,6 +200,18 @@ $vmSize = "Standard_E64s_v3"
 
 ```azurecli-interactive
 az vm create --subscription $subscription -n $vmname -g $rgname --image Win2016Datacenter --ultra-ssd-enabled true --zone $zone --authentication-type password --admin-password $password --admin-username $user --size Standard_D4s_v3 --location $location
+```
+
+### <a name="enable-ultra-disk-compatibility-on-an-existing-vm"></a>Включить ультра дисковую совместимость на существующем VM
+
+Если ваш VM соответствует требованиям, изложенным в [области GA и ограничениях](#ga-scope-and-limitations) и находится в [соответствующей зоне для вашей учетной записи,](#determine-vm-size-and-region-availability)то вы можете включить ультра диск совместимости на вашем VM.
+
+Для обеспечения совместимости ультра дисков необходимо остановить VM. После остановки VM, вы можете включить совместимость, прикрепить ультра диск, а затем перезапустить VM:
+
+```azurecli
+az vm deallocate -n $vmName -g $rgName
+az vm update -n $vmName -g $rgName --ultra-ssd-enabled true
+az vm start -n $vmName -g $rgName
 ```
 
 ### <a name="create-an-ultra-disk-using-cli"></a>Создание ультра-диска с помощью CLI
@@ -214,9 +277,22 @@ New-AzVm `
     -Name $vmName `
     -Location "eastus2" `
     -Image "Win2016Datacenter" `
-    -EnableUltraSSD `
+    -EnableUltraSSD $true `
     -size "Standard_D4s_v3" `
     -zone $zone
+```
+
+### <a name="enable-ultra-disk-compatibility-on-an-existing-vm"></a>Включить ультра дисковую совместимость на существующем VM
+
+Если ваш VM соответствует требованиям, изложенным в [области GA и ограничениях](#ga-scope-and-limitations) и находится в [соответствующей зоне для вашей учетной записи,](#determine-vm-size-and-region-availability)то вы можете включить ультра диск совместимости на вашем VM.
+
+Для обеспечения совместимости ультра дисков необходимо остановить VM. После остановки VM, вы можете включить совместимость, прикрепить ультра диск, а затем перезапустить VM:
+
+```azurepowershell
+#stop the VM
+$vm1 = Get-AzureRMVM -name $vmName -ResourceGroupName $rgName
+Update-AzureRmVM -ResourceGroupName $rgName -VM $vm1 -UltraSSDEnabled 1
+#start the VM
 ```
 
 ### <a name="create-an-ultra-disk-using-powershell"></a>Создание ультра-диска с помощью PowerShell
@@ -265,7 +341,3 @@ Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
 $diskupdateconfig = New-AzDiskUpdateConfig -DiskMBpsReadWrite 2000
 Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate $diskupdateconfig
 ```
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Если вы хотите попробовать новый тип диска [запрос доступа с этим опросом](https://aka.ms/UltraDiskSignup).

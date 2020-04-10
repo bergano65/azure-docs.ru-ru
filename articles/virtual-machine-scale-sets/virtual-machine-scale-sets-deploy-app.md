@@ -1,19 +1,19 @@
 ---
 title: Развертывание приложения в наборе виртуальной машины Azure
 description: Узнайте, как развертывать приложения в экземплярах виртуальных машин Windows и Linux, размещенных в масштабируемом наборе.
-author: cynthn
+author: ju-shim
 tags: azure-resource-manager
 ms.assetid: f8892199-f2e2-4b82-988a-28ca8a7fd1eb
 ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: cynthn
-ms.openlocfilehash: 6bc319ea50da4ff6a654b2c9ab09bbe218695533
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: jushiman
+ms.openlocfilehash: e157db79f1835a8ca891dd360a99e3319565d1d4
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76278106"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011469"
 ---
 # <a name="deploy-your-application-on-virtual-machine-scale-sets"></a>Развертывание приложения в масштабируемых наборах виртуальных машин
 
@@ -25,16 +25,16 @@ ms.locfileid: "76278106"
 
 Чтобы уменьшить число операций управления конфигурацией и время подготовки виртуальной машины, можно создать настраиваемый образ виртуальной машины, который позволит подготавливать в масштабируемом наборе экземпляры, уже готовые к запуску вашего приложения. Дополнительные сведения о том, как создать и использовать настраиваемый образ виртуальной машины с масштабируемым набором см. в документах ниже:
 
-- [Лазурный CLI](tutorial-use-custom-image-cli.md)
-- [Лазурная силаШелл](tutorial-use-custom-image-powershell.md)
+- [Azure CLI](tutorial-use-custom-image-cli.md)
+- [Azure PowerShell](tutorial-use-custom-image-powershell.md)
 
 
 ## <a name="install-an-app-with-the-custom-script-extension"></a><a name="already-provisioned"></a>Установка приложения с помощью расширения настраиваемых сценариев
 Расширение настраиваемых сценариев скачивает и выполняет сценарии на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или GitHub или передать на портал Azure во время выполнения расширения. Для получения дополнительной информации о том, как установить приложение с расширением пользовательского сценария, см.
 
-- [Лазурный CLI](tutorial-install-apps-cli.md)
-- [Лазурная силаШелл](tutorial-install-apps-powershell.md)
-- [Шаблон менеджера ресурсов Azure](tutorial-install-apps-template.md)
+- [Azure CLI](tutorial-install-apps-cli.md)
+- [Azure PowerShell](tutorial-install-apps-powershell.md)
+- [Шаблон Azure Resource Manager](tutorial-install-apps-template.md)
 
 
 ## <a name="install-an-app-to-a-windows-vm-with-powershell-dsc"></a>Установка приложения на виртуальную машину Windows с помощью PowerShell DSC
@@ -111,5 +111,5 @@ az vmss create \
 При использовании настраиваемого образа виртуальной машины с предварительно установленным приложением обновления приложения можно интегрировать в конвейер развертывания, чтобы создавать новые образы и развертывать обновления ОС в масштабируемом наборе. Такой подход позволяет конвейеру извлечь последние сборки приложения, создать и проверить образ виртуальной машины, а затем обновить экземпляры виртуальных машин в масштабируемом наборе. Чтобы запустить конвейер развертывания, который выполняет сборку обновлений приложения и развертывает их в настраиваемых образах виртуальных машин, можно [создать образ Packer и развернуть его с помощью Azure DevOps Services](/azure/devops/pipelines/apps/cd/azure/deploy-azure-scaleset) или использовать другую платформу (например, [Spinnaker](https://www.spinnaker.io/) или [Jenkins](https://jenkins.io/)).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения о создании и развертывании приложений в масштабируемых наборах вы можете получить из раздела [Рекомендации по проектированию масштабируемых наборов](virtual-machine-scale-sets-design-overview.md). Дополнительные сведения об управлении масштабируемым набором см. в разделе [Управление масштабируемым набором виртуальных машин с помощью Azure PowerShell](virtual-machine-scale-sets-windows-manage.md).

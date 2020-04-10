@@ -12,12 +12,12 @@ ms.date: 04/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60dca30496aa17ad7add00ca4eca914cb58fddd7
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 5d2e3f8da4a05feedb8c1ab585fabcc74edbc71a
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80655976"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998744"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -48,6 +48,13 @@ ms.locfileid: "80655976"
 >
 >Пожалуйста, обратитесь к [этой статье,](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-upgrade-previous-version) чтобы узнать больше о том, как обновить Azure AD Connect в последней версии.
 
+## <a name="15200"></a>1.5.20.0
+
+### <a name="release-status"></a>Состояние выпуска
+04/09/2020: Выпущен для скачивания
+
+### <a name="fixed-issues"></a>Исправленные проблемы
+Эта сборка hotfix фиксирует проблему с построением 1.5.18.0, если у вас включена функция фильтрации группы и используется mS-DS-ConsistencyGuid в качестве исходного якоря.
 
 ## <a name="15180"></a>1.5.18.0
 
@@ -1060,7 +1067,7 @@ Desktop SSO
 ## <a name="113710"></a>1.1.371.0
 Дата выпуска: декабрь 2016 г.
 
-**Известная проблема:**
+**Известный вопрос:**
 
 * Правило для утверждений issuerid для AD FS отсутствует в этой сборке. Правило для утверждений issuerid является обязательным, если включена федерация нескольких доменов с Azure Active Directory (Azure AD). Если вы используете Azure AD Connect для управления локальным развертыванием служб AD FS, обновление этой сборки приведет к удалению существующего правила для утверждений issuerid из конфигурации AD FS. Эту проблему можно решить, добавив правило для утверждений issuerid после установки или обновления. Дополнительные сведения о добавлении правила для утверждений issuerid см. в статье [Поддержка нескольких доменов для федерации с Azure AD](how-to-connect-install-multiple-domains.md).
 
@@ -1089,7 +1096,7 @@ Desktop SSO
 ## <a name="113430"></a>1.1.343.0
 Дата выпуска: ноябрь 2016 г.
 
-**Известная проблема:**
+**Известный вопрос:**
 
 * Правило для утверждений issuerid для AD FS отсутствует в этой сборке. Правило для утверждений issuerid является обязательным, если включена федерация нескольких доменов с Azure AD. Если вы используете Azure AD Connect для управления локальным развертыванием служб AD FS, обновление этой сборки приведет к удалению существующего правила для утверждений issuerid из конфигурации AD FS. Эту проблему можно решить, добавив правило для утверждений issuerid после установки или обновления. Дополнительные сведения о добавлении правила для утверждений issuerid см. в статье [Поддержка нескольких доменов для федерации с Azure AD](how-to-connect-install-multiple-domains.md).
 
@@ -1383,5 +1390,5 @@ Desktop SSO
 
 **Первоначальный выпуск Azure AD Sync.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 04/08/2020
 ms.author: juliako
-ms.openlocfilehash: 8a00f7c0ec76510cc521966acf98b7250e723697
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 8eca95f9fca47fca4d54bacbab35f3a0ffc3ba31
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985904"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010585"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>События в прямом эфире и живые выходы в медиа-услугах
 
@@ -111,7 +111,7 @@ ms.locfileid: "80985904"
 
 * Запоминающийся URL-адрес
 
-    Режим тщеславия предпочитают крупные вещательные компании, которые используют аппаратные кодора и не хотят перенастраивать свои кодеры при запуске Live Event. Они хотят прогностический URL-адрес, который не изменяется с течением времени.
+    Режим тщеславия предпочитают крупные вещательные компании, которые используют аппаратные кодора и не хотят перенастраивать свои кодеры при запуске Live Event. Эти вещательные компании хотят прогностического URL-адреса, который не изменяется с течением времени.
     
     > [!NOTE]
     > На портале Azure URL тщеславия называется *«Постоянный URL ввода».*

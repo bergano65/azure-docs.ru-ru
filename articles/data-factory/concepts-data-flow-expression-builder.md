@@ -6,17 +6,19 @@ ms.author: makromer
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 12/9/2019
-ms.openlocfilehash: 1dd782092ce91f7b71a3a2a6f2ed1646ee39a7e0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/08/2020
+ms.openlocfilehash: 196d917d31eb08af80587bba30d9f7e67bf8cbea
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75444532"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991711"
 ---
 # <a name="build-expressions-in-mapping-data-flow"></a>Создание выражений в картировании потока данных
 
 При картировании потока данных многие свойства преобразования вводятся в виде выражений. Эти выражения состоят из значений столбца, параметров, функций, операторов и буквальных значений, которые оценивают тип данных Spark во время выполнения.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4tkur]
 
 ## <a name="open-expression-builder"></a>Строитель открытого выражения
 
@@ -130,6 +132,6 @@ regex_replace('100 and 200', '(\\d+)', 'digits')
 
 Задняя часть "l" в конце предыдущего выражения означает преобразование в длинный тип как inline syntax.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Начало создания выражений преобразования данных](data-flow-expression-functions.md)

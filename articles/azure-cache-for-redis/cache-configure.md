@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: f10be8efcd2d8e838b4b5f62310eb405f6ed0158
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3f0de52782694e6cbc8fdb6b55d545191dbbb350
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79278744"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010313"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -31,7 +31,7 @@ ms.locfileid: "79278744"
 Просмотреть и настроить следующие параметры можно с помощью **меню ресурсов**.
 
 * [Обзор](#overview)
-* [Журнал активности](#activity-log)
+* [Журнал действий](#activity-log)
 * [Контроль доступа (IAM)](#access-control-iam)
 * [Теги](#tags)
 * [Диагностика и решение проблем](#diagnose-and-solve-problems)
@@ -39,7 +39,7 @@ ms.locfileid: "79278744"
     * [Ключи доступа](#access-keys)
     * [Расширенные настройки](#advanced-settings)
     * [Помощник по кэшу Azure для Redis](#azure-cache-for-redis-advisor)
-    * [Масштаб](#scale)
+    * [Масштабирование](#scale)
     * [Размер кластера](#cluster-size)
     * [Сохранение данных](#redis-data-persistence)
     * [Планирование обновлений](#schedule-updates)
@@ -47,16 +47,16 @@ ms.locfileid: "79278744"
     * [Виртуальная сеть](#virtual-network)
     * [Брандмауэр](#firewall)
     * [Свойства](#properties)
-    * [Замки](#locks)
+    * [Блокировки](#locks)
     * [Сценарий автоматизации](#automation-script)
 * Администрирование
-    * [Данные по импорту](#importexport)
-    * [Данные по экспорту](#importexport)
+    * [Импорт данных](#importexport)
+    * [Экспорт данных](#importexport)
     * [Перезагрузка](#reboot)
-* [Мониторинга](#monitoring)
+* [Наблюдение](#monitoring)
     * [Метрики Redis](#redis-metrics)
     * [Правила оповещения](#alert-rules)
-    * [Диагностики](#diagnostics)
+    * [Диагностика](#diagnostics)
 * Настройки поддержки и устранения неполадок
     * [Здоровье ресурсов](#resource-health)
     * [Новый запрос на поддержку](#new-support-request)
@@ -91,7 +91,7 @@ ms.locfileid: "79278744"
 * [Ключи доступа](#access-keys)
 * [Расширенные настройки](#advanced-settings)
 * [Помощник по кэшу Azure для Redis](#azure-cache-for-redis-advisor)
-* [Масштаб](#scale)
+* [Масштабирование](#scale)
 * [Размер кластера](#cluster-size)
 * [Сохранение данных](#redis-data-persistence)
 * [Планирование обновлений](#schedule-updates)
@@ -99,7 +99,7 @@ ms.locfileid: "79278744"
 * [Виртуальная сеть](#virtual-network)
 * [Брандмауэр](#firewall)
 * [Свойства](#properties)
-* [Замки](#locks)
+* [Блокировки](#locks)
 * [Сценарий автоматизации](#automation-script)
 
 
@@ -117,10 +117,10 @@ ms.locfileid: "79278744"
 * [Уведомления пространства ключей (дополнительные параметры)](#keyspace-notifications-advanced-settings)
 
 #### <a name="access-ports"></a>Порты доступа
-Для новых кэшей без SSL порт по умолчанию отключен. Чтобы включить порт, не использующий протокол SSL, в колонке **Дополнительные параметры** для параметра **Разрешить доступ только по SSL** нажмите кнопку **Нет**, а затем щелкните **Сохранить**.
+По умолчанию доступ, не отключаемый для TLS/SSL, отключен для новых кэшов. Для включения порта, не являющейся TLS, нажмите **«Нет»** для **доступа разрешить доступ только через SSL** на лезвии **Расширенных настроек,** а затем нажмите **«Сохранить».**
 
 > [!NOTE]
-> SSL доступ к Azure Cache для Redis поддерживает TLS 1.0, 1.1 и 1.2 в настоящее время, но версии 1.0 и 1.1 вскоре отменяются.  Пожалуйста, прочитайте наши [Удалить TLS 1.0 и 1.1 страницу](cache-remove-tls-10-11.md) для получения более подробной информации.
+> Доступ TLS к Azure Cache для Redis поддерживает TLS 1.0, 1.1 и 1.2 в настоящее время, но версии 1.0 и 1.1 вскоре отменяются.  Пожалуйста, прочитайте наши [Удалить TLS 1.0 и 1.1 страницу](cache-remove-tls-10-11.md) для получения более подробной информации.
 
 ![Порты доступа кэша Azure для Redis](./media/cache-configure/redis-cache-access-ports.png)
 
@@ -290,8 +290,8 @@ ms.locfileid: "79278744"
 
 ![Администрирование](./media/cache-configure/redis-cache-administration.png)
 
-* [Данные по импорту](#importexport)
-* [Данные по экспорту](#importexport)
+* [Импорт данных](#importexport)
+* [Экспорт данных](#importexport)
 * [Перезагрузка](#reboot)
 
 
@@ -333,7 +333,7 @@ ms.locfileid: "79278744"
 
 * [Метрики Redis](#redis-metrics)
 * [Правила оповещения](#alert-rules)
-* [Диагностики](#diagnostics)
+* [Диагностика](#diagnostics)
 
 ### <a name="redis-metrics"></a>Метрики Redis
 Щелкните **Метрики Redis**, чтобы [просмотреть метрики](cache-how-to-monitor.md#view-cache-metrics) кэша.
@@ -504,5 +504,5 @@ shard1>get myKey
 
 Сведения о перемещении ресурсов из одной группы ресурсов в другую, а также из одной подписки в другую см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Для получения дополнительной информации о работе с командами Redis см. [Как можно запускать команды Redis?](cache-faq.md#how-can-i-run-redis-commands)

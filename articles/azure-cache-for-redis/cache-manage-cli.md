@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: yegu
-ms.openlocfilehash: e2b1ed693ea57e3414d465a57a5ba2b1203f67c5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f71476d7d41ae45d2f1014ed1b257870622487e6
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79277990"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010840"
 ---
 # <a name="how-to-create-and-manage-azure-cache-for-redis-using-the-azure-classic-cli"></a>Создание кэша Azure для Redis и управление им с помощью классического Azure CLI
 > [!div class="op_single_selector"]
@@ -43,7 +43,7 @@ ms.locfileid: "79277990"
 | location |-l, --location |Расположение для создания кэша. |
 | size |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
 | sku |-x, --sku |Номер SKU Redis. Должен иметь одно из этих значений: [Basic, Standard, Premium] |
-| EnableNonSslPort |-e, --enable-non-ssl-port |Свойство EnableNonSslPort кэша Azure для Redis. Добавьте этот флаг, если хотите включить для кэша порт без SSL. |
+| EnableNonSslPort |-e, --enable-non-ssl-port |Свойство EnableNonSslPort кэша Azure для Redis. Добавьте этот флаг, если вы хотите включить порт, не относясь к кэшу, не является TLS/SSL |
 | Конфигурация Redis |-c, --redis-configuration |Конфигурация Redis. Введите строку ключей и значений конфигурации в формате JSON. Формат:"{"":"","":""}" |
 | Конфигурация Redis |-f, --redis-configuration-file |Конфигурация Redis. Введите путь к файлу, содержащему ключи и значения. Формат записи в файле: {"":"","":""} |
 | Число сегментов |-r, --shard-count |Число сегментов, которые будут созданы при создании кэша уровня "Премиум" с включенной кластеризацией. |
@@ -108,7 +108,7 @@ ms.locfileid: "79277990"
     help:      -l, --location <location>                                Location to create cache.
     help:      -z, --size <size>                                        Size of the Azure Cache for Redis. Valid values: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4]
     help:      -x, --sku <sku>                                          Redis SKU. Should be one of : [Basic, Standard, Premium]
-    help:      -e, --enable-non-ssl-port                                EnableNonSslPort property of the Azure Cache for Redis. Add this flag if you want to enable the Non SSL Port for your cache
+    help:      -e, --enable-non-ssl-port                                EnableNonSslPort property of the Azure Cache for Redis. Add this flag if you want to enable the non-TLS/SSL Port for your cache
     help:      -c, --redis-configuration <redis-configuration>          Redis Configuration. Enter a JSON formatted string of configuration keys and values here. Format:"{"<key1>":"<value1>","<key2>":"<value2>"}"
     help:      -f, --redis-configuration-file <redisConfigurationFile>  Redis Configuration. Enter the path of a file containing configuration keys and values here. Format for the file entry: {"<key1>":"<value1>","<key2>":"<value2>"}
     help:      -r, --shard-count <shard-count>                          Number of Shards to create on a Premium Cluster Cache

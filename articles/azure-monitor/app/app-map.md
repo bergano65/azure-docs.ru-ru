@@ -4,12 +4,12 @@ description: Мониторинг топологий сложных прилож
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 0823dd5d880c778f9b7a231ac14f1cbba1940927
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 7c5c9173704535b1e34ffde5867bd512e3e02ed8
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80657393"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989533"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -155,7 +155,25 @@ namespace CustomInitializer.Telemetry
 
 # <a name="java"></a>[Java](#tab/java)
 
-Начиная с Application Insights Java SDK 2.5.0, вы `<RoleName>` можете `ApplicationInsights.xml` указать имя роли облака, добавив в файл, например.
+**Агент Java**
+
+Для [Java-агента 3.0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) имя роли облака устанавливается следующим образом:
+
+```json
+{
+  "instrumentationSettings": {
+    "preview": {
+      "roleName": "my cloud role name"
+    }
+  }
+}
+```
+
+Вы также можете установить имя роли ```APPLICATIONINSIGHTS_ROLE_NAME```облака с помощью переменной среды.
+
+**Пакет SDK для Java**
+
+Если вы используете SDK, начиная с Application Insights Java SDK 2.5.0, `<RoleName>` вы `ApplicationInsights.xml` можете указать имя роли облака, добавив в файл, например.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -237,7 +255,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общее
+### <a name="general"></a>Общие сведения
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
@@ -271,7 +289,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать больше о том, как корреляция работает в Application Insights проконсультируйтесь с [статьей о телеметрии корреляции](correlation.md).
 * Сквозной [диагностический опыт транзакций](transaction-diagnostics.md) коррелирует телеметрию сервера со всех компонентов Application Insights в единое представление.

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 4129f1a89575c9a0e7cd6a0090168df659356c1b
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 38e319efb100d326d55f6f821e7c903306a7c7d0
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80885112"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80991013"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Веб-aPI, который вызывает веб-API: конфигурация кода
 
@@ -214,7 +214,7 @@ class MsalAuthHelper {
 
 Поток On-behalf-of (OBO) используется для получения токена для вызова нижепого веб-API. В этом потоке ваш веб-API получает токен носителя с делегированными пользователями разрешениями от клиентского приложения, а затем обменивает этот маркер на другой токен доступа, чтобы вызвать нижепом веб-API.
 
-Веб-API Python должен будет использовать некоторые промежуточное программное обеспечение для проверки маркера предъявителя, полученного от клиента. Веб-API может получить токен доступа для ниже по течению API с помощью библиотеки MSAL Python, позвонив в [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) метод. Образец, демонстрирующий этот поток с помощью MSAL Python, пока недоступен.
+Веб-API Python должен будет использовать некоторые промежуточное программное обеспечение для проверки маркера предъявителя, полученного от клиента. Веб-API может получить токен доступа для ниже по течению API с помощью библиотеки MSAL Python, позвонив в [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) метод. Например, с помощью этого API см. [тестовый код для Microsoft-аутентификации-библиотеки для питона на GitHub.](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.2.0/tests/test_e2e.py#L429-L472) Также смотрите обсуждение [вопроса 53](https://github.com/AzureAD/microsoft-authentication-library-for-python/issues/53) в том же репозитории для подхода, который обходит необходимость приложения среднего уровня.
 
 ---
 
@@ -224,7 +224,7 @@ class MsalAuthHelper {
 
 Для получения дополнительной информации о протоколе OBO, см [Microsoft идентификационную платформу и OAuth 2.0 On-Behalf-Of потока](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Веб-aPI, который вызывает веб-API: Приобрести маркер для приложения](scenario-web-api-call-api-acquire-token.md)

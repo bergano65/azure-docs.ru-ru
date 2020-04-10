@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 03/30/2020
+ms.date: 04/08/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 5b532908df4b8dd58177b7e128f4e55aa96458e6
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: d03b053f2aa5de4a6f7874dbf4e6ccb3a305a964
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80409949"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80992085"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor
 
@@ -88,6 +88,9 @@ Azure предоставляет большую полезную функцио�
 Подписки, которые имели рабочее пространство Log Analytics или ресурс Application Insights в нем до 2 апреля 2018 года, или связаны с корпоративным соглашением, которое началось до 1 февраля 2019 года, будет по-прежнему иметь доступ к использованию устаревших уровней ценообразования: **Free**, **Standalone (Per GB)** и **Per Node (OMS).**  Рабочие области в свободном уровне ценообразования будут иметь ежедневный проглатывание данных до 500 МБ (за исключением типов данных безопасности, собранных Центром безопасности Azure), а хранение данных ограничено 7 днями. Бесплатный уровень ценообразования предназначен только для целей оценки. Рабочие области в уровнях ценообразования Standalone или Per Node имеют настраиваемое удержание пользователей от 30 до 730 дней.
 
 Плата за ценообразование Per Node за контролируемый VM (узло) на часовую детализацию. Для каждого контролируемого узла рабочее пространство выделяется 500 МБ данных в день, которые не выставляются. Это распределение агрегируется на уровне рабочей области. Данные, понижаемые выше совокупного ежедневного распределения данных, выставляются на ГБ как избытки данных. Обратите внимание, что в вашем счете, служба будет **Insight и Analytics** для использования журнала Analytics, если рабочее пространство находится в уровне ценообразования Per Node. 
+
+> [!TIP]
+> Если ваше рабочее пространство имеет доступ к уровню ценообразования **Per Node,** но вы задаетесь вопросом, будет ли оно стоить дешевле в уровне Pay-As-You-Go, вы можете [использовать запрос ниже,](#evaluating-the-legacy-per-node-pricing-tier) чтобы легко получить рекомендацию. 
 
 Рабочие пространства, созданные до апреля 2016 года, также могут получить доступ к исходным уровням ценообразования **Standard** и **Premium,** которые зафиксировали хранение данных в 30 и 365 дней соответственно. Новые рабочие области не могут быть созданы в стандартных **или** **премиумовых** уровнях ценообразования, и если рабочее пространство перемещено из этих уровней, оно не может быть перемещено обратно. 
 
@@ -434,6 +437,49 @@ union
        | extend lowComputer = tolower(Computer) | summarize by lowComputer, ComputerEnvironment
  ) on lowComputer
  | summarize count() by ComputerEnvironment | sort by ComputerEnvironment asc
+```
+
+## <a name="evaluating-the-legacy-per-node-pricing-tier"></a>Оценка уровня цен на устаревший уровень цен Per Node
+
+Решение о том, являются ли рабочие области с доступом к устаревшему уровню ценообразования **Per Node** более выгодным в этом уровне или в текущем уровне **оплаты** по мере использования или **резервированию емкости,** часто бывает трудным для клиентов.  Это включает в себя понимание компромисса между фиксированной стоимостью на контролируемый узло в уровне ценообразования Per Node и включенным в него распределением данных в размере 500 МБ/узла/день и затратами на простое оплату данных в уровне Pay-As-You-Go (Per GB). 
+
+Для облегчения этой оценки можно использовать следующий запрос для выполнения рекомендаций по оптимальному уровню ценообразования на основе шаблонов использования рабочей области.  В этом запросе рассматриваются контролируемые узлы и данные, попадавшие в рабочее пространство за последние 7 дней, и каждый день оценивается, какой уровень ценообразования был бы оптимальным. Чтобы использовать запрос, необходимо указать, использует ли рабочее пространство `workspaceHasSecurityCenter` Центр `true` `false`безопасности Azure, установив или, а затем (по желанию) обновление цен Per Node и Per GB, которые получает ваш организитон. 
+
+```kusto
+// Set these paramaters before running query
+let workspaceHasSecurityCenter = true;  // Specify if the workspace has Azure Security Center
+let PerNodePrice = 15.; // Enter your price per node / month 
+let PerGBPrice = 2.30; // Enter your price per GB 
+// ---------------------------------------
+let SecurityDataTypes=dynamic(["SecurityAlert", "SecurityBaseline", "SecurityBaselineSummary", "SecurityDetection", "SecurityEvent", "WindowsFirewall", "MaliciousIPCommunication", "LinuxAuditLog", "SysmonEvent", "ProtectionStatus", "WindowsEvent", "Update", "UpdateSummary"]);
+union withsource = tt * 
+| where TimeGenerated >= startofday(now(-7d)) and TimeGenerated < startofday(now())
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| where computerName != ""
+| summarize nodesPerHour = dcount(computerName) by bin(TimeGenerated, 1h)  
+| summarize nodesPerDay = sum(nodesPerHour)/24.  by day=bin(TimeGenerated, 1d)  
+| join (
+    Usage 
+    | where TimeGenerated > ago(8d)
+    | where StartTime >= startofday(now(-7d)) and EndTime < startofday(now())
+    | where IsBillable == true
+    | extend NonSecurityData = iff(DataType !in (SecurityDataTypes), Quantity, 0.)
+    | extend SecurityData = iff(DataType in (SecurityDataTypes), Quantity, 0.)
+    | summarize DataGB=sum(Quantity)/1000., NonSecurityDataGB=sum(NonSecurityData)/1000., SecurityDataGB=sum(SecurityData)/1000. by day=bin(StartTime, 1d)  
+) on day
+| extend AvgGbPerNode =  NonSecurityDataGB / nodesPerDay
+| extend PerGBDailyCost = iff(workspaceHasSecurityCenter,
+             (NonSecurityDataGB + max_of(SecurityDataGB - 0.5*nodesPerDay, 0.)) * PerGBPrice,
+             DataGB * PerGBPrice)
+| extend OverageGB = iff(workspaceHasSecurityCenter, 
+             max_of(DataGB - 1.0*nodesPerDay, 0.), 
+             max_of(DataGB - 0.5*nodesPerDay, 0.))
+| extend PerNodeDailyCost = nodesPerDay * PerNodePrice / 31. + OverageGB * PerGBPrice
+| extend Recommendation = iff(PerNodeDailyCost < PerGBDailyCost, "Per Node tier", 
+             iff(NonSecurityDataGB > 85., "Capacity Reservation tier", "Pay-as-you-go (Per GB) tier"))
+| project day, nodesPerDay, NonSecurityDataGB, SecurityDataGB, OverageGB, AvgGbPerNode, PerGBDailyCost, PerNodeDailyCost, Recommendation | sort by day asc
+| project day, Recommendation // Comment this line to see details
+| sort by day asc
 ```
 
 ## <a name="create-an-alert-when-data-collection-is-high"></a>Создание оповещения при высоком уровне сбора данных

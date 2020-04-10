@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: mimart
 ms.reviewer: japere
-ms.openlocfilehash: ec9eeb0c35d96ee777771260686178faa536e909
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: d1929f937d86001a0f2a399b1ebd92e47bbd2c86
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80877309"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80990911"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Прокси-сервер приложения Active Directory (Azure AD) часто задавал вопросы
 
@@ -52,6 +52,9 @@ ms.locfileid: "80877309"
 ### <a name="is-tls-termination-tlshttps-inspection-or-acceleration-on-traffic-from-the-connector-servers-to-azure-supported"></a>Поддерживается ли прекращение TLS (проверка TLS/HTTPS или ускорение) на трафике с серверов разъема на Azure?
 
 Соединение прокси-приложений выполняет проверку подлинности на основе сертификатов в Azure. Прекращение TLS (tLS/HTTPS инспекция или ускорение) нарушает этот метод проверки подлинности и не поддерживается. Трафик от разъема до Azure должен обходить любые устройства, выполняющие TLS Termination.  
+
+### <a name="can-i-place-a-forward-proxy-device-between-the-connector-servers-and-the-back-end-application-server"></a>Могу ли я разместить передний прокси-устройство между сервером разъема (ы) и сервером приложений обратного конца?
+Да, этот сценарий поддерживается, начиная с разъема версии 1.5.1526.0. Смотрите [Работа с существующими в непредпомяги прокси-серверов.](application-proxy-configure-connectors-with-proxy-servers.md)
 
 ### <a name="should-i-create-a-dedicated-account-to-register-the-connector-with-azure-ad-application-proxy"></a>Должен ли я создать специальную учетную запись для регистрации разъема с помощью Azure AD Application Proxy?
 
