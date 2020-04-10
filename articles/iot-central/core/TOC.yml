@@ -12,7 +12,7 @@
     - name: 1. Создание приложения
       href: quick-deploy-iot-central.md
     - name: 2. Добавление имитированного устройства
-      href: quick-create-pnp-device.md
+      href: quick-create-simulated-device.md
     - name: 3. Настройка правила и действий
       href: quick-configure-rules.md
     - name: 4. Мониторинг устройств

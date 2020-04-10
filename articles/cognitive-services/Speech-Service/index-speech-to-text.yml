@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Документация от речи к тексту
+title: Документация по преобразованию речи в текст
 summary: Речевой текст из службы речевой речи, также известный как распознавание речи, позволяет в режиме реального времени и пакетной транскрипции аудио потоков в текст.
 metadata:
   title: Документация от речи к тексту - Учебники, Справка aPI - Когнитивные службы Azure (ru) Документы Майкрософт
@@ -11,22 +11,22 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/19/2020
   ms.author: dapine
-  ms.openlocfilehash: dd42fd57d8daa00d5507405a0d5e3145b335de84
-  ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+  ms.openlocfilehash: 28bd088965364411f7943f5bf50b5d245c49668e
+  ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/30/2020
-  ms.locfileid: "80397772"
+  ms.lasthandoff: 04/09/2020
+  ms.locfileid: "80991370"
 landingContent:
 - title: О речевом тексте
   linkLists:
   - linkListType: overview
     links:
-    - text: Что такое от речи к тексту в реальном времени?
+    - text: Что такое преобразование речи в текст в реальном времени?
       url: speech-to-text.md
-    - text: Что такое пакетная речь к тексту?
+    - text: Что такое пакетное преобразование речи в текст?
       url: batch-transcription.md
-    - text: Основы распознавания речи?
+    - text: Основы распознавания речи
       url: speech-to-text-basics.md
   - linkListType: quickstart
     links:
@@ -54,9 +54,9 @@ landingContent:
       url: tutorial-tenant-model.md
   - linkListType: concept
     links:
-    - text: Подготовка данных для пользовательской речи
+    - text: Подготовка данных для службы пользовательского распознавания речи
       url: how-to-custom-speech-test-and-train.md
-    - text: Train a model for Custom Speech (Обучение модели для Пользовательского распознавания речи)
+    - text: Обучение модели для службы пользовательского распознавания речи
       url: how-to-custom-speech-train-model.md
     - text: Создание транскрипций с подписями человека
       url: how-to-custom-speech-human-labeled-transcriptions.md

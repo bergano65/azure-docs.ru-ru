@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Текстовая документация по речи
+title: Документация по преобразованию текста в речь
 summary: Текст к речи из службы Speech позволяет вашим приложениям, инструментам или устройствам преобразовывать текст в синтезированную речь, похожую на человека.
 metadata:
   title: Документация по тексту и речи - Учебники, Справка aPI - Когнитивные службы Azure Документы Майкрософт
@@ -11,12 +11,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: 4aa2cb134bc47841da2964f4f83898875098e6c4
-  ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+  ms.openlocfilehash: e9fb4f1b26dd8c5a958f8321f8c6fd0def605c93
+  ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/28/2020
-  ms.locfileid: "80052806"
+  ms.lasthandoff: 04/09/2020
+  ms.locfileid: "80991353"
 landingContent:
 - title: О тексте к речи
   linkLists:
@@ -24,13 +24,15 @@ landingContent:
     links:
     - text: Что такое преобразование текста в речь?
       url: text-to-speech.md
+    - text: Основы синтеза речи
+      url: text-to-speech-basics.md
   - linkListType: quickstart
     links:
     - text: Синтезирование речи в виде речи докладчика
       url: quickstarts/text-to-speech.md
     - text: Синтезирование речи в звуковой файл
       url: quickstarts/text-to-speech-audio-file.md
-    - text: Синтезировать речь с длинной формы аудио
+    - text: Синтез речи с использованием длинных аудиоматериалов
       url: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
 - title: Разработка с текстом к речи
   linkLists:
@@ -54,9 +56,9 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Стандартная голосовая поддержка
+    - text: Поддержка стандартных голосов
       url: language-support.md#standard-voices
-    - text: Нейронная голосовая поддержка
+    - text: Поддержка нейронных голосов
       url: language-support.md#neural-voices
     - text: Фонетические наборы SSML
       url: speech-ssml-phonetic-sets.md
