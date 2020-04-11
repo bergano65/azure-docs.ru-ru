@@ -145,8 +145,6 @@
               href: service-fabric-containers-overview.md
             - name: Docker Compose (предварительная версия)
               href: service-fabric-docker-compose.md
-            - name: Управление ресурсами
-              href: service-fabric-resource-governance.md
         - name: Надежные службы
           items:
             - name: Обзор надежных служб
@@ -193,6 +191,8 @@
               href: service-fabric-reliable-actors-notes-on-actor-type-serialization.md
         - name: Гостевые исполняемые файлы
           href: service-fabric-guest-executables-introduction.md
+        - name: Управление ресурсами
+          href: service-fabric-resource-governance.md
     - name: Приложения и службы
       items:
         - name: Модель приложения
@@ -408,8 +408,6 @@
           items:
             - name: Docker Compose (предварительная версия)
               href: service-fabric-docker-compose.md
-            - name: управление ресурсами для контейнеров и служб;
-              href: service-fabric-resource-governance.md
             - name: Драйверы томов и драйверы ведения журналов
               href: service-fabric-containers-volume-logging-drivers.md
             - name: Просмотр журналов контейнеров
