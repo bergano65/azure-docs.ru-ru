@@ -5,12 +5,12 @@ author: harahma
 ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: harahma
-ms.openlocfilehash: 69c7edb08693937aad5a658e0b22b00cd2a81647
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 82bc5068be651b05eb24efa3b05e46c1e7c1e24d
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79282397"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115039"
 ---
 # <a name="azure-service-fabric-hosting-model"></a>Модель размещения Azure Service Fabric
 В этой статье представлен обзор моделей размещения приложений, предоставленных Azure Service Fabric, и приведены различия между моделями **с общим** и **монопольным процессом**. Здесь также описывается, как развернутое приложение выглядит на узле Service Fabric, и рассматриваются связи между репликами (или экземплярами) службы и процессом размещения служб.
@@ -168,6 +168,10 @@ Service Fabric предназначен для определенных вари
 
 
 Из предыдущего примера можно сделать вывод, что если MyCodePackageA регистрирует оба типа MyServiceTypeA и MyServiceTypeB, но пакет MyCodePackageB отсутствует, избыточный *CodePackage* выполняться не будет. Хотя это верно, эта модель приложения не согласуется с моделью размещения с монопольным процессом. Если задача в том, чтобы разместить каждую реплику в свой собственный выделенный процесс, тогда регистрация обоих типов *ServiceType* из одного пакета *CodePackage* не требуется. Вместо этого проще поместить каждый *ServiceType* в свой собственный пакет *ServicePackage*.
+
+### <a name="reliable-services-and-actor-forking-subprocesses"></a>Подпроцессы Reliable Services и "Разветвление субъекта"
+
+Service Fabric не поддерживает подпроцессы надежных услуг и, следовательно, надежного разветвления субъекта. Примером того, почему они не поддерживаются, является [CodePackageActivationContext](https://docs.microsoft.com/dotnet/api/system.fabric.codepackageactivationcontext?view=azure-dotnet), который нельзя использовать для регистрации неподдерживаемого подпроцесса, а токены отмены только отправляются на зарегистрированные процессы. В результате этого возникают всевозможные проблемы, такие как сбои обновлений, когда подпроцесс не закрывается после того, как родительский процесс получил токен отмены.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Создайте пакет приложения][a4] и подготовьте его к развертыванию.

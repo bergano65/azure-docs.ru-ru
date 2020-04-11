@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 03/25/2020
-ms.openlocfilehash: 4985c492c8ca71da87cf1a519ebc658c203d3952
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/11/2020
+ms.openlocfilehash: e01cc1c07d720c4743a03b5001e640f8b851dd5c
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80246982"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114002"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-portal"></a>Учебник: Мигрируйте PostgreS'L в Azure DB для PostgreS'L онлайн с помощью DMS через портал Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "80246982"
 
 * Скачать и установить [PostgreS'L сообщество издание](https://www.postgresql.org/download/) 9.4, 9.5, 9.6, или 10. Исходная версия PostgreS'L Server должна быть 9.4, 9.5, 9.6, 10 или 11. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions).
 
-    Кроме того, локальная версия PostgreSQL должна соответствовать Базе данных Azure для версии PostgreSQL. Например, PostgreS'L 9.6 может перейти в базу данных Azure для PostgreS'L 9.6, 10 или 11, но не в базу данных Azure для PostgreS'L 9.5.
+    Также обратите внимание, что целевая база данных Azure для версии PostgreS'L должна быть равна или позже, чем в предприимчивой версии PostgreS'L. Например, PostgreS'L 9.6 может перейти на базу данных Azure для PostgreS'L 9.6, 10 или 11, но не в базу данных Azure для PostgreS'L 9.5.
 
 * [Создайте базу данных Azure для сервера PostgreS'L](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal) или [создайте базу данных Azure для сервера PostgreS-L - Hyperscale (Citus).](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal)
 * Создайте виртуальную сеть Microsoft Azure для миграционной службы лазурных данных с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение к исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) Для получения дополнительной информации о создании виртуальной сети, см [Виртуальная сеть Документация](https://docs.microsoft.com/azure/virtual-network/), и особенно быстро начать статьи с пошаговой детали.
@@ -228,7 +228,7 @@ ms.locfileid: "80246982"
 
     ![Экран добавления сведений об источнике](media/tutorial-postgresql-to-azure-postgresql-online-portal/dms-add-source-details.png)
 
-2. Нажмите кнопку **Сохранить**.
+2. Щелкните **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 

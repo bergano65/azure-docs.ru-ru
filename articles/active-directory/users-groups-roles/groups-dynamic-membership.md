@@ -1,5 +1,5 @@
 ---
-title: Правила для динамического членства в группе - Azure AD Документы Майкрософт
+title: Правила для членства в динамически населенных группах - Azure AD Документы Майкрософт
 description: Сведения о создании правил членства для автоматического заполнения групп и о ссылках на эти правила.
 services: active-directory
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da983f87977de922ec547c3ade2972dfb4d69363
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d6f8237ac13744e56baa8551f8cced12b2785a48
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79253082"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114738"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -326,7 +326,7 @@ user.objectId -ne null
 Если вы хотите, чтобы ваша группа исключила гостевых пользователей и включила только членов вашего арендатора, вы можете использовать следующий синтаксис:
 
 ```
-(user.objectId -ne null) -and (user.userType -eq “Member”)
+(user.objectId -ne null) -and (user.userType -eq "Member")
 ```
 
 ### <a name="create-an-all-devices-rule"></a>Создание правила "Все устройства"

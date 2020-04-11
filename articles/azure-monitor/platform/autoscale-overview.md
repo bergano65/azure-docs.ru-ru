@@ -1,15 +1,15 @@
 ---
-title: Обзор автомасштабирования в службах "Виртуальные машины", "Облачные службы" и "Веб-приложения"
+title: Автомасштабирование в визгода, облачных сервисах и веб-приложениях
 description: Автомасштабирование в Microsoft Azure. Эта статья касается масштабируемых наборов виртуальных машин, а также служб "Виртуальные машины", "Облачные службы" и "Веб-приложения".
 ms.subservice: autoscale
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: a60c03f1928b38c78a59edca4b5493307d7d19d3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eeb8b301bf087efa164a7864cdce3a04952f45ed
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75364379"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114136"
 ---
 # <a name="overview-of-autoscale-in-microsoft-azure-virtual-machines-cloud-services-and-web-apps"></a>Обзор автомасштабирования в виртуальных машинах, облачных службах и веб-приложениях Microsoft Azure
 В этой статье объясняется, что такое автомасштабирование Microsoft Azure, каковы преимущества этой функции и как начать ее использовать.  

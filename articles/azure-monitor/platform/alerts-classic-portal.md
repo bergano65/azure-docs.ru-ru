@@ -1,16 +1,16 @@
 ---
-title: Создание, просмотр и управление классическими оповещениями метрик с помощью Azure Monitor
+title: Создавайте и управляйте классическими метрическими оповещениями с помощью Azure Monitor
 description: Узнайте, как использовать портал Azure, CLI или PowerShell для создания, просмотра и управления классическими правилами генерации оповещений метрики.
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.openlocfilehash: b770b9bd34c8267889db536ec81332de32cb8776
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e635c243a887690fb1f7a5dcd017c1130d74a747
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77668321"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114579"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 

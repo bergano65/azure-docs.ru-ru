@@ -5,12 +5,12 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 03/24/2020
-ms.openlocfilehash: 27abdfe28e2594c98778b51532fbd22f95bfa3ac
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: b121830192a2b88185bbbbc9a92934e51b32a61c
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80984714"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114650"
 ---
 # <a name="integrate-azure-ad-in-azure-kubernetes-service-preview"></a>Интеграция Azure AD в службу Azure Kubernetes (Предварительный просмотр)
 
@@ -29,7 +29,7 @@ ms.locfileid: "80984714"
 > - [Политики поддержки AKS](support-policies.md)
 > - [Часто задаваемые вопросы о поддержке Azure](faq.md)
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Необходимо установить следующие ресурсы:
 
@@ -98,12 +98,12 @@ az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad
 После создания группы и добавления себя (и других) в качестве участника можно обновить кластер с группой Azure AD, используя следующую команду
 
 ```azurecli-interactive
-az aks update -g MyResourceGroup -n MyManagedCluster [--aad-admin-group-object-ids <id1,id2>] [--aad-tenant-id <id>]
+az aks update -g MyResourceGroup -n MyManagedCluster [--aad-admin-group-object-ids <id>] [--aad-tenant-id <id>]
 ```
 Кроме того, если сначала создать группу и добавить участников, можно включить группу Azure AD во время создания следующей команды,
 
 ```azurecli-interactive
-az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad [--aad-admin-group-object-ids <id1,id2>] [--aad-tenant-id <id>]
+az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad [--aad-admin-group-object-ids <id>] [--aad-tenant-id <id>]
 ```
 
 Успешное создание кластера Azure AD v2 имеет следующий раздел в органе реагирования

@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: b8f55b0693b7ffdf10516cfb19b67ccc5a94dc5a
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: d10b6c52310da3d799a7fe78c83284960318f82e
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80742906"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115249"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -113,7 +113,7 @@ ms.locfileid: "80742906"
 > [!IMPORTANT]
 > Не рекомендуется переопределять зону, которая активно используется для решения общедоступных конечных точек. Подключение к ресурсам не сможет решить правильно без переадресировки DNS в общедоступный DNS. Чтобы избежать проблем, создайте другое доменное имя или следуйте предложенному названию для каждой службы ниже. 
  
-Для служб Azure используйте рекомендуемые названия зон, описанные в следующей таблице:
+Для служб Azure используйте названия зон, описанные в следующей таблице:
 
 |Тип ресурсов Private Link   |Подресурс  |Название зоны  |
 |---------|---------|---------|

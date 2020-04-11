@@ -1,17 +1,17 @@
 ---
-title: Создание классического оповещения о метрике в Azure с помощью шаблона Resource Manager
+title: Шаблон менеджера ресурсов - создание метрикар
 description: Узнайте, как создать классическое оповещение на основе метрик, чтобы получать уведомления по электронной почте или с использованием веб-перехватчика, с помощью шаблона Resource Manager.
 author: rboucher
 ms.author: robb
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.subservice: alerts
-ms.openlocfilehash: 4f840d3771c2520e239d8ff3416722429f9502f3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5a868167f80aaa735e4fbeab32fd1d308dd6da1f
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79037225"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114433"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 > [!WARNING]

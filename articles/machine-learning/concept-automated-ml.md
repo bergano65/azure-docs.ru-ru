@@ -10,21 +10,18 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 02/28/2020
-ms.openlocfilehash: c8864e00be9f491d87478c253286070b9334a26e
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: 095561f02fdeff6688b78d69cc1becc4ee0f8901
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80383197"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115214"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
 Автоматизированное машинное обучение, также называемое автоматизированным ML, является процессом автоматизации трудоемких, итеративных задач разработки модели машинного обучения. Это позволяет ученым, аналитикам и разработчикам данных создавать модели ML с высоким и высоким масштабом, эффективностью и производительностью при сохранении качества модели. Автоматизированный ML основан на прорыве от нашего [исследовательского подразделения Microsoft.](https://arxiv.org/abs/1705.05355)
 
 Разработка традиционной модели машинного обучения является ресурсоемкой, требующей значительных знаний и времени для создания и сравнения десятков моделей. С автоматизированным машинным обучением вы ускорите время, необходимое для получения готовых к производству моделей ML с большой легкостью и эффективностью.
-
- 
-
 
 ## <a name="when-to-use-automated-ml"></a>Когда использовать автоматизированный ML
 
@@ -139,9 +136,13 @@ ms.locfileid: "80383197"
 
 Ознакомьтесь с тем, [как](how-to-configure-auto-train.md#ensemble) изменять настройки ансамбля по умолчанию в автоматизированном машинном обучении.
 
-## <a name="use-with-onnx-in-c-apps"></a>Использование с ONNX в приложениях на СЗ
+## <a name="use-with-onnx"></a>Использование с ONNX
 
-С помощью Машинного обучения Azure можно использовать автоматизированный ML для создания модели Python и ее преобразования в формат ONNX. Время выполнения ONNX поддерживает C,, так что вы можете использовать модель, построенную автоматически в приложениях C, без необходимости перекодирования или любой из концентов сети, которые вводят сяорREST. Попробуйте пример этого потока [в этом ноутбуке Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb).
+С помощью Машинного обучения Azure можно использовать автоматизированный ML для создания модели Python и ее преобразования в формат ONNX. После того, как модели находятся в формате ONNX, они могут быть запущены на различных платформах и устройствах. Узнайте больше об [ускорении МОДЕЛЕй ML с помощью ONNX](concept-onnx.md).
+
+Узнайте, как перейти в формат ONNX [в этом примере ноутбука Jupyter.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) Узнайте, какие [алгоритмы поддерживаются в ONNX](how-to-configure-auto-train.md#select-your-experiment-type).
+
+Время выполнения ONNX также поддерживает C-, так что вы можете использовать модель, построенную автоматически в приложениях C, без необходимости перекодирования или любой из конценных сетей, которые вводят endpoints REST. Узнайте больше о [выводе моделей ONNX с помощью aPI-aPI с помощью программы ONNX.](https://github.com/Microsoft/onnxruntime/blob/master/docs/CSharp_API.md) 
 
 ## <a name="automated-ml-in-azure-machine-learning"></a>Автоматизированный ML в машинном обучении Azure
 

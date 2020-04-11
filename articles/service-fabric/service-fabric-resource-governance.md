@@ -3,12 +3,12 @@ title: управление ресурсами для контейнеров и 
 description: Azure Service Fabric позволяет указать ограничения ресурсов для служб, выполняемых внутри или вне контейнеров.
 ms.topic: conceptual
 ms.date: 8/9/2017
-ms.openlocfilehash: 85520876d7f0c89450b572d28dee6cb66ed2231d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 11ca6e29829d911717a829b3e4dee0a190856a52
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75772386"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115151"
 ---
 # <a name="resource-governance"></a>Управление ресурсами
 
@@ -31,7 +31,8 @@ ms.locfileid: "75772386"
 * Кластер может быть [дефрагментирован](service-fabric-cluster-resource-manager-defragmentation-metrics.md) в соответствии с этими двумя метриками.
 * При [описании кластера](service-fabric-cluster-resource-manager-cluster-description.md) для этих двух метрик можно задать емкость буфера.
 
-[Передача данных о динамической нагрузке](service-fabric-cluster-resource-manager-metrics.md) не поддерживается этими метриками, и нагрузка для них определяется во время создания.
+> [!NOTE]
+> [Динамическая отчетность о нагрузках](service-fabric-cluster-resource-manager-metrics.md) не поддерживается для этих метрик; нагрузки для этих метрик определяются во время создания.
 
 ## <a name="resource-governance-mechanism"></a>Механизм управления ресурсами
 

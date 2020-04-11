@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/19/2019
 ms.author: spelluru
-ms.openlocfilehash: 8608aaab7bb8b6d10e67f27678c17f20a6c243da
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7ce7ef15f0bf13182e4799fb640e83136d0d4695
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80370856"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115024"
 ---
 # <a name="azure-lab-services---administrator-guide"></a>Услуги Лаборатории Лазурного АСВ - Руководство по администраторам
 Администраторы информационных технологий (ИТ), управляющие облачными ресурсами университета, как правило, отвечают за создание учетной записи лаборатории для своей школы. После настройки лабораторной учетной записи администраторы или преподаватели создают классные лаборатории, содержащиеся в учетной записи лаборатории. В этой статье содержится обзор ресурсов Azure высокого уровня и рекомендации по их созданию.
@@ -156,6 +156,9 @@ ms.locfileid: "80370856"
        
     Когда **нет** VNet заглянул и [лаборатории создатели могут выбрать расположение лаборатории](https://docs.microsoft.com/azure/lab-services/classroom-labs/allow-lab-creator-pick-lab-location), места, которые могут быть выбраны создателем лаборатории основаны на доступной емкости.
 
+> [!NOTE]
+> Чтобы обеспечить достаточную емкость ВМ для региона, важно сначала запросить емкость через лабораторный счет или при создании лаборатории.
+
 Общее правило заключается в установлении региона ресурса к региону, который ближе всего к его пользователям. Для классных лабораторий это означает создание классной лаборатории, наиболее близкой к вашим ученикам. Для онлайн-курсов, где студенты расположены по всему миру, вам нужно использовать ваши лучшие суждения, чтобы создать классную лабораторию, которая находится в центре. Или разделите класс на несколько классных лабораторий, основанных на регионе ваших студентов.
 
 ### <a name="shared-image-gallery"></a>Общая галерея изображений
@@ -169,7 +172,7 @@ ms.locfileid: "80370856"
 | ---- | ----- | ------ | ------------- |
 | Малый| <ul><li>2 ядра</li><li>3,5 ГБ ОПЕРАТИВНОЙ памяти</li> | [Standard_A2_v2](https://docs.microsoft.com/azure/virtual-machines/av2-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Этот размер лучше всего подходит для командной строки, открытия веб-браузера, веб-серверов с низким трафиком, малых и средних баз данных. |
 | Средний | <ul><li>4 Коры</li><li>7 ГБ оперативной памяти</li> | [Standard_A4_v2](https://docs.microsoft.com/azure/virtual-machines/av2-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Этот размер лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики. |
-| Средний (Вложенная виртуализация) | <ul><li>4 Коры</li><li>16 ГБ ОЗУ</li></ul> | [Standard_DC4s_v2](https://docs.microsoft.com/azure/virtual-machines/dcv2-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Этот размер лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики.  Этот размер также поддерживает вложенную виртуализацию. |
+| Средний (Вложенная виртуализация) | <ul><li>4 Коры</li><li>16 ГБ ОЗУ</li></ul> | [Standard_D4s_v3](https://docs.microsoft.com/azure/virtual-machines/dv3-dsv3-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json#dsv3-series) | Этот размер лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики.  Этот размер также поддерживает вложенную виртуализацию. |
 | большой | <ul><li>8 ядер</li><li>32 ГБ оперативной памяти</li></ul>  | [Standard_DC8_v2](https://docs.microsoft.com/azure/virtual-machines/dcv2-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Этот размер лучше всего подходит для приложений, которые нуждаются в более быстрых процессорах, лучшей производительности локального диска, больших базах данных, больших кэшах памяти.  Этот размер также поддерживает вложенную виртуализацию. |
 | Малый графический процессор (визуализация) | <ul><li>6 Ядра</li><li>56 ГБ оперативной памяти</li>  | [Standard_NV6](https://docs.microsoft.com/azure/virtual-machines/nv-series) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр, кодирования с помощью таких инфраструктур, как OpenGL и DirectX. |
 | Малый графический процессор (вычислить) | <ul><li>6 Ядра</li><li>56 ГБ оперативной памяти</li></ul>  | [Standard_NC6](https://docs.microsoft.com/azure/virtual-machines/nc-series) |Этот размер лучше всего подходит для компьютерных приложений, таких как искусственный интеллект и глубокое обучение. |

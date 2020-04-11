@@ -1,17 +1,17 @@
 ---
-title: Ограничение частоты отправки для SMS, электронной почты, push-уведомлений приложений Azure и веб-перехватчиков
+title: Ограничение скорости для SMS, электронных писем, push-уведомлений
 description: Узнайте, как в Azure ограничивается количество возможных SMS, сообщений электронной почты, push-уведомлений приложений Azure или уведомлений веб-перехватчиков из группы действий.
 author: dkamstra
 ms.author: dukek
 ms.topic: conceptual
 ms.date: 3/12/2018
 ms.subservice: alerts
-ms.openlocfilehash: 066fcac24571c8e982784a3845a010525ff9088a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 61e6cc22171815b15b865dd6ed5670bd9c446ead
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77665533"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114335"
 ---
 # <a name="rate-limiting-for-voice-sms-emails-azure-app-push-notifications-and-webhook-posts"></a>Ограничение частоты отправки для голосовых сообщений, SMS-сообщений, сообщений электронной почты, push-уведомлений приложений Azure и записей веб-перехватчиков
 Ограничение частоты означает приостановку уведомлений, которые слишком часто отправляются на указанный номер телефона, адрес электронной почты или устройство. Ограничение скорости гарантирует управляемость и действенность оповещений.

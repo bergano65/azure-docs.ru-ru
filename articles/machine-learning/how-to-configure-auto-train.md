@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: 03e1d4aa74d2f71ab2f32ac55f4ad3d46f672f5c
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 18de50473e3dd6ca8ddda9575a247e00530032e8
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80618537"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115417"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Configure automated ML experiments in Python (Настройка экспериментов автоматизированного машинного обучения на Python)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -43,24 +43,27 @@ ms.locfileid: "80618537"
 
 Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм.
 
+> [!NOTE]
+> Если вы планируете экспортировать ваши автоматические модели, созданные ML, в [модель ONNX,](concept-onnx.md)только те алгоритмы, указанные с q, могут быть преобразованы в формат ONNX. Подробнее о [преобразовании моделей в ONNX](concept-automated-ml.md#use-with-onnx). <br> <br> Также обратите внимание, ONNX поддерживает только классификацию и регрессионные задачи в это время. 
+
 Классификация | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-[Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
-[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
-[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#classification)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)
-[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#decision-trees)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)
-[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
-[Линейная классификация опорных векторов](https://scikit-learn.org/stable/modules/svm.html#classification)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
-[Классификация векторов поддержки (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
-[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
-[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
-[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)|[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)| [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
-[Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier)|[DNN Регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [DNN Регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
-[Линейный классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)|[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
-[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)|[Быстрый линейный регрессор](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?view=nimbusml-py-latest)|[Авто-АРИМА](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
-[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|[Онлайн Градиентс спуск регрессор](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?view=nimbusml-py-latest)|[Пророк](https://facebook.github.io/prophet/docs/quick_start.html)
+[Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)* | [Упругая сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)* | [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
+[Легкий ГБМ](https://lightgbm.readthedocs.io/en/latest/index.html)* |[Легкий ГБМ](https://lightgbm.readthedocs.io/en/latest/index.html)*|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
+[Градиент Повышение](https://scikit-learn.org/stable/modules/ensemble.html#classification)* |[Градиент Повышение](https://scikit-learn.org/stable/modules/ensemble.html#regression)* |[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)
+[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#decision-trees)* |[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)* |[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)
+[K Ближайшие соседи](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)* |[K Ближайшие соседи](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)* |[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
+[Линейный SVC](https://scikit-learn.org/stable/modules/svm.html#classification)* |[ЛАРС Лассо](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)* |[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
+[Классификация векторов поддержки (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)* |[Стохастичный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)* |[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
+[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
+[Чрезвычайно рандомизированные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Чрезвычайно рандомизированные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
+[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* |[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* | [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
+[Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier) |[DNN Регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [DNN Регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
+[Линейный классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor) |[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
+[Наив байес](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)* |[Быстрый линейный регрессор](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?view=nimbusml-py-latest)|[Авто-АРИМА](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
+[Стохастичный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)* |[Онлайн Градиентс спуск регрессор](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?view=nimbusml-py-latest)|[Пророк](https://facebook.github.io/prophet/docs/quick_start.html)
 |[Средний классификатор перцептрона](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.averagedperceptronbinaryclassifier?view=nimbusml-py-latest)||ПрогнозTCN
-|[Линейный классификатор SVM](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?view=nimbusml-py-latest)||
+|[Линейный классификатор SVM](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?view=nimbusml-py-latest)* ||
 
 Используйте `task` параметр `AutoMLConfig` в конструкторе, чтобы указать тип эксперимента.
 
@@ -250,7 +253,7 @@ automl_config = AutoMLConfig(task = 'forecasting',
 Есть несколько аргументов по умолчанию, которые могут быть предоставлены как `kwargs` в объекте, `AutoMLConfig` чтобы изменить поведение ансамбля стека по умолчанию.
 
 * `stack_meta_learner_type`: мета-учащийся является моделью, обучаемым на выходе отдельных неоднородных моделей. Мета-учащиеся по `LogisticRegression` умолчанию предназначены `LogisticRegressionCV` для задач классификации (или если включена перекрестная проверка) и `ElasticNet` для задач регрессии/прогнозирования (или `ElasticNetCV` если включена перекрестная проверка). Этот параметр может быть одним `LogisticRegression`из `LogisticRegressionCV` `LightGBMClassifier`следующих строк: , , `ElasticNet`, `ElasticNetCV`, `LightGBMRegressor`или `LinearRegression`.
-* `stack_meta_learner_train_percentage`: определяет долю учебного набора (при выборе поезда и типа проверки), который должен быть зарезервирован для обучения мета-учащегося. Значение по умолчанию: `0.2`.
+* `stack_meta_learner_train_percentage`: определяет долю учебного набора (при выборе поезда и типа проверки), который должен быть зарезервирован для обучения мета-учащегося. Значение по умолчанию — `0.2`.
 * `stack_meta_learner_kwargs`: дополнительные параметры для передачи инициализатору мета-учащегося. Эти параметры и типы параметров отражают параметры и типы параметров от соответствующего конструктора модели и направляются на конструктор модели.
 
 В следующем коде показан пример указания пользовательского поведения ансамбля в объекте. `AutoMLConfig`
@@ -522,7 +525,7 @@ class_prob = fitted_model.predict_proba(X_test)
 
 Для получения общей информации о том, как объяснения модели и важность функций могут быть [concept](how-to-machine-learning-interpretability.md) включены в других областях SDK за пределами автоматизированного машинного обучения, см.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, [как и где можно развернуть модель](how-to-deploy-and-where.md).
 

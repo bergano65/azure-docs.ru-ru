@@ -7,16 +7,16 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: b51f7a8b62d7131b7bbfc77101e60fab22e1f148
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: f7b6e667df95d9279ad5c44caa4ba33a17909935
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985802"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81113159"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Windows
 
-Лазурное шифрование дисков для виртуальных машин Windows (VMs) использует функцию Bitlocker Windows для обеспечения полного шифрования диска диска WindOS и диска данных. Кроме того, он обеспечивает шифрование эфемерного ресурсного диска, когда параметр VolumeType является все.
+Лазурное шифрование дисков для виртуальных машин Windows (VMs) использует функцию Bitlocker Windows для обеспечения полного шифрования диска диска и диска данных. Кроме того, он обеспечивает шифрование эфемерного ресурсного диска, когда параметр VolumeType является все.
 
 Шифрование azure Disk [интегрировано с Azure Key Vault,](disk-encryption-key-vault.md) чтобы помочь вам управлять ключами и секретами шифрования дисков и управлять ими. Для обзора службы [см.](disk-encryption-overview.md)
 

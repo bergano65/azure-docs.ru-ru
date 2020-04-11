@@ -7,16 +7,16 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 56e86aa75b153b5cb005c96fca45373d30ffa8b4
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: c7a2fea94e0dc1ff868eff26399877cab66e6f66
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437095"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115343"
 ---
 # <a name="dav4-and-dasv4-series"></a>Серии Dav4 и Dasv4
 
-Dav4-серии и Dasv4-серии новые размеры с использованием AMD в 2,35 ГГц EPYC<sup>TM</sup> 7452 процессор в многопоточной конфигурации с до 256 МБ L3 кэш, посвятив 8 ГБ, что Кэш L3 на каждые 8 ядер увеличения вариантов клиента для запуска их общего назначения рабочих нагрузок. Серия Dav4 и Dasv4 имеют те же конфигурации памяти и диска, что и D & Dsv3-серии.
+Dav4-серии и Dasv4-серии новые размеры с использованием AMD в 2,35 ГГц EPYC<sup>TM</sup> 7452 процессор в многопоточной конфигурации с до 256 МБ L3 кэш, посвятив 8 МБ, что L3 кэш на каждые 8 ядер увеличения вариантов клиента для запуска их общего назначения рабочих нагрузок. Серия Dav4 и Dasv4 имеют те же конфигурации памяти и диска, что и D & Dsv3-серии.
 
 ## <a name="dav4-series"></a>Dav4-серия
 
@@ -72,13 +72,13 @@ ACU: 230-260
 
 ## <a name="other-sizes"></a>Остальные размеры
 
-- [Общее назначение](sizes-general.md)
-- [Оптимизирована память](sizes-memory.md)
+- [Общего назначения](sizes-general.md)
+- [Оптимизированные для операций в памяти](sizes-memory.md)
 - [Оптимизированные для операций в хранилище](sizes-storage.md)
 - [Оптимизированные для GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

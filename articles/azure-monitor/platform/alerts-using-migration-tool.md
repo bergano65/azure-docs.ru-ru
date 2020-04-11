@@ -1,17 +1,17 @@
 ---
-title: Мигрируйте классические оповещения в Azure Monitor с помощью инструмента добровольной миграции
+title: Правила оповещения мигрировать в Azure Monitor
 description: Узнайте, как использовать инструмент добровольной миграции для переноса классических правил оповещения.
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: 537d84639523a74cbd9403d4ad25c34a798b7061
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ab5c16995a2d2bad6e44f0f9d1187ca3d66be1b6
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77665108"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114256"
 ---
 # <a name="use-the-voluntary-migration-tool-to-migrate-your-classic-alert-rules"></a>Используйте инструмент добровольной миграции для переноса классических правил оповещения
 
@@ -76,7 +76,7 @@ ms.locfileid: "77665108"
 
 1. Когда миграция завершена, или если от вас требуется действие, вы получите электронное письмо по адресам, которые вы предоставили ранее. Также можно периодически проверять статус на миграционной целевой странице портала.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="why-is-my-subscription-listed-as-not-ready-for-migration"></a>Почему моя подписка указана как не готовая к миграции?
 

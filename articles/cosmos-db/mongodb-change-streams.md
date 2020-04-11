@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: tisande
-ms.openlocfilehash: ecfa98241f74aac43a827b645a6ed877624d643d
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 38e262abefe5444c1fe7586810f4b971cc7baf6c
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437808"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114165"
 ---
 # <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Изменяйте потоки в API API Azure Cosmos DB для MongoDB
 
@@ -26,7 +26,8 @@ ms.locfileid: "80437808"
 При использовании потоков изменений применяются следующие ограничения:
 
 * Свойства `operationType` `updateDescription` и свойства еще не подтверждены в документе вывода.
-* Типы `insert`операций и `replace` операции в настоящее время поддерживаются. `update` Удаление операции или других событий еще не поддерживается.
+* Типы `insert`операций и `replace` операции в настоящее время поддерживаются. `update` 
+* Удаление операции или других событий еще не поддерживается.
 
 Из-за этих ограничений, $match этап, $project этап, и fullDocument варианты необходимы, как показано в предыдущих примерах.
 
@@ -103,7 +104,7 @@ var cursor = db.coll.watch(
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Используйте время, чтобы автоматически прожить до истечения срока действия данных в API API Azure Cosmos DB для MongoDB](mongodb-time-to-live.md)
 * [Индексирование в API Azure Cosmos DB для MongoDB](mongodb-indexing.md)

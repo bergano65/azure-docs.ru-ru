@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 02/17/2020
-ms.openlocfilehash: 12aa11aa5064b3a0a2ff18f88161f44f37208aec
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/11/2020
+ms.openlocfilehash: be6f0cd734d31f43557b49f8e9314e925b383899
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80240693"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81113947"
 ---
 # <a name="tutorial-migrate-rds-postgresql-to-azure-db-for-postgresql-online-using-dms"></a>Учебник: Мигрируйте RDS PostgreS'L в Azure DB для PostgreS'L онлайн с помощью DMS
 
@@ -49,7 +49,7 @@ ms.locfileid: "80240693"
 
 * Скачайте и установите [PostgreSQL Community Edition](https://www.postgresql.org/download/) версии 9.5, 9.6 или 10. На исходном сервере должна быть установлена PostgreSQL версии 9.5.11, 9.6.7, 10 или более поздней. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions).
 
-    Кроме того, версия RDS PostgreSQL должна соответствовать Базе данных Azure для версии PostgreSQL. Например, RDS PostgreSQL версии 9.5.11.5 можно перенести только в Базу данных Azure для PostgreSQL версии 9.5.11, но не версии 9.6.7.
+   Также обратите внимание, что целевая база данных Azure для версии PostgreS'L должна быть равна или позже, чем версия RDS PostgreS'L. Например, RDS PostgreS'L 9.6 может мигрировать только в базу данных Azure для PostgreS'L 9.6, 10 или 11, но не в базу данных Azure для PostgreS'L 9.5.
 
 * Создайте экземпляр базы данных Azure для базы данных [PostgreS'L](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal) или [Базы данных Azure для PostgreS-L - Hyperscale (Citus).](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal) В [этом разделе](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal#connect-to-the-postgresql-server-using-pgadmin) документа приводятся сведения о том, как подключиться к серверу PostgreSQL с помощью pgAdmin.
 * Создайте виртуальную сеть Microsoft Azure для миграционной службы лазурных данных с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение к исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) Для получения дополнительной информации о создании виртуальной сети, см [Виртуальная сеть Документация](https://docs.microsoft.com/azure/virtual-network/), и особенно быстро начать статьи с пошаговой детали.
@@ -204,7 +204,7 @@ ms.locfileid: "80240693"
     > [!NOTE]
     > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
 
-5. Нажмите кнопку **Сохранить**.
+5. Щелкните **Сохранить**.
 
 6. Выберите **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 

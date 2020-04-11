@@ -1,27 +1,27 @@
 ---
-title: Добавление предложений и автозаполнения в поле поиска
+title: Добавление автозаполнения и предложений в поле поиска
 titleSuffix: Azure Cognitive Search
-description: Включите действия опережающего ввода запросов в Когнитивном поиске Azure, создав средства подбора и составив запросы, которые предлагают завершенные термины или фразы в поле поиска.
+description: Включите действия запроса поиска по мере ввода в свой тип в Azure Cognitive Search, создавая предложить и формулируя запросы, которые автоматически заполняют окно поиска с готовыми терминами или фразами. Вы также можете вернуть предлагаемые матчи.
 manager: nitinme
-author: mrcarter8
-ms.author: mcarter
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
-ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: 64c4e65ca7b69c7d61c706b48591ac19be3bfcf5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 04/10/2020
+ms.openlocfilehash: d6c1819366fede0b1e81e43bc92ed56af93b39fd
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72792528"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114961"
 ---
 # <a name="add-suggestions-or-autocomplete-to-your-azure-cognitive-search-application"></a>Добавление предложений или автозаполнение в приложениях Когнитивного поиска Azure
 
 Из этой статьи вы узнаете, как использовать [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions) и [автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete), чтобы дополнить возможности поля поиска функциями поиска по мере ввода.
 
-+ *Предложения* — это предлагаемые результаты, которые создаются по мере ввода запроса. Каждое предложение содержит один результат из индекса, который соответствует введенному на данный момент тексту. 
++ *Предложения* генерируют результаты поиска при вводе, где каждое предложение представляет собой единый результат или документ поиска из индекса, который соответствует тому, что вы набрали до сих пор. 
 
-+ *Автозаполнение* "завершает" набираемое пользователем слово или фразу. Эта функция не возвращает результаты, а завершает текст запроса, который затем можно выполнить для получения результатов. Как и с предложениями, завершенное слово или фраза в запросе прогнозируется по совпадениям из индекса. Эта служба не предлагает запросы, по которым в индексе не будет найдено результатов.
++ *Автозаполнение* генерирует запросы, "заканчивая" слово или фразу. Эта функция не возвращает результаты, а завершает текст запроса, который затем можно выполнить для получения результатов. Как и с предложениями, завершенное слово или фраза в запросе прогнозируется по совпадениям из индекса. Эта служба не предлагает запросы, по которым в индексе не будет найдено результатов.
 
 Вы можете скачать и запустить пример кода **DotNetHowToAutocomplete**, чтобы оценить эти функции. Этот пример кода обращается к предварительно созданному индексу, заполненном [демонстрационными данным NYCJobs](https://github.com/Azure-Samples/search-dotnet-asp-net-mvc-jobs). Индекс NYCJobs содержит [конструкцию средства подбора](index-add-suggesters.md), что является обязательным условием для использования предложений и (или) автозаполнения. Вы можете использовать уже подготовленный индекс, размещенный в службе песочницы, или [заполнить собственный индекс](#configure-app) с помощью загрузчика данных из примера решения NYCJobs. 
 
@@ -36,11 +36,11 @@ ms.locfileid: "72792528"
 > * В C# определите действия предложений и автозаполнения в HomeController.cs.
 > * В JavaScript воспользуетесь прямым вызовом интерфейсов REST API, который предоставляет те же возможности.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Служба "Когнитивный поиск Azure" не является обязательной для этого упражнения, так как решение использует службу песочницы с заранее подготовленным демонстрационным индексом NYCJobs. Если вы хотите выполнить этот пример в собственной службе поиска, воспользуйтесь инструкциями из статьи [о настройке индекса NYCJobs](#configure-app).
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/), любое издание. Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
 
 * Скачайте пример [DotNetHowToAutocomplete](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToAutocomplete).
 
@@ -70,7 +70,7 @@ ms.locfileid: "72792528"
 
 В этом примере создается простое текстовое поле ввода с классом для определения стиля, идентификатором для ссылок на JavaScript и замещающим текстом.  Вся функциональность реализована во внедренном коде JavaScript.
 
-В примере на языке C# используется JavaScript в Index.cshtml для применения [библиотеки автозавершения пользовательского интерфейса jQuery](https://jqueryui.com/autocomplete/). Эта библиотека расширяет возможности автозавершения в поле поиска, совершая асинхронные вызовы котроллера MVC для получения предложений. Версия на языке JavaScript находится в файле IndexJavaScript.cshtml. Она содержит приведенный ниже скрипт для панели поиска, а также вызовы к REST API Когнитивного поиска Azure.
+В выборке языка СЗ используется JavaScript в Index.cshtml для использования [автополной библиотеки j'uery UI.](https://jqueryui.com/autocomplete/) Эта библиотека расширяет возможности автозавершения в поле поиска, совершая асинхронные вызовы котроллера MVC для получения предложений. Версия на языке JavaScript находится в файле IndexJavaScript.cshtml. Она содержит приведенный ниже скрипт для панели поиска, а также вызовы к REST API Когнитивного поиска Azure.
 
 Давайте изучим код JavaScript из первого примера, который вызывает функцию автозавершения в интерфейсе jQuery, передавая запрос на предоставление предложений:
 
@@ -194,7 +194,7 @@ public ActionResult Suggest(bool highlights, bool fuzzy, string term)
 }
 ```
 
-Функция предложений использует два параметра, которые определяют, возвращается ли четкое совпадение или используется нечеткое соответствие в дополнение к вводу слова для поиска. Этот метод создает объект [SuggestParameters](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggestparameters?view=azure-dotnet), который затем передается в API предложений. Затем результат преобразуется в JSON, чтобы его можно было передать клиенту.
+Функция предложений использует два параметра, которые определяют, возвращается ли четкое совпадение или используется нечеткое соответствие в дополнение к вводу слова для поиска. Метод создает [объект SuggestParameters,](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggestparameters?view=azure-dotnet)который затем передается aPI Suggest API. Затем результат преобразуется в JSON, чтобы его можно было передать клиенту.
 
 В строке 69 приводится функция Autocomplete. Она основана на методе [DocumentsOperationsExtensions.Autocomplete](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.autocomplete?view=azure-dotnet).
 
@@ -315,7 +315,7 @@ var autocompleteUri = "https://" + searchServiceName + ".search.windows.net/inde
 На следующем шаге вы интегрируете возможности предложений и автозавершения в интерфейс поиска. В этом вам помогут следующие статьи справочной документации.
 
 > [!div class="nextstepaction"]
-> [REST API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete)
-> [REST API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions)
-> [Атрибут индекса аспектов в REST API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index)
+> [Автозаполненный](https://docs.microsoft.com/rest/api/searchservice/autocomplete)
+> атрибут индекса REST API[Предложения REST API](https://docs.microsoft.com/rest/api/searchservice/suggestions)
+> [Facets на API Create Index](https://docs.microsoft.com/rest/api/searchservice/create-index)
 

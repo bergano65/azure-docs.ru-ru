@@ -10,12 +10,12 @@ ms.service: lab-services
 ms.topic: article
 ms.date: 3/30/2020
 ms.author: spelluru
-ms.openlocfilehash: 39ff4f42457451dfa4aae90b281d6b163c56b4cd
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 7b839df5940ab26e5c1a99a1bda1fbd2545f8cc4
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80522242"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81113118"
 ---
 # <a name="guide-to-controlling-windows-shutdown-behavior"></a>Руководство по управлению поведением отключения Windows
 
@@ -58,7 +58,7 @@ Windows предоставляет локальные параметры **по�
 
 ```powershell
 # The MaxIdleTime is in milliseconds; by default, this script sets MaxIdleTime to 15 minutes.
-$maxIdleTime = 15 * 60 * 90
+$maxIdleTime = 15 * 60 * 1000
 
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" -Name "MaxIdleTime" -Value $maxIdleTime -Force
 ```
@@ -79,6 +79,9 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Se
     ![Лимит сеанса простоя](../media/how-to-windows-shutdown/edit-idle-time-limit.png)
 
 1. Наконец, чтобы объединить это поведение с **автоматическим выключением параметра отключения,** следует следовать шагам в статье «как-к»: [Включить автоматическое выключение ВМ при отключении.](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-enable-shutdown-disconnect)
+
+> [!WARNING]
+> После настройки этой настройки с помощью PowerShell для прямого или ручного изменения настройки реестра с помощью редактора group Policy необходимо сначала перезапустить VM, чтобы настройки вступили в силу.  Кроме того, если настроить настройку с помощью реестра, редактор групповой политики не всегда обновляется, чтобы отразить изменения в настройке реестра; однако настройка реестра по-прежнему вступает в силу, как и ожидалось, и вы увидите, что сеанс RDP отключен при простое в течение указанного времени.
 
 ## <a name="remove-windows-shutdown-command-from-start-menu"></a>Удалить команду отключения Windows из меню «Пуск»
 

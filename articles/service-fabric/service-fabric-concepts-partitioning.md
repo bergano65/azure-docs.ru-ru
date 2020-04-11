@@ -3,12 +3,12 @@ title: Разделение служб Service Fabric
 description: Описывается процесс секционирования служб с отслеживанием состояния Service Fabric. Секции позволяют хранить данные на локальных компьютерах, что дает возможность одновременно масштабировать данные и вычислительные ресурсы.
 ms.topic: conceptual
 ms.date: 06/30/2017
-ms.openlocfilehash: 1f3ee2196bad8b8a0c992ed498d40b4cf5820f2c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4edfaa74fe109c688cad733d16031e87fff1e46f
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79258620"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81115164"
 ---
 # <a name="partition-service-fabric-reliable-services"></a>Секционирование служб Reliable Services в Service Fabric
 В этой статье рассматриваются основные понятия, связанные с секционированием служб Reliable Services в инфраструктуре Azure Service Fabric. Исходный код, который используется в этой статье, можно найти на [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions).
@@ -348,9 +348,6 @@ Service Fabric упрощает процесс разработки масшта
     ![Снимок экрана, на котором изображен браузер](./media/service-fabric-concepts-partitioning/samplerunning.png)
 
 Весь исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions).
-
-## <a name="reliable-services-and-actor-forking-subprocesses"></a>Подпроцессы Reliable Services и "Разветвление субъекта"
-Service Fabric не поддерживает подпроцессы надежных услуг и, следовательно, надежного разветвления субъекта. Примером того, почему они не поддерживаются, является [CodePackageActivationContext](https://docs.microsoft.com/dotnet/api/system.fabric.codepackageactivationcontext?view=azure-dotnet), который нельзя использовать для регистрации неподдерживаемого подпроцесса, а токены отмены только отправляются на зарегистрированные процессы. В результате этого возникают всевозможные проблемы, такие как сбои обновлений, когда подпроцесс не закрывается после того, как родительский процесс получил токен отмены. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Сведения о понятиях, принятых для структуры служб, см. в следующих статьях:
