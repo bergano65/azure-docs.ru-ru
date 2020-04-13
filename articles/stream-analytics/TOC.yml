@@ -61,14 +61,18 @@
           href: stream-analytics-sql-output-perf.md
         - name: Пользовательские шаблоны пути к BLOB-объекту
           href: stream-analytics-custom-path-patterns-blob-storage-output.md
-    - name: Определяемые пользователем функции
+    - name: Расширение запросов функциями
       items:
-        - name: Определяемая пользователем функция в машинном обучении
-          href: machine-learning-udf.md
-        - name: 'Определяемая пользователем функция C#'
-          href: stream-analytics-edge-csharp-udf-methods.md
+        - name: Общие сведения о функциях
+          href: functions-overview.md
         - name: Определяемая пользователем функция JavaScript
           href: stream-analytics-javascript-user-defined-functions.md
+        - name: UDA JavaScript
+          href: stream-analytics-javascript-user-defined-aggregates.md
+        - name: 'Определяемая пользователем функция C#'
+          href: stream-analytics-edge-csharp-udf-methods.md
+        - name: Определяемая пользователем функция в машинном обучении
+          href: machine-learning-udf.md
     - name: Оптимизация задания Stream Analytics
       items:
         - name: Обзор и настройка единиц потоковой передачи
@@ -140,8 +144,6 @@
           href: stream-analytics-edge.md
         - name: 'Анализ данных датчиков, расположенных в пунктах сбора оплаты'
           href: stream-analytics-build-an-iot-solution-using-stream-analytics.md
-        - name: Выполнение пользовательского статистического выражения JavaScript
-          href: stream-analytics-javascript-user-defined-aggregates.md
         - name: Высокочастотный трейдинг
           href: stream-analytics-high-frequency-trading.md
         - name: Обработка потоковых данных Интернета вещей

@@ -85,9 +85,9 @@
     - name: Безопасность базы данных
       items:
         - name: Обзор
-          href: database-security-overview.md
+          href: ../../sql-database/sql-database-security-overview.md
         - name: Рекомендации
-          href: database-best-practices.md
+          href: ../../sql-database/sql-database-security-best-practice.md
         - name: Контрольный список по безопасности
           href: database-security-checklist.md
     - name: Руководство по обеспечению безопасности службы хранилища
@@ -115,6 +115,8 @@
       href: log-audit.md
     - name: Управление безопасностью и мониторинг
       href: management-monitoring-overview.md
+    - name: Улучшение удаленного управления
+      href: management.md
     - name: Операционная безопасность
       items:
         - name: Обзор

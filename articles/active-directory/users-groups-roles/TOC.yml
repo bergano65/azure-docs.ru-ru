@@ -124,6 +124,8 @@
               href: groups-create-rule.md
             - name: Синтаксис правил динамических групп
               href: groups-dynamic-membership.md
+            - name: Проверка правила членства
+              href: groups-dynamic-rule-validation.md
             - name: Изменение типа членства в группе
               href: groups-change-type.md
     - name: Назначение лицензий

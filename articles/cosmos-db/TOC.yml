@@ -1037,6 +1037,8 @@
           href: monitor-cosmos-db.md
         - name: Мониторинг задержки на стороне сервера
           href: monitor-server-side-latency.md
+        - name: Мониторинг использования единиц запросов
+          href: monitor-request-unit-usage.md
         - name: Мониторинг с помощью журналов диагностики
           href: cosmosdb-monitor-resource-logs.md
         - name: Журналы уровня управления аудитом
