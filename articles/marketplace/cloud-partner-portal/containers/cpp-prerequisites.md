@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: dsindona
-ms.openlocfilehash: db2300ae827677f8902e420b136acec3da694c8d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0453117ee2984e0b8ebee60145353584a02a359a
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280020"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81270134"
 ---
 # <a name="container-publishing-prerequisites"></a>Обязательные требования для публикации
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления предложениями Azure Container в партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [предложении Create an Azure Container](https://aka.ms/CreateContainerOffer) для управления мигрированными предложениями.
 
 В этой статье описаны обязательные требования для публикации предложения контейнеров в Azure Marketplace.  Если вы еще не сделали этого, вы должны просмотреть [Контейнеры Предложение Издательский руководство](../../marketplace-containers.md).
 

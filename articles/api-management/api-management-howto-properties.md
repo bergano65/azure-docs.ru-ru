@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/08/2020
 ms.author: apimpm
-ms.openlocfilehash: 7c25455e28e57ff40664a69718a2e406b52b7632
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4362d0875ac2c20fc6963d404f86898a12387dad
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75834298"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81260927"
 ---
 # <a name="how-to-use-named-values-in-azure-api-management-policies"></a>Как использовать именованные значения в политиках управления API Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "75834298"
 
 Как только названное значение создано, его можно отобразить, нажав на него. При изменении имениного имени значения любые политики, которые ссылаются на указанное значение, автоматически обновляются для использования нового имени.
 
-Для получения информации о редактировании названного [Edit a named value using the REST API](/rest/api/apimanagement/2019-01-01/property?patch)значения с помощью REST API см.
+Для получения информации о редактировании названного [Edit a named value using the REST API](/rest/api/apimanagement/2019-12-01/property?patch)значения с помощью REST API см.
 
 ## <a name="to-delete-a-named-value"></a>Удаление именованного значения
 
@@ -68,7 +68,7 @@ ms.locfileid: "75834298"
 > [!IMPORTANT]
 > Если на указанное значение ссылаются какие-либо политики, вы не сможете успешно удалить его, пока не удалите названное значение из всех политик, которые его используют.
 
-Для получения информации об удалении названного значения с помощью REST API [см.](/rest/api/apimanagement/2019-01-01/property/delete)
+Для получения информации об удалении названного значения с помощью REST API [см.](/rest/api/apimanagement/2019-12-01/property/delete)
 
 ## <a name="to-search-and-filter-named-values"></a>Для поиска и фильтрации именованных значений
 

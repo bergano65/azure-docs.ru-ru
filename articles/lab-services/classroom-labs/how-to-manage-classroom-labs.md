@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 02/20/2020
+ms.date: 04/10/2020
 ms.author: spelluru
-ms.openlocfilehash: cc937589b2fc4f394b44cf6890a352d770751d15
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 46c53c99c12ade986ab913bf013b652a931a4d22
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79502032"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257748"
 ---
 # <a name="manage-classroom-labs-in-azure-lab-services"></a>Управление лабораторией для аудитории в решении "Службы лабораторий Azure" 
 В этой статье описывается, как создавать и удалять лаборатории для аудитории. Здесь также показано, как просматривать все лаборатории для аудитории в учетной записи лаборатории. 
@@ -37,8 +37,10 @@ ms.locfileid: "79502032"
     1. Укажите **имя** своей лаборатории. 
     2. Выберите **размер виртуальных машин,** необходимых для класса. Список доступных размеров можно найти в разделе [VM Sizes.](#vm-sizes) 
     3. Выберите **изображение виртуальной машины,** которое вы хотите использовать для классной лаборатории. Если вы выберете образ Linux, вы увидите возможность включить для него подключение к удаленному рабочему столу. Дополнительные сведения см. в статье [Enable and use remote desktop for Linux virtual machines in a lab in Azure Lab Services](how-to-enable-remote-desktop-linux.md) (Включение и использование удаленного рабочего стола для виртуальных машин Linux в лаборатории в Службах лабораторий Azure).
+
+        Если вы зарегистрировались в использовании учетных данных владельца учетной записи лаборатории, вы увидите опцию, позволяющую включить больше изображений для лаборатории. Для получения дополнительной информации [см.](specify-marketplace-images.md#enable-images-at-the-time-of-lab-creation)
     4. Просмотрите **общую цену за час,** отображаемую на странице. 
-    6. Нажмите кнопку **Сохранить**.
+    6. Щелкните **Сохранить**.
 
         ![Окно создания лаборатории](../media/tutorial-setup-classroom-lab/new-lab-window.png)
 

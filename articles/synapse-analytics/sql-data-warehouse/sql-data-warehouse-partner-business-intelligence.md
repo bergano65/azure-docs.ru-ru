@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 0994e1af8ca6deccbe6224625a5320fb195a10a1
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 1a026cc241eb372e15f2600e52ec53a46efb1024
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80586503"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81256014"
 ---
 # <a name="azure-synapse-analytics-business-intelligence-partners"></a>Партнеры по бизнес-аналитике Azure Synapse Analytics
 
@@ -37,12 +37,12 @@ ms.locfileid: "80586503"
 | ![Qlik](./media/sql-data-warehouse-partner-business-intelligence/qlik_logo.png) |**Qlik Sense Enterprise**<br>Стимулирование обнаружения информации с помощью приложения для визуализации данных, которое может использовать кто угодно. С помощью Qlik Sense кто угодно в вашей организации сможет легко создавать гибкие, интерактивные визуализации и принимать разумные решения. |[Страница продукта](https://www.qlik.com/us/products/qlik-sense/enterprise)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/qliktech-international-ab/qlikview/) |
 | ![SiSense](./media/sql-data-warehouse-partner-business-intelligence/sisense_logo.png) |**SiSense**<br>SiSense — полноценное программное обеспечение бизнес-аналитики с инструментами, которые нужны компании для анализа и визуализации данных: эффективная база данных, возможность подключаться к разным источникам, простое извлечение данных и визуализация данных в браузере. Начните анализировать и визуализировать большие объемы данных с помощью SiSense BI and Analytics уже сегодня. |[Страница продукта](https://www.sisense.com/product/)<br> |
 | ![Tableau](./media/sql-data-warehouse-partner-business-intelligence/tableau_sparkle_logo.png) |**Tableau**<br>Аналитика самообслуживания Tableau помогает любому человеку видеть и понимать их данные по многим видам данных, от плоских файлов до баз данных. Tableau имеет наиболее, оптимизированный разъем для пула Synapse S'L, который поддерживает как живые данные, так и аналитику в памяти. |[Страница продукта](https://www.tableau.com/)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/tableau/tableau-server/)<br>|
-| ![Targit](./media/sql-data-warehouse-partner-business-intelligence/targit_logo.png) |**Таргит (Сюита решений)**<br>Targit Decision Suite — это платформа бизнес-аналитики, которая объединяет актуальные панели мониторинга, аналитику, понятные отчеты, превосходные мобильные возможности и простые технологии работы с данными в одном, связанном решении. Targit дает компаниям мужество для действия. |[Страница продукта](https://www.targit.com/en/software/deployment/targitonazure)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/targit/targit-decision-suite/)<br> |
+| ![Targit](./media/sql-data-warehouse-partner-business-intelligence/targit_logo.png) |**Таргит (Сюита решений)**<br>Targit Decision Suite — это платформа бизнес-аналитики, которая объединяет актуальные панели мониторинга, аналитику, понятные отчеты, превосходные мобильные возможности и простые технологии работы с данными в одном, связанном решении. Targit дает компаниям мужество для действия. |[Страница продукта](https://www.targit.com/targit-decision-suite/analytics)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/targit/targit-decision-suite/)<br> |
 | ![Yellowfin](./media/sql-data-warehouse-partner-business-intelligence/yellowfin_logo.png) |**Yellowfin**<br>Yellowfin является самым рейтингу поставщика Cloud BI для специальной отчетности и панелей мониторинга ОТ BARC; Обзор BI. Подключайтесь к пулу Synapse S'L, а затем создавайте и делитесь красивыми отчетами и панелями мониторинга с наградами в области совместной bi и функций разведки местоположения. |[Страница продукта](https://www.yellowfinbi.com/)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/yellowfin/yellowfin-for-azure-byol/) |
 
 <!--https://img.youtube.com/vi/0b8sPW2UHrU/0.jpg-->
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Дополнительные сведения о некоторых других партнерах см. в статьях [Партнеры по интеграции данных хранилища данных SQL](sql-data-warehouse-partner-data-integration.md) и [Партнеры по управлению данными хранилища данных SQL](sql-data-warehouse-partner-data-management.md).
 
  

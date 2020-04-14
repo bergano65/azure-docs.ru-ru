@@ -8,14 +8,14 @@ editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 01/16/2020
+ms.date: 04/13/2020
 ms.author: jingwang
-ms.openlocfilehash: 1418205843fefc76db4e73832736b308d0cc79a3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6720a018cdc3fff95192b0956b3d1040be263ab2
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76122616"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261891"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Хранение учетных данных в Azure Key Vault
 
@@ -32,7 +32,7 @@ ms.locfileid: "76122616"
 Чтобы указать учетные данные, хранимые в Azure Key Vault, необходимо:
 
 1. **Retrieve data factory managed identity** by copying the value of "Managed Identity Object ID" generated along with your factory. При использовании ui-единого использования aDF-автора идентификатор объекта управляемого идентификатора идентификации будет отображаться в окне создания подключенных услуг Azure Key Vault; вы также можете получить его с портала Azure, обратитесь к [управляемой идентификации фабрики retrieve.](data-factory-service-identity.md#retrieve-managed-identity)
-2. **Предоставьте управляемый доступ к ключу доступа к вашему Убежище юков Azure.** В хранилище ключей -> политикдоступа -> Добавить новый - > поиск этой управляемой идентификации, чтобы предоставить **Разрешение** при отсечении разрешений Secret. Это позволит указанной фабрике получить доступ к секрету в хранилище ключей.
+2. **Предоставьте управляемый доступ к ключу доступа к вашему Убежище юков Azure.** В хранилище ключей -> политикдоступа - > добавить политику доступа, поиск этой управляемой идентификации, чтобы предоставить **Разрешение** при отсечении разрешений. Это позволит указанной фабрике получить доступ к секрету в хранилище ключей.
 3. **Создайте связанную службу, указывающую на хранилище ключей Azure.** Дополнительные сведения см. в разделе [Связанная служба Azure Key Vault](#azure-key-vault-linked-service).
 4. **Создайте службу, связанную с хранилищем данных, внутри которой ссылается соответствующая тайна, хранящаяся в хранилище ключей.** См. дополнительные сведения об [указании секрета, хранящегося в хранилище ключей](#reference-secret-stored-in-key-vault).
 
@@ -47,13 +47,13 @@ ms.locfileid: "76122616"
 
 **С помощью пользовательского интерфейса для создания:**
 
-Нажмите **на** -> **службы** -> связи, связанные с**подключением «Новый->** поиск для «Убежища ключей Azure»:
+Выберите **подключенные** -> **службы** -> **связи Новые**. В новой связанной службе поиск и выбор "Azure Key Vault":
 
-![Поиск AKV](media/store-credentials-in-key-vault/search-akv.png)
+![Поиск в убежище ключей Azure](media/store-credentials-in-key-vault/search-akv.png)
 
 Выберите подготовленное хранилище ключей Azure, в котором хранятся ваши учетные данные. Вы можете выполнить **тестовое подключение**, чтобы убедиться, что ваше подключение AKV действительно. 
 
-![Настройка AKV](media/store-credentials-in-key-vault/configure-akv.png)
+![Настройка Azure Key Vault](media/store-credentials-in-key-vault/configure-akv.png)
 
 **Пример JSON:**
 
@@ -87,7 +87,7 @@ ms.locfileid: "76122616"
 >[!TIP]
 >Для разъемов, использующих строку подключения в связанной службе, такой как S'L Server, Blob storage и т.д., вы можете либо хранить только секретное поле, например пароль в AKV, либо хранить всю строку соединения в AKV. Вы можете найти оба варианта на uI.
 
-![Настройка секрета AKV](media/store-credentials-in-key-vault/configure-akv-secret.png)
+![Наконфигурните секрет Убежища ключей Azure](media/store-credentials-in-key-vault/configure-akv-secret.png)
 
 **Пример JSON: (см. раздел "пароль") **
 

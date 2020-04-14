@@ -2,17 +2,17 @@
 title: Используйте движок правил для обеспечения соблюдения httpS в Стандартном Azure CDN Документы Майкрософт
 description: Используйте движок правил для Microsoft Standard Azure Content Delivery Delivery Network (Azure CDN), чтобы настроить обработку запросов HTTP Azure CDN, включая блокирование доставки определенных типов содержимого, определение политики кэширования и изменение заголовков HTTP. В этой статье узнайте, как создать правило для перенаправления пользователей на HTTPS.
 services: cdn
-author: mdgattuso
+author: asudbring
 ms.service: azure-cdn
 ms.topic: article
 ms.date: 11/01/2019
-ms.author: magattus
-ms.openlocfilehash: 724861305d7a25db409072200ac2bc3bd83f0682
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: allensu
+ms.openlocfilehash: 91a442573139bf4fdd09978290bf2380c8bcb97e
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74171573"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81259937"
 ---
 # <a name="set-up-the-standard-rules-engine-for-azure-cdn"></a>Настройка движка стандартных правил для Azure CDN
 

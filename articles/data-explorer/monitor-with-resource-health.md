@@ -7,12 +7,12 @@ ms.reviewer: prvavill
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 03/31/2020
-ms.openlocfilehash: 9b8b1b40e972d7719ef2cf495ed12cb4ed3478fd
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: ee42f45d8c96e908061142b5a8e6b2e5cee21993
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80479374"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262066"
 ---
 # <a name="monitor-azure-data-explorer-using-resource-health-preview"></a>Мониторинг Azure Data Explorer с помощью работоспособности ресурсов (Предварительный просмотр)
 
@@ -44,7 +44,7 @@ ms.locfileid: "80479374"
 
 ### <a name="unavailable"></a>Рекомендации недоступны
 
-**Недоступное** состояние работоспособности указывает на то, что с ресурсом Azure Data Explorer постоянно возникает проблема, из-за которой он недоступен для запросов и приема. Например, узлы в ресурсе Azure Data Explorer могут быть перезагружены неожиданно. Если ресурс Azure Data Explorer остается в этом состоянии в течение длительного периода времени, [обратитесь в службу поддержки.]()
+**Недоступное** состояние работоспособности указывает на то, что с ресурсом Azure Data Explorer постоянно возникает проблема, из-за которой он недоступен для запросов и приема. Например, узлы в ресурсе Azure Data Explorer могут быть перезагружены неожиданно. Если ресурс Azure Data Explorer остается в этом состоянии в течение длительного периода времени, обратитесь в службу поддержки.
 
 ![Рекомендации недоступны](media/monitor-with-resource-health/unavailable.png)
 
@@ -63,7 +63,7 @@ ms.locfileid: "80479374"
 
 ![Журнал](media/monitor-with-resource-health/healthhistory.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка предупреждений о здоровье ресурсов](https://docs.microsoft.com/azure/service-health/resource-health-alert-arm-template-guide)
 * [Учебник: Данные мониторинга ingest и запроса в Azure Data Explorer](ingest-data-no-code.md)

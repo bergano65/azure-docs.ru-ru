@@ -1,19 +1,19 @@
 ---
 title: Подробнее о шаблонах масштабируемых наборов виртуальных машин
 description: Узнайте, как создать базовый шаблон набора масштабов для наборов виртуальных машин Azure с помощью нескольких простых шагов.
-author: mayanknayar
+author: mimckitt
 tags: azure-resource-manager
 ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
 ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 04/26/2019
-ms.author: manayar
-ms.openlocfilehash: 24db9b2d39771c481a8c43e2b55f12cef381b4d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: mimckitt
+ms.openlocfilehash: 9c6a30a5f08b33adfa515973962236516f34fbf3
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76271909"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273398"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
 [Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview#template-deployment-process) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии учебников показано, как создать базовый шаблон набора масштабов и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).

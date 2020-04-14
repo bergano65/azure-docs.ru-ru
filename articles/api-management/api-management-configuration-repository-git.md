@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: b9184808b71cce03882022fd37967fe421e64062
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: f948d813ddb4d493b455a4922818e38ac3fd6eaa
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548985"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81259176"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -56,7 +56,7 @@ ms.locfileid: "80548985"
 >
 >
 
-См. дополнительные сведения о [включении и отключении доступа к Git с помощью REST API](/rest/api/apimanagement/2019-01-01/tenantaccess?EnableGit).
+См. дополнительные сведения о [включении и отключении доступа к Git с помощью REST API](/rest/api/apimanagement/2019-12-01/tenantaccess?EnableGit).
 
 ## <a name="to-save-the-service-configuration-to-the-git-repository"></a>Сохранение конфигураций службы в репозитории Git
 
@@ -68,7 +68,7 @@ ms.locfileid: "80548985"
 
 Сохраненную в репозитории конфигурацию можно клонировать.
 
-Дополнительные сведения о выполнении этой операции с помощью REST API см. в статье о [фиксации конфигурации с помощью REST API](/rest/api/apimanagement/2019-01-01/tenantaccess?CommitSnapshot).
+Дополнительные сведения о выполнении этой операции с помощью REST API см. в статье о [фиксации конфигурации с помощью REST API](/rest/api/apimanagement/2019-12-01/tenantaccess?CommitSnapshot).
 
 ## <a name="to-clone-the-repository-to-your-local-machine"></a>Клонирование репозитория на локальный компьютер
 
@@ -142,7 +142,7 @@ git push
 
 После фиксации и отправки локальных изменений в репозиторий сервера их можно развернуть в экземпляре службы управления API.
 
-Дополнительные сведения о выполнении этой операции с помощью REST API см. в статье о [развертывании изменений Git в базе данных конфигурации с помощью REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/tenantconfiguration).
+Дополнительные сведения о выполнении этой операции с помощью REST API см. в статье о [развертывании изменений Git в базе данных конфигурации с помощью REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/tenantconfiguration).
 
 ## <a name="file-and-folder-structure-reference-of-local-git-repository"></a>Справочные сведения по структуре файлов и папок локального репозитория Git
 
@@ -160,7 +160,7 @@ git push
 
 В каждой папке может находиться один или несколько файлов и в некоторых случаях одна или несколько папок, например папка для каждого API, продукта или группы. Файлы в каждой папке специфичны для типа сущности, описанного в имени папки.
 
-| Тип файла | Назначение |
+| Тип файла | Цель |
 | --- | --- |
 | json |Сведения о конфигурации соответствующей сущности |
 | html |Описания сущности, часто отображаемые на портале разработчика |
@@ -172,9 +172,9 @@ git push
 > [!NOTE]
 > Указанные далее сущности отсутствуют в репозитории Git и не могут быть настроены с помощью Git.
 >
-> * [Пользователи](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/user)
-> * [Подписки](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/subscription)
-> * [Именованные значения](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/property)
+> * [Пользователи](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/user)
+> * [Подписки](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/subscription)
+> * [Именованные значения](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/property)
 > * Сущности портала разработчика, отличные от стилей
 >
 
@@ -222,14 +222,14 @@ git push
 ### <a name="apis-folder"></a>Папка apis
 Папка `apis` содержит папку для каждого API в экземпляре службы, в котором находятся указанные далее элементы.
 
-* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/apis/get) с `export=true` в формате `application/json`.
+* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/apis/get) с `export=true` в формате `application/json`.
 * `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description`[сущности API](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.table.entityproperty).
 * `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая сопоставляется со свойством `description`[сущности operation](https://docs.microsoft.com/rest/api/visualstudio/operations/list#operationproperties) в REST API.
 
 ### <a name="groups-folder"></a>Папка groups
 Папка `groups` содержит папку для каждой группы, определенной в экземпляре службы.
 
-* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/group/get) .
+* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/group/get) .
 * `groups\<group name>\description.html` — это описание группы, которое соответствует свойству `description`[сущности group](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-group-entity).
 
 ### <a name="policies-folder"></a>Папка policies
@@ -249,7 +249,7 @@ git push
 ### <a name="products-folder"></a>Папка products
 Папка `products` содержит папку для каждого продукта, определенного в экземпляре службы.
 
-* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/product/get) .
+* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/product/get) .
 * `products\<product name>\product.description.html` — это описание продукта, которое соответствует свойству `description`[сущности product](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-product-entity) в REST API.
 
 ### <a name="templates"></a>шаблоны

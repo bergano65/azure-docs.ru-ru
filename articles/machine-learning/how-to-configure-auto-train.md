@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: 18de50473e3dd6ca8ddda9575a247e00530032e8
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.openlocfilehash: 11f52df683b7a85a8ad5163bbede33d786897452
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81115417"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257272"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Configure automated ML experiments in Python (Настройка экспериментов автоматизированного машинного обучения на Python)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -197,7 +197,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 В каждом автоматизированном эксперименте машинного обучения ваши данные [автоматически масштабируются и нормализуются,](concept-automated-ml.md#preprocess) чтобы помочь *определенным* алгоритмам, чувствительным к функциям, которые находятся в разных масштабах.  Тем не менее, можно также включить дополнительную фетурацию, такую как вычисление недостающих значений, кодирование и преобразование. [Узнайте больше о том, что феатуризация включена](how-to-use-automated-ml-for-ml-models.md#featurization).
 
-При настройке экспериментов можно включить расширенную настройку. `featurization` В следующей таблице показаны принятые настройки для феатуризации в [ `AutoMLConfig` классе.](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py)
+При настройке экспериментов можно включить расширенную настройку. `featurization` В следующей таблице показаны принятые настройки для феатуризации в [классе AutoMLConfig.](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig)
 
 |Конфигурация феатуризации | Описание |
 | ------------- | ------------- |

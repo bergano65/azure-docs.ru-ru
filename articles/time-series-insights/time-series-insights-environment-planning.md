@@ -9,14 +9,14 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/21/2020
+ms.date: 04/13/2020
 ms.custom: seodec18
-ms.openlocfilehash: 972bb2a804057037deedb448674abafcc175b21f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 85910ee5467ecc9f4fe3c1a8bc13110b6f218e5c
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76314816"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81272718"
 ---
 # <a name="plan-your-azure-time-series-insights-ga-environment"></a>Планируйте среду анализа серии времени Azure Insights GA
 
@@ -79,9 +79,7 @@ Azure Time Series Insights имеет два режима:
 
 ### <a name="environment-planning"></a>Планирование окружающей среды
 
-Вторая область, на которой можно сосредоточиться при планировании среды Time Series Insights, — это входная емкость. Входная емкость является производной от распределения поминутной.
-
-С точки зрения регулирования, всколыхнуемый пакет данных, размер пакета которого составляет 32 КБ, рассматривается как 32 события, каждый из которых 1 КБ в размерах. Максимально допустимый размер события составляет 32 кБ. Пакеты данных размером более 32 кБ усечены.
+Вторая область, на которой можно сосредоточиться при планировании среды Time Series Insights, — это входная емкость. Ежедневный вход хранения и емкость событий измеряется в минуту, в 1-КБ блоков. Максимально допустимый размер пакета составляет 32 кБ. Пакеты данных размером более 32 кБ усечены.
 
 В одной среде допускается до 10 единиц SKU S1 и S2. Вы не можете перейти из среды S1 в S2. Вы не можете перейти из среды S2 в S1.
 

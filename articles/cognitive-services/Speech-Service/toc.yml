@@ -214,6 +214,8 @@
       items:
         - name: Что такое перевод речи?
           href: speech-translation.md
+        - name: Основные сведения о переводе речи
+          href: speech-translation-basics.md
     - name: Краткое руководство
       items:
         - name: Преобразование речи в текст

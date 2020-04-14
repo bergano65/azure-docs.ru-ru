@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: yegu
-ms.openlocfilehash: 0d28469820f63f63089d9b91d57ccd7fe75c8b95
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 809fbe85a9783777d5dbef86357bd5a386bd6f81
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80348653"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261250"
 ---
 # <a name="remove-tls-10-and-11-from-use-with-azure-cache-for-redis"></a>Удалите TLS 1.0 и 1.1 из использования с Azure Кэш для Redis
 
@@ -31,7 +31,7 @@ ms.locfileid: "80348653"
 
 Даты, когда эти изменения вступают в силу:
 
-| Cloud               | Дата начала фазы 1 | Дата начала фазы 2      |
+| Облако               | Дата начала фазы 1 | Дата начала фазы 2      |
 |---------------------|--------------------|-------------------------|
 | Azure (глобальная)      |  13 января 2020 г.  | 11 мая 2020 г. (продлен) |
 | Azure для государственных организаций    |  13 марта 2020 года    | 11 мая 2020 г.            |
@@ -51,7 +51,7 @@ ms.locfileid: "80348653"
 Клиенты Redis .NET используют самую раннюю версию TLS по умолчанию на .NET Framework 4.5.2 или ранее, а также используют последнюю версию TLS на .NET Framework 4.6 или позже. Если вы используете старую версию рамочного соглашения .NET, вы можете включить TLS 1.2 вручную:
 
 * **StackExchange.Redis:** `ssl=true` Установите `sslprotocols=tls12` и в строке соединения.
-* **ServiceStack.Redis:** Следуйте [инструкциям ServiceStack.Redis](https://github.com/ServiceStack/ServiceStack.Redis/pull/247).
+* **ServiceStack.Redis:** Следуйте инструкциям [ServiceStack.Redis](https://github.com/ServiceStack/ServiceStack.Redis#servicestackredis-ssl-support) и требует, как минимум, ServiceStack.Redis v5.6.
 
 ### <a name="net-core"></a>.NET Core
 

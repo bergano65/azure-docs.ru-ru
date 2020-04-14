@@ -5,14 +5,14 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 03/30/2020
 ms.author: dsindona
-ms.openlocfilehash: 35d57d117f6308863965ffd789c0e28bedd0f301
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 04eae529efcf9509d8cd43a7629bb0b76b593cd0
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281516"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81252505"
 ---
 # <a name="configure-lead-management-in-marketo"></a>Настройка управления интересами в Marketo
 
@@ -76,3 +76,9 @@ ms.locfileid: "80281516"
     >[!Note]
     >Вы должны закончить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить приводит для предложения. 
 
+5. **Контактная почта** - Предоставьте электронные письма для людей в вашей компании, которые должны получать уведомления по электронной почте, когда новый свинец получен. Вы можете предоставить несколько писем, разделив их с запятой.
+6. Щелкните **ОК**.
+
+Чтобы убедиться, что вы успешно подключены к месту назначения, нажмите на кнопку проверки. В случае успеха, вы будете иметь тест свинца в главной цели.
+
+![Сведения о подключении](./media/commercial-marketplace-lead-management-instructions-marketo/marketo-connection-details.png)

@@ -4,12 +4,12 @@ description: Восстановление виртуальной машины Az
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 3c3c8a7bd47ae03a013ddfadffabaa16fd04412b
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: b9cdb187aa3b8750bead8e81ad6d0ee50dcb3d6c
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80677549"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81254926"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Как восстановить данные Azure VM на портале Azure
 
@@ -28,8 +28,6 @@ Azure Backup предоставляет несколько способов во
 
 > [!NOTE]
 > Вы также можете восстановить определенные файлы и папки на виртуальной машине Azure. [Подробнее](backup-azure-restore-files-from-vm.md).
->
-> Если вы используете [последнюю версию](backup-instant-restore-capability.md) Azure Backup для виртуальных машин Azure (называемую мгновенным восстановлением), моментальные снимки хранятся до семи дней. Вы можете восстановить виртуальную машину из моментальных снимков, прежде чем отправлять данные резервного копирования в хранилище. Если вы хотите восстановить виртуальную машину из резервной копии за последние семь дней, быстрее можно восстановить ее из моментального снимка, а не из хранилища.
 
 ## <a name="storage-accounts"></a>Учетные записи хранения
 

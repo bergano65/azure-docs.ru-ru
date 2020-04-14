@@ -2,13 +2,13 @@
 title: Теговые ресурсы, ресурсные группы и подписки для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
 ms.topic: conceptual
-ms.date: 04/01/2020
-ms.openlocfilehash: 44759db59ef7e7556c8fbfca3bbc58ef84796198
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.date: 04/10/2020
+ms.openlocfilehash: 2f437682a2ac415ce8478b09a44bff044bd9511b
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81010806"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255130"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Используйте теги для организации ресурсов Azure и иерархии управления
 
@@ -593,7 +593,7 @@ az deployment sub create --name tagresourcegroup --location westus2 --template-u
    > [!NOTE]
    > В настоящее время зоны Azure DNS и службы Traffic Manger также не позволяют использовать пробелы в теге.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
 * Рекомендации по реализации стратегии пометки смотрите [руководство по наименованию и пометки решений ресурса.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)

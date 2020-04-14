@@ -1,5 +1,5 @@
 ---
-title: Защита от угроз в Центре безопасности Azure
+title: Защита от угроз с помощью Центра безопасности Azure
 description: В этой теме описаны ресурсы, защищенные функциями защиты угроз Центра безопасности Azure
 services: security-center
 documentationcenter: na
@@ -10,14 +10,14 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 03/15/2020
 ms.author: memildin
-ms.openlocfilehash: 395f4b5481fcf2028d6bfe736e58c3174a0c80b2
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: fdf22e4d981549b876a14aed2b0a1d7e0c76e40e
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80435346"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81263460"
 ---
-# <a name="threat-protection-in-azure-security-center"></a>Защита от угроз в Центре безопасности Azure
+# <a name="threat-protection-in-azure-security-center"></a>Защита от угроз с помощью Центра безопасности Azure
 
 Когда Центр безопасности обнаруживает угрозу в любой области среды, он генерирует оповещение. Эти предупреждения описывают детали затронутых ресурсов, предлагаемые шаги исправления, а в некоторых случаях возможность запуска приложения логики в ответ.
 
@@ -159,19 +159,20 @@ ms.locfileid: "80435346"
 
 
 
-
 ## <a name="threat-protection-for-azure-storage"></a>Защита от угроз для хранения Azure<a name="azure-storage"></a>
 
-> [!NOTE]
-> Эта услуга доступна в правительственных облаках США, но нет других суверенных или областей облака правительства Azure.
+Расширенная защита от угроз для хранения обнаруживает необычные и потенциально опасные попытки получить доступ к учетным записям или использовать их. Этот уровень защиты позволяет устракиваться в угрозах, не требуя от вас быть экспертом по безопасности, и помогает управлять системами мониторинга безопасности.
 
-Расширенная защита от угроз для хранения данных (в настоящее время доступна только для хранения Blob) обнаруживает необычные и потенциально опасные попытки получить доступ к учетным записям или использовать их. Этот уровень защиты позволяет устракиваться в угрозах, не требуя от вас быть экспертом по безопасности, и помогает управлять системами мониторинга безопасности.
+Расширенная защита от угроз для хранения Azure в настоящее время доступна только для [хранилища Blob.](https://azure.microsoft.com/services/storage/blobs/) 
+
+Эта услуга доступна во всех общедоступных облаках и облаках правительства США, но нет других суверенных или правительственных облачных регионов.
+
+Подробная информация о ценах, включая бесплатную 30-дневную пробную версию, смотрите [страницу ценообразования Azure Security Center.](https://azure.microsoft.com/pricing/details/security-center/)
 
 Дополнительные сведения см. в разделе:
 
 * [Как обеспечить расширенную защиту угроз для хранения azure](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection)
 * [Список предупреждений о защите угроз для хранения Azure](alerts-reference.md#alerts-azurestorage)
-
 
 > [!TIP]
 > Вы можете имитировать оповещения о хранении azure, следуя инструкциям в [этом блоге](https://techcommunity.microsoft.com/t5/azure-security-center/validating-atp-for-azure-storage-detections-in-azure-security/ba-p/1068131).
@@ -275,7 +276,7 @@ Azure Key Vault — это облачная служба, которая обе
 Для списка предупреждений о DDoS-защите [Reference table of alerts](alerts-reference.md#alerts-azureddos)Azure см.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать больше о предупреждениях безопасности из этих функций защиты от угроз, см.
 
 * [Справочная таблица для всех предупреждений Центра безопасности Azure](alerts-reference.md)

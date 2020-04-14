@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
-ms.openlocfilehash: 47eae55493c5db281ee1be0f9d32f8f8190fc286
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d37320ad6e8caf3300756466eabe8de29a339c4a
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79272062"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81258292"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -57,7 +57,7 @@ ms.locfileid: "79272062"
 > [!NOTE]
 > Дополнительные сведения см. в статье о [разрешениях](#iot-hub-permissions).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Центр Интернета вещей Azure предоставляет доступ к конечным точкам, проверяя маркер на соответствие политикам общего доступа и учетным данным безопасности в реестре удостоверений.
 
@@ -91,7 +91,7 @@ ms.locfileid: "79272062"
 
 Имя пользователя (значение DeviceId следует вводить с учетом регистра): `iothubname.azure-devices.net/DeviceId`
 
-Пароль (можно создать маркер SAS с помощью инструмента [Обозреватель устройств](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer), команды расширения интерфейса командной строки [az iot hub generate-sas-token](/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token) или [расширения "Средства Интернета вещей Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)).
+Пароль (Вы можете создать токен SAS с командой расширения CLI [az iot, генерировать токен sas-sas,](/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token)или [инструменты Azure IoT для визуального кода studio):](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
 
 `SharedAccessSignature sr=iothubname.azure-devices.net%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
@@ -137,7 +137,7 @@ IoT Hub также позволяет устройствам аутентифи�
 | Значение | Описание |
 | --- | --- |
 | {signature} |Строка подписи HMAC-SHA256 формата `{URL-encoded-resourceURI} + "\n" + expiry`. **Важно!** Ключ шифруется в кодировке base64 и используется для вычислений HMAC-SHA256. |
-| {resourceURI} |Начинающийся с имени узла Центра Интернета вещей (без протокола) префикс URI (по сегменту) для конечных точек, доступ к которым можно получить с помощью этого маркера. Например `myHub.azure-devices.net/devices/device1`. |
+| {resourceURI} |Начинающийся с имени узла Центра Интернета вещей (без протокола) префикс URI (по сегменту) для конечных точек, доступ к которым можно получить с помощью этого маркера. Например: `myHub.azure-devices.net/devices/device1` |
 | {expiry} |Строки в формате UTF8, отображающие количество секунд с начала эры 00:00:00 (в формате UTC) 1 января 1970 г. |
 | {URL-encoded-resourceURI} |Строчное URL-кодирование строчного URL ресурса |
 | {policyName} |Имя политики общего доступа, к которой относится этот маркер. Отсутствует, если маркер относится к учетным данным реестра устройства. |
@@ -277,7 +277,7 @@ var token = generateSasToken(endpoint, deviceKey, null, 60);
 `SharedAccessSignature sr=myhub.azure-devices.net%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697`
 
 > [!NOTE]
-> Можно создать маркер SAS с помощью инструмента [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer), команды расширения интерфейса командной строки [az iot hub generate-sas-token](/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token) или [Средства Интернета вещей Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
+> Можно создать токен SAS с командой расширения CLI [az iot, генерируемой токеном sas-sas-token,](/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token)или [инструментами Azure IoT для Visual Studio Code.](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
 
 ### <a name="use-a-shared-access-policy"></a>Использование политики общего доступа
 

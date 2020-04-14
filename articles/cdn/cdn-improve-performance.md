@@ -3,7 +3,7 @@ title: Повышение производительности за счет с�
 description: В этом разделе описано, как ускорить передачу файла и повысить производительность загрузки страниц с помощью сжатия файлов в CDN Azure.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: af1cddff-78d8-476b-a9d0-8c2164e4de5d
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/28/2018
-ms.author: magattus
-ms.openlocfilehash: 9f185f58e1d33a3985777cb22bc7578f9f2c4541
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: allensu
+ms.openlocfilehash: 7124dd40d4510674014afe012a8f40dcb5bb6153
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67593798"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81253770"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>Повышение производительности за счет сжатия файлов в Azure CDN
 Сжатие файлов — это простой и эффективный способ, который позволяет повысить скорость передачи файлов и увеличить производительность загрузки страницы за счет уменьшения размера файлов перед их отправкой с сервера. Этот способ позволяет снизить потребление пропускной способности и обеспечивает более высокую скорость работы для пользователей.
@@ -139,7 +139,7 @@ ms.locfileid: "67593798"
 В приведенных ниже таблицах описан принцип работы сжатия CDN Azure для всех сценариев.
 
 ### <a name="compression-is-disabled-or-file-is-ineligible-for-compression"></a>Сжатие отключено или для файла сжатие недопустимо
-| Запрошенный клиентом формат (через заголовок Accept-Encoding) | Формат кэшированного файла | Ответ CDN клиенту | &nbsp; &nbsp; Заметки&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+| Запрошенный клиентом формат (через заголовок Accept-Encoding) | Формат кэшированного файла | Ответ CDN клиенту | &nbsp; &nbsp; Заметки&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | --- | --- | --- | --- |
 | Compressed |Compressed |Compressed | |
 | Compressed |Без сжатия |Без сжатия | |
@@ -165,6 +165,6 @@ ms.locfileid: "67593798"
 - application/vnd.apple.mpegurl;
 - application/f4m+xml 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Устранение неполадок со сжатием файлов CDN](cdn-troubleshoot-compression.md)    
 

@@ -3,12 +3,12 @@ title: Поддержка тегов для ресурсов
 description: В этой статье описываются типы ресурсов Azure, поддерживающие теги, а также приводятся сведения о всех службах Azure.
 ms.topic: conceptual
 ms.date: 04/06/2020
-ms.openlocfilehash: b8b1c0b738bb8b94ee53433141f1ae3dbbb3f942
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: c971d3af102faf99f97aac261882797460d71f37
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80982333"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255033"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](tag-resources.md). Столбец с **метками поддержки** указывает, есть ли у типа ресурса свойство для тега. Столбец с меткой **Тег в отчете о затратах** указывает, передает ли этот тип ресурса тег отчету о затратах. Вы можете просматривать затраты по тегам в [анализе затрат управления затратами](../../cost-management-billing/costs/quick-acm-cost-analysis.md#understanding-grouping-and-filtering-options) и [счет-фактурой Azure и данными о ежедневном использовании.](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md)
@@ -96,6 +96,7 @@ ms.locfileid: "80982333"
 > - [Microsoft.HybridData](#microsofthybriddata)
 > - [Microsoft.Hydra](#microsofthydra)
 > - [Microsoft.ImportExport](#microsoftimportexport)
+> - [Microsoft.Insights](#microsoftinsights)
 > - [Microsoft.Intune](#microsoftintune)
 > - [Microsoft.IoTCentral](#microsoftiotcentral)
 > - [Microsoft.IoTSpaces](#microsoftiotspaces)
@@ -1201,6 +1202,33 @@ ms.locfileid: "80982333"
 > | ------------- | ----------- | ----------- |
 > | jobs | Да | Да |
 
+## <a name="microsoftinsights"></a>Microsoft.Insights
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
+> | ------------- | ----------- | ----------- |
+> | actionGroups | Да | Да |
+> | activityLogAlerts | Да | Да |
+> | alertrules | Да | Да |
+> | autoscalesettings | Да | Да |
+> | components | Да | Да |
+> | компоненты / связанныеучетныеУчетсчетов | нет | нет |
+> | компоненты / ProactiveDetectionConfigs | нет | нет |
+> | diagnosticSettings | нет | нет |
+> | гостеваяДиагностика | Да | Да |
+> | гостеваяДиагностикаАссоциация | Да | Да |
+> | logprofiles | Да | Да |
+> | metricAlerts | Да | Да |
+> | privateLinkScopes | Да | Да |
+> | privateLinkScopes / privateEndpointConnections | нет | нет |
+> | privateLinkScopes / scopedРесурсы | нет | нет |
+> | запросPacks | Да | Да |
+> | запросЫPackи / запросы | нет | нет |
+> | запланированныеКЕРиПравила | Да | Да |
+> | webtests | Да | Да |
+> | workbooks | Да | Да |
+> | workbooktemplates | Да | Да |
+
 ## <a name="microsoftintune"></a>Microsoft.Intune
 
 > [!div class="mx-tableFixed"]
@@ -1454,7 +1482,7 @@ ms.locfileid: "80982333"
 > | applicationSecurityGroups | Да | Да |
 > | azureFirewallFqdnTags | нет | нет |
 > | azureFirewalls | Да | нет |
-> | бастионХомсты | Да | Да |
+> | бастионХомсты | Да | нет |
 > | bgpServiceCommunities | нет | нет |
 > | connections | Да | Да |
 > | ddosCustomPolicies | Да | Да |
@@ -1484,14 +1512,14 @@ ms.locfileid: "80982333"
 > | frontdoorWebApplicationFirewallPolicies | Да, но ограничено [(см. примечание ниже)](#frontdoor) | Да |
 > | getDnsResourceReference | нет | нет |
 > | internalNotify | нет | нет |
-> | loadBalancers | Да | нет |
+> | loadBalancers | Да | Да |
 > | localNetworkGateways | Да | Да |
 > | natGateways | Да | Да |
 > | networkIntentPolicies | Да | Да |
 > | networkInterfaces | Да | Да |
 > | networkProfiles | Да | Да |
 > | networkSecurityGroups | Да | Да |
-> | networkWatchers | Да | нет |
+> | networkWatchers | Да | Да |
 > | networkWatchers / connectionMonitors | Да | нет |
 > | networkWatchers / flowLogs | нет | нет |
 > | networkWatchers / линзы | Да | нет |
@@ -1524,8 +1552,8 @@ ms.locfileid: "80982333"
 > | virtualNetworkGateways | Да | Да |
 > | virtualNetworks | Да | Да |
 > | virtualNetworkTaps | Да | Да |
-> | virtualWans | Да | Да |
-> | vpnGateways | Да | нет |
+> | virtualWans | Да | нет |
+> | vpnGateways | Да | Да |
 > | vpnSites | Да | Да |
 > | webApplicationFirewallPolicies | Да | Да |
 
@@ -1821,7 +1849,7 @@ ms.locfileid: "80982333"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | пространства имен | Да | нет |
+> | пространства имен | Да | Да |
 > | именные пространства / правила авторизации | нет | нет |
 > | namespaces / disasterrecoveryconfigs | нет | нет |
 > | именные пространства / eventgridfilters | нет | нет |

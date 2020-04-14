@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 8cb6cf49e302122849dc2402bcff008e72e15608
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 870f7b0ab0f1d7b247435cdbb74e21801b3b052a
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79472364"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257187"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое полевые наборы ворот (FPGA) и как развертывать
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -51,7 +51,7 @@ Microsoft Azure – крупнейшая в мире облачная инвес
 FPGA на поддержке Azure:
 
 + Сценарии классификации и распознавания изображений.
-+ Развертывание TensorFlow.
++ Развертывание TensorFlow (требует tensorflow 1.x)
 + Оборудование FPGA Intel.
 
 Эти модели DNN в настоящее время доступны:
@@ -115,9 +115,8 @@ Azure FPGA интегрированы с машинным обучением Azu
 - Python SDK для аппаратно-ускоренных моделей:
 
     ```bash
-    pip install --upgrade azureml-accel-models
+    pip install --upgrade azureml-accel-models[cpu]
     ```
-
 
 ## <a name="1-create-and-containerize-models"></a>1. Создание и таретаризация моделей
 
@@ -364,7 +363,7 @@ aks_service.wait_for_deployment(show_output=True)
 #### <a name="test-the-cloud-service"></a>Протестировать облачный сервис
 Изображение Docker поддерживает gRPC и ТенсорПоток, обслуживающий API.  Используйте пример клиента, чтобы вызвать изображение Docker, чтобы получить прогнозы от модели.  Пример клиентского кода доступен:
 - [Python](https://github.com/Azure/aml-real-time-ai/blob/master/pythonlib/amlrealtimeai/client.py)
-- [C #](https://github.com/Azure/aml-real-time-ai/blob/master/sample-clients/csharp)
+- [C#](https://github.com/Azure/aml-real-time-ai/blob/master/sample-clients/csharp)
 
 Если вы хотите использовать Обслуживание TensorFlow, вы можете [скачать пример клиента.](https://www.tensorflow.org/serving/setup)
 

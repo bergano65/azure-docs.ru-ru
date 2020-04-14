@@ -5,45 +5,45 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-ms.date: 09/13/2018
+ms.date: 04/08/2020
 ms.author: dsindona
-ms.openlocfilehash: 6d4c1f52f0f3b1e05ec06f5a66a36323f346d4eb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f9e55ff2c581f9392a125f6dc3ec8d903e9876a4
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280547"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81256439"
 ---
-# <a name="cancel-operation"></a>Отмена операции 
+# <a name="cancel-operation"></a>Отмена операции
+
+> [!NOTE]
+> AA-аДИ облачного partner Portal интегрированы с Партнерским центром и продолжат работать после того, как ваши предложения будут перенесены в Партнерский центр. Интеграция вносит небольшие изменения. Просмотрите изменения, перечисленные в [Справочнике API портала Cloud Partner,](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview) чтобы убедиться, что ваш код продолжает работать после миграции в Центр Партнеров.
 
 Этот API в настоящее время отменяет операцию на предложение. Используйте [получения операций API](./cloud-partner-portal-api-retrieve-operations.md) для получения `operationId`, чтобы передать его в API. Отмена обычно выполняется в синхронной операции, однако в некоторых сложных сценариях новой операции может потребоваться отменить существующую. В этом случае в тексте ответа HTTP содержит расположение операции, который необходим для запроса состояния.
 
-Можно указать разделенный запятыми список адресов электронной почты с запросом, и API уведомит эти адреса, о ходе выполнения операции.
-
   `POST https://cloudpartner.azure.com/api/publishers/<publisherId>/offers/<offerId>/cancel?api-version=2017-10-31`
 
-<a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
+## <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
+
 --------------
 
-|  **Название**    |      **Описание**                                  |    **Тип данных**  |
+|  **имя**;    |      **Описание**                                  |    **Тип данных**  |
 | ------------ |     ----------------                                  |     -----------   |
 | publisherid  |  Идентификатор издателя, например `contoso`         |   Строка          |
 | offerId      |  Идентификатор предложения                                     |   Строка          |
 | api-version  |  Текущая версия клиента API                               |    Дата           |
 |  |  |  |
 
-
-<a name="header"></a>Заголовок
+## <a name="header"></a>Заголовок
 ------
 
-|  **Название**              |  **Значение**         |
+|  **имя**;              |  **Значение**         |
 |  ---------             |  ----------        |
 |  Content-Type          |  приложение/json  |
 |  Авторизация         |  Маркер носителя YOUR TOKEN |
 |  |  |
 
-
-<a name="body-example"></a>Пример текста запроса
+## <a name="body-example"></a>Пример текста запроса
 ------------
 
 ### <a name="request"></a>Запрос
@@ -58,24 +58,27 @@ ms.locfileid: "80280547"
 
 ### <a name="request-body-properties"></a>Свойства текста запроса
 
-|  **Название**                |  **Описание**                                               |
+|  **имя**;                |  **Описание**                                               |
 |  --------                |  ---------------                                               |
 |  электронные уведомления     | Список адресов электронной почты, разделенных запятыми, для получения уведомлений о ходе публикации. |
 |  |  |
 
-
 ### <a name="response"></a>Ответ
 
-  `Operation-Location: https://cloudpartner.azure.com/api/publishers/contoso/offers/contoso-virtualmachineoffer/operations/56615b67-2185-49fe-80d2-c4ddf77bb2e8`
+#### <a name="migrated-offers"></a>Миграционные предложения
 
+`Location: /api/publishers/contoso/offers/contoso-offer/operations/56615b67-2185-49fe-80d2-c4ddf77bb2e8?api-version=2017-10-31`
+
+#### <a name="non-migrated-offers"></a>Предложения, не связанные с миграцией
+
+`Location: /api/operations/contoso$contoso-offer$2$preview?api-version=2017-10-31`
 
 ### <a name="response-header"></a>Заголовок ответа
 
-|  **Название**             |    **Значение**                       |
+|  **имя**;             |    **Значение**                       |
 |  ---------            |    ----------                      |
-| Operation-Location    | URL-адрес, который можно запросить для определения текущего состояния операции. |
+| Расположение    | Относительный путь для получения статуса этой операции. |
 |  |  |
-
 
 ### <a name="response-status-codes"></a>Коды состояния ответа
 

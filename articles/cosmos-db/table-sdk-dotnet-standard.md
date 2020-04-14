@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: 48fd85e27feb3d0c7f7f722dbbd502be55684385
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f7c6829d858e36b55f079f8ee03e431f67995e66
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76771586"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81272582"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и .NET Standard. Скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -26,8 +26,8 @@ ms.locfileid: "76771586"
 
 |   |   |
 |---|---|
-|**Загрузка SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
-|**Пример**|[Космос DB Таблица API .NET Пример](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
+|**Загрузка SDK**|[Nuget](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
+|**Образец**|[Космос DB Таблица API .NET Пример](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
 |**Краткое руководство**|[Краткое руководство](create-table-dotnet.md)|
 |**Учебник**|[Учебник](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
@@ -41,6 +41,9 @@ ms.locfileid: "76771586"
 
 ## <a name="release-notes-for-100-series"></a>Примечания к выпуску серии 1.0.0
 Серия 1.0.0 получает зависимость от [Microsoft.Azure.DocumentDB.Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
+
+### <a name="107"></a><a name="1.0.7"/>1.0.7
+* Улучшение производительности путем установки уровня трассировки по умолчанию таблицы SDK на SourceLevels.Off, который можно выбрать через app.config
 
 ### <a name="105"></a><a name="1.0.5"/>1.0.5
 * Ввести новую конфигурацию под TableClientConfiguration для использования Rest Executor для связи с Cosmos DB Table API
@@ -88,12 +91,12 @@ ms.locfileid: "76771586"
 Эта кросс-платформа .NET Стандартная библиотека [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) заменит рамочную библиотеку .NET [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table).
 
 ### <a name="200-series"></a>Серия 2.0.0
-| Версия | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.0.0-preview](#2.0.0-preview) |Auguest 22, 2019 |--- |
 
 ### <a name="100-series"></a>Серия 1.0.0
-| Версия | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [1.0.5](#1.0.5) |13 сентября 2019 г. |--- |
 | [1.0.5-предварительный просмотр](#1.0.5-preview) |Auguest 20, 2019 |--- |
@@ -108,9 +111,9 @@ ms.locfileid: "76771586"
 | [0.9.1-предварительный просмотр](#0.9.1-preview) |18 октября 2018 г. |--- |
 
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 Дополнительные сведения об API таблицы для базы данных Azure Cosmos DB см. в [этой статье](table-introduction.md).

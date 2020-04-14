@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 06/25/2019
 ms.author: wesmc
-ms.openlocfilehash: 326b79e1aca6fa82b3275249401c755428a8b71d
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 631a20c7bf73aa2af363fdc0019ef24cccc58f9e
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80878567"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81258615"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -327,6 +327,17 @@ IoT DevKit содержит богатую галерею образцов, ко
 * Светодиодный индикатор на плате MXChip IoT DevKit мигает.
 
 ![Выходные данные Serial Monitor](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/result-serial-output.png)
+
+> [!NOTE]
+> Вы можете столкнуться с ошибкой во время тестирования, в котором светодиод не мигает, портал Azure не отображает входящие данные с устройства, но экран OLED-устройства отображается как **Бег...**. Чтобы решить проблему, на портале Azure перейдите на устройство в концентраторе IoT и отправьте сообщение на устройство. Если вы видите следующий ответ в последовательном мониторе в VS Code, возможно, что прямая связь с устройством блокируется на уровне маршрутизатора. Проверьте правила брандмауэра и маршрутизатора, настроенные для подключенных устройств. Кроме того, убедитесь, что исходящий порт 1833 открыт.
+> 
+> ERROR: mqtt_client.c (ln 454): Ошибка: сбой открытия соединения к конечной точке  
+> INFO: >>>Состояние подключения: отключено  
+> ERROR: tlsio_mbedtls.c (ln 604): Базовый открытый IO не удалось  
+> ERROR: mqtt_client.c (ln 1042): Ошибка: io_open не удалось  
+> ERROR: iothubtransport_mqtt_common.c (ln 2283): сбой подключения к адресу atcsliothub.azure-devices.net.  
+> INFO: >>>Повторное подключение.  
+> INFO: IoThub Версия: 1.3.6  
 
 ### <a name="view-the-telemetry-received-by-azure-iot-hub"></a>Просмотр данных телеметрии, полученных Центром Интернета вещей Azure
 

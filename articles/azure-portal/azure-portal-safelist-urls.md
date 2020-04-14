@@ -5,16 +5,16 @@ services: azure-portal
 keywords: ''
 author: mgblythe
 ms.author: mblythe
-ms.date: 01/29/2020
+ms.date: 04/10/2020
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: c5bba7296a05cfbb72698a991ece1ef298689bd1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 399c64c88e78079432fcf7c09dafd199da83358b
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76900656"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255055"
 ---
 # <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>Безопасные URL-адреса портала Azure на брандмауэре или прокси-сервере
 
@@ -80,13 +80,3 @@ ms.locfileid: "76900656"
 > Трафик на эти конечные точки использует стандартные порты TCP для HTTP (80) и HTTPS (443).
 >
 >
-## <a name="next-steps"></a>Дальнейшие действия
-
-Необходимо безопасно список IP-адресов? Загрузите список IP-диапазонов Центра обработки данных Microsoft Azure для облака:
-
-* [Весь мир](https://www.microsoft.com/download/details.aspx?id=56519)
-* [Правительство США](https://www.microsoft.com/download/details.aspx?id=57063)
-* [Германия](https://www.microsoft.com/download/details.aspx?id=57064)
-* [Китай](https://www.microsoft.com/download/details.aspx?id=57062)
-
-Другие службы Майкрософт используют дополнительные URL-адреса и IP-адреса для подключения. Для оптимизации подключения к сети для служб Microsoft 365 можно [настроить сеть для Office 365.](/office365/enterprise/set-up-network-for-office-365)
