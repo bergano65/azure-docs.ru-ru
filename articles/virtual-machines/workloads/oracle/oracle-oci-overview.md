@@ -3,7 +3,7 @@ title: Интеграция Microsoft Azure с облачной инфрастр
 description: Узнайте о решениях, которые интегрируют приложения Oracle, работающие в Microsoft Azure, с базами данных в облачной инфраструктуре Oracle (OCI).
 services: virtual-machines-linux
 documentationcenter: ''
-author: romitgirdhar
+author: mimckitt
 manager: gwallace
 tags: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/16/2020
-ms.author: rogirdh
+ms.author: mimckitt
 ms.custom: ''
-ms.openlocfilehash: b5d5ebda850163989e6ef1af94ec623d2d758f07
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 178fb805f4bfc0762ce7e4a320752e5afa00cef5
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80878295"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81271868"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure"></a>Решения приложений Oracle, объединяющие инфраструктуру Microsoft Azure и Oracle
 
@@ -55,6 +55,7 @@ Microsoft и Oracle сотрудничаем, чтобы обеспечить н
 * Лазурный Uk South (uksouth) & OCI Лондон (Великобритания на юге)
 * Лазурный Канада Центральный (канадацентральный) & OCI Торонто (Канада юго-восток)
 * Лазурная Западная Европа (Западная Европа) & OCI Амстердам (Нидерланды Северо-Запад)
+* Лазурная Япония Восток (Япония) & OCI Токио (Япония Восток)
 
 ## <a name="networking"></a>Сеть
 

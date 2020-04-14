@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/20/2018
 ms.author: dsindona
-ms.openlocfilehash: 57f56a341cfc3db6a5f0664503809e6ab6cf3d3d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a62af1d8d751d36150c236280077cde8f6547385
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278030"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273976"
 ---
 # <a name="create-technical-assets-for-a-virtual-machine-offer"></a>Создание технических ресурсов для предложения виртуальной машины
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем управление вашим предложением Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [создании технических активов Azure Virtual Machine](https://aka.ms/AzureVMTechAsset) для управления мигрированными предложениями.
 
 В этой статье описана процедура создания и настройки технических ресурсов для предложения виртуальной машины в Azure Marketplace.  Виртуальная машина содержит два компонента: виртуальный жесткий диск (VHD) решения и дополнительные связанные диски данных.  
 
@@ -35,26 +38,26 @@ ms.locfileid: "80278030"
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
 Проектирование, создание и тестирование этих ресурсов требует времени и технических знаний как платформы Azure, так и технологий, используемых для создания предложения. В дополнение к домену решения, ваша команда инженеров должна иметь знания о следующих технологиях Майкрософт: 
--   базовое представление о [службах Azure](https://azure.microsoft.com/services/); 
--   умение [разработать приложения Azure](https://azure.microsoft.com/solutions/architecture/);
--   опыт работы с [виртуальными машинами Azure](https://azure.microsoft.com/services/virtual-machines/), [службой хранилища Azure](https://azure.microsoft.com/services/?filter=storage) и [сетями Azure](https://azure.microsoft.com/services/?filter=networking);
--   опыт работы с [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/);
--   опыт работы с [JSON](https://www.json.org/).
+-    базовое представление о [службах Azure](https://azure.microsoft.com/services/); 
+-    умение [разработать приложения Azure](https://azure.microsoft.com/solutions/architecture/);
+-    опыт работы с [виртуальными машинами Azure](https://azure.microsoft.com/services/virtual-machines/), [службой хранилища Azure](https://azure.microsoft.com/services/?filter=storage) и [сетями Azure](https://azure.microsoft.com/services/?filter=networking);
+-    опыт работы с [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/);
+-    опыт работы с [JSON](https://www.json.org/).
 
 
 ## <a name="suggested-tools"></a>Рекомендуемые инструменты 
 
 Выберите одну или обе следующие среды сценариев, которые понадобятся вам в управлении VHD и виртуальными машинами:
--   [Лазурная силаШелл](https://docs.microsoft.com/powershell/azure/overview)
--   [Лазурный CLI](https://docs.microsoft.com/cli/azure)
+-    [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
+-    [Azure CLI](https://docs.microsoft.com/cli/azure)
 
 Кроме того, мы рекомендуем добавить следующие инструменты в среду разработки: 
 
--   [Исследователь хранения azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
--   [Visual Studio Code](https://code.visualstudio.com/)
-    *   Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
-    *   Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).
-    *   Расширение: [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json).
+-    [Обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+-    [Visual Studio Code](https://code.visualstudio.com/)
+    *    Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
+    *    Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).
+    *    Расширение: [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json).
 
 Мы также предлагаем проверить доступные средства на странице [Средства для разработчиков Azure](https://azure.microsoft.com/tools/) и, если вы используете Visual Studio, на странице [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 

@@ -3,7 +3,7 @@ title: Размеры Azure VM - Память Документы Майкрос�
 description: Перечисляет различные оптимизированные размеры памяти, доступные для виртуальных машин в Azure. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
 services: virtual-machines
 documentationcenter: ''
-author: jonbeck7
+author: mimckitt
 manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
-ms.author: jonbeck
-ms.openlocfilehash: 0936e3049b2bc23e2f98244f29c962f6db65b8df
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.author: mimckitt
+ms.openlocfilehash: 5a20e9c64b6ef948167333b54b16b34e84dc0e32
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81115255"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273585"
 ---
 # <a name="memory-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в памяти
 

@@ -3,19 +3,19 @@ title: Развертывание набора масштабирования в
 description: Развертывание набора масштабирования виртуальных машин с помощью Visual Studio и шаблона Resource Manager
 ms.custom: vs-azure, H1Hack27Feb2017
 ms.workload: azure-vs
-author: mayanknayar
+author: mimckitt
 tags: azure-resource-manager
 ms.assetid: ed0786b8-34b2-49a8-85b5-2a628128ead6
 ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 09/09/2019
-ms.author: manayar
-ms.openlocfilehash: c49b4f42bc726c68880bdd4d6f58956936e83177
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: mimckitt
+ms.openlocfilehash: adc91d5f4f79be8a85dfed7d10a882493f6427b0
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80066962"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273347"
 ---
 # <a name="how-to-create-a-virtual-machine-scale-set-with-visual-studio"></a>Как создать масштабируемый набор виртуальных машин с помощью Visual Studio
 
@@ -45,7 +45,7 @@ ms.locfileid: "80066962"
 
     ![Название и создание проекта](media/virtual-machine-scale-sets-vs-create/configure-azure-resource-group.png)
 
-1. Из списка шаблонов выберите либо **набор виртуального масштаба машины Windows,** либо шаблон **Linux Virtual Machine Scale Set.** Нажмите кнопку **ОК**.
+1. Из списка шаблонов выберите либо **набор виртуального масштаба машины Windows,** либо шаблон **Linux Virtual Machine Scale Set.** Щелкните **ОК**.
 
    ![Выберите шаблон виртуальной машины](media/virtual-machine-scale-sets-vs-create/select-vm-template.png)
 
@@ -95,4 +95,4 @@ ms.locfileid: "80066962"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После успешного развертывания наборов виртуальной шкалы машин через Visual Studio можно дополнительно настроить проект в соответствии с требованиями к приложению. Например, настроить автомасштаб, добавив ресурс **Insights.** Можно добавить инфраструктуру в шаблон, например автономные виртуальные машины, или развернуть приложения с помощью специального расширения скрипта. Шаблоны хорошего примера можно найти в репозитории [шаблонов Azure quickstart.](https://github.com/Azure/azure-quickstart-templates) Найдите параметр `vmss`.
+После успешного развертывания наборов виртуальной шкалы машин через Visual Studio можно дополнительно настроить проект в соответствии с требованиями к приложению. Например, настроить автомасштаб, добавив ресурс **Insights.** Можно добавить инфраструктуру в шаблон, например автономные виртуальные машины, или развернуть приложения с помощью специального расширения скрипта. Шаблоны хорошего примера можно найти в репозитории [шаблонов Azure quickstart.](https://github.com/Azure/azure-quickstart-templates) Найдите `vmss`.

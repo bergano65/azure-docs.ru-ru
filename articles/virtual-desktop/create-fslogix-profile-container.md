@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 11/25/2019
+ms.date: 04/13/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 272188b50fe59435031a4a2fb9c252f3f358bb6c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 149fb5818ee360c7333997655ea9eb8d7ded346c
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79535737"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81270899"
 ---
 # <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Создание контейнера профиля FSLogix для пула хоста с помощью файлов Azure NetApp
 
@@ -118,9 +118,6 @@ ms.locfileid: "79535737"
     - Для **username**введите имя учетной записи с разрешениями на выполнение соединения домена.
     - Для **того, чтобы пароль,** введите пароль учетной записи.
 
-  >[!NOTE]
-  >Лучше всего подтвердить, что компьютерная учетная запись, созданная в [соединении Join an Active Directory,](create-fslogix-profile-container.md#join-an-active-directory-connection) появилась в контроллере домена под **компьютерами** или **соответствующей OU вашего предприятия.**
-
 ## <a name="create-a-new-volume"></a>Создание нового тома
 
 Далее необходимо создать новый том.
@@ -167,7 +164,7 @@ ms.locfileid: "79535737"
 
 5. Выберите флажок рядом с **Я согласен с условиями лицензии**.
 
-6. Нажмите кнопку **Установить**.
+6. Выберите пункт **Установить**.
 
 7. Перейдите к **C:\\Программа Файлы\\FSLogix\\Apps** для подтверждения агента установлен.
 

@@ -1,18 +1,18 @@
 ---
 title: Используйте расширение работоспособности приложений с наборами виртуальных машин Azure
 description: Узнайте, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
-author: mayanknayar
+author: mimckitt
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.author: manayar
-ms.openlocfilehash: 37d93b04e6755512eac6c2a168bd2a04f8ac298f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: mimckitt
+ms.openlocfilehash: cb5f1d48bb1a95db004d9da553e19a35071c73b0
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76275879"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273738"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
 Мониторинг работоспособности приложения предоставляет важные сведения, которые позволяют определить, когда требуется администрирование и обновление развертывания. Масштабируемые наборы виртуальных машин Azure поддерживают [последовательные обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model), включая [автоматические обновления образа ОС](virtual-machine-scale-sets-automatic-upgrade.md), которые зависят от мониторинга работоспособности отдельных экземпляров для обновления развертывания.
@@ -55,7 +55,7 @@ ms.locfileid: "76275879"
 
 ### <a name="property-values"></a>Значения свойств
 
-| name | Значение и пример | Тип данных
+| Имя | Значение и пример | Тип данных
 | ---- | ---- | ---- 
 | версия_API | `2018-10-01` | Дата |
 | publisher | `Microsoft.ManagedServices` | строка |
@@ -64,9 +64,9 @@ ms.locfileid: "76275879"
 
 ### <a name="settings"></a>Параметры
 
-| name | Значение и пример | Тип данных
+| Имя | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http` либо `tcp` | строка |
+| protocol | `http` или `tcp` | строка |
 | порт | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | INT |
 | requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | строка |
 
@@ -163,7 +163,7 @@ az vmss extension set \
 ```
 
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 Выходные данные выполнения расширения регистрируются в файле, расположенном в следующих каталогах:
 
 ```Windows

@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: dsindona
-ms.openlocfilehash: 7d5269cf8865faeb65356bc8fd3eea087cb7653c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6e39f1c70cd94c14b12e54817941ea9106aacfdd
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80277979"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273874"
 ---
 # <a name="deploy-a-virtual-machine-from-the-azure-marketplace"></a>Развертывание виртуальной машины из Azure Marketplace
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
 
 В этой статье объясняется, как развернуть предварительно настроенную виртуальную машину из Azure Marketplace, используя скрипт Azure PowerShell.  Этот скрипт также предоставляет на виртуальной машине конечные точки WinRM HTTP и HTTPS.  Для работы скрипта необходимо заранее передать сертификат в Azure Key Vault, как описано в статье [Создание сертификатов для Azure Key Vault](./cpp-create-key-vault-cert.md). 
 
@@ -26,16 +29,16 @@ ms.locfileid: "80277979"
 
 |  **Параметр**        |   **Описание**                                 |
 |  -------------        |   ---------------                                 |
-| newStorageAccountName | Имя учетной записи хранения                       |
+| newStorageAccountName    | Имя учетной записи хранения                       |
 | dnsNameForPublicIP    | DNS-имя общедоступного IP-адреса. Используются только строчные символы.    |
-| adminUserName         | Имя пользователя администратора.                          |
-| adminPassword         | Пароль администратора.                          |
+| adminUserName            | Имя пользователя администратора.                          |
+| adminPassword            | Пароль администратора.                          |
 | imagePublisher        | Издатель образа.                                   |
 | imageOffer            | Предложение образа.                                       |
-| imageSKU              | Номер SKU образа.                                         |
+| imageSKU                | Номер SKU образа.                                         |
 | vmSize                | Размер виртуальной машины.                                    |
 | vmName                | Имя виртуальной машины.                                    |
-| vaultName             | Имя хранилища ключей.                             |
+| vaultName                | Имя хранилища ключей.                             |
 | vaultResourceGroup    | Группа ресурсов хранилища ключей.                   |
 | certificateUrl        | URL-адрес сертификата, включая версию в хранилище ключей, например `https://testault.vault.azure.net/secrets/testcert/b621es1db241e56a72d037479xab1r7`. |
 |  |  |

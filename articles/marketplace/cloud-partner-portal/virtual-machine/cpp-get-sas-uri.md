@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: dsindona
-ms.openlocfilehash: 6fe15fb18d8865911363a4696e44dd7fe1d90c09
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2fdbc2a11bd963057b465a629757f2be51ae4061
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80277809"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273857"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Получение универсального кода ресурса (URI) подписанного URL-адреса для образа виртуальной машины
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Get shared access signature URI для вашего изображения VM](https://aka.ms/GetSASURI) для управления мигрированными предложениями.
 
 При публикации вы предоставляете универсальный код ресурса (URI) для каждого виртуального жесткого диска, связанного с вашими номерами SKU. Майкрософт понадобится доступ к этим дискам во время сертификации. В этой статье объясняется, как создать URI подписанного URL-адреса (SAS) для каждого виртуального жесткого диска. Этот URI нужно ввести на вкладке с **номерами SKU** на Портале Cloud Partner.
 

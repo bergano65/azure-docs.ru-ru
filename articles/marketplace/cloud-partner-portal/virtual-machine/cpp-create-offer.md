@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: dsindona
-ms.openlocfilehash: bc1cf7a839307e65bd91eb29531663141e521472
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9d06809df2774224b61fd3fb643ab628dd2890f6
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278047"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273993"
 ---
 # <a name="create-virtual-machine-offer"></a>Создание предложения виртуальной машины
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create an Azure Virtual Machine, чтобы](https://aka.ms/CreateAzureVMoffer) управлять мигрированными предложениями.
 
 В этом разделе перечислены шаги, необходимые для создания нового запроса предложения виртуальной машины (VM) для Azure Marketplace.  Каждое предложение отображается в виде отдельной сущности в Azure Marketplace и связывается с одним или несколькими номерами SKU.  Предложение виртуальной машины представляет собой следующие группы ресурсов и службы поддержки. 
 
@@ -46,7 +49,7 @@ ms.locfileid: "80278047"
 
 В последующих темах этого раздела отображаются вкладки страницы **Новое предложение** (для типа предложения виртуальной машины).  Каждая из перечисленных ниже статей описывает, как использовать вкладку, чтобы определить группы ресурсов и службы поддержки для нового предложения виртуальной сети.
 
-- [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
+- [Вкладка "Параметры предложения"](./cpp-offer-settings-tab.md)
 - [Вкладка "Номера SKU"](./cpp-skus-tab.md)
 - [Вкладка "Тестовый выпуск"](./cpp-test-drive-tab.md)
 - [Вкладка "Marketplace"](./cpp-marketplace-tab.md)

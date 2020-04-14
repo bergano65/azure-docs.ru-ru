@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/26/2018
 ms.author: dsindona
-ms.openlocfilehash: 0225069179e0d7d94a983c5161976a5c1933fac5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ce1e001b9cafff83a3f9bf546d6903cc4a4f450f
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278201"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273500"
 ---
 # <a name="certify-your-vm-image"></a>Сертификация образа виртуальной машины
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
 
 После создания и развертывания виртуальной машины необходимо протестировать ее образ и отправить его на сертификацию в Azure Marketplace. В этой статье описывается, где можно получить *средство проверки сертификации Azure*, как его использовать, чтобы сертифицировать образ виртуальной машины, и как отправить результаты проверки в контейнер Azure, где располагаются виртуальные жесткие диски (VHD). 
 

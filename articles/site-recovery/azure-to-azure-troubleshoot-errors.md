@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/07/2020
 ms.author: rochakm
-ms.openlocfilehash: 0882eaa8b54966c7a804cf78a3928771b238e056
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 243fea8fae071368a91bf482190442f15c372fc1
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80885010"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81271307"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Ошибки, связанные с ошибками Azure-to-Azure VM, ошибки репликации VM
 
@@ -169,11 +169,11 @@ Site Recovery configuration failed.
    -rw-r--r-- 1 root root 1774 Jan  8 09:52 b204d74a.0
    ```
 
-## <a name="outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)
+## <a name="outbound-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие URL-адреса или диапазоны IP (код ошибки 151037 или 151072)
 
 Для того чтобы репликация восстановления сайта работала, от VM требуется исходящие подключения к определенным URL-адресам. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы. В то время как мы продолжаем поддерживать исходящий доступ через URL-адреса, использование разрешительного списка диапазонов IP больше не поддерживается.
 
-### <a name="issue-1-failed-to-register-azure-virtual-machine-with-site-recovery-151195"></a>Проблема 1. Не удалось зарегистрировать виртуальную машину Azure в Site Recovery (151195)
+### <a name="issue-1-failed-to-register-azure-vm-with-site-recovery-151195"></a>Выпуск 1: Не удалось зарегистрировать Azure VM с восстановлением сайта (151195)
 
 #### <a name="possible-causes"></a>Возможные причины
 
@@ -216,7 +216,7 @@ Site Recovery configuration failed.
 
 Если вы используете правила Azure Network Security Group (NSG) /прокси-сервер брандмауэра для управления испускаемым подключением к сети на VM, убедитесь, что вы используете теги обслуживания. Мы больше не поддерживаем использование разрешаемого списка IP-адресов через НСГ для восстановления сайта Azure.
 
-### <a name="issue-4-azure-to-azure-replication-failed-when-the-network-traffic-goes-through-on-premises-proxy-server-151072"></a>Выпуск 4: Репликация Azure to Azure не сработала, когда сетевой трафик проходит через сервер прокси-сервера (151072)
+### <a name="issue-4-replication-fails-when-network-traffic-uses-on-premises-proxy-server-151072"></a>Выпуск 4: Репликация не удается, когда сетевой трафик использует на месте прокси-сервер (151072)
 
 #### <a name="possible-cause"></a>Возможная причина
 
@@ -245,7 +245,7 @@ Site Recovery configuration failed.
 
 Чтобы указать [требуемые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [требуемые диапазоны IP,](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags)следуйте инструкциям [в сети Azure и репликации Azure.](azure-to-azure-about-networking.md)
 
-## <a name="disk-not-found-in-the-machine-error-code-150039"></a>На компьютере не найден диск (код ошибки 150039)
+## <a name="disk-not-found-in-vm-error-code-150039"></a>Диск не найден в VM (код ошибки 150039)
 
 Необходимо инициализировать новый диск, подключенный к виртуальной машине. Если диск не найден, отображается следующее сообщение:
 
@@ -267,7 +267,7 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
 Если проблема не исчезнет, обратитесь в службу поддержки.
 
-## <a name="one-or-more-disks-are-available-for-protection-error-code-153039"></a>Один или несколько дисков доступны для защиты (код ошибки 153039)
+## <a name="multiple-disks-available-for-protection-error-code-153039"></a>Несколько дисков, доступных для защиты (код ошибки 153039)
 
 ### <a name="possible-causes"></a>Возможные причины
 
@@ -292,7 +292,7 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
    :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/dismiss-warning.png" alt-text="Отключите предупреждение о новом диске.":::
 
-## <a name="remove-the-virtual-machine-from-the-vault-completed-with-information-error-code-150225"></a>Удалите виртуальную машину из хранилища, заполненную информацией (код ошибки 150225)
+## <a name="vm-removed-from-vault-completed-with-information-error-code-150225"></a>VM удален ы со хранилища, дополненный информацией (код ошибки 150225)
 
 Когда восстановление сайта защищает виртуальную машину, он создает ссылки на исходную виртуальную машину. При удалении защиты или отключить репликацию восстановление сайта удаляет эти ссылки как часть задания очистки. Если виртуальная машина имеет блокировку ресурса, задание очистки завершается с информацией. Информация говорит, что виртуальная машина была удалена из хранилища служб восстановления, но что некоторые устаревшие ссылки не могут быть очищены на исходной машине.
 
@@ -317,7 +317,7 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 1. Выполнить сценарий, _Очистка-устаревший-аср-конфигурация-Azure-VM.ps1_. Предоставить **идентификатор подписки,** **группу ресурсов VM**и **имя VM** в качестве параметров.
 1. Если вам предложено предоставить учетные данные Azure, предоставьте их. Затем убедитесь, что скрипт работает без каких-либо сбоев.
 
-## <a name="replication-cant-be-enabled-because-of-stale-resource-links-on-the-vm-error-code-150226"></a>Репликация не может быть включена из-за устаревших ссылок ресурсов на VM (код ошибки 150226)
+## <a name="replication-not-enabled-on-vm-with-stale-resources-error-code-150226"></a>Репликация не включена на VM с устаревшими ресурсами (код ошибки 150226)
 
 ### <a name="possible-causes"></a>Возможные причины
 
@@ -342,9 +342,9 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 1. Выполнить сценарий, _Очистка-устаревший-аср-конфигурация-Azure-VM.ps1_. Предоставить **идентификатор подписки,** **группу ресурсов VM**и **имя VM** в качестве параметров.
 1. Если вам предложено предоставить учетные данные Azure, предоставьте их. Затем убедитесь, что скрипт работает без каких-либо сбоев.
 
-## <a name="unable-to-see-the-azure-vm-or-resource-group-for-the-selection-in-the-enable-replication-job"></a>Невозможно просмотреть ВМ Azure или группу ресурсов для выбора в задания репликации включить
+## <a name="cant-select-vm-or-resource-group-in-enable-replication-job"></a>Не удается выбрать VM или группу ресурсов в задания репликации
 
-### <a name="issue-1-the-resource-group-and-source-virtual-machine-are-in-different-locations"></a>Выпуск 1: Группа ресурсов и источник виртуальной машины находятся в разных местах
+### <a name="issue-1-the-resource-group-and-source-vm-are-in-different-locations"></a>Выпуск 1: Группа ресурсов и источник VM находятся в разных местах
 
 Восстановление сайта в настоящее время требует, чтобы группа ресурсов региона исходного кода и виртуальные машины были в одном месте. Если это не так, вы не сможете найти виртуальную машину или группу ресурсов, когда вы попытаетесь применить защиту.
 
@@ -375,7 +375,7 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 1. Выполнить сценарий, _Очистка-устаревший-аср-конфигурация-Azure-VM.ps1_. Предоставить **идентификатор подписки,** **группу ресурсов VM**и **имя VM** в качестве параметров.
 1. Если вам предложено предоставить учетные данные Azure, предоставьте их. Затем убедитесь, что скрипт работает без каких-либо сбоев.
 
-## <a name="unable-to-select-a-virtual-machine-for-protection"></a>Невозможно выбрать виртуальную машину для защиты
+## <a name="unable-to-select-a-vm-for-protection"></a>Невозможно выбрать VM для защиты
 
 ### <a name="possible-cause"></a>Возможная причина
 
@@ -385,7 +385,7 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
 Перейдите к**расширениям настроек** > **виртуальных** **машин** > и проверьте наличие расширений в неисправном состоянии. Удалите любое неудачное расширение, а затем попробуйте снова защитить виртуальную машину.
 
-## <a name="the-vms-provisioning-state-isnt-valid-error-code-150019"></a>Состояние подготовки VM не является действительным (код ошибки 150019)
+## <a name="vm-provisioning-state-isnt-valid-error-code-150019"></a>Состояние подготовки VM не является действительным (код ошибки 150019)
 
 Для того, чтобы репликация на VM, его состояние подготовки должно быть **успешно выполнено.** Выполните следующие действия, чтобы проверить состояние подготовки:
 
@@ -400,15 +400,15 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 - Если **состояние подготовки** **не удалось,** обратитесь в службу поддержки с подробной информацией для устранения неполадок.
 - Если **положение в области подготовки** **обновляется,** может быть развернуто другое расширение. Проверьте, есть ли какие-либо текущие операции на VM, подождите, пока они закончатся, а затем повторно попробуйте неудавшую работу по восстановлению сайта, чтобы включить репликацию.
 
-## <a name="unable-to-select-target-vm-network-selection-tab-is-unavailable"></a>Неудается выбрать целевой VM (вкладка выбора сети недоступна)
+## <a name="unable-to-select-target-vm"></a>Невозможно выбрать целевой VM
 
-### <a name="issue-1-your-vm-is-attached-to-a-network-thats-already-mapped-to-a-target-network"></a>Выпуск 1: Ваш VM подключен к сети, которая уже отображена в целевой сети
+### <a name="issue-1-vm-is-attached-to-a-network-thats-already-mapped-to-a-target-network"></a>Выпуск 1: VM присоединен к сети, которая уже отображена в целевой сети
 
 Если исходный VM является частью виртуальной сети, а другой VM из той же виртуальной сети уже отображен с сетью в целевой группе ресурсов, окно списка выпадающих сетей по умолчанию недоступно (появляется затемненным).
 
 :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/unabletoselectnw.png" alt-text="Список выбора сети недоступен.":::
 
-### <a name="issue-2-you-previously-protected-the-vm-by-using-site-recovery-and-then-you-disabled-the-replication"></a>Выпуск 2: Вы ранее защищали VM с помощью восстановления сайта, а затем отключили репликацию
+### <a name="issue-2-you-previously-protected-the-vm-and-then-you-disabled-the-replication"></a>Выпуск 2: Вы ранее защищали VM, а затем отключили репликацию
 
 Отключение репликации VM не удаляет сетевое отображение. Отображение должно быть удалено из хранилища служб восстановления, где был защищен VM. Перейти к **восстановлению Услуги хранилище** > **инфраструктуры инфраструктуры инфраструктуры** > **отображение инфраструктуры.**
 
@@ -420,9 +420,9 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
 Изменение картирования сети влияет на все защищенные VMs, которые используют тот же отображение сети.
 
-## <a name="com-or-volume-shadow-copy-service-error-error-code-151025"></a>Ошибка службы копирования теней КОМЗ или объема (код ошибки 151025)
+## <a name="com-or-vss-error-code-151025"></a>КОМЗ или VSS (код ошибки 151025)
 
-При возникновении этой ошибки отображается следующее сообщение:
+При возникновении ошибки службы копирования теней КОМЗ или тома (VSS) отображается следующее сообщение:
 
 ```Output
 Site Recovery extension failed to install.
@@ -458,7 +458,7 @@ Protection couldn't be enabled for the virtual machine as it has <DiskName> with
 
 Убедитесь, что размер диска находится в пределах поддерживаемого диапазона размеров, а затем повторить операцию.
 
-## <a name="protection-wasnt-enabled-because-the-grub-configuration-includes-the-device-name-instead-of-the-uuid-error-code-151126"></a>Защита не была включена, поскольку конфигурация GRUB включает имя устройства вместо UUID (код ошибки 151126)
+## <a name="protection-not-enabled-when-grub-uses-device-name-error-code-151126"></a>Защита не включена, когда GRUB использует имя устройства (код ошибки 151126)
 
 ### <a name="possible-causes"></a>Возможные причины
 
@@ -493,7 +493,7 @@ Linux Grand Unified Bootloader (GRUB) файлы конфигурации (_/boo
 
 1. Повторите защиту.
 
-## <a name="enable-protection-failed-because-the-device-mentioned-in-the-grub-configuration-doesnt-exist-error-code-151124"></a>Защита включить не удалось, потому что устройство, упомянутое в конфигурации GRUB не существует (код ошибки 151124)
+## <a name="protection-failed-because-grub-device-doesnt-exist-error-code-151124"></a>Защита не удалось, потому что GRUB устройство не существует (код ошибки 151124)
 
 ### <a name="possible-cause"></a>Возможная причина
 
@@ -517,7 +517,7 @@ Linux Grand Unified Bootloader (GRUB) файлы конфигурации (_/boo
 
 Если устройство LVM не существует, либо создайте его, либо удалите соответствующие параметры из файлов конфигурации GRUB. Затем повторите попытку обеспечить защиту.
 
-## <a name="a-site-recovery-mobility-service-update-finished-with-warnings-error-code-151083"></a>Обновление службы восстановления мобильности сайта завершено с предупреждениями (код ошибки 151083)
+## <a name="mobility-service-update-finished-with-warnings-error-code-151083"></a>Обновление службы мобильности завершено с предупреждениями (код ошибки 151083)
 
 Служба восстановления сайта имеет много компонентов, один из которых называется драйвером фильтра. Драйвер фильтра загружается в системную память только во время перезагрузки системы. Всякий раз, когда обновление службы Mobility включает изменения драйвера фильтра, машина обновляется, но вы все еще видите предупреждение о том, что некоторые исправления требуют перезагрузки. Предупреждение появляется потому, что исправления драйвера фильтра могут всменяться только при загрузке нового драйвера фильтра, что происходит только во время перезагрузки.
 
@@ -526,7 +526,9 @@ Linux Grand Unified Bootloader (GRUB) файлы конфигурации (_/boo
 >
 > Помимо драйвера фильтра, преимущества любых других улучшений и исправлений в обновлении службы мобильности вступают в силу без необходимости перезагрузки.
 
-## <a name="protection-couldnt-be-enabled-because-the-replica-managed-disk-already-exists-without-expected-tags-in-the-target-resource-group-error-code-150161"></a>Защита не может быть включена, поскольку управляемый репликой диск уже существует, без ожидаемых тегов, в целевой группе ресурсов (код ошибки 150161)
+## <a name="protection-not-enabled-if-replica-managed-disk-exists"></a>Защита не включена при наличии диска, управляемого репликой
+
+Эта ошибка возникает, когда управляемый репликой диск уже существует, без ожидаемых тегов, в группе целевых ресурсов.
 
 ### <a name="possible-cause"></a>Возможная причина
 

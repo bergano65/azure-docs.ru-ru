@@ -5,16 +5,16 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 03/30/2020
 ms.author: dsindona
-ms.openlocfilehash: ce576d9825819770486197a6c39425adf6ac3208
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 05b166b2ec46900d9e3972025efb581d9619ec6a
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80275906"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81252662"
 ---
-# <a name="customer-leads-from-your-marketplace-offer"></a>Customer leads from your marketplace offer (Потенциальные клиенты предложения в marketplace)
+# <a name="customer-leads-from-your-marketplace-offer"></a>Потенциальные клиенты, связанные с предложением в marketplace
 
 Интересы клиентов интересуют или развертывают ваши предложения от [Azure Marketplace](https://azuremarketplace.microsoft.com) или от [AppSource.](https://appsource.microsoft.com) Вы получите клиент приводит после того, как ваше предложение будет опубликовано на рынке. В этой статье будет объяснено:
 
@@ -133,7 +133,7 @@ title = MSFT_TEST_636573304831318844
 
 ### <a name="i-received-an-email-from-marketplace-why-cant-i-find-the-lead-in-my-crm"></a>Мне пришло электронное письмо от Marketplace. Почему мне не удается найти интерес в моей CRM?
 
-Вполне возможно, что домен электронной почты пользователя — из .edu. По соображениям конфиденциальности мы не передаем данные PII из домена .edu. Отправить билет поддержки через aka.ms/marketplacepublishersupport.
+Вполне возможно, что домен электронной почты пользователя — из .edu. По соображениям конфиденциальности мы не передаем частную идентифицируемую информацию из домена .edu. Отправить билет поддержки через aka.ms/marketplacepublishersupport.
 
 ### <a name="i-have-configured-azure-table-as-my-lead-destination-how-can-i-view-the-leads"></a>Как я могу просмотреть интересы, я настроил таблицу Azure в качестве исходного пункта назначения?
 
@@ -149,13 +149,17 @@ title = MSFT_TEST_636573304831318844
 
 ### <a name="there-was-an-issue-with-my-lead-destination-and-i-missed-some-leads-can-i-have-them-sent-to-me-in-an-email"></a>Возникла проблема с моим назначением интереса, и у меня пропущено несколько интересов. Можно чтобы их отправили мне по электронной почте?
 
-Из-за политики персональных данных мы не можем делиться сведениями об интересах, используя незащищенные сообщения электронной почты.
+Из-за частных идентифицируемых информационных политик мы не можем обмениваться информацией о свинец через незащищенную электронную почту.
 
 ### <a name="i-have-configured-azure-table-as-my-lead-destination-how-much-will-it-cost"></a>Я настроил таблицу Azure в качестве своего ведущего пункта назначения, сколько это будет стоить?
 
 Небольшое количество данных об интересе (< 1 ГБ для почти всех издателей). Стоимость будет зависеть от количества полученных интересов. Если в течение месяца вы получили 1000 интересов, это будет стоит около 50 центов. Дополнительные сведения о ценах на службу хранилища см. на странице [Обзор цен на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/).
 
 Если ваш вопрос по-прежнему не ответил, обратитесь в службу поддержки через aka.ms/marketplacepublishersupport, а затем выберите **"предложение создания"** и **ваш тип предложения** и **"ведущая конфигурация управления.** 
+
+### <a name="i-am-receiving-email-notifications-when-new-customer-leads-are-received-how-can-i-configure-who-to-receive-these-emails"></a>Я получаю уведомления по электронной почте, когда новые интересы клиентов получены. Как настроить, кому получать эти письма?
+
+Получите доступ к своему предложению в Партнерс-центре и перейдите на страницу **настройки предложения** - > **руководство** -> **отредки.** Обновите адреса электронной почты в поле **электронной почты Контакт.**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

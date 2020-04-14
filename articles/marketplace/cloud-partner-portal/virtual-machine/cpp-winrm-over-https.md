@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: dsindona
-ms.openlocfilehash: 7c799c4a56ee5fc2074e4d644bdbcbc6d2b1ca5a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b2a4bb107309894a7180e0a4585cdba6f04d1bee
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288756"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273041"
 ---
 # <a name="windows-remote-management-over-https"></a>Служба удаленного управления Windows по протоколу HTTPS
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create an Azure Virtual Machine, чтобы](https://aka.ms/CreateAzureVMoffer) управлять мигрированными предложениями.
 
 В этом разделе описывается настройка размещенной в Azure виртуальной машины на базе Windows для удаленного управления и развертывания с помощью PowerShell.  Чтобы включить удаленное взаимодействие посредством PowerShell, на целевой виртуальной машине должна предоставляться конечная точка HTTPS для службы удаленного управления Windows (WinRM).  Дополнительные сведения об удаленном взаимодействии посредством PowerShell см. в разделе [Running Remote Commands](https://docs.microsoft.com/powershell/scripting/learn/remoting/running-remote-commands) (Выполнение удаленных команд).  Дополнительные сведения о WinRM см. в статье [Windows Remote Management](https://docs.microsoft.com/windows/desktop/WinRM/portal) (Удаленное управление Windows).
 

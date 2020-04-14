@@ -1,5 +1,5 @@
 ---
-title: Панель мониторинга Marketplace Insights в аналитике коммерческого рынка в партнерской центре
+title: Панель мониторинга Marketplace Insights в аналитике коммерческого рынка в Partner Center
 description: Получите доступ к сводке веб-аналитики маркетплейса, которая позволяет издателям измерять вовлеченность клиентов в магазинах AppSource и Azure Marketplace.
 author: dsindona
 ms.author: dsindona
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/16/2019
-ms.openlocfilehash: a547ced9df98298361360ecab88036599cd86027
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 05389f0aea7e2637dd28281236e7fd7ec2b412fd
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80275855"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81251713"
 ---
 # <a name="marketplace-insights-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга Marketplace Insights в аналитике коммерческого рынка
 
@@ -34,7 +34,7 @@ ms.locfileid: "80275855"
 - [Таблица подробностей Marketplace Insights](#marketplace-insights-details-table)
 
 >[!NOTE]
-> Для подробных определений терминологии аналитики, [см. Часто задаваемые вопросы и терминологии для аналитики коммерческого рынка](./faq-terminology.md).
+> Для подробных определений терминологии аналитики, [см. Часто задаваемые вопросы и терминологию для коммерческой аналитики рынка](./faq-terminology.md).
 
 ### <a name="insights-dashboard-layout"></a>Макет панели мониторинга Insights
 
@@ -134,11 +134,11 @@ ms.locfileid: "80275855"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Для обзора аналитических отчетов, доступных в Партнерс-центре Коммерческий рынок, [см.](./analytics.md)
-- Для графиков, тенденций и значений агрегированных данных, которые обобщают активность рынка для вашего предложения, [см.](./summary-dashboard.md)
+- Обзор аналитических отчетов, доступных на коммерческом рынке Partner Center, [см.](./analytics.md)
+- Для графиков, тенденций и значений агрегированных данных, которые обобщают активность рынка для вашего предложения, [см. Резюме Dashboard в аналитике коммерческого рынка.](./summary-dashboard.md)
 - Для получения информации о ваших заказах в графическом и загружаемом формате, [см.](./orders-dashboard.md)
 - Для виртуальной машины (VM) предлагает использование и дозированные метрики выставления счетов, [см.](./usage-dashboard.md)
 - Для получения подробной информации о ваших клиентах, включая тенденции роста, [см.](./customer-dashboard.md)
-- Список запросов на загрузку за последние 30 дней можно узнать [в аналитической таблице Загрузок в аналитике Commercial Marketplace.](./downloads-dashboard.md)
+- Список запросов на загрузку за последние 30 дней можно узнать [в аналитической компании Downloads Dashboard.](./downloads-dashboard.md)
 - Чтобы увидеть консолидированное представление отзывов клиентов о предложениях на Azure Marketplace и AppSource, [см.](./ratings-reviews.md)
-- Для часто задаваемых вопросов о аналитике Коммерческого рынка и для всеобъемлющего словаря терминов данных [см.](./faq-terminology.md)
+- Для часто задаваемых вопросов о коммерческой аналитике рынка и для всеобъемлющего словаря терминов данных, [см. Часто задаваемые вопросы и терминологию для аналитики коммерческого рынка.](./faq-terminology.md)

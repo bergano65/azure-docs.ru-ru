@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 825d26307f2b462d51b143b88127e229508f2f25
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9ab578b4b688c02c9150dfb23fce53fbb82df405
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79264600"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273177"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux приносит в Azure золотые изображения
 
@@ -120,7 +120,7 @@ ms.locfileid: "79264600"
 1. SSH в ваш VM, и убедитесь, что у вас есть неозаглавлена изображения. Для этого шага `sudo yum repolist`запустите. Для RHEL 8, используйте `sudo dnf repolist`. Выход просит вас использовать подписку-менеджер для регистрации VM с Red Hat.
 
 >[!NOTE]
->На RHEL `dnf` 8, и `yum` являются взаимозаменяемыми. Для получения дополнительной [информации](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/installing-software-with-yum_configuring-basic-system-settings)см.
+>На RHEL `dnf` 8, и `yum` являются взаимозаменяемыми. Для получения дополнительной [информации](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/packaging_and_distributing_software/index)см.
 
 ## <a name="use-the-red-hat-gold-images-from-powershell"></a>Используйте красные шляпы Золотые изображения от PowerShell
 
@@ -214,6 +214,7 @@ Red Hat Enterprise Linux BYOS Gold Images может быть обеспечен
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- Более подробная информация о доступе к облачным технологиям Red Hat доступна в [общедоступной облачной документации Red Hat](https://access.redhat.com/public-cloud)
 - Для пошаговых руководств и деталей программы для Cloud Access можно [ознакомиться с документацией Red Hat Cloud Access.](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/index)
 - Чтобы узнать больше об инфраструктуре обновления Red Hat, смотрите [инфраструктуру обновления Azure Red Hat.](./redhat-rhui.md)
 - Чтобы узнать больше обо всех изображениях Red Hat в Azure, смотрите [страницу документации](./redhat-images.md).

@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: dsindona
-ms.openlocfilehash: fe1397d7ad00a2eb6e9fe04d8bfa50e49839fe34
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a15ccb1de2a9ce0072d032e624ead3b4d730763b
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288790"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273058"
 ---
 # <a name="update-an-existing-vm-offer-on-azure-marketplace"></a>Обновление существующего предложения виртуальной машины в Azure Marketplace
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create an Azure Virtual Machine, чтобы](https://aka.ms/CreateAzureVMoffer) управлять мигрированными предложениями.
 
 В этой статье описана процедура обновления и повторной публикации предложения виртуальной машины на [Портале Cloud Partner](https://cloudpartner.azure.com/). 
 
@@ -128,7 +131,7 @@ ms.locfileid: "80288790"
 
 4.  Если вы установили все цены в графическом интерфейсе пользователя, их можно изменить непосредственно в интерфейсе. Если вы установили цены путем импорта или экспорта электронной таблицы, этот метод необходимо использовать и для снижения цены.
 
-3.  Нажмите **Сохранить**.
+3.  Выберите команду **Сохранить**.
 
 4.  Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации изменений.
 

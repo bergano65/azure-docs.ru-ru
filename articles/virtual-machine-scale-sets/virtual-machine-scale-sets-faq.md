@@ -1,19 +1,19 @@
 ---
 title: Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 description: Получите ответы на наиболее часто задаваемые вопросы о наборах виртуальных машин в Azure.
-author: mayanknayar
+author: mimckitt
 tags: azure-resource-manager
 ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
 ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 05/24/2019
-ms.author: manayar
-ms.openlocfilehash: 3b34708d6e91da627ff44018778318337ddb6b06
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.author: mimckitt
+ms.openlocfilehash: 1dbc08e01b9a36b1bc80ee6b81ceb2d92ff831cc
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80879502"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273721"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -466,7 +466,7 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
 
 ### <a name="is-it-possible-to-assign-a-network-security-group-nsg-to-a-scale-set-so-that-it-applies-to-all-the-vm-nics-in-the-set"></a>Можно ли назначить группу безопасности сети масштабируемому набору, чтобы она применялась ко всем сетевым картам виртуальных машин в наборе?
 
-Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример
+Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример.
 
 ```json
 "networkProfile": {
@@ -540,7 +540,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-the-dns-servers-used-by-a-scale-set"></a>Как настроить DNS-серверы, используемые масштабируемым набором?
 
-Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример
+Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример.
 
 ```json
     "dnsSettings":{
@@ -550,7 +550,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-a-scale-set-to-assign-a-public-ip-address-to-each-vm"></a>Как настроить масштабируемый набор, чтобы назначать общедоступный IP-адрес каждой виртуальной машине?
 
-Чтобы создать виртуальный набор масштабов машины, который назначает общедоступный IP-адрес каждому VM, убедитесь, что версия API ресурса Microsoft.Compute/virtualMachineScaleSets является 2017-03-30, и добавьте _пакет publicipaddressconfiguration_ JSON в раздел ipConfigurations, установленный масштаб. Пример
+Чтобы создать виртуальный набор масштабов машины, который назначает общедоступный IP-адрес каждому VM, убедитесь, что версия API ресурса Microsoft.Compute/virtualMachineScaleSets является 2017-03-30, и добавьте _пакет publicipaddressconfiguration_ JSON в раздел ipConfigurations, установленный масштаб. Пример.
 
 ```json
     "publicipaddressconfiguration": {

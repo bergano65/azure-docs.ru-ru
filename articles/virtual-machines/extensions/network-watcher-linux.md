@@ -3,8 +3,8 @@ title: Azure Network Watcher Agent виртуальное расширение �
 description: Развертывание агента Наблюдателя за сетями на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
-author: gurudennis
-manager: amku
+author: mimckitt
+manager: vashan
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 5c81e94c-e127-4dd2-ae83-a236c4512345
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
-ms.author: dennisg
-ms.openlocfilehash: 712ec177996cd54d7bd6d184fea306009b58b083
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: mimckitt
+ms.openlocfilehash: 476241ad3d4077f2da0c513e3c989218701232ba
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79531028"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255759"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Linux
 
@@ -35,7 +35,7 @@ ms.locfileid: "79531028"
 
 Расширение виртуальной машины для агента службы "Наблюдатель за сетями" можно настроить для следующих дистрибутивов Linux.
 
-| Distribution | Версия |
+| Distribution | Version |
 |---|---|
 | Ubuntu | 12+ |
 | Debian | 7 и 8 |
@@ -75,7 +75,7 @@ ms.locfileid: "79531028"
 
 ### <a name="property-values"></a>Значения свойств
 
-| name | Значение и пример |
+| Имя | Значение и пример |
 | ---- | ---- |
 | версия_API | 2015-06-15 |
 | publisher | Microsoft.Azure.NetworkWatcher |

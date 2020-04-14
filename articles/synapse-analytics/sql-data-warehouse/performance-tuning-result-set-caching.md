@@ -11,12 +11,12 @@ ms.date: 10/10/2019
 ms.author: xiaoyul
 ms.reviewer: nidejaco;
 ms.custom: azure-synapse
-ms.openlocfilehash: 4eef8a3a83456a9f2066311b9339b26b83afa009
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 42f8f51545f643e1ed9e1a23c9445f6e216fdabe
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633801"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273415"
 ---
 # <a name="performance-tuning-with-result-set-caching"></a>Performance tuning with result set caching (Настройка производительности путем кэширования результирующего набора)
 
@@ -71,10 +71,10 @@ WHERE request_id  = <'request_id'>;
 - Имеется точное соответствие между новым запросом и предыдущим запросом, породившим результирующий набор в кэше.
 - Нет изменений в данных или схеме в таблицах, на основе которых создан кэшированный результирующий набор.
 
-Выполните эту команду, чтобы проверить, как был выполнен запрос — с попаданием или промахом в кэше результатов. Столбец result_set_cache возвращает 1 для попадания кэша, 0 для промаха кэша и отрицательных значений по причинам, по которым кэширование набора результатов не использовалось. Проверьте [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для получения подробной информации.
+Выполните эту команду, чтобы проверить, как был выполнен запрос — с попаданием или промахом в кэше результатов. столбец result_cache_hit возвращает 1 для попадания кэша, 0 для промаха кэша и отрицательных значений по причинам, по которым кэширование набора результатов не использовалось. Проверьте [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для получения подробной информации.
 
 ```sql
-SELECT request_id, command, result_set_cache FROM sys.dm_pdw_exec_requests
+SELECT request_id, command, result_cache_hit FROM sys.dm_pdw_exec_requests
 WHERE request_id = <'Your_Query_Request_ID'>
 ```
 

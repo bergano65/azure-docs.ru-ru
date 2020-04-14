@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 03/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4b469c098db4f8d90147b491bcb54bd55d326b03
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c4e8b544ea3daeb23b22f3864beb21ba9d3f342f
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79080314"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255623"
 ---
 # <a name="sap-hana-azure-virtual-machine-storage-configurations"></a>Конфигурации хранилища виртуальных машин SAP HANA в Azure
 
@@ -72,7 +72,7 @@ Azure предлагает два метода развертывания вир
 Кроме того, при выборе виртуальной машины или изменении ее размера учитывайте пропускную способность ввода-вывода. Общие сведения о пропускной способности хранилища виртуальной машины см. в статье [Размеры виртуальных машин, оптимизированных для операций в памяти](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory).
 
 ## <a name="linux-io-scheduler-mode"></a>Режим планировщика операций ввода–вывода для Linux
-Linux имеет несколько разных режимов планирования операций ввода-вывода. Распространенная рекомендация через поставщиков Linux и SAP заключается в том, чтобы перенастроить режим планировщика ввоза/одолжны для объемов дисков из режима **cfq** в режим **noop** (non-multiqueue) или **нет** для (многоочередных) режимов. Подробности упоминаются в [SAP Note #1984787](https://launchpad.support.sap.com/#/notes/1984787). 
+Linux имеет несколько разных режимов планирования операций ввода-вывода. Распространенная рекомендация через поставщиков Linux и SAP заключается в том, чтобы перенастроить режим планировщика ввоза/одолжны для объемов дисков из **mq-deadline** или **kyber-режима** в режим **noop** (не-multiqueue) или **нет** для (многокийного) режима. Подробности упоминаются в [SAP Note #1984787](https://launchpad.support.sap.com/#/notes/1984787). 
 
 
 ## <a name="solutions-with-premium-storage-and-azure-write-accelerator-for-azure-m-series-virtual-machines"></a>Решения с Premium Storage и Azure Write Accelerator для виртуальных машин Azure M-Series

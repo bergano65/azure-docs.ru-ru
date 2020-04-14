@@ -7,17 +7,19 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: dsindona
-ms.openlocfilehash: b0ed430098203c5c1a0d00eb7bf17da1be0000cb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f20beced7d977668d12c06375ceb8a2554c6d335
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278098"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273432"
 ---
 # <a name="configure-the-azure-hosted-vm"></a>Настройка размещенной в Azure виртуальной машины
 
-Эта статья содержит сведения об оценке размера, обновлении и обобщении для размещенной в Azure виртуальной машины.  Эти шаги нужны для того, чтобы подготовить виртуальную машину к развертыванию из Azure Marketplace.
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем управление вашим предложением Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [создании технических активов Azure Virtual Machine](https://aka.ms/AzureVMTechAsset) для управления мигрированными предложениями.
 
+Эта статья содержит сведения об оценке размера, обновлении и обобщении для размещенной в Azure виртуальной машины.  Эти шаги нужны для того, чтобы подготовить виртуальную машину к развертыванию из Azure Marketplace.
 
 ## <a name="sizing-the-vhds"></a>Определение размера виртуальных жестких дисков
 

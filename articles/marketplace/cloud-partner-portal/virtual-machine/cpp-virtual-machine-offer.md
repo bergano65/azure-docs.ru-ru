@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: dsindona
-ms.openlocfilehash: 939a5f6a4c70a8a1229507e0357cb588c17152fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0f2ae9fe6f006b5418ebee82b08a44188b7c58d3
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288773"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273075"
 ---
 # <a name="virtual-machine-offer"></a>Предложение виртуальной машины
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create an Azure Virtual Machine, чтобы](https://aka.ms/CreateAzureVMoffer) управлять мигрированными предложениями.
 
 |    |    |
 |-----------------------------------------------------------------|------------------------------------------|

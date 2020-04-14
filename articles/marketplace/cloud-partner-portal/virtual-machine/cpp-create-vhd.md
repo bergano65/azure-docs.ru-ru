@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: dsindona
-ms.openlocfilehash: 2014a775edd4e24f5d302d863d0b69d83009b8a6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 99d2bc95c1dd837bfc3bcabcead28777b7e6f746
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80277996"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273942"
 ---
 # <a name="create-an-azure-compatible-vhd"></a>Создание виртуального жесткого диска, совместимого с Azure
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем управление вашим предложением Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [создании технических активов Azure Virtual Machine](https://aka.ms/AzureVMTechAsset) для управления мигрированными предложениями.
 
 В этой статье описываются действия по созданию виртуального жесткого диска для предложения виртуальной машины в Azure Marketplace.  Здесь также содержатся рекомендации касательно различных аспектов, таких как использование протокола удаленного рабочего стола, выбор размера для виртуальной машины, установка последних обновлений Windows и обобщение образа виртуального жесткого диска.  Следующие разделы главным образом сосредоточены на виртуальных жестких дисках на платформе Windows. Дополнительные сведения о создании виртуальных жестких дисков на платформе Linux см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](../../../virtual-machines/linux/endorsed-distros.md). 
 
@@ -26,9 +29,9 @@ ms.locfileid: "80277996"
 Виртуальный жесткий диск с ОС для вашего образа виртуальной машины должен быть основан на базовом образе, одобренном для Azure и содержащем Windows Server или SQL Server.
 Для начала создайте виртуальную машину из одного из следующих образов, расположенных на портале Microsoft Azure:
 
--   Windows Server ([2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016), [2012 R2 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), [2012 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), [2008 R2 SP1](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview));
--   [Сервер S'L 2014](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Предприятие, Стандарт, Веб)
--   [Сервер S'L 2012 SP2](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Предприятие, Стандарт, Веб)
+-    Windows Server ([2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016), [2012 R2 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), [2012 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), [2008 R2 SP1](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview));
+-    [Сервер S'L 2014](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Предприятие, Стандарт, Веб)
+-    [Сервер S'L 2012 SP2](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance) (Предприятие, Стандарт, Веб)
 
 > [!TIP]
 > Если вы используете текущую версию портала Azure или PowerShell, используйте образы Windows Server, опубликованные 8 сентября 2014 г. или позднее, одобренные для Azure.

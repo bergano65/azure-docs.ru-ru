@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.custom: seodec18
-ms.openlocfilehash: ff5f7a80e2dcedb1795bae14ee9140c2842303a5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 373fc2829e599d0989b59c6386757c8f5f3e1d66
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76984602"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81251730"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -70,7 +70,7 @@ ms.locfileid: "76984602"
 
    [![Поиск приложения в диалоговом окне "Выбор пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
 
-1. Выберите роль. Выберите **Reader** для запроса данных или **вкладчика** в запрос данных и изменение справочных данных. Нажмите кнопку **ОК**.
+1. Выберите роль. Выберите **Reader** для запроса данных или **вкладчика** в запрос данных и изменение справочных данных. Щелкните **ОК**.
 
    [![Выберите reader или Contributor в диалоговом окне роли пользователя](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
 
@@ -102,9 +102,9 @@ ms.locfileid: "76984602"
 > [!TIP]
 > Прочитайте [ссылку на API Azure REST,](https://docs.microsoft.com/rest/api/azure/) чтобы узнать больше о том, как использовать APPi REST, сделать запросы HTTP и обрабатывать ответы HTTP.
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
-Для выполнения аутентифицированных запросов в отношении [AI Time Series Insights REST,](https://docs.microsoft.com/rest/api/time-series-insights/)действительный маркер предъявителя OAuth 2.0 должен быть передан в [заголовке авторизации](/rest/api/apimanagement/2019-01-01/authorizationserver/createorupdate) с помощью клиента REST по вашему выбору (Postman, JavaScript, C). 
+Для выполнения аутентифицированных запросов в отношении [AI Time Series Insights REST,](https://docs.microsoft.com/rest/api/time-series-insights/)действительный маркер предъявителя OAuth 2.0 должен быть передан в [заголовке авторизации](/rest/api/apimanagement/2019-12-01/authorizationserver/createorupdate) с помощью клиента REST по вашему выбору (Postman, JavaScript, C). 
 
 > [!TIP]
 > Ознакомьте размещенную визуализацию [образца sDK клиента SDK,](https://tsiclientsample.azurewebsites.net/) чтобы ознакомиться с визуализацией, чтобы узнать, как проверить подлинность с помощью AA AIS серии времени, программно используя [SDK клиента JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) вместе с диаграммами и графиками.
@@ -154,9 +154,9 @@ ms.locfileid: "76984602"
 
 Дополнительные параметры строки запроса URL включают установку тайм-аута для времени выполнения запроса HTTP.
 
-| Дополнительный параметр запроса | Описание | Версия |
+| Дополнительный параметр запроса | Описание | Version |
 | --- |  --- | --- |
-| `timeout=<timeout>` | Тайм-аут на стороне сервера для выполнения запроса HTTP. Применяется только к [событиям Get Environment](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) и Get Environment [Aggregates](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) AA. Значение тайм-аута должно быть в формате Продолжительности ISO 8601, например, `"PT20S"` и должно быть в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | GA |
+| `timeout=<timeout>` | Тайм-аут на стороне сервера для выполнения запроса HTTP. Применяется только к [событиям Get Environment](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) и Get Environment [Aggregates](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) AA. Значение тайм-аута должно быть в формате Продолжительности ISO 8601, например, `"PT20S"` и должно быть в диапазоне `1-30 s`. Значение по умолчанию — `30 s`. | GA |
 | `storeType=<storeType>` | Для сред предварительного просмотра с включенным теплым магазином `WarmStore` `ColdStore`запрос может быть выполнен либо на . Этот параметр в запросе определяет, на каком хранении должен быть выполнен запрос. Если не определено, запрос будет выполнен в холодном магазине. Чтобы задать запрос в теплом магазине, **storeType** должен быть установлен на `WarmStore`. Если не определено, запрос будет выполнен против холодного магазина. | Preview (Предварительный просмотр) |
 
 ## <a name="next-steps"></a>Дальнейшие действия

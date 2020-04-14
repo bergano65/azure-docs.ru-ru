@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: dsindona
-ms.openlocfilehash: 673fe1f31f6a8602225e7cde3bf1eb4c3b28b8a3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b80325594eedb87293c31de3236bb4690eb89e05
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278150"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273024"
 ---
 # <a name="configure-winrm-after-virtual-machine-creation"></a>Настройка WinRM после создания виртуальной машины
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create an Azure Virtual Machine, чтобы](https://aka.ms/CreateAzureVMoffer) управлять мигрированными предложениями.
 
 В этой статье описывается настройка имеющейся виртуальной машины (ВМ), размещенной в Azure, для включения WinRM по протоколу HTTPS.  Она применима только к виртуальным машинам на платформе Windows и требует выполнения следующих двух действий:
 
@@ -26,8 +29,8 @@ ms.locfileid: "80278150"
 
 В протоколе WinRM over HTTPS используется порт 5986, который по умолчанию не включен на предварительно настроенных вдыхаемых Windows-виз, предлагаемых на Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
 
-1.  Перейдите к лезвию **Виртуальные машины >**   < *vm-имя* >   **> Настройки / Сети**.
-2.  Щелкните имя группы безопасности сети (в этом примере **testvm11002**) для отображения ее свойств:
+1. Перейдите к лезвию **Виртуальные машины >**   < *vm-имя* >   **> Настройки / Сети**.
+2. Щелкните имя группы безопасности сети (в этом примере **testvm11002**) для отображения ее свойств:
 
     ![Свойства группы безопасности сети](./media/nsg-properties.png)
  

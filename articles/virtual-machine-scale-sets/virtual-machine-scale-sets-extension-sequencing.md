@@ -1,18 +1,18 @@
 ---
 title: Используйте секвенирование расширения с наборами виртуальных машин Azure
 description: Узнайте, как упорядочить подготовку расширений при развертывании нескольких расширений в масштабируемых наборах виртуальных машин.
-author: mayanknayar
+author: mimckitt
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.author: manayar
-ms.openlocfilehash: cde3fb8b56d8509a45bde00dde55e3c69d015b8e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: mimckitt
+ms.openlocfilehash: 737040699dd62d722b9a9ad4d8915ccb270c2d06
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76278055"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273755"
 ---
 # <a name="sequence-extension-provisioning-in-virtual-machine-scale-sets"></a>Подготовка последовательности расширений в масштабируемых наборах виртуальных машин
 Расширения виртуальных машин Azure предоставляют такие возможности, как настройка и управление после развертывания, мониторинг, безопасность и многое другое. Для достижения желаемых результатов в рабочих развертываниях обычно используется сочетание нескольких расширений, настроенных для экземпляров виртуальной машины.
@@ -237,7 +237,7 @@ az vmss extension set \
 ```
 
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 ### <a name="not-able-to-add-extension-with-dependencies"></a>Не удается добавить расширение с зависимостями
 1. Убедитесь, что расширения, указанные в provisionAfterExtensions, определены в модели масштабируемого набора.

@@ -3,7 +3,7 @@ title: Анализ вариантов использования Azure CDN | Д
 description: В этой статье описываются разные типы аналитических отчетов, доступные для продуктов Azure CDN.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: 95e18b3c-b987-46c2-baa8-a27a029e3076
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
-ms.author: magattus
-ms.openlocfilehash: 238dea3c136daf13d3db7be41bed103a0cbf7636
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: allensu
+ms.openlocfilehash: c78dff9f5258023d90100c70bd244e8e0d016d6f
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67593688"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81253617"
 ---
 # <a name="analyze-azure-cdn-usage-patterns"></a>Анализ вариантов использования CDN Azure
 

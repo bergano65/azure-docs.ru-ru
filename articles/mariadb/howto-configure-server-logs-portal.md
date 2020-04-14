@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: 89bdd209315445519c35f3ef2c2f1ad2555106ba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 4/13/2020
+ms.openlocfilehash: 1e67637d36eaba55e4c6baaf6f775fc7b79fcd14
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79531402"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81270607"
 ---
 # <a name="configure-and-access-slow-query-logs-from-the-azure-portal"></a>Настройка и доступ к медленным журналам запросов с портала Azure
 
@@ -32,11 +32,15 @@ ms.locfileid: "79531402"
 
 4. Чтобы увидеть параметры сервера, выберите **Нажмите здесь, чтобы включить журналы и настроить параметры журнала.**
 
-5. Измените параметры, которые необходимо настроить, включая превращение **slow_query_log** **в ON.** Все изменения, вносимые в этом сеансе, выделены фиолетовым цветом. 
+5. Поверните **slow_query_log** к **ON**.
 
-   После изменения параметров выберите **Сохранить**. Или вы можете отказаться от изменений.
+6. Выберите, где вывести журналы с помощью **log_output.** Для отправки журналов в локальные системы хранения данных и в диагностические журналы Azure Monitor выберите **файл.** 
 
-   ![Скриншот параметров параметров сервера](./media/howto-configure-server-logs-portal/3-save-discard.png)
+7. Измените любые другие необходимые параметры. 
+
+8. Щелкните **Сохранить**. 
+
+   :::image type="content" source="./media/howto-configure-server-logs-portal/3-save-discard.png" alt-text="Скриншот медленных параметров журнала запроса и сохранения.":::
 
 Со **страницы Параметры сервера** можно вернуться к списку журналов, закрыв страницу.
 

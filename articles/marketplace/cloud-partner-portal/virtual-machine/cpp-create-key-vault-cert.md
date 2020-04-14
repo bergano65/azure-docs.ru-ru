@@ -7,20 +7,23 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: dsindona
-ms.openlocfilehash: dc106ecf40367172f28c0f339bbcce8bddb50a34
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 09e82b9905104df9b1902b0f64f6cfdf812aabb8
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80278081"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81274027"
 ---
 # <a name="create-certificates-for-azure-key-vault"></a>Создание сертификатов для Azure Key Vault
 
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
+
 В этой статье объясняется, как подготовить к работе самозаверяющие сертификаты, необходимые для установки подключения службы удаленного управления Windows (WinRM) к размещенной в Azure виртуальной машине (ВМ). Эта процедура состоит из трех шагов:
 
-1.  Создание сертификата безопасности. 
-2.  Создание Azure Key Vault для хранения этого сертификата. 
-3.  Сохранение сертификатов в этом хранилище ключей. 
+1.    Создание сертификата безопасности. 
+2.    Создание Azure Key Vault для хранения этого сертификата. 
+3.    Сохранение сертификатов в этом хранилище ключей. 
 
 Для выполнения этой работы можно использовать новую или имеющуюся группу ресурсов Azure.  В приведенных ниже сведениях используется первый вариант.
 

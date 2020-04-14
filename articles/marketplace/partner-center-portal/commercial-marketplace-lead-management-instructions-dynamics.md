@@ -5,14 +5,14 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 03/30/2020
 ms.author: dsindona
-ms.openlocfilehash: 8af6b3a451d20bcc9cab3fa4adb9643f82b85e49
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5b3e35b6d19905e3c5262dfea3e52511510c9ffe
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288824"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81252968"
 ---
 # <a name="configure-lead-management-for-dynamics-365-for-customer-engagement"></a>Настройка руководства для Dynamics 365 для привлечения клиентов
 
@@ -180,6 +180,7 @@ ms.locfileid: "80288824"
     ![Детали подключения - направление свинца](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-lead-destination.png)
 
 4. Предоставьте **динамические 365 Instance URL,** такие как `https://contoso.crm4.dynamics.com`.
+
 5. Выберите метод **аутентификации,** активный каталог Azure или Office 365. 
 6. Если вы выбрали Active Directory Azure, предоставьте **идентификатор приложения (клиент):),** `23456052-aaaa-bbbb-8662-1234df56788f` **идентификатор каталога** (пример:) `12345678-8af1-4asf-1234-12234d01db47`и **секрет клиента** (пример: `1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=`).
 
@@ -188,6 +189,13 @@ ms.locfileid: "80288824"
 7. Если вы выбрали Office 365, укажите **имя пользователя** (пример: `contoso@contoso.onmicrosoft.com`) и пароль (пример: `P@ssw0rd`).
 
     ![Детали подключения - имя пользователя](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-authentication.png)
+
+8. **Контактная почта** - Предоставьте электронные письма для людей в вашей компании, которые должны получать уведомления по электронной почте, когда новый свинец получен. Вы можете предоставить несколько писем, разделив их с запятой.
+9. Щелкните **ОК**.
+
+Чтобы убедиться, что вы успешно подключены к месту назначения, нажмите на кнопку проверки. В случае успеха, вы будете иметь тест свинца в главной цели.
+
+![Управление свинцом - учетная запись хранения сведений о подключении](./media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-connection-details.png)
 
 >[!Note]
 >Вы должны закончить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить приводит для предложения.
